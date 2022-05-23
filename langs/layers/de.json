@@ -348,7 +348,7 @@
                         "then": "Hier gibt es eine normale Sitzbank"
                     },
                     "1": {
-                        "then": "Stehbank"
+                        "then": "Hier gibt es eine Stehbank zum Anlehnen"
                     },
                     "2": {
                         "then": "Hier gibt es keine Bank"
@@ -828,22 +828,22 @@
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlich zugänglich"
+                        "then": "Die Reparaturstation darf öffentlich genutzt werden"
                     },
                     "1": {
                         "then": "Öffentlich zugänglich"
                     },
                     "2": {
-                        "then": "Nur für Kunden"
+                        "then": "Die Reparaturstation darf nur von Kunden genutzt werden"
                     },
                     "3": {
-                        "then": "Nicht für die Allgemeinheit zugänglich"
+                        "then": "Die Reparaturstation darf nicht öffentlich genutzt werden"
                     },
                     "4": {
                         "then": "Nicht für die Allgemeinheit zugänglich"
                     }
                 },
-                "question": "Wer darf diese Reparaturstation benutzen?"
+                "question": "Wer darf die Reparaturstation nutzen?"
             },
             "bike_repair_station-available-services": {
                 "mappings": {
@@ -857,7 +857,7 @@
                         "then": "Es sind sowohl Werkzeuge als auch eine Pumpe vorhanden"
                     }
                 },
-                "question": "Welche Einrichtungen sind an der Fahrradstation vorhanden?"
+                "question": "Welche Einrichtungen sind hier vorhanden?"
             },
             "bike_repair_station-bike-chain-tool": {
                 "mappings": {
@@ -893,7 +893,7 @@
                 "question": "Ist dies eine elektrische Fahrradpumpe?"
             },
             "bike_repair_station-email": {
-                "question": "Wie lautet die E-Mail-Adresse des Betreuers?"
+                "question": "Wie lautet die E-Mail-Adresse des Betreibers?"
             },
             "bike_repair_station-manometer": {
                 "mappings": {
@@ -912,13 +912,13 @@
             "bike_repair_station-opening_hours": {
                 "mappings": {
                     "0": {
-                        "then": "Durchgehend geöffnet"
+                        "then": "Die Station ist durchgehend geöffnet"
                     }
                 },
-                "question": "Wann ist diese Fahrradreparaturstelle geöffnet?"
+                "question": "Wann ist die Fahrradreparaturstation geöffnet?"
             },
             "bike_repair_station-operator": {
-                "question": "Wer wartet diese Fahrradpumpe?",
+                "question": "Wer betreibt die Reparaturstation?",
                 "render": "Gewartet von {operator}"
             },
             "bike_repair_station-phone": {
@@ -927,13 +927,13 @@
             "bike_repair_station-valves": {
                 "mappings": {
                     "0": {
-                        "then": "Sklaverand-/Prestaventil (für Rennräder)"
+                        "then": "Sklaverand-/Presta-Ventile (für Rennräder)"
                     },
                     "1": {
-                        "then": "Dunlop"
+                        "then": "Dunlopventile"
                     },
                     "2": {
-                        "then": "Schraderventil (für Autos und Mountainbikes)"
+                        "then": "Schrader-Ventile (für Autos und Mountainbikes)"
                     }
                 },
                 "question": "Welche Ventile werden unterstützt?",
@@ -1029,7 +1029,7 @@
             "bike_repair_second-hand-bikes": {
                 "mappings": {
                     "0": {
-                        "then": "Das Geschäft verkauft gebrauchte Fahrräder"
+                        "then": "Das Geschäft verkauft auch gebrauchte Fahrräder"
                     },
                     "1": {
                         "then": "Das Geschäft verkauft keine gebrauchten Fahrräder"
@@ -1087,7 +1087,7 @@
                 "question": "Wie lautet die Telefonnummer von {name}?"
             },
             "bike_shop-website": {
-                "question": "Was ist die Webseite von {name}?"
+                "question": "Wie lautet die Webseite von {name}?"
             }
         },
         "title": {
@@ -1445,10 +1445,10 @@
                         "then": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)"
                     },
                     "4": {
-                        "then": "<b>Chademo</b>"
+                        "then": "<b>Chademo-Anschluss</b>"
                     },
                     "5": {
-                        "then": "<b>Chademo</b>"
+                        "then": "<b>Chademo-Anschluss</b>"
                     },
                     "6": {
                         "then": "<b>Typ 1 mit Kabel</b> (J1772)"
@@ -1907,7 +1907,9 @@
                     "0": {
                         "then": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F) liefert maximal 3,6 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung liefert ein einzelner <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> liefert maximal {socket:schuko:output}"
             },
             "power-output-1": {
                 "mappings": {
@@ -1917,14 +1919,18 @@
                     "1": {
                         "then": "<b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E) liefert maximal 22 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung liefert ein einzelner <div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> liefert maximal {socket:typee:output}"
             },
             "power-output-10": {
                 "mappings": {
                     "0": {
                         "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS) liefert maximal 50 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung bietet ein einzelner Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS vonTesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> liefert maximal {socket:tesla_supercharger_ccs:output}"
             },
             "power-output-11": {
                 "mappings": {
@@ -1937,7 +1943,9 @@
                     "2": {
                         "then": "<b>Tesla Supercharger (Destination)</b> liefert maximal 250 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung bietet ein einzelner Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert maximal {socket:tesla_destination:output}"
             },
             "power-output-12": {
                 "mappings": {
@@ -1947,7 +1955,9 @@
                     "1": {
                         "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert maximal 22 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung bietet ein einzelner Stecker des Typs <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert maximal {socket:tesla_destination:output}"
             },
             "power-output-13": {
                 "mappings": {
@@ -1957,14 +1967,18 @@
                     "1": {
                         "then": "<b>USB</b> zum Laden von Handys und kleinen Elektrogeräten liefert maximal 10w A"
                     }
-                }
+                },
+                "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleiner Elektrogeräte</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert maximal {socket:USB-A:output}",
+                "question": "Welche Leistung bietet ein einzelner Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?"
             },
             "power-output-2": {
                 "mappings": {
                     "0": {
                         "then": "<b>Chademo</b> liefert maximal 50 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> liefert maximal {socket:chademo:output}"
             },
             "power-output-3": {
                 "mappings": {
@@ -1974,7 +1988,9 @@
                     "1": {
                         "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert maximal 7 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefert maximal {socket:type1_cable:output}"
             },
             "power-output-4": {
                 "mappings": {
@@ -1990,7 +2006,9 @@
                     "3": {
                         "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert maximal 7,2 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefert maximal {socket:type1:output}"
             },
             "power-output-5": {
                 "mappings": {
@@ -2006,7 +2024,9 @@
                     "3": {
                         "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert maximal 350 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> liefert maximal {socket:type1_combo:output}"
             },
             "power-output-6": {
                 "mappings": {
@@ -2019,7 +2039,9 @@
                     "2": {
                         "then": "<b>Tesla Supercharger</b> liefert maximal 250 kW A"
                     }
-                }
+                },
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert maximal {socket:tesla_supercharger:output}",
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?"
             },
             "power-output-7": {
                 "mappings": {
@@ -2029,14 +2051,18 @@
                     "1": {
                         "then": "<b>Typ 2</b> (Mennekes) liefert maximal 22 kw A"
                     }
-                }
+                },
+                "render": "<div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> liefert maximal {socket:type2:output}",
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?"
             },
             "power-output-8": {
                 "mappings": {
                     "0": {
                         "then": "<b>Typ 2 CCS</b> (Mennekes) liefert maximal 50 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> liefert maximal {socket:type2_combo:output}"
             },
             "power-output-9": {
                 "mappings": {
@@ -2046,13 +2072,15 @@
                     "1": {
                         "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert maximal 22 kw A"
                     }
-                }
+                },
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert maximal {socket:type2_cable:output}"
             },
             "questions": {
                 "render": "<h3>Technische Fragen</h3>Die folgenden Fragen sind sehr technisch. Sie können sie gerne ignorieren<br/>{questions}"
             },
             "ref": {
-                "question": "Wie ist die Kennziffer der Ladestation",
+                "question": "Welche Kennnummer hat die Ladestation?",
                 "render": "Die Kennziffer ist <b>{ref}</b>"
             },
             "voltage-0": {
@@ -2060,14 +2088,18 @@
                     "0": {
                         "then": "<b>Schuko-Stecker</b> ohne Schutzkontakt (CEE7/4 Typ F) liefert 230 Volt"
                     }
-                }
+                },
+                "question": "Welche Spannung liefern die <div style='display: inline-block'><b><b>Schuko-Wandstecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> liefert {socket:schuko:voltage} Volt"
             },
             "voltage-1": {
                 "mappings": {
                     "0": {
                         "then": "<b>Europäischer Netzstecker</b> mit Schutzkontakt (CEE7/4 Typ E) liefert 230 Volt"
                     }
-                }
+                },
+                "render": "<div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> liefert {socket:typee:voltage} volt",
+                "question": "Welche Spannung liefern die <div style='display: inline-block'><b><b>Europäischen Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>?"
             },
             "voltage-10": {
                 "mappings": {
@@ -2077,14 +2109,18 @@
                     "1": {
                         "then": "<b>Tesla Supercharger CCS</b> (Typ 2 CSS) liefert 920 Volt"
                     }
-                }
+                },
+                "question": "Welche Spannung bieten die <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (Typ 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> liefert {socket:tesla_supercharger_ccs:voltage} volt"
             },
             "voltage-11": {
                 "mappings": {
                     "0": {
                         "then": "<b>Tesla Supercharger (Destination)</b> liefert 480 Volt"
                     }
-                }
+                },
+                "question": "Welche Spannung bieten die <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert {socket:tesla_destination:voltage} Volt"
             },
             "voltage-12": {
                 "mappings": {
@@ -2095,7 +2131,8 @@
                         "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert 400 Volt"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:tesla_destination:voltage} Volt"
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:tesla_destination:voltage} Volt",
+                "question": "Welche Spannung bieten die <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?"
             },
             "voltage-13": {
                 "mappings": {
@@ -2107,14 +2144,17 @@
                 "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert {socket:USB-A:voltage} Volt"
             },
             "voltage-14": {
-                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
+                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> liefert {socket:bosch_3pin:voltage} Volt"
             },
             "voltage-2": {
                 "mappings": {
                     "0": {
                         "then": "<b>Chademo</b> liefert 500 Volt"
                     }
-                }
+                },
+                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> liefert {socket:chademo:voltage} Volt"
             },
             "voltage-3": {
                 "mappings": {
@@ -2124,7 +2164,9 @@
                     "1": {
                         "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert 240 Volt"
                     }
-                }
+                },
+                "render": "<div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefern {socket:type1_cable:voltage} Volt",
+                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?"
             },
             "voltage-4": {
                 "mappings": {
@@ -2134,7 +2176,9 @@
                     "1": {
                         "then": "<b>Typ 1 <i>ohne</i> Kabel</b> (J1772) liefert 240 Volt"
                     }
-                }
+                },
+                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 1 <i>ohne</i> Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefert {socket:type1:voltage} Volt"
             },
             "voltage-5": {
                 "mappings": {
@@ -2144,14 +2188,18 @@
                     "1": {
                         "then": "<b>Typ 1 CCS</b> (Typ 1 Combo) liefert 1000 Volt"
                     }
-                }
+                },
+                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 1 CCS</b> (Typ 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> liefert {socket:type1_combo:voltage} Volt"
             },
             "voltage-6": {
                 "mappings": {
                     "0": {
                         "then": "<b>Tesla Supercharger</b> liefert 480 Volt"
                     }
-                }
+                },
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert {socket:tesla_supercharger:voltage} Volt",
+                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?"
             },
             "voltage-7": {
                 "mappings": {
@@ -2162,7 +2210,8 @@
                         "then": "<b>Typ 2</b> (Mennekes) liefert 400 Volt"
                     }
                 },
-                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?"
+                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> liefert {socket:type2:voltage} Volt"
             },
             "voltage-8": {
                 "mappings": {
@@ -2172,7 +2221,9 @@
                     "1": {
                         "then": "<b>Typ 2 CCS</b> (Mennekes) liefert 920 Volt"
                     }
-                }
+                },
+                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> liefert {socket:type2_combo:voltage} Volt"
             },
             "voltage-9": {
                 "mappings": {
@@ -2182,10 +2233,25 @@
                     "1": {
                         "then": "<b>Typ 2 mit Kabel</b> (Mennekes) liefert 400 Volt"
                     }
-                }
+                },
+                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:type2_cable:voltage} Volt"
             },
             "website": {
-                "render": "Weitere Informationen unter <a href='{website}'>{website}</a>"
+                "render": "Weitere Informationen unter <a href='{website}'>{website}</a>",
+                "question": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?"
+            },
+            "voltage-15": {
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> liefert {socket:bosch_5pin:voltage} Volt",
+                "question": "Welche Spannung liefern die <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?"
+            },
+            "power-output-14": {
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> liefert maximal {socket:bosch_3pin:output}",
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
+            },
+            "power-output-15": {
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> liefert maximal {socket:bosch_5pin:output}",
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?"
             }
         },
         "title": {
@@ -2269,9 +2335,13 @@
                 "mappings": {
                     "0": {
                         "then": "Das Klettern ist hier kostenlos"
+                    },
+                    "1": {
+                        "then": "Zum Klettern ist eine Gebühr zu entrichten"
                     }
                 },
-                "render": "Zum Klettern wird eine Gebühr von {charge} erhoben"
+                "render": "Zum Klettern wird eine Gebühr von {charge} erhoben",
+                "question": "Ist das Klettern hier gebührenpflichtig?"
             },
             "max_difficulty": {
                 "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
@@ -2325,8 +2395,13 @@
             },
             "website": {
                 "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
+            },
+            "max_bolts": {
+                "question": "Wie viele Haken haben die Routen in {title()} maximal?",
+                "render": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>"
             }
-        }
+        },
+        "description": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden"
     },
     "climbing_area": {
         "description": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, ... Enthält eine Sammlung von Routen",
@@ -2515,7 +2590,7 @@
                     }
                 },
                 "question": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
-                "render": "Diese Kletterroute hat {climbing:bolts} Haken"
+                "render": "Diese Route hat {climbing:bolts} Haken <div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>"
             }
         },
         "title": {
@@ -3423,7 +3498,9 @@
                     "0": {
                         "then": "Brandschutzbehörde"
                     }
-                }
+                },
+                "question": "Welche Organisation betreibt diese Station?",
+                "render": "Diese Station wird betrieben von {operator}."
             },
             "station-name": {
                 "question": "Wie ist der Name der Feuerwache?",
@@ -3439,6 +3516,9 @@
                     },
                     "3": {
                         "then": "Die Feuerwache wird von einer privaten Organisation betrieben."
+                    },
+                    "0": {
+                        "then": "Die Station wird von einer Behörde betrieben."
                     }
                 },
                 "question": "Wie kann der Betreiber der Feuerwache eingestuft werden?",
@@ -3447,6 +3527,10 @@
             "station-street": {
                 "question": " In welcher Straße ist die Feuerwache?",
                 "render": "Die Feuerwache liegt an der Straße namens {addr:street}."
+            },
+            "station-place": {
+                "question": "Wo befindet sich die Station? (z. B. Name des Viertels, des Dorfes oder der Stadt)",
+                "render": "Diese Station befindet sich innerhalb von {addr:place}."
             }
         },
         "title": {
@@ -3506,15 +3590,15 @@
                 }
             }
         },
-        "name": "Restaurants und Fast Food",
+        "name": "Restaurants und Imbisse",
         "presets": {
             "0": {
                 "description": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden",
-                "title": "eine restaurant"
+                "title": "ein Restaurant"
             },
             "1": {
                 "description": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
-                "title": "Ein Schnellimbiss"
+                "title": "ein Schnellimbiss"
             },
             "2": {
                 "description": "Eine Pommesbude",
@@ -3576,13 +3660,13 @@
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "Es handelt sich um ein Schnellrestaurant, das sich auf schnelle Bedienung konzentriert. Eventuelle Sitzgelegenheiten sind eher begrenzt und funktional."
+                        "then": "Es handelt sich um einen Schnellimbiss, mit Fokus auf schnelle Bedienung am Tresen. Sitzmöglichkeiten sind begrenzt und funktional."
                     },
                     "1": {
-                        "then": "Es handelt sich um ein <b>Restaurant</b>, das sich darauf konzentriert, ein schönes Erlebnis zu schaffen, bei dem man am Tisch bedient wird"
+                        "then": "Es handelt sich um ein <b>Restaurant</b>, mit Fokus auf eine nette Atmosphäre und Tischbedienung"
                     }
                 },
-                "question": "Um was für ein Geschäft handelt es sich?"
+                "question": "Um was für einen Ort handelt es sich?"
             },
             "Name": {
                 "question": "Wie heißt dieses Restaurant?",
@@ -3591,50 +3675,50 @@
             "Takeaway": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Geschäft bietet nur Artikel zur Mitnahme an"
+                        "then": "Hier werden Gerichte ausschließlich zum Mitnehmen angeboten"
                     },
                     "1": {
-                        "then": "Mitnahme möglich"
+                        "then": "Hier werden Gerichte auch zum Mitnehmen angeboten"
                     },
                     "2": {
-                        "then": "Mitnahme nicht möglich"
+                        "then": "Hier werden Gerichte nicht zum Mitnehmen angeboten"
                     }
                 },
-                "question": "Ist an diesem Ort Mitnahme möglich?"
+                "question": "Werden Gerichte zum Mitnehmen angeboten?"
             },
             "Vegan (no friture)": {
                 "mappings": {
                     "0": {
-                        "then": "Keine veganen Optionen verfügbar"
+                        "then": "Hier werden keine veganen Gerichte angeboten"
                     },
                     "1": {
-                        "then": "Einige vegane Optionen sind verfügbar"
+                        "then": "Hier werden nur wenige vegane Gerichte angeboten"
                     },
                     "2": {
-                        "then": "Vegane Optionen sind verfügbar"
+                        "then": "Hier werden vegane Gerichte angeboten"
                     },
                     "3": {
-                        "then": "Alle Gerichte sind vegan"
+                        "then": "Hier werden ausschließlich vegane Gerichte angeboten"
                     }
                 },
-                "question": "Gibt es in diesem Geschäft auch vegane Gerichte?"
+                "question": "Werden hier vegane Gerichte angeboten?"
             },
             "Vegetarian (no friture)": {
                 "mappings": {
                     "0": {
-                        "then": "Es sind keine vegetarischen Optionen verfügbar"
+                        "then": "Hier werden keine vegetarischen Gerichte angeboten"
                     },
                     "1": {
-                        "then": "Einige vegetarische Optionen sind verfügbar"
+                        "then": "Hier werden nur wenige vegetarische Gerichte angeboten"
                     },
                     "2": {
-                        "then": "Vegetarische Optionen sind verfügbar"
+                        "then": "Hier werden vegetarische Gerichte angeboten"
                     },
                     "3": {
-                        "then": "Alle Gerichte sind vegetarisch"
+                        "then": "Hier werden ausschließlich vegetarische Gerichte angeboten"
                     }
                 },
-                "question": "Gibt es im das Restaurant vegetarische Speisen?"
+                "question": "Werden hier vegetarische Gerichte angeboten?"
             },
             "friture-oil": {
                 "mappings": {
@@ -3692,19 +3776,19 @@
             "halal (no friture)": {
                 "mappings": {
                     "0": {
-                        "then": "Hier gibt es keine halal Speisen"
+                        "then": "Hier werden keine halal Gerichte angeboten"
                     },
                     "1": {
-                        "then": "Hier gibt es wenige halal Speisen"
+                        "then": "Hier werden nur wenige halal Gerichte angeboten"
                     },
                     "2": {
-                        "then": "Es gibt halal Speisen"
+                        "then": "Hier werden halal Gerichte angeboten"
                     },
                     "3": {
-                        "then": "Es gibt ausschließlich halal Speisen"
+                        "then": "Hier werden ausschließlich halal Gerichte angeboten"
                     }
                 },
-                "question": "Gibt es im das Restaurant halal Speisen?"
+                "question": "Werden hier halal Gerichte angeboten?"
             }
         },
         "title": {
@@ -3713,10 +3797,10 @@
                     "then": "Restaurant <i>{name}</i>"
                 },
                 "1": {
-                    "then": "Schnellrestaurant<i>{name}</i>"
+                    "then": "Schnellimbiss <i>{name}</i>"
                 },
                 "2": {
-                    "then": "Schnellrestaurant"
+                    "then": "Schnellimbiss"
                 }
             },
             "render": "Restaurant"
@@ -4614,13 +4698,13 @@
                 }
             }
         },
-        "name": "Recycling",
+        "name": "Recyclingeinrichtungen",
         "presets": {
             "0": {
-                "title": "ein Recyclingcontainer"
+                "title": "einen Recyclingcontainer"
             },
             "1": {
-                "title": "ein Wertstoffhof"
+                "title": "einen Wertstoffhof"
             }
         },
         "tagRenderings": {
@@ -4902,49 +4986,49 @@
         "name": "Sportplätze",
         "presets": {
             "0": {
-                "title": "eine tischtennisplatte"
+                "title": "eine Tischtennisplatte"
             },
             "1": {
-                "title": "eine sportplatz"
+                "title": "einen Sportplatz"
             }
         },
         "tagRenderings": {
             "sport-pitch-access": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlicher Zugang"
+                        "then": "Der Sportplatz ist öffentlich zugänglich"
                     },
                     "1": {
-                        "then": "Eingeschränkter Zugang (z. B. nur mit Termin, zu bestimmten Zeiten, ...)"
+                        "then": "Der Sportplatz ist nur eingeschränkt zugänglich (z. B. nur mit Termin, nur zu bestimmten Zeiten, ...)"
                     },
                     "2": {
-                        "then": "Zugang nur für Vereinsmitglieder"
+                        "then": "Der Sportplatz ist nur für Vereinsmitglieder zugänglich"
                     },
                     "3": {
-                        "then": "Privat - kein öffentlicher Zugang"
+                        "then": "Der Sportplatz ist nicht öffentlich zugänglich (es ist ein privater Sportplatz)"
                     }
                 },
-                "question": "Ist dieser Sportplatz öffentlich zugänglich?"
+                "question": "Ist der Sportplatz öffentlich zugänglich?"
             },
             "sport-pitch-reservation": {
                 "mappings": {
                     "0": {
-                        "then": "Für die Nutzung des Sportplatzes ist eine Voranmeldung erforderlich"
+                        "then": "Eine Voranmeldung zur Nutzung des Sportplatzes ist erforderlich"
                     },
                     "1": {
-                        "then": "Für die Nutzung des Sportplatzes wird eine Voranmeldung empfohlen"
+                        "then": "Eine Voranmeldung zur Nutzung des Sportplatzes wird empfohlen"
                     },
                     "2": {
-                        "then": "Eine Voranmeldung ist möglich, aber nicht notwendig, um diesen Sportplatz zu nutzen"
+                        "then": "Eine Voranmeldung zur Nutzung des Sportplatzes ist möglich, aber nicht erforderlich"
                     },
                     "3": {
-                        "then": "Termine nach Vereinbarung nicht möglich"
+                        "then": "Eine Voranmeldung zur Nutzung des Sportplatzes ist nicht möglich"
                     }
                 },
-                "question": "Muss man einen Termin vereinbaren, um diesen Sportplatz zu benutzen?"
+                "question": "Muss man einen Termin vereinbaren, um den Sportplatz nutzen zu dürfen?"
             },
             "sport_pitch-email": {
-                "question": "Wie ist die Email-Adresse des Betreibers?"
+                "question": "Wie lautet die Email-Adresse des Betreibers?"
             },
             "sport_pitch-opening_hours": {
                 "mappings": {
@@ -4955,7 +5039,7 @@
                 "question": "Wann ist dieser Sportplatz zugänglich?"
             },
             "sport_pitch-phone": {
-                "question": "Wie ist die Telefonnummer des Betreibers?"
+                "question": "Wie lautet die Telefonnummer des Betreibers?"
             },
             "sport_pitch-sport": {
                 "mappings": {
@@ -4984,23 +5068,23 @@
             "sport_pitch-surface": {
                 "mappings": {
                     "0": {
-                        "then": "Die Oberfläche ist <b>Gras</b>"
+                        "then": "Der Belag ist aus <b>Gras</b>"
                     },
                     "1": {
-                        "then": "Die Oberfläche ist <b>Sand</b>"
+                        "then": "Der Belag ist aus <b>Sand</b>"
                     },
                     "2": {
-                        "then": "Die Oberfläche ist aus <b>Pflastersteinen</b>"
+                        "then": "Der Belag ist aus <b>Pflastersteinen</b>"
                     },
                     "3": {
-                        "then": "Die Oberfläche ist <b>Asphalt</b>"
+                        "then": "Der Belag ist aus <b>Asphalt</b>"
                     },
                     "4": {
-                        "then": "Die Oberfläche ist <b>Beton</b>"
+                        "then": "Der Belag ist aus <b>Beton</b>"
                     }
                 },
-                "question": "Was ist die Oberfläche dieses Sportplatzes?",
-                "render": "Die Oberfläche ist <b>{surface}</b>"
+                "question": "Welchen Belag hat der Sportplatz?",
+                "render": "Der Belag ist <b>{surface}</b>"
             }
         },
         "title": {
@@ -5706,23 +5790,23 @@
         "name": "Abfalleimer",
         "presets": {
             "0": {
-                "title": "eine abfalleimer"
+                "title": "einen Abfalleimer"
             }
         },
         "tagRenderings": {
             "dispensing_dog_bags": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Abfalleimer verfügt über einen Spender für (Hunde-)Kotbeutel"
+                        "then": "Der Abfalleimer hat einen Spender für (Hunde-)Kotbeutel"
                     },
                     "1": {
-                        "then": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
+                        "then": "Der Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     },
                     "2": {
                         "then": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
                     }
                 },
-                "question": "Verfügt dieser Abfalleimer über einen Spender für (Hunde-)Kotbeutel?"
+                "question": "Hat der Abfalleimer einen Spender für (Hunde-)Kotbeutel?"
             },
             "waste-basket-waste-types": {
                 "mappings": {
@@ -5730,22 +5814,22 @@
                         "then": "Ein Abfalleimer für allgemeinen Müll"
                     },
                     "1": {
-                        "then": "Ein Abfalleimer für allgemeinen Müll"
+                        "then": "Der Abfalleimer ist für allgemeinen Restmüll"
                     },
                     "2": {
-                        "then": "Ein Abfalleimer für Hundekot"
+                        "then": "Der Abfalleimer ist für Hundekot"
                     },
                     "3": {
-                        "then": "Mülleimer für Zigaretten"
+                        "then": "Der Abfalleimer ist für Zigaretten"
                     },
                     "4": {
-                        "then": "Mülleimer für Drogen"
+                        "then": "Der Abfalleimer ist für Drogen"
                     },
                     "5": {
-                        "then": "Ein Abfalleimer für Nadeln und andere scharfe Gegenstände"
+                        "then": "Der Abfalleimer ist für Nadeln und andere scharfe Gegenstände"
                     },
                     "6": {
-                        "then": "Ein Abfalleimer für Plastik"
+                        "then": "Der Abfalleimer ist für Plastik"
                     }
                 },
                 "question": "Um was für einen Abfalleimer handelt es sich?"
@@ -5761,51 +5845,51 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Nur öffentlich zugänglich"
+                        "question": "Nur öffentliche Mülltonnen"
                     }
                 }
             }
         },
-        "name": "Mülleimer",
+        "name": "Mülltonnen",
         "presets": {
             "0": {
                 "description": "Mittlere bis große Mülltonne für die Entsorgung von (Haushalts-)Abfällen",
-                "title": "ein Abfalleimer"
+                "title": "eine Mülltonne"
             }
         },
         "tagRenderings": {
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Behälter kann von jedem benutzt werden"
+                        "then": "Jeder darf die Mülltonne nutzen"
                     },
                     "1": {
-                        "then": "Dieser Behälter ist privat"
+                        "then": "Niemand darf die Mülltonne nutzen (privat)"
                     },
                     "2": {
-                        "then": "Diese Mülltonne ist nur für Anwohner"
+                        "then": "Nur Anwohner dürfen die Mülltonne nutzen"
                     }
                 },
-                "question": "Wer kann diese Mülltonne benutzen?",
+                "question": "Wer darf die Mülltonne nutzen?",
                 "render": "Zugang: {access}"
             },
             "disposal-location": {
                 "mappings": {
                     "0": {
-                        "then": "Dies ist ein unterirdischer Container"
+                        "then": "Die Mülltonne befindet sich unter der Erde"
                     },
                     "1": {
-                        "then": "Dieser Container befindet sich in einem Gebäude"
+                        "then": "Die Mülltonne befindet sich in einem Gebäude"
                     },
                     "2": {
-                        "then": "Dieser Container befindet sich im Freien"
+                        "then": "Die Mülltonne befindet sich im Freien"
                     }
                 },
-                "question": "Wo befindet sich dieser Container?"
+                "question": "Wo befindet sich die Mülltonne?"
             }
         },
         "title": {
-            "render": "Abfallentsorgung"
+            "render": "Mülltonne"
         }
     },
     "watermill": {
