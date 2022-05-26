@@ -410,7 +410,7 @@
             },
             "bicycle_library-name": {
                 "question": "¿Cuál es el nombre de esta biblioteca de bicicletas?",
-                "render": "Esta biblioteca de bicicletas se llama  {name}."
+                "render": "Esta biblioteca de bicicletas se llama  {name}"
             }
         },
         "title": {
