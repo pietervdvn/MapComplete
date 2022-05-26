@@ -414,8 +414,8 @@ export default class TagRenderingConfig {
         return applicableMappings
     }
 
-    public GetRenderValue(tags: any, defltValue: any = undefined): TypedTranslation<any> {
-        return this.GetRenderValueWithImage(tags, defltValue).then
+    public GetRenderValue(tags: any, defltValue: any = undefined): TypedTranslation<any> | undefined {
+        return this.GetRenderValueWithImage(tags, defltValue)?.then
     }
 
     /**
@@ -423,7 +423,13 @@ export default class TagRenderingConfig {
      * Not compatible with multiAnswer - use GetRenderValueS instead in that case
      * @constructor
      */
-    public GetRenderValueWithImage(tags: any, defltValue: any = undefined): { then: TypedTranslation<any>, icon?: string } {
+    public GetRenderValueWithImage(tags: any, defltValue: any = undefined): { then: TypedTranslation<any>, icon?: string } | undefined {
+        if(this.condition !== undefined){
+            if(!this.condition.matchesProperties(tags)){
+                return undefined
+            }
+        }
+        
         if (this.mappings !== undefined && !this.multiAnswer) {
             for (const mapping of this.mappings) {
                 if (mapping.if === undefined) {

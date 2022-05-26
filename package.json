@@ -16,7 +16,7 @@
     "test:run-only": "mocha --require ts-node/register --require test/testhooks.ts \"./**/*.doctest.ts\" \"test/*\" \"test/**/*.ts\"",
     "test": "(npm run generate:doctests 2>&1 | grep -v \"No doctests found in\") && npm run test:run-only && npm run clean:tests",
     "init": "npm ci && npm run generate && npm run generate:editor-layer-index && npm run generate:layouts && npm run clean",
-     "generate:editor-layer-index": "ts-node scripts/downloadFile.ts https://osmlab.github.io/editor-layer-index/imagery.geojson assets/editor-layer-index.json",
+    "generate:editor-layer-index": "ts-node scripts/downloadFile.ts https://osmlab.github.io/editor-layer-index/imagery.geojson assets/editor-layer-index.json",
     "generate:polygon-features": "ts-node scripts/downloadFile.ts  https://raw.githubusercontent.com/tyrasd/osm-polygon-features/master/polygon-features.json assets/polygon-features.json",
     "generate:images": "ts-node scripts/generateIncludedImages.ts",
     "generate:translations": "ts-node scripts/generateTranslations.ts",
@@ -57,7 +57,7 @@
   "license": "GPL",
   "dependencies": {
     "@babel/preset-env": "7.13.8",
-    "@parcel/service-worker": "^2.5.0",
+    "@parcel/service-worker": "^2.6.0",
     "@turf/buffer": "^6.5.0",
     "@turf/collect": "^6.5.0",
     "@turf/distance": "^6.5.0",

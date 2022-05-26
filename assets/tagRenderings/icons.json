@@ -11,7 +11,7 @@
     "override": {}
   },
   "wikipedialink": {
-    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>",
+    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' textmode='\uD83D\uDCD6' alt='Wikipedia'/></a>",
     "condition": {
       "or": [
         "wikipedia~*",
@@ -59,15 +59,15 @@
     ]
   },
   "phonelink": {
-    "render": "<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>",
+    "render": "<a href='tel:{phone}'><img textmode='\uD83D\uDCDE' alt='phone' src='./assets/svg/phone.svg'/></a>",
     "condition": "phone~*"
   },
   "emaillink": {
-    "render": "<a href='mailto:{email}'><img src='./assets/svg/send_email.svg'/></a>",
+    "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/svg/send_email.svg'/></a>",
     "condition": "email~*"
   },
   "osmlink": {
-    "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>",
+    "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img alt='on osm' textmode='\uD83D\uDDFA️' src='./assets/svg/osm-logo-us.svg'/></a>",
     "mappings": [
       {
         "if": "id~.*/-.*",
