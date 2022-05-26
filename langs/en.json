@@ -625,7 +625,7 @@
         "splitTitle": "Choose on the map where to split this road"
     },
     "translations": {
-        "activateButton": "Help to translate MapComplete",
+        "activateButton": "Help translate MapComplete",
         "allMissing": "No translations yet",
         "completeness": "Translations for {theme} in {language} are at {percentage}%: {translated} strings out of {total} are translated",
         "deactivate": "Disable translation buttons",
