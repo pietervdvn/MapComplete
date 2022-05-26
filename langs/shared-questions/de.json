@@ -97,7 +97,7 @@
         "wheelchair-access": {
             "mappings": {
                 "0": {
-                    "then": "Der Ort ist rollstuhlgerecht gestaltet"
+                    "then": "Der Ort ist speziell für Rollstuhlfahrer gestaltet"
                 },
                 "1": {
                     "then": "Der Ort ist rollstuhlzugänglich gestaltet"
