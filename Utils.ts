@@ -9,7 +9,7 @@ export class Utils {
      */
     public static runningFromConsole = typeof window === "undefined";
     public static readonly assets_path = "./assets/svg/";
-    public static externalDownloadFunction: (url: string, headers?: any) => Promise<any>;
+    public static externalDownloadFunction: (url: string, headers?: any) => Promise<{ content: string } | { redirect: string }>;
     public static Special_visualizations_tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
 This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
 
@@ -517,17 +517,17 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON.
      * Returns a modified copy of the original object.
-     * 
+     *
      * 'null' and 'undefined' are _always_ considered a leaf, even if 'isLeaf' says it isn't
-     * 
+     *
      * Hangs if the object contains a loop
-     * 
+     *
      * // should walk a json
      * const walked = Utils.WalkJson({
      *     key: "value"
      * }, (x: string) => x + "!")
      * walked // => {key: "value!"}
-     * 
+     *
      * // should preserve undefined and null:
      * const walked = Utils.WalkJson({
      *   u: undefined,
@@ -535,7 +535,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *   v: "value"
      * }, (x) => {if(x !== undefined && x !== null){return x+"!}; return x})
      * walked // => {v: "value!", u: undefined, n: null}
-     * 
+     *
      * // should preserve undefined and null, also with a negative isLeaf:
      * const walked = Utils.WalkJson({
      *   u: undefined,
@@ -561,8 +561,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return f(json, path)
         }
         if (Array.isArray(json)) {
-            return json.map((sub,i) => {
-                return Utils.WalkJson(sub, f, isLeaf, [...path,""+i]);
+            return json.map((sub, i) => {
+                return Utils.WalkJson(sub, f, isLeaf, [...path, "" + i]);
             })
         }
 
@@ -575,7 +575,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     /**
      * Walks an object recursively, will execute the 'collect'-callback on every leaf.
-     * 
+     *
      * Will hang on objects with loops
      */
     static WalkObject(json: any, collect: (v: number | string | boolean | undefined, path: string[]) => any, isLeaf: (object) => boolean = undefined, path = []): void {
@@ -664,7 +664,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         Utils.injectedDownloads[url] = data
     }
 
-    public static download(url: string, headers?: any): Promise<string> {
+    public static async download(url: string, headers?: any): Promise<string | undefined> {
+        return (await Utils.downloadAdvanced(url, headers))["content"]
+    }
+
+    /**
+     * Download function which also indicates advanced options, such as redirects
+     * @param url
+     * @param headers
+     */
+    public static downloadAdvanced(url: string, headers?: any): Promise<{ content: string } | { redirect: string }> {
         if (this.externalDownloadFunction !== undefined) {
             return this.externalDownloadFunction(url, headers)
         }
@@ -673,7 +682,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 const xhr = new XMLHttpRequest();
                 xhr.onload = () => {
                     if (xhr.status == 200) {
-                        resolve(xhr.response)
+                        resolve({content: xhr.response})
+                    } else if (xhr.status === 302) {
+                        resolve({redirect: xhr.getResponseHeader("location")})
                     } else if (xhr.status === 509 || xhr.status === 429) {
                         reject("rate limited")
                     } else {
@@ -682,7 +693,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 };
                 xhr.open('GET', url);
                 if (headers !== undefined) {
-
                     for (const key in headers) {
                         xhr.setRequestHeader(key, headers[key])
                     }

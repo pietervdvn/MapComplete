@@ -5,10 +5,11 @@ import * as https from "https";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import xml2js from 'xml2js';
+
 export default class ScriptUtils {
 
     public static fixUtils() {
-        Utils.externalDownloadFunction = ScriptUtils.DownloadJSON
+        Utils.externalDownloadFunction = ScriptUtils.Download
     }
 
 
@@ -44,8 +45,13 @@ export default class ScriptUtils {
 
         })
     }
+    
+    private static async DownloadJSON(url: string, headers?: any): Promise<any>{
+        const data = await ScriptUtils.Download(url, headers);
+        return JSON.parse(data.content)
+    }
 
-    private static DownloadJSON(url, headers?: any): Promise<any> {
+    private static Download(url, headers?: any): Promise<{content: string}> {
         return new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}
@@ -67,13 +73,7 @@ export default class ScriptUtils {
                     });
 
                     res.addListener('end', function () {
-                        const result = parts.join("")
-                        try {
-                            resolve(JSON.parse(result))
-                        } catch (e) {
-                            console.error("Could not parse the following as JSON:", result)
-                            reject(e)
-                        }
+                        resolve({content: parts.join("")})
                     });
                 })
             } catch (e) {
