@@ -943,7 +943,7 @@
         "title": "Bäume"
     },
     "waste": {
-        "description": "Die Karte zeigt Abfalleimer und Recyclinganlagen.",
+        "description": "Eine Karte mit Abfalleimern und Recyclingeinrichtungen.",
         "title": "Abfall"
     },
     "waste_basket": {

@@ -6,19 +6,19 @@
         "dog-access": {
             "mappings": {
                 "0": {
-                    "then": "Hunde sind erlaubt"
+                    "then": "Hunde sind hier erlaubt"
                 },
                 "1": {
-                    "then": "Hunde sind <b>nicht</b> erlaubt"
+                    "then": "Hunde sind hier <b>nicht</b> erlaubt"
                 },
                 "2": {
-                    "then": "Hunde sind erlaubt, müssen aber angeleint sein"
+                    "then": "Hunde sind hier erlaubt, müssen aber angeleint sein"
                 },
                 "3": {
-                    "then": "Hunde sind erlaubt und können frei herumlaufen"
+                    "then": "Hunde sind hier erlaubt und können frei herumlaufen"
                 }
             },
-            "question": "Sind Hunde in diesem Geschäft erlaubt?"
+            "question": "Sind Hunde hier erlaubt?"
         },
         "email": {
             "question": "Wie lautet die Mail-Adresse von {title()}?"
@@ -77,19 +77,19 @@
         "service:electricity": {
             "mappings": {
                 "0": {
-                    "then": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
+                    "then": "Im Innenraum stehen viele Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können"
                 },
                 "1": {
-                    "then": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
+                    "then": "Im Innenraum stehen nur wenige Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können"
                 },
                 "2": {
-                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird"
+                    "then": "Im Innenraum stehen keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird"
                 },
                 "3": {
-                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung"
+                    "then": "Im Innenraum stehen keine Steckdosen für Kunden zur Verfügung"
                 }
             },
-            "question": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?"
+            "question": "Gibt es hier Steckdosen, an denen Kunden ihre Geräte laden können?"
         },
         "website": {
             "question": "Wie lautet die Webseite von {title()}?"

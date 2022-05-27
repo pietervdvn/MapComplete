@@ -362,8 +362,8 @@
             "userAccountTitle": "Select user account"
         },
         "mapPreview": {
-            "autodetected": "The layer was automatically deducted based on the properties",
-            "confirm": "The features are on the right location on the map",
+            "autodetected": "The layer was automatically deducted based on its properties",
+            "confirm": "The features are on the correct location on the map",
             "mismatch": "{count} features did not match the selected layer. Make sure that the tags to indicate the type are present, namely {tags}",
             "selectLayer": "Which layer does this import match with?",
             "title": "Map preview"
