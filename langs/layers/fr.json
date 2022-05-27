@@ -2325,7 +2325,7 @@
                         "then": "Une zone intérieure privée est surveillée, par exemple un magasin, un parking souterrain privé…"
                     }
                 },
-                "question": "Quel genre de surveillance est cette caméra"
+                "question": "Quel genre de surveillance est cette caméra?"
             },
             "Surveillance:zone": {
                 "mappings": {
