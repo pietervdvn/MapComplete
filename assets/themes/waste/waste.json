@@ -12,7 +12,7 @@
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",
     "nl": "Kaart met afvalbakken en recyclingfaciliteiten.",
-    "de": "Die Karte zeigt Abfalleimer und Recyclinganlagen."
+    "de": "Eine Karte mit Abfalleimern und Recyclingeinrichtungen."
   },
   "icon": "./assets/layers/recycling/recycling-14.svg",
   "startZoom": 19,

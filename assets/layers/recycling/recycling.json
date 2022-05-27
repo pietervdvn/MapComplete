@@ -3,7 +3,7 @@
   "name": {
     "en": "Recycling",
     "nl": "Recycling",
-    "de": "Recycling",
+    "de": "Recyclingeinrichtungen",
     "ca": "Residus"
   },
   "description": {
@@ -416,7 +416,7 @@
       "title": {
         "en": "a recycling container",
         "nl": "een recycling container",
-        "de": "ein Recyclingcontainer"
+        "de": "einen Recyclingcontainer"
       },
       "tags": [
         "amenity=recycling",
@@ -427,7 +427,7 @@
       "title": {
         "en": "a recycling centre",
         "nl": "een containerpark (recycling center)",
-        "de": "ein Wertstoffhof"
+        "de": "einen Wertstoffhof"
       },
       "tags": [
         "amenity=recycling",
@@ -466,7 +466,7 @@
           "then": {
             "en": "Waste disposal container for residual waste",
             "nl": "Afvalcontainer voor restafval",
-            "de": "Dies ist ein Abfallcontainer für Restmüll"
+            "de": "Dies ist ein Abfallbehälter für Restmüll"
           },
           "addExtraTags": [
             "recycling:batteries=",
@@ -550,7 +550,7 @@
           "then": {
             "en": "This container is located outdoors",
             "nl": "Deze container is buiten",
-            "de": "Dieser Container befindet sich im Freien"
+            "de": "Der Container befindet sich im Freien"
           }
         }
       ]

@@ -725,7 +725,7 @@
             "it": "una luogo di campeggio",
             "fr": "une aire de camping",
             "pt_BR": "uma local de acampamento",
-            "de": "eine wohnmobilstellplatz",
+            "de": "ein Wohnmobilstellplatz",
             "nl": "een camperplaats",
             "hu": "lakóautós megállóhely",
             "ca": "un lloc d'acampada",
@@ -946,7 +946,7 @@
             "it": "Questo luogo ha un punto per l'approvvigionamento di acqua?",
             "fr": "Ce site dispose-t’il d’un point d’eau ?",
             "pt_BR": "Este lugar tem um ponto de água?",
-            "de": "Hat dieser Ort eine Wasserstelle?",
+            "de": "Hat dieser Ort eine Wasserzapfstelle?",
             "zh_Hant": "這個地方有取水點嗎？",
             "nl": "Heeft deze loosplaats een waterkraan om je camper bij te vullen?"
           },
@@ -964,7 +964,7 @@
                 "it": "Questo luogo ha un punto per l'approvvigionamento di acqua",
                 "fr": "Ce site a un point d’eau",
                 "pt_BR": "Este lugar tem um ponto de água",
-                "de": "Dieser Ort hat eine Wasserstelle",
+                "de": "Dieser Ort hat eine Wasserzapfstelle",
                 "zh_Hant": "這個地方有取水點",
                 "nl": "Deze loosplaats heeft een waterkraan om je camper bij te vullen"
               }
@@ -982,7 +982,7 @@
                 "it": "Questo luogo non ha un punto per l'approvvigionamento di acqua",
                 "fr": "Ce site n’a pas de point d’eau",
                 "pt_BR": "Este lugar não tem um ponto de água",
-                "de": "Dieser Ort hat keine Wasserstelle",
+                "de": "Dieser Ort hat keine Wasserzapfstelle",
                 "zh_Hant": "這個地方沒有取水點",
                 "nl": "Deze loosplaats heeft geen waterkraan om je camper bij te vullen"
               }
@@ -1209,7 +1209,7 @@
             "ja": "衛生ゴミ捨て場",
             "it": "una luogo di sversamento delle acque reflue",
             "fr": "une site de vidange",
-            "de": "eine sanitäre entsorgungsstation",
+            "de": "eine sanitäre Entsorgungsstation",
             "zh_Hant": "垃圾丟棄站",
             "nl": "een loosplaats"
           },

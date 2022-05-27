@@ -6,14 +6,16 @@
     "de": "Kreuzungen",
     "fr": "Traversée",
     "ca": "Encreuaments",
-    "da": "Overgange"
+    "da": "Overgange",
+    "es": "Cruces"
   },
   "description": {
     "en": "Crossings for pedestrians and cyclists",
     "nl": "Oversteekplaatsen voor voetgangers en fietsers",
     "de": "Übergänge für Fußgänger und Radfahrer",
     "fr": "Traversée pour piétons et cyclistes",
-    "da": "Overgange for fodgængere og cyklister"
+    "da": "Overgange for fodgængere og cyklister",
+    "es": "Cruces para peatones y ciclistas"
   },
   "source": {
     "osmTags": {
@@ -30,7 +32,8 @@
       "nl": "Oversteekplaats",
       "de": "Kreuzung",
       "fr": "Traversée",
-      "ca": "Encreuament"
+      "ca": "Encreuament",
+      "es": "Cruce"
     },
     "mappings": [
       {
@@ -41,7 +44,8 @@
           "ru": "Светофор",
           "de": "Ampel",
           "fr": "Feu de signalisation",
-          "ca": "Semàfor"
+          "ca": "Semàfor",
+          "es": "Señal de tráfico"
         }
       },
       {
@@ -50,7 +54,8 @@
           "en": "Crossing with traffic signals",
           "nl": "Oversteektplaats met verkeerslichten",
           "de": "Kreuzung mit Ampeln",
-          "fr": "Traversée avec feu de signalisation"
+          "fr": "Traversée avec feu de signalisation",
+          "es": "Cruce con señales de tráfico"
         }
       }
     ]
@@ -63,7 +68,8 @@
         "de": "eine kreuzung",
         "fr": "une traversée",
         "ca": "un pas de vianants",
-        "da": "en overgang"
+        "da": "en overgang",
+        "es": "un cruce"
       },
       "tags": [
         "highway=crossing"
@@ -73,7 +79,8 @@
         "nl": "Oversteekplaats voor voetgangers en/of fietsers",
         "de": "Kreuzung für Fußgänger und/oder Radfahrer",
         "fr": "Traversée pour piétons et/ou cyclistes",
-        "da": "Overgang for fodgængere og/eller cyklister"
+        "da": "Overgang for fodgængere og/eller cyklister",
+        "es": "Cruce para peatones y/o ciclistas"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -90,7 +97,8 @@
         "ru": "Светофор",
         "de": "eine ampel",
         "fr": "une feu de signalisation",
-        "da": "et trafiksignal"
+        "da": "et trafiksignal",
+        "es": "una señal de tráfico"
       },
       "tags": [
         "highway=traffic_signals"
@@ -100,7 +108,8 @@
         "nl": "Verkeerslicht op een weg",
         "de": "Ampel an einer Straße",
         "fr": "Feu de signalisation sur la voie",
-        "da": "Trafiksignal på en vej"
+        "da": "Trafiksignal på en vej",
+        "es": "Señal de tráfico en una carretera"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -117,7 +126,8 @@
       "question": {
         "en": "What kind of crossing is this?",
         "nl": "Wat voor oversteekplaats is dit?",
-        "de": "Was ist das für eine Kreuzung?"
+        "de": "Was ist das für eine Kreuzung?",
+        "es": "¿Qué tipo de cruce es este?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -126,7 +136,8 @@
           "then": {
             "en": "Crossing, without traffic lights",
             "nl": "Oversteekplaats, zonder verkeerslichten",
-            "de": "Kreuzungen ohne Ampeln"
+            "de": "Kreuzungen ohne Ampeln",
+            "es": "Cruce, sin semáforos"
           }
         },
         {
@@ -134,7 +145,8 @@
           "then": {
             "en": "Crossing with traffic signals",
             "nl": "Oversteekplaats met verkeerslichten",
-            "de": "Kreuzungen mit Ampeln"
+            "de": "Kreuzungen mit Ampeln",
+            "es": "Cruce con señales de tráfico"
           }
         },
         {
@@ -143,7 +155,8 @@
             "en": "Zebra crossing",
             "nl": "Zebrapad",
             "de": "Zebrastreifen",
-            "ca": "Pas de zebra"
+            "ca": "Pas de zebra",
+            "es": "Paso de cebra"
           },
           "hideInAnswer": true
         },
@@ -162,7 +175,8 @@
       "question": {
         "en": "Is this is a zebra crossing?",
         "nl": "Is dit een zebrapad?",
-        "de": "Ist das ein Zebrastreifen?"
+        "de": "Ist das ein Zebrastreifen?",
+        "es": "¿Esto es un paso de cebra?"
       },
       "condition": "crossing=uncontrolled",
       "mappings": [
@@ -171,7 +185,8 @@
           "then": {
             "en": "This is a zebra crossing",
             "nl": "Dit is een zebrapad",
-            "de": "Dies ist ein Zebrastreifen"
+            "de": "Dies ist ein Zebrastreifen",
+            "es": "Esto es un paso de cebra"
           }
         },
         {
@@ -179,7 +194,8 @@
           "then": {
             "en": "This is not a zebra crossing",
             "nl": "Dit is geen zebrapad",
-            "de": "Dies ist kein Zebrastreifen"
+            "de": "Dies ist kein Zebrastreifen",
+            "es": "Esto no es un paso de cebra"
           }
         }
       ]
@@ -190,7 +206,8 @@
         "en": "Is this crossing also for bicycles?",
         "nl": "Is deze oversteekplaats ook voor fietsers",
         "de": "Können Radfahrer diese Kreuzung nutzen?",
-        "da": "Er denne overgang også for cykler?"
+        "da": "Er denne overgang også for cykler?",
+        "es": "¿Este cruce también es para ciclistas?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -200,7 +217,8 @@
             "en": "A cyclist can use this crossing",
             "nl": "Een fietser kan deze oversteekplaats gebruiken",
             "de": "Radfahrer können diese Kreuzung nutzen",
-            "da": "En cyklist kan benytte denne overgang"
+            "da": "En cyklist kan benytte denne overgang",
+            "es": "Un ciclista puede utilizar este cruce"
           }
         },
         {
@@ -209,7 +227,8 @@
             "en": "A cyclist can not use this crossing",
             "nl": "Een fietser kan deze oversteekplaats niet gebruiken",
             "de": "Radfahrer können diese Kreuzung nicht nutzen",
-            "da": "En cyklist kan ikke benytte denne overgang"
+            "da": "En cyklist kan ikke benytte denne overgang",
+            "es": "Un ciclista no puede utilizar este cruce"
           }
         }
       ]
@@ -219,7 +238,8 @@
       "question": {
         "en": "Does this crossing have an island in the middle?",
         "nl": "Heeft deze oversteekplaats een verkeerseiland in het midden?",
-        "de": "Gibt es an diesem Übergang eine Verkehrsinsel?"
+        "de": "Gibt es an diesem Übergang eine Verkehrsinsel?",
+        "es": "¿Tiene una isla en el medio este cruce?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -228,7 +248,8 @@
           "then": {
             "en": "This crossing has an island in the middle",
             "nl": "Deze oversteekplaats heeft een verkeerseiland in het midden",
-            "de": "Der Übergang hat eine Verkehrsinsel"
+            "de": "Der Übergang hat eine Verkehrsinsel",
+            "es": "Este cruce tiene una isla en el medio"
           }
         },
         {
@@ -236,7 +257,8 @@
           "then": {
             "en": "This crossing does not have an island in the middle",
             "nl": "Deze oversteekplaats heeft geen verkeerseiland in het midden",
-            "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
+            "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern",
+            "es": "Este cruce no tiene una isla en el medio"
           }
         }
       ]
@@ -246,7 +268,8 @@
       "question": {
         "en": "Does this crossing have tactile paving?",
         "nl": "Heeft deze oversteekplaats een geleidelijn?",
-        "de": "Gibt es an dieser Kreuzung ein Blindenleitsystem?"
+        "de": "Gibt es an dieser Kreuzung ein Blindenleitsystem?",
+        "es": "¿Tiene pavimento táctil este cruce?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -255,7 +278,8 @@
           "then": {
             "en": "This crossing has tactile paving",
             "nl": "Deze oversteekplaats heeft een geleidelijn",
-            "de": "An dieser Kreuzung gibt es ein Blindenleitsystem"
+            "de": "An dieser Kreuzung gibt es ein Blindenleitsystem",
+            "es": "Este cruce tiene pavimento táctil"
           }
         },
         {
@@ -263,7 +287,8 @@
           "then": {
             "en": "This crossing does not have tactile paving",
             "nl": "Deze oversteekplaats heeft geen geleidelijn",
-            "de": "Diese Kreuzung hat kein Blindenleitsystem"
+            "de": "Diese Kreuzung hat kein Blindenleitsystem",
+            "es": "Este cruce no tiene pavimento táctil"
           }
         },
         {
@@ -271,7 +296,8 @@
           "then": {
             "en": "This crossing has tactile paving, but is not correct",
             "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is.",
-            "de": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt"
+            "de": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt",
+            "es": "Este cruce tiene pavimento táctil, pero no es correcto"
           },
           "hideInAnswer": true
         }
@@ -282,7 +308,8 @@
       "question": {
         "en": "Does this traffic light have a button to request green light?",
         "nl": "Heeft dit verkeerslicht een knop voor groen licht?",
-        "de": "Hat diese Ampel eine Taste, um ein grünes Signal anzufordern?"
+        "de": "Hat diese Ampel eine Taste, um ein grünes Signal anzufordern?",
+        "es": "¿Este semáforo tiene un botón para pedir luz verde?"
       },
       "condition": {
         "or": [
@@ -296,7 +323,8 @@
           "then": {
             "en": "This traffic light has a button to request green light",
             "nl": "Dit verkeerslicht heeft een knop voor groen licht",
-            "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern"
+            "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern",
+            "es": "Este semáforo tiene un botón para pedir luz verde"
           }
         },
         {
@@ -304,7 +332,8 @@
           "then": {
             "en": "This traffic light does not have a button to request green light",
             "nl": "Dit verkeerlicht heeft geen knop voor groen licht",
-            "de": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern"
+            "de": "Diese Ampel hat keine Taste, um ein grünes Signal anzufordern",
+            "es": "Este semáforo no tiene un botón para pedir luz verde"
           }
         }
       ]
@@ -314,7 +343,8 @@
       "question": {
         "en": "Can a cyclist turn right when the light is red?",
         "nl": "Mag een fietser rechtsaf slaan als het licht rood is?",
-        "de": "Kann ein Radfahrer bei roter Ampel rechts abbiegen?"
+        "de": "Kann ein Radfahrer bei roter Ampel rechts abbiegen?",
+        "es": "¿Puede girar a la derecha un ciclista cuando la luz está roja?"
       },
       "condition": "highway=traffic_signals",
       "mappings": [
@@ -323,7 +353,8 @@
           "then": {
             "en": "A cyclist can turn right if the light is red",
             "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
+            "de": "Ein Radfahrer kann bei roter Ampel rechts abbiegen",
+            "es": "Un ciclista puede girar a la derecha si la luz está roja"
           },
           "hideInAnswer": "_country!=be",
           "icon": {
@@ -336,7 +367,8 @@
           "then": {
             "en": "A cyclist can turn right if the light is red",
             "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel rechts abbiegen"
+            "de": "Ein Radfahrer kann bei roter Ampel rechts abbiegen",
+            "es": "Un ciclista puede girar a la derecha si la luz está roja"
           },
           "hideInAnswer": "_country=be"
         },
@@ -345,7 +377,8 @@
           "then": {
             "en": "A cyclist can not turn right if the light is red",
             "nl": "Een fietser mag niet rechtsaf slaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel nicht rechts abbiegen"
+            "de": "Ein Radfahrer kann bei roter Ampel nicht rechts abbiegen",
+            "es": "Un ciclista no puede girar a la derecha si la luz está roja"
           }
         }
       ]
@@ -355,7 +388,8 @@
       "question": {
         "en": "Can a cyclist go straight on when the light is red?",
         "nl": "Mag een fietser rechtdoor gaan als het licht rood is?",
-        "de": "Kann ein Radfahrer bei roter Ampel geradeaus fahren?"
+        "de": "Kann ein Radfahrer bei roter Ampel geradeaus fahren?",
+        "es": "¿Puede ir de frente un ciclista cuando la luz está roja?"
       },
       "condition": "highway=traffic_signals",
       "mappings": [
@@ -364,7 +398,8 @@
           "then": {
             "en": "A cyclist can go straight on if the light is red",
             "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
+            "de": "Ein Radfahrer kann bei roter Ampel geradeaus fahren",
+            "es": "Un ciclista puede ir de frente si la luz está roja"
           },
           "hideInAnswer": "_country!=be",
           "icon": {
@@ -377,7 +412,8 @@
           "then": {
             "en": "A cyclist can go straight on if the light is red",
             "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel geradeaus fahren"
+            "de": "Ein Radfahrer kann bei roter Ampel geradeaus fahren",
+            "es": "Un ciclista puede ir de frente si la luz está roja"
           },
           "hideInAnswer": "_country=be"
         },
@@ -386,7 +422,8 @@
           "then": {
             "en": "A cyclist can not go straight on if the light is red",
             "nl": "Een fietser mag niet rechtdoor gaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel nicht geradeaus fahren"
+            "de": "Ein Radfahrer kann bei roter Ampel nicht geradeaus fahren",
+            "es": "Un ciclista no puede ir de frente si la luz está roja"
           }
         }
       ]

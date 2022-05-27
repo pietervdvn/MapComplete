@@ -122,7 +122,7 @@
       "question": {
         "en": "How easy is it to fill water bottles?",
         "nl": "Hoe gemakkelijk is het om drinkbussen bij te vullen?",
-        "de": "Wie einfach ist es, Wasserflaschen zu füllen?",
+        "de": "Wie einfach hier das Befüllen von Wasserflaschen?",
         "it": "Quanto è facile riempire d’acqua le bottiglie?",
         "fr": "Est-il facile de remplir des bouteilles d'eau ?",
         "hu": "Mennyire könnyű itt vizespalackot tölteni?"
@@ -133,7 +133,7 @@
           "then": {
             "en": "It is easy to refill water bottles",
             "nl": "Een drinkbus bijvullen gaat makkelijk",
-            "de": "Es ist einfach, Wasserflaschen nachzufüllen",
+            "de": "Wasserflaschen können hier problemlos gefüllt werden",
             "it": "È facile riempire d’acqua le bottiglie",
             "fr": "Il est facile de remplir les bouteilles d'eau",
             "hu": "Könnyen lehet vizespalackot tölteni"
@@ -144,7 +144,7 @@
           "then": {
             "en": "Water bottles may not fit",
             "nl": "Een drinkbus past moeilijk",
-            "de": "Wasserflaschen passen möglicherweise nicht",
+            "de": "Wasserflaschen können hier nicht oder nur sehr aufwändig gefüllt werden",
             "it": "Le bottiglie d’acqua potrebbero non entrare",
             "fr": "Les bouteilles d'eau peuvent ne pas passer",
             "hu": "Lehet, hogy nem fér alá egy vizespalack"

@@ -4,7 +4,8 @@
     "en": "Cycleways and roads",
     "nl": "Fietspaden, straten en wegen",
     "de": "Radwege und Straßen",
-    "fr": "Pistes cyclables et routes"
+    "fr": "Pistes cyclables et routes",
+    "es": "Carriles bici y carreteras"
   },
   "minzoom": 16,
   "source": {
@@ -36,7 +37,8 @@
       "de": "Radwege",
       "ru": "Велосипедные дорожки",
       "fr": "Pistes cyclables",
-      "ca": "Vies ciclistes"
+      "ca": "Vies ciclistes",
+      "es": "Ciclovías"
     },
     "mappings": [
       {
@@ -53,7 +55,8 @@
           "ru": "Велосипедная дорожка",
           "fr": "Piste cyclable",
           "ca": "Via ciclista",
-          "da": "Cykelsti"
+          "da": "Cykelsti",
+          "es": "Carril bici"
         }
       },
       {
@@ -63,7 +66,8 @@
           "en": "Shared lane",
           "de": "Gemeinsame Fahrspur",
           "fr": "Voie partagée",
-          "ca": "Carril compartit"
+          "ca": "Carril compartit",
+          "es": "Carril compartido"
         }
       },
       {
@@ -73,7 +77,8 @@
           "en": "Bike lane",
           "de": "Fahrradspur",
           "fr": "Bande cyclable",
-          "ca": "Carril bici"
+          "ca": "Carril bici",
+          "es": "Carril bici"
         }
       },
       {
@@ -83,7 +88,8 @@
           "nl": "Fietsweg naast de weg",
           "de": "Radweg neben der Straße",
           "fr": "Piste cyclable séparée de la route",
-          "da": "Cykelsti ved siden af vejen"
+          "da": "Cykelsti ved siden af vejen",
+          "es": "Vía ciclista al lado de la carretera"
         }
       },
       {
@@ -94,7 +100,8 @@
           "de": "Fahrradstraße",
           "fr": "Vélorue",
           "ca": "Carrer ciclista",
-          "da": "Cykelgade"
+          "da": "Cykelgade",
+          "es": "Ciclocalle"
         }
       }
     ]
@@ -104,7 +111,8 @@
       "question": {
         "en": "What kind of cycleway is here?",
         "nl": "Wat voor fietspad is hier?",
-        "de": "Was für ein Radweg ist hier?"
+        "de": "Was für ein Radweg ist hier?",
+        "es": "¿Qué tipo de carril bici hay aquí?"
       },
       "condition": {
         "and": [
@@ -118,7 +126,8 @@
           "then": {
             "en": "There is a shared lane",
             "nl": "Er is een fietssuggestiestrook",
-            "de": "Es gibt eine geteilte Fahrspur"
+            "de": "Es gibt eine geteilte Fahrspur",
+            "es": "Hay un carril compartido"
           }
         },
         {
@@ -126,7 +135,8 @@
           "then": {
             "en": "There is a lane next to the road (separated with paint)",
             "nl": "Er is een fietspad aangrenzend aan de weg (gescheiden met verf)",
-            "de": "Es gibt eine Spur neben der Straße (getrennt durch eine Straßenmarkierung)"
+            "de": "Es gibt eine Spur neben der Straße (getrennt durch eine Straßenmarkierung)",
+            "es": "Hay un carril a lado de la carretera (separado con pintura)"
           }
         },
         {
@@ -134,7 +144,8 @@
           "then": {
             "en": "There is a track, but no cycleway drawn separately from this road on the map.",
             "nl": "Er is een fietspad (los van de weg), maar geen fietspad afzonderlijk getekend naast deze weg.",
-            "de": "Es gibt einen Weg, aber keinen Radweg, der auf der Karte getrennt von dieser Straße eingezeichnet ist."
+            "de": "Es gibt einen Weg, aber keinen Radweg, der auf der Karte getrennt von dieser Straße eingezeichnet ist.",
+            "es": "Hay una pista, pero no hay un carril bici dibujado separado de esta carretera en el mapa."
           }
         },
         {
@@ -142,7 +153,8 @@
           "then": {
             "en": "There is a separately drawn cycleway",
             "nl": "Er is een apart getekend fietspad.",
-            "de": "Hier ist ein getrennter Radweg vorhanden"
+            "de": "Hier ist ein getrennter Radweg vorhanden",
+            "es": "Hay un carril bici dibujado por separado"
           }
         },
         {
@@ -150,7 +162,8 @@
           "then": {
             "en": "There is no cycleway",
             "nl": "Er is geen fietspad aanwezig",
-            "de": "Es gibt keinen Radweg"
+            "de": "Es gibt keinen Radweg",
+            "es": "No hay carril bici"
           },
           "hideInAnswer": "cycleway=opposite"
         },
@@ -159,7 +172,8 @@
           "then": {
             "en": "There is no cycleway",
             "nl": "Er is geen fietspad aanwezig",
-            "de": "Es gibt keinen Radweg"
+            "de": "Es gibt keinen Radweg",
+            "es": "No hay carril bici"
           },
           "hideInAnswer": "cycleway!=opposite",
           "addExtraTags": [
@@ -175,7 +189,8 @@
         "en": "Is this street lit?",
         "nl": "Is deze weg verlicht?",
         "de": "Ist diese Straße beleuchtet?",
-        "da": "Er denne gade belyst?"
+        "da": "Er denne gade belyst?",
+        "es": "¿Esta calle está iluminada?"
       },
       "mappings": [
         {
@@ -183,7 +198,8 @@
           "then": {
             "en": "This street is lit",
             "nl": "Deze weg is verlicht",
-            "de": "Diese Straße ist beleuchtet"
+            "de": "Diese Straße ist beleuchtet",
+            "es": "La calle está iluminada"
           }
         },
         {
@@ -192,7 +208,8 @@
             "en": "This road is not lit",
             "nl": "Deze weg is niet verlicht",
             "de": "Diese Straße ist nicht beleuchtet",
-            "da": "Denne vej er ikke belyst"
+            "da": "Denne vej er ikke belyst",
+            "es": "Esta carretera no está iluminada"
           }
         },
         {
@@ -201,7 +218,8 @@
             "en": "This road is lit at night",
             "nl": "Deze weg is 's nachts verlicht",
             "de": "Diese Straße ist nachts beleuchtet",
-            "da": "Denne vej er belyst om natten"
+            "da": "Denne vej er belyst om natten",
+            "es": "Esta carretera está iluminada por la noche"
           },
           "hideInAnswer": true
         },
@@ -211,7 +229,8 @@
             "en": "This road is lit 24/7",
             "nl": "Deze weg is 24/7 verlicht",
             "de": "Diese Straße ist durchgehend beleuchtet",
-            "da": "Denne vej er belyst døgnet rundt"
+            "da": "Denne vej er belyst døgnet rundt",
+            "es": "Esta carretera está iluminada 24/7"
           }
         }
       ],
@@ -221,7 +240,8 @@
       "question": {
         "en": "Is this a cyclestreet?",
         "nl": "Is dit een fietsstraat?",
-        "de": "Ist das eine Fahrradstraße?"
+        "de": "Ist das eine Fahrradstraße?",
+        "es": "¿Esta es una ciclocalle?"
       },
       "condition": {
         "and": [
@@ -235,7 +255,8 @@
           "then": {
             "en": "This is a cyclestreet, and a 30km/h zone.",
             "nl": "Dit is een fietsstraat, en dus een 30km/h zone",
-            "de": "Dies ist eine Fahrradstraße in einer 30km/h Zone."
+            "de": "Dies ist eine Fahrradstraße in einer 30km/h Zone.",
+            "es": "Esta es una ciclocalle, y una zona 30km/h."
           },
           "addExtraTags": [
             "overtaking:motor_vehicle=no",
@@ -248,7 +269,8 @@
           "then": {
             "en": "This is a cyclestreet",
             "nl": "Dit is een fietsstraat",
-            "de": "Dies ist eine Fahrradstraße"
+            "de": "Dies ist eine Fahrradstraße",
+            "es": "Esta es una ciclocalle"
           },
           "hideInAnswer": "_country=be"
         },
@@ -257,7 +279,8 @@
           "then": {
             "en": "This is not a cyclestreet.",
             "nl": "Dit is geen fietsstraat",
-            "de": "Dies ist keine Fahrradstraße."
+            "de": "Dies ist keine Fahrradstraße.",
+            "es": "Esta no es una ciclocalle."
           },
           "addExtraTags": [
             "overtaking:motor_vehicle="
@@ -271,7 +294,8 @@
         "en": "The maximum speed on this road is {maxspeed} km/h",
         "nl": "De maximumsnelheid op deze weg is {maxspeed} km/u",
         "de": "Die Höchstgeschwindigkeit auf dieser Straße beträgt {maxspeed} km/h",
-        "id": "Kecepatan maksimum di jalan ini adalah {maxspeed} km/jam"
+        "id": "Kecepatan maksimum di jalan ini adalah {maxspeed} km/jam",
+        "es": "La velocidad máxima en esta carretera es de {maxspeed} km/h"
       },
       "freeform": {
         "key": "maxspeed",
@@ -289,7 +313,8 @@
           "then": {
             "en": "The maximum speed is 20 km/h",
             "nl": "De maximumsnelheid is 20 km/u",
-            "de": "Die Höchstgeschwindigkeit ist 20 km/h"
+            "de": "Die Höchstgeschwindigkeit ist 20 km/h",
+            "es": "La velocidad máxima es de 20km/h"
           }
         },
         {
@@ -297,7 +322,8 @@
           "then": {
             "en": "The maximum speed is 30 km/h",
             "nl": "De maximumsnelheid is 30 km/u",
-            "de": "Die Höchstgeschwindigkeit ist 30 km/h"
+            "de": "Die Höchstgeschwindigkeit ist 30 km/h",
+            "es": "La velocidad máxima es de 30km/h"
           }
         },
         {
@@ -305,7 +331,8 @@
           "then": {
             "en": "The maximum speed is 50 km/h",
             "nl": "De maximumsnelheid is 50 km/u",
-            "de": "Die Höchstgeschwindigkeit ist 50 km/h"
+            "de": "Die Höchstgeschwindigkeit ist 50 km/h",
+            "es": "La velocidad máxima es de 50km/h"
           }
         },
         {
@@ -314,7 +341,8 @@
             "en": "The maximum speed is 70 km/h",
             "nl": "De maximumsnelheid is 70 km/u",
             "de": "Die Höchstgeschwindigkeit ist 70 km/h",
-            "id": "Kecepatan maksimum 70 km/jam"
+            "id": "Kecepatan maksimum 70 km/jam",
+            "es": "La velocidad máxima es de 70km/h"
           }
         },
         {
@@ -323,7 +351,8 @@
             "en": "The maximum speed is 90 km/h",
             "nl": "De maximumsnelheid is 90 km/u",
             "de": "Die Höchstgeschwindigkeit ist 90 km/h",
-            "id": "Kecepatan maksimum 90 km/jam"
+            "id": "Kecepatan maksimum 90 km/jam",
+            "es": "La velocidad máxima es de 90km/h"
           }
         }
       ],
@@ -331,7 +360,8 @@
         "en": "What is the maximum speed in this street?",
         "nl": "Wat is de maximumsnelheid in deze straat?",
         "de": "Was ist die Höchstgeschwindigkeit auf dieser Straße?",
-        "id": "Berapa kecepatan maksimum di jalan ini?"
+        "id": "Berapa kecepatan maksimum di jalan ini?",
+        "es": "¿Cual es la velocidad máxima en esta calle?"
       },
       "id": "Maxspeed (for road)"
     },
@@ -339,7 +369,8 @@
       "render": {
         "en": "This cyleway is made of {cycleway:surface}",
         "nl": "Dit fietspad is gemaakt van {cycleway:surface}",
-        "de": "Der Radweg ist aus {cycleway:surface}"
+        "de": "Der Radweg ist aus {cycleway:surface}",
+        "es": "Este carril bici está hecho de {cycleway:surface}"
       },
       "freeform": {
         "key": "cycleway:surface"
@@ -357,7 +388,8 @@
           "then": {
             "en": "This cycleway is unpaved",
             "nl": "Dit fietspad is onverhard",
-            "de": "Dieser Radweg hat keinen festen Belag"
+            "de": "Dieser Radweg hat keinen festen Belag",
+            "es": "Este carril bici no está pavimentado"
           },
           "hideInAnswer": true
         },
@@ -366,7 +398,8 @@
           "then": {
             "en": "This cycleway is paved",
             "nl": "Dit fietspad is geplaveid",
-            "de": "Dieser Radweg hat einen festen Belag"
+            "de": "Dieser Radweg hat einen festen Belag",
+            "es": "Este carril bici está pavimentado"
           },
           "hideInAnswer": true
         },
@@ -375,7 +408,8 @@
           "then": {
             "en": "This cycleway is made of asphalt",
             "nl": "Dit fietspad is gemaakt van asfalt",
-            "de": "Der Radweg ist aus Asphalt"
+            "de": "Der Radweg ist aus Asphalt",
+            "es": "Este carril bici está hecho de asfalto"
           }
         },
         {
@@ -391,7 +425,8 @@
           "then": {
             "en": "This cycleway is made of concrete",
             "nl": "Dit fietspad is gemaakt van beton",
-            "de": "Der Radweg ist aus Beton"
+            "de": "Der Radweg ist aus Beton",
+            "es": "Este carril bici está hecho de hormigón"
           }
         },
         {
@@ -424,7 +459,8 @@
           "then": {
             "en": "This cycleway is made of wood",
             "nl": "Dit fietspad is gemaakt van hout",
-            "de": "Der Radweg ist aus Holz"
+            "de": "Der Radweg ist aus Holz",
+            "es": "Este carril bici está hecho de madera"
           }
         },
         {
@@ -432,7 +468,8 @@
           "then": {
             "en": "This cycleway is made of gravel",
             "nl": "Dit fietspad is gemaakt van grind",
-            "de": "Der Radweg ist aus Schotter"
+            "de": "Der Radweg ist aus Schotter",
+            "es": "Este carril bici está hecho de grava"
           }
         },
         {
@@ -440,7 +477,8 @@
           "then": {
             "en": "This cycleway is made of fine gravel",
             "nl": "Dit fietspad is gemaakt van fijn grind",
-            "de": "Dieser Radweg besteht aus feinem Schotter"
+            "de": "Dieser Radweg besteht aus feinem Schotter",
+            "es": "Este carril bici está hecho de gravilla"
           }
         },
         {
@@ -463,7 +501,8 @@
       "question": {
         "en": "What is the surface of the cycleway made from?",
         "nl": "Waaruit is het oppervlak van het fietspad van gemaakt?",
-        "de": "Was ist der Belag dieses Radwegs?"
+        "de": "Was ist der Belag dieses Radwegs?",
+        "es": "¿De qué superficie está hecho este carril bici?"
       },
       "id": "Cycleway:surface"
     },
@@ -471,7 +510,8 @@
       "question": {
         "en": "What is the smoothness of this cycleway?",
         "nl": "Wat is de kwaliteit van dit fietspad?",
-        "de": "Wie eben ist dieser Radweg?"
+        "de": "Wie eben ist dieser Radweg?",
+        "es": "¿Cual es la suavidad de este carril bici?"
       },
       "condition": {
         "or": [
@@ -502,7 +542,8 @@
           "then": {
             "en": "Usable for normal wheels: city bike, wheelchair, scooter",
             "nl": "Geschikt voor normale wielen: stadsfiets, rolstoel, scooter",
-            "de": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter"
+            "de": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter",
+            "es": "Utilizable para ruedas normales: bici de ciudad, sillas de ruedas, scooter"
           }
         },
         {
@@ -553,7 +594,8 @@
         "en": "This road is made of {surface}",
         "nl": "Deze weg is gemaakt van {surface}",
         "de": "Der Radweg ist aus {surface}",
-        "id": "Jalan ini terbuat dari {surface}"
+        "id": "Jalan ini terbuat dari {surface}",
+        "es": "Esta carretera está hecha de {surface}"
       },
       "freeform": {
         "key": "surface"
@@ -574,7 +616,8 @@
             "en": "This cycleway is paved",
             "nl": "Dit fietspad is geplaveid",
             "de": "Dieser Radweg hat einen festen Belag",
-            "id": "Jalur sepeda ini diaspal"
+            "id": "Jalur sepeda ini diaspal",
+            "es": "Este carril bici está pavimentado"
           },
           "hideInAnswer": true
         },
@@ -584,7 +627,8 @@
             "en": "This cycleway is made of asphalt",
             "nl": "Dit fietspad is gemaakt van asfalt",
             "de": "Der Radweg ist aus Asphalt",
-            "id": "Jalur sepeda ini terbuat dari aspal"
+            "id": "Jalur sepeda ini terbuat dari aspal",
+            "es": "Este carril bici está hecho de asfalto"
           }
         },
         {
@@ -602,7 +646,8 @@
             "en": "This cycleway is made of concrete",
             "nl": "Dit fietspad is gemaakt van beton",
             "de": "Der Radweg ist aus Beton",
-            "id": "Jalur sepeda ini terbuat dari beton"
+            "id": "Jalur sepeda ini terbuat dari beton",
+            "es": "Este carril bici está hecho de hormigón"
           }
         },
         {
@@ -638,7 +683,8 @@
             "en": "This cycleway is made of wood",
             "nl": "Dit fietspad is gemaakt van hout",
             "de": "Der Radweg ist aus Holz",
-            "id": "Jalur sepeda ini terbuat dari kayu"
+            "id": "Jalur sepeda ini terbuat dari kayu",
+            "es": "Este carril bici está hecho de madera"
           }
         },
         {
@@ -647,7 +693,8 @@
             "en": "This cycleway is made of gravel",
             "nl": "Dit fietspad is gemaakt van grind",
             "de": "Der Radweg ist aus Schotter",
-            "id": "Jalur sepeda ini terbuat dari kerikil"
+            "id": "Jalur sepeda ini terbuat dari kerikil",
+            "es": "Este carril bici está hecho de grava"
           }
         },
         {
@@ -656,7 +703,8 @@
             "en": "This cycleway is made of fine gravel",
             "nl": "Dit fietspad is gemaakt van fijn grind",
             "de": "Dieser Radweg besteht aus feinem Schotter",
-            "id": "Jalur sepeda ini terbuat dari kerikil halus"
+            "id": "Jalur sepeda ini terbuat dari kerikil halus",
+            "es": "Este carril bici está hecho de gravilla"
           }
         },
         {
@@ -682,7 +730,8 @@
         "en": "What is the surface of the street made from?",
         "nl": "Waaruit is het oppervlak van de straat gemaakt?",
         "de": "Was ist der Belag dieser Straße?",
-        "id": "Permukaan jalannya terbuat dari apa?"
+        "id": "Permukaan jalannya terbuat dari apa?",
+        "es": "¿De qué esta hecha la superficie de esta calle?"
       },
       "id": "Surface of the road"
     },
@@ -690,7 +739,8 @@
       "question": {
         "en": "What is the smoothness of this street?",
         "nl": "Wat is de kwaliteit van deze straat?",
-        "de": "Wie eben ist diese Straße?"
+        "de": "Wie eben ist diese Straße?",
+        "es": "¿Cual es la suavidad de esta calle?"
       },
       "condition": {
         "or": [
@@ -805,7 +855,8 @@
         "en": "What traffic sign does this cycleway have?",
         "nl": "Welk verkeersbord heeft dit fietspad?",
         "de": "Welches Verkehrszeichen hat dieser Radweg?",
-        "id": "Rambu lalu lintas apa yang dimiliki jalur sepeda ini?"
+        "id": "Rambu lalu lintas apa yang dimiliki jalur sepeda ini?",
+        "es": "¿Qué señal de tráfico tiene este carril bici?"
       },
       "condition": {
         "and": [
@@ -896,7 +947,8 @@
             "en": "No traffic sign present",
             "nl": "Geen verkeersbord aanwezig",
             "de": "Kein Verkehrsschild vorhanden",
-            "id": "Tidak ada rambu lalu lintas"
+            "id": "Tidak ada rambu lalu lintas",
+            "es": "Sin señal de tráfico"
           }
         }
       ]
@@ -906,7 +958,8 @@
       "question": {
         "en": "What traffic sign does this cycleway have?",
         "nl": "Welk verkeersbord heeft dit fietspad?",
-        "de": "Welches Verkehrszeichen hat dieser Radweg?"
+        "de": "Welches Verkehrszeichen hat dieser Radweg?",
+        "es": "¿Qué seña de tráfico tiene este carril bici?"
       },
       "condition": {
         "and": [
@@ -1196,7 +1249,8 @@
       "question": {
         "en": "How wide is the gap between the cycleway and the road?",
         "nl": "Hoe breed is de ruimte tussen het fietspad en de weg?",
-        "de": "Wie breit ist der Abstand zwischen Radweg und Straße?"
+        "de": "Wie breit ist der Abstand zwischen Radweg und Straße?",
+        "es": "¿Cómo de ancho es el hueco entre el carril bici y la carretera?"
       },
       "condition": {
         "or": [
@@ -1220,7 +1274,8 @@
         "en": "How is this cycleway separated from the road?",
         "nl": "Hoe is dit fietspad gescheiden van de weg?",
         "de": "Wie ist der Radweg von der Straße abgegrenzt?",
-        "id": "Bagaimana jalur sepeda ini terpisah dari jalan?"
+        "id": "Bagaimana jalur sepeda ini terpisah dari jalan?",
+        "es": "¿Cómo está separado este carril bici de la carretera?"
       },
       "condition": {
         "or": [
@@ -1235,7 +1290,8 @@
             "en": "This cycleway is separated by a dashed line",
             "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep",
             "de": "Der Radweg ist abgegrenzt durch eine gestrichelte Linie",
-            "id": "Jalur sepeda ini dipisahkan oleh garis putus-putus"
+            "id": "Jalur sepeda ini dipisahkan oleh garis putus-putus",
+            "es": "Este carril bici está separado por una línea discontinua"
           }
         },
         {
@@ -1244,7 +1300,8 @@
             "en": "This cycleway is separated by a solid line",
             "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep",
             "de": "Der Radweg ist abgegrenzt durch eine durchgezogene Linie",
-            "id": "Jalur sepeda ini dipisahkan oleh garis solid"
+            "id": "Jalur sepeda ini dipisahkan oleh garis solid",
+            "es": "Este carril bici está separado por una línea continua"
           }
         },
         {
@@ -1253,7 +1310,8 @@
             "en": "This cycleway is separated by a parking lane",
             "nl": "Dit fietspad is gescheiden van de weg met parkeervakken",
             "de": "Der Radweg ist abgegrenzt durch eine Parkspur",
-            "id": "Jalur sepeda ini dipisahkan oleh jalur parkir"
+            "id": "Jalur sepeda ini dipisahkan oleh jalur parkir",
+            "es": "Este carril bici está separado por una línea de aparcamiento"
           }
         },
         {
@@ -1273,7 +1331,8 @@
         "en": "How is this cycleway separated from the road?",
         "nl": "Hoe is dit fietspad gescheiden van de weg?",
         "de": "Wie ist der Radweg von der Straße abgegrenzt?",
-        "id": "Bagaimana jalur sepeda ini dipisahkan dari jalan?"
+        "id": "Bagaimana jalur sepeda ini dipisahkan dari jalan?",
+        "es": "¿Cómo esta separado este carril bici de la carretera?"
       },
       "condition": {
         "or": [
@@ -1288,7 +1347,8 @@
             "en": "This cycleway is separated by a dashed line",
             "nl": "Dit fietspad is gescheiden van de weg met een onderbroken streep",
             "de": "Der Radweg ist abgegrenzt durch eine gestrichelte Linie",
-            "id": "Jalur sepeda ini dipisahkan oleh garis putus-putus"
+            "id": "Jalur sepeda ini dipisahkan oleh garis putus-putus",
+            "es": "Este carril bici está separado por una línea discontinua"
           }
         },
         {
@@ -1297,7 +1357,8 @@
             "en": "This cycleway is separated by a solid line",
             "nl": "Dit fietspad is gescheiden van de weg met een doorgetrokken streep",
             "de": "Der Radweg ist abgegrenzt durch eine durchgezogene Linie",
-            "id": "Jalur sepeda ini dipisahkan oleh garis solid"
+            "id": "Jalur sepeda ini dipisahkan oleh garis solid",
+            "es": "Este carril bici está separado por una línea continua"
           }
         },
         {
@@ -1306,7 +1367,8 @@
             "en": "This cycleway is separated by a parking lane",
             "nl": "Dit fietspad is gescheiden van de weg met parkeervakken",
             "de": "Der Radweg ist abgegrenzt durch eine Parkspur",
-            "id": "Jalur sepeda ini dipisahkan oleh jalur parkir"
+            "id": "Jalur sepeda ini dipisahkan oleh jalur parkir",
+            "es": "Este carril bici está separado por una línea de aparcamiento"
           }
         },
         {
@@ -1407,6 +1469,7 @@
   "description": {
     "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure\"",
     "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
-    "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen"
+    "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
+    "es": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\""
   }
 }

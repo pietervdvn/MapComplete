@@ -1293,25 +1293,33 @@
                 "question": "¿A qué vehículos se permite la carga aquí?"
             },
             "access": {
-                "render": "El acceso está {access}",
                 "mappings": {
-                    "1": {
-                        "then": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
-                    },
                     "0": {
                         "then": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
                     },
-                    "4": {
-                        "then": "No accesible al público general (ej. solo accesible a los propietarios, empleados, ...)"
+                    "1": {
+                        "then": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
+                    },
+                    "2": {
+                        "then": "Solo clientes del lugar al que pertenece esta estación la pueden utilizar <br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes</span>"
                     },
                     "3": {
                         "then": "Se debe de solicitar una <b>llave</b> para utilizar esta estación de carga<br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes, que reciben una llave de la recepción para desbloquear la estación de carga</span>"
                     },
-                    "2": {
-                        "then": "Solo clientes del lugar al que pertenece esta estación la pueden utilizar <br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes</span>"
+                    "4": {
+                        "then": "No accesible al público general (ej. solo accesible a los propietarios, empleados, ...)"
                     }
                 },
-                "question": "¿A quién se le permite utilizar esta estación de carga?"
+                "question": "¿A quién se le permite utilizar esta estación de carga?",
+                "render": "El acceso está {access}"
+            },
+            "capacity": {
+                "question": "¿Cuántos vehículos se pueden cargar a la vez aquí?",
+                "render": "Aquí se pueden cargar {capacity} vehículos al mismo tiempo"
+            },
+            "charge": {
+                "question": "¿Cuánto hay que pagar para utilizar esta estación de carga?",
+                "render": "Utilizar esta estación de carga cuesta <b>{charge}</b>"
             },
             "current-13": {
                 "mappings": {
@@ -1331,11 +1339,11 @@
             },
             "fee": {
                 "mappings": {
-                    "4": {
-                        "then": "Uso de pago"
-                    },
                     "3": {
                         "then": "De pago, pero gratis para clientes del hotel/pub/hostpital... quien opera la estación de carga"
+                    },
+                    "4": {
+                        "then": "Uso de pago"
                     }
                 },
                 "question": "¿Hay que pagar para utilizar esta estación de carga?"
@@ -1346,29 +1354,28 @@
                         "then": "No hay límite de tiempo para dejar tu vehículo aquí"
                     }
                 },
-                "render": "Se puede estar como máximo <b>{canonical(maxstay)}</b>",
-                "question": "¿Cuál es la máxima cantidad de tiempo que se permite permanecer aquí?"
+                "question": "¿Cuál es la máxima cantidad de tiempo que se permite permanecer aquí?",
+                "render": "Se puede estar como máximo <b>{canonical(maxstay)}</b>"
             },
             "phone": {
-                "render": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>",
-                "question": "¿A qué número se puede llamar si hay un problema con esta estación de carga?"
-            },
-            "capacity": {
-                "render": "Aquí se pueden cargar {capacity} vehículos al mismo tiempo",
-                "question": "¿Cuántos vehículos se pueden cargar a la vez aquí?"
-            },
-            "charge": {
-                "question": "¿Cuánto hay que pagar para utilizar esta estación de carga?",
-                "render": "Utilizar esta estación de carga cuesta <b>{charge}</b>"
+                "question": "¿A qué número se puede llamar si hay un problema con esta estación de carga?",
+                "render": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Estación de carga para bicicletas eléctricas"
+                },
+                "1": {
+                    "then": "Estación de carga para coches"
+                }
+            },
+            "render": "Estación de carga"
         },
         "units": {
             "0": {
                 "applicableUnits": {
-                    "2": {
-                        "human": " días",
-                        "humanSingular": " día"
-                    },
                     "0": {
                         "human": " minutos",
                         "humanSingular": " minuto"
@@ -1376,6 +1383,10 @@
                     "1": {
                         "human": " horas",
                         "humanSingular": " hora"
+                    },
+                    "2": {
+                        "human": " días",
+                        "humanSingular": " día"
                     }
                 }
             },
@@ -1383,6 +1394,13 @@
                 "applicableUnits": {
                     "0": {
                         "human": "Voltios"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "A"
                     }
                 }
             },
@@ -1395,25 +1413,359 @@
                         "human": "megavatio"
                     }
                 }
+            }
+        }
+    },
+    "climbing": {
+        "tagRenderings": {
+            "average_length": {
+                "question": "¿Cual es la longitud (media) de las rutas en metros?",
+                "render": "Las rutas miden <b>{canonical(climbing:length)}</b> de media"
             },
-            "2": {
-                "applicableUnits": {
+            "fee": {
+                "mappings": {
                     "0": {
-                        "human": "A"
+                        "then": "La escalada es gratis"
+                    },
+                    "1": {
+                        "then": "Hay que pagar una tasa para escalar aquí"
                     }
-                }
+                },
+                "question": "¿Se requiere una tasa para escalar aquí?",
+                "render": "Se debe de pagar una tasa de {charge} para escalar aquí"
+            }
+        }
+    },
+    "crossings": {
+        "description": "Cruces para peatones y ciclistas",
+        "name": "Cruces",
+        "presets": {
+            "0": {
+                "description": "Cruce para peatones y/o ciclistas",
+                "title": "un cruce"
+            },
+            "1": {
+                "description": "Señal de tráfico en una carretera",
+                "title": "una señal de tráfico"
+            }
+        },
+        "tagRenderings": {
+            "crossing-bicycle-allowed": {
+                "mappings": {
+                    "0": {
+                        "then": "Un ciclista puede utilizar este cruce"
+                    },
+                    "1": {
+                        "then": "Un ciclista no puede utilizar este cruce"
+                    }
+                },
+                "question": "¿Este cruce también es para ciclistas?"
+            },
+            "crossing-button": {
+                "mappings": {
+                    "0": {
+                        "then": "Este semáforo tiene un botón para pedir luz verde"
+                    },
+                    "1": {
+                        "then": "Este semáforo no tiene un botón para pedir luz verde"
+                    }
+                },
+                "question": "¿Este semáforo tiene un botón para pedir luz verde?"
+            },
+            "crossing-continue-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Un ciclista puede ir de frente si la luz está roja"
+                    },
+                    "1": {
+                        "then": "Un ciclista puede ir de frente si la luz está roja"
+                    },
+                    "2": {
+                        "then": "Un ciclista no puede ir de frente si la luz está roja"
+                    }
+                },
+                "question": "¿Puede ir de frente un ciclista cuando la luz está roja?"
+            },
+            "crossing-has-island": {
+                "mappings": {
+                    "0": {
+                        "then": "Este cruce tiene una isla en el medio"
+                    },
+                    "1": {
+                        "then": "Este cruce no tiene una isla en el medio"
+                    }
+                },
+                "question": "¿Tiene una isla en el medio este cruce?"
+            },
+            "crossing-is-zebra": {
+                "mappings": {
+                    "0": {
+                        "then": "Esto es un paso de cebra"
+                    },
+                    "1": {
+                        "then": "Esto no es un paso de cebra"
+                    }
+                },
+                "question": "¿Esto es un paso de cebra?"
+            },
+            "crossing-right-turn-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Un ciclista puede girar a la derecha si la luz está roja"
+                    },
+                    "1": {
+                        "then": "Un ciclista puede girar a la derecha si la luz está roja"
+                    },
+                    "2": {
+                        "then": "Un ciclista no puede girar a la derecha si la luz está roja"
+                    }
+                },
+                "question": "¿Puede girar a la derecha un ciclista cuando la luz está roja?"
+            },
+            "crossing-tactile": {
+                "mappings": {
+                    "0": {
+                        "then": "Este cruce tiene pavimento táctil"
+                    },
+                    "1": {
+                        "then": "Este cruce no tiene pavimento táctil"
+                    },
+                    "2": {
+                        "then": "Este cruce tiene pavimento táctil, pero no es correcto"
+                    }
+                },
+                "question": "¿Tiene pavimento táctil este cruce?"
+            },
+            "crossing-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Cruce, sin semáforos"
+                    },
+                    "1": {
+                        "then": "Cruce con señales de tráfico"
+                    },
+                    "2": {
+                        "then": "Paso de cebra"
+                    }
+                },
+                "question": "¿Qué tipo de cruce es este?"
             }
         },
         "title": {
-            "render": "Estación de carga",
             "mappings": {
-                "1": {
-                    "then": "Estación de carga para coches"
-                },
                 "0": {
-                    "then": "Estación de carga para bicicletas eléctricas"
+                    "then": "Señal de tráfico"
+                },
+                "1": {
+                    "then": "Cruce con señales de tráfico"
                 }
+            },
+            "render": "Cruce"
+        }
+    },
+    "cycleways_and_roads": {
+        "description": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
+        "name": "Carriles bici y carreteras",
+        "tagRenderings": {
+            "Cycleway type for a road": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay un carril compartido"
+                    },
+                    "1": {
+                        "then": "Hay un carril a lado de la carretera (separado con pintura)"
+                    },
+                    "2": {
+                        "then": "Hay una pista, pero no hay un carril bici dibujado separado de esta carretera en el mapa."
+                    },
+                    "3": {
+                        "then": "Hay un carril bici dibujado por separado"
+                    },
+                    "4": {
+                        "then": "No hay carril bici"
+                    },
+                    "5": {
+                        "then": "No hay carril bici"
+                    }
+                },
+                "question": "¿Qué tipo de carril bici hay aquí?"
+            },
+            "Cycleway:smoothness": {
+                "mappings": {
+                    "2": {
+                        "then": "Utilizable para ruedas normales: bici de ciudad, sillas de ruedas, scooter"
+                    }
+                },
+                "question": "¿Cual es la suavidad de este carril bici?"
+            },
+            "Cycleway:surface": {
+                "mappings": {
+                    "0": {
+                        "then": "Este carril bici no está pavimentado"
+                    },
+                    "1": {
+                        "then": "Este carril bici está pavimentado"
+                    },
+                    "2": {
+                        "then": "Este carril bici está hecho de asfalto"
+                    },
+                    "4": {
+                        "then": "Este carril bici está hecho de hormigón"
+                    },
+                    "8": {
+                        "then": "Este carril bici está hecho de madera"
+                    },
+                    "9": {
+                        "then": "Este carril bici está hecho de grava"
+                    },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    }
+                },
+                "question": "¿De qué superficie está hecho este carril bici?",
+                "render": "Este carril bici está hecho de {cycleway:surface}"
+            },
+            "Is this a cyclestreet? (For a road)": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta es una ciclocalle, y una zona 30km/h."
+                    },
+                    "1": {
+                        "then": "Esta es una ciclocalle"
+                    },
+                    "2": {
+                        "then": "Esta no es una ciclocalle."
+                    }
+                },
+                "question": "¿Esta es una ciclocalle?"
+            },
+            "Maxspeed (for road)": {
+                "mappings": {
+                    "0": {
+                        "then": "La velocidad máxima es de 20km/h"
+                    },
+                    "1": {
+                        "then": "La velocidad máxima es de 30km/h"
+                    },
+                    "2": {
+                        "then": "La velocidad máxima es de 50km/h"
+                    },
+                    "3": {
+                        "then": "La velocidad máxima es de 70km/h"
+                    },
+                    "4": {
+                        "then": "La velocidad máxima es de 90km/h"
+                    }
+                },
+                "question": "¿Cual es la velocidad máxima en esta calle?",
+                "render": "La velocidad máxima en esta carretera es de {maxspeed} km/h"
+            },
+            "Surface of the road": {
+                "mappings": {
+                    "1": {
+                        "then": "Este carril bici está pavimentado"
+                    },
+                    "2": {
+                        "then": "Este carril bici está hecho de asfalto"
+                    },
+                    "4": {
+                        "then": "Este carril bici está hecho de hormigón"
+                    },
+                    "8": {
+                        "then": "Este carril bici está hecho de madera"
+                    },
+                    "9": {
+                        "then": "Este carril bici está hecho de grava"
+                    },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    }
+                },
+                "question": "¿De qué esta hecha la superficie de esta calle?",
+                "render": "Esta carretera está hecha de {surface}"
+            },
+            "Surface of the street": {
+                "question": "¿Cual es la suavidad de esta calle?"
+            },
+            "cyclelan-segregation": {
+                "mappings": {
+                    "0": {
+                        "then": "Este carril bici está separado por una línea discontinua"
+                    },
+                    "1": {
+                        "then": "Este carril bici está separado por una línea continua"
+                    },
+                    "2": {
+                        "then": "Este carril bici está separado por una línea de aparcamiento"
+                    }
+                },
+                "question": "¿Cómo está separado este carril bici de la carretera?"
+            },
+            "cycleway-lane-track-traffic-signs": {
+                "mappings": {
+                    "4": {
+                        "then": "Sin señal de tráfico"
+                    }
+                },
+                "question": "¿Qué señal de tráfico tiene este carril bici?"
+            },
+            "cycleway-segregation": {
+                "mappings": {
+                    "0": {
+                        "then": "Este carril bici está separado por una línea discontinua"
+                    },
+                    "1": {
+                        "then": "Este carril bici está separado por una línea continua"
+                    },
+                    "2": {
+                        "then": "Este carril bici está separado por una línea de aparcamiento"
+                    }
+                },
+                "question": "¿Cómo esta separado este carril bici de la carretera?"
+            },
+            "cycleway-traffic-signs": {
+                "question": "¿Qué seña de tráfico tiene este carril bici?"
+            },
+            "cycleways_and_roads-cycleway:buffer": {
+                "question": "¿Cómo de ancho es el hueco entre el carril bici y la carretera?"
+            },
+            "is lit?": {
+                "mappings": {
+                    "0": {
+                        "then": "La calle está iluminada"
+                    },
+                    "1": {
+                        "then": "Esta carretera no está iluminada"
+                    },
+                    "2": {
+                        "then": "Esta carretera está iluminada por la noche"
+                    },
+                    "3": {
+                        "then": "Esta carretera está iluminada 24/7"
+                    }
+                },
+                "question": "¿Esta calle está iluminada?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Carril bici"
+                },
+                "1": {
+                    "then": "Carril compartido"
+                },
+                "2": {
+                    "then": "Carril bici"
+                },
+                "3": {
+                    "then": "Vía ciclista al lado de la carretera"
+                },
+                "4": {
+                    "then": "Ciclocalle"
+                }
+            },
+            "render": "Ciclovías"
         }
     },
     "defibrillator": {
@@ -1608,357 +1960,5 @@
         "title": {
             "render": "Árbol"
         }
-    },
-    "climbing": {
-        "tagRenderings": {
-            "average_length": {
-                "render": "Las rutas miden <b>{canonical(climbing:length)}</b> de media",
-                "question": "¿Cual es la longitud (media) de las rutas en metros?"
-            },
-            "fee": {
-                "question": "¿Se requiere una tasa para escalar aquí?",
-                "mappings": {
-                    "0": {
-                        "then": "La escalada es gratis"
-                    },
-                    "1": {
-                        "then": "Hay que pagar una tasa para escalar aquí"
-                    }
-                },
-                "render": "Se debe de pagar una tasa de {charge} para escalar aquí"
-            }
-        }
-    },
-    "crossings": {
-        "title": {
-            "render": "Cruce",
-            "mappings": {
-                "0": {
-                    "then": "Señal de tráfico"
-                },
-                "1": {
-                    "then": "Cruce con señales de tráfico"
-                }
-            }
-        },
-        "description": "Cruces para peatones y ciclistas",
-        "name": "Cruces",
-        "presets": {
-            "0": {
-                "description": "Cruce para peatones y/o ciclistas",
-                "title": "un cruce"
-            },
-            "1": {
-                "description": "Señal de tráfico en una carretera",
-                "title": "una señal de tráfico"
-            }
-        },
-        "tagRenderings": {
-            "crossing-bicycle-allowed": {
-                "mappings": {
-                    "0": {
-                        "then": "Un ciclista puede utilizar este cruce"
-                    },
-                    "1": {
-                        "then": "Un ciclista no puede utilizar este cruce"
-                    }
-                },
-                "question": "¿Este cruce también es para ciclistas?"
-            },
-            "crossing-button": {
-                "mappings": {
-                    "0": {
-                        "then": "Este semáforo tiene un botón para pedir luz verde"
-                    },
-                    "1": {
-                        "then": "Este semáforo no tiene un botón para pedir luz verde"
-                    }
-                },
-                "question": "¿Este semáforo tiene un botón para pedir luz verde?"
-            },
-            "crossing-has-island": {
-                "mappings": {
-                    "0": {
-                        "then": "Este cruce tiene una isla en el medio"
-                    },
-                    "1": {
-                        "then": "Este cruce no tiene una isla en el medio"
-                    }
-                },
-                "question": "¿Tiene una isla en el medio este cruce?"
-            },
-            "crossing-right-turn-through-red": {
-                "mappings": {
-                    "2": {
-                        "then": "Un ciclista no puede girar a la derecha si la luz está roja"
-                    },
-                    "1": {
-                        "then": "Un ciclista puede girar a la derecha si la luz está roja"
-                    },
-                    "0": {
-                        "then": "Un ciclista puede girar a la derecha si la luz está roja"
-                    }
-                },
-                "question": "¿Puede girar a la derecha un ciclista cuando la luz está roja?"
-            },
-            "crossing-type": {
-                "mappings": {
-                    "1": {
-                        "then": "Cruce con señales de tráfico"
-                    },
-                    "0": {
-                        "then": "Cruce, sin semáforos"
-                    },
-                    "2": {
-                        "then": "Paso de cebra"
-                    }
-                },
-                "question": "¿Qué tipo de cruce es este?"
-            },
-            "crossing-continue-through-red": {
-                "mappings": {
-                    "2": {
-                        "then": "Un ciclista no puede ir de frente si la luz está roja"
-                    },
-                    "1": {
-                        "then": "Un ciclista puede ir de frente si la luz está roja"
-                    },
-                    "0": {
-                        "then": "Un ciclista puede ir de frente si la luz está roja"
-                    }
-                },
-                "question": "¿Puede ir de frente un ciclista cuando la luz está roja?"
-            },
-            "crossing-tactile": {
-                "mappings": {
-                    "1": {
-                        "then": "Este cruce no tiene pavimento táctil"
-                    },
-                    "2": {
-                        "then": "Este cruce tiene pavimento táctil, pero no es correcto"
-                    },
-                    "0": {
-                        "then": "Este cruce tiene pavimento táctil"
-                    }
-                },
-                "question": "¿Tiene pavimento táctil este cruce?"
-            },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "Esto es un paso de cebra"
-                    },
-                    "1": {
-                        "then": "Esto no es un paso de cebra"
-                    }
-                },
-                "question": "¿Esto es un paso de cebra?"
-            }
-        }
-    },
-    "cycleways_and_roads": {
-        "tagRenderings": {
-            "Cycleway:smoothness": {
-                "question": "¿Cual es la suavidad de este carril bici?",
-                "mappings": {
-                    "2": {
-                        "then": "Utilizable para ruedas normales: bici de ciudad, sillas de ruedas, scooter"
-                    }
-                }
-            },
-            "Maxspeed (for road)": {
-                "mappings": {
-                    "0": {
-                        "then": "La velocidad máxima es de 20km/h"
-                    },
-                    "1": {
-                        "then": "La velocidad máxima es de 30km/h"
-                    },
-                    "3": {
-                        "then": "La velocidad máxima es de 70km/h"
-                    },
-                    "2": {
-                        "then": "La velocidad máxima es de 50km/h"
-                    },
-                    "4": {
-                        "then": "La velocidad máxima es de 90km/h"
-                    }
-                },
-                "question": "¿Cual es la velocidad máxima en esta calle?",
-                "render": "La velocidad máxima en esta carretera es de {maxspeed} km/h"
-            },
-            "Surface of the road": {
-                "mappings": {
-                    "8": {
-                        "then": "Este carril bici está hecho de madera"
-                    },
-                    "4": {
-                        "then": "Este carril bici está hecho de hormigón"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de gravilla"
-                    },
-                    "1": {
-                        "then": "Este carril bici está pavimentado"
-                    },
-                    "2": {
-                        "then": "Este carril bici está hecho de asfalto"
-                    },
-                    "9": {
-                        "then": "Este carril bici está hecho de grava"
-                    }
-                },
-                "question": "¿De qué esta hecha la superficie de esta calle?",
-                "render": "Esta carretera está hecha de {surface}"
-            },
-            "Surface of the street": {
-                "question": "¿Cual es la suavidad de esta calle?"
-            },
-            "cyclelan-segregation": {
-                "mappings": {
-                    "0": {
-                        "then": "Este carril bici está separado por una línea discontinua"
-                    },
-                    "1": {
-                        "then": "Este carril bici está separado por una línea continua"
-                    },
-                    "2": {
-                        "then": "Este carril bici está separado por una línea de aparcamiento"
-                    }
-                },
-                "question": "¿Cómo está separado este carril bici de la carretera?"
-            },
-            "cycleway-lane-track-traffic-signs": {
-                "mappings": {
-                    "4": {
-                        "then": "Sin señal de tráfico"
-                    }
-                },
-                "question": "¿Qué señal de tráfico tiene este carril bici?"
-            },
-            "Cycleway:surface": {
-                "mappings": {
-                    "0": {
-                        "then": "Este carril bici no está pavimentado"
-                    },
-                    "9": {
-                        "then": "Este carril bici está hecho de grava"
-                    },
-                    "1": {
-                        "then": "Este carril bici está pavimentado"
-                    },
-                    "2": {
-                        "then": "Este carril bici está hecho de asfalto"
-                    },
-                    "4": {
-                        "then": "Este carril bici está hecho de hormigón"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de gravilla"
-                    },
-                    "8": {
-                        "then": "Este carril bici está hecho de madera"
-                    }
-                },
-                "question": "¿De qué superficie está hecho este carril bici?",
-                "render": "Este carril bici está hecho de {cycleway:surface}"
-            },
-            "cycleway-traffic-signs": {
-                "question": "¿Qué seña de tráfico tiene este carril bici?"
-            },
-            "cycleways_and_roads-cycleway:buffer": {
-                "question": "¿Cómo de ancho es el hueco entre el carril bici y la carretera?"
-            },
-            "is lit?": {
-                "mappings": {
-                    "0": {
-                        "then": "La calle está iluminada"
-                    },
-                    "2": {
-                        "then": "Esta carretera está iluminada por la noche"
-                    },
-                    "1": {
-                        "then": "Esta carretera no está iluminada"
-                    },
-                    "3": {
-                        "then": "Esta carretera está iluminada 24/7"
-                    }
-                },
-                "question": "¿Esta calle está iluminada?"
-            },
-            "Cycleway type for a road": {
-                "mappings": {
-                    "3": {
-                        "then": "Hay un carril bici dibujado por separado"
-                    },
-                    "4": {
-                        "then": "No hay carril bici"
-                    },
-                    "2": {
-                        "then": "Hay una pista, pero no hay un carril bici dibujado separado de esta carretera en el mapa."
-                    },
-                    "0": {
-                        "then": "Hay un carril compartido"
-                    },
-                    "1": {
-                        "then": "Hay un carril a lado de la carretera (separado con pintura)"
-                    },
-                    "5": {
-                        "then": "No hay carril bici"
-                    }
-                },
-                "question": "¿Qué tipo de carril bici hay aquí?"
-            },
-            "cycleway-segregation": {
-                "mappings": {
-                    "0": {
-                        "then": "Este carril bici está separado por una línea discontinua"
-                    },
-                    "1": {
-                        "then": "Este carril bici está separado por una línea continua"
-                    },
-                    "2": {
-                        "then": "Este carril bici está separado por una línea de aparcamiento"
-                    }
-                },
-                "question": "¿Cómo esta separado este carril bici de la carretera?"
-            },
-            "Is this a cyclestreet? (For a road)": {
-                "mappings": {
-                    "2": {
-                        "then": "Esta no es una ciclocalle."
-                    },
-                    "1": {
-                        "then": "Esta es una ciclocalle"
-                    },
-                    "0": {
-                        "then": "Esta es una ciclocalle, y una zona 30km/h."
-                    }
-                },
-                "question": "¿Esta es una ciclocalle?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Carril bici"
-                },
-                "2": {
-                    "then": "Carril bici"
-                },
-                "3": {
-                    "then": "Vía ciclista al lado de la carretera"
-                },
-                "4": {
-                    "then": "Ciclocalle"
-                },
-                "1": {
-                    "then": "Carril compartido"
-                }
-            },
-            "render": "Ciclovías"
-        },
-        "description": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
-        "name": "Carriles bici y carreteras"
     }
 }

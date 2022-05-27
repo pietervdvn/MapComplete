@@ -282,7 +282,8 @@
               "nl": "stadsfietsen",
               "de": "Stadträder",
               "es": "bicis de ciudad",
-              "da": "bycykler"
+              "da": "bycykler",
+              "eo": "urbaj bicikloj"
             }
           ],
           [
@@ -292,7 +293,8 @@
               "nl": "elektrische fietsen",
               "de": "Elektrofahrräder",
               "es": "bicis eléctricas",
-              "da": "elektriske cykler"
+              "da": "elektriske cykler",
+              "eo": "elektraj bicikloj"
             }
           ],
           [
@@ -302,7 +304,8 @@
               "nl": "kinderfietsen",
               "de": "Kinderfahrräder",
               "es": "bicis infantiles",
-              "da": "børnecykler"
+              "da": "børnecykler",
+              "eo": "bicikloj por infanoj"
             }
           ],
           [
@@ -312,7 +315,8 @@
               "nl": "BMX-fietsen",
               "de": "BMX-Räder",
               "es": "bicis BMX",
-              "da": "BMX-cykler"
+              "da": "BMX-cykler",
+              "eo": "BMX-bicikloj"
             }
           ],
           [
@@ -323,7 +327,8 @@
               "ca": "bicicleta de muntanya",
               "de": "Mountainbikes",
               "es": "bicis de montaña",
-              "da": "mountainbike"
+              "da": "mountainbike",
+              "eo": "montobicikloj"
             }
           ],
           [

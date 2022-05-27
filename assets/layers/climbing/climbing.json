@@ -3,7 +3,8 @@
   "title": null,
   "description": {
     "en": "A dummy layer which contains tagrenderings, shared among the climbing layers",
-    "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen"
+    "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
+    "de": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden"
   },
   "minzoom": 25,
   "source": {
@@ -320,10 +321,12 @@
     {
       "id": "max_bolts",
       "question": {
-        "en": "How many bolts do routes in {title()} have at most?"
+        "en": "How many bolts do routes in {title()} have at most?",
+        "de": "Wie viele Haken haben die Routen in {title()} maximal?"
       },
       "render": {
-        "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
+        "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
+        "de": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>"
       },
       "freeform": {
         "key": "climbing:bolts:max",
@@ -338,7 +341,8 @@
       "id": "fee",
       "question": {
         "en": "Is a fee required to climb here?",
-        "es": "¿Se requiere una tasa para escalar aquí?"
+        "es": "¿Se requiere una tasa para escalar aquí?",
+        "de": "Ist das Klettern hier gebührenpflichtig?"
       },
       "render": {
         "en": "A fee of {charge} should be paid for climbing here",
@@ -373,7 +377,8 @@
           },
           "then": {
             "en": "Paying a fee is required to climb here",
-            "es": "Hay que pagar una tasa para escalar aquí"
+            "es": "Hay que pagar una tasa para escalar aquí",
+            "de": "Zum Klettern ist eine Gebühr zu entrichten"
           },
           "hideInAnswer": "charge~*"
         }

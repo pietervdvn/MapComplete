@@ -97,7 +97,8 @@
         "ru": "Где расположена часть? (напр., название населённого пункта)",
         "fr": "Dans quelle localité la station est-elle située ?",
         "it": "In che località si trova la stazione? (ad es. quartiere, paese o città)",
-        "nl": "Waar is dit station gelegen? (v.b. naam van de buurt, dorp of stad)"
+        "nl": "Waar is dit station gelegen? (v.b. naam van de buurt, dorp of stad)",
+        "de": "Wo befindet sich die Station? (z. B. Name des Viertels, des Dorfes oder der Stadt)"
       },
       "freeform": {
         "key": "addr:place"
@@ -108,7 +109,8 @@
         "ru": "Эта часть расположена в {addr:place}.",
         "fr": "La station fait partie de {addr:place}.",
         "it": "La stazione si trova a {addr:place}.",
-        "nl": "Dit station ligt in {addr:place}."
+        "nl": "Dit station ligt in {addr:place}.",
+        "de": "Diese Station befindet sich innerhalb von {addr:place}."
       }
     },
     {
@@ -118,14 +120,16 @@
         "ja": "このステーションを運営しているのはどこですか?",
         "fr": "Quel est l’exploitant de la station ?",
         "it": "Quale agenzia gestisce questa stazione?",
-        "nl": "Welk agentschap beheert dit station?"
+        "nl": "Welk agentschap beheert dit station?",
+        "de": "Welche Organisation betreibt diese Station?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
         "ja": "このステーションは{operator}によって運営されています。",
         "fr": "Cette station est opérée par {operator}.",
         "it": "Questa stazione è gestita da {operator}.",
-        "nl": "Dit station wordt beheerd door {operator}."
+        "nl": "Dit station wordt beheerd door {operator}.",
+        "de": "Diese Station wird betrieben von {operator}."
       },
       "freeform": {
         "key": "operator"
@@ -183,7 +187,8 @@
             "fr": "La station est opérée par le gouvernement.",
             "it": "Questa stazione è gestita dal governo.",
             "nb_NO": "Stasjonen drives av myndighetene.",
-            "nl": "Dit station wordt beheerd door de overheid."
+            "nl": "Dit station wordt beheerd door de overheid.",
+            "de": "Die Station wird von einer Behörde betrieben."
           }
         },
         {

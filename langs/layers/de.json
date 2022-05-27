@@ -1968,8 +1968,16 @@
                         "then": "<b>USB</b> zum Laden von Handys und kleinen Elektrogeräten liefert maximal 10w A"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleiner Elektrogeräte</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert maximal {socket:USB-A:output}",
-                "question": "Welche Leistung bietet ein einzelner Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?"
+                "question": "Welche Leistung bietet ein einzelner Stecker des Typs <div style='display: inline-block'><b><b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleiner Elektrogeräte</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert maximal {socket:USB-A:output}"
+            },
+            "power-output-14": {
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> liefert maximal {socket:bosch_3pin:output}"
+            },
+            "power-output-15": {
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> liefert maximal {socket:bosch_5pin:output}"
             },
             "power-output-2": {
                 "mappings": {
@@ -2040,8 +2048,8 @@
                         "then": "<b>Tesla Supercharger</b> liefert maximal 250 kW A"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert maximal {socket:tesla_supercharger:output}",
-                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?"
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert maximal {socket:tesla_supercharger:output}"
             },
             "power-output-7": {
                 "mappings": {
@@ -2052,8 +2060,8 @@
                         "then": "<b>Typ 2</b> (Mennekes) liefert maximal 22 kw A"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> liefert maximal {socket:type2:output}",
-                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?"
+                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> liefert maximal {socket:type2:output}"
             },
             "power-output-8": {
                 "mappings": {
@@ -2098,8 +2106,8 @@
                         "then": "<b>Europäischer Netzstecker</b> mit Schutzkontakt (CEE7/4 Typ E) liefert 230 Volt"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> liefert {socket:typee:voltage} volt",
-                "question": "Welche Spannung liefern die <div style='display: inline-block'><b><b>Europäischen Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>?"
+                "question": "Welche Spannung liefern die <div style='display: inline-block'><b><b>Europäischen Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Europäischer Wandstecker</b> mit Erdungsstift (CEE7/4 Typ E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> liefert {socket:typee:voltage} volt"
             },
             "voltage-10": {
                 "mappings": {
@@ -2131,8 +2139,8 @@
                         "then": "<b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel) liefert 400 Volt"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:tesla_destination:voltage} Volt",
-                "question": "Welche Spannung bieten die <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?"
+                "question": "Welche Spannung bieten die <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 mit Kabel von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:tesla_destination:voltage} Volt"
             },
             "voltage-13": {
                 "mappings": {
@@ -2146,6 +2154,10 @@
             "voltage-14": {
                 "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?",
                 "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> liefert {socket:bosch_3pin:voltage} Volt"
+            },
+            "voltage-15": {
+                "question": "Welche Spannung liefern die <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> liefert {socket:bosch_5pin:voltage} Volt"
             },
             "voltage-2": {
                 "mappings": {
@@ -2165,8 +2177,8 @@
                         "then": "<b>Typ 1 mit Kabel</b> (J1772) liefert 240 Volt"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefern {socket:type1_cable:voltage} Volt",
-                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?"
+                "question": "Welche Spannung liefern die Stecker mit <div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Typ 1 mit Kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> liefern {socket:type1_cable:voltage} Volt"
             },
             "voltage-4": {
                 "mappings": {
@@ -2198,8 +2210,8 @@
                         "then": "<b>Tesla Supercharger</b> liefert 480 Volt"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert {socket:tesla_supercharger:voltage} Volt",
-                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?"
+                "question": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> liefert {socket:tesla_supercharger:voltage} Volt"
             },
             "voltage-7": {
                 "mappings": {
@@ -2238,20 +2250,8 @@
                 "render": "<div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert {socket:type2_cable:voltage} Volt"
             },
             "website": {
-                "render": "Weitere Informationen unter <a href='{website}'>{website}</a>",
-                "question": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?"
-            },
-            "voltage-15": {
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> liefert {socket:bosch_5pin:voltage} Volt",
-                "question": "Welche Spannung liefern die <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?"
-            },
-            "power-output-14": {
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div> liefert maximal {socket:bosch_3pin:output}",
-                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Bosch Active Connect mit 3 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>?"
-            },
-            "power-output-15": {
-                "render": "<div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> liefert maximal {socket:bosch_5pin:output}",
-                "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Bosch Active Connect mit 5 Pins</b> und Kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>?"
+                "question": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?",
+                "render": "Weitere Informationen unter <a href='{website}'>{website}</a>"
             }
         },
         "title": {
@@ -2309,6 +2309,7 @@
         }
     },
     "climbing": {
+        "description": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden",
         "tagRenderings": {
             "average_length": {
                 "question": "Wie lang sind die Routen (durchschnittlich) in Metern?",
@@ -2340,8 +2341,12 @@
                         "then": "Zum Klettern ist eine Gebühr zu entrichten"
                     }
                 },
-                "render": "Zum Klettern wird eine Gebühr von {charge} erhoben",
-                "question": "Ist das Klettern hier gebührenpflichtig?"
+                "question": "Ist das Klettern hier gebührenpflichtig?",
+                "render": "Zum Klettern wird eine Gebühr von {charge} erhoben"
+            },
+            "max_bolts": {
+                "question": "Wie viele Haken haben die Routen in {title()} maximal?",
+                "render": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>"
             },
             "max_difficulty": {
                 "question": "Welche Schwierigkeit hat hier die schwerste Route (französisch/belgisches System)?",
@@ -2395,13 +2400,8 @@
             },
             "website": {
                 "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"
-            },
-            "max_bolts": {
-                "question": "Wie viele Haken haben die Routen in {title()} maximal?",
-                "render": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>"
             }
-        },
-        "description": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden"
+        }
     },
     "climbing_area": {
         "description": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, ... Enthält eine Sammlung von Routen",
@@ -3508,6 +3508,9 @@
             },
             "station-operator": {
                 "mappings": {
+                    "0": {
+                        "then": "Die Station wird von einer Behörde betrieben."
+                    },
                     "1": {
                         "then": "Die Feuerwache wird von einer gemeinnützigen Organisation betrieben."
                     },
@@ -3516,21 +3519,18 @@
                     },
                     "3": {
                         "then": "Die Feuerwache wird von einer privaten Organisation betrieben."
-                    },
-                    "0": {
-                        "then": "Die Station wird von einer Behörde betrieben."
                     }
                 },
                 "question": "Wie kann der Betreiber der Feuerwache eingestuft werden?",
                 "render": "Der Betreiber ist {operator:type}."
             },
-            "station-street": {
-                "question": " In welcher Straße ist die Feuerwache?",
-                "render": "Die Feuerwache liegt an der Straße namens {addr:street}."
-            },
             "station-place": {
                 "question": "Wo befindet sich die Station? (z. B. Name des Viertels, des Dorfes oder der Stadt)",
                 "render": "Diese Station befindet sich innerhalb von {addr:place}."
+            },
+            "station-street": {
+                "question": " In welcher Straße ist die Feuerwache?",
+                "render": "Die Feuerwache liegt an der Straße namens {addr:street}."
             }
         },
         "title": {
