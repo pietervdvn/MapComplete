@@ -18,21 +18,23 @@ import {Paragraph} from "../Base/Paragraph";
 
 export interface WikipediaBoxOptions {
     addHeader:  boolean,
-    firstParagraphOnly: boolean
+    firstParagraphOnly: boolean,
+    noImages: boolean
+    currentState?: UIEventSource<"loading" | "loaded" | "error">
 }
 
 export default class WikipediaBox extends Combine {
-
+    
     constructor(wikidataIds: string[], options?: WikipediaBoxOptions) {
         const mainContents = []
-        options = options??{addHeader: false, firstParagraphOnly: true};
+        options = options??{addHeader: false, firstParagraphOnly: true, noImages: false};
         const pages = wikidataIds.map(entry => WikipediaBox.createLinkedContent(entry.trim(), options))
         if (wikidataIds.length == 1) {
             const page = pages[0]
             mainContents.push(
                 new Combine([
                     new Combine([
-                        Svg.wikipedia_ui().SetStyle("width: 1.5rem").SetClass("inline-block mr-3"),
+                        options.noImages ? undefined : Svg.wikipedia_ui().SetStyle("width: 1.5rem").SetClass("inline-block mr-3"),
                         page.titleElement]).SetClass("flex"),
                     page.linkElement
                 ]).SetClass("flex justify-between align-middle"),
@@ -56,7 +58,7 @@ export default class WikipediaBox extends Combine {
                 }),
                 0,
                 {
-                    leftOfHeader: Svg.wikipedia_svg().SetStyle("width: 1.5rem; align-self: center;").SetClass("mr-4"),
+                    leftOfHeader: options.noImages ? undefined : Svg.wikipedia_svg().SetStyle("width: 1.5rem; align-self: center;").SetClass("mr-4"),
                     styleHeader: header => header.SetClass("subtle-background").SetStyle("height: 3.3rem")
                 }
             )
@@ -81,7 +83,6 @@ export default class WikipediaBox extends Combine {
         if (entry.match("[qQ][0-9]+")) {
             return WikipediaBox.createWikidatabox(entry, options)
         } else {
-            console.log("Creating wikipedia box for ", entry)
             return WikipediaBox.createWikipediabox(entry, options)
         }
     }
@@ -116,7 +117,8 @@ export default class WikipediaBox extends Combine {
     }
 
     /**
-     * Given a `Q1234`, constructs a wikipedia box or wikidata box
+     * Given a `Q1234`, constructs a wikipedia box (if a wikipedia page is available) or wikidata box as fallback.
+     * 
      */
     private static createWikidatabox(wikidataId: string, options: WikipediaBoxOptions): {
         titleElement: BaseUIElement,
@@ -168,6 +170,7 @@ export default class WikipediaBox extends Combine {
                 }
                 if (status[0] == "no page") {
                     const [_, wd] = <[string, WikidataResponse]>status
+                    options.currentState?.setData("loaded")
                     return new Combine([
                         WikidataPreviewBox.WikidataResponsePreview(wd),
                         wp.noWikipediaPage.Clone().SetClass("subtle")]).SetClass("flex flex-col p-4")
@@ -197,15 +200,16 @@ export default class WikipediaBox extends Combine {
         const linkElement = new VariableUiElement(wikiLink.map(state => {
             if (typeof state !== "string") {
                 const [pagetitle, language] = state
+                const popout = options.noImages ? "Source" : Svg.pop_out_svg().SetStyle("width: 1.2rem").SetClass("block")
                 if (pagetitle === "no page") {
                     const wd = <WikidataResponse>state[1]
-                    return new Link(Svg.pop_out_svg().SetStyle("width: 1.2rem").SetClass("block  "),
+                    return new Link(popout,
                         "https://www.wikidata.org/wiki/" + wd.id
                         , true)
                 }
 
                 const url = `https://${language}.wikipedia.org/wiki/${pagetitle}`
-                return new Link(Svg.pop_out_svg().SetStyle("width: 1.2rem").SetClass("block  "), url, true)
+                return new Link(popout, url, true)
             }
             return undefined
         }))
@@ -220,13 +224,14 @@ export default class WikipediaBox extends Combine {
 
 
     /**
-     * Returns the actual content in a scrollable way
+     * Returns the actual content in a scrollable way for the given wikipedia page
      */
     private static createContents(pagename: string, wikipedia: Wikipedia, options:{ 
         topBar?: BaseUIElement} & WikipediaBoxOptions): BaseUIElement {
         const htmlContent = wikipedia.GetArticle(pagename, options)
         const wp = Translations.t.general.wikipedia
-        const contents: UIEventSource<string | BaseUIElement> = htmlContent.map(htmlContent => {
+        const contents: VariableUiElement =new VariableUiElement(
+            htmlContent.map(htmlContent => {
             if (htmlContent === undefined) {
                 // Still loading
                 return new Loading(wp.loading.Clone())
@@ -253,12 +258,21 @@ export default class WikipediaBox extends Combine {
             }
 
             return undefined
-        })
+        }))
 
+        htmlContent.addCallbackAndRunD(c => {
+            if(c["success"] !== undefined){
+                options.currentState?.setData("loaded")
+            }else if (c["error"] !== undefined){
+                options.currentState?.setData("error")
+            }else {
+                options.currentState?.setData("loading")
+            }
+        })
+        
         return new Combine([
             options?.topBar?.SetClass("border-2 border-grey rounded-lg m-1 mb-0"),
-            new VariableUiElement(contents)
-                .SetClass("block pl-6 pt-2")])
+            contents                .SetClass("block pl-6 pt-2")])
     }
 
 }

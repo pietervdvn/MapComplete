@@ -22,7 +22,8 @@ export default class WikidataPreviewBox extends VariableUiElement {
     private static extraProperties: {
         requires?: { p: number, q?: number }[],
         property: string,
-        display: TypedTranslation<{value}> | Map<string, string | (() => BaseUIElement) /*If translation: Subs({value: * })  */>
+        display: TypedTranslation<{value}> | Map<string, string | (() => BaseUIElement) /*If translation: Subs({value: * })  */>,
+        textMode?: Map<string, string>
     }[] = [
         {
             requires: WikidataPreviewBox.isHuman,
@@ -34,6 +35,14 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 ['Q1052281', () => Svg.gender_trans_svg().SetStyle("width: 1rem; height: auto")/*'transwomen'*/],
                 ['Q2449503', () => Svg.gender_trans_svg().SetStyle("width: 1rem; height: auto")/*'transmen'*/],
                 ['Q48270', () => Svg.gender_queer_svg().SetStyle("width: 1rem; height: auto")]
+            ]),
+            textMode: new Map([
+                ['Q6581097',  "♂️"],
+                ['Q6581072',  "♀️"],
+                ['Q1097630', "⚥️"],
+                ['Q1052281',  "🏳️‍⚧️"/*'transwomen'*/],
+                ['Q2449503',  "🏳️‍⚧️"/*'transmen'*/],
+                ['Q48270',  "🏳️‍🌈 ⚧"]
             ])
         },
         {
@@ -48,7 +57,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
         }
     ]
 
-    constructor(wikidataId: UIEventSource<string>) {
+    constructor(wikidataId: UIEventSource<string>, options?: {noImages?: boolean}) {
         let inited = false;
         const wikidata = wikidataId
             .stabilized(250)
@@ -73,18 +82,16 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 return new FixedUiElement(maybeWikidata["error"]).SetClass("alert")
             }
             const wikidata = <WikidataResponse>maybeWikidata["success"]
-            return WikidataPreviewBox.WikidataResponsePreview(wikidata)
+            return WikidataPreviewBox.WikidataResponsePreview(wikidata, options)
         }))
 
     }
 
-    // @ts-ignore
-
-    public static WikidataResponsePreview(wikidata: WikidataResponse): BaseUIElement {
+    public static WikidataResponsePreview(wikidata: WikidataResponse, options?: {noImages?: boolean}): BaseUIElement {
         let link = new Link(
             new Combine([
                 wikidata.id,
-                Svg.wikidata_svg().SetStyle("width: 2.5rem").SetClass("block")
+                options.noImages ? wikidata.id : Svg.wikidata_svg().SetStyle("width: 2.5rem").SetClass("block")
             ]).SetClass("flex"),
             Wikidata.IdToArticle(wikidata.id), true)?.SetClass("must-link")
 
@@ -93,7 +100,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 [Translation.fromMap(wikidata.labels)?.SetClass("font-bold"),
                     link]).SetClass("flex justify-between"),
             Translation.fromMap(wikidata.descriptions),
-            WikidataPreviewBox.QuickFacts(wikidata)
+            WikidataPreviewBox.QuickFacts(wikidata, options)
         ]).SetClass("flex flex-col link-underline")
 
 
@@ -103,7 +110,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
         }
 
 
-        if (imageUrl) {
+        if (imageUrl && !options?.noImages) {
             imageUrl = WikimediaImageProvider.singleton.PrepUrl(imageUrl).url
             info = new Combine([new Img(imageUrl).SetStyle("max-width: 5rem; width: unset; height: 4rem").SetClass("rounded-xl mr-2"),
                 info.SetClass("w-full")]).SetClass("flex")
@@ -114,7 +121,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
         return info
     }
 
-    public static QuickFacts(wikidata: WikidataResponse): BaseUIElement {
+    public static QuickFacts(wikidata: WikidataResponse, options?: {noImages?: boolean}): BaseUIElement {
 
         const els: BaseUIElement[] = []
         for (const extraProperty of WikidataPreviewBox.extraProperties) {
@@ -134,7 +141,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
             }
 
             const key = extraProperty.property
-            const display = extraProperty.display
+            const display = (options?.noImages ? extraProperty.textMode: extraProperty.display) ??  extraProperty.display
             if (wikidata.claims?.get(key) === undefined) {
                 continue
             }

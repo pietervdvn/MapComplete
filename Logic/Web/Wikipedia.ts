@@ -31,10 +31,10 @@ export default class Wikipedia {
     private static readonly _cache = new Map<string, UIEventSource<{ success: string } | { error: any }>>()
 
 
-    private readonly _backend: string;
+    public readonly backend: string;
 
     constructor(options?: ({ language?: "en" | string } | { backend?: string })) {
-        this._backend = Wikipedia.getBackendUrl(options ?? {});
+        this.backend = Wikipedia.getBackendUrl(options ?? {});
     }
 
     /**
@@ -61,10 +61,10 @@ export default class Wikipedia {
      * new Wikipedia().extractPageName("https://wiki.openstreetmap.org/wiki/NL:Speelbos") // => undefined
      */
     public extractPageName(input: string):string  | undefined{
-        if(!input.startsWith(this._backend)){
+        if(!input.startsWith(this.backend)){
             return undefined
         }
-        input = input.substring(this._backend.length);
+        input = input.substring(this.backend.length);
         
         const matched = input.match("/?wiki/\(.+\)")
         if (matched === undefined || matched === null) {
@@ -88,7 +88,7 @@ export default class Wikipedia {
     }
 
     public GetArticle(pageName: string, options: WikipediaBoxOptions): UIEventSource<{ success: string } | { error: any }> {
-        const key = this._backend + ":" + pageName + ":" + (options.firstParagraphOnly ?? false)
+        const key = this.backend + ":" + pageName + ":" + (options.firstParagraphOnly ?? false)
         const cached = Wikipedia._cache.get(key)
         if (cached !== undefined) {
             return cached
@@ -99,11 +99,11 @@ export default class Wikipedia {
     }
 
     public getDataUrl(pageName: string): string {
-        return `${this._backend}/w/api.php?action=parse&format=json&origin=*&prop=text&page=` + pageName
+        return `${this.backend}/w/api.php?action=parse&format=json&origin=*&prop=text&page=` + pageName
     }
 
     public getPageUrl(pageName: string): string {
-        return `${this._backend}/wiki/${pageName}`
+        return `${this.backend}/wiki/${pageName}`
     }
 
     /**
@@ -111,7 +111,7 @@ export default class Wikipedia {
      * @param searchTerm
      */
     public async search(searchTerm: string): Promise<{ title: string, snippet: string }[]> {
-        const url = this._backend + "/w/api.php?action=query&format=json&list=search&srsearch=" + encodeURIComponent(searchTerm);
+        const url = this.backend + "/w/api.php?action=query&format=json&list=search&srsearch=" + encodeURIComponent(searchTerm);
         return (await Utils.downloadJson(url))["query"]["search"];
     }
 
@@ -121,23 +121,28 @@ export default class Wikipedia {
      * @param searchTerm
      */
     public async searchViaIndex(searchTerm: string): Promise<{ title: string, snippet: string, url: string } []> {
-        const url = `${this._backend}/w/index.php?search=${encodeURIComponent(searchTerm)}`
+        const url = `${this.backend}/w/index.php?search=${encodeURIComponent(searchTerm)}`
         const result = await Utils.downloadAdvanced(url);
         if(result["redirect"] ){
             // This is an exact match
             return [{
-                title: this.extractPageName(result["redirect"]), 
+                title: this.extractPageName(result["redirect"]).trim(), 
                 url: result["redirect"],
                 snippet: ""
             }]
         }
         const el = document.createElement('html');
-        el.innerHTML = result["content"].replace(/href="\//g, "href=\""+this._backend+"/");
+        el.innerHTML = result["content"].replace(/href="\//g, "href=\""+this.backend+"/");
         const searchResults = el.getElementsByClassName("mw-search-results")
         const individualResults = Array.from(searchResults[0]?.getElementsByClassName("mw-search-result") ?? [])
         return individualResults.map(result => {
+            const toRemove = Array.from(result.getElementsByClassName("searchalttitle"))
+            for (const toRm of toRemove) {
+                toRm.parentElement.removeChild(toRm)
+            }
+            
             return {
-                title: result.getElementsByClassName("mw-search-result-heading")[0].textContent,
+                title: result.getElementsByClassName("mw-search-result-heading")[0].textContent.trim(),
                 url: result.getElementsByTagName("a")[0].href,
                 snippet: result.getElementsByClassName("searchresult")[0].textContent
             }
@@ -180,7 +185,7 @@ export default class Wikipedia {
         links.filter(link => link.getAttribute("href")?.startsWith("/") ?? false).forEach(link => {
             link.target = '_blank'
             // note: link.getAttribute("href") gets the textual value, link.href is the rewritten version which'll contain the host for relative paths
-            link.href = `${this._backend}${link.getAttribute("href")}`;
+            link.href = `${this.backend}${link.getAttribute("href")}`;
         })
 
         if (options?.firstParagraphOnly) {

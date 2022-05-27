@@ -17,7 +17,8 @@ export class SubstitutedTranslation extends VariableUiElement {
         translation: Translation,
         tagsSource: UIEventSource<any>,
         state: FeaturePipelineState,
-        mapping: Map<string, BaseUIElement> = undefined) {
+        mapping: Map<string, BaseUIElement |
+            ((state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState) => BaseUIElement)> = undefined) {
 
         const extraMappings: SpecialVisualization[] = [];
 
@@ -25,9 +26,7 @@ export class SubstitutedTranslation extends VariableUiElement {
             extraMappings.push(
                 {
                     funcName: key,
-                    constr: (() => {
-                        return value
-                    }),
+                    constr: typeof value === "function" ? value : () => value,
                     docs: "Dynamically injected input element",
                     args: [],
                     example: ""
