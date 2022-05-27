@@ -133,8 +133,8 @@
             "title": "Ebenen auswählen",
             "zoomInToSeeThisLayer": "Ausschnitt vergrößern, um diese Ebene anzuzeigen"
         },
-        "loading": "Laden...",
-        "loadingTheme": "Lade {theme}...",
+        "loading": "Laden…",
+        "loadingTheme": "Lade {theme}…",
         "loginFailed": "Anmeldung bei OpenStreetMap fehlgeschlagen",
         "loginOnlyNeededToEdit": "zum Bearbeiten der Karte",
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
@@ -247,7 +247,7 @@
             "createNewWikidata": "Einen neues Wikidata Element erstellen",
             "doSearch": "Suche oben, um Ergebnisse zu sehen",
             "failed": "Laden des Wikipedia-Eintrags fehlgeschlagen",
-            "loading": "Wikipedia laden...",
+            "loading": "Wikipedia laden…",
             "noResults": "Nichts gefunden für <i>{search}</i>",
             "noWikipediaPage": "Dieses Wikidata-Element hat noch keine dazugehörige Wikipedia-Seite.",
             "previewbox": {
@@ -325,8 +325,8 @@
             "setRangeToZero": "Setzen Sie den Bereich auf 0 oder 1, wenn Sie alle importieren möchten",
             "states": {
                 "error": "Letzte Daten nicht von overpass heruntergeladen aufgrund von {error}",
-                "idle": "Lokalen Speicher überprüfen...",
-                "running": "Abfrage bei overpass...",
+                "idle": "Lokalen Speicher überprüfen…",
+                "running": "Abfrage bei overpass…",
                 "unexpected": "Unerwarteter Zustand {state}"
             },
             "title": "Mit vorhandenen Daten vergleichen",
@@ -337,7 +337,7 @@
         "createNotes": {
             "creating": "<b>{count}</b> Notizen von {total} erstellt",
             "done": "Alle {count} Notizen wurden erstellt!",
-            "loading": "Bitte warten, Daten werden geladen...",
+            "loading": "Bitte warten, Daten werden geladen…",
             "openImportViewer": "Sehen Sie den Fortschritt Ihrer Notizen im 'import_viewer'",
             "title": "Notizerstellung"
         },
@@ -454,7 +454,7 @@
         "addAComment": "Einen Kommentar hinzufügen",
         "addComment": "Einen Kommentar hinzufügen",
         "addCommentAndClose": "Einen Kommentar hinzufügen und schließen",
-        "addCommentPlaceholder": "Einen Kommentar hinzufügen...",
+        "addCommentPlaceholder": "Einen Kommentar hinzufügen…",
         "anonymous": "Anonymer Benutzer",
         "closeNote": "Notiz schließen",
         "createNote": "Eine neue Notiz erstellen",
@@ -494,11 +494,11 @@
     "professional": {
         "aboutMc": {
             "internalUse": {
-                "intro": "Sobald die Daten in OpenStreetMap sind, werden Sie sie wahrscheinlich auch nutzen wollen. Ihr MapComplete-Thema kann eine praktische <i>export</i>-Schaltfläche haben, mit der Sie die Daten in vielen offenen Formaten herunterladen können, die in QGis, ArcGis, Excel, LibreOffice-calc, ... verwendbar sind.<p></p><p>Jemand mit grundlegenden Tabellenkalkulationskenntnissen kann so leicht Diagramme und Einblicke über die Daten erstellen, während die GIS-Experten in Ihrer Organisation leicht mit diesen Daten in ihrer bevorzugten Anwendung arbeiten können.</p><p>Wenn eine automatisierte Einrichtung benötigt wird, ist eine frei zu verwendende, von der Gemeinschaft betriebene API verfügbar.</p>",
+                "intro": "Sobald die Daten in OpenStreetMap sind, werden Sie sie wahrscheinlich auch nutzen wollen. Ihr MapComplete-Thema kann eine praktische <i>export</i>-Schaltfläche haben, mit der Sie die Daten in vielen offenen Formaten herunterladen können, die in QGis, ArcGis, Excel, LibreOffice-calc, … verwendbar sind.<p></p><p>Jemand mit grundlegenden Tabellenkalkulationskenntnissen kann so leicht Diagramme und Einblicke über die Daten erstellen, während die GIS-Experten in Ihrer Organisation leicht mit diesen Daten in ihrer bevorzugten Anwendung arbeiten können.</p><p>Wenn eine automatisierte Einrichtung benötigt wird, ist eine frei zu verwendende, von der Gemeinschaft betriebene API verfügbar.</p>",
                 "title": "Daten in internen Prozessen verwenden"
             },
             "layers": {
-                "intro": "<p>MapComplete verfügt über ein leistungsfähiges Vorlagen-System, das es ermöglicht, schnell eine Karte zu erstellen, die genau die Objekte zeigt, die Sie benötigen, und die relevanten Attribute in den Popups anzuzeigen.</p><p>Diese Daten können direkt von <b>OpenStreetMap</b> geholt werden, MapComplete kann jedoch auch <b>externe Datensätze</b> verwenden - z.B. um OpenStreetMap mit einem anderen Datensatz zu vergleichen oder um Daten anzuzeigen, die nicht für OpenStreetMap geeignet sind (geplante Aktivitäten, Statistiken, ...)</p>",
+                "intro": "<p>MapComplete verfügt über ein leistungsfähiges Vorlagen-System, das es ermöglicht, schnell eine Karte zu erstellen, die genau die Objekte zeigt, die Sie benötigen, und die relevanten Attribute in den Popups anzuzeigen.</p><p>Diese Daten können direkt von <b>OpenStreetMap</b> geholt werden, MapComplete kann jedoch auch <b>externe Datensätze</b> verwenden - z.B. um OpenStreetMap mit einem anderen Datensatz zu vergleichen oder um Daten anzuzeigen, die nicht für OpenStreetMap geeignet sind (geplante Aktivitäten, Statistiken, …)</p>",
                 "title": "Welche Daten zeigt MapComplete an?"
             },
             "survey": {
@@ -569,7 +569,7 @@
                 "intro": "Die Grundregel für OpenStreetMap ist, dass alle Daten <b>vor Ort überprüfbar</b> und einigermaßen dauerhaft sein müssen. Dies bedeutet, dass einige Daten <i>nicht</i> direkt an OpenStreetMap gesendet werden können - aber es gibt einige Umgehungsmöglichkeiten.",
                 "li0": "Subjektive Daten (wie z. B. Bewertungen) sind für OpenStreetMap nicht geeignet. MapComplete hat jedoch eine Integration mit <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a>, einer offen lizenzierten Webseite für Rezensionen oder Bewertungen",
                 "li1": "Veranstaltungen werden <i>nicht</i> erfasst, ebenso wenig wie Straßenarbeiten, die nur wenige Tage andauern.",
-                "li2": "Zeitliche Daten (z.B. Statistiken zur Luftqualität, Verkehrsintensität, ...) können nicht auf OpenStreetMap gespeichert werden, da sie von einem Freiwilligen nur schwer zu überprüfen sind. Wenn diese Daten anderswo verfügbar sind, können sie dennoch in MapComplete als zusätzliche Ebene visualisiert werden.",
+                "li2": "Zeitliche Daten (z.B. Statistiken zur Luftqualität, Verkehrsintensität, …) können nicht auf OpenStreetMap gespeichert werden, da sie von einem Freiwilligen nur schwer zu überprüfen sind. Wenn diese Daten anderswo verfügbar sind, können sie dennoch in MapComplete als zusätzliche Ebene visualisiert werden.",
                 "title": "Daten, die nicht für OpenStreetMap geeignet sind"
             }
         },
