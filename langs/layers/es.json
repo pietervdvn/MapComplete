@@ -1773,6 +1773,9 @@
         "presets": {
             "0": {
                 "title": "una desfibrilador"
+            },
+            "1": {
+                "title": "un desfibrilador montado en una pared"
             }
         },
         "tagRenderings": {
@@ -1789,19 +1792,25 @@
                     },
                     "3": {
                         "then": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)"
+                    },
+                    "4": {
+                        "then": "No accesible, posiblemente solo para el uso profesional"
                     }
                 },
                 "question": "¿Está el desfibrilador accesible libremente?",
                 "render": "El acceso es {access}"
             },
             "defibrillator-defibrillator:location": {
-                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)"
+                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)",
+                "render": "<i>Información a mayores sobre la localización (en el idioma local):</i><br/>{defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
-                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)"
+                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)",
+                "render": "<i>Información a mayores sobre la localización (en Inglés):</i><br/>{defibrillator:location:en}"
             },
             "defibrillator-defibrillator:location:fr": {
-                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)"
+                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)",
+                "render": "<i>Información a mayores sobre la localización (en Francés):</i><br/>{defibrillator:location:fr}"
             },
             "defibrillator-indoors": {
                 "mappings": {
@@ -1816,7 +1825,69 @@
             },
             "defibrillator-level": {
                 "question": "¿En qué planta se encuentra el defibrilador localizado?",
-                "render": "El desfibrilador se encuentra en la planta {level}"
+                "render": "El desfibrilador se encuentra en la planta {level}",
+                "mappings": {
+                    "0": {
+                        "then": "Este desfibrilador se encuentra en la <b>planta baja</b>"
+                    },
+                    "1": {
+                        "then": "Este desfibrilador se encuentra en la <b>primera planta</b>"
+                    }
+                }
+            },
+            "defibrillator-defibrillator": {
+                "mappings": {
+                    "0": {
+                        "then": "No hay información sobre el tipo de dispositivo"
+                    },
+                    "1": {
+                        "then": "Este es un desfibrilador manual para profesionales"
+                    },
+                    "2": {
+                        "then": "Este es un desfibrilador automático normal"
+                    },
+                    "3": {
+                        "then": "Este es un tipo de desfibrilador especial: {defibrillator}"
+                    }
+                },
+                "question": "¿Este es un desfibrilador automático normal o un desfibrilador manual solo para profesionales?"
+            },
+            "defibrillator-description": {
+                "question": "¿Hay alguna información útil para los usuarios que no hayas podido describir arriba? (dejar en blanco si no)",
+                "render": "Información adicional: {description}"
+            },
+            "defibrillator-fixme": {
+                "question": "¿Hay algo mal con como esta mapeado, que no pudiste arreglar aquí? (deja una nota para los expertos de OpenStreetMap)",
+                "render": "Información extra para expertos en OpenStreetMap: {fixme}"
+            },
+            "defibrillator-email": {
+                "render": "Correo electrónico para preguntas sobre este desfibrilador: <a href='mailto:{email}'>{email}</a>",
+                "question": "¿Cual es el correo electrónico para preguntas sobre este desfibrilador?"
+            },
+            "defibrillator-survey:date": {
+                "question": "¿Cuándo se sondeó por última vez este desfibrilador?",
+                "render": "Este desfibrilador se sondeó por última vez el {survey:dat}",
+                "mappings": {
+                    "0": {
+                        "then": "¡Comprobado hoy!"
+                    }
+                }
+            },
+            "defibrillator-opening_hours": {
+                "question": "¿A qué horas está disponible este desfibrilador?",
+                "render": "{opening_hours_table(opening_hours)}",
+                "mappings": {
+                    "0": {
+                        "then": "Abierto 24/7 (incluyendo festivos)"
+                    }
+                }
+            },
+            "defibrillator-phone": {
+                "question": "¿Cual es el número de teléfono para preguntas sobre este desfibrilador?"
+            },
+            "defibrillator-ref": {
+                "question": "¿Cual es el número de identificación oficial de este dispositivo? (si está visible en el dispositivo)",
+                "render": "Número de identificación oficial del dispositivo: <i>{ref}</i>"
             }
         },
         "title": {
@@ -1959,6 +2030,459 @@
         },
         "title": {
             "render": "Árbol"
+        }
+    },
+    "entrance": {
+        "tagRenderings": {
+            "Entrance type": {
+                "mappings": {
+                    "6": {
+                        "then": "Esta es una entrada por la que solo se puede entrar (pero no salir)"
+                    },
+                    "8": {
+                        "then": "Esta es la entrada a una vivienda privada"
+                    },
+                    "2": {
+                        "then": "Esta es la entrada principal"
+                    },
+                    "4": {
+                        "then": "Esta es una entrada de servicio - normalmente solo la utilizan empleados, repartidores, …"
+                    },
+                    "0": {
+                        "then": "No se conoce un tipo de entrada específico"
+                    },
+                    "3": {
+                        "then": "Esta es una entrada secundaria"
+                    },
+                    "1": {
+                        "then": "Esta es una puerta interior, que separa una habitación o pasillo dentro de un único edificio"
+                    },
+                    "5": {
+                        "then": "Esta es una salida por la cual no se puede entrar"
+                    },
+                    "7": {
+                        "then": "Esta es una salida de emergencia"
+                    }
+                },
+                "question": "¿Qué tipo de entrada es esta?"
+            },
+            "Door_type": {
+                "mappings": {
+                    "5": {
+                        "then": "Esta es una entrada sin una puerta física"
+                    },
+                    "2": {
+                        "then": "Una puerta giratoria que cuelga de un eje central y que rota dentro de una carcasa cilíndrica"
+                    },
+                    "0": {
+                        "then": "Se desconoce el tipo de puerta"
+                    },
+                    "1": {
+                        "then": "Una puerta clásica, con bisagras soportadas por uniones"
+                    },
+                    "3": {
+                        "then": "Una puerta corredera donde las hojas se deslizan de lado a lado, típicamente con una pared"
+                    }
+                },
+                "question": "¿Cual es el tipo de esta puerta?<br/><span class='subtle'>Si la puerta está automatizada o no se pregunta en la siguiente pregunta</span>"
+            },
+            "automatic_door": {
+                "mappings": {
+                    "5": {
+                        "then": "Esta puerta gira automáticamente todo el rato, pero tiene un <b>botón para ralentizarla</b>, por ejemplo, para usuarios de sillas de ruedas"
+                    },
+                    "6": {
+                        "then": "Esta puerta gira automáticamente todo el rato"
+                    },
+                    "7": {
+                        "then": "Esta puerta la abre el personal cuando se pide <b>pulsando un botón</b>"
+                    },
+                    "2": {
+                        "then": "Esta puerta se abre automáticamente cuando se detecta <b>movimiento</b>"
+                    },
+                    "0": {
+                        "then": "Esta es una puerta automática"
+                    },
+                    "1": {
+                        "then": "Esta puerta <b>no</b> está automatizada"
+                    },
+                    "3": {
+                        "then": "Esta puerta se abre automáticamente cuando se activa un <b>sensor en el suelo</b>"
+                    },
+                    "4": {
+                        "then": "Esta puerta se abre automáticamente cuando se <b>pulsa un botón</b>"
+                    },
+                    "8": {
+                        "then": "Esta puerta la abrirá el personal cuando se pida"
+                    }
+                }
+            },
+            "width": {
+                "render": "Esta puerta tiene una ancho de {canonical(width)} metros",
+                "question": "¿Cual es el ancho de esta puerta/entrada?"
+            }
+        },
+        "name": "Entrada",
+        "description": "Una capa que muestra capas y ofrece la posibilidad de sondear algunos datos avanzados que son importantes para, por ejemplo, usuarios de sillas de ruedas (pero también incluye ciclistas, gente que quiere repartir, ...)",
+        "title": {
+            "render": "Entrada"
+        }
+    },
+    "drinking_water": {
+        "name": "Agua potable",
+        "tagRenderings": {
+            "Still in use?": {
+                "mappings": {
+                    "1": {
+                        "then": "Esta agua potable está rota"
+                    },
+                    "0": {
+                        "then": "Esta agua potable funciona"
+                    },
+                    "2": {
+                        "then": "Esta agua potable está cerrada"
+                    }
+                },
+                "render": "El estado operacional es <i>{operational_status}</i>",
+                "question": "¿Todavía esta operativo este punto de agua potable?"
+            },
+            "Bottle refill": {
+                "mappings": {
+                    "0": {
+                        "then": "Es fácil rellenar botellas de agua"
+                    },
+                    "1": {
+                        "then": "Las botellas de agua pueden no caber"
+                    }
+                },
+                "question": "¿Cómo de fácil es rellenar botellas de agua?"
+            },
+            "render-closest-drinking-water": {
+                "render": "<a href='#{_closest_other_drinking_water_id}'>Hay otra fuente de agua potable a {_closets_other_drinking_water_distance} metros</a>"
+            }
+        },
+        "description": "Una capa que muestra fuentes de agua potable",
+        "deletion": {
+            "nonDeleteMappings": {
+                "1": {
+                    "then": "Este es un grifo de agua o una bomba de agua con agua no potable.<div class='subtle'>Ejemplos son grifos con agua de lluvia o agua del grifo para plantas cercanas</div>"
+                },
+                "0": {
+                    "then": "Esta es una fuente decorativa con agua no potable"
+                }
+            }
+        },
+        "title": {
+            "render": "Agua potable"
+        }
+    },
+    "food": {
+        "tagRenderings": {
+            "friture-oil": {
+                "mappings": {
+                    "0": {
+                        "then": "Aceite vegetal"
+                    },
+                    "1": {
+                        "then": "Aceite animal"
+                    }
+                }
+            },
+            "Vegetarian (no friture)": {
+                "mappings": {
+                    "1": {
+                        "then": "Algunas opciones vegetarianas"
+                    },
+                    "2": {
+                        "then": "Opciones vegetarianas disponibles"
+                    },
+                    "3": {
+                        "then": "Todos los platos son vegetarianos"
+                    },
+                    "0": {
+                        "then": "Sin opciones vegetarianas"
+                    }
+                },
+                "question": "¿Este restaurante tiene una opción vegetariana?"
+            },
+            "Cuisine": {
+                "question": "¿Qué comida se sirve aquí?",
+                "render": "Aquí se sirve principalmente {cuisine}",
+                "mappings": {
+                    "11": {
+                        "then": "Aquí se sirven platos Griegos"
+                    },
+                    "0": {
+                        "then": "Esto es una pizzería"
+                    },
+                    "3": {
+                        "then": "Esta es una tienda de kebak"
+                    },
+                    "12": {
+                        "then": "Aquí se sirven platos Indios"
+                    },
+                    "7": {
+                        "then": "Aquí se sirve café"
+                    },
+                    "13": {
+                        "then": "Aquí se sirven platos Turcos"
+                    },
+                    "6": {
+                        "then": "Aquí se sirve sushi"
+                    },
+                    "5": {
+                        "then": "Aquí se sirven hamburguesas"
+                    },
+                    "2": {
+                        "then": "Principalmente sirve pasta"
+                    },
+                    "8": {
+                        "then": "Este es un restaurante italiano (que sirve más que pasta y pizza)"
+                    },
+                    "9": {
+                        "then": "Aquí se sirven platos Franceses"
+                    },
+                    "10": {
+                        "then": "Aquí se sirven platos Chinos"
+                    }
+                }
+            },
+            "Fastfood vs restaurant": {
+                "mappings": {
+                    "0": {
+                        "then": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales."
+                    },
+                    "1": {
+                        "then": "Un <b>restaurante</b>, centrado en crear una buena experiencia donde se sirve en la mesa"
+                    }
+                },
+                "question": "¿Qué tipo de negocio es este?"
+            },
+            "Takeaway": {
+                "mappings": {
+                    "2": {
+                        "then": "Aquí no es posible pedir para llevar"
+                    },
+                    "0": {
+                        "then": "Este es un negocio solo para pedir para llevar"
+                    },
+                    "1": {
+                        "then": "Aquí es posible pedir para llevar"
+                    }
+                },
+                "question": "¿Este lugar ofrece para llevar?"
+            },
+            "Vegan (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "Sin opciones veganas disponibles"
+                    },
+                    "1": {
+                        "then": "Alguna opciones veganas disponibles"
+                    },
+                    "2": {
+                        "then": "Opciones veganas disponibles"
+                    },
+                    "3": {
+                        "then": "Todos los platos son veganos"
+                    }
+                },
+                "question": "¿Este negocio sirve comida vegana?"
+            },
+            "Name": {
+                "question": "¿Cual es el nombre de este restaurante?",
+                "render": "El nombre de este restaurante es {name}"
+            },
+            "friture-take-your-container": {
+                "mappings": {
+                    "1": {
+                        "then": "Traer tu propio recipiente <b>no está permitido</b>"
+                    },
+                    "0": {
+                        "then": "Puedes traer <b>tus propios recipientes</b> para recoger tu pedido, ahorrando material de un solo uso y por tanto basura"
+                    },
+                    "2": {
+                        "then": "<b>Debes</b> de traer tu propio recipiente para pedir aquí."
+                    }
+                },
+                "question": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?<br/>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Comida rápida <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Comida rápida"
+                },
+                "0": {
+                    "then": "Restaurante <i>{name}</i>"
+                }
+            },
+            "render": "Restaurante"
+        },
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} ha cerrado permanentemente"
+                }
+            }
+        },
+        "filter": {
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Acepta efectivo"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Acepta tarjetas de pago"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú halah"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú vegetariano"
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Abierta ahora"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú vegano"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "un restaurante",
+                "description": "Un lugar de comidas formal, con mesas y sillas y que vende comidas completas servidas por camareros"
+            },
+            "1": {
+                "description": "Un negocio de comida centrado en servicio rápido solo en mostrador y comida para llevar"
+            }
+        },
+        "name": "Restaurantes y comida rápida",
+        "description": "Una capa que muestra restaurantes y facilidades de comida rápida"
+    },
+    "dogpark": {
+        "name": "parques de perros",
+        "presets": {
+            "0": {
+                "title": "un parque para perros",
+                "description": "Un lugar para perros, donde pueden correr sin correa"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "render": "El nombre de este parque para perros es {name}",
+                "question": "¿Cual es el nombre de este parque para perros?"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "1": {
+                        "then": "Este parque para perros no está cerrado todo alrededor"
+                    },
+                    "0": {
+                        "then": "Este parque para perros está cerrado todo alrededor"
+                    }
+                },
+                "question": "¿Este parque para perros está vallado?"
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Tiene un espacio separado para cachorros y perros pequeños"
+                    },
+                    "1": {
+                        "then": "<strong>No</strong> tiene un espacio separado para cachorros y perros pequeños"
+                    }
+                },
+                "question": "¿Este parque para perros tiene una zona separada vallada para perros pequeños y cachorros?"
+            },
+            "dogarea": {
+                "render": "Este parque para perros tiene {_surface:ha} ha"
+            }
+        },
+        "title": {
+            "render": "parque para perros"
+        }
+    },
+    "extinguisher": {
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Se encuentra en el interior."
+                    },
+                    "1": {
+                        "then": "Se encuentra en el exterior."
+                    }
+                },
+                "question": "¿Dónde se encuentra?",
+                "render": "Localización: {location}"
+            }
+        },
+        "description": "Capa del mapa que muestra extintores.",
+        "name": "Mapa de extintores",
+        "presets": {
+            "0": {
+                "title": "un extintor",
+                "description": "Un extintor es un dispositivo pequeño y portátil utilizado para parar un fuego"
+            }
+        },
+        "title": {
+            "render": "Extintores"
+        }
+    },
+    "fire_station": {
+        "name": "Mapa de parques de bomberos",
+        "tagRenderings": {
+            "station-agency": {
+                "question": "¿Que agencia opera este parque?",
+                "render": "Este parque lo opera {operator}."
+            },
+            "station-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Este parque de bomberos lo opera el gobierno."
+                    }
+                }
+            },
+            "station-name": {
+                "question": "¿Cual es el nombre de este parque de bomberos?",
+                "render": "Este parque de bomberos se llama {nombre}."
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "un parque de bomberos",
+                "description": "Un parque de bomberos es donde los bomberos y los camiones de incendios se encuentran cuando no están en uso."
+            }
+        },
+        "description": "Capa del mapa que muestra parques de bomberos.",
+        "title": {
+            "render": "Parque de bomberos"
         }
     }
 }
