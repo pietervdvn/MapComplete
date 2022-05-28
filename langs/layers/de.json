@@ -579,20 +579,20 @@
             "bike_cafe-bike-pump": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Fahrrad-Café bietet eine Fahrradpumpe an, die von jedem benutzt werden kann"
+                        "then": "Das Fahrrad-Café hat eine Fahrradpumpe, die von jedem benutzt werden kann"
                     },
                     "1": {
-                        "then": "Dieses Fahrrad-Café bietet keine Fahrradpumpe an, die von jedem benutzt werden kann"
+                        "then": "Das Fahrrad-Café hat keine Fahrradpumpe, die von jedem benutzt werden kann"
                     }
                 },
-                "question": "Bietet dieses Fahrrad-Café eine Fahrradpumpe an, die von jedem benutzt werden kann?"
+                "question": "Hat das Fahrrad-Café eine Fahrradpumpe, die von jedem benutzt werden kann?"
             },
             "bike_cafe-email": {
                 "question": "Wie lautet die E-Mail-Adresse von {name}?"
             },
             "bike_cafe-name": {
-                "question": "Wie heißt dieses Fahrrad-Café?",
-                "render": "Dieses Fahrrad-Café heißt {name}"
+                "question": "Wie heißt das Fahrrad-Café?",
+                "render": "Das Fahrrad-Café heißt {name}"
             },
             "bike_cafe-opening_hours": {
                 "question": "Wann ist dieses Fahrradcafé geöffnet?"
@@ -603,27 +603,27 @@
             "bike_cafe-repair-service": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Fahrrad-Café repariert Fahrräder"
+                        "then": "Das Fahrrad-Café repariert Fahrräder"
                     },
                     "1": {
-                        "then": "Dieses Fahrrad-Café repariert keine Fahrräder"
+                        "then": "Das Fahrrad-Café repariert keine Fahrräder"
                     }
                 },
-                "question": "Repariert dieses Fahrrad-Café Fahrräder?"
+                "question": "Repariert das Fahrrad-Café Fahrräder?"
             },
             "bike_cafe-repair-tools": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Fahrrad-Café bietet Werkzeuge für die selbständige Reparatur an"
+                        "then": "Das Fahrrad-Café bietet Werkzeug für die selbständige Reparatur an"
                     },
                     "1": {
-                        "then": "Dieses Fahrrad-Café bietet keine Werkzeuge für die selbständige Reparatur an"
+                        "then": "Das Fahrrad-Café bietet kein Werkzeug für die selbständige Reparatur an"
                     }
                 },
-                "question": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?"
+                "question": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?"
             },
             "bike_cafe-website": {
-                "question": "Was ist die Webseite von {name}?"
+                "question": "Wie lautet die Webseite von {name}?"
             }
         },
         "title": {
@@ -696,16 +696,16 @@
             "Access": {
                 "mappings": {
                     "0": {
-                        "then": "Der Zugang ist öffentlich"
+                        "then": "Der Parkplatz darf öffentlich genutzt werden"
                     },
                     "1": {
-                        "then": "Der Zugang ist vorwiegend für Besucher oder Kunden eines Unternehmens"
+                        "then": "Der Parkplatz darf von Kunden des Unternehmens genutzt werden"
                     },
                     "2": {
-                        "then": "Der Zugang ist beschränkt auf Mitglieder einer Schule, Firma oder Organisation"
+                        "then": "Der Parkplatz darf nur von Mitgliedern einer Schule, Firma oder Organisation genutzt werden"
                     }
                 },
-                "question": "Wer kann diesen Fahrradparplatz nutzen?",
+                "question": "Wer darf den Parkplatz nutzen?",
                 "render": "{access}"
             },
             "Bicycle parking type": {
@@ -749,27 +749,27 @@
             "Cargo bike spaces?": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Parkplatz bietet Platz für Lastenfahrräder"
+                        "then": "Der Parkplatz hat Stellflächen für Lastenfahrräder"
                     },
                     "1": {
-                        "then": "Dieser Parkplatz verfügt über ausgewiesene (offizielle) Plätze für Lastenfahrräder."
+                        "then": "Der Parkplatz hat ausgewiesene (offizielle) Stellflächen für Lastenfahrräder."
                     },
                     "2": {
-                        "then": "Es ist nicht erlaubt, Lastenfahrräder zu parken"
+                        "then": "Der Parkplatz bietet keine Stellflächen für Lastenfahrräder"
                     }
                 },
-                "question": "Gibt es auf diesem Fahrrad-Parkplatz Plätze für Lastenfahrräder?"
+                "question": "Hat der Parkplatz Stellflächen für Lastenfahrräder?"
             },
             "Is covered?": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Parkplatz ist überdacht"
+                        "then": "Der Parkplatz ist überdacht"
                     },
                     "1": {
-                        "then": "Dieser Parkplatz ist nicht überdacht"
+                        "then": "Der Parkplatz ist nicht überdacht"
                     }
                 },
-                "question": "Ist dieser Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Innenparkplätze."
+                "question": "Ist der Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Parkplätze in Innenräumen."
             },
             "Underground?": {
                 "mappings": {
@@ -851,13 +851,13 @@
                         "then": "Es ist nur eine Pumpe vorhanden"
                     },
                     "1": {
-                        "then": "Es sind nur Werkzeuge (Schraubenzieher, Zangen, …) vorhanden"
+                        "then": "Es ist nur Werkzeug (Schraubenzieher, Zangen, …) vorhanden"
                     },
                     "2": {
                         "then": "Es sind sowohl Werkzeuge als auch eine Pumpe vorhanden"
                     }
                 },
-                "question": "Welche Einrichtungen sind hier vorhanden?"
+                "question": "Welche Geräte sind hier vorhanden?"
             },
             "bike_repair_station-bike-chain-tool": {
                 "mappings": {
@@ -3103,32 +3103,32 @@
         "name": "Defibrillatoren",
         "presets": {
             "0": {
-                "title": "eine defibrillator"
+                "title": "einen Defibrillator"
             },
             "1": {
-                "title": "ein an einer Wand montierter Defibrillator"
+                "title": "einen wandseitig befestigten Defibrillator"
             }
         },
         "tagRenderings": {
             "defibrillator-access": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlich zugänglich"
+                        "then": "Der Defibrillator ist öffentlich zugänglich"
                     },
                     "1": {
                         "then": "Öffentlich zugänglich"
                     },
                     "2": {
-                        "then": "Nur für Kunden zugänglich"
+                        "then": "Der Defibrillator ist nur für Kunden zugänglich"
                     },
                     "3": {
-                        "then": "Nicht für die Öffentlichkeit zugänglich (z.B. nur für das Personal, die Eigentümer, …)"
+                        "then": "Der Defibrillator ist nicht öffentlich zugänglich (z.B. nur für Personal, Eigentümer, …)"
                     },
                     "4": {
-                        "then": "Nicht zugänglich, möglicherweise nur für betriebliche Nutzung"
+                        "then": "Der Defibrillator ist nicht zugänglich, möglicherweise nur für betriebliche Nutzung"
                     }
                 },
-                "question": "Ist dieser Defibrillator frei zugänglich?",
+                "question": "Ist der Defibrillator frei zugänglich?",
                 "render": "Zugang ist {access}"
             },
             "defibrillator-defibrillator": {
@@ -3149,11 +3149,11 @@
                 "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
             },
             "defibrillator-defibrillator:location": {
-                "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (in der lokalen Sprache)",
+                "question": "Bitte geben Sie einen Hinweis, wo genau der Defibrillator zu finden ist (in lokaler Sprache)",
                 "render": "<i>Zusätzliche Informationen über den Standort (in der Landessprache):</i><br/>{defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
-                "question": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Englisch)",
+                "question": "Bitte geben Sie einen Hinweis, wo der Defibrillator zu finden ist (auf Englisch)",
                 "render": "<i>Zusätzliche Informationen über den Standort (auf Englisch):</i><br/>{defibrillator:location:en}"
             },
             "defibrillator-defibrillator:location:fr": {
@@ -3169,30 +3169,30 @@
                 "render": "E-Mail für Fragen zu diesem Defibrillator: <a href='mailto:{email}'>{email}</a>"
             },
             "defibrillator-fixme": {
-                "question": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlasse eine Notiz an OpenStreetMap-Experten)",
+                "question": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlasse eine Notiz für OpenStreetMap-Experten)",
                 "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}"
             },
             "defibrillator-indoors": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Defibrillator befindet sich im Gebäude"
+                        "then": "Der Defibrillator befindet sich in einem Gebäude"
                     },
                     "1": {
-                        "then": "Dieser Defibrillator befindet sich im Freien"
+                        "then": "Der Defibrillator befindet sich im Freien"
                     }
                 },
-                "question": "Befindet sich dieser Defibrillator im Gebäude?"
+                "question": "Befindet sich der Defibrillator in einem Gebäude?"
             },
             "defibrillator-level": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Defibrillator befindet sich im <b>Erdgeschoss</b>"
+                        "then": "Der Defibrillator befindet sich im <b>Erdgeschoss</b>"
                     },
                     "1": {
-                        "then": "Dieser Defibrillator befindet sich in der <b>ersten Etage</b>"
+                        "then": "Der Defibrillator befindet sich in der <b>ersten Etage</b>"
                     }
                 },
-                "question": "In welchem Stockwerk befindet sich dieser Defibrillator?",
+                "question": "Auf welcher Etage befindet sich der Defibrillator?",
                 "render": "Dieser Defibrallator befindet sich im {level}. Stockwerk"
             },
             "defibrillator-opening_hours": {
@@ -3201,7 +3201,7 @@
                         "then": "24/7 geöffnet (auch an Feiertagen)"
                     }
                 },
-                "question": "Zu welchen Zeiten ist dieser Defibrillator verfügbar?",
+                "question": "Zu welchen Zeiten ist der Defibrillator verfügbar?",
                 "render": "{opening_hours_table(opening_hours)}"
             },
             "defibrillator-phone": {
@@ -3218,7 +3218,7 @@
                         "then": "Heute überprüft!"
                     }
                 },
-                "question": "Wann wurde dieser Defibrillator zuletzt überprüft?",
+                "question": "Wann wurde der Defibrillator zuletzt überprüft?",
                 "render": "Dieser Defibrillator wurde zuletzt am {survey:date} überprüft"
             }
         },
@@ -4072,36 +4072,36 @@
         "presets": {
             "0": {
                 "description": "Ein fehlendes Naturschutzgebiet hinzufügen",
-                "title": "ein Naturschutzgebiet"
+                "title": "ein Schutzgebiet"
             }
         },
         "tagRenderings": {
             "Access tag": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlich zugänglich"
+                        "then": "Das Gebiet ist öffentlich zugänglich"
                     },
                     "1": {
-                        "then": "Nicht zugänglich"
+                        "then": "Das Gebiet ist nicht zugänglich"
                     },
                     "2": {
-                        "then": "Nicht zugänglich, da dies ein privater Bereich ist"
+                        "then": "Das Gebiet ist privat und nicht zugänglich"
                     },
                     "3": {
-                        "then": "Zugänglich, obwohl es sich um ein privates Gebiet handelt"
+                        "then": "Das Gebiet ist privat aber zugänglich"
                     },
                     "4": {
-                        "then": "Nur mit einem Führer oder bei organisierten Aktivitäten zugänglich"
+                        "then": "Das Gebiet ist nur während Führungen oder organisierten Aktivitäten zugänglich"
                     },
                     "5": {
-                        "then": "Zugänglich gegen Gebühr"
+                        "then": "Das Gebiet ist nur gegen Bezahlung zugänglich"
                     }
                 },
-                "question": "Ist dieses Naturschutzgebiet für die Öffentlichkeit zugänglich?",
+                "question": "Ist das Gebiet öffentlich zugänglich?",
                 "render": "Zugang zu diesem Naturschutzgebiet: {access:description}"
             },
             "Curator": {
-                "question": "Wer ist der Verwalter dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
+                "question": "Wer verwaltet dieses Gebiet?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
                 "render": "{curator} ist der Pfleger dieses Naturschutzgebietes"
             },
             "Dogs?": {
@@ -4123,16 +4123,16 @@
                 "render": "Zusätzliche Informationen: <i>{description:0}</i>"
             },
             "Email": {
-                "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
+                "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Name tag": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Gebiet hat keinen Namen"
+                        "then": "Das Gebiet hat keinen Namen"
                     }
                 },
-                "question": "Wie heißt dieses Gebiet?",
+                "question": "Wie heißt das Gebiet?",
                 "render": "Dieses Gebiet heißt {name}"
             },
             "Non-editable description": {
@@ -4141,23 +4141,23 @@
             "Operator tag": {
                 "mappings": {
                     "0": {
-                        "then": "Betrieben von Natuurpunt"
+                        "then": "Das Gebiet wird betrieben von Natuurpunt"
                     },
                     "1": {
                         "then": "Betrieben von {operator}"
                     },
                     "2": {
-                        "then": "Betrieben von <i>Agentschap Natuur en Bos</i>"
+                        "then": "Das Gebiet wird betrieben von <i>Agentschap Natuur en Bos</i>"
                     }
                 },
-                "question": "Wer betreibt dieses Gebiet?",
+                "question": "Wer betreibt das Gebiet?",
                 "render": "Betrieben von {operator}"
             },
             "Surface area": {
                 "render": "Grundfläche: {_surface:ha}ha"
             },
             "phone": {
-                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
+                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist"
             }
         },
         "title": {
@@ -4884,7 +4884,7 @@
         "presets": {
             "0": {
                 "description": "Ein neues Geschäft hinzufügen",
-                "title": "eine geschäft"
+                "title": "ein Geschäft"
             }
         },
         "tagRenderings": {
@@ -4900,7 +4900,7 @@
                 "render": "{opening_hours_table(opening_hours)}"
             },
             "shops-phone": {
-                "question": "Wie ist die Telefonnummer?",
+                "question": "Wie lautet die Telefonnummer?",
                 "render": "<a href='tel:{phone}'>{phone}</a>"
             },
             "shops-shop": {
@@ -5207,25 +5207,25 @@
             "support": {
                 "mappings": {
                     "0": {
-                        "then": "Diese Straßenlaterne ist an einem Kabel aufgehängt"
+                        "then": "Die Straßenlaterne ist an einem Kabel befestigt"
                     },
                     "1": {
-                        "then": "Diese Straßenlaterne ist an einer Decke montiert"
+                        "then": "Die Straßenlaterne ist an einer Decke befestigt"
                     },
                     "2": {
-                        "then": "Diese Straßenlaterne ist im Boden montiert"
+                        "then": "Die Straßenlaterne ist am Boden befestigt"
                     },
                     "3": {
-                        "then": "Diese Straßenlaterne ist an einem kurzen Mast (< 1,5m) montiert"
+                        "then": "Die Straßenlaterne ist an einem kurzen Mast (< 1,5m) befestigt"
                     },
                     "4": {
-                        "then": "Diese Straßenlaterne ist an einem Mast montiert"
+                        "then": "Die Straßenlaterne ist an einem Mast befestigt"
                     },
                     "5": {
-                        "then": "Diese Straßenlaterne ist direkt an der Wand montiert"
+                        "then": "Die Straßenlaterne ist direkt an der Wand befestigt"
                     },
                     "6": {
-                        "then": "Diese Straßenlaterne ist mit einer Metallstange an der Wand montiert"
+                        "then": "Die Straßenlaterne ist mit einer Metallstange an der Wand befestigt"
                     }
                 },
                 "question": "Wie ist diese Straßenlaterne befestigt?"
@@ -5514,7 +5514,7 @@
                         "then": "Hier gibt es Sitztoiletten und Urinale"
                     }
                 },
-                "question": "Welche Toilettenart gibt es hier?"
+                "question": "Welche Toiletten gibt es hier?"
             },
             "toilets-wheelchair": {
                 "mappings": {
@@ -5917,7 +5917,7 @@
                 "render": "Die Windturbine wird betrieben von {operator}."
             },
             "turbine-output": {
-                "question": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3MW)",
+                "question": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3 MW)",
                 "render": "Das Windrad erzeugt {generator:output:electricity} Strom."
             },
             "turbine-start-date": {
