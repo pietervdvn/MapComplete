@@ -643,10 +643,10 @@
         "title": {
             "mappings": {
                 "1": {
-                    "then": "{nama}"
+                    "then": "{name}"
                 }
             },
-            "render": "{nama}"
+            "render": "{name}"
         },
         "name": "Pusat Informasi Pengunjung"
     }
