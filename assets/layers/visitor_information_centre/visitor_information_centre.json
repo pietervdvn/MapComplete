@@ -3,7 +3,8 @@
   "name": {
     "en": "Visitor Information Centre",
     "nl": "Bezoekerscentrum",
-    "de": "Besucherinformationszentrum"
+    "de": "Besucherinformationszentrum",
+    "id": "Pusat Informasi Pengunjung"
   },
   "minzoom": 12,
   "source": {
@@ -26,7 +27,8 @@
       "ru": "{name}",
       "eo": "{name}",
       "fr": "{name}",
-      "ca": "{name}"
+      "ca": "{name}",
+      "id": "{name}"
     },
     "mappings": [
       {
@@ -52,7 +54,8 @@
           "ru": "{name}",
           "eo": "{name}",
           "fr": "{name}",
-          "ca": "{name}"
+          "ca": "{name}",
+          "id": "{name}"
         }
       }
     ]

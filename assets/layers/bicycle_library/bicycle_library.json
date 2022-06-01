@@ -94,7 +94,7 @@
         "de": "Diese Fahrradbibliothek heißt {name}",
         "pt": "Esta biblioteca de bicicleta é chamada de {name}",
         "da": "Dette cykelbibliotek hedder {name}",
-        "es": "Esta biblioteca de bicicletas se llama  {name}."
+        "es": "Esta biblioteca de bicicletas se llama  {name}"
       },
       "freeform": {
         "key": "name"

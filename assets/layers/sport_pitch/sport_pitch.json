@@ -261,10 +261,10 @@
           "then": {
             "nl": "Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, ...)",
             "fr": "Accès limité (par exemple uniquement sur réservation, à certains horaires…)",
-            "en": "Limited access (e.g. only with an appointment, during certain hours, ...)",
+            "en": "Limited access (e.g. only with an appointment, during certain hours, …)",
             "it": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)",
             "ru": "Ограниченный доступ (напр., только по записи, в определённые часы, ...)",
-            "de": "Der Sportplatz ist nur eingeschränkt zugänglich (z. B. nur mit Termin, nur zu bestimmten Zeiten, ...)"
+            "de": "Der Sportplatz ist nur eingeschränkt zugänglich (z. B. nur mit Termin, nur zu bestimmten Zeiten, …)"
           }
         },
         {

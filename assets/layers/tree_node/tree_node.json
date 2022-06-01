@@ -77,7 +77,8 @@
         "ru": "Высота: {height}",
         "fr": "Hauteur : {height}",
         "de": "Höhe: {height}",
-        "es": "Altura: {height}"
+        "es": "Altura: {height}",
+        "id": "Tinggi: {height}"
       },
       "condition": {
         "and": [
@@ -127,7 +128,8 @@
             "fr": "Feuillu",
             "de": "Laubbaum",
             "ca": "De fulla ampla",
-            "es": "Latifoliada"
+            "es": "Latifoliada",
+            "id": "Berdaun lebar"
           },
           "icon": {
             "path": "./assets/themes/trees/broadleaved.svg",
@@ -147,7 +149,8 @@
             "fr": "Résineux",
             "de": "Nadelbaum",
             "ca": "Amb fulles d'agulla",
-            "es": "Hoja aguja"
+            "es": "Hoja aguja",
+            "id": "Berdaun jarum"
           },
           "icon": {
             "path": "./assets/themes/trees/needleleaved.svg",
@@ -166,7 +169,8 @@
             "it": "Privo di foglie (permanente)",
             "fr": "Sans feuilles (Permanent)",
             "de": "Dauerhaft blattlos",
-            "es": "Permanentemente sin hojas"
+            "es": "Permanentemente sin hojas",
+            "id": "Tanpa daun permanen"
           },
           "hideInAnswer": true,
           "icon": {
@@ -365,7 +369,8 @@
       "id": "tree-species-wikidata",
       "question": {
         "en": "What species is this tree?",
-        "de": "Um welche Baumart handelt es sich?"
+        "de": "Um welche Baumart handelt es sich?",
+        "id": "Spesies pohon apa ini?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"
@@ -415,7 +420,8 @@
         "fr": "L'arbre a-t-il un nom ?",
         "ru": "Есть ли у этого дерева название?",
         "de": "Hat der Baum einen Namen?",
-        "es": "El árbol no tiene nombre?."
+        "es": "El árbol no tiene nombre?.",
+        "id": "Apakah pohon ini memiliki nama?"
       },
       "freeform": {
         "key": "name",
@@ -438,7 +444,8 @@
             "fr": "L'arbre n'a pas de nom.",
             "ru": "У этого дерева нет названия.",
             "de": "Der Baum hat keinen Namen.",
-            "es": "No identificas la especie."
+            "es": "No identificas la especie.",
+            "id": "Pohon ini tidak memiliki nama."
           }
         }
       ],
@@ -459,7 +466,8 @@
         "it": "Quest’albero è registrato come patrimonio?",
         "fr": "Cet arbre est-il inscrit au patrimoine ?",
         "de": "Ist dieser Baum ein Naturdenkmal?",
-        "es": "¿Este árbol es patrimonio registrado?"
+        "es": "¿Este árbol es patrimonio registrado?",
+        "id": "Apakah pohon ini merupakan warisan yang terdaftar?"
       },
       "mappings": [
         {
@@ -475,7 +483,8 @@
             "it": "Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
             "fr": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>",
             "de": "Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern",
-            "es": "Registrado como patrimonio por <i>Onroerend Erfgoed</i> Flandes"
+            "es": "Registrado como patrimonio por <i>Onroerend Erfgoed</i> Flandes",
+            "id": "Terdaftar sebagai warisan oleh <i>Onroerend Erfgoed</i> Flanders"
           },
           "icon": {
             "path": "./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg",
@@ -495,7 +504,8 @@
             "it": "Registrato come patrimonio da <i>Direction du Patrimoine culturel</i> di Bruxelles",
             "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles",
             "de": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel",
-            "es": "Registrado como patrimonio por la <i>Dirección de Patrimonio Cultural</i> de Bruselas"
+            "es": "Registrado como patrimonio por la <i>Dirección de Patrimonio Cultural</i> de Bruselas",
+            "id": "Terdaftar sebagai warisan budaya oleh <i>Direction du Patrimoine culturel</i> Brussels"
           }
         },
         {
@@ -511,7 +521,8 @@
             "it": "Registrato come patrimonio da un’organizzazione differente",
             "fr": "Enregistré comme patrimoine par une autre organisation",
             "de": "Von einer anderen Organisation als Denkmal registriert",
-            "es": "Registrado como patrimonio por una organización diferente"
+            "es": "Registrado como patrimonio por una organización diferente",
+            "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
           }
         },
         {
@@ -527,7 +538,8 @@
             "it": "Non è registrato come patrimonio",
             "fr": "Non enregistré comme patrimoine",
             "de": "Nicht als Denkmal registriert",
-            "es": "No registrado como patrimonio"
+            "es": "No registrado como patrimonio",
+            "id": "Tidak terdaftar sebagai warisan"
           }
         },
         {
@@ -542,7 +554,8 @@
             "it": "Registrato come patrimonio da un’organizzazione differente",
             "fr": "Enregistré comme patrimoine par une autre organisation",
             "de": "Von einer anderen Organisation als Denkmal registriert",
-            "es": "Registrado como patrimonio por un organización diferente"
+            "es": "Registrado como patrimonio por un organización diferente",
+            "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
           },
           "hideInAnswer": true
         }

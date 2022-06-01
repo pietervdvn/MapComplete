@@ -162,7 +162,7 @@
         "nl": "Welke functies biedt locatie?",
         "fr": "Quels services sont valables à cette station vélo ?",
         "gl": "Que servizos están dispoñíbeis nesta estación de bicicletas?",
-        "de": "Welche Einrichtungen sind hier vorhanden?",
+        "de": "Welche Geräte sind hier vorhanden?",
         "it": "Quali servizi sono disponibili in questa stazione per bici?",
         "pt_BR": "Quais serviços estão disponíveis nesta estação de bicicletas?",
         "pt": "Quais serviços estão disponíveis nesta estação de bicicletas?",
@@ -198,11 +198,11 @@
             ]
           },
           "then": {
-            "en": "There are only tools (screwdrivers, pliers...) present",
+            "en": "There are only tools (screwdrivers, pliers, …) present",
             "nl": "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)",
             "fr": "Il y a seulement des outils (tournevis, pinces...)",
             "gl": "Só hai ferramentas (desaparafusadores, alicates...) presentes",
-            "de": "Es sind nur Werkzeuge (Schraubenzieher, Zangen...) vorhanden",
+            "de": "Es ist nur Werkzeug (Schraubenzieher, Zangen, …) vorhanden",
             "it": "Ci sono solo degli attrezzi (cacciaviti, pinze…) presenti",
             "pt_BR": "Há somente ferramentas (chaves de fenda, alicates...) presentes",
             "pt": "Há somente ferramentas (chaves de fenda, alicates...) presentes",

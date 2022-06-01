@@ -6,7 +6,8 @@
     "ru": "Контейнер для мусора",
     "de": "Abfalleimer",
     "eo": "Rubujo",
-    "ca": "Paperera"
+    "ca": "Paperera",
+    "id": "Keranjang Sampah"
   },
   "minzoom": 17,
   "source": {
@@ -22,7 +23,8 @@
       "nl": "Vuilnisbak",
       "ru": "Контейнер для мусора",
       "de": "Abfalleimer",
-      "ca": "Paperera"
+      "ca": "Paperera",
+      "id": "Keranjang Sampah"
     }
   },
   "description": {
@@ -37,7 +39,8 @@
       "question": {
         "en": "What kind of waste basket is this?",
         "nl": "Wat voor soort vuilnisbak is dit?",
-        "de": "Um was für einen Abfalleimer handelt es sich?"
+        "de": "Um was für einen Abfalleimer handelt es sich?",
+        "id": "Keranjang sampah macam apa ini?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -46,7 +49,8 @@
           "then": {
             "en": "A waste basket for general waste",
             "nl": "Een vuilnisbak voor zwerfvuil",
-            "de": "Ein Abfalleimer für allgemeinen Müll"
+            "de": "Ein Abfalleimer für allgemeinen Müll",
+            "id": "Keranjang sampah untuk sampah umum"
           },
           "hideInAnswer": true
         },
@@ -55,7 +59,8 @@
           "then": {
             "en": "A waste basket for general waste",
             "nl": "Een vuilnisbak voor zwerfvuil",
-            "de": "Der Abfalleimer ist für allgemeinen Restmüll"
+            "de": "Der Abfalleimer ist für allgemeinen Restmüll",
+            "id": "Keranjang sampah untuk sampah umum"
           }
         },
         {
@@ -63,7 +68,8 @@
           "then": {
             "en": "A waste basket for dog excrements",
             "nl": "Een vuilnisbak specifiek voor hondenuitwerpselen",
-            "de": "Der Abfalleimer ist für Hundekot"
+            "de": "Der Abfalleimer ist für Hundekot",
+            "id": "Keranjang sampah untuk kotoran anjing"
           }
         },
         {
@@ -71,7 +77,8 @@
           "then": {
             "en": "A waste basket for cigarettes",
             "nl": "Een vuilnisbak voor sigarettenpeuken",
-            "de": "Der Abfalleimer ist für Zigaretten"
+            "de": "Der Abfalleimer ist für Zigaretten",
+            "id": "Keranjang sampah untuk rokok"
           }
         },
         {
@@ -79,7 +86,8 @@
           "then": {
             "en": "A waste basket for drugs",
             "nl": "Een vuilnisbak voor (vervallen) medicatie en drugs",
-            "de": "Der Abfalleimer ist für Drogen"
+            "de": "Der Abfalleimer ist für Drogen",
+            "id": "Keranjang sampah untuk obat-obatan"
           }
         },
         {
@@ -87,7 +95,8 @@
           "then": {
             "en": "A waste basket for needles and other sharp objects",
             "nl": "Een vuilnisbak voor injectienaalden en andere scherpe voorwerpen",
-            "de": "Der Abfalleimer ist für Nadeln und andere scharfe Gegenstände"
+            "de": "Der Abfalleimer ist für Nadeln und andere scharfe Gegenstände",
+            "id": "Keranjang sampah untuk jarum dan benda tajam lainnya"
           }
         },
         {
@@ -95,7 +104,8 @@
           "then": {
             "en": "A waste basket for plastic",
             "nl": "Een vuilnisbak voor plastic",
-            "de": "Der Abfalleimer ist für Plastik"
+            "de": "Der Abfalleimer ist für Plastik",
+            "id": "Keranjang sampah untuk plastik"
           }
         }
       ]
@@ -105,7 +115,8 @@
       "question": {
         "en": "Does this waste basket have a dispenser for dog excrement bags?",
         "nl": "Heeft deze vuilnisbak een verdeler voor hondenpoepzakjes?",
-        "de": "Hat der Abfalleimer einen Spender für (Hunde-)Kotbeutel?"
+        "de": "Hat der Abfalleimer einen Spender für (Hunde-)Kotbeutel?",
+        "id": "Apakah keranjang sampah ini memiliki dispenser untuk kantong kotoran anjing?"
       },
       "condition": {
         "or": [
@@ -125,7 +136,8 @@
           "then": {
             "en": "This waste basket has a dispenser for (dog) excrement bags",
             "nl": "Deze vuilnisbak heeft een verdeler voor hondenpoepzakjes",
-            "de": "Der Abfalleimer hat einen Spender für (Hunde-)Kotbeutel"
+            "de": "Der Abfalleimer hat einen Spender für (Hunde-)Kotbeutel",
+            "id": "Keranjang sampah ini memiliki dispenser untuk kantong kotoran (anjing)"
           }
         },
         {
@@ -138,7 +150,8 @@
           "then": {
             "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
             "nl": "Deze vuilnisbak heeft <b>geen</b> verdeler voor hondenpoepzakjes",
-            "de": "Der Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
+            "de": "Der Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel",
+            "id": "Keranjang sampah ini <b> tidak</b> memiliki dispenser untuk kantong kotoran (anjing)"
           }
         },
         {
@@ -146,7 +159,8 @@
           "then": {
             "en": "This waste basket <b>does not</b> have a dispenser for (dog) excrement bags",
             "nl": "Deze vuilnisbak heeft <b>waarschijnlijk geen</b> verdeler voor hondenpoepzakjes",
-            "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel"
+            "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel",
+            "id": "Keranjang sampah ini <b> tidak</b> memiliki dispenser untuk kantong kotoran (anjing)"
           },
           "hideInAnswer": true
         }
@@ -163,7 +177,8 @@
         "nl": "een vuilnisbak",
         "ru": "Контейнер для мусора",
         "de": "einen Abfalleimer",
-        "eo": "Rubujo"
+        "eo": "Rubujo",
+        "id": "sebuah keranjang sampah"
       },
       "presiceInput": {
         "preferredBackground": "photo"
@@ -276,7 +291,8 @@
               "en": "Waste Basket",
               "nl": "Vuilnisbak",
               "ru": "Контейнер для мусора",
-              "de": "Abfalleimer"
+              "de": "Abfalleimer",
+              "id": "Keranjang Sampah"
             }
           }
         ]

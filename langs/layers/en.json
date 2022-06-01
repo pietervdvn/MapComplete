@@ -4381,6 +4381,9 @@
                     },
                     "1": {
                         "then": "This is a concrete picnic table"
+                    },
+                    "2": {
+                        "then": "This picnic table is made from (recycled) plastic"
                     }
                 },
                 "question": "What material is this picnic table made of?",

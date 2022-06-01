@@ -64,7 +64,7 @@
         "zh_Hant": "這個風機的電力輸出是多少？(例如 2.3 MW)",
         "id": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
         "hu": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)",
-        "de": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3MW)"
+        "de": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3 MW)"
       },
       "freeform": {
         "key": "generator:output:electricity",

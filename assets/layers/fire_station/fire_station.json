@@ -8,7 +8,8 @@
     "ru": "Карта пожарных частей",
     "fr": "Couche des stations de pompiers",
     "de": "Feuerwachen",
-    "nl": "Kaart van de brandweerstations"
+    "nl": "Kaart van de brandweerstations",
+    "es": "Mapa de parques de bomberos"
   },
   "minzoom": 12,
   "source": {
@@ -27,7 +28,8 @@
       "it": "Caserma dei vigili del fuoco",
       "fr": "Station de pompiers",
       "de": "Feuerwache",
-      "nl": "Brandweerstation"
+      "nl": "Brandweerstation",
+      "es": "Parque de bomberos"
     }
   },
   "description": {
@@ -37,7 +39,8 @@
     "ru": "Слой карты, отображающий пожарные части.",
     "fr": "Couche des stations de pompiers.",
     "de": "Kartenebene zur Darstellung von Feuerwachen.",
-    "nl": "Kaartlaag die de brandweerstations toont."
+    "nl": "Kaartlaag die de brandweerstations toont.",
+    "es": "Capa del mapa que muestra parques de bomberos."
   },
   "tagRenderings": [
     {
@@ -52,7 +55,8 @@
         "it": "Come si chiama questa caserma dei vigili del fuoco?",
         "fr": "Quel est le nom de la station ?",
         "de": "Wie ist der Name der Feuerwache?",
-        "nl": "Wat is de naam van dit brandweerstation?"
+        "nl": "Wat is de naam van dit brandweerstation?",
+        "es": "¿Cual es el nombre de este parque de bomberos?"
       },
       "render": {
         "en": "This station is called {name}.",
@@ -62,7 +66,8 @@
         "fr": "Cette station s’appelle {name}.",
         "nb_NO": "Denne stasjonen heter {name}.",
         "nl": "Dit station heet {name}.",
-        "de": "Der Name der Feuerwache ist {name}."
+        "de": "Der Name der Feuerwache ist {name}.",
+        "es": "Este parque de bomberos se llama {name}."
       }
     },
     {
@@ -121,7 +126,8 @@
         "fr": "Quel est l’exploitant de la station ?",
         "it": "Quale agenzia gestisce questa stazione?",
         "nl": "Welk agentschap beheert dit station?",
-        "de": "Welche Organisation betreibt diese Station?"
+        "de": "Welche Organisation betreibt diese Station?",
+        "es": "¿Que agencia opera este parque?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -129,7 +135,8 @@
         "fr": "Cette station est opérée par {operator}.",
         "it": "Questa stazione è gestita da {operator}.",
         "nl": "Dit station wordt beheerd door {operator}.",
-        "de": "Diese Station wird betrieben von {operator}."
+        "de": "Diese Station wird betrieben von {operator}.",
+        "es": "Este parque lo opera {operator}."
       },
       "freeform": {
         "key": "operator"
@@ -188,7 +195,8 @@
             "it": "Questa stazione è gestita dal governo.",
             "nb_NO": "Stasjonen drives av myndighetene.",
             "nl": "Dit station wordt beheerd door de overheid.",
-            "de": "Die Station wird von einer Behörde betrieben."
+            "de": "Die Station wird von einer Behörde betrieben.",
+            "es": "Este parque de bomberos lo opera el gobierno."
           }
         },
         {
@@ -253,7 +261,8 @@
         "de": "eine Feuerwache",
         "it": "una caserma dei vigili del fuoco",
         "nb_NO": "en brannstasjon",
-        "nl": "een brandweerstation"
+        "nl": "een brandweerstation",
+        "es": "un parque de bomberos"
       },
       "description": {
         "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
@@ -261,7 +270,8 @@
         "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
         "de": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
         "it": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra.",
-        "nl": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn."
+        "nl": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn.",
+        "es": "Un parque de bomberos es donde los bomberos y los camiones de incendios se encuentran cuando no están en uso."
       }
     }
   ],

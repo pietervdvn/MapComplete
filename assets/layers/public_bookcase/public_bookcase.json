@@ -54,7 +54,7 @@
       "title": {
         "en": "a bookcase",
         "nl": "een boekenruilkast",
-        "de": "eine bücherschrank",
+        "de": "einen Bücherschrank",
         "fr": "une microbibliothèque",
         "ru": "Книжный шкаф",
         "it": "una microbiblioteca",
@@ -75,7 +75,7 @@
       "render": {
         "en": "The name of this bookcase is {name}",
         "nl": "De naam van dit boekenruilkastje is {name}",
-        "de": "Der Name dieses Bücherschrank lautet {name}",
+        "de": "Der Name des Bücherschranks lautet {name}",
         "fr": "Le nom de cette microbibliothèque est {name}",
         "ru": "Название книжного шкафа — {name}",
         "it": "Questa microbiblioteca si chiama {name}",
@@ -84,7 +84,7 @@
       "question": {
         "en": "What is the name of this public bookcase?",
         "nl": "Wat is de naam van dit boekenruilkastje?",
-        "de": "Wie heißt dieser öffentliche Bücherschrank?",
+        "de": "Wie lautet der Name des Bücherschranks?",
         "fr": "Quel est le nom de cette microbibliothèque ?",
         "ru": "Как называется этот общественный книжный шкаф?",
         "it": "Come si chiama questa microbiblioteca pubblica?",
@@ -104,7 +104,7 @@
           "then": {
             "en": "This bookcase doesn't have a name",
             "nl": "Dit boekenruilkastje heeft geen naam",
-            "de": "Dieser Bücherschrank hat keinen Namen",
+            "de": "Der Bücherschrank hat keinen Namen",
             "fr": "Cette microbibliothèque n'a pas de nom",
             "ru": "У этого книжного шкафа нет названия",
             "it": "Questa microbiblioteca non ha un nome proprio",
@@ -118,7 +118,7 @@
       "render": {
         "en": "{capacity} books fit in this bookcase",
         "nl": "Er passen {capacity} boeken",
-        "de": "{capacity} Bücher passen in diesen Bücherschrank",
+        "de": "In den Bücherschrank passen ca. {capacity} Bücher",
         "fr": "{capacity} livres peuvent entrer dans cette microbibliothèque",
         "it": "Questa microbiblioteca può contenere fino a {capacity} libri",
         "ru": "{capacity} книг помещается в этот книжный шкаф",
@@ -127,7 +127,7 @@
       "question": {
         "en": "How many books fit into this public bookcase?",
         "nl": "Hoeveel boeken passen er in dit boekenruilkastje?",
-        "de": "Wie viele Bücher passen in diesen öffentlichen Bücherschrank?",
+        "de": "Wie viele Bücher passen in den Bücherschrank?",
         "fr": "Combien de livres peuvent entrer dans cette microbibliothèque ?",
         "ru": "Сколько книг помещается в этом общественном книжном шкафу?",
         "it": "Quanti libri può contenere questa microbiblioteca?",
@@ -145,7 +145,7 @@
       "question": {
         "en": "What kind of books can be found in this public bookcase?",
         "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
-        "de": "Welche Art von Büchern sind in diesem öffentlichen Bücherschrank zu finden?",
+        "de": "Welche Bücher kann man im Bücherschrank finden?",
         "fr": "Quel type de livres peut-on dans cette microbibliothèque ?",
         "it": "Che tipo di libri si possono trovare in questa microbiblioteca?",
         "ru": "Какие книги можно найти в этом общественном книжном шкафу?",
@@ -195,7 +195,7 @@
       "question": {
         "en": "Is this bookcase located outdoors?",
         "nl": "Staat dit boekenruilkastje binnen of buiten?",
-        "de": "Befindet sich dieser Bücherschrank im Freien?",
+        "de": "Befindet sich der Bücherschrank im Freien?",
         "fr": "Cette microbiliothèque est-elle en extérieur ?",
         "it": "Questa microbiblioteca si trova all'aperto?",
         "hu": "A szabadban van-e ez a könyvespolc?"
@@ -205,7 +205,7 @@
           "then": {
             "en": "This bookcase is located indoors",
             "nl": "Dit boekenruilkastje staat binnen",
-            "de": "Dieser Bücherschrank befindet sich im Innenbereich",
+            "de": "Der Bücherschrank befindet sich im Innenbereich",
             "fr": "Cette microbibliothèque est en intérieur",
             "it": "Questa microbiblioteca si trova al chiuso",
             "hu": "Ez a könyvespolc beltérben található"
@@ -227,7 +227,7 @@
           "then": {
             "en": "This bookcase is located outdoors",
             "nl": "Dit boekenruilkastje staat buiten",
-            "de": "Dieser Bücherschrank befindet sich im Freien",
+            "de": "Der Bücherschrank befindet sich im Freien",
             "fr": "Cette microbibliothèque est en extérieur",
             "it": "Questa microbiblioteca si trova all'aperto",
             "hu": "Ez a könyvszekrény a szabadban van"
@@ -279,7 +279,7 @@
       "question": {
         "en": "Who maintains this public bookcase?",
         "nl": "Wie is verantwoordelijk voor dit boekenruilkastje?",
-        "de": "Wer unterhält diesen öffentlichen Bücherschrank?",
+        "de": "Wer betreibt den Bücherschrank?",
         "fr": "Qui entretien cette microbibliothèque ?",
         "it": "Chi mantiene questa microbiblioteca?",
         "hu": "Ki tartja fenn ezt a nyilvános könyvespolcot?"
@@ -302,7 +302,7 @@
       "question": {
         "en": "Is this public bookcase part of a bigger network?",
         "nl": "Is dit boekenruilkastje deel van een netwerk?",
-        "de": "Ist dieser öffentliche Bücherschrank Teil eines größeren Netzwerks?",
+        "de": "Gehört der Bücherschrank zu einem Netzwerk?",
         "fr": "Cette microbibliothèque fait-elle partie d'un réseau/groupe ?",
         "it": "Questa microbiblioteca fa parte di una rete?",
         "hu": "Része-e egy nagyobb hálózatnak ez a nyilvános könyvespolc?"
@@ -324,7 +324,7 @@
           "then": {
             "en": "Part of the network 'Little Free Library'",
             "nl": "Deel van het netwerk 'Little Free Library'",
-            "de": "Teil des Netzwerks 'Little Free Library'",
+            "de": "Der Bücherschrank gehört zum Netzwerk 'Little Free Library'",
             "fr": "Fait partie du réseau Little Free Library",
             "it": "Fa parte della rete 'Little Free Library'",
             "hu": "A „Little Free Library” hálózat része"
@@ -349,7 +349,7 @@
           "then": {
             "en": "This public bookcase is not part of a bigger network",
             "nl": "Dit boekenruilkastje maakt geen deel uit van een netwerk",
-            "de": "Dieser öffentliche Bücherschrank ist nicht Teil eines größeren Netzwerks",
+            "de": "Der Bücherschrank gehört zu keinem Netzwerk",
             "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe",
             "it": "Questa microbiblioteca non fa parte di una rete",
             "hu": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak"
@@ -404,7 +404,7 @@
       "question": {
         "en": "When was this public bookcase installed?",
         "nl": "Op welke dag werd dit boekenruilkastje geinstalleerd?",
-        "de": "Wann wurde dieser öffentliche Bücherschrank installiert?",
+        "de": "Wann wurde der Bücherschrank aufgebaut?",
         "fr": "Quand a été installée cette microbibliothèque ?",
         "it": "Quando è stata inaugurata questa microbiblioteca?",
         "ru": "Когда был установлен этот общественный книжный шкаф?",
@@ -438,7 +438,7 @@
       "question": {
         "en": "Is there a website with more information about this public bookcase?",
         "nl": "Is er een website over dit boekenruilkastje?",
-        "de": "Gibt es eine Website mit weiteren Informationen über diesen öffentlichen Bücherschrank?",
+        "de": "Auf welcher Webseite findet man Informationen zu diesem Bücherschrank?",
         "fr": "Y a-t-il un site web avec plus d'informations sur cette microbibliothèque ?",
         "it": "C'è un sito web con maggiori informazioni su questa microbiblioteca?",
         "ru": "Есть ли веб-сайт с более подробной информацией об этом общественном книжном шкафе?",

@@ -65,7 +65,7 @@
       "title": {
         "en": "a crossing",
         "nl": "een oversteekplaats",
-        "de": "eine kreuzung",
+        "de": "eine Kreuzung",
         "fr": "une traversée",
         "ca": "un pas de vianants",
         "da": "en overgang",
@@ -95,7 +95,7 @@
         "en": "a traffic signal",
         "nl": "een verkeerslicht",
         "ru": "Светофор",
-        "de": "eine ampel",
+        "de": "eine Ampel",
         "fr": "une feu de signalisation",
         "da": "et trafiksignal",
         "es": "una señal de tráfico"
@@ -343,7 +343,7 @@
       "question": {
         "en": "Can a cyclist turn right when the light is red?",
         "nl": "Mag een fietser rechtsaf slaan als het licht rood is?",
-        "de": "Kann ein Radfahrer bei roter Ampel rechts abbiegen?",
+        "de": "Dürfen Radfahrer bei roter Ampel rechts abbiegen?",
         "es": "¿Puede girar a la derecha un ciclista cuando la luz está roja?"
       },
       "condition": "highway=traffic_signals",
@@ -367,7 +367,7 @@
           "then": {
             "en": "A cyclist can turn right if the light is red",
             "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel rechts abbiegen",
+            "de": "Radfahrer dürfen bei roter Ampel rechts abbiegen",
             "es": "Un ciclista puede girar a la derecha si la luz está roja"
           },
           "hideInAnswer": "_country=be"
@@ -377,7 +377,7 @@
           "then": {
             "en": "A cyclist can not turn right if the light is red",
             "nl": "Een fietser mag niet rechtsaf slaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel nicht rechts abbiegen",
+            "de": "Radfahrer dürfen bei roter Ampel nicht rechts abbiegen",
             "es": "Un ciclista no puede girar a la derecha si la luz está roja"
           }
         }
@@ -388,7 +388,7 @@
       "question": {
         "en": "Can a cyclist go straight on when the light is red?",
         "nl": "Mag een fietser rechtdoor gaan als het licht rood is?",
-        "de": "Kann ein Radfahrer bei roter Ampel geradeaus fahren?",
+        "de": "Dürfen Radfahrer bei roter Ampel geradeaus fahren?",
         "es": "¿Puede ir de frente un ciclista cuando la luz está roja?"
       },
       "condition": "highway=traffic_signals",
@@ -412,7 +412,7 @@
           "then": {
             "en": "A cyclist can go straight on if the light is red",
             "nl": "Een fietser mag wel rechtdoor gaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel geradeaus fahren",
+            "de": "Radfahrer dürfen bei roter Ampel geradeaus fahren",
             "es": "Un ciclista puede ir de frente si la luz está roja"
           },
           "hideInAnswer": "_country=be"
@@ -422,7 +422,7 @@
           "then": {
             "en": "A cyclist can not go straight on if the light is red",
             "nl": "Een fietser mag niet rechtdoor gaan als het licht rood is",
-            "de": "Ein Radfahrer kann bei roter Ampel nicht geradeaus fahren",
+            "de": "Radfahrer dürfen bei roter Ampel nicht geradeaus fahren",
             "es": "Un ciclista no puede ir de frente si la luz está roja"
           }
         }

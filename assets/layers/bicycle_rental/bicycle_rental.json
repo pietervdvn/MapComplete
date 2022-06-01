@@ -359,9 +359,9 @@
             "bicycle_rental"
           ],
           "question": {
-            "en": "How much type_plural can be rented here? ",
+            "en": "How much type_plural can be rented here?",
             "nl": "Hoeveel type_plural kunnen hier uitgeleend worden?",
-            "de": "Wie viele type_plural können hier gemietet werden? "
+            "de": "Wie viele type_plural können hier gemietet werden?"
           },
           "render": {
             "en": "{capacity:bicycle_type} type_plural can be rented here",

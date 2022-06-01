@@ -28,7 +28,7 @@
       "title": {
         "en": "a pub",
         "nl": "een bruin café of kroeg",
-        "de": "eine kneipe",
+        "de": "eine Kneipe",
         "ru": "паб",
         "hu": "kocsma",
         "ca": "un bar",
@@ -53,7 +53,7 @@
       "title": {
         "en": "a bar",
         "nl": "een bar",
-        "de": "eine bar",
+        "de": "eine Bar",
         "ru": "бар",
         "hu": "bár",
         "ca": "un pub",
@@ -78,7 +78,7 @@
       "title": {
         "en": "a cafe",
         "nl": "een café",
-        "de": "eine café",
+        "de": "ein Café",
         "ru": "кафе",
         "hu": "kávézó",
         "ca": "un cafè",
@@ -152,9 +152,9 @@
     },
     {
       "question": {
-        "en": "What kind of cafe is this",
+        "en": "What kind of cafe is this?",
         "nl": "Welk soort café is dit?",
-        "de": "Was ist das für ein Café",
+        "de": "Was ist das für ein Café?",
         "hu": "Milyen fajta kávézó ez?",
         "da": "Hvilken slags cafe er dette",
         "es": "Qué tipo de café es este"
