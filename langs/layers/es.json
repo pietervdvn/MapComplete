@@ -1866,7 +1866,7 @@
             },
             "defibrillator-survey:date": {
                 "question": "¿Cuándo se sondeó por última vez este desfibrilador?",
-                "render": "Este desfibrilador se sondeó por última vez el {survey:dat}",
+                "render": "Este desfibrilador se sondeó por última vez el {survey:date}",
                 "mappings": {
                     "0": {
                         "then": "¡Comprobado hoy!"
@@ -2158,7 +2158,7 @@
                 "question": "¿Cómo de fácil es rellenar botellas de agua?"
             },
             "render-closest-drinking-water": {
-                "render": "<a href='#{_closest_other_drinking_water_id}'>Hay otra fuente de agua potable a {_closets_other_drinking_water_distance} metros</a>"
+                "render": "<a href='#{_closest_other_drinking_water_id}'>Hay otra fuente de agua potable a {_closest_other_drinking_water_distance} metros</a>"
             }
         },
         "description": "Una capa que muestra fuentes de agua potable",
@@ -2471,7 +2471,7 @@
             },
             "station-name": {
                 "question": "¿Cual es el nombre de este parque de bomberos?",
-                "render": "Este parque de bomberos se llama {nombre}."
+                "render": "Este parque de bomberos se llama {name}."
             }
         },
         "presets": {
