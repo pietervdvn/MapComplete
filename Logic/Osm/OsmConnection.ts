@@ -122,8 +122,8 @@ export class OsmConnection {
         return new ChangesetHandler(this._dryRun, this, allElements, changes, this.auth);
     }
 
-    public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this.preferencesHandler.GetPreference(key, prefix);
+    public GetPreference(key: string, defaultValue: string = undefined, prefix: string = "mapcomplete-"): UIEventSource<string> {
+        return this.preferencesHandler.GetPreference(key, defaultValue, prefix);
     }
 
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {

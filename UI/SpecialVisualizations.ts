@@ -55,6 +55,8 @@ import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
 import {SaveButton} from "./Popup/SaveButton";
 import {MapillaryLink} from "./BigComponents/MapillaryLink";
+import {CheckBox} from "./Input/Checkboxes";
+import Slider from "./Input/Slider";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -174,22 +176,8 @@ class NearbyImageVis implements SpecialVisualization {
         const canBeEdited: boolean = !!(id?.match("(node|way|relation)/-?[0-9]+"))
         const selectedImage = new UIEventSource<P4CPicture>(undefined);
 
-        const nearby = new Lazy(() => {
-            const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
-            const options : NearbyImageOptions & {value}= {
-                lon, lat, radius: 250,
-                value: selectedImage,
-                blacklist: alreadyInTheImage,
-                towardscenter: false,
-                maxDaysOld: 365 * 5
-                
-            };
-            const slideshow = canBeEdited ? new SelectOneNearbyImage(options) : new NearbyImages(options);
-            return new Combine([slideshow, new MapillaryLinkVis().constr(state, tagSource, [])])
-        });
 
-        let withEdit: BaseUIElement = nearby;
-
+        let saveButton: BaseUIElement = undefined
         if (canBeEdited) {
             const confirmText: BaseUIElement = new SubstitutedTranslation(t.confirm, tagSource, state)
 
@@ -212,15 +200,45 @@ class NearbyImageVis implements SpecialVisualization {
                     )
                 )
             };
+            saveButton = new SaveButton(selectedImage, state.osmConnection, confirmText, t.noImageSelected)
+                .onClick(onSave).SetClass("flex justify-end")
+        }
 
-            const saveButton = new SaveButton(selectedImage, state.osmConnection, confirmText, t.noImageSelected)
-                .onClick(onSave)
+        const nearby = new Lazy(() => {
+            const towardsCenter = new CheckBox(t.onlyTowards, false)
+            
+            const radiusValue=   state?.osmConnection?.GetPreference("nearby-images-radius","300").map(s => Number(s), [], i => ""+i) ?? new UIEventSource(300);
 
+            const radius = new Slider(25, 500, {value: 
+                    radiusValue, step: 25})
+            const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
+            const options: NearbyImageOptions & { value } = {
+                lon, lat,
+                searchRadius: 500,
+                shownRadius: radius.GetValue(),
+                value: selectedImage,
+                blacklist: alreadyInTheImage,
+                towardscenter: towardsCenter.GetValue(),
+                maxDaysOld: 365 * 5
+
+            };
+            const slideshow = canBeEdited ? new SelectOneNearbyImage(options, state) : new NearbyImages(options, state);
+            const controls = new Combine([towardsCenter,
+                new Combine([
+                    new VariableUiElement(radius.GetValue().map(radius => t.withinRadius.Subs({radius}))), radius
+                ]).SetClass("flex justify-between")
+            ]).SetClass("flex flex-col");
+            return new Combine([slideshow,
+                controls,
+                saveButton,
+                new MapillaryLinkVis().constr(state, tagSource, []).SetClass("mt-6")])
+        });
+
+        let withEdit: BaseUIElement = nearby;
+        if (canBeEdited) {
             withEdit = new Combine([
                 t.hasMatchingPicture,
-                nearby,
-                saveButton
-                    .SetClass("flex justify-end")
+                nearby
             ]).SetClass("flex flex-col")
         }
 

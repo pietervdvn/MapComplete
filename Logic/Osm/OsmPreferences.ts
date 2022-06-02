@@ -106,7 +106,7 @@ export class OsmPreferences {
         return source;
     }
 
-    public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
+    public GetPreference(key: string, defaultValue : string = undefined, prefix: string = "mapcomplete-"): UIEventSource<string> {
         key = prefix + key;
         key = key.replace(/[:\\\/"' {}.%]/g, '')
         if (key.length >= 255) {
@@ -120,7 +120,7 @@ export class OsmPreferences {
             this.UpdatePreferences();
         }
                 
-        const pref = new UIEventSource<string>(this.preferences.data[key], "osm-preference:" + key);
+        const pref = new UIEventSource<string>(this.preferences.data[key] ?? defaultValue, "osm-preference:" + key);
         pref.addCallback((v) => {
             this.UploadPreference(key, v);
         });

@@ -26,7 +26,6 @@ export class Mapillary extends ImageProvider {
             return true
         }
         try {
-console.log("COmparing",a,b)
             const aUrl = new URL(a)
             const bUrl = new URL(b)
             if (aUrl.host !== bUrl.host || aUrl.pathname !== bUrl.pathname) {
@@ -46,7 +45,7 @@ console.log("COmparing",a,b)
             return allSame;
 
         } catch (e) {
-            Console.debug("Could not compare ", a, "and", b, "due to", e)
+            console.debug("Could not compare ", a, "and", b, "due to", e)
         }
         return false;
 

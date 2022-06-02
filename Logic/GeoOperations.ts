@@ -3,6 +3,7 @@ import {BBox} from "./BBox";
 import togpx from "togpx"
 import Constants from "../Models/Constants";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import {Coord} from "@turf/turf";
 
 export class GeoOperations {
 
@@ -729,6 +730,12 @@ export class GeoOperations {
 
     }
 
+    /**
+     * Takes two points and finds the geographic bearing between them, i.e. the angle measured in degrees from the north line (0 degrees)
+     */
+    public static bearing(a: Coord, b: Coord): number {
+        return turf.bearing(a, b)
+    }
 
 }
 
