@@ -28,7 +28,9 @@ async function activate() {
             title: "Some action"
         }]
     })*/
+    
     caches.keys().then(keys => {
+        // Remove all old caches
         Promise.all(
             keys.map(key => key !== version && caches.delete(key))
         );
