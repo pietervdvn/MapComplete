@@ -74,7 +74,7 @@
         }
     },
     "artwork": {
-        "description": "Diverse pieces of artwork",
+        "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "name": "Artworks",
         "presets": {
             "0": {
@@ -248,7 +248,7 @@
         }
     },
     "bench": {
-        "description": "A bench is a wooden, metal, stone, ... surface where a human can sit. This layers visualises them and asks a few questions about them.",
+        "description": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
         "name": "Benches",
         "presets": {
             "0": {
@@ -445,7 +445,7 @@
             "9": {
                 "renderings": {
                     "0": {
-                        "question": "How much type_plural can be rented here? ",
+                        "question": "How much type_plural can be rented here?",
                         "render": "{capacity:bicycle_type} type_plural can be rented here"
                     }
                 },
@@ -539,7 +539,7 @@
         }
     },
     "bicycle_tube_vending_machine": {
-        "description": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, ...)",
+        "description": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)",
         "name": "Bicycle tube vending machine",
         "presets": {
             "0": {
@@ -568,7 +568,7 @@
         }
     },
     "bike_cafe": {
-        "description": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, ...",
+        "description": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …",
         "name": "Bike cafe",
         "presets": {
             "0": {
@@ -851,7 +851,7 @@
                         "then": "There is only a pump present"
                     },
                     "1": {
-                        "then": "There are only tools (screwdrivers, pliers...) present"
+                        "then": "There are only tools (screwdrivers, pliers, …) present"
                     },
                     "2": {
                         "then": "There are both tools and a pump present"
@@ -1292,7 +1292,7 @@
                         "then": "An open space where beer is served, typically seen in Germany"
                     }
                 },
-                "question": "What kind of cafe is this"
+                "question": "What kind of cafe is this?"
             },
             "Name": {
                 "question": "What is the name of this pub?",
@@ -1373,7 +1373,7 @@
                         "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector"
                     },
                     "13": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
+                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
                     },
                     "14": {
                         "question": "Has a <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> connector"
@@ -1626,7 +1626,7 @@
                         "then": "A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>"
                     },
                     "4": {
-                        "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)"
+                        "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, …)"
                     }
                 },
                 "question": "Who is allowed to use this charging station?",
@@ -1673,26 +1673,26 @@
             "current-11": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla Supercharger (destination)</b> outputs at most 125 A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> outputs at most 125 A"
                     },
                     "1": {
-                        "then": "<b>Tesla Supercharger (destination)</b> outputs at most 350 A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> outputs at most 350 A"
                     }
                 },
-                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most {socket:tesla_destination:current}A"
+                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most {socket:tesla_destination:current}A"
             },
             "current-12": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A"
                     },
                     "1": {
-                        "then": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 32 A"
                     }
                 },
-                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:current}A"
+                "question": "What current do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:current}A"
             },
             "current-13": {
                 "mappings": {
@@ -1817,7 +1817,7 @@
                         "then": "Free to use"
                     },
                     "3": {
-                        "then": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station"
+                        "then": "Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station"
                     },
                     "4": {
                         "then": "Paid use"
@@ -1926,38 +1926,38 @@
             "power-output-10": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kw A"
+                        "then": "<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs at most 50 kw A"
                     }
                 },
-                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most {socket:tesla_supercharger_ccs:output}"
+                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs at most {socket:tesla_supercharger_ccs:output}"
             },
             "power-output-11": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla Supercharger (destination)</b> outputs at most 120 kw A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> outputs at most 120 kw A"
                     },
                     "1": {
-                        "then": "<b>Tesla Supercharger (destination)</b> outputs at most 150 kw A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> outputs at most 150 kw A"
                     },
                     "2": {
-                        "then": "<b>Tesla Supercharger (destination)</b> outputs at most 250 kw A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> outputs at most 250 kw A"
                     }
                 },
-                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most {socket:tesla_destination:output}"
+                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs at most {socket:tesla_destination:output}"
             },
             "power-output-12": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kw A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 11 kw A"
                     },
                     "1": {
-                        "then": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kw A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 22 kw A"
                     }
                 },
-                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:output}"
+                "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:tesla_destination:output}"
             },
             "power-output-13": {
                 "mappings": {
@@ -2112,34 +2112,34 @@
             "voltage-10": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt"
+                        "then": "<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 500 volt"
                     },
                     "1": {
-                        "then": "<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt"
+                        "then": "<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 920 volt"
                     }
                 },
-                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs {socket:tesla_supercharger_ccs:voltage} volt"
+                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (a branded Type 2 CSS)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> outputs {socket:tesla_supercharger_ccs:voltage} volt"
             },
             "voltage-11": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla Supercharger (destination)</b> outputs 480 volt"
+                        "then": "<b>Tesla Supercharger (Destination)</b> outputs 480 volt"
                     }
                 },
-                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs {socket:tesla_destination:voltage} volt"
+                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> outputs {socket:tesla_destination:voltage} volt"
             },
             "voltage-12": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt"
+                        "then": "<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 230 volt"
                     },
                     "1": {
-                        "then": "<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt"
+                        "then": "<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 400 volt"
                     }
                 },
-                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
+                "question": "What voltage do the plugs with <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
                 "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs {socket:tesla_destination:voltage} volt"
             },
             "voltage-13": {
@@ -2404,7 +2404,7 @@
         }
     },
     "climbing_area": {
-        "description": "An area where climbing is possible, e.g. a crag, site, boulder, ... Contains aggregation of routes",
+        "description": "An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes",
         "name": "Climbing opportunities",
         "presets": {
             "0": {
@@ -2733,7 +2733,7 @@
         }
     },
     "cycleways_and_roads": {
-        "description": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure\"",
+        "description": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
         "name": "Cycleways and roads",
         "tagRenderings": {
             "Cycleway type for a road": {
@@ -3122,7 +3122,7 @@
                         "then": "Only accessible to customers"
                     },
                     "3": {
-                        "then": "Not accessible to the general public (e.g. only accesible to staff, the owners, ...)"
+                        "then": "Not accessible to the general public (e.g. only accesible to staff, the owners, …)"
                     },
                     "4": {
                         "then": "Not accessible, possibly only for professional use"
@@ -3327,7 +3327,7 @@
         }
     },
     "entrance": {
-        "description": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, ...)",
+        "description": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)",
         "name": "Entrance",
         "tagRenderings": {
             "Door_type": {
@@ -3368,7 +3368,7 @@
                         "then": "This is a secondary entrance"
                     },
                     "4": {
-                        "then": "This is a service entrance - normally only used for employees, delivery, ..."
+                        "then": "This is a service entrance - normally only used for employees, delivery, …"
                     },
                     "5": {
                         "then": "This is an exit where one can not enter"
@@ -3458,7 +3458,7 @@
     },
     "extinguisher": {
         "description": "Map layer to show fire extinguishers.",
-        "name": "Map of fire extinguishers.",
+        "name": "Map of fire extinguishers",
         "presets": {
             "0": {
                 "description": "A fire extinguisher is a small, portable device used to stop a fire",
@@ -3858,7 +3858,7 @@
         }
     },
     "grass_in_parks": {
-        "description": "Searches for all accessible grass patches within public parks - these are 'groenzones'\""
+        "description": "Searches for all accessible grass patches within public parks - these are 'groenzones'"
     },
     "hackerspace": {
         "description": "Hackerspace",
@@ -3869,7 +3869,7 @@
                 "title": "a hackerspace"
             },
             "1": {
-                "description": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ...",
+                "description": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, …",
                 "title": "a makerspace"
             }
         },
@@ -3989,7 +3989,7 @@
         }
     },
     "information_board": {
-        "description": "A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, ...)",
+        "description": "A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)",
         "name": "Information boards",
         "presets": {
             "0": {
@@ -4380,6 +4380,9 @@
                     },
                     "1": {
                         "then": "This is a concrete picnic table"
+                    },
+                    "2": {
+                        "then": "This picnic table is made from (recycled) plastic"
                     }
                 },
                 "question": "What material is this picnic table made of?",
@@ -4998,7 +5001,7 @@
                         "then": "Public access"
                     },
                     "1": {
-                        "then": "Limited access (e.g. only with an appointment, during certain hours, ...)"
+                        "then": "Limited access (e.g. only with an appointment, during certain hours, …)"
                     },
                     "2": {
                         "then": "Only accessible for members of the club"
@@ -5276,16 +5279,16 @@
             "Surveillance type: public, outdoor, indoor": {
                 "mappings": {
                     "0": {
-                        "then": "A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel,..."
+                        "then": "A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …"
                     },
                     "1": {
-                        "then": "An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, ...)"
+                        "then": "An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)"
                     },
                     "2": {
-                        "then": "A private indoor area is surveilled, e.g. a shop, a private underground parking, ..."
+                        "then": "A private indoor area is surveilled, e.g. a shop, a private underground parking, …"
                     }
                 },
-                "question": "What kind of surveillance is this camera"
+                "question": "What kind of surveillance is this camera?"
             },
             "Surveillance:zone": {
                 "mappings": {
@@ -5524,7 +5527,7 @@
                         "then": "No wheelchair access"
                     }
                 },
-                "question": "Is there a dedicated toilet for wheelchair users"
+                "question": "Is there a dedicated toilet for wheelchair users?"
             }
         },
         "title": {
@@ -5734,7 +5737,7 @@
         }
     },
     "walls_and_buildings": {
-        "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, ...). This layer is invisible by default and not toggleable by the user.",
+        "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
         "title": {
             "render": "Wall or building"
         }

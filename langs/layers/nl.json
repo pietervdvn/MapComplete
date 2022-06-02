@@ -4229,6 +4229,9 @@
                     },
                     "1": {
                         "then": "Deze picknicktafel is gemaakt uit beton"
+                    },
+                    "2": {
+                        "then": "Deze picknictafel is gemaakt uit (gerecycleerd) plastiek"
                     }
                 },
                 "question": "Van welk materiaal is deze picknicktafel gemaakt?",

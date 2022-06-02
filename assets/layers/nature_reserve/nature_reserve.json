@@ -59,7 +59,7 @@
       "question": {
         "en": "Is this nature reserve accessible to the public?",
         "nl": "Is dit gebied toegankelijk?",
-        "de": "Ist dieses Naturschutzgebiet für die Öffentlichkeit zugänglich?"
+        "de": "Ist das Gebiet öffentlich zugänglich?"
       },
       "freeform": {
         "key": "access:description"
@@ -75,7 +75,7 @@
           "then": {
             "en": "Publicly accessible",
             "nl": "Vrij toegankelijk",
-            "de": "Öffentlich zugänglich"
+            "de": "Das Gebiet ist öffentlich zugänglich"
           }
         },
         {
@@ -88,7 +88,7 @@
           "then": {
             "en": "Not accessible",
             "nl": "Niet toegankelijk",
-            "de": "Nicht zugänglich"
+            "de": "Das Gebiet ist nicht zugänglich"
           }
         },
         {
@@ -101,7 +101,7 @@
           "then": {
             "en": "Not accessible as this is a private area",
             "nl": "Niet toegankelijk, want privégebied",
-            "de": "Nicht zugänglich, da dies ein privater Bereich ist"
+            "de": "Das Gebiet ist privat und nicht zugänglich"
           }
         },
         {
@@ -114,7 +114,7 @@
           "then": {
             "en": "Accessible despite being a privately owned area",
             "nl": "Toegankelijk, ondanks dat het privegebied is",
-            "de": "Zugänglich, obwohl es sich um ein privates Gebiet handelt"
+            "de": "Das Gebiet ist privat aber zugänglich"
           }
         },
         {
@@ -127,7 +127,7 @@
           "then": {
             "en": "Only accessible with a guide or during organised activities",
             "nl": "Enkel toegankelijk met een gids of tijdens een activiteit",
-            "de": "Nur mit einem Führer oder bei organisierten Aktivitäten zugänglich"
+            "de": "Das Gebiet ist nur während Führungen oder organisierten Aktivitäten zugänglich"
           }
         },
         {
@@ -140,7 +140,7 @@
           "then": {
             "en": "Accessible with fee",
             "nl": "Toegankelijk mits betaling",
-            "de": "Zugänglich gegen Gebühr"
+            "de": "Das Gebiet ist nur gegen Bezahlung zugänglich"
           }
         }
       ],
@@ -155,7 +155,7 @@
       "question": {
         "en": "Who operates this area?",
         "nl": "Wie beheert dit gebied?",
-        "de": "Wer betreibt dieses Gebiet?"
+        "de": "Wer betreibt das Gebiet?"
       },
       "freeform": {
         "key": "operator"
@@ -170,7 +170,7 @@
           "then": {
             "en": "Operated by Natuurpunt",
             "nl": "Dit gebied wordt beheerd door Natuurpunt",
-            "de": "Betrieben von Natuurpunt"
+            "de": "Das Gebiet wird betrieben von Natuurpunt"
           },
           "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg"
         },
@@ -197,7 +197,7 @@
           "then": {
             "en": "Operated by <i>Agentschap Natuur en Bos</i>",
             "nl": "Dit gebied wordt beheerd door het <i>Agentschap Natuur en Bos</i>",
-            "de": "Betrieben von <i>Agentschap Natuur en Bos</i>"
+            "de": "Das Gebiet wird betrieben von <i>Agentschap Natuur en Bos</i>"
           },
           "icon": "./assets/layers/nature_reserve/ANB.jpg"
         }
@@ -213,7 +213,7 @@
       "question": {
         "nl": "Wat is de naam van dit gebied?",
         "en": "What is the name of this area?",
-        "de": "Wie heißt dieses Gebiet?"
+        "de": "Wie heißt das Gebiet?"
       },
       "freeform": {
         "key": "name",
@@ -237,7 +237,7 @@
           "then": {
             "en": "This area doesn't have a name",
             "nl": "Dit gebied heeft geen naam",
-            "de": "Dieses Gebiet hat keinen Namen"
+            "de": "Das Gebiet hat keinen Namen"
           }
         }
       ],
@@ -299,7 +299,7 @@
         "en": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
         "it": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
         "fr": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public",
-        "de": "Wer ist der Verwalter dieses Naturschutzgebietes?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist"
+        "de": "Wer verwaltet dieses Gebiet?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist"
       },
       "render": {
         "nl": "{curator} is de beheerder van dit gebied",
@@ -320,7 +320,7 @@
         "en": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
         "it": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
         "fr": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
-        "de": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Naturschutzgebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
+        "de": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
       },
       "render": {
         "nl": "<a href='mailto:{email}' target='_blank'>{email}</a>",
@@ -344,7 +344,7 @@
         "en": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
         "it": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
         "fr": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié",
-        "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Naturschutzgebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre - geben Sie nur eine Telefonnummer an, wenn diese allgemein bekannt ist"
+        "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist"
       },
       "render": {
         "*": "<a href='tel:{phone}' target='_blank'>{phone}</a>"
@@ -404,7 +404,7 @@
       "title": {
         "en": "a nature reserve",
         "nl": "een natuurreservaat",
-        "de": "ein Naturschutzgebiet"
+        "de": "ein Schutzgebiet"
       },
       "description": {
         "en": "Add a missing nature reserve",

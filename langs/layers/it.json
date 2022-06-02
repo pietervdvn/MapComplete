@@ -1950,7 +1950,7 @@
                         "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
                     }
                 },
-                "question": "Che cosa sorveglia questa videocamera"
+                "question": "Che cosa sorveglia questa videocamera?"
             },
             "Surveillance:zone": {
                 "mappings": {

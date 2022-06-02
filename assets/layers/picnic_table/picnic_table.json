@@ -76,6 +76,13 @@
             "de": "Dies ist ein Picknicktisch aus Beton",
             "fr": "C’est une table en béton"
           }
+        },
+        {
+          "if": "material=plastic",
+          "then": {
+            "en": "This picnic table is made from (recycled) plastic",
+            "nl": "Deze picknictafel is gemaakt uit (gerecycleerd) plastiek"
+          }
         }
       ],
       "id": "picnic_table-material"

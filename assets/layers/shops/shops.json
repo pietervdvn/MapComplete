@@ -251,7 +251,7 @@
         "ja": "電話番号は何番ですか?",
         "nl": "Wat is het telefoonnummer?",
         "ru": "Какой телефон?",
-        "de": "Wie ist die Telefonnummer?",
+        "de": "Wie lautet die Telefonnummer?",
         "eo": "Kio estas la telefonnumero?"
       },
       "freeform": {
@@ -351,7 +351,7 @@
         "ru": "Магазин",
         "ja": "店",
         "nl": "een winkel",
-        "de": "eine geschäft",
+        "de": "ein Geschäft",
         "eo": "Butiko"
       },
       "description": {

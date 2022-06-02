@@ -185,7 +185,7 @@
       ],
       "title": {
         "en": "a hackerspace",
-        "de": "eine hackerspace",
+        "de": "einen Hackerspace",
         "ru": "Хакерспейс",
         "zh_Hant": "駭客空間",
         "hu": "Hackerspace"
@@ -204,13 +204,13 @@
       ],
       "title": {
         "en": "a makerspace",
-        "de": "eine makerspace",
+        "de": "einen Makerspace",
         "zh_Hant": "創客空間",
         "hu": "Makerspace"
       },
       "description": {
-        "en": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, ...",
-        "de": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, ...",
+        "en": "A makerspace is a place where DIY-enthusiasts gather to experiment with electronics such as arduino, LEDstrips, …",
+        "de": "Ein Makerspace ist ein Ort, an dem Heimwerker-Enthusiasten zusammenkommen, um mit Elektronik zu experimentieren, wie Arduino, LED-Strips, …",
         "zh_Hant": "創客空間是 DIY 愛好者聚集在一起弄電子零件實驗，例如用 arduino、LEDstrips 等...",
         "hu": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips."
       }

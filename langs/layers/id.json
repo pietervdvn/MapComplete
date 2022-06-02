@@ -400,9 +400,59 @@
             }
         },
         "tagRenderings": {
+            "tree-height": {
+                "render": "Tinggi: {height}"
+            },
+            "tree-heritage": {
+                "mappings": {
+                    "0": {
+                        "then": "Terdaftar sebagai warisan oleh <i>Onroerend Erfgoed</i> Flanders"
+                    },
+                    "1": {
+                        "then": "Terdaftar sebagai warisan budaya oleh <i>Direction du Patrimoine culturel</i> Brussels"
+                    },
+                    "2": {
+                        "then": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
+                    },
+                    "3": {
+                        "then": "Tidak terdaftar sebagai warisan"
+                    },
+                    "4": {
+                        "then": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
+                    }
+                },
+                "question": "Apakah pohon ini merupakan warisan yang terdaftar?"
+            },
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Berdaun lebar"
+                    },
+                    "1": {
+                        "then": "Berdaun jarum"
+                    },
+                    "2": {
+                        "then": "Tanpa daun permanen"
+                    }
+                }
+            },
+            "tree-species-wikidata": {
+                "question": "Spesies pohon apa ini?"
+            },
             "tree_node-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Pohon ini tidak memiliki nama."
+                    }
+                },
+                "question": "Apakah pohon ini memiliki nama?",
                 "render": "Nama: {name}"
             }
+        }
+    },
+    "veterinary": {
+        "title": {
+            "render": "Dokter hewan"
         }
     },
     "viewpoint": {
@@ -419,6 +469,133 @@
         },
         "title": {
             "render": "Sudut pandang"
+        }
+    },
+    "visitor_information_centre": {
+        "name": "Pusat Informasi Pengunjung",
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
+        }
+    },
+    "waste_basket": {
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Keranjang Sampah"
+                        }
+                    }
+                }
+            }
+        },
+        "name": "Keranjang Sampah",
+        "presets": {
+            "0": {
+                "title": "sebuah keranjang sampah"
+            }
+        },
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Keranjang sampah ini memiliki dispenser untuk kantong kotoran (anjing)"
+                    },
+                    "1": {
+                        "then": "Keranjang sampah ini <b> tidak</b> memiliki dispenser untuk kantong kotoran (anjing)"
+                    },
+                    "2": {
+                        "then": "Keranjang sampah ini <b> tidak</b> memiliki dispenser untuk kantong kotoran (anjing)"
+                    }
+                },
+                "question": "Apakah keranjang sampah ini memiliki dispenser untuk kantong kotoran anjing?"
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Keranjang sampah untuk sampah umum"
+                    },
+                    "1": {
+                        "then": "Keranjang sampah untuk sampah umum"
+                    },
+                    "2": {
+                        "then": "Keranjang sampah untuk kotoran anjing"
+                    },
+                    "3": {
+                        "then": "Keranjang sampah untuk rokok"
+                    },
+                    "4": {
+                        "then": "Keranjang sampah untuk obat-obatan"
+                    },
+                    "5": {
+                        "then": "Keranjang sampah untuk jarum dan benda tajam lainnya"
+                    },
+                    "6": {
+                        "then": "Keranjang sampah untuk plastik"
+                    }
+                },
+                "question": "Keranjang sampah macam apa ini?"
+            }
+        },
+        "title": {
+            "render": "Keranjang Sampah"
+        }
+    },
+    "waste_disposal": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Hanya akses publik"
+                    }
+                }
+            }
+        },
+        "name": "Tempat Pembuangan Limbah",
+        "presets": {
+            "0": {
+                "description": "Tempat sampah sedang hingga besar untuk pembuangan limbah (rumah tangga)",
+                "title": "tempat pembuangan sampahh"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Tempat sampah ini bisa digunakan oleh siapa saja"
+                    },
+                    "1": {
+                        "then": "Tempat sampah ini bersifat pribadi"
+                    },
+                    "2": {
+                        "then": "Tempat sampah ini hanya untuk penghuni"
+                    }
+                },
+                "question": "Siapa yang bisa menggunakan tempat sampah ini?",
+                "render": "Akses: {access}"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Ini adalah kontainer bawah tanah"
+                    },
+                    "1": {
+                        "then": "Kontainer ini terletak di dalam ruangan"
+                    },
+                    "2": {
+                        "then": "Kontainer ini terletak di luar ruangan"
+                    }
+                },
+                "question": "Di manakah lokasi kontainer ini?"
+            }
+        },
+        "title": {
+            "render": "Pembuangan Limbah"
         }
     },
     "watermill": {

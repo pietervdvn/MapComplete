@@ -1,4 +1,8 @@
 {
+    "address": {
+        "description": "Adresoj",
+        "name": "Konataj adresoj en OSM"
+    },
     "bench": {
         "tagRenderings": {
             "bench-colour": {
@@ -66,6 +70,31 @@
         "presets": {
             "0": {
                 "title": "Fietsbibliotheek"
+            }
+        }
+    },
+    "bicycle_rental": {
+        "tagRenderings": {
+            "9": {
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "urbaj bicikloj"
+                        },
+                        "1": {
+                            "1": "elektraj bicikloj"
+                        },
+                        "2": {
+                            "1": "bicikloj por infanoj"
+                        },
+                        "3": {
+                            "1": "BMX-bicikloj"
+                        },
+                        "4": {
+                            "1": "montobicikloj"
+                        }
+                    }
+                }
             }
         }
     },

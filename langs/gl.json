@@ -1,8 +1,8 @@
 {
     "centerMessage": {
-        "loadingData": "Cargando os datos...",
+        "loadingData": "Cargando os datos…",
         "ready": "Feito!",
-        "retrying": "A carga dos datos fallou. Tentándoo de novo... ({count})",
+        "retrying": "A carga dos datos fallou. Tentándoo de novo… ({count})",
         "zoomIn": "Achégate para ollar ou editar os datos"
     },
     "favourite": {

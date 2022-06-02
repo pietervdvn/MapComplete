@@ -85,7 +85,7 @@
           "then": {
             "en": "This lamp is suspended using cables",
             "nl": "Deze lantaarn hangt aan kabels",
-            "de": "Diese Straßenlaterne ist an einem Kabel aufgehängt"
+            "de": "Die Straßenlaterne ist an einem Kabel befestigt"
           }
         },
         {
@@ -93,7 +93,7 @@
           "then": {
             "en": "This lamp is mounted on a ceiling",
             "nl": "Deze lantaarn hangt aan een plafond",
-            "de": "Diese Straßenlaterne ist an einer Decke montiert"
+            "de": "Die Straßenlaterne ist an einer Decke befestigt"
           }
         },
         {
@@ -101,7 +101,7 @@
           "then": {
             "en": "This lamp is mounted in the ground",
             "nl": "Deze lantaarn zit in de grond",
-            "de": "Diese Straßenlaterne ist im Boden montiert"
+            "de": "Die Straßenlaterne ist am Boden befestigt"
           }
         },
         {
@@ -109,7 +109,7 @@
           "then": {
             "en": "This lamp is mounted on a short pole (mostly < 1.5m)",
             "nl": "Deze lantaarn zit op een korte paal (meestal < 1.5m)",
-            "de": "Diese Straßenlaterne ist an einem kurzen Mast (< 1,5m) montiert"
+            "de": "Die Straßenlaterne ist an einem kurzen Mast (< 1,5m) befestigt"
           }
         },
         {
@@ -117,7 +117,7 @@
           "then": {
             "en": "This lamp is mounted on a pole",
             "nl": "Deze lantaarn zit op een paal",
-            "de": "Diese Straßenlaterne ist an einem Mast montiert"
+            "de": "Die Straßenlaterne ist an einem Mast befestigt"
           }
         },
         {
@@ -125,7 +125,7 @@
           "then": {
             "en": "This lamp is mounted directly to the wall",
             "nl": "Deze lantaarn hangt direct aan de muur",
-            "de": "Diese Straßenlaterne ist direkt an der Wand montiert"
+            "de": "Die Straßenlaterne ist direkt an der Wand befestigt"
           }
         },
         {
@@ -133,7 +133,7 @@
           "then": {
             "en": "This lamp is mounted to the wall using a metal bar",
             "nl": "Deze lantaarn hangt aan de muur met een metalen balk",
-            "de": "Diese Straßenlaterne ist mit einer Metallstange an der Wand montiert"
+            "de": "Die Straßenlaterne ist mit einer Metallstange an der Wand befestigt"
           }
         }
       ]

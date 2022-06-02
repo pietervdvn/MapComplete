@@ -36,7 +36,8 @@
     "render": {
       "en": "Veterinary",
       "da": "dyrl&aelig;ge",
-      "de": "Tierarzt"
+      "de": "Tierarzt",
+      "id": "Dokter hewan"
     },
     "mappings": [
       {

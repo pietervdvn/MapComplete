@@ -150,7 +150,7 @@
           "if": "bench=stand_up_bench",
           "then": {
             "en": "Stand up bench",
-            "de": "Stehbank",
+            "de": "Hier gibt es eine Stehbank zum Anlehnen",
             "fr": "Banc assis debout",
             "nl": "Leunbank",
             "it": "Panca in piedi",

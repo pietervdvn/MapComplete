@@ -162,7 +162,7 @@
         "nl": "Welke functies biedt locatie?",
         "fr": "Quels services sont valables à cette station vélo ?",
         "gl": "Que servizos están dispoñíbeis nesta estación de bicicletas?",
-        "de": "Welche Einrichtungen stehen an dieser Fahrradstation zur Verfügung?",
+        "de": "Welche Geräte sind hier vorhanden?",
         "it": "Quali servizi sono disponibili in questa stazione per bici?",
         "pt_BR": "Quais serviços estão disponíveis nesta estação de bicicletas?",
         "pt": "Quais serviços estão disponíveis nesta estação de bicicletas?",
@@ -198,11 +198,11 @@
             ]
           },
           "then": {
-            "en": "There are only tools (screwdrivers, pliers...) present",
+            "en": "There are only tools (screwdrivers, pliers, …) present",
             "nl": "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)",
             "fr": "Il y a seulement des outils (tournevis, pinces...)",
             "gl": "Só hai ferramentas (desaparafusadores, alicates...) presentes",
-            "de": "Es sind nur Werkzeuge (Schraubenzieher, Zangen...) vorhanden",
+            "de": "Es ist nur Werkzeug (Schraubenzieher, Zangen, …) vorhanden",
             "it": "Ci sono solo degli attrezzi (cacciaviti, pinze…) presenti",
             "pt_BR": "Há somente ferramentas (chaves de fenda, alicates...) presentes",
             "pt": "Há somente ferramentas (chaves de fenda, alicates...) presentes",
@@ -286,7 +286,7 @@
         "en": "When is this bicycle repair point open?",
         "fr": "Quand ce point de réparation de vélo est-il ouvert ?",
         "it": "Quando è aperto questo punto riparazione bici?",
-        "de": "Wann ist diese Fahrradreparaturstelle geöffnet?",
+        "de": "Wann ist die Fahrradreparaturstation geöffnet?",
         "ru": "Когда работает эта точка обслуживания велосипедов?",
         "es": "¿Cuándo está abierto este punto de reparación de bicicletas?",
         "da": "Hvornår er dette cykelreparationssted åbent?"
@@ -304,7 +304,7 @@
             "en": "Always open",
             "fr": "Ouvert en permanence",
             "it": "Sempre aperto",
-            "de": "Immer geöffnet",
+            "de": "Die Station ist durchgehend geöffnet",
             "ru": "Всегда открыто",
             "pt_BR": "Sempre aberto",
             "pt": "Sempre aberto",
@@ -321,7 +321,7 @@
       "question": {
         "en": "Who is allowed to use this repair station?",
         "nl": "Wie kan dit herstelpunt gebruiken?",
-        "de": "Wer darf diese Reparaturstation benutzen?",
+        "de": "Wer darf die Reparaturstation nutzen?",
         "es": "¿A quién se le permite utilizar esta estación de reparación?",
         "da": "Hvem må bruge denne reparationsstation?"
       },
@@ -331,7 +331,7 @@
           "then": {
             "en": "Publicly accessible",
             "nl": "Publiek toegankelijk",
-            "de": "Öffentlich zugänglich",
+            "de": "Die Reparaturstation darf öffentlich genutzt werden",
             "es": "Accesible públicamente",
             "da": "Offentligt tilgængelig"
           }
@@ -352,7 +352,7 @@
           "then": {
             "en": "Only for customers",
             "nl": "Enkel voor klanten van de bijhorende zaak",
-            "de": "Nur für Kunden",
+            "de": "Die Reparaturstation darf nur von Kunden genutzt werden",
             "es": "Solo para clientes",
             "da": "Kun for kunder"
           }
@@ -362,7 +362,7 @@
           "then": {
             "en": "Not accessible to the general public",
             "nl": "Niet publiek toegankelijk",
-            "de": "Nicht für die Allgemeinheit zugänglich",
+            "de": "Die Reparaturstation darf nicht öffentlich genutzt werden",
             "es": "No accesible para el público general",
             "da": "Ikke tilgængelig for offentligheden"
           },
@@ -391,7 +391,7 @@
         "nl": "Wie beheert deze fietspomp?",
         "fr": "Qui maintient cette pompe à vélo ?",
         "it": "Chi gestisce questa pompa per bici?",
-        "de": "Wer wartet diese Fahrradpumpe?",
+        "de": "Wer betreibt die Reparaturstation?",
         "pt_BR": "Quem faz a manutenção desta bomba de ciclo?",
         "pt": "Quem faz a manutenção desta bomba de ciclo?",
         "es": "¿Quién mantiene esta bomba para bicicletas?",
@@ -420,7 +420,7 @@
       "question": {
         "en": "What is the email address of the maintainer?",
         "nl": "Wat is het email-adres van de beheerder?",
-        "de": "Wie lautet die E-Mail-Adresse des Betreuers?",
+        "de": "Wie lautet die E-Mail-Adresse des Betreibers?",
         "fr": "Quelle est l'adresse email du service de maintenance ?",
         "es": "¿Es esta la dirección de correo electrónico del mantenedor?",
         "da": "Hvad er e-mailadressen på vedligeholderen?"
@@ -597,7 +597,7 @@
             "nl": "Sclaverand/Presta (dunne fietsbanden)",
             "fr": "Sclaverand (aussi appelé Presta)",
             "gl": "Sclaverand (tamén coñecido como Presta)",
-            "de": "Sklaverand-/Prestaventil (für Rennräder)",
+            "de": "Sklaverand-/Presta-Ventile (für Rennräder)",
             "it": "Sclaverand (detta anche Presta)",
             "ru": "Клапан Presta (также известный как французский клапан)",
             "da": "Sclaverand (også kendt som Presta og racerventil)"
@@ -610,7 +610,7 @@
             "nl": "Dunlop",
             "fr": "Dunlop",
             "gl": "Dunlop",
-            "de": "Dunlop",
+            "de": "Dunlopventile",
             "it": "Dunlop",
             "ru": "Клапан Dunlop",
             "da": "Dunlop"
@@ -623,7 +623,7 @@
             "nl": "Schrader (auto's en mountainbikes)",
             "fr": "Schrader (les valves de voitures)",
             "gl": "Schrader (para automóbiles)",
-            "de": "Schraderventil (für Autos und Mountainbikes)",
+            "de": "Schrader-Ventile (für Autos und Mountainbikes)",
             "it": "Schrader (valvola delle auto)",
             "da": "Schrader (biler)"
           }
@@ -758,7 +758,7 @@
         "nl": "een fietspomp",
         "fr": "une pompe à vélo",
         "gl": "bomba de ar",
-        "de": "eine fahrradpumpe",
+        "de": "eine Fahrradpumpe",
         "it": "una pompa per bici",
         "ru": "bелосипедный насос",
         "fi": "pyöräpumppu",
@@ -795,7 +795,7 @@
         "nl": "een herstelpunt en pomp",
         "fr": "une point de réparation vélo avec pompe",
         "gl": "estación de arranxo de bicicletas con bomba de ar",
-        "de": "eine fahrrad-reparaturstation und pumpe",
+        "de": "eine Fahrrad-Reparaturstation mit Pumpe",
         "it": "una stazione di riparazione bici e pompa",
         "pl": "stacja naprawy rowerów i pompka",
         "es": "En estación de reparación de bicicletas y bomba"
@@ -825,7 +825,7 @@
         "nl": "een herstelpunt zonder pomp",
         "fr": "une point de réparation vélo sans pompe",
         "gl": "estación de arranxo de bicicletas sin bomba de ar",
-        "de": "eine fahrrad-reparaturstation ohne pumpe",
+        "de": "eine Fahrrad-Reparaturstation ohne Pumpe",
         "it": "una stazione di riparazione bici senza pompa",
         "ru": "Станция обслуживания велосипедов без накачки (насоса)",
         "es": "una estación de reparación de bicicletas sin bomba",
