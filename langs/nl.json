@@ -219,7 +219,9 @@
             "fsUserbadge": "Activeer de login-knop",
             "fsWelcomeMessage": "Toon het welkomstbericht en de bijhorende tabbladen",
             "intro": "<h3>Deel deze kaart</h3> Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
-            "thanksForSharing": "Bedankt om te delen!"
+            "thanksForSharing": "Bedankt om te delen!",
+            "downloadCustomTheme": "Download de instellingen van dit thema",
+            "downloadCustomThemeHelp": "Een ervaring bijdrager kan op basis van dit bestand je thema verder verbeteren"
         },
         "skip": "Sla deze vraag over",
         "skippedQuestions": "Enkele vragen werden overgeslaan",
@@ -256,7 +258,9 @@
             },
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "notValid": "Kies een geldige waarde om verder te gaan",
+        "error": "Er ging iets mis"
     },
     "image": {
         "addPicture": "Voeg foto toe",
@@ -329,7 +333,10 @@
             "noFilesLoaded": "Geen bestand ingeladen op dit moment",
             "title": "Selecteer bestand"
         },
-        "title": "Importeer-helper"
+        "title": "Importeer-helper",
+        "askMetadata": {
+            "downloadGeojson": "Download GeoJSON"
+        }
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"
