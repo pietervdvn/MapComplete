@@ -1671,9 +1671,6 @@
                     },
                     "1": {
                         "then": "Principalmente libri per persone in età adulta"
-                    },
-                    "2": {
-                        "then": "Sia libri per l'infanzia, sia per l'età adulta"
                     }
                 },
                 "question": "Che tipo di libri si possono trovare in questa microbiblioteca?"

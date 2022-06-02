@@ -113,7 +113,7 @@
         },
         "wikipedia": {
             "mappings": {
-                "1": {
+                "0": {
                     "then": "Er werd nog geen Wikipedia-pagina gekoppeld"
                 },
                 "1": {

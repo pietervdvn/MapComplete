@@ -4543,12 +4543,10 @@
                     },
                     "1": {
                         "then": "Mostly books for adults"
-                    },
-                    "2": {
-                        "then": "Both books for kids and adults"
                     }
                 },
-                "question": "What kind of books can be found in this public bookcase?"
+                "question": "What kind of books can be found in this public bookcase?",
+                "render": "This place mostly serves {books}"
             },
             "bookcase-is-accessible": {
                 "mappings": {

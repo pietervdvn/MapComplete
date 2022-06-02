@@ -119,6 +119,7 @@
             "title": "Download de zichtbare data",
             "uploadGpx": "Track uploaden naar OpenStreetMap"
         },
+        "error": "Er ging iets mis",
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
         "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande punten te beantwoorden vooraleer zelf punten toe te voegen.",
@@ -151,6 +152,7 @@
         "next": "Volgende",
         "noNameCategory": "{category} zonder naam",
         "noTagsSelected": "Geen tags geselecteerd",
+        "notValid": "Kies een geldige waarde om verder te gaan",
         "number": "getal",
         "oneSkippedQuestion": "Een vraag werd overgeslaan",
         "openStreetMapIntro": "<h3>Een open kaart</h3><p>Zou het niet fantastisch zijn als er een open kaart zou zijn die door iedereen aangepast én gebruikt kan worden? Een kaart waar iedereen zijn interesses aan zou kunnen toevoegen? Dan zouden er geen duizend-en-één verschillende kleine kaartjes, websites, ... meer nodig zijn</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> is deze open kaart. Je mag de kaartdata gratis gebruiken (mits <a href=\"https://osm.org/copyright\" target=\"_blank\">bronvermelding en herpublicatie van aanpassingen</a>). Daarenboven mag je de kaart ook gratis aanpassen als je een account maakt. Ook deze website is gebaseerd op OpenStreetMap. Als je hier een vraag beantwoord, gaat het antwoord daar ook naartoe</p><p>Tenslotte zijn er reeds vele gebruikers van OpenStreetMap. Denk maar <a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, verschillende gespecialiseerde routeplanners, de achtergrondkaarten op Facebook, Instagram,...<br/>;Zelfs Apple Maps en Bing-Maps gebruiken OpenStreetMap in hun kaarten!</p><p></p><p>Kortom, als je hier een punt toevoegd of een vraag beantwoord, zal dat na een tijdje ook in al dié applicaties te zien zijn.</p>",
@@ -201,6 +203,8 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel",
             "copiedToClipboard": "Link gekopieerd naar klembord",
+            "downloadCustomTheme": "Download de instellingen van dit thema",
+            "downloadCustomThemeHelp": "Een ervaring bijdrager kan op basis van dit bestand je thema verder verbeteren",
             "editThemeDescription": "Pas vragen aan of voeg vragen toe aan dit kaartthema",
             "editThisTheme": "Pas dit thema aan",
             "embedIntro": "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller",
@@ -215,9 +219,7 @@
             "fsUserbadge": "Activeer de login-knop",
             "fsWelcomeMessage": "Toon het welkomstbericht en de bijhorende tabbladen",
             "intro": "<h3>Deel deze kaart</h3> Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
-            "thanksForSharing": "Bedankt om te delen!",
-            "downloadCustomTheme": "Download de instellingen van dit thema",
-            "downloadCustomThemeHelp": "Een ervaring bijdrager kan op basis van dit bestand je thema verder verbeteren"
+            "thanksForSharing": "Bedankt om te delen!"
         },
         "skip": "Sla deze vraag over",
         "skippedQuestions": "Enkele vragen werden overgeslaan",
@@ -254,9 +256,7 @@
             },
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "notValid": "Kies een geldige waarde om verder te gaan",
-        "error": "Er ging iets mis"
+        }
     },
     "image": {
         "addPicture": "Voeg foto toe",
@@ -280,6 +280,9 @@
         "willBePublished": "Jouw foto wordt gepubliceerd "
     },
     "importHelper": {
+        "askMetadata": {
+            "downloadGeojson": "Download GeoJSON"
+        },
         "compareToAlreadyExistingNotes": {
             "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt"
         },
@@ -326,10 +329,7 @@
             "noFilesLoaded": "Geen bestand ingeladen op dit moment",
             "title": "Selecteer bestand"
         },
-        "title": "Importeer-helper",
-        "askMetadata": {
-            "downloadGeojson": "Download GeoJSON"
-        }
+        "title": "Importeer-helper"
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"

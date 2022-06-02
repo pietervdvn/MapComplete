@@ -30,7 +30,8 @@
   "description": {
     "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
     "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
-    "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können."
+    "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
+    "hu": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."
   },
   "tagRenderings": [
     "images",

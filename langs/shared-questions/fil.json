@@ -113,7 +113,7 @@
         },
         "wikipedia": {
             "mappings": {
-                "1": {
+                "0": {
                     "then": "Wala pang kawing ng Wikipedia page"
                 },
                 "1": {

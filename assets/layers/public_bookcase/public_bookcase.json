@@ -144,14 +144,14 @@
       "id": "bookcase-booktypes",
       "question": {
         "en": "What kind of books can be found in this public bookcase?",
-        "nl": "Welke soort boeken zijn de meeste boeken in dit boekenruilkastje?",
-        "de": "Welche Art von Büchern sind in diesem öffentlichen Bücherschrank zu finden?",
+        "nl": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
+        "de": "Welche Bücher kann man im Bücherschrank finden?",
         "fr": "Quel type de livres peut-on dans cette microbibliothèque ?",
         "it": "Che tipo di libri si possono trovare in questa microbiblioteca?",
         "ru": "Какие книги можно найти в этом общественном книжном шкафу?",
         "hu": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?"
       },
-            "render": {
+      "render": {
         "nl": "Deze plaats serveert vooral {books}",
         "en": "This place mostly serves {books}",
         "de": "An diesem Ort gibt es hauptsächlich {books}"

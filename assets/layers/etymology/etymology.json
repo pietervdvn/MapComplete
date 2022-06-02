@@ -27,7 +27,8 @@
   "description": {
     "en": "All objects which have an etymology known",
     "nl": "Alle lagen met een gelinkt etymology",
-    "de": "Alle Objekte, die eine bekannte Namensherkunft haben"
+    "de": "Alle Objekte, die eine bekannte Namensherkunft haben",
+    "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete"
   },
   "calculatedTags": [
     "_same_name_ids=feat.closestn('*', 250, undefined, 2500)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"

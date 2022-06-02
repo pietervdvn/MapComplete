@@ -1988,9 +1988,6 @@
                     },
                     "1": {
                         "then": "Livres pour les adultes"
-                    },
-                    "2": {
-                        "then": "Livres pour enfants et adultes également"
                     }
                 },
                 "question": "Quel type de livres peut-on dans cette microbibliothèque ?"

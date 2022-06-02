@@ -94,7 +94,7 @@
         },
         "wikipedia": {
             "mappings": {
-                "1": {
+                "0": {
                     "then": "Der er endnu ikke linket til nogen Wikipedia-side"
                 },
                 "1": {

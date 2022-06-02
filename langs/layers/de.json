@@ -4538,12 +4538,10 @@
                     },
                     "1": {
                         "then": "Vorwiegend Bücher für Erwachsene"
-                    },
-                    "2": {
-                        "then": "Sowohl Bücher für Kinder als auch für Erwachsene"
                     }
                 },
-                "question": "Welche Bücher kann man im Bücherschrank finden?"
+                "question": "Welche Bücher kann man im Bücherschrank finden?",
+                "render": "An diesem Ort gibt es hauptsächlich {books}"
             },
             "bookcase-is-accessible": {
                 "mappings": {

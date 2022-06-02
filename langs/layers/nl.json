@@ -4407,12 +4407,10 @@
                     },
                     "1": {
                         "then": "Voornamelijk boeken voor volwassenen"
-                    },
-                    "2": {
-                        "then": "Boeken voor zowel kinderen als volwassenen"
                     }
                 },
-                "question": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?"
+                "question": "Voor welke doelgroep zijn de meeste boeken in dit boekenruilkastje?",
+                "render": "Deze plaats serveert vooral {books}"
             },
             "bookcase-is-accessible": {
                 "mappings": {

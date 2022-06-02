@@ -558,6 +558,9 @@
             "render": "Ivóvíz"
         }
     },
+    "etymology": {
+        "description": "Minden olyan objektum, amelynél ismert a nevének az eredete"
+    },
     "ghost_bike": {
         "name": "Emlékkerékpárok",
         "presets": {
@@ -629,9 +632,6 @@
                     },
                     "1": {
                         "then": "Többnyire felnőtteknek szóló könyvek"
-                    },
-                    "2": {
-                        "then": "Gyerekeknek és felnőtteknek szóló könyvek egyaránt"
                     }
                 },
                 "question": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?"
@@ -718,6 +718,7 @@
         }
     },
     "shops": {
+        "description": "Egy bolt",
         "tagRenderings": {
             "shops-shop": {
                 "mappings": {
@@ -726,8 +727,10 @@
                     }
                 }
             }
-        },
-        "description": "Egy bolt"
+        }
+    },
+    "waste_basket": {
+        "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."
     },
     "windturbine": {
         "name": "Szélerőmű",
@@ -786,11 +789,5 @@
                 }
             }
         }
-    },
-    "etymology": {
-        "description": "Minden olyan objektum, amelynél ismert a nevének az eredete"
-    },
-    "waste_basket": {
-        "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."
     }
 }

@@ -81,7 +81,8 @@
           "if": "material=plastic",
           "then": {
             "en": "This picnic table is made from (recycled) plastic",
-            "nl": "Deze picknictafel is gemaakt uit (gerecycleerd) plastiek"
+            "nl": "Deze picknictafel is gemaakt uit (gerecycleerd) plastiek",
+            "de": "Dieser Picknicktisch ist aus (recyceltem) Kunststoff hergestellt"
           }
         }
       ],
