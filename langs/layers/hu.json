@@ -65,7 +65,7 @@
                 "render": "Ez az állomás itt található: {addr:place}."
             },
             "ambulance-street": {
-                "question": " Mi a neve annak az utcának, amelyben az állomás található?",
+                "question": "Mi a neve annak az utcának, amelyben az állomás található?",
                 "render": "Ez az állomás a következő utcában van: {addr:street}."
             }
         },
@@ -74,7 +74,7 @@
         }
     },
     "artwork": {
-        "description": "Különféle műalkotások",
+        "description": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
         "name": "Műalkotások",
         "presets": {
             "0": {
@@ -578,7 +578,7 @@
                 "title": "Hackerspace"
             },
             "1": {
-                "description": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips.",
+                "description": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips…",
                 "title": "Makerspace"
             }
         },
@@ -726,7 +726,8 @@
                     }
                 }
             }
-        }
+        },
+        "description": "Egy bolt"
     },
     "windturbine": {
         "name": "Szélerőmű",
@@ -785,5 +786,11 @@
                 }
             }
         }
+    },
+    "etymology": {
+        "description": "Minden olyan objektum, amelynél ismert a nevének az eredete"
+    },
+    "waste_basket": {
+        "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."
     }
 }
