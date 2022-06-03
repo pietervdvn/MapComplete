@@ -413,7 +413,7 @@
             "displayNonMatchingCount": "{length} objects dont match any presets",
             "intro": "All of the following themes will show the import notes. However, the note on OpenStreetMap can link to only one single theme. Choose which theme that the created notes will link to",
             "misMatch": "Property with key {k} does not have expected value {v}; instead it is {properties}",
-            "missing": "Expected $k}={v}, but it is completely missing",
+            "missing": "Expected {k}={v}, but it is completely missing",
             "needsTags": "{title} needs tags {tags}",
             "noMatchingPresets": "This theme has no presets loaded. As a result, imports won't work here",
             "notApplicable": "Preset {title} is not applicable:",
