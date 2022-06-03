@@ -10,8 +10,9 @@ npm run generate:translations
   # Translation generation went fine - commit
   git add langs/
   git add assets/
-  git commit -m "Merge weblate trangsslations and regenerate translations"
+  git commit -m "Merge weblate translations and regenerate translations"
+  git push
  else
   echo "Generation of translations failed!"
-  git checkout HEAD
+  git merge --abort
  fi
