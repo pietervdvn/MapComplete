@@ -391,7 +391,7 @@
             "displayNonMatchingCount": "{length} objekter passer ikke med nogen forudindstillinger",
             "intro": "Alle følgende temaer viser importnoterne. Noten på OpenStreetMap kan dog kun linke til et enkelt tema. Vælg, hvilket tema de oprettede noter skal linke til",
             "misMatch": "Egenskaben med nøglen {k} har ikke den forventede værdi {v}; i stedet er den {properties}",
-            "missing": "Forventede $k}={v}, men det mangler helt",
+            "missing": "Forventede {k}={v}, men det mangler helt",
             "needsTags": "{title} skal have mærker {tags}",
             "noMatchingPresets": "Dette tema har ingen forudindstillinger indlæst. Derfor vil importering ikke fungere her",
             "notApplicable": "Forudindstillet {title} kan ikke anvendes:",
