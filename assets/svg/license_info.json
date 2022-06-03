@@ -804,6 +804,16 @@
     ]
   },
   {
+    "path": "mastodon.svg",
+    "license": "Logo; GNU Affero General Public License",
+    "authors": [
+      "Mastodon"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Mastodon_Logotype_(Simple).svg"
+    ]
+  },
+  {
     "path": "min.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -1307,6 +1317,16 @@
     ],
     "sources": [
       "https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_language-ltr.svg"
+    ]
+  },
+  {
+    "path": "twitter.svg",
+    "license": "Logo - all rights reserved",
+    "authors": [
+      "Twitter Inc."
+    ],
+    "sources": [
+      "https://about.twitter.com/en/who-we-are/brand-toolkit"
     ]
   },
   {
