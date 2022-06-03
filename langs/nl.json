@@ -11,10 +11,10 @@
         "delete": "Verwijder",
         "explanations": {
             "hardDelete": "Dit punt zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken.",
-            "selectReason": "Gelieve aan te duiden waarom dit punt verwijderd moet worden",
-            "softDelete": "Dit punt zal aangepast worden en zal in deze applicatie niet meer getoond worden. <span class=\"subtle\">{reason}</span>",
             "retagNoOtherThemes": "Dit object zal anders aangeduid worden en niet meer getoond worden in deze applicatie",
-            "retagOtherThemes": "Dit object zal aangepast worden en zichtbaar zijn in {otherThemes}"
+            "retagOtherThemes": "Dit object zal aangepast worden en zichtbaar zijn in {otherThemes}",
+            "selectReason": "Gelieve aan te duiden waarom dit punt verwijderd moet worden",
+            "softDelete": "Dit punt zal aangepast worden en zal in deze applicatie niet meer getoond worden. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Dit object is verwijderd",
         "isntAPoint": "Enkel punten kunnen verwijderd worden, het geselecteerde object is een lijn, een oppervlakte of een relatie.",
@@ -89,12 +89,12 @@
             "josmOpened": "JOSM is geopend",
             "mapContributionsBy": "De huidige data is bijgedragen door {contributors}",
             "mapContributionsByAndHidden": "De zichtbare data heeft bijdragen van {contributors} en {hiddenCount} andere bijdragers",
+            "mapillaryHelp": "<b>Mapillary</b> is een online dienst waar straatbeelden onder een vrije licentie gedeeld worden. Deze beelden mogen gebruikt worden om OpenStreetMap te verbeteren.",
             "openIssueTracker": "Geef een fout in de software door",
             "openMapillary": "Open Mapillary op deze locatie",
             "openOsmcha": "Bekijk de laatste bijdragen gemaakt met {theme}",
             "themeBy": "Thema gemaakt door {author}",
-            "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>",
-            "mapillaryHelp": "<b>Mapillary</b> is een online dienst waar straatbeelden onder een vrije licentie gedeeld worden. Deze beelden mogen gebruikt worden om OpenStreetMap te verbeteren."
+            "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
         },
         "back": "Vorige",
         "backToMapcomplete": "Terug naar het themaoverzicht",
@@ -147,12 +147,12 @@
             "createYourOwnTheme": "Maak je eigen MapComplete-kaart",
             "hiddenExplanation": "Deze thema's zijn enkel zichtbaar indien je de link kent. Je hebt {hidden_discovered} van {total_hidden} verborgen thema's ontdekt.",
             "intro": "<h3>Meer thematische kaarten?</h3>Vind je het leuk om geodata te verzamelen? <br> Hier vind je meer kaartthema's.",
+            "noMatchingThemes": "Geen enkel thema beantwoord je zoekopdracht",
+            "noSearch": "Toon alle thema's",
             "previouslyHiddenTitle": "Eerder bezochte verborgen themas",
             "requestATheme": "Als je een eigen kaartthema wil, vraag dit dan in de issue tracker.",
-            "streetcomplete": "Een andere, gelijkaardige Android applicatie is <a href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" class=\"underline hover:text-blue-800\" target=\"_blank\">StreetComplete</a>.",
-            "noSearch": "Toon alle thema's",
-            "noMatchingThemes": "Geen enkel thema beantwoord je zoekopdracht",
-            "searchForATheme": "Zoek een thema"
+            "searchForATheme": "Zoek een thema",
+            "streetcomplete": "Een andere, gelijkaardige Android applicatie is <a href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" class=\"underline hover:text-blue-800\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "De naam van dit {category} is $$$",
         "next": "Volgende",
@@ -253,6 +253,7 @@
             "createNewWikidata": "Maak een nieuw Wikidata-item",
             "doSearch": "Zoek hierboven om resultaten te zien",
             "failed": "Het Wikipedia-artikel inladen is mislukt",
+            "fromWikipedia": "Uit Wikipedia, de vrije encyclopedie",
             "loading": "Wikipedia aan het laden…",
             "noResults": "Geen relevante items gevonden voor <i>{search}</i>",
             "noWikipediaPage": "Dit Wikidata-item heeft nog geen overeenkomstig Wikipedia-artikel",
@@ -261,8 +262,7 @@
                 "died": "Gestorven: {value}"
             },
             "searchWikidata": "Zoek op Wikidata",
-            "wikipediaboxTitle": "Wikipedia",
-            "fromWikipedia": "Uit Wikipedia, de vrije encyclopedie"
+            "wikipediaboxTitle": "Wikipedia"
         }
     },
     "image": {
@@ -276,6 +276,20 @@
         "doDelete": "Verwijder afbeelding",
         "dontDelete": "Annuleren",
         "isDeleted": "Verwijderd",
+        "nearbyPictures": {
+            "allFiltered": "Geen enkele afbeelding voldoet aan je filter",
+            "browseNearby": "Bekijk afbeeldingen van deze buurt…",
+            "confirm": "De geselecteerde afbeelding toont {title()}",
+            "hasMatchingPicture": "Is er een afbeelding die dit object toont? Selecteer deze hieronder:",
+            "loadMore": "Toon meer afbeeldingen",
+            "loading": "Afbeeldingen worden geladen…",
+            "noImageSelected": "Selecteer een afbeelding om deze te linken",
+            "nothingFound": "Geen afbeeldingen van deze buurt gevonden…",
+            "onlyTowards": "Toon enkel afbeeldingen die naar dit object kijken",
+            "removeFilters": "Verwijder alle filters",
+            "title": "Afbeeldingen van de buurt",
+            "withinRadius": "Toon enkel afbeeldingen die gemaakt zijn binnen {radius} meter van dit object"
+        },
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
         "respectPrivacy": "Fotografeer geen mensen of nummerplaten. Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
         "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
@@ -284,47 +298,71 @@
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
         "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
         "uploadingPicture": "Bezig met een foto te uploaden…",
-        "willBePublished": "Jouw foto wordt gepubliceerd ",
-        "nearbyPictures": {
-            "allFiltered": "Geen enkele afbeelding voldoet aan je filter",
-            "browseNearby": "Bekijk afbeeldingen van deze buurt…",
-            "loadMore": "Toon meer afbeeldingen",
-            "onlyTowards": "Toon enkel afbeeldingen die naar dit object kijken",
-            "noImageSelected": "Selecteer een afbeelding om deze te linken",
-            "withinRadius": "Toon enkel afbeeldingen die gemaakt zijn binnen {radius} meter van dit object",
-            "hasMatchingPicture": "Is er een afbeelding die dit object toont? Selecteer deze hieronder:",
-            "confirm": "De geselecteerde afbeelding toont {title()}",
-            "loading": "Afbeeldingen worden geladen…",
-            "nothingFound": "Geen afbeeldingen van deze buurt gevonden…",
-            "removeFilters": "Verwijder alle filters",
-            "title": "Afbeeldingen van de buurt"
-        }
+        "willBePublished": "Jouw foto wordt gepubliceerd "
     },
     "importHelper": {
         "askMetadata": {
             "downloadGeojson": "Download GeoJSON",
-            "shouldBeOsmWikilink": "Dit hoort een link naar een pagina op wiki.opentreetmap.org te zijn",
-            "intro": "Gelieve extra informatie te geven over deze {count} kaartnota's.",
-            "orDownload": "Je kan ook de dataset download om te importeren met een andere tool zoals JOSM",
-            "shouldNotBeHomepage": "Foeifoei, zo makkelijk kom je er niet vanaf! Een link naar de homepagina van de wiki mag niet, dit moet een wikipagina zijn die je import documenteert.",
-            "giveWikilink": "Op welke wikipagina staat meer informatie over deze data-import?",
             "giveDescription": "Gelieve een korte beschrijving te geven aan iemand die deze kaartnota ziet. Een goede kaartnota beschrijft wat een bijdrager moet doen, bijvoorbeeld: <i>Hier staat mogelijks een zitbank. Ben je in de buurt, zou je dan willen nakijken of de bank bestaat</i> (Een link naar het relevante MapComplete-thema wordt automatisch toegevoegd)",
             "giveSource": "Wat is de bron van deze data? (Indien een object het attribuut &lt;code&gt;source&lt;code&gt; heeft, zal dit attribuut gebruikt worden)",
+            "giveWikilink": "Op welke wikipagina staat meer informatie over deze data-import?",
+            "intro": "Gelieve extra informatie te geven over deze {count} kaartnota's.",
+            "orDownload": "Je kan ook de dataset download om te importeren met een andere tool zoals JOSM",
+            "shouldBeOsmWikilink": "Dit hoort een link naar een pagina op wiki.opentreetmap.org te zijn",
             "shouldBeUrl": "Geen geldige URL",
+            "shouldNotBeHomepage": "Foeifoei, zo makkelijk kom je er niet vanaf! Een link naar de homepagina van de wiki mag niet, dit moet een wikipagina zijn die je import documenteert.",
             "title": "Metadata instellen"
         },
         "compareToAlreadyExistingNotes": {
-            "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt",
             "completelyImported": "Alle voorgestelde punten hebben reeds een importeer-kaartnota.",
             "loading": "Kaarnota's aan het ophalen…",
+            "loadingFailed": "Kaartnota's ophalen is mislukt door {error}",
+            "mapExplanation": "De rode elementen op de volgende kaart zijn de datapunten uit je dataset die <b>{length}</b> elementen bevat.",
             "noPreviousNotesFound": "Geen eerdere importeer-kaartnota's gevonden",
+            "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt",
             "someNearby": "{hasNearby} punten hebben reeds een bestaande importeer-kaartnota op minder dan {distance} meter",
             "title": "Vergelijking met bestaande kaartnota's",
-            "wontBeImported": "Deze datapunten zullen <i>niet</i> geimporteerd worden en zijn hieronder in het rood aangeduid",
             "titleLong": "Vergelijking met reeds bestaande importeer-kaartnota's",
-            "loadingFailed": "Kaartnota's ophalen is mislukt door {error}",
-            "mapExplanation": "De rode elementen op de volgende kaart zijn de datapunten uit je dataset die <b>{length}</b> elementen bevat."
+            "wontBeImported": "Deze datapunten zullen <i>niet</i> geimporteerd worden en zijn hieronder in het rood aangeduid"
         },
+        "confirmProcess": {
+            "contactedCommunity": "Ik heb de (lokale) OpenStreetMap-community gecontacteerd en heb goedkeuring voor deze import",
+            "licenseIsCompatible": "De licentie van de te importeren data  is compatibel met OpenStreetMap: ze staat commercieel hergebruik toe en heeft geen attributie nodig",
+            "readImportGuidelines": "Ik heb de import-guidelines op de OSM-wiki gelezen",
+            "title": "Licentie en community",
+            "titleLong": "Heb je het importeer-proces gevolgd?",
+            "wikipageIsMade": "Deze import is gedocumenteerd op de OSM-wiki (de link wordt in de volgende stap gevraagd)"
+        },
+        "conflationChecker": {
+            "cacheExpired": "Cache is verouderd",
+            "downloadOverpassData": "Download de data van Overpass als GeoJSON",
+            "importCandidatesCount": "De {count} rode elementen op de onderstaande kaart zijn alle importeer-kandidaten.",
+            "loadedDataAge": "Ingeladen data komt van de cache en is {age} oud",
+            "mapShowingNearbyIntro": "De onderstaande kaart toont te importeren objecten met een OSM-object in de buurt ",
+            "nearbyWarn": "De {count} rode elementen op de onderstaande kaart zullen <b>niet</b> geimporteerd worden",
+            "nothingLoaded": "Geen elementen gevonden in OpenStreetMap die in de huidige laag {name} zitten",
+            "osmLoaded": "{count} elementen werden uit OpenStreetMap ingeladen die laag in laag <b>{name}</b> zitten.",
+            "reloadTheCache": "Verwijder de cache en bevraag Overpass opnieuw",
+            "setRangeToZero": "Set de radius op 0 of 1 indien je toch alle punten wenst te importeren",
+            "states": {
+                "error": "Kon geen recente data ophalen van Overpass door {error}",
+                "idle": "Cache bevragen…",
+                "running": "Overpass wordt bevraagd…",
+                "unexpected": "Onverwachte toestand {state}"
+            },
+            "title": "Vergelijking met bestaande data",
+            "titleLive": "Data van OSM",
+            "titleNearby": "Objecten in de buurt",
+            "zoomIn": "De OSM-data wordt getoond vanaf zoomniveau {needed}. Het huidige zoomniveau is {current}"
+        },
+        "createNotes": {
+            "creating": "<b>{count}</b> van {total} kaartnota's werden gemaakt",
+            "done": "Alle {count} kaartnota's zijn gemaakt!",
+            "loading": "Aan het laden…",
+            "openImportViewer": "Bekijk de voortgang van je kaartnotas in de &lt;i&gt;import_viewer&lt;/i&gt;",
+            "title": "Kaartnota's maken"
+        },
+        "gotoImportViewer": "Bekijk je vorige importeer-kaartnota's",
         "introduction": {
             "description": "De importeer-helper converteert een externe dataset in OSM-kaartnotas. De externe data moet overeenkomen met een bestaande MapComplete-laag. Voor elk item wordt er een kaartnota gemaakt. Deze notas worden dan samen met de relevante POI getoond en kunnen dan (via MapComplete) snel en eenvoudig toegevoegd worden.",
             "importFormat": "Een kaartnota moet het volgende formaat hebben om gedetecteerd te worden binnen een laag: <br><div class=\"literal-code\">[Een introductietekst]<br>https://mapcomplete.osm.be/[themename].html?[parameters waaronder lon en lat]#import<br>[alle tags van het te importeren object] </div>",
@@ -335,8 +373,8 @@
             "loggedInWith": "Je bent momenteel aangemeld als <b>{name}</b> and maakte {csCount} eerdere wijzigingen",
             "loginIsCorrect": "<b>{name}</b> is de correcte account om de import-nota's mee te maken.",
             "loginRequired": "Je moet ingelogd zijn om verder te gaan",
-            "userAccountTitle": "Selecteer een account",
-            "title": "Aanmelden"
+            "title": "Aanmelden",
+            "userAccountTitle": "Selecteer een account"
         },
         "mapPreview": {
             "autodetected": "Deze laag was automatisch gekozen gebaseerd op de aanwezige eigenschappen",
@@ -371,57 +409,19 @@
             "noFilesLoaded": "Geen bestand ingeladen op dit moment",
             "title": "Selecteer bestand"
         },
-        "title": "Importeer-helper",
-        "conflationChecker": {
-            "cacheExpired": "Cache is verouderd",
-            "importCandidatesCount": "De {count} rode elementen op de onderstaande kaart zijn alle importeer-kandidaten.",
-            "loadedDataAge": "Ingeladen data komt van de cache en is {age} oud",
-            "mapShowingNearbyIntro": "De onderstaande kaart toont te importeren objecten met een OSM-object in de buurt ",
-            "states": {
-                "unexpected": "Onverwachte toestand {state}",
-                "idle": "Cache bevragen…",
-                "running": "Overpass wordt bevraagd…",
-                "error": "Kon geen recente data ophalen van Overpass door {error}"
-            },
-            "titleLive": "Data van OSM",
-            "titleNearby": "Objecten in de buurt",
-            "downloadOverpassData": "Download de data van Overpass als GeoJSON",
-            "title": "Vergelijking met bestaande data",
-            "nearbyWarn": "De {count} rode elementen op de onderstaande kaart zullen <b>niet</b> geimporteerd worden",
-            "reloadTheCache": "Verwijder de cache en bevraag Overpass opnieuw",
-            "setRangeToZero": "Set de radius op 0 of 1 indien je toch alle punten wenst te importeren",
-            "nothingLoaded": "Geen elementen gevonden in OpenStreetMap die in de huidige laag {name} zitten",
-            "osmLoaded": "{count} elementen werden uit OpenStreetMap ingeladen die laag in laag <b>{name}</b> zitten.",
-            "zoomIn": "De OSM-data wordt getoond vanaf zoomniveau {needed}. Het huidige zoomniveau is {current}"
-        },
-        "confirmProcess": {
-            "readImportGuidelines": "Ik heb de import-guidelines op de OSM-wiki gelezen",
-            "title": "Licentie en community",
-            "wikipageIsMade": "Deze import is gedocumenteerd op de OSM-wiki (de link wordt in de volgende stap gevraagd)",
-            "titleLong": "Heb je het importeer-proces gevolgd?",
-            "contactedCommunity": "Ik heb de (lokale) OpenStreetMap-community gecontacteerd en heb goedkeuring voor deze import",
-            "licenseIsCompatible": "De licentie van de te importeren data  is compatibel met OpenStreetMap: ze staat commercieel hergebruik toe en heeft geen attributie nodig"
-        },
         "selectTheme": {
             "displayNonMatchingCount": "{length} objecten komen niet overeen met een preset",
-            "missing": "{k}={v} werd verwacht, maar is afwezig",
-            "misMatch": "Attribuut {k} heeft waarde {properties} hoewel {v} werd verwacht",
             "intro": "Elk van de volgende kaartthema's zal deze importeer-kaartnota's tonen. Echter, de kaartnota op OpenStreetMap kan slechts een link naar één thema tonen. Kies hier naar welk kaartthema de kaartnota's dienen te verwijzen",
-            "unmatchedTitle": "De volgende elementen voldoen aan geen enkele preset",
-            "title": "Selecteer een thema",
-            "notApplicable": "Preset {title} is niet van toepassing:",
+            "misMatch": "Attribuut {k} heeft waarde {properties} hoewel {v} werd verwacht",
+            "missing": "{k}={v} werd verwacht, maar is afwezig",
+            "needsTags": "{title} heeft tags {tags} nodig",
             "noMatchingPresets": "Dit thema heeft geen presets om nieuwe punten toe te voegen. Ook imports zullen hier dus niet werken.",
-            "needsTags": "{title} heeft tags {tags} nodig"
-        },
-        "createNotes": {
-            "loading": "Aan het laden…",
-            "title": "Kaartnota's maken",
-            "creating": "<b>{count}</b> van {total} kaartnota's werden gemaakt",
-            "done": "Alle {count} kaartnota's zijn gemaakt!",
-            "openImportViewer": "Bekijk de voortgang van je kaartnotas in de &lt;i&gt;import_viewer&lt;/i&gt;"
+            "notApplicable": "Preset {title} is niet van toepassing:",
+            "title": "Selecteer een thema",
+            "unmatchedTitle": "De volgende elementen voldoen aan geen enkele preset"
         },
         "testMode": "Testmode - nota's zullen niet gemaakt worden",
-        "gotoImportViewer": "Bekijk je vorige importeer-kaartnota's"
+        "title": "Importeer-helper"
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"
@@ -575,15 +575,15 @@
                 "outro": "Dit heeft enkele gevolgen voor sommige toepassingen zoals hieronder uitgelegd",
                 "title": "Gevolgen van de ODbL voor enkele toepassingen",
                 "usecaseGatheringOpenData": {
-                    "title": "Het verzamelen van Open Data",
-                    "intro": "MapComplete is een uitstekende manier om Open Data te maken en te gebruiken - ook voor overheden. Alle verzamelde data is immers herbruikbaar onder de ODbL-licentie. Indien voor de verzamelde data een andere licentie nodig is (zoals <i>publiek domein</i>) dan kan ODbL te restrictief zijn. In dit geval kan men de bijdragers vragen om alsnog onder deze licentie hun bijdragen te maken."
+                    "intro": "MapComplete is een uitstekende manier om Open Data te maken en te gebruiken - ook voor overheden. Alle verzamelde data is immers herbruikbaar onder de ODbL-licentie. Indien voor de verzamelde data een andere licentie nodig is (zoals <i>publiek domein</i>) dan kan ODbL te restrictief zijn. In dit geval kan men de bijdragers vragen om alsnog onder deze licentie hun bijdragen te maken.",
+                    "title": "Het verzamelen van Open Data"
                 },
                 "usecaseMapDifferentSources": {
+                    "intro": "<p>Bijvoorbeeld, een kaart met alle banken in een stad kan gemaakt worden met OpenStreetMap. Deze afgeprinte kaart moet dan duidelijk vermelden dat de kaartgegevens van OpenStreetMap komen. Deze kaarten verkopen is toegestaan. Indien de kaartenmaker opmerkt dat er enkele banken ontbreken en deze toevoegt aan de afgeprinte kaart, dan vallen deze nieuw toegevoegde banken ook onder de ODbL, wat inhoudt dat een OpenStreetMap-bijdrager deze toegevoegde banken kan gebruiken en deze terug aan OpenStreetMap kan toevoegen.</p><p>Deze bijdrager heeft ook het recht om de data van deze ontbrekende banken te vragen.</p><p>De kaartenmaker kan ook een laag met winkels toevoegen - mogelijks van een andere databron. Ook dit mag, indien duidelijk vermeld wordt dat de winkeldata van een andere bron komt.</p><p>Het &lt;b&gt;samenmixen&lt;/b&gt; van twee datasets in een niet te onderscheiden dataset is niet toegestaan. Indien de kaartenmaker ontdekt dat de gegevens van zitbanken in de ene wijk uitstekend op OpenStreetMap staat en dat de zitbanken in een andere wijk goed zijn opgetekend door private cartografische dienst, dan is het samenvoegen van deze data problematisch:</p>",
                     "li0": "de open licentie verplicht het herpubliceren van de aanpassingen aan OSM-data…",
                     "li1": "...maar de &lt;i&gt;alle rechten voorbehouden&lt;/i&gt; van de private dataset verbiedt dit.",
                     "outro": "Dit soort samenvoegen is dus niet toegestaan",
-                    "title": "Een kaart maken van verschillende databronnen",
-                    "intro": "<p>Bijvoorbeeld, een kaart met alle banken in een stad kan gemaakt worden met OpenStreetMap. Deze afgeprinte kaart moet dan duidelijk vermelden dat de kaartgegevens van OpenStreetMap komen. Deze kaarten verkopen is toegestaan. Indien de kaartenmaker opmerkt dat er enkele banken ontbreken en deze toevoegt aan de afgeprinte kaart, dan vallen deze nieuw toegevoegde banken ook onder de ODbL, wat inhoudt dat een OpenStreetMap-bijdrager deze toegevoegde banken kan gebruiken en deze terug aan OpenStreetMap kan toevoegen.</p><p>Deze bijdrager heeft ook het recht om de data van deze ontbrekende banken te vragen.</p><p>De kaartenmaker kan ook een laag met winkels toevoegen - mogelijks van een andere databron. Ook dit mag, indien duidelijk vermeld wordt dat de winkeldata van een andere bron komt.</p><p>Het &lt;b&gt;samenmixen&lt;/b&gt; van twee datasets in een niet te onderscheiden dataset is niet toegestaan. Indien de kaartenmaker ontdekt dat de gegevens van zitbanken in de ene wijk uitstekend op OpenStreetMap staat en dat de zitbanken in een andere wijk goed zijn opgetekend door private cartografische dienst, dan is het samenvoegen van deze data problematisch:</p>"
+                    "title": "Een kaart maken van verschillende databronnen"
                 }
             },
             "title": "Enkele nadelen om rekening mee te houden",
@@ -607,10 +607,10 @@
             "li0": "Het opzetten van een kaart, aangepast voor jou noden",
             "li1": "Hulp bij het opzetten van interne dataflows om OpenStreetMap te integreren",
             "li2": "Vormingen hoe data bijgedragen kan worden met MapComplete",
-            "title": "Diensten met MapComplete",
-            "li4": "Training hoe data van OpenStreetMap gefiltered en gedownload kan worden",
             "li3": "Geavanceerdere training (bv. voor het GIS-team) hoe geavanceerdere data aan OpenStreetMap toegevoegd kan worden",
-            "outro": "Deze diensten worden aan een competitieve prijs aangeboden. Een simpel thema opzetten kan al vanaf €2000, waarna er een kleine jaarlijkse hostingkost is."
+            "li4": "Training hoe data van OpenStreetMap gefiltered en gedownload kan worden",
+            "outro": "Deze diensten worden aan een competitieve prijs aangeboden. Een simpel thema opzetten kan al vanaf €2000, waarna er een kleine jaarlijkse hostingkost is.",
+            "title": "Diensten met MapComplete"
         },
         "text0": "<p>Het onderhouden en updaten van geodata is moeilijk en duur.<br>Bovendien verzamelen veel organisaties dezelfde data, onafhankelijk van elkaar - waardoor hetzelfde werk verschillende keren wordt gedaan, de data in niet-standaard formaten wordt bijgehouden en ieder een onvolledige, niet onderhouden dataset heeft</p><p>Parallel hiermee is er ook een grote community die geodata verzameld in een globale, gestandaardiseerde databank: OpenStreetMap.org.</p>",
         "text1": "<p>MapComplete is de editor die het gemakkelijk maakt om bij te dragen aan OpenStreetMap.</p>",
@@ -642,13 +642,13 @@
     },
     "translations": {
         "activateButton": "Help met het vertalen van MapComplete",
+        "allMissing": "Nog geen vertalingen",
         "completeness": "Vertalingen voor {theme} in {language} zijn momenteel op {percentage}%: van {total} teksten zijn er reeds {translated} vertaald",
         "deactivate": "Verberg de vertaalknoppen",
         "help": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
         "isTranslator": "Vertaalmode is actief: je gebruikersnaam is dezelfde als van een vertaler. We gaan er dus vanuit dat jij die vertaler bent",
         "missing": "{count} niet-vertaalde teksten",
-        "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen",
-        "allMissing": "Nog geen vertalingen"
+        "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen"
     },
     "validation": {
         "color": {
