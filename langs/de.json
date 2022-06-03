@@ -392,7 +392,7 @@
             "displayNonMatchingCount": "{length} Objekte stimmen nicht mit Voreinstellungen überein",
             "intro": "Alle folgenden Themen zeigen die Importhinweise an. Die Notiz auf OpenStreetMap kann jedoch nur mit einem einzigen Thema verknüpft werden. Wählen Sie das Thema, mit dem die erstellten Notizen verknüpft werden sollen",
             "misMatch": "Eigenschaft mit Schlüssel {k} hat nicht den erwarteten Wert {v}; stattdessen ist es {properties}",
-            "missing": "Erwartet $k}={v}, aber es fehlt komplett",
+            "missing": "Erwartet {k}={v}, aber es fehlt komplett",
             "needsTags": "{title} benötigt Tags {tags}",
             "noMatchingPresets": "Dieses Thema hat keine Voreinstellungen geladen. Daher werden Importe hier nicht funktionieren",
             "notApplicable": "Voreinstellung {title} ist nicht anwendbar:",
