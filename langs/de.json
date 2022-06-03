@@ -12,7 +12,9 @@
         "explanations": {
             "hardDelete": "Dieser Punkt wird in OpenStreetMap gelöscht. Er kann von einem erfahrenen Mitwirkenden wiederhergestellt werden",
             "selectReason": "Bitte auswählen, warum dieses Element gelöscht werden soll",
-            "softDelete": "Dieses Element wird aktualisiert und in dieser Anwendung ausgeblendet. <span class=\"subtle\">{reason}</span>"
+            "softDelete": "Dieses Element wird aktualisiert und in dieser Anwendung ausgeblendet. <span class=\"subtle\">{reason}</span>",
+            "retagNoOtherThemes": "Dieses Objekt wird neu klassifiziert und aus dieser Anwendung ausgeblendet",
+            "retagOtherThemes": "Dieses Objekt wird neu gekennzeichnet und in {otherThemes} sichtbar sein"
         },
         "isDeleted": "Dieses Element wurde gelöscht",
         "isntAPoint": "Es können nur Punkte gelöscht werden. Das ausgewählte Element ist ein Weg, eine Fläche oder eine Relation.",
@@ -91,7 +93,8 @@
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Letzte Bearbeitungen für das Thema {theme} ansehen",
             "themeBy": "Thema betreut von {author}",
-            "translatedBy": "MapComplete wurde übersetzt von {contributors}, <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} und weiteren Mitwirkenden</a>"
+            "translatedBy": "MapComplete wurde übersetzt von {contributors}, <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} und weiteren Mitwirkenden</a>",
+            "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Die Mitwirkenden dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern"
         },
         "back": "Zurück",
         "backToMapcomplete": "Zurück zur Themenübersicht",
@@ -146,7 +149,10 @@
             "intro": "<h3>Mehr thematische Karten?</h3>Sammeln Sie gerne Geodaten? <br>Es sind weitere Themen verfügbar.",
             "previouslyHiddenTitle": "Zuvor besuchte versteckte Themen",
             "requestATheme": "Eigene Themenwünsche können im Issue Tracker angefragt werden",
-            "streetcomplete": "Eine andere, ähnliche App ist <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
+            "streetcomplete": "Eine andere, ähnliche App ist <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
+            "noMatchingThemes": "Keine Themen, die Ihren Suchkriterien entsprechen",
+            "noSearch": "Alle Themen anzeigen",
+            "searchForATheme": "Nach einem Thema suchen"
         },
         "nameInlineQuestion": "Der Name dieser {category} ist $$$",
         "next": "Weiter",
@@ -255,7 +261,8 @@
                 "died": "Gestorben am: {value}"
             },
             "searchWikidata": "Wikidata durchsuchen",
-            "wikipediaboxTitle": "Wikipedia"
+            "wikipediaboxTitle": "Wikipedia",
+            "fromWikipedia": "Aus Wikipedia, der freien Enzyklopädie"
         }
     },
     "image": {
@@ -277,7 +284,21 @@
         "uploadMultipleDone": "{count} Bilder wurden hinzugefügt. Vielen Dank für die Hilfe!",
         "uploadingMultiple": "{count} Bilder hochladen…",
         "uploadingPicture": "Bild wird hochgeladen…",
-        "willBePublished": "Ihr Bild wird veröffentlicht "
+        "willBePublished": "Ihr Bild wird veröffentlicht ",
+        "nearbyPictures": {
+            "allFiltered": "Keine Bilder passen zu Ihrem Filter",
+            "browseNearby": "Bilder in der Nähe durchsuchen...",
+            "confirm": "Das ausgewählte Bild zeigt {title()}",
+            "hasMatchingPicture": "Passt ein Bild zum Objekt? Wählen Sie es unten aus",
+            "loadMore": "Weitere Bilder laden",
+            "loading": "Bilder in der Nähe laden...",
+            "noImageSelected": "Wählen Sie ein Bild aus, um es mit dem Objekt zu verknüpfen",
+            "nothingFound": "Keine Bilder in der Nähe gefunden...",
+            "title": "Bilder in der Nähe",
+            "withinRadius": "Nur Bilder anzeigen, die im Umkreis von {radius} Metern um dieses Objekt aufgenommen wurden",
+            "removeFilters": "Hier klicken, um die Filter zu entfernen",
+            "onlyTowards": "Nur Bilder anzeigen, die in Richtung dieses Objekts aufgenommen wurden"
+        }
     },
     "importHelper": {
         "askMetadata": {
@@ -412,7 +433,8 @@
         "importHandled": "<div class=\"thanks\">Dieses Objekt wurde verarbeitet! Vielen Dank für Ihre Bemühungen</div>",
         "layerName": "Möglicher {title}",
         "notFound": "Ich konnte {title} nicht finden - entferne es",
-        "popupTitle": "Möglicherweise gibt es hier {title}"
+        "popupTitle": "Möglicherweise gibt es hier {title}",
+        "nearbyImagesIntro": "<h3>Bilder in der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus verschiedenen Online-Diensten in der Nähe. Sie können helfen, diesen Hinweis zu lösen.{nearby_images(open)}"
     },
     "index": {
         "#": "Dieser Text wird über der Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
