@@ -47,7 +47,7 @@ const cacheFirst = (event) => {
                 return cacheResponse
             }
             return fetch(event.request).then((networkResponse) => {
-                networkResponse.headers.set("Cache-Control","max-age=")
+                
                 return caches.open(version).then((cache) => {
                     cache.put(event.request, networkResponse.clone());
                     console.log("Cached", event.request)
