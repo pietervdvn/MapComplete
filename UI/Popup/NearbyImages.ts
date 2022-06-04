@@ -179,7 +179,7 @@ export default class NearbyImages extends Lazy {
                 towardscenter: false
             })
         ).map(images => {
-            if (images === undefined && nearbyImages.length === 0) {
+            if (images === undefined) {
                 return undefined
             }
             images = (images ?? []).concat(nearbyImages)

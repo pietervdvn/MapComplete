@@ -120,6 +120,10 @@ class LayerOverviewUtils {
             if(path.indexOf("assets/SocialImageTemplate") >= 0){
                 continue
             }
+
+            if(path.indexOf("assets/SocialImage") >= 0){
+                continue
+            }
             const contents = readFileSync(path, "UTF8")
             if (contents.indexOf("data:image/png;") >= 0) {
                 console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")

@@ -25,6 +25,7 @@ import Img from "../Base/Img";
 import {TypedTranslation} from "../i18n/Translation";
 import TranslatorsPanel from "./TranslatorsPanel";
 import {MapillaryLink} from "./MapillaryLink";
+import FullWelcomePaneWithTabs from "./FullWelcomePaneWithTabs";
 
 export class OpenIdEditor extends VariableUiElement {
     constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string, objectId?: string) {
@@ -119,6 +120,16 @@ export default class CopyrightPanel extends Combine {
                 url: Utils.OsmChaLinkFor(31, state.layoutToUse.id),
                 newTab: true
             }),
+            new SubtleButton(Svg.mastodon_ui().SetStyle(iconStyle),
+                new Combine([t.followOnMastodon.SetClass("font-bold"), t.followBridge]).SetClass("flex flex-col"),
+                {
+                url:"https://en.osm.town/web/notifications",
+                newTab: true
+            }),
+            new SubtleButton(Svg.twitter_ui().SetStyle(iconStyle), t.followOnTwitter, {
+                url:"https://twitter.com/mapcomplete",
+                newTab: true
+            }),
             new OpenIdEditor(state, iconStyle),
             new MapillaryLink(state, iconStyle),
             new OpenJosm(state, iconStyle),
@@ -178,7 +189,7 @@ export default class CopyrightPanel extends Combine {
             CopyrightPanel.CodeContributors(contributors, t.codeContributionsBy),
             CopyrightPanel.CodeContributors(translators, t.translatedBy),
             new FixedUiElement("MapComplete " + Constants.vNumber).SetClass("font-bold"),
-            new Combine(actionButtons).SetClass("block w-full"),
+            new Combine(actionButtons).SetClass("block w-full link-no-underline"),
             new Title(t.iconAttribution.title, 3),
             ...iconAttributions
         ].map(e => e?.SetClass("mt-4")));

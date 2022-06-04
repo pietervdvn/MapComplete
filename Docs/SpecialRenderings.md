@@ -77,6 +77,10 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of add_image_to_note](#example-usage-of-add_image_to_note)
     + [title](#title)
       * [Example usage of title](#example-usage-of-title)
+    + [nearby_images](#nearby_images)
+      * [Example usage of nearby_images](#example-usage-of-nearby_images)
+    + [mapillary_link](#mapillary_link)
+      * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -641,6 +645,41 @@ Id-key | id | The property name where the ID of the note to close can be found
 #### Example usage of title 
 
  `What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.
+
+
+
+### nearby_images 
+
+ A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature 
+
+name | default | description
+------ | --------- | -------------
+mode | expandable | Indicates how this component is initialized. Options are: 
+
+- `open`: always show and load the pictures
+- `collapsable`: show the pictures, but a user can collapse them
+- `expandable`: shown by default; but a user can collapse them.
+mapillary | true | If 'true', includes a link to mapillary on this location.
+ 
+
+#### Example usage of nearby_images 
+
+ `{nearby_images(expandable,true)}`
+
+
+
+### mapillary_link 
+
+ Adds a button to open mapillary on the specified location 
+
+name | default | description
+------ | --------- | -------------
+zoom | 18 | The startzoom of mapillary
+ 
+
+#### Example usage of mapillary_link 
+
+ `{mapillary_link(18)}`
 
 
 

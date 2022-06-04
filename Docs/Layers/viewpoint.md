@@ -82,7 +82,7 @@ The question is  Do you want to add a description?
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
 
-This is rendered with {description}
+This is rendered with  {description}
 
  
 

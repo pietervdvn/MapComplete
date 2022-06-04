@@ -7,7 +7,7 @@
 
 <img src='https://mapcomplete.osm.be/./assets/layers/information_board/board.svg' height="100px"> 
 
-A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, ...)
+A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)
 
 
 

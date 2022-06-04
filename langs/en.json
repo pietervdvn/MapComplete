@@ -82,6 +82,9 @@
             "donate": "Support MapComplete financially",
             "editId": "Open the OpenStreetMap online editor here",
             "editJosm": "Edit here with JOSM",
+            "followBridge": "The Mastodon- and Twitter-accounts are bridged",
+            "followOnMastodon": "Follow MapComplete on Mastodon",
+            "followOnTwitter": "Follow MapComplete on twitter",
             "iconAttribution": {
                 "title": "Used icons"
             },

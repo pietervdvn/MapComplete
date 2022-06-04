@@ -520,12 +520,12 @@
     },
     {
       "key": "service:bicycle:tools",
-      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers, …) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "yes"
     },
     {
       "key": "service:bicycle:pump",
-      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers, …) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "no"
     },
     {

@@ -88,17 +88,17 @@
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=public with a fixed text, namely 'A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel,...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=public with a fixed text, namely 'A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
       "value": "public"
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=outdoor with a fixed text, namely 'An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=outdoor with a fixed text, namely 'An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
       "value": "outdoor"
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=indoor with a fixed text, namely 'A private indoor area is surveilled, e.g. a shop, a private underground parking, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=indoor with a fixed text, namely 'A private indoor area is surveilled, e.g. a shop, a private underground parking, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Surveillance under Surveillance')",
       "value": "indoor"
     },
     {
