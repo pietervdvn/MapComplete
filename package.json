@@ -46,6 +46,7 @@
     "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|import_helper\\|import_viewer\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs rm) && (ls | grep \".*.webmanifest$\" | grep -v \"manifest.webmanifest\" | xargs rm)",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
     "script": "ts-node",
+    "weblate-merge": "./scripts/automerge-translations.sh",
     "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git",
     "weblate-fix": "git remote update weblate-github ; git merge weblate-github/weblate-mapcomplete-core; git merge weblate-github/weblate-mapcomplete-layers ; git merge weblate-github/weblate-mapcomplete-layer-translations",
     "weblate-fix-heavy": "git remote rm weblate-layers; git remote add weblate-layers https://hosted.weblate.org/git/mapcomplete/layers/; git remote update weblate-layers; git merge weblate-layers/master",
