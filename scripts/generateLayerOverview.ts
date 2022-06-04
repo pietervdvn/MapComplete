@@ -116,14 +116,12 @@ class LayerOverviewUtils {
             .filter(path => path.endsWith(".svg"))
             .filter(path => !path.startsWith("./assets/generated"))
         let errCount = 0;
+        const exempt = ["assets/SocialImageTemplate.svg","assets/SocialImageTemplateWide.svg","assets/SocialImageBanner.svg", "assets/svg/osm-logo.svg"];
         for (const path of allSvgs) {
-            if(path.indexOf("assets/SocialImageTemplate") >= 0){
+            if(exempt.some(p => "./"+p === path)) {
                 continue
             }
 
-            if(path.indexOf("assets/SocialImage") >= 0){
-                continue
-            }
             const contents = readFileSync(path, "UTF8")
             if (contents.indexOf("data:image/png;") >= 0) {
                 console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")
