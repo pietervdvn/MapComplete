@@ -63,7 +63,8 @@
       "id": "nearby-images",
       "render": {
         "before": {
-          "en": "<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note."
+          "en": "<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note.",
+          "de": "<h3>Bilder aus der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus der Nähe und könnten für die Bearbeitung dieser Notiz hilfreich sein."
         },
         "special": {
           "type": "nearby_images",
