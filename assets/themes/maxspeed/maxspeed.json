@@ -1,0 +1,24 @@
+{
+  "id": "maxspeed",
+  "title": {
+    "es": "Velocidad",
+    "ca": "Velocitat",
+    "en": "Maxspeed"
+  },
+  "shortDescription": {
+    "en": "This map shows the legally allowed maximum speed on every road."
+  },
+  "description": {
+    "en": "This map shows the legally allowed maximum speed on every road. If a maxspeed is missing or wrong, you can correct it here."
+  },
+  "maintainer": "",
+  "icon": "./assets/themes/maxspeed/maxspeed_logo.svg",
+  "version": "0",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "widenFactor": 0.01,
+  "layers": [
+    "maxspeed"
+  ]
+}
