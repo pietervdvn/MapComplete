@@ -84,7 +84,9 @@
             "shop~*"
           ]
         },
-        "then": "Other shop"
+        "then": {
+          "en": "Winkel"
+        }
       },
       {
         "if": {
@@ -92,7 +94,9 @@
             {
               "or": [
                 "service:bicycle:rental=yes",
-                "amenity=bicycle_rental"
+                "amenity=bicycle_rental",
+                "shop=rental",
+                "shop=bicycle_rental"
               ]
             }
           ]
