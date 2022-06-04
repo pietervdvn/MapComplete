@@ -96,7 +96,7 @@ The question is  Wat is de naam van deze wandeling?
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with Deze wandeling heet <b>{name}</b>
+This is rendered with  Deze wandeling heet <b>{name}</b>
 
 
 
@@ -110,14 +110,14 @@ The question is  Wie beheert deze wandeltocht?
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with Beheer door {operator}
+This is rendered with  Beheer door {operator}
 
 
 
 
 
-  - Dit gebied wordt beheerd door Natuurpunt corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
-  - Dit gebied wordt beheerd door {operator} corresponds with operator~^(n|N)atuurpunt.*$
+  - Dit gebied wordt beheerd door Natuurpunt corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
+  - Dit gebied wordt beheerd door {operator} corresponds with  operator~^(n|N)atuurpunt.*$
   - This option cannot be chosen as answer
 
 
@@ -131,16 +131,16 @@ The question is  Welke kleur heeft deze wandeling?
 
 This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
 
-This is rendered with Deze wandeling heeft kleur {colour}
+This is rendered with  Deze wandeling heeft kleur {colour}
 
 
 
 
 
-  - Blue trail corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
-  - Red trail corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
-  - Green trail corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
-  - Yellow trail corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
+  - Blue trail corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
+  - Red trail corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
+  - Green trail corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
+  - Yellow trail corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
 
 
 
@@ -155,8 +155,8 @@ The question is  Is deze wandeling toegankelijk met de rolstoel?
 
 
 
-  - deze wandeltocht is toegankelijk met de rolstoel corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
-  - deze wandeltocht is niet toegankelijk met de rolstoel corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+  - deze wandeltocht is toegankelijk met de rolstoel corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
+  - deze wandeltocht is niet toegankelijk met de rolstoel corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
 
 
@@ -171,8 +171,8 @@ The question is  Is deze wandeltocht toegankelijk met de buggy?
 
 
 
-  - deze wandeltocht is toegankelijk met de buggy corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes' target='_blank'>yes</a>
-  - deze wandeltocht is niet toegankelijk met de buggy corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno' target='_blank'>no</a>
+  - deze wandeltocht is toegankelijk met de buggy corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes' target='_blank'>yes</a>
+  - deze wandeltocht is niet toegankelijk met de buggy corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno' target='_blank'>no</a>
  
 
 This document is autogenerated from [assets/layers/trail/trail.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/trail/trail.json)

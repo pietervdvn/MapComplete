@@ -12,6 +12,7 @@ The following items can be easily reused in your layers
 1. [Builtin questions](#builtin-questions)
     + [questions](#questions)
     + [images](#images)
+    + [mapillary](#mapillary)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [wikipedia](#wikipedia)
@@ -55,7 +56,17 @@ Read-only tagrendering
 
 
 
-{image_carousel()}{image_upload()}
+{image_carousel()}{image_upload()}{nearby_images(expandable)}
+
+Read-only tagrendering
+
+
+
+### mapillary 
+
+
+
+{mapillary()}
 
 Read-only tagrendering
 
@@ -136,7 +147,7 @@ What is the phone number of {title()}?
 
 
 
-<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>
+<a href='https://openstreetmap.org/{id}' target='_blank'><img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/></a>
 
 Read-only tagrendering
 
@@ -152,7 +163,7 @@ Read-only tagrendering
 
 
 
-<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>
+<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>
 
 Read-only tagrendering
 
@@ -366,7 +377,7 @@ Read-only tagrendering
 
 
 
-<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>
+<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/svg/phone.svg'/></a>
 
 Read-only tagrendering
 
@@ -376,7 +387,7 @@ Read-only tagrendering
 
 
 
-<a href='mailto:{email}'><img src='./assets/svg/send_email.svg'/></a>
+<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/svg/send_email.svg'/></a>
 
 Read-only tagrendering
 

@@ -35,6 +35,7 @@
     + [conversation](#conversation)
     + [add_image](#add_image)
     + [comment](#comment)
+    + [nearby-images](#nearby-images)
     + [report-contributor](#report-contributor)
     + [report-note](#report-note)
 1. [import_candidate](#import_candidate)
@@ -422,6 +423,16 @@ This tagrendering has no question and is thus read-only
 
 
 
+### nearby-images 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 ### report-contributor 
 
 
@@ -430,7 +441,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if `_opened_by_anonymous_user=false` is shown
+Only visible if  `_opened_by_anonymous_user=false`  is shown
 
 
 
@@ -767,7 +778,6 @@ The following layers are included in MapComplete:
   - [named_streets](./Layers/named_streets.md)
   - [nature_reserve](./Layers/nature_reserve.md)
   - [note](./Layers/note.md)
-  - [note_import](./Layers/note_import.md)
   - [observation_tower](./Layers/observation_tower.md)
   - [parking](./Layers/parking.md)
   - [pedestrian_path](./Layers/pedestrian_path.md)

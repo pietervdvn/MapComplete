@@ -1241,12 +1241,12 @@
     },
     {
       "key": "service:bicycle:tools",
-      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers, …) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "service:bicycle:pump",
-      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers, …) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -2180,7 +2180,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "private"
     },
     {
@@ -2786,12 +2786,12 @@
     },
     {
       "key": "socket:tesla_supercharger_ccs:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=500 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=500 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "500 V"
     },
     {
       "key": "socket:tesla_supercharger_ccs:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=920 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=920 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 920 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "920 V"
     },
     {
@@ -2814,7 +2814,7 @@
     },
     {
       "key": "socket:tesla_supercharger_ccs:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:output=50 kW with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:output=50 kW with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "50 kW"
     },
     {
@@ -2823,7 +2823,7 @@
     },
     {
       "key": "socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs 480 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs 480 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "480 V"
     },
     {
@@ -2832,12 +2832,12 @@
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=125 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=125 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "125 A"
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=350 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=350 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "350 A"
     },
     {
@@ -2846,17 +2846,17 @@
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=120 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 120 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=120 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 120 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "120 kW"
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=150 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 150 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=150 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 150 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "150 kW"
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=250 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 250 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=250 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 250 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "250 kW"
     },
     {
@@ -2865,12 +2865,12 @@
     },
     {
       "key": "socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=230 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=230 V with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "230 V"
     },
     {
       "key": "socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=400 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=400 V with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "400 V"
     },
     {
@@ -2879,12 +2879,12 @@
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=16 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=16 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "16 A"
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=32 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=32 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "32 A"
     },
     {
@@ -2893,12 +2893,12 @@
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=11 kW with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=11 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 11 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "11 kW"
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=22 kW with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=22 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "22 kW"
     },
     {
@@ -3018,12 +3018,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "fee:conditional",
-      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no @ customers"
     },
     {
@@ -4423,7 +4423,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Defibrillators' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accesible to staff, the owners, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Defibrillators' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accesible to staff, the owners, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "private"
     },
     {
@@ -4709,12 +4709,12 @@
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "service"
     },
     {
@@ -4891,38 +4891,38 @@
     },
     {
       "key": "emergency",
-      "description": "The MapComplete theme Personal theme has a layer Map of fire extinguishers. showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Map of fire extinguishers showing features with this tag",
       "value": "fire_extinguisher"
     },
     {
       "key": "location",
-      "description": "Layer 'Map of fire extinguishers.' shows and asks freeform values for key 'location' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Map of fire extinguishers' shows and asks freeform values for key 'location' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "location",
-      "description": "Layer 'Map of fire extinguishers.' shows location=indoor with a fixed text, namely 'Found indoors.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Map of fire extinguishers' shows location=indoor with a fixed text, namely 'Found indoors.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "indoor"
     },
     {
       "key": "location",
-      "description": "Layer 'Map of fire extinguishers.' shows location=outdoor with a fixed text, namely 'Found outdoors.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Map of fire extinguishers' shows location=outdoor with a fixed text, namely 'Found outdoors.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "outdoor"
     },
     {
       "key": "image",
-      "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Map of fire extinguishers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Map of fire extinguishers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Map of fire extinguishers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Map of fire extinguishers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "amenity",
@@ -6068,6 +6068,11 @@
       "value": "concrete"
     },
     {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=plastic with a fixed text, namely 'This picnic table is made from (recycled) plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "plastic"
+    },
+    {
       "key": "playground",
       "description": "The MapComplete theme Personal theme has a layer Speelbossen showing features with this tag",
       "value": "forest"
@@ -6317,6 +6322,10 @@
     },
     {
       "key": "books",
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'books' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "books",
       "description": "Layer 'Bookcases' shows books=children with a fixed text, namely 'Mostly children books' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "children"
     },
@@ -6324,11 +6333,6 @@
       "key": "books",
       "description": "Layer 'Bookcases' shows books=adults with a fixed text, namely 'Mostly books for adults' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "adults"
-    },
-    {
-      "key": "books",
-      "description": "Layer 'Bookcases' shows books=children;adults with a fixed text, namely 'Both books for kids and adults' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "children;adults"
     },
     {
       "key": "indoor",
@@ -6922,7 +6926,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Sport pitches' shows access=limited with a fixed text, namely 'Limited access (e.g. only with an appointment, during certain hours, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Sport pitches' shows access=limited with a fixed text, namely 'Limited access (e.g. only with an appointment, during certain hours, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "limited"
     },
     {
@@ -7218,17 +7222,17 @@
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=public with a fixed text, namely 'A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel,...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=public with a fixed text, namely 'A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "public"
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=outdoor with a fixed text, namely 'An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=outdoor with a fixed text, namely 'An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "outdoor"
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=indoor with a fixed text, namely 'A private indoor area is surveilled, e.g. a shop, a private underground parking, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=indoor with a fixed text, namely 'A private indoor area is surveilled, e.g. a shop, a private underground parking, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "indoor"
     },
     {

@@ -96,15 +96,15 @@ The question is  What kind of bicycle rental is this?
 
 
 
-  - This is a shop whose main focus is bicycle rental corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Dshop' target='_blank'>shop</a>
-  - This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>
-  - This is a shop which sells or repairs bicycles, but also rents out bicycles corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>
-  - This is an automated docking station, where a bicycle is mechanically locked into a structure corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Ddocking_station' target='_blank'>docking_station</a>
-  - A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Dkey_dispensing_machine' target='_blank'>key_dispensing_machine</a>
-  - This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Ddropoff_point' target='_blank'>dropoff_point</a>
+  - This is a shop whose main focus is bicycle rental corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Dshop' target='_blank'>shop</a>
+  - This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>
+  - This is a shop which sells or repairs bicycles, but also rents out bicycles corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>
+  - This is an automated docking station, where a bicycle is mechanically locked into a structure corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Ddocking_station' target='_blank'>docking_station</a>
+  - A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Dkey_dispensing_machine' target='_blank'>key_dispensing_machine</a>
+  - This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Ddropoff_point' target='_blank'>dropoff_point</a>
 
 
-Only visible if `amenity=bicycle_rental` is shown
+Only visible if  `amenity=bicycle_rental`  is shown
 
 
 
@@ -116,13 +116,13 @@ The question is  What is the website of {title()}?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with contact:website~^..*$
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with  contact:website~^..*$
   - This option cannot be chosen as answer
 
 
@@ -136,13 +136,13 @@ The question is  What is the email address of {title()}?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a> corresponds with contact:email~^..*$
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a> corresponds with  contact:email~^..*$
   - This option cannot be chosen as answer
 
 
@@ -156,13 +156,13 @@ The question is  What is the phone number of {title()}?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with <a href='tel:{phone}'>{phone}</a>
+This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a> corresponds with contact:phone~^..*$
+  - <a href='tel:{contact:phone}'>{contact:phone}</a> corresponds with  contact:phone~^..*$
   - This option cannot be chosen as answer
 
 
@@ -176,11 +176,11 @@ The question is  What are the opening hours of {title()}?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
 
 
-Only visible if `shop~^..*$|opening_hours~^..*$` is shown
+Only visible if  `shop~^..*$|opening_hours~^..*$`  is shown
 
 
 
@@ -194,13 +194,13 @@ The question is  Which methods of payment are accepted here?
 
 
 
-  - Cash is accepted here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+  - Cash is accepted here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - Payment cards are accepted here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+  - Payment cards are accepted here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
 
-Only visible if `shop~^..*$` is shown
+Only visible if  `shop~^..*$`  is shown
 
 
 
@@ -214,13 +214,13 @@ The question is  Which methods of payment are accepted here?
 
 
 
-  - Cash is accepted here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+  - Cash is accepted here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - Payment cards are accepted here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+  - Payment cards are accepted here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
-  - Payment is done using a dedicated app corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>
+  - Payment is done using a dedicated app corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
-  - Payment is done using a membership card corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>
+  - Payment is done using a membership card corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dno' target='_blank'>no</a>
 
 
@@ -234,20 +234,20 @@ The question is  What kind of bicycles and accessories are rented here?
 
 This rendering asks information about the property  [rental](https://wiki.openstreetmap.org/wiki/Key:rental) 
 
-This is rendered with {rental} is rented here
+This is rendered with  {rental} is rented here
 
 
 
 
 
-  - Normal city bikes can be rented here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike' target='_blank'>city_bike</a>
-  - Electrical bikes can be rented here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike' target='_blank'>ebike</a>
-  - BMX bikes can be rented here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx' target='_blank'>bmx</a>
-  - Mountainbikes can be rented here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb' target='_blank'>mtb</a>
-  - Bikes for children can be rented here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike' target='_blank'>kid_bike</a>
-  - Tandem bicycles can be rented here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem' target='_blank'>tandem</a>
-  - Race bicycles can be rented here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike' target='_blank'>racebike</a>
-  - Bike helmets can be rented here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>
+  - Normal city bikes can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike' target='_blank'>city_bike</a>
+  - Electrical bikes can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike' target='_blank'>ebike</a>
+  - BMX bikes can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx' target='_blank'>bmx</a>
+  - Mountainbikes can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb' target='_blank'>mtb</a>
+  - Bikes for children can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike' target='_blank'>kid_bike</a>
+  - Tandem bicycles can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem' target='_blank'>tandem</a>
+  - Race bicycles can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike' target='_blank'>racebike</a>
+  - Bike helmets can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>
 
 
 This tagrendering has labels  `bicycle_rental`
@@ -258,15 +258,15 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  How much city bikes can be rented here? 
+The question is  How much city bikes can be rented here?
 
 This rendering asks information about the property  [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) 
 
-This is rendered with {capacity:city_bike} city bikes can be rented here
+This is rendered with  {capacity:city_bike} city bikes can be rented here
 
 
 
-Only visible if `rental~^.*city_bike.*$` is shown
+Only visible if  `rental~^.*city_bike.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -276,15 +276,15 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  How much electrical bikes can be rented here? 
+The question is  How much electrical bikes can be rented here?
 
 This rendering asks information about the property  [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) 
 
-This is rendered with {capacity:ebike} electrical bikes can be rented here
+This is rendered with  {capacity:ebike} electrical bikes can be rented here
 
 
 
-Only visible if `rental~^.*ebike.*$` is shown
+Only visible if  `rental~^.*ebike.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -294,15 +294,15 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  How much bikes for children can be rented here? 
+The question is  How much bikes for children can be rented here?
 
 This rendering asks information about the property  [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) 
 
-This is rendered with {capacity:kid_bike} bikes for children can be rented here
+This is rendered with  {capacity:kid_bike} bikes for children can be rented here
 
 
 
-Only visible if `rental~^.*kid_bike.*$` is shown
+Only visible if  `rental~^.*kid_bike.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -312,15 +312,15 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  How much BMX bikes can be rented here? 
+The question is  How much BMX bikes can be rented here?
 
 This rendering asks information about the property  [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) 
 
-This is rendered with {capacity:bmx} BMX bikes can be rented here
+This is rendered with  {capacity:bmx} BMX bikes can be rented here
 
 
 
-Only visible if `rental~^.*bmx.*$` is shown
+Only visible if  `rental~^.*bmx.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -330,15 +330,15 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  How much mountainbike can be rented here? 
+The question is  How much mountainbike can be rented here?
 
 This rendering asks information about the property  [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) 
 
-This is rendered with {capacity:mtb} mountainbike can be rented here
+This is rendered with  {capacity:mtb} mountainbike can be rented here
 
 
 
-Only visible if `rental~^.*mtb.*$` is shown
+Only visible if  `rental~^.*mtb.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -348,15 +348,15 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  How much bicycle panniers can be rented here? 
+The question is  How much bicycle panniers can be rented here?
 
 This rendering asks information about the property  [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) 
 
-This is rendered with {capacity:bicycle_pannier} bicycle panniers can be rented here
+This is rendered with  {capacity:bicycle_pannier} bicycle panniers can be rented here
 
 
 
-Only visible if `rental~^.*bicycle_pannier.*$` is shown
+Only visible if  `rental~^.*bicycle_pannier.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -366,15 +366,15 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  How much tandem can be rented here? 
+The question is  How much tandem can be rented here?
 
 This rendering asks information about the property  [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) 
 
-This is rendered with {capacity:tandem_bicycle} tandem can be rented here
+This is rendered with  {capacity:tandem_bicycle} tandem can be rented here
 
 
 
-Only visible if `rental~^.*tandem_bicycle.*$` is shown
+Only visible if  `rental~^.*tandem_bicycle.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental` 
 

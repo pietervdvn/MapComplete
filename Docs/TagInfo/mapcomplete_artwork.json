@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Open Artwork Map",
-    "description": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
+    "description": "An open map of statues, busts, graffitis and other artwork all over the world",
     "project_url": "https://mapcomplete.osm.be/artwork",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/artwork/artwork.svg",

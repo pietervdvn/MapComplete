@@ -96,13 +96,13 @@ The question is  Whom is remembered by this ghost bike?<span class='question-sub
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with In remembrance of {name}
+This is rendered with  In remembrance of {name}
 
 
 
 
 
-  - No name is marked on the bike corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+  - No name is marked on the bike corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
 
 
 
@@ -115,7 +115,7 @@ The question is  On what webpage can one find more info about the ghost bike or 
 
 This rendering asks information about the property  [source](https://wiki.openstreetmap.org/wiki/Key:source) 
 
-This is rendered with <a href='{source}' target='_blank'>More info available</a>
+This is rendered with  <a href='{source}' target='_blank'>More info available</a>
 
 
 
@@ -129,7 +129,7 @@ The question is  What is the inscription on this Ghost bike?
 
 This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) 
 
-This is rendered with <i>{inscription}</i>
+This is rendered with  <i>{inscription}</i>
 
 
 
@@ -143,7 +143,7 @@ The question is  When was this Ghost bike installed?
 
 This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
 
-This is rendered with Placed on {start_date}
+This is rendered with  Placed on {start_date}
 
  
 

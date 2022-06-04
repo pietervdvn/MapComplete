@@ -85,15 +85,15 @@ The question is  Wie beheert dit gebied?
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with Dit gebied wordt beheerd door {operator}
+This is rendered with  Dit gebied wordt beheerd door {operator}
 
 
 
 
 
-  - Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a> corresponds with operator~^[aA][nN][bB]$
+  - Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a> corresponds with  operator~^[aA][nN][bB]$
   - This option cannot be chosen as answer
-  - Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a> corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgenstchap Natuur en Bos' target='_blank'>Agenstchap Natuur en Bos</a>
+  - Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a> corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgenstchap Natuur en Bos' target='_blank'>Agenstchap Natuur en Bos</a>
 
 
 
@@ -108,8 +108,8 @@ The question is  Wanneer is deze speelzone toegankelijk?
 
 
 
-  - Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00) corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D08:00-22:00' target='_blank'>08:00-22:00</a>
-  - Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00 corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3DJul-Aug 08:00-22:00' target='_blank'>Jul-Aug 08:00-22:00</a>
+  - Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00) corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D08:00-22:00' target='_blank'>08:00-22:00</a>
+  - Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00 corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3DJul-Aug 08:00-22:00' target='_blank'>Jul-Aug 08:00-22:00</a>
 
 
 
@@ -122,7 +122,7 @@ The question is  Wie kan men emailen indien er problemen zijn met de speelzone?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with De bevoegde dienst kan bereikt worden via {email}
+This is rendered with  De bevoegde dienst kan bereikt worden via {email}
 
 
 
@@ -136,7 +136,7 @@ The question is  Wie kan men bellen indien er problemen zijn met de speelzone?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with De bevoegde dienst kan getelefoneerd worden via {phone}
+This is rendered with  De bevoegde dienst kan getelefoneerd worden via {phone}
 
 
 

@@ -7,7 +7,7 @@
 
 <img src='https://mapcomplete.osm.be/./assets/themes/playgrounds/playground.svg' height="100px"> 
 
-Searches for all accessible grass patches within public parks - these are 'groenzones'"
+Searches for all accessible grass patches within public parks - these are 'groenzones'
 
 
 

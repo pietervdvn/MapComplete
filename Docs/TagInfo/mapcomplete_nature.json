@@ -596,6 +596,11 @@
       "value": "concrete"
     },
     {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=plastic with a fixed text, namely 'This picnic table is made from (recycled) plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "plastic"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Into nature has a layer Toilets showing features with this tag",
       "value": "toilets"

@@ -89,18 +89,18 @@ The question is  Which sport can be played here?
 
 This rendering asks information about the property  [sport](https://wiki.openstreetmap.org/wiki/Key:sport) 
 
-This is rendered with {sport} is played here
+This is rendered with  {sport} is played here
 
 
 
 
 
-  - Basketball is played here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball' target='_blank'>basketball</a>
-  - Soccer is played here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer' target='_blank'>soccer</a>
-  - This is a pingpong table corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis' target='_blank'>table_tennis</a>
-  - Tennis is played here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis' target='_blank'>tennis</a>
-  - Korfball is played here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball' target='_blank'>korfball</a>
-  - Basketball is played here corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasket' target='_blank'>basket</a>
+  - Basketball is played here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasketball' target='_blank'>basketball</a>
+  - Soccer is played here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dsoccer' target='_blank'>soccer</a>
+  - This is a pingpong table corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis' target='_blank'>table_tennis</a>
+  - Tennis is played here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtennis' target='_blank'>tennis</a>
+  - Korfball is played here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dkorfball' target='_blank'>korfball</a>
+  - Basketball is played here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dbasket' target='_blank'>basket</a>
   - This option cannot be chosen as answer
 
 
@@ -114,17 +114,17 @@ The question is  Which is the surface of this sport pitch?
 
 This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) 
 
-This is rendered with The surface is <b>{surface}</b>
+This is rendered with  The surface is <b>{surface}</b>
 
 
 
 
 
-  - The surface is <b>grass</b> corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>
-  - The surface is <b>sand</b> corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand' target='_blank'>sand</a>
-  - The surface is <b>paving stones</b> corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
-  - The surface is <b>asphalt</b> corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt' target='_blank'>asphalt</a>
-  - The surface is <b>concrete</b> corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>
+  - The surface is <b>grass</b> corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>
+  - The surface is <b>sand</b> corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand' target='_blank'>sand</a>
+  - The surface is <b>paving stones</b> corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones' target='_blank'>paving_stones</a>
+  - The surface is <b>asphalt</b> corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt' target='_blank'>asphalt</a>
+  - The surface is <b>concrete</b> corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>
 
 
 
@@ -139,10 +139,10 @@ The question is  Is this sport pitch publicly accessible?
 
 
 
-  - Public access corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
-  - Limited access (e.g. only with an appointment, during certain hours, ...) corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited' target='_blank'>limited</a>
-  - Only accessible for members of the club corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
-  - Private - not accessible to the public corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+  - Public access corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>
+  - Limited access (e.g. only with an appointment, during certain hours, …) corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dlimited' target='_blank'>limited</a>
+  - Only accessible for members of the club corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dmembers' target='_blank'>members</a>
+  - Private - not accessible to the public corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
 
 
 
@@ -157,10 +157,10 @@ The question is  Does one have to make an appointment to use this sport pitch?
 
 
 
-  - Making an appointment is obligatory to use this sport pitch corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired' target='_blank'>required</a>
-  - Making an appointment is recommended when using this sport pitch corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended' target='_blank'>recommended</a>
-  - Making an appointment is possible, but not necessary to use this sport pitch corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes' target='_blank'>yes</a>
-  - Making an appointment is not possible corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno' target='_blank'>no</a>
+  - Making an appointment is obligatory to use this sport pitch corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired' target='_blank'>required</a>
+  - Making an appointment is recommended when using this sport pitch corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended' target='_blank'>recommended</a>
+  - Making an appointment is possible, but not necessary to use this sport pitch corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes' target='_blank'>yes</a>
+  - Making an appointment is not possible corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:reservation' target='_blank'>reservation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno' target='_blank'>no</a>
 
 
 
@@ -173,7 +173,7 @@ The question is  What is the phone number of the operator?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with <a href='tel:{phone}'>{phone}</a>
+This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
@@ -187,7 +187,7 @@ The question is  What is the email address of the operator?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
@@ -201,18 +201,18 @@ The question is  When is this pitch accessible?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with Openingsuren: {opening_hours_table()}
+This is rendered with  Openingsuren: {opening_hours_table()}
 
 
 
 
 
-  - 24/7 toegankelijk corresponds with 
+  - 24/7 toegankelijk corresponds with  
   - This option cannot be chosen as answer
-  - Always accessible corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+  - Always accessible corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 
 
-Only visible if `access~^..*$` is shown
+Only visible if  `access~^..*$`  is shown
 
 
 
