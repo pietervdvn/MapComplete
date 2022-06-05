@@ -463,8 +463,13 @@
                 "supported": "My supported commands are:"
             },
             "language": {
+                "arglang": "The language to be used from now on",
+                "currentLanguage": "The current room language is {language}",
+                "docs": "Sets the language of the responses for this room",
                 "hasBeenSet": "Language has been set to {language}.",
-                "helpTranslating": "Help to translate my responses on Weblate."
+                "helpTranslating": "Help to translate my responses on Weblate.",
+                "knownLanguages": "You can pick one of the following languages:",
+                "notFound": "The language {language} was not found"
             },
             "welcome": {
                 "p0": "Hi! I'm MapComplete-bot. I'm a computer program which searches OpenStreetMap and which can give some information about <a href='https://mapcomplete.osm.be'>MapComplete</a>, which is a website and app that shows thematic maps. If information is missing, you can add it easily over there.",
