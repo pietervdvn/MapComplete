@@ -1,6 +1,5 @@
 import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
-import doc = Mocha.reporters.doc;
 
 export default class Slider extends InputElement<number> {
 

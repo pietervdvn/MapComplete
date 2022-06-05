@@ -15,8 +15,6 @@ import {SubtleButton} from "../Base/SubtleButton";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import Lazy from "../Base/Lazy";
-import {Utils} from "../../Utils";
-import beginningOfLine = Mocha.reporters.Base.cursor.beginningOfLine;
 
 export interface P4CPicture {
     pictureUrl: string,

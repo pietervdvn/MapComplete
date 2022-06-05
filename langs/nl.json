@@ -444,6 +444,25 @@
         "pickTheme": "Kies hieronder een thema om te beginnen.",
         "title": "Welkom bij MapComplete"
     },
+    "matrixbot": {
+        "commandNotFound": "Sorry, ik heb je commando niet verstaan. Zou het kunnen dat je {0}, {1}, {2} of ${2} bedoelt? <p>Je kan ook <code>help</code> sturen om een overzicht van alle commando's te zien</p>",
+        "commands": {
+            "help": {
+                "argcmd": "The command you want more information about",
+                "docs": "Prints info about supported commands",
+                "p0": "Hallo! Ik ben MapComplete-bot {bot_version} (gebouwd met MapComplete {mc_version}).",
+                "p1": "Je kan me een commando sturen en dan zal ik dat commando opvolgen. Dit kan door me een privé-bericht te sturen. In een publieke ruimte zal ik antwoorden als een bericht begint met <code>!</code> of een mention.",
+                "priviligedComand": "Commando waar je rechten voor nodig hebt",
+                "supported": "De commando's die ik ken zijn:"
+            },
+            "language": {
+                "hasBeenSet": "De taal is ingesteld op <b>{language}</b>."
+            }
+        },
+        "decryptionFailed": "Sorry, I couldn't decrypt your message. You can try to leave this channel and to connect again",
+        "noSufficientRights": "This command is only available to administrators or users who have this role",
+        "tooLongForPublic": "Sorry, this message is too long for a public room - send me a direct message instead"
+    },
     "move": {
         "cancel": "Annuleer verplaatsing",
         "cannotBeMoved": "Dit object kan niet verplaatst worden.",

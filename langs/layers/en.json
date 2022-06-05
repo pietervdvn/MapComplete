@@ -1095,6 +1095,9 @@
                 "0": {
                     "then": "Sport gear shop <i>{name}</i>"
                 },
+                "1": {
+                    "then": "Winkel"
+                },
                 "2": {
                     "then": "Bicycle rental <i>{name}</i>"
                 },
