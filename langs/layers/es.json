@@ -2358,6 +2358,28 @@
             "render": "Bicicleta blanca"
         }
     },
+    "maxspeed": {
+        "name": "Velocidad",
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "question": "Qué velocidad tiene"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilómetros/hora",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "millas/hora",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
     "observation_tower": {
         "tagRenderings": {
             "access": {

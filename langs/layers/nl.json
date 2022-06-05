@@ -3893,6 +3893,31 @@
             "render": "Kaart"
         }
     },
+    "maxspeed": {
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
+                    }
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilometers/uur",
+                        "humanShort": "km/u"
+                    },
+                    "1": {
+                        "human": "miles/uur",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
     "nature_reserve": {
         "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
         "filter": {

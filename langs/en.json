@@ -264,6 +264,7 @@
                 "born": "Born: {value}",
                 "died": "Died: {value}"
             },
+            "searchToShort": "Your search query is too short, enter a longer text",
             "searchWikidata": "Search on Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         }

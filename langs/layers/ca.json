@@ -716,6 +716,28 @@
             "render": "Mapa"
         }
     },
+    "maxspeed": {
+        "name": "Velocitat",
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "question": "Quina velocitat té"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "quilòmetres/hora",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "milles/hora",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
     "nature_reserve": {
         "tagRenderings": {
             "Email": {

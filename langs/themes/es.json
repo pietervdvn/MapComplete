@@ -369,6 +369,9 @@
         "shortDescription": "Este tema muestra todos los mapas (turísticos) que OpenStreetMap conoce",
         "title": "Un mapa de mapas"
     },
+    "maxspeed": {
+        "title": "Velocidad"
+    },
     "nature": {
         "description": "En este mapa, uno puede encontrar información interesante para turistas y amantes de la naturaleza, como ",
         "shortDescription": "Un mapa para amantes de la naturaleza, con PDIs interesantes"

@@ -171,6 +171,9 @@
     "maps": {
         "title": "Un mapa de mapes"
     },
+    "maxspeed": {
+        "title": "Velocitat"
+    },
     "nature": {
         "title": "A la natura"
     },

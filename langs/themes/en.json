@@ -707,6 +707,11 @@
         "shortDescription": "This theme shows all (touristic) maps that OpenStreetMap knows of",
         "title": "A map of maps"
     },
+    "maxspeed": {
+        "description": "This map shows the legally allowed maximum speed on every road. If a maxspeed is missing or wrong, you can correct it here.",
+        "shortDescription": "This map shows the legally allowed maximum speed on every road.",
+        "title": "Maxspeed"
+    },
     "nature": {
         "description": "On this map, one can find interesting infromation for tourists and nature lovers, such as ",
         "shortDescription": "A map for nature lovers, with interesting POI's",
