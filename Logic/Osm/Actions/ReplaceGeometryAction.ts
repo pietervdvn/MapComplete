@@ -159,7 +159,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         })
 
 
-        return new StaticFeatureSource(Utils.NoNull(preview), false)
+        return StaticFeatureSource.fromGeojson(Utils.NoNull(preview))
 
     }
 

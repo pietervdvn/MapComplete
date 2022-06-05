@@ -2,7 +2,7 @@ import {Utils} from "../../../Utils";
 import * as OsmToGeoJson from "osmtogeojson";
 import StaticFeatureSource from "../Sources/StaticFeatureSource";
 import PerLayerFeatureSourceSplitter from "../PerLayerFeatureSourceSplitter";
-import {UIEventSource} from "../../UIEventSource";
+import {Store, UIEventSource} from "../../UIEventSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {Tiles} from "../../../Models/TileRange";
@@ -20,13 +20,13 @@ export default class OsmFeatureSource {
     public readonly downloadedTiles = new Set<number>()
     public rawDataHandlers: ((osmJson: any, tileId: number) => void)[] = []
     private readonly _backend: string;
-    private readonly filteredLayers: UIEventSource<FilteredLayer[]>;
+    private readonly filteredLayers: Store<FilteredLayer[]>;
     private readonly handleTile: (fs: (FeatureSourceForLayer & Tiled)) => void;
-    private isActive: UIEventSource<boolean>;
+    private isActive: Store<boolean>;
     private options: {
         handleTile: (tile: FeatureSourceForLayer & Tiled) => void;
-        isActive: UIEventSource<boolean>,
-        neededTiles: UIEventSource<number[]>,
+        isActive: Store<boolean>,
+        neededTiles: Store<number[]>,
         state: {
             readonly osmConnection: OsmConnection;
         },
@@ -36,8 +36,8 @@ export default class OsmFeatureSource {
 
     constructor(options: {
         handleTile: (tile: FeatureSourceForLayer & Tiled) => void;
-        isActive: UIEventSource<boolean>,
-        neededTiles: UIEventSource<number[]>,
+        isActive: Store<boolean>,
+        neededTiles: Store<number[]>,
         state: {
             readonly filteredLayers: UIEventSource<FilteredLayer[]>;
             readonly osmConnection: OsmConnection;
@@ -119,7 +119,7 @@ export default class OsmFeatureSource {
                 const index = Tiles.tile_index(z, x, y);
                 new PerLayerFeatureSourceSplitter(this.filteredLayers,
                     this.handleTile,
-                    new StaticFeatureSource(geojson.features, false),
+                    StaticFeatureSource.fromGeojson(geojson.features),
                     {
                         tileIndex: index
                     }

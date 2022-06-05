@@ -1,5 +1,4 @@
-import {UIEventSource} from "../UIEventSource";
-import Translations from "../../UI/i18n/Translations";
+import {Store, UIEventSource} from "../UIEventSource";
 import Locale from "../../UI/i18n/Locale";
 import TagRenderingAnswer from "../../UI/Popup/TagRenderingAnswer";
 import Combine from "../../UI/Base/Combine";
@@ -9,11 +8,11 @@ import {Utils} from "../../Utils";
 
 export default class TitleHandler {
     constructor(state: {
-        selectedElement: UIEventSource<any>,
+        selectedElement: Store<any>,
         layoutToUse: LayoutConfig,
         allElements: ElementStorage
     }) {
-        const currentTitle: UIEventSource<string> = state.selectedElement.map(
+        const currentTitle: Store<string> = state.selectedElement.map(
             selected => {
                 const layout = state.layoutToUse
                 const defaultTitle = layout?.title?.txt ?? "MapComplete"

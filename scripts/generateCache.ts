@@ -112,7 +112,7 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
                 }
 
 
-                console.log("Got the response - writing to ", filename)
+                console.log("Got the response - writing ",json.elements.length," elements to ", filename)
                 writeFileSync(filename, JSON.stringify(json, null, "  "));
             } catch (err) {
                 console.log(url)
@@ -172,7 +172,7 @@ function loadAllTiles(targetdir: string, r: TileRange, theme: LayoutConfig, extr
             allFeatures.push(...geojson.features)
         }
     }
-    return new StaticFeatureSource(allFeatures, false)
+    return StaticFeatureSource.fromGeojson(allFeatures)
 }
 
 /**

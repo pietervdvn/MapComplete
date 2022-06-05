@@ -2,13 +2,13 @@ import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {LicenseInfo} from "../../Logic/ImageProviders/LicenseInfo";
 import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class Attribution extends VariableUiElement {
 
-    constructor(license: UIEventSource<LicenseInfo>, icon: BaseUIElement, date?: Date) {
+    constructor(license: Store<LicenseInfo>, icon: BaseUIElement, date?: Date) {
         if (license === undefined) {
             throw "No license source given in the attribution element"
         }

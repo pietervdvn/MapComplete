@@ -13,7 +13,7 @@ import BaseUIElement from "../BaseUIElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
-import Toggle from "../Input/Toggle";
+import Toggle, {ClickableToggle} from "../Input/Toggle";
 import Table from "../Base/Table";
 import LeftIndex from "../Base/LeftIndex";
 import Toggleable, {Accordeon} from "../Base/Toggleable";
@@ -271,7 +271,7 @@ class BatchView extends Toggleable {
             const selected = new Combine([BatchView.icons[status]().SetClass("h-6 m-1"), count + " " + status])
                 .SetClass("flex ml-1 mb-1 pl-1 pr-3 items-center rounded-full border-4 border-black animate-pulse")
 
-            const toggle = new Toggle(selected, normal, filterOn.map(f => f === status, [], (selected, previous) => {
+            const toggle = new ClickableToggle(selected, normal, filterOn.sync(f => f === status, [], (selected, previous) => {
                 if (selected) {
                     return status;
                 }

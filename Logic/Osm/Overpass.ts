@@ -1,7 +1,7 @@
 import {TagsFilter} from "../Tags/TagsFilter";
 import RelationsTracker from "./RelationsTracker";
 import {Utils} from "../../Utils";
-import {UIEventSource} from "../UIEventSource";
+import {ImmutableStore, Store} from "../UIEventSource";
 import {BBox} from "../BBox";
 import * as osmtogeojson from "osmtogeojson";
 import {FeatureCollection} from "@turf/turf";
@@ -12,7 +12,7 @@ import {FeatureCollection} from "@turf/turf";
 export class Overpass {
     private _filter: TagsFilter
     private readonly _interpreterUrl: string;
-    private readonly _timeout: UIEventSource<number>;
+    private readonly _timeout: Store<number>;
     private readonly _extraScripts: string[];
     private _includeMeta: boolean;
     private _relationTracker: RelationsTracker;
@@ -20,10 +20,10 @@ export class Overpass {
     constructor(filter: TagsFilter,
                 extraScripts: string[],
                 interpreterUrl: string,
-                timeout?: UIEventSource<number>,
+                timeout?: Store<number>,
                 relationTracker?: RelationsTracker,
                 includeMeta = true) {
-        this._timeout = timeout ?? new UIEventSource<number>(90);
+        this._timeout = timeout ?? new ImmutableStore<number>(90);
         this._interpreterUrl = interpreterUrl;
         const optimized = filter.optimize()
         if(optimized === true || optimized === false){

@@ -212,6 +212,10 @@
                 "then": "./assets/themes/maps/logo.svg"
               },
               {
+                "if": "theme=maxspeed",
+                "then": "./assets/themes/maxspeed/maxspeed_logo.svg"
+              },
+              {
                 "if": "theme=nature",
                 "then": "./assets/themes/nature/logo.svg"
               },

@@ -3,7 +3,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import Combine from "../Base/Combine";
 import Title from "../Base/Title";
 import {Overpass} from "../../Logic/Osm/Overpass";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Constants from "../../Models/Constants";
 import RelationsTracker from "../../Logic/Osm/RelationsTracker";
 import {VariableUiElement} from "../Base/VariableUIElement";
@@ -35,7 +35,7 @@ import Translations from "../i18n/Translations";
 export default class ConflationChecker extends Combine implements FlowStep<{ features: any[], theme: string }> {
 
     public readonly IsValid
-    public readonly Value: UIEventSource<{ features: any[], theme: string }>
+    public readonly Value: Store<{ features: any[], theme: string }>
 
     constructor(
         state,
@@ -89,7 +89,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
         });
 
 
-        const geojson: UIEventSource<any> = fromLocalStorage.map(d => {
+        const geojson: Store<any> = fromLocalStorage.map(d => {
             if (d === undefined) {
                 return undefined
             }
@@ -120,7 +120,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             }
             const bounds = osmLiveData.bounds.data
             return geojson.features.filter(f => BBox.get(f).overlapsWith(bounds))
-        }, [osmLiveData.bounds, zoomLevel.GetValue()]), false);
+        }, [osmLiveData.bounds, zoomLevel.GetValue()]));
 
 
         new ShowDataLayer({
@@ -129,9 +129,9 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             leafletMap: osmLiveData.leafletMap,
             popup: undefined,
             zoomToFeatures: true,
-            features: new StaticFeatureSource([
+            features: StaticFeatureSource.fromGeojson([
                 bbox.asGeoJson({})
-            ], false)
+            ])
         })
 
 
@@ -150,7 +150,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             leafletMap: osmLiveData.leafletMap,
             popup: (tags, layer) => new FeatureInfoBox(tags, layer, state),
             zoomToFeatures: false,
-            features: new StaticFeatureSource(toImport.features, false)
+            features: StaticFeatureSource.fromGeojson(toImport.features)
         })
 
         const nearbyCutoff = ValidatedTextField.ForType("pnat").ConstructInputElement()
@@ -172,11 +172,11 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             return osmData.features.filter(f =>
                 toImport.features.some(imp =>
                     maxDist >= GeoOperations.distanceBetween(imp.geometry.coordinates, GeoOperations.centerpointCoordinates(f))))
-        }, [nearbyCutoff.GetValue().stabilized(500)]), false);
+        }, [nearbyCutoff.GetValue().stabilized(500)]));
         const paritionedImport = ImportUtils.partitionFeaturesIfNearby(toImport, geojson, nearbyCutoff.GetValue().map(Number));
 
         // Featuresource showing OSM-features which are nearby a toImport-feature 
-        const toImportWithNearby = new StaticFeatureSource(paritionedImport.map(els => els?.hasNearby ?? []), false);
+        const toImportWithNearby = new StaticFeatureSource(paritionedImport.map(els => els?.hasNearby ?? []));
 
         new ShowDataLayer({
             layerToShow: layer,

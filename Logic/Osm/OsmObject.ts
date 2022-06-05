@@ -1,6 +1,6 @@
 import {Utils} from "../../Utils";
 import * as polygon_features from "../../assets/polygon-features.json";
-import {UIEventSource} from "../UIEventSource";
+import {Store, Stores, UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
 
 
@@ -40,7 +40,7 @@ export abstract class OsmObject {
         this.backendURL = url;
     }
 
-    public static DownloadObject(id: string, forceRefresh: boolean = false): UIEventSource<OsmObject> {
+    public static DownloadObject(id: string, forceRefresh: boolean = false): Store<OsmObject> {
         let src: UIEventSource<OsmObject>;
         if (OsmObject.objectCache.has(id)) {
             src = OsmObject.objectCache.get(id)

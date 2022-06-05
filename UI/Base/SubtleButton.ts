@@ -3,7 +3,7 @@ import Combine from "./Combine";
 import BaseUIElement from "../BaseUIElement";
 import Link from "./Link";
 import Img from "./Img";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
 import {VariableUiElement} from "./VariableUIElement";
 import Lazy from "./Lazy";
@@ -13,11 +13,11 @@ import Loading from "./Loading";
 export class SubtleButton extends UIElement {
     private readonly imageUrl: string | BaseUIElement;
     private readonly message: string | BaseUIElement;
-    private readonly options: { url?: string | UIEventSource<string>; newTab?: boolean ; imgSize?: string};
+    private readonly options: { url?: string | Store<string>; newTab?: boolean ; imgSize?: string};
 
 
     constructor(imageUrl: string | BaseUIElement, message: string | BaseUIElement, options: { 
-        url?: string | UIEventSource<string>, 
+        url?: string | Store<string>, 
         newTab?: boolean,
         imgSize?: "h-11 w-11" | string
     } = undefined) {

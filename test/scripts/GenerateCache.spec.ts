@@ -43,7 +43,7 @@ describe("GenerateCache", () => {
                 "51.15423567022531", "3.250579833984375", "51.162821593316934", "3.262810707092285",
                 "--generate-point-overview", "nature_reserve,visitor_information_centre"
             ])
-            await ScriptUtils.sleep(100)
+            await ScriptUtils.sleep(500)
             const birdhides = JSON.parse(readFileSync("/tmp/np-cache/natuurpunt_birdhide_12_2085_1368.geojson", "UTF8"))
             expect(birdhides.features.length).deep.equal(5)
             expect(birdhides.features.some(f => f.properties.id === "node/5158056232"), "Didn't find birdhide node/5158056232 ").true

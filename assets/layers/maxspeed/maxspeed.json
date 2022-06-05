@@ -27,7 +27,7 @@
           ]
         },
         "type!=multipolygon",
-        "area!=yes" 
+        "area!=yes"
       ]
     }
   },
@@ -70,7 +70,7 @@
             "nl": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
           },
           "icon": {
-            "path":"./assets/layers/maxspeed/living_street_be.svg",
+            "path": "./assets/layers/maxspeed/living_street_be.svg",
             "size": "large"
           },
           "hideInAnswer": "_country!=be"

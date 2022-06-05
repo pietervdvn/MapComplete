@@ -1,4 +1,4 @@
-import {UIEventSource} from "../Logic/UIEventSource";
+import {Store, UIEventSource} from "../Logic/UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
 import {ImageCarousel} from "./Image/ImageCarousel";
@@ -207,7 +207,7 @@ class NearbyImageVis implements SpecialVisualization {
         const nearby = new Lazy(() => {
             const towardsCenter = new CheckBox(t.onlyTowards, false)
             
-            const radiusValue=   state?.osmConnection?.GetPreference("nearby-images-radius","300").map(s => Number(s), [], i => ""+i) ?? new UIEventSource(300);
+            const radiusValue=   state?.osmConnection?.GetPreference("nearby-images-radius","300").sync(s => Number(s), [], i => ""+i) ?? new UIEventSource(300);
 
             const radius = new Slider(25, 500, {value: 
                     radiusValue, step: 25})
@@ -453,7 +453,7 @@ export default class SpecialVisualizations {
                         const keys = [...args]
                         keys.splice(0, 1)
                         const featureStore = state.allElements.ContainingFeatures
-                        const featuresToShow: UIEventSource<{ freshness: Date, feature: any }[]> = tagSource.map(properties => {
+                        const featuresToShow: Store<{ freshness: Date, feature: any }[]> = tagSource.map(properties => {
                             const values: string[] = Utils.NoNull(keys.map(key => properties[key]))
                             const features: { freshness: Date, feature: any }[] = []
                             for (const value of values) {
@@ -507,7 +507,7 @@ export default class SpecialVisualizations {
                                 leafletMap: minimap["leafletMap"],
                                 zoomToFeatures: true,
                                 layers: state.filteredLayers,
-                                features: new StaticFeatureSource(featuresToShow, true)
+                                features: new StaticFeatureSource(featuresToShow)
                             }
                         )
 
@@ -553,7 +553,7 @@ export default class SpecialVisualizations {
                                 leafletMap: minimap["leafletMap"],
                                 zoomToFeatures: true,
                                 layerToShow: new LayerConfig(left_right_style_json, "all_known_layers", true),
-                                features: new StaticFeatureSource([copy], false),
+                                features: StaticFeatureSource.fromGeojson([copy]),
                                 state
                             }
                         )
@@ -683,7 +683,7 @@ export default class SpecialVisualizations {
                             }
                         }
 
-                        const listSource: UIEventSource<string[]> = tagSource
+                        const listSource: Store<string[]> = tagSource
                             .map(tags => {
                                 try {
                                     const value = tags[args[0]]
@@ -801,7 +801,7 @@ export default class SpecialVisualizations {
                         const text = args[2]
                         const autoapply = args[3]?.toLowerCase() === "true"
                         const overwrite = args[4]?.toLowerCase() === "true"
-                        const featureIds: UIEventSource<string[]> = tagsSource.map(tags => {
+                        const featureIds: Store<string[]> = tagsSource.map(tags => {
                             const ids = tags[featureIdsKey]
                             try {
                                 if (ids === undefined) {

@@ -33,7 +33,7 @@ export class QueryParameters {
     }
 
     public static GetBooleanQueryParameter(key: string, deflt: boolean, documentation?: string): UIEventSource<boolean> {
-        return QueryParameters.GetQueryParameter(key, ""+ deflt, documentation).map(str => str === "true", [], b => "" + b)
+        return QueryParameters.GetQueryParameter(key, ""+ deflt, documentation).sync(str => str === "true", [], b => "" + b)
     }
 
 

@@ -1,4 +1,4 @@
-import {UIEventSource} from "../Logic/UIEventSource";
+import {Store, UIEventSource} from "../Logic/UIEventSource";
 import {Translation} from "./i18n/Translation";
 import Locale from "./i18n/Locale";
 import {FixedUiElement} from "./Base/FixedUiElement";

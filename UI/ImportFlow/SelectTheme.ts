@@ -1,6 +1,6 @@
 import {FlowStep} from "./FlowStep";
 import Combine from "../Base/Combine";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {InputElement} from "../Input/InputElement";
 import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
@@ -24,13 +24,13 @@ export default class SelectTheme extends Combine implements FlowStep<{
     bbox: BBox,
 }> {
 
-    public readonly Value: UIEventSource<{
+    public readonly Value: Store<{
         features: any[],
         theme: string,
         layer: LayerConfig,
         bbox: BBox,
     }>;
-    public readonly IsValid: UIEventSource<boolean>;
+    public readonly IsValid: Store<boolean>;
 
     constructor(params: ({ features: any[], layer: LayerConfig, bbox: BBox, })) {
         const t = Translations.t.importHelper.selectTheme

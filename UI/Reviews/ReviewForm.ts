@@ -37,7 +37,6 @@ export default class ReviewForm extends InputElement<Review> {
         const comment = new TextField({
             placeholder: Translations.t.reviews.write_a_comment.Clone(),
             htmlType: "area",
-            value: this._value.map(r => r?.comment),
             textAreaRows: 5
         })
         comment.GetValue().addCallback(comment => {
@@ -62,10 +61,10 @@ export default class ReviewForm extends InputElement<Review> {
                     new SaveButton(
                         this._value.map(r => self.IsValid(r)), osmConnection
                     ).onClick(() => {
-                        reviewIsSaving.setData(true),
-                            onSave(this._value.data, () => {
-                                reviewIsSaved.setData(true)
-                            });
+                        reviewIsSaving.setData(true);
+                        onSave(this._value.data, () => {
+                            reviewIsSaved.setData(true)
+                        });
                     }),
                     reviewIsSaving
                 ),

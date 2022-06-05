@@ -8,7 +8,7 @@ import Title from "../Base/Title";
 import Wikipedia from "../../Logic/Web/Wikipedia";
 import Wikidata, {WikidataResponse} from "../../Logic/Web/Wikidata";
 import {TabbedComponent} from "../Base/TabbedComponent";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Loading from "../Base/Loading";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import Translations from "../i18n/Translations";
@@ -128,7 +128,7 @@ export default class WikipediaBox extends Combine {
 
         const wp = Translations.t.general.wikipedia;
 
-        const wikiLink: UIEventSource<[string, string, WikidataResponse] | "loading" | "failed" | ["no page", WikidataResponse]> =
+        const wikiLink: Store<[string, string, WikidataResponse] | "loading" | "failed" | ["no page", WikidataResponse]> =
             Wikidata.LoadWikidataEntry(wikidataId)
                 .map(maybewikidata => {
                     if (maybewikidata === undefined) {

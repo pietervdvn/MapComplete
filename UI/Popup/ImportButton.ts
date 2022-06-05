@@ -241,7 +241,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         new ShowDataMultiLayer({
             leafletMap: confirmationMap.leafletMap,
             zoomToFeatures: true,
-            features: new StaticFeatureSource([feature], false),
+            features: StaticFeatureSource.fromGeojson([feature]),
             state: state,
             layers: state.filteredLayers
         })

@@ -367,6 +367,9 @@ export class OH {
         return OH.ToString(OH.MergeTimes(OH.Parse(str)))
     }
 
+    /**
+     * Parses a string into Opening Hours
+     */
     public static Parse(rules: string): OpeningHour[] {
         if (rules === undefined || rules === "") {
             return []

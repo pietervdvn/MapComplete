@@ -1,14 +1,14 @@
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 
 
 export default class Link extends BaseUIElement {
-    private readonly _href: string | UIEventSource<string>;
+    private readonly _href: string | Store<string>;
     private readonly _embeddedShow: BaseUIElement;
     private readonly _newTab: boolean;
 
-    constructor(embeddedShow: BaseUIElement | string, href: string | UIEventSource<string>, newTab: boolean = false) {
+    constructor(embeddedShow: BaseUIElement | string, href: string | Store<string>, newTab: boolean = false) {
         super();
         this._embeddedShow = Translations.W(embeddedShow);
         this._href = href;

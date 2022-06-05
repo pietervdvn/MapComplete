@@ -1,4 +1,4 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import BaseUIElement from "../BaseUIElement";
 import {SubtleButton} from "../Base/SubtleButton";
@@ -10,8 +10,8 @@ import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 
 export interface FlowStep<T> extends BaseUIElement {
-    readonly IsValid: UIEventSource<boolean>
-    readonly Value: UIEventSource<T>
+    readonly IsValid: Store<boolean>
+    readonly Value: Store<T>
 }
 
 export class FlowPanelFactory<T> {

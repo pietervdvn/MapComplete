@@ -78,7 +78,7 @@ export default class SplitRoadWizard extends Toggle {
 
         // Datalayer displaying the road and the cut points (if any)
         new ShowDataMultiLayer({
-            features: new StaticFeatureSource([roadElement], false),
+            features: StaticFeatureSource.fromGeojson([roadElement]),
             layers: state.filteredLayers,
             leafletMap: miniMap.leafletMap,
             zoomToFeatures: true,
@@ -86,7 +86,7 @@ export default class SplitRoadWizard extends Toggle {
         })
 
         new ShowDataLayer({
-            features: new StaticFeatureSource(splitPoints, true),
+            features: new StaticFeatureSource(splitPoints),
             leafletMap: miniMap.leafletMap,
             zoomToFeatures: false,
             layerToShow: SplitRoadWizard.splitLayerStyling,

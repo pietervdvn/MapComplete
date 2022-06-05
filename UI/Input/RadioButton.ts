@@ -152,7 +152,7 @@ export class RadioButton<T> extends InputElement<T> {
             form.appendChild(block);
         }
 
-        value.addCallbackAndRun((selected) => {
+        value.addCallbackAndRun((selected:T) => {
             let somethingChecked = false;
             for (let i = 0; i < inputs.length; i++) {
                 let input = inputs[i];

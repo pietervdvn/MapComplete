@@ -1,6 +1,6 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, Stores, UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
-import {InputElement} from "../Input/InputElement";
+import {InputElement, ReadonlyInputElement} from "../Input/InputElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {FixedInputElement} from "../Input/FixedInputElement";
 import {RadioButton} from "../Input/RadioButton";
@@ -45,14 +45,14 @@ export default class TagRenderingQuestion extends Combine {
                     units?: Unit[],
                     afterSave?: () => void,
                     cancelButton?: BaseUIElement,
-                    saveButtonConstr?: (src: UIEventSource<TagsFilter>) => BaseUIElement,
-                    bottomText?: (src: UIEventSource<TagsFilter>) => BaseUIElement
+                    saveButtonConstr?: (src: Store<TagsFilter>) => BaseUIElement,
+                    bottomText?: (src: Store<TagsFilter>) => BaseUIElement
                 }
     ) {
 
 
         const applicableMappingsSrc =
-            UIEventSource.ListStabilized(tags.map(tags => {
+            Stores.ListStabilized(tags.map(tags => {
                 const applicableMappings: { if: TagsFilter, icon?: string, then: TypedTranslation<object>, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
                 for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
@@ -81,7 +81,7 @@ export default class TagRenderingQuestion extends Combine {
 
 
         const feedback = new UIEventSource<Translation>(undefined)
-        const inputElement: InputElement<TagsFilter> =
+        const inputElement: ReadonlyInputElement<TagsFilter> =
             new VariableInputElement(applicableMappingsSrc.map(applicableMappings =>
                 TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags, feedback)
             ))
@@ -452,8 +452,8 @@ export default class TagRenderingQuestion extends Combine {
 
     }
     
-    public static CreateTagExplanation(selectedValue: UIEventSource<TagsFilter>,
-                                       tags: UIEventSource<object>,
+    public static CreateTagExplanation(selectedValue: Store<TagsFilter>,
+                                       tags: Store<object>,
                                        state?: {osmConnection?: OsmConnection}){
         return new VariableUiElement(
             selectedValue.map(

@@ -129,7 +129,7 @@ export default class FilterConfig {
             }))
 
             // We map the query parameter for this case
-            return qp.map(str => {
+            return qp.sync(str => {
                 const parsed = Number(str)
                 if (isNaN(parsed)) {
                     // Nope, not a correct number!
@@ -143,7 +143,7 @@ export default class FilterConfig {
         const option = this.options[0]
 
         if (option.fields.length > 0) {
-            return qp.map(str => {
+            return qp.sync(str => {
                 // There are variables in play!
                 // str should encode a json-hash
                 try {
@@ -178,7 +178,7 @@ export default class FilterConfig {
             currentFilter: option.osmTags,
             state: "true"
         }
-        return qp.map(
+        return qp.sync(
             str => {
                 // Only a single option exists here
                 if (str === "true") {

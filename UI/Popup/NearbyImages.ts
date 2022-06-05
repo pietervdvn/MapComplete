@@ -1,7 +1,7 @@
 import Combine from "../Base/Combine";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, Stores, UIEventSource} from "../../Logic/UIEventSource";
 import {SlideShow} from "../Image/SlideShow";
-import Toggle from "../Input/Toggle";
+import {ClickableToggle} from "../Input/Toggle";
 import Loading from "../Base/Loading";
 import {AttributedImage} from "../Image/AttributedImage";
 import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders";
@@ -15,8 +15,6 @@ import {SubtleButton} from "../Base/SubtleButton";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import Lazy from "../Base/Lazy";
-import {Utils} from "../../Utils";
-import beginningOfLine = Mocha.reporters.Base.cursor.beginningOfLine;
 
 export interface P4CPicture {
     pictureUrl: string,
@@ -42,7 +40,7 @@ export interface NearbyImageOptions {
     // Radius of the upstream search
     searchRadius?: 500 | number,
     maxDaysOld?: 1095 | number,
-    blacklist: UIEventSource<{ url: string }[]>,
+    blacklist: Store<{ url: string }[]>,
     shownImagesCount?: UIEventSource<number>,
     towardscenter?: UIEventSource<boolean>;
     allowSpherical?: UIEventSource<boolean>
@@ -173,7 +171,7 @@ export default class NearbyImages extends Lazy {
         const nearbyImages = state !== undefined ? new ImagesInLoadedDataFetcher(state).fetchAround(options) : []
 
 
-        return UIEventSource.FromPromise<P4CPicture[]>(
+        return Stores.FromPromise<P4CPicture[]>(
             picManager.startPicsRetrievalAround(new P4C.LatLng(options.lat, options.lon), options.searchRadius ?? 500, {
                 mindate: new Date().getTime() - (options.maxDaysOld ?? (3 * 365)) * 24 * 60 * 60 * 1000,
                 towardscenter: false
@@ -234,7 +232,7 @@ export default class NearbyImages extends Lazy {
         return new AttributedImage({url: info.thumbUrl, provider, date: new Date(info.date)})
     }
 
-    protected asToggle(info: P4CPicture): Toggle {
+    protected asToggle(info: P4CPicture): ClickableToggle {
         const imgNonSelected = NearbyImages.asAttributedImage(info);
         const imageSelected = NearbyImages.asAttributedImage(info);
 
@@ -246,7 +244,7 @@ export default class NearbyImages extends Lazy {
             hoveringCheckmark,
         ]).SetClass("relative block")
 
-        return new Toggle(selected, nonSelected).SetClass("").ToggleOnClick();
+        return new ClickableToggle(selected, nonSelected).SetClass("").ToggleOnClick();
 
     }
 

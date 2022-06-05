@@ -1,7 +1,7 @@
 import {SpecialVisualization} from "../SpecialVisualizations";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 import BaseUIElement from "../BaseUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Stores, UIEventSource} from "../../Logic/UIEventSource";
 import {DefaultGuiState} from "../DefaultGuiState";
 import {SubtleButton} from "../Base/SubtleButton";
 import Img from "../Base/Img";
@@ -97,7 +97,7 @@ class ApplyButton extends UIElement {
         new ShowDataLayer({
             leafletMap: previewMap.leafletMap,
             zoomToFeatures: true,
-            features: new StaticFeatureSource(features, false),
+            features: StaticFeatureSource.fromGeojson(features),
             state: this.state,
             layerToShow: this.layer.layerDef,
         })
@@ -218,7 +218,7 @@ export default class AutoApplyButton implements SpecialVisualization {
             return new Lazy(() => {
                 const to_parse = new UIEventSource(undefined)
                 // Very ugly hack: read the value every 500ms
-                UIEventSource.Chronic(500, () => to_parse.data === undefined).addCallback(() => {
+                Stores.Chronic(500, () => to_parse.data === undefined).addCallback(() => {
                     const applicable = tagSource.data[argument[1]]
                     to_parse.setData(applicable)
                 })

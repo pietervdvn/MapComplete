@@ -124,7 +124,7 @@ export default class TranslatorsPanel extends Toggle {
         const completeness = new Map<string, number>()
         const untranslated = new Map<string, string[]>()
 
-        Utils.WalkObject(layout, (o, path) => {
+        Utils.WalkObject(layout, (o) => {
             const translation = <Translation><any>o;
             if (translation.translations["*"] !== undefined) {
                 return

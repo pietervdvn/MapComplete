@@ -2,7 +2,7 @@ import {Mapillary} from "./Mapillary";
 import {WikimediaImageProvider} from "./WikimediaImageProvider";
 import {Imgur} from "./Imgur";
 import GenericImageProvider from "./GenericImageProvider";
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import ImageProvider, {ProvidedImage} from "./ImageProvider";
 import {WikidataImageProvider} from "./WikidataImageProvider";
 
@@ -37,7 +37,7 @@ export default class AllImageProviders {
 
     private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<string, UIEventSource<ProvidedImage[]>>()
 
-    public static LoadImagesFor(tags: UIEventSource<any>, tagKey?: string[]): UIEventSource<ProvidedImage[]> {
+    public static LoadImagesFor(tags: Store<any>, tagKey?: string[]): Store<ProvidedImage[]> {
         if (tags.data.id === undefined) {
             return undefined;
         }

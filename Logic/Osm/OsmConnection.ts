@@ -1,5 +1,5 @@
 import osmAuth from "osm-auth";
-import {UIEventSource} from "../UIEventSource";
+import {Stores, UIEventSource} from "../UIEventSource";
 import {OsmPreferences} from "./OsmPreferences";
 import {ChangesetHandler} from "./ChangesetHandler";
 import {ElementStorage} from "../ElementStorage";
@@ -228,7 +228,7 @@ export class OsmConnection {
         }
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually closing note ", id, " with text ", text)
-            return new Promise((ok, error) => {
+            return new Promise((ok) => {
                 ok()
             });
         }
@@ -236,7 +236,7 @@ export class OsmConnection {
             this.auth.xhr({
                 method: 'POST',
                 path: `/api/0.6/notes/${id}/close${textSuffix}`,
-            }, function (err, response) {
+            }, function (err, _) {
                 if (err !== null) {
                     error(err)
                 } else {
@@ -251,7 +251,7 @@ export class OsmConnection {
     public reopenNote(id: number | string, text?: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually reopening note ", id, " with text ", text)
-            return new Promise((ok, error) => {
+            return new Promise((ok) => {
                 ok()
             });
         }
@@ -263,7 +263,7 @@ export class OsmConnection {
             this.auth.xhr({
                 method: 'POST',
                 path: `/api/0.6/notes/${id}/reopen${textSuffix}`
-            }, function (err, response) {
+            }, function (err, _) {
                 if (err !== null) {
                     error(err)
                 } else {
@@ -278,7 +278,7 @@ export class OsmConnection {
     public openNote(lat: number, lon: number, text: string): Promise<{ id: number }> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually opening note with text ", text)
-            return new Promise<{ id: number }>((ok, error) => {
+            return new Promise<{ id: number }>((ok) => {
                 window.setTimeout(() => ok({id: Math.floor(Math.random() * 1000)}), Math.random() * 5000)
             });
         }
@@ -315,7 +315,7 @@ export class OsmConnection {
     public addCommentToNode(id: number | string, text: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)
-            return new Promise((ok, error) => {
+            return new Promise((ok) => {
                 ok()
             });
         }
@@ -328,7 +328,7 @@ export class OsmConnection {
                 method: 'POST',
 
                 path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
-            }, function (err, response) {
+            }, function (err, _) {
                 if (err !== null) {
                     error(err)
                 } else {
@@ -374,7 +374,7 @@ export class OsmConnection {
             return;
         }
         this.isChecking = true;
-        UIEventSource.Chronic(5 * 60 * 1000).addCallback(_ => {
+        Stores.Chronic(5 * 60 * 1000).addCallback(_ => {
             if (self.isLoggedIn.data) {
                 console.log("Checking for messages")
                 self.AttemptLogin();

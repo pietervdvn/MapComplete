@@ -1,7 +1,7 @@
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {OsmConnection} from "../Osm/OsmConnection";
 import {MangroveIdentity} from "../Web/MangroveReviews";
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import {QueryParameters} from "../Web/QueryParameters";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {Utils} from "../../Utils";
@@ -37,7 +37,7 @@ export default class UserRelatedState extends ElementsState {
      */
     public favouriteLayers: UIEventSource<string[]>;
 
-    public readonly isTranslator : UIEventSource<boolean>;
+    public readonly isTranslator : Store<boolean>;
     
     constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
         super(layoutToUse);
@@ -53,7 +53,7 @@ export default class UserRelatedState extends ElementsState {
             osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data,
             attemptLogin: options?.attemptLogin
         })
-        const translationMode  = this.osmConnection.GetPreference("translation-mode").map(str => str === undefined ? undefined : str === "true", [], b => b === undefined ? undefined : b+"")
+        const translationMode  = this.osmConnection.GetPreference("translation-mode").sync(str => str === undefined ? undefined : str === "true", [], b => b === undefined ? undefined : b+"")
             
         translationMode.syncWith(Locale.showLinkToWeblate)
         
@@ -108,7 +108,7 @@ export default class UserRelatedState extends ElementsState {
         // Important: the favourite layers are initialized _after_ the installed themes, as these might contain an installedTheme
         this.favouriteLayers = LocalStorageSource.Get("favouriteLayers")
             .syncWith(this.osmConnection.GetLongPreference("favouriteLayers"))
-            .map(
+            .sync(
                 (str) => Utils.Dedup(str?.split(";")) ?? [],
                 [],
                 (layers) => Utils.Dedup(layers)?.join(";")

@@ -7,7 +7,7 @@ import * as personal from "../../assets/themes/personal/personal.json"
 import Constants from "../../Models/Constants";
 import BaseUIElement from "../BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {ImmutableStore, Store, Stores, UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
@@ -117,7 +117,7 @@ export default class MoreScreen extends Combine {
     private static createUrlFor(layout: { id: string, definition?: string },
                                 isCustom: boolean,
                                 state?: { locationControl?: UIEventSource<{ lat, lon, zoom }>, layoutToUse?: { id } }
-    ): UIEventSource<string> {
+    ): Store<string> {
         if (layout === undefined) {
             return undefined;
         }
@@ -163,7 +163,7 @@ export default class MoreScreen extends Combine {
                 .map(part => part[0] + "=" + part[1])
                 .join("&")
             return `${linkPrefix}${params}${hash}`;
-        }) ?? new UIEventSource<string>(`${linkPrefix}`)
+        }) ?? new ImmutableStore<string>(`${linkPrefix}`)
 
 
     }
@@ -237,7 +237,7 @@ export default class MoreScreen extends Combine {
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses: string, search: UIEventSource<string>): BaseUIElement {
         const prefix = "mapcomplete-unofficial-theme-";
 
-        var currentIds: UIEventSource<string[]> = state.osmConnection.preferencesHandler.preferences
+        var currentIds: Store<string[]> = state.osmConnection.preferencesHandler.preferences
             .map(allPreferences => {
                 const ids: string[] = []
 
@@ -250,7 +250,7 @@ export default class MoreScreen extends Combine {
                 return ids
             });
 
-        var stableIds = UIEventSource.ListStabilized<string>(currentIds)
+        var stableIds = Stores.ListStabilized<string>(currentIds)
         return new VariableUiElement(
             stableIds.map(ids => {
                 const allThemes: { element: BaseUIElement, predicate?: (s: string) => boolean }[] = []

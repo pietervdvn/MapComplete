@@ -1,14 +1,14 @@
 /**
  * This feature source helps the ShowDataLayer class: it introduces the necessary extra features and indicates with what renderConfig it should be rendered.
  */
-import {UIEventSource} from "../../UIEventSource";
+import {Store, UIEventSource} from "../../UIEventSource";
 import {GeoOperations} from "../../GeoOperations";
 import FeatureSource from "../FeatureSource";
 import PointRenderingConfig from "../../../Models/ThemeConfig/PointRenderingConfig";
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 
 export default class RenderingMultiPlexerFeatureSource {
-    public readonly features: UIEventSource<(any & { pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined })[]>;
+    public readonly features: Store<(any & { pointRenderingIndex: number | undefined, lineRenderingIndex: number | undefined })[]>;
 
     constructor(upstream: FeatureSource, layer: LayerConfig) {
         
@@ -27,7 +27,7 @@ export default class RenderingMultiPlexerFeatureSource {
         this.features = upstream.features.map(
             features => {
                 if (features === undefined) {
-                    return;
+                    return undefined;
                 }
 
 
@@ -48,59 +48,64 @@ export default class RenderingMultiPlexerFeatureSource {
 
                 for (const f of features) {
                     const feat = f.feature;
+                    if(feat === undefined){
+                        continue
+                    }
+                    if(feat.geometry === undefined){
+                        console.error("No geometry in ", feat,"provided by", upstream.features.tag, upstream.name)
+                    }
                     if (feat.geometry.type === "Point") {
-
                         for (const rendering of pointRenderings) {
                             withIndex.push({
                                 ...feat,
                                 pointRenderingIndex: rendering.index
                             })
                         }
-                    } else {
-                        // This is a a line: add the centroids
-                        let centerpoint: [number, number] = undefined;
-                        let projectedCenterPoint : [number, number] = undefined
-                        if(hasCentroid){
-                            centerpoint  = GeoOperations.centerpointCoordinates(feat)
-                            if(projectedCentroidRenderings.length > 0){
-                                projectedCenterPoint = <[number,number]> GeoOperations.nearestPoint(feat, centerpoint).geometry.coordinates
-                            }
+                        continue
+                    }
+                    
+                    // This is a a line: add the centroids
+                    let centerpoint: [number, number] = undefined;
+                    let projectedCenterPoint: [number, number] = undefined
+                    if (hasCentroid) {
+                        centerpoint = GeoOperations.centerpointCoordinates(feat)
+                        if (projectedCentroidRenderings.length > 0) {
+                            projectedCenterPoint = <[number, number]>GeoOperations.nearestPoint(feat, centerpoint).geometry.coordinates
                         }
-                        for (const rendering of centroidRenderings) {
+                    }
+                    for (const rendering of centroidRenderings) {
+                        addAsPoint(feat, rendering, centerpoint)
+                    }
+
+
+                    if (feat.geometry.type === "LineString") {
+
+                        for (const rendering of projectedCentroidRenderings) {
+                            addAsPoint(feat, rendering, projectedCenterPoint)
+                        }
+
+                        // Add start- and endpoints
+                        const coordinates = feat.geometry.coordinates
+                        for (const rendering of startRenderings) {
+                            addAsPoint(feat, rendering, coordinates[0])
+                        }
+                        for (const rendering of endRenderings) {
+                            const coordinate = coordinates[coordinates.length - 1]
+                            addAsPoint(feat, rendering, coordinate)
+                        }
+
+                    } else {
+                        for (const rendering of projectedCentroidRenderings) {
                             addAsPoint(feat, rendering, centerpoint)
                         }
-                        
+                    }
 
-                        if (feat.geometry.type === "LineString") {
-
-                            for (const rendering of projectedCentroidRenderings) {
-                                addAsPoint(feat, rendering, projectedCenterPoint)
-                            }
-                            
-                            // Add start- and endpoints
-                            const coordinates = feat.geometry.coordinates
-                            for (const rendering of startRenderings) {
-                                addAsPoint(feat, rendering, coordinates[0])
-                            }
-                            for (const rendering of endRenderings) {
-                                const coordinate = coordinates[coordinates.length - 1]
-                                addAsPoint(feat, rendering, coordinate)
-                            }
-
-                        }else{
-                            for (const rendering of projectedCentroidRenderings) {
-                                addAsPoint(feat, rendering, centerpoint)
-                            }
-                        }
-
-                        // AT last, add it 'as is' to what we should render 
-                        for (let i = 0; i < lineRenderObjects.length; i++) {
-                            withIndex.push({
-                                ...feat,
-                                lineRenderingIndex: i
-                            })
-                        }
-
+                    // AT last, add it 'as is' to what we should render 
+                    for (let i = 0; i < lineRenderObjects.length; i++) {
+                        withIndex.push({
+                            ...feat,
+                            lineRenderingIndex: i
+                        })
                     }
                 }
 

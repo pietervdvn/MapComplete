@@ -3,12 +3,12 @@
  * Data coming from upstream will always overwrite a previous value
  */
 import FeatureSource, {Tiled} from "../FeatureSource";
-import {UIEventSource} from "../../UIEventSource";
+import {Store, UIEventSource} from "../../UIEventSource";
 import {BBox} from "../../BBox";
 
 export default class RememberingSource implements FeatureSource, Tiled {
 
-    public readonly features: UIEventSource<{ feature: any, freshness: Date }[]>;
+    public readonly features: Store<{ feature: any, freshness: Date }[]>;
     public readonly name;
     public readonly tileIndex: number
     public readonly bbox: BBox

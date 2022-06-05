@@ -1,5 +1,5 @@
 import Combine from "../Base/Combine";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
 import Translations from "../i18n/Translations";
 import {Utils} from "../../Utils";
@@ -15,8 +15,8 @@ import CheckBoxes from "../Input/Checkboxes";
  * Shows the attributes by value, requests to check them of
  */
 export class PreviewAttributesPanel extends Combine implements FlowStep<{ features: { properties: any, geometry: { coordinates: [number, number] } }[] }> {
-    public readonly IsValid: UIEventSource<boolean>;
-    public readonly Value: UIEventSource<{ features: { properties: any, geometry: { coordinates: [number, number] } }[] }>
+    public readonly IsValid: Store<boolean>;
+    public readonly Value: Store<{ features: { properties: any, geometry: { coordinates: [number, number] } }[] }>
 
     constructor(
         state: UserRelatedState,

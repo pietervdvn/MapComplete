@@ -1,4 +1,4 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Lazy from "../Base/Lazy";
@@ -9,16 +9,16 @@ import Lazy from "../Base/Lazy";
  */
 export default class Toggle extends VariableUiElement {
 
-    public readonly isEnabled: UIEventSource<boolean>;
+    public readonly isEnabled: Store<boolean>;
 
-    constructor(showEnabled: string | BaseUIElement, showDisabled: string | BaseUIElement, isEnabled: UIEventSource<boolean> = new UIEventSource<boolean>(false)) {
+    constructor(showEnabled: string | BaseUIElement, showDisabled: string | BaseUIElement, isEnabled: Store<boolean> = new UIEventSource<boolean>(false)) {
         super(
             isEnabled?.map(isEnabled => isEnabled ? showEnabled : showDisabled)
         );
         this.isEnabled = isEnabled
     }
 
-    public static If(condition: UIEventSource<boolean>, constructor: () => BaseUIElement): BaseUIElement {
+    public static If(condition: Store<boolean>, constructor: () => BaseUIElement): BaseUIElement {
         if (constructor === undefined) {
             return undefined
         }
@@ -29,8 +29,24 @@ export default class Toggle extends VariableUiElement {
         )
 
     }
+    
+}
 
-    public ToggleOnClick(): Toggle {
+/**
+ * Same as `Toggle`, but will swap on click
+ */
+export class ClickableToggle extends Toggle {
+
+    public readonly isEnabled: UIEventSource<boolean>;
+
+    constructor(showEnabled: string | BaseUIElement, showDisabled: string | BaseUIElement, isEnabled: UIEventSource<boolean> = new UIEventSource<boolean>(false)) {
+        super(
+          showEnabled, showDisabled, isEnabled
+        );
+        this.isEnabled = isEnabled
+    }
+    
+    public ToggleOnClick(): ClickableToggle {
         const self = this;
         this.onClick(() => {
             self.isEnabled.setData(!self.isEnabled.data);
