@@ -315,6 +315,10 @@ function transformTranslation(obj: any, path: string[] = [], languageWhitelist :
             if(subParts !== null){
                 // convert '{to_substitute}' into 'to_substitute'
                 const types = Utils.Dedup( subParts.map(tp => tp.substring(1, tp.length - 1)))
+                const invalid = types.filter(part => part.match(/^[a-z0-9A-Z_]+(\(.*\))?$/) == null)
+                if(invalid.length > 0){
+                    throw `At ${path.join(".")}: A subpart contains invalid characters: ${subParts.join(', ')}`
+                }
                 expr = `return new TypedTranslation<{ ${types.join(", ")} }>(${JSON.stringify(value)}, "core:${path.join(".")}.${key}")`
             }
             

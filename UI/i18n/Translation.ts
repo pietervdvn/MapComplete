@@ -49,6 +49,10 @@ export class Translation extends BaseUIElement {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
     }   
 
+    public toString(){
+        return this.txt;
+    }
+    
     static ExtractAllTranslationsFrom(object: any, context = ""): { context: string, tr: Translation }[] {
         const allTranslations: { context: string, tr: Translation }[] = []
         for (const key in object) {
@@ -286,4 +290,6 @@ export class TypedTranslation<T> extends Translation {
             return Utils.SubstituteKeys(template, text, lang);
         }, context)
     }
+    
+    
 }
