@@ -250,32 +250,12 @@ export class ImmutableStore<T> extends Store<T> {
 
 export class UIEventSource<T> extends Store<T> {
 
-    private static allSources: UIEventSource<any>[] = UIEventSource.PrepPerf();
     public data: T;
     private _callbacks: ((t: T) => (boolean | void | any)) [] = [];
 
     constructor(data: T, tag: string = "") {
         super(tag);
         this.data = data;
-        UIEventSource.allSources.push(this);
-    }
-
-    static PrepPerf(): UIEventSource<any>[] {
-        if (Utils.runningFromConsole) {
-            return [];
-        }
-        // @ts-ignore
-        window.mapcomplete_performance = () => {
-            console.log(UIEventSource.allSources.length, "uieventsources created");
-            const copy = [...UIEventSource.allSources];
-            copy.sort((a, b) => b._callbacks.length - a._callbacks.length);
-            console.log("Topten is:")
-            for (let i = 0; i < 10; i++) {
-                console.log(copy[i].tag, copy[i]);
-            }
-            return UIEventSource.allSources;
-        }
-        return [];
     }
 
     public static flatten<X>(source: Store<Store<X>>, possibleSources?: Store<any>[]): UIEventSource<X> {
