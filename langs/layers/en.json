@@ -3663,10 +3663,10 @@
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional."
+                        "then": "This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional."
                     },
                     "1": {
-                        "then": "A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table"
+                        "then": "A <b>restaurant</b>, focused on creating a nice experience where one is served at the table"
                     }
                 },
                 "question": "What type of business is this?"
