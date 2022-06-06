@@ -132,7 +132,7 @@ export default class NearbyImages extends Lazy {
             return new VariableUiElement(loadedPictures.map(loaded => {
                 
                 if (loaded?.images === undefined) {
-                    return NearbyImages.NoImagesView(new Loading(t.loading))
+                    return NearbyImages.NoImagesView(new Loading(t.loading)).SetClass("animate-pulse")
                 }
                 const images = loaded.images
                 const beforeFilter = loaded?.beforeFilter
