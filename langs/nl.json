@@ -451,8 +451,8 @@
         "commandNotFound": "Sorry, ik heb je commando niet verstaan. Zou het kunnen dat je {0}, {1}, {2} of ${2} bedoelt? <p>Je kan ook <code>help</code> sturen om een overzicht van alle commando's te zien</p>",
         "commands": {
             "help": {
-                "argcmd": "The command you want more information about",
-                "docs": "Prints info about supported commands",
+                "argcmd": "Het commando waarvoor je meer informatie wilt",
+                "docs": "Geeft informatie over de gekende commando's",
                 "p0": "Hallo! Ik ben MapComplete-bot {bot_version} (gebouwd met MapComplete {mc_version}).",
                 "p1": "Je kan me een commando sturen en dan zal ik dat commando opvolgen. Dit kan door me een privé-bericht te sturen. In een publieke ruimte zal ik antwoorden als een bericht begint met <code>!</code> of een mention.",
                 "priviligedComand": "Commando waar je rechten voor nodig hebt",
@@ -461,7 +461,7 @@
                 "insufficientRights": "Je hebt geen toegang tot dit commando."
             },
             "language": {
-                "hasBeenSet": "De taal is ingesteld op <b>{language}</b>.",
+                "hasBeenSet": "De taal is ingesteld op &lt;b&gt;{language}&lt;/b&gt;.",
                 "knownLanguages": "Je kan een van de volgende talen kiezen:",
                 "helpTranslating": "Help mee met het vertalen van mijn teksten om Weblate.",
                 "arglang": "De taal die ik vanaf nu in deze ruimte ga spreken",
@@ -479,9 +479,9 @@
                 "docs": "Stuurt een (deel van) de gevraagde pagina van wiki.osm.org. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina."
             }
         },
-        "decryptionFailed": "Sorry, I couldn't decrypt your message. You can try to leave this channel and to connect again",
-        "noSufficientRights": "This command is only available to administrators or users who have this role",
-        "tooLongForPublic": "Sorry, this message is too long for a public room - send me a direct message instead",
+        "decryptionFailed": "Sorry, er ik kon je bericht niet ontcijferen. Probeer om deze kamer te verlaten en opnieuw te connecteren",
+        "noSufficientRights": "Dit commando is enkel beschikbaar voor administrators en wie rechten heeft gekregen",
+        "tooLongForPublic": "Sorry, dit bericht is te lang voor een publieke ruimte - stuur me een privébericht",
         "commandFailed": "Sorry, er ging iets mis toen ik probeerde om <code>{cmd}</code> uit te voeren."
     },
     "move": {
