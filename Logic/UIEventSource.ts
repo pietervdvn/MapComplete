@@ -56,7 +56,6 @@ export class Stores {
     public static ListStabilized<T>(src: Store<T[]>): Store<T[]> {
         const stable = new UIEventSource<T[]>(undefined)
         src.addCallbackAndRun(list => {
-            console.trace("Running list stabilization", list)
             if (list === undefined) {
                 stable.setData(undefined)
                 return;
