@@ -1,4 +1,4 @@
-import {Store, UIEventSource} from "../../Logic/UIEventSource";
+import {ImmutableStore, Store} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Toggle from "../Input/Toggle";
@@ -29,7 +29,7 @@ export class SaveButton extends Toggle {
         super(
             save,
             pleaseLogin,
-            osmConnection?.isLoggedIn ?? new UIEventSource<any>(false)
+            osmConnection?.isLoggedIn ?? new ImmutableStore(false)
         )
 
     }

@@ -1,5 +1,5 @@
 import osmAuth from "osm-auth";
-import {Stores, UIEventSource} from "../UIEventSource";
+import {Store, Stores, UIEventSource} from "../UIEventSource";
 import {OsmPreferences} from "./OsmPreferences";
 import {ChangesetHandler} from "./ChangesetHandler";
 import {ElementStorage} from "../ElementStorage";
@@ -44,7 +44,7 @@ export class OsmConnection {
     }
     public auth;
     public userDetails: UIEventSource<UserDetails>;
-    public isLoggedIn: UIEventSource<boolean>
+    public isLoggedIn: Store<boolean>
     public loadingStatus = new UIEventSource<"not-attempted" | "loading" | "error" | "logged-in">("not-attempted")
     public preferencesHandler: OsmPreferences;
     public readonly _oauth_config: {
@@ -86,13 +86,15 @@ export class OsmConnection {
             ud.totalMessages = 42;
         }
         const self = this;
-        this.isLoggedIn = this.userDetails.map(user => user.loggedIn).addCallback(isLoggedIn => {
+        this.isLoggedIn = this.userDetails.map(user => user.loggedIn);
+        this.isLoggedIn.addCallback(isLoggedIn => {
             if (self.userDetails.data.loggedIn == false && isLoggedIn == true) {
                 // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
                 // This means someone attempted to toggle this; so we attempt to login!
                 self.AttemptLogin()
             }
         });
+        
         this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false);
 
         this.updateAuthObject();

@@ -142,7 +142,7 @@ export default class UserRelatedState extends ElementsState {
                     Locale.language.setData(layoutToUse.language[0]);
                 }
             })
-            .ping();
+        Locale.language.ping();
     }
 
 }

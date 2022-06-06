@@ -91,7 +91,8 @@
         "hu": "Mi a neve ennek a nyilvános könyvespolcnak?"
       },
       "freeform": {
-        "key": "name"
+        "key": "name",
+        "inline": true
       },
       "mappings": [
         {

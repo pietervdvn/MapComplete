@@ -3,6 +3,7 @@ import BaseUIElement from "../BaseUIElement";
 
 export interface ReadonlyInputElement<T> extends BaseUIElement{
     GetValue(): Store<T>;
+    IsValid(t: T): boolean;
 }
 
 

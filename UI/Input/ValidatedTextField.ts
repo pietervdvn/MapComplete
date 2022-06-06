@@ -25,6 +25,7 @@ import Title from "../Base/Title";
 import InputElementMap from "./InputElementMap";
 import Translations from "../i18n/Translations";
 import {Translation} from "../i18n/Translation";
+import BaseLayer from "../../Models/BaseLayer";
 
 export class TextFieldDef {
 
@@ -71,7 +72,7 @@ export class TextFieldDef {
         placeholder?: string | BaseUIElement,
         country?: () => string,
         location?: [number /*lat*/, number /*lon*/],
-        mapBackgroundLayer?: UIEventSource<any>,
+        mapBackgroundLayer?: UIEventSource</*BaseLayer*/ any>,
         unit?: Unit,
         args?: (string | number | boolean)[] // Extra arguments for the inputHelper,
         feature?: any,

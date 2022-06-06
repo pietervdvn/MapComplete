@@ -1,14 +1,25 @@
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import Img from "./UI/Base/Img";
-import { Utils } from "./Utils";
+import {UIEventSource} from "./Logic/UIEventSource";
+import TagRenderingQuestion from "./UI/Popup/TagRenderingQuestion";
+import TagRenderingConfig from "./Models/ThemeConfig/TagRenderingConfig";
 
-new FixedUiElement("Hi").AttachTo("maindiv")
+const config = new TagRenderingConfig({
+    question: "What is the name?",
+    render: "The name is {name}",
+    freeform: {
+        key: 'name',
+        inline:true
+    },
+    mappings:[
+        {
+            if:"noname=yes",
+            then: "This feature has no name"
+        }
+    ]
+})
 
-window.setTimeout(() => {
-    new FixedUiElement("Loading...").AttachTo("maindiv")
-//    new Img("http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s1600/beautiful%2Bkitten.jpg").AttachTo("maindiv")
-    Utils.download("http://127.0.0.1:1234/somedata").then(data => {
-        console.log("Got ", data)
-        return new FixedUiElement(data).AttachTo("extradiv");
-    })
-}, 1000)
+const tags = new UIEventSource<any>({
+    name: "current feature name"
+})
+
+new TagRenderingQuestion(
+    tags, config, undefined).AttachTo("maindiv")

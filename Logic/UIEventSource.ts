@@ -18,7 +18,7 @@ export class Stores {
         return source;
     }
 
-    public static FromPromiseWithErr<T>(promise: Promise<T>): Store<{ success: T } | { error: any }>{
+    public static FromPromiseWithErr<T>(promise: Promise<T>): Store<{ success: T } | { error: any }> {
         return UIEventSource.FromPromiseWithErr(promise);
     }
 
@@ -54,15 +54,18 @@ export class Stores {
      * @constructor
      */
     public static ListStabilized<T>(src: Store<T[]>): Store<T[]> {
-
-        const stable = new UIEventSource<T[]>(src.data)
-        src.addCallback(list => {
+        const stable = new UIEventSource<T[]>(undefined)
+        src.addCallbackAndRun(list => {
+            console.trace("Running list stabilization", list)
             if (list === undefined) {
                 stable.setData(undefined)
                 return;
             }
             const oldList = stable.data
             if (oldList === list) {
+                return;
+            }
+            if(oldList == list){
                 return;
             }
             if (oldList === undefined || oldList.length !== list.length) {
@@ -91,16 +94,16 @@ export abstract class Store<T> {
      * OPtional value giving a title to the UIEventSource, mainly used for debugging
      */
     public readonly tag: string | undefined;
-    
+
 
     constructor(tag: string = undefined) {
         this.tag = tag;
         if ((tag === undefined || tag === "")) {
             let createStack = Utils.runningFromConsole;
-            if(!Utils.runningFromConsole) {
+            if (!Utils.runningFromConsole) {
                 createStack = window.location.hostname === "127.0.0.1"
             }
-            if(createStack) {
+            if (createStack) {
                 const callstack = new Error().stack.split("\n")
                 this.tag = callstack[1]
             }
@@ -113,25 +116,25 @@ export abstract class Store<T> {
     /**
      * Add a callback function which will run on future data changes
      */
-    abstract addCallback(callback: (data: T) => void);
+    abstract addCallback(callback: (data: T) => void): (() => void);
 
     /**
      * Adds a callback function, which will be run immediately.
      * Only triggers if the current data is defined
      */
-    abstract addCallbackAndRunD(callback: (data: T) => void);
+    abstract addCallbackAndRunD(callback: (data: T) => void): (() => void);
 
     /**
      * Add a callback function which will run on future data changes
      * Only triggers if the data is defined
      */
-    abstract addCallbackD(callback: (data: T) => void);
+    abstract addCallbackD(callback: (data: T) => void): (() => void);
 
     /**
      * Adds a callback function, which will be run immediately.
      * Only triggers if the current data is defined
      */
-    abstract addCallbackAndRun(callback: (data: T) => void);
+    abstract addCallbackAndRun(callback: (data: T) => void): (() => void);
 
     public withEqualityStabilized(comparator: (t: T | undefined, t1: T | undefined) => boolean): Store<T> {
         let oldValue = undefined;
@@ -149,6 +152,49 @@ export abstract class Store<T> {
 
     /**
      * Monadic bind function
+     * 
+     * // simple test with bound and immutablestores
+     * const src = new UIEventSource<number>(3)
+     * const bound = src.bind(i => new ImmutableStore(i * 2))
+     * let lastValue = undefined;
+     * bound.addCallbackAndRun(v => lastValue = v);
+     * lastValue // => 6
+     * src.setData(21)
+     * lastValue // => 42
+     * 
+     * // simple test with bind over a mapped value
+     * const src = new UIEventSource<number>(0)
+     * const srcs : UIEventSource<string>[] = [new UIEventSource<string>("a"), new UIEventSource<string>("b")]
+     * const bound = src.map(i => -i).bind(i => srcs[i])
+     * let lastValue : string = undefined;
+     * bound.addCallbackAndRun(v => lastValue = v);
+     * lastValue // => "a"
+     * src.setData(-1)
+     * lastValue // => "b"
+     * srcs[1].setData("xyz")
+     * lastValue // => "xyz"
+     * srcs[0].setData("def")
+     * lastValue // => "xyz"
+     * src.setData(0)
+     * lastValue // => "def"
+     * 
+     * 
+     * 
+     * // advanced test with bound
+     * const src = new UIEventSource<number>(0)
+     * const srcs : UIEventSource<string>[] = [new UIEventSource<string>("a"), new UIEventSource<string>("b")]
+     * const bound = src.bind(i => srcs[i])
+     * let lastValue : string = undefined;
+     * bound.addCallbackAndRun(v => lastValue = v);
+     * lastValue // => "a"
+     * src.setData(1)
+     * lastValue // => "b"
+     * srcs[1].setData("xyz")
+     * lastValue // => "xyz"
+     * srcs[0].setData("def")
+     * lastValue // => "xyz"
+     * src.setData(0)
+     * lastValue // => "def"
      */
     public bind<X>(f: ((t: T) => Store<X>)): Store<X> {
         const mapped = this.map(f)
@@ -195,6 +241,7 @@ export abstract class Store<T> {
 
         return newSource;
     }
+
     public AsPromise(condition?: ((t: T) => boolean)): Promise<T> {
         const self = this;
         condition = condition ?? (t => t !== undefined)
@@ -209,35 +256,42 @@ export abstract class Store<T> {
             }
         })
     }
-    
+
 }
 
 export class ImmutableStore<T> extends Store<T> {
     public readonly data: T;
+
+    private static readonly pass: (() => void) = () => {
+    }
 
     constructor(data: T) {
         super();
         this.data = data;
     }
 
-    addCallback(callback: (data: T) => void) {
+    addCallback(callback: (data: T) => void): (() => void) {
         // pass: data will never change
+        return ImmutableStore.pass
     }
 
-    addCallbackAndRun(callback: (data: T) => void) {
+    addCallbackAndRun(callback: (data: T) => void): (() => void) {
         callback(this.data)
         // no callback registry: data will never change
+        return ImmutableStore.pass
     }
 
-    addCallbackAndRunD(callback: (data: T) => void) {
-        if(this.data !== undefined){
+    addCallbackAndRunD(callback: (data: T) => void): (() => void) {
+        if (this.data !== undefined) {
             callback(this.data)
         }
         // no callback registry: data will never change
+        return ImmutableStore.pass
     }
 
-    addCallbackD(callback: (data: T) => void) {
+    addCallbackD(callback: (data: T) => void): (() => void) {
         // pass: data will never change
+        return ImmutableStore.pass
     }
 
 
@@ -247,11 +301,196 @@ export class ImmutableStore<T> extends Store<T> {
 
 }
 
+/**
+ * Keeps track of the callback functions
+ */
+class ListenerTracker<T> {
+    private readonly _callbacks: ((t: T) => (boolean | void | any)) [] = [];
+
+    /**
+     * Adds a callback which can be called; a function to unregister is returned
+     */
+    public addCallback(callback: (t: T) => (boolean | void | any)): (() => void) {
+        if (callback === console.log) {
+            // This ^^^ actually works!
+            throw "Don't add console.log directly as a callback - you'll won't be able to find it afterwards. Wrap it in a lambda instead."
+        }
+        this._callbacks.push(callback);
+
+        // Give back an unregister-function!
+        return () => {
+            const index = this._callbacks.indexOf(callback)
+            if (index >= 0) {
+                this._callbacks.splice(index, 1)
+            }
+        }
+    }
+
+    /**
+     * Call all the callbacks.
+     * Returns the number of registered callbacks
+     */
+    public ping(data: T): number {
+        let toDelete = undefined
+        let startTime = new Date().getTime() / 1000;
+        for (const callback of this._callbacks) {
+            if (callback(data) === true) {
+                // This callback wants to be deleted
+                // Note: it has to return precisely true in order to avoid accidental deletions
+                if (toDelete === undefined) {
+                    toDelete = [callback]
+                } else {
+                    toDelete.push(callback)
+                }
+            }
+        }
+        let endTime = new Date().getTime() / 1000
+        if ((endTime - startTime) > 500) {
+            console.trace("Warning: a ping took more then 500ms; this is probably a performance issue")
+        }
+        if (toDelete !== undefined) {
+            for (const toDeleteElement of toDelete) {
+                this._callbacks.splice(this._callbacks.indexOf(toDeleteElement), 1)
+            }
+        }
+        return this._callbacks.length
+    }
+
+    length() {
+        return this._callbacks.length
+    }
+}
+
+
+/**
+ * The mapped store is a helper type which does the mapping of a function.
+ * It'll fuse
+ */
+class MappedStore<TIn, T> extends Store<T> {
+
+    private _upstream: Store<TIn>;
+    private _unregisterFromUpstream: (() => void)
+    private _f: (t: TIn) => T;
+    private readonly _extraStores: Store<any>[] | undefined;
+    private _unregisterFromExtraStores: (() => void)[] | undefined
+
+    private _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
+
+    private static readonly pass: () => {}
+
+
+    constructor(upstream: Store<TIn>, f: (t: TIn) => T, extraStores: Store<any>[] = undefined, initialData : T= undefined) {
+        super();
+        this._upstream = upstream;
+        this._f = f;
+        this._data = initialData ?? f(upstream.data)
+        this._extraStores = extraStores;
+    }
+
+    private _data: T;
+    private _callbacksAreRegistered = false
+
+    get data(): T {
+        return this._data
+    }
+
+
+    map<J>(f: (t: T) => J, extraStores: (Store<any>)[] = undefined): Store<J> {
+        let stores: Store<any>[] = undefined
+        if (extraStores?.length > 0 || this._extraStores?.length > 0) {
+            stores = []
+        }
+        if (extraStores?.length > 0) {
+            stores.push(...extraStores)
+        }
+        if (this._extraStores?.length > 0) {
+            this._extraStores?.forEach(store => {
+                if (stores.indexOf(store) < 0) {
+                    stores.push(store)
+                }
+            })
+        }
+        return new MappedStore(
+            this._upstream,
+            data => f(this._f(data)),
+            stores,
+            f(this._data)
+        );
+    }
+
+    private unregisterFromUpstream() {
+        console.log("Unregistering callbacks for", this.tag)
+        this._callbacksAreRegistered = false;
+        this._unregisterFromUpstream()
+        this._unregisterFromExtraStores?.forEach(unr => unr())
+    }
+
+    private update(): void {
+        const newData = this._f(this._upstream.data)
+        if (this._data == newData) {
+            return;
+        }
+        this._data = newData
+        this._callbacks.ping(this._data)
+    }
+
+    addCallback(callback: (data: T) => (any | boolean | void)): (() => void) {
+        if (!this._callbacksAreRegistered) {
+            const self = this
+            // This is the first callback that is added
+            // We register this 'map' to the upstream object and all the streams
+            this._unregisterFromUpstream = this._upstream.addCallback(
+                _ => self.update()
+            )
+            this._unregisterFromExtraStores = this._extraStores?.map(store =>
+                store?.addCallback(_ => self.update())
+            )
+            this._callbacksAreRegistered = true;
+        }
+        const unregister = this._callbacks.addCallback(callback)
+        return () => {
+            unregister()
+            if (this._callbacks.length() == 0) {
+                this.unregisterFromUpstream()
+            }
+        }
+    }
+
+    addCallbackAndRun(callback: (data: T) => (any | boolean | void)): (() => void) {
+        const unregister = this.addCallback(callback)
+        const doRemove = callback(this.data)
+        if (doRemove === true) {
+            unregister()
+            return MappedStore.pass
+        }
+        return unregister
+    }
+
+    addCallbackAndRunD(callback: (data: T) => (any | boolean | void)): (() => void) {
+        return this.addCallbackAndRun(data => {
+            if (data !== undefined) {
+                return callback(data)
+            }
+        })
+    }
+
+    addCallbackD(callback: (data: T) => (any | boolean | void)): (() => void) {
+        return this.addCallback(data => {
+            if (data !== undefined) {
+                return callback(data)
+            }
+        })
+    }
+
+
+}
 
 export class UIEventSource<T> extends Store<T> {
 
     public data: T;
-    private _callbacks: ((t: T) => (boolean | void | any)) [] = [];
+    private _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
+
+    private static readonly pass: () => {}
 
     constructor(data: T, tag: string = "") {
         super(tag);
@@ -284,13 +523,13 @@ export class UIEventSource<T> extends Store<T> {
      * Converts a promise into a UIVentsource, sets the UIEVentSource when the result is calculated.
      * If the promise fails, the value will stay undefined, but 'onError' will be called
      */
-    public static FromPromise<T>(promise: Promise<T>, onError :( (e: any) => void) = undefined): UIEventSource<T> {
+    public static FromPromise<T>(promise: Promise<T>, onError: ((e: any) => void) = undefined): UIEventSource<T> {
         const src = new UIEventSource<T>(undefined)
         promise?.then(d => src.setData(d))
         promise?.catch(err => {
-            if(onError !== undefined){
+            if (onError !== undefined) {
                 onError(err)
-            }else{
+            } else {
                 console.warn("Promise failed:", err);
             }
         })
@@ -332,21 +571,33 @@ export class UIEventSource<T> extends Store<T> {
      * If the result of the callback is 'true', the callback is considered finished and will be removed again
      * @param callback
      */
-    public addCallback(callback: ((latestData: T) => (boolean | void | any))): UIEventSource<T> {
-        if (callback === console.log) {
-            // This ^^^ actually works!
-            throw "Don't add console.log directly as a callback - you'll won't be able to find it afterwards. Wrap it in a lambda instead."
-        }
-        this._callbacks.push(callback);
-        return this;
+    public addCallback(callback: ((latestData: T) => (boolean | void | any))): (() => void) {
+        return this._callbacks.addCallback(callback);
     }
 
-    public addCallbackAndRun(callback: ((latestData: T) => (boolean | void | any))): UIEventSource<T> {
+    public addCallbackAndRun(callback: ((latestData: T) => (boolean | void | any))): (() => void) {
         const doDeleteCallback = callback(this.data);
         if (doDeleteCallback !== true) {
-            this.addCallback(callback);
+            return this.addCallback(callback);
+        } else {
+            return UIEventSource.pass
         }
-        return this;
+    }
+
+    public addCallbackAndRunD(callback: (data: T) => void): (() => void) {
+        return this.addCallbackAndRun(data => {
+            if (data !== undefined && data !== null) {
+                return callback(data)
+            }
+        })
+    }
+
+    public addCallbackD(callback: (data: T) => void): (() => void) {
+        return this.addCallback(data => {
+            if (data !== undefined && data !== null) {
+                return callback(data)
+            }
+        })
     }
 
     public setData(t: T): UIEventSource<T> {
@@ -354,33 +605,12 @@ export class UIEventSource<T> extends Store<T> {
             return;
         }
         this.data = t;
-        this.ping();
+        this._callbacks.ping(t)
         return this;
     }
 
     public ping(): void {
-        let toDelete = undefined
-        let startTime = new Date().getTime() / 1000;
-        for (const callback of this._callbacks) {
-            if (callback(this.data) === true) {
-                // This callback wants to be deleted
-                // Note: it has to return precisely true in order to avoid accidental deletions
-                if (toDelete === undefined) {
-                    toDelete = [callback]
-                } else {
-                    toDelete.push(callback)
-                }
-            }
-        }
-        let endTime = new Date().getTime() / 1000
-        if ((endTime - startTime) > 500) {
-            console.trace("Warning: a ping of ", this.tag, " took more then 500ms; this is probably a performance issue")
-        }
-        if (toDelete !== undefined) {
-            for (const toDeleteElement of toDelete) {
-                this._callbacks.splice(this._callbacks.indexOf(toDeleteElement), 1)
-            }
-        }
+        this._callbacks.ping(this.data)
     }
 
     /**
@@ -388,32 +618,29 @@ export class UIEventSource<T> extends Store<T> {
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
      * @param f: The transforming function
      * @param extraSources: also trigger the update if one of these sources change
+     *
+     * const src = new UIEventSource<number>(10)
+     * const store = src.map(i => i * 2)
+     * store.data // => 20
+     * let srcSeen = undefined;
+     * src.addCallback(v => {
+     *     console.log("Triggered")
+     *     srcSeen = v
+     * })
+     * let lastSeen = undefined
+     * store.addCallback(v => {
+     *     console.log("Triggered!")
+     *     lastSeen = v
+     * })
+     * src.setData(21)
+     * srcSeen // => 21
+     * lastSeen // => 42
      */
     public map<J>(f: ((t: T) => J),
-                   extraSources: Store<any>[] = []): Store<J> {
-        const self = this;
-
-        const stack = new Error().stack.split("\n");
-        const callee = stack[1]
-
-        const newSource = new UIEventSource<J>(
-            f(this.data),
-            "map(" + this.tag + ")@" + callee
-        );
-
-        const update = function () {
-            newSource.setData(f(self.data));
-            return false;
-        }
-
-        this.addCallback(update);
-        for (const extraSource of extraSources) {
-            extraSource?.addCallback(update);
-        }
-
-        return newSource;
+                  extraSources: Store<any>[] = []): Store<J> {
+        return new MappedStore(this, f, extraSources);
     }
-    
+
     /**
      * Two way sync with functions in both directions
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
@@ -423,9 +650,9 @@ export class UIEventSource<T> extends Store<T> {
      * @param allowUnregister: if set, the update will be halted if no listeners are registered
      */
     public sync<J>(f: ((t: T) => J),
-                  extraSources: Store<any>[],
-                  g: ((j: J, t: T) => T) ,
-                  allowUnregister = false): UIEventSource<J> {
+                   extraSources: Store<any>[],
+                   g: ((j: J, t: T) => T),
+                   allowUnregister = false): UIEventSource<J> {
         const self = this;
 
         const stack = new Error().stack.split("\n");
@@ -438,7 +665,7 @@ export class UIEventSource<T> extends Store<T> {
 
         const update = function () {
             newSource.setData(f(self.data));
-            return allowUnregister && newSource._callbacks.length === 0
+            return allowUnregister && newSource._callbacks.length() === 0
         }
 
         this.addCallback(update);
@@ -469,22 +696,6 @@ export class UIEventSource<T> extends Store<T> {
             otherSource.setData(this.data);
         }
         return this;
-    }
-
-    addCallbackAndRunD(callback: (data: T) => void) {
-        this.addCallbackAndRun(data => {
-            if (data !== undefined && data !== null) {
-                return callback(data)
-            }
-        })
-    }
-
-    addCallbackD(callback: (data: T) => void) {
-        this.addCallback(data => {
-            if (data !== undefined && data !== null) {
-                return callback(data)
-            }
-        })
     }
 
 }
