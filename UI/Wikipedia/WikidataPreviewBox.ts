@@ -91,7 +91,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
         let link = new Link(
             new Combine([
                 wikidata.id,
-                options.noImages ? wikidata.id : Svg.wikidata_svg().SetStyle("width: 2.5rem").SetClass("block")
+                options?.noImages ? wikidata.id : Svg.wikidata_svg().SetStyle("width: 2.5rem").SetClass("block")
             ]).SetClass("flex"),
             Wikidata.IdToArticle(wikidata.id), true)?.SetClass("must-link")
 
