@@ -3,7 +3,7 @@ import {BBox} from "./BBox";
 import togpx from "togpx"
 import Constants from "../Models/Constants";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import {Coord} from "@turf/turf";
+import {booleanWithin, Coord, Feature, Geometry, MultiPolygon, Polygon, Properties} from "@turf/turf";
 
 export class GeoOperations {
 
@@ -142,7 +142,10 @@ export class GeoOperations {
         return result;
     }
 
-    public static pointInPolygonCoordinates(x: number, y: number, coordinates: [number, number][][]) {
+    /**
+     * Helper function which does the heavy lifting for 'inside'
+     */
+    private static pointInPolygonCoordinates(x: number, y: number, coordinates: [number, number][][]) {
         const inside = GeoOperations.pointWithinRing(x, y, /*This is the outer ring of the polygon */coordinates[0])
         if (!inside) {
             return false;
@@ -737,6 +740,38 @@ export class GeoOperations {
         return turf.bearing(a, b)
     }
 
+    /**
+     * Returns 'true' if one feature contains the other feature
+     * 
+     * const pond: Feature<Polygon, any> = {
+     *       "type": "Feature",
+     *       "properties": {"natural":"water","water":"pond"},
+     *       "geometry": {
+     *         "type": "Polygon",
+     *         "coordinates": [[
+     *             [4.362924098968506,50.8435422298544 ],
+     *             [4.363272786140442,50.8435219059949 ],
+     *             [4.363213777542114,50.8437420806679 ],
+     *             [4.362924098968506,50.8435422298544 ]
+     *           ]]}}
+     * const park: Feature<Polygon, any> =   {
+     *       "type": "Feature",
+     *       "properties": {"leisure":"park"},
+     *       "geometry": {
+     *         "type": "Polygon",
+     *         "coordinates": [[
+     *            [ 4.36073541641235,50.84323737103244 ],
+     *            [ 4.36469435691833, 50.8423905305197 ],
+     *            [ 4.36659336090087, 50.8458997374786 ],
+     *            [ 4.36254858970642, 50.8468007074916 ],
+     *            [ 4.36073541641235, 50.8432373710324 ]
+     *           ]]}}
+     * GeoOperations.completelyWithin(pond, park) // => true
+     * GeoOperations.completelyWithin(park, pond) // => false
+     */
+    static completelyWithin(feature: Feature<Geometry, any>, possiblyEncloingFeature: Feature<Polygon | MultiPolygon, any>) : boolean {
+        return booleanWithin(feature, possiblyEncloingFeature);
+    }
 }
 
 

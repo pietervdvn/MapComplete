@@ -1,0 +1,23 @@
+[
+  {
+    "path": "college.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki"
+    ],
+    "sources": [
+      "https://labs.mapbox.com/maki-icons/"
+    ]
+  },
+  {
+    "path": "school.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki",
+      "https://ideditor.github.io/temaki/docs/"
+    ]
+  }
+]
