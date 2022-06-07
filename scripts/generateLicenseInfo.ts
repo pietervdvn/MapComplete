@@ -72,6 +72,19 @@ knownLicenses.set("streetcomplete", {
     sources: ["https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics", "https://f-droid.org/packages/de.westnordost.streetcomplete/"]
 })
 
+knownLicenses.set("temaki", {
+    authors: ["Temaki"],
+    path: undefined,
+    license: "CC0",
+    sources: ["https://github.com/ideditor/temaki","https://ideditor.github.io/temaki/docs/"]
+})
+
+knownLicenses.set("maki", {
+    authors: ["Maki"],
+    path: undefined,
+    license: "CC0",
+    sources: ["https://labs.mapbox.com/maki-icons/"]
+})
 
 knownLicenses.set("t", {
     authors: [],
