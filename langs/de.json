@@ -451,16 +451,42 @@
         "commandFailed": "Es tut uns leid, beim Ausführen von <code>{cmd}</code> ist etwas schiefgegangen",
         "commandNotFound": "Ihre Anfrage wurde nicht verstanden. Meinten Sie vielleicht {0}, {1}, {2} oder ${2}? <p>Geben Sie <code>help</code> ein, um eine Übersicht über alle Befehle zu sehen</p>",
         "commands": {
+            "documentation": {
+                "argid": "Die ID der Ebene, des Themas oder des URL-Parameters, für die eine Dokumentation benötigt wird",
+                "docs": "Ruft die Dokumentation zu einer MapComplete-Ebene, einem Thema oder einem URL-Parameter ab",
+                "noIdIntro": "Geben Sie eine Ebenen-ID an, um Informationen über eine Ebene zu erhalten. Bekannte Ebenen sind:",
+                "noLayerFound": "Keine Ebene mit Namen <code>{id}</code> gefunden. Vielleicht meinten Sie eine von: ",
+                "noThemeFound": "Kein Thema mit dem Namen <code>{id}</code> gefunden. Vielleicht meinten Sie eines von: ",
+                "noUrlParameterFound": "Kein URL-Parameter mit Namen <code>{id}</code> gefunden. Vielleicht meinten Sie einen von: ",
+                "urlParam": "URL-Parameter <code>{id}<code></code></code>"
+            },
+            "dream": {
+                "docs": "Sendet einen computergenerierten Text",
+                "generatedBy": "Dieser Text wurde von {bot} erstellt, einem auf maschinellem Lernen basierenden Bot, der auf Reddit aktiv ist."
+            },
             "help": {
                 "argcmd": "Der Befehl, über den Sie mehr Informationen wünschen",
                 "askRights": "Bitten Sie {admins}, Ihnen ausreichende Berechtigungen zu erteilen",
                 "docs": "Gibt Informationen über unterstützte Befehle aus",
                 "insufficientRights": "Sie haben derzeit nicht genügend Berechtigungen, um diesen Befehl auszuführen.",
+                "notFound": "Ich habe <code>{cmd}</code> nicht gefunden. Vielleicht meinten Sie einen von {closest}?",
                 "p0": "Hallo! Ich bin MapComplete-bot {bot_version} (basierend auf MapComplete {mc_version}).",
                 "p1": "Senden Sie mir einen Befehl und ich antworte mit etwas Nützlichem: Geben Sie mir einen Befehl über eine private Nachricht oder setzen Sie <code>!</code> vor dem Befehl in einem öffentlichen Raum.",
                 "priviligedComand": "Privilegierter Befehl",
-                "supported": "Meine unterstützten Befehle sind:",
-                "notFound": "Ich habe <code>{cmd}</code> nicht gefunden. Vielleicht meinten Sie einen von {closest}?"
+                "supported": "Meine unterstützten Befehle sind:"
+            },
+            "info": {
+                "closed": "Geschlossen",
+                "closedTodayAndTomorrow": "Heute und morgen geschlossen",
+                "couldNotDownload": "<code>{id}</code> konnte nicht heruntergeladen werden",
+                "editWith": "Dieses Element mit {title} bearbeiten",
+                "fetchingInfoAbout": "Abruf von Daten über {id}...",
+                "foundResults": "{total} Ergebnisse gefunden für <code>${search}</code>, rufe Details ab...",
+                "noEditPossible": "Keine MapComplete-Themen unterstützen dieses Element",
+                "noInfo": "Noch keine relevanten Informationen",
+                "noOpeningHours": "Es sind keine Öffnungszeiten bekannt.",
+                "nothingFound": "Nichts gefunden für <code>{_}</code>",
+                "searchingWorldwide": "Durchsuche OpenStreetMap.org nach Ihrer Suche <code>{_}</code>"
             },
             "language": {
                 "arglang": "Die von nun an zu verwendende Sprache",
@@ -471,38 +497,6 @@
                 "knownLanguages": "Sie können eine der folgenden Sprachen wählen:",
                 "notFound": "Die Sprache {language} wurde nicht gefunden"
             },
-            "welcome": {
-                "p0": "Hallo! Ich bin MapComplete-bot. Ich bin ein Computerprogramm, das OpenStreetMap durchsucht und einige Informationen über <a href=\"https://mapcomplete.osm.be\">MapComplete</a> geben kann, eine Webseite und App, die thematische Karten zeigt. Wenn Informationen fehlen, können Sie sie dort leicht hinzufügen.",
-                "p1": "Senden Sie mir <code>info [searchterm]</code> und ich werde OpenStreetMap für Sie durchsuchen. Ich zeige Ihnen dann die Informationen über das, was ich gefunden habe.",
-                "p3": "Es gibt noch einige weitere Befehle, senden Sie <code>help</code>, um sie alle zu sehen.",
-                "p2": "Alternativ können auch <code>search [ojecttype] near [placename]</code> oder <code>search [objecttype] in [placename]</code> verwendet werden, um nach weiteren Orten zu suchen. Unterstützte Objekttypen sind diejenigen, die in MapComplete gefunden werden können. Weitere Kategorien werden in Zukunft hinzugefügt - und wenn Sie der Herausforderung gewachsen sind, <a href=\"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Making_Your_Own_Theme.md\">können Sie Ihre thematische Karte und damit auch eine Kategorie erstellen</a>"
-            },
-            "documentation": {
-                "noIdIntro": "Geben Sie eine Ebenen-ID an, um Informationen über eine Ebene zu erhalten. Bekannte Ebenen sind:",
-                "argid": "Die ID der Ebene, des Themas oder des URL-Parameters, für die eine Dokumentation benötigt wird",
-                "noThemeFound": "Kein Thema mit dem Namen <code>{id}</code> gefunden. Vielleicht meinten Sie eines von: ",
-                "noLayerFound": "Keine Ebene mit Namen <code>{id}</code> gefunden. Vielleicht meinten Sie eine von: ",
-                "noUrlParameterFound": "Kein URL-Parameter mit Namen <code>{id}</code> gefunden. Vielleicht meinten Sie einen von: ",
-                "urlParam": "URL-Parameter <code>{id}<code></code></code>",
-                "docs": "Ruft die Dokumentation zu einer MapComplete-Ebene, einem Thema oder einem URL-Parameter ab"
-            },
-            "dream": {
-                "generatedBy": "Dieser Text wurde von {bot} erstellt, einem auf maschinellem Lernen basierenden Bot, der auf Reddit aktiv ist.",
-                "docs": "Sendet einen computergenerierten Text"
-            },
-            "info": {
-                "fetchingInfoAbout": "Abruf von Daten über {id}...",
-                "foundResults": "{total} Ergebnisse gefunden für <code>${search}</code>, rufe Details ab...",
-                "noEditPossible": "Keine MapComplete-Themen unterstützen dieses Element",
-                "noInfo": "Noch keine relevanten Informationen",
-                "noOpeningHours": "Es sind keine Öffnungszeiten bekannt.",
-                "nothingFound": "Nichts gefunden für <code>{_}</code>",
-                "searchingWorldwide": "Durchsuche OpenStreetMap.org nach Ihrer Suche <code>{_}</code>",
-                "closed": "Geschlossen",
-                "couldNotDownload": "<code>{id}</code> konnte nicht heruntergeladen werden",
-                "editWith": "Dieses Element mit {title} bearbeiten",
-                "closedTodayAndTomorrow": "Heute und morgen geschlossen"
-            },
             "role": {
                 "allRevoked": "Alle Rechte von <b>{user}</b> wurden widerrufen",
                 "allRolesIntro": "Alle Benutzer, die Rechte haben, sind:",
@@ -512,15 +506,21 @@
                 "docs": "Ändern, was ein Benutzer tun oder nicht tun darf",
                 "noPreviousRoles": "<b>{user}</b> hatte keine vorherigen Rollen",
                 "noRightsNeeded": "Der Befehl <code>{role}</code> kann von jedem ausgeführt werden, Sie müssen keine Rechte dafür festlegen",
-                "userHasRoles": "<b>{user}</b> hat derzeit die folgenden Rollen:",
+                "noRolesYet": "<b>{user}</b> hat derzeit keine Rollen.",
                 "noSuchRole": "Die Rolle <code>{role}</code> kann nicht an <code>{user}</code> vergeben werden. Eine Rolle ist dasselbe wie ein Befehlsname, geben Sie <code>help</code> ein, um alle Befehle zu sehen.",
-                "noRolesYet": "<b>{user}</b> hat derzeit keine Rollen."
+                "userHasRoles": "<b>{user}</b> hat derzeit die folgenden Rollen:"
             },
             "shutdown": {
                 "argmode": "Gibt an, ob der Dienst neu gestartet werden soll, muss einer der folgenden Werte sein: {verbs}",
                 "docs": "Schaltet den Bot ab",
                 "goodbye": "Ich schließe... Bis später!",
                 "notYetShuttingDown": "Ich starte noch nicht neu, da ich erst vor {uptime} Sekunden gebootet habe. Ich werde mindestens {min_uptime} warten, bevor ich neu starte."
+            },
+            "welcome": {
+                "p0": "Hallo! Ich bin MapComplete-bot. Ich bin ein Computerprogramm, das OpenStreetMap durchsucht und einige Informationen über <a href=\"https://mapcomplete.osm.be\">MapComplete</a> geben kann, eine Webseite und App, die thematische Karten zeigt. Wenn Informationen fehlen, können Sie sie dort leicht hinzufügen.",
+                "p1": "Senden Sie mir <code>info [searchterm]</code> und ich werde OpenStreetMap für Sie durchsuchen. Ich zeige Ihnen dann die Informationen über das, was ich gefunden habe.",
+                "p2": "Alternativ können auch <code>search [ojecttype] near [placename]</code> oder <code>search [objecttype] in [placename]</code> verwendet werden, um nach weiteren Orten zu suchen. Unterstützte Objekttypen sind diejenigen, die in MapComplete gefunden werden können. Weitere Kategorien werden in Zukunft hinzugefügt - und wenn Sie der Herausforderung gewachsen sind, <a href=\"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Making_Your_Own_Theme.md\">können Sie Ihre thematische Karte und damit auch eine Kategorie erstellen</a>",
+                "p3": "Es gibt noch einige weitere Befehle, senden Sie <code>help</code>, um sie alle zu sehen."
             },
             "wiki": {
                 "docs": "Gibt (einen Teil) der angegebenen Seite von wiki.osm.org aus. In öffentlichen Räumen wird der erste Absatz angezeigt; in einer Direktnachricht wird die gesamte Seite gesendet."
@@ -529,8 +529,8 @@
         "decryptionFailed": "Es tut mir leid, ich konnte die Nachricht nicht entschlüsseln. Sie können versuchen, diesen Kanal zu verlassen und sich erneut zu verbinden",
         "noSufficientRights": "Dieser Befehl ist nur für Administratoren oder Benutzer mit dieser Rolle verfügbar",
         "subcommanNotFound": "Ich habe die Anfrage nicht verstanden. Dieser Befehl braucht ein Verb, um ausgeführt zu werden, aber <code>{verb}</code> ist kein Verb, das ich kenne. Ich kenne aber die Verben {known_verbs}",
-        "tooLongForPublic": "Leider ist diese Nachricht zu lang für einen öffentlichen Raum - senden Sie mir stattdessen eine Direktnachricht",
-        "subcommandNotGiven": "Ich habe die Anfrage nicht verstanden. Dieser Befehl braucht ein Verb, um ausgeführt zu werden, aber Sie haben keins angegeben. Versuchen Sie eines der {known_verbs}"
+        "subcommandNotGiven": "Ich habe die Anfrage nicht verstanden. Dieser Befehl braucht ein Verb, um ausgeführt zu werden, aber Sie haben keins angegeben. Versuchen Sie eines der {known_verbs}",
+        "tooLongForPublic": "Leider ist diese Nachricht zu lang für einen öffentlichen Raum - senden Sie mir stattdessen eine Direktnachricht"
     },
     "move": {
         "cancel": "Verschieben abbrechen",
