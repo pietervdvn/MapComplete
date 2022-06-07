@@ -112,12 +112,12 @@
     },
     {
       "key": "amenity",
-      "description": "Layer 'Dog friendly eateries' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "fast_food"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Dog friendly eateries' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focused on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "restaurant"
     },
     {

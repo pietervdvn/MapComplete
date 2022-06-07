@@ -7,7 +7,8 @@
     "fr": "Panneaux d'informations",
     "de": "Informationstafeln",
     "ru": "Информационные щиты",
-    "ca": "Panells d'informació"
+    "ca": "Panells d'informació",
+    "es": "Paneles informativos"
   },
   "minzoom": 12,
   "source": {
@@ -25,7 +26,8 @@
       "fr": "Panneau d'informations",
       "de": "Informationstafel",
       "ru": "Информационный щит",
-      "ca": "Panell d'informació"
+      "ca": "Panell d'informació",
+      "es": "Panel informativo"
     }
   },
   "tagRenderings": [
@@ -43,7 +45,8 @@
         "it": "una pannello informativo",
         "fr": "une panneau d'informations",
         "de": "eine Informationstafel",
-        "ru": "информационный щит"
+        "ru": "информационный щит",
+        "es": "un panel informativo"
       }
     }
   ],
@@ -83,6 +86,7 @@
   "description": {
     "en": "A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)",
     "nl": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)",
-    "de": "Eine Ebene mit touristischen, straßenseitigen Informationstafeln (z. B. mit Informationen über die Landschaft, ein Gebäude, ein Merkmal, eine Karte, …)"
+    "de": "Eine Ebene mit touristischen, straßenseitigen Informationstafeln (z. B. mit Informationen über die Landschaft, ein Gebäude, ein Merkmal, eine Karte, …)",
+    "es": "Una capa que muestra paneles informativos turísticos (ej. informan sobre el paisaje, una construcción, una característica, un mapa, ...)"
   }
 }

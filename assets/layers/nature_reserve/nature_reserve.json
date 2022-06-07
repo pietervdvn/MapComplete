@@ -46,7 +46,8 @@
   "description": {
     "en": "A nature reserve is an area where nature can take its course",
     "nl": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
-    "de": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde"
+    "de": "Ein Naturschutzgebiet ist ein Gebiet, das der Natur überlassen wurde",
+    "es": ""
   },
   "tagRenderings": [
     "images",
@@ -88,7 +89,8 @@
           "then": {
             "en": "Not accessible",
             "nl": "Niet toegankelijk",
-            "de": "Das Gebiet ist nicht zugänglich"
+            "de": "Das Gebiet ist nicht zugänglich",
+            "es": "No accesible"
           }
         },
         {
@@ -101,7 +103,8 @@
           "then": {
             "en": "Not accessible as this is a private area",
             "nl": "Niet toegankelijk, want privégebied",
-            "de": "Das Gebiet ist privat und nicht zugänglich"
+            "de": "Das Gebiet ist privat und nicht zugänglich",
+            "es": "No accesible, ya que es una área privada"
           }
         },
         {
@@ -114,7 +117,8 @@
           "then": {
             "en": "Accessible despite being a privately owned area",
             "nl": "Toegankelijk, ondanks dat het privegebied is",
-            "de": "Das Gebiet ist privat aber zugänglich"
+            "de": "Das Gebiet ist privat aber zugänglich",
+            "es": "Accesible a pesar de ser una área privada"
           }
         },
         {
@@ -127,7 +131,8 @@
           "then": {
             "en": "Only accessible with a guide or during organised activities",
             "nl": "Enkel toegankelijk met een gids of tijdens een activiteit",
-            "de": "Das Gebiet ist nur während Führungen oder organisierten Aktivitäten zugänglich"
+            "de": "Das Gebiet ist nur während Führungen oder organisierten Aktivitäten zugänglich",
+            "es": "Solo accesible con un guía o durante actividades organizadas"
           }
         },
         {
@@ -140,7 +145,8 @@
           "then": {
             "en": "Accessible with fee",
             "nl": "Toegankelijk mits betaling",
-            "de": "Das Gebiet ist nur gegen Bezahlung zugänglich"
+            "de": "Das Gebiet ist nur gegen Bezahlung zugänglich",
+            "es": "Accesible con una tasa"
           }
         }
       ],
@@ -150,12 +156,14 @@
       "render": {
         "en": "Operated by {operator}",
         "nl": "Beheer door {operator}",
-        "de": "Betrieben von {operator}"
+        "de": "Betrieben von {operator}",
+        "es": "Operado por {operator}"
       },
       "question": {
         "en": "Who operates this area?",
         "nl": "Wie beheert dit gebied?",
-        "de": "Wer betreibt das Gebiet?"
+        "de": "Wer betreibt das Gebiet?",
+        "es": "¿Quién opera esta área?"
       },
       "freeform": {
         "key": "operator"
@@ -170,7 +178,8 @@
           "then": {
             "en": "Operated by Natuurpunt",
             "nl": "Dit gebied wordt beheerd door Natuurpunt",
-            "de": "Das Gebiet wird betrieben von Natuurpunt"
+            "de": "Das Gebiet wird betrieben von Natuurpunt",
+            "es": "Operado por NatuurPunt"
           },
           "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg"
         },
@@ -183,7 +192,8 @@
           "then": {
             "en": "Operated by {operator}",
             "nl": "Dit gebied wordt beheerd door {operator}",
-            "de": "Betrieben von {operator}"
+            "de": "Betrieben von {operator}",
+            "es": "Operado por {operator}"
           },
           "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg",
           "hideInAnswer": true
@@ -208,12 +218,14 @@
       "render": {
         "nl": "Dit gebied heet {name}",
         "en": "This area is named {name}",
-        "de": "Dieses Gebiet heißt {name}"
+        "de": "Dieses Gebiet heißt {name}",
+        "es": "Esta área se llama {name}"
       },
       "question": {
         "nl": "Wat is de naam van dit gebied?",
         "en": "What is the name of this area?",
-        "de": "Wie heißt das Gebiet?"
+        "de": "Wie heißt das Gebiet?",
+        "es": "¿Cual es el nombre de esta área?"
       },
       "freeform": {
         "key": "name",
@@ -237,7 +249,8 @@
           "then": {
             "en": "This area doesn't have a name",
             "nl": "Dit gebied heeft geen naam",
-            "de": "Das Gebiet hat keinen Namen"
+            "de": "Das Gebiet hat keinen Namen",
+            "es": "Esta área no tiene un nombre"
           }
         }
       ],
@@ -266,7 +279,8 @@
             "en": "Dogs have to be leashed",
             "it": "I cani devono essere tenuti al guinzaglio",
             "fr": "Les chiens doivent être tenus en laisse",
-            "de": "Hunde müssen angeleint sein"
+            "de": "Hunde müssen angeleint sein",
+            "es": "Los perros deben de ir con correa"
           }
         },
         {
@@ -276,7 +290,8 @@
             "en": "No dogs allowed",
             "it": "I cani non sono ammessi",
             "fr": "Chiens interdits",
-            "de": "Hunde sind nicht erlaubt"
+            "de": "Hunde sind nicht erlaubt",
+            "es": "No se permiten perros"
           }
         },
         {
@@ -286,7 +301,8 @@
             "en": "Dogs are allowed to roam freely",
             "it": "I cani sono liberi di girare liberi",
             "fr": "Les chiens sont autorisés à se promener librement",
-            "de": "Hunde dürfen frei herumlaufen"
+            "de": "Hunde dürfen frei herumlaufen",
+            "es": "Los perros pueden ir sueltos"
           }
         }
       ],
@@ -359,7 +375,8 @@
       "render": {
         "en": "Extra information: <i>{description}</i>",
         "nl": "Extra info: <i>{description}</i>",
-        "de": "Zusätzliche Informationen: <i>{description}</i>"
+        "de": "Zusätzliche Informationen: <i>{description}</i>",
+        "es": "Información adicional: <i>{description}</i>"
       },
       "freeform": {
         "key": "description"
@@ -370,12 +387,14 @@
       "question": {
         "en": "Is there some extra info?",
         "nl": "Is er extra info die je kwijt wil?",
-        "de": "Gibt es zusätzliche Informationen?"
+        "de": "Gibt es zusätzliche Informationen?",
+        "es": "¿Hay alguna información adicional?"
       },
       "render": {
         "en": "Extra info: <i>{description:0}</i>",
         "nl": "Extra info: <i>{description:0}</i>",
-        "de": "Zusätzliche Informationen: <i>{description:0}</i>"
+        "de": "Zusätzliche Informationen: <i>{description:0}</i>",
+        "es": "Información adicional: <i>{description:0}</i>"
       },
       "freeform": {
         "key": "description:0"
@@ -388,7 +407,8 @@
         "nl": "Totale oppervlakte: {_surface:ha}Ha",
         "it": "Area: {_surface:ha} ha",
         "fr": "Superficie : {_surface:ha}&nbsp;ha",
-        "de": "Grundfläche: {_surface:ha}ha"
+        "de": "Grundfläche: {_surface:ha}ha",
+        "es": "Superficie: {_surface:ha}Ha"
       },
       "condition": "_surface:ha!=0",
       "id": "Surface area"

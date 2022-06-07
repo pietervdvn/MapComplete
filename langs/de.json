@@ -82,6 +82,9 @@
             "donate": "MapComplete finanziell unterstützen",
             "editId": "Den OpenStreetMap Editor öffnen",
             "editJosm": "Mit JOSM bearbeiten",
+            "followBridge": "Die Mastodon- und Twitter-Konten werden überbrückt",
+            "followOnMastodon": "MapComplete auf Mastodon folgen",
+            "followOnTwitter": "MapComplete auf Twitter folgen",
             "iconAttribution": {
                 "title": "Verwendete Symbole"
             },
@@ -94,10 +97,7 @@
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Letzte Bearbeitungen für das Thema {theme} ansehen",
             "themeBy": "Thema betreut von {author}",
-            "translatedBy": "MapComplete wurde übersetzt von {contributors}, <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} und weiteren Mitwirkenden</a>",
-            "followBridge": "Die Mastodon- und Twitter-Konten werden überbrückt",
-            "followOnMastodon": "MapComplete auf Mastodon folgen",
-            "followOnTwitter": "MapComplete auf Twitter folgen"
+            "translatedBy": "MapComplete wurde übersetzt von {contributors}, <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} und weiteren Mitwirkenden</a>"
         },
         "back": "Zurück",
         "backToMapcomplete": "Zurück zur Themenübersicht",
@@ -447,6 +447,36 @@
         "pickTheme": "Eines der folgenden Themen auswählen, um zu starten.",
         "title": "Willkommen bei MapComplete"
     },
+    "matrixbot": {
+        "commandFailed": "Es tut uns leid, beim Ausführen von <code>{cmd}</code> ist etwas schiefgegangen",
+        "commandNotFound": "Ihre Anfrage wurde nicht verstanden. Meinten Sie vielleicht {0}, {1}, {2} oder ${2}? <p>Geben Sie <code>help</code> ein, um eine Übersicht über alle Befehle zu sehen</p>",
+        "commands": {
+            "help": {
+                "argcmd": "Der Befehl, über den Sie mehr Informationen wünschen",
+                "askRights": "Bitten Sie {admins}, Ihnen ausreichende Berechtigungen zu erteilen",
+                "docs": "Druckt Informationen über unterstützte Befehle",
+                "insufficientRights": "Sie haben derzeit nicht genügend Berechtigungen, um diesen Befehl auszuführen.",
+                "p0": "Hallo! Ich bin MapComplete-bot {bot_version} (basierend auf MapComplete {mc_version}).",
+                "p1": "Senden Sie mir einen Befehl und ich antworte mit etwas Nützlichem: Geben Sie mir einen Befehl über eine private Nachricht oder setzen Sie <code>!</code> vor dem Befehl in einem öffentlichen Raum.",
+                "priviligedComand": "Privilegierter Befehl",
+                "supported": "Meine unterstützten Befehle sind:"
+            },
+            "language": {
+                "arglang": "Die von nun an zu verwendende Sprache",
+                "currentLanguage": "Die Sprache im aktuellen Raum ist {language}",
+                "docs": "Legt die Sprache der Antworten für diesen Raum fest",
+                "hasBeenSet": "Die Sprache wurde auf {language} eingestellt.",
+                "helpTranslating": "Helfen Sie mit, meine Antworten auf Weblate zu übersetzen.",
+                "knownLanguages": "Sie können eine der folgenden Sprachen wählen:",
+                "notFound": "Die Sprache {language} wurde nicht gefunden"
+            },
+            "welcome": {
+                "p0": "Hallo! Ich bin MapComplete-bot. Ich bin ein Computerprogramm, das OpenStreetMap durchsucht und einige Informationen über <a href=\"https://mapcomplete.osm.be\">MapComplete</a> geben kann, eine Webseite und App, die thematische Karten zeigt. Wenn Informationen fehlen, können Sie sie dort leicht hinzufügen.",
+                "p1": "Senden Sie mir <code>info [searchterm]</code> und ich werde OpenStreetMap für Sie durchsuchen. Ich zeige Ihnen dann die Informationen über das, was ich gefunden habe.",
+                "p3": "Es gibt noch einige weitere Befehle, senden Sie <code>help</code>, um sie alle zu sehen."
+            }
+        }
+    },
     "move": {
         "cancel": "Verschieben abbrechen",
         "cannotBeMoved": "Dieses Element kann nicht verschoben werden.",
@@ -712,35 +742,5 @@
         "wikidata": {
             "description": "Eine Wikidata-Kennung"
         }
-    },
-    "matrixbot": {
-        "commands": {
-            "language": {
-                "docs": "Legt die Sprache der Antworten für diesen Raum fest",
-                "knownLanguages": "Sie können eine der folgenden Sprachen wählen:",
-                "hasBeenSet": "Die Sprache wurde auf {language} eingestellt.",
-                "helpTranslating": "Helfen Sie mit, meine Antworten auf Weblate zu übersetzen.",
-                "arglang": "Die von nun an zu verwendende Sprache",
-                "currentLanguage": "Die Sprache im aktuellen Raum ist {language}",
-                "notFound": "Die Sprache {language} wurde nicht gefunden"
-            },
-            "welcome": {
-                "p0": "Hallo! Ich bin MapComplete-bot. Ich bin ein Computerprogramm, das OpenStreetMap durchsucht und einige Informationen über <a href=\"https://mapcomplete.osm.be\">MapComplete</a> geben kann, eine Webseite und App, die thematische Karten zeigt. Wenn Informationen fehlen, können Sie sie dort leicht hinzufügen.",
-                "p1": "Senden Sie mir <code>info [searchterm]</code> und ich werde OpenStreetMap für Sie durchsuchen. Ich zeige Ihnen dann die Informationen über das, was ich gefunden habe.",
-                "p3": "Es gibt noch einige weitere Befehle, senden Sie <code>help</code>, um sie alle zu sehen."
-            },
-            "help": {
-                "argcmd": "Der Befehl, über den Sie mehr Informationen wünschen",
-                "askRights": "Bitten Sie {admins}, Ihnen ausreichende Berechtigungen zu erteilen",
-                "docs": "Druckt Informationen über unterstützte Befehle",
-                "insufficientRights": "Sie haben derzeit nicht genügend Berechtigungen, um diesen Befehl auszuführen.",
-                "p0": "Hallo! Ich bin MapComplete-bot {bot_version} (basierend auf MapComplete {mc_version}).",
-                "p1": "Senden Sie mir einen Befehl und ich antworte mit etwas Nützlichem: Geben Sie mir einen Befehl über eine private Nachricht oder setzen Sie <code>!</code> vor dem Befehl in einem öffentlichen Raum.",
-                "priviligedComand": "Privilegierter Befehl",
-                "supported": "Meine unterstützten Befehle sind:"
-            }
-        },
-        "commandFailed": "Es tut uns leid, beim Ausführen von <code>{cmd}</code> ist etwas schiefgegangen",
-        "commandNotFound": "Ihre Anfrage wurde nicht verstanden. Meinten Sie vielleicht {0}, {1}, {2} oder ${2}? <p>Geben Sie <code>help</code> ein, um eine Übersicht über alle Befehle zu sehen</p>"
     }
 }

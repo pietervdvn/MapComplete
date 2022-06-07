@@ -2507,83 +2507,75 @@
             "render": "Árbol"
         }
     },
-    "nature_reserve": {
-        "tagRenderings": {
-            "Access tag": {
-                "mappings": {
-                    "5": {
-                        "then": "Accesible con una tasa"
-                    },
-                    "1": {
-                        "then": "No accesible"
-                    },
-                    "2": {
-                        "then": "No accesible, ya que es una área privada"
-                    },
-                    "3": {
-                        "then": "Accesible a pesar de ser una área privada"
-                    },
-                    "4": {
-                        "then": "Solo accesible con un guía o durante actividades organizadas"
-                    }
-                }
+    "hackerspace": {
+        "description": "Espacio hacker",
+        "name": "Espacio hacker",
+        "presets": {
+            "0": {
+                "description": "Un espacio hacker es un lugar en el que gente interesada en software se reúne",
+                "title": "un espacio hacker"
             },
-            "Dogs?": {
-                "mappings": {
-                    "1": {
-                        "then": "No se permiten perros"
-                    },
-                    "2": {
-                        "then": "Los perros pueden ir sueltos"
-                    },
-                    "0": {
-                        "then": "Los perros deben de ir con correa"
-                    }
-                }
-            },
-            "Editable description": {
-                "question": "¿Hay alguna información adicional?",
-                "render": "Información adicional: <i>{description:0}</i>"
-            },
-            "Operator tag": {
-                "render": "Operado por {operator}",
-                "mappings": {
-                    "0": {
-                        "then": "Operado por NatuurPunt"
-                    },
-                    "1": {
-                        "then": "Operado por {operator}"
-                    }
-                },
-                "question": "¿Quién opera esta área?"
-            },
-            "Name tag": {
-                "question": "¿Cual es el nombre de esta área?",
-                "mappings": {
-                    "0": {
-                        "then": "Esta área no tiene un nombre"
-                    }
-                },
-                "render": "Esta área se llama {name}"
-            },
-            "Non-editable description": {
-                "render": "Información adicional: <i>{description}</i>"
-            },
-            "Surface area": {
-                "render": "Superficie: {_surface:ha}Ha"
+            "1": {
+                "description": "Un espacio maker es un lugar donde entusiastas del DIY se reúnen para experimentar con electrónica, como arduino, …",
+                "title": "un espacio maker"
             }
         },
-        "description": ""
+        "tagRenderings": {
+            "hackerspaces-name": {
+                "question": "¿Cual es el nombre de este espacio hacker?",
+                "render": "Este espacio hacker se llama <b>{name}</b>"
+            },
+            "hackerspaces-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Abierto 24/7"
+                    }
+                },
+                "question": "¿Cuándo está abierto este espacio hacker?",
+                "render": "{opening_hours_table()}"
+            },
+            "hackerspaces-start_date": {
+                "question": "¿Cuándo se fundó este espacio hacker?",
+                "render": "Este espacio hacker se fundó el {start_date}"
+            },
+            "is_makerspace": {
+                "mappings": {
+                    "0": {
+                        "then": "Este es un espacio maker"
+                    },
+                    "1": {
+                        "then": "Este es un espacio hacker tradicional (orientado al software)"
+                    }
+                },
+                "question": "¿Esto es un espacio hacker o un espacio maker?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": " {name}"
+                }
+            },
+            "render": "Espacio Hacker"
+        }
     },
     "hydrant": {
+        "description": "Un mapa que muestra bocas de incendios.",
+        "name": "Mapa de bocas de incendios",
+        "presets": {
+            "0": {
+                "description": "Una boca de incendios es un punto de conexión en el que los bomberos pueden conseguir agua. Puede situarse bajo tierra.",
+                "title": "una boca de incendios"
+            }
+        },
         "tagRenderings": {
             "hydrant-color": {
                 "mappings": {
-                    "1": {
-                        "then": "La boca de incendios es amarilla."
-                    },
                     "0": {
                         "then": "Se desconoce el color de la boca de incendios."
+                    },
+                    "1": {
+                        "then": "La boca de incendios es amarilla."
                     },
                     "2": {
                         "then": "La boca de incendios es roja."
@@ -2594,11 +2586,11 @@
             },
             "hydrant-state": {
                 "mappings": {
-                    "1": {
-                        "then": "La boca de incendios no está disponible"
-                    },
                     "0": {
                         "then": "La boca de incendios funciona (total o parcialmente)"
+                    },
+                    "1": {
+                        "then": "La boca de incendios no está disponible"
                     },
                     "2": {
                         "then": "La boca de incendios se ha retirado"
@@ -2608,12 +2600,6 @@
             },
             "hydrant-type": {
                 "mappings": {
-                    "3": {
-                        "then": "De pared."
-                    },
-                    "4": {
-                        "then": "Bajo tierra."
-                    },
                     "0": {
                         "then": "Se desconoce el tipo de la boca de incendios"
                     },
@@ -2622,27 +2608,37 @@
                     },
                     "2": {
                         "then": "De tubería."
+                    },
+                    "3": {
+                        "then": "De pared."
+                    },
+                    "4": {
+                        "then": "Bajo tierra."
                     }
                 },
                 "question": "¿De qué tipo es esta boca de incendios?",
                 "render": " Tipo de boca de incendios: {fire_hydrant:type}"
             }
         },
-        "presets": {
-            "0": {
-                "description": "Una boca de incendios es un punto de conexión en el que los bomberos pueden conseguir agua. Puede situarse bajo tierra.",
-                "title": "una boca de incendios"
-            }
-        },
-        "name": "Mapa de bocas de incendios",
-        "description": "Un mapa que muestra bocas de incendios.",
         "title": {
             "render": "Boca de incendios"
         }
     },
+    "information_board": {
+        "description": "Una capa que muestra paneles informativos turísticos (ej. informan sobre el paisaje, una construcción, una característica, un mapa, ...)",
+        "name": "Paneles informativos",
+        "presets": {
+            "0": {
+                "title": "un panel informativo"
+            }
+        },
+        "title": {
+            "render": "Panel informativo"
+        }
+    },
     "map": {
-        "name": "Mapas",
         "description": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público",
+        "name": "Mapas",
         "presets": {
             "0": {
                 "description": "Añadir un mapa que falta",
@@ -2655,6 +2651,9 @@
                     "0": {
                         "then": "Se atribuye claramente a OpenStreetMap, incluyendo la licencia ODBL"
                     },
+                    "1": {
+                        "then": "Se atribuya claramente a OpenStreetMap, pero no se menciona la licencia"
+                    },
                     "2": {
                         "then": "No se mencionaba OpenStreetMap, pero alguien le pegó una pegatina de OpenStreetMap"
                     },
@@ -2663,9 +2662,6 @@
                     },
                     "4": {
                         "then": "No hay atribución"
-                    },
-                    "1": {
-                        "then": "Se atribuya claramente a OpenStreetMap, pero no se menciona la licencia"
                     }
                 },
                 "question": "¿Hay una atribución a OpenStreetMap?"
@@ -2684,19 +2680,101 @@
             "render": "Mapa"
         }
     },
-    "note": {
-        "filter": {
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "Creada después de {search}"
+    "nature_reserve": {
+        "description": "",
+        "tagRenderings": {
+            "Access tag": {
+                "mappings": {
+                    "1": {
+                        "then": "No accesible"
+                    },
+                    "2": {
+                        "then": "No accesible, ya que es una área privada"
+                    },
+                    "3": {
+                        "then": "Accesible a pesar de ser una área privada"
+                    },
+                    "4": {
+                        "then": "Solo accesible con un guía o durante actividades organizadas"
+                    },
+                    "5": {
+                        "then": "Accesible con una tasa"
                     }
                 }
             },
-            "5": {
+            "Dogs?": {
+                "mappings": {
+                    "0": {
+                        "then": "Los perros deben de ir con correa"
+                    },
+                    "1": {
+                        "then": "No se permiten perros"
+                    },
+                    "2": {
+                        "then": "Los perros pueden ir sueltos"
+                    }
+                }
+            },
+            "Editable description": {
+                "question": "¿Hay alguna información adicional?",
+                "render": "Información adicional: <i>{description:0}</i>"
+            },
+            "Name tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta área no tiene un nombre"
+                    }
+                },
+                "question": "¿Cual es el nombre de esta área?",
+                "render": "Esta área se llama {name}"
+            },
+            "Non-editable description": {
+                "render": "Información adicional: <i>{description}</i>"
+            },
+            "Operator tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Operado por NatuurPunt"
+                    },
+                    "1": {
+                        "then": "Operado por {operator}"
+                    }
+                },
+                "question": "¿Quién opera esta área?",
+                "render": "Operado por {operator}"
+            },
+            "Surface area": {
+                "render": "Superficie: {_surface:ha}Ha"
+            }
+        }
+    },
+    "note": {
+        "filter": {
+            "0": {
                 "options": {
                     "0": {
-                        "question": "Abierta después de {search}"
+                        "question": "Debe mencionar {search} en el primer comentario"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> debe mencionar {search} en el primer comentario"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Abierto por el contributor {search}"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> abierto por el contributor {search}"
                     }
                 }
             },
@@ -2707,10 +2785,24 @@
                     }
                 }
             },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Abierta después de {search}"
+                    }
+                }
+            },
             "6": {
                 "options": {
                     "0": {
                         "question": "Creada antes de {search}"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Creada después de {search}"
                     }
                 }
             },
@@ -2740,109 +2832,17 @@
                         "question": "Solo mostrar las notas de importación"
                     }
                 }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "<b>No</b> abierto por el contributor {search}"
-                    }
-                }
-            },
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Debe mencionar {search} en el primer comentario"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "<b>No</b> debe mencionar {search} en el primer comentario"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Abierto por el contributor {search}"
-                    }
-                }
             }
         },
         "name": "Notas de OpenStreetMap",
         "tagRenderings": {
-            "report-contributor": {
-                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}"
-            },
             "nearby-images": {
                 "render": {
                     "before": "<h3>Imágenes cercanas</h3>Las imágenes de debajo son imágenes geoetiquetadas cercanas y pueden ser útiles para encargarse de esta nota."
                 }
-            }
-        }
-    },
-    "hackerspace": {
-        "tagRenderings": {
-            "hackerspaces-opening_hours": {
-                "question": "¿Cuándo está abierto este espacio hacker?",
-                "render": "{opening_hours_table()}",
-                "mappings": {
-                    "0": {
-                        "then": "Abierto 24/7"
-                    }
-                }
             },
-            "is_makerspace": {
-                "mappings": {
-                    "0": {
-                        "then": "Este es un espacio maker"
-                    },
-                    "1": {
-                        "then": "Este es un espacio hacker tradicional (orientado al software)"
-                    }
-                },
-                "question": "¿Esto es un espacio hacker o un espacio maker?"
-            },
-            "hackerspaces-name": {
-                "question": "¿Cual es el nombre de este espacio hacker?",
-                "render": "Este espacio hacker se llama <b>{name}</b>"
-            },
-            "hackerspaces-start_date": {
-                "question": "¿Cuándo se fundó este espacio hacker?",
-                "render": "Este espacio hacker se fundó el {start_date}"
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "un espacio hacker",
-                "description": "Un espacio hacker es un lugar en el que gente interesada en software se reúne"
-            },
-            "1": {
-                "description": "Un espacio maker es un lugar donde entusiastas del DIY se reúnen para experimentar con electrónica, como arduino, …",
-                "title": "un espacio maker"
-            }
-        },
-        "description": "Espacio hacker",
-        "name": "Espacio hacker",
-        "title": {
-            "render": "Espacio Hacker",
-            "mappings": {
-                "0": {
-                    "then": " {name}"
-                }
-            }
-        }
-    },
-    "information_board": {
-        "title": {
-            "render": "Panel informativo"
-        },
-        "description": "Una capa que muestra paneles informativos turísticos (ej. informan sobre el paisaje, una construcción, una característica, un mapa, ...)",
-        "name": "Paneles informativos",
-        "presets": {
-            "0": {
-                "title": "un panel informativo"
+            "report-contributor": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}"
             }
         }
     }
