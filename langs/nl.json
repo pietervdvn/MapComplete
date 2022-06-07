@@ -459,7 +459,8 @@
                 "p0": "Hallo! Ik ben MapComplete-bot {bot_version} (gebouwd met MapComplete {mc_version}).",
                 "p1": "Je kan me een commando sturen en dan zal ik dat commando opvolgen. Dit kan door me een privé-bericht te sturen. In een publieke ruimte zal ik antwoorden als een bericht begint met <code>!</code> of een mention.",
                 "priviligedComand": "Commando waar je rechten voor nodig hebt",
-                "supported": "De commando's die ik ken zijn:"
+                "supported": "De commando's die ik ken zijn:",
+                "notFound": "Ik kon het commando <code>{cmd}</code> niet vinden. Bedoelde je misschien {closest}?"
             },
             "language": {
                 "arglang": "De taal die ik vanaf nu in deze ruimte ga spreken",
@@ -468,7 +469,6 @@
                 "hasBeenSet": "De taal is ingesteld op <b>{language}</b>.",
                 "knownLanguages": "Je kan een van de volgende talen kiezen:",
                 "helpTranslating": "Help mee met het vertalen van mijn teksten op Weblate.",
-                "knownLanguages": "Je kan een van de volgende talen kiezen:",
                 "notFound": "De taal {language} heb ik niet gevonden"
             },
             "welcome": {
@@ -479,12 +479,59 @@
             },
             "wiki": {
                 "docs": "Stuurt een (deel van) de gevraagde pagina van wiki.osm.org. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina."
+            },
+            "documentation": {
+                "argid": "De naam van de laag, het thema of de URL-parameter waarover je informatie wenst",
+                "docs": "Vraag documentatie over een MapComplete-laag, -thema of URL-parameter",
+                "noIdIntro": "Geef een laag-ID om informatie over die laag op te vragen. De gekende lagen zijn:",
+                "noUrlParameterFound": "Ik kong geen URL-parameter vinden met naam <code>{id}</code>. Bedoelde je misschien één van onderstaande URL-parameters? ",
+                "noLayerFound": "Ik kon geen laag vinden die <code>{id}</code> heet. Bedoelde je misschien één van onderstaande lagen? ",
+                "urlParam": "URL-parameter <code>{id}</code>",
+                "noThemeFound": "Ik kon geen thema vinden die <code>{id}</code> heet. Bedoelde je misschien een van onderstaande themas? "
+            },
+            "dream": {
+                "generatedBy": "Deze text is gemaakt door {bot} die Machine-Learning gebruikt om op Reddit te posten.",
+                "docs": "Stuurt een dromerige, computer-gegenereerde tekst"
+            },
+            "info": {
+                "closed": "Gesloten",
+                "closedTodayAndTomorrow": "Vandaag en morgen gesloten",
+                "noOpeningHours": "Geen openingsuren gekend",
+                "nothingFound": "Ik kon niets vinden voor <code>{_}</code>",
+                "provideSearch": "Gelieve een zoekterm of id te geven",
+                "searchingWorldwide": "OpenStreetMap aan het doorzoeken voor <code>{_}</code>",
+                "noEditPossible": "Geen enkel MapComplete-thema bevat dit soort objecten...",
+                "foundResults": "Ik vond {total} resultaten voor <code>{search}</code>, ik ben informatie erover aan het ophalen...",
+                "couldNotDownload": "Ik kon <code>{id}</code> niet downloaden",
+                "noInfo": "Nog geen relevante informatie",
+                "fetchingInfoAbout": "Data over {id} aan het ophalen...",
+                "editWith": "Bewerk dit element op {title}"
+            },
+            "role": {
+                "allRevoked": "Alle rechten van <b>{user}</b> werden ingetrokken",
+                "allRolesIntro": "Alle gebruikers met rechten zijn:",
+                "argrole": "Welke rechten de persoon krijgt, dit is de naam van het commando die deze gebruiker mag uitvoeren",
+                "arguser": "De gebruikersnaam van wie de rechten verandert moeten worden.",
+                "argverb": "Ofdat een rol toegevoegd (<code>add</code>) of verwijderd (<code>remove</code>) moet worden. Gebruik <code>list</code> om een oplijsting te krijgen van alle rollen van de gebruiker",
+                "docs": "Verander wat een gebruiker mag uitvoeren",
+                "noSuchRole": "De rechten voor <code>{role}</code> kunnen niet gegeven worden aan <code>{user}</code>. Geef de commandonaam waarvoor je de rechten wilt toekennen. (Typ <code>help</code> voor een overzicht van alle commando's).",
+                "userHasRoles": "<b>{user}</b> heeft op dit moment de volgende rechten:",
+                "noPreviousRoles": "<b>{user}</b> heeft geen rollen",
+                "noRightsNeeded": "Het comand <code>{role}</code> mag door iedereen uitgevoerd worden, je hoeft die rechten niet toe te kennen",
+                "noRolesYet": "<b>{user}</b> heeft op dit moment geen rechten."
+            },
+            "shutdown": {
+                "argmode": "Geeft aan op welke manier ik moet afsluiten. Dit moet één van de volgende woorden zijn: {verbs}",
+                "docs": "Sluit de robot af",
+                "goodbye": "Aan het afsluiten… Tot later!",
+                "notYetShuttingDown": "Ik ga nog niet afsluiten want ik ben nog maar net opgestart. Ik wacht minimaal {min_uptime} seconden voordat ik terug afsluit, momenteel ben ik nog maar {uptime} aan het lopen."
             }
         },
         "decryptionFailed": "Sorry, ik kon je bericht niet ontcijferen. Probeer om deze kamer te verlaten en opnieuw te connecteren",
         "noSufficientRights": "Dit commando is enkel beschikbaar voor administrators en wie rechten heeft gekregen",
         "tooLongForPublic": "Sorry, dit bericht is te lang voor een publieke ruimte - stuur me een privébericht",
-        "commandFailed": "Sorry, er ging iets mis toen ik probeerde om <code>{cmd}</code> uit te voeren."
+        "subcommandNotGiven": "Ik heb je commando niet verstaan. Dit commando heeft een extra werkwoord nodig, maar je hebt er geen geven. Voeg één van {known_verbs} toe",
+        "subcommanNotFound": "Sorry, ik heb je vraag niet verstaan. Dit commando heeft een extra werkwoord nodig, maar <code>{verb}</code> is geen werkwoord dat ik ken. Ik ken wel de volgende werkwoorden: {known_verbs}"
     },
     "move": {
         "cancel": "Annuleer verplaatsing",
