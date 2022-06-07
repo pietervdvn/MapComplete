@@ -29,7 +29,7 @@ const articles = {
 }
 
 function addArticleToPresets(layerConfig: {presets?: {title: any}[]}){
-    //*
+    /*
     if(layerConfig.presets === undefined){
         return 
     }
@@ -48,6 +48,9 @@ function addArticleToPresets(layerConfig: {presets?: {title: any}[]}){
                     return txt;
                 }
                 if(txt.startsWith(article+" ")){
+                    return txt;
+                }
+                if(txt.startsWith("an ")){
                     return txt;
                 }
                 return article +" " +  txt.toLowerCase();
