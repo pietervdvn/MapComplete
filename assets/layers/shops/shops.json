@@ -432,7 +432,7 @@
               "type": "string"
             }
           ],
-          "osmTags": "shop~^.*{search}.*$",
+          "osmTags": "shop~i~.*{search}.*",
           "question": {
             "en": "Only show shops selling {search}",
             "de": "Nur Geschäfte, die {search} verkaufen",
@@ -451,7 +451,7 @@
               "type": "string"
             }
           ],
-          "osmTags": "name~^.*{search}.*$",
+          "osmTags": "name~i~.*{search}.*",
           "question": {
             "en": "Only show shops with name {search}",
             "de": "Nur Geschäfte mit dem Namen {search} anzeigen",

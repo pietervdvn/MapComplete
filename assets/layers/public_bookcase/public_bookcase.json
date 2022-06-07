@@ -467,7 +467,7 @@
       "options": [
         {
           "question": "Kinderboeken aanwezig?",
-          "osmTags": "books~.*children.*"
+          "osmTags": "books~i~.*children.*"
         }
       ]
     },
@@ -476,7 +476,7 @@
       "options": [
         {
           "question": "Boeken voor volwassenen aanwezig?",
-          "osmTags": "books~.*adults.*"
+          "osmTags": "books~i~.*adults.*"
         }
       ]
     },

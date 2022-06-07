@@ -203,7 +203,7 @@
             "nl": "Vuilnisbak voor sigarettenpeuken",
             "de": "Mülleimer für Zigaretten"
           },
-          "osmTags": "waste~.*cigarettes.*"
+          "osmTags": "waste~i~.*cigarettes.*"
         },
         {
           "question": {
@@ -211,7 +211,7 @@
             "nl": "Vuilnisbak voor (vervallen) medicatie en drugs",
             "de": "Mülleimer für Drogen"
           },
-          "osmTags": "waste~.*drugs.*"
+          "osmTags": "waste~i~.*drugs.*"
         },
         {
           "question": {
@@ -219,7 +219,7 @@
             "nl": "Vuilnisbak voor hondenuitwerpselen",
             "de": "Mülleimer für Hundekot"
           },
-          "osmTags": "waste~.*dog_excrement.*"
+          "osmTags": "waste~i~.*dog_excrement.*"
         },
         {
           "question": {
@@ -227,7 +227,7 @@
             "nl": "Vuilnisbak voor zwerfvuil",
             "de": "Mülleimer für allgemeinen Müll"
           },
-          "osmTags": "waste~.*trash.*"
+          "osmTags": "waste~i~.*trash.*"
         },
         {
           "question": {
@@ -235,7 +235,7 @@
             "nl": "Vuilnisbak voor injectienaalden en andere scherpe voorwerpen",
             "de": "Mülleimer für Nadeln und andere scharfe Gegenstände"
           },
-          "osmTags": "waste~.*sharps.*"
+          "osmTags": "waste~i~.*sharps.*"
         },
         {
           "question": {
@@ -243,7 +243,7 @@
             "nl": "Vuilnisbak voor plastic",
             "de": "Mülleimer für Plastik"
           },
-          "osmTags": "waste~.*plastic.*"
+          "osmTags": "waste~i~.*plastic.*"
         }
       ]
     },

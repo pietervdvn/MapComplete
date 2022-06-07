@@ -87,7 +87,7 @@
           "id": "theme-search",
           "options": [
             {
-              "osmTags": "theme~.*{search}.*",
+              "osmTags": "theme~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -103,7 +103,7 @@
           "id": "created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc~.*{search}.*",
+              "osmTags": "_last_edit:contributor:lc~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -119,7 +119,7 @@
           "id": "not_created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc!~.*{search}.*",
+              "osmTags": "_last_edit:contributor:lc!~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
