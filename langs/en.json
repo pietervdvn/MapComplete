@@ -453,7 +453,7 @@
         "commands": {
             "documentation": {
                 "argid": "The ID of the layer, theme or URL-parameter for which documentation is needed",
-                "docs": "Gets documentation about a mapcomplete layer, theme or URL-parameter",
+                "docs": "Gets documentation about a MapComplete layer, theme or URL-parameter",
                 "noIdIntro": "Give a layer id to get information about a layer. Known layers are:",
                 "noLayerFound": "No layer found with name <code>{id}</code>. Perhaps you meant one of: ",
                 "noThemeFound": "No theme found with name <code>{id}</code>. Perhaps you meant one of: ",
@@ -479,7 +479,7 @@
                 "closed": "Closed",
                 "closedTodayAndTomorrow": "Closed today and tomorrow",
                 "couldNotDownload": "Could not download <code>{id}</code>",
-                "editWith": "Edit this elemen with {title}",
+                "editWith": "Edit this element with {title}",
                 "fetchingInfoAbout": "Fetching data about {id}...",
                 "foundResults": "Found {total} results for <code>${search}</code>, fetching details about them...",
                 "noEditPossible": "No MapComplete themes support this element",
@@ -487,7 +487,7 @@
                 "noOpeningHours": "No opening hours are known.",
                 "nothingFound": "Nothing found for <code>{_}</code>",
                 "provideSearch": "Please, provide a search term of id to use this command",
-                "searchingWorldwide": "Searhing OpenStreetMap.org for your search <code>{_}</code>"
+                "searchingWorldwide": "Searching OpenStreetMap.org for your search <code>{_}</code>"
             },
             "language": {
                 "arglang": "The language to be used from now on",
