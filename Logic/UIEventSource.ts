@@ -305,7 +305,8 @@ export class ImmutableStore<T> extends Store<T> {
  */
 class ListenerTracker<T> {
     private readonly _callbacks: ((t: T) => (boolean | void | any)) [] = [];
-
+    
+    public pingCount = 0;
     /**
      * Adds a callback which can be called; a function to unregister is returned
      */
@@ -330,6 +331,7 @@ class ListenerTracker<T> {
      * Returns the number of registered callbacks
      */
     public ping(data: T): number {
+        this.pingCount ++;
         let toDelete = undefined
         let startTime = new Date().getTime() / 1000;
         for (const callback of this._callbacks) {
@@ -368,6 +370,8 @@ class ListenerTracker<T> {
 class MappedStore<TIn, T> extends Store<T> {
 
     private _upstream: Store<TIn>;
+    private _upstreamCallbackHandler: ListenerTracker<TIn>;
+    private _upstreamPingCount: number = -1;
     private _unregisterFromUpstream: (() => void)
     private _f: (t: TIn) => T;
     private readonly _extraStores: Store<any>[] | undefined;
@@ -378,18 +382,38 @@ class MappedStore<TIn, T> extends Store<T> {
     private static readonly pass: () => {}
 
 
-    constructor(upstream: Store<TIn>, f: (t: TIn) => T, extraStores: Store<any>[] = undefined, initialData : T= undefined) {
+    constructor(upstream: Store<TIn>, f: (t: TIn) => T, extraStores: Store<any>[] = undefined, 
+                upstreamListenerHandler: ListenerTracker<TIn>) {
         super();
         this._upstream = upstream;
+        this._upstreamCallbackHandler = upstreamListenerHandler
         this._f = f;
-        this._data = initialData ?? f(upstream.data)
+        this._data = f(upstream.data)
+        this._upstreamPingCount = upstreamListenerHandler.pingCount
         this._extraStores = extraStores;
     }
 
     private _data: T;
     private _callbacksAreRegistered = false
 
-    get data(): T {
+    /**
+     * Gets the current data from the store
+     * 
+     * const src = new UIEventSource(21)
+     * const mapped = src.map(i => i * 2)
+     * src.setData(3)
+     * mapped.data // => 6
+     * 
+     */
+    get data(): T { 
+        if (!this._callbacksAreRegistered) {
+            // Callbacks are not registered, so we haven't been listening for updates from the upstream which might have changed
+            if(this._upstreamCallbackHandler.pingCount != this._upstreamPingCount){
+                // Upstream has pinged - let's update our data first
+                this._data = this._f(this._upstream.data)
+            }
+            return this._data
+        }
         return this._data
     }
 
@@ -413,7 +437,7 @@ class MappedStore<TIn, T> extends Store<T> {
             this._upstream,
             data => f(this._f(data)),
             stores,
-            f(this._data)
+            this._upstreamCallbackHandler
         );
     }
 
@@ -426,6 +450,7 @@ class MappedStore<TIn, T> extends Store<T> {
 
     private update(): void {
         const newData = this._f(this._upstream.data)
+        this._upstreamPingCount = this._upstreamCallbackHandler.pingCount
         if (this._data == newData) {
             return;
         }
@@ -487,7 +512,7 @@ class MappedStore<TIn, T> extends Store<T> {
 export class UIEventSource<T> extends Store<T> {
 
     public data: T;
-    private _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
+    _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
 
     private static readonly pass: () => {}
 
@@ -637,7 +662,7 @@ export class UIEventSource<T> extends Store<T> {
      */
     public map<J>(f: ((t: T) => J),
                   extraSources: Store<any>[] = []): Store<J> {
-        return new MappedStore(this, f, extraSources);
+        return new MappedStore(this, f, extraSources, this._callbacks);
     }
 
     /**
