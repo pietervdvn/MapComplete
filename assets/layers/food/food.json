@@ -166,7 +166,7 @@
         {
           "if": "amenity=fast_food",
           "then": {
-            "en": "This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional.",
+            "en": "This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.",
             "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel",
             "de": "Es handelt sich um einen Schnellimbiss, mit Fokus auf schnelle Bedienung am Tresen. Sitzmöglichkeiten sind begrenzt und funktional.",
             "es": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales."
@@ -175,7 +175,7 @@
         {
           "if": "amenity=restaurant",
           "then": {
-            "en": "A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table",
+            "en": "A <b>restaurant</b>, focused on creating a nice experience where one is served at the table",
             "nl": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend",
             "de": "Es handelt sich um ein <b>Restaurant</b>, mit Fokus auf eine nette Atmosphäre und Tischbedienung",
             "es": "Un <b>restaurante</b>, centrado en crear una buena experiencia donde se sirve en la mesa"
