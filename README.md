@@ -84,7 +84,7 @@ A typical user journey would be:
     * In other words, sending a message to a misbehaving MapComplete user acts as having a **zero-day-block**. This is
       added deliberately to make sure new users _have_ to read feedback from the community.
 
-4. At 50 changesets, the [personal layout](https://pietervdvn.github.io/MapComplete/personal.html) is advertised. The
+4. At 50 changesets, the [personal layout](https://mapcomplete.osm.be/personal.html) is advertised. The
    personal theme is a theme where contributors can pick layers from all the official themes. Note that the personal
    theme is always available.
 
