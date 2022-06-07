@@ -261,6 +261,11 @@ export class Or extends TagsFilter {
         return this.or.some(t => t.isNegative());
     }
 
+    visit(f: (TagsFilter: any) => void) {
+        f(this)
+        this.or.forEach(t => t.visit(f))
+    }
+
 }
 
 

@@ -5,6 +5,7 @@ import {Tag} from "./Tag";
 import {RegexTag} from "./RegexTag";
 
 export class And extends TagsFilter {
+
     public and: TagsFilter[]
 
     constructor(and: TagsFilter[]) {
@@ -373,5 +374,9 @@ export class And extends TagsFilter {
         return !this.and.some(t => !t.isNegative());
     }
 
+    visit(f: (TagsFilter: any) => void) {
+        f(this)
+        this.and.forEach(sub => sub.visit(f))
+    }
 
 }
