@@ -57,10 +57,10 @@ export class TagUtils {
     }
 
     /***
-     * Creates a hash {key --> [values : string | Regex ]}, with all the values present in the tagsfilter
+     * Creates a hash {key --> [values : string | RegexTag ]}, with all the values present in the tagsfilter
      */
     static SplitKeys(tagsFilters: TagsFilter[], allowRegex = false) {
-        const keyValues = {} // Map string -> string[]
+        const keyValues = {} // Map string -> (string | RegexTag)[]
         tagsFilters = [...tagsFilters] // copy all, use as queue
         while (tagsFilters.length > 0) {
             const tagsFilter = tagsFilters.shift();
@@ -200,20 +200,29 @@ export class TagUtils {
      *
      * TagUtils.Tag("key=value") // => new Tag("key", "value")
      * TagUtils.Tag("key=") // => new Tag("key", "")
-     * TagUtils.Tag("key!=") // => new RegexTag("key", /^..*$/)
-     * TagUtils.Tag("key~*") // => new RegexTag("key", /^..*$/)
+     * TagUtils.Tag("key!=") // => new RegexTag("key", /^..*$/s)
+     * TagUtils.Tag("key~*") // => new RegexTag("key", /^..*$/s)
+     * TagUtils.Tag("name~i~somename") // => new RegexTag("name", /^somename$/si)
      * TagUtils.Tag("key!=value") // => new RegexTag("key", "value", true)
-     * TagUtils.Tag("vending~.*bicycle_tube.*") // => new RegexTag("vending", /^.*bicycle_tube.*$/)
-     * TagUtils.Tag("x!~y") // => new RegexTag("x", /^y$/, true)
+     * TagUtils.Tag("vending~.*bicycle_tube.*") // => new RegexTag("vending", /^.*bicycle_tube.*$/s)
+     * TagUtils.Tag("x!~y") // => new RegexTag("x", /^y$/s, true)
      * TagUtils.Tag({"and": ["key=value", "x=y"]}) // => new And([new Tag("key","value"), new Tag("x","y")])
-     * TagUtils.Tag("name~[sS]peelbos.*") // => new RegexTag("name", /^[sS]peelbos.*$/)
+     * TagUtils.Tag("name~[sS]peelbos.*") // => new RegexTag("name", /^[sS]peelbos.*$/s)
      * TagUtils.Tag("survey:date:={_date:now}") // => new SubstitutingTag("survey:date", "{_date:now}")
-     * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^\[\]$/, true)
-     * TagUtils.Tag("tags~(.*;)?amenity=public_bookcase(;.*)?") // => new RegexTag("tags", /^(.*;)?amenity=public_bookcase(;.*)?$/)
-     * TagUtils.Tag("service:bicycle:.*~~*") // => new RegexTag(/^service:bicycle:.*$/, /^..*$/)
+     * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^\[\]$/s, true)
+     * TagUtils.Tag("tags~(.*;)?amenity=public_bookcase(;.*)?") // => new RegexTag("tags", /^(.*;)?amenity=public_bookcase(;.*)?$/s)
+     * TagUtils.Tag("service:bicycle:.*~~*") // => new RegexTag(/^service:bicycle:.*$/, /^..*$/s)
+     * TagUtils.Tag("_first_comment~.*{search}.*") //  => new RegexTag('_first_comment', /^.*{search}.*$/s)
      *
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 4}) // => true
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 5}) // => false
+     * 
+     * // RegexTags must match values with newlines
+     * TagUtils.Tag("note~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De aed bevindt zich op de 5de verdieping"}) // => true
+     * TagUtils.Tag("note~i~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De AED bevindt zich op de 5de verdieping"}) // => true
+     * 
+     * // Must match case insensitive
+     * TagUtils.Tag("name~i~somename").matchesProperties({name: "SoMeName"}) // => true
      */
     public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
         try {
@@ -245,6 +254,33 @@ export class TagUtils {
         }
 
         return r
+    }
+
+    /**
+     * Parses the various parts of a regex tag
+     *
+     * TagUtils.parseRegexOperator("key~value") // => {invert: false, key: "key", value: "value", modifier: ""}
+     * TagUtils.parseRegexOperator("key!~value") // => {invert: true, key: "key", value: "value", modifier: ""}
+     * TagUtils.parseRegexOperator("key~i~value") // => {invert: false, key: "key", value: "value", modifier: "i"}
+     * TagUtils.parseRegexOperator("key!~i~someweirdvalue~qsdf") // => {invert: true, key: "key", value: "someweirdvalue~qsdf", modifier: "i"}
+     * TagUtils.parseRegexOperator("_image:0~value") // => {invert: false, key: "_image:0", value: "value", modifier: ""}
+     * TagUtils.parseRegexOperator("key~*") // => {invert: false, key: "key", value: "*", modifier: ""}
+     * TagUtils.parseRegexOperator("Brugs volgnummer~*") // => {invert: false, key: "Brugs volgnummer", value: "*", modifier: ""}
+     * TagUtils.parseRegexOperator("socket:USB-A~*") // => {invert: false, key: "socket:USB-A", value: "*", modifier: ""}
+     * TagUtils.parseRegexOperator("tileId~*") // => {invert: false, key: "tileId", value: "*", modifier: ""}
+     */
+    public static parseRegexOperator(tag: string): {
+        invert: boolean;
+        key: string;
+        value: string;
+        modifier: "i" | "";
+    } | null {
+        const match = tag.match(/^([_a-zA-Z0-9: -]+)(!)?~([i]~)?(.*)$/);
+        if (match == null) {
+            return null;
+        }
+        const [_, key, invert, modifier, value] = match;
+        return {key, value, invert: invert == "!", modifier: (modifier == "i~" ? "i" : "")};
     }
 
     private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
@@ -299,18 +335,7 @@ export class TagUtils {
                 return new ComparingTag(split[0], f, operator + val)
             }
         }
-
-        if (tag.indexOf("!~") >= 0) {
-            const split = Utils.SplitFirst(tag, "!~");
-            if (split[1] === "*") {
-                throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
-            }
-            return new RegexTag(
-                split[0],
-                new RegExp("^"+ split[1]+"$"),
-                true
-            );
-        }
+        
         if (tag.indexOf("~~") >= 0) {
             const split = Utils.SplitFirst(tag, "~~");
             if (split[1] === "*") {
@@ -318,9 +343,30 @@ export class TagUtils {
             }
             return new RegexTag(
                 new RegExp("^" + split[0] + "$"),
-                new RegExp("^" + split[1] + "$")
+                new RegExp("^" + split[1] + "$", "s")
             );
         }
+        
+        const withRegex = TagUtils.parseRegexOperator(tag)
+        if(withRegex != null) {
+            if (withRegex.value === "*" && withRegex.invert) {
+                throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
+            }
+            if (withRegex.value === "") {
+                throw "Detected a regextag with an empty regex; this is not allowed. Use '" + withRegex.key + "='instead (at " + context + ")"
+            }
+
+            let value: string | RegExp = withRegex.value;
+            if (value === "*") {
+                value = "..*"
+            }
+            return new RegexTag(
+                withRegex.key,
+                new RegExp("^"+value+"$", "s"+withRegex.modifier),
+                withRegex.invert
+            );
+        }
+
         if (tag.indexOf("!:=") >= 0) {
             const split = Utils.SplitFirst(tag, "!:=");
             return new SubstitutingTag(split[0], split[1], true);
@@ -337,7 +383,7 @@ export class TagUtils {
             }
             if (split[1] === "") {
                 split[1] = "..*"
-                return new RegexTag(split[0], /^..*$/)
+                return new RegexTag(split[0], /^..*$/s)
             }
             return new RegexTag(
                 split[0],
@@ -345,22 +391,8 @@ export class TagUtils {
                 true
             );
         }
-        if (tag.indexOf("~") >= 0) {
-            const split = Utils.SplitFirst(tag, "~");
-            let value : string | RegExp = split[1]
-            if (split[1] === "") {
-                throw "Detected a regextag with an empty regex; this is not allowed. Use '" + split[0] + "='instead (at " + context + ")"
-            }
-            if (value === "*") {
-                value = /^..*$/
-            }else {
-                value = new RegExp("^"+value+"$")
-            }
-            return new RegexTag(
-                split[0],
-                value
-            );
-        }
+
+
         if (tag.indexOf("=") >= 0) {
 
 
@@ -511,7 +543,5 @@ export class TagUtils {
     public static containsEquivalents( guards: TagsFilter[], listToFilter: TagsFilter[] ) : boolean {
         return listToFilter.some(tf => guards.some(guard => guard.shadows(tf)))
     }
-    
-  
 
 }
