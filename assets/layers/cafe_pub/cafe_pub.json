@@ -217,7 +217,8 @@
     "payment-options",
     "wheelchair-access",
     "service:electricity",
-    "dog-access"
+    "dog-access",
+    "reviews"
   ],
   "filter": [
     {
