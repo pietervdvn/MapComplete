@@ -9,6 +9,7 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {FilterState} from "../FilteredLayer";
 import {QueryParameters} from "../../Logic/Web/QueryParameters";
 import {Utils} from "../../Utils";
+import {RegexTag} from "../../Logic/Tags/RegexTag";
 
 export default class FilterConfig {
     public readonly id: string
@@ -29,7 +30,6 @@ export default class FilterConfig {
         }
         if (json.id.match(/^[a-zA-Z0-9_-]*$/) === null) {
             throw `A filter with invalid id was found at ${context}. Ids should only contain letters, numbers or - _`
-
         }
 
         if (json.options.map === undefined) {
@@ -43,12 +43,13 @@ export default class FilterConfig {
                 option.question,
                 `${ctx}.question`
             );
-            let osmTags = undefined;
+            let osmTags: undefined | TagsFilter = undefined;
             if ((option.fields?.length ?? 0) == 0 && option.osmTags !== undefined) {
                 osmTags = TagUtils.Tag(
                     option.osmTags,
                     `${ctx}.osmTags`
                 );
+                FilterConfig.validateSearch(osmTags, ctx)
             }
             if (question === undefined) {
                 throw `Invalid filter: no question given at ${ctx}`
@@ -84,6 +85,10 @@ export default class FilterConfig {
                     throw `Invalid filter: multiple filters are set as default, namely ${i} and ${defaultSelection} at ${context}`
                 }
             }
+            
+            if(option.osmTags !== undefined){
+                FilterConfig.validateSearch(TagUtils.Tag(option.osmTags), ctx)
+            }
 
             return {question: question, osmTags: osmTags, fields, originalTagsSpec: option.osmTags};
         });
@@ -101,6 +106,26 @@ export default class FilterConfig {
         
     }
 
+    private static validateSearch(osmTags: TagsFilter, ctx: string){
+    osmTags.visit(t => {
+            if (!(t instanceof RegexTag)) {
+                return;
+            }
+            if(typeof t.value == "string"){
+                return;
+            }
+
+            if(t.value.source == '^..*$' || t.value.source == '^[\\s\\S][\\s\\S]*$' /*Compiled regex with 'm'*/){
+                return
+            }
+
+            if(!t.value.ignoreCase) {
+                throw `At ${ctx}: The filter for key '${t.key}' uses a regex '${t.value}', but you should use a case invariant regex with ~i~ instead, as search should be case insensitive`
+            }
+
+        })
+    }
+    
     public initState(): UIEventSource<FilterState> {
 
         function reset(state: FilterState): string {
