@@ -294,6 +294,10 @@
                 "then": "./assets/themes/postboxes/postbox.svg"
               },
               {
+                "if": "theme=schools",
+                "then": "./assets/layers/school/college.svg"
+              },
+              {
                 "if": "theme=shops",
                 "then": "./assets/themes/shops/shop.svg"
               },

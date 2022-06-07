@@ -1,0 +1,183 @@
+{
+  "id": "school",
+  "name": {
+    "en": "Primary and secondary schools"
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "School <i>{name}</i>"
+    }
+  },
+  "calculatedTags": [
+    "_enclosing=feat.enclosingFeatures('school').map(f => f.feat.properties.id)",
+    "_is_enclosed=feat.properties._enclosing != '[]'"
+  ],
+  "isShown": {
+    "render": "yes",
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "building~*",
+            "_is_enclosed=true"
+          ]
+        },
+        "then": "no"
+      }
+    ]
+  },
+  "tagRenderings": [
+    {
+      "render": {
+        "en": "This school is named {name}"
+      },
+      "question": {
+        "en": "What is the name of this school?"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "school-name"
+    },
+    {
+      "id": "capacity",
+      "question": "How much students can at most enroll in this school?",
+      "render": {
+        "en": "This school can enroll at most {capacity} students"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat"
+      }
+    },
+    {
+      "id": "education-level",
+      "question": "What level of education is given on this school?",
+      "mappings": [
+        {
+          "if": "isced:2011:level=primary",
+          "then": {
+            "en": "This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>"
+          }
+        },
+        {
+          "if": "isced:2011:level=vocational_lower_secondary",
+          "then": {
+            "en": "This is a school where one learns <b>vocational lower secondary</b> skills with a focus to acquire the necessary knowledge and skill for a particular occupation or trade. <div class='subtle'>This includes programs with a work-based component such as apprenticeships or dual-system education. This is commonly called middle education. Pupils typically enroll from 12 years old till 14 or 15 years old</div>"
+          }
+        },
+        {
+          "if": "isced:2011:level=general_lower_secondary",
+          "then": {
+            "en": "This is a school where one learns <b>general lower secondary</b> skills with a focus on general skills in order to prepare student for further studies. <div class='subtle'>This is commonly called middle education. Pupils typically enroll from 12 years old till 14 or 15 years old</div>"
+          }
+        },
+        
+        {
+          "if": "isced:2011:level=vocational_upper_secondary",
+          "then": {
+            "en": "This is a school where one learns <b>vocational upper secondary</b> skills with a focus to acquire the necessary knowledge and skill for a particular occupation or trade. <div class='subtle'>This includes programs with a work-based component such as apprenticeships or dual-system education. Pupils typically enroll from 14 or 15 years old till 18 years old</div>"
+          }
+        },
+        {
+          "if": "isced:2011:level=general_upper_secondary",
+          "then": {
+            "en": "This is a school where one learns <b>general upper secondary</b> skills with a focus on general skills in order to prepare student for further studies. <div class='subtle'>Pupils typically enroll from 14 or 15 years old till 18 years old</div>"
+          }
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "id": "target-audience",
+      "question": "What is the target audience for this school?",
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "school:for=normal_pupils",
+          "then": {
+            "en": "This is a school where students study skills at their age-adequate level"
+          }
+        },
+        {
+          "if": "school:for=adults",
+          "then": {
+            "en": "This is a school where adults are taught skills on the level as specified."
+          }
+        },
+        {
+          "if": "school:for=autism",
+          "then": {
+            "en": "This is a school with facilities for students on the autism specturm"
+          }
+        },
+        {
+          "if": "school:for=learning_disabilities",
+          "then": {
+            "en": "This is a school with facilities for students with learning disabilities"
+          }
+        },
+        {
+          "if": "school:for=blind",
+          "then": {
+            "en": "This is a school with facilities for blind students or students with sight impairments"
+          }
+        },
+        {
+          "if": "school:for=deaf",
+          "then": {
+            "en": "This is a school with facilities for deaf students or students with hearing impairments"
+          }
+        },
+        {
+          "if": "school:for=disabilities",
+          "then": {
+            "en": "This is a school with facilities for students with disabilities"
+          }
+        }
+      ]
+    },
+    "website",
+    "phone",
+    "email"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=school","fixme=Added with MapComplete, the precise geometry should still be drawn"
+      ],
+      
+      "title": {
+        "en": "a primary or secondary school"
+      }
+    }
+  ],
+  "source": {
+    "osmTags": "amenity=school"
+  },
+  "mapRendering": [
+    {
+      "icon": "circle:white;./assets/layers/school/school.svg",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": "#fcd862",
+      "width": 1
+    }
+  ]
+}

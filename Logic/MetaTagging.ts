@@ -155,7 +155,6 @@ export default class MetaTagging {
 
             // Lazy function
             const f = (feature: any) => {
-                const oldValue = feature.properties[key]
                 delete feature.properties[key]
                 Object.defineProperty(feature.properties, key, {
                     configurable: true,
