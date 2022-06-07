@@ -373,6 +373,7 @@ class MappedStore<TIn, T> extends Store<T> {
     private _upstreamCallbackHandler: ListenerTracker<TIn>;
     private _upstreamPingCount: number = -1;
     private _unregisterFromUpstream: (() => void)
+    
     private _f: (t: TIn) => T;
     private readonly _extraStores: Store<any>[] | undefined;
     private _unregisterFromExtraStores: (() => void)[] | undefined
@@ -391,6 +392,7 @@ class MappedStore<TIn, T> extends Store<T> {
         this._data = f(upstream.data)
         this._upstreamPingCount = upstreamListenerHandler.pingCount
         this._extraStores = extraStores;
+        this.registerCallbacksToUpstream()
     }
 
     private _data: T;
@@ -447,6 +449,18 @@ class MappedStore<TIn, T> extends Store<T> {
         this._unregisterFromUpstream()
         this._unregisterFromExtraStores?.forEach(unr => unr())
     }
+    
+    private registerCallbacksToUpstream() {
+        const self = this
+       
+        this._unregisterFromUpstream = this._upstream.addCallback(
+            _ => self.update()
+        )
+        this._unregisterFromExtraStores = this._extraStores?.map(store =>
+            store?.addCallback(_ => self.update())
+        )
+        this._callbacksAreRegistered = true;
+    }
 
     private update(): void {
         const newData = this._f(this._upstream.data)
@@ -460,16 +474,9 @@ class MappedStore<TIn, T> extends Store<T> {
 
     addCallback(callback: (data: T) => (any | boolean | void)): (() => void) {
         if (!this._callbacksAreRegistered) {
-            const self = this
             // This is the first callback that is added
             // We register this 'map' to the upstream object and all the streams
-            this._unregisterFromUpstream = this._upstream.addCallback(
-                _ => self.update()
-            )
-            this._unregisterFromExtraStores = this._extraStores?.map(store =>
-                store?.addCallback(_ => self.update())
-            )
-            this._callbacksAreRegistered = true;
+            this.registerCallbacksToUpstream()
         }
         const unregister = this._callbacks.addCallback(callback)
         return () => {
