@@ -54,11 +54,13 @@ abstract class AbstractImportButton implements SpecialVisualizations {
     public readonly docs: string
     public readonly args: { name: string, defaultValue?: string, doc: string }[]
     private readonly showRemovedTags: boolean;
+    private readonly cannotBeImportedMessage: BaseUIElement | undefined;
 
-    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string, required?: boolean }[], showRemovedTags = true) {
+    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string, required?: boolean }[], 
+                options?: {showRemovedTags? : true | boolean, cannotBeImportedMessage?: BaseUIElement}) {
         this.funcName = funcName
-        this.showRemovedTags = showRemovedTags;
-
+        this.showRemovedTags = options?.showRemovedTags ?? true;
+        this.cannotBeImportedMessage = options?.cannotBeImportedMessage
         this.docs = `${docsIntro}
 
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
@@ -200,7 +202,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                 pleaseLoginButton,
                 state
             ),
-            t.wrongType,
+            this.cannotBeImportedMessage ?? t.wrongType,
             new UIEventSource(this.canBeImported(feature)))
 
     }
@@ -304,7 +306,10 @@ export class ConflateButton extends AbstractImportButton {
             [{
                 name: "way_to_conflate",
                 doc: "The key, of which the corresponding value is the id of the OSM-way that must be conflated; typically a calculatedTag"
-            }]
+            }],
+            {
+                cannotBeImportedMessage: Translations.t.general.add.import.wrongTypeToConflate
+            }
         );
     }
 
@@ -393,7 +398,7 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
                 doc: "Distance to distort the geometry to snap to this layer",
                 defaultValue: "0.1"
             }],
-            false
+            { showRemovedTags: false}
         )
     }
 
@@ -548,7 +553,7 @@ export class ImportPointButton extends AbstractImportButton {
                 {name:"location_picker",
                     defaultValue: "photo",
                 doc: "Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled"}],
-            false
+            { showRemovedTags: false}
         )
     }
 

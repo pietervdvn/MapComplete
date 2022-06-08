@@ -56,6 +56,7 @@
                 "importTags": "The element will receive {tags}",
                 "officialThemesOnly": "The import button is disabled for unofficial themes to prevent accidents",
                 "wrongType": "This element is not a point or a way and can not be imported",
+                "wrongTypeToConflate": "This element is not a point or a way and can not be conflated",
                 "zoomInMore": "Zoom in more to import this feature"
             },
             "importTags": "The element will receive {tags}",

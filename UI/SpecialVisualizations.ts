@@ -35,7 +35,7 @@ import {ConflateButton, ImportPointButton, ImportWayButton} from "./Popup/Import
 import TagApplyButton from "./Popup/TagApplyButton";
 import AutoApplyButton from "./Popup/AutoApplyButton";
 import * as left_right_style_json from "../assets/layers/left_right_style/left_right_style.json";
-import {OpenIdEditor} from "./BigComponents/CopyrightPanel";
+import {OpenIdEditor, OpenJosm} from "./BigComponents/CopyrightPanel";
 import Toggle from "./Input/Toggle";
 import Img from "./Base/Img";
 import NoteCommentElement from "./Popup/NoteCommentElement";
@@ -886,7 +886,14 @@ export default class SpecialVisualizations {
                         return new OpenIdEditor(state, undefined, feature.data.id)
                     }
                 },
-
+                {
+                    funcName: "open_in_josm",
+                    docs: "Opens the current view in the JOSM-editor",
+                    args: [],
+                    constr: (state, feature) => {
+                        return new OpenJosm(state)
+                    }
+                },
 
                 {
                     funcName: "clear_location_history",
