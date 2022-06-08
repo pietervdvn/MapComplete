@@ -523,7 +523,7 @@
                 "p3": "Es gibt noch einige weitere Befehle, senden Sie <code>help</code>, um sie alle zu sehen."
             },
             "wiki": {
-                "docs": "Gibt (einen Teil) der angegebenen Seite von wiki.osm.org aus. In öffentlichen Räumen wird der erste Absatz angezeigt; in einer Direktnachricht wird die gesamte Seite gesendet."
+                "docs": "Gibt (einen Teil) der angegebenen Seite von {backend} aus. In öffentlichen Räumen wird der erste Absatz angezeigt; in einer Direktnachricht wird die gesamte Seite gesendet."
             }
         },
         "decryptionFailed": "Es tut mir leid, ich konnte die Nachricht nicht entschlüsseln. Sie können versuchen, diesen Kanal zu verlassen und sich erneut zu verbinden",

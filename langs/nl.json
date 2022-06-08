@@ -524,7 +524,7 @@
                 "p3": "Er zijn nog meer commando's, stuur me <code>help</code> om ze allemaal te zien."
             },
             "wiki": {
-                "docs": "Stuurt een (deel van) de gevraagde pagina van wiki.osm.org. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina."
+                "docs": "Stuurt een (deel van) de gevraagde pagina van {backend}. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina."
             }
         },
         "decryptionFailed": "Sorry, ik kon je bericht niet ontcijferen. Probeer om deze kamer te verlaten en opnieuw te connecteren",
