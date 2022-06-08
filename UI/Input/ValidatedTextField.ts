@@ -733,6 +733,7 @@ class EmailTextField extends TextFieldDef {
         if (str === undefined) {
             return false
         }
+        str = str.trim()
         if (str.startsWith("mailto:")) {
             str = str.substring("mailto:".length)
         }
@@ -743,6 +744,7 @@ class EmailTextField extends TextFieldDef {
         if (str === undefined) {
             return undefined
         }
+        str = str.trim()
         if (str.startsWith("mailto:")) {
             str = str.substring("mailto:".length)
         }
