@@ -137,6 +137,52 @@
       ],
       "id": "hackerspaces-opening_hours"
     },
+    {
+      "question": {
+        "en": "Is there a 3D printer available at this hackerspace?",
+        "nl": "Is er een 3D printer beschikbaar in deze hackerspace?"
+      },
+      "mappings": [
+          {
+            "if": "service:3dprinter=yes",
+            "then": {
+              "en": "There is a 3D printer available at this hackerspace",
+              "nl": "Er is een 3D printer beschikbaar in deze hackerspace"
+            }
+          },
+          {
+            "if": "service:3dprinter=no",
+            "then": {
+              "en": "There is no 3D printer available at this hackerspace",
+              "nl": "Er is geen 3D printer beschikbaar in deze hackerspace"
+            }
+          }
+        ],
+      "id": "hackerspaces-3dprinters"
+    },
+    {
+      "question": {
+          "en": "Is there a laser cutter available at this hackerspace?",
+          "nl": "Is er een laser cutter beschikbaar in deze hackerspace?"
+        },
+        "mappings": [
+            {
+              "if": "service:lasercutter=yes",
+              "then": {
+                "en": "There is a laser cutter available at this hackerspace",
+                "nl": "Er is een laser cutter beschikbaar in deze hackerspace"
+              }
+            },
+            {
+              "if": "service:lasercutter=no",
+              "then": {
+                "en": "There is no laser cutter available at this hackerspace",
+                "nl": "Er is geen laser cutter beschikbaar in deze hackerspace"
+              }
+            }
+          ],
+      "id": "hackerspaces-lasercutter"
+    },
     "wheelchair-access",
     {
       "id": "hs-club-mate",
