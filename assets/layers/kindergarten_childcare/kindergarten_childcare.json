@@ -132,7 +132,7 @@
         "mappings": [
           {
             "if": "amenity=kindergarten",
-            "then": "circle:white;./assets/layers/kindergarten_childcare/childcare.svg"
+            "then": "circle:white;./assets/layers/kindergarten_childcare/kindergarten.svg"
           },
           {
             "if": "amenity=childcare",
