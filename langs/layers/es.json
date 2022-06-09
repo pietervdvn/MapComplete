@@ -74,7 +74,7 @@
         }
     },
     "artwork": {
-        "description": "Diversas piezas de obras de arte",
+        "description": "Un mapa abierto de estatus, bustos, grafitis y otras obras de arte en todo el mundo",
         "name": "Obras de arte",
         "presets": {
             "0": {
@@ -248,7 +248,7 @@
         }
     },
     "bench": {
-        "description": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y preguntan algunas preguntas sobre ellos.",
+        "description": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
         "name": "Bancos",
         "presets": {
             "0": {
@@ -459,6 +459,12 @@
                         },
                         "4": {
                             "1": "bicis de montaña"
+                        },
+                        "5": {
+                            "1": "alforjas de bicicleta"
+                        },
+                        "6": {
+                            "1": "tándem"
                         }
                     }
                 }
@@ -502,7 +508,10 @@
                         "then": "Esta es una tienda que vende o alquila bicicletas, pero también las alquila"
                     },
                     "3": {
-                        "then": "Esta es una estación automática, en la que una bici se asegura mecánicamente en una estructura"
+                        "then": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura"
+                    },
+                    "5": {
+                        "then": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler"
                     }
                 },
                 "question": "¿Qué tipo de alquiler de bicicletas es este?"
@@ -526,6 +535,9 @@
                     },
                     "2": {
                         "then": "Esta máquina exprendedora está cerrada"
+                    },
+                    "0": {
+                        "then": "Esta máquina expendedora funciona"
                     }
                 },
                 "question": "¿Todavía es operacional esta máquina exprendedora?",
@@ -543,6 +555,9 @@
             },
             "bike_cafe-repair-tools": {
                 "question": "¿Hay herramientas para reparar su propia bicicleta?"
+            },
+            "bike_cafe-website": {
+                "question": "¿Cual es el sitio web de {name}?"
             }
         }
     },
@@ -819,7 +834,12 @@
             },
             "bike_repair_station-valves": {
                 "question": "¿Que válvulas se soportan?",
-                "render": "Esta bomba soporta las siguiente válvulas: {valves}"
+                "render": "Esta bomba soporta las siguiente válvulas: {valves}",
+                "mappings": {
+                    "1": {
+                        "then": "Dunlop"
+                    }
+                }
             }
         },
         "title": {
@@ -928,7 +948,18 @@
                 "question": "¿Vende bicis esta tienda?"
             },
             "bike_repair_tools-service": {
-                "question": "¿Hay herramientas para reparar tu propia bici?"
+                "question": "¿Hay herramientas para reparar tu propia bici?",
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda ofrece herramientas para la reparación DIY"
+                    },
+                    "1": {
+                        "then": "Esta tienda no ofrece herramientas para la reparación DIY"
+                    },
+                    "2": {
+                        "then": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda"
+                    }
+                }
             },
             "bike_shop-access": {
                 "render": "Solo accesible a {access}"
@@ -937,7 +968,12 @@
                 "question": "¿Cual es la dirección de correo electrónico de {name}?"
             },
             "bike_shop-is-bicycle_shop": {
-                "render": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas"
+                "render": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas",
+                "mappings": {
+                    "0": {
+                        "then": "Este negocio se centra en el alquiler"
+                    }
+                }
             },
             "bike_shop-name": {
                 "question": "¿Cual es el nombre de esta tienda de bicicletas?",
@@ -960,13 +996,26 @@
                 },
                 "4": {
                     "then": "Tienda de bicis <i>{name}</i>"
+                },
+                "0": {
+                    "then": "Tienda de artículos deportivos <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Taller/tienda de bicis <i>{name}</i>"
                 }
+            },
+            "render": "Taller/tienda de bicis"
+        },
+        "name": "Taller/tienda de bicis",
+        "presets": {
+            "0": {
+                "title": "un taller/tienda de bicis"
             }
         }
     },
     "bike_themed_object": {
         "description": "Una capa con los objetos relacionados con bicis pero que no coinciden con ninguna otra capa",
-        "name": "Objeto relacionada con bicis",
+        "name": "Objeto relacionado con bicis",
         "title": {
             "mappings": {
                 "1": {
@@ -979,17 +1028,30 @@
     "binocular": {
         "tagRenderings": {
             "binocular-charge": {
-                "question": "¿Cuánto hay que pagar para utilizar estos binoculares?",
-                "render": "Utilizar estos binoculares cuesta {charge}"
+                "question": "¿Cuánto hay que pagar para utilizar estos prismáticos?",
+                "render": "Utilizar estos prismáticos cuesta {charge}",
+                "mappings": {
+                    "0": {
+                        "then": "De uso gratuito"
+                    }
+                }
             },
             "binocular-direction": {
-                "question": "¿Cuándo uno mira a través de este binocular, en qué dirección lo hace?",
+                "question": "¿Cuándo uno mira a través de estos prismáticos, en qué dirección lo hace?",
                 "render": "Mira hacia {direction}º"
             }
         },
         "title": {
-            "render": "Binoculares"
-        }
+            "render": "Prismáticos"
+        },
+        "presets": {
+            "0": {
+                "description": "Un telescopio o unos prismáticos montados en un poste, disponible para que el público mire alrededor. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+                "title": "unos prismáticos"
+            }
+        },
+        "description": "Prismáticos",
+        "name": "Prismáticos"
     },
     "birdhide": {
         "filter": {
@@ -1039,7 +1101,7 @@
                 }
             }
         },
-        "description": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa pregunta algunas preguntas relevantes",
+        "description": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa hace algunas preguntas relevantes",
         "filter": {
             "0": {
                 "options": {
@@ -1071,9 +1133,18 @@
                     },
                     "4": {
                         "then": "Un espacio abierto donde se sirve cerveza, típico de Alemania"
+                    },
+                    "2": {
+                        "then": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
+                    },
+                    "0": {
+                        "then": "Un bar, principalmente para beber cervezas en un interior cálido y relajado"
+                    },
+                    "1": {
+                        "then": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
                     }
                 },
-                "question": "Qué tipo de café es este"
+                "question": "Qué tipo de cafetería es esta"
             },
             "Name": {
                 "question": "¿Cual es el nombre de este pub?",
@@ -1360,6 +1431,10 @@
             "phone": {
                 "question": "¿A qué número se puede llamar si hay un problema con esta estación de carga?",
                 "render": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>"
+            },
+            "ref": {
+                "question": "¿Cual es el número de referencia de esta estación de carga?",
+                "render": "El número de referencia es <b>{ref}</b>"
             }
         },
         "title": {
