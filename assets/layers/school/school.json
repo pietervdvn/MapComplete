@@ -135,7 +135,7 @@
       },
       "multiAnswer": true,
       "render": {
-        "en":"This is a school for"
+        "en":"This is a school for {school:for}"
       },
       "freeform": {
         "key": "school:for",
