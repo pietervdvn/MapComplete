@@ -3453,7 +3453,7 @@
                         "then": "La superficie es <b>hormigón</b>"
                     }
                 },
-                "render": "La superficie es <b>{surface</b>",
+                "render": "La superficie es <b>{surface}</b>",
                 "question": "¿Cual es la superficie de esta pista de deportes?"
             },
             "sport_pitch-sport": {
