@@ -15,8 +15,8 @@
   "icon": "./assets/layers/school/college.svg",
   "#layers:note": "kindergarten_childcare must be _below_ school, as it can 'catch' primary schools which do have an integrated preschool",
   "layers": [
-    "school",
     "tertiary_education",
+    "school",
     "kindergarten_childcare"
   ]
 }
