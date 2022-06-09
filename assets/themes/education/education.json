@@ -1,5 +1,5 @@
 {
-  "id": "schools",
+  "id": "education",
   "description": {
     "en": "On this map, you'll find information about all types of schools and eduction and can easily add more information"
   },
@@ -15,6 +15,7 @@
   "icon": "./assets/layers/school/college.svg",
   "layers": [
     "kindergarten_childcare",
-    "school"
+    "school",
+    "tertiary_education"
   ]
 }

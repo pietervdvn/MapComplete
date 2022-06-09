@@ -1,0 +1,82 @@
+{
+  "id": "tertiary_education",
+  "name": {
+    "en": "Colleges and universities"
+  },
+  "description": "Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)",
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=college",
+        "amenity=university",
+        {
+          "and": [
+            "amenity=school",
+            {
+              "or": [
+                "isced:2011:level~.*bachelor.*",
+                "isced:2011:level~.*master.*"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "title": {
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*":"{name}"
+        }
+      },
+      {
+        "if": "amenity=college",
+        "then": {
+          "en": "College",
+          "nl": "Hogeschool"
+        }
+      },{
+        "if": "amenity=university",
+        "then": {
+          "en": "University"
+        }
+      },
+      {
+        "if": "amenity=school",
+        "then": {
+          "en": "School providing tertiary education"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "school.capacity",
+    "school.gender",
+    "school.target-audience",
+    "website",
+    "email",
+    "phone"
+  ],
+  "mapRendering": [{
+    "location": ["point","centroid"],
+    "iconSize": {
+      "render": "40,40,center"
+    },
+    "label": {
+      "mappings": [
+        {
+          "if": "name~*",
+          "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+        }
+      ]
+    },
+    "icon": "circle:white;./assets/layers/school/college.svg"
+  },
+    {
+      "color": "#22f1f4",
+      "width": 1
+    }
+  ]
+}

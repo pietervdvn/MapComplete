@@ -156,6 +156,10 @@
                 "then": "./assets/themes/drinking_water/logo.svg"
               },
               {
+                "if": "theme=education",
+                "then": "./assets/layers/school/college.svg"
+              },
+              {
                 "if": "theme=entrances",
                 "then": "./assets/layers/entrance/door.svg"
               },
@@ -258,10 +262,6 @@
               {
                 "if": "theme=postboxes",
                 "then": "./assets/themes/postboxes/postbox.svg"
-              },
-              {
-                "if": "theme=schools",
-                "then": "./assets/layers/school/college.svg"
               },
               {
                 "if": "theme=shops",
