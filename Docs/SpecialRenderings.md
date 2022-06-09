@@ -65,6 +65,8 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of export_as_geojson](#example-usage-of-export_as_geojson)
     + [open_in_iD](#open_in_id)
       * [Example usage of open_in_iD](#example-usage-of-open_in_id)
+    + [open_in_josm](#open_in_josm)
+      * [Example usage of open_in_josm](#example-usage-of-open_in_josm)
     + [clear_location_history](#clear_location_history)
       * [Example usage of clear_location_history](#example-usage-of-clear_location_history)
     + [close_note](#close_note)
@@ -559,6 +561,16 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 #### Example usage of open_in_iD 
 
  `{open_in_iD()}`
+
+
+
+### open_in_josm 
+
+ Opens the current view in the JOSM-editor 
+
+#### Example usage of open_in_josm 
+
+ `{open_in_josm()}`
 
 
 
