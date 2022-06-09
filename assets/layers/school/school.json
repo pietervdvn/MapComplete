@@ -57,6 +57,12 @@
       "question": "What level of education is given on this school?",
       "mappings": [
         {
+          "if": "isced:2011:level=early_childhood",
+          "then": {
+            "en": "This is a school with a kindergarten section where young kids receive some education which prepares reading and writing."
+          }
+        },
+        {
           "if": "isced:2011:level=primary",
           "then": {
             "en": "This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>"
@@ -188,7 +194,28 @@
     },
     "website",
     "phone",
-    "email"
+    "email",
+    {
+      "id": "language",
+      "question": {
+        "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
+      },
+      "render": {
+        "en":"{school:language} is the main language of {title()}"
+      },
+      "freeform": {
+        "key": "school:language",
+        "type": "language",
+        "inline": true
+      },
+      "mappings": [{
+        "if": "school:language=",
+        "then": {
+          "en": "The main language of this school is unknown"
+        },
+        "hideInAnswer": true
+      }]
+    }
   ],
   "presets": [
     {
