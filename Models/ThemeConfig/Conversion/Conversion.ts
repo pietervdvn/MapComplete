@@ -226,7 +226,7 @@ export class Fuse<T> extends DesugaringStep<T> {
                     break;
                 }
             }catch(e){
-                console.error("Step "+step.name+" failed due to "+e);
+                console.error("Step "+step.name+" failed due to ",e,e.stack);
                 throw e
             }
         }

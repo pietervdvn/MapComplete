@@ -216,11 +216,11 @@ export class TagUtils {
      *
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 4}) // => true
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 5}) // => false
-     * 
+     *
      * // RegexTags must match values with newlines
      * TagUtils.Tag("note~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De aed bevindt zich op de 5de verdieping"}) // => true
      * TagUtils.Tag("note~i~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De AED bevindt zich op de 5de verdieping"}) // => true
-     * 
+     *
      * // Must match case insensitive
      * TagUtils.Tag("name~i~somename").matchesProperties({name: "SoMeName"}) // => true
      */
@@ -286,7 +286,7 @@ export class TagUtils {
     private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
 
         if (json === undefined) {
-            throw `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
+            throw new Error(`Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`)
         }
         if (typeof (json) != "string") {
             if (json.and !== undefined && json.or !== undefined) {
@@ -335,7 +335,7 @@ export class TagUtils {
                 return new ComparingTag(split[0], f, operator + val)
             }
         }
-        
+
         if (tag.indexOf("~~") >= 0) {
             const split = Utils.SplitFirst(tag, "~~");
             if (split[1] === "*") {
@@ -346,9 +346,9 @@ export class TagUtils {
                 new RegExp("^" + split[1] + "$", "s")
             );
         }
-        
+
         const withRegex = TagUtils.parseRegexOperator(tag)
-        if(withRegex != null) {
+        if (withRegex != null) {
             if (withRegex.value === "*" && withRegex.invert) {
                 throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
             }
@@ -362,7 +362,7 @@ export class TagUtils {
             }
             return new RegexTag(
                 withRegex.key,
-                new RegExp("^"+value+"$", "s"+withRegex.modifier),
+                new RegExp("^" + value + "$", "s" + withRegex.modifier),
                 withRegex.invert
             );
         }
@@ -459,35 +459,35 @@ export class TagUtils {
     /**
      * Returns 'true' is opposite tags are detected.
      * Note that this method will never work perfectly
-     * 
+     *
      * // should be false for some simple cases
      * TagUtils.ContainsOppositeTags([new Tag("key", "value"), new Tag("key0", "value")]) // => false
      * TagUtils.ContainsOppositeTags([new Tag("key", "value"), new Tag("key", "value0")]) // => false
-     * 
+     *
      * // should detect simple cases
      * TagUtils.ContainsOppositeTags([new Tag("key", "value"), new RegexTag("key", "value", true)]) // => true
      * TagUtils.ContainsOppositeTags([new Tag("key", "value"), new RegexTag("key", /value/, true)]) // => true
      */
-    public static ContainsOppositeTags(tags: (TagsFilter)[]) : boolean{
-        for (let i = 0; i < tags.length; i++){
+    public static ContainsOppositeTags(tags: (TagsFilter)[]): boolean {
+        for (let i = 0; i < tags.length; i++) {
             const tag = tags[i];
-            if(!(tag instanceof Tag || tag instanceof RegexTag)){
+            if (!(tag instanceof Tag || tag instanceof RegexTag)) {
                 continue
             }
-            for (let j = i + 1; j < tags.length; j++){
+            for (let j = i + 1; j < tags.length; j++) {
                 const guard = tags[j];
-                if(!(guard instanceof Tag || guard instanceof RegexTag)){
+                if (!(guard instanceof Tag || guard instanceof RegexTag)) {
                     continue
                 }
-                if(guard.key !== tag.key) {
+                if (guard.key !== tag.key) {
                     // Different keys: they can _never_ be opposites
                     continue
                 }
-                if((guard.value["source"] ?? guard.value) !== (tag.value["source"] ?? tag.value)){
+                if ((guard.value["source"] ?? guard.value) !== (tag.value["source"] ?? tag.value)) {
                     // different values: the can _never_ be opposites
                     continue
                 }
-                if( (guard["invert"] ?? false) !== (tag["invert"] ?? false) ) {
+                if ((guard["invert"] ?? false) !== (tag["invert"] ?? false)) {
                     // The 'invert' flags are opposite, the key and value is the same for both
                     // This means we have found opposite tags!
                     return true
@@ -502,28 +502,28 @@ export class TagUtils {
      * Returns a filtered version of 'listToFilter'.
      * For a list [t0, t1, t2], If `blackList` contains an equivalent (or broader) match of any `t`, this respective `t` is dropped from the returned list
      * Ignores nested ORS and ANDS
-     * 
+     *
      * TagUtils.removeShadowedElementsFrom([new Tag("key","value")],  [new Tag("key","value"), new Tag("other_key","value")]) // => [new Tag("other_key","value")]
      */
-    public static removeShadowedElementsFrom(blacklist: TagsFilter[], listToFilter: TagsFilter[] ) : TagsFilter[] {
+    public static removeShadowedElementsFrom(blacklist: TagsFilter[], listToFilter: TagsFilter[]): TagsFilter[] {
         return listToFilter.filter(tf => !blacklist.some(guard => guard.shadows(tf)))
     }
 
     /**
      * Returns a filtered version of 'listToFilter', where no duplicates and no equivalents exists.
-     * 
+     *
      * TagUtils.removeEquivalents([new RegexTag("key", /^..*$/), new Tag("key","value")]) // => [new Tag("key", "value")]
      */
-    public static removeEquivalents( listToFilter: (Tag | RegexTag)[]) : TagsFilter[] {
+    public static removeEquivalents(listToFilter: (Tag | RegexTag)[]): TagsFilter[] {
         const result: TagsFilter[] = []
-        outer: for (let i = 0; i < listToFilter.length; i++){
+        outer: for (let i = 0; i < listToFilter.length; i++) {
             const tag = listToFilter[i];
-            for (let j = 0; j < listToFilter.length; j++){
-                if(i === j){
+            for (let j = 0; j < listToFilter.length; j++) {
+                if (i === j) {
                     continue
                 }
                 const guard = listToFilter[j];
-                if(guard.shadows(tag)) {
+                if (guard.shadows(tag)) {
                     // the guard 'kills' the tag: we continue the outer loop without adding the tag
                     continue outer;
                 }
@@ -532,7 +532,7 @@ export class TagUtils {
         }
         return result
     }
-    
+
     /**
      * Returns `true` if at least one element of the 'guards' shadows one element of the 'listToFilter'.
      *
@@ -540,7 +540,7 @@ export class TagUtils {
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("other_key","value")]) // => false
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("key","other_value")]) // => false
      */
-    public static containsEquivalents( guards: TagsFilter[], listToFilter: TagsFilter[] ) : boolean {
+    public static containsEquivalents(guards: TagsFilter[], listToFilter: TagsFilter[]): boolean {
         return listToFilter.some(tf => guards.some(guard => guard.shadows(tf)))
     }
 
