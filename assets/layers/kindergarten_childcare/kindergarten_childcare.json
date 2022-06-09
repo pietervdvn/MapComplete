@@ -9,7 +9,8 @@
     "osmTags": {
       "or": [
         "amenity=childcare",
-        "amenity=kindergarten"
+        "amenity=kindergarten",
+        "isced:level:2011=early_childhood"
       ]
     }
   },
