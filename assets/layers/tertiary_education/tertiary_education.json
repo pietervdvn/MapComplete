@@ -81,5 +81,16 @@
       "color": "#22f1f4",
       "width": 1
     }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a university"
+      },
+      "description": {
+        "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points."
+      },
+      "tags": ["amenity=university","fixme=Added with MapComplete, geometry to be drawn"]
+    }
   ]
 }
