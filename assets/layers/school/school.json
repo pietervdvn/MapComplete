@@ -3,6 +3,7 @@
   "name": {
     "en": "Primary and secondary schools"
   },
+  "description": "Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles",
   "minzoom": 12,
   "title": {
     "render": {
@@ -85,14 +86,61 @@
           "then": {
             "en": "This is a school where one learns <b>general upper secondary</b> skills with a focus on general skills in order to prepare student for further studies. <div class='subtle'>Pupils typically enroll from 14 or 15 years old till 18 years old</div>"
           }
+        },
+        {
+          "if": "isced:2011:level=post_secondary",
+          "then": {
+            "en": "This is a school where one learns skills and competencies which require secondary schooling, but are not sufficiently complex for tertiary education.<div class='subtle'>Examples are vocational training for adults</div>"
+          }
         }
       ],
       "multiAnswer": true
     },
     {
+      "id": "gender",
+      "question": {
+        "en": "Which genders can enroll at this school?"
+      },
+      "mappings": [
+        {
+          "if": "school:gender=mixed",
+          "then": {
+            "en": "Both boys and girls can enroll here and have classes together"
+          }
+        },
+        {
+          "if": "school:gender=separated",
+          "then": {
+            "en": "Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)"
+          }
+        },
+        {
+          "if": "school:gender=male",
+          "then": {
+            "en": "This is a boys only-school"
+          }
+        },
+        {
+          "if": "school:gender=female",
+          "then": {
+            "en": "This is a girls-only school"
+          }
+        }
+      ]
+    },
+    {
       "id": "target-audience",
-      "question": "What is the target audience for this school?",
+      "question": {
+        "en":"What is the target audience for this school?"
+      },
       "multiAnswer": true,
+      "render": {
+        "en":"This is a school for"
+      },
+      "freeform": {
+        "key": "school:for",
+        "inline": true
+      },
       "mappings": [
         {
           "if": "school:for=normal_pupils",
