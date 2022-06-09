@@ -383,13 +383,13 @@ class MappedStore<TIn, T> extends Store<T> {
     private static readonly pass: () => {}
 
 
-    constructor(upstream: Store<TIn>, f: (t: TIn) => T, extraStores: Store<any>[] = undefined, 
-                upstreamListenerHandler: ListenerTracker<TIn>) {
+    constructor(upstream: Store<TIn>, f: (t: TIn) => T, extraStores: Store<any>[], 
+                upstreamListenerHandler: ListenerTracker<TIn>, initialState: T) {
         super();
         this._upstream = upstream;
         this._upstreamCallbackHandler = upstreamListenerHandler
         this._f = f;
-        this._data = f(upstream.data)
+        this._data = initialState
         this._upstreamPingCount = upstreamListenerHandler.pingCount
         this._extraStores = extraStores;
         this.registerCallbacksToUpstream()
@@ -436,10 +436,11 @@ class MappedStore<TIn, T> extends Store<T> {
             })
         }
         return new MappedStore(
-            this._upstream,
-            data => f(this._f(data)),
+            this,
+            f, // we could fuse the functions here (e.g. data => f(this._f(data), but this might result in _f being calculated multiple times, breaking things
             stores,
-            this._upstreamCallbackHandler
+            this._callbacks,
+            f(this.data)
         );
     }
 
@@ -669,7 +670,7 @@ export class UIEventSource<T> extends Store<T> {
      */
     public map<J>(f: ((t: T) => J),
                   extraSources: Store<any>[] = []): Store<J> {
-        return new MappedStore(this, f, extraSources, this._callbacks);
+        return new MappedStore(this, f, extraSources, this._callbacks, f(this.data));
     }
 
     /**
