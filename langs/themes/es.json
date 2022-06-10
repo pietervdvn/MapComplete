@@ -155,7 +155,7 @@
                     },
                     "dumpstations-network": {
                         "question": "¿A qué red forma parte este lugar? (saltar si a ninguna)",
-                        "render": "Esta estación forma parte de la red {red}"
+                        "render": "Esta estación forma parte de la red {network}"
                     }
                 }
             }
