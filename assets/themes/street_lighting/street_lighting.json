@@ -70,6 +70,7 @@
         }
       ],
       "tagRenderings": [
+        "images",
         {
           "id": "lit",
           "question": {
@@ -189,6 +190,7 @@
         }
       ],
       "tagRenderings": [
+        "images",
         {
           "id": "lit",
           "question": {
