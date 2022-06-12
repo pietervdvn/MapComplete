@@ -34,7 +34,7 @@ export default class GenericImageProvider extends ImageProvider {
         return undefined;
     }
 
-    protected DownloadAttribution(url: string) {
+    public DownloadAttribution(url: string) {
         return undefined
     }
 
