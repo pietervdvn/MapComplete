@@ -227,12 +227,9 @@ export abstract class Store<T> {
 
         const newSource = new UIEventSource<T>(this.data);
 
-        let currentCallback = 0;
         this.addCallback(latestData => {
-            currentCallback++;
-            const thisCallback = currentCallback;
             window.setTimeout(() => {
-                if (thisCallback === currentCallback) {
+                if (this.data == latestData) { // compare by reference
                     newSource.setData(latestData);
                 }
             }, millisToStabilize)
