@@ -4,7 +4,6 @@ import Svg from "../../Svg";
 import {Utils} from "../../Utils";
 import {LicenseInfo} from "./LicenseInfo";
 import Constants from "../../Models/Constants";
-import * as Console from "console";
 
 export class Mapillary extends ImageProvider {
 
@@ -82,7 +81,7 @@ export class Mapillary extends ImageProvider {
         return [this.PrepareUrlAsync(key, value)]
     }
 
-    protected async DownloadAttribution(url: string): Promise<LicenseInfo> {
+    public async DownloadAttribution(url: string): Promise<LicenseInfo> {
         const license = new LicenseInfo()
         license.artist = "Contributor name unavailable";
         license.license = "CC BY-SA 4.0";
@@ -98,7 +97,7 @@ export class Mapillary extends ImageProvider {
         }
 
         const metadataUrl = 'https://graph.mapillary.com/' + mapillaryId + '?fields=thumb_1024_url&&access_token=' + Constants.mapillary_client_token_v4;
-        const response = await Utils.downloadJson(metadataUrl)
+        const response = await Utils.downloadJsonCached(metadataUrl,60*60)
         const url = <string>response["thumb_1024_url"];
         return {
             url: url,

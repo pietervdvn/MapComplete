@@ -13,18 +13,6 @@ export default abstract class ImageProvider {
 
     public abstract readonly defaultKeyPrefixes: string[]
 
-    private _cache = new Map<string, UIEventSource<LicenseInfo>>()
-
-    GetAttributionFor(url: string): UIEventSource<LicenseInfo> {
-        const cached = this._cache.get(url);
-        if (cached !== undefined) {
-            return cached;
-        }
-        const src = UIEventSource.FromPromise(this.DownloadAttribution(url))
-        this._cache.set(url, src)
-        return src;
-    }
-
     public abstract SourceIcon(backlinkSource?: string): BaseUIElement;
 
     /**
@@ -75,6 +63,6 @@ export default abstract class ImageProvider {
 
     public abstract ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]>;
 
-    protected abstract DownloadAttribution(url: string): Promise<LicenseInfo>;
+    public abstract DownloadAttribution(url: string): Promise<LicenseInfo>;
 
 }

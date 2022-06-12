@@ -1,7 +1,7 @@
 export class LicenseInfo {
     title: string = ""
     artist: string = "";
-    license: string = "";
+    license: string = undefined;
     licenseShortName: string = "";
     usageTerms: string = "";
     attributionRequired: boolean = false;
