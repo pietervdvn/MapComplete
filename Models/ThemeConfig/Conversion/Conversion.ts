@@ -5,7 +5,7 @@ import {Utils} from "../../../Utils";
 export interface DesugaringContext {
     tagRenderings: Map<string, TagRenderingConfigJson>
     sharedLayers: Map<string, LayerConfigJson>,
-    publicLayers: Set<string>
+    publicLayers?: Set<string>
 }
 
 export abstract class Conversion<TIn, TOut> {

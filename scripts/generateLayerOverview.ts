@@ -188,8 +188,7 @@ class LayerOverviewUtils {
         const sharedLayers = new Map<string, LayerConfigJson>()
         const state: DesugaringContext = {
             tagRenderings: sharedTagRenderings,
-            sharedLayers,
-            publicLayers: new Set()
+            sharedLayers
         }
         const prepLayer = new PrepareLayer(state);
         for (const sharedLayerJson of layerFiles) {
