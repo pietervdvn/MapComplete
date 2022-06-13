@@ -450,7 +450,7 @@
     },
     "matrixbot": {
         "commandFailed": "Sorry, something went wrong while running <code>{cmd}</code>",
-        "commandNotFound": "I didn't understand your request. Did you perhaps mean to type {0}, {1}, {2} or ${2}? <p>Type <code>help</code> to see an overview of all commands</p>",
+        "commandNotFound": "I didn't understand your request. Did you perhaps mean to type {0}, {1}, {2} or {2}? <p>Type <code>help</code> to see an overview of all commands</p>",
         "commands": {
             "dm": {
                 "argbody": "The actual command body of the command",
@@ -458,12 +458,12 @@
                 "commandNotFound": "Command {key} not found - see <code>help</code> for all commands",
                 "docs": "Executes a command and send the output to someone else",
                 "executing": "Executing <code>{_}</code> and sending the result to <b>{to}</b>...",
-                "failed": "I couldn't execute <code>${cmd}</code> due to ${message}",
+                "failed": "I couldn't execute <code>{cmd}</code> due to {message}",
                 "noDm": "I couldn't create a room with {to}",
                 "receipt": "I delivered the message to {to}",
                 "selectValidCommand": "Specify a valid command",
                 "selectValidUser": "Specify a valid target user",
-                "sendReason": "I sent you this message because <b>{sender}</b> requested me to send this with <code>${cmd}</code>"
+                "sendReason": "I sent you this message because <b>{sender}</b> requested me to send this with <code>{cmd}</code>"
             },
             "documentation": {
                 "argid": "The ID of the layer, theme or URL-parameter for which documentation is needed",
@@ -497,7 +497,7 @@
                 "docs": "Gets info about an OSM-object. Either give an id OR a search string; the objects are interpreted and known values are shown.",
                 "editWith": "Edit this element with {title}",
                 "fetchingInfoAbout": "Fetching data about {id}...",
-                "foundResults": "Found {total} results for <code>${search}</code>, fetching details about them...",
+                "foundResults": "Found {total} results for <code>{search}</code>, fetching details about them...",
                 "noEditPossible": "No MapComplete themes support this element",
                 "noInfo": "No relevant information yet",
                 "noOpeningHours": "No opening hours are known.",
@@ -549,7 +549,7 @@
                 "noNearOrIn": "Sorry, I didn't understand your command as I didn't find a <code>near</code> or <code>in</code> in your search query.\n Try something as <code>search drinking water in London</code>, <code>search friture in Brussels</code></p>\n <p>Alternatively, try <code>info {cmd}</code> to get info about a single object.",
                 "nothingFound": "Sorry, I couldn't find anything for <code>{search}</code>, so I can't search for {layerTitle}",
                 "overview": "I found {length} matching items.",
-                "searching": "Searching {layerTitle} ${mode} <code>{search}</code>..."
+                "searching": "Searching {layerTitle} {mode} <code>{search}</code>..."
             },
             "shutdown": {
                 "argmode": "Indicates if the service should be restarted, must be one of {verbs}",
@@ -560,7 +560,7 @@
                 "verbupdate": "Attempts to update the embedded MapComplete-codebase, shuts down afterwards"
             },
             "tags": {
-                "announceSearch": "<code>${id}</code> doesn't seem to be a valid OSM-id - searching worldwide instead for ${search}...",
+                "announceSearch": "<code>{id}</code> doesn't seem to be a valid OSM-id - searching worldwide instead for {search}...",
                 "argsearch": "The ID of the OSM-object or a search query",
                 "docs": "Show the tags of an OSM-object. Either give an id OR a search string; the objects are interpreted and known values are shown.",
                 "noSearchGiven": "Please, provide a search term of id to use this command",
