@@ -291,10 +291,14 @@ export class ImmutableStore<T> extends Store<T> {
     }
 
 
-    map<J>(f: (t: T) => J): ImmutableStore<J> {
+    map<J>(f: (t: T) => J, extraStores: Store<any>[] = undefined): ImmutableStore<J> {
+        if(extraStores?.length > 0){
+            return new MappedStore(this, f, extraStores, undefined, f(this.data))
+        }
         return new ImmutableStore<J>(f(this.data));
     }
 
+    
 }
 
 /**
@@ -367,7 +371,7 @@ class ListenerTracker<T> {
 class MappedStore<TIn, T> extends Store<T> {
 
     private _upstream: Store<TIn>;
-    private _upstreamCallbackHandler: ListenerTracker<TIn>;
+    private _upstreamCallbackHandler: ListenerTracker<TIn> | undefined;
     private _upstreamPingCount: number = -1;
     private _unregisterFromUpstream: (() => void)
     
@@ -381,13 +385,13 @@ class MappedStore<TIn, T> extends Store<T> {
 
 
     constructor(upstream: Store<TIn>, f: (t: TIn) => T, extraStores: Store<any>[], 
-                upstreamListenerHandler: ListenerTracker<TIn>, initialState: T) {
+                upstreamListenerHandler: ListenerTracker<TIn> | undefined, initialState: T) {
         super();
         this._upstream = upstream;
         this._upstreamCallbackHandler = upstreamListenerHandler
         this._f = f;
         this._data = initialState
-        this._upstreamPingCount = upstreamListenerHandler.pingCount
+        this._upstreamPingCount = upstreamListenerHandler?.pingCount
         this._extraStores = extraStores;
         this.registerCallbacksToUpstream()
     }
@@ -407,7 +411,7 @@ class MappedStore<TIn, T> extends Store<T> {
     get data(): T { 
         if (!this._callbacksAreRegistered) {
             // Callbacks are not registered, so we haven't been listening for updates from the upstream which might have changed
-            if(this._upstreamCallbackHandler.pingCount != this._upstreamPingCount){
+            if(this._upstreamCallbackHandler?.pingCount != this._upstreamPingCount){
                 // Upstream has pinged - let's update our data first
                 this._data = this._f(this._upstream.data)
             }
@@ -462,7 +466,7 @@ class MappedStore<TIn, T> extends Store<T> {
 
     private update(): void {
         const newData = this._f(this._upstream.data)
-        this._upstreamPingCount = this._upstreamCallbackHandler.pingCount
+        this._upstreamPingCount = this._upstreamCallbackHandler?.pingCount
         if (this._data == newData) {
             return;
         }

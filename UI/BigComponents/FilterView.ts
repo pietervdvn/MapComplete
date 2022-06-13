@@ -226,6 +226,10 @@ export default class FilterView extends VariableUiElement {
         const settableFilter = new UIEventSource<FilterState>(undefined)
         trigger.addCallbackAndRun(state => settableFilter.setData(state))
         settableFilter.addCallback(state => {
+            if(state === undefined){
+                // still initializing
+                return
+            }
             if(state.currentFilter === undefined){
                 allFields.forEach(f => f.GetValue().setData(undefined));
             }
