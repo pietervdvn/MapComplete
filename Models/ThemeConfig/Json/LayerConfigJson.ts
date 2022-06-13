@@ -426,7 +426,7 @@ export interface LayerConfigJson {
     units?: UnitConfigJson[]
 
     /**
-     * If set, synchronizes wether or not this layer is selected.
+     * If set, synchronizes whether or not this layer is enabled.
      *
      * no: Do not sync at all, always revert to default
      * local: keep selection on local storage

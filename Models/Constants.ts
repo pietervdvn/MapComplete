@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.20.1";
+    public static vNumber = "0.20.2";
     
     public static ImgurApiKey = '7070e7167f0a25a'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
@@ -23,7 +23,7 @@ export default class Constants {
     /**
      * Layer IDs of layers which have special properties through built-in hooks
      */
-    public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", "note", "import_candidate", ...Constants.no_include]
+    public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", "note", "import_candidate", "direction", ...Constants.no_include]
 
 
     // The user journey states thresholds when a new feature gets unlocked

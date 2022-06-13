@@ -9,7 +9,6 @@ import BaseUIElement from "../UI/BaseUIElement";
 import {UIEventSource} from "./UIEventSource";
 import {LocalStorageSource} from "./Web/LocalStorageSource";
 import LZString from "lz-string";
-import * as personal from "../assets/themes/personal/personal.json";
 import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import SharedTagRenderings from "../Customizations/SharedTagRenderings";
@@ -52,17 +51,7 @@ export default class DetermineLayout {
             console.log("Using layout", layoutId);
         }
         layoutId = QueryParameters.GetQueryParameter("layout", layoutId, "The layout to load into MapComplete").data;
-        const layoutToUse: LayoutConfig = AllKnownLayouts.allKnownLayouts.get(layoutId?.toLowerCase());
-
-        if (layoutToUse?.id === personal.id) {
-            layoutToUse.layers = AllKnownLayouts.AllPublicLayers()
-            for (const layer of layoutToUse.layers) {
-                layer.minzoomVisible = Math.max(layer.minzoomVisible, layer.minzoom)
-                layer.minzoom = Math.max(16, layer.minzoom)
-            }
-        }
-
-        return layoutToUse
+        return AllKnownLayouts.allKnownLayouts.get(layoutId?.toLowerCase())
     }
 
     public static LoadLayoutFromHash(
@@ -161,7 +150,8 @@ export default class DetermineLayout {
         }
         const converState = {
             tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
-            sharedLayers: knownLayersDict
+            sharedLayers: knownLayersDict,
+            publicLayers: new Set<string>()
         }
         json = new FixLegacyTheme().convertStrict(json, "While loading a dynamic theme")
         const raw = json;

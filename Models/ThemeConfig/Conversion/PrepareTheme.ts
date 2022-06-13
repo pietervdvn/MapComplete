@@ -453,9 +453,16 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
         if (json.id !== "personal") {
             return {result: json}
         }
+        
+        // The only thing this _really_ does, is adding the layer-ids into 'layers'
+        // All other preparations are done by the 'override-all'-block in personal.json
 
-        json.layers = Array.from(this._state.sharedLayers.keys()).filter(l => Constants.priviliged_layers.indexOf(l) < 0)
-        return {result: json};
+        json.layers = Array.from(this._state.sharedLayers.keys())
+            .filter(l => Constants.priviliged_layers.indexOf(l) < 0)
+            .filter(l => this._state.publicLayers.has(l))
+        return {result: json, information: [
+            "The personal theme has "+json.layers.length+" public layers"
+            ]};
     }
 
 }

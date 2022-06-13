@@ -41,8 +41,9 @@
   "overpassMaxZoom": 15,
   "overrideAll": {
     "minzoom": 17,
-    "syncSelection": "theme",
+    "syncSelection": "theme-only",
     "shownByDefault": false
   },
+  "enableNoteImports": false,
   "layers": []
 }
