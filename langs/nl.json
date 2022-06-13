@@ -449,7 +449,7 @@
     },
     "matrixbot": {
         "commandFailed": "Sorry, er ging iets mis toen ik probeerde om <code>{cmd}</code> uit te voeren.",
-        "commandNotFound": "Sorry, ik heb je commando niet verstaan. Zou het kunnen dat je {0}, {1}, {2} of ${2} bedoelt? <p>Je kan ook <code>help</code> sturen om een overzicht van alle commando's te zien</p>",
+        "commandNotFound": "Sorry, ik heb je commando niet verstaan. Zou het kunnen dat je {0}, {1}, {2} of {2} bedoelt? <p>Je kan ook <code>help</code> sturen om een overzicht van alle commando's te zien</p>",
         "commands": {
             "documentation": {
                 "argid": "De naam van de laag, het thema of de URL-parameter waarover je informatie wenst",
@@ -525,6 +525,16 @@
             },
             "wiki": {
                 "docs": "Stuurt een (deel van) de gevraagde pagina van {backend}. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina."
+            },
+            "tags": {
+                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}..."
+            },
+            "search": {
+                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>..."
+            },
+            "dm": {
+                "sendReason": "Ik stuurde jou dit bericht omdat <b>{sender}</b> mij gevraagd heeft om je het resultaat van <code>{cmd}</code> te sturen",
+                "failed": "I kon <code>{cmd}</code> niet uitvoeren doordag {message}"
             }
         },
         "decryptionFailed": "Sorry, ik kon je bericht niet ontcijferen. Probeer om deze kamer te verlaten en opnieuw te connecteren",
