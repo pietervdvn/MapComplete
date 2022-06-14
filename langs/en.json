@@ -826,6 +826,9 @@
         "int": {
             "description": "a whole number"
         },
+        "length": {
+            "description": "a length measurement in meter"
+        },
         "nat": {
             "description": "a positive, whole number or zero",
             "mustBePositive": "This number should be positive",
