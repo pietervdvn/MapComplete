@@ -205,7 +205,6 @@
       },
       "freeform": {
         "key": "school:language",
-        "type": "language",
         "inline": true
       },
       "mappings": [{
