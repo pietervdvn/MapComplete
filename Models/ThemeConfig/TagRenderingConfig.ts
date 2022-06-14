@@ -109,7 +109,11 @@ export default class TagRenderingConfig {
             if (json.freeform.addExtraTags !== undefined && json.freeform.addExtraTags.map === undefined) {
                 throw `Freeform.addExtraTags should be a list of strings - not a single string (at ${context})`
             }
-           const type = json.freeform.type ?? "string"
+            const type = json.freeform.type ?? "string"
+            
+            if(ValidatedTextField.AvailableTypes().indexOf(type ) < 0){
+                throw "At "+context+".freeform.type is an unknown type: "+type+"; try one of "+ValidatedTextField.AvailableTypes().join(", ")
+            }
 
             let placeholder: Translation = Translations.T(json.freeform.placeholder)
             if (placeholder === undefined) {
