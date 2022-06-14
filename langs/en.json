@@ -472,7 +472,12 @@
                 "noLayerFound": "No layer found with name <code>{id}</code>. Perhaps you meant one of: ",
                 "noThemeFound": "No theme found with name <code>{id}</code>. Perhaps you meant one of: ",
                 "noUrlParameterFound": "No URL-parameter found with name <code>{id}</code>. Perhaps you meant one of: ",
-                "urlParam": "URL-parameter <code>{id}<code>"
+                "notFound": "No {singular} found with name <code>{id}</code>",
+                "urlParam": "URL-parameter <code>{id}<code>",
+                "url_parameter": {
+                    "plurar": "url-parameters",
+                    "singular": "url-parameter"
+                }
             },
             "dream": {
                 "docs": "Sends a computer-generated text",
