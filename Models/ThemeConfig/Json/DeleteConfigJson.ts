@@ -41,7 +41,7 @@ export interface DeleteConfigJson {
          * The tags that will be given to the object.
          * This must remove tags so that the 'source/osmTags' won't match anymore
          */
-        if: AndOrTagConfigJson,
+        if: string | AndOrTagConfigJson,
         /**
          * The human explanation for the options
          */

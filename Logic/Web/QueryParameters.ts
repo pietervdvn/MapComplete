@@ -8,7 +8,7 @@ import {Utils} from "../../Utils";
 export class QueryParameters {
 
     static defaults = {}
-    static documentation = {}
+    static documentation: Map<string, string> = new Map<string, string>()
     private static order: string [] = ["layout", "test", "z", "lat", "lon"];
     private static _wasInitialized: Set<string> = new Set()
     private static knownSources = {};
@@ -18,7 +18,7 @@ export class QueryParameters {
         if (!this.initialized) {
             this.init();
         }
-        QueryParameters.documentation[key] = documentation;
+        QueryParameters.documentation.set(key, documentation);
         if (deflt !== undefined) {
             QueryParameters.defaults[key] = deflt;
         }
