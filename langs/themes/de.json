@@ -612,6 +612,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen"
+                            },
+                            "1": {
+                                "then": "Dieses Gebäude hat Löcher und ist als Relation modelliert. Als solches kann es nicht zusammengeführt werden. Es kann manuell zusammengeführt werden über die <a href='https://buildings.osm.be/#/'>Gebäudeexportseite</a> {open_in_josm()}"
                             }
                         }
                     }
