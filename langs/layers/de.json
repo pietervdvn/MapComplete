@@ -1106,6 +1106,9 @@
                 },
                 "5": {
                     "then": "Fahrradwerkstatt/geschäft <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Geschäfte"
                 }
             },
             "render": "Fahrradwerkstatt/geschäft"
@@ -3723,10 +3726,10 @@
             "friture-oil": {
                 "mappings": {
                     "0": {
-                        "then": "Pflanzliches Fett"
+                        "then": "Es wird pflanzliches Fett zum Frittieren verwendet"
                     },
                     "1": {
-                        "then": "Tierisches Fett"
+                        "then": "Es wird tierisches Fett zum Frittieren verwendet"
                     }
                 },
                 "question": "Wird in dieser Pommesbude pflanzliches oder tierisches Fett zum Frittieren verwendet?"
