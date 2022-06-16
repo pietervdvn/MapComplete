@@ -86,7 +86,11 @@ function main() {
             const gokSchool = aantallen.some(x => x["GOK-school"] === "GON-school")
             const hoofdstructuur = fetch("hoofdstructuur")
             const onderwijsvorm = fetch("onderwijsvorm")
-
+            const koepel = fetch("koepel")
+            const stelsel = fetch("stelsel")
+            const scholengemeenschap = fetch("scholengemeenschap")
+            const graden =fetch("graad secundair onderwijs")
+            graden.sort()
             let specialEducation = false
             const classification = hoofdstructuur.map(s => {
                 const v = structuren[s]
@@ -100,6 +104,10 @@ function main() {
                 return v
             })
             props["school"] = Utils.Dedup(classification).join("; ")
+            props["degrees"] = graden.join(";")
+            props["koepel"] = koepel.join(";")
+            props["scholengemeenschap"] = scholengemeenschap.join(";")
+            props["stelsel"] = stelsel
             if (specialEducation) {
                 props["school:for"] = "special_education"
             }
