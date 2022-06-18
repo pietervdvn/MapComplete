@@ -281,13 +281,13 @@
         "isDeleted": "Gelöscht",
         "nearbyPictures": {
             "allFiltered": "Keine Bilder passen zu Ihrem Filter",
-            "browseNearby": "Bilder in der Nähe durchsuchen...",
+            "browseNearby": "Bilder in der Nähe durchsuchen…",
             "confirm": "Das ausgewählte Bild zeigt {title()}",
             "hasMatchingPicture": "Passt ein Bild zum Objekt? Wählen Sie es unten aus",
             "loadMore": "Weitere Bilder laden",
-            "loading": "Bilder in der Nähe laden...",
+            "loading": "Bilder in der Nähe laden…",
             "noImageSelected": "Wählen Sie ein Bild aus, um es mit dem Objekt zu verknüpfen",
-            "nothingFound": "Keine Bilder in der Nähe gefunden...",
+            "nothingFound": "Keine Bilder in der Nähe gefunden…",
             "onlyTowards": "Nur Bilder anzeigen, die in Richtung dieses Objekts aufgenommen wurden",
             "removeFilters": "Hier klicken, um die Filter zu entfernen",
             "title": "Bilder in der Nähe",
@@ -477,8 +477,8 @@
                 "closedTodayAndTomorrow": "Heute und morgen geschlossen",
                 "couldNotDownload": "<code>{id}</code> konnte nicht heruntergeladen werden",
                 "editWith": "Dieses Element mit {title} bearbeiten",
-                "fetchingInfoAbout": "Abruf von Daten über {id}...",
-                "foundResults": "{total} Ergebnisse gefunden für <code>{search}</code>, rufe Details ab...",
+                "fetchingInfoAbout": "Daten über {id} abrufen…",
+                "foundResults": "{total} Ergebnisse gefunden für <code>{search}</code>, rufe Details ab…",
                 "noEditPossible": "Keine MapComplete-Themen unterstützen dieses Element",
                 "noInfo": "Noch keine relevanten Informationen",
                 "noOpeningHours": "Es sind keine Öffnungszeiten bekannt.",
@@ -511,7 +511,7 @@
             "shutdown": {
                 "argmode": "Gibt an, ob der Dienst neu gestartet werden soll, muss einer der folgenden Werte sein: {verbs}",
                 "docs": "Schaltet den Bot ab",
-                "goodbye": "Ich schließe... Bis später!",
+                "goodbye": "Ich schließe… Bis später!",
                 "notYetShuttingDown": "Ich starte noch nicht neu, da ich erst vor {uptime} Sekunden gebootet habe. Ich werde mindestens {min_uptime} warten, bevor ich neu starte."
             },
             "welcome": {
@@ -528,10 +528,10 @@
                 "sendReason": "Ich habe Ihnen diese Nachricht geschickt, weil <b>{sender}</b> mich gebeten hat, diese mit <code>{cmd}</code> zu senden"
             },
             "tags": {
-                "announceSearch": "<code>{id}</code> scheint keine gültige OSM-id zu sein - suche stattdessen weltweit nach {search}..."
+                "announceSearch": "<code>{id}</code> scheint keine gültige OSM-id zu sein - suche stattdessen weltweit nach {search}…"
             },
             "search": {
-                "searching": "Suche {layerTitle} {mode} <code>{search}</code>..."
+                "searching": "Suche {layerTitle} {mode} <code>{search}</code>…"
             }
         },
         "decryptionFailed": "Es tut mir leid, ich konnte die Nachricht nicht entschlüsseln. Sie können versuchen, diesen Kanal zu verlassen und sich erneut zu verbinden",
