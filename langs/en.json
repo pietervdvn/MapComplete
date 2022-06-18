@@ -282,13 +282,13 @@
         "isDeleted": "Deleted",
         "nearbyPictures": {
             "allFiltered": "No images matched your filter",
-            "browseNearby": "Browse nearby images...",
+            "browseNearby": "Browse nearby images…",
             "confirm": "The selected image shows {title()}",
             "hasMatchingPicture": "Does a picture match the object? Select it below",
             "loadMore": "Load more images",
-            "loading": "Loading nearby images...",
+            "loading": "Loading nearby images…",
             "noImageSelected": "Select an image to link it to the object",
-            "nothingFound": "No nearby images found...",
+            "nothingFound": "No nearby images found…",
             "onlyTowards": "Only show pictures which are taken towards this object",
             "removeFilters": "Click here to remove the filters",
             "title": "Nearby pictures",
@@ -457,7 +457,7 @@
                 "argto": "The ID of whom to send the output to",
                 "commandNotFound": "Command {key} not found - see <code>help</code> for all commands",
                 "docs": "Executes a command and send the output to someone else",
-                "executing": "Executing <code>{_}</code> and sending the result to <b>{to}</b>...",
+                "executing": "Executing <code>{_}</code> and sending the result to <b>{to}</b>…",
                 "failed": "I couldn't execute <code>{cmd}</code> due to {message}",
                 "noDm": "I couldn't create a room with {to}",
                 "receipt": "I delivered the message to {to}",
@@ -520,8 +520,8 @@
                 "couldNotDownload": "Could not download <code>{id}</code>",
                 "docs": "Gets info about an OSM-object. Either give an id OR a search string; the objects are interpreted and known values are shown.",
                 "editWith": "Edit this element with {title}",
-                "fetchingInfoAbout": "Fetching data about {id}...",
-                "foundResults": "Found {total} results for <code>{search}</code>, fetching details about them...",
+                "fetchingInfoAbout": "Fetching data about {id}…",
+                "foundResults": "Found {total} results for <code>{search}</code>, fetching details about them…",
                 "noEditPossible": "No MapComplete themes support this element",
                 "noInfo": "No relevant information yet",
                 "noOpeningHours": "No opening hours are known.",
@@ -573,18 +573,18 @@
                 "noNearOrIn": "Sorry, I didn't understand your command as I didn't find a <code>near</code> or <code>in</code> in your search query.\n Try something as <code>search drinking water in London</code>, <code>search friture in Brussels</code></p>\n <p>Alternatively, try <code>info {cmd}</code> to get info about a single object.",
                 "nothingFound": "Sorry, I couldn't find anything for <code>{search}</code>, so I can't search for {layerTitle}",
                 "overview": "I found {length} matching items.",
-                "searching": "Searching {layerTitle} {mode} <code>{search}</code>..."
+                "searching": "Searching {layerTitle} {mode} <code>{search}</code>…"
             },
             "shutdown": {
                 "argmode": "Indicates if the service should be restarted, must be one of {verbs}",
                 "docs": "Shuts down the bot",
-                "goodbye": "Shutting down... See you later!",
+                "goodbye": "Shutting down… See you later!",
                 "notYetShuttingDown": "I'm not restarting yet as I just booted only {uptime} seconds ago. I'll wait at least {min_uptime} before rebooting.",
                 "verbshutdown": "Shuts down the bot",
                 "verbupdate": "Attempts to update the embedded MapComplete-codebase, shuts down afterwards"
             },
             "tags": {
-                "announceSearch": "<code>{id}</code> doesn't seem to be a valid OSM-id - searching worldwide instead for {search}...",
+                "announceSearch": "<code>{id}</code> doesn't seem to be a valid OSM-id - searching worldwide instead for {search}…",
                 "argsearch": "The ID of the OSM-object or a search query",
                 "docs": "Show the tags of an OSM-object. Either give an id OR a search string; the objects are interpreted and known values are shown.",
                 "noSearchGiven": "Please, provide a search term of id to use this command",
@@ -605,7 +605,7 @@
                 "loadingFailed": "Sorry, the page <code>{pagename}</code> could not be loaded",
                 "noWiki": "Please, specify a wiki page to search for",
                 "nothingFound": "I couldn't find anything on {backend} for {search}",
-                "searching": "Searching on {backend}..."
+                "searching": "Searching on {backend}…"
             }
         },
         "decryptionFailed": "Sorry, I couldn't decrypt your message. You can try to leave this channel and to connect again",
