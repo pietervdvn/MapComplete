@@ -5,8 +5,9 @@ import Svg from "../../Svg";
 import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
 import {GeoOperations} from "../../Logic/GeoOperations";
-import Minimap from "../Base/Minimap";
+import Minimap, {MinimapObj} from "../Base/Minimap";
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch";
+import BaseUIElement from "../BaseUIElement";
 
 
 /**
@@ -39,8 +40,8 @@ export default class LengthInput extends InputElement<string> {
     }
 
     protected InnerConstructElement(): HTMLElement {
-        // @ts-ignore
-        let map = undefined
+        let map :  (BaseUIElement & MinimapObj)  = undefined
+        let layerControl : BaseUIElement = undefined
         if (!Utils.runningFromConsole) {
             map = Minimap.createMiniMap({
                 background: this.background,
@@ -51,6 +52,14 @@ export default class LengthInput extends InputElement<string> {
                     tap: true
                 }
             })
+            
+            layerControl = new BackgroundMapSwitch({
+                locationControl: this._location,
+                backgroundLayer: this.background,
+            }, this.background,{
+                allowedCategories: ["map","photo"]
+            })
+            
         }
         const element = new Combine([
             new Combine([Svg.length_crosshair_svg().SetStyle(
@@ -58,6 +67,7 @@ export default class LengthInput extends InputElement<string> {
             ])
                 .SetClass("block length-crosshair-svg relative")
                 .SetStyle("z-index: 1000; visibility: hidden"),
+            layerControl?.SetStyle("position: absolute; bottom: 0.25rem; left: 0.25rem; z-index: 1000"),
             map?.SetClass("w-full h-full block absolute top-0 left-O overflow-hidden"),
         ])
             .SetClass("relative block bg-white border border-black rounded-3xl overflow-hidden")
