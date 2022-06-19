@@ -452,12 +452,9 @@
         "commandNotFound": "Ihre Anfrage wurde nicht verstanden. Meinten Sie vielleicht {0}, {1}, {2} oder {2}? <p>Geben Sie <code>help</code> ein, um eine Übersicht über alle Befehle zu sehen</p>",
         "commands": {
             "documentation": {
-                "argid": "Die ID der Ebene, des Themas oder des URL-Parameters, für die eine Dokumentation benötigt wird",
+                "didYouMean": " Vielleicht meinten Sie einen von: ",
                 "docs": "Ruft die Dokumentation zu einer MapComplete-Ebene, einem Thema oder einem URL-Parameter ab",
-                "noIdIntro": "Geben Sie eine Ebenen-ID an, um Informationen über eine Ebene zu erhalten. Bekannte Ebenen sind:",
-                "noLayerFound": "Keine Ebene mit Namen <code>{id}</code> gefunden. Vielleicht meinten Sie eine von: ",
-                "noThemeFound": "Kein Thema mit dem Namen <code>{id}</code> gefunden. Vielleicht meinten Sie eines von: ",
-                "noUrlParameterFound": "Kein URL-Parameter mit Namen <code>{id}</code> gefunden. Vielleicht meinten Sie einen von: ",
+                "notFound": "Kein {singular} mit Namen <code>{id}</code> gefunden.",
                 "urlParam": "URL-Parameter <code>{id}<code></code></code>"
             },
             "dream": {

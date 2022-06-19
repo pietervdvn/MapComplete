@@ -451,13 +451,14 @@
         "commandFailed": "Sorry, er ging iets mis toen ik probeerde om <code>{cmd}</code> uit te voeren.",
         "commandNotFound": "Sorry, ik heb je commando niet verstaan. Zou het kunnen dat je {0}, {1}, {2} of {2} bedoelt? <p>Je kan ook <code>help</code> sturen om een overzicht van alle commando's te zien</p>",
         "commands": {
+            "dm": {
+                "failed": "I kon <code>{cmd}</code> niet uitvoeren doordag {message}",
+                "sendReason": "Ik stuurde jou dit bericht omdat <b>{sender}</b> mij gevraagd heeft om je het resultaat van <code>{cmd}</code> te sturen"
+            },
             "documentation": {
-                "argid": "De naam van de laag, het thema of de URL-parameter waarover je informatie wenst",
+                "didYouMean": "Bedoelde je misschien één van onderstaande URL-parameters? ",
                 "docs": "Vraag documentatie over een MapComplete-laag, -thema of URL-parameter",
-                "noIdIntro": "Geef een laag-ID om informatie over die laag op te vragen. De gekende lagen zijn:",
-                "noLayerFound": "Ik kon geen laag vinden die <code>{id}</code> heet. Bedoelde je misschien één van onderstaande lagen? ",
-                "noThemeFound": "Ik kon geen thema vinden die <code>{id}</code> heet. Bedoelde je misschien een van onderstaande themas? ",
-                "noUrlParameterFound": "Ik kong geen URL-parameter vinden met naam <code>{id}</code>. Bedoelde je misschien één van onderstaande URL-parameters? ",
+                "notFound": "Ik kong geen {singular} vinden met naam <code>{id}</code>.",
                 "urlParam": "URL-parameter <code>{id}</code>"
             },
             "dream": {
@@ -511,11 +512,17 @@
                 "noSuchRole": "De rechten voor <code>{role}</code> kunnen niet gegeven worden aan <code>{user}</code>. Geef de commandonaam waarvoor je de rechten wilt toekennen. (Typ <code>help</code> voor een overzicht van alle commando's).",
                 "userHasRoles": "<b>{user}</b> heeft op dit moment de volgende rechten:"
             },
+            "search": {
+                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>..."
+            },
             "shutdown": {
                 "argmode": "Geeft aan op welke manier ik moet afsluiten. Dit moet één van de volgende woorden zijn: {verbs}",
                 "docs": "Sluit de robot af",
                 "goodbye": "Aan het afsluiten… Tot later!",
                 "notYetShuttingDown": "Ik ga nog niet afsluiten want ik ben nog maar net opgestart. Ik wacht minimaal {min_uptime} seconden voordat ik terug afsluit, momenteel ben ik nog maar {uptime} aan het lopen."
+            },
+            "tags": {
+                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}..."
             },
             "welcome": {
                 "p0": "Hallo! Ik ben MapComplete-bot. Ik ben een computer-programma die voor jou OpenStreetMap doorzoekt en die documentatie geeft van <a href=\"https://mapcomplete.osm.be\">MapComplete</a>, een website die themakaarten toont waar je ook eenvoudig zelf data aan kan toevoegen.",
@@ -525,16 +532,6 @@
             },
             "wiki": {
                 "docs": "Stuurt een (deel van) de gevraagde pagina van {backend}. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina."
-            },
-            "tags": {
-                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}..."
-            },
-            "search": {
-                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>..."
-            },
-            "dm": {
-                "sendReason": "Ik stuurde jou dit bericht omdat <b>{sender}</b> mij gevraagd heeft om je het resultaat van <code>{cmd}</code> te sturen",
-                "failed": "I kon <code>{cmd}</code> niet uitvoeren doordag {message}"
             }
         },
         "decryptionFailed": "Sorry, ik kon je bericht niet ontcijferen. Probeer om deze kamer te verlaten en opnieuw te connecteren",

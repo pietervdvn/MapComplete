@@ -466,17 +466,36 @@
                 "sendReason": "I sent you this message because <b>{sender}</b> requested me to send this with <code>{cmd}</code>"
             },
             "documentation": {
-                "argid": "The ID of the layer, theme or URL-parameter for which documentation is needed",
+                "argid": "The id of a {list} or {list_end} of which the docs are needed. Alternatively, write one of {coded_list} to see available ids.",
+                "didYouMean": "Did you mean",
                 "docs": "Gets documentation about a MapComplete layer, theme or URL-parameter",
-                "noIdIntro": "Give a layer id to get information about a layer. Known layers are:",
-                "noLayerFound": "No layer found with name <code>{id}</code>. Perhaps you meant one of: ",
-                "noThemeFound": "No theme found with name <code>{id}</code>. Perhaps you meant one of: ",
-                "noUrlParameterFound": "No URL-parameter found with name <code>{id}</code>. Perhaps you meant one of: ",
+                "file": {
+                    "plural": "files",
+                    "singular": "file"
+                },
+                "inputElement": {
+                    "plural": "input elements",
+                    "singular": "input element"
+                },
+                "layer": {
+                    "plural": "layers",
+                    "singular": "layer"
+                },
+                "noIdIntro": "Give an id to get more information about a MapComplete programming related item. Known types are {list}",
                 "notFound": "No {singular} found with name <code>{id}</code>",
+                "overview": "The following {plural} exist:",
+                "theme": {
+                    "plural": "themes",
+                    "singular": "theme"
+                },
                 "urlParam": "URL-parameter <code>{id}<code>",
                 "url_parameter": {
-                    "plurar": "url-parameters",
+                    "plural": "url-parameters",
                     "singular": "url-parameter"
+                },
+                "visualisation": {
+                    "plural": "visualisations",
+                    "singular": "visualisation"
                 }
             },
             "dream": {
