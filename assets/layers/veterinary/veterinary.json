@@ -14,7 +14,8 @@
       "title": {
         "en": "a veterianarian",
         "da": "en dyrl&aelig;ge",
-        "de": "ein Tierarzt"
+        "de": "ein Tierarzt",
+        "es": "un veterinario"
       },
       "tags": [
         "amenity=veterinary",
@@ -23,21 +24,24 @@
       "description": {
         "en": "a veterianarian, that treats dogs",
         "da": "En dyrl&aelig;ge, der behandler hunde",
-        "de": "ein Tierarzt, der Hunde behandelt"
+        "de": "ein Tierarzt, der Hunde behandelt",
+        "es": "un veterinario, que trata a perros"
       }
     }
   ],
   "name": {
     "en": "veterinary",
     "da": "dyrl&aelig;ge",
-    "de": "Tierärzte"
+    "de": "Tierärzte",
+    "es": "veterinario"
   },
   "title": {
     "render": {
       "en": "Veterinary",
       "da": "dyrl&aelig;ge",
       "de": "Tierarzt",
-      "id": "Dokter hewan"
+      "id": "Dokter hewan",
+      "es": "Veterinario"
     },
     "mappings": [
       {
@@ -85,11 +89,13 @@
       "question": {
         "en": "What is the name of this veterinarian?",
         "da": "Hvad hedder denne dyrl&aelig;?",
-        "de": "Wie lautet der Name dieses Tierarztes?"
+        "de": "Wie lautet der Name dieses Tierarztes?",
+        "es": "¿Cual es el nombre de este veterinario?"
       },
       "render": {
         "en": "The name of this veterinarian is {name}",
-        "de": "Denne dyrl&aelig; hedder {name}"
+        "de": "Denne dyrl&aelig; hedder {name}",
+        "es": "El nombre de este veterinario es {name}"
       },
       "freeform": {
         "key": "name"

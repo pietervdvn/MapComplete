@@ -54,7 +54,8 @@
           "it": "Strade senza informazioni etimologiche",
           "zh_Hant": "道路沒有詞源資訊",
           "hu": "Etimológiai adat nélküli utcák",
-          "fr": "Route sans origine étymologique"
+          "fr": "Route sans origine étymologique",
+          "es": "Calles sin información etimológica"
         },
         "minzoom": 18,
         "source": {
@@ -79,7 +80,8 @@
           "it": "Parchi e foreste senza informazioni etimologiche",
           "zh_Hant": "公園與森哥沒有詞源資訊",
           "hu": "Etimológiai adat nélküli parkok és erdők",
-          "fr": "Parcs et forêts sans origine étymologique"
+          "fr": "Parcs et forêts sans origine étymologique",
+          "es": "Parques y bosques sin información etimológica"
         },
         "minzoom": 18,
         "source": {
@@ -104,7 +106,9 @@
         "=name": {
           "en": "Education institutions without etymology information",
           "de": "Bildungseinrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Institutions d'éducation sans origine étymologique"
+          "fr": "Institutions d'éducation sans origine étymologique",
+          "es": "Instituciones educacionales sin información etimológica",
+          "nl": "Onderwijsinstelling zonder etymologische informatie"
         },
         "minzoom": 18,
         "source": {
@@ -132,7 +136,9 @@
         "=name": {
           "en": "Cultural places without etymology information",
           "de": "Kultureinrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Lieux culturels sans origine étymologique"
+          "fr": "Lieux culturels sans origine étymologique",
+          "es": "Lugares culturales sin información etimológica",
+          "nl": "Culturele plaatsen zonder etymologische informatie"
         },
         "minzoom": 18,
         "source": {
@@ -160,7 +166,9 @@
         "=name": {
           "en": "Toursistic places without etymology information",
           "de": "Touristische Einrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Lieux touristiques sans origine étymologique"
+          "fr": "Lieux touristiques sans origine étymologique",
+          "es": "Lugares turísticos sin información etimológica",
+          "nl": "Toeristische plaatsen zonder etymologische informatie"
         },
         "minzoom": 18,
         "source": {
@@ -187,7 +195,8 @@
         "=name": {
           "en": "Health and social places without etymology information",
           "de": "Gesundheits- und Sozialeinrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Établissements sociaux ou de soins sans origine étymologique"
+          "fr": "Établissements sociaux ou de soins sans origine étymologique",
+          "nl": "Gezondheidsinstellingen en maatschappelijke plaatsen zonder etymologische informatie"
         },
         "minzoom": 18,
         "source": {
@@ -213,7 +222,9 @@
         "=name": {
           "en": "Sport places without etymology information",
           "de": "Sporteinrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Lieux sportifs sans origine étymologique"
+          "fr": "Lieux sportifs sans origine étymologique",
+          "es": "Lugares deportivos sin información etimológica",
+          "nl": "Sportplekken zonder etymologische informatie"
         },
         "minzoom": 18,
         "source": {

@@ -111,7 +111,8 @@
           "question": {
             "en": "What kind of building is this?",
             "de": "Was ist das für ein Gebäude?",
-            "es": "¿Qué tipo de este edificio es este?"
+            "es": "¿Qué tipo de este edificio es este?",
+            "nl": "Wat voor soort gebouw is dit?"
           },
           "mappings": [
             {

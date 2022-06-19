@@ -1095,6 +1095,9 @@
                 "0": {
                     "then": "Sportartikelgeschäft <i>{name}</i>"
                 },
+                "1": {
+                    "then": "Geschäfte"
+                },
                 "2": {
                     "then": "Fahrradverleih<i>{name}</i>"
                 },
@@ -1106,9 +1109,6 @@
                 },
                 "5": {
                     "then": "Fahrradwerkstatt/geschäft <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Geschäfte"
                 }
             },
             "render": "Fahrradwerkstatt/geschäft"

@@ -7,7 +7,8 @@
     "ru": "Столы для пикника",
     "fr": "Tables de pique-nique",
     "de": "Picknick-Tische",
-    "ca": "Taules de pícnic"
+    "ca": "Taules de pícnic",
+    "es": "Mesas de pícnic"
   },
   "minzoom": 12,
   "source": {
@@ -21,7 +22,8 @@
       "ru": "Стол для пикника",
       "fr": "Table de pique-nique",
       "de": "Picknick-Tisch",
-      "ca": "Taula de pícnic"
+      "ca": "Taula de pícnic",
+      "es": "Mesa de pícnic"
     }
   },
   "description": {
@@ -30,7 +32,8 @@
     "it": "Il livello che mostra i tavoli da picnic",
     "fr": "La couche montrant les tables de pique-nique",
     "ru": "Слой, отображающий столы для пикника",
-    "de": "Die Ebene zeigt Picknicktische an"
+    "de": "Die Ebene zeigt Picknicktische an",
+    "es": "Una capa que muestra mesas de pícnic"
   },
   "tagRenderings": [
     "images",
@@ -41,7 +44,8 @@
         "it": "Di che materiale è fatto questo tavolo da picnic?",
         "de": "Aus welchem Material besteht dieser Picknicktisch?",
         "ru": "Из чего изготовлен этот стол для пикника?",
-        "fr": "En quel matériau est faite la table de pique-nique ?"
+        "fr": "En quel matériau est faite la table de pique-nique ?",
+        "es": "¿De qué material está hecha esta mesa de pícnic?"
       },
       "render": {
         "en": "This picnic table is made of {material}",
@@ -49,7 +53,8 @@
         "it": "Questo tavolo da picnic è fatto di {material}",
         "de": "Dieser Picknicktisch besteht aus {material}",
         "ru": "Этот стол для пикника сделан из {material}",
-        "fr": "La table est faite en {material}"
+        "fr": "La table est faite en {material}",
+        "es": "Esta mesa de pícnic está hecha de {material}"
       },
       "freeform": {
         "key": "material"
@@ -63,7 +68,8 @@
             "it": "È un tavolo da picnic in legno",
             "ru": "Это деревянный стол для пикника",
             "de": "Dies ist ein Picknicktisch aus Holz",
-            "fr": "C’est une table en bois"
+            "fr": "C’est une table en bois",
+            "es": "Esta es una mesa de pícnic de madera"
           }
         },
         {
@@ -74,7 +80,8 @@
             "it": "È un tavolo da picnic in cemento",
             "ru": "Это бетонный стол для пикника",
             "de": "Dies ist ein Picknicktisch aus Beton",
-            "fr": "C’est une table en béton"
+            "fr": "C’est une table en béton",
+            "es": "Esta es una mesa de pícnic de hormigón"
           }
         },
         {
@@ -82,7 +89,8 @@
           "then": {
             "en": "This picnic table is made from (recycled) plastic",
             "nl": "Deze picknictafel is gemaakt uit (gerecycleerd) plastiek",
-            "de": "Dieser Picknicktisch ist aus (recyceltem) Kunststoff hergestellt"
+            "de": "Dieser Picknicktisch ist aus (recyceltem) Kunststoff hergestellt",
+            "es": "Esta es una mesa de picnic hecha de plástico reciclado"
           }
         }
       ],
@@ -100,7 +108,8 @@
         "it": "una tavolo da picnic",
         "ru": "стол для пикника",
         "de": "einen Picknick-Tisch",
-        "fr": "une table de pique-nique"
+        "fr": "une table de pique-nique",
+        "es": "una mesa de pícnic"
       }
     }
   ],

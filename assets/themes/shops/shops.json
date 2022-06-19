@@ -31,7 +31,8 @@
     "de": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
     "it": "In questa cartina è possibile aggiungere informazioni di base di un negozio, orari di apertura e numeri di telefono",
     "hu": "Ezen a térképen az üzletek alapvető adatait lehet megadni, például nyitvatartási időt és telefonszámokat.",
-    "es": "En este mapa, se puede marcar información básica sobre tiendas, añadir horarios de apertura y números de teléfono"
+    "es": "En este mapa, se puede marcar información básica sobre tiendas, añadir horarios de apertura y números de teléfono",
+    "nl": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/shops/shop.svg",

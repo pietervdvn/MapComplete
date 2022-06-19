@@ -7,7 +7,8 @@
     "ru": "Спортивные площадки",
     "it": "Campi sportivi",
     "de": "Sportplätze",
-    "ca": "Camps d'esports"
+    "ca": "Camps d'esports",
+    "es": "Pistas de deportes"
   },
   "minzoom": 12,
   "source": {
@@ -28,7 +29,8 @@
       "ru": "Спортивная площадка",
       "it": "Campo sportivo",
       "de": "Sportplatz",
-      "ca": "Camp d'esports"
+      "ca": "Camp d'esports",
+      "es": "Pista de deportes"
     }
   },
   "description": {
@@ -37,7 +39,8 @@
     "en": "A sport pitch",
     "it": "Un campo sportivo",
     "ru": "Спортивная площадка",
-    "de": "Ein Sportplatz"
+    "de": "Ein Sportplatz",
+    "es": "Una pista de deportes"
   },
   "tagRenderings": [
     "images",
@@ -47,7 +50,8 @@
         "fr": "Ici on joue au {sport}",
         "en": "{sport} is played here",
         "it": "Qui si gioca a {sport}",
-        "de": "Hier wird {sport} gespielt"
+        "de": "Hier wird {sport} gespielt",
+        "es": "Aquí se juega al {sport}"
       },
       "freeform": {
         "key": "sport"
@@ -57,7 +61,8 @@
         "fr": "À quel sport peut-on jouer ici ?",
         "en": "Which sport can be played here?",
         "it": "Quale sport si gioca qui?",
-        "de": "Welche Sportarten können hier gespielt werden?"
+        "de": "Welche Sportarten können hier gespielt werden?",
+        "es": "¿Qué deporte se practica aquí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -73,7 +78,8 @@
             "en": "Basketball is played here",
             "it": "Qui si gioca a basket",
             "ru": "Здесь можно играть в баскетбол",
-            "de": "Hier wird Basketball gespielt"
+            "de": "Hier wird Basketball gespielt",
+            "es": "Aquí se juega al baloncesto"
           }
         },
         {
@@ -88,7 +94,8 @@
             "en": "Soccer is played here",
             "it": "Qui si gioca a calcio",
             "ru": "Здесь можно играть в футбол",
-            "de": "Hier wird Fußball gespielt"
+            "de": "Hier wird Fußball gespielt",
+            "es": "Aquí se juega al fútbol"
           }
         },
         {
@@ -103,7 +110,8 @@
             "en": "This is a pingpong table",
             "ru": "Это стол для пинг-понга",
             "it": "Questo è un tavolo da ping pong",
-            "de": "Dies ist eine Tischtennisplatte"
+            "de": "Dies ist eine Tischtennisplatte",
+            "es": "Esto es una mesa de ping pong"
           }
         },
         {
@@ -118,7 +126,8 @@
             "en": "Tennis is played here",
             "it": "Qui si gioca a tennis",
             "ru": "Здесь можно играть в теннис",
-            "de": "Hier wird Tennis gespielt"
+            "de": "Hier wird Tennis gespielt",
+            "es": "Aquí se juega al tenis"
           }
         },
         {
@@ -148,7 +157,8 @@
             "en": "Basketball is played here",
             "it": "Qui si gioca a basket",
             "ru": "Здесь можно играть в баскетбол",
-            "de": "Hier wird Basketball gespielt"
+            "de": "Hier wird Basketball gespielt",
+            "es": "Aquí se juega al baloncesto"
           },
           "hideInAnswer": true
         }
@@ -162,7 +172,8 @@
         "en": "Which is the surface of this sport pitch?",
         "it": "Qual è la superficie di questo campo sportivo?",
         "ru": "Какое покрытие на этой спортивной площадке?",
-        "de": "Welchen Belag hat der Sportplatz?"
+        "de": "Welchen Belag hat der Sportplatz?",
+        "es": "¿Cual es la superficie de esta pista de deportes?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -170,7 +181,8 @@
         "en": "The surface is <b>{surface}</b>",
         "ru": "Поверхность - <b>{surface}</b>",
         "it": "La superficie è <b>{surface}</b>",
-        "de": "Der Belag ist <b>{surface}</b>"
+        "de": "Der Belag ist <b>{surface}</b>",
+        "es": "La superficie es <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -184,7 +196,8 @@
             "en": "The surface is <b>grass</b>",
             "ru": "Поверхность - <b>трава</b>",
             "it": "La superficie è <b>erba</b>",
-            "de": "Der Belag ist aus <b>Gras</b>"
+            "de": "Der Belag ist aus <b>Gras</b>",
+            "es": "La superficie es <b>hierba</b>"
           }
         },
         {
@@ -195,7 +208,8 @@
             "en": "The surface is <b>sand</b>",
             "ru": "Поверхность - <b>песок</b>",
             "it": "La superficie è <b>sabbia</b>",
-            "de": "Der Belag ist aus <b>Sand</b>"
+            "de": "Der Belag ist aus <b>Sand</b>",
+            "es": "La superficie es <b>arena</b>"
           }
         },
         {
@@ -206,7 +220,8 @@
             "en": "The surface is <b>paving stones</b>",
             "ru": "Поверхность - <b>брусчатка</b>",
             "it": "La superficie è <b>pietre irregolari</b>",
-            "de": "Der Belag ist aus <b>Pflastersteinen</b>"
+            "de": "Der Belag ist aus <b>Pflastersteinen</b>",
+            "es": "La superficie es <b>adoquines</b>"
           }
         },
         {
@@ -217,7 +232,8 @@
             "en": "The surface is <b>asphalt</b>",
             "ru": "Поверхность - <b>асфальт</b>",
             "it": "La superficie è <b>asfalto</b>",
-            "de": "Der Belag ist aus <b>Asphalt</b>"
+            "de": "Der Belag ist aus <b>Asphalt</b>",
+            "es": "La superficie es <b>asfalto</b>"
           }
         },
         {
@@ -228,7 +244,8 @@
             "en": "The surface is <b>concrete</b>",
             "ru": "Поверхность - <b>бетон</b>",
             "it": "La superficie è <b>calcestruzzo</b>",
-            "de": "Der Belag ist aus <b>Beton</b>"
+            "de": "Der Belag ist aus <b>Beton</b>",
+            "es": "La superficie es <b>hormigón</b>"
           }
         }
       ],
@@ -242,7 +259,8 @@
         "en": "Is this sport pitch publicly accessible?",
         "it": "Questo campo sportivo è aperto al pubblico?",
         "ru": "Есть ли свободный доступ к этой спортивной площадке?",
-        "de": "Ist der Sportplatz öffentlich zugänglich?"
+        "de": "Ist der Sportplatz öffentlich zugänglich?",
+        "es": "¿Esta pista de deportes es accesible públicamente?"
       },
       "mappings": [
         {
@@ -253,7 +271,8 @@
             "en": "Public access",
             "it": "Aperto al pubblico",
             "ru": "Свободный доступ",
-            "de": "Der Sportplatz ist öffentlich zugänglich"
+            "de": "Der Sportplatz ist öffentlich zugänglich",
+            "es": "Acceso público"
           }
         },
         {
@@ -264,7 +283,8 @@
             "en": "Limited access (e.g. only with an appointment, during certain hours, …)",
             "it": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)",
             "ru": "Ограниченный доступ (напр., только по записи, в определённые часы, ...)",
-            "de": "Der Sportplatz ist nur eingeschränkt zugänglich (z. B. nur mit Termin, nur zu bestimmten Zeiten, …)"
+            "de": "Der Sportplatz ist nur eingeschränkt zugänglich (z. B. nur mit Termin, nur zu bestimmten Zeiten, …)",
+            "es": "Acceso limitado (ej. solo con una cita, a cieras horas, ...)"
           }
         },
         {
@@ -275,7 +295,8 @@
             "en": "Only accessible for members of the club",
             "it": "Accesso limitato ai membri dell'associazione",
             "ru": "Доступ только членам клуба",
-            "de": "Der Sportplatz ist nur für Vereinsmitglieder zugänglich"
+            "de": "Der Sportplatz ist nur für Vereinsmitglieder zugänglich",
+            "es": "Solo accesible para miembros del club"
           }
         },
         {
@@ -285,7 +306,8 @@
             "fr": "Privé - Pas accessible au public",
             "en": "Private - not accessible to the public",
             "it": "Privato - non aperto al pubblico",
-            "de": "Der Sportplatz ist nicht öffentlich zugänglich (es ist ein privater Sportplatz)"
+            "de": "Der Sportplatz ist nicht öffentlich zugänglich (es ist ein privater Sportplatz)",
+            "es": "Privada - no accesible al público"
           }
         }
       ]
@@ -298,7 +320,8 @@
         "en": "Does one have to make an appointment to use this sport pitch?",
         "it": "È necessario prenotarsi per usare questo campo sportivo?",
         "ru": "Нужна ли предварительная запись для доступа на эту спортивную площадку?",
-        "de": "Muss man einen Termin vereinbaren, um den Sportplatz nutzen zu dürfen?"
+        "de": "Muss man einen Termin vereinbaren, um den Sportplatz nutzen zu dürfen?",
+        "es": "¿Hay que pedir una cita para utilizar esta pista?"
       },
       "condition": {
         "and": [
@@ -315,7 +338,8 @@
             "fr": "Il est obligatoire de réserver pour utiliser ce terrain de sport",
             "en": "Making an appointment is obligatory to use this sport pitch",
             "it": "La prenotazione è obbligatoria per usare questo campo sportivo",
-            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist erforderlich"
+            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist erforderlich",
+            "es": "Pedir una cita es obligatorio para utilizar esta pista"
           }
         },
         {
@@ -326,7 +350,8 @@
             "en": "Making an appointment is recommended when using this sport pitch",
             "it": "La prenotazione è consigliata per usare questo campo sportivo",
             "ru": "Желательна предварительная запись для доступа на эту спортивную площадку",
-            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes wird empfohlen"
+            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes wird empfohlen",
+            "es": "Se recomienda pedir una cita al utilizar esta pista"
           }
         },
         {
@@ -337,7 +362,8 @@
             "en": "Making an appointment is possible, but not necessary to use this sport pitch",
             "it": "La prenotazione è consentita, ma non è obbligatoria per usare questo campo sportivo",
             "ru": "Предварительная запись для доступа на эту спортивную площадку возможна, но не обязательна",
-            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist möglich, aber nicht erforderlich"
+            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist möglich, aber nicht erforderlich",
+            "es": "Pedir cita es posible, pero no necesario para utilizar esta pista de deportes"
           }
         },
         {
@@ -348,7 +374,8 @@
             "en": "Making an appointment is not possible",
             "it": "Non è possibile prenotare",
             "ru": "Невозможна предварительная запись",
-            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist nicht möglich"
+            "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist nicht möglich",
+            "es": "No es posible pedir cita"
           }
         }
       ]
@@ -359,7 +386,8 @@
         "fr": "Quel est le numéro de téléphone du gérant ?",
         "en": "What is the phone number of the operator?",
         "it": "Qual è il numero di telefono del gestore?",
-        "de": "Wie lautet die Telefonnummer des Betreibers?"
+        "de": "Wie lautet die Telefonnummer des Betreibers?",
+        "es": "¿Cual es el número de teléfono de la operadora?"
       },
       "freeform": {
         "key": "phone",
@@ -374,7 +402,8 @@
         "fr": "Quelle est l'adresse courriel du gérant ?",
         "en": "What is the email address of the operator?",
         "it": "Qual è l'indirizzo email del gestore?",
-        "de": "Wie lautet die Email-Adresse des Betreibers?"
+        "de": "Wie lautet die Email-Adresse des Betreibers?",
+        "es": "¿Cual es la dirección de correo electrónico de la operadora?"
       },
       "freeform": {
         "key": "email",
@@ -390,7 +419,8 @@
         "en": "When is this pitch accessible?",
         "it": "Quando è aperto questo campo sportivo?",
         "ru": "В какое время доступна эта площадка?",
-        "de": "Wann ist dieser Sportplatz zugänglich?"
+        "de": "Wann ist dieser Sportplatz zugänglich?",
+        "es": "¿Cuándo es accesible esta pista?"
       },
       "render": "Openingsuren: {opening_hours_table()}",
       "freeform": {
@@ -411,7 +441,8 @@
             "en": "Always accessible",
             "ru": "Всегда доступен",
             "it": "Sempre aperto",
-            "de": "Immer zugänglich"
+            "de": "Immer zugänglich",
+            "es": "Siempre accesible"
           }
         }
       ],
@@ -446,7 +477,8 @@
         "en": "a sport pitch",
         "ru": "Спортивная площадка",
         "it": "una campo sportivo",
-        "de": "einen Sportplatz"
+        "de": "einen Sportplatz",
+        "es": "una pista de deportes"
       },
       "tags": [
         "leisure=pitch",

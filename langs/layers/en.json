@@ -3723,6 +3723,17 @@
                 },
                 "question": "Does this restaurant have a vegetarian option?"
             },
+            "delivery": {
+                "mappings": {
+                    "0": {
+                        "then": "This business does home delivery (eventually via a third party)"
+                    },
+                    "1": {
+                        "then": "This business does not deliver at home"
+                    }
+                },
+                "question": "Delivers {title()} their food at home?"
+            },
             "friture-oil": {
                 "mappings": {
                     "0": {
@@ -4433,6 +4444,13 @@
         }
     },
     "playground": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This is a schoolyard - an (outdoor) area where pupils of a school can play during recess and which is not publicly accessible"
+                }
+            }
+        },
         "description": "Playgrounds",
         "name": "Playgrounds",
         "presets": {
@@ -4471,6 +4489,9 @@
                     },
                     "4": {
                         "then": "Not accessible"
+                    },
+                    "5": {
+                        "then": "This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public"
                     }
                 },
                 "question": "Is this playground accessible to the general public?"

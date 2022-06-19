@@ -442,6 +442,36 @@
             }
         },
         "tagRenderings": {
+            "9": {
+                "renderings": {
+                    "0": {
+                        "question": "Combien de type_plural peuvent être loués ici ?",
+                        "render": "{capacity:bicycle_type} type_plural peuvent être loués ici"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "vélos de ville"
+                        },
+                        "1": {
+                            "1": "vélos électriques"
+                        },
+                        "2": {
+                            "1": "vélos d'enfants"
+                        },
+                        "3": {
+                            "1": "BMX"
+                        },
+                        "4": {
+                            "1": "vélos de montagne"
+                        },
+                        "6": {
+                            "1": "tandem"
+                        }
+                    }
+                }
+            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -456,9 +486,6 @@
                     "3": {
                         "then": "Des vélos de montagne peuvent être loués ici"
                     },
-                    "7": {
-                        "then": "Des casques de vélos peuvent être loués ici"
-                    },
                     "4": {
                         "then": "Des vélos d'enfants peuvent être loués ici"
                     },
@@ -467,40 +494,13 @@
                     },
                     "6": {
                         "then": "Des vélos de course peuvent être loués ici"
+                    },
+                    "7": {
+                        "then": "Des casques de vélos peuvent être loués ici"
                     }
                 },
                 "question": "Quels types de vélos et d’accessoires peuvent être loués ici ?",
                 "render": "{rental} est louable ici"
-            },
-            "9": {
-                "rewrite": {
-                    "into": {
-                        "3": {
-                            "1": "BMX"
-                        },
-                        "4": {
-                            "1": "vélos de montagne"
-                        },
-                        "0": {
-                            "1": "vélos de ville"
-                        },
-                        "1": {
-                            "1": "vélos électriques"
-                        },
-                        "2": {
-                            "1": "vélos d'enfants"
-                        },
-                        "6": {
-                            "1": "tandem"
-                        }
-                    }
-                },
-                "renderings": {
-                    "0": {
-                        "render": "{capacity:bicycle_type} type_plural peuvent être loués ici",
-                        "question": "Combien de type_plural peuvent être loués ici ?"
-                    }
-                }
             }
         }
     },
@@ -1555,6 +1555,37 @@
         },
         "title": {
             "render": "Eau potable"
+        }
+    },
+    "etymology": {
+        "description": "Tous les objets dont le nom ont une étymologie connue",
+        "name": "A une étymologie",
+        "tagRenderings": {
+            "etymology_multi_apply": {
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Appliquer automatiquement aux segments avec le même nom, true)}"
+            },
+            "simple etymology": {
+                "mappings": {
+                    "0": {
+                        "then": "L'origine de ce nom est inconnu"
+                    }
+                },
+                "question": "En référence à quoi cet objet est-il nommé ?<br/><span class='subtle'>Cela peut être indiqué sur le panneau de la rue</span>",
+                "render": "Nommé en référence à {name:etymology}"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Ajouter une photo de la plaque de rue)}"
+            },
+            "wikipedia": {
+                "render": "Un article Wikipédia à propos de cette <b>rue</b> existe :<br/>{wikipedia():max-height:25rem}"
+            },
+            "wikipedia-etymology": {
+                "question": "Quel est l'Item Wikidata auquel l'objet fait référence ?",
+                "render": "<h3>Article Wikipedia de la référence au nom</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+            },
+            "zoeken op inventaris onroerend erfgoed": {
+                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>"
+            }
         }
     },
     "extinguisher": {
@@ -2791,36 +2822,5 @@
                 }
             }
         }
-    },
-    "etymology": {
-        "tagRenderings": {
-            "etymology_multi_apply": {
-                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Appliquer automatiquement aux segments avec le même nom, true)}"
-            },
-            "simple etymology": {
-                "mappings": {
-                    "0": {
-                        "then": "L'origine de ce nom est inconnu"
-                    }
-                },
-                "question": "En référence à quoi cet objet est-il nommé ?<br/><span class='subtle'>Cela peut être indiqué sur le panneau de la rue</span>",
-                "render": "Nommé en référence à {name:etymology}"
-            },
-            "wikipedia-etymology": {
-                "render": "<h3>Article Wikipedia de la référence au nom</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
-                "question": "Quel est l'Item Wikidata auquel l'objet fait référence ?"
-            },
-            "zoeken op inventaris onroerend erfgoed": {
-                "render": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>"
-            },
-            "wikipedia": {
-                "render": "Un article Wikipédia à propos de cette <b>rue</b> existe :<br/>{wikipedia():max-height:25rem}"
-            },
-            "street-name-sign-image": {
-                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Ajouter une photo de la plaque de rue)}"
-            }
-        },
-        "description": "Tous les objets dont le nom ont une étymologie connue",
-        "name": "A une étymologie"
     }
 }

@@ -73,7 +73,7 @@
           "da": "hundevenlig butik",
           "de": "Hundefreundliche Geschäfte",
           "nb_NO": "Hundevennlige butikker",
-          "nl": "hondvriendelijke winkels"
+          "nl": "Hondvriendelijke winkels"
         },
         "title": {
           "render": {
@@ -81,7 +81,7 @@
             "da": "hundevenlig butik",
             "de": "Hundefreundliche Geschäfte",
             "nb_NO": "Hundevennlige butikker",
-            "nl": "hondvriendelijke winkels"
+            "nl": "Hondvriendelijke winkels"
           },
           "mappings": [
             {

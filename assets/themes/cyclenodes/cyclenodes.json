@@ -185,7 +185,8 @@
           "render": {
             "en": "This node links to {expected_rcn_route_relations} other cycle nodes.",
             "de": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden.",
-            "nl": "Dit knooppunt verbindt met {expected_rcn_route_relations} andere fietsknooppunten."
+            "nl": "Dit knooppunt verbindt met {expected_rcn_route_relations} andere fietsknooppunten.",
+            "es": "Este nodo enlaza a {expected_rcn_route_relations} otros nodos ciclistas."
           },
           "freeform": {
             "key": "expected_rcn_route_relations",

@@ -12,14 +12,16 @@
     "en": "Sidewalk mapping",
     "ca": "Mapejat de voreres",
     "de": "Kartierung von Bürgersteigen",
-    "es": "Mapeo de aceras"
+    "es": "Mapeo de aceras",
+    "nl": "Voetpaden in kaart brengen"
   },
   "description": {
     "en": "Experimental theme",
     "ru": "Экспериментальная тема",
     "ca": "Petició experimental",
     "de": "Experimentelles Thema",
-    "es": "Tema experimental"
+    "es": "Tema experimental",
+    "nl": "Experimenteel thema"
   },
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
@@ -38,7 +40,8 @@
         "de": "Gehwege",
         "ca": "Voreres",
         "es": "Aceras",
-        "nb_NO": "Fortau"
+        "nb_NO": "Fortau",
+        "nl": "Voetpaden"
       },
       "minzoom": 12,
       "source": {
@@ -57,7 +60,8 @@
           "ru": "{name}",
           "de": "{name}",
           "ca": "{name}",
-          "es": "{name}"
+          "es": "{name}",
+          "nl": "{name}"
         },
         "mappings": [
           {
@@ -69,7 +73,8 @@
       "description": {
         "en": "Layer showing sidewalks of highways",
         "de": "Ebene mit Bürgersteigen",
-        "es": "Una capa que muestra aceras de autovías"
+        "es": "Una capa que muestra aceras de autovías",
+        "nl": "Laag die voetpaden naast wegen toont"
       },
       "tagRenderings": [
         {
@@ -77,7 +82,8 @@
           "render": {
             "en": "This street is named {name}",
             "de": "Diese Straße heißt {name}",
-            "es": "Esta calle se llama {name}"
+            "es": "Esta calle se llama {name}",
+            "nl": "Deze straat heet {name}"
           }
         },
         {

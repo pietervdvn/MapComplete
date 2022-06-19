@@ -10,7 +10,8 @@
     "ru": "Обслуживание велосипедов/магазин",
     "pt_BR": "Reparo/loja de bicicletas",
     "pt": "Reparo/loja de bicicletas",
-    "ca": "Botiga/reparació de bicicletes"
+    "ca": "Botiga/reparació de bicicletes",
+    "es": "Taller/tienda de bicis"
   },
   "minzoom": 13,
   "allowMove": true,
@@ -57,7 +58,8 @@
       "pt_BR": "Reparo/loja de bicicletas",
       "pt": "Reparo/loja de bicicletas",
       "ca": "Botiga/reparació de bicicletes",
-      "da": "Cykelværksted/butik"
+      "da": "Cykelværksted/butik",
+      "es": "Taller/tienda de bicis"
     },
     "mappings": [
       {
@@ -74,7 +76,8 @@
           "ru": "Магазин спортивного инвентаря <i>{name}</i>",
           "de": "Sportartikelgeschäft <i>{name}</i>",
           "pt_BR": "Loja de equipamentos esportivos <i>{name}</i>",
-          "pt": "Loja de equipamentos desportivos <i>{name}</i>"
+          "pt": "Loja de equipamentos desportivos <i>{name}</i>",
+          "es": "Tienda de artículos deportivos <i>{name}</i>"
         }
       },
       {
@@ -85,7 +88,8 @@
           ]
         },
         "then": {
-          "en": "Winkel"
+          "en": "Winkel",
+          "de": "Geschäfte"
         }
       },
       {
@@ -166,7 +170,8 @@
           "it": "Venditore/riparatore bici <i>{name}</i>",
           "pt_BR": "Loja/reparo de bicicletas <i>{name}</i>",
           "pt": "Loja/reparo de bicicletas <i>{name}</i>",
-          "da": "Cykelværksted<i>{name}</i>"
+          "da": "Cykelværksted<i>{name}</i>",
+          "es": "Taller/tienda de bicis <i>{name}</i>"
         }
       }
     ]
@@ -235,7 +240,8 @@
             "nl": "Deze zaak focust op verhuur",
             "en": "This business focuses on rental",
             "de": "Dieses Geschäft konzentriert sich auf die Vermietung",
-            "da": "Denne virksomhed fokuserer på udlejning"
+            "da": "Denne virksomhed fokuserer på udlejning",
+            "es": "Este negocio se centra en el alquiler"
           }
         }
       ]
@@ -667,7 +673,8 @@
             "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta",
             "de": "Das Geschäft bietet Werkzeug an, um das eigene Fahrrad zu reparieren",
             "it": "Questo negozio offre degli attrezzi per la riparazione fai-da-te",
-            "da": "Denne butik tilbyder værktøj til gør-det-selv-reparation"
+            "da": "Denne butik tilbyder værktøj til gør-det-selv-reparation",
+            "es": "Esta tienda ofrece herramientas para la reparación DIY"
           }
         },
         {
@@ -679,7 +686,8 @@
             "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta",
             "de": "Das Geschäft bietet kein Werkzeug an, um das eigene Fahrrad zu reparieren",
             "it": "Questo negozio non offre degli attrezzi per la riparazione fai-da-te",
-            "da": "Denne butik tilbyder ikke værktøj til gør-det-selv reparation"
+            "da": "Denne butik tilbyder ikke værktøj til gør-det-selv reparation",
+            "es": "Esta tienda no ofrece herramientas para la reparación DIY"
           }
         },
         {
@@ -690,7 +698,8 @@
             "fr": "Des outils d'auto-réparation sont disponibles uniquement si vous avez acheté ou loué le vélo dans ce magasin",
             "it": "Gli attrezzi per la riparazione fai-da-te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio",
             "de": "Das Geschäft bietet nur Werkzeug an, um das eigene Fahrrad zu reparieren, wenn es dort gekauft/gemietet wurde",
-            "ru": "Инструменты для починки доступны только при покупке/аренде велосипеда в магазине"
+            "ru": "Инструменты для починки доступны только при покупке/аренде велосипеда в магазине",
+            "es": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda"
           }
         }
       ]
@@ -758,7 +767,8 @@
         "gl": "Tenda/arranxo de bicicletas",
         "de": "eine Fahrradwerkstatt bzw. ein Fahrradgeschäft",
         "it": "una negozio/riparatore di bici",
-        "ru": "Обслуживание велосипедов/магазин"
+        "ru": "Обслуживание велосипедов/магазин",
+        "es": "un taller/tienda de bicis"
       },
       "tags": [
         "shop=bicycle"

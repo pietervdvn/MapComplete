@@ -4111,12 +4111,14 @@
       "question": {
         "en": "What is the reference number of this charging station?",
         "nl": "Wat is het referentienummer van dit oplaadstation?",
-        "de": "Welche Kennnummer hat die Ladestation?"
+        "de": "Welche Kennnummer hat die Ladestation?",
+        "es": "¿Cual es el número de referencia de esta estación de carga?"
       },
       "render": {
         "en": "Reference number is <b>{ref}</b>",
         "nl": "Het referentienummer van dit oplaadpunt is <b>{ref}</b>",
-        "de": "Die Kennziffer ist <b>{ref}</b>"
+        "de": "Die Kennziffer ist <b>{ref}</b>",
+        "es": "El número de referencia es <b>{ref}</b>"
       },
       "freeform": {
         "key": "ref"

@@ -22,17 +22,6 @@ A dummy layer which contains tagrenderings, shared among the climbing layers
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 

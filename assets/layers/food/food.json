@@ -348,7 +348,7 @@
     {
       "question": {
         "nl": "Biedt deze zaak een afhaalmogelijkheid aan?",
-        "en": "Does this place offer takea-way?",
+        "en": "Does this place offer take-away?",
         "de": "Werden Gerichte zum Mitnehmen angeboten?",
         "es": "¿Este lugar ofrece para llevar?"
       },
@@ -623,7 +623,7 @@
     {
       "id": "friture-oil",
       "question": {
-        "en": "Does this fries shop use vegetable or animal cooking?",
+        "en": "Does this fries shop use vegetable or animal oil for cooking?",
         "nl": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
         "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?",
         "de": "Wird in dieser Pommesbude pflanzliches oder tierisches Fett zum Frittieren verwendet?"
@@ -632,20 +632,20 @@
         {
           "if": "friture:oil=vegetable",
           "then": {
-            "en": "Vegetable oil",
+            "en": "The frying is done with vegetable oil",
             "nl": "Bakt in plantaardige olie",
             "fr": "Huile végétale",
-            "de": "Pflanzliches Fett",
+            "de": "Es wird pflanzliches Fett zum Frittieren verwendet",
             "es": "Aceite vegetal"
           }
         },
         {
           "if": "friture:oil=animal",
           "then": {
-            "en": "Animal oil",
+            "en": "The frying is done with animal oil",
             "nl": "Dierlijk vet",
             "fr": "Graisse animale",
-            "de": "Tierisches Fett",
+            "de": "Es wird tierisches Fett zum Frittieren verwendet",
             "es": "Aceite animal"
           }
         }

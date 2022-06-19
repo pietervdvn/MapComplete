@@ -15,7 +15,8 @@
     "it": "Una cartina che mostra le buche delle lettere e gli uffici postali",
     "zh_Hant": "顯示郵筒與郵局的地圖",
     "hu": "Posták és postaládák térképe",
-    "es": "Un mapa que muestra buzones y oficinas de correo"
+    "es": "Un mapa que muestra buzones y oficinas de correo",
+    "nl": "Een kaart die brievenbussen en postkantoren toont"
   },
   "description": {
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
@@ -23,7 +24,8 @@
     "zh_Hant": "在這份地圖你能找到與新增有關郵局與郵筒的資料，你可以用這份地圖找到寄送您下張明信片的地方！:)<br/>發現錯誤或是有郵筒遺漏嗎？你可以用免費的開放街圖帳號來編輯。 ",
     "hu": "Ezen a térképen postahivatalok és postaládák adatait találod és egészítheted ki. Utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? Ezt a térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted. ",
     "de": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten. ",
-    "es": "En este mapa puedes encontrar y añadir datos de oficinas de correo y buzones de correo. ¡Puedes utilizar este mapa para encontrar donde puedes enviar tu próxima postal! :)<br/>¿Has encontrado un error o algo que falta? Puedes editar este mapa con una cuenta de OpenStreetMap gratuíta. "
+    "es": "En este mapa puedes encontrar y añadir datos de oficinas de correo y buzones de correo. ¡Puedes utilizar este mapa para encontrar donde puedes enviar tu próxima postal! :)<br/>¿Has encontrado un error o algo que falta? Puedes editar este mapa con una cuenta de OpenStreetMap gratuíta. ",
+    "nl": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. "
   },
   "maintainer": "nicolelaine",
   "icon": "./assets/themes/postboxes/postbox.svg",
@@ -189,7 +191,8 @@
             "hu": "Nyitva tartás: {opening_hours_table()}",
             "de": "Öffnungszeiten: {opening_hours_table()}",
             "es": "Horas de Apertura: {opening_hours_table()}",
-            "nb_NO": "Åpningstider: {opening_hours_table()}"
+            "nb_NO": "Åpningstider: {opening_hours_table()}",
+            "nl": "Openingsuren: {opening_hours_table()}"
           },
           "freeform": {
             "key": "opening_hours",
@@ -201,7 +204,8 @@
             "id": "Jam berapa kantor pos ini buka?",
             "hu": "Mikor van nyitva ez a posta?",
             "de": "Wie sind die Öffnungszeiten dieser Poststelle?",
-            "es": "¿Cuáles son las horas de apertura para esta oficina de correos?"
+            "es": "¿Cuáles son las horas de apertura para esta oficina de correos?",
+            "nl": "Wat zijn de openingsuren voor dit postkantoor?"
           },
           "mappings": [
             {
@@ -212,7 +216,8 @@
                 "zh_Hant": "24/7 開放 (包括假日)",
                 "id": "Buka 24 jam (termasuk hari libur)",
                 "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
-                "es": "Abierta 24/7 (incluyendo festivos)"
+                "es": "Abierta 24/7 (incluyendo festivos)",
+                "nl": "24/7 open (ook tijdens feestdagen)"
               }
             }
           ],

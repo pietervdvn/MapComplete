@@ -4283,6 +4283,13 @@
         }
     },
     "playground": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dit is een schoolplein - een ruimte waar de leerlingen van een school kunnen spelen tijdens de pauze maar die niet publiek toegankelijk is"
+                }
+            }
+        },
         "description": "Speeltuinen",
         "name": "Speeltuinen",
         "presets": {
@@ -4321,6 +4328,9 @@
                     },
                     "4": {
                         "then": "Niet vrij toegankelijk"
+                    },
+                    "5": {
+                        "then": "Dit is een schoolplein - een zone waar de leerlingen kunnen spelen tijdens de pauze. Dit schoolplein is niet toegankelijk voor het publiek"
                     }
                 },
                 "question": "Is deze speeltuin vrij toegankelijk voor het publiek?"

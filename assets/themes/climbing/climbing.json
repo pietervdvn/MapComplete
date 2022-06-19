@@ -129,7 +129,8 @@
                   "it": " metri",
                   "ru": " метр",
                   "ca": " metre",
-                  "nb_NO": " meter"
+                  "nb_NO": " meter",
+                  "es": " metro"
                 },
                 "default": true
               },
@@ -147,7 +148,8 @@
                   "eo": " futo",
                   "it": " piedi",
                   "ca": " peus",
-                  "nb_NO": " fot"
+                  "nb_NO": " fot",
+                  "es": " pies"
                 }
               }
             ]
@@ -211,7 +213,8 @@
               "fr": "Qui peut y accéder ?",
               "de": "Wer hat hier Zugang?",
               "it": "Chi può accedervi?",
-              "nl": "Wie heeft hier toegang toe?"
+              "nl": "Wie heeft hier toegang toe?",
+              "es": "¿Quién puede acceder aquí?"
             },
             "mappings": [
               {
@@ -222,7 +225,8 @@
                   "de": "Öffentlich zugänglich für jedermann",
                   "it": "Pubblicamente accessibile a chiunque",
                   "nl": "Voor iedereen publiek toegankelijk",
-                  "nb_NO": "Offentlig tilgjengelig for alle"
+                  "nb_NO": "Offentlig tilgjengelig for alle",
+                  "es": "Accesible públicamente a cualquiera"
                 }
               },
               {
@@ -232,7 +236,8 @@
                   "fr": "Une autorisation est nécessaire",
                   "de": "Zugang nur mit Genehmigung",
                   "it": "È necessario avere un’autorizzazione per entrare",
-                  "nl": "Je hebt een vergunning nodig om hier toegang te kregen"
+                  "nl": "Je hebt een vergunning nodig om hier toegang te kregen",
+                  "es": "Necesitas un permiso para acceder aquí"
                 }
               },
               {
@@ -244,7 +249,8 @@
                   "it": "Riservato ai clienti",
                   "ca": "Només clients",
                   "nl": "Enkel klanten",
-                  "nb_NO": "Kun for kunder"
+                  "nb_NO": "Kun for kunder",
+                  "es": "Solo clientes"
                 }
               },
               {
@@ -257,7 +263,8 @@
                   "it": "Riservato ai membri del club",
                   "ca": "Només membres del club",
                   "nl": "Enkel clubleden",
-                  "nb_NO": "Kun klubbmedlemmer"
+                  "nb_NO": "Kun klubbmedlemmer",
+                  "es": "Solo miembros del club"
                 }
               },
               {

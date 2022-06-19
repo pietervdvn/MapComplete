@@ -13,7 +13,7 @@
     + [date](#date)
     + [nat](#nat)
     + [int](#int)
-    + [decimal](#decimal)
+    + [length](#length)
     + [direction](#direction)
     + [wikidata](#wikidata)
     + [pnat](#pnat)
@@ -71,7 +71,7 @@ A number
 
 
 
-### decimal 
+### length 
 
 
 

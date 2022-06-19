@@ -29,7 +29,7 @@ const articles = {
 }
 
 function addArticleToPresets(layerConfig: {presets?: {title: any}[]}){
-    //*
+    /*
     if(layerConfig.presets === undefined){
         return 
     }

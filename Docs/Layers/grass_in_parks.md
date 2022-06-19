@@ -19,17 +19,6 @@ Searches for all accessible grass patches within public parks - these are 'groen
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 

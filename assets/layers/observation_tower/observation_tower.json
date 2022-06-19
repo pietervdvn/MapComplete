@@ -5,7 +5,8 @@
     "nl": "Uitkijktorens",
     "ru": "Смотровые башни",
     "de": "Aussichtstürme",
-    "ca": "Torres d'observació"
+    "ca": "Torres d'observació",
+    "es": "Torres de observación"
   },
   "minzoom": 8,
   "title": {
@@ -14,7 +15,8 @@
       "nl": "Uitkijktoren",
       "ru": "Смотровая башня",
       "de": "Beobachtungsturm",
-      "ca": "Torre d'observació"
+      "ca": "Torre d'observació",
+      "es": "Torre de observación"
     },
     "mappings": [
       {
@@ -24,7 +26,8 @@
           "nl": "<b>{name}</b>",
           "ru": "<b>{name}</b>",
           "de": "<b>{name}</b>",
-          "ca": "<b>{name}</b>"
+          "ca": "<b>{name}</b>",
+          "es": "<b>{name}</b>"
         }
       }
     ]
@@ -32,7 +35,8 @@
   "description": {
     "en": "Towers with a panoramic view",
     "nl": "Torens om van het uitzicht te genieten",
-    "de": "Türme zur Aussicht auf die umgebende Landschaft"
+    "de": "Türme zur Aussicht auf die umgebende Landschaft",
+    "es": "Torres con vista panorámica"
   },
   "tagRenderings": [
     "images",
@@ -40,12 +44,14 @@
       "question": {
         "en": "What is the name of this tower?",
         "nl": "Heeft deze toren een naam?",
-        "de": "Wie ist der Name des Turms?"
+        "de": "Wie ist der Name des Turms?",
+        "es": "¿Cual es el nombre de esta torre?"
       },
       "render": {
         "en": "This tower is called <b>{name}</b>",
         "nl": "Deze toren heet <b>{name}</b>",
-        "de": "Der Name des Turms ist <b>{name}</b>"
+        "de": "Der Name des Turms ist <b>{name}</b>",
+        "es": "Esta torre se llama <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -56,7 +62,8 @@
           "then": {
             "en": "This tower doesn't have a specific name",
             "nl": "Deze toren heeft geen specifieke naam",
-            "de": "Der Turm hat keinen eigenen Namen"
+            "de": "Der Turm hat keinen eigenen Namen",
+            "es": "Esta torre no tiene un nombre específico"
           }
         }
       ],
@@ -66,12 +73,14 @@
       "question": {
         "en": "What is the height of this tower?",
         "nl": "Hoe hoog is deze toren?",
-        "de": "Wie hoch ist dieser Turm?"
+        "de": "Wie hoch ist dieser Turm?",
+        "es": "¿Cual es la altura de esta torre?"
       },
       "render": {
         "en": "This tower is {height} high",
         "nl": "Deze toren is {height} hoog",
-        "de": "Dieser Turm ist {height} hoch"
+        "de": "Dieser Turm ist {height} hoch",
+        "es": "Esta torre mide {height}"
       },
       "freeform": {
         "key": "height",
@@ -93,7 +102,8 @@
           "then": {
             "en": "This tower is publicly accessible",
             "nl": "Deze toren is publiek toegankelijk",
-            "de": "Der Turm ist öffentlich zugänglich"
+            "de": "Der Turm ist öffentlich zugänglich",
+            "es": "Esta torre es accesible públicamente"
           }
         },
         {
@@ -101,7 +111,8 @@
           "then": {
             "en": "This tower can only be visited with a guide",
             "nl": "Deze toren can enkel bezocht worden met een gids",
-            "de": "Der Turm darf nur in Begleitung eines Führers betreten werden"
+            "de": "Der Turm darf nur in Begleitung eines Führers betreten werden",
+            "es": "A esta torre solo se puede acceder con un guía"
           }
         }
       ]
@@ -110,12 +121,14 @@
       "question": {
         "en": "How much does one have to pay to enter this tower?",
         "nl": "Hoeveel moet men betalen om deze toren te bezoeken?",
-        "de": "Was kostet der Zugang zu diesem Turm?"
+        "de": "Was kostet der Zugang zu diesem Turm?",
+        "es": "¿Cuánto hay que pagar para entrar en esta torre?"
       },
       "render": {
         "en": "Visiting this tower costs <b>{charge}</b>",
         "nl": "Deze toren bezoeken kost <b>{charge}</b>",
-        "de": "Der Besuch des Turms kostet <b>{charge}</b>"
+        "de": "Der Besuch des Turms kostet <b>{charge}</b>",
+        "es": "Visitar esta torre cuesta <b>{charge}</b>"
       },
       "freeform": {
         "key": "charge",
@@ -164,7 +177,8 @@
       "question": {
         "en": "How much individual steps does one have to climb to reach the top of this tower?",
         "nl": "Hoeveel treden moet men beklimmen op de top van de toren te bereiken?",
-        "de": "Wie viele einzelne Stufen muss man erklimmen, um die Spitze des Turms zu erreichen?"
+        "de": "Wie viele einzelne Stufen muss man erklimmen, um die Spitze des Turms zu erreichen?",
+        "es": "¿Cuántos escalones hay que subir para llegar a la cima de esta torre?"
       },
       "freeform": {
         "key": "step_count",
@@ -173,7 +187,8 @@
       "render": {
         "en": "This tower has {step_count} steps to reach the top",
         "nl": "Deze toren heeft {step_count} traptredes",
-        "de": "Dieser Turm hat {step_count} Stufen, um die Spitze zu erreichen"
+        "de": "Dieser Turm hat {step_count} Stufen, um die Spitze zu erreichen",
+        "es": "Esta torre tiene {step_count} escalones para lllegar a l a cima"
       },
       "condition": {
         "or": [
@@ -187,7 +202,8 @@
       "question": {
         "en": "Does this tower have an elevator?",
         "nl": "Heeft deze toren een lift?",
-        "de": "Hat dieser Turm einen Aufzug?"
+        "de": "Hat dieser Turm einen Aufzug?",
+        "es": "¿Tiene ascensor esta torre?"
       },
       "mappings": [
         {
@@ -195,7 +211,8 @@
           "then": {
             "en": "This tower has an elevator which takes visitors to the top",
             "nl": "Deze toren heeft een lift die bezoekers naar de top van de toren brengt",
-            "de": "Dieser Turm verfügt über einen Aufzug, der die Besucher nach oben bringt"
+            "de": "Dieser Turm verfügt über einen Aufzug, der die Besucher nach oben bringt",
+            "es": "Esta torre tiene un ascensor que lleva a los visitantes a la cima"
           }
         },
         {
@@ -203,7 +220,8 @@
           "then": {
             "en": "This tower does not have an elevator",
             "nl": "Deze toren heeft geen lift",
-            "de": "Dieser Turm hat keinen Aufzug"
+            "de": "Dieser Turm hat keinen Aufzug",
+            "es": "Esta torre no tiene ascensor"
           }
         }
       ],
@@ -218,12 +236,14 @@
       "question": {
         "en": "Who maintains this tower?",
         "nl": "Wie onderhoudt deze toren?",
-        "de": "Wer betreibt den Turm?"
+        "de": "Wer betreibt den Turm?",
+        "es": "¿Quién mantiene esta torre?"
       },
       "render": {
         "nl": "Wordt onderhouden door <b>{operator}</b>",
         "en": "Maintained by <b>{operator}</b>",
-        "de": "Betrieben von <b>{operator}</b>"
+        "de": "Betrieben von <b>{operator}</b>",
+        "es": "Mantenida por <b>{operator}</b>"
       },
       "freeform": {
         "key": "operator"
@@ -272,7 +292,8 @@
             "en": " meter",
             "ru": " метр",
             "de": " Meter",
-            "ca": " metre"
+            "ca": " metre",
+            "es": " metros"
           }
         }
       ],

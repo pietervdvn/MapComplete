@@ -4,7 +4,8 @@
     "en": "Parking",
     "nl": "Parking",
     "de": "Parkplätze",
-    "ca": "Aparcament"
+    "ca": "Aparcament",
+    "es": "Aparcamiento"
   },
   "minzoom": 12,
   "source": {
@@ -14,13 +15,15 @@
     "render": {
       "nl": "Parking voor auto's",
       "en": "Car parking",
-      "de": "Parkplatz"
+      "de": "Parkplatz",
+      "es": "aparcamiento de coches"
     }
   },
   "description": {
     "en": "A layer showing car parkings",
     "nl": "Deze laag toont autoparkings",
-    "de": "Eine Ebene mit Parkplätzen"
+    "de": "Eine Ebene mit Parkplätzen",
+    "es": "Una capa que muestra aparcamientos para coches"
   },
   "tagRenderings": [
     "images"
@@ -33,7 +36,8 @@
       "title": {
         "nl": "een parking voor auto's",
         "en": "a car parking",
-        "de": "ein Parkplatz"
+        "de": "ein Parkplatz",
+        "es": "un aparcamiento de coches"
       }
     }
   ],

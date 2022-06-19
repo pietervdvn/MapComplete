@@ -262,7 +262,9 @@
           },
           "freeform": {
             "key": "addr:unit",
-            "addExtraTags": ["not:addr:unit="]
+            "addExtraTags": [
+              "not:addr:unit="
+            ]
           },
           "mappings": [
             {
@@ -472,7 +474,9 @@
           },
           "freeform": {
             "key": "addr:parentstreet",
-            "addExtraTags": ["not:addr:parentstreet="]
+            "addExtraTags": [
+              "not:addr:parentstreet="
+            ]
           },
           "mappings": [
             {

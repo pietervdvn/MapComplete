@@ -19,17 +19,6 @@ A layer showing village-green (which are communal green areas, but not quite par
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 

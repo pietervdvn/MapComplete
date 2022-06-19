@@ -3,7 +3,8 @@
   "name": {
     "en": "Street Lamps",
     "nl": "Straatlantaarns",
-    "de": "Straßenlaternen"
+    "de": "Straßenlaternen",
+    "es": "Farolas"
   },
   "source": {
     "osmTags": "highway=street_lamp"
@@ -13,7 +14,8 @@
     "render": {
       "en": "Street Lamp",
       "nl": "Straatlantaarn",
-      "de": "Straßenlaterne"
+      "de": "Straßenlaterne",
+      "es": "Lámpara Callejera"
     },
     "mappings": [
       {
@@ -21,7 +23,8 @@
         "then": {
           "en": "Street Lamp {ref}",
           "nl": "Straatlantaarn {ref}",
-          "de": "Straßenlaterne {ref}"
+          "de": "Straßenlaterne {ref}",
+          "es": "Lámpara Callejera {ref}"
         }
       }
     ]
@@ -47,7 +50,8 @@
       "title": {
         "en": "a street lamp",
         "nl": "een straatlantaarn",
-        "de": "eine Straßenlaterne"
+        "de": "eine Straßenlaterne",
+        "es": "una farola"
       },
       "tags": [
         "highway=street_lamp"
@@ -62,12 +66,14 @@
       "render": {
         "en": "This street lamp has the reference number {ref}",
         "nl": "Deze straatlantaarn heeft het nummer {ref}",
-        "de": "Diese Straßenlaterne hat die Referenznummer {ref}"
+        "de": "Diese Straßenlaterne hat die Referenznummer {ref}",
+        "es": "Esta lámpara callejera tiene el número de referencia {ref}"
       },
       "question": {
         "en": "What is the reference number of this street lamp?",
         "nl": "Wat is het nummer van deze straatlantaarn?",
-        "de": "Wie lautet die Referenznummer dieser Straßenlaterne?"
+        "de": "Wie lautet die Referenznummer dieser Straßenlaterne?",
+        "es": "¿Cual es el número de referencia de esta lámpara callejera?"
       },
       "freeform": {
         "key": "ref"
@@ -78,7 +84,8 @@
       "question": {
         "en": "How is this street lamp mounted?",
         "nl": "Hoe is deze straatlantaarn gemonteerd?",
-        "de": "Wie ist diese Straßenlaterne befestigt?"
+        "de": "Wie ist diese Straßenlaterne befestigt?",
+        "es": "¿Cómo está montada esta lámpara?"
       },
       "mappings": [
         {
@@ -86,7 +93,8 @@
           "then": {
             "en": "This lamp is suspended using cables",
             "nl": "Deze lantaarn hangt aan kabels",
-            "de": "Die Straßenlaterne ist an einem Kabel befestigt"
+            "de": "Die Straßenlaterne ist an einem Kabel befestigt",
+            "es": "Esta lámpara se suspende utilizando cables"
           }
         },
         {
@@ -94,7 +102,8 @@
           "then": {
             "en": "This lamp is mounted on a ceiling",
             "nl": "Deze lantaarn hangt aan een plafond",
-            "de": "Die Straßenlaterne ist an einer Decke befestigt"
+            "de": "Die Straßenlaterne ist an einer Decke befestigt",
+            "es": "Esta lámpara está montada en un techo"
           }
         },
         {
@@ -102,7 +111,8 @@
           "then": {
             "en": "This lamp is mounted in the ground",
             "nl": "Deze lantaarn zit in de grond",
-            "de": "Die Straßenlaterne ist am Boden befestigt"
+            "de": "Die Straßenlaterne ist am Boden befestigt",
+            "es": "Esta lámpara está montada en el suelo"
           }
         },
         {
@@ -110,7 +120,8 @@
           "then": {
             "en": "This lamp is mounted on a short pole (mostly < 1.5m)",
             "nl": "Deze lantaarn zit op een korte paal (meestal < 1.5m)",
-            "de": "Die Straßenlaterne ist an einem kurzen Mast (< 1,5m) befestigt"
+            "de": "Die Straßenlaterne ist an einem kurzen Mast (< 1,5m) befestigt",
+            "es": "Esta lámpara está montada en un poste corto (mayoritariamente < 1.5m)"
           }
         },
         {
@@ -118,7 +129,8 @@
           "then": {
             "en": "This lamp is mounted on a pole",
             "nl": "Deze lantaarn zit op een paal",
-            "de": "Die Straßenlaterne ist an einem Mast befestigt"
+            "de": "Die Straßenlaterne ist an einem Mast befestigt",
+            "es": "Esta lámpara está montada en un poste"
           }
         },
         {
@@ -126,7 +138,8 @@
           "then": {
             "en": "This lamp is mounted directly to the wall",
             "nl": "Deze lantaarn hangt direct aan de muur",
-            "de": "Die Straßenlaterne ist direkt an der Wand befestigt"
+            "de": "Die Straßenlaterne ist direkt an der Wand befestigt",
+            "es": "Esta lámpara está montada directamente en la pared"
           }
         },
         {
@@ -134,7 +147,8 @@
           "then": {
             "en": "This lamp is mounted to the wall using a metal bar",
             "nl": "Deze lantaarn hangt aan de muur met een metalen balk",
-            "de": "Die Straßenlaterne ist mit einer Metallstange an der Wand befestigt"
+            "de": "Die Straßenlaterne ist mit einer Metallstange an der Wand befestigt",
+            "es": "Esta lámpara está montada en la pared utilizando una barra metálica"
           }
         }
       ]
@@ -144,7 +158,8 @@
       "question": {
         "en": "How is this lamp mounted to the pole?",
         "nl": "Hoe zit deze lantaarn aan de paal?",
-        "de": "Wie ist diese Straßenlaterne am Mast befestigt?"
+        "de": "Wie ist diese Straßenlaterne am Mast befestigt?",
+        "es": "¿Cómo está montada esta lámpara al poste?"
       },
       "condition": "support=pole",
       "mappings": [
@@ -153,7 +168,8 @@
           "then": {
             "en": "This lamp sits atop of a straight mast",
             "nl": "Deze lantaarn zit boven op een rechte paal",
-            "de": "Diese Straßenlaterne sitzt auf einem geraden Mast"
+            "de": "Diese Straßenlaterne sitzt auf einem geraden Mast",
+            "es": "Esta lampara está encima de un mástil recto"
           }
         },
         {
@@ -161,7 +177,8 @@
           "then": {
             "en": "This lamp sits at the end of a bent mast",
             "nl": "Deze lantaarn zit aan het eind van een gebogen paal",
-            "de": "Diese Straßenlaterne sitzt am Ende eines gebogenen Mastes"
+            "de": "Diese Straßenlaterne sitzt am Ende eines gebogenen Mastes",
+            "es": "Esta lámpara está encima de un mástil curvado"
           }
         }
       ]
@@ -171,7 +188,8 @@
       "question": {
         "en": "What kind of lighting does this lamp use?",
         "nl": "Wat voor verlichting gebruikt deze lantaarn?",
-        "de": "Mit welcher Art von Beleuchtung arbeitet diese Straßenlaterne?"
+        "de": "Mit welcher Art von Beleuchtung arbeitet diese Straßenlaterne?",
+        "es": "¿Qué tipo de iluminación utiliza esta lámpara?"
       },
       "mappings": [
         {
@@ -179,7 +197,8 @@
           "then": {
             "en": "This lamp is lit electrically",
             "nl": "Deze lantaarn is elektrisch verlicht",
-            "de": "Diese Straßenlaterne leuchtet elektrisch"
+            "de": "Diese Straßenlaterne leuchtet elektrisch",
+            "es": "Esta lámpara se ilumina eléctricamente"
           },
           "hideInAnswer": true
         },
@@ -188,7 +207,8 @@
           "then": {
             "en": "This lamp uses LEDs",
             "nl": "Deze lantaarn gebruikt LEDs",
-            "de": "Diese Straßenlaterne verwendet LEDs"
+            "de": "Diese Straßenlaterne verwendet LEDs",
+            "es": "Esta lámpara utiliza LEDs"
           }
         },
         {
@@ -196,7 +216,8 @@
           "then": {
             "en": "This lamp uses incandescent lighting",
             "nl": "Deze lantaarn gebruikt gloeilampen",
-            "de": "Diese Straßenlaterne verwendet Glühlampenlicht"
+            "de": "Diese Straßenlaterne verwendet Glühlampenlicht",
+            "es": "Esta lámpara utiliza iluminación incandescente"
           }
         },
         {
@@ -204,7 +225,8 @@
           "then": {
             "en": "This lamp uses halogen lighting",
             "nl": "Deze lantaarn gebruikt halogeen verlichting",
-            "de": "Diese Straßenlaterne verwendet Halogenlicht"
+            "de": "Diese Straßenlaterne verwendet Halogenlicht",
+            "es": "Esta lámpara utiliza iluminación halógena"
           }
         },
         {
@@ -212,7 +234,8 @@
           "then": {
             "en": "This lamp uses discharge lamps (unknown type)",
             "nl": "Deze lantaarn gebruikt gasontladingslampen (onbekend type)",
-            "de": "Diese Straßenlaterne verwendet Entladungslampen (unbekannter Typ)"
+            "de": "Diese Straßenlaterne verwendet Entladungslampen (unbekannter Typ)",
+            "es": "Esta lámpara utiliza lámparas de descarga (de tipo desconocido)"
           }
         },
         {
@@ -220,7 +243,8 @@
           "then": {
             "en": "This lamp uses a mercury-vapour lamp (lightly blueish)",
             "nl": "Deze lantaarn gebruikt een kwiklamp (enigszins blauwachtig)",
-            "de": "Diese Straßenlaterne verwendet eine Quecksilberdampflampe (leicht bläulich)"
+            "de": "Diese Straßenlaterne verwendet eine Quecksilberdampflampe (leicht bläulich)",
+            "es": "Esta lámpara utiliza una lámpara de vapor de mercurio (levemente azulada)"
           }
         },
         {
@@ -236,7 +260,8 @@
           "then": {
             "en": "This lamp uses fluorescent lighting",
             "nl": "Deze lantaarn gebruikt fluorescentieverlichting (TL en spaarlamp)",
-            "de": "Diese Straßenlaterne verwendet Leuchtstoffröhren"
+            "de": "Diese Straßenlaterne verwendet Leuchtstoffröhren",
+            "es": "Esta lámpara utiliza iluminación fluorescente"
           }
         },
         {
@@ -244,7 +269,8 @@
           "then": {
             "en": "This lamp uses sodium lamps (unknown type)",
             "nl": "Deze lantaarn gebruikt natriumlampen (onbekend type)",
-            "de": "Diese Straßenlaterne verwendet Natriumdampflampen (unbekannter Typ)"
+            "de": "Diese Straßenlaterne verwendet Natriumdampflampen (unbekannter Typ)",
+            "es": "Esta lámpara utiliza lámparas de sodio (de tipo desconocido)"
           }
         },
         {
@@ -252,7 +278,8 @@
           "then": {
             "en": "This lamp uses low pressure sodium lamps (monochrome orange)",
             "nl": "Deze lantaarn gebruikt lagedruknatriumlampen (monochroom oranje)",
-            "de": "Diese Straßenlaterne verwendet Niederdruck-Natriumdampflampen (einfarbig orange)"
+            "de": "Diese Straßenlaterne verwendet Niederdruck-Natriumdampflampen (einfarbig orange)",
+            "es": "Esta lámpara utiliza lámparas de sodio de baja presión (naranja monocromo)"
           }
         },
         {
@@ -260,7 +287,8 @@
           "then": {
             "en": "This lamp uses high pressure sodium lamps (orange with white)",
             "nl": "Deze lantaarn gebruikt hogedruknatriumlampen (oranje met wit)",
-            "de": "Diese Straßenlaterne verwendet Hochdruck-Natriumdampflampen (orange mit weiß)"
+            "de": "Diese Straßenlaterne verwendet Hochdruck-Natriumdampflampen (orange mit weiß)",
+            "es": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
           }
         },
         {
@@ -268,7 +296,8 @@
           "then": {
             "en": "This lamp is lit using gas",
             "nl": "Deze lantaarn wordt verlicht met gas",
-            "de": "Diese Straßenlaterne wird mit Gas beleuchtet"
+            "de": "Diese Straßenlaterne wird mit Gas beleuchtet",
+            "es": "Esta lampara se ilumina con gas"
           }
         }
       ]
@@ -278,12 +307,14 @@
       "question": {
         "en": "What colour light does this lamp emit?",
         "nl": "Wat voor kleur licht geeft deze lantaarn?",
-        "de": "Welche Lichtfarbe strahlt diese Lampe aus?"
+        "de": "Welche Lichtfarbe strahlt diese Lampe aus?",
+        "es": "¿De qué color es la luz que emite esta lámpara?"
       },
       "render": {
         "en": "This lamp emits {light:colour} light",
         "nl": "Deze lantaarn geeft {light:colour} licht",
-        "de": "Diese Lampe strahlt {light:colour} Licht aus"
+        "de": "Diese Lampe strahlt {light:colour} Licht aus",
+        "es": "Esta lámpara emite luz {light:colour}"
       },
       "freeform": {
         "key": "light:colour",
@@ -295,7 +326,8 @@
           "then": {
             "en": "This lamp emits white light",
             "nl": "Deze lantaarn geeft wit licht",
-            "de": "Diese Lampe strahlt weißes Licht aus"
+            "de": "Diese Lampe strahlt weißes Licht aus",
+            "es": "Esta lámpara emite luz blanca"
           }
         },
         {
@@ -303,7 +335,8 @@
           "then": {
             "en": "This lamp emits green light",
             "nl": "Deze lantaarn geeft groen licht",
-            "de": "Diese Lampe strahlt grünes Licht aus"
+            "de": "Diese Lampe strahlt grünes Licht aus",
+            "es": "Esta lámpara emite luz verde"
           }
         },
         {
@@ -311,7 +344,8 @@
           "then": {
             "en": "This lamp emits orange light",
             "nl": "Deze lantaarn geeft oranje licht",
-            "de": "Diese Lampe strahlt orangefarbenes Licht aus"
+            "de": "Diese Lampe strahlt orangefarbenes Licht aus",
+            "es": "Esta lámpara emite luz naranja"
           }
         }
       ]
@@ -339,7 +373,8 @@
           "then": {
             "en": "This lamp has 1 fixture",
             "nl": "Deze lantaarn heeft 1 lamp",
-            "de": "Diese Straßenlaterne hat 1 Leuchte"
+            "de": "Diese Straßenlaterne hat 1 Leuchte",
+            "es": ""
           }
         },
         {
@@ -357,7 +392,8 @@
       "question": {
         "en": "When is this lamp lit?",
         "nl": "Wanneer is deze lantaarn verlicht?",
-        "de": "Wann leuchtet diese Straßenlaterne?"
+        "de": "Wann leuchtet diese Straßenlaterne?",
+        "es": "¿Cuándo se ilumina esta lámpara?"
       },
       "mappings": [
         {
@@ -365,7 +401,8 @@
           "then": {
             "en": "This lamp is lit at night",
             "nl": "Deze lantaarn is 's nachts verlicht",
-            "de": "Diese Straßenlaterne leuchtet nachts"
+            "de": "Diese Straßenlaterne leuchtet nachts",
+            "es": "Esta lámpara está iluminada por la noche"
           }
         },
         {
@@ -373,7 +410,8 @@
           "then": {
             "en": "This lamp is lit 24/7",
             "nl": "Deze lantaarn is 24/7 verlicht",
-            "de": "Diese Straßenlaterne leuchtet durchgehend"
+            "de": "Diese Straßenlaterne leuchtet durchgehend",
+            "es": "Esta lámpara está iluminada 24/7"
           }
         },
         {
@@ -381,7 +419,8 @@
           "then": {
             "en": "This lamp is lit based on motion",
             "nl": "Deze lantaarn is verlicht op basis van beweging",
-            "de": "Diese Straßenlaterne leuchtet bewegungsgesteuert"
+            "de": "Diese Straßenlaterne leuchtet bewegungsgesteuert",
+            "es": "Esta lámpara se ilumina con el movimiento"
           }
         },
         {
@@ -389,7 +428,8 @@
           "then": {
             "en": "This lamp is lit based on demand (e.g. with a pushbutton)",
             "nl": "Deze lantaarn is verlicht op verzoek (bijv. met een drukknop)",
-            "de": "Diese Straßenlaterne leuchtet bei Bedarf (z. B. mit einem Taster)"
+            "de": "Diese Straßenlaterne leuchtet bei Bedarf (z. B. mit einem Taster)",
+            "es": "Esta lámpara se ilumina bajo demanda (ej. con un pulsador)"
           }
         }
       ]
@@ -399,12 +439,14 @@
       "render": {
         "en": "This lamp points towards {light:direction}",
         "nl": "Deze lantaarn is gericht naar {light:direction}",
-        "de": "Diese Straßenlaterne leuchtet in Richtung {light:direction}"
+        "de": "Diese Straßenlaterne leuchtet in Richtung {light:direction}",
+        "es": "Esta lámpara apunta hacia {light:direction}"
       },
       "question": {
         "en": "Where does this lamp point to?",
         "nl": "Waar is deze lamp heengericht?",
-        "de": "Wohin leuchtet diese Straßenlaterne?"
+        "de": "Wohin leuchtet diese Straßenlaterne?",
+        "es": "¿Hacia donde apunta esta lámpara?"
       },
       "condition": "light:count=1",
       "freeform": {
@@ -421,6 +463,7 @@
   "description": {
     "en": "A layer showing street lights",
     "nl": "Een laag die alle straatlantaarns toont",
-    "de": "Eine Ebene mit Straßenbeleuchtung"
+    "de": "Eine Ebene mit Straßenbeleuchtung",
+    "es": "Una capa que muestra luces callejeras"
   }
 }

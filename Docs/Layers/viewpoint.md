@@ -19,17 +19,6 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 

@@ -16,7 +16,8 @@
     "nl": "Een mooi uitzicht - ideaal om een foto toe te voegen wanneer iets niet in een andere categorie past",
     "de": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
     "fr": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",
-    "it": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata"
+    "it": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata",
+    "es": "Un buen punto de vista o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría"
   },
   "source": {
     "osmTags": "tourism=viewpoint"
@@ -63,7 +64,8 @@
         "ru": "Вы хотите добавить описание?",
         "fr": "Voulez-vous ajouter une description ?",
         "it": "Vuoi aggiungere una descrizione?",
-        "id": "Apakah Anda ingin menambahkan deskripsi?"
+        "id": "Apakah Anda ingin menambahkan deskripsi?",
+        "es": "¿Quieres añadir una descripción?"
       },
       "render": "{description}",
       "freeform": {
