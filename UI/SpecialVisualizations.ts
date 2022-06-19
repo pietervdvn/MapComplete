@@ -206,11 +206,13 @@ class NearbyImageVis implements SpecialVisualization {
 
         const nearby = new Lazy(() => {
             const towardsCenter = new CheckBox(t.onlyTowards, false)
-            
-            const radiusValue=   state?.osmConnection?.GetPreference("nearby-images-radius","300").map(s => Number(s), [], i => ""+i) ?? new UIEventSource(300);
 
-            const radius = new Slider(25, 500, {value: 
-                    radiusValue, step: 25})
+            const radiusValue = state?.osmConnection?.GetPreference("nearby-images-radius", "300").map(s => Number(s), [], i => "" + i) ?? new UIEventSource(300);
+
+            const radius = new Slider(25, 500, {
+                value:
+                radiusValue, step: 25
+            })
             const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
             const options: NearbyImageOptions & { value } = {
                 lon, lat,
@@ -283,29 +285,31 @@ export default class SpecialVisualizations {
 
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.init()
 
+    public static DocumentationFor(viz: SpecialVisualization): BaseUIElement {
+        return new Combine(
+            [
+                new Title(viz.funcName, 3),
+                viz.docs,
+                viz.args.length > 0 ? new Table(["name", "default", "description"],
+                    viz.args.map(arg => {
+                        let defaultArg = arg.defaultValue ?? "_undefined_"
+                        if (defaultArg == "") {
+                            defaultArg = "_empty string_"
+                        }
+                        return [arg.name, defaultArg, arg.doc];
+                    })
+                ) : undefined,
+                new Title("Example usage of " + viz.funcName, 4),
+                new FixedUiElement(
+                    viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
+                ).SetClass("literal-code"),
+
+            ])
+    }
+
     public static HelpMessage() {
 
-        const helpTexts =
-            SpecialVisualizations.specialVisualizations.map(viz => new Combine(
-                [
-                    new Title(viz.funcName, 3),
-                    viz.docs,
-                    viz.args.length > 0 ? new Table(["name", "default", "description"],
-                        viz.args.map(arg => {
-                            let defaultArg = arg.defaultValue ?? "_undefined_"
-                            if (defaultArg == "") {
-                                defaultArg = "_empty string_"
-                            }
-                            return [arg.name, defaultArg, arg.doc];
-                        })
-                    ) : undefined,
-                    new Title("Example usage of " + viz.funcName, 4),
-                    new FixedUiElement(
-                        viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
-                    ).SetClass("literal-code"),
-
-                ]
-            ));
+        const helpTexts = SpecialVisualizations.specialVisualizations.map(viz => SpecialVisualizations.DocumentationFor(viz));
 
         return new Combine([
                 new Combine([
