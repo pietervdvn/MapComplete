@@ -71,7 +71,8 @@
         "it": "La superficie è <b>{surface}</b>",
         "ru": "Поверхность - <b>{surface}</b>",
         "de": "Die Oberfläche ist <b>{surface}</b>",
-        "fr": "La surface est en <b>{surface}</b>"
+        "fr": "La surface est en <b>{surface}</b>",
+        "es": "La superficie es <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -85,7 +86,8 @@
             "it": "La superficie è <b>prato</b>",
             "ru": "Поверхность - <b>трава</b>",
             "de": "Der Bodenbelag ist aus <b>Gras</b>",
-            "fr": "La surface est en <b>gazon</b>"
+            "fr": "La surface est en <b>gazon</b>",
+            "es": "La superficie es <b>hierba</b>"
           }
         },
         {
@@ -96,7 +98,8 @@
             "it": "La superficie è <b>sabbia</b>",
             "ru": "Поверхность - <b>песок</b>",
             "de": "Der Bodenbelag ist aus <b>Sand</b>",
-            "fr": "La surface est en <b>sable</b>"
+            "fr": "La surface est en <b>sable</b>",
+            "es": "La superficie es <b>arena</b>"
           }
         },
         {
@@ -118,7 +121,8 @@
             "it": "La superficie è <b>mattonelle regolari</b>",
             "ru": "Поверхность - <b>брусчатка</b>",
             "de": "Der Bodenbelag ist aus <b>Pflastersteinen</b>",
-            "fr": "La surface est en <b>pavés</b>"
+            "fr": "La surface est en <b>pavés</b>",
+            "es": "La superficie es <b>adoquines</b>"
           }
         },
         {
@@ -129,7 +133,8 @@
             "it": "La superficie è <b>asfalto</b>",
             "ru": "Поверхность - <b>асфальт</b>",
             "de": "Der Bodenbelag ist aus <b>Asphalt</b>",
-            "fr": "La surface est en <b>bitume</b>"
+            "fr": "La surface est en <b>bitume</b>",
+            "es": "La superficie es <b>asfalto</b>"
           }
         },
         {
@@ -140,7 +145,8 @@
             "it": "La superficie è <b>cemento</b>",
             "ru": "Поверхность - <b>бетон</b>",
             "de": "Der Bodenbelag ist aus <b>Beton</b>",
-            "fr": "La surface est en <b>béton</b>"
+            "fr": "La surface est en <b>béton</b>",
+            "es": "La superficie es <b>hormigón</b>"
           }
         },
         {
@@ -150,7 +156,8 @@
             "en": "The surface is <b>unpaved</b>",
             "it": "La superficie è <b>non pavimentato</b>",
             "de": "Die Oberfläche ist <b>unbefestigt</b>",
-            "fr": "La surface n’a <b>pas de revêtement</b>"
+            "fr": "La surface n’a <b>pas de revêtement</b>",
+            "es": "La superficie está <b>sin pavimentar</b>"
           },
           "hideInAnswer": true
         },
@@ -161,7 +168,8 @@
             "en": "The surface is <b>paved</b>",
             "it": "La superficie è <b>pavimentato</b>",
             "de": "Die Oberfläche ist <b>befestigt</b>",
-            "fr": "La surface a <b>un revêtement</b>"
+            "fr": "La surface a <b>un revêtement</b>",
+            "es": "La superficie está <b>pavimentada</b>"
           },
           "hideInAnswer": true
         }
@@ -216,7 +224,8 @@
         "it": "Accessibile ai bambini di almeno {min_age} anni",
         "ru": "Доступно для детей старше {min_age} лет",
         "fr": "Accessible aux enfants de plus de {min_age} ans",
-        "de": "Zugang nur für Kinder ab {min_age} Jahren"
+        "de": "Zugang nur für Kinder ab {min_age} Jahren",
+        "es": "Accesible a niños menores de {min_age} años"
       },
       "question": {
         "nl": "Wat is de minimale leeftijd om op deze speeltuin te mogen?",
@@ -242,7 +251,8 @@
         "it": "Accessibile ai bambini di età inferiore a {max_age}",
         "fr": "Accessible aux enfants de {max_age} au maximum",
         "ru": "Доступно детям до {max_age}",
-        "de": "Zugang nur für Kinder bis maximal {max_age}"
+        "de": "Zugang nur für Kinder bis maximal {max_age}",
+        "es": "Accesible a niños de hasta {max_age}"
       },
       "question": {
         "nl": "Wat is de maximaal toegestane leeftijd voor deze speeltuin?",
@@ -270,7 +280,8 @@
         "en": "Operated by {operator}",
         "it": "Gestito da {operator}",
         "fr": "Exploité par {operator}",
-        "de": "Betrieben von {operator}"
+        "de": "Betrieben von {operator}",
+        "es": "Operado por {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -294,7 +305,8 @@
             "nl": "Vrij toegankelijk voor het publiek",
             "it": "Accessibile pubblicamente",
             "de": "Der Spielplatz ist öffentlich zugänglich",
-            "fr": "Accessible au public"
+            "fr": "Accessible au public",
+            "es": "Accesible al público general"
           },
           "addExtraTags": [
             "fee=no"
@@ -318,7 +330,8 @@
             "nl": "Enkel toegankelijk voor klanten van de bijhorende zaak",
             "it": "Accessibile solamente ai clienti dell’attività che lo gestisce",
             "de": "Der Spielplatz ist nur für Kunden zugänglich",
-            "fr": "Réservée aux clients"
+            "fr": "Réservée aux clients",
+            "es": "Solo accesible para clientes del negocio que lo opera"
           },
           "addExtraTags": [
             "fee=no"
@@ -331,7 +344,8 @@
             "nl": "Enkel toegankelijk voor scholieren van de bijhorende school",
             "it": "Accessibile solamente agli studenti della scuola",
             "de": "Nur für Schüler der Schule zugänglich",
-            "fr": "Réservée aux élèves de l’école"
+            "fr": "Réservée aux élèves de l’école",
+            "es": "Solo accesibles para estudiantes de la escuela"
           },
           "hideInAnswer": true,
           "addExtraTags": [
@@ -346,15 +360,17 @@
             "it": "Non accessibile",
             "ru": "Недоступно",
             "fr": "Non accessible",
-            "de": "Der Spielplatz ist nicht öffentlich zugänglich"
+            "de": "Der Spielplatz ist nicht öffentlich zugänglich",
+            "es": "No accesible"
           }
         },
-        {"if": "leisure=playground",
-          "then":
-          {
+        {
+          "if": "leisure=playground",
+          "then": {
             "en": "This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public",
             "nl": "Dit is een schoolplein - een zone waar de leerlingen kunnen spelen tijdens de pauze. Dit schoolplein is niet toegankelijk voor het publiek"
-          }}
+          }
+        }
       ]
     },
     "website",
@@ -374,7 +390,8 @@
         "fr": "<a href='mailto:{email}'>{email}</a>",
         "it": "<a href='mailto:{email}'>{email}</a>",
         "ru": "<a href='mailto:{email}'>{email}</a>",
-        "id": "<a href='mailto:{email}'>{email}</a>"
+        "id": "<a href='mailto:{email}'>{email}</a>",
+        "es": "<a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -398,7 +415,8 @@
         "fr": "<a href='tel:{phone}'>{phone}</a>",
         "ru": "<a href='tel:{phone}'>{phone}</a>",
         "id": "<a href='tel:{phone}'>{phone}</a>",
-        "it": "<a href='tel:{phone}'>{phone}</a>"
+        "it": "<a href='tel:{phone}'>{phone}</a>",
+        "es": "<a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -425,7 +443,8 @@
             "fr": "Entièrement accessible aux personnes en fauteuil roulant",
             "de": "Vollständig zugänglich für Rollstuhlfahrer",
             "it": "Completamente accessibile in sedia a rotelle",
-            "ru": "Полностью доступна пользователям кресел-колясок"
+            "ru": "Полностью доступна пользователям кресел-колясок",
+            "es": "Completamente accesible para usuarios de silla de ruedas"
           }
         },
         {
@@ -436,7 +455,8 @@
             "fr": "Accessibilité limitée pour les personnes en fauteuil roulant",
             "de": "Eingeschränkte Zugänglichkeit für Rollstuhlfahrer",
             "it": "Accesso limitato in sedia a rotelle",
-            "ru": "Частично доступна пользователям кресел-колясок"
+            "ru": "Частично доступна пользователям кресел-колясок",
+            "es": "Acceso limitado para usuarios de silla de ruedas"
           }
         },
         {
@@ -447,7 +467,8 @@
             "fr": "Non accessible aux personnes en fauteuil roulant",
             "de": "Nicht zugänglich für Rollstuhlfahrer",
             "it": "Non accessibile in sedia a rotelle",
-            "ru": "Недоступна пользователям кресел-колясок"
+            "ru": "Недоступна пользователям кресел-колясок",
+            "es": "No accesible a usuarios de sillas de ruedas"
           }
         }
       ]
@@ -475,7 +496,8 @@
             "fr": "Accessible du lever au coucher du soleil",
             "it": "Si può accedere dall'alba al tramonto",
             "ru": "Открыто от рассвета до заката",
-            "de": "Zugänglich von Sonnenaufgang bis Sonnenuntergang"
+            "de": "Zugänglich von Sonnenaufgang bis Sonnenuntergang",
+            "es": "Accesible desde el amanecer hasta el anochecer"
           }
         },
         {
@@ -487,7 +509,8 @@
             "ru": "Всегда доступен",
             "it": "Si può sempre accedere",
             "de": "Immer zugänglich",
-            "ca": "Sempre accessible--"
+            "ca": "Sempre accessible--",
+            "es": "Siempre accesible"
           }
         }
       ],

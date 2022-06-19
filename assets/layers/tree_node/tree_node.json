@@ -370,7 +370,8 @@
       "question": {
         "en": "What species is this tree?",
         "de": "Um welche Baumart handelt es sich?",
-        "id": "Spesies pohon apa ini?"
+        "id": "Spesies pohon apa ini?",
+        "es": "¿De qué especie es este árbol?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"
@@ -411,7 +412,8 @@
         "fr": "Nom : {name}",
         "id": "Nama: {name}",
         "de": "Name: {name}",
-        "eo": "Nomo: {name}"
+        "eo": "Nomo: {name}",
+        "es": "Nombre: {name}"
       },
       "question": {
         "nl": "Heeft de boom een naam?",
@@ -420,7 +422,7 @@
         "fr": "L'arbre a-t-il un nom ?",
         "ru": "Есть ли у этого дерева название?",
         "de": "Hat der Baum einen Namen?",
-        "es": "El árbol no tiene nombre?.",
+        "es": "¿Tiene nombre este árbol?",
         "id": "Apakah pohon ini memiliki nama?"
       },
       "freeform": {
@@ -582,7 +584,7 @@
         "it": "Qual è l’ID rilasciato da Onroerend Erfgoed Flanders?",
         "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?",
         "de": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?",
-        "es": "¿Cuál es la identificación emitida por Onroerend Erfgoed Flandes?"
+        "es": "¿Cuál es el número de identificación emitido por Onroerend Erfgoed Flandes?"
       },
       "freeform": {
         "key": "ref:OnroerendErfgoed",

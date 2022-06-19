@@ -123,6 +123,11 @@
       "value": "private"
     },
     {
+      "key": "leisure",
+      "description": "Layer 'Playgrounds' shows leisure=playground with a fixed text, namely 'This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Playgrounds')",
+      "value": "playground"
+    },
+    {
       "key": "website",
       "description": "Layer 'Playgrounds' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Playgrounds')"
     },

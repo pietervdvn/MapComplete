@@ -276,7 +276,8 @@
         "zh_Hant": "{name} 的網站是？",
         "pt_BR": "Qual o website de {name}?",
         "pt": "Qual o website de {name}?",
-        "da": "Hvad er webstedet for {name}?"
+        "da": "Hvad er webstedet for {name}?",
+        "es": "¿Cual es el sitio web de {name}?"
       },
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {

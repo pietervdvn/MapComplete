@@ -11,7 +11,8 @@
     "pt_BR": "Locais de acampamento",
     "de": "Wohnmobilstellplätze",
     "hu": "Lakóautós megállóhelyek",
-    "ca": "Llocs d'acampada"
+    "ca": "Llocs d'acampada",
+    "es": "Campings"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -23,7 +24,8 @@
     "nl": "Vind locaties waar je de nacht kan doorbrengen met je mobilehome",
     "pt_BR": "Encontre locais para passar a noite com o seu campista",
     "de": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
-    "hu": "Helyek, ahol lakóautóval eltöltheti az éjszakát"
+    "hu": "Helyek, ahol lakóautóval eltöltheti az éjszakát",
+    "es": "Encuentra sitios para pasar la noche con tu caravana"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.",
@@ -517,7 +519,8 @@
             "de": "Verfügt dieser Ort über Toiletten?",
             "nl": "Heeft deze plaats toiletten?",
             "hu": "Van-e itt WC?",
-            "da": "Har dette sted toiletter?"
+            "da": "Har dette sted toiletter?",
+            "es": "¿Este lugar tiene baños?"
           },
           "mappings": [
             {
@@ -580,7 +583,8 @@
             "nl": "Officiële website: : <a href='{website}'>{website}</a>",
             "fr": "Site officiel : <a href='{website}'>{website}</a>",
             "pt_BR": "Site oficial: <a href='{website}'>{website}</a>",
-            "de": "Offizielle Webseite: <a href='{website}'>{website}</a>"
+            "de": "Offizielle Webseite: <a href='{website}'>{website}</a>",
+            "es": "Sitio web oficial: <a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
@@ -597,7 +601,8 @@
             "fr": "Ce lieu a-t’il un site internet ?",
             "pt_BR": "Este lugar tem um website?",
             "de": "Hat dieser Ort eine Webseite?",
-            "nl": "Heeft deze plaats een website?"
+            "nl": "Heeft deze plaats een website?",
+            "es": "¿Este lugar tiene un sitio web?"
           },
           "id": "caravansites-website"
         },
@@ -860,7 +865,8 @@
             "pt_BR": "Este lugar cobra alguma taxa?",
             "de": "Wird hier eine Gebühr erhoben?",
             "zh_Hant": "這個地方需要付費嗎？",
-            "nl": "Vraagt deze plaats een vergoeding?"
+            "nl": "Vraagt deze plaats een vergoeding?",
+            "es": "¿Este lugar cobra una tasa?"
           },
           "mappings": [
             {
@@ -879,7 +885,8 @@
                 "de": "Sie müssen für die Nutzung bezahlen",
                 "zh_Hant": "你需要付費才能使用",
                 "nb_NO": "Man må betale for bruk",
-                "nl": "Je moet betalen voor het gebruik"
+                "nl": "Je moet betalen voor het gebruik",
+                "es": "Tienes que pagar por el uso"
               }
             },
             {
@@ -898,7 +905,8 @@
                 "de": "Nutzung kostenlos",
                 "zh_Hant": "這裡可以免費使用",
                 "nl": "Kan gratis gebruikt worden",
-                "nb_NO": "Kan brukes gratis"
+                "nb_NO": "Kan brukes gratis",
+                "es": "Se puede utilizar gratis"
               }
             }
           ]
@@ -914,7 +922,8 @@
             "de": "Die Gebühr beträgt {charge}",
             "zh_Hant": "這個地方收費 {charge}",
             "nb_NO": "Dette stedet tar {charge}",
-            "nl": "Deze loosplaats rekent {charge} aan"
+            "nl": "Deze loosplaats rekent {charge} aan",
+            "es": "Este lugar cobra {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -925,7 +934,8 @@
             "pt_BR": "Quanto este lugar cobra?",
             "de": "Wie hoch ist die Gebühr an diesem Ort?",
             "zh_Hant": "這個地方收費多少？",
-            "nl": "Hoeveel kost het gebruik van deze loosplaats?"
+            "nl": "Hoeveel kost het gebruik van deze loosplaats?",
+            "es": "¿Cuánto cobra este lugar?"
           },
           "freeform": {
             "key": "charge"
@@ -1181,7 +1191,8 @@
             "fr": "Cette station fait parte d’un réseau {network}",
             "de": "Diese Station gehört zum Verbund/Netzwerk {network}",
             "zh_Hant": "這車站是屬於 {network} 網路的一部分",
-            "nl": "Deze loosplaats is deel van het {network} netwerk"
+            "nl": "Deze loosplaats is deel van het {network} netwerk",
+            "es": "Esta estación forma parte de la red {network}"
           },
           "question": {
             "en": "What network is this place a part of? (skip if none)",
@@ -1191,7 +1202,8 @@
             "fr": "De quel réseau fait-elle partie ? (Passer si aucun)",
             "de": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
             "zh_Hant": "這裡是屬於那個網路的？ (沒有則跳過)",
-            "nl": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)"
+            "nl": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)",
+            "es": "¿A qué red forma parte este lugar? (saltar si a ninguna)"
           },
           "freeform": {
             "key": "network"
@@ -1259,7 +1271,8 @@
           "fr": "Ce site est exploité par {operator}",
           "de": "Dieser Ort wird betrieben von {operator}",
           "zh_Hant": "這個地方由 {operator} 營運的",
-          "nl": "Deze plaats wordt beheerd door {operator}"
+          "nl": "Deze plaats wordt beheerd door {operator}",
+          "es": "Este lugar lo opera {operator}"
         },
         "question": {
           "en": "Who operates this place?",
@@ -1268,7 +1281,8 @@
           "fr": "Qui est l’exploitant du site ?",
           "de": "Wer betreibt diesen Ort?",
           "zh_Hant": "這個地方是誰營運的？",
-          "nl": "Wie beheert deze plaats?"
+          "nl": "Wie beheert deze plaats?",
+          "es": "¿Quién opera este lugar?"
         },
         "freeform": {
           "key": "operator"
@@ -1284,7 +1298,8 @@
           "de": "Hat dieser Ort eine Stromversorgung?",
           "hu": "Van-e itt elektromos áram?",
           "nl": "Beschikt deze plaats over stroomvoorziening?",
-          "nb_NO": "Har dette stedet strømforsyning?"
+          "nb_NO": "Har dette stedet strømforsyning?",
+          "es": "¿Tiene suministro eléctrico este lugar?"
         },
         "mappings": [
           {
@@ -1301,7 +1316,8 @@
               "fr": "Ce site a une source d’alimentation",
               "de": "Dieser Ort hat eine Stromversorgung",
               "nb_NO": "Dette stedet har strømforsyning",
-              "nl": "Deze plaats heeft stroomvoorziening"
+              "nl": "Deze plaats heeft stroomvoorziening",
+              "es": "Este lugar tiene suministro eléctrico"
             }
           },
           {
@@ -1318,7 +1334,8 @@
               "fr": "Ce site n’a pas de source d’alimentation",
               "de": "Dieser Ort hat keine Stromversorgung",
               "nl": "Deze plaats beschikt niet over stroomvoorziening",
-              "nb_NO": "Dette stedet har ikke strømforsyning"
+              "nb_NO": "Dette stedet har ikke strømforsyning",
+              "es": "Este lugar no tiene suministro eléctrico"
             }
           }
         ]

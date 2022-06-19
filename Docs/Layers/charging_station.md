@@ -26,6 +26,7 @@ A charging station
 
 
   - [charging_stations](https://mapcomplete.osm.be/charging_stations)
+  - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

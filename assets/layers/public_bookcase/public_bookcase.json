@@ -173,7 +173,8 @@
             "fr": "Livres pour enfants",
             "ru": "В основном детские книги",
             "it": "Principalmente libri per l'infanzia",
-            "hu": "Többnyire gyermekkönyvek"
+            "hu": "Többnyire gyermekkönyvek",
+            "es": "Mayoritariamente libros infantiles"
           }
         },
         {
@@ -185,7 +186,8 @@
             "fr": "Livres pour les adultes",
             "ru": "В основном книги для взрослых",
             "it": "Principalmente libri per persone in età adulta",
-            "hu": "Többnyire felnőtteknek szóló könyvek"
+            "hu": "Többnyire felnőtteknek szóló könyvek",
+            "es": "Mayoritariamente libros para adultos"
           }
         }
       ]
@@ -258,7 +260,8 @@
             "fr": "Accèssible au public",
             "it": "È ad accesso libero",
             "ru": "Свободный доступ",
-            "hu": "Nyilvánosan használható"
+            "hu": "Nyilvánosan használható",
+            "es": "Accesible públicamente"
           },
           "if": "access=yes"
         },
@@ -269,7 +272,8 @@
             "de": "Nur für Kunden zugänglich",
             "fr": "Accèssible aux clients",
             "it": "L'accesso è riservato ai clienti",
-            "hu": "Csak ügyfelek használhatják"
+            "hu": "Csak ügyfelek használhatják",
+            "es": "Solo accesible a clientes"
           },
           "if": "access=customers"
         }
@@ -327,7 +331,8 @@
             "de": "Der Bücherschrank gehört zum Netzwerk 'Little Free Library'",
             "fr": "Fait partie du réseau Little Free Library",
             "it": "Fa parte della rete 'Little Free Library'",
-            "hu": "A „Little Free Library” hálózat része"
+            "hu": "A „Little Free Library” hálózat része",
+            "es": "Parte de la red 'Little Free Library'"
           },
           "if": {
             "and": [
@@ -488,7 +493,8 @@
             "nl": "Binnen of buiten",
             "en": "Indoor or outdoor",
             "de": "Innen oder Außen",
-            "hu": "Beltéri vagy kültéri"
+            "hu": "Beltéri vagy kültéri",
+            "es": "Interior o exterior"
           }
         },
         {

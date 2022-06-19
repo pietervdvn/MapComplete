@@ -42,6 +42,9 @@
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [all_tags](#all_tags)
+1. [direction](#direction)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
 1. [conflation](#conflation)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -79,6 +82,7 @@ MapComplete has a few data layers available in the theme which have special prop
   - [type_node](#type_node)
   - [note](#note)
   - [import_candidate](#import_candidate)
+  - [direction](#direction)
   - [conflation](#conflation)
   - [left_right_style](#left_right_style)
   - [split_point](#split_point)
@@ -501,6 +505,47 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 This tagrendering has no question and is thus read-only
+
+
+
+
+
+ direction 
+===========
+
+
+
+<img src='https://mapcomplete.osm.be/direction_gradient:var(--catch-detail-color)' height="100px"> 
+
+This layer visualizes directions
+
+
+
+
+
+
+  - This layer is shown at zoomlevel **16** and higher
+  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - camera:direction~^..*$|direction~^..*$
+
+
+
+
+ Supported attributes 
+----------------------
 
 
 

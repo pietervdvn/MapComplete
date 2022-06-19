@@ -530,14 +530,14 @@
         "tagRenderings": {
             "Still in use?": {
                 "mappings": {
+                    "0": {
+                        "then": "Esta máquina expendedora funciona"
+                    },
                     "1": {
                         "then": "Esta máquina exprendedora está rota"
                     },
                     "2": {
                         "then": "Esta máquina exprendedora está cerrada"
-                    },
-                    "0": {
-                        "then": "Esta máquina expendedora funciona"
                     }
                 },
                 "question": "¿Todavía es operacional esta máquina exprendedora?",
@@ -833,13 +833,13 @@
                 "question": "¿Cual es el número de teléfono del mantenedor?"
             },
             "bike_repair_station-valves": {
-                "question": "¿Que válvulas se soportan?",
-                "render": "Esta bomba soporta las siguiente válvulas: {valves}",
                 "mappings": {
                     "1": {
                         "then": "Dunlop"
                     }
-                }
+                },
+                "question": "¿Que válvulas se soportan?",
+                "render": "Esta bomba soporta las siguiente válvulas: {valves}"
             }
         },
         "title": {
@@ -865,6 +865,12 @@
     },
     "bike_shop": {
         "description": "Una tiene que vende específicamente bicis u objetos relacionados",
+        "name": "Taller/tienda de bicis",
+        "presets": {
+            "0": {
+                "title": "un taller/tienda de bicis"
+            }
+        },
         "tagRenderings": {
             "bike_repair_bike-pump-service": {
                 "mappings": {
@@ -948,7 +954,6 @@
                 "question": "¿Vende bicis esta tienda?"
             },
             "bike_repair_tools-service": {
-                "question": "¿Hay herramientas para reparar tu propia bici?",
                 "mappings": {
                     "0": {
                         "then": "Esta tienda ofrece herramientas para la reparación DIY"
@@ -959,7 +964,8 @@
                     "2": {
                         "then": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda"
                     }
-                }
+                },
+                "question": "¿Hay herramientas para reparar tu propia bici?"
             },
             "bike_shop-access": {
                 "render": "Solo accesible a {access}"
@@ -968,12 +974,12 @@
                 "question": "¿Cual es la dirección de correo electrónico de {name}?"
             },
             "bike_shop-is-bicycle_shop": {
-                "render": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas",
                 "mappings": {
                     "0": {
                         "then": "Este negocio se centra en el alquiler"
                     }
-                }
+                },
+                "render": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas"
             },
             "bike_shop-name": {
                 "question": "¿Cual es el nombre de esta tienda de bicicletas?",
@@ -988,6 +994,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Tienda de artículos deportivos <i>{name}</i>"
+                },
                 "2": {
                     "then": "Alquiler de bicicletas <i>{name}</i>"
                 },
@@ -997,20 +1006,11 @@
                 "4": {
                     "then": "Tienda de bicis <i>{name}</i>"
                 },
-                "0": {
-                    "then": "Tienda de artículos deportivos <i>{name}</i>"
-                },
                 "5": {
                     "then": "Taller/tienda de bicis <i>{name}</i>"
                 }
             },
             "render": "Taller/tienda de bicis"
-        },
-        "name": "Taller/tienda de bicis",
-        "presets": {
-            "0": {
-                "title": "un taller/tienda de bicis"
-            }
         }
     },
     "bike_themed_object": {
@@ -1026,15 +1026,23 @@
         }
     },
     "binocular": {
+        "description": "Prismáticos",
+        "name": "Prismáticos",
+        "presets": {
+            "0": {
+                "description": "Un telescopio o unos prismáticos montados en un poste, disponible para que el público mire alrededor. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+                "title": "unos prismáticos"
+            }
+        },
         "tagRenderings": {
             "binocular-charge": {
-                "question": "¿Cuánto hay que pagar para utilizar estos prismáticos?",
-                "render": "Utilizar estos prismáticos cuesta {charge}",
                 "mappings": {
                     "0": {
                         "then": "De uso gratuito"
                     }
-                }
+                },
+                "question": "¿Cuánto hay que pagar para utilizar estos prismáticos?",
+                "render": "Utilizar estos prismáticos cuesta {charge}"
             },
             "binocular-direction": {
                 "question": "¿Cuándo uno mira a través de estos prismáticos, en qué dirección lo hace?",
@@ -1043,15 +1051,7 @@
         },
         "title": {
             "render": "Prismáticos"
-        },
-        "presets": {
-            "0": {
-                "description": "Un telescopio o unos prismáticos montados en un poste, disponible para que el público mire alrededor. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "title": "unos prismáticos"
-            }
-        },
-        "description": "Prismáticos",
-        "name": "Prismáticos"
+        }
     },
     "birdhide": {
         "filter": {
@@ -1128,20 +1128,20 @@
         "tagRenderings": {
             "Classification": {
                 "mappings": {
-                    "3": {
-                        "then": "Un <b>restaurante</b> donde puedes comer una comida de verdad"
-                    },
-                    "4": {
-                        "then": "Un espacio abierto donde se sirve cerveza, típico de Alemania"
-                    },
-                    "2": {
-                        "then": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
-                    },
                     "0": {
                         "then": "Un bar, principalmente para beber cervezas en un interior cálido y relajado"
                     },
                     "1": {
                         "then": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
+                    },
+                    "2": {
+                        "then": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
+                    },
+                    "3": {
+                        "then": "Un <b>restaurante</b> donde puedes comer una comida de verdad"
+                    },
+                    "4": {
+                        "then": "Un espacio abierto donde se sirve cerveza, típico de Alemania"
                     }
                 },
                 "question": "Qué tipo de cafetería es esta"
@@ -2775,18 +2775,31 @@
             }
         },
         "title": {
-            "render": "Nota",
             "mappings": {
                 "0": {
                     "then": "Nota cerrada"
                 }
-            }
+            },
+            "render": "Nota"
         }
     },
     "observation_tower": {
+        "description": "Torres con vista panorámica",
+        "name": "Torres de observación",
         "tagRenderings": {
+            "Fee": {
+                "question": "¿Cuánto hay que pagar para entrar en esta torre?",
+                "render": "Visitar esta torre cuesta <b>{charge}</b>"
+            },
+            "Height": {
+                "question": "¿Cual es la altura de esta torre?",
+                "render": "Esta torre mide {height}"
+            },
+            "Operator": {
+                "question": "¿Quién mantiene esta torre?",
+                "render": "Mantenida por <b>{operator}</b>"
+            },
             "access": {
-                "question": "¿Se puede visitar esta torre?",
                 "mappings": {
                     "0": {
                         "then": "Esta torre es accesible públicamente"
@@ -2794,15 +2807,16 @@
                     "1": {
                         "then": "A esta torre solo se puede acceder con un guía"
                     }
-                }
+                },
+                "question": "¿Se puede visitar esta torre?"
             },
             "elevator": {
                 "mappings": {
-                    "1": {
-                        "then": "Esta torre no tiene ascensor"
-                    },
                     "0": {
                         "then": "Esta torre tiene un ascensor que lleva a los visitantes a la cima"
+                    },
+                    "1": {
+                        "then": "Esta torre no tiene ascensor"
                     }
                 },
                 "question": "¿Tiene ascensor esta torre?"
@@ -2815,18 +2829,6 @@
                 },
                 "question": "¿Cual es el nombre de esta torre?",
                 "render": "Esta torre se llama <b>{name}</b>"
-            },
-            "Fee": {
-                "render": "Visitar esta torre cuesta <b>{charge}</b>",
-                "question": "¿Cuánto hay que pagar para entrar en esta torre?"
-            },
-            "Height": {
-                "question": "¿Cual es la altura de esta torre?",
-                "render": "Esta torre mide {height}"
-            },
-            "Operator": {
-                "question": "¿Quién mantiene esta torre?",
-                "render": "Mantenida por <b>{operator}</b>"
             },
             "step_count": {
                 "question": "¿Cuántos escalones hay que subir para llegar a la cima de esta torre?",
@@ -2849,9 +2851,866 @@
                     }
                 }
             }
+        }
+    },
+    "parking": {
+        "description": "Una capa que muestra aparcamientos para coches",
+        "name": "Aparcamiento",
+        "presets": {
+            "0": {
+                "title": "un aparcamiento de coches"
+            }
         },
-        "description": "Torres con vista panorámica",
-        "name": "Torres de observación"
+        "title": {
+            "render": "aparcamiento de coches"
+        }
+    },
+    "picnic_table": {
+        "description": "Una capa que muestra mesas de pícnic",
+        "name": "Mesas de pícnic",
+        "presets": {
+            "0": {
+                "title": "una mesa de pícnic"
+            }
+        },
+        "tagRenderings": {
+            "picnic_table-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta es una mesa de pícnic de madera"
+                    },
+                    "1": {
+                        "then": "Esta es una mesa de pícnic de hormigón"
+                    },
+                    "2": {
+                        "then": "Esta es una mesa de picnic hecha de plástico reciclado"
+                    }
+                },
+                "question": "¿De qué material está hecha esta mesa de pícnic?",
+                "render": "Esta mesa de pícnic está hecha de {material}"
+            }
+        },
+        "title": {
+            "render": "Mesa de pícnic"
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "Playground-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Completamente accesible para usuarios de silla de ruedas"
+                    },
+                    "1": {
+                        "then": "Acceso limitado para usuarios de silla de ruedas"
+                    },
+                    "2": {
+                        "then": "No accesible a usuarios de sillas de ruedas"
+                    }
+                }
+            },
+            "playground-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accesible al público general"
+                    },
+                    "2": {
+                        "then": "Solo accesible para clientes del negocio que lo opera"
+                    },
+                    "3": {
+                        "then": "Solo accesibles para estudiantes de la escuela"
+                    },
+                    "4": {
+                        "then": "No accesible"
+                    }
+                }
+            },
+            "playground-email": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "playground-max_age": {
+                "render": "Accesible a niños de hasta {max_age}"
+            },
+            "playground-min_age": {
+                "render": "Accesible a niños menores de {min_age} años"
+            },
+            "playground-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Accesible desde el amanecer hasta el anochecer"
+                    },
+                    "1": {
+                        "then": "Siempre accesible"
+                    }
+                }
+            },
+            "playground-operator": {
+                "render": "Operado por {operator}"
+            },
+            "playground-phone": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "playground-surface": {
+                "mappings": {
+                    "0": {
+                        "then": "La superficie es <b>hierba</b>"
+                    },
+                    "1": {
+                        "then": "La superficie es <b>arena</b>"
+                    },
+                    "3": {
+                        "then": "La superficie es <b>adoquines</b>"
+                    },
+                    "4": {
+                        "then": "La superficie es <b>asfalto</b>"
+                    },
+                    "5": {
+                        "then": "La superficie es <b>hormigón</b>"
+                    },
+                    "6": {
+                        "then": "La superficie está <b>sin pavimentar</b>"
+                    },
+                    "7": {
+                        "then": "La superficie está <b>pavimentada</b>"
+                    }
+                },
+                "render": "La superficie es <b>{surface}</b>"
+            }
+        }
+    },
+    "public_bookcase": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Interior o exterior"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "bookcase-booktypes": {
+                "mappings": {
+                    "0": {
+                        "then": "Mayoritariamente libros infantiles"
+                    },
+                    "1": {
+                        "then": "Mayoritariamente libros para adultos"
+                    }
+                }
+            },
+            "bookcase-is-accessible": {
+                "mappings": {
+                    "0": {
+                        "then": "Accesible públicamente"
+                    },
+                    "1": {
+                        "then": "Solo accesible a clientes"
+                    }
+                }
+            },
+            "public_bookcase-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Parte de la red 'Little Free Library'"
+                    }
+                }
+            }
+        }
+    },
+    "recycling": {
+        "description": "Una capa con contenedores y centros de reciclaje",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Actualmente abierto"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Todos los tipos de reciclado"
+                    },
+                    "1": {
+                        "question": "Reciclaje de baterías"
+                    },
+                    "3": {
+                        "question": "Reciclaje de latas"
+                    },
+                    "4": {
+                        "question": "Reciclaje de ropa"
+                    },
+                    "5": {
+                        "question": "Reciclaje de aceite de cocina"
+                    },
+                    "6": {
+                        "question": "Reciclaje de aceite de motor"
+                    },
+                    "8": {
+                        "question": "Reciclaje de botellas de cristal"
+                    },
+                    "9": {
+                        "question": "Reciclaje de cristal"
+                    },
+                    "10": {
+                        "question": "Reciclaje de periódicos"
+                    },
+                    "11": {
+                        "question": "Reciclaje de papel"
+                    },
+                    "12": {
+                        "question": "Reciclaje de botellas de papel"
+                    },
+                    "13": {
+                        "question": "Reciclaje de embalajes plásticos"
+                    },
+                    "14": {
+                        "question": "Reciclaje de plástico"
+                    },
+                    "15": {
+                        "question": "Reciclaje de chatarra"
+                    }
+                }
+            }
+        },
+        "name": "Reciclaje",
+        "presets": {
+            "0": {
+                "title": "un contenedor de reciclaje"
+            },
+            "1": {
+                "title": "un centro de reciclado"
+            }
+        },
+        "tagRenderings": {
+            "container-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Este es un contenedor bajo tierra"
+                    },
+                    "1": {
+                        "then": "Este contenedor se sitúa en el interior"
+                    },
+                    "2": {
+                        "then": "Este contenedor se sitúa en el exterior"
+                    }
+                },
+                "question": "¿Dónde se sitúa este contenedor?"
+            },
+            "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7"
+                    }
+                },
+                "question": "¿A qué horas abre esta facilidad de reciclado?"
+            },
+            "operator": {
+                "question": "¿Que empresa opera esta facilidad de reciclado?",
+                "render": "Esta facilidad de reciclado la opera {operator}"
+            },
+            "recycling-accepts": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí se pueden reciclar baterías"
+                    },
+                    "2": {
+                        "then": "Aquí se pueden reciclar latas"
+                    },
+                    "3": {
+                        "then": "Aquí se puede reciclar ropa"
+                    },
+                    "4": {
+                        "then": "Aquí se puede reciclar aceite de cocina"
+                    },
+                    "5": {
+                        "then": "Aquí se puede reciclar aceite de motor"
+                    },
+                    "7": {
+                        "then": "Aquí se pueden reciclar residuos orgánicos"
+                    },
+                    "8": {
+                        "then": "Aquí se pueden reciclar botellas de cristal"
+                    },
+                    "9": {
+                        "then": "Aquí se puede reciclar cristal"
+                    },
+                    "10": {
+                        "then": "Aquí se pueden reciclar periódicos"
+                    },
+                    "11": {
+                        "then": "Aquí se puede reciclar papel"
+                    },
+                    "12": {
+                        "then": "Aquí se pueden reciclar botellas de plástico"
+                    },
+                    "13": {
+                        "then": "Aquí se pueden reciclar embalajes plásticos"
+                    },
+                    "14": {
+                        "then": "Aquí se puede reciclar plástico"
+                    },
+                    "15": {
+                        "then": "Aquí se puede reciclar chatarra"
+                    },
+                    "16": {
+                        "then": "Aquí se pueden reciclar zapatos"
+                    }
+                },
+                "question": "¿Qué se puede reciclar aquí?"
+            },
+            "recycling-centre-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Este centro de reciclaje no tiene un nombre específico"
+                    }
+                },
+                "question": "¿Cual es el nombre de este centro de reciclaje?",
+                "render": "Este centro de reciclaje se llama <b>{name}</b>"
+            },
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Esto es un contenedor de reciclaje"
+                    },
+                    "1": {
+                        "then": "Esto es un centro de reciclaje"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Centro de reciclaje"
+                },
+                "1": {
+                    "then": "Centro de reciclaje"
+                },
+                "2": {
+                    "then": "Contenedor de reciclaje"
+                }
+            },
+            "render": "Facilidad de reciclaje"
+        }
+    },
+    "shops": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} ha cerrado permanentemente"
+                }
+            }
+        },
+        "description": "Una tienda",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Solo mostrar tiendas que vendan {search}"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Solo mostrar tiendas con nombre {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Acepta efectivo"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Acepta el pago por tarjeta"
+                    }
+                }
+            }
+        },
+        "name": "Tienda",
+        "presets": {
+            "0": {
+                "description": "Añadir una nueva tienda",
+                "title": "una tienda"
+            }
+        },
+        "tagRenderings": {
+            "shops-email": {
+                "question": "¿Cual es la dirección de correo electrónico de esta tienda?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "shops-name": {
+                "question": "¿Cual es el nombre de esta tienda?"
+            },
+            "shops-opening_hours": {
+                "question": "¿Cual es el horario de esta tienda?",
+                "render": "{opening_hours_table(opening_hours)}"
+            },
+            "shops-phone": {
+                "question": "¿Cual es el número de teléfono?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "1": {
+                        "then": "Supermercado"
+                    },
+                    "2": {
+                        "then": "Tienda de ropa"
+                    },
+                    "3": {
+                        "then": "Peluquería"
+                    },
+                    "4": {
+                        "then": "Panadería"
+                    },
+                    "5": {
+                        "then": "Taller de coches"
+                    },
+                    "6": {
+                        "then": "Concesionario"
+                    }
+                },
+                "question": "¿Qué vende esta tienda?",
+                "render": "Esta tienda vende {shop}"
+            },
+            "shops-website": {
+                "question": "¿Cual es la página web de esta tienda?",
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "{shop}"
+                }
+            },
+            "render": "Tienda"
+        }
+    },
+    "slow_roads": {
+        "tagRenderings": {
+            "slow_roads-surface": {
+                "mappings": {
+                    "0": {
+                        "then": "La superficie es <b>hierba</b>"
+                    },
+                    "2": {
+                        "then": "La superficie está <b>sin pavimentar</b>"
+                    },
+                    "3": {
+                        "then": "La superficie es <b>arena</b>"
+                    },
+                    "4": {
+                        "then": "La superficie es <b>adoquines</b>"
+                    },
+                    "5": {
+                        "then": "La superficie es <b>asfalto</b>"
+                    },
+                    "6": {
+                        "then": "La superficie es <b>hormigón</b>"
+                    },
+                    "7": {
+                        "then": "La superficie está <b>pavimentada</b>"
+                    }
+                },
+                "render": "La superficie es <b>{surface}</b>"
+            }
+        }
+    },
+    "sport_pitch": {
+        "description": "Una pista de deportes",
+        "name": "Pistas de deportes",
+        "presets": {
+            "1": {
+                "title": "una pista de deportes"
+            }
+        },
+        "tagRenderings": {
+            "sport-pitch-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Acceso público"
+                    },
+                    "1": {
+                        "then": "Acceso limitado (ej. solo con una cita, a cieras horas, ...)"
+                    },
+                    "2": {
+                        "then": "Solo accesible para miembros del club"
+                    },
+                    "3": {
+                        "then": "Privada - no accesible al público"
+                    }
+                },
+                "question": "¿Esta pista de deportes es accesible públicamente?"
+            },
+            "sport-pitch-reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "Pedir una cita es obligatorio para utilizar esta pista"
+                    },
+                    "1": {
+                        "then": "Se recomienda pedir una cita al utilizar esta pista"
+                    },
+                    "2": {
+                        "then": "Pedir cita es posible, pero no necesario para utilizar esta pista de deportes"
+                    },
+                    "3": {
+                        "then": "No es posible pedir cita"
+                    }
+                },
+                "question": "¿Hay que pedir una cita para utilizar esta pista?"
+            },
+            "sport_pitch-email": {
+                "question": "¿Cual es la dirección de correo electrónico de la operadora?"
+            },
+            "sport_pitch-opening_hours": {
+                "mappings": {
+                    "1": {
+                        "then": "Siempre accesible"
+                    }
+                },
+                "question": "¿Cuándo es accesible esta pista?"
+            },
+            "sport_pitch-phone": {
+                "question": "¿Cual es el número de teléfono de la operadora?"
+            },
+            "sport_pitch-sport": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí se juega al baloncesto"
+                    },
+                    "1": {
+                        "then": "Aquí se juega al fútbol"
+                    },
+                    "2": {
+                        "then": "Esto es una mesa de ping pong"
+                    },
+                    "3": {
+                        "then": "Aquí se juega al tenis"
+                    },
+                    "5": {
+                        "then": "Aquí se juega al baloncesto"
+                    }
+                },
+                "question": "¿Qué deporte se practica aquí?",
+                "render": "Aquí se juega al {sport}"
+            },
+            "sport_pitch-surface": {
+                "mappings": {
+                    "0": {
+                        "then": "La superficie es <b>hierba</b>"
+                    },
+                    "1": {
+                        "then": "La superficie es <b>arena</b>"
+                    },
+                    "2": {
+                        "then": "La superficie es <b>adoquines</b>"
+                    },
+                    "3": {
+                        "then": "La superficie es <b>asfalto</b>"
+                    },
+                    "4": {
+                        "then": "La superficie es <b>hormigón</b>"
+                    }
+                },
+                "question": "¿Cual es la superficie de esta pista de deportes?",
+                "render": "La superficie es <b>{surface}</b>"
+            }
+        },
+        "title": {
+            "render": "Pista de deportes"
+        }
+    },
+    "street_lamps": {
+        "description": "Una capa que muestra luces callejeras",
+        "name": "Farolas",
+        "presets": {
+            "0": {
+                "title": "una farola"
+            }
+        },
+        "tagRenderings": {
+            "colour": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara emite luz blanca"
+                    },
+                    "1": {
+                        "then": "Esta lámpara emite luz verde"
+                    },
+                    "2": {
+                        "then": "Esta lámpara emite luz naranja"
+                    }
+                },
+                "question": "¿De qué color es la luz que emite esta lámpara?",
+                "render": "Esta lámpara emite luz {light:colour}"
+            },
+            "count": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "direction": {
+                "question": "¿Hacia donde apunta esta lámpara?",
+                "render": "Esta lámpara apunta hacia {light:direction}"
+            },
+            "lamp_mount": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lampara está encima de un mástil recto"
+                    },
+                    "1": {
+                        "then": "Esta lámpara está encima de un mástil curvado"
+                    }
+                },
+                "question": "¿Cómo está montada esta lámpara al poste?"
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara está iluminada por la noche"
+                    },
+                    "1": {
+                        "then": "Esta lámpara está iluminada 24/7"
+                    },
+                    "2": {
+                        "then": "Esta lámpara se ilumina con el movimiento"
+                    },
+                    "3": {
+                        "then": "Esta lámpara se ilumina bajo demanda (ej. con un pulsador)"
+                    }
+                },
+                "question": "¿Cuándo se ilumina esta lámpara?"
+            },
+            "method": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara se ilumina eléctricamente"
+                    },
+                    "1": {
+                        "then": "Esta lámpara utiliza LEDs"
+                    },
+                    "2": {
+                        "then": "Esta lámpara utiliza iluminación incandescente"
+                    },
+                    "3": {
+                        "then": "Esta lámpara utiliza iluminación halógena"
+                    },
+                    "4": {
+                        "then": "Esta lámpara utiliza lámparas de descarga (de tipo desconocido)"
+                    },
+                    "5": {
+                        "then": "Esta lámpara utiliza una lámpara de vapor de mercurio (levemente azulada)"
+                    },
+                    "7": {
+                        "then": "Esta lámpara utiliza iluminación fluorescente"
+                    },
+                    "8": {
+                        "then": "Esta lámpara utiliza lámparas de sodio (de tipo desconocido)"
+                    },
+                    "9": {
+                        "then": "Esta lámpara utiliza lámparas de sodio de baja presión (naranja monocromo)"
+                    },
+                    "10": {
+                        "then": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
+                    },
+                    "11": {
+                        "then": "Esta lampara se ilumina con gas"
+                    }
+                },
+                "question": "¿Qué tipo de iluminación utiliza esta lámpara?"
+            },
+            "ref": {
+                "question": "¿Cual es el número de referencia de esta lámpara callejera?",
+                "render": "Esta lámpara callejera tiene el número de referencia {ref}"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara se suspende utilizando cables"
+                    },
+                    "1": {
+                        "then": "Esta lámpara está montada en un techo"
+                    },
+                    "2": {
+                        "then": "Esta lámpara está montada en el suelo"
+                    },
+                    "3": {
+                        "then": "Esta lámpara está montada en un poste corto (mayoritariamente < 1.5m)"
+                    },
+                    "4": {
+                        "then": "Esta lámpara está montada en un poste"
+                    },
+                    "5": {
+                        "then": "Esta lámpara está montada directamente en la pared"
+                    },
+                    "6": {
+                        "then": "Esta lámpara está montada en la pared utilizando una barra metálica"
+                    }
+                },
+                "question": "¿Cómo está montada esta lámpara?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Lámpara Callejera {ref}"
+                }
+            },
+            "render": "Lámpara Callejera"
+        }
+    },
+    "toilet": {
+        "description": "Una capa que muestra baños (públicos)",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accesible con sillas de ruedas"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Tiene un cambiador"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Abierto ahora"
+                    }
+                }
+            }
+        },
+        "name": "Baños",
+        "presets": {
+            "0": {
+                "title": "un baño público"
+            }
+        },
+        "tagRenderings": {
+            "Opening-hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Abierto 24/7"
+                    }
+                },
+                "question": ""
+            },
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Acceso públic"
+                    },
+                    "1": {
+                        "then": "Solo accesible a clientes"
+                    },
+                    "2": {
+                        "then": "No accesible"
+                    },
+                    "3": {
+                        "then": "Accesible, pero hay que pedir la llave para entrar"
+                    },
+                    "4": {
+                        "then": "De acceso público"
+                    }
+                },
+                "render": "El acceso es {access}"
+            },
+            "toilet-changing_table:location": {
+                "mappings": {
+                    "3": {
+                        "then": "El cambiador está en una habitación dedicada "
+                    }
+                },
+                "question": "¿Dónde está el cambiador?",
+                "render": "El cambiador está en {changing_table:location}"
+            },
+            "toilet-charge": {
+                "question": "¿Cuánto hay que pagar para estos baños?",
+                "render": "La tasa es {charge}"
+            },
+            "toilet-handwashing": {
+                "mappings": {
+                    "0": {
+                        "then": "Estos baños tienen una pileta para lavarse las manos"
+                    },
+                    "1": {
+                        "then": "Estos baños <b>no</b> tienen una pileta para lavarse las manos"
+                    }
+                },
+                "question": "¿Esto baños tienen una pileta para lavarte los baños?"
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "0": {
+                        "then": "Este baño esta equipado con papel higiénico"
+                    },
+                    "1": {
+                        "then": "Tienes que traer tu propio papel higiénico a este baño"
+                    }
+                },
+                "question": "¿Hay que traer tu propio papel higiénico a este baño?"
+            },
+            "toilets-changing-table": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay un cambiador"
+                    },
+                    "1": {
+                        "then": "No hay cambiador"
+                    }
+                }
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Estos son baños de pago"
+                    }
+                }
+            },
+            "toilets-type": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquí solo hay orinales"
+                    },
+                    "3": {
+                        "then": "Aquí hay tanto váteres de sentarse como orinales"
+                    }
+                },
+                "question": "¿Qué tipo de baños son estos?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay un baño dedicado para usuarios con sillas de ruedas"
+                    },
+                    "1": {
+                        "then": "Sin acceso para sillas de ruedas"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Baño"
+        }
     },
     "tree_node": {
         "description": "Una capa que muestra árboles",
@@ -2953,6 +3812,9 @@
                 },
                 "question": "¿Es un árbol de hoja ancha o de hoja aguja?"
             },
+            "tree-species-wikidata": {
+                "question": "¿De qué especie es este árbol?"
+            },
             "tree_node-name": {
                 "mappings": {
                     "0": {
@@ -2968,24 +3830,65 @@
             "tree_node-wikidata": {
                 "question": "¿Cuál es el ID de Wikidata para este árbol?",
                 "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
-            },
-            "tree-species-wikidata": {
-                "question": "¿De qué especie es este árbol?"
             }
         },
         "title": {
             "render": "Árbol"
         }
     },
+    "veterinary": {
+        "name": "veterinario",
+        "presets": {
+            "0": {
+                "description": "un veterinario, que trata a perros",
+                "title": "un veterinario"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "¿Cual es el nombre de este veterinario?",
+                "render": "El nombre de este veterinario es {name}"
+            }
+        },
+        "title": {
+            "render": "Veterinario"
+        }
+    },
+    "viewpoint": {
+        "description": "Un buen punto de vista o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
+        "tagRenderings": {
+            "viewpoint-description": {
+                "question": "¿Quieres añadir una descripción?"
+            }
+        }
+    },
+    "visitor_information_centre": {
+        "description": "Un centro de visitantes ofrece información sobre una atracción específica o lugar de interese donde se sitúa.",
+        "name": "Centro de Información al Visitante",
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
+        }
+    },
+    "walls_and_buildings": {
+        "title": {
+            "render": "Pared o edificio"
+        }
+    },
     "waste_basket": {
+        "description": "Esta es una papelera pública, donde puedes tirar tu basura.",
         "filter": {
             "0": {
                 "options": {
-                    "1": {
-                        "question": "Papelera para cigarrillos"
-                    },
                     "0": {
                         "question": "Todos los tipos"
+                    },
+                    "1": {
+                        "question": "Papelera para cigarrillos"
                     },
                     "3": {
                         "question": "Papelera para excrementos de perro"
@@ -3015,909 +3918,6 @@
                         }
                     }
                 }
-            }
-        },
-        "description": "Esta es una papelera pública, donde puedes tirar tu basura."
-    },
-    "playground": {
-        "tagRenderings": {
-            "playground-min_age": {
-                "render": "Accesible a niños menores de {min_age} años"
-            },
-            "playground-access": {
-                "mappings": {
-                    "2": {
-                        "then": "Solo accesible para clientes del negocio que lo opera"
-                    },
-                    "0": {
-                        "then": "Accesible al público general"
-                    },
-                    "3": {
-                        "then": "Solo accesibles para estudiantes de la escuela"
-                    },
-                    "4": {
-                        "then": "No accesible"
-                    }
-                }
-            },
-            "playground-operator": {
-                "render": "Operado por {operator}"
-            },
-            "playground-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "playground-surface": {
-                "mappings": {
-                    "0": {
-                        "then": "La superficie es <b>hierba</b>"
-                    },
-                    "1": {
-                        "then": "La superficie es <b>arena</b>"
-                    },
-                    "3": {
-                        "then": "La superficie es <b>adoquines</b>"
-                    },
-                    "7": {
-                        "then": "La superficie está <b>pavimentada</b>"
-                    },
-                    "5": {
-                        "then": "La superficie es <b>hormigón</b>"
-                    },
-                    "6": {
-                        "then": "La superficie está <b>sin pavimentar</b>"
-                    },
-                    "4": {
-                        "then": "La superficie es <b>asfalto</b>"
-                    }
-                },
-                "render": "La superficie es <b>{surface}</b>"
-            },
-            "playground-email": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "playground-max_age": {
-                "render": "Accesible a niños de hasta {max_age}"
-            },
-            "Playground-wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Completamente accesible para usuarios de silla de ruedas"
-                    },
-                    "1": {
-                        "then": "Acceso limitado para usuarios de silla de ruedas"
-                    },
-                    "2": {
-                        "then": "No accesible a usuarios de sillas de ruedas"
-                    }
-                }
-            },
-            "playground-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Accesible desde el amanecer hasta el anochecer"
-                    },
-                    "1": {
-                        "then": "Siempre accesible"
-                    }
-                }
-            }
-        }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>",
-                "question": "¿Cual es el número de teléfono?"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "3": {
-                        "then": "Peluquería"
-                    },
-                    "1": {
-                        "then": "Supermercado"
-                    },
-                    "2": {
-                        "then": "Tienda de ropa"
-                    },
-                    "4": {
-                        "then": "Panadería"
-                    },
-                    "5": {
-                        "then": "Taller de coches"
-                    },
-                    "6": {
-                        "then": "Concesionario"
-                    }
-                },
-                "question": "¿Qué vende esta tienda?",
-                "render": "Esta tienda vende {shop}"
-            },
-            "shops-website": {
-                "render": "<a href='{website}'>{website}</a>",
-                "question": "¿Cual es la página web de esta tienda?"
-            },
-            "shops-email": {
-                "question": "¿Cual es la dirección de correo electrónico de esta tienda?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "shops-name": {
-                "question": "¿Cual es el nombre de esta tienda?"
-            },
-            "shops-opening_hours": {
-                "question": "¿Cual es el horario de esta tienda?",
-                "render": "{opening_hours_table(opening_hours)}"
-            }
-        },
-        "filter": {
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Acepta efectivo"
-                    }
-                }
-            },
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Solo mostrar tiendas que vendan {search}"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Solo mostrar tiendas con nombre {search}"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Acepta el pago por tarjeta"
-                    }
-                }
-            }
-        },
-        "deletion": {
-            "extraDeleteReasons": {
-                "0": {
-                    "explanation": "{title()} ha cerrado permanentemente"
-                }
-            }
-        },
-        "description": "Una tienda",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
-                "1": {
-                    "then": "{shop}"
-                }
-            },
-            "render": "Tienda"
-        },
-        "name": "Tienda",
-        "presets": {
-            "0": {
-                "description": "Añadir una nueva tienda",
-                "title": "una tienda"
-            }
-        }
-    },
-    "picnic_table": {
-        "tagRenderings": {
-            "picnic_table-material": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta es una mesa de pícnic de madera"
-                    },
-                    "1": {
-                        "then": "Esta es una mesa de pícnic de hormigón"
-                    },
-                    "2": {
-                        "then": "Esta es una mesa de picnic hecha de plástico reciclado"
-                    }
-                },
-                "question": "¿De qué material está hecha esta mesa de pícnic?",
-                "render": "Esta mesa de pícnic está hecha de {material}"
-            }
-        },
-        "description": "Una capa que muestra mesas de pícnic",
-        "presets": {
-            "0": {
-                "title": "una mesa de pícnic"
-            }
-        },
-        "title": {
-            "render": "Mesa de pícnic"
-        },
-        "name": "Mesas de pícnic"
-    },
-    "recycling": {
-        "filter": {
-            "1": {
-                "options": {
-                    "14": {
-                        "question": "Reciclaje de plástico"
-                    },
-                    "0": {
-                        "question": "Todos los tipos de reciclado"
-                    },
-                    "1": {
-                        "question": "Reciclaje de baterías"
-                    },
-                    "15": {
-                        "question": "Reciclaje de chatarra"
-                    },
-                    "11": {
-                        "question": "Reciclaje de papel"
-                    },
-                    "12": {
-                        "question": "Reciclaje de botellas de papel"
-                    },
-                    "3": {
-                        "question": "Reciclaje de latas"
-                    },
-                    "4": {
-                        "question": "Reciclaje de ropa"
-                    },
-                    "5": {
-                        "question": "Reciclaje de aceite de cocina"
-                    },
-                    "6": {
-                        "question": "Reciclaje de aceite de motor"
-                    },
-                    "8": {
-                        "question": "Reciclaje de botellas de cristal"
-                    },
-                    "9": {
-                        "question": "Reciclaje de cristal"
-                    },
-                    "10": {
-                        "question": "Reciclaje de periódicos"
-                    },
-                    "13": {
-                        "question": "Reciclaje de embalajes plásticos"
-                    }
-                }
-            },
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualmente abierto"
-                    }
-                }
-            }
-        },
-        "tagRenderings": {
-            "recycling-accepts": {
-                "mappings": {
-                    "8": {
-                        "then": "Aquí se pueden reciclar botellas de cristal"
-                    },
-                    "14": {
-                        "then": "Aquí se puede reciclar plástico"
-                    },
-                    "7": {
-                        "then": "Aquí se pueden reciclar residuos orgánicos"
-                    },
-                    "11": {
-                        "then": "Aquí se puede reciclar papel"
-                    },
-                    "15": {
-                        "then": "Aquí se puede reciclar chatarra"
-                    },
-                    "0": {
-                        "then": "Aquí se pueden reciclar baterías"
-                    },
-                    "12": {
-                        "then": "Aquí se pueden reciclar botellas de plástico"
-                    },
-                    "13": {
-                        "then": "Aquí se pueden reciclar embalajes plásticos"
-                    },
-                    "16": {
-                        "then": "Aquí se pueden reciclar zapatos"
-                    },
-                    "2": {
-                        "then": "Aquí se pueden reciclar latas"
-                    },
-                    "3": {
-                        "then": "Aquí se puede reciclar ropa"
-                    },
-                    "4": {
-                        "then": "Aquí se puede reciclar aceite de cocina"
-                    },
-                    "5": {
-                        "then": "Aquí se puede reciclar aceite de motor"
-                    },
-                    "9": {
-                        "then": "Aquí se puede reciclar cristal"
-                    },
-                    "10": {
-                        "then": "Aquí se pueden reciclar periódicos"
-                    }
-                },
-                "question": "¿Qué se puede reciclar aquí?"
-            },
-            "recycling-centre-name": {
-                "render": "Este centro de reciclaje se llama <b>{name}</b>",
-                "mappings": {
-                    "0": {
-                        "then": "Este centro de reciclaje no tiene un nombre específico"
-                    }
-                },
-                "question": "¿Cual es el nombre de este centro de reciclaje?"
-            },
-            "recycling-type": {
-                "mappings": {
-                    "0": {
-                        "then": "Esto es un contenedor de reciclaje"
-                    },
-                    "1": {
-                        "then": "Esto es un centro de reciclaje"
-                    }
-                }
-            },
-            "container-location": {
-                "mappings": {
-                    "0": {
-                        "then": "Este es un contenedor bajo tierra"
-                    },
-                    "1": {
-                        "then": "Este contenedor se sitúa en el interior"
-                    },
-                    "2": {
-                        "then": "Este contenedor se sitúa en el exterior"
-                    }
-                },
-                "question": "¿Dónde se sitúa este contenedor?"
-            },
-            "opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7"
-                    }
-                },
-                "question": "¿A qué horas abre esta facilidad de reciclado?"
-            },
-            "operator": {
-                "question": "¿Que empresa opera esta facilidad de reciclado?",
-                "render": "Esta facilidad de reciclado la opera {operator}"
-            }
-        },
-        "presets": {
-            "1": {
-                "title": "un centro de reciclado"
-            },
-            "0": {
-                "title": "un contenedor de reciclaje"
-            }
-        },
-        "name": "Reciclaje",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Centro de reciclaje"
-                },
-                "1": {
-                    "then": "Centro de reciclaje"
-                },
-                "2": {
-                    "then": "Contenedor de reciclaje"
-                }
-            },
-            "render": "Facilidad de reciclaje"
-        },
-        "description": "Una capa con contenedores y centros de reciclaje"
-    },
-    "public_bookcase": {
-        "tagRenderings": {
-            "bookcase-booktypes": {
-                "mappings": {
-                    "1": {
-                        "then": "Mayoritariamente libros para adultos"
-                    },
-                    "0": {
-                        "then": "Mayoritariamente libros infantiles"
-                    }
-                }
-            },
-            "bookcase-is-accessible": {
-                "mappings": {
-                    "1": {
-                        "then": "Solo accesible a clientes"
-                    },
-                    "0": {
-                        "then": "Accesible públicamente"
-                    }
-                }
-            },
-            "public_bookcase-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Parte de la red 'Little Free Library'"
-                    }
-                }
-            }
-        },
-        "filter": {
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Interior o exterior"
-                    }
-                }
-            }
-        }
-    },
-    "slow_roads": {
-        "tagRenderings": {
-            "slow_roads-surface": {
-                "mappings": {
-                    "4": {
-                        "then": "La superficie es <b>adoquines</b>"
-                    },
-                    "2": {
-                        "then": "La superficie está <b>sin pavimentar</b>"
-                    },
-                    "6": {
-                        "then": "La superficie es <b>hormigón</b>"
-                    },
-                    "7": {
-                        "then": "La superficie está <b>pavimentada</b>"
-                    },
-                    "0": {
-                        "then": "La superficie es <b>hierba</b>"
-                    },
-                    "3": {
-                        "then": "La superficie es <b>arena</b>"
-                    },
-                    "5": {
-                        "then": "La superficie es <b>asfalto</b>"
-                    }
-                },
-                "render": "La superficie es <b>{surface}</b>"
-            }
-        }
-    },
-    "sport_pitch": {
-        "tagRenderings": {
-            "sport-pitch-reservation": {
-                "mappings": {
-                    "2": {
-                        "then": "Pedir cita es posible, pero no necesario para utilizar esta pista de deportes"
-                    },
-                    "0": {
-                        "then": "Pedir una cita es obligatorio para utilizar esta pista"
-                    },
-                    "1": {
-                        "then": "Se recomienda pedir una cita al utilizar esta pista"
-                    },
-                    "3": {
-                        "then": "No es posible pedir cita"
-                    }
-                },
-                "question": "¿Hay que pedir una cita para utilizar esta pista?"
-            },
-            "sport_pitch-opening_hours": {
-                "question": "¿Cuándo es accesible esta pista?",
-                "mappings": {
-                    "1": {
-                        "then": "Siempre accesible"
-                    }
-                }
-            },
-            "sport_pitch-surface": {
-                "mappings": {
-                    "0": {
-                        "then": "La superficie es <b>hierba</b>"
-                    },
-                    "1": {
-                        "then": "La superficie es <b>arena</b>"
-                    },
-                    "2": {
-                        "then": "La superficie es <b>adoquines</b>"
-                    },
-                    "3": {
-                        "then": "La superficie es <b>asfalto</b>"
-                    },
-                    "4": {
-                        "then": "La superficie es <b>hormigón</b>"
-                    }
-                },
-                "render": "La superficie es <b>{surface}</b>",
-                "question": "¿Cual es la superficie de esta pista de deportes?"
-            },
-            "sport_pitch-sport": {
-                "render": "Aquí se juega al {sport}",
-                "mappings": {
-                    "3": {
-                        "then": "Aquí se juega al tenis"
-                    },
-                    "5": {
-                        "then": "Aquí se juega al baloncesto"
-                    },
-                    "0": {
-                        "then": "Aquí se juega al baloncesto"
-                    },
-                    "2": {
-                        "then": "Esto es una mesa de ping pong"
-                    },
-                    "1": {
-                        "then": "Aquí se juega al fútbol"
-                    }
-                },
-                "question": "¿Qué deporte se practica aquí?"
-            },
-            "sport_pitch-email": {
-                "question": "¿Cual es la dirección de correo electrónico de la operadora?"
-            },
-            "sport_pitch-phone": {
-                "question": "¿Cual es el número de teléfono de la operadora?"
-            },
-            "sport-pitch-access": {
-                "mappings": {
-                    "0": {
-                        "then": "Acceso público"
-                    },
-                    "1": {
-                        "then": "Acceso limitado (ej. solo con una cita, a cieras horas, ...)"
-                    },
-                    "2": {
-                        "then": "Solo accesible para miembros del club"
-                    },
-                    "3": {
-                        "then": "Privada - no accesible al público"
-                    }
-                },
-                "question": "¿Esta pista de deportes es accesible públicamente?"
-            }
-        },
-        "title": {
-            "render": "Pista de deportes"
-        },
-        "description": "Una pista de deportes",
-        "name": "Pistas de deportes",
-        "presets": {
-            "1": {
-                "title": "una pista de deportes"
-            }
-        }
-    },
-    "street_lamps": {
-        "tagRenderings": {
-            "direction": {
-                "render": "Esta lámpara apunta hacia {light:direction}",
-                "question": "¿Hacia donde apunta esta lámpara?"
-            },
-            "lamp_mount": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta lampara está encima de un mástil recto"
-                    },
-                    "1": {
-                        "then": "Esta lámpara está encima de un mástil curvado"
-                    }
-                },
-                "question": "¿Cómo está montada esta lámpara al poste?"
-            },
-            "lit": {
-                "mappings": {
-                    "3": {
-                        "then": "Esta lámpara se ilumina bajo demanda (ej. con un pulsador)"
-                    },
-                    "1": {
-                        "then": "Esta lámpara está iluminada 24/7"
-                    },
-                    "0": {
-                        "then": "Esta lámpara está iluminada por la noche"
-                    },
-                    "2": {
-                        "then": "Esta lámpara se ilumina con el movimiento"
-                    }
-                },
-                "question": "¿Cuándo se ilumina esta lámpara?"
-            },
-            "support": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta lámpara se suspende utilizando cables"
-                    },
-                    "1": {
-                        "then": "Esta lámpara está montada en un techo"
-                    },
-                    "3": {
-                        "then": "Esta lámpara está montada en un poste corto (mayoritariamente < 1.5m)"
-                    },
-                    "4": {
-                        "then": "Esta lámpara está montada en un poste"
-                    },
-                    "5": {
-                        "then": "Esta lámpara está montada directamente en la pared"
-                    },
-                    "6": {
-                        "then": "Esta lámpara está montada en la pared utilizando una barra metálica"
-                    },
-                    "2": {
-                        "then": "Esta lámpara está montada en el suelo"
-                    }
-                },
-                "question": "¿Cómo está montada esta lámpara?"
-            },
-            "colour": {
-                "question": "¿De qué color es la luz que emite esta lámpara?",
-                "mappings": {
-                    "0": {
-                        "then": "Esta lámpara emite luz blanca"
-                    },
-                    "1": {
-                        "then": "Esta lámpara emite luz verde"
-                    },
-                    "2": {
-                        "then": "Esta lámpara emite luz naranja"
-                    }
-                },
-                "render": "Esta lámpara emite luz {light:colour}"
-            },
-            "method": {
-                "mappings": {
-                    "3": {
-                        "then": "Esta lámpara utiliza iluminación halógena"
-                    },
-                    "0": {
-                        "then": "Esta lámpara se ilumina eléctricamente"
-                    },
-                    "1": {
-                        "then": "Esta lámpara utiliza LEDs"
-                    },
-                    "2": {
-                        "then": "Esta lámpara utiliza iluminación incandescente"
-                    },
-                    "11": {
-                        "then": "Esta lampara se ilumina con gas"
-                    },
-                    "4": {
-                        "then": "Esta lámpara utiliza lámparas de descarga (de tipo desconocido)"
-                    },
-                    "5": {
-                        "then": "Esta lámpara utiliza una lámpara de vapor de mercurio (levemente azulada)"
-                    },
-                    "7": {
-                        "then": "Esta lámpara utiliza iluminación fluorescente"
-                    },
-                    "8": {
-                        "then": "Esta lámpara utiliza lámparas de sodio (de tipo desconocido)"
-                    },
-                    "9": {
-                        "then": "Esta lámpara utiliza lámparas de sodio de baja presión (naranja monocromo)"
-                    },
-                    "10": {
-                        "then": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
-                    }
-                },
-                "question": "¿Qué tipo de iluminación utiliza esta lámpara?"
-            },
-            "ref": {
-                "question": "¿Cual es el número de referencia de esta lámpara callejera?",
-                "render": "Esta lámpara callejera tiene el número de referencia {ref}"
-            },
-            "count": {
-                "mappings": {
-                    "0": {
-                        "then": ""
-                    }
-                }
-            }
-        },
-        "name": "Farolas",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Lámpara Callejera {ref}"
-                }
-            },
-            "render": "Lámpara Callejera"
-        },
-        "description": "Una capa que muestra luces callejeras",
-        "presets": {
-            "0": {
-                "title": "una farola"
-            }
-        }
-    },
-    "toilet": {
-        "tagRenderings": {
-            "toilets-fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Estos son baños de pago"
-                    }
-                }
-            },
-            "toilets-type": {
-                "mappings": {
-                    "1": {
-                        "then": "Aquí solo hay orinales"
-                    },
-                    "3": {
-                        "then": "Aquí hay tanto váteres de sentarse como orinales"
-                    }
-                },
-                "question": "¿Qué tipo de baños son estos?"
-            },
-            "Opening-hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Abierto 24/7"
-                    }
-                },
-                "question": ""
-            },
-            "toilet-access": {
-                "mappings": {
-                    "1": {
-                        "then": "Solo accesible a clientes"
-                    },
-                    "4": {
-                        "then": "De acceso público"
-                    },
-                    "0": {
-                        "then": "Acceso públic"
-                    },
-                    "3": {
-                        "then": "Accesible, pero hay que pedir la llave para entrar"
-                    },
-                    "2": {
-                        "then": "No accesible"
-                    }
-                },
-                "render": "El acceso es {access}"
-            },
-            "toilet-changing_table:location": {
-                "mappings": {
-                    "3": {
-                        "then": "El cambiador está en una habitación dedicada "
-                    }
-                },
-                "question": "¿Dónde está el cambiador?",
-                "render": "El cambiador está en {changing_table:location}"
-            },
-            "toilet-charge": {
-                "render": "La tasa es {charge}",
-                "question": "¿Cuánto hay que pagar para estos baños?"
-            },
-            "toilet-handwashing": {
-                "mappings": {
-                    "0": {
-                        "then": "Estos baños tienen una pileta para lavarse las manos"
-                    },
-                    "1": {
-                        "then": "Estos baños <b>no</b> tienen una pileta para lavarse las manos"
-                    }
-                },
-                "question": "¿Esto baños tienen una pileta para lavarte los baños?"
-            },
-            "toilet-has-paper": {
-                "mappings": {
-                    "0": {
-                        "then": "Este baño esta equipado con papel higiénico"
-                    },
-                    "1": {
-                        "then": "Tienes que traer tu propio papel higiénico a este baño"
-                    }
-                },
-                "question": "¿Hay que traer tu propio papel higiénico a este baño?"
-            },
-            "toilets-changing-table": {
-                "mappings": {
-                    "0": {
-                        "then": "Hay un cambiador"
-                    },
-                    "1": {
-                        "then": "No hay cambiador"
-                    }
-                }
-            },
-            "toilets-wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Hay un baño dedicado para usuarios con sillas de ruedas"
-                    },
-                    "1": {
-                        "then": "Sin acceso para sillas de ruedas"
-                    }
-                }
-            }
-        },
-        "description": "Una capa que muestra baños (públicos)",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Accesible con sillas de ruedas"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Abierto ahora"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tiene un cambiador"
-                    }
-                }
-            }
-        },
-        "name": "Baños",
-        "presets": {
-            "0": {
-                "title": "un baño público"
-            }
-        },
-        "title": {
-            "render": "Baño"
-        }
-    },
-    "parking": {
-        "name": "Aparcamiento",
-        "description": "Una capa que muestra aparcamientos para coches",
-        "presets": {
-            "0": {
-                "title": "un aparcamiento de coches"
-            }
-        },
-        "title": {
-            "render": "aparcamiento de coches"
-        }
-    },
-    "visitor_information_centre": {
-        "title": {
-            "render": "{name}",
-            "mappings": {
-                "1": {
-                    "then": "{name}"
-                }
-            }
-        },
-        "name": "Centro de Información al Visitante",
-        "description": "Un centro de visitantes ofrece información sobre una atracción específica o lugar de interese donde se sitúa."
-    },
-    "walls_and_buildings": {
-        "title": {
-            "render": "Pared o edificio"
-        }
-    },
-    "veterinary": {
-        "name": "veterinario",
-        "presets": {
-            "0": {
-                "description": "un veterinario, que trata a perros",
-                "title": "un veterinario"
-            }
-        },
-        "title": {
-            "render": "Veterinario"
-        },
-        "tagRenderings": {
-            "vetName": {
-                "render": "El nombre de este veterinario es {name}",
-                "question": "¿Cual es el nombre de este veterinario?"
-            }
-        }
-    },
-    "viewpoint": {
-        "description": "Un buen punto de vista o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
-        "tagRenderings": {
-            "viewpoint-description": {
-                "question": "¿Quieres añadir una descripción?"
             }
         }
     }

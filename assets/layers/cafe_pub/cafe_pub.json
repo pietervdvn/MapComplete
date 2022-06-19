@@ -157,7 +157,7 @@
         "de": "Was ist das für ein Café?",
         "hu": "Milyen fajta kávézó ez?",
         "da": "Hvilken slags cafe er dette",
-        "es": "Qué tipo de café es este"
+        "es": "Qué tipo de cafetería es esta"
       },
       "mappings": [
         {
@@ -165,7 +165,8 @@
           "then": {
             "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
             "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk",
-            "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird"
+            "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird",
+            "es": "Un bar, principalmente para beber cervezas en un interior cálido y relajado"
           }
         },
         {
@@ -174,7 +175,8 @@
             "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
             "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
             "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation",
-            "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation"
+            "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation",
+            "es": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
           }
         },
         {
@@ -183,7 +185,8 @@
             "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
             "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
             "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
-            "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser"
+            "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser",
+            "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
           }
         },
         {
@@ -296,7 +299,7 @@
     "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
     "nl": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
     "de": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
-    "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa pregunta algunas preguntas relevantes",
+    "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa hace algunas preguntas relevantes",
     "da": "Et lag med caféer og pubber, hvor man kan samles omkring en drink. Laget stiller nogle relevante spørgsmål"
   }
 }

@@ -19,7 +19,8 @@
       "en": "Note",
       "nl": "Note",
       "ca": "Nota",
-      "de": "Notiz"
+      "de": "Notiz",
+      "es": "Nota"
     },
     "mappings": [
       {
@@ -27,7 +28,8 @@
         "then": {
           "en": "Closed note",
           "nl": "Gesloten Note",
-          "de": "Geschlossene Notiz"
+          "de": "Geschlossene Notiz",
+          "es": "Nota cerrada"
         }
       }
     ]
@@ -88,7 +90,8 @@
       "render": {
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>",
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze note melden als spam of ongepast</a>",
-        "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>"
+        "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>",
+        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>"
       }
     }
   ],

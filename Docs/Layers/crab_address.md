@@ -20,17 +20,6 @@ Address data for Flanders by the governement, suited for import into OpenStreetM
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 

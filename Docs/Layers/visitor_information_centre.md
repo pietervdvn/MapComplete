@@ -19,17 +19,6 @@ A visitor center offers information about a specific attraction or place of inte
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 

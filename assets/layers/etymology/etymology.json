@@ -4,7 +4,8 @@
   "name": {
     "en": "Has etymolgy",
     "nl": "Heeft etymology info",
-    "de": "Objekte mit Informationen zur Namensherkunft"
+    "de": "Objekte mit Informationen zur Namensherkunft",
+    "fr": "A une étymologie"
   },
   "minzoom": 12,
   "source": {
@@ -28,7 +29,8 @@
     "en": "All objects which have an etymology known",
     "nl": "Alle lagen met een gelinkt etymology",
     "de": "Alle Objekte, die eine bekannte Namensherkunft haben",
-    "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete"
+    "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete",
+    "fr": "Tous les objets dont le nom ont une étymologie connue"
   },
   "calculatedTags": [
     "_same_name_ids=feat.closestn('*', 250, undefined, 2500)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"
@@ -45,7 +47,8 @@
       "question": {
         "en": "What is the Wikidata-item that this object is named after?",
         "nl": "Wat is het Wikidata-item van hetgeen dit object is naar vernoemd?",
-        "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?"
+        "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
+        "fr": "Quel est l'Item Wikidata auquel l'objet fait référence ?"
       },
       "freeform": {
         "key": "name:etymology:wikidata",
@@ -147,7 +150,8 @@
       "render": {
         "en": "<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
         "nl": "<h3>Wikipedia artikel van de naamgever</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
-        "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+        "de": "<h3>Wikipedia Artikel zur Namensherkunft</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "fr": "<h3>Article Wikipedia de la référence au nom</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
       },
       "condition": "name:etymology!=unknown"
     },
@@ -156,7 +160,8 @@
       "render": {
         "nl": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Zoeken op inventaris onroerend erfgoed</a>",
         "en": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>",
-        "de": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>"
+        "de": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>",
+        "fr": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>"
       },
       "conditions": "_country=be"
     },
@@ -165,13 +170,15 @@
       "question": {
         "en": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
         "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</span>",
-        "de": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>"
+        "de": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>",
+        "fr": "En référence à quoi cet objet est-il nommé ?<br/><span class='subtle'>Cela peut être indiqué sur le panneau de la rue</span>"
       },
       "render": {
         "en": "Named after {name:etymology}",
         "nl": "Vernoemd naar {name:etymology}",
         "de": "Benannt nach {name:etymology}",
-        "da": "Opkaldt efter {name:etymology}"
+        "da": "Opkaldt efter {name:etymology}",
+        "fr": "Nommé en référence à {name:etymology}"
       },
       "freeform": {
         "key": "name:etymology"
@@ -183,7 +190,8 @@
             "en": "The origin of this name is unknown in all literature",
             "nl": "De oorsprong van deze naam is onbekend in de literatuur",
             "de": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt",
-            "da": "Oprindelsen af dette navn er ukendt i al litteratur"
+            "da": "Oprindelsen af dette navn er ukendt i al litteratur",
+            "fr": "L'origine de ce nom est inconnu"
           }
         }
       ],
@@ -200,7 +208,8 @@
       "render": {
         "en": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
         "nl": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Voeg afbeelding van straatnaambordje toe)}",
-        "de": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Bild eines Straßenschildes hinzufügen)}"
+        "de": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Bild eines Straßenschildes hinzufügen)}",
+        "fr": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Ajouter une photo de la plaque de rue)}"
       }
     },
     {
@@ -214,7 +223,8 @@
       "render": {
         "en": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}",
         "nl": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Wijzigingen worden automatisch gedaan op alle segmenten met dezelfde naam, true)}",
-        "de": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Automatische Datenübernahme auf alle Segmente mit demselben Namen, true)}"
+        "de": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Automatische Datenübernahme auf alle Segmente mit demselben Namen, true)}",
+        "fr": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Appliquer automatiquement aux segments avec le même nom, true)}"
       }
     },
     {
@@ -223,7 +233,8 @@
       "render": {
         "en": "A Wikipedia article about this <b>street</b> exists:<br/>{wikipedia():max-height:25rem}",
         "nl": "Een Wikipedia artikel over deze <b>straat</b> bestaat:<br/>{wikipedia():max-height:25rem}",
-        "de": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}"
+        "de": "Zu dieser <b>Straße</b> existiert ein Wikipedia-Artikel:<br/>{wikipedia():max-height:25rem}",
+        "fr": "Un article Wikipédia à propos de cette <b>rue</b> existe :<br/>{wikipedia():max-height:25rem}"
       },
       "condition": "wikidata~*"
     }

@@ -121,7 +121,8 @@
         "fr": "La surface en <b>{surface}</b>",
         "it": "La superficie è <b>{surface}</b>",
         "de": "Die Oberfläche ist <b>{surface}</b>",
-        "eo": "La surfaco estas <b>{surface}</b>"
+        "eo": "La surfaco estas <b>{surface}</b>",
+        "es": "La superficie es <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -136,7 +137,8 @@
             "fr": "La surface est en <b>herbe</b>",
             "it": "La superficie è <b>erba</b>",
             "de": "Die Oberfläche ist <b>Gras</b>",
-            "eo": "La surfaco estas <b>herba</b>"
+            "eo": "La surfaco estas <b>herba</b>",
+            "es": "La superficie es <b>hierba</b>"
           }
         },
         {
@@ -157,7 +159,8 @@
             "en": "The surface is <b>unpaved</b>",
             "fr": "La surface est <b>non pavée</b>",
             "it": "La superficie è <b>non pavimentata</b>",
-            "de": "Die Oberfläche ist <b>ohne festen Belag</b>"
+            "de": "Die Oberfläche ist <b>ohne festen Belag</b>",
+            "es": "La superficie está <b>sin pavimentar</b>"
           },
           "hideInAnswer": true
         },
@@ -170,7 +173,8 @@
             "fr": "La surface est en <b>sable</b>",
             "it": "La superficie è <b>sabbia</b>",
             "de": "Die Oberfläche ist <b>Sand</b>",
-            "eo": "La surfaco estas <b>sabla</b>"
+            "eo": "La surfaco estas <b>sabla</b>",
+            "es": "La superficie es <b>arena</b>"
           }
         },
         {
@@ -181,7 +185,8 @@
             "ru": "Поверхность - <b>брусчатка</b>",
             "it": "La superficie è <b>pietre irregolari</b>",
             "fr": "La surface est en <b>pierres pavées</b>",
-            "de": "Die Oberfläche ist aus <b>Pflastersteinen</b>"
+            "de": "Die Oberfläche ist aus <b>Pflastersteinen</b>",
+            "es": "La superficie es <b>adoquines</b>"
           }
         },
         {
@@ -192,7 +197,8 @@
             "ru": "Поверхность - <b>асфальт</b>",
             "it": "La superficie è <b>asfalto</b>",
             "fr": "La surface est en <b>bitume</b>",
-            "de": "Die Oberfläche ist <b>Asphalt</b>"
+            "de": "Die Oberfläche ist <b>Asphalt</b>",
+            "es": "La superficie es <b>asfalto</b>"
           }
         },
         {
@@ -204,7 +210,8 @@
             "fr": "La surface est en <b>béton</b>",
             "it": "La superficie è <b>calcestruzzo</b>",
             "de": "Die Oberfläche ist <b>Beton</b>",
-            "eo": "La surfaco estas <b>betona</b>"
+            "eo": "La surfaco estas <b>betona</b>",
+            "es": "La superficie es <b>hormigón</b>"
           }
         },
         {
@@ -214,7 +221,8 @@
             "en": "The surface is <b>paved</b>",
             "fr": "La surface est <b>pavée</b>",
             "it": "La superficie è <b>pavimentata</b>",
-            "de": "Die Oberfläche ist <b>gepflastert</b>"
+            "de": "Die Oberfläche ist <b>gepflastert</b>",
+            "es": "La superficie está <b>pavimentada</b>"
           },
           "hideInAnswer": true
         }

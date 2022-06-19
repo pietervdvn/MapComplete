@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 153,
+      "commits": 159,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 114,
+      "commits": 120,
       "contributor": "kjon"
     },
     {
@@ -25,16 +25,16 @@
       "contributor": "Artem"
     },
     {
+      "commits": 24,
+      "contributor": "Iago"
+    },
+    {
       "commits": 22,
       "contributor": "Supaplex"
     },
     {
       "commits": 22,
       "contributor": "Marco"
-    },
-    {
-      "commits": 21,
-      "contributor": "Iago"
     },
     {
       "commits": 21,
@@ -94,6 +94,10 @@
     },
     {
       "commits": 6,
+      "contributor": "Romain de Bossoreille"
+    },
+    {
+      "commits": 6,
       "contributor": "Vinicius"
     },
     {
@@ -138,15 +142,15 @@
     },
     {
       "commits": 5,
-      "contributor": "Romain de Bossoreille"
-    },
-    {
-      "commits": 5,
       "contributor": "Piotr"
     },
     {
       "commits": 5,
       "contributor": "Alexey Shabanov"
+    },
+    {
+      "commits": 4,
+      "contributor": "Olivier"
     },
     {
       "commits": 4,
@@ -219,10 +223,6 @@
     {
       "commits": 2,
       "contributor": "M. Rey"
-    },
-    {
-      "commits": 2,
-      "contributor": "Olivier"
     },
     {
       "commits": 2,

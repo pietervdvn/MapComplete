@@ -20,17 +20,6 @@ The style for the clustering in all themes. Enable `debug=true` to peak into clu
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 

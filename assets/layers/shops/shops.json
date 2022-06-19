@@ -8,7 +8,8 @@
     "nl": "Winkel",
     "de": "Geschäfte",
     "eo": "Butiko",
-    "ca": "Botiga"
+    "ca": "Botiga",
+    "es": "Tienda"
   },
   "minzoom": 16,
   "source": {
@@ -27,7 +28,8 @@
       "nl": "Winkel",
       "de": "Geschäft",
       "eo": "Butiko",
-      "ca": "Botiga"
+      "ca": "Botiga",
+      "es": "Tienda"
     },
     "mappings": [
       {
@@ -44,7 +46,8 @@
           "de": "{name}",
           "eo": "{name}",
           "nl": "{name}",
-          "ca": "{name}"
+          "ca": "{name}",
+          "es": "{name}"
         }
       },
       {
@@ -61,7 +64,8 @@
           "de": "{shop}",
           "eo": "{shop}",
           "nl": "{shop}",
-          "ca": "{shop}"
+          "ca": "{shop}",
+          "es": "{shop}"
         }
       }
     ]
@@ -74,7 +78,8 @@
     "ru": "Магазин",
     "de": "Ein Geschäft",
     "eo": "Butiko",
-    "hu": "Egy bolt"
+    "hu": "Egy bolt",
+    "es": "Una tienda"
   },
   "tagRenderings": [
     "images",
@@ -85,7 +90,8 @@
         "ru": "Как называется этот магазин?",
         "ja": "このお店の名前は何ですか?",
         "nl": "Wat is de naam van deze winkel?",
-        "de": "Wie ist der Name dieses Geschäfts?"
+        "de": "Wie ist der Name dieses Geschäfts?",
+        "es": "¿Cual es el nombre de esta tienda?"
       },
       "render": "This shop is called <i>{name}</i>",
       "freeform": {
@@ -100,7 +106,8 @@
         "ja": "こちらのお店では{shop}を販売しております",
         "de": "Dieses Geschäft verkauft {shop}",
         "eo": "Ĉi tiu butiko vendas {shop}",
-        "nl": "Deze winkel is van type \"{shop}\""
+        "nl": "Deze winkel is van type \"{shop}\"",
+        "es": "Esta tienda vende {shop}"
       },
       "question": {
         "en": "What does this shop sell?",
@@ -109,7 +116,8 @@
         "ru": "Что продаётся в этом магазине?",
         "de": "Was wird in diesem Geschäft verkauft?",
         "eo": "Kion vendas ĉi tiu butiko?",
-        "nl": "Wat verkoopt deze winkel?"
+        "nl": "Wat verkoopt deze winkel?",
+        "es": "¿Qué vende esta tienda?"
       },
       "freeform": {
         "key": "shop"
@@ -142,7 +150,8 @@
             "ja": "スーパーマーケット",
             "nl": "Supermarkt",
             "de": "Supermarkt",
-            "ca": "Supermercat"
+            "ca": "Supermercat",
+            "es": "Supermercado"
           }
         },
         {
@@ -157,7 +166,8 @@
             "ru": "Магазин одежды",
             "ja": "衣料品店",
             "de": "Bekleidungsgeschäft",
-            "nl": "Kledingwinkel"
+            "nl": "Kledingwinkel",
+            "es": "Tienda de ropa"
           }
         },
         {
@@ -173,7 +183,8 @@
             "ja": "理容師",
             "nl": "Kapper",
             "de": "Friseur",
-            "ca": "Perruqueria"
+            "ca": "Perruqueria",
+            "es": "Peluquería"
           }
         },
         {
@@ -189,7 +200,8 @@
             "nl": "Bakkerij",
             "de": "Bäckerei",
             "eo": "Bakejo",
-            "ca": "Fleca"
+            "ca": "Fleca",
+            "es": "Panadería"
           }
         },
         {
@@ -213,7 +225,8 @@
             "pt": "Oficina de automóveis",
             "pt_BR": "Oficina Mecânica",
             "ru": "Автомастерская",
-            "sv": "Bilverkstad"
+            "sv": "Bilverkstad",
+            "es": "Taller de coches"
           }
         },
         {
@@ -228,7 +241,8 @@
             "ru": "Автосалон",
             "ja": "自動車ディーラー",
             "de": "Autohändler",
-            "nl": "Autodealer"
+            "nl": "Autodealer",
+            "es": "Concesionario"
           }
         }
       ],
@@ -244,7 +258,8 @@
         "ja": "<a href='tel:{phone}'>{phone}</a>",
         "de": "<a href='tel:{phone}'>{phone}</a>",
         "eo": "<a href='tel:{phone}'>{phone}</a>",
-        "nl": "<a href='tel:{phone}'>{phone}</a>"
+        "nl": "<a href='tel:{phone}'>{phone}</a>",
+        "es": "<a href='tel:{phone}'>{phone}</a>"
       },
       "question": {
         "en": "What is the phone number?",
@@ -253,7 +268,8 @@
         "nl": "Wat is het telefoonnummer?",
         "ru": "Какой телефон?",
         "de": "Wie lautet die Telefonnummer?",
-        "eo": "Kio estas la telefonnumero?"
+        "eo": "Kio estas la telefonnumero?",
+        "es": "¿Cual es el número de teléfono?"
       },
       "freeform": {
         "key": "phone",
@@ -271,7 +287,8 @@
         "ja": "<a href='{website}'>{website}</a>",
         "de": "<a href='{website}'>{website}</a>",
         "eo": "<a href='{website}'>{website}</a>",
-        "nl": "<a href='{website}'>{website}</a>"
+        "nl": "<a href='{website}'>{website}</a>",
+        "es": "<a href='{website}'>{website}</a>"
       },
       "question": {
         "en": "What is the website of this shop?",
@@ -279,7 +296,8 @@
         "ja": "このお店のホームページは何ですか?",
         "nl": "Wat is de website van deze winkel?",
         "ru": "Какой веб-сайт у этого магазина?",
-        "de": "Wie lautet die Webseite dieses Geschäfts?"
+        "de": "Wie lautet die Webseite dieses Geschäfts?",
+        "es": "¿Cual es la página web de esta tienda?"
       },
       "freeform": {
         "key": "website",
@@ -296,7 +314,8 @@
         "ja": "<a href='mailto:{email}'>{email}</a>",
         "eo": "<a href='mailto:{email}'>{email}</a>",
         "nl": "<a href='mailto:{email}'>{email}</a>",
-        "de": "<a href='mailto:{email}'>{email}</a>"
+        "de": "<a href='mailto:{email}'>{email}</a>",
+        "es": "<a href='mailto:{email}'>{email}</a>"
       },
       "question": {
         "en": "What is the email address of this shop?",
@@ -305,7 +324,8 @@
         "ru": "Каков адрес электронной почты этого магазина?",
         "nl": "Wat is het e-mailadres van deze winkel?",
         "de": "Wie ist die Email-Adresse dieses Geschäfts?",
-        "eo": "Kio estas la retpoŝta adreso de ĉi tiu butiko?"
+        "eo": "Kio estas la retpoŝta adreso de ĉi tiu butiko?",
+        "es": "¿Cual es la dirección de correo electrónico de esta tienda?"
       },
       "freeform": {
         "key": "email",
@@ -321,7 +341,8 @@
         "ja": "{opening_hours_table(opening_hours)}",
         "nl": "{opening_hours_table(opening_hours)}",
         "ca": "{opening_hours_table(opening_hours)}",
-        "de": "{opening_hours_table(opening_hours)}"
+        "de": "{opening_hours_table(opening_hours)}",
+        "es": "{opening_hours_table(opening_hours)}"
       },
       "question": {
         "en": "What are the opening hours of this shop?",
@@ -329,7 +350,8 @@
         "ja": "この店の営業時間は何時から何時までですか?",
         "nl": "Wat zijn de openingsuren van deze winkel?",
         "ru": "Каковы часы работы этого магазина?",
-        "de": "Wie sind die Öffnungszeiten dieses Geschäfts?"
+        "de": "Wie sind die Öffnungszeiten dieses Geschäfts?",
+        "es": "¿Cual es el horario de esta tienda?"
       },
       "freeform": {
         "key": "opening_hours",
@@ -353,7 +375,8 @@
         "ja": "店",
         "nl": "een winkel",
         "de": "ein Geschäft",
-        "eo": "Butiko"
+        "eo": "Butiko",
+        "es": "una tienda"
       },
       "description": {
         "en": "Add a new shop",
@@ -362,7 +385,8 @@
         "ja": "新しい店を追加する",
         "nl": "Voeg een nieuwe winkel toe",
         "de": "Ein neues Geschäft hinzufügen",
-        "eo": "Enmeti novan butikon"
+        "eo": "Enmeti novan butikon",
+        "es": "Añadir una nueva tienda"
       }
     }
   ],
@@ -378,7 +402,8 @@
         "explanation": {
           "nl": "{title()} is permanent gestopt",
           "en": "{title()} has closed down permanently",
-          "de": "{title()} wurde dauerhaft geschlossen"
+          "de": "{title()} wurde dauerhaft geschlossen",
+          "es": "{title()} ha cerrado permanentemente"
         },
         "changesetMessage": "shop_closed"
       }
@@ -436,7 +461,8 @@
           "question": {
             "en": "Only show shops selling {search}",
             "de": "Nur Geschäfte, die {search} verkaufen",
-            "nl": "Toon enkel winkels die {search} verkopen"
+            "nl": "Toon enkel winkels die {search} verkopen",
+            "es": "Solo mostrar tiendas que vendan {search}"
           }
         }
       ]
@@ -455,7 +481,8 @@
           "question": {
             "en": "Only show shops with name {search}",
             "de": "Nur Geschäfte mit dem Namen {search} anzeigen",
-            "nl": "Toon enkel winkels met naam {search}"
+            "nl": "Toon enkel winkels met naam {search}",
+            "es": "Solo mostrar tiendas con nombre {search}"
           }
         }
       ]
@@ -468,7 +495,8 @@
           "question": {
             "en": "Accepts cash",
             "de": "Akzeptiert Bargeld",
-            "nl": "Accepteert cash"
+            "nl": "Accepteert cash",
+            "es": "Acepta efectivo"
           }
         }
       ]
@@ -481,7 +509,8 @@
           "question": {
             "en": "Accepts payment cards",
             "de": "Akzeptiert Kartenzahlung",
-            "nl": "Accepteert betaalkaarten"
+            "nl": "Accepteert betaalkaarten",
+            "es": "Acepta el pago por tarjeta"
           }
         }
       ]

@@ -7,7 +7,8 @@
     "de": "Postleitzahlen",
     "ca": "Codis postals",
     "es": "Códigos postales",
-    "nb_NO": "Postkoder"
+    "nb_NO": "Postkoder",
+    "nl": "Postcodes"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -16,7 +17,8 @@
     "de": "Postleitzahlen",
     "ca": "Codis postals",
     "es": "Códigos postales",
-    "nb_NO": "Postkoder"
+    "nb_NO": "Postkoder",
+    "nl": "Postcodes"
   },
   "description": {
     "en": "Postal codes",
@@ -24,7 +26,8 @@
     "hu": "Irányítószámok",
     "de": "Postleitzahlen",
     "ca": "Codis postals",
-    "es": "Códigos postales"
+    "es": "Códigos postales",
+    "nl": "Postcodes"
   },
   "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
@@ -46,7 +49,8 @@
         "de": "Postleitzahlen",
         "ca": "codis postals",
         "es": "códigos postales",
-        "nb_NO": "postkoder"
+        "nb_NO": "postkoder",
+        "nl": "postcodes"
       },
       "minzoom": 8,
       "title": {
@@ -56,7 +60,8 @@
           "hu": "Irányítószám: {postal_code}",
           "de": "Postleitzahl {postal_code}",
           "es": "Código postal {postal_code}",
-          "nb_NO": "Postkode {postal_code}"
+          "nb_NO": "Postkode {postal_code}",
+          "nl": "Postcode {postal_code}"
         }
       },
       "description": {},
@@ -68,7 +73,8 @@
             "id": "Kode posnya adalah {postal_code}",
             "hu": "Irányítószám: {postal_code}",
             "de": "Die Postleitzahl lautet {postal_code}",
-            "es": "El código postal es {postal_code}"
+            "es": "El código postal es {postal_code}",
+            "nl": "Deze postcode is {postal_code}"
           }
         }
       ],
@@ -139,7 +145,8 @@
         "id": "balai kota",
         "hu": "polgármesteri hivatalok",
         "de": "Rathäuser",
-        "ca": "ajuntaments"
+        "ca": "ajuntaments",
+        "nl": "stadhuizen"
       },
       "minzoom": 12,
       "title": {
@@ -147,7 +154,8 @@
           "en": "Town hall {name}",
           "id": "Balai kota {name}",
           "hu": "{name} városháza",
-          "de": "Rathaus {name}"
+          "de": "Rathaus {name}",
+          "nl": "Stadhuis {name}"
         }
       },
       "calculatedTags": [

@@ -31,7 +31,8 @@
     "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
     "nl": "Dit is een publieke vuilnisbak waar je je afval kan weggooien.",
     "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
-    "hu": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."
+    "hu": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet.",
+    "es": "Esta es una papelera pública, donde puedes tirar tu basura."
   },
   "tagRenderings": [
     "images",
@@ -194,14 +195,16 @@
           "question": {
             "en": "All types",
             "nl": "Alle soorten",
-            "de": "Alle Typen"
+            "de": "Alle Typen",
+            "es": "Todos los tipos"
           }
         },
         {
           "question": {
             "en": "Waste basket for cigarettes",
             "nl": "Vuilnisbak voor sigarettenpeuken",
-            "de": "Mülleimer für Zigaretten"
+            "de": "Mülleimer für Zigaretten",
+            "es": "Papelera para cigarrillos"
           },
           "osmTags": "waste~i~.*cigarettes.*"
         },
@@ -217,7 +220,8 @@
           "question": {
             "en": "Waste basket for dog excrement",
             "nl": "Vuilnisbak voor hondenuitwerpselen",
-            "de": "Mülleimer für Hundekot"
+            "de": "Mülleimer für Hundekot",
+            "es": "Papelera para excrementos de perro"
           },
           "osmTags": "waste~i~.*dog_excrement.*"
         },
@@ -225,7 +229,8 @@
           "question": {
             "en": "Waste basket for trash",
             "nl": "Vuilnisbak voor zwerfvuil",
-            "de": "Mülleimer für allgemeinen Müll"
+            "de": "Mülleimer für allgemeinen Müll",
+            "es": "Papelera para basura"
           },
           "osmTags": "waste~i~.*trash.*"
         },
@@ -241,7 +246,8 @@
           "question": {
             "en": "Waste basket for plastic",
             "nl": "Vuilnisbak voor plastic",
-            "de": "Mülleimer für Plastik"
+            "de": "Mülleimer für Plastik",
+            "es": "Papelera para plástico"
           },
           "osmTags": "waste~i~.*plastic.*"
         }
@@ -254,7 +260,8 @@
           "question": {
             "en": "Waste basket with dispenser for (dog) excrement bags",
             "nl": "Vuilnisbak met verdeler voor hondenpoepzakjes",
-            "de": "Abfalleimer mit Spender für (Hunde-)Kotbeutel"
+            "de": "Abfalleimer mit Spender für (Hunde-)Kotbeutel",
+            "es": "Papelera con dispensador de bolsas de excrementos (para perros)"
           },
           "osmTags": "vending=dog_excrement_bag"
         }
@@ -293,7 +300,8 @@
               "nl": "Vuilnisbak",
               "ru": "Контейнер для мусора",
               "de": "Abfalleimer",
-              "id": "Keranjang Sampah"
+              "id": "Keranjang Sampah",
+              "es": "Papelera"
             }
           }
         ]

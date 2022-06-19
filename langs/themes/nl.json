@@ -601,6 +601,11 @@
                     "=name": "Parken en bossen zonder etymologische informatie"
                 }
             },
+            "3": {
+                "override": {
+                    "=name": "Onderwijsinstelling zonder etymologische informatie"
+                }
+            },
             "4": {
                 "override": {
                     "=name": "Culturele plaatsen zonder etymologische informatie"
@@ -619,11 +624,6 @@
             "7": {
                 "override": {
                     "=name": "Sportplekken zonder etymologische informatie"
-                }
-            },
-            "3": {
-                "override": {
-                    "=name": "Onderwijsinstelling zonder etymologische informatie"
                 }
             }
         },
@@ -791,6 +791,9 @@
         "layers": {
             "1": {
                 "tagRenderings": {
+                    "building type": {
+                        "question": "Wat voor soort gebouw is dit?"
+                    },
                     "grb-fixme": {
                         "mappings": {
                             "0": {
@@ -819,9 +822,6 @@
                     },
                     "grb-unit": {
                         "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
-                    },
-                    "building type": {
-                        "question": "Wat voor soort gebouw is dit?"
                     }
                 }
             },
@@ -870,6 +870,9 @@
         "layers": {
             "0": {
                 "tagRenderings": {
+                    "building type": {
+                        "question": "Wat voor soort gebouw is dit?"
+                    },
                     "grb-fixme": {
                         "mappings": {
                             "0": {
@@ -898,9 +901,6 @@
                     },
                     "grb-unit": {
                         "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
-                    },
-                    "building type": {
-                        "question": "Wat voor soort gebouw is dit?"
                     }
                 }
             }
@@ -909,14 +909,75 @@
         "title": "GRB Fixup"
     },
     "hackerspaces": {
-        "title": "Hackerspaces",
+        "description": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten",
         "shortDescription": "Een kaart van hackerspaces",
-        "description": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten"
+        "title": "Hackerspaces"
     },
     "hailhydrant": {
-        "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten",
+        "description": "Op deze kaart kan je hydranten, brandblussers, brandweerkazernes en stalplaatsen voor ambulances vinden en updaten.\n\nJe kan je exacte locatie bepalen (enkel via GSM) en relevante lagen selecteren in de linkeronderhoek. Je kan deze applicatie ook gebruiken om pins (points of interest) op de kaart te zetten en om extra details toe te voegen door vragen te beantwoorden.\n\nAlle wijzigingen die je maakt zullen automatisch worden opgeslagen in de globale database van OpenStreetMap en kunnen vrij door anderen gebruikt worden.",
         "shortDescription": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
-        "description": "Op deze kaart kan je hydranten, brandblussers, brandweerkazernes en stalplaatsen voor ambulances vinden en updaten.\n\nJe kan je exacte locatie bepalen (enkel via GSM) en relevante lagen selecteren in de linkeronderhoek. Je kan deze applicatie ook gebruiken om pins (points of interest) op de kaart te zetten en om extra details toe te voegen door vragen te beantwoorden.\n\nAlle wijzigingen die je maakt zullen automatisch worden opgeslagen in de globale database van OpenStreetMap en kunnen vrij door anderen gebruikt worden."
+        "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
+    },
+    "mapcomplete-changes": {
+        "description": "Deze kaart toont alle wijzigingen die met MapComplete werden gemaakt",
+        "layers": {
+            "0": {
+                "description": "Toont alle wijzigingen met MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themanaam bevat {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt door bijdrager {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Niet</b> gemaakt door bijdrager {search}"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "render_id": {
+                        "render": "Wijzigingset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Wijziging met <b>officieus</b> thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Wijzigingset voor {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Meer statistieken kunnen <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> gevonden worden"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Toont wijzigingen gemaakt met MapComplete",
+        "title": "Wijzigingen gemaakt met MapComplete"
     },
     "maps": {
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
@@ -994,7 +1055,32 @@
         "shortDescription": "Een kaart met speeltuinen",
         "title": "Speelplekken"
     },
+    "postal_codes": {
+        "description": "Postcodes",
+        "layers": {
+            "0": {
+                "name": "postcodes",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Deze postcode is {postal_code}"
+                    }
+                },
+                "title": {
+                    "render": "Postcode {postal_code}"
+                }
+            },
+            "2": {
+                "name": "stadhuizen",
+                "title": {
+                    "render": "Stadhuis {name}"
+                }
+            }
+        },
+        "shortDescription": "Postcodes",
+        "title": "Postcodes"
+    },
     "postboxes": {
+        "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
         "layers": {
             "0": {
                 "description": "Deze laag toont brievenbussen.",
@@ -1025,33 +1111,31 @@
                         "title": "een postkantoor"
                     }
                 },
-                "title": {
-                    "render": "Postkantoor"
-                },
                 "tagRenderings": {
                     "OH": {
-                        "render": "Openingsuren: {opening_hours_table()}",
-                        "question": "Wat zijn de openingsuren voor dit postkantoor?",
                         "mappings": {
                             "0": {
                                 "then": "24/7 open (ook tijdens feestdagen)"
                             }
-                        }
+                        },
+                        "question": "Wat zijn de openingsuren voor dit postkantoor?",
+                        "render": "Openingsuren: {opening_hours_table()}"
                     }
+                },
+                "title": {
+                    "render": "Postkantoor"
                 }
             }
         },
-        "title": "Brievenbussen en postkantoren",
         "shortDescription": "Een kaart die brievenbussen en postkantoren toont",
-        "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. "
+        "title": "Brievenbussen en postkantoren"
     },
     "shops": {
+        "description": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers",
         "shortDescription": "Een bewerkbare kaart met simpele informatie over winkels",
-        "title": "Winkels",
-        "description": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers"
+        "title": "Winkels"
     },
     "sidewalks": {
-        "title": "Voetpaden",
         "description": "Experimenteel thema",
         "layers": {
             "0": {
@@ -1067,7 +1151,8 @@
                 }
             }
         },
-        "shortDescription": "Voetpaden in kaart brengen"
+        "shortDescription": "Voetpaden in kaart brengen",
+        "title": "Voetpaden"
     },
     "speelplekken": {
         "description": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>",
@@ -1201,90 +1286,5 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
-    },
-    "mapcomplete-changes": {
-        "shortDescription": "Toont wijzigingen gemaakt met MapComplete",
-        "description": "Deze kaart toont alle wijzigingen die met MapComplete werden gemaakt",
-        "layers": {
-            "0": {
-                "description": "Toont alle wijzigingen met MapComplete",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themanaam bevat {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Gemaakt door bijdrager {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Niet</b> gemaakt door bijdrager {search}"
-                            }
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
-                    },
-                    "render_id": {
-                        "render": "Wijzigingset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme": {
-                        "mappings": {
-                            "0": {
-                                "then": "Wijziging met <b>officieus</b> thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-                            }
-                        },
-                        "render": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
-                    }
-                },
-                "title": {
-                    "render": "Wijzigingset voor {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Meer statistieken kunnen <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> gevonden worden"
-                        }
-                    }
-                }
-            }
-        },
-        "title": "Wijzigingen gemaakt met MapComplete"
-    },
-    "postal_codes": {
-        "shortDescription": "Postcodes",
-        "title": "Postcodes",
-        "description": "Postcodes",
-        "layers": {
-            "0": {
-                "name": "postcodes",
-                "title": {
-                    "render": "Postcode {postal_code}"
-                },
-                "tagRenderings": {
-                    "postal_code": {
-                        "render": "Deze postcode is {postal_code}"
-                    }
-                }
-            },
-            "2": {
-                "name": "stadhuizen",
-                "title": {
-                    "render": "Stadhuis {name}"
-                }
-            }
-        }
     }
 }

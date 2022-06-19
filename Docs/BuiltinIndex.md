@@ -99,6 +99,7 @@
   - shops
   - slow_roads
   - sport_pitch
+  - street_lamps
   - surveillance_camera
   - toilet
   - trail

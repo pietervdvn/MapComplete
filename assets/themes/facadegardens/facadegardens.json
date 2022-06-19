@@ -9,7 +9,8 @@
     "fr": "Facade gardens",
     "de": "Fassadengärten",
     "hu": "Homlokzati kertek",
-    "ca": "Jardins verticals"
+    "ca": "Jardins verticals",
+    "es": "Jardines de fachada"
   },
   "shortDescription": {
     "nl": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
@@ -19,7 +20,8 @@
     "it": "Questa mappa mostra i giardini verticali, con foto e informazioni utili sulla loro orientazione, sull'illuminazione solare e sui tipi di piante.",
     "fr": "Cette carte indique les murs végétalisés avec des photos et des informations comme leur orientation, l’ensoleillement et le type de plantes.",
     "de": "Diese Karte zeigt Fassadengärten mit Bildern und Details zu Ausrichtung, Sonneneinstrahlung und Pflanzen.",
-    "hu": "Ez a térkép homlokzati kerteket jelenít meg képekkel, valamint adatokkal a tájolásukról, a napsütésnek való kitettségükről és a bennük található növényzetről."
+    "hu": "Ez a térkép homlokzati kerteket jelenít meg képekkel, valamint adatokkal a tájolásukról, a napsütésnek való kitettségükről és a bennük található növényzetről.",
+    "es": "Este mapa muestra jardines de fachada con fotografías e información útil sobre la orientación, la luz del sol y los tipos de plantas."
   },
   "description": {
     "nl": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -49,7 +51,8 @@
         "de": "Fassadengärten",
         "it": "Giardini verticali",
         "hu": "Homlokzati kertek",
-        "ca": "Jardins verticals"
+        "ca": "Jardins verticals",
+        "es": "Jardines de fachada"
       },
       "minzoom": 12,
       "source": {
@@ -70,7 +73,8 @@
           "de": "Fassadengarten",
           "it": "Giardino verticale",
           "hu": "Homlokzati kert",
-          "ca": "Jardí vertical"
+          "ca": "Jardí vertical",
+          "es": "Jardín de fachada"
         }
       },
       "description": {
@@ -82,7 +86,8 @@
         "de": "Fassadengärten",
         "it": "Giardini verticali",
         "hu": "Homlokzati kertek",
-        "ca": "Jardins verticals"
+        "ca": "Jardins verticals",
+        "es": "Jardines de fachada"
       },
       "tagRenderings": [
         "images",
@@ -252,7 +257,7 @@
             "fr": "Quand le jardin a-t’il été construit ? (L’année suffit)",
             "de": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)",
             "hu": "Mikor épült a kert? (Év megadása is elegendő)",
-            "es": "¿Cuándo se construyó el jardín? (un año es suficiente)"
+            "es": "¿Cuándo se construyó el jardín? (el año es suficiente)"
           },
           "freeform": {
             "key": "start_date",
@@ -357,7 +362,8 @@
                 "it": "Ci sono arbusti",
                 "fr": "Il y a des buissons",
                 "de": "Es gibt Sträucher",
-                "hu": "Van benne cserje"
+                "hu": "Van benne cserje",
+                "es": "Hay arbustos"
               }
             },
             {
@@ -421,7 +427,8 @@
             "fr": "une jardin mural",
             "de": "eine fassadengarten",
             "hu": "homlokzatkert",
-            "ca": "un jardí vertical"
+            "ca": "un jardí vertical",
+            "es": "un jardín de fachada"
           },
           "description": {
             "nl": "Voeg geveltuintje toe",
@@ -431,7 +438,8 @@
             "fr": "Ajouter un jardin mural",
             "de": "Einen Fassadengarten hinzufügen",
             "hu": "Homlokzatkert hozzáadása",
-            "ca": "Afegeix un jardí vertical"
+            "ca": "Afegeix un jardí vertical",
+            "es": "Añadir un jardín de fachada"
           }
         }
       ],
