@@ -138,50 +138,73 @@
       "id": "hackerspaces-opening_hours"
     },
     {
-      "question": {
-        "en": "Is there a 3D printer available at this hackerspace?",
-        "nl": "Is er een 3D printer beschikbaar in deze hackerspace?"
-      },
-      "mappings": [
-          {
-            "if": "service:3dprinter=yes",
-            "then": {
-              "en": "There is a 3D printer available at this hackerspace",
-              "nl": "Er is een 3D printer beschikbaar in deze hackerspace"
-            }
-          },
-          {
-            "if": "service:3dprinter=no",
-            "then": {
-              "en": "There is no 3D printer available at this hackerspace",
-              "nl": "Er is geen 3D printer beschikbaar in deze hackerspace"
-            }
-          }
+      "rewrite": {
+        "sourceString": [
+          "device-key",
+          "{device-name}",
+          "{negative-name}"
         ],
-      "id": "hackerspaces-3dprinters"
-    },
-    {
-      "question": {
-          "en": "Is there a laser cutter available at this hackerspace?",
-          "nl": "Is er een laser cutter beschikbaar in deze hackerspace?"
-        },
-        "mappings": [
+        "into": [
+          [
+            "3dprinter",
             {
-              "if": "service:lasercutter=yes",
+              "en": "a 3D-printer",
+              "nl": "een 3D-printer"
+            },
+            {
+              "en": "3D-printer",
+              "nl": "3D-printer"
+            }
+          ],
+          [
+            "lasercutter",
+            {
+              "en": "a laser cutter",
+              "nl": "een lasercutter"
+            },
+            {
+              "en": "laser cutter",
+              "nl": "lasercutter"
+            }
+          ],
+          [
+            "cnc_drilling_machine",
+            {
+              "en": "a CNC drill",
+              "nl": "een CNC-boormachine"
+            },
+            {
+              "en": "CNC drill",
+              "nl": "CNC-boormachine"
+            }
+          ]
+        ]
+      },
+      "renderings": [
+        {
+          "question": {
+            "en": "Is {device-name} available at this hackerspace?",
+            "nl": "Is er {device-name} beschikbaar in deze hackerspace?"
+          },
+          "mappings": [
+            {
+              "if": "service:device-key=yes",
               "then": {
-                "en": "There is a laser cutter available at this hackerspace",
-                "nl": "Er is een laser cutter beschikbaar in deze hackerspace"
+                "en": "There is {device-name} available at this hackerspace",
+                "nl": "Er is {device-name} beschikbaar in deze hackerspace"
               }
             },
             {
-              "if": "service:lasercutter=no",
+              "if": "service:device-key=no",
               "then": {
-                "en": "There is no laser cutter available at this hackerspace",
-                "nl": "Er is geen laser cutter beschikbaar in deze hackerspace"
+                "en": "There is no {negative-name} available at this hackerspace",
+                "nl": "Er is geen {negative-name} beschikbaar in deze hackerspace"
               }
             }
           ],
-      "id": "hackerspaces-lasercutter"
+          "id": "hackerspaces-service-device-key"
+        }
+      ]
     },
     "reviews",
     "wheelchair-access",
