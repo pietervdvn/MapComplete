@@ -6,6 +6,7 @@ import {Utils} from "../../Utils";
 import Loc from "../../Models/Loc";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import Minimap from "../Base/Minimap";
+import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch";
 
 
 /**

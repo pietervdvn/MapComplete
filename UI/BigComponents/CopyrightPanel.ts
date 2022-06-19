@@ -1,6 +1,6 @@
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import * as licenses from "../../assets/generated/license_info.json"
 import SmallLicense from "../../Models/smallLicense";
@@ -48,7 +48,7 @@ export class OpenIdEditor extends VariableUiElement {
 
 export class OpenJosm extends Combine {
 
-    constructor(state: { osmConnection: OsmConnection, currentBounds: UIEventSource<BBox>, }, iconStyle?: string) {
+    constructor(state: { osmConnection: OsmConnection, currentBounds: Store<BBox>, }, iconStyle?: string) {
         const t = Translations.t.general.attribution
 
         const josmState = new UIEventSource<string>(undefined)
@@ -98,10 +98,10 @@ export default class CopyrightPanel extends Combine {
     constructor(state: {
         layoutToUse: LayoutConfig,
         featurePipeline: FeaturePipeline,
-        currentBounds: UIEventSource<BBox>,
+        currentBounds: Store<BBox>,
         locationControl: UIEventSource<Loc>,
         osmConnection: OsmConnection,
-        isTranslator: UIEventSource<boolean>
+        isTranslator: Store<boolean>
     }) {
 
         const t = Translations.t.general.attribution
