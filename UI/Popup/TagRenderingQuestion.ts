@@ -413,7 +413,7 @@ export default class TagRenderingQuestion extends Combine {
         const tagsData = tags.data;
         const feature = state?.allElements?.ContainingFeatures?.get(tagsData.id)
         const center = feature != undefined ? GeoOperations.centerpointCoordinates(feature) : [0,0]
-        const input: InputElement<string> = ValidatedTextField.ForType(configuration.freeform.type).ConstructInputElement({
+        const input: InputElement<string> = ValidatedTextField.ForType(configuration.freeform.type)?.ConstructInputElement({
             country: () => tagsData._country,
             location: [center[1], center[0]],
             mapBackgroundLayer: state?.backgroundLayer,
@@ -425,10 +425,10 @@ export default class TagRenderingQuestion extends Combine {
         });
         
         // Init with correct value
-        input.GetValue().setData(tagsData[freeform.key] ?? freeform.default);
+        input?.GetValue().setData(tagsData[freeform.key] ?? freeform.default);
         
         // Add a length check
-        input.GetValue().addCallbackD((v : string | undefined) => {
+        input?.GetValue().addCallbackD((v : string | undefined) => {
             if(v?.length >= 255){
                 feedback.setData(Translations.t.validation.tooLong.Subs({count: v.length}))
             }

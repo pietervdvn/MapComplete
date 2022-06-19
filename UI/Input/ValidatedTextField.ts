@@ -3,7 +3,7 @@ import * as EmailValidator from "email-validator";
 import {parsePhoneNumberFromString} from "libphonenumber-js";
 import {InputElement} from "./InputElement";
 import {TextField} from "./TextField";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import CombinedInputElement from "./CombinedInputElement";
 import SimpleDatePicker from "./SimpleDatePicker";
 import OpeningHoursInput from "../OpeningHours/OpeningHoursInput";
@@ -556,7 +556,8 @@ class LengthTextField extends TextFieldDef {
         return !isNaN(t)
     }
 
-    inputHelper = (value, options) => {
+    inputHelper = (value: UIEventSource<string>, options:
+        { location?: [number,number]; args?: string[]; feature?: any; mapBackgroundLayer?: Store<BaseLayer>; }) => {
         options = options ?? {}
         options.location = options.location ?? [0, 0]
 
@@ -590,7 +591,8 @@ class LengthTextField extends TextFieldDef {
                 location, new UIEventSource<string[]>(args[1].split(","))
             )
         }
-        const li = new LengthInput(options?.mapBackgroundLayer, location, value)
+        const background = options?.mapBackgroundLayer
+        const li = new LengthInput(new UIEventSource<BaseLayer>(background.data), location, value)
         li.SetStyle("height: 20rem;")
         return li;
     }
@@ -864,7 +866,12 @@ export default class ValidatedTextField {
     ]
     public static allTypes: Map<string, TextFieldDef> = ValidatedTextField.allTypesDict();
     public static ForType(type: string = "string"): TextFieldDef {
-        return ValidatedTextField.allTypes.get(type)
+        const def = ValidatedTextField.allTypes.get(type)
+        if(def === undefined){
+            console.warn("Something tried to load a validated text field named",type, "but this type does not exist")
+            return this.ForType()
+        }
+        return def
     }
 
     public static HelpText(): BaseUIElement {
