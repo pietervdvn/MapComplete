@@ -380,7 +380,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
     }
 
     /**
-     * const r = new DetectMappingsWithImages().convert({
+     * const r = new DetectMappingsWithImages(new Set<string>()).convert({
      *     "mappings": [
      *         {
      *             "if": "bicycle_parking=stands",
@@ -457,7 +457,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
      */
     private readonly _path?: string;
     private readonly _isBuiltin: boolean;
-    private knownImagePaths: Set<string>;
+    private knownImagePaths: Set<string> | undefined;
 
     constructor(path: string, isBuiltin: boolean, knownImagePaths: Set<string>) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer");
