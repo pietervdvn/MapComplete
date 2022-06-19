@@ -384,6 +384,26 @@
       "id": "Takeaway"
     },
     {
+      "id": "delivery",
+      "question": {
+        "en": "Delivers {title()} their food at home?"
+      },
+      "mappings": [
+        {
+          "if": "delivery=yes",
+          "then": {
+            "en": "This business does home delivery (eventually via a third party)"
+          }
+        },
+        {
+          "if": "delivery=no",
+          "then": {
+            "en": "This business does not deliver at home"
+          }
+        }
+      ]
+    },
+    {
       "question": {
         "nl": "Heeft deze eetgelegenheid een vegetarische optie?",
         "en": "Does this restaurant have a vegetarian option?",

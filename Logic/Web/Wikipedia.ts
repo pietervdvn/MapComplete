@@ -121,13 +121,14 @@ export default class Wikipedia {
      * @param searchTerm
      */
     public async searchViaIndex(searchTerm: string): Promise<{ title: string, snippet: string, url: string } []> {
-        const url = `${this.backend}/w/index.php?search=${encodeURIComponent(searchTerm)}`
+        const url = `${this.backend}/w/index.php?search=${encodeURIComponent(searchTerm)}&ns0=1`
         const result = await Utils.downloadAdvanced(url);
         if(result["redirect"] ){
+            const targetUrl = result["redirect"]
             // This is an exact match
             return [{
-                title: this.extractPageName(result["redirect"]).trim(), 
-                url: result["redirect"],
+                title: this.extractPageName(targetUrl)?.trim(), 
+                url: targetUrl,
                 snippet: ""
             }]
         }

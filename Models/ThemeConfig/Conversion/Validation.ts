@@ -321,8 +321,9 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
         for (const calculatedTagName of this._calculatedTagNames) {
             defaultProperties[calculatedTagName] = "some_calculated_tag_value_for_"+calculatedTagName
         }
-        const parsedConditions = json.mappings.map(m => {
-            const ifTags = TagUtils.Tag(m.if);
+        const parsedConditions = json.mappings.map((m,i) => {
+            const ctx = `${context}.mappings[${i}]`
+            const ifTags = TagUtils.Tag(m.if, ctx);
             if(m.hideInAnswer !== undefined && m.hideInAnswer !== false && m.hideInAnswer !== true){
                 let conditionTags = TagUtils.Tag( m.hideInAnswer)
                 // Merge the condition too!
@@ -407,7 +408,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 
             const mapping = json.mappings[i]
             const ignore = mapping["#"]?.indexOf(ignoreToken) >=0
-            const images = Utils.Dedup(Translations.T(mapping.then).ExtractImages())
+            const images = Utils.Dedup(Translations.T(mapping.then)?.ExtractImages() ?? [])
             const ctx = `${context}.mappings[${i}]`
             if (images.length > 0) {
                 if(!ignore){

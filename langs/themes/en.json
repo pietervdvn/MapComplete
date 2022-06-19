@@ -612,6 +612,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Did not yet calculate the metatags... Reopen this popup"
+                            },
+                            "1": {
+                                "then": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}"
                             }
                         }
                     }

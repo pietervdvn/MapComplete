@@ -109,7 +109,11 @@ export default class TagRenderingConfig {
             if (json.freeform.addExtraTags !== undefined && json.freeform.addExtraTags.map === undefined) {
                 throw `Freeform.addExtraTags should be a list of strings - not a single string (at ${context})`
             }
-           const type = json.freeform.type ?? "string"
+            const type = json.freeform.type ?? "string"
+            
+            if(ValidatedTextField.AvailableTypes().indexOf(type ) < 0){
+                throw "At "+context+".freeform.type is an unknown type: "+type+"; try one of "+ValidatedTextField.AvailableTypes().join(", ")
+            }
 
             let placeholder: Translation = Translations.T(json.freeform.placeholder)
             if (placeholder === undefined) {
@@ -172,15 +176,21 @@ export default class TagRenderingConfig {
             this.mappings = json.mappings.map((mapping, i) => {
 
                 const ctx = `${translationKey}.mappings.${i}`
+                if (mapping.if === undefined) {
+                    throw `${ctx}: Invalid mapping: "if" is not defined in ${JSON.stringify(mapping)}`
+                }
                 if (mapping.then === undefined) {
-                    throw `${ctx}: Invalid mapping: if without body`
+                    if(mapping["render"] !== undefined){
+                        throw `${ctx}: Invalid mapping: no 'then'-clause found. You might have typed 'render' instead of 'then', change it in ${JSON.stringify(mapping)}`
+                    }
+                    throw `${ctx}: Invalid mapping: no 'then'-clause found in ${JSON.stringify(mapping)}`
                 }
                 if (mapping.ifnot !== undefined && !this.multiAnswer) {
-                    throw `${ctx}: Invalid mapping: ifnot defined, but the tagrendering is not a multianswer`
+                    throw `${ctx}: Invalid mapping: 'ifnot' is defined, but the tagrendering is not a multianswer. Either remove ifnot or set 'multiAnswer:true' to enable checkboxes instead of radiobuttons`
                 }
 
-                if (mapping.if === undefined) {
-                    throw `${ctx}: Invalid mapping: "if" is not defined, but the tagrendering is not a multianswer`
+                if(mapping["render"] !== undefined){
+                    throw `${ctx}: Invalid mapping: a 'render'-key is present, this is probably a bug: ${JSON.stringify(mapping)}`
                 }
                 if (typeof mapping.if !== "string" && mapping.if["length"] !== undefined) {
                     throw `${ctx}: Invalid mapping: "if" is defined as an array. Use {"and": <your conditions>} or {"or": <your conditions>} instead`

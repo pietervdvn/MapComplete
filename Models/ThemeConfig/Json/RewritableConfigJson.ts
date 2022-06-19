@@ -28,7 +28,7 @@
  * 
  * [
  *   {
- *   // The first pair: key --> X, a|b|c --> 0
+ *   # The first pair: key --> X, a|b|c --> 0
  *       "X": 0
  *   },
  *   {

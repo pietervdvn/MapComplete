@@ -6,6 +6,10 @@ import FilteredLayer from "../../Models/FilteredLayer";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import Svg from "../../Svg";
 
+/**
+ * The icon with the 'plus'-sign and the preset icons spinning
+ * 
+ */
 export default class AddNewMarker extends Combine {
 
     constructor(filteredLayers: UIEventSource<FilteredLayer[]>) {

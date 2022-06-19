@@ -56,6 +56,7 @@
                 "importTags": "The element will receive {tags}",
                 "officialThemesOnly": "The import button is disabled for unofficial themes to prevent accidents",
                 "wrongType": "This element is not a point or a way and can not be imported",
+                "wrongTypeToConflate": "This element is not a point or a way and can not be conflated",
                 "zoomInMore": "Zoom in more to import this feature"
             },
             "importTags": "The element will receive {tags}",
@@ -282,13 +283,13 @@
         "isDeleted": "Deleted",
         "nearbyPictures": {
             "allFiltered": "No images matched your filter",
-            "browseNearby": "Browse nearby images...",
+            "browseNearby": "Browse nearby images…",
             "confirm": "The selected image shows {title()}",
             "hasMatchingPicture": "Does a picture match the object? Select it below",
             "loadMore": "Load more images",
-            "loading": "Loading nearby images...",
+            "loading": "Loading nearby images…",
             "noImageSelected": "Select an image to link it to the object",
-            "nothingFound": "No nearby images found...",
+            "nothingFound": "No nearby images found…",
             "onlyTowards": "Only show pictures which are taken towards this object",
             "removeFilters": "Click here to remove the filters",
             "title": "Nearby pictures",
@@ -450,16 +451,53 @@
     },
     "matrixbot": {
         "commandFailed": "Sorry, something went wrong while running <code>{cmd}</code>",
-        "commandNotFound": "I didn't understand your request. Did you perhaps mean to type {0}, {1}, {2} or ${2}? <p>Type <code>help</code> to see an overview of all commands</p>",
+        "commandNotFound": "I didn't understand your request. Did you perhaps mean to type {0}, {1}, {2} or {2}? <p>Type <code>help</code> to see an overview of all commands</p>",
         "commands": {
+            "dm": {
+                "argbody": "The actual command body of the command",
+                "argto": "The ID of whom to send the output to",
+                "commandNotFound": "Command {key} not found - see <code>help</code> for all commands",
+                "docs": "Executes a command and send the output to someone else",
+                "executing": "Executing <code>{_}</code> and sending the result to <b>{to}</b>…",
+                "failed": "I couldn't execute <code>{cmd}</code> due to {message}",
+                "noDm": "I couldn't create a room with {to}",
+                "receipt": "I delivered the message to {to}",
+                "selectValidCommand": "Specify a valid command",
+                "selectValidUser": "Specify a valid target user",
+                "sendReason": "I sent you this message because <b>{sender}</b> requested me to send this with <code>{cmd}</code>"
+            },
             "documentation": {
-                "argid": "The ID of the layer, theme or URL-parameter for which documentation is needed",
-                "docs": "Gets documentation about a mapcomplete layer, theme or URL-parameter",
-                "noIdIntro": "Give a layer id to get information about a layer. Known layers are:",
-                "noLayerFound": "No layer found with name <code>{id}</code>. Perhaps you meant one of: ",
-                "noThemeFound": "No theme found with name <code>{id}</code>. Perhaps you meant one of: ",
-                "noUrlParameterFound": "No URL-parameter found with name <code>{id}</code>. Perhaps you meant one of: ",
-                "urlParam": "URL-parameter <code>{id}<code>"
+                "argid": "The id of a {list} or {list_end} of which the docs are needed. Alternatively, write one of {coded_list} to see available ids.",
+                "didYouMean": "Did you mean",
+                "docs": "Gets documentation about a MapComplete layer, theme or URL-parameter",
+                "file": {
+                    "plural": "files",
+                    "singular": "file"
+                },
+                "inputElement": {
+                    "plural": "input elements",
+                    "singular": "input element"
+                },
+                "layer": {
+                    "plural": "layers",
+                    "singular": "layer"
+                },
+                "noIdIntro": "Give an id to get more information about a MapComplete programming related item. Known types are {list}",
+                "notFound": "No {singular} found with name <code>{id}</code>",
+                "overview": "The following {plural} exist:",
+                "theme": {
+                    "plural": "themes",
+                    "singular": "theme"
+                },
+                "urlParam": "URL-parameter <code>{id}<code>",
+                "url_parameter": {
+                    "plural": "url-parameters",
+                    "singular": "url-parameter"
+                },
+                "visualisation": {
+                    "plural": "visualisations",
+                    "singular": "visualisation"
+                }
             },
             "dream": {
                 "docs": "Sends a computer-generated text",
@@ -477,18 +515,20 @@
                 "supported": "My supported commands are:"
             },
             "info": {
+                "argsearch": "The ID of the OSM-object or a search query",
                 "closed": "Closed",
                 "closedTodayAndTomorrow": "Closed today and tomorrow",
                 "couldNotDownload": "Could not download <code>{id}</code>",
-                "editWith": "Edit this elemen with {title}",
-                "fetchingInfoAbout": "Fetching data about {id}...",
-                "foundResults": "Found {total} results for <code>${search}</code>, fetching details about them...",
+                "docs": "Gets info about an OSM-object. Either give an id OR a search string; the objects are interpreted and known values are shown.",
+                "editWith": "Edit this element with {title}",
+                "fetchingInfoAbout": "Fetching data about {id}…",
+                "foundResults": "Found {total} results for <code>{search}</code>, fetching details about them…",
                 "noEditPossible": "No MapComplete themes support this element",
                 "noInfo": "No relevant information yet",
                 "noOpeningHours": "No opening hours are known.",
                 "nothingFound": "Nothing found for <code>{_}</code>",
                 "provideSearch": "Please, provide a search term of id to use this command",
-                "searchingWorldwide": "Searhing OpenStreetMap.org for your search <code>{_}</code>"
+                "searchingWorldwide": "Searching OpenStreetMap.org for your search <code>{_}</code>"
             },
             "language": {
                 "arglang": "The language to be used from now on",
@@ -510,22 +550,63 @@
                 "noRightsNeeded": "The command <code>{role}</code> can be executed by anyone, you don't need to set rights for it",
                 "noRolesYet": "<b>{user}</b> currently has no roles.",
                 "noSuchRole": "The role <code>{role}</code> cannot be given to <code>{user}</code>. A role is the same as a command name, type <code>help</code> to see all commands.",
-                "userHasRoles": "<b>{user}</b> currently has the following roles:"
+                "userHasRoles": "<b>{user}</b> currently has the following roles:",
+                "verbadd": "Adds a role to the specified user",
+                "verbdefault": "List the roles of the user",
+                "verblist": "List all the user roles of the specified user",
+                "verbremove": "Removes a role from the specified uer",
+                "verbrevoke": "Revokes all rights of a user"
+            },
+            "scheme": {
+                "argkey": "The name of the key",
+                "docs": "Gives information about a key in a theme-config-file",
+                "noMatchingLayer": "No matching keys found, maybe you meant one of:",
+                "notype": "no type specificied",
+                "title": "{key} (used at <code>{path}</code>, {type})"
+            },
+            "search": {
+                "announceLimited": "<p><i>I'm only showing the {cutoff} items closest to the <a href='{href}' target='_blank'>searched location</a>.</i></p>",
+                "arglayerid": "The name of a layer OR a single search term",
+                "argsearch": "The search term",
+                "argverb": "Either search in a geographical area (e.g. a city) or search near a POI",
+                "docs": "Searches for POI in or near a location",
+                "noMatchingLayer": "I didn't find a matching layer",
+                "noNearOrIn": "Sorry, I didn't understand your command as I didn't find a <code>near</code> or <code>in</code> in your search query.\n Try something as <code>search drinking water in London</code>, <code>search friture in Brussels</code></p>\n <p>Alternatively, try <code>info {cmd}</code> to get info about a single object.",
+                "nothingFound": "Sorry, I couldn't find anything for <code>{search}</code>, so I can't search for {layerTitle}",
+                "overview": "I found {length} matching items.",
+                "searching": "Searching {layerTitle} {mode} <code>{search}</code>…"
             },
             "shutdown": {
                 "argmode": "Indicates if the service should be restarted, must be one of {verbs}",
                 "docs": "Shuts down the bot",
-                "goodbye": "Shutting down... See you later!",
-                "notYetShuttingDown": "I'm not restarting yet as I just booted only {uptime} seconds ago. I'll wait at least {min_uptime} before rebooting."
+                "goodbye": "Shutting down… See you later!",
+                "notYetShuttingDown": "I'm not restarting yet as I just booted only {uptime} seconds ago. I'll wait at least {min_uptime} before rebooting.",
+                "verbshutdown": "Shuts down the bot",
+                "verbupdate": "Attempts to update the embedded MapComplete-codebase, shuts down afterwards"
+            },
+            "tags": {
+                "announceSearch": "<code>{id}</code> doesn't seem to be a valid OSM-id - searching worldwide instead for {search}…",
+                "argsearch": "The ID of the OSM-object or a search query",
+                "docs": "Show the tags of an OSM-object. Either give an id OR a search string; the objects are interpreted and known values are shown.",
+                "noSearchGiven": "Please, provide a search term of id to use this command",
+                "nothingFound": "Nothing found for {_}"
             },
             "welcome": {
+                "docs": "Gives a friendly welcome message",
                 "p0": "Hi! I'm MapComplete-bot. I'm a computer program which searches OpenStreetMap and which can give some information about <a href='https://mapcomplete.osm.be'>MapComplete</a>, which is a website and app that shows thematic maps. If information is missing, you can add it easily over there.",
                 "p1": "Send me <code>info [searchterm]</code> and I'll search OpenStreetMap for you. I'll show you the information on what I found.",
                 "p2": "Alternatively, use <code>search [ojecttype] near [placename]</code> or <code>search [objecttype] in [placename]</code> to search for more places. Supported object types are those that can be found in MapComplete. More categories will be added in the future - and if you are up to the challenge, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Making_Your_Own_Theme.md'>you can create your thematic map and thus category too</a>",
                 "p3": "There are a few more commands, send <code>help</code> to see all of them."
             },
             "wiki": {
-                "docs": "Prints (a part of) the specified page from wiki.osm.org. In public rooms, it'll print the first paragraph; in a DM the entire page will be sent."
+                "argsearch": "The title of the page or the search term",
+                "docs": "Searches and prints (a part of) the specified page from {backend}. In public rooms, it'll print the first paragraph; in a DM the entire page will be sent.",
+                "foundMatching": "Found a matching wiki page, namely {title}",
+                "gotResults": "Got {count} results for search query <code>{search}</code>:",
+                "loadingFailed": "Sorry, the page <code>{pagename}</code> could not be loaded",
+                "noWiki": "Please, specify a wiki page to search for",
+                "nothingFound": "I couldn't find anything on {backend} for {search}",
+                "searching": "Searching on {backend}…"
             }
         },
         "decryptionFailed": "Sorry, I couldn't decrypt your message. You can try to leave this channel and to connect again",
@@ -625,7 +706,7 @@
         "aboutOsm": {
             "aboutOsm": {
                 "intro": "OpenStreetMap is a shared, global database, built by volunteers. All geodata can be contributed to OpenStreetMap, as long as <b>it can be verified on the ground</b>.<br/> OpenStreetMap has grown to be a very broad and deep dataset as it contains data over thousands of categories of objects.An individual object might also have a ton of attributes, bringing a lot of nuance, e.g.:",
-                "li0": "Streets have geometry, but might also have information about the maxspeed, surface, wether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and busroutes run there, …",
+                "li0": "Streets have geometry, but might also have information about the speed limit, surface, whether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and bus routes run there, …",
                 "li1": "Shops and other amenities might have opening hours, a phone number, a link to the website, which payment methods are supported, what they sell, which services they offer, …",
                 "li2": "Toilets might have information about wheelchair accessibility, a changing table, if payment is needed, …",
                 "li3": "and much, much more…",
@@ -764,6 +845,9 @@
         },
         "int": {
             "description": "a whole number"
+        },
+        "length": {
+            "description": "a length measurement in meter"
         },
         "nat": {
             "description": "a positive, whole number or zero",

@@ -4,7 +4,7 @@
         "title": "Mapa abierto de desfibriladores (DEA)"
     },
     "artwork": {
-        "description": "Bienvenido a Open Artwork Map, un mapa de estatuas, bustos, grafitis y otras obras de arte de todo el mundo"
+        "description": "Un mapa abierto de estatus, bustos, grafitis y otras obras de arte en todo el mundo"
     },
     "benches": {
         "description": "Este mapa muestra todos los bancos que están grabados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público. Con una cuenta de OpenStreetMap, puedes mapear nuevos bancos o editar detalles de bancos existentes.",
@@ -127,11 +127,60 @@
                             "1": {
                                 "then": "Este lugar no tiene sanitarios"
                             }
-                        }
+                        },
+                        "question": "¿Este lugar tiene baños?"
+                    },
+                    "caravansites-website": {
+                        "render": "Sitio web oficial: <a href='{website}'>{website}</a>",
+                        "question": "¿Este lugar tiene un sitio web?"
+                    }
+                }
+            },
+            "1": {
+                "tagRenderings": {
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "1": {
+                                "then": "Se puede utilizar gratis"
+                            },
+                            "0": {
+                                "then": "Tienes que pagar por el uso"
+                            }
+                        },
+                        "question": "¿Este lugar cobra una tasa?"
+                    },
+                    "dumpstations-charge": {
+                        "question": "¿Cuánto cobra este lugar?",
+                        "render": "Este lugar cobra {charge}"
+                    },
+                    "dumpstations-network": {
+                        "question": "¿A qué red forma parte este lugar? (saltar si a ninguna)",
+                        "render": "Esta estación forma parte de la red {network}"
                     }
                 }
             }
-        }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Este lugar tiene suministro eléctrico"
+                        },
+                        "1": {
+                            "then": "Este lugar no tiene suministro eléctrico"
+                        }
+                    },
+                    "question": "¿Tiene suministro eléctrico este lugar?"
+                },
+                "0": {
+                    "render": "Este lugar lo opera {operator}",
+                    "question": "¿Quién opera este lugar?"
+                }
+            }
+        },
+        "shortDescription": "Encuentra sitios para pasar la noche con tu caravana",
+        "title": "Campings"
     },
     "cycle_infra": {
         "description": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista. Hecho durante #osoc21.",
@@ -162,7 +211,8 @@
                 "name": "nodos",
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
-                        "question": "¿A cuántos otros nodos ciclistas enlaza este nodo?"
+                        "question": "¿A cuántos otros nodos ciclistas enlaza este nodo?",
+                        "render": "Este nodo enlaza a {expected_rcn_route_relations} otros nodos ciclistas."
                     },
                     "node-survey:date": {
                         "question": "¿Cuándo fue sondeado este nodo ciclista por última vez?",
@@ -228,7 +278,8 @@
             }
         },
         "shortDescription": "Un mapa de ciclocalles",
-        "title": "Ciclocalles"
+        "title": "Ciclocalles",
+        "description": "Una ciclocalle es una calle donde <b>el tráfico motorizado no puede adelantar a ciclistas</b>. Están señalizadas por una señal de tráfico especial. Las ciclocalles se pueden encontrar en los Países Bajos y Bélgica, pero también en Alemania y Francia. "
     },
     "cyclofix": {
         "description": "El objetivo de este mapa es presentar a los ciclistas con una solución fácil de utilizar para encontrar la infraestructura apropiada para sus necesidades. <br><br>Puedes seguir tu localización precisa (móvil solo) y seleccionar las capas que son relevantes para ti en la esquina inferior izquierda. Tgambién puedes utilizar esta herramienta para editar o añadir pines (puntos de interés) al mapa y proveer más datos respondiendo a preguntas.<br><br>Todos los cambios que hagas se guardarán de manera automática en la base de datos global de OpenStreetMap y podrán ser utilizados libremente por otros. <br><br>Para más información sobre el proyecto cyclofix, ve a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
@@ -244,7 +295,39 @@
         "title": "Entradas"
     },
     "etymology": {
-        "shortDescription": "¿Cual es el origen de un topónimo?"
+        "shortDescription": "¿Cual es el origen de un topónimo?",
+        "layers": {
+            "1": {
+                "override": {
+                    "=name": "Calles sin información etimológica"
+                }
+            },
+            "2": {
+                "override": {
+                    "=name": "Parques y bosques sin información etimológica"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Instituciones educacionales sin información etimológica"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Lugares deportivos sin información etimológica"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Lugares turísticos sin información etimológica"
+                }
+            },
+            "4": {
+                "override": {
+                    "=name": "Lugares culturales sin información etimológica"
+                }
+            }
+        }
     },
     "facadegardens": {
         "layers": {
@@ -270,10 +353,15 @@
                         "question": "¿Hay alguna planta comestible?"
                     },
                     "facadegardens-plants": {
-                        "question": "¿Qué tipo de plantas crecen aquí?"
+                        "question": "¿Qué tipo de plantas crecen aquí?",
+                        "mappings": {
+                            "2": {
+                                "then": "Hay arbustos"
+                            }
+                        }
                     },
                     "facadegardens-start_date": {
-                        "question": "¿Cuándo se construyó el jardín? (un año es suficiente)",
+                        "question": "¿Cuándo se construyó el jardín? (el año es suficiente)",
                         "render": "Fecha de construcción del jardín: {start_date}"
                     },
                     "facadegardens-sunshine": {
@@ -290,9 +378,22 @@
                         },
                         "question": "¿El jardín está al sol o a la sombra?"
                     }
+                },
+                "title": {
+                    "render": "Jardín de fachada"
+                },
+                "description": "Jardines de fachada",
+                "name": "Jardines de fachada",
+                "presets": {
+                    "0": {
+                        "description": "Añadir un jardín de fachada",
+                        "title": "un jardín de fachada"
+                    }
                 }
             }
-        }
+        },
+        "title": "Jardines de fachada",
+        "shortDescription": "Este mapa muestra jardines de fachada con fotografías e información útil sobre la orientación, la luz del sol y los tipos de plantas."
     },
     "food": {
         "description": "Restaurantes y comida rápida",
@@ -313,9 +414,9 @@
         }
     },
     "hailhydrant": {
-        "description": "",
-        "shortDescription": "Mapa para mostrar hidrantes, extintores, parques de bomberos y parques de ambulancias.",
-        "title": "Hidrantes, Extintores, Parques de bomberos y Parques de ambulancias"
+        "description": "En este mapa puedes encontrar y actualizar bocas de incendios, parques de bomberos, parques de ambulancias y extintores en tus vecindarios favoritos.\n\nPuedes rastrear tu localización precisa (solo móvil) y seleccionar las capas que son relevantes para ti en la esquina inferior izquierda. También puedes utilizar esta herramienta para añadir o editar pines (puntos de interés) al mapa y proveer detalles adicionales contestando a preguntas disponibles.\n\nTodos los cambios que hagas se guardarán automáticamente en la base de datos global de OpenStreetMap y podrán ser reutilizados libremente por otros.",
+        "shortDescription": "Mapa para mostrar bocas de incendios, extintores, parques de bomberos y parques de ambulancias.",
+        "title": "Bocas de incendios, Extintores, Parques de bomberos y Parques de ambulancias"
     },
     "mapcomplete-changes": {
         "description": "Este mapa muestra todos los cambios hechos con MapComplete",
@@ -336,6 +437,13 @@
                                 "question": "<b>No</b> hecho por contributor/a {search}"
                             }
                         }
+                    },
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Nombre del tema contiene {search}"
+                            }
+                        }
                     }
                 },
                 "name": "Centros de conjuntos de cambios",
@@ -345,6 +453,14 @@
                     },
                     "render_id": {
                         "render": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Cambio con tema <b>no oficial</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Cambio con tema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
                     }
                 },
                 "title": {
@@ -365,7 +481,7 @@
         "title": "Cambios hechos con MapComplete"
     },
     "maps": {
-        "description": "En este mapa puedes encontrar todos los mapas que OpenStreetMap conoce - típicamente un mapa grande con un tablero que muestra el área, la ciudad o la región, ej. un mapa turista detrás de una vaya publicitaria, un mapa de una reserva natura, un mapa de redes ciclistas en la región, ...)<br/><br/>Si falta un mapa, puedes mapear este mapa fácilmente en OpenStreetMap.",
+        "description": "En este mapa puedes encontrar todos los mapas que OpenStreetMap conoce - típicamente un mapa grande con un tablero que muestra el área, la ciudad o la región, ej. un mapa turista detrás de una vaya publicitaria, un mapa de una reserva natural, un mapa de redes ciclistas en la región, ...)<br/><br/>Si falta un mapa, puedes mapear este mapa fácilmente en OpenStreetMap.",
         "shortDescription": "Este tema muestra todos los mapas (turísticos) que OpenStreetMap conoce",
         "title": "Un mapa de mapas"
     },
@@ -547,5 +663,83 @@
         "description": "Mapa de todos los Árboles",
         "shortDescription": "Mapa de los Árboles",
         "title": "Árboles"
+    },
+    "charging_stations": {
+        "description": "En este mapa, uno puede encontrar y marcar información sobre estaciones de carga",
+        "title": "Estaciones de carga",
+        "shortDescription": "Un mapa mundial de estaciones de carga"
+    },
+    "grb": {
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "¿Qué tipo de edificio es este?"
+                    }
+                }
+            },
+            "6": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "1": {
+                                "then": "Este edificio tiene agujeros y está modelado como una relación. Por lo tanto, no se puede combinar. Combínalo manualmente a través <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "climbing": {
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Accesible públicamente a cualquiera"
+                                },
+                                "2": {
+                                    "then": "Solo clientes"
+                                },
+                                "1": {
+                                    "then": "Necesitas un permiso para acceder aquí"
+                                },
+                                "3": {
+                                    "then": "Solo miembros del club"
+                                }
+                            },
+                            "question": "¿Quién puede acceder aquí?"
+                        }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "1": {
+                                    "human": " pies"
+                                },
+                                "0": {
+                                    "human": " metro"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "cycle_highways": {
+        "description": "Este mapa muestra carriles bici",
+        "layers": {
+            "0": {
+                "name": "carriles bici",
+                "title": {
+                    "render": "carril bici"
+                }
+            }
+        },
+        "title": "Carriles bici"
     }
 }

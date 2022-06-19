@@ -547,7 +547,7 @@ class LengthTextField extends TextFieldDef {
 
     constructor() {
         super(
-            "decimal", "A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]"
+            "length", "A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]"
         )
     }
 
@@ -734,6 +734,7 @@ class EmailTextField extends TextFieldDef {
         if (str === undefined) {
             return false
         }
+        str = str.trim()
         if (str.startsWith("mailto:")) {
             str = str.substring("mailto:".length)
         }
@@ -744,6 +745,7 @@ class EmailTextField extends TextFieldDef {
         if (str === undefined) {
             return undefined
         }
+        str = str.trim()
         if (str.startsWith("mailto:")) {
             str = str.substring("mailto:".length)
         }

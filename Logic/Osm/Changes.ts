@@ -222,6 +222,11 @@ export class Changes {
         }
 
         console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
+        if(pending.length == 0){
+            console.log("No pending changes...")
+            return true;
+        }
+        
         const perType = Array.from(
             Utils.Hist(pending.filter(descr => descr.meta.changeType !== undefined && descr.meta.changeType !== null)
                 .map(descr => descr.meta.changeType)), ([key, count]) => (

@@ -4,7 +4,8 @@ import {Utils} from "../../../Utils";
 
 export interface DesugaringContext {
     tagRenderings: Map<string, TagRenderingConfigJson>
-    sharedLayers: Map<string, LayerConfigJson>
+    sharedLayers: Map<string, LayerConfigJson>,
+    publicLayers?: Set<string>
 }
 
 export abstract class Conversion<TIn, TOut> {
@@ -226,7 +227,7 @@ export class Fuse<T> extends DesugaringStep<T> {
                     break;
                 }
             }catch(e){
-                console.error("Step "+step.name+" failed due to "+e);
+                console.error("Step "+step.name+" failed due to ",e,e.stack);
                 throw e
             }
         }

@@ -26,9 +26,7 @@ export default class Title extends BaseUIElement {
         } else if (embedded instanceof FixedUiElement) {
             innerText = embedded.content
         } else {
-            if (Utils.runningFromConsole) {
-                console.log("Not constructing an anchor for title with embedded content of " + embedded)
-            } else {
+            if (!Utils.runningFromConsole) {
                 innerText = embedded.ConstructElement()?.innerText
             }
         }

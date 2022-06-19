@@ -261,7 +261,8 @@
             "en": "What is the sub-unit for this address? <div class='subtle'>Some named building or large complexes are split into sub-units (e.g. \"1\", \"Flat 2\", \"Unit C\")</div>"
           },
           "freeform": {
-            "key": "addr:unit"
+            "key": "addr:unit",
+            "addExtraTags": ["not:addr:unit="]
           },
           "mappings": [
             {
@@ -390,7 +391,8 @@
           "freeform": {
             "key": "addr:substreet",
             "addExtraTags": [
-              "addr:street="
+              "addr:street=",
+              "not:addr:substreet="
             ]
           },
           "mappings": [
@@ -469,7 +471,8 @@
             "en": "What is the parent street name for this address?<div class='subtle'>This street name will appear after the place name or first street name in the address</div>"
           },
           "freeform": {
-            "key": "addr:parentstreet"
+            "key": "addr:parentstreet",
+            "addExtraTags": ["not:addr:parentstreet="]
           },
           "mappings": [
             {

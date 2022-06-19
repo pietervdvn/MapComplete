@@ -499,6 +499,19 @@
               }
             },
             {
+              "if": {
+                "and": [
+                  "id~relation/*",
+                  "_overlap_percentage>50",
+                  "_reverse_overlap_percentage>50",
+                  "_overlaps_with!="
+                ]
+              },
+              "then": {
+                "en": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}"
+              }
+            },
+            {
               "#": "Actually the same as below, except that the text shows 'add the address' too",
               "if": {
                 "and": [
