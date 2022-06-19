@@ -118,7 +118,8 @@
             "id": "Bangunan ini tidak memiliki nomor rumah",
             "es": "Esta edificación no tiene número",
             "zh_Hans": "这个建筑物没有门牌号",
-            "da": "Denne bygning har intet husnummer"
+            "da": "Denne bygning har intet husnummer",
+            "zh_Hant": "這棟建築沒有門牌"
           }
         }
       ]

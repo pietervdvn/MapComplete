@@ -1,8 +1,8 @@
 {
   "id": "cafe_pub",
   "name": {
-    "nl": "Cafés en nachtclubs",
-    "en": "Cafés, pubs and nightclubs",
+    "nl": "Cafés",
+    "en": "Cafés and pubs",
     "de": "Cafés und Kneipen",
     "fr": "Cafés et pubs",
     "zh_Hant": "咖啡廳與酒吧",
@@ -154,8 +154,8 @@
         "es": "¿Cual es el nombre de este pub?"
       },
       "render": {
-        "nl": "De naam van deze zaak is {name}",
-        "en": "This place is named {name}",
+        "nl": "De naam van dit café is {name}",
+        "en": "This pub is named {name}",
         "de": "Diese Kneipe heißt {name}",
         "fr": "Ce pub se nomme {name}",
         "hu": "A kocsma neve: {name}",
@@ -232,7 +232,6 @@
           "then": {
             "en": "This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
             "nl": "Dit is een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen"
-
           }
         }
       ],
@@ -325,9 +324,9 @@
     }
   ],
   "description": {
-    "en": "A layer showing cafés, pubs, biergartens and nightclubs where one can gather around a drink. The layer asks for some relevant questions",
+    "en": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
     "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
-    "nl": "Een laag die kroegen, koffiehuizen, biergartens en nachtclubs toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
+    "nl": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
     "de": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
     "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa hace algunas preguntas relevantes",
     "da": "Et lag med caféer og pubber, hvor man kan samles omkring en drink. Laget stiller nogle relevante spørgsmål"

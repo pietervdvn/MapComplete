@@ -1274,6 +1274,10 @@
             "2": {
                 "description": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
                 "title": "a cafe"
+            },
+            "3": {
+                "description": "A <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
+                "title": "a nightclub or disco"
             }
         },
         "tagRenderings": {
@@ -1293,6 +1297,9 @@
                     },
                     "4": {
                         "then": "An open space where beer is served, typically seen in Germany"
+                    },
+                    "5": {
+                        "then": "This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks"
                     }
                 },
                 "question": "What kind of cafe is this?"

@@ -21,6 +21,7 @@
     + [bicycle_rental.*bicycle_rental](#bicycle_rental*bicycle_rental)
     + [bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaningbike_cleaning-service:bicycle:cleaning:charge)
     + [wheelchair-access](#wheelchair-access)
+    + [smoking](#smoking)
     + [service:electricity](#serviceelectricity)
     + [dog-access](#dog-access)
     + [climbing.website](#climbingwebsite)
@@ -283,6 +284,17 @@
   - food
   - hackerspace
   - observation_tower
+
+
+
+
+### smoking 
+
+
+
+
+
+  - cafe_pub
 
 
 

@@ -31,6 +31,11 @@
       "value": "biergarten"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Cafés and pubs has a layer Cafés and pubs showing features with this tag",
+      "value": "nightclub"
+    },
+    {
       "key": "image",
       "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -74,6 +79,11 @@
       "key": "amenity",
       "description": "Layer 'Cafés and pubs' shows amenity=biergarten with a fixed text, namely 'An open space where beer is served, typically seen in Germany' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "biergarten"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Cafés and pubs' shows amenity=nightclub with a fixed text, namely 'This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "nightclub"
     },
     {
       "key": "opening_hours",
@@ -132,6 +142,21 @@
       "key": "wheelchair",
       "description": "Layer 'Cafés and pubs' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Cafés and pubs' shows smoking=yes with a fixed text, namely 'Smoking is <b>allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "yes"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Cafés and pubs' shows smoking=no with a fixed text, namely 'Smoking is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Cafés and pubs' shows smoking=outside with a fixed text, namely 'Smoking is <b>allowed outside</b>.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "outside"
     },
     {
       "key": "service:electricity",
