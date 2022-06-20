@@ -5,6 +5,7 @@
       "phonelink",
       "emaillink",
       "wikipedialink",
+      "smokingicon",
       "osmlink",
       "sharelink"
     ],
@@ -20,6 +21,7 @@
     },
     "mappings": [
       {
+        "#": "ignore-image-in-then",
         "if": "wikipedia=",
         "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
       }
@@ -59,12 +61,26 @@
     ]
   },
   "phonelink": {
-    "render": "<a href='tel:{phone}'><img textmode='\uD83D\uDCDE' alt='phone' src='./assets/svg/phone.svg'/></a>",
+    "render": "<a href='tel:{phone}'><img textmode='\uD83D\uDCDE' alt='phone' src='./assets/tagRenderings/phone.svg'/></a>",
     "condition": "phone~*"
   },
   "emaillink": {
-    "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/svg/send_email.svg'/></a>",
+    "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/tagRenderings/send_email.svg'/></a>",
     "condition": "email~*"
+  },
+  "smokingicon": {
+    "mappings": [
+      {
+        "#": "ignore-image-in-then",
+        "if": "smoking=no",
+        "then": "<img textmode='\uD83D\uDEAD️' alt='no-smoking' src='./assets/tagRenderings/no_smoking.svg'/>"
+      },
+      {
+        "#": "ignore-image-in-then",
+        "if": "smoking=yes",
+        "then": "<img textmode='\uD83D\uDEAC️' alt='smoking-allowed' src='./assets/tagRenderings/smoking.svg'/>"
+      }
+    ]
   },
   "osmlink": {
     "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img alt='on osm' textmode='\uD83D\uDDFA️' src='./assets/svg/osm-logo-us.svg'/></a>",
@@ -74,6 +90,7 @@
         "then": ""
       },
       {
+        "#": "ignore-image-in-then",
         "if": "_backend~*",
         "then": "<a href='{_backend}/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>"
       }

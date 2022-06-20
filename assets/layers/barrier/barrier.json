@@ -373,7 +373,7 @@
       },
       "freeform": {
         "key": "maxwidth:physical",
-        "type": "length",
+        "type": "distance",
         "helperArgs": [
           "20",
           "map"
@@ -406,7 +406,7 @@
       },
       "freeform": {
         "key": "width:separation",
-        "type": "length",
+        "type": "distance",
         "helperArgs": [
           "21",
           "map"
@@ -440,7 +440,7 @@
       },
       "freeform": {
         "key": "width:opening",
-        "type": "length",
+        "type": "distance",
         "helperArgs": [
           "21",
           "map"
@@ -474,7 +474,7 @@
       },
       "freeform": {
         "key": "overlap",
-        "type": "length",
+        "type": "distance",
         "helperArgs": [
           "21",
           "map"

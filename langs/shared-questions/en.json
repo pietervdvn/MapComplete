@@ -91,6 +91,20 @@
             },
             "question": "Does this amenity have electrical outlets, available to customers when they are inside?"
         },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Smoking is <b>allowed</b>"
+                },
+                "1": {
+                    "then": "Smoking is <b>not allowed</b>"
+                },
+                "2": {
+                    "then": "Smoking is <b>allowed outside</b>."
+                }
+            },
+            "question": "Is smoking allowed at {title()}?"
+        },
         "website": {
             "question": "What is the website of {title()}?"
         },

@@ -126,7 +126,7 @@
               "condition": "sidewalk:left|right=yes",
               "freeform": {
                 "key": "sidewalk:left|right:width",
-                "type": "length",
+                "type": "distance",
                 "helperArgs": [
                   "21",
                   "map"

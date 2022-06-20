@@ -456,8 +456,10 @@
                 "sendReason": "Ich habe Ihnen diese Nachricht geschickt, weil <b>{sender}</b> mich gebeten hat, diese mit <code>{cmd}</code> zu senden"
             },
             "documentation": {
+                "argid": "Die ID einer {list} oder {list_end}, für welche die Dokumente benötigt werden. Alternativ können Sie auch eine von {coded_list} schreiben, um die verfügbaren IDs zu sehen.",
                 "didYouMean": " Vielleicht meinten Sie einen von: ",
                 "docs": "Ruft die Dokumentation zu einer MapComplete-Ebene, einem Thema oder einem URL-Parameter ab",
+                "noIdIntro": "Geben Sie eine ID an, um weitere Informationen über ein MapComplete-Programmierelement zu erhalten. Bekannte Typen sind {list}",
                 "notFound": "Kein {singular} mit Namen <code>{id}</code> gefunden.",
                 "urlParam": "URL-Parameter <code>{id}<code></code></code>"
             },
@@ -752,9 +754,6 @@
         },
         "date": {
             "description": "Ein Datum, beginnend mit der Jahreszahl"
-        },
-        "decimal": {
-            "description": "Eine Zahl"
         },
         "direction": {
             "description": "Eine Himmelsrichtung"

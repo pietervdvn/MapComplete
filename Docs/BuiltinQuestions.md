@@ -33,11 +33,13 @@ The following items can be easily reused in your layers
     + [last_edit](#last_edit)
     + [all_tags](#all_tags)
     + [level](#level)
+    + [smoking](#smoking)
     + [default](#default)
     + [defaults](#defaults)
     + [isOpen](#isopen)
     + [phonelink](#phonelink)
     + [emaillink](#emaillink)
+    + [smokingicon](#smokingicon)
     + [sharelink](#sharelink)
 
 
@@ -341,6 +343,21 @@ On what level is this feature located?
 
 
 
+### smoking 
+
+
+
+Is smoking allowed at {title()}?
+
+
+
+  - Smoking is <b>allowed</b>
+  - Smoking is <b>not allowed</b>
+  - Smoking is <b>allowed outside</b>.
+
+
+
+
 ### default 
 
 
@@ -377,7 +394,7 @@ Read-only tagrendering
 
 
 
-<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/svg/phone.svg'/></a>
+<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/tagRenderings/phone.svg'/></a>
 
 Read-only tagrendering
 
@@ -387,9 +404,23 @@ Read-only tagrendering
 
 
 
-<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/svg/send_email.svg'/></a>
+<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/tagRenderings/send_email.svg'/></a>
 
 Read-only tagrendering
+
+
+
+### smokingicon 
+
+
+
+Read-only tagrendering
+
+
+
+  - <img textmode='🚭️' alt='no-smoking' src='./assets/tagRenderings/no_smoking.svg'/>
+  - <img textmode='🚬️' alt='smoking-allowed' src='./assets/tagRenderings/smoking.svg'/>
+
 
 
 

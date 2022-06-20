@@ -1280,6 +1280,10 @@
             "2": {
                 "description": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
                 "title": "een café"
+            },
+            "3": {
+                "description": "Een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen",
+                "title": "een nachtclub of disco"
             }
         },
         "tagRenderings": {
@@ -1299,6 +1303,9 @@
                     },
                     "4": {
                         "then": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland"
+                    },
+                    "5": {
+                        "then": "Dit is een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen"
                     }
                 },
                 "question": "Welk soort café is dit?"
