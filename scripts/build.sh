@@ -24,6 +24,7 @@ fi
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
+cp -r assets/tagRenderings/ dist/assets/tagRenderings/
 cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/
 cp assets/generated/*.png dist/assets/generated/
