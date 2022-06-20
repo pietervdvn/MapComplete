@@ -1274,6 +1274,10 @@
             "2": {
                 "description": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
                 "title": "ein Café"
+            },
+            "3": {
+                "title": "einen Club oder eine Diskothek",
+                "description": "Ein <b>Club</b> oder eine Diskothek mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt"
             }
         },
         "tagRenderings": {
@@ -1293,6 +1297,9 @@
                     },
                     "4": {
                         "then": "Ein Außenbereich mit Bierausschank, typischerweise in Deutschland"
+                    },
+                    "5": {
+                        "then": "Dies ist ein <b>Club</b> oder eine Disco mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt"
                     }
                 },
                 "question": "Was ist das für ein Café?"
@@ -3792,6 +3799,17 @@
                     }
                 },
                 "question": "Werden hier halal Gerichte angeboten?"
+            },
+            "delivery": {
+                "mappings": {
+                    "1": {
+                        "then": "Dieses Unternehmen liefert nicht nach Hause"
+                    },
+                    "0": {
+                        "then": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)"
+                    }
+                },
+                "question": "Liefert {title()} ihr Essen nach Hause?"
             }
         },
         "title": {
@@ -4435,6 +4453,9 @@
                     },
                     "4": {
                         "then": "Der Spielplatz ist nicht öffentlich zugänglich"
+                    },
+                    "5": {
+                        "then": "Dies ist ein Schulhof - ein Außenbereich, auf dem die Schüler in den Pausen spielen können; er ist jedoch für die Öffentlichkeit nicht zugänglich"
                     }
                 },
                 "question": "Ist der Spielplatz öffentlich zugänglich?"
@@ -4519,6 +4540,13 @@
                 }
             },
             "render": "Spielplatz"
+        },
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dies ist ein Schulhof - ein (Außen-)Bereich, auf dem die Schüler einer Schule in den Pausen spielen können und der nicht öffentlich zugänglich ist"
+                }
+            }
         }
     },
     "public_bookcase": {
