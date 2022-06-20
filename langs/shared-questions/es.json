@@ -129,6 +129,20 @@
                 }
             },
             "question": "¿Cual es el ítem correspondiente en Wikipedia?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Está <b>permitido</b> fumar"
+                },
+                "1": {
+                    "then": "<b>No</b> está permitido fumar"
+                },
+                "2": {
+                    "then": "Está permitido fumar <b>en el exterior</b>."
+                }
+            },
+            "question": "¿Está permitido fumar en {title()}?"
         }
     }
 }
