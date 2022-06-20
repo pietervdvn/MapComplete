@@ -112,7 +112,7 @@ class MassAction extends Combine {
                     predicate: p => p.status === "open",
                     action: async p => {
                         const txt = textField.GetValue().data
-                        state.osmConnection.addCommentToNode(p.id, txt)
+                        state.osmConnection.addCommentToNote(p.id, txt)
                     }
                 },
                 shown: "Add comment to every open note"

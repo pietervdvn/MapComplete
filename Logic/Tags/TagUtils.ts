@@ -216,19 +216,11 @@ export class TagUtils {
      *
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 4}) // => true
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 5}) // => false
-<<<<<<< HEAD
      * 
      * // RegexTags must match values with newlines
      * TagUtils.Tag("note~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De aed bevindt zich op de 5de verdieping"}) // => true
      * TagUtils.Tag("note~i~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De AED bevindt zich op de 5de verdieping"}) // => true
-     * 
-=======
      *
-     * // RegexTags must match values with newlines
-     * TagUtils.Tag("note~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De aed bevindt zich op de 5de verdieping"}) // => true
-     * TagUtils.Tag("note~i~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De AED bevindt zich op de 5de verdieping"}) // => true
-     *
->>>>>>> master
      * // Must match case insensitive
      * TagUtils.Tag("name~i~somename").matchesProperties({name: "SoMeName"}) // => true
      */

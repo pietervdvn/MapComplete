@@ -314,7 +314,7 @@ export class OsmConnection {
 
     }
     
-    public addCommentToNode(id: number | string, text: string): Promise<void> {
+    public addCommentToNote(id: number | string, text: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)
             return new Promise((ok) => {

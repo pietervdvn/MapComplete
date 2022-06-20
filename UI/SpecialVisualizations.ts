@@ -949,7 +949,7 @@ export default class SpecialVisualizations {
                                     await state.osmConnection.reopenNote(id, txt.data)
                                     await state.osmConnection.closeNote(id)
                                 } else {
-                                    await state.osmConnection.addCommentToNode(id, txt.data)
+                                    await state.osmConnection.addCommentToNote(id, txt.data)
                                 }
                                 NoteCommentElement.addCommentTo(txt.data, tags, state)
                                 txt.setData("")
@@ -1045,7 +1045,7 @@ export default class SpecialVisualizations {
 
                         const uploader = new ImgurUploader(url => {
                             isUploading.setData(false)
-                            state.osmConnection.addCommentToNode(id, url)
+                            state.osmConnection.addCommentToNote(id, url)
                             NoteCommentElement.addCommentTo(url, tags, state)
 
                         })
