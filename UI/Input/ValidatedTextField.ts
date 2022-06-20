@@ -546,7 +546,7 @@ class LengthTextField extends TextFieldDef {
 
     constructor() {
         super(
-            "length", "A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]"
+            "distance", "A geographical distance in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]"
         )
     }
 

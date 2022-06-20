@@ -6,7 +6,7 @@ import CompiledTranslations from "../../assets/generated/CompiledTranslations";
 
 export default class Translations {
 
-    static t = CompiledTranslations.t;
+    static readonly t : typeof CompiledTranslations.t & Readonly<typeof CompiledTranslations.t> = CompiledTranslations.t;
     private static knownLanguages = new Set(known_languages.languages)
     constructor() {
         throw "Translations is static. If you want to intitialize a new translation, use the singular form"

@@ -480,9 +480,6 @@
         "date": {
             "description": "En dato, som starter med året"
         },
-        "decimal": {
-            "description": "Et tall"
-        },
         "direction": {
             "description": "En retning"
         },

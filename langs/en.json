@@ -827,11 +827,11 @@
         "date": {
             "description": "A date, starting with the year"
         },
-        "decimal": {
-            "description": "A number"
-        },
         "direction": {
             "description": "An orientation"
+        },
+        "distance": {
+            "description": "A distance in meter"
         },
         "email": {
             "description": "email-adres",
@@ -844,9 +844,6 @@
         },
         "int": {
             "description": "a whole number"
-        },
-        "length": {
-            "description": "a length measurement in meter"
         },
         "nat": {
             "description": "a positive, whole number or zero",

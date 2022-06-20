@@ -338,7 +338,7 @@
       },
       "freeform": {
         "key": "width",
-        "type": "length"
+        "type": "distance"
       }
     }
   ],

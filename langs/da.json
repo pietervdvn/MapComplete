@@ -634,9 +634,6 @@
         "date": {
             "description": "En dato, der starter med årstallet"
         },
-        "decimal": {
-            "description": "Et tal"
-        },
         "direction": {
             "description": "En retning"
         },

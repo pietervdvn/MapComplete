@@ -753,11 +753,11 @@
         "date": {
             "description": "Een datum (beginnend met het jaar)"
         },
-        "decimal": {
-            "description": "Een getal"
-        },
         "direction": {
             "description": "Een orientatie"
+        },
+        "distance": {
+            "description": "Een afstand in meter"
         },
         "email": {
             "description": "email-adres",

@@ -144,9 +144,6 @@
         "date": {
             "description": "Tanggal, dimulai dari tahun"
         },
-        "decimal": {
-            "description": "Nomor"
-        },
         "direction": {
             "description": "Orientasi"
         },

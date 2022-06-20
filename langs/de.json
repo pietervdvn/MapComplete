@@ -755,9 +755,6 @@
         "date": {
             "description": "Ein Datum, beginnend mit der Jahreszahl"
         },
-        "decimal": {
-            "description": "Eine Zahl"
-        },
         "direction": {
             "description": "Eine Himmelsrichtung"
         },

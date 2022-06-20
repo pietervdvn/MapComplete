@@ -516,9 +516,6 @@
         "deactivate": "Deshabilitar los botones de traducción"
     },
     "validation": {
-        "decimal": {
-            "description": "Un número"
-        },
         "direction": {
             "description": "Una orientación"
         },
