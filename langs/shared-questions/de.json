@@ -129,6 +129,20 @@
                 }
             },
             "question": "Wie lautet der zugehörige Wikipedia Artikel?"
+        },
+        "smoking": {
+            "mappings": {
+                "1": {
+                    "then": "Rauchen ist <b>nicht erlaubt</b>"
+                },
+                "0": {
+                    "then": "Rauchen ist <b>erlaubt</b>"
+                },
+                "2": {
+                    "then": "Rauchen ist <b> draußen erlaubt</b>."
+                }
+            },
+            "question": "Ist das Rauchen in {title()} erlaubt?"
         }
     }
 }
