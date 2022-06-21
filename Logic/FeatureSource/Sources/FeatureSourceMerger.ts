@@ -1,12 +1,9 @@
-/**
- * Merges features from different featureSources for a single layer
- * Uses the freshest feature available in the case multiple sources offer data with the same identifier
- */
 import {UIEventSource} from "../../UIEventSource";
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
+
 
 export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled, IndexedFeatureSource {
 
@@ -17,7 +14,10 @@ export default class FeatureSourceMerger implements FeatureSourceForLayer, Tiled
     public readonly bbox: BBox;
     public readonly containedIds: UIEventSource<Set<string>> = new UIEventSource<Set<string>>(new Set())
     private readonly _sources: UIEventSource<FeatureSource[]>;
-
+    /**
+     * Merges features from different featureSources for a single layer
+     * Uses the freshest feature available in the case multiple sources offer data with the same identifier
+     */
     constructor(layer: FilteredLayer, tileIndex: number, bbox: BBox, sources: UIEventSource<FeatureSource[]>) {
         this.tileIndex = tileIndex;
         this.bbox = bbox;
