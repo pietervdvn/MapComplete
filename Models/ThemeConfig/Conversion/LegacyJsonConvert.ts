@@ -100,7 +100,7 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
 
-        for (const mapRenderingElement of config.mapRendering) {
+        for (const mapRenderingElement of (config.mapRendering ?? [])) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {
                 mapRenderingElement["iconBadges"] = mapRenderingElement["iconOverlays"]
             }

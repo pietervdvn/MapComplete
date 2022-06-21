@@ -10,6 +10,9 @@ import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
 import {isRegExp} from "util";
 import * as key_counts from "../../assets/key_totals.json"
 
+type Tags = Record<string, string>
+type OsmTags = Tags & {id: string}
+
 export class TagUtils {
     private static keyCounts: { keys: any, tags: any } = key_counts["default"] ?? key_counts
     private static comparators
@@ -56,11 +59,17 @@ export class TagUtils {
         return true;
     }
 
+    static SplitKeys(tagsFilters: TagsFilter[]): Record<string, string[]> {
+        return <any>this.SplitKeysRegex(tagsFilters, false);
+    }
+
     /***
      * Creates a hash {key --> [values : string | RegexTag ]}, with all the values present in the tagsfilter
+     *
+     * TagUtils.SplitKeysRegex([new Tag("isced:level", "bachelor; master")], true) // => {"isced:level": ["bachelor","master"]}
      */
-    static SplitKeys(tagsFilters: TagsFilter[], allowRegex = false) {
-        const keyValues = {} // Map string -> (string | RegexTag)[]
+    static SplitKeysRegex(tagsFilters: TagsFilter[], allowRegex: boolean): Record<string, (string | RegexTag)[]> {
+        const keyValues: Record<string, (string | RegexTag)[]> = {}
         tagsFilters = [...tagsFilters] // copy all, use as queue
         while (tagsFilters.length > 0) {
             const tagsFilter = tagsFilters.shift();
@@ -78,7 +87,7 @@ export class TagUtils {
                 if (keyValues[tagsFilter.key] === undefined) {
                     keyValues[tagsFilter.key] = [];
                 }
-                keyValues[tagsFilter.key].push(...tagsFilter.value.split(";"));
+                keyValues[tagsFilter.key].push(...tagsFilter.value.split(";").map(s => s.trim()));
                 continue;
             }
 
@@ -130,19 +139,23 @@ export class TagUtils {
     /**
      * Returns true if the properties match the tagsFilter, interpreted as a multikey.
      * Note that this might match a regex tag
-     * @param tag
-     * @param properties
-     * @constructor
+     *
+     * TagUtils.MatchesMultiAnswer(new Tag("isced:level","bachelor"), {"isced:level":"bachelor; master"}) // => true
+     * TagUtils.MatchesMultiAnswer(new Tag("isced:level","master"), {"isced:level":"bachelor;master"}) // => true
+     * TagUtils.MatchesMultiAnswer(new Tag("isced:level","doctorate"), {"isced:level":"bachelor; master"}) // => false
+     *
+     * // should match with a space too
+     * TagUtils.MatchesMultiAnswer(new Tag("isced:level","master"), {"isced:level":"bachelor; master"}) // => true
      */
-    static MatchesMultiAnswer(tag: TagsFilter, properties: any): boolean {
-        const splitted = TagUtils.SplitKeys([tag], true);
+    static MatchesMultiAnswer(tag: TagsFilter, properties: Tags): boolean {
+        const splitted = TagUtils.SplitKeysRegex([tag], true);
         for (const splitKey in splitted) {
             const neededValues = splitted[splitKey];
             if (properties[splitKey] === undefined) {
                 return false;
             }
 
-            const actualValue = properties[splitKey].split(";");
+            const actualValue = properties[splitKey].split(";").map(s => s.trim());
             for (const neededValue of neededValues) {
 
                 if (neededValue instanceof RegexTag) {

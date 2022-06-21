@@ -442,7 +442,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * The leaf objects are replaced in the object itself by the specified function
      */
-    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any, travelledPath: string[]) => any), travelledPath: string[] = []) {
+    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any, travelledPath: string[]) => any), travelledPath: string[] = []) : void    {
+        if(object == null){
+            return;
+        }
+        
         const head = path[0]
         if (path.length === 1) {
             // We have reached the leaf
