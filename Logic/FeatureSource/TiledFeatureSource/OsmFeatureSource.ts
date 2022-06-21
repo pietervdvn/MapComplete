@@ -7,7 +7,6 @@ import FilteredLayer from "../../../Models/FilteredLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {Tiles} from "../../../Models/TileRange";
 import {BBox} from "../../BBox";
-import {OsmConnection} from "../../Osm/OsmConnection";
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
 import {Or} from "../../Tags/Or";
 import {TagsFilter} from "../../Tags/TagsFilter";
@@ -27,65 +26,71 @@ export default class OsmFeatureSource {
         handleTile: (tile: FeatureSourceForLayer & Tiled) => void;
         isActive: UIEventSource<boolean>,
         neededTiles: UIEventSource<number[]>,
-        state: {
-            readonly osmConnection: OsmConnection;
-        },
         markTileVisited?: (tileId: number) => void
     };
     private readonly allowedTags: TagsFilter;
 
+    /**
+     * 
+     * @param options: allowedFeatures is normally calculated from the layoutToUse
+     */
     constructor(options: {
         handleTile: (tile: FeatureSourceForLayer & Tiled) => void;
         isActive: UIEventSource<boolean>,
         neededTiles: UIEventSource<number[]>,
         state: {
             readonly filteredLayers: UIEventSource<FilteredLayer[]>;
-            readonly osmConnection: OsmConnection;
-            readonly layoutToUse: LayoutConfig
+            readonly osmConnection: {
+                Backend(): string
+            };
+            readonly layoutToUse?: LayoutConfig
         },
+        readonly allowedFeatures?: TagsFilter,
         markTileVisited?: (tileId: number) => void
     }) {
         this.options = options;
-        this._backend = options.state.osmConnection._oauth_config.url;
+        this._backend = options.state.osmConnection.Backend();
         this.filteredLayers = options.state.filteredLayers.map(layers => layers.filter(layer => layer.layerDef.source.geojsonSource === undefined))
         this.handleTile = options.handleTile
         this.isActive = options.isActive
         const self = this
         options.neededTiles.addCallbackAndRunD(neededTiles => {
-            if (options.isActive?.data === false) {
-                return;
-            }
-
-            neededTiles = neededTiles.filter(tile => !self.downloadedTiles.has(tile))
-
-            if (neededTiles.length == 0) {
-                return;
-            }
-
-            self.isRunning.setData(true)
-            try {
-
-                for (const neededTile of neededTiles) {
-                    self.downloadedTiles.add(neededTile)
-                    self.LoadTile(...Tiles.tile_from_index(neededTile)).then(_ => {
-                        console.debug("Tile ", Tiles.tile_from_index(neededTile).join("/"), "loaded from OSM")
-                    })
-                }
-            } catch (e) {
-                console.error(e)
-            } finally {
-                self.isRunning.setData(false)
-            }
+            self.Update(neededTiles)
         })
 
 
         const neededLayers = (options.state.layoutToUse?.layers ?? [])
             .filter(layer => !layer.doNotDownload)
             .filter(layer => layer.source.geojsonSource === undefined || layer.source.isOsmCacheLayer)
-        this.allowedTags = new Or(neededLayers.map(l => l.source.osmTags))
+        this.allowedTags = options.allowedFeatures ?? new Or(neededLayers.map(l => l.source.osmTags))
     }
 
-    private async LoadTile(z, x, y): Promise<void> {
+    private async Update(neededTiles: number[]) {
+        if (this.options.isActive?.data === false) {
+            return;
+        }
+
+        neededTiles = neededTiles.filter(tile => !this.downloadedTiles.has(tile))
+
+        if (neededTiles.length == 0) {
+            return;
+        }
+
+        this.isRunning.setData(true)
+        try {
+
+            for (const neededTile of neededTiles) {
+                this.downloadedTiles.add(neededTile)
+                this.LoadTile(...Tiles.tile_from_index(neededTile))
+            }
+        } catch (e) {
+            console.error(e)
+        } finally {
+            this.isRunning.setData(false)
+        }
+    }
+
+    private LoadTile(z, x, y): void {
         if (z > 25) {
             throw "This is an absurd high zoom level"
         }
@@ -96,11 +101,10 @@ export default class OsmFeatureSource {
 
         const bbox = BBox.fromTile(z, x, y)
         const url = `${this._backend}/api/0.6/map?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
-        try {
 
-            const osmJson = await Utils.downloadJson(url)
+        Utils.downloadJson(url).then(osmJson => {
             try {
-                console.debug("Got tile", z, x, y, "from the osm api")
+                console.log("Got tile", z, x, y, "from the osm api")
                 this.rawDataHandlers.forEach(handler => handler(osmJson, Tiles.tile_index(z, x, y)))
                 const geojson = OsmToGeoJson.default(osmJson,
                     // @ts-ignore
@@ -130,17 +134,18 @@ export default class OsmFeatureSource {
             } catch (e) {
                 console.error("Weird error: ", e)
             }
-        } catch (e) {
-            console.error("Could not download tile", z, x, y, "due to", e, "; retrying with smaller bounds")
-            if (e === "rate limited") {
+        })
+            .catch(e => {
+                console.error("Could not download tile", z, x, y, "due to", e, "; retrying with smaller bounds")
+                if (e === "rate limited") {
+                    return;
+                }
+                this.LoadTile(z + 1, x * 2, y * 2)
+                this.LoadTile(z + 1, 1 + x * 2, y * 2)
+                this.LoadTile(z + 1, x * 2, 1 + y * 2)
+                this.LoadTile(z + 1, 1 + x * 2, 1 + y * 2)
                 return;
-            }
-            await this.LoadTile(z + 1, x * 2, y * 2)
-            await this.LoadTile(z + 1, 1 + x * 2, y * 2)
-            await this.LoadTile(z + 1, x * 2, 1 + y * 2)
-            await this.LoadTile(z + 1, 1 + x * 2, 1 + y * 2)
-            return;
-        }
+            })
 
 
     }
