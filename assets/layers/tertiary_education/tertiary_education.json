@@ -53,6 +53,51 @@
   },
   "tagRenderings": [
     {
+      "id": "institution-kind",
+      "question": {
+        "en": "What kind of institution is this?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=college",
+          "then": {
+            "en": "This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here"
+          }
+        },
+        {
+          "if":"amenity=university",
+          "then": {
+            "en": "This is a university, an institution of tertiary education where bachelor degrees or higher are awarded."
+          }
+        }
+      ]
+    },
+    {
+      "id": "isced",
+      "question": {
+        "en": "What level of education is given here?"
+      },
+      "multiAnswer": true,
+      "mappings": [{
+        "if": "isced:2011:level=bachelor",
+        "then": {
+          "en": "Bachelor degrees are awarded here"
+        }
+      },
+        {
+          "if": "isced:2011:level=master",
+          "then": {
+            "en": "Master degrees are awarded here"
+          }
+        },{
+          "if": "isced:2011:level=doctorate",
+          "then": {
+            "en": "Doctorate degrees are awarded here"
+          }
+        }],
+      "condition": "amenity=university"
+    },
+    {
       "builtin": ["school.capacity","school.gender"],
       "override": {
         "condition": null

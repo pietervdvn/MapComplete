@@ -53,50 +53,59 @@
       }
     },
     {
-      "id": "education-level",
-      "question": "What level of education is given on this school?",
+      "id": "education-level-belgium",
+      "condition": "_country=be",
+      "question": {
+        "en":"What level of education is given on this school?"
+      },
       "mappings": [
         {
-          "if": "isced:2011:level=early_childhood",
+          "if": "school=kindergarten",
           "then": {
-            "en": "This is a school with a kindergarten section where young kids receive some education which prepares reading and writing."
+            "en": "This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.",
+            "nl": "Dit is een school die ook een kleuterschool bevat"
           }
         },
         {
-          "if": "isced:2011:level=primary",
+          "if": "school=primary",
           "then": {
-            "en": "This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>"
+            "en": "This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>",
+            "nl": "Dit is een lagere school"
           }
         },
         {
-          "if": "isced:2011:level=vocational_lower_secondary",
+          "if": "school=secondary",
           "then": {
-            "en": "This is a school where one learns <b>vocational lower secondary</b> skills with a focus to acquire the necessary knowledge and skill for a particular occupation or trade. <div class='subtle'>This includes programs with a work-based component such as apprenticeships or dual-system education. This is commonly called middle education. Pupils typically enroll from 12 years old till 14 or 15 years old</div>"
+            "en": "This is a secondary school which offers all grades",
+            "nl": "Dit is een middelbare school die alle schooljaren aanbiedt (dus van het eerste tot en met het zesde middelbaar)"
           }
         },
         {
-          "if": "isced:2011:level=general_lower_secondary",
+          "if": "school=lower_secondary",
           "then": {
-            "en": "This is a school where one learns <b>general lower secondary</b> skills with a focus on general skills in order to prepare student for further studies. <div class='subtle'>This is commonly called middle education. Pupils typically enroll from 12 years old till 14 or 15 years old</div>"
-          }
-        },
-        
-        {
-          "if": "isced:2011:level=vocational_upper_secondary",
-          "then": {
-            "en": "This is a school where one learns <b>vocational upper secondary</b> skills with a focus to acquire the necessary knowledge and skill for a particular occupation or trade. <div class='subtle'>This includes programs with a work-based component such as apprenticeships or dual-system education. Pupils typically enroll from 14 or 15 years old till 18 years old</div>"
+            "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>first and second</b> grade",
+             "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>"
           }
         },
         {
-          "if": "isced:2011:level=general_upper_secondary",
+          "if": "school=middle_secondary",
           "then": {
-            "en": "This is a school where one learns <b>general upper secondary</b> skills with a focus on general skills in order to prepare student for further studies. <div class='subtle'>Pupils typically enroll from 14 or 15 years old till 18 years old</div>"
+            "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>third and fourth</b> grade",
+            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>"
           }
         },
         {
-          "if": "isced:2011:level=post_secondary",
+          "if": "school=upper_secondary",
           "then": {
-            "en": "This is a school where one learns skills and competencies which require secondary schooling, but are not sufficiently complex for tertiary education.<div class='subtle'>Examples are vocational training for adults</div>"
+            "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>fifth and sixth</b> grade",
+            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>"
+          }
+        },
+        {
+          "if": "school=post_secondary",
+          "then": {
+            "en": "This schools offers post-secondary education (e.g. a seventh or eight specialisation year)",
+            "nl": "Deze school biedt post-secundair onderwijs (bijvoorbeeld <b>specialisatiejaren</b>)"
           }
         }
       ],
@@ -149,7 +158,7 @@
       },
       "mappings": [
         {
-          "if": "school:for=normal_pupils",
+          "if": "school:for=mainstream",
           "then": {
             "en": "This is a school where students study skills at their age-adequate level"
           }
