@@ -102,11 +102,13 @@
       ],
       "title": {
         "en": "a nightclub or disco",
-        "nl": "een nachtclub of disco"
+        "nl": "een nachtclub of disco",
+        "de": "einen Club oder eine Diskothek"
       },
       "description": {
         "en": "A <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
-        "nl": "Een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen"
+        "nl": "Een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen",
+        "de": "Ein <b>Club</b> oder eine Diskothek mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -231,7 +233,8 @@
           "if": "amenity=nightclub",
           "then": {
             "en": "This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
-            "nl": "Dit is een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen"
+            "nl": "Dit is een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen",
+            "de": "Dies ist ein <b>Club</b> oder eine Disco mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt"
           }
         }
       ],

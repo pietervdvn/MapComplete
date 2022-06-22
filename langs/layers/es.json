@@ -486,14 +486,14 @@
                     "4": {
                         "then": "Aquí se pueden alquilar bicis infantiles"
                     },
+                    "5": {
+                        "then": "Aquí se pueden alquilar tándems"
+                    },
                     "6": {
                         "then": "Aquí se pueden alquilar bicicletas de carreras"
                     },
                     "7": {
                         "then": "Aquí se pueden alquilar cascos"
-                    },
-                    "5": {
-                        "then": "Aquí se pueden alquilar tándems"
                     }
                 },
                 "question": "¿Qué tipo de bicicletas y accesorios se alquilan aquí?",
@@ -513,11 +513,11 @@
                     "3": {
                         "then": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura"
                     },
-                    "5": {
-                        "then": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler"
-                    },
                     "4": {
                         "then": "Una máquina que dispensa y acepta llaves, eventualmente después de la autenticación y/o el pago está presente. Las bicicletas están aparcadas cerca"
+                    },
+                    "5": {
+                        "then": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler"
                     }
                 },
                 "question": "¿Qué tipo de alquiler de bicicletas es este?"

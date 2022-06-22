@@ -4722,6 +4722,35 @@
             "render": "Recyclingfaciliteit"
         }
     },
+    "school": {
+        "tagRenderings": {
+            "education-level-belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een school die ook een kleuterschool bevat"
+                    },
+                    "1": {
+                        "then": "Dit is een lagere school"
+                    },
+                    "2": {
+                        "then": "Dit is een middelbare school die alle schooljaren aanbiedt (dus van het eerste tot en met het zesde middelbaar)"
+                    },
+                    "3": {
+                        "then": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>"
+                    },
+                    "4": {
+                        "then": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>"
+                    },
+                    "5": {
+                        "then": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>"
+                    },
+                    "6": {
+                        "then": "Deze school biedt post-secundair onderwijs (bijvoorbeeld <b>specialisatiejaren</b>)"
+                    }
+                }
+            }
+        }
+    },
     "shops": {
         "deletion": {
             "extraDeleteReasons": {
@@ -5281,6 +5310,15 @@
         },
         "title": {
             "render": "Bewakingscamera"
+        }
+    },
+    "tertiary_education": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Hogeschool"
+                }
+            }
         }
     },
     "toilet": {

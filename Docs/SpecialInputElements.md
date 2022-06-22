@@ -13,7 +13,7 @@
     + [date](#date)
     + [nat](#nat)
     + [int](#int)
-    + [length](#length)
+    + [distance](#distance)
     + [direction](#direction)
     + [wikidata](#wikidata)
     + [pnat](#pnat)
@@ -71,11 +71,11 @@ A number
 
 
 
-### length 
+### distance 
 
 
 
-A geographical length in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
+A geographical distance in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]
 
 
 

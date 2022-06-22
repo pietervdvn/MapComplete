@@ -386,19 +386,22 @@
     {
       "id": "delivery",
       "question": {
-        "en": "Delivers {title()} their food at home?"
+        "en": "Delivers {title()} their food at home?",
+        "de": "Liefert {title()} ihr Essen nach Hause?"
       },
       "mappings": [
         {
           "if": "delivery=yes",
           "then": {
-            "en": "This business does home delivery (eventually via a third party)"
+            "en": "This business does home delivery (eventually via a third party)",
+            "de": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)"
           }
         },
         {
           "if": "delivery=no",
           "then": {
-            "en": "This business does not deliver at home"
+            "en": "This business does not deliver at home",
+            "de": "Dieses Unternehmen liefert nicht nach Hause"
           }
         }
       ]

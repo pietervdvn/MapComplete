@@ -28,7 +28,7 @@
       {
         "if": "name~*",
         "then": {
-          "*":"{name}"
+          "*": "{name}"
         }
       },
       {
@@ -37,7 +37,8 @@
           "en": "College",
           "nl": "Hogeschool"
         }
-      },{
+      },
+      {
         "if": "amenity=university",
         "then": {
           "en": "University"
@@ -65,7 +66,7 @@
           }
         },
         {
-          "if":"amenity=university",
+          "if": "amenity=university",
           "then": {
             "en": "This is a university, an institution of tertiary education where bachelor degrees or higher are awarded."
           }
@@ -78,27 +79,33 @@
         "en": "What level of education is given here?"
       },
       "multiAnswer": true,
-      "mappings": [{
-        "if": "isced:2011:level=bachelor",
-        "then": {
-          "en": "Bachelor degrees are awarded here"
-        }
-      },
+      "mappings": [
+        {
+          "if": "isced:2011:level=bachelor",
+          "then": {
+            "en": "Bachelor degrees are awarded here"
+          }
+        },
         {
           "if": "isced:2011:level=master",
           "then": {
             "en": "Master degrees are awarded here"
           }
-        },{
+        },
+        {
           "if": "isced:2011:level=doctorate",
           "then": {
             "en": "Doctorate degrees are awarded here"
           }
-        }],
+        }
+      ],
       "condition": "amenity=university"
     },
     {
-      "builtin": ["school.capacity","school.gender"],
+      "builtin": [
+        "school.capacity",
+        "school.gender"
+      ],
       "override": {
         "condition": null
       }
@@ -107,21 +114,25 @@
     "email",
     "phone"
   ],
-  "mapRendering": [{
-    "location": ["point","centroid"],
-    "iconSize": {
-      "render": "40,40,center"
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "icon": "circle:white;./assets/layers/school/college.svg"
     },
-    "label": {
-      "mappings": [
-        {
-          "if": "name~*",
-          "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
-        }
-      ]
-    },
-    "icon": "circle:white;./assets/layers/school/college.svg"
-  },
     {
       "color": "#22f1f4",
       "width": 1
@@ -135,7 +146,10 @@
       "description": {
         "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points."
       },
-      "tags": ["amenity=university","fixme=Added with MapComplete, geometry to be drawn"]
+      "tags": [
+        "amenity=university",
+        "fixme=Added with MapComplete, geometry to be drawn"
+      ]
     }
   ]
 }

@@ -123,7 +123,8 @@
             "en": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby",
             "nl": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd",
             "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója",
-            "de": "Dies ist ein Automat, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
+            "de": "Dies ist ein Automat, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt",
+            "es": "Una máquina que dispensa y acepta llaves, eventualmente después de la autenticación y/o el pago está presente. Las bicicletas están aparcadas cerca"
           }
         },
         {
@@ -253,7 +254,8 @@
             "nl": "Tandems kunnen hier gehuurd worden",
             "de": "Tandems können hier gemietet werden",
             "da": "Tandemcykler kan lejes her",
-            "fr": "Des tandems peuvent être loués ici"
+            "fr": "Des tandems peuvent être loués ici",
+            "es": "Aquí se pueden alquilar tándems"
           }
         },
         {

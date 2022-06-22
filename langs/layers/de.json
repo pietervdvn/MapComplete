@@ -1276,8 +1276,8 @@
                 "title": "ein Café"
             },
             "3": {
-                "title": "einen Club oder eine Diskothek",
-                "description": "Ein <b>Club</b> oder eine Diskothek mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt"
+                "description": "Ein <b>Club</b> oder eine Diskothek mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt",
+                "title": "einen Club oder eine Diskothek"
             }
         },
         "tagRenderings": {
@@ -3730,6 +3730,17 @@
                 },
                 "question": "Werden hier vegetarische Gerichte angeboten?"
             },
+            "delivery": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)"
+                    },
+                    "1": {
+                        "then": "Dieses Unternehmen liefert nicht nach Hause"
+                    }
+                },
+                "question": "Liefert {title()} ihr Essen nach Hause?"
+            },
             "friture-oil": {
                 "mappings": {
                     "0": {
@@ -3799,17 +3810,6 @@
                     }
                 },
                 "question": "Werden hier halal Gerichte angeboten?"
-            },
-            "delivery": {
-                "mappings": {
-                    "1": {
-                        "then": "Dieses Unternehmen liefert nicht nach Hause"
-                    },
-                    "0": {
-                        "then": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)"
-                    }
-                },
-                "question": "Liefert {title()} ihr Essen nach Hause?"
             }
         },
         "title": {
@@ -4415,6 +4415,13 @@
         }
     },
     "playground": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dies ist ein Schulhof - ein (Außen-)Bereich, auf dem die Schüler einer Schule in den Pausen spielen können und der nicht öffentlich zugänglich ist"
+                }
+            }
+        },
         "description": "Spielplätze",
         "name": "Spielplätze",
         "presets": {
@@ -4540,13 +4547,6 @@
                 }
             },
             "render": "Spielplatz"
-        },
-        "deletion": {
-            "nonDeleteMappings": {
-                "0": {
-                    "then": "Dies ist ein Schulhof - ein (Außen-)Bereich, auf dem die Schüler einer Schule in den Pausen spielen können und der nicht öffentlich zugänglich ist"
-                }
-            }
         }
     },
     "public_bookcase": {

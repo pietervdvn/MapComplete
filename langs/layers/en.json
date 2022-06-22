@@ -4021,6 +4021,49 @@
             "render": "Information board"
         }
     },
+    "kindergarten_childcare": {
+        "name": "Kindergartens and childcare",
+        "presets": {
+            "0": {
+                "title": "a kindergarten"
+            },
+            "1": {
+                "title": "a childcare"
+            }
+        },
+        "tagRenderings": {
+            "5": {
+                "override": {
+                    "question": "When is this childcare opened?"
+                }
+            },
+            "capacity": {
+                "question": "How much kids (at most) can be enrolled here?",
+                "render": "This facility has room for {capacity} kids"
+            },
+            "childcare-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a kindergarten (also known as <i>preschool</i>) where small kids receive early education."
+                    },
+                    "1": {
+                        "then": "This is a childcare facility, such as a nursery or daycare where small kids are looked after. They do not offer an education and are ofter run as private businesses"
+                    }
+                },
+                "question": "What type of facility is this?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kindergarten {name}"
+                },
+                "1": {
+                    "then": "Childcare {name}"
+                }
+            }
+        }
+    },
     "map": {
         "description": "A map, meant for tourists which is permanently installed in the public space",
         "name": "Maps",
@@ -4872,6 +4915,111 @@
             "render": "Recycling facility"
         }
     },
+    "school": {
+        "name": "Primary and secondary schools",
+        "presets": {
+            "0": {
+                "title": "a primary or secondary school"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "render": "This school can enroll at most {capacity} students"
+            },
+            "education-level-belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a school with a kindergarten section where young kids receive some education which prepares reading and writing."
+                    },
+                    "1": {
+                        "then": "This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>"
+                    },
+                    "2": {
+                        "then": "This is a secondary school which offers all grades"
+                    },
+                    "3": {
+                        "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>first and second</b> grade"
+                    },
+                    "4": {
+                        "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>third and fourth</b> grade"
+                    },
+                    "5": {
+                        "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>fifth and sixth</b> grade"
+                    },
+                    "6": {
+                        "then": "This schools offers post-secondary education (e.g. a seventh or eight specialisation year)"
+                    }
+                },
+                "question": "What level of education is given on this school?"
+            },
+            "gender": {
+                "mappings": {
+                    "0": {
+                        "then": "Both boys and girls can enroll here and have classes together"
+                    },
+                    "1": {
+                        "then": "Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)"
+                    },
+                    "2": {
+                        "then": "This is a boys only-school"
+                    },
+                    "3": {
+                        "then": "This is a girls-only school"
+                    }
+                },
+                "question": "Which genders can enroll at this school?"
+            },
+            "language": {
+                "mappings": {
+                    "0": {
+                        "then": "The main language of this school is unknown"
+                    }
+                },
+                "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
+                "render": "{school:language} is the main language of {title()}"
+            },
+            "school-name": {
+                "question": "What is the name of this school?",
+                "render": "This school is named {name}"
+            },
+            "target-audience": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>"
+                    },
+                    "1": {
+                        "then": "This is a school where students study skills at their age-adequate level."
+                    },
+                    "2": {
+                        "then": "This is a school where adults are taught skills on the level as specified."
+                    },
+                    "3": {
+                        "then": "This is a school with facilities for students on the autism specturm"
+                    },
+                    "4": {
+                        "then": "This is a school with facilities for students with learning disabilities"
+                    },
+                    "5": {
+                        "then": "This is a school with facilities for blind students or students with sight impairments"
+                    },
+                    "6": {
+                        "then": "This is a school with facilities for deaf students or students with hearing impairments"
+                    },
+                    "7": {
+                        "then": "This is a school with facilities for students with disabilities"
+                    },
+                    "8": {
+                        "then": "This is a school with facilities for students with special needs"
+                    }
+                },
+                "question": "What is the target audience for this school?",
+                "render": "This is a school for {school:for}"
+            }
+        },
+        "title": {
+            "render": "School <i>{name}</i>"
+        }
+    },
     "shops": {
         "deletion": {
             "extraDeleteReasons": {
@@ -5390,6 +5538,55 @@
         },
         "title": {
             "render": "Surveillance Camera"
+        }
+    },
+    "tertiary_education": {
+        "name": "Colleges and universities",
+        "presets": {
+            "0": {
+                "description": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points.",
+                "title": "a university"
+            }
+        },
+        "tagRenderings": {
+            "institution-kind": {
+                "mappings": {
+                    "0": {
+                        "then": "This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here"
+                    },
+                    "1": {
+                        "then": "This is a university, an institution of tertiary education where bachelor degrees or higher are awarded."
+                    }
+                },
+                "question": "What kind of institution is this?"
+            },
+            "isced": {
+                "mappings": {
+                    "0": {
+                        "then": "Bachelor degrees are awarded here"
+                    },
+                    "1": {
+                        "then": "Master degrees are awarded here"
+                    },
+                    "2": {
+                        "then": "Doctorate degrees are awarded here"
+                    }
+                },
+                "question": "What level of education is given here?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "College"
+                },
+                "2": {
+                    "then": "University"
+                },
+                "3": {
+                    "then": "School providing tertiary education"
+                }
+            }
         }
     },
     "toilet": {

@@ -56,7 +56,7 @@
       "id": "education-level-belgium",
       "condition": "_country=be",
       "question": {
-        "en":"What level of education is given on this school?"
+        "en": "What level of education is given on this school?"
       },
       "mappings": [
         {
@@ -84,7 +84,7 @@
           "if": "school=lower_secondary",
           "then": {
             "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>first and second</b> grade",
-             "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>"
+            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>"
           }
         },
         {
@@ -147,11 +147,11 @@
       "id": "target-audience",
       "condition": "school:for~*",
       "question": {
-        "en":"What is the target audience for this school?"
+        "en": "What is the target audience for this school?"
       },
       "multiAnswer": true,
       "render": {
-        "en":"This is a school for {school:for}"
+        "en": "This is a school for {school:for}"
       },
       "freeform": {
         "key": "school:for",
@@ -224,27 +224,29 @@
         "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
       },
       "render": {
-        "en":"{school:language} is the main language of {title()}"
+        "en": "{school:language} is the main language of {title()}"
       },
       "freeform": {
         "key": "school:language",
         "inline": true
       },
-      "mappings": [{
-        "if": "school:language=",
-        "then": {
-          "en": "The main language of this school is unknown"
-        },
-        "hideInAnswer": true
-      }]
+      "mappings": [
+        {
+          "if": "school:language=",
+          "then": {
+            "en": "The main language of this school is unknown"
+          },
+          "hideInAnswer": true
+        }
+      ]
     }
   ],
   "presets": [
     {
       "tags": [
-        "amenity=school","fixme=Added with MapComplete, the precise geometry should still be drawn"
+        "amenity=school",
+        "fixme=Added with MapComplete, the precise geometry should still be drawn"
       ],
-      
       "title": {
         "en": "a primary or secondary school"
       }

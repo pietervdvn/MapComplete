@@ -78,7 +78,7 @@
         "ru": "Номер дома <b>{addr:housenumber}</b>",
         "zh_Hans": "门牌号是<b>{addr:housenumber}</b>",
         "id": "Nomor rumah ini <b>{addr:housenumber}</b>",
-        "es": "La numeración de la casa es <b>{addr:housenumber}</b>",
+        "es": "El número de puerta es <b>{addr:housenumber}</b>",
         "da": "Husnummeret er <b>{addr:housenumber}</b>"
       },
       "question": {
