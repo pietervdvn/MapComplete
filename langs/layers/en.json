@@ -4988,32 +4988,32 @@
                         "then": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>"
                     },
                     "1": {
-                        "then": "This is a school where students study skills at their age-adequate level."
+                        "then": "This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>"
                     },
                     "2": {
                         "then": "This is a school where adults are taught skills on the level as specified."
                     },
                     "3": {
-                        "then": "This is a school with facilities for students on the autism specturm"
+                        "then": "This is a school for students with autism"
                     },
                     "4": {
-                        "then": "This is a school with facilities for students with learning disabilities"
+                        "then": "This is a school for students with learning disabilities"
                     },
                     "5": {
-                        "then": "This is a school with facilities for blind students or students with sight impairments"
+                        "then": "This is a school for blind students or students with sight impairments"
                     },
                     "6": {
-                        "then": "This is a school with facilities for deaf students or students with hearing impairments"
+                        "then": "This is a school for deaf students or students with hearing impairments"
                     },
                     "7": {
-                        "then": "This is a school with facilities for students with disabilities"
+                        "then": "This is a school for students with disabilities"
                     },
                     "8": {
-                        "then": "This is a school with facilities for students with special needs"
+                        "then": "This is a school for students with special needs"
                     }
                 },
-                "question": "What is the target audience for this school?",
-                "render": "This is a school for {school:for}"
+                "question": "Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc ",
+                "render": "This school has facilities for students with {school:for}"
             }
         },
         "title": {
