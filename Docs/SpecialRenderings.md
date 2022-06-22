@@ -697,13 +697,14 @@ zoom | 18 | The startzoom of mapillary
 
 ### auto_apply 
 
- A button to run many actions for many features at once.
+ A button to run many actions for many features at once. To effectively use this button, you'll need some ingredients: 
 
-To effectively use this button, you'll need some ingredients:
-- A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
-- A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the [current_view](./BuiltinLayers.md#current_view)
-- Then, use a calculated tag on the host feature to determine the overlapping object ids
-- At last, add this component 
+  - A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
+  - A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer 
+  - [current_view](./BuiltinLayers.md#current_view)
+  - Then, use a calculated tag on the host feature to determine the overlapping object ids
+  - At last, add this component
+ 
 
 name | default | description
 ------ | --------- | -------------

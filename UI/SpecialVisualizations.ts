@@ -61,7 +61,7 @@ import Slider from "./Input/Slider";
 export interface SpecialVisualization {
     funcName: string,
     constr: ((state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState,) => BaseUIElement),
-    docs: string,
+    docs: string | BaseUIElement,
     example?: string,
     args: { name: string, defaultValue?: string, doc: string, required?: false | boolean }[],
     getLayerDependencies?: (argument: string[]) => string[]
