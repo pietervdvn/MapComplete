@@ -8,7 +8,6 @@ import {GeoOperations} from "../../Logic/GeoOperations";
 import Minimap, {MinimapObj} from "../Base/Minimap";
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch";
 import BaseUIElement from "../BaseUIElement";
-import CR = Mocha.reporters.Base.cursor.CR;
 
 
 /**
