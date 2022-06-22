@@ -6,6 +6,12 @@ This document gives an overview of what every expression means and how it behave
 
 If the schema-files note a type `string | AndOrTagConfigJson`, you can use one of these values.
 
+In some cases, not every type of tags-filter can be used. For example,  _rendering_ an option with a regex is
+fine (`"if": "brand~[Bb]randname", "then":" The brand is Brandname"`); but this regex can not be used to write a value
+into the database. The theme loader will however refuse to work with such inconsistencies and notify you of this while
+you are building your theme.
+
+
 Strict equality
 ---------------
 
@@ -53,7 +59,8 @@ special circumstances (e.g. `surface_area=42 m2` or `length=100 feet`), this wil
 values (`surface=422` or if a length in meters is compared to). However, this can be partially alleviated by using '
 Units' to rewrite to a default format.
 
-Dates can be compared with the same expression: `somekey<2022-06-22` will match if `somekey` is a date and is smaller then 22nd june '22.
+Dates can be compared with the same expression: `somekey<2022-06-22` will match if `somekey` is a date and is smaller
+then 22nd june '22.
 
 Regex equals
 ------------
@@ -61,8 +68,8 @@ Regex equals
 A tag can also be tested against a regex with `key~regex`. Note that this regex __must match__ the entire value. If the
 value is allowed to appear anywhere as substring, use `key~.*regex.*`
 
-Regexes will match the newline character with `.` too - the `s`-flag is enabled by default.
-To enable case invariant matching, use `key~i~regex`
+Regexes will match the newline character with `.` too - the `s`-flag is enabled by default. To enable case invariant
+matching, use `key~i~regex`
 
 Equivalently, `key!~regex` can be used if you _don't_ want to match the regex in order to appear.
 
@@ -101,3 +108,19 @@ To mitigate this, use:
 
 One can use `key!:=prefix-{other_key}-postfix` as well, to match if `key` is _not_ the same
 as `prefix-{other_key}-postfix` (with `other_key` substituted by the value)
+
+## Logical operators
+
+One can combine multiple tags by using `and` or `or`, e.g.:
+
+```json
+{
+  "osmTags": {
+    "or": [
+      "amenity=school",
+      "amenity=kindergarten"
+    ]
+  }
+}
+```
+
