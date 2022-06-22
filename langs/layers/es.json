@@ -661,7 +661,7 @@
             },
             "Cargo bike capacity?": {
                 "question": "¿Cuántas bicicletas de carga caben en este aparcamiento de bicicletas?",
-                "render": "En este aparcamiento caben {capacity:cargo_bike} bicis de carga"
+                "render": "En este aparcamiento caben {capacity:cargo_bike} bicicletas de carga"
             },
             "Cargo bike spaces?": {
                 "mappings": {
@@ -669,10 +669,10 @@
                         "then": "Este aparcamiento tiene espacio para bicicletas de carga"
                     },
                     "1": {
-                        "then": "Este aparcamiento tiene huecos (oficialmente) designados para bicicletas de carga."
+                        "then": "Este aparcamiento tiene huecos designados (oficialmente) para bicicletas de carga."
                     },
                     "2": {
-                        "then": "No se permite aparcar bicicletas de carga"
+                        "then": "No está permitido aparcar bicicletas de carga"
                     }
                 },
                 "question": "¿Este aparcamiento de bicicletas tiene huevos para bicicletas de carga?"
@@ -842,10 +842,19 @@
                 "mappings": {
                     "1": {
                         "then": "Dunlop"
+                    },
+                    "0": {
+                        "then": "Sclaverand/Presata (ruedas de bicicleta estrechas)"
+                    },
+                    "2": {
+                        "then": "Schrader (coches y bicicletas de montaña)"
                     }
                 },
                 "question": "¿Que válvulas se soportan?",
                 "render": "Esta bomba soporta las siguiente válvulas: {valves}"
+            },
+            "Email maintainer": {
+                "render": "<a href='mailto:{email}?subject=Bomba de bicicletas rota&body=Hola,%0D%0A%0ACon este correo, me gustaría informarte de que la bomba para bicicletas que se encuentra en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0A Un saludo'>Reportar esta bomba para bicicletas como rota</a>"
             }
         },
         "title": {
@@ -1014,6 +1023,9 @@
                 },
                 "5": {
                     "then": "Taller/tienda de bicis <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Winkel"
                 }
             },
             "render": "Taller/tienda de bicis"
@@ -1128,7 +1140,11 @@
                 "title": "un bar"
             },
             "2": {
-                "title": "una cafetería"
+                "title": "una cafetería",
+                "description": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
+            },
+            "3": {
+                "description": "Un <b>club nocturno</b> o discoteca centrada en bailar, la música de un DJ acompañado por un espectáculo de luces y un bar donde conseguir bebidas (alcohólicas)"
             }
         },
         "tagRenderings": {
