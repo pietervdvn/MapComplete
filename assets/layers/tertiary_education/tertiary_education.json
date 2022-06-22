@@ -1,0 +1,141 @@
+{
+  "id": "tertiary_education",
+  "name": {
+    "en": "Colleges and universities"
+  },
+  "description": "Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)",
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=college",
+        "amenity=university",
+        {
+          "and": [
+            "amenity=school",
+            {
+              "or": [
+                "isced:2011:level~.*bachelor.*",
+                "isced:2011:level~.*master.*"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "title": {
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "*":"{name}"
+        }
+      },
+      {
+        "if": "amenity=college",
+        "then": {
+          "en": "College",
+          "nl": "Hogeschool"
+        }
+      },{
+        "if": "amenity=university",
+        "then": {
+          "en": "University"
+        }
+      },
+      {
+        "if": "amenity=school",
+        "then": {
+          "en": "School providing tertiary education"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    {
+      "id": "institution-kind",
+      "question": {
+        "en": "What kind of institution is this?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=college",
+          "then": {
+            "en": "This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here"
+          }
+        },
+        {
+          "if":"amenity=university",
+          "then": {
+            "en": "This is a university, an institution of tertiary education where bachelor degrees or higher are awarded."
+          }
+        }
+      ]
+    },
+    {
+      "id": "isced",
+      "question": {
+        "en": "What level of education is given here?"
+      },
+      "multiAnswer": true,
+      "mappings": [{
+        "if": "isced:2011:level=bachelor",
+        "then": {
+          "en": "Bachelor degrees are awarded here"
+        }
+      },
+        {
+          "if": "isced:2011:level=master",
+          "then": {
+            "en": "Master degrees are awarded here"
+          }
+        },{
+          "if": "isced:2011:level=doctorate",
+          "then": {
+            "en": "Doctorate degrees are awarded here"
+          }
+        }],
+      "condition": "amenity=university"
+    },
+    {
+      "builtin": ["school.capacity","school.gender"],
+      "override": {
+        "condition": null
+      }
+    },
+    "website",
+    "email",
+    "phone"
+  ],
+  "mapRendering": [{
+    "location": ["point","centroid"],
+    "iconSize": {
+      "render": "40,40,center"
+    },
+    "label": {
+      "mappings": [
+        {
+          "if": "name~*",
+          "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+        }
+      ]
+    },
+    "icon": "circle:white;./assets/layers/school/college.svg"
+  },
+    {
+      "color": "#22f1f4",
+      "width": 1
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a university"
+      },
+      "description": {
+        "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points."
+      },
+      "tags": ["amenity=university","fixme=Added with MapComplete, geometry to be drawn"]
+    }
+  ]
+}

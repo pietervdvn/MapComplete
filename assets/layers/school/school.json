@@ -1,0 +1,280 @@
+{
+  "id": "school",
+  "name": {
+    "en": "Primary and secondary schools"
+  },
+  "description": "Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles",
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "School <i>{name}</i>"
+    }
+  },
+  "calculatedTags": [
+    "_enclosing=feat.enclosingFeatures('school').map(f => f.feat.properties.id)",
+    "_is_enclosed=feat.properties._enclosing != '[]'"
+  ],
+  "isShown": {
+    "render": "yes",
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "building~*",
+            "_is_enclosed=true"
+          ]
+        },
+        "then": "no"
+      }
+    ]
+  },
+  "tagRenderings": [
+    {
+      "render": {
+        "en": "This school is named {name}"
+      },
+      "question": {
+        "en": "What is the name of this school?"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "school-name"
+    },
+    {
+      "id": "capacity",
+      "question": "How much students can at most enroll in this school?",
+      "render": {
+        "en": "This school can enroll at most {capacity} students"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat"
+      }
+    },
+    {
+      "id": "education-level-belgium",
+      "condition": "_country=be",
+      "question": {
+        "en":"What level of education is given on this school?"
+      },
+      "mappings": [
+        {
+          "if": "school=kindergarten",
+          "then": {
+            "en": "This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.",
+            "nl": "Dit is een school die ook een kleuterschool bevat"
+          }
+        },
+        {
+          "if": "school=primary",
+          "then": {
+            "en": "This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>",
+            "nl": "Dit is een lagere school"
+          }
+        },
+        {
+          "if": "school=secondary",
+          "then": {
+            "en": "This is a secondary school which offers all grades",
+            "nl": "Dit is een middelbare school die alle schooljaren aanbiedt (dus van het eerste tot en met het zesde middelbaar)"
+          }
+        },
+        {
+          "if": "school=lower_secondary",
+          "then": {
+            "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>first and second</b> grade",
+             "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>"
+          }
+        },
+        {
+          "if": "school=middle_secondary",
+          "then": {
+            "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>third and fourth</b> grade",
+            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>"
+          }
+        },
+        {
+          "if": "school=upper_secondary",
+          "then": {
+            "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>fifth and sixth</b> grade",
+            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>"
+          }
+        },
+        {
+          "if": "school=post_secondary",
+          "then": {
+            "en": "This schools offers post-secondary education (e.g. a seventh or eight specialisation year)",
+            "nl": "Deze school biedt post-secundair onderwijs (bijvoorbeeld <b>specialisatiejaren</b>)"
+          }
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "id": "gender",
+      "question": {
+        "en": "Which genders can enroll at this school?"
+      },
+      "mappings": [
+        {
+          "if": "school:gender=mixed",
+          "then": {
+            "en": "Both boys and girls can enroll here and have classes together"
+          }
+        },
+        {
+          "if": "school:gender=separated",
+          "then": {
+            "en": "Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)"
+          }
+        },
+        {
+          "if": "school:gender=male",
+          "then": {
+            "en": "This is a boys only-school"
+          }
+        },
+        {
+          "if": "school:gender=female",
+          "then": {
+            "en": "This is a girls-only school"
+          }
+        }
+      ]
+    },
+    {
+      "id": "target-audience",
+      "condition": "school:for~*",
+      "question": {
+        "en":"What is the target audience for this school?"
+      },
+      "multiAnswer": true,
+      "render": {
+        "en":"This is a school for {school:for}"
+      },
+      "freeform": {
+        "key": "school:for",
+        "inline": true
+      },
+      "mappings": [
+        {
+          "if": "school:for=",
+          "then": {
+            "en": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "school:for=mainstream",
+          "then": {
+            "en": "This is a school where students study skills at their age-adequate level."
+          }
+        },
+        {
+          "if": "school:for=adults",
+          "then": {
+            "en": "This is a school where adults are taught skills on the level as specified."
+          }
+        },
+        {
+          "if": "school:for=autism",
+          "then": {
+            "en": "This is a school with facilities for students on the autism specturm"
+          }
+        },
+        {
+          "if": "school:for=learning_disabilities",
+          "then": {
+            "en": "This is a school with facilities for students with learning disabilities"
+          }
+        },
+        {
+          "if": "school:for=blind",
+          "then": {
+            "en": "This is a school with facilities for blind students or students with sight impairments"
+          }
+        },
+        {
+          "if": "school:for=deaf",
+          "then": {
+            "en": "This is a school with facilities for deaf students or students with hearing impairments"
+          }
+        },
+        {
+          "if": "school:for=disabilities",
+          "then": {
+            "en": "This is a school with facilities for students with disabilities"
+          }
+        },
+        {
+          "if": "school:for=special_needs",
+          "then": {
+            "en": "This is a school with facilities for students with special needs"
+          }
+        }
+      ]
+    },
+    "website",
+    "phone",
+    "email",
+    {
+      "id": "language",
+      "question": {
+        "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
+      },
+      "render": {
+        "en":"{school:language} is the main language of {title()}"
+      },
+      "freeform": {
+        "key": "school:language",
+        "inline": true
+      },
+      "mappings": [{
+        "if": "school:language=",
+        "then": {
+          "en": "The main language of this school is unknown"
+        },
+        "hideInAnswer": true
+      }]
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=school","fixme=Added with MapComplete, the precise geometry should still be drawn"
+      ],
+      
+      "title": {
+        "en": "a primary or secondary school"
+      }
+    }
+  ],
+  "source": {
+    "osmTags": "amenity=school"
+  },
+  "mapRendering": [
+    {
+      "icon": "circle:white;./assets/layers/school/school.svg",
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "iconSize": {
+        "render": "40,40,center"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": "#fcd862",
+      "width": 1
+    }
+  ]
+}

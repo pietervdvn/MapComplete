@@ -68,6 +68,7 @@
   "dependencies": {
     "@babel/preset-env": "7.13.8",
     "@parcel/service-worker": "^2.6.0",
+    "@turf/boolean-intersects": "^6.5.0",
     "@turf/buffer": "^6.5.0",
     "@turf/collect": "^6.5.0",
     "@turf/distance": "^6.5.0",

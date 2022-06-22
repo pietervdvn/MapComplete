@@ -79,6 +79,9 @@ export default class SaveTileToLocalStorageActor {
                     }
                     loadedTiles.add(key)
                     this.GetIdb(key).then((features: { feature: any, freshness: Date }[]) => {
+                        if(features === undefined){
+                            return;
+                        }
                         console.debug("Loaded tile " + self._layer.id + "_" + key + " from disk")
                         const src = new SimpleFeatureSource(self._flayer, key, new UIEventSource<{ feature: any; freshness: Date }[]>(features))
                         registerTile(src)

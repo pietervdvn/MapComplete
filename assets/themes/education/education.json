@@ -1,0 +1,22 @@
+{
+  "id": "education",
+  "description": {
+    "en": "On this map, you'll find information about all types of schools and eduction and can easily add more information"
+  },
+  "title": {
+    "en": "Education"
+  },
+  "defaultBackgroundId": "CartoDB.Voyager",
+  "maintainer": "MapComplete",
+  "version": "0.0.1",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 0,
+  "icon": "./assets/layers/school/college.svg",
+  "#layers:note": "kindergarten_childcare must be _below_ school, as it can 'catch' primary schools which do have an integrated preschool",
+  "layers": [
+    "tertiary_education",
+    "school",
+    "kindergarten_childcare"
+  ]
+}

@@ -50,6 +50,9 @@ function addArticleToPresets(layerConfig: {presets?: {title: any}[]}){
                 if(txt.startsWith(article+" ")){
                     return txt;
                 }
+                if(txt.startsWith("an ")){
+                    return txt;
+                }
                 return article +" " +  txt.toLowerCase();
             })
             .translations

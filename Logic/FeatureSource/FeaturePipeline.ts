@@ -23,6 +23,7 @@ import TileFreshnessCalculator from "./TileFreshnessCalculator";
 import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource";
 import MapState from "../State/MapState";
 import {ElementStorage} from "../ElementStorage";
+import {Feature, Geometry} from "@turf/turf";
 
 
 /**
@@ -337,7 +338,7 @@ export default class FeaturePipeline {
 
     }
 
-    public GetAllFeaturesWithin(bbox: BBox): any[][] {
+    public GetAllFeaturesWithin(bbox: BBox): Feature<Geometry, {id: string}>[][] {
         const self = this
         const tiles = []
         Array.from(this.perLayerHierarchy.keys())
