@@ -425,7 +425,7 @@
         "layerName": "Posible {title}",
         "notFound": "No he podido encontrar {title} - eliminarlo",
         "popupTitle": "Puede haber {title} aquí",
-        "importButton": "import_button([layerId},_tags, He encontrado un(a) {title} aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)",
+        "importButton": "import_button({layerId},_tags, He encontrado un(a) {title} aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)",
         "nearbyImagesIntro": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}"
     },
     "index": {
