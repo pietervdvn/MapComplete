@@ -953,5 +953,14 @@
         "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "education": {
+        "title": "Bildung",
+        "description": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen"
+    },
+    "maxspeed": {
+        "title": "Höchstgeschwindigkeit",
+        "description": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße. Wenn eine Höchstgeschwindigkeit fehlt oder falsch ist, können Sie dies hier korrigieren.",
+        "shortDescription": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße."
     }
 }
