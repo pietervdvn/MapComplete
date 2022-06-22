@@ -3824,6 +3824,37 @@
             }
         },
         "tagRenderings": {
+            "6": {
+                "renderings": {
+                    "0": {
+                        "mappings": {
+                            "0": {
+                                "then": "Er is {device-name} beschikbaar in deze hackerspace"
+                            },
+                            "1": {
+                                "then": "Er is geen {negative-name} beschikbaar in deze hackerspace"
+                            }
+                        },
+                        "question": "Is er {device-name} beschikbaar in deze hackerspace?"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "een 3D-printer",
+                            "2": "3D-printer"
+                        },
+                        "1": {
+                            "1": "een lasercutter",
+                            "2": "lasercutter"
+                        },
+                        "2": {
+                            "1": "een CNC-boormachine",
+                            "2": "CNC-boormachine"
+                        }
+                    }
+                }
+            },
             "hackerspaces-name": {
                 "question": "Wat is de naam van deze hackerspace?",
                 "render": "Deze hackerspace heet <b>{name}</b>"

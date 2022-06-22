@@ -33,14 +33,10 @@ export default class UserRelatedState extends ElementsState {
      * The key for mangrove
      */
     public mangroveIdentity: MangroveIdentity;
-    /**
-     * Which layers are enabled in the personal theme
-     */
-    public favouriteLayers: UIEventSource<string[]>;
 
     public readonly isTranslator : Store<boolean>;
     
-    public readonly installedUserThemes: UIEventSource<string[]>
+    public readonly installedUserThemes: Store<string[]>
     
     constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
         super(layoutToUse);
@@ -107,16 +103,6 @@ export default class UserRelatedState extends ElementsState {
                 }))
         }
 
-
-        // Important: the favourite layers are initialized _after_ the installed themes, as these might contain an installedTheme
-        this.favouriteLayers = LocalStorageSource.Get("favouriteLayers")
-            .syncWith(this.osmConnection.GetLongPreference("favouriteLayers"))
-            .sync(
-                (str) => Utils.Dedup(str?.split(";")) ?? [],
-                [],
-                (layers) => Utils.Dedup(layers)?.join(";")
-            );
-
         this.InitializeLanguage();
         new SelectedElementTagsUpdater(this)
         this.installedUserThemes = this.InitInstalledUserThemes();
@@ -149,7 +135,7 @@ export default class UserRelatedState extends ElementsState {
         Locale.language.ping();
     }
     
-    private InitInstalledUserThemes(): UIEventSource<string[]>{
+    private InitInstalledUserThemes(): Store<string[]>{
         const prefix = "mapcomplete-unofficial-theme-";
         const postfix = "-combined-length"
         return this.osmConnection.preferencesHandler.preferences.map(prefs =>

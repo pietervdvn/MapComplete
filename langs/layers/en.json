@@ -3895,6 +3895,37 @@
             }
         },
         "tagRenderings": {
+            "6": {
+                "renderings": {
+                    "0": {
+                        "mappings": {
+                            "0": {
+                                "then": "There is {device-name} available at this hackerspace"
+                            },
+                            "1": {
+                                "then": "There is no {negative-name} available at this hackerspace"
+                            }
+                        },
+                        "question": "Is {device-name} available at this hackerspace?"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "a 3D-printer",
+                            "2": "3D-printer"
+                        },
+                        "1": {
+                            "1": "a laser cutter",
+                            "2": "laser cutter"
+                        },
+                        "2": {
+                            "1": "a CNC drill",
+                            "2": "CNC drill"
+                        }
+                    }
+                }
+            },
             "hackerspaces-name": {
                 "question": "What is the name of this hackerspace?",
                 "render": "This hackerspace is named <b>{name}</b>"
