@@ -56,7 +56,8 @@
                 "importTags": "Het element zal deze tags krijgen: {tags}",
                 "officialThemesOnly": "In onofficiële thema's is de importeerknop uitgeschakeld om ongelukjes te vermijden",
                 "wrongType": "Dit object is geen punt of lijn, en kan daarom niet geïmporteerd worden",
-                "zoomInMore": "Zoom verder in om dit object af te handelen"
+                "zoomInMore": "Zoom verder in om dit object af te handelen",
+                "wrongTypeToConflate": "Dit element is geen punt of weg en kan dus niet samengevoegd worden"
             },
             "importTags": "Het object zal deze tags krijgen: {tags}",
             "intro": "Kies hieronder welk punt je wilt toevoegen<br/>",
@@ -453,13 +454,49 @@
         "commands": {
             "dm": {
                 "failed": "I kon <code>{cmd}</code> niet uitvoeren doordag {message}",
-                "sendReason": "Ik stuurde jou dit bericht omdat <b>{sender}</b> mij gevraagd heeft om je het resultaat van <code>{cmd}</code> te sturen"
+                "sendReason": "Ik stuurde jou dit bericht omdat <b>{sender}</b> mij gevraagd heeft om je het resultaat van <code>{cmd}</code> te sturen",
+                "argbody": "Het commando om uit te voeren",
+                "docs": "Voert een commando uit en stuurt de output naar iemand anders",
+                "argto": "De ID van degene die de output moet ontvangen",
+                "commandNotFound": "Commando {key} niet gevonden - zie <code>help</code> voor een overzicht van alle commando's",
+                "executing": "<code>{_}</code> aan het uitvoeren, het resultaat stuur ik naar <b>{to}</b>",
+                "noDm": "Ik kon geen chat opzetten met {to}",
+                "receipt": "Ik leverde het bericht af aan {to}",
+                "selectValidCommand": "Geef een geldig commando",
+                "selectValidUser": "Geef een geldige ID van een gebruiker"
             },
             "documentation": {
                 "didYouMean": "Bedoelde je misschien één van onderstaande URL-parameters? ",
                 "docs": "Vraag documentatie over een MapComplete-laag, -thema of URL-parameter",
                 "notFound": "Ik kong geen {singular} vinden met naam <code>{id}</code>.",
-                "urlParam": "URL-parameter <code>{id}</code>"
+                "urlParam": "URL-parameter <code>{id}</code>",
+                "visualisation": {
+                    "plural": "visualisaties",
+                    "singular": "visualisatie"
+                },
+                "file": {
+                    "singular": "bestand",
+                    "plural": "bestanden"
+                },
+                "inputElement": {
+                    "plural": "input elementen",
+                    "singular": "inputelement"
+                },
+                "layer": {
+                    "plural": "lagen",
+                    "singular": "laag"
+                },
+                "url_parameter": {
+                    "plural": "url-parameters",
+                    "singular": "url-parameter"
+                },
+                "theme": {
+                    "singular": "kaartthema",
+                    "plural": "kaartthemas"
+                },
+                "overview": "De volgende {plural} bestaan:",
+                "argid": "Het id van een {list} of {list_end} waarvan de documentatie gevraagd is. Je can ook {coded_list} schrijven om beschikbare ids te zien.",
+                "noIdIntro": "Om meer informatie te krijgen over een MapComplete-deel, moet je een ID geven. Bekende types zijn {list}"
             },
             "dream": {
                 "docs": "Stuurt een dromerige, computer-gegenereerde tekst",
@@ -488,7 +525,9 @@
                 "noOpeningHours": "Geen openingsuren gekend",
                 "nothingFound": "Ik kon niets vinden voor <code>{_}</code>",
                 "provideSearch": "Gelieve een zoekterm of id te geven",
-                "searchingWorldwide": "OpenStreetMap aan het doorzoeken voor <code>{_}</code>"
+                "searchingWorldwide": "OpenStreetMap aan het doorzoeken voor <code>{_}</code>",
+                "docs": "Haal informatie op over een OSM-object. Dit kan met het ID of via een zoekterm. De objecten worden geinterpreteerd en getoond.",
+                "argsearch": "Het ID van een OSM-object of een zoekterm"
             },
             "language": {
                 "arglang": "De taal die ik vanaf nu in deze ruimte ga spreken",
@@ -510,7 +549,12 @@
                 "noRightsNeeded": "Het comand <code>{role}</code> mag door iedereen uitgevoerd worden, je hoeft die rechten niet toe te kennen",
                 "noRolesYet": "<b>{user}</b> heeft op dit moment geen rechten.",
                 "noSuchRole": "De rechten voor <code>{role}</code> kunnen niet gegeven worden aan <code>{user}</code>. Geef de commandonaam waarvoor je de rechten wilt toekennen. (Typ <code>help</code> voor een overzicht van alle commando's).",
-                "userHasRoles": "<b>{user}</b> heeft op dit moment de volgende rechten:"
+                "userHasRoles": "<b>{user}</b> heeft op dit moment de volgende rechten:",
+                "verbadd": "Voegt een rol toe aan de aangeduide gebruiker",
+                "verbdefault": "Geeft een lijst van rollen van de gebruiker",
+                "verbremove": "Verwijdert een rol van de aangeduide gebruiker",
+                "verblist": "Geeft een lijst van rollen van de gebruiker",
+                "verbrevoke": "Verwijdert alle rollen van de gebruiker"
             },
             "search": {
                 "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>..."
@@ -531,7 +575,15 @@
                 "p3": "Er zijn nog meer commando's, stuur me <code>help</code> om ze allemaal te zien."
             },
             "wiki": {
-                "docs": "Stuurt een (deel van) de gevraagde pagina van {backend}. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina."
+                "docs": "Stuurt een (deel van) de gevraagde pagina van {backend}. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina.",
+                "loadingFailed": "Sorry, pagina <code>{pagename}</code> kon niet geladen worden",
+                "gotResults": "Ik vond {count} resultaten voor <code>{search}</code>:",
+                "searching": "Aan het zoeken op {backend}…",
+                "nothingFound": "Ik kon niets vinden voor {search} op {backend}",
+                "noWiki": "Gelieve zoekterm voor een wiki-pagina te geven"
+            },
+            "scheme": {
+                "argkey": "De naam van de key"
             }
         },
         "decryptionFailed": "Sorry, ik kon je bericht niet ontcijferen. Probeer om deze kamer te verlaten en opnieuw te connecteren",
