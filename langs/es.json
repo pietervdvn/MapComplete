@@ -701,7 +701,7 @@
             "help": {
                 "insufficientRights": "No tienes suficientes permisos para ejecutar este comando.",
                 "argcmd": "El comando sobre el que quieres más información",
-                "askRights": "Pedir a {admin} que te de suficientes permisos",
+                "askRights": "Pedir a {admins} que te de suficientes permisos",
                 "docs": "Imprime información sobre los comandos soportados",
                 "notFound": "No encontré <code>{cmd}</code>. Puede que te refirieras a uno de {closest}?",
                 "p1": "Envíame un comando y contestaré algo útil: dame un comando a través de un mensaje privado o escribe <code>!</code> antes de un comando en una sala pública.",
