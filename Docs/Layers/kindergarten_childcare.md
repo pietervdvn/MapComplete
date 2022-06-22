@@ -19,18 +19,6 @@ Shows kindergartens and preschools. Both are grouped in one layer, as they are r
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [education](https://mapcomplete.osm.be/education)
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 

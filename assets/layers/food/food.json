@@ -387,7 +387,8 @@
       "id": "delivery",
       "question": {
         "en": "Delivers {title()} their food at home?",
-        "de": "Liefert {title()} ihr Essen nach Hause?"
+        "de": "Liefert {title()} ihr Essen nach Hause?",
+        "nl": "Levert {title()} aan huis?"
       },
       "mappings": [
         {

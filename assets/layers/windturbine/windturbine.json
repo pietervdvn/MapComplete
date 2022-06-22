@@ -11,7 +11,8 @@
   },
   "description": {
     "en": "Modern windmills generating electricity",
-    "de": "Moderne Windmühlen zur Stromerzeugung"
+    "de": "Moderne Windmühlen zur Stromerzeugung",
+    "nl": "Windturbines (moderne windmolens die elektriciteit genereren)"
   },
   "source": {
     "osmTags": "generator:source=wind"
@@ -40,7 +41,8 @@
           "zh_Hant": "{name}",
           "id": "{name}",
           "de": "{name}",
-          "ca": "{name}"
+          "ca": "{name}",
+          "nl": "{name}"
         }
       }
     ]
@@ -55,7 +57,8 @@
         "zh_Hant": "這個風機的電力輸出是 {generator:output:electricity}。",
         "id": "Output daya dari turbin angin ini adalah {generator:output:electricity}.",
         "hu": "A szélerőmű teljesítménye: {generator:output:electricity}.",
-        "de": "Das Windrad erzeugt {generator:output:electricity} Strom."
+        "de": "Das Windrad erzeugt {generator:output:electricity} Strom.",
+        "nl": "Deze windturbine genereert {generator:output:electricity}"
       },
       "question": {
         "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
@@ -64,7 +67,8 @@
         "zh_Hant": "這個風機的電力輸出是多少？(例如 2.3 MW)",
         "id": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
         "hu": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)",
-        "de": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3 MW)"
+        "de": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3 MW)",
+        "nl": "Wat is de output"
       },
       "freeform": {
         "key": "generator:output:electricity",
@@ -126,7 +130,8 @@
         "it": "Il diametro del rotore di questa pala eolica è di {rotor:diameter} metri.",
         "zh_Hant": "這個風力渦輪機的風葉直徑是 {rotor:diameter} 公尺。",
         "hu": "A szélturbina rotorátmérője: {rotor:diameter} méter.",
-        "de": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter."
+        "de": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter.",
+        "nl": "De rotordiameter van deze windturbine is {rotor:diameter} meter."
       },
       "question": {
         "en": "What is the rotor diameter of this wind turbine, in metres?",
@@ -134,7 +139,8 @@
         "it": "Qual è il diametro (in metri) del rotore di questa pala eolica?",
         "zh_Hant": "這個風力渦輪機的風葉直徑是多少公尺？",
         "hu": "Hány méter a rotorátmérője ennek a szélturbinának?",
-        "de": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?"
+        "de": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?",
+        "nl": "Wat is de rotordiameter van deze windturbine?"
       },
       "freeform": {
         "key": "rotor:diameter",
@@ -150,7 +156,8 @@
         "zh_Hant": "這個風機從 {start_date} 開始運轉。",
         "id": "Turbin angin ini mulai beroperasi pada/dalam {start_date}.",
         "hu": "A szélerőmű üzembe helyezése: {start_date}.",
-        "de": "Das Windrad wurde am {start_date} in Betrieb genommen."
+        "de": "Das Windrad wurde am {start_date} in Betrieb genommen.",
+        "nl": "Deze windturbine werd op {start_date} in gebruik genomen"
       },
       "question": {
         "en": "When did this wind turbine go into operation?",
@@ -159,7 +166,8 @@
         "zh_Hant": "這個風機何時開始營運？",
         "id": "Kapan turbin angin ini mulai beroperasi?",
         "hu": "Mikor helyezték üzembe ezt a szélerőművet?",
-        "de": "Wann wurde das Windrad in Betrieb genommen?"
+        "de": "Wann wurde das Windrad in Betrieb genommen?",
+        "nl": "Wanneer werd deze windturbine in gebruik genomen?"
       },
       "freeform": {
         "key": "start_date",

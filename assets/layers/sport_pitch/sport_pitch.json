@@ -278,7 +278,7 @@
         {
           "if": "access=limited",
           "then": {
-            "nl": "Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, ...)",
+            "nl": "Beperkt toegankelijk (enkel na reservatie, tijdens bepaalde uren, …)",
             "fr": "Accès limité (par exemple uniquement sur réservation, à certains horaires…)",
             "en": "Limited access (e.g. only with an appointment, during certain hours, …)",
             "it": "Accesso limitato (p.es. solo con prenotazione, in certi orari, ...)",

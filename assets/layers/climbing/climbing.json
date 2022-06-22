@@ -322,11 +322,13 @@
       "id": "max_bolts",
       "question": {
         "en": "How many bolts do routes in {title()} have at most?",
-        "de": "Wie viele Haken haben die Routen in {title()} maximal?"
+        "de": "Wie viele Haken haben die Routen in {title()} maximal?",
+        "nl": "Wat is het maximum aantal bouten in routes ban {title()}?"
       },
       "render": {
         "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
-        "de": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>"
+        "de": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
+        "nl": "De sportklimroutes hebben maximaal {climbing:bolts:max} bouten. <div class='subtle'>Hierbij worden relays niet meegteld. Dit geeft aan hoeveel klimsetjes een klimmer nodig heeft</div>"
       },
       "freeform": {
         "key": "climbing:bolts:max",
@@ -342,12 +344,14 @@
       "question": {
         "en": "Is a fee required to climb here?",
         "es": "¿Se requiere una tasa para escalar aquí?",
-        "de": "Ist das Klettern hier gebührenpflichtig?"
+        "de": "Ist das Klettern hier gebührenpflichtig?",
+        "nl": "Moet men betalen om hier te klimmen?"
       },
       "render": {
         "en": "A fee of {charge} should be paid for climbing here",
         "de": "Zum Klettern wird eine Gebühr von {charge} erhoben",
-        "es": "Se debe de pagar una tasa de {charge} para escalar aquí"
+        "es": "Se debe de pagar una tasa de {charge} para escalar aquí",
+        "nl": "Men moet {charge} betalen om hier te klimmen"
       },
       "freeform": {
         "key": "charge",
@@ -365,7 +369,8 @@
           "then": {
             "en": "Climbing here is free of charge",
             "de": "Das Klettern ist hier kostenlos",
-            "es": "La escalada es gratis"
+            "es": "La escalada es gratis",
+            "nl": "Hier klimmen is gratis"
           }
         },
         {
@@ -378,7 +383,8 @@
           "then": {
             "en": "Paying a fee is required to climb here",
             "es": "Hay que pagar una tasa para escalar aquí",
-            "de": "Zum Klettern ist eine Gebühr zu entrichten"
+            "de": "Zum Klettern ist eine Gebühr zu entrichten",
+            "nl": "Men moet betalen om hier te klimmen"
           },
           "hideInAnswer": "charge~*"
         }

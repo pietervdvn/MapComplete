@@ -1,13 +1,15 @@
 {
   "id": "school",
   "name": {
-    "en": "Primary and secondary schools"
+    "en": "Primary and secondary schools",
+    "nl": "Lagere en middelbare scholen"
   },
   "description": "Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles",
   "minzoom": 12,
   "title": {
     "render": {
-      "en": "School <i>{name}</i>"
+      "en": "School <i>{name}</i>",
+      "nl": "School <i>{name}</i>"
     }
   },
   "calculatedTags": [
@@ -31,10 +33,12 @@
   "tagRenderings": [
     {
       "render": {
-        "en": "This school is named {name}"
+        "en": "This school is named {name}",
+        "nl": "Deze school heet <b>{name}</b>"
       },
       "question": {
-        "en": "What is the name of this school?"
+        "en": "What is the name of this school?",
+        "nl": "Wat is de naam van deze school?"
       },
       "freeform": {
         "key": "name"
@@ -47,7 +51,8 @@
         "en": "How much students can at most enroll in this school?"
       },
       "render": {
-        "en": "This school can enroll at most {capacity} students"
+        "en": "This school can enroll at most {capacity} students",
+        "nl": "Deze school kan maximaal {capacity} studenten lesgeven"
       },
       "freeform": {
         "key": "capacity",
@@ -58,7 +63,8 @@
       "id": "education-level-belgium",
       "condition": "_country=be",
       "question": {
-        "en": "What level of education is given on this school?"
+        "en": "What level of education is given on this school?",
+        "nl": "Wat is het onderwijsniveau van deze school?"
       },
       "mappings": [
         {
@@ -116,31 +122,36 @@
     {
       "id": "gender",
       "question": {
-        "en": "Which genders can enroll at this school?"
+        "en": "Which genders can enroll at this school?",
+        "nl": "Mogen jongens en meisjes les volgen op deze school?"
       },
       "mappings": [
         {
           "if": "school:gender=mixed",
           "then": {
-            "en": "Both boys and girls can enroll here and have classes together"
+            "en": "Both boys and girls can enroll here and have classes together",
+            "nl": "Zowel jongens als meisjes kunnen hier les volgen. In de lessen zitten jongens en meisjes samen."
           }
         },
         {
           "if": "school:gender=separated",
           "then": {
-            "en": "Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)"
+            "en": "Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)",
+            "nl": "Jongens en meisjes kunnen hier lesvolgen, maar de lessen zijn gescheiden (bv. de lessen zijn in andere lokalen of op andere momenten)"
           }
         },
         {
           "if": "school:gender=male",
           "then": {
-            "en": "This is a boys only-school"
+            "en": "This is a boys only-school",
+            "nl": "Deze school is enkel voor jongens"
           }
         },
         {
           "if": "school:gender=female",
           "then": {
-            "en": "This is a girls-only school"
+            "en": "This is a girls-only school",
+            "nl": "Deze school is enkel voor meisjes"
           }
         }
       ]
@@ -149,11 +160,13 @@
       "id": "target-audience",
       "condition": "school:for~*",
       "question": {
-        "en": "What is the target audience for this school?"
+        "en": "Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc ",
+        "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?<div class='subtle'>Ad-hoc maatregelen zijn niet voldoende</div> "
       },
       "multiAnswer": true,
       "render": {
-        "en": "This is a school for {school:for}"
+        "en": "This school has facilities for students with {school:for}",
+        "nl": "Deze school richt zich op studenten met {school:for}"
       },
       "freeform": {
         "key": "school:for",
@@ -163,56 +176,65 @@
         {
           "if": "school:for=",
           "then": {
-            "en": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>"
+            "en": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>",
+            "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte. <div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>"
           },
           "hideInAnswer": true
         },
         {
           "if": "school:for=mainstream",
           "then": {
-            "en": "This is a school where students study skills at their age-adequate level."
+            "en": "This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>",
+            "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>"
           }
         },
         {
           "if": "school:for=adults",
           "then": {
-            "en": "This is a school where adults are taught skills on the level as specified."
+            "en": "This is a school where adults are taught skills on the level as specified.",
+            "nl": "Deze school richt zich op volwassenen"
           }
         },
         {
           "if": "school:for=autism",
           "then": {
-            "en": "This is a school with facilities for students on the autism specturm"
+            "en": "This is a school for students with autism",
+            "nl": "Deze school richt zich op studenten in het autisme-spectrum"
           }
         },
         {
           "if": "school:for=learning_disabilities",
           "then": {
-            "en": "This is a school with facilities for students with learning disabilities"
+            "en": "This is a school for students with learning disabilities",
+            "nl": "Deze school richt zich op leerlingen met een leerprobleem"
           }
         },
         {
           "if": "school:for=blind",
           "then": {
-            "en": "This is a school with facilities for blind students or students with sight impairments"
+            "en": "This is a school for blind students or students with sight impairments",
+            "nl": "Deze school richt zich op blinde en slechtziende studenten"
           }
         },
         {
           "if": "school:for=deaf",
           "then": {
-            "en": "This is a school with facilities for deaf students or students with hearing impairments"
+            "en": "This is a school for deaf students or students with hearing impairments",
+            "nl": "Deze school richt zich op dove en hardhorende studenten"
           }
         },
         {
           "if": "school:for=disabilities",
           "then": {
-            "en": "This is a school with facilities for students with disabilities"
+            "en": "This is a school for students with disabilities",
+            "nl": "Deze school richt zich op studenten met een beperking"
           }
         },
         {
           "if": "school:for=special_needs",
           "then": {
-            "en": "This is a school with facilities for students with special needs"
+            "en": "This is a school for students with special needs",
+            "nl": "Deze school richt zich op studenten met extra zorgbehoeften"
           }
         }
       ]
@@ -223,10 +245,12 @@
     {
       "id": "language",
       "question": {
-        "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
+        "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
+        "nl": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
       },
       "render": {
-        "en": "{school:language} is the main language of {title()}"
+        "en": "{school:language} is the main language of {title()}",
+        "nl": "{school:language} is de voertaal van {title()}"
       },
       "freeform": {
         "key": "school:language",
@@ -236,7 +260,8 @@
         {
           "if": "school:language=",
           "then": {
-            "en": "The main language of this school is unknown"
+            "en": "The main language of this school is unknown",
+            "nl": "De voertaal van deze school is niet gekend"
           },
           "hideInAnswer": true
         }
@@ -250,7 +275,8 @@
         "fixme=Added with MapComplete, the precise geometry should still be drawn"
       ],
       "title": {
-        "en": "a primary or secondary school"
+        "en": "a primary or secondary school",
+        "nl": "een lagere of middelbare school"
       }
     }
   ],

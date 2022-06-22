@@ -21,18 +21,6 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [education](https://mapcomplete.osm.be/education)
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 
@@ -148,11 +136,11 @@ The question is  Which genders can enroll at this school?
 
 
 
-The question is  What is the target audience for this school?
+The question is  Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc 
 
 This rendering asks information about the property  [school:for](https://wiki.openstreetmap.org/wiki/Key:school:for) 
 
-This is rendered with  This is a school for {school:for}
+This is rendered with  This school has facilities for students with {school:for}
 
 
 
@@ -160,14 +148,14 @@ This is rendered with  This is a school for {school:for}
 
   - This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div> corresponds with  
   - This option cannot be chosen as answer
-  - This is a school where students study skills at their age-adequate level. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dmainstream' target='_blank'>mainstream</a>
+  - This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div> corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dmainstream' target='_blank'>mainstream</a>
   - This is a school where adults are taught skills on the level as specified. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dadults' target='_blank'>adults</a>
-  - This is a school with facilities for students on the autism specturm corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dautism' target='_blank'>autism</a>
-  - This is a school with facilities for students with learning disabilities corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dlearning_disabilities' target='_blank'>learning_disabilities</a>
-  - This is a school with facilities for blind students or students with sight impairments corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dblind' target='_blank'>blind</a>
-  - This is a school with facilities for deaf students or students with hearing impairments corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddeaf' target='_blank'>deaf</a>
-  - This is a school with facilities for students with disabilities corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddisabilities' target='_blank'>disabilities</a>
-  - This is a school with facilities for students with special needs corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs' target='_blank'>special_needs</a>
+  - This is a school for students with autism corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dautism' target='_blank'>autism</a>
+  - This is a school for students with learning disabilities corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dlearning_disabilities' target='_blank'>learning_disabilities</a>
+  - This is a school for blind students or students with sight impairments corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dblind' target='_blank'>blind</a>
+  - This is a school for deaf students or students with hearing impairments corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddeaf' target='_blank'>deaf</a>
+  - This is a school for students with disabilities corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddisabilities' target='_blank'>disabilities</a>
+  - This is a school for students with special needs corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs' target='_blank'>special_needs</a>
 
 
 Only visible if  `school:for~^..*$`  is shown

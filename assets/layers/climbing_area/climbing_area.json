@@ -10,7 +10,8 @@
   },
   "description": {
     "en": "An area where climbing is possible, e.g. a crag, site, boulder, … Contains aggregation of routes",
-    "de": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, … Enthält eine Sammlung von Routen"
+    "de": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, … Enthält eine Sammlung von Routen",
+    "nl": "Een gebied waar klimmen mogelijk is, bv. een klimsite, een bolder of klimrots,…"
   },
   "minzoom": 10,
   "source": {
@@ -118,7 +119,8 @@
         "en": "<h3>Length overview</h3>{histogram(_length_hist)}",
         "fr": "<h3>Résumé de longueur</h3>{histogram(_length_hist)}",
         "de": "<h3>Längenübersicht</h3>{histogram(_length_hist)}",
-        "it": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}"
+        "it": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}",
+        "nl": "<h3>Overzicht van lengtes</h3>{histogram(_length_hist)}"
       },
       "condition": "_length_hist!~\\[\\]",
       "id": "Contained routes length hist"
@@ -128,7 +130,8 @@
         "en": "<h3>Grades overview</h3>{histogram(_difficulty_hist)}",
         "fr": "<h3>Résumé des difficultés</h3>{histogram(_difficulty_hist)}",
         "de": "<h3>Schwierigkeitsübersicht</h3>{histogram(_difficulty_hist)}",
-        "it": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}"
+        "it": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}",
+        "nl": "<h3>Overzicht van moeilijkheidsgraden</h>{histogram(_difficulty_hist)}"
       },
       "condition": "_difficulty_hist!~\\[\\]",
       "id": "Contained routes hist"
@@ -219,13 +222,15 @@
         "en": "What is the rock type here?",
         "fr": "Quel est le type de roche ?",
         "de": "Welchen Gesteinstyp gibt es hier?",
-        "it": "Qual è il tipo di roccia qua?"
+        "it": "Qual è il tipo di roccia qua?",
+        "nl": "Wat is de rotssoort?"
       },
       "render": {
         "en": "The rock type is {rock}",
         "fr": "La roche est du {rock}",
         "de": "Der Gesteinstyp ist {rock}",
-        "it": "Il tipo di roccia è {rock}"
+        "it": "Il tipo di roccia è {rock}",
+        "nl": "De rotssoort is {rock}"
       },
       "freeform": {
         "key": "rock"
