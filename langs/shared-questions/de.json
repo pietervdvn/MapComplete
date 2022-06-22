@@ -91,6 +91,20 @@
             },
             "question": "Gibt es hier Steckdosen, an denen Kunden ihre Geräte laden können?"
         },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Rauchen ist <b>erlaubt</b>"
+                },
+                "1": {
+                    "then": "Rauchen ist <b>nicht erlaubt</b>"
+                },
+                "2": {
+                    "then": "Rauchen ist <b> draußen erlaubt</b>."
+                }
+            },
+            "question": "Ist das Rauchen in {title()} erlaubt?"
+        },
         "website": {
             "question": "Wie lautet die Webseite von {title()}?"
         },

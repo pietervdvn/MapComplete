@@ -371,7 +371,8 @@
         "en": "What species is this tree?",
         "de": "Um welche Baumart handelt es sich?",
         "id": "Spesies pohon apa ini?",
-        "es": "¿De qué especie es este árbol?"
+        "es": "¿De qué especie es este árbol?",
+        "nl": "Wat is de boomsoort?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"

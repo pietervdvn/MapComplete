@@ -1034,7 +1034,9 @@
   },
   "smoking": {
     "question": {
-      "en": "Is smoking allowed at {title()}?"
+      "en": "Is smoking allowed at {title()}?",
+      "de": "Ist das Rauchen in {title()} erlaubt?",
+      "es": "¿Está permitido fumar en {title()}?"
     },
     "#condition": "Based on https://en.wikipedia.org/wiki/List_of_smoking_bans",
     "condition": "_country!~al|be",
@@ -1046,7 +1048,9 @@
           "size": "small"
         },
         "then": {
-          "en": "Smoking is <b>allowed</b>"
+          "en": "Smoking is <b>allowed</b>",
+          "de": "Rauchen ist <b>erlaubt</b>",
+          "es": "Está <b>permitido</b> fumar"
         }
       },
       {
@@ -1056,13 +1060,17 @@
           "size": "small"
         },
         "then": {
-          "en": "Smoking is <b>not allowed</b>"
+          "en": "Smoking is <b>not allowed</b>",
+          "de": "Rauchen ist <b>nicht erlaubt</b>",
+          "es": "<b>No</b> está permitido fumar"
         }
       },
       {
         "if": "smoking=outside",
         "then": {
-          "en": "Smoking is <b>allowed outside</b>."
+          "en": "Smoking is <b>allowed outside</b>.",
+          "de": "Rauchen ist <b> draußen erlaubt</b>.",
+          "es": "Está permitido fumar <b>en el exterior</b>."
         }
       }
     ]

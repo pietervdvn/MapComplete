@@ -145,6 +145,10 @@ export class OsmConnection {
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
     }
+    
+    public Backend(): string {
+        return this._oauth_config.url;
+    }
 
     public AttemptLogin() {
         this.loadingStatus.setData("loading")

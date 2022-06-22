@@ -126,7 +126,7 @@ export default class DetermineLayout {
             .AttachTo("centermessage");
     }
 
-    private static prepCustomTheme(json: any, sourceUrl?: string): LayoutConfig {
+    private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): LayoutConfig {
         
         if(json.layers === undefined && json.tagRenderings !== undefined){
             const iconTr = json.mapRendering.map(mr => mr.icon).find(icon => icon !== undefined)
@@ -161,6 +161,7 @@ export default class DetermineLayout {
         json = new PrepareTheme(converState).convertStrict(json, "While preparing a dynamic theme")
         console.log("The layoutconfig is ", json)
         
+        json.id = forceId ?? json.id
         
         return new LayoutConfig(json, false, {
             definitionRaw: JSON.stringify(raw, null, "  "),
@@ -178,9 +179,13 @@ export default class DetermineLayout {
 
             let parsed = await Utils.downloadJson(link)
             try {
-                parsed.id = link;
+                let forcedId = parsed.id
+                const url = new URL(link)
+                if(!(url.hostname === "localhost" || url.hostname === "127.0.0.1")){
+                    forcedId = link;
+                }
                 console.log("Loaded remote link:", link)
-                return DetermineLayout.prepCustomTheme(parsed, link)
+                return DetermineLayout.prepCustomTheme(parsed, link, forcedId);
             } catch (e) {
                 console.error(e)
                 DetermineLayout.ShowErrorOnCustomTheme(

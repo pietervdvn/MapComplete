@@ -368,7 +368,8 @@
           "if": "leisure=playground",
           "then": {
             "en": "This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public",
-            "nl": "Dit is een schoolplein - een zone waar de leerlingen kunnen spelen tijdens de pauze. Dit schoolplein is niet toegankelijk voor het publiek"
+            "nl": "Dit is een schoolplein - een zone waar de leerlingen kunnen spelen tijdens de pauze. Dit schoolplein is niet toegankelijk voor het publiek",
+            "de": "Dies ist ein Schulhof - ein Außenbereich, auf dem die Schüler in den Pausen spielen können; er ist jedoch für die Öffentlichkeit nicht zugänglich"
           }
         }
       ]
@@ -544,7 +545,8 @@
         "if": "leisure=schoolyard",
         "then": {
           "en": "This is a schoolyard - an (outdoor) area where pupils of a school can play during recess and which is not publicly accessible",
-          "nl": "Dit is een schoolplein - een ruimte waar de leerlingen van een school kunnen spelen tijdens de pauze maar die niet publiek toegankelijk is"
+          "nl": "Dit is een schoolplein - een ruimte waar de leerlingen van een school kunnen spelen tijdens de pauze maar die niet publiek toegankelijk is",
+          "de": "Dies ist ein Schulhof - ein (Außen-)Bereich, auf dem die Schüler einer Schule in den Pausen spielen können und der nicht öffentlich zugänglich ist"
         }
       }
     ],

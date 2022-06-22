@@ -261,14 +261,21 @@ If you have your JSON file, there are three ways to distribute your theme:
 ### Getting your theme included into the official mapcomplete
 
 Did you make an awesome theme that you want to share with the OpenStreetMap community? Have it included in the main
-application, which makes it more discoverable.
+application. This makes sure that:
 
-Your theme has to be:
+- Your theme will be discovered by more people
+- It will be included in the translation program
+- Metadata will be generated (such as links with TagInfo or layer documentation)
+- Maintanence is included
+- Parts of your theme might be reused by others
 
-0) Make sure the theme has an English version. This makes it easier for me to understand what is going on. The more
+The following conditions must be met:
+
+0) The theme must be relevant for a global audience
+1) There must be an English translation. This makes it easier for me to understand what is going on and is needed for the translators. The more
    other languages, the better of course!
-1) Make sure your theme has good tagging
-3) Make sure there are somewhat decent icons. Note that there is _no_ styleguide at the moment though.
+2) Make sure your theme has good tagging - i.e. a wiki page must exist for the used tags
+3) Make sure there are somewhat decent icons. Note that there is _no_ styleguide at the moment though. Icons must be included and have license info in the corresponding `license_info.json`-files. (Run `npm run query:licenses` to build those)
 
 The preferred way to add your theme is via a Pull Request. A Pull Request is less work for the maintainer (which makes
 it really easy for me to add it) and your name will be included in the git history (so you'll be listed as

@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 161,
+      "commits": 165,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 121,
+      "commits": 123,
       "contributor": "kjon"
     },
     {
@@ -25,7 +25,7 @@
       "contributor": "Artem"
     },
     {
-      "commits": 25,
+      "commits": 27,
       "contributor": "Iago"
     },
     {
@@ -94,6 +94,10 @@
     },
     {
       "commits": 6,
+      "contributor": "Joost Schouppe"
+    },
+    {
+      "commits": 6,
       "contributor": "Romain de Bossoreille"
     },
     {
@@ -123,10 +127,6 @@
     {
       "commits": 6,
       "contributor": "lvgx"
-    },
-    {
-      "commits": 5,
-      "contributor": "Joost Schouppe"
     },
     {
       "commits": 5,

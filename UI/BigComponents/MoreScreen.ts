@@ -207,55 +207,19 @@ export default class MoreScreen extends Combine {
             new SubtleButton(undefined, t.button, {url: "./professional.html"}),
         ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
     }
-
-    private static createUnofficialButtonFor(state: UserRelatedState, id: string): BaseUIElement {
-        const pref = state.osmConnection.GetLongPreference(id)
-        const str = pref.data
-        if (str === undefined || str === "undefined" || str === "") {
-            pref.setData(null)
-            return undefined
-        }
-
-        try {
-            const value: {
-                id: string
-                icon: string,
-                title: any,
-                shortDescription: any,
-                definition?: any,
-                isOfficial: boolean
-            } = JSON.parse(str)
-            value.isOfficial = false
-            return MoreScreen.createLinkButton(state, value, true)
-        } catch (e) {
-            console.warn("Removing theme " + id + " as it could not be parsed from the preferences")
-            pref.setData(null)
-            return undefined
-        }
-    }
-
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses: string, search: UIEventSource<string>): BaseUIElement {
-        const prefix = "mapcomplete-unofficial-theme-";
-
-        var currentIds: Store<string[]> = state.osmConnection.preferencesHandler.preferences
-            .map(allPreferences => {
-                const ids: string[] = []
-
-                for (const key in allPreferences) {
-                    if (key.startsWith(prefix) && key.endsWith("-combined-length")) {
-                        const id = key.substring("mapcomplete-".length, key.length - "-combined-length".length)
-                        ids.push(id)
-                    }
-                }
-                return ids
-            });
+        var currentIds: UIEventSource<string[]> = state.installedUserThemes
 
         var stableIds = Stores.ListStabilized<string>(currentIds)
         return new VariableUiElement(
             stableIds.map(ids => {
                 const allThemes: { element: BaseUIElement, predicate?: (s: string) => boolean }[] = []
                 for (const id of ids) {
-                    const link = this.createUnofficialButtonFor(state, id)
+                    const themeInfo = state.GetUnofficialTheme(id)
+                    if(themeInfo === undefined){
+                        continue
+                    }
+                    const link = MoreScreen.createLinkButton(state, themeInfo, true)
                     if (link !== undefined) {
                         allThemes.push({
                             element: link.SetClass(buttonClass),

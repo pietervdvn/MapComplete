@@ -9,7 +9,7 @@
   },
   "description": {
     "en": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)",
-    "nl": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, ...)",
+    "nl": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, …)",
     "de": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, …)",
     "es": "Una capa que muestra capas y ofrece la posibilidad de sondear algunos datos avanzados que son importantes para, por ejemplo, usuarios de sillas de ruedas (pero también incluye ciclistas, gente que quiere repartir, ...)"
   },
@@ -104,7 +104,7 @@
           },
           "then": {
             "en": "This is a service entrance - normally only used for employees, delivery, …",
-            "nl": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, ...",
+            "nl": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, …",
             "de": "Dies ist ein Diensteingang - normalerweise nur für Mitarbeiter, Anlieferung, …",
             "es": "Esta es una entrada de servicio - normalmente solo la utilizan empleados, repartidores, …"
           }

@@ -13,7 +13,7 @@
                     }
                 },
                 "question": "¿Cuál es el número de esta casa?",
-                "render": "La numeración de la casa es <b>{addr:housenumber}</b>"
+                "render": "El número de puerta es <b>{addr:housenumber}</b>"
             },
             "street": {
                 "question": "¿En qué calle se encuentra esta dirección?",
@@ -65,7 +65,7 @@
                 "render": "Esta estación se encuentra en {addr:place}."
             },
             "ambulance-street": {
-                "question": " ¿Cual es el nombre de la calle en la que se encuentra la estación?",
+                "question": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
                 "render": "Esta estación se encuentra al lado de una autovía llamada {addr:street}."
             }
         },
@@ -486,6 +486,9 @@
                     "4": {
                         "then": "Aquí se pueden alquilar bicis infantiles"
                     },
+                    "5": {
+                        "then": "Aquí se pueden alquilar tándems"
+                    },
                     "6": {
                         "then": "Aquí se pueden alquilar bicicletas de carreras"
                     },
@@ -509,6 +512,9 @@
                     },
                     "3": {
                         "then": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura"
+                    },
+                    "4": {
+                        "then": "Una máquina que dispensa y acepta llaves, eventualmente después de la autenticación y/o el pago está presente. Las bicicletas están aparcadas cerca"
                     },
                     "5": {
                         "then": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler"
