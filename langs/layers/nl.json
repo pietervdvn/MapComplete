@@ -4850,7 +4850,7 @@
                 "render": "Deze school heet <b>{name}</b>"
             },
             "capacity": {
-                "render": "Deze school kan maximaal {capacitiy} studenten lesgeven"
+                "render": "Deze school kan maximaal {capacity} studenten lesgeven"
             }
         },
         "presets": {
