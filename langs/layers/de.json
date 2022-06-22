@@ -3933,6 +3933,37 @@
                     }
                 },
                 "question": "Ist dies ein Hackerspace oder ein Makerspace?"
+            },
+            "6": {
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "einen 3D-Drucker",
+                            "2": "3D-Drucker"
+                        },
+                        "2": {
+                            "2": "CNC-Fräse",
+                            "1": "eine CNC-Fräse"
+                        },
+                        "1": {
+                            "1": "einen Laserschneider",
+                            "2": "Laserschneider"
+                        }
+                    }
+                },
+                "renderings": {
+                    "0": {
+                        "mappings": {
+                            "1": {
+                                "then": "In diesem Hackerspace gibt es kein {negative-name}"
+                            },
+                            "0": {
+                                "then": "In diesem Hackerspace gibt es {device-name}"
+                            }
+                        },
+                        "question": "Gibt es {device-name} in diesem Hackerspace?"
+                    }
+                }
             }
         },
         "title": {
@@ -5987,6 +6018,109 @@
                         "human": " Meter"
                     }
                 }
+            }
+        }
+    },
+    "school": {
+        "name": "Grund- und weiterführende Schulen",
+        "tagRenderings": {
+            "education-level-belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "Es handelt sich um eine Schule mit einer Kindergartenabteilung, in der kleine Kinder eine Ausbildung erhalten, die auf das Lesen und Schreiben vorbereitet."
+                    },
+                    "1": {
+                        "then": "In dieser Schule lernt man grundlegende Fähigkeiten wie Lesen, Schreiben und Rechnen. <div class='subtle'>Schüler besuchen die Schule in der Regel im Alter von 6 bis 12 Jahren</div>"
+                    }
+                }
+            },
+            "capacity": {
+                "question": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
+                "render": "Diese Schule kann höchstens {capacity} Schüler aufnehmen"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "eine Grundschule oder weiterführende Schule"
+            }
+        }
+    },
+    "kindergarten_childcare": {
+        "presets": {
+            "1": {
+                "title": "eine Kinderkrippe"
+            },
+            "0": {
+                "title": "einen Kindergarten"
+            }
+        },
+        "tagRenderings": {
+            "childcare-type": {
+                "question": "Um welche Art von Einrichtung handelt es sich?",
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten."
+                    },
+                    "1": {
+                        "then": "Dies ist eine Kinderbetreuungseinrichtung, z. B. ein Kinderkrippe oder eine Tagesmutter, in der Kleinkinder betreut werden. Sie bieten keine Ausbildung an und werden oft als Privatunternehmen geführt"
+                    }
+                }
+            },
+            "5": {
+                "override": {
+                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
+                }
+            },
+            "capacity": {
+                "render": "Diese Einrichtung bietet Platz für {capacity} Kinder",
+                "question": "Wie viele Kinder können hier maximal angemeldet werden?"
+            }
+        },
+        "name": "Kindergärten und Kinderkrippen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kindergarten {name}"
+                },
+                "1": {
+                    "then": "Kinderkrippe {name}"
+                }
+            }
+        }
+    },
+    "maxspeed": {
+        "name": "Höchstgeschwindigkeit",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Straße ohne Namen"
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "humanShort": "km/h",
+                        "human": "Kilometer/Stunde"
+                    },
+                    "1": {
+                        "human": "Meilen/Stunde",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        },
+        "description": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
+                    }
+                },
+                "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
+                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}"
             }
         }
     }
