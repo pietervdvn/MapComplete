@@ -4924,6 +4924,7 @@
         },
         "tagRenderings": {
             "capacity": {
+                "question": "How much students can at most enroll in this school?",
                 "render": "This school can enroll at most {capacity} students"
             },
             "education-level-belgium": {
