@@ -145,6 +145,7 @@
     },
     {
       "id": "target-audience",
+      "condition": "school:for~*",
       "question": {
         "en":"What is the target audience for this school?"
       },
@@ -158,9 +159,16 @@
       },
       "mappings": [
         {
+          "if": "school:for=",
+          "then": {
+            "en": "This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>"
+          },
+          "hideInAnswer": true
+        },
+        {
           "if": "school:for=mainstream",
           "then": {
-            "en": "This is a school where students study skills at their age-adequate level"
+            "en": "This is a school where students study skills at their age-adequate level."
           }
         },
         {
@@ -197,6 +205,12 @@
           "if": "school:for=disabilities",
           "then": {
             "en": "This is a school with facilities for students with disabilities"
+          }
+        },
+        {
+          "if": "school:for=special_needs",
+          "then": {
+            "en": "This is a school with facilities for students with special needs"
           }
         }
       ]
