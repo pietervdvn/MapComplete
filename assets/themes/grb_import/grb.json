@@ -700,7 +700,7 @@
       "override": {
         "calculatedTags": [
           "_overlapping=Number(feat.properties.zoom) >= 16 ? feat.overlapWith('grb').map(ff => ff.feat.properties) : undefined",
-          "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found !== 'true' && p._intersects_with_other_features === ''))?.map(p => p.id)",
+          "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found === 'true' || p._intersects_with_other_features === ''))?.map(p => p.id)",
           "_applicable_count=feat.get('_applicable')?.length"
         ],
         "tagRenderings": [
