@@ -253,6 +253,12 @@
             "wednesday": "Wednesday"
         },
         "welcomeBack": "You are logged in, welcome back!",
+        "welcomeExplanation": {
+            "addNew": "Tap the map to add a new POI.",
+            "browseMoreMaps": "Discover more maps",
+            "browseOtherThemesIntro": "Various thematic maps exist on MapComplete",
+            "general": "On this map, you can see, edit and add <i>points of interest</i>. Zoom around to see the POI, tap one to see or edit the information. All data is sourced from and saved to OpenStreetMap, which can be freely reused."
+        },
         "wikipedia": {
             "createNewWikidata": "Create a new Wikidata item",
             "doSearch": "Search above to see results",

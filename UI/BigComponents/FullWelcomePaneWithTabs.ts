@@ -23,7 +23,8 @@ import PrivacyPolicy from "./PrivacyPolicy";
 
 export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
 
-
+    public static MoreThemesTabIndex = 1;
+    
     constructor(isShown: UIEventSource<boolean>,
                 currentTab: UIEventSource<number>,
                 state: {
@@ -45,19 +46,12 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         )
     }
 
-    private static ConstructBaseTabs(state: {
-                                         layoutToUse: LayoutConfig,
-                                         osmConnection: OsmConnection,
-                                         featureSwitchShareScreen: UIEventSource<boolean>,
-                                         featureSwitchMoreQuests: UIEventSource<boolean>,
-                                         featurePipeline: FeaturePipeline,
-                                         locationControl: UIEventSource<Loc>, backgroundLayer: UIEventSource<BaseLayer>, filteredLayers: UIEventSource<FilteredLayer[]>
-                                     } & UserRelatedState,
-                                     isShown: UIEventSource<boolean>):
+    private static ConstructBaseTabs(state: { layoutToUse: LayoutConfig; osmConnection: OsmConnection; featureSwitchShareScreen: UIEventSource<boolean>; featureSwitchMoreQuests: UIEventSource<boolean>; featurePipeline: FeaturePipeline; locationControl: UIEventSource<Loc>; backgroundLayer: UIEventSource<BaseLayer>; filteredLayers: UIEventSource<FilteredLayer[]> } & UserRelatedState,
+                                     isShown: UIEventSource<boolean>, currentTab: UIEventSource<number>):
         { header: string | BaseUIElement; content: BaseUIElement }[] {
 
         const tabs: { header: string | BaseUIElement, content: BaseUIElement }[] = [
-            {header: `<img src='${state.layoutToUse.icon}'>`, content: new ThemeIntroductionPanel(isShown)},
+            {header: `<img src='${state.layoutToUse.icon}'>`, content: new ThemeIntroductionPanel(isShown, currentTab,  state)},
         ]
 
 
@@ -107,8 +101,8 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         locationControl: UIEventSource<Loc>, backgroundLayer: UIEventSource<BaseLayer>, filteredLayers: UIEventSource<FilteredLayer[]>
     } & UserRelatedState, currentTab: UIEventSource<number>, isShown: UIEventSource<boolean>) {
 
-        const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown)
-        const tabsWithAboutMc = [...FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown)]
+        const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown, currentTab)
+        const tabsWithAboutMc = [...FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown, currentTab)]
 
 
         tabsWithAboutMc.push({
