@@ -182,6 +182,7 @@ export class TagUtils {
 
     /**
      * Returns wether or not a keys is (probably) a valid key.
+     * See 'Tags_format.md' for an overview of what every tag does
      *
      * // should accept common keys
      * TagUtils.isValidKey("name") // => true

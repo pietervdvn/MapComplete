@@ -4,6 +4,8 @@ Tags format
 When creating the `json` file describing your layer or theme, you'll have to add a few tags to describe what you want.
 This document gives an overview of what every expression means and how it behaves in edge cases.
 
+If the schema-files note a type `string | AndOrTagConfigJson`, you can use one of these values.
+
 Strict equality
 ---------------
 
@@ -38,8 +40,8 @@ If `key` is not present or empty, this will match too.
 This implies that, to check if a key is present, `key!=` can be used. This will only match if the key is present and not
 empty.
 
-Number comparison
------------------
+Number and date comparison
+--------------------------
 
 If the value of a tag is a number (e.g. `key=42`), one can use a filter `key<=42`, `key>=35`, `key>40` or `key<50` to
 match this, e.g. in conditions for renderings. These tags cannot be used to generate an answer nor can they be used to
@@ -50,6 +52,8 @@ example, `length=42 meter` will be interpreted as `length=42` and will thus matc
 special circumstances (e.g. `surface_area=42 m2` or `length=100 feet`), this will result in erronous
 values (`surface=422` or if a length in meters is compared to). However, this can be partially alleviated by using '
 Units' to rewrite to a default format.
+
+Dates can be compared with the same expression: `somekey<2022-06-22` will match if `somekey` is a date and is smaller then 22nd june '22.
 
 Regex equals
 ------------
@@ -87,7 +91,7 @@ To mitigate this, use:
 {
     "mappings": [
         {
-            "if":"key:={some_other_key}"
+            "if":"key:={some_other_key}",
             "then": "...",
             "hideInAnswer": "some_other_key="
         }
