@@ -26,6 +26,7 @@ import InputElementMap from "./InputElementMap";
 import Translations from "../i18n/Translations";
 import {Translation} from "../i18n/Translation";
 import BaseLayer from "../../Models/BaseLayer";
+import Locale from "../i18n/Locale";
 
 export class TextFieldDef {
 
@@ -74,7 +75,7 @@ export class TextFieldDef {
         location?: [number /*lat*/, number /*lon*/],
         mapBackgroundLayer?: UIEventSource</*BaseLayer*/ any>,
         unit?: Unit,
-        args?: (string | number | boolean)[] // Extra arguments for the inputHelper,
+        args?: (string | number | boolean | any)[] // Extra arguments for the inputHelper,
         feature?: any,
     } = {}): InputElement<string> {
 
@@ -249,8 +250,8 @@ class WikidataTextField extends TextFieldDef {
                         ["options", new Combine(["A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.",
                             new Table(
                                 ["subarg", "doc"],
-                                [["removePrefixes", "remove these snippets of text from the start of the passed string to search"],
-                                    ["removePostfixes", "remove these snippets of text from the end of the passed string to search"],
+                                [["removePrefixes", "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list"],
+                                    ["removePostfixes", "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list"],
                                     ["instanceOf","A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans"],
                                         ["notInstanceof","A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results"]
                                 ]
@@ -266,13 +267,16 @@ class WikidataTextField extends TextFieldDef {
     "helperArgs": [
         "name",
         {
-            "removePostfixes": [
+            "removePostfixes": {"en": [
                 "street",
                 "boulevard",
                 "path",
                 "square",
                 "plaza",
             ],
+             "nl": ["straat","plein","pad","weg",laan"]
+             },
+            
             "#": "Remove streets and parks from the search results:"
              "notInstanceOf": ["Q79007","Q22698"] 
         }
@@ -324,38 +328,47 @@ Another example is to search for species and trees:
     public inputHelper(currentValue, inputHelperOptions) {
         const args = inputHelperOptions.args ?? []
         const searchKey = args[0] ?? "name"
+        
+        
 
-        let searchFor = <string>(inputHelperOptions.feature?.properties[searchKey]?.toLowerCase() ?? "")
+        const searchFor = <string>(inputHelperOptions.feature?.properties[searchKey]?.toLowerCase() ?? "")
 
+        let searchForValue: UIEventSource<string> = new UIEventSource(searchFor);
         const options: any = args[1]
         if (searchFor !== undefined && options !== undefined) {
-            const prefixes = <string[]>options["removePrefixes"]
-            const postfixes = <string[]>options["removePostfixes"]
-            for (const postfix of postfixes ?? []) {
-                if (searchFor.endsWith(postfix)) {
-                    searchFor = searchFor.substring(0, searchFor.length - postfix.length)
-                    break;
-                }
-            }
+            const prefixes = <string[] | Record<string, string[]>>options["removePrefixes"] ?? []
+            const postfixes = <string[] | Record<string, string[]>>options["removePostfixes"] ?? []
 
-            for (const prefix of prefixes ?? []) {
-                if (searchFor.startsWith(prefix)) {
-                    searchFor = searchFor.substring(prefix.length)
-                    break;
+            Locale.language.map(lg => {
+                const prefixesUnrwapped: string[] = prefixes[lg] ?? prefixes 
+                const postfixesUnwrapped: string[] = postfixes[lg] ?? postfixes
+                let clipped = searchFor;
+                console.log("Pref", prefixesUnrwapped," post", postfixesUnwrapped)
+                for (const postfix of postfixesUnwrapped) {
+                    if (searchFor.endsWith(postfix)) {
+                        clipped = searchFor.substring(0, searchFor.length - postfix.length)
+                        break;
+                    }
                 }
-            }
+
+                for (const prefix of prefixesUnrwapped) {
+                    if (searchFor.startsWith(prefix)) {
+                        clipped = searchFor.substring(prefix.length)
+                        break;
+                    }
+                }
+                return clipped;
+            }).addCallbackAndRun(clipped => searchForValue.setData(clipped))
+
 
         }
-        
+
         let instanceOf : number[] =  Utils.NoNull((options?.instanceOf ?? []).map(i => Wikidata.QIdToNumber(i)))
         let notInstanceOf : number[] = Utils.NoNull((options?.notInstanceOf ?? []).map(i => Wikidata.QIdToNumber(i)))
 
-        console.log("Instance of", instanceOf)
-        
-        
         return new WikidataSearchBox({
             value: currentValue,
-            searchText: new UIEventSource<string>(searchFor),
+            searchText: searchForValue,
             instanceOf,
             notInstanceOf
         })
@@ -868,7 +881,7 @@ export default class ValidatedTextField {
     public static ForType(type: string = "string"): TextFieldDef {
         const def = ValidatedTextField.allTypes.get(type)
         if(def === undefined){
-            console.warn("Something tried to load a validated text field named",type, "but this type does not exist")
+                console.warn("Something tried to load a validated text field named",type, "but this type does not exist")
             return this.ForType()
         }
         return def
