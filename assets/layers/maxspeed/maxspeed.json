@@ -71,7 +71,7 @@
           },
           "icon": {
             "path": "./assets/layers/maxspeed/living_street_be.svg",
-            "size": "large"
+            "class": "large"
           },
           "hideInAnswer": "_country!=be"
         }
