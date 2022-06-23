@@ -1,8 +1,8 @@
 {
   "id": "parkings",
   "title": {
-    "nl": "Parking",
     "en": "Parking",
+    "nl": "Parking",
     "de": "Parkplatzkarte",
     "it": "Parcheggio",
     "nb_NO": "Parkering",

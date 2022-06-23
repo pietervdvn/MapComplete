@@ -1,9 +1,9 @@
 {
   "id": "maxspeed",
   "title": {
+    "en": "Maxspeed",
     "es": "Velocidad",
-    "ca": "Velocitat",
-    "en": "Maxspeed"
+    "ca": "Velocitat"
   },
   "shortDescription": {
     "en": "This map shows the legally allowed maximum speed on every road."

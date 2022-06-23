@@ -1,8 +1,8 @@
 {
   "id": "food",
   "name": {
-    "nl": "Eetgelegenheden",
     "en": "Restaurants and fast food",
+    "nl": "Eetgelegenheden",
     "de": "Restaurants und Imbisse",
     "da": "Restauranter og fastfood",
     "es": "Restaurantes y comida rápida"

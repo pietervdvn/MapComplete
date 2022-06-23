@@ -1,9 +1,9 @@
 {
   "id": "maxspeed",
   "name": {
+    "en": "Maxspeed",
     "es": "Velocidad",
-    "ca": "Velocitat",
-    "en": "Maxspeed"
+    "ca": "Velocitat"
   },
   "source": {
     "osmTags": {
