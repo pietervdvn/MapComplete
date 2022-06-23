@@ -129,6 +129,20 @@
                 }
             },
             "question": "Quel est l’élément Wikipédia correspondant ?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Il est <b>autorisé</b> de fumer"
+                },
+                "2": {
+                    "then": "Il est autorisé de fumer <b>à l'extérieur</b>."
+                },
+                "1": {
+                    "then": "Il est <b>interdit</b> de fumer"
+                }
+            },
+            "question": "Est-ce autorisé de fumer à {title()} ?"
         }
     }
 }
