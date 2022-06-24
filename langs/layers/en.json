@@ -5015,7 +5015,7 @@
                         "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>fifth and sixth</b> grade"
                     },
                     "6": {
-                        "then": "This schools offers post-secondary education (e.g. a seventh or eight specialisation year)"
+                        "then": "This school offers post-secondary education (e.g. a seventh or eight specialisation year)"
                     }
                 },
                 "question": "What level of education is given on this school?"
