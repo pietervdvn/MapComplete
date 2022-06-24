@@ -821,6 +821,7 @@ The following layers are included in MapComplete:
   - [left_right_style](./Layers/left_right_style.md)
   - [map](./Layers/map.md)
   - [matchpoint](./Layers/matchpoint.md)
+  - [maxspeed](./Layers/maxspeed.md)
   - [named_streets](./Layers/named_streets.md)
   - [nature_reserve](./Layers/nature_reserve.md)
   - [note](./Layers/note.md)

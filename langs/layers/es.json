@@ -728,6 +728,9 @@
             }
         },
         "tagRenderings": {
+            "Email maintainer": {
+                "render": "<a href='mailto:{email}?subject=Bomba de bicicletas rota&body=Hola,%0D%0A%0ACon este correo, me gustaría informarte de que la bomba para bicicletas que se encuentra en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0A Un saludo'>Reportar esta bomba para bicicletas como rota</a>"
+            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -840,11 +843,11 @@
             },
             "bike_repair_station-valves": {
                 "mappings": {
-                    "1": {
-                        "then": "Dunlop"
-                    },
                     "0": {
                         "then": "Sclaverand/Presata (ruedas de bicicleta estrechas)"
+                    },
+                    "1": {
+                        "then": "Dunlop"
                     },
                     "2": {
                         "then": "Schrader (coches y bicicletas de montaña)"
@@ -852,9 +855,6 @@
                 },
                 "question": "¿Que válvulas se soportan?",
                 "render": "Esta bomba soporta las siguiente válvulas: {valves}"
-            },
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Bomba de bicicletas rota&body=Hola,%0D%0A%0ACon este correo, me gustaría informarte de que la bomba para bicicletas que se encuentra en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0A Un saludo'>Reportar esta bomba para bicicletas como rota</a>"
             }
         },
         "title": {
@@ -1012,6 +1012,9 @@
                 "0": {
                     "then": "Tienda de artículos deportivos <i>{name}</i>"
                 },
+                "1": {
+                    "then": "Winkel"
+                },
                 "2": {
                     "then": "Alquiler de bicicletas <i>{name}</i>"
                 },
@@ -1023,9 +1026,6 @@
                 },
                 "5": {
                     "then": "Taller/tienda de bicis <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Winkel"
                 }
             },
             "render": "Taller/tienda de bicis"
@@ -1140,8 +1140,8 @@
                 "title": "un bar"
             },
             "2": {
-                "title": "una cafetería",
-                "description": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
+                "description": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
+                "title": "una cafetería"
             },
             "3": {
                 "description": "Un <b>club nocturno</b> o discoteca centrada en bailar, la música de un DJ acompañado por un espectáculo de luces y un bar donde conseguir bebidas (alcohólicas)"

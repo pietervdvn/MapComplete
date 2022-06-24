@@ -56,8 +56,8 @@
                 "importTags": "Das Element wird {tags} bekommen",
                 "officialThemesOnly": "Die Import-Schaltfläche ist für inoffizielle Themen deaktiviert, um Störfälle zu vermeiden",
                 "wrongType": "Dieses Element ist kein Punkt oder Weg und kann deshalb nicht importiert werden",
-                "zoomInMore": "Ansicht vergrößern, um das Objekt zu importieren",
-                "wrongTypeToConflate": "Dieses Element ist weder ein Punkt noch ein Weg und kann nicht zusammengeführt werden"
+                "wrongTypeToConflate": "Dieses Element ist weder ein Punkt noch ein Weg und kann nicht zusammengeführt werden",
+                "zoomInMore": "Ansicht vergrößern, um das Objekt zu importieren"
             },
             "importTags": "Das Element erhält {tags}",
             "intro": "An dieser Stelle sind noch keine Daten vorhanden.<br>",
@@ -453,33 +453,42 @@
         "commandNotFound": "Ihre Anfrage wurde nicht verstanden. Meinten Sie vielleicht {0}, {1}, {2} oder {2}? <p>Geben Sie <code>help</code> ein, um eine Übersicht über alle Befehle zu sehen</p>",
         "commands": {
             "dm": {
-                "failed": "Ich konnte <code>{cmd}</code> aufgrund von {message} nicht ausführen",
-                "sendReason": "Ich habe Ihnen diese Nachricht geschickt, weil <b>{sender}</b> mich gebeten hat, diese mit <code>{cmd}</code> zu senden",
+                "argbody": "Der eigentliche Befehlstext des Befehls",
                 "argto": "Die ID, an welche die Ausgabe gesendet werden soll",
                 "commandNotFound": "Befehl {key} nicht gefunden - siehe <code>help</code> für alle Befehle",
                 "docs": "Führt einen Befehl aus und sendet die Ausgabe an eine andere Person",
                 "executing": "Führt <code>{_}</code> aus und sendet das Ergebnis an <b>{to}</b>…",
+                "failed": "Ich konnte <code>{cmd}</code> aufgrund von {message} nicht ausführen",
                 "noDm": "Ich konnte keinen Raum mit {to} erstellen",
                 "receipt": "Ich habe die Nachricht an {to} übermittelt",
                 "selectValidCommand": "Geben Sie einen gültigen Befehl an",
                 "selectValidUser": "Geben Sie einen gültigen Zielbenutzer an",
-                "argbody": "Der eigentliche Befehlstext des Befehls"
+                "sendReason": "Ich habe Ihnen diese Nachricht geschickt, weil <b>{sender}</b> mich gebeten hat, diese mit <code>{cmd}</code> zu senden"
             },
             "documentation": {
                 "argid": "Die ID einer {list} oder {list_end}, für welche die Dokumente benötigt werden. Alternativ können Sie auch eine von {coded_list} schreiben, um die verfügbaren IDs zu sehen.",
                 "didYouMean": "Meinten Sie",
                 "docs": "Ruft die Dokumentation zu einer MapComplete-Ebene, einem Thema oder einem URL-Parameter ab",
+                "file": {
+                    "plural": "Dateien",
+                    "singular": "Datei"
+                },
+                "inputElement": {
+                    "plural": "Eingabeelemente",
+                    "singular": "Eingabeelement"
+                },
+                "layer": {
+                    "plural": "Ebenen",
+                    "singular": "Ebene"
+                },
                 "noIdIntro": "Geben Sie eine ID an, um weitere Informationen über ein MapComplete-Programmierelement zu erhalten. Bekannte Typen sind {list}",
                 "notFound": "Kein {singular} mit Namen <code>{id}</code> gefunden",
-                "urlParam": "URL-Parameter <code>{id}<code></code></code>",
-                "layer": {
-                    "singular": "Ebene",
-                    "plural": "Ebenen"
-                },
+                "overview": "Die folgenden {plural} existieren:",
                 "theme": {
-                    "singular": "Thema",
-                    "plural": "Themen"
+                    "plural": "Themen",
+                    "singular": "Thema"
                 },
+                "urlParam": "URL-Parameter <code>{id}<code></code></code>",
                 "url_parameter": {
                     "plural": "URL-Parameter",
                     "singular": "URL-Parameter"
@@ -487,15 +496,6 @@
                 "visualisation": {
                     "plural": "Visualisierungen",
                     "singular": "Visualisierung"
-                },
-                "file": {
-                    "singular": "Datei",
-                    "plural": "Dateien"
-                },
-                "overview": "Die folgenden {plural} existieren:",
-                "inputElement": {
-                    "plural": "Eingabeelemente",
-                    "singular": "Eingabeelement"
                 }
             },
             "dream": {
@@ -514,9 +514,11 @@
                 "supported": "Meine unterstützten Befehle sind:"
             },
             "info": {
+                "argsearch": "Die ID des OSM-Objekts oder eine Suchanfrage",
                 "closed": "Geschlossen",
                 "closedTodayAndTomorrow": "Heute und morgen geschlossen",
                 "couldNotDownload": "<code>{id}</code> konnte nicht heruntergeladen werden",
+                "docs": "Ermittelt Informationen über ein OSM-Objekt. Geben Sie entweder eine ID ODER einen Suchstring an; die Objekte werden interpretiert und bekannte Werte werden angezeigt.",
                 "editWith": "Dieses Element mit {title} bearbeiten",
                 "fetchingInfoAbout": "Daten über {id} abrufen…",
                 "foundResults": "{total} Ergebnisse gefunden für <code>{search}</code>, rufe Details ab…",
@@ -525,9 +527,7 @@
                 "noOpeningHours": "Es sind keine Öffnungszeiten bekannt.",
                 "nothingFound": "Nichts gefunden für <code>{_}</code>",
                 "provideSearch": "Bitte geben Sie einen Suchbegriff der id an, um diesen Befehl zu verwenden",
-                "searchingWorldwide": "Durchsuche OpenStreetMap.org nach Ihrer Suche <code>{_}</code>",
-                "docs": "Ermittelt Informationen über ein OSM-Objekt. Geben Sie entweder eine ID ODER einen Suchstring an; die Objekte werden interpretiert und bekannte Werte werden angezeigt.",
-                "argsearch": "Die ID des OSM-Objekts oder eine Suchanfrage"
+                "searchingWorldwide": "Durchsuche OpenStreetMap.org nach Ihrer Suche <code>{_}</code>"
             },
             "language": {
                 "arglang": "Die von nun an zu verwendende Sprache",
@@ -550,61 +550,61 @@
                 "noRolesYet": "<b>{user}</b> hat derzeit keine Rollen.",
                 "noSuchRole": "Die Rolle <code>{role}</code> kann nicht an <code>{user}</code> vergeben werden. Eine Rolle ist dasselbe wie ein Befehlsname, geben Sie <code>help</code> ein, um alle Befehle zu sehen.",
                 "userHasRoles": "<b>{user}</b> hat derzeit die folgenden Rollen:",
-                "verbremove": "Entfernt eine Rolle von dem angegebenen Benutzer",
+                "verbadd": "Fügt eine Rolle für den angegebenen Benutzer hinzu",
                 "verbdefault": "Liste der Rollen des Benutzers",
                 "verblist": "Alle Benutzerrollen des angegebenen Benutzers auflisten",
-                "verbrevoke": "Entzieht alle Rechte eines Benutzers",
-                "verbadd": "Fügt eine Rolle für den angegebenen Benutzer hinzu"
+                "verbremove": "Entfernt eine Rolle von dem angegebenen Benutzer",
+                "verbrevoke": "Entzieht alle Rechte eines Benutzers"
+            },
+            "scheme": {
+                "argkey": "Der Name des Schlüssels",
+                "docs": "Enthält Informationen über einen Schlüssel in einer theme-config-Datei",
+                "noMatchingLayer": "Keine passenden Schlüssel gefunden, vielleicht meinten Sie einen von:",
+                "notype": "kein Typ angegeben",
+                "title": "{key} (verwendet bei <code>{path}</code>, {type})"
             },
             "search": {
-                "searching": "Suche {layerTitle} {mode} <code>{search}</code>…",
-                "nothingFound": "Entschuldigung, ich konnte nichts für <code>{search}</code> finden, also kann ich nicht nach {layerTitle} suchen",
                 "announceLimited": "<p><i>Ich zeige nur die {cutoff} Elemente, die dem <a href=\"{href}\" target=\"_blank\">gesuchten Ort</a> am nächsten liegen.</i></p>",
                 "arglayerid": "Der Name einer Ebene ODER ein einzelner Suchbegriff",
                 "argsearch": "Der Suchbegriff",
                 "argverb": "Entweder in einem geografischen Gebiet (z. B. einer Stadt) oder in der Nähe eines POI suchen",
-                "noNearOrIn": "Entschuldigung, ich habe Ihren Befehl nicht verstanden, da ich in Ihrer Suchanfrage kein <code>in der Nähe</code> oder <code>in</code> gefunden habe.\n Versuchen Sie etwas wie <code>Suche Trinkwasser in London</code>, <code>Suche Friture in Brüssel</code><p></p>\n <p>Alternativ versuchen Sie <code>info {cmd}</code>, um Informationen über ein einzelnes Objekt zu erhalten.</p>",
                 "noMatchingLayer": "Ich habe keine passende Ebene gefunden",
-                "overview": "Ich habe {length} passende Artikel gefunden."
+                "noNearOrIn": "Entschuldigung, ich habe Ihren Befehl nicht verstanden, da ich in Ihrer Suchanfrage kein <code>in der Nähe</code> oder <code>in</code> gefunden habe.\n Versuchen Sie etwas wie <code>Suche Trinkwasser in London</code>, <code>Suche Friture in Brüssel</code><p></p>\n <p>Alternativ versuchen Sie <code>info {cmd}</code>, um Informationen über ein einzelnes Objekt zu erhalten.</p>",
+                "nothingFound": "Entschuldigung, ich konnte nichts für <code>{search}</code> finden, also kann ich nicht nach {layerTitle} suchen",
+                "overview": "Ich habe {length} passende Artikel gefunden.",
+                "searching": "Suche {layerTitle} {mode} <code>{search}</code>…"
             },
             "shutdown": {
                 "argmode": "Gibt an, ob der Dienst neu gestartet werden soll, muss einer der folgenden Werte sein: {verbs}",
                 "docs": "Schaltet den Bot ab",
                 "goodbye": "Ich schließe… Bis später!",
                 "notYetShuttingDown": "Ich starte noch nicht neu, da ich erst vor {uptime} Sekunden gebootet habe. Ich werde mindestens {min_uptime} warten, bevor ich neu starte.",
-                "verbupdate": "Versucht, die eingebettete MapComplete-Codebasis zu aktualisieren, wird danach beendet",
-                "verbshutdown": "Beendet den Bot"
+                "verbshutdown": "Beendet den Bot",
+                "verbupdate": "Versucht, die eingebettete MapComplete-Codebasis zu aktualisieren, wird danach beendet"
             },
             "tags": {
                 "announceSearch": "<code>{id}</code> scheint keine gültige OSM-id zu sein - suche stattdessen weltweit nach {search}…",
-                "nothingFound": "Nichts gefunden für {_}",
                 "argsearch": "Die ID des OSM-Objekts oder eine Suchanfrage",
+                "docs": "Zeigt die Tags eines OSM-Objekts an. Geben Sie entweder eine ID ODER einen Suchstring ein; die Objekte werden interpretiert und bekannte Werte werden angezeigt.",
                 "noSearchGiven": "Bitte geben Sie einen Suchbegriff der ID an, um diesen Befehl zu verwenden",
-                "docs": "Zeigt die Tags eines OSM-Objekts an. Geben Sie entweder eine ID ODER einen Suchstring ein; die Objekte werden interpretiert und bekannte Werte werden angezeigt."
+                "nothingFound": "Nichts gefunden für {_}"
             },
             "welcome": {
+                "docs": "Gibt eine freundliche Begrüßungsnachricht",
                 "p0": "Hallo! Ich bin MapComplete-bot. Ich bin ein Computerprogramm, das OpenStreetMap durchsucht und einige Informationen über <a href=\"https://mapcomplete.osm.be\">MapComplete</a> geben kann, eine Webseite und App, die thematische Karten zeigt. Wenn Informationen fehlen, können Sie sie dort leicht hinzufügen.",
                 "p1": "Senden Sie mir <code>info [searchterm]</code> und ich werde OpenStreetMap für Sie durchsuchen. Ich zeige Ihnen dann die Informationen über das, was ich gefunden habe.",
                 "p2": "Alternativ können auch <code>search [ojecttype] near [placename]</code> oder <code>search [objecttype] in [placename]</code> verwendet werden, um nach weiteren Orten zu suchen. Unterstützte Objekttypen sind diejenigen, die in MapComplete gefunden werden können. Weitere Kategorien werden in Zukunft hinzugefügt - und wenn Sie der Herausforderung gewachsen sind, <a href=\"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Making_Your_Own_Theme.md\">können Sie Ihre thematische Karte und damit auch eine Kategorie erstellen</a>",
-                "p3": "Es gibt noch einige weitere Befehle, senden Sie <code>help</code>, um sie alle zu sehen.",
-                "docs": "Gibt eine freundliche Begrüßungsnachricht"
+                "p3": "Es gibt noch einige weitere Befehle, senden Sie <code>help</code>, um sie alle zu sehen."
             },
             "wiki": {
-                "docs": "Gibt (einen Teil) der angegebenen Seite von {backend} aus. In öffentlichen Räumen wird der erste Absatz angezeigt; in einer Direktnachricht wird die gesamte Seite gesendet.",
                 "argsearch": "Der Titel der Seite oder der Suchbegriff",
+                "docs": "Gibt (einen Teil) der angegebenen Seite von {backend} aus. In öffentlichen Räumen wird der erste Absatz angezeigt; in einer Direktnachricht wird die gesamte Seite gesendet.",
                 "foundMatching": "Eine passende Wikiseite gefunden, nämlich {title}",
                 "gotResults": "Habe {count} Ergebnisse für Suchanfrage <code>{search}</code> erhalten:",
                 "loadingFailed": "Entschuldigung, die Seite <code>{pagename}</code> konnte nicht geladen werden",
                 "noWiki": "Bitte geben Sie eine Wikiseite an, nach der Sie suchen möchten",
                 "nothingFound": "Ich konnte auf {backend} für {search} nichts finden",
                 "searching": "Suche auf {backend}…"
-            },
-            "scheme": {
-                "title": "{key} (verwendet bei <code>{path}</code>, {type})",
-                "argkey": "Der Name des Schlüssels",
-                "docs": "Enthält Informationen über einen Schlüssel in einer theme-config-Datei",
-                "noMatchingLayer": "Keine passenden Schlüssel gefunden, vielleicht meinten Sie einen von:",
-                "notype": "kein Typ angegeben"
             }
         },
         "decryptionFailed": "Es tut mir leid, ich konnte die Nachricht nicht entschlüsseln. Sie können versuchen, diesen Kanal zu verlassen und sich erneut zu verbinden",
@@ -829,6 +829,9 @@
         "direction": {
             "description": "Eine Himmelsrichtung"
         },
+        "distance": {
+            "description": "Entfernung in Meter"
+        },
         "email": {
             "description": "E-Mail Adresse",
             "feedback": "Dies ist keine gültige E-Mail Adresse",
@@ -874,9 +877,6 @@
         },
         "wikidata": {
             "description": "Eine Wikidata-Kennung"
-        },
-        "distance": {
-            "description": "Entfernung in Meter"
         }
     }
 }

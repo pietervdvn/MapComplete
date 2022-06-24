@@ -554,7 +554,8 @@
         "en": "<a href='mailto:{email}?subject=Broken bicycle pump&body=Hello,%0D%0A%0D%0AWith this email, I&#39;d like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} is broken.%0D%0A%0D%0A Kind regards'>Report this bicycle pump as broken</a>",
         "nl": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id}.%0D%0A%0D%0AMet vriendelijke groeten.'>Rapporteer deze fietspomp als kapot</a>",
         "de": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,%0D%0A%0D%0AMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>",
-        "da": "<a href='mailto:{email}?subject=Cykelpumpe i stykker&body=Hej,%0D%0A%0D%0D%0Med denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} er i stykker.%0D%0A%0D%0D%0A Med venlig hilsen'>Anmeld denne cykelpumpe som værende i stykker</a>"
+        "da": "<a href='mailto:{email}?subject=Cykelpumpe i stykker&body=Hej,%0D%0A%0D%0D%0Med denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} er i stykker.%0D%0A%0D%0D%0A Med venlig hilsen'>Anmeld denne cykelpumpe som værende i stykker</a>",
+        "es": "<a href='mailto:{email}?subject=Bomba de bicicletas rota&body=Hola,%0D%0A%0ACon este correo, me gustaría informarte de que la bomba para bicicletas que se encuentra en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0A Un saludo'>Reportar esta bomba para bicicletas como rota</a>"
       },
       "id": "Email maintainer"
     },
@@ -600,7 +601,8 @@
             "de": "Sklaverand-/Presta-Ventile (für Rennräder)",
             "it": "Sclaverand (detta anche Presta)",
             "ru": "Клапан Presta (также известный как французский клапан)",
-            "da": "Sclaverand (også kendt som Presta og racerventil)"
+            "da": "Sclaverand (også kendt som Presta og racerventil)",
+            "es": "Sclaverand/Presata (ruedas de bicicleta estrechas)"
           }
         },
         {
@@ -626,7 +628,8 @@
             "gl": "Schrader (para automóbiles)",
             "de": "Schrader-Ventile (für Autos und Mountainbikes)",
             "it": "Schrader (valvola delle auto)",
-            "da": "Schrader (biler)"
+            "da": "Schrader (biler)",
+            "es": "Schrader (coches y bicicletas de montaña)"
           }
         }
       ],

@@ -2,11 +2,13 @@
   "id": "education",
   "description": {
     "en": "On this map, you'll find information about all types of schools and eduction and can easily add more information",
-    "nl": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs."
+    "nl": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
+    "de": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen"
   },
   "title": {
     "en": "Education",
-    "nl": "Onderwijs"
+    "nl": "Onderwijs",
+    "de": "Bildung"
   },
   "defaultBackgroundId": "CartoDB.Voyager",
   "maintainer": "MapComplete",

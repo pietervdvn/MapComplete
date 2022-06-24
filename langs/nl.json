@@ -56,8 +56,8 @@
                 "importTags": "Het element zal deze tags krijgen: {tags}",
                 "officialThemesOnly": "In onofficiële thema's is de importeerknop uitgeschakeld om ongelukjes te vermijden",
                 "wrongType": "Dit object is geen punt of lijn, en kan daarom niet geïmporteerd worden",
-                "zoomInMore": "Zoom verder in om dit object af te handelen",
-                "wrongTypeToConflate": "Dit element is geen punt of weg en kan dus niet samengevoegd worden"
+                "wrongTypeToConflate": "Dit element is geen punt of weg en kan dus niet samengevoegd worden",
+                "zoomInMore": "Zoom verder in om dit object af te handelen"
             },
             "importTags": "Het object zal deze tags krijgen: {tags}",
             "intro": "Kies hieronder welk punt je wilt toevoegen<br/>",
@@ -453,30 +453,25 @@
         "commandNotFound": "Sorry, ik heb je commando niet verstaan. Zou het kunnen dat je {0}, {1}, {2} of {2} bedoelt? <p>Je kan ook <code>help</code> sturen om een overzicht van alle commando's te zien</p>",
         "commands": {
             "dm": {
-                "failed": "I kon <code>{cmd}</code> niet uitvoeren doordag {message}",
-                "sendReason": "Ik stuurde jou dit bericht omdat <b>{sender}</b> mij gevraagd heeft om je het resultaat van <code>{cmd}</code> te sturen",
                 "argbody": "Het commando om uit te voeren",
-                "docs": "Voert een commando uit en stuurt de output naar iemand anders",
                 "argto": "De ID van degene die de output moet ontvangen",
                 "commandNotFound": "Commando {key} niet gevonden - zie <code>help</code> voor een overzicht van alle commando's",
+                "docs": "Voert een commando uit en stuurt de output naar iemand anders",
                 "executing": "<code>{_}</code> aan het uitvoeren, het resultaat stuur ik naar <b>{to}</b>",
+                "failed": "I kon <code>{cmd}</code> niet uitvoeren doordag {message}",
                 "noDm": "Ik kon geen chat opzetten met {to}",
                 "receipt": "Ik leverde het bericht af aan {to}",
                 "selectValidCommand": "Geef een geldig commando",
-                "selectValidUser": "Geef een geldige ID van een gebruiker"
+                "selectValidUser": "Geef een geldige ID van een gebruiker",
+                "sendReason": "Ik stuurde jou dit bericht omdat <b>{sender}</b> mij gevraagd heeft om je het resultaat van <code>{cmd}</code> te sturen"
             },
             "documentation": {
+                "argid": "Het id van een {list} of {list_end} waarvan de documentatie gevraagd is. Je can ook {coded_list} schrijven om beschikbare ids te zien.",
                 "didYouMean": "Bedoelde je misschien één van onderstaande URL-parameters? ",
                 "docs": "Vraag documentatie over een MapComplete-laag, -thema of URL-parameter",
-                "notFound": "Ik kong geen {singular} vinden met naam <code>{id}</code>.",
-                "urlParam": "URL-parameter <code>{id}</code>",
-                "visualisation": {
-                    "plural": "visualisaties",
-                    "singular": "visualisatie"
-                },
                 "file": {
-                    "singular": "bestand",
-                    "plural": "bestanden"
+                    "plural": "bestanden",
+                    "singular": "bestand"
                 },
                 "inputElement": {
                     "plural": "input elementen",
@@ -486,17 +481,22 @@
                     "plural": "lagen",
                     "singular": "laag"
                 },
+                "noIdIntro": "Om meer informatie te krijgen over een MapComplete-deel, moet je een ID geven. Bekende types zijn {list}",
+                "notFound": "Ik kong geen {singular} vinden met naam <code>{id}</code>.",
+                "overview": "De volgende {plural} bestaan:",
+                "theme": {
+                    "plural": "kaartthemas",
+                    "singular": "kaartthema"
+                },
+                "urlParam": "URL-parameter <code>{id}</code>",
                 "url_parameter": {
                     "plural": "url-parameters",
                     "singular": "url-parameter"
                 },
-                "theme": {
-                    "singular": "kaartthema",
-                    "plural": "kaartthemas"
-                },
-                "overview": "De volgende {plural} bestaan:",
-                "argid": "Het id van een {list} of {list_end} waarvan de documentatie gevraagd is. Je can ook {coded_list} schrijven om beschikbare ids te zien.",
-                "noIdIntro": "Om meer informatie te krijgen over een MapComplete-deel, moet je een ID geven. Bekende types zijn {list}"
+                "visualisation": {
+                    "plural": "visualisaties",
+                    "singular": "visualisatie"
+                }
             },
             "dream": {
                 "docs": "Stuurt een dromerige, computer-gegenereerde tekst",
@@ -514,9 +514,11 @@
                 "supported": "De commando's die ik ken zijn:"
             },
             "info": {
+                "argsearch": "Het ID van een OSM-object of een zoekterm",
                 "closed": "Gesloten",
                 "closedTodayAndTomorrow": "Vandaag en morgen gesloten",
                 "couldNotDownload": "Ik kon <code>{id}</code> niet downloaden",
+                "docs": "Haal informatie op over een OSM-object. Dit kan met het ID of via een zoekterm. De objecten worden geinterpreteerd en getoond.",
                 "editWith": "Bewerk dit element op {title}",
                 "fetchingInfoAbout": "Data over {id} aan het ophalen...",
                 "foundResults": "Ik vond {total} resultaten voor <code>{search}</code>, ik ben informatie erover aan het ophalen...",
@@ -525,9 +527,7 @@
                 "noOpeningHours": "Geen openingsuren gekend",
                 "nothingFound": "Ik kon niets vinden voor <code>{_}</code>",
                 "provideSearch": "Gelieve een zoekterm of id te geven",
-                "searchingWorldwide": "OpenStreetMap aan het doorzoeken voor <code>{_}</code>",
-                "docs": "Haal informatie op over een OSM-object. Dit kan met het ID of via een zoekterm. De objecten worden geinterpreteerd en getoond.",
-                "argsearch": "Het ID van een OSM-object of een zoekterm"
+                "searchingWorldwide": "OpenStreetMap aan het doorzoeken voor <code>{_}</code>"
             },
             "language": {
                 "arglang": "De taal die ik vanaf nu in deze ruimte ga spreken",
@@ -552,9 +552,12 @@
                 "userHasRoles": "<b>{user}</b> heeft op dit moment de volgende rechten:",
                 "verbadd": "Voegt een rol toe aan de aangeduide gebruiker",
                 "verbdefault": "Geeft een lijst van rollen van de gebruiker",
-                "verbremove": "Verwijdert een rol van de aangeduide gebruiker",
                 "verblist": "Geeft een lijst van rollen van de gebruiker",
+                "verbremove": "Verwijdert een rol van de aangeduide gebruiker",
                 "verbrevoke": "Verwijdert alle rollen van de gebruiker"
+            },
+            "scheme": {
+                "argkey": "De naam van de key"
             },
             "search": {
                 "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>..."
@@ -576,14 +579,11 @@
             },
             "wiki": {
                 "docs": "Stuurt een (deel van) de gevraagde pagina van {backend}. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina.",
-                "loadingFailed": "Sorry, pagina <code>{pagename}</code> kon niet geladen worden",
                 "gotResults": "Ik vond {count} resultaten voor <code>{search}</code>:",
-                "searching": "Aan het zoeken op {backend}…",
+                "loadingFailed": "Sorry, pagina <code>{pagename}</code> kon niet geladen worden",
+                "noWiki": "Gelieve zoekterm voor een wiki-pagina te geven",
                 "nothingFound": "Ik kon niets vinden voor {search} op {backend}",
-                "noWiki": "Gelieve zoekterm voor een wiki-pagina te geven"
-            },
-            "scheme": {
-                "argkey": "De naam van de key"
+                "searching": "Aan het zoeken op {backend}…"
             }
         },
         "decryptionFailed": "Sorry, ik kon je bericht niet ontcijferen. Probeer om deze kamer te verlaten en opnieuw te connecteren",

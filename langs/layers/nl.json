@@ -4929,8 +4929,8 @@
         },
         "tagRenderings": {
             "capacity": {
-                "render": "Deze school kan maximaal {capacity} studenten lesgeven",
-                "question": "Hoeveel studenten kunnen er les volgen in deze school?"
+                "question": "Hoeveel studenten kunnen er les volgen in deze school?",
+                "render": "Deze school kan maximaal {capacity} studenten lesgeven"
             },
             "education-level-belgium": {
                 "mappings": {

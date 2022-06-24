@@ -90,7 +90,8 @@
         "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
         "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
         "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
-        "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser"
+        "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser",
+        "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -108,7 +109,8 @@
       "description": {
         "en": "A <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
         "nl": "Een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen",
-        "de": "Ein <b>Club</b> oder eine Diskothek mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt"
+        "de": "Ein <b>Club</b> oder eine Diskothek mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt",
+        "es": "Un <b>club nocturno</b> o discoteca centrada en bailar, la música de un DJ acompañado por un espectáculo de luces y un bar donde conseguir bebidas (alcohólicas)"
       },
       "preciseInput": {
         "preferredBackground": "map"

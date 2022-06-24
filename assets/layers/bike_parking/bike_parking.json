@@ -561,7 +561,7 @@
             "zh_Hant": "這停車場有設計 (官方) 空間給裝箱的單車。",
             "pt_BR": "Este estacionamento tem vagas (oficiais) projetadas para bicicletas de carga.",
             "pt": "Este estacionamento tem vagas (oficiais) projetadas para bicicletas de carga.",
-            "es": "Este aparcamiento tiene huecos (oficialmente) designados para bicicletas de carga.",
+            "es": "Este aparcamiento tiene huecos designados (oficialmente) para bicicletas de carga.",
             "da": "Denne parkeringsplads har udpegede (officielle) pladser til ladcykler."
           }
         },
@@ -576,7 +576,7 @@
             "it": "Il parcheggio delle bici da trasporto è proibito",
             "pt_BR": "Você não tem permissão para estacionar bicicletas de carga",
             "pt": "Não tem permissão para estacionar bicicletas de carga",
-            "es": "No se permite aparcar bicicletas de carga",
+            "es": "No está permitido aparcar bicicletas de carga",
             "da": "Det er ikke tilladt at parkere ladcykler"
           }
         }
@@ -605,7 +605,7 @@
         "it": "Questo parcheggio può contenere {capacity:cargo_bike} bici da trasporto",
         "pt_BR": "Neste estacionamento cabem {capacity:cargo_bike} bicicletas de carga",
         "pt": "Neste estacionamento cabem {capacity:cargo_bike} bicicletas de carga",
-        "es": "En este aparcamiento caben {capacity:cargo_bike} bicis de carga",
+        "es": "En este aparcamiento caben {capacity:cargo_bike} bicicletas de carga",
         "da": "Der er plads til {capacity:cargo_bike} på denne cykelparkering"
       },
       "condition": "cargo_bike~designated|yes",

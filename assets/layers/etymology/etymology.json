@@ -61,6 +61,7 @@
               "Q22698"
             ],
             "removePrefixes": {
+              "#": "no-translations",
               "fr": [
                 "allée de",
                 "allée du",
@@ -158,6 +159,7 @@
               ]
             },
             "removePostfixes": {
+              "#": "no-translations",
               "nl": [
                 "baan",
                 "boulevard",
