@@ -931,18 +931,36 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return track[str2.length][str1.length];
     }
 
-    public static MapToObj<T>(d: Map<string, T>, onValue: ((t: T, key: string) => any) = undefined): object {
+    public static MapToObj<V, T>(d: Map<string, V>, onValue: ((t: V, key: string) => T)): Record<string, T> {
         const o = {}
         const keys = Array.from(d.keys())
         keys.sort();
         for (const key of keys) {
-            let value = d.get(key)
-            if (onValue !== undefined) {
-                value = onValue(value, key)
-            }
-            o[key] = value;
+            o[key] = onValue(d.get(key), key);
         }
         return o
+    }
+
+    /**
+     * Switches keys and values around
+     * 
+     * Utils.TransposeMap({"a" : ["b", "c"], "x" : ["b", "y"]}) // => {"b" : ["a", "x"], "c" : ["a"], "y" : ["x"]}
+     */
+    public static TransposeMap<K extends string, V extends  string>(d: Record<K, V[]>) : Record<V, K[]>{
+        const newD : Record<V, K[]> = <any> {};
+
+        for (const k in d) {
+            const vs = d[k]
+            for (let v of vs) {
+                const list = newD[v]
+                if(list === undefined){
+                    newD[v] = [k] // Left: indexing; right: list with one element
+                }else{
+                    list.push(k)
+                }
+            }
+        }
+        return newD;
     }
 
     /**
