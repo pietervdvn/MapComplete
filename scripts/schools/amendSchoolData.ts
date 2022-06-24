@@ -1,6 +1,7 @@
 import {parse} from 'csv-parse/sync';
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../../Utils";
+import {GeoJSONObject, geometry} from "@turf/turf";
 
 function parseAndClean(filename: string): Record<any, string>[] {
     const csvOptions = {
@@ -33,6 +34,22 @@ const structuren = {
 
 }
 
+const degreesMapping = {
+   "Derde graad":"upper_secondary",
+   "Tweede graad":"middle_secondary",
+   "Eerste graad" :"lower_secondary"
+}
+const classificationOrder = ["kindergarten","primary","secondary","lower_secondary","middle_secondary","upper_secondary"]
+
+
+const stelselsMapping = {
+    "Beide stelsels":"linear_courses;modular_courses",
+    "Lineair stelsel":"linear_courses",
+    "Modulair stelsel" :"modular_courses"
+}
+
+
+
 const rmKeys = ["schoolnummer", "instellingstype",
     "adres", "begindatum","hoofdzetel","huisnummer","kbo-nummer",
     "beheerder(s)", "bestuur", "clb", "ingerichte hoofdstructuren", "busnummer", "crab-code", "crab-huisnr", 
@@ -49,7 +66,30 @@ const rename = {
     
 }
 
+function fuzzIdenticals(features: {geometry: {coordinates: [number,number]}}[]){
+    var seen = new Set<string>()
+    for (const feature of features) {
+        var coors = feature.geometry.coordinates;
+        let k = coors[0] + "," + coors[1]
+        while(seen.has(k)){
+            coors[0] += 0.00025
+            k = coors[0] + "," + coors[1]
+        }
+        seen.add(k)
+    }
+}
+
+/**
+ * Sorts classifications in order
+ * sortClassifications(["primary","secondary","kindergarten"] // => ["kindergarten", "primary", "secondary"]
+ */
+function sortClassifications(classification: string[]){
+    return classification.sort((a, b) => classificationOrder.indexOf(a) - classificationOrder.indexOf(b))
+}
+
+
 function main() {
+    console.log("Parsing schools...")
     const aantallen = "/home/pietervdvn/Downloads/Scholen/aantallen.csv"
     const perSchool = "/home/pietervdvn/Downloads/Scholen/perschool.csv"
 
@@ -57,9 +97,15 @@ function main() {
 
     const schoolGeojson: {
         features: {
-            properties: Record<(typeof schoolfields)[number], string>
+            properties: Record<(typeof schoolfields)[number], string>,
+            geometry:{
+                type: "Point",
+                coordinates: [number,number]
+            }
         }[]
-    } = JSON.parse(readFileSync("scholen.geojson", "utf8"))
+    } = JSON.parse(readFileSync("scripts/schools/scholen.geojson", "utf8"))
+    
+    fuzzIdenticals(schoolGeojson.features)
 
     const aantallenFields = ["schooljaar", "nr koepel", "koepel", "instellingscode", "intern volgnr vpl", "volgnr vpl", "naam instelling", "GON-school", "GOK-school", "instellingsnummer scholengemeenschap", "scholengemeenschap", "code schoolbestuur", "schoolbestuur", "type vestigingsplaats", "fusiegemeente hoofdvestigingsplaats", "straatnaam vestigingsplaats", "huisnr vestigingsplaats", "bus vestigingsplaats", "postcode vestigingsplaats", "deelgemeente vestigingsplaats", "fusiegemeente vestigingsplaats", "hoofdstructuur (code)", "hoofdstructuur", "administratieve groep (code)", "administratieve groep", "graad lager onderwijs", "pedagogische methode", "graad secundair onderwijs", "leerjaar", "A of B-stroom", "basisopties", "beroepenveld", "onderwijsvorm", "studiegebied", "studierichting", "stelsel", "okan cluster", "type buitengewoon onderwijs", "opleidingsvorm (code)", "opleidingsvorm", "fase", "opleidingen", "geslacht", "aantal inschrijvingen"] as const
     const aantallenParsed: Record<(typeof aantallenFields)[number], string>[] = parseAndClean(aantallen)
@@ -70,8 +116,17 @@ function main() {
         .filter(sch => sch.properties.lx != "0" && sch.properties.ly != "0")
         .filter(sch => sch.properties.instellingstype !== "Universiteit")
 
+    const c = schoolGeojson.features.length
+    console.log("Got ", schoolGeojson.features.length, "items after filtering")
+    let i = 0
+    let lastWrite = 0;
     for (const feature of schoolGeojson.features) {
-
+        i++
+        const now = Date.now();
+        if(now - lastWrite > 1000){
+            lastWrite = now;
+            console.log("Processing "+i+"/"+c)
+        }
         const props = feature.properties
         
         const aantallen = aantallenParsed.filter(i => i.instellingscode == props.schoolnummer)
@@ -82,17 +137,21 @@ function main() {
 
             props["onderwijsvorm"] = fetch("onderwijsvorm").join(";")
 
+            /*
             const gonSchool = aantallen.some(x => x["GON-school"] === "GON-school")
             const gokSchool = aantallen.some(x => x["GOK-school"] === "GON-school")
-            const hoofdstructuur = fetch("hoofdstructuur")
             const onderwijsvorm = fetch("onderwijsvorm")
             const koepel = fetch("koepel")
-            const stelsel = fetch("stelsel")
+            const stelsel = fetch("stelsel").join(";")
             const scholengemeenschap = fetch("scholengemeenschap")
-            const graden =fetch("graad secundair onderwijs")
-            graden.sort()
+            
+            */
+            const hoofdstructuur = fetch("hoofdstructuur")
+            
+
+
             let specialEducation = false
-            const classification = hoofdstructuur.map(s => {
+            let classification = hoofdstructuur.map(s => {
                 const v = structuren[s]
                 if (s.startsWith("Buitengewoon")) {
                     specialEducation = true;
@@ -103,11 +162,21 @@ function main() {
                 }
                 return v
             })
+            const graden = fetch("graad secundair onderwijs")
+            if(classification[0] === "secondary"){
+                if(graden.length !== 3){
+                    classification = graden.map(degree => degreesMapping[degree])
+                }
+                
+            }
+            sortClassifications(classification)
             props["school"] = Utils.Dedup(classification).join("; ")
-            props["degrees"] = graden.join(";")
-            props["koepel"] = koepel.join(";")
-            props["scholengemeenschap"] = scholengemeenschap.join(";")
-            props["stelsel"] = stelsel
+
+
+            // props["koepel"] = koepel.join(";")
+            // props["scholengemeenschap"] = scholengemeenschap.join(";")
+            // props["stelsel"] = stelselsMapping[stelsel]
+            
             if (specialEducation) {
                 props["school:for"] = "special_education"
             }
@@ -130,7 +199,13 @@ function main() {
             throw "Multiple schoolinfo's found for " + props.schoolnummer
         }
         
-        props["source:ref"] = props.schoolnummer
+        //props["source:ref"] = props.schoolnummer
+        props["amenity"]="school"
+        if ( props["school"] === "kindergarten" ) {
+            props["amenity"] = "kindergarten"
+            props["isced:2011:level"] = "early_education"
+            delete props["school"]
+        }
 
         for (const renameKey in rename) {
             const into = rename[renameKey]
@@ -145,8 +220,15 @@ function main() {
         }
 
     }
-    writeFileSync("amended_schools.geojson", JSON.stringify(schoolGeojson), "utf8")
+    
+    //schoolGeojson.features = schoolGeojson.features.filter(f => f.properties["capacity"] !== undefined)
+    /*schoolGeojson.features.forEach((f, i) => {
+        f.properties["id"] = "school/"+i
+    })*/
+    schoolGeojson.features = schoolGeojson.features.filter(f => f.properties["amenity"] === "kindergarten")
 
+    writeFileSync("scripts/schools/amended_schools.geojson", JSON.stringify(schoolGeojson), "utf8")
+    console.log("Done")
 }
 
 main()
