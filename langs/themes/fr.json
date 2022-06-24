@@ -575,5 +575,9 @@
                 "name": "noeuds"
             }
         }
+    },
+    "education": {
+        "title": "Enseignement",
+        "description": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations"
     }
 }
