@@ -254,9 +254,43 @@
       },
       "freeform": {
         "key": "school:language",
-        "inline": true
+        "inline": true,
+        "placeholder": {
+          "en":"Language in lowercase English",
+          "nl":"Taal in lowercase Engel"},
+        "addExtraTags": [
+          "fixme=Freeform tag `school:language` used, to be doublechecked"
+        ]
       },
       "mappings": [
+        {
+          "if": "school:language=english",
+          "then": {
+            "en": "English is the main language of {title()}",
+            "nl": "Engels is de voertaal van {title()}"
+          }
+        },
+        {
+          "if": "school:language=french",
+          "then": {
+            "en": "French is the main language of {title()}",
+            "nl": "Frans is de voertaal van {title()}"
+          }
+        },
+        {
+          "if": "school:language=dutch",
+          "then": {
+            "en": "Dutch is the main language of {title()}",
+            "nl": "Nederlands is de voertaal van {title()}"
+          }
+        },
+        {
+          "if": "school:language=german",
+          "then": {
+            "en": "German is the main language of {title()}",
+            "nl": "Duits is de voertaal van {title()}"
+          }
+        },
         {
           "if": "school:language=",
           "then": {
