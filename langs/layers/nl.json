@@ -430,7 +430,7 @@
                 }
             }
         },
-        "description": "Fietsverhuustations",
+        "description": "Fietsverhuurstations",
         "name": "Fietsverhuur",
         "presets": {
             "0": {
