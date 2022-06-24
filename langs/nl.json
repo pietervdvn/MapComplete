@@ -561,7 +561,13 @@
             },
             "search": {
                 "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>...",
-                "overview": "Ik heb {length} overeenkomende items gevonden."
+                "overview": "Ik heb {length} overeenkomende items gevonden.",
+                "argsearch": "De zoekterm",
+                "announceLimited": "<p><i>Ik toon enkel de {cutoff} items het dichtst bij de <a href=\"{href}\" target=\"_blank\">gezochte locatie</a>.</i></p>",
+                "arglayerid": "De naam van een laag OF een enkele zoekterm",
+                "argverb": "Zoek ofwel in een geografisch gebied (zoals een stand) of zoek in de buurt van een POI",
+                "noMatchingLayer": "Ik vind geen overeenkomende laag",
+                "noNearOrIn": "Sorry, Ik begreep je opdracht niet omdat ik geen <code>dichtbij</code> of <code>in</code> in je zoekopdracht.\nProbeer iets als <code>Zoek drinkwater in Londen</code>, <code>Zoek frituur in Brussel</code><p></p>\n <p>Daarnaast kan je ook <code>info {cmd}</code> proberen, om info te krijgen over een enkel object.</p>"
             },
             "shutdown": {
                 "argmode": "Geeft aan op welke manier ik moet afsluiten. Dit moet één van de volgende woorden zijn: {verbs}",
