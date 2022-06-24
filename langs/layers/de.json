@@ -6123,5 +6123,239 @@
                 }
             }
         }
+    },
+    "school": {
+        "name": "Grund- und weiterführende Schulen",
+        "tagRenderings": {
+            "education-level-belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "Es handelt sich um eine Schule mit einer Kindergartenabteilung, in der kleine Kinder eine Ausbildung erhalten, die auf das Lesen und Schreiben vorbereitet."
+                    },
+                    "1": {
+                        "then": "In dieser Schule lernt man grundlegende Fähigkeiten wie Lesen, Schreiben und Rechnen. <div class='subtle'>Schüler besuchen die Schule in der Regel im Alter von 6 bis 12 Jahren</div>"
+                    },
+                    "2": {
+                        "then": "Dies ist eine weiterführende Schule, die alle Jahrgangsstufen anbietet"
+                    },
+                    "5": {
+                        "then": "Dies ist eine weiterführende Schule, die <b>nicht</b> alle Klassenstufen hat, aber <b>fünfte und sechste</b> Klasse anbietet"
+                    },
+                    "6": {
+                        "then": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)"
+                    },
+                    "3": {
+                        "then": "Dies ist eine weiterführende Schule, die <b>nicht</b> alle Klassenstufen hat, aber <b>erste und zweite</b> Klasse anbietet"
+                    },
+                    "4": {
+                        "then": "Dies ist eine weiterführende Schule, die <b>nicht</b> alle Klassenstufen hat, aber <b>dritte und vierte</b> Klasse anbietet"
+                    }
+                },
+                "question": "Welches Bildungsniveau wird an dieser Schule vermittelt?"
+            },
+            "capacity": {
+                "question": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
+                "render": "Diese Schule kann höchstens {capacity} Schüler aufnehmen"
+            },
+            "target-audience": {
+                "mappings": {
+                    "2": {
+                        "then": "Dies ist eine Schule, in der Erwachsene auf dem angegebenen Niveau unterrichtet werden."
+                    },
+                    "7": {
+                        "then": "Dies ist eine Schule für Schüler mit Behinderungen"
+                    },
+                    "4": {
+                        "then": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten"
+                    },
+                    "5": {
+                        "then": "Dies ist eine Schule für blinde oder sehbehinderte Schüler"
+                    },
+                    "6": {
+                        "then": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler"
+                    },
+                    "8": {
+                        "then": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen"
+                    },
+                    "0": {
+                        "then": "Es handelt sich um eine Schule, in der die Schüler Fähigkeiten auf ihrem altersgemäßen Niveau erlernen. <div>Es gibt wenig oder keine speziellen Einrichtungen für Schüler mit besonderen Bedürfnissen oder die Einrichtungen sind ad-hoc</div>"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>"
+                    },
+                    "3": {
+                        "then": "Dies ist eine Schule für Schüler mit Autismus"
+                    }
+                },
+                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?<div class='subtle'>Ad-hoc ",
+                "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
+            },
+            "gender": {
+                "question": "Welche Geschlechter können sich an dieser Schule anmelden?",
+                "mappings": {
+                    "0": {
+                        "then": "Sowohl Jungen als auch Mädchen können sich hier anmelden und gemeinsam unterrichtet werden"
+                    },
+                    "1": {
+                        "then": "Hier können sich sowohl Jungen als auch Mädchen anmelden, aber sie werden getrennt unterrichtet (z. B. in verschiedenen Klassenräumen oder zu verschiedenen Zeiten)"
+                    },
+                    "2": {
+                        "then": "Dies ist eine reine Jungenschule"
+                    },
+                    "3": {
+                        "then": "Dies ist eine reine Mädchenschule"
+                    }
+                }
+            },
+            "language": {
+                "render": "{school:language} ist die Hauptsprache von {title()}",
+                "mappings": {
+                    "0": {
+                        "then": "Die Hauptsprache dieser Schule ist unbekannt"
+                    }
+                },
+                "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
+            },
+            "school-name": {
+                "question": "Wie lautet der Name dieser Schule?",
+                "render": "Diese Schule heißt {name}"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "eine Grundschule oder weiterführende Schule"
+            }
+        },
+        "title": {
+            "render": "Schule <i>{name}</i>"
+        }
+    },
+    "kindergarten_childcare": {
+        "presets": {
+            "1": {
+                "title": "eine Kinderkrippe"
+            },
+            "0": {
+                "title": "einen Kindergarten"
+            }
+        },
+        "tagRenderings": {
+            "childcare-type": {
+                "question": "Um welche Art von Einrichtung handelt es sich?",
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten."
+                    },
+                    "1": {
+                        "then": "Dies ist eine Kinderbetreuungseinrichtung, z. B. ein Kinderkrippe oder eine Tagesmutter, in der Kleinkinder betreut werden. Sie bieten keine Ausbildung an und werden oft als Privatunternehmen geführt"
+                    }
+                }
+            },
+            "5": {
+                "override": {
+                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
+                }
+            },
+            "capacity": {
+                "render": "Diese Einrichtung bietet Platz für {capacity} Kinder",
+                "question": "Wie viele Kinder können hier maximal angemeldet werden?"
+            }
+        },
+        "name": "Kindergärten und Kinderkrippen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kindergarten {name}"
+                },
+                "1": {
+                    "then": "Kinderkrippe {name}"
+                }
+            }
+        }
+    },
+    "maxspeed": {
+        "name": "Höchstgeschwindigkeit",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Straße ohne Namen"
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "humanShort": "km/h",
+                        "human": "Kilometer/Stunde"
+                    },
+                    "1": {
+                        "human": "Meilen/Stunde",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        },
+        "description": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
+                    }
+                },
+                "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
+                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}"
+            }
+        }
+    },
+    "tertiary_education": {
+        "name": "Hochschulen und Universitäten",
+        "tagRenderings": {
+            "isced": {
+                "mappings": {
+                    "1": {
+                        "then": "Hier werden Master-Abschlüsse verliehen"
+                    },
+                    "2": {
+                        "then": "Hier werden die Doktortitel verliehen"
+                    },
+                    "0": {
+                        "then": "Bachelor-Abschlüsse werden hier verliehen"
+                    }
+                },
+                "question": "Welches Bildungsniveau wird hier gelehrt?"
+            },
+            "institution-kind": {
+                "mappings": {
+                    "0": {
+                        "then": "Es handelt sich um eine postsekundäre, nicht-tertiäre Bildungseinrichtung. Man muss die Sekundarstufe abgeschlossen haben, um sich hier einzuschreiben, aber es werden keine Bachelor-Abschlüsse (oder höhere Abschlüsse) verliehen"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Universität, eine Einrichtung des tertiären Bildungsbereichs, an der Bachelor-Abschlüsse oder höhere Abschlüsse verliehen werden."
+                    }
+                },
+                "question": "Was für eine Art von Institution ist das?"
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "Eine Einrichtung, an der tertiäre Bildung vermittelt wird (auf dem Niveau eines Bachelor-Abschlusses oder höher). Ein einziger Punkt pro Campus ist ausreichend - Gebäude und Fakultäten sollten nicht mit Universitätspunkten gekennzeichnet werden.",
+                "title": "eine Universität"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "(Fach)hochschule"
+                },
+                "2": {
+                    "then": "Universität"
+                },
+                "3": {
+                    "then": "Schule mit tertiärem Bildungsangebot"
+                }
+            }
+        }
     }
 }

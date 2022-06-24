@@ -17,7 +17,7 @@
             },
             "street": {
                 "question": "¿En qué calle se encuentra esta dirección?",
-                "render": "La dirección está en la calle <b>{addr:street}</b>"
+                "render": "La dirección está en esta calle <b>{addr:street}</b>"
             }
         },
         "title": {
@@ -54,7 +54,7 @@
                         "then": "La estación la opera un grupo formal de voluntarios."
                     },
                     "3": {
-                        "then": "La estación es de gestión privada."
+                        "then": "La estación se opera privadamente."
                     }
                 },
                 "question": "¿Como está clasificada la operadora de la estación?",
@@ -119,7 +119,7 @@
                         "then": "Relieve"
                     },
                     "10": {
-                        "then": "Azulejo (azulejos decorativos españoles)"
+                        "then": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
                     },
                     "11": {
                         "then": "Cerámica"
@@ -156,7 +156,7 @@
             },
             "1": {
                 "description": "Una barrera ciclista, que ralentiza a los ciclistas",
-                "title": "una barrera para bicicletas"
+                "title": "una barrera ciclista"
             }
         },
         "tagRenderings": {
@@ -169,7 +169,7 @@
                         "then": "Bolardo fijo"
                     },
                     "2": {
-                        "then": "Bolardo abatible"
+                        "then": "Bolardo que se puede doblar"
                     },
                     "3": {
                         "then": "Bolardo flexible, normalmente plástico"
@@ -183,13 +183,13 @@
             "Cycle barrier type": {
                 "mappings": {
                     "0": {
-                        "then": "Simple, sólo dos barreras con un espacio entre ellas"
+                        "then": "Simple, simplemente dos barreras con un espacio en el medio"
                     },
                     "1": {
                         "then": "Doble, dos barreras una detrás de otra"
                     },
                     "2": {
-                        "then": "Triple, tres barreras una detrás de la otra"
+                        "then": "Triple, tres barreras una detrás de otra"
                     },
                     "3": {
                         "then": "Barrera de seguridad, el espacio es menor en la parte superior que en la inferior"
@@ -226,13 +226,13 @@
             "bicycle=yes/no": {
                 "mappings": {
                     "0": {
-                        "then": "Un ciclista puede pasar por aquí."
+                        "then": "Un ciclista puede pasar esto."
                     },
                     "1": {
-                        "then": "Un ciclista no puede pasar por aquí."
+                        "then": "Un ciclista no puede pasar esto."
                     }
                 },
-                "question": "¿Puede un ciclista pasar esta barrera?"
+                "question": "¿Puede pasar una bicicleta esta barrera?"
             }
         },
         "title": {
@@ -241,7 +241,7 @@
                     "then": "Bolardo"
                 },
                 "1": {
-                    "then": "Barrera ciclista"
+                    "then": "Barrera Ciclista"
                 }
             },
             "render": "Barrera"
@@ -345,10 +345,10 @@
             "bench_at_pt-bench_type": {
                 "mappings": {
                     "0": {
-                        "then": "Aquí hay un banco normal para sentarse"
+                        "then": "Hay un banco normal aquí"
                     },
                     "1": {
-                        "then": "Banco de pie"
+                        "then": "Banco de pié"
                     },
                     "2": {
                         "then": "No hay ningún banco aquí"
@@ -366,14 +366,14 @@
                     "then": "Banco en una parada de transporte público"
                 },
                 "1": {
-                    "then": "Banco en el refugio"
+                    "then": "Banco en marquesina"
                 }
             },
             "render": "Banco"
         }
     },
     "bicycle_library": {
-        "description": "Una instalación en la que se pueden prestar las bicicletas durante un periodo de tiempo más largo",
+        "description": "Una facilidad donde se pueden alquilar bicicletas durante largos periodos de tiempo",
         "name": "Biblioteca de bicicletas",
         "presets": {
             "0": {
@@ -394,18 +394,18 @@
                         "then": "Bicicletas para discapacitados disponibles"
                     }
                 },
-                "question": "¿Quién puede prestar bicicletas aquí?"
+                "question": "¿Quién puede alquilar bicicletas aquí?"
             },
             "bicycle_library-charge": {
                 "mappings": {
                     "0": {
-                        "then": "El préstamo de bicicletas es gratuito"
+                        "then": "Alquilar una bicicleta es gratis"
                     },
                     "1": {
-                        "then": "Prestar una bicicleta cuesta 20 euros al año y 20 euros de garantía"
+                        "then": "Alquilar una bicicleta cuesta 20€/año y 20€ de fianza"
                     }
                 },
-                "question": "¿Cuánto cuesta el préstamo de una bicicleta?",
+                "question": "¿Cuánto cuesta alquilar una bicicleta?",
                 "render": "Alquilar una bicicleta cuesta {charge}"
             },
             "bicycle_library-name": {
@@ -434,7 +434,7 @@
         "name": "Alquiler de bicicletas",
         "presets": {
             "0": {
-                "description": "Una tienda con personal que se dedica al alquiler de bicicletas",
+                "description": "Una tienda atendida que se centra en el alquiler de bicicletas",
                 "title": "una tienda de alquiler de bicicletas"
             },
             "1": {
@@ -729,7 +729,7 @@
         },
         "tagRenderings": {
             "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Bomba de bicicletas rota&body=Hola,%0D%0A%0ACon este correo, me gustaría informarte de que la bomba para bicicletas que se encuentra en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0A Un saludo'>Reportar esta bomba para bicicletas como rota</a>"
+                "render": "<a href='mailto:{email}?subject=Bomba para bicicletas rota&body=Hola,%0D%0A%0D%0ACon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{ia} está rota.%0D%0A%0D%0AUn saludo'>Reportar esta bomba para bicicletas como rota</a>"
             },
             "Operational status": {
                 "mappings": {
@@ -1144,7 +1144,8 @@
                 "title": "una cafetería"
             },
             "3": {
-                "description": "Un <b>club nocturno</b> o discoteca centrada en bailar, la música de un DJ acompañado por un espectáculo de luces y un bar donde conseguir bebidas (alcohólicas)"
+                "description": "Un <b>club nocturno</b> o discoteca centrada en bailar, la música de un DJ acompañado por un espectáculo de luces y un bar donde conseguir bebidas (alcohólicas)",
+                "title": "un club nocturno o una discoteca"
             }
         },
         "tagRenderings": {
@@ -1164,6 +1165,9 @@
                     },
                     "4": {
                         "then": "Un espacio abierto donde se sirve cerveza, típico de Alemania"
+                    },
+                    "5": {
+                        "then": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)"
                     }
                 },
                 "question": "Qué tipo de cafetería es esta"
@@ -1209,6 +1213,51 @@
                 "options": {
                     "0": {
                         "question": "Todos los conectores"
+                    },
+                    "6": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b>Tipo 1 CCS (Combo Tipo 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+                    },
+                    "8": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
+                    },
+                    "9": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 CCS</b> (mennekes</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                    },
+                    "11": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipo2_css de marca)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                    },
+                    "12": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "5": {
+                        "question": "Tiene un conector de <div style='display: inline-block'><b>Tipo 1 <i>sin</i> cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "4": {
+                        "question": "Tiene un conector de <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "15": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 3 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+                    },
+                    "3": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
+                    },
+                    "7": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "10": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "13": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipo2 A con un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "14": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+                    },
+                    "16": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 5 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+                    },
+                    "2": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
                     }
                 }
             }
@@ -1236,6 +1285,9 @@
                     },
                     "6": {
                         "then": "Autenticación mediante tarjeta de débito disponible"
+                    },
+                    "7": {
+                        "then": "La carga aquí (también) es posible sin autenticación"
                     }
                 },
                 "question": "¿Qué tipo de autenticación está disponible en esta estación de carga?"
@@ -1307,6 +1359,36 @@
                     },
                     "27": {
                         "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
+                    },
+                    "1": {
+                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "2": {
+                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+                    },
+                    "3": {
+                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "29": {
+                        "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
+                    },
+                    "30": {
+                        "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
+                    },
+                    "28": {
+                        "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
+                    },
+                    "0": {
+                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
+                    },
+                    "31": {
+                        "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
                     }
                 },
                 "question": "¿Qué tipo de conexiones de carga están disponibles aquí?"
@@ -1381,6 +1463,9 @@
                     },
                     "2": {
                         "then": "Aquí se pueden cargar <b>scooters</b>"
+                    },
+                    "4": {
+                        "then": "Aquí se pueden cargar <b>buses</b>"
                     }
                 },
                 "question": "¿A qué vehículos se permite la carga aquí?"
@@ -1457,6 +1542,9 @@
             "ref": {
                 "question": "¿Cual es el número de referencia de esta estación de carga?",
                 "render": "El número de referencia es <b>{ref}</b>"
+            },
+            "Auth phone": {
+                "question": "¿Cual es el número de teléfono para la llamada de autenticación o SMS?"
             }
         },
         "title": {
@@ -1511,7 +1599,16 @@
                     }
                 }
             }
-        }
+        },
+        "presets": {
+            "0": {
+                "title": "una estación de carga para bicicletas eléctricas con un enchufe de pared europeo normal <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (pensado para cargar bicicletas eléctricas)"
+            },
+            "1": {
+                "title": "una estación de carga para coches"
+            }
+        },
+        "name": "Estaciones de carga"
     },
     "climbing": {
         "tagRenderings": {
@@ -1643,6 +1740,9 @@
                     },
                     "2": {
                         "then": "Paso de cebra"
+                    },
+                    "3": {
+                        "then": "Cruce sin marcas de cruce"
                     }
                 },
                 "question": "¿Qué tipo de cruce es este?"
@@ -1717,6 +1817,12 @@
                     },
                     "10": {
                         "then": "Este carril bici está hecho de gravilla"
+                    },
+                    "3": {
+                        "then": "Este carril bici está hecho de piedras de pavimento suaves"
+                    },
+                    "12": {
+                        "then": "Este carril bici está hecho de tierra natural"
                     }
                 },
                 "question": "¿De qué superficie está hecho este carril bici?",
@@ -1989,7 +2095,8 @@
         },
         "title": {
             "render": "Desfibrilador"
-        }
+        },
+        "description": "Una capa que muestra desfibriladores que se pueden utilizar en caso de emergencia. Contiene desfibriladores públicos, pero también desfibriladores para los que se puede necesitar que el personal vaya a buscar el dispositivo"
     },
     "dogpark": {
         "name": "parques de perros",
