@@ -394,7 +394,7 @@
                         "then": "Bikes for disabled persons available"
                     }
                 },
-                "question": "Who can lend bicycles here?"
+                "question": "Who can loan bicycles here?"
             },
             "bicycle_library-charge": {
                 "mappings": {
