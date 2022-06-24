@@ -2899,7 +2899,8 @@
                     "0": {
                         "then": "Il s'agit d'un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici"
                     }
-                }
+                },
+                "question": "De quel type d'établissement s'agit-il ?"
             },
             "isced": {
                 "mappings": {
@@ -2931,7 +2932,8 @@
         },
         "presets": {
             "0": {
-                "description": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université."
+                "description": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université.",
+                "title": "une université"
             }
         }
     }
