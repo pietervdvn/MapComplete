@@ -525,7 +525,8 @@
                     "3": {
                         "then": "Ceci est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure"
                     }
-                }
+                },
+                "question": "De quel type de location de vélo s'agit-il ?"
             }
         },
         "title": {
@@ -533,7 +534,8 @@
                 "0": {
                     "then": "{name}"
                 }
-            }
+            },
+            "render": "Location de vélo"
         }
     },
     "bicycle_tube_vending_machine": {
@@ -562,7 +564,8 @@
         },
         "title": {
             "render": "Distributeur automatique de chambre à air de vélo"
-        }
+        },
+        "description": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)"
     },
     "bike_cafe": {
         "name": "Café vélo",
@@ -652,20 +655,34 @@
                 "mappings": {
                     "0": {
                         "then": "Service de nettoyage gratuit"
+                    },
+                    "1": {
+                        "then": "Libre d'utilisation"
+                    },
+                    "2": {
+                        "then": "Le service de nettoyage est payant"
                     }
                 },
-                "render": "L’utilisation du service de nettoyage coûte {charge}"
+                "render": "L’utilisation du service de nettoyage coûte {charge}",
+                "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?"
             },
             "bike_cleaning-service:bicycle:cleaning:charge": {
                 "mappings": {
                     "2": {
                         "then": "Le coût du service de nettoyage n’est pas connu"
+                    },
+                    "0": {
+                        "then": "Le service de nettoyage est gratuit"
+                    },
+                    "1": {
+                        "then": "Utilisation gratuite"
                     }
                 },
                 "question": "Combien coûte le service de nettoyage ?",
                 "render": "Le service de nettoyage coûte {service:bicycle:cleaning:charge}"
             }
-        }
+        },
+        "description": "Une couche affichant les lieux où l'on peut nettoyer son vélo"
     },
     "bike_parking": {
         "name": "Parking à vélo",
@@ -2807,7 +2824,7 @@
             "isced": {
                 "mappings": {
                     "0": {
-                        "then": "Les diplômes de bchelor sont délivrés ici"
+                        "then": "Les diplômes de bachelor y sont décernés"
                     },
                     "1": {
                         "then": "Des masters y sont décernés"
