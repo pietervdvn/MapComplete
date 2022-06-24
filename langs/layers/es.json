@@ -729,7 +729,7 @@
         },
         "tagRenderings": {
             "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Bomba para bicicletas rota&body=Hola,%0D%0A%0D%0ACon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{ia} está rota.%0D%0A%0D%0AUn saludo'>Reportar esta bomba para bicicletas como rota</a>"
+                "render": "<a href='mailto:{email}?subject=Bomba para bicicletas rota&body=Hola,%0D%0A%0D%0ACon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0AUn saludo'>Reportar esta bomba para bicicletas como rota</a>"
             },
             "Operational status": {
                 "mappings": {
@@ -1214,8 +1214,23 @@
                     "0": {
                         "question": "Todos los conectores"
                     },
+                    "2": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
+                    },
+                    "3": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
+                    },
+                    "4": {
+                        "question": "Tiene un conector de <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "5": {
+                        "question": "Tiene un conector de <div style='display: inline-block'><b>Tipo 1 <i>sin</i> cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
                     "6": {
                         "question": "Tiene un conector <div style='display: inline-block'><b>Tipo 1 CCS (Combo Tipo 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+                    },
+                    "7": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
                     },
                     "8": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
@@ -1223,29 +1238,14 @@
                     "9": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 CCS</b> (mennekes</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     },
+                    "10": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
                     "11": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipo2_css de marca)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     },
                     "12": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "5": {
-                        "question": "Tiene un conector de <div style='display: inline-block'><b>Tipo 1 <i>sin</i> cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "4": {
-                        "question": "Tiene un conector de <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "15": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 3 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-                    },
-                    "3": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
-                    },
-                    "7": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "10": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
                     "13": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipo2 A con un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
@@ -1253,16 +1253,28 @@
                     "14": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
                     },
+                    "15": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 3 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+                    },
                     "16": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 5 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
-                    },
-                    "2": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
                     }
                 }
             }
         },
+        "name": "Estaciones de carga",
+        "presets": {
+            "0": {
+                "title": "una estación de carga para bicicletas eléctricas con un enchufe de pared europeo normal <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (pensado para cargar bicicletas eléctricas)"
+            },
+            "1": {
+                "title": "una estación de carga para coches"
+            }
+        },
         "tagRenderings": {
+            "Auth phone": {
+                "question": "¿Cual es el número de teléfono para la llamada de autenticación o SMS?"
+            },
             "Authentication": {
                 "mappings": {
                     "0": {
@@ -1294,6 +1306,24 @@
             },
             "Available_charging_stations (generated)": {
                 "mappings": {
+                    "0": {
+                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
+                    },
+                    "1": {
+                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
+                    },
+                    "2": {
+                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+                    },
+                    "3": {
+                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
                     "6": {
                         "then": "<b>Tipo 1 con cable</b> (J1772)"
                     },
@@ -1360,32 +1390,14 @@
                     "27": {
                         "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
                     },
-                    "1": {
-                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "2": {
-                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
-                    },
-                    "3": {
-                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
+                    "28": {
+                        "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
                     },
                     "29": {
                         "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
                     },
                     "30": {
                         "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
-                    },
-                    "28": {
-                        "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
-                    },
-                    "0": {
-                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
@@ -1542,9 +1554,6 @@
             "ref": {
                 "question": "¿Cual es el número de referencia de esta estación de carga?",
                 "render": "El número de referencia es <b>{ref}</b>"
-            },
-            "Auth phone": {
-                "question": "¿Cual es el número de teléfono para la llamada de autenticación o SMS?"
             }
         },
         "title": {
@@ -1599,16 +1608,7 @@
                     }
                 }
             }
-        },
-        "presets": {
-            "0": {
-                "title": "una estación de carga para bicicletas eléctricas con un enchufe de pared europeo normal <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (pensado para cargar bicicletas eléctricas)"
-            },
-            "1": {
-                "title": "una estación de carga para coches"
-            }
-        },
-        "name": "Estaciones de carga"
+        }
     },
     "climbing": {
         "tagRenderings": {
@@ -1806,6 +1806,9 @@
                     "2": {
                         "then": "Este carril bici está hecho de asfalto"
                     },
+                    "3": {
+                        "then": "Este carril bici está hecho de piedras de pavimento suaves"
+                    },
                     "4": {
                         "then": "Este carril bici está hecho de hormigón"
                     },
@@ -1817,9 +1820,6 @@
                     },
                     "10": {
                         "then": "Este carril bici está hecho de gravilla"
-                    },
-                    "3": {
-                        "then": "Este carril bici está hecho de piedras de pavimento suaves"
                     },
                     "12": {
                         "then": "Este carril bici está hecho de tierra natural"
@@ -1972,6 +1972,7 @@
         }
     },
     "defibrillator": {
+        "description": "Una capa que muestra desfibriladores que se pueden utilizar en caso de emergencia. Contiene desfibriladores públicos, pero también desfibriladores para los que se puede necesitar que el personal vaya a buscar el dispositivo",
         "name": "Desfibriladores",
         "presets": {
             "0": {
@@ -2095,8 +2096,7 @@
         },
         "title": {
             "render": "Desfibrilador"
-        },
-        "description": "Una capa que muestra desfibriladores que se pueden utilizar en caso de emergencia. Contiene desfibriladores públicos, pero también desfibriladores para los que se puede necesitar que el personal vaya a buscar el dispositivo"
+        }
     },
     "dogpark": {
         "name": "parques de perros",

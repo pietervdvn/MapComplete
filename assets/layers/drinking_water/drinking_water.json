@@ -170,7 +170,7 @@
         "nl": "<a href='#{_closest_other_drinking_water_id}'>Er bevindt zich een ander drinkwaterpunt op {_closest_other_drinking_water_distance} meter</a>",
         "it": "<a href='#{_closest_other_drinking_water_id}'>C’è un’altra fontanella a {_closest_other_drinking_water_distance} metri</a>",
         "de": "<a href='#{_closest_other_drinking_water_id}'>Eine weitere Trinkwasserstelle befindet sich in {_closest_other_drinking_water_distance} Meter</a>",
-        "fr": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres a>",
+        "fr": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres</a>",
         "hu": "<a href='#{_closest_other_drinking_water_id}'>Van egy másik ivóvízkút {_closest_other_drinking_water_distance} méter távolságra</a>",
         "es": "<a href='#{_closest_other_drinking_water_id}'>Hay otra fuente de agua potable a {_closest_other_drinking_water_distance} metros</a>"
       },
@@ -249,6 +249,7 @@
     "nl": "Deze laag toont drinkwaterpunten",
     "hu": "Ivóvizet adó kutakat megjelenítő réteg",
     "de": "Eine Ebene mit Trinkwasserbrunnen",
-    "es": "Una capa que muestra fuentes de agua potable"
+    "es": "Una capa que muestra fuentes de agua potable",
+    "fr": "Une couche montrant les fontaines d'eau potable"
   }
 }

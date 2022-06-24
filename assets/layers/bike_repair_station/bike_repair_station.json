@@ -200,7 +200,7 @@
           "then": {
             "en": "There are only tools (screwdrivers, pliers, …) present",
             "nl": "Er is enkel gereedschap aanwezig (schroevendraaier, tang...)",
-            "fr": "Il y a seulement des outils (tournevis, pinces...)",
+            "fr": "Il y a seulement des outils (tournevis, pinces…)",
             "gl": "Só hai ferramentas (desaparafusadores, alicates...) presentes",
             "de": "Es ist nur Werkzeug (Schraubenzieher, Zangen, …) vorhanden",
             "it": "Ci sono solo degli attrezzi (cacciaviti, pinze…) presenti",
@@ -555,7 +555,7 @@
         "nl": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id}.%0D%0A%0D%0AMet vriendelijke groeten.'>Rapporteer deze fietspomp als kapot</a>",
         "de": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,%0D%0A%0D%0AMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>",
         "da": "<a href='mailto:{email}?subject=Cykelpumpe i stykker&body=Hej,%0D%0A%0D%0D%0Med denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} er i stykker.%0D%0A%0D%0D%0A Med venlig hilsen'>Anmeld denne cykelpumpe som værende i stykker</a>",
-        "es": "<a href='mailto:{email}?subject=Bomba de bicicletas rota&body=Hola,%0D%0A%0ACon este correo, me gustaría informarte de que la bomba para bicicletas que se encuentra en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0A Un saludo'>Reportar esta bomba para bicicletas como rota</a>"
+        "es": "<a href='mailto:{email}?subject=Bomba para bicicletas rota&body=Hola,%0D%0A%0D%0ACon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0AUn saludo'>Reportar esta bomba para bicicletas como rota</a>"
       },
       "id": "Email maintainer"
     },
@@ -596,7 +596,7 @@
           "then": {
             "en": "Sclaverand/Presta (narrow-width bike tires)",
             "nl": "Sclaverand/Presta (dunne fietsbanden)",
-            "fr": "Sclaverand (aussi appelé Presta)",
+            "fr": "Sclaverand/Presta (pneus de vélos à faible largeur)",
             "gl": "Sclaverand (tamén coñecido como Presta)",
             "de": "Sklaverand-/Presta-Ventile (für Rennräder)",
             "it": "Sclaverand (detta anche Presta)",
@@ -624,7 +624,7 @@
           "then": {
             "en": "Schrader (cars and mountainbikes)",
             "nl": "Schrader (auto's en mountainbikes)",
-            "fr": "Schrader (les valves de voitures)",
+            "fr": "Schrader (voitures et vélos de montagne)",
             "gl": "Schrader (para automóbiles)",
             "de": "Schrader-Ventile (für Autos und Mountainbikes)",
             "it": "Schrader (valvola delle auto)",

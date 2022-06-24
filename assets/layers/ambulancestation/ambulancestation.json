@@ -89,7 +89,7 @@
         "en": "What is the street name where the station located?",
         "ja": " 救急ステーションの所在地はどこですか?",
         "ru": " По какому адресу расположена эта станция?",
-        "fr": " Quel est le nom de la rue où la station se situe ?",
+        "fr": "Quel est le nom de la rue où la station se situe ?",
         "it": " Come si chiama la strada in cui si trova questa stazione?",
         "de": "In welcher Straße liegt die Rettungswache?",
         "hu": "Mi a neve annak az utcának, amelyben az állomás található?",
@@ -263,7 +263,7 @@
             "de": "Die Rettungswache wird von einer privaten Organisation betrieben.",
             "hu": "Az állomást egy magánkézben lévő szervezet működteti.",
             "nl": "Dit station wordt beheerd door een privé-organisatie.",
-            "es": "La estación es de gestión privada."
+            "es": "La estación se opera privadamente."
           }
         }
       ]
