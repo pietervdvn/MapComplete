@@ -10,6 +10,7 @@ import {BBox} from "../../BBox";
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
 import {Or} from "../../Tags/Or";
 import {TagsFilter} from "../../Tags/TagsFilter";
+import {OsmObject} from "../../Osm/OsmObject";
 
 /**
  * If a tile is needed (requested via the UIEventSource in the constructor), will download the appropriate tile and pass it via 'handleTile'
@@ -31,7 +32,7 @@ export default class OsmFeatureSource {
     private readonly allowedTags: TagsFilter;
 
     /**
-     * 
+     *
      * @param options: allowedFeatures is normally calculated from the layoutToUse
      */
     constructor(options: {
@@ -81,7 +82,7 @@ export default class OsmFeatureSource {
 
             for (const neededTile of neededTiles) {
                 this.downloadedTiles.add(neededTile)
-                this.LoadTile(...Tiles.tile_from_index(neededTile))
+                await this.LoadTile(...Tiles.tile_from_index(neededTile))
             }
         } catch (e) {
             console.error(e)
@@ -90,7 +91,33 @@ export default class OsmFeatureSource {
         }
     }
 
-    private LoadTile(z, x, y): void {
+    /**
+     * The requested tile might only contain part of the relation.
+     *
+     * This method will download the full relation and return it as geojson if it was incomplete.
+     * If the feature is already complete (or is not a relation), the feature will be returned
+     */
+    private async patchIncompleteRelations(feature: {properties: {id: string}}, 
+                                           originalJson: {elements: {type: "node" | "way" | "relation", id: number, } []}): Promise<any> {
+        if(!feature.properties.id.startsWith("relation")){
+            return feature
+        }
+        const relationSpec = originalJson.elements.find(f => "relation/"+f.id === feature.properties.id)
+        const members : {type: string, ref: number}[] = relationSpec["members"]
+        for (const member of members) {
+            const isFound = originalJson.elements.some(f => f.id === member.ref && f.type === member.type)
+            if (isFound) {
+                continue
+            }
+            
+            // This member is missing. We redownload the entire relation instead
+            console.debug("Fetching incomplete relation "+feature.properties.id)
+            return (await OsmObject.DownloadObjectAsync(feature.properties.id)).asGeoJson()
+        }
+        return feature;
+    }
+
+    private async LoadTile(z, x, y): Promise<void> {
         if (z > 25) {
             throw "This is an absurd high zoom level"
         }
@@ -102,8 +129,11 @@ export default class OsmFeatureSource {
         const bbox = BBox.fromTile(z, x, y)
         const url = `${this._backend}/api/0.6/map?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
 
-        Utils.downloadJson(url).then(osmJson => {
+        let error = undefined;
+        try {
+            const osmJson = await Utils.downloadJson(url)
             try {
+
                 console.log("Got tile", z, x, y, "from the osm api")
                 this.rawDataHandlers.forEach(handler => handler(osmJson, Tiles.tile_index(z, x, y)))
                 const geojson = OsmToGeoJson.default(osmJson,
@@ -112,10 +142,15 @@ export default class OsmFeatureSource {
                         flatProperties: true
                     });
 
+
                 // The geojson contains _all_ features at the given location
                 // We only keep what is needed
 
                 geojson.features = geojson.features.filter(feature => this.allowedTags.matchesProperties(feature.properties))
+
+                for (let i = 0; i < geojson.features.length; i++) {
+                    geojson.features[i] = await this.patchIncompleteRelations(geojson.features[i], osmJson)
+                }
                 geojson.features.forEach(f => {
                     f.properties["_backend"] = this._backend
                 })
@@ -131,22 +166,25 @@ export default class OsmFeatureSource {
                 if (this.options.markTileVisited) {
                     this.options.markTileVisited(index)
                 }
-            } catch (e) {
-                console.error("Weird error: ", e)
+            }catch(e){
+                console.error("PANIC: got the tile from the OSM-api, but something crashed handling this tile")
+                error = e;
             }
-        })
-            .catch(e => {
-                console.error("Could not download tile", z, x, y, "due to", e, "; retrying with smaller bounds")
-                if (e === "rate limited") {
-                    return;
-                }
-                this.LoadTile(z + 1, x * 2, y * 2)
-                this.LoadTile(z + 1, 1 + x * 2, y * 2)
-                this.LoadTile(z + 1, x * 2, 1 + y * 2)
-                this.LoadTile(z + 1, 1 + x * 2, 1 + y * 2)
+            
+        } catch (e) {
+            console.error("Could not download tile", z, x, y, "due to", e, "; retrying with smaller bounds")
+            if (e === "rate limited") {
                 return;
-            })
+            }
+            await this.LoadTile(z + 1, x * 2, y * 2)
+            await this.LoadTile(z + 1, 1 + x * 2, y * 2)
+            await this.LoadTile(z + 1, x * 2, 1 + y * 2)
+            await this.LoadTile(z + 1, 1 + x * 2, 1 + y * 2)
+        }
 
+        if(error !== undefined){
+            throw error;
+        }
 
     }
 
