@@ -92,21 +92,21 @@
           "if": "school=lower_secondary",
           "then": {
             "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>first and second</b> grade",
-            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>"
+            "nl": "Dit is een middelbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>"
           }
         },
         {
           "if": "school=middle_secondary",
           "then": {
             "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>third and fourth</b> grade",
-            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>"
+            "nl": "Dit is een middelbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>"
           }
         },
         {
           "if": "school=upper_secondary",
           "then": {
             "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>fifth and sixth</b> grade",
-            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>"
+            "nl": "Dit is een middelbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>"
           }
         },
         {
@@ -249,14 +249,48 @@
         "nl": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
       },
       "render": {
-        "en": "{school:language} is the main language of {title()}",
-        "nl": "{school:language} is de voertaal van {title()}"
+        "en": "{school:language} is the main language of {name}",
+        "nl": "{school:language} is de voertaal van {name}"
       },
       "freeform": {
         "key": "school:language",
-        "inline": true
+        "inline": true,
+        "placeholder": {
+          "en":"Language in lowercase English",
+          "nl":"Taal in lowercase Engel"},
+        "addExtraTags": [
+          "fixme=Freeform tag `school:language` used, to be doublechecked"
+        ]
       },
       "mappings": [
+        {
+          "if": "school:language=english",
+          "then": {
+            "en": "English is the main language of {name}",
+            "nl": "Engels is de voertaal van {name}"
+          }
+        },
+        {
+          "if": "school:language=french",
+          "then": {
+            "en": "French is the main language of {name}",
+            "nl": "Frans is de voertaal van {name}"
+          }
+        },
+        {
+          "if": "school:language=dutch",
+          "then": {
+            "en": "Dutch is the main language of {name}",
+            "nl": "Nederlands is de voertaal van {name}"
+          }
+        },
+        {
+          "if": "school:language=german",
+          "then": {
+            "en": "German is the main language of {name}",
+            "nl": "Duits is de voertaal van {name}"
+          }
+        },
         {
           "if": "school:language=",
           "then": {
