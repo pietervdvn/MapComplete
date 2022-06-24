@@ -249,8 +249,8 @@
         "nl": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
       },
       "render": {
-        "en": "{school:language} is the main language of {title()}",
-        "nl": "{school:language} is de voertaal van {title()}"
+        "en": "{school:language} is the main language of {name}",
+        "nl": "{school:language} is de voertaal van {name}"
       },
       "freeform": {
         "key": "school:language",
@@ -266,29 +266,29 @@
         {
           "if": "school:language=english",
           "then": {
-            "en": "English is the main language of {title()}",
-            "nl": "Engels is de voertaal van {title()}"
+            "en": "English is the main language of {name}",
+            "nl": "Engels is de voertaal van {name}"
           }
         },
         {
           "if": "school:language=french",
           "then": {
-            "en": "French is the main language of {title()}",
-            "nl": "Frans is de voertaal van {title()}"
+            "en": "French is the main language of {name}",
+            "nl": "Frans is de voertaal van {name}"
           }
         },
         {
           "if": "school:language=dutch",
           "then": {
-            "en": "Dutch is the main language of {title()}",
-            "nl": "Nederlands is de voertaal van {title()}"
+            "en": "Dutch is the main language of {name}",
+            "nl": "Nederlands is de voertaal van {name}"
           }
         },
         {
           "if": "school:language=german",
           "then": {
-            "en": "German is the main language of {title()}",
-            "nl": "Duits is de voertaal van {title()}"
+            "en": "German is the main language of {name}",
+            "nl": "Duits is de voertaal van {name}"
           }
         },
         {
