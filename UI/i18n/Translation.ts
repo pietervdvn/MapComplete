@@ -7,10 +7,10 @@ export class Translation extends BaseUIElement {
 
     public static forcedLanguage = undefined;
 
-    public readonly translations: object
+    public readonly translations: Record<string, string>
     context?: string;
 
-    constructor(translations: object, context?: string) {
+    constructor(translations: Record<string, string>, context?: string) {
         super()
         if (translations === undefined) {
             console.error("Translation without content at "+context)
@@ -264,7 +264,7 @@ export class Translation extends BaseUIElement {
 }
 
 export class TypedTranslation<T> extends Translation {
-    constructor(translations: object, context?: string) {
+    constructor(translations: Record<string, string>, context?: string) {
         super(translations, context);
     }
 
