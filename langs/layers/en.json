@@ -5010,13 +5010,13 @@
                         "then": "This is a secondary school which offers all grades"
                     },
                     "3": {
-                        "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>first and second</b> grade"
+                        "then": "This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade"
                     },
                     "4": {
-                        "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>third and fourth</b> grade"
+                        "then": "This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade"
                     },
                     "5": {
-                        "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>fifth and sixth</b> grade"
+                        "then": "This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade"
                     },
                     "6": {
                         "then": "This school offers post-secondary education (e.g. a seventh or eight specialisation year)"
