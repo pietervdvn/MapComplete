@@ -13,7 +13,7 @@
             "hardDelete": "Ce point sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées",
             "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé",
             "softDelete": "Cet objet sera mis à jour et caché de l'application. <span class=\"subtle\">{reason}</span>",
-            "retagNoOtherThemes": "Cet objet sera reclassifié et caché dans cette application",
+            "retagNoOtherThemes": "Cet objet sera re-classifié et caché dans cette application",
             "retagOtherThemes": "Cet objet sera re-classifié et visible dans {otherThemes}"
         },
         "isDeleted": "Cet objet est supprimé",
