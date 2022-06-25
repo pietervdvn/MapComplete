@@ -53,7 +53,11 @@
             "import": {
                 "hasBeenImported": "Cet objet a été importé",
                 "howToTest": "Pour essayer, ajouter <b>test=true</b> ou <b>backend=osm-test</b> à l'adresse de la page. Le groupe de modifications sera affiché dans la console. Merci d'ouvrir un PR pour officialiser ce thème et ainsi activer le bouton d'import.",
-                "importTags": "L'objet recevra {tags}"
+                "importTags": "L'objet recevra {tags}",
+                "wrongType": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être importé",
+                "officialThemesOnly": "Le bouton d'import est désactivé pour les thèmes non-officiels pour prévenir les accidents",
+                "zoomInMore": "Zoomez davantage pour importer cet objet",
+                "wrongTypeToConflate": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être confondu"
             },
             "intro": "Vous avez cliqué sur un endroit où il n'y a pas encore de données.<br>",
             "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
@@ -64,7 +68,9 @@
             "title": "Ajouter un nouveau point ?",
             "warnVisibleForEveryone": "Votre ajout sera visible",
             "zoomInFurther": "Rapprochez vous pour ajouter un point.",
-            "zoomInMore": "Zoomez pour importer cet élément"
+            "zoomInMore": "Zoomez pour importer cet élément",
+            "importTags": "L'élément recevra {tags}",
+            "wrongType": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être importé"
         },
         "attribution": {
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",
