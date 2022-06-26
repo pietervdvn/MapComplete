@@ -129,6 +129,20 @@
                 }
             },
             "question": "Hva er respektivt element på Wikipedia?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Røyking er <b>tillatt</b>"
+                },
+                "1": {
+                    "then": "Røyking <b>forbudt</b>"
+                },
+                "2": {
+                    "then": "Røyking <b>tillates på utsiden</b>."
+                }
+            },
+            "question": "Tillates røyking på {title()}?"
         }
     }
 }
