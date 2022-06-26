@@ -66,6 +66,21 @@
                     "caravansites-website": {
                         "question": "Har dette stedet en nettside?",
                         "render": "Offisiell nettside: <a href='{website}'>{website}</a>"
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "2": {
+                                "then": "Det finnes ingen tilgang til Internett"
+                            }
+                        },
+                        "question": "Tilbyr stedet tilgang til Internett?"
+                    },
+                    "caravansites-internet-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tilgang til Internett koster ekstra"
+                            }
+                        }
                     }
                 }
             },
