@@ -91,7 +91,9 @@
             "openMapillary": "Åpne Mapillary her",
             "openOsmcha": "Vis de seneste redigeringene gjort med {theme}",
             "themeBy": "Tema vedlikeholdt av {author}",
-            "translatedBy": "MapComplete har blitt oversatt av {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} andre bidragsytere</a>."
+            "translatedBy": "MapComplete har blitt oversatt av {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} andre bidragsytere</a>.",
+            "followOnTwitter": "Følg MapComplete på Twitter",
+            "followOnMastodon": "Følg MapComplete på Mastodon"
         },
         "back": "Tilbake",
         "backToMapcomplete": "Tilbake til temaoversikten",
@@ -348,7 +350,8 @@
             "title": "Velg fil"
         },
         "selectTheme": {
-            "title": "Velg et tema"
+            "title": "Velg et tema",
+            "unmatchedTitle": "Følgende elementer samsvarer ikke med noen av forhåndsinnstillingene"
         },
         "title": "Importhjelper"
     },
