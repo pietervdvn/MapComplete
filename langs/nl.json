@@ -557,7 +557,11 @@
                 "verbrevoke": "Verwijdert alle rollen van de gebruiker"
             },
             "scheme": {
-                "argkey": "De naam van de key"
+                "argkey": "De naam van de key",
+                "docs": "Geeft informatie over een sleutel in een themaconfiguratiebestand",
+                "noMatchingLayer": "Geen overeenkomende sleutels gevonden, misschien bedoelde je een van de volgende:",
+                "notype": "geen type aangeduid",
+                "title": "{key} (gebruikt in <code>{path}</code>, {type})"
             },
             "search": {
                 "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>...",
@@ -591,13 +595,6 @@
                 "noWiki": "Gelieve een zoekterm voor een wiki-pagina te geven",
                 "nothingFound": "Ik kon niets vinden voor {search} op {backend}",
                 "searching": "Aan het zoeken op {backend}…"
-            },
-            "scheme": {
-                "argkey": "De naam van de key",
-                "docs": "Geeft informatie over een sleutel in een themaconfiguratiebestand",
-                "noMatchingLayer": "Geen overeenkomende sleutels gevonden, misschien bedoelde je een van de volgende:",
-                "notype": "geen type aangeduid",
-                "title": "{key} (gebruikt in <code>{path}</code>, {type})"
             }
         },
         "decryptionFailed": "Sorry, ik kon je bericht niet ontcijferen. Probeer om deze kamer te verlaten en opnieuw te connecteren",

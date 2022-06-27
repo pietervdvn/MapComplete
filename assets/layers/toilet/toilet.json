@@ -439,7 +439,8 @@
         "en": "Do these toilets have a sink to wash your hands?",
         "nl": "Hebben deze toiletten een lavabo om de handen te wassen?",
         "de": "Gibt es hier ein Handwaschbecken?",
-        "es": "¿Esto baños tienen una pileta para lavarte los baños?"
+        "es": "¿Esto baños tienen una pileta para lavarte los baños?",
+        "fr": "Ces toilettes ont-ils un lavabo pour se laver les mains ?"
       },
       "mappings": [
         {
@@ -448,7 +449,8 @@
             "en": "This toilets have a sink to wash your hands",
             "nl": "Deze toiletten hebben een lavabo waar men de handen kan wassen",
             "de": "Die Toilette hat ein Handwaschbecken",
-            "es": "Estos baños tienen una pileta para lavarse las manos"
+            "es": "Estos baños tienen una pileta para lavarse las manos",
+            "fr": "Ces toilettes ont un lavabo pour se laver les mains"
           }
         },
         {
@@ -457,7 +459,8 @@
             "en": "This toilets <b>don't</b> have a sink to wash your hands",
             "nl": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen",
             "de": "Die Toilette hat <b>kein</b> Handwaschbecken",
-            "es": "Estos baños <b>no</b> tienen una pileta para lavarse las manos"
+            "es": "Estos baños <b>no</b> tienen una pileta para lavarse las manos",
+            "fr": "Ces toilettes <b>n'ont pas</b> de lavabo pour se laver les mains"
           }
         }
       ]
@@ -468,7 +471,8 @@
         "en": "Does one have to bring their own toilet paper to this toilet?",
         "nl": "Moet je je eigen toiletpapier meenemen naar deze toilet?",
         "de": "Ist Toilettenpapier vorhanden?",
-        "es": "¿Hay que traer tu propio papel higiénico a este baño?"
+        "es": "¿Hay que traer tu propio papel higiénico a este baño?",
+        "fr": "Est-ce qu'il faut apporter son propre papier toilette ?"
       },
       "mappings": [
         {
@@ -477,7 +481,8 @@
             "en": "This toilet is equipped with toilet paper",
             "nl": "Deze toilet is voorzien van toiletpapier",
             "de": "Die Toilette ist in der Regel mit Toilettenpapier ausgestattet",
-            "es": "Este baño esta equipado con papel higiénico"
+            "es": "Este baño esta equipado con papel higiénico",
+            "fr": "Ces toilettes sont équipés de papier toilette"
           }
         },
         {
@@ -486,7 +491,8 @@
             "en": "You have to bring your own toilet paper to this toilet",
             "nl": "Je moet je eigen toiletpapier meebrengen naar deze toilet",
             "de": "Die Toilette ist nicht mit Toilettenpapier ausgestattet, man muss es selbst mitbringen",
-            "es": "Tienes que traer tu propio papel higiénico a este baño"
+            "es": "Tienes que traer tu propio papel higiénico a este baño",
+            "fr": "Vous devez apporter votre propre papier toilette ici"
           }
         }
       ],

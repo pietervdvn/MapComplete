@@ -193,7 +193,7 @@
             "en": "Not accessible to the general public (e.g. only accesible to staff, the owners, …)",
             "ca": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)",
             "es": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)",
-            "fr": "Non accessible au public (par exemple réservé au personnel, au propriétaire, ...)",
+            "fr": "Non accessible au public (par exemple réservé au personnel, au propriétaire…)",
             "nl": "Niet toegankelijk voor het publiek (bv. enkel voor personeel, de eigenaar, ...)",
             "de": "Der Defibrillator ist nicht öffentlich zugänglich (z.B. nur für Personal, Eigentümer, …)",
             "it": "Non accessibile al pubblico (ad esempio riservato al personale, ai proprietari, etc.)",
@@ -670,6 +670,7 @@
     "en": "A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device",
     "nl": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden",
     "sl": "Sloj prikazuje defibrilatorje, ki jih je možno uporabiti v primeru sile. Sloj poleg javno dostopnih defibrilatorjev vsebuje tudi tiste, ki za dostop morda potrebujejo pomoč osebja",
-    "de": "Eine Ebene mit Defibrillatoren, die in Notfällen eingesetzt werden können. Diese Ebene enthält öffentliche Defibrillatoren, aber auch Defibrillatoren, bei denen möglicherweise Personal benötigt wird, um das Gerät zu holen"
+    "de": "Eine Ebene mit Defibrillatoren, die in Notfällen eingesetzt werden können. Diese Ebene enthält öffentliche Defibrillatoren, aber auch Defibrillatoren, bei denen möglicherweise Personal benötigt wird, um das Gerät zu holen",
+    "es": "Una capa que muestra desfibriladores que se pueden utilizar en caso de emergencia. Contiene desfibriladores públicos, pero también desfibriladores para los que se puede necesitar que el personal vaya a buscar el dispositivo"
   }
 }

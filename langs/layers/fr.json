@@ -466,11 +466,11 @@
                         "4": {
                             "1": "vélos de montagne"
                         },
-                        "6": {
-                            "1": "tandem"
-                        },
                         "5": {
                             "1": "sacoches pour vélo"
+                        },
+                        "6": {
+                            "1": "tandem"
                         }
                     }
                 }
@@ -507,14 +507,14 @@
             },
             "bicycle_rental_type": {
                 "mappings": {
+                    "0": {
+                        "then": "C'est un magasin dont l'activité principale est la location de vélo"
+                    },
                     "1": {
                         "then": "C'est une agence louant diverses choses et/ou voitures. Elle loue également des vélos, mais ce n'est pas sa principale activité"
                     },
                     "2": {
                         "then": "C'est un magasin qui vend ou répare des vélos mais peut également en louer"
-                    },
-                    "0": {
-                        "then": "C'est un magasin dont l'activité principale est la location de vélo"
                     }
                 }
             }
@@ -1532,6 +1532,7 @@
         "name": "Visualisation de la direction"
     },
     "drinking_water": {
+        "description": "Une couche montrant les fontaines d'eau potable",
         "name": "Eau potable",
         "presets": {
             "0": {
@@ -1571,8 +1572,7 @@
         },
         "title": {
             "render": "Eau potable"
-        },
-        "description": "Une couche montrant les fontaines d'eau potable"
+        }
     },
     "etymology": {
         "description": "Tous les objets dont le nom ont une étymologie connue",
@@ -2186,6 +2186,71 @@
             "render": "Microbibliothèque"
         }
     },
+    "school": {
+        "name": "Écoles primaires et secondaires",
+        "presets": {
+            "0": {
+                "title": "une école primaire ou secondaire"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?",
+                "render": "Cette école peut accueillir au maximum {capacity} étudiants"
+            },
+            "education-level-belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "Il s'agit d'une école avec une section maternelle où les jeunes enfants reçoivent un enseignement qui prépare à la lecture et à l'écriture."
+                    },
+                    "1": {
+                        "then": "Il s'agit d'une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>"
+                    },
+                    "2": {
+                        "then": "Il s'agit d'une école secondaire qui offre toutes les années"
+                    },
+                    "3": {
+                        "then": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
+                    },
+                    "4": {
+                        "then": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
+                    },
+                    "5": {
+                        "then": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
+                    },
+                    "6": {
+                        "then": "Cette école propose un enseignement post-secondaire (par exemple une septième ou huitième année de spécialisation)"
+                    }
+                },
+                "question": "Quel est le niveau d'enseignement dispensé dans cette école ?"
+            },
+            "gender": {
+                "mappings": {
+                    "0": {
+                        "then": "Les garçons et les filles peuvent s'inscrire ici et suivre des cours ensemble"
+                    },
+                    "1": {
+                        "then": "Les garçons et les filles peuvent s'inscrire ici, mais ils sont séparés (par exemple, ils ont des cours dans des classes différentes ou à des heures différentes)"
+                    },
+                    "2": {
+                        "then": "C'est une école réservée aux garçons"
+                    },
+                    "3": {
+                        "then": "C'est une école réservée aux filles"
+                    }
+                },
+                "question": "Quels genres de personnes peuvent s'inscrire dans cette école ?"
+            },
+            "language": {
+                "mappings": {
+                    "0": {
+                        "then": "La langue principale de cette école est inconnue"
+                    }
+                },
+                "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
+            }
+        }
+    },
     "shops": {
         "description": "Un magasin",
         "name": "Magasin",
@@ -2510,6 +2575,55 @@
             "render": "Caméra de surveillance"
         }
     },
+    "tertiary_education": {
+        "name": "Collèges et universités",
+        "presets": {
+            "0": {
+                "description": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université.",
+                "title": "une université"
+            }
+        },
+        "tagRenderings": {
+            "institution-kind": {
+                "mappings": {
+                    "0": {
+                        "then": "Il s'agit d'un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici"
+                    },
+                    "1": {
+                        "then": "Il s'agit d'une université, d'un établissement d'enseignement supérieur où sont délivrés des diplômes de bachelor ou plus."
+                    }
+                },
+                "question": "De quel type d'établissement s'agit-il ?"
+            },
+            "isced": {
+                "mappings": {
+                    "0": {
+                        "then": "Les diplômes de bchelor sont délivrés ici"
+                    },
+                    "1": {
+                        "then": "Des masters y sont décernés"
+                    },
+                    "2": {
+                        "then": "Des doctorats y sont décernés"
+                    }
+                },
+                "question": "Quel niveau d'éducation est donné ici ?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Établissement d'enseignement supérieur non universitaire"
+                },
+                "2": {
+                    "then": "Universitée"
+                },
+                "3": {
+                    "then": "École dispensant un enseignement supérieur"
+                }
+            }
+        }
+    },
     "toilet": {
         "name": "Toilettes",
         "presets": {
@@ -2565,6 +2679,28 @@
                 "question": "Quel est le prix d'accès de ces toilettes ?",
                 "render": "Le prix est {charge}"
             },
+            "toilet-handwashing": {
+                "mappings": {
+                    "0": {
+                        "then": "Ces toilettes ont un lavabo pour se laver les mains"
+                    },
+                    "1": {
+                        "then": "Ces toilettes <b>n'ont pas</b> de lavabo pour se laver les mains"
+                    }
+                },
+                "question": "Ces toilettes ont-ils un lavabo pour se laver les mains ?"
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "0": {
+                        "then": "Ces toilettes sont équipés de papier toilette"
+                    },
+                    "1": {
+                        "then": "Vous devez apporter votre propre papier toilette ici"
+                    }
+                },
+                "question": "Est-ce qu'il faut apporter son propre papier toilette ?"
+            },
             "toilets-changing-table": {
                 "mappings": {
                     "0": {
@@ -2614,28 +2750,6 @@
                     }
                 },
                 "question": "Y a-t-il des toilettes réservées aux personnes en fauteuil roulant ?"
-            },
-            "toilet-has-paper": {
-                "question": "Est-ce qu'il faut apporter son propre papier toilette ?",
-                "mappings": {
-                    "0": {
-                        "then": "Ces toilettes sont équipés de papier toilette"
-                    },
-                    "1": {
-                        "then": "Vous devez apporter votre propre papier toilette ici"
-                    }
-                }
-            },
-            "toilet-handwashing": {
-                "mappings": {
-                    "0": {
-                        "then": "Ces toilettes ont un lavabo pour se laver les mains"
-                    },
-                    "1": {
-                        "then": "Ces toilettes <b>n'ont pas</b> de lavabo pour se laver les mains"
-                    }
-                },
-                "question": "Ces toilettes ont-ils un lavabo pour se laver les mains ?"
             }
         },
         "title": {
@@ -2644,32 +2758,33 @@
     },
     "trail": {
         "name": "Sentiers",
-        "title": {
-            "render": "Sentier"
-        },
         "tagRenderings": {
-            "trail-length": {
-                "render": "Le sentier fait {_length:km} kilomètres de long"
-            },
             "Color": {
                 "mappings": {
-                    "2": {
-                        "then": "Sentier vert"
-                    },
-                    "3": {
-                        "then": "Sentier jaune"
-                    },
                     "0": {
                         "then": "Sentier bleu"
                     },
                     "1": {
                         "then": "Sentier rouge"
+                    },
+                    "2": {
+                        "then": "Sentier vert"
+                    },
+                    "3": {
+                        "then": "Sentier jaune"
                     }
                 }
+            },
+            "trail-length": {
+                "render": "Le sentier fait {_length:km} kilomètres de long"
             }
+        },
+        "title": {
+            "render": "Sentier"
         }
     },
     "tree_node": {
+        "description": "Une couche montrant les arbres",
         "name": "Arbre",
         "presets": {
             "0": {
@@ -2768,6 +2883,9 @@
                 },
                 "question": "Cet arbre est-il un feuillu ou un résineux ?"
             },
+            "tree-species-wikidata": {
+                "question": "Quelle est l'espèce de cet arbre ?"
+            },
             "tree_node-name": {
                 "mappings": {
                     "0": {
@@ -2784,15 +2902,14 @@
             "tree_node-wikidata": {
                 "question": "Quel est l'identifiant Wikidata de cet arbre ?",
                 "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata : <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
-            },
-            "tree-species-wikidata": {
-                "question": "Quelle est l'espèce de cet arbre ?"
             }
         },
         "title": {
             "render": "Arbre"
-        },
-        "description": "Une couche montrant les arbres"
+        }
+    },
+    "veterinary": {
+        "name": "vétérinaire"
     },
     "viewpoint": {
         "description": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",
@@ -2886,122 +3003,5 @@
                 }
             }
         }
-    },
-    "school": {
-        "tagRenderings": {
-            "education-level-belgium": {
-                "question": "Quel est le niveau d'enseignement dispensé dans cette école ?",
-                "mappings": {
-                    "0": {
-                        "then": "Il s'agit d'une école avec une section maternelle où les jeunes enfants reçoivent un enseignement qui prépare à la lecture et à l'écriture."
-                    },
-                    "4": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
-                    },
-                    "2": {
-                        "then": "Il s'agit d'une école secondaire qui offre toutes les années"
-                    },
-                    "3": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
-                    },
-                    "1": {
-                        "then": "Il s'agit d'une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>"
-                    },
-                    "5": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
-                    },
-                    "6": {
-                        "then": "Cette école propose un enseignement post-secondaire (par exemple une septième ou huitième année de spécialisation)"
-                    }
-                }
-            },
-            "language": {
-                "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",
-                "mappings": {
-                    "0": {
-                        "then": "La langue principale de cette école est inconnue"
-                    }
-                }
-            },
-            "gender": {
-                "mappings": {
-                    "2": {
-                        "then": "C'est une école réservée aux garçons"
-                    },
-                    "3": {
-                        "then": "C'est une école réservée aux filles"
-                    },
-                    "1": {
-                        "then": "Les garçons et les filles peuvent s'inscrire ici, mais ils sont séparés (par exemple, ils ont des cours dans des classes différentes ou à des heures différentes)"
-                    },
-                    "0": {
-                        "then": "Les garçons et les filles peuvent s'inscrire ici et suivre des cours ensemble"
-                    }
-                },
-                "question": "Quels genres de personnes peuvent s'inscrire dans cette école ?"
-            },
-            "capacity": {
-                "question": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?",
-                "render": "Cette école peut accueillir au maximum {capacity} étudiants"
-            }
-        },
-        "name": "Écoles primaires et secondaires",
-        "presets": {
-            "0": {
-                "title": "une école primaire ou secondaire"
-            }
-        }
-    },
-    "tertiary_education": {
-        "name": "Collèges et universités",
-        "tagRenderings": {
-            "institution-kind": {
-                "mappings": {
-                    "1": {
-                        "then": "Il s'agit d'une université, d'un établissement d'enseignement supérieur où sont délivrés des diplômes de bachelor ou plus."
-                    },
-                    "0": {
-                        "then": "Il s'agit d'un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici"
-                    }
-                },
-                "question": "De quel type d'établissement s'agit-il ?"
-            },
-            "isced": {
-                "mappings": {
-                    "1": {
-                        "then": "Des masters y sont décernés"
-                    },
-                    "2": {
-                        "then": "Des doctorats y sont décernés"
-                    },
-                    "0": {
-                        "then": "Les diplômes de bchelor sont délivrés ici"
-                    }
-                },
-                "question": "Quel niveau d'éducation est donné ici ?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "3": {
-                    "then": "École dispensant un enseignement supérieur"
-                },
-                "1": {
-                    "then": "Établissement d'enseignement supérieur non universitaire"
-                },
-                "2": {
-                    "then": "Universitée"
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "description": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université.",
-                "title": "une université"
-            }
-        }
-    },
-    "veterinary": {
-        "name": "vétérinaire"
     }
 }

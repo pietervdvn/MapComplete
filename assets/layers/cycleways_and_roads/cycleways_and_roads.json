@@ -417,7 +417,8 @@
           "then": {
             "en": "This cycleway is made of smooth paving stones",
             "nl": "Dit fietspad is gemaakt van straatstenen",
-            "de": "Dieser Fahrradweg besteht aus ebenen Pflastersteinen"
+            "de": "Dieser Fahrradweg besteht aus ebenen Pflastersteinen",
+            "es": "Este carril bici está hecho de piedras de pavimento suaves"
           }
         },
         {
@@ -494,7 +495,8 @@
           "then": {
             "en": "This cycleway is made from raw ground",
             "nl": "Dit fietspad is gemaakt van aarde",
-            "de": "Dieser Radweg besteht aus Rohboden"
+            "de": "Dieser Radweg besteht aus Rohboden",
+            "es": "Este carril bici está hecho de tierra natural"
           }
         }
       ],
