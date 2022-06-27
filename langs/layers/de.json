@@ -327,7 +327,7 @@
             },
             "bench-seats": {
                 "question": "Wie viele Sitzplätze hat diese Bank?",
-                "render": "{seats} Sitzplätze"
+                "render": "Die Sitzbank hat {seats} Sitzplätze"
             },
             "bench-survey:date": {
                 "question": "Wann wurde diese Bank zuletzt überprüft?",
@@ -2348,7 +2348,7 @@
                         "then": "Das Klettern ist hier kostenlos"
                     },
                     "1": {
-                        "then": "Zum Klettern ist eine Gebühr zu entrichten"
+                        "then": "Zum Klettern ist eine Gebühr zu zahlen"
                     }
                 },
                 "question": "Ist das Klettern hier gebührenpflichtig?",
@@ -2415,11 +2415,11 @@
     },
     "climbing_area": {
         "description": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, … Enthält eine Sammlung von Routen",
-        "name": "Klettermöglichkeiten",
+        "name": "Klettereinrichtungen",
         "presets": {
             "0": {
-                "description": "Eine Klettergelegenheit",
-                "title": "eine klettermöglichkeit"
+                "description": "Eine Klettereinrichtung",
+                "title": "eine Klettereinrichtung"
             }
         },
         "tagRenderings": {
@@ -2454,10 +2454,10 @@
             "name": {
                 "mappings": {
                     "0": {
-                        "then": "Diese Klettergelegenheit hat keinen Namen"
+                        "then": "Die Klettereinrichtung hat keinen Namen"
                     }
                 },
-                "question": "Wie heißt diese Klettergelegenheit?",
+                "question": "Wie heißt die Klettereinrichtung?",
                 "render": "<strong>{name}</strong>"
             }
         },
@@ -2473,10 +2473,10 @@
                     "then": "Klettergebiet"
                 },
                 "3": {
-                    "then": "Klettermöglichkeit <b>{name}</b>"
+                    "then": "Klettereinrichtung <b>{name}</b>"
                 }
             },
-            "render": "Klettermöglichkeit"
+            "render": "Klettereinrichtung"
         }
     },
     "climbing_club": {
@@ -2485,7 +2485,7 @@
         "presets": {
             "0": {
                 "description": "Ein Kletterverein",
-                "title": "eine kletterverein"
+                "title": "einen Kletterverein"
             },
             "1": {
                 "description": "Eine Organisation, die sich mit dem Klettern beschäftigt",
@@ -2569,7 +2569,7 @@
         "name": "Kletterrouten",
         "presets": {
             "0": {
-                "title": "eine kletterroute"
+                "title": "eine Kletterroute"
             }
         },
         "tagRenderings": {
@@ -5006,13 +5006,13 @@
                         "then": "Dies ist eine weiterführende Schule, die alle Jahrgangsstufen anbietet"
                     },
                     "3": {
-                        "then": "Dies ist eine weiterführende Schule, die <b>nicht</b> alle Klassenstufen hat, aber <b>erste und zweite</b> Klasse anbietet"
+                        "then": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>erste und zweite</b> Klasse anbietet"
                     },
                     "4": {
-                        "then": "Dies ist eine weiterführende Schule, die <b>nicht</b> alle Klassenstufen hat, aber <b>dritte und vierte</b> Klasse anbietet"
+                        "then": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>dritte und vierte</b> Klasse anbietet"
                     },
                     "5": {
-                        "then": "Dies ist eine weiterführende Schule, die <b>nicht</b> alle Klassenstufen hat, aber <b>fünfte und sechste</b> Klasse anbietet"
+                        "then": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>fünfte und sechste</b> Klasse anbietet"
                     },
                     "6": {
                         "then": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)"
@@ -5527,7 +5527,7 @@
                         "then": "Die Kamera überwacht einen öffentlichen Bereich, z. B. Straßen, Brücken, Plätze, Parks, Bahnhöfe, öffentliche Gänge oder Tunnel, …"
                     },
                     "1": {
-                        "then": "Die Kamera überwacht einen privaten Außenbereich, z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …"
+                        "then": "Die Kamera überwacht einen privaten Außenbereich (z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …)"
                     },
                     "2": {
                         "then": "Die Kamera überwacht einen privaten Innenbereich, z. B. Geschäfte, private Tiefgaragen, …"

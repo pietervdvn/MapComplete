@@ -61,7 +61,7 @@
                 "render": "L’exploitant est de type {operator:type}."
             },
             "ambulance-place": {
-                "question": "Dans quelle localité la station est-elle située ?",
+                "question": "Dans quelle localité la station est-elle située (p.ex. nom du quartier, village ou villa) ?",
                 "render": "La station fait partie de {addr:place}."
             },
             "ambulance-street": {
@@ -199,7 +199,7 @@
             },
             "MaxWidth": {
                 "question": "Quelle est la largeur du passage ?",
-                "render": "Largeur maximale: {maxwidth:physical} m"
+                "render": "Largeur maximale : {maxwidth:physical} m"
             },
             "Overlap (cyclebarrier)": {
                 "question": "Quel est le chevauchement des barrières ?",
@@ -394,7 +394,7 @@
                         "then": "Vélos pour personnes handicapées disponibles"
                     }
                 },
-                "question": "Qui peut emprunter des vélos ici ?"
+                "question": "Qui peut emprunter des vélos ici ?"
             },
             "bicycle_library-charge": {
                 "mappings": {
@@ -515,9 +515,27 @@
                     },
                     "2": {
                         "then": "C'est un magasin qui vend ou répare des vélos mais peut également en louer"
+                    },
+                    "4": {
+                        "then": "Il y a un distributeur qui distribue et accepte les clés, éventuellement après identification et/ou payement. Les vélos sont stationnés à proximité"
+                    },
+                    "5": {
+                        "then": "Ceci est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location"
+                    },
+                    "3": {
+                        "then": "Ceci est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure"
                     }
-                }
+                },
+                "question": "De quel type de location de vélo s'agit-il ?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Location de vélo"
         }
     },
     "bicycle_tube_vending_machine": {
@@ -546,7 +564,8 @@
         },
         "title": {
             "render": "Distributeur automatique de chambre à air de vélo"
-        }
+        },
+        "description": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)"
     },
     "bike_cafe": {
         "name": "Café vélo",
@@ -613,7 +632,8 @@
                 }
             },
             "render": "Café Vélo"
-        }
+        },
+        "description": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc."
     },
     "bike_cleaning": {
         "name": "Service de nettoyage de vélo",
@@ -629,7 +649,40 @@
                 }
             },
             "render": "Service de nettoyage de vélo"
-        }
+        },
+        "tagRenderings": {
+            "bike_cleaning-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Service de nettoyage gratuit"
+                    },
+                    "1": {
+                        "then": "Libre d'utilisation"
+                    },
+                    "2": {
+                        "then": "Le service de nettoyage est payant"
+                    }
+                },
+                "render": "L’utilisation du service de nettoyage coûte {charge}",
+                "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?"
+            },
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "mappings": {
+                    "2": {
+                        "then": "Le coût du service de nettoyage n’est pas connu"
+                    },
+                    "0": {
+                        "then": "Le service de nettoyage est gratuit"
+                    },
+                    "1": {
+                        "then": "Utilisation gratuite"
+                    }
+                },
+                "question": "Combien coûte le service de nettoyage ?",
+                "render": "Le service de nettoyage coûte {service:bicycle:cleaning:charge}"
+            }
+        },
+        "description": "Une couche affichant les lieux où l'on peut nettoyer son vélo"
     },
     "bike_parking": {
         "name": "Parking à vélo",
@@ -737,7 +790,8 @@
         },
         "title": {
             "render": "Parking à vélo"
-        }
+        },
+        "description": "Une couche montrant où stationner son vélo"
     },
     "bike_repair_station": {
         "name": "Station velo (réparation, pompe à vélo)",
@@ -751,7 +805,8 @@
                 "title": "une point de réparation vélo avec pompe"
             },
             "2": {
-                "title": "une point de réparation vélo sans pompe"
+                "title": "une point de réparation vélo sans pompe",
+                "description": "Des outils pour réparer les vélos dans l’espace public (sans pompe). Les outils sont sécurisés contre le vol."
             }
         },
         "tagRenderings": {
@@ -859,6 +914,29 @@
                 },
                 "question": "Quelles valves sont compatibles ?",
                 "render": "Cette pompe est compatible avec les valves suivantes : {valves}"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accessible au public"
+                    },
+                    "2": {
+                        "then": "Réservé aux clients"
+                    },
+                    "3": {
+                        "then": "Pas accessible au public"
+                    },
+                    "4": {
+                        "then": "Pas accessible au public"
+                    },
+                    "1": {
+                        "then": "Accessible au public"
+                    }
+                },
+                "question": "Qui est autorisé à utiliser ce centre de réparation ?"
+            },
+            "Email maintainer": {
+                "render": "<a href='mailto:{email}?subject=Pompe à vélo cassée&body=Bonjour,%0D%0A%0D%0ACe mail pour vous informer que la pompe à vélo située à https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} est cassée.%0D%0A%0D%0ABien à vous.'>Signaler cette pompe à vélo cassée</a>"
             }
         },
         "title": {
@@ -880,7 +958,8 @@
                 }
             },
             "render": "Point station velo avec pompe"
-        }
+        },
+        "description": "Une couche montrant les pompes à vélo et les centres de réparation"
     },
     "bike_shop": {
         "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
@@ -990,7 +1069,12 @@
                 "question": "Quelle est l'adresse électronique de {name} ?"
             },
             "bike_shop-is-bicycle_shop": {
-                "render": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo"
+                "render": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo",
+                "mappings": {
+                    "0": {
+                        "then": "Ce commerce est spécialisé dans la location"
+                    }
+                }
             },
             "bike_shop-name": {
                 "question": "Quel est le nom du magasin de vélos ?",
@@ -1001,6 +1085,9 @@
             },
             "bike_shop-website": {
                 "question": "Quel est le site web de {name} ?"
+            },
+            "bike_shop-access": {
+                "render": "Seulement accessible à {access}"
             }
         },
         "title": {
@@ -1019,6 +1106,9 @@
                 },
                 "5": {
                     "then": "Magasin ou réparateur de vélo <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Magasin"
                 }
             },
             "render": "Magasin ou réparateur de vélo"
@@ -1033,13 +1123,35 @@
                 }
             },
             "render": "Objet cycliste"
-        }
+        },
+        "description": "Une couche sur le thème des vélos mais qui ne correspondent à aucune autre couche"
     },
     "binocular": {
         "presets": {
             "0": {
-                "description": "Une longue-vue ou une paire de jumelles montée sur un poteau, disponible au public pour scruter les environs. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
+                "description": "Une longue-vue ou une paire de jumelles montée sur un poteau, disponible au public pour scruter les environs. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+                "title": "des jumelles"
             }
+        },
+        "name": "Jumelles",
+        "description": "Jumelles",
+        "tagRenderings": {
+            "binocular-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "En libre service"
+                    }
+                },
+                "question": "Combien l’utilisation des ces jumelles coûte-t-elle ?",
+                "render": "L’utilisation des ces jumelles coûte {charge}"
+            },
+            "binocular-direction": {
+                "question": "Dans quelle direction regarde-t-on en utilisant ces jumelles ?",
+                "render": "Orienté à {direction}°"
+            }
+        },
+        "title": {
+            "render": "Jumelles"
         }
     },
     "birdhide": {
@@ -1050,8 +1162,86 @@
                         "question": "Accessible aux fauteuils roulants"
                     }
                 }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Seulement les observatoires ornithologiques couverts"
+                    }
+                }
             }
-        }
+        },
+        "presets": {
+            "0": {
+                "description": "Un abris couvert pour observer les oiseaux confortablement",
+                "title": "un observatoire ornithologique"
+            },
+            "1": {
+                "description": "Un écran ou un mur avec des ouvertures pour observer les oiseaux",
+                "title": "un camouflage d’observation ornithologique"
+            }
+        },
+        "title": {
+            "mappings": {
+                "2": {
+                    "then": "Camouflage d’observation ornithologique {name}"
+                },
+                "1": {
+                    "then": "Observatoire ornithologique {name}"
+                }
+            },
+            "render": "Lieu d’observation d’oiseaux"
+        },
+        "tagRenderings": {
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "0": {
+                        "then": "Camouflage d’observation ornithologique"
+                    },
+                    "2": {
+                        "then": "Tour d’observation ornithologique"
+                    },
+                    "1": {
+                        "then": "Observatoire ornithologique"
+                    },
+                    "3": {
+                        "then": "Abris d’observation ornithologique"
+                    }
+                },
+                "question": "S’agit-il d’un camouflage ou d’un abris d’observation ?"
+            },
+            "birdhide-operator": {
+                "mappings": {
+                    "1": {
+                        "then": "Opéré par l’Agence Nature et Forêts"
+                    },
+                    "0": {
+                        "then": "Opéré par Natuurpunt"
+                    }
+                },
+                "question": "Qui opère cet observatoire ornithologique ?",
+                "render": "Opéré par {operator}"
+            },
+            "bird-hide-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "L’infrastructure est adaptée aux utilisateurs de chaises roulantes"
+                    },
+                    "1": {
+                        "then": "Cet observatoire ornithologique est facilement accessible en chaise roulante"
+                    },
+                    "2": {
+                        "then": "Cet observatoire ornithologique est accessible en chaise roulante mais difficilement"
+                    },
+                    "3": {
+                        "then": "Pas accessible en chaise roulante"
+                    }
+                },
+                "question": "Cet observatoire ornithologique est-il accessible en chaise roulante ?"
+            }
+        },
+        "description": "Un observatoire ornithologique",
+        "name": "Lieu pour observer des oiseaux"
     },
     "cafe_pub": {
         "filter": {
@@ -1068,6 +1258,42 @@
             "Name": {
                 "question": "Quel est le nom de ce pub ?",
                 "render": "Ce pub se nomme {name}"
+            },
+            "Classification": {
+                "mappings": {
+                    "0": {
+                        "then": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée"
+                    },
+                    "1": {
+                        "then": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière"
+                    }
+                }
+            }
+        },
+        "description": "Une couche montrants les cafés et pubs où l’on peut prendre un verre. Cette couche pose des questions y afférentes.",
+        "presets": {
+            "0": {
+                "title": "un pub",
+                "description": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée"
+            },
+            "2": {
+                "title": "un café",
+                "description": "Un <b>café</b> pour prendre un thé, un café ou une boisson alcoolisée dans un environnement calme"
+            },
+            "1": {
+                "description": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière",
+                "title": "un bar"
+            },
+            "3": {
+                "description": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une une boisson (alcoolisée)",
+                "title": "une boîte de nuit ou discothèque"
+            }
+        },
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} est définitivement fermé"
+                }
             }
         }
     },
@@ -1575,7 +1801,7 @@
         }
     },
     "etymology": {
-        "description": "Tous les objets dont le nom ont une étymologie connue",
+        "description": "Tous les objets dont l’étymologie est connue",
         "name": "A une étymologie",
         "tagRenderings": {
             "etymology_multi_apply": {
@@ -1674,7 +1900,7 @@
                 "render": "L’exploitant est de type {operator:type}."
             },
             "station-place": {
-                "question": "Dans quelle localité la station est-elle située ?",
+                "question": "Dans quelle localité la station est-elle située (p.ex. nom du quartier, village ou ville) ?",
                 "render": "La station fait partie de {addr:place}."
             },
             "station-street": {
@@ -1708,7 +1934,7 @@
                         "then": "Apporter ses propres contenants <b>n’est pas permis</b>"
                     },
                     "2": {
-                        "then": "Il est <b>obligatoire</b> d’apporter ses propres contenants"
+                        "then": "Il est <b>obligatoire</b> d’apporter ses propres contenants."
                     }
                 },
                 "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>"
@@ -1813,16 +2039,16 @@
             "hydrant-state": {
                 "mappings": {
                     "0": {
-                        "then": "La borne est en état, ou partiellement en état, de fonctionner."
+                        "then": "La borne est en état (ou partiellement en état) de fonctionner"
                     },
                     "1": {
-                        "then": "La borne est hors-service."
+                        "then": "La borne est hors-service"
                     },
                     "2": {
-                        "then": "La borne a été retirée."
+                        "then": "La borne a été retirée"
                     }
                 },
-                "question": "Mettre à jour l’état de la borne."
+                "question": "Cette borne incendie est-elle toujours en bon état de fonctionnement ?"
             },
             "hydrant-type": {
                 "mappings": {
@@ -2207,16 +2433,16 @@
                         "then": "Il s'agit d'une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>"
                     },
                     "2": {
-                        "then": "Il s'agit d'une école secondaire qui offre toutes les années"
+                        "then": "Il s'agit d'une école secondaire qui offre toutes les classes"
                     },
                     "3": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
+                        "then": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
                     },
                     "4": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
+                        "then": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
                     },
                     "5": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
+                        "then": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
                     },
                     "6": {
                         "then": "Cette école propose un enseignement post-secondaire (par exemple une septième ou huitième année de spécialisation)"
@@ -2266,7 +2492,7 @@
                 "render": "<a href='mailto:{email}'>{email}</a>"
             },
             "shops-name": {
-                "question": "Qu'est-ce que le nom de ce magasin?"
+                "question": "Qu'est-ce que le nom de ce magasin ?"
             },
             "shops-opening_hours": {
                 "question": "Quels sont les horaires d'ouverture de ce magasin ?",
@@ -2500,7 +2726,7 @@
                         "then": "Une zone intérieure privée est surveillée, par exemple un magasin, un parking souterrain privé…"
                     }
                 },
-                "question": "Quel genre de surveillance est cette caméra?"
+                "question": "De quel genre de surveillance cette caméra est-elle ?"
             },
             "Surveillance:zone": {
                 "mappings": {
@@ -2598,7 +2824,7 @@
             "isced": {
                 "mappings": {
                     "0": {
-                        "then": "Les diplômes de bchelor sont délivrés ici"
+                        "then": "Les diplômes de bachelor y sont décernés"
                     },
                     "1": {
                         "then": "Des masters y sont décernés"
@@ -2818,10 +3044,10 @@
                         "then": "L'arbre est remarquable en raison de sa taille ou de son emplacement proéminent. Il est utile pour la navigation."
                     },
                     "1": {
-                        "then": "Cet arbre est un monument naturel (ex : âge, espèce, etc…)"
+                        "then": "Cet arbre est un monument naturel (p.ex. : âge, espèce, etc)."
                     },
                     "2": {
-                        "then": "Cet arbre est utilisé à but d’agriculture (ex : dans un verger)"
+                        "then": "Cet arbre est utilisé à but agricole (p.ex. : dans un verger)."
                     },
                     "3": {
                         "then": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …)."
@@ -2962,7 +3188,7 @@
                 "render": "Cette éolienne est opérée par {operator}."
             },
             "turbine-output": {
-                "question": "Quel est la puissance générée par cette éolienne ?",
+                "question": "Quel est la puissance générée par cette éolienne (p.ex. 2,3 MW) ?",
                 "render": "La puissance générée par cette éolienne est de {generator:output:electricity}."
             },
             "turbine-start-date": {
