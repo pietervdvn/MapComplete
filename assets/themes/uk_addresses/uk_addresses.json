@@ -271,9 +271,6 @@
             {
               "if": "not:addr:unit=yes",
               "then": "<div class='subtle'>Sub-unit (e.g. 1, Flat 2, Unit C)</div><div>There is no sub-unit within this address</div>",
-              "addExtraTags": [
-                "addr:unit="
-              ],
               "hideInAnswer": true
             },
             {
@@ -360,9 +357,6 @@
               "then": {
                 "en": "<div class='subtle'>Number (e.g. 1, 1A, 2)</div><div>This building has no house number</div>"
               },
-              "addExtraTags": [
-                "addr:housenumber="
-              ],
               "hideInAnswer": true
             },
             {
@@ -402,9 +396,6 @@
               "then": {
                 "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div>No extra place name is given or needed</div>"
               },
-              "addExtraTags": [
-                "addr:substreet="
-              ],
               "hideInAnswer": true
             },
             {
@@ -448,9 +439,6 @@
               "then": {
                 "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div>No extra place name is given or needed</div>"
               },
-              "addExtraTags": [
-                "addr:substreet="
-              ],
               "hideInAnswer": true
             },
             {
@@ -554,9 +542,6 @@
             {
               "if": "not:addr:parentstreet=yes",
               "then": "<div class='subtle'>Parent street name</div><div>No parent street name is needed within this address</div>",
-              "addExtraTags": [
-                "addr:parentstreet="
-              ],
               "hideInAnswer": true
             },
             {

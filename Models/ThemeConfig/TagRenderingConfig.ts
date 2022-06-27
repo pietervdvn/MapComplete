@@ -206,6 +206,11 @@ export default class TagRenderingConfig {
                 } else if (mapping.hideInAnswer !== undefined) {
                     hideInAnswer = TagUtils.Tag(mapping.hideInAnswer, `${context}.mapping[${i}].hideInAnswer`);
                 }
+                const addExtraTags = (mapping.addExtraTags ?? []).map((str, j) => TagUtils.SimpleTag(str, `${ctx}.addExtraTags[${j}]`));
+                if(hideInAnswer === true && addExtraTags.length > 0){
+                    throw `${ctx}: Invalid mapping: 'hideInAnswer' is set to 'true', but 'addExtraTags' is enabled as well. This means that extra tags will be applied if this mapping is chosen as answer, but it cannot be chosen as answer. This either indicates a thought error or obsolete code that must be removed.`
+                }
+                
                 let icon = undefined;
                 let iconClass = "small"
                 if(mapping.icon !== undefined){
@@ -223,7 +228,7 @@ export default class TagRenderingConfig {
                     hideInAnswer,
                     icon,
                     iconClass,
-                    addExtraTags: (mapping.addExtraTags ?? []).map((str, j) => TagUtils.SimpleTag(str, `${ctx}.addExtraTags[${j}]`))
+                    addExtraTags
                 };
                 if (this.question) {
                     if (hideInAnswer !== true && mp.if !== undefined && !mp.if.isUsableAsAnswer()) {

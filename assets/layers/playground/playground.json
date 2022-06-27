@@ -347,10 +347,7 @@
             "fr": "Réservée aux élèves de l’école",
             "es": "Solo accesibles para estudiantes de la escuela"
           },
-          "hideInAnswer": true,
-          "addExtraTags": [
-            "fee=no"
-          ]
+          "hideInAnswer": true
         },
         {
           "if": "access=private",
