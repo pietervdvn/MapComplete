@@ -354,7 +354,9 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
             })
             for (let j = 0; j < i; j++) {
                 const doesMatch = parsedConditions[j].matchesProperties(properties)
-                if (doesMatch) {
+                if(doesMatch && json.mappings[j].hideInAnswer === true && json.mappings[i].hideInAnswer !== true){
+                    warnings.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j}. However, mapping ${j} has 'hideInAnswer' set, which will result in a different rendering in question-mode.`)
+                } else if (doesMatch) {
                     // The current mapping is shadowed!
                     errors.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
     The mapping ${parsedConditions[i].asHumanString(false, false, {})} is fully matched by a previous mapping (namely ${j}), which matches:
@@ -362,6 +364,7 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
     
     To fix this problem, you can try to:
     - Move the shadowed mapping up
+    - Do you want to use a different text in 'question mode'? Add 'hideInAnswer=true' to the first mapping
     - Use "addExtraTags": ["key=value", ...] in order to avoid a different rendering
          (e.g. [{"if": "fee=no",                     "then": "Free to use", "hideInAnswer":true},
                 {"if": {"and":["fee=no","charge="]}, "then": "Free to use"}]

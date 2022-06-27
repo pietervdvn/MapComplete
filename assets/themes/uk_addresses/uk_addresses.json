@@ -263,7 +263,9 @@
           "freeform": {
             "key": "addr:unit",
             "placeholder": "Sub-unit (e.g. 1, Flat 2, Unit C)",
-            "addExtraTags": ["not:addr:unit="]
+            "addExtraTags": [
+              "not:addr:unit="
+            ]
           },
           "mappings": [
             {
@@ -544,7 +546,9 @@
           "freeform": {
             "key": "addr:parentstreet",
             "placeholder": "Other (please specify)",
-            "addExtraTags": ["not:addr:parentstreet="]
+            "addExtraTags": [
+              "not:addr:parentstreet="
+            ]
           },
           "mappings": [
             {
