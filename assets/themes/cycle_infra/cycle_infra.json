@@ -10,7 +10,8 @@
     "zh_Hant": "單車設施",
     "hu": "Kerékpáros infrastruktúra",
     "ca": "Infraestructura per a bicicletes",
-    "es": "Infraestructura ciclista"
+    "es": "Infraestructura ciclista",
+    "fr": "Infrastructure cyclable"
   },
   "shortDescription": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure.",
@@ -20,7 +21,8 @@
     "nb_NO": "Alt relatert til sykkelinfrastruktur.",
     "zh_Hant": "檢視與編輯單車相關設施的地圖。",
     "hu": "Olyan térkép, ahol a kerékpáros infrastruktúrával kapcsolatos dolgokat tekinthet meg és szerkeszthet.",
-    "es": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista."
+    "es": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista.",
+    "fr": "Une carte où vous pouvez visualiser et modifier les éléments relatifs à l'infrastructure cyclable."
   },
   "description": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",

@@ -341,6 +341,40 @@
         "shortDescription": "Une carte où vous pouvez visualiser et modifier les éléments relatifs à l'infrastructure cyclable.",
         "title": "Infrastructure cyclable"
     },
+    "cyclenodes": {
+        "description": "Cette carte montre les réseaux de nœuds cyclistes   et vous permet d'ajouter facilement de nouveaux nœuds",
+        "layers": {
+            "0": {
+                "name": "liens noeud à noeud",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
+                        "render": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "lien noeud à noeud <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "lien noeud à noeud"
+                }
+            },
+            "1": {
+                "name": "noeuds",
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "question": "A combien dautres nœuds vélo  ce nœud est-il lié?",
+                        "render": "Ce noeud est lié à {expected_rcn_route_relations} d'autres noeuds cyclistes."
+                    },
+                    "node-survey:date": {
+                        "question": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?"
+                    }
+                }
+            }
+        }
+    },
     "cyclofix": {
         "description": "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins.<br><br>Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche. Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions.<br><br>Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
         "title": "Cyclofix - Une carte ouverte pour les cyclistes"
@@ -348,6 +382,10 @@
     "drinking_water": {
         "description": "Cette carte affiche les points d'accès public à de l'eau potable, et permet d'en ajouter facilement",
         "title": "Eau potable"
+    },
+    "education": {
+        "description": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
+        "title": "Enseignement"
     },
     "etymology": {
         "layers": {
@@ -541,43 +579,5 @@
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Carte des arbres",
         "title": "Arbres"
-    },
-    "cyclenodes": {
-        "description": "Cette carte montre les réseaux de nœuds cyclistes   et vous permet d'ajouter facilement de nouveaux nœuds",
-        "layers": {
-            "0": {
-                "name": "liens noeud à noeud",
-                "tagRenderings": {
-                    "node2node-survey:date": {
-                        "question": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
-                        "render": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "lien noeud à noeud <strong>{ref}</strong>"
-                        }
-                    },
-                    "render": "lien noeud à noeud"
-                }
-            },
-            "1": {
-                "tagRenderings": {
-                    "node-expected_rcn_route_relations": {
-                        "render": "Ce noeud est lié à {expected_rcn_route_relations} d'autres noeuds cyclistes.",
-                        "question": "A combien dautres nœuds vélo  ce nœud est-il lié?"
-                    },
-                    "node-survey:date": {
-                        "question": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?"
-                    }
-                },
-                "name": "noeuds"
-            }
-        }
-    },
-    "education": {
-        "title": "Enseignement",
-        "description": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations"
     }
 }

@@ -11,10 +11,10 @@
         "delete": "Eliminar",
         "explanations": {
             "hardDelete": "Este ponto será eliminado no OpenStreetMap. Pode ser recuperado por um contribuidor com experiência",
-            "selectReason": "Por favor, selecione a razão porque este elemento deve ser eliminado",
-            "softDelete": "Este elemento será atualizado e ocultado nesta aplicação. <span class=\"sutil\">{reason}</span>",
             "retagNoOtherThemes": "Este recurso será reclassificado e escondido desta aplicação",
-            "retagOtherThemes": "Este recurso será remarcado e ficará visível em {otherThemes}"
+            "retagOtherThemes": "Este recurso será remarcado e ficará visível em {otherThemes}",
+            "selectReason": "Por favor, selecione a razão porque este elemento deve ser eliminado",
+            "softDelete": "Este elemento será atualizado e ocultado nesta aplicação. <span class=\"sutil\">{reason}</span>"
         },
         "isDeleted": "Este elemento está eliminado",
         "isntAPoint": "Apenas os pontos podem ser eliminados, o elemento selecionado é uma linha, área ou relação.",
@@ -52,13 +52,14 @@
             "hasBeenImported": "Este ponto já foi importado",
             "import": {
                 "hasBeenImported": "Este objeto foi importado",
-                "importTags": "Este elemento irá receber {tags}",
-                "wrongType": "Este elemento não é um ponto ou uma linha e não pode ser importado",
-                "officialThemesOnly": "O botão de importação está desativado em temas não oficiais para evitar acidentes",
                 "howToTest": "Para testar, adicione <b>test=true</b> ou <b>backend=osm-test</b> ao URL. O conjunto de alterações será impresso na consola. Por favor abra um \"pull request\" para oficializar este tema de modo a ativar efetivamente o botão de importação.",
-                "zoomInMore": "Amplie mais para importar este elemento",
-                "wrongTypeToConflate": "Este elemento não é um ponto ou uma linha e não pode ser fundido"
+                "importTags": "Este elemento irá receber {tags}",
+                "officialThemesOnly": "O botão de importação está desativado em temas não oficiais para evitar acidentes",
+                "wrongType": "Este elemento não é um ponto ou uma linha e não pode ser importado",
+                "wrongTypeToConflate": "Este elemento não é um ponto ou uma linha e não pode ser fundido",
+                "zoomInMore": "Amplie mais para importar este elemento"
             },
+            "importTags": "Este elemento irá receber {tags}",
             "intro": "Clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "layerNotEnabled": "A camada {layer} não está ativada. Ative esta camada para adicionar um ponto",
             "openLayerControl": "Abra a caixa de controlo da camada",
@@ -67,27 +68,30 @@
             "stillLoading": "Os dados ainda estão a ser carregados. Aguarde um pouco antes de adicionar um novo ponto.",
             "title": "Adicionar um novo ponto?",
             "warnVisibleForEveryone": "A sua adição será visível para todos",
-            "zoomInFurther": "Amplie mais para adicionar um ponto.",
-            "zoomInMore": "Amplie mais para importar este elemento",
             "wrongType": "Este elemento não é um ponto ou uma linha e não pode ser importado",
-            "importTags": "Este elemento irá receber {tags}"
+            "zoomInFurther": "Amplie mais para adicionar um ponto.",
+            "zoomInMore": "Amplie mais para importar este elemento"
+        },
+        "apply_button": {
+            "appliedOnAnotherObject": "O objeto {id} irá receber {tags}",
+            "isApplied": "As alterações são aplicadas"
         },
         "attribution": {
             "attributionContent": "<p>Todos os dados são fornecidos pelo <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a> e são livremente reutilizáveis sob a licença <a href=\"https://osm.org/copyright\" target=\"_blank\">the Open DataBase License</a>.</p>",
             "attributionTitle": "Aviso de atribuição",
             "codeContributionsBy": "O MapComplete foi construído por {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\"> _blank{hiddenCount} mais contribuintes</a>",
-            "iconAttribution": {
-                "title": "Ícones usados"
-            },
-            "mapContributionsBy": "Os dados visíveis atuais têm edições feitas por {contributors}",
-            "mapContributionsByAndHidden": "Os dados visíveis atuais têm edições feitas por {contributors} e mais {hiddenCount} contribuidores",
-            "themeBy": "Tema gerido por {author}",
             "donate": "Apoie o MapComplete financeiramente",
             "editId": "Editar aqui com o editor online OpenStreetMap",
             "editJosm": "Editar aqui com JOSM",
             "followBridge": "As contas Mastodon e Twitter estão interligadas",
             "followOnMastodon": "Siga o MapComplete no Mastodon",
-            "followOnTwitter": "Siga o MapComplete no twitter"
+            "followOnTwitter": "Siga o MapComplete no twitter",
+            "iconAttribution": {
+                "title": "Ícones usados"
+            },
+            "mapContributionsBy": "Os dados visíveis atuais têm edições feitas por {contributors}",
+            "mapContributionsByAndHidden": "Os dados visíveis atuais têm edições feitas por {contributors} e mais {hiddenCount} contribuidores",
+            "themeBy": "Tema gerido por {author}"
         },
         "backgroundMap": "Mapa de fundo",
         "cancel": "Cancelar",
@@ -225,10 +229,6 @@
             "noWikipediaPage": "Este item do Wikidata ainda não tem uma página correspondente na Wikipédia.",
             "searchWikidata": "Pesquisar no Wikidata",
             "wikipediaboxTitle": "Wikipédia"
-        },
-        "apply_button": {
-            "isApplied": "As alterações são aplicadas",
-            "appliedOnAnotherObject": "O objeto {id} irá receber {tags}"
         }
     },
     "image": {

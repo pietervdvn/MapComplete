@@ -5283,6 +5283,9 @@
             },
             "sport_pitch-opening_hours": {
                 "mappings": {
+                    "0": {
+                        "then": "Always accessible"
+                    },
                     "1": {
                         "then": "Always accessible"
                     }

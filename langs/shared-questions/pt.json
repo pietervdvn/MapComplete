@@ -91,6 +91,20 @@
             },
             "question": "Esta infraestrutura tem tomadas elétricas, disponíveis para os clientes quando estão no interior?"
         },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "<b>É permitido</b> fumar"
+                },
+                "1": {
+                    "then": "<b>Não é permitido</b> fumar"
+                },
+                "2": {
+                    "then": "É permitido fumar <b>no exterior</b>."
+                }
+            },
+            "question": "É permitido fumar em {title()}?"
+        },
         "website": {
             "question": "Qual é o sítio web de {title()}?"
         },
@@ -129,20 +143,6 @@
                 }
             },
             "question": "Qual é o item correspondente na Wikipédia?"
-        },
-        "smoking": {
-            "mappings": {
-                "2": {
-                    "then": "É permitido fumar <b>no exterior</b>."
-                },
-                "0": {
-                    "then": "<b>É permitido</b> fumar"
-                },
-                "1": {
-                    "then": "<b>Não é permitido</b> fumar"
-                }
-            },
-            "question": "É permitido fumar em {title()}?"
         }
     }
 }
