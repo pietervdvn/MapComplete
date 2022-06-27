@@ -20,7 +20,7 @@
         "loginToDelete": "Vous devez être connecté pour supprimer un objet",
         "notEnoughExperience": "Ce point a été créé par une autre personne.",
         "onlyEditedByLoggedInUser": "Ce point a été édité seulement par vous et peut donc être supprimé.",
-        "partOfOthers": "Ce point faire partie d'un autre objet et ne peut être supprimé directement.",
+        "partOfOthers": "Ce point fait partie d'un autre objet et ne peut être supprimé directement.",
         "readMessages": "Messages non-lus à lire avant de supprimer un point, certains pourraient comporter des informations importantes",
         "reasons": {
             "disused": "Cet élément n’est plus utilisé ou a été enlevé",

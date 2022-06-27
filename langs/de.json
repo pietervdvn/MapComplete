@@ -93,7 +93,7 @@
             "josmOpened": "JOSM ist geöffnet",
             "mapContributionsBy": "Die angezeigten Daten wurden bearbeitet durch {contributors}",
             "mapContributionsByAndHidden": "Die angezeigten Daten wurden bearbeitet von {contributors} und {hiddenCount} weiteren Beitragenden",
-            "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Die Mitwirkenden dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
+            "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Letzte Bearbeitungen für das Thema {theme} ansehen",
@@ -282,7 +282,7 @@
         "isDeleted": "Gelöscht",
         "nearbyPictures": {
             "allFiltered": "Keine Bilder passen zu Ihrem Filter",
-            "browseNearby": "Bilder in der Nähe durchsuchen…",
+            "browseNearby": "Bilder in der Nähe suchen…",
             "confirm": "Das ausgewählte Bild zeigt {title()}",
             "hasMatchingPicture": "Passt ein Bild zum Objekt? Wählen Sie es unten aus",
             "loadMore": "Weitere Bilder laden",
