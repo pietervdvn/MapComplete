@@ -81,6 +81,7 @@ function fuzzIdenticals(features: {geometry: {coordinates: [number,number]}}[]){
 
 /**
  * Sorts classifications in order
+ * 
  * sortClassifications(["primary","secondary","kindergarten"] // => ["kindergarten", "primary", "secondary"]
  */
 function sortClassifications(classification: string[]){
@@ -231,4 +232,6 @@ function main() {
     console.log("Done")
 }
 
-main()
+if(!process.argv[1].endsWith("mocha")){
+    main()
+}
