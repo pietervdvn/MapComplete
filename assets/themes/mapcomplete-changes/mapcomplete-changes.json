@@ -5,20 +5,23 @@
     "de": "Änderungen mit MapComplete",
     "es": "Cambios hechos con MapComplete",
     "nb_NO": "Endringer utført med MapComplete",
-    "nl": "Wijzigingen gemaakt met MapComplete"
+    "nl": "Wijzigingen gemaakt met MapComplete",
+    "fr": "Changements faits avec MapComplete"
   },
   "shortDescription": {
     "en": "Shows changes made by MapComplete",
     "de": "Zeigt Änderungen von MapComplete",
     "es": "Muestra los cambios hechos por MapComplete",
     "nb_NO": "Vis endringer utført med MapComplete",
-    "nl": "Toont wijzigingen gemaakt met MapComplete"
+    "nl": "Toont wijzigingen gemaakt met MapComplete",
+    "fr": "Montrer les changements faits avec MapComplete"
   },
   "description": {
     "en": "This maps shows all the changes made with MapComplete",
     "de": "Diese Karte zeigt alle Änderungen die mit MapComplete gemacht wurden",
     "es": "Este mapa muestra todos los cambios hechos con MapComplete",
-    "nl": "Deze kaart toont alle wijzigingen die met MapComplete werden gemaakt"
+    "nl": "Deze kaart toont alle wijzigingen die met MapComplete werden gemaakt",
+    "fr": "Cette carte montre les changements faits avec MapComplete"
   },
   "maintainer": "",
   "icon": "./assets/svg/logo.svg",
@@ -54,14 +57,16 @@
           "de": "Änderungen für {theme}",
           "es": "Conjunto de cambios para {theme}",
           "nb_NO": "Endringssett for {theme}",
-          "nl": "Wijzigingset voor {theme}"
+          "nl": "Wijzigingset voor {theme}",
+          "fr": "Groupe de modifications pour {theme}"
         }
       },
       "description": {
         "en": "Shows all MapComplete changes",
         "de": "Zeigt alle MapComplete Änderungen",
         "es": "Muestra todos los cambios de MapComplete",
-        "nl": "Toont alle wijzigingen met MapComplete"
+        "nl": "Toont alle wijzigingen met MapComplete",
+        "fr": "Montre les changements faits avec MapComplete"
       },
       "tagRenderings": [
         {
@@ -71,7 +76,8 @@
             "de": "Änderung <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
             "es": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
             "nb_NO": "Endringssett <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
-            "nl": "Wijzigingset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+            "nl": "Wijzigingset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "fr": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {
@@ -80,7 +86,9 @@
             "en": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>",
             "de": "Änderung wurde von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a> gemacht",
             "es": "Cambio hecho por <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>",
-            "nl": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+            "nl": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>",
+            "fr": "Changement effectué par <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>",
+            "nb_NO": "Endring gjort av <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
           }
         },
         {
@@ -89,7 +97,9 @@
             "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
             "de": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
             "es": "Cambio con tema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
-            "nl": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+            "nl": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
+            "fr": "Changement avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
+            "nb_NO": "Endring med temaet <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
           },
           "mappings": [
             {
@@ -98,7 +108,9 @@
                 "en": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>",
                 "de": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>",
                 "es": "Cambio con tema <b>no oficial</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>",
-                "nl": "Wijziging met <b>officieus</b> thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                "nl": "Wijziging met <b>officieus</b> thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>",
+                "fr": "Changement avec le thème <b>non-officiel</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>",
+                "nb_NO": "Endring med det <b>uoffisielle</b> temaet <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
               }
             }
           ]
@@ -378,7 +390,8 @@
                 "de": "Themenname enthält {search}",
                 "es": "Nombre del tema contiene {search}",
                 "nb_NO": "Temanavn inneholder {search}",
-                "nl": "Themanaam bevat {search}"
+                "nl": "Themanaam bevat {search}",
+                "fr": "Nom du thème contient {search}"
               }
             }
           ]
@@ -397,7 +410,9 @@
                 "en": "Made by contributor {search}",
                 "de": "Erstellt von {search}",
                 "es": "Hecho por contributor/a {search}",
-                "nl": "Gemaakt door bijdrager {search}"
+                "nl": "Gemaakt door bijdrager {search}",
+                "fr": "Contribué par {search}",
+                "nb_NO": "Laget av {search}"
               }
             }
           ]
@@ -416,7 +431,9 @@
                 "en": "<b>Not</b> made by contributor {search}",
                 "de": "<b>Nicht</b> erstellt von {search}",
                 "es": "<b>No</b> hecho por contributor/a {search}",
-                "nl": "<b>Niet</b> gemaakt door bijdrager {search}"
+                "nl": "<b>Niet</b> gemaakt door bijdrager {search}",
+                "fr": "<b>Pas</b> contribué par {search}",
+                "nb_NO": "<b>Ikke</b> laget av {search}"
               }
             }
           ]
@@ -434,7 +451,9 @@
               "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>",
               "de": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>",
               "es": "Se pueden encontrar más estadísticas <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>",
-              "nl": "Meer statistieken kunnen <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> gevonden worden"
+              "nl": "Meer statistieken kunnen <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> gevonden worden",
+              "fr": "D’autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>",
+              "nb_NO": "Mer statistikk er å finne <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>her</a>"
             }
           },
           {

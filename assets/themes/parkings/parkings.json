@@ -22,7 +22,8 @@
     "zh_Hant": "這地圖顯示不同的停車空間",
     "id": "Peta ini menunjukkan tempat parkir yang berbeda",
     "hu": "Ez a térkép különböző parkolókat jelenít meg",
-    "es": "Este mapa muestra diferentes puntos de aparcamiento"
+    "es": "Este mapa muestra diferentes puntos de aparcamiento",
+    "fr": "Cette montre les emplacements de parking"
   },
   "description": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
@@ -33,7 +34,8 @@
     "id": "Peta ini menunjukkan tempat parkir yang berbeda",
     "hu": "Ez a térkép különböző parkolókat jelenít meg",
     "fr": "Cette carte affiche différents lieux de stationnement",
-    "es": "Este mapa muestra diferentes puntos de aparcamiento"
+    "es": "Este mapa muestra diferentes puntos de aparcamiento",
+    "nb_NO": "Forskjellige parkeringsplasser"
   },
   "maintainer": "",
   "icon": "./assets/themes/parkings/parkings.svg",

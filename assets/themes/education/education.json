@@ -10,7 +10,8 @@
     "en": "Education",
     "nl": "Onderwijs",
     "de": "Bildung",
-    "fr": "Enseignement"
+    "fr": "Enseignement",
+    "nb_NO": "Utdanning"
   },
   "defaultBackgroundId": "CartoDB.Voyager",
   "maintainer": "MapComplete",

@@ -7,7 +7,8 @@
     "ca": "Vies ciclistes",
     "fr": "Aménagements cyclables",
     "nl": "Fietssnelwegen",
-    "es": "Carriles bici"
+    "es": "Carriles bici",
+    "nb_NO": "Sykkelmotorveier"
   },
   "hideFromOverview": true,
   "maintainer": "L'imaginaire",
@@ -20,7 +21,8 @@
     "it": "Questa cartina mostra le strade per velocipedi",
     "fr": "Cette carte affiche les aménagements cyclables",
     "nl": "Deze kaart toont fietssnelwegen",
-    "es": "Este mapa muestra carriles bici"
+    "es": "Este mapa muestra carriles bici",
+    "nb_NO": "Kart som viser sykkelmotorveier"
   },
   "version": "2021-08-23",
   "startLat": 51.1599,
@@ -110,7 +112,8 @@
         "ca": "vies ciclistes",
         "fr": "Aménagements cyclables",
         "nl": "fietssnelwegen",
-        "es": "carriles bici"
+        "es": "carriles bici",
+        "nb_NO": "sykkelmotorveier"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -123,7 +126,8 @@
           "ca": "via ciclista",
           "fr": "Aménagement cyclable",
           "nl": "fietssnelweg",
-          "es": "carril bici"
+          "es": "carril bici",
+          "nb_NO": "sykkelmotorvei"
         }
       },
       "filter": [

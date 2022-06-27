@@ -7,7 +7,8 @@
     "it": "Buche delle lettere e uffici postali",
     "zh_Hant": "郵筒與郵局地圖",
     "hu": "Posta- és postaládatérkép",
-    "nl": "Brievenbussen en postkantoren"
+    "nl": "Brievenbussen en postkantoren",
+    "fr": "Carte des Bureaux de Poste et Boîtes à Lettres"
   },
   "shortDescription": {
     "en": "A map showing postboxes and post offices",
@@ -16,7 +17,9 @@
     "zh_Hant": "顯示郵筒與郵局的地圖",
     "hu": "Posták és postaládák térképe",
     "es": "Un mapa que muestra buzones y oficinas de correo",
-    "nl": "Een kaart die brievenbussen en postkantoren toont"
+    "nl": "Een kaart die brievenbussen en postkantoren toont",
+    "fr": "Une carte des bureaux de poste et des boîtes à lettres",
+    "nb_NO": "Postbokser og postkontor"
   },
   "description": {
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
@@ -25,7 +28,8 @@
     "hu": "Ezen a térképen postahivatalok és postaládák adatait találod és egészítheted ki. Utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? Ezt a térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted. ",
     "de": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten. ",
     "es": "En este mapa puedes encontrar y añadir datos de oficinas de correo y buzones de correo. ¡Puedes utilizar este mapa para encontrar donde puedes enviar tu próxima postal! :)<br/>¿Has encontrado un error o algo que falta? Puedes editar este mapa con una cuenta de OpenStreetMap gratuíta. ",
-    "nl": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. "
+    "nl": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
+    "fr": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit. "
   },
   "maintainer": "nicolelaine",
   "icon": "./assets/themes/postboxes/postbox.svg",
@@ -52,7 +56,8 @@
         "nl": "Brievenbussen",
         "ca": "Bústies",
         "es": "Buzones de correo",
-        "nb_NO": "Postbokser"
+        "nb_NO": "Postbokser",
+        "fr": "Boîtes à lettres"
       },
       "minzoom": 12,
       "source": {
@@ -69,7 +74,8 @@
           "nl": "Brievenbus",
           "ca": "Bústia",
           "es": "Buzón de correo",
-          "nb_NO": "Postboks"
+          "nb_NO": "Postboks",
+          "fr": "Boîte à lettres"
         }
       },
       "description": {
@@ -79,7 +85,8 @@
         "id": "Layer yang memperlihatkan kotak pos.",
         "hu": "A postaládákat megjelenítő réteg.",
         "nl": "Deze laag toont brievenbussen.",
-        "es": "La capa que muestra buzones de correo."
+        "es": "La capa que muestra buzones de correo.",
+        "fr": "Le calque montrant les boîtes à lettres."
       },
       "tagRenderings": [
         "images",
@@ -102,7 +109,8 @@
             "hu": "postaláda",
             "nl": "een brievenbus",
             "ca": "una bústia",
-            "es": "un buzón de correo"
+            "es": "un buzón de correo",
+            "fr": "une boîte à lettres"
           }
         }
       ],
@@ -148,7 +156,9 @@
         "hu": "Posták",
         "nl": "Postkantoren",
         "ca": "Oficines de correus",
-        "es": "Oficinas de correo"
+        "es": "Oficinas de correo",
+        "fr": "Bureaux de poste",
+        "nb_NO": "Postkontor"
       },
       "minzoom": 12,
       "source": {
@@ -164,7 +174,9 @@
           "hu": "Posta",
           "nl": "Postkantoor",
           "ca": "Oficina de correus",
-          "es": "Oficina de Correo"
+          "es": "Oficina de Correo",
+          "fr": "Bureau de poste",
+          "nb_NO": "Postkontor"
         }
       },
       "description": {
@@ -174,7 +186,9 @@
         "id": "Layer yang menunjukkan kantor pos.",
         "hu": "Postákat megjelenítő réteg.",
         "nl": "Een laag die postkantoren toont.",
-        "es": "Una capa que muestra oficinas de correo."
+        "es": "Una capa que muestra oficinas de correo.",
+        "fr": "Un claque montrant les bureaux de poste.",
+        "nb_NO": "Et lag som viser postkontor."
       },
       "tagRenderings": [
         "images",
@@ -192,7 +206,8 @@
             "de": "Öffnungszeiten: {opening_hours_table()}",
             "es": "Horas de Apertura: {opening_hours_table()}",
             "nb_NO": "Åpningstider: {opening_hours_table()}",
-            "nl": "Openingsuren: {opening_hours_table()}"
+            "nl": "Openingsuren: {opening_hours_table()}",
+            "fr": "Heures d’ouverture : {opening_hours_table()}"
           },
           "freeform": {
             "key": "opening_hours",
@@ -205,7 +220,8 @@
             "hu": "Mikor van nyitva ez a posta?",
             "de": "Wie sind die Öffnungszeiten dieser Poststelle?",
             "es": "¿Cuáles son las horas de apertura para esta oficina de correos?",
-            "nl": "Wat zijn de openingsuren voor dit postkantoor?"
+            "nl": "Wat zijn de openingsuren voor dit postkantoor?",
+            "fr": "Quelles sont les heures d’ouverture de ce bureau de poste ?"
           },
           "mappings": [
             {
@@ -217,7 +233,9 @@
                 "id": "Buka 24 jam (termasuk hari libur)",
                 "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
                 "es": "Abierta 24/7 (incluyendo festivos)",
-                "nl": "24/7 open (ook tijdens feestdagen)"
+                "nl": "24/7 open (ook tijdens feestdagen)",
+                "fr": "Ouvert 24h/24 (jours fériés compris)",
+                "nb_NO": "Døgnåpent (inkludert helligdager)"
               }
             }
           ],
@@ -239,7 +257,8 @@
             "nl": "een postkantoor",
             "ca": "una oficina de correus",
             "es": "una oficina de correo",
-            "nb_NO": "et postkontor"
+            "nb_NO": "et postkontor",
+            "fr": "un bureau de poste"
           }
         }
       ],
@@ -256,7 +275,8 @@
                 "hu": "Most nyitva",
                 "nl": "Momenteel geopend",
                 "ca": "Actualment obert",
-                "es": "Actualmente abierta"
+                "es": "Actualmente abierta",
+                "fr": "Ouvert actuellement"
               },
               "osmTags": "_isOpen=yes"
             }

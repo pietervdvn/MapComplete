@@ -4,19 +4,22 @@
     "en": "Into nature",
     "nl": "De natuur in",
     "de": "In die Natur",
-    "ca": "A la natura"
+    "ca": "A la natura",
+    "fr": "Dans la nature"
   },
   "shortDescription": {
     "en": "A map for nature lovers, with interesting POI's",
     "nl": "Deze kaart bevat informatie voor natuurliefhebbers",
     "de": "Eine Karte mit interessanten Orten für Naturliebhaber",
-    "es": "Un mapa para amantes de la naturaleza, con PDIs interesantes"
+    "es": "Un mapa para amantes de la naturaleza, con PDIs interesantes",
+    "fr": "Une carte pour les amoureux de la nature"
   },
   "description": {
     "en": "On this map, one can find interesting infromation for tourists and nature lovers, such as ",
     "nl": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",
     "de": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",
-    "es": "En este mapa, uno puede encontrar información interesante para turistas y amantes de la naturaleza, como "
+    "es": "En este mapa, uno puede encontrar información interesante para turistas y amantes de la naturaleza, como ",
+    "fr": "Retrouvez sur cette carte des informations pour les touristes et les amoureux de la nature, telles que "
   },
   "maintainer": "",
   "icon": "./assets/themes/nature/logo.svg",

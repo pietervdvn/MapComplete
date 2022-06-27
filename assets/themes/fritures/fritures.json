@@ -10,7 +10,8 @@
   "description": {
     "en": "On this map, you'll find your favourite fries shop!",
     "nl": "Op deze kaart vind je je favoriete frituur!",
-    "de": "Auf dieser Karte findest du deine Lieblings-Pommesbude!"
+    "de": "Auf dieser Karte findest du deine Lieblings-Pommesbude!",
+    "fr": "Retrouves vos friteries préférées sur cette carte !"
   },
   "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",

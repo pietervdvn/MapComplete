@@ -6,14 +6,17 @@
     "nl": "Voetpaden",
     "de": "Gehwege",
     "ca": "Voreres",
-    "es": "Aceras"
+    "es": "Aceras",
+    "fr": "Trottoirs",
+    "nb_NO": "Fortau"
   },
   "shortDescription": {
     "en": "Sidewalk mapping",
     "ca": "Mapejat de voreres",
     "de": "Kartierung von Bürgersteigen",
     "es": "Mapeo de aceras",
-    "nl": "Voetpaden in kaart brengen"
+    "nl": "Voetpaden in kaart brengen",
+    "fr": "Cartographier des trottoirs"
   },
   "description": {
     "en": "Experimental theme",
@@ -21,7 +24,9 @@
     "ca": "Petició experimental",
     "de": "Experimentelles Thema",
     "es": "Tema experimental",
-    "nl": "Experimenteel thema"
+    "nl": "Experimenteel thema",
+    "fr": "Thème expérimental",
+    "nb_NO": "Eksperimentelt tema"
   },
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
@@ -41,7 +46,8 @@
         "ca": "Voreres",
         "es": "Aceras",
         "nb_NO": "Fortau",
-        "nl": "Voetpaden"
+        "nl": "Voetpaden",
+        "fr": "Trottoirs"
       },
       "minzoom": 12,
       "source": {
@@ -61,7 +67,8 @@
           "de": "{name}",
           "ca": "{name}",
           "es": "{name}",
-          "nl": "{name}"
+          "nl": "{name}",
+          "fr": "{name}"
         },
         "mappings": [
           {
@@ -74,7 +81,8 @@
         "en": "Layer showing sidewalks of highways",
         "de": "Ebene mit Bürgersteigen",
         "es": "Una capa que muestra aceras de autovías",
-        "nl": "Laag die voetpaden naast wegen toont"
+        "nl": "Laag die voetpaden naast wegen toont",
+        "fr": "Calque montrant les trottoirs"
       },
       "tagRenderings": [
         {
@@ -83,7 +91,9 @@
             "en": "This street is named {name}",
             "de": "Diese Straße heißt {name}",
             "es": "Esta calle se llama {name}",
-            "nl": "Deze straat heet {name}"
+            "nl": "Deze straat heet {name}",
+            "fr": "Cette rue s’appelle {name}",
+            "nb_NO": "Denne gaten heter {name}"
           }
         },
         {
