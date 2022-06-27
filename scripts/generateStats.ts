@@ -66,8 +66,8 @@ async function main(includeTags = true) {
     writeFileSync("./assets/key_totals.json",
         JSON.stringify(
             {
-                keys: Utils.MapToObj(keyTotal),
-                tags: Utils.MapToObj(tagTotal, v => Utils.MapToObj(v))
+                keys: Utils.MapToObj(keyTotal, t => t),
+                tags: Utils.MapToObj(tagTotal, v => Utils.MapToObj(v, t => t))
             },
             null, "  "
         )

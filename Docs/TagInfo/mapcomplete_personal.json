@@ -5439,6 +5439,36 @@
       "value": "24/7"
     },
     {
+      "key": "service:3dprinter",
+      "description": "Layer 'Hackerspace' shows service:3dprinter=yes with a fixed text, namely 'There is a 3D-printer available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:3dprinter",
+      "description": "Layer 'Hackerspace' shows service:3dprinter=no with a fixed text, namely 'There is no 3D-printer available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:lasercutter",
+      "description": "Layer 'Hackerspace' shows service:lasercutter=yes with a fixed text, namely 'There is a laser cutter available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:lasercutter",
+      "description": "Layer 'Hackerspace' shows service:lasercutter=no with a fixed text, namely 'There is no laser cutter available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:cnc_drilling_machine",
+      "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=yes with a fixed text, namely 'There is a CNC drill available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:cnc_drilling_machine",
+      "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=no with a fixed text, namely 'There is no CNC drill available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Hackerspace' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "designated"
@@ -5651,6 +5681,85 @@
       "key": "map_source:attribution",
       "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "residential"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "living_street"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "motorway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "tertiary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "unclassified"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "secondary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "primary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "trunk"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "motorway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "tertiary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "secondary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "primary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "trunk_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "motorway_link"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Maxspeed' shows and asks freeform values for key 'maxspeed' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "highway",
+      "description": "Layer 'Maxspeed' shows highway=living_street with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "living_street"
     },
     {
       "key": "leisure",
@@ -6132,8 +6241,8 @@
     },
     {
       "key": "leisure",
-      "description": "Layer 'Playgrounds' shows leisure=playground with a fixed text, namely 'This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "playground"
+      "description": "Layer 'Playgrounds' shows leisure=schoolyard with a fixed text, namely 'This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "schoolyard"
     },
     {
       "key": "website",
@@ -6742,7 +6851,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Sport pitches' shows  with a fixed text, namely '24/7 toegankelijk' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key opening_hours.",
+      "description": "Layer 'Sport pitches' shows  with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key opening_hours.",
       "value": ""
     },
     {

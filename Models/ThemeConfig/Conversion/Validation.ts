@@ -163,10 +163,19 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 errors.push(...checked.errors)
             }
             if (!json.hideFromOverview && theme.id !== "personal") {
+
+                // The first key in the the title-field must be english, otherwise the title in the loading page will be the different language
+                const targetLanguage = theme.title.SupportedLanguages()[0]
+                if(targetLanguage !== "en"){
+                    warnings.push(`TargetLanguage is not 'en' for public theme ${theme.id}, it is ${targetLanguage}. Move 'en' up in the title of the theme and set it as the first key`)
+                }
+                
                 // Official, public themes must have a full english translation
                 const checked = new ValidateLanguageCompleteness("en")
                     .convert(theme, theme.id)
                 errors.push(...checked.errors)
+                
+              
             }
 
         } catch (e) {

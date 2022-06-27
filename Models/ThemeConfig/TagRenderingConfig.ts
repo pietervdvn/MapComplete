@@ -119,7 +119,7 @@ export default class TagRenderingConfig {
             if (placeholder === undefined) {
                 const typeDescription = Translations.t.validation[type]?.description
                 if(typeDescription !== undefined){
-                    placeholder = Translations.T(json.freeform.key+" ("+type+")").Subs({[type]: typeDescription})
+                    placeholder = Translations.T(json.freeform.key+" ({"+type+"})").Subs({[type]: typeDescription})
                 }else{
                     placeholder = Translations.T(json.freeform.key+" ("+type+")")
                 }

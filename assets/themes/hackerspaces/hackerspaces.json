@@ -7,7 +7,8 @@
     "ru": "Хакерспейсы",
     "zh_Hant": "駭客空間",
     "hu": "Hackerspace-ek",
-    "nl": "Hackerspaces"
+    "nl": "Hackerspaces",
+    "fr": "Ateliers numériques ouvertS"
   },
   "shortDescription": {
     "en": "A map of hackerspaces",
@@ -15,7 +16,8 @@
     "it": "Una cartina degli hackerspace",
     "zh_Hant": "駭客空間的地圖",
     "hu": "Hackerspace-ek térképe",
-    "nl": "Een kaart van hackerspaces"
+    "nl": "Een kaart van hackerspaces",
+    "fr": "Une carte des ateliers numériques ouverts"
   },
   "description": {
     "en": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
@@ -23,7 +25,8 @@
     "it": "Su questa cartina è possibile vedere gli hackerspace, aggiungerne di nuovi o aggiornare le informazioni tutto in maniera pratica",
     "zh_Hant": "在這份地圖上你可以看到駭客空間，新增或直接更新資料",
     "hu": "Ezen a térképen hackerspace-ek láthatók, új hackerspace-eket lehet fölrajzolni vagy meglévők adatait frissíteni",
-    "nl": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten"
+    "nl": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten",
+    "fr": "Retrouvez, renseignez ou modifiez des ateliers numériques ouverts"
   },
   "maintainer": "",
   "icon": "./assets/themes/hackerspaces/glider.svg",

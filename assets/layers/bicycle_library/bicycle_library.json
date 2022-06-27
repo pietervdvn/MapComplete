@@ -63,7 +63,7 @@
     "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
     "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres",
     "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
-    "es": "Una instalación en la que se pueden prestar las bicicletas durante un periodo de tiempo más largo"
+    "es": "Una facilidad donde se pueden alquilar bicicletas durante largos periodos de tiempo"
   },
   "tagRenderings": [
     "images",
@@ -119,7 +119,7 @@
         "pt_BR": "Quanto custa um empréstimo de bicicleta?",
         "pt": "Quanto custa um empréstimo de bicicleta?",
         "da": "Hvor meget koster det at leje en cykel?",
-        "es": "¿Cuánto cuesta el préstamo de una bicicleta?"
+        "es": "¿Cuánto cuesta alquilar una bicicleta?"
       },
       "render": {
         "en": "Lending a bicycle costs {charge}",
@@ -163,7 +163,7 @@
             "pt_BR": "Emprestar uma bicicleta é grátis",
             "pt": "Emprestar uma bicicleta é grátis",
             "da": "Det er gratis at låne en cykel",
-            "es": "El préstamo de bicicletas es gratuito"
+            "es": "Alquilar una bicicleta es gratis"
           }
         },
         {
@@ -183,7 +183,7 @@
             "ru": "Прокат велосипеда стоит €20/год и €20 залог",
             "pt_BR": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
             "pt": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
-            "es": "Prestar una bicicleta cuesta 20 euros al año y 20 euros de garantía"
+            "es": "Alquilar una bicicleta cuesta 20€/año y 20€ de fianza"
           }
         }
       ],
@@ -192,9 +192,9 @@
     {
       "id": "bicycle-library-target-group",
       "question": {
-        "en": "Who can lend bicycles here?",
+        "en": "Who can loan bicycles here?",
         "nl": "Voor wie worden hier fietsen aangeboden?",
-        "fr": "Qui peut emprunter des vélos ici ?",
+        "fr": "Qui peut emprunter des vélos ici ?",
         "hu": "Ki kölcsönözhet itt kerékpárt?",
         "it": "Chi può prendere in prestito le biciclette qua?",
         "zh_Hans": "谁可以从这里借自行车？",
@@ -204,7 +204,7 @@
         "pt_BR": "Quem pode emprestar bicicletas aqui?",
         "pt": "Quem pode emprestar bicicletas aqui?",
         "da": "Hvem kan låne cykler her?",
-        "es": "¿Quién puede prestar bicicletas aquí?"
+        "es": "¿Quién puede alquilar bicicletas aquí?"
       },
       "multiAnswer": true,
       "mappings": [

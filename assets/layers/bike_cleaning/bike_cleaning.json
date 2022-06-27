@@ -80,13 +80,15 @@
         "en": "How much does it cost to use the cleaning service?",
         "de": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
         "nl": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
-        "es": "¿Cuánto cuesta utilizar el servicio de limpieza?"
+        "es": "¿Cuánto cuesta utilizar el servicio de limpieza?",
+        "fr": "Combien coûte le service de nettoyage ?"
       },
       "render": {
         "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}",
         "de": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}",
         "nl": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}",
-        "es": "Utilizar el servicio de limpieza cuesta {service:bicycle:cleaning:charge}"
+        "es": "Utilizar el servicio de limpieza cuesta {service:bicycle:cleaning:charge}",
+        "fr": "Le service de nettoyage coûte {service:bicycle:cleaning:charge}"
       },
       "condition": {
         "and": [
@@ -108,7 +110,8 @@
             "en": "The cleaning service is free to use",
             "de": "Der Reinigungsservice ist kostenlos",
             "nl": "Het fietsschoonmaakpunt is gratis",
-            "es": "El servicio de limpieza es gratis"
+            "es": "El servicio de limpieza es gratis",
+            "fr": "Le service de nettoyage est gratuit"
           }
         },
         {
@@ -118,7 +121,8 @@
             "de": "Kostenlose Nutzung",
             "nl": "Gratis te gebruiken",
             "es": "Gratis",
-            "da": "Gratis at bruge"
+            "da": "Gratis at bruge",
+            "fr": "Utilisation gratuite"
           },
           "hideInAnswer": true
         },
@@ -128,7 +132,8 @@
             "en": "The cleaning service has a fee, but the amount is not known",
             "de": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt",
             "nl": "Het fietsschoonmaakpunt is betalend, maar de prijs is onbekend",
-            "es": "El servicio de limpieza tiene una tasa, pero la cantidad se desconoce"
+            "es": "El servicio de limpieza tiene una tasa, pero la cantidad se desconoce",
+            "fr": "Le coût du service de nettoyage n’est pas connu"
           },
           "hideInAnswer": true
         }
@@ -140,13 +145,15 @@
         "en": "How much does it cost to use the cleaning service?",
         "de": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
         "nl": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
-        "es": "¿Cuánto cuesta utilizar el servicio de limpieza?"
+        "es": "¿Cuánto cuesta utilizar el servicio de limpieza?",
+        "fr": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?"
       },
       "render": {
         "en": "Using the cleaning service costs {charge}",
         "de": "Die Nutzung des Reinigungsdienstes kostet {charge}",
         "nl": "Het gebruik van het fietsschoonmaakpunt kost {charge}",
-        "es": "Utilizar el servicio de limpieza cuesta {charge}"
+        "es": "Utilizar el servicio de limpieza cuesta {charge}",
+        "fr": "L’utilisation du service de nettoyage coûte {charge}"
       },
       "condition": {
         "or": [
@@ -167,7 +174,8 @@
             "en": "Free to use cleaning service",
             "de": "Kostenloser Reinigungsservice",
             "nl": "Gratis fietsschoonmaakpunt",
-            "es": "Un servicio de limpieza gratis"
+            "es": "Un servicio de limpieza gratis",
+            "fr": "Service de nettoyage gratuit"
           }
         },
         {
@@ -177,7 +185,8 @@
             "de": "Kostenlose Nutzung",
             "nl": "Gratis te gebruiken",
             "es": "Gratis",
-            "da": "Gratis at bruge"
+            "da": "Gratis at bruge",
+            "fr": "Libre d'utilisation"
           },
           "hideInAnswer": true
         },
@@ -187,7 +196,8 @@
             "en": "The cleaning service has a fee",
             "de": "Der Reinigungsservice ist kostenpflichtig",
             "nl": "Je moet betalen voor het fietsschoonmaakpunt",
-            "es": "El servicio de limpieza tiene una tarifa"
+            "es": "El servicio de limpieza tiene una tarifa",
+            "fr": "Le service de nettoyage est payant"
           }
         }
       ],
@@ -239,6 +249,7 @@
     "nl": "Een laag die plaatsen toont waar je je fiets kunt wassen",
     "de": "Eine Ebene mit Einrichtungen, in denen man sein Fahrrad reinigen kann",
     "es": "Una capa que muestra facilidades en las que uno puede limpiar su bici",
-    "da": "Et lag med faciliteter, hvor man kan rengøre sin cykel"
+    "da": "Et lag med faciliteter, hvor man kan rengøre sin cykel",
+    "fr": "Une couche affichant les lieux où l'on peut nettoyer son vélo"
   }
 }

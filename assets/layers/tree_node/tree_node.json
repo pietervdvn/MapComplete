@@ -216,7 +216,7 @@
             "nl": "De boom is een natuurlijk monument, bijvoorbeeld doordat hij bijzonder oud of van een waardevolle soort is.",
             "en": "The tree is a natural monument, e.g. because it is especially old, or of a valuable species.",
             "it": "L’albero è un monumento naturale, ad esempio perché specialmente antico o appartenente a specie importanti.",
-            "fr": "Cet arbre est un monument naturel (ex : âge, espèce, etc…)",
+            "fr": "Cet arbre est un monument naturel (p.ex. : âge, espèce, etc).",
             "de": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört.",
             "es": "El árbol es un monumento natural, por ejemplo, porque es especialmente antiguo, o de una especie valiosa."
           }
@@ -231,7 +231,7 @@
             "nl": "De boom wordt voor landbouwdoeleinden gebruikt, bijvoorbeeld in een boomgaard.",
             "en": "The tree is used for agricultural purposes, e.g. in an orchard.",
             "it": "L’albero è usato per scopi agricoli, ad esempio in un frutteto.",
-            "fr": "Cet arbre est utilisé à but d’agriculture (ex : dans un verger)",
+            "fr": "Cet arbre est utilisé à but agricole (p.ex. : dans un verger).",
             "de": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage.",
             "es": "El árbol se utiliza con fines agrícolas, por ejemplo, en un huerto."
           }
@@ -261,7 +261,7 @@
             "nl": "De boom staat in de tuin bij een woning/flatgebouw.",
             "en": "The tree is in a residential garden.",
             "it": "L’albero è un giardino residenziale.",
-            "fr": "Cet arbre est dans une cour résidentielle.",
+            "fr": "Cet arbre est dans une jardin de résidence.",
             "es": "El árbol está en un jardín privado o residencial.",
             "de": "Der Baum steht in einem Wohngarten."
           }
@@ -291,7 +291,7 @@
             "nl": "De boom staat in een woonkern.",
             "en": "The tree is in an urban area.",
             "it": "L’albero si trova in un’area urbana.",
-            "fr": "L'arbre est une zone urbaine.",
+            "fr": "L'arbre est dans une zone urbaine.",
             "es": "El árbol está en un zona urbana.",
             "de": "Der Baum steht in einem städtischen Gebiet."
           }
@@ -372,7 +372,8 @@
         "de": "Um welche Baumart handelt es sich?",
         "id": "Spesies pohon apa ini?",
         "es": "¿De qué especie es este árbol?",
-        "nl": "Wat is de boomsoort?"
+        "nl": "Wat is de boomsoort?",
+        "fr": "Quelle est l'espèce de cet arbre ?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"
@@ -757,6 +758,7 @@
     "en": "A layer showing trees",
     "nl": "Een laag die bomen toont",
     "es": "Una capa que muestra árboles",
-    "de": "Eine Ebene, die Bäume zeigt"
+    "de": "Eine Ebene, die Bäume zeigt",
+    "fr": "Une couche montrant les arbres"
   }
 }

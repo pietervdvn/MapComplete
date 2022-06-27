@@ -170,7 +170,7 @@
       "question": {
         "en": "What kind of surveillance is this camera?",
         "nl": "Wat soort bewaking wordt hier uitgevoerd?",
-        "fr": "Quel genre de surveillance est cette caméra?",
+        "fr": "De quel genre de surveillance cette caméra est-elle ?",
         "it": "Che cosa sorveglia questa videocamera?",
         "de": "Was überwacht diese Kamera?"
       },
@@ -184,7 +184,7 @@
           "then": {
             "en": "A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …",
             "nl": "Bewaking van de publieke ruilmte, dus een straat, een brug, een park, een plein, een stationsgebouw, een publiek toegankelijke gang of tunnel…",
-            "fr": "Une zone publique est surveillée, telle qu'une rue, un pont, une place, un parc, une gare, un couloir ou un tunnel public…",
+            "fr": "Une zone publique est surveillée, telle qu'une rue, un pont, une place, un parc, une gare, un couloir, un tunnel public…",
             "it": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, ...",
             "de": "Die Kamera überwacht einen öffentlichen Bereich, z. B. Straßen, Brücken, Plätze, Parks, Bahnhöfe, öffentliche Gänge oder Tunnel, …"
           }
@@ -198,9 +198,9 @@
           "then": {
             "en": "An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)",
             "nl": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, …)",
-            "fr": "Une zone extérieure, mais privée, est surveillée (par exemple, un parking, une station-service, une cour, une entrée, une allée privée, etc.)",
+            "fr": "Une zone extérieure, mais privée, est surveillée (par exemple, un parking, une station-service, une cour, une entrée, une allée privée…)",
             "it": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)",
-            "de": "Die Kamera überwacht einen privaten Außenbereich, z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …"
+            "de": "Die Kamera überwacht einen privaten Außenbereich (z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …)"
           }
         },
         {

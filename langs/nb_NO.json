@@ -39,7 +39,7 @@
     },
     "general": {
         "about": "Rediger og legg til OpenStreetMap for et gitt tema",
-        "aboutMapcomplete": "<h3>Om MapComplete</h3><p>Bruk det til å legge til OpenStreetMap-info i <b>ett tema.</b>Besvar spørsmål og få endringene vist i løpet av minutter. <b>Temavedlikeholderen</b> definerer elementer, spørsmål og språk for det.</p><h3>Finn ut mer</h3><p>MapComplete tilbyr alltid <b>neste steg</b> for å lære mer om OpenStreetMap.</p><ul><li>Når bygd inn på en nettside lenker iframe-elementet til en fullskjermsversjon av MapComplete</li><li>Fullskjermsversjonen tilbyr info om OpenStreetMap</li><li>Visning fungerer uten innlogging, men redigering krever en OSM-konto.</li><li>Hvis du ikke er innlogget blir du spurt om å gjøre det.</li><li>Bpr dy har besvart ett spørsmål, kan du legge til nye punkter på kartet.</li><li>Etter en stund vil OSM-etiketter bli vist, som i sin tur lenker til wiki-en.</li></ul><p></p><br><p>Har du oppdaget <b>et problem</b>? Har du en <b>funksjonsforespørsel</b>? Vil du bistå <b>oversettelsen</b>? Gå til <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kildekoden</a> eller <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">problemsporeren.</a> </p><p>Vil du se <b>din framdrift</b>? Følg redigeringsantallet på <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>Om MapComplete</h3><p>Bruk det til å legge til OpenStreetMap-info i <b>ett tema. </b>Besvar spørsmål og få endringene vist i løpet av minutter. I de fleste temaene kan du legge inn bilder eller legge igjen en vurdering. <b>Temavedlikeholderen</b> definerer elementer, spørsmål og språk for det.</p><h3>Finn ut mer</h3><p>MapComplete tilbyr alltid <b>neste steg</b> for å lære mer om OpenStreetMap.</p><ul><li>Når bygd inn på en nettside lenker iframe-elementet til en fullskjermsversjon av MapComplete.</li><li>Fullskjermsversjonen tilbyr info om OpenStreetMap.</li><li>Visning fungerer uten innlogging, men redigering krever en OSM-konto.</li><li>Hvis du ikke er innlogget blir du spurt om å gjøre det.</li><li>Når du har besvart ett spørsmål, kan du legge til nye funksjoner på kartet.</li><li>Etter en stund vil OSM-etiketter bli vist, som i sin tur lenker til wiki-en.</li></ul><p></p><br><p>Har du oppdaget <b>et problem</b>? Har du en <b>funksjonsforespørsel</b>? Vil du bistå <b>oversettelsen</b>? Gå til <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kildekoden</a> eller <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">problemsporeren.</a> </p><p>Vil du se <b>din framdrift</b>? Følg redigeringsantallet på <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Legg til {category} her",
             "addNewMapLabel": "Legg til nytt element",
@@ -80,6 +80,8 @@
             "donate": "Støtt MapComplete finansielt",
             "editId": "Åpne den nettbaserte OpenStreetMap-behandleren her",
             "editJosm": "Rediger med JOSM",
+            "followOnMastodon": "Følg MapComplete på Mastodon",
+            "followOnTwitter": "Følg MapComplete på Twitter",
             "iconAttribution": {
                 "title": "Brukte ikoner"
             },
@@ -348,7 +350,8 @@
             "title": "Velg fil"
         },
         "selectTheme": {
-            "title": "Velg et tema"
+            "title": "Velg et tema",
+            "unmatchedTitle": "Følgende elementer samsvarer ikke med noen av forhåndsinnstillingene"
         },
         "title": "Importhjelper"
     },

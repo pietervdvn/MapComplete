@@ -20,7 +20,7 @@
     "es": "Crea una interficie basada en todas las capas disponibles de todas las interficies",
     "ca": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
     "gl": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",
-    "fr": "Crée un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes",
+    "fr": "Créez un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes. Pour afficher des données, ouvrez <a href='#filter'>la sélection de couches</a>",
     "de": "Stellen Sie Ihr persönliches Thema zusammen, das auf bereits verfügbaren Ebenen aller Themen basiert. Um diese anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
     "ja": "すべてのテーマの使用可能なすべてのレイヤーに基づいて個人用テーマを作成する",
     "zh_Hant": "從所有可用的主題圖層創建個人化主題",

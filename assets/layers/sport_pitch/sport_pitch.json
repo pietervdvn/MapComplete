@@ -430,7 +430,10 @@
       "mappings": [
         {
           "if": "opening_hours=",
-          "then": "24/7 toegankelijk",
+          "then": {
+            "en": "Always accessible",
+            "nl": "24/7 toegankelijk"
+          },
           "hideInAnswer": true
         },
         {

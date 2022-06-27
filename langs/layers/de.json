@@ -327,7 +327,7 @@
             },
             "bench-seats": {
                 "question": "Wie viele Sitzplätze hat diese Bank?",
-                "render": "{seats} Sitzplätze"
+                "render": "Die Sitzbank hat {seats} Sitzplätze"
             },
             "bench-survey:date": {
                 "question": "Wann wurde diese Bank zuletzt überprüft?",
@@ -2348,7 +2348,7 @@
                         "then": "Das Klettern ist hier kostenlos"
                     },
                     "1": {
-                        "then": "Zum Klettern ist eine Gebühr zu entrichten"
+                        "then": "Zum Klettern ist eine Gebühr zu zahlen"
                     }
                 },
                 "question": "Ist das Klettern hier gebührenpflichtig?",
@@ -2415,11 +2415,11 @@
     },
     "climbing_area": {
         "description": "Ein Gebiet, in dem Klettern möglich ist, z. B. ein Felsen, ein Klettergarten, eine Boulderhalle, … Enthält eine Sammlung von Routen",
-        "name": "Klettermöglichkeiten",
+        "name": "Klettereinrichtungen",
         "presets": {
             "0": {
-                "description": "Eine Klettergelegenheit",
-                "title": "eine klettermöglichkeit"
+                "description": "Eine Klettereinrichtung",
+                "title": "eine Klettereinrichtung"
             }
         },
         "tagRenderings": {
@@ -2454,10 +2454,10 @@
             "name": {
                 "mappings": {
                     "0": {
-                        "then": "Diese Klettergelegenheit hat keinen Namen"
+                        "then": "Die Klettereinrichtung hat keinen Namen"
                     }
                 },
-                "question": "Wie heißt diese Klettergelegenheit?",
+                "question": "Wie heißt die Klettereinrichtung?",
                 "render": "<strong>{name}</strong>"
             }
         },
@@ -2473,10 +2473,10 @@
                     "then": "Klettergebiet"
                 },
                 "3": {
-                    "then": "Klettermöglichkeit <b>{name}</b>"
+                    "then": "Klettereinrichtung <b>{name}</b>"
                 }
             },
-            "render": "Klettermöglichkeit"
+            "render": "Klettereinrichtung"
         }
     },
     "climbing_club": {
@@ -2485,7 +2485,7 @@
         "presets": {
             "0": {
                 "description": "Ein Kletterverein",
-                "title": "eine kletterverein"
+                "title": "einen Kletterverein"
             },
             "1": {
                 "description": "Eine Organisation, die sich mit dem Klettern beschäftigt",
@@ -2569,7 +2569,7 @@
         "name": "Kletterrouten",
         "presets": {
             "0": {
-                "title": "eine kletterroute"
+                "title": "eine Kletterroute"
             }
         },
         "tagRenderings": {
@@ -3895,6 +3895,37 @@
             }
         },
         "tagRenderings": {
+            "6": {
+                "renderings": {
+                    "0": {
+                        "mappings": {
+                            "0": {
+                                "then": "In diesem Hackerspace gibt es {device-name}"
+                            },
+                            "1": {
+                                "then": "In diesem Hackerspace gibt es kein {negative-name}"
+                            }
+                        },
+                        "question": "Gibt es {device-name} in diesem Hackerspace?"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "einen 3D-Drucker",
+                            "2": "3D-Drucker"
+                        },
+                        "1": {
+                            "1": "einen Laserschneider",
+                            "2": "Laserschneider"
+                        },
+                        "2": {
+                            "1": "eine CNC-Fräse",
+                            "2": "CNC-Fräse"
+                        }
+                    }
+                }
+            },
             "hackerspaces-name": {
                 "question": "Wie lautet der Name dieses Hackerspace?",
                 "render": "Dieser Hackerspace heißt <b>{name}</b>"
@@ -4021,6 +4052,49 @@
             "render": "Informationstafel"
         }
     },
+    "kindergarten_childcare": {
+        "name": "Kindergärten und Kinderkrippen",
+        "presets": {
+            "0": {
+                "title": "einen Kindergarten"
+            },
+            "1": {
+                "title": "eine Kinderkrippe"
+            }
+        },
+        "tagRenderings": {
+            "5": {
+                "override": {
+                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
+                }
+            },
+            "capacity": {
+                "question": "Wie viele Kinder können hier maximal angemeldet werden?",
+                "render": "Diese Einrichtung bietet Platz für {capacity} Kinder"
+            },
+            "childcare-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten."
+                    },
+                    "1": {
+                        "then": "Dies ist eine Kinderbetreuungseinrichtung, z. B. ein Kinderkrippe oder eine Tagesmutter, in der Kleinkinder betreut werden. Sie bieten keine Ausbildung an und werden oft als Privatunternehmen geführt"
+                    }
+                },
+                "question": "Um welche Art von Einrichtung handelt es sich?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kindergarten {name}"
+                },
+                "1": {
+                    "then": "Kinderkrippe {name}"
+                }
+            }
+        }
+    },
     "map": {
         "description": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
         "name": "Karten",
@@ -4063,6 +4137,42 @@
         },
         "title": {
             "render": "Karte"
+        }
+    },
+    "maxspeed": {
+        "description": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
+        "name": "Höchstgeschwindigkeit",
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
+                    }
+                },
+                "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
+                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Straße ohne Namen"
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Kilometer/Stunde",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "Meilen/Stunde",
+                        "humanShort": "mph"
+                    }
+                }
+            }
         }
     },
     "nature_reserve": {
@@ -4872,6 +4982,112 @@
             "render": "Recyclinganlage"
         }
     },
+    "school": {
+        "name": "Grund- und weiterführende Schulen",
+        "presets": {
+            "0": {
+                "title": "eine Grundschule oder weiterführende Schule"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "question": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
+                "render": "Diese Schule kann höchstens {capacity} Schüler aufnehmen"
+            },
+            "education-level-belgium": {
+                "mappings": {
+                    "0": {
+                        "then": "Es handelt sich um eine Schule mit einer Kindergartenabteilung, in der kleine Kinder eine Ausbildung erhalten, die auf das Lesen und Schreiben vorbereitet."
+                    },
+                    "1": {
+                        "then": "In dieser Schule lernt man grundlegende Fähigkeiten wie Lesen, Schreiben und Rechnen. <div class='subtle'>Schüler besuchen die Schule in der Regel im Alter von 6 bis 12 Jahren</div>"
+                    },
+                    "2": {
+                        "then": "Dies ist eine weiterführende Schule, die alle Jahrgangsstufen anbietet"
+                    },
+                    "3": {
+                        "then": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>erste und zweite</b> Klasse anbietet"
+                    },
+                    "4": {
+                        "then": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>dritte und vierte</b> Klasse anbietet"
+                    },
+                    "5": {
+                        "then": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>fünfte und sechste</b> Klasse anbietet"
+                    },
+                    "6": {
+                        "then": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)"
+                    }
+                },
+                "question": "Welches Bildungsniveau wird an dieser Schule vermittelt?"
+            },
+            "gender": {
+                "mappings": {
+                    "0": {
+                        "then": "Sowohl Jungen als auch Mädchen können sich hier anmelden und gemeinsam unterrichtet werden"
+                    },
+                    "1": {
+                        "then": "Hier können sich sowohl Jungen als auch Mädchen anmelden, aber sie werden getrennt unterrichtet (z. B. in verschiedenen Klassenräumen oder zu verschiedenen Zeiten)"
+                    },
+                    "2": {
+                        "then": "Dies ist eine reine Jungenschule"
+                    },
+                    "3": {
+                        "then": "Dies ist eine reine Mädchenschule"
+                    }
+                },
+                "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
+            },
+            "language": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Hauptsprache dieser Schule ist unbekannt"
+                    }
+                },
+                "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
+                "render": "{school:language} ist die Hauptsprache von {title()}"
+            },
+            "school-name": {
+                "question": "Wie lautet der Name dieser Schule?",
+                "render": "Diese Schule heißt {name}"
+            },
+            "target-audience": {
+                "mappings": {
+                    "0": {
+                        "then": "Es handelt sich um eine Schule, in der die Schüler Fähigkeiten auf ihrem altersgemäßen Niveau erlernen. <div>Es gibt wenig oder keine speziellen Einrichtungen für Schüler mit besonderen Bedürfnissen oder die Einrichtungen sind ad-hoc</div>"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>"
+                    },
+                    "2": {
+                        "then": "Dies ist eine Schule, in der Erwachsene auf dem angegebenen Niveau unterrichtet werden."
+                    },
+                    "3": {
+                        "then": "Dies ist eine Schule für Schüler mit Autismus"
+                    },
+                    "4": {
+                        "then": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten"
+                    },
+                    "5": {
+                        "then": "Dies ist eine Schule für blinde oder sehbehinderte Schüler"
+                    },
+                    "6": {
+                        "then": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler"
+                    },
+                    "7": {
+                        "then": "Dies ist eine Schule für Schüler mit Behinderungen"
+                    },
+                    "8": {
+                        "then": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen"
+                    }
+                },
+                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?<div class='subtle'>Ad-hoc ",
+                "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
+            }
+        },
+        "title": {
+            "render": "Schule <i>{name}</i>"
+        }
+    },
     "shops": {
         "deletion": {
             "extraDeleteReasons": {
@@ -5311,7 +5527,7 @@
                         "then": "Die Kamera überwacht einen öffentlichen Bereich, z. B. Straßen, Brücken, Plätze, Parks, Bahnhöfe, öffentliche Gänge oder Tunnel, …"
                     },
                     "1": {
-                        "then": "Die Kamera überwacht einen privaten Außenbereich, z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …"
+                        "then": "Die Kamera überwacht einen privaten Außenbereich (z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …)"
                     },
                     "2": {
                         "then": "Die Kamera überwacht einen privaten Innenbereich, z. B. Geschäfte, private Tiefgaragen, …"
@@ -5390,6 +5606,55 @@
         },
         "title": {
             "render": "Überwachungskamera"
+        }
+    },
+    "tertiary_education": {
+        "name": "Hochschulen und Universitäten",
+        "presets": {
+            "0": {
+                "description": "Eine Einrichtung, an der tertiäre Bildung vermittelt wird (auf dem Niveau eines Bachelor-Abschlusses oder höher). Ein einziger Punkt pro Campus ist ausreichend - Gebäude und Fakultäten sollten nicht mit Universitätspunkten gekennzeichnet werden.",
+                "title": "eine Universität"
+            }
+        },
+        "tagRenderings": {
+            "institution-kind": {
+                "mappings": {
+                    "0": {
+                        "then": "Es handelt sich um eine postsekundäre, nicht-tertiäre Bildungseinrichtung. Man muss die Sekundarstufe abgeschlossen haben, um sich hier einzuschreiben, aber es werden keine Bachelor-Abschlüsse (oder höhere Abschlüsse) verliehen"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Universität, eine Einrichtung des tertiären Bildungsbereichs, an der Bachelor-Abschlüsse oder höhere Abschlüsse verliehen werden."
+                    }
+                },
+                "question": "Was für eine Art von Institution ist das?"
+            },
+            "isced": {
+                "mappings": {
+                    "0": {
+                        "then": "Bachelor-Abschlüsse werden hier verliehen"
+                    },
+                    "1": {
+                        "then": "Hier werden Master-Abschlüsse verliehen"
+                    },
+                    "2": {
+                        "then": "Hier werden die Doktortitel verliehen"
+                    }
+                },
+                "question": "Welches Bildungsniveau wird hier gelehrt?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "(Fach)hochschule"
+                },
+                "2": {
+                    "then": "Universität"
+                },
+                "3": {
+                    "then": "Schule mit tertiärem Bildungsangebot"
+                }
+            }
         }
     },
     "toilet": {

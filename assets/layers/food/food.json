@@ -1,8 +1,8 @@
 {
   "id": "food",
   "name": {
-    "nl": "Eetgelegenheden",
     "en": "Restaurants and fast food",
+    "nl": "Eetgelegenheden",
     "de": "Restaurants und Imbisse",
     "da": "Restauranter og fastfood",
     "es": "Restaurantes y comida rápida"
@@ -629,7 +629,7 @@
       "question": {
         "en": "Does this fries shop use vegetable or animal oil for cooking?",
         "nl": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
-        "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale ou végétale ?",
+        "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale pour la cuisson ?",
         "de": "Wird in dieser Pommesbude pflanzliches oder tierisches Fett zum Frittieren verwendet?"
       },
       "mappings": [
@@ -638,7 +638,7 @@
           "then": {
             "en": "The frying is done with vegetable oil",
             "nl": "Bakt in plantaardige olie",
-            "fr": "Huile végétale",
+            "fr": "La friture est faite avec de l'huile végétale",
             "de": "Es wird pflanzliches Fett zum Frittieren verwendet",
             "es": "Aceite vegetal"
           }
@@ -648,7 +648,7 @@
           "then": {
             "en": "The frying is done with animal oil",
             "nl": "Dierlijk vet",
-            "fr": "Graisse animale",
+            "fr": "La friture est faite avec de la graisse animale",
             "de": "Es wird tierisches Fett zum Frittieren verwendet",
             "es": "Aceite animal"
           }
@@ -696,7 +696,7 @@
             "nl": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen.",
             "en": "You <b>must</b> bring your own container to order here.",
             "ja": "自身の容器が注文に<b>必要</b>。",
-            "fr": "Il est <b>obligatoire</b> d’apporter ses propres contenants",
+            "fr": "Il est <b>obligatoire</b> d’apporter ses propres contenants.",
             "de": "Sie <b>müssen</b> Ihren eigenen Behälter mitbringen, um hier zu bestellen.",
             "es": "<b>Debes</b> de traer tu propio recipiente para pedir aquí."
           }

@@ -430,7 +430,7 @@
                 }
             }
         },
-        "description": "Fietsverhuustations",
+        "description": "Fietsverhuurstations",
         "name": "Fietsverhuur",
         "presets": {
             "0": {
@@ -4929,6 +4929,7 @@
         },
         "tagRenderings": {
             "capacity": {
+                "question": "Ten hoogste hoeveel studenten kunnen er les volgen in deze school?",
                 "render": "Deze school kan maximaal {capacity} studenten lesgeven"
             },
             "education-level-belgium": {
@@ -4943,13 +4944,13 @@
                         "then": "Dit is een middelbare school die alle schooljaren aanbiedt (dus van het eerste tot en met het zesde middelbaar)"
                     },
                     "3": {
-                        "then": "Dit is een middelbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>"
+                        "then": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>"
                     },
                     "4": {
-                        "then": "Dit is een middelbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>"
+                        "then": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>"
                     },
                     "5": {
-                        "then": "Dit is een middelbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>"
+                        "then": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>"
                     },
                     "6": {
                         "then": "Deze school biedt post-secundair onderwijs (bijvoorbeeld <b>specialisatiejaren</b>)"
@@ -5257,6 +5258,9 @@
             },
             "sport_pitch-opening_hours": {
                 "mappings": {
+                    "0": {
+                        "then": "24/7 toegankelijk"
+                    },
                     "1": {
                         "then": "24/7 toegankelijk"
                     }

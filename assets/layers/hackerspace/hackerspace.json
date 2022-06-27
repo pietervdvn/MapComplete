@@ -161,33 +161,39 @@
             "3dprinter",
             {
               "en": "a 3D-printer",
-              "nl": "een 3D-printer"
+              "nl": "een 3D-printer",
+              "de": "einen 3D-Drucker"
             },
             {
               "en": "3D-printer",
-              "nl": "3D-printer"
+              "nl": "3D-printer",
+              "de": "3D-Drucker"
             }
           ],
           [
             "lasercutter",
             {
               "en": "a laser cutter",
-              "nl": "een lasercutter"
+              "nl": "een lasercutter",
+              "de": "einen Laserschneider"
             },
             {
               "en": "laser cutter",
-              "nl": "lasercutter"
+              "nl": "lasercutter",
+              "de": "Laserschneider"
             }
           ],
           [
             "cnc_drilling_machine",
             {
               "en": "a CNC drill",
-              "nl": "een CNC-boormachine"
+              "nl": "een CNC-boormachine",
+              "de": "eine CNC-Fräse"
             },
             {
               "en": "CNC drill",
-              "nl": "CNC-boormachine"
+              "nl": "CNC-boormachine",
+              "de": "CNC-Fräse"
             }
           ]
         ]
@@ -196,21 +202,24 @@
         {
           "question": {
             "en": "Is {device-name} available at this hackerspace?",
-            "nl": "Is er {device-name} beschikbaar in deze hackerspace?"
+            "nl": "Is er {device-name} beschikbaar in deze hackerspace?",
+            "de": "Gibt es {device-name} in diesem Hackerspace?"
           },
           "mappings": [
             {
               "if": "service:device-key=yes",
               "then": {
                 "en": "There is {device-name} available at this hackerspace",
-                "nl": "Er is {device-name} beschikbaar in deze hackerspace"
+                "nl": "Er is {device-name} beschikbaar in deze hackerspace",
+                "de": "In diesem Hackerspace gibt es {device-name}"
               }
             },
             {
               "if": "service:device-key=no",
               "then": {
                 "en": "There is no {negative-name} available at this hackerspace",
-                "nl": "Er is geen {negative-name} beschikbaar in deze hackerspace"
+                "nl": "Er is geen {negative-name} beschikbaar in deze hackerspace",
+                "de": "In diesem Hackerspace gibt es kein {negative-name}"
               }
             }
           ],

@@ -174,7 +174,8 @@
             "nl": "Moet men betalen om deze camperplaats te gebruiken?",
             "pt_BR": "Este lugar cobra alguma taxa?",
             "de": "Wird hier eine Gebühr erhoben?",
-            "es": "¿Este lugar cobra una tarifa?"
+            "es": "¿Este lugar cobra una tarifa?",
+            "nb_NO": "Tar dette stedet en avgift?"
           },
           "mappings": [
             {
@@ -371,7 +372,8 @@
             "de": "Ist an diesem Ort ein Internetzugang vorhanden?",
             "nl": "Biedt deze plaats internettoegang?",
             "es": "¿Este lugar tiene acceso a internet?",
-            "da": "Er der internetadgang på dette sted?"
+            "da": "Er der internetadgang på dette sted?",
+            "nb_NO": "Tilbyr stedet tilgang til Internett?"
           },
           "mappings": [
             {
@@ -393,7 +395,8 @@
                 "nl": "Er is internettoegang",
                 "ca": "Hi ha accés a internet",
                 "es": "Hay acceso a internet",
-                "da": "Der er internetadgang"
+                "da": "Der er internetadgang",
+                "nb_NO": "Det finnes tilgang til Internett"
               }
             },
             {
@@ -415,7 +418,8 @@
                 "de": "Internetzugang ist vorhanden",
                 "nl": "Er is internettoegang",
                 "es": "Hay acceso a internet",
-                "da": "Der er internetadgang"
+                "da": "Der er internetadgang",
+                "nb_NO": "Det finnes tilgang til Internett"
               },
               "hideInAnswer": true
             },
@@ -437,7 +441,8 @@
                 "de": "Kein Internetzugang vorhanden",
                 "nl": "Er is geen internettoegang",
                 "es": "No hay acceso a internet",
-                "da": "Der er ingen internetadgang"
+                "da": "Der er ingen internetadgang",
+                "nb_NO": "Det finnes ingen tilgang til Internett"
               }
             }
           ]
@@ -455,7 +460,8 @@
             "de": "Ist der Internetzugang gebührenpflichtig?",
             "nl": "Moet je betalen voor internettoegang?",
             "es": "¿Tienes que pagar por el acceso a internet?",
-            "da": "Skal man betale for internetadgang?"
+            "da": "Skal man betale for internetadgang?",
+            "nb_NO": "Må man betale for tilgang til Internett?"
           },
           "mappings": [
             {
@@ -475,7 +481,8 @@
                 "de": "Der Internetzugang ist gebührenpflichtig",
                 "nl": "Je moet extra betalen voor internettoegang",
                 "es": "Tienes que pagar a mayores por el acceso a internet",
-                "da": "Man skal betale ekstra for internetadgang"
+                "da": "Man skal betale ekstra for internetadgang",
+                "nb_NO": "Tilgang til Internett koster ekstra"
               }
             },
             {
@@ -495,7 +502,8 @@
                 "de": "Der Internetzugang ist kostenlos",
                 "nl": "Je hoeft niet extra te betalen voor internettoegang",
                 "es": "No tienes que pagar a mayores por el acceso a internet",
-                "da": "Man behøver ikke at betale ekstra for internetadgang"
+                "da": "Man behøver ikke at betale ekstra for internetadgang",
+                "nb_NO": "Man må ikke betale ekstra for tilgang til Internett"
               }
             }
           ],
@@ -619,7 +627,8 @@
             "de": "Gibt es a diesem Ort Plätze für Dauercamper?",
             "es": "¿Este lugar ofrece huecos para alquilar a largo plazo?",
             "da": "Tilbyder dette sted pladser til langtidsleje?",
-            "nl": "Kan men hier plekken huren voor langere termijn?"
+            "nl": "Kan men hier plekken huren voor langere termijn?",
+            "nb_NO": "Tilbyr dette stedet plasser for langtidsleie?"
           },
           "mappings": [
             {
@@ -634,11 +643,12 @@
                 "ja": "はい、長期レンタルのスポットもあり、日常的に滞在することもできます",
                 "zh_Hant": "有，這個地方有提供長期租用，但你也可以用天計算費用",
                 "it": "Sì, ci sono spazi per il noleggio a lungo termine, ma puoi anche pagare per singola giornata",
-                "fr": "Oui, mais il est possible d’y passer seulement une nuit",
+                "fr": "Il est possible d’y passer seulement une nuit",
                 "pt_BR": "Sim, há alguns pontos para aluguel a longo prazo, mas você também pode ficar em uma base diária",
                 "de": "Es gibt einige Plätze für Langzeitmieten, aber auch eine tageweise Anmietung ist möglich",
                 "es": "Sí, hay algunas plazas de alquiler a largo plazo, pero también puedes alojarte por días",
-                "nl": "Er zijn enkele plaatsen om op lange termijn te huren, maar je kan ook enkele dagen blijven"
+                "nl": "Er zijn enkele plaatsen om op lange termijn te huren, maar je kan ook enkele dagen blijven",
+                "nb_NO": "Det finnes noen plasser for langtidsleie, men man kan også bruke dem på dagsbasis"
               }
             },
             {
@@ -653,12 +663,13 @@
                 "ja": "いいえ、ここには長期滞在者はいません",
                 "zh_Hant": "沒有，這裡沒有永久的客戶",
                 "it": "No, non ci sono ospiti a lungo termine qui",
-                "fr": "Non, il n’y a pas de résidents permanents",
+                "fr": "Il n’y a pas de résidents permanents",
                 "pt_BR": "Não, não há hóspedes permanentes aqui",
                 "de": "Hier gibt es keine Dauergäste",
                 "es": "No, no hay huéspedes permanentes aquí",
                 "da": "Nej, der er ingen faste gæster her",
-                "nl": "Hier wonen geen permanente gasten"
+                "nl": "Hier wonen geen permanente gasten",
+                "nb_NO": "Det er ingen permanente gjester her"
               }
             },
             {
@@ -958,7 +969,8 @@
             "pt_BR": "Este lugar tem um ponto de água?",
             "de": "Hat dieser Ort eine Wasserzapfstelle?",
             "zh_Hant": "這個地方有取水點嗎？",
-            "nl": "Heeft deze loosplaats een waterkraan om je camper bij te vullen?"
+            "nl": "Heeft deze loosplaats een waterkraan om je camper bij te vullen?",
+            "nb_NO": "Har dette stedet et vannkranssted?"
           },
           "mappings": [
             {
@@ -1126,7 +1138,8 @@
                 "fr": "Un code est nécessaire",
                 "de": "Sie benötigen einen Schlüssel/Code zur Benutzung",
                 "zh_Hant": "你需要網路鑰匙/密碼來使用這個設施",
-                "nl": "Netwerksleutel of -code nodig om dit te gebruiken"
+                "nl": "Netwerksleutel of -code nodig om dit te gebruiken",
+                "nb_NO": "Du trenger en nettverksnøkkel/kode for å bruke dette"
               }
             },
             {

@@ -1,9 +1,10 @@
 {
   "id": "maxspeed",
   "name": {
+    "en": "Maxspeed",
     "es": "Velocidad",
     "ca": "Velocitat",
-    "en": "Maxspeed"
+    "de": "Höchstgeschwindigkeit"
   },
   "source": {
     "osmTags": {
@@ -40,23 +41,27 @@
       {
         "if": "name=",
         "then": {
-          "en": "Road without a name"
+          "en": "Road without a name",
+          "de": "Straße ohne Namen"
         }
       }
     ]
   },
   "description": {
-    "en": "Shows the allowed speed for every road"
+    "en": "Shows the allowed speed for every road",
+    "de": "Zeigt die zulässige Geschwindigkeit für jede Straße an"
   },
   "tagRenderings": [
     {
       "render": {
-        "en": "The maximum allowed speed on this road is {maxspeed}"
+        "en": "The maximum allowed speed on this road is {maxspeed}",
+        "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}"
       },
       "question": {
         "es": "Qué velocidad tiene",
         "ca": "Quina velocitat té",
-        "en": "What is the legal maximum speed one is allowed to drive on this road?"
+        "en": "What is the legal maximum speed one is allowed to drive on this road?",
+        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -67,11 +72,12 @@
           "if": "highway=living_street",
           "then": {
             "en": "This is a living street, which has a maxspeed of 20km/h",
-            "nl": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
+            "nl": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h",
+            "de": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
           },
           "icon": {
             "path": "./assets/layers/maxspeed/living_street_be.svg",
-            "size": "large"
+            "class": "large"
           },
           "hideInAnswer": "_country!=be"
         }
@@ -131,13 +137,15 @@
             "en": "kilometers/hour",
             "ca": "quilòmetres/hora",
             "es": "kilómetros/hora",
-            "nl": "kilometers/uur"
+            "nl": "kilometers/uur",
+            "de": "Kilometer/Stunde"
           },
           "humanShort": {
             "en": "km/h",
             "ca": "km/h",
             "es": "km/h",
-            "nl": "km/u"
+            "nl": "km/u",
+            "de": "km/h"
           }
         },
         {
@@ -151,13 +159,15 @@
             "en": "miles/hour",
             "ca": "milles/hora",
             "es": "millas/hora",
-            "nl": "miles/uur"
+            "nl": "miles/uur",
+            "de": "Meilen/Stunde"
           },
           "humanShort": {
             "en": "mph",
             "ca": "mph",
             "es": "mph",
-            "nl": "mph"
+            "nl": "mph",
+            "de": "mph"
           }
         }
       ],

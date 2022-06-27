@@ -2,7 +2,9 @@
   "id": "tertiary_education",
   "name": {
     "en": "Colleges and universities",
-    "nl": "Universiteiten en hogescholen"
+    "nl": "Universiteiten en hogescholen",
+    "de": "Hochschulen und Universitäten",
+    "fr": "Collèges et universités"
   },
   "description": "Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)",
   "source": {
@@ -36,21 +38,27 @@
         "if": "amenity=college",
         "then": {
           "en": "College",
-          "nl": "Hogeschool"
+          "nl": "Hogeschool",
+          "de": "(Fach)hochschule",
+          "fr": "Établissement d'enseignement supérieur non universitaire"
         }
       },
       {
         "if": "amenity=university",
         "then": {
           "en": "University",
-          "nl": "Universiteit"
+          "nl": "Universiteit",
+          "de": "Universität",
+          "fr": "Universitée"
         }
       },
       {
         "if": "amenity=school",
         "then": {
           "en": "School providing tertiary education",
-          "nl": "Onderwijsinstelling die tertiair onderwijs geeft"
+          "nl": "Onderwijsinstelling die tertiair onderwijs geeft",
+          "de": "Schule mit tertiärem Bildungsangebot",
+          "fr": "École dispensant un enseignement supérieur"
         }
       }
     ]
@@ -60,21 +68,27 @@
       "id": "institution-kind",
       "question": {
         "en": "What kind of institution is this?",
-        "nl": "Wat voor onderwijsinstelling is dit?"
+        "nl": "Wat voor onderwijsinstelling is dit?",
+        "de": "Was für eine Art von Institution ist das?",
+        "fr": "De quel type d'établissement s'agit-il ?"
       },
       "mappings": [
         {
           "if": "amenity=college",
           "then": {
             "en": "This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here",
-            "nl": "Dit is een onderwijsinstelling waar post-secundair, niet-tertiair onderwijs wordt gegeven. Om dit onderwijs te volgen, moet je je secundair onderwijs afgewerkt hebben maar de opleiding behaalt niet het niveau van van een bachelor."
+            "nl": "Dit is een onderwijsinstelling waar post-secundair, niet-tertiair onderwijs wordt gegeven. Om dit onderwijs te volgen, moet je je secundair onderwijs afgewerkt hebben maar de opleiding behaalt niet het niveau van van een bachelor.",
+            "de": "Es handelt sich um eine postsekundäre, nicht-tertiäre Bildungseinrichtung. Man muss die Sekundarstufe abgeschlossen haben, um sich hier einzuschreiben, aber es werden keine Bachelor-Abschlüsse (oder höhere Abschlüsse) verliehen",
+            "fr": "Il s'agit d'un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici"
           }
         },
         {
           "if": "amenity=university",
           "then": {
             "en": "This is a university, an institution of tertiary education where bachelor degrees or higher are awarded.",
-            "nl": "Dit is een universiteit (of hogeschool), een onderwijsinstelling van tertaire educatie. De gegeven opleidingen halen het niveau van een bachelor-opleiding of hoger."
+            "nl": "Dit is een universiteit (of hogeschool), een onderwijsinstelling van tertaire educatie. De gegeven opleidingen halen het niveau van een bachelor-opleiding of hoger.",
+            "de": "Dies ist eine Universität, eine Einrichtung des tertiären Bildungsbereichs, an der Bachelor-Abschlüsse oder höhere Abschlüsse verliehen werden.",
+            "fr": "Il s'agit d'une université, d'un établissement d'enseignement supérieur où sont délivrés des diplômes de bachelor ou plus."
           }
         }
       ]
@@ -83,7 +97,9 @@
       "id": "isced",
       "question": {
         "en": "What level of education is given here?",
-        "nl": "Wat is het niveau van onderwijs?"
+        "nl": "Wat is het niveau van onderwijs?",
+        "de": "Welches Bildungsniveau wird hier gelehrt?",
+        "fr": "Quel niveau d'éducation est donné ici ?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -91,21 +107,27 @@
           "if": "isced:2011:level=bachelor",
           "then": {
             "en": "Bachelor degrees are awarded here",
-            "nl": "Bacheloropleidingen (of equivalent) worden hier gegeven"
+            "nl": "Bacheloropleidingen (of equivalent) worden hier gegeven",
+            "de": "Bachelor-Abschlüsse werden hier verliehen",
+            "fr": "Les diplômes de bachelor y sont décernés"
           }
         },
         {
           "if": "isced:2011:level=master",
           "then": {
             "en": "Master degrees are awarded here",
-            "nl": "Masteropleidingen (of equivalent) worden hier gegeven"
+            "nl": "Masteropleidingen (of equivalent) worden hier gegeven",
+            "de": "Hier werden Master-Abschlüsse verliehen",
+            "fr": "Des masters y sont décernés"
           }
         },
         {
           "if": "isced:2011:level=doctorate",
           "then": {
             "en": "Doctorate degrees are awarded here",
-            "nl": "Doctoraatsopleidingen (of equivalent) worden hier gegeven"
+            "nl": "Doctoraatsopleidingen (of equivalent) worden hier gegeven",
+            "de": "Hier werden die Doktortitel verliehen",
+            "fr": "Des doctorats y sont décernés"
           }
         }
       ],
@@ -152,11 +174,15 @@
     {
       "title": {
         "en": "a university",
-        "nl": "een universiteit"
+        "nl": "een universiteit",
+        "de": "eine Universität",
+        "fr": "une université"
       },
       "description": {
         "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points.",
-        "nl": "Een onderwijsinstelling waar tertiair onderwijs wordt gegeven - dit is onderwijs waarvan het niveau overeenkomt met een bachelor of hoger is. Eén enkel punt per campus is genoeg - gebouwen en faculteiten worden hier niet op aangeduid."
+        "nl": "Een onderwijsinstelling waar tertiair onderwijs wordt gegeven - dit is onderwijs waarvan het niveau overeenkomt met een bachelor of hoger is. Eén enkel punt per campus is genoeg - gebouwen en faculteiten worden hier niet op aangeduid.",
+        "de": "Eine Einrichtung, an der tertiäre Bildung vermittelt wird (auf dem Niveau eines Bachelor-Abschlusses oder höher). Ein einziger Punkt pro Campus ist ausreichend - Gebäude und Fakultäten sollten nicht mit Universitätspunkten gekennzeichnet werden.",
+        "fr": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université."
       },
       "tags": [
         "amenity=university",

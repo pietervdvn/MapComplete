@@ -383,7 +383,7 @@
           "then": {
             "en": "Paying a fee is required to climb here",
             "es": "Hay que pagar una tasa para escalar aquí",
-            "de": "Zum Klettern ist eine Gebühr zu entrichten",
+            "de": "Zum Klettern ist eine Gebühr zu zahlen",
             "nl": "Men moet betalen om hier te klimmen"
           },
           "hideInAnswer": "charge~*"

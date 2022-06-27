@@ -2,7 +2,7 @@
   "id": "climbing_area",
   "name": {
     "nl": "Klimgelegenheden",
-    "de": "Klettermöglichkeiten",
+    "de": "Klettereinrichtungen",
     "en": "Climbing opportunities",
     "ja": "登坂教室",
     "fr": "Opportunité d’escalade",
@@ -29,7 +29,7 @@
     "render": {
       "en": "Climbing opportunity",
       "nl": "Klimgelegenheid",
-      "de": "Klettermöglichkeit",
+      "de": "Klettereinrichtung",
       "ja": "登坂教室",
       "nb_NO": "Klatremulighet",
       "fr": "Opportunité d’escalade",
@@ -87,7 +87,7 @@
           "nl": "Klimgelegenheid <b>{name}</b>",
           "en": "Climbing opportunity <b>{name}</b>",
           "fr": "Opportunité d’escalade <b>{name}</b>",
-          "de": "Klettermöglichkeit <b>{name}</b>",
+          "de": "Klettereinrichtung <b>{name}</b>",
           "it": "Opportunità di arrampicata <b>{name}</b>"
         }
       }
@@ -161,7 +161,7 @@
       "question": {
         "en": "What is the name of this climbing opportunity?",
         "nl": "Wat is de naam van dit Klimgelegenheid?",
-        "de": "Wie heißt diese Klettergelegenheit?",
+        "de": "Wie heißt die Klettereinrichtung?",
         "ja": "この登坂教室の名前は何ですか?",
         "fr": "Quel est le nom de ce site ?",
         "it": "Qual è il nome di questa opportunità di arrampicata?"
@@ -180,7 +180,7 @@
           "then": {
             "en": "This climbing opportunity doesn't have a name",
             "nl": "Dit Klimgelegenheid heeft geen naam",
-            "de": "Diese Klettergelegenheit hat keinen Namen",
+            "de": "Die Klettereinrichtung hat keinen Namen",
             "ja": "この登坂教室には名前がついていない",
             "fr": "Ce site n’a pas de nom",
             "it": "Questa opportunità di arrampicata non ha un nome"
@@ -272,7 +272,7 @@
       "title": {
         "en": "a climbing opportunity",
         "nl": "een klimgelegenheid",
-        "de": "eine klettermöglichkeit",
+        "de": "eine Klettereinrichtung",
         "ja": "登坂教室",
         "nb_NO": "en klatremulighet",
         "fr": "une opportunité d’escalade",
@@ -280,7 +280,7 @@
       },
       "description": {
         "nl": "Een klimgelegenheid",
-        "de": "Eine Klettergelegenheit",
+        "de": "Eine Klettereinrichtung",
         "en": "A climbing opportunity",
         "ja": "登坂教室",
         "nb_NO": "En klatremulighet",

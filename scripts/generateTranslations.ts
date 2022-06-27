@@ -32,6 +32,10 @@ class TranslationPart {
     }
 
     addTranslationObject(translations: any, context?: string) {
+        if(translations["#"] === "no-translations"){
+            console.log("Ignoring object at ",context,"which has '#':'no-translations'")
+            return;
+        }
         for (const translationsKey in translations) {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue;
@@ -267,6 +271,9 @@ class TranslationPart {
  * @param tr
  */
 function isTranslation(tr: any): boolean {
+    if(tr["#"] === "no-translations") {
+        return false
+    }
     for (const key in tr) {
         if (typeof tr[key] !== "string") {
             return false;

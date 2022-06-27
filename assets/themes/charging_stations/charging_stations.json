@@ -38,7 +38,8 @@
     "hu": "Ezen a térképen a elektromos töltőpontokról szóló információkat lehet megtalálni és megadni",
     "fr": "Sur cette carte l’on trouve et ajoute des informations sur les points de recharge",
     "nl": "Met deze kaart kan je informatie over oplaadpunten vinden en toevoegen",
-    "es": "En este mapa, uno puede encontrar y marcar información sobre estaciones de carga"
+    "es": "En este mapa, uno puede encontrar y marcar información sobre estaciones de carga",
+    "nb_NO": "Finn og merk info om ladestasjoner"
   },
   "maintainer": "",
   "icon": "./assets/themes/charging_stations/logo.svg",

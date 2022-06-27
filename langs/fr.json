@@ -11,6 +11,8 @@
         "delete": "Supprimer",
         "explanations": {
             "hardDelete": "Ce point sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées",
+            "retagNoOtherThemes": "Cet objet sera re-classifié et caché dans cette application",
+            "retagOtherThemes": "Cet objet sera re-classifié et visible dans {otherThemes}",
             "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé",
             "softDelete": "Cet objet sera mis à jour et caché de l'application. <span class=\"subtle\">{reason}</span>"
         },
@@ -20,7 +22,7 @@
         "loginToDelete": "Vous devez être connecté pour supprimer un objet",
         "notEnoughExperience": "Ce point a été créé par une autre personne.",
         "onlyEditedByLoggedInUser": "Ce point a été édité seulement par vous et peut donc être supprimé.",
-        "partOfOthers": "Ce point faire partie d'un autre objet et ne peut être supprimé directement.",
+        "partOfOthers": "Ce point fait partie d'un autre objet et ne peut être supprimé directement.",
         "readMessages": "Messages non-lus à lire avant de supprimer un point, certains pourraient comporter des informations importantes",
         "reasons": {
             "disused": "Cet élément n’est plus utilisé ou a été enlevé",
@@ -51,8 +53,13 @@
             "import": {
                 "hasBeenImported": "Cet objet a été importé",
                 "howToTest": "Pour essayer, ajouter <b>test=true</b> ou <b>backend=osm-test</b> à l'adresse de la page. Le groupe de modifications sera affiché dans la console. Merci d'ouvrir un PR pour officialiser ce thème et ainsi activer le bouton d'import.",
-                "importTags": "L'objet recevra {tags}"
+                "importTags": "L'objet recevra {tags}",
+                "officialThemesOnly": "Le bouton d'import est désactivé pour les thèmes non-officiels pour prévenir les accidents",
+                "wrongType": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être importé",
+                "wrongTypeToConflate": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être confondu",
+                "zoomInMore": "Zoomez davantage pour importer cet objet"
             },
+            "importTags": "L'élément recevra {tags}",
             "intro": "Vous avez cliqué sur un endroit où il n'y a pas encore de données.<br>",
             "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
             "openLayerControl": "Ouvrir la panneau de contrôle",
@@ -61,6 +68,7 @@
             "stillLoading": "Chargement des données en cours. Patientez un instant avant d'ajouter un nouveau point.",
             "title": "Ajouter un nouveau point ?",
             "warnVisibleForEveryone": "Votre ajout sera visible",
+            "wrongType": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être importé",
             "zoomInFurther": "Rapprochez vous pour ajouter un point.",
             "zoomInMore": "Zoomez pour importer cet élément"
         },
@@ -68,6 +76,9 @@
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",
             "attributionTitle": "Crédits",
             "codeContributionsBy": "MapComplete a été construit par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres contributeurs</a>",
+            "donate": "Soutenez MapComplete financièrement",
+            "followOnMastodon": "Suivez MapComplete sur Mastodon",
+            "followOnTwitter": "Suivez MapComplete sur Twitter",
             "iconAttribution": {
                 "title": "Icônes utilisées"
             },
@@ -77,10 +88,13 @@
         },
         "backgroundMap": "Carte de fonds",
         "cancel": "Annuler",
+        "confirm": "Confirmer",
         "customThemeIntro": "<h3>Thèmes personnalisés</h3>Vous avez déjà visité ces thèmes personnalisés.",
         "download": {
             "downloadAsPdf": "Télécharger un PDF de la vue actuelle",
             "downloadAsPdfHelper": "Idéal pour imprimer une carte",
+            "downloadAsSvg": "Télécharger la carte actuelle au format SVG",
+            "downloadAsSvgHelper": "Compatible avec Inkscape ou Adobe Illustrator ; nécessite un traitement supplémentaire  ",
             "downloadCSV": "Télécharger les données visibles au format CSV",
             "downloadCSVHelper": "Compatible avec LibreOffice Calc, Excel,…",
             "downloadGeoJsonHelper": "Compatible avec QGIS, ArcGIS, ESRI,…",
@@ -91,6 +105,9 @@
             "noDataLoaded": "Pas de données chargées. Le téléchargement sera bientôt disponible",
             "title": "Télécharger les données visibles"
         },
+        "error": "Quelque chose ne s'est pas passé correctement",
+        "example": "Exemple",
+        "examples": "Exemples",
         "fewChangesBefore": "Merci de répondre à quelques questions à propos de points déjà existants avant d'ajouter de nouveaux points.",
         "getStartedLogin": "Connectez-vous avec OpenStreetMap pour commencer",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">créez un compte</a>",
@@ -115,6 +132,7 @@
             "streetcomplete": "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "Le nom de cet/cette {category} est $$$",
+        "next": "Suivant",
         "noNameCategory": "{category} sans nom",
         "noTagsSelected": "Aucune balise sélectionnée",
         "number": "nombre",
@@ -144,6 +162,7 @@
             "versionInfo": "v{version} - générée le {date}"
         },
         "pickLanguage": "Choisir la langue : ",
+        "poweredByOsm": "Propulsé par OpenStreetMap",
         "questions": {
             "emailIs": "L'adresse électronique de {category} est <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Quelle est l'adresse électronique de {category} ?",
@@ -229,6 +248,19 @@
         "uploadingMultiple": "Mise en ligne de {count} photos…",
         "uploadingPicture": "Mise en ligne de votre photo…",
         "willBePublished": "Votre photo va être publiée : "
+    },
+    "importHelper": {
+        "askMetadata": {
+            "shouldBeUrl": "URL invalide"
+        },
+        "login": {
+            "loginRequired": "Connectez-vous pour continuer",
+            "title": "Se connecter"
+        },
+        "selectFile": {
+            "errDuplicate": "Certaines colonnes portent le même nom",
+            "errNoName": "Certains colonnes n'ont pas de nom"
+        }
     },
     "index": {
         "#": "Ces textes sont affichés au dessus des boutons de thème quand aucun thème n'est chargé",

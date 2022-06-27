@@ -5,13 +5,15 @@
     "de": "Fahrrad-Knotenpunktnetzwerke",
     "es": "Redes de Nodos Ciclistas",
     "nb_NO": "Sykkelnodenettverk",
-    "nl": "Fietsknooppuntennetwerken"
+    "nl": "Fietsknooppuntennetwerken",
+    "fr": "Réseau de Nœuds Cyclistes"
   },
   "description": {
     "en": "This map shows cycle node networks and allows you to add new nodes easily",
     "de": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen",
     "es": "Este mapa muestra redes de nodos ciclistas y te permita añadir nodos nuevos de manera sencilla",
-    "nl": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen"
+    "nl": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
+    "fr": "Cette carte montre les réseaux de nœuds cyclistes et vous permet d'ajouter facilement de nouveaux nœuds"
   },
   "maintainer": "Sebastian Kürten",
   "icon": "./assets/themes/cyclenodes/logo.svg",
@@ -32,7 +34,8 @@
         "en": "node to node links",
         "de": "Knotenpunktverbindungen",
         "es": "enlaces nodo a nodo",
-        "nl": "verbindingen van node naar node"
+        "nl": "verbindingen van node naar node",
+        "fr": "liens noeud à noeud"
       },
       "source": {
         "osmTags": {
@@ -49,7 +52,8 @@
           "en": "node to node link",
           "de": "Knotenpunktverbindung",
           "es": "enlace nodo a nodo",
-          "nl": "node-naar-node verbinding"
+          "nl": "node-naar-node verbinding",
+          "fr": "lien noeud à noeud"
         },
         "mappings": [
           {
@@ -58,7 +62,8 @@
               "en": "node to node link <strong>{ref}</strong>",
               "de": "Knotenpunktverbindung <strong>{ref}</strong>",
               "es": "enlace nodo a nodo <strong>{ref}</strong>",
-              "nl": "node-naar-node verbinding <strong>{ref}</strong>"
+              "nl": "node-naar-node verbinding <strong>{ref}</strong>",
+              "fr": "lien noeud à noeud <strong>{ref}</strong>"
             }
           }
         ]
@@ -79,13 +84,15 @@
             "en": "When was this node to node link last surveyed?",
             "de": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
             "es": "¿Cuándo se sondeó este enlace nodo a nodo por última vez?",
-            "nl": "Wanneer werd deze node-naar-node verbinding het laast gesurveyed?"
+            "nl": "Wanneer werd deze node-naar-node verbinding het laast gesurveyed?",
+            "fr": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?"
           },
           "render": {
             "en": "This node to node link was last surveyed on {survey:date}",
             "de": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft",
             "es": "Este enlace nodo a nodo se sondeó por última vez el {survey:date}",
-            "nl": "Deze node-naar-node verbinding werd het laast gesurveyed op {survey:date}"
+            "nl": "Deze node-naar-node verbinding werd het laast gesurveyed op {survey:date}",
+            "fr": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}"
           },
           "freeform": {
             "key": "survey:date",
@@ -110,7 +117,8 @@
         "ca": "nodes",
         "es": "nodos",
         "nb_NO": "noder",
-        "nl": "knooppunten"
+        "nl": "knooppunten",
+        "fr": "noeuds"
       },
       "source": {
         "osmTags": {
@@ -146,7 +154,8 @@
           "de": "Knotenpunkt <strong>{rcn_ref}</strong>",
           "es": "nodo ciclista <strong>{rcn_ref}</strong>",
           "nb_NO": "sykkelnode <strong>{rcn_ref}</strong>",
-          "nl": "fietsknooppunt <strong>{rcn_ref}</strong>"
+          "nl": "fietsknooppunt <strong>{rcn_ref}</strong>",
+          "fr": "nœud cycliste <strong>{rcn_ref}</strong>"
         }
       },
       "tagRenderings": [
@@ -155,13 +164,15 @@
             "en": "When was this cycle node last surveyed?",
             "de": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
             "es": "¿Cuándo fue sondeado este nodo ciclista por última vez?",
-            "nl": "Wanneer is dit fietsknooppunt voor het laatst gecontroleerd?"
+            "nl": "Wanneer is dit fietsknooppunt voor het laatst gecontroleerd?",
+            "fr": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?"
           },
           "render": {
             "en": "This cycle node was last surveyed on {survey:date}",
             "de": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}",
             "es": "Este nodo ciclista se sondeó por última vez el {survey:date}",
-            "nl": "Dit fietsknooppunt is voor het laatst gecontroleerd op {survey:date}"
+            "nl": "Dit fietsknooppunt is voor het laatst gecontroleerd op {survey:date}",
+            "fr": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}"
           },
           "freeform": {
             "key": "survey:date",
@@ -180,13 +191,15 @@
             "en": "How many other cycle nodes does this node link to?",
             "de": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?",
             "es": "¿A cuántos otros nodos ciclistas enlaza este nodo?",
-            "nl": "Met hoeveel andere fietsknooppunten heeft dit knooppunt een verbinding?"
+            "nl": "Met hoeveel andere fietsknooppunten heeft dit knooppunt een verbinding?",
+            "fr": "A combien dautres nœuds vélo ce nœud est-il lié ?"
           },
           "render": {
             "en": "This node links to {expected_rcn_route_relations} other cycle nodes.",
             "de": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden.",
             "nl": "Dit knooppunt verbindt met {expected_rcn_route_relations} andere fietsknooppunten.",
-            "es": "Este nodo enlaza a {expected_rcn_route_relations} otros nodos ciclistas."
+            "es": "Este nodo enlaza a {expected_rcn_route_relations} otros nodos ciclistas.",
+            "fr": "Ce noeud est lié à {expected_rcn_route_relations} d'autres noeuds cyclistes."
           },
           "freeform": {
             "key": "expected_rcn_route_relations",

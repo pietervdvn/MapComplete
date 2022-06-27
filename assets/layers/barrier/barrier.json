@@ -60,7 +60,7 @@
           "de": "Barriere für Radfahrer",
           "fr": "Barrière cyclable",
           "ca": "Barrera ciclista",
-          "es": "Barrera ciclista"
+          "es": "Barrera Ciclista"
         }
       }
     ]
@@ -106,7 +106,7 @@
         "hu": "Kerékpárakadály",
         "fr": "une barrière cyclable",
         "da": "en stibom",
-        "es": "una barrera para bicicletas"
+        "es": "una barrera ciclista"
       },
       "tags": [
         "barrier=cycle_barrier"
@@ -137,7 +137,7 @@
         "de": "Kann ein Radfahrer das Hindernis passieren?",
         "hu": "Át lehet-e menni rajta kerékpárral?",
         "fr": "Est-ce qu'un vélo peut franchir cette barrière ?",
-        "es": "¿Puede un ciclista pasar esta barrera?"
+        "es": "¿Puede pasar una bicicleta esta barrera?"
       },
       "mappings": [
         {
@@ -149,7 +149,7 @@
             "fr": "Un cycliste peut franchir ceci.",
             "hu": "Kerékpárral át lehet hajtani.",
             "da": "En cyklist kan cykle forbi denne.",
-            "es": "Un ciclista puede pasar por aquí."
+            "es": "Un ciclista puede pasar esto."
           }
         },
         {
@@ -161,7 +161,7 @@
             "fr": "Un cycliste ne peut pas franchir ceci.",
             "hu": "Kerékpárral nem lehet áthajtani.",
             "da": "En cyklist kan ikke cykle forbi denne.",
-            "es": "Un ciclista no puede pasar por aquí."
+            "es": "Un ciclista no puede pasar esto."
           }
         }
       ],
@@ -242,7 +242,7 @@
             "fr": "Bollard qui peut être couché",
             "hu": "Lehajtható terelőoszlop",
             "da": "Pullert, der kan klappes ned",
-            "es": "Bolardo abatible"
+            "es": "Bolardo que se puede doblar"
           }
         },
         {
@@ -292,7 +292,7 @@
             "de": "Einfach, nur zwei Barrieren mit einem Zwischenraum",
             "hu": "Egyszeres: csak két korlát, közöttük térköz",
             "fr": "Simple, deux barrières côte à côte",
-            "es": "Simple, sólo dos barreras con un espacio entre ellas"
+            "es": "Simple, simplemente dos barreras con un espacio en el medio"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_single.png",
@@ -322,7 +322,7 @@
             "de": "Dreifach, drei Barrieren hintereinander",
             "hu": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után",
             "fr": "Triple, trois barrières successives",
-            "es": "Triple, tres barreras una detrás de la otra"
+            "es": "Triple, tres barreras una detrás de otra"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_triple.png",
@@ -352,7 +352,7 @@
         "en": "Maximum width: {maxwidth:physical} m",
         "nl": "Maximumbreedte: {maxwidth:physical} m",
         "de": "Maximale Durchfahrtsbreite: {maxwidth:physical} m",
-        "fr": "Largeur maximale: {maxwidth:physical} m",
+        "fr": "Largeur maximale : {maxwidth:physical} m",
         "hu": "Legnagyobb szélesség: {maxwidth:physical} m",
         "es": "Anchura máxima: {maxwidth:physical} m",
         "da": "Maksimal bredde: {maxwidth:physical} m"

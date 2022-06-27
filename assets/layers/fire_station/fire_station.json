@@ -100,7 +100,7 @@
         "en": "Where is the station located? (e.g. name of neighborhood, villlage, or town)",
         "ja": "このステーションの住所は?(例: 地区、村、または町の名称)",
         "ru": "Где расположена часть? (напр., название населённого пункта)",
-        "fr": "Dans quelle localité la station est-elle située ?",
+        "fr": "Dans quelle localité la station est-elle située (p.ex. nom du quartier, village ou ville) ?",
         "it": "In che località si trova la stazione? (ad es. quartiere, paese o città)",
         "nl": "Waar is dit station gelegen? (v.b. naam van de buurt, dorp of stad)",
         "de": "Wo befindet sich die Station? (z. B. Name des Viertels, des Dorfes oder der Stadt)"

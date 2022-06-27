@@ -19,7 +19,6 @@ import {PrepareLayer} from "../Models/ThemeConfig/Conversion/PrepareLayer";
 import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import {DesugaringContext} from "../Models/ThemeConfig/Conversion/Conversion";
 import {Utils} from "../Utils";
-import {And} from "../Logic/Tags/And";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -262,6 +261,7 @@ class LayerOverviewUtils {
             tagRenderings: this.getSharedTagRenderings(knownImagePaths),
             publicLayers
         }
+        const nonDefaultLanguages : {theme: string, language: string}[] = []
         for (const themeInfo of themeFiles) {
             let themeFile = themeInfo.parsed
             const themePath = themeInfo.path

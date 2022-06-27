@@ -29,7 +29,8 @@
       "nl": "Fietsverhuur",
       "es": "Alquiler de bicicletas",
       "de": "Fahrradverleih",
-      "da": "Cykeludlejning"
+      "da": "Cykeludlejning",
+      "fr": "Location de vélo"
     },
     "mappings": [
       {
@@ -44,15 +45,16 @@
           "ca": "{name}",
           "de": "{name}",
           "es": "{name}",
-          "da": "{name}"
+          "da": "{name}",
+          "fr": "{name}"
         }
       }
     ]
   },
   "description": {
     "en": "Bicycle rental stations",
-    "nl": "Fietsverhuustations",
-    "fr": "Station de location de vélo",
+    "nl": "Fietsverhuurstations",
+    "fr": "Stations de location de vélo",
     "de": "Fahrradverleihstationen",
     "es": "Estaciones de alquiler de bicicletas"
   },
@@ -65,7 +67,8 @@
         "nl": "Wat voor fietsverhuur is dit?",
         "de": "Was ist das für ein Fahrradverleih?",
         "es": "¿Qué tipo de alquiler de bicicletas es este?",
-        "da": "Hvilken slags cykeludlejning er dette?"
+        "da": "Hvilken slags cykeludlejning er dette?",
+        "fr": "De quel type de location de vélo s'agit-il ?"
       },
       "mappings": [
         {
@@ -80,7 +83,8 @@
             "nl": "Dit is een zaak die focust op fietsverhuur",
             "de": "Dies ist ein Geschäft, dessen Schwerpunkt auf dem Fahrradverleih liegt",
             "es": "Esta es una tienda que se centra en el alquiler de bicicletas",
-            "da": "Dette er en butik, hvis hovedfokus er cykeludlejning"
+            "da": "Dette er en butik, hvis hovedfokus er cykeludlejning",
+            "fr": "C'est un magasin dont l'activité principale est la location de vélo"
           }
         },
         {
@@ -90,7 +94,8 @@
             "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus",
             "de": "Dies ist ein Geschäft, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt",
             "es": "Este es un negocio de alquileres que alquila varios objetos y/o vehículos. También alquila bicicletas, pero este no es el enfoque principal",
-            "da": "Dette er en udlejningsvirksomhed, som udlejer forskellige genstande og/eller køretøjer. Den udlejer også cykler, men det er ikke det primære fokus"
+            "da": "Dette er en udlejningsvirksomhed, som udlejer forskellige genstande og/eller køretøjer. Den udlejer også cykler, men det er ikke det primære fokus",
+            "fr": "C'est une agence louant diverses choses et/ou voitures. Elle loue également des vélos, mais ce n'est pas sa principale activité"
           }
         },
         {
@@ -105,7 +110,8 @@
             "nl": "Dit is een fietsenmaker of fietswinkel die ook fietsen verhuurt",
             "de": "Dies ist ein Geschäft, das Fahrräder verkauft oder repariert, aber auch Fahrräder vermietet",
             "es": "Esta es una tienda que vende o alquila bicicletas, pero también las alquila",
-            "da": "Dette er en butik, der sælger eller reparerer cykler, men som også udlejer cykler"
+            "da": "Dette er en butik, der sælger eller reparerer cykler, men som også udlejer cykler",
+            "fr": "C'est un magasin qui vend ou répare des vélos mais peut également en louer"
           }
         },
         {
@@ -114,7 +120,8 @@
             "en": "This is an automated docking station, where a bicycle is mechanically locked into a structure",
             "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt",
             "de": "Dies ist eine automatisierte Radstation, bei der Fahrräder mechanisch in einer Struktur verriegelt werden",
-            "es": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura"
+            "es": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura",
+            "fr": "Ceci est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure"
           }
         },
         {
@@ -124,7 +131,8 @@
             "nl": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd",
             "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója",
             "de": "Dies ist ein Automat, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt",
-            "es": "Una máquina que dispensa y acepta llaves, eventualmente después de la autenticación y/o el pago está presente. Las bicicletas están aparcadas cerca"
+            "es": "Una máquina que dispensa y acepta llaves, eventualmente después de la autenticación y/o el pago está presente. Las bicicletas están aparcadas cerca",
+            "fr": "Il y a un distributeur qui distribue et accepte les clés, éventuellement après identification et/ou payement. Les vélos sont stationnés à proximité"
           }
         },
         {
@@ -133,7 +141,8 @@
             "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only",
             "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur ",
             "de": "Dies ist ein Rückgabepunkt, z. B. ein reservierter Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist",
-            "es": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler"
+            "es": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler",
+            "fr": "Ceci est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location"
           }
         }
       ],
@@ -356,7 +365,8 @@
               "nl": "fietstassen",
               "de": "Fahrradtaschen",
               "da": "cykeltasker",
-              "es": "alforjas de bicicleta"
+              "es": "alforjas de bicicleta",
+              "fr": "sacoches pour vélo"
             }
           ],
           [
@@ -420,7 +430,7 @@
         "fr": "Un magasin qui priorise la location de vélos",
         "de": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert",
         "da": "En bemandet butik, der fokuserer på cykeludlejning",
-        "es": "Una tienda con personal que se dedica al alquiler de bicicletas"
+        "es": "Una tienda atendida que se centra en el alquiler de bicicletas"
       }
     },
     {

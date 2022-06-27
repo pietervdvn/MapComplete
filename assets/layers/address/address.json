@@ -135,7 +135,7 @@
         "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>",
         "zh_Hans": "这个地址位于<b>{addr:street}</b>街",
         "id": "Alamat ini ada di jalan <b>{addr:street}</b>",
-        "es": "La dirección está en la calle <b>{addr:street}</b>",
+        "es": "La dirección está en esta calle <b>{addr:street}</b>",
         "da": "Denne adresse er på gaden <b>{addr:street}</b>"
       },
       "question": {

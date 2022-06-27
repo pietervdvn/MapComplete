@@ -443,6 +443,10 @@
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
         "title": "Trinkwasserstellen"
     },
+    "education": {
+        "description": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
+        "title": "Bildung"
+    },
     "entrances": {
         "description": "Eine Karte mit allen Eingängen, die wichtige Aspekte für Rollstuhlfahrer erfasst",
         "shortDescription": "Eingänge prüfen, um die Rollstuhlnavigation zu verbessern",
@@ -709,6 +713,11 @@
         "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
         "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
         "title": "Eine Karte der Karten"
+    },
+    "maxspeed": {
+        "description": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße. Wenn eine Höchstgeschwindigkeit fehlt oder falsch ist, können Sie dies hier korrigieren.",
+        "shortDescription": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße.",
+        "title": "Höchstgeschwindigkeit"
     },
     "nature": {
         "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",

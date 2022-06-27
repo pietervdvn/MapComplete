@@ -24,6 +24,7 @@
     + [smoking](#smoking)
     + [service:electricity](#serviceelectricity)
     + [dog-access](#dog-access)
+    + [reviews](#reviews)
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
     + [climbing.bouldering](#climbingbouldering)
@@ -33,7 +34,6 @@
     + [climbing.sportclimbing](#climbingsportclimbing)
     + [climbing.max_bolts](#climbingmax_bolts)
     + [all_tags](#all_tags)
-    + [reviews](#reviews)
     + [questions](#questions)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
@@ -335,6 +335,22 @@
 
 
 
+### reviews 
+
+
+
+
+
+  - cafe_pub
+  - dogpark
+  - food
+  - hackerspace
+  - shops
+  - veterinary
+
+
+
+
 ### climbing.website 
 
 
@@ -432,20 +448,6 @@
 
 
   - cluster_style
-
-
-
-
-### reviews 
-
-
-
-
-
-  - dogpark
-  - food
-  - shops
-  - veterinary
 
 
 

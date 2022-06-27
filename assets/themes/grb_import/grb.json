@@ -10,7 +10,8 @@
     "nl": "Dit thema helpt het GRB importeren.",
     "en": "This theme is an attempt to help automating the GRB import.",
     "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni.",
-    "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen."
+    "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",
+    "fr": "Ce thème tente d’aider l’import automatique GRB."
   },
   "maintainer": "Pieter Vander Vennet",
   "icon": "./assets/themes/grb_import/logo.svg",
@@ -114,7 +115,8 @@
             "en": "What kind of building is this?",
             "de": "Was ist das für ein Gebäude?",
             "es": "¿Qué tipo de edificio es este?",
-            "nl": "Wat voor soort gebouw is dit?"
+            "nl": "Wat voor soort gebouw is dit?",
+            "fr": "De quel type de bâtiment s’agit-il ?"
           },
           "mappings": [
             {
@@ -513,7 +515,8 @@
               "then": {
                 "en": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}",
                 "de": "Dieses Gebäude hat Löcher und ist als Relation modelliert. Als solches kann es nicht zusammengeführt werden. Es kann manuell zusammengeführt werden über die <a href='https://buildings.osm.be/#/'>Gebäudeexportseite</a> {open_in_josm()}",
-                "es": "Este edificio tiene agujeros y está modelado como una relación. Por lo tanto, no se puede combinar. Combínalo manualmente a través <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}"
+                "es": "Este edificio tiene agujeros y está modelado como una relación. Por lo tanto, no se puede combinar. Combínalo manualmente a través <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}",
+                "fr": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}"
               }
             },
             {

@@ -394,7 +394,7 @@
                         "then": "Bikes for disabled persons available"
                     }
                 },
-                "question": "Who can lend bicycles here?"
+                "question": "Who can loan bicycles here?"
             },
             "bicycle_library-charge": {
                 "mappings": {
@@ -4082,6 +4082,10 @@
                     }
                 },
                 "question": "What type of facility is this?"
+            },
+            "name": {
+                "question": "What is the name of this facility?",
+                "render": "This facility is named <b>{name}</b>"
             }
         },
         "title": {
@@ -5006,16 +5010,16 @@
                         "then": "This is a secondary school which offers all grades"
                     },
                     "3": {
-                        "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>first and second</b> grade"
+                        "then": "This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade"
                     },
                     "4": {
-                        "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>third and fourth</b> grade"
+                        "then": "This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade"
                     },
                     "5": {
-                        "then": "This is a secondary school which does <b>not</b> have all grades, but offers <b>fifth and sixth</b> grade"
+                        "then": "This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade"
                     },
                     "6": {
-                        "then": "This schools offers post-secondary education (e.g. a seventh or eight specialisation year)"
+                        "then": "This school offers post-secondary education (e.g. a seventh or eight specialisation year)"
                     }
                 },
                 "question": "What level of education is given on this school?"
@@ -5279,6 +5283,9 @@
             },
             "sport_pitch-opening_hours": {
                 "mappings": {
+                    "0": {
+                        "then": "Always accessible"
+                    },
                     "1": {
                         "then": "Always accessible"
                     }

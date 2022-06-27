@@ -193,7 +193,7 @@ The question is  Is this playground accessible to the general public?
   - Only accessible to students of the school corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dstudents' target='_blank'>students</a>
   - This option cannot be chosen as answer
   - Not accessible corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
-  - This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dplayground' target='_blank'>playground</a>
+  - This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dschoolyard' target='_blank'>schoolyard</a>
 
 
 
