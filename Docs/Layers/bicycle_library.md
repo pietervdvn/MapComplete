@@ -195,7 +195,7 @@ This is rendered with  Lending a bicycle costs {charge}
 
 
 
-The question is  Who can lend bicycles here?
+The question is  Who can loan bicycles here?
 
 
 

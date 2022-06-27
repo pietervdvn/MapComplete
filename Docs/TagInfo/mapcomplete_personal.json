@@ -6241,8 +6241,8 @@
     },
     {
       "key": "leisure",
-      "description": "Layer 'Playgrounds' shows leisure=playground with a fixed text, namely 'This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "playground"
+      "description": "Layer 'Playgrounds' shows leisure=schoolyard with a fixed text, namely 'This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "schoolyard"
     },
     {
       "key": "website",
@@ -6851,7 +6851,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Sport pitches' shows  with a fixed text, namely '24/7 toegankelijk' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key opening_hours.",
+      "description": "Layer 'Sport pitches' shows  with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key opening_hours.",
       "value": ""
     },
     {

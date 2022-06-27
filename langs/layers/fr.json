@@ -516,14 +516,14 @@
                     "2": {
                         "then": "C'est un magasin qui vend ou répare des vélos mais peut également en louer"
                     },
+                    "3": {
+                        "then": "Ceci est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure"
+                    },
                     "4": {
                         "then": "Il y a un distributeur qui distribue et accepte les clés, éventuellement après identification et/ou payement. Les vélos sont stationnés à proximité"
                     },
                     "5": {
                         "then": "Ceci est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location"
-                    },
-                    "3": {
-                        "then": "Ceci est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure"
                     }
                 },
                 "question": "De quel type de location de vélo s'agit-il ?"
@@ -539,6 +539,7 @@
         }
     },
     "bicycle_tube_vending_machine": {
+        "description": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)",
         "name": "Distributeur automatique de chambre à air de vélo",
         "presets": {
             "0": {
@@ -564,10 +565,10 @@
         },
         "title": {
             "render": "Distributeur automatique de chambre à air de vélo"
-        },
-        "description": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)"
+        }
     },
     "bike_cafe": {
+        "description": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc.",
         "name": "Café vélo",
         "presets": {
             "0": {
@@ -632,23 +633,15 @@
                 }
             },
             "render": "Café Vélo"
-        },
-        "description": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc."
+        }
     },
     "bike_cleaning": {
+        "description": "Une couche affichant les lieux où l'on peut nettoyer son vélo",
         "name": "Service de nettoyage de vélo",
         "presets": {
             "0": {
                 "title": "une service de nettoyage de vélo"
             }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Service de nettoyage de vélo <i>{name}</i>"
-                }
-            },
-            "render": "Service de nettoyage de vélo"
         },
         "tagRenderings": {
             "bike_cleaning-charge": {
@@ -663,28 +656,36 @@
                         "then": "Le service de nettoyage est payant"
                     }
                 },
-                "render": "L’utilisation du service de nettoyage coûte {charge}",
-                "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?"
+                "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
+                "render": "L’utilisation du service de nettoyage coûte {charge}"
             },
             "bike_cleaning-service:bicycle:cleaning:charge": {
                 "mappings": {
-                    "2": {
-                        "then": "Le coût du service de nettoyage n’est pas connu"
-                    },
                     "0": {
                         "then": "Le service de nettoyage est gratuit"
                     },
                     "1": {
                         "then": "Utilisation gratuite"
+                    },
+                    "2": {
+                        "then": "Le coût du service de nettoyage n’est pas connu"
                     }
                 },
                 "question": "Combien coûte le service de nettoyage ?",
                 "render": "Le service de nettoyage coûte {service:bicycle:cleaning:charge}"
             }
         },
-        "description": "Une couche affichant les lieux où l'on peut nettoyer son vélo"
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Service de nettoyage de vélo <i>{name}</i>"
+                }
+            },
+            "render": "Service de nettoyage de vélo"
+        }
     },
     "bike_parking": {
+        "description": "Une couche montrant où stationner son vélo",
         "name": "Parking à vélo",
         "presets": {
             "0": {
@@ -790,10 +791,10 @@
         },
         "title": {
             "render": "Parking à vélo"
-        },
-        "description": "Une couche montrant où stationner son vélo"
+        }
     },
     "bike_repair_station": {
+        "description": "Une couche montrant les pompes à vélo et les centres de réparation",
         "name": "Station velo (réparation, pompe à vélo)",
         "presets": {
             "0": {
@@ -805,11 +806,14 @@
                 "title": "une point de réparation vélo avec pompe"
             },
             "2": {
-                "title": "une point de réparation vélo sans pompe",
-                "description": "Des outils pour réparer les vélos dans l’espace public (sans pompe). Les outils sont sécurisés contre le vol."
+                "description": "Des outils pour réparer les vélos dans l’espace public (sans pompe). Les outils sont sécurisés contre le vol.",
+                "title": "une point de réparation vélo sans pompe"
             }
         },
         "tagRenderings": {
+            "Email maintainer": {
+                "render": "<a href='mailto:{email}?subject=Pompe à vélo cassée&body=Bonjour,%0D%0A%0D%0ACe mail pour vous informer que la pompe à vélo située à https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} est cassée.%0D%0A%0D%0ABien à vous.'>Signaler cette pompe à vélo cassée</a>"
+            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -820,6 +824,26 @@
                     }
                 },
                 "question": "La pompe à vélo fonctionne-t-elle toujours ?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accessible au public"
+                    },
+                    "1": {
+                        "then": "Accessible au public"
+                    },
+                    "2": {
+                        "then": "Réservé aux clients"
+                    },
+                    "3": {
+                        "then": "Pas accessible au public"
+                    },
+                    "4": {
+                        "then": "Pas accessible au public"
+                    }
+                },
+                "question": "Qui est autorisé à utiliser ce centre de réparation ?"
             },
             "bike_repair_station-available-services": {
                 "mappings": {
@@ -914,29 +938,6 @@
                 },
                 "question": "Quelles valves sont compatibles ?",
                 "render": "Cette pompe est compatible avec les valves suivantes : {valves}"
-            },
-            "access": {
-                "mappings": {
-                    "0": {
-                        "then": "Accessible au public"
-                    },
-                    "2": {
-                        "then": "Réservé aux clients"
-                    },
-                    "3": {
-                        "then": "Pas accessible au public"
-                    },
-                    "4": {
-                        "then": "Pas accessible au public"
-                    },
-                    "1": {
-                        "then": "Accessible au public"
-                    }
-                },
-                "question": "Qui est autorisé à utiliser ce centre de réparation ?"
-            },
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Pompe à vélo cassée&body=Bonjour,%0D%0A%0D%0ACe mail pour vous informer que la pompe à vélo située à https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} est cassée.%0D%0A%0D%0ABien à vous.'>Signaler cette pompe à vélo cassée</a>"
             }
         },
         "title": {
@@ -958,8 +959,7 @@
                 }
             },
             "render": "Point station velo avec pompe"
-        },
-        "description": "Une couche montrant les pompes à vélo et les centres de réparation"
+        }
     },
     "bike_shop": {
         "description": "Un magasin vendant spécifiquement des vélos ou des objets en lien",
@@ -1065,16 +1065,19 @@
                 },
                 "question": "Est-ce qu'il y a des outils pour réparer son vélo dans ce magasin ?"
             },
+            "bike_shop-access": {
+                "render": "Seulement accessible à {access}"
+            },
             "bike_shop-email": {
                 "question": "Quelle est l'adresse électronique de {name} ?"
             },
             "bike_shop-is-bicycle_shop": {
-                "render": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo",
                 "mappings": {
                     "0": {
                         "then": "Ce commerce est spécialisé dans la location"
                     }
-                }
+                },
+                "render": "Ce magasin est spécialisé dans la vente de {shop} et a des activités liées au vélo"
             },
             "bike_shop-name": {
                 "question": "Quel est le nom du magasin de vélos ?",
@@ -1085,15 +1088,15 @@
             },
             "bike_shop-website": {
                 "question": "Quel est le site web de {name} ?"
-            },
-            "bike_shop-access": {
-                "render": "Seulement accessible à {access}"
             }
         },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Magasin de sport <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Magasin"
                 },
                 "2": {
                     "then": "Location de vélo <i>{name}</i>"
@@ -1106,15 +1109,13 @@
                 },
                 "5": {
                     "then": "Magasin ou réparateur de vélo <i>{name}</i>"
-                },
-                "1": {
-                    "then": "Magasin"
                 }
             },
             "render": "Magasin ou réparateur de vélo"
         }
     },
     "bike_themed_object": {
+        "description": "Une couche sur le thème des vélos mais qui ne correspondent à aucune autre couche",
         "name": "Objet cycliste",
         "title": {
             "mappings": {
@@ -1123,18 +1124,17 @@
                 }
             },
             "render": "Objet cycliste"
-        },
-        "description": "Une couche sur le thème des vélos mais qui ne correspondent à aucune autre couche"
+        }
     },
     "binocular": {
+        "description": "Jumelles",
+        "name": "Jumelles",
         "presets": {
             "0": {
                 "description": "Une longue-vue ou une paire de jumelles montée sur un poteau, disponible au public pour scruter les environs. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
                 "title": "des jumelles"
             }
         },
-        "name": "Jumelles",
-        "description": "Jumelles",
         "tagRenderings": {
             "binocular-charge": {
                 "mappings": {
@@ -1155,6 +1155,7 @@
         }
     },
     "birdhide": {
+        "description": "Un observatoire ornithologique",
         "filter": {
             "0": {
                 "options": {
@@ -1171,6 +1172,7 @@
                 }
             }
         },
+        "name": "Lieu pour observer des oiseaux",
         "presets": {
             "0": {
                 "description": "Un abris couvert pour observer les oiseaux confortablement",
@@ -1181,46 +1183,23 @@
                 "title": "un camouflage d’observation ornithologique"
             }
         },
-        "title": {
-            "mappings": {
-                "2": {
-                    "then": "Camouflage d’observation ornithologique {name}"
-                },
-                "1": {
-                    "then": "Observatoire ornithologique {name}"
-                }
-            },
-            "render": "Lieu d’observation d’oiseaux"
-        },
         "tagRenderings": {
             "bird-hide-shelter-or-wall": {
                 "mappings": {
                     "0": {
                         "then": "Camouflage d’observation ornithologique"
                     },
-                    "2": {
-                        "then": "Tour d’observation ornithologique"
-                    },
                     "1": {
                         "then": "Observatoire ornithologique"
+                    },
+                    "2": {
+                        "then": "Tour d’observation ornithologique"
                     },
                     "3": {
                         "then": "Abris d’observation ornithologique"
                     }
                 },
                 "question": "S’agit-il d’un camouflage ou d’un abris d’observation ?"
-            },
-            "birdhide-operator": {
-                "mappings": {
-                    "1": {
-                        "then": "Opéré par l’Agence Nature et Forêts"
-                    },
-                    "0": {
-                        "then": "Opéré par Natuurpunt"
-                    }
-                },
-                "question": "Qui opère cet observatoire ornithologique ?",
-                "render": "Opéré par {operator}"
             },
             "bird-hide-wheelchair": {
                 "mappings": {
@@ -1238,12 +1217,41 @@
                     }
                 },
                 "question": "Cet observatoire ornithologique est-il accessible en chaise roulante ?"
+            },
+            "birdhide-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Opéré par Natuurpunt"
+                    },
+                    "1": {
+                        "then": "Opéré par l’Agence Nature et Forêts"
+                    }
+                },
+                "question": "Qui opère cet observatoire ornithologique ?",
+                "render": "Opéré par {operator}"
             }
         },
-        "description": "Un observatoire ornithologique",
-        "name": "Lieu pour observer des oiseaux"
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Observatoire ornithologique {name}"
+                },
+                "2": {
+                    "then": "Camouflage d’observation ornithologique {name}"
+                }
+            },
+            "render": "Lieu d’observation d’oiseaux"
+        }
     },
     "cafe_pub": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} est définitivement fermé"
+                }
+            }
+        },
+        "description": "Une couche montrants les cafés et pubs où l’on peut prendre un verre. Cette couche pose des questions y afférentes.",
         "filter": {
             "0": {
                 "options": {
@@ -1254,11 +1262,25 @@
             }
         },
         "name": "Cafés et pubs",
-        "tagRenderings": {
-            "Name": {
-                "question": "Quel est le nom de ce pub ?",
-                "render": "Ce pub se nomme {name}"
+        "presets": {
+            "0": {
+                "description": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée",
+                "title": "un pub"
             },
+            "1": {
+                "description": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière",
+                "title": "un bar"
+            },
+            "2": {
+                "description": "Un <b>café</b> pour prendre un thé, un café ou une boisson alcoolisée dans un environnement calme",
+                "title": "un café"
+            },
+            "3": {
+                "description": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une une boisson (alcoolisée)",
+                "title": "une boîte de nuit ou discothèque"
+            }
+        },
+        "tagRenderings": {
             "Classification": {
                 "mappings": {
                     "0": {
@@ -1268,32 +1290,10 @@
                         "then": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière"
                     }
                 }
-            }
-        },
-        "description": "Une couche montrants les cafés et pubs où l’on peut prendre un verre. Cette couche pose des questions y afférentes.",
-        "presets": {
-            "0": {
-                "title": "un pub",
-                "description": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée"
             },
-            "2": {
-                "title": "un café",
-                "description": "Un <b>café</b> pour prendre un thé, un café ou une boisson alcoolisée dans un environnement calme"
-            },
-            "1": {
-                "description": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière",
-                "title": "un bar"
-            },
-            "3": {
-                "description": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une une boisson (alcoolisée)",
-                "title": "une boîte de nuit ou discothèque"
-            }
-        },
-        "deletion": {
-            "extraDeleteReasons": {
-                "0": {
-                    "explanation": "{title()} est définitivement fermé"
-                }
+            "Name": {
+                "question": "Quel est le nom de ce pub ?",
+                "render": "Ce pub se nomme {name}"
             }
         }
     },

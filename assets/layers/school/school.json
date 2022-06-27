@@ -55,7 +55,7 @@
       "question": {
         "en": "How much students can at most enroll in this school?",
         "de": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
-        "nl": "Hoeveel studenten kunnen er les volgen in deze school?",
+        "nl": "Ten hoogste hoeveel studenten kunnen er les volgen in deze school?",
         "fr": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?"
       },
       "render": {
@@ -103,34 +103,34 @@
             "en": "This is a secondary school which offers all grades",
             "nl": "Dit is een middelbare school die alle schooljaren aanbiedt (dus van het eerste tot en met het zesde middelbaar)",
             "de": "Dies ist eine weiterführende Schule, die alle Jahrgangsstufen anbietet",
-            "fr": "Il s'agit d'une école secondaire qui offre toutes les années"
+            "fr": "Il s'agit d'une école secondaire qui offre toutes les classes"
           }
         },
         {
           "if": "school=lower_secondary",
           "then": {
-            "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>first and second</b> grade",
-            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>",
-            "de": "Dies ist eine weiterführende Schule, die <b>nicht</b> alle Klassenstufen hat, aber <b>erste und zweite</b> Klasse anbietet",
-            "fr": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
+            "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade",
+            "nl": "Dit is een middenlbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>",
+            "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>erste und zweite</b> Klasse anbietet",
+            "fr": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
           }
         },
         {
           "if": "school=middle_secondary",
           "then": {
-            "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>third and fourth</b> grade",
-            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>",
-            "de": "Dies ist eine weiterführende Schule, die <b>nicht</b> alle Klassenstufen hat, aber <b>dritte und vierte</b> Klasse anbietet",
-            "fr": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
+            "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade",
+            "nl": "Dit is een middenlbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>",
+            "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>dritte und vierte</b> Klasse anbietet",
+            "fr": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
           }
         },
         {
           "if": "school=upper_secondary",
           "then": {
-            "en": "This is a secondary school which does <b>not</b> have all grades, but offers <b>fifth and sixth</b> grade",
-            "nl": "Dit is een middenlbare school die <b>niet</b> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>",
-            "de": "Dies ist eine weiterführende Schule, die <b>nicht</b> alle Klassenstufen hat, aber <b>fünfte und sechste</b> Klasse anbietet",
-            "fr": "Il s'agit d'une école secondaire qui n'a <b>pas</b> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
+            "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade",
+            "nl": "Dit is een middenlbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>",
+            "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>fünfte und sechste</b> Klasse anbietet",
+            "fr": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
           }
         },
         {

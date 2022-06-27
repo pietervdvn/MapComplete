@@ -62,7 +62,7 @@
       },
       "question": {
         "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
-        "fr": "Quel est la puissance générée par cette éolienne ?",
+        "fr": "Quel est la puissance générée par cette éolienne (p.ex. 2,3 MW) ?",
         "it": "Quant’è la potenza generata da questa pala eolica? (ad es. 2.3 MW)",
         "zh_Hant": "這個風機的電力輸出是多少？(例如 2.3 MW)",
         "id": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",

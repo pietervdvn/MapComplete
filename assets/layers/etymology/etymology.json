@@ -30,7 +30,7 @@
     "nl": "Alle lagen met een gelinkt etymology",
     "de": "Alle Objekte, die eine bekannte Namensherkunft haben",
     "hu": "Minden olyan objektum, amelynél ismert a nevének az eredete",
-    "fr": "Tous les objets dont le nom ont une étymologie connue"
+    "fr": "Tous les objets dont l’étymologie est connue"
   },
   "calculatedTags": [
     "_same_name_ids=feat.closestn('*', 250, undefined, 2500)?.filter(f => f.feat.properties.name === feat.properties.name)?.map(f => f.feat.properties.id)??[]"

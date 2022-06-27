@@ -207,7 +207,7 @@ This is rendered with  Openingsuren: {opening_hours_table()}
 
 
 
-  - 24/7 toegankelijk corresponds with  
+  - Always accessible corresponds with  
   - This option cannot be chosen as answer
   - Always accessible corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
 

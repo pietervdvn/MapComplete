@@ -91,7 +91,8 @@
           "en": "Winkel",
           "de": "Geschäfte",
           "nl": "Shop",
-          "es": "Winkel"
+          "es": "Winkel",
+          "fr": "Magasin"
         }
       },
       {
@@ -243,7 +244,8 @@
             "en": "This business focuses on rental",
             "de": "Dieses Geschäft konzentriert sich auf die Vermietung",
             "da": "Denne virksomhed fokuserer på udlejning",
-            "es": "Este negocio se centra en el alquiler"
+            "es": "Este negocio se centra en el alquiler",
+            "fr": "Ce commerce est spécialisé dans la location"
           }
         }
       ]
@@ -350,7 +352,8 @@
         "en": "Only accessible to {access}",
         "nl": "Enkel voor {access}",
         "de": "Nur zugänglich für {access}",
-        "es": "Solo accesible a {access}"
+        "es": "Solo accesible a {access}",
+        "fr": "Seulement accessible à {access}"
       },
       "freeform": {
         "key": "access"

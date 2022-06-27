@@ -120,7 +120,7 @@
     {
       "render": {
         "en": "{seats} seats",
-        "de": "{seats} Sitzplätze",
+        "de": "Die Sitzbank hat {seats} Sitzplätze",
         "fr": "{seats} places",
         "nl": "{seats} zitplaatsen",
         "es": "{seats} asientos",

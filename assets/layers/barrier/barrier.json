@@ -352,7 +352,7 @@
         "en": "Maximum width: {maxwidth:physical} m",
         "nl": "Maximumbreedte: {maxwidth:physical} m",
         "de": "Maximale Durchfahrtsbreite: {maxwidth:physical} m",
-        "fr": "Largeur maximale: {maxwidth:physical} m",
+        "fr": "Largeur maximale : {maxwidth:physical} m",
         "hu": "Legnagyobb szélesség: {maxwidth:physical} m",
         "es": "Anchura máxima: {maxwidth:physical} m",
         "da": "Maksimal bredde: {maxwidth:physical} m"

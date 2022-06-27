@@ -323,7 +323,8 @@
         "nl": "Wie kan dit herstelpunt gebruiken?",
         "de": "Wer darf die Reparaturstation nutzen?",
         "es": "¿A quién se le permite utilizar esta estación de reparación?",
-        "da": "Hvem må bruge denne reparationsstation?"
+        "da": "Hvem må bruge denne reparationsstation?",
+        "fr": "Qui est autorisé à utiliser ce centre de réparation ?"
       },
       "mappings": [
         {
@@ -333,7 +334,8 @@
             "nl": "Publiek toegankelijk",
             "de": "Die Reparaturstation darf öffentlich genutzt werden",
             "es": "Accesible públicamente",
-            "da": "Offentligt tilgængelig"
+            "da": "Offentligt tilgængelig",
+            "fr": "Accessible au public"
           }
         },
         {
@@ -343,7 +345,8 @@
             "nl": "Publiek toegankelijk",
             "de": "Öffentlich zugänglich",
             "es": "Accesible públicamente",
-            "da": "Offentligt tilgængelig"
+            "da": "Offentligt tilgængelig",
+            "fr": "Accessible au public"
           },
           "hideInAnswer": true
         },
@@ -354,7 +357,8 @@
             "nl": "Enkel voor klanten van de bijhorende zaak",
             "de": "Die Reparaturstation darf nur von Kunden genutzt werden",
             "es": "Solo para clientes",
-            "da": "Kun for kunder"
+            "da": "Kun for kunder",
+            "fr": "Réservé aux clients"
           }
         },
         {
@@ -364,7 +368,8 @@
             "nl": "Niet publiek toegankelijk",
             "de": "Die Reparaturstation darf nicht öffentlich genutzt werden",
             "es": "No accesible para el público general",
-            "da": "Ikke tilgængelig for offentligheden"
+            "da": "Ikke tilgængelig for offentligheden",
+            "fr": "Pas accessible au public"
           },
           "icon": "./assets/svg/invalid.svg"
         },
@@ -375,7 +380,8 @@
             "nl": "Niet publiek toegankelijk",
             "de": "Nicht für die Allgemeinheit zugänglich",
             "es": "No accesible para el público general",
-            "da": "Ikke tilgængelig for offentligheden"
+            "da": "Ikke tilgængelig for offentligheden",
+            "fr": "Pas accessible au public"
           },
           "icon": "./assets/svg/invalid.svg",
           "hideInAnswer": true
@@ -555,7 +561,8 @@
         "nl": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id}.%0D%0A%0D%0AMet vriendelijke groeten.'>Rapporteer deze fietspomp als kapot</a>",
         "de": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,%0D%0A%0D%0AMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>",
         "da": "<a href='mailto:{email}?subject=Cykelpumpe i stykker&body=Hej,%0D%0A%0D%0D%0Med denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} er i stykker.%0D%0A%0D%0D%0A Med venlig hilsen'>Anmeld denne cykelpumpe som værende i stykker</a>",
-        "es": "<a href='mailto:{email}?subject=Bomba para bicicletas rota&body=Hola,%0D%0A%0D%0ACon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0AUn saludo'>Reportar esta bomba para bicicletas como rota</a>"
+        "es": "<a href='mailto:{email}?subject=Bomba para bicicletas rota&body=Hola,%0D%0A%0D%0ACon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0AUn saludo'>Reportar esta bomba para bicicletas como rota</a>",
+        "fr": "<a href='mailto:{email}?subject=Pompe à vélo cassée&body=Bonjour,%0D%0A%0D%0ACe mail pour vous informer que la pompe à vélo située à https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} est cassée.%0D%0A%0D%0ABien à vous.'>Signaler cette pompe à vélo cassée</a>"
       },
       "id": "Email maintainer"
     },
@@ -845,7 +852,8 @@
         "nl": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
         "de": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert.",
         "es": "Herramientas para reparar tu bici en el espacio público (sin bomba).Las herramientas están aseguradas contra el robo.",
-        "da": "Værktøj til at reparere din cykel i det offentlige rum (uden pumpe). Værktøjet er sikret mod tyveri."
+        "da": "Værktøj til at reparere din cykel i det offentlige rum (uden pumpe). Værktøjet er sikret mod tyveri.",
+        "fr": "Des outils pour réparer les vélos dans l’espace public (sans pompe). Les outils sont sécurisés contre le vol."
       }
     }
   ],
@@ -940,6 +948,7 @@
     "nl": "Deze laag toont fietspompen en herstelpunten voor fietsen",
     "de": "Eine Ebene mit Fahrradpumpen und Werkzeugständern für die Fahrradreparatur",
     "es": "Una capa que muestra bombas de bicicletas y puestos de herramientas de reparación de bicicletas",
-    "da": "Et lag med cykelpumper og cykelreværktøjsstativer"
+    "da": "Et lag med cykelpumper og cykelreværktøjsstativer",
+    "fr": "Une couche montrant les pompes à vélo et les centres de réparation"
   }
 }

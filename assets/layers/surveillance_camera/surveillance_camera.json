@@ -170,7 +170,7 @@
       "question": {
         "en": "What kind of surveillance is this camera?",
         "nl": "Wat soort bewaking wordt hier uitgevoerd?",
-        "fr": "Quel genre de surveillance est cette caméra?",
+        "fr": "De quel genre de surveillance cette caméra est-elle ?",
         "it": "Che cosa sorveglia questa videocamera?",
         "de": "Was überwacht diese Kamera?"
       },
@@ -200,7 +200,7 @@
             "nl": "Een buitenruimte met privaat karakter (zoals een privé-oprit, een parking, tankstation, …)",
             "fr": "Une zone extérieure, mais privée, est surveillée (par exemple, un parking, une station-service, une cour, une entrée, une allée privée…)",
             "it": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)",
-            "de": "Die Kamera überwacht einen privaten Außenbereich, z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …"
+            "de": "Die Kamera überwacht einen privaten Außenbereich (z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …)"
           }
         },
         {
