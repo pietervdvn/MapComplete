@@ -1,0 +1,541 @@
+{
+  "version": "0.6",
+  "generator": "CGImap 0.8.6 (4093050 spike-06.openstreetmap.org)",
+  "copyright": "OpenStreetMap and contributors",
+  "attribution": "http://www.openstreetmap.org/copyright",
+  "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+  "elements": [
+    {
+      "type": "node",
+      "id": 462256362,
+      "lat": 50.7335751,
+      "lon": 4.2461832,
+      "timestamp": "2016-02-13T21:48:00Z",
+      "version": 2,
+      "changeset": 37195114,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 462256364,
+      "lat": 50.7342629,
+      "lon": 4.2448867,
+      "timestamp": "2009-08-12T14:01:10Z",
+      "version": 1,
+      "changeset": 2118519,
+      "user": "moyogo",
+      "uid": 246
+    },
+    {
+      "type": "node",
+      "id": 462256365,
+      "lat": 50.7346010,
+      "lon": 4.2453546,
+      "timestamp": "2017-08-04T11:41:21Z",
+      "version": 2,
+      "changeset": 50836168,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 462256368,
+      "lat": 50.7349687,
+      "lon": 4.2462398,
+      "timestamp": "2019-12-23T19:13:34Z",
+      "version": 3,
+      "changeset": 78787003,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "node",
+      "id": 462256369,
+      "lat": 50.7343389,
+      "lon": 4.2471698,
+      "timestamp": "2009-08-12T14:01:11Z",
+      "version": 1,
+      "changeset": 2118519,
+      "user": "moyogo",
+      "uid": 246
+    },
+    {
+      "type": "node",
+      "id": 517528078,
+      "lat": 50.7346601,
+      "lon": 4.2435494,
+      "timestamp": "2022-02-07T15:04:10Z",
+      "version": 6,
+      "changeset": 117123668,
+      "user": "joost schouppe",
+      "uid": 67832,
+      "tags": {
+        "access": "permissive",
+        "barrier": "gate"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3066586426,
+      "lat": 50.7346021,
+      "lon": 4.2450236,
+      "timestamp": "2018-10-29T16:52:19Z",
+      "version": 3,
+      "changeset": 63984612,
+      "user": "joost schouppe",
+      "uid": 67832
+    },
+    {
+      "type": "node",
+      "id": 3066586428,
+      "lat": 50.7353737,
+      "lon": 4.2444209,
+      "timestamp": "2017-05-08T09:06:40Z",
+      "version": 2,
+      "changeset": 48495724,
+      "user": "joost schouppe",
+      "uid": 67832
+    },
+    {
+      "type": "node",
+      "id": 3066586429,
+      "lat": 50.7346890,
+      "lon": 4.2435905,
+      "timestamp": "2017-08-15T20:52:40Z",
+      "version": 3,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 3066586430,
+      "lat": 50.7350821,
+      "lon": 4.2447110,
+      "timestamp": "2014-09-08T12:50:29Z",
+      "version": 1,
+      "changeset": 25306743,
+      "user": "stof013",
+      "uid": 2319207
+    },
+    {
+      "type": "node",
+      "id": 3066586431,
+      "lat": 50.7334942,
+      "lon": 4.2438957,
+      "timestamp": "2017-08-15T20:52:40Z",
+      "version": 2,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 3066586432,
+      "lat": 50.7345294,
+      "lon": 4.2450107,
+      "timestamp": "2017-08-15T20:52:40Z",
+      "version": 2,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 4015480932,
+      "lat": 50.7342750,
+      "lon": 4.2430948,
+      "timestamp": "2017-08-15T20:52:40Z",
+      "version": 2,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 4015480947,
+      "lat": 50.7340052,
+      "lon": 4.2427978,
+      "timestamp": "2017-08-15T20:52:40Z",
+      "version": 2,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 4320737081,
+      "lat": 50.7342069,
+      "lon": 4.2448990,
+      "timestamp": "2016-07-26T08:05:36Z",
+      "version": 1,
+      "changeset": 41031056,
+      "user": "joost schouppe",
+      "uid": 67832
+    },
+    {
+      "type": "node",
+      "id": 4841290319,
+      "lat": 50.7351058,
+      "lon": 4.2440602,
+      "timestamp": "2017-05-08T09:06:40Z",
+      "version": 1,
+      "changeset": 48495724,
+      "user": "joost schouppe",
+      "uid": 67832
+    },
+    {
+      "type": "node",
+      "id": 4841294824,
+      "lat": 50.7352034,
+      "lon": 4.2439986,
+      "timestamp": "2017-05-08T09:06:40Z",
+      "version": 1,
+      "changeset": 48495724,
+      "user": "joost schouppe",
+      "uid": 67832
+    },
+    {
+      "type": "node",
+      "id": 4841294826,
+      "lat": 50.7351755,
+      "lon": 4.2440303,
+      "timestamp": "2017-05-08T09:06:40Z",
+      "version": 1,
+      "changeset": 48495724,
+      "user": "joost schouppe",
+      "uid": 67832
+    },
+    {
+      "type": "node",
+      "id": 5011893663,
+      "lat": 50.7344768,
+      "lon": 4.2469541,
+      "timestamp": "2019-12-23T19:13:34Z",
+      "version": 2,
+      "changeset": 78787003,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "node",
+      "id": 5011893664,
+      "lat": 50.7347511,
+      "lon": 4.2465714,
+      "timestamp": "2019-12-23T19:13:34Z",
+      "version": 2,
+      "changeset": 78787003,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "node",
+      "id": 5014033509,
+      "lat": 50.7345103,
+      "lon": 4.2451895,
+      "timestamp": "2017-08-04T11:41:15Z",
+      "version": 1,
+      "changeset": 50836168,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 5015425945,
+      "lat": 50.7337814,
+      "lon": 4.2464497,
+      "timestamp": "2017-08-04T20:53:12Z",
+      "version": 1,
+      "changeset": 50849981,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 5015425946,
+      "lat": 50.7336785,
+      "lon": 4.2463167,
+      "timestamp": "2017-08-04T20:53:12Z",
+      "version": 1,
+      "changeset": 50849981,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 5015425948,
+      "lat": 50.7337021,
+      "lon": 4.2463473,
+      "timestamp": "2017-08-04T20:53:12Z",
+      "version": 1,
+      "changeset": 50849981,
+      "user": "bosboer",
+      "uid": 3624994,
+      "tags": {
+        "barrier": "gate"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5037674785,
+      "lat": 50.7338391,
+      "lon": 4.2430556,
+      "timestamp": "2017-08-15T20:52:34Z",
+      "version": 1,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 5037674786,
+      "lat": 50.7342925,
+      "lon": 4.2447379,
+      "timestamp": "2017-08-15T20:52:34Z",
+      "version": 1,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 5037674787,
+      "lat": 50.7338922,
+      "lon": 4.2442806,
+      "timestamp": "2017-08-15T20:52:34Z",
+      "version": 1,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 5037674788,
+      "lat": 50.7336368,
+      "lon": 4.2440204,
+      "timestamp": "2017-08-15T20:52:34Z",
+      "version": 1,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 5037674789,
+      "lat": 50.7346256,
+      "lon": 4.2435038,
+      "timestamp": "2020-02-27T07:57:36Z",
+      "version": 2,
+      "changeset": 81537020,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "node",
+      "id": 5037674794,
+      "lat": 50.7346026,
+      "lon": 4.2434769,
+      "timestamp": "2020-02-27T07:57:36Z",
+      "version": 2,
+      "changeset": 81537020,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "node",
+      "id": 5037674974,
+      "lat": 50.7350132,
+      "lon": 4.2439558,
+      "timestamp": "2017-08-15T20:52:35Z",
+      "version": 1,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 5037674975,
+      "lat": 50.7350326,
+      "lon": 4.2439776,
+      "timestamp": "2017-08-15T20:52:35Z",
+      "version": 1,
+      "changeset": 51152392,
+      "user": "bosboer",
+      "uid": 3624994
+    },
+    {
+      "type": "node",
+      "id": 5037675010,
+      "lat": 50.7348961,
+      "lon": 4.2438246,
+      "timestamp": "2020-02-27T07:57:36Z",
+      "version": 2,
+      "changeset": 81537020,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "node",
+      "id": 5037675013,
+      "lat": 50.7348600,
+      "lon": 4.2437848,
+      "timestamp": "2020-02-27T07:57:36Z",
+      "version": 2,
+      "changeset": 81537020,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "node",
+      "id": 5037675044,
+      "lat": 50.7347455,
+      "lon": 4.2436555,
+      "timestamp": "2020-02-27T07:57:36Z",
+      "version": 2,
+      "changeset": 81537020,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "node",
+      "id": 5037675083,
+      "lat": 50.7340119,
+      "lon": 4.2444173,
+      "timestamp": "2022-02-07T15:04:10Z",
+      "version": 2,
+      "changeset": 117123668,
+      "user": "joost schouppe",
+      "uid": 67832,
+      "tags": {
+        "access": "permissive",
+        "barrier": "gate"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5178247758,
+      "lat": 50.7347019,
+      "lon": 4.2449643,
+      "timestamp": "2017-10-20T13:51:19Z",
+      "version": 1,
+      "changeset": 53098887,
+      "user": "joost schouppe",
+      "uid": 67832
+    },
+    {
+      "type": "node",
+      "id": 7080474254,
+      "lat": 50.7346199,
+      "lon": 4.2467727,
+      "timestamp": "2019-12-23T19:13:34Z",
+      "version": 1,
+      "changeset": 78787003,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "node",
+      "id": 7080474262,
+      "lat": 50.7346116,
+      "lon": 4.2467571,
+      "timestamp": "2019-12-23T19:13:34Z",
+      "version": 1,
+      "changeset": 78787003,
+      "user": "joost schouppe import",
+      "uid": 4212780
+    },
+    {
+      "type": "way",
+      "id": 38912150,
+      "timestamp": "2019-12-23T19:13:34Z",
+      "version": 7,
+      "changeset": 78787003,
+      "user": "joost schouppe import",
+      "uid": 4212780,
+      "nodes": [
+        462256362,
+        4320737081,
+        462256364,
+        5014033509,
+        462256365,
+        462256368,
+        5011893664,
+        7080474254,
+        7080474262,
+        5011893663,
+        462256369,
+        5015425945,
+        5015425948,
+        5015425946,
+        462256362
+      ]
+    },
+    {
+      "type": "way",
+      "id": 302401170,
+      "timestamp": "2020-02-27T07:57:36Z",
+      "version": 9,
+      "changeset": 81537020,
+      "user": "joost schouppe import",
+      "uid": 4212780,
+      "nodes": [
+        3066586428,
+        4841294824,
+        4841294826,
+        4841290319,
+        5037674975,
+        5037674974,
+        5037675010,
+        5037675013,
+        5037675044,
+        3066586429,
+        517528078,
+        5037674789,
+        5037674794,
+        4015480932,
+        4015480947,
+        5037674785,
+        3066586431,
+        5037674788,
+        5037674787,
+        5037675083,
+        5037674786,
+        3066586432,
+        3066586426,
+        5178247758,
+        3066586430,
+        3066586428
+      ]
+    },
+    {
+      "type": "relation",
+      "id": 5759328,
+      "timestamp": "2022-06-10T00:46:55Z",
+      "version": 6,
+      "changeset": 122187206,
+      "user": "Pieter Vander Vennet",
+      "uid": 3818858,
+      "members": [
+        {
+          "type": "way",
+          "ref": 302401170,
+          "role": "outer"
+        },
+        {
+          "type": "way",
+          "ref": 38912150,
+          "role": "outer"
+        }
+      ],
+      "tags": {
+        "amenity": "school",
+        "isced:2011:level": "vocational_lower_secondary;vocational_upper_secondary",
+        "name": "Koninklijk Technisch Atheneum Pro Technica",
+        "school:gender": "mixed",
+        "type": "multipolygon",
+        "website": "http://ktahalle.be/"
+      }
+    }
+  ]
+}
