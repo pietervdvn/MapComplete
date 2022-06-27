@@ -4084,7 +4084,7 @@
                 "question": "Um welche Art von Einrichtung handelt es sich?"
             },
             "name": {
-                "render": "Diese Einrichtung hat den Namen <b>{Name}</b>",
+                "render": "Diese Einrichtung hat den Namen <b>{name}</b>",
                 "question": "Wie lautet der Name dieser Einrichtung?"
             }
         },
