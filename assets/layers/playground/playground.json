@@ -365,7 +365,7 @@
           }
         },
         {
-          "if": "leisure=playground",
+          "if": "leisure=schoolyard",
           "then": {
             "en": "This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public",
             "nl": "Dit is een schoolplein - een zone waar de leerlingen kunnen spelen tijdens de pauze. Dit schoolplein is niet toegankelijk voor het publiek",

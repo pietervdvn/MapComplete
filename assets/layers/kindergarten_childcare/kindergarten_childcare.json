@@ -73,8 +73,12 @@
     },
     {
       "id": "name",
-      "question": {"en": "What is the name of this facility?"},
-      "render": {"en": "This facility is named <b>{name}</b>"},
+      "question": {
+        "en": "What is the name of this facility?"
+      },
+      "render": {
+        "en": "This facility is named <b>{name}</b>"
+      },
       "freeform": {
         "key": "name"
       }
