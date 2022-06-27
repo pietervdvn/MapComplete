@@ -199,7 +199,7 @@
             },
             "MaxWidth": {
                 "question": "Quelle est la largeur du passage ?",
-                "render": "Largeur maximale : {maxwidth :physical} m"
+                "render": "Largeur maximale : {maxwidth:physical} m"
             },
             "Overlap (cyclebarrier)": {
                 "question": "Quel est le chevauchement des barrières ?",
