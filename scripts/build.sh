@@ -50,7 +50,7 @@ fi
 echo -e "\n\n   Building theme pages"
 echo -e "  ======================\n\n"
 
-for file in $(ls index_*.ts)
+for file in index_*.ts
 do
     theme=${file:6:-3}
     echo -e "\n\n  $theme"
