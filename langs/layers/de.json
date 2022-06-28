@@ -4082,6 +4082,10 @@
                     }
                 },
                 "question": "Um welche Art von Einrichtung handelt es sich?"
+            },
+            "name": {
+                "render": "Diese Einrichtung hat den Namen <b>{name}</b>",
+                "question": "Wie lautet der Name dieser Einrichtung?"
             }
         },
         "title": {
@@ -5280,6 +5284,9 @@
             "sport_pitch-opening_hours": {
                 "mappings": {
                     "1": {
+                        "then": "Immer zugänglich"
+                    },
+                    "0": {
                         "then": "Immer zugänglich"
                     }
                 },
