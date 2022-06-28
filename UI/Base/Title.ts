@@ -20,18 +20,18 @@ export default class Title extends BaseUIElement {
         }
         this.level = level;
 
-        let innerText: string = undefined;
+        let text: string = undefined;
         if (typeof embedded === "string") {
-            innerText = embedded
+            text = embedded
         } else if (embedded instanceof FixedUiElement) {
-            innerText = embedded.content
+            text = embedded.content
         } else {
             if (!Utils.runningFromConsole) {
-                innerText = embedded.ConstructElement()?.innerText
+                text = embedded.ConstructElement()?.textContent
             }
         }
 
-        this.id = innerText?.replace(/ /g, '-')
+        this.id = text?.replace(/ /g, '-')
             ?.replace(/[?#.;:/]/, "")
             ?.toLowerCase() ?? ""
         this.SetClass(Title.defaultClassesPerLevel[level] ?? "")

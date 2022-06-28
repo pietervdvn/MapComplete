@@ -156,8 +156,8 @@ export default class ShareScreen extends Combine {
         ).onClick(async () => {
 
             const shareData = {
-                title: Translations.W(layout.title)?.ConstructElement().innerText ?? "",
-                text: Translations.W(layout.description)?.ConstructElement().innerText ?? "",
+                title: Translations.W(layout.title)?.ConstructElement().textContent ?? "",
+                text: Translations.W(layout.description)?.ConstructElement().textContent ?? "",
                 url: url.data,
             }
 

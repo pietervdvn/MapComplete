@@ -112,6 +112,15 @@ export class Translation extends BaseUIElement {
         return "";
     }
 
+    /**
+     * 
+     * const tr = new Translation({"en":"English", nl: "Nederlands"})
+     * Locale.language.setData("en")
+     * const html = tr.InnerConstructElement()
+     * html.innerHTML // => "English"
+     * Locale.language.setData("nl")
+     * html.innerHTML // => "Nederlands"
+     */
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         const self = this
@@ -121,7 +130,7 @@ export class Translation extends BaseUIElement {
             if (self.isDestroyed) {
                 return true
             }
-            el.innerHTML = this.txt
+            el.innerHTML = self.txt
         })
 
         if (self.translations["*"] !== undefined || self.context === undefined || self.context?.indexOf(":") < 0) {

@@ -33,7 +33,7 @@ export default class TableOfContents extends Combine {
             } else if (Utils.runningFromConsole) {
                 content = new FixedUiElement(title.AsMarkdown())
             } else if (title["title"] !== undefined) {
-                content = new FixedUiElement(title.title.ConstructElement().innerText)
+                content = new FixedUiElement(title.title.ConstructElement().textContent)
             } else {
                 console.log("Not generating a title for ", title)
                 continue

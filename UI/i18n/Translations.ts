@@ -12,7 +12,7 @@ export default class Translations {
         throw "Translations is static. If you want to intitialize a new translation, use the singular form"
     }
 
-    public static W(s: string | BaseUIElement): BaseUIElement {
+    public static W(s: string | number | BaseUIElement): BaseUIElement {
         if (typeof (s) === "string") {
             return new FixedUiElement(s);
         }

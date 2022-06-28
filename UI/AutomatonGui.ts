@@ -174,7 +174,7 @@ class AutomationPanel extends Combine {
                         const feature = ffs.feature
                         const renderingTr = targetAction.GetRenderValue(feature.properties)
                         const rendering = renderingTr.txt
-                        log.push("<a href='https://openstreetmap.org/" + feature.properties.id + "' target='_blank'>" + feature.properties.id + "</a>: " + new SubstitutedTranslation(renderingTr, new UIEventSource<any>(feature.properties), undefined).ConstructElement().innerText)
+                        log.push("<a href='https://openstreetmap.org/" + feature.properties.id + "' target='_blank'>" + feature.properties.id + "</a>: " + new SubstitutedTranslation(renderingTr, new UIEventSource<any>(feature.properties), undefined).ConstructElement().textContent)
                         const actions = Utils.NoNull(SubstitutedTranslation.ExtractSpecialComponents(rendering)
                             .map(obj => obj.special))
                         for (const action of actions) {

@@ -29,7 +29,7 @@ export class TextField extends InputElement<string> {
         this._rawValue = new UIEventSource<string>("")
         this._isValid = options.isValid ?? (_ => true);
 
-        const placeholder = Translations.W(options.placeholder ?? "").ConstructElement().innerText.replace("'", "&#39");
+        const placeholder = Translations.W(options.placeholder ?? "").ConstructElement().textContent.replace("'", "&#39");
 
         this.SetClass("form-text-field")
         let inputEl: HTMLElement

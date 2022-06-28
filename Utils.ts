@@ -310,7 +310,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
                 if (v.InnerConstructElement !== undefined) {
                     console.warn("SubstituteKeys received a BaseUIElement to substitute in - this is probably a bug and will be downcast to a string\nThe key is", key, "\nThe value is", v)
-                    v = (<HTMLElement>v.InnerConstructElement())?.innerText
+                    v = (<HTMLElement>v.InnerConstructElement())?.textContent
                 }
 
                 if (typeof v !== "string") {

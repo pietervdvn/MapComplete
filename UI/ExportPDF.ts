@@ -139,7 +139,7 @@ export default class ExportPDF {
             maxWidth: 125
         })
         const backgroundLayer: BaseLayer = State.state.backgroundLayer.data
-        const attribution = new FixedUiElement(backgroundLayer.layer().getAttribution() ?? backgroundLayer.name).ConstructElement().innerText
+        const attribution = new FixedUiElement(backgroundLayer.layer().getAttribution() ?? backgroundLayer.name).ConstructElement().textContent
         doc.textWithLink(t.attr.txt, 40, 26.5, {
             maxWidth: 125,
             url: "https://www.openstreetmap.org/copyright"
