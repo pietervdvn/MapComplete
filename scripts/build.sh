@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 echo "Starting build"
 # The build script; we build the application step by step as building everything at once takes too much RAM
 # Should be run from the repository root
