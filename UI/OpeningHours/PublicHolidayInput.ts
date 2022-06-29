@@ -26,6 +26,20 @@ export default class PublicHolidayInput extends InputElement<string> {
         return true;
     }
 
+    /**
+     *
+     * // should construct an element
+     * const html = new PublicHolidayInput().InnerConstructElement()
+     * html !== undefined // => true
+     * 
+     * // should construct an element despite having an invalid input
+     * const html = new PublicHolidayInput(new UIEventSource("invalid")).InnerConstructElement()
+     * html !== undefined // => true
+     * 
+     * // should construct an element despite having null as input
+     * const html = new PublicHolidayInput(new UIEventSource(null)).InnerConstructElement()
+     * html !== undefined // => true
+     */
     protected InnerConstructElement(): HTMLElement {
         const dropdown = new DropDown(
             Translations.t.general.opening_hours.open_during_ph.Clone(),
@@ -75,6 +89,9 @@ export default class PublicHolidayInput extends InputElement<string> {
         const value = this._value;
         value.map(ph => OH.ParsePHRule(ph))
             .addCallbackAndRunD(parsed => {
+                if(parsed === null){
+                    return
+                }
                 mode.setData(parsed.mode)
                 startTime.setData(parsed.start)
                 endTime.setData(parsed.end)
