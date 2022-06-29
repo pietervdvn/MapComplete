@@ -20,6 +20,8 @@ import Toggleable, {Accordeon} from "../Base/Toggleable";
 import TableOfContents from "../Base/TableOfContents";
 import {LoginToggle} from "../Popup/LoginButton";
 import {QueryParameters} from "../../Logic/Web/QueryParameters";
+import Lazy from "../Base/Lazy";
+import {Button} from "../Base/Button";
 
 interface NoteProperties {
     "id": number,
@@ -48,9 +50,9 @@ class DownloadStatisticsButton extends SubtleButton {
     constructor(states: NoteState[][]) {
         super(Svg.statistics_svg(), "Download statistics");
         this.onClick(() => {
-            
+
             const st: NoteState[] = [].concat(...states)
-            
+
             const fields = [
                 "id",
                 "status",
@@ -61,19 +63,19 @@ class DownloadStatisticsButton extends SubtleButton {
                 "intro",
                 "...comments"
             ]
-            const values : string[][] = st.map(note => {
-                
-                
-                return [note.props.id+"",
+            const values: string[][] = st.map(note => {
+
+
+                return [note.props.id + "",
                     note.status,
                     note.theme,
                     note.props.date_created?.substr(0, note.props.date_created.length - 3),
                     note.props.closed_at?.substr(0, note.props.closed_at.length - 3) ?? "",
-                     JSON.stringify(  note.intro),
-                    ...note.props.comments.map(c => JSON.stringify(c.user)+": "+JSON.stringify(c.text))
+                    JSON.stringify(note.intro),
+                    ...note.props.comments.map(c => JSON.stringify(c.user) + ": " + JSON.stringify(c.text))
                 ]
             })
-            
+
             Utils.offerContentsAsDownloadableFile(
                 [fields, ...values].map(c => c.join(", ")).join("\n"),
                 "mapcomplete_import_notes_overview.csv",
@@ -182,30 +184,18 @@ class MassAction extends Combine {
 
 class NoteTable extends Combine {
 
+    private static individualActions: [() => BaseUIElement, string][] = [
+        [Svg.not_found_svg, "This feature does not exist"],
+        [Svg.addSmall_svg, "imported"],
+        [Svg.duplicate_svg, "Already mapped"]
+    ]
+
     constructor(noteStates: NoteState[], state?: UserRelatedState) {
         const typicalComment = noteStates[0].props.comments[0].html
 
         const table = new Table(
-            ["id", "status", "last comment", "last modified by"],
-            noteStates.map(ns => {
-                const link = new Link(
-                    "" + ns.props.id,
-                    "https://openstreetmap.org/note/" + ns.props.id, true
-                )
-                let last_comment = "";
-                const last_comment_props = ns.props.comments[ns.props.comments.length - 1]
-                const before_last_comment = ns.props.comments[ns.props.comments.length - 2]
-                if (ns.props.comments.length > 1) {
-                    last_comment = last_comment_props.text
-                    if (last_comment === undefined && before_last_comment?.uid === last_comment_props.uid) {
-                        last_comment = before_last_comment.text
-                    }
-                }
-                const statusIcon = BatchView.icons[ns.status]().SetClass("h-4 w-4 shrink-0")
-                return [link, new Combine([statusIcon, ns.status]).SetClass("flex"), last_comment,
-                    new Link(last_comment_props.user, "https://www.openstreetmap.org/user/" + last_comment_props.user, true)
-                ]
-            }),
+            ["id", "status", "last comment", "last modified by", "actions"],
+            noteStates.map(ns => NoteTable.noteField(ns, state)),
             {sortable: true}
         ).SetClass("zebra-table link-underline");
 
@@ -219,6 +209,52 @@ class NoteTable extends Combine {
 
         ])
         this.SetClass("flex flex-col")
+    }
+
+    private static noteField(ns: NoteState, state: UserRelatedState) {
+        const link = new Link(
+            "" + ns.props.id,
+            "https://openstreetmap.org/note/" + ns.props.id, true
+        )
+        let last_comment = "";
+        const last_comment_props = ns.props.comments[ns.props.comments.length - 1]
+        const before_last_comment = ns.props.comments[ns.props.comments.length - 2]
+        if (ns.props.comments.length > 1) {
+            last_comment = last_comment_props.text
+            if (last_comment === undefined && before_last_comment?.uid === last_comment_props.uid) {
+                last_comment = before_last_comment.text
+            }
+        }
+        const statusIcon = BatchView.icons[ns.status]().SetClass("h-4 w-4 shrink-0")
+        const togglestate = new UIEventSource(false);
+        const changed = new UIEventSource<string>(undefined);
+        
+        const lazyButtons = new Lazy(( ) => new Combine(
+            this.individualActions.map(([img, text]) =>
+                img().onClick(async () => {
+                    if (ns.props.status === "closed") {
+                        await state.osmConnection.reopenNote(ns.props.id)
+                    }
+                    await state.osmConnection.closeNote(ns.props.id, text)
+                    changed.setData(text)
+                }).SetClass("h-8 w-8"))
+        ).SetClass("flex"));
+        
+        const appliedButtons = new VariableUiElement(changed.map(currentState => currentState === undefined ? lazyButtons : currentState));
+        
+        const buttons = Toggle.If(state?.osmConnection?.isLoggedIn,
+            () => new ClickableToggle(
+                appliedButtons,
+                new Button("edit...", () => {
+                    console.log("Enabling...")
+                    togglestate.setData(true);
+                }),
+                togglestate
+            ));
+        return [link, new Combine([statusIcon, ns.status]).SetClass("flex"), last_comment,
+            new Link(last_comment_props.user, "https://www.openstreetmap.org/user/" + last_comment_props.user, true),
+            buttons
+        ]
     }
 
 }
@@ -345,7 +381,7 @@ class ImportInspector extends VariableUiElement {
             const content = new Combine(contents)
             return new LeftIndex(
                 [new TableOfContents(content, {noTopLevel: true, maxDepth: 1}).SetClass("subtle"),
-                new DownloadStatisticsButton(perBatch)
+                    new DownloadStatisticsButton(perBatch)
                 ],
                 content
             )
@@ -382,7 +418,7 @@ class ImportInspector extends VariableUiElement {
                     status = "already_mapped"
                 } else if (lastComment.indexOf("invalid") >= 0 || lastComment.indexOf("incorrecto") >= 0) {
                     status = "invalid"
-                } else if (["imported","erbij","toegevoegd","added"].some(keyword => lastComment.toLowerCase().indexOf(keyword) >= 0)) {
+                } else if (["imported", "erbij", "toegevoegd", "added"].some(keyword => lastComment.toLowerCase().indexOf(keyword) >= 0)) {
                     status = "imported"
                 } else {
                     status = "closed"
@@ -396,7 +432,7 @@ class ImportInspector extends VariableUiElement {
                 intro: lines[0],
                 theme,
                 dateStr,
-                status
+                status,
             })
         }
         return perBatch;
