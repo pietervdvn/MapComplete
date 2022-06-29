@@ -1086,10 +1086,6 @@ video {
   height: 0px;
 }
 
-.h-40 {
-  height: 10rem;
-}
-
 .h-64 {
   height: 16rem;
 }
@@ -2672,10 +2668,6 @@ input {
     height: 3rem;
   }
 
-  .md\:max-h-65vh {
-    max-height: 65vh;
-  }
-
   .md\:w-2\/6 {
     width: 33.333333%;
   }
@@ -2789,3 +2781,4 @@ input {
     display: inline;
   }
 }
+
