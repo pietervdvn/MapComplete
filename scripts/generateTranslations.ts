@@ -32,6 +32,10 @@ class TranslationPart {
     }
 
     addTranslationObject(translations: any, context?: string) {
+        if(translations["#"] === "no-translations"){
+            console.log("Ignoring object at ",context,"which has '#':'no-translations'")
+            return;
+        }
         for (const translationsKey in translations) {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue;
@@ -225,12 +229,18 @@ class TranslationPart {
                 if (typeof value !== "string") {
                     return;
                 }
-                
+                let [_, __, weblatepart, lang] = key.split("/")
+                if (lang === undefined) {
+                    // This is a core translation, it has one less path segment
+                    lang = weblatepart
+                    weblatepart = "core"
+                }
+                const fixLink = `Fix it on https://hosted.weblate.org/translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${encodeURIComponent( path.join("."))}%22`;
                 let subparts: string[] = value.match(/{[^}]*}/g)
                 if (subparts === null) {
                     if (neededSubparts.size > 0) {
                         errors.push({
-                            error: "The translation for " + key + " does not have any subparts, but expected " + Array.from(neededSubparts).join(",") + " . The full translation is " + value,
+                            error: "The translation for " + key + " does not have any subparts, but expected " + Array.from(neededSubparts).map(part => part.part +" (used in "+part.usedByLanguage+")").join(",") + " . The full translation is " + value+"\n"+fixLink,
                             path: path
                         })
                     }
@@ -238,17 +248,12 @@ class TranslationPart {
                 }
                 subparts = subparts.map(p => p.split(/\(.*\)/)[0])
                 if (subparts.indexOf(part) < 0) {
-                    let [_, __, weblatepart, lang] = key.split("/")
-                    if (lang === undefined) {
-                        // This is a core translation, it has one less path segment
-                        lang = weblatepart
-                        weblatepart = "core"
-                    }
+         
                     if(lang === "en" || usedByLanguage === "en"){
                         errors.push({
                             error: `The translation for ${key} does not have the required subpart ${part}.
     \tThe full translation is ${value}
-    \tFix it on https://hosted.weblate.org/translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${encodeURIComponent( path.join("."))}%22`,
+    \t${fixLink}`,
                             path: path
                         })
                     }
@@ -266,6 +271,9 @@ class TranslationPart {
  * @param tr
  */
 function isTranslation(tr: any): boolean {
+    if(tr["#"] === "no-translations") {
+        return false
+    }
     for (const key in tr) {
         if (typeof tr[key] !== "string") {
             return false;
@@ -314,6 +322,10 @@ function transformTranslation(obj: any, path: string[] = [], languageWhitelist :
             if(subParts !== null){
                 // convert '{to_substitute}' into 'to_substitute'
                 const types = Utils.Dedup( subParts.map(tp => tp.substring(1, tp.length - 1)))
+                const invalid = types.filter(part => part.match(/^[a-z0-9A-Z_]+(\(.*\))?$/) == null)
+                if(invalid.length > 0){
+                    throw `At ${path.join(".")}: A subpart contains invalid characters: ${subParts.join(', ')}`
+                }
                 expr = `return new TypedTranslation<{ ${types.join(", ")} }>(${JSON.stringify(value)}, "core:${path.join(".")}.${key}")`
             }
             

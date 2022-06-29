@@ -4,8 +4,8 @@
         "title": "AED-Karte"
     },
     "artwork": {
-        "description": "Willkommen bei der Freien Kunst-Karte, einer Karte mit Statuen, Büsten, Grafitti, ... auf der ganzen Welt",
-        "title": "Freie Kunstwerk-Karte"
+        "description": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
+        "title": "Freie Kunstkarte"
     },
     "benches": {
         "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Alleinstehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Konto können Sie neue Bänke eintragen oder Details existierender Bänke bearbeiten.",
@@ -14,7 +14,7 @@
     },
     "bicycle_rental": {
         "description": "Auf dieser Karte finden Sie die vielen Fahrradverleihstationen, wie sie auf OpenStreetMap eingetragen wurden",
-        "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihern",
+        "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihgeschäften",
         "title": "Fahrradverleih"
     },
     "bicyclelib": {
@@ -43,7 +43,7 @@
                 "presets": {
                     "0": {
                         "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, zählt nicht als Wohnmobilstellplatz. ",
-                        "title": "eine wohnmobilstellplatz"
+                        "title": "ein Wohnmobilstellplatz"
                     }
                 },
                 "tagRenderings": {
@@ -155,7 +155,7 @@
                 "presets": {
                     "0": {
                         "description": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
-                        "title": "eine sanitäre entsorgungsstation"
+                        "title": "eine sanitäre Entsorgungsstation"
                     }
                 },
                 "tagRenderings": {
@@ -220,13 +220,13 @@
                     "dumpstations-waterpoint": {
                         "mappings": {
                             "0": {
-                                "then": "Dieser Ort hat eine Wasserstelle"
+                                "then": "Dieser Ort hat eine Wasserzapfstelle"
                             },
                             "1": {
-                                "then": "Dieser Ort hat keine Wasserstelle"
+                                "then": "Dieser Ort hat keine Wasserzapfstelle"
                             }
                         },
-                        "question": "Hat dieser Ort eine Wasserstelle?"
+                        "question": "Hat dieser Ort eine Wasserzapfstelle?"
                     }
                 },
                 "title": {
@@ -443,13 +443,17 @@
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
         "title": "Trinkwasserstellen"
     },
+    "education": {
+        "description": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
+        "title": "Bildung"
+    },
     "entrances": {
         "description": "Eine Karte mit allen Eingängen, die wichtige Aspekte für Rollstuhlfahrer erfasst",
         "shortDescription": "Eingänge prüfen, um die Rollstuhlnavigation zu verbessern",
         "title": "Eingänge"
     },
     "etymology": {
-        "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, und wurden mit Wikidata verknüpft. Im Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Wenn Sie weit genug hinein zoomen werden <i>alle</i> Straßen angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
+        "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, und wurden mit Wikidata verknüpft. Im Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b> Wenn Sie weit genug hinein zoomen werden <i>alle</i> Straßen angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
         "layers": {
             "1": {
                 "override": {
@@ -612,6 +616,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen"
+                            },
+                            "1": {
+                                "then": "Dieses Gebäude hat Löcher und ist als Relation modelliert. Als solches kann es nicht zusammengeführt werden. Es kann manuell zusammengeführt werden über die <a href='https://buildings.osm.be/#/'>Gebäudeexportseite</a> {open_in_josm()}"
                             }
                         }
                     }
@@ -645,13 +652,18 @@
         "shortDescription": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
         "title": "Eine Karte der Karten"
     },
+    "maxspeed": {
+        "description": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße. Wenn eine Höchstgeschwindigkeit fehlt oder falsch ist, können Sie dies hier korrigieren.",
+        "shortDescription": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße.",
+        "title": "Höchstgeschwindigkeit"
+    },
     "nature": {
         "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",
         "shortDescription": "Eine Karte mit interessanten Orten für Naturliebhaber",
         "title": "In die Natur"
     },
     "notes": {
-        "description": "Eine Notiz ist eine Stecknadel auf der Karte mit einer Fehlerbeschreibung.<br/><br/>Über die <a href='#filters'>Filteransicht</a> kann nach Benutzer und Text gesucht werden.",
+        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Stecknadel auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Text gesucht werden.",
         "title": "Notizen von OpenStreetMap"
     },
     "observation_towers": {
@@ -669,7 +681,7 @@
         "title": "Parkplatzkarte"
     },
     "personal": {
-        "description": "Erstellen Sie ein persönliches Thema, das auf allen verfügbaren Ebenen aller Themen basiert. Um einige Daten anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
+        "description": "Stellen Sie Ihr persönliches Thema zusammen, das auf bereits verfügbaren Ebenen aller Themen basiert. Um diese anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
         "title": "Persönliches Thema"
     },
     "pets": {
@@ -682,9 +694,9 @@
             },
             "2": {
                 "override": {
-                    "name": "hundefreundliches Geschäft",
+                    "name": "Hundefreundliche Geschäfte",
                     "title": {
-                        "render": "hundefreundliches Geschäft"
+                        "render": "Hundefreundliche Geschäfte"
                     }
                 }
             },
@@ -692,7 +704,7 @@
                 "override": {
                     "presets": {
                         "0": {
-                            "description": "Ein Geschäft, in das man seinen Hund fast überall mitnehmen kann",
+                            "description": "Ein Geschäft, in das man Hunde fast überall mitnehmen kann",
                             "title": "hundefreundliches Geschäft"
                         }
                     }
@@ -881,7 +893,7 @@
         "title": "Bäume"
     },
     "waste": {
-        "description": "Die Karte zeigt Abfalleimer und Recyclinganlagen.",
+        "description": "Eine Karte mit Abfalleimern und Recyclingeinrichtungen.",
         "title": "Abfall"
     },
     "waste_basket": {

@@ -1,0 +1,181 @@
+{
+  "id": "kindergarten_childcare",
+  "name": {
+    "en": "Kindergartens and childcare",
+    "nl": "Kleuterscholen en kinderopvang",
+    "de": "Kindergärten und Kinderkrippen"
+  },
+  "description": "Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other",
+  "minzoom": 12,
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=childcare",
+        "amenity=kindergarten",
+        "isced:level:2011=early_childhood"
+      ]
+    }
+  },
+  "title": {
+    "mappings": [
+      {
+        "if": "amenity=kindergarten",
+        "then": {
+          "en": "Kindergarten {name}",
+          "nl": "Kleuterschool {name}",
+          "de": "Kindergarten {name}"
+        }
+      },
+      {
+        "if": "amenity=childcare",
+        "then": {
+          "en": "Childcare {name}",
+          "nl": "Kinderopvang {name}",
+          "de": "Kinderkrippe {name}"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    {
+      "id": "childcare-type",
+      "question": {
+        "en": "What type of facility is this?",
+        "nl": "Wat voor faciliteit is dit?",
+        "de": "Um welche Art von Einrichtung handelt es sich?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=kindergarten",
+          "then": {
+            "en": "This is a kindergarten (also known as <i>preschool</i>) where small kids receive early education.",
+            "nl": "Dit is een kleuterschool waar kindjes (voorbereidend) onderwijs krijgen.",
+            "de": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten."
+          },
+          "addExtraTags": [
+            "isced:level=0",
+            "isced:2011:level=early_childhood"
+          ]
+        },
+        {
+          "if": "amenity=childcare",
+          "then": {
+            "en": "This is a childcare facility, such as a nursery or daycare where small kids are looked after. They do not offer an education and are ofter run as private businesses",
+            "nl": "Dit is een kinderopvang (ook een creche of onthaalmoeder genoemd) waar er voor kleine kinderen gezorgd wordt. Onderwijs is niet de hoofdfocus.",
+            "de": "Dies ist eine Kinderbetreuungseinrichtung, z. B. ein Kinderkrippe oder eine Tagesmutter, in der Kleinkinder betreut werden. Sie bieten keine Ausbildung an und werden oft als Privatunternehmen geführt"
+          },
+          "addExtraTags": [
+            "isced:level=",
+            "isced:2011:level="
+          ]
+        }
+      ]
+    },
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this facility?"
+      },
+      "render": {
+        "en": "This facility is named <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "website",
+    "email",
+    "phone",
+    {
+      "builtin": "opening_hours",
+      "override": {
+        "question": {
+          "en": "When is this childcare opened?",
+          "nl": "Wanneer is deze kinderopvang geopend?",
+          "de": "Wann ist diese Kinderbetreuung geöffnet?"
+        },
+        "condition": "amenity=childcare"
+      }
+    },
+    {
+      "id": "capacity",
+      "question": {
+        "en": "How much kids (at most) can be enrolled here?",
+        "nl": "Hoeveel kinderen kunnen hier terecht?",
+        "de": "Wie viele Kinder können hier maximal angemeldet werden?"
+      },
+      "render": {
+        "en": "This facility has room for {capacity} kids",
+        "nl": "Hier kunnen {capacity} kinderen terecht",
+        "de": "Diese Einrichtung bietet Platz für {capacity} Kinder"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a kindergarten",
+        "nl": "een kleuterschool",
+        "de": "einen Kindergarten"
+      },
+      "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
+      "tags": [
+        "amenity=kindergarten",
+        "isced:level=0",
+        "isced:2011:level=early_childhood"
+      ]
+    },
+    {
+      "title": {
+        "en": "a childcare",
+        "nl": "een kinderopvang",
+        "de": "eine Kinderkrippe"
+      },
+      "description": "A childcare (also known as <i>a nursery</i> or <i>daycare</i>) is a facility which looks after small kids, but does not offer them an education program.",
+      "tags": [
+        "amenity=kindergarten"
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div class='bg-white rounded-lg p-1'>{name}</div>"
+          }
+        ]
+      },
+      "icon": {
+        "mappings": [
+          {
+            "if": "amenity=kindergarten",
+            "then": "circle:white;./assets/layers/kindergarten_childcare/kindergarten.svg"
+          },
+          {
+            "if": "amenity=childcare",
+            "then": "circle:white;./assets/layers/kindergarten_childcare/childcare.svg"
+          }
+        ]
+      }
+    },
+    {
+      "color": "#62fc6c",
+      "width": 1
+    }
+  ],
+  "allowMove": {
+    "enableRelocation": true,
+    "enableImproveAccuracy": true
+  },
+  "deletion": true
+}

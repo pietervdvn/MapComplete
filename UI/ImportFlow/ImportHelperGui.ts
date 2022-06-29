@@ -12,7 +12,6 @@ import ConflationChecker from "./ConflationChecker";
 import {AskMetadata} from "./AskMetadata";
 import {ConfirmProcess} from "./ConfirmProcess";
 import {CreateNotes} from "./CreateNotes";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import List from "../Base/List";
 import {CompareToAlreadyExistingNotes} from "./CompareToAlreadyExistingNotes";

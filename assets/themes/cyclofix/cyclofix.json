@@ -50,6 +50,35 @@
     "drinking_water",
     "bike_themed_object",
     "bike_cleaning",
-    "bike_parking"
+    "bike_parking",
+    {
+      "builtin": [
+        "charging_station"
+      ],
+      "override": {
+        "id": "charging_station_ebikes",
+        "minzoom": 14,
+        "source": {
+          "osmTags": {
+            "and+": [
+              "bicycle=yes"
+            ]
+          }
+        },
+        "filter": null,
+        "=presets": []
+      }
+    },
+    {
+      "#": "All charging stations at a high zoom level, to avoid duplicates",
+      "builtin": "charging_station",
+      "override": {
+        "name": null,
+        "filter": {
+          "sameAs": "charging_station_ebike"
+        },
+        "minzoom": 18
+      }
+    }
   ]
 }

@@ -13,11 +13,11 @@
                     }
                 },
                 "question": "¿Cuál es el número de esta casa?",
-                "render": "La numeración de la casa es <b>{addr:housenumber}</b>"
+                "render": "El número de puerta es <b>{addr:housenumber}</b>"
             },
             "street": {
                 "question": "¿En qué calle se encuentra esta dirección?",
-                "render": "La dirección está en la calle <b>{addr:street}</b>"
+                "render": "La dirección está en esta calle <b>{addr:street}</b>"
             }
         },
         "title": {
@@ -54,7 +54,7 @@
                         "then": "La estación la opera un grupo formal de voluntarios."
                     },
                     "3": {
-                        "then": "La estación es de gestión privada."
+                        "then": "La estación se opera privadamente."
                     }
                 },
                 "question": "¿Como está clasificada la operadora de la estación?",
@@ -65,7 +65,7 @@
                 "render": "Esta estación se encuentra en {addr:place}."
             },
             "ambulance-street": {
-                "question": " ¿Cual es el nombre de la calle en la que se encuentra la estación?",
+                "question": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
                 "render": "Esta estación se encuentra al lado de una autovía llamada {addr:street}."
             }
         },
@@ -74,7 +74,7 @@
         }
     },
     "artwork": {
-        "description": "Diversas piezas de obras de arte",
+        "description": "Un mapa abierto de estatus, bustos, grafitis y otras obras de arte en todo el mundo",
         "name": "Obras de arte",
         "presets": {
             "0": {
@@ -119,7 +119,7 @@
                         "then": "Relieve"
                     },
                     "10": {
-                        "then": "Azulejo (azulejos decorativos españoles)"
+                        "then": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
                     },
                     "11": {
                         "then": "Cerámica"
@@ -156,7 +156,7 @@
             },
             "1": {
                 "description": "Una barrera ciclista, que ralentiza a los ciclistas",
-                "title": "una barrera para bicicletas"
+                "title": "una barrera ciclista"
             }
         },
         "tagRenderings": {
@@ -169,7 +169,7 @@
                         "then": "Bolardo fijo"
                     },
                     "2": {
-                        "then": "Bolardo abatible"
+                        "then": "Bolardo que se puede doblar"
                     },
                     "3": {
                         "then": "Bolardo flexible, normalmente plástico"
@@ -183,13 +183,13 @@
             "Cycle barrier type": {
                 "mappings": {
                     "0": {
-                        "then": "Simple, sólo dos barreras con un espacio entre ellas"
+                        "then": "Simple, simplemente dos barreras con un espacio en el medio"
                     },
                     "1": {
                         "then": "Doble, dos barreras una detrás de otra"
                     },
                     "2": {
-                        "then": "Triple, tres barreras una detrás de la otra"
+                        "then": "Triple, tres barreras una detrás de otra"
                     },
                     "3": {
                         "then": "Barrera de seguridad, el espacio es menor en la parte superior que en la inferior"
@@ -226,13 +226,13 @@
             "bicycle=yes/no": {
                 "mappings": {
                     "0": {
-                        "then": "Un ciclista puede pasar por aquí."
+                        "then": "Un ciclista puede pasar esto."
                     },
                     "1": {
-                        "then": "Un ciclista no puede pasar por aquí."
+                        "then": "Un ciclista no puede pasar esto."
                     }
                 },
-                "question": "¿Puede un ciclista pasar esta barrera?"
+                "question": "¿Puede pasar una bicicleta esta barrera?"
             }
         },
         "title": {
@@ -241,14 +241,14 @@
                     "then": "Bolardo"
                 },
                 "1": {
-                    "then": "Barrera ciclista"
+                    "then": "Barrera Ciclista"
                 }
             },
             "render": "Barrera"
         }
     },
     "bench": {
-        "description": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y preguntan algunas preguntas sobre ellos.",
+        "description": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
         "name": "Bancos",
         "presets": {
             "0": {
@@ -345,10 +345,10 @@
             "bench_at_pt-bench_type": {
                 "mappings": {
                     "0": {
-                        "then": "Aquí hay un banco normal para sentarse"
+                        "then": "Hay un banco normal aquí"
                     },
                     "1": {
-                        "then": "Banco de pie"
+                        "then": "Banco de pié"
                     },
                     "2": {
                         "then": "No hay ningún banco aquí"
@@ -366,14 +366,14 @@
                     "then": "Banco en una parada de transporte público"
                 },
                 "1": {
-                    "then": "Banco en el refugio"
+                    "then": "Banco en marquesina"
                 }
             },
             "render": "Banco"
         }
     },
     "bicycle_library": {
-        "description": "Una instalación en la que se pueden prestar las bicicletas durante un periodo de tiempo más largo",
+        "description": "Una facilidad donde se pueden alquilar bicicletas durante largos periodos de tiempo",
         "name": "Biblioteca de bicicletas",
         "presets": {
             "0": {
@@ -394,23 +394,23 @@
                         "then": "Bicicletas para discapacitados disponibles"
                     }
                 },
-                "question": "¿Quién puede prestar bicicletas aquí?"
+                "question": "¿Quién puede alquilar bicicletas aquí?"
             },
             "bicycle_library-charge": {
                 "mappings": {
                     "0": {
-                        "then": "El préstamo de bicicletas es gratuito"
+                        "then": "Alquilar una bicicleta es gratis"
                     },
                     "1": {
-                        "then": "Prestar una bicicleta cuesta 20 euros al año y 20 euros de garantía"
+                        "then": "Alquilar una bicicleta cuesta 20€/año y 20€ de fianza"
                     }
                 },
-                "question": "¿Cuánto cuesta el préstamo de una bicicleta?",
+                "question": "¿Cuánto cuesta alquilar una bicicleta?",
                 "render": "Alquilar una bicicleta cuesta {charge}"
             },
             "bicycle_library-name": {
                 "question": "¿Cuál es el nombre de esta biblioteca de bicicletas?",
-                "render": "Esta biblioteca de bicicletas se llama  {name}."
+                "render": "Esta biblioteca de bicicletas se llama  {name}"
             }
         },
         "title": {
@@ -434,7 +434,7 @@
         "name": "Alquiler de bicicletas",
         "presets": {
             "0": {
-                "description": "Una tienda con personal que se dedica al alquiler de bicicletas",
+                "description": "Una tienda atendida que se centra en el alquiler de bicicletas",
                 "title": "una tienda de alquiler de bicicletas"
             },
             "1": {
@@ -459,6 +459,12 @@
                         },
                         "4": {
                             "1": "bicis de montaña"
+                        },
+                        "5": {
+                            "1": "alforjas de bicicleta"
+                        },
+                        "6": {
+                            "1": "tándem"
                         }
                     }
                 }
@@ -479,6 +485,9 @@
                     },
                     "4": {
                         "then": "Aquí se pueden alquilar bicis infantiles"
+                    },
+                    "5": {
+                        "then": "Aquí se pueden alquilar tándems"
                     },
                     "6": {
                         "then": "Aquí se pueden alquilar bicicletas de carreras"
@@ -502,7 +511,13 @@
                         "then": "Esta es una tienda que vende o alquila bicicletas, pero también las alquila"
                     },
                     "3": {
-                        "then": "Esta es una estación automática, en la que una bici se asegura mecánicamente en una estructura"
+                        "then": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura"
+                    },
+                    "4": {
+                        "then": "Una máquina que dispensa y acepta llaves, eventualmente después de la autenticación y/o el pago está presente. Las bicicletas están aparcadas cerca"
+                    },
+                    "5": {
+                        "then": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler"
                     }
                 },
                 "question": "¿Qué tipo de alquiler de bicicletas es este?"
@@ -521,6 +536,9 @@
         "tagRenderings": {
             "Still in use?": {
                 "mappings": {
+                    "0": {
+                        "then": "Esta máquina expendedora funciona"
+                    },
                     "1": {
                         "then": "Esta máquina exprendedora está rota"
                     },
@@ -543,6 +561,9 @@
             },
             "bike_cafe-repair-tools": {
                 "question": "¿Hay herramientas para reparar su propia bicicleta?"
+            },
+            "bike_cafe-website": {
+                "question": "¿Cual es el sitio web de {name}?"
             }
         }
     },
@@ -640,7 +661,7 @@
             },
             "Cargo bike capacity?": {
                 "question": "¿Cuántas bicicletas de carga caben en este aparcamiento de bicicletas?",
-                "render": "En este aparcamiento caben {capacity:cargo_bike} bicis de carga"
+                "render": "En este aparcamiento caben {capacity:cargo_bike} bicicletas de carga"
             },
             "Cargo bike spaces?": {
                 "mappings": {
@@ -648,10 +669,10 @@
                         "then": "Este aparcamiento tiene espacio para bicicletas de carga"
                     },
                     "1": {
-                        "then": "Este aparcamiento tiene huecos (oficialmente) designados para bicicletas de carga."
+                        "then": "Este aparcamiento tiene huecos designados (oficialmente) para bicicletas de carga."
                     },
                     "2": {
-                        "then": "No se permite aparcar bicicletas de carga"
+                        "then": "No está permitido aparcar bicicletas de carga"
                     }
                 },
                 "question": "¿Este aparcamiento de bicicletas tiene huevos para bicicletas de carga?"
@@ -707,6 +728,9 @@
             }
         },
         "tagRenderings": {
+            "Email maintainer": {
+                "render": "<a href='mailto:{email}?subject=Bomba para bicicletas rota&body=Hola,%0D%0A%0D%0ACon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0AUn saludo'>Reportar esta bomba para bicicletas como rota</a>"
+            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -818,6 +842,17 @@
                 "question": "¿Cual es el número de teléfono del mantenedor?"
             },
             "bike_repair_station-valves": {
+                "mappings": {
+                    "0": {
+                        "then": "Sclaverand/Presata (ruedas de bicicleta estrechas)"
+                    },
+                    "1": {
+                        "then": "Dunlop"
+                    },
+                    "2": {
+                        "then": "Schrader (coches y bicicletas de montaña)"
+                    }
+                },
                 "question": "¿Que válvulas se soportan?",
                 "render": "Esta bomba soporta las siguiente válvulas: {valves}"
             }
@@ -845,6 +880,12 @@
     },
     "bike_shop": {
         "description": "Una tiene que vende específicamente bicis u objetos relacionados",
+        "name": "Taller/tienda de bicis",
+        "presets": {
+            "0": {
+                "title": "un taller/tienda de bicis"
+            }
+        },
         "tagRenderings": {
             "bike_repair_bike-pump-service": {
                 "mappings": {
@@ -928,6 +969,17 @@
                 "question": "¿Vende bicis esta tienda?"
             },
             "bike_repair_tools-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta tienda ofrece herramientas para la reparación DIY"
+                    },
+                    "1": {
+                        "then": "Esta tienda no ofrece herramientas para la reparación DIY"
+                    },
+                    "2": {
+                        "then": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda"
+                    }
+                },
                 "question": "¿Hay herramientas para reparar tu propia bici?"
             },
             "bike_shop-access": {
@@ -937,6 +989,11 @@
                 "question": "¿Cual es la dirección de correo electrónico de {name}?"
             },
             "bike_shop-is-bicycle_shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Este negocio se centra en el alquiler"
+                    }
+                },
                 "render": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas"
             },
             "bike_shop-name": {
@@ -952,6 +1009,12 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Tienda de artículos deportivos <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Winkel"
+                },
                 "2": {
                     "then": "Alquiler de bicicletas <i>{name}</i>"
                 },
@@ -960,13 +1023,17 @@
                 },
                 "4": {
                     "then": "Tienda de bicis <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Taller/tienda de bicis <i>{name}</i>"
                 }
-            }
+            },
+            "render": "Taller/tienda de bicis"
         }
     },
     "bike_themed_object": {
         "description": "Una capa con los objetos relacionados con bicis pero que no coinciden con ninguna otra capa",
-        "name": "Objeto relacionada con bicis",
+        "name": "Objeto relacionado con bicis",
         "title": {
             "mappings": {
                 "1": {
@@ -977,18 +1044,31 @@
         }
     },
     "binocular": {
+        "description": "Prismáticos",
+        "name": "Prismáticos",
+        "presets": {
+            "0": {
+                "description": "Un telescopio o unos prismáticos montados en un poste, disponible para que el público mire alrededor. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+                "title": "unos prismáticos"
+            }
+        },
         "tagRenderings": {
             "binocular-charge": {
-                "question": "¿Cuánto hay que pagar para utilizar estos binoculares?",
-                "render": "Utilizar estos binoculares cuesta {charge}"
+                "mappings": {
+                    "0": {
+                        "then": "De uso gratuito"
+                    }
+                },
+                "question": "¿Cuánto hay que pagar para utilizar estos prismáticos?",
+                "render": "Utilizar estos prismáticos cuesta {charge}"
             },
             "binocular-direction": {
-                "question": "¿Cuándo uno mira a través de este binocular, en qué dirección lo hace?",
+                "question": "¿Cuándo uno mira a través de estos prismáticos, en qué dirección lo hace?",
                 "render": "Mira hacia {direction}º"
             }
         },
         "title": {
-            "render": "Binoculares"
+            "render": "Prismáticos"
         }
     },
     "birdhide": {
@@ -1039,7 +1119,7 @@
                 }
             }
         },
-        "description": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa pregunta algunas preguntas relevantes",
+        "description": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa hace algunas preguntas relevantes",
         "filter": {
             "0": {
                 "options": {
@@ -1052,15 +1132,149 @@
         "name": "Cafeterías y bares",
         "presets": {
             "0": {
-                "description": "Un bar, principalmente para beber cervezas en un interior templado y relajado"
+                "description": "Un bar, principalmente para beber cervezas en un interior templado y relajado",
+                "title": "un pub"
             },
             "1": {
+                "description": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
                 "title": "un bar"
+            },
+            "2": {
+                "description": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
+                "title": "una cafetería"
+            },
+            "3": {
+                "description": "Un <b>club nocturno</b> o discoteca centrada en bailar, la música de un DJ acompañado por un espectáculo de luces y un bar donde conseguir bebidas (alcohólicas)",
+                "title": "un club nocturno o una discoteca"
             }
+        },
+        "tagRenderings": {
+            "Classification": {
+                "mappings": {
+                    "0": {
+                        "then": "Un bar, principalmente para beber cervezas en un interior cálido y relajado"
+                    },
+                    "1": {
+                        "then": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
+                    },
+                    "2": {
+                        "then": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
+                    },
+                    "3": {
+                        "then": "Un <b>restaurante</b> donde puedes comer una comida de verdad"
+                    },
+                    "4": {
+                        "then": "Un espacio abierto donde se sirve cerveza, típico de Alemania"
+                    },
+                    "5": {
+                        "then": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)"
+                    }
+                },
+                "question": "Qué tipo de cafetería es esta"
+            },
+            "Name": {
+                "question": "¿Cual es el nombre de este pub?",
+                "render": "Este pub se llama {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Pub"
         }
     },
     "charging_station": {
+        "description": "Una estación de carga",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Todo tipo de vehículos"
+                    },
+                    "1": {
+                        "question": "Estación de carga para bicicletas"
+                    },
+                    "2": {
+                        "question": "Estación de carga para coches"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Solo estaciones de carga funcionales"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Todos los conectores"
+                    },
+                    "2": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>enchufe de pared Europeo</b> con un pin de tierra (CEE7/4 tipo E</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
+                    },
+                    "3": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
+                    },
+                    "4": {
+                        "question": "Tiene un conector de <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "5": {
+                        "question": "Tiene un conector de <div style='display: inline-block'><b>Tipo 1 <i>sin</i> cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "6": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b>Tipo 1 CCS (Combo Tipo 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+                    },
+                    "7": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "8": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
+                    },
+                    "9": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 CCS</b> (mennekes</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                    },
+                    "10": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "11": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (un tipo2_css de marca)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                    },
+                    "12": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "13": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipo2 A con un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "14": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+                    },
+                    "15": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 3 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+                    },
+                    "16": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Bosch Active Connect con 5 pines</b> y cable</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+                    }
+                }
+            }
+        },
+        "name": "Estaciones de carga",
+        "presets": {
+            "0": {
+                "title": "una estación de carga para bicicletas eléctricas con un enchufe de pared europeo normal <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (pensado para cargar bicicletas eléctricas)"
+            },
+            "1": {
+                "title": "una estación de carga para coches"
+            }
+        },
         "tagRenderings": {
+            "Auth phone": {
+                "question": "¿Cual es el número de teléfono para la llamada de autenticación o SMS?"
+            },
             "Authentication": {
                 "mappings": {
                     "0": {
@@ -1083,11 +1297,119 @@
                     },
                     "6": {
                         "then": "Autenticación mediante tarjeta de débito disponible"
+                    },
+                    "7": {
+                        "then": "La carga aquí (también) es posible sin autenticación"
                     }
-                }
+                },
+                "question": "¿Qué tipo de autenticación está disponible en esta estación de carga?"
+            },
+            "Available_charging_stations (generated)": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
+                    },
+                    "1": {
+                        "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)"
+                    },
+                    "2": {
+                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+                    },
+                    "3": {
+                        "then": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipo 1 con cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Tipo 1 con cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Tipo 1<i>sin</i> cable</b> (J1772)"
+                    },
+                    "10": {
+                        "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
+                    },
+                    "11": {
+                        "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
+                    },
+                    "12": {
+                        "then": "<b>Supercargador de Tesla</b>"
+                    },
+                    "13": {
+                        "then": "<b>Supercargador de Tesla</b>"
+                    },
+                    "14": {
+                        "then": "<b>Tipo 2</b> (mennekes)"
+                    },
+                    "15": {
+                        "then": "<b>Tipo 2</b> (mennekes)"
+                    },
+                    "16": {
+                        "then": "<b>CSS Tipo 2</b> (mennekes)"
+                    },
+                    "17": {
+                        "then": "<b>CSS Tipo 2</b> (mennekes)"
+                    },
+                    "18": {
+                        "then": "<b>Tipo 2 con cable</b> (mennekes)"
+                    },
+                    "19": {
+                        "then": "<b>Tipo 2 con cable</b> (mennekes)"
+                    },
+                    "20": {
+                        "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
+                    },
+                    "21": {
+                        "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
+                    },
+                    "22": {
+                        "then": "<b>Supercargador Tesla (destino</b>"
+                    },
+                    "23": {
+                        "then": "<b>Supercargador Tesla (destino)</b>"
+                    },
+                    "24": {
+                        "then": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
+                    },
+                    "25": {
+                        "then": "<b>Supercargador Tesla (destino)</b> (Un Tipo 2 con un cable de marca tesla)"
+                    },
+                    "26": {
+                        "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
+                    },
+                    "27": {
+                        "then": "<b>USB</b> para cargar teléfonos y dispositivos pequeños"
+                    },
+                    "28": {
+                        "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
+                    },
+                    "29": {
+                        "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
+                    },
+                    "30": {
+                        "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
+                    },
+                    "31": {
+                        "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
+                    }
+                },
+                "question": "¿Qué tipo de conexiones de carga están disponibles aquí?"
             },
             "Network": {
                 "mappings": {
+                    "0": {
+                        "then": "No forma parte de una red más grande, ej. porque la estación de carga la mantiene un negocio local"
+                    },
                     "1": {
                         "then": "No forma parte de una red mayor"
                     }
@@ -1103,16 +1425,561 @@
                 },
                 "question": "¿Cuándo abre esta estación de carga?"
             },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta estación de carga funciona"
+                    },
+                    "1": {
+                        "then": "Esta estación de carga está rota"
+                    },
+                    "2": {
+                        "then": "Una estación de carga está planeada aquí"
+                    },
+                    "3": {
+                        "then": "Una estación de carga está construida aquí"
+                    },
+                    "4": {
+                        "then": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
+                    }
+                },
+                "question": "¿Está en uso este punto de carga?"
+            },
+            "Operator": {
+                "mappings": {
+                    "0": {
+                        "then": "De hecho, {operator} es la red"
+                    }
+                },
+                "question": "¿Quien es la operadora de esta estación de carga?",
+                "render": "Esta estación de carga la opera {operator}"
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "0": {
+                        "then": "No hay costes de aparcamiento adicionales mientras se carga"
+                    },
+                    "1": {
+                        "then": "Se deberá de pagar una tasa adicional de aparcamiento mientras se carga"
+                    }
+                },
+                "question": "¿Hay que pagar una tasa de aparcamiento mientras se carga?"
+            },
             "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí se pueden cargar <b>bicicletas</b>"
+                    },
+                    "1": {
+                        "then": "Aquí se pueden cargar <b>coches</b>"
+                    },
+                    "2": {
+                        "then": "Aquí se pueden cargar <b>scooters</b>"
+                    },
+                    "4": {
+                        "then": "Aquí se pueden cargar <b>buses</b>"
+                    }
+                },
                 "question": "¿A qué vehículos se permite la carga aquí?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
+                    },
+                    "1": {
+                        "then": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
+                    },
+                    "2": {
+                        "then": "Solo clientes del lugar al que pertenece esta estación la pueden utilizar <br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes</span>"
+                    },
+                    "3": {
+                        "then": "Se debe de solicitar una <b>llave</b> para utilizar esta estación de carga<br/><span class='subtle'>Ej. una estación de carga operada por un hotel que solo es utilizable por sus huéspedes, que reciben una llave de la recepción para desbloquear la estación de carga</span>"
+                    },
+                    "4": {
+                        "then": "No accesible al público general (ej. solo accesible a los propietarios, empleados, ...)"
+                    }
+                },
+                "question": "¿A quién se le permite utilizar esta estación de carga?",
+                "render": "El acceso está {access}"
+            },
+            "capacity": {
+                "question": "¿Cuántos vehículos se pueden cargar a la vez aquí?",
+                "render": "Aquí se pueden cargar {capacity} vehículos al mismo tiempo"
+            },
+            "charge": {
+                "question": "¿Cuánto hay que pagar para utilizar esta estación de carga?",
+                "render": "Utilizar esta estación de carga cuesta <b>{charge}</b>"
+            },
+            "current-13": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños hasta 1 A"
+                    },
+                    "1": {
+                        "then": "<b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños hasta 1 A"
+                    }
+                },
+                "question": "¿Qué corriente ofrecen los conectores con <div style='display:i nline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem;display:inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem; display: inline-block' src='./assets/layers/changing_station/usb_port.svg'></div> salida de hasta {socket:USB-A:current}A"
+            },
+            "email": {
+                "question": "¿Cual es la dirección de correo electrónico de esta operadora?",
+                "render": "En caso de problemas, envía un correo electrónico a <a href=\"mailto:{email}'>{email}</a>"
+            },
+            "fee": {
+                "mappings": {
+                    "3": {
+                        "then": "De pago, pero gratis para clientes del hotel/pub/hostpital... quien opera la estación de carga"
+                    },
+                    "4": {
+                        "then": "Uso de pago"
+                    }
+                },
+                "question": "¿Hay que pagar para utilizar esta estación de carga?"
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "No hay límite de tiempo para dejar tu vehículo aquí"
+                    }
+                },
+                "question": "¿Cuál es la máxima cantidad de tiempo que se permite permanecer aquí?",
+                "render": "Se puede estar como máximo <b>{canonical(maxstay)}</b>"
+            },
+            "phone": {
+                "question": "¿A qué número se puede llamar si hay un problema con esta estación de carga?",
+                "render": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>"
+            },
+            "ref": {
+                "question": "¿Cual es el número de referencia de esta estación de carga?",
+                "render": "El número de referencia es <b>{ref}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Estación de carga para bicicletas eléctricas"
+                },
+                "1": {
+                    "then": "Estación de carga para coches"
+                }
+            },
+            "render": "Estación de carga"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " minutos",
+                        "humanSingular": " minuto"
+                    },
+                    "1": {
+                        "human": " horas",
+                        "humanSingular": " hora"
+                    },
+                    "2": {
+                        "human": " días",
+                        "humanSingular": " día"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Voltios"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "A"
+                    }
+                }
+            },
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilvatio"
+                    },
+                    "1": {
+                        "human": "megavatio"
+                    }
+                }
             }
         }
     },
+    "climbing": {
+        "tagRenderings": {
+            "average_length": {
+                "question": "¿Cual es la longitud (media) de las rutas en metros?",
+                "render": "Las rutas miden <b>{canonical(climbing:length)}</b> de media"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "La escalada es gratis"
+                    },
+                    "1": {
+                        "then": "Hay que pagar una tasa para escalar aquí"
+                    }
+                },
+                "question": "¿Se requiere una tasa para escalar aquí?",
+                "render": "Se debe de pagar una tasa de {charge} para escalar aquí"
+            }
+        }
+    },
+    "crossings": {
+        "description": "Cruces para peatones y ciclistas",
+        "name": "Cruces",
+        "presets": {
+            "0": {
+                "description": "Cruce para peatones y/o ciclistas",
+                "title": "un cruce"
+            },
+            "1": {
+                "description": "Señal de tráfico en una carretera",
+                "title": "una señal de tráfico"
+            }
+        },
+        "tagRenderings": {
+            "crossing-bicycle-allowed": {
+                "mappings": {
+                    "0": {
+                        "then": "Un ciclista puede utilizar este cruce"
+                    },
+                    "1": {
+                        "then": "Un ciclista no puede utilizar este cruce"
+                    }
+                },
+                "question": "¿Este cruce también es para ciclistas?"
+            },
+            "crossing-button": {
+                "mappings": {
+                    "0": {
+                        "then": "Este semáforo tiene un botón para pedir luz verde"
+                    },
+                    "1": {
+                        "then": "Este semáforo no tiene un botón para pedir luz verde"
+                    }
+                },
+                "question": "¿Este semáforo tiene un botón para pedir luz verde?"
+            },
+            "crossing-continue-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Un ciclista puede ir de frente si la luz está roja"
+                    },
+                    "1": {
+                        "then": "Un ciclista puede ir de frente si la luz está roja"
+                    },
+                    "2": {
+                        "then": "Un ciclista no puede ir de frente si la luz está roja"
+                    }
+                },
+                "question": "¿Puede ir de frente un ciclista cuando la luz está roja?"
+            },
+            "crossing-has-island": {
+                "mappings": {
+                    "0": {
+                        "then": "Este cruce tiene una isla en el medio"
+                    },
+                    "1": {
+                        "then": "Este cruce no tiene una isla en el medio"
+                    }
+                },
+                "question": "¿Tiene una isla en el medio este cruce?"
+            },
+            "crossing-is-zebra": {
+                "mappings": {
+                    "0": {
+                        "then": "Esto es un paso de cebra"
+                    },
+                    "1": {
+                        "then": "Esto no es un paso de cebra"
+                    }
+                },
+                "question": "¿Esto es un paso de cebra?"
+            },
+            "crossing-right-turn-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Un ciclista puede girar a la derecha si la luz está roja"
+                    },
+                    "1": {
+                        "then": "Un ciclista puede girar a la derecha si la luz está roja"
+                    },
+                    "2": {
+                        "then": "Un ciclista no puede girar a la derecha si la luz está roja"
+                    }
+                },
+                "question": "¿Puede girar a la derecha un ciclista cuando la luz está roja?"
+            },
+            "crossing-tactile": {
+                "mappings": {
+                    "0": {
+                        "then": "Este cruce tiene pavimento táctil"
+                    },
+                    "1": {
+                        "then": "Este cruce no tiene pavimento táctil"
+                    },
+                    "2": {
+                        "then": "Este cruce tiene pavimento táctil, pero no es correcto"
+                    }
+                },
+                "question": "¿Tiene pavimento táctil este cruce?"
+            },
+            "crossing-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Cruce, sin semáforos"
+                    },
+                    "1": {
+                        "then": "Cruce con señales de tráfico"
+                    },
+                    "2": {
+                        "then": "Paso de cebra"
+                    },
+                    "3": {
+                        "then": "Cruce sin marcas de cruce"
+                    }
+                },
+                "question": "¿Qué tipo de cruce es este?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Señal de tráfico"
+                },
+                "1": {
+                    "then": "Cruce con señales de tráfico"
+                }
+            },
+            "render": "Cruce"
+        }
+    },
+    "cycleways_and_roads": {
+        "description": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
+        "name": "Carriles bici y carreteras",
+        "tagRenderings": {
+            "Cycleway type for a road": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay un carril compartido"
+                    },
+                    "1": {
+                        "then": "Hay un carril a lado de la carretera (separado con pintura)"
+                    },
+                    "2": {
+                        "then": "Hay una pista, pero no hay un carril bici dibujado separado de esta carretera en el mapa."
+                    },
+                    "3": {
+                        "then": "Hay un carril bici dibujado por separado"
+                    },
+                    "4": {
+                        "then": "No hay carril bici"
+                    },
+                    "5": {
+                        "then": "No hay carril bici"
+                    }
+                },
+                "question": "¿Qué tipo de carril bici hay aquí?"
+            },
+            "Cycleway:smoothness": {
+                "mappings": {
+                    "2": {
+                        "then": "Utilizable para ruedas normales: bici de ciudad, sillas de ruedas, scooter"
+                    }
+                },
+                "question": "¿Cual es la suavidad de este carril bici?"
+            },
+            "Cycleway:surface": {
+                "mappings": {
+                    "0": {
+                        "then": "Este carril bici no está pavimentado"
+                    },
+                    "1": {
+                        "then": "Este carril bici está pavimentado"
+                    },
+                    "2": {
+                        "then": "Este carril bici está hecho de asfalto"
+                    },
+                    "3": {
+                        "then": "Este carril bici está hecho de piedras de pavimento suaves"
+                    },
+                    "4": {
+                        "then": "Este carril bici está hecho de hormigón"
+                    },
+                    "8": {
+                        "then": "Este carril bici está hecho de madera"
+                    },
+                    "9": {
+                        "then": "Este carril bici está hecho de grava"
+                    },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    },
+                    "12": {
+                        "then": "Este carril bici está hecho de tierra natural"
+                    }
+                },
+                "question": "¿De qué superficie está hecho este carril bici?",
+                "render": "Este carril bici está hecho de {cycleway:surface}"
+            },
+            "Is this a cyclestreet? (For a road)": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta es una ciclocalle, y una zona 30km/h."
+                    },
+                    "1": {
+                        "then": "Esta es una ciclocalle"
+                    },
+                    "2": {
+                        "then": "Esta no es una ciclocalle."
+                    }
+                },
+                "question": "¿Esta es una ciclocalle?"
+            },
+            "Maxspeed (for road)": {
+                "mappings": {
+                    "0": {
+                        "then": "La velocidad máxima es de 20km/h"
+                    },
+                    "1": {
+                        "then": "La velocidad máxima es de 30km/h"
+                    },
+                    "2": {
+                        "then": "La velocidad máxima es de 50km/h"
+                    },
+                    "3": {
+                        "then": "La velocidad máxima es de 70km/h"
+                    },
+                    "4": {
+                        "then": "La velocidad máxima es de 90km/h"
+                    }
+                },
+                "question": "¿Cual es la velocidad máxima en esta calle?",
+                "render": "La velocidad máxima en esta carretera es de {maxspeed} km/h"
+            },
+            "Surface of the road": {
+                "mappings": {
+                    "1": {
+                        "then": "Este carril bici está pavimentado"
+                    },
+                    "2": {
+                        "then": "Este carril bici está hecho de asfalto"
+                    },
+                    "4": {
+                        "then": "Este carril bici está hecho de hormigón"
+                    },
+                    "8": {
+                        "then": "Este carril bici está hecho de madera"
+                    },
+                    "9": {
+                        "then": "Este carril bici está hecho de grava"
+                    },
+                    "10": {
+                        "then": "Este carril bici está hecho de gravilla"
+                    }
+                },
+                "question": "¿De qué esta hecha la superficie de esta calle?",
+                "render": "Esta carretera está hecha de {surface}"
+            },
+            "Surface of the street": {
+                "question": "¿Cual es la suavidad de esta calle?"
+            },
+            "cyclelan-segregation": {
+                "mappings": {
+                    "0": {
+                        "then": "Este carril bici está separado por una línea discontinua"
+                    },
+                    "1": {
+                        "then": "Este carril bici está separado por una línea continua"
+                    },
+                    "2": {
+                        "then": "Este carril bici está separado por una línea de aparcamiento"
+                    }
+                },
+                "question": "¿Cómo está separado este carril bici de la carretera?"
+            },
+            "cycleway-lane-track-traffic-signs": {
+                "mappings": {
+                    "4": {
+                        "then": "Sin señal de tráfico"
+                    }
+                },
+                "question": "¿Qué señal de tráfico tiene este carril bici?"
+            },
+            "cycleway-segregation": {
+                "mappings": {
+                    "0": {
+                        "then": "Este carril bici está separado por una línea discontinua"
+                    },
+                    "1": {
+                        "then": "Este carril bici está separado por una línea continua"
+                    },
+                    "2": {
+                        "then": "Este carril bici está separado por una línea de aparcamiento"
+                    }
+                },
+                "question": "¿Cómo esta separado este carril bici de la carretera?"
+            },
+            "cycleway-traffic-signs": {
+                "question": "¿Qué seña de tráfico tiene este carril bici?"
+            },
+            "cycleways_and_roads-cycleway:buffer": {
+                "question": "¿Cómo de ancho es el hueco entre el carril bici y la carretera?"
+            },
+            "is lit?": {
+                "mappings": {
+                    "0": {
+                        "then": "La calle está iluminada"
+                    },
+                    "1": {
+                        "then": "Esta carretera no está iluminada"
+                    },
+                    "2": {
+                        "then": "Esta carretera está iluminada por la noche"
+                    },
+                    "3": {
+                        "then": "Esta carretera está iluminada 24/7"
+                    }
+                },
+                "question": "¿Esta calle está iluminada?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Carril bici"
+                },
+                "1": {
+                    "then": "Carril compartido"
+                },
+                "2": {
+                    "then": "Carril bici"
+                },
+                "3": {
+                    "then": "Vía ciclista al lado de la carretera"
+                },
+                "4": {
+                    "then": "Ciclocalle"
+                }
+            },
+            "render": "Ciclovías"
+        }
+    },
     "defibrillator": {
+        "description": "Una capa que muestra desfibriladores que se pueden utilizar en caso de emergencia. Contiene desfibriladores públicos, pero también desfibriladores para los que se puede necesitar que el personal vaya a buscar el dispositivo",
         "name": "Desfibriladores",
         "presets": {
             "0": {
                 "title": "una desfibrilador"
+            },
+            "1": {
+                "title": "un desfibrilador montado en una pared"
             }
         },
         "tagRenderings": {
@@ -1129,19 +1996,54 @@
                     },
                     "3": {
                         "then": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)"
+                    },
+                    "4": {
+                        "then": "No accesible, posiblemente solo para el uso profesional"
                     }
                 },
                 "question": "¿Está el desfibrilador accesible libremente?",
                 "render": "El acceso es {access}"
             },
+            "defibrillator-defibrillator": {
+                "mappings": {
+                    "0": {
+                        "then": "No hay información sobre el tipo de dispositivo"
+                    },
+                    "1": {
+                        "then": "Este es un desfibrilador manual para profesionales"
+                    },
+                    "2": {
+                        "then": "Este es un desfibrilador automático normal"
+                    },
+                    "3": {
+                        "then": "Este es un tipo de desfibrilador especial: {defibrillator}"
+                    }
+                },
+                "question": "¿Este es un desfibrilador automático normal o un desfibrilador manual solo para profesionales?"
+            },
             "defibrillator-defibrillator:location": {
-                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)"
+                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)",
+                "render": "<i>Información a mayores sobre la localización (en el idioma local):</i><br/>{defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
-                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)"
+                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)",
+                "render": "<i>Información a mayores sobre la localización (en Inglés):</i><br/>{defibrillator:location:en}"
             },
             "defibrillator-defibrillator:location:fr": {
-                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)"
+                "question": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)",
+                "render": "<i>Información a mayores sobre la localización (en Francés):</i><br/>{defibrillator:location:fr}"
+            },
+            "defibrillator-description": {
+                "question": "¿Hay alguna información útil para los usuarios que no hayas podido describir arriba? (dejar en blanco si no)",
+                "render": "Información adicional: {description}"
+            },
+            "defibrillator-email": {
+                "question": "¿Cual es el correo electrónico para preguntas sobre este desfibrilador?",
+                "render": "Correo electrónico para preguntas sobre este desfibrilador: <a href='mailto:{email}'>{email}</a>"
+            },
+            "defibrillator-fixme": {
+                "question": "¿Hay algo mal con como esta mapeado, que no pudiste arreglar aquí? (deja una nota para los expertos de OpenStreetMap)",
+                "render": "Información extra para expertos en OpenStreetMap: {fixme}"
             },
             "defibrillator-indoors": {
                 "mappings": {
@@ -1155,12 +2057,498 @@
                 "question": "¿Esté el desfibrilador en interior?"
             },
             "defibrillator-level": {
+                "mappings": {
+                    "0": {
+                        "then": "Este desfibrilador se encuentra en la <b>planta baja</b>"
+                    },
+                    "1": {
+                        "then": "Este desfibrilador se encuentra en la <b>primera planta</b>"
+                    }
+                },
                 "question": "¿En qué planta se encuentra el defibrilador localizado?",
                 "render": "El desfibrilador se encuentra en la planta {level}"
+            },
+            "defibrillator-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Abierto 24/7 (incluyendo festivos)"
+                    }
+                },
+                "question": "¿A qué horas está disponible este desfibrilador?",
+                "render": "{opening_hours_table(opening_hours)}"
+            },
+            "defibrillator-phone": {
+                "question": "¿Cual es el número de teléfono para preguntas sobre este desfibrilador?"
+            },
+            "defibrillator-ref": {
+                "question": "¿Cual es el número de identificación oficial de este dispositivo? (si está visible en el dispositivo)",
+                "render": "Número de identificación oficial del dispositivo: <i>{ref}</i>"
+            },
+            "defibrillator-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "¡Comprobado hoy!"
+                    }
+                },
+                "question": "¿Cuándo se sondeó por última vez este desfibrilador?",
+                "render": "Este desfibrilador se sondeó por última vez el {survey:date}"
             }
         },
         "title": {
             "render": "Desfibrilador"
+        }
+    },
+    "dogpark": {
+        "name": "parques de perros",
+        "presets": {
+            "0": {
+                "description": "Un lugar para perros, donde pueden correr sin correa",
+                "title": "un parque para perros"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "question": "¿Cual es el nombre de este parque para perros?",
+                "render": "El nombre de este parque para perros es {name}"
+            },
+            "dogarea": {
+                "render": "Este parque para perros tiene {_surface:ha} ha"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "0": {
+                        "then": "Este parque para perros está cerrado todo alrededor"
+                    },
+                    "1": {
+                        "then": "Este parque para perros no está cerrado todo alrededor"
+                    }
+                },
+                "question": "¿Este parque para perros está vallado?"
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Tiene un espacio separado para cachorros y perros pequeños"
+                    },
+                    "1": {
+                        "then": "<strong>No</strong> tiene un espacio separado para cachorros y perros pequeños"
+                    }
+                },
+                "question": "¿Este parque para perros tiene una zona separada vallada para perros pequeños y cachorros?"
+            }
+        },
+        "title": {
+            "render": "parque para perros"
+        }
+    },
+    "drinking_water": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Esta es una fuente decorativa con agua no potable"
+                },
+                "1": {
+                    "then": "Este es un grifo de agua o una bomba de agua con agua no potable.<div class='subtle'>Ejemplos son grifos con agua de lluvia o agua del grifo para plantas cercanas</div>"
+                }
+            }
+        },
+        "description": "Una capa que muestra fuentes de agua potable",
+        "name": "Agua potable",
+        "tagRenderings": {
+            "Bottle refill": {
+                "mappings": {
+                    "0": {
+                        "then": "Es fácil rellenar botellas de agua"
+                    },
+                    "1": {
+                        "then": "Las botellas de agua pueden no caber"
+                    }
+                },
+                "question": "¿Cómo de fácil es rellenar botellas de agua?"
+            },
+            "Still in use?": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta agua potable funciona"
+                    },
+                    "1": {
+                        "then": "Esta agua potable está rota"
+                    },
+                    "2": {
+                        "then": "Esta agua potable está cerrada"
+                    }
+                },
+                "question": "¿Todavía esta operativo este punto de agua potable?",
+                "render": "El estado operacional es <i>{operational_status}</i>"
+            },
+            "render-closest-drinking-water": {
+                "render": "<a href='#{_closest_other_drinking_water_id}'>Hay otra fuente de agua potable a {_closest_other_drinking_water_distance} metros</a>"
+            }
+        },
+        "title": {
+            "render": "Agua potable"
+        }
+    },
+    "entrance": {
+        "description": "Una capa que muestra capas y ofrece la posibilidad de sondear algunos datos avanzados que son importantes para, por ejemplo, usuarios de sillas de ruedas (pero también incluye ciclistas, gente que quiere repartir, ...)",
+        "name": "Entrada",
+        "tagRenderings": {
+            "Door_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Se desconoce el tipo de puerta"
+                    },
+                    "1": {
+                        "then": "Una puerta clásica, con bisagras soportadas por uniones"
+                    },
+                    "2": {
+                        "then": "Una puerta giratoria que cuelga de un eje central y que rota dentro de una carcasa cilíndrica"
+                    },
+                    "3": {
+                        "then": "Una puerta corredera donde las hojas se deslizan de lado a lado, típicamente con una pared"
+                    },
+                    "5": {
+                        "then": "Esta es una entrada sin una puerta física"
+                    }
+                },
+                "question": "¿Cual es el tipo de esta puerta?<br/><span class='subtle'>Si la puerta está automatizada o no se pregunta en la siguiente pregunta</span>"
+            },
+            "Entrance type": {
+                "mappings": {
+                    "0": {
+                        "then": "No se conoce un tipo de entrada específico"
+                    },
+                    "1": {
+                        "then": "Esta es una puerta interior, que separa una habitación o pasillo dentro de un único edificio"
+                    },
+                    "2": {
+                        "then": "Esta es la entrada principal"
+                    },
+                    "3": {
+                        "then": "Esta es una entrada secundaria"
+                    },
+                    "4": {
+                        "then": "Esta es una entrada de servicio - normalmente solo la utilizan empleados, repartidores, …"
+                    },
+                    "5": {
+                        "then": "Esta es una salida por la cual no se puede entrar"
+                    },
+                    "6": {
+                        "then": "Esta es una entrada por la que solo se puede entrar (pero no salir)"
+                    },
+                    "7": {
+                        "then": "Esta es una salida de emergencia"
+                    },
+                    "8": {
+                        "then": "Esta es la entrada a una vivienda privada"
+                    }
+                },
+                "question": "¿Qué tipo de entrada es esta?"
+            },
+            "automatic_door": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta es una puerta automática"
+                    },
+                    "1": {
+                        "then": "Esta puerta <b>no</b> está automatizada"
+                    },
+                    "2": {
+                        "then": "Esta puerta se abre automáticamente cuando se detecta <b>movimiento</b>"
+                    },
+                    "3": {
+                        "then": "Esta puerta se abre automáticamente cuando se activa un <b>sensor en el suelo</b>"
+                    },
+                    "4": {
+                        "then": "Esta puerta se abre automáticamente cuando se <b>pulsa un botón</b>"
+                    },
+                    "5": {
+                        "then": "Esta puerta gira automáticamente todo el rato, pero tiene un <b>botón para ralentizarla</b>, por ejemplo, para usuarios de sillas de ruedas"
+                    },
+                    "6": {
+                        "then": "Esta puerta gira automáticamente todo el rato"
+                    },
+                    "7": {
+                        "then": "Esta puerta la abre el personal cuando se pide <b>pulsando un botón</b>"
+                    },
+                    "8": {
+                        "then": "Esta puerta la abrirá el personal cuando se pida"
+                    }
+                }
+            },
+            "width": {
+                "question": "¿Cual es el ancho de esta puerta/entrada?",
+                "render": "Esta puerta tiene una ancho de {canonical(width)} metros"
+            }
+        },
+        "title": {
+            "render": "Entrada"
+        }
+    },
+    "extinguisher": {
+        "description": "Capa del mapa que muestra extintores.",
+        "name": "Mapa de extintores",
+        "presets": {
+            "0": {
+                "description": "Un extintor es un dispositivo pequeño y portátil utilizado para parar un fuego",
+                "title": "un extintor"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Se encuentra en el interior."
+                    },
+                    "1": {
+                        "then": "Se encuentra en el exterior."
+                    }
+                },
+                "question": "¿Dónde se encuentra?",
+                "render": "Localización: {location}"
+            }
+        },
+        "title": {
+            "render": "Extintores"
+        }
+    },
+    "fire_station": {
+        "description": "Capa del mapa que muestra parques de bomberos.",
+        "name": "Mapa de parques de bomberos",
+        "presets": {
+            "0": {
+                "description": "Un parque de bomberos es donde los bomberos y los camiones de incendios se encuentran cuando no están en uso.",
+                "title": "un parque de bomberos"
+            }
+        },
+        "tagRenderings": {
+            "station-agency": {
+                "question": "¿Que agencia opera este parque?",
+                "render": "Este parque lo opera {operator}."
+            },
+            "station-name": {
+                "question": "¿Cual es el nombre de este parque de bomberos?",
+                "render": "Este parque de bomberos se llama {name}."
+            },
+            "station-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Este parque de bomberos lo opera el gobierno."
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Parque de bomberos"
+        }
+    },
+    "food": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} ha cerrado permanentemente"
+                }
+            }
+        },
+        "description": "Una capa que muestra restaurantes y facilidades de comida rápida",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Abierta ahora"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú vegetariano"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú vegano"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Tiene menú halah"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Acepta efectivo"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Acepta tarjetas de pago"
+                    }
+                }
+            }
+        },
+        "name": "Restaurantes y comida rápida",
+        "presets": {
+            "0": {
+                "description": "Un lugar de comidas formal, con mesas y sillas y que vende comidas completas servidas por camareros",
+                "title": "un restaurante"
+            },
+            "1": {
+                "description": "Un negocio de comida centrado en servicio rápido solo en mostrador y comida para llevar"
+            }
+        },
+        "tagRenderings": {
+            "Cuisine": {
+                "mappings": {
+                    "0": {
+                        "then": "Esto es una pizzería"
+                    },
+                    "2": {
+                        "then": "Principalmente sirve pasta"
+                    },
+                    "3": {
+                        "then": "Esta es una tienda de kebak"
+                    },
+                    "5": {
+                        "then": "Aquí se sirven hamburguesas"
+                    },
+                    "6": {
+                        "then": "Aquí se sirve sushi"
+                    },
+                    "7": {
+                        "then": "Aquí se sirve café"
+                    },
+                    "8": {
+                        "then": "Este es un restaurante italiano (que sirve más que pasta y pizza)"
+                    },
+                    "9": {
+                        "then": "Aquí se sirven platos Franceses"
+                    },
+                    "10": {
+                        "then": "Aquí se sirven platos Chinos"
+                    },
+                    "11": {
+                        "then": "Aquí se sirven platos Griegos"
+                    },
+                    "12": {
+                        "then": "Aquí se sirven platos Indios"
+                    },
+                    "13": {
+                        "then": "Aquí se sirven platos Turcos"
+                    }
+                },
+                "question": "¿Qué comida se sirve aquí?",
+                "render": "Aquí se sirve principalmente {cuisine}"
+            },
+            "Fastfood vs restaurant": {
+                "mappings": {
+                    "0": {
+                        "then": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales."
+                    },
+                    "1": {
+                        "then": "Un <b>restaurante</b>, centrado en crear una buena experiencia donde se sirve en la mesa"
+                    }
+                },
+                "question": "¿Qué tipo de negocio es este?"
+            },
+            "Name": {
+                "question": "¿Cual es el nombre de este restaurante?",
+                "render": "El nombre de este restaurante es {name}"
+            },
+            "Takeaway": {
+                "mappings": {
+                    "0": {
+                        "then": "Este es un negocio solo para pedir para llevar"
+                    },
+                    "1": {
+                        "then": "Aquí es posible pedir para llevar"
+                    },
+                    "2": {
+                        "then": "Aquí no es posible pedir para llevar"
+                    }
+                },
+                "question": "¿Este lugar ofrece para llevar?"
+            },
+            "Vegan (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "Sin opciones veganas disponibles"
+                    },
+                    "1": {
+                        "then": "Alguna opciones veganas disponibles"
+                    },
+                    "2": {
+                        "then": "Opciones veganas disponibles"
+                    },
+                    "3": {
+                        "then": "Todos los platos son veganos"
+                    }
+                },
+                "question": "¿Este negocio sirve comida vegana?"
+            },
+            "Vegetarian (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "Sin opciones vegetarianas"
+                    },
+                    "1": {
+                        "then": "Algunas opciones vegetarianas"
+                    },
+                    "2": {
+                        "then": "Opciones vegetarianas disponibles"
+                    },
+                    "3": {
+                        "then": "Todos los platos son vegetarianos"
+                    }
+                },
+                "question": "¿Este restaurante tiene una opción vegetariana?"
+            },
+            "friture-oil": {
+                "mappings": {
+                    "0": {
+                        "then": "Aceite vegetal"
+                    },
+                    "1": {
+                        "then": "Aceite animal"
+                    }
+                }
+            },
+            "friture-take-your-container": {
+                "mappings": {
+                    "0": {
+                        "then": "Puedes traer <b>tus propios recipientes</b> para recoger tu pedido, ahorrando material de un solo uso y por tanto basura"
+                    },
+                    "1": {
+                        "then": "Traer tu propio recipiente <b>no está permitido</b>"
+                    },
+                    "2": {
+                        "then": "<b>Debes</b> de traer tu propio recipiente para pedir aquí."
+                    }
+                },
+                "question": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?<br/>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Restaurante <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Comida rápida <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Comida rápida"
+                }
+            },
+            "render": "Restaurante"
         }
     },
     "ghost_bike": {
@@ -1174,11 +2562,1305 @@
             "render": "Bicicleta blanca"
         }
     },
-    "observation_tower": {
-        "tagRenderings": {
-            "access": {
-                "question": "¿Se puede visitar esta torre?"
+    "hackerspace": {
+        "description": "Espacio hacker",
+        "name": "Espacio hacker",
+        "presets": {
+            "0": {
+                "description": "Un espacio hacker es un lugar en el que gente interesada en software se reúne",
+                "title": "un espacio hacker"
+            },
+            "1": {
+                "description": "Un espacio maker es un lugar donde entusiastas del DIY se reúnen para experimentar con electrónica, como arduino, …",
+                "title": "un espacio maker"
             }
+        },
+        "tagRenderings": {
+            "hackerspaces-name": {
+                "question": "¿Cual es el nombre de este espacio hacker?",
+                "render": "Este espacio hacker se llama <b>{name}</b>"
+            },
+            "hackerspaces-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Abierto 24/7"
+                    }
+                },
+                "question": "¿Cuándo está abierto este espacio hacker?",
+                "render": "{opening_hours_table()}"
+            },
+            "hackerspaces-start_date": {
+                "question": "¿Cuándo se fundó este espacio hacker?",
+                "render": "Este espacio hacker se fundó el {start_date}"
+            },
+            "is_makerspace": {
+                "mappings": {
+                    "0": {
+                        "then": "Este es un espacio maker"
+                    },
+                    "1": {
+                        "then": "Este es un espacio hacker tradicional (orientado al software)"
+                    }
+                },
+                "question": "¿Esto es un espacio hacker o un espacio maker?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": " {name}"
+                }
+            },
+            "render": "Espacio Hacker"
+        }
+    },
+    "hydrant": {
+        "description": "Un mapa que muestra bocas de incendios.",
+        "name": "Mapa de bocas de incendios",
+        "presets": {
+            "0": {
+                "description": "Una boca de incendios es un punto de conexión en el que los bomberos pueden conseguir agua. Puede situarse bajo tierra.",
+                "title": "una boca de incendios"
+            }
+        },
+        "tagRenderings": {
+            "hydrant-color": {
+                "mappings": {
+                    "0": {
+                        "then": "Se desconoce el color de la boca de incendios."
+                    },
+                    "1": {
+                        "then": "La boca de incendios es amarilla."
+                    },
+                    "2": {
+                        "then": "La boca de incendios es roja."
+                    }
+                },
+                "question": "¿De que color es la boca de incendios?",
+                "render": "La boca de incendios es de color {colour}"
+            },
+            "hydrant-state": {
+                "mappings": {
+                    "0": {
+                        "then": "La boca de incendios funciona (total o parcialmente)"
+                    },
+                    "1": {
+                        "then": "La boca de incendios no está disponible"
+                    },
+                    "2": {
+                        "then": "La boca de incendios se ha retirado"
+                    }
+                },
+                "question": "¿Todavía funciona esta boca de incendios?"
+            },
+            "hydrant-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Se desconoce el tipo de la boca de incendios"
+                    },
+                    "1": {
+                        "then": "De pilar."
+                    },
+                    "2": {
+                        "then": "De tubería."
+                    },
+                    "3": {
+                        "then": "De pared."
+                    },
+                    "4": {
+                        "then": "Bajo tierra."
+                    }
+                },
+                "question": "¿De qué tipo es esta boca de incendios?",
+                "render": " Tipo de boca de incendios: {fire_hydrant:type}"
+            }
+        },
+        "title": {
+            "render": "Boca de incendios"
+        }
+    },
+    "information_board": {
+        "description": "Una capa que muestra paneles informativos turísticos (ej. informan sobre el paisaje, una construcción, una característica, un mapa, ...)",
+        "name": "Paneles informativos",
+        "presets": {
+            "0": {
+                "title": "un panel informativo"
+            }
+        },
+        "title": {
+            "render": "Panel informativo"
+        }
+    },
+    "map": {
+        "description": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público",
+        "name": "Mapas",
+        "presets": {
+            "0": {
+                "description": "Añadir un mapa que falta",
+                "title": "un mapa"
+            }
+        },
+        "tagRenderings": {
+            "map-attribution": {
+                "mappings": {
+                    "0": {
+                        "then": "Se atribuye claramente a OpenStreetMap, incluyendo la licencia ODBL"
+                    },
+                    "1": {
+                        "then": "Se atribuya claramente a OpenStreetMap, pero no se menciona la licencia"
+                    },
+                    "2": {
+                        "then": "No se mencionaba OpenStreetMap, pero alguien le pegó una pegatina de OpenStreetMap"
+                    },
+                    "3": {
+                        "then": "No hay atribución"
+                    },
+                    "4": {
+                        "then": "No hay atribución"
+                    }
+                },
+                "question": "¿Hay una atribución a OpenStreetMap?"
+            },
+            "map-map_source": {
+                "mappings": {
+                    "0": {
+                        "then": "Este mapa se basa en OpenStreetMap"
+                    }
+                },
+                "question": "¿En qué datos se basa este mapa?",
+                "render": "Este mapa se basa en {map_source}"
+            }
+        },
+        "title": {
+            "render": "Mapa"
+        }
+    },
+    "maxspeed": {
+        "name": "Velocidad",
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "question": "Qué velocidad tiene"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilómetros/hora",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "millas/hora",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
+    "nature_reserve": {
+        "description": "",
+        "tagRenderings": {
+            "Access tag": {
+                "mappings": {
+                    "1": {
+                        "then": "No accesible"
+                    },
+                    "2": {
+                        "then": "No accesible, ya que es una área privada"
+                    },
+                    "3": {
+                        "then": "Accesible a pesar de ser una área privada"
+                    },
+                    "4": {
+                        "then": "Solo accesible con un guía o durante actividades organizadas"
+                    },
+                    "5": {
+                        "then": "Accesible con una tasa"
+                    }
+                }
+            },
+            "Dogs?": {
+                "mappings": {
+                    "0": {
+                        "then": "Los perros deben de ir con correa"
+                    },
+                    "1": {
+                        "then": "No se permiten perros"
+                    },
+                    "2": {
+                        "then": "Los perros pueden ir sueltos"
+                    }
+                }
+            },
+            "Editable description": {
+                "question": "¿Hay alguna información adicional?",
+                "render": "Información adicional: <i>{description:0}</i>"
+            },
+            "Name tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta área no tiene un nombre"
+                    }
+                },
+                "question": "¿Cual es el nombre de esta área?",
+                "render": "Esta área se llama {name}"
+            },
+            "Non-editable description": {
+                "render": "Información adicional: <i>{description}</i>"
+            },
+            "Operator tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Operado por NatuurPunt"
+                    },
+                    "1": {
+                        "then": "Operado por {operator}"
+                    }
+                },
+                "question": "¿Quién opera esta área?",
+                "render": "Operado por {operator}"
+            },
+            "Surface area": {
+                "render": "Superficie: {_surface:ha}Ha"
+            }
+        }
+    },
+    "note": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Debe mencionar {search} en el primer comentario"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> debe mencionar {search} en el primer comentario"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Abierto por el contributor {search}"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> abierto por el contributor {search}"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Editada por última vez por el contributor {search}"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Abierta después de {search}"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Creada antes de {search}"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Creada después de {search}"
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "Solo mostrar las notas abiertas por contributores anómimos"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Solo mostrar las notas abiertas"
+                    }
+                }
+            },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Todas las notas"
+                    },
+                    "1": {
+                        "question": "Ocultar las nostras de importación"
+                    },
+                    "2": {
+                        "question": "Solo mostrar las notas de importación"
+                    }
+                }
+            }
+        },
+        "name": "Notas de OpenStreetMap",
+        "tagRenderings": {
+            "nearby-images": {
+                "render": {
+                    "before": "<h3>Imágenes cercanas</h3>Las imágenes de debajo son imágenes geoetiquetadas cercanas y pueden ser útiles para encargarse de esta nota."
+                }
+            },
+            "report-contributor": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user}"
+            },
+            "report-note": {
+                "render": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Nota cerrada"
+                }
+            },
+            "render": "Nota"
+        }
+    },
+    "observation_tower": {
+        "description": "Torres con vista panorámica",
+        "name": "Torres de observación",
+        "tagRenderings": {
+            "Fee": {
+                "question": "¿Cuánto hay que pagar para entrar en esta torre?",
+                "render": "Visitar esta torre cuesta <b>{charge}</b>"
+            },
+            "Height": {
+                "question": "¿Cual es la altura de esta torre?",
+                "render": "Esta torre mide {height}"
+            },
+            "Operator": {
+                "question": "¿Quién mantiene esta torre?",
+                "render": "Mantenida por <b>{operator}</b>"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta torre es accesible públicamente"
+                    },
+                    "1": {
+                        "then": "A esta torre solo se puede acceder con un guía"
+                    }
+                },
+                "question": "¿Se puede visitar esta torre?"
+            },
+            "elevator": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta torre tiene un ascensor que lleva a los visitantes a la cima"
+                    },
+                    "1": {
+                        "then": "Esta torre no tiene ascensor"
+                    }
+                },
+                "question": "¿Tiene ascensor esta torre?"
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta torre no tiene un nombre específico"
+                    }
+                },
+                "question": "¿Cual es el nombre de esta torre?",
+                "render": "Esta torre se llama <b>{name}</b>"
+            },
+            "step_count": {
+                "question": "¿Cuántos escalones hay que subir para llegar a la cima de esta torre?",
+                "render": "Esta torre tiene {step_count} escalones para lllegar a l a cima"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            },
+            "render": "Torre de observación"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " metros"
+                    }
+                }
+            }
+        }
+    },
+    "parking": {
+        "description": "Una capa que muestra aparcamientos para coches",
+        "name": "Aparcamiento",
+        "presets": {
+            "0": {
+                "title": "un aparcamiento de coches"
+            }
+        },
+        "title": {
+            "render": "aparcamiento de coches"
+        }
+    },
+    "picnic_table": {
+        "description": "Una capa que muestra mesas de pícnic",
+        "name": "Mesas de pícnic",
+        "presets": {
+            "0": {
+                "title": "una mesa de pícnic"
+            }
+        },
+        "tagRenderings": {
+            "picnic_table-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta es una mesa de pícnic de madera"
+                    },
+                    "1": {
+                        "then": "Esta es una mesa de pícnic de hormigón"
+                    },
+                    "2": {
+                        "then": "Esta es una mesa de picnic hecha de plástico reciclado"
+                    }
+                },
+                "question": "¿De qué material está hecha esta mesa de pícnic?",
+                "render": "Esta mesa de pícnic está hecha de {material}"
+            }
+        },
+        "title": {
+            "render": "Mesa de pícnic"
+        }
+    },
+    "playground": {
+        "tagRenderings": {
+            "Playground-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Completamente accesible para usuarios de silla de ruedas"
+                    },
+                    "1": {
+                        "then": "Acceso limitado para usuarios de silla de ruedas"
+                    },
+                    "2": {
+                        "then": "No accesible a usuarios de sillas de ruedas"
+                    }
+                }
+            },
+            "playground-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accesible al público general"
+                    },
+                    "2": {
+                        "then": "Solo accesible para clientes del negocio que lo opera"
+                    },
+                    "3": {
+                        "then": "Solo accesibles para estudiantes de la escuela"
+                    },
+                    "4": {
+                        "then": "No accesible"
+                    }
+                }
+            },
+            "playground-email": {
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "playground-max_age": {
+                "render": "Accesible a niños de hasta {max_age}"
+            },
+            "playground-min_age": {
+                "render": "Accesible a niños menores de {min_age} años"
+            },
+            "playground-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Accesible desde el amanecer hasta el anochecer"
+                    },
+                    "1": {
+                        "then": "Siempre accesible"
+                    }
+                }
+            },
+            "playground-operator": {
+                "render": "Operado por {operator}"
+            },
+            "playground-phone": {
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "playground-surface": {
+                "mappings": {
+                    "0": {
+                        "then": "La superficie es <b>hierba</b>"
+                    },
+                    "1": {
+                        "then": "La superficie es <b>arena</b>"
+                    },
+                    "3": {
+                        "then": "La superficie es <b>adoquines</b>"
+                    },
+                    "4": {
+                        "then": "La superficie es <b>asfalto</b>"
+                    },
+                    "5": {
+                        "then": "La superficie es <b>hormigón</b>"
+                    },
+                    "6": {
+                        "then": "La superficie está <b>sin pavimentar</b>"
+                    },
+                    "7": {
+                        "then": "La superficie está <b>pavimentada</b>"
+                    }
+                },
+                "render": "La superficie es <b>{surface}</b>"
+            }
+        }
+    },
+    "public_bookcase": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Interior o exterior"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "bookcase-booktypes": {
+                "mappings": {
+                    "0": {
+                        "then": "Mayoritariamente libros infantiles"
+                    },
+                    "1": {
+                        "then": "Mayoritariamente libros para adultos"
+                    }
+                }
+            },
+            "bookcase-is-accessible": {
+                "mappings": {
+                    "0": {
+                        "then": "Accesible públicamente"
+                    },
+                    "1": {
+                        "then": "Solo accesible a clientes"
+                    }
+                }
+            },
+            "public_bookcase-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Parte de la red 'Little Free Library'"
+                    }
+                }
+            }
+        }
+    },
+    "recycling": {
+        "description": "Una capa con contenedores y centros de reciclaje",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Actualmente abierto"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Todos los tipos de reciclado"
+                    },
+                    "1": {
+                        "question": "Reciclaje de baterías"
+                    },
+                    "3": {
+                        "question": "Reciclaje de latas"
+                    },
+                    "4": {
+                        "question": "Reciclaje de ropa"
+                    },
+                    "5": {
+                        "question": "Reciclaje de aceite de cocina"
+                    },
+                    "6": {
+                        "question": "Reciclaje de aceite de motor"
+                    },
+                    "8": {
+                        "question": "Reciclaje de botellas de cristal"
+                    },
+                    "9": {
+                        "question": "Reciclaje de cristal"
+                    },
+                    "10": {
+                        "question": "Reciclaje de periódicos"
+                    },
+                    "11": {
+                        "question": "Reciclaje de papel"
+                    },
+                    "12": {
+                        "question": "Reciclaje de botellas de papel"
+                    },
+                    "13": {
+                        "question": "Reciclaje de embalajes plásticos"
+                    },
+                    "14": {
+                        "question": "Reciclaje de plástico"
+                    },
+                    "15": {
+                        "question": "Reciclaje de chatarra"
+                    }
+                }
+            }
+        },
+        "name": "Reciclaje",
+        "presets": {
+            "0": {
+                "title": "un contenedor de reciclaje"
+            },
+            "1": {
+                "title": "un centro de reciclado"
+            }
+        },
+        "tagRenderings": {
+            "container-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Este es un contenedor bajo tierra"
+                    },
+                    "1": {
+                        "then": "Este contenedor se sitúa en el interior"
+                    },
+                    "2": {
+                        "then": "Este contenedor se sitúa en el exterior"
+                    }
+                },
+                "question": "¿Dónde se sitúa este contenedor?"
+            },
+            "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7"
+                    }
+                },
+                "question": "¿A qué horas abre esta facilidad de reciclado?"
+            },
+            "operator": {
+                "question": "¿Que empresa opera esta facilidad de reciclado?",
+                "render": "Esta facilidad de reciclado la opera {operator}"
+            },
+            "recycling-accepts": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí se pueden reciclar baterías"
+                    },
+                    "2": {
+                        "then": "Aquí se pueden reciclar latas"
+                    },
+                    "3": {
+                        "then": "Aquí se puede reciclar ropa"
+                    },
+                    "4": {
+                        "then": "Aquí se puede reciclar aceite de cocina"
+                    },
+                    "5": {
+                        "then": "Aquí se puede reciclar aceite de motor"
+                    },
+                    "7": {
+                        "then": "Aquí se pueden reciclar residuos orgánicos"
+                    },
+                    "8": {
+                        "then": "Aquí se pueden reciclar botellas de cristal"
+                    },
+                    "9": {
+                        "then": "Aquí se puede reciclar cristal"
+                    },
+                    "10": {
+                        "then": "Aquí se pueden reciclar periódicos"
+                    },
+                    "11": {
+                        "then": "Aquí se puede reciclar papel"
+                    },
+                    "12": {
+                        "then": "Aquí se pueden reciclar botellas de plástico"
+                    },
+                    "13": {
+                        "then": "Aquí se pueden reciclar embalajes plásticos"
+                    },
+                    "14": {
+                        "then": "Aquí se puede reciclar plástico"
+                    },
+                    "15": {
+                        "then": "Aquí se puede reciclar chatarra"
+                    },
+                    "16": {
+                        "then": "Aquí se pueden reciclar zapatos"
+                    }
+                },
+                "question": "¿Qué se puede reciclar aquí?"
+            },
+            "recycling-centre-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Este centro de reciclaje no tiene un nombre específico"
+                    }
+                },
+                "question": "¿Cual es el nombre de este centro de reciclaje?",
+                "render": "Este centro de reciclaje se llama <b>{name}</b>"
+            },
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Esto es un contenedor de reciclaje"
+                    },
+                    "1": {
+                        "then": "Esto es un centro de reciclaje"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Centro de reciclaje"
+                },
+                "1": {
+                    "then": "Centro de reciclaje"
+                },
+                "2": {
+                    "then": "Contenedor de reciclaje"
+                }
+            },
+            "render": "Facilidad de reciclaje"
+        }
+    },
+    "shops": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} ha cerrado permanentemente"
+                }
+            }
+        },
+        "description": "Una tienda",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Solo mostrar tiendas que vendan {search}"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Solo mostrar tiendas con nombre {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Acepta efectivo"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Acepta el pago por tarjeta"
+                    }
+                }
+            }
+        },
+        "name": "Tienda",
+        "presets": {
+            "0": {
+                "description": "Añadir una nueva tienda",
+                "title": "una tienda"
+            }
+        },
+        "tagRenderings": {
+            "shops-email": {
+                "question": "¿Cual es la dirección de correo electrónico de esta tienda?",
+                "render": "<a href='mailto:{email}'>{email}</a>"
+            },
+            "shops-name": {
+                "question": "¿Cual es el nombre de esta tienda?"
+            },
+            "shops-opening_hours": {
+                "question": "¿Cual es el horario de esta tienda?",
+                "render": "{opening_hours_table(opening_hours)}"
+            },
+            "shops-phone": {
+                "question": "¿Cual es el número de teléfono?",
+                "render": "<a href='tel:{phone}'>{phone}</a>"
+            },
+            "shops-shop": {
+                "mappings": {
+                    "1": {
+                        "then": "Supermercado"
+                    },
+                    "2": {
+                        "then": "Tienda de ropa"
+                    },
+                    "3": {
+                        "then": "Peluquería"
+                    },
+                    "4": {
+                        "then": "Panadería"
+                    },
+                    "5": {
+                        "then": "Taller de coches"
+                    },
+                    "6": {
+                        "then": "Concesionario"
+                    }
+                },
+                "question": "¿Qué vende esta tienda?",
+                "render": "Esta tienda vende {shop}"
+            },
+            "shops-website": {
+                "question": "¿Cual es la página web de esta tienda?",
+                "render": "<a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "{shop}"
+                }
+            },
+            "render": "Tienda"
+        }
+    },
+    "slow_roads": {
+        "tagRenderings": {
+            "slow_roads-surface": {
+                "mappings": {
+                    "0": {
+                        "then": "La superficie es <b>hierba</b>"
+                    },
+                    "2": {
+                        "then": "La superficie está <b>sin pavimentar</b>"
+                    },
+                    "3": {
+                        "then": "La superficie es <b>arena</b>"
+                    },
+                    "4": {
+                        "then": "La superficie es <b>adoquines</b>"
+                    },
+                    "5": {
+                        "then": "La superficie es <b>asfalto</b>"
+                    },
+                    "6": {
+                        "then": "La superficie es <b>hormigón</b>"
+                    },
+                    "7": {
+                        "then": "La superficie está <b>pavimentada</b>"
+                    }
+                },
+                "render": "La superficie es <b>{surface}</b>"
+            }
+        }
+    },
+    "sport_pitch": {
+        "description": "Una pista de deportes",
+        "name": "Pistas de deportes",
+        "presets": {
+            "1": {
+                "title": "una pista de deportes"
+            }
+        },
+        "tagRenderings": {
+            "sport-pitch-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Acceso público"
+                    },
+                    "1": {
+                        "then": "Acceso limitado (ej. solo con una cita, a cieras horas, ...)"
+                    },
+                    "2": {
+                        "then": "Solo accesible para miembros del club"
+                    },
+                    "3": {
+                        "then": "Privada - no accesible al público"
+                    }
+                },
+                "question": "¿Esta pista de deportes es accesible públicamente?"
+            },
+            "sport-pitch-reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "Pedir una cita es obligatorio para utilizar esta pista"
+                    },
+                    "1": {
+                        "then": "Se recomienda pedir una cita al utilizar esta pista"
+                    },
+                    "2": {
+                        "then": "Pedir cita es posible, pero no necesario para utilizar esta pista de deportes"
+                    },
+                    "3": {
+                        "then": "No es posible pedir cita"
+                    }
+                },
+                "question": "¿Hay que pedir una cita para utilizar esta pista?"
+            },
+            "sport_pitch-email": {
+                "question": "¿Cual es la dirección de correo electrónico de la operadora?"
+            },
+            "sport_pitch-opening_hours": {
+                "mappings": {
+                    "1": {
+                        "then": "Siempre accesible"
+                    }
+                },
+                "question": "¿Cuándo es accesible esta pista?"
+            },
+            "sport_pitch-phone": {
+                "question": "¿Cual es el número de teléfono de la operadora?"
+            },
+            "sport_pitch-sport": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí se juega al baloncesto"
+                    },
+                    "1": {
+                        "then": "Aquí se juega al fútbol"
+                    },
+                    "2": {
+                        "then": "Esto es una mesa de ping pong"
+                    },
+                    "3": {
+                        "then": "Aquí se juega al tenis"
+                    },
+                    "5": {
+                        "then": "Aquí se juega al baloncesto"
+                    }
+                },
+                "question": "¿Qué deporte se practica aquí?",
+                "render": "Aquí se juega al {sport}"
+            },
+            "sport_pitch-surface": {
+                "mappings": {
+                    "0": {
+                        "then": "La superficie es <b>hierba</b>"
+                    },
+                    "1": {
+                        "then": "La superficie es <b>arena</b>"
+                    },
+                    "2": {
+                        "then": "La superficie es <b>adoquines</b>"
+                    },
+                    "3": {
+                        "then": "La superficie es <b>asfalto</b>"
+                    },
+                    "4": {
+                        "then": "La superficie es <b>hormigón</b>"
+                    }
+                },
+                "question": "¿Cual es la superficie de esta pista de deportes?",
+                "render": "La superficie es <b>{surface}</b>"
+            }
+        },
+        "title": {
+            "render": "Pista de deportes"
+        }
+    },
+    "street_lamps": {
+        "description": "Una capa que muestra luces callejeras",
+        "name": "Farolas",
+        "presets": {
+            "0": {
+                "title": "una farola"
+            }
+        },
+        "tagRenderings": {
+            "colour": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara emite luz blanca"
+                    },
+                    "1": {
+                        "then": "Esta lámpara emite luz verde"
+                    },
+                    "2": {
+                        "then": "Esta lámpara emite luz naranja"
+                    }
+                },
+                "question": "¿De qué color es la luz que emite esta lámpara?",
+                "render": "Esta lámpara emite luz {light:colour}"
+            },
+            "count": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
+            },
+            "direction": {
+                "question": "¿Hacia donde apunta esta lámpara?",
+                "render": "Esta lámpara apunta hacia {light:direction}"
+            },
+            "lamp_mount": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lampara está encima de un mástil recto"
+                    },
+                    "1": {
+                        "then": "Esta lámpara está encima de un mástil curvado"
+                    }
+                },
+                "question": "¿Cómo está montada esta lámpara al poste?"
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara está iluminada por la noche"
+                    },
+                    "1": {
+                        "then": "Esta lámpara está iluminada 24/7"
+                    },
+                    "2": {
+                        "then": "Esta lámpara se ilumina con el movimiento"
+                    },
+                    "3": {
+                        "then": "Esta lámpara se ilumina bajo demanda (ej. con un pulsador)"
+                    }
+                },
+                "question": "¿Cuándo se ilumina esta lámpara?"
+            },
+            "method": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara se ilumina eléctricamente"
+                    },
+                    "1": {
+                        "then": "Esta lámpara utiliza LEDs"
+                    },
+                    "2": {
+                        "then": "Esta lámpara utiliza iluminación incandescente"
+                    },
+                    "3": {
+                        "then": "Esta lámpara utiliza iluminación halógena"
+                    },
+                    "4": {
+                        "then": "Esta lámpara utiliza lámparas de descarga (de tipo desconocido)"
+                    },
+                    "5": {
+                        "then": "Esta lámpara utiliza una lámpara de vapor de mercurio (levemente azulada)"
+                    },
+                    "7": {
+                        "then": "Esta lámpara utiliza iluminación fluorescente"
+                    },
+                    "8": {
+                        "then": "Esta lámpara utiliza lámparas de sodio (de tipo desconocido)"
+                    },
+                    "9": {
+                        "then": "Esta lámpara utiliza lámparas de sodio de baja presión (naranja monocromo)"
+                    },
+                    "10": {
+                        "then": "Esta lámpara utiliza lámparas de sodio de alta presión (naranja con blanco)"
+                    },
+                    "11": {
+                        "then": "Esta lampara se ilumina con gas"
+                    }
+                },
+                "question": "¿Qué tipo de iluminación utiliza esta lámpara?"
+            },
+            "ref": {
+                "question": "¿Cual es el número de referencia de esta lámpara callejera?",
+                "render": "Esta lámpara callejera tiene el número de referencia {ref}"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta lámpara se suspende utilizando cables"
+                    },
+                    "1": {
+                        "then": "Esta lámpara está montada en un techo"
+                    },
+                    "2": {
+                        "then": "Esta lámpara está montada en el suelo"
+                    },
+                    "3": {
+                        "then": "Esta lámpara está montada en un poste corto (mayoritariamente < 1.5m)"
+                    },
+                    "4": {
+                        "then": "Esta lámpara está montada en un poste"
+                    },
+                    "5": {
+                        "then": "Esta lámpara está montada directamente en la pared"
+                    },
+                    "6": {
+                        "then": "Esta lámpara está montada en la pared utilizando una barra metálica"
+                    }
+                },
+                "question": "¿Cómo está montada esta lámpara?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Lámpara Callejera {ref}"
+                }
+            },
+            "render": "Lámpara Callejera"
+        }
+    },
+    "toilet": {
+        "description": "Una capa que muestra baños (públicos)",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accesible con sillas de ruedas"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Tiene un cambiador"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Abierto ahora"
+                    }
+                }
+            }
+        },
+        "name": "Baños",
+        "presets": {
+            "0": {
+                "title": "un baño público"
+            }
+        },
+        "tagRenderings": {
+            "Opening-hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Abierto 24/7"
+                    }
+                },
+                "question": ""
+            },
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Acceso públic"
+                    },
+                    "1": {
+                        "then": "Solo accesible a clientes"
+                    },
+                    "2": {
+                        "then": "No accesible"
+                    },
+                    "3": {
+                        "then": "Accesible, pero hay que pedir la llave para entrar"
+                    },
+                    "4": {
+                        "then": "De acceso público"
+                    }
+                },
+                "render": "El acceso es {access}"
+            },
+            "toilet-changing_table:location": {
+                "mappings": {
+                    "3": {
+                        "then": "El cambiador está en una habitación dedicada "
+                    }
+                },
+                "question": "¿Dónde está el cambiador?",
+                "render": "El cambiador está en {changing_table:location}"
+            },
+            "toilet-charge": {
+                "question": "¿Cuánto hay que pagar para estos baños?",
+                "render": "La tasa es {charge}"
+            },
+            "toilet-handwashing": {
+                "mappings": {
+                    "0": {
+                        "then": "Estos baños tienen una pileta para lavarse las manos"
+                    },
+                    "1": {
+                        "then": "Estos baños <b>no</b> tienen una pileta para lavarse las manos"
+                    }
+                },
+                "question": "¿Esto baños tienen una pileta para lavarte los baños?"
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "0": {
+                        "then": "Este baño esta equipado con papel higiénico"
+                    },
+                    "1": {
+                        "then": "Tienes que traer tu propio papel higiénico a este baño"
+                    }
+                },
+                "question": "¿Hay que traer tu propio papel higiénico a este baño?"
+            },
+            "toilets-changing-table": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay un cambiador"
+                    },
+                    "1": {
+                        "then": "No hay cambiador"
+                    }
+                }
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Estos son baños de pago"
+                    }
+                }
+            },
+            "toilets-type": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquí solo hay orinales"
+                    },
+                    "3": {
+                        "then": "Aquí hay tanto váteres de sentarse como orinales"
+                    }
+                },
+                "question": "¿Qué tipo de baños son estos?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay un baño dedicado para usuarios con sillas de ruedas"
+                    },
+                    "1": {
+                        "then": "Sin acceso para sillas de ruedas"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Baño"
         }
     },
     "tree_node": {
@@ -1281,16 +3963,20 @@
                 },
                 "question": "¿Es un árbol de hoja ancha o de hoja aguja?"
             },
+            "tree-species-wikidata": {
+                "question": "¿De qué especie es este árbol?"
+            },
             "tree_node-name": {
                 "mappings": {
                     "0": {
                         "then": "No identificas la especie."
                     }
                 },
-                "question": "El árbol no tiene nombre?."
+                "question": "¿Tiene nombre este árbol?",
+                "render": "Nombre: {name}"
             },
             "tree_node-ref:OnroerendErfgoed": {
-                "question": "¿Cuál es la identificación emitida por Onroerend Erfgoed Flandes?"
+                "question": "¿Cuál es el número de identificación emitido por Onroerend Erfgoed Flandes?"
             },
             "tree_node-wikidata": {
                 "question": "¿Cuál es el ID de Wikidata para este árbol?",
@@ -1299,6 +3985,91 @@
         },
         "title": {
             "render": "Árbol"
+        }
+    },
+    "veterinary": {
+        "name": "veterinario",
+        "presets": {
+            "0": {
+                "description": "un veterinario, que trata a perros",
+                "title": "un veterinario"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "¿Cual es el nombre de este veterinario?",
+                "render": "El nombre de este veterinario es {name}"
+            }
+        },
+        "title": {
+            "render": "Veterinario"
+        }
+    },
+    "viewpoint": {
+        "description": "Un buen punto de vista o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
+        "tagRenderings": {
+            "viewpoint-description": {
+                "question": "¿Quieres añadir una descripción?"
+            }
+        }
+    },
+    "visitor_information_centre": {
+        "description": "Un centro de visitantes ofrece información sobre una atracción específica o lugar de interese donde se sitúa.",
+        "name": "Centro de Información al Visitante",
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
+        }
+    },
+    "walls_and_buildings": {
+        "title": {
+            "render": "Pared o edificio"
+        }
+    },
+    "waste_basket": {
+        "description": "Esta es una papelera pública, donde puedes tirar tu basura.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Todos los tipos"
+                    },
+                    "1": {
+                        "question": "Papelera para cigarrillos"
+                    },
+                    "3": {
+                        "question": "Papelera para excrementos de perro"
+                    },
+                    "4": {
+                        "question": "Papelera para basura"
+                    },
+                    "6": {
+                        "question": "Papelera para plástico"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Papelera con dispensador de bolsas de excrementos (para perros)"
+                    }
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Papelera"
+                        }
+                    }
+                }
+            }
         }
     }
 }

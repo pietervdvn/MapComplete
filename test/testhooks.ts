@@ -1,11 +1,17 @@
 import ScriptUtils from "../scripts/ScriptUtils";
 import {Utils} from "../Utils";
+import * as fakedom from "fake-dom"
 
 export const mochaHooks = {
     
     beforeEach(done) {
         ScriptUtils.fixUtils();
-        
+
+        if (fakedom === undefined || window === undefined) {
+            throw "FakeDom not initialized"
+        }
+
+
         // Block internet access
         const realDownloadFunc = Utils.externalDownloadFunction;
         Utils.externalDownloadFunction = async (url) => {

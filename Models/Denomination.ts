@@ -1,7 +1,7 @@
 import {Translation} from "../UI/i18n/Translation";
 import {ApplicableUnitJson} from "./ThemeConfig/Json/UnitConfigJson";
 import Translations from "../UI/i18n/Translations";
-import {UIEventSource} from "../Logic/UIEventSource";
+import {Store, UIEventSource} from "../Logic/UIEventSource";
 import BaseUIElement from "../UI/BaseUIElement";
 import Toggle from "../UI/Input/Toggle";
 
@@ -49,7 +49,7 @@ export class Denomination {
         return (this._humanSingular ?? this._human).Clone()
     }
 
-    getToggledHuman(isSingular: UIEventSource<boolean>): BaseUIElement {
+    getToggledHuman(isSingular: Store<boolean>): BaseUIElement {
         if (this._humanSingular === undefined) {
             return this.human
         }

@@ -91,7 +91,7 @@ The question is  What is the name of this bicycle library?
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with This bicycle library is called {name}
+This is rendered with  This bicycle library is called {name}
 
 
 
@@ -105,13 +105,13 @@ The question is  What is the website of {title()}?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with contact:website~^..*$
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with  contact:website~^..*$
   - This option cannot be chosen as answer
 
 
@@ -125,13 +125,13 @@ The question is  What is the phone number of {title()}?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with <a href='tel:{phone}'>{phone}</a>
+This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a> corresponds with contact:phone~^..*$
+  - <a href='tel:{contact:phone}'>{contact:phone}</a> corresponds with  contact:phone~^..*$
   - This option cannot be chosen as answer
 
 
@@ -145,13 +145,13 @@ The question is  What is the email address of {title()}?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a> corresponds with contact:email~^..*$
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a> corresponds with  contact:email~^..*$
   - This option cannot be chosen as answer
 
 
@@ -165,7 +165,7 @@ The question is  What are the opening hours of {title()}?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
 
 
@@ -179,14 +179,14 @@ The question is  How much does lending a bicycle cost?
 
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
 
-This is rendered with Lending a bicycle costs {charge}
+This is rendered with  Lending a bicycle costs {charge}
 
 
 
 
 
-  - Lending a bicycle is free corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
-  - Lending a bicycle costs €20/year and €20 warranty corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D€20warranty + €20/year' target='_blank'>€20warranty + €20/year</a>
+  - Lending a bicycle is free corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+  - Lending a bicycle costs €20/year and €20 warranty corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D€20warranty + €20/year' target='_blank'>€20warranty + €20/year</a>
 
 
 
@@ -195,15 +195,15 @@ This is rendered with Lending a bicycle costs {charge}
 
 
 
-The question is  Who can lend bicycles here?
+The question is  Who can loan bicycles here?
 
 
 
 
 
-  - Bikes for children available corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dchild' target='_blank'>child</a>
-  - Bikes for adult available corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dadult' target='_blank'>adult</a>
-  - Bikes for disabled persons available corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Ddisabled' target='_blank'>disabled</a>
+  - Bikes for children available corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dchild' target='_blank'>child</a>
+  - Bikes for adult available corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dadult' target='_blank'>adult</a>
+  - Bikes for disabled persons available corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Ddisabled' target='_blank'>disabled</a>
 
 
 
@@ -216,7 +216,7 @@ The question is  Is there still something relevant you couldn't give in the prev
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
 
-This is rendered with {description}
+This is rendered with  {description}
 
  
 

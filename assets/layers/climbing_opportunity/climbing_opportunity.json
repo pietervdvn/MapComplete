@@ -10,7 +10,8 @@
     "it": "Opportunità di arrampicata?"
   },
   "description": {
-    "en": "Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added"
+    "en": "Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added",
+    "de": "Rückfallebene mit Orten, auf denen Klettern eventuell möglich ist. Sie wird erst angezeigt, wenn man stark hineinzoomt, um zu verhindern, dass Elemente doppelt hinzugefügt werden"
   },
   "minzoom": 19,
   "source": {

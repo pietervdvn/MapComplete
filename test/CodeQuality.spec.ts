@@ -9,7 +9,7 @@ import {exec} from "child_process";
  */
 function detectInCode(forbidden: string, reason: string) {
 
-    const excludedDirs = [".git", "node_modules", "dist", ".cache", ".parcel-cache", "assets", "vendor"]
+    const excludedDirs = [".git", "node_modules", "dist", ".cache", ".parcel-cache", "assets", "vendor", ".idea/"]
 
     exec("grep -n \"" + forbidden + "\" -r . " + excludedDirs.map(d => "--exclude-dir=" + d).join(" "), ((error, stdout, stderr) => {
         if (error?.message?.startsWith("Command failed: grep")) {
@@ -39,6 +39,10 @@ describe("Code quality", () => {
 
     it("should not contain 'constructor.name'", () => {
         detectInCode("constructor\\.name", "This is not allowed, as minification does erase names.")
+    })
+
+    it("should not contain 'innerText'", () => {
+        detectInCode("innerText", "innerText is not allowed as it is not testable with fakeDom. Use 'textContent' instead.")
     })
     
 })

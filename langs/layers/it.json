@@ -1671,9 +1671,6 @@
                     },
                     "1": {
                         "then": "Principalmente libri per persone in età adulta"
-                    },
-                    "2": {
-                        "then": "Sia libri per l'infanzia, sia per l'età adulta"
                     }
                 },
                 "question": "Che tipo di libri si possono trovare in questa microbiblioteca?"
@@ -1950,7 +1947,7 @@
                         "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
                     }
                 },
-                "question": "Che cosa sorveglia questa videocamera"
+                "question": "Che cosa sorveglia questa videocamera?"
             },
             "Surveillance:zone": {
                 "mappings": {

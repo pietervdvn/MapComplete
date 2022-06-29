@@ -130,6 +130,7 @@
         "title": "Entrades"
     },
     "etymology": {
+        "shortDescription": "Quin és l'origen d'un topònim?",
         "title": "Open Etymology Map"
     },
     "facadegardens": {
@@ -163,8 +164,15 @@
         },
         "title": "Botigues de patates"
     },
+    "hailhydrant": {
+        "shortDescription": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
+        "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies"
+    },
     "maps": {
         "title": "Un mapa de mapes"
+    },
+    "maxspeed": {
+        "title": "Velocitat"
     },
     "nature": {
         "title": "A la natura"

@@ -3,7 +3,7 @@ import FilteringFeatureSource from "./Sources/FilteringFeatureSource";
 import PerLayerFeatureSourceSplitter from "./PerLayerFeatureSourceSplitter";
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "./FeatureSource";
 import TiledFeatureSource from "./TiledFeatureSource/TiledFeatureSource";
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import {TileHierarchyTools} from "./TiledFeatureSource/TileHierarchy";
 import RememberingSource from "./Sources/RememberingSource";
 import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
@@ -23,6 +23,7 @@ import TileFreshnessCalculator from "./TileFreshnessCalculator";
 import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource";
 import MapState from "../State/MapState";
 import {ElementStorage} from "../ElementStorage";
+import {Feature, Geometry} from "@turf/turf";
 
 
 /**
@@ -38,8 +39,8 @@ import {ElementStorage} from "../ElementStorage";
  */
 export default class FeaturePipeline {
 
-    public readonly sufficientlyZoomed: UIEventSource<boolean>;
-    public readonly runningQuery: UIEventSource<boolean>;
+    public readonly sufficientlyZoomed: Store<boolean>;
+    public readonly runningQuery: Store<boolean>;
     public readonly timeout: UIEventSource<number>;
     public readonly somethingLoaded: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> = new UIEventSource<FeatureSource>(undefined)
@@ -314,7 +315,7 @@ export default class FeaturePipeline {
                 // We don't bother to split them over tiles as it'll contain little features by default, so we simply add them like this
                 perLayerHierarchy.get(perLayer.layer.layerDef.id).registerTile(perLayer)
                 // AT last, we always apply the metatags whenever possible
-                perLayer.features.addCallbackAndRunD(feats => {
+                perLayer.features.addCallbackAndRunD(_ => {
                     self.onNewDataLoaded(perLayer);
                 })
 
@@ -337,7 +338,7 @@ export default class FeaturePipeline {
 
     }
 
-    public GetAllFeaturesWithin(bbox: BBox): any[][] {
+    public GetAllFeaturesWithin(bbox: BBox): Feature<Geometry, {id: string}>[][] {
         const self = this
         const tiles = []
         Array.from(this.perLayerHierarchy.keys())
@@ -417,7 +418,7 @@ export default class FeaturePipeline {
     /*
     * Gives an UIEventSource containing the tileIndexes of the tiles that should be loaded from OSM
     * */
-    private getNeededTilesFromOsm(isSufficientlyZoomed: UIEventSource<boolean>): UIEventSource<number[]> {
+    private getNeededTilesFromOsm(isSufficientlyZoomed: Store<boolean>): Store<number[]> {
         const self = this
         return this.state.currentBounds.map(bbox => {
             if (bbox === undefined) {
@@ -450,12 +451,12 @@ export default class FeaturePipeline {
     private initOverpassUpdater(state: {
         allElements: ElementStorage;
         layoutToUse: LayoutConfig,
-        currentBounds: UIEventSource<BBox>,
-        locationControl: UIEventSource<Loc>,
-        readonly overpassUrl: UIEventSource<string[]>;
-        readonly overpassTimeout: UIEventSource<number>;
-        readonly overpassMaxZoom: UIEventSource<number>,
-    }, useOsmApi: UIEventSource<boolean>): OverpassFeatureSource {
+        currentBounds: Store<BBox>,
+        locationControl: Store<Loc>,
+        readonly overpassUrl: Store<string[]>;
+        readonly overpassTimeout: Store<number>;
+        readonly overpassMaxZoom: Store<number>,
+    }, useOsmApi: Store<boolean>): OverpassFeatureSource {
         const minzoom = Math.min(...state.layoutToUse.layers.map(layer => layer.minzoom))
         const overpassIsActive = state.currentBounds.map(bbox => {
             if (bbox === undefined) {

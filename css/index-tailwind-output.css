@@ -33,9 +33,7 @@ Use a more readable tab size (opinionated).
 */
 
 html {
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
 }
 
 /**
@@ -465,7 +463,7 @@ textarea {
   resize: vertical;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   opacity: 1;
   color: #9ca3af;
 }
@@ -872,6 +870,10 @@ video {
   margin-top: 1rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1084,10 +1086,6 @@ video {
   height: 0px;
 }
 
-.h-40 {
-  height: 10rem;
-}
-
 .h-64 {
   height: 16rem;
 }
@@ -1162,7 +1160,6 @@ video {
 
 .w-min {
   width: -webkit-min-content;
-  width: -moz-min-content;
   width: min-content;
 }
 
@@ -1172,7 +1169,6 @@ video {
 
 .w-max {
   width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -1186,7 +1182,6 @@ video {
 
 .min-w-min {
   min-width: -webkit-min-content;
-  min-width: -moz-min-content;
   min-width: min-content;
 }
 
@@ -1219,18 +1214,21 @@ video {
 }
 
 .transform {
-  transform: var(--tw-transform);
+  -webkit-transform: var(--tw-transform);
+          transform: var(--tw-transform);
 }
 
 @-webkit-keyframes spin {
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -1450,11 +1448,6 @@ video {
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
-}
-
-.border-green-500 {
-  --tw-border-opacity: 1;
-  border-color: rgba(16, 185, 129, var(--tw-border-opacity));
 }
 
 .border-opacity-50 {
@@ -1774,31 +1767,36 @@ video {
 
 .blur {
   --tw-blur: blur(8px);
-  filter: var(--tw-filter);
+  -webkit-filter: var(--tw-filter);
+          filter: var(--tw-filter);
 }
 
 .drop-shadow {
   --tw-drop-shadow: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
-  filter: var(--tw-filter);
+  -webkit-filter: var(--tw-filter);
+          filter: var(--tw-filter);
 }
 
 .invert {
   --tw-invert: invert(100%);
-  filter: var(--tw-filter);
+  -webkit-filter: var(--tw-filter);
+          filter: var(--tw-filter);
 }
 
 .filter {
-  filter: var(--tw-filter);
+  -webkit-filter: var(--tw-filter);
+          filter: var(--tw-filter);
 }
 
 .\!filter {
-  filter: var(--tw-filter) !important;
+  -webkit-filter: var(--tw-filter) !important;
+          filter: var(--tw-filter) !important;
 }
 
 .transition {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1979,16 +1977,19 @@ a {
 
 .btn-secondary {
   background-color: var(--catch-detail-color);
-  filter: saturate(0.5);
+  -webkit-filter: saturate(0.5);
+          filter: saturate(0.5);
 }
 
 .btn-secondary:hover {
   background-color: var(--catch-detail-color);
-  filter: unset;
+  -webkit-filter: unset;
+          filter: unset;
 }
 
 .btn-disabled {
-  filter: saturate(0.3);
+  -webkit-filter: saturate(0.3);
+          filter: saturate(0.3);
   cursor: default;
 }
 
@@ -1998,7 +1999,6 @@ a {
 
 .h-min {
   height: -webkit-min-content;
-  height: -moz-min-content;
   height: min-content;
 }
 
@@ -2008,7 +2008,6 @@ a {
 
 .w-min {
   width: -webkit-min-content;
-  width: -moz-min-content;
   width: min-content;
 }
 
@@ -2180,7 +2179,6 @@ li::marker {
 .invalid {
   box-shadow: 0 0 10px #ff5353;
   height: -webkit-min-content;
-  height: -moz-min-content;
   height: min-content;
 }
 
@@ -2234,11 +2232,13 @@ li::marker {
   /* This is the animation on the marker to add a new point - it slides through all the possible presets */
 
   from {
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 
   to {
-    transform: translateX(calc(-100% + 42px));
+    -webkit-transform: translateX(calc(-100% + 42px));
+            transform: translateX(calc(-100% + 42px));
   }
 }
 
@@ -2246,18 +2246,21 @@ li::marker {
   /* This is the animation on the marker to add a new point - it slides through all the possible presets */
 
   from {
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 
   to {
-    transform: translateX(calc(-100% + 42px));
+    -webkit-transform: translateX(calc(-100% + 42px));
+            transform: translateX(calc(-100% + 42px));
   }
 }
 
 .hand-drag-animation {
   -webkit-animation: hand-drag-animation 6s ease-in-out infinite;
           animation: hand-drag-animation 6s ease-in-out infinite;
-  transform-origin: 50% 125%;
+  -webkit-transform-origin: 50% 125%;
+          transform-origin: 50% 125%;
 }
 
 @-webkit-keyframes hand-drag-animation {
@@ -2265,37 +2268,44 @@ li::marker {
 
   0% {
     opacity: 0;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 
   6% {
     opacity: 1;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 
   12% {
     opacity: 1;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
 
   24% {
     opacity: 1;
-    transform: rotate(-00deg);
+    -webkit-transform: rotate(-00deg);
+            transform: rotate(-00deg);
   }
 
   30% {
     opacity: 1;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 
   36% {
     opacity: 0;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 
   100% {
     opacity: 0;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 }
 
@@ -2304,37 +2314,44 @@ li::marker {
 
   0% {
     opacity: 0;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 
   6% {
     opacity: 1;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 
   12% {
     opacity: 1;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
 
   24% {
     opacity: 1;
-    transform: rotate(-00deg);
+    -webkit-transform: rotate(-00deg);
+            transform: rotate(-00deg);
   }
 
   30% {
     opacity: 1;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 
   36% {
     opacity: 0;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 
   100% {
     opacity: 0;
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
   }
 }
 
@@ -2651,10 +2668,6 @@ input {
     height: 3rem;
   }
 
-  .md\:max-h-65vh {
-    max-height: 65vh;
-  }
-
   .md\:w-2\/6 {
     width: 33.333333%;
   }
@@ -2665,7 +2678,6 @@ input {
 
   .md\:w-max {
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 
@@ -2769,3 +2781,4 @@ input {
     display: inline;
   }
 }
+

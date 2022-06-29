@@ -19,17 +19,6 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 
@@ -82,7 +71,7 @@ The question is  Do you want to add a description?
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
 
-This is rendered with {description}
+This is rendered with  {description}
 
  
 

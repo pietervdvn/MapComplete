@@ -4,15 +4,14 @@
  * Exports everything conventiently as a string, for direct use
  */
 import OpeningHoursPicker from "./OpeningHoursPicker";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {OH} from "./OpeningHours";
+import {OH, OpeningHour} from "./OpeningHours";
 import {InputElement} from "../Input/InputElement";
 import PublicHolidayInput from "./PublicHolidayInput";
 import Translations from "../i18n/Translations";
-import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
 
 
@@ -28,8 +27,7 @@ export default class OpeningHoursInput extends InputElement<string> {
         this._value = value;
         let valueWithoutPrefix = value
         if (prefix !== "" && postfix !== "") {
-
-            valueWithoutPrefix = value.map(str => {
+            valueWithoutPrefix = value.sync(str => {
                 if (str === undefined) {
                     return undefined;
                 }
@@ -40,7 +38,8 @@ export default class OpeningHoursInput extends InputElement<string> {
                     return str.substring(prefix.length, str.length - postfix.length)
                 }
                 return str
-            }, [], noPrefix => {
+            }, [], 
+                    noPrefix => {
                 if (noPrefix === undefined) {
                     return undefined;
                 }
@@ -55,7 +54,7 @@ export default class OpeningHoursInput extends InputElement<string> {
             })
         }
 
-        const leftoverRules = valueWithoutPrefix.map<string[]>(str => {
+        const leftoverRules: Store<string[]> = valueWithoutPrefix.map(str => {
             if (str === undefined) {
                 return []
             }
@@ -72,35 +71,47 @@ export default class OpeningHoursInput extends InputElement<string> {
             }
             return leftOvers;
         })
-        // Note: MUST be bound AFTER the leftover rules!
-        const rulesFromOhPicker = valueWithoutPrefix.map(OH.Parse);
-
-        const ph = valueWithoutPrefix.map<string>(str => {
-            if (str === undefined) {
-                return ""
+       
+        let ph = "";
+        const rules = valueWithoutPrefix.data?.split(";") ?? [];
+        for (const rule of rules) {
+            if (OH.ParsePHRule(rule) !== null) {
+                ph = rule;
+                break;
             }
-            const rules = str.split(";");
-            for (const rule of rules) {
-                if (OH.ParsePHRule(rule) !== null) {
-                    return rule;
-                }
-            }
-            return "";
-        })
-        const phSelector = new PublicHolidayInput(ph);
-
-        function update() {
-            const regular = OH.ToString(rulesFromOhPicker.data);
-            const rules: string[] = [
-                regular,
-                ...leftoverRules.data,
-                ph.data
-            ]
-            valueWithoutPrefix.setData(Utils.NoEmpty(rules).join(";"));
         }
+        const phSelector = new PublicHolidayInput(new UIEventSource<string>(ph));
+        
+        
+        // Note: MUST be bound AFTER the leftover rules!
+        const rulesFromOhPicker: UIEventSource<OpeningHour[]> = valueWithoutPrefix.sync(str => {
+            return OH.Parse(str);
+        }, [leftoverRules, phSelector.GetValue()], (rules, oldString) => {
+            // We always add a ';', to easily add new rules. We remove the ';' again at the end of the function
+            // Important: spaces are _not_ allowed after a ';' as it'll destabilize the parsing!
+            let str = OH.ToString(rules) + ";"
+            const ph = phSelector.GetValue().data;
+            if(ph){
+               str += ph + ";"
+            }
+            
+            str += leftoverRules.data.join(";") + ";"
+            
+            str = str.trim()
+            if(str.endsWith(";")){
+                str = str.substring(0, str.length - 1)
+            }
+            if(str.startsWith(";")){
+                str = str.substring(1)
+            }
+            str.trim()
+            
+            if(str === oldString){
+                return oldString; // We pass a reference to the old string to stabilize the EventSource
+            }
+            return str;
+        });
 
-        rulesFromOhPicker.addCallback(update);
-        ph.addCallback(update);
 
         const leftoverWarning = new VariableUiElement(leftoverRules.map((leftovers: string[]) => {
 

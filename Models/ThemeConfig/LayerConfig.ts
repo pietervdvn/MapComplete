@@ -65,7 +65,8 @@ export default class LayerConfig extends WithContextLoader {
     public readonly filterIsSameAs: string;
     public readonly forceLoad: boolean;
 
-    public readonly syncSelection: "no" | "local" | "theme-only" | "global"
+    public static readonly syncSelectionAllowed =  ["no" , "local" , "theme-only" , "global"] as const;
+    public readonly syncSelection: (typeof LayerConfig.syncSelectionAllowed)[number] // this is a trick to conver a constant array of strings into a type union of these values
 
     constructor(
         json: LayerConfigJson,
@@ -97,7 +98,10 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
-        this.syncSelection = json.syncSelection;
+        if(json.syncSelection !== undefined && LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0){
+            throw context+ " Invalid sync-selection: must be one of "+LayerConfig.syncSelectionAllowed.map(v => `'${v}'`).join(", ")+" but got '"+json.syncSelection+"'"
+        }
+        this.syncSelection = json.syncSelection ?? "no";
         const osmTags = TagUtils.Tag(
             json.source.osmTags,
             context + "source.osmTags"

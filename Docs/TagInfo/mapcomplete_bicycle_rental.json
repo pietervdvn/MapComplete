@@ -168,7 +168,7 @@
     },
     {
       "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=kid_bike with a fixed text, namely 'Bikes for childs can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
+      "description": "Layer 'Bicycle rental' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle rental')",
       "value": "kid_bike"
     },
     {

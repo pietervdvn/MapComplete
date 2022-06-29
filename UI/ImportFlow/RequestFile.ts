@@ -1,5 +1,5 @@
 import Combine from "../Base/Combine";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, Stores} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
 import {SubtleButton} from "../Base/SubtleButton";
 import {VariableUiElement} from "../Base/VariableUIElement";
@@ -10,7 +10,6 @@ import FileSelectorButton from "../Input/FileSelectorButton";
 import {FlowStep} from "./FlowStep";
 import {parse} from "papaparse";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {del} from "idb-keyval";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 class FileSelector extends InputElementMap<FileList, { name: string, contents: Promise<string> }> {
@@ -38,11 +37,11 @@ class FileSelector extends InputElementMap<FileList, { name: string, contents: P
  */
 export class RequestFile extends Combine implements FlowStep<{features: any[]}> {
 
-    public readonly IsValid: UIEventSource<boolean>
+    public readonly IsValid: Store<boolean>
     /**
      * The loaded GeoJSON
      */
-    public readonly Value: UIEventSource<{features: any[]}>
+    public readonly Value: Store<{features: any[]}>
 
     constructor() {
         const t = Translations.t.importHelper.selectFile;
@@ -54,15 +53,15 @@ export class RequestFile extends Combine implements FlowStep<{features: any[]}> 
             return t.loadedFilesAre.Subs({file: file.name}).SetClass("thanks")
         }))
 
-        const text = UIEventSource.flatten(
+        const text = Stores.flatten(
             csvSelector.GetValue().map(v => {
                 if (v === undefined) {
                     return undefined
                 }
-                return UIEventSource.FromPromise(v.contents)
+                return Stores.FromPromise(v.contents)
             }))
 
-        const asGeoJson: UIEventSource<any | { error: string | BaseUIElement }> = text.map(src => {
+        const asGeoJson: Store<any | { error: string | BaseUIElement }> = text.map((src: string) => {
             if (src === undefined) {
                 return undefined
             }

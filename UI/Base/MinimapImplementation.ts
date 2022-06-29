@@ -33,18 +33,18 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     private constructor(options?: MinimapOptions) {
         super()
         options = options ?? {}
+        this._id = "minimap" + MinimapImplementation._nextId;
+        MinimapImplementation._nextId++
         this.leafletMap = options.leafletMap ?? new UIEventSource<Map>(undefined)
         this._background = options?.background ?? new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
         this.location = options?.location ?? new UIEventSource<Loc>({lat: 0, lon: 0, zoom: 1})
         this.bounds = options?.bounds;
-        this._id = "minimap" + MinimapImplementation._nextId;
         this._allowMoving = options.allowMoving ?? true;
         this._leafletoptions = options.leafletOptions ?? {}
         this._onFullyLoaded = options.onFullyLoaded
         this._attribution = options.attribution
         this._addLayerControl = options.addLayerControl ?? false
         this._options = options
-        MinimapImplementation._nextId++
         this.SetClass("relative")
 
     }
@@ -57,7 +57,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
 
     public installBounds(factor: number | BBox, showRange?: boolean) {
         this.leafletMap.addCallbackD(leaflet => {
-            let bounds : {getEast(), getNorth(), getWest(), getSouth()};
+            let bounds: { getEast(), getNorth(), getWest(), getSouth() };
             if (typeof factor === "number") {
                 const lbounds = leaflet.getBounds().pad(factor)
                 leaflet.setMaxBounds(lbounds)
@@ -150,9 +150,16 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             }
             try {
                 self.InitMap();
-                self.leafletMap?.data?.invalidateSize()
+
             } catch (e) {
                 console.warn("Could not construct a minimap:", e)
+            }
+
+            try {
+                console.log("SELF IS", self)
+                self.leafletMap?.data?.invalidateSize()
+            } catch (e) {
+                console.warn("Could not invalidate size of a minimap:", e)
             }
         });
 
@@ -210,7 +217,15 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             maxZoom: 21
         }
 
+
         Utils.Merge(this._leafletoptions, options)
+        /*
+        * Somehow, the element gets '_leaflet_id' set on chrome.
+        * When attempting to init this leaflet map, it'll throw an exception and the map won't show up.
+        * Simply removing '_leaflet_id' fixes the issue.
+        * See https://github.com/pietervdvn/MapComplete/issues/726
+        * */
+        delete document.getElementById(this._id)["_leaflet_id"]
 
         const map = L.map(this._id, options);
         if (self._onFullyLoaded !== undefined) {

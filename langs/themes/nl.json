@@ -8,7 +8,7 @@
         "title": "Open AED-kaart - Brugge edition"
     },
     "artwork": {
-        "description": "Welkom op de open kunstwerken-kaart, een kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
+        "description": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
         "title": "Open kunstwerken-kaart"
     },
     "benches": {
@@ -182,7 +182,7 @@
                 "name": "Camperplaatsen",
                 "presets": {
                     "0": {
-                        "description": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist  dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
+                        "description": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
                         "title": "een camperplaats"
                     }
                 },
@@ -253,6 +253,17 @@
                         "question": "Wat is de naam van deze plaats?",
                         "render": "Deze plaats heet {name}"
                     },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze plaats heeft een loosplaats"
+                            },
+                            "1": {
+                                "then": "Deze plaats heeft geen loosplaats"
+                            }
+                        },
+                        "question": "Heeft deze plaats een loosplaats?"
+                    },
                     "caravansites-toilets": {
                         "mappings": {
                             "0": {
@@ -279,6 +290,14 @@
                 }
             },
             "1": {
+                "description": "Loosplaatsen",
+                "name": "Loostplaatsen",
+                "presets": {
+                    "0": {
+                        "description": "Voeg een nieuwe loosplaats toe. Dat is een plaats waar campers hun grijs water en toiletten kunnen lozen. Vaak is er ook een kraan om water te tanken en een stopcontact.",
+                        "title": "een loosplaats"
+                    }
+                },
                 "tagRenderings": {
                     "dumpstations-access": {
                         "mappings": {
@@ -287,27 +306,90 @@
                             },
                             "1": {
                                 "then": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken"
+                            },
+                            "2": {
+                                "then": "Deze loosplaats is voor iedereen toegankelijk"
+                            },
+                            "3": {
+                                "then": "Deze loosplaats is toegankelijk voor iedereen"
                             }
-                        }
+                        },
+                        "question": "Wie mag deze loosplaats gebruiken?"
+                    },
+                    "dumpstations-charge": {
+                        "question": "Hoeveel kost het gebruik van deze loosplaats?",
+                        "render": "Deze loosplaats rekent {charge} aan"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "Je kan hier een chemisch toilet lozen"
+                            },
+                            "1": {
+                                "then": "Je kan hier geen chemisch toilet lozen"
+                            }
+                        },
+                        "question": "Mag je hier je chemisch toilet lozen?"
                     },
                     "dumpstations-fee": {
                         "mappings": {
+                            "0": {
+                                "then": "Je moet betalen voor het gebruik"
+                            },
                             "1": {
                                 "then": "Kan gratis gebruikt worden"
                             }
                         },
                         "question": "Vraagt deze plaats een vergoeding?"
                     },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Je kan hier grijs water lozen"
+                            },
+                            "1": {
+                                "then": "Je kan hier geen grijs water lozen"
+                            }
+                        },
+                        "question": "Mag je hier grijs water lozen?"
+                    },
                     "dumpstations-network": {
-                        "question": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)"
+                        "question": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)",
+                        "render": "Deze loosplaats is deel van het {network} netwerk"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Deze loosplaats heeft een waterkraan om je camper bij te vullen"
+                            },
+                            "1": {
+                                "then": "Deze loosplaats heeft geen waterkraan om je camper bij te vullen"
+                            }
+                        },
+                        "question": "Heeft deze loosplaats een waterkraan om je camper bij te vullen?"
                     }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Loosplaats"
+                        }
+                    },
+                    "render": "Loosplaats {name}"
                 }
             }
         },
         "overrideAll": {
             "tagRenderings+": {
+                "0": {
+                    "question": "Wie beheert deze plaats?",
+                    "render": "Deze plaats wordt beheerd door {operator}"
+                },
                 "1": {
                     "mappings": {
+                        "0": {
+                            "then": "Deze plaats heeft stroomvoorziening"
+                        },
                         "1": {
                             "then": "Deze plaats beschikt niet over stroomvoorziening"
                         }
@@ -334,10 +416,16 @@
                         "0": {
                             "mappings": {
                                 "0": {
-                                    "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit <span>publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
+                                    "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
                                 },
                                 "1": {
                                     "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor klanten<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor club leden<br/>{_embedding_feature:access:description}"
                                 }
                             }
                         },
@@ -394,7 +482,43 @@
         "title": "Fietsinfrastructuur"
     },
     "cyclenodes": {
-        "description": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen"
+        "description": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
+        "layers": {
+            "0": {
+                "name": "verbindingen van node naar node",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "Wanneer werd deze node-naar-node verbinding het laast gesurveyed?",
+                        "render": "Deze node-naar-node verbinding werd het laast gesurveyed op {survey:date}"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "node-naar-node verbinding <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "node-naar-node verbinding"
+                }
+            },
+            "1": {
+                "name": "knooppunten",
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "question": "Met hoeveel andere fietsknooppunten heeft dit knooppunt een verbinding?",
+                        "render": "Dit knooppunt verbindt met {expected_rcn_route_relations} andere fietsknooppunten."
+                    },
+                    "node-survey:date": {
+                        "question": "Wanneer is dit fietsknooppunt voor het laatst gecontroleerd?",
+                        "render": "Dit fietsknooppunt is voor het laatst gecontroleerd op {survey:date}"
+                    }
+                },
+                "title": {
+                    "render": "fietsknooppunt <strong>{rcn_ref}</strong>"
+                }
+            }
+        },
+        "title": "Fietsknooppuntennetwerken"
     },
     "cyclestreets": {
         "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
@@ -459,8 +583,13 @@
         "description": "Op deze kaart staan publiek toegankelijke drinkwaterpunten en kan je makkelijk een nieuw drinkwaterpunt toevoegen",
         "title": "Drinkwaterpunten"
     },
+    "education": {
+        "description": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
+        "title": "Onderwijs"
+    },
     "entrances": {
         "description": "Een kaart die alle toegangen toont,",
+        "shortDescription": "Breng ingangen in kaart om rolstoelnavigatie mogelijk te maken",
         "title": "Toegangsdeuren"
     },
     "etymology": {
@@ -474,6 +603,31 @@
             "2": {
                 "override": {
                     "=name": "Parken en bossen zonder etymologische informatie"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Onderwijsinstelling zonder etymologische informatie"
+                }
+            },
+            "4": {
+                "override": {
+                    "=name": "Culturele plaatsen zonder etymologische informatie"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Toeristische plaatsen zonder etymologische informatie"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "Gezondheidsinstellingen en maatschappelijke plaatsen zonder etymologische informatie"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Sportplekken zonder etymologische informatie"
                 }
             }
         },
@@ -641,6 +795,9 @@
         "layers": {
             "1": {
                 "tagRenderings": {
+                    "building type": {
+                        "question": "Wat voor soort gebouw is dit?"
+                    },
                     "grb-fixme": {
                         "mappings": {
                             "0": {
@@ -696,6 +853,17 @@
                         }
                     }
                 }
+            },
+            "6": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Metatags nog niet berekend... Heropen deze pop-up"
+                            }
+                        }
+                    }
+                }
             }
         },
         "shortDescription": "Grb import helper tool",
@@ -706,6 +874,9 @@
         "layers": {
             "0": {
                 "tagRenderings": {
+                    "building type": {
+                        "question": "Wat voor soort gebouw is dit?"
+                    },
                     "grb-fixme": {
                         "mappings": {
                             "0": {
@@ -742,19 +913,84 @@
         "title": "GRB Fixup"
     },
     "hackerspaces": {
+        "description": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten",
+        "shortDescription": "Een kaart van hackerspaces",
         "title": "Hackerspaces"
     },
     "hailhydrant": {
+        "description": "Op deze kaart kan je hydranten, brandblussers, brandweerkazernes en stalplaatsen voor ambulances vinden en updaten.\n\nJe kan je exacte locatie bepalen (enkel via GSM) en relevante lagen selecteren in de linkeronderhoek. Je kan deze applicatie ook gebruiken om pins (points of interest) op de kaart te zetten en om extra details toe te voegen door vragen te beantwoorden.\n\nAlle wijzigingen die je maakt zullen automatisch worden opgeslagen in de globale database van OpenStreetMap en kunnen vrij door anderen gebruikt worden.",
+        "shortDescription": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
         "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
     },
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
         "title": "Stoepranden en oversteekplaatsen"
     },
+    "mapcomplete-changes": {
+        "description": "Deze kaart toont alle wijzigingen die met MapComplete werden gemaakt",
+        "layers": {
+            "0": {
+                "description": "Toont alle wijzigingen met MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themanaam bevat {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt door bijdrager {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Niet</b> gemaakt door bijdrager {search}"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "render_id": {
+                        "render": "Wijzigingset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Wijziging met <b>officieus</b> thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Wijzigingset voor {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Meer statistieken kunnen <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> gevonden worden"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Toont wijzigingen gemaakt met MapComplete",
+        "title": "Wijzigingen gemaakt met MapComplete"
+    },
     "maps": {
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
-        "shortDescription": "Een kaart met alle kaarten die OpenStreetMap kent",
-        "title": "Een kaart met Kaarten"
+        "shortDescription": "Dit thema toont alle (toeristische) kaarten die OpenStreetMap kent",
+        "title": "Een kaart van kaarten"
     },
     "missing_streets": {
         "description": "Dit thema voegt automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres.",
@@ -764,7 +1000,7 @@
     "nature": {
         "description": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",
         "shortDescription": "Deze kaart bevat informatie voor natuurliefhebbers",
-        "title": "De Natuur in"
+        "title": "De natuur in"
     },
     "notes": {
         "description": "Een kaartnota bevat tekst op een specifieke locatie om aan te duiden dat er iets mis is of ontbreekt.<br/><br/>Bekijk ook het <a href='#filters'>filtermenu</a> om de notas te filteren op tekst, gebruiker, datum, ...",
@@ -788,6 +1024,35 @@
         "description": "Stel je eigen thema samen door lagen te combineren van alle andere themas",
         "title": "Persoonlijk thema"
     },
+    "pets": {
+        "description": "Deze kaart helpt je op weg met je huisdier: dierenartsen, hondenloopzones, dierenwinkels, hondenvriendelijke restaurants, ...",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Hondvriendelijke eetgelegenheden"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Hondvriendelijke winkels",
+                    "title": {
+                        "render": "Hondvriendelijke winkels"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Een winkel waar je je hond in bijna heel de winkel mag meenemen",
+                            "title": "Hondvriendelijke winkels"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Dierenartsen, hondenloopzones en andere huisdiervriendelijke plaatsen"
+    },
     "play_forests": {
         "description": "Een speelbos is een zone in een bos die vrij toegankelijk is voor spelende kinderen. Deze wordt  in bossen van het Agentschap Natuur en bos altijd aangeduid met het overeenkomstige bord.",
         "shortDescription": "Deze kaart toont speelbossen",
@@ -798,7 +1063,32 @@
         "shortDescription": "Een kaart met speeltuinen",
         "title": "Speelplekken"
     },
+    "postal_codes": {
+        "description": "Postcodes",
+        "layers": {
+            "0": {
+                "name": "postcodes",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Deze postcode is {postal_code}"
+                    }
+                },
+                "title": {
+                    "render": "Postcode {postal_code}"
+                }
+            },
+            "2": {
+                "name": "stadhuizen",
+                "title": {
+                    "render": "Stadhuis {name}"
+                }
+            }
+        },
+        "shortDescription": "Postcodes",
+        "title": "Postcodes"
+    },
     "postboxes": {
+        "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
         "layers": {
             "0": {
                 "description": "Deze laag toont brievenbussen.",
@@ -829,17 +1119,47 @@
                         "title": "een postkantoor"
                     }
                 },
+                "tagRenderings": {
+                    "OH": {
+                        "mappings": {
+                            "0": {
+                                "then": "24/7 open (ook tijdens feestdagen)"
+                            }
+                        },
+                        "question": "Wat zijn de openingsuren voor dit postkantoor?",
+                        "render": "Openingsuren: {opening_hours_table()}"
+                    }
+                },
                 "title": {
                     "render": "Postkantoor"
                 }
             }
         },
+        "shortDescription": "Een kaart die brievenbussen en postkantoren toont",
         "title": "Brievenbussen en postkantoren"
     },
     "shops": {
+        "description": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers",
+        "shortDescription": "Een bewerkbare kaart met simpele informatie over winkels",
         "title": "Winkels"
     },
     "sidewalks": {
+        "description": "Experimenteel thema",
+        "layers": {
+            "0": {
+                "description": "Laag die voetpaden naast wegen toont",
+                "name": "Voetpaden",
+                "tagRenderings": {
+                    "streetname": {
+                        "render": "Deze straat heet {name}"
+                    }
+                },
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "shortDescription": "Voetpaden in kaart brengen",
         "title": "Voetpaden"
     },
     "speelplekken": {

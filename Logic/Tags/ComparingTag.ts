@@ -52,15 +52,15 @@ export default class ComparingTag implements TagsFilter {
         return [];
     }
 
-    AsJson() {
-        return this.asHumanString(false, false, {})
-    }
-
     optimize(): TagsFilter | boolean {
         return this;
     }
     
     isNegative(): boolean {
         return true;
+    }
+    
+    visit(f: (TagsFilter) => void) {
+        f(this)
     }
 }

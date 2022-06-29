@@ -85,7 +85,8 @@
         "filter": {
           "sameAs": "charging_station_ebike"
         },
-        "minzoom": 18
+        "minzoom": 18,
+        "=presets": []
       }
     },
     {

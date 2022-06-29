@@ -1,5 +1,5 @@
 import BaseLayer from "../../Models/BaseLayer";
-import {UIEventSource} from "../UIEventSource";
+import {Store, Stores} from "../UIEventSource";
 import Loc from "../../Models/Loc";
 import {GeoOperations} from "../GeoOperations";
 import * as editorlayerindex from "../../assets/editor-layer-index.json";
@@ -29,7 +29,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
 
     public readonly layerOverview = AvailableBaseLayersImplementation.LoadRasterIndex().concat(AvailableBaseLayersImplementation.LoadProviderIndex());
     public readonly globalLayers = this.layerOverview.filter(layer => layer.feature?.geometry === undefined || layer.feature?.geometry === null)
-    public readonly localLayers = this.layerOverview.filter(layer => layer.feature?.geometry !== undefined && layer.featuer?.geometry !== null)
+    public readonly localLayers = this.layerOverview.filter(layer => layer.feature?.geometry !== undefined && layer.feature?.geometry !== null)
 
     private static LoadRasterIndex(): BaseLayer[] {
         const layers: BaseLayer[] = []
@@ -202,8 +202,8 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             });
     }
 
-    public AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> {
-        return UIEventSource.ListStabilized(location.map(
+    public AvailableLayersAt(location: Store<Loc>): Store<BaseLayer[]> {
+        return Stores.ListStabilized(location.map(
             (currentLocation) => {
                 if (currentLocation === undefined) {
                     return this.layerOverview;
@@ -212,7 +212,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             }));
     }
 
-    public SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer> {
+    public SelectBestLayerAccordingTo(location: Store<Loc>, preferedCategory: Store<string | string[]>): Store<BaseLayer> {
         return this.AvailableLayersAt(location)
             .map(available => {
                 // First float all 'best layers' to the top
@@ -264,7 +264,7 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
         if (lon === undefined || lat === undefined) {
             return availableLayers.concat(this.globalLayers);
         }
-        const lonlat = [lon, lat];
+        const lonlat : [number, number] = [lon, lat];
         for (const layerOverviewItem of this.localLayers) {
             const layer = layerOverviewItem;
             const bbox = BBox.get(layer.feature)

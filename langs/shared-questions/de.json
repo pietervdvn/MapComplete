@@ -6,46 +6,46 @@
         "dog-access": {
             "mappings": {
                 "0": {
-                    "then": "Hunde sind erlaubt"
+                    "then": "Hunde sind hier erlaubt"
                 },
                 "1": {
-                    "then": "Hunde sind <b>nicht</b> erlaubt"
+                    "then": "Hunde sind hier <b>nicht</b> erlaubt"
                 },
                 "2": {
-                    "then": "Hunde sind erlaubt, müssen aber angeleint sein"
+                    "then": "Hunde sind hier erlaubt, müssen aber angeleint sein"
                 },
                 "3": {
-                    "then": "Hunde sind erlaubt und können frei herumlaufen"
+                    "then": "Hunde sind hier erlaubt und können frei herumlaufen"
                 }
             },
-            "question": "Sind Hunde in diesem Geschäft erlaubt?"
+            "question": "Sind Hunde hier erlaubt?"
         },
         "email": {
-            "question": "Was ist die Mail-Adresse von {title()}?"
+            "question": "Wie lautet die Mail-Adresse von {title()}?"
         },
         "level": {
             "mappings": {
                 "0": {
-                    "then": "Unterirdisch gelegen"
+                    "then": "Das Objekt befindet sich unter der Erde"
                 },
                 "1": {
-                    "then": "Ist im Erdgeschoss"
+                    "then": "Das Objekt befindet sich im Erdgeschoss"
                 },
                 "2": {
-                    "then": "Ist im Erdgeschoss"
+                    "then": "Das Objekt befindet sich im Erdgeschoss"
                 },
                 "3": {
-                    "then": "Ist im ersten Stock"
+                    "then": "Das Objekt befindet sich im 1. Obergeschoss"
                 },
                 "4": {
-                    "then": "Ist im 1. Untergeschoss"
+                    "then": "Das Objekt befindet sich im 1. Untergeschoss"
                 }
             },
-            "question": "Auf welcher Ebene befindet sich dieses Objekt?",
-            "render": "Befindet sich im {level}ten Stock"
+            "question": "Auf welcher Ebene befindet sich das Objekt?",
+            "render": "Das Objekt befindet sich im {level}. Geschoss"
         },
         "opening_hours": {
-            "question": "Was sind die Öffnungszeiten von {title()}?",
+            "question": "Wie lauten die Öffnungszeiten von {title()}?",
             "render": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -54,7 +54,7 @@
                     "then": "Hier wird Bargeld akzeptiert"
                 },
                 "1": {
-                    "then": "Hier werden Zahlungskarten akzeptiert"
+                    "then": "Hier wird Kartenzahlung akzeptiert"
                 }
             },
             "question": "Welche Zahlungsmethoden werden hier akzeptiert?"
@@ -72,44 +72,58 @@
             }
         },
         "phone": {
-            "question": "Was ist die Telefonnummer von {title()}?"
+            "question": "Wie lautet die Telefonnummer von {title()}?"
         },
         "service:electricity": {
             "mappings": {
                 "0": {
-                    "then": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
+                    "then": "Im Innenraum stehen viele Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können"
                 },
                 "1": {
-                    "then": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können"
+                    "then": "Im Innenraum stehen nur wenige Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können"
                 },
                 "2": {
-                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird"
+                    "then": "Im Innenraum stehen keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird"
                 },
                 "3": {
-                    "then": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung"
+                    "then": "Im Innenraum stehen keine Steckdosen für Kunden zur Verfügung"
                 }
             },
-            "question": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?"
+            "question": "Gibt es hier Steckdosen, an denen Kunden ihre Geräte laden können?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Rauchen ist <b>erlaubt</b>"
+                },
+                "1": {
+                    "then": "Rauchen ist <b>nicht erlaubt</b>"
+                },
+                "2": {
+                    "then": "Rauchen ist <b> draußen erlaubt</b>."
+                }
+            },
+            "question": "Ist das Rauchen in {title()} erlaubt?"
         },
         "website": {
-            "question": "Was ist die Website von {title()}?"
+            "question": "Wie lautet die Webseite von {title()}?"
         },
         "wheelchair-access": {
             "mappings": {
                 "0": {
-                    "then": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet"
+                    "then": "Der Ort ist speziell für Rollstuhlfahrer gestaltet"
                 },
                 "1": {
-                    "then": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen"
+                    "then": "Der Ort ist rollstuhlzugänglich gestaltet"
                 },
                 "2": {
-                    "then": "Es ist möglich, diesen Ort mit einem Rollstuhl zu erreichen, aber es ist nicht einfach"
+                    "then": "Der Ort ist nur eingeschränkt rollstuhlzugänglich"
                 },
                 "3": {
-                    "then": "Dieser Ort ist nicht mit einem Rollstuhl erreichbar"
+                    "then": "Der Ort ist nicht rollstuhlzugänglich"
                 }
             },
-            "question": "Ist dieser Ort mit einem Rollstuhl zugänglich?"
+            "question": "Ist der Ort rollstuhlzugänglich?"
         },
         "wikipedia": {
             "mappings": {
@@ -120,7 +134,7 @@
                     "then": "Es wurde noch keine Wikipedia-Seite verlinkt"
                 }
             },
-            "question": "Was ist das entsprechende Wikidata Element?"
+            "question": "Wie lautet das zugehörige Wikidata Element?"
         },
         "wikipedialink": {
             "mappings": {
@@ -128,7 +142,7 @@
                     "then": "Nicht mit Wikipedia verknüpft"
                 }
             },
-            "question": "Was ist der entsprechende Artikel auf Wikipedia?"
+            "question": "Wie lautet der zugehörige Wikipedia Artikel?"
         }
     }
 }

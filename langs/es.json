@@ -11,6 +11,8 @@
         "delete": "Eliminar",
         "explanations": {
             "hardDelete": "Este punto será eliminado en OpenStreetMap. Puede ser recuperado por un colaborador experimentado",
+            "retagNoOtherThemes": "Esta característica será reclasificada y ocultada en esta aplicación",
+            "retagOtherThemes": "Esta característica será reetiquetada y visible en {otherThemes}",
             "selectReason": "Por favor, seleccione el motivo por el que esta característica debe ser eliminada",
             "softDelete": "Esta característica se actualizará y ocultará en esta aplicación. &lt;spann class='subtle'&gt;{reason}"
         },
@@ -60,7 +62,7 @@
             "intro": "Has marcado un lugar del que no conocemos los datos.<br>",
             "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
             "openLayerControl": "Abrir el control de capas",
-            "pleaseLogin": "&lt;a class=\"activate-osm-authentication\"&gt;`Por favor inicia sesión para añadir un nuevo punto&lt;/a&gt;",
+            "pleaseLogin": "Por favor inicia sesión para añadir un nuevo punto",
             "presetInfo": "El nuevo POI tendrá {tags}",
             "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir ningún punto.",
             "title": "Quieres añadir un punto?",
@@ -80,6 +82,9 @@
             "donate": "Apoya a MapComplete de manera financiera",
             "editId": "Abre el editor en línea de OpenStreetMap aquí",
             "editJosm": "Edita aquí conJOSM",
+            "followBridge": "Las cuentas de Mastodon y Twitter están puenteadas",
+            "followOnMastodon": "Seguir a MapComplete en Mastodon",
+            "followOnTwitter": "Seguir a MapComplete en twitter",
             "iconAttribution": {
                 "title": "Iconos usados"
             },
@@ -87,6 +92,7 @@
             "josmOpened": "JOSM está abierto",
             "mapContributionsBy": "La información visible actual tiene ediciones hechas por {contributors}",
             "mapContributionsByAndHidden": "Los datos actualmente visibles tienen ediciones hechas por {contributors} y {hiddenCount} más contribuidores",
+            "mapillaryHelp": "<b>Mapillary</b> es un servicio en línea que recoge imágenes a pié de calle y las ofrece bajo una licencia libre. Los contribuidores pueden utilizar estás imágenes para mejorar OpenStreetMap",
             "openIssueTracker": "Reportar un error",
             "openMapillary": "Abrir Mapillary aquí",
             "openOsmcha": "Ver las últimas ediciones hechas con {theme}",
@@ -105,7 +111,7 @@
             "downloadAsSvg": "Descargar un SVG del mapa actual",
             "downloadCSV": "Descargar los datos visibles como CSV",
             "downloadCSVHelper": "Compatible con LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Descargar como un archivo GeoJson",
+            "downloadFeatureAsGeojson": "Descargar como un archivo GeoJSON",
             "downloadFeatureAsGpx": "Descargar como archivo GPX",
             "downloadGeoJsonHelper": "Compatible con QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Descargar los datos visibles como GeoJSON",
@@ -133,7 +139,7 @@
             "zoomInToSeeThisLayer": "Amplía para ver esta capa"
         },
         "loading": "Cargando…",
-        "loadingTheme": "Cargar {theme}...",
+        "loadingTheme": "Cargando {theme}…",
         "loginFailed": "El inicio de sesión en OpenStreetMap falló",
         "loginOnlyNeededToEdit": "Si quieres editar el mapa",
         "loginToStart": "Entra para contestar esta pregunta",
@@ -143,8 +149,11 @@
             "createYourOwnTheme": "Crea tu propia petición completa de MapComplete desde cero.",
             "hiddenExplanation": "Estos temas solo son visibles para aquellos con el enlace. Has descubierto {hidden_discovered} de {total_hidden} temas ocultos.",
             "intro": "<h3>Más peticiones</h3>Te gusta captar datos? <br/>Hay más capas disponibles.",
+            "noMatchingThemes": "Ningún tema coincide con tus criterios de búsqueda",
+            "noSearch": "Mostrar todos los temas",
             "previouslyHiddenTitle": "Temas ocultos previamente visitados",
             "requestATheme": "Si quieres que te hagamos una petición propia , pídela <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>aquí</a>.",
+            "searchForATheme": "Buscar un tema",
             "streetcomplete": "Otra aplicación similar es <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "{category}: Su nombre es $$$",
@@ -245,7 +254,8 @@
             "createNewWikidata": "Crear un ítem de Wikidata nuevo",
             "doSearch": "Busca arriba para ver los resultados",
             "failed": "La carga de la entrada de Wikipedia falló",
-            "loading": "Cargando Wikipedia...",
+            "fromWikipedia": "De Wikipedia, la enciclopedia libre",
+            "loading": "Cargando Wikipedia…",
             "noResults": "No se encontró nada para <i>{search}</i>",
             "noWikipediaPage": "Este ítem de wikidata aún no tiene una página de Wikipedia correspondiente.",
             "previewbox": {
@@ -267,6 +277,20 @@
         "doDelete": "Borrar imagen",
         "dontDelete": "Cancelar",
         "isDeleted": "Borrada",
+        "nearbyPictures": {
+            "allFiltered": "Ninguna imagen coincide con tu filtro",
+            "browseNearby": "Buscar imágenes cercanas…",
+            "confirm": "La imagen seleccionada muestra {title()}",
+            "hasMatchingPicture": "¿Esta imagen coincide con el objeto? Selecciónalo debajo",
+            "loadMore": "Cargar más imágenes",
+            "loading": "Cargando imágenes cercanas…",
+            "noImageSelected": "Selecciona una imagen para enlazarla al objeto",
+            "nothingFound": "No se encontraron imágenes cercanas…",
+            "onlyTowards": "Solo mostrar imágenes que fueron sacadas hacia este objeto",
+            "removeFilters": "Haz clic aquí para eliminar los filtros",
+            "title": "Imágenes cercanas",
+            "withinRadius": "Solo mostrar imágenes que fueran sacadas dentro de un radio de {radius} metros para este objeto"
+        },
         "pleaseLogin": "Acceda para cargar una imagen",
         "respectPrivacy": "No fotografíe personas ni matrículas. No cargue datos de Google Maps, Google StreetView u otras fuentes protegidas por derechos de autor.",
         "toBig": "Tu imagen es demasiado grande, ya que pesa {actual_size}. Por favor utiliza imágenes de como máximo {max_size}",
@@ -279,7 +303,7 @@
     },
     "importHelper": {
         "askMetadata": {
-            "downloadGeojson": "Descargar geojson",
+            "downloadGeojson": "Descargar GeoJSON",
             "giveDescription": "Por favor, escribe una pequeña descripción para alguien que vea la nota. Una buena nota describe lo que el contribuidor tiene que hacer, ej; <i>Puede que haya un banco aquí. Si estás por aquí, ¿Podrías por favor comprueba e indica si el banco existe o no?</i> (Un enlace a MapComplete se añadirá automáticamente)",
             "giveSource": "¿Cual es la fuente de estos datos? Si se especifica 'source' en la característica, se ignorará este valor",
             "giveWikilink": "¿En qué wikipágina puede encontrar uno más información sobre esta importación?",
@@ -305,18 +329,22 @@
             "contactedCommunity": "He contactado a la comunidad (local) sobre esta importación",
             "readImportGuidelines": "He leído las directrices importantes en la wiki de OSM",
             "title": "Licencia y comunidad",
+            "titleLong": "¿Pasaste por el proceso de importación?",
             "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)"
         },
         "conflationChecker": {
             "cacheExpired": "La caché ha expirado",
-            "downloadOverpassData": "Descarga el geojson cargado desde overpass",
+            "downloadOverpassData": "Descarga el GeoJSON cargado desde overpass",
             "importCandidatesCount": "Los {count} elementos rojos en el siguiente mapa son todos tus candidatos de importación.",
+            "loadedDataAge": "Los datos cargados son de la caché y su edad es {age}",
+            "mapShowingNearbyIntro": "El siguiente mapa muestra características a importar que tienen una característica de OSM dentro ",
             "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!",
+            "nothingLoaded": "No hay elementos cargados desde OpenStreetMpa que coincidan con la capa actual {name}",
             "osmLoaded": "{count} elementos se cargan desde OpenStreetMap que coinciden con la capa <b>{name}</b>.",
             "setRangeToZero": "Especificar el rango en 0 o 1 si quieres importarlos todos",
             "states": {
                 "error": "No se pudieron cargar los últimos datos de overpass debido a {error}",
-                "idle": "Comprobando almacenamiento local...",
+                "idle": "Comprobando almacenamiento local…",
                 "unexpected": "Estado inesperado {state}"
             },
             "title": "Comparar con los datos existentes",
@@ -324,26 +352,175 @@
         },
         "createNotes": {
             "creating": "Creadas <b>{count}</b> notas de {total}",
-            "done": "¡Todas las {count} notas han sido creadas!"
+            "done": "¡Todas las {count} notas han sido creadas!",
+            "loading": "Espera mientras estamos cargando…",
+            "openImportViewer": "Inspeccionar el progreso de tus notas en el 'import_viewer'",
+            "title": "Creación de notas"
+        },
+        "gotoImportViewer": "Inspeccionar tus importaciones anteriores",
+        "introduction": {
+            "description": "El ayudante de importación convierte un conjunto de datos externos a notas. El conjunto de datos deberá de coincidir con una de las capas de MapComplete existentes. Para cada ítem que pongas en el importador, se creará una única nota. Estas notas se mostrarán junto con las características relevantes en estos mapas para añadirlas fácilmente.",
+            "importFormat": "Un texto en una nota deberá de tener el siguiente formato para ser incluida",
+            "title": "Introducción"
+        },
+        "login": {
+            "lockNotice": "Esta página está bloqueada. Necesitas {importHelperUnlock} conjuntos de cambios antes de poder acceder aquí.",
+            "loggedInWith": "Actualmente has iniciado sesión como <b>{name}</b> y has hecho {csCount} conjuntos de cambios",
+            "loginIsCorrect": "<b>{name}</b> es la cuenta correcta con la que crear las notas de importación.",
+            "loginRequired": "Tienes que iniciar sesión para continuar",
+            "title": "Iniciar sesión",
+            "userAccountTitle": "Seleccionar una cuenta de usuario"
         },
         "mapPreview": {
+            "autodetected": "La capa se dedujo automáticamente basándose en las propiedades",
+            "confirm": "Las características están en la localización correcta en el mapa",
+            "mismatch": "{count} características no coincidieron con la capa seleccionada. Asegúrate de que las etiquetas para indicar el tipo están presentes, concretamente {tags}",
+            "selectLayer": "¿Con qué capa coincide esta importación?",
             "title": "Previsualización de mapa"
         },
+        "noteParts": {
+            "datasource": "Datos originarios de {source}",
+            "importEasily": "Añadir este punto a MapComplete fácilmente:",
+            "wikilink": "Puedes encontrar más información sobre esta importación en {wikilink}"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "Todas las características a importar tienen esta etiqueta",
+            "inspectDataTitle": "Inspeccionar datos de {count} características a importar",
+            "inspectLooksCorrect": "Estos valores parecen correctos",
+            "someHaveSame": "{count} características a importar tienen esta etiqueta, esto es el {percentage}% del total",
+            "title": "Inspeccionar atributos"
+        },
         "selectFile": {
+            "description": "Selecciona un archivo .csv o .geojson para empezar",
+            "errDuplicate": "Algunas columnas tienen el mismo nombre",
+            "errNoLatOrLon": "La cabecera no contiene `lat` o `lon`",
+            "errNoName": "Algunas columnas no tienen un nombre",
+            "errNotFeatureCollection": "El archivo JSON seleccionado no es una geojson-featurecollection",
+            "errPointsOnly": "El archivo JSON cargado solo contiene puntos",
+            "fileFormatDescription": "Seleccionar un archivo <b class=\"code\">.csv</b> o <b class=\"code\">.geojson</b>",
+            "fileFormatDescriptionCsv": "En el archivo CSV, debe de haber una columna <span class=\"literal-code\">lat</span> y <span class=\"literal-code\">lon</span> con las coordenadas en WGS84. Debe de haber una columna adicional para cada atributo.",
+            "fileFormatDescriptionGeoJson": "En el archivo geojson, solo debe de haber puntos. Las propiedades deben de ser exactamente aquellas propiedades que deben de ir en OpenStreetMap",
+            "loadedFilesAre": "El archivo actualmente cargado es {file}",
+            "noFilesLoaded": "Actualmente no hay ningún archivo cargado",
             "title": "Seleccionar archivo"
+        },
+        "selectTheme": {
+            "displayNonMatchingCount": "{length} objetos no coinciden con ningún preajuste",
+            "intro": "Todos los siguientes temas mostrarán las notas de importación. De todas formas, la nota en OpenStreetMap solo puede enlazar a un tema. Selecciona a qué tema enlazarán las notas creadas",
+            "misMatch": "La propiedad con la llave {k} no tiene un valor esperado {v}; por lo contrario es {properties}",
+            "needsTags": "{title} necesita las etiquetas {tags}",
+            "noMatchingPresets": "Este tema no tiene ningún preajuste cargado. Por ello, las importaciones no funcionarán aquí",
+            "notApplicable": "El preajuste {title} no es aplicable:",
+            "title": "Selecciona un tema",
+            "unmatchedTitle": "Los siguientes temas no coinciden con ninguno de los preajustes"
         },
         "title": "Ayudante de importación"
     },
+    "importInspector": {
+        "title": "Inspeccionar y gestionar las notas de importación"
+    },
     "importLayer": {
+        "alreadyMapped": "{title} ya está en el mapa - este punto es un duplicado",
+        "description": "Una capa que importar entradas para {title}",
+        "importButton": "import_button({layerId},_tags, He encontrado un(a) {title} aquí - añádelo al mapa,./assets/svg/addSmall.svg,,,id)",
         "layerName": "Posible {title}",
-        "popupTitle": "Posible {title}"
+        "nearbyImagesIntro": "<h3>Imágenes cercanas</h3> Las siguientes imágenes son imágenes geoetiquetadas cerca de varios servicios en línea. Pueden ayudarte a resolver esta nota. {nearby_images(open)}",
+        "notFound": "No he podido encontrar {title} - eliminarlo",
+        "popupTitle": "Puede haber {title} aquí"
     },
     "index": {
         "#": "Estos textos son mostrados sobre los botones del tema cuando no hay un tema cargado",
         "featuredThemeTitle": "Esta semana destacamos",
         "intro": "MapComplete a un visor y editor de OpenStreetMap, que te muestra información sobre un tema específico.",
+        "logIn": "Inicia sesión para ver otros temas que visitaste anteriormente",
         "pickTheme": "Elige un tema de abajo para empezar.",
         "title": "Le damos la bienvenida a MapComplete"
+    },
+    "matrixbot": {
+        "commandFailed": "Lo siento, algo fue mal mientras se ejecutaba <code>{cmd}</code>",
+        "commandNotFound": "No entendí tu petición. ¿Puede que quisieras teclear {0}, {1}, {2} o {2}? <p>Escribe <code>help</code> para ver una vista general de todos los comandos</p>",
+        "commands": {
+            "dm": {
+                "failed": "No pude ejecutar <code>{cmd}</code> debido a {message}",
+                "sendReason": "Te envié este mensaje porque <b>{sender}</b> me pidió que te enviara esto con <code>{cmd}</code>"
+            },
+            "documentation": {
+                "docs": "Obtiene la documentación sobre una capa, un tema o un parámetro de URL de Mapcomplete",
+                "noIdIntro": "Da un id para obtener más información sobre un ítem relacionado con la programación de MapComplete. Los tipos conocidos son {list}",
+                "urlParam": "Parámetro de URL <code>{id}</code>"
+            },
+            "dream": {
+                "docs": "Envía un texto generado por ordenador",
+                "generatedBy": "Este texto fue generado por {bot}, que es un bot basado en el aprendizaje de máquina activo en Reddit."
+            },
+            "help": {
+                "argcmd": "El comando sobre el que quieres más información",
+                "askRights": "Pedir a {admins} que te de suficientes permisos",
+                "docs": "Imprime información sobre los comandos soportados",
+                "insufficientRights": "No tienes suficientes permisos para ejecutar este comando.",
+                "notFound": "No encontré <code>{cmd}</code>. Puede que te refirieras a uno de {closest}?",
+                "p0": "¡Hola! Soy MapComplete-bot {bot_version} (construido sobre MapComplete {mc_version}).",
+                "p1": "Envíame un comando y contestaré algo útil: dame un comando a través de un mensaje privado o escribe <code>!</code> antes de un comando en una sala pública.",
+                "priviligedComand": "Comando privilegiado",
+                "supported": "Mis comandos soportados son:"
+            },
+            "info": {
+                "closed": "Cerrado",
+                "closedTodayAndTomorrow": "Cerrado hoy y mañana",
+                "couldNotDownload": "No se pudo descargar <code>{id}</code>",
+                "editWith": "Editar este elemento con {title}",
+                "fetchingInfoAbout": "Recopilando datos sobre {id}…",
+                "foundResults": "Se encontraron {total} resultados para <code>{search}</code>, recopilando datos sobre ellos…",
+                "noEditPossible": "Ningún tema de MapComplete soporta este elemento",
+                "noInfo": "Aún no hay información relevante",
+                "noOpeningHours": "No se conocen los horarios de apertura.",
+                "nothingFound": "No se encontró nada para <code>{_}</code>",
+                "provideSearch": "Por favor, provee un término de búsqueda de un id para utilizar este comando"
+            },
+            "language": {
+                "arglang": "El idioma que se utilizará a partir de ahora",
+                "currentLanguage": "El idioma actual de la sala es {language}",
+                "docs": "Configura el idioma de las respuestas para esta sala",
+                "helpTranslating": "Ayuda a traducir mis respuestas en Weblate.",
+                "knownLanguages": "Puedes escoger uno de los siguientes temas:",
+                "notFound": "El idioma {language} no se encontró"
+            },
+            "role": {
+                "allRevoked": "Todos los derechos de <b>{user}</b> han sido revocados",
+                "allRolesIntro": "Todos los usuarios que tienen derechos son:",
+                "argrole": "Rol a añadir; debe de ser el nombre de un comando",
+                "docs": "Cambiar qué y qué no puede hacer un usuario",
+                "noPreviousRoles": "<b>{user}</b> no tiene ningunos roles anteriores",
+                "noRightsNeeded": "El comando <code>{role}</code> puede ejecutarse por cualquiera, no necesitas configurar permisos para él",
+                "noRolesYet": "<b>{user}</b> actualmente no tiene roles.",
+                "userHasRoles": "<b>{user}</b> actualmente tiene los siguientes roles:"
+            },
+            "search": {
+                "searching": "Buscando {layerTitle} {mode} <code>{search}</code>…"
+            },
+            "shutdown": {
+                "argmode": "Inidica si el servicio debe de ser reiniciado, debe de ser uno de {verbs}",
+                "docs": "Apaga el bot",
+                "goodbye": "Apagando… ¡Hasta luego!",
+                "notYetShuttingDown": "Aún no me voy a reiniciar, solo me inicié hace {uptime} segundos. Esperaré por lo menos {min_uptime} antes de reiniciarme."
+            },
+            "tags": {
+                "announceSearch": "<code>{id}</code> no parece ser un id de OSM válido - buscando en todo el mundo en lugar de para {search}…"
+            },
+            "welcome": {
+                "p0": "¡Hola! Soy MapComplete-bot. Soy un programa informático que busca OpenStreetMap y que puede dar alguna información sobre <a href=\"https://mapcomplete.osm.be\">MapComplete</a>, que es un sitio web y aplicación que muestra mapas temáticos. Si falta información puedes añadirla fácilmente allí.",
+                "p1": "Envíame <code>info [searchterm]</code> y lo buscaré en OpenStreetMap por ti. Te mostraré la información que encuentre.",
+                "p3": "Hay unos pocos comandos más, envía <code>help</code> para verlos todos."
+            },
+            "wiki": {
+                "docs": "Busca e imprime (una parte de) la página especificada desde {backend}. En salas públicas, imprimirá el primer párrafo; en un MD se enviará la página entera."
+            }
+        },
+        "decryptionFailed": "Lo siento, no puede descifrar tu mensaje. Puedes probar a dejar este canal y conectarte de nuevo",
+        "noSufficientRights": "Este comando solo está disponible a administradores o usuarios que tienen este rol",
+        "subcommanNotFound": "No entendí tu petición. Este comando necesita un verbo para ejecutarse, pero <code>{verb}</code> no es un verbo que conozca. Sé lo verbos {known_verbs}",
+        "subcommandNotGiven": "No entendí tu petición. Este comando necesita un verbo para ejecutarse, pero no diste ninguno. Prueba uno de {known_verbs}",
+        "tooLongForPublic": "Lo siento, este mensaje es demasiado largo para una sala pública - envíame un mensaje directo"
     },
     "move": {
         "cancel": "Cancelar movida",
@@ -351,7 +528,8 @@
         "confirmMove": "Mover aquí",
         "inviteToMove": {
             "generic": "Mover este punto",
-            "reasonInaccurate": "Mejorar la precisión de este punto"
+            "reasonInaccurate": "Mejorar la precisión de este punto",
+            "reasonRelocation": "Mover este objeto a otro lugar porque ha sido relocalizado"
         },
         "inviteToMoveAgain": "Mover este punto otra vez",
         "isRelation": "Esta característica es una relación y no se puede mover",
@@ -359,34 +537,156 @@
         "loginToMove": "Debes de iniciar sesión para mover un punto",
         "moveTitle": "Mover este punto",
         "partOfAWay": "Esta característica es parte de otra vía. Utiliza otro editor para moverla.",
-        "partOfRelation": "Esta característica es parte de una relación. Utiliza otro editor para moverla."
+        "partOfRelation": "Esta característica es parte de una relación. Utiliza otro editor para moverla.",
+        "pointIsMoved": "Este punto ha sido eliminado",
+        "reasons": {
+            "reasonInaccurate": "La localización de este objeto no es precisa y debe de ser movida algunos metros",
+            "reasonRelocation": "El objeto a sido relocalizado a una localización completamente diferente"
+        },
+        "selectReason": "¿Por qué has movido este objeto?",
+        "whyMove": "¿Por qué quieres mover este punto?",
+        "zoomInFurther": "Acercar más para confirmar este movimiento"
+    },
+    "multi_apply": {
+        "autoApply": "Cuando se cambia los atributos {attr_names}, estos atributos se cambiarán también automáticamente en {count} otros objetos"
     },
     "notes": {
+        "addAComment": "Añadir un comentario",
         "addComment": "Añadir comentario",
+        "addCommentAndClose": "Añadir un comentario y cerrar",
+        "addCommentPlaceholder": "Añadir un comentario…",
         "anonymous": "Usuarioi anónimo",
         "closeNote": "Cerrar nota",
-        "reopenNote": "Reabrir nota"
+        "createNote": "Crear una nota nueva",
+        "createNoteIntro": "¿Hay algo erróneo o que falta en el mapa? Crea una nota aquí. Estás serán comprobadas por voluntarios.",
+        "createNoteTitle": "Crear una nueva nota aquí",
+        "disableAllNoteFilters": "Deshabilitar todos los filtros",
+        "isClosed": "Esta nota está resuelta",
+        "isCreated": "¡Tu nota ha sido creada!",
+        "loginToAddComment": "Inicia sesión para añadir un comentario",
+        "loginToAddPicture": "Inicia sesión para añadir una imagen",
+        "loginToClose": "Inicia sesión para cerrar esta nota",
+        "noteIsPublic": "Esto será visible para cualquiera",
+        "noteLayerDoEnable": "Habilitar la capa que muestra las notas",
+        "noteLayerHasFilters": "Algunas notas pueden estar ocultas por un filtro",
+        "noteLayerNotEnabled": "La capa que muestra las notas no está habilitada. Esta capa debe de habilitarse para añadir una nota nueva",
+        "notesLayerMustBeEnabled": "La capa de notas está deshabilitada. Habilítala para añadir una nota",
+        "reopenNote": "Reabrir nota",
+        "reopenNoteAndComment": "Reabrir la nota y comentar",
+        "textNeeded": "Introduce un texto descriptivo para crear una nota",
+        "typeText": "Teclea algún texto para añadir un comentario",
+        "warnAnonymous": "No has iniciado sesión. No podremos contactarte para resolver tu problema."
     },
     "privacy": {
+        "editing": "Cuando efectúas un cambio al mapa, este cambio se grabas en OpenStreetMap y está disponible públicamente a cualquiera. Un conjunto de cambios hecho con MapComplete incluye los siguientes datos: <ul><li> Los cambios que has hecho</li><li>Tu nombre de usuario</li><li>Cuándo se efectuó el cambio</li><li>El tema que utilizaste mientras que hacías el cambio</li><li>El idioma de la interfaz de usuario</li><li>Una indicación de como de cerca estabas a los objetos cambiados. Otros mapeadores pueden utilizar esta información para determina si un cambio se hizo basándose en un sondeo o en una investigación remota</li></ul> Por favor ve a ",
+        "editingTitle": "Cuando se hagan cambios",
+        "geodata": "Cuando MapComplete consigue tu geolocalización, tu geolocalización y las localizaciones previamente visitadas se mantienen en tu dispositivo. Tus datos de localización nunca se envían automáticamente a ningún otro sitio - a menos que alguna funcionalidad mencione otra cosa claramente.",
         "geodataTitle": "Tu geoubicación",
+        "intro": "La privacidad es importante - tanto para el individual como para la sociedad. MapComplete intenta respetar tu privacidad tanto como sea posible - hasta el punto de que no se necesita ningún banner de cookies molesto es necesario. De todas formas, nos gustaría informarte de qué información se recolecta y se comparte, bajo que circunstancias y por qué se hacen estos compromisos.",
+        "miscCookies": "MapComplete se integra con varios otros servicios, especialmente para cargar imágenes de características. Las imágenes se alojan en varios servidores de terceros, que puede que establezcan cookies por si mismos.",
         "miscCookiesTitle": "Otras cookies",
+        "surveillance": "Ya que estás leyendo la política de privacidad, probablemente te importe la privacidad - ¡también a nosotros! Incluso hemos hecho <a href=\"https://mapcomplete.osm.be/surveillance\">un tema que muestra cámaras de seguridad.</a> ¡Siéntete libre de mapearlas todas!",
         "title": "Política de privacidad",
-        "trackingTitle": "Datos estadísticos"
+        "tracking": "Para tener una idea de quién visita nuestro sitio web, se recoge alguna información técnica. Esto incluye el país desde el que visitaste MapComplete, el sitio que te refirió a MapComplete, el tipo de tu dispositivo y el tamaño de la pantalla. Una cookie coloca en tu dispositivo para indicar que visitaste MapComplete anteriormente hoy. Estos datos no están suficientemente detallados para identificarte personalmente. Estas estadísticas solo están disponibles a cualquiera en conjunto y están <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">disponibles públicamente a cualquiera</a>",
+        "trackingTitle": "Datos estadísticos",
+        "whileYoureHere": "¿Te importa la privacidad?"
     },
     "professional": {
         "aboutMc": {
+            "internalUse": {
+                "title": "Utilizando los datos en procesos internos"
+            },
+            "layers": {
+                "intro": "<p>MapComplete tiene un sistema de plantillas potente, que permite crear un mapa que muestre precisamente esas características que necesitas rápidamente, mostrando atributos relevantes en popups.</p><p>Estos datos pueden obtenerse de <b>OpenStreetMap</b> directamente, pero MapComplete también puede utilizar <b>conjunto de datos externos</b> ej. para comparar OpenStreetMap con otro conjunto de datos, o para mostrar datos que no so adecuados para OpenStreetMap (actividades planificadas, estadísticas, …)</p>",
+                "title": "¿Qué datos se pueden mostrar con MapComplete?"
+            },
             "survey": {
+                "intro": "<p>MapComplete es una herramienta de <i>sondeo</i> fácil de utilizar. Es ideal para recolectar lo necesario en unos pocos clics, tanto en escritorio como en móvil. Estos datos son contribuidos directamente en OpenStreetMap.</p><p>Podemos configurar una <b>herramienta de sondeo personalizada</b>, que pregunte precisamente los datos que necesitas de una forma a prueba del futuro.</p><p>¿Tienes un conjunto de datos que tiene que ser sondeado otra vez? Este es momento perfecto para cambiar a OpenStretMap. MapComplete puede mostrar tu conjunto de datos y OpenStreetMap al mismo tiempo, haciendo que sea más fácil visitar todas las localizaciones y ver lo que la comunidad ya contribuyó.</p>\n",
                 "title": "Posibilidades de estudio"
-            }
+            },
+            "text0": "Si un tema de MapComplete existente es lo que necesitas, siéntete libre de utilizarlo o embeberlo en tu sitio web. Incrustar los temas públicos es gratis y siempre lo será.",
+            "text1": "¿Necesitas algunos otros datos, pero el tema aún no existe? Los desarrolladores de MapComplete pueden <b>construirlo por tú</b> con un presupuesto decente. Ponte en contacto a través del <a href=\"mailto:pietervdvn@posteo.net\">correo electrónico</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> o <a href=\"https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet\">envía un mensaje a través de osm.org</a>",
+            "text2": "Si todavía te sientes inseguro, las posibilidades se resumen abajo. Adicionalmente, se responde a algunas preguntas frecuentes",
+            "title": "Utilizar MapComplete en tu organización"
         },
         "aboutOsm": {
+            "aboutOsm": {
+                "li0": "Las calles tienen geometría, pero también pueden tener información sobre el límite de velocidad, la superficie, si están iluminadas, su nombre, un enlace a Wikipedia, un enlace a lo que les da nombre, que rutas de senderismo, bicicleta y bus pasan por ahí, …",
+                "li1": "Las tiendas y otros servicios pueden tener horarios de apertura, un número de teléfono, un enlace al sitio web, qué métodos de pagos se aceptan, qué venden, qué servicios ofrecen, …",
+                "li2": "Los baños pueden tener información sobre la accesibilidad en silla de ruedas, si hay cambiador, si hace falta pagar, …",
+                "li3": "y mucho, mucho más…",
+                "title": "¿Qué es OpenStreetMap?"
+            },
+            "benefits": {
+                "intro": "Puede ser muy difícil dejar tu conjunto de datos atrás, ya que construirlo llevó tiempo y trabajó.<br>De todas formas, los beneficios de cambiar a OSM son enormes:",
+                "li0": "Ya no estás solo recogiendo y manteniendo el conjunto de datos - una comunidad entera está a tu lado",
+                "li2": "Numerosas organizaciones gubernamentales y municipalidades también utilizan OpenStreetMap en sus sitios web",
+                "title": "Beneficios de ecosistema OSM"
+            },
             "license": {
+                "intro": "OpenStreetMap está licenciado bajo la Licencia Open Database. El <a href=\"https://osm.org/copyright\" target=\"_blank\">texto completo de copyright</a> puede resumirse así:",
+                "li0": "Un producto que utilice los datos de OpenStreetMap debe de atribuir.",
+                "li1": "Los datos de OpenStreetMap deben de permanecer <i>abiertos</i>. Esto significa que los datos de un mapa que contenga datos de OpenStreetMap puede volver a ser copiado.",
+                "outro": "La licencia tiene unas pocas implicaciones - se explican abajo.",
                 "title": "La licencia"
+            },
+            "vandalism": {
+                "intro": "Como cualquiera puede editar los datos, es por tanto posible que se produzcan cambios maliciosos. De todas formas, esto es extremadamente poco común debido a unas cuántas razones:",
+                "li0": "la barrera técnica para hacer cambios es alta",
+                "li1": "a cambio malicioso pequeño tiene poco impacto, por tanto poco premio para un vándalo",
+                "li2": "un cambio con un impacto alto se identifica y revierte rápidamente ya que hay tanta gente que utiliza estos datos",
+                "li3": "Todos los cambios se unen a un solo usuario. Un infractor reincidente se bloquea rápidamente",
+                "li4": "En Bélgica (y otros países), la primera edición de un contribuidor nuevo se comprueba automáticamente y se corrige si es necesario.",
+                "title": "¿Qué pasa con el vandalismo?"
             }
         },
+        "drawbacks": {
+            "intro": "Mientras que unirse a esta comunidad tiene beneficios tremendos, hay algunos temas que considerar cuidadosamente.",
+            "licenseNuances": {
+                "intro": "OpenStreetMap está licenciado bajo la Licencia Open Database que dice que:",
+                "li0": "Todos los datos pueden ser reutilizados para cualquier propósito - incluyendo propósitos comerciales",
+                "li1": "Las aplicaciones o productos que utilicen OpenStreetMap deben de dar un aviso de los derechos claro",
+                "li2": "Cualquier conjunto de datos o producto que contenga datos de OpenStreetMap también deberá de ser republicado bajo la ODbL, incluyendo modificaciones a estos conjuntos de datos en un formato utilizable.",
+                "outro": "Esto tiene algunas implicaciones que deberán de ser consideradas para algunos casos de uso, como se explica abajo",
+                "title": "Implicaciones de la ODbL: algunos casos de uso",
+                "usecaseGatheringOpenData": {
+                    "intro": "MapComplete es una manera excelente de crear Datos Abiertos, pero también para gobiernos. Por defecto, estos datos serán redistribuibles libremente bajo la ODbL. Sin embargo, si hay un requisito de publicar los datos recogidos bajo una licencia del <i>dominio público</i> (donde <b>todos</b> los derechos de dan al público y no se requiere atribución), la ODbL es demasiado restrictiva. En este caso, se puede pedir a los contribuidores añadir los datos como Dominio Público (ej. informándoles en el tema de MapComplete).",
+                    "title": "Recogiendo datos abiertos"
+                },
+                "usecaseMapDifferentSources": {
+                    "intro": "<p>Por ejemplo, uno puede mapear todos los bancos en una ciudad, basándose en los mapas conocidos por OpenStreetMap. Este mapa impreso necesita un aviso claro de que los datos del mapa se basan en OpenStreetMap. Vender estos mapas esta permitido. Si el creador del mapa se da cuenta de que falta algunos mapas en un área y los añade al mapa impreso, los datos sobre los bancos que faltaba también se hacen libres automáticamente. Esto significa que un contribuidor de OpenStreetMap puede coger el mapa de papel y utilizarlo para añadir los bancos que faltan en OpenStreetMap.</p><p>Este contribuidor también tiene derecho a pedir el conjunto de datos con los bancos que faltan, que también se debería de proveer.</p><p>Si el creador del mapa se da cuenta de que los bancos faltan en un área y los añade al mapa impreso, los datos sobre los bancos que faltan, también son datos abiertos automáticamente. Esto significa que un contribuidor de OpenStreetMap puede coger el mapa de papel y utilizarlo para añadir los bancos que faltan en OpenStreetMpap. Este contribuidor también tiene el derecho a pedir el conjunto de datos con los bancos que faltan, que también se deberían de proveer.</p><p>Por supuesto, un mapa solo con bancos puede ser aburrido. El creador del mapa también puede decidir añadir una capa con tiendas, posiblemente recogidas de otro proveedor de geodatos bajo otra licencia. Esto también esta permitido, si el mapa declara que la fuente de los bancos es OSM (bajo ODBL) y las tiendas tienen una fuente diferente (eventualmente con un todos los derechos reservados).</p><p>Sin embargo, mezclar dos conjuntos de datos en una capa indistinguible puede no estar permitido. Por ejemplo, el creador del mapa puede encontrar que OSM tiene un conjunto de datos excelente sobre bancos en una parte de la ciudad y que el proveedor cerrado puede tener datos excelentes sobre bancos en otra parte de la ciudad, mezclar estos conjuntos de datos en uno puede ser problemático: </p>",
+                    "li0": "la licencia abierta requeriría que las modificaciones fueran publicadas de manera abierta…",
+                    "li1": "…mientras que la licencia con todos los derechos reservados lo prohibiría.",
+                    "outro": "Como resultado, este tipo de mezcla no está permitida",
+                    "title": "Crear un mapa de fuentes diferentes"
+                }
+            },
+            "title": "Algunos inconvenientes a tener en cuenta",
+            "unsuitedData": {
+                "intro": "La regla básica para OpenStreetMap es que todos los datos deberán de ser <b>verificables en el suelo</b> y en cierto modo permanentes. Esto implica que algunos datos <i>no</i> pueden ser enviados directamente a OpenStreetMap - pero existen algunas soluciones.",
+                "li0": "Los datos subjetivos (como opiniones) no son adecuados para OpenStreetMap. Sin embargo, MapComplete tiene una integración con <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a> un sitio licenciado abiertamente",
+                "li2": "Los datos temporales (ej. estadísticas de calidad del aire, intensidad del tráfico, …) no se pueden guardar en OpenStreetMap ya que son difíciles de comprobar por un voluntario. Ten en cuenta que, si estos datos están disponibles en otro lugar, podrán ser visualizados en MapComplete como una capa extra.",
+                "title": "Datos no adecuados para OpenStreetMap"
+            }
+        },
+        "indexPage": {
+            "button": "Descubre nuestros servicios",
+            "hook": "¿Necesitas ayuda profesional?"
+        },
+        "intro": "El desarrollador de MapComplete ofrece soporte profesional. Este documento resume algunas de las posibilidades, preguntas frecuentes y los límites de MapComplete",
+        "osmTitle": "¿Qué pueden hacer OpenStreetMap y MapComplete para tú organización?",
         "services": {
+            "intro": "El desarrollador de MapComplete puede ayudarte con los siguientes servicios:",
+            "li0": "Configurar un tema ajustado a tu necesidad",
+            "li1": "Ayudar a configurar el flujo de datos internos para integrar OpenStreetMap",
+            "li2": "Formación sobre la contribución datos con MapComplete",
+            "li3": "Formación avanzada (ej. para el equipo GIS) sobre como añadir datos avanzados en OpenStreetMap",
+            "li4": "Formación sobre como descargar datos filtrados desde OpenStreetMap",
+            "outro": "Estos servicios se ofrecen a precios competitivos. Un tema simple sin soporte adicional puede estar configurado por tampoco como 2000€, y un pequeño coste anual de alojamiento.",
             "title": "Servicios MapComplete"
-        }
+        },
+        "text1": "<p>MapComplete es el editor que hace contribuir a OpenStreetMap fácil.</p>",
+        "title": "Soporte profesional con MapComplete"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Revisión afiliada)",
@@ -399,27 +699,82 @@
         "saving_review": "Guardando…",
         "title": "{count} comentarios",
         "title_singular": "Un comentario",
+        "tos": "Si creas una opinión, aceptas a <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">los Terminos De Servicio y la Política De Privacidad de Mangrove.reviews</a>",
         "write_a_comment": "Deja una reseña…"
     },
     "split": {
         "cancel": "Cancelar",
-        "split": "Dividir"
+        "hasBeenSplit": "Esta característica se ha dividido",
+        "inviteToSplit": "Dividir esta carretera en segmentos más pequeños. Esto te permite darle propiedades diferentes a partes diferentes de la carretera.",
+        "loginToSplit": "Debes de haber iniciado sesión para dividir una carretera",
+        "split": "Dividir",
+        "splitTitle": "Escoge una opción en el mapa para dividir esta carretera"
+    },
+    "translations": {
+        "activateButton": "Ayuda a traducir MapComplete",
+        "allMissing": "Aún sin traducciónes",
+        "completeness": "Las traducciones para {theme} en {language} están al {percentage}%: {translated} cadenas de {total} están traducidas",
+        "deactivate": "Deshabilitar los botones de traducción",
+        "help": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente.",
+        "isTranslator": "El modo de traducción está activo si tu nombre de usuario coincide con el nombre de un traductor anterior",
+        "missing": "{count} cadenas sin traducir",
+        "notImmediate": "Las traducciones no se actualizan directamente. Habitualmente esto lleva unos días"
     },
     "validation": {
-        "decimal": {
-            "description": "Un número"
+        "color": {
+            "description": "Un color o código hexadecimal"
+        },
+        "date": {
+            "description": "Una fecha, empezando con el año"
         },
         "direction": {
             "description": "Una orientación"
         },
         "email": {
-            "description": "dirección-electrónica"
+            "description": "dirección-electrónica",
+            "feedback": "Esta no es una dirección de correo electrónico válida",
+            "noAt": "Una dirección de correo electrónico debe de contener un @"
         },
         "float": {
-            "description": "un número"
+            "description": "un número",
+            "feedback": "Esto no es un número"
+        },
+        "int": {
+            "description": "un número entero"
+        },
+        "nat": {
+            "description": "un número entero, positivo o cero",
+            "mustBePositive": "El número debe de ser positivo",
+            "mustBeWhole": "Solo se permiten números enteros",
+            "notANumber": "Introduce un número"
         },
         "opening_hours": {
             "description": "Horarios de apertura"
+        },
+        "pfloat": {
+            "description": "un número positivo"
+        },
+        "phone": {
+            "description": "un número de teléfono",
+            "feedback": "Este no es un número de teléfono válido"
+        },
+        "pnat": {
+            "description": "un número entero positivo",
+            "noZero": "No se permite el cero"
+        },
+        "string": {
+            "description": "una cadena de texto"
+        },
+        "text": {
+            "description": "una cadena de texto"
+        },
+        "tooLong": "El texto es demasiado largo, como mucho se permiten 255 caracteres. Ahora tienes {count} caracteres.",
+        "url": {
+            "description": "enlace a un sitio web",
+            "feedback": "Esta no es una dirección web válida"
+        },
+        "wikidata": {
+            "description": "Un identificador de Wikidata"
         }
     }
 }

@@ -77,7 +77,7 @@ The question is  What is the power output of this wind turbine? (e.g. 2.3 MW)
 
 This rendering asks information about the property  [generator:output:electricity](https://wiki.openstreetmap.org/wiki/Key:generator:output:electricity) 
 
-This is rendered with The power output of this wind turbine is {generator:output:electricity}.
+This is rendered with  The power output of this wind turbine is {generator:output:electricity}.
 
 
 
@@ -91,7 +91,7 @@ The question is  Who operates this wind turbine?
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with This wind turbine is operated by {operator}.
+This is rendered with  This wind turbine is operated by {operator}.
 
 
 
@@ -105,7 +105,7 @@ The question is  What is the total height of this wind turbine (including rotor 
 
 This rendering asks information about the property  [height](https://wiki.openstreetmap.org/wiki/Key:height) 
 
-This is rendered with The total height (including rotor radius) of this wind turbine is {height} metres.
+This is rendered with  The total height (including rotor radius) of this wind turbine is {height} metres.
 
 
 
@@ -119,7 +119,7 @@ The question is  What is the rotor diameter of this wind turbine, in metres?
 
 This rendering asks information about the property  [rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter) 
 
-This is rendered with The rotor diameter of this wind turbine is {rotor:diameter} metres.
+This is rendered with  The rotor diameter of this wind turbine is {rotor:diameter} metres.
 
 
 
@@ -133,7 +133,7 @@ The question is  When did this wind turbine go into operation?
 
 This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
 
-This is rendered with This wind turbine went into operation on/in {start_date}.
+This is rendered with  This wind turbine went into operation on/in {start_date}.
 
 
 

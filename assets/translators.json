@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 136,
+      "commits": 173,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 71,
+      "commits": 133,
       "contributor": "kjon"
     },
     {
@@ -13,19 +13,23 @@
       "contributor": "danieldegroot2"
     },
     {
+      "commits": 59,
+      "contributor": "Allan Nordhøy"
+    },
+    {
+      "commits": 30,
+      "contributor": "Iago"
+    },
+    {
+      "commits": 29,
+      "contributor": "Babos Gábor"
+    },
+    {
       "commits": 29,
       "contributor": "Artem"
     },
     {
-      "commits": 26,
-      "contributor": "Allan Nordhøy"
-    },
-    {
-      "commits": 25,
-      "contributor": "Babos Gábor"
-    },
-    {
-      "commits": 22,
+      "commits": 23,
       "contributor": "Supaplex"
     },
     {
@@ -37,16 +41,20 @@
       "contributor": "Anonymous"
     },
     {
-      "commits": 16,
+      "commits": 19,
       "contributor": "SC"
+    },
+    {
+      "commits": 18,
+      "contributor": "Reza Almanda"
+    },
+    {
+      "commits": 17,
+      "contributor": "Robin van der Linde"
     },
     {
       "commits": 16,
       "contributor": "el_libre como el chaval"
-    },
-    {
-      "commits": 16,
-      "contributor": "Robin van der Linde"
     },
     {
       "commits": 15,
@@ -54,19 +62,19 @@
     },
     {
       "commits": 14,
-      "contributor": "Iago"
-    },
-    {
-      "commits": 14,
-      "contributor": "Reza Almanda"
-    },
-    {
-      "commits": 14,
       "contributor": "J. Lavoie"
     },
     {
       "commits": 13,
+      "contributor": "Romain de Bossoreille"
+    },
+    {
+      "commits": 13,
       "contributor": "Joost"
+    },
+    {
+      "commits": 10,
+      "contributor": "Win Olario"
     },
     {
       "commits": 10,
@@ -85,12 +93,20 @@
       "contributor": "Jacque Fresco"
     },
     {
-      "commits": 8,
-      "contributor": "Win Olario"
-    },
-    {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "Olivier"
+    },
+    {
+      "commits": 6,
+      "contributor": "Joost Schouppe"
+    },
+    {
+      "commits": 6,
+      "contributor": "Vinicius"
     },
     {
       "commits": 6,
@@ -118,6 +134,14 @@
     },
     {
       "commits": 5,
+      "contributor": "Dingcycle"
+    },
+    {
+      "commits": 5,
+      "contributor": "phlostically"
+    },
+    {
+      "commits": 5,
       "contributor": "快乐的老鼠宝宝"
     },
     {
@@ -126,19 +150,19 @@
     },
     {
       "commits": 5,
-      "contributor": "Romain de Bossoreille"
-    },
-    {
-      "commits": 5,
       "contributor": "Piotr"
     },
     {
       "commits": 5,
-      "contributor": "Vinicius"
+      "contributor": "Alexey Shabanov"
     },
     {
-      "commits": 5,
-      "contributor": "Alexey Shabanov"
+      "commits": 4,
+      "contributor": "BMN"
+    },
+    {
+      "commits": 4,
+      "contributor": "paunofu"
     },
     {
       "commits": 4,
@@ -155,10 +179,6 @@
     {
       "commits": 4,
       "contributor": "Polgár Sándor"
-    },
-    {
-      "commits": 4,
-      "contributor": "phlostically"
     },
     {
       "commits": 4,
@@ -206,11 +226,15 @@
     },
     {
       "commits": 2,
-      "contributor": "Olivier"
+      "contributor": "Marc Marc"
     },
     {
       "commits": 2,
-      "contributor": "paunofu"
+      "contributor": "Midgard"
+    },
+    {
+      "commits": 2,
+      "contributor": "M. Rey"
     },
     {
       "commits": 2,

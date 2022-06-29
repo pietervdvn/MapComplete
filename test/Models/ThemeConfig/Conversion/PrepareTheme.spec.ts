@@ -11,6 +11,7 @@ import {ExtractImages} from "../../../../Models/ThemeConfig/Conversion/FixImages
 import * as cyclofix from "../../../../assets/generated/themes/cyclofix.json"
 import {Tag} from "../../../../Logic/Tags/Tag";
 import {DesugaringContext} from "../../../../Models/ThemeConfig/Conversion/Conversion";
+import {And} from "../../../../Logic/Tags/And";
 
 
 const themeConfigJson: LayoutConfigJson = {
@@ -52,7 +53,7 @@ describe("PrepareTheme", () => {
         let themeConfigJsonPrepared = prepareStep.convert(theme, "test").result
         const themeConfig = new LayoutConfig(themeConfigJsonPrepared);
         const layerUnderTest = <LayerConfig> themeConfig.layers.find(l => l.id === "public_bookcase")
-        expect(layerUnderTest.source.osmTags).deep.eq(new Tag("amenity","public_bookcase"))
+        expect(layerUnderTest.source.osmTags).deep.eq(new And([new Tag("amenity","public_bookcase")]))
 
     })
     

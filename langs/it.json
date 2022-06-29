@@ -51,7 +51,7 @@
             "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.<br>",
             "layerNotEnabled": "Il livello {layer} non è abilitato. Abilita questo livello per aggiungere un punto",
             "openLayerControl": "Apri il pannello di controllo dei livelli",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">Accedi per aggiungere un punto</a>",
+            "pleaseLogin": "Accedi per aggiungere un punto",
             "presetInfo": "Il nuovo PDI avrà {tags}",
             "stillLoading": "Caricamento dei dati ancora in corso. Attendi un po’ prima di aggiungere un nuovo punto.",
             "title": "Aggiungi un nuovo punto?",

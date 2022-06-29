@@ -1,4 +1,4 @@
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import {Or} from "../Tags/Or";
 import {Overpass} from "../Osm/Overpass";
 import FeatureSource from "../FeatureSource/FeatureSource";
@@ -34,13 +34,13 @@ export default class OverpassFeatureSource implements FeatureSource {
     private readonly retries: UIEventSource<number> = new UIEventSource<number>(0);
 
     private readonly state: {
-        readonly locationControl: UIEventSource<Loc>,
+        readonly locationControl: Store<Loc>,
         readonly layoutToUse: LayoutConfig,
-        readonly overpassUrl: UIEventSource<string[]>;
-        readonly overpassTimeout: UIEventSource<number>;
-        readonly currentBounds: UIEventSource<BBox>
+        readonly overpassUrl: Store<string[]>;
+        readonly overpassTimeout: Store<number>;
+        readonly currentBounds: Store<BBox>
     }
-    private readonly _isActive: UIEventSource<boolean>
+    private readonly _isActive: Store<boolean>
     /**
      * Callback to handle all the data
      */
@@ -54,16 +54,16 @@ export default class OverpassFeatureSource implements FeatureSource {
 
     constructor(
         state: {
-            readonly locationControl: UIEventSource<Loc>,
+            readonly locationControl: Store<Loc>,
             readonly layoutToUse: LayoutConfig,
-            readonly overpassUrl: UIEventSource<string[]>;
-            readonly overpassTimeout: UIEventSource<number>;
-            readonly overpassMaxZoom: UIEventSource<number>,
-            readonly currentBounds: UIEventSource<BBox>
+            readonly overpassUrl: Store<string[]>;
+            readonly overpassTimeout: Store<number>;
+            readonly overpassMaxZoom: Store<number>,
+            readonly currentBounds: Store<BBox>
         },
         options: {
-            padToTiles: UIEventSource<number>,
-            isActive?: UIEventSource<boolean>,
+            padToTiles: Store<number>,
+            isActive?: Store<boolean>,
             relationTracker: RelationsTracker,
             onBboxLoaded?: (bbox: BBox, date: Date, layers: LayerConfig[], zoomlevel: number) => void,
             freshnesses?: Map<string, TileFreshnessCalculator>

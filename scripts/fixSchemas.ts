@@ -1,12 +1,16 @@
 import ScriptUtils from "./ScriptUtils";
 import {readFileSync, writeFileSync} from "fs";
 
+/**
+ * Extracts the data from the scheme file and writes them in a flatter structure
+ */
 
 interface JsonSchema {
     description?: string,
     type?: string,
     properties?: any,
     items?: JsonSchema,
+    allOf?: JsonSchema[],
     anyOf: JsonSchema[],
     enum: JsonSchema[],
     "$ref": string
@@ -19,11 +23,12 @@ function WalkScheme<T>(
     path: string[] = [],
     isHandlingReference = []
 ): { path: string[], t: T }[] {
+
     const results: { path: string[], t: T } [] = []
     if (scheme === undefined) {
         return []
     }
-    
+
     if (scheme["$ref"] !== undefined) {
         const ref = scheme["$ref"]
         const prefix = "#/definitions/"
@@ -59,15 +64,17 @@ function WalkScheme<T>(
         if (scheme === undefined) {
             return
         }
-      
+
         scheme.forEach(v => walk(v))
-       
+
     }
 
 
     {
         walkEach(scheme.enum)
         walkEach(scheme.anyOf)
+        walkEach(scheme.allOf)
+
         if (Array.isArray(scheme.items)) {
             walkEach(<any>scheme.items)
         } else {
@@ -93,7 +100,7 @@ function extractMeta(typename: string, path: string) {
             .find(line => line.trim().toLocaleLowerCase().startsWith("type:"))
             ?.substr("type:".length)?.trim()
         const type = schemePart.items?.anyOf ?? schemePart.type ?? schemePart.anyOf;
-        return {typeHint, type}
+        return {typeHint, type, description: schemePart.description}
     }, themeSchema)
 
     const paths = withTypes.map(({
@@ -118,7 +125,6 @@ function main() {
 
         for (const key in parsed.definitions) {
             const def = parsed.definitions[key]
-            console.log("Patching ", key)
             if (def.type === "object") {
                 def["additionalProperties"] = false
             }

@@ -3,7 +3,7 @@ import Translations from "../i18n/Translations";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import BaseUIElement from "../BaseUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {SubtleButton} from "../Base/SubtleButton";
 import Combine from "../Base/Combine";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
@@ -40,7 +40,7 @@ export default class TagApplyButton implements AutoAction {
     ];
     public readonly example = "`{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)";
 
-    public static generateTagsToApply(spec: string, tagSource: UIEventSource<any>): UIEventSource<Tag[]> {
+    public static generateTagsToApply(spec: string, tagSource: Store<any>): Store<Tag[]> {
 
         const tgsSpec = spec.split(";").map(spec => {
             const kv = spec.split("=").map(s => s.trim());

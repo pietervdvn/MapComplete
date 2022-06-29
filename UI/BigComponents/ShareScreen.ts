@@ -2,9 +2,8 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {Translation} from "../i18n/Translation";
 import Svg from "../../Svg";
 import Combine from "../Base/Combine";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
-import Toggle from "../Input/Toggle";
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
@@ -13,7 +12,7 @@ import Loc from "../../Models/Loc";
 import BaseLayer from "../../Models/BaseLayer";
 import FilteredLayer from "../../Models/FilteredLayer";
 import {InputElement} from "../Input/InputElement";
-import CheckBoxes, {CheckBox} from "../Input/Checkboxes";
+import {CheckBox} from "../Input/Checkboxes";
 import {SubtleButton} from "../Base/SubtleButton";
 import LZString from "lz-string";
 
@@ -24,7 +23,7 @@ export default class ShareScreen extends Combine {
         const tr = Translations.t.general.sharescreen;
 
         const optionCheckboxes: InputElement<boolean>[] = []
-        const optionParts: (UIEventSource<string>)[] = [];
+        const optionParts: (Store<string>)[] = [];
 
         const includeLocation = new CheckBox(tr.fsIncludeCurrentLocation, true)
         optionCheckboxes.push(includeLocation);
@@ -157,8 +156,8 @@ export default class ShareScreen extends Combine {
         ).onClick(async () => {
 
             const shareData = {
-                title: Translations.W(layout.title)?.ConstructElement().innerText ?? "",
-                text: Translations.W(layout.description)?.ConstructElement().innerText ?? "",
+                title: Translations.W(layout.title)?.ConstructElement().textContent ?? "",
+                text: Translations.W(layout.description)?.ConstructElement().textContent ?? "",
                 url: url.data,
             }
 

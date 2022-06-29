@@ -1,4 +1,4 @@
-import {UIEventSource} from "../Logic/UIEventSource";
+import {Store, UIEventSource} from "../Logic/UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
 import {ImageCarousel} from "./Image/ImageCarousel";
@@ -35,7 +35,7 @@ import {ConflateButton, ImportPointButton, ImportWayButton} from "./Popup/Import
 import TagApplyButton from "./Popup/TagApplyButton";
 import AutoApplyButton from "./Popup/AutoApplyButton";
 import * as left_right_style_json from "../assets/layers/left_right_style/left_right_style.json";
-import {OpenIdEditor} from "./BigComponents/CopyrightPanel";
+import {OpenIdEditor, OpenJosm} from "./BigComponents/CopyrightPanel";
 import Toggle from "./Input/Toggle";
 import Img from "./Base/Img";
 import NoteCommentElement from "./Popup/NoteCommentElement";
@@ -48,18 +48,20 @@ import {TextField} from "./Input/TextField";
 import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
 import {Translation} from "./i18n/Translation";
 import {AllTagsPanel} from "./AllTagsPanel";
-import NearbyImages, {P4CPicture, SelectOneNearbyImage} from "./Popup/NearbyImages";
+import NearbyImages, {NearbyImageOptions, P4CPicture, SelectOneNearbyImage} from "./Popup/NearbyImages";
 import Lazy from "./Base/Lazy";
 import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction";
 import {Tag} from "../Logic/Tags/Tag";
 import {And} from "../Logic/Tags/And";
 import {SaveButton} from "./Popup/SaveButton";
 import {MapillaryLink} from "./BigComponents/MapillaryLink";
+import {CheckBox} from "./Input/Checkboxes";
+import Slider from "./Input/Slider";
 
 export interface SpecialVisualization {
     funcName: string,
     constr: ((state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState,) => BaseUIElement),
-    docs: string,
+    docs: string | BaseUIElement,
     example?: string,
     args: { name: string, defaultValue?: string, doc: string, required?: false | boolean }[],
     getLayerDependencies?: (argument: string[]) => string[]
@@ -174,19 +176,8 @@ class NearbyImageVis implements SpecialVisualization {
         const canBeEdited: boolean = !!(id?.match("(node|way|relation)/-?[0-9]+"))
         const selectedImage = new UIEventSource<P4CPicture>(undefined);
 
-        const nearby = new Lazy(() => {
-            const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
-            const options = {
-                lon, lat, radius: 50,
-                value: selectedImage,
-                blacklist: alreadyInTheImage
-            };
-            const slideshow = canBeEdited ? new SelectOneNearbyImage(options) : new NearbyImages(options);
-            return new Combine([slideshow, new MapillaryLinkVis().constr(state, tagSource, [])])
-        });
 
-        let withEdit: BaseUIElement = nearby;
-
+        let saveButton: BaseUIElement = undefined
         if (canBeEdited) {
             const confirmText: BaseUIElement = new SubstitutedTranslation(t.confirm, tagSource, state)
 
@@ -209,15 +200,47 @@ class NearbyImageVis implements SpecialVisualization {
                     )
                 )
             };
+            saveButton = new SaveButton(selectedImage, state.osmConnection, confirmText, t.noImageSelected)
+                .onClick(onSave).SetClass("flex justify-end")
+        }
 
-            const saveButton = new SaveButton(selectedImage, state.osmConnection, confirmText, t.noImageSelected)
-                .onClick(onSave)
+        const nearby = new Lazy(() => {
+            const towardsCenter = new CheckBox(t.onlyTowards, false)
 
+            const radiusValue = state?.osmConnection?.GetPreference("nearby-images-radius","300").sync(s => Number(s), [], i => ""+i) ?? new UIEventSource(300);
+
+            const radius = new Slider(25, 500, {
+                value:
+                radiusValue, step: 25
+            })
+            const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
+            const options: NearbyImageOptions & { value } = {
+                lon, lat,
+                searchRadius: 500,
+                shownRadius: radius.GetValue(),
+                value: selectedImage,
+                blacklist: alreadyInTheImage,
+                towardscenter: towardsCenter.GetValue(),
+                maxDaysOld: 365 * 5
+
+            };
+            const slideshow = canBeEdited ? new SelectOneNearbyImage(options, state) : new NearbyImages(options, state);
+            const controls = new Combine([towardsCenter,
+                new Combine([
+                    new VariableUiElement(radius.GetValue().map(radius => t.withinRadius.Subs({radius}))), radius
+                ]).SetClass("flex justify-between")
+            ]).SetClass("flex flex-col");
+            return new Combine([slideshow,
+                controls,
+                saveButton,
+                new MapillaryLinkVis().constr(state, tagSource, []).SetClass("mt-6")])
+        });
+
+        let withEdit: BaseUIElement = nearby;
+        if (canBeEdited) {
             withEdit = new Combine([
                 t.hasMatchingPicture,
-                nearby,
-                saveButton
-                    .SetClass("flex justify-end")
+                nearby
             ]).SetClass("flex flex-col")
         }
 
@@ -262,29 +285,31 @@ export default class SpecialVisualizations {
 
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.init()
 
+    public static DocumentationFor(viz: SpecialVisualization): BaseUIElement {
+        return new Combine(
+            [
+                new Title(viz.funcName, 3),
+                viz.docs,
+                viz.args.length > 0 ? new Table(["name", "default", "description"],
+                    viz.args.map(arg => {
+                        let defaultArg = arg.defaultValue ?? "_undefined_"
+                        if (defaultArg == "") {
+                            defaultArg = "_empty string_"
+                        }
+                        return [arg.name, defaultArg, arg.doc];
+                    })
+                ) : undefined,
+                new Title("Example usage of " + viz.funcName, 4),
+                new FixedUiElement(
+                    viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
+                ).SetClass("literal-code"),
+
+            ])
+    }
+
     public static HelpMessage() {
 
-        const helpTexts =
-            SpecialVisualizations.specialVisualizations.map(viz => new Combine(
-                [
-                    new Title(viz.funcName, 3),
-                    viz.docs,
-                    viz.args.length > 0 ? new Table(["name", "default", "description"],
-                        viz.args.map(arg => {
-                            let defaultArg = arg.defaultValue ?? "_undefined_"
-                            if (defaultArg == "") {
-                                defaultArg = "_empty string_"
-                            }
-                            return [arg.name, defaultArg, arg.doc];
-                        })
-                    ) : undefined,
-                    new Title("Example usage of " + viz.funcName, 4),
-                    new FixedUiElement(
-                        viz.example ?? "`{" + viz.funcName + "(" + viz.args.map(arg => arg.defaultValue).join(",") + ")}`"
-                    ).SetClass("literal-code"),
-
-                ]
-            ));
+        const helpTexts = SpecialVisualizations.specialVisualizations.map(viz => SpecialVisualizations.DocumentationFor(viz));
 
         return new Combine([
                 new Combine([
@@ -432,7 +457,7 @@ export default class SpecialVisualizations {
                         const keys = [...args]
                         keys.splice(0, 1)
                         const featureStore = state.allElements.ContainingFeatures
-                        const featuresToShow: UIEventSource<{ freshness: Date, feature: any }[]> = tagSource.map(properties => {
+                        const featuresToShow: Store<{ freshness: Date, feature: any }[]> = tagSource.map(properties => {
                             const values: string[] = Utils.NoNull(keys.map(key => properties[key]))
                             const features: { freshness: Date, feature: any }[] = []
                             for (const value of values) {
@@ -486,7 +511,7 @@ export default class SpecialVisualizations {
                                 leafletMap: minimap["leafletMap"],
                                 zoomToFeatures: true,
                                 layers: state.filteredLayers,
-                                features: new StaticFeatureSource(featuresToShow, true)
+                                features: new StaticFeatureSource(featuresToShow)
                             }
                         )
 
@@ -532,7 +557,7 @@ export default class SpecialVisualizations {
                                 leafletMap: minimap["leafletMap"],
                                 zoomToFeatures: true,
                                 layerToShow: new LayerConfig(left_right_style_json, "all_known_layers", true),
-                                features: new StaticFeatureSource([copy], false),
+                                features: StaticFeatureSource.fromGeojson([copy]),
                                 state
                             }
                         )
@@ -662,7 +687,7 @@ export default class SpecialVisualizations {
                             }
                         }
 
-                        const listSource: UIEventSource<string[]> = tagSource
+                        const listSource: Store<string[]> = tagSource
                             .map(tags => {
                                 try {
                                     const value = tags[args[0]]
@@ -780,7 +805,7 @@ export default class SpecialVisualizations {
                         const text = args[2]
                         const autoapply = args[3]?.toLowerCase() === "true"
                         const overwrite = args[4]?.toLowerCase() === "true"
-                        const featureIds: UIEventSource<string[]> = tagsSource.map(tags => {
+                        const featureIds: Store<string[]> = tagsSource.map(tags => {
                             const ids = tags[featureIdsKey]
                             try {
                                 if (ids === undefined) {
@@ -865,7 +890,14 @@ export default class SpecialVisualizations {
                         return new OpenIdEditor(state, undefined, feature.data.id)
                     }
                 },
-
+                {
+                    funcName: "open_in_josm",
+                    docs: "Opens the current view in the JOSM-editor",
+                    args: [],
+                    constr: (state, feature) => {
+                        return new OpenJosm(state)
+                    }
+                },
 
                 {
                     funcName: "clear_location_history",
@@ -917,7 +949,7 @@ export default class SpecialVisualizations {
                                     await state.osmConnection.reopenNote(id, txt.data)
                                     await state.osmConnection.closeNote(id)
                                 } else {
-                                    await state.osmConnection.addCommentToNode(id, txt.data)
+                                    await state.osmConnection.addCommentToNote(id, txt.data)
                                 }
                                 NoteCommentElement.addCommentTo(txt.data, tags, state)
                                 txt.setData("")
@@ -1013,7 +1045,7 @@ export default class SpecialVisualizations {
 
                         const uploader = new ImgurUploader(url => {
                             isUploading.setData(false)
-                            state.osmConnection.addCommentToNode(id, url)
+                            state.osmConnection.addCommentToNote(id, url)
                             NoteCommentElement.addCommentTo(url, tags, state)
 
                         })

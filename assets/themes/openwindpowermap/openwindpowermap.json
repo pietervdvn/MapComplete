@@ -10,7 +10,8 @@
     "id": "OpenWindPowerMap",
     "hu": "OpenWindPowerMap",
     "nl": "Windmolens",
-    "ca": "OpenWindPowerMap"
+    "ca": "OpenWindPowerMap",
+    "nb_NO": "ÅpentVindkraftKart"
   },
   "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/logo.svg",

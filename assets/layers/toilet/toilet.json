@@ -7,7 +7,8 @@
     "nl": "Toiletten",
     "ru": "Туалеты",
     "it": "Servizi igienici",
-    "ca": "Lavabos"
+    "ca": "Lavabos",
+    "es": "Baños"
   },
   "minzoom": 12,
   "source": {
@@ -21,18 +22,20 @@
       "nl": "Toilet",
       "ru": "Туалет",
       "it": "Servizi igienici",
-      "ca": "Lavabo"
+      "ca": "Lavabo",
+      "es": "Baño"
     }
   },
   "presets": [
     {
       "title": {
         "en": "a public toilet",
-        "de": "eine öffentlich zugängliche toilette",
+        "de": "eine öffentliche Toilette",
         "fr": "une toilette publique",
         "nl": "een publiek toilet",
         "ru": "общественный туалет ",
-        "it": "una servizi igienici aperti al pubblico"
+        "it": "una servizi igienici aperti al pubblico",
+        "es": "un baño público"
       },
       "tags": [
         "amenity=toilets"
@@ -41,7 +44,7 @@
     {
       "title": {
         "en": "a toilets with wheelchair accessible toilet",
-        "de": "eine toiletten mit rollstuhlgerechter toilette",
+        "de": "eine barrierefreie Toilette",
         "fr": "une toilettes accessible aux personnes à mobilité réduite",
         "nl": "een rolstoeltoegankelijke, publiek toilet",
         "it": "una servizi igienici accessibili per persone in sedia a rotelle",
@@ -65,7 +68,7 @@
     {
       "question": {
         "en": "Are these toilets publicly accessible?",
-        "de": "Sind diese Toiletten öffentlich zugänglich?",
+        "de": "Ist die Toilette öffentlich zugänglich?",
         "fr": "Ces toilettes sont-elles accessibles au public ?",
         "nl": "Zijn deze toiletten publiek toegankelijk?",
         "it": "Questi servizi igienici sono aperti al pubblico?",
@@ -76,7 +79,8 @@
         "de": "Zugang ist {access}",
         "fr": "L'accès est {access}",
         "nl": "Toegankelijkheid is {access}",
-        "it": "L'accesso è {access}"
+        "it": "L'accesso è {access}",
+        "es": "El acceso es {access}"
       },
       "freeform": {
         "key": "access",
@@ -89,42 +93,46 @@
           "if": "access=yes",
           "then": {
             "en": "Public access",
-            "de": "Öffentlicher Zugang",
+            "de": "Der Zugang ist öffentlich",
             "fr": "Accès publique",
             "nl": "Publiek toegankelijk",
             "it": "Accesso pubblico",
-            "ru": "Свободный доступ"
+            "ru": "Свободный доступ",
+            "es": "Acceso públic"
           }
         },
         {
           "if": "access=customers",
           "then": {
             "en": "Only access to customers",
-            "de": "Nur Zugang für Kunden",
+            "de": "Der Zugang ist nur für Kunden",
             "fr": "Accès réservé aux clients",
             "nl": "Enkel toegang voor klanten",
-            "it": "Accesso riservato ai clienti e alle clienti"
+            "it": "Accesso riservato ai clienti e alle clienti",
+            "es": "Solo accesible a clientes"
           }
         },
         {
           "if": "access=no",
           "then": {
             "en": "Not accessible",
-            "de": "Nicht zugänglich",
+            "de": "Der Zugang ist nicht erlaubt oder nicht möglich",
             "fr": "Toilettes privées",
             "nl": "Niet toegankelijk",
             "ru": "Недоступно",
-            "it": "Non accessibile"
+            "it": "Non accessibile",
+            "es": "No accesible"
           }
         },
         {
           "if": "access=key",
           "then": {
             "en": "Accessible, but one has to ask a key to enter",
-            "de": "Zugänglich, aber man muss einen Schlüssel für die Eingabe verlangen",
+            "de": "Der Zugang ist möglich, aber man muss nach einen Schlüssel fragen",
             "fr": "Accessible, mais vous devez demander la clé",
             "nl": "Toegankelijk na het vragen van de sleutel",
-            "it": "Accessibile, ma occorre chiedere una chiave per accedere"
+            "it": "Accessibile, ma occorre chiedere una chiave per accedere",
+            "es": "Accesible, pero hay que pedir la llave para entrar"
           }
         },
         {
@@ -135,7 +143,8 @@
             "fr": "Accès publique",
             "nl": "Publiek toegankelijk",
             "it": "Accesso pubblico",
-            "ru": "Свободный доступ"
+            "ru": "Свободный доступ",
+            "es": "De acceso público"
           },
           "hideInAnswer": true
         }
@@ -155,11 +164,12 @@
         {
           "then": {
             "en": "These are paid toilets",
-            "de": "Dies sind bezahlte Toiletten",
+            "de": "Die Nutzung ist gebührenpflichtig",
             "fr": "Toilettes payantes",
             "nl": "Men moet betalen om deze toiletten te gebruiken",
             "ru": "Это платные туалеты",
-            "it": "Questi servizi igienici sono a pagamento"
+            "it": "Questi servizi igienici sono a pagamento",
+            "es": "Estos son baños de pago"
           },
           "if": "fee=yes"
         },
@@ -167,7 +177,7 @@
           "if": "fee=no",
           "then": {
             "en": "Free to use",
-            "de": "Kostenlose Nutzung",
+            "de": "Die Nutzung ist kostenlos",
             "fr": "Toilettes gratuites",
             "nl": "Gratis te gebruiken",
             "it": "Gratis"
@@ -178,11 +188,12 @@
     {
       "question": {
         "en": "How much does one have to pay for these toilets?",
-        "de": "Wie viel muss man für diese Toiletten bezahlen?",
+        "de": "Wie viel muss man für die Nutzung bezahlen?",
         "fr": "Quel est le prix d'accès de ces toilettes ?",
         "nl": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
         "it": "Quanto costa l'accesso a questi servizi igienici?",
-        "ru": "Сколько стоит посещение туалета?"
+        "ru": "Сколько стоит посещение туалета?",
+        "es": "¿Cuánto hay que pagar para estos baños?"
       },
       "render": {
         "en": "The fee is {charge}",
@@ -190,7 +201,8 @@
         "fr": "Le prix est {charge}",
         "nl": "De toiletten gebruiken kost {charge}",
         "it": "La tariffa è {charge}",
-        "ru": "Стоимость {charge}"
+        "ru": "Стоимость {charge}",
+        "es": "La tasa es {charge}"
       },
       "condition": "fee=yes",
       "freeform": {
@@ -210,7 +222,8 @@
       "question": {
         "en": "When are these toilets opened?",
         "nl": "Wanneer zijn deze toiletten open?",
-        "de": "Wann sind diese Toiletten geöffnet?"
+        "de": "Wann sind diese Toiletten geöffnet?",
+        "es": ""
       },
       "render": "{opening_hours_table()}",
       "freeform": {
@@ -223,7 +236,8 @@
           "then": {
             "en": "Opened 24/7",
             "nl": "Altijd open",
-            "de": "Durchgehend geöffnet"
+            "de": "Durchgehend geöffnet",
+            "es": "Abierto 24/7"
           }
         }
       ]
@@ -231,8 +245,8 @@
     {
       "id": "toilets-wheelchair",
       "question": {
-        "en": "Is there a dedicated toilet for wheelchair users",
-        "de": "Gibt es eine Toilette für Rollstuhlfahrer?",
+        "en": "Is there a dedicated toilet for wheelchair users?",
+        "de": "Können Rollstuhlfahrer die Toilette benutzen?",
         "fr": "Y a-t-il des toilettes réservées aux personnes en fauteuil roulant ?",
         "nl": "Is er een rolstoeltoegankelijke toilet voorzien?",
         "it": "C'è un WC riservato alle persone in sedia a rotelle"
@@ -241,10 +255,11 @@
         {
           "then": {
             "en": "There is a dedicated toilet for wheelchair users",
-            "de": "Es gibt eine Toilette für Rollstuhlfahrer",
+            "de": "Rollstuhlfahrer können die Toilette benutzen",
             "fr": "Il y a des toilettes réservées pour les personnes à mobilité réduite",
             "nl": "Er is een toilet voor rolstoelgebruikers",
-            "it": "C'è un WC riservato alle persone in sedia a rotelle"
+            "it": "C'è un WC riservato alle persone in sedia a rotelle",
+            "es": "Hay un baño dedicado para usuarios con sillas de ruedas"
           },
           "if": "wheelchair=yes"
         },
@@ -252,11 +267,12 @@
           "if": "wheelchair=no",
           "then": {
             "en": "No wheelchair access",
-            "de": "Kein Zugang für Rollstuhlfahrer",
+            "de": "Rollstuhlfahrer können die Toilette nicht benutzen",
             "fr": "Non accessible aux personnes à mobilité réduite",
             "nl": "Niet toegankelijk voor rolstoelgebruikers",
             "it": "Non accessibile in sedia a rotelle",
-            "ru": "Недоступно пользователям кресел-колясок"
+            "ru": "Недоступно пользователям кресел-колясок",
+            "es": "Sin acceso para sillas de ruedas"
           }
         }
       ]
@@ -265,18 +281,19 @@
       "id": "toilets-type",
       "question": {
         "en": "Which kind of toilets are this?",
-        "de": "Welche Art von Toiletten sind das?",
+        "de": "Welche Toiletten gibt es hier?",
         "fr": "De quel type sont ces toilettes ?",
         "nl": "Welke toiletten zijn dit?",
         "it": "Di che tipo di servizi igienici si tratta?",
-        "ru": "Какие это туалеты?"
+        "ru": "Какие это туалеты?",
+        "es": "¿Qué tipo de baños son estos?"
       },
       "mappings": [
         {
           "if": "toilets:position=seated",
           "then": {
             "en": "There are only seated toilets",
-            "de": "Es gibt nur Sitztoiletten",
+            "de": "Hier gibt es nur Toiletten zum Sitzen",
             "fr": "Il y a uniquement des sièges de toilettes",
             "nl": "Er zijn enkel WC's om op te zitten",
             "it": "Ci sono solo WC con sedile"
@@ -286,17 +303,18 @@
           "if": "toilets:position=urinal",
           "then": {
             "en": "There are only urinals here",
-            "de": "Hier gibt es nur Pissoirs",
+            "de": "Hier gibt es nur Urinale zum Stehen",
             "fr": "Il y a uniquement des urinoirs",
             "nl": "Er zijn enkel urinoirs",
-            "it": "Ci sono solo urinali"
+            "it": "Ci sono solo urinali",
+            "es": "Aquí solo hay orinales"
           }
         },
         {
           "if": "toilets:position=squat",
           "then": {
             "en": "There are only squat toilets here",
-            "de": "Es gibt hier nur Hocktoiletten",
+            "de": "Hier gibt es nur Toiletten zum Hocken",
             "fr": "Il y a uniquement des toilettes turques",
             "nl": "Er zijn enkel hurktoiletten",
             "it": "Ci sono solo turche"
@@ -306,10 +324,11 @@
           "if": "toilets:position=seated;urinal",
           "then": {
             "en": "Both seated toilets and urinals are available here",
-            "de": "Sowohl Sitztoiletten als auch Pissoirs sind hier verfügbar",
+            "de": "Hier gibt es Sitztoiletten und Urinale",
             "fr": "Il y a des sièges de toilettes et des urinoirs",
             "nl": "Er zijn zowel urinoirs als zittoiletten",
-            "it": "Ci sono sia sedili, sia urinali"
+            "it": "Ci sono sia sedili, sia urinali",
+            "es": "Aquí hay tanto váteres de sentarse como orinales"
           }
         }
       ]
@@ -318,7 +337,7 @@
       "id": "toilets-changing-table",
       "question": {
         "en": "Is a changing table (to change diapers) available?",
-        "de": "Ist ein Wickeltisch (zum Wechseln der Windeln) vorhanden?",
+        "de": "Ist hier ein Wickeltisch (zum Wechseln von Babywindeln) vorhanden?",
         "fr": "Ces toilettes disposent-elles d'une table à langer ?",
         "nl": "Is er een luiertafel beschikbaar?",
         "it": "È disponibile un fasciatoio (per cambiare i pannolini)?"
@@ -330,7 +349,8 @@
             "de": "Ein Wickeltisch ist verfügbar",
             "fr": "Une table à langer est disponible",
             "nl": "Er is een luiertafel",
-            "it": "È disponibile un fasciatoio"
+            "it": "È disponibile un fasciatoio",
+            "es": "Hay un cambiador"
           },
           "if": "changing_table=yes"
         },
@@ -341,7 +361,8 @@
             "de": "Es ist kein Wickeltisch verfügbar",
             "fr": "Aucune table à langer",
             "nl": "Geen luiertafel",
-            "it": "Non è disponibile un fasciatoio"
+            "it": "Non è disponibile un fasciatoio",
+            "es": "No hay cambiador"
           }
         }
       ]
@@ -352,14 +373,16 @@
         "de": "Wo befindet sich der Wickeltisch?",
         "fr": "Où se situe la table à langer ?",
         "nl": "Waar bevindt de luiertafel zich?",
-        "it": "Dove si trova il fasciatoio?"
+        "it": "Dove si trova il fasciatoio?",
+        "es": "¿Dónde está el cambiador?"
       },
       "render": {
         "en": "The changing table is located at {changing_table:location}",
         "de": "Die Wickeltabelle befindet sich in {changing_table:location}",
         "fr": "Emplacement de la table à langer : {changing_table:location}",
         "nl": "De luiertafel bevindt zich in {changing_table:location}",
-        "it": "Il fasciatoio si trova presso {changing_table:location}"
+        "it": "Il fasciatoio si trova presso {changing_table:location}",
+        "es": "El cambiador está en {changing_table:location}"
       },
       "condition": "changing_table=yes",
       "freeform": {
@@ -403,7 +426,8 @@
             "de": "Der Wickeltisch befindet sich in einem eigenen Raum. ",
             "fr": "La table à langer est dans un espace dédié. ",
             "nl": "De luiertafel bevindt zich in een daartoe voorziene kamer ",
-            "it": "Il fasciatoio è in una stanza dedicata. "
+            "it": "Il fasciatoio è in una stanza dedicata. ",
+            "es": "El cambiador está en una habitación dedicada "
           }
         }
       ],
@@ -414,7 +438,9 @@
       "question": {
         "en": "Do these toilets have a sink to wash your hands?",
         "nl": "Hebben deze toiletten een lavabo om de handen te wassen?",
-        "de": "Verfügt diese Toilette über ein Waschbecken?"
+        "de": "Gibt es hier ein Handwaschbecken?",
+        "es": "¿Esto baños tienen una pileta para lavarte los baños?",
+        "fr": "Ces toilettes ont-ils un lavabo pour se laver les mains ?"
       },
       "mappings": [
         {
@@ -422,7 +448,9 @@
           "then": {
             "en": "This toilets have a sink to wash your hands",
             "nl": "Deze toiletten hebben een lavabo waar men de handen kan wassen",
-            "de": "Diese Toilette verfügt über ein Waschbecken"
+            "de": "Die Toilette hat ein Handwaschbecken",
+            "es": "Estos baños tienen una pileta para lavarse las manos",
+            "fr": "Ces toilettes ont un lavabo pour se laver les mains"
           }
         },
         {
@@ -430,7 +458,9 @@
           "then": {
             "en": "This toilets <b>don't</b> have a sink to wash your hands",
             "nl": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen",
-            "de": "Diese Toilette verfügt über <b>kein</b> Waschbecken"
+            "de": "Die Toilette hat <b>kein</b> Handwaschbecken",
+            "es": "Estos baños <b>no</b> tienen una pileta para lavarse las manos",
+            "fr": "Ces toilettes <b>n'ont pas</b> de lavabo pour se laver les mains"
           }
         }
       ]
@@ -440,7 +470,9 @@
       "question": {
         "en": "Does one have to bring their own toilet paper to this toilet?",
         "nl": "Moet je je eigen toiletpapier meenemen naar deze toilet?",
-        "de": "Muss man für diese Toilette sein eigenes Toilettenpapier mitbringen?"
+        "de": "Ist Toilettenpapier vorhanden?",
+        "es": "¿Hay que traer tu propio papel higiénico a este baño?",
+        "fr": "Est-ce qu'il faut apporter son propre papier toilette ?"
       },
       "mappings": [
         {
@@ -448,7 +480,9 @@
           "then": {
             "en": "This toilet is equipped with toilet paper",
             "nl": "Deze toilet is voorzien van toiletpapier",
-            "de": "Diese Toilette ist mit Toilettenpapier ausgestattet"
+            "de": "Die Toilette ist in der Regel mit Toilettenpapier ausgestattet",
+            "es": "Este baño esta equipado con papel higiénico",
+            "fr": "Ces toilettes sont équipés de papier toilette"
           }
         },
         {
@@ -456,7 +490,9 @@
           "then": {
             "en": "You have to bring your own toilet paper to this toilet",
             "nl": "Je moet je eigen toiletpapier meebrengen naar deze toilet",
-            "de": "Für diese Toilette müssen Sie Ihr eigenes Toilettenpapier mitbringen"
+            "de": "Die Toilette ist nicht mit Toilettenpapier ausgestattet, man muss es selbst mitbringen",
+            "es": "Tienes que traer tu propio papel higiénico a este baño",
+            "fr": "Vous devez apporter votre propre papier toilette ici"
           }
         }
       ],
@@ -478,7 +514,8 @@
           "question": {
             "en": "Wheelchair accessible",
             "nl": "Rolstoel toegankelijk",
-            "de": "Rollstuhlgerecht"
+            "de": "Rollstuhlgerecht",
+            "es": "Accesible con sillas de ruedas"
           },
           "osmTags": "wheelchair=yes"
         }
@@ -491,7 +528,8 @@
           "question": {
             "en": "Has a changing table",
             "nl": "Heeft een luiertafel",
-            "de": "Wickeltisch vorhanden"
+            "de": "Mit Wickeltisch",
+            "es": "Tiene un cambiador"
           },
           "osmTags": "changing_table=yes"
         }
@@ -523,7 +561,8 @@
           "question": {
             "nl": "Nu geopened",
             "en": "Opened now",
-            "de": "Derzeit geöffnet"
+            "de": "Derzeit geöffnet",
+            "es": "Abierto ahora"
           },
           "osmTags": {
             "or": [
@@ -583,6 +622,7 @@
   "description": {
     "en": "A layer showing (public) toilets",
     "nl": "Een laag die publieke toiletten toont",
-    "de": "Eine Ebene mit (öffentlichen) Toiletten"
+    "de": "Eine Ebene mit (öffentlichen) Toiletten",
+    "es": "Una capa que muestra baños (públicos)"
   }
 }

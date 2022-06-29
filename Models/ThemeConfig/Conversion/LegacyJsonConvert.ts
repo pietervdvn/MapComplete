@@ -18,10 +18,12 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
             // Reuse of an already existing layer; return as-is
             return {result: json, errors: [], warnings: []}
         }
-        let config: any = {...json};
+        let config  = {...json};
 
         if (config["overpassTags"]) {
-            config.source = config.source ?? {}
+            config.source = config.source ?? {
+                osmTags: config["overpassTags"]
+            }
             config.source.osmTags = config["overpassTags"]
             delete config["overpassTags"]
         }
@@ -98,7 +100,7 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
 
-        for (const mapRenderingElement of config.mapRendering) {
+        for (const mapRenderingElement of (config.mapRendering ?? [])) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {
                 mapRenderingElement["iconBadges"] = mapRenderingElement["iconOverlays"]
             }

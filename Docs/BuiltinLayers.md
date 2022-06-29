@@ -35,12 +35,16 @@
     + [conversation](#conversation)
     + [add_image](#add_image)
     + [comment](#comment)
+    + [nearby-images](#nearby-images)
     + [report-contributor](#report-contributor)
     + [report-note](#report-note)
 1. [import_candidate](#import_candidate)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [all_tags](#all_tags)
+1. [direction](#direction)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
 1. [conflation](#conflation)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -78,6 +82,7 @@ MapComplete has a few data layers available in the theme which have special prop
   - [type_node](#type_node)
   - [note](#note)
   - [import_candidate](#import_candidate)
+  - [direction](#direction)
   - [conflation](#conflation)
   - [left_right_style](#left_right_style)
   - [split_point](#split_point)
@@ -422,6 +427,16 @@ This tagrendering has no question and is thus read-only
 
 
 
+### nearby-images 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 ### report-contributor 
 
 
@@ -430,7 +445,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if `_opened_by_anonymous_user=false` is shown
+Only visible if  `_opened_by_anonymous_user=false`  is shown
 
 
 
@@ -490,6 +505,47 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 This tagrendering has no question and is thus read-only
+
+
+
+
+
+ direction 
+===========
+
+
+
+<img src='https://mapcomplete.osm.be/direction_gradient:var(--catch-detail-color)' height="100px"> 
+
+This layer visualizes directions
+
+
+
+
+
+
+  - This layer is shown at zoomlevel **16** and higher
+  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - camera:direction~^..*$|direction~^..*$
+
+
+
+
+ Supported attributes 
+----------------------
 
 
 
@@ -761,13 +817,14 @@ The following layers are included in MapComplete:
   - [hydrant](./Layers/hydrant.md)
   - [import_candidate](./Layers/import_candidate.md)
   - [information_board](./Layers/information_board.md)
+  - [kindergarten_childcare](./Layers/kindergarten_childcare.md)
   - [left_right_style](./Layers/left_right_style.md)
   - [map](./Layers/map.md)
   - [matchpoint](./Layers/matchpoint.md)
+  - [maxspeed](./Layers/maxspeed.md)
   - [named_streets](./Layers/named_streets.md)
   - [nature_reserve](./Layers/nature_reserve.md)
   - [note](./Layers/note.md)
-  - [note_import](./Layers/note_import.md)
   - [observation_tower](./Layers/observation_tower.md)
   - [parking](./Layers/parking.md)
   - [pedestrian_path](./Layers/pedestrian_path.md)
@@ -776,12 +833,14 @@ The following layers are included in MapComplete:
   - [playground](./Layers/playground.md)
   - [public_bookcase](./Layers/public_bookcase.md)
   - [recycling](./Layers/recycling.md)
+  - [school](./Layers/school.md)
   - [shops](./Layers/shops.md)
   - [slow_roads](./Layers/slow_roads.md)
   - [split_point](./Layers/split_point.md)
   - [sport_pitch](./Layers/sport_pitch.md)
   - [street_lamps](./Layers/street_lamps.md)
   - [surveillance_camera](./Layers/surveillance_camera.md)
+  - [tertiary_education](./Layers/tertiary_education.md)
   - [toilet](./Layers/toilet.md)
   - [trail](./Layers/trail.md)
   - [tree_node](./Layers/tree_node.md)

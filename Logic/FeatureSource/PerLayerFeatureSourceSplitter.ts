@@ -1,5 +1,5 @@
 import FeatureSource, {FeatureSourceForLayer, Tiled} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
+import {Store} from "../UIEventSource";
 import FilteredLayer from "../../Models/FilteredLayer";
 import SimpleFeatureSource from "./Sources/SimpleFeatureSource";
 
@@ -11,7 +11,7 @@ import SimpleFeatureSource from "./Sources/SimpleFeatureSource";
  */
 export default class PerLayerFeatureSourceSplitter {
 
-    constructor(layers: UIEventSource<FilteredLayer[]>,
+    constructor(layers: Store<FilteredLayer[]>,
                 handleLayerData: (source: FeatureSourceForLayer & Tiled) => void,
                 upstream: FeatureSource,
                 options?: {
@@ -19,7 +19,7 @@ export default class PerLayerFeatureSourceSplitter {
                     handleLeftovers?: (featuresWithoutLayer: any[]) => void
                 }) {
 
-        const knownLayers = new Map<string, FeatureSourceForLayer & Tiled>()
+        const knownLayers = new Map<string, SimpleFeatureSource>()
 
         function update() {
             const features = upstream.features?.data;

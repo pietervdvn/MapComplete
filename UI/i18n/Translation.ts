@@ -7,10 +7,10 @@ export class Translation extends BaseUIElement {
 
     public static forcedLanguage = undefined;
 
-    public readonly translations: object
+    public readonly translations: Record<string, string>
     context?: string;
 
-    constructor(translations: object, context?: string) {
+    constructor(translations: Record<string, string>, context?: string) {
         super()
         if (translations === undefined) {
             console.error("Translation without content at "+context)
@@ -49,6 +49,10 @@ export class Translation extends BaseUIElement {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
     }   
 
+    public toString(){
+        return this.txt;
+    }
+    
     static ExtractAllTranslationsFrom(object: any, context = ""): { context: string, tr: Translation }[] {
         const allTranslations: { context: string, tr: Translation }[] = []
         for (const key in object) {
@@ -108,6 +112,15 @@ export class Translation extends BaseUIElement {
         return "";
     }
 
+    /**
+     * 
+     * const tr = new Translation({"en":"English", nl: "Nederlands"})
+     * Locale.language.setData("en")
+     * const html = tr.InnerConstructElement()
+     * html.innerHTML // => "English"
+     * Locale.language.setData("nl")
+     * html.innerHTML // => "Nederlands"
+     */
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         const self = this
@@ -117,7 +130,7 @@ export class Translation extends BaseUIElement {
             if (self.isDestroyed) {
                 return true
             }
-            el.innerHTML = this.txt
+            el.innerHTML = self.txt
         })
 
         if (self.translations["*"] !== undefined || self.context === undefined || self.context?.indexOf(":") < 0) {
@@ -260,7 +273,7 @@ export class Translation extends BaseUIElement {
 }
 
 export class TypedTranslation<T> extends Translation {
-    constructor(translations: object, context?: string) {
+    constructor(translations: Record<string, string>, context?: string) {
         super(translations, context);
     }
 
@@ -286,4 +299,6 @@ export class TypedTranslation<T> extends Translation {
             return Utils.SubstituteKeys(template, text, lang);
         }, context)
     }
+    
+    
 }

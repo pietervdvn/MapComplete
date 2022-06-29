@@ -74,6 +74,37 @@
         "phone": {
             "question": "Hva er telefonnummeret til {title()}?"
         },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Det er massevis av stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lade elektronikken sin"
+                },
+                "1": {
+                    "then": "Det er noen stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lagre elektronikken sin"
+                },
+                "2": {
+                    "then": "Det er ingen tilgjengelige stikkontakter for kunder som sitter innendørs, men lading kan være mulig hvis man spør betjeningen"
+                },
+                "3": {
+                    "then": "Det er ingen stikkontakter tilgjengelig for kunder som sitter innendørs"
+                }
+            },
+            "question": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Røyking er <b>tillatt</b>"
+                },
+                "1": {
+                    "then": "Røyking <b>forbudt</b>"
+                },
+                "2": {
+                    "then": "Røyking <b>tillates på utsiden</b>."
+                }
+            },
+            "question": "Tillates røyking på {title()}?"
+        },
         "website": {
             "question": "Hva er nettsiden til {title()}?"
         },

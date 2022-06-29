@@ -4,11 +4,11 @@
         "title": "Carte des défibrillateurs (DAE)"
     },
     "artwork": {
-        "description": "Bienvenue sur la carte ouverte des œuvres d'art, une carte des statues, fresques, ... du monde entier",
+        "description": "Une carte ouverte de statues, bustes, graffitis et autres œuvres d'art de par le monde",
         "title": "Carte ouverte des œuvres d'art"
     },
     "benches": {
-        "description": "Cette carte affiche les bancs mappés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStretMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants.",
+        "description": "Cette carte affiche les bancs cartographiés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStreetMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants.",
         "shortDescription": "Carte des bancs",
         "title": "Bancs"
     },
@@ -42,7 +42,7 @@
                 "name": "Campings",
                 "presets": {
                     "0": {
-                        "description": "Ajouter une nouvelle aire  officielle pour campings-cars, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking pour camping-cars non destiné au stationnement de nuit ne rentre pas dans cette catégorie ",
+                        "description": "Ajouter une nouvelle aire officielle pour campings-cars, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking pour camping-cars non destiné au stationnement de nuit ne rentre pas dans cette catégorie ",
                         "title": "une aire de camping"
                     }
                 },
@@ -98,10 +98,10 @@
                     "caravansites-long-term": {
                         "mappings": {
                             "0": {
-                                "then": "Oui, mais il est possible d’y passer seulement une nuit"
+                                "then": "Il est possible d’y passer seulement une nuit"
                             },
                             "1": {
-                                "then": "Non, il n’y a pas de résidents permanents"
+                                "then": "Il n’y a pas de résidents permanents"
                             },
                             "2": {
                                 "then": "C’est possible sous contrat (Cette option fera disparaître le site de la carte)"
@@ -337,17 +337,123 @@
         "title": "Aménagements cyclables"
     },
     "cycle_infra": {
-        "description": "Une carte montrant les aménagements cyclables et où l’on peut rajouter des informations. Réalisée durant #osoc21."
+        "description": "Une carte montrant les aménagements cyclables et où l’on peut rajouter des informations. Réalisée durant #osoc21.",
+        "shortDescription": "Une carte où vous pouvez visualiser et modifier les éléments relatifs à l'infrastructure cyclable.",
+        "title": "Infrastructure cyclable"
+    },
+    "cyclenodes": {
+        "description": "Cette carte montre les réseaux de nœuds cyclistes et vous permet d'ajouter facilement de nouveaux nœuds",
+        "layers": {
+            "0": {
+                "name": "liens noeud à noeud",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
+                        "render": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "lien noeud à noeud <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "lien noeud à noeud"
+                }
+            },
+            "1": {
+                "name": "noeuds",
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "question": "A combien dautres nœuds vélo ce nœud est-il lié ?",
+                        "render": "Ce noeud est lié à {expected_rcn_route_relations} d'autres noeuds cyclistes."
+                    },
+                    "node-survey:date": {
+                        "question": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?",
+                        "render": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}"
+                    }
+                },
+                "title": {
+                    "render": "nœud cycliste <strong>{rcn_ref}</strong>"
+                }
+            }
+        },
+        "title": "Réseau de Nœuds Cyclistes"
+    },
+    "cyclestreets": {
+        "description": "Une rue cyclable est une rue où <b>les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes</b>. Elles sont signalées par un signal routier particulier. On trouve des rues cyclables en Belgique et aux Pays-Bas, mais aussi en Allemagne et en France. ",
+        "layers": {
+            "0": {
+                "description": "Une rue cyclable est une rue où les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes",
+                "name": "Rue cyclables"
+            },
+            "1": {
+                "description": "Cette rue va bientôt devenir une rue cyclable",
+                "name": "Future rue cyclable",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} va bientôt devenir une rue cyclable"
+                        }
+                    },
+                    "render": "Future rue cyclable"
+                }
+            },
+            "2": {
+                "description": "Calque pour marquer une rue comme cyclable",
+                "name": "Toutes les rues",
+                "title": {
+                    "render": "Rue"
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Cette rue est une rue cyclable (et est limitée à 30 km/h)"
+                        },
+                        "1": {
+                            "then": "Cette rue est une rue cyclable"
+                        },
+                        "2": {
+                            "then": "Cette rue sera bientôt une rue cyclable"
+                        },
+                        "3": {
+                            "then": "Cette rue n’est pas une rue cyclable"
+                        }
+                    },
+                    "question": "La rue <b>{name}</b> est-elle une rue cyclable ?"
+                },
+                "1": {
+                    "question": "Quand cette rue deviendra-t-elle cyclable ?",
+                    "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
+                }
+            }
+        },
+        "shortDescription": "Une carte des rues cyclables",
+        "title": "Rue cyclables"
     },
     "cyclofix": {
         "description": "Le but de cette carte est de présenter aux cyclistes une solution facile à utiliser pour trouver l'infrastructure appropriée à leurs besoins.<br><br>Vous pouvez suivre votre localisation précise (mobile uniquement) et sélectionner les couches qui vous concernent dans le coin inférieur gauche. Vous pouvez également utiliser cet outil pour ajouter ou modifier des épingles (points d'intérêt) sur la carte et fournir plus de données en répondant aux questions.<br><br>Toutes les modifications que vous apportez seront automatiquement enregistrées dans la base de données mondiale d'OpenStreetMap et peuvent être librement réutilisées par d'autres.<br><br>Pour plus d'informations sur le projet cyclofix, rendez-vous sur <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
         "title": "Cyclofix - Une carte ouverte pour les cyclistes"
     },
     "drinking_water": {
-        "description": "Cette carte affiche les points d'accès public à de l'eau potable, et permet d'en ajouter facilement",
+        "description": "Cette carte affiche les points d'accès public à de l'eau potable et permet d'en ajouter facilement",
         "title": "Eau potable"
     },
+    "education": {
+        "description": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
+        "title": "Enseignement"
+    },
+    "entrances": {
+        "description": "Une carte renseignant toutes les entrées (importante pour les utilisateurs de sièges roulants",
+        "shortDescription": "Vérifez les entrées pour faciliter le routage des utilisateurs de sièges roulants",
+        "title": "Entrées"
+    },
     "etymology": {
+        "description": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi !</b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez-en une et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit.",
         "layers": {
             "1": {
                 "override": {
@@ -473,9 +579,14 @@
             }
         },
         "shortDescription": "Cette carte indique les murs végétalisés avec des photos et des informations comme leur orientation, l’ensoleillement et le type de plantes.",
-        "title": "Facade gardens"
+        "title": "Jardins de façade"
+    },
+    "food": {
+        "description": "Restaurants et restaurants rapides",
+        "title": "Restaurants et restaurants rapides"
     },
     "fritures": {
+        "description": "Retrouves vos friteries préférées sur cette carte !",
         "layers": {
             "0": {
                 "override": {
@@ -489,15 +600,134 @@
         "description": "Les <b>vélos fantômes</b> sont des mémoriaux pour les cyclistes tuées sur la route, prenant la forme de vélos blancs placés à proximité des faits.<br/><br/>Cette carte indique leur emplacement à partir d’OpenStreetMap. Il est possible de contribuer aux informations ici, sous réserve d’avoir un compte OpenStreetMap (gratuit).",
         "title": "Vélo fantôme"
     },
+    "grb": {
+        "description": "Ce thème tente d’aider l’import automatique GRB.",
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "De quel type de bâtiment s’agit-il ?"
+                    }
+                }
+            },
+            "6": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "1": {
+                                "then": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "grb_fixme": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "De quel type de bâtiment s’agit-il ?"
+                    }
+                }
+            }
+        }
+    },
+    "hackerspaces": {
+        "description": "Retrouvez, renseignez ou modifiez des ateliers numériques ouverts",
+        "shortDescription": "Une carte des ateliers numériques ouverts",
+        "title": "Ateliers numériques ouvertS"
+    },
     "hailhydrant": {
-        "description": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.<br/>Les options en haut à gauche permettent de localiser sa position (sur téléphone) et de filtrer les éléments. Il est possible d’utiliser cet outil pour ajouter et éditer les points d’intérêt de la carte et d’y ajouter des détails en répondant aux questions.<br/>Toutes les modifications sont automatiquement enregistrées dans la base de données OpenStreetMap et peuvent êtres librement réutilisées par d’autres.",
+        "description": "Sur cette carte on trouve et met à jour les bornes incendies, extincteurs, casernes de pompiers et ambulanciers dans son quartier.\n\nLes options en haut à gauche permettent de localiser sa position (sur téléphone) et de filtrer les éléments. Il est possible d’utiliser cet outil pour ajouter et éditer les points d’intérêt de la carte et d’y ajouter des détails en répondant aux questions.\n\nToutes les modifications sont automatiquement enregistrées dans la base de données OpenStreetMap et peuvent êtres librement réutilisées par d’autres.",
         "shortDescription": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
-        "title": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers."
+        "title": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers"
+    },
+    "mapcomplete-changes": {
+        "description": "Cette carte montre les changements faits avec MapComplete",
+        "layers": {
+            "0": {
+                "description": "Montre les changements faits avec MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Nom du thème contient {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Contribué par {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Pas</b> contribué par {search}"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Changement effectué par <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "render_id": {
+                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Changement avec le thème <b>non-officiel</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Changement avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Groupe de modifications pour {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "D’autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Montrer les changements faits avec MapComplete",
+        "title": "Changements faits avec MapComplete"
     },
     "maps": {
         "description": "Sur cette carte sont affichées les cartes (plans) mappées dans OpenStreetMap.<br/><br/>Si une carte est manquante, vous pouvez l'ajouer facilement avec un compte OpenStreetMap.",
         "shortDescription": "Cette carte affiche toutes les cartes (plans) mappés dans OpenStreetMap",
         "title": "Carte des cartes"
+    },
+    "maxspeed": {
+        "description": "Cette carte montre la vitesse maximale autorisée sur les routes. Si la vitesse maximale est manquante ou erronée, vous pouvez la corriger ici.",
+        "shortDescription": "Cette carte montre la vitesse maximale autorisée sur les routes.",
+        "title": "Vitesse maximale"
+    },
+    "nature": {
+        "description": "Retrouvez sur cette carte des informations pour les touristes et les amoureux de la nature, telles que ",
+        "shortDescription": "Une carte pour les amoureux de la nature",
+        "title": "Dans la nature"
+    },
+    "notes": {
+        "description": "Une note est une épingle sur la carte avec du text pour indiquer une erreur.<br/><br/>Assurez-vous d’utiliser le <a href='#filters'>filtre</a> pour chercher des utilisateurs and du texte.",
+        "title": "Notes sur OpenStreetMap"
+    },
+    "observation_towers": {
+        "description": "Tours libres d’accès pour admirer la vue",
+        "shortDescription": "Tours libres d’accès pour admirer la vue",
+        "title": "Tours d’observation"
     },
     "openwindpowermap": {
         "description": "Une carte indiquant les éoliennes et permettant leur édition.",
@@ -505,26 +735,206 @@
     },
     "parkings": {
         "description": "Cette carte affiche différents lieux de stationnement",
+        "shortDescription": "Cette montre les emplacements de parking",
         "title": "Stationnement"
     },
     "personal": {
-        "description": "Crée un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes",
+        "description": "Créez un thème personnalisé basé sur toutes les couches disponibles de tous les thèmes. Pour afficher des données, ouvrez <a href='#filter'>la sélection de couches</a>",
         "title": "Thème personnalisé"
+    },
+    "pets": {
+        "description": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Restaurants acceptant les chiens"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Magasins acceptant les chiens",
+                    "title": {
+                        "render": "Magasins acceptant les chiens"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Un magasin où vous pouvez amener votre chien presque partout",
+                            "title": "magasin acceptant les chiens"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Vétérinaires, parcs à chiens et autres endroits pour chiens"
     },
     "playgrounds": {
         "description": "Cette carte affiche les aires de jeux et permet d'ajouter plus d'informations",
         "shortDescription": "Une carte des aires de jeux",
         "title": "Aires de jeux"
     },
+    "postal_codes": {
+        "description": "Codes postaux",
+        "layers": {
+            "0": {
+                "name": "codes postaux",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Le code postal est {postal_code}"
+                    }
+                },
+                "title": {
+                    "render": "Code postal {postal_code}"
+                }
+            },
+            "2": {
+                "name": "mairies",
+                "title": {
+                    "render": "Mairie {name}"
+                }
+            }
+        },
+        "shortDescription": "Codes postaux",
+        "title": "Codes postaux"
+    },
+    "postboxes": {
+        "description": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit. ",
+        "layers": {
+            "0": {
+                "description": "Le calque montrant les boîtes à lettres.",
+                "name": "Boîtes à lettres",
+                "presets": {
+                    "0": {
+                        "title": "une boîte à lettres"
+                    }
+                },
+                "title": {
+                    "render": "Boîte à lettres"
+                }
+            },
+            "1": {
+                "description": "Un claque montrant les bureaux de poste.",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Ouvert actuellement"
+                            }
+                        }
+                    }
+                },
+                "name": "Bureaux de poste",
+                "presets": {
+                    "0": {
+                        "title": "un bureau de poste"
+                    }
+                },
+                "tagRenderings": {
+                    "OH": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ouvert 24h/24 (jours fériés compris)"
+                            }
+                        },
+                        "question": "Quelles sont les heures d’ouverture de ce bureau de poste ?",
+                        "render": "Heures d’ouverture : {opening_hours_table()}"
+                    }
+                },
+                "title": {
+                    "render": "Bureau de poste"
+                }
+            }
+        },
+        "shortDescription": "Une carte des bureaux de poste et des boîtes à lettres",
+        "title": "Carte des Bureaux de Poste et Boîtes à Lettres"
+    },
     "shops": {
-        "description": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, horaires d'ouverture et numéro de téléphone",
+        "description": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, leurs horaires d'ouverture et leurs numéros de téléphone",
         "shortDescription": "Carte modifiable affichant les informations de base des magasins",
         "title": "Carte des magasins"
+    },
+    "sidewalks": {
+        "description": "Thème expérimental",
+        "layers": {
+            "0": {
+                "description": "Calque montrant les trottoirs",
+                "name": "Trottoirs",
+                "tagRenderings": {
+                    "streetname": {
+                        "render": "Cette rue s’appelle {name}"
+                    }
+                },
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "shortDescription": "Cartographier des trottoirs",
+        "title": "Trottoirs"
     },
     "sport_pitches": {
         "description": "Un terrain de sport est une zone faite pour pratiquer un sport",
         "shortDescription": "Une carte montrant les terrains de sport",
         "title": "Terrains de sport"
+    },
+    "street_lighting": {
+        "description": "Retrouvez tout ce qui touche à l’éclairage de rue sur cette carte",
+        "layers": {
+            "1": {
+                "name": "Rues éclairées",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Cette rue est éclairée"
+                            },
+                            "1": {
+                                "then": "Cette rue n’est pas éclairée"
+                            },
+                            "2": {
+                                "then": "Cette rue est éclairée la nuit"
+                            },
+                            "3": {
+                                "then": "Cette rue est éclairée en permanence"
+                            }
+                        },
+                        "question": "Cette est-elle éclairée ?"
+                    }
+                },
+                "title": {
+                    "render": "Rue éclairée"
+                }
+            },
+            "2": {
+                "name": "Toutes les rues",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Cette rue est éclairée"
+                            },
+                            "1": {
+                                "then": "Cette rue n’est pas éclairée"
+                            },
+                            "2": {
+                                "then": "Cette rue est éclairée la nuit"
+                            },
+                            "3": {
+                                "then": "Cette rue est éclairée en permanence"
+                            }
+                        },
+                        "question": "Cette rue est-elle éclairée ?"
+                    }
+                },
+                "title": {
+                    "render": "Rue"
+                }
+            }
+        },
+        "title": "Éclairage de Rue"
     },
     "surveillance": {
         "description": "Cette carte indique l’emplacement des caméras de surveillance.",
@@ -539,5 +949,14 @@
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Carte des arbres",
         "title": "Arbres"
+    },
+    "waste": {
+        "description": "Carte des poubelles et infrastructures de recyclage.",
+        "title": "Déchets"
+    },
+    "waste_basket": {
+        "description": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
+        "shortDescription": "Une carte des poubelles",
+        "title": "Poubelles"
     }
 }

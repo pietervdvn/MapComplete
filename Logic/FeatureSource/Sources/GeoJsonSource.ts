@@ -79,7 +79,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
     private LoadJSONFrom(url: string) {
         const eventSource = this.features;
         const self = this;
-        Utils.downloadJson(url)
+        Utils.downloadJsonCached(url, 60 * 60)
             .then(json => {
                 self.state.setData("loaded")
                 if (json.features === undefined || json.features === null) {

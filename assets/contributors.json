@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 3715,
+      "commits": 4008,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -46,6 +46,10 @@
     },
     {
       "commits": 19,
+      "contributor": "yopaseopor"
+    },
+    {
+      "commits": 19,
       "contributor": "Sebastian Kürten"
     },
     {
@@ -78,19 +82,19 @@
     },
     {
       "commits": 10,
+      "contributor": "dependabot[bot]"
+    },
+    {
+      "commits": 10,
       "contributor": "LiamSimons"
     },
     {
-      "commits": 9,
-      "contributor": "dependabot[bot]"
+      "commits": 8,
+      "contributor": "RobJN"
     },
     {
       "commits": 8,
       "contributor": "Midgard"
-    },
-    {
-      "commits": 7,
-      "contributor": "RobJN"
     },
     {
       "commits": 7,
@@ -105,8 +109,8 @@
       "contributor": "Binnette"
     },
     {
-      "commits": 7,
-      "contributor": "yopaseopor"
+      "commits": 6,
+      "contributor": "danieldegroot2"
     },
     {
       "commits": 6,
@@ -114,15 +118,19 @@
     },
     {
       "commits": 5,
+      "contributor": "Thibault Molleman"
+    },
+    {
+      "commits": 5,
       "contributor": "David Haberthür"
     },
     {
       "commits": 4,
-      "contributor": "Ward Beyens"
+      "contributor": "Codain"
     },
     {
-      "commits": 3,
-      "contributor": "Codain"
+      "commits": 4,
+      "contributor": "Ward Beyens"
     },
     {
       "commits": 3,
@@ -135,6 +143,10 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "OliNau"
     },
     {
       "commits": 2,
@@ -179,14 +191,6 @@
     {
       "commits": 1,
       "contributor": "kjonosm"
-    },
-    {
-      "commits": 1,
-      "contributor": "OliNau"
-    },
-    {
-      "commits": 1,
-      "contributor": "danieldegroot2"
     },
     {
       "commits": 1,
@@ -267,10 +271,6 @@
     {
       "commits": 1,
       "contributor": "Schouppe Joost"
-    },
-    {
-      "commits": 1,
-      "contributor": "Thibault Molleman"
     },
     {
       "commits": 1,

@@ -316,12 +316,21 @@ export class OH {
         }
     }
 
+    /**
+     * 
+     * OH.ParsePHRule("PH Off") // => {mode: "off"}
+     * OH.ParsePHRule("PH OPEN") // => {mode: "open"}
+     * OH.ParsePHRule("PH 10:00-12:00") // => {mode: " ", start: "10:00", end: "12:00"}
+     * OH.ParsePHRule(undefined) // => null
+     * OH.ParsePHRule(null) // => null
+     * OH.ParsePHRule("some random string") // => null
+     */
     public static ParsePHRule(str: string): {
         mode: string,
         start?: string,
         end?: string
     } {
-        if (str === undefined) {
+        if (str === undefined || str === null) {
             return null
         }
         str = str.trim();
@@ -330,13 +339,13 @@ export class OH {
         }
 
         str = str.trim();
-        if (str === "PH off") {
+        if (str.toLowerCase() === "ph off") {
             return {
                 mode: "off"
             }
         }
 
-        if (str === "PH open") {
+        if (str.toLowerCase() === "ph open") {
             return {
                 mode: "open"
             }
@@ -367,6 +376,9 @@ export class OH {
         return OH.ToString(OH.MergeTimes(OH.Parse(str)))
     }
 
+    /**
+     * Parses a string into Opening Hours
+     */
     public static Parse(rules: string): OpeningHour[] {
         if (rules === undefined || rules === "") {
             return []

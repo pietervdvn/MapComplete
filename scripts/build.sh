@@ -1,4 +1,5 @@
-#! /bin/bash
+#! /usr/bin/env bash
+
 echo "Starting build"
 # The build script; we build the application step by step as building everything at once takes too much RAM
 # Should be run from the repository root
@@ -24,6 +25,7 @@ fi
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
+cp -r assets/tagRenderings/ dist/assets/tagRenderings/
 cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/
 cp assets/generated/*.png dist/assets/generated/
@@ -48,7 +50,7 @@ fi
 echo -e "\n\n   Building theme pages"
 echo -e "  ======================\n\n"
 
-for file in $(ls index_*.ts)
+for file in index_*.ts
 do
     theme=${file:6:-3}
     echo -e "\n\n  $theme"

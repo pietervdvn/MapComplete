@@ -142,16 +142,6 @@
     ]
   },
   {
-    "path": "cash.svg",
-    "license": "CC-BY 3.0",
-    "authors": [
-      "Online Web Fonts"
-    ],
-    "sources": [
-      "https://www.onlinewebfonts.com/icon/464494"
-    ]
-  },
-  {
     "path": "checkbox-empty.svg",
     "license": "CC0",
     "authors": [
@@ -421,6 +411,14 @@
   },
   {
     "path": "filter.svg",
+    "license": "CC0",
+    "authors": [
+      "Hannah Declerck"
+    ],
+    "sources": []
+  },
+  {
+    "path": "filter_disable.svg",
     "license": "CC0",
     "authors": [
       "Hannah Declerck"
@@ -796,6 +794,16 @@
     ]
   },
   {
+    "path": "mastodon.svg",
+    "license": "Logo; GNU Affero General Public License",
+    "authors": [
+      "Mastodon"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Mastodon_Logotype_(Simple).svg"
+    ]
+  },
+  {
     "path": "min.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -840,16 +848,6 @@
       "Pieter Vander Vennet"
     ],
     "sources": []
-  },
-  {
-    "path": "nfc_card.svg",
-    "license": "CC0",
-    "authors": [
-      "Stijn Wens"
-    ],
-    "sources": [
-      "https://wens.be/free-antwerpenize-bicycle-font"
-    ]
   },
   {
     "path": "no_checkmark.svg",
@@ -934,16 +932,6 @@
     ]
   },
   {
-    "path": "payment_card.svg",
-    "license": "CC0",
-    "authors": [
-      " \tMaxi Koichi (maxixam)"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Credit_Card_-_The_Noun_Project.svg"
-    ]
-  },
-  {
     "path": "pencil.svg",
     "license": "MIT",
     "authors": [
@@ -963,26 +951,6 @@
     "sources": [
       "https://github.com/primer/octicons",
       " https://commons.wikimedia.org/wiki/File:Octicons-pencil.svg"
-    ]
-  },
-  {
-    "path": "phone.svg",
-    "license": "CC-BY 3.0",
-    "authors": [
-      "@ tyskrat"
-    ],
-    "sources": [
-      "https://www.onlinewebfonts.com/icon/1059"
-    ]
-  },
-  {
-    "path": "phone.svg",
-    "license": "CC-BY 3.0",
-    "authors": [
-      "@ tyskrat"
-    ],
-    "sources": [
-      "https://www.onlinewebfonts.com/icon/1059"
     ]
   },
   {
@@ -1134,18 +1102,6 @@
     ]
   },
   {
-    "path": "send_email.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "send_email.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
     "path": "share.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -1156,16 +1112,6 @@
     "license": "CC0; trivial",
     "authors": [],
     "sources": []
-  },
-  {
-    "path": "smartphone.svg",
-    "license": "CC-BY 3.0",
-    "authors": [
-      "To Uyen"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Smartphone_icon_-_Noun_Project_283536.svg"
-    ]
   },
   {
     "path": "speech_bubble.svg",
@@ -1308,6 +1254,16 @@
       "Robin van der Linde"
     ],
     "sources": []
+  },
+  {
+    "path": "twitter.svg",
+    "license": "Logo - all rights reserved",
+    "authors": [
+      "Twitter Inc."
+    ],
+    "sources": [
+      "https://about.twitter.com/en/who-we-are/brand-toolkit"
+    ]
   },
   {
     "path": "up.svg",

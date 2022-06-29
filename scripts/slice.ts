@@ -127,7 +127,7 @@ async function main(args: string[]) {
         delete f.bbox
     }
     TiledFeatureSource.createHierarchy(
-        new StaticFeatureSource(allFeatures, false),
+        StaticFeatureSource.fromGeojson(allFeatures),
         {
             minZoomLevel: zoomlevel,
             maxZoomLevel: zoomlevel,

@@ -156,6 +156,10 @@
                 "then": "./assets/themes/drinking_water/logo.svg"
               },
               {
+                "if": "theme=education",
+                "then": "./assets/layers/school/college.svg"
+              },
+              {
                 "if": "theme=entrances",
                 "then": "./assets/layers/entrance/door.svg"
               },
@@ -214,6 +218,10 @@
               {
                 "if": "theme=maps",
                 "then": "./assets/themes/maps/logo.svg"
+              },
+              {
+                "if": "theme=maxspeed",
+                "then": "./assets/themes/maxspeed/maxspeed_logo.svg"
               },
               {
                 "if": "theme=nature",
@@ -329,7 +337,7 @@
           "id": "theme-search",
           "options": [
             {
-              "osmTags": "theme~.*{search}.*",
+              "osmTags": "theme~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -345,7 +353,7 @@
           "id": "created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc~.*{search}.*",
+              "osmTags": "_last_edit:contributor:lc~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -361,7 +369,7 @@
           "id": "not_created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc!~.*{search}.*",
+              "osmTags": "_last_edit:contributor:lc!~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"

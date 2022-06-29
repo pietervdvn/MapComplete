@@ -43,6 +43,9 @@ export class RegexTag extends TagsFilter {
      * 
      * // A regextag with a regex key should give correct output
      * new RegexTag(/a.*x/, /^..*$/).asOverpass() // => [ `[~"a.*x"~\"^..*$\"]` ]
+     * 
+     * // A regextag with a case invariant flag should signal this to overpass
+     * new RegexTag("key", /^.*value.*$/i).asOverpass() // => [ `["key"~\"^.*value.*$\",i]` ]
      */
     asOverpass(): string[] {
         const inv =this.invert ? "!" : ""
@@ -57,7 +60,8 @@ export class RegexTag extends TagsFilter {
                 // anything goes
                 return [`[${inv}"${this.key}"]`]
             }
-            return [`["${this.key}"${inv}~"${src}"]`]
+            const modifier = this.value.ignoreCase ? ",i" : ""
+            return [`["${this.key}"${inv}~"${src}"${modifier}]`]
         }else{
             // Normal key and normal value
             return [`["${this.key}"${inv}="${this.value}"]`];
@@ -256,15 +260,15 @@ export class RegexTag extends TagsFilter {
         return []
     }
 
-    AsJson() {
-        return this.asHumanString()
-    }
-    
     optimize(): TagsFilter | boolean {
         return this;
     }
     
     isNegative(): boolean {
         return this.invert;
+    }
+    
+    visit(f: (TagsFilter) => void) {
+        f(this)
     }
 }

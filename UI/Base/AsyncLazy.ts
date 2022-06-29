@@ -1,6 +1,6 @@
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "./VariableUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Stores, UIEventSource} from "../../Logic/UIEventSource";
 import Loading from "./Loading";
 
 export default class AsyncLazy extends BaseUIElement {
@@ -15,7 +15,7 @@ export default class AsyncLazy extends BaseUIElement {
         // The caching of the BaseUIElement will guarantee that _f will only be called once
 
         return new VariableUiElement(
-            UIEventSource.FromPromise(this._f()).map(el => {
+            Stores.FromPromise(this._f()).map(el => {
                 if (el === undefined) {
                     return new Loading()
                 }

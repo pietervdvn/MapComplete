@@ -4,7 +4,6 @@ import Svg from "../../Svg";
 import {Utils} from "../../Utils";
 import {LicenseInfo} from "./LicenseInfo";
 import Constants from "../../Models/Constants";
-import * as Console from "console";
 
 export class Mapillary extends ImageProvider {
 
@@ -26,7 +25,6 @@ export class Mapillary extends ImageProvider {
             return true
         }
         try {
-console.log("COmparing",a,b)
             const aUrl = new URL(a)
             const bUrl = new URL(b)
             if (aUrl.host !== bUrl.host || aUrl.pathname !== bUrl.pathname) {
@@ -46,7 +44,7 @@ console.log("COmparing",a,b)
             return allSame;
 
         } catch (e) {
-            Console.debug("Could not compare ", a, "and", b, "due to", e)
+            console.debug("Could not compare ", a, "and", b, "due to", e)
         }
         return false;
 
@@ -83,7 +81,7 @@ console.log("COmparing",a,b)
         return [this.PrepareUrlAsync(key, value)]
     }
 
-    protected async DownloadAttribution(url: string): Promise<LicenseInfo> {
+    public async DownloadAttribution(url: string): Promise<LicenseInfo> {
         const license = new LicenseInfo()
         license.artist = "Contributor name unavailable";
         license.license = "CC BY-SA 4.0";
@@ -99,7 +97,7 @@ console.log("COmparing",a,b)
         }
 
         const metadataUrl = 'https://graph.mapillary.com/' + mapillaryId + '?fields=thumb_1024_url&&access_token=' + Constants.mapillary_client_token_v4;
-        const response = await Utils.downloadJson(metadataUrl)
+        const response = await Utils.downloadJsonCached(metadataUrl,60*60)
         const url = <string>response["thumb_1024_url"];
         return {
             url: url,

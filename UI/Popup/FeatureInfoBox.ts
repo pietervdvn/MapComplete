@@ -223,7 +223,9 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
                         return new Combine([new TagRenderingAnswer(tags, config_all_tags, state),
                             new TagRenderingAnswer(tags, config_download, state),
-                            new TagRenderingAnswer(tags, config_id, state)])
+                            new TagRenderingAnswer(tags, config_id, state),
+                            "This is layer "+layerConfig.id
+                        ])
                     }
                 })
             )

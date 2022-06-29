@@ -36,6 +36,9 @@
                 },
                 "3": {
                     "then": "Está no primeiro andar"
+                },
+                "4": {
+                    "then": "Localizado no primeiro nível da cave"
                 }
             },
             "question": "Em que nível se encontra este elemento?",
@@ -87,6 +90,20 @@
                 }
             },
             "question": "Esta infraestrutura tem tomadas elétricas, disponíveis para os clientes quando estão no interior?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "<b>É permitido</b> fumar"
+                },
+                "1": {
+                    "then": "<b>Não é permitido</b> fumar"
+                },
+                "2": {
+                    "then": "É permitido fumar <b>no exterior</b>."
+                }
+            },
+            "question": "É permitido fumar em {title()}?"
         },
         "website": {
             "question": "Qual é o sítio web de {title()}?"

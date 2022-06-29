@@ -106,7 +106,7 @@
             "downloadAsSvgHelper": "Compatible amb Inkscape o Adobe Illustrator; necessitaràs un processament  ",
             "downloadCSV": "Baixar dades visibles com a CSV",
             "downloadCSVHelper": "Compatible amb LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Baixar com a arxiu GeoJson",
+            "downloadFeatureAsGeojson": "Baixar com a arxiu GeoJSON",
             "downloadFeatureAsGpx": "Baixar com a arxiu GPX",
             "downloadGeoJsonHelper": "Compatible amb QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Baixar dades visibles com a GeoJSON",
@@ -547,9 +547,6 @@
         },
         "date": {
             "description": "Una data, començant per l'any"
-        },
-        "decimal": {
-            "description": "Un número"
         },
         "direction": {
             "description": "Una orientació"

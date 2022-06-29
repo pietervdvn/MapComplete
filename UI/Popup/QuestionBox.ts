@@ -1,4 +1,4 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import TagRenderingQuestion from "./TagRenderingQuestion";
 import Translations from "../i18n/Translations";
 import Combine from "../Base/Combine";
@@ -14,7 +14,7 @@ import Lazy from "../Base/Lazy";
  */
 export default class QuestionBox extends VariableUiElement {
     public readonly skippedQuestions: UIEventSource<number[]>;
-    public readonly restingQuestions: UIEventSource<BaseUIElement[]>;
+    public readonly restingQuestions: Store<BaseUIElement[]>;
 
     constructor(state, options: {
         tagsSource: UIEventSource<any>,
@@ -81,7 +81,7 @@ export default class QuestionBox extends VariableUiElement {
             return undefined; // The questions are depleted
         }, [skippedQuestions]);
 
-        const questionsToAsk: UIEventSource<BaseUIElement[]> = tagsSource.map(tags => {
+        const questionsToAsk: Store<BaseUIElement[]> = tagsSource.map(tags => {
             if (tags === undefined) {
                 return [];
             }

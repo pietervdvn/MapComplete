@@ -86,7 +86,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             for (const filter of tagsFilter) {
                 const neededTags: TagsFilter = filter?.currentFilter
                 if (neededTags !== undefined && !neededTags.matchesProperties(f.feature.properties)) {
-                    // Hidden by the filter on the layer itself - we want to hide it no matter wat
+                    // Hidden by the filter on the layer itself - we want to hide it no matter what
                     return false;
                 }
             }

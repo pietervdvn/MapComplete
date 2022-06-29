@@ -4,6 +4,7 @@ import {Utils} from "../../Utils";
 
 export class RadioButton<T> extends InputElement<T> {
     private static _nextId = 0;
+    
     private readonly value: UIEventSource<T>;
     private _elements: InputElement<T>[];
     private _selectFirstAsDefault: boolean;
@@ -152,7 +153,7 @@ export class RadioButton<T> extends InputElement<T> {
             form.appendChild(block);
         }
 
-        value.addCallbackAndRun((selected) => {
+        value.addCallbackAndRun((selected:T) => {
             let somethingChecked = false;
             for (let i = 0; i < inputs.length; i++) {
                 let input = inputs[i];

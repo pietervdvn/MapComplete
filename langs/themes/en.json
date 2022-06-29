@@ -4,7 +4,7 @@
         "title": "Open AED Map"
     },
     "artwork": {
-        "description": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
+        "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "title": "Open Artwork Map"
     },
     "benches": {
@@ -443,6 +443,10 @@
         "description": "On this map, publicly accessible drinking water spots are shown and can be easily added",
         "title": "Drinking Water"
     },
+    "education": {
+        "description": "On this map, you'll find information about all types of schools and eduction and can easily add more information",
+        "title": "Education"
+    },
     "entrances": {
         "description": "A map showing all entrances, which surveys for important aspects for wheelchair users",
         "shortDescription": "Survey entrances to help wheelchair routing",
@@ -612,6 +616,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Did not yet calculate the metatags... Reopen this popup"
+                            },
+                            "1": {
+                                "then": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}"
                             }
                         }
                     }
@@ -711,6 +718,11 @@
         "shortDescription": "This theme shows all (touristic) maps that OpenStreetMap knows of",
         "title": "A map of maps"
     },
+    "maxspeed": {
+        "description": "This map shows the legally allowed maximum speed on every road. If a maxspeed is missing or wrong, you can correct it here.",
+        "shortDescription": "This map shows the legally allowed maximum speed on every road.",
+        "title": "Maxspeed"
+    },
     "nature": {
         "description": "On this map, one can find interesting infromation for tourists and nature lovers, such as ",
         "shortDescription": "A map for nature lovers, with interesting POI's",
@@ -748,9 +760,9 @@
             },
             "2": {
                 "override": {
-                    "name": "dog-friendly shop",
+                    "name": "Dog-friendly shops",
                     "title": {
-                        "render": "dog-friendly shop"
+                        "render": "Dog-friendly shops"
                     }
                 }
             },
@@ -758,7 +770,7 @@
                 "override": {
                     "presets": {
                         "0": {
-                            "description": "A shop whery you can bring a dog almost everywhere",
+                            "description": "A shop where you can bring a dog almost everywhere",
                             "title": "dog-friendly shop"
                         }
                     }

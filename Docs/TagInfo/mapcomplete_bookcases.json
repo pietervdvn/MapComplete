@@ -51,6 +51,10 @@
     },
     {
       "key": "books",
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'books' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
+    },
+    {
+      "key": "books",
       "description": "Layer 'Bookcases' shows books=children with a fixed text, namely 'Mostly children books' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
       "value": "children"
     },
@@ -58,11 +62,6 @@
       "key": "books",
       "description": "Layer 'Bookcases' shows books=adults with a fixed text, namely 'Mostly books for adults' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
       "value": "adults"
-    },
-    {
-      "key": "books",
-      "description": "Layer 'Bookcases' shows books=children;adults with a fixed text, namely 'Both books for kids and adults' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
-      "value": "children;adults"
     },
     {
       "key": "indoor",

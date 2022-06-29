@@ -2,7 +2,7 @@ import {Utils} from "../Utils";
 
 export default class Constants {
 
-    public static vNumber = "0.19.0";
+    public static vNumber = "0.22.1";
     
     public static ImgurApiKey = '7070e7167f0a25a'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
@@ -23,7 +23,7 @@ export default class Constants {
     /**
      * Layer IDs of layers which have special properties through built-in hooks
      */
-    public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", "note", "import_candidate", ...Constants.no_include]
+    public static readonly priviliged_layers: string[] = [...Constants.added_by_default, "type_node", "note", "import_candidate", "direction", ...Constants.no_include]
 
 
     // The user journey states thresholds when a new feature gets unlocked
@@ -72,8 +72,8 @@ export default class Constants {
     static countryCoderEndpoint: string = "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country";
 
     private static isRetina(): boolean {
-        if (Utils.runningFromConsole) {
-            return;
+        if(Utils.runningFromConsole){
+            return false;
         }
         // The cause for this line of code: https://github.com/pietervdvn/MapComplete/issues/115
         // See https://stackoverflow.com/questions/19689715/what-is-the-best-way-to-detect-retina-support-on-a-device-using-javascript

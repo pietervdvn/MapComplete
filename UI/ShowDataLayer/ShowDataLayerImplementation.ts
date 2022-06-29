@@ -195,7 +195,7 @@ export default class ShowDataLayerImplementation {
                     const tagsSource = this.allElements?.addOrGetElement(feat) ?? new UIEventSource<any>(feat.properties);
                     let offsettedLine;
                     tagsSource
-                        .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags), [], undefined, true)
+                        .map(tags => this._layerToShow.lineRendering[feat.lineRenderingIndex].GenerateLeafletStyle(tags))
                         .withEqualityStabilized((a, b) => {
                             if (a === b) {
                                 return true

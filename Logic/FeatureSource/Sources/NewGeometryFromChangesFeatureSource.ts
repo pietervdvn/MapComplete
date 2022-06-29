@@ -9,7 +9,10 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
 
     /**
-     * A feature source containing exclusively new elements
+     * A feature source containing exclusively new elements.
+     * 
+     * These elements are probably created by the 'SimpleAddUi' which generates a new point, but the import functionality might create a line or polygon too.
+     * Other sources of new points are e.g. imports from nodes
      */
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name: string = "newFeatures";

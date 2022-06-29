@@ -3,7 +3,7 @@ import Toggle from "../Input/Toggle";
 import Translations from "../i18n/Translations";
 import Svg from "../../Svg";
 import DeleteAction from "../../Logic/Osm/Actions/DeleteAction";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
@@ -106,7 +106,7 @@ export default class DeleteWizard extends Toggle {
                 }
             )
 
-        const isShown: UIEventSource<boolean> = tagsSource.map(tgs => tgs.id.indexOf("-") < 0)
+        const isShown: Store<boolean> = tagsSource.map(tgs => tgs.id.indexOf("-") < 0)
 
         const deleteOptionPicker = DeleteWizard.constructMultipleChoice(options, tagsSource, state);
         const deleteDialog = new Combine([
@@ -350,8 +350,10 @@ class DeleteabilityChecker {
 
             if (allByMyself.data === null && useTheInternet) {
                 // We kickoff the download here as it hasn't yet been downloaded. Note that this is mapped onto 'all by myself' above
-                OsmObject.DownloadHistory(id).map(versions => versions.map(version => version.tags["_last_edit:contributor:uid"])).syncWith(previousEditors)
+                const hist = OsmObject.DownloadHistory(id).map(versions => versions.map(version => version.tags["_last_edit:contributor:uid"]))
+                hist.addCallbackAndRunD(hist => previousEditors.setData(hist))
             }
+            
             if (allByMyself.data === true) {
                 // Yay! We can download!
                 return true;

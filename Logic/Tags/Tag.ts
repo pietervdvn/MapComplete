@@ -1,11 +1,10 @@
 import {Utils} from "../../Utils";
-import {RegexTag} from "./RegexTag";
 import {TagsFilter} from "./TagsFilter";
+
 
 export class Tag extends TagsFilter {
     public key: string
     public value: string
-
     constructor(key: string, value: string) {
         super()
         this.key = key
@@ -23,6 +22,8 @@ export class Tag extends TagsFilter {
 
 
     /**
+     * imort 
+     * 
      * const tag = new Tag("key","value")
      * tag.matchesProperties({"key": "value"}) // =>  true
      * tag.matchesProperties({"key": "z"}) // =>  false
@@ -89,6 +90,9 @@ export class Tag extends TagsFilter {
     }
 
     /**
+     * 
+     * import {RegexTag} from "./RegexTag";
+     * 
      * // should handle advanced regexes
      * new Tag("key", "aaa").shadows(new RegexTag("key", /a+/)) // => true
      * new Tag("key","value").shadows(new RegexTag("key", /^..*$/, true)) // => false
@@ -128,5 +132,9 @@ export class Tag extends TagsFilter {
     
     isNegative(): boolean {
         return false;
+    }
+    
+    visit(f: (TagsFilter) => void) {
+        f(this)
     }
 }

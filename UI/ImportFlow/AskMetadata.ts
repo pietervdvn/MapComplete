@@ -1,12 +1,11 @@
 import Combine from "../Base/Combine";
 import {FlowStep} from "./FlowStep";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store} from "../../Logic/UIEventSource";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {LocalStorageSource} from "../../Logic/Web/LocalStorageSource";
 import Title from "../Base/Title";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import {Utils} from "../../Utils";
@@ -19,14 +18,14 @@ export class AskMetadata extends Combine implements FlowStep<{
     theme: string
 }> {
 
-    public readonly Value: UIEventSource<{
+    public readonly Value: Store<{
         features: any[],
         wikilink: string,
         intro: string,
         source: string,
         theme: string
     }>;
-    public readonly IsValid: UIEventSource<boolean>;
+    public readonly IsValid: Store<boolean>;
 
     constructor(params: ({ features: any[], theme: string })) {
         const t = Translations.t.importHelper.askMetadata

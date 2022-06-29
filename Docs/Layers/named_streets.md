@@ -25,17 +25,6 @@ Hidden layer with all streets which have a name. Useful to detect addresses
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 

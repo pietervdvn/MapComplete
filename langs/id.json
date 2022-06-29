@@ -10,6 +10,7 @@
         "cannotBeDeleted": "Fitur ini tidak dapat dihapus",
         "delete": "Hapus",
         "explanations": {
+            "hardDelete": "Titik ini akan dihapus di OpenStreetMap. Dapat dipulihkan oleh kontributor berpengalaman",
             "selectReason": "Silahkan pilih mengapa fitur ini harus dihapus"
         },
         "isDeleted": "Fitur ini telah dihapus",
@@ -100,6 +101,23 @@
         "pickTheme": "Pilih tema di bawah ini untuk memulai.",
         "title": "Selamat datang di MapComplete"
     },
+    "notes": {
+        "addCommentAndClose": "Tambah komentar dan tutup",
+        "addCommentPlaceholder": "Tambahkan komentar...",
+        "anonymous": "Pengguna anonim",
+        "closeNote": "Tutup catatan",
+        "createNote": "Buat catatan baru",
+        "createNoteIntro": "Apakah ada yang salah atau hilang di peta? Buat catatan di sini. Nanti diperiksa oleh relawan.",
+        "createNoteTitle": "Buat catatan baru di sini",
+        "disableAllNoteFilters": "Nonaktifkan semua filter",
+        "isClosed": "Catatan ini diselesaikan",
+        "isCreated": "Catatan Anda telah dibuat!",
+        "loginToAddComment": "Masuk untuk menambahkan komentar",
+        "loginToAddPicture": "Masuk untuk menambahkan gambar",
+        "loginToClose": "Masuk untuk menutup catatan ini",
+        "noteIsPublic": "Ini akan terlihat oleh semua orang",
+        "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan"
+    },
     "reviews": {
         "attribution": "Ulasan didukung oleh <a href=\"https://mangrove.reviews/\" target=\"_blank\"> Mangrove Reviews</a> dan tersedia di bawah <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "no_rating": "Tidak ada peringkat yang diberikan",
@@ -113,6 +131,43 @@
         "write_a_comment": "Beri ulasan…"
     },
     "split": {
-        "cancel": "Batal"
+        "cancel": "Batal",
+        "splitTitle": "Pilih di peta tempat membelah jalan ini"
+    },
+    "translations": {
+        "allMissing": "Belum ada terjemahan",
+        "completeness": "Terjemahan untuk {theme} dalam {language} masih {percentage}%: {translated} string dari {total} diterjemahkan",
+        "isTranslator": "Mode terjemahan aktif karena nama pengguna Anda cocok dengan nama penerjemah sebelumnya",
+        "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari"
+    },
+    "validation": {
+        "date": {
+            "description": "Tanggal, dimulai dari tahun"
+        },
+        "direction": {
+            "description": "Orientasi"
+        },
+        "email": {
+            "description": "alamat email",
+            "feedback": "Ini bukan alamat email yang valid"
+        },
+        "float": {
+            "description": "nomor",
+            "feedback": "Ini bukan nomor"
+        },
+        "int": {
+            "description": "bilangan bulat"
+        },
+        "nat": {
+            "mustBePositive": "Angka ini harus positif",
+            "notANumber": "Masukkan nomor"
+        },
+        "url": {
+            "description": "tautan ke situs web",
+            "feedback": "Ini bukan alamat web yang valid"
+        },
+        "wikidata": {
+            "description": "Pengidentifikasi Wikidata"
+        }
     }
 }
