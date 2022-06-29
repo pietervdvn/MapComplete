@@ -5026,8 +5026,23 @@
                 "question": "Mogen jongens en meisjes les volgen op deze school?"
             },
             "language": {
+                "freeform": {
+                    "placeholder": "Taal in lowercase Engel"
+                },
                 "mappings": {
                     "0": {
+                        "then": "De voertaal van deze school is niet gekend"
+                    },
+                    "1": {
+                        "then": "Frans is de voertaal van {name}"
+                    },
+                    "2": {
+                        "then": "Nederlands is de voertaal van {name}"
+                    },
+                    "3": {
+                        "then": "Duits is de voertaal van {name}"
+                    },
+                    "4": {
                         "then": "De voertaal van deze school is niet gekend"
                     }
                 },

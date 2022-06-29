@@ -64,6 +64,10 @@
           "then": {
             "en": "This kerb is raised (>3 cm)",
             "nl": "Deze stoeprand is hoog (>3 cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/raised.svg",
+            "class": "small"
           }
         },
         {
@@ -71,6 +75,10 @@
           "then": {
             "en": "This kerb is lowered (~3 cm)",
             "nl": "Deze stoeprand is verlaagd (~3 cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/lowered.svg",
+            "class": "small"
           }
         },
         {
@@ -78,6 +86,10 @@
           "then": {
             "en": "This kerb is flush (~0cm)",
             "nl": "Deze stoeprand is vlak (~0cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/flush.svg",
+            "class": "small"
           }
         },
         {
@@ -86,7 +98,11 @@
             "en": "There is no kerb here",
             "nl": "Er is hier geen stoeprand"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/kerbs/no.svg",
+            "class": "small"
+          }
         },
         {
           "if": "kerb=yes",

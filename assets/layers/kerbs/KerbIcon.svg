@@ -7,8 +7,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="16"
-   height="16"
+   width="500"
+   height="500"
    id="svg2"
    version="1.1"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
@@ -22,9 +22,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="32"
-     inkscape:cx="4.775012"
-     inkscape:cy="8.2391685"
+     inkscape:zoom="2"
+     inkscape:cx="304.38287"
+     inkscape:cy="103.37718"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -32,9 +32,9 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="2160"
-     inkscape:window-height="1346"
-     inkscape:window-x="-11"
+     inkscape:window-width="3840"
+     inkscape:window-height="2066"
+     inkscape:window-x="2149"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:document-rotation="0">
@@ -69,7 +69,7 @@
      transform="translate(-334.84375,-558.61859)">
     <g
        id="g837"
-       transform="translate(0.27195878,0.99513831)">
+       transform="matrix(32.352738,0,0,32.352738,-10498.292,-17490.849)">
       <path
          style="fill:#808080;fill-opacity:1;stroke:#000000;stroke-width:0.569125;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 335.15288,572.3216 h 4.00775 v -3.59195 l -1.19172,-3.53528 -0.81215,-0.0566 h -2.00388 z"
