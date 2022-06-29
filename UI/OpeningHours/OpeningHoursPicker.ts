@@ -34,6 +34,14 @@ export default class OpeningHoursPicker extends InputElement<OpeningHour[]> {
         return true;
     }
 
+    /**
+     * 
+     * const rules = OH.ParseRule("Jul-Aug Sa closed; Mo,Tu,Th,Fr,PH 12:00-22:30, We 17:00-22:30, Sa 14:00-19:00, Su 10:00-21:00; Dec 24,25,31 off; Jan 1 off")
+     * const v = new UIEventSource(rules)
+     * const ohpicker = new OpeningHoursPicker(v)
+     * const html = ohpicker.InnerConstructElement()
+     * html !== undefined // => true
+     */
     protected InnerConstructElement(): HTMLElement {
         return this._backgroundTable.ConstructElement();
     }

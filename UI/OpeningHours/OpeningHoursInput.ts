@@ -38,7 +38,8 @@ export default class OpeningHoursInput extends InputElement<string> {
                     return str.substring(prefix.length, str.length - postfix.length)
                 }
                 return str
-            }, [], noPrefix => {
+            }, [], 
+                    noPrefix => {
                 if (noPrefix === undefined) {
                     return undefined;
                 }
@@ -84,23 +85,30 @@ export default class OpeningHoursInput extends InputElement<string> {
         
         // Note: MUST be bound AFTER the leftover rules!
         const rulesFromOhPicker: UIEventSource<OpeningHour[]> = valueWithoutPrefix.sync(str => {
-            console.log(">> Parsing '"+ str+"'")
             return OH.Parse(str);
         }, [leftoverRules, phSelector.GetValue()], (rules, oldString) => {
-            let str = OH.ToString(rules);
+            // We always add a ';', to easily add new rules. We remove the ';' again at the end of the function
+            // Important: spaces are _not_ allowed after a ';' as it'll destabilize the parsing!
+            let str = OH.ToString(rules) + ";"
             const ph = phSelector.GetValue().data;
             if(ph){
-               str += "; "+ph 
+               str += ph + ";"
             }
             
-            str += leftoverRules.data.join("; ")
-            if(!str.endsWith(";")){
-                str += ";"
+            str += leftoverRules.data.join(";") + ";"
+            
+            str = str.trim()
+            if(str.endsWith(";")){
+                str = str.substring(0, str.length - 1)
             }
+            if(str.startsWith(";")){
+                str = str.substring(1)
+            }
+            str.trim()
+            
             if(str === oldString){
                 return oldString; // We pass a reference to the old string to stabilize the EventSource
             }
-            console.log("Reconstructed '"+ str+"'")
             return str;
         });
 
