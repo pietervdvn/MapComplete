@@ -166,5 +166,81 @@
         ]
       }
     }
+  ],
+  "filter": [
+    {
+      "id": "kerb-type",
+      "options": [
+        {
+          "question": {
+            "en": "All types of kerbs",
+            "nl": "Alle typen stoepranden"
+          }
+        },
+        {
+          "osmTags": "kerb=raised",
+          "question": {
+            "en": "Raised kerb (>3 cm)",
+            "nl": "Hoge stoeprand (>3 cm)"
+          }
+        },
+        {
+          "osmTags": "kerb=lowered",
+          "question": {
+            "en": "Lowered kerb (~3 cm)",
+            "nl": "Verlaagde stoeprand (~3 cm)"
+          }
+        },
+        {
+          "osmTags": "kerb=flush",
+          "question": {
+            "en": "Flush kerb (~0cm)",
+            "nl": "Vlakke stoeprand (~0cm)"
+          }
+        },
+        {
+          "osmTags": "kerb=no",
+          "question": {
+            "en": "No kerb",
+            "nl": "Geen stoeprand"
+          }
+        },
+        {
+          "osmTags": "kerb=",
+          "question": {
+            "en": "Kerb with unknown height",
+            "nl": "Stoeprand met onbekende hoogte"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile-paving",
+      "options": [
+        {
+          "question": {
+            "en": "Kerbs with or without tactile paving"
+          }
+        },
+        {
+          "osmTags": "tactile_paving=yes",
+          "question": {
+            "en": "Kerb with tactile paving"
+          }
+        },
+        {
+          "osmTags": "tactile_paving=no",
+          "question": {
+            "en": "Kerb without tactile paving"
+          }
+        },
+        {
+          "osmTags": "tactile_paving=",
+          "question": {
+            "en": "Kerb wihout information about tactile paving"
+          }
+        }
+      ]
+    }
   ]
 }
