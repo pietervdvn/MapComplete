@@ -7,6 +7,7 @@ import {Geocoding} from "../../Logic/Osm/Geocoding";
 import Translations from "../i18n/Translations";
 import Hash from "../../Logic/Web/Hash";
 import Combine from "../Base/Combine";
+import Locale from "../i18n/Locale";
 
 export default class SearchAndGo extends Combine {
     constructor(state: {
@@ -21,7 +22,7 @@ export default class SearchAndGo extends Combine {
             Translations.t.general.search.search
         );
         const searchField = new TextField({
-            placeholder: new VariableUiElement(placeholder),
+            placeholder: placeholder.map(tr => tr.textFor(Locale.language.data), [Locale.language]),
             value: new UIEventSource<string>(""),
             inputStyle:
                 " background: transparent;\n" +
