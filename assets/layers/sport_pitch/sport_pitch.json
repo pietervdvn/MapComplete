@@ -432,7 +432,8 @@
           "if": "opening_hours=",
           "then": {
             "en": "Always accessible",
-            "nl": "24/7 toegankelijk"
+            "nl": "24/7 toegankelijk",
+            "de": "Immer zugänglich"
           },
           "hideInAnswer": true
         },

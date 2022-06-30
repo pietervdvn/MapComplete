@@ -614,11 +614,11 @@
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {
-                            "1": {
-                                "then": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}"
-                            },
                             "0": {
                                 "then": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up"
+                            },
+                            "1": {
+                                "then": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}"
                             }
                         }
                     }
@@ -675,6 +675,7 @@
                         }
                     }
                 },
+                "name": "Centre du groupe de modifications",
                 "tagRenderings": {
                     "contributor": {
                         "render": "Changement effectué par <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
@@ -693,8 +694,7 @@
                 },
                 "title": {
                     "render": "Groupe de modifications pour {theme}"
-                },
-                "name": "Centre du groupe de modifications"
+                }
             },
             "1": {
                 "override": {

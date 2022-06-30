@@ -16,25 +16,65 @@
         },
         "isDeleted": "Fitur ini telah dihapus",
         "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi.",
-        "safeDelete": "Fitur ini dapat dihapus dengan aman.",
-        "whyDelete": "Mengapa fitur ini harus dihapus?",
         "loading": "Menginspeksi properti untuk memeriksa apa fitur ini dapat dihapus.",
-        "onlyEditedByLoggedInUser": "Fitur ini hanya disunting oleh Anda, Anda dapat menghapusnya dengan aman.",
-        "reasons": {
-            "test": "Ini adalah fitur pengujian - sebenarnya fitur tersebut tidak pernah ada",
-            "disused": "Fitur ini tidak digunakan atau dibuang",
-            "notFound": "Fitur ini tidak dapat ditemukan",
-            "duplicate": "Fitur ini adalah duplikat dari fitur lain"
-        },
         "loginToDelete": "Anda harus masuk untuk menghapus fitur",
-        "readMessages": "Anda memiliki pesan yang belum dibaca. Baca sebelum menghapus sebuah fitur - seseorang mungkin punya masukan",
         "notEnoughExperience": "Fitur ini dibuat oleh orang lain.",
-        "useSomethingElse": "Gunakan penyunting OpenStreetMap lain untuk menghapusnya"
+        "onlyEditedByLoggedInUser": "Fitur ini hanya disunting oleh Anda, Anda dapat menghapusnya dengan aman.",
+        "readMessages": "Anda memiliki pesan yang belum dibaca. Baca sebelum menghapus sebuah fitur - seseorang mungkin punya masukan",
+        "reasons": {
+            "disused": "Fitur ini tidak digunakan atau dibuang",
+            "duplicate": "Fitur ini adalah duplikat dari fitur lain",
+            "notFound": "Fitur ini tidak dapat ditemukan",
+            "test": "Ini adalah fitur pengujian - sebenarnya fitur tersebut tidak pernah ada"
+        },
+        "safeDelete": "Fitur ini dapat dihapus dengan aman.",
+        "useSomethingElse": "Gunakan penyunting OpenStreetMap lain untuk menghapusnya",
+        "whyDelete": "Mengapa fitur ini harus dihapus?"
     },
     "favourite": {
         "reload": "Muat ulang data"
     },
     "general": {
+        "add": {
+            "addNew": "Tambahkan {category}",
+            "addNewMapLabel": "Klik di sini untuk menambahkan item baru",
+            "confirmButton": "Tambahkan {category}<br><div class=\"alert\">Penambahan Anda akan terlihat oleh semua orang</div>",
+            "confirmIntro": "<h3>Tambahkan {title}?</h3>Fitur yang Anda buat di sini akan <b>terlihat oleh semua orang</b>. Harap menambahkan sesuatu ke peta hanya jika ia benar-benar ada. Banyak aplikasi menggunakan data ini.",
+            "disableFiltersExplanation": "Beberapa fitur mungkin disembunyikan oleh penyaringan",
+            "hasBeenImported": "Fitur ini sudah diimpor",
+            "import": {
+                "hasBeenImported": "Objek ini sudah diimpor",
+                "officialThemesOnly": "Tombol impor dinonaktifkan untuk peta tidak resmi untuk menghindari ketidaksengajaan"
+            },
+            "intro": "Anda mengklik di suatu tempat di mana belum ada data yang dikenal.<br>",
+            "pleaseLogin": "Harap masuk untuk menambahkan fitur baru",
+            "stillLoading": "Data masih dimuat. Harap tunggu sebentar sebelum Anda menambahkan fitur baru.",
+            "title": "Tambahkan fitur baru?",
+            "warnVisibleForEveryone": "Penambahan Anda akan terlihat oleh semua orang",
+            "zoomInFurther": "Perbesar untuk menambahkan fitur.",
+            "zoomInMore": "Perbesar untuk mengimpor fitur ini"
+        },
+        "apply_button": {
+            "appliedOnAnotherObject": "Objek {id} akan menerima {tags}",
+            "isApplied": "Perubahan diterapkan"
+        },
+        "attribution": {
+            "attributionContent": "<p>Semua data disediakan oleh <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, digunakan kembali secara bebas di bawah <a href=\"https://osm.org/copyright\" target=\"_blank\">Open DataBase License</a>.</p>",
+            "attributionTitle": "Pemberitahuan atribusi",
+            "codeContributionsBy": "MapComplete telah dibangun oleh {contributors} dan <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} kontributor lainnya</a>",
+            "donate": "Dukung MapComplete secara finansial",
+            "editId": "Buka penyunting daring OpenStreetMap di sini",
+            "editJosm": "Sunting di sini dengan JOSM",
+            "followBridge": "Akun Mastodon dan Twitter dijembatani",
+            "followOnMastodon": "Ikuti MapComplete di Mastodon",
+            "followOnTwitter": "Ikuti MapComplete di Twitter",
+            "iconAttribution": {
+                "title": "Ikon yang digunakan"
+            },
+            "josmOpened": "JOSM dibuka",
+            "mapContributionsBy": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors}",
+            "mapContributionsByAndHidden": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors} dan {hiddenCount} kontributor lainnya"
+        },
         "backgroundMap": "Peta latar belakang",
         "cancel": "Batal",
         "getStartedLogin": "Masuk dengan OpenStreetMap untuk memulai",
@@ -96,46 +136,6 @@
             "thursday": "Kamis",
             "tuesday": "Selasa",
             "wednesday": "Rabu"
-        },
-        "add": {
-            "intro": "Anda mengklik di suatu tempat di mana belum ada data yang dikenal.<br>",
-            "stillLoading": "Data masih dimuat. Harap tunggu sebentar sebelum Anda menambahkan fitur baru.",
-            "title": "Tambahkan fitur baru?",
-            "zoomInFurther": "Perbesar untuk menambahkan fitur.",
-            "confirmButton": "Tambahkan {category}<br><div class=\"alert\">Penambahan Anda akan terlihat oleh semua orang</div>",
-            "confirmIntro": "<h3>Tambahkan {title}?</h3>Fitur yang Anda buat di sini akan <b>terlihat oleh semua orang</b>. Harap menambahkan sesuatu ke peta hanya jika ia benar-benar ada. Banyak aplikasi menggunakan data ini.",
-            "import": {
-                "officialThemesOnly": "Tombol impor dinonaktifkan untuk peta tidak resmi untuk menghindari ketidaksengajaan",
-                "hasBeenImported": "Objek ini sudah diimpor"
-            },
-            "addNewMapLabel": "Klik di sini untuk menambahkan item baru",
-            "pleaseLogin": "Harap masuk untuk menambahkan fitur baru",
-            "disableFiltersExplanation": "Beberapa fitur mungkin disembunyikan oleh penyaringan",
-            "addNew": "Tambahkan {category}",
-            "hasBeenImported": "Fitur ini sudah diimpor",
-            "warnVisibleForEveryone": "Penambahan Anda akan terlihat oleh semua orang",
-            "zoomInMore": "Perbesar untuk mengimpor fitur ini"
-        },
-        "attribution": {
-            "attributionContent": "<p>Semua data disediakan oleh <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, digunakan kembali secara bebas di bawah <a href=\"https://osm.org/copyright\" target=\"_blank\">Open DataBase License</a>.</p>",
-            "mapContributionsBy": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors}",
-            "josmOpened": "JOSM dibuka",
-            "iconAttribution": {
-                "title": "Ikon yang digunakan"
-            },
-            "donate": "Dukung MapComplete secara finansial",
-            "attributionTitle": "Pemberitahuan atribusi",
-            "editId": "Buka penyunting daring OpenStreetMap di sini",
-            "editJosm": "Sunting di sini dengan JOSM",
-            "mapContributionsByAndHidden": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors} dan {hiddenCount} kontributor lainnya",
-            "followBridge": "Akun Mastodon dan Twitter dijembatani",
-            "followOnMastodon": "Ikuti MapComplete di Mastodon",
-            "followOnTwitter": "Ikuti MapComplete di Twitter",
-            "codeContributionsBy": "MapComplete telah dibangun oleh {contributors} dan <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} kontributor lainnya</a>"
-        },
-        "apply_button": {
-            "appliedOnAnotherObject": "Objek {id} akan menerima {tags}",
-            "isApplied": "Perubahan diterapkan"
         }
     },
     "image": {

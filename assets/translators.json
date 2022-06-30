@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 173,
+      "commits": 175,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 133,
+      "commits": 135,
       "contributor": "kjon"
     },
     {
@@ -190,6 +190,10 @@
     },
     {
       "commits": 3,
+      "contributor": "foxandpotatoes"
+    },
+    {
+      "commits": 3,
       "contributor": "Sasha"
     },
     {
@@ -226,6 +230,10 @@
     },
     {
       "commits": 2,
+      "contributor": "liimee"
+    },
+    {
+      "commits": 2,
       "contributor": "Marc Marc"
     },
     {
@@ -239,10 +247,6 @@
     {
       "commits": 2,
       "contributor": "Localizer"
-    },
-    {
-      "commits": 2,
-      "contributor": "foxandpotatoes"
     },
     {
       "commits": 2,
@@ -283,6 +287,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Stéphane De Greef"
     },
     {
       "commits": 1,
@@ -347,10 +355,6 @@
     {
       "commits": 1,
       "contributor": "Rodrigo Tavares"
-    },
-    {
-      "commits": 1,
-      "contributor": "liimee"
     },
     {
       "commits": 1,
