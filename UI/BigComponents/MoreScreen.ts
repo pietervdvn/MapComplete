@@ -188,15 +188,17 @@ export default class MoreScreen extends Combine {
         BaseUIElement {
 
         const url = MoreScreen.createUrlFor(layout, isCustom, state)
-        return new SubtleButton(layout.icon,
-            new Combine([
-                `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
-                new Translation(layout.title, !isCustom && !layout.mustHaveLanguage ? "themes:" + layout.id + ".title" : undefined),
-                `</dt>`,
-                `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900 overflow-ellipsis'>`,
-                new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
-                `</dd>`,
-            ]), {url, newTab: false});
+        let content = new Combine([
+            new Translation(layout.title, !isCustom && !layout.mustHaveLanguage ? "themes:" + layout.id + ".title" : undefined),
+            new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
+        ]).SetClass("overflow-hidden flex flex-col")
+        
+        if(state.layoutToUse === undefined){
+            // Currently on the index screen: we style the buttons equally large
+            content = new Combine([content]).SetClass("flex flex-col justify-center h-24")
+        }
+        
+        return new SubtleButton(layout.icon, content, {url, newTab: false});
     }
 
     public static CreateProffessionalSerivesButton() {
@@ -208,7 +210,7 @@ export default class MoreScreen extends Combine {
         ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
     }
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses: string, search: UIEventSource<string>): BaseUIElement {
-        var currentIds: UIEventSource<string[]> = state.installedUserThemes
+        var currentIds: Store<string[]> = state.installedUserThemes
 
         var stableIds = Stores.ListStabilized<string>(currentIds)
         return new VariableUiElement(
