@@ -142,6 +142,25 @@
         }
       ],
       "condition": "_geometry:type=Point"
+    },
+    {
+      "id": "kerb-height",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "nl": "Hoe hoog is deze stoeprand?"
+      },
+      "render": {
+        "en": "Kerb height: {{kerb:height}}",
+        "nl": "Stoeprandhoogte: {{kerb:height}}"
+      },
+      "freeform": {
+        "key": "kerb:height",
+        "placeholder": {
+          "en": "Height of the kerb",
+          "nl": "Hoogte van de stoeprand"
+        },
+        "type": "pnat"
+      }
     }
   ],
   "presets": [
@@ -240,6 +259,46 @@
             "en": "Kerb wihout information about tactile paving"
           }
         }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "centimeters"
+          ],
+          "human": {
+            "en": "centimeters",
+            "nl": "centimeter"
+          },
+          "humanSingular": {
+            "en": "centimeter",
+            "nl": "centimeter"
+          },
+          "default": true
+        },
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter",
+            "meters"
+          ],
+          "human": {
+            "en": "meters",
+            "nl": "meter"
+          },
+          "humanSingular": {
+            "en": "meter",
+            "nl": "meter"
+          }
+        }
+      ],
+      "appliesToKey": [
+        "kerb:height"
       ]
     }
   ]

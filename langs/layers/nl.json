@@ -4030,6 +4030,13 @@
             }
         },
         "tagRenderings": {
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Hoogte van de stoeprand"
+                },
+                "question": "Hoe hoog is deze stoeprand?",
+                "render": "Stoeprandhoogte: {{kerb:height}}"
+            },
             "kerb-type": {
                 "mappings": {
                     "0": {
@@ -4053,6 +4060,20 @@
         },
         "title": {
             "render": "Stoeprand"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "centimeter",
+                        "humanSingular": "centimeter"
+                    },
+                    "1": {
+                        "human": "meter",
+                        "humanSingular": "meter"
+                    }
+                }
+            }
         }
     },
     "kindergarten_childcare": {

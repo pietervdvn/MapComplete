@@ -4117,6 +4117,13 @@
             }
         },
         "tagRenderings": {
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Height of the kerb"
+                },
+                "question": "What is the height of this kerb?",
+                "render": "Kerb height: {{kerb:height}}"
+            },
             "kerb-type": {
                 "mappings": {
                     "0": {
@@ -4154,6 +4161,20 @@
         },
         "title": {
             "render": "Kerb"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "centimeters",
+                        "humanSingular": "centimeter"
+                    },
+                    "1": {
+                        "human": "meters",
+                        "humanSingular": "meter"
+                    }
+                }
+            }
         }
     },
     "kindergarten_childcare": {
