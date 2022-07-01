@@ -267,7 +267,7 @@
         "title": "Points de recharge"
     },
     "climbing": {
-        "description": "Cette carte indique les sites d’escalades comme les salles d’escalade ou les sites naturels.",
+        "description": "Cette carte indique les sites d’escalade comme les salles d’escalade ou les sites naturels",
         "descriptionTail": "La carte des sites d'escalade a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
         "layers": {
             "0": {
@@ -453,7 +453,7 @@
         "title": "Entrées"
     },
     "etymology": {
-        "description": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi !</b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez-en une et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit.",
+        "description": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc. proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikipedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi !</b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez sur l'une d'elles et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit.",
         "layers": {
             "1": {
                 "override": {
@@ -582,7 +582,7 @@
         "title": "Jardins de façade"
     },
     "food": {
-        "description": "Restaurants et restaurants rapides",
+        "description": "Restaurants et restaurants à service rapide",
         "title": "Restaurants et restaurants rapides"
     },
     "fritures": {
@@ -614,6 +614,9 @@
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {
+                            "0": {
+                                "then": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up"
+                            },
                             "1": {
                                 "then": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}"
                             }
@@ -672,6 +675,7 @@
                         }
                     }
                 },
+                "name": "Centre du groupe de modifications",
                 "tagRenderings": {
                     "contributor": {
                         "render": "Changement effectué par <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
@@ -947,7 +951,7 @@
     },
     "trees": {
         "description": "Cartographions tous les arbres !",
-        "shortDescription": "Carte des arbres",
+        "shortDescription": "Cartographions tous les arbres",
         "title": "Arbres"
     },
     "waste": {

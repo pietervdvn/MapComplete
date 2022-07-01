@@ -70,7 +70,7 @@ export class TextFieldDef {
         value?: UIEventSource<string>,
         inputStyle?: string,
         feedback?: UIEventSource<Translation>
-        placeholder?: string | BaseUIElement,
+        placeholder?: string | Translation | UIEventSource<string>,
         country?: () => string,
         location?: [number /*lat*/, number /*lon*/],
         mapBackgroundLayer?: UIEventSource</*BaseLayer*/ any>,

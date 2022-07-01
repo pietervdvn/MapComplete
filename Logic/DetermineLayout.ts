@@ -117,7 +117,7 @@ export default class DetermineLayout {
             error.SetClass("alert"),
             new SubtleButton(Svg.back_svg(),
                 "Go back to the theme overview",
-                {url: window.location.protocol + "//" + window.location.hostname + "/index.html", newTab: false}),
+                {url: window.location.protocol + "//" + window.location.host + "/index.html", newTab: false}),
             json !== undefined ? new SubtleButton(Svg.download_svg(),"Download the JSON file").onClick(() => {
                 Utils.offerContentsAsDownloadableFile(JSON.stringify(json, null, "  "), "theme_definition.json")
             }) : undefined

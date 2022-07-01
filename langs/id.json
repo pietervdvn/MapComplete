@@ -2,24 +2,79 @@
     "centerMessage": {
         "loadingData": "Memuat data…",
         "ready": "Selesai!",
-        "retrying": "Memuat data gagal. Mencoba lagi dalam {count} detik…",
-        "zoomIn": "Perbesar untuk melihat atau mengedit data"
+        "retrying": "Gagal memuat data. Mencoba lagi dalam {count} detik…",
+        "zoomIn": "Perbesar untuk melihat atau menyunting data"
     },
     "delete": {
         "cancel": "Batal",
         "cannotBeDeleted": "Fitur ini tidak dapat dihapus",
         "delete": "Hapus",
         "explanations": {
-            "hardDelete": "Titik ini akan dihapus di OpenStreetMap. Dapat dipulihkan oleh kontributor berpengalaman",
-            "selectReason": "Silahkan pilih mengapa fitur ini harus dihapus"
+            "hardDelete": "Fitur ini akan dihapus dari OpenStreetMap. Ini dapat dipulihkan oleh kontributor berpengalaman",
+            "selectReason": "Silakan, pilih mengapa fitur ini harus dihapus",
+            "softDelete": "Fitur ini akan diperbarui dan disembunyikan dari aplikasi ini. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Fitur ini telah dihapus",
-        "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi."
+        "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi.",
+        "loading": "Menginspeksi properti untuk memeriksa apa fitur ini dapat dihapus.",
+        "loginToDelete": "Anda harus masuk untuk menghapus fitur",
+        "notEnoughExperience": "Fitur ini dibuat oleh orang lain.",
+        "onlyEditedByLoggedInUser": "Fitur ini hanya disunting oleh Anda, Anda dapat menghapusnya dengan aman.",
+        "readMessages": "Anda memiliki pesan yang belum dibaca. Baca sebelum menghapus sebuah fitur - seseorang mungkin punya masukan",
+        "reasons": {
+            "disused": "Fitur ini tidak digunakan atau dibuang",
+            "duplicate": "Fitur ini adalah duplikat dari fitur lain",
+            "notFound": "Fitur ini tidak dapat ditemukan",
+            "test": "Ini adalah fitur pengujian - sebenarnya fitur tersebut tidak pernah ada"
+        },
+        "safeDelete": "Fitur ini dapat dihapus dengan aman.",
+        "useSomethingElse": "Gunakan penyunting OpenStreetMap lain untuk menghapusnya",
+        "whyDelete": "Mengapa fitur ini harus dihapus?"
     },
     "favourite": {
         "reload": "Muat ulang data"
     },
     "general": {
+        "add": {
+            "addNew": "Tambahkan {category}",
+            "addNewMapLabel": "Klik di sini untuk menambahkan item baru",
+            "confirmButton": "Tambahkan {category}<br><div class=\"alert\">Penambahan Anda akan terlihat oleh semua orang</div>",
+            "confirmIntro": "<h3>Tambahkan {title}?</h3>Fitur yang Anda buat di sini akan <b>terlihat oleh semua orang</b>. Harap menambahkan sesuatu ke peta hanya jika ia benar-benar ada. Banyak aplikasi menggunakan data ini.",
+            "disableFiltersExplanation": "Beberapa fitur mungkin disembunyikan oleh penyaringan",
+            "hasBeenImported": "Fitur ini sudah diimpor",
+            "import": {
+                "hasBeenImported": "Objek ini sudah diimpor",
+                "officialThemesOnly": "Tombol impor dinonaktifkan untuk peta tidak resmi untuk menghindari ketidaksengajaan"
+            },
+            "intro": "Anda mengklik di suatu tempat di mana belum ada data yang dikenal.<br>",
+            "pleaseLogin": "Harap masuk untuk menambahkan fitur baru",
+            "stillLoading": "Data masih dimuat. Harap tunggu sebentar sebelum Anda menambahkan fitur baru.",
+            "title": "Tambahkan fitur baru?",
+            "warnVisibleForEveryone": "Penambahan Anda akan terlihat oleh semua orang",
+            "zoomInFurther": "Perbesar untuk menambahkan fitur.",
+            "zoomInMore": "Perbesar untuk mengimpor fitur ini"
+        },
+        "apply_button": {
+            "appliedOnAnotherObject": "Objek {id} akan menerima {tags}",
+            "isApplied": "Perubahan diterapkan"
+        },
+        "attribution": {
+            "attributionContent": "<p>Semua data disediakan oleh <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, digunakan kembali secara bebas di bawah <a href=\"https://osm.org/copyright\" target=\"_blank\">Open DataBase License</a>.</p>",
+            "attributionTitle": "Pemberitahuan atribusi",
+            "codeContributionsBy": "MapComplete telah dibangun oleh {contributors} dan <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} kontributor lainnya</a>",
+            "donate": "Dukung MapComplete secara finansial",
+            "editId": "Buka penyunting daring OpenStreetMap di sini",
+            "editJosm": "Sunting di sini dengan JOSM",
+            "followBridge": "Akun Mastodon dan Twitter dijembatani",
+            "followOnMastodon": "Ikuti MapComplete di Mastodon",
+            "followOnTwitter": "Ikuti MapComplete di Twitter",
+            "iconAttribution": {
+                "title": "Ikon yang digunakan"
+            },
+            "josmOpened": "JOSM dibuka",
+            "mapContributionsBy": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors}",
+            "mapContributionsByAndHidden": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors} dan {hiddenCount} kontributor lainnya"
+        },
         "backgroundMap": "Peta latar belakang",
         "cancel": "Batal",
         "getStartedLogin": "Masuk dengan OpenStreetMap untuk memulai",
@@ -97,7 +152,7 @@
         "willBePublished": "Gambarmu akan dipublikasikan "
     },
     "index": {
-        "intro": "MapComplete adalah penampil dan editor OpenStreetMap, yang menunjukkan informasi tentang tema tertentu.",
+        "intro": "MapComplete adalah penampil dan penyunting OpenStreetMap, yang menunjukkan informasi tentang fitur pada tema tertentu dan memungkinkan Anda untuk memperbaruinya.",
         "pickTheme": "Pilih tema di bawah ini untuk memulai.",
         "title": "Selamat datang di MapComplete"
     },
@@ -109,7 +164,7 @@
         "createNote": "Buat catatan baru",
         "createNoteIntro": "Apakah ada yang salah atau hilang di peta? Buat catatan di sini. Nanti diperiksa oleh relawan.",
         "createNoteTitle": "Buat catatan baru di sini",
-        "disableAllNoteFilters": "Nonaktifkan semua filter",
+        "disableAllNoteFilters": "Nonaktifkan semua saringan",
         "isClosed": "Catatan ini diselesaikan",
         "isCreated": "Catatan Anda telah dibuat!",
         "loginToAddComment": "Masuk untuk menambahkan komentar",

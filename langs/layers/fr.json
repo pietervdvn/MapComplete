@@ -2475,8 +2475,49 @@
                         "then": "La langue principale de cette école est inconnue"
                     }
                 },
-                "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
+                "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",
+                "render": "{school:language} est la langue principale de {title()}"
+            },
+            "school-name": {
+                "question": "Quel est le nom de cet établissement scolaire?",
+                "render": "Cet établissement scolaire s'appelle {name}"
+            },
+            "target-audience": {
+                "mappings": {
+                    "0": {
+                        "then": "Ceci est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?"
+                    },
+                    "1": {
+                        "then": "Ceci est un établissement scolaire pour étudiants sans besoins partucliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>"
+                    },
+                    "2": {
+                        "then": "Ceci est un établissement où des adultes sont formés au niveau mentionné."
+                    },
+                    "3": {
+                        "then": "Ceci est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)"
+                    },
+                    "4": {
+                        "then": "Ceci est un établissement scolaire pour les étudiants ayant des troubles dapprentissage"
+                    },
+                    "5": {
+                        "then": "Ceci est un établissement scolaire pour les étudiants aveugles ou malvoyants"
+                    },
+                    "6": {
+                        "then": "Ceci est un établissement scolaire pour les étudiants sourds ou malentendants"
+                    },
+                    "7": {
+                        "then": "Ceci est un établissement scolaire pour les étudiants en situation de handicap"
+                    },
+                    "8": {
+                        "then": "Ceci est un établissement scolaire pour les étudiants ayant des besoins particuliers"
+                    }
+                },
+                "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc ",
+                "render": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}"
             }
+        },
+        "title": {
+            "render": "School <i>{name}</i>"
         }
     },
     "shops": {

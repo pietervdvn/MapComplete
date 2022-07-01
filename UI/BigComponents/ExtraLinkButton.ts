@@ -45,10 +45,12 @@ export default class ExtraLinkButton extends UIElement {
 
         let link: BaseUIElement
         const theme = this.state.layoutToUse?.id ?? ""
+        const basepath = window.location.host
         const href = this.state.locationControl.map(loc => {
             const subs = {
                 ...loc,
                 theme: theme,
+                basepath,
                 language: Locale.language.data
             }
             return Utils.SubstituteKeys(c.href, subs)
@@ -68,8 +70,7 @@ export default class ExtraLinkButton extends UIElement {
         }
 
         link = new SubtleButton(img, text, {
-            url:
-            href,
+            url: href,
             newTab: c.newTab
         })
 

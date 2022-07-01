@@ -500,7 +500,8 @@
               "then": {
                 "en": "Did not yet calculate the metatags... Reopen this popup",
                 "de": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen",
-                "nl": "Metatags nog niet berekend... Heropen deze pop-up"
+                "nl": "Metatags nog niet berekend... Heropen deze pop-up",
+                "fr": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up"
               }
             },
             {

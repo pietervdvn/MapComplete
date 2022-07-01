@@ -106,29 +106,35 @@ export default class CopyrightPanel extends Combine {
 
         const t = Translations.t.general.attribution
         const layoutToUse = state.layoutToUse
-        const iconStyle = "height: 1.5rem; width: auto"
+        const imgSize = "h-6 w-6"
+        const iconStyle = "height: 1.5rem; width: 1.5rem"
         const actionButtons = [
-            new SubtleButton(Svg.liberapay_ui().SetStyle(iconStyle), t.donate, {
+            new SubtleButton(Svg.liberapay_ui(), t.donate, {
                 url: "https://liberapay.com/pietervdvn/",
-                newTab: true
+                newTab: true,
+                imgSize
             }),
-            new SubtleButton(Svg.bug_ui().SetStyle(iconStyle), t.openIssueTracker, {
+            new SubtleButton(Svg.bug_ui(), t.openIssueTracker, {
                 url: "https://github.com/pietervdvn/MapComplete/issues",
-                newTab: true
+                newTab: true,
+                imgSize
             }),
-            new SubtleButton(Svg.statistics_ui().SetStyle(iconStyle), t.openOsmcha.Subs({theme: state.layoutToUse.title}), {
+            new SubtleButton(Svg.statistics_ui(), t.openOsmcha.Subs({theme: state.layoutToUse.title}), {
                 url: Utils.OsmChaLinkFor(31, state.layoutToUse.id),
-                newTab: true
+                newTab: true,
+                imgSize
             }),
-            new SubtleButton(Svg.mastodon_ui().SetStyle(iconStyle),
+            new SubtleButton(Svg.mastodon_ui(),
                 new Combine([t.followOnMastodon.SetClass("font-bold"), t.followBridge]).SetClass("flex flex-col"),
                 {
                 url:"https://en.osm.town/web/notifications",
-                newTab: true
+                newTab: true,
+                    imgSize
             }),
-            new SubtleButton(Svg.twitter_ui().SetStyle(iconStyle), t.followOnTwitter, {
+            new SubtleButton(Svg.twitter_ui(), t.followOnTwitter, {
                 url:"https://twitter.com/mapcomplete",
-                newTab: true
+                newTab: true,
+                imgSize
             }),
             new OpenIdEditor(state, iconStyle),
             new MapillaryLink(state, iconStyle),

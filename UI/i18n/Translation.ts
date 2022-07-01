@@ -114,29 +114,42 @@ export class Translation extends BaseUIElement {
 
     /**
      * 
+     * // Should actually change the content based on the current language
      * const tr = new Translation({"en":"English", nl: "Nederlands"})
      * Locale.language.setData("en")
      * const html = tr.InnerConstructElement()
      * html.innerHTML // => "English"
      * Locale.language.setData("nl")
      * html.innerHTML // => "Nederlands"
+     * 
+     * // Should include a link to weblate if context is set
+     * const tr = new Translation({"en":"English"}, "core:test.xyz")
+     * Locale.language.setData("nl")
+     * Locale.showLinkToWeblate.setData(true)
+     * const html = tr.InnerConstructElement()
+     * html.getElementsByTagName("a")[0].href // => "https://hosted.weblate.org/translate/mapcomplete/core/nl/?offset=1&q=context%3A%3D%22test.xyz%22"
      */
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         const self = this
+
+        el.innerHTML = self.txt
+        if (self.translations["*"] !== undefined) {
+            return el;
+        }
         
-       
-        Locale.language.addCallbackAndRun(_ => {
+        
+        Locale.language.addCallback(_ => {
             if (self.isDestroyed) {
                 return true
             }
             el.innerHTML = self.txt
         })
-
-        if (self.translations["*"] !== undefined || self.context === undefined || self.context?.indexOf(":") < 0) {
+        
+        if(self.context === undefined || self.context?.indexOf(":") < 0){
             return el;
         }
-        
+
         const linkToWeblate = new LinkToWeblate(self.context, self.translations)
 
         const wrapper = document.createElement("span")
@@ -174,7 +187,10 @@ export class Translation extends BaseUIElement {
     public AllValues(): string[] {
         return this.SupportedLanguages().map(lng => this.translations[lng]);
     }
-    
+
+    /**
+     * Constructs a new Translation where every contained string has been modified
+     */
     public OnEveryLanguage(f: (s: string, language: string) => string, context?: string): Translation {
         const newTranslations = {};
         for (const lang in this.translations) {
@@ -197,6 +213,7 @@ export class Translation extends BaseUIElement {
      * const r = tr.replace("{key}", "value")
      * r.textFor("nl") // => "Een voorbeeldtekst met value en {key1}, en nogmaals value"
      * r.textFor("en") // => "Just a single value"
+     * 
      */
     public replace(a: string, b: string) {
         return this.OnEveryLanguage(str => str.replace(new RegExp(a, "g"), b))
@@ -290,6 +307,7 @@ export class TypedTranslation<T> extends Translation {
      * const subbed = tr.Subs({part: subpart})
      * subbed.textFor("en") // => "Full sentence with subpart"
      * subbed.textFor("nl") // => "Volledige zin met onderdeel"
+     * 
      */
     Subs(text: T, context?: string): Translation {
         return this.OnEveryLanguage((template, lang) => {

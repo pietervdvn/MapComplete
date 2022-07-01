@@ -29,25 +29,22 @@ export class SubtleButton extends UIElement {
 
     protected InnerRender(): string | BaseUIElement {
         const classes = "block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline";
-        const message = Translations.W(this.message);
+        const message = Translations.W(this.message)?.SetClass("block overflow-ellipsis no-images flex-shrink");
         let img;
+        const imgClasses = "block justify-center flex-none mr-4 " + (this.options?.imgSize ?? "h-11 w-11")
         if ((this.imageUrl ?? "") === "") {
             img = undefined;
         } else if (typeof (this.imageUrl) === "string") {
-            img = new Img(this.imageUrl)
+            img = new Img(this.imageUrl)?.SetClass(imgClasses)
         } else {
-            img = this.imageUrl;
+            img = this.imageUrl?.SetClass(imgClasses);
         }
-        const image = new Combine([img?.SetClass("block flex items-center justify-center "+(this.options?.imgSize ?? "h-11 w-11")+" flex-shrink0 mr-4")])
-            .SetClass("flex-shrink-0");
-
-        message?.SetClass("block overflow-ellipsis no-images")
-
-        const button = new Combine([
-            image,
+            const button = new Combine([
+            img,
             message
-        ]).SetClass("flex group w-full")
+         ]).SetClass("flex items-center group w-full")
 
+        
         if (this.options?.url == undefined) {
             this.SetClass(classes)
             return button

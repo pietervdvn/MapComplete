@@ -10,7 +10,7 @@
         "cannotBeDeleted": "Dit object kan niet van de kaart verwijderd worden",
         "delete": "Verwijder",
         "explanations": {
-            "hardDelete": "Dit punt zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken.",
+            "hardDelete": "Dit object zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken.",
             "retagNoOtherThemes": "Dit object zal anders aangeduid worden en niet meer getoond worden in deze applicatie",
             "retagOtherThemes": "Dit object zal aangepast worden en zichtbaar zijn in {otherThemes}",
             "selectReason": "Gelieve aan te duiden waarom dit punt verwijderd moet worden",
@@ -20,8 +20,8 @@
         "isntAPoint": "Enkel punten kunnen verwijderd worden, het geselecteerde object is een lijn, een oppervlakte of een relatie.",
         "loading": "Aan het bekijken of dit object veilig verwijderd kan worden.",
         "loginToDelete": "Je moet aangemeld zijn om een object van de kaart te verwijderen",
-        "notEnoughExperience": "Dit punt is door iemand anders gemaakt.",
-        "onlyEditedByLoggedInUser": "Dit punt is enkel door jezelf bewerkt, je kan dit veilig verwijderen.",
+        "notEnoughExperience": "Dit object is door iemand anders gemaakt.",
+        "onlyEditedByLoggedInUser": "Dit object is enkel door jezelf bewerkt, je kan dit veilig verwijderen.",
         "partOfOthers": "Dit punt maakt deel uit van een lijn, oppervlakte of een relatie en kan niet verwijderd worden.",
         "readMessages": "Je hebt ongelezen berichten. Je moet deze lezen voordat je een punt verwijderd, een andere bijdrager heeft misschien feedback",
         "reasons": {
@@ -253,6 +253,9 @@
             "wednesday": "Woensdag"
         },
         "welcomeBack": "Je bent aangemeld. Welkom terug!",
+        "welcomeExplanation": {
+            "addNew": "Klik op de kaart om een nieuw punt toe te voegen."
+        },
         "wikipedia": {
             "createNewWikidata": "Maak een nieuw Wikidata-item",
             "doSearch": "Zoek hierboven om resultaten te zien",
@@ -570,6 +573,7 @@
                 "argverb": "Zoek ofwel in een geografisch gebied (zoals een stand) of zoek in de buurt van een POI",
                 "noMatchingLayer": "Ik vind geen overeenkomende laag",
                 "noNearOrIn": "Sorry, Ik begreep je opdracht niet omdat ik geen <code>dichtbij</code> of <code>in</code> in je zoekopdracht.\nProbeer iets als <code>Zoek drinkwater in Londen</code>, <code>Zoek frituur in Brussel</code><p></p>\n <p>Daarnaast kan je ook <code>info {cmd}</code> proberen, om info te krijgen over een enkel object.</p>",
+                "nothingFound": "Sorry, ik kon niets vinden voor <code>{search}</code>, dus kan ik {layerTitle} niet zoeken",
                 "overview": "Ik heb {length} overeenkomende items gevonden.",
                 "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>..."
             },
@@ -577,19 +581,28 @@
                 "argmode": "Geeft aan op welke manier ik moet afsluiten. Dit moet één van de volgende woorden zijn: {verbs}",
                 "docs": "Sluit de robot af",
                 "goodbye": "Aan het afsluiten… Tot later!",
-                "notYetShuttingDown": "Ik ga nog niet afsluiten want ik ben nog maar net opgestart. Ik wacht minimaal {min_uptime} seconden voordat ik terug afsluit, momenteel ben ik nog maar {uptime} aan het lopen."
+                "notYetShuttingDown": "Ik ga nog niet afsluiten want ik ben nog maar net opgestart. Ik wacht minimaal {min_uptime} seconden voordat ik terug afsluit, momenteel ben ik nog maar {uptime} aan het lopen.",
+                "verbshutdown": "Sluit de bot af",
+                "verbupdate": "Probeert om de MapComplete-codebasis up te daten, sluit erna af"
             },
             "tags": {
-                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}..."
+                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}...",
+                "argsearch": "De ID van het OSM-object of een zoekopdracht",
+                "docs": "Toont de attributen van een OSM-object. Geef een ID of een zoekstring.",
+                "noSearchGiven": "Geleive een zoekterm of een ID mee te geven om dit commando te gebruiken",
+                "nothingFound": "Niets gevonden voor {_}"
             },
             "welcome": {
+                "docs": "Geeft een vriendelijk welkomstberichtje",
                 "p0": "Hallo! Ik ben MapComplete-bot. Ik ben een computer-programma die voor jou OpenStreetMap doorzoekt en die documentatie geeft van <a href=\"https://mapcomplete.osm.be\">MapComplete</a>, een website die themakaarten toont waar je ook eenvoudig zelf data aan kan toevoegen.",
                 "p1": "Stuur me <code>info [zoekterm]</code> en ik ga OpenStreetMap voor je doorzoeken en het resultaat aan je tonen.",
                 "p2": "Je kan ook <code>search [ojbecttype] near [plaatsnaam]</code> of <code>search [objecttype] in [plaatsnaam]</code> sturen, dan ga ik daaraartoen op zoek. De objecttypes zijn dezelfde die je in MapComplete vindt. Meer categorieën zullen in de toekomst toegevoegd worden. Als je de uitdaging aangaat, <a href=\"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Making_Your_Own_Theme.md\">kan jebook je eigen categorie maken</a>",
                 "p3": "Er zijn nog meer commando's, stuur me <code>help</code> om ze allemaal te zien."
             },
             "wiki": {
+                "argsearch": "De titel van de pagina of een zoekterm",
                 "docs": "Stuurt een (deel van) de gevraagde pagina van {backend}. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina.",
+                "foundMatching": "Ik vond een wikipagina, namelijk {title}",
                 "gotResults": "Ik vond {count} resultaten voor <code>{search}</code>:",
                 "loadingFailed": "Sorry, pagina <code>{pagename}</code> kon niet geladen worden",
                 "noWiki": "Gelieve een zoekterm voor een wiki-pagina te geven",
