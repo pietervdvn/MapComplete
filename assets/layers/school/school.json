@@ -312,17 +312,18 @@
         "fr": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
       },
       "render": {
-        "en": "{school:language} is the main language of {name}",
-        "nl": "{school:language} is de voertaal van {name}",
-        "de": "{school:language} ist die Hauptsprache von {name}"
-        "fr": "{school:language} est la langue principale de {name}"
+        "en": "{school:language} is the main language of {title()}",
+        "nl": "{school:language} is de voertaal van {title()}",
+        "de": "{school:language} ist die Hauptsprache von {title()}",
+        "fr": "{school:language} est la langue principale de {title()}"
       },
       "freeform": {
         "key": "school:language",
         "inline": true,
         "placeholder": {
-          "en":"Language in lowercase English",
-          "nl":"Taal in lowercase Engel"},
+          "en": "Language in lowercase English",
+          "nl": "Taal in lowercase Engel"
+        },
         "addExtraTags": [
           "fixme=Freeform tag `school:language` used, to be doublechecked"
         ]
@@ -331,8 +332,10 @@
         {
           "if": "school:language=english",
           "then": {
-            "en": "English is the main language of {name}",
-            "nl": "Engels is de voertaal van {name}"
+            "en": "The main language of this school is unknown",
+            "nl": "De voertaal van deze school is niet gekend",
+            "de": "Die Hauptsprache dieser Schule ist unbekannt",
+            "fr": "La langue principale de cette école est inconnue"
           }
         },
         {

@@ -5045,6 +5045,9 @@
                 "mappings": {
                     "0": {
                         "then": "Die Hauptsprache dieser Schule ist unbekannt"
+                    },
+                    "4": {
+                        "then": "Die Hauptsprache dieser Schule ist unbekannt"
                     }
                 },
                 "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",

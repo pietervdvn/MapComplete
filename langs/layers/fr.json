@@ -2471,6 +2471,9 @@
                 "mappings": {
                     "0": {
                         "then": "La langue principale de cette école est inconnue"
+                    },
+                    "4": {
+                        "then": "La langue principale de cette école est inconnue"
                     }
                 },
                 "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",

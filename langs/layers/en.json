@@ -5042,8 +5042,23 @@
                 "question": "Which genders can enroll at this school?"
             },
             "language": {
+                "freeform": {
+                    "placeholder": "Language in lowercase English"
+                },
                 "mappings": {
                     "0": {
+                        "then": "The main language of this school is unknown"
+                    },
+                    "1": {
+                        "then": "French is the main language of {name}"
+                    },
+                    "2": {
+                        "then": "Dutch is the main language of {name}"
+                    },
+                    "3": {
+                        "then": "German is the main language of {name}"
+                    },
+                    "4": {
                         "then": "The main language of this school is unknown"
                     }
                 },

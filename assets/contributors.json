@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 4014,
+      "commits": 4040,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -89,7 +89,7 @@
       "contributor": "LiamSimons"
     },
     {
-      "commits": 8,
+      "commits": 9,
       "contributor": "RobJN"
     },
     {
@@ -110,6 +110,10 @@
     },
     {
       "commits": 6,
+      "contributor": "Thibault Molleman"
+    },
+    {
+      "commits": 6,
       "contributor": "danieldegroot2"
     },
     {
@@ -118,11 +122,11 @@
     },
     {
       "commits": 5,
-      "contributor": "Thibault Molleman"
+      "contributor": "David Haberthür"
     },
     {
-      "commits": 5,
-      "contributor": "David Haberthür"
+      "commits": 4,
+      "contributor": "OliNau"
     },
     {
       "commits": 4,
@@ -143,10 +147,6 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
-    },
-    {
-      "commits": 2,
-      "contributor": "OliNau"
     },
     {
       "commits": 2,

@@ -58,7 +58,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/school:language#values) [school:language](https://wiki.openstreetmap.org/wiki/Key:school:language) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/school:language#values) [school:language](https://wiki.openstreetmap.org/wiki/Key:school:language) | [string](../SpecialInputElements.md#string) | [english](https://wiki.openstreetmap.org/wiki/Tag:school:language%3Denglish) [french](https://wiki.openstreetmap.org/wiki/Tag:school:language%3Dfrench) [dutch](https://wiki.openstreetmap.org/wiki/Tag:school:language%3Ddutch) [german](https://wiki.openstreetmap.org/wiki/Tag:school:language%3Dgerman)
 
 
 
@@ -236,6 +236,10 @@ This is rendered with  {school:language} is the main language of {title()}
 
 
 
+  - The main language of this school is unknown corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:language' target='_blank'>school:language</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:language%3Denglish' target='_blank'>english</a>
+  - French is the main language of {name} corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:language' target='_blank'>school:language</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:language%3Dfrench' target='_blank'>french</a>
+  - Dutch is the main language of {name} corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:language' target='_blank'>school:language</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:language%3Ddutch' target='_blank'>dutch</a>
+  - German is the main language of {name} corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:school:language' target='_blank'>school:language</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:language%3Dgerman' target='_blank'>german</a>
   - The main language of this school is unknown corresponds with  
   - This option cannot be chosen as answer
  
