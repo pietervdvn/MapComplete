@@ -100,15 +100,6 @@
       "id": "shops-name"
     },
     {
-      "render": {
-        "en": "This shop sells {shop}",
-        "fr": "Ce magasin vends {shop}",
-        "ja": "こちらのお店では{shop}を販売しております",
-        "de": "Dieses Geschäft verkauft {shop}",
-        "eo": "Ĉi tiu butiko vendas {shop}",
-        "nl": "Deze winkel is van type \"{shop}\"",
-        "es": "Esta tienda vende {shop}"
-      },
       "question": {
         "en": "What kind of shop is this?",
         "nl": "Wat voor soort winkel is dit?"
@@ -135,6 +126,10 @@
             "pt": "Loja de produtos agrícolas",
             "ru": "Сельскохозяйственный магазин",
             "sv": "Jordbruksaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-tractor.svg",
+            "class": "medium"
           }
         },
         {
@@ -159,6 +154,10 @@
             "ru": "Алкогольный магазин",
             "sl": "Trgovina z alkoholnimi pijačami",
             "sv": "Vin-och-spritaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-wine-bottle.svg",
+            "class": "medium"
           }
         },
         {
@@ -180,6 +179,10 @@
             "pt": "Loja de animé",
             "ru": "Магазин аниме / манги",
             "sv": "Anime/Manga-affär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-dragon.svg",
+            "class": "medium"
           }
         },
         {
@@ -204,6 +207,10 @@
             "ru": "Магазин антиквариата",
             "sl": "Starinarnica",
             "sv": "Antikaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-furniture.svg",
+            "class": "medium"
           }
         },
         {
@@ -226,6 +233,10 @@
             "ru": "Магазин бытовой техники",
             "sl": "Splošna tehnična trgovina",
             "sv": "Vitvaror"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-laundry.svg",
+            "class": "medium"
           }
         },
         {
@@ -252,7 +263,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -277,6 +288,10 @@
             "ru": "Магазин детских товаров",
             "sl": "Trgovina za otroke",
             "sv": "Babyprodukter"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-baby-carriage.svg",
+            "class": "medium"
           }
         },
         {
@@ -301,6 +316,10 @@
             "ru": "Магазин сумок и саквояжа",
             "sl": "Trgovina za prtljago",
             "sv": "Väskaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-suitcase-rolling.svg",
+            "class": "medium"
           }
         },
         {
@@ -328,7 +347,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-bakery.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -353,6 +372,10 @@
             "ru": "Магазин продающий мебель для ванных комнат",
             "sl": "Trgovina s kopalniško opremo",
             "sv": "Badrumsinredning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-bath.svg",
+            "class": "medium"
           }
         },
         {
@@ -377,6 +400,10 @@
             "ru": "Салон красоты",
             "sl": "Lepotilni salon",
             "sv": "Skönhetssalong"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-lipstick.svg",
+            "class": "medium"
           }
         },
         {
@@ -404,7 +431,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-lodging.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -429,6 +456,10 @@
             "ru": "Магазин по продаже алкогольных и безалкогольных напитков",
             "sl": "Trgovina s pijačami",
             "sv": "Dryckaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-bottles.svg",
+            "class": "medium"
           }
         },
         {
@@ -456,7 +487,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-bicycle.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -479,6 +510,10 @@
             "pt": "Loja de barcos",
             "ru": "Магазин лодок",
             "sv": "Båtaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-boat.svg",
+            "class": "medium"
           }
         },
         {
@@ -503,6 +538,10 @@
             "ru": "Букмекерская контора",
             "sl": "Stavnica",
             "sv": "Vadslagning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-money_hand.svg",
+            "class": "medium"
           }
         },
         {
@@ -527,6 +566,10 @@
             "ru": "Книжный магазин",
             "sl": "Knjigarna",
             "sv": "Bokhandel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-book.svg",
+            "class": "medium"
           }
         },
         {
@@ -546,6 +589,10 @@
             "pl": "Sklep dla piwowarów domowych",
             "pt": "Loja de material de fermentação",
             "sv": "Affär för hembryggningstillbehör"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-storage_fermenter.svg",
+            "class": "medium"
           }
         },
         {
@@ -570,6 +617,10 @@
             "ru": "Мясной",
             "sl": "Mesar",
             "sv": "Slaktare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-cleaver.svg",
+            "class": "medium"
           }
         },
         {
@@ -590,6 +641,10 @@
             "pl": "Sklep z kamerami i aparatami",
             "pt": "Loja de equipamento fotográfico",
             "sv": "Affär för kameratillbehör"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-camera-retro.svg",
+            "class": "medium"
           }
         },
         {
@@ -634,6 +689,10 @@
             "pl": "Sklep z produktami z konopi",
             "pt": "Loja de canábis",
             "sv": "Cannabisaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-cannabis.svg",
+            "class": "medium"
           }
         },
         {
@@ -661,7 +720,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-car.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -686,6 +745,10 @@
             "ru": "Автозапчасти",
             "sl": "Avtomobilski deli",
             "sv": "Biltillbehör"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-car-battery.svg",
+            "class": "medium"
           }
         },
         {
@@ -713,7 +776,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-car-repair.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -734,6 +797,10 @@
             "pt": "Vendedor de caravanas",
             "ru": "Продажа домов на колёсах",
             "sv": "Husvagnsförsäljare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-camper_trailer.svg",
+            "class": "medium"
           }
         },
         {
@@ -758,6 +825,10 @@
             "ru": "Магазин ковров",
             "sl": "Trgovina s preprogrami",
             "sv": "Mattaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-tape.svg",
+            "class": "medium"
           }
         },
         {
@@ -779,7 +850,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -805,7 +876,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -830,6 +901,10 @@
             "ru": "Магазин сыров",
             "sl": "Trgovina s siri",
             "sv": "Ostaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-cheese.svg",
+            "class": "medium"
           }
         },
         {
@@ -880,7 +955,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-confectionery.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -908,7 +983,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-clothing-store.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -932,6 +1007,10 @@
             "ru": "Магазин кофе",
             "sl": "Trgovina s kavo",
             "sv": "Kaffeaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-coffee.svg",
+            "class": "medium"
           }
         },
         {
@@ -974,6 +1053,10 @@
             "ru": "Компьютерный магазин",
             "sl": "Računalniška trgovina",
             "sv": "Datorbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-laptop.svg",
+            "class": "medium"
           }
         },
         {
@@ -1001,7 +1084,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-confectionery.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1050,6 +1133,10 @@
             "ru": "Магазин копирования, печати",
             "sl": "Fotokopirnica",
             "sv": "Tryckeri"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-print.svg",
+            "class": "medium"
           }
         },
         {
@@ -1074,6 +1161,10 @@
             "ru": "Магазин косметики",
             "sl": "Kozmetična trgovina",
             "sv": "Sminkaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-lipstick.svg",
+            "class": "medium"
           }
         },
         {
@@ -1092,6 +1183,10 @@
             "pl": "Country Store",
             "pt": "Loja para proprietários rurais",
             "sv": "Lanthandel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-hat-cowboy-side.svg",
+            "class": "medium"
           }
         },
         {
@@ -1137,6 +1232,10 @@
             "ru": "Магазин штор и драпировок",
             "sl": "Trgovina z zavesami",
             "sv": "Gardinaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-curtains.svg",
+            "class": "medium"
           }
         },
         {
@@ -1161,6 +1260,10 @@
             "ru": "Магазин молочных продуктов",
             "sl": "Mlekarna",
             "sv": "Mejeriaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-cheese.svg",
+            "class": "medium"
           }
         },
         {
@@ -1185,6 +1288,10 @@
             "ru": "Магазин деликатесов",
             "sl": "Delikatesa",
             "sv": "Delikatessaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-meat.svg",
+            "class": "medium"
           }
         },
         {
@@ -1212,7 +1319,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1237,6 +1344,10 @@
             "ru": "Строительный магазин",
             "sl": "Orodjarna",
             "sv": "Byggmarknad"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
           }
         },
         {
@@ -1259,6 +1370,10 @@
             "pt": "Loja de portas",
             "ru": "Магазин дверей",
             "sv": "Affär med dörrar"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-door-open.svg",
+            "class": "medium"
           }
         },
         {
@@ -1283,6 +1398,10 @@
             "ru": "Химчистка",
             "sl": "Čistilnica",
             "sv": "Kemtvätt"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-clothes_hanger.svg",
+            "class": "medium"
           }
         },
         {
@@ -1308,7 +1427,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1329,6 +1448,10 @@
             "pt": "Loja de material elétrico",
             "ru": "Магазин электротоваров",
             "sv": "Affär med elutrustning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-power.svg",
+            "class": "medium"
           }
         },
         {
@@ -1353,6 +1476,10 @@
             "ru": "Магазин бытовой электроники",
             "sl": "Elektronska trgovina",
             "sv": "Elektronikbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-plug.svg",
+            "class": "medium"
           }
         },
         {
@@ -1379,7 +1506,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1404,6 +1531,10 @@
             "ru": "Магазин тканей",
             "sl": "Trgovina z metrskim blagom",
             "sv": "Tygaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-tape.svg",
+            "class": "medium"
           }
         },
         {
@@ -1448,6 +1579,10 @@
             "pt": "Loja de acessórios de moda",
             "ru": "Магазин модных аксессуаров",
             "sv": "Affär för modeaccessoarer"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-fashion_accessories.svg",
+            "class": "medium"
           }
         },
         {
@@ -1469,6 +1604,10 @@
             "pt": "Loja de lareiras",
             "ru": "Продажа каминов",
             "sv": "Kaminbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-fireplace.svg",
+            "class": "medium"
           }
         },
         {
@@ -1490,6 +1629,10 @@
             "pt": "Loja de artigos de pesca",
             "ru": "Рыболовный магазин",
             "sv": "Fiskeaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-ice_fishing.svg",
+            "class": "medium"
           }
         },
         {
@@ -1508,6 +1651,10 @@
             "pl": "Sklep z posadzkami",
             "pt": "Loja de material de pavimentação",
             "sv": "Affär för golv"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
           }
         },
         {
@@ -1535,7 +1682,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-florist.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1559,6 +1706,10 @@
             "pt": "Loja de molduras",
             "ru": "Магазин рамок для фотографий и картин",
             "sv": "Ramaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-vector-square.svg",
+            "class": "medium"
           }
         },
         {
@@ -1582,7 +1733,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1602,6 +1753,10 @@
             "pl": "Sklep z paliwami",
             "pt": "Loja de combustíveis",
             "sv": "Bränsleaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-propane_tank.svg",
+            "class": "medium"
           }
         },
         {
@@ -1629,7 +1784,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-cemetery.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1654,6 +1809,10 @@
             "ru": "Мебельный магазин",
             "sl": "Trgovina s pohištvom",
             "sv": "Möbelaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-couch.svg",
+            "class": "medium"
           }
         },
         {
@@ -1674,6 +1833,10 @@
             "pt": "Loja de jogos de tabuleiro",
             "ru": "Магазин настольных игр",
             "sv": "Affär för brädspel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-dice.svg",
+            "class": "medium"
           }
         },
         {
@@ -1701,7 +1864,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-garden-centre.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1724,6 +1887,10 @@
             "ru": "Магазин газовых баллонов",
             "sl": "Trgovina s plinskimi jeklenkami",
             "sv": "Gasbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-propane_tank.svg",
+            "class": "medium"
           }
         },
         {
@@ -1748,7 +1915,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1776,7 +1943,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-gift.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1801,6 +1968,10 @@
             "ru": "Магазин овощей и фруктов",
             "sl": "Sadje in zelenjava",
             "sv": "Grönsakshandlare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-carrot.svg",
+            "class": "medium"
           }
         },
         {
@@ -1825,6 +1996,10 @@
             "ru": "Парикмахерская",
             "sl": "Frizer",
             "sv": "Hårfrisör"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-beauty_salon.svg",
+            "class": "medium"
           }
         },
         {
@@ -1845,6 +2020,10 @@
             "pl": "Sklep z artykułami fryzjerskimi",
             "pt": "Loja de acessórios de cabeleireiro",
             "sv": "Affär för hårprodukter"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-hair_care.svg",
+            "class": "medium"
           }
         },
         {
@@ -1869,6 +2048,10 @@
             "ru": "Хозяйственный магазин",
             "sl": "Železnina",
             "sv": "Järnaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
           }
         },
         {
@@ -1892,7 +2075,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -1917,6 +2100,10 @@
             "ru": "Магазин по продаже слуховых аппаратов",
             "sl": "Trgovina s slušnimi pripomočki",
             "sv": "Hörapparater"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-hearing_aid.svg",
+            "class": "medium"
           }
         },
         {
@@ -1940,6 +2127,10 @@
             "ru": "Магазин трав и лекарственных растений",
             "sl": "Zeliščarstvo",
             "sv": "Medicinalväxter"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-leaf.svg",
+            "class": "medium"
           }
         },
         {
@@ -1964,6 +2155,10 @@
             "ru": "Магазин по продаже Hi-Fi",
             "sl": "Trgovina z avdio opremo",
             "sv": "HiFi-butik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-speaker.svg",
+            "class": "medium"
           }
         },
         {
@@ -1984,6 +2179,10 @@
             "pl": "Sklep hobbystyczny",
             "pt": "Loja de modelismo",
             "sv": "Hobbyaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-dragon.svg",
+            "class": "medium"
           }
         },
         {
@@ -2002,6 +2201,10 @@
             "pl": "Sklep z pościelą/ręcznikami",
             "pt": "Loja de têxteis para o lar",
             "sv": "Affär för hushållstextilier"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-cloth.svg",
+            "class": "medium"
           }
         },
         {
@@ -2024,6 +2227,10 @@
             "pt": "Loja de artigos para o lar",
             "ru": "Магазин товаров для дома",
             "sv": "Husgeråd"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-blender.svg",
+            "class": "medium"
           }
         },
         {
@@ -2046,6 +2253,10 @@
             "pt": "Loja de artigos de caça",
             "ru": "Охотничий магазин",
             "sv": "Jaktbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-bow_and_arrow.svg",
+            "class": "medium"
           }
         },
         {
@@ -2072,7 +2283,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -2099,7 +2310,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-jewelry-store.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -2124,6 +2335,10 @@
             "ru": "Магазин в виде киоска",
             "sl": "Kiosk",
             "sv": "Kiosk"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-store.svg",
+            "class": "medium"
           }
         },
         {
@@ -2147,6 +2362,10 @@
             "pt": "Loja de cozinhas",
             "ru": "Магазин кухонь",
             "sv": "Köksinredning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-kitchen_sink.svg",
+            "class": "medium"
           }
         },
         {
@@ -2171,6 +2390,10 @@
             "ru": "Прачечная",
             "sl": "Pralnica",
             "sv": "Tvättinrättning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-laundry.svg",
+            "class": "medium"
           }
         },
         {
@@ -2195,6 +2418,10 @@
             "ru": "Магазин кожаных изделий",
             "sl": "Usnjarna",
             "sv": "Läderaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-handbag.svg",
+            "class": "medium"
           }
         },
         {
@@ -2215,6 +2442,10 @@
             "pt": "Loja de iluminação",
             "ru": "Магазин светильников",
             "sv": "Belysningsbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-desk_lamp.svg",
+            "class": "medium"
           }
         },
         {
@@ -2239,6 +2470,10 @@
             "ru": "Изготовление ключей",
             "sl": "Ključavničar",
             "sv": "Låssmed"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-key.svg",
+            "class": "medium"
           }
         },
         {
@@ -2290,7 +2525,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -2314,6 +2549,10 @@
             "pt": "Centro de massagens",
             "ru": "Массажный салон",
             "sv": "Massage"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-spa.svg",
+            "class": "medium"
           }
         },
         {
@@ -2338,6 +2577,10 @@
             "ru": "Медицинские принадлежности",
             "sl": "Trgovina z medicinskimi primpomočki",
             "sv": "Medicinsk utrustning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-crutch.svg",
+            "class": "medium"
           }
         },
         {
@@ -2359,6 +2602,10 @@
             "pt": "Loja de excedentes militares",
             "ru": "Армейский магазин",
             "sv": "Affär med militäröverskott"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-military.svg",
+            "class": "medium"
           }
         },
         {
@@ -2405,7 +2652,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -2430,6 +2677,10 @@
             "ru": "Ростовщик",
             "sl": "Posojilnica",
             "sv": "Långivare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-money_hand.svg",
+            "class": "medium"
           }
         },
         {
@@ -2454,6 +2705,10 @@
             "ru": "Магазин мотоциклов",
             "sl": "Trgovina z motorji",
             "sv": "Återförsäljare av motorcyklar"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-motorcycle.svg",
+            "class": "medium"
           }
         },
         {
@@ -2476,6 +2731,10 @@
             "pt": "Oficina de motas",
             "ru": "Мотомастерская",
             "sv": "Motorcykelverkstad"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-motorcycle_repair.svg",
+            "class": "medium"
           }
         },
         {
@@ -2500,6 +2759,10 @@
             "ru": "Музыкальный магазин",
             "sl": "Trgovina z glasbo",
             "sv": "Musikaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-compact-disc.svg",
+            "class": "medium"
           }
         },
         {
@@ -2524,6 +2787,10 @@
             "ru": "Магазин музыкальных инструментов",
             "sl": "Trgovina z glasbenimi inštrumenti",
             "sv": "Musikinstrument"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-guitar.svg",
+            "class": "medium"
           }
         },
         {
@@ -2548,6 +2815,10 @@
             "ru": "Газеты/пресса/журналы",
             "sl": "Trgovina s časopisi/revijami",
             "sv": "Tidningsaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-newspaper.svg",
+            "class": "medium"
           }
         },
         {
@@ -2571,6 +2842,10 @@
             "ru": "Магазин пищевых добавок",
             "sl": "Trgovina s prehrambenimi dodatki",
             "sv": "Hälsokost"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-pills.svg",
+            "class": "medium"
           }
         },
         {
@@ -2598,7 +2873,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-optician.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -2623,6 +2898,10 @@
             "ru": "Магазин снаряжения для активного отдыха",
             "sl": "Trgovina za dejavosti na prostem",
             "sv": "Friluftsaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-compass.svg",
+            "class": "medium"
           }
         },
         {
@@ -2646,7 +2925,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -2671,6 +2950,10 @@
             "ru": "Магазин красочных изделий",
             "sl": "Trgovina z barvami",
             "sv": "Färgbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-paint-roller.svg",
+            "class": "medium"
           }
         },
         {
@@ -2690,6 +2973,10 @@
             "pt": "Loja de acessórios para festas",
             "ru": "Магазин для вечеринок",
             "sv": "Partybutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-balloon.svg",
+            "class": "medium"
           }
         },
         {
@@ -2716,7 +3003,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-bakery.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -2741,6 +3028,10 @@
             "ru": "Ломбард",
             "sl": "Zastavljalnica",
             "sv": "Pantbank"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-money_hand.svg",
+            "class": "medium"
           }
         },
         {
@@ -2764,6 +3055,10 @@
             "ru": "Парфюмерия",
             "sl": "Parfumerija",
             "sv": "Parfymbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-perfume.svg",
+            "class": "medium"
           }
         },
         {
@@ -2788,6 +3083,10 @@
             "ru": "Зоомагазин",
             "sl": "Trgovina za domače živali",
             "sv": "Djurbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-cat.svg",
+            "class": "medium"
           }
         },
         {
@@ -2808,6 +3107,10 @@
             "pt": "Loja de banhos e tosquias",
             "ru": "Парикмахерская для животных",
             "sv": "Pälsvård för husdjur"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-pet_grooming.svg",
+            "class": "medium"
           }
         },
         {
@@ -2832,6 +3135,10 @@
             "ru": "Фототовары",
             "sl": "Foto trgovina",
             "sv": "Fotoaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-camera-retro.svg",
+            "class": "medium"
           }
         },
         {
@@ -2852,6 +3159,10 @@
             "pt": "Loja de cerâmica",
             "ru": "Магазин керамики",
             "sv": "Keramikaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-vase.svg",
+            "class": "medium"
           }
         },
         {
@@ -2873,6 +3184,10 @@
             "pt": "Loja de tinteiros de impressora",
             "ru": "Магазин чернил для принтера",
             "sv": "Butik för skrivarbläck"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-print.svg",
+            "class": "medium"
           }
         },
         {
@@ -2893,6 +3208,10 @@
             "pt": "Vidente",
             "ru": "Предсказатель",
             "sv": "Medium / Psykisk"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-psychic.svg",
+            "class": "medium"
           }
         },
         {
@@ -2916,6 +3235,10 @@
             "pt": "Loja de pirotecnia",
             "ru": "Магазин фейерверков",
             "sv": "Fyrverkerier"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-rocket_firework.svg",
+            "class": "medium"
           }
         },
         {
@@ -2940,6 +3263,10 @@
             "ru": "Магазин радиодеталей",
             "sl": "Trgovina z elektroniko",
             "sv": "Radio/Elektronikbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-microchip.svg",
+            "class": "medium"
           }
         },
         {
@@ -2966,7 +3293,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -2988,6 +3315,10 @@
             "pt": "Loja de aluguer de material em geral",
             "ru": "Аренда",
             "sv": "Hyrbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-dolly.svg",
+            "class": "medium"
           }
         },
         {
@@ -3029,6 +3360,10 @@
             "ru": "Магазин подводного снаряжения",
             "sl": "Trgovina s potapljaško opremo",
             "sv": "Dykarbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-scuba_diving.svg",
+            "class": "medium"
           }
         },
         {
@@ -3053,6 +3388,10 @@
             "ru": "Магазин морепродуктов",
             "sl": "Ribarnica",
             "sv": "Fiskaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-fish_cleaning.svg",
+            "class": "medium"
           }
         },
         {
@@ -3079,7 +3418,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3102,6 +3441,10 @@
             "pt": "Retrosaria",
             "ru": "Швейные принадлежности",
             "sv": "Sybutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-needle_and_spool.svg",
+            "class": "medium"
           }
         },
         {
@@ -3122,6 +3465,10 @@
             "pt": "Reparador de sapatos",
             "ru": "Ремонт обуви",
             "sv": "Skomakare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-hammer_shoe.svg",
+            "class": "medium"
           }
         },
         {
@@ -3149,7 +3496,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shoe.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3172,6 +3519,10 @@
             "pt": "Loja de especiarias",
             "ru": "Магазин специй",
             "sv": "Affär för kryddor"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-spice_bottle.svg",
+            "class": "medium"
           }
         },
         {
@@ -3196,6 +3547,10 @@
             "ru": "Спорттовары",
             "sl": "Športna trgovina",
             "sv": "Sportaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-futbol.svg",
+            "class": "medium"
           }
         },
         {
@@ -3220,6 +3575,10 @@
             "ru": "Канцелярские товары",
             "sl": "Papirnica",
             "sv": "Pappershandel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-paperclip.svg",
+            "class": "medium"
           }
         },
         {
@@ -3243,6 +3602,10 @@
             "ru": "Аренда складских помещений",
             "sl": "Najem shrambnih prostorov",
             "sv": "Hyrlager"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-storage_rental.svg",
+            "class": "medium"
           }
         },
         {
@@ -3270,7 +3633,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-grocery.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3314,6 +3677,10 @@
             "ru": "Портной",
             "sl": "Krojač",
             "sv": "Skräddare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-needle_and_spool.svg",
+            "class": "medium"
           }
         },
         {
@@ -3338,6 +3705,10 @@
             "ru": "Тату салон",
             "sl": "Salon za tetovažo",
             "sv": "Tatueringsstudio"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tattoo_machine.svg",
+            "class": "medium"
           }
         },
         {
@@ -3365,7 +3736,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-teahouse.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3388,7 +3759,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-telephone.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3435,6 +3806,10 @@
             "pt": "Loja de azulejos",
             "ru": "Магазин плитки",
             "sv": "Kakelbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tiling.svg",
+            "class": "medium"
           }
         },
         {
@@ -3459,6 +3834,10 @@
             "ru": "Табачный магазин",
             "sl": "Tobačna trgovina",
             "sv": "Tobaksbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-pipe.svg",
+            "class": "medium"
           }
         },
         {
@@ -3481,6 +3860,10 @@
             "pt": "Aluguer de ferramentas",
             "ru": "Аренда инструмента",
             "sv": "Verktygsuthyrning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
           }
         },
         {
@@ -3505,6 +3888,10 @@
             "ru": "Игрушки",
             "sl": "Trgovina igrač",
             "sv": "Leksaksaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-rocket.svg",
+            "class": "medium"
           }
         },
         {
@@ -3525,6 +3912,10 @@
             "pt": "Loja de materiais de construção",
             "ru": "Оптовая база",
             "sv": "Proffshandel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
           }
         },
         {
@@ -3549,6 +3940,10 @@
             "ru": "Бюро путешествий",
             "sl": "Turistična agencija",
             "sv": "Resebyrå"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-suitcase.svg",
+            "class": "medium"
           }
         },
         {
@@ -3568,6 +3963,10 @@
             "pl": "Sklep z trofeami",
             "pt": "Loja de troféus",
             "sv": "Affär för troféer"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-trophy.svg",
+            "class": "medium"
           }
         },
         {
@@ -3592,6 +3991,10 @@
             "ru": "Шины",
             "sl": "Prodaja pnevmatik",
             "sv": "Däckfirma"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tire.svg",
+            "class": "medium"
           }
         },
         {
@@ -3616,6 +4019,10 @@
             "ru": "Магазин по продаже пылесосов",
             "sl": "Trgovina s sesalci",
             "sv": "Dammsugarbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-vacuum.svg",
+            "class": "medium"
           }
         },
         {
@@ -3643,7 +4050,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3668,6 +4075,10 @@
             "ru": "Видеомагазин",
             "sl": "Videoteka",
             "sv": "Videobutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-movie_rental.svg",
+            "class": "medium"
           }
         },
         {
@@ -3695,7 +4106,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-gaming.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3722,7 +4133,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-watch.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3743,6 +4154,10 @@
             "pl": "Sklep z wodą pitną",
             "pt": "Loja de água potável",
             "sv": "Affär för dricksvatten"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-water_bottle.svg",
+            "class": "medium"
           }
         },
         {
@@ -3790,6 +4205,10 @@
             "ru": "Оружейный магазин",
             "sl": "Trgovina z orožjem",
             "sv": "Vapenaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-dagger.svg",
+            "class": "medium"
           }
         },
         {
@@ -3813,7 +4232,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-warehouse.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3835,7 +4254,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         },
         {
@@ -3860,6 +4279,10 @@
             "ru": "Магазин жалюзей",
             "sl": "Trgovina z okenskimi senčili",
             "sv": "Persienner"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-window.svg",
+            "class": "medium"
           }
         },
         {
@@ -3887,7 +4310,7 @@
           },
           "icon": {
             "path": "./assets/layers/shops/maki-alcohol-shop.svg",
-            "size": "medium"
+            "class": "medium"
           }
         }
       ],
@@ -3895,117 +4318,10 @@
         "mappings"
       ]
     },
-    {
-      "render": {
-        "en": "<a href='tel:{phone}'>{phone}</a>",
-        "fr": "<a href='tel:{phone}'>{phone}</a>",
-        "ca": "<a href='tel:{phone}'>{phone}</a>",
-        "id": "<a href='tel:{phone}'>{phone}</a>",
-        "ru": "<a href='tel:{phone}'>{phone}</a>",
-        "ja": "<a href='tel:{phone}'>{phone}</a>",
-        "de": "<a href='tel:{phone}'>{phone}</a>",
-        "eo": "<a href='tel:{phone}'>{phone}</a>",
-        "nl": "<a href='tel:{phone}'>{phone}</a>",
-        "es": "<a href='tel:{phone}'>{phone}</a>"
-      },
-      "question": {
-        "en": "What is the phone number?",
-        "fr": "Quel est le numéro de téléphone ?",
-        "ja": "電話番号は何番ですか?",
-        "nl": "Wat is het telefoonnummer?",
-        "ru": "Какой телефон?",
-        "de": "Wie lautet die Telefonnummer?",
-        "eo": "Kio estas la telefonnumero?",
-        "es": "¿Cual es el número de teléfono?"
-      },
-      "freeform": {
-        "key": "phone",
-        "type": "phone"
-      },
-      "id": "shops-phone"
-    },
-    {
-      "render": {
-        "en": "<a href='{website}'>{website}</a>",
-        "fr": "<a href='{website}'>{website}</a>",
-        "ca": "<a href='{website}'>{website}</a>",
-        "id": "<a href='{website}'>{website}</a>",
-        "ru": "<a href='{website}'>{website}</a>",
-        "ja": "<a href='{website}'>{website}</a>",
-        "de": "<a href='{website}'>{website}</a>",
-        "eo": "<a href='{website}'>{website}</a>",
-        "nl": "<a href='{website}'>{website}</a>",
-        "es": "<a href='{website}'>{website}</a>"
-      },
-      "question": {
-        "en": "What is the website of this shop?",
-        "fr": "Quel est le site internet de ce magasin ?",
-        "ja": "このお店のホームページは何ですか?",
-        "nl": "Wat is de website van deze winkel?",
-        "ru": "Какой веб-сайт у этого магазина?",
-        "de": "Wie lautet die Webseite dieses Geschäfts?",
-        "es": "¿Cual es la página web de esta tienda?"
-      },
-      "freeform": {
-        "key": "website",
-        "type": "url"
-      },
-      "id": "shops-website"
-    },
-    {
-      "render": {
-        "en": "<a href='mailto:{email}'>{email}</a>",
-        "fr": "<a href='mailto:{email}'>{email}</a>",
-        "id": "<a href='mailto:{email}'>{email}</a>",
-        "ru": "<a href='mailto:{email}'>{email}</a>",
-        "ja": "<a href='mailto:{email}'>{email}</a>",
-        "eo": "<a href='mailto:{email}'>{email}</a>",
-        "nl": "<a href='mailto:{email}'>{email}</a>",
-        "de": "<a href='mailto:{email}'>{email}</a>",
-        "es": "<a href='mailto:{email}'>{email}</a>"
-      },
-      "question": {
-        "en": "What is the email address of this shop?",
-        "fr": "Quelle est l'adresse électronique de ce magasin ?",
-        "ja": "このお店のメールアドレスは何ですか?",
-        "ru": "Каков адрес электронной почты этого магазина?",
-        "nl": "Wat is het e-mailadres van deze winkel?",
-        "de": "Wie ist die Email-Adresse dieses Geschäfts?",
-        "eo": "Kio estas la retpoŝta adreso de ĉi tiu butiko?",
-        "es": "¿Cual es la dirección de correo electrónico de esta tienda?"
-      },
-      "freeform": {
-        "key": "email",
-        "type": "email"
-      },
-      "id": "shops-email"
-    },
-    {
-      "render": {
-        "en": "{opening_hours_table(opening_hours)}",
-        "fr": "{opening_hours_table(opening_hours)}",
-        "ru": "{opening_hours_table(opening_hours)}",
-        "ja": "{opening_hours_table(opening_hours)}",
-        "nl": "{opening_hours_table(opening_hours)}",
-        "ca": "{opening_hours_table(opening_hours)}",
-        "de": "{opening_hours_table(opening_hours)}",
-        "es": "{opening_hours_table(opening_hours)}"
-      },
-      "question": {
-        "en": "What are the opening hours of this shop?",
-        "fr": "Quels sont les horaires d'ouverture de ce magasin ?",
-        "ja": "この店の営業時間は何時から何時までですか?",
-        "nl": "Wat zijn de openingsuren van deze winkel?",
-        "ru": "Каковы часы работы этого магазина?",
-        "de": "Wie sind die Öffnungszeiten dieses Geschäfts?",
-        "es": "¿Cual es el horario de esta tienda?"
-      },
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "id": "shops-opening_hours"
-    },
+    "opening_hours",
+    "website",
+    "email",
+    "phone",
     "payment-options",
     "questions",
     "reviews"
@@ -4060,7 +4376,617 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/themes/shops/shop.svg"
+        "render": "./assets/layers/shops/maki-shop.svg",
+        "mappings": [
+          {
+            "if": "shop=boutique",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=fashion",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=vacant",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=yes",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=agrarian",
+            "then": "circle:white;./assets/layers/shops/fas-tractor.svg"
+          },
+          {
+            "if": "shop=alcohol",
+            "then": "circle:white;./assets/layers/shops/fas-wine-bottle.svg"
+          },
+          {
+            "if": "shop=anime",
+            "then": "circle:white;./assets/layers/shops/fas-dragon.svg"
+          },
+          {
+            "if": "shop=antiques",
+            "then": "circle:white;./assets/layers/shops/temaki-furniture.svg"
+          },
+          {
+            "if": "shop=appliance",
+            "then": "circle:white;./assets/layers/shops/temaki-laundry.svg"
+          },
+          {
+            "if": "shop=art",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=baby_goods",
+            "then": "circle:white;./assets/layers/shops/fas-baby-carriage.svg"
+          },
+          {
+            "if": "shop=bag",
+            "then": "circle:white;./assets/layers/shops/fas-suitcase-rolling.svg"
+          },
+          {
+            "if": "shop=bakery",
+            "then": "circle:white;./assets/layers/shops/maki-bakery.svg"
+          },
+          {
+            "if": "shop=bathroom_furnishing",
+            "then": "circle:white;./assets/layers/shops/fas-bath.svg"
+          },
+          {
+            "if": "shop=beauty",
+            "then": "circle:white;./assets/layers/shops/temaki-lipstick.svg"
+          },
+          {
+            "if": "shop=bed",
+            "then": "circle:white;./assets/layers/shops/maki-lodging.svg"
+          },
+          {
+            "if": "shop=beverages",
+            "then": "circle:white;./assets/layers/shops/temaki-bottles.svg"
+          },
+          {
+            "if": "shop=bicycle",
+            "then": "circle:white;./assets/layers/shops/maki-bicycle.svg"
+          },
+          {
+            "if": "shop=boat",
+            "then": "circle:white;./assets/layers/shops/temaki-boat.svg"
+          },
+          {
+            "if": "shop=bookmaker",
+            "then": "circle:white;./assets/layers/shops/temaki-money_hand.svg"
+          },
+          {
+            "if": "shop=books",
+            "then": "circle:white;./assets/layers/shops/fas-book.svg"
+          },
+          {
+            "if": "shop=brewing_supplies",
+            "then": "circle:white;./assets/layers/shops/temaki-storage_fermenter.svg"
+          },
+          {
+            "if": "shop=butcher",
+            "then": "circle:white;./assets/layers/shops/temaki-cleaver.svg"
+          },
+          {
+            "if": "shop=camera",
+            "then": "circle:white;./assets/layers/shops/fas-camera-retro.svg"
+          },
+          {
+            "if": "shop=cannabis",
+            "then": "circle:white;./assets/layers/shops/fas-cannabis.svg"
+          },
+          {
+            "if": "shop=car",
+            "then": "circle:white;./assets/layers/shops/maki-car.svg"
+          },
+          {
+            "if": "shop=car_parts",
+            "then": "circle:white;./assets/layers/shops/fas-car-battery.svg"
+          },
+          {
+            "if": "shop=car_repair",
+            "then": "circle:white;./assets/layers/shops/maki-car-repair.svg"
+          },
+          {
+            "if": "shop=caravan",
+            "then": "circle:white;./assets/layers/shops/temaki-camper_trailer.svg"
+          },
+          {
+            "if": "shop=carpet",
+            "then": "circle:white;./assets/layers/shops/fas-tape.svg"
+          },
+          {
+            "if": "shop=catalogue",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=charity",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=cheese",
+            "then": "circle:white;./assets/layers/shops/fas-cheese.svg"
+          },
+          {
+            "if": "shop=chocolate",
+            "then": "circle:white;./assets/layers/shops/maki-confectionery.svg"
+          },
+          {
+            "if": "shop=clothes",
+            "then": "circle:white;./assets/layers/shops/maki-clothing-store.svg"
+          },
+          {
+            "if": "shop=coffee",
+            "then": "circle:white;./assets/layers/shops/temaki-coffee.svg"
+          },
+          {
+            "if": "shop=computer",
+            "then": "circle:white;./assets/layers/shops/fas-laptop.svg"
+          },
+          {
+            "if": "shop=confectionery",
+            "then": "circle:white;./assets/layers/shops/maki-confectionery.svg"
+          },
+          {
+            "if": "shop=copyshop",
+            "then": "circle:white;./assets/layers/shops/fas-print.svg"
+          },
+          {
+            "if": "shop=cosmetics",
+            "then": "circle:white;./assets/layers/shops/temaki-lipstick.svg"
+          },
+          {
+            "if": "shop=country_store",
+            "then": "circle:white;./assets/layers/shops/fas-hat-cowboy-side.svg"
+          },
+          {
+            "if": "shop=curtain",
+            "then": "circle:white;./assets/layers/shops/temaki-curtains.svg"
+          },
+          {
+            "if": "shop=dairy",
+            "then": "circle:white;./assets/layers/shops/fas-cheese.svg"
+          },
+          {
+            "if": "shop=deli",
+            "then": "circle:white;./assets/layers/shops/temaki-meat.svg"
+          },
+          {
+            "if": "shop=department_store",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=doityourself",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=doors",
+            "then": "circle:white;./assets/layers/shops/fas-door-open.svg"
+          },
+          {
+            "if": "shop=dry_cleaning",
+            "then": "circle:white;./assets/layers/shops/temaki-clothes_hanger.svg"
+          },
+          {
+            "if": "shop=e-cigarette",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=electrical",
+            "then": "circle:white;./assets/layers/shops/temaki-power.svg"
+          },
+          {
+            "if": "shop=electronics",
+            "then": "circle:white;./assets/layers/shops/fas-plug.svg"
+          },
+          {
+            "if": "shop=erotic",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=fabric",
+            "then": "circle:white;./assets/layers/shops/fas-tape.svg"
+          },
+          {
+            "if": "shop=fashion_accessories",
+            "then": "circle:white;./assets/layers/shops/temaki-fashion_accessories.svg"
+          },
+          {
+            "if": "shop=fireplace",
+            "then": "circle:white;./assets/layers/shops/temaki-fireplace.svg"
+          },
+          {
+            "if": "shop=fishing",
+            "then": "circle:white;./assets/layers/shops/temaki-ice_fishing.svg"
+          },
+          {
+            "if": "shop=flooring",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=florist",
+            "then": "circle:white;./assets/layers/shops/maki-florist.svg"
+          },
+          {
+            "if": "shop=frame",
+            "then": "circle:white;./assets/layers/shops/fas-vector-square.svg"
+          },
+          {
+            "if": "shop=frozen_food",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=fuel",
+            "then": "circle:white;./assets/layers/shops/temaki-propane_tank.svg"
+          },
+          {
+            "if": "shop=funeral_directors",
+            "then": "circle:white;./assets/layers/shops/maki-cemetery.svg"
+          },
+          {
+            "if": "shop=furniture",
+            "then": "circle:white;./assets/layers/shops/fas-couch.svg"
+          },
+          {
+            "if": "shop=games",
+            "then": "circle:white;./assets/layers/shops/fas-dice.svg"
+          },
+          {
+            "if": "shop=garden_centre",
+            "then": "circle:white;./assets/layers/shops/maki-garden-centre.svg"
+          },
+          {
+            "if": "shop=gas",
+            "then": "circle:white;./assets/layers/shops/temaki-propane_tank.svg"
+          },
+          {
+            "if": "shop=general",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=gift",
+            "then": "circle:white;./assets/layers/shops/maki-gift.svg"
+          },
+          {
+            "if": "shop=greengrocer",
+            "then": "circle:white;./assets/layers/shops/fas-carrot.svg"
+          },
+          {
+            "if": "shop=hairdresser",
+            "then": "circle:white;./assets/layers/shops/temaki-beauty_salon.svg"
+          },
+          {
+            "if": "shop=hairdresser_supply",
+            "then": "circle:white;./assets/layers/shops/temaki-hair_care.svg"
+          },
+          {
+            "if": "shop=hardware",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=health_food",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=hearing_aids",
+            "then": "circle:white;./assets/layers/shops/temaki-hearing_aid.svg"
+          },
+          {
+            "if": "shop=herbalist",
+            "then": "circle:white;./assets/layers/shops/fas-leaf.svg"
+          },
+          {
+            "if": "shop=hifi",
+            "then": "circle:white;./assets/layers/shops/temaki-speaker.svg"
+          },
+          {
+            "if": "shop=hobby",
+            "then": "circle:white;./assets/layers/shops/fas-dragon.svg"
+          },
+          {
+            "if": "shop=household_linen",
+            "then": "circle:white;./assets/layers/shops/temaki-cloth.svg"
+          },
+          {
+            "if": "shop=houseware",
+            "then": "circle:white;./assets/layers/shops/fas-blender.svg"
+          },
+          {
+            "if": "shop=hunting",
+            "then": "circle:white;./assets/layers/shops/temaki-bow_and_arrow.svg"
+          },
+          {
+            "if": "shop=interior_decoration",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=jewelry",
+            "then": "circle:white;./assets/layers/shops/maki-jewelry-store.svg"
+          },
+          {
+            "if": "shop=kiosk",
+            "then": "circle:white;./assets/layers/shops/fas-store.svg"
+          },
+          {
+            "if": "shop=kitchen",
+            "then": "circle:white;./assets/layers/shops/temaki-kitchen_sink.svg"
+          },
+          {
+            "if": "shop=laundry",
+            "then": "circle:white;./assets/layers/shops/temaki-laundry.svg"
+          },
+          {
+            "if": "shop=leather",
+            "then": "circle:white;./assets/layers/shops/temaki-handbag.svg"
+          },
+          {
+            "if": "shop=lighting",
+            "then": "circle:white;./assets/layers/shops/temaki-desk_lamp.svg"
+          },
+          {
+            "if": "shop=locksmith",
+            "then": "circle:white;./assets/layers/shops/fas-key.svg"
+          },
+          {
+            "if": "shop=mall",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=massage",
+            "then": "circle:white;./assets/layers/shops/temaki-spa.svg"
+          },
+          {
+            "if": "shop=medical_supply",
+            "then": "circle:white;./assets/layers/shops/fas-crutch.svg"
+          },
+          {
+            "if": "shop=military_surplus",
+            "then": "circle:white;./assets/layers/shops/temaki-military.svg"
+          },
+          {
+            "if": "shop=model",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=money_lender",
+            "then": "circle:white;./assets/layers/shops/temaki-money_hand.svg"
+          },
+          {
+            "if": "shop=motorcycle",
+            "then": "circle:white;./assets/layers/shops/fas-motorcycle.svg"
+          },
+          {
+            "if": "shop=motorcycle_repair",
+            "then": "circle:white;./assets/layers/shops/temaki-motorcycle_repair.svg"
+          },
+          {
+            "if": "shop=music",
+            "then": "circle:white;./assets/layers/shops/fas-compact-disc.svg"
+          },
+          {
+            "if": "shop=musical_instrument",
+            "then": "circle:white;./assets/layers/shops/fas-guitar.svg"
+          },
+          {
+            "if": "shop=newsagent",
+            "then": "circle:white;./assets/layers/shops/fas-newspaper.svg"
+          },
+          {
+            "if": "shop=nutrition_supplements",
+            "then": "circle:white;./assets/layers/shops/fas-pills.svg"
+          },
+          {
+            "if": "shop=optician",
+            "then": "circle:white;./assets/layers/shops/maki-optician.svg"
+          },
+          {
+            "if": "shop=outdoor",
+            "then": "circle:white;./assets/layers/shops/temaki-compass.svg"
+          },
+          {
+            "if": "shop=outpost",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=paint",
+            "then": "circle:white;./assets/layers/shops/fas-paint-roller.svg"
+          },
+          {
+            "if": "shop=party",
+            "then": "circle:white;./assets/layers/shops/temaki-balloon.svg"
+          },
+          {
+            "if": "shop=pastry",
+            "then": "circle:white;./assets/layers/shops/maki-bakery.svg"
+          },
+          {
+            "if": "shop=pawnbroker",
+            "then": "circle:white;./assets/layers/shops/temaki-money_hand.svg"
+          },
+          {
+            "if": "shop=perfumery",
+            "then": "circle:white;./assets/layers/shops/temaki-perfume.svg"
+          },
+          {
+            "if": "shop=pet",
+            "then": "circle:white;./assets/layers/shops/fas-cat.svg"
+          },
+          {
+            "if": "shop=pet_grooming",
+            "then": "circle:white;./assets/layers/shops/temaki-pet_grooming.svg"
+          },
+          {
+            "if": "shop=photo",
+            "then": "circle:white;./assets/layers/shops/fas-camera-retro.svg"
+          },
+          {
+            "if": "shop=pottery",
+            "then": "circle:white;./assets/layers/shops/temaki-vase.svg"
+          },
+          {
+            "if": "shop=printer_ink",
+            "then": "circle:white;./assets/layers/shops/fas-print.svg"
+          },
+          {
+            "if": "shop=psychic",
+            "then": "circle:white;./assets/layers/shops/temaki-psychic.svg"
+          },
+          {
+            "if": "shop=pyrotechnics",
+            "then": "circle:white;./assets/layers/shops/temaki-rocket_firework.svg"
+          },
+          {
+            "if": "shop=radiotechnics",
+            "then": "circle:white;./assets/layers/shops/fas-microchip.svg"
+          },
+          {
+            "if": "shop=religion",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=rental",
+            "then": "circle:white;./assets/layers/shops/fas-dolly.svg"
+          },
+          {
+            "if": "shop=scuba_diving",
+            "then": "circle:white;./assets/layers/shops/temaki-scuba_diving.svg"
+          },
+          {
+            "if": "shop=seafood",
+            "then": "circle:white;./assets/layers/shops/temaki-fish_cleaning.svg"
+          },
+          {
+            "if": "shop=second_hand",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=sewing",
+            "then": "circle:white;./assets/layers/shops/temaki-needle_and_spool.svg"
+          },
+          {
+            "if": "shop=shoe_repair",
+            "then": "circle:white;./assets/layers/shops/temaki-hammer_shoe.svg"
+          },
+          {
+            "if": "shop=shoes",
+            "then": "circle:white;./assets/layers/shops/maki-shoe.svg"
+          },
+          {
+            "if": "shop=spices",
+            "then": "circle:white;./assets/layers/shops/temaki-spice_bottle.svg"
+          },
+          {
+            "if": "shop=sports",
+            "then": "circle:white;./assets/layers/shops/fas-futbol.svg"
+          },
+          {
+            "if": "shop=stationery",
+            "then": "circle:white;./assets/layers/shops/fas-paperclip.svg"
+          },
+          {
+            "if": "shop=storage_rental",
+            "then": "circle:white;./assets/layers/shops/temaki-storage_rental.svg"
+          },
+          {
+            "if": "shop=supermarket",
+            "then": "circle:white;./assets/layers/shops/maki-grocery.svg"
+          },
+          {
+            "if": "shop=tailor",
+            "then": "circle:white;./assets/layers/shops/temaki-needle_and_spool.svg"
+          },
+          {
+            "if": "shop=tattoo",
+            "then": "circle:white;./assets/layers/shops/temaki-tattoo_machine.svg"
+          },
+          {
+            "if": "shop=tea",
+            "then": "circle:white;./assets/layers/shops/maki-teahouse.svg"
+          },
+          {
+            "if": "shop=telecommunication",
+            "then": "circle:white;./assets/layers/shops/maki-telephone.svg"
+          },
+          {
+            "if": "shop=tiles",
+            "then": "circle:white;./assets/layers/shops/temaki-tiling.svg"
+          },
+          {
+            "if": "shop=tobacco",
+            "then": "circle:white;./assets/layers/shops/temaki-pipe.svg"
+          },
+          {
+            "if": "shop=tool_hire",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=toys",
+            "then": "circle:white;./assets/layers/shops/fas-rocket.svg"
+          },
+          {
+            "if": "shop=trade",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=travel_agency",
+            "then": "circle:white;./assets/layers/shops/fas-suitcase.svg"
+          },
+          {
+            "if": "shop=trophy",
+            "then": "circle:white;./assets/layers/shops/fas-trophy.svg"
+          },
+          {
+            "if": "shop=tyres",
+            "then": "circle:white;./assets/layers/shops/temaki-tire.svg"
+          },
+          {
+            "if": "shop=vacuum_cleaner",
+            "then": "circle:white;./assets/layers/shops/temaki-vacuum.svg"
+          },
+          {
+            "if": "shop=variety_store",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=video",
+            "then": "circle:white;./assets/layers/shops/temaki-movie_rental.svg"
+          },
+          {
+            "if": "shop=video_games",
+            "then": "circle:white;./assets/layers/shops/maki-gaming.svg"
+          },
+          {
+            "if": "shop=watches",
+            "then": "circle:white;./assets/layers/shops/maki-watch.svg"
+          },
+          {
+            "if": "shop=water",
+            "then": "circle:white;./assets/layers/shops/temaki-water_bottle.svg"
+          },
+          {
+            "if": "shop=weapons",
+            "then": "circle:white;./assets/layers/shops/temaki-dagger.svg"
+          },
+          {
+            "if": "shop=wholesale",
+            "then": "circle:white;./assets/layers/shops/maki-warehouse.svg"
+          },
+          {
+            "if": "shop=wigs",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=window_blind",
+            "then": "circle:white;./assets/layers/shops/temaki-window.svg"
+          },
+          {
+            "if": "shop=wine",
+            "then": "circle:white;./assets/layers/shops/maki-alcohol-shop.svg"
+          }
+        ]
       },
       "iconBadges": [
         {
