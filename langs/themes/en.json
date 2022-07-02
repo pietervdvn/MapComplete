@@ -647,6 +647,10 @@
         "shortDescription": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
         "title": "Hydrants, Extinguishers, Fire stations, and Ambulance stations"
     },
+    "kerbs_and_crossings": {
+        "description": "A map showing kerbs and crossings.",
+        "title": "Kerbs and crossings"
+    },
     "mapcomplete-changes": {
         "description": "This maps shows all the changes made with MapComplete",
         "layers": {

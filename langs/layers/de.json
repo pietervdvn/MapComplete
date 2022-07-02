@@ -3090,22 +3090,27 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Radweg"
+                    "then": "Radweg {name}"
                 },
                 "1": {
-                    "then": "Gemeinsame Fahrspur"
-                },
-                "2": {
-                    "then": "Fahrradspur"
+                    "then": "Radweg"
                 },
                 "3": {
+                    "then": "Gemeinsame Fahrspur"
+                },
+                "5": {
+                    "then": "Fahrradspur"
+                },
+                "7": {
                     "then": "Radweg neben der Straße"
                 },
-                "4": {
+                "8": {
+                    "then": "Fahrradstraße {name}"
+                },
+                "9": {
                     "then": "Fahrradstraße"
                 }
-            },
-            "render": "Radwege"
+            }
         }
     },
     "defibrillator": {

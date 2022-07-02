@@ -208,6 +208,10 @@
                 "then": "./assets/themes/hailhydrant/logo.svg"
               },
               {
+                "if": "theme=kerbs_and_crossings",
+                "then": "./assets/layers/kerbs/KerbIcon.svg"
+              },
+              {
                 "if": "theme=mapcomplete-changes",
                 "then": "./assets/svg/logo.svg"
               },

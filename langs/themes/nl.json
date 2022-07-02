@@ -922,6 +922,71 @@
         "shortDescription": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
         "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
     },
+    "kerbs_and_crossings": {
+        "description": "Een kaart met stoepranden en oversteekplaatsen.",
+        "title": "Stoepranden en oversteekplaatsen"
+    },
+    "mapcomplete-changes": {
+        "description": "Deze kaart toont alle wijzigingen die met MapComplete werden gemaakt",
+        "layers": {
+            "0": {
+                "description": "Toont alle wijzigingen met MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themanaam bevat {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt door bijdrager {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Niet</b> gemaakt door bijdrager {search}"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "render_id": {
+                        "render": "Wijzigingset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Wijziging met <b>officieus</b> thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Wijzigingset voor {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Meer statistieken kunnen <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> gevonden worden"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Toont wijzigingen gemaakt met MapComplete",
+        "title": "Wijzigingen gemaakt met MapComplete"
+    },
     "maps": {
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
         "shortDescription": "Dit thema toont alle (toeristische) kaarten die OpenStreetMap kent",

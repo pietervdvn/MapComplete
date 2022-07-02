@@ -3075,22 +3075,37 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Fietsweg"
+                    "then": "Fietsweg {name}"
                 },
                 "1": {
-                    "then": "Fietssuggestiestrook"
+                    "then": "Fietsweg"
                 },
                 "2": {
-                    "then": "Fietsstrook"
+                    "then": "Weg met fietssugestiestrook {name}"
                 },
                 "3": {
-                    "then": "Fietsweg naast de weg"
+                    "then": "Fietssuggestiestrook"
                 },
                 "4": {
+                    "then": "Weg met fietsstrook {name}"
+                },
+                "5": {
+                    "then": "Fietsstrook"
+                },
+                "6": {
+                    "then": "Weg met fietspad naast de weg {name}"
+                },
+                "7": {
+                    "then": "Fietsweg naast de weg"
+                },
+                "8": {
+                    "then": "Fietsstraat {name}"
+                },
+                "9": {
                     "then": "Fietsstraat"
                 }
             },
-            "render": "Fietspaden"
+            "render": "Weg"
         }
     },
     "defibrillator": {
@@ -3979,6 +3994,86 @@
         },
         "title": {
             "render": "Informatiebord"
+        }
+    },
+    "kerbs": {
+        "description": "Een laag met stoepranden.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle typen stoepranden"
+                    },
+                    "1": {
+                        "question": "Hoge stoeprand (>3 cm)"
+                    },
+                    "2": {
+                        "question": "Verlaagde stoeprand (~3 cm)"
+                    },
+                    "3": {
+                        "question": "Vlakke stoeprand (~0cm)"
+                    },
+                    "4": {
+                        "question": "Geen stoeprand"
+                    },
+                    "5": {
+                        "question": "Stoeprand met onbekende hoogte"
+                    }
+                }
+            }
+        },
+        "name": "Stoepranden",
+        "presets": {
+            "0": {
+                "description": "Stoeprand in een voetpad",
+                "title": "een stoeprand"
+            }
+        },
+        "tagRenderings": {
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Hoogte van de stoeprand"
+                },
+                "question": "Hoe hoog is deze stoeprand?",
+                "render": "Stoeprandhoogte: {{kerb:height}}"
+            },
+            "kerb-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze stoeprand is hoog (>3 cm)"
+                    },
+                    "1": {
+                        "then": "Deze stoeprand is verlaagd (~3 cm)"
+                    },
+                    "2": {
+                        "then": "Deze stoeprand is vlak (~0cm)"
+                    },
+                    "3": {
+                        "then": "Er is hier geen stoeprand"
+                    },
+                    "4": {
+                        "then": "Er is een stoeprand met onbekende hoogte"
+                    }
+                },
+                "question": "Hoe hoog is deze stoeprand?"
+            }
+        },
+        "title": {
+            "render": "Stoeprand"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "centimeter",
+                        "humanSingular": "centimeter"
+                    },
+                    "1": {
+                        "human": "meter",
+                        "humanSingular": "meter"
+                    }
+                }
+            }
         }
     },
     "kindergarten_childcare": {

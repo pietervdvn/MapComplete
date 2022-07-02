@@ -3090,22 +3090,37 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Cycleway"
+                    "then": "Cycleway {name}"
                 },
                 "1": {
-                    "then": "Shared lane"
+                    "then": "Cycleway"
                 },
                 "2": {
-                    "then": "Bike lane"
+                    "then": "Road with shared lane {name}"
                 },
                 "3": {
-                    "then": "Cycleway next to the road"
+                    "then": "Shared lane"
                 },
                 "4": {
+                    "then": "Road with bike lane {name}"
+                },
+                "5": {
+                    "then": "Bike lane"
+                },
+                "6": {
+                    "then": "Road with cycleway next to the road {name}"
+                },
+                "7": {
+                    "then": "Cycleway next to the road"
+                },
+                "8": {
+                    "then": "Cyclestreet {name}"
+                },
+                "9": {
                     "then": "Cyclestreet"
                 }
             },
-            "render": "Cycleways"
+            "render": "Way"
         }
     },
     "defibrillator": {
@@ -4050,6 +4065,116 @@
         },
         "title": {
             "render": "Information board"
+        }
+    },
+    "kerbs": {
+        "description": "A layer showing kerbs.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "All types of kerbs"
+                    },
+                    "1": {
+                        "question": "Raised kerb (>3 cm)"
+                    },
+                    "2": {
+                        "question": "Lowered kerb (~3 cm)"
+                    },
+                    "3": {
+                        "question": "Flush kerb (~0cm)"
+                    },
+                    "4": {
+                        "question": "No kerb"
+                    },
+                    "5": {
+                        "question": "Kerb with unknown height"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Kerbs with or without tactile paving"
+                    },
+                    "1": {
+                        "question": "Kerb with tactile paving"
+                    },
+                    "2": {
+                        "question": "Kerb without tactile paving"
+                    },
+                    "3": {
+                        "question": "Kerb wihout information about tactile paving"
+                    }
+                }
+            }
+        },
+        "name": "Kerbs",
+        "presets": {
+            "0": {
+                "description": "Kerb in a footway",
+                "title": "a kerb"
+            }
+        },
+        "tagRenderings": {
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Height of the kerb"
+                },
+                "question": "What is the height of this kerb?",
+                "render": "Kerb height: {{kerb:height}}"
+            },
+            "kerb-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This kerb is raised (>3 cm)"
+                    },
+                    "1": {
+                        "then": "This kerb is lowered (~3 cm)"
+                    },
+                    "2": {
+                        "then": "This kerb is flush (~0cm)"
+                    },
+                    "3": {
+                        "then": "There is no kerb here"
+                    },
+                    "4": {
+                        "then": "There is a kerb of unknown height"
+                    }
+                },
+                "question": "What is the height of this kerb?"
+            },
+            "tactile-paving": {
+                "mappings": {
+                    "0": {
+                        "then": "This kerb has tactile paving."
+                    },
+                    "1": {
+                        "then": "This kerb does not have tactile paving."
+                    },
+                    "2": {
+                        "then": "This kerb has tactile paving, but it is incorrect"
+                    }
+                },
+                "question": "Is there tactile paving at this kerb?"
+            }
+        },
+        "title": {
+            "render": "Kerb"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "centimeters",
+                        "humanSingular": "centimeter"
+                    },
+                    "1": {
+                        "human": "meters",
+                        "humanSingular": "meter"
+                    }
+                }
+            }
         }
     },
     "kindergarten_childcare": {

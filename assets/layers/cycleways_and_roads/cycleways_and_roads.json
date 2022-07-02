@@ -21,6 +21,13 @@
         "highway=unclassified",
         "highway=primary",
         "highway=secondary",
+        "highway=tertiary_link",
+        "highway=primary_link",
+        "highway=secondary_link",
+        "highway=service",
+        "highway=footway",
+        "highway=pedestrian",
+        "highway=living_street",
         {
           "and": [
             "highway=path",
@@ -32,15 +39,23 @@
   },
   "title": {
     "render": {
-      "en": "Cycleways",
-      "nl": "Fietspaden",
-      "de": "Radwege",
-      "ru": "Велосипедные дорожки",
-      "fr": "Pistes cyclables",
-      "ca": "Vies ciclistes",
-      "es": "Ciclovías"
+      "en": "Way",
+      "nl": "Weg"
     },
     "mappings": [
+      {
+        "if": {
+          "and": [
+            "highway=cycleway",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Fietsweg {name}",
+          "en": "Cycleway {name}",
+          "de": "Radweg {name}"
+        }
+      },
       {
         "if": {
           "or": [
@@ -56,7 +71,19 @@
           "fr": "Piste cyclable",
           "ca": "Via ciclista",
           "da": "Cykelsti",
-          "es": "Carril bici"
+          "es": "Carril compartido"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "cycleway=shared_lane",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Weg met fietssugestiestrook {name}",
+          "en": "Road with shared lane {name}"
         }
       },
       {
@@ -67,7 +94,19 @@
           "de": "Gemeinsame Fahrspur",
           "fr": "Voie partagée",
           "ca": "Carril compartit",
-          "es": "Carril compartido"
+          "es": "Vía ciclista al lado de la carretera"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "cycleway=lane",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Weg met fietsstrook {name}",
+          "en": "Road with bike lane {name}"
         }
       },
       {
@@ -82,6 +121,18 @@
         }
       },
       {
+        "if": {
+          "and": [
+            "cycleway=track",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Weg met fietspad naast de weg {name}",
+          "en": "Road with cycleway next to the road {name}"
+        }
+      },
+      {
         "if": "cycleway=track",
         "then": {
           "en": "Cycleway next to the road",
@@ -90,6 +141,19 @@
           "fr": "Piste cyclable séparée de la route",
           "da": "Cykelsti ved siden af vejen",
           "es": "Vía ciclista al lado de la carretera"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "cyclestreet=yes",
+            "name~*"
+          ]
+        },
+        "then": {
+          "nl": "Fietsstraat {name}",
+          "en": "Cyclestreet {name}",
+          "de": "Fahrradstraße {name}"
         }
       },
       {
@@ -103,6 +167,10 @@
           "da": "Cykelgade",
           "es": "Ciclocalle"
         }
+      },
+      {
+        "if": "name~*",
+        "then": "{name}"
       }
     ]
   },
@@ -117,7 +185,8 @@
       "condition": {
         "and": [
           "highway!=cycleway",
-          "highway!=path"
+          "highway!=path",
+          "highway!=footway"
         ]
       },
       "mappings": [
@@ -246,7 +315,8 @@
       "condition": {
         "and": [
           "highway!=cycleway",
-          "highway!=path"
+          "highway!=path",
+          "highway!=footway"
         ]
       },
       "mappings": [
@@ -304,7 +374,8 @@
       "condition": {
         "and": [
           "highway!=cycleway",
-          "highway!=path"
+          "highway!=path",
+          "highway!=footway"
         ]
       },
       "mappings": [
@@ -828,7 +899,8 @@
       "condition": {
         "and": [
           "highway!=cycleway",
-          "highway!=path"
+          "highway!=path",
+          "highway!=footway"
         ]
       },
       "render": {

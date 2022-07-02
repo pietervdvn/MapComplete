@@ -1,0 +1,305 @@
+{
+  "id": "kerbs",
+  "name": {
+    "en": "Kerbs",
+    "nl": "Stoepranden"
+  },
+  "description": {
+    "en": "A layer showing kerbs.",
+    "nl": "Een laag met stoepranden."
+  },
+  "source": {
+    "osmTags": "barrier=kerb"
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Kerb",
+      "nl": "Stoeprand"
+    }
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point"
+      ],
+      "icon": {
+        "render": "./assets/layers/kerbs/KerbIcon.svg",
+        "mappings": [
+          {
+            "if": "kerb=raised",
+            "then": "./assets/layers/kerbs/raised.svg"
+          },
+          {
+            "if": "kerb=lowered",
+            "then": "./assets/layers/kerbs/lowered.svg"
+          },
+          {
+            "if": "kerb=flush",
+            "then": "./assets/layers/kerbs/flush.svg"
+          },
+          {
+            "if": "kerb=no",
+            "then": "./assets/layers/kerbs/no.svg"
+          }
+        ]
+      }
+    },
+    {
+      "color": "#f44e42",
+      "fill": "no",
+      "width": "8"
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "kerb-type",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "nl": "Hoe hoog is deze stoeprand?"
+      },
+      "mappings": [
+        {
+          "if": "kerb=raised",
+          "then": {
+            "en": "This kerb is raised (>3 cm)",
+            "nl": "Deze stoeprand is hoog (>3 cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/raised.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=lowered",
+          "then": {
+            "en": "This kerb is lowered (~3 cm)",
+            "nl": "Deze stoeprand is verlaagd (~3 cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/lowered.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=flush",
+          "then": {
+            "en": "This kerb is flush (~0cm)",
+            "nl": "Deze stoeprand is vlak (~0cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/flush.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=no",
+          "then": {
+            "en": "There is no kerb here",
+            "nl": "Er is hier geen stoeprand"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/kerbs/no.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=yes",
+          "then": {
+            "en": "There is a kerb of unknown height",
+            "nl": "Er is een stoeprand met onbekende hoogte"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": "_geometry:type=Point"
+    },
+    {
+      "id": "tactile-paving",
+      "question": {
+        "en": "Is there tactile paving at this kerb?"
+      },
+      "mappings": [
+        {
+          "if": "tactile_paving=yes",
+          "then": {
+            "en": "This kerb has tactile paving."
+          }
+        },
+        {
+          "if": "tactile_paving=no",
+          "then": {
+            "en": "This kerb does not have tactile paving."
+          }
+        },
+        {
+          "if": "tactile_paving=incorrect",
+          "then": {
+            "en": "This kerb has tactile paving, but it is incorrect"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "condition": "_geometry:type=Point"
+    },
+    {
+      "id": "kerb-height",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "nl": "Hoe hoog is deze stoeprand?"
+      },
+      "render": {
+        "en": "Kerb height: {{kerb:height}}",
+        "nl": "Stoeprandhoogte: {{kerb:height}}"
+      },
+      "freeform": {
+        "key": "kerb:height",
+        "placeholder": {
+          "en": "Height of the kerb",
+          "nl": "Hoogte van de stoeprand"
+        },
+        "type": "pnat"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a kerb",
+        "nl": "een stoeprand"
+      },
+      "tags": [
+        "barrier=kerb"
+      ],
+      "description": {
+        "en": "Kerb in a footway",
+        "nl": "Stoeprand in een voetpad"
+      },
+      "preciseInput": {
+        "maxSnapDistance": 10,
+        "preferredBackground": "photo",
+        "snapToLayer": [
+          "cycleways_and_roads",
+          "kerbs"
+        ]
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "kerb-type",
+      "options": [
+        {
+          "question": {
+            "en": "All types of kerbs",
+            "nl": "Alle typen stoepranden"
+          }
+        },
+        {
+          "osmTags": "kerb=raised",
+          "question": {
+            "en": "Raised kerb (>3 cm)",
+            "nl": "Hoge stoeprand (>3 cm)"
+          }
+        },
+        {
+          "osmTags": "kerb=lowered",
+          "question": {
+            "en": "Lowered kerb (~3 cm)",
+            "nl": "Verlaagde stoeprand (~3 cm)"
+          }
+        },
+        {
+          "osmTags": "kerb=flush",
+          "question": {
+            "en": "Flush kerb (~0cm)",
+            "nl": "Vlakke stoeprand (~0cm)"
+          }
+        },
+        {
+          "osmTags": "kerb=no",
+          "question": {
+            "en": "No kerb",
+            "nl": "Geen stoeprand"
+          }
+        },
+        {
+          "osmTags": "kerb=",
+          "question": {
+            "en": "Kerb with unknown height",
+            "nl": "Stoeprand met onbekende hoogte"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile-paving",
+      "options": [
+        {
+          "question": {
+            "en": "Kerbs with or without tactile paving"
+          }
+        },
+        {
+          "osmTags": "tactile_paving=yes",
+          "question": {
+            "en": "Kerb with tactile paving"
+          }
+        },
+        {
+          "osmTags": "tactile_paving=no",
+          "question": {
+            "en": "Kerb without tactile paving"
+          }
+        },
+        {
+          "osmTags": "tactile_paving=",
+          "question": {
+            "en": "Kerb wihout information about tactile paving"
+          }
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "centimeters"
+          ],
+          "human": {
+            "en": "centimeters",
+            "nl": "centimeter"
+          },
+          "humanSingular": {
+            "en": "centimeter",
+            "nl": "centimeter"
+          },
+          "default": true
+        },
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter",
+            "meters"
+          ],
+          "human": {
+            "en": "meters",
+            "nl": "meter"
+          },
+          "humanSingular": {
+            "en": "meter",
+            "nl": "meter"
+          }
+        }
+      ],
+      "appliesToKey": [
+        "kerb:height"
+      ]
+    }
+  ]
+}

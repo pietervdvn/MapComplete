@@ -1248,6 +1248,14 @@
     ]
   },
   {
+    "path": "triangle.svg",
+    "license": "CC0",
+    "authors": [
+      "Robin van der Linde"
+    ],
+    "sources": []
+  },
+  {
     "path": "twitter.svg",
     "license": "Logo - all rights reserved",
     "authors": [

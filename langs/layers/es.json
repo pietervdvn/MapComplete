@@ -1952,23 +1952,22 @@
         },
         "title": {
             "mappings": {
-                "0": {
-                    "then": "Carril bici"
-                },
                 "1": {
                     "then": "Carril compartido"
-                },
-                "2": {
-                    "then": "Carril bici"
                 },
                 "3": {
                     "then": "Vía ciclista al lado de la carretera"
                 },
-                "4": {
+                "5": {
+                    "then": "Carril bici"
+                },
+                "7": {
+                    "then": "Vía ciclista al lado de la carretera"
+                },
+                "9": {
                     "then": "Ciclocalle"
                 }
-            },
-            "render": "Ciclovías"
+            }
         }
     },
     "defibrillator": {

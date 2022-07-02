@@ -1,0 +1,52 @@
+[
+  {
+    "path": "KerbIcon.svg",
+    "license": "CC0",
+    "authors": [
+      "Treeem"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:KerbIcon.svg"
+    ]
+  },
+  {
+    "path": "flush.svg",
+    "license": "CC0",
+    "authors": [
+      "Jeroen Hoek"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Icon_kerb%3Dflush.svg"
+    ]
+  },
+  {
+    "path": "lowered.svg",
+    "license": "CC0",
+    "authors": [
+      "Jeroen Hoek"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Icon_kerb%3Dlowered.svg"
+    ]
+  },
+  {
+    "path": "no.svg",
+    "license": "CC0",
+    "authors": [
+      "Jeroen Hoek"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Icon_kerb%3Dno.svg"
+    ]
+  },
+  {
+    "path": "raised.svg",
+    "license": "CC0",
+    "authors": [
+      "Jeroen Hoek"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Icon_kerb%3Draised.svg"
+    ]
+  }
+]

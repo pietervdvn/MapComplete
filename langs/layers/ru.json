@@ -842,11 +842,10 @@
     "cycleways_and_roads": {
         "title": {
             "mappings": {
-                "0": {
+                "1": {
                     "then": "Велосипедная дорожка"
                 }
-            },
-            "render": "Велосипедные дорожки"
+            }
         }
     },
     "defibrillator": {
