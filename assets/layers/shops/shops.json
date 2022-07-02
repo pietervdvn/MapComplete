@@ -100,265 +100,4228 @@
       "id": "shops-name"
     },
     {
-      "render": {
-        "en": "This shop sells {shop}",
-        "fr": "Ce magasin vends {shop}",
-        "ja": "こちらのお店では{shop}を販売しております",
-        "de": "Dieses Geschäft verkauft {shop}",
-        "eo": "Ĉi tiu butiko vendas {shop}",
-        "nl": "Deze winkel is van type \"{shop}\"",
-        "es": "Esta tienda vende {shop}"
-      },
       "question": {
-        "en": "What does this shop sell?",
-        "fr": "Que vends ce magasin ?",
-        "ja": "このお店では何を売っていますか?",
-        "ru": "Что продаётся в этом магазине?",
-        "de": "Was wird in diesem Geschäft verkauft?",
-        "eo": "Kion vendas ĉi tiu butiko?",
-        "nl": "Wat verkoopt deze winkel?",
-        "es": "¿Qué vende esta tienda?"
+        "en": "What kind of shop is this?",
+        "nl": "Wat voor soort winkel is dit?"
       },
-      "freeform": {
-        "key": "shop"
-      },
+      "id": "shops-type-from-id",
       "mappings": [
         {
-          "if": {
-            "and": [
-              "shop=convenience"
-            ]
-          },
+          "if": "shop=agrarian",
           "then": {
-            "en": "Convenience store",
-            "fr": "Épicerie/superette",
-            "ja": "コンビニエンスストア",
-            "de": "Lebensmittelladen",
-            "nl": "Gemakswinkel"
+            "en": "Farm Supply Shop",
+            "ca": "Agrobotiga",
+            "da": "Grovvareforretning",
+            "de": "Agrarmarkt",
+            "eo": "Terkultur-investaĵa vendejo",
+            "es": "Tienda de suministros agrícolas",
+            "fi": "Maataloustarvikeliike",
+            "fr": "Magasin d'agriculture",
+            "gl": "Tenda de subministracións agrícolas",
+            "hu": "Gazdabolt",
+            "it": "Negozio di attrezzatura agricola",
+            "ja": "農業用品店",
+            "nl": "Landbouwbenodigdhedenwinkel",
+            "pl": "Sklep rolniczy",
+            "pt": "Loja de produtos agrícolas",
+            "ru": "Сельскохозяйственный магазин",
+            "sv": "Jordbruksaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-tractor.svg",
+            "class": "medium"
           }
         },
         {
-          "if": {
-            "and": [
-              "shop=supermarket"
-            ]
-          },
+          "if": "shop=alcohol",
           "then": {
-            "en": "Supermarket",
-            "fr": "Supermarché",
-            "ru": "Супермаркет",
-            "ja": "スーパーマーケット",
-            "nl": "Supermarkt",
-            "de": "Supermarkt",
-            "ca": "Supermercat",
-            "es": "Supermercado"
+            "en": "Liquor Store",
+            "ca": "Botiga de licors",
+            "da": "Vinforhandler",
+            "de": "Spirituosenladen",
+            "eo": "Alkohola vendejo",
+            "es": "Licorería",
+            "fi": "Alkoholimyymälä",
+            "fr": "Magasin de vente d'alcool",
+            "gl": "Licoraría",
+            "hu": "Alkoholüzlet",
+            "id": "Toko Minuman",
+            "it": "Negozio di liquori",
+            "ja": "酒店",
+            "nl": "Slijterij",
+            "pl": "Sklep monopolowy",
+            "pt": "Loja de bebidas alcoólicas",
+            "ru": "Алкогольный магазин",
+            "sl": "Trgovina z alkoholnimi pijačami",
+            "sv": "Vin-och-spritaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-wine-bottle.svg",
+            "class": "medium"
           }
         },
         {
-          "if": {
-            "and": [
-              "shop=clothes"
-            ]
-          },
+          "if": "shop=anime",
           "then": {
-            "en": "Clothing store",
-            "fr": "Magasin de vêtements",
-            "ru": "Магазин одежды",
-            "ja": "衣料品店",
-            "de": "Bekleidungsgeschäft",
-            "nl": "Kledingwinkel",
-            "es": "Tienda de ropa"
+            "en": "Anime / Manga Shop",
+            "ca": "Botiga de manga / anime",
+            "de": "Anime- / Manga-Geschäft",
+            "eo": "Anime-/manga-vendejo",
+            "es": "Tienda de anime / manga",
+            "fi": "Anime-/mangaliike",
+            "fr": "Boutique de manga et anime",
+            "gl": "Tenda de anime / manga",
+            "hu": "Anime képregényekkel kapcsolatos bolt",
+            "it": "Negozio di Anime / Manga",
+            "ja": "アニメショップ",
+            "nl": "Anime-/Mangawinkel",
+            "pl": "Sklep z mangą i anime",
+            "pt": "Loja de animé",
+            "ru": "Магазин аниме / манги",
+            "sv": "Anime/Manga-affär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-dragon.svg",
+            "class": "medium"
           }
         },
         {
-          "if": {
-            "and": [
-              "shop=hairdresser"
-            ]
-          },
+          "if": "shop=antiques",
           "then": {
-            "en": "Hairdresser",
-            "fr": "Coiffeur",
-            "ru": "Парикмахерская",
-            "ja": "理容師",
-            "nl": "Kapper",
-            "de": "Friseur",
-            "ca": "Perruqueria",
-            "es": "Peluquería"
+            "en": "Antiques Shop",
+            "ca": "Botiga d'antiguitats",
+            "da": "Antikvitetsforretning",
+            "de": "Antiquitätenhändler",
+            "eo": "Antikvaĵa vendejo",
+            "es": "Tienda de antigüedades",
+            "fi": "Antiikkiliike",
+            "fr": "Antiquaire",
+            "gl": "Tenda de antigüidades",
+            "hu": "Régiségkereskedés",
+            "id": "Toko Barang Antik",
+            "it": "Antiquario",
+            "ja": "古美術品店",
+            "nl": "Antiquair",
+            "pl": "Antykwariat",
+            "pt": "Loja de antiguidades",
+            "ru": "Магазин антиквариата",
+            "sl": "Starinarnica",
+            "sv": "Antikaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-furniture.svg",
+            "class": "medium"
           }
         },
         {
-          "if": {
-            "and": [
-              "shop=bakery"
-            ]
+          "if": "shop=appliance",
+          "then": {
+            "en": "Appliance Store",
+            "da": "Hvidevareforretning",
+            "de": "Haushaltselektrogerätegeschäft",
+            "eo": "Elektronikaĵega vendejo",
+            "es": "Tienda de electrodomésticos",
+            "fi": "Kodinkonemyymälä",
+            "fr": "Magasin d'électroménager",
+            "gl": "Tenda de electrodomésticos",
+            "hu": "Háztartásigép-bolt",
+            "it": "Negozio di elettrodomestici",
+            "ja": "白物家電販売店（大型製品）",
+            "nl": "Huishoudelijkeapparatuurwinkel",
+            "pl": "Sklep z AGD",
+            "pt": "Loja de eletrodomésticos \"brancos\"",
+            "ru": "Магазин бытовой техники",
+            "sl": "Splošna tehnična trgovina",
+            "sv": "Vitvaror"
           },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-laundry.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=art",
+          "then": {
+            "en": "Art Store",
+            "ca": "Botiga d'art",
+            "da": "Kunstbutik",
+            "de": "Kunsthandlung",
+            "eo": "Artaĵa vendejo",
+            "es": "Tienda de arte",
+            "fi": "Taideliike",
+            "fr": "Marchand d'art",
+            "gl": "Tenda de arte",
+            "hu": "Művészeti bolt",
+            "it": "Negozio di opere d'arte",
+            "ja": "美術品販売店",
+            "nl": "Kunstwinkel",
+            "pl": "Sklep z dziełami sztuki",
+            "pt": "Loja de artigos de arte",
+            "ru": "Магазин произведений искусства",
+            "sl": "Trgovina z umetninami",
+            "sv": "Konstaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=baby_goods",
+          "then": {
+            "en": "Baby Goods Store",
+            "ca": "Botiga per a nadons",
+            "da": "Babyudstyrsbutik",
+            "de": "Babysachengeschäft",
+            "eo": "Bebaĵa vendejo",
+            "es": "Tienda de productos para bebé",
+            "fi": "Vauvatarvikeliike",
+            "fr": "Magasin de produits pour bébés",
+            "gl": "Tenda de produtos para meniños",
+            "hu": "Bababolt",
+            "id": "Toko Perlengkapan Bayi",
+            "it": "Negozio di prodotti per l'infanzia",
+            "ja": "赤ちゃん用品店",
+            "nl": "Babyartikelenwinkel",
+            "pl": "Sklep z artykułami dla dzieci i niemowląt",
+            "pt": "Loja de acessórios para bebés",
+            "ru": "Магазин детских товаров",
+            "sl": "Trgovina za otroke",
+            "sv": "Babyprodukter"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-baby-carriage.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=bag",
+          "then": {
+            "en": "Bag/Luggage Store",
+            "ca": "Botiga d'equipatges",
+            "da": "Taske/Kuffertbutik",
+            "de": "Taschenladen",
+            "eo": "Saka/valiza vendejo",
+            "es": "Tienda de bolsos / equipaje",
+            "fi": "Matkalaukkumyymälä",
+            "fr": "Bagagerie",
+            "gl": "Tenda de maletas",
+            "hu": "Táska- és bőröndbolt",
+            "id": "Toko Tas/Koper",
+            "it": "Negozio di borse e valigie",
+            "ja": "バッグ/カバン店",
+            "nl": "Zak-/Reiskofferwinkel",
+            "pl": "Sklep z torebkami/walizkami",
+            "pt": "Loja de malas / bagagem",
+            "ru": "Магазин сумок и саквояжа",
+            "sl": "Trgovina za prtljago",
+            "sv": "Väskaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-suitcase-rolling.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=bakery",
           "then": {
             "en": "Bakery",
-            "fr": "Boulangerie",
-            "ja": "ベーカリー",
-            "nl": "Bakkerij",
-            "de": "Bäckerei",
-            "eo": "Bakejo",
             "ca": "Fleca",
-            "es": "Panadería"
+            "da": "Bager",
+            "de": "Bäckerei",
+            "eo": "Panejo",
+            "es": "Panadería",
+            "fi": "Leipomo",
+            "fr": "Boulangerie",
+            "gl": "Panadaría",
+            "hu": "Pékség",
+            "id": "Toko Roti",
+            "it": "Panificio",
+            "ja": "パン屋",
+            "nl": "Bakkerij",
+            "pl": "Piekarnia",
+            "pt": "Padaria",
+            "ru": "Булочная",
+            "sl": "Pekarna",
+            "sv": "Bageri"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-bakery.svg",
+            "class": "medium"
           }
         },
         {
-          "if": {
-            "and": [
-              "shop=car_repair"
-            ]
-          },
+          "if": "shop=bathroom_furnishing",
           "then": {
-            "en": "Car repair (garage)",
-            "fr": "Garage de réparation automobile",
-            "ja": "自動車修理(ガレージ)",
+            "en": "Bathroom Furnishing Store",
+            "ca": "Botiga de mobles de bany",
+            "da": "Badeværelseindretningsbutik",
+            "de": "Badeinrichtungsgeschäft",
+            "eo": "Lavĉambr-akcesoraĵa vendejo",
+            "es": "Tienda de muebles de baño",
+            "fi": "Kylpyhuoneliike",
+            "fr": "Fournitures pour salles de bain",
+            "gl": "Tenda de mobles de baño",
+            "hu": "Fürdőszobafelszerelés-bolt",
+            "id": "Toko Perlengkapan Kamar Mandi",
+            "it": "Negozio di prodotti per il bagno",
+            "ja": "浴室用品店",
+            "nl": "Badkamermeubelwinkel",
+            "pl": "Sklep z wyposażeniem łazienek",
+            "pt": "Loja de assessórios para casas de banho",
+            "ru": "Магазин продающий мебель для ванных комнат",
+            "sl": "Trgovina s kopalniško opremo",
+            "sv": "Badrumsinredning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-bath.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=beauty",
+          "then": {
+            "en": "Beauty Shop",
+            "ca": "Botiga de cosmètics",
+            "da": "Skønhedsforhandler",
+            "de": "Schönheitssalon",
+            "eo": "Salono de beligado",
+            "es": "Salón de belleza",
+            "fi": "Kauneushoitola",
+            "fr": "Salon de beauté",
+            "gl": "Salón de beleza",
+            "hu": "Szépségszalon",
+            "id": "Salon Kecantikan",
+            "it": "Salone di bellezza",
+            "ja": "美容サービス",
+            "nl": "Schoonheidssalon",
+            "pl": "Salon urody",
+            "pt": "Centro de estética",
+            "ru": "Салон красоты",
+            "sl": "Lepotilni salon",
+            "sv": "Skönhetssalong"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-lipstick.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=bed",
+          "then": {
+            "en": "Bedding/Mattress Store",
+            "ca": "Botiga de matalassos",
+            "da": "Sengetøj / Madras forhandler",
+            "de": "Betten/Matratzengeschäft",
+            "eo": "Lita/matraca vendejo",
+            "es": "Tienda de ropa de cama / Colchonería",
+            "fi": "Vuodetarvikeliike",
+            "fr": "Magasin de literie",
+            "gl": "Tenda de colchóns/roupa de cama",
+            "hu": "Ágy- és matracbolt",
+            "id": "Toko Selimut/Matras",
+            "it": "Negozio di letti/materassi",
+            "ja": "寝具店",
+            "nl": "Bed-/Matrassenwinkel",
+            "pl": "Sklep z łóżkami/materacami",
+            "pt": "Loja de camas / colchões",
+            "ru": "Магазин матрасов и постельных принадлежностей",
+            "sl": "Trgovina s posteljnino in žimnicami",
+            "sv": "Sängaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-lodging.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=beverages",
+          "then": {
+            "en": "Beverage Store",
+            "ca": "Botiga de begudes",
+            "da": "Vinforhandler",
+            "de": "Getränkehandel",
+            "eo": "Trinkaĵa vendejo",
+            "es": "Tienda de bebidas",
+            "fi": "Viinakauppa",
+            "fr": "Magasin de boissons",
+            "gl": "Tenda de bebidas",
+            "hu": "Italbolt",
+            "id": "Toko Minuman",
+            "it": "Negozio di bevande",
+            "ja": "飲料店",
+            "nl": "Drankenwinkel",
+            "pl": "Sklep z napojami",
+            "pt": "Loja de bebidas",
+            "ru": "Магазин по продаже алкогольных и безалкогольных напитков",
+            "sl": "Trgovina s pijačami",
+            "sv": "Dryckaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-bottles.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=bicycle",
+          "then": {
+            "en": "Bicycle Shop",
+            "ca": "Botiga de bicicletes",
+            "da": "Cykelbutik",
+            "de": "Fahrradladen",
+            "eo": "Bicikla vendejo",
+            "es": "Tienda de bicicletas",
+            "fi": "Pyöräliike",
+            "fr": "Magasin de vélos",
+            "gl": "Tenda de bicicletas",
+            "hu": "Kerékpárbolt",
+            "id": "Toko Sepeda",
+            "it": "Negozio di biciclette",
+            "ja": "自転車店",
+            "nl": "Fietswinkel",
+            "pl": "Sklep rowerowy",
+            "pt": "Loja de bicicletas",
+            "ru": "Веломагазин",
+            "sl": "Kolesarska trgovina",
+            "sv": "Cykelaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-bicycle.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=boat",
+          "then": {
+            "en": "Boat Store",
+            "ca": "Botiga de nàutica",
+            "da": "Bådforhandler",
+            "de": "Bootsgeschäft",
+            "eo": "Boat‑vendejo",
+            "es": "Tienda de barcos",
+            "fi": "Venekauppa",
+            "fr": "Magasin de bateaux",
+            "gl": "Tenda de embarcacións",
+            "hu": "Hajósbolt",
+            "it": "Negozio di barche",
+            "ja": "ボート店",
+            "nl": "Bootwinkel",
+            "pl": "Sklep żeglarski",
+            "pt": "Loja de barcos",
+            "ru": "Магазин лодок",
+            "sv": "Båtaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-boat.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=bookmaker",
+          "then": {
+            "en": "Bookmaker",
+            "ca": "Cusidor de llibres",
+            "da": "Bookmaker",
+            "de": "Wettbüro",
+            "eo": "Vetperistejo",
+            "es": "Corredor de apuestas",
+            "fi": "Kirjapaino",
+            "fr": "Bookmaker",
+            "gl": "Corredor de apostas",
+            "hu": "Fogadóiroda",
+            "id": "Juru Taruh",
+            "it": "Agenzia di scommesse",
+            "ja": "公営競技投票券売り場",
+            "nl": "Bookmaker (gokkantoor)",
+            "pl": "Zakład bukmacherski",
+            "pt": "Casa de apostas",
+            "ru": "Букмекерская контора",
+            "sl": "Stavnica",
+            "sv": "Vadslagning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-money_hand.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=books",
+          "then": {
+            "en": "Book Store",
+            "ca": "Llibreria",
+            "da": "Boghandler",
+            "de": "Buchladen",
+            "eo": "Libra vendejo",
+            "es": "Librería (venta de libros)",
+            "fi": "Kirjakauppa",
+            "fr": "Librairie",
+            "gl": "Libraría",
+            "hu": "Könyvesbolt",
+            "id": "Toko Buku",
+            "it": "Libreria",
+            "ja": "本屋",
+            "nl": "Boekwinkel",
+            "pl": "Księgarnia",
+            "pt": "Livraria",
+            "ru": "Книжный магазин",
+            "sl": "Knjigarna",
+            "sv": "Bokhandel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-book.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=brewing_supplies",
+          "then": {
+            "en": "Brewing Supply Store",
+            "da": "Bryggeudstyrsbutik",
+            "de": "Brauzubehörgeschäft",
+            "eo": "Bier-/vin-farendaĵa vendejo",
+            "es": "Tienda de suministros de cerveza",
+            "fr": "Magasin de matériel de brasserie",
+            "gl": "Tenda de cervexaría artesanal",
+            "hu": "Borászati, sör- és párlafőzési felszereléseket árusító üzlet",
+            "it": "Negozio di forniture per la produzione di birra",
+            "ja": "醸造用品店",
+            "nl": "Winkel voor brouwbenodigdheden",
+            "pl": "Sklep dla piwowarów domowych",
+            "pt": "Loja de material de fermentação",
+            "sv": "Affär för hembryggningstillbehör"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-storage_fermenter.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=butcher",
+          "then": {
+            "en": "Butcher",
+            "ca": "Carnisseria",
+            "da": "Slagter",
+            "de": "Metzgerei",
+            "eo": "Vianda vendejo",
+            "es": "Carnicería",
+            "fi": "Lihakauppa",
+            "fr": "Boucher",
+            "gl": "Carnizaría",
+            "hu": "Hentes",
+            "id": "Penjagalan",
+            "it": "Macellaio",
+            "ja": "精肉店",
+            "nl": "Slagerij",
+            "pl": "Sklep mięsny",
+            "pt": "Talho",
+            "ru": "Мясной",
+            "sl": "Mesar",
+            "sv": "Slaktare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-cleaver.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=camera",
+          "then": {
+            "en": "Camera Equipment Store",
+            "da": "Fotoforhandler",
+            "de": "Fotofachgeschäft",
+            "eo": "Vendejo kun fotiloj kaj lensoj",
+            "es": "Tienda de equipos de fotografía",
+            "fi": "Kameraliike",
+            "fr": "Boutique de matériel photographique",
+            "gl": "Tenda de fotografía",
+            "hu": "Fényképezőgép-üzlet",
+            "it": "Negozio di materiale fotografico",
+            "ja": "カメラ店",
+            "nl": "Winkel voor camerabenodigdheden",
+            "pl": "Sklep z kamerami i aparatami",
+            "pt": "Loja de equipamento fotográfico",
+            "sv": "Affär för kameratillbehör"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-camera-retro.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=candles",
+          "then": {
+            "en": "Candle Shop",
+            "ca": "Botiga d'espelmes",
+            "da": "Stearinlysforhandler",
+            "de": "Kerzengeschäft",
+            "eo": "Kandela vendejo",
+            "es": "Tienda de velas",
+            "fi": "Kynttiläkauppa",
+            "fr": "Magasin de bougies",
+            "gl": "Tenda de velas",
+            "hu": "Gyertyabolt",
+            "id": "Toko Lilin",
+            "it": "Negozio di candele",
+            "ja": "キャンドル専門店",
+            "nl": "Kaarsenwinkel",
+            "pl": "Sklep ze świecami",
+            "pt": "Loja de velas",
+            "ru": "Свечной магазин",
+            "sl": "Svečarstvo",
+            "sv": "Ljusaffär"
+          }
+        },
+        {
+          "if": "shop=cannabis",
+          "then": {
+            "en": "Cannabis Shop",
+            "ca": "Botiga cannàbica",
+            "de": "Cannabisgeschäft",
+            "eo": "Mariĥuana vendejo",
+            "es": "Tienda de cannabis",
+            "fi": "Kannabiskauppa",
+            "fr": "Magasin de canabis",
+            "gl": "Tenda de cannabis",
+            "hu": "Marihuánabolt",
+            "it": "Negozio di cannabis",
+            "ja": "Cannabis Shop(illegal in Japan)",
+            "nl": "Cannabiswinkel",
+            "pl": "Sklep z produktami z konopi",
+            "pt": "Loja de canábis",
+            "sv": "Cannabisaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-cannabis.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=car",
+          "then": {
+            "en": "Car Dealership",
+            "ca": "Concessionari de cotxes",
+            "da": "Bilforhandler",
+            "de": "Autohändler",
+            "eo": "Aŭtomobila vendejo",
+            "es": "Concesionario de automóviles",
+            "fi": "Autokauppa",
+            "fr": "Concessionnaire automobile",
+            "gl": "Concesionario de automóbiles",
+            "hu": "Autókereskedés",
+            "id": "Dealer Mobil",
+            "it": "Concessionario",
+            "ja": "カーディーラー",
+            "nl": "Autoshowroom",
+            "pl": "Sprzedaż samochodów",
+            "pt": "Loja de automóveis",
+            "ru": "Автодилер",
+            "sl": "Avtomobilski salon",
+            "sv": "Bilhandlare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-car.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=car_parts",
+          "then": {
+            "en": "Car Parts Store",
+            "ca": "Botiga de recanvis de cotxe",
+            "da": "Bilreservedelsforhandler",
+            "de": "Autoteilehandel",
+            "eo": "Aŭtomobil-parta vendejo",
+            "es": "Tienda de componentes de automóvil",
+            "fi": "Varaosamyymälä",
+            "fr": "Magasin de pièces automobiles",
+            "gl": "Tenda de recambios de automóbiles",
+            "hu": "Autóalkatrész-üzlet",
+            "id": "Toko Peralatan Mobil",
+            "it": "Negozio di autoricambi",
+            "ja": "カー用品店",
+            "nl": "Auto-onderdelenwinkel",
+            "pl": "Sklep z częściami do samochodów",
+            "pt": "Loja de peças para automóveis",
+            "ru": "Автозапчасти",
+            "sl": "Avtomobilski deli",
+            "sv": "Biltillbehör"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-car-battery.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=car_repair",
+          "then": {
+            "en": "Car Repair Shop",
+            "ca": "Taller d'automòbils",
+            "da": "Bilværksted",
             "de": "Autowerkstatt",
+            "eo": "Aŭtomobil-riparejo",
+            "es": "Taller de reparación de automóviles",
             "fi": "Autokorjaamo",
+            "fr": "Garage de réparation automobile",
+            "gl": "Taller de arranxo de automóbiles",
             "hu": "Autószerelő",
             "id": "Bengkel Mobil",
             "it": "Autofficina",
-            "nb_NO": "Bilverksted",
+            "ja": "自動車修理工場",
             "nl": "Autogarage",
             "pl": "Warsztat samochodowy",
             "pt": "Oficina de automóveis",
-            "pt_BR": "Oficina Mecânica",
             "ru": "Автомастерская",
-            "sv": "Bilverkstad",
-            "es": "Taller de coches"
+            "sl": "Avtoservis",
+            "sv": "Bilverkstad"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-car-repair.svg",
+            "class": "medium"
           }
         },
         {
-          "if": {
-            "and": [
-              "shop=car"
-            ]
-          },
+          "if": "shop=caravan",
           "then": {
-            "en": "Car dealer",
-            "fr": "Concessionnaire",
-            "ru": "Автосалон",
-            "ja": "自動車ディーラー",
-            "de": "Autohändler",
-            "nl": "Autodealer",
-            "es": "Concesionario"
+            "en": "RV Dealership",
+            "de": "Wohnwagengeschäft",
+            "eo": "Vendejo de kampad-veturiloj",
+            "es": "Concesionario de autocaravanas",
+            "fi": "Asuntovaunukauppa",
+            "fr": "Concessionnaire de véhicules de tourisme",
+            "gl": "Concesionario de autocaravanas",
+            "hu": "Lakókocsi kereskedés",
+            "it": "Concessionario caravan",
+            "ja": "キャラバンカー販売店",
+            "nl": "Caravan-dealer",
+            "pl": "Sklep z kamperami i przyczepami",
+            "pt": "Vendedor de caravanas",
+            "ru": "Продажа домов на колёсах",
+            "sv": "Husvagnsförsäljare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-camper_trailer.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=carpet",
+          "then": {
+            "en": "Carpet Store",
+            "ca": "Botiga de catifes",
+            "da": "Tæppeforhandler",
+            "de": "Teppichgeschäft",
+            "eo": "Tapiŝa vendejo",
+            "es": "Tienda de alfombras",
+            "fi": "Mattokauppa",
+            "fr": "Magasin de tapis",
+            "gl": "Tenda de alfombras",
+            "hu": "Szőnyegbolt",
+            "id": "Toko Karpet",
+            "it": "Negozio di tappeti",
+            "ja": "カーペット専門店",
+            "nl": "Tapijtwinkel",
+            "pl": "Sklep z dywanami",
+            "pt": "Loja de tapetes",
+            "ru": "Магазин ковров",
+            "sl": "Trgovina s preprogrami",
+            "sv": "Mattaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-tape.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=catalogue",
+          "then": {
+            "en": "Catalog Shop",
+            "de": "Versandhandel",
+            "eo": "Ricevejo de aĉetaĵoj (per katalogo)",
+            "es": "Tienda de catálogo",
+            "fr": "Magasin à catalogue",
+            "gl": "Tenda de catálogo",
+            "hu": "Katalógus-áruház",
+            "it": "Produzione di Cataloghi",
+            "ja": "カタログショップ",
+            "nl": "Cataloguswinkel",
+            "pl": "Catalog Shop",
+            "pt": "Loja de catálogo",
+            "sv": "Katalogaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=charity",
+          "then": {
+            "en": "Charity Store",
+            "ca": "Botiga de Caritat",
+            "da": "Velgørenhedsbutik",
+            "de": "Sozialkaufhaus",
+            "eo": "Almoza vendejo",
+            "es": "Tienda de caridad",
+            "fi": "Hyväntekeväisyyskauppa",
+            "fr": "Magasin d'organisme caritatif",
+            "gl": "Tenda solidaria",
+            "hu": "Adománybolt",
+            "it": "Mercatino dell'usato",
+            "ja": "チャリティーショップ",
+            "nl": "Winkel van goed doel",
+            "pl": "Sklep charytatywny",
+            "pt": "Loja solidária",
+            "ru": "Благотворительный магазин",
+            "sv": "Second hand-butik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=cheese",
+          "then": {
+            "en": "Cheese Store",
+            "ca": "Botiga de formatge",
+            "da": "Ostehandler",
+            "de": "Käseladen",
+            "eo": "Fromaĝa vendejo",
+            "es": "Tienda de quesos",
+            "fi": "Juustopuoti",
+            "fr": "Fromager",
+            "gl": "Queixaría",
+            "hu": "Sajtbolt",
+            "id": "Toko Keju",
+            "it": "Negozio di formaggi",
+            "ja": "チーズ店",
+            "nl": "Kaaswinkel",
+            "pl": "Sklep z serami",
+            "pt": "Loja de queijos",
+            "ru": "Магазин сыров",
+            "sl": "Trgovina s siri",
+            "sv": "Ostaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-cheese.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=chemist",
+          "then": {
+            "en": "Drugstore",
+            "ca": "Farmàcia",
+            "da": "Materialist",
+            "de": "Drogerie",
+            "eo": "Kosmetikaĵa (ankaŭ purigaĵoj) vendejo",
+            "es": "Tienda de artículos de limpieza y cosméticos",
+            "fi": "Apteekki-luontaistuotemyymälä",
+            "fr": "Parapharmacie",
+            "gl": "Drogaría",
+            "hu": "Drogéria",
+            "it": "Drogheria",
+            "ja": "ドラッグストア・化粧品・薬品店（薬剤師がいない店）",
+            "nl": "Drogisterij",
+            "pl": "Drogeria",
+            "pt": "Drogaria",
+            "ru": "Бытовая химия",
+            "sl": "Lekarna",
+            "sv": "Kemiaffär (hygien,  kosmetika & städ)"
+          }
+        },
+        {
+          "if": "shop=chocolate",
+          "then": {
+            "en": "Chocolate Store",
+            "ca": "Botiga de xocolata",
+            "da": "Chokoladeforretning",
+            "de": "Schokoladenladen",
+            "eo": "Ĉokolada vendejo",
+            "es": "Chocolatería",
+            "fi": "Suklaapuoti",
+            "fr": "Chocolatier",
+            "gl": "Chocolataría",
+            "hu": "Csokoládébolt",
+            "id": "Toko Cokelat",
+            "it": "Cioccolateria",
+            "ja": "チョコレート店",
+            "nl": "Chocoladewinkel",
+            "pl": "Sklep z czekoladą",
+            "pt": "Loja de chocolates",
+            "ru": "Магазин шоколада",
+            "sl": "Trgovina s čokolado",
+            "sv": "Chokladaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-confectionery.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=clothes",
+          "then": {
+            "en": "Clothing Store",
+            "ca": "Botiga de roba",
+            "da": "Tøjbutik",
+            "de": "Bekleidungsgeschäft",
+            "eo": "Vesta vendejo",
+            "es": "Tienda de ropa",
+            "fi": "Vaatekauppa",
+            "fr": "Magasin de vêtements",
+            "gl": "Tenda de roupa",
+            "hu": "Ruházati bolt",
+            "id": "Toko Baju",
+            "it": "Negozio di abbigliamento",
+            "ja": "衣料品店",
+            "nl": "Kledingzaak",
+            "pl": "Sklep odzieżowy",
+            "pt": "Loja de roupa",
+            "ru": "Магазин одежды",
+            "sl": "Trgovina z oblekami",
+            "sv": "Klädaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-clothing-store.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=coffee",
+          "then": {
+            "en": "Coffee Store",
+            "ca": "Botiga de cafè",
+            "da": "Kaffebutik",
+            "de": "Kaffeegeschäft",
+            "eo": "Kafa vendejo",
+            "es": "Tienda de café",
+            "fi": "Kahvikauppa",
+            "fr": "Boutique de vente de cafés",
+            "gl": "Tenda de café",
+            "hu": "Kávébolt",
+            "it": "Negozio di caffè",
+            "ja": "コーヒー豆販売店",
+            "nl": "Koffiewinkel",
+            "pl": "Sklep z kawą",
+            "pt": "Loja de café",
+            "ru": "Магазин кофе",
+            "sl": "Trgovina s kavo",
+            "sv": "Kaffeaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-coffee.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=collector",
+          "then": {
+            "en": "Collectibles Shop",
+            "de": "Sammlergeschäft",
+            "eo": "Kolektaĵa vendejo",
+            "es": "Tienda de coleccionables",
+            "fr": "Magasin d'objets de collection",
+            "gl": "Tenda de colecionismo",
+            "hu": "Gyűjthető tárgyak boltja",
+            "it": "Negozio di articoli da collezione",
+            "ja": "コレクター店",
+            "nl": "Winkel voor verzamelobjecten",
+            "pl": "Sklep kolekcjonerski",
+            "pt": "Loja de colecionismo",
+            "sv": "Affär med samlarobjekt"
+          }
+        },
+        {
+          "if": "shop=computer",
+          "then": {
+            "en": "Computer Store",
+            "ca": "Botiga d'informàtica",
+            "da": "Computerforhandler",
+            "de": "Computerfachhandel",
+            "eo": "Komputila vendejo",
+            "es": "Tienda de informática",
+            "fi": "Tietokoneliike",
+            "fr": "Magasin d'informatique",
+            "gl": "Tenda de informática",
+            "hu": "Számítógépbolt",
+            "id": "Toko Komputer",
+            "it": "Negozio di informatica",
+            "ja": "コンピューター店",
+            "nl": "Computerwinkel",
+            "pl": "Sklep komputerowy",
+            "pt": "Loja de informática",
+            "ru": "Компьютерный магазин",
+            "sl": "Računalniška trgovina",
+            "sv": "Datorbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-laptop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=confectionery",
+          "then": {
+            "en": "Candy Store",
+            "ca": "Botiga de llaminadures",
+            "da": "Slikbutik",
+            "de": "Süßwarenladen",
+            "eo": "Sukeraĵa vendejo",
+            "es": "Tienda de dulces",
+            "fi": "Karkkipuoti",
+            "fr": "Confiserie",
+            "gl": "Tenda de larpeiradas",
+            "hu": "Édességbolt",
+            "id": "Toko Permen",
+            "it": "Negozio di dolciumi",
+            "ja": "菓子屋（販売）",
+            "nl": "Snoepwinkel",
+            "pl": "Sklep ze słodyczami",
+            "pt": "Doçaria",
+            "ru": "Кондитерская",
+            "sl": "Trgovina s slaščicami",
+            "sv": "Godisaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-confectionery.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=convenience",
+          "then": {
+            "en": "Convenience Store",
+            "ca": "Botiga d'ultramarins",
+            "da": "Minimarked",
+            "de": "Minimarkt",
+            "eo": "Butiko oportuna",
+            "es": "Tienda multiservicio",
+            "fi": "Lähikauppa",
+            "fr": "Épicerie / Supérette",
+            "gl": "Tenda de ultramarinos",
+            "hu": "Kis élelmiszerbolt",
+            "id": "Toko Kelontong",
+            "it": "Minimarket",
+            "ja": "コンビニエンスストア",
+            "nl": "Gemakswinkel",
+            "pl": "Sklep ogólnospożywczy",
+            "pt": "Minimercado / loja de conveniência",
+            "ru": "Магазин у дома",
+            "sl": "Minimarket",
+            "sv": "Närbutik"
+          }
+        },
+        {
+          "if": "shop=copyshop",
+          "then": {
+            "en": "Copy Store",
+            "ca": "Copisteria",
+            "da": "Fotokopishop",
+            "de": "Kopierladen",
+            "eo": "Fotokopiilejo",
+            "es": "Centro de copiado",
+            "fi": "Kopiointiliike",
+            "fr": "Photocopie et impression",
+            "gl": "Copistaría",
+            "hu": "Fénymásoló",
+            "id": "Tempat Fotokopi",
+            "it": "Copisteria",
+            "ja": "コピー店",
+            "nl": "Copyshop",
+            "pl": "Punkt ksero i druku",
+            "pt": "Loja de fotocópias",
+            "ru": "Магазин копирования, печати",
+            "sl": "Fotokopirnica",
+            "sv": "Tryckeri"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-print.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=cosmetics",
+          "then": {
+            "en": "Cosmetics Store",
+            "ca": "Botiga de cosmètics",
+            "da": "Kosmetikbutik",
+            "de": "Kosmetikladen",
+            "eo": "Kosmetikaĵa (persona higieno) vendejo",
+            "es": "Tienda de cosméticos",
+            "fi": "Kosmetiikkamyymälä",
+            "fr": "Magasin de cosmétiques",
+            "gl": "Tenda de cosméticos",
+            "hu": "Kozmetikai bolt",
+            "id": "Toko Kosmetik",
+            "it": "Negozio di cosmetici",
+            "ja": "化粧品店",
+            "nl": "Cosmeticawinkel",
+            "pl": "Sklep z kosmetykami",
+            "pt": "Loja de cosmética",
+            "ru": "Магазин косметики",
+            "sl": "Kozmetična trgovina",
+            "sv": "Sminkaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-lipstick.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=country_store",
+          "then": {
+            "en": "Country Store",
+            "de": "Ländlicher Laden",
+            "eo": "Ĝenerala vendejo en vilaĝo",
+            "es": "Tienda de campo",
+            "fr": "Magasin de campagne",
+            "gl": "Tenda do agro ou campo",
+            "hu": "Vidéki élet kellékeinek boltja",
+            "it": "Negozio locale di articoli vari",
+            "ja": "よろずや",
+            "nl": "Outdoorzaak",
+            "pl": "Country Store",
+            "pt": "Loja para proprietários rurais",
+            "sv": "Lanthandel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-hat-cowboy-side.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=craft",
+          "then": {
+            "en": "Arts & Crafts Store",
+            "ca": "Botiga d'art i artesania",
+            "da": "Kunst & hobbybutik",
+            "de": "Geschäft für Künstlerbedarf",
+            "eo": "Vendejo de materialoj por metio",
+            "es": "Tienda de artesanías",
+            "fi": "Käsityöliike",
+            "fr": "Magasin d'arts et loisirs créatifs",
+            "gl": "Tenda de artes e oficios",
+            "hu": "Kézműves bolt",
+            "it": "Negozio di arti e mestieri",
+            "ja": "美術・工芸用品店",
+            "nl": "Winkel voor schilder- en tekengereedschap",
+            "pl": "Sklep z artykułami dla artystów",
+            "pt": "Loja de acessórios para artes manuais",
+            "sv": "Konst- & hantverksbutik"
+          }
+        },
+        {
+          "if": "shop=curtain",
+          "then": {
+            "en": "Curtain Store",
+            "ca": "Botiga de cortines",
+            "da": "Gardinbutik",
+            "de": "Vorhanggeschäft",
+            "eo": "Kurtena vendejo",
+            "es": "Tienda de cortinas",
+            "fi": "Verhomyymälä",
+            "fr": "Magasin de rideaux",
+            "gl": "Tenda de cortinas",
+            "hu": "Függönybolt",
+            "id": "Toko Gorden",
+            "it": "Negozio di tende",
+            "ja": "カーテン店",
+            "nl": "Gordijnenwinkel",
+            "pl": "Sklep z zasłonami",
+            "pt": "Loja de cortinas",
+            "ru": "Магазин штор и драпировок",
+            "sl": "Trgovina z zavesami",
+            "sv": "Gardinaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-curtains.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=dairy",
+          "then": {
+            "en": "Dairy Store",
+            "ca": "Botiga de productes làctics",
+            "da": "Ismejeri",
+            "de": "Milchgeschäft",
+            "eo": "Laktaĵa vendejo",
+            "es": "Tienda de lácteos",
+            "fi": "Maitotuotemyymälä",
+            "fr": "Crèmerie",
+            "gl": "Tenda de produtos frescos",
+            "hu": "Tejtermékbolt",
+            "id": "Toko Susu",
+            "it": "Negozio di latticini",
+            "ja": "乳製品店",
+            "nl": "Zuivelhandel",
+            "pl": "Sklep z nabiałem",
+            "pt": "Loja de laticínios",
+            "ru": "Магазин молочных продуктов",
+            "sl": "Mlekarna",
+            "sv": "Mejeriaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-cheese.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=deli",
+          "then": {
+            "en": "Deli",
+            "ca": "Botiga de comestibles",
+            "da": "Deli",
+            "de": "Feinkostladen",
+            "eo": "Delikataĵa vendejo",
+            "es": "Delicatessen",
+            "fi": "Deli",
+            "fr": "Épicerie de luxe",
+            "gl": "Delicatessen",
+            "hu": "Csemegebolt",
+            "id": "Delikatesen",
+            "it": "Gastronomia",
+            "ja": "惣菜屋",
+            "nl": "Delicatessenwinkel",
+            "pl": "Ekskluzywne delikatesy",
+            "pt": "Loja gourmet",
+            "ru": "Магазин деликатесов",
+            "sl": "Delikatesa",
+            "sv": "Delikatessaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-meat.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=department_store",
+          "then": {
+            "en": "Department Store",
+            "ca": "Grans magatzems",
+            "da": "Stormagasin",
+            "de": "Kaufhaus",
+            "eo": "Ĉiovendejo",
+            "es": "Grandes almacenes / Tienda departamental",
+            "fi": "Tavaratalo",
+            "fr": "Grand magasin",
+            "gl": "Grandes almacéns",
+            "hu": "Nagyáruház",
+            "id": "Pasar Swalayan",
+            "it": "Grande magazzino",
+            "ja": "百貨店",
+            "nl": "Warenhuis",
+            "pl": "Dom towarowy",
+            "pt": "Grande armazém",
+            "ru": "Универсальный магазин (с отделами)",
+            "sl": "Veleblagovnica",
+            "sv": "Varuhus"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=doityourself",
+          "then": {
+            "en": "DIY Store",
+            "ca": "Botiga de bricolatge",
+            "da": "Byggemarked",
+            "de": "Heimwerkerladen",
+            "eo": "Memfaradila vendejo",
+            "es": "Tienda de bricolaje / Hágalo usted mismo",
+            "fi": "Askartelukauppa",
+            "fr": "Magasin de bricolage",
+            "gl": "Tenda de bricolaxe",
+            "hu": "Barkácsáruház",
+            "id": "Toko Swakriya",
+            "it": "Negozio per il fai-da-te",
+            "ja": "ホームセンター",
+            "nl": "Bouwmarkt, doe-het-zelfwinkel",
+            "pl": "Market budowlany / sklep dla majsterkowiczów",
+            "pt": "Loja de bricolagem",
+            "ru": "Строительный магазин",
+            "sl": "Orodjarna",
+            "sv": "Byggmarknad"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=doors",
+          "then": {
+            "en": "Door Shop",
+            "ca": "Botiga de portes",
+            "da": "Dørforhandler",
+            "de": "Türgeschäft",
+            "eo": "Vendejo de pordoj",
+            "es": "Tienda de puertas (aberturas)",
+            "fi": "Oviliike",
+            "fr": "Magasin de portes",
+            "gl": "Tenda de portas",
+            "hu": "Ajtószaküzlet",
+            "it": "Negozio di porte",
+            "ja": "ドア販売店",
+            "nl": "Deurenwinkel",
+            "pl": "Sklep z drzwiami",
+            "pt": "Loja de portas",
+            "ru": "Магазин дверей",
+            "sv": "Affär med dörrar"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-door-open.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=dry_cleaning",
+          "then": {
+            "en": "Dry Cleaner",
+            "ca": "Bugaderia",
+            "da": "Renseri",
+            "de": "Chemische Reinigung",
+            "eo": "Vest-lavejo (nepolara solvilo)",
+            "es": "Tintorería",
+            "fi": "Kuivapesula",
+            "fr": "Pressing",
+            "gl": "Tinturaría",
+            "hu": "Vegytisztitó",
+            "id": "Jasa Cuci Kering",
+            "it": "Lavanderia",
+            "ja": "クリーニング店",
+            "nl": "Stomerij",
+            "pl": "Pralnia chemiczna",
+            "pt": "Limpeza a seco",
+            "ru": "Химчистка",
+            "sl": "Čistilnica",
+            "sv": "Kemtvätt"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-clothes_hanger.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=e-cigarette",
+          "then": {
+            "en": "E-Cigarette Shop",
+            "ca": "Botiga de cigars electrònics",
+            "da": "E-cigaretbutik",
+            "de": "E-Zigarettengeschäft",
+            "eo": "Elektronik-cigareda vendejo",
+            "es": "Tienda de cigarrillo electrónico",
+            "fi": "Sähkösavukemyymälä",
+            "fr": "Magasin de cigarettes électroniques",
+            "gl": "Tenda de cigarros electrónicos",
+            "hu": "E-cigaretta bolt",
+            "it": "Negozio di sigarette elettroniche",
+            "ja": "電子タバコ店",
+            "nl": "E-sigarettenwinkel",
+            "pl": "Sklep z e-papierosami",
+            "pt": "Loja de cigarros eletrónicos",
+            "ru": "Магазин электронных сигарет",
+            "sv": "Affär för elektroniska cigaretter"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=electrical",
+          "then": {
+            "en": "Electrical Equipment Store",
+            "de": "Elektrofachgeschaft",
+            "eo": "Elektraĵa vendejo",
+            "es": "Tienda de equipos eléctricos",
+            "fi": "Sähkötarvikekauppa",
+            "fr": "Magasin d'équipements électriques",
+            "gl": "Tenda de material eléctrico",
+            "hu": "Villamossági szaküzlet",
+            "it": "Negozio di materiale elettrico",
+            "ja": "電気店",
+            "nl": "Winkel voor elektriciteitsbenodigdheden",
+            "pl": "Sklep elektryczny",
+            "pt": "Loja de material elétrico",
+            "ru": "Магазин электротоваров",
+            "sv": "Affär med elutrustning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-power.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=electronics",
+          "then": {
+            "en": "Electronics Store",
+            "ca": "Botiga d'electrònica",
+            "da": "Elektronikbutik",
+            "de": "Elektronikfachgeschäft",
+            "eo": "Elektronika vendejo",
+            "es": "Tienda de electrónica y electrodomésticos",
+            "fi": "Elektroniikkamyymälä",
+            "fr": "Magasin d'électronique et d'électroménager",
+            "gl": "Tenda de electrodomésticos",
+            "hu": "Szórakoztató elektronikai bolt",
+            "id": "Toko Elektronik",
+            "it": "Negozio di elettronica",
+            "ja": "家電販売店（小型製品）",
+            "nl": "Huishoudtoestellen-/Witgoedwinkel",
+            "pl": "Sklep z elektroniką/RTV/AGD",
+            "pt": "Loja de eletrodomésticos",
+            "ru": "Магазин бытовой электроники",
+            "sl": "Elektronska trgovina",
+            "sv": "Elektronikbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-plug.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=erotic",
+          "then": {
+            "en": "Erotic Store",
+            "ca": "Botiga d'articles eròtics",
+            "da": "Erotikbutik",
+            "de": "Erotikgeschäft",
+            "eo": "Seksumila vendejo",
+            "es": "Tienda erótica",
+            "fi": "Erotiikkamyymälä",
+            "fr": "Sex-shop",
+            "gl": "Tenda erótica",
+            "hu": "Szexbolt",
+            "it": "Sexy shop",
+            "ja": "アダルトショップ",
+            "nl": "Seksshop",
+            "pl": "Sex shop",
+            "pt": "Sex shop",
+            "ru": "Секс-шоп",
+            "sl": "Erotična trgovina",
+            "sv": "Sexshop"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=fabric",
+          "then": {
+            "en": "Fabric Store",
+            "ca": "Botiga de teles",
+            "da": "Stofforretning",
+            "de": "Stoffgeschäft",
+            "eo": "Teksaĵa vendejo",
+            "es": "Tienda textil",
+            "fi": "Kangaskauppa",
+            "fr": "Magasin de tissus",
+            "gl": "Tenda de teas",
+            "hu": "Méteráru-bolt",
+            "id": "Toko Kain",
+            "it": "Negozio di tessuti",
+            "ja": "生地屋",
+            "nl": "Stofwinkel",
+            "pl": "Sklep z tkaninami",
+            "pt": "Loja de tecidos",
+            "ru": "Магазин тканей",
+            "sl": "Trgovina z metrskim blagom",
+            "sv": "Tygaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-tape.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=farm",
+          "then": {
+            "en": "Produce Stand",
+            "ca": "Estand productiu",
+            "da": "Gårdbutik",
+            "de": "Hofladen",
+            "eo": "Terfrukta vendotablo",
+            "es": "Tienda de productos agrícolas",
+            "fi": "Maatilan suoramyynti",
+            "fr": "Magasin de producteurs",
+            "gl": "Tenda de produtos agrícolas",
+            "hu": "Termelői bolt",
+            "it": "Bancarella agricola",
+            "ja": "農産物直売所",
+            "nl": "Boerderijwinkel voor groente en fruit",
+            "pl": "Stragan świeżych produktów",
+            "pt": "Loja de produtos agrícolas locais",
+            "ru": "Магазин свежих продуктов",
+            "sl": "Prodaja domačih pridelkov",
+            "sv": "Gårdsbutik"
+          }
+        },
+        {
+          "if": "shop=fashion_accessories",
+          "then": {
+            "en": "Fashion Accessories Store",
+            "ca": "Botiga d'accessoris de moda",
+            "de": "Geschäft für Modeaccessoires",
+            "eo": "Galanteria (vestaj akcesoraĵoj) vendejo",
+            "es": "Tienda de accesorios de moda",
+            "fi": "Muotitarvikekauppa",
+            "fr": "Boutique d'accessoires de mode",
+            "gl": "Tenda de accesorios de moda",
+            "hu": "Divat kiegészítők boltja",
+            "it": "Negozio di accessori di moda",
+            "ja": "ファッション小物店",
+            "nl": "Modeaccessoirewinkel",
+            "pl": "Sklep z galanterią",
+            "pt": "Loja de acessórios de moda",
+            "ru": "Магазин модных аксессуаров",
+            "sv": "Affär för modeaccessoarer"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-fashion_accessories.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=fireplace",
+          "then": {
+            "en": "Fireplace Store",
+            "ca": "Botiga de llars de foc",
+            "de": "Kachelofenladen",
+            "eo": "Kamen-vendejo",
+            "es": "Tienda de chimeneas",
+            "fi": "Takkamyymälä",
+            "fr": "Magasin de cheminées",
+            "gl": "Tenda de chemineas",
+            "hu": "Cserépkályha- és kandalló-szaküzlet",
+            "it": "Negozio di caminetti",
+            "ja": "暖房具店",
+            "nl": "Haardwinkel",
+            "pl": "Sklep z kominkami",
+            "pt": "Loja de lareiras",
+            "ru": "Продажа каминов",
+            "sv": "Kaminbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-fireplace.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=fishing",
+          "then": {
+            "en": "Fishing Shop",
+            "ca": "Botiga de pesca",
+            "de": "Angelgeschäft",
+            "eo": "Fiŝkaptil-vendejo",
+            "es": "Tienda de pesca",
+            "fi": "Kalastuskauppa",
+            "fr": "Magasin de pêche",
+            "gl": "Tenda de pesca",
+            "hu": "Horgászbolt",
+            "it": "Negozio di pesca",
+            "ja": "釣具店",
+            "nl": "Hengelsportwinkel",
+            "pl": "Sklep wędkarski",
+            "pt": "Loja de artigos de pesca",
+            "ru": "Рыболовный магазин",
+            "sv": "Fiskeaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-ice_fishing.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=flooring",
+          "then": {
+            "en": "Flooring Supply Shop",
+            "de": "Fußbodengeschäft",
+            "eo": "Plank-vendejo",
+            "es": "Tienda de suministros para pisos",
+            "fr": "Magasin de revêtements de sol",
+            "gl": "Tenda de chans",
+            "hu": "Burkoló bolt",
+            "it": "Negozio di articoli per pavimentazioni",
+            "ja": "床用品店",
+            "nl": "Vloerwinkel",
+            "pl": "Sklep z posadzkami",
+            "pt": "Loja de material de pavimentação",
+            "sv": "Affär för golv"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=florist",
+          "then": {
+            "en": "Florist",
+            "ca": "Floristeria",
+            "da": "Blomsterbutik",
+            "de": "Blumenhändler",
+            "eo": "Florvendejo",
+            "es": "Floristería",
+            "fi": "Kukkakauppa",
+            "fr": "Fleuriste",
+            "gl": "Floraría",
+            "hu": "Virágbolt",
+            "id": "Toko Bunga",
+            "it": "Fioraio",
+            "ja": "生花店",
+            "nl": "Bloemenwinkel",
+            "pl": "Kwiaciarnia",
+            "pt": "Florista",
+            "ru": "Цветочный магазин",
+            "sl": "Cvetličarna",
+            "sv": "Florist"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-florist.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=frame",
+          "then": {
+            "en": "Framing Shop",
+            "ca": "Botiga de marcs",
+            "da": "Rammebutik",
+            "de": "Bilderrahmengeschäft",
+            "eo": "Bild-kadra vendejo",
+            "es": "Tienda de enmarcación",
+            "fi": "Kehystämö",
+            "fr": "Magasin d'encadrements",
+            "gl": "Tenda de enmarcado",
+            "hu": "Képkeret-bolt",
+            "id": "Toko Bingkai",
+            "it": "Negozio di cornici",
+            "ja": "額縁店",
+            "nl": "Kaderwinkel",
+            "pl": "Sklep z ramami",
+            "pt": "Loja de molduras",
+            "ru": "Магазин рамок для фотографий и картин",
+            "sv": "Ramaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-vector-square.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=frozen_food",
+          "then": {
+            "en": "Frozen Food Store",
+            "ca": "Botiga de menjars congelats",
+            "de": "Geschäft für Tiefkühlprodukte",
+            "eo": "Frostigit-manĝaĵa vendejo",
+            "es": "Tienda de alimentos congelados",
+            "fr": "Magasin de produits surgelés",
+            "gl": "Tenda de conxelados",
+            "hu": "Fagyasztottélelmiszer-bolt",
+            "it": "Negozio di cibo surgelato",
+            "ja": "冷凍食品店",
+            "nl": "Winkel voor bevroren voedsel",
+            "pl": "Sklep z mrożonkami",
+            "pt": "Loja de comida congelada",
+            "ru": "Магазин замороженных продуктов",
+            "sv": "Affär för fryst mat"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=fuel",
+          "then": {
+            "en": "Fuel Shop",
+            "de": "Tankstelle",
+            "eo": "Brulaĵ-vendejo",
+            "es": "Tienda de combustible",
+            "fi": "Polttoainemyymälä",
+            "fr": "Revendeur de carburant",
+            "gl": "Tenda de combustíbel",
+            "hu": "Üzemanyag-szaküzlet",
+            "it": "Negozio di carburanti",
+            "ja": "燃料店",
+            "nl": "Brandstofwinkel",
+            "pl": "Sklep z paliwami",
+            "pt": "Loja de combustíveis",
+            "sv": "Bränsleaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-propane_tank.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=funeral_directors",
+          "then": {
+            "en": "Funeral Home",
+            "ca": "Tanatori",
+            "da": "Bedemandsforretning",
+            "de": "Beerdigungsinstitut",
+            "eo": "Tombistejo",
+            "es": "Funeraria",
+            "fi": "Hautaustoimisto",
+            "fr": "Pompes funèbres",
+            "gl": "Funeraria",
+            "hu": "Temetkezési iroda",
+            "id": "Rumah Pemakaman",
+            "it": "Casa funeraria",
+            "ja": "葬儀社",
+            "nl": "Begrafenisondernemer",
+            "pl": "Zakład pogrzebowy",
+            "pt": "Agência funerária",
+            "ru": "Бюро похоронных услуг",
+            "sl": "Pogrebne storitve",
+            "sv": "Begravningsbyrå"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-cemetery.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=furniture",
+          "then": {
+            "en": "Furniture Store",
+            "ca": "Botiga de mobles",
+            "da": "Møbelforhandler",
+            "de": "Möbelhaus",
+            "eo": "Mebla vendejo",
+            "es": "Mueblería",
+            "fi": "Huonekaluliike",
+            "fr": "Magasin de meubles",
+            "gl": "Moblaría",
+            "hu": "Bútorbolt",
+            "id": "Toko Furnitur",
+            "it": "Negozio di mobili",
+            "ja": "家具店",
+            "nl": "Meubelzaak",
+            "pl": "Sklep meblowy",
+            "pt": "Loja de mobiliário",
+            "ru": "Мебельный магазин",
+            "sl": "Trgovina s pohištvom",
+            "sv": "Möbelaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-couch.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=games",
+          "then": {
+            "en": "Tabletop Game Store",
+            "de": "Brettspielgeschäft",
+            "eo": "Tabullud‑vendejo",
+            "es": "Tienda de juegos de mesa",
+            "fi": "Lautapeliliike",
+            "fr": "Magasin de jeux de plateau",
+            "gl": "Tenda de xogos de mesa",
+            "hu": "Társasjáték-bolt",
+            "it": "Negozio di giochi da tavolo",
+            "ja": "ボードゲーム販売店",
+            "nl": "Bordspellenwinkel",
+            "pl": "Sklep z grami",
+            "pt": "Loja de jogos de tabuleiro",
+            "ru": "Магазин настольных игр",
+            "sv": "Affär för brädspel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-dice.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=garden_centre",
+          "then": {
+            "en": "Garden Center",
+            "ca": "Centre de jardineria",
+            "da": "Havecenter",
+            "de": "Gartenzentrum",
+            "eo": "Ĝarden-vendejo",
+            "es": "Centro de jardinería / Vivero",
+            "fi": "Puutarhamyymälä",
+            "fr": "Jardinerie",
+            "gl": "Centro de xardinaría",
+            "hu": "Kertészet",
+            "id": "Toko Tanaman",
+            "it": "Vivaio",
+            "ja": "園芸用品店",
+            "nl": "Tuincentrum",
+            "pl": "Centrum ogrodnicze",
+            "pt": "Loja de jardinagem",
+            "ru": "Садовые принадлежности",
+            "sl": "Vrtni center",
+            "sv": "Trädgårdscenter"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-garden-centre.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=gas",
+          "then": {
+            "en": "Bottled Gas Shop",
+            "da": "Gasflaskebutik",
+            "de": "Gasflaschenverkauf",
+            "eo": "Gasuja vendejo",
+            "es": "Tienda de gas embotellado",
+            "fi": "Kaasupulloliike",
+            "fr": "Magasin de bouteilles de gaz",
+            "gl": "Tenda de bombonas de gas",
+            "hu": "Palackozottgáz-bolt",
+            "it": "Negozio di bombole",
+            "ja": "ガスボンベ店",
+            "nl": "Gasflessenwinkel",
+            "pl": "Sklep z butlami gazowymi",
+            "pt": "Loja de botijas de gás",
+            "ru": "Магазин газовых баллонов",
+            "sl": "Trgovina s plinskimi jeklenkami",
+            "sv": "Gasbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-propane_tank.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=general",
+          "then": {
+            "en": "General Store",
+            "ca": "Botiga generalista",
+            "de": "Gemischtwarenhandlung",
+            "eo": "Ĝenerala vendejo",
+            "es": "Tienda general",
+            "fi": "Sekatavarakauppa",
+            "fr": "Magasin général",
+            "gl": "Tenda xeral",
+            "hu": "Vegyesbolt",
+            "id": "Warung",
+            "it": "Emporio",
+            "ja": "よろず屋",
+            "nl": "Algemene winkel",
+            "pl": "Sklep wielobranżowy",
+            "pt": "Mercearia",
+            "sv": "Generell affär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=gift",
+          "then": {
+            "en": "Gift Shop",
+            "ca": "Botiga de regals",
+            "da": "Gavebutik",
+            "de": "Geschenkeladen",
+            "eo": "Suvenira vendejo",
+            "es": "Tienda de regalos",
+            "fi": "Lahjamyymälä",
+            "fr": "Boutique de cadeaux",
+            "gl": "Tenda de agasallos",
+            "hu": "Ajándékbolt",
+            "id": "Toko Hadiah",
+            "it": "Negozio souvenir",
+            "ja": "ギフト店",
+            "nl": "Cadeauwinkel",
+            "pl": "Sklep z pamiątkami",
+            "pt": "Loja de lembranças",
+            "ru": "Магазин сувениров",
+            "sl": "Prodajalna daril",
+            "sv": "Presentbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-gift.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=greengrocer",
+          "then": {
+            "en": "Greengrocer",
+            "ca": "Fruiteria",
+            "da": "Grønthandler",
+            "de": "Obst- und Gemüseladen",
+            "eo": "Legom-butiko",
+            "es": "Verdulería / Frutería",
+            "fi": "Kasviskauppa",
+            "fr": "Marchand de fruits et légumes",
+            "gl": "Froitaría",
+            "hu": "Zöldséges",
+            "id": "Toko Buah dan Sayuran",
+            "it": "Fruttivendolo",
+            "ja": "八百屋・果物屋",
+            "nl": "Groenteboer",
+            "pl": "Warzywniak",
+            "pt": "Loja de frutas e verduras",
+            "ru": "Магазин овощей и фруктов",
+            "sl": "Sadje in zelenjava",
+            "sv": "Grönsakshandlare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-carrot.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=hairdresser",
+          "then": {
+            "en": "Hairdresser",
+            "ca": "Perruqueria",
+            "da": "Frisør",
+            "de": "Friseur",
+            "eo": "Frizejo",
+            "es": "Peluquería",
+            "fi": "Parturi-kampaamo",
+            "fr": "Salon de coiffure",
+            "gl": "Perrucaría",
+            "hu": "Fodrász",
+            "id": "Salon",
+            "it": "Parrucchiere",
+            "ja": "理美容店",
+            "nl": "Kapper",
+            "pl": "Fryzjer",
+            "pt": "Cabeleireiro(a)",
+            "ru": "Парикмахерская",
+            "sl": "Frizer",
+            "sv": "Hårfrisör"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-beauty_salon.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=hairdresser_supply",
+          "then": {
+            "en": "Hairdresser Supply Store",
+            "da": "Butik med udstyr til frisører",
+            "de": "Friseurbedarf",
+            "eo": "Frizist-ilara vendejo",
+            "es": "Tienda de suministros para peluquería",
+            "fi": "Hiustarvikemyymälä",
+            "fr": "Magasin de matériel de coiffure",
+            "gl": "Tenda de accesorios de salón de peiteado",
+            "hu": "Fodrászkellék-bolt",
+            "it": "Negozio di prodotti per parrucchiere",
+            "ja": "理容用品店",
+            "nl": "Haarbenodigdhedenwinkel",
+            "pl": "Sklep z artykułami fryzjerskimi",
+            "pt": "Loja de acessórios de cabeleireiro",
+            "sv": "Affär för hårprodukter"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-hair_care.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=hardware",
+          "then": {
+            "en": "Hardware Store",
+            "ca": "Ferreteria",
+            "da": "Håndværkerbutik",
+            "de": "Eisenwarenhandel",
+            "eo": "Laborila vendejo",
+            "es": "Ferretería",
+            "fi": "Rautakauppa",
+            "fr": "Quincaillerie",
+            "gl": "Ferraxaría",
+            "hu": "Vas-műszaki bolt",
+            "id": "Toko Perkakas",
+            "it": "Ferramenta",
+            "ja": "金物屋",
+            "nl": "Bouwmarkt",
+            "pl": "Sklep z narzędziami",
+            "pt": "Loja de ferragens",
+            "ru": "Хозяйственный магазин",
+            "sl": "Železnina",
+            "sv": "Järnaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=health_food",
+          "then": {
+            "en": "Health Food Shop",
+            "de": "Reformhaus",
+            "eo": "Sanig-manĝaĵa vendejo",
+            "es": "Tienda de comida saludable",
+            "fi": "Terveysravinnemyymälä",
+            "fr": "Magasin d'alimentation de santé",
+            "gl": "Tenda de produtos saudábeis",
+            "hu": "Egészséges élelmiszerek boltja",
+            "it": "Prodotti per il benessere",
+            "ja": "健康食品店",
+            "nl": "Gezondheidswinkel",
+            "pl": "Sklep ze zdrową żywnością",
+            "pt": "Loja de comida saudável",
+            "ru": "Магазин здорового питания",
+            "sv": "Hälsokostbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=hearing_aids",
+          "then": {
+            "en": "Hearing Aids Store",
+            "ca": "Centre d'audició",
+            "da": "Høreapparatbutik",
+            "de": "Hörgerätegeschäft",
+            "eo": "Aŭd-helpila vendejo",
+            "es": "Tienda de audífonos",
+            "fi": "Kuuloapumyymälä",
+            "fr": "Audioprothésiste",
+            "gl": "Tenda de audífonos",
+            "hu": "Hallókészülékbolt",
+            "id": "Toko Alat Bantu Dengar",
+            "it": "Negozio di apparecchi acustici",
+            "ja": "補聴器店",
+            "nl": "Hoorapparatenwinkel",
+            "pl": "Sklep z aparatami słuchowymi",
+            "pt": "Loja de aparelhos auditivos",
+            "ru": "Магазин по продаже слуховых аппаратов",
+            "sl": "Trgovina s slušnimi pripomočki",
+            "sv": "Hörapparater"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-hearing_aid.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=herbalist",
+          "then": {
+            "en": "Herbalist",
+            "ca": "Herbolari",
+            "da": "Helseforretning",
+            "de": "Kräuterladen",
+            "eo": "Herba vendejo",
+            "es": "Herbolario",
+            "fi": "Luontaistuotemyymälä",
+            "fr": "Herboristerie",
+            "gl": "Herboristaría",
+            "hu": "Gyógynövénybolt",
+            "it": "Erboristeria",
+            "ja": "薬草店",
+            "nl": "Herbalist",
+            "pl": "Sklep zielarski",
+            "pt": "Ervanária",
+            "ru": "Магазин трав и лекарственных растений",
+            "sl": "Zeliščarstvo",
+            "sv": "Medicinalväxter"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-leaf.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=hifi",
+          "then": {
+            "en": "Hifi Store",
+            "ca": "Botiga d'alta fidelitat",
+            "da": "Radioforhandler",
+            "de": "HiFi-Laden",
+            "eo": "Aldfidela-sona vendejo",
+            "es": "Tienda de equipos de sonido",
+            "fi": "Hifimyymälä",
+            "fr": "Magasin de matériel hi-fi",
+            "gl": "Tenda de equipamento de son",
+            "hu": "HiFi-szaküzlet",
+            "id": "Toko Hifi",
+            "it": "Negozio Hifi",
+            "ja": "音響機器店",
+            "nl": "Hifi-/Bruingoedwinkel",
+            "pl": "Sklep ze sprzętem hi-fi",
+            "pt": "Loja de alta fidelidade",
+            "ru": "Магазин по продаже Hi-Fi",
+            "sl": "Trgovina z avdio opremo",
+            "sv": "HiFi-butik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-speaker.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=hobby",
+          "then": {
+            "en": "Hobby Shop",
+            "da": "Hobbybutik",
+            "de": "Bastelgeschäft",
+            "eo": "Hobia vendejo",
+            "es": "Tienda de pasatiempos",
+            "fi": "Harrastuskauppa",
+            "fr": "Magasin pour hobby (non spécifié)",
+            "gl": "Tenda de pasatempos",
+            "hu": "Hobbibolt",
+            "it": "Negozio di hobbystica",
+            "ja": "ホビーショップ",
+            "nl": "Hobbywinkel",
+            "pl": "Sklep hobbystyczny",
+            "pt": "Loja de modelismo",
+            "sv": "Hobbyaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-dragon.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=household_linen",
+          "then": {
+            "en": "Household Linen Shop",
+            "de": "Haushaltswäschegeschäft",
+            "eo": "Tuka vendejo",
+            "es": "Tienda de ropa de hogar",
+            "fr": "Magasin de linge de maison",
+            "gl": "Tenda de roupa de fogar",
+            "hu": "Lakástextil-szaküzlet",
+            "it": "Negozio di biancheria per la casa",
+            "ja": "家庭用布製品店",
+            "nl": "Winkel voor huishoudelijk linnen",
+            "pl": "Sklep z pościelą/ręcznikami",
+            "pt": "Loja de têxteis para o lar",
+            "sv": "Affär för hushållstextilier"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-cloth.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=houseware",
+          "then": {
+            "en": "Houseware Store",
+            "ca": "Botiga de la llar",
+            "da": "Køkkenudstyr",
+            "de": "Haushaltswarengeschäft",
+            "eo": "Mastrum-aparata vendejo",
+            "es": "Tienda de artículos del hogar",
+            "fi": "Kotitarvikekauppa",
+            "fr": "Magasin d’articles ménagers",
+            "gl": "Tenda de artigos do fogar",
+            "hu": "Háztartási bolt",
+            "it": "Casalinghi",
+            "ja": "家庭用品店",
+            "nl": "Huisraadwinkel",
+            "pl": "Sklep z małymi artykułami gospodarstwa domowego",
+            "pt": "Loja de artigos para o lar",
+            "ru": "Магазин товаров для дома",
+            "sv": "Husgeråd"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-blender.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=hunting",
+          "then": {
+            "en": "Hunting Shop",
+            "ca": "Botiga de caça",
+            "da": "Jagtbutik",
+            "de": "Jagdgeschäft",
+            "eo": "Ĉasil-vendejo",
+            "es": "Tienda de caza",
+            "fi": "Metsästyskauppa",
+            "fr": "Magasin de chasse",
+            "gl": "Tenda de caza",
+            "hu": "Vadászati bolt",
+            "it": "Negozio di caccia",
+            "ja": "狩猟用品店",
+            "nl": "Jachtwinkel",
+            "pl": "Sklep myśliwski",
+            "pt": "Loja de artigos de caça",
+            "ru": "Охотничий магазин",
+            "sv": "Jaktbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-bow_and_arrow.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=interior_decoration",
+          "then": {
+            "en": "Interior Decoration Store",
+            "ca": "Botiga d'Interiorisme",
+            "da": "Brugskunstbutik",
+            "de": "Innenausstattungsgeschäft",
+            "eo": "Ensembla (meblara) vendejo",
+            "es": "Tienda de decoración de interiores",
+            "fi": "Sisustusmyymälä",
+            "fr": "Magasin de décoration d'intérieur",
+            "gl": "Tenda de decoración de interiores",
+            "hu": "Lakberendezési bolt",
+            "id": "Toko Dekorasi Interior",
+            "it": "Negozio di decorazioni per interni",
+            "ja": "インテリアショップ",
+            "nl": "Binnenhuisdecoratiewinkel",
+            "pl": "Sklep z dekoracją wnętrz",
+            "pt": "Loja de decoração de interiores",
+            "ru": "Магазин предметов интерьера",
+            "sv": "Inredningsaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=jewelry",
+          "then": {
+            "en": "Jewelry Store",
+            "ca": "Joieria",
+            "da": "Guldsmed",
+            "de": "Juwelier",
+            "eo": "Juvelista vendejo",
+            "es": "Joyería",
+            "fi": "Jalokiviliike",
+            "fr": "Bijouterie",
+            "gl": "Xoiaría",
+            "hu": "Ékszerüzlet",
+            "id": "Toko Perhiasan",
+            "it": "Gioielleria",
+            "ja": "宝飾店",
+            "nl": "Juwelierszaak",
+            "pl": "Sklep jubilerski",
+            "pt": "Ourivesaria",
+            "ru": "Ювелирный магазин",
+            "sv": "Juvelerare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-jewelry-store.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=kiosk",
+          "then": {
+            "en": "Kiosk",
+            "ca": "Quiosc",
+            "da": "Kiosk",
+            "de": "Kiosk",
+            "eo": "Gazetbudo",
+            "es": "Quiosco",
+            "fi": "Kioski",
+            "fr": "Kiosque",
+            "gl": "Quiosco",
+            "hu": "Trafik (önálló épület)",
+            "id": "Warung",
+            "it": "Chiosco",
+            "ja": "キオスク",
+            "nl": "Winkelkiosk",
+            "pl": "Kiosk",
+            "pt": "Quiosque",
+            "ru": "Магазин в виде киоска",
+            "sl": "Kiosk",
+            "sv": "Kiosk"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-store.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=kitchen",
+          "then": {
+            "en": "Kitchen Design Store",
+            "ca": "Botiga de disseny de cuines",
+            "da": "Køkkenforhandler",
+            "de": "Küchenfachmarkt",
+            "eo": "Kuirej-mebla vendejo",
+            "es": "Tienda de diseño de cocinas",
+            "fi": "Keittiöliike",
+            "fr": "Cuisiniste",
+            "gl": "Tenda de deseño de cociñas",
+            "hu": "Konyhabútorbolt",
+            "id": "Toko Desain Interior Dapur",
+            "it": "Negozio di cucine",
+            "ja": "キッチンデザイン店",
+            "nl": "Keukenontwerpwinkel",
+            "pl": "Sklep z wyposażeniem i meblami kuchennymi",
+            "pt": "Loja de cozinhas",
+            "ru": "Магазин кухонь",
+            "sv": "Köksinredning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-kitchen_sink.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=laundry",
+          "then": {
+            "en": "Laundry",
+            "ca": "Bugaderia",
+            "da": "Vaskeri",
+            "de": "Wäscherei",
+            "eo": "Vest-lavejo (akvo)",
+            "es": "Lavandería",
+            "fi": "Pesula",
+            "fr": "Laverie",
+            "gl": "Lavandaría",
+            "hu": "Mosoda",
+            "id": "Penatu",
+            "it": "Lavanderia",
+            "ja": "洗濯屋・ランドリー(非セルフ)",
+            "nl": "Wasserette",
+            "pl": "Pralnia",
+            "pt": "Lavandaria",
+            "ru": "Прачечная",
+            "sl": "Pralnica",
+            "sv": "Tvättinrättning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-laundry.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=leather",
+          "then": {
+            "en": "Leather Store",
+            "ca": "Botiga de cuirs",
+            "da": "Læderbutik",
+            "de": "Lederwarengeschäft",
+            "eo": "Ledaĵa vendejo",
+            "es": "Talabartería",
+            "fi": "Nahkaliike",
+            "fr": "Maroquinier",
+            "gl": "Tenda de peles",
+            "hu": "Bőrdíszműbolt",
+            "id": "Toko Kulit",
+            "it": "Pelletteria",
+            "ja": "皮革用品店",
+            "nl": "Lederwinkel",
+            "pl": "Sklep z odzieżą skórzaną",
+            "pt": "Loja de couro",
+            "ru": "Магазин кожаных изделий",
+            "sl": "Usnjarna",
+            "sv": "Läderaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-handbag.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=lighting",
+          "then": {
+            "en": "Lighting Store",
+            "de": "Leuchten- und Lampengeschäft",
+            "eo": "Prilumigad‑aparata vendejo",
+            "es": "Tienda de iluminación",
+            "fi": "Valaisinkauppa",
+            "fr": "Magasin de lampes",
+            "gl": "Tenda de iluminación",
+            "hu": "Világítástechnikai szaküzlet",
+            "it": "Negozio di illuminazione",
+            "ja": "照明器具店",
+            "nl": "Verlichtingswinkel",
+            "pl": "Sklep z oświetleniem",
+            "pt": "Loja de iluminação",
+            "ru": "Магазин светильников",
+            "sv": "Belysningsbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-desk_lamp.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=locksmith",
+          "then": {
+            "en": "Locksmith",
+            "ca": "Copisteria de claus",
+            "da": "Låsesmed",
+            "de": "Schlüsseldienst",
+            "eo": "Laborejo de seruristo",
+            "es": "Cerrajería",
+            "fi": "Lukkoliike",
+            "fr": "Serrurier",
+            "gl": "Cerralleiro",
+            "hu": "Lakatos",
+            "id": "Ahli Kunci",
+            "it": "Fabbro",
+            "ja": "鍵屋（専門店）",
+            "nl": "Slotenmaker",
+            "pl": "Dorabianie kluczy / Ślusarz",
+            "pt": "Chaveiro",
+            "ru": "Изготовление ключей",
+            "sl": "Ključavničar",
+            "sv": "Låssmed"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-key.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=lottery",
+          "then": {
+            "en": "Lottery Shop",
+            "ca": "Administració de loteria",
+            "da": "Lotteributik",
+            "de": "Lottoannahmestelle",
+            "eo": "Loterbileta vendejo",
+            "es": "Lotería",
+            "fi": "Veikkauspiste",
+            "fr": "Loterie",
+            "gl": "Tenda de lotaría",
+            "hu": "Lottózó",
+            "id": "Toko Lotre",
+            "it": "Ricevitoria",
+            "ja": "宝くじ売り場",
+            "nl": "Loterij",
+            "pl": "Kolektura",
+            "pt": "Loja de lotaria",
+            "ru": "Продажа лотерейных билетов",
+            "sl": "Loterijska prodajalna",
+            "sv": "Lotteri"
+          }
+        },
+        {
+          "if": "shop=mall",
+          "then": {
+            "en": "Mall",
+            "ca": "Centre comercial",
+            "da": "Indkøbscenter",
+            "de": "Einkaufszentrum",
+            "eo": "Vendejaro",
+            "es": "Centro comercial",
+            "fi": "Kauppakeskus",
+            "fr": "Centre commercial",
+            "gl": "Centro comercial",
+            "hu": "Bevásárlóközpont",
+            "id": "Mal",
+            "it": "Centro commerciale",
+            "ja": "ショッピングセンター",
+            "nl": "Winkelcentrum",
+            "pl": "Centrum handlowe",
+            "pt": "Centro comercial",
+            "ru": "Торговый центр",
+            "sl": "Trgovski center",
+            "sv": "Köpcenter"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=massage",
+          "then": {
+            "en": "Massage Shop",
+            "ca": "Centre de massatges",
+            "da": "Massagebutik",
+            "de": "Massagesalon",
+            "eo": "Salono de masaĝo",
+            "es": "Salón de masajes",
+            "fi": "Hierontayritys",
+            "fr": "Salon de massage",
+            "gl": "Tenda de masaxes",
+            "hu": "Masszázsszalon",
+            "id": "Panti Pijat",
+            "it": "Centro massaggi",
+            "ja": "マッサージ店",
+            "nl": "Massagewinkel",
+            "pl": "Salon masażu",
+            "pt": "Centro de massagens",
+            "ru": "Массажный салон",
+            "sv": "Massage"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-spa.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=medical_supply",
+          "then": {
+            "en": "Medical Supply Store",
+            "ca": "Farmàcia",
+            "da": "Håndkøbsmedicinforhandler",
+            "de": "Sanitätshaus",
+            "eo": "Medicin-aparata vendejo",
+            "es": "Tienda de aparatos ortopédicos",
+            "fi": "Lääketarvikemyymälä",
+            "fr": "Magasin de matériel médical",
+            "gl": "Tenda de subministracións médicas",
+            "hu": "Gyógyászati segédeszközök boltja",
+            "id": "Toko Peralatan Medis",
+            "it": "Negozio di forniture mediche",
+            "ja": "健康・医療器具店",
+            "nl": "Winkel voor medische hulpmiddelen",
+            "pl": "Sklep ze sprzętem medycznym",
+            "pt": "Loja de material médico",
+            "ru": "Медицинские принадлежности",
+            "sl": "Trgovina z medicinskimi primpomočki",
+            "sv": "Medicinsk utrustning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-crutch.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=military_surplus",
+          "then": {
+            "en": "Military Surplus Store",
+            "ca": "Botiga d'excedents militars",
+            "de": "Militärkleidungsabverkauf",
+            "eo": "Ne-plu-necesa-armea-ekipaĵo vendejo",
+            "es": "Tienda de excedentes militares",
+            "fi": "Armeijan ylijäämämyymälä",
+            "fr": "Surplus militaire",
+            "gl": "Tenda de accesorios militares",
+            "hu": "Használt katonai felszerelések boltja",
+            "it": "Negozio di eccedenze militari",
+            "ja": "軍払い下げ品店",
+            "nl": "Legerdump",
+            "pl": "Sklep ze sprzętem wojskowym",
+            "pt": "Loja de excedentes militares",
+            "ru": "Армейский магазин",
+            "sv": "Affär med militäröverskott"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-military.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=mobile_phone",
+          "then": {
+            "en": "Mobile Phone Store",
+            "ca": "Botiga de telefonia mòbil",
+            "da": "Mobiltelefonforhandler",
+            "de": "Mobiltelefonladen",
+            "eo": "Poŝtelefona vendejo",
+            "es": "Tienda de telefonía móvil",
+            "fi": "Matkapuhelinmyymälä",
+            "fr": "Magasin de téléphonie mobile",
+            "gl": "Tenda de telefonía móbil",
+            "hu": "Mobiltelefon-szaküzlet",
+            "id": "Toko Handphone",
+            "it": "Negozio di telefonia mobile",
+            "ja": "携帯電話店",
+            "nl": "Mobieletelefoonwinkel",
+            "pl": "Sklep z telefonami komórkowymi",
+            "pt": "Loja de telemóveis",
+            "ru": "Магазин мобильных телефонов и аксессуаров",
+            "sl": "Trgovina z mobilnimi telefoni",
+            "sv": "Mobiltelefoner"
+          }
+        },
+        {
+          "if": "shop=model",
+          "then": {
+            "en": "Model Shop",
+            "de": "Modellbaugeschäft",
+            "eo": "Vendejo de modelfarado",
+            "es": "Tienda de modelismo",
+            "fr": "Magasin de modélisme",
+            "gl": "Tenda de modelismo",
+            "hu": "Modellező bolt",
+            "it": "Negozio di modellistica",
+            "ja": "模型店",
+            "nl": "Modelwinkel",
+            "pl": "Sklep modelarski",
+            "pt": "Loja de modelismo",
+            "ru": "Магазин для моделирования",
+            "sv": "Affär för byggmodeller"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=money_lender",
+          "then": {
+            "en": "Money Lender",
+            "ca": "Prestamista",
+            "da": "Pengeudlåner",
+            "de": "Geldverleih",
+            "eo": "Mon-pruntejo",
+            "es": "Prestamista de dinero",
+            "fi": "Rahanlainausliike",
+            "fr": "Prêteur",
+            "gl": "Prestamista de cartos",
+            "hu": "Pénzkölcsönző",
+            "id": "Peminjaman Uang",
+            "it": "Agenzia di prestiti",
+            "ja": "消費者金融",
+            "nl": "Particuliere Gelduitleendienst",
+            "pl": "Firma pożyczkowa",
+            "pt": "Loja de empréstimos",
+            "ru": "Ростовщик",
+            "sl": "Posojilnica",
+            "sv": "Långivare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-money_hand.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=motorcycle",
+          "then": {
+            "en": "Motorcycle Dealership",
+            "ca": "Botiga de motocicletes",
+            "da": "Motorcykelforhandler",
+            "de": "Motorradhändler",
+            "eo": "Motorcikla vendejo",
+            "es": "Concesionario de motos",
+            "fi": "Moottoripyöräliike",
+            "fr": "Vendeur de motos",
+            "gl": "Concesionario de motocicletas",
+            "hu": "Motorkerékpár-kereskedés",
+            "id": "Dealer Motor",
+            "it": "Concessionario di motociclette",
+            "ja": "バイク店",
+            "nl": "Motorwinkel",
+            "pl": "Sklep motocyklowy",
+            "pt": "Loja de motas",
+            "ru": "Магазин мотоциклов",
+            "sl": "Trgovina z motorji",
+            "sv": "Återförsäljare av motorcyklar"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-motorcycle.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=motorcycle_repair",
+          "then": {
+            "en": "Motorcycle Repair Shop",
+            "ca": "Taller de reparació de motos",
+            "da": "Motorcykelværksted",
+            "de": "Motorradwerkstatt",
+            "eo": "Motorcikl-riparejo",
+            "es": "Taller de reparación de motos",
+            "fi": "Moottoripyöräkorjaamo",
+            "fr": "Réparateur de motos",
+            "gl": "Taller de arranxo de motocicletas",
+            "hu": "Motorkerékpáralkatrész-bolt",
+            "it": "Officina riparazione motocicli",
+            "ja": "バイク修理店",
+            "nl": "Motorreparatie",
+            "pl": "Warsztat motocyklowy",
+            "pt": "Oficina de motas",
+            "ru": "Мотомастерская",
+            "sv": "Motorcykelverkstad"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-motorcycle_repair.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=music",
+          "then": {
+            "en": "Music Store",
+            "ca": "Botiga de música",
+            "da": "Musikbutik",
+            "de": "Musikgeschäft",
+            "eo": "Muzika vendejo",
+            "es": "Tienda de música",
+            "fi": "Musiikkiliike",
+            "fr": "Magasin de musique",
+            "gl": "Tenda de música",
+            "hu": "Hanglemezbolt",
+            "id": "Toko Musik",
+            "it": "Negozio di musica",
+            "ja": "CD/レコード店",
+            "nl": "Muziekwinkel",
+            "pl": "Sklep muzyczny",
+            "pt": "Loja de música",
+            "ru": "Музыкальный магазин",
+            "sl": "Trgovina z glasbo",
+            "sv": "Musikaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-compact-disc.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=musical_instrument",
+          "then": {
+            "en": "Musical Instrument Store",
+            "ca": "Botiga d'instruments musicals",
+            "da": "Musikinstrumentbutik",
+            "de": "Musikinstrumentegeschäft",
+            "eo": "Muzikinstrumenta vendejo",
+            "es": "Tienda de instrumentos musicales",
+            "fi": "Instrumenttimyymälä",
+            "fr": "Magasin d'instruments de musique",
+            "gl": "Tenda de instrumentos musicais",
+            "hu": "Hangszerbolt",
+            "id": "Toko Alat Musik",
+            "it": "Negozio di strumenti musicali",
+            "ja": "楽器店",
+            "nl": "Muziekinstrumentenwinkel",
+            "pl": "Sklep z instrumentami muzycznymi",
+            "pt": "Loja de instrumentos musicais",
+            "ru": "Магазин музыкальных инструментов",
+            "sl": "Trgovina z glasbenimi inštrumenti",
+            "sv": "Musikinstrument"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-guitar.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=newsagent",
+          "then": {
+            "en": "Newspaper/Magazine Shop",
+            "ca": "Botiga de diaris i revistes",
+            "da": "Avis/Bladforhandler",
+            "de": "Zeitschriftenhandel",
+            "eo": "Gazeta vendejo",
+            "es": "Puesto de periódicos / revistas",
+            "fi": "Lehtikoju",
+            "fr": "Magasin de journaux",
+            "gl": "Tenda de xornais/revistas",
+            "hu": "Újságárus",
+            "id": "Toko Majalah/Koran",
+            "it": "Edicola",
+            "ja": "新聞・雑誌店",
+            "nl": "Kranten-/Tijdschriftwinkel",
+            "pl": "Sklep z prasą",
+            "pt": "Loja de jornais / revistas",
+            "ru": "Газеты/пресса/журналы",
+            "sl": "Trgovina s časopisi/revijami",
+            "sv": "Tidningsaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-newspaper.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=nutrition_supplements",
+          "then": {
+            "en": "Nutrition Supplements Store",
+            "ca": "Botiga de suplements nutricionals",
+            "da": "Helsekostbutik",
+            "de": "Nahrungsergänzungsmittelgeschäft",
+            "eo": "Diet-suplementa vendejo",
+            "es": "Tienda de suplementos nutricionales",
+            "fi": "Lisäravinnemyymälä",
+            "fr": "Boutique de compléments alimentaires",
+            "gl": "Tenda de suplementos nutricionais",
+            "hu": "Étrendkiegészítő-bolt",
+            "it": "Negozio di integratori alimentari",
+            "ja": "栄養サプリ販売店",
+            "nl": "Voedingssupplementenwinkel",
+            "pl": "Sklep z suplementami diety",
+            "pt": "Loja de suplementos alimentares",
+            "ru": "Магазин пищевых добавок",
+            "sl": "Trgovina s prehrambenimi dodatki",
+            "sv": "Hälsokost"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-pills.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=optician",
+          "then": {
+            "en": "Optician",
+            "ca": "Òptica",
+            "da": "Optiker",
+            "de": "Optiker",
+            "eo": "Optikbutiko",
+            "es": "Óptica",
+            "fi": "Optikko",
+            "fr": "Opticien",
+            "gl": "Óptica",
+            "hu": "Látszerész",
+            "id": "Optik",
+            "it": "Ottico",
+            "ja": "メガネ店",
+            "nl": "Opticien",
+            "pl": "Optyk",
+            "pt": "Ótica",
+            "ru": "Оптика",
+            "sl": "Optik",
+            "sv": "Optiker"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-optician.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=outdoor",
+          "then": {
+            "en": "Outdoors Store",
+            "ca": "Botiga per a activitats a l'aire lliure",
+            "da": "Friluftsudstyrsbutik",
+            "de": "Outdoorgeschäft",
+            "eo": "Vojaĝila vendejo",
+            "es": "Tienda de actividades al aire libre",
+            "fi": "Ulkoilmamyymälä",
+            "fr": "Magasin de matériel de sports de plein air",
+            "gl": "Tenda de actividades ó ar libre",
+            "hu": "Túrafelszerelés-bolt",
+            "id": "Toko Perlengkapan Outdoor",
+            "it": "Negozio per sport all'aria aperta",
+            "ja": "アウトドアショップ",
+            "nl": "Buitensportwinkel",
+            "pl": "Sklep turystyczny",
+            "pt": "Loja de artigos para atividades ao ar livre",
+            "ru": "Магазин снаряжения для активного отдыха",
+            "sl": "Trgovina za dejavosti na prostem",
+            "sv": "Friluftsaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-compass.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=outpost",
+          "then": {
+            "en": "Online Retailer Outpost",
+            "de": "Abholstelle eines Onlinehändlers",
+            "eo": "Ricevejo de aĉetaĵoj (per interreto)",
+            "es": "Puesto de venta minorista online",
+            "fi": "Verkkokaupan noutopiste",
+            "fr": "Magasin de produits vendus en ligne",
+            "gl": "Posto de venda minorista online",
+            "hu": "Internetes bolt",
+            "it": "Centro ritiro acquisti online",
+            "ja": "商品受け取り店",
+            "nl": "Voorpost van een online retailer",
+            "pl": "Placówka sklepu internetowego",
+            "pt": "Posto de retalhista online",
+            "ru": "Пункт выдачи интернет-магазина",
+            "sv": "Utlämning av online-beställningar"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=paint",
+          "then": {
+            "en": "Paint Store",
+            "ca": "Botiga de pintura",
+            "da": "Farvehandel",
+            "de": "Farbengeschäft",
+            "eo": "Farba vendejo",
+            "es": "Tienda de pinturas",
+            "fi": "Maalikauppa",
+            "fr": "Magasin de peintures",
+            "gl": "Tenda de pinturas",
+            "hu": "Festékbolt",
+            "id": "Toko Cat",
+            "it": "Negozio di vernici",
+            "ja": "塗料店",
+            "nl": "Verfwinkel",
+            "pl": "Sklep z farbami",
+            "pt": "Loja de tintas",
+            "ru": "Магазин красочных изделий",
+            "sl": "Trgovina z barvami",
+            "sv": "Färgbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-paint-roller.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=party",
+          "then": {
+            "en": "Party Supply Store",
+            "de": "Partyzubehör",
+            "eo": "Vendejo de okazaĵaj provizoj",
+            "es": "Tienda de artículos para fiestas",
+            "fr": "Magasin de matériel de fête",
+            "gl": "Tenda de artigos para festas",
+            "hu": "Partykellékbolt",
+            "it": "Negozio di articoli per le feste",
+            "ja": "パーティ用品店",
+            "nl": "Feestwinkel",
+            "pl": "Sklep z artykułami imprezowymi",
+            "pt": "Loja de acessórios para festas",
+            "ru": "Магазин для вечеринок",
+            "sv": "Partybutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-balloon.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=pastry",
+          "then": {
+            "en": "Pastry Shop",
+            "ca": "Pastisseria",
+            "da": "Konditori",
+            "de": "Konditorei",
+            "eo": "Kukejo",
+            "es": "Pastelería",
+            "fi": "Leipomokonditoria",
+            "fr": "Pâtisserie",
+            "gl": "Confeitaría ou pastelaría",
+            "hu": "Cukrászda",
+            "it": "Pasticceria",
+            "ja": "焼菓子（ペイストリー）店",
+            "nl": "Patisserie",
+            "pl": "Cukiernia",
+            "pt": "Pastelaria",
+            "ru": "Пироги",
+            "sl": "Slaščičarna",
+            "sv": "Konditori"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-bakery.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=pawnbroker",
+          "then": {
+            "en": "Pawn Shop",
+            "ca": "Botiga d'empenyoraments",
+            "da": "Panteudlåner",
+            "de": "Pfandleihe",
+            "eo": "Mon-pruntejo (kontraŭ garantiaĵo)",
+            "es": "Casa de empeño",
+            "fi": "Panttilainaamo",
+            "fr": "Prêteur sur gages",
+            "gl": "Casa de empeños",
+            "hu": "Zálogház",
+            "id": "Pegadaian",
+            "it": "Banco dei pegni",
+            "ja": "質店",
+            "nl": "Pandjeshuis",
+            "pl": "Lombard",
+            "pt": "Casa de penhoras",
+            "ru": "Ломбард",
+            "sl": "Zastavljalnica",
+            "sv": "Pantbank"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-money_hand.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=perfumery",
+          "then": {
+            "en": "Perfume Store",
+            "ca": "Botiga de perfums",
+            "da": "Parfumebutik",
+            "de": "Parfümerie",
+            "eo": "Parfuma vendejo",
+            "es": "Perfumería",
+            "fi": "Hajusteliike",
+            "fr": "Parfumerie",
+            "gl": "Perfumaría",
+            "hu": "Parfüméria",
+            "it": "Profumeria",
+            "ja": "香水店",
+            "nl": "Parfumwinkel",
+            "pl": "Perfumeria",
+            "pt": "Perfumaria",
+            "ru": "Парфюмерия",
+            "sl": "Parfumerija",
+            "sv": "Parfymbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-perfume.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=pet",
+          "then": {
+            "en": "Pet Store",
+            "ca": "Botiga d'animals",
+            "da": "Kæledyrsbutik",
+            "de": "Tierhandlung",
+            "eo": "Hejmbesta vendejo",
+            "es": "Tienda de mascotas",
+            "fi": "Lemmikkiliike",
+            "fr": "Animalerie",
+            "gl": "Tenda de mascotas",
+            "hu": "Kisállatkereskedés",
+            "id": "Toko Peliharaan",
+            "it": "Negozio per animali",
+            "ja": "ペットショップ",
+            "nl": "Dierenwinkel",
+            "pl": "Sklep zoologiczny",
+            "pt": "Loja de animais de estimação",
+            "ru": "Зоомагазин",
+            "sl": "Trgovina za domače živali",
+            "sv": "Djurbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-cat.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=pet_grooming",
+          "then": {
+            "en": "Pet Grooming Store",
+            "de": "Tierpflegedienst, Tierfriseur (meist Hundesalon)",
+            "eo": "Hejmbesta beligejo",
+            "es": "Tienda de aseo de mascotas",
+            "fi": "Lemmikkihoitola",
+            "fr": "Salon de toilettage",
+            "gl": "Tenda de coidado de animais",
+            "hu": "Állatkozmetika",
+            "it": "Toelettatura per animali",
+            "ja": "ペット美容室",
+            "nl": "Trimsalon",
+            "pl": "Salon fryzjerski dla zwierząt",
+            "pt": "Loja de banhos e tosquias",
+            "ru": "Парикмахерская для животных",
+            "sv": "Pälsvård för husdjur"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-pet_grooming.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=photo",
+          "then": {
+            "en": "Photography Store",
+            "ca": "Botiga de fotografia",
+            "da": "Fotoforretning",
+            "de": "Fotofachgeschäft",
+            "eo": "Fotografia vendejo",
+            "es": "Tienda de fotografía",
+            "fi": "Valokuvausliike",
+            "fr": "Tirage de photos",
+            "gl": "Tenda de fotografía",
+            "hu": "Fotósbolt",
+            "id": "Toko Fotografi",
+            "it": "Fotografo",
+            "ja": "写真店",
+            "nl": "Fotowinkel",
+            "pl": "Sklep fotograficzny",
+            "pt": "Loja de fotografia",
+            "ru": "Фототовары",
+            "sl": "Foto trgovina",
+            "sv": "Fotoaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-camera-retro.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=pottery",
+          "then": {
+            "en": "Pottery Store",
+            "ca": "Botiga de ceràmica",
+            "de": "Keramikladen",
+            "eo": "Porcelan-vendejo",
+            "es": "Tienda de alfarería",
+            "fr": "Magasin de poterie",
+            "gl": "Tenda de cerámica",
+            "hu": "Fazekas bolt",
+            "it": "Negozio di ceramica",
+            "ja": "陶磁器店",
+            "nl": "Winkel voor aardewerk",
+            "pl": "Sklep garncarski",
+            "pt": "Loja de cerâmica",
+            "ru": "Магазин керамики",
+            "sv": "Keramikaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-vase.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=printer_ink",
+          "then": {
+            "en": "Printer Ink Store",
+            "ca": "Botiga de tinta d'impressores",
+            "de": "Druckertintengeschäft",
+            "eo": "Presil-inka vendejo",
+            "es": "Tienda de tinta para impresora",
+            "fi": "Tulostinmustemyymälä",
+            "fr": "Vendeur d'encre pour imprimante",
+            "gl": "Tenda de tinta de impresora",
+            "hu": "Nyomtatófesték bolt",
+            "it": "Negozio di cartucce per stampanti",
+            "ja": "プリンタ用インク店",
+            "nl": "Winkel voor printerinkt",
+            "pl": "Sklep z tuszami do drukarek",
+            "pt": "Loja de tinteiros de impressora",
+            "ru": "Магазин чернил для принтера",
+            "sv": "Butik för skrivarbläck"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-print.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=psychic",
+          "then": {
+            "en": "Psychic",
+            "de": "Astrologiker",
+            "eo": "Laborejo de mediumo",
+            "es": "Vidente",
+            "fi": "Psyykikko",
+            "fr": "Magasin ésotérique psi",
+            "gl": "Vidente",
+            "hu": "Jóslás",
+            "it": "Sensitivo",
+            "ja": "サイキック店",
+            "nl": "Medium (esoterie)",
+            "pl": "Medium",
+            "pt": "Vidente",
+            "ru": "Предсказатель",
+            "sv": "Medium / Psykisk"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-psychic.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=pyrotechnics",
+          "then": {
+            "en": "Fireworks Store",
+            "ca": "Botiga d'articles pirotècnics",
+            "da": "Fyrværkeributik",
+            "de": "Feuerwerksgeschäft",
+            "eo": "Art-fajraĵa vendejo",
+            "es": "Tienda de fuegos artificiales",
+            "fi": "Ilotulitemyymälä",
+            "fr": "Magasin de feux d'artifice",
+            "gl": "Tenda de fogos artificiais",
+            "hu": "Tűzijátékbolt",
+            "id": "Toko Kembang Api",
+            "it": "Negozio di fuochi d'artificio",
+            "ja": "花火店",
+            "nl": "Vuurwerkwinkel",
+            "pl": "Sklep ze sztucznymi ogniami",
+            "pt": "Loja de pirotecnia",
+            "ru": "Магазин фейерверков",
+            "sv": "Fyrverkerier"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-rocket_firework.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=radiotechnics",
+          "then": {
+            "en": "Radio/Electronic Component Store",
+            "ca": "Botiga d'articles electrònics",
+            "da": "Radio/Elektronikbutik",
+            "de": "Radio/Elektronik-Geschäft",
+            "eo": "Radioteĥnika/elektronik-parta vendejo",
+            "es": "Tienda de componentes radio electrónicos",
+            "fi": "Elektroniikkakomponenttimyymälä",
+            "fr": "Magasin de composants électroniques et de radio",
+            "gl": "Tenda de compoñentes electrónicos",
+            "hu": "Rádiótechnikai bolt",
+            "id": "Toko Komponen Radio/Elektronik",
+            "it": "Negozio di componenti elettronici",
+            "ja": "電子部品店",
+            "nl": "Winkel voor radio- en elektronische componenten",
+            "pl": "Sklep z częściami elektronicznymi",
+            "pt": "Loja de componentes eletrónicos / rádio",
+            "ru": "Магазин радиодеталей",
+            "sl": "Trgovina z elektroniko",
+            "sv": "Radio/Elektronikbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-microchip.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=religion",
+          "then": {
+            "en": "Religious Store",
+            "ca": "Botiga d'articles religiosos",
+            "da": "Religøs forretning",
+            "de": "Devotionalienhandlung",
+            "eo": "Devotaĵa vendejo",
+            "es": "Tienda religiosa",
+            "fi": "Uskonnollinen myymälä",
+            "fr": "Magasin d'articles religieux",
+            "gl": "Tenda relixiosa",
+            "hu": "Kegytárgybolt",
+            "id": "Toko Agamawi",
+            "it": "Negozio di articoli religiosi",
+            "ja": "宗教用品店",
+            "nl": "Religieuze winkel",
+            "pl": "Sklep z dewocjonaliami",
+            "pt": "Loja de artigos religiosos",
+            "ru": "Религиозная лавка",
+            "sv": "Religiös butik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=rental",
+          "then": {
+            "en": "Rental Shop",
+            "da": "Udlejningsforretning",
+            "de": "Verleih",
+            "eo": "Pruntejo",
+            "es": "Tienda de alquiler",
+            "fi": "Vuokraamo",
+            "fr": "Magasin de location",
+            "gl": "Tenda de alugueiro",
+            "hu": "Kölcsönző",
+            "it": "Negozio di noleggio",
+            "ja": "レンタルショップ",
+            "nl": "Verhuurwinkel",
+            "pl": "Wypożyczalnia",
+            "pt": "Loja de aluguer de material em geral",
+            "ru": "Аренда",
+            "sv": "Hyrbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-dolly.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=repair",
+          "then": {
+            "en": "Repair Shop",
+            "de": "Reparaturgeschäft",
+            "eo": "Riparejo",
+            "es": "Taller de reparaciones",
+            "fr": "Atelier de réparation",
+            "hu": "Javítóműhely",
+            "it": "Bottega di riparazioni",
+            "ja": "修理店",
+            "nl": "Reparatiewinkel",
+            "pl": "Naprawy",
+            "pt": "Loja de reparações",
+            "sv": "Reparatör"
+          }
+        },
+        {
+          "if": "shop=scuba_diving",
+          "then": {
+            "en": "Scuba Diving Shop",
+            "ca": "Botiga de submarinisme",
+            "da": "Dykkerudstyrsbutik",
+            "de": "Tauchwarengeschäft",
+            "eo": "Subakvad-aparata vendejo",
+            "es": "Tienda de buceo",
+            "fi": "Sukellusliike",
+            "fr": "Magasin de matériel de plongée sous-marine",
+            "gl": "Tenda de mergullo",
+            "hu": "Búvárfelszerelés-bolt",
+            "id": "Toko Perlengkapan Menyelam",
+            "it": "Negozio di attrezzatura per subacquei",
+            "ja": "スキューバダイビングショップ",
+            "nl": "Duikwinkel",
+            "pl": "Sklep nurkowy",
+            "pt": "Loja de equipamento de mergulho",
+            "ru": "Магазин подводного снаряжения",
+            "sl": "Trgovina s potapljaško opremo",
+            "sv": "Dykarbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-scuba_diving.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=seafood",
+          "then": {
+            "en": "Seafood Shop",
+            "ca": "Marisqueria",
+            "da": "Fiskehandler",
+            "de": "Fischgeschäft",
+            "eo": "Marfrukta vendejo",
+            "es": "Tienda de pescados y mariscos",
+            "fi": "Meriruokakauppa",
+            "fr": "Poissonnerie / Vente de fruits de mer",
+            "gl": "Peixaría",
+            "hu": "Halbolt",
+            "id": "Toko HIdangan Laut",
+            "it": "Pescheria",
+            "ja": "魚屋",
+            "nl": "Viswinkel",
+            "pl": "Sklep z rybami i owocami morza",
+            "pt": "Peixaria",
+            "ru": "Магазин морепродуктов",
+            "sl": "Ribarnica",
+            "sv": "Fiskaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-fish_cleaning.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=second_hand",
+          "then": {
+            "en": "Consignment/Thrift Store",
+            "ca": "Consigna",
+            "da": "Genbrugsbutik",
+            "de": "Second-Hand-Laden",
+            "eo": "Brokantejo",
+            "es": "Tienda de segunda mano",
+            "fi": "Käytetyn tavaran kauppa",
+            "fr": "Dépôt-vente/produits d'occasion",
+            "gl": "Tenda de segunda man",
+            "hu": "Használtáru-bolt",
+            "id": "Jual Titip/Pasar Loak",
+            "it": "Negozio di articoli usati",
+            "ja": "リサイクルショップ",
+            "nl": "Tweedehandswinkel",
+            "pl": "Sklep z rzeczami używanymi",
+            "pt": "Loja de produtos em segunda mão",
+            "ru": "Магазин секонд хенда",
+            "sv": "Second hand"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=sewing",
+          "then": {
+            "en": "Sewing Supply Shop",
+            "ca": "Merceria",
+            "da": "Syforretning",
+            "de": "Kurzwarenladen",
+            "eo": "Kudrilar-vendejo",
+            "es": "Tienda de suministros de costura",
+            "fi": "Ompelutarvikeliike",
+            "fr": "Magasin de couture",
+            "gl": "Tenda de artigos de costura",
+            "hu": "Varrásfelszerelés bolt",
+            "it": "Merceria",
+            "ja": "手芸用品店",
+            "nl": "Naaiwinkel",
+            "pl": "Pasmanteria",
+            "pt": "Retrosaria",
+            "ru": "Швейные принадлежности",
+            "sv": "Sybutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-needle_and_spool.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=shoe_repair",
+          "then": {
+            "en": "Shoe Repair Shop",
+            "ca": "Sabater",
+            "de": "Schuhreparatur",
+            "eo": "Ŝu-riparejo",
+            "es": "Taller de reparación de calzado",
+            "fr": "Cordonnier",
+            "gl": "Tenda de arranxo de zapatos",
+            "hu": "Cipőjavítás",
+            "it": "Calzolaio",
+            "ja": "靴修理店",
+            "nl": "Schoenenreparatiewinkel",
+            "pl": "Szewc (naprawa obuwia)",
+            "pt": "Reparador de sapatos",
+            "ru": "Ремонт обуви",
+            "sv": "Skomakare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-hammer_shoe.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=shoes",
+          "then": {
+            "en": "Shoe Store",
+            "ca": "Sabateria",
+            "da": "Skobutik",
+            "de": "Schuhgeschäft",
+            "eo": "Ŝua vendejo",
+            "es": "Zapatería",
+            "fi": "Kenkäkauppa",
+            "fr": "Magasin de chaussures",
+            "gl": "Zapataría",
+            "hu": "Cipőbolt",
+            "id": "Toko Sepatu",
+            "it": "Negozio di scarpe",
+            "ja": "靴店",
+            "nl": "Schoenenwinkel",
+            "pl": "Sklep obuwniczy",
+            "pt": "Sapataria",
+            "ru": "Обувь",
+            "sl": "Trgovina s čevlji",
+            "sv": "Skoaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shoe.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=spices",
+          "then": {
+            "en": "Spice Shop",
+            "ca": "Botiga d'espècies",
+            "da": "Kryddeributik",
+            "de": "Gewürzladen",
+            "eo": "Spica vendejo",
+            "es": "Tienda de especias",
+            "fi": "Maustekauppa",
+            "fr": "Magasin d'épices",
+            "gl": "Tenda de especias",
+            "hu": "Fűszerbolt",
+            "it": "Negozio di spezie",
+            "ja": "スパイス店",
+            "nl": "Kruidenwinkel",
+            "pl": "Sklep z przyprawami",
+            "pt": "Loja de especiarias",
+            "ru": "Магазин специй",
+            "sv": "Affär för kryddor"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-spice_bottle.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=sports",
+          "then": {
+            "en": "Sporting Goods Store",
+            "ca": "Botiga d'esports",
+            "da": "Sportsudstyrsbutik",
+            "de": "Sportgeschäft",
+            "eo": "Sporta vendejo",
+            "es": "Tienda de artículos deportivos",
+            "fi": "Urheiluliike",
+            "fr": "Magasin d'équipement sportif",
+            "gl": "Tenda de deportes",
+            "hu": "Sportbolt",
+            "id": "Toko Olahraga",
+            "it": "Negozio di articoli sportivi",
+            "ja": "スポーツ用品店",
+            "nl": "Sportzaak",
+            "pl": "Sklep sportowy",
+            "pt": "Loja de artigos desportivos",
+            "ru": "Спорттовары",
+            "sl": "Športna trgovina",
+            "sv": "Sportaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-futbol.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=stationery",
+          "then": {
+            "en": "Stationery Store",
+            "ca": "Papereria",
+            "da": "Papirforhandler",
+            "de": "Schreibwarengeschäft",
+            "eo": "Papervara vendejo",
+            "es": "Artículos de papelería y oficina",
+            "fi": "Toimistotarvikekauppa",
+            "fr": "Papeterie",
+            "gl": "Papelaría",
+            "hu": "Papírbolt",
+            "id": "Toko Alat Tulis",
+            "it": "Negozio di cancelleria",
+            "ja": "文具店",
+            "nl": "Kantoorboekhandel",
+            "pl": "Sklep papierniczy",
+            "pt": "Papelaria",
+            "ru": "Канцелярские товары",
+            "sl": "Papirnica",
+            "sv": "Pappershandel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-paperclip.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=storage_rental",
+          "then": {
+            "en": "Storage Rental",
+            "ca": "Lloguer de magatzem",
+            "da": "Lagerhotel",
+            "de": "Lagerraumvermieter",
+            "eo": "Magazena spaco por lui",
+            "es": "Alquiler de espacios para almacenaje",
+            "fi": "Varastonvuokrauspalvelu",
+            "fr": "Location de stockage - Ne pas utiliser",
+            "gl": "Alugueiro de almacéns",
+            "hu": "Tárolóhely bérbeadása",
+            "it": "Box a noleggio",
+            "ja": "レンタル倉庫",
+            "nl": "Zelfopslag",
+            "pl": "Przechowalnia rzeczy (długoterminowa)",
+            "pt": "Aluguer de depósitos",
+            "ru": "Аренда складских помещений",
+            "sl": "Najem shrambnih prostorov",
+            "sv": "Hyrlager"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-storage_rental.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=supermarket",
+          "then": {
+            "en": "Supermarket",
+            "ca": "Supermercat",
+            "da": "Supermarked",
+            "de": "Supermarkt",
+            "eo": "Superbazaro",
+            "es": "Supermercado",
+            "fi": "Supermarketti",
+            "fr": "Supermarché",
+            "gl": "Supermercado",
+            "hu": "Szupermarket",
+            "id": "Supermarket",
+            "it": "Supermercato",
+            "ja": "スーパーマーケット",
+            "nl": "Supermarkt",
+            "pl": "Supermarket",
+            "pt": "Supermercado / Hipermercado",
+            "ru": "Супермаркет",
+            "sl": "Supermarket",
+            "sv": "Mataffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-grocery.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=swimming_pool",
+          "then": {
+            "en": "Pool Supply Store",
+            "de": "Swimmingpoolbedarf",
+            "eo": "Vendejo de naĝej-akcesoriaĵoj",
+            "es": "Tienda de suministros para piscinas",
+            "fi": "Uima-allasliike",
+            "fr": "Magasin de matériel de piscine",
+            "gl": "Tenda de subministracións para piscinas",
+            "hu": "Uszodatechnika-bolt",
+            "it": "Negozio per rifornimenti per piscina",
+            "ja": "プール用品店",
+            "nl": "Winkel voor zwembadbenodigdheden",
+            "pl": "Sklep z akcesoriami do basenów",
+            "pt": "Loja de acessórios para piscinas",
+            "sv": "Butik för pooltillbehör"
+          }
+        },
+        {
+          "if": "shop=tailor",
+          "then": {
+            "en": "Tailor",
+            "ca": "Sastreria",
+            "da": "Skrædder",
+            "de": "Schneider",
+            "eo": "Tajlora laborejo/vendejo",
+            "es": "Sastrería",
+            "fi": "Räätäliliike",
+            "fr": "Tailleur",
+            "gl": "Xastraría",
+            "hu": "Szabó",
+            "id": "Tukang Jahit",
+            "it": "Sartoria",
+            "ja": "仕立屋",
+            "nl": "Kleermaker",
+            "pl": "Krawiec / usługi krawieckie",
+            "pt": "Alfaiate",
+            "ru": "Портной",
+            "sl": "Krojač",
+            "sv": "Skräddare"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-needle_and_spool.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=tattoo",
+          "then": {
+            "en": "Tattoo Parlor",
+            "ca": "Centre de tatuatges",
+            "da": "Tatovør",
+            "de": "Tätowierer",
+            "eo": "Salono de tatuado",
+            "es": "Salón de tatuajes",
+            "fi": "Tatuointisalonki",
+            "fr": "Salon de tatouage",
+            "gl": "Salón de tatuaxes",
+            "hu": "Tetováló szalon",
+            "id": "Jasa Pembuatan Tato",
+            "it": "Tatuatore",
+            "ja": "タトゥースタジオ",
+            "nl": "Tattoozetter",
+            "pl": "Studio tatuażu",
+            "pt": "Estúdio de tatuagens",
+            "ru": "Тату салон",
+            "sl": "Salon za tetovažo",
+            "sv": "Tatueringsstudio"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tattoo_machine.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=tea",
+          "then": {
+            "en": "Tea Store",
+            "ca": "Botiga de te",
+            "da": "Tebutik",
+            "de": "Teegeschäft",
+            "eo": "Tea vendejo",
+            "es": "Tienda de té",
+            "fi": "Teekauppa",
+            "fr": "Magasin de thés",
+            "gl": "Tenda de té",
+            "hu": "Teaüzlet",
+            "id": "Toko Teh",
+            "it": "Negozio di tè",
+            "ja": "茶舗",
+            "nl": "Theewinkel",
+            "pl": "Sklep z herbatą",
+            "pt": "Loja de chás",
+            "ru": "Чайный магазин",
+            "sl": "Čajnica",
+            "sv": "Te-butik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-teahouse.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=telecommunication",
+          "then": {
+            "en": "Telecom Retail Store",
+            "de": "Telekommunikationsfachgeschäft",
+            "eo": "Oficejo de telekomunikada firmao (vendo)",
+            "es": "Tienda minorista de telecomunicaciones",
+            "fi": "Teleoperaattorin myymälä",
+            "fr": "Magasin de compagnie de télécommunication",
+            "gl": "Tenda de subministracións de telecomunicación",
+            "hu": "Telekommunikációs üzlet",
+            "it": "Negozio al dettaglio di Telefonia",
+            "ja": "通信サービス店",
+            "nl": "Telecomwinkel",
+            "pl": "Dostawca Internetu/telefonu/TV",
+            "pt": "Loja de telecomunicações",
+            "sv": "Telekombutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-telephone.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=ticket",
+          "then": {
+            "en": "Ticket Seller",
+            "ca": "Venedor de tiquets",
+            "da": "Billetsælger",
+            "de": "Eintrittskartenverkäufer",
+            "eo": "Biletejo",
+            "es": "Venta de boletos",
+            "fi": "Lipunmyyntipiste",
+            "fr": "Boutique de vente de billets",
+            "gl": "Venda de entradas",
+            "hu": "Jegypénztár",
+            "id": "Penjual Tiket",
+            "it": "Biglietteria",
+            "ja": "チケット店",
+            "nl": "Ticketverkoop",
+            "pl": "Sprzedaż biletów",
+            "pt": "Bilheteira",
+            "ru": "Билетная касса",
+            "sl": "Prodajalna vstopnic",
+            "sv": "Biljettförsäljning"
+          }
+        },
+        {
+          "if": "shop=tiles",
+          "then": {
+            "en": "Tile Shop",
+            "ca": "Botiga de rajoles",
+            "da": "Fliseforhandler",
+            "de": "Fliesenhändler",
+            "eo": "Kahela vendejo",
+            "es": "Tienda de azulejos",
+            "fi": "Laattamyymälä",
+            "fr": "Magasin de carrelage",
+            "gl": "Tenda de azulexos",
+            "hu": "Csempebolt",
+            "it": "Negozio di piastrelle",
+            "ja": "タイル店",
+            "nl": "Tegelwinkel",
+            "pl": "Sklep z płytkami ceramicznymi",
+            "pt": "Loja de azulejos",
+            "ru": "Магазин плитки",
+            "sv": "Kakelbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tiling.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=tobacco",
+          "then": {
+            "en": "Tobacco Shop",
+            "ca": "Estanc",
+            "da": "Tobaksforretning",
+            "de": "Tabakwarengeschäft",
+            "eo": "Tabaka vendejo",
+            "es": "Tienda de tabaco",
+            "fi": "Tupakkapuoti",
+            "fr": "Bureau de tabac",
+            "gl": "Estanco",
+            "hu": "Dohánybolt",
+            "id": "Toko Tembakau",
+            "it": "Tabaccheria",
+            "ja": "たばこ店",
+            "nl": "Tabakswinkel",
+            "pl": "Sklep z tytoniem",
+            "pt": "Tabacaria",
+            "ru": "Табачный магазин",
+            "sl": "Tobačna trgovina",
+            "sv": "Tobaksbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-pipe.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=tool_hire",
+          "then": {
+            "en": "Tool Rental",
+            "ca": "Lloguer d'eines",
+            "da": "Værktøjsudlejning",
+            "de": "Werkzeugverleih",
+            "eo": "Il-pruntejo",
+            "es": "Alquiler de herramientas",
+            "fi": "Työkaluvuokraamo",
+            "fr": "Location d'outils",
+            "gl": "Alugueiro de ferramentas",
+            "hu": "Gépkölcsönző",
+            "it": "Noleggio utensili",
+            "ja": "工具レンタル店",
+            "nl": "Gereedschapsverhuur",
+            "pl": "Wypożyczalnia narzędzi",
+            "pt": "Aluguer de ferramentas",
+            "ru": "Аренда инструмента",
+            "sv": "Verktygsuthyrning"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=toys",
+          "then": {
+            "en": "Toy Store",
+            "ca": "Botiga de joguines",
+            "da": "Legetøjsbutik",
+            "de": "Spielwarengeschäft",
+            "eo": "Ludila vendejo",
+            "es": "Juguetería",
+            "fi": "Lelukauppa",
+            "fr": "Magasin de jouets",
+            "gl": "Tenda de xoguetes",
+            "hu": "Játékbolt",
+            "id": "Toko Mainan",
+            "it": "Negozio di giocattoli",
+            "ja": "玩具店",
+            "nl": "Speelgoedwinkel",
+            "pl": "Sklep z zabawkami",
+            "pt": "Loja de brinquedos",
+            "ru": "Игрушки",
+            "sl": "Trgovina igrač",
+            "sv": "Leksaksaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-rocket.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=trade",
+          "then": {
+            "en": "Trade Shop",
+            "da": "Brancheforhandler",
+            "de": "Baustoffhandel",
+            "eo": "Pogranda vendejo (konstruaĵ‑materialoj)",
+            "es": "Tienda comercial / Corralón",
+            "fr": "Grossiste",
+            "gl": "Distribuidor",
+            "hu": "Szakáruház",
+            "it": "Materiali da edilizia",
+            "ja": "建築資材店",
+            "nl": "Bouwmaterialenhandel",
+            "pl": "Skład materiałów budowlanych",
+            "pt": "Loja de materiais de construção",
+            "ru": "Оптовая база",
+            "sv": "Proffshandel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tools.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=travel_agency",
+          "then": {
+            "en": "Travel Agency",
+            "ca": "Agència de viatges",
+            "da": "Rejsebureau",
+            "de": "Reisebüro",
+            "eo": "Vojaĝa oficejo",
+            "es": "Agencia de viajes",
+            "fi": "Matkatoimisto",
+            "fr": "Agence de voyages",
+            "gl": "Axencia de viaxes",
+            "hu": "Utazási iroda",
+            "id": "Biro Perjalanan",
+            "it": "Agenzia di viaggi",
+            "ja": "旅行代理店",
+            "nl": "Reisbureau",
+            "pl": "Biuro podróży",
+            "pt": "Agência de viagens",
+            "ru": "Бюро путешествий",
+            "sl": "Turistična agencija",
+            "sv": "Resebyrå"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-suitcase.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=trophy",
+          "then": {
+            "en": "Trophy Shop",
+            "ca": "Botiga de trofeus",
+            "de": "Trophäengeschäft",
+            "eo": "Vendejo de pokaloj kaj premioj",
+            "es": "Tienda de trofeos",
+            "fr": "Magasin de trophées",
+            "gl": "Tenda de trofeos",
+            "hu": "Kupák, kitüntetések boltja",
+            "it": "Negozio di coppe",
+            "ja": "徽章店",
+            "nl": "Trofeewinkel",
+            "pl": "Sklep z trofeami",
+            "pt": "Loja de troféus",
+            "sv": "Affär för troféer"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/fas-trophy.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=tyres",
+          "then": {
+            "en": "Tire Store",
+            "ca": "Botiga de pneumàtics",
+            "da": "Dækforhandler",
+            "de": "Reifenhandel",
+            "eo": "Aerbenda vendejo",
+            "es": "Tienda de neumáticos",
+            "fi": "Rengasliike",
+            "fr": "Magasin de pneus",
+            "gl": "Tenda de pneumáticos",
+            "hu": "Autógumibolt",
+            "id": "Toko Ban",
+            "it": "Gommista",
+            "ja": "タイヤ店",
+            "nl": "Bandenwinkel",
+            "pl": "Sklep z oponami / wulkanizacja",
+            "pt": "Loja de pneus",
+            "ru": "Шины",
+            "sl": "Prodaja pnevmatik",
+            "sv": "Däckfirma"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-tire.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=vacuum_cleaner",
+          "then": {
+            "en": "Vacuum Cleaner Store",
+            "ca": "Botiga d'aspiradors",
+            "da": "Støvsugerforhandler",
+            "de": "Staubsaugergeschäft",
+            "eo": "Polvosuĉila vendejo",
+            "es": "Tienda de aspiradoras",
+            "fi": "Pölynimuriliike",
+            "fr": "Magasin d'électroménager de nettoyage",
+            "gl": "Tenda de aspiradoras",
+            "hu": "Porszívóbolt",
+            "id": "Toko Pengisap Debu",
+            "it": "Negozio di aspirapolveri",
+            "ja": "掃除機店",
+            "nl": "Stofzuigerwinkel",
+            "pl": "Sklep z odkurzaczami",
+            "pt": "Loja de aspiradores",
+            "ru": "Магазин по продаже пылесосов",
+            "sl": "Trgovina s sesalci",
+            "sv": "Dammsugarbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-vacuum.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=variety_store",
+          "then": {
+            "en": "Variety Store",
+            "ca": "Botiga de tot a 100",
+            "da": "Spøg og skæmtbutik",
+            "de": "Sonderpostenmarkt",
+            "eo": "Ĉio-po-unu-spesmilo vendejo",
+            "es": "Tienda de variedades o bazar",
+            "fi": "Halpahalli",
+            "fr": "Magasin à prix unique ou à bas prix",
+            "gl": "Tenda de variedades ou bazar",
+            "hu": "100 forintos bolt",
+            "id": "Toserba",
+            "it": "Negozio a prezzo fisso",
+            "ja": "雑貨店（低価格）",
+            "nl": "Euroshop",
+            "pl": "Sklep z różnościami",
+            "pt": "Loja de variedades",
+            "ru": "Товары по одной цене",
+            "sl": "Trgovina z mešanim blagom",
+            "sv": "Fyndbutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=video",
+          "then": {
+            "en": "Video Store",
+            "ca": "Botiga de vídeos",
+            "da": "Videobutik",
+            "de": "Videothek",
+            "eo": "Filma vendejo/pruntejo",
+            "es": "Videoclub",
+            "fi": "Videovuokraamo",
+            "fr": "Vidéo-club",
+            "gl": "Videoclube",
+            "hu": "Videófilmbolt vagy -kölcsönző",
+            "id": "Toko Video",
+            "it": "Videoteca",
+            "ja": "ビデオソフト店",
+            "nl": "Videotheek",
+            "pl": "Sklep/wypożyczalnia z filmami wideo/dvd",
+            "pt": "Videoclube",
+            "ru": "Видеомагазин",
+            "sl": "Videoteka",
+            "sv": "Videobutik"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-movie_rental.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=video_games",
+          "then": {
+            "en": "Video Game Store",
+            "ca": "Botiga de videojocs",
+            "da": "Videospilbutik",
+            "de": "Videospielgeschäft",
+            "eo": "Videoluda vendejo",
+            "es": "Tienda de videojuegos",
+            "fi": "Videopeliliike",
+            "fr": "Magasin de location et vente de jeux vidéo",
+            "gl": "Tenda de videoxogos",
+            "hu": "Videojátékbolt",
+            "id": "Toko Permainan Video",
+            "it": "Negozio di videogiochi",
+            "ja": "テレビゲーム販売店",
+            "nl": "Computerspelwinkel",
+            "pl": "Sklep z grami wideo",
+            "pt": "Loja de videojogos",
+            "ru": "Магазин видеоигр",
+            "sl": "Trgovina z video igrami",
+            "sv": "TV-spel"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-gaming.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=watches",
+          "then": {
+            "en": "Watches Shop",
+            "ca": "Òptica",
+            "da": "Urbutik",
+            "de": "Uhrengeschäft",
+            "eo": "Horloĝa vendejo",
+            "es": "Relojería",
+            "fi": "Kellokauppa",
+            "fr": "Magasin de montres",
+            "gl": "Reloxaría",
+            "hu": "Órabolt (karóra)",
+            "it": "Negozio di orologi",
+            "ja": "腕時計店",
+            "nl": "Horlogewinkel",
+            "pl": "Sklep z zegarkami",
+            "pt": "Loja de relógios",
+            "ru": "Магазин часов",
+            "sl": "Trgovina z urami",
+            "sv": "Klockaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-watch.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=water",
+          "then": {
+            "en": "Drinking Water Shop",
+            "ca": "Botiga d'aigua potable",
+            "de": "Trinkwasserladen",
+            "eo": "Trinkakv-vendejo",
+            "es": "Tienda de agua potable",
+            "fi": "Juomavesikauppa",
+            "fr": "Magasin d'eau potable",
+            "gl": "Tenda de auga potábel",
+            "hu": "Ivóvíz-bolt",
+            "it": "Negozio di acqua da bere",
+            "ja": "飲料水店",
+            "nl": "Drinkwaterwinkel",
+            "pl": "Sklep z wodą pitną",
+            "pt": "Loja de água potável",
+            "sv": "Affär för dricksvatten"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-water_bottle.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=water_sports",
+          "then": {
+            "en": "Watersport/Swim Shop",
+            "ca": "Botiga d'esports aquàtics",
+            "da": "Svømmesport/Svømmeudstyrsbutik",
+            "de": "Wassersportgeschäft",
+            "eo": "Akvosport-aparata vendejo",
+            "es": "Tienda de deporte acuático / natación",
+            "fi": "Vesiurheiluliike",
+            "fr": "Vente d'équipements et d'articles pour sports nautiques",
+            "gl": "Tenda de deportes acuáticos / natación",
+            "hu": "Vízisport-bolt",
+            "id": "Toko Renang/Olahraga Air",
+            "it": "Negozio per sport acquatici",
+            "ja": "ウォータースポーツ用品店",
+            "nl": "Watersport-/Zwemwinkel",
+            "pl": "Sklep ze sprzętem do sportów wodnych",
+            "pt": "Loja de desportos aquáticos",
+            "ru": "Водный спорт/ Спорттовары",
+            "sv": "Vattensport/simning"
+          }
+        },
+        {
+          "if": "shop=weapons",
+          "then": {
+            "en": "Weapon Shop",
+            "ca": "Armeria",
+            "da": "Våbenbutik",
+            "de": "Waffengeschäft",
+            "eo": "Armila vendejo",
+            "es": "Armería",
+            "fi": "Aseliike",
+            "fr": "Armurerie",
+            "gl": "Armaría",
+            "hu": "Fegyverbolt",
+            "id": "Toko Senjata",
+            "it": "Armeria",
+            "ja": "武器屋",
+            "nl": "Wapenwinkel",
+            "pl": "Sklep z bronią",
+            "pt": "Loja de armas",
+            "ru": "Оружейный магазин",
+            "sl": "Trgovina z orožjem",
+            "sv": "Vapenaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-dagger.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=wholesale",
+          "then": {
+            "en": "Wholesale Store",
+            "de": "Großhandel",
+            "eo": "Pogranda vendejo",
+            "es": "Almacén al por mayor",
+            "fi": "Tukkukauppa",
+            "fr": "Commerce de gros",
+            "gl": "Almacén ó por maior",
+            "hu": "Nagykereskedés",
+            "it": "Grossista",
+            "ja": "卸売店",
+            "nl": "Groothandel",
+            "pl": "Hurtownia",
+            "pt": "Loja grossista",
+            "ru": "Оптовый магазин",
+            "sv": "Grosistaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-warehouse.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=wigs",
+          "then": {
+            "en": "Wig Shop",
+            "de": "Perückenladen",
+            "eo": "Vendejo de perukoj",
+            "es": "Tienda de pelucas",
+            "fr": "Magasin de perruques",
+            "gl": "Tenda de perrucas",
+            "hu": "Paróka-szaküzlet",
+            "it": "Negozio di parrucche",
+            "ja": "かつら店",
+            "nl": "Pruikenwinkel",
+            "pl": "Sklep z perukami",
+            "pt": "Loja de perucas",
+            "sv": "Affär för peruker"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-shop.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=window_blind",
+          "then": {
+            "en": "Window Blind Store",
+            "ca": "Botiga de persianes",
+            "da": "Persienneforhandler",
+            "de": "Fensterladengeschäft",
+            "eo": "Fenestr-kovrila vendejo",
+            "es": "Tienda de persianas",
+            "fi": "Kaihdinmyymälä",
+            "fr": "Magasin de vente de stores",
+            "gl": "Tenda de persianas",
+            "hu": "Redőnybolt",
+            "id": "Toko Kerai",
+            "it": "Negozio di tapparelle e serrande",
+            "ja": "ブラインドカーテン専門店",
+            "nl": "Jaloeziewinkel",
+            "pl": "Sklep z żaluzjami/roletami",
+            "pt": "Loja de estores",
+            "ru": "Магазин жалюзей",
+            "sl": "Trgovina z okenskimi senčili",
+            "sv": "Persienner"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/temaki-window.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "shop=wine",
+          "then": {
+            "en": "Wine Shop",
+            "ca": "Botiga de vins",
+            "da": "Vinforretning",
+            "de": "Weinhandel",
+            "eo": "Vina vendejo",
+            "es": "Tienda de vinos",
+            "fi": "Viinikauppa",
+            "fr": "Caviste",
+            "gl": "Tenda de viños",
+            "hu": "Borszaküzlet",
+            "id": "Toko Anggur",
+            "it": "Enoteca",
+            "ja": "ワイン店",
+            "nl": "Wijnhandel",
+            "pl": "Sklep z winami",
+            "pt": "Loja de vinhos",
+            "ru": "Винный магазин",
+            "sl": "Vinoteka",
+            "sv": "Vinaffär"
+          },
+          "icon": {
+            "path": "./assets/layers/shops/maki-alcohol-shop.svg",
+            "class": "medium"
           }
         }
       ],
-      "id": "shops-shop"
+      "#dont-translate": [
+        "mappings"
+      ]
     },
-    {
-      "render": {
-        "en": "<a href='tel:{phone}'>{phone}</a>",
-        "fr": "<a href='tel:{phone}'>{phone}</a>",
-        "ca": "<a href='tel:{phone}'>{phone}</a>",
-        "id": "<a href='tel:{phone}'>{phone}</a>",
-        "ru": "<a href='tel:{phone}'>{phone}</a>",
-        "ja": "<a href='tel:{phone}'>{phone}</a>",
-        "de": "<a href='tel:{phone}'>{phone}</a>",
-        "eo": "<a href='tel:{phone}'>{phone}</a>",
-        "nl": "<a href='tel:{phone}'>{phone}</a>",
-        "es": "<a href='tel:{phone}'>{phone}</a>"
-      },
-      "question": {
-        "en": "What is the phone number?",
-        "fr": "Quel est le numéro de téléphone ?",
-        "ja": "電話番号は何番ですか?",
-        "nl": "Wat is het telefoonnummer?",
-        "ru": "Какой телефон?",
-        "de": "Wie lautet die Telefonnummer?",
-        "eo": "Kio estas la telefonnumero?",
-        "es": "¿Cual es el número de teléfono?"
-      },
-      "freeform": {
-        "key": "phone",
-        "type": "phone"
-      },
-      "id": "shops-phone"
-    },
-    {
-      "render": {
-        "en": "<a href='{website}'>{website}</a>",
-        "fr": "<a href='{website}'>{website}</a>",
-        "ca": "<a href='{website}'>{website}</a>",
-        "id": "<a href='{website}'>{website}</a>",
-        "ru": "<a href='{website}'>{website}</a>",
-        "ja": "<a href='{website}'>{website}</a>",
-        "de": "<a href='{website}'>{website}</a>",
-        "eo": "<a href='{website}'>{website}</a>",
-        "nl": "<a href='{website}'>{website}</a>",
-        "es": "<a href='{website}'>{website}</a>"
-      },
-      "question": {
-        "en": "What is the website of this shop?",
-        "fr": "Quel est le site internet de ce magasin ?",
-        "ja": "このお店のホームページは何ですか?",
-        "nl": "Wat is de website van deze winkel?",
-        "ru": "Какой веб-сайт у этого магазина?",
-        "de": "Wie lautet die Webseite dieses Geschäfts?",
-        "es": "¿Cual es la página web de esta tienda?"
-      },
-      "freeform": {
-        "key": "website",
-        "type": "url"
-      },
-      "id": "shops-website"
-    },
-    {
-      "render": {
-        "en": "<a href='mailto:{email}'>{email}</a>",
-        "fr": "<a href='mailto:{email}'>{email}</a>",
-        "id": "<a href='mailto:{email}'>{email}</a>",
-        "ru": "<a href='mailto:{email}'>{email}</a>",
-        "ja": "<a href='mailto:{email}'>{email}</a>",
-        "eo": "<a href='mailto:{email}'>{email}</a>",
-        "nl": "<a href='mailto:{email}'>{email}</a>",
-        "de": "<a href='mailto:{email}'>{email}</a>",
-        "es": "<a href='mailto:{email}'>{email}</a>"
-      },
-      "question": {
-        "en": "What is the email address of this shop?",
-        "fr": "Quelle est l'adresse électronique de ce magasin ?",
-        "ja": "このお店のメールアドレスは何ですか?",
-        "ru": "Каков адрес электронной почты этого магазина?",
-        "nl": "Wat is het e-mailadres van deze winkel?",
-        "de": "Wie ist die Email-Adresse dieses Geschäfts?",
-        "eo": "Kio estas la retpoŝta adreso de ĉi tiu butiko?",
-        "es": "¿Cual es la dirección de correo electrónico de esta tienda?"
-      },
-      "freeform": {
-        "key": "email",
-        "type": "email"
-      },
-      "id": "shops-email"
-    },
-    {
-      "render": {
-        "en": "{opening_hours_table(opening_hours)}",
-        "fr": "{opening_hours_table(opening_hours)}",
-        "ru": "{opening_hours_table(opening_hours)}",
-        "ja": "{opening_hours_table(opening_hours)}",
-        "nl": "{opening_hours_table(opening_hours)}",
-        "ca": "{opening_hours_table(opening_hours)}",
-        "de": "{opening_hours_table(opening_hours)}",
-        "es": "{opening_hours_table(opening_hours)}"
-      },
-      "question": {
-        "en": "What are the opening hours of this shop?",
-        "fr": "Quels sont les horaires d'ouverture de ce magasin ?",
-        "ja": "この店の営業時間は何時から何時までですか?",
-        "nl": "Wat zijn de openingsuren van deze winkel?",
-        "ru": "Каковы часы работы этого магазина?",
-        "de": "Wie sind die Öffnungszeiten dieses Geschäfts?",
-        "es": "¿Cual es el horario de esta tienda?"
-      },
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "id": "shops-opening_hours"
-    },
+    "opening_hours",
+    "website",
+    "email",
+    "phone",
     "payment-options",
     "questions",
     "reviews"
@@ -413,7 +4376,617 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/themes/shops/shop.svg"
+        "render": "./assets/layers/shops/maki-shop.svg",
+        "mappings": [
+          {
+            "if": "shop=boutique",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=fashion",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=vacant",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=yes",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=agrarian",
+            "then": "circle:white;./assets/layers/shops/fas-tractor.svg"
+          },
+          {
+            "if": "shop=alcohol",
+            "then": "circle:white;./assets/layers/shops/fas-wine-bottle.svg"
+          },
+          {
+            "if": "shop=anime",
+            "then": "circle:white;./assets/layers/shops/fas-dragon.svg"
+          },
+          {
+            "if": "shop=antiques",
+            "then": "circle:white;./assets/layers/shops/temaki-furniture.svg"
+          },
+          {
+            "if": "shop=appliance",
+            "then": "circle:white;./assets/layers/shops/temaki-laundry.svg"
+          },
+          {
+            "if": "shop=art",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=baby_goods",
+            "then": "circle:white;./assets/layers/shops/fas-baby-carriage.svg"
+          },
+          {
+            "if": "shop=bag",
+            "then": "circle:white;./assets/layers/shops/fas-suitcase-rolling.svg"
+          },
+          {
+            "if": "shop=bakery",
+            "then": "circle:white;./assets/layers/shops/maki-bakery.svg"
+          },
+          {
+            "if": "shop=bathroom_furnishing",
+            "then": "circle:white;./assets/layers/shops/fas-bath.svg"
+          },
+          {
+            "if": "shop=beauty",
+            "then": "circle:white;./assets/layers/shops/temaki-lipstick.svg"
+          },
+          {
+            "if": "shop=bed",
+            "then": "circle:white;./assets/layers/shops/maki-lodging.svg"
+          },
+          {
+            "if": "shop=beverages",
+            "then": "circle:white;./assets/layers/shops/temaki-bottles.svg"
+          },
+          {
+            "if": "shop=bicycle",
+            "then": "circle:white;./assets/layers/shops/maki-bicycle.svg"
+          },
+          {
+            "if": "shop=boat",
+            "then": "circle:white;./assets/layers/shops/temaki-boat.svg"
+          },
+          {
+            "if": "shop=bookmaker",
+            "then": "circle:white;./assets/layers/shops/temaki-money_hand.svg"
+          },
+          {
+            "if": "shop=books",
+            "then": "circle:white;./assets/layers/shops/fas-book.svg"
+          },
+          {
+            "if": "shop=brewing_supplies",
+            "then": "circle:white;./assets/layers/shops/temaki-storage_fermenter.svg"
+          },
+          {
+            "if": "shop=butcher",
+            "then": "circle:white;./assets/layers/shops/temaki-cleaver.svg"
+          },
+          {
+            "if": "shop=camera",
+            "then": "circle:white;./assets/layers/shops/fas-camera-retro.svg"
+          },
+          {
+            "if": "shop=cannabis",
+            "then": "circle:white;./assets/layers/shops/fas-cannabis.svg"
+          },
+          {
+            "if": "shop=car",
+            "then": "circle:white;./assets/layers/shops/maki-car.svg"
+          },
+          {
+            "if": "shop=car_parts",
+            "then": "circle:white;./assets/layers/shops/fas-car-battery.svg"
+          },
+          {
+            "if": "shop=car_repair",
+            "then": "circle:white;./assets/layers/shops/maki-car-repair.svg"
+          },
+          {
+            "if": "shop=caravan",
+            "then": "circle:white;./assets/layers/shops/temaki-camper_trailer.svg"
+          },
+          {
+            "if": "shop=carpet",
+            "then": "circle:white;./assets/layers/shops/fas-tape.svg"
+          },
+          {
+            "if": "shop=catalogue",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=charity",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=cheese",
+            "then": "circle:white;./assets/layers/shops/fas-cheese.svg"
+          },
+          {
+            "if": "shop=chocolate",
+            "then": "circle:white;./assets/layers/shops/maki-confectionery.svg"
+          },
+          {
+            "if": "shop=clothes",
+            "then": "circle:white;./assets/layers/shops/maki-clothing-store.svg"
+          },
+          {
+            "if": "shop=coffee",
+            "then": "circle:white;./assets/layers/shops/temaki-coffee.svg"
+          },
+          {
+            "if": "shop=computer",
+            "then": "circle:white;./assets/layers/shops/fas-laptop.svg"
+          },
+          {
+            "if": "shop=confectionery",
+            "then": "circle:white;./assets/layers/shops/maki-confectionery.svg"
+          },
+          {
+            "if": "shop=copyshop",
+            "then": "circle:white;./assets/layers/shops/fas-print.svg"
+          },
+          {
+            "if": "shop=cosmetics",
+            "then": "circle:white;./assets/layers/shops/temaki-lipstick.svg"
+          },
+          {
+            "if": "shop=country_store",
+            "then": "circle:white;./assets/layers/shops/fas-hat-cowboy-side.svg"
+          },
+          {
+            "if": "shop=curtain",
+            "then": "circle:white;./assets/layers/shops/temaki-curtains.svg"
+          },
+          {
+            "if": "shop=dairy",
+            "then": "circle:white;./assets/layers/shops/fas-cheese.svg"
+          },
+          {
+            "if": "shop=deli",
+            "then": "circle:white;./assets/layers/shops/temaki-meat.svg"
+          },
+          {
+            "if": "shop=department_store",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=doityourself",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=doors",
+            "then": "circle:white;./assets/layers/shops/fas-door-open.svg"
+          },
+          {
+            "if": "shop=dry_cleaning",
+            "then": "circle:white;./assets/layers/shops/temaki-clothes_hanger.svg"
+          },
+          {
+            "if": "shop=e-cigarette",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=electrical",
+            "then": "circle:white;./assets/layers/shops/temaki-power.svg"
+          },
+          {
+            "if": "shop=electronics",
+            "then": "circle:white;./assets/layers/shops/fas-plug.svg"
+          },
+          {
+            "if": "shop=erotic",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=fabric",
+            "then": "circle:white;./assets/layers/shops/fas-tape.svg"
+          },
+          {
+            "if": "shop=fashion_accessories",
+            "then": "circle:white;./assets/layers/shops/temaki-fashion_accessories.svg"
+          },
+          {
+            "if": "shop=fireplace",
+            "then": "circle:white;./assets/layers/shops/temaki-fireplace.svg"
+          },
+          {
+            "if": "shop=fishing",
+            "then": "circle:white;./assets/layers/shops/temaki-ice_fishing.svg"
+          },
+          {
+            "if": "shop=flooring",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=florist",
+            "then": "circle:white;./assets/layers/shops/maki-florist.svg"
+          },
+          {
+            "if": "shop=frame",
+            "then": "circle:white;./assets/layers/shops/fas-vector-square.svg"
+          },
+          {
+            "if": "shop=frozen_food",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=fuel",
+            "then": "circle:white;./assets/layers/shops/temaki-propane_tank.svg"
+          },
+          {
+            "if": "shop=funeral_directors",
+            "then": "circle:white;./assets/layers/shops/maki-cemetery.svg"
+          },
+          {
+            "if": "shop=furniture",
+            "then": "circle:white;./assets/layers/shops/fas-couch.svg"
+          },
+          {
+            "if": "shop=games",
+            "then": "circle:white;./assets/layers/shops/fas-dice.svg"
+          },
+          {
+            "if": "shop=garden_centre",
+            "then": "circle:white;./assets/layers/shops/maki-garden-centre.svg"
+          },
+          {
+            "if": "shop=gas",
+            "then": "circle:white;./assets/layers/shops/temaki-propane_tank.svg"
+          },
+          {
+            "if": "shop=general",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=gift",
+            "then": "circle:white;./assets/layers/shops/maki-gift.svg"
+          },
+          {
+            "if": "shop=greengrocer",
+            "then": "circle:white;./assets/layers/shops/fas-carrot.svg"
+          },
+          {
+            "if": "shop=hairdresser",
+            "then": "circle:white;./assets/layers/shops/temaki-beauty_salon.svg"
+          },
+          {
+            "if": "shop=hairdresser_supply",
+            "then": "circle:white;./assets/layers/shops/temaki-hair_care.svg"
+          },
+          {
+            "if": "shop=hardware",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=health_food",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=hearing_aids",
+            "then": "circle:white;./assets/layers/shops/temaki-hearing_aid.svg"
+          },
+          {
+            "if": "shop=herbalist",
+            "then": "circle:white;./assets/layers/shops/fas-leaf.svg"
+          },
+          {
+            "if": "shop=hifi",
+            "then": "circle:white;./assets/layers/shops/temaki-speaker.svg"
+          },
+          {
+            "if": "shop=hobby",
+            "then": "circle:white;./assets/layers/shops/fas-dragon.svg"
+          },
+          {
+            "if": "shop=household_linen",
+            "then": "circle:white;./assets/layers/shops/temaki-cloth.svg"
+          },
+          {
+            "if": "shop=houseware",
+            "then": "circle:white;./assets/layers/shops/fas-blender.svg"
+          },
+          {
+            "if": "shop=hunting",
+            "then": "circle:white;./assets/layers/shops/temaki-bow_and_arrow.svg"
+          },
+          {
+            "if": "shop=interior_decoration",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=jewelry",
+            "then": "circle:white;./assets/layers/shops/maki-jewelry-store.svg"
+          },
+          {
+            "if": "shop=kiosk",
+            "then": "circle:white;./assets/layers/shops/fas-store.svg"
+          },
+          {
+            "if": "shop=kitchen",
+            "then": "circle:white;./assets/layers/shops/temaki-kitchen_sink.svg"
+          },
+          {
+            "if": "shop=laundry",
+            "then": "circle:white;./assets/layers/shops/temaki-laundry.svg"
+          },
+          {
+            "if": "shop=leather",
+            "then": "circle:white;./assets/layers/shops/temaki-handbag.svg"
+          },
+          {
+            "if": "shop=lighting",
+            "then": "circle:white;./assets/layers/shops/temaki-desk_lamp.svg"
+          },
+          {
+            "if": "shop=locksmith",
+            "then": "circle:white;./assets/layers/shops/fas-key.svg"
+          },
+          {
+            "if": "shop=mall",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=massage",
+            "then": "circle:white;./assets/layers/shops/temaki-spa.svg"
+          },
+          {
+            "if": "shop=medical_supply",
+            "then": "circle:white;./assets/layers/shops/fas-crutch.svg"
+          },
+          {
+            "if": "shop=military_surplus",
+            "then": "circle:white;./assets/layers/shops/temaki-military.svg"
+          },
+          {
+            "if": "shop=model",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=money_lender",
+            "then": "circle:white;./assets/layers/shops/temaki-money_hand.svg"
+          },
+          {
+            "if": "shop=motorcycle",
+            "then": "circle:white;./assets/layers/shops/fas-motorcycle.svg"
+          },
+          {
+            "if": "shop=motorcycle_repair",
+            "then": "circle:white;./assets/layers/shops/temaki-motorcycle_repair.svg"
+          },
+          {
+            "if": "shop=music",
+            "then": "circle:white;./assets/layers/shops/fas-compact-disc.svg"
+          },
+          {
+            "if": "shop=musical_instrument",
+            "then": "circle:white;./assets/layers/shops/fas-guitar.svg"
+          },
+          {
+            "if": "shop=newsagent",
+            "then": "circle:white;./assets/layers/shops/fas-newspaper.svg"
+          },
+          {
+            "if": "shop=nutrition_supplements",
+            "then": "circle:white;./assets/layers/shops/fas-pills.svg"
+          },
+          {
+            "if": "shop=optician",
+            "then": "circle:white;./assets/layers/shops/maki-optician.svg"
+          },
+          {
+            "if": "shop=outdoor",
+            "then": "circle:white;./assets/layers/shops/temaki-compass.svg"
+          },
+          {
+            "if": "shop=outpost",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=paint",
+            "then": "circle:white;./assets/layers/shops/fas-paint-roller.svg"
+          },
+          {
+            "if": "shop=party",
+            "then": "circle:white;./assets/layers/shops/temaki-balloon.svg"
+          },
+          {
+            "if": "shop=pastry",
+            "then": "circle:white;./assets/layers/shops/maki-bakery.svg"
+          },
+          {
+            "if": "shop=pawnbroker",
+            "then": "circle:white;./assets/layers/shops/temaki-money_hand.svg"
+          },
+          {
+            "if": "shop=perfumery",
+            "then": "circle:white;./assets/layers/shops/temaki-perfume.svg"
+          },
+          {
+            "if": "shop=pet",
+            "then": "circle:white;./assets/layers/shops/fas-cat.svg"
+          },
+          {
+            "if": "shop=pet_grooming",
+            "then": "circle:white;./assets/layers/shops/temaki-pet_grooming.svg"
+          },
+          {
+            "if": "shop=photo",
+            "then": "circle:white;./assets/layers/shops/fas-camera-retro.svg"
+          },
+          {
+            "if": "shop=pottery",
+            "then": "circle:white;./assets/layers/shops/temaki-vase.svg"
+          },
+          {
+            "if": "shop=printer_ink",
+            "then": "circle:white;./assets/layers/shops/fas-print.svg"
+          },
+          {
+            "if": "shop=psychic",
+            "then": "circle:white;./assets/layers/shops/temaki-psychic.svg"
+          },
+          {
+            "if": "shop=pyrotechnics",
+            "then": "circle:white;./assets/layers/shops/temaki-rocket_firework.svg"
+          },
+          {
+            "if": "shop=radiotechnics",
+            "then": "circle:white;./assets/layers/shops/fas-microchip.svg"
+          },
+          {
+            "if": "shop=religion",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=rental",
+            "then": "circle:white;./assets/layers/shops/fas-dolly.svg"
+          },
+          {
+            "if": "shop=scuba_diving",
+            "then": "circle:white;./assets/layers/shops/temaki-scuba_diving.svg"
+          },
+          {
+            "if": "shop=seafood",
+            "then": "circle:white;./assets/layers/shops/temaki-fish_cleaning.svg"
+          },
+          {
+            "if": "shop=second_hand",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=sewing",
+            "then": "circle:white;./assets/layers/shops/temaki-needle_and_spool.svg"
+          },
+          {
+            "if": "shop=shoe_repair",
+            "then": "circle:white;./assets/layers/shops/temaki-hammer_shoe.svg"
+          },
+          {
+            "if": "shop=shoes",
+            "then": "circle:white;./assets/layers/shops/maki-shoe.svg"
+          },
+          {
+            "if": "shop=spices",
+            "then": "circle:white;./assets/layers/shops/temaki-spice_bottle.svg"
+          },
+          {
+            "if": "shop=sports",
+            "then": "circle:white;./assets/layers/shops/fas-futbol.svg"
+          },
+          {
+            "if": "shop=stationery",
+            "then": "circle:white;./assets/layers/shops/fas-paperclip.svg"
+          },
+          {
+            "if": "shop=storage_rental",
+            "then": "circle:white;./assets/layers/shops/temaki-storage_rental.svg"
+          },
+          {
+            "if": "shop=supermarket",
+            "then": "circle:white;./assets/layers/shops/maki-grocery.svg"
+          },
+          {
+            "if": "shop=tailor",
+            "then": "circle:white;./assets/layers/shops/temaki-needle_and_spool.svg"
+          },
+          {
+            "if": "shop=tattoo",
+            "then": "circle:white;./assets/layers/shops/temaki-tattoo_machine.svg"
+          },
+          {
+            "if": "shop=tea",
+            "then": "circle:white;./assets/layers/shops/maki-teahouse.svg"
+          },
+          {
+            "if": "shop=telecommunication",
+            "then": "circle:white;./assets/layers/shops/maki-telephone.svg"
+          },
+          {
+            "if": "shop=tiles",
+            "then": "circle:white;./assets/layers/shops/temaki-tiling.svg"
+          },
+          {
+            "if": "shop=tobacco",
+            "then": "circle:white;./assets/layers/shops/temaki-pipe.svg"
+          },
+          {
+            "if": "shop=tool_hire",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=toys",
+            "then": "circle:white;./assets/layers/shops/fas-rocket.svg"
+          },
+          {
+            "if": "shop=trade",
+            "then": "circle:white;./assets/layers/shops/temaki-tools.svg"
+          },
+          {
+            "if": "shop=travel_agency",
+            "then": "circle:white;./assets/layers/shops/fas-suitcase.svg"
+          },
+          {
+            "if": "shop=trophy",
+            "then": "circle:white;./assets/layers/shops/fas-trophy.svg"
+          },
+          {
+            "if": "shop=tyres",
+            "then": "circle:white;./assets/layers/shops/temaki-tire.svg"
+          },
+          {
+            "if": "shop=vacuum_cleaner",
+            "then": "circle:white;./assets/layers/shops/temaki-vacuum.svg"
+          },
+          {
+            "if": "shop=variety_store",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=video",
+            "then": "circle:white;./assets/layers/shops/temaki-movie_rental.svg"
+          },
+          {
+            "if": "shop=video_games",
+            "then": "circle:white;./assets/layers/shops/maki-gaming.svg"
+          },
+          {
+            "if": "shop=watches",
+            "then": "circle:white;./assets/layers/shops/maki-watch.svg"
+          },
+          {
+            "if": "shop=water",
+            "then": "circle:white;./assets/layers/shops/temaki-water_bottle.svg"
+          },
+          {
+            "if": "shop=weapons",
+            "then": "circle:white;./assets/layers/shops/temaki-dagger.svg"
+          },
+          {
+            "if": "shop=wholesale",
+            "then": "circle:white;./assets/layers/shops/maki-warehouse.svg"
+          },
+          {
+            "if": "shop=wigs",
+            "then": "circle:white;./assets/layers/shops/maki-shop.svg"
+          },
+          {
+            "if": "shop=window_blind",
+            "then": "circle:white;./assets/layers/shops/temaki-window.svg"
+          },
+          {
+            "if": "shop=wine",
+            "then": "circle:white;./assets/layers/shops/maki-alcohol-shop.svg"
+          }
+        ]
       },
       "iconBadges": [
         {

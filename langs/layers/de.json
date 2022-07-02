@@ -5147,51 +5147,8 @@
             }
         },
         "tagRenderings": {
-            "shops-email": {
-                "question": "Wie ist die Email-Adresse dieses Geschäfts?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?"
-            },
-            "shops-opening_hours": {
-                "question": "Wie sind die Öffnungszeiten dieses Geschäfts?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "question": "Wie lautet die Telefonnummer?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Lebensmittelladen"
-                    },
-                    "1": {
-                        "then": "Supermarkt"
-                    },
-                    "2": {
-                        "then": "Bekleidungsgeschäft"
-                    },
-                    "3": {
-                        "then": "Friseur"
-                    },
-                    "4": {
-                        "then": "Bäckerei"
-                    },
-                    "5": {
-                        "then": "Autowerkstatt"
-                    },
-                    "6": {
-                        "then": "Autohändler"
-                    }
-                },
-                "question": "Was wird in diesem Geschäft verkauft?",
-                "render": "Dieses Geschäft verkauft {shop}"
-            },
-            "shops-website": {
-                "question": "Wie lautet die Webseite dieses Geschäfts?",
-                "render": "<a href='{website}'>{website}</a>"
             }
         },
         "title": {

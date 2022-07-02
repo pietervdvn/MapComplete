@@ -181,7 +181,7 @@ export default class TagRenderingQuestion extends Combine {
         }
 
 
-        if (applicableMappings.length < 8 || configuration.multiAnswer || hasImages || ifNotsPresent) {
+        if (applicableMappings.length < 8 || configuration.multiAnswer || (hasImages && applicableMappings.length < 16) || ifNotsPresent) {
             inputEls = (applicableMappings ?? []).map((mapping, i) => TagRenderingQuestion.GenerateMappingElement(state, tagsSource, mapping, allIfNotsExcept(i)));
             inputEls = Utils.NoNull(inputEls);
         } else {

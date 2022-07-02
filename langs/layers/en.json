@@ -5279,51 +5279,11 @@
             }
         },
         "tagRenderings": {
-            "shops-email": {
-                "question": "What is the email address of this shop?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
             "shops-name": {
                 "question": "What is the name of this shop?"
             },
-            "shops-opening_hours": {
-                "question": "What are the opening hours of this shop?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "question": "What is the phone number?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Convenience store"
-                    },
-                    "1": {
-                        "then": "Supermarket"
-                    },
-                    "2": {
-                        "then": "Clothing store"
-                    },
-                    "3": {
-                        "then": "Hairdresser"
-                    },
-                    "4": {
-                        "then": "Bakery"
-                    },
-                    "5": {
-                        "then": "Car repair (garage)"
-                    },
-                    "6": {
-                        "then": "Car dealer"
-                    }
-                },
-                "question": "What does this shop sell?",
-                "render": "This shop sells {shop}"
-            },
-            "shops-website": {
-                "question": "What is the website of this shop?",
-                "render": "<a href='{website}'>{website}</a>"
+            "shops-type-from-id": {
+                "question": "What kind of shop is this?"
             }
         },
         "title": {

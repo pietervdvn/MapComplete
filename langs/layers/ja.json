@@ -519,51 +519,8 @@
             }
         },
         "tagRenderings": {
-            "shops-email": {
-                "question": "このお店のメールアドレスは何ですか?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
             "shops-name": {
                 "question": "このお店の名前は何ですか?"
-            },
-            "shops-opening_hours": {
-                "question": "この店の営業時間は何時から何時までですか?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "question": "電話番号は何番ですか?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "0": {
-                        "then": "コンビニエンスストア"
-                    },
-                    "1": {
-                        "then": "スーパーマーケット"
-                    },
-                    "2": {
-                        "then": "衣料品店"
-                    },
-                    "3": {
-                        "then": "理容師"
-                    },
-                    "4": {
-                        "then": "ベーカリー"
-                    },
-                    "5": {
-                        "then": "自動車修理(ガレージ)"
-                    },
-                    "6": {
-                        "then": "自動車ディーラー"
-                    }
-                },
-                "question": "このお店では何を売っていますか?",
-                "render": "こちらのお店では{shop}を販売しております"
-            },
-            "shops-website": {
-                "question": "このお店のホームページは何ですか?",
-                "render": "<a href='{website}'>{website}</a>"
             }
         },
         "title": {

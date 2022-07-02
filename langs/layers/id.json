@@ -373,26 +373,6 @@
             }
         }
     },
-    "shops": {
-        "tagRenderings": {
-            "shops-email": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "shops-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Bengkel Mobil"
-                    }
-                }
-            },
-            "shops-website": {
-                "render": "<a href='{website}'>{website}</a>"
-            }
-        }
-    },
     "tree_node": {
         "presets": {
             "2": {

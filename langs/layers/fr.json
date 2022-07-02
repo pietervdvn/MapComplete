@@ -2530,51 +2530,8 @@
             }
         },
         "tagRenderings": {
-            "shops-email": {
-                "question": "Quelle est l'adresse électronique de ce magasin ?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
             "shops-name": {
                 "question": "Qu'est-ce que le nom de ce magasin ?"
-            },
-            "shops-opening_hours": {
-                "question": "Quels sont les horaires d'ouverture de ce magasin ?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "question": "Quel est le numéro de téléphone ?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Épicerie/superette"
-                    },
-                    "1": {
-                        "then": "Supermarché"
-                    },
-                    "2": {
-                        "then": "Magasin de vêtements"
-                    },
-                    "3": {
-                        "then": "Coiffeur"
-                    },
-                    "4": {
-                        "then": "Boulangerie"
-                    },
-                    "5": {
-                        "then": "Garage de réparation automobile"
-                    },
-                    "6": {
-                        "then": "Concessionnaire"
-                    }
-                },
-                "question": "Que vends ce magasin ?",
-                "render": "Ce magasin vends {shop}"
-            },
-            "shops-website": {
-                "question": "Quel est le site internet de ce magasin ?",
-                "render": "<a href='{website}'>{website}</a>"
             }
         },
         "title": {
