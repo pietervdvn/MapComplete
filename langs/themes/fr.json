@@ -647,68 +647,6 @@
         "shortDescription": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
         "title": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers"
     },
-    "mapcomplete-changes": {
-        "description": "Cette carte montre les changements faits avec MapComplete",
-        "layers": {
-            "0": {
-                "description": "Montre les changements faits avec MapComplete",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Nom du thème contient {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Contribué par {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Pas</b> contribué par {search}"
-                            }
-                        }
-                    }
-                },
-                "name": "Centre du groupe de modifications",
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Changement effectué par <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
-                    },
-                    "render_id": {
-                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme": {
-                        "mappings": {
-                            "0": {
-                                "then": "Changement avec le thème <b>non-officiel</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-                            }
-                        },
-                        "render": "Changement avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
-                    }
-                },
-                "title": {
-                    "render": "Groupe de modifications pour {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "D’autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Montrer les changements faits avec MapComplete",
-        "title": "Changements faits avec MapComplete"
-    },
     "maps": {
         "description": "Sur cette carte sont affichées les cartes (plans) mappées dans OpenStreetMap.<br/><br/>Si une carte est manquante, vous pouvez l'ajouer facilement avec un compte OpenStreetMap.",
         "shortDescription": "Cette carte affiche toutes les cartes (plans) mappés dans OpenStreetMap",

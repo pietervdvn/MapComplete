@@ -718,16 +718,7 @@
         }
     },
     "shops": {
-        "description": "Egy bolt",
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Autószerelő"
-                    }
-                }
-            }
-        }
+        "description": "Egy bolt"
     },
     "waste_basket": {
         "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."

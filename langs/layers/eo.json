@@ -132,28 +132,6 @@
                 "title": "Butiko"
             }
         },
-        "tagRenderings": {
-            "shops-email": {
-                "question": "Kio estas la retpoŝta adreso de ĉi tiu butiko?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "shops-phone": {
-                "question": "Kio estas la telefonnumero?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "4": {
-                        "then": "Bakejo"
-                    }
-                },
-                "question": "Kion vendas ĉi tiu butiko?",
-                "render": "Ĉi tiu butiko vendas {shop}"
-            },
-            "shops-website": {
-                "render": "<a href='{website}'>{website}</a>"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {

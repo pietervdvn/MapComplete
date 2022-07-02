@@ -538,16 +538,5 @@
         "title": {
             "render": "Bicicleta fantasma"
         }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Oficina Mecânica"
-                    }
-                }
-            }
-        }
     }
 }

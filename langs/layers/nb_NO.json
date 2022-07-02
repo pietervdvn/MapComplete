@@ -341,17 +341,6 @@
             "render": "Brannhydrant"
         }
     },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Bilverksted"
-                    }
-                }
-            }
-        }
-    },
     "windturbine": {
         "units": {
             "0": {

@@ -496,68 +496,6 @@
         "shortDescription": "Mapa para mostrar bocas de incendios, extintores, parques de bomberos y parques de ambulancias.",
         "title": "Bocas de incendios, Extintores, Parques de bomberos y Parques de ambulancias"
     },
-    "mapcomplete-changes": {
-        "description": "Este mapa muestra todos los cambios hechos con MapComplete",
-        "layers": {
-            "0": {
-                "description": "Muestra todos los cambios de MapComplete",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Nombre del tema contiene {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Hecho por contributor/a {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>No</b> hecho por contributor/a {search}"
-                            }
-                        }
-                    }
-                },
-                "name": "Centros de conjuntos de cambios",
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Cambio hecho por <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
-                    },
-                    "render_id": {
-                        "render": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme": {
-                        "mappings": {
-                            "0": {
-                                "then": "Cambio con tema <b>no oficial</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-                            }
-                        },
-                        "render": "Cambio con tema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
-                    }
-                },
-                "title": {
-                    "render": "Conjunto de cambios para {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Se pueden encontrar más estadísticas <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Muestra los cambios hechos por MapComplete",
-        "title": "Cambios hechos con MapComplete"
-    },
     "maps": {
         "description": "En este mapa puedes encontrar todos los mapas que OpenStreetMap conoce - típicamente un mapa grande con un tablero que muestra el área, la ciudad o la región, ej. un mapa turista detrás de una vaya publicitaria, un mapa de una reserva natural, un mapa de redes ciclistas en la región, ...)<br/><br/>Si falta un mapa, puedes mapear este mapa fácilmente en OpenStreetMap.",
         "shortDescription": "Este tema muestra todos los mapas (turísticos) que OpenStreetMap conoce",

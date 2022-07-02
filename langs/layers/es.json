@@ -3394,48 +3394,8 @@
             }
         },
         "tagRenderings": {
-            "shops-email": {
-                "question": "¿Cual es la dirección de correo electrónico de esta tienda?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
             "shops-name": {
                 "question": "¿Cual es el nombre de esta tienda?"
-            },
-            "shops-opening_hours": {
-                "question": "¿Cual es el horario de esta tienda?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "question": "¿Cual es el número de teléfono?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "1": {
-                        "then": "Supermercado"
-                    },
-                    "2": {
-                        "then": "Tienda de ropa"
-                    },
-                    "3": {
-                        "then": "Peluquería"
-                    },
-                    "4": {
-                        "then": "Panadería"
-                    },
-                    "5": {
-                        "then": "Taller de coches"
-                    },
-                    "6": {
-                        "then": "Concesionario"
-                    }
-                },
-                "question": "¿Qué vende esta tienda?",
-                "render": "Esta tienda vende {shop}"
-            },
-            "shops-website": {
-                "question": "¿Cual es la página web de esta tienda?",
-                "render": "<a href='{website}'>{website}</a>"
             }
         },
         "title": {

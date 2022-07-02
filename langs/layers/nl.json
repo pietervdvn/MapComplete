@@ -5088,51 +5088,11 @@
             }
         },
         "tagRenderings": {
-            "shops-email": {
-                "question": "Wat is het e-mailadres van deze winkel?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?"
             },
-            "shops-opening_hours": {
-                "question": "Wat zijn de openingsuren van deze winkel?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "question": "Wat is het telefoonnummer?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "0": {
-                        "then": "Gemakswinkel"
-                    },
-                    "1": {
-                        "then": "Supermarkt"
-                    },
-                    "2": {
-                        "then": "Kledingwinkel"
-                    },
-                    "3": {
-                        "then": "Kapper"
-                    },
-                    "4": {
-                        "then": "Bakkerij"
-                    },
-                    "5": {
-                        "then": "Autogarage"
-                    },
-                    "6": {
-                        "then": "Autodealer"
-                    }
-                },
-                "question": "Wat verkoopt deze winkel?",
-                "render": "Deze winkel is van type \"{shop}\""
-            },
-            "shops-website": {
-                "question": "Wat is de website van deze winkel?",
-                "render": "<a href='{website}'>{website}</a>"
+            "shops-type-from-id": {
+                "question": "Wat voor soort winkel is dit?"
             }
         },
         "title": {

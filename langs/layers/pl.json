@@ -283,16 +283,5 @@
         "title": {
             "render": "Duch roweru"
         }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Warsztat samochodowy"
-                    }
-                }
-            }
-        }
     }
 }

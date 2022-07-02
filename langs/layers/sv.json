@@ -24,16 +24,5 @@
         "title": {
             "render": "Spökcykel"
         }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Bilverkstad"
-                    }
-                }
-            }
-        }
     }
 }

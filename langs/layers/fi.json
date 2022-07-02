@@ -120,16 +120,5 @@
         "title": {
             "render": "Haamupyörä"
         }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Autokorjaamo"
-                    }
-                }
-            }
-        }
     }
 }

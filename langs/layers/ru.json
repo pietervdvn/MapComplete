@@ -1342,44 +1342,8 @@
             }
         },
         "tagRenderings": {
-            "shops-email": {
-                "question": "Каков адрес электронной почты этого магазина?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
             "shops-name": {
                 "question": "Как называется этот магазин?"
-            },
-            "shops-opening_hours": {
-                "question": "Каковы часы работы этого магазина?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "question": "Какой телефон?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "1": {
-                        "then": "Супермаркет"
-                    },
-                    "2": {
-                        "then": "Магазин одежды"
-                    },
-                    "3": {
-                        "then": "Парикмахерская"
-                    },
-                    "5": {
-                        "then": "Автомастерская"
-                    },
-                    "6": {
-                        "then": "Автосалон"
-                    }
-                },
-                "question": "Что продаётся в этом магазине?"
-            },
-            "shops-website": {
-                "question": "Какой веб-сайт у этого магазина?",
-                "render": "<a href='{website}'>{website}</a>"
             }
         },
         "title": {
