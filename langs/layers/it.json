@@ -1756,6 +1756,218 @@
             "render": "Microbiblioteca"
         }
     },
+    "recycling": {
+        "description": "Un livello con i contenitori e centri per la raccolta rifiuti riciclabili",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aperto ora"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Tutti i tipi di rifiuti"
+                    },
+                    "1": {
+                        "question": "Riciclo di batterie"
+                    },
+                    "2": {
+                        "question": "Riciclo di confezioni per bevande"
+                    },
+                    "3": {
+                        "question": "Riciclo di lattine"
+                    },
+                    "4": {
+                        "question": "Riciclo di abiti"
+                    },
+                    "5": {
+                        "question": "Riciclo di olio da cucina"
+                    },
+                    "6": {
+                        "question": "Riciclo di olio da motore"
+                    },
+                    "7": {
+                        "question": "Riciclo di umido"
+                    },
+                    "8": {
+                        "question": "Riciclo di bottiglie di vetro"
+                    },
+                    "9": {
+                        "question": "Riciclo di vetro"
+                    },
+                    "10": {
+                        "question": "Riciclo di giornali"
+                    },
+                    "11": {
+                        "question": "Riciclo di carta"
+                    },
+                    "12": {
+                        "question": "Riciclo di bottiglie di plastica"
+                    },
+                    "13": {
+                        "question": "Riciclo di confezioni di plastica"
+                    },
+                    "14": {
+                        "question": "Riciclo di plastica"
+                    },
+                    "15": {
+                        "question": "Riciclo di rottami metallici"
+                    },
+                    "16": {
+                        "question": "Riciclo di piccoli elettrodomestici"
+                    },
+                    "17": {
+                        "question": "Riciclo di secco"
+                    }
+                }
+            }
+        },
+        "name": "Riciclo",
+        "presets": {
+            "0": {
+                "title": "un contenitore per il riciclo"
+            },
+            "1": {
+                "title": "un centro di riciclo"
+            }
+        },
+        "tagRenderings": {
+            "container-location": {
+                "mappings": {
+                    "0": {
+                        "then": "E' un contenitore sotterraneo"
+                    },
+                    "1": {
+                        "then": "Questo contenitore è al chiuso"
+                    },
+                    "2": {
+                        "then": "Questo contenitore è all'aperto"
+                    }
+                },
+                "question": "Dove si trova questo contenitore?"
+            },
+            "opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7"
+                    }
+                },
+                "question": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?"
+            },
+            "operator": {
+                "question": "Quale azienda gestisce questo impianto di raccolta e riciclo?",
+                "render": "Questa struttura di raccola e riciclo è gestita da {operator}"
+            },
+            "recycling-accepts": {
+                "mappings": {
+                    "0": {
+                        "then": "Batterie"
+                    },
+                    "1": {
+                        "then": "Cartoni per bevande"
+                    },
+                    "2": {
+                        "then": "Lattine"
+                    },
+                    "3": {
+                        "then": "Abiti"
+                    },
+                    "4": {
+                        "then": "Olio da cucina"
+                    },
+                    "5": {
+                        "then": "Olio di motore"
+                    },
+                    "6": {
+                        "then": "Verde"
+                    },
+                    "7": {
+                        "then": "Umido"
+                    },
+                    "8": {
+                        "then": "Bottiglie di vetro"
+                    },
+                    "9": {
+                        "then": "Vetro"
+                    },
+                    "10": {
+                        "then": "Giornali"
+                    },
+                    "11": {
+                        "then": "Carta"
+                    },
+                    "12": {
+                        "then": "Bottiglie di platica"
+                    },
+                    "13": {
+                        "then": "Confezioni di plastica"
+                    },
+                    "14": {
+                        "then": "Plastica"
+                    },
+                    "15": {
+                        "then": "Rottami metallici"
+                    },
+                    "16": {
+                        "then": "Scarpe"
+                    },
+                    "17": {
+                        "then": "Piccoli elettrodomestici"
+                    },
+                    "18": {
+                        "then": "Piccoli elettrodomestici"
+                    },
+                    "19": {
+                        "then": "Aghi e oggetti appuntiti"
+                    },
+                    "20": {
+                        "then": "Secco"
+                    }
+                },
+                "question": "Cosa si può riciclare qui?"
+            },
+            "recycling-centre-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo centro raccolta e riciclo rifiuti non ha un nome specifico"
+                    }
+                },
+                "question": "Come si chiama questo centro raccolta e riciclo rifiuti?",
+                "render": "Questo centro raccolta e riciclo rifiuti si chiama <b>{name}</b>"
+            },
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo è un contenitore per il riciclo di rifiuti"
+                    },
+                    "1": {
+                        "then": "Questo è un centro per la raccola e riciclo di rifiuti"
+                    },
+                    "2": {
+                        "then": "Contenitore per lo smaltimento del secco"
+                    }
+                },
+                "question": "Che tipo di raccolta è questo?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Centro di riciclo rifiuti"
+                },
+                "1": {
+                    "then": "Centro di riciclo rifiuti"
+                },
+                "2": {
+                    "then": "Contenitore per il riciclo"
+                }
+            },
+            "render": "Impianti di riciclo"
+        }
+    },
     "slow_roads": {
         "tagRenderings": {
             "slow_roads-surface": {
@@ -2257,6 +2469,158 @@
         },
         "title": {
             "render": "Punto panoramico"
+        }
+    },
+    "waste_basket": {
+        "description": "Questo è un cestino dei rifiuti pubblico, un bidone della spazzatura, dove puoi buttare via la tua spazzatura",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tutti i tipi"
+                    },
+                    "1": {
+                        "question": "Cestino per sigarette"
+                    },
+                    "2": {
+                        "question": "Cestino per medicinali"
+                    },
+                    "3": {
+                        "question": "Cestino per escrementi dei cani"
+                    },
+                    "4": {
+                        "question": "Cestino per la spazzatura"
+                    },
+                    "5": {
+                        "question": "Cestino dei rifiuti per oggetti taglienti"
+                    },
+                    "6": {
+                        "question": "Cestino per la plastica"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Cestino per rifiuti con dispenser per sacchetti per escrementi dei cani"
+                    }
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Cestino dei rifiuti"
+                        }
+                    }
+                }
+            }
+        },
+        "name": "Cestino dei rifiuti",
+        "presets": {
+            "0": {
+                "title": "un cestino dei rifiuti"
+            }
+        },
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo cestino ha un distributore di sacchetti per escrementi dei cani"
+                    },
+                    "1": {
+                        "then": "Questo cestino <b>non</b> ha un distributore di sacchetti per escrementi dei cani"
+                    },
+                    "2": {
+                        "then": "Questo cestino <b>non</b> ha un distributore di sacchetti per escrementi dei cani"
+                    }
+                },
+                "question": "Questo cestino ha un distributore di sacchetti per escrementi dei cani?"
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Un cestino rifiuti per uso generico"
+                    },
+                    "1": {
+                        "then": "Un cestino rifiuti per uso generico"
+                    },
+                    "2": {
+                        "then": "Un cestino rifiuti per escrementi di cani"
+                    },
+                    "3": {
+                        "then": "Un cestino rifiuti per sigarette"
+                    },
+                    "4": {
+                        "then": "Un cestino rifiuti per medicinali"
+                    },
+                    "5": {
+                        "then": "Un cestino rifiuti per aghi e altri oggetti appuntiti"
+                    },
+                    "6": {
+                        "then": "Un cestino rifiuti per la plastica"
+                    }
+                },
+                "question": "Che tipo di cestino dei rifiuti è questo?"
+            }
+        },
+        "title": {
+            "render": "Cestino dei rifiuti"
+        }
+    },
+    "waste_disposal": {
+        "description": "Cestino per lo smaltimento dei rifiuti, contenitore di dimensioni medio grandi per lo smaltimento dei rifiuti (domestici)",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Solo accesso pubblico"
+                    }
+                }
+            }
+        },
+        "name": "Contenitori per la raccolta differenziata",
+        "presets": {
+            "0": {
+                "description": "Cestino di dimensioni medio-grandi per lo smaltimento dei rifiuti (domestici)",
+                "title": "un raccoglitore per lo smaltimento rifiuti"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo cestino può essere usato da chiunque"
+                    },
+                    "1": {
+                        "then": "Questo cestino è privato"
+                    },
+                    "2": {
+                        "then": "Questo cestino è solo per residenti"
+                    }
+                },
+                "question": "Chi può utilizzare questo cestino per lo smaltimento dei rifiuti?",
+                "render": "Accesso: {access}"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo è un contenitore sotterraneo"
+                    },
+                    "1": {
+                        "then": "Questo contenitore è al chiuso"
+                    },
+                    "2": {
+                        "then": "Questo contenitore è all'aperto"
+                    }
+                },
+                "question": "Dove si trova questo contenitore?"
+            }
+        },
+        "title": {
+            "render": "Smaltimento rifiuti"
         }
     },
     "windturbine": {

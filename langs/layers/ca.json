@@ -3,6 +3,7 @@
         "description": "Adreces"
     },
     "artwork": {
+        "description": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
         "name": "Obres d'art",
         "tagRenderings": {
             "artwork-artwork_type": {
@@ -45,8 +46,7 @@
         },
         "title": {
             "render": "Obra d'art"
-        },
-        "description": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món"
+        }
     },
     "barrier": {
         "name": "Barreres",
@@ -825,6 +825,13 @@
     "recycling": {
         "name": "Residus",
         "tagRenderings": {
+            "container-location": {
+                "mappings": {
+                    "2": {
+                        "then": "Aquest contenidor està situat a l'aire lliure"
+                    }
+                }
+            },
             "opening_hours": {
                 "mappings": {
                     "0": {
@@ -832,8 +839,20 @@
                     }
                 }
             },
+            "operator": {
+                "render": "Aquesta infraestuctura de reciclatge està operada per {operator}"
+            },
             "recycling-accepts": {
                 "mappings": {
+                    "1": {
+                        "then": "Ací es poden reciclar els cartons de begudes"
+                    },
+                    "2": {
+                        "then": "Ací es poden reciclar llaunes"
+                    },
+                    "7": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
                     "8": {
                         "then": "Ací es poden reciclar ampolles de vidre"
                     },
@@ -846,23 +865,14 @@
                     "11": {
                         "then": "Ací es pot reciclar paper"
                     },
-                    "2": {
-                        "then": "Ací es poden reciclar llaunes"
-                    },
-                    "7": {
-                        "then": "Ací es poden reciclar residus orgànics"
-                    },
-                    "1": {
-                        "then": "Ací es poden reciclar els cartons de begudes"
-                    },
                     "12": {
                         "then": "Ací es poden reciclar ampolles de plàstic"
                     },
-                    "14": {
-                        "then": "Ací es pot reciclar plàstic"
-                    },
                     "13": {
                         "then": "Ací es poden reciclar envasos de plàstic"
+                    },
+                    "14": {
+                        "then": "Ací es pot reciclar plàstic"
                     },
                     "20": {
                         "then": "Ací es pot reciclar el rebuig"
@@ -881,16 +891,6 @@
                         "then": "Açò és un centre de reciclatge"
                     }
                 }
-            },
-            "container-location": {
-                "mappings": {
-                    "2": {
-                        "then": "Aquest contenidor està situat a l'aire lliure"
-                    }
-                }
-            },
-            "operator": {
-                "render": "Aquesta infraestuctura de reciclatge està operada per {operator}"
             }
         }
     },

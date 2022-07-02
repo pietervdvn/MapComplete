@@ -239,6 +239,9 @@
             "wednesday": "Dimecres"
         },
         "welcomeBack": "Has entrat, benvingut/da.",
+        "welcomeExplanation": {
+            "addNew": "Toqueu el mapa per afegir un nou PDI."
+        },
         "wikipedia": {
             "createNewWikidata": "Crear un ítem de Wikidata",
             "doSearch": "Cerca adalt per veure els resultats",
@@ -252,9 +255,6 @@
             },
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
-        },
-        "welcomeExplanation": {
-            "addNew": "Toqueu el mapa per afegir un nou PDI."
         }
     },
     "image": {
@@ -268,6 +268,9 @@
         "doDelete": "Esborrar imatge",
         "dontDelete": "Cancel·lar",
         "isDeleted": "Esborrada",
+        "nearbyPictures": {
+            "browseNearby": "Cerca imatges properes…"
+        },
         "pleaseLogin": "Entrar per pujar una foto",
         "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
         "toBig": "La teva imatge és massa gran ara que medeix {actual_size}. Usa imatges de com a molt {max_size}",
@@ -276,10 +279,7 @@
         "uploadMultipleDone": "{count} imatges afegides. Gràcies per ajudar.",
         "uploadingMultiple": "Pujant {count} imatges…",
         "uploadingPicture": "Pujant la teva imatge…",
-        "willBePublished": "La teva foto serà publicada: ",
-        "nearbyPictures": {
-            "browseNearby": "Cerca imatges properes…"
-        }
+        "willBePublished": "La teva foto serà publicada: "
     },
     "importHelper": {
         "introduction": {

@@ -136,6 +136,7 @@
   - playground
   - recycling
   - school
+  - shops
   - tertiary_education
   - veterinary
 
@@ -159,6 +160,7 @@
   - kindergarten_childcare
   - recycling
   - school
+  - shops
   - tertiary_education
   - veterinary
 
@@ -182,6 +184,7 @@
   - kindergarten_childcare
   - recycling
   - school
+  - shops
   - tertiary_education
 
 
@@ -202,6 +205,7 @@
   - climbing_gym
   - food
   - kindergarten_childcare
+  - shops
   - veterinary
 
 

@@ -322,7 +322,8 @@
         "inline": true,
         "placeholder": {
           "en": "Language in lowercase English",
-          "nl": "Taal in lowercase Engel"
+          "nl": "Taal in lowercase Engel",
+          "de": "Sprache in Englisch in Kleinbuchstaben"
         },
         "addExtraTags": [
           "fixme=Freeform tag `school:language` used, to be doublechecked"
@@ -342,21 +343,24 @@
           "if": "school:language=french",
           "then": {
             "en": "French is the main language of {name}",
-            "nl": "Frans is de voertaal van {name}"
+            "nl": "Frans is de voertaal van {name}",
+            "de": "Französisch ist die Hauptsprache von {name}"
           }
         },
         {
           "if": "school:language=dutch",
           "then": {
             "en": "Dutch is the main language of {name}",
-            "nl": "Nederlands is de voertaal van {name}"
+            "nl": "Nederlands is de voertaal van {name}",
+            "de": "Niederländisch ist die Hauptsprache von {name}"
           }
         },
         {
           "if": "school:language=german",
           "then": {
             "en": "German is the main language of {name}",
-            "nl": "Duits is de voertaal van {name}"
+            "nl": "Duits is de voertaal van {name}",
+            "de": "Deutsch ist die Hauptsprache von {name}"
           }
         },
         {
