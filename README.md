@@ -113,6 +113,10 @@ The core strings and builtin themes of MapComplete are translated
 on [Hosted Weblate](https://hosted.weblate.org/projects/mapcomplete/core/). You can easily make an account and start
 translating in their web-environment - no installation required.
 
+You can even jump to the right translation string directly from MapComplete:
+
+![](./Docs/Misc/HowToTranslate.gif)
+
 [![Translation status](https://hosted.weblate.org/widgets/mapcomplete/-/multi-blue.svg)](https://hosted.weblate.org/engage/mapcomplete/)
 
 ## Architecture
