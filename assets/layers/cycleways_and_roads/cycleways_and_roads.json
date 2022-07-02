@@ -27,6 +27,7 @@
         "highway=service",
         "highway=footway",
         "highway=pedestrian",
+        "highway=living_street",
         {
           "and": [
             "highway=path",
