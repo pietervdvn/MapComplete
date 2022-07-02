@@ -5,13 +5,15 @@
     "nl": "Recycling",
     "de": "Recyclingeinrichtungen",
     "ca": "Residus",
-    "es": "Reciclaje"
+    "es": "Reciclaje",
+    "it": "Riciclo"
   },
   "description": {
     "en": "A layer with recycling containers and centres",
     "nl": "Een laag met recyclagingcontainers en -centrums",
     "de": "Eine Ebene mit Recyclingcontainern und -zentren",
-    "es": "Una capa con contenedores y centros de reciclaje"
+    "es": "Una capa con contenedores y centros de reciclaje",
+    "it": "Un livello con i contenitori e centri per la raccolta rifiuti riciclabili"
   },
   "source": {
     "osmTags": "amenity=recycling"
@@ -25,7 +27,8 @@
       "en": "Recycling facility",
       "nl": "Recyclingfaciliteit",
       "de": "Recyclinganlage",
-      "es": "Facilidad de reciclaje"
+      "es": "Facilidad de reciclaje",
+      "it": "Impianti di riciclo"
     },
     "mappings": [
       {
@@ -35,7 +38,8 @@
           "en": "Recycling centre",
           "nl": "Recyclingcentrum",
           "de": "Wertstoffhof",
-          "es": "Centro de reciclaje"
+          "es": "Centro de reciclaje",
+          "it": "Centro di riciclo rifiuti"
         }
       },
       {
@@ -44,7 +48,8 @@
           "en": "Recycling centre",
           "nl": "Recyclingcentrum",
           "de": "Wertstoffhof",
-          "es": "Centro de reciclaje"
+          "es": "Centro de reciclaje",
+          "it": "Centro di riciclo rifiuti"
         }
       },
       {
@@ -53,7 +58,8 @@
           "en": "Recycling container",
           "nl": "Recyclingcontainer",
           "de": "Recyclingcontainer",
-          "es": "Contenedor de reciclaje"
+          "es": "Contenedor de reciclaje",
+          "it": "Contenitore per il riciclo"
         }
       }
     ]
@@ -423,7 +429,8 @@
         "en": "a recycling container",
         "nl": "een recycling container",
         "de": "einen Recyclingcontainer",
-        "es": "un contenedor de reciclaje"
+        "es": "un contenedor de reciclaje",
+        "it": "un contenitore per il riciclo"
       },
       "tags": [
         "amenity=recycling",
@@ -435,7 +442,8 @@
         "en": "a recycling centre",
         "nl": "een containerpark (recycling center)",
         "de": "einen Wertstoffhof",
-        "es": "un centro de reciclado"
+        "es": "un centro de reciclado",
+        "it": "un centro di riciclo"
       },
       "tags": [
         "amenity=recycling",
@@ -450,7 +458,8 @@
       "question": {
         "en": "What type of recycling is this?",
         "nl": "Wat voor soort recycling is dit?",
-        "de": "Um welche Recyclingeinrichtung handelt es sich?"
+        "de": "Um welche Recyclingeinrichtung handelt es sich?",
+        "it": "Che tipo di raccolta è questo?"
       },
       "mappings": [
         {
@@ -459,7 +468,8 @@
             "en": "This is a recycling container",
             "nl": "Dit is een recyclingcontainer",
             "de": "Dies ist ein Recycling-Container",
-            "es": "Esto es un contenedor de reciclaje"
+            "es": "Esto es un contenedor de reciclaje",
+            "it": "Questo è un contenitore per il riciclo di rifiuti"
           }
         },
         {
@@ -468,7 +478,8 @@
             "en": "This is a recycling centre",
             "nl": "Dit is een recyclingcentrum",
             "de": "Dies ist ein Wertstoffhof",
-            "es": "Esto es un centro de reciclaje"
+            "es": "Esto es un centro de reciclaje",
+            "it": "Questo è un centro per la raccola e riciclo di rifiuti"
           }
         },
         {
@@ -476,7 +487,8 @@
           "then": {
             "en": "Waste disposal container for residual waste",
             "nl": "Afvalcontainer voor restafval",
-            "de": "Dies ist ein Abfallbehälter für Restmüll"
+            "de": "Dies ist ein Abfallbehälter für Restmüll",
+            "it": "Contenitore per lo smaltimento del secco"
           },
           "addExtraTags": [
             "recycling:batteries=",
@@ -509,13 +521,15 @@
         "en": "What is the name of this recycling centre?",
         "nl": "Wat is de naam van dit recyclagecentrum?",
         "de": "Wie lautet der Name dieses Wertstoffhofs?",
-        "es": "¿Cual es el nombre de este centro de reciclaje?"
+        "es": "¿Cual es el nombre de este centro de reciclaje?",
+        "it": "Come si chiama questo centro raccolta e riciclo rifiuti?"
       },
       "render": {
         "en": "This recycling centre is named <b>{name}</b>",
         "nl": "Dit recyclagecentrum heet <b>{name}</b>",
         "de": "Dieser Wertstoffhof heißt <b>{name}</b>",
-        "es": "Este centro de reciclaje se llama <b>{name}</b>"
+        "es": "Este centro de reciclaje se llama <b>{name}</b>",
+        "it": "Questo centro raccolta e riciclo rifiuti si chiama <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -527,7 +541,8 @@
             "en": "This recycling centre doesn't have a specific name",
             "nl": "Dit recyclagecentrum heeft geen specifieke naam",
             "de": "Dieser Wertstoffhof hat keinen bestimmten Namen",
-            "es": "Este centro de reciclaje no tiene un nombre específico"
+            "es": "Este centro de reciclaje no tiene un nombre específico",
+            "it": "Questo centro raccolta e riciclo rifiuti non ha un nome specifico"
           }
         }
       ],
@@ -539,7 +554,8 @@
         "en": "Where is this container located?",
         "nl": "Waar bevindt deze container zich?",
         "de": "Wo befindet sich dieser Container?",
-        "es": "¿Dónde se sitúa este contenedor?"
+        "es": "¿Dónde se sitúa este contenedor?",
+        "it": "Dove si trova questo contenitore?"
       },
       "condition": "recycling_type=container",
       "mappings": [
@@ -549,7 +565,8 @@
             "en": "This is an underground container",
             "nl": "Dit is een ondergrondse container",
             "de": "Dies ist ein Unterflurcontainer",
-            "es": "Este es un contenedor bajo tierra"
+            "es": "Este es un contenedor bajo tierra",
+            "it": "E' un contenitore sotterraneo"
           }
         },
         {
@@ -558,7 +575,8 @@
             "en": "This container is located indoors",
             "nl": "Deze container bevindt zich binnen",
             "de": "Dieser Container befindet sich in einem Gebäude",
-            "es": "Este contenedor se sitúa en el interior"
+            "es": "Este contenedor se sitúa en el interior",
+            "it": "Questo contenitore è al chiuso"
           }
         },
         {
@@ -567,7 +585,8 @@
             "en": "This container is located outdoors",
             "nl": "Deze container is buiten",
             "de": "Der Container befindet sich im Freien",
-            "es": "Este contenedor se sitúa en el exterior"
+            "es": "Este contenedor se sitúa en el exterior",
+            "it": "Questo contenitore è all'aperto"
           }
         }
       ]
@@ -578,7 +597,8 @@
         "en": "What can be recycled here?",
         "nl": "Wat kan hier gerecycled worden?",
         "de": "Was kann hier recycelt werden?",
-        "es": "¿Qué se puede reciclar aquí?"
+        "es": "¿Qué se puede reciclar aquí?",
+        "it": "Cosa si può riciclare qui?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -589,7 +609,8 @@
             "en": "Batteries can be recycled here",
             "nl": "Batterijen kunnen hier gerecycled worden",
             "de": "Batterien können hier recycelt werden",
-            "es": "Aquí se pueden reciclar baterías"
+            "es": "Aquí se pueden reciclar baterías",
+            "it": "Batterie"
           },
           "icon": {
             "path": "./assets/layers/recycling/batteries.svg",
@@ -602,7 +623,8 @@
           "then": {
             "en": "Beverage cartons can be recycled here",
             "nl": "Drankpakken kunnen hier gerecycled worden",
-            "de": "Getränkekartons können hier recycelt werden"
+            "de": "Getränkekartons können hier recycelt werden",
+            "it": "Cartoni per bevande"
           },
           "icon": {
             "path": "./assets/layers/recycling/beverage_cartons.svg",
@@ -616,7 +638,8 @@
             "en": "Cans can be recycled here",
             "nl": "Blikken kunnen hier gerecycled worden",
             "de": "Dosen können hier recycelt werden",
-            "es": "Aquí se pueden reciclar latas"
+            "es": "Aquí se pueden reciclar latas",
+            "it": "Lattine"
           },
           "icon": {
             "path": "./assets/layers/recycling/cans.svg",
@@ -630,7 +653,8 @@
             "en": "Clothes can be recycled here",
             "nl": "Kleren kunnen hier gerecycled worden",
             "de": "Kleidung kann hier recycelt werden",
-            "es": "Aquí se puede reciclar ropa"
+            "es": "Aquí se puede reciclar ropa",
+            "it": "Abiti"
           },
           "icon": {
             "path": "./assets/layers/recycling/clothes.svg",
@@ -644,7 +668,8 @@
             "en": "Cooking oil can be recycled here",
             "nl": "Frituurvet kan hier gerecycled worden",
             "de": "Speiseöl kann hier recycelt werden",
-            "es": "Aquí se puede reciclar aceite de cocina"
+            "es": "Aquí se puede reciclar aceite de cocina",
+            "it": "Olio da cucina"
           },
           "icon": {
             "path": "./assets/layers/recycling/cooking_oil.svg",
@@ -658,7 +683,8 @@
             "en": "Engine oil can be recycled here",
             "nl": "Motorolie kan hier gerecycled worden",
             "de": "Motoröl kann hier recycelt werden",
-            "es": "Aquí se puede reciclar aceite de motor"
+            "es": "Aquí se puede reciclar aceite de motor",
+            "it": "Olio di motore"
           },
           "icon": {
             "path": "./assets/layers/recycling/engine_oil.svg",
@@ -671,7 +697,8 @@
           "then": {
             "en": "Green waste can be recycled here",
             "nl": "Groen afval kan hier gerecycled worden",
-            "de": "Grünabfälle können hier recycelt werden"
+            "de": "Grünabfälle können hier recycelt werden",
+            "it": "Verde"
           },
           "icon": {
             "path": "./assets/layers/recycling/garden_waste.svg",
@@ -685,7 +712,8 @@
             "en": "Organic waste can be recycled here",
             "nl": "Organisch afval kan hier gerecycled worden",
             "de": "Bio-Abfall kann hier recycelt werden",
-            "es": "Aquí se pueden reciclar residuos orgánicos"
+            "es": "Aquí se pueden reciclar residuos orgánicos",
+            "it": "Umido"
           },
           "hideInAnswer": true,
           "icon": {
@@ -700,7 +728,8 @@
             "en": "Glass bottles can be recycled here",
             "nl": "Glazen flessen kunnen hier gerecycled worden",
             "de": "Glasflaschen können hier recycelt werden",
-            "es": "Aquí se pueden reciclar botellas de cristal"
+            "es": "Aquí se pueden reciclar botellas de cristal",
+            "it": "Bottiglie di vetro"
           },
           "icon": {
             "path": "./assets/layers/recycling/glass_bottles.svg",
@@ -714,7 +743,8 @@
             "en": "Glass can be recycled here",
             "nl": "Glas kan hier gerecycled worden",
             "de": "Glas kann hier recycelt werden",
-            "es": "Aquí se puede reciclar cristal"
+            "es": "Aquí se puede reciclar cristal",
+            "it": "Vetro"
           },
           "icon": {
             "path": "./assets/layers/recycling/glass.svg",
@@ -728,7 +758,8 @@
             "en": "Newspapers can be recycled here",
             "nl": "Kranten kunnen hier gerecycled worden",
             "de": "Zeitungen können hier recycelt werden",
-            "es": "Aquí se pueden reciclar periódicos"
+            "es": "Aquí se pueden reciclar periódicos",
+            "it": "Giornali"
           },
           "icon": {
             "path": "./assets/layers/recycling/newspaper.svg",
@@ -742,7 +773,8 @@
             "en": "Paper can be recycled here",
             "nl": "Papier kan hier gerecycled worden",
             "de": "Papier kann hier recycelt werden",
-            "es": "Aquí se puede reciclar papel"
+            "es": "Aquí se puede reciclar papel",
+            "it": "Carta"
           },
           "icon": {
             "path": "./assets/layers/recycling/paper.svg",
@@ -756,7 +788,8 @@
             "en": "Plastic bottles can be recycled here",
             "nl": "Plastic flessen kunnen hier gerecycled worden",
             "de": "Plastikflaschen können hier recycelt werden",
-            "es": "Aquí se pueden reciclar botellas de plástico"
+            "es": "Aquí se pueden reciclar botellas de plástico",
+            "it": "Bottiglie di platica"
           },
           "icon": {
             "path": "./assets/layers/recycling/plastic_bottles.svg",
@@ -770,7 +803,8 @@
             "en": "Plastic packaging can be recycled here",
             "nl": "Plastic verpakking kan hier gerecycled worden",
             "de": "Kunststoffverpackungen können hier recycelt werden",
-            "es": "Aquí se pueden reciclar embalajes plásticos"
+            "es": "Aquí se pueden reciclar embalajes plásticos",
+            "it": "Confezioni di plastica"
           },
           "icon": {
             "path": "./assets/layers/recycling/plastic_packaging.svg",
@@ -784,7 +818,8 @@
             "en": "Plastic can be recycled here",
             "nl": "Plastic kan hier gerecycled worden",
             "de": "Kunststoff kann hier recycelt werden",
-            "es": "Aquí se puede reciclar plástico"
+            "es": "Aquí se puede reciclar plástico",
+            "it": "Plastica"
           },
           "icon": {
             "path": "./assets/layers/recycling/plastic.svg",
@@ -798,7 +833,8 @@
             "en": "Scrap metal can be recycled here",
             "nl": "Oud metaal kan hier gerecycled worden",
             "de": "Metallschrott kann hier recycelt werden",
-            "es": "Aquí se puede reciclar chatarra"
+            "es": "Aquí se puede reciclar chatarra",
+            "it": "Rottami metallici"
           },
           "icon": {
             "path": "./assets/layers/recycling/scrap_metal.svg",
@@ -812,7 +848,8 @@
             "en": "Shoes can be recycled here",
             "nl": "Schoenen kunnen hier gerecycled worden",
             "de": "Schuhe können hier recycelt werden",
-            "es": "Aquí se pueden reciclar zapatos"
+            "es": "Aquí se pueden reciclar zapatos",
+            "it": "Scarpe"
           },
           "icon": {
             "path": "./assets/layers/recycling/shoes.svg",
@@ -825,7 +862,8 @@
           "then": {
             "en": "Small electrical appliances can be recycled here",
             "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
-            "de": "Elektrokleingeräte können hier recycelt werden"
+            "de": "Elektrokleingeräte können hier recycelt werden",
+            "it": "Piccoli elettrodomestici"
           },
           "icon": {
             "path": "./assets/layers/recycling/small_electrical_appliances.svg",
@@ -838,7 +876,8 @@
           "then": {
             "en": "Small electrical appliances can be recycled here",
             "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
-            "de": "Elektrokleingeräte können hier recycelt werden"
+            "de": "Elektrokleingeräte können hier recycelt werden",
+            "it": "Piccoli elettrodomestici"
           },
           "hideInAnswer": true,
           "icon": {
@@ -852,7 +891,8 @@
           "then": {
             "en": "Needles can be recycled here",
             "nl": "Injectienaalden kunnen hier gerecycled worden",
-            "de": "Nadeln können hier recycelt werden"
+            "de": "Nadeln können hier recycelt werden",
+            "it": "Aghi e oggetti appuntiti"
           }
         },
         {
@@ -861,7 +901,8 @@
           "then": {
             "en": "Residual waste can be recycled here",
             "nl": "Restafval kan hier gerecycled worden",
-            "de": "Restmüll kann hier recycelt werden"
+            "de": "Restmüll kann hier recycelt werden",
+            "it": "Secco"
           },
           "icon": {
             "path": "./assets/layers/waste_disposal/waste_disposal.svg",
@@ -877,13 +918,15 @@
         "en": "This recycling facility is operated by {operator}",
         "nl": "Deze recyclingfaciliteit wordt beheerd door {operator}",
         "de": "Diese Recyclinganlage wird betrieben von {operator}",
-        "es": "Esta facilidad de reciclado la opera {operator}"
+        "es": "Esta facilidad de reciclado la opera {operator}",
+        "it": "Questa struttura di raccola e riciclo è gestita da {operator}"
       },
       "question": {
         "en": "What company operates this recycling facility?",
         "nl": "Wat is de beheerder van deze recyclingfaciliteit?",
         "de": "Welches Unternehmen betreibt diese Recyclinganlage?",
-        "es": "¿Que empresa opera esta facilidad de reciclado?"
+        "es": "¿Que empresa opera esta facilidad de reciclado?",
+        "it": "Quale azienda gestisce questo impianto di raccolta e riciclo?"
       },
       "freeform": {
         "key": "operator",
@@ -907,7 +950,8 @@
         "en": "What are the opening hours of this recycling facility?",
         "nl": "Wat zijn de openingstijden van deze recyclingfaciliteit?",
         "de": "Wie sind die Öffnungszeiten dieser Recyclinganlage?",
-        "es": "¿A qué horas abre esta facilidad de reciclado?"
+        "es": "¿A qué horas abre esta facilidad de reciclado?",
+        "it": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?"
       },
       "freeform": {
         "key": "opening_hours",
@@ -921,7 +965,8 @@
             "nl": "24/7",
             "ca": "24/7",
             "de": "24/7",
-            "es": "24/7"
+            "es": "24/7",
+            "it": "24/7"
           }
         }
       ]
@@ -936,7 +981,8 @@
             "en": "Currently open",
             "nl": "Op dit moment open",
             "de": "Derzeit geöffnet",
-            "es": "Actualmente abierto"
+            "es": "Actualmente abierto",
+            "it": "Aperto ora"
           },
           "osmTags": "_isOpen=yes"
         }
@@ -950,7 +996,8 @@
             "en": "All recycling types",
             "nl": "Alle recyclingtypes",
             "de": "Alle Recyclingarten",
-            "es": "Todos los tipos de reciclado"
+            "es": "Todos los tipos de reciclado",
+            "it": "Tutti i tipi di rifiuti"
           }
         },
         {
@@ -958,7 +1005,8 @@
             "en": "Recycling of batteries",
             "nl": "Recycling van batterijen",
             "de": "Recycling von Batterien",
-            "es": "Reciclaje de baterías"
+            "es": "Reciclaje de baterías",
+            "it": "Riciclo di batterie"
           },
           "osmTags": "recycling:batteries=yes"
         },
@@ -966,7 +1014,8 @@
           "question": {
             "en": "Recycling of beverage cartons",
             "nl": "Recycling van drankpakken",
-            "de": "Recycling von Getränkekartons"
+            "de": "Recycling von Getränkekartons",
+            "it": "Riciclo di confezioni per bevande"
           },
           "osmTags": "recycling:beverage_cartons=yes"
         },
@@ -975,7 +1024,8 @@
             "en": "Recycling of cans",
             "nl": "Recycling van blikken",
             "de": "Recycling von Dosen",
-            "es": "Reciclaje de latas"
+            "es": "Reciclaje de latas",
+            "it": "Riciclo di lattine"
           },
           "osmTags": "recycling:cans=yes"
         },
@@ -984,7 +1034,8 @@
             "en": "Recycling of clothes",
             "nl": "Recycling van kleding",
             "de": "Recycling von Kleidung",
-            "es": "Reciclaje de ropa"
+            "es": "Reciclaje de ropa",
+            "it": "Riciclo di abiti"
           },
           "osmTags": "recycling:clothes=yes"
         },
@@ -993,7 +1044,8 @@
             "en": "Recycling of cooking oil",
             "nl": "Recycling van frituurvet",
             "de": "Recycling von Speiseöl",
-            "es": "Reciclaje de aceite de cocina"
+            "es": "Reciclaje de aceite de cocina",
+            "it": "Riciclo di olio da cucina"
           },
           "osmTags": "recycling:cooking_oil=yes"
         },
@@ -1002,7 +1054,8 @@
             "en": "Recycling of engine oil",
             "nl": "Recycling van motorolie",
             "de": "Recycling von Motoröl",
-            "es": "Reciclaje de aceite de motor"
+            "es": "Reciclaje de aceite de motor",
+            "it": "Riciclo di olio da motore"
           },
           "osmTags": "recycling:engine_oil=yes"
         },
@@ -1010,7 +1063,8 @@
           "question": {
             "en": "Recycling of green waste",
             "nl": "Recycling van groen afval",
-            "de": "Recycling von Grünabfällen"
+            "de": "Recycling von Grünabfällen",
+            "it": "Riciclo di umido"
           },
           "osmTags": {
             "or": [
@@ -1024,7 +1078,8 @@
             "en": "Recycling of glass bottles",
             "nl": "Recycling van glazen flessen",
             "de": "Recycling von Glasflaschen",
-            "es": "Reciclaje de botellas de cristal"
+            "es": "Reciclaje de botellas de cristal",
+            "it": "Riciclo di bottiglie di vetro"
           },
           "osmTags": "recycling:glass_bottles=yes"
         },
@@ -1033,7 +1088,8 @@
             "en": "Recycling of glass",
             "nl": "Recycling van glas",
             "de": "Recycling von Glas",
-            "es": "Reciclaje de cristal"
+            "es": "Reciclaje de cristal",
+            "it": "Riciclo di vetro"
           },
           "osmTags": "recycling:glass=yes"
         },
@@ -1042,7 +1098,8 @@
             "en": "Recycling of newspapers",
             "nl": "Recycling van kranten",
             "de": "Recycling von Zeitungen",
-            "es": "Reciclaje de periódicos"
+            "es": "Reciclaje de periódicos",
+            "it": "Riciclo di giornali"
           },
           "osmTags": "recycling:newspaper=yes"
         },
@@ -1051,7 +1108,8 @@
             "en": "Recycling of paper",
             "nl": "Recycling van papier",
             "de": "Recycling von Papier",
-            "es": "Reciclaje de papel"
+            "es": "Reciclaje de papel",
+            "it": "Riciclo di carta"
           },
           "osmTags": "recycling:paper=yes"
         },
@@ -1060,7 +1118,8 @@
             "en": "Recycling of plastic bottles",
             "nl": "Recycling van plastic flessen",
             "de": "Recycling von Plastikflaschen",
-            "es": "Reciclaje de botellas de papel"
+            "es": "Reciclaje de botellas de papel",
+            "it": "Riciclo di bottiglie di plastica"
           },
           "osmTags": "recycling:plastic_bottles=yes"
         },
@@ -1069,7 +1128,8 @@
             "en": "Recycling of plastic packaging",
             "nl": "Recycling van plastic verpakking",
             "de": "Recycling von Kunststoffverpackungen",
-            "es": "Reciclaje de embalajes plásticos"
+            "es": "Reciclaje de embalajes plásticos",
+            "it": "Riciclo di confezioni di plastica"
           },
           "osmTags": "recycling:plastic_packaging=yes"
         },
@@ -1078,7 +1138,8 @@
             "en": "Recycling of plastic",
             "nl": "Recycling van plastic",
             "de": "Recycling von Kunststoffen",
-            "es": "Reciclaje de plástico"
+            "es": "Reciclaje de plástico",
+            "it": "Riciclo di plastica"
           },
           "osmTags": "recycling:plastic=yes"
         },
@@ -1087,7 +1148,8 @@
             "en": "Recycling of scrap metal",
             "nl": "Recycling van oud metaal",
             "de": "Recycling von Metallschrott",
-            "es": "Reciclaje de chatarra"
+            "es": "Reciclaje de chatarra",
+            "it": "Riciclo di rottami metallici"
           },
           "osmTags": "recycling:scrap_metal=yes"
         },
@@ -1095,7 +1157,8 @@
           "question": {
             "en": "Recycling of small electrical appliances",
             "nl": "Recycling van kleine elektrische apparaten",
-            "de": "Recycling von Elektrokleingeräten"
+            "de": "Recycling von Elektrokleingeräten",
+            "it": "Riciclo di piccoli elettrodomestici"
           },
           "osmTags": {
             "or": [
@@ -1108,7 +1171,8 @@
           "question": {
             "en": "Recycling of residual waste",
             "nl": "Recycling van restafval",
-            "de": "Recycling von Restabfällen"
+            "de": "Recycling von Restabfällen",
+            "it": "Riciclo di secco"
           },
           "osmTags": "recycling:waste=yes"
         }

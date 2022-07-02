@@ -8,13 +8,15 @@
     "de": "Abfall",
     "ca": "Brossa",
     "nb_NO": "Avfall",
-    "fr": "Déchets"
+    "fr": "Déchets",
+    "it": "Rifiuti"
   },
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",
     "nl": "Kaart met afvalbakken en recyclingfaciliteiten.",
     "de": "Eine Karte mit Abfalleimern und Recyclingeinrichtungen.",
-    "fr": "Carte des poubelles et infrastructures de recyclage."
+    "fr": "Carte des poubelles et infrastructures de recyclage.",
+    "it": "Mappa dei cestini per i rifiuti e i centri di raccolta e riciclo rifiuti."
   },
   "icon": "./assets/layers/recycling/recycling-14.svg",
   "startZoom": 19,
