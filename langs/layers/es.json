@@ -3259,7 +3259,7 @@
             },
             "operator": {
                 "question": "¿Que empresa opera esta facilidad de reciclado?",
-                "render": "Esta facilidad de reciclado la opera {operator}"
+                "render": "Esta infraestructura de reciclado la opera {operator}"
             },
             "recycling-accepts": {
                 "mappings": {
