@@ -252,6 +252,9 @@
             },
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
+        },
+        "welcomeExplanation": {
+            "addNew": "Toqueu el mapa per afegir un nou PDI."
         }
     },
     "image": {
@@ -273,7 +276,10 @@
         "uploadMultipleDone": "{count} imatges afegides. Gràcies per ajudar.",
         "uploadingMultiple": "Pujant {count} imatges…",
         "uploadingPicture": "Pujant la teva imatge…",
-        "willBePublished": "La teva foto serà publicada: "
+        "willBePublished": "La teva foto serà publicada: ",
+        "nearbyPictures": {
+            "browseNearby": "Cerca imatges properes…"
+        }
     },
     "importHelper": {
         "introduction": {
