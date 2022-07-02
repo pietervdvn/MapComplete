@@ -9,7 +9,6 @@ import Svg from "../../Svg";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import FullWelcomePaneWithTabs from "./FullWelcomePaneWithTabs";
-import Title from "../Base/Title";
 
 export default class ThemeIntroductionPanel extends Combine {
 
@@ -17,7 +16,7 @@ export default class ThemeIntroductionPanel extends Combine {
         const t = Translations.t.general
         const layout = state.layoutToUse
 
-        const languagePicker = LanguagePicker.CreateLanguagePicker(layout.language, t.pickLanguage.Clone())
+        const languagePicker = new LanguagePicker(layout.language, t.pickLanguage.Clone())
 
         const toTheMap = new SubtleButton(
             undefined,
