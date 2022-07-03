@@ -1,5 +1,15 @@
 [
   {
+    "path": "ID.svg",
+    "license": "WTFPL",
+    "authors": [
+      "iD editor"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:ID.svg"
+    ]
+  },
+  {
     "path": "fas-baby-carriage.svg",
     "license": "CC-BY 4.0",
     "authors": [
@@ -410,37 +420,7 @@
     ]
   },
   {
-    "path": "maki-alcohol-shop.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
     "path": "maki-bakery.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-bakery.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-bicycle.svg",
     "license": "CC0",
     "authors": [
       "Maki icon set"
@@ -470,37 +450,7 @@
     ]
   },
   {
-    "path": "maki-car-repair.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
     "path": "maki-car.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-car.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-cemetery.svg",
     "license": "CC0",
     "authors": [
       "Maki icon set"
@@ -530,37 +480,7 @@
     ]
   },
   {
-    "path": "maki-clothing-store.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
     "path": "maki-confectionery.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-confectionery.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-florist.svg",
     "license": "CC0",
     "authors": [
       "Maki icon set"
@@ -590,37 +510,7 @@
     ]
   },
   {
-    "path": "maki-gaming.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
     "path": "maki-garden-centre.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-garden-centre.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-gift.svg",
     "license": "CC0",
     "authors": [
       "Maki icon set"
@@ -650,37 +540,7 @@
     ]
   },
   {
-    "path": "maki-grocery.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
     "path": "maki-jewelry-store.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-jewelry-store.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-lodging.svg",
     "license": "CC0",
     "authors": [
       "Maki icon set"
@@ -710,37 +570,7 @@
     ]
   },
   {
-    "path": "maki-optician.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
     "path": "maki-shoe.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-shoe.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-shop.svg",
     "license": "CC0",
     "authors": [
       "Maki icon set"
@@ -770,26 +600,6 @@
     ]
   },
   {
-    "path": "maki-teahouse.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-telephone.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
     "path": "maki-telephone.svg",
     "license": "CC0",
     "authors": [
@@ -801,26 +611,6 @@
   },
   {
     "path": "maki-warehouse.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-warehouse.svg",
-    "license": "CC0",
-    "authors": [
-      "Maki icon set"
-    ],
-    "sources": [
-      "https://github.com/mapbox/maki"
-    ]
-  },
-  {
-    "path": "maki-watch.svg",
     "license": "CC0",
     "authors": [
       "Maki icon set"

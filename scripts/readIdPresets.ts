@@ -5,7 +5,11 @@ import ScriptUtils from "./ScriptUtils";
 import {existsSync, readFileSync, writeFileSync} from "fs";
 import * as known_languages from "../assets/language_native.json"
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-import {QuestionableTagRenderingConfigJson} from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
+import {
+    MappingConfigJson,
+
+    QuestionableTagRenderingConfigJson
+} from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
 import SmallLicense from "../Models/smallLicense";
 
 interface IconThief {
@@ -148,7 +152,7 @@ class IdThief {
         console.log("Id knows following languages:", this._knownLanguages.join(", "), "missing:", missing)
     }
 
-    public getTranslation(language: string, ...path: string[]) {
+    public getTranslation(language: string, ...path: string[]): string {
         let obj = this.loadTranslationFile(language)[language]
         for (const p of path) {
             obj = obj[p]
@@ -182,7 +186,7 @@ class IdThief {
 
             const mapping = {
                 if: preset.parseTags(),
-                then: "circle:white;./assets/layers/shops/" + preset.icon + ".svg"
+                then: "circle:white;./assets/layers/id_presets/" + preset.icon + ".svg"
             }
             mappings.push(mapping)
 
@@ -195,24 +199,11 @@ class IdThief {
     /**
      * Creates a tagRenderingConfigJson for the 'shop' theme
      */
-    public readShopPresets(): { if, then, hideInAnswer?: string | boolean }[] {
+    public readShopPresets(): MappingConfigJson[] {
 
         const dir = this._idPresetsRepository + "/data/presets/shop"
 
-        const mappings:
-            {
-                if: string | { and: string[] },
-                then: Record<string, string>,
-                hideInAnswer?: string | boolean
-                icon?: {
-
-                    path: string,
-                    /**
-                     * Size of the image
-                     */
-                    class: "small" | "medium" | "large" | string
-                }
-            }[] = []
+        const mappings: MappingConfigJson[] = []
         const files = ScriptUtils.readDirRecSync(dir, 1);
         for (const file of files) {
             const name = file.substring(file.lastIndexOf('/') + 1, file.length - '.json'.length)
@@ -227,18 +218,28 @@ class IdThief {
             const thenClause: Record<string, string> = {
                 en: preset.name
             }
+            const terms: Record<string, string[]> = {
+                en: preset.terms
+            }
             for (const lng of this._knownLanguages) {
+                const lngMc = lng.replace('-', '_')
                 const tr = this.getTranslation(lng, "presets", "presets", "shop/" + name, "name")
-                if (tr === undefined) {
-                    continue
+                if (tr !== undefined) {
+                    thenClause[lngMc] = tr
                 }
-                thenClause[lng.replace('-', '_')] = tr
+
+                const termsTr = this.getTranslation(lng, "presets", "presets", "shop/" + name, "terms")
+                if (termsTr !== undefined) {
+                    terms[lngMc] = termsTr.split(",")
+                }
+
             }
 
             let tag = preset.parseTags();
-            const mapping = {
+            const mapping : MappingConfigJson= {
                 if: tag,
-                then: thenClause
+                then: thenClause,
+                searchTerms: terms
             }
             if (preset.tags["shop"] == "yes") {
                 mapping["hideInAnswer"] = true
@@ -247,7 +248,7 @@ class IdThief {
 
             if (this._iconThief.steal(preset.icon)) {
                 mapping["icon"] = {
-                    path: "./assets/layers/shops/" + preset.icon + ".svg",
+                    path: "./assets/layers/id_presets/" + preset.icon + ".svg",
                     class: "medium"
                 }
             } else {
@@ -271,7 +272,7 @@ class IdThief {
 
 }
 
-const targetDir = "./assets/layers/shops/"
+const targetDir = "./assets/layers/id_presets/"
 
 const makiThief = new MakiThief('../maki/icons/', targetDir + "maki-", {
     authors: ['Maki icon set'],
@@ -299,9 +300,17 @@ const iconThief = new AggregateIconThief(
 
 const thief = new IdThief("../id-tagging-schema/", iconThief)
 
-const shopLayerPath = targetDir + "shops.json"
-const shopLayer = <LayerConfigJson>JSON.parse(readFileSync(shopLayerPath, 'utf8'))
-const type = <QuestionableTagRenderingConfigJson>shopLayer.tagRenderings.find(tr => tr["id"] == "shops-type-from-id")
-type.mappings = thief.readShopPresets()
-shopLayer.mapRendering[0]["icon"]["mappings"] = thief.readShopIcons()
-writeFileSync(shopLayerPath, JSON.stringify(shopLayer, null, "  "), 'utf8')
+const shopLayerPath = targetDir + "id_presets.json"
+const idPresets = <LayerConfigJson>JSON.parse(readFileSync(shopLayerPath, 'utf8'))
+idPresets.tagRenderings = [
+    {
+        id: "shop_types",
+        mappings: thief.readShopPresets()
+    },
+    {
+        id: "shop_rendering",
+        mappings: thief.readShopIcons()
+    }
+]
+
+writeFileSync(shopLayerPath, JSON.stringify(idPresets, null, "  "), 'utf8')
