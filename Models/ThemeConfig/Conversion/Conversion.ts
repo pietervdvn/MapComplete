@@ -200,6 +200,24 @@ export class Concat<X, T> extends Conversion<X[], T[]> {
     }
 }
 
+export class FirstOf<T, X> extends Conversion<T, X>{
+    private readonly  _conversion: Conversion<T, X[]>;
+    
+    constructor(conversion: Conversion<T, X[]>) {
+        super("Picks the first result of the conversion step", [], "FirstOf("+conversion.name+")");
+        this._conversion = conversion;
+    }
+
+    convert(json: T, context: string): { result: X; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const reslt = this._conversion.convert(json, context);
+        return {
+            ...reslt,
+            result: reslt.result[0]
+        };
+    }
+    
+}
+
 export class Fuse<T> extends DesugaringStep<T> {
     private readonly steps: DesugaringStep<T>[];
 

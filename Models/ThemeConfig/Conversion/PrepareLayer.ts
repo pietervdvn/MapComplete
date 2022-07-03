@@ -1,4 +1,4 @@
-import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, SetDefault} from "./Conversion";
+import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, FirstOf, Fuse, On, SetDefault} from "./Conversion";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {Utils} from "../../../Utils";
@@ -8,7 +8,7 @@ import Translations from "../../../UI/i18n/Translations";
 import {Translation} from "../../../UI/i18n/Translation";
 import * as tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
 import {AddContextToTranslations} from "./AddContextToTranslations";
-import spec = Mocha.reporters.spec;
+
 
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     private readonly _state: DesugaringContext;
@@ -85,17 +85,20 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
         if (typeof tr === "string") {
             const lookup = this.lookup(tr);
             if (lookup === undefined) {
-                warnings.push(ctx + "A literal rendering was detected: " + tr)
+                const isTagRendering = ctx.indexOf("On(mapRendering") < 0
+                if(isTagRendering){
+                    warnings.push(ctx + "A literal rendering was detected: " + tr)
+                }
                 return [{
                     render: tr,
-                    id: tr.replace(/![a-zA-Z0-9]/g, "")
+                    id: tr.replace(/[^a-zA-Z0-9]/g, "")
                 }]
             }
             return lookup
         }
 
         if (tr["builtin"] !== undefined) {
-            let names = tr["builtin"]
+            let names: string | string[] = tr["builtin"]
             if (typeof names === "string") {
                 names = [names]
             }
@@ -111,7 +114,13 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
             for (const name of names) {
                 const lookup = this.lookup(name)
                 if (lookup === undefined) {
-                    errors.push(ctx + ": The tagRendering with identifier " + name + " was not found.\n\tDid you mean one of " + Array.from(state.tagRenderings.keys()).join(", ") + "?")
+                    let candidates =  Array.from(state.tagRenderings.keys())
+                    if(name.indexOf(".") > 0){
+                        const [layer, search] = name.split(".")
+                        candidates = Utils.NoNull( state.sharedLayers.get(layer).tagRenderings.map(tr => tr["id"])).map(id => layer+"."+id)
+                    }
+                    candidates = Utils.sortedByLevenshteinDistance(name, candidates, i => i);
+                    errors.push(ctx + ": The tagRendering with identifier " + name + " was not found.\n\tDid you mean one of " +candidates.join(", ") + "?")
                     continue
                 }
                 for (let foundTr of lookup) {
@@ -485,6 +494,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On("tagRenderings", new Concat(new ExpandTagRendering(state))),
             new On("mapRendering", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
+            new On("mapRendering",new Each( new On("icon", new FirstOf(new ExpandTagRendering(state))))),
             new SetDefault("titleIcons", ["defaults"]),
             new On("titleIcons", new Concat(new ExpandTagRendering(state)))
         );
