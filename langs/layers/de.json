@@ -3109,8 +3109,18 @@
                 },
                 "9": {
                     "then": "Fahrradstraße"
+                },
+                "4": {
+                    "then": "Straße mit Fahrradstreifen {name}"
+                },
+                "2": {
+                    "then": "Straße mit gemeinsam genutzter Fahrspur {name}"
+                },
+                "6": {
+                    "then": "Straße mit Radweg neben der Straße {name}"
                 }
-            }
+            },
+            "render": "Weg"
         }
     },
     "defibrillator": {
@@ -5161,6 +5171,9 @@
         "tagRenderings": {
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?"
+            },
+            "shops-type-from-id": {
+                "question": "Was ist das für ein Geschäft?"
             }
         },
         "title": {
@@ -6237,6 +6250,116 @@
                     }
                 }
             }
+        }
+    },
+    "kerbs": {
+        "filter": {
+            "0": {
+                "options": {
+                    "1": {
+                        "question": "Erhöhter Bordstein (>3 cm)"
+                    },
+                    "0": {
+                        "question": "Alle Arten von Bordsteinen"
+                    },
+                    "2": {
+                        "question": "Abgesenkter Bordstein (~3 cm)"
+                    },
+                    "3": {
+                        "question": "Bündiger Bordstein (~0cm)"
+                    },
+                    "4": {
+                        "question": "Kein Bordstein"
+                    },
+                    "5": {
+                        "question": "Bordstein mit unbekannter Höhe"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "2": {
+                        "question": "Bordstein ohne taktilem Pflaster"
+                    },
+                    "0": {
+                        "question": "Bordsteine mit oder ohne taktilem Pflaster"
+                    },
+                    "1": {
+                        "question": "Bordstein mit taktilem Pflaster"
+                    },
+                    "3": {
+                        "question": "Bordstein ohne Informationen über taktiles Pflaster"
+                    }
+                }
+            }
+        },
+        "name": "Bordsteine",
+        "presets": {
+            "0": {
+                "description": "Bordstein in einem Fußweg",
+                "title": "einen Bordstein"
+            }
+        },
+        "tagRenderings": {
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Höhe des Bordsteins"
+                },
+                "render": "Bordsteinhöhe: {{kerb:height}}",
+                "question": "Wie hoch ist der Bordstein?"
+            },
+            "kerb-type": {
+                "mappings": {
+                    "2": {
+                        "then": "Der Bordstein ist bündig (~0cm)"
+                    },
+                    "1": {
+                        "then": "Der Bordstein ist abgesenkt (~3 cm)"
+                    },
+                    "4": {
+                        "then": "Es gibt einen Bordstein mit unbekannter Höhe"
+                    },
+                    "0": {
+                        "then": "Der Bordstein ist erhöht (>3 cm)"
+                    },
+                    "3": {
+                        "then": "Hier gibt es keinen Bordstein"
+                    }
+                },
+                "question": "Wie hoch ist der Bordstein?"
+            },
+            "tactile-paving": {
+                "mappings": {
+                    "2": {
+                        "then": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist"
+                    },
+                    "0": {
+                        "then": "Der Bordstein hat ein taktiles Pflaster."
+                    },
+                    "1": {
+                        "then": "Der Bordstein hat kein taktiles Pflaster."
+                    }
+                },
+                "question": "Gibt es am Bordstein ein taktiles Pflaster?"
+            }
+        },
+        "description": "Eine Ebene, die Bordsteine zeigt.",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Zentimeter",
+                        "humanSingular": "Zentimeter"
+                    },
+                    "1": {
+                        "human": "Meter",
+                        "humanSingular": "Meter"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Bordstein"
         }
     }
 }
