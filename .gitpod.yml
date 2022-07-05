@@ -1,0 +1,13 @@
+tasks:
+  - init: npm run init
+    command: npm run start
+
+ports:
+  - name: MapComplete Website
+    port: 1234
+    onOpen: open-browser
+
+vscode:
+  extensions:
+    - "esbenp.prettier-vscode"
+    - "eamodio.gitlens"
