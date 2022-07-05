@@ -577,6 +577,10 @@
         "shortDescription": "Mappa tutti gli alberi",
         "title": "Alberi"
     },
+    "waste": {
+        "description": "Mappa dei cestini per i rifiuti e i centri di raccolta e riciclo rifiuti.",
+        "title": "Rifiuti"
+    },
     "waste_basket": {
         "description": "In questa cartina troverai i cestini dei rifiuti nei tuoi paraggi. Se manca un cestino, puoi inserirlo tu stesso",
         "shortDescription": "Una cartina dei cestini dei rifiuti",
