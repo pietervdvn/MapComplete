@@ -322,7 +322,7 @@ Every field is documented in the source code itself - you can find them here:
 
 - [The top level `LayoutConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayoutConfigJson.ts)
 - [A layer object `LayerConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayerConfigJson.ts)
-- [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
+- [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson.ts)
 - At last, the exact semantics of tags are documented [here](Tags_format.md)
 
 A JSON schema file is available in `Docs/Schemas` - use `LayoutConfig.schema.json` to validate a theme file.
