@@ -1,0 +1,34 @@
+{
+    "id": "doctors",
+    "name": {
+        "en": "doctors"
+    },
+    "title": {
+        "render": {
+            "en": "Doctors Office {name}"
+        }
+    },
+    "source": {
+        "osmTags": {
+            "and": [
+                "amenity=doctors"
+            ]
+        }
+    },
+    "minzoom": 13,
+    "tagRenderings": [
+        "images"
+    ],
+    "mapRendering": [
+        {
+            "icon": {
+                "render": "pin:#6BC4F7;./assets/layers/doctors/doctors.svg"
+            },
+            "iconSize": "40,40,bottom",
+            "location": [
+                "point",
+                "centroid"
+            ]
+        }
+    ]
+}

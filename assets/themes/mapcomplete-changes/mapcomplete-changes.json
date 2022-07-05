@@ -152,6 +152,10 @@
                 "then": "./assets/themes/cyclofix/logo.svg"
               },
               {
+                "if": "theme=doctors",
+                "then": "./assets/layers/doctors/doctors.svg"
+              },
+              {
                 "if": "theme=drinking_water",
                 "then": "./assets/themes/drinking_water/logo.svg"
               },
