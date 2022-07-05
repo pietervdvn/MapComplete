@@ -55,16 +55,23 @@ Raw installation
 
 To use the WSL in Visual Studio Code:
 
-0. Make sure you have installed the [Remote - WSL]() extension and it's dependencies.
-1. Open a remote WSL window using the button in the bottom left.
-2. Make a fork and clone the repository.
-3. Install `npm` using `sudo apt install npm`.
-4. Run `npm run init` and generate some additional dependencies and generated files. Note that it'll install the
+1. Install a WSL Distribution (e.g. Ubuntu)
+2. Install basic dependencies `sudo apt install make g++`
+3. Install NVM `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
+4. Use NVM to install node 16.x: `nvm install 16.9.1`
+5. Activate the node version: `nvm use 16.9.1`
+6. Install `npm` using `sudo apt install npm`.
+7. Install the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension and it's dependencies.
+8. Open a remote WSL window using the button in the bottom left.
+9. Make a fork and clone the repository.
+10. Run `npm run init` and generate some additional dependencies and generated files. Note that it'll install the
    dependencies too
-5. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
-6. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
+11. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
+12. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
    e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
+
+To use WSL without Visual Studio Code you can replace steps 7 and 8 by opening up a WSL terminal
 
 Automatic deployment
 --------------------
