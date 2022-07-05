@@ -102,7 +102,8 @@
     {
       "question": {
         "en": "What kind of shop is this?",
-        "nl": "Wat voor soort winkel is dit?"
+        "nl": "Wat voor soort winkel is dit?",
+        "de": "Was ist das für ein Geschäft?"
       },
       "id": "shops-type-from-id",
       "mappings": [

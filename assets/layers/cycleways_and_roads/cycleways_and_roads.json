@@ -40,7 +40,8 @@
   "title": {
     "render": {
       "en": "Way",
-      "nl": "Weg"
+      "nl": "Weg",
+      "de": "Weg"
     },
     "mappings": [
       {
@@ -83,7 +84,8 @@
         },
         "then": {
           "nl": "Weg met fietssugestiestrook {name}",
-          "en": "Road with shared lane {name}"
+          "en": "Road with shared lane {name}",
+          "de": "Straße mit gemeinsam genutzter Fahrspur {name}"
         }
       },
       {
@@ -106,7 +108,8 @@
         },
         "then": {
           "nl": "Weg met fietsstrook {name}",
-          "en": "Road with bike lane {name}"
+          "en": "Road with bike lane {name}",
+          "de": "Straße mit Fahrradstreifen {name}"
         }
       },
       {
@@ -129,7 +132,8 @@
         },
         "then": {
           "nl": "Weg met fietspad naast de weg {name}",
-          "en": "Road with cycleway next to the road {name}"
+          "en": "Road with cycleway next to the road {name}",
+          "de": "Straße mit Radweg neben der Straße {name}"
         }
       },
       {
