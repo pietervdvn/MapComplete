@@ -5183,11 +5183,13 @@
             }
         },
         "tagRenderings": {
+            "2": {
+                "override": {
+                    "question": "Wat voor soort winkel is dit?"
+                }
+            },
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?"
-            },
-            "shops-type-from-id": {
-                "question": "Wat voor soort winkel is dit?"
             }
         },
         "title": {
