@@ -4035,7 +4035,7 @@
                     "placeholder": "Hoogte van de stoeprand"
                 },
                 "question": "Hoe hoog is deze stoeprand?",
-                "render": "Stoeprandhoogte: {{kerb:height}}"
+                "render": "Stoeprandhoogte: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4519,7 +4519,7 @@
                     }
                 },
                 "question": "Hoeveel parkeerplaatsen zijn er op deze parking?",
-                "render": "Er zijn {{capacity}} parkeerplaatsen"
+                "render": "Er zijn {capacity} parkeerplaatsen"
             },
             "capacity-disabled": {
                 "freeform": {
@@ -4534,7 +4534,7 @@
                     }
                 },
                 "question": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
-                "render": "Er zijn {{capacity:disabled}} parkeerplaatsen voor gehandicapten"
+                "render": "Er zijn capacity:disabled} parkeerplaatsen voor gehandicapten"
             },
             "parking-type": {
                 "mappings": {

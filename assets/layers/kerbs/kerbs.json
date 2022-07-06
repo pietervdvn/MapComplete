@@ -150,8 +150,8 @@
         "nl": "Hoe hoog is deze stoeprand?"
       },
       "render": {
-        "en": "Kerb height: {{kerb:height}}",
-        "nl": "Stoeprandhoogte: {{kerb:height}}"
+        "en": "Kerb height: {kerb:height}",
+        "nl": "Stoeprandhoogte: {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",
