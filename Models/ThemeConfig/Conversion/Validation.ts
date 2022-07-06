@@ -45,6 +45,53 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
     }
 }
 
+export class DoesImageExist extends DesugaringStep<string>{
+    
+    private readonly _knownImagePaths: Set<string>;
+    public static doesPathExist : (path: string) => boolean = undefined;
+    
+    constructor(knownImagePaths: Set<string>) {
+        super("Checks if an image exists", [], "DoesImageExist");
+        this._knownImagePaths = knownImagePaths;
+    }
+
+    convert(image: string, context: string): { result: string; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const errors = []
+        const warnings = []
+        const information = []
+        if (image.indexOf("{") >= 0) {
+            information.push("Ignoring image with { in the path: " + image)
+            return {result: image}
+        }
+
+        if (image === "assets/SocialImage.png") {
+            return {result: image}
+        }
+        if (image.match(/[a-z]*/)) {
+
+            if (Svg.All[image + ".svg"] !== undefined) {
+                // This is a builtin img, e.g. 'checkmark' or 'crosshair'
+                return {result: image};
+            }
+        }
+
+        if (this._knownImagePaths !== undefined && !this._knownImagePaths.has(image)) {
+            if(DoesImageExist.doesPathExist === undefined){
+                errors.push(`Image with path ${image} not found or not attributed; it is used in ${context}`)
+            }else if(!DoesImageExist.doesPathExist(image)){
+                errors.push(`Image with path ${image} does not exist; it is used in ${context}.\n     Check for typo's and missing directories in the path.`)
+            }else{
+                errors.push(`Image with path ${image} is not attributed (but it exists); execute 'npm run query:licenses' to add the license information and/or run 'npm run generate:licenses' to compile all the license info`)
+            }
+        }
+        return {
+            result: image,
+            errors, warnings, information
+        }
+    }
+    
+}
+
 class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
     /**
      * The paths where this layer is originally saved. Triggers some extra checks
@@ -54,13 +101,14 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly knownImagePaths: Set<string>;
     private readonly _isBuiltin: boolean;
     private _sharedTagRenderings: Map<string, any>;
-
+    private readonly _validateImage : DesugaringStep<string>;
     constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme");
         this.knownImagePaths = knownImagePaths;
         this._path = path;
         this._isBuiltin = isBuiltin;
         this._sharedTagRenderings = sharedTagRenderings;
+        this._validateImage = new DoesImageExist(this.knownImagePaths);
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[], warnings: string[], information: string[] } {
@@ -89,26 +137,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 errors.push("Found a remote image: " + remoteImage + " in theme " + json.id + ", please download it.")
             }
             for (const image of images) {
-                if (image.indexOf("{") >= 0) {
-                    information.push("Ignoring image with { in the path: " + image)
-                    continue
-                }
-
-                if (image === "assets/SocialImage.png") {
-                    continue
-                }
-                if (image.match(/[a-z]*/)) {
-
-                    if (Svg.All[image + ".svg"] !== undefined) {
-                        // This is a builtin img, e.g. 'checkmark' or 'crosshair'
-                        continue;// =>
-                    }
-                }
-
-                if (this.knownImagePaths !== undefined && !this.knownImagePaths.has(image)) {
-                    const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
-                    errors.push(`Image with path ${image} not found or not attributed; it is used in ${json.id}${ctx}`)
-                }
+                this._validateImage.convertJoin(image, context === undefined ? "" : ` in a layer defined in the theme ${context}`, errors, warnings, information)
             }
 
             if (json.icon.endsWith(".svg")) {
@@ -433,8 +462,11 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 
                     for (const image of images) {
                         if (this.knownImagePaths !== undefined && !this.knownImagePaths.has(image)) {
+                            
+                            const closeNames = Utils.sortedByLevenshteinDistance(image, Array.from(this.knownImagePaths), i => i);
+                            
                             const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
-                            errors.push(`Image with path ${image} not found or not attributed; it is used in ${json.id}${ctx}`)
+                            errors.push(`Image with path ${image} not found or not attributed; it is used in ${json.id}${ctx}.\n    Did you mean one of ${closeNames.slice(0, 3).join(", ")}`)
                         }
                     }
                     

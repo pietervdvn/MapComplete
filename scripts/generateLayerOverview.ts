@@ -5,6 +5,7 @@ import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import Constants from "../Models/Constants";
 import {
+    DoesImageExist,
     PrevalidateTheme,
     ValidateLayer,
     ValidateTagRenderings,
@@ -152,6 +153,8 @@ class LayerOverviewUtils {
 
     main(_: string[]) {
 
+        DoesImageExist.doesPathExist = (path) => existsSync(path)
+        
         const licensePaths = new Set<string>()
         for (const i in licenses) {
             licensePaths.add(licenses[i].path)
@@ -261,7 +264,6 @@ class LayerOverviewUtils {
             tagRenderings: this.getSharedTagRenderings(knownImagePaths),
             publicLayers
         }
-        const nonDefaultLanguages : {theme: string, language: string}[] = []
         for (const themeInfo of themeFiles) {
             let themeFile = themeInfo.parsed
             const themePath = themeInfo.path
