@@ -953,6 +953,10 @@
         "description": "A map of public toilets",
         "title": "Open Toilet Map"
     },
+    "transit": {
+        "description": "Plan your trip with the help of the public transport system.",
+        "title": "Bus routes"
+    },
     "trees": {
         "description": "Map all the trees!",
         "shortDescription": "Map all the trees",
