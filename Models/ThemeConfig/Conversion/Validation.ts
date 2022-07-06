@@ -420,7 +420,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
     }
 
     /**
-     * const r = new DetectMappingsWithImages(new Set<string>()).convert({
+     * const r = new DetectMappingsWithImages(new DoesImageExist(new Set<string>())).convert({
      *     "mappings": [
      *         {
      *             "if": "bicycle_parking=stands",
