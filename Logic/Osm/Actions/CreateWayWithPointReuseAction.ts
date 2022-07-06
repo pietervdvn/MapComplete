@@ -182,7 +182,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
             features.push(newGeometry)
 
         }
-        return new StaticFeatureSource(features, false)
+        return StaticFeatureSource.fromGeojson(features)
     }
 
     public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {

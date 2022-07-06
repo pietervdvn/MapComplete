@@ -23,7 +23,7 @@ export default class ComparingTag implements TagsFilter {
         throw "A comparable tag can not be used as overpass filter"
     }
 
-    isEquivalent(other: TagsFilter): boolean {
+    shadows(other: TagsFilter): boolean {
         return other === this;
     }
 
@@ -52,15 +52,15 @@ export default class ComparingTag implements TagsFilter {
         return [];
     }
 
-    AsJson() {
-        return this.asHumanString(false, false, {})
-    }
-
     optimize(): TagsFilter | boolean {
         return this;
     }
     
     isNegative(): boolean {
         return true;
+    }
+    
+    visit(f: (TagsFilter) => void) {
+        f(this)
     }
 }

@@ -1,0 +1,63 @@
+{
+    "centerMessage": {
+        "loadingData": "Ikinakarga ang datos…",
+        "ready": "Tapos na!",
+        "retrying": "Hindi nai-karga ang datos. Susubukan muli pagkaraan ng {count} segundo…",
+        "zoomIn": "Mag-zoom in pa, ng makita or ma-edit ang datos."
+    },
+    "delete": {
+        "cancel": "Kanselá",
+        "cannotBeDeleted": "Ang tampok na ito ay hindi matatanggal",
+        "delete": "Tanggalin",
+        "explanations": {
+            "hardDelete": "Ang tampók na ito ay tatanggalin sa OpenStreetMap. Maari itong ibalik ng mga bihasang tiga-ambag",
+            "selectReason": "Pumili ng dahilan kung bakit dapat tanggalin ang tampók na ito.",
+            "softDelete": "Ang tampók na ito ay babaguhin at itatago sa application. <span class=\"subtle\">{reason}</span>"
+        },
+        "isDeleted": "Tinanggal na ang tampók na ito",
+        "isntAPoint": "Mga bukó (point) lang ang maaring tanggalin, ang piniling tampók ay isang way, area o relation.",
+        "loading": "Sinisiyasat ang mga katangian ng tampók para alamin kung maari itong tanggalin.",
+        "loginToDelete": "Dapat kang naka-logged in para matanggal ang bukó(point)",
+        "notEnoughExperience": "Ang tampók na ito ay ginawa ng ibang tao.",
+        "onlyEditedByLoggedInUser": "Ikaw ang patnugot ng tampók na ito, at maari mo itong tanggalin.",
+        "partOfOthers": "Ang bukó (point) na ito ay bahagi ng ibang way o relation, at hindi maaring tanggalin.",
+        "readMessages": "Meron kang mga bagong mensahe. Basahin ang mga ito bago tanggalin ang tampók - maaring may puná para sa'yo",
+        "reasons": {
+            "disused": "Ang tampók na ito ay di-aktibo o tinanggal na",
+            "duplicate": "Ang bukó na 'to ay kahalintulad ng iba pang tampók",
+            "notFound": "Ang tampók na 'to ay 'di masumpongan",
+            "test": "Ang bukóng ito ay ginamit na pang-subok - ang tampók ay 'di talaga inimpok"
+        },
+        "safeDelete": "Ang tampók na ito ay di-makapipinsalang tanggalin.",
+        "useSomethingElse": "Sa halip, gumamit ng iba pang editor ng OpenStreetMap para tanggalin",
+        "whyDelete": "Bakit dapat tanggalin ang tampók na 'to?"
+    },
+    "favourite": {
+        "loginNeeded": "<h3>Mag log-in</h3>Ang personal na pagkakaayos ay para lang sa mga gumagamit ng OpenStreetMap",
+        "panelIntro": "<h3>Pangsariling tikha</h3>Gawing aktibo ang mga paborito galing sa mga tikhang opisyal",
+        "reload": "Muling pasanin ang datos"
+    },
+    "general": {
+        "about": "Madaling i-edit at mag-dagdag sa OpenStreetMap gamit ang mga partikular na tikha",
+        "add": {
+            "addNew": "Dagdagan ng {category}",
+            "addNewMapLabel": "I-click ito para mag-dagdag ng bagong bagay",
+            "confirmButton": "Magdagdag ng {category}<br><div class=\"alert\">Makikita ng lahat ang idinagdag mo</div>",
+            "confirmIntro": "<h3>Mag-dagdag ng {title}?</h3>Ang tampók na ida-dagdag mo ay <b>makikita ng lahat</b>. Paki-usap, mag-dagdag lamang ng mga bagay na tutuong umiiral. Marami pang mga aplikasyon ang gumagamit ng datos na ito.",
+            "disableFilters": "Huwag paganahin ang lahat ng filter",
+            "disableFiltersExplanation": "May mga tampók na maaring nai-tago ng filter",
+            "hasBeenImported": "Ang bukóng ito ay nai-angkat na",
+            "import": {
+                "hasBeenImported": "Ang object na ito ay nai-angkat na",
+                "howToTest": "Para subukan, i-dagdag <b>test=true</b> o <b>backend=osm-test</b> kasama ng URL. Ang changeset ay ililimbag sa console. Mag-padala ng pull request (PR) para gawing opisyal ang tikha, at magamit ang pindutang pang-angkat.",
+                "importTags": "Ang elemento ay tatanggap ng {tags}",
+                "officialThemesOnly": "Ang pindutang pang-angkat ay di pinapagana sa mga hindi opisyal na tikha (themes), para maiwasan ang abala",
+                "wrongType": "Ang elementong ito ay hindi bukó o linya (way), at hindi mai-a-angkat",
+                "zoomInMore": "Lalo pang mag-zoom in para ma-angkat ang tampók na ito"
+            },
+            "importTags": "Ang bahaging ito ay magkakaroon ng {tags}",
+            "intro": "Nag-klik ka kung saan wala pang nababatid na datos.<br>",
+            "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók"
+        }
+    }
+}

@@ -35,12 +35,16 @@
     + [conversation](#conversation)
     + [add_image](#add_image)
     + [comment](#comment)
+    + [nearby-images](#nearby-images)
     + [report-contributor](#report-contributor)
     + [report-note](#report-note)
 1. [import_candidate](#import_candidate)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [all_tags](#all_tags)
+1. [direction](#direction)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
 1. [conflation](#conflation)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -78,6 +82,7 @@ MapComplete has a few data layers available in the theme which have special prop
   - [type_node](#type_node)
   - [note](#note)
   - [import_candidate](#import_candidate)
+  - [direction](#direction)
   - [conflation](#conflation)
   - [left_right_style](#left_right_style)
   - [split_point](#split_point)
@@ -101,12 +106,11 @@ Meta layer showing the current location of the user. Add this to your theme and 
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
   - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/gps_location/gps_location.json)
 
 
 
@@ -145,13 +149,12 @@ Meta layer which contains the previous locations of the user as single points. T
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
   - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/gps_location_history/gps_location_history.json)
 
 
 
@@ -190,12 +193,11 @@ Meta layer showing the home location of the user. The home location can be set i
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
   - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/home_location/home_location.json)
 
 
 
@@ -234,12 +236,11 @@ Meta layer showing the previous locations of the user as single line. Add this t
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
   - This layer is not visible by default and must be enabled in the filter by the user. 
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/gps_track/gps_track.json)
 
 
 
@@ -268,7 +269,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -278,7 +279,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -288,7 +289,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -298,7 +299,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -308,7 +309,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -328,10 +329,9 @@ This is a priviliged meta_layer which exports _every_ point in OSM. This only wo
 
 
 
+  - This layer is shown at zoomlevel **18** and higher
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/type_node/type_node.json)
 
 
 
@@ -370,10 +370,9 @@ This layer shows notes on OpenStreetMap. Having this layer in your theme will tr
 
 
 
+  - This layer is shown at zoomlevel **10** and higher
   - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/note/note.json)
 
 
 
@@ -402,7 +401,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -412,7 +411,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -422,7 +421,17 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### nearby-images 
+
+
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -432,9 +441,11 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
+
+Only visible if  `_opened_by_anonymous_user=false`  is shown
 
 
 
@@ -442,7 +453,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -462,10 +473,9 @@ Layer used in the importHelper
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/import_candidate/import_candidate.json)
 
 
 
@@ -494,7 +504,48 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+ direction 
+===========
+
+
+
+<img src='https://mapcomplete.osm.be/direction_gradient:var(--catch-detail-color)' height="100px"> 
+
+This layer visualizes directions
+
+
+
+
+
+
+  - This layer is shown at zoomlevel **16** and higher
+  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - camera:direction~^..*$|direction~^..*$
+
+
+
+
+ Supported attributes 
+----------------------
 
 
 
@@ -514,10 +565,9 @@ If the import-button moves OSM points, the imported way points or conflates, a p
 
 
 
+  - This layer is shown at zoomlevel **1** and higher
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/conflation/conflation.json)
 
 
 
@@ -556,10 +606,9 @@ Special meta-style which will show one single line, either on the left or on the
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/left_right_style/left_right_style.json)
 
 
 
@@ -598,10 +647,9 @@ Layer rendering the little scissors for the minimap in the 'splitRoadWizard'
 
 
 
+  - This layer is shown at zoomlevel **1** and higher
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/split_point/split_point.json)
 
 
 
@@ -642,10 +690,9 @@ The icon on the button is the default icon of the layer, but can be customized b
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/current_view/current_view.json)
 
 
 
@@ -684,10 +731,9 @@ The default rendering for a locationInput which snaps onto another object
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
   - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/matchpoint/matchpoint.json)
 
 
 
@@ -740,6 +786,12 @@ The following layers are included in MapComplete:
   - [birdhide](./Layers/birdhide.md)
   - [cafe_pub](./Layers/cafe_pub.md)
   - [charging_station](./Layers/charging_station.md)
+  - [climbing](./Layers/climbing.md)
+  - [climbing_area](./Layers/climbing_area.md)
+  - [climbing_club](./Layers/climbing_club.md)
+  - [climbing_gym](./Layers/climbing_gym.md)
+  - [climbing_opportunity](./Layers/climbing_opportunity.md)
+  - [climbing_route](./Layers/climbing_route.md)
   - [cluster_style](./Layers/cluster_style.md)
   - [conflation](./Layers/conflation.md)
   - [crab_address](./Layers/crab_address.md)
@@ -748,6 +800,7 @@ The following layers are included in MapComplete:
   - [cycleways_and_roads](./Layers/cycleways_and_roads.md)
   - [defibrillator](./Layers/defibrillator.md)
   - [direction](./Layers/direction.md)
+  - [dogpark](./Layers/dogpark.md)
   - [drinking_water](./Layers/drinking_water.md)
   - [entrance](./Layers/entrance.md)
   - [etymology](./Layers/etymology.md)
@@ -759,17 +812,19 @@ The following layers are included in MapComplete:
   - [gps_location_history](./Layers/gps_location_history.md)
   - [gps_track](./Layers/gps_track.md)
   - [grass_in_parks](./Layers/grass_in_parks.md)
+  - [hackerspace](./Layers/hackerspace.md)
   - [home_location](./Layers/home_location.md)
   - [hydrant](./Layers/hydrant.md)
   - [import_candidate](./Layers/import_candidate.md)
   - [information_board](./Layers/information_board.md)
+  - [kindergarten_childcare](./Layers/kindergarten_childcare.md)
   - [left_right_style](./Layers/left_right_style.md)
   - [map](./Layers/map.md)
   - [matchpoint](./Layers/matchpoint.md)
+  - [maxspeed](./Layers/maxspeed.md)
   - [named_streets](./Layers/named_streets.md)
   - [nature_reserve](./Layers/nature_reserve.md)
   - [note](./Layers/note.md)
-  - [note_import](./Layers/note_import.md)
   - [observation_tower](./Layers/observation_tower.md)
   - [parking](./Layers/parking.md)
   - [pedestrian_path](./Layers/pedestrian_path.md)
@@ -778,16 +833,19 @@ The following layers are included in MapComplete:
   - [playground](./Layers/playground.md)
   - [public_bookcase](./Layers/public_bookcase.md)
   - [recycling](./Layers/recycling.md)
+  - [school](./Layers/school.md)
   - [shops](./Layers/shops.md)
   - [slow_roads](./Layers/slow_roads.md)
   - [split_point](./Layers/split_point.md)
   - [sport_pitch](./Layers/sport_pitch.md)
   - [street_lamps](./Layers/street_lamps.md)
   - [surveillance_camera](./Layers/surveillance_camera.md)
+  - [tertiary_education](./Layers/tertiary_education.md)
   - [toilet](./Layers/toilet.md)
   - [trail](./Layers/trail.md)
   - [tree_node](./Layers/tree_node.md)
   - [type_node](./Layers/type_node.md)
+  - [veterinary](./Layers/veterinary.md)
   - [viewpoint](./Layers/viewpoint.md)
   - [village_green](./Layers/village_green.md)
   - [visitor_information_centre](./Layers/visitor_information_centre.md)
@@ -795,6 +853,7 @@ The following layers are included in MapComplete:
   - [waste_basket](./Layers/waste_basket.md)
   - [waste_disposal](./Layers/waste_disposal.md)
   - [watermill](./Layers/watermill.md)
+  - [windturbine](./Layers/windturbine.md)
  
 
 This document is autogenerated from [Customizations/AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/develop/Customizations/AllKnownLayouts.ts)

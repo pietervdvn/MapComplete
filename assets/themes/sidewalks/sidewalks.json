@@ -3,14 +3,30 @@
   "title": {
     "en": "Sidewalks",
     "ru": "Тротуары",
-    "nl": "Voetpaden"
+    "nl": "Voetpaden",
+    "de": "Gehwege",
+    "ca": "Voreres",
+    "es": "Aceras",
+    "fr": "Trottoirs",
+    "nb_NO": "Fortau"
   },
   "shortDescription": {
-    "en": "Sidewalk mapping"
+    "en": "Sidewalk mapping",
+    "ca": "Mapejat de voreres",
+    "de": "Kartierung von Bürgersteigen",
+    "es": "Mapeo de aceras",
+    "nl": "Voetpaden in kaart brengen",
+    "fr": "Cartographier des trottoirs"
   },
   "description": {
     "en": "Experimental theme",
-    "ru": "Экспериментальная тема"
+    "ru": "Экспериментальная тема",
+    "ca": "Petició experimental",
+    "de": "Experimentelles Thema",
+    "es": "Tema experimental",
+    "nl": "Experimenteel thema",
+    "fr": "Thème expérimental",
+    "nb_NO": "Eksperimentelt tema"
   },
   "maintainer": "",
   "icon": "./assets/svg/bug.svg",
@@ -25,7 +41,13 @@
       "id": "sidewalks",
       "name": {
         "en": "Sidewalks",
-        "ru": "Тротуары"
+        "ru": "Тротуары",
+        "de": "Gehwege",
+        "ca": "Voreres",
+        "es": "Aceras",
+        "nb_NO": "Fortau",
+        "nl": "Voetpaden",
+        "fr": "Trottoirs"
       },
       "minzoom": 12,
       "source": {
@@ -41,7 +63,12 @@
       "title": {
         "render": {
           "en": "{name}",
-          "ru": "{name}"
+          "ru": "{name}",
+          "de": "{name}",
+          "ca": "{name}",
+          "es": "{name}",
+          "nl": "{name}",
+          "fr": "{name}"
         },
         "mappings": [
           {
@@ -51,13 +78,22 @@
         ]
       },
       "description": {
-        "en": "Layer showing sidewalks of highways"
+        "en": "Layer showing sidewalks of highways",
+        "de": "Ebene mit Bürgersteigen",
+        "es": "Una capa que muestra aceras de autovías",
+        "nl": "Laag die voetpaden naast wegen toont",
+        "fr": "Calque montrant les trottoirs"
       },
       "tagRenderings": [
         {
           "id": "streetname",
           "render": {
-            "en": "This street is named {name}"
+            "en": "This street is named {name}",
+            "de": "Diese Straße heißt {name}",
+            "es": "Esta calle se llama {name}",
+            "nl": "Deze straat heet {name}",
+            "fr": "Cette rue s’appelle {name}",
+            "nb_NO": "Denne gaten heter {name}"
           }
         },
         {
@@ -100,7 +136,7 @@
               "condition": "sidewalk:left|right=yes",
               "freeform": {
                 "key": "sidewalk:left|right:width",
-                "type": "length",
+                "type": "distance",
                 "helperArgs": [
                   "21",
                   "map"

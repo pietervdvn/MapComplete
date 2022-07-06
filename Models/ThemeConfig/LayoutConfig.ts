@@ -55,10 +55,18 @@ export default class LayoutConfig {
 
     public readonly usedImages: string[]
     public readonly extraLink?: ExtraLinkConfig
-    
-    constructor(json: LayoutConfigJson, official = true, context?: string) {
+
+    public readonly definedAtUrl?: string;
+    public readonly definitionRaw?: string;
+
+    constructor(json: LayoutConfigJson, official = true, options?: {
+        definedAtUrl?: string,
+        definitionRaw?: string
+    }) {
         this.official = official;
         this.id = json.id;
+        this.definedAtUrl = options?.definedAtUrl
+        this.definitionRaw = options?.definitionRaw
         if (official) {
             if (json.id.toLowerCase() !== json.id) {
                 throw "The id of a theme should be lowercase: " + json.id
@@ -67,11 +75,7 @@ export default class LayoutConfig {
                 throw "The id of a theme should match [a-z0-9-_]*: " + json.id
             }
         }
-        if(context === undefined){
-            context = this.id
-        }else{
-            context = context + "." + this.id;
-        }
+        const context = this.id
         this.maintainer = json.maintainer;
         this.credits = json.credits;
         this.version = json.version;
@@ -103,10 +107,10 @@ export default class LayoutConfig {
                 throw "Got undefined layers for " + json.id + " at " + context
             }
         }
-        this.title = new Translation(json.title, "themes:"+context + ".title");
-        this.description = new Translation(json.description, "themes:"+context + ".description");
-        this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, "themes:"+context + ".shortdescription");
-        this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, "themes:"+context + ".descriptionTail");
+        this.title = new Translation(json.title, "themes:" + context + ".title");
+        this.description = new Translation(json.description, "themes:" + context + ".description");
+        this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, "themes:" + context + ".shortdescription");
+        this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, "themes:" + context + ".descriptionTail");
         this.icon = json.icon;
         this.socialImage = json.socialImage ?? LayoutConfig.defaultSocialImage;
         if (this.socialImage === "") {
@@ -124,13 +128,13 @@ export default class LayoutConfig {
         // At this point, layers should be expanded and validated either by the generateScript or the LegacyJsonConvert
         this.layers = json.layers.map(lyrJson => new LayerConfig(<LayerConfigJson>lyrJson, json.id + ".layers." + lyrJson["id"], official));
 
-        this.extraLink =  new ExtraLinkConfig(json.extraLink ?? {
+        this.extraLink = new ExtraLinkConfig(json.extraLink ?? {
             icon: "./assets/svg/pop-out.svg",
-            href: "https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
+            href: "https://{basepath}/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
             newTab: true,
-            requirements: ["iframe","no-welcome-message"]
-        }, context+".extraLink")
-    
+            requirements: ["iframe", "no-welcome-message"]
+        }, context + ".extraLink")
+
 
         this.clustering = {
             maxZoom: 16,

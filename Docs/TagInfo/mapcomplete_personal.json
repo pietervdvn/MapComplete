@@ -11,49 +11,24 @@
   },
   "tags": [
     {
-      "key": "addr:housenumber",
-      "description": "The MapComplete theme Personal theme has a layer Known addresses in OSM showing features with this tag"
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
+      "value": "footway"
     },
     {
-      "key": "addr:street",
-      "description": "The MapComplete theme Personal theme has a layer Known addresses in OSM showing features with this tag"
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
+      "value": "path"
     },
     {
-      "key": "addr:housenumber",
-      "description": "Layer 'Known addresses in OSM' shows and asks freeform values for key 'addr:housenumber' (in the MapComplete.osm.be theme 'Personal theme')"
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
+      "value": "corridor"
     },
     {
-      "key": "nohousenumber",
-      "description": "Layer 'Known addresses in OSM' shows nohousenumber=yes with a fixed text, namely 'This building has no house number' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "addr:street",
-      "description": "Layer 'Known addresses in OSM' shows and asks freeform values for key 'addr:street' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "addr:street",
-      "description": "Layer 'Known addresses in OSM' shows addr:street= with a fixed text, namely 'Located in <b>{_closest_street:0:name}</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key addr:street.",
-      "value": ""
-    },
-    {
-      "key": "addr:street",
-      "description": "Layer 'Known addresses in OSM' shows addr:street= with a fixed text, namely 'Located in <b>{_closest_street:1:name}</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key addr:street.",
-      "value": ""
-    },
-    {
-      "key": "addr:street",
-      "description": "Layer 'Known addresses in OSM' shows addr:street= with a fixed text, namely 'Located in <b>{_closest_street:2:name}</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key addr:street.",
-      "value": ""
-    },
-    {
-      "key": "fixme",
-      "description": "Layer 'Known addresses in OSM' shows and asks freeform values for key 'fixme' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "fixme",
-      "description": "Layer 'Known addresses in OSM' shows  with a fixed text, namely 'No fixme - write something here to explain complicated cases' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key fixme.",
-      "value": ""
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
+      "value": "steps"
     },
     {
       "key": "emergency",
@@ -607,17 +582,17 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Bicycle rental' shows shop=bicycle_rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "bicycle_rental"
+      "description": "Layer 'Bicycle rental' shows shop=rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "rental"
     },
     {
       "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows shop=bicycle_rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle rental' shows shop=rental&bicycle_rental=shop with a fixed text, namely 'This is a shop whose main focus is bicycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "shop"
     },
     {
       "key": "shop",
-      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "rental"
     },
     {
@@ -642,7 +617,7 @@
     },
     {
       "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point: a designated bicycle parking for this cycle rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "dropoff_point"
     },
     {
@@ -729,7 +704,7 @@
     },
     {
       "key": "rental",
-      "description": "Layer 'Bicycle rental' shows rental=kid_bike with a fixed text, namely 'Bikes for childs can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle rental' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "kid_bike"
     },
     {
@@ -741,6 +716,11 @@
       "key": "rental",
       "description": "Layer 'Bicycle rental' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "racebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bicycle rental' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bike_helmet"
     },
     {
       "key": "capacity:city_bike",
@@ -1236,12 +1216,12 @@
     },
     {
       "key": "service:bicycle:tools",
-      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers, …) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "service:bicycle:pump",
-      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers...) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows service:bicycle:tools=yes&service:bicycle:pump=no with a fixed text, namely 'There are only tools (screwdrivers, pliers, …) present' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -1336,7 +1316,7 @@
     },
     {
       "key": "valves",
-      "description": "Layer 'Bicycle pump and repair' shows valves=sclaverand with a fixed text, namely 'Sclaverand (also known as Presta)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows valves=sclaverand with a fixed text, namely 'Sclaverand/Presta (narrow-width bike tires)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "sclaverand"
     },
     {
@@ -1346,7 +1326,7 @@
     },
     {
       "key": "valves",
-      "description": "Layer 'Bicycle pump and repair' shows valves=schrader with a fixed text, namely 'Schrader (cars)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bicycle pump and repair' shows valves=schrader with a fixed text, namely 'Schrader (cars and mountainbikes)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "schrader"
     },
     {
@@ -1455,6 +1435,11 @@
       "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "shop",
+      "description": "Layer 'Bike repair/shop' shows shop=rental with a fixed text, namely 'This business focuses on rental' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "rental"
+    },
+    {
       "key": "name",
       "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -1473,10 +1458,6 @@
     {
       "key": "opening_hours",
       "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "description",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "access",
@@ -1521,6 +1502,78 @@
       "key": "service:bicycle:rental",
       "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'rental' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "city_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "ebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bmx"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "mtb"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "kid_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=tandem with a fixed text, namely 'Tandem bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "tandem"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "racebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Bike repair/shop' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bike_helmet"
+    },
+    {
+      "key": "capacity:city_bike",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:city_bike' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:ebike",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:ebike' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:kid_bike",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:kid_bike' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:bmx",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:bmx' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:mtb",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:mtb' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:bicycle_pannier",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:tandem_bicycle",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:tandem_bicycle' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "service:bicycle:second_hand",
@@ -1602,97 +1655,101 @@
       "value": "yes&service:bicycle:cleaning:charge="
     },
     {
+      "key": "description",
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "theme",
-      "description": "The MapComplete theme Personal theme has a layer Bike related object showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bike-related object showing features with this tag",
       "value": "bicycle"
     },
     {
       "key": "theme",
-      "description": "The MapComplete theme Personal theme has a layer Bike related object showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bike-related object showing features with this tag",
       "value": "cycling"
     },
     {
       "key": "sport",
-      "description": "The MapComplete theme Personal theme has a layer Bike related object showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bike-related object showing features with this tag",
       "value": "cycling"
     },
     {
       "key": "association",
-      "description": "The MapComplete theme Personal theme has a layer Bike related object showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bike-related object showing features with this tag",
       "value": "cycling"
     },
     {
       "key": "association",
-      "description": "The MapComplete theme Personal theme has a layer Bike related object showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bike-related object showing features with this tag",
       "value": "bicycle"
     },
     {
       "key": "ngo",
-      "description": "The MapComplete theme Personal theme has a layer Bike related object showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bike-related object showing features with this tag",
       "value": "cycling"
     },
     {
       "key": "ngo",
-      "description": "The MapComplete theme Personal theme has a layer Bike related object showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bike-related object showing features with this tag",
       "value": "bicycle"
     },
     {
       "key": "club",
-      "description": "The MapComplete theme Personal theme has a layer Bike related object showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bike-related object showing features with this tag",
       "value": "bicycle"
     },
     {
       "key": "club",
-      "description": "The MapComplete theme Personal theme has a layer Bike related object showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Bike-related object showing features with this tag",
       "value": "cycling"
     },
     {
       "key": "image",
-      "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bike related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "description",
-      "description": "Layer 'Bike related object' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "website",
-      "description": "Layer 'Bike related object' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bike related object' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
-      "description": "Layer 'Bike related object' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bike related object' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
-      "description": "Layer 'Bike related object' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bike related object' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Bike related object' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "amenity",
@@ -1864,6 +1921,11 @@
       "value": "biergarten"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Cafés and pubs showing features with this tag",
+      "value": "nightclub"
+    },
+    {
       "key": "image",
       "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -1907,6 +1969,11 @@
       "key": "amenity",
       "description": "Layer 'Cafés and pubs' shows amenity=biergarten with a fixed text, namely 'An open space where beer is served, typically seen in Germany' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "biergarten"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Cafés and pubs' shows amenity=nightclub with a fixed text, namely 'This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "nightclub"
     },
     {
       "key": "opening_hours",
@@ -1965,6 +2032,21 @@
       "key": "wheelchair",
       "description": "Layer 'Cafés and pubs' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Cafés and pubs' shows smoking=yes with a fixed text, namely 'Smoking is <b>allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Cafés and pubs' shows smoking=no with a fixed text, namely 'Smoking is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Cafés and pubs' shows smoking=outside with a fixed text, namely 'Smoking is <b>allowed outside</b>.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "outside"
     },
     {
       "key": "service:electricity",
@@ -2098,7 +2180,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "private"
     },
     {
@@ -2112,7 +2194,7 @@
     },
     {
       "key": "socket:schuko",
-      "description": "Layer 'Charging stations' shows socket:schuko~^..*$&socket:schuko!~^1$ with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:schuko~^..*$&socket:schuko!=1 with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:typee",
@@ -2121,7 +2203,7 @@
     },
     {
       "key": "socket:typee",
-      "description": "Layer 'Charging stations' shows socket:typee~^..*$&socket:typee!~^1$ with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:typee~^..*$&socket:typee!=1 with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:chademo",
@@ -2130,7 +2212,7 @@
     },
     {
       "key": "socket:chademo",
-      "description": "Layer 'Charging stations' shows socket:chademo~^..*$&socket:chademo!~^1$ with a fixed text, namely '<b>Chademo</b>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:chademo~^..*$&socket:chademo!=1 with a fixed text, namely '<b>Chademo</b>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type1_cable",
@@ -2139,7 +2221,7 @@
     },
     {
       "key": "socket:type1_cable",
-      "description": "Layer 'Charging stations' shows socket:type1_cable~^..*$&socket:type1_cable!~^1$ with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type1_cable~^..*$&socket:type1_cable!=1 with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type1",
@@ -2148,7 +2230,7 @@
     },
     {
       "key": "socket:type1",
-      "description": "Layer 'Charging stations' shows socket:type1~^..*$&socket:type1!~^1$ with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type1~^..*$&socket:type1!=1 with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type1_combo",
@@ -2157,7 +2239,7 @@
     },
     {
       "key": "socket:type1_combo",
-      "description": "Layer 'Charging stations' shows socket:type1_combo~^..*$&socket:type1_combo!~^1$ with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type1_combo~^..*$&socket:type1_combo!=1 with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:tesla_supercharger",
@@ -2166,7 +2248,7 @@
     },
     {
       "key": "socket:tesla_supercharger",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~^..*$&socket:tesla_supercharger!~^1$ with a fixed text, namely '<b>Tesla Supercharger</b>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~^..*$&socket:tesla_supercharger!=1 with a fixed text, namely '<b>Tesla Supercharger</b>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type2",
@@ -2175,7 +2257,7 @@
     },
     {
       "key": "socket:type2",
-      "description": "Layer 'Charging stations' shows socket:type2~^..*$&socket:type2!~^1$ with a fixed text, namely '<b>Type 2</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type2~^..*$&socket:type2!=1 with a fixed text, namely '<b>Type 2</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type2_combo",
@@ -2184,7 +2266,7 @@
     },
     {
       "key": "socket:type2_combo",
-      "description": "Layer 'Charging stations' shows socket:type2_combo~^..*$&socket:type2_combo!~^1$ with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type2_combo~^..*$&socket:type2_combo!=1 with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type2_cable",
@@ -2193,7 +2275,7 @@
     },
     {
       "key": "socket:type2_cable",
-      "description": "Layer 'Charging stations' shows socket:type2_cable~^..*$&socket:type2_cable!~^1$ with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type2_cable~^..*$&socket:type2_cable!=1 with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:tesla_supercharger_ccs",
@@ -2202,7 +2284,7 @@
     },
     {
       "key": "socket:tesla_supercharger_ccs",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!~^1$ with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!=1 with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:tesla_destination",
@@ -2211,7 +2293,7 @@
     },
     {
       "key": "socket:tesla_destination",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!~^1$&_country=us with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!=1&_country=us with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:tesla_destination",
@@ -2220,7 +2302,7 @@
     },
     {
       "key": "socket:tesla_destination",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!~^1$&_country!~^us$ with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!=1&_country!=us with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:USB-A",
@@ -2229,7 +2311,7 @@
     },
     {
       "key": "socket:USB-A",
-      "description": "Layer 'Charging stations' shows socket:USB-A~^..*$&socket:USB-A!~^1$ with a fixed text, namely '<b>USB</b> to charge phones and small electronics' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:USB-A~^..*$&socket:USB-A!=1 with a fixed text, namely '<b>USB</b> to charge phones and small electronics' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:bosch_3pin",
@@ -2238,7 +2320,7 @@
     },
     {
       "key": "socket:bosch_3pin",
-      "description": "Layer 'Charging stations' shows socket:bosch_3pin~^..*$&socket:bosch_3pin!~^1$ with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:bosch_3pin~^..*$&socket:bosch_3pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:bosch_5pin",
@@ -2247,7 +2329,7 @@
     },
     {
       "key": "socket:bosch_5pin",
-      "description": "Layer 'Charging stations' shows socket:bosch_5pin~^..*$&socket:bosch_5pin!~^1$ with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:bosch_5pin~^..*$&socket:bosch_5pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:schuko",
@@ -2337,8 +2419,8 @@
     },
     {
       "key": "socket:schuko:output",
-      "description": "Layer 'Charging stations' shows socket:schuko:output=3.6 kw with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "3.6 kw"
+      "description": "Layer 'Charging stations' shows socket:schuko:output=3.6 kW with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "3.6 kW"
     },
     {
       "key": "socket:typee:voltage",
@@ -2364,13 +2446,13 @@
     },
     {
       "key": "socket:typee:output",
-      "description": "Layer 'Charging stations' shows socket:typee:output=3 kw with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "3 kw"
+      "description": "Layer 'Charging stations' shows socket:typee:output=3 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "3 kW"
     },
     {
       "key": "socket:typee:output",
-      "description": "Layer 'Charging stations' shows socket:typee:output=22 kw with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "22 kw"
+      "description": "Layer 'Charging stations' shows socket:typee:output=22 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "22 kW"
     },
     {
       "key": "socket:chademo:voltage",
@@ -2396,8 +2478,8 @@
     },
     {
       "key": "socket:chademo:output",
-      "description": "Layer 'Charging stations' shows socket:chademo:output=50 kw with a fixed text, namely '<b>Chademo</b> outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "50 kw"
+      "description": "Layer 'Charging stations' shows socket:chademo:output=50 kW with a fixed text, namely '<b>Chademo</b> outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "50 kW"
     },
     {
       "key": "socket:type1_cable:voltage",
@@ -2428,13 +2510,13 @@
     },
     {
       "key": "socket:type1_cable:output",
-      "description": "Layer 'Charging stations' shows socket:type1_cable:output=3.7 kw with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "3.7 kw"
+      "description": "Layer 'Charging stations' shows socket:type1_cable:output=3.7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "3.7 kW"
     },
     {
       "key": "socket:type1_cable:output",
-      "description": "Layer 'Charging stations' shows socket:type1_cable:output=7 kw with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 7 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "7 kw"
+      "description": "Layer 'Charging stations' shows socket:type1_cable:output=7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 7 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "7 kW"
     },
     {
       "key": "socket:type1:voltage",
@@ -2465,23 +2547,23 @@
     },
     {
       "key": "socket:type1:output",
-      "description": "Layer 'Charging stations' shows socket:type1:output=3.7 kw with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "3.7 kw"
+      "description": "Layer 'Charging stations' shows socket:type1:output=3.7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "3.7 kW"
     },
     {
       "key": "socket:type1:output",
-      "description": "Layer 'Charging stations' shows socket:type1:output=6.6 kw with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "6.6 kw"
+      "description": "Layer 'Charging stations' shows socket:type1:output=6.6 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "6.6 kW"
     },
     {
       "key": "socket:type1:output",
-      "description": "Layer 'Charging stations' shows socket:type1:output=7 kw with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "7 kw"
+      "description": "Layer 'Charging stations' shows socket:type1:output=7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "7 kW"
     },
     {
       "key": "socket:type1:output",
-      "description": "Layer 'Charging stations' shows socket:type1:output=7.2 kw with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "7.2 kw"
+      "description": "Layer 'Charging stations' shows socket:type1:output=7.2 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "7.2 kW"
     },
     {
       "key": "socket:type1_combo:voltage",
@@ -2517,23 +2599,23 @@
     },
     {
       "key": "socket:type1_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type1_combo:output=50 kw with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "50 kw"
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=50 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "50 kW"
     },
     {
       "key": "socket:type1_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type1_combo:output=62.5 kw with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "62.5 kw"
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=62.5 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "62.5 kW"
     },
     {
       "key": "socket:type1_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type1_combo:output=150 kw with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "150 kw"
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=150 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "150 kW"
     },
     {
       "key": "socket:type1_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type1_combo:output=350 kw with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "350 kw"
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=350 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "350 kW"
     },
     {
       "key": "socket:tesla_supercharger:voltage",
@@ -2564,18 +2646,18 @@
     },
     {
       "key": "socket:tesla_supercharger:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=120 kw with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 120 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "120 kw"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=120 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 120 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "120 kW"
     },
     {
       "key": "socket:tesla_supercharger:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=150 kw with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 150 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "150 kw"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=150 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 150 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "150 kW"
     },
     {
       "key": "socket:tesla_supercharger:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=250 kw with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 250 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "250 kw"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=250 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 250 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "250 kW"
     },
     {
       "key": "socket:type2:voltage",
@@ -2611,13 +2693,13 @@
     },
     {
       "key": "socket:type2:output",
-      "description": "Layer 'Charging stations' shows socket:type2:output=11 kw with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 11 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "11 kw"
+      "description": "Layer 'Charging stations' shows socket:type2:output=11 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 11 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "11 kW"
     },
     {
       "key": "socket:type2:output",
-      "description": "Layer 'Charging stations' shows socket:type2:output=22 kw with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "22 kw"
+      "description": "Layer 'Charging stations' shows socket:type2:output=22 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "22 kW"
     },
     {
       "key": "socket:type2_combo:voltage",
@@ -2653,8 +2735,8 @@
     },
     {
       "key": "socket:type2_combo:output",
-      "description": "Layer 'Charging stations' shows socket:type2_combo:output=50 kw with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "50 kw"
+      "description": "Layer 'Charging stations' shows socket:type2_combo:output=50 kW with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "50 kW"
     },
     {
       "key": "socket:type2_cable:voltage",
@@ -2690,13 +2772,13 @@
     },
     {
       "key": "socket:type2_cable:output",
-      "description": "Layer 'Charging stations' shows socket:type2_cable:output=11 kw with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 11 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "11 kw"
+      "description": "Layer 'Charging stations' shows socket:type2_cable:output=11 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 11 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "11 kW"
     },
     {
       "key": "socket:type2_cable:output",
-      "description": "Layer 'Charging stations' shows socket:type2_cable:output=22 kw with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "22 kw"
+      "description": "Layer 'Charging stations' shows socket:type2_cable:output=22 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "22 kW"
     },
     {
       "key": "socket:tesla_supercharger_ccs:voltage",
@@ -2704,12 +2786,12 @@
     },
     {
       "key": "socket:tesla_supercharger_ccs:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=500 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=500 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 500 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "500 V"
     },
     {
       "key": "socket:tesla_supercharger_ccs:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=920 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=920 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs 920 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "920 V"
     },
     {
@@ -2732,8 +2814,8 @@
     },
     {
       "key": "socket:tesla_supercharger_ccs:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:output=50 kw with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "50 kw"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:output=50 kW with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded Type 2 CSS) outputs at most 50 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "50 kW"
     },
     {
       "key": "socket:tesla_destination:voltage",
@@ -2741,7 +2823,7 @@
     },
     {
       "key": "socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs 480 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs 480 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "480 V"
     },
     {
@@ -2750,12 +2832,12 @@
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=125 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=125 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 125 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "125 A"
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=350 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=350 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 350 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "350 A"
     },
     {
@@ -2764,18 +2846,18 @@
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=120 kw with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 120 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "120 kw"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=120 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 120 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "120 kW"
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=150 kw with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 150 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "150 kw"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=150 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 150 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "150 kW"
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=250 kw with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 250 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "250 kw"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=250 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> outputs at most 250 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "250 kW"
     },
     {
       "key": "socket:tesla_destination:voltage",
@@ -2783,12 +2865,12 @@
     },
     {
       "key": "socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=230 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=230 V with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 230 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "230 V"
     },
     {
       "key": "socket:tesla_destination:voltage",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=400 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=400 V with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs 400 volt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "400 V"
     },
     {
@@ -2797,12 +2879,12 @@
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=16 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=16 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "16 A"
     },
     {
       "key": "socket:tesla_destination:current",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=32 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=32 A with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 32 A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "32 A"
     },
     {
@@ -2811,13 +2893,13 @@
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=11 kw with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "11 kw"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=11 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 11 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "11 kW"
     },
     {
       "key": "socket:tesla_destination:output",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=22 kw with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "22 kw"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=22 kW with a fixed text, namely '<b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as Tesla) outputs at most 22 kw A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "22 kW"
     },
     {
       "key": "socket:USB-A:voltage",
@@ -2848,13 +2930,13 @@
     },
     {
       "key": "socket:USB-A:output",
-      "description": "Layer 'Charging stations' shows socket:USB-A:output=5w with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 5w A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "5w"
+      "description": "Layer 'Charging stations' shows socket:USB-A:output=5W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 5w A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "5W"
     },
     {
       "key": "socket:USB-A:output",
-      "description": "Layer 'Charging stations' shows socket:USB-A:output=10w with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 10w A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "10w"
+      "description": "Layer 'Charging stations' shows socket:USB-A:output=10W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 10w A' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "10W"
     },
     {
       "key": "socket:bosch_3pin:voltage",
@@ -2936,12 +3018,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "fee:conditional",
-      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Charging stations' shows fee=yes&fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no @ customers"
     },
     {
@@ -3263,6 +3345,398 @@
       "key": "parking:fee",
       "description": "Layer 'Charging stations' shows parking:fee=yes with a fixed text, namely 'An additional parking fee should be paid while charging' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Personal theme has a layer Climbing opportunities showing features with this tag",
+      "value": "climbing"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Climbing opportunities allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Climbing opportunities allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Climbing opportunities allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Climbing opportunities allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Climbing opportunities' shows noname=yes with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing opportunities' shows noname=yes with a fixed text, namely 'This climbing opportunity doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key name.",
+      "value": ""
+    },
+    {
+      "key": "climbing",
+      "description": "Layer 'Climbing opportunities' shows climbing=boulder with a fixed text, namely 'A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "boulder"
+    },
+    {
+      "key": "climbing",
+      "description": "Layer 'Climbing opportunities' shows climbing=crag with a fixed text, namely 'A climbing crag - a single rock or cliff with at least a few climbing routes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "crag"
+    },
+    {
+      "key": "climbing",
+      "description": "Layer 'Climbing opportunities' shows climbing=area with a fixed text, namely 'A climbing area with one or more climbing crags and/or boulders' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "area"
+    },
+    {
+      "key": "rock",
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'rock' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "rock",
+      "description": "Layer 'Climbing opportunities' shows rock=limestone with a fixed text, namely 'Limestone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "limestone"
+    },
+    {
+      "key": "url",
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'url' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Climbing opportunities' shows fee=no with a fixed text, namely 'Climbing here is free of charge' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Climbing opportunities' shows fee=yes with a fixed text, namely 'Paying a fee is required to climb here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Climbing opportunities' shows fee=yes with a fixed text, namely 'Paying a fee is required to climb here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder=yes with a fixed text, namely 'Bouldering is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder=no with a fixed text, namely 'Bouldering is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder=limited with a fixed text, namely 'Bouldering is possible, allthough there are only a few routes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "club",
+      "description": "The MapComplete theme Personal theme has a layer Climbing club showing features with this tag",
+      "value": "climbing"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Personal theme has a layer Climbing club showing features with this tag",
+      "value": "climbing"
+    },
+    {
+      "key": "office",
+      "description": "The MapComplete theme Personal theme has a layer Climbing club showing features with this tag"
+    },
+    {
+      "key": "club",
+      "description": "The MapComplete theme Personal theme has a layer Climbing club showing features with this tag"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing club' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Climbing club' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Climbing club' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Climbing club' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Climbing club' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Climbing club' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Climbing club' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Climbing club' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "sport",
+      "description": "The MapComplete theme Personal theme has a layer Climbing gyms showing features with this tag",
+      "value": "climbing"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Personal theme has a layer Climbing gyms showing features with this tag",
+      "value": "sports_centre"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Climbing gyms allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Climbing gyms allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Climbing gyms allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Climbing gyms allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Climbing gyms' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Climbing gyms' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Climbing gyms' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Climbing gyms' shows fee=no with a fixed text, namely 'Climbing here is free of charge' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Climbing gyms' shows fee=yes with a fixed text, namely 'Paying a fee is required to climb here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Climbing gyms' shows fee=yes with a fixed text, namely 'Paying a fee is required to climb here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:length",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:length' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:grade:french:min",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:grade:french:min' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:grade:french:max",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:grade:french:max' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=yes with a fixed text, namely 'Bouldering is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=no with a fixed text, namely 'Bouldering is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder=limited with a fixed text, namely 'Bouldering is possible, allthough there are only a few routes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "climbing:boulder",
+      "description": "Layer 'Climbing gyms' shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport=yes with a fixed text, namely 'Sport climbing is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport=no with a fixed text, namely 'Sport climbing is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:sport",
+      "description": "Layer 'Climbing gyms' shows climbing:sport~^..*$ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:bolts:max",
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:bolts:max' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:speed",
+      "description": "Layer 'Climbing gyms' shows climbing:speed=yes with a fixed text, namely 'There is a speed climbing wall' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "climbing:speed",
+      "description": "Layer 'Climbing gyms' shows climbing:speed=no with a fixed text, namely 'There is no speed climbing wall' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "climbing:speed",
+      "description": "Layer 'Climbing gyms' shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Personal theme has a layer Climbing opportunities? showing features with this tag",
+      "value": "sports_centre"
+    },
+    {
+      "key": "barrier",
+      "description": "The MapComplete theme Personal theme has a layer Climbing opportunities? showing features with this tag",
+      "value": "wall"
+    },
+    {
+      "key": "barrier",
+      "description": "The MapComplete theme Personal theme has a layer Climbing opportunities? showing features with this tag",
+      "value": "retaining_wall"
+    },
+    {
+      "key": "natural",
+      "description": "The MapComplete theme Personal theme has a layer Climbing opportunities? showing features with this tag",
+      "value": "cliff"
+    },
+    {
+      "key": "natural",
+      "description": "The MapComplete theme Personal theme has a layer Climbing opportunities? showing features with this tag",
+      "value": "rock"
+    },
+    {
+      "key": "natural",
+      "description": "The MapComplete theme Personal theme has a layer Climbing opportunities? showing features with this tag",
+      "value": "stone"
+    },
+    {
+      "key": "climbing",
+      "description": "The MapComplete theme Personal theme has a layer Climbing opportunities? showing features with this tag",
+      "value": ""
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Climbing opportunities?' shows sport=climbing with a fixed text, namely 'Climbing is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "climbing"
+    },
+    {
+      "key": "climbing",
+      "description": "Layer 'Climbing opportunities?' shows climbing=no with a fixed text, namely 'Climbing is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "climbing",
+      "description": "The MapComplete theme Personal theme has a layer Climbing routes showing features with this tag",
+      "value": "route"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Climbing routes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Climbing routes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Climbing routes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Climbing routes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Climbing routes' shows noname=yes with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Climbing routes' shows noname=yes with a fixed text, namely 'This climbing route doesn't have a name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key name.",
+      "value": ""
+    },
+    {
+      "key": "climbing:length",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'climbing:length' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:grade:french",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'climbing:grade:french' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:bolts",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'climbing:bolts' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "climbing:bolted",
+      "description": "Layer 'Climbing routes' shows climbing:bolted=no with a fixed text, namely 'This route is not bolted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Climbing routes' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "highway",
@@ -3949,7 +4423,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Defibrillators' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accesible to staff, the owners, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Defibrillators' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accesible to staff, the owners, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "private"
     },
     {
@@ -4061,12 +4535,59 @@
       "description": "Layer 'Defibrillators' shows and asks freeform values for key 'fixme' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "camera:direction",
-      "description": "The MapComplete theme Personal theme has a layer Direction visualization showing features with this tag"
+      "key": "leisure",
+      "description": "The MapComplete theme Personal theme has a layer dog parks showing features with this tag",
+      "value": "dog_park"
     },
     {
-      "key": "direction",
-      "description": "The MapComplete theme Personal theme has a layer Direction visualization showing features with this tag"
+      "key": "leisure",
+      "description": "The MapComplete theme Personal theme has a layer dog parks showing features with this tag",
+      "value": "park"
+    },
+    {
+      "key": "dog",
+      "description": "The MapComplete theme Personal theme has a layer dog parks showing features with this tag",
+      "value": "unleashed"
+    },
+    {
+      "key": "barrier",
+      "description": "Layer 'dog parks' shows barrier=fence with a fixed text, namely 'This dogpark is fenced all around' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "fence"
+    },
+    {
+      "key": "barrier",
+      "description": "Layer 'dog parks' shows barrier=no with a fixed text, namely 'This dogpark is not fenced all around' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "small_dog",
+      "description": "Layer 'dog parks' shows small_dog=separate with a fixed text, namely 'Have separate area for puppies and small dogs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "separate"
+    },
+    {
+      "key": "small_dog",
+      "description": "Layer 'dog parks' shows small_dog=shared with a fixed text, namely 'Does <strong>not</strong> have a separate area for puppies and small dogs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "shared"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'dog parks' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'dog parks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "amenity",
@@ -4180,12 +4701,12 @@
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "service"
     },
     {
@@ -4362,38 +4883,38 @@
     },
     {
       "key": "emergency",
-      "description": "The MapComplete theme Personal theme has a layer Map of fire extinguishers. showing features with this tag",
+      "description": "The MapComplete theme Personal theme has a layer Map of fire extinguishers showing features with this tag",
       "value": "fire_extinguisher"
     },
     {
       "key": "location",
-      "description": "Layer 'Map of fire extinguishers.' shows and asks freeform values for key 'location' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Map of fire extinguishers' shows and asks freeform values for key 'location' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "location",
-      "description": "Layer 'Map of fire extinguishers.' shows location=indoor with a fixed text, namely 'Found indoors.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Map of fire extinguishers' shows location=indoor with a fixed text, namely 'Found indoors.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "indoor"
     },
     {
       "key": "location",
-      "description": "Layer 'Map of fire extinguishers.' shows location=outdoor with a fixed text, namely 'Found outdoors.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Map of fire extinguishers' shows location=outdoor with a fixed text, namely 'Found outdoors.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "outdoor"
     },
     {
       "key": "image",
-      "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Map of fire extinguishers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Map of fire extinguishers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Map of fire extinguishers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Map of fire extinguishers. allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Map of fire extinguishers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "amenity",
@@ -4498,12 +5019,12 @@
     },
     {
       "key": "amenity",
-      "description": "Layer 'Restaurants and fast food' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "fast_food"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Restaurants and fast food' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focused on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "restaurant"
     },
     {
@@ -4659,6 +5180,16 @@
       "value": "no"
     },
     {
+      "key": "delivery",
+      "description": "Layer 'Restaurants and fast food' shows delivery=yes with a fixed text, namely 'This business does home delivery (eventually via a third party)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "delivery",
+      "description": "Layer 'Restaurants and fast food' shows delivery=no with a fixed text, namely 'This business does not deliver at home' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
       "key": "diet:vegetarian",
       "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
@@ -4750,12 +5281,12 @@
     },
     {
       "key": "friture:oil",
-      "description": "Layer 'Restaurants and fast food' shows friture:oil=vegetable with a fixed text, namely 'Vegetable oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=vegetable with a fixed text, namely 'The frying is done with vegetable oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "vegetable"
     },
     {
       "key": "friture:oil",
-      "description": "Layer 'Restaurants and fast food' shows friture:oil=animal with a fixed text, namely 'Animal oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=animal with a fixed text, namely 'The frying is done with animal oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "animal"
     },
     {
@@ -4856,40 +5387,120 @@
       "description": "Layer 'Ghost bikes' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "leisure",
+      "description": "The MapComplete theme Personal theme has a layer Hackerspace showing features with this tag",
+      "value": "hackerspace"
+    },
+    {
+      "key": "hackerspace",
+      "description": "Layer 'Hackerspace' shows hackerspace=makerspace with a fixed text, namely 'This is a makerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "makerspace"
+    },
+    {
+      "key": "hackerspace",
+      "description": "Layer 'Hackerspace' shows  with a fixed text, namely 'This is a traditional (software oriented) hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key hackerspace.",
+      "value": ""
+    },
+    {
       "key": "name",
-      "description": "The MapComplete theme Personal theme has a layer Toegankelijke grasvelden in parken showing features with this tag",
-      "value": "Park Oude God"
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "landuse",
-      "description": "The MapComplete theme Personal theme has a layer Toegankelijke grasvelden in parken showing features with this tag",
-      "value": "grass"
+      "key": "website",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "access",
-      "description": "The MapComplete theme Personal theme has a layer Toegankelijke grasvelden in parken showing features with this tag",
-      "value": "public"
+      "key": "contact:website",
+      "description": "Layer 'Hackerspace' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "access",
-      "description": "The MapComplete theme Personal theme has a layer Toegankelijke grasvelden in parken showing features with this tag",
+      "key": "email",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Hackerspace' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Hackerspace' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Hackerspace' shows opening_hours=24/7 with a fixed text, namely 'Opened 24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "24/7"
+    },
+    {
+      "key": "service:3dprinter",
+      "description": "Layer 'Hackerspace' shows service:3dprinter=yes with a fixed text, namely 'There is a 3D-printer available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
-      "key": "image",
-      "description": "The layer 'Toegankelijke grasvelden in parken allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "service:3dprinter",
+      "description": "Layer 'Hackerspace' shows service:3dprinter=no with a fixed text, namely 'There is no 3D-printer available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
     },
     {
-      "key": "mapillary",
-      "description": "The layer 'Toegankelijke grasvelden in parken allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "service:lasercutter",
+      "description": "Layer 'Hackerspace' shows service:lasercutter=yes with a fixed text, namely 'There is a laser cutter available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
     },
     {
-      "key": "wikidata",
-      "description": "The layer 'Toegankelijke grasvelden in parken allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "service:lasercutter",
+      "description": "Layer 'Hackerspace' shows service:lasercutter=no with a fixed text, namely 'There is no laser cutter available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
     },
     {
-      "key": "wikipedia",
-      "description": "The layer 'Toegankelijke grasvelden in parken allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "service:cnc_drilling_machine",
+      "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=yes with a fixed text, namely 'There is a CNC drill available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:cnc_drilling_machine",
+      "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=no with a fixed text, namely 'There is no CNC drill available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Hackerspace' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "drink:club-mate",
+      "description": "Layer 'Hackerspace' shows drink:club-mate=yes with a fixed text, namely 'This hackerspace serves club mate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "drink:club-mate",
+      "description": "Layer 'Hackerspace' shows drink:club-mate=no with a fixed text, namely 'This hackerspace does not serve club mate' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "emergency",
@@ -5072,6 +5683,85 @@
       "value": "no"
     },
     {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "residential"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "living_street"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "motorway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "tertiary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "unclassified"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "secondary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "primary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "trunk"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "motorway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "tertiary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "secondary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "primary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "trunk_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Maxspeed showing features with this tag",
+      "value": "motorway_link"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Maxspeed' shows and asks freeform values for key 'maxspeed' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "highway",
+      "description": "Layer 'Maxspeed' shows highway=living_street with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "living_street"
+    },
+    {
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Nature reserve showing features with this tag",
       "value": "nature_reserve"
@@ -5241,6 +5931,10 @@
       "description": "Layer 'Nature reserve' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "wikipedia",
+      "description": "Layer 'Nature reserve' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "wikidata",
       "description": "Layer 'Nature reserve' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key wikidata.",
       "value": ""
@@ -5364,6 +6058,10 @@
       "description": "Layer 'Observation towers' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "wikipedia",
+      "description": "Layer 'Observation towers' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "wikidata",
       "description": "Layer 'Observation towers' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key wikidata.",
       "value": ""
@@ -5388,26 +6086,6 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
-      "value": "footway"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
-      "value": "path"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
-      "value": "corridor"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
-      "value": "steps"
     },
     {
       "key": "leisure",
@@ -5445,56 +6123,9 @@
       "value": "concrete"
     },
     {
-      "key": "playground",
-      "description": "The MapComplete theme Personal theme has a layer Speelbossen showing features with this tag",
-      "value": "forest"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Speelbossen allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Speelbossen allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Speelbossen allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Speelbossen allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Speelbossen' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Speelbossen' shows operator~^[aA][nN][bB]$ with a fixed text, namely 'Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Speelbossen' shows operator=Agenstchap Natuur en Bos with a fixed text, namely 'Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "Agenstchap Natuur en Bos"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Speelbossen' shows opening_hours=08:00-22:00 with a fixed text, namely 'Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "08:00-22:00"
-    },
-    {
-      "key": "opening_hours",
-      "description": "Layer 'Speelbossen' shows opening_hours=Jul-Aug 08:00-22:00 with a fixed text, namely 'Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "Jul-Aug 08:00-22:00"
-    },
-    {
-      "key": "email",
-      "description": "Layer 'Speelbossen' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "phone",
-      "description": "Layer 'Speelbossen' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=plastic with a fixed text, namely 'This picnic table is made from (recycled) plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "plastic"
     },
     {
       "key": "leisure",
@@ -5609,6 +6240,11 @@
       "value": "private"
     },
     {
+      "key": "leisure",
+      "description": "Layer 'Playgrounds' shows leisure=schoolyard with a fixed text, namely 'This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "schoolyard"
+    },
+    {
       "key": "website",
       "description": "Layer 'Playgrounds' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -5694,6 +6330,10 @@
     },
     {
       "key": "books",
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'books' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "books",
       "description": "Layer 'Bookcases' shows books=children with a fixed text, namely 'Mostly children books' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "children"
     },
@@ -5701,11 +6341,6 @@
       "key": "books",
       "description": "Layer 'Bookcases' shows books=adults with a fixed text, namely 'Mostly books for adults' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "adults"
-    },
-    {
-      "key": "books",
-      "description": "Layer 'Bookcases' shows books=children;adults with a fixed text, namely 'Both books for kids and adults' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "children;adults"
     },
     {
       "key": "indoor",
@@ -5943,6 +6578,11 @@
       "value": "yes"
     },
     {
+      "key": "recycling:needles",
+      "description": "Layer 'Recycling' shows recycling:needles=yes with a fixed text, namely 'Needles can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
       "key": "recycling:waste",
       "description": "Layer 'Recycling' shows recycling:waste=yes with a fixed text, namely 'Residual waste can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
@@ -6074,136 +6714,6 @@
       "value": "yes"
     },
     {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Paadjes, trage wegen en autoluwe straten showing features with this tag",
-      "value": "pedestrian"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Paadjes, trage wegen en autoluwe straten showing features with this tag",
-      "value": "footway"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Paadjes, trage wegen en autoluwe straten showing features with this tag",
-      "value": "path"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Paadjes, trage wegen en autoluwe straten showing features with this tag",
-      "value": "bridleway"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Paadjes, trage wegen en autoluwe straten showing features with this tag",
-      "value": "living_street"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Personal theme has a layer Paadjes, trage wegen en autoluwe straten showing features with this tag",
-      "value": "track"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Paadjes, trage wegen en autoluwe straten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Paadjes, trage wegen en autoluwe straten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Paadjes, trage wegen en autoluwe straten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Paadjes, trage wegen en autoluwe straten allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "highway",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows highway=living_street with a fixed text, namely '<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "living_street"
-    },
-    {
-      "key": "highway",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows highway=pedestrian with a fixed text, namely 'Dit is een brede, autovrije straat' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "pedestrian"
-    },
-    {
-      "key": "highway",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows highway=footway with a fixed text, namely 'Dit is een voetpaadje' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "footway"
-    },
-    {
-      "key": "highway",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows highway=path with a fixed text, namely 'Dit is een wegeltje of bospad' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "path"
-    },
-    {
-      "key": "highway",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows highway=bridleway with a fixed text, namely 'Dit is een ruiterswegel' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "bridleway"
-    },
-    {
-      "key": "highway",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows highway=track with a fixed text, namely 'Dit is een tractorspoor of weg om landbouwgrond te bereikken' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "track"
-    },
-    {
-      "key": "surface",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows and asks freeform values for key 'surface' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "surface",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows surface=grass with a fixed text, namely 'The surface is <b>grass</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "grass"
-    },
-    {
-      "key": "surface",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows surface=ground with a fixed text, namely 'The surface is <b>ground</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "ground"
-    },
-    {
-      "key": "surface",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows surface=unpaved with a fixed text, namely 'The surface is <b>unpaved</b>' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "unpaved"
-    },
-    {
-      "key": "surface",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows surface=sand with a fixed text, namely 'The surface is <b>sand</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "sand"
-    },
-    {
-      "key": "surface",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows surface=paving_stones with a fixed text, namely 'The surface is <b>paving stones</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "paving_stones"
-    },
-    {
-      "key": "surface",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows surface=asphalt with a fixed text, namely 'The surface is <b>asphalt</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "asphalt"
-    },
-    {
-      "key": "surface",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows surface=concrete with a fixed text, namely 'The surface is <b>concrete</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "concrete"
-    },
-    {
-      "key": "surface",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows surface=paved with a fixed text, namely 'The surface is <b>paved</b>' (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "paved"
-    },
-    {
-      "key": "lit",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows lit=yes with a fixed text, namely ''s nachts verlicht' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "lit",
-      "description": "Layer 'Paadjes, trage wegen en autoluwe straten' shows lit=no with a fixed text, namely 'Niet verlicht' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Sport pitches showing features with this tag",
       "value": "pitch"
@@ -6294,7 +6804,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Sport pitches' shows access=limited with a fixed text, namely 'Limited access (e.g. only with an appointment, during certain hours, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Sport pitches' shows access=limited with a fixed text, namely 'Limited access (e.g. only with an appointment, during certain hours, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "limited"
     },
     {
@@ -6341,7 +6851,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Sport pitches' shows  with a fixed text, namely '24/7 toegankelijk' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key opening_hours.",
+      "description": "Layer 'Sport pitches' shows  with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key opening_hours.",
       "value": ""
     },
     {
@@ -6353,6 +6863,22 @@
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Street Lamps showing features with this tag",
       "value": "street_lamp"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Street Lamps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Street Lamps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Street Lamps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Street Lamps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "ref",
@@ -6590,17 +7116,17 @@
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=public with a fixed text, namely 'A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel,...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=public with a fixed text, namely 'A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "public"
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=outdoor with a fixed text, namely 'An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=outdoor with a fixed text, namely 'An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "outdoor"
     },
     {
       "key": "surveillance",
-      "description": "Layer 'Surveillance camera's' shows surveillance=indoor with a fixed text, namely 'A private indoor area is surveilled, e.g. a shop, a private underground parking, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Surveillance camera's' shows surveillance=indoor with a fixed text, namely 'A private indoor area is surveilled, e.g. a shop, a private underground parking, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "indoor"
     },
     {
@@ -6667,13 +7193,23 @@
     },
     {
       "key": "camera:mount",
-      "description": "Layer 'Surveillance camera's' shows camera:mount=pole with a fixed text, namely 'This camera is placed one a pole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=pole with a fixed text, namely 'This camera is placed on a pole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "pole"
     },
     {
       "key": "camera:mount",
       "description": "Layer 'Surveillance camera's' shows camera:mount=ceiling with a fixed text, namely 'This camera is placed on the ceiling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "ceiling"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=street_lamp with a fixed text, namely 'This camera is placed on a street light' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "street_lamp"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=tree with a fixed text, namely 'This camera is placed on a tree' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "tree"
     },
     {
       "key": "amenity",
@@ -6876,99 +7412,6 @@
       "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "route",
-      "description": "The MapComplete theme Personal theme has a layer Trails showing features with this tag"
-    },
-    {
-      "key": "route",
-      "description": "The MapComplete theme Personal theme has a layer Trails showing features with this tag"
-    },
-    {
-      "key": "route",
-      "description": "The MapComplete theme Personal theme has a layer Trails showing features with this tag"
-    },
-    {
-      "key": "route",
-      "description": "The MapComplete theme Personal theme has a layer Trails showing features with this tag"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Trails allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Trails allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Trails allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Trails allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "name",
-      "description": "Layer 'Trails' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Trails' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Trails' shows operator=Natuurpunt with a fixed text, namely 'Dit gebied wordt beheerd door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "Natuurpunt"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Trails' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely 'Dit gebied wordt beheerd door {operator}' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "colour",
-      "description": "Layer 'Trails' shows and asks freeform values for key 'colour' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "colour",
-      "description": "Layer 'Trails' shows colour=blue with a fixed text, namely 'Blue trail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "blue"
-    },
-    {
-      "key": "colour",
-      "description": "Layer 'Trails' shows colour=red with a fixed text, namely 'Red trail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "red"
-    },
-    {
-      "key": "colour",
-      "description": "Layer 'Trails' shows colour=green with a fixed text, namely 'Green trail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "green"
-    },
-    {
-      "key": "colour",
-      "description": "Layer 'Trails' shows colour=yellow with a fixed text, namely 'Yellow trail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yellow"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Trails' shows wheelchair=yes with a fixed text, namely 'deze wandeltocht is toegankelijk met de rolstoel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Trails' shows wheelchair=no with a fixed text, namely 'deze wandeltocht is niet toegankelijk met de rolstoel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "pushchair",
-      "description": "Layer 'Trails' shows pushchair=yes with a fixed text, namely 'deze wandeltocht is toegankelijk met de buggy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "pushchair",
-      "description": "Layer 'Trails' shows pushchair=no with a fixed text, namely 'deze wandeltocht is niet toegankelijk met de buggy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
       "key": "natural",
       "description": "The MapComplete theme Personal theme has a layer Tree showing features with this tag",
       "value": "tree"
@@ -6991,7 +7434,7 @@
     },
     {
       "key": "height",
-      "description": "Layer 'Tree' shows height~^[0-9.]+$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Tree' shows height~^^[0-9.]+$$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "leaf_type",
@@ -7030,7 +7473,7 @@
     },
     {
       "key": "denotation",
-      "description": "Layer 'Tree' shows denotation=garden with a fixed text, namely 'The tree is a residential garden.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Tree' shows denotation=garden with a fixed text, namely 'The tree is in a residential garden.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "garden"
     },
     {
@@ -7040,7 +7483,7 @@
     },
     {
       "key": "denotation",
-      "description": "Layer 'Tree' shows denotation=urban with a fixed text, namely 'The tree is an urban area.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Tree' shows denotation=urban with a fixed text, namely 'The tree is in an urban area.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "urban"
     },
     {
@@ -7057,6 +7500,10 @@
       "key": "leaf_cycle",
       "description": "Layer 'Tree' shows leaf_cycle=evergreen with a fixed text, namely 'Evergreen.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "evergreen"
+    },
+    {
+      "key": "species:wikidata",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'species:wikidata' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "name",
@@ -7125,65 +7572,54 @@
       "description": "Layer 'Tree' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "tourism",
-      "description": "The MapComplete theme Personal theme has a layer Viewpoint showing features with this tag",
-      "value": "viewpoint"
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer veterinary showing features with this tag",
+      "value": "veterinary"
     },
     {
-      "key": "image",
-      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "website",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "mapillary",
-      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "contact:website",
+      "description": "Layer 'veterinary' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "wikidata",
-      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "phone",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "wikipedia",
-      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "contact:phone",
+      "description": "Layer 'veterinary' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "description",
-      "description": "Layer 'Viewpoint' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
+      "key": "opening_hours",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "landuse",
-      "description": "The MapComplete theme Personal theme has a layer Speelweide showing features with this tag",
-      "value": "village_green"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Speelweide allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Speelweide allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Speelweide allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Speelweide allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "information",
-      "description": "The MapComplete theme Personal theme has a layer Visitor Information Centre showing features with this tag",
-      "value": "visitor_centre"
-    },
-    {
-      "key": "information",
-      "description": "The MapComplete theme Personal theme has a layer Visitor Information Centre showing features with this tag",
-      "value": "office"
+      "key": "name",
+      "description": "Layer 'veterinary' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Waste Basket showing features with this tag",
       "value": "waste_basket"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Waste Basket allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Waste Basket allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Waste Basket allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Waste Basket allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "waste",
@@ -7285,102 +7721,45 @@
       "value": ""
     },
     {
-      "key": "man_made",
-      "description": "The MapComplete theme Personal theme has a layer Watermill showing features with this tag",
-      "value": "watermill"
+      "key": "generator:source",
+      "description": "The MapComplete theme Personal theme has a layer wind turbine showing features with this tag",
+      "value": "wind"
+    },
+    {
+      "key": "generator:output:electricity",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'generator:output:electricity' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "height",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'height' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "rotor:diameter",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'rotor:diameter' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "image",
-      "description": "The layer 'Watermill allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Watermill allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Watermill allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Watermill allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "access:description",
-      "description": "Layer 'Watermill' shows and asks freeform values for key 'access:description' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Watermill' shows access=yes with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Watermill' shows access=yes with a fixed text, namely 'Vrij toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key fee.",
-      "value": ""
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Watermill' shows access=no with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "no"
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Watermill' shows access=no with a fixed text, namely 'Niet toegankelijk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key fee.",
-      "value": ""
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Watermill' shows access=private with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "private"
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Watermill' shows access=private with a fixed text, namely 'Niet toegankelijk, want privégebied' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key fee.",
-      "value": ""
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Watermill' shows access=permissive with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "permissive"
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Watermill' shows access=permissive with a fixed text, namely 'Toegankelijk, ondanks dat het privegebied is' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key fee.",
-      "value": ""
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Watermill' shows access=guided with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "guided"
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Watermill' shows access=guided with a fixed text, namely 'Enkel toegankelijk met een gids of tijdens een activiteit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key fee.",
-      "value": ""
-    },
-    {
-      "key": "access",
-      "description": "Layer 'Watermill' shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "fee",
-      "description": "Layer 'Watermill' shows access=yes&fee=yes with a fixed text, namely 'Toegankelijk mits betaling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "yes"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Watermill' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Watermill' shows operator=Natuurpunt with a fixed text, namely 'Dit gebied wordt beheerd door Natuurpunt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "Natuurpunt"
-    },
-    {
-      "key": "operator",
-      "description": "Layer 'Watermill' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely 'Dit gebied wordt beheerd door {operator}' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     }
   ]
 }

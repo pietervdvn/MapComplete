@@ -1,4 +1,5 @@
 import {Utils} from "../../Utils";
+import opening_hours from "opening_hours";
 
 export interface OpeningHour {
     weekday: number, // 0 is monday, 1 is tuesday, ...
@@ -315,12 +316,21 @@ export class OH {
         }
     }
 
+    /**
+     * 
+     * OH.ParsePHRule("PH Off") // => {mode: "off"}
+     * OH.ParsePHRule("PH OPEN") // => {mode: "open"}
+     * OH.ParsePHRule("PH 10:00-12:00") // => {mode: " ", start: "10:00", end: "12:00"}
+     * OH.ParsePHRule(undefined) // => null
+     * OH.ParsePHRule(null) // => null
+     * OH.ParsePHRule("some random string") // => null
+     */
     public static ParsePHRule(str: string): {
         mode: string,
         start?: string,
         end?: string
     } {
-        if (str === undefined) {
+        if (str === undefined || str === null) {
             return null
         }
         str = str.trim();
@@ -329,13 +339,13 @@ export class OH {
         }
 
         str = str.trim();
-        if (str === "PH off") {
+        if (str.toLowerCase() === "ph off") {
             return {
                 mode: "off"
             }
         }
 
-        if (str === "PH open") {
+        if (str.toLowerCase() === "ph open") {
             return {
                 mode: "open"
             }
@@ -366,6 +376,9 @@ export class OH {
         return OH.ToString(OH.MergeTimes(OH.Parse(str)))
     }
 
+    /**
+     * Parses a string into Opening Hours
+     */
     public static Parse(rules: string): OpeningHour[] {
         if (rules === undefined || rules === "") {
             return []
@@ -458,6 +471,17 @@ export class OH {
         return [changeHours, changeHourText]
     }
 
+    public static CreateOhObject(tags: object & {_lat: number, _lon: number, _country?: string}, textToParse: string){
+        // noinspection JSPotentiallyInvalidConstructorUsage
+        return new opening_hours(textToParse, {
+            lat: tags._lat,
+            lon: tags._lon,
+            address: {
+                country_code: tags._country.toLowerCase()
+            },
+        }, {tag_key: "opening_hours"});
+    }
+    
     /*
  Calculates when the business is opened (or on holiday) between two dates.
  Returns a matrix of ranges, where [0] is a list of ranges when it is opened on monday, [1] is a list of ranges for tuesday, ...
@@ -598,6 +622,12 @@ export class OH {
             }
         }
         return ohs;
+    }
+    public static getMondayBefore(d) {
+        d = new Date(d);
+        const day = d.getDay();
+        const diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+        return new Date(d.setDate(diff));
     }
 
 }

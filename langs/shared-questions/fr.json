@@ -91,6 +91,20 @@
             },
             "question": "Des prises sont elles à disposition des client·e·s en intérieur ?"
         },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Il est <b>autorisé</b> de fumer"
+                },
+                "1": {
+                    "then": "Il est <b>interdit</b> de fumer"
+                },
+                "2": {
+                    "then": "Il est autorisé de fumer <b>à l'extérieur</b>."
+                }
+            },
+            "question": "Est-ce autorisé de fumer à {title()} ?"
+        },
         "website": {
             "question": "Quel est le site web de {title()} ?"
         },
@@ -114,6 +128,9 @@
         "wikipedia": {
             "mappings": {
                 "0": {
+                    "then": "Pas encore de lien vers une page Wikipedia"
+                },
+                "1": {
                     "then": "Pas encore de lien vers une page Wikipedia"
                 }
             },

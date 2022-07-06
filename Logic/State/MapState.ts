@@ -1,5 +1,5 @@
 import UserRelatedState from "./UserRelatedState";
-import {UIEventSource} from "../UIEventSource";
+import {Store, Stores, UIEventSource} from "../UIEventSource";
 import BaseLayer from "../../Models/BaseLayer";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import AvailableBaseLayers from "../Actors/AvailableBaseLayers";
@@ -18,6 +18,7 @@ import {GeoOperations} from "../GeoOperations";
 import TitleHandler from "../Actors/TitleHandler";
 import {BBox} from "../BBox";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import {TiledStaticFeatureSource} from "../FeatureSource/Sources/StaticFeatureSource";
 
 /**
  * Contains all the leaflet-map related state
@@ -31,7 +32,7 @@ export default class MapState extends UserRelatedState {
     /**
      * A list of currently available background layers
      */
-    public availableBackgroundLayers: UIEventSource<BaseLayer[]>;
+    public availableBackgroundLayers: Store<BaseLayer[]>;
 
     /**
      * The current background layer
@@ -52,12 +53,12 @@ export default class MapState extends UserRelatedState {
     /**
      * The location as delivered by the GPS
      */
-    public currentUserLocation: FeatureSourceForLayer & Tiled;
+    public currentUserLocation: SimpleFeatureSource;
 
     /**
      * All previously visited points
      */
-    public historicalUserLocations: FeatureSourceForLayer & Tiled;
+    public historicalUserLocations: SimpleFeatureSource;
     /**
      * The number of seconds that the GPS-locations are stored in memory.
      * Time in seconds
@@ -176,7 +177,7 @@ export default class MapState extends UserRelatedState {
 
         let i = 0
         const self = this;
-        const features: UIEventSource<{ feature: any, freshness: Date }[]> = this.currentBounds.map(bounds => {
+        const features: Store<{ feature: any, freshness: Date }[]> = this.currentBounds.map(bounds => {
             if (bounds === undefined) {
                 return []
             }
@@ -205,7 +206,7 @@ export default class MapState extends UserRelatedState {
             return [feature]
         })
 
-        this.currentView = new SimpleFeatureSource(currentViewLayer, 0, features)
+        this.currentView = new TiledStaticFeatureSource(features,  currentViewLayer);
     }
 
     private initGpsLocation() {
@@ -289,13 +290,13 @@ export default class MapState extends UserRelatedState {
         })
         let gpsLineLayerDef: FilteredLayer = this.filteredLayers.data.filter(l => l.layerDef.id === "gps_track")[0]
         if (gpsLineLayerDef !== undefined) {
-            this.historicalUserLocationsTrack = new SimpleFeatureSource(gpsLineLayerDef, Tiles.tile_index(0, 0, 0), asLine);
+            this.historicalUserLocationsTrack = new TiledStaticFeatureSource(asLine, gpsLineLayerDef);
         }
     }
 
     private initHomeLocation() {
         const empty = []
-        const feature = UIEventSource.ListStabilized(this.osmConnection.userDetails.map(userDetails => {
+        const feature = Stores.ListStabilized(this.osmConnection.userDetails.map(userDetails => {
 
             if (userDetails === undefined) {
                 return undefined;
@@ -328,7 +329,7 @@ export default class MapState extends UserRelatedState {
 
         const flayer = this.filteredLayers.data.filter(l => l.layerDef.id === "home_location")[0]
         if (flayer !== undefined) {
-            this.homeLocation = new SimpleFeatureSource(flayer, Tiles.tile_index(0, 0, 0), feature)
+            this.homeLocation = new TiledStaticFeatureSource(feature, flayer)
         }
 
     }
@@ -336,7 +337,7 @@ export default class MapState extends UserRelatedState {
     private getPref(key: string, layer: LayerConfig): UIEventSource<boolean> {
       const pref = this.osmConnection
             .GetPreference(key)
-            .map(v => {
+            .sync(v => {
                 if(v === undefined){
                     return undefined
                 }

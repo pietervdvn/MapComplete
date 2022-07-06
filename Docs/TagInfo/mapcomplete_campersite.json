@@ -114,12 +114,12 @@
     },
     {
       "key": "permanent_camping",
-      "description": "Layer 'Camper sites' shows permanent_camping=yes with a fixed text, namely 'Yes, there are some spots for long term rental, but you can also stay on a daily basis' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows permanent_camping=yes with a fixed text, namely 'There are some spots for long term rental, but you can also stay on a daily basis' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
       "value": "yes"
     },
     {
       "key": "permanent_camping",
-      "description": "Layer 'Camper sites' shows permanent_camping=no with a fixed text, namely 'No, there are no permanent guests here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows permanent_camping=no with a fixed text, namely 'There are no permanent guests here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
       "value": "no"
     },
     {

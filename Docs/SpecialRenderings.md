@@ -17,7 +17,7 @@ General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_nam
 
 Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}, one can also write
 
-{"render":{"special":{"type":"some_special_visualisation","argname":"some_arg","message":{"en":"some other really long message","nl":"een boodschap in een andere taal"},"other_arg_name":"more args"}}}
+`{"render":{"special":{"type":"some_special_visualisation","argname":"some_arg","message":{"en":"some other really long message","nl":"een boodschap in een andere taal"},"other_arg_name":"more args"}}}`
 
 ## Table of contents
 
@@ -31,6 +31,8 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of image_upload](#example-usage-of-image_upload)
     + [wikipedia](#wikipedia)
       * [Example usage of wikipedia](#example-usage-of-wikipedia)
+    + [wikidata_label](#wikidata_label)
+      * [Example usage of wikidata_label](#example-usage-of-wikidata_label)
     + [minimap](#minimap)
       * [Example usage of minimap](#example-usage-of-minimap)
     + [sided_minimap](#sided_minimap)
@@ -63,6 +65,8 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of export_as_geojson](#example-usage-of-export_as_geojson)
     + [open_in_iD](#open_in_id)
       * [Example usage of open_in_iD](#example-usage-of-open_in_id)
+    + [open_in_josm](#open_in_josm)
+      * [Example usage of open_in_josm](#example-usage-of-open_in_josm)
     + [clear_location_history](#clear_location_history)
       * [Example usage of clear_location_history](#example-usage-of-clear_location_history)
     + [close_note](#close_note)
@@ -75,6 +79,10 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of add_image_to_note](#example-usage-of-add_image_to_note)
     + [title](#title)
       * [Example usage of title](#example-usage-of-title)
+    + [nearby_images](#nearby_images)
+      * [Example usage of nearby_images](#example-usage-of-nearby_images)
+    + [mapillary_link](#mapillary_link)
+      * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -129,12 +137,27 @@ label | Add image | The text to show on the button
 
 name | default | description
 ------ | --------- | -------------
-keyToShowWikipediaFor | wikidata | Use the wikidata entry from this key to show the wikipedia article for
+keyToShowWikipediaFor | wikidata;wikipedia | Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used
  
 
 #### Example usage of wikipedia 
 
  `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
+
+
+
+### wikidata_label 
+
+ Shows the label of the corresponding wikidata-item 
+
+name | default | description
+------ | --------- | -------------
+keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show the label
+ 
+
+#### Example usage of wikidata_label 
+
+ `{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself
 
 
 
@@ -541,6 +564,16 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 
 
+### open_in_josm 
+
+ Opens the current view in the JOSM-editor 
+
+#### Example usage of open_in_josm 
+
+ `{open_in_josm()}`
+
+
+
 ### clear_location_history 
 
  A button to remove the travelled track information from the device 
@@ -627,15 +660,51 @@ Id-key | id | The property name where the ID of the note to close can be found
 
 
 
+### nearby_images 
+
+ A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature 
+
+name | default | description
+------ | --------- | -------------
+mode | expandable | Indicates how this component is initialized. Options are: 
+
+- `open`: always show and load the pictures
+- `collapsable`: show the pictures, but a user can collapse them
+- `expandable`: shown by default; but a user can collapse them.
+mapillary | true | If 'true', includes a link to mapillary on this location.
+ 
+
+#### Example usage of nearby_images 
+
+ `{nearby_images(expandable,true)}`
+
+
+
+### mapillary_link 
+
+ Adds a button to open mapillary on the specified location 
+
+name | default | description
+------ | --------- | -------------
+zoom | 18 | The startzoom of mapillary
+ 
+
+#### Example usage of mapillary_link 
+
+ `{mapillary_link(18)}`
+
+
+
 ### auto_apply 
 
- A button to run many actions for many features at once.
+ A button to run many actions for many features at once. To effectively use this button, you'll need some ingredients: 
 
-To effectively use this button, you'll need some ingredients:
-- A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
-- A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the [current_view](./BuiltinLayers.md#current_view)
-- Then, use a calculated tag on the host feature to determine the overlapping object ids
-- At last, add this component 
+  - A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
+  - A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer 
+  - [current_view](./BuiltinLayers.md#current_view)
+  - Then, use a calculated tag on the host feature to determine the overlapping object ids
+  - At last, add this component
+ 
 
 name | default | description
 ------ | --------- | -------------

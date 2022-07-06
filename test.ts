@@ -1,33 +1,51 @@
-import Combine from "./UI/Base/Combine";
-import ValidatedTextField from "./UI/Input/ValidatedTextField";
-import Title from "./UI/Base/Title";
-import {FixedUiElement} from "./UI/Base/FixedUiElement";
-import {VariableUiElement} from "./UI/Base/VariableUIElement";
 import {UIEventSource} from "./Logic/UIEventSource";
-import {Translation} from "./UI/i18n/Translation";
+import TagRenderingQuestion from "./UI/Popup/TagRenderingQuestion";
+import TagRenderingConfig from "./Models/ThemeConfig/TagRenderingConfig";
+import {RadioButton} from "./UI/Input/RadioButton";
+import {FixedInputElement} from "./UI/Input/FixedInputElement";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import ValidatedTextField from "./UI/Input/ValidatedTextField";
+import VariableInputElement from "./UI/Input/VariableInputElement";
 
-new Combine(
-    ValidatedTextField.AvailableTypes().map(key => {
-            let inp;
-            const feedback = new UIEventSource<Translation>(undefined)
-            try {
-                inp = ValidatedTextField.ForType(key).ConstructInputElement({
-                    feedback,
-                    country: () => "be",
-                    
-                });
-            } catch (e) {
-                console.error(e)
-                inp = new FixedUiElement(e).SetClass("alert")
-            }
-
-            return new Combine([
-                new Title(key),
-                inp,
-                new VariableUiElement(inp.GetValue()),
-                new VariableUiElement(feedback.map(v => v?.SetClass("alert")))
-            ]);
+const config = new TagRenderingConfig({
+    question: "What is the name?",
+    render: "The name is {name}",
+    freeform: {
+        key: 'name',
+        inline:true
+    },
+    mappings:[
+        {
+            if:"noname=yes",
+            then: "This feature has no name"
         }
-    )
-).AttachTo("maindiv")
+    ]
+})
 
+const tags = new UIEventSource<any>({
+    name: "current feature name"
+})
+
+/*new TagRenderingQuestion(
+    tags, config, undefined).AttachTo("maindiv")*/
+const options = new UIEventSource<string[]>([])
+const rb =
+    new VariableInputElement(
+        options.map(options  => {
+            console.trace("Construction an input element for", options)
+           return new RadioButton(
+                [
+                    ...options.map(o => new FixedInputElement(o,o)),
+                    new FixedInputElement<string>("abc", "abc"),
+                    ValidatedTextField.ForType().ConstructInputElement()
+                ])
+        }
+        
+    )
+    
+)
+rb.AttachTo("maindiv")
+rb.GetValue().addCallbackAndRun(v => console.log("Current value is",v))
+new VariableUiElement(rb.GetValue()).AttachTo("extradiv")
+
+window.setTimeout(() => {options.setData(["xyz","foo","bar"])},10000)

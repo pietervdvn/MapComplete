@@ -68,7 +68,8 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
 
 
             const ranges = new VariableUiElement(
-                this.source.map(ohs => ohs.filter((oh: OpeningHour) => oh.weekday === i))
+                this.source.map(ohs =>
+                    (ohs ?? []).filter((oh: OpeningHour) => oh.weekday === i))
                     .map(ohsForToday => {
                         return new Combine(ohsForToday.map(oh => new OpeningHoursRange(oh, () => {
                             this.source.data.splice(this.source.data.indexOf(oh), 1)

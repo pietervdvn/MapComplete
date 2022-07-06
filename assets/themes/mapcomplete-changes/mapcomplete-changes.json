@@ -156,6 +156,10 @@
                 "then": "./assets/themes/drinking_water/logo.svg"
               },
               {
+                "if": "theme=education",
+                "then": "./assets/layers/school/college.svg"
+              },
+              {
                 "if": "theme=entrances",
                 "then": "./assets/layers/entrance/door.svg"
               },
@@ -204,12 +208,20 @@
                 "then": "./assets/themes/hailhydrant/logo.svg"
               },
               {
+                "if": "theme=kerbs_and_crossings",
+                "then": "./assets/layers/kerbs/KerbIcon.svg"
+              },
+              {
                 "if": "theme=mapcomplete-changes",
                 "then": "./assets/svg/logo.svg"
               },
               {
                 "if": "theme=maps",
                 "then": "./assets/themes/maps/logo.svg"
+              },
+              {
+                "if": "theme=maxspeed",
+                "then": "./assets/themes/maxspeed/maxspeed_logo.svg"
               },
               {
                 "if": "theme=nature",
@@ -238,6 +250,10 @@
               {
                 "if": "theme=personal",
                 "then": "./assets/svg/addSmall.svg"
+              },
+              {
+                "if": "theme=pets",
+                "then": "./assets/layers/dogpark/dog-park.svg"
               },
               {
                 "if": "theme=play_forests",
@@ -325,7 +341,7 @@
           "id": "theme-search",
           "options": [
             {
-              "osmTags": "theme~.*{search}.*",
+              "osmTags": "theme~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -341,7 +357,7 @@
           "id": "created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc~.*{search}.*",
+              "osmTags": "_last_edit:contributor:lc~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -357,7 +373,7 @@
           "id": "not_created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc!~.*{search}.*",
+              "osmTags": "_last_edit:contributor:lc!~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -387,7 +403,7 @@
             "render": "{histogram(_embedded_cs:themes, Themename, Number of changesets)}"
           },
           {
-            "id": "hist_themes",
+            "id": "hist_users",
             "render": "{histogram(_embedded_cs:users, Contributor, Number of changesets)}"
           }
         ],

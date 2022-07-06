@@ -22,7 +22,7 @@
         "title": "Binocoli"
     },
     "bookcases": {
-        "description": "Una minibiblioteca è una piccola cabina a lato della strada, una scatola, una vecchia cabina telefonica o qualche altro contenitore che ospita libri. Tutti può lasciare o prendere un libro. Questa mappa punta a rappresentarle tutte. Puoi facilmente scoprire nuove minibiblioteche nelle tue vicinanze e, con un account gratuito su OpenStreetMap, puoi aggiungerne altre.",
+        "description": "Una libreria pubblica è una piccola cabina a lato della strada, un locale, una vecchia cabina telefonica o qualche altro luogo in cui sono tenuti libri. Chiunque può lasciare o prendere libri. Scopo della mappa è individuarle. Se scopri nuove librerie nelle vicinanze, puoi facilmente aggiungerle con un account OpenStreetMap.",
         "title": "Mappa libera delle microbiblioteche"
     },
     "cafes_and_pubs": {
@@ -257,334 +257,60 @@
     },
     "charging_stations": {
         "description": "Su questa mappa aperta, puoi individuare le stazioni di ricarica o aggiungere informazioni",
-        "shortDescription": "Una mappa mondiale delle stazioni di ricarica",
-        "title": "Stazioni di ricarica"
+        "shortDescription": "Una mappa mondiale di postazioni di ricarica",
+        "title": "Postazione di ricarica"
     },
     "climbing": {
         "description": "In questa cartina puoi trovare vari luoghi per arrampicata come ad esempio palestre di arrampicata, sale di pratica e rocce naturali.",
         "descriptionTail": "La cartina di arrampicata è stata originariamente creata da <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Si prega di <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>scrivere qua</a> se si hanno commenti o domande da fare.</p><p>Il progetto usa i dati del progetto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
         "layers": {
             "0": {
-                "description": "Un club o associazione di arrampacata",
-                "name": "Club di arrampicata",
-                "presets": {
-                    "0": {
-                        "description": "Un club di arrampicata",
-                        "title": "una club di arrampicata"
-                    },
-                    "1": {
-                        "description": "Un’associazione che ha a che fare con l’arrampicata",
-                        "title": "una associazione di arrampicata"
-                    }
-                },
-                "tagRenderings": {
-                    "climbing_club-name": {
-                        "question": "Qual è il nome di questo club o associazione di arrampicata?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
+                "override": {
+                    "tagRenderings+": {
                         "0": {
-                            "then": "Associazione di arrampicata"
-                        }
-                    },
-                    "render": "Club di arrampicata"
-                }
-            },
-            "1": {
-                "description": "Una palestra di arrampicata",
-                "name": "Palestre di arrampicata",
-                "tagRenderings": {
-                    "name": {
-                        "question": "Qual è il nome di questa palestra di arrampicata?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Palestra di arrampicata <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Palestra di arrampicata"
-                }
-            },
-            "2": {
-                "name": "Vie di arrampicata",
-                "presets": {
-                    "0": {
-                        "title": "una via di arrampicata"
-                    }
-                },
-                "tagRenderings": {
-                    "Bolts": {
-                        "mappings": {
-                            "0": {
-                                "then": "In questo percorso non sono presenti bulloni"
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}"
+                                }
+                            }
+                        },
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Pubblicamente accessibile a chiunque"
+                                },
+                                "1": {
+                                    "then": "È necessario avere un’autorizzazione per entrare"
+                                },
+                                "2": {
+                                    "then": "Riservato ai clienti"
+                                },
+                                "3": {
+                                    "then": "Riservato ai membri del club"
+                                }
                             },
-                            "1": {
-                                "then": "In questo percorso non sono presenti bulloni"
+                            "question": "Chi può accedervi?"
+                        }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " metri"
+                                },
+                                "1": {
+                                    "human": " piedi"
+                                }
                             }
-                        },
-                        "question": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
-                        "render": "Questo percorso ha {climbing:bolts} bulloni"
-                    },
-                    "Difficulty": {
-                        "question": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
-                        "render": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga"
-                    },
-                    "Length": {
-                        "question": "Quanto è lunga questa via di arrampicata (in metri)?",
-                        "render": "Questo percorso è lungo {canonical(climbing:length)}"
-                    },
-                    "Name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Questa via di arrampicata non ha un nome"
-                            }
-                        },
-                        "question": "Come si chiama questa via di arrampicata?",
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "Rock type": {
-                        "render": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Via di arrampicata <strong>{name}</strong>"
-                        }
-                    },
-                    "render": "Via di arrampicata"
-                }
-            },
-            "3": {
-                "description": "Un’opportunità di arrampicata",
-                "name": "Opportunità di arrampicata",
-                "presets": {
-                    "0": {
-                        "description": "Un’opportunità di arrampicata",
-                        "title": "una opportunità di arrampicata"
-                    }
-                },
-                "tagRenderings": {
-                    "Contained routes hist": {
-                        "render": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}"
-                    },
-                    "Contained routes length hist": {
-                        "render": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}"
-                    },
-                    "Contained_climbing_routes": {
-                        "render": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>"
-                    },
-                    "Rock type (crag/rock/cliff only)": {
-                        "mappings": {
-                            "0": {
-                                "then": "Calcare"
-                            }
-                        },
-                        "question": "Qual è il tipo di roccia qua?",
-                        "render": "Il tipo di roccia è {rock}"
-                    },
-                    "Type": {
-                        "mappings": {
-                            "0": {
-                                "then": "Un masso per arrampicata (una singola roccia o falesia con una o poche vie di arrampicata che possono essere scalate in sicurezza senza una corda)"
-                            },
-                            "1": {
-                                "then": "Un muro da arrampicata (un singolo masso o falesia con almeno qualche via per arrampicata)"
-                            }
-                        }
-                    },
-                    "name": {
-                        "mappings": {
-                            "0": {
-                                "then": "Questa opportunità di arrampicata non ha un nome"
-                            }
-                        },
-                        "question": "Qual è il nome di questa opportunità di arrampicata?",
-                        "render": "<strong>{name}</strong>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Muro da arrampicata <b>{name}</b>"
-                        },
-                        "1": {
-                            "then": "Area di arrampicata <b>{name}</b>"
-                        },
-                        "2": {
-                            "then": "Sito di arrampicata"
-                        },
-                        "3": {
-                            "then": "Opportunità di arrampicata <b>{name}</b>"
-                        }
-                    },
-                    "render": "Opportunità di arrampicata"
-                }
-            },
-            "4": {
-                "description": "Un’opportunità di arrampicata?",
-                "name": "Opportunità di arrampicata?",
-                "tagRenderings": {
-                    "climbing-opportunity-name": {
-                        "render": "<strong>{name}</strong>"
-                    },
-                    "climbing-possible": {
-                        "mappings": {
-                            "0": {
-                                "then": "È possibile arrampicarsi qua"
-                            },
-                            "1": {
-                                "then": "Non è possibile arrampicarsi qua"
-                            },
-                            "2": {
-                                "then": "Non è possibile arrampicarsi qua"
-                            }
-                        },
-                        "question": "È possibile arrampicarsi qua?"
-                    }
-                },
-                "title": {
-                    "render": "Opportunità di arrampicata?"
-                }
-            }
-        },
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?"
-                },
-                "1": {
-                    "mappings": {
-                        "0": {
-                            "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}"
-                        },
-                        "1": {
-                            "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}"
-                        },
-                        "2": {
-                            "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}"
-                        },
-                        "3": {
-                            "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}"
-                        }
-                    }
-                },
-                "2": {
-                    "mappings": {
-                        "0": {
-                            "then": "Pubblicamente accessibile a chiunque"
-                        },
-                        "1": {
-                            "then": "È necessario avere un’autorizzazione per entrare"
-                        },
-                        "2": {
-                            "then": "Riservato ai clienti"
-                        },
-                        "3": {
-                            "then": "Riservato ai membri del club"
-                        }
-                    },
-                    "question": "Chi può accedervi?"
-                },
-                "4": {
-                    "question": "Quale è la lunghezza (media) delle vie in metri?",
-                    "render": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>"
-                },
-                "5": {
-                    "question": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
-                    "render": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga"
-                },
-                "6": {
-                    "question": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
-                    "render": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga"
-                },
-                "7": {
-                    "mappings": {
-                        "0": {
-                            "then": "L’arrampicata su massi è possibile qua"
-                        },
-                        "1": {
-                            "then": "L’arrampicata su massi non è possibile qua"
-                        },
-                        "2": {
-                            "then": "L’arrampicata su massi è possibile anche se su poche vie"
-                        },
-                        "3": {
-                            "then": "Sono presenti {climbing:boulder} vie di arrampicata su massi"
-                        }
-                    },
-                    "question": "È possibile praticare ‘bouldering’ qua?"
-                },
-                "8": {
-                    "mappings": {
-                        "0": {
-                            "then": "È possibile arrampicarsi con moulinette qua"
-                        },
-                        "1": {
-                            "then": "Non è possibile arrampicarsi con moulinette qua"
-                        },
-                        "2": {
-                            "then": "Sono presenti {climbing:toprope} vie con moulinette"
-                        }
-                    },
-                    "question": "È possibile arrampicarsi con la corda dall’alto qua?"
-                },
-                "9": {
-                    "mappings": {
-                        "0": {
-                            "then": "L’arrampicata sportiva è possibile qua"
-                        },
-                        "1": {
-                            "then": "L’arrampicata sportiva non è possibile qua"
-                        },
-                        "2": {
-                            "then": "Sono presenti {climbing:sport} vie di arrampicata sportiva"
-                        }
-                    },
-                    "question": "È possibile arrampicarsi qua con ancoraggi fissi?"
-                },
-                "10": {
-                    "mappings": {
-                        "0": {
-                            "then": "L’arrampicata tradizionale è possibile qua"
-                        },
-                        "1": {
-                            "then": "L’arrampicata tradizionale non è possibile qua"
-                        },
-                        "2": {
-                            "then": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale"
-                        }
-                    },
-                    "question": "È possibile arrampicarsi in maniera tradizionale qua (usando attrezzi propri, ad es. dadi)?"
-                },
-                "11": {
-                    "mappings": {
-                        "0": {
-                            "then": "È presente una parete per l’arrampicata di velocità"
-                        },
-                        "1": {
-                            "then": "Non è presente una parete per l’arrampicata di velocità"
-                        },
-                        "2": {
-                            "then": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità"
-                        }
-                    },
-                    "question": "È presente una prete per l’arrampicata di velocità?"
-                }
-            },
-            "units+": {
-                "0": {
-                    "applicableUnits": {
-                        "0": {
-                            "human": " metri"
-                        },
-                        "1": {
-                            "human": " piedi"
                         }
                     }
                 }
@@ -796,8 +522,8 @@
     },
     "maps": {
         "description": "In questa carta puoi trovare tutte le mappe conosciute da OpenStreetMap (tipicamente una grossa mappa su di un pannello informativo che mostra l’area, la città o la regione, ad es. una mappa turistica dietro a un manifesto, la mappa di una riserva naturale, la mappa della rete ciclistica regionale, etc.)<br/><br/>Se manca una mappa, puoi aggiungerla facilmente a questa su OpenStreetMap.",
-        "shortDescription": "Questo tema mostra tutte le mappe (turistiche) conosciute da OpenStreetMap",
-        "title": "Una cartina delle cartine"
+        "shortDescription": "Questo tema mostra tutte le mappe (turistiche) di cui OpenStreetMap dispone",
+        "title": "Una mappa di mappe"
     },
     "observation_towers": {
         "description": "Torri pubblicamente accessibili per godere della vista",
@@ -806,71 +532,6 @@
     },
     "openwindpowermap": {
         "description": "Una cartina per la visione e la modifica delle turbine eoliche.",
-        "layers": {
-            "0": {
-                "name": "pala eolica",
-                "presets": {
-                    "0": {
-                        "title": "una pala eolica"
-                    }
-                },
-                "tagRenderings": {
-                    "turbine-diameter": {
-                        "question": "Qual è il diametro (in metri) del rotore di questa pala eolica?",
-                        "render": "Il diametro del rotore di questa pala eolica è di {rotor:diameter} metri."
-                    },
-                    "turbine-height": {
-                        "question": "Qual è l’altezza (in metri e raggio del rotore incluso) di questa pala eolica?",
-                        "render": "L’altezza totale (raggio del rotore incluso) di questa pala eolica è di {height} metri."
-                    },
-                    "turbine-operator": {
-                        "question": "Chi gestisce questa pala eolica?",
-                        "render": "Questa pala eolica è gestita da {operator}."
-                    },
-                    "turbine-output": {
-                        "question": "Quant’è la potenza generata da questa pala eolica? (ad es. 2.3 MW)",
-                        "render": "La potenza generata da questa pala eolica è {generator:output:electricity}."
-                    },
-                    "turbine-start-date": {
-                        "question": "Quando è entrata in funzione questa pala eolica?",
-                        "render": "Questa pala eolica è entrata in funzione in data {start_date}."
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name}"
-                        }
-                    },
-                    "render": "pala eolica"
-                },
-                "units": {
-                    "0": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " megawatt"
-                            },
-                            "1": {
-                                "human": " kilowatt"
-                            },
-                            "2": {
-                                "human": " watt"
-                            },
-                            "3": {
-                                "human": " gigawatt"
-                            }
-                        }
-                    },
-                    "1": {
-                        "applicableUnits": {
-                            "0": {
-                                "human": " metri"
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "title": "OpenWindPowerMap"
     },
     "parkings": {
@@ -880,7 +541,7 @@
     },
     "personal": {
         "description": "Crea un tema personale basato sui livelli disponibili per tutti i temi. Per mostrare dei dati, apri <a href='#filter'>selezione livello</a>",
-        "title": "Tema personalizzato"
+        "title": "Tema personale"
     },
     "playgrounds": {
         "description": "In questa cartina vengono mostrati i parchi giochi a cui è possibile aggiungere dettagli",
@@ -898,13 +559,13 @@
         "title": "Mappa dei negozi"
     },
     "sport_pitches": {
-        "description": "Una campo sportivo è un’area dove vengono praticati gli sport",
+        "description": "Un campo sportivo è un'area dove vengono praticati sport",
         "shortDescription": "Una cartina che mostra i campi sportivi",
         "title": "Campi sportivi"
     },
     "surveillance": {
         "description": "In questa cartina puoi trovare le telecamera di sorveglianza.",
-        "shortDescription": "Telecamere e altri di mezzi di sorveglianza",
+        "shortDescription": "Telecamere di sorveglianza e altri mezzi di sorveglianza.",
         "title": "Sorveglianza sotto controllo"
     },
     "toilets": {

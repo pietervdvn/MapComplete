@@ -1,4 +1,8 @@
 {
+    "address": {
+        "description": "Adresoj",
+        "name": "Konataj adresoj en OSM"
+    },
     "bench": {
         "tagRenderings": {
             "bench-colour": {
@@ -69,6 +73,31 @@
             }
         }
     },
+    "bicycle_rental": {
+        "tagRenderings": {
+            "9": {
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "urbaj bicikloj"
+                        },
+                        "1": {
+                            "1": "elektraj bicikloj"
+                        },
+                        "2": {
+                            "1": "bicikloj por infanoj"
+                        },
+                        "3": {
+                            "1": "BMX-bicikloj"
+                        },
+                        "4": {
+                            "1": "montobicikloj"
+                        }
+                    }
+                }
+            }
+        }
+    },
     "bike_parking": {
         "tagRenderings": {
             "Access": {
@@ -101,28 +130,6 @@
             "0": {
                 "description": "Enmeti novan butikon",
                 "title": "Butiko"
-            }
-        },
-        "tagRenderings": {
-            "shops-email": {
-                "question": "Kio estas la retpoŝta adreso de ĉi tiu butiko?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "shops-phone": {
-                "question": "Kio estas la telefonnumero?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "4": {
-                        "then": "Bakejo"
-                    }
-                },
-                "question": "Kion vendas ĉi tiu butiko?",
-                "render": "Ĉi tiu butiko vendas {shop}"
-            },
-            "shops-website": {
-                "render": "<a href='{website}'>{website}</a>"
             }
         },
         "title": {
@@ -186,6 +193,40 @@
         "presets": {
             "0": {
                 "title": "Rubujo"
+            }
+        }
+    },
+    "windturbine": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megavatoj"
+                    },
+                    "1": {
+                        "human": " kilovatoj"
+                    },
+                    "2": {
+                        "human": " vatoj"
+                    },
+                    "3": {
+                        "human": " gigavatoj"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " metro"
+                    }
+                }
             }
         }
     }

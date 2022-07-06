@@ -5,13 +5,15 @@
     "nl": "Fietscafé",
     "fr": "Café vélo",
     "gl": "Café de ciclistas",
-    "de": "Fahrrad-Café",
+    "de": "Fahrrad-Cafés",
     "it": "Caffè in bici",
     "zh_Hans": "自行车咖啡",
     "ru": "Велосипедное кафе",
     "zh_Hant": "單車咖啡廳",
     "pt_BR": "Café de bicicletas",
-    "pt": "Café de bicicletas"
+    "pt": "Café de bicicletas",
+    "ca": "Cafeteria per a bicicletes",
+    "da": "Cykelcafé"
   },
   "minzoom": 13,
   "source": {
@@ -50,7 +52,9 @@
       "ru": "Велосипедное кафе",
       "zh_Hant": "單車咖啡廳",
       "pt_BR": "Café de bicicleta",
-      "pt": "Café de bicicleta"
+      "pt": "Café de bicicleta",
+      "ca": "Cafeteria per a bicicletes",
+      "da": "Cykelcafé"
     },
     "mappings": [
       {
@@ -66,7 +70,8 @@
           "ru": "Велосипедное кафе <i>{name}</i>",
           "zh_Hant": "單車咖啡廳<i>{name}</i>",
           "pt_BR": "Café de bicicleta <i>{name}</i>",
-          "pt": "Café de bicicleta <i>{name}</i>"
+          "pt": "Café de bicicleta <i>{name}</i>",
+          "da": "Cykelcafé <i>{name}</i>"
         }
       }
     ]
@@ -79,26 +84,28 @@
         "nl": "Wat is de naam van dit fietscafé?",
         "fr": "Quel est le nom de ce Café vélo ?",
         "gl": "Cal é o nome deste café de ciclistas?",
-        "de": "Wie heißt dieses Fahrrad-Café?",
+        "de": "Wie heißt das Fahrrad-Café?",
         "it": "Qual è il nome di questo caffè in bici?",
         "zh_Hans": "这个自行车咖啡的名字是什么？",
         "ru": "Как называется это байк-кафе?",
         "zh_Hant": "這個單車咖啡廳的名稱是？",
         "pt_BR": "Qual o nome deste café de bicicleta?",
-        "pt": "Qual o nome deste café de bicicleta?"
+        "pt": "Qual o nome deste café de bicicleta?",
+        "da": "Hvad hedder denne cykelcafé?"
       },
       "render": {
         "en": "This bike cafe is called {name}",
         "nl": "Dit fietscafé heet {name}",
         "fr": "Ce Café vélo s'appelle {name}",
         "gl": "Este café de ciclistas chámase {name}",
-        "de": "Dieses Fahrrad-Café heißt {name}",
+        "de": "Das Fahrrad-Café heißt {name}",
         "it": "Questo caffè in bici è chiamato {name}",
         "zh_Hans": "这家自行车咖啡叫做 {name}",
         "ru": "Это велосипедное кафе называется {name}",
         "zh_Hant": "這個單車咖啡廳叫做 {name}",
         "pt_BR": "Este café de bicicleta se chama {name}",
-        "pt": "Este café de bicicleta se chama {name}"
+        "pt": "Este café de bicicleta se chama {name}",
+        "da": "Denne cykelcafé hedder {name}"
       },
       "freeform": {
         "key": "name"
@@ -112,7 +119,7 @@
         "nl": "Biedt dit fietscafé een fietspomp aan voor iedereen?",
         "fr": "Est-ce que ce Café vélo propose une pompe en libre accès ?",
         "gl": "Este café de ciclistas ofrece unha bomba de ar para que calquera persoa poida usala?",
-        "de": "Bietet dieses Fahrrad-Café eine Fahrradpumpe an, die von jedem benutzt werden kann?",
+        "de": "Hat das Fahrrad-Café eine Fahrradpumpe, die von jedem benutzt werden kann?",
         "it": "Questo caffè in bici offre una pompa per bici che chiunque può utilizzare?",
         "zh_Hans": "这家自行车咖啡为每个使用者提供打气筒吗？",
         "ru": "Есть ли в этом велосипедном кафе велосипедный насос для всеобщего использования?",
@@ -126,7 +133,7 @@
             "nl": "Dit fietscafé biedt een fietspomp aan voor eender wie",
             "fr": "Ce Café vélo offre une pompe en libre accès",
             "gl": "Este café de ciclistas ofrece unha bomba de ar",
-            "de": "Dieses Fahrrad-Café bietet eine Fahrradpumpe an, die von jedem benutzt werden kann",
+            "de": "Das Fahrrad-Café hat eine Fahrradpumpe, die von jedem benutzt werden kann",
             "it": "Questo caffè in bici offre una pompa per bici liberamente utilizzabile",
             "zh_Hans": "这家自行车咖啡为每个人提供打气筒",
             "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬",
@@ -140,7 +147,7 @@
             "nl": "Dit fietscafé biedt geen fietspomp aan voor iedereen",
             "fr": "Ce Café vélo n'offre pas de pompe en libre accès",
             "gl": "Este café de ciclistas non ofrece unha bomba de ar",
-            "de": "Dieses Fahrrad-Café bietet keine Fahrradpumpe an, die von jedem benutzt werden kann",
+            "de": "Das Fahrrad-Café hat keine Fahrradpumpe, die von jedem benutzt werden kann",
             "it": "Questo caffè in bici non offre una pompa per bici liberamente utilizzabile",
             "zh_Hans": "这家自行车咖啡不为每个人提供打气筒",
             "zh_Hant": "這個單車咖啡廳並沒有為所有人提供單車打氣甬",
@@ -156,14 +163,15 @@
         "nl": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?",
         "fr": "Est-ce qu'il y a des outils pour réparer soi-même son vélo ?",
         "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta?",
-        "de": "Gibt es hier Werkzeuge, um das eigene Fahrrad zu reparieren?",
+        "de": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?",
         "it": "Ci sono degli strumenti per riparare la propria bicicletta?",
         "zh_Hans": "这里有供你修车用的工具吗？",
         "zh_Hant": "這裡是否有工具修理你的單車嗎？",
         "ru": "Есть ли здесь инструменты для починки вашего велосипеда?",
         "pt_BR": "Há ferramentas aqui para consertar sua bicicleta?",
         "pt": "Há ferramentas aqui para consertar a sua própria bicicleta?",
-        "es": "¿Hay herramientas para reparar su propia bicicleta?"
+        "es": "¿Hay herramientas para reparar su propia bicicleta?",
+        "da": "Er der værktøj her til at reparere din egen cykel?"
       },
       "mappings": [
         {
@@ -173,13 +181,14 @@
             "nl": "Dit fietscafé biedt gereedschap aan om je fiets zelf te herstellen",
             "fr": "Ce Café vélo propose des outils pour réparer son vélo soi-même",
             "gl": "Hai ferramentas aquí para arranxar a túa propia bicicleta",
-            "de": "Dieses Fahrrad-Café bietet Werkzeuge für die selbständige Reparatur an",
+            "de": "Das Fahrrad-Café bietet Werkzeug für die selbständige Reparatur an",
             "it": "Questo caffè in bici fornisce degli attrezzi per la riparazione fai-da-te",
             "zh_Hans": "这家自行车咖啡为DIY修理者提供工具",
             "zh_Hant": "這個單車咖啡廳提供工具讓你修理",
             "ru": "В этом велосипедном кафе есть инструменты для починки своего велосипеда",
             "pt_BR": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo",
-            "pt": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo"
+            "pt": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo",
+            "da": "Denne cykelcafé tilbyder værktøj til gør-det-selv-reparation"
           }
         },
         {
@@ -189,13 +198,14 @@
             "nl": "Dit fietscafé biedt geen gereedschap aan om je fiets zelf te herstellen",
             "fr": "Ce Café vélo ne propose pas d'outils pour réparer son vélo soi-même",
             "gl": "Non hai ferramentas aquí para arranxar a túa propia bicicleta",
-            "de": "Dieses Fahrrad-Café bietet keine Werkzeuge für die selbständige Reparatur an",
+            "de": "Das Fahrrad-Café bietet kein Werkzeug für die selbständige Reparatur an",
             "it": "Questo caffè in bici non fornisce degli attrezzi per la riparazione fai-da-te",
             "zh_Hans": "这家自行车咖啡不为DIY修理者提供工具",
             "zh_Hant": "這個單車咖啡廳並沒有提供工具讓你修理",
             "ru": "В этом велосипедном кафе нет инструментов для починки своего велосипеда",
             "pt_BR": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo",
-            "pt": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo"
+            "pt": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo",
+            "da": "Denne cykelcafé tilbyder ikke værktøj til gør-det-selv-reparation"
           }
         }
       ]
@@ -207,13 +217,14 @@
         "nl": "Herstelt dit fietscafé fietsen?",
         "fr": "Est-ce que ce Café vélo répare les vélos ?",
         "gl": "Este café de ciclistas arranxa bicicletas?",
-        "de": "Repariert dieses Fahrrad-Café Fahrräder?",
+        "de": "Repariert das Fahrrad-Café Fahrräder?",
         "it": "Questo caffè in bici ripara le bici?",
         "zh_Hans": "这家自行车咖啡t提供修车服务吗？",
         "zh_Hant": "這個單車咖啡廳是否能修理單車？",
         "ru": "Есть ли услуги ремонта велосипедов в этом велосипедном кафе?",
         "pt_BR": "Este café de bicicleta conserta bicicletas?",
-        "pt": "Este café de bicicleta conserta bicicletas?"
+        "pt": "Este café de bicicleta conserta bicicletas?",
+        "da": "Reparerer denne cykelcafé cykler?"
       },
       "mappings": [
         {
@@ -223,13 +234,14 @@
             "nl": "Dit fietscafé herstelt fietsen",
             "fr": "Ce Café vélo répare les vélos",
             "gl": "Este café de ciclistas arranxa bicicletas",
-            "de": "Dieses Fahrrad-Café repariert Fahrräder",
+            "de": "Das Fahrrad-Café repariert Fahrräder",
             "it": "Questo caffè in bici ripara le bici",
             "zh_Hans": "这家自行车咖啡可以修车",
             "zh_Hant": "這個單車咖啡廳修理單車",
             "ru": "В этом велосипедном кафе есть услуги ремонта велосипедов",
             "pt_BR": "Este café de bicicleta conserta bicicletas",
-            "pt": "Este café de bicicleta conserta bicicletas"
+            "pt": "Este café de bicicleta conserta bicicletas",
+            "da": "Denne cykelcafé reparerer cykler"
           }
         },
         {
@@ -239,13 +251,14 @@
             "nl": "Dit fietscafé herstelt geen fietsen",
             "fr": "Ce Café vélo ne répare pas les vélos",
             "gl": "Este café de ciclistas non arranxa bicicletas",
-            "de": "Dieses Fahrrad-Café repariert keine Fahrräder",
+            "de": "Das Fahrrad-Café repariert keine Fahrräder",
             "it": "Questo caffè in bici non ripara le bici",
             "zh_Hans": "这家自行车咖啡不能修车",
             "zh_Hant": "這個單車咖啡廳並不修理單車",
             "ru": "В этом велосипедном кафе нет услуг ремонта велосипедов",
             "pt_BR": "Este café de bicicleta não conserta bicicletas",
-            "pt": "Este café de bicicleta não conserta bicicletas"
+            "pt": "Este café de bicicleta não conserta bicicletas",
+            "da": "Denne cykelcafé reparerer ikke cykler"
           }
         }
       ]
@@ -256,13 +269,15 @@
         "nl": "Wat is de website van {name}?",
         "fr": "Quel est le site web de {name} ?",
         "gl": "Cal é a páxina web de {name}?",
-        "de": "Was ist die Webseite von {name}?",
+        "de": "Wie lautet die Webseite von {name}?",
         "it": "Qual è il sito web di {name}?",
         "ru": "Какой сайт у {name}?",
         "zh_Hans": "{name}的网站是什么？",
         "zh_Hant": "{name} 的網站是？",
         "pt_BR": "Qual o website de {name}?",
-        "pt": "Qual o website de {name}?"
+        "pt": "Qual o website de {name}?",
+        "da": "Hvad er webstedet for {name}?",
+        "es": "¿Cual es el sitio web de {name}?"
       },
       "render": "<a href='{website}' target='_blank'>{website}</a>",
       "freeform": {
@@ -282,7 +297,9 @@
         "zh_Hans": "{name}的电话号码是什么？",
         "zh_Hant": "{name} 的電話號碼是？",
         "pt_BR": "Qual o número de telefone de {name}?",
-        "pt": "Qual é o número de telefone de {name}?"
+        "pt": "Qual é o número de telefone de {name}?",
+        "es": "¿Cual es el número de teléfono de {name}?",
+        "da": "Hvad er telefonnummeret til {name}?"
       },
       "render": "<a href='tel:{phone}'>{phone}</a>",
       "freeform": {
@@ -303,7 +320,9 @@
         "zh_Hans": "{name}的电子邮箱是什么？",
         "zh_Hant": "{name} 的電子郵件地址是？",
         "pt_BR": "Qual o endereço de email de {name}?",
-        "pt": "Qual o endereço de email de {name}?"
+        "pt": "Qual o endereço de email de {name}?",
+        "es": "¿Cual es la dirección de correo electrónico de {name}?",
+        "da": "Hvad er e-mailadressen på {name}?"
       },
       "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
       "freeform": {
@@ -340,13 +359,14 @@
         "nl": "een fietscafé",
         "fr": "une café vélo",
         "gl": "Café de ciclistas",
-        "de": "eine fahrrad-café",
+        "de": "ein Fahrrad-Café",
         "it": "una caffè in bici",
         "zh_Hans": "自行车咖啡",
         "zh_Hant": "單車咖啡廳",
         "ru": "Велосипедное кафе",
         "pt_BR": "uma café de bicicleta",
-        "pt": "uma café de bicicleta"
+        "pt": "uma café de bicicleta",
+        "da": "en cykelcafé"
       },
       "tags": [
         "amenity=pub",
@@ -377,7 +397,10 @@
     }
   ],
   "description": {
-    "en": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, ...",
-    "nl": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts."
+    "en": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …",
+    "nl": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts.",
+    "de": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe, mit viel fahrradbezogener Dekoration, …",
+    "da": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, ...",
+    "fr": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc."
   }
 }

@@ -1,8 +1,8 @@
 import {Utils} from "../../Utils";
 import * as polygon_features from "../../assets/polygon-features.json";
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
-
+import * as OsmToGeoJson from "osmtogeojson";
 
 export abstract class OsmObject {
 
@@ -38,9 +38,10 @@ export abstract class OsmObject {
             throw "Backend URL must begin with http"
         }
         this.backendURL = url;
+        this.DownloadObject("id/5")
     }
 
-    public static DownloadObject(id: string, forceRefresh: boolean = false): UIEventSource<OsmObject> {
+    public static DownloadObject(id: string, forceRefresh: boolean = false): Store<OsmObject> {
         let src: UIEventSource<OsmObject>;
         if (OsmObject.objectCache.has(id)) {
             src = OsmObject.objectCache.get(id)
@@ -69,7 +70,7 @@ export abstract class OsmObject {
         return rawData.elements[0].tags
     }
 
-    static async DownloadObjectAsync(id: string): Promise<OsmObject> {
+    static async DownloadObjectAsync(id: string): Promise<OsmObject | undefined> {
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = Number(splitted[1]);
@@ -77,9 +78,12 @@ export abstract class OsmObject {
             return undefined;
         }
 
-        const full = (id.startsWith("way")) ? "/full" : "";
+        const full = (!id.startsWith("node")) ? "/full" : "";
         const url = `${OsmObject.backendURL}api/0.6/${id}${full}`;
-        const rawData = await Utils.downloadJsonCached(url, 1000)
+        const rawData = await Utils.downloadJsonCached(url, 10000)
+        if (rawData === undefined) {
+            return undefined
+        }
         // A full query might contain more then just the requested object (e.g. nodes that are part of a way, where we only want the way)
         const parsed = OsmObject.ParseObjects(rawData.elements);
         // Lets fetch the object we need
@@ -124,7 +128,7 @@ export abstract class OsmObject {
         return data.elements.map(wayInfo => {
             const rel = new OsmRelation(wayInfo.id)
             rel.LoadData(wayInfo)
-            rel.SaveExtraData(wayInfo)
+            rel.SaveExtraData(wayInfo, undefined)
             return rel
         })
     }
@@ -193,7 +197,13 @@ export abstract class OsmObject {
                     break;
                 case("relation"):
                     osmObject = new OsmRelation(idN);
-                    osmObject.SaveExtraData(element, [])
+                    const allGeojsons = OsmToGeoJson.default({elements},
+                        // @ts-ignore
+                        {
+                            flatProperties: true
+                        });
+                    const feature = allGeojsons.features.find(f => f.id === osmObject.type + "/" + osmObject.id)
+                    osmObject.SaveExtraData(element, feature)
                     break;
             }
 
@@ -215,7 +225,7 @@ export abstract class OsmObject {
             if (!tags.hasOwnProperty(tagsKey)) {
                 continue
             }
-            const polyGuide : { values: Set<string>; blacklist: boolean } = OsmObject.polygonFeatures.get(tagsKey)
+            const polyGuide: { values: Set<string>; blacklist: boolean } = OsmObject.polygonFeatures.get(tagsKey)
             if (polyGuide === undefined) {
                 continue
             }
@@ -225,12 +235,12 @@ export abstract class OsmObject {
             }
             // is the key contained? Then we have a match if the value is contained
             const doesMatch = polyGuide.values.has(tags[tagsKey])
-            if(polyGuide.blacklist){
+            if (polyGuide.blacklist) {
                 return !doesMatch
             }
             return doesMatch
         }
-        
+
         return false;
     }
 
@@ -257,7 +267,7 @@ export abstract class OsmObject {
 
     public abstract asGeoJson(): any;
 
-    abstract SaveExtraData(element: any, allElements: OsmObject[]);
+    abstract SaveExtraData(element: any, allElements: OsmObject[] | any);
 
     /**
      * Generates the changeset-XML for tags
@@ -428,7 +438,7 @@ export class OsmWay extends OsmObject {
     private isPolygon(): boolean {
         // Compare lat and lon seperately, as the coordinate array might not be a reference to the same object
         if (this.coordinates[0][0] !== this.coordinates[this.coordinates.length - 1][0] ||
-            this.coordinates[0][1] !== this.coordinates[this.coordinates.length - 1][1] ) {
+            this.coordinates[0][1] !== this.coordinates[this.coordinates.length - 1][1]) {
             return false; // Not closed
         }
         return OsmObject.isPolygon(this.tags)
@@ -443,6 +453,8 @@ export class OsmRelation extends OsmObject {
         ref: number,
         role: string
     }[];
+
+    private geojson = undefined
 
     constructor(id: number) {
         super("relation", id);
@@ -469,11 +481,15 @@ ${members}${tags}        </relation>
 
     }
 
-    SaveExtraData(element) {
+    SaveExtraData(element, geojson) {
         this.members = element.members;
+        this.geojson = geojson
     }
 
     asGeoJson(): any {
+        if (this.geojson !== undefined) {
+            return this.geojson;
+        }
         throw "Not Implemented"
     }
 }

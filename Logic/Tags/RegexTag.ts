@@ -10,13 +10,6 @@ export class RegexTag extends TagsFilter {
     constructor(key: string | RegExp, value: RegExp | string, invert: boolean = false) {
         super();
         this.key = key;
-        if (typeof value === "string") {
-            if (value.indexOf("^") < 0 && value.indexOf("$") < 0) {
-                value = "^" + value + "$"
-            }
-            value = new RegExp(value)
-        }
-
         this.value = value;
         this.invert = invert;
         this.matchesEmpty = RegexTag.doesMatch("", this.value);
@@ -50,6 +43,9 @@ export class RegexTag extends TagsFilter {
      * 
      * // A regextag with a regex key should give correct output
      * new RegexTag(/a.*x/, /^..*$/).asOverpass() // => [ `[~"a.*x"~\"^..*$\"]` ]
+     * 
+     * // A regextag with a case invariant flag should signal this to overpass
+     * new RegexTag("key", /^.*value.*$/i).asOverpass() // => [ `["key"~\"^.*value.*$\",i]` ]
      */
     asOverpass(): string[] {
         const inv =this.invert ? "!" : ""
@@ -64,7 +60,8 @@ export class RegexTag extends TagsFilter {
                 // anything goes
                 return [`[${inv}"${this.key}"]`]
             }
-            return [`["${this.key}"${inv}~"${src}"]`]
+            const modifier = this.value.ignoreCase ? ",i" : ""
+            return [`["${this.key}"${inv}~"${src}"${modifier}]`]
         }else{
             // Normal key and normal value
             return [`["${this.key}"${inv}="${this.value}"]`];
@@ -79,14 +76,14 @@ export class RegexTag extends TagsFilter {
     /** 
      * Checks if this tag matches the given properties
      * 
-     * const isNotEmpty = new RegexTag("key","^$", true);
+     * const isNotEmpty = new RegexTag("key",/^$/, true);
      * isNotEmpty.matchesProperties({"key": "value"}) // => true
      * isNotEmpty.matchesProperties({"key": "other_value"}) // => true
      * isNotEmpty.matchesProperties({"key": ""}) // => false
      * isNotEmpty.matchesProperties({"other_key": ""}) // => false
      * isNotEmpty.matchesProperties({"other_key": "value"}) // => false
      * 
-     * const isNotEmpty = new RegexTag("key","^..*$", true);
+     * const isNotEmpty = new RegexTag("key",/^..*$/, true);
      * isNotEmpty.matchesProperties({"key": "value"}) // => false
      * isNotEmpty.matchesProperties({"key": "other_value"}) // => false
      * isNotEmpty.matchesProperties({"key": ""}) // => true
@@ -121,6 +118,9 @@ export class RegexTag extends TagsFilter {
      * importMatch.matchesProperties({"tags": "amenity=public_bookcase"}) // =>true
      * importMatch.matchesProperties({"tags": "name=test;amenity=public_bookcase"}) // =>true
      * importMatch.matchesProperties({"tags": "amenity=bench"}) // =>false
+     * 
+     * new RegexTag("key","value").matchesProperties({"otherkey":"value"}) // => false
+     * new RegexTag("key","value",true).matchesProperties({"otherkey":"something"}) // => true
      */
     matchesProperties(tags: any): boolean {
         if (typeof this.key === "string") {
@@ -147,17 +147,87 @@ export class RegexTag extends TagsFilter {
 
     asHumanString() {
         if (typeof this.key === "string") {
-            return `${this.key}${this.invert ? "!" : ""}~${RegexTag.source(this.value)}`;
+            const oper = typeof this.value === "string" ? "=" : "~"
+            return `${this.key}${this.invert ? "!" : ""}${oper}${RegexTag.source(this.value)}`;
         }
         return `${this.key.source}${this.invert ? "!" : ""}~~${RegexTag.source(this.value)}`
     }
 
-    isEquivalent(other: TagsFilter): boolean {
+    /**
+     * 
+     * new RegexTag("key","value").shadows(new Tag("key","value")) // => true
+     * new RegexTag("key",/value/).shadows(new RegexTag("key","value")) // => true
+     * new RegexTag("key",/^..*$/).shadows(new Tag("key","value")) // => false
+     * new RegexTag("key",/^..*$/).shadows(new Tag("other_key","value")) // => false
+     * new RegexTag("key", /^a+$/).shadows(new Tag("key", "a")) // => false
+     * 
+     * 
+     * // should not shadow too eagerly: the first tag might match 'key=abc', the second won't
+     *  new RegexTag("key", /^..*$/).shadows(new Tag("key", "some_value")) // => false
+     * 
+     * // should handle 'invert'
+     * new RegexTag("key",/^..*$/, true).shadows(new Tag("key","value")) // => false
+     * new RegexTag("key",/^..*$/, true).shadows(new Tag("key","")) // => true
+     * new RegexTag("key","value", true).shadows(new Tag("key","value")) // => false
+     * new RegexTag("key","value", true).shadows(new Tag("key","some_other_value")) // => false
+     */
+    shadows(other: TagsFilter): boolean {
         if (other instanceof RegexTag) {
-            return other.asHumanString() == this.asHumanString();
+            if((other.key["source"] ?? other.key) !== (this.key["source"] ?? this.key) ){
+                // Keys don't match, never shadowing
+                return false
+            }
+            if((other.value["source"] ?? other.key) === (this.value["source"] ?? this.key) && this.invert  == other.invert ){
+                // Values (and inverts) match
+                return true
+            }
+            if(typeof other.value ==="string"){
+                const valuesMatch = RegexTag.doesMatch(other.value, this.value)
+                if(!this.invert && !other.invert){
+                    // this: key~value, other: key=value
+                    return valuesMatch
+                }
+                if(this.invert && !other.invert){
+                    // this: key!~value, other: key=value
+                    return !valuesMatch
+                }
+                if(!this.invert && other.invert){
+                    // this: key~value, other: key!=value
+                    return !valuesMatch
+                }
+                if(!this.invert && !other.invert){
+                    // this: key!~value, other: key!=value
+                    return valuesMatch
+                }
+                
+            }
+            return false;
         }
         if (other instanceof Tag) {
-            return RegexTag.doesMatch(other.key, this.key) && RegexTag.doesMatch(other.value, this.value);
+            if(!RegexTag.doesMatch(other.key, this.key)){
+                // Keys don't match
+                return false;
+            }
+            
+            
+            if(this.value["source"] === "^..*$") {
+                if(this.invert){
+                    return other.value === ""
+                }
+                return false
+            }
+            
+            if (this.invert) {
+                /*
+                 * this: "a!=b"
+                 * other: "a=c"
+                 * actual property: a=x
+                 * In other words: shadowing will never occur here
+                 */
+                return false;
+            }
+            // Unless the values are the same, it is pretty hard to figure out if they are shadowing. This is future work
+            return (this.value["source"] ?? this.value) === other.value;
         }
         return false;
     }
@@ -190,15 +260,15 @@ export class RegexTag extends TagsFilter {
         return []
     }
 
-    AsJson() {
-        return this.asHumanString()
-    }
-    
     optimize(): TagsFilter | boolean {
         return this;
     }
     
     isNegative(): boolean {
         return this.invert;
+    }
+    
+    visit(f: (TagsFilter) => void) {
+        f(this)
     }
 }

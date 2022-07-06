@@ -98,7 +98,7 @@ class ProfessionalGui extends LeftIndex {
                 maxDepth: 2
             }).SetClass("subtle"),
 
-            LanguagePicker.CreateLanguagePicker(Translations.t.professional.title.SupportedLanguages())?.SetClass("mt-4 self-end flex-col"),
+            new LanguagePicker(Translations.t.professional.title.SupportedLanguages(), "")?.SetClass("mt-4 self-end flex-col"),
         ].map(el => el?.SetClass("pl-4"))
 
         super(leftContents, content)

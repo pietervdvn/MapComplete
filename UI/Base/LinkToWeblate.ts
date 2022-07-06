@@ -4,6 +4,7 @@ import Link from "./Link";
 import Svg from "../../Svg";
 
 export default class LinkToWeblate extends VariableUiElement {
+    private static URI: any;
     constructor(context: string, availableTranslations: object) {
         super( Locale.language.map(ln => {
             if (Locale.showLinkToWeblate.data === false) {
@@ -35,5 +36,11 @@ export default class LinkToWeblate extends VariableUiElement {
         
         const baseUrl = "https://hosted.weblate.org/translate/mapcomplete/"
         return baseUrl + category + "/" + language + "/?offset=1&q=context%3A%3D%22" + key + "%22"
+    }
+
+    public static hrefToWeblateZen(language: string, category: "core" | "themes" | "layers" | "shared-questions" | "glossary" | string, searchKey: string): string{
+        const baseUrl = "https://hosted.weblate.org/zen/mapcomplete/"
+        // ?offset=1&q=+state%3A%3Ctranslated+context%3Acampersite&sort_by=-priority%2Cposition&checksum=
+        return baseUrl + category + "/" + language + "?offset=1&q=+state%3A%3Ctranslated+context%3A"+encodeURIComponent(searchKey)+"&sort_by=-priority%2Cposition&checksum="
     }
 }

@@ -12,17 +12,9 @@ This layer visualizes directions
 
 
 
-## Table of contents
-
-1. [direction](#direction)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
 
 
-
-
-
+  - This layer is shown at zoomlevel **16** and higher
   - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
 
 
@@ -37,8 +29,6 @@ This layer visualizes directions
   - [personal](https://mapcomplete.osm.be/personal)
   - [surveillance](https://mapcomplete.osm.be/surveillance)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/direction/direction.json)
 
 
 

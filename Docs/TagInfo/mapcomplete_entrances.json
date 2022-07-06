@@ -92,12 +92,12 @@
     },
     {
       "key": "indoor",
-      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances') Picking this answer will delete the key indoor.",
       "value": ""
     },
     {
       "key": "entrance",
-      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, ...' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "description": "Layer 'Entrance' shows entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
       "value": "service"
     },
     {

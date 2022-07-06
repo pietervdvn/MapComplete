@@ -1,4 +1,8 @@
 {
+    "address": {
+        "description": "Endereços",
+        "name": "Endereços conhecidos no OSM"
+    },
     "artwork": {
         "description": "Diversas obras de arte",
         "name": "Obras de arte",
@@ -583,17 +587,6 @@
         },
         "title": {
             "render": "Bicicleta fantasma"
-        }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Oficina de automóveis"
-                    }
-                }
-            }
         }
     }
 }

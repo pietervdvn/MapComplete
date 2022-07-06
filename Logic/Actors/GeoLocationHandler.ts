@@ -1,11 +1,12 @@
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import Svg from "../../Svg";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {QueryParameters} from "../Web/QueryParameters";
-import FeatureSource from "../FeatureSource/FeatureSource";
 import {BBox} from "../BBox";
+import Constants from "../../Models/Constants";
+import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 
 export interface GeoLocationPointProperties {
     id: "gps",
@@ -21,17 +22,15 @@ export interface GeoLocationPointProperties {
 
 export default class GeoLocationHandler extends VariableUiElement {
 
-    private readonly currentLocation?: FeatureSource
+    private readonly currentLocation?: SimpleFeatureSource
 
     /**
      * Wether or not the geolocation is active, aka the user requested the current location
-     * @private
      */
     private readonly _isActive: UIEventSource<boolean>;
 
     /**
      * Wether or not the geolocation is locked, aka the user requested the current location and wants the crosshair to follow the user
-     * @private
      */
     private readonly _isLocked: UIEventSource<boolean>;
 
@@ -44,7 +43,7 @@ export default class GeoLocationHandler extends VariableUiElement {
      * Literally: _currentGPSLocation.data != undefined
      * @private
      */
-    private readonly _hasLocation: UIEventSource<boolean>;
+    private readonly _hasLocation: Store<boolean>;
     private readonly _currentGPSLocation: UIEventSource<Coordinates>;
     /**
      * Kept in order to update the marker
@@ -54,9 +53,8 @@ export default class GeoLocationHandler extends VariableUiElement {
 
     /**
      * The date when the user requested the geolocation. If we have a location, it'll autozoom to it the first 30 secs
-     * @private
      */
-    private _lastUserRequest: Date;
+    private _lastUserRequest: UIEventSource<Date>;
 
     /**
      * A small flag on localstorage. If the user previously granted the geolocation, it will be set.
@@ -72,7 +70,7 @@ export default class GeoLocationHandler extends VariableUiElement {
     constructor(
         state: {
             selectedElement: UIEventSource<any>;
-            currentUserLocation?: FeatureSource,
+            currentUserLocation?: SimpleFeatureSource,
             leafletMap: UIEventSource<any>,
             layoutToUse: LayoutConfig,
             featureSwitchGeolocation: UIEventSource<boolean>
@@ -80,6 +78,8 @@ export default class GeoLocationHandler extends VariableUiElement {
     ) {
         const currentGPSLocation = new UIEventSource<Coordinates>(undefined, "GPS-coordinate")
         const leafletMap = state.leafletMap
+        const initedAt = new Date()
+        let autozoomDone = false;
         const hasLocation = currentGPSLocation.map(
             (location) => location !== undefined
         );
@@ -97,13 +97,28 @@ export default class GeoLocationHandler extends VariableUiElement {
             const timeDiff = (new Date().getTime() - lastClick.getTime()) / 1000
             return timeDiff <= 3
         })
+
+        const latLonGiven = QueryParameters.wasInitialized("lat") && QueryParameters.wasInitialized("lon")
+        const willFocus = lastClick.map(lastUserRequest => {
+            const timeDiffInited = (new Date().getTime() - initedAt.getTime()) / 1000
+            if (!latLonGiven && !autozoomDone && timeDiffInited < Constants.zoomToLocationTimeout) {
+                return true
+            }
+            if (lastUserRequest === undefined) {
+                return false;
+            }
+            const timeDiff = (new Date().getTime() - lastUserRequest.getTime()) / 1000
+            return timeDiff <= Constants.zoomToLocationTimeout
+        })
+
         lastClick.addCallbackAndRunD(_ => {
             window.setTimeout(() => {
-                if (lastClickWithinThreeSecs.data) {
+                if (lastClickWithinThreeSecs.data || willFocus.data) {
                     lastClick.ping()
                 }
             }, 500)
         })
+
         super(
             hasLocation.map(
                 (hasLocationData) => {
@@ -116,7 +131,8 @@ export default class GeoLocationHandler extends VariableUiElement {
                     }
                     if (!hasLocationData) {
                         // Position not yet found but we are active: we spin to indicate activity
-                        const icon = Svg.location_empty_svg()
+                        // If will focus is active too, we indicate this differently
+                        const icon = willFocus.data ? Svg.location_svg() : Svg.location_empty_svg()
                         icon.SetStyle("animation: spin 4s linear infinite;")
                         return icon;
                     }
@@ -130,7 +146,7 @@ export default class GeoLocationHandler extends VariableUiElement {
                     // We have a location, so we show a dot in the center
                     return Svg.location_svg();
                 },
-                [isActive, isLocked, permission, lastClickWithinThreeSecs]
+                [isActive, isLocked, permission, lastClickWithinThreeSecs, willFocus]
             )
         );
         this.SetClass("mapcontrol")
@@ -142,6 +158,7 @@ export default class GeoLocationHandler extends VariableUiElement {
         this._leafletMap = leafletMap;
         this._layoutToUse = state.layoutToUse;
         this._hasLocation = hasLocation;
+        this._lastUserRequest = lastClick
         const self = this;
 
         const currentPointer = this._isActive.map(
@@ -183,7 +200,6 @@ export default class GeoLocationHandler extends VariableUiElement {
             self.init(true, true);
         });
 
-        const latLonGiven = QueryParameters.wasInitialized("lat") && QueryParameters.wasInitialized("lon")
 
         const doAutoZoomToLocation = !latLonGiven && state.featureSwitchGeolocation.data && state.selectedElement.data !== undefined
         this.init(false, doAutoZoomToLocation);
@@ -220,9 +236,10 @@ export default class GeoLocationHandler extends VariableUiElement {
 
             self.currentLocation?.features?.setData([{feature, freshness: new Date()}])
 
-            const timeSinceRequest =
-                (new Date().getTime() - (self._lastUserRequest?.getTime() ?? 0)) / 1000;
-            if (timeSinceRequest < 30) {
+            if (willFocus.data) {
+                console.log("Zooming to user location: willFocus is set")
+                lastClick.setData(undefined);
+                autozoomDone = true;
                 self.MoveToCurrentLocation(16);
             } else if (self._isLocked.data) {
                 self.MoveToCurrentLocation();
@@ -239,8 +256,8 @@ export default class GeoLocationHandler extends VariableUiElement {
             self.MoveToCurrentLocation(16);
             return;
         }
-        
-        if(typeof navigator === "undefined"){
+
+        if (typeof navigator === "undefined") {
             return
         }
 
@@ -271,7 +288,7 @@ export default class GeoLocationHandler extends VariableUiElement {
 
     /**
      * Moves to the currently loaded location.
-     * 
+     *
      * // Should move to any location
      * let resultingLocation = undefined
      * let resultingzoom = 1
@@ -321,7 +338,7 @@ export default class GeoLocationHandler extends VariableUiElement {
      */
     private MoveToCurrentLocation(targetZoom?: number) {
         const location = this._currentGPSLocation.data;
-        this._lastUserRequest = undefined;
+        this._lastUserRequest.setData(undefined);
 
         if (
             this._currentGPSLocation.data.latitude === 0 &&
@@ -341,14 +358,9 @@ export default class GeoLocationHandler extends VariableUiElement {
             }
         }
         if (!inRange) {
-            console.log(
-                "Not zooming to GPS location: out of bounds",
-                b,
-                location
-            );
+            console.log("Not zooming to GPS location: out of bounds", b, location);
         } else {
             const currentZoom = this._leafletMap.data.getZoom()
-
             this._leafletMap.data.setView([location.latitude, location.longitude], Math.max(targetZoom ?? 0, currentZoom));
         }
     }
@@ -356,7 +368,7 @@ export default class GeoLocationHandler extends VariableUiElement {
     private StartGeolocating(zoomToGPS = true) {
         const self = this;
 
-        this._lastUserRequest = zoomToGPS ? new Date() : new Date(0);
+        this._lastUserRequest.setData(zoomToGPS ? new Date() : new Date(0))
         if (self._permission.data === "denied") {
             self._previousLocationGrant.setData("");
             self._isActive.setData(false)

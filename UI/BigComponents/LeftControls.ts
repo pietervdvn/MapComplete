@@ -6,7 +6,7 @@ import MapControlButton from "../MapControlButton";
 import Svg from "../../Svg";
 import AllDownloads from "./AllDownloads";
 import FilterView from "./FilterView";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import BackgroundMapSwitch from "./BackgroundMapSwitch";
 import Lazy from "../Base/Lazy";
 import {VariableUiElement} from "../Base/VariableUIElement";
@@ -28,7 +28,7 @@ export default class LeftControls extends Combine {
         const currentViewFL = state.currentView?.layer
         const currentViewAction = new Toggle(
             new Lazy(() => {
-                const feature: UIEventSource<any> = state.currentView.features.map(ffs => ffs[0]?.feature)
+                const feature: Store<any> = state.currentView.features.map(ffs => ffs[0]?.feature)
                 const icon = new VariableUiElement(feature.map(feature => {
                     const defaultIcon = Svg.checkbox_empty_svg()
                     if (feature === undefined) {

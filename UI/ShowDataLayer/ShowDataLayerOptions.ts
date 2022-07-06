@@ -1,5 +1,5 @@
 import FeatureSource from "../../Logic/FeatureSource/FeatureSource";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {ElementStorage} from "../../Logic/ElementStorage";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
@@ -10,6 +10,6 @@ export interface ShowDataLayerOptions {
     leafletMap: UIEventSource<L.Map>,
     popup?: undefined | ((tags: UIEventSource<any>, layer: LayerConfig) => ScrollableFullScreen),
     zoomToFeatures?: false | boolean,
-    doShowLayer?: UIEventSource<boolean>,
+    doShowLayer?: Store<boolean>,
     state?: { allElements?: ElementStorage }
 }

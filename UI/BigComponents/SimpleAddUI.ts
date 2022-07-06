@@ -81,7 +81,7 @@ export default class SimpleAddUI extends Toggle {
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset, state)
 
 
-        async function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
+        async function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) : Promise<void>{
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
                 theme: state.layoutToUse?.id ?? "unkown",
                 changeType: "create",
@@ -191,7 +191,7 @@ export default class SimpleAddUI extends Toggle {
             preset.icon(),
             new Combine([
                 title.SetClass("font-bold"),
-                Translations.WT(preset.description)?.FirstSentence()
+                preset.description?.FirstSentence()
             ]).SetClass("flex flex-col")
         )
     }
@@ -208,15 +208,20 @@ export default class SimpleAddUI extends Toggle {
         const allButtons = [];
         for (const layer of state.filteredLayers.data) {
 
-            if (layer.isDisplayed.data === false && !state.featureSwitchFilter.data) {
-                // The layer is not displayed and we cannot enable the layer control -> we skip
-                continue;
+            if (layer.isDisplayed.data === false) {
+                // The layer is not displayed...
+                if(!state.featureSwitchFilter.data){
+                    // ...and we cannot enable the layer control -> we skip, as these presets can never be shown anyway
+                    continue;
+                }
+
+                if (layer.layerDef.name === undefined) {
+                    // this layer can never be toggled on in any case, so we skip the presets
+                    continue;
+                }
             }
 
-            if (layer.layerDef.name === undefined) {
-                // this is a parlty hidden layer
-                continue;
-            }
+
 
             const presets = layer.layerDef.presets;
             for (const preset of presets) {

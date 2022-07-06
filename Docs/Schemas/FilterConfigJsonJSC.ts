@@ -31,6 +31,7 @@ export default {
                             "type": "object",
                             "properties": {
                                 "name": {
+                                    "description": "If name is `search`, use  \"_first_comment~.*{search}.*\" as osmTags",
                                     "type": "string"
                                 },
                                 "type": {

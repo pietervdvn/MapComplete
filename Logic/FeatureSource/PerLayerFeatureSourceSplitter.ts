@@ -1,5 +1,5 @@
 import FeatureSource, {FeatureSourceForLayer, Tiled} from "./FeatureSource";
-import {UIEventSource} from "../UIEventSource";
+import {Store} from "../UIEventSource";
 import FilteredLayer from "../../Models/FilteredLayer";
 import SimpleFeatureSource from "./Sources/SimpleFeatureSource";
 
@@ -11,7 +11,7 @@ import SimpleFeatureSource from "./Sources/SimpleFeatureSource";
  */
 export default class PerLayerFeatureSourceSplitter {
 
-    constructor(layers: UIEventSource<FilteredLayer[]>,
+    constructor(layers: Store<FilteredLayer[]>,
                 handleLayerData: (source: FeatureSourceForLayer & Tiled) => void,
                 upstream: FeatureSource,
                 options?: {
@@ -19,7 +19,7 @@ export default class PerLayerFeatureSourceSplitter {
                     handleLeftovers?: (featuresWithoutLayer: any[]) => void
                 }) {
 
-        const knownLayers = new Map<string, FeatureSourceForLayer & Tiled>()
+        const knownLayers = new Map<string, SimpleFeatureSource>()
 
         function update() {
             const features = upstream.features?.data;
@@ -41,17 +41,21 @@ export default class PerLayerFeatureSourceSplitter {
             }
 
             for (const f of features) {
+                let foundALayer = false;
                 for (const layer of layers.data) {
                     if (layer.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
                         // We have found our matching layer!
                         featuresPerLayer.get(layer.layerDef.id).push(f)
+                        foundALayer = true;
                         if (!layer.layerDef.passAllFeatures) {
                             // If not 'passAllFeatures', we are done for this feature
-                            break;
+                           break
                         }
                     }
                 }
-                noLayerFound.push(f)
+                if(!foundALayer){
+                    noLayerFound.push(f)
+                }
             }
 
             // At this point, we have our features per layer as a list

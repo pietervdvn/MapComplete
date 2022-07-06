@@ -1,24 +1,25 @@
 import Locale from "./Locale";
 import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
-import Link from "../Base/Link";
-import Svg from "../../Svg";
-import {VariableUiElement} from "../Base/VariableUIElement";
 import LinkToWeblate from "../Base/LinkToWeblate";
 
 export class Translation extends BaseUIElement {
 
     public static forcedLanguage = undefined;
 
-    public readonly translations: object
+    public readonly translations: Record<string, string>
     context?: string;
 
-    constructor(translations: object, context?: string) {
+    constructor(translations: Record<string, string>, context?: string) {
         super()
-        this.context = context;
         if (translations === undefined) {
             console.error("Translation without content at "+context)
             throw `Translation without content (${context})`
+        }
+        this.context = translations["_context"] ?? context;
+        if(translations["_context"] !== undefined){
+            translations = {...translations}
+            delete translations["_context"]
         }
         if (typeof translations === "string") {
             translations = {"*": translations};
@@ -26,6 +27,9 @@ export class Translation extends BaseUIElement {
         let count = 0;
         for (const translationsKey in translations) {
             if (!translations.hasOwnProperty(translationsKey)) {
+                continue
+            }
+            if(translationsKey === "_context"){
                 continue
             }
             count++;
@@ -45,6 +49,10 @@ export class Translation extends BaseUIElement {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
     }   
 
+    public toString(){
+        return this.txt;
+    }
+    
     static ExtractAllTranslationsFrom(object: any, context = ""): { context: string, tr: Translation }[] {
         const allTranslations: { context: string, tr: Translation }[] = []
         for (const key in object) {
@@ -104,27 +112,48 @@ export class Translation extends BaseUIElement {
         return "";
     }
 
+    /**
+     * 
+     * // Should actually change the content based on the current language
+     * const tr = new Translation({"en":"English", nl: "Nederlands"})
+     * Locale.language.setData("en")
+     * const html = tr.InnerConstructElement()
+     * html.innerHTML // => "English"
+     * Locale.language.setData("nl")
+     * html.innerHTML // => "Nederlands"
+     * 
+     * // Should include a link to weblate if context is set
+     * const tr = new Translation({"en":"English"}, "core:test.xyz")
+     * Locale.language.setData("nl")
+     * Locale.showLinkToWeblate.setData(true)
+     * const html = tr.InnerConstructElement()
+     * html.getElementsByTagName("a")[0].href // => "https://hosted.weblate.org/translate/mapcomplete/core/nl/?offset=1&q=context%3A%3D%22test.xyz%22"
+     */
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         const self = this
-        
-       
-        Locale.language.addCallbackAndRun(_ => {
-            if (self.isDestroyed) {
-                return true
-            }
-            el.innerHTML = this.txt
-        })
 
-        if (self.translations["*"] !== undefined || self.context === undefined || self.context?.indexOf(":") < 0) {
+        el.innerHTML = self.txt
+        if (self.translations["*"] !== undefined) {
             return el;
         }
         
+        
+        Locale.language.addCallback(_ => {
+            if (self.isDestroyed) {
+                return true
+            }
+            el.innerHTML = self.txt
+        })
+        
+        if(self.context === undefined || self.context?.indexOf(":") < 0){
+            return el;
+        }
+
         const linkToWeblate = new LinkToWeblate(self.context, self.translations)
 
         const wrapper = document.createElement("span")
         wrapper.appendChild(el)
-        wrapper.classList.add("flex")
         Locale.showLinkToWeblate.addCallbackAndRun(doShow => {
 
             if (!doShow) {
@@ -160,23 +189,8 @@ export class Translation extends BaseUIElement {
     }
 
     /**
-     * Substitutes text in a translation.
-     * If a translation is passed, it'll be fused
-     * 
-     * // Should replace simple keys
-     * new Translation({"en": "Some text {key}"}).Subs({key: "xyz"}).textFor("en") // => "Some text xyz"
-     * 
-     * // Should fuse translations
-     * const subpart = new Translation({"en": "subpart","nl":"onderdeel"})
-     * const tr = new Translation({"en": "Full sentence with {part}", nl: "Volledige zin met {part}"})
-     * const subbed = tr.Subs({part: subpart})
-     * subbed.textFor("en") // => "Full sentence with subpart"
-     * subbed.textFor("nl") // => "Volledige zin met onderdeel"
+     * Constructs a new Translation where every contained string has been modified
      */
-    public Subs(text: any, context?: string): Translation {
-        return this.OnEveryLanguage((template, lang) => Utils.SubstituteKeys(template, text, lang), context)
-    }
-
     public OnEveryLanguage(f: (s: string, language: string) => string, context?: string): Translation {
         const newTranslations = {};
         for (const lang in this.translations) {
@@ -199,6 +213,7 @@ export class Translation extends BaseUIElement {
      * const r = tr.replace("{key}", "value")
      * r.textFor("nl") // => "Een voorbeeldtekst met value en {key1}, en nogmaals value"
      * r.textFor("en") // => "Just a single value"
+     * 
      */
     public replace(a: string, b: string) {
         return this.OnEveryLanguage(str => str.replace(new RegExp(a, "g"), b))
@@ -272,5 +287,36 @@ export class Translation extends BaseUIElement {
         return this.txt
     }
     
+}
 
+export class TypedTranslation<T> extends Translation {
+    constructor(translations: Record<string, string>, context?: string) {
+        super(translations, context);
+    }
+
+    /**
+     * Substitutes text in a translation.
+     * If a translation is passed, it'll be fused
+     *
+     * // Should replace simple keys
+     * new TypedTranslation<object>({"en": "Some text {key}"}).Subs({key: "xyz"}).textFor("en") // => "Some text xyz"
+     *
+     * // Should fuse translations
+     * const subpart = new Translation({"en": "subpart","nl":"onderdeel"})
+     * const tr = new TypedTranslation<object>({"en": "Full sentence with {part}", nl: "Volledige zin met {part}"})
+     * const subbed = tr.Subs({part: subpart})
+     * subbed.textFor("en") // => "Full sentence with subpart"
+     * subbed.textFor("nl") // => "Volledige zin met onderdeel"
+     * 
+     */
+    Subs(text: T, context?: string): Translation {
+        return this.OnEveryLanguage((template, lang) => {
+            if(lang === "_context"){
+                return template
+            }
+            return Utils.SubstituteKeys(template, text, lang);
+        }, context)
+    }
+    
+    
 }

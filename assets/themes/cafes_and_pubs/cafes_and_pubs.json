@@ -1,20 +1,29 @@
 {
   "id": "cafes_and_pubs",
   "title": {
-    "nl": "Cafés",
     "en": "Cafés and pubs",
+    "nl": "Cafés",
     "de": "Cafés und Kneipen",
     "it": "Caffè e pub",
     "nb_NO": "Kafeer og kneiper",
     "id": "Kafe dan pub",
     "zh_Hant": "咖啡廳與酒吧",
     "ru": "Кафе и пабы",
-    "hu": "Kávézók és kocsmák"
+    "hu": "Kávézók és kocsmák",
+    "ca": "Cafés i bars",
+    "es": "Cafeterías y pubs",
+    "fr": "Cafés et pubs",
+    "da": "Caféer og pubber"
   },
   "description": {
     "en": "Pubs and bars",
     "nl": "Cafés, kroegen en drinkgelegenheden",
-    "de": "Kneipen und Bars"
+    "de": "Kneipen und Bars",
+    "ca": "Bars i pubs",
+    "es": "Pubs y bares",
+    "fr": "Bars et pubs",
+    "da": "Pubber og barer",
+    "nb_NO": "Kneiper og barer"
   },
   "maintainer": "",
   "icon": "./assets/layers/cafe_pub/pub.svg",

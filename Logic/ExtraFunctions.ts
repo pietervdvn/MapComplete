@@ -5,6 +5,7 @@ import BaseUIElement from "../UI/BaseUIElement";
 import List from "../UI/Base/List";
 import Title from "../UI/Base/Title";
 import {BBox} from "./BBox";
+import {Feature, Geometry, MultiPolygon, Polygon} from "@turf/turf";
 
 export interface ExtraFuncParams {
     /**
@@ -12,9 +13,9 @@ export interface ExtraFuncParams {
      * Note that more features then requested can be given back.
      * Format: [ [ geojson, geojson, geojson, ... ], [geojson, ...], ...]
      */
-    getFeaturesWithin: (layerId: string, bbox: BBox) => any[][],
+    getFeaturesWithin: (layerId: string, bbox: BBox) => Feature<Geometry, {id: string}>[][],
     memberships: RelationsTracker
-    getFeatureById: (id: string) => any
+    getFeatureById: (id: string) => Feature<Geometry, {id: string}>
 }
 
 /**
@@ -24,21 +25,65 @@ interface ExtraFunction {
     readonly _name: string;
     readonly _args: string[];
     readonly _doc: string;
-    readonly _f: (params: ExtraFuncParams, feat: any) => any;
+    readonly _f: (params: ExtraFuncParams, feat: Feature<Geometry, any>) => any;
 
 }
 
+class EnclosingFunc implements ExtraFunction {
+    _name = "enclosingFeatures"
+    _doc = ["Gives a list of all features in the specified layers which fully contain this object. Returned features will always be (multi)polygons. (LineStrings and Points from the other layers are ignored)","",
+        "The result is a list of features: `{feat: Polygon}[]`",
+    "This function will never return the feature itself."].join("\n")
+    _args = ["...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)"]
+    _f(params: ExtraFuncParams, feat: Feature<Geometry, any>) {
+        return (...layerIds: string[]) => {
+            const result: { feat: any }[] = []
+            const bbox = BBox.get(feat)
+            const seenIds = new Set<string>()
+            seenIds.add(feat.properties.id)
+            for (const layerId of layerIds) {
+                const otherFeaturess = params.getFeaturesWithin(layerId, bbox)
+                if (otherFeaturess === undefined) {
+                    continue;
+                }
+                if (otherFeaturess.length === 0) {
+                    continue;
+                }
+                for (const otherFeatures of otherFeaturess) {
+                    for (const otherFeature of otherFeatures) {
+                        if(seenIds.has(otherFeature.properties.id)){
+                            continue
+                        }
+                        seenIds.add(otherFeature.properties.id)
+                        if(otherFeature.geometry.type !== "Polygon" && otherFeature.geometry.type !== "MultiPolygon"){
+                            continue;
+                        }
+                        if(GeoOperations.completelyWithin(feat, <Feature<Polygon | MultiPolygon, any>> otherFeature)){
+                            result.push({feat: otherFeature})
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+    }
+}
 
 class OverlapFunc implements ExtraFunction {
 
 
     _name = "overlapWith";
-    _doc = "Gives a list of features from the specified layer which this feature (partly) overlaps with. A point which is embedded in the feature is detected as well." +
-        "If the current feature is a point, all features that this point is embeded in are given.\n\n" +
-        "The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point.\n" +
-        "The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list\n" +
-        "\n" +
-        "For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')`"
+    _doc = ["Gives a list of features from the specified layer which this feature (partly) overlaps with. A point which is embedded in the feature is detected as well.",
+        "If the current feature is a point, all features that this point is embeded in are given." ,
+        "",
+        "The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point." ,
+        "The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list." ,
+        "",
+        "For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')`",
+        "",
+        "Also see [enclosingFeatures](#enclosingFeatures) which can be used to get all objects which fully contain this feature"
+    ].join("\n")
     _args = ["...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)"]
 
     _f(params, feat) {
@@ -46,15 +91,15 @@ class OverlapFunc implements ExtraFunction {
             const result: { feat: any, overlap: number }[] = []
             const bbox = BBox.get(feat)
             for (const layerId of layerIds) {
-                const otherLayers = params.getFeaturesWithin(layerId, bbox)
-                if (otherLayers === undefined) {
+                const otherFeaturess = params.getFeaturesWithin(layerId, bbox)
+                if (otherFeaturess === undefined) {
                     continue;
                 }
-                if (otherLayers.length === 0) {
+                if (otherFeaturess.length === 0) {
                     continue;
                 }
-                for (const otherLayer of otherLayers) {
-                    result.push(...GeoOperations.calculateOverlap(feat, otherLayer));
+                for (const otherFeatures of otherFeaturess) {
+                    result.push(...GeoOperations.calculateOverlap(feat, otherFeatures));
                 }
             }
 
@@ -392,6 +437,7 @@ export class ExtraFunctions {
     private static readonly allFuncs: ExtraFunction[] = [
         new DistanceToFunc(),
         new OverlapFunc(),
+        new EnclosingFunc(),
         new IntersectionFunc(),
         new ClosestObjectFunc(),
         new ClosestNObjectFunc(),

@@ -62,7 +62,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Defibrillators' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accesible to staff, the owners, ...)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
+      "description": "Layer 'Defibrillators' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accesible to staff, the owners, …)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open AED Map')",
       "value": "private"
     },
     {

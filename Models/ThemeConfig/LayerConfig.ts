@@ -27,6 +27,7 @@ import FilterConfigJson from "./Json/FilterConfigJson";
 import {And} from "../../Logic/Tags/And";
 import {Overpass} from "../../Logic/Osm/Overpass";
 import Constants from "../Constants";
+import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 
 export default class LayerConfig extends WithContextLoader {
 
@@ -64,7 +65,8 @@ export default class LayerConfig extends WithContextLoader {
     public readonly filterIsSameAs: string;
     public readonly forceLoad: boolean;
 
-    public readonly syncSelection: "no" | "local" | "theme-only" | "global"
+    public static readonly syncSelectionAllowed =  ["no" , "local" , "theme-only" , "global"] as const;
+    public readonly syncSelection: (typeof LayerConfig.syncSelectionAllowed)[number] // this is a trick to conver a constant array of strings into a type union of these values
 
     constructor(
         json: LayerConfigJson,
@@ -96,7 +98,10 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
-        this.syncSelection = json.syncSelection;
+        if(json.syncSelection !== undefined && LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0){
+            throw context+ " Invalid sync-selection: must be one of "+LayerConfig.syncSelectionAllowed.map(v => `'${v}'`).join(", ")+" but got '"+json.syncSelection+"'"
+        }
+        this.syncSelection = json.syncSelection ?? "no";
         const osmTags = TagUtils.Tag(
             json.source.osmTags,
             context + "source.osmTags"
@@ -126,12 +131,16 @@ export default class LayerConfig extends WithContextLoader {
                 idKey: json.source["idKey"]
 
             },
+            Constants.priviliged_layers.indexOf(this.id) > 0,
             json.id
         );
 
 
         this.allowSplit = json.allowSplit ?? false;
         this.name = Translations.T(json.name, translationContext + ".name");
+        if(json.units!==undefined && !Array.isArray(json.units)){
+            throw "At "+context+".units: the 'units'-section should be a list; you probably have an object there"
+        }
         this.units = (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))
 
         if (json.description !== undefined) {
@@ -156,7 +165,11 @@ export default class LayerConfig extends WithContextLoader {
             this.calculatedTags = [];
             for (const kv of json.calculatedTags) {
                 const index = kv.indexOf("=");
-                let key = kv.substring(0, index);
+                let key = kv.substring(0, index).trim();
+                const r = "[a-z_][a-z0-9:]*"
+                if(key.match(r) === null){
+                    throw "At "+context+" invalid key for calculated tag: "+key+"; it should match "+r
+                }
                 const isStrict = key.endsWith(':')
                 if (isStrict) {
                     key = key.substr(0, key.length - 1)
@@ -166,7 +179,7 @@ export default class LayerConfig extends WithContextLoader {
                 try {
                     new Function("feat", "return " + code + ";");
                 } catch (e) {
-                    throw `Invalid function definition: code ${code} is invalid:${e} (at ${context})`
+                    throw `Invalid function definition: the custom javascript is invalid:${e} (at ${context}). The offending javascript code is:\n    ${code}`
                 }
 
 
@@ -329,12 +342,15 @@ export default class LayerConfig extends WithContextLoader {
         return TagUtils.changeAsProperties(this.source.osmTags.asChange({id: "node/-1"}))
     }
 
-    public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy: Map<string, string[]>, dependencies: {
+    public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy?: Map<string, string[]>, dependencies: {
         context?: string;
         reason: string;
         neededLayer: string;
-    }[], addedByDefault = false, canBeIncluded = true): BaseUIElement {
+    }[] = []
+                                 , addedByDefault = false, canBeIncluded = true): BaseUIElement {
         const extraProps = []
+        
+        extraProps.push("This layer is shown at zoomlevel **"+this.minzoom+"** and higher")
 
         if (canBeIncluded) {
             if (addedByDefault) {
@@ -405,7 +421,8 @@ export default class LayerConfig extends WithContextLoader {
         let quickOverview: BaseUIElement = undefined;
         if (tableRows.length > 0) {
             quickOverview = new Combine([
-                "**Warning** This quick overview is incomplete",
+                new FixedUiElement("Warning: ").SetClass("bold"),
+                "this quick overview is incomplete",
                 new Table(["attribute", "type", "values which are supported by this layer"], tableRows)
             ]).SetClass("flex-col flex")
         }
@@ -438,9 +455,6 @@ export default class LayerConfig extends WithContextLoader {
             ]).SetClass("flex flex-col"),
             new List(extraProps),
             ...usingLayer,
-
-            new Link("Go to the source code", 
-                `https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/${this.id}/${this.id}.json`),
 
             new Title("Basic tags for this layer", 2),
             "Elements must have the all of following tags to be shown on this layer:",

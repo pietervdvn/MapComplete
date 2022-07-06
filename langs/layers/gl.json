@@ -121,7 +121,7 @@
             "Cargo bike spaces?": {
                 "mappings": {
                     "0": {
-                        "then": "Este aparcadoiro ten espazo para bicicletas de carga."
+                        "then": "Este aparcadoiro ten espazo para bicicletas de carga"
                     },
                     "1": {
                         "then": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga."

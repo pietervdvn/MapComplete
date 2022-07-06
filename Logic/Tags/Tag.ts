@@ -1,11 +1,10 @@
 import {Utils} from "../../Utils";
-import {RegexTag} from "./RegexTag";
 import {TagsFilter} from "./TagsFilter";
+
 
 export class Tag extends TagsFilter {
     public key: string
     public value: string
-
     constructor(key: string, value: string) {
         super()
         this.key = key
@@ -23,6 +22,8 @@ export class Tag extends TagsFilter {
 
 
     /**
+     * imort 
+     * 
      * const tag = new Tag("key","value")
      * tag.matchesProperties({"key": "value"}) // =>  true
      * tag.matchesProperties({"key": "z"}) // =>  false
@@ -68,7 +69,7 @@ export class Tag extends TagsFilter {
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25);
         }
-        if (v === "" || v === undefined) {
+        if (v === "" || v === undefined && currentProperties !== undefined) {
             // This tag will be removed if in the properties, so we indicate this with special rendering
             if (currentProperties !== undefined && (currentProperties[this.key] ?? "") === "") {
                 // This tag is not present in the current properties, so this tag doesn't change anything
@@ -88,14 +89,26 @@ export class Tag extends TagsFilter {
         return true;
     }
 
-    isEquivalent(other: TagsFilter): boolean {
-        if (other instanceof Tag) {
-            return this.key === other.key && this.value === other.value;
+    /**
+     * 
+     * import {RegexTag} from "./RegexTag";
+     * 
+     * // should handle advanced regexes
+     * new Tag("key", "aaa").shadows(new RegexTag("key", /a+/)) // => true
+     * new Tag("key","value").shadows(new RegexTag("key", /^..*$/, true)) // => false
+     * new Tag("key","value").shadows(new Tag("key","value")) // => true
+     * new Tag("key","some_other_value").shadows(new RegexTag("key", "value", true)) // => true
+     * new Tag("key","value").shadows(new RegexTag("key", "value", true)) // => false
+     * new Tag("key","value").shadows(new RegexTag("otherkey", "value", true)) // => false
+     * new Tag("key","value").shadows(new RegexTag("otherkey", "value", false)) // => false
+     */
+    shadows(other: TagsFilter): boolean {
+        if(other["key"] !== undefined){
+            if(other["key"] !== this.key){
+                return false
+            }
         }
-        if (other instanceof RegexTag) {
-            other.isEquivalent(this);
-        }
-        return false;
+        return other.matchesProperties({[this.key]: this.value});
     }
 
     usedKeys(): string[] {
@@ -113,15 +126,15 @@ export class Tag extends TagsFilter {
         return [{k: this.key, v: this.value}];
     }
 
-    AsJson() {
-        return this.asHumanString(false, false)
-    }
-    
     optimize(): TagsFilter | boolean {
         return this;
     }
     
     isNegative(): boolean {
         return false;
+    }
+    
+    visit(f: (TagsFilter) => void) {
+        f(this)
     }
 }

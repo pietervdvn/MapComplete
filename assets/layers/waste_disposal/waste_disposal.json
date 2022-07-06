@@ -2,11 +2,16 @@
   "id": "waste_disposal",
   "name": {
     "en": "Waste Disposal Bins",
-    "nl": "Afvalcontainers voor huishoudelijk afval"
+    "nl": "Afvalcontainers voor huishoudelijk afval",
+    "de": "Mülltonnen",
+    "it": "Contenitori per la raccolta differenziata",
+    "id": "Tempat Pembuangan Limbah"
   },
   "description": {
     "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
-    "nl": "Een grote afvalcontainer voor (huishoudelijk) afval"
+    "nl": "Een grote afvalcontainer voor (huishoudelijk) afval",
+    "de": "Entsorgungsbehälter, mittlerer bis großer Behälter zur Entsorgung von (Haushalts-)Abfällen",
+    "it": "Cestino per lo smaltimento dei rifiuti, contenitore di dimensioni medio grandi per lo smaltimento dei rifiuti (domestici)"
   },
   "source": {
     "osmTags": "amenity=waste_disposal"
@@ -16,7 +21,10 @@
   "title": {
     "render": {
       "en": "Waste Disposal",
-      "nl": "Afvalbak"
+      "nl": "Afvalbak",
+      "de": "Mülltonne",
+      "it": "Smaltimento rifiuti",
+      "id": "Pembuangan Limbah"
     }
   },
   "mapRendering": [
@@ -32,14 +40,20 @@
     {
       "title": {
         "en": "a waste disposal bin",
-        "nl": "Afvalcontainer"
+        "nl": "Een afvalcontainer",
+        "de": "eine Mülltonne",
+        "it": "un raccoglitore per lo smaltimento rifiuti",
+        "id": "tempat pembuangan sampahh"
       },
       "tags": [
         "amenity=waste_disposal"
       ],
       "description": {
         "en": "Medium to large bin for disposal of (household) waste",
-        "nl": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval"
+        "nl": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval",
+        "de": "Mittlere bis große Mülltonne für die Entsorgung von (Haushalts-)Abfällen",
+        "it": "Cestino di dimensioni medio-grandi per lo smaltimento dei rifiuti (domestici)",
+        "id": "Tempat sampah sedang hingga besar untuk pembuangan limbah (rumah tangga)"
       }
     }
   ],
@@ -48,11 +62,17 @@
       "id": "access",
       "render": {
         "en": "Access: {access}",
-        "nl": "Toegankelijk voor {access}"
+        "nl": "Toegankelijk voor {access}",
+        "de": "Zugang: {access}",
+        "it": "Accesso: {access}",
+        "id": "Akses: {access}"
       },
       "question": {
         "en": "Who can use this waste disposal bin?",
-        "nl": "Wie mag deze afvalcontainer gebruiken?"
+        "nl": "Wie mag deze afvalcontainer gebruiken?",
+        "de": "Wer darf die Mülltonne nutzen?",
+        "it": "Chi può utilizzare questo cestino per lo smaltimento dei rifiuti?",
+        "id": "Siapa yang bisa menggunakan tempat sampah ini?"
       },
       "freeform": {
         "key": "access",
@@ -63,21 +83,30 @@
           "if": "access=yes",
           "then": {
             "en": "This bin can be used by anyone",
-            "nl": "Iedereen mag deze afvalcontainer gebruiken"
+            "nl": "Iedereen mag deze afvalcontainer gebruiken",
+            "de": "Jeder darf die Mülltonne nutzen",
+            "it": "Questo cestino può essere usato da chiunque",
+            "id": "Tempat sampah ini bisa digunakan oleh siapa saja"
           }
         },
         {
           "if": "access=no",
           "then": {
             "en": "This bin is private",
-            "nl": "Deze afvalcontainer is enkel voor privaat gebruik"
+            "nl": "Deze afvalcontainer is enkel voor privaat gebruik",
+            "de": "Niemand darf die Mülltonne nutzen (privat)",
+            "it": "Questo cestino è privato",
+            "id": "Tempat sampah ini bersifat pribadi"
           }
         },
         {
           "if": "access=residents",
           "then": {
             "en": "This bin is only for residents",
-            "nl": "Enkel bewoners mogen deze afvalcontainer gebruiken"
+            "nl": "Enkel bewoners mogen deze afvalcontainer gebruiken",
+            "de": "Nur Anwohner dürfen die Mülltonne nutzen",
+            "it": "Questo cestino è solo per residenti",
+            "id": "Tempat sampah ini hanya untuk penghuni"
           }
         }
       ]
@@ -86,28 +115,40 @@
       "id": "disposal-location",
       "question": {
         "en": "Where is this container located?",
-        "nl": "Waar bevindt deze container zich?"
+        "nl": "Waar bevindt deze container zich?",
+        "de": "Wo befindet sich die Mülltonne?",
+        "it": "Dove si trova questo contenitore?",
+        "id": "Di manakah lokasi kontainer ini?"
       },
       "mappings": [
         {
           "if": "location=underground",
           "then": {
             "en": "This is an underground container",
-            "nl": "Dit is een ondergrondse container"
+            "nl": "Dit is een ondergrondse container",
+            "de": "Die Mülltonne befindet sich unter der Erde",
+            "it": "Questo è un contenitore sotterraneo",
+            "id": "Ini adalah kontainer bawah tanah"
           }
         },
         {
           "if": "location=indoor",
           "then": {
             "en": "This container is located indoors",
-            "nl": "Deze container bevindt zich binnen"
+            "nl": "Deze container bevindt zich binnen",
+            "de": "Die Mülltonne befindet sich in einem Gebäude",
+            "it": "Questo contenitore è al chiuso",
+            "id": "Kontainer ini terletak di dalam ruangan"
           }
         },
         {
           "if": "location=",
           "then": {
             "en": "This container is located outdoors",
-            "nl": "Deze container is buiten"
+            "nl": "Deze container is buiten",
+            "de": "Die Mülltonne befindet sich im Freien",
+            "it": "Questo contenitore è all'aperto",
+            "id": "Kontainer ini terletak di luar ruangan"
           }
         }
       ]
@@ -120,7 +161,10 @@
         {
           "question": {
             "en": "Only public access",
-            "nl": "Enkel publiek toegankelijke afvalcontainers"
+            "nl": "Enkel publiek toegankelijke afvalcontainers",
+            "de": "Nur öffentliche Mülltonnen",
+            "it": "Solo accesso pubblico",
+            "id": "Hanya akses publik"
           },
           "osmTags": "access=yes"
         }

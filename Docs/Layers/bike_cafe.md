@@ -7,32 +7,14 @@
 
 <img src='https://mapcomplete.osm.be/pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg' height="100px"> 
 
-A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, ...
-
-
-
-
-## Table of contents
-
-1. [bike_cafe](#bike_cafe)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bike_cafe-name](#bike_cafe-name)
-    + [bike_cafe-bike-pump](#bike_cafe-bike-pump)
-    + [bike_cafe-repair-tools](#bike_cafe-repair-tools)
-    + [bike_cafe-repair-service](#bike_cafe-repair-service)
-    + [bike_cafe-website](#bike_cafe-website)
-    + [bike_cafe-phone](#bike_cafe-phone)
-    + [bike_cafe-email](#bike_cafe-email)
-    + [bike_cafe-opening_hours](#bike_cafe-opening_hours)
+A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …
 
 
 
 
 
 
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -46,8 +28,6 @@ A bike café is a café geared towards cyclists, for example with services such 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_cafe/bike_cafe.json)
 
 
 
@@ -73,7 +53,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -95,7 +77,7 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -105,10 +87,13 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is the name of this bike cafe?**
+The question is  What is the name of this bike cafe?
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-This is rendered with `This bike cafe is called {name}`
+
+This is rendered with  This bike cafe is called {name}
+
+
 
 
 
@@ -116,14 +101,14 @@ This is rendered with `This bike cafe is called {name}`
 
 
 
-The question is **Does this bike cafe offer a bike pump for use by anyone?**
+The question is  Does this bike cafe offer a bike pump for use by anyone?
 
 
 
 
 
-  - **This bike cafe offers a bike pump for anyone** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
-  - **This bike cafe doesn't offer a bike pump for anyone** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
+  - This bike cafe offers a bike pump for anyone corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
+  - This bike cafe doesn't offer a bike pump for anyone corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
 
 
 
@@ -132,14 +117,14 @@ The question is **Does this bike cafe offer a bike pump for use by anyone?**
 
 
 
-The question is **Are there tools here to repair your own bike?**
+The question is  Are there tools here to repair your own bike?
 
 
 
 
 
-  - **This bike cafe offers tools for DIY repair** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
-  - **This bike cafe doesn't offer tools for DIY repair** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
+  - This bike cafe offers tools for DIY repair corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
+  - This bike cafe doesn't offer tools for DIY repair corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
 
 
 
@@ -148,14 +133,14 @@ The question is **Are there tools here to repair your own bike?**
 
 
 
-The question is **Does this bike cafe repair bikes?**
+The question is  Does this bike cafe repair bikes?
 
 
 
 
 
-  - **This bike cafe repairs bikes** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
-  - **This bike cafe doesn't repair bikes** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>
+  - This bike cafe repairs bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
+  - This bike cafe doesn't repair bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>
 
 
 
@@ -164,10 +149,13 @@ The question is **Does this bike cafe repair bikes?**
 
 
 
-The question is **What is the website of {name}?**
+The question is  What is the website of {name}?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
+
+This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+
+
 
 
 
@@ -175,10 +163,13 @@ This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
-The question is **What is the phone number of {name}?**
+The question is  What is the phone number of {name}?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+
+This is rendered with  <a href='tel:{phone}'>{phone}</a>
+
+
 
 
 
@@ -186,10 +177,13 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-The question is **What is the email address of {name}?**
+The question is  What is the email address of {name}?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
+
+This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+
+
 
 
 
@@ -197,9 +191,12 @@ This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
-The question is **When it this bike café opened?**
+The question is  When it this bike café opened?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-This is rendered with `{opening_hours_table(opening_hours)}` 
+
+This is rendered with  {opening_hours_table(opening_hours)}
+
+ 
 
 This document is autogenerated from [assets/layers/bike_cafe/bike_cafe.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_cafe/bike_cafe.json)

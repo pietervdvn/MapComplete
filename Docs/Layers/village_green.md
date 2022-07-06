@@ -12,35 +12,10 @@ A layer showing village-green (which are communal green areas, but not quite par
 
 
 
-## Table of contents
-
-1. [village_green](#village_green)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [village_green-explanation](#village_green-explanation)
-    + [village_green-reviews](#village_green-reviews)
 
 
+  - This layer is shown at zoomlevel **0** and higher
 
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/village_green/village_green.json)
 
 
 
@@ -71,7 +46,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -81,7 +56,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -91,7 +66,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

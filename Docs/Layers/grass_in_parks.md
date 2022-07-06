@@ -7,40 +7,15 @@
 
 <img src='https://mapcomplete.osm.be/./assets/themes/playgrounds/playground.svg' height="100px"> 
 
-Searches for all accessible grass patches within public parks - these are 'groenzones'"
-
-
-
-
-## Table of contents
-
-1. [grass_in_parks](#grass_in_parks)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [explanation](#explanation)
-    + [grass-in-parks-reviews](#grass-in-parks-reviews)
+Searches for all accessible grass patches within public parks - these are 'groenzones'
 
 
 
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
 
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/grass_in_parks/grass_in_parks.json)
 
 
 
@@ -71,7 +46,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -81,7 +56,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -91,7 +66,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

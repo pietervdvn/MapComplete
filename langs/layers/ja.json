@@ -121,6 +121,219 @@
             "render": "アートワーク"
         }
     },
+    "climbing": {
+        "tagRenderings": {
+            "average_length": {
+                "question": "ルートの(平均)長さはメートル単位でいくつですか?",
+                "render": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "ボルダリングはここで可能です"
+                    },
+                    "1": {
+                        "then": "ここではボルダリングはできません"
+                    },
+                    "2": {
+                        "then": "ボルダリングは可能ですが、少しのルートしかありません"
+                    },
+                    "3": {
+                        "then": "{climbing:boulder} ボルダールートがある"
+                    }
+                },
+                "question": "ここでボルダリングはできますか?"
+            },
+            "max_difficulty": {
+                "question": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?",
+                "render": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です"
+            },
+            "min_difficulty": {
+                "question": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
+                "render": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です"
+            },
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "ここでスポーツクライミングができます"
+                    },
+                    "1": {
+                        "then": "ここではスポーツクライミングはできません"
+                    },
+                    "2": {
+                        "then": "スポーツクライミングの {climbing:sport} ルートがある"
+                    }
+                },
+                "question": "ここでは固定アンカー式のスポーツクライミングはできますか?"
+            },
+            "toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "ここでToprope登坂ができます"
+                    },
+                    "1": {
+                        "then": "ここではToprope登坂はできません"
+                    },
+                    "2": {
+                        "then": "{climbing:toprope} 登坂ルートがある"
+                    }
+                },
+                "question": "ここでtoprope登坂はできますか?"
+            },
+            "trad_climbing": {
+                "mappings": {
+                    "0": {
+                        "then": "ここでは伝統的な登山が可能です"
+                    },
+                    "1": {
+                        "then": "伝統的な登山はここではできない"
+                    },
+                    "2": {
+                        "then": "{climbing:traditional} の伝統的な登山ルートがある"
+                    }
+                },
+                "question": "伝統的な登山はここで可能ですか(例えば、チョックのような独自のギアを使用して)？"
+            },
+            "website": {
+                "question": "もっと情報のある(非公式の)ウェブサイトはありますか(例えば、topos)?"
+            }
+        }
+    },
+    "climbing_area": {
+        "name": "登坂教室",
+        "presets": {
+            "0": {
+                "description": "登坂教室",
+                "title": "登坂教室"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "この登坂教室には名前がついていない"
+                    }
+                },
+                "question": "この登坂教室の名前は何ですか?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "render": "登坂教室"
+        }
+    },
+    "climbing_club": {
+        "description": "クライミングクラブや団体",
+        "name": "クライミングクラブ",
+        "presets": {
+            "0": {
+                "description": "クライミングクラブ",
+                "title": "クライミングクラブ"
+            },
+            "1": {
+                "description": "登山に関わるNGO",
+                "title": "クライミングNGO"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "question": "この登山クラブやNGOの名前は何ですか?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "クライミングNGO"
+                }
+            },
+            "render": "クライミングクラブ"
+        }
+    },
+    "climbing_gym": {
+        "description": "クライミングジム",
+        "name": "クライミングジム",
+        "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "スピードクライミングウォールがある"
+                    },
+                    "1": {
+                        "then": "スピードクライミングウォールがない"
+                    },
+                    "2": {
+                        "then": "{climbing:speed} のスピードクライミングウォールがある"
+                    }
+                },
+                "question": "スピードクライミングウォールはありますか?"
+            },
+            "name": {
+                "question": "このクライミングジムは何という名前ですか?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "クライミングジム<strong>{name}</strong>"
+                }
+            },
+            "render": "クライミングジム"
+        }
+    },
+    "climbing_opportunity": {
+        "name": "登坂教室？",
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            },
+            "climbing-possible": {
+                "mappings": {
+                    "0": {
+                        "then": "ここでは登ることができる"
+                    },
+                    "1": {
+                        "then": "ここでは登ることができない"
+                    },
+                    "2": {
+                        "then": "ここでは登ることができない"
+                    }
+                },
+                "question": "ここで登坂はできますか?"
+            }
+        },
+        "title": {
+            "render": "登坂教室？"
+        }
+    },
+    "climbing_route": {
+        "name": "登坂ルート",
+        "tagRenderings": {
+            "Difficulty": {
+                "render": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です"
+            },
+            "Length": {
+                "render": "このルート長は、 {canonical(climbing:length)} メーターです"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "この登坂ルートには名前がありません"
+                    }
+                },
+                "question": "この登坂ルートの名前は何ですか?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "登坂ルート<strong>{name}</strong>"
+                }
+            },
+            "render": "登坂ルート"
+        }
+    },
     "extinguisher": {
         "description": "消火栓を表示するマップレイヤ。",
         "name": "消火器の地図です。",
@@ -306,51 +519,8 @@
             }
         },
         "tagRenderings": {
-            "shops-email": {
-                "question": "このお店のメールアドレスは何ですか?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
             "shops-name": {
                 "question": "このお店の名前は何ですか?"
-            },
-            "shops-opening_hours": {
-                "question": "この店の営業時間は何時から何時までですか?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "question": "電話番号は何番ですか?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "0": {
-                        "then": "コンビニエンスストア"
-                    },
-                    "1": {
-                        "then": "スーパーマーケット"
-                    },
-                    "2": {
-                        "then": "衣料品店"
-                    },
-                    "3": {
-                        "then": "理容師"
-                    },
-                    "4": {
-                        "then": "ベーカリー"
-                    },
-                    "5": {
-                        "then": "自動車修理(ガレージ)"
-                    },
-                    "6": {
-                        "then": "自動車ディーラー"
-                    }
-                },
-                "question": "このお店では何を売っていますか?",
-                "render": "こちらのお店では{shop}を販売しております"
-            },
-            "shops-website": {
-                "question": "このお店のホームページは何ですか?",
-                "render": "<a href='{website}'>{website}</a>"
             }
         },
         "title": {

@@ -791,6 +791,280 @@
             "render": "Oggetto relativo alle bici"
         }
     },
+    "climbing": {
+        "tagRenderings": {
+            "average_length": {
+                "question": "Quale è la lunghezza (media) delle vie in metri?",
+                "render": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "L’arrampicata su massi è possibile qua"
+                    },
+                    "1": {
+                        "then": "L’arrampicata su massi non è possibile qua"
+                    },
+                    "2": {
+                        "then": "L’arrampicata su massi è possibile anche se su poche vie"
+                    },
+                    "3": {
+                        "then": "Sono presenti {climbing:boulder} vie di arrampicata su massi"
+                    }
+                },
+                "question": "È possibile praticare ‘bouldering’ qua?"
+            },
+            "max_difficulty": {
+                "question": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
+                "render": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga"
+            },
+            "min_difficulty": {
+                "question": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
+                "render": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga"
+            },
+            "sportclimbing": {
+                "mappings": {
+                    "0": {
+                        "then": "L’arrampicata sportiva è possibile qua"
+                    },
+                    "1": {
+                        "then": "L’arrampicata sportiva non è possibile qua"
+                    },
+                    "2": {
+                        "then": "Sono presenti {climbing:sport} vie di arrampicata sportiva"
+                    }
+                },
+                "question": "È possibile arrampicarsi qua con ancoraggi fissi?"
+            },
+            "toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "È possibile arrampicarsi con moulinette qua"
+                    },
+                    "1": {
+                        "then": "Non è possibile arrampicarsi con moulinette qua"
+                    },
+                    "2": {
+                        "then": "Sono presenti {climbing:toprope} vie con moulinette"
+                    }
+                },
+                "question": "È possibile arrampicarsi con la corda dall’alto qua?"
+            },
+            "trad_climbing": {
+                "mappings": {
+                    "0": {
+                        "then": "L’arrampicata tradizionale è possibile qua"
+                    },
+                    "1": {
+                        "then": "L’arrampicata tradizionale non è possibile qua"
+                    },
+                    "2": {
+                        "then": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale"
+                    }
+                },
+                "question": "È possibile arrampicarsi in maniera tradizionale qua (usando attrezzi propri, ad es. dadi)?"
+            },
+            "website": {
+                "question": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?"
+            }
+        }
+    },
+    "climbing_area": {
+        "name": "Opportunità di arrampicata",
+        "presets": {
+            "0": {
+                "description": "Un’opportunità di arrampicata",
+                "title": "una opportunità di arrampicata"
+            }
+        },
+        "tagRenderings": {
+            "Contained routes hist": {
+                "render": "<h3>Riassunto delle difficoltà</h3>{histogram(_difficulty_hist)}"
+            },
+            "Contained routes length hist": {
+                "render": "<h3>Riassunto della lunghezza</h3>{histogram(_length_hist)}"
+            },
+            "Contained_climbing_routes": {
+                "render": "<h3>Contiene {_contained_climbing_routes_count} vie</h3> <ul>{_contained_climbing_routes}</ul>"
+            },
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Calcare"
+                    }
+                },
+                "question": "Qual è il tipo di roccia qua?",
+                "render": "Il tipo di roccia è {rock}"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Un masso per arrampicata (una singola roccia o falesia con una o poche vie di arrampicata che possono essere scalate in sicurezza senza una corda)"
+                    },
+                    "1": {
+                        "then": "Un muro da arrampicata (un singolo masso o falesia con almeno qualche via per arrampicata)"
+                    }
+                }
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Questa opportunità di arrampicata non ha un nome"
+                    }
+                },
+                "question": "Qual è il nome di questa opportunità di arrampicata?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Muro da arrampicata <b>{name}</b>"
+                },
+                "1": {
+                    "then": "Area di arrampicata <b>{name}</b>"
+                },
+                "2": {
+                    "then": "Sito di arrampicata"
+                },
+                "3": {
+                    "then": "Opportunità di arrampicata <b>{name}</b>"
+                }
+            },
+            "render": "Opportunità di arrampicata"
+        }
+    },
+    "climbing_club": {
+        "description": "Un club o associazione di arrampacata",
+        "name": "Club di arrampicata",
+        "presets": {
+            "0": {
+                "description": "Un club di arrampicata",
+                "title": "una club di arrampicata"
+            },
+            "1": {
+                "description": "Un’associazione che ha a che fare con l’arrampicata",
+                "title": "una associazione di arrampicata"
+            }
+        },
+        "tagRenderings": {
+            "climbing_club-name": {
+                "question": "Qual è il nome di questo club o associazione di arrampicata?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Associazione di arrampicata"
+                }
+            },
+            "render": "Club di arrampicata"
+        }
+    },
+    "climbing_gym": {
+        "description": "Una palestra di arrampicata",
+        "name": "Palestre di arrampicata",
+        "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "È presente una parete per l’arrampicata di velocità"
+                    },
+                    "1": {
+                        "then": "Non è presente una parete per l’arrampicata di velocità"
+                    },
+                    "2": {
+                        "then": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità"
+                    }
+                },
+                "question": "È presente una prete per l’arrampicata di velocità?"
+            },
+            "name": {
+                "question": "Qual è il nome di questa palestra di arrampicata?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Palestra di arrampicata <strong>{name}</strong>"
+                }
+            },
+            "render": "Palestra di arrampicata"
+        }
+    },
+    "climbing_opportunity": {
+        "name": "Opportunità di arrampicata?",
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            },
+            "climbing-possible": {
+                "mappings": {
+                    "0": {
+                        "then": "È possibile arrampicarsi qua"
+                    },
+                    "1": {
+                        "then": "Non è possibile arrampicarsi qua"
+                    },
+                    "2": {
+                        "then": "Non è possibile arrampicarsi qua"
+                    }
+                },
+                "question": "È possibile arrampicarsi qua?"
+            }
+        },
+        "title": {
+            "render": "Opportunità di arrampicata?"
+        }
+    },
+    "climbing_route": {
+        "name": "Vie di arrampicata",
+        "presets": {
+            "0": {
+                "title": "una via di arrampicata"
+            }
+        },
+        "tagRenderings": {
+            "Difficulty": {
+                "question": "Qual è la difficoltà di questa via di arrampicata nel sistema francese/belga?",
+                "render": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga"
+            },
+            "Length": {
+                "question": "Quanto è lunga questa via di arrampicata (in metri)?",
+                "render": "Questo percorso è lungo {canonical(climbing:length)}"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "Questa via di arrampicata non ha un nome"
+                    }
+                },
+                "question": "Come si chiama questa via di arrampicata?",
+                "render": "<strong>{name}</strong>"
+            },
+            "Rock type via embedded feature": {
+                "render": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>"
+            },
+            "bolts": {
+                "mappings": {
+                    "0": {
+                        "then": "In questo percorso non sono presenti bulloni"
+                    }
+                },
+                "question": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
+                "render": "Questo percorso ha {climbing:bolts} bulloni"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Via di arrampicata <strong>{name}</strong>"
+                }
+            },
+            "render": "Via di arrampicata"
+        }
+    },
     "defibrillator": {
         "name": "Defibrillatori",
         "presets": {
@@ -1397,9 +1671,6 @@
                     },
                     "1": {
                         "then": "Principalmente libri per persone in età adulta"
-                    },
-                    "2": {
-                        "then": "Sia libri per l'infanzia, sia per l'età adulta"
                     }
                 },
                 "question": "Che tipo di libri si possono trovare in questa microbiblioteca?"
@@ -1483,17 +1754,6 @@
                 }
             },
             "render": "Microbiblioteca"
-        }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Autofficina"
-                    }
-                }
-            }
         }
     },
     "slow_roads": {
@@ -1676,7 +1936,7 @@
                         "then": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ..."
                     }
                 },
-                "question": "Che cosa sorveglia questa videocamera"
+                "question": "Che cosa sorveglia questa videocamera?"
             },
             "Surveillance:zone": {
                 "mappings": {
@@ -1712,6 +1972,12 @@
                     },
                     "2": {
                         "then": "Questa telecamera è posizionata sul soffitto"
+                    },
+                    "3": {
+                        "then": "Questa telecamera è posizionata su un lampione"
+                    },
+                    "4": {
+                        "then": "Questa telecamera è posizionata su un albero"
                     }
                 },
                 "question": "Com'è posizionata questa telecamera?",
@@ -1991,6 +2257,69 @@
         },
         "title": {
             "render": "Punto panoramico"
+        }
+    },
+    "windturbine": {
+        "name": "pala eolica",
+        "presets": {
+            "0": {
+                "title": "una pala eolica"
+            }
+        },
+        "tagRenderings": {
+            "turbine-diameter": {
+                "question": "Qual è il diametro (in metri) del rotore di questa pala eolica?",
+                "render": "Il diametro del rotore di questa pala eolica è di {rotor:diameter} metri."
+            },
+            "turbine-height": {
+                "question": "Qual è l’altezza (in metri e raggio del rotore incluso) di questa pala eolica?",
+                "render": "L’altezza totale (raggio del rotore incluso) di questa pala eolica è di {height} metri."
+            },
+            "turbine-operator": {
+                "question": "Chi gestisce questa pala eolica?",
+                "render": "Questa pala eolica è gestita da {operator}."
+            },
+            "turbine-output": {
+                "question": "Quant’è la potenza generata da questa pala eolica? (ad es. 2.3 MW)",
+                "render": "La potenza generata da questa pala eolica è {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "Quando è entrata in funzione questa pala eolica?",
+                "render": "Questa pala eolica è entrata in funzione in data {start_date}."
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "pala eolica"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawatt"
+                    },
+                    "1": {
+                        "human": " kilowatt"
+                    },
+                    "2": {
+                        "human": " watt"
+                    },
+                    "3": {
+                        "human": " gigawatt"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " metri"
+                    }
+                }
+            }
         }
     }
 }

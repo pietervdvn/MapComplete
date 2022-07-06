@@ -71,7 +71,7 @@ export default {
             "type": "object",
             "properties": {
                 "canonicalDenomination": {
-                    "description": "The canonical value which will be added to the text.\ne.g. \"m\" for meters\nIf the user inputs '42', the canonical value will be added and it'll become '42m'",
+                    "description": "The canonical value which will be added to the value in OSM.\ne.g. \"m\" for meters\nIf the user inputs '42', the canonical value will be added and it'll become '42m'.\n\nImportant: often, _no_ canonical values are expected, e.g. in the case of 'maxspeed' where 'km/h' is the default.\nIn this case, an empty string should be used",
                     "type": "string"
                 },
                 "canonicalDenominationSingular": {
@@ -105,7 +105,7 @@ export default {
             ]
         },
         "TagRenderingConfigJson": {
-            "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRenerdering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
+            "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
             "type": "object",
             "properties": {
                 "id": {
@@ -212,7 +212,7 @@ export default {
             "type": "object",
             "properties": {
                 "location": {
-                    "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint",
+                    "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint.\n'projected_centerpoint' will show an item on the line itself, near the middle of the line. (LineStrings only)",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -353,7 +353,7 @@ export default {
                     ]
                 },
                 "fill": {
-                    "description": "Wehter or not to fill polygons",
+                    "description": "Whether or not to fill polygons",
                     "anyOf": [
                         {
                             "$ref": "#/definitions/TagRenderingConfigJson"
@@ -390,6 +390,60 @@ export default {
                     ]
                 }
             }
+        },
+        "default<default|default|default[]|default[]>": {
+            "description": "Rewrites and multiplies the given renderings of type T.\n\nFor example:\n\n\n```\n{\n    rewrite: {\n        sourceString: [\"key\", \"a|b|c\"],\n        into: [\n            [\"X\", 0]\n            [\"Y\", 1],\n            [\"Z\", 2]\n        ],\n        renderings: {\n            \"key\":\"a|b|c\"\n        }\n    }\n}\n```\nwill result in _three_ copies (as the values to rewrite into have three values, namely:\n\n[\n  {\n  // The first pair: key --> X, a|b|c --> 0\n      \"X\": 0\n  },\n  {\n      \"Y\": 1\n  },\n  {\n      \"Z\": 2\n  }\n\n]",
+            "type": "object",
+            "properties": {
+                "rewrite": {
+                    "type": "object",
+                    "properties": {
+                        "sourceString": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "into": {
+                            "type": "array",
+                            "items": {
+                                "type": "array",
+                                "items": {}
+                            }
+                        }
+                    },
+                    "required": [
+                        "into",
+                        "sourceString"
+                    ]
+                },
+                "renderings": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/default_4"
+                        },
+                        {
+                            "$ref": "#/definitions/default_5"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/default_5"
+                            }
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/default_4"
+                            }
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "renderings",
+                "rewrite"
+            ]
         },
         "QuestionableTagRenderingConfigJson": {
             "description": "A QuestionableTagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nIf the desired tags are missing and a question is defined, a question will be shown instead.",
@@ -556,6 +610,7 @@ export default {
             }
         },
         "default<(string|QuestionableTagRenderingConfigJson|{builtin:string;override:any;})[]>": {
+            "description": "Rewrites and multiplies the given renderings of type T.\n\nFor example:\n\n\n```\n{\n    rewrite: {\n        sourceString: [\"key\", \"a|b|c\"],\n        into: [\n            [\"X\", 0]\n            [\"Y\", 1],\n            [\"Z\", 2]\n        ],\n        renderings: {\n            \"key\":\"a|b|c\"\n        }\n    }\n}\n```\nwill result in _three_ copies (as the values to rewrite into have three values, namely:\n\n[\n  {\n  // The first pair: key --> X, a|b|c --> 0\n      \"X\": 0\n  },\n  {\n      \"Y\": 1\n  },\n  {\n      \"Z\": 2\n  }\n\n]",
             "type": "object",
             "properties": {
                 "rewrite": {
@@ -645,6 +700,7 @@ export default {
                                     "type": "object",
                                     "properties": {
                                         "name": {
+                                            "description": "If name is `search`, use  \"_first_comment~.*{search}.*\" as osmTags",
                                             "type": "string"
                                         },
                                         "type": {

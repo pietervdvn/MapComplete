@@ -2,14 +2,22 @@ import * as fs from "fs";
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
-import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
-import TranslatorsPanel from "../UI/BigComponents/TranslatorsPanel";
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"];
 
 class TranslationPart {
 
     contents: Map<string, TranslationPart | string> = new Map<string, TranslationPart | string>()
+
+    static fromDirectory(path): TranslationPart {
+        const files = ScriptUtils.readDirRecSync(path, 1).filter(file => file.endsWith(".json"))
+        const rootTranslation = new TranslationPart()
+        for (const file of files) {
+            const content = JSON.parse(readFileSync(file, "UTF8"))
+            rootTranslation.addTranslation(file.substr(0, file.length - ".json".length), content)
+        }
+        return rootTranslation
+    }
 
     /**
      * Add a leaf object
@@ -34,6 +42,10 @@ class TranslationPart {
     }
 
     addTranslationObject(translations: any, context?: string) {
+        if (translations["#"] === "no-translations") {
+            console.log("Ignoring object at ", context, "which has '#':'no-translations'")
+            return;
+        }
         for (const translationsKey in translations) {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue;
@@ -57,11 +69,31 @@ class TranslationPart {
             return;
         }
 
+        let dontTranslateKeys: string[] = undefined
+        {
+            const noTranslate = <string | string[]>object["#dont-translate"]
+
+            if (noTranslate === "*") {
+                console.log("Ignoring translations for " + context)
+                return
+            } else if (typeof noTranslate === "string") {
+                dontTranslateKeys = [noTranslate]
+            } else {
+                dontTranslateKeys = noTranslate
+            }
+            if (noTranslate !== undefined) {
+                console.log("Ignoring some translations for " + context + ": " + dontTranslateKeys.join(", "))
+            }
+        }
+
         for (let key in object) {
             if (!object.hasOwnProperty(key)) {
                 continue;
             }
 
+            if (dontTranslateKeys?.indexOf(key) >= 0) {
+                continue
+            }
             const v = object[key]
 
             if (v == null) {
@@ -143,93 +175,115 @@ class TranslationPart {
         return `{${parts.join(",")}}`;
     }
 
+    validateStrict(ctx?: string): void {
+        const errors = this.validate()
+        for (const err of errors) {
+            console.error("ERROR in " + (ctx ?? "") + " " + err.path.join(".") + "\n   " + err.error)
+        }
+        if (errors.length > 0) {
+            throw ctx + " has " + errors.length + " inconsistencies in the translation"
+        }
+    }
+
+    /**
+     * Checks the leaf objects: special values must be present and identical in every leaf
+     */
+    validate(path = []): { error: string, path: string[] } [] {
+        const errors: { error: string, path: string[] } [] = []
+        const neededSubparts = new Set<{ part: string, usedByLanguage: string }>()
+
+        let isLeaf: boolean = undefined
+        this.contents.forEach((value, key) => {
+            if (typeof value !== "string") {
+                const recErrors = value.validate([...path, key])
+                errors.push(...recErrors)
+                return;
+            }
+            if (isLeaf === undefined) {
+                isLeaf = true
+            } else if (!isLeaf) {
+                errors.push({error: "Mixed node: non-leaf node has translation strings", path: path})
+            }
+
+            let subparts: string[] = value.match(/{[^}]*}/g)
+            if (subparts !== null) {
+                let [_, __, weblatepart, lang] = key.split("/")
+                if (lang === undefined) {
+                    // This is a core translation, it has one less path segment
+                    lang = weblatepart
+                }
+                subparts = subparts.map(p => p.split(/\(.*\)/)[0])
+                for (const subpart of subparts) {
+                    neededSubparts.add({part: subpart, usedByLanguage: lang})
+                }
+            }
+        })
+
+
+        // Actually check for the needed sub-parts, e.g. that {key} isn't translated into {sleutel}
+        this.contents.forEach((value, key) => {
+            neededSubparts.forEach(({part, usedByLanguage}) => {
+                if (typeof value !== "string") {
+                    return;
+                }
+                let [_, __, weblatepart, lang] = key.split("/")
+                if (lang === undefined) {
+                    // This is a core translation, it has one less path segment
+                    lang = weblatepart
+                    weblatepart = "core"
+                }
+                const fixLink = `Fix it on https://hosted.weblate.org/translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${encodeURIComponent(path.join("."))}%22`;
+                let subparts: string[] = value.match(/{[^}]*}/g)
+                if (subparts === null) {
+                    if (neededSubparts.size > 0) {
+                        errors.push({
+                            error: "The translation for " + key + " does not have any subparts, but expected " + Array.from(neededSubparts).map(part => part.part + " (used in " + part.usedByLanguage + ")").join(",") + " . The full translation is " + value + "\n" + fixLink,
+                            path: path
+                        })
+                    }
+                    return
+                }
+                subparts = subparts.map(p => p.split(/\(.*\)/)[0])
+                if (subparts.indexOf(part) < 0) {
+
+                    if (lang === "en" || usedByLanguage === "en") {
+                        errors.push({
+                            error: `The translation for ${key} does not have the required subpart ${part}.
+    \tThe full translation is ${value}
+    \t${fixLink}`,
+                            path: path
+                        })
+                    }
+                }
+            })
+        })
+
+        return errors
+    }
+
     /**
      * Recursively adds a translation object, the inverse of 'toJson'
      * @param language
      * @param object
      * @private
      */
-    private addTranslation(language: string, object: any){
+    private addTranslation(language: string, object: any) {
         for (const key in object) {
             const v = object[key]
             let subpart = <TranslationPart>this.contents.get(key)
-            if(subpart === undefined){
-               subpart = new TranslationPart()
-               this.contents.set(key, subpart) 
+            if (subpart === undefined) {
+                subpart = new TranslationPart()
+                this.contents.set(key, subpart)
             }
-            if(typeof v === "string"){
+            if (typeof v === "string") {
                 subpart.contents.set(language, v)
-            }else{
+            } else {
                 subpart.addTranslation(language, v)
             }
         }
-        
-    }
-    
-    static fromDirectory(path): TranslationPart{
-        const files = ScriptUtils.readDirRecSync(path, 1).filter(file => file.endsWith(".json"))
-        const rootTranslation = new TranslationPart()
-        for (const file of files) {
-            const content = JSON.parse(readFileSync(file, "UTF8"))
-            rootTranslation.addTranslation(file.substr(0, file.length - ".json".length), content)
-        }
-        return rootTranslation
+
     }
 
-    validateStrict(ctx?:string): void {
-        const errors = this.validate() 
-        for (const err of errors) {
-            console.error("ERROR in "+(ctx ?? "")+ " " +err.path.join(".")+"\n   "+err.error)
-        }
-        if(errors.length > 0){
-            throw ctx+" has "+errors.length+" inconsistencies in the translation"
-        }
-    }
-    
-    /**
-     * Checks the leaf objects: special values must be present and identical in every leaf
-     */
-    validate(path = []): {error: string, path: string[]} [] {
-        const errors : {error: string, path: string[]} []= []
-        const neededSubparts = new Set<string>()
-        let isLeaf : boolean = undefined
-        this.contents.forEach((value, key) => {
-            if(typeof value === "string"){
-                if(isLeaf === undefined){
-                    isLeaf = true
-                }else if(!isLeaf){
-                    errors.push({error:"Mixed node: non-leaf node has translation strings", path: path})
-                }
-                
-                let subparts: string[] = value.match(/{[^}]*}/g)
-                if(subparts === null){
-                    if(neededSubparts.size > 0){
-                        errors.push({error:"The translation for "+key+" does not have any subparts, but expected "+Array.from(neededSubparts).join(",")+" . The full translation is "+value, path: path})
-                    }
-                    return
-                }
-                
-                subparts = subparts.map(p => p.split(/\(.*\)/)[0])
-                
-                neededSubparts.forEach(part => {
-                    if(subparts.indexOf(part) < 0){
-                        errors.push({error:"The translation for "+key+" does not have the required subpart "+part+". The full translation is "+value, path: path})
-                    }
-                })
-                
-                for (const subpart of subparts) {
-                    neededSubparts.add(subpart)
-                }
-                
-            }else{
-              const recErrors =  value.validate([...path, key])
-                errors.push(...recErrors)
-            }
-        })
-        
-        return errors
-    }
-    
 }
 
 /**
@@ -237,6 +291,9 @@ class TranslationPart {
  * @param tr
  */
 function isTranslation(tr: any): boolean {
+    if (tr["#"] === "no-translations") {
+        return false
+    }
     for (const key in tr) {
         if (typeof tr[key] !== "string") {
             return false;
@@ -247,10 +304,10 @@ function isTranslation(tr: any): boolean {
 
 /**
  * Converts a translation object into something that can be added to the 'generated translations'.
- * 
+ *
  * To debug the 'compiledTranslations', add a languageWhiteList to only generate a single language
  */
-function transformTranslation(obj: any, path: string[] = [], languageWhitelist : string[] = undefined) {
+function transformTranslation(obj: any, path: string[] = [], languageWhitelist: string[] = undefined) {
 
     if (isTranslation(obj)) {
         return `new Translation( ${JSON.stringify(obj)} )`
@@ -268,14 +325,31 @@ function transformTranslation(obj: any, path: string[] = [], languageWhitelist :
         let value = obj[key]
 
         if (isTranslation(value)) {
-            if(languageWhitelist !== undefined){
+            if (languageWhitelist !== undefined) {
                 const nv = {}
                 for (const ln of languageWhitelist) {
                     nv[ln] = value[ln]
                 }
                 value = nv;
             }
-            values += `${Utils.Times((_) => "  ", path.length + 1)}get ${key}() { return new Translation(${JSON.stringify(value)}, "core:${path.join(".")}.${key}") },
+
+
+            if (value["en"] === undefined) {
+                throw `At ${path.join(".")}: Missing 'en' translation at path ${path.join(".")}.${key}\n\tThe translations in other languages are ${JSON.stringify(value)}`
+            }
+            const subParts: string[] = value["en"].match(/{[^}]*}/g)
+            let expr = `return new Translation(${JSON.stringify(value)}, "core:${path.join(".")}.${key}")`
+            if (subParts !== null) {
+                // convert '{to_substitute}' into 'to_substitute'
+                const types = Utils.Dedup(subParts.map(tp => tp.substring(1, tp.length - 1)))
+                const invalid = types.filter(part => part.match(/^[a-z0-9A-Z_]+(\(.*\))?$/) == null)
+                if (invalid.length > 0) {
+                    throw `At ${path.join(".")}: A subpart contains invalid characters: ${subParts.join(', ')}`
+                }
+                expr = `return new TypedTranslation<{ ${types.join(", ")} }>(${JSON.stringify(value)}, "core:${path.join(".")}.${key}")`
+            }
+
+            values += `${Utils.Times((_) => "  ", path.length + 1)}get ${key}() { ${expr} },
 `
         } else {
             values += (Utils.Times((_) => "  ", path.length + 1)) + key + ": " + transformTranslation(value, [...path, key], languageWhitelist) + ",\n"
@@ -285,15 +359,15 @@ function transformTranslation(obj: any, path: string[] = [], languageWhitelist :
 
 }
 
-function sortKeys(o: object): object{
+function sortKeys(o: object): object {
     const keys = Object.keys(o)
     keys.sort()
     const nw = {}
     for (const key of keys) {
         const v = o[key]
-        if(typeof v === "object"){
+        if (typeof v === "object") {
             nw[key] = sortKeys(v)
-        }else{
+        } else {
             nw[key] = v
         }
     }
@@ -316,9 +390,9 @@ function formatFile(path) {
  */
 function genTranslations() {
     const translations = JSON.parse(fs.readFileSync("./assets/generated/translations.json", "utf-8"))
-    const transformed =  transformTranslation(translations);
+    const transformed = transformTranslation(translations);
 
-    let module = `import {Translation} from "../../UI/i18n/Translation"\n\nexport default class CompiledTranslations {\n\n`;
+    let module = `import {Translation, TypedTranslation} from "../../UI/i18n/Translation"\n\nexport default class CompiledTranslations {\n\n`;
     module += " public static t = " + transformed;
     module += "\n    }"
 
@@ -335,10 +409,10 @@ function compileTranslationsFromWeblate() {
         .filter(path => path.indexOf(".json") > 0)
 
     const allTranslations = new TranslationPart()
-    
-     allTranslations.validateStrict()
-       
-    
+
+    allTranslations.validateStrict()
+
+
     for (const translationFile of translations) {
         try {
 
@@ -394,7 +468,7 @@ function generateTranslationsObjectFrom(objects: { path: string, parsed: { id: s
 
 /**
  * Merge two objects together
- * @param source: where the tranlations come from
+ * @param source: where the translations come from
  * @param target: the object in which the translations should be merged
  * @param language: the language code
  * @param context: context for error handling
@@ -547,14 +621,12 @@ if (!themeOverwritesWeblate) {
 genTranslations()
 const allTranslationFiles = ScriptUtils.readDirRecSync("langs").filter(path => path.endsWith(".json"))
 for (const path of allTranslationFiles) {
-    console.log("Formatting ", path)
     formatFile(path)
 }
-
 
 // Some validation
 TranslationPart.fromDirectory("./langs").validateStrict("./langs")
 TranslationPart.fromDirectory("./langs/layers").validateStrict("layers")
 TranslationPart.fromDirectory("./langs/themes").validateStrict("themes")
 TranslationPart.fromDirectory("./langs/shared-questions").validateStrict("shared-questions")
-
+console.log("All done!")

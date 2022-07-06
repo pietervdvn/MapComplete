@@ -6,6 +6,10 @@ import FilteredLayer from "../../Models/FilteredLayer";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import Svg from "../../Svg";
 
+/**
+ * The icon with the 'plus'-sign and the preset icons spinning
+ * 
+ */
 export default class AddNewMarker extends Combine {
 
     constructor(filteredLayers: UIEventSource<FilteredLayer[]>) {
@@ -14,7 +18,7 @@ export default class AddNewMarker extends Combine {
             let last = undefined;
             for (const filteredLayer of filteredLayers) {
                 const layer = filteredLayer.layerDef;
-                if(layer.name === undefined){
+                if(layer.name === undefined && !filteredLayer.isDisplayed.data){
                     continue
                 }
                 for (const preset of filteredLayer.layerDef.presets) {

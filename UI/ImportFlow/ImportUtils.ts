@@ -1,8 +1,8 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store} from "../../Logic/UIEventSource";
 import {GeoOperations} from "../../Logic/GeoOperations";
 
 export class ImportUtils {
-    public static partitionFeaturesIfNearby(toPartitionFeatureCollection: ({ features: any[] }), compareWith: UIEventSource<{ features: any[] }>, cutoffDistanceInMeters: UIEventSource<number>): UIEventSource<{ hasNearby: any[], noNearby: any[] }> {
+    public static partitionFeaturesIfNearby(toPartitionFeatureCollection: ({ features: any[] }), compareWith: Store<{ features: any[] }>, cutoffDistanceInMeters: Store<number>): Store<{ hasNearby: any[], noNearby: any[] }> {
         return compareWith.map(osmData => {
             if (osmData?.features === undefined) {
                 return undefined

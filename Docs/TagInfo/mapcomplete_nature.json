@@ -340,6 +340,10 @@
       "description": "Layer 'Nature reserve' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
+      "key": "wikipedia",
+      "description": "Layer 'Nature reserve' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Into nature')"
+    },
+    {
       "key": "wikidata",
       "description": "Layer 'Nature reserve' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key wikidata.",
       "value": ""
@@ -590,6 +594,11 @@
       "key": "material",
       "description": "Layer 'Picnic tables' shows material=concrete with a fixed text, namely 'This is a concrete picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "concrete"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=plastic with a fixed text, namely 'This picnic table is made from (recycled) plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "plastic"
     },
     {
       "key": "amenity",

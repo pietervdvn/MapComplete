@@ -12,8 +12,7 @@
   "tags": [
     {
       "key": "cuisine",
-      "description": "The MapComplete theme Fries shops has a layer Fries shop showing features with this tag",
-      "value": "friture"
+      "description": "The MapComplete theme Fries shops has a layer Fries shop showing features with this tag"
     },
     {
       "key": "amenity",
@@ -47,12 +46,12 @@
     },
     {
       "key": "amenity",
-      "description": "Layer 'Fries shop' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focussed on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
+      "description": "Layer 'Fries shop' shows amenity=fast_food with a fixed text, namely 'This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
       "value": "fast_food"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Fries shop' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focussed on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
+      "description": "Layer 'Fries shop' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focused on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
       "value": "restaurant"
     },
     {
@@ -208,6 +207,16 @@
       "value": "no"
     },
     {
+      "key": "delivery",
+      "description": "Layer 'Fries shop' shows delivery=yes with a fixed text, namely 'This business does home delivery (eventually via a third party)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
+      "value": "yes"
+    },
+    {
+      "key": "delivery",
+      "description": "Layer 'Fries shop' shows delivery=no with a fixed text, namely 'This business does not deliver at home' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
+      "value": "no"
+    },
+    {
       "key": "diet:vegetarian",
       "description": "Layer 'Fries shop' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
       "value": "no"
@@ -299,12 +308,12 @@
     },
     {
       "key": "friture:oil",
-      "description": "Layer 'Fries shop' shows friture:oil=vegetable with a fixed text, namely 'Vegetable oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
+      "description": "Layer 'Fries shop' shows friture:oil=vegetable with a fixed text, namely 'The frying is done with vegetable oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
       "value": "vegetable"
     },
     {
       "key": "friture:oil",
-      "description": "Layer 'Fries shop' shows friture:oil=animal with a fixed text, namely 'Animal oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
+      "description": "Layer 'Fries shop' shows friture:oil=animal with a fixed text, namely 'The frying is done with animal oil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Fries shops')",
       "value": "animal"
     },
     {

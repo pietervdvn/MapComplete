@@ -56,8 +56,9 @@ export default class FeatureSwitchState {
             );
 
             // It takes the current layout, extracts the default value for this query parameter. A query parameter event source is then retrieved and flattened
-            return queryParam.map((str) =>
-                str === undefined ? defaultValue : str !== "false"
+            return queryParam.sync((str) =>
+                str === undefined ? defaultValue : str !== "false", [],
+                b => b == defaultValue ? undefined : (""+b)
             )
 
         }
@@ -163,7 +164,7 @@ export default class FeatureSwitchState {
         this.overpassUrl = QueryParameters.GetQueryParameter("overpassUrl",
             (layoutToUse?.overpassUrl ?? Constants.defaultOverpassUrls).join(","),
             "Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter"
-        ).map(param => param.split(","), [], urls => urls.join(","))
+        ).sync(param => param.split(","), [], urls => urls.join(","))
 
         this.overpassTimeout = UIEventSource.asFloat(QueryParameters.GetQueryParameter("overpassTimeout",
             "" + layoutToUse?.overpassTimeout,

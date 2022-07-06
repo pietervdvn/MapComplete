@@ -54,11 +54,13 @@ abstract class AbstractImportButton implements SpecialVisualizations {
     public readonly docs: string
     public readonly args: { name: string, defaultValue?: string, doc: string }[]
     private readonly showRemovedTags: boolean;
+    private readonly cannotBeImportedMessage: BaseUIElement | undefined;
 
-    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string, required?: boolean }[], showRemovedTags = true) {
+    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string, required?: boolean }[], 
+                options?: {showRemovedTags? : true | boolean, cannotBeImportedMessage?: BaseUIElement}) {
         this.funcName = funcName
-        this.showRemovedTags = showRemovedTags;
-
+        this.showRemovedTags = options?.showRemovedTags ?? true;
+        this.cannotBeImportedMessage = options?.cannotBeImportedMessage
         this.docs = `${docsIntro}
 
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
@@ -194,13 +196,13 @@ ${Utils.special_visualizations_importRequirementDocs}
                         importFlow,
                         isImported
                     ),
-                    t.zoomInMore.SetClass("alert"),
+                    t.zoomInMore.SetClass("alert block"),
                     state.locationControl.map(l => l.zoom >= 18)
                 ),
                 pleaseLoginButton,
                 state
             ),
-            t.wrongType,
+            this.cannotBeImportedMessage ?? t.wrongType,
             new UIEventSource(this.canBeImported(feature)))
 
     }
@@ -241,7 +243,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         new ShowDataMultiLayer({
             leafletMap: confirmationMap.leafletMap,
             zoomToFeatures: true,
-            features: new StaticFeatureSource([feature], false),
+            features: StaticFeatureSource.fromGeojson([feature]),
             state: state,
             layers: state.filteredLayers
         })
@@ -304,7 +306,10 @@ export class ConflateButton extends AbstractImportButton {
             [{
                 name: "way_to_conflate",
                 doc: "The key, of which the corresponding value is the id of the OSM-way that must be conflated; typically a calculatedTag"
-            }]
+            }],
+            {
+                cannotBeImportedMessage: Translations.t.general.add.import.wrongTypeToConflate
+            }
         );
     }
 
@@ -393,7 +398,7 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
                 doc: "Distance to distort the geometry to snap to this layer",
                 defaultValue: "0.1"
             }],
-            false
+            { showRemovedTags: false}
         )
     }
 
@@ -548,7 +553,7 @@ export class ImportPointButton extends AbstractImportButton {
                 {name:"location_picker",
                     defaultValue: "photo",
                 doc: "Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled"}],
-            false
+            { showRemovedTags: false}
         )
     }
 
@@ -613,7 +618,7 @@ export class ImportPointButton extends AbstractImportButton {
             icon: () => new Img(args.icon),
             layerToAddTo: state.filteredLayers.data.filter(l => l.layerDef.id === args.targetLayer)[0],
             name: args.text,
-            title: Translations.WT(args.text),
+            title: Translations.T(args.text),
             preciseInput: preciseInputSpec, // must be explicitely assigned, if 'undefined' won't work otherwise
             boundsFactor: 3
         }

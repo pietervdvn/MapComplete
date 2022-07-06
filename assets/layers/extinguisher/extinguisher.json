@@ -1,14 +1,15 @@
 {
   "id": "extinguisher",
   "name": {
-    "en": "Map of fire extinguishers.",
+    "en": "Map of fire extinguishers",
     "ja": "消火器の地図です。",
     "nb_NO": "Kart over brannhydranter",
     "ru": "Карта огнетушителей.",
-    "fr": "Couche des extincteurs.",
-    "de": "Karte mit Feuerlöschern.",
+    "fr": "Couche des extincteurs",
+    "de": "Feuerlöscher",
     "it": "Cartina degli estintori.",
-    "nl": "Kaart van brandblussers."
+    "nl": "Kaart van brandblussers",
+    "es": "Mapa de extintores"
   },
   "minzoom": 14,
   "source": {
@@ -27,7 +28,9 @@
       "fr": "Exctincteurs",
       "de": "Feuerlöscher",
       "it": "Estintori",
-      "nl": "Brandblussers"
+      "nl": "Brandblussers",
+      "ca": "Extintors",
+      "es": "Extintores"
     }
   },
   "description": {
@@ -39,7 +42,9 @@
     "fr": "Couche des lances à incendie.",
     "de": "Kartenebene zur Anzeige von Hydranten.",
     "it": "Livello della mappa che mostra gli idranti antincendio.",
-    "nl": "Kaartlaag met brandblussers."
+    "nl": "Kaartlaag met brandblussers.",
+    "da": "Kortlag til visning af ildslukkere.",
+    "es": "Capa del mapa que muestra extintores."
   },
   "tagRenderings": [
     {
@@ -52,7 +57,8 @@
         "de": "Standort: {location}",
         "eo": "Loko: {location}",
         "it": "Posizione: {location}",
-        "nl": "Locatie: {location}"
+        "nl": "Locatie: {location}",
+        "es": "Localización: {location}"
       },
       "question": {
         "en": "Where is it positioned?",
@@ -61,7 +67,9 @@
         "fr": "Où est-elle positionnée ?",
         "de": "Wo befindet er sich?",
         "it": "Dove è posizionato?",
-        "nl": "Op welke locatie staat dit?"
+        "nl": "Op welke locatie staat dit?",
+        "da": "Hvor er den placeret?",
+        "es": "¿Dónde se encuentra?"
       },
       "mappings": [
         {
@@ -77,7 +85,9 @@
             "fr": "Intérieur.",
             "de": "Im Innenraum vorhanden.",
             "it": "Si trova all’interno.",
-            "nl": "In een gebouw."
+            "nl": "In een gebouw.",
+            "da": "Findes indendørs.",
+            "es": "Se encuentra en el interior."
           }
         },
         {
@@ -93,7 +103,9 @@
             "fr": "Extérieur.",
             "de": "Im Außenraum vorhanden.",
             "it": "Si trova all’esterno.",
-            "nl": "In open lucht."
+            "nl": "In open lucht.",
+            "da": "Findes udendørs.",
+            "es": "Se encuentra en el exterior."
           }
         }
       ],
@@ -114,9 +126,11 @@
         "nb_NO": "en brannslukker",
         "ru": "Огнетушитель",
         "fr": "une extincteur",
-        "de": "eine feuerlöscher",
+        "de": "einen Feuerlöscher",
         "it": "una estintore",
-        "nl": "een brandblusser"
+        "nl": "een brandblusser",
+        "da": "en ildslukker",
+        "es": "un extintor"
       },
       "description": {
         "en": "A fire extinguisher is a small, portable device used to stop a fire",
@@ -125,7 +139,9 @@
         "fr": "Un extincteur est un appareil portatif servant à éteindre un feu",
         "de": "Ein Feuerlöscher ist ein kleines, tragbares Gerät, das dazu dient, ein Feuer zu löschen",
         "it": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
-        "nl": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen"
+        "nl": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen",
+        "da": "En ildslukker er en lille, bærbar beholder, der bruges til at stoppe en brand",
+        "es": "Un extintor es un dispositivo pequeño y portátil utilizado para parar un fuego"
       }
     }
   ],

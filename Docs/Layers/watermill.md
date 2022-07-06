@@ -12,35 +12,10 @@ Watermolens
 
 
 
-## Table of contents
-
-1. [watermill](#watermill)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [Access tag](#access-tag)
-    + [Operator tag](#operator-tag)
 
 
+  - This layer is shown at zoomlevel **12** and higher
 
-
-
-
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/watermill/watermill.json)
 
 
 
@@ -65,7 +40,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -81,7 +58,7 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -91,19 +68,22 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **Is dit gebied toegankelijk?**
+The question is  Is dit gebied toegankelijk?
 
 This rendering asks information about the property  [access:description](https://wiki.openstreetmap.org/wiki/Key:access:description) 
-This is rendered with `De toegankelijkheid van dit gebied is: {access:description}`
+
+This is rendered with  De toegankelijkheid van dit gebied is: {access:description}
 
 
 
-  - **Vrij toegankelijk** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - **Niet toegankelijk** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
-  - **Niet toegankelijk, want privégebied** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
-  - **Toegankelijk, ondanks dat het privegebied is** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>
-  - **Enkel toegankelijk met een gids of tijdens een activiteit** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>
-  - **Toegankelijk mits betaling** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+
+
+  - Vrij toegankelijk corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+  - Niet toegankelijk corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
+  - Niet toegankelijk, want privégebied corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+  - Toegankelijk, ondanks dat het privegebied is corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>
+  - Enkel toegankelijk met een gids of tijdens een activiteit corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>
+  - Toegankelijk mits betaling corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
 
 
@@ -112,15 +92,19 @@ This is rendered with `De toegankelijkheid van dit gebied is: {access:descriptio
 
 
 
-The question is **Wie beheert dit pad?**
+The question is  Wie beheert dit pad?
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-This is rendered with `Beheer door {operator}`
+
+This is rendered with  Beheer door {operator}
 
 
 
-  - **Dit gebied wordt beheerd door Natuurpunt** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
-  - **Dit gebied wordt beheerd door {operator}** corresponds with operator~^(n|N)atuurpunt.*$_This option cannot be chosen as answer_
+
+
+  - Dit gebied wordt beheerd door Natuurpunt corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
+  - Dit gebied wordt beheerd door {operator} corresponds with  operator~^(n|N)atuurpunt.*$
+  - This option cannot be chosen as answer
  
 
 This document is autogenerated from [assets/layers/watermill/watermill.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/watermill/watermill.json)

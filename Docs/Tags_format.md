@@ -4,6 +4,14 @@ Tags format
 When creating the `json` file describing your layer or theme, you'll have to add a few tags to describe what you want.
 This document gives an overview of what every expression means and how it behaves in edge cases.
 
+If the schema-files note a type `string | AndOrTagConfigJson`, you can use one of these values.
+
+In some cases, not every type of tags-filter can be used. For example,  _rendering_ an option with a regex is
+fine (`"if": "brand~[Bb]randname", "then":" The brand is Brandname"`); but this regex can not be used to write a value
+into the database. The theme loader will however refuse to work with such inconsistencies and notify you of this while
+you are building your theme.
+
+
 Strict equality
 ---------------
 
@@ -38,8 +46,8 @@ If `key` is not present or empty, this will match too.
 This implies that, to check if a key is present, `key!=` can be used. This will only match if the key is present and not
 empty.
 
-Number comparison
------------------
+Number and date comparison
+--------------------------
 
 If the value of a tag is a number (e.g. `key=42`), one can use a filter `key<=42`, `key>=35`, `key>40` or `key<50` to
 match this, e.g. in conditions for renderings. These tags cannot be used to generate an answer nor can they be used to
@@ -51,11 +59,17 @@ special circumstances (e.g. `surface_area=42 m2` or `length=100 feet`), this wil
 values (`surface=422` or if a length in meters is compared to). However, this can be partially alleviated by using '
 Units' to rewrite to a default format.
 
+Dates can be compared with the same expression: `somekey<2022-06-22` will match if `somekey` is a date and is smaller
+then 22nd june '22.
+
 Regex equals
 ------------
 
 A tag can also be tested against a regex with `key~regex`. Note that this regex __must match__ the entire value. If the
 value is allowed to appear anywhere as substring, use `key~.*regex.*`
+
+Regexes will match the newline character with `.` too - the `s`-flag is enabled by default. To enable case invariant
+matching, use `key~i~regex`
 
 Equivalently, `key!~regex` can be used if you _don't_ want to match the regex in order to appear.
 
@@ -81,14 +95,32 @@ which we do not want.
 To mitigate this, use:
 
 ```json
-"mappings": [
 {
-    "if":"key:={some_other_key}"
-    "then": "...",
-    "hideInAnswer": "some_other_key="
+    "mappings": [
+        {
+            "if":"key:={some_other_key}",
+            "then": "...",
+            "hideInAnswer": "some_other_key="
+        }
+    ]
 }
-]
 ```
 
 One can use `key!:=prefix-{other_key}-postfix` as well, to match if `key` is _not_ the same
 as `prefix-{other_key}-postfix` (with `other_key` substituted by the value)
+
+## Logical operators
+
+One can combine multiple tags by using `and` or `or`, e.g.:
+
+```json
+{
+  "osmTags": {
+    "or": [
+      "amenity=school",
+      "amenity=kindergarten"
+    ]
+  }
+}
+```
+

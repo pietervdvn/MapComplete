@@ -1,4 +1,4 @@
-import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, SetDefault} from "./Conversion";
+import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, FirstOf, Fuse, On, SetDefault} from "./Conversion";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
 import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
 import {Utils} from "../../../Utils";
@@ -7,6 +7,8 @@ import SpecialVisualizations from "../../../UI/SpecialVisualizations";
 import Translations from "../../../UI/i18n/Translations";
 import {Translation} from "../../../UI/i18n/Translation";
 import * as tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
+import {AddContextToTranslations} from "./AddContextToTranslations";
+
 
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     private readonly _state: DesugaringContext;
@@ -43,20 +45,23 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
                     matchingTrs = layerTrs
                 } else if (id.startsWith("*")) {
                     const id_ = id.substring(1)
-                    matchingTrs = layerTrs.filter(tr => tr.group === id_)
+                    matchingTrs = layerTrs.filter(tr => tr.group === id_ || tr.labels?.indexOf(id_) >= 0)
                 } else {
                     matchingTrs = layerTrs.filter(tr => tr.id === id)
                 }
 
 
+                const contextWriter = new AddContextToTranslations<TagRenderingConfigJson>("layers:")
                 for (let i = 0; i < matchingTrs.length; i++) {
                     // The matched tagRenderings are 'stolen' from another layer. This means that they must match the layer condition before being shown
-                    const found = Utils.Clone(matchingTrs[i]);
+                    let found : TagRenderingConfigJson = Utils.Clone(matchingTrs[i]);
                     if (found.condition === undefined) {
                         found.condition = layer.source.osmTags
                     } else {
                         found.condition = {and: [found.condition, layer.source.osmTags]}
                     }
+                    
+                    found = contextWriter.convertStrict(found, layer.id+ ".tagRenderings."+found["id"])
                     matchingTrs[i] = found
                 }
 
@@ -80,17 +85,20 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
         if (typeof tr === "string") {
             const lookup = this.lookup(tr);
             if (lookup === undefined) {
-                warnings.push(ctx + "A literal rendering was detected: " + tr)
+                const isTagRendering = ctx.indexOf("On(mapRendering") < 0
+                if(isTagRendering){
+                    warnings.push(ctx + "A literal rendering was detected: " + tr)
+                }
                 return [{
                     render: tr,
-                    id: tr.replace(/![a-zA-Z0-9]/g, "")
+                    id: tr.replace(/[^a-zA-Z0-9]/g, "")
                 }]
             }
             return lookup
         }
 
         if (tr["builtin"] !== undefined) {
-            let names = tr["builtin"]
+            let names: string | string[] = tr["builtin"]
             if (typeof names === "string") {
                 names = [names]
             }
@@ -106,7 +114,13 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
             for (const name of names) {
                 const lookup = this.lookup(name)
                 if (lookup === undefined) {
-                    errors.push(ctx + ": The tagRendering with identifier " + name + " was not found.\n\tDid you mean one of " + Array.from(state.tagRenderings.keys()).join(", ") + "?")
+                    let candidates =  Array.from(state.tagRenderings.keys())
+                    if(name.indexOf(".") > 0){
+                        const [layer, search] = name.split(".")
+                        candidates = Utils.NoNull( state.sharedLayers.get(layer).tagRenderings.map(tr => tr["id"])).map(id => layer+"."+id)
+                    }
+                    candidates = Utils.sortedByLevenshteinDistance(name, candidates, i => i);
+                    errors.push(ctx + ": The tagRendering with identifier " + name + " was not found.\n\tDid you mean one of " +candidates.join(", ") + "?")
                     continue
                 }
                 for (let foundTr of lookup) {
@@ -298,11 +312,6 @@ export class ExpandRewrite<T> extends Conversion<T | RewritableConfigJson<T>, T[
 
 /**
  * Converts a 'special' translation into a regular translation which uses parameters
- * E.g.
- * 
- * const tr = <TagRenderingJson> {
- *     "special": 
- * }
  */
 export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
@@ -326,6 +335,11 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * const r = RewriteSpecial.convertIfNeeded(spec, [], "test")
      * r // => {"en": "{image_upload(,Add a picture to this object)}", "nl": "{image_upload(,Voeg een afbeelding toe)}" }
      * 
+     * // should handle special case with a prefix and postfix
+     * const spec = {"special": {"type":"image_upload" }, before: {"en": "PREFIX "}, after: {"en": " POSTFIX", nl: " Achtervoegsel"} }
+     * const r = RewriteSpecial.convertIfNeeded(spec, [], "test")
+     * r // => {"en": "PREFIX {image_upload(,)} POSTFIX", "nl": "PREFIX {image_upload(,)} Achtervoegsel" }
+     * 
      * // should warn for unexpected keys
      * const errors = []
      * RewriteSpecial.convertIfNeeded({"special": {type: "image_carousel"}, "en": "xyz"}, errors, "test") // =>  {'*': "{image_carousel()}"}
@@ -348,7 +362,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             return input
         }
 
-        for (const wrongKey of Object.keys(input).filter(k => k !== "special")) {
+        for (const wrongKey of Object.keys(input).filter(k => k !== "special" && k !== "before" && k !== "after")) {
             errors.push(`At ${context}: Unexpected key in a special block: ${wrongKey}`)
         }
 
@@ -396,6 +410,16 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             }  
         }
         
+        const before = Translations.T(input.before)
+        const after = Translations.T(input.after)
+
+        for (const ln of Object.keys(before?.translations??{})) {
+            foundLanguages.add(ln)
+        }
+        for (const ln of Object.keys(after?.translations??{})) {
+            foundLanguages.add(ln)
+        }
+
         if(foundLanguages.size === 0){
            const args=   argNamesList.map(nm => special[nm] ?? "").join(",")
             return {'*': `{${type}(${args})}`
@@ -415,7 +439,9 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                     args.push(v)
                 }
             }
-            result[ln] = `{${type}(${args.join(",")})}`
+            const beforeText = before?.textFor(ln) ?? ""
+            const afterText = after?.textFor(ln) ?? ""
+            result[ln] = `${beforeText}{${type}(${args.join(",")})}${afterText}`
         }
         return result
     }
@@ -432,6 +458,13 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * }
      * const result = new RewriteSpecial().convert(tr,"test").result
      * const expected = {render:  {'*': "{image_carousel(image)}"}, mappings: [{if: "other_image_key", then:  {'*': "{image_carousel(other_image_key)}"}} ]}
+     * result // => expected
+     * 
+     * const tr = {
+     *     render: {special: {type: "image_carousel", image_key: "image"}, before: {en: "Some introduction"} },
+     * }
+     * const result = new RewriteSpecial().convert(tr,"test").result
+     * const expected = {render:  {'en': "Some introduction{image_carousel(image)}"}}
      * result // => expected
      */
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
@@ -461,6 +494,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On("tagRenderings", new Concat(new ExpandTagRendering(state))),
             new On("mapRendering", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
+            new On("mapRendering",new Each( new On("icon", new FirstOf(new ExpandTagRendering(state))))),
             new SetDefault("titleIcons", ["defaults"]),
             new On("titleIcons", new Concat(new ExpandTagRendering(state)))
         );

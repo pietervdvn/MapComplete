@@ -12,20 +12,9 @@ Map layer to show fire extinguishers.
 
 
 
-## Table of contents
-
-1. [extinguisher](#extinguisher)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [extinguisher-location](#extinguisher-location)
-    + [images](#images)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **14** and higher
 
 
 
@@ -39,8 +28,6 @@ Map layer to show fire extinguishers.
   - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/extinguisher/extinguisher.json)
 
 
 
@@ -65,7 +52,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -80,15 +69,18 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is **Where is it positioned?**
+The question is  Where is it positioned?
 
 This rendering asks information about the property  [location](https://wiki.openstreetmap.org/wiki/Key:location) 
-This is rendered with `Location: {location}`
+
+This is rendered with  Location: {location}
 
 
 
-  - **Found indoors.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
-  - **Found outdoors.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>
+
+
+  - Found indoors. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
+  - Found outdoors. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>
 
 
 
@@ -97,7 +89,7 @@ This is rendered with `Location: {location}`
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

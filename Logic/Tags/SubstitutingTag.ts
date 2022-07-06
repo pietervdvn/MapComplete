@@ -35,7 +35,7 @@ export default class SubstitutingTag implements TagsFilter {
         throw "A variable with substitution can not be used to query overpass"
     }
 
-    isEquivalent(other: TagsFilter): boolean {
+    shadows(other: TagsFilter): boolean {
         if (!(other instanceof SubstitutingTag)) {
             return false;
         }
@@ -82,15 +82,15 @@ export default class SubstitutingTag implements TagsFilter {
         return [{k: this._key, v: v}];
     }
 
-    AsJson() {
-        return this._key + (this._invert ? '!' : '') + "=" + this._value
-    }
-    
     optimize(): TagsFilter | boolean {
         return this;
     }
     
     isNegative(): boolean {
         return false;
+    }
+
+    visit(f: (TagsFilter: any) => void) {
+        f(this)
     }
 }

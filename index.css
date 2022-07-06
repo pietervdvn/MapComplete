@@ -39,6 +39,16 @@
             background-color: var(--catch-detail-color);
             color: var(--catch-detail-color-contrast);
         }
+        
+        .rounded-left-full {
+            border-bottom-left-radius: 999rem;
+            border-top-left-radius: 999rem;
+        }
+
+        .rounded-right-full {
+            border-bottom-right-radius: 999rem;
+            border-top-right-radius: 999rem;
+        }
     }
 
 }
@@ -221,6 +231,16 @@ a {
 
 .w-min {
     width: min-content;
+}
+
+.rounded-left-full {
+    border-bottom-left-radius: 999rem;
+    border-top-left-radius: 999rem;
+}
+
+.rounded-right-full {
+    border-bottom-right-radius: 999rem;
+    border-top-right-radius: 999rem;
 }
 
 .w-16-imp {
@@ -627,3 +647,4 @@ input {
     
     
 }
+

@@ -1,8 +1,8 @@
 {
     "centerMessage": {
-        "loadingData": "Cargando os datos...",
+        "loadingData": "Cargando os datos…",
         "ready": "Feito!",
-        "retrying": "A carga dos datos fallou. Tentándoo de novo... ({count})",
+        "retrying": "A carga dos datos fallou. Tentándoo de novo… ({count})",
         "zoomIn": "Achégate para ollar ou editar os datos"
     },
     "favourite": {
@@ -19,7 +19,7 @@
             "intro": "Marcaches un lugar onde non coñecemos os datos.<br/>",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",
             "openLayerControl": "Abrir o control de capas",
-            "pleaseLogin": "<a class='activate-osm-authentication'>Inicia a sesión para engadir un novo punto</a>",
+            "pleaseLogin": "Inicia a sesión para engadir un novo punto",
             "stillLoading": "Os datos seguen a cargarse. Agarda un intre antes de engadir ningún punto.",
             "title": "Queres engadir un punto?",
             "zoomInFurther": "Achégate para engadir un punto."
@@ -42,11 +42,6 @@
         "getStartedLogin": "Entra no OpenStreetMap para comezar",
         "getStartedNewAccount": " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea unha nova conta</a>",
         "goToInbox": "Abrir mensaxes",
-        "index": {
-            "intro": "O MapComplete é un visor e editor do OpenStreetMap, que te amosa información sobre un tema específico.",
-            "pickTheme": "Escolle un tema para comezar.",
-            "title": "Benvido ao MapComplete"
-        },
         "layerSelection": {
             "title": "Seleccionar capas",
             "zoomInToSeeThisLayer": "Achégate para ver esta capa"

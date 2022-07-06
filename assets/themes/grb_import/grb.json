@@ -10,7 +10,8 @@
     "nl": "Dit thema helpt het GRB importeren.",
     "en": "This theme is an attempt to help automating the GRB import.",
     "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni.",
-    "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen."
+    "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",
+    "fr": "Ce thème tente d’aider l’import automatique GRB."
   },
   "maintainer": "Pieter Vander Vennet",
   "icon": "./assets/themes/grb_import/logo.svg",
@@ -112,7 +113,10 @@
           "render": "The building type is <b>{building}</b>",
           "question": {
             "en": "What kind of building is this?",
-            "de": "Was ist das für ein Gebäude?"
+            "de": "Was ist das für ein Gebäude?",
+            "es": "¿Qué tipo de edificio es este?",
+            "nl": "Wat voor soort gebouw is dit?",
+            "fr": "De quel type de bâtiment s’agit-il ?"
           },
           "mappings": [
             {
@@ -374,7 +378,15 @@
         "tagRenderings+": [
           {
             "id": "render_embedded",
-            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>"
+            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>",
+            "mappings": [
+              {
+                "if": "_embedding_id=",
+                "then": {
+                  "nl": "Geen omliggend OSM-gebouw gevonden"
+                }
+              }
+            ]
           },
           {
             "id": "embedded_address",
@@ -409,16 +421,29 @@
           },
           {
             "id": "import-button",
-            "render": "{import_button(address, addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Voeg dit adres als een nieuw adrespunt toe,,osm-buildings,5)}",
-            "condition": {
-              "and": [
-                "_embedding_id!=",
-                {
-                  "or": [
-                    "_embedding_street!:={STRAATNM}",
-                    "_embedding_nr!:={_HNRLABEL}"
-                  ]
+            "render": {
+              "special": {
+                "type": "import_button",
+                "targetLayer": "address",
+                "tags": "addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL",
+                "text": {
+                  "nl": "Voeg dit adres als een nieuw adrespunt toe"
+                },
+                "snap_onto_layers": "osm-buildings"
+              }
+            },
+            "mappings": [
+              {
+                "if": "_embedding_id=",
+                "then": {
+                  "nl": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
                 }
+              }
+            ],
+            "condition": {
+              "or": [
+                "_embedding_street!:={STRAATNM}",
+                "_embedding_nr!:={_HNRLABEL}"
               ]
             }
           }
@@ -448,7 +473,7 @@
         "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
         "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
-        "_osm_obj:source:date=feat.get('_overlaps_with')?.feat?.properties['source:geometry:date'].replace(/\\//g, '-')",
+        "_osm_obj:source:date=(feat.get('_overlaps_with')?.feat?.properties ?? {})['source:geometry:date']?.replace(/\\//g, '-')",
         "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties?.building",
         "_osm_obj:addr:street=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
         "_osm_obj:addr:housenumber=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
@@ -473,7 +498,26 @@
               "#": "Failsafe",
               "if": "_grb_ref=",
               "then": {
-                "en": "Did not yet calculate the metatags... Reopen this popup"
+                "en": "Did not yet calculate the metatags... Reopen this popup",
+                "de": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen",
+                "nl": "Metatags nog niet berekend... Heropen deze pop-up",
+                "fr": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "id~relation/*",
+                  "_overlap_percentage>50",
+                  "_reverse_overlap_percentage>50",
+                  "_overlaps_with!="
+                ]
+              },
+              "then": {
+                "en": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}",
+                "de": "Dieses Gebäude hat Löcher und ist als Relation modelliert. Als solches kann es nicht zusammengeführt werden. Es kann manuell zusammengeführt werden über die <a href='https://buildings.osm.be/#/'>Gebäudeexportseite</a> {open_in_josm()}",
+                "es": "Este edificio tiene agujeros y está modelado como una relación. Por lo tanto, no se puede combinar. Combínalo manualmente a través <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}",
+                "fr": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}"
               }
             },
             {
@@ -660,7 +704,7 @@
       "override": {
         "calculatedTags": [
           "_overlapping=Number(feat.properties.zoom) >= 16 ? feat.overlapWith('grb').map(ff => ff.feat.properties) : undefined",
-          "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found !== 'true' && p._intersects_with_other_features === ''))?.map(p => p.id)",
+          "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found === 'true' || p._intersects_with_other_features === ''))?.map(p => p.id)",
           "_applicable_count=feat.get('_applicable')?.length"
         ],
         "tagRenderings": [

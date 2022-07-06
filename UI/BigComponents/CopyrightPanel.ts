@@ -1,6 +1,6 @@
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import * as licenses from "../../assets/generated/license_info.json"
 import SmallLicense from "../../Models/smallLicense";
@@ -22,8 +22,10 @@ import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import Constants from "../../Models/Constants";
 import ContributorCount from "../../Logic/ContributorCount";
 import Img from "../Base/Img";
-import {Translation} from "../i18n/Translation";
+import {TypedTranslation} from "../i18n/Translation";
 import TranslatorsPanel from "./TranslatorsPanel";
+import {MapillaryLink} from "./MapillaryLink";
+import FullWelcomePaneWithTabs from "./FullWelcomePaneWithTabs";
 
 export class OpenIdEditor extends VariableUiElement {
     constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string, objectId?: string) {
@@ -44,22 +46,9 @@ export class OpenIdEditor extends VariableUiElement {
 
 }
 
-export class OpenMapillary extends VariableUiElement {
-    constructor(state: { locationControl: UIEventSource<Loc> }, iconStyle?: string) {
-        const t = Translations.t.general.attribution
-        super(state.locationControl.map(location => {
-            const mapillaryLink = `https://www.mapillary.com/app/?focus=map&lat=${location?.lat ?? 0}&lng=${location?.lon ?? 0}&z=${Math.max((location?.zoom ?? 2) - 1, 1)}`
-            return new SubtleButton(Svg.mapillary_black_ui().SetStyle(iconStyle), t.openMapillary, {
-                url: mapillaryLink,
-                newTab: true
-            })
-        }))
-    }
-}
-
 export class OpenJosm extends Combine {
 
-    constructor(state: { osmConnection: OsmConnection, currentBounds: UIEventSource<BBox>, }, iconStyle?: string) {
+    constructor(state: { osmConnection: OsmConnection, currentBounds: Store<BBox>, }, iconStyle?: string) {
         const t = Translations.t.general.attribution
 
         const josmState = new UIEventSource<string>(undefined)
@@ -109,30 +98,46 @@ export default class CopyrightPanel extends Combine {
     constructor(state: {
         layoutToUse: LayoutConfig,
         featurePipeline: FeaturePipeline,
-        currentBounds: UIEventSource<BBox>,
+        currentBounds: Store<BBox>,
         locationControl: UIEventSource<Loc>,
         osmConnection: OsmConnection,
-        isTranslator: UIEventSource<boolean>
+        isTranslator: Store<boolean>
     }) {
 
         const t = Translations.t.general.attribution
         const layoutToUse = state.layoutToUse
-        const iconStyle = "height: 1.5rem; width: auto"
+        const imgSize = "h-6 w-6"
+        const iconStyle = "height: 1.5rem; width: 1.5rem"
         const actionButtons = [
-            new SubtleButton(Svg.liberapay_ui().SetStyle(iconStyle), t.donate, {
+            new SubtleButton(Svg.liberapay_ui(), t.donate, {
                 url: "https://liberapay.com/pietervdvn/",
-                newTab: true
+                newTab: true,
+                imgSize
             }),
-            new SubtleButton(Svg.bug_ui().SetStyle(iconStyle), t.openIssueTracker, {
+            new SubtleButton(Svg.bug_ui(), t.openIssueTracker, {
                 url: "https://github.com/pietervdvn/MapComplete/issues",
-                newTab: true
+                newTab: true,
+                imgSize
             }),
-            new SubtleButton(Svg.statistics_ui().SetStyle(iconStyle), t.openOsmcha.Subs({theme: state.layoutToUse.title}), {
+            new SubtleButton(Svg.statistics_ui(), t.openOsmcha.Subs({theme: state.layoutToUse.title}), {
                 url: Utils.OsmChaLinkFor(31, state.layoutToUse.id),
-                newTab: true
+                newTab: true,
+                imgSize
+            }),
+            new SubtleButton(Svg.mastodon_ui(),
+                new Combine([t.followOnMastodon.SetClass("font-bold"), t.followBridge]).SetClass("flex flex-col"),
+                {
+                url:"https://en.osm.town/web/notifications",
+                newTab: true,
+                    imgSize
+            }),
+            new SubtleButton(Svg.twitter_ui(), t.followOnTwitter, {
+                url:"https://twitter.com/mapcomplete",
+                newTab: true,
+                imgSize
             }),
             new OpenIdEditor(state, iconStyle),
-            new OpenMapillary(state, iconStyle),
+            new MapillaryLink(state, iconStyle),
             new OpenJosm(state, iconStyle),
             new TranslatorsPanel(state, iconStyle)
           
@@ -190,7 +195,7 @@ export default class CopyrightPanel extends Combine {
             CopyrightPanel.CodeContributors(contributors, t.codeContributionsBy),
             CopyrightPanel.CodeContributors(translators, t.translatedBy),
             new FixedUiElement("MapComplete " + Constants.vNumber).SetClass("font-bold"),
-            new Combine(actionButtons).SetClass("block w-full"),
+            new Combine(actionButtons).SetClass("block w-full link-no-underline"),
             new Title(t.iconAttribution.title, 3),
             ...iconAttributions
         ].map(e => e?.SetClass("mt-4")));
@@ -198,7 +203,7 @@ export default class CopyrightPanel extends Combine {
         this.SetStyle("max-width:100%; width: 40rem; margin-left: 0.75rem; margin-right: 0.5rem")
     }
 
-    private static CodeContributors(contributors, translation: Translation): BaseUIElement {
+    private static CodeContributors(contributors, translation: TypedTranslation<{contributors, hiddenCount}>): BaseUIElement {
 
         const total = contributors.contributors.length;
         let filtered = [...contributors.contributors]

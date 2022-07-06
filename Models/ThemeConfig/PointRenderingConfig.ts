@@ -13,10 +13,11 @@ import Img from "../../UI/Base/Img";
 import Combine from "../../UI/Base/Combine";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 
+
 export default class PointRenderingConfig extends WithContextLoader {
 
-    private static readonly allowed_location_codes = new Set<string>(["point", "centroid", "start", "end"])
-    public readonly location: Set<"point" | "centroid" | "start" | "end" | string>
+    private static readonly allowed_location_codes = new Set<string>(["point", "centroid", "start", "end","projected_centerpoint"])
+    public readonly location: Set<"point" | "centroid" | "start" | "end" | "projected_centerpoint" | string>
 
     public readonly icon: TagRenderingConfig;
     public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[];
@@ -126,13 +127,20 @@ export default class PointRenderingConfig extends WithContextLoader {
 
     public GetBaseIcon(tags?: any): BaseUIElement {
         tags = tags ?? {id: "node/-1"}
-        const rotation = Utils.SubstituteKeys(this.rotation?.GetRenderValue(tags)?.txt ?? "0deg", tags)
-        const htmlDefs = Utils.SubstituteKeys(this.icon?.GetRenderValue(tags)?.txt, tags)
         let defaultPin: BaseUIElement = undefined
         if (this.label === undefined) {
             defaultPin = Svg.teardrop_with_hole_green_svg()
         }
-        return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
+        if(this.icon === undefined){
+            return defaultPin;
+        }
+        const rotation = Utils.SubstituteKeys(this.rotation?.GetRenderValue(tags)?.txt ?? "0deg", tags)
+        const htmlDefs = Utils.SubstituteKeys(this.icon?.GetRenderValue(tags)?.txt, tags)
+        if(htmlDefs === undefined){
+            // This layer doesn't want to show an icon right now
+            return undefined
+        }
+        return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin) 
     }
 
     public GetSimpleIcon(tags: UIEventSource<any>): BaseUIElement {

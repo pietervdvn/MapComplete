@@ -1,8 +1,8 @@
 {
   "id": "trees",
   "title": {
-    "nl": "Bomen",
     "en": "Trees",
+    "nl": "Bomen",
     "fr": "Arbres",
     "it": "Alberi",
     "ru": "Деревья",
@@ -12,12 +12,14 @@
     "de": "Bäume",
     "nb_NO": "Trær",
     "id": "Pohon",
-    "hu": "Fatérkép"
+    "hu": "Fatérkép",
+    "ca": "Arbres",
+    "es": "Árboles"
   },
   "shortDescription": {
-    "nl": "Breng bomen in kaart",
     "en": "Map all the trees",
-    "fr": "Carte des arbres",
+    "nl": "Breng bomen in kaart",
+    "fr": "Cartographions tous les arbres",
     "it": "Mappa tutti gli alberi",
     "ja": "すべての樹木をマッピングする",
     "zh_Hant": "所有樹木的地圖",
@@ -25,7 +27,9 @@
     "pl": "Sporządzić mapę wszystkich drzew",
     "de": "Kartieren Sie alle Bäume",
     "nb_NO": "Kartlegg alle trærne",
-    "hu": "Az összes fa feltérképezése"
+    "hu": "Az összes fa feltérképezése",
+    "ca": "Mapeja tots els arbres",
+    "es": "Mapa de los Árboles"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
@@ -37,7 +41,9 @@
     "ru": "Нанесите все деревья на карту!",
     "de": "Kartieren Sie alle Bäume!",
     "nb_NO": "Kartlegg trærne.",
-    "hu": "Térképezzünk fel minden fát!"
+    "hu": "Térképezzünk fel minden fát!",
+    "ca": "Mapeja tots els arbres.",
+    "es": "Mapa de todos los Árboles"
   },
   "maintainer": "Midgard",
   "icon": "./assets/themes/trees/logo.svg",

@@ -1,0 +1,96 @@
+[
+  {
+    "path": "cash.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "Online Web Fonts"
+    ],
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/464494"
+    ]
+  },
+  {
+    "path": "nfc_card.svg",
+    "license": "CC0",
+    "authors": [
+      "Stijn Wens"
+    ],
+    "sources": [
+      "https://wens.be/free-antwerpenize-bicycle-font"
+    ]
+  },
+  {
+    "path": "no_smoking.svg",
+    "license": "CC0",
+    "authors": [
+      "AIGA"
+    ],
+    "sources": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/6b/No_Smoking.svg",
+      "https://www.aiga.org/content.cfm/symbol-signs"
+    ]
+  },
+  {
+    "path": "payment_card.svg",
+    "license": "CC0",
+    "authors": [
+      " \tMaxi Koichi (maxixam)"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Credit_Card_-_The_Noun_Project.svg"
+    ]
+  },
+  {
+    "path": "phone.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "@ tyskrat"
+    ],
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/1059"
+    ]
+  },
+  {
+    "path": "phone.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "@ tyskrat"
+    ],
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/1059"
+    ]
+  },
+  {
+    "path": "send_email.svg",
+    "license": "CC0; trivial",
+    "authors": [],
+    "sources": []
+  },
+  {
+    "path": "send_email.svg",
+    "license": "CC0; trivial",
+    "authors": [],
+    "sources": []
+  },
+  {
+    "path": "smartphone.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "To Uyen"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Smartphone_icon_-_Noun_Project_283536.svg"
+    ]
+  },
+  {
+    "path": "smoking.svg",
+    "license": "CC0",
+    "authors": [
+      "Wiki-User03",
+      "ZooFari"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Smoking_pictogram_(black).svg"
+    ]
+  }
+]

@@ -10,8 +10,139 @@
                 },
                 "1": {
                     "then": "<b>No</b> se permiten perros"
+                },
+                "2": {
+                    "then": "Los perros están permitidos, pero tienen que llevar correa"
+                },
+                "3": {
+                    "then": "Los perros están permitidos y pueden estar sueltos"
+                }
+            },
+            "question": "¿Están permitidos los perros en este negocio?"
+        },
+        "email": {
+            "question": "¿Cual es la direccióm de correo electrónico de {title()}?"
+        },
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Localizado bajo tierra"
+                },
+                "1": {
+                    "then": "Localizado en la planta baja"
+                },
+                "2": {
+                    "then": "Localizado en la planta baja"
+                },
+                "3": {
+                    "then": "Localizado en la primera planta"
+                },
+                "4": {
+                    "then": "Situado en el primer nivel del sótano"
+                }
+            },
+            "question": "¿En qué nivel se encuentra esta característica?",
+            "render": "Localizada en la {level}° planta"
+        },
+        "opening_hours": {
+            "question": "¿Cuales son las horas de apertura de {title()}?",
+            "render": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Aquí se acepta el pago en efectivo"
+                },
+                "1": {
+                    "then": "Aquí se acepta el pago por tarjeta"
+                }
+            },
+            "question": "¿Qué métodos de pago se aceptan aquí?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "El pago se realiza con una aplicación dedicada"
+                    },
+                    "1": {
+                        "then": "El pago se realiza con una tarjeta de membresía"
+                    }
                 }
             }
+        },
+        "phone": {
+            "question": "¿Cuál es el número de teléfono de {title()}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "Hay numerosos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos"
+                },
+                "1": {
+                    "then": "Hay algunos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos"
+                },
+                "2": {
+                    "then": "No hay enchufes disponibles en el interior para los clientes, pero cargar puede ser posible si se pregunta al personal"
+                },
+                "3": {
+                    "then": "No hay enchufes domésticos disponibles para los clientes sentados en el interior"
+                }
+            },
+            "question": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Está <b>permitido</b> fumar"
+                },
+                "1": {
+                    "then": "<b>No</b> está permitido fumar"
+                },
+                "2": {
+                    "then": "Está permitido fumar <b>en el exterior</b>."
+                }
+            },
+            "question": "¿Está permitido fumar en {title()}?"
+        },
+        "website": {
+            "question": "¿Cual es el sitio web de {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas"
+                },
+                "1": {
+                    "then": "Este lugar es fácilmente accesible con una silla de ruedas"
+                },
+                "2": {
+                    "then": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil"
+                },
+                "3": {
+                    "then": "No es posible llegar a este lugar con una silla de ruedas"
+                }
+            },
+            "question": "¿Este lugar es accesible con una silla de ruedas?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Todavía no se ha enlazado una página de wikipedia"
+                },
+                "1": {
+                    "then": "Todavía no se ha enlazado una página de wikipedia"
+                }
+            },
+            "question": "¿Cual es la entidad de Wikidata que se corresponde?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "No enlazado con Wikipedia"
+                }
+            },
+            "question": "¿Cual es el ítem correspondiente en Wikipedia?"
         }
     }
 }

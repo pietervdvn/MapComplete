@@ -13,7 +13,6 @@ import FeatureInfoBox from "../../UI/Popup/FeatureInfoBox";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource";
 import MetaTagRecalculator from "../FeatureSource/Actors/MetaTagRecalculator";
 import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen";
-import BaseUIElement from "../../UI/BaseUIElement";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 export default class FeaturePipelineState extends MapState {

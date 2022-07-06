@@ -12,28 +12,9 @@ A shop
 
 
 
-## Table of contents
-
-1. [shops](#shops)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [shops-name](#shops-name)
-    + [shops-shop](#shops-shop)
-    + [shops-phone](#shops-phone)
-    + [shops-website](#shops-website)
-    + [shops-email](#shops-email)
-    + [shops-opening_hours](#shops-opening_hours)
-    + [payment-options](#payment-options)
-    + [questions](#questions)
-    + [reviews](#reviews)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **16** and higher
 
 
 
@@ -45,10 +26,9 @@ A shop
 
 
   - [personal](https://mapcomplete.osm.be/personal)
+  - [pets](https://mapcomplete.osm.be/pets)
   - [shops](https://mapcomplete.osm.be/shops)
 
-
-[Go to the source code](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/shops/shops.json)
 
 
 
@@ -73,7 +53,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -93,7 +75,7 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -103,10 +85,13 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is the name of this shop?**
+The question is  What is the name of this shop?
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-This is rendered with `This shop is called <i>{name}</i>`
+
+This is rendered with  This shop is called <i>{name}</i>
+
+
 
 
 
@@ -114,20 +99,23 @@ This is rendered with `This shop is called <i>{name}</i>`
 
 
 
-The question is **What does this shop sell?**
+The question is  What does this shop sell?
 
 This rendering asks information about the property  [shop](https://wiki.openstreetmap.org/wiki/Key:shop) 
-This is rendered with `This shop sells {shop}`
+
+This is rendered with  This shop sells {shop}
 
 
 
-  - **Convenience store** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience' target='_blank'>convenience</a>
-  - **Supermarket** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a>
-  - **Clothing store** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes' target='_blank'>clothes</a>
-  - **Hairdresser** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser' target='_blank'>hairdresser</a>
-  - **Bakery** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a>
-  - **Car repair (garage)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_repair' target='_blank'>car_repair</a>
-  - **Car dealer** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar' target='_blank'>car</a>
+
+
+  - Convenience store corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience' target='_blank'>convenience</a>
+  - Supermarket corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a>
+  - Clothing store corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes' target='_blank'>clothes</a>
+  - Hairdresser corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser' target='_blank'>hairdresser</a>
+  - Bakery corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a>
+  - Car repair (garage) corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_repair' target='_blank'>car_repair</a>
+  - Car dealer corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar' target='_blank'>car</a>
 
 
 
@@ -136,10 +124,13 @@ This is rendered with `This shop sells {shop}`
 
 
 
-The question is **What is the phone number?**
+The question is  What is the phone number?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+
+This is rendered with  <a href='tel:{phone}'>{phone}</a>
+
+
 
 
 
@@ -147,10 +138,13 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-The question is **What is the website of this shop?**
+The question is  What is the website of this shop?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-This is rendered with `<a href='{website}'>{website}</a>`
+
+This is rendered with  <a href='{website}'>{website}</a>
+
+
 
 
 
@@ -158,10 +152,13 @@ This is rendered with `<a href='{website}'>{website}</a>`
 
 
 
-The question is **What is the email address of this shop?**
+The question is  What is the email address of this shop?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-This is rendered with `<a href='mailto:{email}'>{email}</a>`
+
+This is rendered with  <a href='mailto:{email}'>{email}</a>
+
+
 
 
 
@@ -169,10 +166,13 @@ This is rendered with `<a href='mailto:{email}'>{email}</a>`
 
 
 
-The question is **What are the opening hours of this shop?**
+The question is  What are the opening hours of this shop?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-This is rendered with `{opening_hours_table(opening_hours)}`
+
+This is rendered with  {opening_hours_table(opening_hours)}
+
+
 
 
 
@@ -180,14 +180,16 @@ This is rendered with `{opening_hours_table(opening_hours)}`
 
 
 
-The question is **Which methods of payment are accepted here?**
+The question is  Which methods of payment are accepted here?
 
 
 
 
 
-  - **Cash is accepted here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
-  - **Payment cards are accepted here** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - Cash is accepted here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
+  - Payment cards are accepted here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
 
 
@@ -196,7 +198,7 @@ The question is **Which methods of payment are accepted here?**
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -206,7 +208,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

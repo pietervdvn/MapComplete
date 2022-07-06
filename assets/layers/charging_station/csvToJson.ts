@@ -1,6 +1,5 @@
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../../../Utils";
-import {TagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
 import FilterConfigJson from "../../../Models/ThemeConfig/Json/FilterConfigJson";
@@ -8,7 +7,7 @@ import {QuestionableTagRenderingConfigJson} from "../../../Models/ThemeConfig/Js
 
 
 function colonSplit(value: string): string[] {
-    return value.split(";").map(v => v.replace(/"/g, '').trim().toLowerCase()).filter(s => s !== "");
+    return value.split(";").map(v => v.replace(/"/g, '').trim()).filter(s => s !== "");
 }
 
 function loadCsv(file): {

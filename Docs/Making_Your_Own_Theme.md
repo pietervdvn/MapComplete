@@ -4,6 +4,11 @@ Making your own theme
 In MapComplete, it is relatively simple to make your own theme. This guide will give some information on how you can do
 this.
 
+Table of contents:
+
+1. [Requirements](#requirements) which lists what you should know before starting to create a theme
+2. [What is a good theme?](#what-is-a-good-theme)
+
 Requirements
 ------------
 
@@ -15,14 +20,217 @@ Before you start, you should have the following qualifications:
 - You are in contact with your local OpenStreetMap community and do know some other members to discuss tagging and to
   help testing
 
-If you do not have those qualifications, reach out to the MapComplete community channel
+Please, do reach out to the MapComplete community channel
 on [Telegram](https://t.me/MapComplete)
 or [Matrix](https://app.element.io/#/room/#MapComplete:matrix.org).
+
+
+What is a good theme?
+---------------------
+
+A **theme** (or _layout_) is a single map showing one or more layers.
+The layers should work together in such a way that they serve a certain **audience**.
+You should be able to state in a few sentences whom would be the user of such a map, e.g. 
+
+- a cyclist searching for bike repair
+- a thirsty person who needs water
+- someone who wants to know what their street is named after
+- ...
+
+Some layers will be useful for many themes (e.g. _drinking water_, _toilets_, _shops_, ...). Due to this, MapComplete supports to reuse already existing official layers into a theme.
+
+To include an already existing layer, simply type the layer id, e.g.:
+
+```json
+{
+  "id": "my-theme",
+  "title": "My theme for xyz",
+  "...": "...",
+  "layers": [
+    {
+      "id": "my super-awesome new layer"
+    },
+    "bench",
+    "shops",
+    "drinking_water",
+    "toilet"
+  ]
+}
+```
+
+Note that it is good practice to use an existing layer and to tweak it:
+
+```json
+{
+  "id": "my super awesome theme",
+  "...": "...",
+  "layers": [
+    {
+      "builtin": [
+        "toilet",
+        "bench"
+      ],
+      "override": {
+        "#": "Override is a section which copies all the keys here and 'pastes' them into the existing layers. For example, the 'minzoom' defined here will redifine the minzoom of 'toilet' and 'bench'",
+        "minzoom": 17,
+        "#0": "Appending to lists is supported to, e.g. to add an extra question",
+        "tagRenderings+": [
+          {
+            "id": "new-question",
+            "question": "What is <some property>?",
+            "render": "{property}",
+            "...": "..."
+          }
+        ],
+        "#1": "Note that paths will be followed: the below block will add/change the icon of the layer, without changing the other properties of the first tag rendering. (Assumption: the first mapRendering is the icon rendering)",
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "new-icon.svg"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+
+```
+
+### What is a good layer?
+
+A good layer is layer which shows **all** objects of a certain type, e.g. **all** shops, **all** restaurants, ...
+
+It asks some relevant questions, with the most important and easiests questions first.
+
+#### Don't: use a layer to filter
+
+**Do not define a layer which filters on an attribute**, such as <del>all restaurants with a vegetarian diet</del>, <del>all shops which accept bitcoin</del>.
+This makes _addition_ of new points difficult as information might not yet be known. Conser the following situation:
+
+1. A theme defines a layer `vegetarian restaurants`, which matches `amenity=restaurant` & `diet:vegetarian=yes`.
+2. An object exists in OSM with `amenity=restaurant`;`name=Fancy Food`;`diet:vegan=yes`;`phone=...`;...
+3. A contributor visits the themes and will notice that _Fancy Food_ is missing
+4. The contributor will add _Fancy Food_
+5. There are now **two** Fancy Food objects in OSM.
+
+Instead, use the filter functionality instead. This can be used from the layer to hide some objects based on their properties.
+When the contributor wants to add a new point, they'll be notified that some features might be hidden and only be allowed to add a new point when the points are shown.
+
+![](./FilterFunctionality.gif)
+
+```json
+{
+  "id": "my awesome layer",
+  "tagRenderings": "... some relevant attributes and questions ...",
+  "mapRenderings": "... display on the map ... ",
+  "filter": [
+    {
+      "id": "vegetarian",
+      "options": [
+        {
+          "question": {
+            "en": "Has a vegetarian menu"
+          },
+          "osmTags": {
+            "or": [
+              "diet:vegetarian=yes",
+              "diet:vegetarian=only",
+              "diet:vegan=yes",
+              "diet:vegan=only"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+If you want to show only features of a certain type, there is a workaround.
+For example, the [fritures map](https://mapcomplete.osm.be/fritures.html?z=1&welcome-control-toggle=true) will show french fries shop, aka every `amenity~fast_food|restaurant` with `cuisine=friture`.
+However, quite a few fritures are already mapped as fastfood but have their `cuisine`-tag missing (or misspelled).
+
+There is a workaround for this: show **all** food related items at zoomlevel 19 (or higher), and only show the fritures when zoomed out.
+
+In order to achieve this:
+
+1. The layer 'food' is defined in a separate file and reused
+2. The layer food is imported in the theme 'fritures'. With 'override', some properties are changed, namely:
+   - The `osmTags` are overwritten: `cuisine=friture` is now required
+   - The presets are overwritten and _disabled_ 
+   - The _id_ and _name_ of the layer are changed
+3. The layer `food` is imported _a second time_, but now the minzoom is set to `19`. This will show _all_ restaurants.
+
+In case of a friture which is already added as fastfood, they'll see the fastfood popup instead of adding a new item:
+
+![](./FilteredByDepth.gif)
+
+```json
+{
+  "layers": [
+    {
+      "builtin": "food",
+      "override": {
+        "id": "friture",
+        "name": {
+          "en": "Fries shop"
+        },
+        "=presets": [],
+        "source": {
+          "=osmTags": {
+            "and": [
+              "cuisine=friture",
+              {
+                "or": [
+                  "amenity=fast_food",
+                  "amenity=restaurant"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "food",
+      "override": {
+        "minzoom": 19,
+        "filter": null,
+        "name": null
+      }
+    }
+  ]
+}
+```
+
+
+### What is a good question and tagrendering?
+
+A tagrendering maps an attribute onto a piece of human readable text. 
+These should be **full sentences**, e.g. `"render": "The maximum speed of this road is {maxspeed} km/h"`
+
+In some cases, there might be some predifined special values as mappings, such as `"mappings": [{"if": "maxspeed=30", "then": "The maxspeed is 30km/h"}]`
+
+The question then follows logically: `{"question": "What is the maximum allowed speed for this road, in km/h?"}`
+At last, you'll also want to say that the user can type an answer too and that it has to be a number: `"freeform":{"key": "maxspeed","type":"pnat"}`.
+
+The entire tagRendering will thus be:
+
+```json
+{
+  "question": "What is the maximum allowed speed for this road, in km/h?",
+  "render": "The maximum speed of this road is {maxspeed} km/h",
+  "freeform":{"key": "maxspeed","type":"pnat"},
+  "mappings": [{"if": "maxspeed=30", "then": "The maxspeed is 30km/h"}]
+}
+```
+
 
 The template
 ------------
 
-[A basic template is availalbe here](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/theme-template.json)
+[A basic template is available here](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/theme-template.json)
 
 The custom theme generator
 --------------------------
@@ -53,14 +261,21 @@ If you have your JSON file, there are three ways to distribute your theme:
 ### Getting your theme included into the official mapcomplete
 
 Did you make an awesome theme that you want to share with the OpenStreetMap community? Have it included in the main
-application, which makes it more discoverable.
+application. This makes sure that:
 
-Your theme has to be:
+- Your theme will be discovered by more people
+- It will be included in the translation program
+- Metadata will be generated (such as links with TagInfo or layer documentation)
+- Maintanence is included
+- Parts of your theme might be reused by others
 
-0) Make sure the theme has an English version. This makes it easier for me to understand what is going on. The more
+The following conditions must be met:
+
+0) The theme must be relevant for a global audience
+1) There must be an English translation. This makes it easier for me to understand what is going on and is needed for the translators. The more
    other languages, the better of course!
-1) Make sure your theme has good tagging
-3) Make sure there are somewhat decent icons. Note that there is _no_ styleguide at the moment though.
+2) Make sure your theme has good tagging - i.e. a wiki page must exist for the used tags
+3) Make sure there are somewhat decent icons. Note that there is _no_ styleguide at the moment though. Icons must be included and have license info in the corresponding `license_info.json`-files. (Run `npm run query:licenses` to build those)
 
 The preferred way to add your theme is via a Pull Request. A Pull Request is less work for the maintainer (which makes
 it really easy for me to add it) and your name will be included in the git history (so you'll be listed as
@@ -107,7 +322,7 @@ Every field is documented in the source code itself - you can find them here:
 
 - [The top level `LayoutConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayoutConfigJson.ts)
 - [A layer object `LayerConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayerConfigJson.ts)
-- [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
+- [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson.ts)
 - At last, the exact semantics of tags are documented [here](Tags_format.md)
 
 A JSON schema file is available in `Docs/Schemas` - use `LayoutConfig.schema.json` to validate a theme file.
@@ -229,18 +444,21 @@ disregarding other properties.
 
 One should not make one layer for benches with a backrest and one layer for benches without. This is confusing for users
 and poses problems: what if the backrest status is unknown? What if it is some weird value? Also, it isn't possible to '
-move' an attribute to another layer.
+move' a feature to another layer.
 
 Instead, make one layer for one kind of object and change the icon based on attributes.
-
-### Using layers as filters
-
-Using layers as filters - this doesn't work!
-
-Use the `filter`-functionality instead.
 
 ### Not reading the theme JSON specs
 
 There are a few advanced features to do fancy stuff available, which are documented only in the spec above - for
 example, reusing background images and substituting the colours or HTML rendering. If you need advanced stuff, read it
 through!
+
+### Forgetting adjacent concepts
+
+Some new contributors might add a POI to indicate something that resembles it, but quite isn't.
+
+For example, if they are only offered a layer with public bookcases, they might map their local library with a public bookcase.
+The perfect solution for this is to provide both the library-layer and public bookcases layer - but this requires having both layers.
+
+A good solution is to clearly explain what a certain feature is and what it is not.

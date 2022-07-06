@@ -26,7 +26,7 @@ Devcontainer (see more details later).
 
 To develop and build MapComplete, you
 
-0. Make a fork and clone the repository.
+0. Make a fork and clone the repository. (We recommend a shallow clone with `git clone --filter=blob:none <repo>`)
 0. Install the nodejs version specified in [.tool-versions](./.tool-versions)
     - On linux: install npm first `sudo apt install npm`, then install `n` using npm: ` npm install -g n`, which can
       then install node with `n install <node-version>`
@@ -46,31 +46,32 @@ Development using Windows
 
 For Windows you can use the devcontainer, or the WSL subsystem.
 
-To use the devcontainer in Visual Studio Code:
+Raw installation
 
-0. Make sure you have installed
-   the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-   extension and it's dependencies.
-1. Make a fork and clone the repository.
-2. After cloning, Visual Studio Code will ask you if you want to use the devcontainer.
-3. Then you can either clone it again in a volume (for better performance), or open the current folder in a container.
-4. By now, you should be able to run `npm run start` to host a local testversion at http://localhost:1234/index.html
-5. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
-   or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
-   e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
+0. Clone the repo
+1. Install `npm` and install `ts-node` globally with `npm install -g ts-node`
+2. Execute `npm run init`. It will install and build some assets
+3. Run `npm run start` to start the dev server
 
 To use the WSL in Visual Studio Code:
 
-0. Make sure you have installed the [Remote - WSL]() extension and it's dependencies.
-1. Open a remote WSL window using the button in the bottom left.
-2. Make a fork and clone the repository.
-3. Install `npm` using `sudo apt install npm`.
-4. Run `npm run init` and generate some additional dependencies and generated files. Note that it'll install the
+1. Install a WSL Distribution (e.g. Ubuntu)
+2. Install basic dependencies `sudo apt install make g++`
+3. Install NVM `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`
+4. Use NVM to install node 16.x: `nvm install 16.9.1`
+5. Activate the node version: `nvm use 16.9.1`
+6. Install `npm` using `sudo apt install npm`.
+7. Install the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension and it's dependencies.
+8. Open a remote WSL window using the button in the bottom left.
+9. Make a fork and clone the repository.
+10. Run `npm run init` and generate some additional dependencies and generated files. Note that it'll install the
    dependencies too
-5. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
-6. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
+11. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
+12. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
    e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
+
+To use WSL without Visual Studio Code you can replace steps 7 and 8 by opening up a WSL terminal
 
 Automatic deployment
 --------------------

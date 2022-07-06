@@ -3,11 +3,10 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import Combine from "../Base/Combine";
 import Title from "../Base/Title";
 import {Overpass} from "../../Logic/Osm/Overpass";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Constants from "../../Models/Constants";
 import RelationsTracker from "../../Logic/Osm/RelationsTracker";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import {FlowStep} from "./FlowStep";
 import Loading from "../Base/Loading";
 import {SubtleButton} from "../Base/SubtleButton";
@@ -28,6 +27,7 @@ import * as import_candidate from "../../assets/layers/import_candidate/import_c
 import {GeoOperations} from "../../Logic/GeoOperations";
 import FeatureInfoBox from "../Popup/FeatureInfoBox";
 import {ImportUtils} from "./ImportUtils";
+import Translations from "../i18n/Translations";
 
 /**
  * Given the data to import, the bbox and the layer, will query overpass for similar items
@@ -35,7 +35,7 @@ import {ImportUtils} from "./ImportUtils";
 export default class ConflationChecker extends Combine implements FlowStep<{ features: any[], theme: string }> {
 
     public readonly IsValid
-    public readonly Value: UIEventSource<{ features: any[], theme: string }>
+    public readonly Value: Store<{ features: any[], theme: string }>
 
     constructor(
         state,
@@ -47,6 +47,27 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
         const toImport: {features: any[]} = params;
         let overpassStatus = new UIEventSource<{ error: string } | "running" | "success" | "idle" | "cached">("idle")
         const cacheAge = new UIEventSource<number>(undefined);
+        
+        
+        function loadDataFromOverpass(){
+            // Load the data!
+            const url = Constants.defaultOverpassUrls[1]
+            const relationTracker = new RelationsTracker()
+            const overpass = new Overpass(params.layer.source.osmTags, [], url, new UIEventSource<number>(180), relationTracker, true)
+            console.log("Loading from overpass!")
+            overpassStatus.setData("running")
+            overpass.queryGeoJson(bbox).then(
+                ([data, date]) => {
+                    console.log("Received overpass-data: ", data.features.length, "features are loaded at ", date);
+                    overpassStatus.setData("success")
+                    fromLocalStorage.setData([data, date])
+                },
+                (error) => {
+                    overpassStatus.setData({error})
+                })
+        }
+        
+        
         const fromLocalStorage = IdbLocalStorage.Get<[any, Date]>("importer-overpass-cache-" + layer.id, {
             
             whenLoaded: (v) => {
@@ -63,27 +84,12 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
                     }
                     cacheAge.setData(-1)
                 }
-                // Load the data!
-                const url = Constants.defaultOverpassUrls[1]
-                const relationTracker = new RelationsTracker()
-                const overpass = new Overpass(params.layer.source.osmTags, [], url, new UIEventSource<number>(180), relationTracker, true)
-                console.log("Loading from overpass!")
-                overpassStatus.setData("running")
-                overpass.queryGeoJson(bbox).then(
-                    ([data, date]) => {
-                        console.log("Received overpass-data: ", data.features.length, "features are loaded at ", date);
-                        overpassStatus.setData("success")
-                        fromLocalStorage.setData([data, date])
-                    },
-                    (error) => {
-                        overpassStatus.setData({error})
-                    })
-
+                loadDataFromOverpass()
             }
         });
 
 
-        const geojson: UIEventSource<any> = fromLocalStorage.map(d => {
+        const geojson: Store<any> = fromLocalStorage.map(d => {
             if (d === undefined) {
                 return undefined
             }
@@ -114,7 +120,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             }
             const bounds = osmLiveData.bounds.data
             return geojson.features.filter(f => BBox.get(f).overlapsWith(bounds))
-        }, [osmLiveData.bounds, zoomLevel.GetValue()]), false);
+        }, [osmLiveData.bounds, zoomLevel.GetValue()]));
 
 
         new ShowDataLayer({
@@ -123,9 +129,9 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             leafletMap: osmLiveData.leafletMap,
             popup: undefined,
             zoomToFeatures: true,
-            features: new StaticFeatureSource([
+            features: StaticFeatureSource.fromGeojson([
                 bbox.asGeoJson({})
-            ], false)
+            ])
         })
 
 
@@ -144,7 +150,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             leafletMap: osmLiveData.leafletMap,
             popup: (tags, layer) => new FeatureInfoBox(tags, layer, state),
             zoomToFeatures: false,
-            features: new StaticFeatureSource(toImport.features, false)
+            features: StaticFeatureSource.fromGeojson(toImport.features)
         })
 
         const nearbyCutoff = ValidatedTextField.ForType("pnat").ConstructInputElement()
@@ -166,11 +172,11 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             return osmData.features.filter(f =>
                 toImport.features.some(imp =>
                     maxDist >= GeoOperations.distanceBetween(imp.geometry.coordinates, GeoOperations.centerpointCoordinates(f))))
-        }, [nearbyCutoff.GetValue()]), false);
+        }, [nearbyCutoff.GetValue().stabilized(500)]));
         const paritionedImport = ImportUtils.partitionFeaturesIfNearby(toImport, geojson, nearbyCutoff.GetValue().map(Number));
 
         // Featuresource showing OSM-features which are nearby a toImport-feature 
-        const toImportWithNearby = new StaticFeatureSource(paritionedImport.map(els => els?.hasNearby ?? []), false);
+        const toImportWithNearby = new StaticFeatureSource(paritionedImport.map(els => els?.hasNearby ?? []));
 
         new ShowDataLayer({
             layerToShow: layer,
@@ -190,6 +196,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
             features: toImportWithNearby
         })
 
+        const t = Translations.t.importHelper.conflationChecker
 
         const conflationMaps = new Combine([
             new VariableUiElement(
@@ -197,7 +204,7 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
                     if (geojson === undefined) {
                         return undefined;
                     }
-                    return new SubtleButton(Svg.download_svg(), "Download the loaded geojson from overpass").onClick(() => {
+                    return new SubtleButton(Svg.download_svg(), t.downloadOverpassData).onClick(() => {
                         Utils.offerContentsAsDownloadableFile(JSON.stringify(geojson, null, "  "), "mapcomplete-" + layer.id + ".geojson", {
                             mimetype: "application/json+geo"
                         })
@@ -208,43 +215,57 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
                     return undefined;
                 }
                 if (age < 0) {
-                    return new FixedUiElement("Cache was expired")
+                    return t.cacheExpired
                 }
-                return new FixedUiElement("Loaded data is from the cache and is " + Utils.toHumanTime(age) + " old")
+                return new Combine([t.loadedDataAge.Subs({age: Utils.toHumanTime(age)}),
+                new SubtleButton(Svg.reload_svg().SetClass("h-8"), t.reloadTheCache)
+                    .onClick(loadDataFromOverpass)
+                    .SetClass("h-12")
+                ])
             })),
 
-            new Title("Live data on OSM"),
-            "The "+toImport.features.length+" red elements on the following map are all your import candidates.",
-             new VariableUiElement(geojson.map(geojson => new FixedUiElement((geojson?.features?.length ?? "No") + " elements are loaded from OpenStreetMap which match the layer "+layer.id+". Zooming in might be needed to show them"))),
+            new Title(t.titleLive),
+            t.importCandidatesCount.Subs({count:toImport.features.length }),
+             new VariableUiElement(geojson.map(geojson => {
+                 if(geojson?.features?.length === undefined || geojson?.features?.length === 0){
+                    return t.nothingLoaded.Subs(layer).SetClass("alert")
+                 }
+                 return new Combine([
+                    t.osmLoaded.Subs({count: geojson.features.length, name: layer.name}),
+                     
+                 ]) 
+             })),
             osmLiveData,
-            new Combine(["The live data is shown if the zoomlevel is at least ", zoomLevel, ". The current zoom level is ", new VariableUiElement(osmLiveData.location.map(l => "" + l.zoom))]).SetClass("flex"),
-
-            new Title("Nearby features"),
-            new Combine(["The following map shows features to import which have an OSM-feature within ", nearbyCutoff, "meter"]).SetClass("flex"),
+            new VariableUiElement(osmLiveData.location.map(location => {
+                return t.zoomIn.Subs({needed:zoomLevel, current: location.zoom })
+            } )),
+            new Title(t.titleNearby),
+            new Combine([t.mapShowingNearbyIntro, nearbyCutoff]).SetClass("flex"),
             new VariableUiElement(toImportWithNearby.features.map(feats => 
-                    new FixedUiElement("The "+  feats.length +" red elements on the following map will <b>not</b> be imported!").SetClass("alert"))),
-            "Set the range to 0 or 1 if you want to import them all",
+                t.nearbyWarn.Subs({count: feats.length}).SetClass("alert"))),
+            t.setRangeToZero,
             matchedFeaturesMap]).SetClass("flex flex-col")
 
         super([
-            new Title("Comparison with existing data"),
+            new Title(t.title),
             new VariableUiElement(overpassStatus.map(d => {
                 if (d === "idle") {
-                    return new Loading("Checking local storage...")
-                }
-                if (d["error"] !== undefined) {
-                    return new FixedUiElement("Could not load latest data from overpass: " + d["error"]).SetClass("alert")
+                    return new Loading(t.states.idle)
                 }
                 if (d === "running") {
-                    return new Loading("Querying overpass...")
+                    return new Loading(t.states.running)
                 }
+                if (d["error"] !== undefined) {
+                    return t.states.error.Subs({error: d["error"]}).SetClass("alert")
+                }
+
                 if (d === "cached") {
                     return conflationMaps
                 }
                 if (d === "success") {
                     return conflationMaps
                 }
-                return new FixedUiElement("Unexpected state " + d).SetClass("alert")
+                return t.states.unexpected.Subs({state: d}).SetClass("alert")
             }))
 
         ])

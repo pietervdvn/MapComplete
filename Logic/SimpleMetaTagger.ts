@@ -7,6 +7,7 @@ import Title from "../UI/Base/Title";
 import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import {CountryCoder} from "latlon2country"
+import Constants from "../Models/Constants";
 
 
 export class SimpleMetaTagger {
@@ -40,7 +41,7 @@ export class SimpleMetaTagger {
 }
 
 export class CountryTagger extends SimpleMetaTagger {
-    private static readonly coder = new CountryCoder("https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country", Utils.downloadJson);
+    private static readonly coder = new CountryCoder(Constants.countryCoderEndpoint, Utils.downloadJson);
     public runningTasks: Set<any>;
 
     constructor() {
@@ -217,7 +218,7 @@ export default class SimpleMetaTaggers {
 
         },
         ((feature, _, __, state) => {
-            const units = Utils.NoNull([].concat(...state?.layoutToUse?.layers?.map(layer => layer.units ?? [])));
+            const units = Utils.NoNull([].concat(...state?.layoutToUse?.layers?.map(layer => layer.units )?? []));
             if (units.length == 0) {
                 return;
             }
@@ -485,7 +486,7 @@ export default class SimpleMetaTaggers {
         const subElements: (string | BaseUIElement)[] = [
             new Combine([
                 "Metatags are extra tags available, in order to display more data or to give better questions.",
-                "The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.",
+                "They are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.",
                 "**Hint:** when using metatags, add the [query parameter](URL_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object"
             ]).SetClass("flex-col")
 

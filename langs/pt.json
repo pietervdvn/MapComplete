@@ -11,6 +11,8 @@
         "delete": "Eliminar",
         "explanations": {
             "hardDelete": "Este ponto será eliminado no OpenStreetMap. Pode ser recuperado por um contribuidor com experiência",
+            "retagNoOtherThemes": "Este recurso será reclassificado e escondido desta aplicação",
+            "retagOtherThemes": "Este recurso será remarcado e ficará visível em {otherThemes}",
             "selectReason": "Por favor, selecione a razão porque este elemento deve ser eliminado",
             "softDelete": "Este elemento será atualizado e ocultado nesta aplicação. <span class=\"sutil\">{reason}</span>"
         },
@@ -39,7 +41,7 @@
     },
     "general": {
         "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",
-        "aboutMapcomplete": "<h3>Sobre o MapComplete</h3><p>Use-o para adicionar informações ao OpenStreetMap <b>sobre um tema específico</b>. Responda a perguntas e em poucos minutos as suas contribuições estão disponíveis em todos os lugares. O <b>responsável pelo tema</b> define os elementos, as perguntas e os idiomas disponíveis nele.</p> <h3>Descubra mais</h3><p>O MapComplete <b>mostra sempre o próximo passo</b> para saber mais sobre o OpenStreetMap.</p><ul> <li>Quando incorporado num site, o iframe liga-se ao MapComplete em ecrã cheio.</li><li>A versão ecrã cheio fornece informações sobre o OpenStreetMap</li><li>A visualização funciona sem ser preciso autenticar-se, mas a edição requer uma conta no OpenStreetMap.</li> <li>Se não estiver autenticado, é solicitado a fazê-lo</li><li>Após responder a uma pergunta, pode adicionar novos pontos ao mapa</li><li>Depois de um tempo, as etiquetas reais do OpenStreetMap são mostradas, mais tarde vinculando-se à wiki</li></ul><p></p><br><p>Deparou-se com <b>um problema</b>? Quer uma <b>nova funcionalidade</b>? Quer <b>ajudar a traduzir</b>? Vá ao <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">código-fonte</a> ou <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">rastreador de problemas</a>. </p> <p>Quer ver <b>o seu progresso</b>? Veja a contagem de edições em <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>Sobre o MapComplete</h3><p>Use-o para adicionar informações ao OpenStreetMap <b>sobre um tema específico</b>. Responda a perguntas e em poucos minutos as suas contribuições estão disponíveis em todos os lugares. Na maioria dos temas pode adicionar imagens ou mesmo deixar uma avaliação. O <b>responsável pelo tema</b> define os elementos, as perguntas e os idiomas disponíveis nele.</p> <h3>Descubra mais</h3><p>O MapComplete <b>mostra sempre o próximo passo</b> para saber mais sobre o OpenStreetMap.</p><ul> <li>Quando incorporado num site, o iframe liga-se ao MapComplete em ecrã cheio.</li><li>A versão ecrã cheio fornece informações sobre o OpenStreetMap</li><li>A visualização funciona sem ser preciso autenticar-se, mas a edição requer uma conta no OpenStreetMap.</li> <li>Se não estiver autenticado, é solicitado a fazê-lo</li><li>Após responder a uma pergunta, pode adicionar novos pontos ao mapa</li><li>Depois de um tempo, as etiquetas reais do OpenStreetMap são mostradas, mais tarde vinculando-se à wiki</li></ul><p></p><br><p>Deparou-se com <b>um problema</b>? Quer uma <b>nova funcionalidade</b>? Quer <b>ajudar a traduzir</b>? Vá ao <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">código-fonte</a> ou <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">rastreador de problemas</a>. </p> <p>Quer ver <b>o seu progresso</b>? Veja a contagem de edições em <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Adicionar {category} aqui",
             "addNewMapLabel": "Adicionar novo item",
@@ -48,21 +50,42 @@
             "disableFilters": "Desativar todos os filtros",
             "disableFiltersExplanation": "Alguns elementos podem estar escondidos por um filtro",
             "hasBeenImported": "Este ponto já foi importado",
+            "import": {
+                "hasBeenImported": "Este objeto foi importado",
+                "howToTest": "Para testar, adicione <b>test=true</b> ou <b>backend=osm-test</b> ao URL. O conjunto de alterações será impresso na consola. Por favor abra um \"pull request\" para oficializar este tema de modo a ativar efetivamente o botão de importação.",
+                "importTags": "Este elemento irá receber {tags}",
+                "officialThemesOnly": "O botão de importação está desativado em temas não oficiais para evitar acidentes",
+                "wrongType": "Este elemento não é um ponto ou uma linha e não pode ser importado",
+                "wrongTypeToConflate": "Este elemento não é um ponto ou uma linha e não pode ser fundido",
+                "zoomInMore": "Amplie mais para importar este elemento"
+            },
+            "importTags": "Este elemento irá receber {tags}",
             "intro": "Clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "layerNotEnabled": "A camada {layer} não está ativada. Ative esta camada para adicionar um ponto",
             "openLayerControl": "Abra a caixa de controlo da camada",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">Por favor, inicie a sessão para adicionar um novo ponto</a>",
+            "pleaseLogin": "Por favor, inicie a sessão para adicionar um novo ponto",
             "presetInfo": "O novo POI terá {tags}",
             "stillLoading": "Os dados ainda estão a ser carregados. Aguarde um pouco antes de adicionar um novo ponto.",
             "title": "Adicionar um novo ponto?",
             "warnVisibleForEveryone": "A sua adição será visível para todos",
+            "wrongType": "Este elemento não é um ponto ou uma linha e não pode ser importado",
             "zoomInFurther": "Amplie mais para adicionar um ponto.",
             "zoomInMore": "Amplie mais para importar este elemento"
+        },
+        "apply_button": {
+            "appliedOnAnotherObject": "O objeto {id} irá receber {tags}",
+            "isApplied": "As alterações são aplicadas"
         },
         "attribution": {
             "attributionContent": "<p>Todos os dados são fornecidos pelo <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a> e são livremente reutilizáveis sob a licença <a href=\"https://osm.org/copyright\" target=\"_blank\">the Open DataBase License</a>.</p>",
             "attributionTitle": "Aviso de atribuição",
             "codeContributionsBy": "O MapComplete foi construído por {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\"> _blank{hiddenCount} mais contribuintes</a>",
+            "donate": "Apoie o MapComplete financeiramente",
+            "editId": "Editar aqui com o editor online OpenStreetMap",
+            "editJosm": "Editar aqui com JOSM",
+            "followBridge": "As contas Mastodon e Twitter estão interligadas",
+            "followOnMastodon": "Siga o MapComplete no Mastodon",
+            "followOnTwitter": "Siga o MapComplete no twitter",
             "iconAttribution": {
                 "title": "Ícones usados"
             },

@@ -4,7 +4,8 @@ import {Utils} from "../../../Utils";
 
 export interface DesugaringContext {
     tagRenderings: Map<string, TagRenderingConfigJson>
-    sharedLayers: Map<string, LayerConfigJson>
+    sharedLayers: Map<string, LayerConfigJson>,
+    publicLayers?: Set<string>
 }
 
 export abstract class Conversion<TIn, TOut> {
@@ -158,6 +159,20 @@ export class On<P, T> extends DesugaringStep<T> {
     }
 }
 
+export class Pass<T> extends Conversion<T, T> {
+    constructor(message?: string) {
+        super(message??"Does nothing, often to swap out steps in testing", [], "Pass");
+    }
+
+
+    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
+        return {
+            result: json
+        };
+    }
+    
+}
+
 export class Concat<X, T> extends Conversion<X[], T[]> {
     private readonly _step: Conversion<X, T[]>;
 
@@ -185,6 +200,24 @@ export class Concat<X, T> extends Conversion<X[], T[]> {
     }
 }
 
+export class FirstOf<T, X> extends Conversion<T, X>{
+    private readonly  _conversion: Conversion<T, X[]>;
+    
+    constructor(conversion: Conversion<T, X[]>) {
+        super("Picks the first result of the conversion step", [], "FirstOf("+conversion.name+")");
+        this._conversion = conversion;
+    }
+
+    convert(json: T, context: string): { result: X; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const reslt = this._conversion.convert(json, context);
+        return {
+            ...reslt,
+            result: reslt.result[0]
+        };
+    }
+    
+}
+
 export class Fuse<T> extends DesugaringStep<T> {
     private readonly steps: DesugaringStep<T>[];
 
@@ -202,13 +235,18 @@ export class Fuse<T> extends DesugaringStep<T> {
         const information = []
         for (let i = 0; i < this.steps.length; i++) {
             const step = this.steps[i];
-            let r = step.convert(json, "While running step " + step.name + ": " + context)
-            errors.push(...r.errors ?? [])
-            warnings.push(...r.warnings ?? [])
-            information.push(...r.information ?? [])
-            json = r.result
-            if (errors.length > 0) {
-                break;
+            try{
+                let r = step.convert(json, "While running step " + step.name + ": " + context)
+                errors.push(...r.errors ?? [])
+                warnings.push(...r.warnings ?? [])
+                information.push(...r.information ?? [])
+                json = r.result
+                if (errors.length > 0) {
+                    break;
+                }
+            }catch(e){
+                console.error("Step "+step.name+" failed due to ",e,e.stack);
+                throw e
             }
         }
         return {

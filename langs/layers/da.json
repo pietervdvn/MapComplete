@@ -1,0 +1,1352 @@
+{
+    "address": {
+        "description": "Adresser",
+        "name": "Kendte adresser i OSM",
+        "tagRenderings": {
+            "fixme": {
+                "question": "Hvad skal rettes her? Forklar venligst"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne bygning har intet husnummer"
+                    }
+                },
+                "question": "Hvad er nummeret på dette hus?",
+                "render": "Husnummeret er <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Hvilken gade ligger denne adresse på?",
+                "render": "Denne adresse er på gaden <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Kendt adresse"
+        }
+    },
+    "ambulancestation": {
+        "name": "Kort over ambulancestationer",
+        "presets": {
+            "0": {
+                "description": "Tilføj en ambulancestation til kortet",
+                "title": "en ambulancestation"
+            }
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "render": "Denne station drives af {operator}."
+            },
+            "ambulance-name": {
+                "question": "Hvad hedder denne ambulancestation?",
+                "render": "Denne station hedder {name}."
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Stationen drives af staten."
+                    },
+                    "2": {
+                        "then": "Stationen drives af en formel gruppe af frivillige."
+                    }
+                }
+            },
+            "ambulance-place": {
+                "render": "Denne station findes i {addr:place}."
+            },
+            "ambulance-street": {
+                "question": " Hvad er vejnavnet, hvor stationen ligger?",
+                "render": "Denne station ligger langs en vej, der hedder {addr:street}."
+            }
+        },
+        "title": {
+            "render": "Ambulancestation"
+        }
+    },
+    "artwork": {
+        "description": "Forskellige kunstværker",
+        "name": "Kunstværker",
+        "presets": {
+            "0": {
+                "title": "et kunstværk"
+            }
+        },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Hvilken kunstner har lavet dette?",
+                "render": "Lavet af {artist_name}"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Arkitektur"
+                    },
+                    "1": {
+                        "then": "Vægmaleri"
+                    },
+                    "2": {
+                        "then": "Maleri"
+                    },
+                    "3": {
+                        "then": "Skulptur"
+                    },
+                    "4": {
+                        "then": "Statue"
+                    },
+                    "5": {
+                        "then": "Buste"
+                    },
+                    "6": {
+                        "then": "Sten"
+                    },
+                    "7": {
+                        "then": "Installation"
+                    },
+                    "8": {
+                        "then": "Graffiti"
+                    },
+                    "9": {
+                        "then": "Relief"
+                    }
+                },
+                "question": "Hvilken slags kunstværk er det?"
+            },
+            "artwork-website": {
+                "question": "Er der et websted med mere information om dette kunstværk?"
+            },
+            "artwork-wikidata": {
+                "question": "Hvilken Wikidata-indgang svarer til <b>dette kunstværk</b>?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Kunstværk <i>{name}</i>"
+                }
+            },
+            "render": "Kunstværk"
+        }
+    },
+    "barrier": {
+        "name": "Barrierer",
+        "presets": {
+            "0": {
+                "description": "En pullert på vejen",
+                "title": "en pullert"
+            },
+            "1": {
+                "description": "Stibomme, der fartdæmper cyklister",
+                "title": "en stibom"
+            }
+        },
+        "tagRenderings": {
+            "Bollard type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aftagelig pullert"
+                    },
+                    "1": {
+                        "then": "Fast pullert"
+                    },
+                    "2": {
+                        "then": "Pullert, der kan klappes ned"
+                    },
+                    "3": {
+                        "then": "Fleksibel pullert, normalt plast"
+                    },
+                    "4": {
+                        "then": "Opstigende pullert"
+                    }
+                },
+                "question": "Hvilken slags pullert er dette?"
+            },
+            "MaxWidth": {
+                "render": "Maksimal bredde: {maxwidth:physical} m"
+            },
+            "Overlap (cyclebarrier)": {
+                "render": "Overlapning: {overlap} m"
+            },
+            "Width of opening (cyclebarrier)": {
+                "render": "Bredde af åbning: {width:opening} m"
+            },
+            "barrier_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette er en enkelt pullert på vejen"
+                    }
+                }
+            },
+            "bicycle=yes/no": {
+                "mappings": {
+                    "0": {
+                        "then": "En cyklist kan cykle forbi denne."
+                    },
+                    "1": {
+                        "then": "En cyklist kan ikke cykle forbi denne."
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pullert"
+                }
+            }
+        }
+    },
+    "bench": {
+        "description": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem.",
+        "name": "Bænke",
+        "presets": {
+            "0": {
+                "title": "en bænk"
+            }
+        },
+        "tagRenderings": {
+            "bench-backrest": {
+                "mappings": {
+                    "0": {
+                        "then": "Ryglæn: Ja"
+                    },
+                    "1": {
+                        "then": "Ryglæn: Nej"
+                    }
+                },
+                "question": "Har denne bænk et ryglæn?"
+            },
+            "bench-colour": {
+                "mappings": {
+                    "0": {
+                        "then": "Farve: brun"
+                    },
+                    "1": {
+                        "then": "Farve: grøn"
+                    },
+                    "2": {
+                        "then": "Farve: grå"
+                    },
+                    "3": {
+                        "then": "Farve: hvid"
+                    },
+                    "4": {
+                        "then": "Farve: rød"
+                    },
+                    "5": {
+                        "then": "Farve: sort"
+                    },
+                    "6": {
+                        "then": "Farve: blå"
+                    },
+                    "7": {
+                        "then": "Farve: gul"
+                    }
+                },
+                "question": "Hvilken farve har denne bænk?",
+                "render": "Farve: {colour}"
+            },
+            "bench-direction": {
+                "question": "I hvilken retning kigger du, når du sidder på bænken?",
+                "render": "Når man sidder på bænken, kigger man i retningen {direction}°."
+            },
+            "bench-material": {
+                "mappings": {
+                    "0": {
+                        "then": "Materiale: træ"
+                    },
+                    "1": {
+                        "then": "Materiale: metal"
+                    },
+                    "2": {
+                        "then": "Materiale: sten"
+                    },
+                    "3": {
+                        "then": "Materiale: beton"
+                    },
+                    "4": {
+                        "then": "Materiale: plastik"
+                    },
+                    "5": {
+                        "then": "Materiale: stål"
+                    }
+                },
+                "question": "Hvad er bænken (sædet) lavet af?",
+                "render": "Materiale: {material}"
+            },
+            "bench-seats": {
+                "question": "Hvor mange pladser har denne bænk?",
+                "render": "{seats} pladser"
+            },
+            "bench-survey:date": {
+                "question": "Hvornår blev denne bænk sidst kortlagt?",
+                "render": "Denne bænk blev sidst kortlagt den {survey:date}"
+            }
+        },
+        "title": {
+            "render": "Bænk"
+        }
+    },
+    "bench_at_pt": {
+        "description": "Et lag, der viser alle offentlige stoppesteder, som har en bænk",
+        "name": "Bænke ved stoppesteder for offentlig transport",
+        "tagRenderings": {
+            "bench_at_pt-bench_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er en normal siddebænk her"
+                    },
+                    "1": {
+                        "then": "Stå-op bænk"
+                    },
+                    "2": {
+                        "then": "Der er ingen bænk her"
+                    }
+                },
+                "question": "Hvilken slags bænk er dette?"
+            },
+            "bench_at_pt-name": {
+                "render": "{name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bænk ved offentlig stoppested"
+                }
+            },
+            "render": "Bænk"
+        }
+    },
+    "bicycle_library": {
+        "presets": {
+            "0": {
+                "title": "et cykelbibliotek"
+            }
+        },
+        "tagRenderings": {
+            "bicycle-library-target-group": {
+                "mappings": {
+                    "0": {
+                        "then": "Cykler til børn til rådighed"
+                    },
+                    "1": {
+                        "then": "Cykler til voksne til rådighed"
+                    },
+                    "2": {
+                        "then": "Cykler til handicappede til rådighed"
+                    }
+                },
+                "question": "Hvem kan låne cykler her?"
+            },
+            "bicycle_library-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Det er gratis at låne en cykel"
+                    }
+                },
+                "question": "Hvor meget koster det at leje en cykel?",
+                "render": "Cykelleje koster {charge}"
+            },
+            "bicycle_library-name": {
+                "question": "Hvad hedder dette cykelbibliotek?",
+                "render": "Dette cykelbibliotek hedder {name}"
+            }
+        },
+        "title": {
+            "render": "Cykelbibliotek"
+        }
+    },
+    "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} er lukket permanent"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Denne cykelbutik plejede at udleje cykler, men udlejer ikke længere cykler"
+                }
+            }
+        },
+        "name": "Cykeludlejning",
+        "presets": {
+            "0": {
+                "description": "En bemandet butik, der fokuserer på cykeludlejning",
+                "title": "en cykeludlejningsforretning"
+            },
+            "1": {
+                "title": "cykeludlejning"
+            }
+        },
+        "tagRenderings": {
+            "9": {
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "bycykler"
+                        },
+                        "1": {
+                            "1": "elektriske cykler"
+                        },
+                        "2": {
+                            "1": "børnecykler"
+                        },
+                        "3": {
+                            "1": "BMX-cykler"
+                        },
+                        "4": {
+                            "1": "mountainbike"
+                        },
+                        "5": {
+                            "1": "cykeltasker"
+                        },
+                        "6": {
+                            "1": "tandem"
+                        }
+                    }
+                }
+            },
+            "bicycle-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Her kan man leje almindelige bycykler"
+                    },
+                    "1": {
+                        "then": "El-cykler kan lejes her"
+                    },
+                    "2": {
+                        "then": "BMX cykler kan lejes her"
+                    },
+                    "3": {
+                        "then": "Mountainbikes kan lejes her"
+                    },
+                    "4": {
+                        "then": "Børnecykler kan lejes her"
+                    },
+                    "5": {
+                        "then": "Tandemcykler kan lejes her"
+                    },
+                    "6": {
+                        "then": "Racercykler kan lejes her"
+                    }
+                },
+                "question": "Hvilken slags cykler og tilbehør udlejes her?",
+                "render": "{rental} udlejes her"
+            },
+            "bicycle_rental_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette er en butik, hvis hovedfokus er cykeludlejning"
+                    },
+                    "1": {
+                        "then": "Dette er en udlejningsvirksomhed, som udlejer forskellige genstande og/eller køretøjer. Den udlejer også cykler, men det er ikke det primære fokus"
+                    },
+                    "2": {
+                        "then": "Dette er en butik, der sælger eller reparerer cykler, men som også udlejer cykler"
+                    }
+                },
+                "question": "Hvilken slags cykeludlejning er dette?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Cykeludlejning"
+        }
+    },
+    "bicycle_tube_vending_machine": {
+        "description": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, ...)",
+        "name": "Automat til salg af cykelslanger",
+        "presets": {
+            "0": {
+                "title": "en automat til salg af cykelslanger"
+            }
+        },
+        "tagRenderings": {
+            "Still in use?": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne salgsautomat virker"
+                    },
+                    "1": {
+                        "then": "Denne salgsautomat er i stykker"
+                    },
+                    "2": {
+                        "then": "Denne salgsautomat er lukket"
+                    }
+                },
+                "question": "Er denne salgsautomat stadig i drift?"
+            }
+        },
+        "title": {
+            "render": "Automat til salg af cykelslanger"
+        }
+    },
+    "bike_cafe": {
+        "description": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, ...",
+        "name": "Cykelcafé",
+        "presets": {
+            "0": {
+                "title": "en cykelcafé"
+            }
+        },
+        "tagRenderings": {
+            "bike_cafe-email": {
+                "question": "Hvad er e-mailadressen på {name}?"
+            },
+            "bike_cafe-name": {
+                "question": "Hvad hedder denne cykelcafé?",
+                "render": "Denne cykelcafé hedder {name}"
+            },
+            "bike_cafe-phone": {
+                "question": "Hvad er telefonnummeret til {name}?"
+            },
+            "bike_cafe-repair-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne cykelcafé reparerer cykler"
+                    },
+                    "1": {
+                        "then": "Denne cykelcafé reparerer ikke cykler"
+                    }
+                },
+                "question": "Reparerer denne cykelcafé cykler?"
+            },
+            "bike_cafe-repair-tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne cykelcafé tilbyder værktøj til gør-det-selv-reparation"
+                    },
+                    "1": {
+                        "then": "Denne cykelcafé tilbyder ikke værktøj til gør-det-selv-reparation"
+                    }
+                },
+                "question": "Er der værktøj her til at reparere din egen cykel?"
+            },
+            "bike_cafe-website": {
+                "question": "Hvad er webstedet for {name}?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Cykelcafé <i>{name}</i>"
+                }
+            },
+            "render": "Cykelcafé"
+        }
+    },
+    "bike_cleaning": {
+        "description": "Et lag med faciliteter, hvor man kan rengøre sin cykel",
+        "name": "Cykelrengøring",
+        "tagRenderings": {
+            "bike_cleaning-charge": {
+                "mappings": {
+                    "1": {
+                        "then": "Gratis at bruge"
+                    }
+                }
+            },
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "mappings": {
+                    "1": {
+                        "then": "Gratis at bruge"
+                    }
+                }
+            }
+        }
+    },
+    "bike_parking": {
+        "description": "Et lag, der viser, hvor man kan parkere sin cykel",
+        "name": "Cykelparkering",
+        "presets": {
+            "0": {
+                "title": "en cykelparkering"
+            }
+        },
+        "tagRenderings": {
+            "Access": {
+                "mappings": {
+                    "0": {
+                        "then": "Offentligt tilgængelig"
+                    },
+                    "1": {
+                        "then": "Adgang hovedsageligt for besøgende til en virksomhed"
+                    },
+                    "2": {
+                        "then": "Adgangen er begrænset til medlemmer af en skole, virksomhed eller organisation"
+                    }
+                },
+                "question": "Hvem kan bruge denne cykelparkering?",
+                "render": "{access}"
+            },
+            "Bicycle parking type": {
+                "mappings": {
+                    "2": {
+                        "then": "Styrholder"
+                    },
+                    "3": {
+                        "then": "Stativ"
+                    },
+                    "5": {
+                        "then": "Skur"
+                    },
+                    "6": {
+                        "then": "Pullert"
+                    },
+                    "7": {
+                        "then": "Et område på gulvet, der er markeret til cykelparkering"
+                    }
+                },
+                "question": "Hvilken type cykelparkering er det?",
+                "render": "Dette er en cykelparkering af typen: {bicycle_parking}"
+            },
+            "Capacity": {
+                "question": "Hvor mange cykler er der plads til på denne cykelparkering (inklusive mulige ladcykler)?",
+                "render": "Plads til {capacity} cykler"
+            },
+            "Cargo bike capacity?": {
+                "question": "Hvor mange ladcykler er der plads til i denne cykelparkering?",
+                "render": "Der er plads til {capacity:cargo_bike} på denne cykelparkering"
+            },
+            "Cargo bike spaces?": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne parkeringsplads har plads til ladcykler"
+                    },
+                    "1": {
+                        "then": "Denne parkeringsplads har udpegede (officielle) pladser til ladcykler."
+                    },
+                    "2": {
+                        "then": "Det er ikke tilladt at parkere ladcykler"
+                    }
+                },
+                "question": "Har denne cykelparkering plads til ladcykler?"
+            },
+            "Is covered?": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne parkeringsplads er overdækket (den har et tag)"
+                    },
+                    "1": {
+                        "then": "Denne parkeringsplads er ikke overdækket"
+                    }
+                }
+            },
+            "Underground?": {
+                "mappings": {
+                    "0": {
+                        "then": "Underjordisk parkering"
+                    },
+                    "2": {
+                        "then": "Tagparkering"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Cykelparkering"
+        }
+    },
+    "bike_repair_station": {
+        "description": "Et lag med cykelpumper og cykelreværktøjsstativer",
+        "name": "Cykelpumpe og reparation",
+        "presets": {
+            "0": {
+                "title": "en cykelpumpe"
+            },
+            "1": {
+                "description": "En cykelpumpe og værktøj til at reparere din cykel i det offentlige rum. Værktøjet er ofte sikret med kæder mod tyveri."
+            },
+            "2": {
+                "description": "Værktøj til at reparere din cykel i det offentlige rum (uden pumpe). Værktøjet er sikret mod tyveri.",
+                "title": "en cykelreparationsstation uden pumpe"
+            }
+        },
+        "tagRenderings": {
+            "Email maintainer": {
+                "render": "<a href='mailto:{email}?subject=Cykelpumpe i stykker&body=Hej,%0D%0A%0D%0D%0Med denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} er i stykker.%0D%0A%0D%0D%0A Med venlig hilsen'>Anmeld denne cykelpumpe som værende i stykker</a>"
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Cykelpumpen er i stykker"
+                    },
+                    "1": {
+                        "then": "Cykelpumpen er i drift"
+                    }
+                },
+                "question": "Fungerer cykelpumpen stadig?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Offentligt tilgængelig"
+                    },
+                    "1": {
+                        "then": "Offentligt tilgængelig"
+                    },
+                    "2": {
+                        "then": "Kun for kunder"
+                    },
+                    "3": {
+                        "then": "Ikke tilgængelig for offentligheden"
+                    },
+                    "4": {
+                        "then": "Ikke tilgængelig for offentligheden"
+                    }
+                },
+                "question": "Hvem må bruge denne reparationsstation?"
+            },
+            "bike_repair_station-available-services": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er kun en pumpe"
+                    },
+                    "1": {
+                        "then": "Der er kun værktøj (skruetrækkere, tænger ...)"
+                    },
+                    "2": {
+                        "then": "Der er både værktøj og pumpe"
+                    }
+                },
+                "question": "Hvilke tjenester er tilgængelige på dette sted?"
+            },
+            "bike_repair_station-bike-chain-tool": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er et kædeværktøj"
+                    },
+                    "1": {
+                        "then": "Der er ikke noget kædeværktøj"
+                    }
+                },
+                "question": "Har denne cykelreparationsstation et specialværktøj til at reparere cykelkæder?"
+            },
+            "bike_repair_station-bike-stand": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er en krog eller et stativ"
+                    },
+                    "1": {
+                        "then": "Der er ingen krog eller stativ"
+                    }
+                },
+                "question": "Har denne cykelstation en krog til at hænge din cykel på eller et stativ til at hæve den?"
+            },
+            "bike_repair_station-electrical_pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Manuel pumpe"
+                    },
+                    "1": {
+                        "then": "Elektrisk pumpe"
+                    }
+                },
+                "question": "Er dette en elektrisk cykelpumpe?"
+            },
+            "bike_repair_station-email": {
+                "question": "Hvad er e-mailadressen på vedligeholderen?"
+            },
+            "bike_repair_station-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Altid åben"
+                    }
+                },
+                "question": "Hvornår er dette cykelreparationssted åbent?"
+            },
+            "bike_repair_station-operator": {
+                "question": "Hvem vedligeholder denne cykluspumpe?",
+                "render": "Vedligeholdt af {operator}"
+            },
+            "bike_repair_station-phone": {
+                "question": "Hvad er telefonnummeret på vedligeholderen?"
+            },
+            "bike_repair_station-valves": {
+                "mappings": {
+                    "0": {
+                        "then": "Sclaverand (også kendt som Presta og racerventil)"
+                    },
+                    "1": {
+                        "then": "Dunlop"
+                    },
+                    "2": {
+                        "then": "Schrader (biler)"
+                    }
+                },
+                "question": "Hvilke ventiler understøttes?",
+                "render": "Denne pumpe understøtter følgende ventiler: {valves}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Cykelreparationsstation"
+                },
+                "1": {
+                    "then": "Cykelreparationsstation"
+                },
+                "2": {
+                    "then": "Defekt pumpe"
+                },
+                "3": {
+                    "then": "Cykelpumpe <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Cykelpumpe"
+                }
+            },
+            "render": "Cykelstation (pumpe og reparation)"
+        }
+    },
+    "bike_shop": {
+        "tagRenderings": {
+            "bike_repair_bike-pump-service": {
+                "mappings": {
+                    "2": {
+                        "then": "Der er cykelpumpe, den er vist som et separat punkt "
+                    }
+                }
+            },
+            "bike_repair_bike-wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik rengør cykler"
+                    }
+                },
+                "question": "Vaskes cykler her?"
+            },
+            "bike_repair_rents-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik udlejer cykler"
+                    },
+                    "1": {
+                        "then": "Denne butik udlejer ikke cykler"
+                    }
+                },
+                "question": "Udlejer denne butik cykler?"
+            },
+            "bike_repair_repairs-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik reparerer cykler"
+                    },
+                    "1": {
+                        "then": "Denne butik reparerer ikke cykler"
+                    },
+                    "2": {
+                        "then": "Denne butik reparerer kun cykler købt her"
+                    },
+                    "3": {
+                        "then": "Dette værksted reparerer kun cykler af et bestemt mærke"
+                    }
+                },
+                "question": "Reparerer denne butik cykler?"
+            },
+            "bike_repair_second-hand-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik sælger brugte cykler"
+                    },
+                    "1": {
+                        "then": "Denne butik sælger ikke brugte cykler"
+                    },
+                    "2": {
+                        "then": "Denne butik sælger kun brugte cykler"
+                    }
+                },
+                "question": "Sælger denne butik brugte cykler?"
+            },
+            "bike_repair_sells-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik sælger cykler"
+                    },
+                    "1": {
+                        "then": "Denne butik sælger ikke cykler"
+                    }
+                },
+                "question": "Sælger denne butik cykler?"
+            },
+            "bike_repair_tools-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne butik tilbyder værktøj til gør-det-selv-reparation"
+                    },
+                    "1": {
+                        "then": "Denne butik tilbyder ikke værktøj til gør-det-selv reparation"
+                    }
+                },
+                "question": "Er der værktøj her til at reparere din egen cykel?"
+            },
+            "bike_shop-email": {
+                "question": "Hvad er e-mailadressen på {name}?"
+            },
+            "bike_shop-is-bicycle_shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne virksomhed fokuserer på udlejning"
+                    }
+                },
+                "render": "Denne butik er specialiseret i at sælge {shop} og udfører aktiviteter i forbindelse med cykler"
+            },
+            "bike_shop-name": {
+                "question": "Hvad hedder denne cykelbutik?",
+                "render": "Denne cykelbutik hedder {name}"
+            },
+            "bike_shop-phone": {
+                "question": "Hvad er telefonnummeret på {name}?"
+            },
+            "bike_shop-website": {
+                "question": "Hvad er webstedet for {name}?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "2": {
+                    "then": "Cykeludlejning <i>{name}</i>"
+                },
+                "3": {
+                    "then": "Cykelreparation <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Cykelforretning <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Cykelværksted<i>{name}</i>"
+                }
+            },
+            "render": "Cykelværksted/butik"
+        }
+    },
+    "bike_themed_object": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Cykelsti"
+                }
+            },
+            "render": "Cykelrelateret objekt"
+        }
+    },
+    "binocular": {
+        "description": "Kikkerter",
+        "name": "Kikkert",
+        "presets": {
+            "0": {
+                "description": "Et teleskop eller en kikkert monteret på en stang, som offentligheden kan se sig omkring med. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+                "title": "en kikkert"
+            }
+        },
+        "tagRenderings": {
+            "binocular-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Gratis at bruge"
+                    }
+                },
+                "question": "Hvor meget koster det at bruge denne kikkert?",
+                "render": "Brug af denne kikkert koster {charge}"
+            },
+            "binocular-direction": {
+                "question": "I hvilken retning kigger man, når man ser gennem denne kikkert?",
+                "render": "Kigger mod {direction}°"
+            }
+        },
+        "title": {
+            "render": "Kikkert"
+        }
+    },
+    "birdhide": {
+        "description": "Et fugleskjul",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tilgængelig for kørestolsbrugere"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Kun overdækkede fugleskjul"
+                    }
+                }
+            }
+        },
+        "name": "Steder til fugleobservation",
+        "presets": {
+            "0": {
+                "description": "Et overdækket ly, hvor man kan se fugle i ro og mag",
+                "title": "et fugleskjul"
+            },
+            "1": {
+                "description": "En skærm eller væg med åbninger til at se på fugle"
+            }
+        },
+        "tagRenderings": {
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "1": {
+                        "then": "Fugleskjul"
+                    }
+                }
+            },
+            "bird-hide-wheelchair": {
+                "mappings": {
+                    "1": {
+                        "then": "En kørestolsbruger kan sagtens bruge dette fugleskjul"
+                    },
+                    "2": {
+                        "then": "Dette fugleskjul kan nås med kørestol, men det er ikke nemt"
+                    },
+                    "3": {
+                        "then": "Ikke tilgængelig for kørestolsbrugere"
+                    }
+                },
+                "question": "Er dette fugleskjul tilgængeligt for kørestolsbrugere?"
+            },
+            "birdhide-operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Drives af Natuurpunt"
+                    }
+                },
+                "question": "Hvem driver dette fugleskjul?",
+                "render": "Drives af {operator}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Fugleskjul {name}"
+                }
+            }
+        }
+    },
+    "cafe_pub": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} er lukket permanent"
+                }
+            }
+        },
+        "description": "Et lag med caféer og pubber, hvor man kan samles omkring en drink. Laget stiller nogle relevante spørgsmål",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Åbent nu"
+                    }
+                }
+            }
+        },
+        "name": "Caféer og pubber",
+        "presets": {
+            "0": {
+                "description": "En pub, mest et sted at drikke øl i et varme, afslappede omgivelser",
+                "title": "en pub"
+            },
+            "1": {
+                "description": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation",
+                "title": "en bar"
+            },
+            "2": {
+                "description": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser",
+                "title": "en cafe"
+            }
+        },
+        "tagRenderings": {
+            "Classification": {
+                "mappings": {
+                    "1": {
+                        "then": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation"
+                    },
+                    "2": {
+                        "then": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser"
+                    },
+                    "3": {
+                        "then": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid"
+                    },
+                    "4": {
+                        "then": "Et åbent rum, hvor der serveres øl, typisk set i Tyskland"
+                    }
+                },
+                "question": "Hvilken slags cafe er dette"
+            },
+            "Name": {
+                "question": "Hvad hedder denne pub?",
+                "render": "Denne pub hedder {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
+            "render": "Pub"
+        }
+    },
+    "charging_station": {
+        "description": "En ladestation",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle køretøjstyper"
+                    },
+                    "1": {
+                        "question": "Ladestation til cykler"
+                    },
+                    "2": {
+                        "question": "Ladestation til biler"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Kun fungerende ladestationer"
+                    }
+                }
+            }
+        }
+    },
+    "climbing_route": {
+        "tagRenderings": {
+            "Length": {
+                "question": "Hvor lang er denne klatrerute (i meter)?"
+            },
+            "Name": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne klatrerute har ikke et navn"
+                    }
+                },
+                "question": "Hvad hedder denne klatrerute?",
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Klatrerute <strong>{name}</strong>"
+                }
+            },
+            "render": "Klatrerute"
+        }
+    },
+    "crossings": {
+        "description": "Overgange for fodgængere og cyklister",
+        "name": "Overgange",
+        "presets": {
+            "0": {
+                "description": "Overgang for fodgængere og/eller cyklister",
+                "title": "en overgang"
+            },
+            "1": {
+                "description": "Trafiksignal på en vej",
+                "title": "et trafiksignal"
+            }
+        },
+        "tagRenderings": {
+            "crossing-bicycle-allowed": {
+                "mappings": {
+                    "0": {
+                        "then": "En cyklist kan benytte denne overgang"
+                    },
+                    "1": {
+                        "then": "En cyklist kan ikke benytte denne overgang"
+                    }
+                },
+                "question": "Er denne overgang også for cykler?"
+            }
+        }
+    },
+    "cycleways_and_roads": {
+        "tagRenderings": {
+            "is lit?": {
+                "mappings": {
+                    "1": {
+                        "then": "Denne vej er ikke belyst"
+                    },
+                    "2": {
+                        "then": "Denne vej er belyst om natten"
+                    },
+                    "3": {
+                        "then": "Denne vej er belyst døgnet rundt"
+                    }
+                },
+                "question": "Er denne gade belyst?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Cykelsti"
+                },
+                "7": {
+                    "then": "Cykelsti ved siden af vejen"
+                },
+                "9": {
+                    "then": "Cykelgade"
+                }
+            }
+        }
+    },
+    "defibrillator": {
+        "name": "Hjertestartere",
+        "presets": {
+            "0": {
+                "title": "en hjertestarter"
+            },
+            "1": {
+                "title": "en hjertestarter monteret på en væg"
+            }
+        },
+        "tagRenderings": {
+            "defibrillator-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Offentligt tilgængelig"
+                    },
+                    "1": {
+                        "then": "Offentligt tilgængelig"
+                    }
+                },
+                "question": "Er denne hjertestarter frit tilgængelig?"
+            },
+            "defibrillator-defibrillator": {
+                "mappings": {
+                    "1": {
+                        "then": "Dette er en manuel hjertestarter til professionelle"
+                    },
+                    "2": {
+                        "then": "Dette er en normal automatisk hjertestarter"
+                    },
+                    "3": {
+                        "then": "Dette er en særlig type hjertestarter: {defibrillator}"
+                    }
+                }
+            }
+        }
+    },
+    "dogpark": {
+        "name": "hundeskove",
+        "presets": {
+            "0": {
+                "description": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be uden snor",
+                "title": "en hundeskov"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "question": "Hvad hedder denne hundeskov?"
+            },
+            "dogarea": {
+                "render": "Denne hundeskov er på {_surface:ha} hektar"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne hundskov er indhegnet"
+                    },
+                    "1": {
+                        "then": "Denne hundskov er ikke indhegnet"
+                    }
+                },
+                "question": "Er denne hundeskov indhegnet?"
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Har en indhegning til hvalpe og sm&aring; hunde"
+                    },
+                    "1": {
+                        "then": "Har <strong>ikke</strong> en indhegning til hvalpe og sm&aring; hunde"
+                    }
+                },
+                "question": "Har denne hundeskov et separat indhegnet omr&aring;de for sm&aring; hunde og hvalpe (hvalpeg&aring;rd)?"
+            }
+        },
+        "title": {
+            "render": "hundeskov"
+        }
+    },
+    "entrance": {
+        "title": {
+            "render": "Indgang"
+        }
+    },
+    "etymology": {
+        "tagRenderings": {
+            "simple etymology": {
+                "mappings": {
+                    "0": {
+                        "then": "Oprindelsen af dette navn er ukendt i al litteratur"
+                    }
+                },
+                "render": "Opkaldt efter {name:etymology}"
+            }
+        }
+    },
+    "extinguisher": {
+        "description": "Kortlag til visning af ildslukkere.",
+        "presets": {
+            "0": {
+                "description": "En ildslukker er en lille, bærbar beholder, der bruges til at stoppe en brand",
+                "title": "en ildslukker"
+            }
+        },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Findes indendørs."
+                    },
+                    "1": {
+                        "then": "Findes udendørs."
+                    }
+                },
+                "question": "Hvor er den placeret?"
+            }
+        }
+    },
+    "food": {
+        "filter": {
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Har en halalmenu"
+                    }
+                }
+            }
+        },
+        "name": "Restauranter og fastfood"
+    },
+    "veterinary": {
+        "name": "dyrl&aelig;ge",
+        "presets": {
+            "0": {
+                "description": "En dyrl&aelig;ge, der behandler hunde",
+                "title": "en dyrl&aelig;ge"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "Hvad hedder denne dyrl&aelig;?"
+            }
+        },
+        "title": {
+            "render": "dyrl&aelig;ge"
+        }
+    }
+}

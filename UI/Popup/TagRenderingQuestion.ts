@@ -1,6 +1,6 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, Stores, UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
-import {InputElement} from "../Input/InputElement";
+import {InputElement, ReadonlyInputElement} from "../Input/InputElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
 import {FixedInputElement} from "../Input/FixedInputElement";
 import {RadioButton} from "../Input/RadioButton";
@@ -11,7 +11,7 @@ import {SaveButton} from "./SaveButton";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {Translation} from "../i18n/Translation";
+import {Translation, TypedTranslation} from "../i18n/Translation";
 import Constants from "../../Models/Constants";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
@@ -29,6 +29,8 @@ import Toggle from "../Input/Toggle";
 import Img from "../Base/Img";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 import Title from "../Base/Title";
+import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import {GeoOperations} from "../../Logic/GeoOperations";
 
 /**
  * Shows the question element.
@@ -38,20 +40,19 @@ export default class TagRenderingQuestion extends Combine {
 
     constructor(tags: UIEventSource<any>,
                 configuration: TagRenderingConfig,
-                state,
+                state?: FeaturePipelineState,
                 options?: {
                     units?: Unit[],
                     afterSave?: () => void,
                     cancelButton?: BaseUIElement,
-                    saveButtonConstr?: (src: UIEventSource<TagsFilter>) => BaseUIElement,
-                    bottomText?: (src: UIEventSource<TagsFilter>) => BaseUIElement
+                    saveButtonConstr?: (src: Store<TagsFilter>) => BaseUIElement,
+                    bottomText?: (src: Store<TagsFilter>) => BaseUIElement
                 }
     ) {
 
-
         const applicableMappingsSrc =
-            UIEventSource.ListStabilized(tags.map(tags => {
-                const applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
+            Stores.ListStabilized(tags.map(tags => {
+                const applicableMappings: { if: TagsFilter, icon?: string, then: TypedTranslation<object>, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
                 for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
                         continue
@@ -79,13 +80,12 @@ export default class TagRenderingQuestion extends Combine {
 
 
         const feedback = new UIEventSource<Translation>(undefined)
-        const inputElement: InputElement<TagsFilter> =
-            new VariableInputElement(applicableMappingsSrc.map(applicableMappings =>
-                TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags, feedback)
+        const inputElement: ReadonlyInputElement<TagsFilter> =
+              new VariableInputElement(applicableMappingsSrc.map(applicableMappings => {
+                  return TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags, feedback)
+                }
             ))
      
-
-
         const save = () => {
             const selection = inputElement.GetValue().data;
             if (selection) {
@@ -118,24 +118,7 @@ export default class TagRenderingQuestion extends Combine {
         if (options.bottomText !== undefined) {
             bottomTags = options.bottomText(inputElement.GetValue())
         } else {
-            bottomTags = new VariableUiElement(
-                inputElement.GetValue().map(
-                    (tagsFilter: TagsFilter) => {
-                        const csCount = state?.osmConnection?.userDetails?.data?.csCount ?? 1000;
-                        if (csCount < Constants.userJourney.tagsVisibleAt) {
-                            return "";
-                        }
-                        if (tagsFilter === undefined) {
-                            return Translations.t.general.noTagsSelected.SetClass("subtle");
-                        }
-                        if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
-                            const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
-                            return new FixedUiElement(tagsStr).SetClass("subtle");
-                        }
-                        return tagsFilter.asHumanString(true, true, tags.data);
-                    }
-                )
-            ).SetClass("block break-all")
+            bottomTags = TagRenderingQuestion.CreateTagExplanation(inputElement.GetValue(), tags, state)
         }
         super([
             question,
@@ -147,7 +130,7 @@ export default class TagRenderingQuestion extends Combine {
                     saveButton]).SetClass("flex justify-end flex-wrap-reverse")
 
             ]).SetClass("flex mt-2 justify-between"),
-            new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, state.featureSwitchIsTesting)
+            new Toggle(Translations.t.general.testing.SetClass("alert"), undefined, state?.featureSwitchIsTesting)
         ])
 
 
@@ -156,19 +139,18 @@ export default class TagRenderingQuestion extends Combine {
 
 
     private static GenerateInputElement(
-        state,
+        state: FeaturePipelineState,
         configuration: TagRenderingConfig,
-        applicableMappings: { if: TagsFilter, then: any, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
+        applicableMappings: { if: TagsFilter, then: TypedTranslation<object>, icon?: string, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
         applicableUnit: Unit,
         tagsSource: UIEventSource<any>,
         feedback: UIEventSource<Translation>
-    ): InputElement<TagsFilter> {
+    ): ReadonlyInputElement<TagsFilter> {
 
         // FreeForm input will be undefined if not present; will already contain a special input element if applicable
         const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
-
        
-        const hasImages = applicableMappings.findIndex(mapping => mapping.then.icon !== undefined) >= 0
+        const hasImages = applicableMappings.findIndex(mapping => mapping.icon !== undefined) >= 0
         let inputEls: InputElement<TagsFilter>[];
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
@@ -199,7 +181,7 @@ export default class TagRenderingQuestion extends Combine {
         }
 
 
-        if (applicableMappings.length < 8 || configuration.multiAnswer || hasImages || ifNotsPresent) {
+        if (applicableMappings.length < 8 || configuration.multiAnswer || (hasImages && applicableMappings.length < 16) || ifNotsPresent) {
             inputEls = (applicableMappings ?? []).map((mapping, i) => TagRenderingQuestion.GenerateMappingElement(state, tagsSource, mapping, allIfNotsExcept(i)));
             inputEls = Utils.NoNull(inputEls);
         } else {
@@ -207,7 +189,7 @@ export default class TagRenderingQuestion extends Combine {
                 applicableMappings.map((mapping, i) => {
                     return {
                         value: new And([mapping.if, ...allIfNotsExcept(i)]),
-                        shown: Translations.WT(mapping.then)
+                        shown: mapping.then.Subs(tagsSource.data)
                     }
                 })
             )
@@ -248,7 +230,7 @@ export default class TagRenderingQuestion extends Combine {
         const inputEl = new InputElementMap<number[], TagsFilter>(
             checkBoxes,
             (t0, t1) => {
-                return t0?.isEquivalent(t1) ?? false
+                return t0?.shadows(t1) ?? false
             },
             (indices) => {
                 if (indices.length === 0) {
@@ -370,7 +352,7 @@ export default class TagRenderingQuestion extends Combine {
         return new FixedInputElement(
             TagRenderingQuestion.GenerateMappingContent(mapping, tagsSource, state),
             tagging,
-            (t0, t1) => t1.isEquivalent(t0));
+            (t0, t1) => t1.shadows(t0));
     }
 
     private static GenerateMappingContent(mapping: {
@@ -385,7 +367,7 @@ export default class TagRenderingQuestion extends Combine {
         return new Combine([new Img(mapping.icon).SetClass("mapping-icon-"+(mapping.iconClass ?? "small")), text]).SetClass("flex")
     }
 
-    private static GenerateFreeform(state, configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>, feedback: UIEventSource<Translation>)
+    private static GenerateFreeform(state: FeaturePipelineState, configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>, feedback: UIEventSource<Translation>)
         : InputElement<TagsFilter> {
         const freeform = configuration.freeform;
         if (freeform === undefined) {
@@ -429,11 +411,12 @@ export default class TagRenderingQuestion extends Combine {
         }
 
         const tagsData = tags.data;
-        const feature = state.allElements.ContainingFeatures.get(tagsData.id)
-        const input: InputElement<string> = ValidatedTextField.ForType(configuration.freeform.type).ConstructInputElement({
+        const feature = state?.allElements?.ContainingFeatures?.get(tagsData.id)
+        const center = feature != undefined ? GeoOperations.centerpointCoordinates(feature) : [0,0]
+        const input: InputElement<string> = ValidatedTextField.ForType(configuration.freeform.type)?.ConstructInputElement({
             country: () => tagsData._country,
-            location: [tagsData._lat, tagsData._lon],
-            mapBackgroundLayer: state.backgroundLayer,
+            location: [center[1], center[0]],
+            mapBackgroundLayer: state?.backgroundLayer,
             unit: applicableUnit,
             args: configuration.freeform.helperArgs,
             feature,
@@ -441,29 +424,53 @@ export default class TagRenderingQuestion extends Combine {
             feedback
         });
         
-        input.GetValue().setData(tagsData[freeform.key] ?? freeform.default);
+        // Init with correct value
+        input?.GetValue().setData(tagsData[freeform.key] ?? freeform.default);
         
-        input.GetValue().addCallbackD(v => {
-            if(v.length >= 255){
+        // Add a length check
+        input?.GetValue().addCallbackD((v : string | undefined) => {
+            if(v?.length >= 255){
                 feedback.setData(Translations.t.validation.tooLong.Subs({count: v.length}))
             }
         })
 
         let inputTagsFilter: InputElement<TagsFilter> = new InputElementMap(
-            input, (a, b) => a === b || (a?.isEquivalent(b) ?? false),
+            input, (a, b) => a === b || (a?.shadows(b) ?? false),
             pickString, toString
         );
 
         if (freeform.inline) {
-
             inputTagsFilter.SetClass("w-48-imp")
             inputTagsFilter = new InputElementWrapper(inputTagsFilter, configuration.render, freeform.key, tags, state)
             inputTagsFilter.SetClass("block")
-
         }
 
         return inputTagsFilter;
 
+    }
+    
+    public static CreateTagExplanation(selectedValue: Store<TagsFilter>,
+                                       tags: Store<object>,
+                                       state?: {osmConnection?: OsmConnection}){
+        return new VariableUiElement(
+            selectedValue.map(
+                (tagsFilter: TagsFilter) => {
+                    const csCount = state?.osmConnection?.userDetails?.data?.csCount ?? Constants.userJourney.tagsVisibleAndWikiLinked + 1;
+                    if (csCount < Constants.userJourney.tagsVisibleAt) {
+                        return "";
+                    }
+                    if (tagsFilter === undefined) {
+                        return Translations.t.general.noTagsSelected.SetClass("subtle");
+                    }
+                    if (csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
+                        const tagsStr = tagsFilter.asHumanString(false, true, tags.data);
+                        return new FixedUiElement(tagsStr).SetClass("subtle");
+                    }
+                    return tagsFilter.asHumanString(true, true, tags.data);
+                },
+                [state?.osmConnection?.userDetails]
+            )
+        ).SetClass("block break-all")
     }
 
 }

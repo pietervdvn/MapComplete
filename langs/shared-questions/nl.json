@@ -115,6 +115,9 @@
             "mappings": {
                 "0": {
                     "then": "Er werd nog geen Wikipedia-pagina gekoppeld"
+                },
+                "1": {
+                    "then": "Er werd nog geen Wikipedia-pagina gekoppeld"
                 }
             },
             "question": "Welk Wikidata-item komt overeen met dit object?"

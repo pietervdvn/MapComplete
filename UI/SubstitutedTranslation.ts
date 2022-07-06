@@ -1,4 +1,4 @@
-import {UIEventSource} from "../Logic/UIEventSource";
+import {Store, UIEventSource} from "../Logic/UIEventSource";
 import {Translation} from "./i18n/Translation";
 import Locale from "./i18n/Locale";
 import {FixedUiElement} from "./Base/FixedUiElement";
@@ -17,7 +17,8 @@ export class SubstitutedTranslation extends VariableUiElement {
         translation: Translation,
         tagsSource: UIEventSource<any>,
         state: FeaturePipelineState,
-        mapping: Map<string, BaseUIElement> = undefined) {
+        mapping: Map<string, BaseUIElement |
+            ((state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState) => BaseUIElement)> = undefined) {
 
         const extraMappings: SpecialVisualization[] = [];
 
@@ -25,9 +26,7 @@ export class SubstitutedTranslation extends VariableUiElement {
             extraMappings.push(
                 {
                     funcName: key,
-                    constr: (() => {
-                        return value
-                    }),
+                    constr: typeof value === "function" ? value : () => value,
                     docs: "Dynamically injected input element",
                     args: [],
                     example: ""
@@ -35,7 +34,7 @@ export class SubstitutedTranslation extends VariableUiElement {
             )
         })
 
-        const linkToWeblate = new LinkToWeblate(translation.context, translation.translations)
+        const linkToWeblate = translation !== undefined ? new LinkToWeblate(translation.context, translation.translations) : undefined;
         
         super(
             Locale.language.map(language => {
@@ -54,7 +53,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                         }
                         const viz = proto.special;
                         try {
-                            return viz.func.constr(state, tagsSource, proto.special.args, DefaultGuiState.state).SetStyle(proto.special.style);
+                            return viz.func.constr(state, tagsSource, proto.special.args, DefaultGuiState.state)?.SetStyle(proto.special.style);
                         } catch (e) {
                             console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)
                             return new FixedUiElement(`Could not generate special rendering for ${viz.func.funcName}(${viz.args.join(", ")}) ${e}`).SetStyle("alert")
@@ -80,8 +79,8 @@ export class SubstitutedTranslation extends VariableUiElement {
         }
     }[] {
 
-        for (const knownSpecial of SpecialVisualizations.specialVisualizations.concat(extraMappings)) {
-
+        for (const knownSpecial of extraMappings.concat(SpecialVisualizations.specialVisualizations)) {
+            
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
             const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*?)\\)(:.*)?}(.*)`);
             if (matched != null) {

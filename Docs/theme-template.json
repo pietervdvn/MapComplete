@@ -1,16 +1,16 @@
 {
-  "#": "This JSON file is a small template to get you started developing a theme",
-  "#": "All lines starting with '#' are comments and can be removed in the theme if you don't need the explanation anymore",
-  "#": "Make sure to join our chat channel at https://app.element.io/#/room/#MapComplete:matrix.org for questions, sharing your theme, ...",
-  "#": "To actually load your theme: on linux: run a local webserver (e.g. `webfsd`) and go to https://mapcomplete.osm.be/theme?userlayout=http://127.0.0.1:8080/path-to-your-theme.json",
-  "#": "If you don't know how to run a webserver: go to https://www.base64encode.org/ , copy paste this entire document in the 'encode' field and encode it;",
-  "#": "Then, go to https://mapcomplete.osm.be/theme?userlayout=true#your-base64-encoded-file",
+  "#1": "This JSON file is a small template to get you started developing a theme",
+  "#2": "All lines starting with '#' are comments and can be removed in the theme if you don't need the explanation anymore",
+  "#3": "Make sure to join our chat channel at https://app.element.io/#/room/#MapComplete:matrix.org for questions, sharing your theme, ...",
+  "#4": "To actually load your theme: on linux: run a local webserver (e.g. `webfsd`) and go to https://mapcomplete.osm.be/theme?userlayout=http://127.0.0.1:8080/path-to-your-theme.json",
+  "#5": "If you don't know how to run a webserver: go to https://www.base64encode.org/ , copy paste this entire document in the 'encode' field and encode it;",
+  "#6": "Then, go to https://mapcomplete.osm.be/theme?userlayout=true#your-base64-encoded-file",
   "id": "template",
   "maintainer": "Write your name here",
   "version": "2022-03-12",
   "title": {
     "en": "Title of your theme",
-    "#": "You can add extra languages here (and in all translation blocks), but make sure 'en' is everywhere"
+    "#1": "You can add extra languages here (and in all translation blocks), but make sure 'en' is everywhere"
   },
   "description": {
     "en": "The welcome message goes here"
@@ -19,15 +19,14 @@
   "startZoom": 0,
   "startLat": 0,
   "startLon": 0,
-  "#": "For more options and configuration, see the documentation in LayoutConfig.json",
-  "#layers": "The list of layers is where most of the content will be. Either reuse an already existing layer by simply calling it's ID or define a whole new layer. An overview of builtin layers is at https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinLayers.md#normal-layers",
+  "#7": "For more options and configuration, see the documentation in LayoutConfig.json",
+  "#8": "`layers` is where most of the content will be. Either reuse an already existing layer by simply calling it's ID or define a whole new layer. An overview of builtin layers is at https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinLayers.md#normal-layers",
   "layers": [
-    "bench",
     {
-      "id": "a singular nound describing the feature, in english",
+      "id": "a singular noun describing the feature, in english",
       "source": {
         "osmTags": {
-          "#": "For a description on which tags are possible, see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md",
+          "#1": "For a description on which tags are possible, see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md",
           "and": [
             "key0=value0",
             "key1=value1",
@@ -42,7 +41,7 @@
           ]
         }
       },
-      "#": "Minzoom: only download and show if zoom >= minzoom",
+      "#4": "Minzoom: only download and show if zoom >= minzoom",
       "minzoom": 12,
       "name": {
         "en": "Name of the layer, as shown in the layer selection"
@@ -55,30 +54,34 @@
           {
             "if": "name~*",
             "then": {
-              "#": "If name is given, use name instead as popup title. Note that the translation here uses '*' instead of 'en', which'll be shown in every language",
+              "#1": "If name is given, use name instead as popup title. Note that the translation here uses '*' instead of 'en', which'll be shown in every language",
               "*": "{name}"
             }
           }
         ],
-        "#": "Note that this is a tagRendering, but doesn't have a question field"
+        "#1": "Note that this is a tagRendering, but doesn't have a question field"
       },
       "allowMove": true,
       "deletion": {
-        "softDeletionTags": [
-          "disused:key:={key}"
-        ]
+        "softDeletionTags": {
+          "and": [
+            "razed:tourism=artwork",
+            "tourism="
+          ]
+        },
+        "neededChangesets": 5
       },
-      "#": "The maprenderings describe how a feature is shown on the map",
+      "#2": "The maprenderings describe how a feature is shown on the map",
       "mapRendering": [
         {
-          "#": "Rendering block of a mapping which is shown for points AND at the center point of a line/area",
+          "#1": "Rendering block of a mapping which is shown for points AND at the center point of a line/area",
           "location": [
             "point",
             "centroid"
           ],
           "icon": "circle:white;URL or path to icon.svg",
-          "iconSize": "30,30,center"
-          "#": "Note: all these values can be tagrenderings too, e.g.:",
+          "iconSize": "30,30,center",
+          "#2": "Note: all these values can be tagrenderings too, e.g.:",
           "label": {
             "render": {
               "en": "Item"
@@ -94,12 +97,12 @@
           }
         },
         {
-          "#": "Rendering of a line",
+          "#1": "Rendering of a line",
           "color": "#ff0",
           "width": 5
         }
       ],
-      "#": "Presets describe which new items can be added on click. Delete this block if adding a new point is not relevant",
+      "#3": "Presets describe which new items can be added on click. Delete this block if adding a new point is not relevant",
       "presets": [
         {
           "title": {
@@ -117,7 +120,7 @@
           ]
         }
       ],
-      "#": "The tagrenderings are everything that must be shown and/or asked. Use a full tag-rendering section OR a single string to call a builtin tagrendering (see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinQuestions.md)",
+      "#1": "The tagrenderings are everything that must be shown and/or asked. Use a full tag-rendering section OR a single string to call a builtin tagrendering (see https://github.com/pietervdvn/MapComplete/blob/develop/Docs/BuiltinQuestions.md)",
       "tagRenderings": [
         {
           "render": {
@@ -144,7 +147,7 @@
           },
           "freeform": {
             "key": "some_osm_key",
-            "#": "Types can be found at https://github.com/pietervdvn/MapComplete/blob/develop/Docs/SpecialInputElements.md",
+            "#1": "Types can be found at https://github.com/pietervdvn/MapComplete/blob/develop/Docs/SpecialInputElements.md",
             "type": "nat"
           },
           "mappings": [
@@ -153,7 +156,7 @@
               "then": {
                 "en": "Text on radio button which also is shown if somekey=some_value is present on the object"
               },
-              "#": "If this option is picked as answer, these tags will be added additionally. However, if 'somekey=some_value' is present, the above rendering will be shown",
+              "#1": "If this option is picked as answer, these tags will be added additionally. However, if 'somekey=some_value' is present, the above rendering will be shown",
               "addExtraTags": [
                 "extrakey=extravalue"
               ]
@@ -170,9 +173,9 @@
               "icon": {
                 "path": "/path/to/extra-icon.svg OR url",
                 "class": "medium",
-                "#": "An extra icon supporting this option"
+                "#1": "An extra icon supporting this option"
               },
-              "#": "If this option is picked as answer, these tags will be added additionally. However, if 'somekey=some_value' is present, the above rendering will be shown",
+              "#1": "If this option is picked as answer, these tags will be added additionally. However, if 'somekey=some_value' is present, the above rendering will be shown",
               "addExtraTags": [
                 "extrakey=extravalue"
               ]

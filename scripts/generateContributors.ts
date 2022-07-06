@@ -27,16 +27,16 @@ function main() {
                 author = "Pieter Vander Vennet"
             }
             let hist = codeContributors;
-            if (message.startsWith("Translated using Weblate")) {
+            if (message.startsWith("Translated using Weblate") || message.startsWith("Translated using Hosted Weblate")) {
                 hist = translationContributors
             }
             hist.set(author, 1 + (hist.get(author) ?? 0))
         }
         
         const codeContributorsTarget = "assets/contributors.json"
-        writeFileSync(codeContributorsTarget, JSON.stringify(asList(codeContributors)))
+        writeFileSync(codeContributorsTarget, JSON.stringify(asList(codeContributors), null, "  "))
         const translatorsTarget = "assets/translators.json"
-        writeFileSync(translatorsTarget, JSON.stringify(asList(translationContributors)))
+        writeFileSync(translatorsTarget, JSON.stringify(asList(translationContributors), null, "  "))
 
     }));
 }

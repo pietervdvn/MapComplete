@@ -107,8 +107,8 @@ export default class Table extends BaseUIElement {
             let rows: HTMLTableRowElement[] = Array.from(table.rows)
             rows.splice(0,1) // remove header row
             rows = rows.sort((a, b) => {
-                const ac = a.cells[col]?.innerText?.toLowerCase()
-                const bc = b.cells[col]?.innerText?.toLowerCase()
+                const ac = a.cells[col]?.textContent?.toLowerCase()
+                const bc = b.cells[col]?.textContent?.toLowerCase()
                 if(ac === bc){
                     return 0
                 }

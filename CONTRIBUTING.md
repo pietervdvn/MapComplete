@@ -8,7 +8,7 @@ There are multiple ways to contribute:
 - Translating MapComplete to your own language can be done
   on [this website](https://hosted.weblate.org/projects/mapcomplete/)
 - If you encounter a bug, the [issue tracker](https://github.com/pietervdvn/MapComplete/issues) is the place to be
-- If you want to improve a theme, create a new theme, spot a typo in the repo... the best way is to open a pull request.
+- If you want to improve a theme, create a new theme, spot a typo in the repo... the best way is to open a pull request. Read more about [making your own theme](/Docs/Making_Your_Own_Theme.md).
 
 People who stick around and contribute in a meaningful way, _might_ be granted write access to the repository. This is
 done on a purely subjective basis, e.g. after a few pull requests and if you are a member of the OSM community.
@@ -53,3 +53,10 @@ To do this:
 
 Alternatively, if you don't have any unmerged changes, you can remove your local copy and clone `pietervdvn/MapComplete`
 again to start fresh.
+
+What not to contribute
+----------------------
+
+I'm currently _not_ accepting files for integration with some editor. There are hundreds of editors out there, if every single one of them needs a file in the repo, this ends up as a mess.
+Furthermore, MapComplete doesn't want to encourage or discourage some editors.
+At last, these files are hard to maintain and are hard to detect if they have fallen out of use.

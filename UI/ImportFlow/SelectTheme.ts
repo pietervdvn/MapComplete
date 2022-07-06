@@ -1,6 +1,6 @@
 import {FlowStep} from "./FlowStep";
 import Combine from "../Base/Combine";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {InputElement} from "../Input/InputElement";
 import {AllKnownLayouts} from "../../Customizations/AllKnownLayouts";
@@ -10,12 +10,12 @@ import Title from "../Base/Title";
 import {RadioButton} from "../Input/RadioButton";
 import {And} from "../../Logic/Tags/And";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import Toggleable from "../Base/Toggleable";
 import {BBox} from "../../Logic/BBox";
 import BaseUIElement from "../BaseUIElement";
 import PresetConfig from "../../Models/ThemeConfig/PresetConfig";
 import List from "../Base/List";
+import Translations from "../i18n/Translations";
 
 export default class SelectTheme extends Combine implements FlowStep<{
     features: any[],
@@ -24,16 +24,16 @@ export default class SelectTheme extends Combine implements FlowStep<{
     bbox: BBox,
 }> {
 
-    public readonly Value: UIEventSource<{
+    public readonly Value: Store<{
         features: any[],
         theme: string,
         layer: LayerConfig,
         bbox: BBox,
     }>;
-    public readonly IsValid: UIEventSource<boolean>;
+    public readonly IsValid: Store<boolean>;
 
     constructor(params: ({ features: any[], layer: LayerConfig, bbox: BBox, })) {
-
+        const t = Translations.t.importHelper.selectTheme
         let options: InputElement<string>[] = AllKnownLayouts.layoutsList
             .filter(th => th.layers.some(l => l.id === params.layer.id))
             .filter(th => th.id !== "personal")
@@ -69,15 +69,15 @@ export default class SelectTheme extends Combine implements FlowStep<{
         })
 
         super([
-            new Title("Select a theme"),
-            "All of the following themes will show the import notes. However, the note on OpenStreetMap can link to only one single theme. Choose which theme that the created notes will link to",
+            new Title(t.title),
+           t.intro,
             themeRadios,
             new VariableUiElement(applicablePresets.map(applicablePresets => {
                 if (themeRadios.GetValue().data === undefined) {
                     return undefined
                 }
                 if (applicablePresets === undefined || applicablePresets.length === 0) {
-                    return new FixedUiElement("This theme has no presets loaded. As a result, imports won't work here").SetClass("alert")
+                    return t.noMatchingPresets.SetClass("alert")
                 }
             }, [themeRadios.GetValue()])),
 
@@ -115,11 +115,14 @@ export default class SelectTheme extends Combine implements FlowStep<{
         if (unmatched === undefined || unmatched.length === 0) {
             return
         }
-
-        const applicablePresetsOverview = applicablePresets.map(preset => new Combine([
-            preset.title.txt, "needs tags",
-            new FixedUiElement(preset.tags.map(t => t.asHumanString()).join(" & ")).SetClass("thanks")
-        ]))
+  const t = Translations.t.importHelper.selectTheme
+      
+        const applicablePresetsOverview = applicablePresets.map(preset => 
+            t.needsTags.Subs(
+                {title: preset.title, 
+                    tags:preset.tags.map(t => t.asHumanString()).join(" & ") })
+                .SetClass("thanks")
+        );
 
         const unmatchedPanels: BaseUIElement[] = []
         for (const feat of unmatched) {
@@ -133,20 +136,16 @@ export default class SelectTheme extends Combine implements FlowStep<{
                 const missing = []
                 for (const {k, v} of tags) {
                     if (preset[k] === undefined) {
-                        missing.push(
-                            `Expected ${k}=${v}, but it is completely missing`
-                        )
+                        missing.push(t.missing.Subs({k,v}))
                     } else if (feat.properties[k] !== v) {
-                        missing.push(
-                            `Property with key ${k} does not have expected value ${v}; instead it is ${feat.properties}`
-                        )
+                        missing.push(t.misMatch.Subs({k, v, properties: feat.properties}))
                     }
                 }
 
                 if (missing.length > 0) {
                     parts.push(
                         new Combine([
-                            new FixedUiElement(`Preset ${preset.title.txt} is not applicable:`),
+                            t.notApplicable.Subs(preset),
                             new List(missing)
                         ]).SetClass("flex flex-col alert")
                     )
@@ -158,9 +157,9 @@ export default class SelectTheme extends Combine implements FlowStep<{
         }
 
         return new Combine([
-            new FixedUiElement(unmatched.length + " objects dont match any presets").SetClass("alert"),
+            t.displayNonMatchingCount.Subs(unmatched).SetClass("alert"),
             ...applicablePresetsOverview,
-            new Toggleable(new Title("The following elements don't match any of the presets"),
+            new Toggleable(new Title(t.unmatchedTitle),
                 new Combine(unmatchedPanels))
         ]).SetClass("flex flex-col")
 
