@@ -73,6 +73,11 @@ To use the WSL in Visual Studio Code:
 
 To use WSL without Visual Studio Code you can replace steps 7 and 8 by opening up a WSL terminal
 
+On mac
+------
+
+Install the `Command line tools for XCode which you can find [here](https://developer.apple.com/download/all/). You might need an apple dev account for this.
+
 Automatic deployment
 --------------------
 
