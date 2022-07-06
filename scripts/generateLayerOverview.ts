@@ -313,7 +313,7 @@ class LayerOverviewUtils {
                 const usedLayers = Array.from(LayerOverviewUtils.extractLayerIdsFrom(themeFile, false))
                     .map(id => LayerOverviewUtils.layerPath + id + ".json")
                 if (!forceReload && !this.shouldBeUpdated([themePath, ...usedLayers], targetPath)) {
-                    fixed.set(themeFile.id, themeFile)
+                    fixed.set(themeFile.id, JSON.parse(readFileSync(LayerOverviewUtils.themePath+themeFile.id+".json", 'utf8')))
                     skippedThemes.push(themeFile.id)
                     continue;
                 }
