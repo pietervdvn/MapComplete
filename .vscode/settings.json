@@ -15,5 +15,6 @@
             "url": "./Docs/Schemas/LayoutConfigJson.schema.json"
         }
     ],
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "files.autoSave": "onFocusChange"
 }
