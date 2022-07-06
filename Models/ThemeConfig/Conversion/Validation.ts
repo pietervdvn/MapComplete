@@ -45,14 +45,15 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
     }
 }
 
-export class DoesImageExist extends DesugaringStep<string>{
-    
+export class DoesImageExist extends DesugaringStep<string> {
+
     private readonly _knownImagePaths: Set<string>;
-    public static doesPathExist : (path: string) => boolean = undefined;
-    
-    constructor(knownImagePaths: Set<string>) {
+    private readonly doesPathExist: (path: string) => boolean = undefined;
+
+    constructor(knownImagePaths: Set<string>, checkExistsSync: (path: string) => boolean = undefined) {
         super("Checks if an image exists", [], "DoesImageExist");
         this._knownImagePaths = knownImagePaths;
+        this.doesPathExist = checkExistsSync;
     }
 
     convert(image: string, context: string): { result: string; errors?: string[]; warnings?: string[]; information?: string[] } {
@@ -76,11 +77,11 @@ export class DoesImageExist extends DesugaringStep<string>{
         }
 
         if (this._knownImagePaths !== undefined && !this._knownImagePaths.has(image)) {
-            if(DoesImageExist.doesPathExist === undefined){
+            if (this.doesPathExist === undefined) {
                 errors.push(`Image with path ${image} not found or not attributed; it is used in ${context}`)
-            }else if(!DoesImageExist.doesPathExist(image)){
+            } else if (!this.doesPathExist(image)) {
                 errors.push(`Image with path ${image} does not exist; it is used in ${context}.\n     Check for typo's and missing directories in the path.`)
-            }else{
+            } else {
                 errors.push(`Image with path ${image} is not attributed (but it exists); execute 'npm run query:licenses' to add the license information and/or run 'npm run generate:licenses' to compile all the license info`)
             }
         }
@@ -89,7 +90,7 @@ export class DoesImageExist extends DesugaringStep<string>{
             errors, warnings, information
         }
     }
-    
+
 }
 
 class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
@@ -98,17 +99,16 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
      * @private
      */
     private readonly _path?: string;
-    private readonly knownImagePaths: Set<string>;
     private readonly _isBuiltin: boolean;
     private _sharedTagRenderings: Map<string, any>;
-    private readonly _validateImage : DesugaringStep<string>;
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
+    private readonly _validateImage: DesugaringStep<string>;
+
+    constructor(doesImageExist: DoesImageExist, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme");
-        this.knownImagePaths = knownImagePaths;
+        this._validateImage = doesImageExist;
         this._path = path;
         this._isBuiltin = isBuiltin;
         this._sharedTagRenderings = sharedTagRenderings;
-        this._validateImage = new DoesImageExist(this.knownImagePaths);
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[], warnings: string[], information: string[] } {
@@ -179,9 +179,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             if (theme.id !== filename) {
                 errors.push("Theme ids should be the same as the name.json, but we got id: " + theme.id + " and filename " + filename + " (" + this._path + ")")
             }
-            if (!this.knownImagePaths.has(theme.icon)) {
-                errors.push("The theme image " + theme.icon + " is not attributed or not saved locally")
-            }
+            this._validateImage.convertJoin(theme.icon, context + ".icon", errors, warnings, information);
             const dups = Utils.Dupiclates(json.layers.map(layer => layer["id"]))
             if (dups.length > 0) {
                 errors.push(`The theme ${json.id} defines multiple layers with id ${dups.join(", ")}`)
@@ -195,16 +193,16 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 
                 // The first key in the the title-field must be english, otherwise the title in the loading page will be the different language
                 const targetLanguage = theme.title.SupportedLanguages()[0]
-                if(targetLanguage !== "en"){
+                if (targetLanguage !== "en") {
                     warnings.push(`TargetLanguage is not 'en' for public theme ${theme.id}, it is ${targetLanguage}. Move 'en' up in the title of the theme and set it as the first key`)
                 }
-                
+
                 // Official, public themes must have a full english translation
                 const checked = new ValidateLanguageCompleteness("en")
                     .convert(theme, theme.id)
                 errors.push(...checked.errors)
-                
-              
+
+
             }
 
         } catch (e) {
@@ -221,10 +219,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
 }
 
 export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
-    constructor(knownImagePaths: Set<string>, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
+    constructor(doesImageExist: DoesImageExist, path: string, isBuiltin: boolean, sharedTagRenderings: Map<string, any>) {
         super("Validates a theme and the contained layers",
-            new ValidateTheme(knownImagePaths, path, isBuiltin, sharedTagRenderings),
-            new On("layers", new Each(new ValidateLayer(undefined, false, knownImagePaths)))
+            new ValidateTheme(doesImageExist, path, isBuiltin, sharedTagRenderings),
+            new On("layers", new Each(new ValidateLayer(undefined, false, doesImageExist)))
         );
     }
 }
@@ -383,7 +381,7 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
             })
             for (let j = 0; j < i; j++) {
                 const doesMatch = parsedConditions[j].matchesProperties(properties)
-                if(doesMatch && json.mappings[j].hideInAnswer === true && json.mappings[i].hideInAnswer !== true){
+                if (doesMatch && json.mappings[j].hideInAnswer === true && json.mappings[i].hideInAnswer !== true) {
                     warnings.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j}. However, mapping ${j} has 'hideInAnswer' set, which will result in a different rendering in question-mode.`)
                 } else if (doesMatch) {
                     // The current mapping is shadowed!
@@ -414,10 +412,11 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
 }
 
 export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJson> {
-    private knownImagePaths: Set<string>;
-    constructor(knownImagePaths: Set<string>) {
+    private readonly _doesImageExist: DoesImageExist;
+
+    constructor(doesImageExist: DoesImageExist) {
         super("Checks that 'then'clauses in mappings don't have images, but use 'icon' instead", [], "DetectMappingsWithImages");
-        this.knownImagePaths = knownImagePaths;
+        this._doesImageExist = doesImageExist;
     }
 
     /**
@@ -441,9 +440,9 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
      * r.errors.some(msg => msg.indexOf("./assets/layers/bike_parking/staple.svg") >= 0) // => true
      */
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[], information?: string[] } {
-        const errors = []
-        const warnings = []
-        const information = []
+        const errors: string[] = []
+        const warnings: string[] = []
+        const information: string[] = []
         if (json.mappings === undefined || json.mappings.length === 0) {
             return {result: json}
         }
@@ -461,15 +460,10 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
                     information.push(`${ctx}: Ignored image ${images.join(", ")} in 'then'-clause of a mapping as this check has been disabled`)
 
                     for (const image of images) {
-                        if (this.knownImagePaths !== undefined && !this.knownImagePaths.has(image)) {
-                            
-                            const closeNames = Utils.sortedByLevenshteinDistance(image, Array.from(this.knownImagePaths), i => i);
-                            
-                            const ctx = context === undefined ? "" : ` in a layer defined in the theme ${context}`
-                            errors.push(`Image with path ${image} not found or not attributed; it is used in ${json.id}${ctx}.\n    Did you mean one of ${closeNames.slice(0, 3).join(", ")}`)
-                        }
+                        this._doesImageExist.convertJoin(image, ctx, errors, warnings, information);
+
                     }
-                    
+
                 }
             } else if (ignore) {
                 warnings.push(`${ctx}: unused '${ignoreToken}' - please remove this`)
@@ -486,10 +480,10 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 }
 
 export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
-    constructor(layerConfig?: LayerConfigJson, knownImagePaths?: Set<string>) {
+    constructor(layerConfig?: LayerConfigJson, doesImageExist?: DoesImageExist) {
         super("Various validation on tagRenderingConfigs",
             new DetectShadowedMappings(layerConfig),
-            new DetectMappingsWithImages(knownImagePaths)
+            new DetectMappingsWithImages(doesImageExist)
         );
     }
 }
@@ -501,13 +495,13 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
      */
     private readonly _path?: string;
     private readonly _isBuiltin: boolean;
-    private knownImagePaths: Set<string> | undefined;
+    private readonly _doesImageExist: DoesImageExist;
 
-    constructor(path: string, isBuiltin: boolean, knownImagePaths: Set<string>) {
+    constructor(path: string, isBuiltin: boolean, doesImageExist: DoesImageExist) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer");
         this._path = path;
         this._isBuiltin = isBuiltin;
-        this.knownImagePaths = knownImagePaths
+        this._doesImageExist = doesImageExist
     }
 
     convert(json: LayerConfigJson, context: string): { result: LayerConfigJson; errors: string[]; warnings?: string[], information?: string[] } {
@@ -595,7 +589,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
             }
             if (json.tagRenderings !== undefined) {
-                const r = new On("tagRenderings", new Each(new ValidateTagRenderings(json, this.knownImagePaths))).convert(json, context)
+                const r = new On("tagRenderings", new Each(new ValidateTagRenderings(json, this._doesImageExist))).convert(json, context)
                 warnings.push(...(r.warnings ?? []))
                 errors.push(...(r.errors ?? []))
                 information.push(...(r.information ?? []))

@@ -83,10 +83,10 @@ class LayerOverviewUtils {
         writeFileSync(`./assets/generated/layers/${layer.id}.json`, JSON.stringify(layer, null, "  "), "UTF8");
     }
 
-    getSharedTagRenderings(knownImagePaths: Set<string>): Map<string, TagRenderingConfigJson> {
+    getSharedTagRenderings(doesImageExist: DoesImageExist): Map<string, TagRenderingConfigJson> {
         const dict = new Map<string, TagRenderingConfigJson>();
         
-        const validator = new ValidateTagRenderings(undefined, knownImagePaths);
+        const validator = new ValidateTagRenderings(undefined, doesImageExist);
         for (const key in questions["default"]) {
             if (key === "id") {
                 continue
@@ -153,15 +153,13 @@ class LayerOverviewUtils {
 
     main(_: string[]) {
 
-        DoesImageExist.doesPathExist = (path) => existsSync(path)
-        
         const licensePaths = new Set<string>()
         for (const i in licenses) {
             licensePaths.add(licenses[i].path)
         }
-
-        const sharedLayers = this.buildLayerIndex(licensePaths);
-        const sharedThemes = this.buildThemeIndex(licensePaths, sharedLayers)
+        const doesImageExist = new DoesImageExist(licensePaths, existsSync)
+        const sharedLayers = this.buildLayerIndex(doesImageExist);
+        const sharedThemes = this.buildThemeIndex(doesImageExist, sharedLayers)
 
         writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify({
             "layers": Array.from(sharedLayers.values()),
@@ -191,12 +189,12 @@ class LayerOverviewUtils {
         console.log(green("All done!"))
     }
 
-    private buildLayerIndex(knownImagePaths: Set<string>): Map<string, LayerConfigJson> {
+    private buildLayerIndex(doesImageExist: DoesImageExist): Map<string, LayerConfigJson> {
         // First, we expand and validate all builtin layers. These are written to assets/generated/layers
         // At the same time, an index of available layers is built.
         console.log("   ---------- VALIDATING BUILTIN LAYERS ---------")
 
-        const sharedTagRenderings = this.getSharedTagRenderings(knownImagePaths);
+        const sharedTagRenderings = this.getSharedTagRenderings(doesImageExist);
         const layerFiles = ScriptUtils.getLayerFiles();
         const sharedLayers = new Map<string, LayerConfigJson>()
         const state: DesugaringContext = {
@@ -212,7 +210,7 @@ class LayerOverviewUtils {
                 fixed.source.osmTags = {"and": [fixed.source.osmTags]}
             }
             
-            const validator = new ValidateLayer(sharedLayerJson.path, true, knownImagePaths);
+            const validator = new ValidateLayer(sharedLayerJson.path, true, doesImageExist);
             validator.convertStrict(fixed, context)
 
             if (sharedLayers.has(fixed.id)) {
@@ -252,7 +250,7 @@ class LayerOverviewUtils {
         return publicLayerIds
     }
 
-    private buildThemeIndex(knownImagePaths: Set<string>, sharedLayers: Map<string, LayerConfigJson>): Map<string, LayoutConfigJson> {
+    private buildThemeIndex(doesImageExist: DoesImageExist, sharedLayers: Map<string, LayerConfigJson>): Map<string, LayoutConfigJson> {
         console.log("   ---------- VALIDATING BUILTIN THEMES ---------")
         const themeFiles = ScriptUtils.getThemeFiles();
         const fixed = new Map<string, LayoutConfigJson>();
@@ -261,7 +259,7 @@ class LayerOverviewUtils {
 
         const convertState: DesugaringContext = {
             sharedLayers,
-            tagRenderings: this.getSharedTagRenderings(knownImagePaths),
+            tagRenderings: this.getSharedTagRenderings(doesImageExist),
             publicLayers
         }
         for (const themeInfo of themeFiles) {
@@ -273,10 +271,7 @@ class LayerOverviewUtils {
 
                 themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
 
-                if (knownImagePaths === undefined) {
-                    throw "Could not load known images/licenses"
-                }
-                new ValidateThemeAndLayers(knownImagePaths, themePath, true, convertState.tagRenderings)
+                new ValidateThemeAndLayers(doesImageExist, themePath, true, convertState.tagRenderings)
                     .convertStrict(themeFile, themePath)
 
                 this.writeTheme(themeFile)
