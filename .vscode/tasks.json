@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "start",
+      "path": "/",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "MapComplete Dev",
+      "detail": "Run MapComplete Dev Server"
+    }
+  ]
+}
