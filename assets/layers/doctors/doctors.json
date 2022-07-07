@@ -3,17 +3,33 @@
     "name": {
         "en": "doctors"
     },
+    "source": {
+        "osmTags": {
+            "or": [
+                "amenity=doctors",
+                "amenity=dentist",
+                "healthcare=physiotherapist"
+            ]
+        }
+    },
     "title": {
         "render": {
             "en": "Doctors Office {name}"
-        }
-    },
-    "source": {
-        "osmTags": {
-            "and": [
-                "amenity=doctors"
-            ]
-        }
+        },
+        "mappings": [
+            {
+                "if": "amenity=doctors",
+                "then": "Doctors Office {name}"
+            },
+            {
+                "if": "amenity=dentist",
+                "then": "Dentists office {name}"
+            },
+            {
+                "if": "healthcare=physiotherapist",
+                "then": "Physiotherapists office {name}"
+            }
+        ]
     },
     "minzoom": 13,
     "tagRenderings": [
@@ -23,6 +39,7 @@
         "email",
         "website",
         {
+            "condition": "amenity=doctors",
             "id": "specialty",
             "render": {
                 "en": "This doctor is specialized in {healthcare:speciality}"
@@ -61,12 +78,51 @@
             ]
         }
     ],
+    "presets": [
+        {
+            "title": {
+                "en": "a doctors office"
+            },
+            "tags": [
+                "amenity=doctors"
+            ]
+        },
+        {
+            "title": {
+                "en": "a dentists office"
+            },
+            "tags": [
+                "amenity=dentist"
+            ]
+        },
+        {
+            "title": {
+                "en": "a physiotherapists office"
+            },
+            "tags": [
+                "healthcare=physiotherapist"
+            ]
+        }
+    ],
+    "filter": [
+        {
+            "id": "opened-now",
+            "options": [
+                {
+                    "question": {
+                        "en": "Opened now"
+                    },
+                    "osmTags": "_isOpen=yes"
+                }
+            ]
+        }
+    ],
     "mapRendering": [
         {
             "icon": {
-                "render": "pin:#6BC4F7;./assets/layers/doctors/doctors.svg"
+                "render": "circle:white;./assets/layers/doctors/doctors.svg"
             },
-            "iconSize": "40,40,bottom",
+            "iconSize": "40,40,center",
             "location": [
                 "point",
                 "centroid"
