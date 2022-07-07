@@ -260,6 +260,10 @@
                 "then": "./assets/layers/dogpark/dog-park.svg"
               },
               {
+                "if": "theme=pharmacies",
+                "then": "./assets/layers/pharmacy/pharmacy.svg"
+              },
+              {
                 "if": "theme=play_forests",
                 "then": "./assets/layers/play_forest/icon.svg"
               },
