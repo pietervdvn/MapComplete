@@ -1,10 +1,11 @@
 import ScriptUtils from "./ScriptUtils";
-import {existsSync, mkdirSync, readFileSync, writeFileSync} from "fs";
+import {existsSync, mkdirSync, readFileSync, statSync, writeFileSync} from "fs";
 import * as licenses from "../assets/generated/license_info.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 import Constants from "../Models/Constants";
 import {
+    DoesImageExist,
     PrevalidateTheme,
     ValidateLayer,
     ValidateTagRenderings,
@@ -24,6 +25,51 @@ import {Utils} from "../Utils";
 // It spits out an overview of those to be used to load them
 
 class LayerOverviewUtils {
+
+    public static readonly layerPath = "./assets/generated/layers/"
+    public static readonly themePath = "./assets/generated/themes/"
+
+    private static publicLayerIdsFrom(themefiles: LayoutConfigJson[]): Set<string> {
+        const publicThemes = [].concat(...themefiles
+            .filter(th => !th.hideFromOverview))
+
+        return new Set([].concat(...publicThemes.map(th => this.extractLayerIdsFrom(th))))
+    }
+
+    private static extractLayerIdsFrom(themeFile: LayoutConfigJson, includeInlineLayers = true): string[] {
+        const publicLayerIds = []
+        for (const publicLayer of themeFile.layers) {
+            if (typeof publicLayer === "string") {
+                publicLayerIds.push(publicLayer)
+                continue
+            }
+            if (publicLayer["builtin"] !== undefined) {
+                const bi = publicLayer["builtin"]
+                if (typeof bi === "string") {
+                    publicLayerIds.push(bi)
+                    continue
+                }
+                bi.forEach(id => publicLayerIds.push(id))
+                continue
+            }
+            if (includeInlineLayers) {
+                publicLayerIds.push(publicLayer["id"])
+            }
+        }
+        return publicLayerIds
+    }
+
+    shouldBeUpdated(sourcefile: string | string[], targetfile: string): boolean {
+        if (!existsSync(targetfile)) {
+            return true;
+        }
+        const targetModified = statSync(targetfile).mtime
+        if (typeof sourcefile === "string") {
+            sourcefile = [sourcefile]
+        }
+
+        return sourcefile.some(sourcefile => statSync(sourcefile).mtime > targetModified)
+    }
 
     writeSmallOverview(themes: { id: string, title: any, shortDescription: any, icon: string, hideFromOverview: boolean, mustHaveLanguage: boolean, layers: (LayerConfigJson | string | { builtin })[] }[]) {
         const perId = new Map<string, any>();
@@ -69,23 +115,23 @@ class LayerOverviewUtils {
     }
 
     writeTheme(theme: LayoutConfigJson) {
-        if (!existsSync("./assets/generated/themes")) {
-            mkdirSync("./assets/generated/themes");
+        if (!existsSync(LayerOverviewUtils.themePath)) {
+            mkdirSync(LayerOverviewUtils.themePath);
         }
-        writeFileSync(`./assets/generated/themes/${theme.id}.json`, JSON.stringify(theme, null, "  "), "UTF8");
+        writeFileSync(`${LayerOverviewUtils.themePath}${theme.id}.json`, JSON.stringify(theme, null, "  "), "UTF8");
     }
 
     writeLayer(layer: LayerConfigJson) {
-        if (!existsSync("./assets/generated/layers")) {
-            mkdirSync("./assets/generated/layers");
+        if (!existsSync(LayerOverviewUtils.layerPath)) {
+            mkdirSync(LayerOverviewUtils.layerPath);
         }
-        writeFileSync(`./assets/generated/layers/${layer.id}.json`, JSON.stringify(layer, null, "  "), "UTF8");
+        writeFileSync(`${LayerOverviewUtils.layerPath}${layer.id}.json`, JSON.stringify(layer, null, "  "), "UTF8");
     }
 
-    getSharedTagRenderings(knownImagePaths: Set<string>): Map<string, TagRenderingConfigJson> {
+    getSharedTagRenderings(doesImageExist: DoesImageExist): Map<string, TagRenderingConfigJson> {
         const dict = new Map<string, TagRenderingConfigJson>();
-        
-        const validator = new ValidateTagRenderings(undefined, knownImagePaths);
+
+        const validator = new ValidateTagRenderings(undefined, doesImageExist);
         for (const key in questions["default"]) {
             if (key === "id") {
                 continue
@@ -93,7 +139,7 @@ class LayerOverviewUtils {
             questions[key].id = key;
             questions[key]["source"] = "shared-questions"
             const config = <TagRenderingConfigJson>questions[key]
-            validator.convertStrict(config, "generate-layer-overview:tagRenderings/questions.json:"+key)
+            validator.convertStrict(config, "generate-layer-overview:tagRenderings/questions.json:" + key)
             dict.set(key, config)
         }
         for (const key in icons["default"]) {
@@ -104,9 +150,9 @@ class LayerOverviewUtils {
                 continue
             }
             icons[key].id = key;
-            const config =  <TagRenderingConfigJson>icons[key]
-            validator.convertStrict(config, "generate-layer-overview:tagRenderings/icons.json:"+key)
-            dict.set(key,config)
+            const config = <TagRenderingConfigJson>icons[key]
+            validator.convertStrict(config, "generate-layer-overview:tagRenderings/icons.json:" + key)
+            dict.set(key, config)
         }
 
         dict.forEach((value, key) => {
@@ -149,16 +195,18 @@ class LayerOverviewUtils {
         }
     }
 
-
-    main(_: string[]) {
+    main(args: string[]) {
+        
+        const forceReload = args.some(a => a == "--force")
 
         const licensePaths = new Set<string>()
         for (const i in licenses) {
             licensePaths.add(licenses[i].path)
         }
-
-        const sharedLayers = this.buildLayerIndex(licensePaths);
-        const sharedThemes = this.buildThemeIndex(licensePaths, sharedLayers)
+        const doesImageExist = new DoesImageExist(licensePaths, existsSync)
+        const sharedLayers = this.buildLayerIndex(doesImageExist, forceReload);
+        const recompiledThemes : string[] = []
+        const sharedThemes = this.buildThemeIndex(doesImageExist, sharedLayers, recompiledThemes, forceReload)
 
         writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify({
             "layers": Array.from(sharedLayers.values()),
@@ -168,7 +216,7 @@ class LayerOverviewUtils {
         writeFileSync("./assets/generated/known_layers.json", JSON.stringify({layers: Array.from(sharedLayers.values())}))
 
 
-        {
+       if(recompiledThemes.length > 0) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
             const iconsPerTheme =
                 Array.from(sharedThemes.values()).map(th => ({
@@ -188,28 +236,42 @@ class LayerOverviewUtils {
         console.log(green("All done!"))
     }
 
-    private buildLayerIndex(knownImagePaths: Set<string>): Map<string, LayerConfigJson> {
+    private buildLayerIndex(doesImageExist: DoesImageExist, forceReload: boolean): Map<string, LayerConfigJson> {
         // First, we expand and validate all builtin layers. These are written to assets/generated/layers
         // At the same time, an index of available layers is built.
         console.log("   ---------- VALIDATING BUILTIN LAYERS ---------")
 
-        const sharedTagRenderings = this.getSharedTagRenderings(knownImagePaths);
-        const layerFiles = ScriptUtils.getLayerFiles();
+        const sharedTagRenderings = this.getSharedTagRenderings(doesImageExist);
         const sharedLayers = new Map<string, LayerConfigJson>()
         const state: DesugaringContext = {
             tagRenderings: sharedTagRenderings,
             sharedLayers
         }
         const prepLayer = new PrepareLayer(state);
-        for (const sharedLayerJson of layerFiles) {
-            const context = "While building builtin layer " + sharedLayerJson.path
-            const fixed = prepLayer.convertStrict(sharedLayerJson.parsed, context)
+        const skippedLayers: string[] = []
+        const recompiledLayers: string[] = []
+        for (const sharedLayerPath of ScriptUtils.getLayerPaths()) {
+
+            {
+                const targetPath = LayerOverviewUtils.layerPath + sharedLayerPath.substring(sharedLayerPath.lastIndexOf("/"))
+                if (!forceReload && !this.shouldBeUpdated(sharedLayerPath, targetPath)) {
+                    const sharedLayer = JSON.parse(readFileSync(targetPath, "utf8"))
+                    sharedLayers.set(sharedLayer.id, sharedLayer)
+                    skippedLayers.push(sharedLayer.id)
+                    continue;
+                }
             
-            if(fixed.source.osmTags["and"] === undefined){
+            }
+
+            const parsed = JSON.parse(readFileSync(sharedLayerPath, "utf8"))
+            const context = "While building builtin layer " + sharedLayerPath
+            const fixed = prepLayer.convertStrict(parsed, context)
+
+            if (fixed.source.osmTags["and"] === undefined) {
                 fixed.source.osmTags = {"and": [fixed.source.osmTags]}
             }
-            
-            const validator = new ValidateLayer(sharedLayerJson.path, true, knownImagePaths);
+
+            const validator = new ValidateLayer(sharedLayerPath, true, doesImageExist);
             validator.convertStrict(fixed, context)
 
             if (sharedLayers.has(fixed.id)) {
@@ -217,39 +279,18 @@ class LayerOverviewUtils {
             }
 
             sharedLayers.set(fixed.id, fixed)
+            recompiledLayers.push(fixed.id)
 
             this.writeLayer(fixed)
 
         }
+
+        console.log("Recompiled layers " + recompiledLayers.join(", ") + " and skipped " + skippedLayers.length + " layers")
+
         return sharedLayers;
     }
 
-    private static publicLayerIdsFrom(themefiles: LayoutConfigJson[]): Set<string> {
-        const publicLayers = [].concat(...themefiles
-            .filter(th => !th.hideFromOverview)
-            .map(th => th.layers))
-
-        const publicLayerIds = new Set<string>()
-        for (const publicLayer of publicLayers) {
-            if (typeof publicLayer === "string") {
-                publicLayerIds.add(publicLayer)
-                continue
-            }
-            if (publicLayer["builtin"] !== undefined) {
-                const bi = publicLayer["builtin"]
-                if (typeof bi === "string") {
-                    publicLayerIds.add(bi)
-                    continue
-                }
-                bi.forEach(id => publicLayerIds.add(id))
-                continue
-            }
-            publicLayerIds.add(publicLayer.id)
-        }
-        return publicLayerIds
-    }
-
-    private buildThemeIndex(knownImagePaths: Set<string>, sharedLayers: Map<string, LayerConfigJson>): Map<string, LayoutConfigJson> {
+    private buildThemeIndex(doesImageExist: DoesImageExist, sharedLayers: Map<string, LayerConfigJson>, recompiledThemes: string[], forceReload: boolean): Map<string, LayoutConfigJson> {
         console.log("   ---------- VALIDATING BUILTIN THEMES ---------")
         const themeFiles = ScriptUtils.getThemeFiles();
         const fixed = new Map<string, LayoutConfigJson>();
@@ -258,23 +299,33 @@ class LayerOverviewUtils {
 
         const convertState: DesugaringContext = {
             sharedLayers,
-            tagRenderings: this.getSharedTagRenderings(knownImagePaths),
+            tagRenderings: this.getSharedTagRenderings(doesImageExist),
             publicLayers
         }
-        const nonDefaultLanguages : {theme: string, language: string}[] = []
+        const skippedThemes: string[] = []
         for (const themeInfo of themeFiles) {
+
+            const themePath = themeInfo.path;
             let themeFile = themeInfo.parsed
-            const themePath = themeInfo.path
+
+            {
+                const targetPath = LayerOverviewUtils.themePath + "/" + themePath.substring(themePath.lastIndexOf("/"))
+                const usedLayers = Array.from(LayerOverviewUtils.extractLayerIdsFrom(themeFile, false))
+                    .map(id => LayerOverviewUtils.layerPath + id + ".json")
+                if (!forceReload && !this.shouldBeUpdated([themePath, ...usedLayers], targetPath)) {
+                    fixed.set(themeFile.id, JSON.parse(readFileSync(LayerOverviewUtils.themePath+themeFile.id+".json", 'utf8')))
+                    skippedThemes.push(themeFile.id)
+                    continue;
+                }
+                recompiledThemes.push(themeFile.id)
+            }
 
             new PrevalidateTheme().convertStrict(themeFile, themePath)
             try {
 
                 themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
 
-                if (knownImagePaths === undefined) {
-                    throw "Could not load known images/licenses"
-                }
-                new ValidateThemeAndLayers(knownImagePaths, themePath, true, convertState.tagRenderings)
+                new ValidateThemeAndLayers(doesImageExist, themePath, true, convertState.tagRenderings)
                     .convertStrict(themeFile, themePath)
 
                 this.writeTheme(themeFile)
@@ -293,6 +344,9 @@ class LayerOverviewUtils {
                 mustHaveLanguage: t.mustHaveLanguage?.length > 0,
             }
         }));
+
+        console.log("Recompiled themes " + recompiledThemes.join(", ") + " and skipped " + skippedThemes.length + " themes")
+
         return fixed;
 
     }

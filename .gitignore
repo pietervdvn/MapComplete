@@ -2,7 +2,6 @@ dist/*
 node_modules
 .cache/*
 .idea/*
-.vscode/*
 scratch
 assets/editor-layer-index.json
 assets/generated/*
@@ -24,3 +23,16 @@ index_*.ts
 .~lock.*
 *.doctest.ts
 service-worker.js
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix

@@ -352,7 +352,7 @@ export default class TagRenderingConfig {
             }
 
             if (hideInAnswer !== true && !(mp.ifnot?.isUsableAsAnswer() ?? true)) {
-                throw `${context}.mapping[${i}].ifnot: This value cannot be used to answer a question, probably because it contains a regex or an OR. Either change it or set 'hideInAnswer'`
+                throw `${context}.mapping[${i}].ifnot: This value cannot be used to answer a question, probably because it contains a regex or an OR. If a contributor were to pick this as an option, MapComplete wouldn't be able to determine which tags to add.\n    Either change it or set 'hideInAnswer'`
             }
         }
 
