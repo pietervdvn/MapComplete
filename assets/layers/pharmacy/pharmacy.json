@@ -22,7 +22,6 @@
         "phone",
         "email",
         "website",
-        "dispensing",
         {
             "id": "wheelchair",
             "render": {
@@ -31,20 +30,17 @@
             "question": {
                 "en": "Is this pharmacy easy to access on a wheelchair?"
             },
-            "freeform": {
-                "key": "wheelchair"
-            },
             "mappings": [
                 {
                     "if": "wheelchair=yes",
                     "then": {
-                        "en": "Yes, this pharmacy is easy to access on a wheelchair"
+                        "en": "This pharmacy is easy to access on a wheelchair"
                     }
                 },
                 {
                     "if": "wheelchair=no",
                     "then": {
-                        "en": "No, this pharmacy is hard to access on a wheelchair"
+                        "en": "This pharmacy is hard to access on a wheelchair"
                     }
                     
                 },
@@ -53,33 +49,6 @@
                     "then": {
                         "en": "This pharmacy has limited access for wheelchair users"
                     }
-                }
-            ]
-        },
-        {
-            "id": "drive_through",
-            "render": {
-                "en": "Pharmacy drive through: {drive_through}"
-            },
-            "question": {
-                "en": "Does this pharmacy have a drive through?"
-            },
-            "freeform": {
-                "key": "drive_through"
-            },
-            "mappings": [
-                {
-                    "if": "drive_through=yes",
-                    "then": {
-                        "en": "Yes, this pharmacy has a drive through"
-                    }
-                },
-                {
-                    "if": "drive_through=no",
-                    "then": {
-                        "en": "No, this pharmacy does not have a drive through"
-                    }
-                    
                 }
             ]
         }
