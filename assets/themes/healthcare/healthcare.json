@@ -1,10 +1,10 @@
 {
-    "id": "doctors",
+    "id": "healthcare",
     "title": {
-        "en": "Doctors"
+        "en": "Healthcare"
     },
     "description": {
-        "en": "On this map, publicly accessible doctors offices are shown and can be easily added"
+        "en": "On this map, various healthcare related items are shown"
     },
     "maintainer": "MapComplete",
     "icon": "./assets/layers/doctors/doctors.svg",
@@ -15,6 +15,8 @@
     "startZoom": 16,
     "widenFactor": 2,
     "layers": [
-        "doctors"
+        "doctors",
+        "hospital",
+        "pharmacy"
     ]
 }

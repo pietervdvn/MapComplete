@@ -120,7 +120,11 @@
     "mapRendering": [
         {
             "icon": {
-                "render": "circle:white;./assets/layers/doctors/doctors.svg"
+                "render": "circle:white;./assets/layers/doctors/doctors.svg",
+                "mappings": [{
+                    "if": "amenity=dentist",
+                    "then": "circle:white;./assets/layers/doctors/dentist.svg"
+                }]
             },
             "iconSize": "40,40,center",
             "location": [
