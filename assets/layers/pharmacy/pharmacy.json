@@ -44,7 +44,7 @@
                 {
                     "if": "wheelchair=no",
                     "then": {
-                        "en": "No, this pharmacy is easy to access on a wheelchair"
+                        "en": "No, this pharmacy is hard to access on a wheelchair"
                     }
                     
                 },
