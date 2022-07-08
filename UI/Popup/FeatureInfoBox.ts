@@ -25,16 +25,20 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
         state: FeaturePipelineState,
-        hashToShow?: string,
-        isShown?: UIEventSource<boolean>,
+        options?: {
+            hashToShow?: string,
+            isShown?: UIEventSource<boolean>,
+            setHash?: true | boolean
+        }
     ) {
         if (state === undefined) {
             throw "State is undefined!"
         }
         super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig, state),
             () => FeatureInfoBox.GenerateContent(tags, layerConfig, state),
-            hashToShow ?? tags.data.id ?? "item",
-            isShown);
+            options?.hashToShow ?? tags.data.id ?? "item",
+            options?.isShown,
+            options);
 
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
