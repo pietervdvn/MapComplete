@@ -3,6 +3,7 @@
         "description": "Adreces"
     },
     "artwork": {
+        "description": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
         "name": "Obres d'art",
         "tagRenderings": {
             "artwork-artwork_type": {
@@ -824,10 +825,70 @@
     "recycling": {
         "name": "Residus",
         "tagRenderings": {
+            "container-location": {
+                "mappings": {
+                    "2": {
+                        "then": "Aquest contenidor està situat a l'aire lliure"
+                    }
+                }
+            },
             "opening_hours": {
                 "mappings": {
                     "0": {
                         "then": "24/7"
+                    }
+                }
+            },
+            "operator": {
+                "render": "Aquesta infraestuctura de reciclatge està operada per {operator}"
+            },
+            "recycling-accepts": {
+                "mappings": {
+                    "1": {
+                        "then": "Ací es poden reciclar els cartons de begudes"
+                    },
+                    "2": {
+                        "then": "Ací es poden reciclar llaunes"
+                    },
+                    "7": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
+                    "8": {
+                        "then": "Ací es poden reciclar ampolles de vidre"
+                    },
+                    "9": {
+                        "then": "Ací es pot reciclar vidre"
+                    },
+                    "10": {
+                        "then": "Ací es poden reciclar diaris"
+                    },
+                    "11": {
+                        "then": "Ací es pot reciclar paper"
+                    },
+                    "12": {
+                        "then": "Ací es poden reciclar ampolles de plàstic"
+                    },
+                    "13": {
+                        "then": "Ací es poden reciclar envasos de plàstic"
+                    },
+                    "14": {
+                        "then": "Ací es pot reciclar plàstic"
+                    },
+                    "20": {
+                        "then": "Ací es pot reciclar el rebuig"
+                    }
+                }
+            },
+            "recycling-centre-name": {
+                "render": "Aquest centre de reciclatge s'anomena <b>{name}</b>"
+            },
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Açò és un contenidor de reciclatge"
+                    },
+                    "1": {
+                        "then": "Açò és un centre de reciclatge"
                     }
                 }
             }

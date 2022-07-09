@@ -27,7 +27,6 @@ A layer showing car parkings
 
   - [parkings](https://mapcomplete.osm.be/parkings)
   - [personal](https://mapcomplete.osm.be/personal)
-  - [transit](https://mapcomplete.osm.be/transit)
 
 
 

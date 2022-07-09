@@ -5,7 +5,7 @@
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/layers/id_presets/maki-shop.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/./assets/layers/shops/maki-shop.svg' height="100px"> 
 
 A shop
 
@@ -95,7 +95,7 @@ This is rendered with  This shop is called <i>{name}</i>
 
 
 
-### shop_types 
+### shops-type-from-id 
 
 
 
@@ -267,8 +267,6 @@ The question is  What kind of shop is this?
   - Wine Shop corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine' target='_blank'>wine</a>
 
 
-Only visible if  `id~^..*$`  is shown
-
 
 
 ### opening_hours 
@@ -360,32 +358,6 @@ The question is  Which methods of payment are accepted here?
   - Payment cards are accepted here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
-
-
-
-### copyshop-print-sizes 
-
-
-
-The question is  What paper formats does this shop offer?
-
-
-
-
-
-  - This shop can print on papers of size A4 corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A4' target='_blank'>service:print:A4</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A4%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A4' target='_blank'>service:print:A4</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A4%3Dno' target='_blank'>no</a>
-  - This shop can print on papers of size A3 corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A3' target='_blank'>service:print:A3</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A3%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A3' target='_blank'>service:print:A3</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A3%3Dno' target='_blank'>no</a>
-  - This shop can print on papers of size A2 corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A2' target='_blank'>service:print:A2</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A2%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A2' target='_blank'>service:print:A2</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A2%3Dno' target='_blank'>no</a>
-  - This shop can print on papers of size A1 corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A1' target='_blank'>service:print:A1</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A1%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A1' target='_blank'>service:print:A1</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A1%3Dno' target='_blank'>no</a>
-  - This shop can print on papers of size A0 corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A0' target='_blank'>service:print:A0</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A0%3Dyes' target='_blank'>yes</a>
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A0' target='_blank'>service:print:A0</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A0%3Dno' target='_blank'>no</a>
-
-
-Only visible if  `shop~^.*copyshop.*$|shop~^.*stationary.*$|service:print=yes`  is shown
 
 
 
