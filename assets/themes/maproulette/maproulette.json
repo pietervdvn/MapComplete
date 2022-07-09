@@ -1,0 +1,145 @@
+{
+  "id": "maproulette",
+  "title": {
+    "en": "MapRoulette Test"
+  },
+  "description": {
+    "en": "MapRoulette Test"
+  },
+  "version": "1.0.0",
+  "hideFromOverview": true,
+  "icon": "./assets/svg/bug.svg",
+  "maintainer": "",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 4,
+  "layers": [
+    {
+      "id": "maproulette",
+      "source": {
+        "geoJson": "https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}",
+        "geoJsonZoomLevel": 16,
+        "osmTags": "id~*"
+      },
+      "mapRendering": [
+        {
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "icon": {
+            "render": "pin:white",
+            "mappings": [
+              {
+                "if": "status=0",
+                "then": "pin:#959DFF"
+              },
+              {
+                "if": "status=1",
+                "then": "pin:#65D2DA"
+              },
+              {
+                "if": "status=2",
+                "then": "pin:#F7BB59"
+              },
+              {
+                "if": "status=3",
+                "then": "pin:#F7BB59"
+              },
+              {
+                "if": "status=4",
+                "then": "pin:#737373"
+              },
+              {
+                "if": "status=5",
+                "then": "pin:#CCB186"
+              },
+              {
+                "if": "status=6",
+                "then": "pin:#FF5E63"
+              },
+              {
+                "if": "status=9",
+                "then": "pin:#FF349C"
+              }
+            ]
+          },
+          "iconSize": "40,40,center"
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "link",
+          "render": "<a href='https://maproulette.org/challenge/{parentId}/task/{id}'>View this task</a>"
+        },
+        {
+          "id": "status",
+          "render": "Current status: {status}",
+          "mappings": [
+            {
+              "if": "status=0",
+              "then": {
+                "en": "Task is created"
+              }
+            },
+            {
+              "if": "status=1",
+              "then": {
+                "en": "Task is fixed"
+              }
+            },
+            {
+              "if": "status=2",
+              "then": {
+                "en": "Task is a false positive"
+              }
+            },
+            {
+              "if": "status=3",
+              "then": {
+                "en": "Task is skipped"
+              }
+            },
+            {
+              "if": "status=4",
+              "then": {
+                "en": "Task is deleted"
+              }
+            },
+            {
+              "if": "status=5",
+              "then": {
+                "en": "Task is already fixed"
+              }
+            },
+            {
+              "if": "status=6",
+              "then": {
+                "en": "Task is marked as too hard"
+              }
+            },
+            {
+              "if": "status=9",
+              "then": {
+                "en": "Task is disabled"
+              }
+            }
+          ]
+        },
+        "all_tags"
+      ],
+      "description": {
+        "en": "Layer showing all tasks in MapRoulette"
+      },
+      "minzoom": 15,
+      "name": {
+        "en": "MapRoulette Tasks"
+      },
+      "title": {
+        "render": {
+          "en": "MapRoulette Item: {parentName}"
+        }
+      }
+    }
+  ]
+}
