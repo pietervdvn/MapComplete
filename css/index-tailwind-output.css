@@ -1668,10 +1668,6 @@ video {
   font-weight: 600;
 }
 
-.font-medium {
-  font-weight: 500;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -1699,10 +1695,6 @@ video {
 
 .ordinal {
   --tw-ordinal: ordinal;
-}
-
-.leading-6 {
-  line-height: 1.5rem;
 }
 
 .tracking-tight {
@@ -1910,6 +1902,14 @@ svg, img {
   box-sizing: content-box;
   width: 100%;
   height: 100%;
+}
+
+.titleicon img {
+  width: unset;
+}
+
+.titleicon svg {
+  width: unset;
 }
 
 .svg-catch svg path {
@@ -2505,16 +2505,6 @@ input {
 .hover\:bg-unsubtle:hover {
   background-color: var(--unsubtle-detail-color);
   color: var(--unsubtle-detail-color-contrast);
-}
-
-.group:hover .group-hover\:text-blue-800 {
-  --tw-text-opacity: 1;
-  color: rgba(30, 64, 175, var(--tw-text-opacity));
-}
-
-.group:hover .group-hover\:text-blue-900 {
-  --tw-text-opacity: 1;
-  color: rgba(30, 58, 138, var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {

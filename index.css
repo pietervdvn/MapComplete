@@ -137,6 +137,13 @@ svg, img {
     height: 100%;
 }
 
+.titleicon img {
+    width: unset;
+}
+
+.titleicon svg {
+    width: unset;
+}
 .svg-catch svg path {
     fill: var(--catch-detail-color) !important;
     stroke: var(--catch-detail-color) !important;
