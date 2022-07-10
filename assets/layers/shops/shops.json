@@ -105,6 +105,13 @@
         "question": {
           "en": "What kind of shop is this?",
           "nl": "Wat voor soort winkel is dit?"
+        },
+        "render": {
+          "en":"This is a {shop}"
+        },
+        "freeform": {
+          "key": "shop",
+          "addExtraTags": ["fixme=freeform shop key used, to be reviewed"]
         }
       }
     },

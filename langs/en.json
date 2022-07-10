@@ -160,6 +160,7 @@
         },
         "nameInlineQuestion": "The name of this {category} is $$$",
         "next": "Next",
+        "noMatchingMapping": "No entries mapped your search…",
         "noNameCategory": "{category} without a name",
         "noTagsSelected": "No tags selected",
         "notValid": "Select a valid value to continue",

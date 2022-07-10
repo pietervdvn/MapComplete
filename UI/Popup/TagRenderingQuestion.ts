@@ -31,6 +31,7 @@ import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 import Title from "../Base/Title";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {GeoOperations} from "../../Logic/GeoOperations";
+import {SearchablePillsSelector} from "../Input/SearchableMappingsSelector";
 
 /**
  * Shows the question element.
@@ -141,19 +142,25 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateInputElement(
         state: FeaturePipelineState,
         configuration: TagRenderingConfig,
-        applicableMappings: { if: TagsFilter, then: TypedTranslation<object>, icon?: string, ifnot?: TagsFilter, addExtraTags: Tag[] }[],
+        applicableMappings: { if: TagsFilter, then: TypedTranslation<object>, icon?: string, ifnot?: TagsFilter, addExtraTags: Tag[], searchTerms?: Record<string, string[]> }[],
         applicableUnit: Unit,
         tagsSource: UIEventSource<any>,
         feedback: UIEventSource<Translation>
     ): ReadonlyInputElement<TagsFilter> {
 
-        // FreeForm input will be undefined if not present; will already contain a special input element if applicable
-        const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
-       
+        
         const hasImages = applicableMappings.findIndex(mapping => mapping.icon !== undefined) >= 0
         let inputEls: InputElement<TagsFilter>[];
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
+        
+        if(applicableMappings.length > 8 && !ifNotsPresent && (configuration.freeform?.type === undefined || configuration.freeform?.type === "string")){
+            return TagRenderingQuestion.GenerateSearchableSelector(state, configuration, applicableMappings, tagsSource)
+        }
+
+
+        // FreeForm input will be undefined if not present; will already contain a special input element if applicable
+        const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
 
         function allIfNotsExcept(excludeIndex: number): TagsFilter[] {
             if (configuration.mappings === undefined || configuration.mappings.length === 0) {
@@ -221,6 +228,64 @@ export default class TagRenderingQuestion extends Combine {
 
     }
 
+    private static GenerateSearchableSelector(
+        state: FeaturePipelineState,
+        configuration: TagRenderingConfig,
+        applicableMappings: { if: TagsFilter; then: TypedTranslation<object>; icon?: string; iconClass?: string, addExtraTags: Tag[], searchTerms?: Record<string, string[]> }[], tagsSource: UIEventSource<any>): InputElement<TagsFilter>{
+       const values  : { show: BaseUIElement, value: TagsFilter, mainTerm: Record<string, string>, searchTerms?: Record<string, string[]> }[] = []
+        for (const mapping of applicableMappings) {
+            const tr = mapping.then.Subs(tagsSource.data)
+            const patchedMapping  = <{iconClass: "small-height", then: TypedTranslation<object>}> {...mapping, iconClass: "small-height"}
+            const fancy =  TagRenderingQuestion.GenerateMappingContent(patchedMapping, tagsSource, state).SetClass("normal-background")
+               values.push({
+                show: fancy,
+                value: mapping.if,
+                mainTerm: tr.translations,
+                searchTerms: mapping.searchTerms
+            })
+        }
+        
+        const searchValue: UIEventSource<string> = new UIEventSource<string>(undefined)
+        const ff = configuration.freeform
+        let onEmpty : BaseUIElement = undefined
+        if(ff !== undefined){
+            onEmpty = new VariableUiElement(searchValue.map(search => configuration.render.Subs({[ff.key] : search})))
+        }
+        
+        const classes =  "h-32 overflow-scroll"
+        const presetSearch = new SearchablePillsSelector<TagsFilter>(values,{
+            selectIfSingle: true,
+            mode: configuration.multiAnswer ? "select-many" : "select-one",
+            searchValue,
+            onNoMatches: onEmpty?.SetClass(classes).SetClass("flex justify-center items-center"),
+            searchAreaClass:classes
+        })
+        return new InputElementMap(presetSearch,
+            (x0, x1) => false,
+            arr => {
+                console.log("Arr is ", arr)
+                if(arr[0] !== undefined){
+                    return new And(arr)
+                }
+                if(ff !== undefined && searchValue.data?.length > 0 && !presetSearch.someMatchFound.data){
+                    const t = new Tag(ff.key, searchValue.data)
+                    if(ff.addExtraTags){
+                        return new And([t, ...ff.addExtraTags]) 
+                    }
+                    return t;
+                    
+                }
+                return undefined;
+            },
+            tf => {
+                if(tf["and"] !== undefined){
+                    return tf["and"];
+                }
+                return [tf];
+            },
+            [searchValue, presetSearch.someMatchFound]
+            );
+    }
 
     private static GenerateMultiAnswer(
         configuration: TagRenderingConfig,
@@ -337,7 +402,7 @@ export default class TagRenderingQuestion extends Combine {
             then: Translation,
             addExtraTags: Tag[],
             icon?: string,
-            iconClass?: string
+            iconClass?:  "small" | "medium" | "large" | "small-height"
         }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
 
         let tagging: TagsFilter = mapping.if;
@@ -358,13 +423,13 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateMappingContent(mapping: {
         then: Translation,
         icon?: string,
-        iconClass?: string
+        iconClass?: "small" | "medium" | "large" | "small-height"
     }, tagsSource: UIEventSource<any>, state: FeaturePipelineState): BaseUIElement {
         const text = new SubstitutedTranslation(mapping.then, tagsSource, state)
         if (mapping.icon === undefined) {
             return text;
         }
-        return new Combine([new Img(mapping.icon).SetClass("mapping-icon-"+(mapping.iconClass ?? "small")), text]).SetClass("flex")
+        return new Combine([new Img(mapping.icon).SetClass("mr-1 mapping-icon-"+(mapping.iconClass ?? "small")), text]).SetClass("flex")
     }
 
     private static GenerateFreeform(state: FeaturePipelineState, configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>, feedback: UIEventSource<Translation>)

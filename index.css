@@ -620,6 +620,12 @@ input {
     /* Additional class on the first layer filter */
 }
 
+.mapping-icon-small-height {
+    /* A mapping icon type */
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    width: unset;
+}
 
 .mapping-icon-small {
     /* A mapping icon type */
