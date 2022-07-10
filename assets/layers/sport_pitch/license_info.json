@@ -44,6 +44,17 @@
     ]
   },
   {
+    "path": "equestrian.svg",
+    "license": "CC0",
+    "authors": [
+      "Hufkratzer"
+    ],
+    "sources": [
+      "https://github.com/pietervdvn/MapComplete/issues/920",
+      " https://gist.githubusercontent.com/Hufkratzer/81abcfe749ce8f99257e38f58633dd72/raw/8fa614a983807724f7110793b57344cc70dc34bc/equestrian.svg"
+    ]
+  },
+  {
     "path": "lock.svg",
     "license": "CC-BY-SA 4.0",
     "authors": [

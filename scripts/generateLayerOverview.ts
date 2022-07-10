@@ -196,7 +196,7 @@ class LayerOverviewUtils {
     }
 
     main(args: string[]) {
-        
+
         const forceReload = args.some(a => a == "--force")
 
         const licensePaths = new Set<string>()
@@ -205,7 +205,7 @@ class LayerOverviewUtils {
         }
         const doesImageExist = new DoesImageExist(licensePaths, existsSync)
         const sharedLayers = this.buildLayerIndex(doesImageExist, forceReload);
-        const recompiledThemes : string[] = []
+        const recompiledThemes: string[] = []
         const sharedThemes = this.buildThemeIndex(doesImageExist, sharedLayers, recompiledThemes, forceReload)
 
         writeFileSync("./assets/generated/known_layers_and_themes.json", JSON.stringify({
@@ -216,7 +216,7 @@ class LayerOverviewUtils {
         writeFileSync("./assets/generated/known_layers.json", JSON.stringify({layers: Array.from(sharedLayers.values())}))
 
 
-       if(recompiledThemes.length > 0) {
+        if (recompiledThemes.length > 0) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
             const iconsPerTheme =
                 Array.from(sharedThemes.values()).map(th => ({
@@ -260,10 +260,14 @@ class LayerOverviewUtils {
                     skippedLayers.push(sharedLayer.id)
                     continue;
                 }
-            
-            }
 
-            const parsed = JSON.parse(readFileSync(sharedLayerPath, "utf8"))
+            }
+            let parsed;
+            try {
+                parsed = JSON.parse(readFileSync(sharedLayerPath, "utf8"))
+            } catch (e) {
+                throw ("Could not parse or read file " + sharedLayerPath)
+            }
             const context = "While building builtin layer " + sharedLayerPath
             const fixed = prepLayer.convertStrict(parsed, context)
 
@@ -282,6 +286,7 @@ class LayerOverviewUtils {
             recompiledLayers.push(fixed.id)
 
             this.writeLayer(fixed)
+
 
         }
 
@@ -313,7 +318,7 @@ class LayerOverviewUtils {
                 const usedLayers = Array.from(LayerOverviewUtils.extractLayerIdsFrom(themeFile, false))
                     .map(id => LayerOverviewUtils.layerPath + id + ".json")
                 if (!forceReload && !this.shouldBeUpdated([themePath, ...usedLayers], targetPath)) {
-                    fixed.set(themeFile.id, JSON.parse(readFileSync(LayerOverviewUtils.themePath+themeFile.id+".json", 'utf8')))
+                    fixed.set(themeFile.id, JSON.parse(readFileSync(LayerOverviewUtils.themePath + themeFile.id + ".json", 'utf8')))
                     skippedThemes.push(themeFile.id)
                     continue;
                 }

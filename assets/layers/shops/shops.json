@@ -120,6 +120,57 @@
     "email",
     "phone",
     "payment-options",
+    {
+      "id": "copyshop-print-sizes",
+      "condition": {
+        "or": [
+          "shop~.*copyshop.*",
+          "shop~.*stationary.*",
+          "service:print=yes"
+        ]
+      },
+      "question": {
+        "en": "What paper formats does this shop offer?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "service:print:A4=yes",
+          "then": {
+            "en": "This shop can print on papers of size A4"
+          },
+          "ifnot": "service:print:A4=no"
+        },
+        {
+          "if": "service:print:A3=yes",
+          "then": {
+            "en": "This shop can print on papers of size A3"
+          },
+          "ifnot": "service:print:A3=no"
+        },
+        {
+          "if": "service:print:A2=yes",
+          "then": {
+            "en": "This shop can print on papers of size A2"
+          },
+          "ifnot": "service:print:A2=no"
+        },
+        {
+          "if": "service:print:A1=yes",
+          "then": {
+            "en": "This shop can print on papers of size A1"
+          },
+          "ifnot": "service:print:A1=no"
+        },
+        {
+          "if": "service:print:A0=yes",
+          "then": {
+            "en": "This shop can print on papers of size A0"
+          },
+          "ifnot": "service:print:A0=no"
+        }
+      ]
+    },
     "questions",
     "reviews"
   ],

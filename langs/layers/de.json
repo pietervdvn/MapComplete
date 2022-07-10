@@ -3095,11 +3095,20 @@
                 "1": {
                     "then": "Radweg"
                 },
+                "2": {
+                    "then": "Straße mit gemeinsam genutzter Fahrspur {name}"
+                },
                 "3": {
                     "then": "Gemeinsame Fahrspur"
                 },
+                "4": {
+                    "then": "Straße mit Fahrradstreifen {name}"
+                },
                 "5": {
                     "then": "Fahrradspur"
+                },
+                "6": {
+                    "then": "Straße mit Radweg neben der Straße {name}"
                 },
                 "7": {
                     "then": "Radweg neben der Straße"
@@ -3110,7 +3119,8 @@
                 "9": {
                     "then": "Fahrradstraße"
                 }
-            }
+            },
+            "render": "Weg"
         }
     },
     "defibrillator": {
@@ -4055,6 +4065,116 @@
         },
         "title": {
             "render": "Informationstafel"
+        }
+    },
+    "kerbs": {
+        "description": "Eine Ebene, die Bordsteine zeigt.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle Arten von Bordsteinen"
+                    },
+                    "1": {
+                        "question": "Erhöhter Bordstein (>3 cm)"
+                    },
+                    "2": {
+                        "question": "Abgesenkter Bordstein (~3 cm)"
+                    },
+                    "3": {
+                        "question": "Bündiger Bordstein (~0cm)"
+                    },
+                    "4": {
+                        "question": "Kein Bordstein"
+                    },
+                    "5": {
+                        "question": "Bordstein mit unbekannter Höhe"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Bordsteine mit oder ohne taktilem Pflaster"
+                    },
+                    "1": {
+                        "question": "Bordstein mit taktilem Pflaster"
+                    },
+                    "2": {
+                        "question": "Bordstein ohne taktilem Pflaster"
+                    },
+                    "3": {
+                        "question": "Bordstein ohne Informationen über taktiles Pflaster"
+                    }
+                }
+            }
+        },
+        "name": "Bordsteine",
+        "presets": {
+            "0": {
+                "description": "Bordstein in einem Fußweg",
+                "title": "einen Bordstein"
+            }
+        },
+        "tagRenderings": {
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Höhe des Bordsteins"
+                },
+                "question": "Wie hoch ist der Bordstein?",
+                "render": "Bordsteinhöhe: {{kerb:height}}"
+            },
+            "kerb-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Bordstein ist erhöht (>3 cm)"
+                    },
+                    "1": {
+                        "then": "Der Bordstein ist abgesenkt (~3 cm)"
+                    },
+                    "2": {
+                        "then": "Der Bordstein ist bündig (~0cm)"
+                    },
+                    "3": {
+                        "then": "Hier gibt es keinen Bordstein"
+                    },
+                    "4": {
+                        "then": "Es gibt einen Bordstein mit unbekannter Höhe"
+                    }
+                },
+                "question": "Wie hoch ist der Bordstein?"
+            },
+            "tactile-paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Bordstein hat ein taktiles Pflaster."
+                    },
+                    "1": {
+                        "then": "Der Bordstein hat kein taktiles Pflaster."
+                    },
+                    "2": {
+                        "then": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist"
+                    }
+                },
+                "question": "Gibt es am Bordstein ein taktiles Pflaster?"
+            }
+        },
+        "title": {
+            "render": "Bordstein"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Zentimeter",
+                        "humanSingular": "Zentimeter"
+                    },
+                    "1": {
+                        "human": "Meter",
+                        "humanSingular": "Meter"
+                    }
+                }
+            }
         }
     },
     "kindergarten_childcare": {
@@ -5047,9 +5167,21 @@
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
             },
             "language": {
+                "freeform": {
+                    "placeholder": "Sprache in Englisch in Kleinbuchstaben"
+                },
                 "mappings": {
                     "0": {
                         "then": "Die Hauptsprache dieser Schule ist unbekannt"
+                    },
+                    "1": {
+                        "then": "Französisch ist die Hauptsprache von {name}"
+                    },
+                    "2": {
+                        "then": "Niederländisch ist die Hauptsprache von {name}"
+                    },
+                    "3": {
+                        "then": "Deutsch ist die Hauptsprache von {name}"
                     },
                     "4": {
                         "then": "Die Hauptsprache dieser Schule ist unbekannt"
@@ -5149,6 +5281,9 @@
         "tagRenderings": {
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?"
+            },
+            "shops-type-from-id": {
+                "question": "Was ist das für ein Geschäft?"
             }
         },
         "title": {
