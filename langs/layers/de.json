@@ -4276,6 +4276,9 @@
                 "mappings": {
                     "0": {
                         "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
                     }
                 },
                 "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
@@ -5281,9 +5284,6 @@
         "tagRenderings": {
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?"
-            },
-            "shops-type-from-id": {
-                "question": "Was ist das für ein Geschäft?"
             }
         },
         "title": {

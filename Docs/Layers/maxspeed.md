@@ -81,6 +81,8 @@ This is rendered with  The maximum allowed speed on this road is {maxspeed}
 
 
 
+  - This is a living street, which has a maxspeed of 20km/h corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a>&_country!=be
+  - This option cannot be chosen as answer
   - This is a living street, which has a maxspeed of 20km/h corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a>
  
 

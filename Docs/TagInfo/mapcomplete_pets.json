@@ -478,6 +478,10 @@
     },
     {
       "key": "shop",
+      "description": "Layer 'Dog-friendly shops' shows and asks freeform values for key 'shop' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+    },
+    {
+      "key": "shop",
       "description": "Layer 'Dog-friendly shops' shows shop=agrarian with a fixed text, namely 'Farm Supply Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "agrarian"
     },
@@ -1312,6 +1316,31 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Dog-friendly shops' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A4",
+      "description": "Layer 'Dog-friendly shops' shows service:print:A4=yes with a fixed text, namely 'This shop can print on papers of size A4' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A3",
+      "description": "Layer 'Dog-friendly shops' shows service:print:A3=yes with a fixed text, namely 'This shop can print on papers of size A3' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A2",
+      "description": "Layer 'Dog-friendly shops' shows service:print:A2=yes with a fixed text, namely 'This shop can print on papers of size A2' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A1",
+      "description": "Layer 'Dog-friendly shops' shows service:print:A1=yes with a fixed text, namely 'This shop can print on papers of size A1' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A0",
+      "description": "Layer 'Dog-friendly shops' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "yes"
     },
     {

@@ -4342,6 +4342,9 @@
                 "mappings": {
                     "0": {
                         "then": "This is a living street, which has a maxspeed of 20km/h"
+                    },
+                    "1": {
+                        "then": "This is a living street, which has a maxspeed of 20km/h"
                     }
                 },
                 "question": "What is the legal maximum speed one is allowed to drive on this road?",
@@ -5402,7 +5405,8 @@
         "tagRenderings": {
             "2": {
                 "override": {
-                    "question": "What kind of shop is this?"
+                    "question": "What kind of shop is this?",
+                    "render": "This is a {shop}"
                 }
             },
             "copyshop-print-sizes": {
