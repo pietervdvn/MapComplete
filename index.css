@@ -627,6 +627,21 @@ input {
     width: unset;
 }
 
+.mapping-icon-medium-height {
+    /* A mapping icon type */
+    height: 3rem;
+    margin-right: 0.5rem;
+    width: unset;
+}
+
+.mapping-icon-large-height {
+    /* A mapping icon type */
+    height: 5rem;
+    margin-right: 0.5rem;
+    width: unset;
+}
+
+
 .mapping-icon-small {
     /* A mapping icon type */
     width: 1.5rem;

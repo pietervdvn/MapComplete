@@ -1290,6 +1290,10 @@ video {
   flex-wrap: wrap-reverse;
 }
 
+.content-start {
+  align-content: flex-start;
+}
+
 .items-end {
   align-items: flex-end;
 }
@@ -2465,7 +2469,21 @@ input {
 
 .mapping-icon-small-height {
   /* A mapping icon type */
-  height: 1.5rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  width: unset;
+}
+
+.mapping-icon-medium-height {
+  /* A mapping icon type */
+  height: 3rem;
+  margin-right: 0.5rem;
+  width: unset;
+}
+
+.mapping-icon-large-height {
+  /* A mapping icon type */
+  height: 5rem;
   margin-right: 0.5rem;
   width: unset;
 }
