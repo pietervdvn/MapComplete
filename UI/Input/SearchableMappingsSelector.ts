@@ -18,6 +18,7 @@ class SelfHidingToggle extends UIElement implements InputElement<boolean> {
     public readonly _selected: UIEventSource<boolean>
     public readonly isShown: Store<boolean> = new UIEventSource<boolean>(true);
     public readonly forceSelected: UIEventSource<boolean>
+    private readonly _squared:  boolean;
     public constructor(
         shown: string | BaseUIElement,
         mainTerm: Record<string, string>,
@@ -25,11 +26,13 @@ class SelfHidingToggle extends UIElement implements InputElement<boolean> {
         options?: {
             searchTerms?: Record<string, string[]>,
             selected?: UIEventSource<boolean>,
-            forceSelected?: UIEventSource<boolean>
+            forceSelected?: UIEventSource<boolean>,
+            squared?: boolean
         }
     ) {
         super();
         this._shown = Translations.W(shown);
+        this._squared = options?.squared ?? false;
         const searchTerms: Record<string, string[]> = {};
         for (const lng in options?.searchTerms ?? []) {
             if (lng === "_context") {
@@ -96,9 +99,19 @@ class SelfHidingToggle extends UIElement implements InputElement<boolean> {
             }
         })
 
-        el.onClick(() => selected.setData(!selected.data))
+        const forcedSelection = this.forceSelected
+        el.onClick(() => {
+            if(forcedSelection.data){
+                selected.setData(true)
+            }else{
+                selected.setData(!selected.data);
+            }
+        })
 
-        return el.SetClass("border border-black rounded-full p-1 px-4")
+        if(!this._squared){
+            el.SetClass("rounded-full")
+        }
+        return el.SetClass("border border-black p-1 px-4")
     }
 }
 
@@ -164,7 +177,8 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
 
             const toggle = new SelfHidingToggle(v.show, v.mainTerm, searchValue, {
                 searchTerms: v.searchTerms,
-                selected: vIsSelected
+                selected: vIsSelected,
+                squared: mode === "select-many"
             })
 
 
@@ -177,7 +191,7 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
 
         let somethingShown: Store<boolean>
         if (options.selectIfSingle) {
-            let forcedSelection : { value: T, show: SelfHidingToggle }= undefined
+            let forcedSelection : { value: T, show: SelfHidingToggle } = undefined
             somethingShown = searchValue.map(_ => {
                 let totalShown = 0;
                 let lastShownValue: { value: T, show: SelfHidingToggle }
@@ -195,9 +209,9 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
                         forcedSelection = lastShownValue
                     }
                 } else if (forcedSelection != undefined) {
-                    this.selectedElements.setData([])
-                    forcedSelection.show.forceSelected.setData(false)
+                    forcedSelection?.show?.forceSelected?.setData(false)
                     forcedSelection = undefined;
+                    this.selectedElements.setData([])
                 }
 
                 return totalShown > 0
@@ -218,7 +232,7 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
                 }
                 mappedValues.sort((a, b) => a.mainTerm[lng] < b.mainTerm[lng] ? -1 : 1)
                 return new Combine(mappedValues.map(e => e.show))
-                    .SetClass("flex flex-wrap w-full")
+                    .SetClass("flex flex-wrap w-full content-start")
                     .SetClass(options?.searchAreaClass ?? "")
             }, [somethingShown, searchValue]))
 
