@@ -107,11 +107,13 @@
           "nl": "Wat voor soort winkel is dit?"
         },
         "render": {
-          "en":"This is a {shop}"
+          "en": "This is a {shop}"
         },
         "freeform": {
           "key": "shop",
-          "addExtraTags": ["fixme=freeform shop key used, to be reviewed"]
+          "addExtraTags": [
+            "fixme=freeform shop key used, to be reviewed"
+          ]
         }
       }
     },
