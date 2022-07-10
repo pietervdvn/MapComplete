@@ -1,10 +1,10 @@
 {
   "id": "maproulette",
   "title": {
-    "en": "MapRoulette Test"
+    "en": "MapRoulette Tasks"
   },
   "description": {
-    "en": "MapRoulette Test"
+    "en": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them."
   },
   "version": "1.0.0",
   "hideFromOverview": true,

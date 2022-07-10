@@ -186,6 +186,38 @@
           "osmTags": "status=9"
         }
       ]
+    },
+    {
+      "id": "parent-name",
+      "options": [
+        {
+          "osmTags": "parentName~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Challenge name contains {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "parent-id",
+      "options": [
+        {
+          "osmTags": "parentId={search}",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Challenge ID matches {search}"
+          }
+        }
+      ]
     }
   ]
 }
