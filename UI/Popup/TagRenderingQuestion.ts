@@ -39,7 +39,7 @@ import {SearchablePillsSelector} from "../Input/SearchableMappingsSelector";
  */
 export default class TagRenderingQuestion extends Combine {
 
-    constructor(tags: UIEventSource<any>,
+    constructor(tags: UIEventSource<Record<string, string> & {id: string}>,
                 configuration: TagRenderingConfig,
                 state?: FeaturePipelineState,
                 options?: {
@@ -88,7 +88,7 @@ export default class TagRenderingQuestion extends Combine {
             ))
 
         const save = () => {
-            const selection = inputElement.GetValue().data;
+            const selection = TagUtils.FlattenMultiAnswer([inputElement.GetValue().data]);
             if (selection) {
                 (state?.changes)
                     .applyAction(new ChangeTagAction(

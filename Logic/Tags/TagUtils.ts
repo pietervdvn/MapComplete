@@ -116,12 +116,21 @@ export class TagUtils {
      * Given multiple tagsfilters which can be used as answer, will take the tags with the same keys together as set.
      * E.g:
      *
-     * FlattenMultiAnswer([and: [ "x=a", "y=0;1"], and: ["x=b", "y=2"], and: ["x=", "y=3"]])
-     * will result in
-     * ["x=a;b", "y=0;1;2;3"]
-     *
-     * @param tagsFilters
-     * @constructor
+     * const tag = TagUtils.Tag({"and": [
+     *     {
+     *         and:  [ "x=a", "y=0;1"],
+     *     },
+     *     {
+     *          and: ["x=", "y=3"]
+     *     },
+     *     {
+     *         and:  ["x=b", "y=2"]
+     *     }
+     * ]})
+     * TagUtils.FlattenMultiAnswer([tag]) // => TagUtils.Tag({and:["x=a;b", "y=0;1;2;3"] })
+     * 
+     * TagUtils.FlattenMultiAnswer(([new Tag("x","y"), new Tag("a","b")])) // => new And([new Tag("x","y"), new Tag("a","b")])
+     * TagUtils.FlattenMultiAnswer(([new Tag("x","")])) // => new And([new Tag("x","")])
      */
     static FlattenMultiAnswer(tagsFilters: TagsFilter[]): And {
         if (tagsFilters === undefined) {
@@ -131,7 +140,9 @@ export class TagUtils {
         let keyValues = TagUtils.SplitKeys(tagsFilters);
         const and: TagsFilter[] = []
         for (const key in keyValues) {
-            and.push(new Tag(key, Utils.Dedup(keyValues[key]).join(";")));
+            const values = Utils.Dedup(keyValues[key]).filter(v => v !== "")
+            values.sort()
+            and.push(new Tag(key, values.join(";")));
         }
         return new And(and);
     }
