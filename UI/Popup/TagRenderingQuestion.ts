@@ -82,11 +82,11 @@ export default class TagRenderingQuestion extends Combine {
 
         const feedback = new UIEventSource<Translation>(undefined)
         const inputElement: ReadonlyInputElement<TagsFilter> =
-              new VariableInputElement(applicableMappingsSrc.map(applicableMappings => {
-                  return TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags, feedback)
+            new VariableInputElement(applicableMappingsSrc.map(applicableMappings => {
+                    return TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags, feedback)
                 }
             ))
-     
+
         const save = () => {
             const selection = inputElement.GetValue().data;
             if (selection) {
@@ -148,13 +148,16 @@ export default class TagRenderingQuestion extends Combine {
         feedback: UIEventSource<Translation>
     ): ReadonlyInputElement<TagsFilter> {
 
-        
+
         const hasImages = applicableMappings.findIndex(mapping => mapping.icon !== undefined) >= 0
         let inputEls: InputElement<TagsFilter>[];
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
-        
-        if(applicableMappings.length > 8 && !ifNotsPresent && (configuration.freeform?.type === undefined || configuration.freeform?.type === "string")){
+
+        if (applicableMappings.length > 8 &&
+            (configuration.freeform?.type === undefined || configuration.freeform?.type === "string") &&
+            (!configuration.multiAnswer || configuration.freeform === undefined)) {
+
             return TagRenderingQuestion.GenerateSearchableSelector(state, configuration, applicableMappings, tagsSource)
         }
 
@@ -231,60 +234,96 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateSearchableSelector(
         state: FeaturePipelineState,
         configuration: TagRenderingConfig,
-        applicableMappings: { if: TagsFilter; then: TypedTranslation<object>; icon?: string; iconClass?: string, addExtraTags: Tag[], searchTerms?: Record<string, string[]> }[], tagsSource: UIEventSource<any>): InputElement<TagsFilter>{
-       const values  : { show: BaseUIElement, value: TagsFilter, mainTerm: Record<string, string>, searchTerms?: Record<string, string[]> }[] = []
-        for (const mapping of applicableMappings) {
+        applicableMappings: { if: TagsFilter; ifnot?: TagsFilter, then: TypedTranslation<object>; icon?: string; iconClass?: string, addExtraTags: Tag[], searchTerms?: Record<string, string[]> }[], tagsSource: UIEventSource<any>): InputElement<TagsFilter> {
+        const values: { show: BaseUIElement, value: number, mainTerm: Record<string, string>, searchTerms?: Record<string, string[]> }[] = []
+        for (let i = 0; i < applicableMappings.length; i++) {
+            const mapping = applicableMappings[i];
             const tr = mapping.then.Subs(tagsSource.data)
-            const patchedMapping  = <{iconClass: "small-height", then: TypedTranslation<object>}> {...mapping, iconClass: "small-height"}
-            const fancy =  TagRenderingQuestion.GenerateMappingContent(patchedMapping, tagsSource, state).SetClass("normal-background")
-               values.push({
+            const patchedMapping = <{ iconClass: "small-height", then: TypedTranslation<object> }>{
+                ...mapping,
+                iconClass: `small-height`,
+                icon: mapping.icon ?? "./assets/svg/none.svg"
+            }
+            const fancy = TagRenderingQuestion.GenerateMappingContent(patchedMapping, tagsSource, state).SetClass("normal-background")
+            values.push({
                 show: fancy,
-                value: mapping.if,
+                value: i,
                 mainTerm: tr.translations,
                 searchTerms: mapping.searchTerms
             })
         }
-        
+
         const searchValue: UIEventSource<string> = new UIEventSource<string>(undefined)
         const ff = configuration.freeform
-        let onEmpty : BaseUIElement = undefined
-        if(ff !== undefined){
-            onEmpty = new VariableUiElement(searchValue.map(search => configuration.render.Subs({[ff.key] : search})))
+        let onEmpty: BaseUIElement = undefined
+        if (ff !== undefined) {
+            onEmpty = new VariableUiElement(searchValue.map(search => configuration.render.Subs({[ff.key]: search})))
         }
-        
-        const classes =  "h-32 overflow-scroll"
-        const presetSearch = new SearchablePillsSelector<TagsFilter>(values,{
+
+        const classes = "h-64 overflow-scroll"
+        const presetSearch = new SearchablePillsSelector<number>(values, {
             selectIfSingle: true,
             mode: configuration.multiAnswer ? "select-many" : "select-one",
             searchValue,
             onNoMatches: onEmpty?.SetClass(classes).SetClass("flex justify-center items-center"),
-            searchAreaClass:classes
+            searchAreaClass: classes
         })
-        return new InputElementMap(presetSearch,
-            (x0, x1) => false,
-            arr => {
-                console.log("Arr is ", arr)
-                if(arr[0] !== undefined){
-                    return new And(arr)
+        return new InputElementMap<number[], And>(presetSearch,
+            (x0, x1) => {
+                if (x0 == x1) {
+                    return true;
                 }
-                if(ff !== undefined && searchValue.data?.length > 0 && !presetSearch.someMatchFound.data){
-                    const t = new Tag(ff.key, searchValue.data)
-                    if(ff.addExtraTags){
-                        return new And([t, ...ff.addExtraTags]) 
+                if (x0 === undefined || x1 === undefined) {
+                    return false;
+                }
+                if (x0.and.length !== x1.and.length) {
+                    return false;
+                }
+                for (let i = 0; i < x0.and.length; i++) {
+                    if (x1.and[i] != x0.and[i]) {
+                        return false
                     }
-                    return t;
-                    
                 }
-                return undefined;
+                return true;
             },
-            tf => {
-                if(tf["and"] !== undefined){
-                    return tf["and"];
+            (selected) => {
+                if (ff !== undefined && searchValue.data?.length > 0 && !presetSearch.someMatchFound.data) {
+                    const t = new Tag(ff.key, searchValue.data)
+                    if (ff.addExtraTags) {
+                        return new And([t, ...ff.addExtraTags])
+                    }
+                    return new And([t]);
                 }
-                return [tf];
+
+                if (selected === undefined || selected.length == 0) {
+                    return undefined;
+                }
+
+                const tfs = Utils.NoNull(applicableMappings.map((mapping, i) => {
+                    if (selected.indexOf(i) >= 0) {
+                        return mapping.if
+                    } else {
+                        return mapping.ifnot
+                    }
+                }))
+                console.log("Got tags", tfs)
+                return new And(tfs);
+            },
+            (tf) => {
+                if (tf === undefined) {
+                    return []
+                }
+                const selected: number[] = []
+                for (let i = 0; i < applicableMappings.length; i++) {
+                    const mapping = applicableMappings[i]
+                    if (tf.and.some(t => mapping.if == t)) {
+                        selected.push(i)
+                    }
+                }
+                return selected;
             },
             [searchValue, presetSearch.someMatchFound]
-            );
+        );
     }
 
     private static GenerateMultiAnswer(
@@ -402,7 +441,7 @@ export default class TagRenderingQuestion extends Combine {
             then: Translation,
             addExtraTags: Tag[],
             icon?: string,
-            iconClass?:  "small" | "medium" | "large" | "small-height"
+            iconClass?: "small" | "medium" | "large" | "small-height"
         }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
 
         let tagging: TagsFilter = mapping.if;
@@ -423,13 +462,13 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateMappingContent(mapping: {
         then: Translation,
         icon?: string,
-        iconClass?: "small" | "medium" | "large" | "small-height"
+        iconClass?: "small" | "medium" | "large" | "small-height" | "medium-height" | "large-height"
     }, tagsSource: UIEventSource<any>, state: FeaturePipelineState): BaseUIElement {
         const text = new SubstitutedTranslation(mapping.then, tagsSource, state)
         if (mapping.icon === undefined) {
             return text;
         }
-        return new Combine([new Img(mapping.icon).SetClass("mr-1 mapping-icon-"+(mapping.iconClass ?? "small")), text]).SetClass("flex")
+        return new Combine([new Img(mapping.icon).SetClass("mr-1 mapping-icon-" + (mapping.iconClass ?? "small")), text]).SetClass("flex items-center")
     }
 
     private static GenerateFreeform(state: FeaturePipelineState, configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>, feedback: UIEventSource<Translation>)
@@ -477,7 +516,7 @@ export default class TagRenderingQuestion extends Combine {
 
         const tagsData = tags.data;
         const feature = state?.allElements?.ContainingFeatures?.get(tagsData.id)
-        const center = feature != undefined ? GeoOperations.centerpointCoordinates(feature) : [0,0]
+        const center = feature != undefined ? GeoOperations.centerpointCoordinates(feature) : [0, 0]
         const input: InputElement<string> = ValidatedTextField.ForType(configuration.freeform.type)?.ConstructInputElement({
             country: () => tagsData._country,
             location: [center[1], center[0]],
@@ -488,13 +527,13 @@ export default class TagRenderingQuestion extends Combine {
             placeholder: configuration.freeform.placeholder,
             feedback
         });
-        
+
         // Init with correct value
         input?.GetValue().setData(tagsData[freeform.key] ?? freeform.default);
-        
+
         // Add a length check
-        input?.GetValue().addCallbackD((v : string | undefined) => {
-            if(v?.length >= 255){
+        input?.GetValue().addCallbackD((v: string | undefined) => {
+            if (v?.length >= 255) {
                 feedback.setData(Translations.t.validation.tooLong.Subs({count: v.length}))
             }
         })
@@ -513,10 +552,10 @@ export default class TagRenderingQuestion extends Combine {
         return inputTagsFilter;
 
     }
-    
+
     public static CreateTagExplanation(selectedValue: Store<TagsFilter>,
                                        tags: Store<object>,
-                                       state?: {osmConnection?: OsmConnection}){
+                                       state?: { osmConnection?: OsmConnection }) {
         return new VariableUiElement(
             selectedValue.map(
                 (tagsFilter: TagsFilter) => {
