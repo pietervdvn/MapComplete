@@ -10,7 +10,8 @@
     "hu": "Távcsövek",
     "fr": "Jumelles",
     "es": "Binoculares",
-    "da": "Kikkerter"
+    "da": "Kikkerter",
+    "ca": "Binoculars"
   },
   "shortDescription": {
     "en": "A map with fixed binoculars",
@@ -21,7 +22,8 @@
     "zh_Hant": "固定望遠鏡的地圖",
     "hu": "Rögzített távcsövek (binokulárok) térképe",
     "fr": "Une carte de jumelles panoramiques",
-    "es": "Un mapa con prismáticos fijos"
+    "es": "Un mapa con prismáticos fijos",
+    "ca": "Un mapa amb prismàtics fixos"
   },
   "description": {
     "en": "A map with binoculars fixed in place with a pole. It can typically be found on touristic locations, viewpoints, on top of panoramic towers or occasionally on a nature reserve.",
@@ -32,7 +34,8 @@
     "hu": "Rúdra rögzített távcsövek térképe. Jellemzően turisztikailag érdekes, panorámás helyeken, kilátótornyok tetején vagy természetvédelmi területen találhatók.",
     "fr": "Une carte des longue-vues fixes. Se trouve typiquement sur les sites touristiques, les points de vue, les tours panoramiques ou dans les réserves naturelles.",
     "es": "Un mapa con prismáticos fijos en un poste. Suele encontrarse en lugares turísticos, miradores, en lo alto de torres panorámicas u ocasionalmente en una reserva natural.",
-    "nb_NO": "Stedsbundne kikkerter på påle. Vanligvis på turiststeder, utkikkspunkter, på toppen av utsiktstårn, og noen ganger i naturreservat."
+    "nb_NO": "Stedsbundne kikkerter på påle. Vanligvis på turiststeder, utkikkspunkter, på toppen av utsiktstårn, og noen ganger i naturreservat.",
+    "ca": "Un mapa amb prismàtics fixos en un pal. Sol trobar-se en llocs turístics, miradors, a la part alta de torres panoràmiques o ocasionalment en una reserva natural."
   },
   "maintainer": "",
   "icon": "./assets/layers/binocular/telescope.svg",

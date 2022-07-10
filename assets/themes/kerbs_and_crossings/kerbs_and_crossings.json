@@ -4,11 +4,13 @@
   "version": "20211215",
   "title": {
     "en": "Kerbs and crossings",
-    "nl": "Stoepranden en oversteekplaatsen"
+    "nl": "Stoepranden en oversteekplaatsen",
+    "de": "Bordsteine und Überwege"
   },
   "description": {
     "en": "A map showing kerbs and crossings.",
-    "nl": "Een kaart met stoepranden en oversteekplaatsen."
+    "nl": "Een kaart met stoepranden en oversteekplaatsen.",
+    "de": "Eine Karte mit Bordsteinen und Überwegen."
   },
   "icon": "./assets/layers/kerbs/KerbIcon.svg",
   "startZoom": 19,

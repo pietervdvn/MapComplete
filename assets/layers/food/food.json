@@ -814,9 +814,15 @@
   "deletion": {
     "nonDeleteMappings": [
       {
-        "if": "amenity=cafe",
+        "if": "amenity=pub",
         "then": {
           "en": "This is actually a pub"
+        }
+      },
+      {
+        "if": "amenity=cafe",
+        "then": {
+          "en": "This is actually a cafe"
         }
       }
     ],

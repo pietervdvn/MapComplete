@@ -159,6 +159,12 @@ class SingleLayerSelectionButton extends Toggle {
 
 export default class BackgroundMapSwitch extends Combine {
 
+    /**
+     * Three buttons to easily switch map layers between OSM, aerial and some map.
+     * @param state
+     * @param currentBackground
+     * @param options
+     */
     constructor(
         state: {
             locationControl: UIEventSource<Loc>,

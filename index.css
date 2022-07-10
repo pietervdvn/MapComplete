@@ -137,6 +137,13 @@ svg, img {
     height: 100%;
 }
 
+.titleicon img {
+    width: unset;
+}
+
+.titleicon svg {
+    width: unset;
+}
 .svg-catch svg path {
     fill: var(--catch-detail-color) !important;
     stroke: var(--catch-detail-color) !important;
@@ -618,6 +625,27 @@ input {
 
 .first-filter-panel {
     /* Additional class on the first layer filter */
+}
+
+.mapping-icon-small-height {
+    /* A mapping icon type */
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    width: unset;
+}
+
+.mapping-icon-medium-height {
+    /* A mapping icon type */
+    height: 3rem;
+    margin-right: 0.5rem;
+    width: unset;
+}
+
+.mapping-icon-large-height {
+    /* A mapping icon type */
+    height: 5rem;
+    margin-right: 0.5rem;
+    width: unset;
 }
 
 

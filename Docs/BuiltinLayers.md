@@ -817,6 +817,7 @@ The following layers are included in MapComplete:
   - [hydrant](./Layers/hydrant.md)
   - [import_candidate](./Layers/import_candidate.md)
   - [information_board](./Layers/information_board.md)
+  - [kerbs](./Layers/kerbs.md)
   - [kindergarten_childcare](./Layers/kindergarten_childcare.md)
   - [left_right_style](./Layers/left_right_style.md)
   - [map](./Layers/map.md)
