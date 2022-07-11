@@ -1,0 +1,77 @@
+{
+  "id": "rainbow_crossings",
+  "name": {
+    "en": "Crossings with rainbow paintings"
+  },
+  "description": {
+    "en": "Crossings with decorative rainbow paintings"
+  },
+  "source": {
+    "osmTags": {
+      "highway=crossing"
+    }
+  },
+  "minzoom": 17,
+  "title": {
+    "render": {
+      "en": "Crossing"
+    }
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a crossing"
+      },
+      "tags": [
+        "highway=crossing"
+      ],
+      "description": {
+        "en": "Pedestrian crossing"
+      },
+      "preciseInput": {
+        "preferredBackground": [
+          "photo"
+        ],
+        "snapToLayer": "cycleways_and_roads",
+        "maxSnapDistance": 25
+      }
+    },
+  "tagRenderings": [
+    {
+      "id": "crossing-with-rainbow",
+      "question": {
+        "en": "Does this crossing has rainbow paintings?"
+      },
+      "condition": "highway=crossing",
+      "mappings": [
+        {
+          "if": "crossing:marking=rainbow",
+          "then": {
+            "en": "This crossing has rainbow paintings"
+          }
+        },
+        {
+          "if": "crossing:marking!=rainbow",
+          "then": {
+            "en": "No rainbow paintings here"
+          }
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/themes/rainbow_crossings/logo.svg"
+      },
+      "iconSize": "40,40,bottom",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "description": {
+    "en": "A layer showing pedestrian crossings with rainbow paintings"
+  }
+}
