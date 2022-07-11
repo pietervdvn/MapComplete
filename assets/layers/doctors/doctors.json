@@ -42,7 +42,9 @@
             "question": {
                 "en": "What is the name of this doctors place?"
             },
-            "render": "This doctors place is called {name}",
+            "render": {
+                "en": "This doctors place is called {name}"
+            },
             "freeform": {
                 "key": "name"
             },
