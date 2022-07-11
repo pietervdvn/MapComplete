@@ -31,6 +31,7 @@ import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 
 export default class LayerConfig extends WithContextLoader {
 
+    public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const;
     public readonly id: string;
     public readonly name: Translation;
     public readonly description: Translation;
@@ -44,10 +45,8 @@ export default class LayerConfig extends WithContextLoader {
     public readonly maxzoom: number;
     public readonly title?: TagRenderingConfig;
     public readonly titleIcons: TagRenderingConfig[];
-
     public readonly mapRendering: PointRenderingConfig[]
     public readonly lineRendering: LineRenderingConfig[]
-
     public readonly units: Unit[];
     public readonly deletion: DeleteConfig | null;
     public readonly allowMove: MoveConfig | null
@@ -57,15 +56,11 @@ export default class LayerConfig extends WithContextLoader {
      * In seconds
      */
     public readonly maxAgeOfCache: number
-
     public readonly presets: PresetConfig[];
-
     public readonly tagRenderings: TagRenderingConfig[];
     public readonly filters: FilterConfig[];
     public readonly filterIsSameAs: string;
     public readonly forceLoad: boolean;
-
-    public static readonly syncSelectionAllowed =  ["no" , "local" , "theme-only" , "global"] as const;
     public readonly syncSelection: (typeof LayerConfig.syncSelectionAllowed)[number] // this is a trick to conver a constant array of strings into a type union of these values
 
     constructor(
@@ -74,17 +69,23 @@ export default class LayerConfig extends WithContextLoader {
         official: boolean = true
     ) {
         context = context + "." + json.id;
-        const translationContext = "layers:"+json.id
+        const translationContext = "layers:" + json.id
         super(json, context)
         this.id = json.id;
 
+        if (typeof json === "string") {
+            throw `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed (at ${context})`
+        }
+
+
         if (json.id === undefined) {
-            throw "Not a valid layer: id is undefined: " + JSON.stringify(json)
+            throw `Not a valid layer: id is undefined: ${JSON.stringify(json)} (At ${context})`
         }
 
         if (json.source === undefined) {
             throw "Layer " + this.id + " does not define a source section (" + context + ")"
         }
+
 
         if (json.source.osmTags === undefined) {
             throw "Layer " + this.id + " does not define a osmTags in the source section - these should always be present, even for geojson layers (" + context + ")"
@@ -98,8 +99,8 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
-        if(json.syncSelection !== undefined && LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0){
-            throw context+ " Invalid sync-selection: must be one of "+LayerConfig.syncSelectionAllowed.map(v => `'${v}'`).join(", ")+" but got '"+json.syncSelection+"'"
+        if (json.syncSelection !== undefined && LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0) {
+            throw context + " Invalid sync-selection: must be one of " + LayerConfig.syncSelectionAllowed.map(v => `'${v}'`).join(", ") + " but got '" + json.syncSelection + "'"
         }
         this.syncSelection = json.syncSelection ?? "no";
         const osmTags = TagUtils.Tag(
@@ -107,10 +108,10 @@ export default class LayerConfig extends WithContextLoader {
             context + "source.osmTags"
         );
 
-        if(Constants.priviliged_layers.indexOf(this.id) < 0 && osmTags.isNegative()){
-            throw context + "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t"+osmTags.asHumanString(false, false, {});
+        if (Constants.priviliged_layers.indexOf(this.id) < 0 && osmTags.isNegative()) {
+            throw context + "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" + osmTags.asHumanString(false, false, {});
         }
-        
+
         if (json.source["geoJsonSource"] !== undefined) {
             throw context + "Use 'geoJson' instead of 'geoJsonSource'";
         }
@@ -118,7 +119,7 @@ export default class LayerConfig extends WithContextLoader {
         if (json.source["geojson"] !== undefined) {
             throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)";
         }
-        
+
 
         this.source = new SourceConfig(
             {
@@ -138,8 +139,8 @@ export default class LayerConfig extends WithContextLoader {
 
         this.allowSplit = json.allowSplit ?? false;
         this.name = Translations.T(json.name, translationContext + ".name");
-        if(json.units!==undefined && !Array.isArray(json.units)){
-            throw "At "+context+".units: the 'units'-section should be a list; you probably have an object there"
+        if (json.units !== undefined && !Array.isArray(json.units)) {
+            throw "At " + context + ".units: the 'units'-section should be a list; you probably have an object there"
         }
         this.units = (json.units ?? []).map(((unitJson, i) => Unit.fromJson(unitJson, `${context}.unit[${i}]`)))
 
@@ -167,8 +168,8 @@ export default class LayerConfig extends WithContextLoader {
                 const index = kv.indexOf("=");
                 let key = kv.substring(0, index).trim();
                 const r = "[a-z_][a-z0-9:]*"
-                if(key.match(r) === null){
-                    throw "At "+context+" invalid key for calculated tag: "+key+"; it should match "+r
+                if (key.match(r) === null) {
+                    throw "At " + context + " invalid key for calculated tag: " + key + "; it should match " + r
                 }
                 const isStrict = key.endsWith(':')
                 if (isStrict) {
@@ -343,14 +344,14 @@ export default class LayerConfig extends WithContextLoader {
     }
 
     public GenerateDocumentation(usedInThemes: string[], layerIsNeededBy?: Map<string, string[]>, dependencies: {
-        context?: string;
-        reason: string;
-        neededLayer: string;
-    }[] = []
-                                 , addedByDefault = false, canBeIncluded = true): BaseUIElement {
+                                     context?: string;
+                                     reason: string;
+                                     neededLayer: string;
+                                 }[] = []
+        , addedByDefault = false, canBeIncluded = true): BaseUIElement {
         const extraProps = []
-        
-        extraProps.push("This layer is shown at zoomlevel **"+this.minzoom+"** and higher")
+
+        extraProps.push("This layer is shown at zoomlevel **" + this.minzoom + "** and higher")
 
         if (canBeIncluded) {
             if (addedByDefault) {
@@ -440,7 +441,7 @@ export default class LayerConfig extends WithContextLoader {
         let overpassLink: BaseUIElement = undefined;
         if (Constants.priviliged_layers.indexOf(this.id) < 0) {
             try {
-                overpassLink = new Link("Execute on overpass", Overpass.AsOverpassTurboLink(<TagsFilter> new And(neededTags).optimize()))
+                overpassLink = new Link("Execute on overpass", Overpass.AsOverpassTurboLink(<TagsFilter>new And(neededTags).optimize()))
             } catch (e) {
                 console.error("Could not generate overpasslink for " + this.id)
             }
