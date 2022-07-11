@@ -244,6 +244,10 @@
                 "then": "./assets/layers/observation_tower/Tower_observation.svg"
               },
               {
+                "if": "theme=onwheels",
+                "then": "./assets/themes/onwheels/crest.svg"
+              },
+              {
                 "if": "theme=openwindpowermap",
                 "then": "./assets/themes/openwindpowermap/logo.svg"
               },
