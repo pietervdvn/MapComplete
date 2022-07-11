@@ -1,4 +1,4 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
 import {ElementStorage} from "../../Logic/ElementStorage";
@@ -20,7 +20,7 @@ We don't actually import it here. It is imported in the 'MinimapImplementation'-
 export default class ShowDataLayerImplementation {
 
     private static dataLayerIds = 0
-    private readonly _leafletMap: UIEventSource<L.Map>;
+    private readonly _leafletMap: Store<L.Map>;
     private readonly _enablePopups: boolean;
     private readonly _features: RenderingMultiPlexerFeatureSource
     private readonly _layerToShow: LayerConfig;

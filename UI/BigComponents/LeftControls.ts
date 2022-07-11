@@ -48,7 +48,10 @@ export default class LeftControls extends Combine {
                     }
                     return new Lazy(() => {
                         const tagsSource = state.allElements.getEventSourceById(feature.properties.id)
-                        return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, state, "currentview", guiState.currentViewControlIsOpened)
+                        return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, state, {
+                            hashToShow: "currentview",
+                            isShown: guiState.currentViewControlIsOpened
+                        })
                             .SetClass("md:floating-element-width")
                     })
                 })).SetStyle("width: 40rem").SetClass("block")

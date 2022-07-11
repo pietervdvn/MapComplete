@@ -248,7 +248,7 @@
         }
     },
     "bench": {
-        "description": "Deze laag toont zitbanken en enkele vragen over deze zitbanken",
+        "description": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
         "name": "Zitbanken",
         "presets": {
             "0": {
@@ -2438,6 +2438,9 @@
             "Contained routes length hist": {
                 "render": "<h3>Overzicht van lengtes</h3>{histogram(_length_hist)}"
             },
+            "Contained_climbing_routes": {
+                "render": "<h3>Bevat {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
+            },
             "Rock type (crag/rock/cliff only)": {
                 "mappings": {
                     "0": {
@@ -2548,7 +2551,8 @@
                     "2": {
                         "then": "Klimmen is hier niet mogelijk"
                     }
-                }
+                },
+                "question": "Is klimmen hier mogelijk?"
             }
         },
         "title": {
@@ -3541,6 +3545,20 @@
                         "question": "Heeft een halal menu"
                     }
                 }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Accepteert cash"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Accepteert betaalkaarten"
+                    }
+                }
             }
         },
         "name": "Eetgelegenheden",
@@ -4164,12 +4182,24 @@
         }
     },
     "maxspeed": {
+        "description": "Toont de toegestane snelheid voor elke weg",
         "tagRenderings": {
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
                         "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
+                    },
+                    "1": {
+                        "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
                     }
+                },
+                "render": "De maximum toegestane snelheid op deze weg is {maxspeed}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Weg zonder een naam"
                 }
             }
         },

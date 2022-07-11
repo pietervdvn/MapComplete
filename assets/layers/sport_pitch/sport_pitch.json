@@ -506,7 +506,8 @@
                 "sport=soccer",
                 "sport=table_tennis",
                 "sport=tennis",
-                "sport=volleyball"
+                "sport=volleyball",
+                "sport=equestrian"
               ]
             },
             "then": "circle:white;./assets/layers/sport_pitch/{sport}.svg"

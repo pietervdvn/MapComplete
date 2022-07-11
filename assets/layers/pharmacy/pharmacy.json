@@ -1,0 +1,64 @@
+{
+  "id": "pharmacy",
+  "name": {
+    "en": "pharmacy"
+  },
+  "title": {
+    "render": {
+      "en": "{name}"
+    }
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=pharmacy"
+      ]
+    }
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images",
+    "opening_hours",
+    "phone",
+    "email",
+    "website",
+    {
+      "id": "wheelchair",
+      "question": {
+        "en": "Is this pharmacy easy to access on a wheelchair?"
+      },
+      "mappings": [
+        {
+          "if": "wheelchair=yes",
+          "then": {
+            "en": "This pharmacy is easy to access on a wheelchair"
+          }
+        },
+        {
+          "if": "wheelchair=no",
+          "then": {
+            "en": "This pharmacy is hard to access on a wheelchair"
+          }
+        },
+        {
+          "if": "wheelchair=limited",
+          "then": {
+            "en": "This pharmacy has limited access for wheelchair users"
+          }
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/layers/pharmacy/pharmacy.svg"
+      },
+      "iconSize": "40,40,bottom",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

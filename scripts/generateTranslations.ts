@@ -248,7 +248,7 @@ class TranslationPart {
 
                     if (lang === "en" || usedByLanguage === "en") {
                         errors.push({
-                            error: `The translation for ${key} does not have the required subpart ${part}.
+                            error: `The translation for ${key} does not have the required subpart ${part} (in ${usedByLanguage}).
     \tThe full translation is ${value}
     \t${fixLink}`,
                             path: path

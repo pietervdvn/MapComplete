@@ -3255,6 +3255,52 @@
         "description": "This layer visualizes directions",
         "name": "Direction visualization"
     },
+    "doctors": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Opened now"
+                    }
+                }
+            }
+        },
+        "name": "doctors",
+        "presets": {
+            "0": {
+                "title": "a doctors office"
+            },
+            "1": {
+                "title": "a dentists office"
+            },
+            "2": {
+                "title": "a physiotherapists office"
+            }
+        },
+        "tagRenderings": {
+            "specialty": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a general practitioner"
+                    },
+                    "1": {
+                        "then": "This is a gynaecologist"
+                    },
+                    "2": {
+                        "then": "This is a psychiatrist"
+                    },
+                    "3": {
+                        "then": "This is a paediatrician"
+                    }
+                },
+                "question": "What is this doctor specialized in?",
+                "render": "This doctor is specialized in {healthcare:speciality}"
+            }
+        },
+        "title": {
+            "render": "Doctors Office {name}"
+        }
+    },
     "dogpark": {
         "name": "dog parks",
         "presets": {
@@ -3572,6 +3618,9 @@
             "nonDeleteMappings": {
                 "0": {
                     "then": "This is actually a pub"
+                },
+                "1": {
+                    "then": "This is actually a cafe"
                 }
             }
         },
@@ -3995,6 +4044,18 @@
             "render": "Hackerspace"
         }
     },
+    "hospital": {
+        "name": "Hospital",
+        "tagRenderings": {
+            "name": {
+                "question": "What does the of the hospital ?",
+                "render": "Name of the hospital name is {name}"
+            }
+        },
+        "title": {
+            "render": "Hospital"
+        }
+    },
     "hydrant": {
         "description": "Map layer to show fire hydrants.",
         "name": "Map of hydrants",
@@ -4280,6 +4341,9 @@
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
+                        "then": "This is a living street, which has a maxspeed of 20km/h"
+                    },
+                    "1": {
                         "then": "This is a living street, which has a maxspeed of 20km/h"
                     }
                 },
@@ -4628,6 +4692,28 @@
     "pedestrian_path": {
         "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
         "name": "Pedestrian paths"
+    },
+    "pharmacy": {
+        "name": "pharmacy",
+        "tagRenderings": {
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "This pharmacy is easy to access on a wheelchair"
+                    },
+                    "1": {
+                        "then": "This pharmacy is hard to access on a wheelchair"
+                    },
+                    "2": {
+                        "then": "This pharmacy has limited access for wheelchair users"
+                    }
+                },
+                "question": "Is this pharmacy easy to access on a wheelchair?"
+            }
+        },
+        "title": {
+            "render": "{name}"
+        }
     },
     "picnic_table": {
         "description": "The layer showing picnic tables",
@@ -5319,8 +5405,29 @@
         "tagRenderings": {
             "2": {
                 "override": {
-                    "question": "What kind of shop is this?"
+                    "question": "What kind of shop is this?",
+                    "render": "This is a {shop}"
                 }
+            },
+            "copyshop-print-sizes": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop can print on papers of size A4"
+                    },
+                    "1": {
+                        "then": "This shop can print on papers of size A3"
+                    },
+                    "2": {
+                        "then": "This shop can print on papers of size A2"
+                    },
+                    "3": {
+                        "then": "This shop can print on papers of size A1"
+                    },
+                    "4": {
+                        "then": "This shop can print on papers of size A0"
+                    }
+                },
+                "question": "What paper formats does this shop offer?"
             },
             "shops-name": {
                 "question": "What is the name of this shop?"
