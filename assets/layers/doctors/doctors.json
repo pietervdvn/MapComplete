@@ -39,6 +39,16 @@
         "email",
         "website",
         {
+            "question": {
+                "en": "What is the name of this doctors place?"
+            },
+            "render": "This doctors place is called {name}",
+            "freeform": {
+                "key": "name"
+            },
+            "id": "name"
+        },
+        {
             "condition": "amenity=doctors",
             "id": "specialty",
             "render": {
