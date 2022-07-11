@@ -42,6 +42,7 @@
   "startZoom": 1,
   "widenFactor": 3,
   "layers": [
-    "shops"
+    "shops",
+    "pharmacy"
   ]
 }

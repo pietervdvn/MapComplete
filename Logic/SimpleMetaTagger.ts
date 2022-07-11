@@ -314,9 +314,10 @@ export default class SimpleMetaTaggers {
                             lat: lat,
                             lon: lon,
                             address: {
-                                country_code: tags._country.toLowerCase()
+                                country_code: tags._country.toLowerCase(),
+                                state: undefined
                             }
-                        }, {tag_key: "opening_hours"});
+                        }, <any> {tag_key: "opening_hours"});
 
                         // Recalculate!
                         return oh.getState() ? "yes" : "no";

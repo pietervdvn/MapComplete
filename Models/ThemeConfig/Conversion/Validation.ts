@@ -75,8 +75,8 @@ export class DoesImageExist extends DesugaringStep<string> {
                 return {result: image};
             }
         }
-
-        if (this._knownImagePaths !== undefined && !this._knownImagePaths.has(image)) {
+        
+        if (!this._knownImagePaths.has(image)) {
             if (this.doesPathExist === undefined) {
                 errors.push(`Image with path ${image} not found or not attributed; it is used in ${context}`)
             } else if (!this.doesPathExist(image)) {

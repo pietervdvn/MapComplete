@@ -2,11 +2,13 @@
   "id": "kerbs",
   "name": {
     "en": "Kerbs",
-    "nl": "Stoepranden"
+    "nl": "Stoepranden",
+    "de": "Bordsteine"
   },
   "description": {
     "en": "A layer showing kerbs.",
-    "nl": "Een laag met stoepranden."
+    "nl": "Een laag met stoepranden.",
+    "de": "Eine Ebene, die Bordsteine zeigt."
   },
   "source": {
     "osmTags": "barrier=kerb"
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Kerb",
-      "nl": "Stoeprand"
+      "nl": "Stoeprand",
+      "de": "Bordstein"
     }
   },
   "mapRendering": [
@@ -56,14 +59,16 @@
       "id": "kerb-type",
       "question": {
         "en": "What is the height of this kerb?",
-        "nl": "Hoe hoog is deze stoeprand?"
+        "nl": "Hoe hoog is deze stoeprand?",
+        "de": "Wie hoch ist der Bordstein?"
       },
       "mappings": [
         {
           "if": "kerb=raised",
           "then": {
             "en": "This kerb is raised (>3 cm)",
-            "nl": "Deze stoeprand is hoog (>3 cm)"
+            "nl": "Deze stoeprand is hoog (>3 cm)",
+            "de": "Der Bordstein ist erhöht (>3 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/raised.svg",
@@ -74,7 +79,8 @@
           "if": "kerb=lowered",
           "then": {
             "en": "This kerb is lowered (~3 cm)",
-            "nl": "Deze stoeprand is verlaagd (~3 cm)"
+            "nl": "Deze stoeprand is verlaagd (~3 cm)",
+            "de": "Der Bordstein ist abgesenkt (~3 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/lowered.svg",
@@ -85,7 +91,8 @@
           "if": "kerb=flush",
           "then": {
             "en": "This kerb is flush (~0cm)",
-            "nl": "Deze stoeprand is vlak (~0cm)"
+            "nl": "Deze stoeprand is vlak (~0cm)",
+            "de": "Der Bordstein ist bündig (~0cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/flush.svg",
@@ -96,7 +103,8 @@
           "if": "kerb=no",
           "then": {
             "en": "There is no kerb here",
-            "nl": "Er is hier geen stoeprand"
+            "nl": "Er is hier geen stoeprand",
+            "de": "Hier gibt es keinen Bordstein"
           },
           "hideInAnswer": true,
           "icon": {
@@ -108,7 +116,8 @@
           "if": "kerb=yes",
           "then": {
             "en": "There is a kerb of unknown height",
-            "nl": "Er is een stoeprand met onbekende hoogte"
+            "nl": "Er is een stoeprand met onbekende hoogte",
+            "de": "Es gibt einen Bordstein mit unbekannter Höhe"
           },
           "hideInAnswer": true
         }
@@ -118,25 +127,29 @@
     {
       "id": "tactile-paving",
       "question": {
-        "en": "Is there tactile paving at this kerb?"
+        "en": "Is there tactile paving at this kerb?",
+        "de": "Gibt es am Bordstein ein taktiles Pflaster?"
       },
       "mappings": [
         {
           "if": "tactile_paving=yes",
           "then": {
-            "en": "This kerb has tactile paving."
+            "en": "This kerb has tactile paving.",
+            "de": "Der Bordstein hat ein taktiles Pflaster."
           }
         },
         {
           "if": "tactile_paving=no",
           "then": {
-            "en": "This kerb does not have tactile paving."
+            "en": "This kerb does not have tactile paving.",
+            "de": "Der Bordstein hat kein taktiles Pflaster."
           }
         },
         {
           "if": "tactile_paving=incorrect",
           "then": {
-            "en": "This kerb has tactile paving, but it is incorrect"
+            "en": "This kerb has tactile paving, but it is incorrect",
+            "de": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist"
           },
           "hideInAnswer": true
         }
@@ -147,17 +160,20 @@
       "id": "kerb-height",
       "question": {
         "en": "What is the height of this kerb?",
-        "nl": "Hoe hoog is deze stoeprand?"
+        "nl": "Hoe hoog is deze stoeprand?",
+        "de": "Wie hoch ist der Bordstein?"
       },
       "render": {
         "en": "Kerb height: {{kerb:height}}",
-        "nl": "Stoeprandhoogte: {{kerb:height}}"
+        "nl": "Stoeprandhoogte: {{kerb:height}}",
+        "de": "Bordsteinhöhe: {{kerb:height}}"
       },
       "freeform": {
         "key": "kerb:height",
         "placeholder": {
           "en": "Height of the kerb",
-          "nl": "Hoogte van de stoeprand"
+          "nl": "Hoogte van de stoeprand",
+          "de": "Höhe des Bordsteins"
         },
         "type": "pnat"
       }
@@ -167,14 +183,16 @@
     {
       "title": {
         "en": "a kerb",
-        "nl": "een stoeprand"
+        "nl": "een stoeprand",
+        "de": "einen Bordstein"
       },
       "tags": [
         "barrier=kerb"
       ],
       "description": {
         "en": "Kerb in a footway",
-        "nl": "Stoeprand in een voetpad"
+        "nl": "Stoeprand in een voetpad",
+        "de": "Bordstein in einem Fußweg"
       },
       "preciseInput": {
         "maxSnapDistance": 10,
@@ -193,42 +211,48 @@
         {
           "question": {
             "en": "All types of kerbs",
-            "nl": "Alle typen stoepranden"
+            "nl": "Alle typen stoepranden",
+            "de": "Alle Arten von Bordsteinen"
           }
         },
         {
           "osmTags": "kerb=raised",
           "question": {
             "en": "Raised kerb (>3 cm)",
-            "nl": "Hoge stoeprand (>3 cm)"
+            "nl": "Hoge stoeprand (>3 cm)",
+            "de": "Erhöhter Bordstein (>3 cm)"
           }
         },
         {
           "osmTags": "kerb=lowered",
           "question": {
             "en": "Lowered kerb (~3 cm)",
-            "nl": "Verlaagde stoeprand (~3 cm)"
+            "nl": "Verlaagde stoeprand (~3 cm)",
+            "de": "Abgesenkter Bordstein (~3 cm)"
           }
         },
         {
           "osmTags": "kerb=flush",
           "question": {
             "en": "Flush kerb (~0cm)",
-            "nl": "Vlakke stoeprand (~0cm)"
+            "nl": "Vlakke stoeprand (~0cm)",
+            "de": "Bündiger Bordstein (~0cm)"
           }
         },
         {
           "osmTags": "kerb=no",
           "question": {
             "en": "No kerb",
-            "nl": "Geen stoeprand"
+            "nl": "Geen stoeprand",
+            "de": "Kein Bordstein"
           }
         },
         {
           "osmTags": "kerb=",
           "question": {
             "en": "Kerb with unknown height",
-            "nl": "Stoeprand met onbekende hoogte"
+            "nl": "Stoeprand met onbekende hoogte",
+            "de": "Bordstein mit unbekannter Höhe"
           }
         }
       ]
@@ -238,25 +262,29 @@
       "options": [
         {
           "question": {
-            "en": "Kerbs with or without tactile paving"
+            "en": "Kerbs with or without tactile paving",
+            "de": "Bordsteine mit oder ohne taktilem Pflaster"
           }
         },
         {
           "osmTags": "tactile_paving=yes",
           "question": {
-            "en": "Kerb with tactile paving"
+            "en": "Kerb with tactile paving",
+            "de": "Bordstein mit taktilem Pflaster"
           }
         },
         {
           "osmTags": "tactile_paving=no",
           "question": {
-            "en": "Kerb without tactile paving"
+            "en": "Kerb without tactile paving",
+            "de": "Bordstein ohne taktilem Pflaster"
           }
         },
         {
           "osmTags": "tactile_paving=",
           "question": {
-            "en": "Kerb wihout information about tactile paving"
+            "en": "Kerb wihout information about tactile paving",
+            "de": "Bordstein ohne Informationen über taktiles Pflaster"
           }
         }
       ]
@@ -273,11 +301,13 @@
           ],
           "human": {
             "en": "centimeters",
-            "nl": "centimeter"
+            "nl": "centimeter",
+            "de": "Zentimeter"
           },
           "humanSingular": {
             "en": "centimeter",
-            "nl": "centimeter"
+            "nl": "centimeter",
+            "de": "Zentimeter"
           },
           "default": true
         },
@@ -289,11 +319,13 @@
           ],
           "human": {
             "en": "meters",
-            "nl": "meter"
+            "nl": "meter",
+            "de": "Meter"
           },
           "humanSingular": {
             "en": "meter",
-            "nl": "meter"
+            "nl": "meter",
+            "de": "Meter"
           }
         }
       ],

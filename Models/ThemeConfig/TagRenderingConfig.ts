@@ -177,7 +177,8 @@ export default class TagRenderingConfig {
                 throw "Tagrendering has a 'mappings'-object, but expected a list (" + context + ")"
             }
 
-            this.mappings = json.mappings.map((m, i) => TagRenderingConfig.ExtractMapping(m, i, translationKey, context, this.multiAnswer, this.question !== undefined));
+            const commonIconSize = Utils.NoNull(json.mappings.map(m => m.icon !== undefined ? m.icon["class"] : undefined))[0] ?? "small"
+            this.mappings = json.mappings.map((m, i) => TagRenderingConfig.ExtractMapping(m, i, translationKey, context, this.multiAnswer, this.question !== undefined, commonIconSize));
         }
 
         if (this.question && this.freeform?.key === undefined && this.mappings === undefined) {
@@ -288,7 +289,7 @@ export default class TagRenderingConfig {
 
     public static ExtractMapping(mapping: MappingConfigJson, i: number, translationKey: string,
                                  context: string,
-                                 multiAnswer?: boolean, isQuestionable?: boolean) {
+                                 multiAnswer?: boolean, isQuestionable?: boolean, commonSize: string = "small") {
 
         const ctx = `${translationKey}.mappings.${i}`
         if (mapping.if === undefined) {
@@ -327,7 +328,7 @@ export default class TagRenderingConfig {
         }
 
         let icon = undefined;
-        let iconClass = "small"
+        let iconClass = commonSize
         if (mapping.icon !== undefined) {
             if (typeof mapping.icon === "string" && mapping.icon !== "") {
                 icon = mapping.icon

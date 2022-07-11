@@ -950,6 +950,10 @@ video {
   margin-top: -3rem;
 }
 
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -1038,6 +1042,10 @@ video {
   height: 6rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-full {
   height: 100%;
 }
@@ -1048,10 +1056,6 @@ video {
 
 .h-12 {
   height: 3rem;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .h-1\/2 {
@@ -1122,6 +1126,14 @@ video {
   width: 100%;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
+.w-1 {
+  width: 0.25rem;
+}
+
 .w-24 {
   width: 6rem;
 }
@@ -1136,10 +1148,6 @@ video {
 
 .w-12 {
   width: 3rem;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .w-0 {
@@ -1280,6 +1288,10 @@ video {
 
 .flex-wrap-reverse {
   flex-wrap: wrap-reverse;
+}
+
+.content-start {
+  align-content: flex-start;
 }
 
 .items-end {
@@ -1533,6 +1545,15 @@ video {
   padding-right: 0px;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1601,10 +1622,6 @@ video {
   padding-top: 0.125rem;
 }
 
-.pr-2 {
-  padding-right: 0.5rem;
-}
-
 .pl-6 {
   padding-left: 1.5rem;
 }
@@ -1668,10 +1685,6 @@ video {
   font-weight: 600;
 }
 
-.font-medium {
-  font-weight: 500;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -1699,10 +1712,6 @@ video {
 
 .ordinal {
   --tw-ordinal: ordinal;
-}
-
-.leading-6 {
-  line-height: 1.5rem;
 }
 
 .tracking-tight {
@@ -1910,6 +1919,14 @@ svg, img {
   box-sizing: content-box;
   width: 100%;
   height: 100%;
+}
+
+.titleicon img {
+  width: unset;
+}
+
+.titleicon svg {
+  width: unset;
 }
 
 .svg-catch svg path {
@@ -2458,6 +2475,27 @@ input {
   /* Additional class on the first layer filter */
 }
 
+.mapping-icon-small-height {
+  /* A mapping icon type */
+  height: 2rem;
+  margin-right: 0.5rem;
+  width: unset;
+}
+
+.mapping-icon-medium-height {
+  /* A mapping icon type */
+  height: 3rem;
+  margin-right: 0.5rem;
+  width: unset;
+}
+
+.mapping-icon-large-height {
+  /* A mapping icon type */
+  height: 5rem;
+  margin-right: 0.5rem;
+  width: unset;
+}
+
 .mapping-icon-small {
   /* A mapping icon type */
   width: 1.5rem;
@@ -2505,16 +2543,6 @@ input {
 .hover\:bg-unsubtle:hover {
   background-color: var(--unsubtle-detail-color);
   color: var(--unsubtle-detail-color-contrast);
-}
-
-.group:hover .group-hover\:text-blue-800 {
-  --tw-text-opacity: 1;
-  color: rgba(30, 64, 175, var(--tw-text-opacity));
-}
-
-.group:hover .group-hover\:text-blue-900 {
-  --tw-text-opacity: 1;
-  color: rgba(30, 58, 138, var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {

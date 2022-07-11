@@ -152,10 +152,6 @@
                 "then": "./assets/themes/cyclofix/logo.svg"
               },
               {
-                "if": "theme=doctors",
-                "then": "./assets/layers/doctors/doctors.svg"
-              },
-              {
                 "if": "theme=drinking_water",
                 "then": "./assets/themes/drinking_water/logo.svg"
               },
@@ -210,6 +206,10 @@
               {
                 "if": "theme=hailhydrant",
                 "then": "./assets/themes/hailhydrant/logo.svg"
+              },
+              {
+                "if": "theme=healthcare",
+                "then": "./assets/layers/doctors/doctors.svg"
               },
               {
                 "if": "theme=kerbs_and_crossings",
