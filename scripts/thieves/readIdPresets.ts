@@ -1,16 +1,12 @@
 /***
  * Parses presets from the iD repository and extracts some usefull tags from them
  */
-import ScriptUtils from "./ScriptUtils";
+import ScriptUtils from "../ScriptUtils";
 import {existsSync, readFileSync, writeFileSync} from "fs";
-import * as known_languages from "../assets/language_native.json"
-import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-import {
-    MappingConfigJson,
-
-    QuestionableTagRenderingConfigJson
-} from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
-import SmallLicense from "../Models/smallLicense";
+import * as known_languages from "../../assets/language_native.json"
+import {LayerConfigJson} from "../../Models/ThemeConfig/Json/LayerConfigJson";
+import {MappingConfigJson} from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
+import SmallLicense from "../../Models/smallLicense";
 
 interface IconThief {
     steal(iconName: string): boolean

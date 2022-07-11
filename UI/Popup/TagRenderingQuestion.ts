@@ -236,13 +236,14 @@ export default class TagRenderingQuestion extends Combine {
         configuration: TagRenderingConfig,
         applicableMappings: { if: TagsFilter; ifnot?: TagsFilter, then: TypedTranslation<object>; icon?: string; iconClass?: string, addExtraTags: Tag[], searchTerms?: Record<string, string[]> }[], tagsSource: UIEventSource<any>): InputElement<TagsFilter> {
         const values: { show: BaseUIElement, value: number, mainTerm: Record<string, string>, searchTerms?: Record<string, string[]> }[] = []
+        const addIcons = applicableMappings.some(m => m.icon !== undefined)
         for (let i = 0; i < applicableMappings.length; i++) {
             const mapping = applicableMappings[i];
             const tr = mapping.then.Subs(tagsSource.data)
             const patchedMapping = <{ iconClass: "small-height", then: TypedTranslation<object> }>{
                 ...mapping,
                 iconClass: `small-height`,
-                icon: mapping.icon ?? "./assets/svg/none.svg"
+                icon: mapping.icon ?? (addIcons ? "./assets/svg/none.svg": undefined)
             }
             const fancy = TagRenderingQuestion.GenerateMappingContent(patchedMapping, tagsSource, state).SetClass("normal-background")
             values.push({

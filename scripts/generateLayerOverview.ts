@@ -20,6 +20,7 @@ import {PrepareLayer} from "../Models/ThemeConfig/Conversion/PrepareLayer";
 import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme";
 import {DesugaringContext} from "../Models/ThemeConfig/Conversion/Conversion";
 import {Utils} from "../Utils";
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -216,7 +217,7 @@ class LayerOverviewUtils {
         writeFileSync("./assets/generated/known_layers.json", JSON.stringify({layers: Array.from(sharedLayers.values())}))
 
 
-        if (recompiledThemes.length > 0) {
+        if (recompiledThemes.length > 0 && !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplate-changes")) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
             const iconsPerTheme =
                 Array.from(sharedThemes.values()).map(th => ({
@@ -231,6 +232,10 @@ class LayerOverviewUtils {
         }
 
         this.checkAllSvgs()
+        
+        if(AllKnownLayouts.getSharedLayersConfigs().size == 0){
+            throw "This was a bootstrapping-run. Run generate layeroverview again!"
+        }
 
         const green = s => '\x1b[92m' + s + '\x1b[0m'
         console.log(green("All done!"))
@@ -242,11 +247,11 @@ class LayerOverviewUtils {
         console.log("   ---------- VALIDATING BUILTIN LAYERS ---------")
 
         const sharedTagRenderings = this.getSharedTagRenderings(doesImageExist);
-        const sharedLayers = new Map<string, LayerConfigJson>()
         const state: DesugaringContext = {
             tagRenderings: sharedTagRenderings,
-            sharedLayers
+            sharedLayers: AllKnownLayouts.getSharedLayersConfigs()
         }
+        const sharedLayers = new Map<string, LayerConfigJson>()
         const prepLayer = new PrepareLayer(state);
         const skippedLayers: string[] = []
         const recompiledLayers: string[] = []
@@ -258,6 +263,7 @@ class LayerOverviewUtils {
                     const sharedLayer = JSON.parse(readFileSync(targetPath, "utf8"))
                     sharedLayers.set(sharedLayer.id, sharedLayer)
                     skippedLayers.push(sharedLayer.id)
+                    console.log("Loaded "+sharedLayer.id)
                     continue;
                 }
 

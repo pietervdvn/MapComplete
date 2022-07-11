@@ -508,6 +508,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
         const errors = []
         const warnings = []
         const information = []
+        context = "While validating a layer: "+context
         if (typeof json === "string") {
             errors.push(context + ": This layer hasn't been expanded: " + json)
             return {
