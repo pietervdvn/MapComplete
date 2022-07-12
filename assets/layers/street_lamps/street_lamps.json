@@ -9,7 +9,7 @@
   "source": {
     "osmTags": "highway=street_lamp"
   },
-  "minZoom": 16,
+  "minzoom": 16,
   "title": {
     "render": {
       "en": "Street Lamp",
