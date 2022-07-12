@@ -212,6 +212,10 @@
                 "then": "./assets/layers/doctors/doctors.svg"
               },
               {
+                "if": "theme=indoors",
+                "then": "./assets/themes/onwheels/crest.svg"
+              },
+              {
                 "if": "theme=kerbs_and_crossings",
                 "then": "./assets/layers/kerbs/KerbIcon.svg"
               },

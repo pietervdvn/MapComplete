@@ -1,0 +1,66 @@
+{
+  "id": "indoors",
+  "name": {
+    "en": "indoors"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "indoor=room",
+        "indoor=area",
+        "indoor=wall",
+        "indoor=corridor",
+        "indoor=door",
+        "indoor=level"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Indoor area"
+    },
+    "mappings": [
+      {
+        "if": "indoor=room",
+        "then": "Indoor Room"
+      },
+      {
+        "if": "indoor=area",
+        "then": "Indoor Area"
+      },
+      {
+        "if": "indoor=wall",
+        "then": "Indoor Wall"
+      },
+      {
+        "if": "indoor=corridor",
+        "then": "Indoor Corridor"
+      },
+      {
+        "if": "indoor=door",
+        "then": "Indoor Door"
+      },
+      {
+        "if": "indoor=level",
+        "then": "Indoor Level"
+      }
+    ]
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images"
+  ],
+  "mapRendering": [
+    {
+      "color": {
+        "render": "red"
+      },
+      "width": {
+        "render": "4"
+      },
+      "offset": {
+        "render": "-8"
+      }
+    }
+  ]
+}
