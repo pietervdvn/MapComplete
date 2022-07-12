@@ -23,7 +23,7 @@
     }
   },
   "passAllFeatures": true,
-  "shownByDefault": false,
+  "shownByDefault": true,
   "mapRendering": [
     {
       "color": {
@@ -45,6 +45,6 @@
     }
   ],
   "calculatedTags": [
-    "_entrance=feat.get('entrance')"
+    "_entrance=feat.get('entrance')?.map(e => e.id)"
   ]
 }
