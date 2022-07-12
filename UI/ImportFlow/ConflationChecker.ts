@@ -80,6 +80,8 @@ export default class ConflationChecker extends Combine implements FlowStep<{ fea
                 if (v !== undefined && v !== null) {
                     console.log("Loaded from local storage:", v)
                     overpassStatus.setData("cached")
+                }else{
+                    loadDataFromOverpass()
                 }
             }
         });

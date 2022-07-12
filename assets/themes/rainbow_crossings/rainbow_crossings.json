@@ -1,0 +1,22 @@
+{
+  "id": "rainbow_crossings",
+  "title": {
+    "en": "Rainbow pedestrian crossings"
+  },
+  "description": {
+    "en": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added"
+  },
+  "maintainer": "",
+  "icon": "./assets/themes/rainbow_crossings/logo.svg",
+  "version": "0",
+  "startLat": 50.8465573,
+  "defaultBackgroundId": "CartoDB.Voyager",
+  "startLon": 4.351697,
+  "startZoom": 16,
+  "widenFactor": 2,
+  "layers": [
+    "rainbow_crossings"
+  ]
+}
+
+

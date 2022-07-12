@@ -39,6 +39,7 @@
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
     + [wikipedia](#wikipedia)
+    + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
     + [school.gender](#schoolgender)
 
@@ -80,6 +81,7 @@
   - climbing_gym
   - climbing_route
   - defibrillator
+  - doctors
   - dogpark
   - drinking_water
   - entrance
@@ -94,6 +96,7 @@
   - nature_reserve
   - observation_tower
   - parking
+  - pharmacy
   - picnic_table
   - play_forest
   - playground
@@ -106,6 +109,7 @@
   - surveillance_camera
   - toilet
   - trail
+  - transit_stops
   - tree_node
   - viewpoint
   - village_green
@@ -128,11 +132,14 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - doctors
   - food
   - hackerspace
+  - hospital
   - kindergarten_childcare
   - nature_reserve
   - observation_tower
+  - pharmacy
   - playground
   - recycling
   - school
@@ -155,9 +162,12 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - doctors
   - food
   - hackerspace
+  - hospital
   - kindergarten_childcare
+  - pharmacy
   - recycling
   - school
   - shops
@@ -179,9 +189,12 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - doctors
   - food
   - hackerspace
+  - hospital
   - kindergarten_childcare
+  - pharmacy
   - recycling
   - school
   - shops
@@ -203,8 +216,10 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - doctors
   - food
   - kindergarten_childcare
+  - pharmacy
   - shops
   - veterinary
 
@@ -300,6 +315,7 @@
   - food
   - hackerspace
   - observation_tower
+  - transit_stops
 
 
 
@@ -512,6 +528,17 @@
 
   - nature_reserve
   - observation_tower
+
+
+
+
+### id_presets.shop_types 
+
+
+
+
+
+  - shops
 
 
 
