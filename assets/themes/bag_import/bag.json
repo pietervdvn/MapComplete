@@ -1,0 +1,81 @@
+{
+  "id": "bag",
+  "title": {
+    "nl": "BAG import helper"
+  },
+  "shortDescription": {
+    "nl": "BAG import helper tool"
+  },
+  "description": {
+    "nl": "Dit thema helpt het importeren van BAG data"
+  },
+  "maintainer": "Wouter van der Wal",
+  "icon": "./assets/themes/bag_import/logo.svg",
+  "version": "0",
+  "startLat": 53.1726,
+  "startLon": 7.04545,
+  "startZoom": 9,
+  "overrideAll": {
+    "minzoom": 19
+  },
+  "layers": [
+    {
+      "id": "bag:pand",
+      "description": "Buildings which come from the BAG",
+      "source": {
+        "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
+        "geoJsonZoomLevel": 18,
+        "osmTags": {
+          "and": [
+            "building~*"
+          ]
+        },
+        "maxCacheAge": 0
+      },
+      "mapRendering": [
+        {
+          "width": {
+            "render": 5
+          },
+          "color": {
+            "render": "#00a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bag:verblijfsobject",
+      "source": {
+        "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Averblijfsobject&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
+        "geoJsonZoomLevel": 18,
+        "osmTags": {
+          "and": [
+            "building~*"
+          ]
+        },
+        "maxCacheAge": 0
+      },
+      "calculatedTags": [
+        "addr:housenumber=feat.properties.huisnummer"
+      ],
+      "mapRendering": [
+        {
+          "label": {
+            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "width": {
+            "render": 1
+          }
+        }
+      ]
+    }
+  ],
+  "hideFromOverview": true
+}
