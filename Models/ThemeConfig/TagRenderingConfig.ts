@@ -364,7 +364,7 @@ export default class TagRenderingConfig {
      * Returns true if it is known or not shown, false if the question should be asked
      * @constructor
      */
-    public IsKnown(tags: any): boolean {
+    public IsKnown(tags: Record<string, string>): boolean {
         if (this.condition &&
             !this.condition.matchesProperties(tags)) {
             // Filtered away by the condition, so it is kindof known
@@ -400,7 +400,7 @@ export default class TagRenderingConfig {
      * @param tags
      * @constructor
      */
-    public GetRenderValues(tags: any): { then: Translation, icon?: string, iconClass?: string }[] {
+    public GetRenderValues(tags: Record<string, string>): { then: Translation, icon?: string, iconClass?: string }[] {
         if (!this.multiAnswer) {
             return [this.GetRenderValueWithImage(tags)]
         }
@@ -410,7 +410,7 @@ export default class TagRenderingConfig {
         let freeformKeyDefined = this.freeform?.key !== undefined;
         let usedFreeformValues = new Set<string>()
         // We run over all the mappings first, to check if the mapping matches
-        const applicableMappings: { then: TypedTranslation<any>, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
+        const applicableMappings: { then: TypedTranslation<Record<string, string>>, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
             if (mapping.if === undefined) {
                 return mapping;
             }

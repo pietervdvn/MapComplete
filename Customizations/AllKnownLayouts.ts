@@ -19,7 +19,7 @@ export class AllKnownLayouts {
 
     public static AllPublicLayers(options?: {
         includeInlineLayers:true | boolean
-    }) {
+    }) : LayerConfig[] {
         const allLayers: LayerConfig[] = []
         const seendIds = new Set<string>()
         AllKnownLayouts.sharedLayers.forEach((layer, key) => {
