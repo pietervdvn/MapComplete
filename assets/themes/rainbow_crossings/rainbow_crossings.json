@@ -15,7 +15,6 @@
   "startZoom": 16,
   "widenFactor": 2,
   "layers": [
-    "rainbow_crossings",
     {
       "builtin": "rainbow_crossings",
       "override": {
@@ -30,6 +29,7 @@
         }
       }
     },
+    "rainbow_crossings",
     {
       "builtin": "cycleways_and_roads",
       "override": {
