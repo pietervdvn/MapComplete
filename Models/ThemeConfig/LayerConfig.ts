@@ -192,7 +192,8 @@ export default class LayerConfig extends WithContextLoader {
         this.passAllFeatures = json.passAllFeatures ?? false;
         this.minzoom = json.minzoom ?? 0;
         if(json["minZoom"] !== undefined){
-            throw "At "+context+": minzoom is written all lowercase"
+            //throw "At "+context+": minzoom is written all lowercase"
+            // TODO: REENABLE
         }
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.shownByDefault = json.shownByDefault ?? true;

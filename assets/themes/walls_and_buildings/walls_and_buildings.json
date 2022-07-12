@@ -15,6 +15,7 @@
   "startZoom": 16,
   "widenFactor": 2,
   "layers": [
-    "walls_and_buildings"
+    "walls_and_buildings",
+    "entrance"
   ]
 }

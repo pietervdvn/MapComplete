@@ -45,6 +45,6 @@
     }
   ],
   "calculatedTags": [
-    "_entrance=feat.get('entrance')?.map(e => e.id)"
+    "_entrance=feat.overlapWith('entrance')?.map(e => e.feat.properties.id)"
   ]
 }
