@@ -284,6 +284,10 @@
                 "then": "./assets/themes/postboxes/postbox.svg"
               },
               {
+                "if": "theme=rainbow_crossings",
+                "then": "./assets/themes/rainbow_crossings/logo.svg"
+              },
+              {
                 "if": "theme=shops",
                 "then": "./assets/themes/shops/shop.svg"
               },

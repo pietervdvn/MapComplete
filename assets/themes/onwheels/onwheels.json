@@ -30,7 +30,7 @@
     "doctors"
   ],
   "overrideAll" : {
-    "minZoom" : "15",
+    "minzoom" : "15",
     "mapRendering" : [
       {
         "label" : null
