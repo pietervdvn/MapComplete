@@ -235,6 +235,7 @@
         "skip": "Skip this question",
         "skippedQuestions": "Some questions are skipped",
         "testing": "Testing - changes won't be saved",
+        "useSearch": "Use the search above to see presets",
         "weekdays": {
             "abbreviations": {
                 "friday": "Fri",

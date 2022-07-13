@@ -138,6 +138,10 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
             searchValue?: UIEventSource<string>,
             onNoMatches?: BaseUIElement,
             onNoSearchMade?: BaseUIElement,
+            /**
+             * Shows this if there are many (>200) possible mappings
+             */
+            onManyElements?: BaseUIElement,
             selectIfSingle?: false | boolean,
             searchAreaClass?: string
         }) {
@@ -193,10 +197,10 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
             };
         })
 
-        let somethingShown: Store<boolean>
+        let totalShown: Store<number>
         if (options.selectIfSingle) {
             let forcedSelection : { value: T, show: SelfHidingToggle } = undefined
-            somethingShown = searchValue.map(_ => {
+            totalShown = searchValue.map(_ => {
                 let totalShown = 0;
                 let lastShownValue: { value: T, show: SelfHidingToggle }
                 for (const mv of mappedValues) {
@@ -218,10 +222,10 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
                     selectedElements.setData([])
                 }
 
-                return totalShown > 0
+                return totalShown
             }, mappedValues.map(mv => mv.show.GetValue()))
         } else {
-            somethingShown = searchValue.map(_ => mappedValues.some(mv => mv.show.isShown.data), mappedValues.map(mv => mv.show.GetValue()))
+            totalShown = searchValue.map(_ => mappedValues.filter(mv => mv.show.isShown.data).length, mappedValues.map(mv => mv.show.GetValue()))
 
         }
 
@@ -231,18 +235,21 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
                 if (options?.onNoSearchMade !== undefined && (searchValue.data === undefined || searchValue.data.length === 0)) {
                     return options?.onNoSearchMade
                 }
-                if (!somethingShown.data) {
+                if (totalShown.data == 0) {
                     return onEmpty
+                }
+                if(totalShown.data >= 200){
+                    return options?.onManyElements ?? Translations.t.general.useSearch;
                 }
                 mappedValues.sort((a, b) => a.mainTerm[lng] < b.mainTerm[lng] ? -1 : 1)
                 return new Combine(mappedValues.map(e => e.show))
                     .SetClass("flex flex-wrap w-full content-start")
                     .SetClass(options?.searchAreaClass ?? "")
-            }, [somethingShown, searchValue]))
+            }, [totalShown, searchValue]))
 
         ])
         this.selectedElements = selectedElements;
-        this.someMatchFound = somethingShown;
+        this.someMatchFound = totalShown.map(t => t > 0);
 
     }
 
