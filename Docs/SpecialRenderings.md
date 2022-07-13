@@ -347,11 +347,12 @@ snap_onto_layers | _undefined_ | If a way of the given layer(s) is closeby, will
 max_snap_distance | 5 | The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete
 note_id | _undefined_ | If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'
 location_picker | photo | Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled
+maproulette_id | _undefined_ | If given, the maproulette challenge will be marked as fixed
  
 
 #### Example usage of import_button 
 
- `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,photo)}`
+ `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,photo,)}`
 
 
 

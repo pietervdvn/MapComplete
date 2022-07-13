@@ -550,15 +550,21 @@ export class ImportPointButton extends AbstractImportButton {
                     name: "note_id",
                     doc: "If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
                 },
-                {name:"location_picker",
+                {
+                    name:"location_picker",
                     defaultValue: "photo",
-                doc: "Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled"}],
+                    doc: "Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled"
+                },
+                {
+                    name: "maproulette_id",
+                    doc: "If given, the maproulette challenge will be marked as fixed"
+                }],
             { showRemovedTags: false}
         )
     }
 
     private static createConfirmPanelForPoint(
-        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string, note_id: string },
+        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string, note_id: string, maproulette_id: string },
         state: FeaturePipelineState,
         guiState: DefaultGuiState,
         originalFeatureTags: UIEventSource<any>,
@@ -599,6 +605,14 @@ export class ImportPointButton extends AbstractImportButton {
                 state.osmConnection.closeNote(note_id, "imported")
                 originalFeatureTags.data["closed_at"] = new Date().toISOString()
                 originalFeatureTags.ping()
+            }
+
+            let maproulette_id = originalFeatureTags.data[args.maproulette_id];
+            console.log("Checking if we need to mark a maproulette challenge as fixed (" + maproulette_id + ")")
+            if (maproulette_id !== undefined) {
+                // Fetch MapRoulette API key, then use it to mark the challenge as fixed
+                console.log("Marking maproulette challenge as fixed")
+                state.maprouletteConnection.closeTask(Number(maproulette_id));
             }
         }
 

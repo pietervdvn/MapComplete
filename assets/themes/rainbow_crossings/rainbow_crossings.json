@@ -24,7 +24,9 @@
         "=presets": [],
         "source": {
           "osmTags": {
-            "and+": ["crossing:marking=rainbow"]
+            "and+": [
+              "crossing:marking=rainbow"
+            ]
           }
         }
       }
@@ -39,5 +41,3 @@
     }
   ]
 }
-
-

@@ -13,6 +13,7 @@ import ChangeToElementsActor from "../Actors/ChangeToElementsActor";
 import PendingChangesUploader from "../Actors/PendingChangesUploader";
 import * as translators from "../../assets/translators.json"
 import {post} from "jquery";
+import Maproulette from "../Maproulette";
         
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -33,6 +34,11 @@ export default class UserRelatedState extends ElementsState {
      * The key for mangrove
      */
     public mangroveIdentity: MangroveIdentity;
+
+    /**
+     * Maproulette connection
+     */
+    public maprouletteConnection: Maproulette;
 
     public readonly isTranslator : Store<boolean>;
     
@@ -79,6 +85,8 @@ export default class UserRelatedState extends ElementsState {
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
         );
+
+        this.maprouletteConnection = new Maproulette();
 
         if (layoutToUse?.hideFromOverview) {
             this.osmConnection.isLoggedIn.addCallbackAndRunD(loggedIn => {
