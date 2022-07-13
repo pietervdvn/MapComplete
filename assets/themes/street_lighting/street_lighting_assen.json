@@ -53,41 +53,20 @@
       ]
     },
     {
-      "id": "maproulette",
-      "name": "Maproulette Tasks",
-      "source": {
-        "osmTags": "id~*",
-        "geoJson": "https://maproulette.org/api/v2/challenge/view/27971",
-        "isOsmCache": false
-      },
-      "calculatedTags": [
-        "_closest_osm_street_lamp=feat.closest('street_lamps')?.properties?.id",
-        "_closest_osm_street_lamp_distance=feat.distanceTo(feat.properties._closest_osm_street_lamp)",
-        "_has_closeby_feature=Number(feat.properties._closest_osm_street_lamp_distance) < 5 ? 'yes' : 'no'"
-      ],
-      "title": "Straatlantaarn in Maproulette",
-      "mapRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "icon": "circle:black",
-          "iconSize": "20,20,center"
-        }
-      ],
-      "tagRenderings": [
-        "all_tags",
-        {
-          "id": "link",
-          "render": "<a href='https://maproulette.org/challenge/{mr_challengeId}/task/{mr_taskId}'>View this task</a>"
-        },
-        {
-          "id": "import",
-          
-          "render": "{import_button(street_lamps,tags,Import,./assets/svg/addSmall.svg,,,,photo,mr_taskId)}"
-        }
-      ]
+      "builtin": "maproulette_challenge",
+      "override": {
+        "calculatedTags": [
+          "_closest_osm_street_lamp=feat.closest('street_lamps')?.properties?.id",
+          "_closest_osm_street_lamp_distance=feat.distanceTo(feat.properties._closest_osm_street_lamp)",
+          "_has_closeby_feature=Number(feat.properties._closest_osm_street_lamp_distance) < 5 ? 'yes' : 'no'"
+        ],
+        "tagRenderings+": [
+          {
+            "id": "import",
+            "render": "{import_button(street_lamps,tags,Import,./assets/svg/addSmall.svg,,,,photo,mr_taskId)}"
+          }
+        ]
+      }
     }
   ],
   "hideFromOverview": true
