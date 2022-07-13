@@ -4,7 +4,7 @@
       "en": "OnWheels"
   },
   "description": {
-      "en": "On this map, publicly weelchair accessible places are shown and can be easily added"
+      "en": "On this map, publicly wheelchair accessible places are shown and can be easily added"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/onwheels/crest.svg",
@@ -27,7 +27,8 @@
     "shops",
     "toilet",
     "viewpoint",
-    "doctors"
+    "doctors",
+    "walls_and_buildings"
   ],
   "overrideAll" : {
     "minzoom" : "15",
