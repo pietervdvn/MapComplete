@@ -39,6 +39,39 @@
   "socialImage": "./assets/themes/cyclofix/logo.svg",
   "layers": [
     "bike_cafe",
+    {
+      "builtin": [
+        "bicycle_rental"
+      ],
+      "override": {
+        "id": "charging_station_non_docking",
+        "minzoom": 14,
+        "=presets": [],
+        "source": {
+          "osmTags": {
+            "and+": [
+              "bicycle_rental!=docking_station"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "#": "All bicycle rental at a high zoom level, to avoid duplicates",
+      "builtin": "bicycle_rental",
+      "override": {
+        "name": null,
+        "filter": {
+          "sameAs": "charging_station_non_docking"
+        },
+        "minzoom": 18,
+        "mapRendering": [
+          {
+            "icon": "pin:blue;./assets/themes/cyclofix/key.svg"
+          }
+        ]
+      }
+    },
     "bike_shop",
     {
       "builtin": "bicycle_library",

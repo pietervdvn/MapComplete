@@ -20,6 +20,16 @@
     ]
   },
   {
+    "path": "key.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Stijn Wens"
+    ],
+    "sources": [
+      "https://wens.be/free-antwerpenize-bicycle-font"
+    ]
+  },
+  {
     "path": "logo.svg",
     "license": "CC-BY-SA",
     "authors": [
