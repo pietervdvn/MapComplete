@@ -4122,7 +4122,7 @@
                     "placeholder": "Höhe des Bordsteins"
                 },
                 "question": "Wie hoch ist der Bordstein?",
-                "render": "Bordsteinhöhe: {{kerb:height}}"
+                "render": "Bordsteinhöhe: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {

@@ -10,5 +10,5 @@ ports:
 vscode:
   extensions:
     - "esbenp.prettier-vscode"
-    - "eamodio.gitlens",
+    - "eamodio.gitlens"
     - "GitHub.vscode-pull-request-github"

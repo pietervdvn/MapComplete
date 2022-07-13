@@ -3,6 +3,9 @@
   "name": {
     "en": "doctors"
   },
+  "description": {
+    "en": "This layer shows doctor offices, dentists and other healthcare facilities"
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -38,6 +41,18 @@
     "phone",
     "email",
     "website",
+    {
+      "question": {
+        "en": "What is the name of this doctors place?"
+      },
+      "render": {
+        "en": "This doctors place is called {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "name"
+    },
     {
       "condition": "amenity=doctors",
       "id": "specialty",
@@ -120,13 +135,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "circle:white;./assets/layers/doctors/doctors.svg",
-        "mappings": [
-          {
-            "if": "amenity=dentist",
-            "then": "circle:white;./assets/layers/doctors/dentist.svg"
-          }
-        ]
+        "render": "circle:white;./assets/layers/doctors/doctors.svg"
       },
       "iconSize": "40,40,center",
       "location": [
