@@ -613,6 +613,8 @@ export class ImportPointButton extends AbstractImportButton {
                 // Fetch MapRoulette API key, then use it to mark the challenge as fixed
                 console.log("Marking maproulette challenge as fixed")
                 state.maprouletteConnection.closeTask(Number(maproulette_id));
+                originalFeatureTags.data["mr_taskStatus"] = "Fixed";
+                originalFeatureTags.ping();
             }
         }
 
