@@ -102,7 +102,7 @@
     "leaflet-providers": "^1.13.0",
     "leaflet-simple-map-screenshoter": "^0.4.4",
     "libphonenumber": "^0.0.9",
-    "libphonenumber-js": "^1.7.55",
+    "libphonenumber-js": "^1.10.8",
     "lz-string": "^1.4.4",
     "mangrove-reviews": "^0.1.3",
     "moment": "^2.29.2",
