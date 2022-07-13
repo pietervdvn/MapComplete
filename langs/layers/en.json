@@ -4423,6 +4423,75 @@
             "render": "MapRoulette Item: {parentName}"
         }
     },
+    "maproulette_challenge": {
+        "description": "Layer showing tasks of a MapRoulette challenge",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Show tasks with all statuses"
+                    },
+                    "1": {
+                        "question": "Show tasks that are created"
+                    },
+                    "2": {
+                        "question": "Show tasks that are fixed"
+                    },
+                    "3": {
+                        "question": "Show tasks that are false positives"
+                    },
+                    "4": {
+                        "question": "Show tasks that are skipped"
+                    },
+                    "5": {
+                        "question": "Show tasks that are deleted"
+                    },
+                    "6": {
+                        "question": "Show tasks that are already fixed"
+                    },
+                    "7": {
+                        "question": "Show tasks that are marked as too hard"
+                    },
+                    "8": {
+                        "question": "Show tasks that are disabled"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Task is created"
+                    },
+                    "1": {
+                        "then": "Task is fixed"
+                    },
+                    "2": {
+                        "then": "Task is a false positive"
+                    },
+                    "3": {
+                        "then": "Task is skipped"
+                    },
+                    "4": {
+                        "then": "Task is deleted"
+                    },
+                    "5": {
+                        "then": "Task is already fixed"
+                    },
+                    "6": {
+                        "then": "Task is marked as too hard"
+                    },
+                    "7": {
+                        "then": "Task is disabled"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Item in MapRoulette"
+        }
+    },
     "maxspeed": {
         "description": "Shows the allowed speed for every road",
         "name": "Maxspeed",

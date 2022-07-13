@@ -14,7 +14,7 @@
       "en": "Item in MapRoulette"
     }
   },
-  "titleIcons":[
+  "titleIcons": [
     {
       "id": "maproulette",
       "render": "<a href='https://maproulette.org/challenge/{mr_challengeId}/task/{mr_taskId}' target='_blank'><img src='./assets/layers/maproulette/logomark.svg'/></a>"
@@ -67,6 +67,10 @@
     }
   ],
   "tagRenderings": [
+    {
+      "id": "details",
+      "render": "{maproulette_task()}"
+    },
     {
       "id": "status",
       "render": "Current status: {status}",
