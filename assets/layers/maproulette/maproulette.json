@@ -53,10 +53,6 @@
   ],
   "tagRenderings": [
     {
-      "id": "link",
-      "render": "<a href='https://maproulette.org/challenge/{parentId}/task/{id}'>View this task</a>"
-    },
-    {
       "id": "status",
       "render": "Current status: {status}",
       "mappings": [
@@ -128,6 +124,12 @@
       "en": "MapRoulette Item: {parentName}"
     }
   },
+  "titleIcons": [
+    {
+      "id": "maproulette",
+      "render": "<a href='https://maproulette.org/challenge/{parentId}/task/{id}' target='_blank'><img src='./assets/layers/maproulette/logomark.svg'/></a>"
+    }
+  ],
   "filter": [
     {
       "id": "status",
