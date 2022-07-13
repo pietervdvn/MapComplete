@@ -153,24 +153,6 @@
           "nl": "Aantal parkeerplaatsen"
         }
       },
-      "mappings": [
-        {
-          "if": "capacity=yes",
-          "then": {
-            "en": "There are parking spots, but it is not known how many",
-            "nl": "Er zijn parkeerplaatsen, maar het is niet bekend hoeveel er zijn"
-          },
-          "hideInAnswer": true
-        },
-        {
-          "if": "capacity=no",
-          "then": {
-            "en": "There are no parking spots",
-            "nl": "Er zijn geen parkeerplaatsen"
-          },
-          "hideInAnswer": true
-        }
-      ],
       "question": {
         "en": "How many parking spots are there at this parking?",
         "nl": "Hoeveel parkeerplaatsen zijn er op deze parking?"

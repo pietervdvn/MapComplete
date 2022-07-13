@@ -4626,14 +4626,6 @@
                 "freeform": {
                     "placeholder": "Amount of parking spots"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "There are parking spots, but it is not known how many"
-                    },
-                    "1": {
-                        "then": "There are no parking spots"
-                    }
-                },
                 "question": "How many parking spots are there at this parking?",
                 "render": "There are {{capacity}} parking spots"
             },

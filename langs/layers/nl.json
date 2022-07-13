@@ -4510,14 +4510,6 @@
                 "freeform": {
                     "placeholder": "Aantal parkeerplaatsen"
                 },
-                "mappings": {
-                    "0": {
-                        "then": "Er zijn parkeerplaatsen, maar het is niet bekend hoeveel er zijn"
-                    },
-                    "1": {
-                        "then": "Er zijn geen parkeerplaatsen"
-                    }
-                },
                 "question": "Hoeveel parkeerplaatsen zijn er op deze parking?",
                 "render": "Er zijn {{capacity}} parkeerplaatsen"
             },
