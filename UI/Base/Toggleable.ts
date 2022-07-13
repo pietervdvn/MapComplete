@@ -26,7 +26,8 @@ export default class Toggleable extends Combine {
     public readonly isVisible = new UIEventSource(false)
 
     constructor(title: Title | Combine | BaseUIElement, content: BaseUIElement, options?: {
-        closeOnClick: true | boolean
+        closeOnClick?: true | boolean,
+        height?: "100vh" | string
     }) {
         super([title, content])
         content.SetClass("animate-height border-l-4 pl-2 block")
@@ -72,7 +73,7 @@ export default class Toggleable extends Combine {
 
         this.isVisible.addCallbackAndRun(isVisible => {
             if (isVisible) {
-                contentElement.style.maxHeight = "100vh"
+                contentElement.style.maxHeight = options?.height ?? "100vh"
                 contentElement.style.overflowY = "auto"
                 contentElement.style["-webkit-mask-image"] = "unset"
             } else {
