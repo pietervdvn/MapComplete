@@ -139,8 +139,8 @@
         "nl": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?"
       },
       "render": {
-        "en": "There are {{capacity:disabled}} disabled parking spots",
-        "nl": "Er zijn {{capacity:disabled}} parkeerplaatsen voor gehandicapten"
+        "en": "There are {capacity:disabled} disabled parking spots",
+        "nl": "Er zijn capacity:disabled} parkeerplaatsen voor gehandicapten"
       }
     },
     {
@@ -158,8 +158,8 @@
         "nl": "Hoeveel parkeerplaatsen zijn er op deze parking?"
       },
       "render": {
-        "en": "There are {{capacity}} parking spots",
-        "nl": "Er zijn {{capacity}} parkeerplaatsen"
+        "en": "There are {capacity} parking spots",
+        "nl": "Er zijn {capacity} parkeerplaatsen"
       }
     }
   ],

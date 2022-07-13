@@ -4127,7 +4127,7 @@
                     "placeholder": "Height of the kerb"
                 },
                 "question": "What is the height of this kerb?",
-                "render": "Kerb height: {{kerb:height}}"
+                "render": "Kerb height: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4627,7 +4627,7 @@
                     "placeholder": "Amount of parking spots"
                 },
                 "question": "How many parking spots are there at this parking?",
-                "render": "There are {{capacity}} parking spots"
+                "render": "There are {capacity} parking spots"
             },
             "capacity-disabled": {
                 "freeform": {
@@ -4642,7 +4642,7 @@
                     }
                 },
                 "question": "How many disabled parking spots are there at this parking?",
-                "render": "There are {{capacity:disabled}} disabled parking spots"
+                "render": "There are {capacity:disabled} disabled parking spots"
             },
             "parking-type": {
                 "mappings": {
