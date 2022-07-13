@@ -39,6 +39,14 @@ export abstract class Conversion<TIn, TOut> {
         return DesugaringStep.strict(fixed)
     }
 
+    public convertJoin(json: TIn, context: string, errors: string[], warnings?: string[], information?: string[]): TOut {
+        const fixed = this.convert(json, context)
+        errors?.push(...(fixed.errors ?? []))
+        warnings?.push(...(fixed.warnings ?? []))
+        information?.push(...(fixed.information ?? []))
+        return fixed.result
+    }
+
     public andThenF<X>(f: (tout:TOut) => X ): Conversion<TIn, X>{
         return new Pipe(
             this,

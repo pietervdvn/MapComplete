@@ -49,6 +49,9 @@ export class SubstitutedTranslation extends VariableUiElement {
                 const allElements = SubstitutedTranslation.ExtractSpecialComponents(txt, extraMappings).map(
                     proto => {
                         if (proto.fixed !== undefined) {
+                            if(tagsSource === undefined){
+                                return Utils.SubstituteKeys(proto.fixed, undefined)
+                            }
                             return new VariableUiElement(tagsSource.map(tags => Utils.SubstituteKeys(proto.fixed, tags)));
                         }
                         const viz = proto.special;

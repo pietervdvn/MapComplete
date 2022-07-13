@@ -24,6 +24,7 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen";
 import Title from "../Base/Title";
 import CheckBoxes from "../Input/Checkboxes";
 import {AllTagsPanel} from "../AllTagsPanel";
+import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch";
 
 class PreviewPanel extends ScrollableFullScreen {
 
@@ -109,6 +110,10 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
             bounds: currentBounds,
             attribution: new Attribution(location, state.osmConnection.userDetails, undefined, currentBounds)
         })
+        const layerControl =  new BackgroundMapSwitch( {
+            backgroundLayer: background,
+            locationControl: location
+        },background)
         map.SetClass("w-full").SetStyle("height: 500px")
 
         new ShowDataMultiLayer({
@@ -147,6 +152,7 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
 
             mismatchIndicator,
             map,
+            layerControl,
             confirm
         ]);
 

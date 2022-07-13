@@ -1,0 +1,44 @@
+{
+  "id": "hospital",
+  "name": {
+    "en": "Hospital"
+  },
+  "title": {
+    "render": {
+      "en": "Hospital"
+    }
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "amenity=hospital"
+  },
+  "tagRenderings": [
+    {
+      "id": "name",
+      "render": {
+        "en": "Name of the hospital name is {name}"
+      },
+      "question": {
+        "en": "What does the of the hospital ?"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "phone",
+    "email",
+    "website"
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "circle:white;./assets/layers/hospital/hospital.svg"
+      },
+      "iconSize": "40,40,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

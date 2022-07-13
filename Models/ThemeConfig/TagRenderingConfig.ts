@@ -177,7 +177,8 @@ export default class TagRenderingConfig {
                 throw "Tagrendering has a 'mappings'-object, but expected a list (" + context + ")"
             }
 
-            this.mappings = json.mappings.map((m, i) => TagRenderingConfig.ExtractMapping(m, i, translationKey, context, this.multiAnswer, this.question !== undefined));
+            const commonIconSize = Utils.NoNull(json.mappings.map(m => m.icon !== undefined ? m.icon["class"] : undefined))[0] ?? "small"
+            this.mappings = json.mappings.map((m, i) => TagRenderingConfig.ExtractMapping(m, i, translationKey, context, this.multiAnswer, this.question !== undefined, commonIconSize));
         }
 
         if (this.question && this.freeform?.key === undefined && this.mappings === undefined) {
@@ -288,7 +289,7 @@ export default class TagRenderingConfig {
 
     public static ExtractMapping(mapping: MappingConfigJson, i: number, translationKey: string,
                                  context: string,
-                                 multiAnswer?: boolean, isQuestionable?: boolean) {
+                                 multiAnswer?: boolean, isQuestionable?: boolean, commonSize: string = "small") {
 
         const ctx = `${translationKey}.mappings.${i}`
         if (mapping.if === undefined) {
@@ -327,7 +328,7 @@ export default class TagRenderingConfig {
         }
 
         let icon = undefined;
-        let iconClass = "small"
+        let iconClass = commonSize
         if (mapping.icon !== undefined) {
             if (typeof mapping.icon === "string" && mapping.icon !== "") {
                 icon = mapping.icon
@@ -352,7 +353,7 @@ export default class TagRenderingConfig {
             }
 
             if (hideInAnswer !== true && !(mp.ifnot?.isUsableAsAnswer() ?? true)) {
-                throw `${context}.mapping[${i}].ifnot: This value cannot be used to answer a question, probably because it contains a regex or an OR. Either change it or set 'hideInAnswer'`
+                throw `${context}.mapping[${i}].ifnot: This value cannot be used to answer a question, probably because it contains a regex or an OR. If a contributor were to pick this as an option, MapComplete wouldn't be able to determine which tags to add.\n    Either change it or set 'hideInAnswer'`
             }
         }
 
@@ -363,7 +364,7 @@ export default class TagRenderingConfig {
      * Returns true if it is known or not shown, false if the question should be asked
      * @constructor
      */
-    public IsKnown(tags: any): boolean {
+    public IsKnown(tags: Record<string, string>): boolean {
         if (this.condition &&
             !this.condition.matchesProperties(tags)) {
             // Filtered away by the condition, so it is kindof known
@@ -399,7 +400,7 @@ export default class TagRenderingConfig {
      * @param tags
      * @constructor
      */
-    public GetRenderValues(tags: any): { then: Translation, icon?: string, iconClass?: string }[] {
+    public GetRenderValues(tags: Record<string, string>): { then: Translation, icon?: string, iconClass?: string }[] {
         if (!this.multiAnswer) {
             return [this.GetRenderValueWithImage(tags)]
         }
@@ -409,7 +410,7 @@ export default class TagRenderingConfig {
         let freeformKeyDefined = this.freeform?.key !== undefined;
         let usedFreeformValues = new Set<string>()
         // We run over all the mappings first, to check if the mapping matches
-        const applicableMappings: { then: TypedTranslation<any>, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
+        const applicableMappings: { then: TypedTranslation<Record<string, string>>, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
             if (mapping.if === undefined) {
                 return mapping;
             }

@@ -1,0 +1,88 @@
+{
+  "id": "shelter",
+  "name": {
+    "en": "Shelter"
+  },
+  "description": {
+    "en": "Layer showing shelter structures"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=shelter"
+      ]
+    }
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Shelter"
+    }
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/layers/shelter/shelter.svg"
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "shelter-type",
+      "mappings": [
+        {
+          "if": "shelter_type=public_transport",
+          "then": {
+            "en": "This is a shelter at a public transport stop."
+          }
+        },
+        {
+          "if": "shelter_type=picnic_shelter",
+          "then": {
+            "en": "This is a shelter protecting from rain at a picnic site."
+          }
+        },
+        {
+          "if": "shelter_type=gazebo",
+          "then": {
+            "en": "This is a gazebo."
+          }
+        },
+        {
+          "if": "shelter_type=weather_shelter",
+          "then": {
+            "en": "This is a small shelter, primarily intended for short breaks. Usually found in the mountains or alongside roads."
+          }
+        },
+        {
+          "if": "shelter_type=lean_to",
+          "then": {
+            "en": "This is a shed with 3 walls, primarily intended for camping."
+          }
+        },
+        {
+          "if": "shelter_type=pavilion",
+          "then": {
+            "en": "This is a pavilion"
+          }
+        },
+        {
+          "if": "shelter_type=basic_hut",
+          "then": "This is a basic hut, providing basic shelter and sleeping facilities."
+        }
+      ],
+      "question": {
+        "en": "What kind of shelter is this?"
+      },
+      "render": {
+        "en": "Shelter type: {shelter_type}"
+      },
+      "freeform": {
+        "key": "shelter_type",
+        "type": "string"
+      }
+    }
+  ]
+}

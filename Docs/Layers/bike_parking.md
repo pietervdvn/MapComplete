@@ -27,6 +27,7 @@ A layer showing where you can park your bike
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
+  - [transit](https://mapcomplete.osm.be/transit)
 
 
 

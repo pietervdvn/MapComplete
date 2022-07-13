@@ -3906,6 +3906,41 @@
     {
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Cycleways and roads showing features with this tag",
+      "value": "tertiary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Cycleways and roads showing features with this tag",
+      "value": "primary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Cycleways and roads showing features with this tag",
+      "value": "secondary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Cycleways and roads showing features with this tag",
+      "value": "service"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Cycleways and roads showing features with this tag",
+      "value": "footway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Cycleways and roads showing features with this tag",
+      "value": "pedestrian"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Cycleways and roads showing features with this tag",
+      "value": "living_street"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Cycleways and roads showing features with this tag",
       "value": "path"
     },
     {
@@ -4533,6 +4568,89 @@
     {
       "key": "fixme",
       "description": "Layer 'Defibrillators' shows and asks freeform values for key 'fixme' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer doctors showing features with this tag",
+      "value": "doctors"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer doctors showing features with this tag",
+      "value": "dentist"
+    },
+    {
+      "key": "healthcare",
+      "description": "The MapComplete theme Personal theme has a layer doctors showing features with this tag",
+      "value": "physiotherapist"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'doctors' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'doctors' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'doctors' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'healthcare:speciality' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows healthcare:speciality=general with a fixed text, namely 'This is a general practitioner' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "general"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows healthcare:speciality=gynaecology with a fixed text, namely 'This is a gynaecologist' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "gynaecology"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows healthcare:speciality=psychiatry with a fixed text, namely 'This is a psychiatrist' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "psychiatry"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows healthcare:speciality=paediatrics with a fixed text, namely 'This is a paediatrician' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "paediatrics"
     },
     {
       "key": "leisure",
@@ -5503,6 +5621,39 @@
       "description": "Layer 'Hackerspace' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Hospital showing features with this tag",
+      "value": "hospital"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Hospital' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Hospital' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Hospital' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Hospital' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Hospital' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Hospital' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Hospital' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "emergency",
       "description": "The MapComplete theme Personal theme has a layer Map of hydrants showing features with this tag",
       "value": "fire_hydrant"
@@ -5616,6 +5767,55 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "barrier",
+      "description": "The MapComplete theme Personal theme has a layer Kerbs showing features with this tag",
+      "value": "kerb"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=raised with a fixed text, namely 'This kerb is raised (>3 cm)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "raised"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=lowered with a fixed text, namely 'This kerb is lowered (~3 cm)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "lowered"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=flush with a fixed text, namely 'This kerb is flush (~0cm)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "flush"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=no with a fixed text, namely 'There is no kerb here' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=yes with a fixed text, namely 'There is a kerb of unknown height' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Kerbs' shows tactile_paving=yes with a fixed text, namely 'This kerb has tactile paving.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Kerbs' shows tactile_paving=no with a fixed text, namely 'This kerb does not have tactile paving.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Kerbs' shows tactile_paving=incorrect with a fixed text, namely 'This kerb has tactile paving, but it is incorrect' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "incorrect"
+    },
+    {
+      "key": "kerb:height",
+      "description": "Layer 'Kerbs' shows and asks freeform values for key 'kerb:height' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "tourism",
@@ -5755,6 +5955,11 @@
     {
       "key": "maxspeed",
       "description": "Layer 'Maxspeed' shows and asks freeform values for key 'maxspeed' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "highway",
+      "description": "Layer 'Maxspeed' shows highway=living_street&_country!=be with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "living_street"
     },
     {
       "key": "highway",
@@ -6086,6 +6291,70 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer pharmacy showing features with this tag",
+      "value": "pharmacy"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'pharmacy' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'pharmacy' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'pharmacy' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'pharmacy' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'pharmacy' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'pharmacy' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'pharmacy' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'pharmacy' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'pharmacy' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'pharmacy' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "limited"
     },
     {
       "key": "leisure",
@@ -6625,6 +6894,50 @@
       "value": "24/7"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Shelter showing features with this tag",
+      "value": "shelter"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows and asks freeform values for key 'shelter_type' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=public_transport with a fixed text, namely 'This is a shelter at a public transport stop.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "public_transport"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=picnic_shelter with a fixed text, namely 'This is a shelter protecting from rain at a picnic site.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "picnic_shelter"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=gazebo with a fixed text, namely 'This is a gazebo.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "gazebo"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=weather_shelter with a fixed text, namely 'This is a small shelter, primarily intended for short breaks. Usually found in the mountains or alongside roads.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "weather_shelter"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=lean_to with a fixed text, namely 'This is a shed with 3 walls, primarily intended for camping.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "lean_to"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=pavilion with a fixed text, namely 'This is a pavilion' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "pavilion"
+    },
+    {
+      "key": "shelter_type",
+      "description": "Layer 'Shelter' shows shelter_type=basic_hut with a fixed text, namely 'This is a basic hut, providing basic shelter and sleeping facilities.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "basic_hut"
+    },
+    {
       "key": "shop",
       "description": "The MapComplete theme Personal theme has a layer Shop showing features with this tag"
     },
@@ -6654,23 +6967,43 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=convenience with a fixed text, namely 'Convenience store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "convenience"
+      "description": "Layer 'Shop' shows shop=agrarian with a fixed text, namely 'Farm Supply Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "agrarian"
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=supermarket with a fixed text, namely 'Supermarket' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "supermarket"
+      "description": "Layer 'Shop' shows shop=alcohol with a fixed text, namely 'Liquor Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "alcohol"
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=clothes with a fixed text, namely 'Clothing store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "clothes"
+      "description": "Layer 'Shop' shows shop=anime with a fixed text, namely 'Anime / Manga Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "anime"
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=hairdresser with a fixed text, namely 'Hairdresser' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "hairdresser"
+      "description": "Layer 'Shop' shows shop=antiques with a fixed text, namely 'Antiques Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "antiques"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=appliance with a fixed text, namely 'Appliance Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "appliance"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=art with a fixed text, namely 'Art Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "art"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=baby_goods with a fixed text, namely 'Baby Goods Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "baby_goods"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bag with a fixed text, namely 'Bag/Luggage Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bag"
     },
     {
       "key": "shop",
@@ -6679,29 +7012,786 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=car_repair with a fixed text, namely 'Car repair (garage)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Shop' shows shop=bathroom_furnishing with a fixed text, namely 'Bathroom Furnishing Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bathroom_furnishing"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=beauty with a fixed text, namely 'Beauty Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "beauty"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bed with a fixed text, namely 'Bedding/Mattress Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bed"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=beverages with a fixed text, namely 'Beverage Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "beverages"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bicycle with a fixed text, namely 'Bicycle Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bicycle"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=boat with a fixed text, namely 'Boat Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "boat"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bookmaker with a fixed text, namely 'Bookmaker' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "bookmaker"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=books with a fixed text, namely 'Book Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "books"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=brewing_supplies with a fixed text, namely 'Brewing Supply Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "brewing_supplies"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=butcher with a fixed text, namely 'Butcher' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "butcher"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=camera with a fixed text, namely 'Camera Equipment Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "camera"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=candles with a fixed text, namely 'Candle Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "candles"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=cannabis with a fixed text, namely 'Cannabis Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "cannabis"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=car with a fixed text, namely 'Car Dealership' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "car"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=car_parts with a fixed text, namely 'Car Parts Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "car_parts"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=car_repair with a fixed text, namely 'Car Repair Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "car_repair"
     },
     {
       "key": "shop",
-      "description": "Layer 'Shop' shows shop=car with a fixed text, namely 'Car dealer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
-      "value": "car"
+      "description": "Layer 'Shop' shows shop=caravan with a fixed text, namely 'RV Dealership' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "caravan"
     },
     {
-      "key": "phone",
-      "description": "Layer 'Shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=carpet with a fixed text, namely 'Carpet Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "carpet"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=catalogue with a fixed text, namely 'Catalog Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "catalogue"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=charity with a fixed text, namely 'Charity Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "charity"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=cheese with a fixed text, namely 'Cheese Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "cheese"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=chemist with a fixed text, namely 'Drugstore' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "chemist"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=chocolate with a fixed text, namely 'Chocolate Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "chocolate"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=clothes with a fixed text, namely 'Clothing Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "clothes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=coffee with a fixed text, namely 'Coffee Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "coffee"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=collector with a fixed text, namely 'Collectibles Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "collector"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=computer with a fixed text, namely 'Computer Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "computer"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=confectionery with a fixed text, namely 'Candy Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "confectionery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=convenience with a fixed text, namely 'Convenience Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "convenience"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=copyshop with a fixed text, namely 'Copy Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "copyshop"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=cosmetics with a fixed text, namely 'Cosmetics Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "cosmetics"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=country_store with a fixed text, namely 'Country Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "country_store"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=craft with a fixed text, namely 'Arts & Crafts Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "craft"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=curtain with a fixed text, namely 'Curtain Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "curtain"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=dairy with a fixed text, namely 'Dairy Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "dairy"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=deli with a fixed text, namely 'Deli' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "deli"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=department_store with a fixed text, namely 'Department Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "department_store"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=doityourself with a fixed text, namely 'DIY Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "doityourself"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=doors with a fixed text, namely 'Door Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "doors"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=dry_cleaning with a fixed text, namely 'Dry Cleaner' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "dry_cleaning"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=e-cigarette with a fixed text, namely 'E-Cigarette Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "e-cigarette"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=electrical with a fixed text, namely 'Electrical Equipment Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "electrical"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=electronics with a fixed text, namely 'Electronics Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "electronics"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=erotic with a fixed text, namely 'Erotic Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "erotic"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fabric with a fixed text, namely 'Fabric Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "fabric"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=farm with a fixed text, namely 'Produce Stand' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "farm"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fashion_accessories with a fixed text, namely 'Fashion Accessories Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "fashion_accessories"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fireplace with a fixed text, namely 'Fireplace Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "fireplace"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fishing with a fixed text, namely 'Fishing Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "fishing"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=flooring with a fixed text, namely 'Flooring Supply Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "flooring"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=florist with a fixed text, namely 'Florist' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "florist"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=frame with a fixed text, namely 'Framing Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "frame"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=frozen_food with a fixed text, namely 'Frozen Food Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "frozen_food"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fuel with a fixed text, namely 'Fuel Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "fuel"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=funeral_directors with a fixed text, namely 'Funeral Home' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "funeral_directors"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=furniture with a fixed text, namely 'Furniture Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "furniture"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=games with a fixed text, namely 'Tabletop Game Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "games"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=garden_centre with a fixed text, namely 'Garden Center' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "garden_centre"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=gas with a fixed text, namely 'Bottled Gas Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "gas"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=general with a fixed text, namely 'General Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "general"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=gift with a fixed text, namely 'Gift Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "gift"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=greengrocer with a fixed text, namely 'Greengrocer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "greengrocer"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hairdresser with a fixed text, namely 'Hairdresser' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "hairdresser"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hairdresser_supply with a fixed text, namely 'Hairdresser Supply Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "hairdresser_supply"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hardware with a fixed text, namely 'Hardware Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "hardware"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=health_food with a fixed text, namely 'Health Food Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "health_food"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hearing_aids with a fixed text, namely 'Hearing Aids Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "hearing_aids"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=herbalist with a fixed text, namely 'Herbalist' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "herbalist"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hifi with a fixed text, namely 'Hifi Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "hifi"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hobby with a fixed text, namely 'Hobby Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "hobby"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=household_linen with a fixed text, namely 'Household Linen Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "household_linen"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=houseware with a fixed text, namely 'Houseware Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "houseware"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hunting with a fixed text, namely 'Hunting Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "hunting"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=interior_decoration with a fixed text, namely 'Interior Decoration Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "interior_decoration"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=jewelry with a fixed text, namely 'Jewelry Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "jewelry"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=kiosk with a fixed text, namely 'Kiosk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "kiosk"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=kitchen with a fixed text, namely 'Kitchen Design Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "kitchen"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=laundry with a fixed text, namely 'Laundry' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "laundry"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=leather with a fixed text, namely 'Leather Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "leather"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=lighting with a fixed text, namely 'Lighting Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "lighting"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=locksmith with a fixed text, namely 'Locksmith' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "locksmith"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=lottery with a fixed text, namely 'Lottery Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "lottery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=mall with a fixed text, namely 'Mall' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "mall"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=massage with a fixed text, namely 'Massage Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "massage"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=medical_supply with a fixed text, namely 'Medical Supply Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "medical_supply"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=military_surplus with a fixed text, namely 'Military Surplus Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "military_surplus"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=mobile_phone with a fixed text, namely 'Mobile Phone Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "mobile_phone"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=model with a fixed text, namely 'Model Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "model"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=money_lender with a fixed text, namely 'Money Lender' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "money_lender"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=motorcycle with a fixed text, namely 'Motorcycle Dealership' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "motorcycle"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=motorcycle_repair with a fixed text, namely 'Motorcycle Repair Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "motorcycle_repair"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=music with a fixed text, namely 'Music Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "music"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=musical_instrument with a fixed text, namely 'Musical Instrument Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "musical_instrument"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=newsagent with a fixed text, namely 'Newspaper/Magazine Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "newsagent"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=nutrition_supplements with a fixed text, namely 'Nutrition Supplements Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "nutrition_supplements"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=optician with a fixed text, namely 'Optician' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "optician"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=outdoor with a fixed text, namely 'Outdoors Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "outdoor"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=outpost with a fixed text, namely 'Online Retailer Outpost' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "outpost"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=paint with a fixed text, namely 'Paint Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "paint"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=party with a fixed text, namely 'Party Supply Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "party"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pastry with a fixed text, namely 'Pastry Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "pastry"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pawnbroker with a fixed text, namely 'Pawn Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "pawnbroker"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=perfumery with a fixed text, namely 'Perfume Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "perfumery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pet with a fixed text, namely 'Pet Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "pet"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pet_grooming with a fixed text, namely 'Pet Grooming Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "pet_grooming"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=photo with a fixed text, namely 'Photography Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "photo"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pottery with a fixed text, namely 'Pottery Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "pottery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=printer_ink with a fixed text, namely 'Printer Ink Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "printer_ink"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=psychic with a fixed text, namely 'Psychic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "psychic"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pyrotechnics with a fixed text, namely 'Fireworks Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "pyrotechnics"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=radiotechnics with a fixed text, namely 'Radio/Electronic Component Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "radiotechnics"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=religion with a fixed text, namely 'Religious Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "religion"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=rental with a fixed text, namely 'Rental Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "rental"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=repair with a fixed text, namely 'Repair Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "repair"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=scuba_diving with a fixed text, namely 'Scuba Diving Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "scuba_diving"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=seafood with a fixed text, namely 'Seafood Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "seafood"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=second_hand with a fixed text, namely 'Consignment/Thrift Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "second_hand"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=sewing with a fixed text, namely 'Sewing Supply Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "sewing"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=shoe_repair with a fixed text, namely 'Shoe Repair Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "shoe_repair"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=shoes with a fixed text, namely 'Shoe Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "shoes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=spices with a fixed text, namely 'Spice Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "spices"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=sports with a fixed text, namely 'Sporting Goods Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "sports"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=stationery with a fixed text, namely 'Stationery Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "stationery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=storage_rental with a fixed text, namely 'Storage Rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "storage_rental"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=supermarket with a fixed text, namely 'Supermarket' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "supermarket"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=swimming_pool with a fixed text, namely 'Pool Supply Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "swimming_pool"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tailor with a fixed text, namely 'Tailor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "tailor"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tattoo with a fixed text, namely 'Tattoo Parlor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "tattoo"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tea with a fixed text, namely 'Tea Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "tea"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=telecommunication with a fixed text, namely 'Telecom Retail Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "telecommunication"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=ticket with a fixed text, namely 'Ticket Seller' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "ticket"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tiles with a fixed text, namely 'Tile Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "tiles"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tobacco with a fixed text, namely 'Tobacco Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "tobacco"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tool_hire with a fixed text, namely 'Tool Rental' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "tool_hire"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=toys with a fixed text, namely 'Toy Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "toys"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=trade with a fixed text, namely 'Trade Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "trade"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=travel_agency with a fixed text, namely 'Travel Agency' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "travel_agency"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=trophy with a fixed text, namely 'Trophy Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "trophy"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tyres with a fixed text, namely 'Tire Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "tyres"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=vacuum_cleaner with a fixed text, namely 'Vacuum Cleaner Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "vacuum_cleaner"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=variety_store with a fixed text, namely 'Variety Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "variety_store"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=video with a fixed text, namely 'Video Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "video"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=video_games with a fixed text, namely 'Video Game Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "video_games"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=watches with a fixed text, namely 'Watches Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "watches"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=water with a fixed text, namely 'Drinking Water Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "water"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=water_sports with a fixed text, namely 'Watersport/Swim Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "water_sports"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=weapons with a fixed text, namely 'Weapon Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "weapons"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=wholesale with a fixed text, namely 'Wholesale Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "wholesale"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=wigs with a fixed text, namely 'Wig Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "wigs"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=window_blind with a fixed text, namely 'Window Blind Store' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "window_blind"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=wine with a fixed text, namely 'Wine Shop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "wine"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "website",
       "description": "Layer 'Shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "contact:website",
+      "description": "Layer 'Shop' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
-      "key": "opening_hours",
-      "description": "Layer 'Shop' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
+      "key": "contact:email",
+      "description": "Layer 'Shop' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Shop' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "payment:cash",
@@ -6711,6 +7801,31 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Shop' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A4",
+      "description": "Layer 'Shop' shows service:print:A4=yes with a fixed text, namely 'This shop can print on papers of size A4' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A3",
+      "description": "Layer 'Shop' shows service:print:A3=yes with a fixed text, namely 'This shop can print on papers of size A3' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A2",
+      "description": "Layer 'Shop' shows service:print:A2=yes with a fixed text, namely 'This shop can print on papers of size A2' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A1",
+      "description": "Layer 'Shop' shows service:print:A1=yes with a fixed text, namely 'This shop can print on papers of size A1' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:print:A0",
+      "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
@@ -7410,6 +8525,194 @@
     {
       "key": "description",
       "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "type",
+      "description": "The MapComplete theme Personal theme has a layer Bus lines showing features with this tag",
+      "value": "route"
+    },
+    {
+      "key": "route",
+      "description": "The MapComplete theme Personal theme has a layer Bus lines showing features with this tag",
+      "value": "bus"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bus lines' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "from",
+      "description": "Layer 'Bus lines' shows and asks freeform values for key 'from' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "via",
+      "description": "Layer 'Bus lines' shows and asks freeform values for key 'via' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "to",
+      "description": "Layer 'Bus lines' shows and asks freeform values for key 'to' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Bus lines' shows and asks freeform values for key 'colour' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Bus lines' shows and asks freeform values for key 'network' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Bus lines' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Transit Stops showing features with this tag",
+      "value": "bus_stop"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Transit Stops' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Transit Stops' shows noname=yes with a fixed text, namely 'This stop has no name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Transit Stops' shows noname=yes with a fixed text, namely 'This stop has no name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key name.",
+      "value": ""
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Transit Stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Transit Stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Transit Stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Transit Stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "shelter",
+      "description": "Layer 'Transit Stops' shows shelter=yes with a fixed text, namely 'This stop has a shelter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "shelter",
+      "description": "Layer 'Transit Stops' shows shelter=no with a fixed text, namely 'This stop does not have a shelter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "shelter",
+      "description": "Layer 'Transit Stops' shows shelter=separate with a fixed text, namely 'This stop has a shelter, that's separately mapped' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "separate"
+    },
+    {
+      "key": "bench",
+      "description": "Layer 'Transit Stops' shows bench=yes with a fixed text, namely 'This stop has a bench' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "bench",
+      "description": "Layer 'Transit Stops' shows bench=no with a fixed text, namely 'This stop does not have a bench' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "bench",
+      "description": "Layer 'Transit Stops' shows bench=separate with a fixed text, namely 'This stop has a bench, that's separately mapped' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "separate"
+    },
+    {
+      "key": "bin",
+      "description": "Layer 'Transit Stops' shows bin=yes with a fixed text, namely 'This stop has a bin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "bin",
+      "description": "Layer 'Transit Stops' shows bin=no with a fixed text, namely 'This stop does not have a bin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "bin",
+      "description": "Layer 'Transit Stops' shows bin=separate with a fixed text, namely 'This stop has a bin, that's separately mapped' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "separate"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Transit Stops' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Transit Stops' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Transit Stops' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Transit Stops' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Transit Stops' shows tactile_paving=yes with a fixed text, namely 'This stop has tactile paving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Transit Stops' shows tactile_paving=no with a fixed text, namely 'This stop does not have tactile paving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Transit Stops' shows lit=yes with a fixed text, namely 'This stop is lit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Transit Stops' shows lit=no with a fixed text, namely 'This stop is not lit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "departures_board",
+      "description": "Layer 'Transit Stops' shows departures_board=yes with a fixed text, namely 'This stop has a departures board of unknown type' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "departures_board",
+      "description": "Layer 'Transit Stops' shows departures_board=realtime with a fixed text, namely 'This stop has a board showing realtime departure information' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "realtime"
+    },
+    {
+      "key": "passenger_information_display",
+      "description": "Layer 'Transit Stops' shows passenger_information_display=yes with a fixed text, namely 'This stop has a board showing realtime departure information' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "departures_board",
+      "description": "Layer 'Transit Stops' shows departures_board=timetable with a fixed text, namely 'This stop has a timetable showing regular departures' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "timetable"
+    },
+    {
+      "key": "departures_board",
+      "description": "Layer 'Transit Stops' shows departures_board=interval with a fixed text, namely 'This stop has a timetable containing just the interval between departures' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "interval"
+    },
+    {
+      "key": "departures_board",
+      "description": "Layer 'Transit Stops' shows departures_board=no with a fixed text, namely 'This stop does not have a departures board' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
     },
     {
       "key": "natural",

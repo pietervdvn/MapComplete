@@ -71,7 +71,7 @@ self.addEventListener('fetch',
                 event.respondWith(new Response(JSON.stringify({"service-worker-version": version})));
                 return
             }
-            const shouldBeCached = origin.host === requestUrl.host && origin.host !== "127.0.0.1:1234"
+            const shouldBeCached = origin.host === requestUrl.host && origin.hostname !== "127.0.0.1"  && origin.hostname !== "localhost" && !origin.host.endsWith(".gitpod.io")
             if (!shouldBeCached) {
                 console.log("Not intercepting ", requestUrl.toString(), origin.host, requestUrl.host)
                 // We return _without_ calling event.respondWith, which signals the browser that it'll have to handle it himself
