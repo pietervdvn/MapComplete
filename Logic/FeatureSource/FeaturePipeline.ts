@@ -24,6 +24,7 @@ import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource"
 import MapState from "../State/MapState";
 import {ElementStorage} from "../ElementStorage";
 import {Feature, Geometry} from "@turf/turf";
+import {OsmFeature} from "../../Models/OsmFeature";
 
 
 /**
@@ -338,15 +339,19 @@ export default class FeaturePipeline {
 
     }
 
-    public GetAllFeaturesWithin(bbox: BBox): Feature<Geometry, {id: string}>[][] {
+    public GetAllFeaturesWithin(bbox: BBox): OsmFeature[][] {
         const self = this
-        const tiles = []
+        const tiles: OsmFeature[][] = []
         Array.from(this.perLayerHierarchy.keys())
-            .forEach(key => tiles.push(...self.GetFeaturesWithin(key, bbox)))
+            .forEach(key => {
+                const fetched : OsmFeature[][] = self.GetFeaturesWithin(key, bbox)
+                tiles.push(...fetched);
+            })
         return tiles;
     }
 
-    public GetAllFeaturesAndMetaWithin(bbox: BBox, layerIdWhitelist?: Set<string>): {features: any[], layer: string}[] {
+    public GetAllFeaturesAndMetaWithin(bbox: BBox, layerIdWhitelist?: Set<string>): 
+        {features: OsmFeature[], layer: string}[] {
         const self = this
         const tiles :{features: any[], layer: string}[]= []
         Array.from(this.perLayerHierarchy.keys())
@@ -362,7 +367,11 @@ export default class FeaturePipeline {
         return tiles;
     }
 
-    public GetFeaturesWithin(layerId: string, bbox: BBox): any[][] {
+    /**
+     * Gets all the tiles which overlap with the given BBOX.
+     * This might imply that extra features might be shown
+     */
+    public GetFeaturesWithin(layerId: string, bbox: BBox): OsmFeature[][] {
         if (layerId === "*") {
             return this.GetAllFeaturesWithin(bbox)
         }

@@ -3,7 +3,7 @@ import {BBox} from "./BBox";
 import togpx from "togpx"
 import Constants from "../Models/Constants";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import {booleanWithin, Coord, Feature, Geometry, MultiPolygon, Polygon, Properties} from "@turf/turf";
+import {AllGeoJSON, booleanWithin, Coord, Feature, Geometry, MultiPolygon, Polygon, Properties} from "@turf/turf";
 
 export class GeoOperations {
 
@@ -29,7 +29,7 @@ export class GeoOperations {
      * Returns [lon,lat] coordinates
      * @param feature
      */
-    static centerpointCoordinates(feature: any): [number, number] {
+    static centerpointCoordinates(feature: AllGeoJSON): [number, number] {
         return <[number, number]>turf.center(feature).geometry.coordinates;
     }
 

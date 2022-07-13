@@ -8,7 +8,7 @@ import {BBox} from "../BBox";
 import Constants from "../../Models/Constants";
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 
-export interface GeoLocationPointProperties {
+export interface GeoLocationPointProperties  {
     id: "gps",
     "user:location": "yes",
     "date": string,
