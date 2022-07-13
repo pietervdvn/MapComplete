@@ -44,9 +44,19 @@
         "bicycle_rental"
       ],
       "override": {
-        "id": "charging_station_non_docking",
+        "id": "bicycle_rental_non_docking",
         "minzoom": 14,
         "=presets": [],
+        "=mapRendering": [
+          {
+            "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg",
+            "iconSize": "40,40,bottom",
+            "location": [
+              "point",
+              "centroid"
+            ]
+          }
+        ],
         "source": {
           "osmTags": {
             "and+": [
@@ -62,12 +72,17 @@
       "override": {
         "name": null,
         "filter": {
-          "sameAs": "charging_station_non_docking"
+          "sameAs": "bicycle_rental_non_docking"
         },
         "minzoom": 18,
-        "mapRendering": [
+        "=mapRendering": [
           {
-            "icon": "pin:blue;./assets/themes/cyclofix/key.svg"
+            "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg",
+            "iconSize": "40,40,bottom",
+            "location": [
+              "point",
+              "centroid"
+            ]
           }
         ]
       }

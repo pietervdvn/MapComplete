@@ -208,7 +208,7 @@
         "bicycle_rental"
       ],
       "override": {
-        "id": "charging_station_non_docking",
+        "id": "bicycle_rental_non_docking",
         "minzoom": 14,
         "source": {
           "osmTags": {
@@ -225,7 +225,7 @@
       "override": {
         "name": null,
         "filter": {
-          "sameAs": "charging_station_non_docking"
+          "sameAs": "bicycle_rental_non_docking"
         },
         "minzoom": 18
       }
