@@ -4556,7 +4556,7 @@
                     }
                 },
                 "question": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
-                "render": "Er zijn capacity:disabled} parkeerplaatsen voor gehandicapten"
+                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten"
             },
             "parking-type": {
                 "mappings": {
