@@ -21,17 +21,31 @@
   "layers": [
     {
       "id": "bag:pand",
+      "name": "bag:pand",
+      "title": "bag:pand",
       "description": "Buildings which come from the BAG",
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
         "geoJsonZoomLevel": 18,
         "osmTags": {
-          "and": [
-            "building~*"
-          ]
+          "and": ["building~*"]
         },
         "maxCacheAge": 0
       },
+      "calculatedTags": [
+        "ref:bag=feat.properties.identificatie",
+        "start_date=feat.properties.bouwjaar"
+      ],
+      "tagRenderings": [
+        {
+          "id": "ref:bag",
+          "render": "{ref:bag}"
+        },
+        {
+          "id": "start_date",
+          "render": "{start_date}"
+        }
+      ],
       "mapRendering": [
         {
           "width": {
@@ -49,25 +63,18 @@
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Averblijfsobject&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
         "geoJsonZoomLevel": 18,
         "osmTags": {
-          "and": [
-            "building~*"
-          ]
+          "and": ["building~*"]
         },
         "maxCacheAge": 0
       },
-      "calculatedTags": [
-        "addr:housenumber=feat.properties.huisnummer"
-      ],
+      "calculatedTags": ["addr:housenumber=feat.properties.huisnummer"],
       "mapRendering": [
         {
           "label": {
             "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
             "condition": "addr:housenumber~*"
           },
-          "location": [
-            "point",
-            "centroid"
-          ]
+          "location": ["point", "centroid"]
         },
         {
           "width": {
