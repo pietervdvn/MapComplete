@@ -12,7 +12,7 @@
   "startLat": 51.17181,
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 4.144383,
-  "startZoom": 16,
+  "startZoom": 14,
   "widenFactor": 2,
   "layers": [
     "indoors"

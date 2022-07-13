@@ -17,32 +17,32 @@
   },
   "title": {
     "render": {
-      "en": "Indoor area"
+      "en": "Indoor area {name}"
     },
     "mappings": [
       {
         "if": "indoor=room",
-        "then": "Indoor Room"
+        "then": "Indoor Room {name}"
       },
       {
         "if": "indoor=area",
-        "then": "Indoor Area"
+        "then": "Indoor Area {name}"
       },
       {
         "if": "indoor=wall",
-        "then": "Indoor Wall"
+        "then": "Indoor Wall {name}"
       },
       {
         "if": "indoor=corridor",
-        "then": "Indoor Corridor"
+        "then": "Indoor Corridor {name}"
       },
       {
         "if": "indoor=door",
-        "then": "Indoor Door"
+        "then": "Indoor Door {name}"
       },
       {
         "if": "indoor=level",
-        "then": "Indoor Level"
+        "then": "Indoor Level {name}"
       }
     ]
   },
@@ -53,14 +53,30 @@
   "mapRendering": [
     {
       "color": {
-        "render": "red"
+        "render": "#bb004488"
       },
       "width": {
-        "render": "4"
+        "render": "8"
       },
       "offset": {
-        "render": "-8"
-      }
+        "render": "-4"
+      },
+      "fill": "no"
+    },
+    {
+      "color": "red",
+      "fill": "no",
+      "width": "2"
+    },
+    {
+      "label": {
+        "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
+        "condition": "name~*"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
     }
   ]
 }
