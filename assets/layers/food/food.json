@@ -792,7 +792,8 @@
           "question": {
             "en": "Accepts cash",
             "de": "Akzeptiert Bargeld",
-            "es": "Acepta efectivo"
+            "es": "Acepta efectivo",
+            "nl": "Accepteert cash"
           }
         }
       ]
@@ -805,7 +806,8 @@
           "question": {
             "en": "Accepts payment cards",
             "de": "Akzeptiert Kartenzahlung",
-            "es": "Acepta tarjetas de pago"
+            "es": "Acepta tarjetas de pago",
+            "nl": "Accepteert betaalkaarten"
           }
         }
       ]

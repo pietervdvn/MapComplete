@@ -2438,6 +2438,9 @@
             "Contained routes length hist": {
                 "render": "<h3>Overzicht van lengtes</h3>{histogram(_length_hist)}"
             },
+            "Contained_climbing_routes": {
+                "render": "<h3>Bevat {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
+            },
             "Rock type (crag/rock/cliff only)": {
                 "mappings": {
                     "0": {
@@ -2455,9 +2458,6 @@
                 },
                 "question": "Wat is de naam van dit Klimgelegenheid?",
                 "render": "<strong>{name}</strong>"
-            },
-            "Contained_climbing_routes": {
-                "render": "<h3>Bevat {_contained_climbing_routes_count} routes</h3> <ul>{_contained_climbing_routes}</ul>"
             }
         },
         "title": {
@@ -4182,6 +4182,7 @@
         }
     },
     "maxspeed": {
+        "description": "Toont de toegestane snelheid voor elke weg",
         "tagRenderings": {
             "maxspeed-maxspeed": {
                 "mappings": {
@@ -4190,6 +4191,13 @@
                     }
                 },
                 "render": "De maximum toegestane snelheid op deze weg is {maxspeed}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Weg zonder een naam"
+                }
             }
         },
         "units": {
@@ -4203,14 +4211,6 @@
                         "human": "miles/uur",
                         "humanShort": "mph"
                     }
-                }
-            }
-        },
-        "description": "Toont de toegestane snelheid voor elke weg",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Weg zonder een naam"
                 }
             }
         }

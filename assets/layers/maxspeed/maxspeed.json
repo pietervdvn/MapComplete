@@ -42,20 +42,23 @@
         "if": "name=",
         "then": {
           "en": "Road without a name",
-          "de": "Straße ohne Namen"
+          "de": "Straße ohne Namen",
+          "nl": "Weg zonder een naam"
         }
       }
     ]
   },
   "description": {
     "en": "Shows the allowed speed for every road",
-    "de": "Zeigt die zulässige Geschwindigkeit für jede Straße an"
+    "de": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
+    "nl": "Toont de toegestane snelheid voor elke weg"
   },
   "tagRenderings": [
     {
       "render": {
         "en": "The maximum allowed speed on this road is {maxspeed}",
-        "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}"
+        "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}",
+        "nl": "De maximum toegestane snelheid op deze weg is {maxspeed}"
       },
       "question": {
         "es": "Qué velocidad tiene",

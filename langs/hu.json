@@ -80,6 +80,9 @@
             "donate": "A MapComplete pénzügyi támogatása",
             "editId": "Az OpenStreetMap online szerkesztőjének megnyitása itt",
             "editJosm": "Szerkesztés itt JOSM-mal",
+            "followBridge": "A Mastodon- és Twitter-fiókok összekapcsolódnak",
+            "followOnMastodon": "Kövesse a MapComplete-et a Mastodonon",
+            "followOnTwitter": "Kövesse a MapComplete-et a Twitteren",
             "iconAttribution": {
                 "title": "Felhasznált ikonok"
             },
@@ -90,10 +93,7 @@
             "openIssueTracker": "Hiba bejelentése",
             "openMapillary": "Mapillary megnyitása itt",
             "openOsmcha": "A téma {theme} legutóbbi szerkesztéseinek megtekintése",
-            "themeBy": "A téma karbantartója: {author}",
-            "followBridge": "A Mastodon- és Twitter-fiókok összekapcsolódnak",
-            "followOnMastodon": "Kövesse a MapComplete-et a Mastodonon",
-            "followOnTwitter": "Kövesse a MapComplete-et a Twitteren"
+            "themeBy": "A téma karbantartója: {author}"
         },
         "back": "Vissza",
         "backToMapcomplete": "Vissza a témák áttekintéséhez",
@@ -104,6 +104,7 @@
         "download": {
             "downloadAsPdf": "A jelenlegi térkép letöltése PDF-ként",
             "downloadAsPdfHelper": "Eszményi a jelenlegi térkép kinyomtatásához",
+            "downloadAsSvg": "Az aktuális térkép letöltése SVG formátumban",
             "downloadCSV": "Látható adatok letöltése CSV-ként",
             "downloadCSVHelper": "Kompatibilis a LibreOffice Calc-kal, az Excellel…",
             "downloadFeatureAsGeojson": "Letöltés GeoJSON-fájlként",
@@ -117,9 +118,9 @@
             "licenseInfo": "<h3>Szerzői jogi nyilatkozat</h3>A megadott adatok az ODbL licenc szerint érhetők el. Újrafelhasználásuk bármilyen célra ingyenes, de <ul><li>a <b>© OpenStreetMap-közreműködők</b> megnevezés szükséges, és</li><li>minden változtatáshoz ezt a licencet kell használni</li></ul>A részletekért kérjük, olvassa el a teljes <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">szerzői jogi nyilatkozatot</a>.",
             "noDataLoaded": "Még nincs betöltött adat. A letöltés hamarosan elérhető lesz",
             "title": "A látható adatok letöltése",
-            "uploadGpx": "Töltsd fel a nyomvonalaidat az OpenStreetMapre",
-            "downloadAsSvg": "Az aktuális térkép letöltése SVG formátumban"
+            "uploadGpx": "Töltsd fel a nyomvonalaidat az OpenStreetMapre"
         },
+        "error": "Valami rosszul sült el",
         "example": "Példa",
         "examples": "Példák",
         "fewChangesBefore": "Kérjük, válaszolj néhány meglévő pontokra vonatkozó kérdésre, mielőtt új pontot adnál hozzá.",
@@ -135,6 +136,7 @@
         },
         "loading": "Betöltés…",
         "loadingTheme": "{theme} betöltése…",
+        "loginFailed": "Az OpenStreetMap-be való bejelentkezés nem sikerült",
         "loginOnlyNeededToEdit": "ha szerkeszteni szeretnéd a térképet",
         "loginToStart": "A kérdés megválaszolásához be kell jelentkezni",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap-fiókkal",
@@ -143,11 +145,11 @@
             "createYourOwnTheme": "Készítsd el saját MapComplete témád a semmiből",
             "hiddenExplanation": "Ezeket a témákat csak az érheti el, akik ismeri a linket. {total_hidden} rejtett téma közül {hidden_discovered} témát ismersz.",
             "intro": "<h3>Kíváncsi vagy más tematikus térképekre is?</h3>Szeretsz földrajzi adatokat gyűjteni? <br>További témák is elérhetők.",
+            "noMatchingThemes": "Nincs olyan téma, amely megfelelt volna a keresési feltételeknek",
+            "noSearch": "Minden téma megjelenítése",
             "previouslyHiddenTitle": "Korábban megnézett rejtett témák",
             "requestATheme": "Ha egyedi témát szeretnél, kérd a problémakövetőben (issue tracker)",
-            "streetcomplete": "Egy másik, hasonló alkalmazás a <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "noMatchingThemes": "Nincs olyan téma, amely megfelelt volna a keresési feltételeknek",
-            "noSearch": "Minden téma megjelenítése"
+            "streetcomplete": "Egy másik, hasonló alkalmazás a <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "Ezen {category} neve: $$$",
         "next": "Következő",
@@ -249,9 +251,7 @@
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
             "searchWikidata": "Keresés a Wikidatán",
             "wikipediaboxTitle": "Wikipédia"
-        },
-        "error": "Valami rosszul sült el",
-        "loginFailed": "Az OpenStreetMap-be való bejelentkezés nem sikerült"
+        }
     },
     "image": {
         "addPicture": "Kép hozzáadása",
