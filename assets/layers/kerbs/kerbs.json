@@ -164,9 +164,9 @@
         "de": "Wie hoch ist der Bordstein?"
       },
       "render": {
-        "en": "Kerb height: {{kerb:height}}",
-        "nl": "Stoeprandhoogte: {{kerb:height}}",
-        "de": "Bordsteinhöhe: {{kerb:height}}"
+        "en": "Kerb height: {kerb:height}",
+        "nl": "Stoeprandhoogte: {kerb:height}",
+        "de": "Bordsteinhöhe: {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",

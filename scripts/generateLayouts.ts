@@ -165,7 +165,7 @@ async function createManifest(layout: LayoutConfig, alreadyWritten: string[]): P
     const ogDescr = Translations.T(layout.description ?? "").txt;
 
     const manifest = {
-        name: name,
+        name: ogTitle,
         short_name: ogTitle,
         start_url: `${layout.id.toLowerCase()}.html`,
         lang: "en",
@@ -257,7 +257,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
         .replace(/<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s, layout.shortDescription.textFor(targetLanguage))
         .replace("<script src=\"./index.ts\"></script>", `<script src='./index_${layout.id}.ts'></script>`);
-
+0
     try {
         output = output
             .replace(/<!-- DECORATION 0 START -->.*<!-- DECORATION 0 END -->/s, `<img src='${icon}' width="100%" height="100%">`)
@@ -320,10 +320,9 @@ async function main(): Promise<void> {
         writeFile(manifestLocation, manif, err);
 
         // Create a landing page for the given theme
-        createLandingPage(layout, manifest, whiteIcons, alreadyWritten).then(landing => {
-            writeFile(enc(layout.id) + ".html", landing, err)
-        });
-        createIndexFor(layout)
+        const landing = await createLandingPage(layout, manifest, whiteIcons, alreadyWritten)
+        writeFile(enc(layout.id) + ".html", landing, err)
+        await createIndexFor(layout)
     }
 
 

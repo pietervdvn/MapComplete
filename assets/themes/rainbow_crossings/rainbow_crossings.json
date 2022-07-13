@@ -15,7 +15,6 @@
   "startZoom": 16,
   "widenFactor": 2,
   "layers": [
-    "rainbow_crossings",
     {
       "builtin": "rainbow_crossings",
       "override": {
@@ -25,11 +24,14 @@
         "=presets": [],
         "source": {
           "osmTags": {
-            "and+": ["crossing:marking=rainbow"]
+            "and+": [
+              "crossing:marking=rainbow"
+            ]
           }
         }
       }
     },
+    "rainbow_crossings",
     {
       "builtin": "cycleways_and_roads",
       "override": {
@@ -39,5 +41,3 @@
     }
   ]
 }
-
-

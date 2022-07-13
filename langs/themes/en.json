@@ -741,6 +741,10 @@
         "shortDescription": "Publicly accessible towers to enjoy the view",
         "title": "Observation towers"
     },
+    "onwheels": {
+        "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
+        "title": "OnWheels"
+    },
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
         "title": "OpenWindPowerMap"
@@ -862,6 +866,10 @@
         },
         "shortDescription": "A map showing postboxes and post offices",
         "title": "Postbox and Post Office Map"
+    },
+    "rainbow_crossings": {
+        "description": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
+        "title": "Rainbow pedestrian crossings"
     },
     "shops": {
         "description": "On this map, one can mark basic information about shops, add opening hours and phone numbers",

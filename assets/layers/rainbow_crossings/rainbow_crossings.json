@@ -7,8 +7,7 @@
     "en": "A layer showing pedestrian crossings with rainbow paintings"
   },
   "source": {
-    "osmTags": 
-      "highway=crossing"
+    "osmTags": "highway=crossing"
   },
   "minzoom": 17,
   "title": {
@@ -38,7 +37,7 @@
   ],
   "tagRenderings": [
     "images",
-    { 
+    {
       "id": "crossing-with-rainbow",
       "question": {
         "en": "Does this crossing has rainbow paintings?"
@@ -77,10 +76,12 @@
     {
       "icon": {
         "render": "./assets/themes/rainbow_crossings/crossing.svg",
-        "mappings": [{
-          "if": "crossing:marking=rainbow",
-          "then": "./assets/themes/rainbow_crossings/logo.svg"
-        }]
+        "mappings": [
+          {
+            "if": "crossing:marking=rainbow",
+            "then": "./assets/themes/rainbow_crossings/logo.svg"
+          }
+        ]
       },
       "iconSize": "40,40,center",
       "location": [
