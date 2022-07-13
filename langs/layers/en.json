@@ -3256,6 +3256,7 @@
         "name": "Direction visualization"
     },
     "doctors": {
+        "description": "This layer shows doctor offices, dentists and other healthcare facilities",
         "filter": {
             "0": {
                 "options": {
@@ -3278,6 +3279,10 @@
             }
         },
         "tagRenderings": {
+            "name": {
+                "question": "What is the name of this doctors place?",
+                "render": "This doctors place is called {name}"
+            },
             "specialty": {
                 "mappings": {
                     "0": {
@@ -5047,6 +5052,35 @@
                 }
             },
             "render": "Bookcase"
+        }
+    },
+    "rainbow_crossings": {
+        "description": "A layer showing pedestrian crossings with rainbow paintings",
+        "name": "Crossings with rainbow paintings",
+        "presets": {
+            "0": {
+                "description": "Pedestrian crossing",
+                "title": "a crossing"
+            }
+        },
+        "tagRenderings": {
+            "crossing-with-rainbow": {
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has rainbow paintings"
+                    },
+                    "1": {
+                        "then": "No rainbow paintings here"
+                    },
+                    "2": {
+                        "then": "No rainbow paintings here"
+                    }
+                },
+                "question": "Does this crossing has rainbow paintings?"
+            }
+        },
+        "title": {
+            "render": "Crossing"
         }
     },
     "recycling": {
