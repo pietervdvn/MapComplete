@@ -22,7 +22,7 @@ import BaseUIElement from "../BaseUIElement";
 import {DropDown} from "../Input/DropDown";
 import InputElementWrapper from "../Input/InputElementWrapper";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
-import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
+import TagRenderingConfig, {Mapping} from "../../Models/ThemeConfig/TagRenderingConfig";
 import {Unit} from "../../Models/Unit";
 import VariableInputElement from "../Input/VariableInputElement";
 import Toggle from "../Input/Toggle";
@@ -32,6 +32,7 @@ import Title from "../Base/Title";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {GeoOperations} from "../../Logic/GeoOperations";
 import {SearchablePillsSelector} from "../Input/SearchableMappingsSelector";
+import {OsmTags} from "../../Models/OsmFeature";
 
 /**
  * Shows the question element.
@@ -39,7 +40,7 @@ import {SearchablePillsSelector} from "../Input/SearchableMappingsSelector";
  */
 export default class TagRenderingQuestion extends Combine {
 
-    constructor(tags: UIEventSource<Record<string, string> & {id: string}>,
+    constructor(tags: UIEventSource<Record<string, string> & { id: string }>,
                 configuration: TagRenderingConfig,
                 state?: FeaturePipelineState,
                 options?: {
@@ -53,7 +54,7 @@ export default class TagRenderingQuestion extends Combine {
 
         const applicableMappingsSrc =
             Stores.ListStabilized(tags.map(tags => {
-                const applicableMappings: { if: TagsFilter, icon?: string, then: TypedTranslation<object>, ifnot?: TagsFilter, addExtraTags: Tag[] }[] = []
+                const applicableMappings: Mapping[] = []
                 for (const mapping of configuration.mappings ?? []) {
                     if (mapping.hideInAnswer === true) {
                         continue
@@ -142,7 +143,7 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateInputElement(
         state: FeaturePipelineState,
         configuration: TagRenderingConfig,
-        applicableMappings: { if: TagsFilter, then: TypedTranslation<object>, icon?: string, ifnot?: TagsFilter, addExtraTags: Tag[], searchTerms?: Record<string, string[]> }[],
+        applicableMappings: Mapping[],
         applicableUnit: Unit,
         tagsSource: UIEventSource<any>,
         feedback: UIEventSource<Translation>
@@ -231,15 +232,84 @@ export default class TagRenderingQuestion extends Combine {
 
     }
 
+    /**
+     *
+     * // Should return the search as freeform value
+     * const source = new UIEventSource({id: "1234"})
+     * const tr =  new TagRenderingConfig({
+     *      id:"test",
+     *      render:"The value is {key}",
+     *      freeform: {
+     *          key:"key"
+     *      },
+     *    
+     *      mappings: [
+     *          {
+     *            if:"x=y",
+     *            then:"z",
+     *            searchTerms: {
+     *              "en" : ["z"]
+     *            }
+     *          }
+     *      ]
+     * }, "test");
+     * const selector = TagRenderingQuestion.GenerateSearchableSelector(
+     *          undefined,
+     *          tr,
+     *          tr.mappings,
+     *          source,
+     *          {
+     *              search: new UIEventSource<string>("value")
+     *          }
+     *      );
+     * selector.GetValue().data // => new And([new Tag("key","value")])
+     *
+     * // Should return the search as freeform value, even if a previous search matched
+     * const source = new UIEventSource({id: "1234"})
+     * const search = new UIEventSource<string>("")
+     * const tr =  new TagRenderingConfig({
+     *      id:"test",
+     *      render:"The value is {key}",
+     *      freeform: {
+     *          key:"key"
+     *      },
+     *    
+     *      mappings: [
+     *          {
+     *            if:"x=y",
+     *            then:"z",
+     *            searchTerms: {
+     *              "en" : ["z"]
+     *            }
+     *          }
+     *      ]
+     * }, "test");
+     * const selector = TagRenderingQuestion.GenerateSearchableSelector(
+     *          undefined,
+     *          tr,
+     *          tr.mappings,
+     *          source,
+     *          {
+     *              search
+     *          }
+     *      );
+     * search.setData("z")
+     * search.setData("zx")
+     * selector.GetValue().data // => new And([new Tag("key","zx")])
+     */
     private static GenerateSearchableSelector(
         state: FeaturePipelineState,
         configuration: TagRenderingConfig,
-        applicableMappings: { if: TagsFilter; ifnot?: TagsFilter, then: TypedTranslation<object>; icon?: string; iconClass?: string, addExtraTags: Tag[], searchTerms?: Record<string, string[]> }[], tagsSource: UIEventSource<any>): InputElement<TagsFilter> {
+        applicableMappings: Mapping[],
+        tagsSource: UIEventSource<OsmTags>,
+        options?: {
+            search: UIEventSource<string>
+        }): InputElement<TagsFilter> {
         const values: { show: BaseUIElement, value: number, mainTerm: Record<string, string>, searchTerms?: Record<string, string[]> }[] = []
         for (let i = 0; i < applicableMappings.length; i++) {
             const mapping = applicableMappings[i];
             const tr = mapping.then.Subs(tagsSource.data)
-            const patchedMapping = <{ iconClass: "small-height", then: TypedTranslation<object> }>{
+            const patchedMapping = <Mapping>{
                 ...mapping,
                 iconClass: `small-height`,
                 icon: mapping.icon ?? "./assets/svg/none.svg"
@@ -253,7 +323,7 @@ export default class TagRenderingQuestion extends Combine {
             })
         }
 
-        const searchValue: UIEventSource<string> = new UIEventSource<string>(undefined)
+        const searchValue: UIEventSource<string> = options?.search ?? new UIEventSource<string>(undefined)
         const ff = configuration.freeform
         let onEmpty: BaseUIElement = undefined
         if (ff !== undefined) {
@@ -266,8 +336,14 @@ export default class TagRenderingQuestion extends Combine {
             mode: configuration.multiAnswer ? "select-many" : "select-one",
             searchValue,
             onNoMatches: onEmpty?.SetClass(classes).SetClass("flex justify-center items-center"),
-            searchAreaClass: classes
+            searchAreaClass: classes,
         })
+        const fallbackTag = searchValue.map(s => {
+            if (s === undefined || ff?.key === undefined) {
+                return undefined
+            }
+            return new Tag(ff.key, s)
+        });
         return new InputElementMap<number[], And>(presetSearch,
             (x0, x1) => {
                 if (x0 == x1) {
@@ -288,7 +364,7 @@ export default class TagRenderingQuestion extends Combine {
             },
             (selected) => {
                 if (ff !== undefined && searchValue.data?.length > 0 && !presetSearch.someMatchFound.data) {
-                    const t = new Tag(ff.key, searchValue.data)
+                    const t = fallbackTag.data;
                     if (ff.addExtraTags) {
                         return new And([t, ...ff.addExtraTags])
                     }
@@ -436,13 +512,7 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateMappingElement(
         state,
         tagsSource: UIEventSource<any>,
-        mapping: {
-            if: TagsFilter,
-            then: Translation,
-            addExtraTags: Tag[],
-            icon?: string,
-            iconClass?: "small" | "medium" | "large" | "small-height"
-        }, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
+        mapping: Mapping, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
 
         let tagging: TagsFilter = mapping.if;
         if (ifNot !== undefined) {
@@ -459,11 +529,7 @@ export default class TagRenderingQuestion extends Combine {
             (t0, t1) => t1.shadows(t0));
     }
 
-    private static GenerateMappingContent(mapping: {
-        then: Translation,
-        icon?: string,
-        iconClass?: "small" | "medium" | "large" | "small-height" | "medium-height" | "large-height"
-    }, tagsSource: UIEventSource<any>, state: FeaturePipelineState): BaseUIElement {
+    private static GenerateMappingContent(mapping: Mapping, tagsSource: UIEventSource<any>, state: FeaturePipelineState): BaseUIElement {
         const text = new SubstitutedTranslation(mapping.then, tagsSource, state)
         if (mapping.icon === undefined) {
             return text;

@@ -20,7 +20,7 @@ export interface Mapping {
     readonly ifnot?: TagsFilter,
     readonly then: TypedTranslation<object>,
     readonly icon: string,
-    readonly iconClass: string
+    readonly iconClass: string | "small"  | "medium" | "large" | "small-height" | "medium-height" | "large-height",
     readonly hideInAnswer: boolean | TagsFilter
     readonly addExtraTags: Tag[],
     readonly searchTerms?: Record<string, string[]>
