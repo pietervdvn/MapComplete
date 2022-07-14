@@ -22,29 +22,18 @@
     {
       "id": "bag:pand",
       "name": "bag:pand",
-      "title": "bag:pand",
-      "description": "Buildings which come from the BAG",
+      "title": "bag:pand - {identificatie}",
+      "description": "Gebouwen vanaf het bag register",
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
         "geoJsonZoomLevel": 18,
         "osmTags": {
-          "and": ["building~*"]
+          "and": ["identificatie~*"]
         },
         "maxCacheAge": 0
       },
       "calculatedTags": [
-        "ref:bag=feat.properties.identificatie",
-        "start_date=feat.properties.bouwjaar"
-      ],
-      "tagRenderings": [
-        {
-          "id": "ref:bag",
-          "render": "{ref:bag}"
-        },
-        {
-          "id": "start_date",
-          "render": "{start_date}"
-        }
+        "_osm_obj:building=(feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')) ? 'construction' : ((feat.properties.status.startsWith('Pand in gebruik') && feat.properties.gebruiksdoel == 'woonfunctie') ? ((Number(feat.properties.aantal_verblijfsobjecten) == 1) ? 'house' : 'apartments') : 'yes')"
       ],
       "mapRendering": [
         {
@@ -59,15 +48,21 @@
     },
     {
       "id": "bag:verblijfsobject",
+      "name": "bag:verblijfsobject",
+      "title": "bag:verblijfsobject - {identificatie}",
+      "description": "Adressen vanaf het BAG register",
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Averblijfsobject&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
-        "geoJsonZoomLevel": 18,
+        "geoJsonZoomLevel": 19,
         "osmTags": {
-          "and": ["building~*"]
+          "and": ["identificatie~*"]
         },
         "maxCacheAge": 0
       },
-      "calculatedTags": ["addr:housenumber=feat.properties.huisnummer"],
+      "calculatedTags": [
+        "addr:housenumber:=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`",
+        "adress=`${feat.properties.openbare_ruimte} ${feat.properties['addr:housenumber']} ${feat.properties.postcode} ${feat.properties.woonplaats}`"
+      ],
       "mapRendering": [
         {
           "label": {
