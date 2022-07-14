@@ -4061,6 +4061,19 @@
             "render": "Hospital"
         }
     },
+    "hotel": {
+        "description": "Layer showing all hotels",
+        "name": "Hotels",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the hotel"
+                },
+                "question": "What is the name of this hotel?",
+                "render": "This hotel is called {name}"
+            }
+        }
+    },
     "hydrant": {
         "description": "Map layer to show fire hydrants.",
         "name": "Map of hydrants",

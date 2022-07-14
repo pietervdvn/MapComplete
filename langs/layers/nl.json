@@ -3937,6 +3937,19 @@
             "render": "Hackerspace"
         }
     },
+    "hotel": {
+        "description": "Laag die alle hotels toont",
+        "name": "Hotels",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van het hotel"
+                },
+                "question": "Wat is de naam van dit hotel?",
+                "render": "Dit hotel heet {name}"
+            }
+        }
+    },
     "hydrant": {
         "description": "Kaartlaag met brandkranen.",
         "name": "Kaart van brandkranen",

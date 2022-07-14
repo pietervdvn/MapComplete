@@ -27,7 +27,21 @@
     "shops",
     "toilet",
     "viewpoint",
-    "doctors"
+    "doctors",
+    "hotel",
+    {
+      "builtin": "maproulette_challenge",
+      "override": {
+        "source": {
+          "geoJson": "https://maproulette.org/api/v2/challenge/view/28012"
+        },
+        "calculatedTags": [
+          "_closest_osm_hotel=feat.closest('hotel')?.properties?.id",
+          "_closest_osm_hotel_distance=feat.distanceTo(feat.properties._closest_osm_hotel)",
+          "_has_closeby_feature=Number(feat.properties._closest_osm_hotel_distance) < 50 ? 'yes' : 'no'"
+        ]
+      }
+    }
   ],
   "overrideAll": {
     "minzoom": "15",
