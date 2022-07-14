@@ -20,12 +20,42 @@
     ]
   },
   {
+    "path": "cone.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
     "path": "crest.svg",
     "license": "CC0",
     "authors": [
       "Free Wheelies"
     ],
     "sources": []
+  },
+  {
+    "path": "doctor.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "hospital.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
   },
   {
     "path": "hotel.svg",
@@ -39,6 +69,26 @@
   },
   {
     "path": "parking.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "pharmacy.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "reception.svg",
     "license": "CC-BY-SA",
     "authors": [
       "CT Steward"
