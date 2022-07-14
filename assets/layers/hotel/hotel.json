@@ -11,13 +11,41 @@
   "source": {
     "osmTags": "tourism=hotel"
   },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Hotel",
+      "nl": "Hotel"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Hotel {name}",
+          "nl": "Hotel {name}"
+        }
+      }
+    ]
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a hotel",
+        "nl": "een hotel"
+      },
+      "tags": [
+        "tourism=hotel"
+      ]
+    }
+  ],
   "mapRendering": [
     {
       "location": [
         "point",
         "centroid"
       ],
-      "icon": "pin:white"
+      "icon": "circle:white;./assets/layers/hotel/hotel.svg",
+      "iconSize": "40,40,center"
     }
   ],
   "tagRenderings": [

@@ -123,7 +123,7 @@ describe('RewriteSpecial', function () {
         const r = new RewriteSpecial().convert(tr, "test").result
         expect(r).to.deep.eq({
             "id": "uk_addresses_import_button",
-            "render":  {'*': "{import_button(address,urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$,Add this address,./assets/themes/uk_addresses/housenumber_add.svg,,,,none)}"}
+            "render":  {'*': "{import_button(address,urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$,Add this address,./assets/themes/uk_addresses/housenumber_add.svg,,,,none,)}"}
         })
     })
 });
