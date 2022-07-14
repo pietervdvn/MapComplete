@@ -236,6 +236,7 @@
         "skippedQuestions": "Some questions are skipped",
         "testing": "Testing - changes won't be saved",
         "useSearch": "Use the search above to see presets",
+        "useSearchForMore": "Use the search function to search within {total} more values....",
         "weekdays": {
             "abbreviations": {
                 "friday": "Fri",

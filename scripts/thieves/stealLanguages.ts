@@ -7,14 +7,18 @@ import {existsSync, mkdirSync, readFileSync, writeFileSync} from "fs";
 import {LayerConfigJson} from "../../Models/ThemeConfig/Json/LayerConfigJson";
 import {MappingConfigJson} from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
 import LanguageUtils from "../../Utils/LanguageUtils";
-
+import * as perCountry from "../../assets/language_in_country.json"
+import {Utils} from "../../Utils";
 function main(){
     const sourcepath = "assets/generated/languages-wd.json";
     console.log(`Converting language data file '${sourcepath}' into a tagMapping`)
     const languages = WikidataUtils.extractLanguageData(JSON.parse(readFileSync(sourcepath, "utf8")), {})
     const mappings : MappingConfigJson[] = []
     const schoolmappings : MappingConfigJson[] = []
-
+    
+    const countryToLanguage : Record<string, string[]> = perCountry
+    const officialLanguagesPerCountry = Utils.TransposeMap(countryToLanguage);
+    
     languages.forEach((l, code) => {
         const then : Record<string, string>= {}
         l.forEach((tr, lng) => {
@@ -24,18 +28,26 @@ function main(){
             }
             then[languageCodeWeblate] = tr
         })
+        
+        const officialCountries = Utils.Dedup(officialLanguagesPerCountry[code]?.map(s => s.toLowerCase()) ?? [])
+        const prioritySearch = officialCountries.length > 0 ? "_country~" + officialCountries.map(c => "((^|;)"+c+"($|;))").join("|") : undefined
         mappings.push(<MappingConfigJson>{
             if: "language:" + code + "=yes",
             ifnot: "language:" + code + "=",
             searchTerms: {
                 "*": [code]
             },
-            then
+            then,
+            priorityIf: prioritySearch
         })
 
        schoolmappings.push(<MappingConfigJson>{
             if: "school:language=" + code,
-            then
+            then,
+            priorityIf: prioritySearch,
+            searchTerms: {
+                "*":[code]
+           }
         })
     })
     

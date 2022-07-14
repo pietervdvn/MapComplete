@@ -234,11 +234,11 @@ class LayerOverviewUtils {
         this.checkAllSvgs()
         
         if(AllKnownLayouts.getSharedLayersConfigs().size == 0){
-            throw "This was a bootstrapping-run. Run generate layeroverview again!"
+            console.error( "This was a bootstrapping-run. Run generate layeroverview again!")
+        }else{
+            const green = s => '\x1b[92m' + s + '\x1b[0m'
+            console.log(green("All done!"))
         }
-
-        const green = s => '\x1b[92m' + s + '\x1b[0m'
-        console.log(green("All done!"))
     }
 
     private buildLayerIndex(doesImageExist: DoesImageExist, forceReload: boolean): Map<string, LayerConfigJson> {

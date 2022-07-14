@@ -52,7 +52,7 @@
     "weblate-fix-heavy": "git remote rm weblate-layers; git remote add weblate-layers https://hosted.weblate.org/git/mapcomplete/layers/; git remote update weblate-layers; git merge weblate-layers/master",
     "housekeeping": "npm run generate && npm run generate:docs && npm run generate:contributor-list && git add Docs/* && git commit assets/ langs/ Docs/ -m 'Housekeeping...'",
     "parseSchools": "ts-node scripts/schools/amendSchoolData.ts",
-    "steal": "ts-node scripts/readIdPresets.ts"
+    "steal": "ts-node scripts/thieves/stealLanguages.ts"
   },
   "keywords": [
     "OpenStreetMap",

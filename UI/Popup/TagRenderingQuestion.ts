@@ -11,7 +11,7 @@ import {SaveButton} from "./SaveButton";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {Translation, TypedTranslation} from "../i18n/Translation";
+import {Translation} from "../i18n/Translation";
 import Constants from "../../Models/Constants";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
@@ -232,6 +232,29 @@ export default class TagRenderingQuestion extends Combine {
 
     }
 
+    private static MappingToPillValue(applicableMappings: Mapping[], tagsSource: UIEventSource<OsmTags>, state: FeaturePipelineState): { show: BaseUIElement, value: number, mainTerm: Record<string, string>, searchTerms?: Record<string, string[]>, original: Mapping }[] {
+        const values: { show: BaseUIElement, value: number, mainTerm: Record<string, string>, searchTerms?: Record<string, string[]>, original: Mapping }[] = []
+        const addIcons = applicableMappings.some(m => m.icon !== undefined)
+        for (let i = 0; i < applicableMappings.length; i++) {
+            const mapping = applicableMappings[i];
+            const tr = mapping.then.Subs(tagsSource.data)
+            const patchedMapping = <Mapping>{
+                ...mapping,
+                iconClass: `small-height`,
+                icon: mapping.icon ?? (addIcons ? "./assets/svg/none.svg" : undefined)
+            }
+            const fancy = TagRenderingQuestion.GenerateMappingContent(patchedMapping, tagsSource, state).SetClass("normal-background")
+            values.push({
+                show: fancy,
+                value: i,
+                mainTerm: tr.translations,
+                searchTerms: mapping.searchTerms,
+                original: mapping
+            })
+        }
+        return values
+    }
+
     /**
      *
      * // Should return the search as freeform value
@@ -305,24 +328,9 @@ export default class TagRenderingQuestion extends Combine {
         options?: {
             search: UIEventSource<string>
         }): InputElement<TagsFilter> {
-        const values: { show: BaseUIElement, value: number, mainTerm: Record<string, string>, searchTerms?: Record<string, string[]> }[] = []
-        const addIcons = applicableMappings.some(m => m.icon !== undefined)
-        for (let i = 0; i < applicableMappings.length; i++) {
-            const mapping = applicableMappings[i];
-            const tr = mapping.then.Subs(tagsSource.data)
-            const patchedMapping = <Mapping>{
-                ...mapping,
-                iconClass: `small-height`,
-                icon: mapping.icon ?? (addIcons ? "./assets/svg/none.svg": undefined)
-            }
-            const fancy = TagRenderingQuestion.GenerateMappingContent(patchedMapping, tagsSource, state).SetClass("normal-background")
-            values.push({
-                show: fancy,
-                value: i,
-                mainTerm: tr.translations,
-                searchTerms: mapping.searchTerms
-            })
-        }
+
+
+        const values = TagRenderingQuestion.MappingToPillValue(applicableMappings, tagsSource, state)
 
         const searchValue: UIEventSource<string> = options?.search ?? new UIEventSource<string>(undefined)
         const ff = configuration.freeform
@@ -330,14 +338,39 @@ export default class TagRenderingQuestion extends Combine {
         if (ff !== undefined) {
             onEmpty = new VariableUiElement(searchValue.map(search => configuration.render.Subs({[ff.key]: search})))
         }
+        const mode = configuration.multiAnswer ? "select-many" : "select-one";
 
+        const tooMuchElementsValue = new UIEventSource<number[]>([]);
+
+
+        let priorityPresets: BaseUIElement = undefined;
         const classes = "h-64 overflow-scroll"
+
+        if (applicableMappings.some(m => m.priorityIf !== undefined)) {
+            const priorityValues = tagsSource.map(tags =>
+                TagRenderingQuestion.MappingToPillValue(applicableMappings, tagsSource, state)
+                    .filter(v => v.original.priorityIf?.matchesProperties(tags)))
+            priorityPresets = new VariableUiElement(priorityValues.map(priority => {
+                if (priority.length === 0) {
+                    return Translations.t.general.useSearch;
+                }
+                return new Combine([
+                    Translations.t.general.useSearchForMore.Subs({total: applicableMappings.length}),
+                    new SearchablePillsSelector(priority, {
+                        selectedElements: tooMuchElementsValue,
+                        hideSearchBar: true,
+                        mode
+                    })]).SetClass("flex flex-col items-center ").SetClass(classes);
+            }));
+        }
         const presetSearch = new SearchablePillsSelector<number>(values, {
             selectIfSingle: true,
-            mode: configuration.multiAnswer ? "select-many" : "select-one",
+            mode,
             searchValue,
             onNoMatches: onEmpty?.SetClass(classes).SetClass("flex justify-center items-center"),
             searchAreaClass: classes,
+            onManyElementsValue: tooMuchElementsValue,
+            onManyElements: priorityPresets
         })
         const fallbackTag = searchValue.map(s => {
             if (s === undefined || ff?.key === undefined) {
