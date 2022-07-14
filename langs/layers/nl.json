@@ -4053,7 +4053,7 @@
                     "placeholder": "Hoogte van de stoeprand"
                 },
                 "question": "Hoe hoog is deze stoeprand?",
-                "render": "Stoeprandhoogte: {{kerb:height}}"
+                "render": "Stoeprandhoogte: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4533,6 +4533,65 @@
         "presets": {
             "0": {
                 "title": "een parking voor auto's"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Aantal parkeerplaatsen"
+                },
+                "question": "Hoeveel parkeerplaatsen zijn er op deze parking?",
+                "render": "Er zijn {capacity} parkeerplaatsen"
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Aantal parkeerplaatsen voor gehandicapten"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn parkeerplaatsen voor gehandicapten, maar het is niet bekend hoeveel er zijn"
+                    },
+                    "1": {
+                        "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
+                    }
+                },
+                "question": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
+                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een bovengronds parkeerterrein"
+                    },
+                    "1": {
+                        "then": "Dit is een parkeerplek langs een weg"
+                    },
+                    "2": {
+                        "then": "Dit is een ondergrondse parkeergarage"
+                    },
+                    "3": {
+                        "then": "Dit is een bovengrondse parkeergarage met meerdere verdiepingen"
+                    },
+                    "4": {
+                        "then": "Dit is een parkeerdek op een dak"
+                    },
+                    "5": {
+                        "then": "Dit is een strook voor parkeren op de weg"
+                    },
+                    "6": {
+                        "then": "Dit is parking overdekt met carports"
+                    },
+                    "7": {
+                        "then": "Dit is een parking bestaande uit garageboxen"
+                    },
+                    "8": {
+                        "then": "Dit is een parkeerplek op een layby"
+                    },
+                    "9": {
+                        "then": "Dit is een parking bestaande uit schuren"
+                    }
+                },
+                "question": "Wat voor parking is dit?"
             }
         },
         "title": {

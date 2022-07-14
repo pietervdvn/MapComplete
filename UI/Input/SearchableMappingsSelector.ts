@@ -57,7 +57,7 @@ class SelfHidingToggle extends UIElement implements InputElement<boolean> {
                 return true
             }
             s = s?.trim()?.toLowerCase()
-            return searchTerms[Locale.language.data].some(t => t.indexOf(s) >= 0);
+            return searchTerms[Locale.language.data]?.some(t => t.indexOf(s) >= 0) ?? false;
         }, [selected, Locale.language])
 
         const self = this;
@@ -121,10 +121,15 @@ class SelfHidingToggle extends UIElement implements InputElement<boolean> {
  * A searchfield can be used to filter the values
  */
 export class SearchablePillsSelector<T> extends Combine implements InputElement<T[]> {
-    private selectedElements: UIEventSource<T[]>;
+    private readonly selectedElements: UIEventSource<T[]>;
 
     public readonly someMatchFound: Store<boolean>;
 
+    /**
+     * 
+     * @param values
+     * @param options
+     */
     constructor(
         values: { show: BaseUIElement, value: T, mainTerm: Record<string, string>, searchTerms?: Record<string, string[]> }[],
         options?: {
@@ -188,7 +193,6 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
             };
         })
 
-
         let somethingShown: Store<boolean>
         if (options.selectIfSingle) {
             let forcedSelection : { value: T, show: SelfHidingToggle } = undefined
@@ -203,15 +207,15 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
                     }
                 }
                 if (totalShown == 1) {
-                    if (this.selectedElements.data.indexOf(lastShownValue.value) < 0) {
-                        this.selectedElements.setData([lastShownValue.value])
+                    if (selectedElements.data?.indexOf(lastShownValue.value) < 0) {
+                        selectedElements.setData([lastShownValue.value])
                         lastShownValue.show.forceSelected.setData(true)
                         forcedSelection = lastShownValue
                     }
                 } else if (forcedSelection != undefined) {
                     forcedSelection?.show?.forceSelected?.setData(false)
                     forcedSelection = undefined;
-                    this.selectedElements.setData([])
+                    selectedElements.setData([])
                 }
 
                 return totalShown > 0

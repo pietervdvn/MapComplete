@@ -26,7 +26,142 @@
     "es": "Una capa que muestra aparcamientos para coches"
   },
   "tagRenderings": [
-    "images"
+    "images",
+    {
+      "id": "parking-type",
+      "mappings": [
+        {
+          "if": "parking=surface",
+          "then": {
+            "en": "This is a surface parking lot",
+            "nl": "Dit is een bovengronds parkeerterrein"
+          }
+        },
+        {
+          "if": "parking=street_side",
+          "then": {
+            "en": "This is a parking bay next to a street",
+            "nl": "Dit is een parkeerplek langs een weg"
+          }
+        },
+        {
+          "if": "parking=underground",
+          "then": {
+            "en": "This is an underground parking garage",
+            "nl": "Dit is een ondergrondse parkeergarage"
+          }
+        },
+        {
+          "if": "parking=multi-storey",
+          "then": {
+            "en": "This is a multi-storey parking garage",
+            "nl": "Dit is een bovengrondse parkeergarage met meerdere verdiepingen"
+          }
+        },
+        {
+          "if": "parking=rooftop",
+          "then": {
+            "en": "This is a rooftop parking deck",
+            "nl": "Dit is een parkeerdek op een dak"
+          }
+        },
+        {
+          "if": "parking=lane",
+          "then": {
+            "en": "This is a lane for parking on the road",
+            "nl": "Dit is een strook voor parkeren op de weg"
+          }
+        },
+        {
+          "if": "parking=carports",
+          "then": {
+            "en": "This is parking covered by carports",
+            "nl": "Dit is parking overdekt met carports"
+          }
+        },
+        {
+          "if": "parking=garage_boxes",
+          "then": {
+            "en": "This a parking consisting of garage boxes",
+            "nl": "Dit is een parking bestaande uit garageboxen"
+          }
+        },
+        {
+          "if": "parking=layby",
+          "then": {
+            "en": "This is a parking on a layby",
+            "nl": "Dit is een parkeerplek op een layby"
+          }
+        },
+        {
+          "if": "parking=sheds",
+          "then": {
+            "en": "This is a parking consisting of sheds",
+            "nl": "Dit is een parking bestaande uit schuren"
+          }
+        }
+      ],
+      "question": {
+        "en": "What kind of parking is this?",
+        "nl": "Wat voor parking is dit?"
+      }
+    },
+    {
+      "id": "capacity-disabled",
+      "freeform": {
+        "key": "capacity:disabled",
+        "type": "pnat",
+        "placeholder": {
+          "en": "Amount of parking spots reserved for disabled people",
+          "nl": "Aantal parkeerplaatsen voor gehandicapten"
+        }
+      },
+      "mappings": [
+        {
+          "if": "capacity:disabled=yes",
+          "then": {
+            "en": "There are disabled parking spots, but it is not known how many",
+            "nl": "Er zijn parkeerplaatsen voor gehandicapten, maar het is niet bekend hoeveel er zijn"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "capacity:disabled=no",
+          "then": {
+            "en": "There are no disabled parking spots",
+            "nl": "Er zijn geen parkeerplaatsen voor gehandicapten"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "question": {
+        "en": "How many disabled parking spots are there at this parking?",
+        "nl": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?"
+      },
+      "render": {
+        "en": "There are {capacity:disabled} disabled parking spots",
+        "nl": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten"
+      }
+    },
+    {
+      "id": "capacity",
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat",
+        "placeholder": {
+          "en": "Amount of parking spots",
+          "nl": "Aantal parkeerplaatsen"
+        }
+      },
+      "question": {
+        "en": "How many parking spots are there at this parking?",
+        "nl": "Hoeveel parkeerplaatsen zijn er op deze parking?"
+      },
+      "render": {
+        "en": "There are {capacity} parking spots",
+        "nl": "Er zijn {capacity} parkeerplaatsen"
+      }
+    }
   ],
   "presets": [
     {
@@ -52,7 +187,7 @@
   },
   "allowMove": {
     "enableRelocation": false,
-    "enableImproveAccuraccy": true
+    "enableImproveAccuracy": true
   },
   "mapRendering": [
     {
