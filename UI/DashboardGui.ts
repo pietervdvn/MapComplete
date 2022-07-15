@@ -20,17 +20,40 @@ import {UIEventSource} from "../Logic/UIEventSource";
 import LanguagePicker from "./LanguagePicker";
 import Lazy from "./Base/Lazy";
 import TagRenderingAnswer from "./Popup/TagRenderingAnswer";
+import Hash from "../Logic/Web/Hash";
+import FilterView from "./BigComponents/FilterView";
+import {FilterState} from "../Models/FilteredLayer";
+
 
 export default class DashboardGui {
-    private readonly guiState: DefaultGuiState;
     private readonly state: FeaturePipelineState;
     private readonly currentView: UIEventSource<string | BaseUIElement> = new UIEventSource<string | BaseUIElement>("No selection")
 
 
     constructor(state: FeaturePipelineState, guiState: DefaultGuiState) {
         this.state = state;
-        this.guiState = guiState;
+    }
 
+    private viewSelector(shown: BaseUIElement, fullview: BaseUIElement, hash?: string): BaseUIElement {
+        const currentView = this.currentView
+        shown.SetClass("pl-1 pr-1 rounded-md")
+        shown.onClick(() => {
+            currentView.setData(fullview)
+        })
+        Hash.hash.addCallbackAndRunD(h => {
+            if (h === hash) {
+                currentView.setData(fullview)
+            }
+        })
+        currentView.addCallbackAndRunD(cv => {
+            if (cv == fullview) {
+                shown.SetClass("bg-unsubtle")
+                Hash.hash.setData(hash)
+            } else {
+                shown.RemoveClass("bg-unsubtle")
+            }
+        })
+        return shown;
     }
 
     private singleElementCache: Record<string, BaseUIElement> = {}
@@ -41,27 +64,16 @@ export default class DashboardGui {
         }
         const tags = this.state.allElements.getEventSourceById(element.properties.id)
         const title = new Combine([new Title(new TagRenderingAnswer(tags, layer.title, this.state), 4),
-            Math.floor(distance) + "m away"
-        ]).SetClass("flex");
-        //  FeatureInfoBox.GenerateTitleBar(tags, layer, this.state)
+            distance < 900 ? Math.floor(distance)+"m away":
+            Utils.Round(distance / 1000) + "km away"
+        ]).SetClass("flex justify-between");
 
-        const currentView = this.currentView
         const info = new Lazy(() => new Combine([
             FeatureInfoBox.GenerateTitleBar(tags, layer, this.state),
             FeatureInfoBox.GenerateContent(tags, layer, this.state)]).SetStyle("overflox-x: hidden"));
-        title.onClick(() => {
-            currentView.setData(info)
-        })
 
-        currentView.addCallbackAndRunD(cv => {
-            if (cv == info) {
-                title.SetClass("bg-blue-300")
-            } else {
-                title.RemoveClass("bg-blue-300")
-            }
-        })
 
-        return title;
+        return this.viewSelector(title, info);
     }
 
     private mainElementsView(elements: { element: OsmFeature, layer: LayerConfig, distance: number }[]): BaseUIElement {
@@ -75,6 +87,58 @@ export default class DashboardGui {
         return new Combine(elements.map(e => self.singleElementView(e.element, e.layer, e.distance)))
     }
 
+    private visibleElements(map: MinimapObj & BaseUIElement, layers: Record<string, LayerConfig>):  { distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[]{
+        const bbox= map.bounds.data
+        if (bbox === undefined) {
+            return undefined
+        }
+        const location = map.location.data;
+        const loc: [number, number] = [location.lon, location.lat]
+
+        const elementsWithMeta: { features: OsmFeature[], layer: string }[] = this.state.featurePipeline.GetAllFeaturesAndMetaWithin(bbox)
+
+        let elements: { distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[] = []
+        let seenElements = new Set<string>()
+        for (const elementsWithMetaElement of elementsWithMeta) {
+            const layer = layers[elementsWithMetaElement.layer]
+            const filtered =   this.state.filteredLayers.data.find(fl => fl.layerDef == layer);
+            for (const element of elementsWithMetaElement.features) {
+                console.log("Inspecting ", element.properties.id)
+                if(!filtered.isDisplayed.data){
+                    continue
+                }
+                if (seenElements.has(element.properties.id)) {
+                    continue
+                }
+                seenElements.add(element.properties.id)
+                if (!bbox.overlapsWith(BBox.get(element))) {
+                    continue
+                }
+                if (layer?.isShown?.GetRenderValue(element)?.Subs(element.properties)?.txt === "no") {
+                    continue
+                }
+                const activeFilters : FilterState[] = Array.from(filtered.appliedFilters.data.values());
+                if(activeFilters.some(filter => !filter?.currentFilter?.matchesProperties(element.properties))){
+                    continue
+                }
+                const center = GeoOperations.centerpointCoordinates(element);
+                elements.push({
+                    element,
+                    center,
+                    layer: layers[elementsWithMetaElement.layer],
+                    distance: GeoOperations.distanceBetween(loc, center)
+                })
+
+            }
+        }
+
+
+        elements.sort((e0, e1) => e0.distance - e1.distance)
+
+
+        return elements;
+    }
+    
     public setup(): void {
 
         const state = this.state;
@@ -95,75 +159,51 @@ export default class DashboardGui {
             layers[layer.id] = layer;
         }
 
-
-        const elementsInview = map.bounds.map(bbox => {
-            if (bbox === undefined) {
-                return undefined
+        const self = this;
+        const elementsInview = new UIEventSource([]);
+        function update(){
+            elementsInview.setData( self.visibleElements(map, layers))
+        }
+        
+        map.bounds.addCallbackAndRun(update)
+        state.featurePipeline.newDataLoadedSignal.addCallback(update);
+        state.filteredLayers.addCallbackAndRun(fls => {
+            for (const fl of fls) {
+                fl.isDisplayed.addCallback(update)
+                fl.appliedFilters.addCallback(update)
             }
-            const location = map.location.data;
-            const loc: [number, number] = [location.lon, location.lat]
-
-            const elementsWithMeta: { features: OsmFeature[], layer: string }[] = state.featurePipeline.GetAllFeaturesAndMetaWithin(bbox)
-
-            let elements: { distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[] = []
-            let seenElements = new Set<string>()
-            for (const elementsWithMetaElement of elementsWithMeta) {
-                for (const element of elementsWithMetaElement.features) {
-                    if (!bbox.overlapsWith(BBox.get(element))) {
-                        continue
-                    }
-                    if (seenElements.has(element.properties.id)) {
-                        continue
-                    }
-                    seenElements.add(element.properties.id)
-                    const center = GeoOperations.centerpointCoordinates(element);
-                    elements.push({
-                        element,
-                        center,
-                        layer: layers[elementsWithMetaElement.layer],
-                        distance: GeoOperations.distanceBetween(loc, center)
-                    })
-
-                }
-            }
-
-
-            elements.sort((e0, e1) => e0.distance - e1.distance)
-
-
-            return elements;
-        }, [this.state.featurePipeline.newDataLoadedSignal]);
+        })
 
         const welcome = new Combine([state.layoutToUse.description, state.layoutToUse.descriptionTail])
-        const self = this;
         self.currentView.setData(welcome)
         new Combine([
 
-            new Combine([map.SetClass("w-full h-64"),
-                new Title(state.layoutToUse.title, 2).onClick(() => {
-                    self.currentView.setData(welcome)
-                }),
-                new LanguagePicker(Object.keys(state.layoutToUse.title)),
+            new Combine([
+                this.viewSelector(new Title(state.layoutToUse.title, 2), welcome),
+                map.SetClass("w-full h-64 shrink-0 rounded-lg"),
                 new SearchAndGo(state),
-                new Title(
-                    new VariableUiElement(elementsInview.map(elements => "There are " + elements?.length + " elements in view")))
-                    .onClick(() => self.currentView.setData("Statistics")),
-                new VariableUiElement(elementsInview.map(elements => this.mainElementsView(elements)))])
-                .SetClass("w-1/2 m-4"),
-            new VariableUiElement(this.currentView).SetClass("w-1/2 h-full overflow-y-auto m-4")
+                this.viewSelector(new Title(
+                    new VariableUiElement(elementsInview.map(elements => "There are " + elements?.length + " elements in view"))), new FixedUiElement("Stats")),
+                
+                this.viewSelector(new FixedUiElement("Filter"),
+                    new Lazy(() => {
+                       return  new FilterView(state.filteredLayers, state.overlayToggles)
+                    })
+                ),
+                
+                new VariableUiElement(elementsInview.map(elements => this.mainElementsView(elements).SetClass("block mx-2")))
+                    .SetClass("block shrink-2 overflow-x-scroll h-full border-2 border-subtle rounded-lg"),
+                new LanguagePicker(Object.keys(state.layoutToUse.title)).SetClass("mt-2")
+            ])
+                .SetClass("w-1/2 m-4 flex flex-col"),
+            new VariableUiElement(this.currentView).SetClass("w-1/2 overflow-y-auto m-4 ml-0 p-2 border-2 border-subtle rounded-xl m-y-8")
         ]).SetClass("flex h-full")
             .AttachTo("leafletDiv")
 
     }
 
-    private SetupElement() {
-        const t = new Title("Elements in view", 3)
-
-    }
-
     private SetupMap(): MinimapObj & BaseUIElement {
         const state = this.state;
-        const guiState = this.guiState;
 
         new ShowDataLayer({
             leafletMap: state.leafletMap,
