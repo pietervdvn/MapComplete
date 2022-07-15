@@ -36,6 +36,7 @@
     "generate:schemas": "ts2json-schema -p Models/ThemeConfig/Json/ -o Docs/Schemas/ -t tsconfig.json -R . -m \".*ConfigJson\" && ts-node scripts/fixSchemas.ts ",
     "generate:service-worker": "tsc service-worker.ts && git_hash=$(git rev-parse HEAD) && sed -i \"s/GITHUB-COMMIT/$git_hash/\" service-worker.js",
     "optimize-images": "cd assets/generated/ &&  find -name '*.png' -exec optipng '{}' \\; && echo 'PNGs are optimized'",
+    "generate:graphs": "ts-node Docs/Tools/GenerateSeries.ts",
     "reset:layeroverview": "echo {\\\"layers\\\":[], \\\"themes\\\":[]} > ./assets/generated/known_layers_and_themes.json && echo {\\\"layers\\\": []} > ./assets/generated/known_layers.json && rm -f ./assets/generated/layers/*.json && rm -f ./assets/generated/themes/*.json && npm run generate:layeroverview && ts-node scripts/generateLayerOverview.ts --force",
     "generate": "mkdir -p ./assets/generated; npm run reset:layeroverview; npm run generate:images; npm run generate:charging-stations; npm run generate:translations; npm run generate:licenses; npm run generate:layeroverview; npm run generate:service-worker",
     "generate:charging-stations": "cd ./assets/layers/charging_station && ts-node csvToJson.ts && cd -",
