@@ -254,7 +254,10 @@
         },
         "welcomeBack": "Je bent aangemeld. Welkom terug!",
         "welcomeExplanation": {
-            "addNew": "Klik op de kaart om een nieuw punt toe te voegen."
+            "addNew": "Klik op de kaart om een nieuw punt toe te voegen.",
+            "browseOtherThemesIntro": "Er zijn diverse thematische kaarten op MapComplete",
+            "browseMoreMaps": "Ontdek meer kaarten",
+            "general": "Op deze kaart kan je <i>interessepunten</i> bekijken, bewerken en toevoegen. Zoom in om de interessepunten te zien, duid eentje aan om alle informatie te zien en te bewerken. Alle informatie komt van OpenStreetMap die gratis hergebruikt mag worden."
         },
         "wikipedia": {
             "createNewWikidata": "Maak een nieuw Wikidata-item",
