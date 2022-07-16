@@ -819,6 +819,10 @@ video {
   margin: 1.25rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .m-0\.5 {
   margin: 0.125rem;
 }
@@ -831,21 +835,12 @@ video {
   margin: 0.75rem;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .m-6 {
   margin: 1.5rem;
 }
 
 .m-px {
   margin: 1px;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 .my-2 {
@@ -879,12 +874,20 @@ video {
   margin-left: 0px;
 }
 
+.mr-8 {
+  margin-right: 2rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
 
 .mt-6 {
   margin-top: 1.5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
 }
 
 .mt-1 {
@@ -901,10 +904,6 @@ video {
 
 .mr-4 {
   margin-right: 1rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
 }
 
 .mb-2 {
@@ -1071,12 +1070,12 @@ video {
   height: 3rem;
 }
 
-.h-1\/2 {
-  height: 50%;
-}
-
 .h-4 {
   height: 1rem;
+}
+
+.h-1\/2 {
+  height: 50%;
 }
 
 .h-screen {
@@ -1163,12 +1162,12 @@ video {
   width: 3rem;
 }
 
-.w-0 {
-  width: 0px;
-}
-
 .w-4 {
   width: 1rem;
+}
+
+.w-0 {
+  width: 0px;
 }
 
 .w-screen {
@@ -1361,12 +1360,12 @@ video {
   overflow: scroll;
 }
 
-.overflow-y-auto {
-  overflow-y: auto;
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
-.overflow-x-scroll {
-  overflow-x: scroll;
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .truncate {
@@ -1439,6 +1438,10 @@ video {
 
 .border-4 {
   border-width: 4px;
+}
+
+.border-b-4 {
+  border-bottom-width: 4px;
 }
 
 .border-l-4 {
@@ -2439,6 +2442,15 @@ input {
 /****** ShareScreen *****/
 
 .literal-code {
+  display: inline-block;
+  background-color: lightgray;
+  padding: 0.5em;
+  word-break: break-word;
+  color: black;
+  box-sizing: border-box;
+}
+
+.code {
   display: inline-block;
   background-color: lightgray;
   padding: 0.5em;

@@ -57,6 +57,7 @@ import {SaveButton} from "./Popup/SaveButton";
 import {MapillaryLink} from "./BigComponents/MapillaryLink";
 import {CheckBox} from "./Input/Checkboxes";
 import Slider from "./Input/Slider";
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -207,7 +208,7 @@ class NearbyImageVis implements SpecialVisualization {
         const nearby = new Lazy(() => {
             const towardsCenter = new CheckBox(t.onlyTowards, false)
 
-            const radiusValue = state?.osmConnection?.GetPreference("nearby-images-radius","300").sync(s => Number(s), [], i => ""+i) ?? new UIEventSource(300);
+            const radiusValue = state?.osmConnection?.GetPreference("nearby-images-radius", "300").sync(s => Number(s), [], i => "" + i) ?? new UIEventSource(300);
 
             const radius = new Slider(25, 500, {
                 value:
@@ -285,7 +286,13 @@ export default class SpecialVisualizations {
 
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.init()
 
-    public static DocumentationFor(viz: SpecialVisualization): BaseUIElement {
+    public static DocumentationFor(viz: string | SpecialVisualization): BaseUIElement | undefined {
+        if (typeof viz === "string") {
+            viz = SpecialVisualizations.specialVisualizations.find(sv => sv.funcName === viz)
+        }
+        if(viz === undefined){
+            return undefined;
+        }
         return new Combine(
             [
                 new Title(viz.funcName, 3),

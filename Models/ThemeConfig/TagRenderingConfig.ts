@@ -14,6 +14,8 @@ import List from "../../UI/Base/List";
 import {MappingConfigJson, QuestionableTagRenderingConfigJson} from "./Json/QuestionableTagRenderingConfigJson";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import {Paragraph} from "../../UI/Base/Paragraph";
+import spec = Mocha.reporters.spec;
+import SpecialVisualizations from "../../UI/SpecialVisualizations";
 
 export interface Mapping {
     readonly if: TagsFilter,
@@ -37,6 +39,7 @@ export default class TagRenderingConfig {
     public readonly render?: TypedTranslation<object>;
     public readonly question?: TypedTranslation<object>;
     public readonly condition?: TagsFilter;
+    public readonly description?: Translation;
 
     public readonly configuration_warnings: string[] = []
 
@@ -54,6 +57,7 @@ export default class TagRenderingConfig {
 
     public readonly mappings?: Mapping[]
     public readonly labels: string[]
+
 
     constructor(json: string | QuestionableTagRenderingConfigJson, context?: string) {
         if (json === undefined) {
@@ -106,6 +110,7 @@ export default class TagRenderingConfig {
         this.labels = json.labels ?? []
         this.render = Translations.T(json.render, translationKey + ".render");
         this.question = Translations.T(json.question, translationKey + ".question");
+        this.description = Translations.T(json.description, translationKey + ".description");
         this.condition = TagUtils.Tag(json.condition ?? {"and": []}, `${context}.condition`);
         if (json.freeform) {
 
@@ -563,8 +568,8 @@ export default class TagRenderingConfig {
                             new Combine(
                                 [
                                     new FixedUiElement(m.then.txt).SetClass("bold"),
-                                    "corresponds with ",
-                                    m.if.asHumanString(true, false, {})
+                                    " corresponds with ",
+                                   new FixedUiElement( m.if.asHumanString(true, false, {})).SetClass("code")
                                 ]
                             )
                         ]
@@ -599,12 +604,14 @@ export default class TagRenderingConfig {
             labels = new Combine([
                 "This tagrendering has labels ",
                 ...this.labels.map(label => new FixedUiElement(label).SetClass("code"))
-            ])
+            ]).SetClass("flex")
         }
+        
         return new Combine([
             new Title(this.id, 3),
+            this.description,
             this.question !== undefined ?
-                new Combine(["The question is ", new FixedUiElement(this.question.txt).SetClass("bold")]) :
+                new Combine(["The question is ", new FixedUiElement(this.question.txt).SetClass("font-bold bold")]) :
                 new FixedUiElement(
                     "This tagrendering has no question and is thus read-only"
                 ).SetClass("italic"),
@@ -613,6 +620,6 @@ export default class TagRenderingConfig {
             condition,
             group,
             labels
-        ]).SetClass("flex-col");
+        ]).SetClass("flex flex-col");
     }
 }

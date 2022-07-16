@@ -23,30 +23,35 @@ import TagRenderingAnswer from "./Popup/TagRenderingAnswer";
 import Hash from "../Logic/Web/Hash";
 import FilterView from "./BigComponents/FilterView";
 import {FilterState} from "../Models/FilteredLayer";
+import Translations from "./i18n/Translations";
+import Constants from "../Models/Constants";
+import {Layer} from "leaflet";
+import doc = Mocha.reporters.doc;
 
 
 export default class DashboardGui {
     private readonly state: FeaturePipelineState;
-    private readonly currentView: UIEventSource<string | BaseUIElement> = new UIEventSource<string | BaseUIElement>("No selection")
+    private readonly currentView: UIEventSource<{ title: string | BaseUIElement, contents: string | BaseUIElement }> = new UIEventSource(undefined)
 
 
     constructor(state: FeaturePipelineState, guiState: DefaultGuiState) {
         this.state = state;
     }
 
-    private viewSelector(shown: BaseUIElement, fullview: BaseUIElement, hash?: string): BaseUIElement {
+    private viewSelector(shown: BaseUIElement, title: string | BaseUIElement, contents: string | BaseUIElement, hash?: string): BaseUIElement {
         const currentView = this.currentView
+        const v = {title, contents}
         shown.SetClass("pl-1 pr-1 rounded-md")
         shown.onClick(() => {
-            currentView.setData(fullview)
+            currentView.setData(v)
         })
         Hash.hash.addCallbackAndRunD(h => {
             if (h === hash) {
-                currentView.setData(fullview)
+                currentView.setData(v)
             }
         })
         currentView.addCallbackAndRunD(cv => {
-            if (cv == fullview) {
+            if (cv == v) {
                 shown.SetClass("bg-unsubtle")
                 Hash.hash.setData(hash)
             } else {
@@ -64,16 +69,15 @@ export default class DashboardGui {
         }
         const tags = this.state.allElements.getEventSourceById(element.properties.id)
         const title = new Combine([new Title(new TagRenderingAnswer(tags, layer.title, this.state), 4),
-            distance < 900 ? Math.floor(distance)+"m away":
-            Utils.Round(distance / 1000) + "km away"
+            distance < 900 ? Math.floor(distance) + "m away" :
+                Utils.Round(distance / 1000) + "km away"
         ]).SetClass("flex justify-between");
 
-        const info = new Lazy(() => new Combine([
-            FeatureInfoBox.GenerateTitleBar(tags, layer, this.state),
-            FeatureInfoBox.GenerateContent(tags, layer, this.state)]).SetStyle("overflox-x: hidden"));
-
-
-        return this.viewSelector(title, info);
+        return this.singleElementCache[element.properties.id] = this.viewSelector(title,
+            new Lazy(() => FeatureInfoBox.GenerateTitleBar(tags, layer, this.state)),
+            new Lazy(() => FeatureInfoBox.GenerateContent(tags, layer, this.state)),
+            //  element.properties.id
+        );
     }
 
     private mainElementsView(elements: { element: OsmFeature, layer: LayerConfig, distance: number }[]): BaseUIElement {
@@ -87,8 +91,8 @@ export default class DashboardGui {
         return new Combine(elements.map(e => self.singleElementView(e.element, e.layer, e.distance)))
     }
 
-    private visibleElements(map: MinimapObj & BaseUIElement, layers: Record<string, LayerConfig>):  { distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[]{
-        const bbox= map.bounds.data
+    private visibleElements(map: MinimapObj & BaseUIElement, layers: Record<string, LayerConfig>): { distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[] {
+        const bbox = map.bounds.data
         if (bbox === undefined) {
             return undefined
         }
@@ -101,10 +105,10 @@ export default class DashboardGui {
         let seenElements = new Set<string>()
         for (const elementsWithMetaElement of elementsWithMeta) {
             const layer = layers[elementsWithMetaElement.layer]
-            const filtered =   this.state.filteredLayers.data.find(fl => fl.layerDef == layer);
-            for (const element of elementsWithMetaElement.features) {
-                console.log("Inspecting ", element.properties.id)
-                if(!filtered.isDisplayed.data){
+            const filtered = this.state.filteredLayers.data.find(fl => fl.layerDef == layer);
+            for (let i = 0; i < elementsWithMetaElement.features.length; i++) {
+                const element = elementsWithMetaElement.features[i];
+                if (!filtered.isDisplayed.data) {
                     continue
                 }
                 if (seenElements.has(element.properties.id)) {
@@ -117,8 +121,8 @@ export default class DashboardGui {
                 if (layer?.isShown?.GetRenderValue(element)?.Subs(element.properties)?.txt === "no") {
                     continue
                 }
-                const activeFilters : FilterState[] = Array.from(filtered.appliedFilters.data.values());
-                if(activeFilters.some(filter => !filter?.currentFilter?.matchesProperties(element.properties))){
+                const activeFilters: FilterState[] = Array.from(filtered.appliedFilters.data.values());
+                if (activeFilters.some(filter => !filter?.currentFilter?.matchesProperties(element.properties))) {
                     continue
                 }
                 const center = GeoOperations.centerpointCoordinates(element);
@@ -138,7 +142,24 @@ export default class DashboardGui {
 
         return elements;
     }
-    
+
+    private documentationButtonFor(layerConfig: LayerConfig): BaseUIElement {
+        return this.viewSelector(Translations.W(layerConfig.name?.Clone() ?? layerConfig.id), new Combine(["Documentation about ", layerConfig.name?.Clone() ?? layerConfig.id]),
+            layerConfig.GenerateDocumentation([]),
+            "documentation-" + layerConfig.id)
+    }
+
+    private allDocumentationButtons(): BaseUIElement {
+        const layers = this.state.layoutToUse.layers.filter(l => Constants.priviliged_layers.indexOf(l.id) < 0)
+            .filter(l => !l.id.startsWith("note_import_"));
+        
+        if(layers.length === 1){
+            return this.documentationButtonFor(layers[0])
+        }
+        return this.viewSelector(new FixedUiElement("Documentation"), "Documentation", 
+            new Combine(layers.map(l => this.documentationButtonFor(l).SetClass("flex flex-col"))))
+    }
+
     public setup(): void {
 
         const state = this.state;
@@ -161,10 +182,11 @@ export default class DashboardGui {
 
         const self = this;
         const elementsInview = new UIEventSource([]);
-        function update(){
-            elementsInview.setData( self.visibleElements(map, layers))
+
+        function update() {
+            elementsInview.setData(self.visibleElements(map, layers))
         }
-        
+
         map.bounds.addCallbackAndRun(update)
         state.featurePipeline.newDataLoadedSignal.addCallback(update);
         state.filteredLayers.addCallbackAndRun(fls => {
@@ -175,28 +197,36 @@ export default class DashboardGui {
         })
 
         const welcome = new Combine([state.layoutToUse.description, state.layoutToUse.descriptionTail])
-        self.currentView.setData(welcome)
+        self.currentView.setData({title: state.layoutToUse.title, contents: welcome})
         new Combine([
 
             new Combine([
-                this.viewSelector(new Title(state.layoutToUse.title, 2), welcome),
+                this.viewSelector(new Title(state.layoutToUse.title.Clone(), 2), state.layoutToUse.title.Clone(), welcome, "welcome"),
                 map.SetClass("w-full h-64 shrink-0 rounded-lg"),
                 new SearchAndGo(state),
                 this.viewSelector(new Title(
-                    new VariableUiElement(elementsInview.map(elements => "There are " + elements?.length + " elements in view"))), new FixedUiElement("Stats")),
-                
+                        new VariableUiElement(elementsInview.map(elements => "There are " + elements?.length + " elements in view"))),
+                    "Statistics",
+                    new FixedUiElement("Stats"), "statistics"),
+
                 this.viewSelector(new FixedUiElement("Filter"),
+                    "Filters",
                     new Lazy(() => {
-                       return  new FilterView(state.filteredLayers, state.overlayToggles)
-                    })
+                        return new FilterView(state.filteredLayers, state.overlayToggles)
+                    }), "filters"
                 ),
-                
-                new VariableUiElement(elementsInview.map(elements => this.mainElementsView(elements).SetClass("block mx-2")))
-                    .SetClass("block shrink-2 overflow-x-scroll h-full border-2 border-subtle rounded-lg"),
-                new LanguagePicker(Object.keys(state.layoutToUse.title)).SetClass("mt-2")
-            ])
-                .SetClass("w-1/2 m-4 flex flex-col"),
-            new VariableUiElement(this.currentView).SetClass("w-1/2 overflow-y-auto m-4 ml-0 p-2 border-2 border-subtle rounded-xl m-y-8")
+
+                new VariableUiElement(elementsInview.map(elements => this.mainElementsView(elements).SetClass("block m-2")))
+                    .SetClass("block shrink-2 overflow-x-auto h-full border-2 border-subtle rounded-lg"),
+                this.allDocumentationButtons(),
+                new LanguagePicker(Object.keys(state.layoutToUse.title.translations)).SetClass("mt-2")
+            ]).SetClass("w-1/2 m-4 flex flex-col shrink-0 grow-0"),
+            new VariableUiElement(this.currentView.map(({title, contents}) => {
+                return new Combine([
+                    new Title(Translations.W(title), 2).SetClass("shrink-0 border-b-4 border-subtle"),
+                    Translations.W(contents).SetClass("shrink-2 overflow-y-auto block")
+                ]).SetClass("flex flex-col h-full")
+            })).SetClass("w-1/2 m-4 p-2 border-2 border-subtle rounded-xl m-4 ml-0 mr-8 shrink-0 grow-0")
         ]).SetClass("flex h-full")
             .AttachTo("leafletDiv")
 
