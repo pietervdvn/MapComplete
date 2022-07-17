@@ -217,7 +217,7 @@ class LayerOverviewUtils {
         writeFileSync("./assets/generated/known_layers.json", JSON.stringify({layers: Array.from(sharedLayers.values())}))
 
 
-        if (recompiledThemes.length > 0 && !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplate-changes")) {
+        if (recompiledThemes.length > 0 && !(recompiledThemes.length === 1 && recompiledThemes[0] === "mapcomplete-changes")) {
             // mapcomplete-changes shows an icon for each corresponding mapcomplete-theme
             const iconsPerTheme =
                 Array.from(sharedThemes.values()).map(th => ({
