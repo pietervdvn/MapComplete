@@ -25,8 +25,7 @@ import FilterView from "./BigComponents/FilterView";
 import {FilterState} from "../Models/FilteredLayer";
 import Translations from "./i18n/Translations";
 import Constants from "../Models/Constants";
-import {Layer} from "leaflet";
-import doc = Mocha.reporters.doc;
+import SimpleAddUI from "./BigComponents/SimpleAddUI";
 
 
 export default class DashboardGui {
@@ -152,11 +151,11 @@ export default class DashboardGui {
     private allDocumentationButtons(): BaseUIElement {
         const layers = this.state.layoutToUse.layers.filter(l => Constants.priviliged_layers.indexOf(l.id) < 0)
             .filter(l => !l.id.startsWith("note_import_"));
-        
-        if(layers.length === 1){
+
+        if (layers.length === 1) {
             return this.documentationButtonFor(layers[0])
         }
-        return this.viewSelector(new FixedUiElement("Documentation"), "Documentation", 
+        return this.viewSelector(new FixedUiElement("Documentation"), "Documentation",
             new Combine(layers.map(l => this.documentationButtonFor(l).SetClass("flex flex-col"))))
     }
 
@@ -196,10 +195,39 @@ export default class DashboardGui {
             }
         })
 
+        const filterView = new Lazy(() => {
+            return new FilterView(state.filteredLayers, state.overlayToggles)
+        });
         const welcome = new Combine([state.layoutToUse.description, state.layoutToUse.descriptionTail])
         self.currentView.setData({title: state.layoutToUse.title, contents: welcome})
+        const filterViewIsOpened = new UIEventSource(false)
+        filterViewIsOpened.addCallback(fv => self.currentView.setData({title: "filters", contents: filterView}))
+        
+        const newPointIsShown = new UIEventSource(false);
+        const addNewPoint =  new SimpleAddUI(
+            new UIEventSource(true),
+            new UIEventSource(undefined),
+            filterViewIsOpened,
+            state,
+            state.locationControl
+        );
+        const addNewPointTitle = "Add a missing point"
+        this.currentView.addCallbackAndRunD(cv => {
+                newPointIsShown.setData(cv.contents === addNewPoint)
+        })
+        newPointIsShown.addCallbackAndRun(isShown => {
+            if(isShown){
+                if(self.currentView.data.contents !== addNewPoint){
+                    self.currentView.setData({title: addNewPointTitle, contents: addNewPoint})
+                }
+            }else{
+                if(self.currentView.data.contents === addNewPoint){
+                    self.currentView.setData(undefined)
+                }
+            }
+        })
+        
         new Combine([
-
             new Combine([
                 this.viewSelector(new Title(state.layoutToUse.title.Clone(), 2), state.layoutToUse.title.Clone(), welcome, "welcome"),
                 map.SetClass("w-full h-64 shrink-0 rounded-lg"),
@@ -210,10 +238,9 @@ export default class DashboardGui {
                     new FixedUiElement("Stats"), "statistics"),
 
                 this.viewSelector(new FixedUiElement("Filter"),
-                    "Filters",
-                    new Lazy(() => {
-                        return new FilterView(state.filteredLayers, state.overlayToggles)
-                    }), "filters"
+                    "Filters", filterView, "filters"),
+                this.viewSelector(new Combine([ "Add a missing point"]), addNewPointTitle,
+                   addNewPoint
                 ),
 
                 new VariableUiElement(elementsInview.map(elements => this.mainElementsView(elements).SetClass("block m-2")))
