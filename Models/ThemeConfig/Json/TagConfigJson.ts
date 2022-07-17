@@ -19,4 +19,3 @@ export type OrTagConfigJson = {
 export type AndTagConfigJson = {
     and: TagConfigJson[]
 }
-

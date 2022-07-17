@@ -1,4 +1,4 @@
-import {AndOrTagConfigJson} from "./TagConfigJson";
+import {TagConfigJson} from "./TagConfigJson";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import FilterConfigJson from "./FilterConfigJson";
 import {DeleteConfigJson} from "./DeleteConfigJson";
@@ -47,7 +47,7 @@ export interface LayerConfigJson {
             /**
              * Every source must set which tags have to be present in order to load the given layer.
              */
-            osmTags: AndOrTagConfigJson | string
+            osmTags: TagConfigJson
             /**
              * The maximum amount of seconds that a tile is allowed to linger in the cache
              */

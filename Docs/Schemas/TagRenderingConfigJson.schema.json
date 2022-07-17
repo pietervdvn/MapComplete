@@ -24,7 +24,12 @@
       "description": "Only show this tagrendering (or question) if the object also matches the following tags.\n\nThis is useful to ask a follow-up question. E.g. if there is a diaper table, then ask a follow-up question on diaper tables...",
       "anyOf": [
         {
-          "$ref": "#/definitions/AndOrTagConfigJson"
+          "$ref": "#/definitions/AndTagConfigJson",
+          "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        },
+        {
+          "$ref": "#/definitions/OrTagConfigJson",
+          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
         },
         {
           "type": "string"
@@ -51,15 +56,8 @@
         "type": "object",
         "properties": {
           "if": {
-            "description": "If this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}",
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/definitions/TagConfigJson",
+            "description": "If this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
           },
           "then": {
             "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered"
@@ -98,36 +96,62 @@
     }
   },
   "definitions": {
-    "AndOrTagConfigJson": {
+    "TagConfigJson": {
+      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/AndTagConfigJson"
+        },
+        {
+          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+          "type": "object",
+          "properties": {
+            "or": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TagConfigJson"
+              }
+            }
+          },
+          "required": [
+            "or"
+          ]
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "AndTagConfigJson": {
+      "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
       "type": "object",
       "properties": {
         "and": {
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          }
-        },
-        "or": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/definitions/TagConfigJson"
           }
         }
       },
+      "required": [
+        "and"
+      ],
+      "additionalProperties": false
+    },
+    "OrTagConfigJson": {
+      "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+      "type": "object",
+      "properties": {
+        "or": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TagConfigJson"
+          }
+        }
+      },
+      "required": [
+        "or"
+      ],
       "additionalProperties": false
     }
   },
