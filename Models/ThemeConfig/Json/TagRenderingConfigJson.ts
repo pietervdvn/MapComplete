@@ -1,4 +1,4 @@
-import {AndOrTagConfigJson} from "./TagConfigJson";
+import {TagConfigJson} from "./TagConfigJson";
 
 /**
  * A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.
@@ -39,7 +39,7 @@ export interface TagRenderingConfigJson {
      *
      * This is useful to ask a follow-up question. E.g. if there is a diaper table, then ask a follow-up question on diaper tables...
      * */
-    condition?: AndOrTagConfigJson | string;
+    condition?: TagConfigJson;
 
     /**
      * Allow freeform text input from the user
@@ -66,7 +66,7 @@ export interface TagRenderingConfigJson {
          *
          * This can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}
          */
-        if: AndOrTagConfigJson | string,
+        if: TagConfigJson,
         /**
          * If the condition `if` is met, the text `then` will be rendered.
          * If not known yet, the user will be presented with `then` as an option

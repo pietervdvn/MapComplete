@@ -14,7 +14,6 @@ import List from "../../UI/Base/List";
 import {MappingConfigJson, QuestionableTagRenderingConfigJson} from "./Json/QuestionableTagRenderingConfigJson";
 import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import {Paragraph} from "../../UI/Base/Paragraph";
-import UserDetails from "../../Logic/Osm/OsmConnection";
 
 export interface Mapping {
     readonly if: TagsFilter,

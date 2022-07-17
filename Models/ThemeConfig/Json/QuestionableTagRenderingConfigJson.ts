@@ -1,4 +1,4 @@
-import {AndOrTagConfigJson} from "./TagConfigJson";
+import {TagConfigJson} from "./TagConfigJson";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 
 
@@ -7,7 +7,7 @@ export interface MappingConfigJson {
     /**
      * @inheritDoc
      */
-    if: AndOrTagConfigJson | string,
+    if: TagConfigJson,
     /**
      * Shown if the 'if is fulfilled
      * Type: rendered
@@ -89,7 +89,7 @@ export interface MappingConfigJson {
      *     hideInAnswer: "_country!=be"
      * }
      */
-    hideInAnswer?: boolean | string | AndOrTagConfigJson,
+    hideInAnswer?: boolean | TagConfigJson,
     /**
      * Only applicable if 'multiAnswer' is set.
      * This is for situations such as:
@@ -98,7 +98,7 @@ export interface MappingConfigJson {
      * Note that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.
      * If this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`
      */
-    ifnot?: AndOrTagConfigJson | string
+    ifnot?: TagConfigJson
 
     /**
      * If chosen as answer, these tags will be applied as well onto the object.
@@ -117,7 +117,7 @@ export interface MappingConfigJson {
      * If the searchable selector is picked, mappings with this item will have priority and show up even if the others are hidden
      * Use this sparingly
      */
-    priorityIf?: string | AndOrTagConfigJson
+    priorityIf?: TagConfigJson
 
 }
 
