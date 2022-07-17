@@ -4629,6 +4629,10 @@
       "description": "Layer 'doctors' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "name",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "healthcare:speciality",
       "description": "Layer 'doctors' shows and asks freeform values for key 'healthcare:speciality' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -6293,6 +6297,74 @@
       "description": "The layer 'Parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=surface with a fixed text, namely 'This is a surface parking lot' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "surface"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=street_side with a fixed text, namely 'This is a parking bay next to a street' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "street_side"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=underground with a fixed text, namely 'This is an underground parking garage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "underground"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=multi-storey with a fixed text, namely 'This is a multi-storey parking garage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "multi-storey"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=rooftop with a fixed text, namely 'This is a rooftop parking deck' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "rooftop"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=lane with a fixed text, namely 'This is a lane for parking on the road' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "lane"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=carports with a fixed text, namely 'This is parking covered by carports' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "carports"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=garage_boxes with a fixed text, namely 'This a parking consisting of garage boxes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "garage_boxes"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=layby with a fixed text, namely 'This is a parking on a layby' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "layby"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=sheds with a fixed text, namely 'This is a parking consisting of sheds' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "sheds"
+    },
+    {
+      "key": "capacity:disabled",
+      "description": "Layer 'Parking' shows and asks freeform values for key 'capacity:disabled' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity:disabled",
+      "description": "Layer 'Parking' shows capacity:disabled=yes with a fixed text, namely 'There are disabled parking spots, but it is not known how many' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "capacity:disabled",
+      "description": "Layer 'Parking' shows capacity:disabled=no with a fixed text, namely 'There are no disabled parking spots' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Parking' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer pharmacy showing features with this tag",
       "value": "pharmacy"
@@ -6692,6 +6764,37 @@
       "description": "Layer 'Bookcases' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "highway",
+      "description": "The MapComplete theme Personal theme has a layer Crossings with rainbow paintings showing features with this tag",
+      "value": "crossing"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Crossings with rainbow paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Crossings with rainbow paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Crossings with rainbow paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Crossings with rainbow paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "crossing:marking",
+      "description": "Layer 'Crossings with rainbow paintings' shows crossing:marking=rainbow with a fixed text, namely 'This crossing has rainbow paintings' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "rainbow"
+    },
+    {
+      "key": "not:crossing:marking",
+      "description": "Layer 'Crossings with rainbow paintings' shows not:crossing:marking=rainbow with a fixed text, namely 'No rainbow paintings here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "rainbow"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Recycling showing features with this tag",
       "value": "recycling"
@@ -6892,6 +6995,176 @@
       "key": "opening_hours",
       "description": "Layer 'Recycling' shows opening_hours=24/7 with a fixed text, namely '24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "24/7"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Primary and secondary schools showing features with this tag",
+      "value": "school"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "school",
+      "description": "Layer 'Primary and secondary schools' shows school=kindergarten with a fixed text, namely 'This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "kindergarten"
+    },
+    {
+      "key": "school",
+      "description": "Layer 'Primary and secondary schools' shows school=primary with a fixed text, namely 'This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "primary"
+    },
+    {
+      "key": "school",
+      "description": "Layer 'Primary and secondary schools' shows school=secondary with a fixed text, namely 'This is a secondary school which offers all grades' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "secondary"
+    },
+    {
+      "key": "school",
+      "description": "Layer 'Primary and secondary schools' shows school=lower_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "lower_secondary"
+    },
+    {
+      "key": "school",
+      "description": "Layer 'Primary and secondary schools' shows school=middle_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "middle_secondary"
+    },
+    {
+      "key": "school",
+      "description": "Layer 'Primary and secondary schools' shows school=upper_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "upper_secondary"
+    },
+    {
+      "key": "school",
+      "description": "Layer 'Primary and secondary schools' shows school=post_secondary with a fixed text, namely 'This school offers post-secondary education (e.g. a seventh or eight specialisation year)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "post_secondary"
+    },
+    {
+      "key": "school:gender",
+      "description": "Layer 'Primary and secondary schools' shows school:gender=mixed with a fixed text, namely 'Both boys and girls can enroll here and have classes together' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "mixed"
+    },
+    {
+      "key": "school:gender",
+      "description": "Layer 'Primary and secondary schools' shows school:gender=separated with a fixed text, namely 'Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "separated"
+    },
+    {
+      "key": "school:gender",
+      "description": "Layer 'Primary and secondary schools' shows school:gender=male with a fixed text, namely 'This is a boys only-school' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "male"
+    },
+    {
+      "key": "school:gender",
+      "description": "Layer 'Primary and secondary schools' shows school:gender=female with a fixed text, namely 'This is a girls-only school' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "female"
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'school:for' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows  with a fixed text, namely 'This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key school:for.",
+      "value": ""
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows school:for=mainstream with a fixed text, namely 'This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "mainstream"
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows school:for=adults with a fixed text, namely 'This is a school where adults are taught skills on the level as specified.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "adults"
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows school:for=autism with a fixed text, namely 'This is a school for students with autism' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "autism"
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows school:for=learning_disabilities with a fixed text, namely 'This is a school for students with learning disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "learning_disabilities"
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows school:for=blind with a fixed text, namely 'This is a school for blind students or students with sight impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "blind"
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows school:for=deaf with a fixed text, namely 'This is a school for deaf students or students with hearing impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "deaf"
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows school:for=disabilities with a fixed text, namely 'This is a school for students with disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "disabilities"
+    },
+    {
+      "key": "school:for",
+      "description": "Layer 'Primary and secondary schools' shows school:for=special_needs with a fixed text, namely 'This is a school for students with special needs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "special_needs"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Primary and secondary schools' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Primary and secondary schools' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Primary and secondary schools' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'school:language' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=english with a fixed text, namely 'The main language of this school is unknown' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "english"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=french with a fixed text, namely 'French is the main language of {name}' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "french"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=dutch with a fixed text, namely 'Dutch is the main language of {name}' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "dutch"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=german with a fixed text, namely 'German is the main language of {name}' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "german"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows  with a fixed text, namely 'The main language of this school is unknown' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key school:language.",
+      "value": ""
     },
     {
       "key": "amenity",
@@ -8902,6 +9175,31 @@
     {
       "key": "name",
       "description": "Layer 'veterinary' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Personal theme has a layer Viewpoint showing features with this tag",
+      "value": "viewpoint"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Viewpoint' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "amenity",

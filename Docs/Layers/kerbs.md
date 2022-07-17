@@ -29,6 +29,7 @@ A layer showing kerbs.
 
 
   - [kerbs_and_crossings](https://mapcomplete.osm.be/kerbs_and_crossings)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 
@@ -121,7 +122,7 @@ The question is  What is the height of this kerb?
 
 This rendering asks information about the property  [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) 
 
-This is rendered with  Kerb height: {{kerb:height}}
+This is rendered with  Kerb height: {kerb:height}
 
  
 

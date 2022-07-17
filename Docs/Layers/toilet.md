@@ -26,6 +26,7 @@ A layer showing (public) toilets
 
 
   - [nature](https://mapcomplete.osm.be/nature)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
   - [toilets](https://mapcomplete.osm.be/toilets)
 
