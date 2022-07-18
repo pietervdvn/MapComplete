@@ -39,6 +39,18 @@
           "_closest_osm_hotel=feat.closest('hotel')?.properties?.id",
           "_closest_osm_hotel_distance=feat.distanceTo(feat.properties._closest_osm_hotel)",
           "_has_closeby_feature=Number(feat.properties._closest_osm_hotel_distance) < 50 ? 'yes' : 'no'"
+        ],
+        "+tagRenderings": [
+          {
+            "id": "import-button",
+            "condition": "_has_closeby_feature=no",
+            "render": "{import_button(hotel,tags,Import,./assets/svg/addSmall.svg,,,,photo,mr_taskId)}"
+          },
+          {
+            "id": "tag-apply-button",
+            "condition": "_has_closeby_feature=yes",
+            "render": "{tag_apply($tags, Add all the suggested tags, apply_icon.svg, _closest_osm_hotel)}"
+          }
         ]
       }
     }
