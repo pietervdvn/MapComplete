@@ -1,0 +1,13 @@
+{
+  "id": "elevator",
+  "name": {
+    "en": "elevator"
+  },
+  "source": {
+    "osmTags": "elevator=yes"
+  },
+  "minzoom": 13,
+  "mapRendering": [
+    
+  ]
+}
