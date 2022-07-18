@@ -4,6 +4,8 @@ import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {BBox} from "../../BBox";
 import {ElementStorage} from "../../ElementStorage";
 import {TagsFilter} from "../../Tags/TagsFilter";
+import {tag} from "@turf/turf";
+import {OsmFeature} from "../../../Models/OsmFeature";
 
 export default class FilteringFeatureSource implements FeatureSourceForLayer, Tiled {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> =
@@ -65,21 +67,16 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     private update() {
         const self = this;
         const layer = this.upstream.layer;
-        const features: { feature: any; freshness: Date }[] = (this.upstream.features.data ?? []);
+        const features: { feature: OsmFeature; freshness: Date }[] = (this.upstream.features.data ?? []);
         const includedFeatureIds = new Set<string>();
         const newFeatures = (features ?? []).filter((f) => {
 
             self.registerCallback(f.feature)
 
-            const isShown = layer.layerDef.isShown;
+            const isShown: TagsFilter = layer.layerDef.isShown;
             const tags = f.feature.properties;
-            if (isShown.IsKnown(tags)) {
-                const result = layer.layerDef.isShown.GetRenderValue(
-                    f.feature.properties
-                ).txt;
-                if (result !== "yes") {
-                    return false;
-                }
+            if (isShown !== undefined && !isShown.matchesProperties(tags) ) {
+                return false;
             }
 
             const tagsFilter = Array.from(layer.appliedFilters?.data?.values() ?? [])

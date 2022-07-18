@@ -6,19 +6,10 @@ import * as wds from "wikidata-sdk"
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
 import {existsSync, readFileSync, writeFileSync} from "fs";
-import * as used_languages from "../assets/generated/used_languages.json"
 import {QuestionableTagRenderingConfigJson} from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-
-const languageRemap = {
-    // MapComplete (or weblate) on the left, language of wikimedia on the right
-    "nb":"nb_NO",
-    "zh-hant":"zh_Hant",
-    "zh-hans":"zh_Hans",
-    "pt-br":"pt_BR"
-}
-
-const usedLanguages : Set<string> = new Set(used_languages.languages)
+import WikidataUtils from "../Utils/WikidataUtils";
+import LanguageUtils from "../Utils/LanguageUtils";
 
 async function fetch(target: string){
     const regular = await fetchRegularLanguages()
@@ -75,32 +66,13 @@ async function fetchSpecial(id: number, code: string) {
     return bindings
 }
 
-function extract(data){
-    console.log("Got "+data.length+" entries")
-    const perId = new Map<string, Map<string, string>>();
-    for (const element of data) {
-        let id = element.code.value
-        id = languageRemap[id] ?? id
-        let labelLang = element.label["xml:lang"]
-        labelLang = languageRemap[labelLang] ?? labelLang
-        const value = element.label.value
-        if(!perId.has(id)){
-            perId.set(id, new Map<string, string>())
-        }
-        perId.get(id).set(labelLang, value)
-    }
-
-    console.log("Got "+perId.size+" languages")
-    return perId
-}
-
 function getNativeList(langs: Map<string, Map<string, string>>){
     const native = {}
     const keys: string[] = Array.from(langs.keys())
     keys.sort()
     for (const key of keys) {
         const translations: Map<string, string> = langs.get(key)
-        if(!usedLanguages.has(key)){
+        if(!LanguageUtils.usedLanguages.has(key)){
             continue
         }
         native[key] = translations.get(key)
@@ -143,17 +115,17 @@ async function main(wipeCache = false){
         console.log("Reusing the cached file")
     }
     const data = JSON.parse(readFileSync( cacheFile, "UTF8"))
-    const perId = extract(data)
+    const perId = WikidataUtils.extractLanguageData(data, WikidataUtils.languageRemapping)
     const nativeList = getNativeList(perId)
     writeFileSync("./assets/language_native.json", JSON.stringify(nativeList, null, "  "))
     
 
     const translations = Utils.MapToObj(perId, (value, key) => {
-        if(!usedLanguages.has(key)){
+        if(!LanguageUtils.usedLanguages.has(key)){
             return undefined // Remove unused languages
         }
         return Utils.MapToObj(value, (v, k ) => {
-            if(!usedLanguages.has(k)){
+            if(!LanguageUtils.usedLanguages.has(k)){
                 return undefined
             }
             return v

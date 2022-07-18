@@ -5469,6 +5469,16 @@
             }
         },
         "tagRenderings": {
+            "8": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "The main language of this school is unknown"
+                        }
+                    },
+                    "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
+                }
+            },
             "capacity": {
                 "question": "How much students can at most enroll in this school?",
                 "render": "This school can enroll at most {capacity} students"
@@ -5515,30 +5525,6 @@
                     }
                 },
                 "question": "Which genders can enroll at this school?"
-            },
-            "language": {
-                "freeform": {
-                    "placeholder": "Language in lowercase English"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "The main language of this school is unknown"
-                    },
-                    "1": {
-                        "then": "French is the main language of {name}"
-                    },
-                    "2": {
-                        "then": "Dutch is the main language of {name}"
-                    },
-                    "3": {
-                        "then": "German is the main language of {name}"
-                    },
-                    "4": {
-                        "then": "The main language of this school is unknown"
-                    }
-                },
-                "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
-                "render": "{school:language} is the main language of {title()}"
             },
             "school-name": {
                 "question": "What is the name of this school?",

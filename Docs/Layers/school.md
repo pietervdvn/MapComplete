@@ -21,6 +21,18 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 
 
 
+#### Themes using this layer 
+
+
+
+
+
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
+  - [personal](https://mapcomplete.osm.be/personal)
+
+
+
+
  Basic tags for this layer 
 ---------------------------
 

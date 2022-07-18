@@ -386,7 +386,8 @@
       },
       "condition": "changing_table=yes",
       "freeform": {
-        "key": "changing_table:location"
+        "key": "changing_table:location",
+        "inline": true
       },
       "mappings": [
         {

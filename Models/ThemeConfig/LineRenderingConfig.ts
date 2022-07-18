@@ -71,7 +71,6 @@ export default class LineRenderingConfig extends WithContextLoader {
         }
 
         const fillStr = render(this.fill, undefined)
-        let fill: boolean = undefined;
         if (fillStr !== undefined && fillStr !== "") {
             style["fill"] = fillStr === "yes" || fillStr === "true"
         }

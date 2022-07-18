@@ -122,7 +122,7 @@ export class Imgur extends ImageProvider {
         for (const tag of descr.split("\n")) {
             const kv = tag.split(":");
             const k = kv[0];
-            data[k] = kv[1]?.replace("\r", "");
+            data[k] = kv[1]?.replace(/\r/g, "");
         }
 
 
