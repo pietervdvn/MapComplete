@@ -9,7 +9,6 @@
         "indoor=room",
         "indoor=area",
         "indoor=wall",
-        "indoor=corridor",
         "indoor=door",
         "indoor=level"
       ]
