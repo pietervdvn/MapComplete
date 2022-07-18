@@ -11,8 +11,6 @@ mkdir dist/assets 2> /dev/null
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run generate:editor-layer-index &&
-npm run generate:licenses &&
-npm run reset:layeroverview &&
 npm run generate &&
 npm run test &&
 npm run generate:layouts 
