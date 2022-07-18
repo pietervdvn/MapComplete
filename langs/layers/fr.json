@@ -444,7 +444,7 @@
         "tagRenderings": {
             "9": {
                 "renderings": {
-                    "rental-capacity-bicycle_type": {
+                    "0": {
                         "question": "Combien de type_plural peuvent être loués ici ?",
                         "render": "{capacity:bicycle_type} type_plural peuvent être loués ici"
                     }
