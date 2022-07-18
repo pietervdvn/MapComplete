@@ -55,7 +55,7 @@ class TranslationPart {
             }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
-                console.error(`Non-string object at ${context} in translation while trying to add more translations to '` + translationsKey + "'. The offending object which _should_ be a translation is: ", v,"\n\nThe current object is:", JSON.stringify(this.contents))
+                console.error(`Non-string object at ${context} in translation while trying to add more translations to '` + translationsKey + "'. The offending object which _should_ be a translation is: ", v,"\n\nThe current object is:", this.toJson("en"))
                 throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
             this.contents.set(translationsKey, v)
@@ -63,9 +63,6 @@ class TranslationPart {
     }
 
     recursiveAdd(object: any, context: string) {
-        if(context.startsWith("./assets/themes/onwheels")){
-            console.log("Hello world")
-        }
         const isProbablyTranslationObject = knownLanguages.some(l => object.hasOwnProperty(l));
         if (isProbablyTranslationObject) {
             this.addTranslationObject(object, context)
@@ -104,7 +101,7 @@ class TranslationPart {
                 continue
             }
 
-            if (v["id"] !== undefined && (context.endsWith(".+tagRenderings") || context.endsWith(".tagRenderings+") || context.endsWith(".tagRenderings"))) {
+            if (v["id"] !== undefined && context.endsWith(".tagRenderings")) {
                 // We use the embedded id as key instead of the index as this is more stable
                 // Note: indonesian is shortened as 'id' as well!
                 if (v["en"] !== undefined || v["nl"] !== undefined) {
