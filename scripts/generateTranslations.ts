@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import {readFileSync, writeFileSync} from "fs";
+import {existsSync, mkdirSync, readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
 
@@ -591,7 +591,9 @@ function mergeThemeTranslations() {
     }
 }
 
-
+if(!existsSync("./langs/themes")){
+    mkdirSync("./langs/themes")
+}
 const themeOverwritesWeblate = process.argv[2] === "--ignore-weblate"
 const questionsPath = "assets/tagRenderings/questions.json"
 const questionsParsed = JSON.parse(readFileSync(questionsPath, 'utf8'))
