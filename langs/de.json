@@ -271,9 +271,9 @@
                 "born": "Geboren am: {value}",
                 "died": "Gestorben am: {value}"
             },
+            "searchToShort": "Ihre Suchanfrage ist zu kurz, geben Sie einen längeren Text ein",
             "searchWikidata": "Wikidata durchsuchen",
-            "wikipediaboxTitle": "Wikipedia",
-            "searchToShort": "Ihre Suchanfrage ist zu kurz, geben Sie einen längeren Text ein"
+            "wikipediaboxTitle": "Wikipedia"
         }
     },
     "image": {
@@ -575,12 +575,12 @@
                 "arglayerid": "Der Name einer Ebene ODER ein einzelner Suchbegriff",
                 "argsearch": "Der Suchbegriff",
                 "argverb": "Entweder in einem geografischen Gebiet (z. B. einer Stadt) oder in der Nähe eines POI suchen",
+                "docs": "Sucht Interessante Orte in oder in der Nähe eines Standorts",
                 "noMatchingLayer": "Ich habe keine passende Ebene gefunden",
                 "noNearOrIn": "Entschuldigung, ich habe Ihren Befehl nicht verstanden, da ich kein <code>in der Nähe</code> oder <code>in</code> in Ihrer Suchanfrage gefunden habe.\n Versuchen Sie etwas wie <code>Suche Trinkwasser in London</code>, <code>Suche Friture in Brüssel</code>\n Alternativ versuchen Sie <code>info {cmd}</code>, um Informationen über ein einzelnes Objekt zu erhalten.",
                 "nothingFound": "Entschuldigung, ich konnte nichts für <code>{search}</code> finden, also kann ich nicht nach {layerTitle} suchen",
                 "overview": "Ich habe {length} passende Artikel gefunden.",
-                "searching": "Suche {layerTitle} {mode} <code>{search}</code>…",
-                "docs": "Sucht Interessante Orte in oder in der Nähe eines Standorts"
+                "searching": "Suche {layerTitle} {mode} <code>{search}</code>…"
             },
             "shutdown": {
                 "argmode": "Gibt an, ob der Dienst neu gestartet werden soll, muss einer der folgenden Werte sein: {verbs}",

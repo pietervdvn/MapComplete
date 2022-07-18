@@ -630,7 +630,7 @@
           }
         }
       ],
-      "isShown":{
+      "isShown": {
         "or": [
           "_imported_osm_object_found!=true",
           "_imported_osm_still_fresh!=true"

@@ -737,6 +737,15 @@
         "shortDescription": "Öffentlich zugängliche Türme zum Genießen der Aussicht",
         "title": "Aussichtstürme"
     },
+    "onwheels": {
+        "overrideAll": {
+            "+tagRenderings": {
+                "_poi_entrance:width": {
+                    "render": "Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter"
+                }
+            }
+        }
+    },
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
         "title": "Freie Windenergie-Karte"

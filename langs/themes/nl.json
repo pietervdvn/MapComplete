@@ -1011,6 +1011,15 @@
         "shortDescription": "Publieke uitkijktorens om van het panorama te genieten",
         "title": "Uitkijktorens"
     },
+    "onwheels": {
+        "overrideAll": {
+            "+tagRenderings": {
+                "_poi_entrance:width": {
+                    "render": "Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter"
+                }
+            }
+        }
+    },
     "openwindpowermap": {
         "description": "Een kaart om windturbines te tonen en te bewerken.",
         "title": "Windmolens"
