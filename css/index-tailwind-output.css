@@ -1042,20 +1042,20 @@ video {
   height: 6rem;
 }
 
-.h-8 {
-  height: 2rem;
+.h-10 {
+  height: 2.5rem;
 }
 
 .h-full {
   height: 100%;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-12 {
   height: 3rem;
+}
+
+.h-8 {
+  height: 2rem;
 }
 
 .h-1\/2 {
@@ -1126,12 +1126,8 @@ video {
   width: 100%;
 }
 
-.w-8 {
-  width: 2rem;
-}
-
-.w-1 {
-  width: 0.25rem;
+.w-10 {
+  width: 2.5rem;
 }
 
 .w-24 {
@@ -1142,12 +1138,12 @@ video {
   width: 1.5rem;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-12 {
   width: 3rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-0 {
@@ -1290,6 +1286,10 @@ video {
   flex-wrap: wrap-reverse;
 }
 
+.place-content-center {
+  place-content: center;
+}
+
 .content-start {
   align-content: flex-start;
 }
@@ -1412,12 +1412,12 @@ video {
   border-bottom-left-radius: 0.25rem;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .border-2 {
   border-width: 2px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-4 {
@@ -1430,6 +1430,15 @@ video {
 
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.border-blue-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(59, 130, 246, var(--tw-border-opacity));
 }
 
 .border-gray-500 {
@@ -1464,6 +1473,11 @@ video {
 
 .border-opacity-50 {
   --tw-border-opacity: 0.5;
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1550,10 +1564,6 @@ video {
   padding-right: 1rem;
 }
 
-.pr-2 {
-  padding-right: 0.5rem;
-}
-
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1620,6 +1630,10 @@ video {
 
 .pt-0\.5 {
   padding-top: 0.125rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .pl-6 {
@@ -1691,10 +1705,6 @@ video {
 
 .lowercase {
   text-transform: lowercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }
 
 .italic {
@@ -1837,11 +1847,11 @@ video {
 }
 
 .z-above-map {
-  z-index: 10000
+  z-index: 10000;
 }
 
 .z-above-controls {
-  z-index: 10001
+  z-index: 10001;
 }
 
 .bg-subtle {
@@ -1863,14 +1873,14 @@ video {
      * Base colour of interactive elements, mainly the 'subtle button'
      * 
      */
-  --subtle-detail-color: #DBEAFE;
+  --subtle-detail-color: #dbeafe;
   --subtle-detail-color-contrast: black;
   --subtle-detail-color-light-contrast: lightgrey;
   /**
      * A stronger variant of the 'subtle-detail-colour'
      * Used as subtle button hover
      */
-  --unsubtle-detail-color: #BFDBFE;
+  --unsubtle-detail-color: #bfdbfe;
   --unsubtle-detail-color-contrast: black;
   --catch-detail-color: #3a3aeb;
   --catch-detail-color-contrast: white;
@@ -1884,7 +1894,8 @@ video {
   --variable-title-height: 0px;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   min-height: 100vh;
   min-height: -webkit-fill-available;
@@ -1892,7 +1903,7 @@ html, body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--foreground-color);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 .leaflet-overlay-pane .leaflet-zoom-animated {
@@ -1915,7 +1926,8 @@ html, body {
   height: 100% !important;
 }
 
-svg, img {
+svg,
+img {
   box-sizing: content-box;
   width: 100%;
   height: 100%;
@@ -2019,6 +2031,39 @@ a {
   height: min-content;
 }
 
+/* alex */
+
+input[type="range"].vertical {
+  -webkit-writing-mode: bt-lr;
+      -ms-writing-mode: bt-lr;
+          writing-mode: bt-lr;
+  /* IE */
+  -webkit-appearance: slider-vertical;
+  /* Chromium */
+  width: 8px;
+  height: 310px;
+  padding: 0 5px;
+}
+
+/* 
+.elevatorslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background: url("../MapComplete/assets/svg/bug.svg");
+  cursor: pointer;
+}
+
+.elevatorslider::-moz-range-thumb {
+  width: 23px;
+  height: 25px;
+  border: 0;
+  background: url("../MapComplete/assets/svg/bug.svg");
+  cursor: pointer;
+} */
+
 .border-detail {
   border-color: var(--foreground-color);
 }
@@ -2088,7 +2133,7 @@ p {
 }
 
 li::marker {
-  content: "•"
+  content: "•";
 }
 
 .subtle-background {
@@ -2098,7 +2143,7 @@ li::marker {
 
 .normal-background {
   background: var(--background-color);
-  color: var(--foreground-color)
+  color: var(--foreground-color);
 }
 
 .subtle-lighter {
@@ -2176,7 +2221,8 @@ li::marker {
   color: unset !important;
 }
 
-.disable-links a.must-link, .disable-links .must-link a {
+.disable-links a.must-link,
+.disable-links .must-link a {
   /* Hide links if they are disabled */
   display: none;
 }
@@ -2395,7 +2441,7 @@ li::marker {
 /***************** Info box (box containing features and questions ******************/
 
 input {
-  color: var(--foreground-color)
+  color: var(--foreground-color);
 }
 
 .leaflet-popup-content {
@@ -2447,7 +2493,7 @@ input {
 }
 
 .animate-height {
-  transition: max-height .5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
   overflow-y: hidden;
 }
 
@@ -2477,7 +2523,7 @@ input {
 
 .mapping-icon-small-height {
   /* A mapping icon type */
-  height: 2rem;
+  height: 1.5rem;
   margin-right: 0.5rem;
   width: unset;
 }
@@ -2511,7 +2557,7 @@ input {
   margin-left: 1rem;
 }
 
-.mapping-icon-large{
+.mapping-icon-large {
   /* A mapping icon type */
   width: 6rem;
   max-height: 5rem;
@@ -2809,4 +2855,3 @@ input {
     display: inline;
   }
 }
-

@@ -1,0 +1,20 @@
+{
+    "id": "governments",
+    "title": {
+        "en": "Governmental Offices"
+    },
+    "description": {
+        "en": "On this map, Governmental offices are shown and can be easily added"
+    },
+    "maintainer": "MapComplete",
+    "icon": "./assets/themes/onwheels/crest.svg",
+    "version": "0",
+    "startLat": 50.8465573,
+    "defaultBackgroundId": "CartoDB.Voyager",
+    "startLon": 4.351697,
+    "startZoom": 16,
+    "widenFactor": 2,
+    "layers": [
+        "governments"
+    ]
+}
