@@ -1,0 +1,21 @@
+{
+  "id": "walls_and_buildings",
+  "title": {
+    "en": "Walls and buildings"
+  },
+  "description": {
+    "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user."
+  },
+  "maintainer": "MapComplete",
+  "icon": "./assets/layers/walls_and_buildings/walls_and_buildings.png",
+  "version": "0",
+  "startLat": 50.8465573,
+  "defaultBackgroundId": "CartoDB.Voyager",
+  "startLon": 4.351697,
+  "startZoom": 16,
+  "widenFactor": 2,
+  "layers": [
+    "walls_and_buildings",
+    "entrance"
+  ]
+}
