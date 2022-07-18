@@ -6,7 +6,13 @@
   "title": {
     "render": {
       "en": "{name}"
-    }
+    },
+    "mappings": [{
+      "if": "name=",
+      "then": {
+        "en": "Pharmacy"
+      }
+    }]
   },
   "source": {
     "osmTags": {
