@@ -39,6 +39,7 @@
     "+tagRenderings": [
       {
         "id": "_poi_entrance:width",
+        "condition": "entrance=",
         "render": {
           "en": "This door has a width of {canonical(_poi_entrance:width)} meter",
           "nl": "Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter",
