@@ -55,7 +55,7 @@ class TranslationPart {
             }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
-                console.error(`Non-string object at ${context} in translation while trying to add more translations to '` + translationsKey + "': ", v)
+                console.error(`Non-string object at ${context} in translation while trying to add more translations to '` + translationsKey + "'. The offending object which _should_ be a translation is: ", v)
                 throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
             this.contents.set(translationsKey, v)
