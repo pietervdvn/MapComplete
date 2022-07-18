@@ -3940,6 +3940,11 @@
     "hotel": {
         "description": "Laag die alle hotels toont",
         "name": "Hotels",
+        "presets": {
+            "0": {
+                "title": "een hotel"
+            }
+        },
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -3948,6 +3953,14 @@
                 "question": "Wat is de naam van dit hotel?",
                 "render": "Dit hotel heet {name}"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            },
+            "render": "Hotel"
         }
     },
     "hydrant": {

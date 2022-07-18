@@ -4064,6 +4064,11 @@
     "hotel": {
         "description": "Layer showing all hotels",
         "name": "Hotels",
+        "presets": {
+            "0": {
+                "title": "a hotel"
+            }
+        },
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -4072,6 +4077,14 @@
                 "question": "What is the name of this hotel?",
                 "render": "This hotel is called {name}"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            },
+            "render": "Hotel"
         }
     },
     "hydrant": {
