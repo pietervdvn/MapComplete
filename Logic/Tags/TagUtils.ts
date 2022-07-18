@@ -336,7 +336,7 @@ export class TagUtils {
             if (json["or"] !== undefined) {
                 return new Or(json["or"].map(t => TagUtils.Tag(t, context)));
             }
-            throw "At " + context + ": unrecognized tag"
+            throw `At ${context}: unrecognized tag: ${JSON.stringify(json)}`
         }
 
 
