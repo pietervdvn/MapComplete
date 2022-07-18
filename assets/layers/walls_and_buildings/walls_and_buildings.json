@@ -51,7 +51,7 @@
   ],
   "tagRenderings": [
     {
-      "id": "Entrance_width",
+      "id": "_entrance:width",
       "render": {
         "en": "This door has a width of {canonical(_entrance:width)} meter",
         "nl": "Deze deur heeft een breedte van {canonical(_entrance:width)} meter",

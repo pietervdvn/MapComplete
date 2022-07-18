@@ -140,7 +140,7 @@
       },
       "render": {
         "en": "There are {capacity:disabled} disabled parking spots",
-        "nl": "Er zijn capacity:disabled} parkeerplaatsen voor gehandicapten"
+        "nl": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten"
       }
     },
     {

@@ -4,7 +4,7 @@
     "en": "OnWheels"
   },
   "description": {
-      "en": "On this map, publicly wheelchair accessible places are shown and can be easily added"
+    "en": "On this map, publicly wheelchair accessible places are shown and can be easily added"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/onwheels/crest.svg",
@@ -31,6 +31,34 @@
     "walls_and_buildings"
   ],
   "overrideAll": {
+    "+calculatedTags": [
+      "_poi_walls_and_buildings_entrance_properties=feat.closestn('walls_and_buildings', 1, undefined, 1000).map(w => ({id: w.feat.properties.id, width: w.feat.properties['_entrance:width']}))[0]",
+      "_poi_entrance:width=JSON.parse(feat.properties._poi_walls_and_buildings_entrance_properties)?.width"
+
+    ],
+    "+tagRenderings": [
+      {
+        "id": "_poi_entrance:width",
+        "render": {
+          "en": "This door has a width of {canonical(_poi_entrance:width)} meter",
+          "nl": "Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter",
+          "de": "Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter",
+          "es": "Esta puerta tiene una ancho de {canonical(_poi_entrance:width)} metros"
+        },
+        "freeform": {
+          "key": "_poi_entrance:width",
+          "type": "distance"
+        },
+        "mappings": [
+          {
+            "if": "_poi_entrance:width=",
+            "then": {
+              "en": "This entrance has no width information"
+            }
+          }
+        ]
+      }
+    ],
     "minzoom": "15",
     "mapRendering": [
       {
