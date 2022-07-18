@@ -10,7 +10,11 @@ import Constants from "./constants";
  * @returns List of tags for the category
  */
 function categoryTags(category: string): GeoJsonProperties {
-  const tags = Constants.categories[category];
+  const tags = {
+    tags: Object.keys(Constants.categories[category]).map((tag) => {
+      return `${tag}=${Constants.categories[category][tag]}`;
+    }),
+  };
   if (!tags) {
     throw `Unknown category: ${category}`;
   }
@@ -25,9 +29,15 @@ function categoryTags(category: string): GeoJsonProperties {
  */
 function renameTags(item): GeoJsonProperties {
   const properties: GeoJsonProperties = {};
+  properties.tags = [];
   for (const key in item) {
     if (Constants.names[key] && item[key]) {
-      properties[Constants.names[key]] = item[key];
+      if (Constants.names[key] == "name" || Constants.names[key] == "id") {
+        properties[Constants.names[key]] = item[key];
+      }
+      if (Constants.names[key] !== "id") {
+        properties.tags.push(Constants.names[key] + "=" + item[key]);
+      }
     }
   }
   return properties;
@@ -72,6 +82,24 @@ function addUnits(properties: GeoJsonProperties): GeoJsonProperties {
 }
 
 /**
+ * Function that adds Maproulette instructions and blurb to each item
+ *
+ * @param properties The properties to add Maproulette tags to
+ * @param item The original CSV item
+ */
+function addMaprouletteTags(properties: GeoJsonProperties, item: any): GeoJsonProperties {
+  properties[
+    "blurb"
+  ] = `This is feature out of the ${item["Categorie"]} category.
+  It may match another OSM item, if so, you can add any missing tags to it.
+  If it doesn't match any other OSM item, you can create a new one.
+  Here is a list of tags that can be added:
+  ${properties["tags"].split(";").join("\n")}
+  You can also easily import this item using MapComplete: https://mapcomplete.osm.be/onwheels.html#${properties["id"]}`;
+  return properties;
+}
+
+/**
  * Main function to convert original CSV into GeoJSON
  *
  * @param args List of arguments [input.csv]
@@ -109,39 +137,23 @@ function main(args: string[]): void {
 
     // Add standard tags for category
     const category = item["Categorie"];
-    properties = { ...properties, ...categoryTags(category) };
+    const tagsCategory = categoryTags(category);
 
     // Add the rest of the needed tags
     properties = { ...properties, ...renameTags(item) };
 
+    // Merge them together
+    properties.tags = [...tagsCategory.tags, ...properties.tags];
+    properties.tags = properties.tags.join(";");
+
     // Convert types
     properties = convertTypes(properties);
 
-    // Loop through all the properties
-    // for (var key in item) {
-    //   // Check if we need the property, and it's not empty
-    //   if (Constants.names[key] && item[key]) {
-    //     // Check if the type needs to be converted
-    //     if (Constants.types[key]) {
-    //       // Conversion necessary, use the typeTable
-    //       switch (Constants.types[key]) {
-    //         case "boolean":
-    //           properties[Constants.names[key]] =
-    //             item[key] === "1" ? "yes" : "no";
-    //           break;
-    //         default:
-    //           properties[Constants.names[key]] = item[key];
-    //           break;
-    //       }
-    //     } else {
-    //       // No conversion necessary, we can just add the property
-    //       properties[Constants.names[key]] = item[key];
-    //     }
-    //   }
-    // }
-
     // Add units if necessary
     addUnits(properties);
+
+    // Add Maproulette tags
+    properties = addMaprouletteTags(properties, item);
 
     // Create the new feature
     const feature: Feature = {
@@ -169,7 +181,10 @@ function main(args: string[]): void {
 
   // Write the data to a file
   if (output) {
-    writeFileSync(`${output}.geojson`, JSON.stringify(featureCollection, null, 2));
+    writeFileSync(
+      `${output}.geojson`,
+      JSON.stringify(featureCollection, null, 2)
+    );
   }
 }
 

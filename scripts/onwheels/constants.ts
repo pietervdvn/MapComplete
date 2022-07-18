@@ -18,7 +18,7 @@ export default class Constants {
       amenity: "parking",
     },
     hotel: {
-      leisure: "hotel",
+      tourism: "hotel",
     },
     wc: {
       amenity: "toilets",
