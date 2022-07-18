@@ -228,7 +228,7 @@ a {
   height: min-content;
 }
 
-/* alex */
+/* slider */
 input[type="range"].vertical {
   writing-mode: bt-lr; /* IE */
   -webkit-appearance: slider-vertical; /* Chromium */
@@ -236,14 +236,13 @@ input[type="range"].vertical {
   height: 310px;
   padding: 0 5px;
 }
-/* 
-.elevatorslider::-webkit-slider-thumb {
-  -webkit-appearance: none;
+
+/* .elevatorslider::-webkit-slider-thumb {
   appearance: none;
   width: 23px;
   height: 24px;
   border: 0;
-  background: url("../MapComplete/assets/svg/bug.svg");
+  background: url("/assets/svg/bug.svg") !important;
   cursor: pointer;
 }
 
@@ -251,9 +250,9 @@ input[type="range"].vertical {
   width: 23px;
   height: 25px;
   border: 0;
-  background: url("../MapComplete/assets/svg/bug.svg");
+  background: url("/assets/svg/bug.svg") !important;
   cursor: pointer;
-} */
+}  */
 
 .border-detail {
   border-color: var(--foreground-color);

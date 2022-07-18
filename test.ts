@@ -5,32 +5,29 @@ import { FixedUiElement } from "./UI/Base/FixedUiElement";
 import { VariableUiElement } from "./UI/Base/VariableUIElement";
 import { FixedInputElement } from "./UI/Input/FixedInputElement";
 import Slider from "./UI/Input/Slider";
-import Toggle from "./UI/Input/Toggle";
+import Toggle, { ClickableToggle } from "./UI/Input/Toggle";
 
 const testData = ["-1", "0", "0.5", "1", "1.5", "2"]
+let slider = new Slider(0, testData.length - 1);
 
-const values = testData.map((data) => new FixedUiElement(data).onClick(() => {
-  values.map((val) => {
-    val.RemoveClass("active bg-blue-200")
-    if (val.content === data) {
-      const options = {
-        value : new UIEventSource<number>(testData.indexOf(val.content)),
-      }
-      val.SetClass("active bg-blue-200")
-      const newSlider = new Slider(0, testData.length-1, options).SetClass("flex vertical m-4 elevatorslider");
-      new Combine([valCombine, newSlider]).SetClass("flex flex-row h-10").AttachTo("extradiv")
-      console.log(slider.GetValue())
+const toggleClass = "flex border-2 border-blue-500 rounded-full w-10 h-10 place-content-center items-center"
+
+const values = testData.map((data, i) => new ClickableToggle(
+  new FixedUiElement(data).SetClass("active bg-subtle " + toggleClass), new FixedUiElement(data).SetClass(toggleClass), slider.GetValue().sync(
+    (sliderVal) => {
+      return sliderVal === i
+    },
+    [],
+    (isSelected) => {
+      return isSelected ? i : slider.GetValue().data
     }
-  })
-}).SetClass("flex flex-column bg-slate-200 w-10 h-10 border-2 border-blue-500 border-solid rounded-full place-content-center items-center m-4"))
+  ))
+  .ToggleOnClick()
+  .SetClass("flex flex-column bg-slate-200 m-4 w-10 h-10"))
 
 const valCombine = new Combine(values.reverse())
-// valCombine.AttachTo("maindiv")
-
-const slider = new Slider(0, testData.length-1);
 
 slider.SetClass("flex vertical m-4 elevatorslider")
 
 new Combine([valCombine, slider]).SetClass("flex flex-row h-10").AttachTo("extradiv")
 
-console.log(slider)
