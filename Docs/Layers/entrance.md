@@ -28,6 +28,7 @@ A layer showing entrances and offering capabilities to survey some advanced data
 
 
   - [entrances](https://mapcomplete.osm.be/entrances)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

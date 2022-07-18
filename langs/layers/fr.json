@@ -2419,6 +2419,11 @@
             }
         },
         "tagRenderings": {
+            "8": {
+                "override": {
+                    "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
+                }
+            },
             "capacity": {
                 "question": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?",
                 "render": "Cette école peut accueillir au maximum {capacity} étudiants"
@@ -2465,18 +2470,6 @@
                     }
                 },
                 "question": "Quels genres de personnes peuvent s'inscrire dans cette école ?"
-            },
-            "language": {
-                "mappings": {
-                    "0": {
-                        "then": "La langue principale de cette école est inconnue"
-                    },
-                    "4": {
-                        "then": "La langue principale de cette école est inconnue"
-                    }
-                },
-                "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",
-                "render": "{school:language} est la langue principale de {title()}"
             },
             "school-name": {
                 "question": "Quel est le nom de cet établissement scolaire?",

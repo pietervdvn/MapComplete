@@ -364,7 +364,7 @@
             "title": "Mit vorhandenen Daten vergleichen",
             "titleLive": "Live-Daten auf OSM",
             "titleNearby": "Objekte in der Nähe",
-            "zoomIn": "Live-Daten werden ab Zoomstufe {needed} angezeigt. Die aktuelle Zoomstufe ist {current}"
+            "zoomIn": "Die aktuelle Zoomstufe ist {current}"
         },
         "createNotes": {
             "creating": "<b>{count}</b> Notizen von {total} erstellt",

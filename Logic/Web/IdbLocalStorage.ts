@@ -7,8 +7,12 @@ import {Utils} from "../../Utils";
  */
 export class IdbLocalStorage {
 
-
+    private static readonly _sourceCache: Record<string, UIEventSource<any>> = {}
+    
     public static Get<T>(key: string, options?: { defaultValue?: T, whenLoaded?: (t: T | null) => void }): UIEventSource<T> {
+        if(IdbLocalStorage._sourceCache[key] !== undefined){
+            return IdbLocalStorage._sourceCache[key]
+        }
         const src = new UIEventSource<T>(options?.defaultValue, "idb-local-storage:" + key)
         if (Utils.runningFromConsole) {
             return src;
@@ -26,6 +30,7 @@ export class IdbLocalStorage {
                 options?.whenLoaded(null)
             }
         })
+        IdbLocalStorage._sourceCache[key] = src;
         return src;
 
     }

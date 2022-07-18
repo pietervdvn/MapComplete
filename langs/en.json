@@ -160,6 +160,7 @@
         },
         "nameInlineQuestion": "The name of this {category} is $$$",
         "next": "Next",
+        "noMatchingMapping": "No entries mapped your search…",
         "noNameCategory": "{category} without a name",
         "noTagsSelected": "No tags selected",
         "notValid": "Select a valid value to continue",
@@ -234,6 +235,8 @@
         "skip": "Skip this question",
         "skippedQuestions": "Some questions are skipped",
         "testing": "Testing - changes won't be saved",
+        "useSearch": "Use the search above to see presets",
+        "useSearchForMore": "Use the search function to search within {total} more values....",
         "weekdays": {
             "abbreviations": {
                 "friday": "Fri",
@@ -355,6 +358,7 @@
             "osmLoaded": "{count} elements are loaded from OpenStreetMap which match the layer <b>{name}</b>.",
             "reloadTheCache": "Clear the cache and query overpass again",
             "setRangeToZero": "Set the range to 0 or 1 if you want to import them all",
+            "showOsmLayerInConflationMap": "Show the OSM data",
             "states": {
                 "error": "Could not load latest data from overpass due to {error}",
                 "idle": "Checking local storage…",
@@ -364,7 +368,8 @@
             "title": "Compare with existing data",
             "titleLive": "Live data on OSM",
             "titleNearby": "Nearby features",
-            "zoomIn": "The live data is shown if the zoomlevel is at least {needed}. The current zoom level is {current}"
+            "zoomIn": "The current zoom level is {current}",
+            "zoomLevelSelection": "The live data is shown if the zoomlevel is at least: "
         },
         "createNotes": {
             "creating": "Created <b>{count}</b> notes out of {total}",

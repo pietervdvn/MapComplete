@@ -1,0 +1,1162 @@
+[
+  {
+    "path": "ID.svg",
+    "license": "WTFPL",
+    "authors": [
+      "iD editor"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:ID.svg"
+    ]
+  },
+  {
+    "path": "fas-baby-carriage.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-bath.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-blender.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-book.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-camera-retro.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-cannabis.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-car-battery.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-carrot.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-cat.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-cheese.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-compact-disc.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-couch.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-crutch.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-dice.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-dolly.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-door-open.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-dragon.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-futbol.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-guitar.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-hat-cowboy-side.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-key.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-laptop.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-leaf.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-microchip.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-motorcycle.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-newspaper.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-paint-roller.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-paperclip.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-pills.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-plug.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-print.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-rocket.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-store.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-suitcase-rolling.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-suitcase.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-tape.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-tractor.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-trophy.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-vector-square.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "fas-wine-bottle.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Font-Awesome icon set"
+    ],
+    "sources": [
+      "https://github.com/FortAwesome/Font-Awesome"
+    ]
+  },
+  {
+    "path": "maki-alcohol-shop.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-bakery.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-bicycle.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-car-repair.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-car.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-cemetery.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-clothing-store.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-confectionery.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-florist.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-gaming.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-garden-centre.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-gift.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-grocery.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-jewelry-store.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-lodging.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-optician.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-shoe.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-shop.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-teahouse.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-telephone.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-warehouse.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "maki-watch.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki icon set"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki"
+    ]
+  },
+  {
+    "path": "temaki-balloon.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-beauty_salon.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-boat.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-bottles.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-bow_and_arrow.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-camper_trailer.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-cleaver.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-cloth.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-clothes_hanger.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-coffee.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-compass.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-curtains.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-dagger.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-desk_lamp.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-fashion_accessories.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-fireplace.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-fish_cleaning.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-furniture.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-hair_care.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-hammer_shoe.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-handbag.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-hearing_aid.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-ice_fishing.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-kitchen_sink.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-laundry.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-lipstick.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-meat.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-military.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-money_hand.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-motorcycle_repair.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-movie_rental.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-needle_and_spool.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-perfume.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-pet_grooming.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-pipe.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-power.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-propane_tank.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-psychic.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-rocket_firework.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-scuba_diving.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-spa.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-speaker.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-spice_bottle.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-storage_fermenter.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-storage_rental.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-tattoo_machine.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-tiling.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-tire.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-tools.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-vacuum.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-vase.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-water_bottle.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  },
+  {
+    "path": "temaki-window.svg",
+    "license": "CC0",
+    "authors": [
+      "Temaki icon set"
+    ],
+    "sources": [
+      "https://github.com/ideditor/temaki"
+    ]
+  }
+]

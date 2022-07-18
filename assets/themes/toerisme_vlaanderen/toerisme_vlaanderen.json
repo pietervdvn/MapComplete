@@ -227,7 +227,8 @@
         "filter": {
           "sameAs": "bicycle_rental_non_docking"
         },
-        "minzoom": 18
+        "minzoom": 18,
+        "=presets": []
       }
     },
     {

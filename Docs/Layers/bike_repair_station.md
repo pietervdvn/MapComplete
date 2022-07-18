@@ -26,6 +26,7 @@ A layer showing bicycle pumps and bicycle repair tool stands
 
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

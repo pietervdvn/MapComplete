@@ -73,15 +73,7 @@
           ]
         }
       },
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "id!~way/.*",
-            "then": "no"
-          }
-        ]
-      },
+      "isShown": "id~way/.*",
       "description": {
         "nl": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen",
         "en": "A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist",

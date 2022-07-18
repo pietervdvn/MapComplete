@@ -4053,7 +4053,7 @@
                     "placeholder": "Hoogte van de stoeprand"
                 },
                 "question": "Hoe hoog is deze stoeprand?",
-                "render": "Stoeprandhoogte: {{kerb:height}}"
+                "render": "Stoeprandhoogte: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4187,6 +4187,9 @@
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
+                        "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
+                    },
+                    "1": {
                         "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
                     }
                 },
@@ -4530,6 +4533,65 @@
         "presets": {
             "0": {
                 "title": "een parking voor auto's"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Aantal parkeerplaatsen"
+                },
+                "question": "Hoeveel parkeerplaatsen zijn er op deze parking?",
+                "render": "Er zijn {capacity} parkeerplaatsen"
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Aantal parkeerplaatsen voor gehandicapten"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn parkeerplaatsen voor gehandicapten, maar het is niet bekend hoeveel er zijn"
+                    },
+                    "1": {
+                        "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
+                    }
+                },
+                "question": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
+                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een bovengronds parkeerterrein"
+                    },
+                    "1": {
+                        "then": "Dit is een parkeerplek langs een weg"
+                    },
+                    "2": {
+                        "then": "Dit is een ondergrondse parkeergarage"
+                    },
+                    "3": {
+                        "then": "Dit is een bovengrondse parkeergarage met meerdere verdiepingen"
+                    },
+                    "4": {
+                        "then": "Dit is een parkeerdek op een dak"
+                    },
+                    "5": {
+                        "then": "Dit is een strook voor parkeren op de weg"
+                    },
+                    "6": {
+                        "then": "Dit is parking overdekt met carports"
+                    },
+                    "7": {
+                        "then": "Dit is een parking bestaande uit garageboxen"
+                    },
+                    "8": {
+                        "then": "Dit is een parkeerplek op een layby"
+                    },
+                    "9": {
+                        "then": "Dit is een parking bestaande uit schuren"
+                    }
+                },
+                "question": "Wat voor parking is dit?"
             }
         },
         "title": {
@@ -5050,6 +5112,16 @@
             }
         },
         "tagRenderings": {
+            "8": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "De voertaal van deze school is niet gekend"
+                        }
+                    },
+                    "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
+                }
+            },
             "capacity": {
                 "question": "Ten hoogste hoeveel studenten kunnen er les volgen in deze school?",
                 "render": "Deze school kan maximaal {capacity} studenten lesgeven"
@@ -5096,30 +5168,6 @@
                     }
                 },
                 "question": "Mogen jongens en meisjes les volgen op deze school?"
-            },
-            "language": {
-                "freeform": {
-                    "placeholder": "Taal in lowercase Engel"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "De voertaal van deze school is niet gekend"
-                    },
-                    "1": {
-                        "then": "Frans is de voertaal van {name}"
-                    },
-                    "2": {
-                        "then": "Nederlands is de voertaal van {name}"
-                    },
-                    "3": {
-                        "then": "Duits is de voertaal van {name}"
-                    },
-                    "4": {
-                        "then": "De voertaal van deze school is niet gekend"
-                    }
-                },
-                "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>",
-                "render": "{school:language} is de voertaal van {title()}"
             },
             "school-name": {
                 "question": "Wat is de naam van deze school?",
@@ -5210,11 +5258,13 @@
             }
         },
         "tagRenderings": {
+            "2": {
+                "override": {
+                    "question": "Wat voor soort winkel is dit?"
+                }
+            },
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?"
-            },
-            "shops-type-from-id": {
-                "question": "Wat voor soort winkel is dit?"
             }
         },
         "title": {

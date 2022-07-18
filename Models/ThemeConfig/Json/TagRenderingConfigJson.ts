@@ -1,4 +1,4 @@
-import {AndOrTagConfigJson} from "./TagConfigJson";
+import {TagConfigJson} from "./TagConfigJson";
 
 /**
  * A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.
@@ -35,11 +35,45 @@ export interface TagRenderingConfigJson {
     render?: string | any,
     
     /**
-     * Only show this tagrendering (or question) if the object also matches the following tags.
+     * Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.
      *
-     * This is useful to ask a follow-up question. E.g. if there is a diaper table, then ask a follow-up question on diaper tables...
+     * This is useful to ask a follow-up question.
+     * For example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.
+     * This can be done by adding `"condition": "changing_table=yes"`
+     * 
+     * A full example would be:
+     * ```json
+     *     {
+     *       "question": "Where is the changing table located?",
+     *       "render": "The changing table is located at {changing_table:location}",
+     *       "condition": "changing_table=yes",
+     *       "freeform": {
+     *         "key": "changing_table:location",
+     *         "inline": true
+     *       },
+     *       "mappings": [
+     *         {
+     *           "then": "The changing table is in the toilet for women.",
+     *           "if": "changing_table:location=female_toilet"
+     *         },
+     *         {
+     *           "then": "The changing table is in the toilet for men.",
+     *           "if": "changing_table:location=male_toilet"
+     *         },
+     *         {
+     *           "if": "changing_table:location=wheelchair_toilet",
+     *           "then": "The changing table is in the toilet for wheelchair users.",
+     *         },
+     *         {
+     *           "if": "changing_table:location=dedicated_room",
+     *           "then": "The changing table is in a dedicated room. ",
+     *         }
+     *       ],
+     *       "id": "toilet-changing_table:location"
+     *     },
+     * ```
      * */
-    condition?: AndOrTagConfigJson | string;
+    condition?: TagConfigJson;
 
     /**
      * Allow freeform text input from the user
@@ -66,7 +100,7 @@ export interface TagRenderingConfigJson {
          *
          * This can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}
          */
-        if: AndOrTagConfigJson | string,
+        if: TagConfigJson,
         /**
          * If the condition `if` is met, the text `then` will be rendered.
          * If not known yet, the user will be presented with `then` as an option

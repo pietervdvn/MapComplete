@@ -1,0 +1,22 @@
+[
+  {
+    "path": "dentist.svg",
+    "license": "CC0",
+    "authors": [
+      "OSM Carto"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Dentist-14.svg"
+    ]
+  },
+  {
+    "path": "doctors.svg",
+    "license": "cc0",
+    "authors": [
+      "osmcarto"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Doctors-14.svg"
+    ]
+  }
+]

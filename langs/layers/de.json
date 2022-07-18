@@ -4122,7 +4122,7 @@
                     "placeholder": "Höhe des Bordsteins"
                 },
                 "question": "Wie hoch ist der Bordstein?",
-                "render": "Bordsteinhöhe: {{kerb:height}}"
+                "render": "Bordsteinhöhe: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4275,6 +4275,9 @@
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
+                        "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
+                    },
+                    "1": {
                         "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
                     }
                 },
@@ -5119,6 +5122,11 @@
             }
         },
         "tagRenderings": {
+            "8": {
+                "override": {
+                    "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
+                }
+            },
             "capacity": {
                 "question": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
                 "render": "Diese Schule kann höchstens {capacity} Schüler aufnehmen"
@@ -5165,30 +5173,6 @@
                     }
                 },
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
-            },
-            "language": {
-                "freeform": {
-                    "placeholder": "Sprache in Englisch in Kleinbuchstaben"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "Die Hauptsprache dieser Schule ist unbekannt"
-                    },
-                    "1": {
-                        "then": "Französisch ist die Hauptsprache von {name}"
-                    },
-                    "2": {
-                        "then": "Niederländisch ist die Hauptsprache von {name}"
-                    },
-                    "3": {
-                        "then": "Deutsch ist die Hauptsprache von {name}"
-                    },
-                    "4": {
-                        "then": "Die Hauptsprache dieser Schule ist unbekannt"
-                    }
-                },
-                "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
-                "render": "{school:language} ist die Hauptsprache von {title()}"
             },
             "school-name": {
                 "question": "Wie lautet der Name dieser Schule?",
@@ -5281,9 +5265,6 @@
         "tagRenderings": {
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?"
-            },
-            "shops-type-from-id": {
-                "question": "Was ist das für ein Geschäft?"
             }
         },
         "title": {

@@ -647,6 +647,10 @@
         "shortDescription": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
         "title": "Hydrants, Extinguishers, Fire stations, and Ambulance stations"
     },
+    "healthcare": {
+        "description": "On this map, various healthcare related items are shown",
+        "title": "Healthcare"
+    },
     "kerbs_and_crossings": {
         "description": "A map showing kerbs and crossings.",
         "title": "Kerbs and crossings"
@@ -736,6 +740,10 @@
         "description": "Publicly accessible towers to enjoy the view",
         "shortDescription": "Publicly accessible towers to enjoy the view",
         "title": "Observation towers"
+    },
+    "onwheels": {
+        "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
+        "title": "OnWheels"
     },
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
@@ -859,6 +867,10 @@
         "shortDescription": "A map showing postboxes and post offices",
         "title": "Postbox and Post Office Map"
     },
+    "rainbow_crossings": {
+        "description": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
+        "title": "Rainbow pedestrian crossings"
+    },
     "shops": {
         "description": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
         "shortDescription": "An editable map with basic shop information",
@@ -952,6 +964,10 @@
     "toilets": {
         "description": "A map of public toilets",
         "title": "Open Toilet Map"
+    },
+    "transit": {
+        "description": "Plan your trip with the help of the public transport system.",
+        "title": "Bus routes"
     },
     "trees": {
         "description": "Map all the trees!",

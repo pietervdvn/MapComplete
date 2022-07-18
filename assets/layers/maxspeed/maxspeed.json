@@ -72,6 +72,24 @@
       },
       "mappings": [
         {
+          "if": {
+            "and": [
+              "highway=living_street",
+              "_country!=be"
+            ]
+          },
+          "then": {
+            "en": "This is a living street, which has a maxspeed of 20km/h",
+            "de": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt",
+            "nl": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
+          },
+          "icon": {
+            "path": "./assets/layers/maxspeed/living_street_be.svg",
+            "class": "large"
+          },
+          "hideInAnswer": true
+        },
+        {
           "if": "highway=living_street",
           "then": {
             "en": "This is a living street, which has a maxspeed of 20km/h",

@@ -11,6 +11,7 @@ import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
 import {Or} from "../../Tags/Or";
 import {TagsFilter} from "../../Tags/TagsFilter";
 import {OsmObject} from "../../Osm/OsmObject";
+import {FeatureCollection} from "@turf/turf";
 
 /**
  * If a tile is needed (requested via the UIEventSource in the constructor), will download the appropriate tile and pass it via 'handleTile'
@@ -136,7 +137,7 @@ export default class OsmFeatureSource {
 
                 console.log("Got tile", z, x, y, "from the osm api")
                 this.rawDataHandlers.forEach(handler => handler(osmJson, Tiles.tile_index(z, x, y)))
-                const geojson = OsmToGeoJson.default(osmJson,
+                const geojson = <FeatureCollection<any , {id: string}>> OsmToGeoJson.default(osmJson,
                     // @ts-ignore
                     {
                         flatProperties: true

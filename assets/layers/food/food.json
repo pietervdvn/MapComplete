@@ -814,6 +814,20 @@
     }
   ],
   "deletion": {
+    "nonDeleteMappings": [
+      {
+        "if": "amenity=pub",
+        "then": {
+          "en": "This is actually a pub"
+        }
+      },
+      {
+        "if": "amenity=cafe",
+        "then": {
+          "en": "This is actually a cafe"
+        }
+      }
+    ],
     "softDeletionTags": {
       "and": [
         "amenity=",

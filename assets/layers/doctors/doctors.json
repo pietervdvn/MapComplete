@@ -1,0 +1,147 @@
+{
+  "id": "doctors",
+  "name": {
+    "en": "doctors"
+  },
+  "description": {
+    "en": "This layer shows doctor offices, dentists and other healthcare facilities"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=doctors",
+        "amenity=dentist",
+        "healthcare=physiotherapist"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Doctors Office {name}"
+    },
+    "mappings": [
+      {
+        "if": "amenity=doctors",
+        "then": "Doctors Office {name}"
+      },
+      {
+        "if": "amenity=dentist",
+        "then": "Dentists office {name}"
+      },
+      {
+        "if": "healthcare=physiotherapist",
+        "then": "Physiotherapists office {name}"
+      }
+    ]
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images",
+    "opening_hours",
+    "phone",
+    "email",
+    "website",
+    {
+      "question": {
+        "en": "What is the name of this doctors place?"
+      },
+      "render": {
+        "en": "This doctors place is called {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "name"
+    },
+    {
+      "condition": "amenity=doctors",
+      "id": "specialty",
+      "render": {
+        "en": "This doctor is specialized in {healthcare:speciality}"
+      },
+      "question": {
+        "en": "What is this doctor specialized in?"
+      },
+      "freeform": {
+        "key": "healthcare:speciality"
+      },
+      "mappings": [
+        {
+          "if": "healthcare:speciality=general",
+          "then": {
+            "en": "This is a general practitioner"
+          }
+        },
+        {
+          "if": "healthcare:speciality=gynaecology",
+          "then": {
+            "en": "This is a gynaecologist"
+          }
+        },
+        {
+          "if": "healthcare:speciality=psychiatry",
+          "then": {
+            "en": "This is a psychiatrist"
+          }
+        },
+        {
+          "if": "healthcare:speciality=paediatrics",
+          "then": {
+            "en": "This is a paediatrician"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a doctors office"
+      },
+      "tags": [
+        "amenity=doctors"
+      ]
+    },
+    {
+      "title": {
+        "en": "a dentists office"
+      },
+      "tags": [
+        "amenity=dentist"
+      ]
+    },
+    {
+      "title": {
+        "en": "a physiotherapists office"
+      },
+      "tags": [
+        "healthcare=physiotherapist"
+      ]
+    }
+  ],
+  "filter": [
+    {
+      "id": "opened-now",
+      "options": [
+        {
+          "question": {
+            "en": "Opened now"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "circle:white;./assets/layers/doctors/doctors.svg"
+      },
+      "iconSize": "40,40,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

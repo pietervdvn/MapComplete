@@ -208,6 +208,10 @@
                 "then": "./assets/themes/hailhydrant/logo.svg"
               },
               {
+                "if": "theme=healthcare",
+                "then": "./assets/layers/doctors/doctors.svg"
+              },
+              {
                 "if": "theme=kerbs_and_crossings",
                 "then": "./assets/layers/kerbs/KerbIcon.svg"
               },
@@ -240,6 +244,10 @@
                 "then": "./assets/layers/observation_tower/Tower_observation.svg"
               },
               {
+                "if": "theme=onwheels",
+                "then": "./assets/themes/onwheels/crest.svg"
+              },
+              {
                 "if": "theme=openwindpowermap",
                 "then": "./assets/themes/openwindpowermap/logo.svg"
               },
@@ -270,6 +278,10 @@
               {
                 "if": "theme=postboxes",
                 "then": "./assets/themes/postboxes/postbox.svg"
+              },
+              {
+                "if": "theme=rainbow_crossings",
+                "then": "./assets/themes/rainbow_crossings/logo.svg"
               },
               {
                 "if": "theme=shops",
@@ -308,12 +320,20 @@
                 "then": "./assets/themes/toilets/toilets.svg"
               },
               {
+                "if": "theme=transit",
+                "then": "./assets/layers/transit_stops/bus_stop.svg"
+              },
+              {
                 "if": "theme=trees",
                 "then": "./assets/themes/trees/logo.svg"
               },
               {
                 "if": "theme=uk_addresses",
                 "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              },
+              {
+                "if": "theme=walls_and_buildings",
+                "then": "./assets/layers/walls_and_buildings/walls_and_buildings.png"
               },
               {
                 "if": "theme=waste",

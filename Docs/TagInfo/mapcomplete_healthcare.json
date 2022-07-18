@@ -1,0 +1,198 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Healthcare",
+    "description": "On this map, various healthcare related items are shown",
+    "project_url": "https://mapcomplete.osm.be/healthcare",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/layers/doctors/doctors.svg",
+    "contact_name": "Pieter Vander Vennet, MapComplete",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Healthcare has a layer doctors showing features with this tag",
+      "value": "doctors"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Healthcare has a layer doctors showing features with this tag",
+      "value": "dentist"
+    },
+    {
+      "key": "healthcare",
+      "description": "The MapComplete theme Healthcare has a layer doctors showing features with this tag",
+      "value": "physiotherapist"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'doctors' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'doctors' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'doctors' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'healthcare:speciality' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows healthcare:speciality=general with a fixed text, namely 'This is a general practitioner' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "general"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows healthcare:speciality=gynaecology with a fixed text, namely 'This is a gynaecologist' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "gynaecology"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows healthcare:speciality=psychiatry with a fixed text, namely 'This is a psychiatrist' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "psychiatry"
+    },
+    {
+      "key": "healthcare:speciality",
+      "description": "Layer 'doctors' shows healthcare:speciality=paediatrics with a fixed text, namely 'This is a paediatrician' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "paediatrics"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Healthcare has a layer Hospital showing features with this tag",
+      "value": "hospital"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Hospital' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Hospital' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Hospital' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Hospital' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Hospital' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Hospital' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Hospital' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Healthcare has a layer pharmacy showing features with this tag",
+      "value": "pharmacy"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'pharmacy' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'pharmacy' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'pharmacy' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'pharmacy' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'pharmacy' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'pharmacy' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'pharmacy' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'pharmacy' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'pharmacy' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'pharmacy' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "limited"
+    }
+  ]
+}

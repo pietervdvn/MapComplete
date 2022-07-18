@@ -25,16 +25,20 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
         state: FeaturePipelineState,
-        hashToShow?: string,
-        isShown?: UIEventSource<boolean>,
+        options?: {
+            hashToShow?: string,
+            isShown?: UIEventSource<boolean>,
+            setHash?: true | boolean
+        }
     ) {
         if (state === undefined) {
             throw "State is undefined!"
         }
         super(() => FeatureInfoBox.GenerateTitleBar(tags, layerConfig, state),
             () => FeatureInfoBox.GenerateContent(tags, layerConfig, state),
-            hashToShow ?? tags.data.id ?? "item",
-            isShown);
+            options?.hashToShow ?? tags.data.id ?? "item",
+            options?.isShown,
+            options);
 
         if (layerConfig === undefined) {
             throw "Undefined layerconfig";
@@ -50,7 +54,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         const titleIcons = new Combine(
             layerConfig.titleIcons.map(icon => {
                     return new TagRenderingAnswer(tags, icon, state,
-                        "block h-8 max-h-8 align-baseline box-content sm:p-0.5").SetClass("flex");
+                        "block h-8 max-h-8 align-baseline box-content sm:p-0.5 titleicon");
                 }
             ))
             .SetClass("flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2")

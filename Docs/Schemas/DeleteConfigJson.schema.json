@@ -28,9 +28,12 @@
         "type": "object",
         "properties": {
           "if": {
-            "$ref": "#/definitions/AndOrTagConfigJson"
+            "$ref": "#/definitions/TagConfigJson",
+            "description": "The tags that will be given to the object.\nThis must remove tags so that the 'source/osmTags' won't match anymore"
           },
-          "then": {}
+          "then": {
+            "description": "The human explanation for the options"
+          }
         },
         "required": [
           "if",
@@ -42,7 +45,12 @@
       "description": "In some cases, the contributor is not allowed to delete the current feature (e.g. because it isn't a point, the point is referenced by a relation or the user isn't experienced enough).\nTo still offer the user a 'delete'-option, the feature is retagged with these tags. This is a soft deletion, as the point isn't actually removed from OSM but rather marked as 'disused'\nIt is important that the feature will be retagged in such a way that it won't be picked up by the layer anymore!\n\nExample (note that \"amenity=\" erases the 'amenity'-key alltogether):\n```\n{\n    \"and\": [\"disussed:amenity=public_bookcase\", \"amenity=\"]\n}\n```\n\nor (notice the use of the ':='-tag to copy the old value of 'shop=*' into 'disused:shop='):\n```\n{\n    \"and\": [\"disused:shop:={shop}\", \"shop=\"]\n}\n```",
       "anyOf": [
         {
-          "$ref": "#/definitions/AndOrTagConfigJson"
+          "$ref": "#/definitions/AndTagConfigJson",
+          "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        },
+        {
+          "$ref": "#/definitions/OrTagConfigJson",
+          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
         },
         {
           "type": "string"
@@ -55,36 +63,62 @@
     }
   },
   "definitions": {
-    "AndOrTagConfigJson": {
+    "TagConfigJson": {
+      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/AndTagConfigJson"
+        },
+        {
+          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+          "type": "object",
+          "properties": {
+            "or": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TagConfigJson"
+              }
+            }
+          },
+          "required": [
+            "or"
+          ]
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "AndTagConfigJson": {
+      "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
       "type": "object",
       "properties": {
         "and": {
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
-          }
-        },
-        "or": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/definitions/TagConfigJson"
           }
         }
       },
+      "required": [
+        "and"
+      ],
+      "additionalProperties": false
+    },
+    "OrTagConfigJson": {
+      "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+      "type": "object",
+      "properties": {
+        "or": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TagConfigJson"
+          }
+        }
+      },
+      "required": [
+        "or"
+      ],
       "additionalProperties": false
     }
   },

@@ -3255,6 +3255,57 @@
         "description": "This layer visualizes directions",
         "name": "Direction visualization"
     },
+    "doctors": {
+        "description": "This layer shows doctor offices, dentists and other healthcare facilities",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Opened now"
+                    }
+                }
+            }
+        },
+        "name": "doctors",
+        "presets": {
+            "0": {
+                "title": "a doctors office"
+            },
+            "1": {
+                "title": "a dentists office"
+            },
+            "2": {
+                "title": "a physiotherapists office"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this doctors place?",
+                "render": "This doctors place is called {name}"
+            },
+            "specialty": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a general practitioner"
+                    },
+                    "1": {
+                        "then": "This is a gynaecologist"
+                    },
+                    "2": {
+                        "then": "This is a psychiatrist"
+                    },
+                    "3": {
+                        "then": "This is a paediatrician"
+                    }
+                },
+                "question": "What is this doctor specialized in?",
+                "render": "This doctor is specialized in {healthcare:speciality}"
+            }
+        },
+        "title": {
+            "render": "Doctors Office {name}"
+        }
+    },
     "dogpark": {
         "name": "dog parks",
         "presets": {
@@ -3567,6 +3618,14 @@
             "extraDeleteReasons": {
                 "0": {
                     "explanation": "{title()} has closed down permanently"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This is actually a pub"
+                },
+                "1": {
+                    "then": "This is actually a cafe"
                 }
             }
         },
@@ -3990,6 +4049,18 @@
             "render": "Hackerspace"
         }
     },
+    "hospital": {
+        "name": "Hospital",
+        "tagRenderings": {
+            "name": {
+                "question": "What does the of the hospital ?",
+                "render": "Name of the hospital name is {name}"
+            }
+        },
+        "title": {
+            "render": "Hospital"
+        }
+    },
     "hydrant": {
         "description": "Map layer to show fire hydrants.",
         "name": "Map of hydrants",
@@ -4122,7 +4193,7 @@
                     "placeholder": "Height of the kerb"
                 },
                 "question": "What is the height of this kerb?",
-                "render": "Kerb height: {{kerb:height}}"
+                "render": "Kerb height: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4275,6 +4346,9 @@
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
+                        "then": "This is a living street, which has a maxspeed of 20km/h"
+                    },
+                    "1": {
                         "then": "This is a living street, which has a maxspeed of 20km/h"
                     }
                 },
@@ -4616,6 +4690,65 @@
                 "title": "a car parking"
             }
         },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Amount of parking spots"
+                },
+                "question": "How many parking spots are there at this parking?",
+                "render": "There are {capacity} parking spots"
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Amount of parking spots reserved for disabled people"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "There are disabled parking spots, but it is not known how many"
+                    },
+                    "1": {
+                        "then": "There are no disabled parking spots"
+                    }
+                },
+                "question": "How many disabled parking spots are there at this parking?",
+                "render": "There are {capacity:disabled} disabled parking spots"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a surface parking lot"
+                    },
+                    "1": {
+                        "then": "This is a parking bay next to a street"
+                    },
+                    "2": {
+                        "then": "This is an underground parking garage"
+                    },
+                    "3": {
+                        "then": "This is a multi-storey parking garage"
+                    },
+                    "4": {
+                        "then": "This is a rooftop parking deck"
+                    },
+                    "5": {
+                        "then": "This is a lane for parking on the road"
+                    },
+                    "6": {
+                        "then": "This is parking covered by carports"
+                    },
+                    "7": {
+                        "then": "This a parking consisting of garage boxes"
+                    },
+                    "8": {
+                        "then": "This is a parking on a layby"
+                    },
+                    "9": {
+                        "then": "This is a parking consisting of sheds"
+                    }
+                },
+                "question": "What kind of parking is this?"
+            }
+        },
         "title": {
             "render": "Car parking"
         }
@@ -4623,6 +4756,28 @@
     "pedestrian_path": {
         "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
         "name": "Pedestrian paths"
+    },
+    "pharmacy": {
+        "name": "pharmacy",
+        "tagRenderings": {
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "This pharmacy is easy to access on a wheelchair"
+                    },
+                    "1": {
+                        "then": "This pharmacy is hard to access on a wheelchair"
+                    },
+                    "2": {
+                        "then": "This pharmacy has limited access for wheelchair users"
+                    }
+                },
+                "question": "Is this pharmacy easy to access on a wheelchair?"
+            }
+        },
+        "title": {
+            "render": "{name}"
+        }
     },
     "picnic_table": {
         "description": "The layer showing picnic tables",
@@ -4899,6 +5054,35 @@
             "render": "Bookcase"
         }
     },
+    "rainbow_crossings": {
+        "description": "A layer showing pedestrian crossings with rainbow paintings",
+        "name": "Crossings with rainbow paintings",
+        "presets": {
+            "0": {
+                "description": "Pedestrian crossing",
+                "title": "a crossing"
+            }
+        },
+        "tagRenderings": {
+            "crossing-with-rainbow": {
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has rainbow paintings"
+                    },
+                    "1": {
+                        "then": "No rainbow paintings here"
+                    },
+                    "2": {
+                        "then": "No rainbow paintings here"
+                    }
+                },
+                "question": "Does this crossing has rainbow paintings?"
+            }
+        },
+        "title": {
+            "render": "Crossing"
+        }
+    },
     "recycling": {
         "description": "A layer with recycling containers and centres",
         "filter": {
@@ -5119,6 +5303,16 @@
             }
         },
         "tagRenderings": {
+            "8": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "The main language of this school is unknown"
+                        }
+                    },
+                    "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
+                }
+            },
             "capacity": {
                 "question": "How much students can at most enroll in this school?",
                 "render": "This school can enroll at most {capacity} students"
@@ -5166,30 +5360,6 @@
                 },
                 "question": "Which genders can enroll at this school?"
             },
-            "language": {
-                "freeform": {
-                    "placeholder": "Language in lowercase English"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "The main language of this school is unknown"
-                    },
-                    "1": {
-                        "then": "French is the main language of {name}"
-                    },
-                    "2": {
-                        "then": "Dutch is the main language of {name}"
-                    },
-                    "3": {
-                        "then": "German is the main language of {name}"
-                    },
-                    "4": {
-                        "then": "The main language of this school is unknown"
-                    }
-                },
-                "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
-                "render": "{school:language} is the main language of {title()}"
-            },
             "school-name": {
                 "question": "What is the name of this school?",
                 "render": "This school is named {name}"
@@ -5230,6 +5400,39 @@
         },
         "title": {
             "render": "School <i>{name}</i>"
+        }
+    },
+    "shelter": {
+        "description": "Layer showing shelter structures",
+        "name": "Shelter",
+        "tagRenderings": {
+            "shelter-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a shelter at a public transport stop."
+                    },
+                    "1": {
+                        "then": "This is a shelter protecting from rain at a picnic site."
+                    },
+                    "2": {
+                        "then": "This is a gazebo."
+                    },
+                    "3": {
+                        "then": "This is a small shelter, primarily intended for short breaks. Usually found in the mountains or alongside roads."
+                    },
+                    "4": {
+                        "then": "This is a shed with 3 walls, primarily intended for camping."
+                    },
+                    "5": {
+                        "then": "This is a pavilion"
+                    }
+                },
+                "question": "What kind of shelter is this?",
+                "render": "Shelter type: {shelter_type}"
+            }
+        },
+        "title": {
+            "render": "Shelter"
         }
     },
     "shops": {
@@ -5279,11 +5482,34 @@
             }
         },
         "tagRenderings": {
+            "2": {
+                "override": {
+                    "question": "What kind of shop is this?",
+                    "render": "This is a {shop}"
+                }
+            },
+            "copyshop-print-sizes": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop can print on papers of size A4"
+                    },
+                    "1": {
+                        "then": "This shop can print on papers of size A3"
+                    },
+                    "2": {
+                        "then": "This shop can print on papers of size A2"
+                    },
+                    "3": {
+                        "then": "This shop can print on papers of size A1"
+                    },
+                    "4": {
+                        "then": "This shop can print on papers of size A0"
+                    }
+                },
+                "question": "What paper formats does this shop offer?"
+            },
             "shops-name": {
                 "question": "What is the name of this shop?"
-            },
-            "shops-type-from-id": {
-                "question": "What kind of shop is this?"
             }
         },
         "title": {
@@ -5960,6 +6186,169 @@
         },
         "title": {
             "render": "Trail"
+        }
+    },
+    "transit_routes": {
+        "description": "Layer showing bus lines",
+        "mapRendering": {
+            "0": {
+                "color": {
+                    "render": "#ff0000"
+                }
+            }
+        },
+        "name": "Bus lines",
+        "tagRenderings": {
+            "colour": {
+                "question": "What is the colour for this bus line?",
+                "render": "This bus line has the color {colour}"
+            },
+            "from": {
+                "question": "What is the starting point for this bus line?",
+                "render": "This bus line begins at {from}"
+            },
+            "name": {
+                "question": "What is the name for this bus line? (i.e. Bus XX: From => Via => To)"
+            },
+            "network": {
+                "question": "What network does this bus line belong to?",
+                "render": "This bus line is part of the {network} network"
+            },
+            "operator": {
+                "question": "What company operates this bus line?",
+                "render": "This bus line is operated by {operator}"
+            },
+            "to": {
+                "question": "What is the ending point for this bus line?",
+                "render": "This bus line ends at {to}"
+            },
+            "via": {
+                "question": "What is the via point for this bus line?",
+                "render": "This bus line goes via {via}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Bus line"
+        }
+    },
+    "transit_stops": {
+        "description": "Layer showing different types of transit stops.",
+        "name": "Transit Stops",
+        "tagRenderings": {
+            "bench": {
+                "mappings": {
+                    "0": {
+                        "then": "This stop has a bench"
+                    },
+                    "1": {
+                        "then": "This stop does not have a bench"
+                    },
+                    "2": {
+                        "then": "This stop has a bench, that's separately mapped"
+                    }
+                },
+                "question": "Does this stop have a bench?"
+            },
+            "bin": {
+                "mappings": {
+                    "0": {
+                        "then": "This stop has a bin"
+                    },
+                    "1": {
+                        "then": "This stop does not have a bin"
+                    },
+                    "2": {
+                        "then": "This stop has a bin, that's separately mapped"
+                    }
+                },
+                "question": "Does this stop have a bin?"
+            },
+            "contained_routes": {
+                "render": "<h3>{_contained_routes_count} routes stop at this stop</h3> <ul>{_contained_routes}</ul>"
+            },
+            "departures_board": {
+                "mappings": {
+                    "0": {
+                        "then": "This stop has a departures board of unknown type"
+                    },
+                    "1": {
+                        "then": "This stop has a board showing realtime departure information"
+                    },
+                    "2": {
+                        "then": "This stop has a board showing realtime departure information"
+                    },
+                    "3": {
+                        "then": "This stop has a timetable showing regular departures"
+                    },
+                    "4": {
+                        "then": "This stop has a timetable containing just the interval between departures"
+                    },
+                    "5": {
+                        "then": "This stop does not have a departures board"
+                    }
+                }
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": "This stop is lit"
+                    },
+                    "1": {
+                        "then": "This stop is not lit"
+                    }
+                },
+                "question": "Is this stop lit?"
+            },
+            "shelter": {
+                "mappings": {
+                    "0": {
+                        "then": "This stop has a shelter"
+                    },
+                    "1": {
+                        "then": "This stop does not have a shelter"
+                    },
+                    "2": {
+                        "then": "This stop has a shelter, that's separately mapped"
+                    }
+                },
+                "question": "Does this stop have a shelter?"
+            },
+            "stop_name": {
+                "freeform": {
+                    "placeholder": "Name of the stop"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This stop has no name"
+                    }
+                },
+                "question": "What is the name of this stop?",
+                "render": "This stop is called <b>{name}</b>"
+            },
+            "tactile_paving": {
+                "mappings": {
+                    "0": {
+                        "then": "This stop has tactile paving"
+                    },
+                    "1": {
+                        "then": "This stop does not have tactile paving"
+                    }
+                },
+                "question": "Does this stop have tactile paving?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Stop {name}"
+                }
+            },
+            "render": "Transit Stop"
         }
     },
     "tree_node": {
