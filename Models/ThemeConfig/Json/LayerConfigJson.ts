@@ -135,7 +135,7 @@ export interface LayerConfigJson {
     doNotDownload?: boolean;
 
     /**
-     * This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
+     * If set, only features matching this extra tag will be shown.
      * This is useful to hide certain features from view.
      *
      * Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
@@ -143,7 +143,7 @@ export interface LayerConfigJson {
      *
      * The default value is 'yes'
      */
-    isShown?: TagRenderingConfigJson;
+    isShown?: TagConfigJson;
 
     /**
      * Advanced option - might be set by the theme compiler

@@ -549,6 +549,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 if (json["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
                     errors.push(context + ": layer " + json.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'")
                 }
+                
+                if(json.isShown !== undefined && (json.isShown["render"] !== undefined || json.isShown["mappings"] !== undefined)){
+                    warnings.push(context + " has a tagRendering as `isShown`")
+                }
             }
             {
                 // Check location of layer file

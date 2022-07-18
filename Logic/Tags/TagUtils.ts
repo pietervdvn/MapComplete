@@ -258,6 +258,20 @@ export class TagUtils {
     }
 
     /**
+     * Same as `.Tag`, except that this will return undefined if the json is undefined
+     * @param json
+     * @param context
+     * @constructor
+     */
+    public static TagD(json?: TagConfigJson, context: string = ""): TagsFilter | undefined {
+        if(json === undefined){
+            return undefined
+        }
+        return TagUtils.Tag(json, context)
+    }
+    
+    
+    /**
      * INLINE sort of the given list
      */
     public static sortFilters(filters: TagsFilter [], usePopularity: boolean): void {

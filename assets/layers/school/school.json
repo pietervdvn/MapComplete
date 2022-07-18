@@ -21,17 +21,9 @@
     "_is_enclosed=feat.properties._enclosing != '[]'"
   ],
   "isShown": {
-    "render": "yes",
-    "mappings": [
-      {
-        "if": {
-          "and": [
-            "building~*",
-            "_is_enclosed=true"
-          ]
-        },
-        "then": "no"
-      }
+    "or": [
+      "building=",
+      "_is_enclosed!=true"
     ]
   },
   "tagRenderings": [
