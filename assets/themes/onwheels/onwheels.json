@@ -32,6 +32,11 @@
     "walls_and_buildings"
   ],
   "overrideAll": {
+<<<<<<< HEAD
+    "minZoom": "15",
+    "mapRendering": [
+      {
+=======
     "+calculatedTags": [
       "_poi_walls_and_buildings_entrance_properties=feat.closestn('walls_and_buildings', 1, undefined, 1000).map(w => ({id: w.feat.properties.id, width: w.feat.properties['_entrance:width']}))[0]",
       "_poi_entrance:width=JSON.parse(feat.properties._poi_walls_and_buildings_entrance_properties)?.width"
@@ -64,6 +69,7 @@
     "minzoom": "15",
     "mapRendering": [
       {
+>>>>>>> develop
         "label": null
       }
     ]
