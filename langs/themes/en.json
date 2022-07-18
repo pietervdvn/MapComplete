@@ -974,10 +974,6 @@
         "shortDescription": "Map all the trees",
         "title": "Trees"
     },
-    "walls_and_buildings": {
-        "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
-        "title": "Walls and buildings"
-    },
     "waste": {
         "description": "Map showing waste baskets and recycling facilities.",
         "title": "Waste"
