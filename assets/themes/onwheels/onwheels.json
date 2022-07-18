@@ -60,7 +60,7 @@
         ]
       }
     ],
-    "minzoom": "15",
+    "minzoom": "17",
     "mapRendering": [
       {
         "label": null
