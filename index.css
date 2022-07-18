@@ -237,22 +237,31 @@ input[type="range"].vertical {
   padding: 0 5px;
 }
 
-/* .elevatorslider::-webkit-slider-thumb {
-  appearance: none;
-  width: 23px;
-  height: 24px;
+.elevatorslider::-webkit-slider-thumb {
+  width: 100px;
+  height: 100px;
   border: 0;
-  background: url("/assets/svg/bug.svg") !important;
+  background-color: #00000000 !important;
+  background-image: url("/assets/svg/elevator.svg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 .elevatorslider::-moz-range-thumb {
-  width: 23px;
-  height: 25px;
+  width: 100px;
+  height: 100px;
   border: 0;
-  background: url("/assets/svg/bug.svg") !important;
+  background-color: #00000000 !important;
+  background-image: url("/assets/svg/elevator.svg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
   cursor: pointer;
-}  */
+}  
 
 .border-detail {
   border-color: var(--foreground-color);

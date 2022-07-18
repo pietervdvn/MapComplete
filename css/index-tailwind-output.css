@@ -811,6 +811,10 @@ video {
   margin: 0.25rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .m-4 {
   margin: 1rem;
 }
@@ -829,10 +833,6 @@ video {
 
 .m-3 {
   margin: 0.75rem;
-}
-
-.m-2 {
-  margin: 0.5rem;
 }
 
 .m-6 {
@@ -856,6 +856,14 @@ video {
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .ml-3 {
@@ -954,10 +962,6 @@ video {
   margin-right: 0.25rem;
 }
 
-.mb-0 {
-  margin-bottom: 0px;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -1044,6 +1048,10 @@ video {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-14 {
+  height: 3.5rem;
 }
 
 .h-full {
@@ -1432,10 +1440,6 @@ video {
   border-bottom-width: 1px;
 }
 
-.border-solid {
-  border-style: solid;
-}
-
 .border-blue-500 {
   --tw-border-opacity: 1;
   border-color: rgba(59, 130, 246, var(--tw-border-opacity));
@@ -1473,11 +1477,6 @@ video {
 
 .border-opacity-50 {
   --tw-border-opacity: 0.5;
-}
-
-.bg-blue-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -2031,7 +2030,7 @@ a {
   height: min-content;
 }
 
-/* alex */
+/* slider */
 
 input[type="range"].vertical {
   -webkit-writing-mode: bt-lr;
@@ -2045,24 +2044,31 @@ input[type="range"].vertical {
   padding: 0 5px;
 }
 
-/* 
 .elevatorslider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 23px;
-  height: 24px;
+  width: 100px;
+  height: 100px;
   border: 0;
-  background: url("../MapComplete/assets/svg/bug.svg");
+  background-color: #00000000 !important;
+  background-image: url("/assets/svg/elevator.svg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 .elevatorslider::-moz-range-thumb {
-  width: 23px;
-  height: 25px;
+  width: 100px;
+  height: 100px;
   border: 0;
-  background: url("../MapComplete/assets/svg/bug.svg");
+  background-color: #00000000 !important;
+  background-image: url("/assets/svg/elevator.svg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
   cursor: pointer;
-} */
+}
 
 .border-detail {
   border-color: var(--foreground-color);

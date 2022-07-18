@@ -8,7 +8,7 @@ import Slider from "./UI/Input/Slider";
 import Toggle, { ClickableToggle } from "./UI/Input/Toggle";
 
 const testData = ["-1", "0", "0.5", "1", "1.5", "2"]
-let slider = new Slider(0, testData.length - 1);
+let slider = new Slider(0, testData.length - 1, {vertical: true});
 
 const toggleClass = "flex border-2 border-blue-500 rounded-full w-10 h-10 place-content-center items-center"
 
@@ -23,11 +23,10 @@ const values = testData.map((data, i) => new ClickableToggle(
     }
   ))
   .ToggleOnClick()
-  .SetClass("flex flex-column bg-slate-200 m-4 w-10 h-10"))
+  .SetClass("flex flex-column bg-slate-200 m-2 w-10 h-10"))
 
 const valCombine = new Combine(values.reverse())
 
-slider.SetClass("flex vertical m-4 elevatorslider")
+slider.SetClass("flex m-4 elevatorslider mb-0").SetStyle("height: "+3.25*testData.length+"rem")
 
-new Combine([valCombine, slider]).SetClass("flex flex-row h-10").AttachTo("extradiv")
-
+new Combine([valCombine.SetClass("mt-8"), slider]).SetClass("flex flex-row h-14").AttachTo("extradiv")
