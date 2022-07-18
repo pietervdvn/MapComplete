@@ -287,9 +287,9 @@ export interface LayerConfigJson {
      */
     tagRenderings?:
         (string
-            | { builtin: string | string[], override: any }
+            | { builtin: string | string[], override: Partial<QuestionableTagRenderingConfigJson> }
             | QuestionableTagRenderingConfigJson
-            | RewritableConfigJson<(string | { builtin: string, override: any } | QuestionableTagRenderingConfigJson)[]>
+            | RewritableConfigJson<(string | { builtin: string, override: Partial<QuestionableTagRenderingConfigJson> } | QuestionableTagRenderingConfigJson)[]>
             ) [],
 
 
