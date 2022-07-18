@@ -26,7 +26,6 @@ This layer shows doctor offices, dentists and other healthcare facilities
 
 
   - [healthcare](https://mapcomplete.osm.be/healthcare)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

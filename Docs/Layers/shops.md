@@ -25,7 +25,6 @@ A shop
 
 
 
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
   - [pets](https://mapcomplete.osm.be/pets)
   - [shops](https://mapcomplete.osm.be/shops)
