@@ -3,6 +3,9 @@
   "name": {
     "en": "doctors"
   },
+  "description": {
+    "en": "This layer shows doctor offices, dentists and other healthcare facilities"
+  },
   "source": {
     "osmTags": {
       "or": [

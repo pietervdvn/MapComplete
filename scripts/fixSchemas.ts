@@ -5,9 +5,11 @@ import {readFileSync, writeFileSync} from "fs";
  * Extracts the data from the scheme file and writes them in a flatter structure
  */
 
-interface JsonSchema {
+export type JsonSchemaType = string | {$ref: string, description: string} | {type: string} | JsonSchemaType[]
+
+export interface JsonSchema {
     description?: string,
-    type?: string,
+    type?: JsonSchemaType,
     properties?: any,
     items?: JsonSchema,
     allOf?: JsonSchema[],

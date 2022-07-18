@@ -630,18 +630,10 @@
           }
         }
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": {
-              "and": [
-                "_imported_osm_object_found=true",
-                "_imported_osm_still_fresh=true"
-              ]
-            },
-            "then": "no"
-          }
+      "isShown":{
+        "or": [
+          "_imported_osm_object_found!=true",
+          "_imported_osm_still_fresh!=true"
         ]
       },
       "mapRendering": [

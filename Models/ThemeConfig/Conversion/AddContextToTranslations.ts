@@ -95,9 +95,32 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      *   ]  
      * }
      * rewritten // => expected
+     * 
+     * 
+     * // Should ignore all if '#dont-translate' is set
+     * const theme = {
+     *  "#dont-translate": "*",
+     *   layers: [
+     *       {
+     *           builtin: ["abc"],
+     *           override: {
+     *               title:{
+     *                   en: "Some title"
+     *               }
+     *           }
+     *       }
+     *   ]  
+     * }
+     * const rewritten = new AddContextToTranslations<any>("prefix:").convert(theme, "context").result
+     * rewritten // => theme
+     * 
      */
     convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
 
+        if(json["#dont-translate"] === "*"){
+            return {result: json}
+        }
+        
         const result = Utils.WalkJson(json, (leaf, path) => {
             if(leaf === undefined || leaf === null){
                 return leaf

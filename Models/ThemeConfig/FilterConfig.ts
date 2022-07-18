@@ -4,7 +4,7 @@ import FilterConfigJson from "./Json/FilterConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
-import {AndOrTagConfigJson} from "./Json/TagConfigJson";
+import {TagConfigJson} from "./Json/TagConfigJson";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {FilterState} from "../FilteredLayer";
 import {QueryParameters} from "../../Logic/Web/QueryParameters";
@@ -16,7 +16,7 @@ export default class FilterConfig {
     public readonly options: {
         question: Translation;
         osmTags: TagsFilter | undefined;
-        originalTagsSpec: string | AndOrTagConfigJson
+        originalTagsSpec: TagConfigJson
         fields: { name: string, type: string }[]
     }[];
     public readonly defaultSelection? : number

@@ -10,6 +10,7 @@ import Constants from "../Models/Constants";
 import {Utils} from "../Utils";
 import Link from "../UI/Base/Link";
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
 
 export class AllKnownLayouts {
     public static allKnownLayouts: Map<string, LayoutConfig> = AllKnownLayouts.AllLayouts();
@@ -19,7 +20,7 @@ export class AllKnownLayouts {
 
     public static AllPublicLayers(options?: {
         includeInlineLayers:true | boolean
-    }) {
+    }) : LayerConfig[] {
         const allLayers: LayerConfig[] = []
         const seendIds = new Set<string>()
         AllKnownLayouts.sharedLayers.forEach((layer, key) => {
@@ -209,9 +210,9 @@ export class AllKnownLayouts {
         ])
     }
 
-    private static getSharedLayers(): Map<string, LayerConfig> {
+    public static getSharedLayers(): Map<string, LayerConfig> {
         const sharedLayers = new Map<string, LayerConfig>();
-        for (const layer of known_themes.layers) {
+        for (const layer of known_themes["layers"]) {
             try {
                 // @ts-ignore
                 const parsed = new LayerConfig(layer, "shared_layers")
@@ -221,6 +222,16 @@ export class AllKnownLayouts {
                     console.error("CRITICAL: Could not parse a layer configuration!", layer.id, " due to", e)
                 }
             }
+        }
+
+        return sharedLayers;
+    }
+
+    public static getSharedLayersConfigs(): Map<string, LayerConfigJson> {
+        const sharedLayers = new Map<string, LayerConfigJson>();
+        for (const layer of known_themes["layers"]) {
+                // @ts-ignore
+                sharedLayers.set(layer.id, layer);
         }
 
         return sharedLayers;
@@ -236,7 +247,7 @@ export class AllKnownLayouts {
 
     private static AllLayouts(): Map<string, LayoutConfig> {
         const dict: Map<string, LayoutConfig> = new Map();
-        for (const layoutConfigJson of known_themes.themes) {
+        for (const layoutConfigJson of known_themes["themes"]) {
             const layout = new LayoutConfig(<LayoutConfigJson>layoutConfigJson, true)
             dict.set(layout.id, layout)
             for (let i = 0; i < layout.layers.length; i++) {

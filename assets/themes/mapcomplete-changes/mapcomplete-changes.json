@@ -284,6 +284,10 @@
                 "then": "./assets/themes/postboxes/postbox.svg"
               },
               {
+                "if": "theme=rainbow_crossings",
+                "then": "./assets/themes/rainbow_crossings/logo.svg"
+              },
+              {
                 "if": "theme=shops",
                 "then": "./assets/themes/shops/shop.svg"
               },
@@ -330,6 +334,10 @@
               {
                 "if": "theme=uk_addresses",
                 "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              },
+              {
+                "if": "theme=walls_and_buildings",
+                "then": "./assets/layers/walls_and_buildings/walls_and_buildings.png"
               },
               {
                 "if": "theme=waste",

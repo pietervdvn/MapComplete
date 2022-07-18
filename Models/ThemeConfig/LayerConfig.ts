@@ -39,7 +39,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly calculatedTags: [string, string, boolean][];
     public readonly doNotDownload: boolean;
     public readonly passAllFeatures: boolean;
-    public readonly isShown: TagRenderingConfig;
+    public readonly isShown: TagsFilter;
     public minzoom: number;
     public minzoomVisible: number;
     public readonly maxzoom: number;
@@ -191,6 +191,9 @@ export default class LayerConfig extends WithContextLoader {
         this.doNotDownload = json.doNotDownload ?? false;
         this.passAllFeatures = json.passAllFeatures ?? false;
         this.minzoom = json.minzoom ?? 0;
+        if(json["minZoom"] !== undefined){
+            throw "At "+context+": minzoom is written all lowercase"
+        }
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom;
         this.shownByDefault = json.shownByDefault ?? true;
         this.forceLoad = json.forceLoad ?? false;
@@ -299,7 +302,7 @@ export default class LayerConfig extends WithContextLoader {
         });
 
         this.title = this.tr("title", undefined);
-        this.isShown = this.tr("isShown", "yes");
+        this.isShown = TagUtils.TagD(json.isShown, context+".isShown")
 
         this.deletion = null;
         if (json.deletion === true) {
@@ -475,7 +478,7 @@ export default class LayerConfig extends WithContextLoader {
     }
 
     AllTagRenderings(): TagRenderingConfig[] {
-        return Utils.NoNull([...this.tagRenderings, ...this.titleIcons, this.title, this.isShown])
+        return Utils.NoNull([...this.tagRenderings, ...this.titleIcons, this.title])
     }
 
     public isLeftRightSensitive(): boolean {

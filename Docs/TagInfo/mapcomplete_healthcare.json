@@ -70,6 +70,10 @@
       "description": "Layer 'doctors' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
+      "key": "name",
+      "description": "Layer 'doctors' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
       "key": "healthcare:speciality",
       "description": "Layer 'doctors' shows and asks freeform values for key 'healthcare:speciality' (in the MapComplete.osm.be theme 'Healthcare')"
     },

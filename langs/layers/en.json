@@ -3256,6 +3256,7 @@
         "name": "Direction visualization"
     },
     "doctors": {
+        "description": "This layer shows doctor offices, dentists and other healthcare facilities",
         "filter": {
             "0": {
                 "options": {
@@ -3278,6 +3279,10 @@
             }
         },
         "tagRenderings": {
+            "name": {
+                "question": "What is the name of this doctors place?",
+                "render": "This doctors place is called {name}"
+            },
             "specialty": {
                 "mappings": {
                     "0": {
@@ -4188,7 +4193,7 @@
                     "placeholder": "Height of the kerb"
                 },
                 "question": "What is the height of this kerb?",
-                "render": "Kerb height: {{kerb:height}}"
+                "render": "Kerb height: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4685,6 +4690,65 @@
                 "title": "a car parking"
             }
         },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Amount of parking spots"
+                },
+                "question": "How many parking spots are there at this parking?",
+                "render": "There are {capacity} parking spots"
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Amount of parking spots reserved for disabled people"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "There are disabled parking spots, but it is not known how many"
+                    },
+                    "1": {
+                        "then": "There are no disabled parking spots"
+                    }
+                },
+                "question": "How many disabled parking spots are there at this parking?",
+                "render": "There are {capacity:disabled} disabled parking spots"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a surface parking lot"
+                    },
+                    "1": {
+                        "then": "This is a parking bay next to a street"
+                    },
+                    "2": {
+                        "then": "This is an underground parking garage"
+                    },
+                    "3": {
+                        "then": "This is a multi-storey parking garage"
+                    },
+                    "4": {
+                        "then": "This is a rooftop parking deck"
+                    },
+                    "5": {
+                        "then": "This is a lane for parking on the road"
+                    },
+                    "6": {
+                        "then": "This is parking covered by carports"
+                    },
+                    "7": {
+                        "then": "This a parking consisting of garage boxes"
+                    },
+                    "8": {
+                        "then": "This is a parking on a layby"
+                    },
+                    "9": {
+                        "then": "This is a parking consisting of sheds"
+                    }
+                },
+                "question": "What kind of parking is this?"
+            }
+        },
         "title": {
             "render": "Car parking"
         }
@@ -4990,6 +5054,35 @@
             "render": "Bookcase"
         }
     },
+    "rainbow_crossings": {
+        "description": "A layer showing pedestrian crossings with rainbow paintings",
+        "name": "Crossings with rainbow paintings",
+        "presets": {
+            "0": {
+                "description": "Pedestrian crossing",
+                "title": "a crossing"
+            }
+        },
+        "tagRenderings": {
+            "crossing-with-rainbow": {
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has rainbow paintings"
+                    },
+                    "1": {
+                        "then": "No rainbow paintings here"
+                    },
+                    "2": {
+                        "then": "No rainbow paintings here"
+                    }
+                },
+                "question": "Does this crossing has rainbow paintings?"
+            }
+        },
+        "title": {
+            "render": "Crossing"
+        }
+    },
     "recycling": {
         "description": "A layer with recycling containers and centres",
         "filter": {
@@ -5210,6 +5303,16 @@
             }
         },
         "tagRenderings": {
+            "8": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "The main language of this school is unknown"
+                        }
+                    },
+                    "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
+                }
+            },
             "capacity": {
                 "question": "How much students can at most enroll in this school?",
                 "render": "This school can enroll at most {capacity} students"
@@ -5256,30 +5359,6 @@
                     }
                 },
                 "question": "Which genders can enroll at this school?"
-            },
-            "language": {
-                "freeform": {
-                    "placeholder": "Language in lowercase English"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "The main language of this school is unknown"
-                    },
-                    "1": {
-                        "then": "French is the main language of {name}"
-                    },
-                    "2": {
-                        "then": "Dutch is the main language of {name}"
-                    },
-                    "3": {
-                        "then": "German is the main language of {name}"
-                    },
-                    "4": {
-                        "then": "The main language of this school is unknown"
-                    }
-                },
-                "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
-                "render": "{school:language} is the main language of {title()}"
             },
             "school-name": {
                 "question": "What is the name of this school?",

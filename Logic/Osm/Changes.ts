@@ -159,7 +159,7 @@ export class Changes {
         const recentLocationPoints = locations.map(ff => ff.feature)
             .filter(feat => feat.geometry.type === "Point")
             .filter(feat => {
-                const visitTime = new Date((<GeoLocationPointProperties>feat.properties).date)
+                const visitTime = new Date((<GeoLocationPointProperties><any>feat.properties).date)
                 // In seconds
                 const diff = (now.getTime() - visitTime.getTime()) / 1000
                 return diff < Constants.nearbyVisitTime;
