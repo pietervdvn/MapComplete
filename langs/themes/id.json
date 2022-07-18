@@ -92,7 +92,7 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Tempat ini memiliki catu daya"

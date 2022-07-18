@@ -444,7 +444,7 @@
         "tagRenderings": {
             "9": {
                 "renderings": {
-                    "0": {
+                    "rental-capacity-bicycle_type": {
                         "question": "Wie viele type_plural können hier gemietet werden?",
                         "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
                     }
@@ -3912,7 +3912,7 @@
         "tagRenderings": {
             "6": {
                 "renderings": {
-                    "0": {
+                    "hackerspaces-service-device-key": {
                         "mappings": {
                             "0": {
                                 "then": "In diesem Hackerspace gibt es {device-name}"

@@ -142,7 +142,7 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Dette stedet har strømforsyning"
@@ -167,7 +167,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Offentlig tilgjengelig for alle"
@@ -252,7 +252,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Når vil denne gaten bli en sykkelgate?",
+                    "render": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
@@ -268,10 +272,6 @@
                         }
                     },
                     "question": "Er <b>{name}</b>-gaten en sykkelgate?"
-                },
-                "1": {
-                    "question": "Når vil denne gaten bli en sykkelgate?",
-                    "render": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}"
                 }
             }
         },

@@ -241,11 +241,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Wer betreibt diesen Ort?",
                     "render": "Dieser Ort wird betrieben von {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Dieser Ort hat eine Stromversorgung"
@@ -273,7 +273,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
@@ -289,7 +289,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Öffentlich zugänglich für jedermann"
@@ -409,7 +409,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Wann wird diese Straße eine Fahrradstraße?",
+                    "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
@@ -425,10 +429,6 @@
                         }
                     },
                     "question": "Ist die Straße <b>{name}</b> eine Fahrradstraße?"
-                },
-                "1": {
-                    "question": "Wann wird diese Straße eine Fahrradstraße?",
-                    "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
                 }
             }
         },

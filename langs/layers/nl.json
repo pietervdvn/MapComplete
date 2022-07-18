@@ -444,7 +444,7 @@
         "tagRenderings": {
             "9": {
                 "renderings": {
-                    "0": {
+                    "rental-capacity-bicycle_type": {
                         "question": "Hoeveel type_plural kunnen hier uitgeleend worden?",
                         "render": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
                     }
@@ -3859,7 +3859,7 @@
         "tagRenderings": {
             "6": {
                 "renderings": {
-                    "0": {
+                    "hackerspaces-service-device-key": {
                         "mappings": {
                             "0": {
                                 "then": "Er is {device-name} beschikbaar in deze hackerspace"

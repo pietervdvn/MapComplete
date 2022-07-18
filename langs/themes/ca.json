@@ -114,7 +114,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "2": {
                                     "then": "Només clients"

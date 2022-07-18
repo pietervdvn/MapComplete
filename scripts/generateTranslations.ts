@@ -63,6 +63,9 @@ class TranslationPart {
     }
 
     recursiveAdd(object: any, context: string) {
+        if(context.startsWith("./assets/themes/onwheels")){
+            console.log("Hello world")
+        }
         const isProbablyTranslationObject = knownLanguages.some(l => object.hasOwnProperty(l));
         if (isProbablyTranslationObject) {
             this.addTranslationObject(object, context)
@@ -101,7 +104,7 @@ class TranslationPart {
                 continue
             }
 
-            if (v["id"] !== undefined && context.endsWith("tagRenderings")) {
+            if (v["id"] !== undefined && context.indexOf("tagRenderings")>=0) {
                 // We use the embedded id as key instead of the index as this is more stable
                 // Note: indonesian is shortened as 'id' as well!
                 if (v["en"] !== undefined || v["nl"] !== undefined) {

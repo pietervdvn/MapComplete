@@ -235,7 +235,7 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "這個地方是誰營運的？",
                     "render": "這個地方由 {operator} 營運的"
                 }

@@ -227,11 +227,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "この店は誰が経営しているんですか?",
                     "render": "この場所は{operator}によって運営されます"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "この場所には電源があります"
@@ -286,7 +286,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "この通りはいつcyclestreetになるんですか?",
+                    "render": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "cyclestreet(最高速度は30km/h)"
@@ -301,10 +305,6 @@
                             "then": "この通りはcyclestreetではない"
                         }
                     }
-                },
-                "1": {
-                    "question": "この通りはいつcyclestreetになるんですか?",
-                    "render": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
                 }
             }
         },

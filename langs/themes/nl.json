@@ -104,7 +104,7 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "Access tag": {
                     "mappings": {
                         "0": {
                             "then": "Dit gebied is vrij toegankelijk"
@@ -131,7 +131,26 @@
                     "question": "Is dit gebied toegankelijk?",
                     "render": "De toegankelijkheid van dit gebied is: {access:description}"
                 },
-                "1": {
+                "Editable description": {
+                    "render": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
+                },
+                "Name tag": {
+                    "mappings": {
+                        "0": {
+                            "then": "Dit gebied heeft geen naam"
+                        }
+                    },
+                    "question": "Wat is de naam van dit gebied?",
+                    "render": "Dit gebied heet {name}"
+                },
+                "Name:nl-tag": {
+                    "question": "Wat is de Nederlandstalige naam van dit gebied?",
+                    "render": "Dit gebied heet {name:nl}"
+                },
+                "Non-editable description": {
+                    "render": "Extra info: <i>{description}</i>"
+                },
+                "Operator tag": {
                     "mappings": {
                         "1": {
                             "then": "Dit gebied wordt beheerd door Natuurpunt"
@@ -145,25 +164,6 @@
                     },
                     "question": "Wie beheert dit gebied?",
                     "render": "Beheer door {operator}"
-                },
-                "2": {
-                    "render": "Extra info: <i>{description}</i>"
-                },
-                "3": {
-                    "render": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
-                },
-                "4": {
-                    "question": "Wat is de Nederlandstalige naam van dit gebied?",
-                    "render": "Dit gebied heet {name:nl}"
-                },
-                "5": {
-                    "mappings": {
-                        "0": {
-                            "then": "Dit gebied heeft geen naam"
-                        }
-                    },
-                    "question": "Wat is de naam van dit gebied?",
-                    "render": "Dit gebied heet {name}"
                 }
             }
         },
@@ -381,11 +381,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Wie beheert deze plaats?",
                     "render": "Deze plaats wordt beheerd door {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Deze plaats heeft stroomvoorziening"
@@ -413,7 +413,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}"
@@ -429,7 +429,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Voor iedereen publiek toegankelijk"
@@ -549,7 +549,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Wanneer wordt deze straat een fietsstraat?",
+                    "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Deze straat is een fietsstraat (en dus zone 30)"
@@ -565,10 +569,6 @@
                         }
                     },
                     "question": "Is de straat <b>{name}</b> een fietsstraat?"
-                },
-                "1": {
-                    "question": "Wanneer wordt deze straat een fietsstraat?",
-                    "render": "Deze straat wordt fietsstraat op {cyclestreet:start_date}"
                 }
             }
         },
@@ -832,14 +832,7 @@
             "5": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
-                            "mappings": {
-                                "0": {
-                                    "then": "Geen omliggend OSM-gebouw gevonden"
-                                }
-                            }
-                        },
-                        "3": {
+                        "import-button": {
                             "mappings": {
                                 "0": {
                                     "then": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
@@ -848,6 +841,13 @@
                             "render": {
                                 "special": {
                                     "text": "Voeg dit adres als een nieuw adrespunt toe"
+                                }
+                            }
+                        },
+                        "render_embedded": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Geen omliggend OSM-gebouw gevonden"
                                 }
                             }
                         }

@@ -231,7 +231,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "3": {
                                     "then": "Только членам клуба"

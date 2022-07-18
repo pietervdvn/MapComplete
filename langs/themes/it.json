@@ -235,11 +235,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Chi gestisce questo luogo?",
                     "render": "Questo luogo è gestito da {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Questo luogo fornisce corrente elettrica"
@@ -267,7 +267,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}"
@@ -283,7 +283,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Pubblicamente accessibile a chiunque"
@@ -356,7 +356,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Questa strada diventerà una strada ciclabile quando?",
+                    "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)"
@@ -372,10 +376,6 @@
                         }
                     },
                     "question": "È <b>{name}</b> una strada ciclabile?"
-                },
-                "1": {
-                    "question": "Questa strada diventerà una strada ciclabile quando?",
-                    "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
                 }
             }
         },

@@ -162,11 +162,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "¿Quién opera este lugar?",
                     "render": "Este lugar lo opera {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Este lugar tiene suministro eléctrico"
@@ -192,7 +192,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Accesible públicamente a cualquiera"
@@ -311,7 +311,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "¿Cuándo se convertirá esta calle en una ciclocalle?",
+                    "render": "Esta calle se convetirá en una ciclocalle el {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Esta calle es una ciclocalle (y tiene un límite de velocidad de 30km/h)"
@@ -327,10 +331,6 @@
                         }
                     },
                     "question": "¿La calle <b>{name}</b> es una ciclocalle?"
-                },
-                "1": {
-                    "question": "¿Cuándo se convertirá esta calle en una ciclocalle?",
-                    "render": "Esta calle se convetirá en una ciclocalle el {cyclestreet:start_date}"
                 }
             }
         },

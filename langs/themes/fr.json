@@ -241,11 +241,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Qui est l’exploitant du site ?",
                     "render": "Ce site est exploité par {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "Ce site a une source d’alimentation"
@@ -273,7 +273,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}"
@@ -289,7 +289,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Libre d’accès"
@@ -409,7 +409,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Quand cette rue deviendra-t-elle cyclable ?",
+                    "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Cette rue est une rue cyclable (et est limitée à 30 km/h)"
@@ -425,10 +429,6 @@
                         }
                     },
                     "question": "La rue <b>{name}</b> est-elle une rue cyclable ?"
-                },
-                "1": {
-                    "question": "Quand cette rue deviendra-t-elle cyclable ?",
-                    "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
                 }
             }
         },

@@ -241,11 +241,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "operator": {
                     "question": "Who operates this place?",
                     "render": "This place is operated by {operator}"
                 },
-                "1": {
+                "power_supply": {
                     "mappings": {
                         "0": {
                             "then": "This place has a power supply"
@@ -273,7 +273,7 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
-                        "0": {
+                        "Access from containing feature": {
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>The <a href='#{_embedding_feature:id}'>containing feature</a> states that this is</span> publicly accessible<br/>{_embedding_feature:access:description}"
@@ -289,7 +289,7 @@
                                 }
                             }
                         },
-                        "1": {
+                        "access": {
                             "mappings": {
                                 "0": {
                                     "then": "Publicly accessible to anyone"
@@ -409,7 +409,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "When will this street become a cyclestreet?",
+                    "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "This street is a cyclestreet (and has a speed limit of 30 km/h)"
@@ -425,10 +429,6 @@
                         }
                     },
                     "question": "Is the street <b>{name}</b> a cyclestreet?"
-                },
-                "1": {
-                    "question": "When will this street become a cyclestreet?",
-                    "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
                 }
             }
         },

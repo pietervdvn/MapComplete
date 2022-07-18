@@ -77,7 +77,7 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "1": {
+                "power_supply": {
                     "question": "Van-e itt elektromos áram?"
                 }
             }
@@ -129,7 +129,11 @@
         },
         "overrideAll": {
             "tagRenderings+": {
-                "0": {
+                "future_cyclestreet": {
+                    "question": "Mikor lesz ez az utca kerékpárosutca?",
+                    "render": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}"
+                },
+                "is_cyclestreet": {
                     "mappings": {
                         "0": {
                             "then": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)"
@@ -145,10 +149,6 @@
                         }
                     },
                     "question": "Kerékpárosutca-e <b>{name}</b>?"
-                },
-                "1": {
-                    "question": "Mikor lesz ez az utca kerékpárosutca?",
-                    "render": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}"
                 }
             }
         },
