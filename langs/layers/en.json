@@ -4776,6 +4776,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pharmacy"
+                }
+            },
             "render": "{name}"
         }
     },
@@ -6528,6 +6533,16 @@
     },
     "walls_and_buildings": {
         "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
+        "tagRenderings": {
+            "_entrance:width": {
+                "mappings": {
+                    "0": {
+                        "then": "This entrance has no width information"
+                    }
+                },
+                "render": "<a href ='#{_entrance:id} '>This door has a width of {canonical(_entrance:width)} meters </a>"
+            }
+        },
         "title": {
             "render": "Wall or building"
         }

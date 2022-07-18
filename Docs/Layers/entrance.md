@@ -17,6 +17,7 @@ A layer showing entrances and offering capabilities to survey some advanced data
   - This layer is shown at zoomlevel **14** and higher
   - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
   - This layer will automatically load  [pedestrian_path](./pedestrian_path.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
+  - This layer is needed as dependency for layer [walls_and_buildings](#walls_and_buildings)
 
 
 
@@ -28,8 +29,8 @@ A layer showing entrances and offering capabilities to survey some advanced data
 
 
   - [entrances](https://mapcomplete.osm.be/entrances)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
+  - [walls_and_buildings](https://mapcomplete.osm.be/walls_and_buildings)
 
 
 
