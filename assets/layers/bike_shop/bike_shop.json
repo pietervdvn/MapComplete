@@ -282,70 +282,9 @@
       },
       "id": "bike_shop-name"
     },
-    {
-      "question": {
-        "en": "What is the website of {name}?",
-        "nl": "Wat is de website van {name}?",
-        "fr": "Quel est le site web de {name} ?",
-        "gl": "Cal é a páxina web de {name}?",
-        "it": "Qual è il sito web di {name}?",
-        "ru": "Какой сайт у {name}?",
-        "id": "URL {name} apa?",
-        "de": "Wie lautet die Webseite von {name}?",
-        "pt_BR": "Qual o website de {name}?",
-        "pt": "Qual o website de {name}?",
-        "es": "¿Cual es el sitio web de {name}?",
-        "da": "Hvad er webstedet for {name}?"
-      },
-      "render": "<a href='{website}' target='_blank'>{website}</a>",
-      "freeform": {
-        "key": "website",
-        "type": "url"
-      },
-      "id": "bike_shop-website"
-    },
-    {
-      "question": {
-        "en": "What is the phone number of {name}?",
-        "nl": "Wat is het telefoonnummer van {name}?",
-        "fr": "Quel est le numéro de téléphone de {name} ?",
-        "gl": "Cal é o número de teléfono de {name}?",
-        "it": "Qual è il numero di telefono di {name}?",
-        "ru": "Какой номер телефона у {name}?",
-        "de": "Wie lautet die Telefonnummer von {name}?",
-        "pt_BR": "Qual o número de telefone de {name}?",
-        "pt": "Qual é o número de telefone de {name}?",
-        "es": "¿Cual es el número de teléfono de {name}?",
-        "da": "Hvad er telefonnummeret på {name}?"
-      },
-      "render": "<a href='tel:{phone}'>{phone}</a>",
-      "freeform": {
-        "key": "phone",
-        "type": "phone"
-      },
-      "id": "bike_shop-phone"
-    },
-    {
-      "question": {
-        "en": "What is the email address of {name}?",
-        "nl": "Wat is het email-adres van {name}?",
-        "fr": "Quelle est l'adresse électronique de {name} ?",
-        "gl": "Cal é o enderezo de correo electrónico de {name}?",
-        "it": "Qual è l’indirizzo email di {name}?",
-        "ru": "Какой адрес электронной почты у {name}?",
-        "de": "Wie lautet die E-Mail-Adresse von {name}?",
-        "pt_BR": "Qual o endereço de email de {name}?",
-        "pt": "Qual o endereço de email de {name}?",
-        "es": "¿Cual es la dirección de correo electrónico de {name}?",
-        "da": "Hvad er e-mailadressen på {name}?"
-      },
-      "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
-      "freeform": {
-        "key": "email",
-        "type": "email"
-      },
-      "id": "bike_shop-email"
-    },
+    "website",
+    "phone",
+    "email",
     "opening_hours",
     {
       "render": {
