@@ -23,7 +23,7 @@
     }
   },
   "passAllFeatures": true,
-  "shownByDefault": true,
+  "shownByDefault": false,
   "mapRendering": [
     {
       "color": {
@@ -46,17 +46,17 @@
   ],
   "calculatedTags": [
     "_entrance_properties=feat.overlapWith('entrance')?.map(e => e.feat.properties).filter(p => p !== undefined)",
-    "_entrance:id=feat.get('_entrance_properties')?.map(e => e.id)",
-    "_entrance:width=feat.get('_entrance_properties')?.map(e => e.width)?.at(0)"
+    "_entrance:id=feat.get('_entrance_properties')?.map(e => e.id)?.at(0)",
+    "_entrance:width=feat.get('_entrance_properties')?.map(e => e.width)"
   ],
   "tagRenderings": [
     {
       "id": "_entrance:width",
       "render": {
-        "en": "This door has a width of {canonical(_entrance:width)} meter",
-        "nl": "Deze deur heeft een breedte van {canonical(_entrance:width)} meter",
-        "de": "Diese Tür hat eine Durchgangsbreite von {canonical(_entrance:width)} Meter",
-        "es": "Esta puerta tiene una ancho de {canonical(_entrance:width)} metros"
+        "en": "<a href ='#{_entrance:id} '>This door has a width of {canonical(_entrance:width)} meters </a>",
+        "nl": "<a href ='#{_entrance:id} '>Deze deur heeft een breedte van {canonical(_entrance:width)} meter </a>",
+        "de": "<a href ='#{_entrance:id} '>Diese Tür hat eine Durchgangsbreite von {canonical(_entrance:width)} Meter </a>",
+        "es": "<a href ='#{_entrance:id} '>Esta puerta tiene una ancho de {canonical(_entrance:width)} metros </a>"
       },
       "freeform": {
         "key": "_entrance:width"
