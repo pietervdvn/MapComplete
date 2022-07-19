@@ -68,5 +68,29 @@
         "centroid"
       ]
     }
-  ]
+  ],
+      "filter": [
+        {
+            "id": "drive-through",
+            "options": [
+                {
+                    "question": {
+                        "en": "Has drive through"
+                    },
+                    "osmTags": "drive_through=yes"
+                }
+            ]
+        },
+        {
+            "id": "dispensing",
+            "options": [
+                {
+                    "question": {
+                        "en": "Pharmacy able to provide prescription drugs"
+                    },
+                    "osmTags": "dispensing=yes"
+                }
+            ]
+        }
+    ]
 }

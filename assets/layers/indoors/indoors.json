@@ -1,0 +1,81 @@
+{
+  "id": "indoors",
+  "name": {
+    "en": "indoors"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "indoor=room",
+        "indoor=area",
+        "indoor=wall",
+        "indoor=door",
+        "indoor=level"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Indoor area {name}"
+    },
+    "mappings": [
+      {
+        "if": "indoor=room",
+        "then": "Indoor Room {name}"
+      },
+      {
+        "if": "indoor=area",
+        "then": "Indoor Area {name}"
+      },
+      {
+        "if": "indoor=wall",
+        "then": "Indoor Wall {name}"
+      },
+      {
+        "if": "indoor=corridor",
+        "then": "Indoor Corridor {name}"
+      },
+      {
+        "if": "indoor=door",
+        "then": "Indoor Door {name}"
+      },
+      {
+        "if": "indoor=level",
+        "then": "Indoor Level {name}"
+      }
+    ]
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images"
+  ],
+  "mapRendering": [
+    {
+      "color": {
+        "render": "#bb004488"
+      },
+      "width": {
+        "render": "8"
+      },
+      "offset": {
+        "render": "-4"
+      },
+      "fill": "no"
+    },
+    {
+      "color": "red",
+      "fill": "no",
+      "width": "2"
+    },
+    {
+      "label": {
+        "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
+        "condition": "name~*"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}
