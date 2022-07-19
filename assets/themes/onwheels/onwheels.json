@@ -30,7 +30,8 @@
     "viewpoint",
     "doctors",
     "reception_desk",
-    "walls_and_buildings"
+    "walls_and_buildings",
+    "elevator"
   ],
   "overrideAll": {
     "+calculatedTags": [
