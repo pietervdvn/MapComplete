@@ -340,6 +340,96 @@
         "key": "width",
         "type": "distance"
       }
+    },
+    {
+      "id": "kerb-type",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "nl": "Hoe hoog is deze stoeprand?",
+        "de": "Wie hoch ist der Bordstein?"
+      },
+      "mappings": [
+        {
+          "if": "kerb=raised",
+          "then": {
+            "en": "This kerb is raised (>3 cm)",
+            "nl": "Deze stoeprand is hoog (>3 cm)",
+            "de": "Der Bordstein ist erhöht (>3 cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/raised.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=lowered",
+          "then": {
+            "en": "This kerb is lowered (~3 cm)",
+            "nl": "Deze stoeprand is verlaagd (~3 cm)",
+            "de": "Der Bordstein ist abgesenkt (~3 cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/lowered.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=flush",
+          "then": {
+            "en": "This kerb is flush (~0cm)",
+            "nl": "Deze stoeprand is vlak (~0cm)",
+            "de": "Der Bordstein ist bündig (~0cm)"
+          },
+          "icon": {
+            "path": "./assets/layers/kerbs/flush.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=no",
+          "then": {
+            "en": "There is no kerb here",
+            "nl": "Er is hier geen stoeprand",
+            "de": "Hier gibt es keinen Bordstein"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/kerbs/no.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": "kerb=yes",
+          "then": {
+            "en": "There is a kerb of unknown height",
+            "nl": "Er is een stoeprand met onbekende hoogte",
+            "de": "Es gibt einen Bordstein mit unbekannter Höhe"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "kerb-height",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "nl": "Hoe hoog is deze stoeprand?",
+        "de": "Wie hoch ist der Bordstein?"
+      },
+      "render": {
+        "en": "Kerb height: {kerb:height}",
+        "nl": "Stoeprandhoogte: {kerb:height}",
+        "de": "Bordsteinhöhe: {kerb:height}"
+      },
+      "freeform": {
+        "key": "kerb:height",
+        "placeholder": {
+          "en": "Height of the kerb",
+          "nl": "Hoogte van de stoeprand",
+          "de": "Höhe des Bordsteins"
+        },
+        "type": "pnat"
+      }
     }
   ],
   "mapRendering": [
