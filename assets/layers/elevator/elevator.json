@@ -4,7 +4,7 @@
     "en": "elevator"
   },
   "source": {
-    "osmTags": "elevator=yes"
+    "osmTags": "highway=elevator"
   },
   "minzoom": 13,
   "tagRenderings": [
