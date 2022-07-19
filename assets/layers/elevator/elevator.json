@@ -68,7 +68,7 @@
         "nl": "een lift"
       },
       "tags": [
-        "elevator=yes"
+        "highway=elevator"
       ]
     }
   ],
