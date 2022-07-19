@@ -44,22 +44,36 @@ function renameTags(item): GeoJsonProperties {
 }
 
 function convertTypes(properties: GeoJsonProperties): GeoJsonProperties {
-  for (const property in properties) {
-    // Determine the original tag by looking at the value in the names table
-    const originalTag = Object.keys(Constants.names).find(
-      (tag) => Constants.names[tag] === property
+  // Split the tags into a list
+  let tags = properties.tags.split(";");
+
+  for (const tag in tags) {
+    // Split the tag into key and value
+    const key = tags[tag].split("=")[0];
+    const value = tags[tag].split("=")[1];
+    const originalKey = Object.keys(Constants.names).find(
+      (tag) => Constants.names[tag] === key
     );
-    // Check if we need to convert the value
-    if (Constants.types[originalTag]) {
-      switch (Constants.types[originalTag]) {
+
+    if (Constants.types[originalKey]) {
+      // We need to convert the value to the correct type
+      let newValue;
+      switch (Constants.types[originalKey]) {
         case "boolean":
-          properties[property] = properties[property] === "1" ? "yes" : "no";
+          newValue = value === "1" ? "yes" : "no";
           break;
         default:
+          newValue = value;
           break;
       }
+      tags[tag] = `${key}=${newValue}`;
     }
   }
+
+  // Rejoin the tags
+  properties.tags = tags.join(";");
+
+  // Return the properties
   return properties;
 }
 
@@ -70,14 +84,26 @@ function convertTypes(properties: GeoJsonProperties): GeoJsonProperties {
  * @returns The properties with units added
  */
 function addUnits(properties: GeoJsonProperties): GeoJsonProperties {
-  for (const property in properties) {
+  // Split the tags into a list
+  let tags = properties.tags.split(";");
+
+  for (const tag in tags) {
+    const key = tags[tag].split("=")[0];
+    const value = tags[tag].split("=")[1];
+    const originalKey = Object.keys(Constants.names).find(
+      (tag) => Constants.names[tag] === key
+    );
+
     // Check if the property needs units, and doesn't already have them
-    if (Constants.units[property] && property.match(/.*([A-z]).*/gi) === null) {
-      properties[
-        property
-      ] = `${properties[property]} ${Constants.units[property]}`;
+    if (Constants.units[originalKey] && value.match(/.*([A-z]).*/gi) === null) {
+      tags[tag] = `${key}=${value} ${Constants.units[originalKey]}`;
     }
   }
+
+  // Rejoin the tags
+  properties.tags = tags.join(";");
+
+  // Return the properties
   return properties;
 }
 
@@ -150,7 +176,7 @@ function main(args: string[]): void {
     properties = convertTypes(properties);
 
     // Add units if necessary
-    addUnits(properties);
+    properties = addUnits(properties);
 
     // Add Maproulette tags
     properties = addMaprouletteTags(properties, item);
@@ -176,15 +202,14 @@ function main(args: string[]): void {
     features: items,
   };
 
-  // Output the data to the console
-  console.log(JSON.stringify(featureCollection));
-
-  // Write the data to a file
+  // Write the data to a file or output to the console
   if (output) {
     writeFileSync(
       `${output}.geojson`,
       JSON.stringify(featureCollection, null, 2)
     );
+  } else {
+    console.log(JSON.stringify(featureCollection));
   }
 }
 
