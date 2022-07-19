@@ -387,7 +387,7 @@
   "presets": [
     {
       "title": {
-        "*": "entrance"
+        "en": "an entrance"
       },
       "preciseInput": {
         "preferredBackground": "photo",
