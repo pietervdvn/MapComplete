@@ -520,6 +520,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 errors
             }
         }
+        
+        if(json.title === undefined && json.tagRenderings !== undefined){
+            warnings.push(context + ": this layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element.")
+        }
 
         if (json["builtin"] !== undefined) {
             errors.push(context + ": This layer hasn't been expanded: " + json)

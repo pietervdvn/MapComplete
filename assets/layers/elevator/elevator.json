@@ -1,0 +1,133 @@
+{
+  "id": "elevator",
+  "name": {
+    "en": "elevator"
+  },
+  "source": {
+    "osmTags": "elevator=yes"
+  },
+  "minzoom": 13,
+  "title": {
+    "en": "Elevator"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "operational_status",
+      "mappings": [
+        {
+          "if": "operational_status=broken",
+          "then": {
+            "en": "This elevator is broken"
+          }
+        },
+        {
+          "if": "operational_status=ok",
+          "then": {
+            "en": "This elevator works"
+          }
+        },
+        {
+          "if": "operational_status=",
+          "then": {
+            "en": "This elevator works"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "door-width",
+      "render": {
+        "en": "This elevator's doors have a width of {canonical(door:width)}"
+      },
+      "question": {
+        "en": "What is the width of this elevator's entrance?"
+      },
+      "freeform": {
+        "key": "door:width",
+        "type": "pfloat"
+      }
+    },
+    {
+      "id": "elevator-width",
+      "render": {
+        "en": "This elevator has a width of {canonical(elevator:width)}"
+      },
+      "question": {
+        "en": "What is the width of this elevator?"
+      },
+      "freeform": {
+        "key": "elevator:width",
+        "type": "pfloat"
+      }
+    },
+    {
+      "id": "elevator-depth",
+      "render": {
+        "en": "This elevator has a depth of {canonical(elevator:depth)}"
+      },
+      "question": {
+        "en": "What is the depth of this elevator?"
+      },
+      "freeform": {
+        "key": "elevator:depth",
+        "type": "pfloat"
+      }
+    },
+    "induction-loop"
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "circle:white;./assets/layers/elevator/elevator_wheelchair.svg"
+      },
+      "iconSize": "40,40,bottom",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an elevator",
+        "nl": "een lift"
+      },
+      "tags": [
+        "elevator=yes"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "appliesToKey": [
+        "door:width",
+        "elevator:width",
+        "elevator:depth"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": "meter"
+          }
+        },
+        {
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "cms"
+          ],
+          "human": {
+            "en": "centimeter"
+          }
+        }
+      ]
+    }
+  ]
+}

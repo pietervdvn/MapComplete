@@ -358,7 +358,7 @@
       },
       "mappings": [
         {
-          "if": "kerb-height=",
+          "if": "kerb:height=0",
           "then": {
             "en": "This door does not have a kerb",
             "nl": "Deze deur heeft geen drempel"
