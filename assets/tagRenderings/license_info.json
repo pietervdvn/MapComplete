@@ -1,5 +1,25 @@
 [
   {
+    "path": "audio_induction_loop.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Carl Holderness"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Noun_telecoil_audio_induction_hearing_loop_symbol_2011213.svg"
+    ]
+  },
+  {
+    "path": "audio_induction_loop_missing.svg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Carl Holderness"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Noun_telecoil_audio_induction_hearing_loop_symbol_2011213.svg"
+    ]
+  },
+  {
     "path": "cash.svg",
     "license": "CC-BY 3.0",
     "authors": [
