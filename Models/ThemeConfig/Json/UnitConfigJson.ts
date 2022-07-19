@@ -1,7 +1,9 @@
 export default interface UnitConfigJson {
 
     /**
-     * Every key from this list will be normalized
+     * Every key from this list will be normalized.
+     * 
+     * To render a united value properly, use 
      */
     appliesToKey: string[],
     /**
