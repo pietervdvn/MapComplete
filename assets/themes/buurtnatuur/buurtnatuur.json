@@ -1,4 +1,5 @@
 {
+  "#dont-translate": "*",
   "id": "buurtnatuur",
   "title": {
     "nl": "Breng jouw buurtnatuur in kaart"
@@ -35,7 +36,10 @@
           "or": [
             "leisure=nature_reserve",
             {
-              "and": ["boundary=protected_area","protect_class!=22"]
+              "and": [
+                "boundary=protected_area",
+                "protect_class!=22"
+              ]
             }
           ]
         }

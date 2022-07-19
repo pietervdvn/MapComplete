@@ -255,8 +255,8 @@
         "welcomeBack": "Je bent aangemeld. Welkom terug!",
         "welcomeExplanation": {
             "addNew": "Klik op de kaart om een nieuw punt toe te voegen.",
-            "browseOtherThemesIntro": "Er zijn diverse thematische kaarten op MapComplete",
             "browseMoreMaps": "Ontdek meer kaarten",
+            "browseOtherThemesIntro": "Er zijn diverse thematische kaarten op MapComplete",
             "general": "Op deze kaart kan je <i>interessepunten</i> bekijken, bewerken en toevoegen. Zoom in om de interessepunten te zien, duid eentje aan om alle informatie te zien en te bewerken. Alle informatie komt van OpenStreetMap die gratis hergebruikt mag worden."
         },
         "wikipedia": {
@@ -506,7 +506,7 @@
             },
             "dream": {
                 "docs": "Stuurt een dromerige, computer-gegenereerde tekst",
-                "generatedBy": "Deze text is gemaakt door {bot} die Machine-Learning gebruikt om op Reddit te posten."
+                "generatedBy": "Deze tekst is gegenereerd door {bot} die Machine-Learning gebruikt om op Reddit te posten."
             },
             "help": {
                 "argcmd": "Het commando waarvoor je meer informatie wilt",
@@ -526,8 +526,8 @@
                 "couldNotDownload": "Ik kon <code>{id}</code> niet downloaden",
                 "docs": "Haal informatie op over een OSM-object. Dit kan met het ID of via een zoekterm. De objecten worden geinterpreteerd en getoond.",
                 "editWith": "Bewerk dit element op {title}",
-                "fetchingInfoAbout": "Data over {id} aan het ophalen...",
-                "foundResults": "Ik vond {total} resultaten voor <code>{search}</code>, ik ben informatie erover aan het ophalen...",
+                "fetchingInfoAbout": "Data over {id} aan het ophalen…",
+                "foundResults": "Ik vond {total} resultaten voor <code>{search}</code>, ik ben informatie erover aan het ophalen…",
                 "noEditPossible": "Geen enkel MapComplete-thema bevat dit soort objecten...",
                 "noInfo": "Nog geen relevante informatie",
                 "noOpeningHours": "Geen openingsuren gekend",
@@ -578,7 +578,7 @@
                 "noNearOrIn": "Sorry, Ik begreep je opdracht niet omdat ik geen <code>dichtbij</code> of <code>in</code> in je zoekopdracht.\nProbeer iets als <code>Zoek drinkwater in Londen</code>, <code>Zoek frituur in Brussel</code><p></p>\n <p>Daarnaast kan je ook <code>info {cmd}</code> proberen, om info te krijgen over een enkel object.</p>",
                 "nothingFound": "Sorry, ik kon niets vinden voor <code>{search}</code>, dus kan ik {layerTitle} niet zoeken",
                 "overview": "Ik heb {length} overeenkomende items gevonden.",
-                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>..."
+                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>…"
             },
             "shutdown": {
                 "argmode": "Geeft aan op welke manier ik moet afsluiten. Dit moet één van de volgende woorden zijn: {verbs}",
@@ -589,7 +589,7 @@
                 "verbupdate": "Probeert om de MapComplete-codebasis up te daten, sluit erna af"
             },
             "tags": {
-                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}...",
+                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}…",
                 "argsearch": "De ID van het OSM-object of een zoekopdracht",
                 "docs": "Toont de attributen van een OSM-object. Geef een ID of een zoekstring.",
                 "noSearchGiven": "Geleive een zoekterm of een ID mee te geven om dit commando te gebruiken",

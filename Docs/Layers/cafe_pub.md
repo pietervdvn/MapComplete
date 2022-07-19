@@ -26,7 +26,6 @@ A layer showing cafés and pubs where one can gather around a drink. The layer a
 
 
   - [cafes_and_pubs](https://mapcomplete.osm.be/cafes_and_pubs)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

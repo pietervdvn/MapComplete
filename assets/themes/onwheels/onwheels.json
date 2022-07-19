@@ -4,7 +4,7 @@
     "en": "OnWheels"
   },
   "description": {
-    "en": "On this map, publicly wheelchair accessible places are shown and can be easily added"
+    "en": "On this map, publicly weelchair accessible places are shown and can be easily added"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/onwheels/crest.svg",
@@ -32,15 +32,9 @@
     "walls_and_buildings"
   ],
   "overrideAll": {
-<<<<<<< HEAD
-    "minZoom": "15",
-    "mapRendering": [
-      {
-=======
     "+calculatedTags": [
       "_poi_walls_and_buildings_entrance_properties=feat.closestn('walls_and_buildings', 1, undefined, 1000).map(w => ({id: w.feat.properties.id, width: w.feat.properties['_entrance:width']}))[0]",
       "_poi_entrance:width=JSON.parse(feat.properties._poi_walls_and_buildings_entrance_properties)?.width"
-
     ],
     "+tagRenderings": [
       {
@@ -69,7 +63,6 @@
     "minzoom": "15",
     "mapRendering": [
       {
->>>>>>> develop
         "label": null
       }
     ]

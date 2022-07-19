@@ -11,9 +11,8 @@ mkdir dist/assets 2> /dev/null
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run generate:editor-layer-index &&
-npm run reset:layeroverview
 npm run generate &&
-npm run generate:layeroverview --force && # generate:layeroverview has to be run twice: the personal theme won't pick up all the layers otherwise; first time happens in 'npm run generate'
+npm run generate:translations &&
 npm run test &&
 npm run generate:layouts 
 

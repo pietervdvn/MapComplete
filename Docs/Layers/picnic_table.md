@@ -27,7 +27,6 @@ The layer showing picnic tables
 
   - [benches](https://mapcomplete.osm.be/benches)
   - [nature](https://mapcomplete.osm.be/nature)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 
