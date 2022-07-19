@@ -3568,6 +3568,14 @@
                 "0": {
                     "explanation": "{title()} wurde dauerhaft geschlossen"
                 }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dies ist eigentlich eine Kneipe"
+                },
+                "1": {
+                    "then": "Dies ist eigentlich ein Café"
+                }
             }
         },
         "description": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
@@ -4621,6 +4629,58 @@
         },
         "title": {
             "render": "Parkplatz"
+        },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Anzahl der Parkplätze"
+                },
+                "question": "Wie viele Stellplätze gibt es auf diesem Parkplatz?",
+                "render": "Es gibt {capacity} Stellplätze"
+            },
+            "parking-type": {
+                "mappings": {
+                    "2": {
+                        "then": "Dies ist eine Tiefgarage"
+                    },
+                    "3": {
+                        "then": "Dies ist ein mehrstöckiges oberirdisches Parkhaus"
+                    },
+                    "4": {
+                        "then": "Dies ist ein Parkdeck auf dem Dach"
+                    },
+                    "6": {
+                        "then": "Dies ist ein durch Carports überdachter Parkplatz"
+                    },
+                    "0": {
+                        "then": "Dies ist ein oberirdischer Parkplatz"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Parkbucht neben einer Straße"
+                    },
+                    "7": {
+                        "then": "Dies ist ein Parkplatz bestehend aus Garagenboxen"
+                    },
+                    "5": {
+                        "then": "Dies ist eine Fahrspur zum Parken auf der Straße"
+                    }
+                }
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Anzahl barrierefreier Stellplätze"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt barrierefreie Stellplätze, aber die Anzahl ist unbekannt"
+                    },
+                    "1": {
+                        "then": "Es gibt keine barrierefreien Stellplätze"
+                    }
+                },
+                "question": "Wie viele barrierefreie Stellplätze gibt es auf diesem Parkplatz?",
+                "render": "Es gibt {capacity:disabled} barrierefreie Stellplätze"
+            }
         }
     },
     "pedestrian_path": {
@@ -6119,7 +6179,7 @@
         }
     },
     "walls_and_buildings": {
-        "description": "Spezielle eingebaute Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist in Voreinstellungen für Objekte nützlich, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, …). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht eingeschaltet werden.",
+        "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
         "tagRenderings": {
             "_entrance:width": {
                 "render": "<a href ='#{_entrance:id} '>Diese Tür hat eine Durchgangsbreite von {canonical(_entrance:width)} Meter </a>"
@@ -6346,6 +6406,68 @@
                     }
                 }
             }
+        }
+    },
+    "doctors": {
+        "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Jetzt geöffnet"
+                    }
+                }
+            }
+        },
+        "name": "Ärzte",
+        "presets": {
+            "0": {
+                "title": "eine Arztpraxis"
+            },
+            "1": {
+                "title": "eine Zahnarztpraxis"
+            },
+            "2": {
+                "title": "Praxis eines Physiotherapeuten"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie heißt diese Arztpraxis?",
+                "render": "Diese Arztpraxis heißt {name}"
+            },
+            "specialty": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Allgemeinmediziner"
+                    },
+                    "1": {
+                        "then": "Dies ist ein Gynäkologe"
+                    },
+                    "2": {
+                        "then": "Dies ist ein Psychiater"
+                    },
+                    "3": {
+                        "then": "Dies ist ein Kinderarzt"
+                    }
+                },
+                "question": "Worauf ist dieser Arzt spezialisiert?",
+                "render": "Dieser Arzt ist spezialisiert auf {healthcare:speciality}"
+            }
+        },
+        "title": {
+            "render": "Arztpraxis {Name}"
+        }
+    },
+    "hospital": {
+        "tagRenderings": {
+            "name": {
+                "render": "Der Name des Krankenhauses lautet {Name}"
+            }
+        },
+        "name": "Krankenhaus",
+        "title": {
+            "render": "Krankenhaus"
         }
     }
 }
