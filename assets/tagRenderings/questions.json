@@ -1086,5 +1086,33 @@
         }
       }
     ]
+  },
+  "induction-loop": {
+    "description": "An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.",
+    "question": {
+      "en": "Does this place have an audio induction loop for people with reduced hearing?"
+    },
+    "mappings": [
+      {
+        "if": "hearing_loop=yes",
+        "then": {
+          "en": "This place has an audio induction loop"
+        },
+        "icon": {
+          "path": "./assets/tagRenderings/audio_induction_loop.svg",
+          "class": "medium"
+        }
+      },
+      {
+        "if": "hearing_loop=no",
+        "then": {
+          "en": "This place <b>does not</b> has an audio induction loop"
+        },
+        "icon": {
+          "path": "./assets/tagRenderings/audio_induction_loop_missing.svg",
+          "class": "medium"
+        }
+      }
+    ]
   }
 }
