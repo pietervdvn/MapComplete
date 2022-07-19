@@ -12,7 +12,7 @@
     {
       "id": "door-width",
       "render": {
-        "en": "This elevator's doors have a width of {canonical(door-width) }"
+        "en": "This elevator's doors have a width of {canonical(door:width) }"
       },
       "question": {
         "en": "What is the width of this elevator's entrance?"
@@ -25,7 +25,7 @@
     {
       "id": "elevator-width",
       "render": {
-        "en": "This elevator has a width of {canonical(door-width) }"
+        "en": "This elevator has a width of {canonical(elevator:width) }"
       },
       "question": {
         "en": "What is the width of this elevator?"
@@ -38,7 +38,7 @@
     {
       "id": "elevator-depth",
       "render": {
-        "en": "This elevator has a depth of {canonical(door-width) }"
+        "en": "This elevator has a depth of {canonical(elevator:depth) }"
       },
       "question": {
         "en": "What is the depth of this elevator?"
