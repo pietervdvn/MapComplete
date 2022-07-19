@@ -7,12 +7,39 @@
     "osmTags": "elevator=yes"
   },
   "minzoom": 13,
+  "title": {
+    "en": "Elevator"
+  },
   "tagRenderings": [
     "images",
     {
+      "id": "operational_status",
+      "mappings": [
+        {
+          "if": "operational_status=broken",
+          "then": {
+            "en": "This elevator is broken"
+          }
+        },
+        {
+          "if": "operational_status=ok",
+          "then": {
+            "en": "This elevator works"
+          }
+        },
+        {
+          "if": "operational_status=",
+          "then": {
+            "en": "This elevator works"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
       "id": "door-width",
       "render": {
-        "en": "This elevator's doors have a width of {canonical(door:width) }"
+        "en": "This elevator's doors have a width of {canonical(door:width)}"
       },
       "question": {
         "en": "What is the width of this elevator's entrance?"
@@ -25,7 +52,7 @@
     {
       "id": "elevator-width",
       "render": {
-        "en": "This elevator has a width of {canonical(elevator:width) }"
+        "en": "This elevator has a width of {canonical(elevator:width)}"
       },
       "question": {
         "en": "What is the width of this elevator?"
@@ -38,7 +65,7 @@
     {
       "id": "elevator-depth",
       "render": {
-        "en": "This elevator has a depth of {canonical(elevator:depth) }"
+        "en": "This elevator has a depth of {canonical(elevator:depth)}"
       },
       "question": {
         "en": "What is the depth of this elevator?"
@@ -47,12 +74,13 @@
         "key": "elevator:depth",
         "type": "pfloat"
       }
-    }
+    },
+    "induction-loop"
   ],
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/elevator/elevator_wheelchair.svg"
+        "render": "circle:white;./assets/layers/elevator/elevator_wheelchair.svg"
       },
       "iconSize": "40,40,bottom",
       "location": [
