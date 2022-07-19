@@ -6120,6 +6120,11 @@
     },
     "walls_and_buildings": {
         "description": "Spezielle eingebaute Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist in Voreinstellungen für Objekte nützlich, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, …). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht eingeschaltet werden.",
+        "tagRenderings": {
+            "_entrance:width": {
+                "render": "<a href ='#{_entrance:id} '>Diese Tür hat eine Durchgangsbreite von {canonical(_entrance:width)} Meter </a>"
+            }
+        },
         "title": {
             "render": "Wand oder Gebäude"
         }

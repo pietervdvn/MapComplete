@@ -150,7 +150,7 @@ export interface LayoutConfigJson {
      *
      * In the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer
      */
-    overrideAll?: Partial<LayerConfigJson>;
+    overrideAll?: Partial<any | LayerConfigJson>;
 
     /**
      * The id of the default background. BY default: vanilla OSM

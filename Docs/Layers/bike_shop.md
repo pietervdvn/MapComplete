@@ -26,7 +26,6 @@ A shop specifically selling bicycles or related items
 
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

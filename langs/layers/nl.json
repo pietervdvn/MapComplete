@@ -6214,6 +6214,11 @@
     },
     "walls_and_buildings": {
         "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,…). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
+        "tagRenderings": {
+            "_entrance:width": {
+                "render": "<a href ='#{_entrance:id} '>Deze deur heeft een breedte van {canonical(_entrance:width)} meter </a>"
+            }
+        },
         "title": {
             "render": "Muur of gebouw"
         }

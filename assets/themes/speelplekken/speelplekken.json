@@ -288,6 +288,6 @@
         "then": "./assets/themes/speelplekken/youtube.svg"
       }
     ],
-    "isShown":"_is_shadowed!=yes"
+    "isShown": "_is_shadowed!=yes"
   }
 }
