@@ -60,5 +60,46 @@
         "centroid"
       ]
     }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "an elevator",
+        "nl": "een lift"
+      },
+      "tags": [
+        "elevator=yes"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "appliesToKey": [
+        "door:width",
+        "elevator:width",
+        "elevator:depth"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": "meter"
+          }
+        },
+        {
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "cms"
+          ],
+          "human": {
+            "en": "centimeter"
+          }
+        }
+      ]
+    }
   ]
 }
