@@ -8,9 +8,57 @@
   },
   "minzoom": 13,
   "tagRenderings": [
-    
+    "images",
+    {
+      "id": "door-width",
+      "render": {
+        "en": "This elevator's doors have a width of {canonical(door-width) }"
+      },
+      "question": {
+        "en": "What is the width of this elevator's entrance?"
+      },
+      "freeform": {
+        "key": "door:width",
+        "type": "pfloat"
+      }
+    },
+    {
+      "id": "elevator-width",
+      "render": {
+        "en": "This elevator has a width of {canonical(door-width) }"
+      },
+      "question": {
+        "en": "What is the width of this elevator?"
+      },
+      "freeform": {
+        "key": "elevator:width",
+        "type": "pfloat"
+      }
+    },
+    {
+      "id": "elevator-depth",
+      "render": {
+        "en": "This elevator has a depth of {canonical(door-width) }"
+      },
+      "question": {
+        "en": "What is the depth of this elevator?"
+      },
+      "freeform": {
+        "key": "elevator:depth",
+        "type": "pfloat"
+      }
+    }
   ],
   "mapRendering": [
-    
+    {
+      "icon": {
+        "render": "./assets/layers/elevator/elevator_wheelchair.svg"
+      },
+      "iconSize": "40,40,bottom",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
   ]
 }
