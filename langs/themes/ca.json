@@ -359,5 +359,9 @@
     },
     "waste_basket": {
         "title": "Papepera"
+    },
+    "healthcare": {
+        "title": "Assistència sanitària",
+        "description": "En aquest mapa es mostren diversos elements relacionats amb la salut"
     }
 }
