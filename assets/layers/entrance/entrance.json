@@ -344,28 +344,25 @@
     {
       "id": "kerb-height",
       "question": {
-        "en": "What is the height of this kerb?",
-        "nl": "Hoe hoog is deze stoeprand?",
-        "de": "Wie hoch ist der Bordstein?"
+        "en": "What is the height of this kerb?"
       },
       "render": {
-        "en": "Kerb height: {kerb:height}",
-        "nl": "Stoeprandhoogte: {kerb:height}",
-        "de": "Bordsteinhöhe: {kerb:height}"
+        "en": "The kerb height of this door is {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",
         "placeholder": {
-          "en": "Height of the kerb",
-          "nl": "Hoogte van de stoeprand",
-          "de": "Höhe des Bordsteins"
+          "en": "Height of the door kerb"
         },
         "type": "pnat"
       },
       "mappings": [
         {
           "if": "kerb-height=",
-          "then": "kerb-height=0"
+          "then": {
+            "en": "This door does not have a kerb",
+            "nl": "Deze deur heeft geen drempel"
+          }
         }
       ]
     }
@@ -401,6 +398,34 @@
       },
       "tags": [
         "entrance=yes"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "appliesToKey": [
+        "kerb:height"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": "meter"
+          }
+        },
+        {
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "cms"
+          ],
+          "human": {
+            "en": "centimeter"
+          }
+        }
       ]
     }
   ]
