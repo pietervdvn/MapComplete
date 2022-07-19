@@ -27,7 +27,6 @@ A layer showing restaurants and fast-food amenities (with a special rendering fo
 
   - [food](https://mapcomplete.osm.be/food)
   - [fritures](https://mapcomplete.osm.be/fritures)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
   - [pets](https://mapcomplete.osm.be/pets)
 

@@ -39,6 +39,54 @@
   "socialImage": "./assets/themes/cyclofix/logo.svg",
   "layers": [
     "bike_cafe",
+    {
+      "builtin": [
+        "bicycle_rental"
+      ],
+      "override": {
+        "id": "bicycle_rental_non_docking",
+        "minzoom": 14,
+        "=presets": [],
+        "=mapRendering": [
+          {
+            "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg",
+            "iconSize": "40,40,bottom",
+            "location": [
+              "point",
+              "centroid"
+            ]
+          }
+        ],
+        "source": {
+          "osmTags": {
+            "and+": [
+              "bicycle_rental!=docking_station"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "#": "All bicycle rental at a high zoom level, to avoid duplicates",
+      "builtin": "bicycle_rental",
+      "override": {
+        "name": null,
+        "filter": {
+          "sameAs": "bicycle_rental_non_docking"
+        },
+        "minzoom": 18,
+        "=mapRendering": [
+          {
+            "icon": "pin:#ba2792;./assets/themes/cyclofix/key.svg",
+            "iconSize": "40,40,bottom",
+            "location": [
+              "point",
+              "centroid"
+            ]
+          }
+        ]
+      }
+    },
     "bike_shop",
     {
       "builtin": "bicycle_library",

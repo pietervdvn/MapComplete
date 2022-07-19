@@ -231,6 +231,10 @@
                 "then": "./assets/layers/doctors/doctors.svg"
               },
               {
+                "if": "theme=indoors",
+                "then": "./assets/themes/onwheels/crest.svg"
+              },
+              {
                 "if": "theme=kerbs_and_crossings",
                 "then": "./assets/layers/kerbs/KerbIcon.svg"
               },
@@ -353,6 +357,10 @@
               {
                 "if": "theme=uk_addresses",
                 "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              },
+              {
+                "if": "theme=walls_and_buildings",
+                "then": "./assets/layers/walls_and_buildings/walls_and_buildings.png"
               },
               {
                 "if": "theme=waste",

@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 175,
+      "commits": 177,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 138,
+      "commits": 139,
       "contributor": "kjon"
     },
     {
@@ -17,12 +17,12 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 30,
-      "contributor": "Babos Gábor"
+      "commits": 31,
+      "contributor": "Iago"
     },
     {
       "commits": 30,
-      "contributor": "Iago"
+      "contributor": "Babos Gábor"
     },
     {
       "commits": 29,
@@ -287,6 +287,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Hungarian_user"
     },
     {
       "commits": 1,

@@ -106,8 +106,20 @@
       "type": "boolean"
     },
     "isShown": {
-      "description": "This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.\nThis is useful to hide certain features from view.\n\nImportant: hiding features does not work dynamically, but is only calculated when the data is first renders.\nThis implies that it is not possible to hide a feature after a tagging change\n\nThe default value is 'yes'",
-      "$ref": "#/definitions/TagRenderingConfigJson"
+      "description": "If set, only features matching this extra tag will be shown.\nThis is useful to hide certain features from view.\n\nImportant: hiding features does not work dynamically, but is only calculated when the data is first renders.\nThis implies that it is not possible to hide a feature after a tagging change\n\nThe default value is 'yes'",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/AndTagConfigJson",
+          "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        },
+        {
+          "$ref": "#/definitions/OrTagConfigJson",
+          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+        },
+        {
+          "type": "string"
+        }
+      ]
     },
     "forceLoad": {
       "description": "Advanced option - might be set by the theme compiler\n\nIf true, this data will _always_ be loaded, even if the theme is disabled",
@@ -303,7 +315,9 @@
                   }
                 ]
               },
-              "override": {}
+              "override": {
+                "$ref": "#/definitions/Partial<QuestionableTagRenderingConfigJson>"
+              }
             },
             "required": [
               "builtin",
@@ -311,7 +325,7 @@
             ]
           },
           {
-            "$ref": "#/definitions/default<(string|QuestionableTagRenderingConfigJson|{builtin:string;override:any;})[]>"
+            "$ref": "#/definitions/default<(string|QuestionableTagRenderingConfigJson|{builtin:string;override:Partial<QuestionableTagRenderingConfigJson>;})[]>"
           },
           {
             "type": "string"
@@ -1027,7 +1041,100 @@
       },
       "additionalProperties": false
     },
-    "default<(string|QuestionableTagRenderingConfigJson|{builtin:string;override:any;})[]>": {
+    "Partial<QuestionableTagRenderingConfigJson>": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+        },
+        "freeform": {
+          "description": "Allow freeform text input from the user",
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "type": {
+              "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
+              "type": "string"
+            },
+            "placeholder": {
+              "description": "A (translated) text that is shown (as gray text) within the textfield"
+            },
+            "helperArgs": {
+              "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
+              "type": "array",
+              "items": {}
+            },
+            "addExtraTags": {
+              "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "inline": {
+              "description": "When set, influences the way a question is asked.\nInstead of showing a full-widht text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.",
+              "type": "boolean"
+            },
+            "default": {
+              "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "key"
+          ]
+        },
+        "multiAnswer": {
+          "description": "If true, use checkboxes instead of radio buttons when asking the question",
+          "type": "boolean"
+        },
+        "mappings": {
+          "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MappingConfigJson"
+          }
+        },
+        "id": {
+          "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
+          "type": "string"
+        },
+        "group": {
+          "description": "If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.\nThe first tagRendering of a group will always be a sticky element.",
+          "type": "string"
+        },
+        "labels": {
+          "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "render": {
+          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
+        },
+        "condition": {
+          "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AndTagConfigJson",
+              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "$ref": "#/definitions/OrTagConfigJson",
+              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "default<(string|QuestionableTagRenderingConfigJson|{builtin:string;override:Partial<QuestionableTagRenderingConfigJson>;})[]>": {
       "description": "Rewrites and multiplies the given renderings of type T.\n\nThis can be used for introducing many similar questions automatically,\nwhich also makes translations easier.\n\n(Note that the key does _not_ need to be wrapped in {}. \nHowever, we recommend to use them if the key is used in a translation, as missing keys will be picked up and warned for by the translation scripts)\n\nFor example:\n\n```\n{\n    rewrite: {\n        sourceString: [\"key\", \"a|b|c\"],\n        into: [\n            [\"X\", 0]\n            [\"Y\", 1],\n            [\"Z\", 2]\n        ],\n        renderings: [{\n            \"key\":\"a|b|c\"\n        }]\n    }\n}\n```\nwill result in _three_ copies (as the values to rewrite into have three values, namely:\n\n[\n  {\n  # The first pair: key --> X, a|b|c --> 0\n      \"X\": 0\n  },\n  {\n      \"Y\": 1\n  },\n  {\n      \"Z\": 2\n  }\n\n]",
       "type": "object",
       "properties": {
@@ -1066,7 +1173,9 @@
                   "builtin": {
                     "type": "string"
                   },
-                  "override": {}
+                  "override": {
+                    "$ref": "#/definitions/Partial<QuestionableTagRenderingConfigJson>"
+                  }
                 },
                 "required": [
                   "builtin",

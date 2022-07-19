@@ -3985,6 +3985,11 @@
         }
     },
     "walls_and_buildings": {
+        "tagRenderings": {
+            "_entrance:width": {
+                "render": "<a href ='#{_entrance:id} '>Esta puerta tiene una ancho de {canonical(_entrance:width)} metros </a>"
+            }
+        },
         "title": {
             "render": "Pared o edificio"
         }
