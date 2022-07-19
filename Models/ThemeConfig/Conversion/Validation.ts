@@ -246,6 +246,10 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
         for (const layer of withOverride) {
             for (const key in overrideAll) {
+                if(key.endsWith("+") || key.startsWith("+")){
+                    // This key will _add_ to the list, not overwrite it - so no warning is needed
+                    continue
+                }
                 if (layer["override"][key] !== undefined || layer["override"]["=" + key] !== undefined) {
                     const w = "The override of layer " + JSON.stringify(layer["builtin"]) + " has a shadowed property: " + key + " is overriden by overrideAll of the theme";
                     errors.push(w)
