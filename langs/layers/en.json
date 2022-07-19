@@ -3255,6 +3255,57 @@
         "description": "This layer visualizes directions",
         "name": "Direction visualization"
     },
+    "doctors": {
+        "description": "This layer shows doctor offices, dentists and other healthcare facilities",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Opened now"
+                    }
+                }
+            }
+        },
+        "name": "doctors",
+        "presets": {
+            "0": {
+                "title": "a doctors office"
+            },
+            "1": {
+                "title": "a dentists office"
+            },
+            "2": {
+                "title": "a physiotherapists office"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this doctors place?",
+                "render": "This doctors place is called {name}"
+            },
+            "specialty": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a general practitioner"
+                    },
+                    "1": {
+                        "then": "This is a gynaecologist"
+                    },
+                    "2": {
+                        "then": "This is a psychiatrist"
+                    },
+                    "3": {
+                        "then": "This is a paediatrician"
+                    }
+                },
+                "question": "What is this doctor specialized in?",
+                "render": "This doctor is specialized in {healthcare:speciality}"
+            }
+        },
+        "title": {
+            "render": "Doctors Office {name}"
+        }
+    },
     "dogpark": {
         "name": "dog parks",
         "presets": {
@@ -3572,6 +3623,9 @@
             "nonDeleteMappings": {
                 "0": {
                     "then": "This is actually a pub"
+                },
+                "1": {
+                    "then": "This is actually a cafe"
                 }
             }
         },
@@ -3995,6 +4049,18 @@
             "render": "Hackerspace"
         }
     },
+    "hospital": {
+        "name": "Hospital",
+        "tagRenderings": {
+            "name": {
+                "question": "What does the of the hospital ?",
+                "render": "Name of the hospital name is {name}"
+            }
+        },
+        "title": {
+            "render": "Hospital"
+        }
+    },
     "hydrant": {
         "description": "Map layer to show fire hydrants.",
         "name": "Map of hydrants",
@@ -4127,7 +4193,7 @@
                     "placeholder": "Height of the kerb"
                 },
                 "question": "What is the height of this kerb?",
-                "render": "Kerb height: {{kerb:height}}"
+                "render": "Kerb height: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4280,6 +4346,9 @@
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
+                        "then": "This is a living street, which has a maxspeed of 20km/h"
+                    },
+                    "1": {
                         "then": "This is a living street, which has a maxspeed of 20km/h"
                     }
                 },
@@ -4621,6 +4690,65 @@
                 "title": "a car parking"
             }
         },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Amount of parking spots"
+                },
+                "question": "How many parking spots are there at this parking?",
+                "render": "There are {capacity} parking spots"
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Amount of parking spots reserved for disabled people"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "There are disabled parking spots, but it is not known how many"
+                    },
+                    "1": {
+                        "then": "There are no disabled parking spots"
+                    }
+                },
+                "question": "How many disabled parking spots are there at this parking?",
+                "render": "There are {capacity:disabled} disabled parking spots"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a surface parking lot"
+                    },
+                    "1": {
+                        "then": "This is a parking bay next to a street"
+                    },
+                    "2": {
+                        "then": "This is an underground parking garage"
+                    },
+                    "3": {
+                        "then": "This is a multi-storey parking garage"
+                    },
+                    "4": {
+                        "then": "This is a rooftop parking deck"
+                    },
+                    "5": {
+                        "then": "This is a lane for parking on the road"
+                    },
+                    "6": {
+                        "then": "This is parking covered by carports"
+                    },
+                    "7": {
+                        "then": "This a parking consisting of garage boxes"
+                    },
+                    "8": {
+                        "then": "This is a parking on a layby"
+                    },
+                    "9": {
+                        "then": "This is a parking consisting of sheds"
+                    }
+                },
+                "question": "What kind of parking is this?"
+            }
+        },
         "title": {
             "render": "Car parking"
         }
@@ -4628,6 +4756,33 @@
     "pedestrian_path": {
         "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
         "name": "Pedestrian paths"
+    },
+    "pharmacy": {
+        "name": "pharmacy",
+        "tagRenderings": {
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "This pharmacy is easy to access on a wheelchair"
+                    },
+                    "1": {
+                        "then": "This pharmacy is hard to access on a wheelchair"
+                    },
+                    "2": {
+                        "then": "This pharmacy has limited access for wheelchair users"
+                    }
+                },
+                "question": "Is this pharmacy easy to access on a wheelchair?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pharmacy"
+                }
+            },
+            "render": "{name}"
+        }
     },
     "picnic_table": {
         "description": "The layer showing picnic tables",
@@ -4904,6 +5059,35 @@
             "render": "Bookcase"
         }
     },
+    "rainbow_crossings": {
+        "description": "A layer showing pedestrian crossings with rainbow paintings",
+        "name": "Crossings with rainbow paintings",
+        "presets": {
+            "0": {
+                "description": "Pedestrian crossing",
+                "title": "a crossing"
+            }
+        },
+        "tagRenderings": {
+            "crossing-with-rainbow": {
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has rainbow paintings"
+                    },
+                    "1": {
+                        "then": "No rainbow paintings here"
+                    },
+                    "2": {
+                        "then": "No rainbow paintings here"
+                    }
+                },
+                "question": "Does this crossing has rainbow paintings?"
+            }
+        },
+        "title": {
+            "render": "Crossing"
+        }
+    },
     "recycling": {
         "description": "A layer with recycling containers and centres",
         "filter": {
@@ -5124,6 +5308,16 @@
             }
         },
         "tagRenderings": {
+            "8": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "The main language of this school is unknown"
+                        }
+                    },
+                    "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
+                }
+            },
             "capacity": {
                 "question": "How much students can at most enroll in this school?",
                 "render": "This school can enroll at most {capacity} students"
@@ -5170,30 +5364,6 @@
                     }
                 },
                 "question": "Which genders can enroll at this school?"
-            },
-            "language": {
-                "freeform": {
-                    "placeholder": "Language in lowercase English"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "The main language of this school is unknown"
-                    },
-                    "1": {
-                        "then": "French is the main language of {name}"
-                    },
-                    "2": {
-                        "then": "Dutch is the main language of {name}"
-                    },
-                    "3": {
-                        "then": "German is the main language of {name}"
-                    },
-                    "4": {
-                        "then": "The main language of this school is unknown"
-                    }
-                },
-                "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
-                "render": "{school:language} is the main language of {title()}"
             },
             "school-name": {
                 "question": "What is the name of this school?",
@@ -5319,8 +5489,29 @@
         "tagRenderings": {
             "2": {
                 "override": {
-                    "question": "What kind of shop is this?"
+                    "question": "What kind of shop is this?",
+                    "render": "This is a {shop}"
                 }
+            },
+            "copyshop-print-sizes": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop can print on papers of size A4"
+                    },
+                    "1": {
+                        "then": "This shop can print on papers of size A3"
+                    },
+                    "2": {
+                        "then": "This shop can print on papers of size A2"
+                    },
+                    "3": {
+                        "then": "This shop can print on papers of size A1"
+                    },
+                    "4": {
+                        "then": "This shop can print on papers of size A0"
+                    }
+                },
+                "question": "What paper formats does this shop offer?"
             },
             "shops-name": {
                 "question": "What is the name of this shop?"
@@ -6342,6 +6533,16 @@
     },
     "walls_and_buildings": {
         "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
+        "tagRenderings": {
+            "_entrance:width": {
+                "mappings": {
+                    "0": {
+                        "then": "This entrance has no width information"
+                    }
+                },
+                "render": "<a href ='#{_entrance:id} '>This door has a width of {canonical(_entrance:width)} meters </a>"
+            }
+        },
         "title": {
             "render": "Wall or building"
         }

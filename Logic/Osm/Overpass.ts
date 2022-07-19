@@ -35,7 +35,7 @@ export class Overpass {
         this._relationTracker = relationTracker
     }
 
-    public async queryGeoJson(bounds: BBox, ): Promise<[FeatureCollection, Date]> {
+    public async queryGeoJson(bounds: BBox): Promise<[FeatureCollection, Date]> {
         const bbox = "[bbox:" + bounds.getSouth() + "," + bounds.getWest() + "," + bounds.getNorth() + "," + bounds.getEast() + "]";
         const query = this.buildScript(bbox)
         return this.ExecuteQuery(query);

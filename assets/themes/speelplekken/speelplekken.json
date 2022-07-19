@@ -288,14 +288,6 @@
         "then": "./assets/themes/speelplekken/youtube.svg"
       }
     ],
-    "isShown": {
-      "render": "yes",
-      "mappings": [
-        {
-          "if": "_is_shadowed=yes",
-          "then": "no"
-        }
-      ]
-    }
+    "isShown": "_is_shadowed!=yes"
   }
 }

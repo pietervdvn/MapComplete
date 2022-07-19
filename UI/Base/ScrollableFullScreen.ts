@@ -28,7 +28,10 @@ export default class ScrollableFullScreen extends UIElement {
     constructor(title: ((options: { mode: string }) => BaseUIElement),
                 content: ((options: { mode: string, resetScrollSignal: UIEventSource<void> }) => BaseUIElement),
                 hashToShow: string,
-                isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+                isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false),
+                options?: {
+                    setHash?: true | boolean    
+                }
     ) {
         super();
         this.hashToShow = hashToShow;
@@ -53,16 +56,21 @@ export default class ScrollableFullScreen extends UIElement {
 
 
         const self = this;
-        Hash.hash.addCallback(h => {
-            if (h === undefined) {
-                isShown.setData(false)
-            }
-        })
+        const setHash = options?.setHash ?? true;
+        if(setHash){
+            Hash.hash.addCallback(h => {
+                if (h === undefined) {
+                    isShown.setData(false)
+                }
+            })
+        }
         isShown.addCallback(isShown => {
             if (isShown) {
                 // We first must set the hash, then activate the panel
                 // If the order is wrong, this will cause the panel to disactivate again
-                Hash.hash.setData(hashToShow)
+                if(setHash){
+                    Hash.hash.setData(hashToShow)
+                }
                 self.Activate();
             } else {
                 // Some cleanup...

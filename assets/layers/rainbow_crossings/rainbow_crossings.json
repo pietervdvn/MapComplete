@@ -1,0 +1,93 @@
+{
+  "id": "rainbow_crossings",
+  "name": {
+    "en": "Crossings with rainbow paintings"
+  },
+  "description": {
+    "en": "A layer showing pedestrian crossings with rainbow paintings"
+  },
+  "source": {
+    "osmTags": "highway=crossing"
+  },
+  "minzoom": 17,
+  "title": {
+    "render": {
+      "en": "Crossing"
+    }
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a crossing"
+      },
+      "tags": [
+        "highway=crossing"
+      ],
+      "description": {
+        "en": "Pedestrian crossing"
+      },
+      "preciseInput": {
+        "preferredBackground": [
+          "photo"
+        ],
+        "snapToLayer": "cycleways_and_roads",
+        "maxSnapDistance": 25
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "crossing-with-rainbow",
+      "question": {
+        "en": "Does this crossing has rainbow paintings?"
+      },
+      "condition": "highway=crossing",
+      "mappings": [
+        {
+          "if": "crossing:marking=rainbow",
+          "then": {
+            "en": "This crossing has rainbow paintings"
+          },
+          "icon": {
+            "path": "./assets/themes/rainbow_crossings/logo.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "not:crossing:marking=rainbow",
+          "then": {
+            "en": "No rainbow paintings here"
+          },
+          "icon": "./assets/themes/rainbow_crossings/crossing.svg"
+        },
+        {
+          "if": "crossing:marking!=rainbow",
+          "then": {
+            "en": "No rainbow paintings here"
+          },
+          "icon": "./assets/themes/rainbow_crossings/crossing.svg",
+          "hideInAnswer": true
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/themes/rainbow_crossings/crossing.svg",
+        "mappings": [
+          {
+            "if": "crossing:marking=rainbow",
+            "then": "./assets/themes/rainbow_crossings/logo.svg"
+          }
+        ]
+      },
+      "iconSize": "40,40,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

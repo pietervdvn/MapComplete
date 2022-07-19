@@ -37,7 +37,8 @@
     "fr": "Ce site collecte les zones de camping officielles ainsi que les aires de vidange. Il est possible d’ajouter des détails à propos des services proposés ainsi que leurs coûts. Ajoutez vos images et avis. C’est un site et une application. Les données sont stockées sur OpenStreetMap, elles seront toujours gratuites et peuvent être réutilisées par n’importe quelle application.",
     "de": "Eine Karte für offizielle Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen, oder Bilder und Bewertungen ergänzen. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
     "hu": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket.",
-    "es": "Este sitio recoge todos los lugares oficiales de parada de caravanas y los lugares donde se pueden verter las aguas grises y negras. Puedes añadir detalles sobre los servicios prestados y el coste. Añade fotos y reseñas. Este es un sitio web y una aplicación web. Los datos se almacenan en OpenStreetMap, por lo que serán gratuitos para siempre y podrán ser reutilizados por cualquier aplicación."
+    "es": "Este sitio recoge todos los lugares oficiales de parada de caravanas y los lugares donde se pueden verter las aguas grises y negras. Puedes añadir detalles sobre los servicios prestados y el coste. Añade fotos y reseñas. Este es un sitio web y una aplicación web. Los datos se almacenan en OpenStreetMap, por lo que serán gratuitos para siempre y podrán ser reutilizados por cualquier aplicación.",
+    "ca": "Aquest lloc recull tots els llocs oficials de parada de caravanes i els llocs on es poden abocar les aigües grises i negres. Pots afegir detalls sobre els serveis prestats i el cost. Afig fotos i ressenyes. Aquest és un lloc web i una aplicació web. Les dades s'emmagatzemen en OpenStreetMap, per la qual cosa seran gratuïts per sempre i podran ser reutilitzats per qualsevol aplicació."
   },
   "maintainer": "joost schouppe",
   "icon": "./assets/themes/campersite/caravan.svg",
@@ -175,7 +176,8 @@
             "pt_BR": "Este lugar cobra alguma taxa?",
             "de": "Wird hier eine Gebühr erhoben?",
             "es": "¿Este lugar cobra una tarifa?",
-            "nb_NO": "Tar dette stedet en avgift?"
+            "nb_NO": "Tar dette stedet en avgift?",
+            "ca": "Aquest lloc cobra una taxa?"
           },
           "mappings": [
             {
@@ -197,7 +199,8 @@
                 "id": "Anda perlu membayar untuk menggunakannya",
                 "es": "Necesitas pagar por su uso",
                 "da": "Du skal betale for brug",
-                "nb_NO": "Man må betale for bruk"
+                "nb_NO": "Man må betale for bruk",
+                "ca": "Heu de pagar per l'ús"
               }
             },
             {
@@ -220,7 +223,8 @@
                 "pt_BR": "Pode ser usado de graça",
                 "de": "Nutzung kostenlos",
                 "es": "Se puede usar de manera gratuita",
-                "da": "Kan bruges gratis"
+                "da": "Kan bruges gratis",
+                "ca": "Es pot utilitzar gratuïtament"
               },
               "addExtraTags": [
                 "charge="
@@ -241,7 +245,8 @@
             "pt_BR": "Este lugar cobra {charge}",
             "de": "Die Gebühr beträgt {charge}",
             "es": "Este lugar cobra {charge}",
-            "da": "Dette sted koster {charge}"
+            "da": "Dette sted koster {charge}",
+            "ca": "Aquest lloc cobra {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -255,7 +260,8 @@
             "pt_BR": "Quanto este lugar cobra?",
             "de": "Wie hoch sind die Gebühren hier?",
             "es": "¿Cuánto cobra este lugar?",
-            "da": "Hvor meget koster dette sted?"
+            "da": "Hvor meget koster dette sted?",
+            "ca": "Quant cobra aquest lloc?"
           },
           "freeform": {
             "key": "charge"
@@ -337,7 +343,8 @@
             "de": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen",
             "nl": "{capacity} campers kunnen deze plaats tegelijk gebruiken",
             "es": "{capacity} los campistas pueden utilizar este lugar al mismo tiempo",
-            "da": "{capacity} campister kan bruge dette sted på samme tid"
+            "da": "{capacity} campister kan bruge dette sted på samme tid",
+            "ca": "{capacity} els acampadors poden utilitzar aquest lloc al mateix temps"
           },
           "question": {
             "en": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
@@ -350,7 +357,8 @@
             "de": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
             "nl": "Hoeveel campers kunnen hier overnachten? (sla dit over als er geen duidelijk aantal plaatsen of aangeduid maximum is)",
             "es": "¿Cuántos campistas pueden alojarse aquí? (omitir si no hay un número evidente de plazas o vehículos permitidos)",
-            "da": "Hvor mange campister kan bo her? (spring over, hvis der ikke er noget åbenlyst antal pladser eller tilladte køretøjer)"
+            "da": "Hvor mange campister kan bo her? (spring over, hvis der ikke er noget åbenlyst antal pladser eller tilladte køretøjer)",
+            "ca": "Quants acampadors poden allotjar-se ací? (ometre si no hi ha un nombre evident de places o vehicles permesos)"
           },
           "freeform": {
             "key": "capacity",
@@ -373,7 +381,8 @@
             "nl": "Biedt deze plaats internettoegang?",
             "es": "¿Este lugar tiene acceso a internet?",
             "da": "Er der internetadgang på dette sted?",
-            "nb_NO": "Tilbyr stedet tilgang til Internett?"
+            "nb_NO": "Tilbyr stedet tilgang til Internett?",
+            "ca": "Aquest lloc proporciona accés a Internet?"
           },
           "mappings": [
             {
@@ -419,7 +428,8 @@
                 "nl": "Er is internettoegang",
                 "es": "Hay acceso a internet",
                 "da": "Der er internetadgang",
-                "nb_NO": "Det finnes tilgang til Internett"
+                "nb_NO": "Det finnes tilgang til Internett",
+                "ca": "Hi ha accés a Internet"
               },
               "hideInAnswer": true
             },
@@ -442,7 +452,8 @@
                 "nl": "Er is geen internettoegang",
                 "es": "No hay acceso a internet",
                 "da": "Der er ingen internetadgang",
-                "nb_NO": "Det finnes ingen tilgang til Internett"
+                "nb_NO": "Det finnes ingen tilgang til Internett",
+                "ca": "No hi ha accés a Internet"
               }
             }
           ]
@@ -461,7 +472,8 @@
             "nl": "Moet je betalen voor internettoegang?",
             "es": "¿Tienes que pagar por el acceso a internet?",
             "da": "Skal man betale for internetadgang?",
-            "nb_NO": "Må man betale for tilgang til Internett?"
+            "nb_NO": "Må man betale for tilgang til Internett?",
+            "ca": "Has de pagar per l'accés a Internet?"
           },
           "mappings": [
             {
@@ -482,7 +494,8 @@
                 "nl": "Je moet extra betalen voor internettoegang",
                 "es": "Tienes que pagar a mayores por el acceso a internet",
                 "da": "Man skal betale ekstra for internetadgang",
-                "nb_NO": "Tilgang til Internett koster ekstra"
+                "nb_NO": "Tilgang til Internett koster ekstra",
+                "ca": "Heu de pagar un extra per accedir a Internet"
               }
             },
             {
@@ -503,7 +516,8 @@
                 "nl": "Je hoeft niet extra te betalen voor internettoegang",
                 "es": "No tienes que pagar a mayores por el acceso a internet",
                 "da": "Man behøver ikke at betale ekstra for internetadgang",
-                "nb_NO": "Man må ikke betale ekstra for tilgang til Internett"
+                "nb_NO": "Man må ikke betale ekstra for tilgang til Internett",
+                "ca": "No cal pagar extra per l'accés a Internet"
               }
             }
           ],
@@ -648,7 +662,8 @@
                 "de": "Es gibt einige Plätze für Langzeitmieten, aber auch eine tageweise Anmietung ist möglich",
                 "es": "Sí, hay algunas plazas de alquiler a largo plazo, pero también puedes alojarte por días",
                 "nl": "Er zijn enkele plaatsen om op lange termijn te huren, maar je kan ook enkele dagen blijven",
-                "nb_NO": "Det finnes noen plasser for langtidsleie, men man kan også bruke dem på dagsbasis"
+                "nb_NO": "Det finnes noen plasser for langtidsleie, men man kan også bruke dem på dagsbasis",
+                "ca": "Hi ha alguns punts per al lloguer a llarg termini, però també es pot romandre diàriament"
               }
             },
             {
@@ -669,7 +684,8 @@
                 "es": "No, no hay huéspedes permanentes aquí",
                 "da": "Nej, der er ingen faste gæster her",
                 "nl": "Hier wonen geen permanente gasten",
-                "nb_NO": "Det er ingen permanente gjester her"
+                "nb_NO": "Det er ingen permanente gjester her",
+                "ca": "No hi han hostes permanents aquí"
               }
             },
             {
@@ -706,7 +722,8 @@
             "de": "Mehr Details über diesen Ort: {description}",
             "nl": "Meer details over deze plaats: {description}",
             "es": "Más detalles sobre este lugar:{description}",
-            "da": "Flere oplysninger om dette sted: {description}"
+            "da": "Flere oplysninger om dette sted: {description}",
+            "ca": "Més detalls sobre aquest lloc: {description}"
           },
           "question": {
             "en": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
@@ -717,7 +734,8 @@
             "fr": "Souhaitez-vous ajouter une description générale du lieu ? (Ne pas répéter les informations précédentes et rester neutre, les opinions vont dans les avis)",
             "de": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
             "nl": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)",
-            "es": "¿Te gustaría añadir una descripción general de este lugar? (No repitas información previamente preguntada o mostrada arriba. Por favor mantenla objetiva - las opiniones van en la de opiniones)"
+            "es": "¿Te gustaría añadir una descripción general de este lugar? (No repitas información previamente preguntada o mostrada arriba. Por favor mantenla objetiva - las opiniones van en la de opiniones)",
+            "ca": "T'agradaria afegir una descripció general d'aquest lloc? (No repeteixis informació prèviament preguntada o mostrada a dalt. Si us plau mantín-la objectiva - les opinions van en les «reviews»)"
           },
           "freeform": {
             "key": "description",
@@ -758,7 +776,8 @@
             "nl": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
             "zh_Hant": "新增正式露營地點，通常是設計給過夜的露營者的地點。看起來像是真的露營地或是一般的停車場，而且也許沒有任何指標，但在城鎮被定議地點。如果一般給露營者的停車場並不是用來過夜，則不是露營地點 ",
             "hu": "Új hivatalos lakóautóhely hozzáadása. Ez arra vannak kijelölve, hogy lakóautóval ott éjszakázzunk. Lehet, hogy úgy néz ki, mint egy igazi kemping, de az is lehet, hogy csak olyan, mint egy parkoló. Előfordulhat, hogy egyáltalán nem jelzik őket, hanem csak egy önkormányzati határozatban vannak kijelölve. A lakóautósoknak szánt olyan hagyományos parkolók, ahol nem várhatóan nem fognak éjszakázni, -nem minősül- lakóautóhelynek. ",
-            "es": "Añade un nuevo sitio de acampada oficial. Son lugares designados para pasar la noche con tu caravana. Pueden parecerse a un camping real o simplemente a un aparcamiento. Puede que no estén señalizados en absoluto, sino que simplemente estén definidos en una decisión municipal. Un aparcamiento normal destinado a los campistas en el que no se espera que se pase la noche, no es un camping. "
+            "es": "Añade un nuevo sitio de acampada oficial. Son lugares designados para pasar la noche con tu caravana. Pueden parecerse a un camping real o simplemente a un aparcamiento. Puede que no estén señalizados en absoluto, sino que simplemente estén definidos en una decisión municipal. Un aparcamiento normal destinado a los campistas en el que no se espera que se pase la noche, no es un camping. ",
+            "ca": "Afig un nou lloc d'acampada oficial. Són llocs designats per a passar la nit amb la teua caravana. Poden semblar-se a un càmping real o simplement a un aparcament. Pot ser que no estiguen senyalitzats en absolut, sinó que simplement estiguen definits per una decisió municipal. Un aparcament normal destinat als acampadors en el qual no s'espera que es passe la nit, no és un càmping. "
           }
         }
       ],

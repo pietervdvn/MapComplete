@@ -75,8 +75,8 @@ export class DoesImageExist extends DesugaringStep<string> {
                 return {result: image};
             }
         }
-
-        if (this._knownImagePaths !== undefined && !this._knownImagePaths.has(image)) {
+        
+        if (!this._knownImagePaths.has(image)) {
             if (this.doesPathExist === undefined) {
                 errors.push(`Image with path ${image} not found or not attributed; it is used in ${context}`)
             } else if (!this.doesPathExist(image)) {
@@ -508,6 +508,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
         const errors = []
         const warnings = []
         const information = []
+        context = "While validating a layer: "+context
         if (typeof json === "string") {
             errors.push(context + ": This layer hasn't been expanded: " + json)
             return {
@@ -547,6 +548,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
                 if (json["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
                     errors.push(context + ": layer " + json.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'")
+                }
+                
+                if(json.isShown !== undefined && (json.isShown["render"] !== undefined || json.isShown["mappings"] !== undefined)){
+                    warnings.push(context + " has a tagRendering as `isShown`")
                 }
             }
             {

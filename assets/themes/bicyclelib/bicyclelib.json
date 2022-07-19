@@ -38,7 +38,7 @@
     {
       "builtin": "bicycle_library",
       "override": {
-        "minZoom": 0
+        "minzoom": 0
       }
     }
   ]

@@ -63,6 +63,41 @@
     {
       "key": "highway",
       "description": "The MapComplete theme Bicycle infrastructure has a layer Cycleways and roads showing features with this tag",
+      "value": "tertiary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Cycleways and roads showing features with this tag",
+      "value": "primary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Cycleways and roads showing features with this tag",
+      "value": "secondary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Cycleways and roads showing features with this tag",
+      "value": "service"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Cycleways and roads showing features with this tag",
+      "value": "footway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Cycleways and roads showing features with this tag",
+      "value": "pedestrian"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Cycleways and roads showing features with this tag",
+      "value": "living_street"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Cycleways and roads showing features with this tag",
       "value": "path"
     },
     {

@@ -13,7 +13,7 @@ export class Tag extends TagsFilter {
             throw "Invalid key: undefined or empty";
         }
         if (value === undefined) {
-            throw "Invalid value: value is undefined";
+            throw `Invalid value while constructing a Tag with key '${key}': value is undefined`;
         }
         if (value === "*") {
             console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}~* ?`)

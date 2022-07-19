@@ -43,5 +43,32 @@
         "render": "2"
       }
     }
+  ],
+  "calculatedTags": [
+    "_entrance_properties=feat.overlapWith('entrance')?.map(e => e.feat.properties).filter(p => p !== undefined).filter(p => p.width !== undefined)",
+    "_entrance:id=feat.get('_entrance_properties')?.map(e => e.id)?.at(0)",
+    "_entrance:width=feat.get('_entrance_properties')?.map(e => e.width)"
+  ],
+  "tagRenderings": [
+    {
+      "id": "_entrance:width",
+      "render": {
+        "en": "<a href ='#{_entrance:id} '>This door has a width of {canonical(_entrance:width)} meters </a>",
+        "nl": "<a href ='#{_entrance:id} '>Deze deur heeft een breedte van {canonical(_entrance:width)} meter </a>",
+        "de": "<a href ='#{_entrance:id} '>Diese Tür hat eine Durchgangsbreite von {canonical(_entrance:width)} Meter </a>",
+        "es": "<a href ='#{_entrance:id} '>Esta puerta tiene una ancho de {canonical(_entrance:width)} metros </a>"
+      },
+      "freeform": {
+        "key": "_entrance:width"
+      },
+      "mappings": [
+        {
+          "if": "_entrance:width=",
+          "then": {
+            "en": "This entrance has no width information"
+          }
+        }
+      ]
+    }
   ]
 }

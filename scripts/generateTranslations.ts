@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import {readFileSync, writeFileSync} from "fs";
+import {existsSync, mkdirSync, readFileSync, writeFileSync} from "fs";
 import {Utils} from "../Utils";
 import ScriptUtils from "./ScriptUtils";
 
@@ -55,7 +55,7 @@ class TranslationPart {
             }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
-                console.error(`Non-string object at ${context} in translation while trying to add more translations to '` + translationsKey + "': ", v)
+                console.error(`Non-string object at ${context} in translation while trying to add more translations to '` + translationsKey + "'. The offending object which _should_ be a translation is: ", v,"\n\nThe current object is:", this.toJson("en"))
                 throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
             this.contents.set(translationsKey, v)
@@ -101,7 +101,7 @@ class TranslationPart {
                 continue
             }
 
-            if (v["id"] !== undefined && context.endsWith("tagRenderings")) {
+            if (v["id"] !== undefined && context.endsWith(".tagRenderings")) {
                 // We use the embedded id as key instead of the index as this is more stable
                 // Note: indonesian is shortened as 'id' as well!
                 if (v["en"] !== undefined || v["nl"] !== undefined) {
@@ -248,7 +248,7 @@ class TranslationPart {
 
                     if (lang === "en" || usedByLanguage === "en") {
                         errors.push({
-                            error: `The translation for ${key} does not have the required subpart ${part}.
+                            error: `The translation for ${key} does not have the required subpart ${part} (in ${usedByLanguage}).
     \tThe full translation is ${value}
     \t${fixLink}`,
                             path: path
@@ -591,7 +591,9 @@ function mergeThemeTranslations() {
     }
 }
 
-
+if(!existsSync("./langs/themes")){
+    mkdirSync("./langs/themes")
+}
 const themeOverwritesWeblate = process.argv[2] === "--ignore-weblate"
 const questionsPath = "assets/tagRenderings/questions.json"
 const questionsParsed = JSON.parse(readFileSync(questionsPath, 'utf8'))

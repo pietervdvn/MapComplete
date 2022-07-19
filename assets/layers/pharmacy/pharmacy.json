@@ -1,90 +1,75 @@
 {
-    "id": "pharmacy",
-    "name": {
-        "en": "pharmacy"
+  "id": "pharmacy",
+  "name": {
+    "en": "pharmacy"
+  },
+  "title": {
+    "render": {
+      "en": "{name}"
     },
-    "title": {
-        "render": {
-            "en": "{name}"
+    "mappings": [
+      {
+        "if": "name=",
+        "then": {
+          "en": "Pharmacy"
         }
-    },
-    "source": {
-        "osmTags": {
-            "and": [
-                "amenity=pharmacy"
-            ]
-        }
-    },
-    "minzoom":13,
-    "tagRenderings": [
-        "images",
-        "opening_hours",
-        "phone",
-        "email",
-        "website",
-        "dispensing",
+      }
+    ]
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=pharmacy"
+      ]
+    }
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images",
+    "opening_hours",
+    "phone",
+    "email",
+    "website",
+    {
+      "id": "wheelchair",
+      "question": {
+        "en": "Is this pharmacy easy to access on a wheelchair?"
+      },
+      "mappings": [
         {
-            "id": "wheelchair",
-            "render": {
-                "en": "Easily accessible for wheelchair users: {wheelchair}"
-            },
-            "question": {
-                "en": "Is this pharmacy easy to access on a wheelchair?"
-            },
-            "freeform": {
-                "key": "wheelchair"
-            },
-            "mappings": [
-                {
-                    "if": "wheelchair=yes",
-                    "then": {
-                        "en": "Yes, this pharmacy is easy to access on a wheelchair"
-                    }
-                },
-                {
-                    "if": "wheelchair=no",
-                    "then": {
-                        "en": "No, this pharmacy is hard to access on a wheelchair"
-                    }
-                    
-                },
-                {
-                    "if": "wheelchair=limited",
-                    "then": {
-                        "en": "This pharmacy has limited access for wheelchair users"
-                    }
-                }
-            ]
+          "if": "wheelchair=yes",
+          "then": {
+            "en": "This pharmacy is easy to access on a wheelchair"
+          }
         },
         {
-            "id": "drive_through",
-            "render": {
-                "en": "Pharmacy drive through: {drive_through}"
-            },
-            "question": {
-                "en": "Does this pharmacy have a drive through?"
-            },
-            "freeform": {
-                "key": "drive_through"
-            },
-            "mappings": [
-                {
-                    "if": "drive_through=yes",
-                    "then": {
-                        "en": "Yes, this pharmacy has a drive through"
-                    }
-                },
-                {
-                    "if": "drive_through=no",
-                    "then": {
-                        "en": "No, this pharmacy does not have a drive through"
-                    }
-                    
-                }
-            ]
+          "if": "wheelchair=no",
+          "then": {
+            "en": "This pharmacy is hard to access on a wheelchair"
+          }
+        },
+        {
+          "if": "wheelchair=limited",
+          "then": {
+            "en": "This pharmacy has limited access for wheelchair users"
+          }
         }
-    ],
-    "filter": [
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/layers/pharmacy/pharmacy.svg"
+      },
+      "iconSize": "40,40,bottom",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+      "filter": [
         {
             "id": "drive-through",
             "options": [
@@ -108,16 +93,4 @@
             ]
         }
     ],
-    "mapRendering": [
-        {
-            "icon": {
-                "render": "./assets/layers/pharmacy/pharmacy.svg"
-            },
-            "iconSize": "40,40,bottom",
-            "location": [
-                "point",
-                "centroid"
-            ]
-        }
-    ]
 }

@@ -141,17 +141,21 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
 
 export class On<P, T> extends DesugaringStep<T> {
     private readonly key: string;
-    private readonly step: Conversion<P, P>;
+    private readonly step: ((t: T) => Conversion<P, P>);
 
-    constructor(key: string, step: Conversion<P, P>) {
+    constructor(key: string, step: Conversion<P, P> | ((t: T )=> Conversion<P, P>)) {
         super("Applies " + step.name + " onto property `"+key+"`", [key], `On(${key}, ${step.name})`);
-        this.step = step;
+        if(typeof step === "function"){
+            this.step = step;
+        }else{
+            this.step = _ => step
+        }
         this.key = key;
     }
 
     convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[], information?: string[] } {
         json = {...json}
-        const step = this.step
+        const step = this.step(json)
         const key = this.key;
         const value: P = json[key]
         if (value === undefined || value === null) {

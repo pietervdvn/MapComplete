@@ -29,26 +29,27 @@ describe("GenerateCache", () => {
     
         it("should generate a cached file for the Natuurpunt-theme", async () => {
             // We use /var/tmp instead of /tmp, as more OS's (such as MAC) have this
-            if(!existsSync("/var/tmp")){
+            const dir = "/var/tmp/"
+            if(!existsSync(dir)){
                 console.log("Not executing caching test: no temp directory found")
             }
-            if (existsSync("/var/tmp/np-cache")) {
-                ScriptUtils.readDirRecSync("/var/tmp/np-cache").forEach(p => unlinkSync(p))
-                rmdirSync("/var/tmp/np-cache")
+            if (existsSync(dir+"/np-cache")) {
+                ScriptUtils.readDirRecSync(dir+"np-cache").forEach(p => unlinkSync(p))
+                rmdirSync(dir+"np-cache")
             }
-            mkdirSync("/var/tmp/np-cache")
+            mkdirSync(dir+"np-cache")
             initDownloads(
                 "(nwr%5B%22amenity%22%3D%22toilets%22%5D%3Bnwr%5B%22amenity%22%3D%22parking%22%5D%3Bnwr%5B%22amenity%22%3D%22bench%22%5D%3Bnwr%5B%22id%22%3D%22location_track%22%5D%3Bnwr%5B%22id%22%3D%22gps%22%5D%3Bnwr%5B%22information%22%3D%22board%22%5D%3Bnwr%5B%22leisure%22%3D%22picnic_table%22%5D%3Bnwr%5B%22man_made%22%3D%22watermill%22%5D%3Bnwr%5B%22user%3Ahome%22%3D%22yes%22%5D%3Bnwr%5B%22user%3Alocation%22%3D%22yes%22%5D%3Bnwr%5B%22leisure%22%3D%22nature_reserve%22%5D%5B%22operator%22~%22%5E.*%5BnN%5Datuurpunt.*%24%22%5D%3Bnwr%5B%22boundary%22%3D%22protected_area%22%5D%5B%22protect_class%22!%3D%2298%22%5D%5B%22operator%22~%22%5E.*%5BnN%5Datuurpunt.*%24%22%5D%3Bnwr%5B%22information%22%3D%22visitor_centre%22%5D%5B%22operator%22~%22%5E.*%5BnN%5Datuurpunt.*%24%22%5D%3Bnwr%5B%22information%22%3D%22office%22%5D%5B%22operator%22~%22%5E.*%5BnN%5Datuurpunt.*%24%22%5D%3Bnwr%5B%22route%22~%22%5E.*foot.*%24%22%5D%5B%22operator%22~%22%5E.*%5BnN%5Datuurpunt.*%24%22%5D%3Bnwr%5B%22route%22~%22%5E.*hiking.*%24%22%5D%5B%22operator%22~%22%5E.*%5BnN%5Datuurpunt.*%24%22%5D%3Bnwr%5B%22route%22~%22%5E.*bycicle.*%24%22%5D%5B%22operator%22~%22%5E.*%5BnN%5Datuurpunt.*%24%22%5D%3Bnwr%5B%22route%22~%22%5E.*horse.*%24%22%5D%5B%22operator%22~%22%5E.*%5BnN%5Datuurpunt.*%24%22%5D%3Bnwr%5B%22leisure%22%3D%22bird_hide%22%5D%5B%22operator%22~%22%5E.*%5BnN%5Datuurpunt.*%24%22%5D%3Bnwr%5B%22amenity%22%3D%22drinking_water%22%5D%5B%22access%22!%3D%22permissive%22%5D%5B%22access%22!%3D%22private%22%5D%3B)%3Bout%20body%3Bout%20meta%3B%3E%3Bout%20skel%20qt%3B"
             );
             await main([
                 "natuurpunt",
                 "12",
-                "/var/tmp/np-cache",
+                dir+"np-cache",
                 "51.15423567022531", "3.250579833984375", "51.162821593316934", "3.262810707092285",
                 "--generate-point-overview", "nature_reserve,visitor_information_centre"
             ])
             await ScriptUtils.sleep(500)
-            const birdhides = JSON.parse(readFileSync("/var/tmp/np-cache/natuurpunt_birdhide_12_2085_1368.geojson", "UTF8"))
+            const birdhides = JSON.parse(readFileSync(dir+"np-cache/natuurpunt_birdhide_12_2085_1368.geojson", "UTF8"))
             expect(birdhides.features.length).deep.equal(5)
             expect(birdhides.features.some(f => f.properties.id === "node/5158056232"), "Didn't find birdhide node/5158056232 ").true
 

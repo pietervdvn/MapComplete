@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 175,
+      "commits": 177,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 135,
+      "commits": 139,
       "contributor": "kjon"
     },
     {
@@ -17,11 +17,11 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 30,
+      "commits": 31,
       "contributor": "Iago"
     },
     {
-      "commits": 29,
+      "commits": 30,
       "contributor": "Babos Gábor"
     },
     {
@@ -46,11 +46,11 @@
     },
     {
       "commits": 18,
-      "contributor": "Reza Almanda"
+      "contributor": "Robin van der Linde"
     },
     {
-      "commits": 17,
-      "contributor": "Robin van der Linde"
+      "commits": 18,
+      "contributor": "Reza Almanda"
     },
     {
       "commits": 16,
@@ -91,6 +91,10 @@
     {
       "commits": 9,
       "contributor": "Jacque Fresco"
+    },
+    {
+      "commits": 8,
+      "contributor": "paunofu"
     },
     {
       "commits": 7,
@@ -159,10 +163,6 @@
     {
       "commits": 4,
       "contributor": "BMN"
-    },
-    {
-      "commits": 4,
-      "contributor": "paunofu"
     },
     {
       "commits": 4,
@@ -287,6 +287,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Hungarian_user"
     },
     {
       "commits": 1,

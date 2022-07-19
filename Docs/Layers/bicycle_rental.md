@@ -26,6 +26,7 @@ Bicycle rental stations
 
 
   - [bicycle_rental](https://mapcomplete.osm.be/bicycle_rental)
+  - [cyclofix](https://mapcomplete.osm.be/cyclofix)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

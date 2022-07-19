@@ -28,6 +28,7 @@ Crossings for pedestrians and cyclists
 
 
   - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
+  - [kerbs_and_crossings](https://mapcomplete.osm.be/kerbs_and_crossings)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

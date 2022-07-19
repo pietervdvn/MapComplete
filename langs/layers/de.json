@@ -3095,11 +3095,20 @@
                 "1": {
                     "then": "Radweg"
                 },
+                "2": {
+                    "then": "Straße mit gemeinsam genutzter Fahrspur {name}"
+                },
                 "3": {
                     "then": "Gemeinsame Fahrspur"
                 },
+                "4": {
+                    "then": "Straße mit Fahrradstreifen {name}"
+                },
                 "5": {
                     "then": "Fahrradspur"
+                },
+                "6": {
+                    "then": "Straße mit Radweg neben der Straße {name}"
                 },
                 "7": {
                     "then": "Radweg neben der Straße"
@@ -3110,7 +3119,8 @@
                 "9": {
                     "then": "Fahrradstraße"
                 }
-            }
+            },
+            "render": "Weg"
         }
     },
     "defibrillator": {
@@ -4057,6 +4067,116 @@
             "render": "Informationstafel"
         }
     },
+    "kerbs": {
+        "description": "Eine Ebene, die Bordsteine zeigt.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle Arten von Bordsteinen"
+                    },
+                    "1": {
+                        "question": "Erhöhter Bordstein (>3 cm)"
+                    },
+                    "2": {
+                        "question": "Abgesenkter Bordstein (~3 cm)"
+                    },
+                    "3": {
+                        "question": "Bündiger Bordstein (~0cm)"
+                    },
+                    "4": {
+                        "question": "Kein Bordstein"
+                    },
+                    "5": {
+                        "question": "Bordstein mit unbekannter Höhe"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Bordsteine mit oder ohne taktilem Pflaster"
+                    },
+                    "1": {
+                        "question": "Bordstein mit taktilem Pflaster"
+                    },
+                    "2": {
+                        "question": "Bordstein ohne taktilem Pflaster"
+                    },
+                    "3": {
+                        "question": "Bordstein ohne Informationen über taktiles Pflaster"
+                    }
+                }
+            }
+        },
+        "name": "Bordsteine",
+        "presets": {
+            "0": {
+                "description": "Bordstein in einem Fußweg",
+                "title": "einen Bordstein"
+            }
+        },
+        "tagRenderings": {
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Höhe des Bordsteins"
+                },
+                "question": "Wie hoch ist der Bordstein?",
+                "render": "Bordsteinhöhe: {kerb:height}"
+            },
+            "kerb-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Bordstein ist erhöht (>3 cm)"
+                    },
+                    "1": {
+                        "then": "Der Bordstein ist abgesenkt (~3 cm)"
+                    },
+                    "2": {
+                        "then": "Der Bordstein ist bündig (~0cm)"
+                    },
+                    "3": {
+                        "then": "Hier gibt es keinen Bordstein"
+                    },
+                    "4": {
+                        "then": "Es gibt einen Bordstein mit unbekannter Höhe"
+                    }
+                },
+                "question": "Wie hoch ist der Bordstein?"
+            },
+            "tactile-paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Bordstein hat ein taktiles Pflaster."
+                    },
+                    "1": {
+                        "then": "Der Bordstein hat kein taktiles Pflaster."
+                    },
+                    "2": {
+                        "then": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist"
+                    }
+                },
+                "question": "Gibt es am Bordstein ein taktiles Pflaster?"
+            }
+        },
+        "title": {
+            "render": "Bordstein"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Zentimeter",
+                        "humanSingular": "Zentimeter"
+                    },
+                    "1": {
+                        "human": "Meter",
+                        "humanSingular": "Meter"
+                    }
+                }
+            }
+        }
+    },
     "kindergarten_childcare": {
         "name": "Kindergärten und Kinderkrippen",
         "presets": {
@@ -4155,6 +4275,9 @@
             "maxspeed-maxspeed": {
                 "mappings": {
                     "0": {
+                        "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
+                    },
+                    "1": {
                         "then": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt"
                     }
                 },
@@ -4999,6 +5122,11 @@
             }
         },
         "tagRenderings": {
+            "8": {
+                "override": {
+                    "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
+                }
+            },
             "capacity": {
                 "question": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
                 "render": "Diese Schule kann höchstens {capacity} Schüler aufnehmen"
@@ -5045,18 +5173,6 @@
                     }
                 },
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
-            },
-            "language": {
-                "mappings": {
-                    "0": {
-                        "then": "Die Hauptsprache dieser Schule ist unbekannt"
-                    },
-                    "4": {
-                        "then": "Die Hauptsprache dieser Schule ist unbekannt"
-                    }
-                },
-                "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
-                "render": "{school:language} ist die Hauptsprache von {title()}"
             },
             "school-name": {
                 "question": "Wie lautet der Name dieser Schule?",
@@ -6004,6 +6120,11 @@
     },
     "walls_and_buildings": {
         "description": "Spezielle eingebaute Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist in Voreinstellungen für Objekte nützlich, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, …). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht eingeschaltet werden.",
+        "tagRenderings": {
+            "_entrance:width": {
+                "render": "<a href ='#{_entrance:id} '>Diese Tür hat eine Durchgangsbreite von {canonical(_entrance:width)} Meter </a>"
+            }
+        },
         "title": {
             "render": "Wand oder Gebäude"
         }

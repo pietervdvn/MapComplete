@@ -332,7 +332,7 @@
             "title": "Sammenlign med eksisterende data",
             "titleLive": "Live data på OSM",
             "titleNearby": "Elementer i nærheden",
-            "zoomIn": "Live data bliver vist på zoomniveau mindst {needed}. Det aktuelle zoomniveau er {current}"
+            "zoomIn": "Det aktuelle zoomniveau er {current}"
         },
         "createNotes": {
             "creating": "Oprettede <b>{count}</b> noter ud af {total}",

@@ -30,6 +30,74 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=surface with a fixed text, namely 'This is a surface parking lot' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "surface"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=street_side with a fixed text, namely 'This is a parking bay next to a street' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "street_side"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=underground with a fixed text, namely 'This is an underground parking garage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "underground"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=multi-storey with a fixed text, namely 'This is a multi-storey parking garage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "multi-storey"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=rooftop with a fixed text, namely 'This is a rooftop parking deck' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "rooftop"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=lane with a fixed text, namely 'This is a lane for parking on the road' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "lane"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=carports with a fixed text, namely 'This is parking covered by carports' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "carports"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=garage_boxes with a fixed text, namely 'This a parking consisting of garage boxes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "garage_boxes"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=layby with a fixed text, namely 'This is a parking on a layby' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "layby"
+    },
+    {
+      "key": "parking",
+      "description": "Layer 'Parking' shows parking=sheds with a fixed text, namely 'This is a parking consisting of sheds' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "sheds"
+    },
+    {
+      "key": "capacity:disabled",
+      "description": "Layer 'Parking' shows and asks freeform values for key 'capacity:disabled' (in the MapComplete.osm.be theme 'Parking')"
+    },
+    {
+      "key": "capacity:disabled",
+      "description": "Layer 'Parking' shows capacity:disabled=yes with a fixed text, namely 'There are disabled parking spots, but it is not known how many' (in the MapComplete.osm.be theme 'Parking')",
+      "value": "yes"
+    },
+    {
+      "key": "capacity:disabled",
+      "description": "Layer 'Parking' shows capacity:disabled=no with a fixed text, namely 'There are no disabled parking spots' (in the MapComplete.osm.be theme 'Parking')",
+      "value": "no"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Parking' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Parking')"
     }
   ]
 }

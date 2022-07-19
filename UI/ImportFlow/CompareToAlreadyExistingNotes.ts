@@ -93,7 +93,7 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             state,
             zoomToFeatures: true,
             leafletMap: comparisonMap.leafletMap,
-            features: new StaticFeatureSource(partitionedImportPoints.map(p => p.hasNearby)),
+            features: StaticFeatureSource.fromGeojsonStore(partitionedImportPoints.map(p => p.hasNearby)),
             popup: (tags, layer) => new FeatureInfoBox(tags, layer, state)
         })
 

@@ -84,7 +84,8 @@
     "id": "Beragam karya seni",
     "pt": "Diversas obras de arte",
     "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
-    "da": "Forskellige kunstværker"
+    "da": "Forskellige kunstværker",
+    "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món"
   },
   "minzoom": 12,
   "presets": [

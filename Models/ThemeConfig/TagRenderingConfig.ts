@@ -20,10 +20,11 @@ export interface Mapping {
     readonly ifnot?: TagsFilter,
     readonly then: TypedTranslation<object>,
     readonly icon: string,
-    readonly iconClass: string
+    readonly iconClass: string | "small"  | "medium" | "large" | "small-height" | "medium-height" | "large-height",
     readonly hideInAnswer: boolean | TagsFilter
     readonly addExtraTags: Tag[],
-    readonly searchTerms?: Record<string, string[]>
+    readonly searchTerms?: Record<string, string[]>,
+    readonly priorityIf?: TagsFilter
 }
 
 /***
@@ -177,7 +178,8 @@ export default class TagRenderingConfig {
                 throw "Tagrendering has a 'mappings'-object, but expected a list (" + context + ")"
             }
 
-            this.mappings = json.mappings.map((m, i) => TagRenderingConfig.ExtractMapping(m, i, translationKey, context, this.multiAnswer, this.question !== undefined));
+            const commonIconSize = Utils.NoNull(json.mappings.map(m => m.icon !== undefined ? m.icon["class"] : undefined))[0] ?? "small"
+            this.mappings = json.mappings.map((m, i) => TagRenderingConfig.ExtractMapping(m, i, translationKey, context, this.multiAnswer, this.question !== undefined, commonIconSize));
         }
 
         if (this.question && this.freeform?.key === undefined && this.mappings === undefined) {
@@ -286,9 +288,14 @@ export default class TagRenderingConfig {
         }
     }
 
+    /**
+     * const tr = TagRenderingConfig.ExtractMapping({if: "a=b", then: "x", priorityIf: "_country=be"}, 0, "test","test", false,true)
+     * tr.if // => new Tag("a","b")
+     * tr.priorityIf // => new Tag("_country","be")
+     */
     public static ExtractMapping(mapping: MappingConfigJson, i: number, translationKey: string,
                                  context: string,
-                                 multiAnswer?: boolean, isQuestionable?: boolean) {
+                                 multiAnswer?: boolean, isQuestionable?: boolean, commonSize: string = "small") {
 
         const ctx = `${translationKey}.mappings.${i}`
         if (mapping.if === undefined) {
@@ -327,7 +334,7 @@ export default class TagRenderingConfig {
         }
 
         let icon = undefined;
-        let iconClass = "small"
+        let iconClass = commonSize
         if (mapping.icon !== undefined) {
             if (typeof mapping.icon === "string" && mapping.icon !== "") {
                 icon = mapping.icon
@@ -336,6 +343,7 @@ export default class TagRenderingConfig {
                 iconClass = mapping.icon["class"] ?? iconClass
             }
         }
+        const prioritySearch = mapping.priorityIf !== undefined ? TagUtils.Tag(mapping.priorityIf) : undefined;
         const mp = <Mapping>{
             if: TagUtils.Tag(mapping.if, `${ctx}.if`),
             ifnot: (mapping.ifnot !== undefined ? TagUtils.Tag(mapping.ifnot, `${ctx}.ifnot`) : undefined),
@@ -344,7 +352,8 @@ export default class TagRenderingConfig {
             icon,
             iconClass,
             addExtraTags,
-            searchTerms: mapping.searchTerms
+            searchTerms: mapping.searchTerms,
+            priorityIf: prioritySearch
         };
         if (isQuestionable) {
             if (hideInAnswer !== true && mp.if !== undefined && !mp.if.isUsableAsAnswer()) {
@@ -363,7 +372,7 @@ export default class TagRenderingConfig {
      * Returns true if it is known or not shown, false if the question should be asked
      * @constructor
      */
-    public IsKnown(tags: any): boolean {
+    public IsKnown(tags: Record<string, string>): boolean {
         if (this.condition &&
             !this.condition.matchesProperties(tags)) {
             // Filtered away by the condition, so it is kindof known
@@ -399,7 +408,7 @@ export default class TagRenderingConfig {
      * @param tags
      * @constructor
      */
-    public GetRenderValues(tags: any): { then: Translation, icon?: string, iconClass?: string }[] {
+    public GetRenderValues(tags: Record<string, string>): { then: Translation, icon?: string, iconClass?: string }[] {
         if (!this.multiAnswer) {
             return [this.GetRenderValueWithImage(tags)]
         }
@@ -409,7 +418,7 @@ export default class TagRenderingConfig {
         let freeformKeyDefined = this.freeform?.key !== undefined;
         let usedFreeformValues = new Set<string>()
         // We run over all the mappings first, to check if the mapping matches
-        const applicableMappings: { then: TypedTranslation<any>, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
+        const applicableMappings: { then: TypedTranslation<Record<string, string>>, img?: string }[] = Utils.NoNull((this.mappings ?? [])?.map(mapping => {
             if (mapping.if === undefined) {
                 return mapping;
             }
