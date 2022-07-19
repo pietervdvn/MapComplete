@@ -45,12 +45,34 @@
           {
             "id": "import-button",
             "condition": "_has_closeby_feature=no",
-            "render": "{import_button(hotel,tags,Import,./assets/svg/addSmall.svg,,,,photo,mr_taskId)}"
+            "render": {
+              "special": {
+                "type": "import_button",
+                "targetLayer": "hotel",
+                "tags": "tags",
+                "text": {
+                  "en": "Import"
+                },
+                "icon": "./assets/svg/addSmall.svg",
+                "location_picker": "photo",
+                "maproulette_id": "mr_taskId"
+              }
+            }
           },
           {
             "id": "tag-apply-button",
             "condition": "_has_closeby_feature=yes",
-            "render": "{tag_apply($tags, Add all the suggested tags, apply_icon.svg, _closest_osm_hotel)}"
+            "render": {
+              "special": {
+                "type": "tag_apply",
+                "tags_to_apply": "$tags",
+                "message": {
+                  "en": "Add all the suggested tags"
+                },
+                "image": "./assets/svg/addSmall.svg",
+                "id_of_object_to_apply_this_one": "_closest_osm_hotel"
+              }
+            }
           }
         ]
       }
