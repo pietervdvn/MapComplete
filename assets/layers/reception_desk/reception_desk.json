@@ -1,0 +1,79 @@
+{
+  "id": "reception_desk",
+  "name": {
+    "en": "Reception desks"
+  },
+  "title": {
+    "render": {
+      "en": "Reception desk"
+    }
+  },
+  "source": {
+    "osmTags": "amenity=reception_desk"
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "circle:white;./assets/layers/reception_desk/reception_desk.svg",
+      "iconSize": "40,40,center"
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "desk-height",
+      "question": {
+        "en": "What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>"
+      },
+      "render": {
+        "en": "The height of the desk is <b>{canonical(desk:height)}</b>"
+      },
+      "freeform": {
+        "key": "desk:height",
+        "type": "pfloat"
+      }
+    },
+    "induction-loop"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=reception_desk"
+      ],
+      "title": {
+        "en": "a reception desk"
+      }
+    }
+  ],
+  "units": [
+    {
+      "appliesToKey": [
+        "desk:height"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": "meter"
+          }
+        },
+        {
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "cms"
+          ],
+          "human": {
+            "en": "centimeter"
+          }
+        }
+      ]
+    }
+  ]
+}
