@@ -78,7 +78,8 @@ export default class Constants {
     "Aantal treden": "step_count",
     "Hellend vlak aanwezig": "ramp",
     "Baby verzorging aanwezig": "changing_table",
-    "Totale hoogte van de treden": "kerb:height"
+    "Totale hoogte van de treden": "kerb:height",
+    "Deurbreedte": "door:width",
   };
 
   /**
@@ -96,5 +97,6 @@ export default class Constants {
    */
   public static units = {
     "Totale hoogte van de treden": "cm",
+    "Deurbreedte": "cm",
   };
 }

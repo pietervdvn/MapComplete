@@ -30,12 +30,23 @@ function categoryTags(category: string): GeoJsonProperties {
 function renameTags(item): GeoJsonProperties {
   const properties: GeoJsonProperties = {};
   properties.tags = [];
+  // Loop through the original item tags
   for (const key in item) {
+    // Check if we need it and it's not a null value
     if (Constants.names[key] && item[key]) {
+      // Name and id tags need to be in the properties
       if (Constants.names[key] == "name" || Constants.names[key] == "id") {
         properties[Constants.names[key]] = item[key];
       }
+      // Other tags need to be in the tags variable
       if (Constants.names[key] !== "id") {
+        // Website needs to have at least any = encoded
+        if(Constants.names[key] == "website") {
+          let website = item[key];
+          // Encode URL
+          website = website.replace("=", "%3D");
+          item[key] = website;
+        }
         properties.tags.push(Constants.names[key] + "=" + item[key]);
       }
     }
@@ -43,6 +54,12 @@ function renameTags(item): GeoJsonProperties {
   return properties;
 }
 
+/**
+ * Convert types to match the OSM standard
+ * 
+ * @param properties The properties to convert
+ * @returns The converted properties
+ */
 function convertTypes(properties: GeoJsonProperties): GeoJsonProperties {
   // Split the tags into a list
   let tags = properties.tags.split(";");
