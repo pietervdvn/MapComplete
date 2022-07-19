@@ -340,6 +340,34 @@
         "key": "width",
         "type": "distance"
       }
+    },
+    {
+      "id": "kerb-height",
+      "question": {
+        "en": "What is the height of this kerb?",
+        "nl": "Hoe hoog is deze stoeprand?",
+        "de": "Wie hoch ist der Bordstein?"
+      },
+      "render": {
+        "en": "Kerb height: {kerb:height}",
+        "nl": "Stoeprandhoogte: {kerb:height}",
+        "de": "Bordsteinhöhe: {kerb:height}"
+      },
+      "freeform": {
+        "key": "kerb:height",
+        "placeholder": {
+          "en": "Height of the kerb",
+          "nl": "Hoogte van de stoeprand",
+          "de": "Höhe des Bordsteins"
+        },
+        "type": "pnat"
+      },
+      "mappings": [
+        {
+          "if": "kerb-height=",
+          "then": "kerb-height=0"
+        }
+      ]
     }
   ],
   "mapRendering": [
