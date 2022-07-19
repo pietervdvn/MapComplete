@@ -234,22 +234,21 @@ input[type="range"].vertical {
   -webkit-appearance: slider-vertical; /* Chromium */
   width: 8px;
   height: 180px;
-  padding: 0 5px;
+  padding: 31px 5px 0 5px;
   cursor: pointer;
 }
 
 @-moz-document url-prefix() {
   input[type="range"].vertical {
-    height: 280px !important;
+    height: 269px !important;
     width: 65px !important;
-    padding-top: 25px;
   }
   .valuesContainer {
     padding-top: 30px;
   }
   input[type="range"].vertical::-moz-range-thumb {
     width: 150px;
-    height: 35px;
+    height: 30px;
     border: 2px;
     border-style: solid;
     background-color: #00000000 !important;
