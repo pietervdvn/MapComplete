@@ -39,7 +39,9 @@ export default class TagRenderingChart extends Combine {
      */
     constructor(features: OsmFeature[], tagRendering: TagRenderingConfig, options?: {
         chartclasses?: string,
-        chartstyle?: string
+        chartstyle?: string,
+        includeTitle?: boolean,
+        groupToOtherCutoff?: 3 | number
     }) {
 
         const mappings = tagRendering.mappings ?? []
@@ -79,9 +81,7 @@ export default class TagRenderingChart extends Combine {
                     const mapping = mappings[i];
                     if (TagUtils.MatchesMultiAnswer( mapping.if, props)) {
                         categoryCounts[i]++
-                        if(categoryCounts[i] > 3){
-                            foundMatchingMapping = true
-                        }
+                        foundMatchingMapping = true
                     }
                 }
             }
@@ -89,7 +89,6 @@ export default class TagRenderingChart extends Combine {
                 if (tagRendering.freeform?.key !== undefined && props[tagRendering.freeform.key] !== undefined) {
                     const otherValue = props[tagRendering.freeform.key]
                     otherCounts[otherValue] = (otherCounts[otherValue] ?? 0) + 1
-                    barchartMode = true ;
                 } else {
                     unknownCount++
                 }
@@ -107,13 +106,14 @@ export default class TagRenderingChart extends Combine {
         const otherData : number[] = []
         for (const v in otherCounts) {
             const count = otherCounts[v]
-            if(count > 2){
+            if(count >= (options.groupToOtherCutoff ?? 3)){
                 otherLabels.push(v)
                 otherData.push(otherCounts[v])
             }else{
                 otherGrouped++;
             }
         }
+        
 
         const labels = ["Unknown", "Other", "Not applicable", ...mappings?.map(m => m.then.txt) ?? [], ...otherLabels]
         const data = [unknownCount, otherGrouped, notApplicable, ...categoryCounts, ... otherData]
@@ -136,9 +136,10 @@ export default class TagRenderingChart extends Combine {
             }
         }
 
-        if (tagRendering.id === undefined) {
-            console.log(tagRendering)
+        if(labels.length > 9){
+            barchartMode = true;
         }
+
         const config = <ChartConfiguration>{
             type: barchartMode ? 'bar' : 'doughnut',
             data: {
@@ -168,7 +169,7 @@ export default class TagRenderingChart extends Combine {
 
 
         super([
-            tagRendering.question ?? tagRendering.id,
+           options?.includeTitle ?  (tagRendering.question.Clone() ?? tagRendering.id) : undefined,
             chart])
 
         this.SetClass("block")

@@ -29,6 +29,7 @@ import SimpleAddUI from "./BigComponents/SimpleAddUI";
 import TagRenderingChart from "./BigComponents/TagRenderingChart";
 import Loading from "./Base/Loading";
 import BackToIndex from "./BigComponents/BackToIndex";
+import Locale from "./i18n/Locale";
 
 
 export default class DashboardGui {
@@ -128,7 +129,7 @@ export default class DashboardGui {
                     continue
                 }
                 const activeFilters: FilterState[] = Array.from(filtered.appliedFilters.data.values());
-                if (activeFilters.some(filter => !filter?.currentFilter?.matchesProperties(element.properties))) {
+                if (!activeFilters.every(filter => filter?.currentFilter === undefined || filter?.currentFilter?.matchesProperties(element.properties))) {
                     continue
                 }
                 const center = GeoOperations.centerpointCoordinates(element);
@@ -257,14 +258,33 @@ export default class DashboardGui {
                     for (const tagRendering of layer.tagRenderings) {
                         const chart = new TagRenderingChart(featuresForLayer, tagRendering, {
                             chartclasses: "w-full",
-                            chartstyle: "height: 60rem"
+                            chartstyle: "height: 60rem",
+                            includeTitle: true
                         })
+                        const full = new Lazy(() => 
+                            new TagRenderingChart(featuresForLayer, tagRendering, {
+                                chartstyle: "max-height: calc(100vh - 10rem)",
+                                groupToOtherCutoff: 0
+                            })
+                        )
+                        chart.onClick(() => {
+                                const current = self.currentView.data
+                                full.onClick(() => {
+                                    self.currentView.setData(current)
+                                })
+                                self.currentView.setData(
+                                    {
+                                        title: new Title(tagRendering.question.Clone() ?? tagRendering.id),
+                                        contents: full
+                                    })
+                            }
+                        )
                         layerStats.push(chart.SetClass("w-full lg:w-1/3"))
                     }
                     els.push(new Combine(layerStats).SetClass("flex flex-wrap"))
                 }
                 return new Combine(els)
-            }))
+            }, [Locale.language]))
 
 
         new Combine([
