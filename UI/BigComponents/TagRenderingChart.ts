@@ -3,6 +3,7 @@ import {OsmFeature} from "../../Models/OsmFeature";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {ChartConfiguration} from 'chart.js';
 import Combine from "../Base/Combine";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
 
 export default class TagRenderingChart extends Combine {
 
@@ -47,48 +48,77 @@ export default class TagRenderingChart extends Combine {
             return;
         }
         let unknownCount = 0;
-        let categoryCounts = mappings.map(_ => 0)
-        let otherCount = 0;
+        const categoryCounts = mappings.map(_ => 0)
+        const otherCounts: Record<string, number> = {}
         let notApplicable = 0;
+        let barchartMode = tagRendering.multiAnswer;
         for (const feature of features) {
             const props = feature.properties
-            if(tagRendering.condition !== undefined && !tagRendering.condition.matchesProperties(props)){
+            if (tagRendering.condition !== undefined && !tagRendering.condition.matchesProperties(props)) {
                 notApplicable++;
                 continue;
             }
-            
+
             if (!tagRendering.IsKnown(props)) {
                 unknownCount++;
                 continue;
             }
             let foundMatchingMapping = false;
-            for (let i = 0; i < mappings.length; i++) {
-                const mapping = mappings[i];
-                if (mapping.if.matchesProperties(props)) {
-                    categoryCounts[i]++
-                    foundMatchingMapping = true
-                    if (!tagRendering.multiAnswer) {
+            if (!tagRendering.multiAnswer) {
+                for (let i = 0; i < mappings.length; i++) {
+                    const mapping = mappings[i];
+                    if (mapping.if.matchesProperties(props)) {
+                        categoryCounts[i]++
+                        foundMatchingMapping = true
                         break;
                     }
                 }
+            } else {
+                for (let i = 0; i < mappings.length; i++) {
+                    const mapping = mappings[i];
+                    if (TagUtils.MatchesMultiAnswer( mapping.if, props)) {
+                        categoryCounts[i]++
+                        if(categoryCounts[i] > 3){
+                            foundMatchingMapping = true
+                        }
+                    }
+                }
             }
-            if (tagRendering.freeform?.key !== undefined && props[tagRendering.freeform.key] !== undefined) {
-                otherCount++
-            } else if (!foundMatchingMapping) {
-                unknownCount++
+            if (!foundMatchingMapping) {
+                if (tagRendering.freeform?.key !== undefined && props[tagRendering.freeform.key] !== undefined) {
+                    const otherValue = props[tagRendering.freeform.key]
+                    otherCounts[otherValue] = (otherCounts[otherValue] ?? 0) + 1
+                    barchartMode = true ;
+                } else {
+                    unknownCount++
+                }
             }
         }
 
         if (unknownCount + notApplicable === features.length) {
-            console.log("Totals:", features.length+" elements","tr:", tagRendering, "other",otherCount, "unkown",unknownCount, "na", notApplicable)
             super(["No relevant data for ", tagRendering.id])
             return
         }
 
-        const labels = ["Unknown", "Other", "Not applicable", ...mappings?.map(m => m.then.txt) ?? []]
-        const data = [unknownCount, otherCount, notApplicable,...categoryCounts]
+        let otherGrouped = 0;
+        const otherLabels: string[] = []
+        const otherData : number[] = []
+        for (const v in otherCounts) {
+            const count = otherCounts[v]
+            if(count > 2){
+                otherLabels.push(v)
+                otherData.push(otherCounts[v])
+            }else{
+                otherGrouped++;
+            }
+        }
+
+        const labels = ["Unknown", "Other", "Not applicable", ...mappings?.map(m => m.then.txt) ?? [], ...otherLabels]
+        const data = [unknownCount, otherGrouped, notApplicable, ...categoryCounts, ... otherData]
         const borderColor = [TagRenderingChart.unkownBorderColor, TagRenderingChart.otherBorderColor, TagRenderingChart.notApplicableBorderColor]
         const backgroundColor = [TagRenderingChart.unkownColor, TagRenderingChart.otherColor, TagRenderingChart.notApplicableColor]
+
+      
 
         while (borderColor.length < data.length) {
             borderColor.push(...TagRenderingChart.borderColors)
@@ -108,7 +138,7 @@ export default class TagRenderingChart extends Combine {
             console.log(tagRendering)
         }
         const config = <ChartConfiguration>{
-            type: tagRendering.multiAnswer ? 'bar' : 'doughnut',
+            type: barchartMode ? 'bar' : 'doughnut',
             data: {
                 labels,
                 datasets: [{
@@ -122,7 +152,7 @@ export default class TagRenderingChart extends Combine {
             options: {
                 plugins: {
                     legend: {
-                        display: !tagRendering.multiAnswer
+                        display: !barchartMode
                     }
                 }
             }
@@ -133,7 +163,7 @@ export default class TagRenderingChart extends Combine {
         if (options.chartstyle !== undefined) {
             chart.SetStyle(options.chartstyle)
         }
-            
+
 
         super([
             tagRendering.question ?? tagRendering.id,

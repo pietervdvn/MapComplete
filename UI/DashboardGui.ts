@@ -28,6 +28,7 @@ import Constants from "../Models/Constants";
 import SimpleAddUI from "./BigComponents/SimpleAddUI";
 import TagRenderingChart from "./BigComponents/TagRenderingChart";
 import Loading from "./Base/Loading";
+import BackToIndex from "./BigComponents/BackToIndex";
 
 
 export default class DashboardGui {
@@ -95,6 +96,7 @@ export default class DashboardGui {
     private visibleElements(map: MinimapObj & BaseUIElement, layers: Record<string, LayerConfig>): { distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[] {
         const bbox = map.bounds.data
         if (bbox === undefined) {
+            console.warn("No bbox")
             return undefined
         }
         const location = map.location.data;
@@ -278,14 +280,16 @@ export default class DashboardGui {
                 new VariableUiElement(elementsInview.map(elements => this.mainElementsView(elements).SetClass("block m-2")))
                     .SetClass("block shrink-2 overflow-x-auto h-full border-2 border-subtle rounded-lg"),
                 this.allDocumentationButtons(),
-                new LanguagePicker(Object.keys(state.layoutToUse.title.translations)).SetClass("mt-2")
+                new LanguagePicker(Object.keys(state.layoutToUse.title.translations)).SetClass("mt-2"),
+                new BackToIndex()
             ]).SetClass("w-1/2 m-4 flex flex-col shrink-0 grow-0"),
             new VariableUiElement(this.currentView.map(({title, contents}) => {
                 return new Combine([
                     new Title(Translations.W(title), 2).SetClass("shrink-0 border-b-4 border-subtle"),
                     Translations.W(contents).SetClass("shrink-2 overflow-y-auto block")
                 ]).SetClass("flex flex-col h-full")
-            })).SetClass("w-1/2 m-4 p-2 border-2 border-subtle rounded-xl m-4 ml-0 mr-8 shrink-0 grow-0")
+            })).SetClass("w-1/2 m-4 p-2 border-2 border-subtle rounded-xl m-4 ml-0 mr-8 shrink-0 grow-0"),
+           
         ]).SetClass("flex h-full")
             .AttachTo("leafletDiv")
 
