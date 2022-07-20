@@ -38,6 +38,9 @@ export default class Combine extends BaseUIElement {
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         try {
+            if(this.uiElements === undefined){
+                console.error("PANIC")   
+            }
             for (const subEl of this.uiElements) {
                 if (subEl === undefined || subEl === null) {
                     continue;

@@ -1,21 +1,27 @@
 {
   "id": "shared_questions",
   "questions": {
+    "description": "Show the images block at this location",
     "id": "questions"
   },
   "images": {
+    "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`",
     "render": "{image_carousel()}{image_upload()}{nearby_images(expandable)}"
   },
   "mapillary": {
+    "description": "Shows a button to open Mapillary on this location",
     "render": "{mapillary()}"
   },
   "export_as_gpx": {
+    "description": "Shows a button to export this feature as GPX. Especially useful for route relations",
     "render": "{export_as_gpx()}"
   },
   "export_as_geojson": {
+    "description": "Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs",
     "render": "{export_as_geojson()}"
   },
   "wikipedia": {
+    "description": "Shows a wikipedia box with the corresponding wikipedia article",
     "render": "{wikipedia():max-height:25rem}",
     "question": {
       "en": "What is the corresponding Wikidata entity?",
@@ -93,9 +99,12 @@
     }
   },
   "reviews": {
+    "description": "Shows the reviews module (including the possibility to leave a review)",
+
     "render": "{reviews()}"
   },
   "minimap": {
+    "description": "Shows a small map with the feature. Added by default to every popup",
     "render": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
   },
   "phone": {
@@ -855,7 +864,7 @@
     "render": "<div class='subtle' style='font-size: small; margin-top: 2em; margin-bottom: 0.5em;'><a href='https://www.openStreetMap.org/changeset/{_last_edit:changeset}' target='_blank'>Last edited on {_last_edit:timestamp}</a> by <a href='https://www.openStreetMap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a></div>"
   },
   "all_tags": {
-    "#": "Prints all the tags",
+    "description": "Shows a table with all the tags of the feature",
     "render": "{all_tags()}"
   },
   "level": {

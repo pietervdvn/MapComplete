@@ -26,6 +26,11 @@ export interface TagRenderingConfigJson {
     labels?: string[]
 
     /**
+     * A human-readable text explaining what this tagRendering does
+     */
+    description?: string | any
+
+    /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
      * If neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.
      *

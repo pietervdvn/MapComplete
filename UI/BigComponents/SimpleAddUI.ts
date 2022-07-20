@@ -43,6 +43,14 @@ export interface PresetInfo extends PresetConfig {
 
 export default class SimpleAddUI extends Toggle {
 
+    /**
+     * 
+     * @param isShown
+     * @param resetScrollSignal
+     * @param filterViewIsOpened
+     * @param state
+     * @param takeLocationFrom: defaults to state.lastClickLocation. Take this location to add the new point around
+     */
     constructor(isShown: UIEventSource<boolean>,
                 resetScrollSignal: UIEventSource<void>,
                 filterViewIsOpened: UIEventSource<boolean>,
@@ -59,7 +67,9 @@ export default class SimpleAddUI extends Toggle {
                     filteredLayers: UIEventSource<FilteredLayer[]>,
                     featureSwitchFilter: UIEventSource<boolean>,
                     backgroundLayer: UIEventSource<BaseLayer>
-                }) {
+                }, 
+                takeLocationFrom?: UIEventSource<{lat: number, lon: number}>
+    ) {
         const loginButton = new SubtleButton(Svg.osm_logo_ui(), Translations.t.general.add.pleaseLogin.Clone())
             .onClick(() => state.osmConnection.AttemptLogin());
         const readYourMessages = new Combine([
@@ -68,7 +78,8 @@ export default class SimpleAddUI extends Toggle {
                 Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false})
         ]);
 
-
+        
+        takeLocationFrom = takeLocationFrom ?? state.LastClickLocation
         const selectedPreset = new UIEventSource<PresetInfo>(undefined);
         selectedPreset.addCallback(_ => {
             resetScrollSignal.ping();
@@ -76,7 +87,7 @@ export default class SimpleAddUI extends Toggle {
         
         
         isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
-        state.LastClickLocation.addCallback(_ => selectedPreset.setData(undefined))
+        takeLocationFrom.addCallback(_ => selectedPreset.setData(undefined))
 
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset, state)
 
@@ -120,7 +131,7 @@ export default class SimpleAddUI extends Toggle {
                     const message = Translations.t.general.add.addNew.Subs({category: preset.name}, preset.name["context"]);
                     return new ConfirmLocationOfPoint(state, filterViewIsOpened, preset,
                         message,
-                        state.LastClickLocation.data,
+                        takeLocationFrom.data,
                         confirm,
                         cancel,
                         () => {
