@@ -26,6 +26,22 @@
   "minzoom": 13,
   "tagRenderings": [
     "images",
+    {
+      "id": "name",
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the pharmacy"
+        }
+      },
+      "question": {
+        "en": "What is the name of the pharmacy?"
+      },
+      "render": {
+        "en": "This pharmacy is called {name}"
+      }
+    },
     "opening_hours",
     "phone",
     "email",
@@ -66,31 +82,45 @@
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      }
     }
   ],
-      "filter": [
+  "filter": [
+    {
+      "id": "drive-through",
+      "options": [
         {
-            "id": "drive-through",
-            "options": [
-                {
-                    "question": {
-                        "en": "Has drive through"
-                    },
-                    "osmTags": "drive_through=yes"
-                }
-            ]
-        },
-        {
-            "id": "dispensing",
-            "options": [
-                {
-                    "question": {
-                        "en": "Pharmacy able to provide prescription drugs"
-                    },
-                    "osmTags": "dispensing=yes"
-                }
-            ]
+          "question": {
+            "en": "Has drive through"
+          },
+          "osmTags": "drive_through=yes"
         }
-    ]
+      ]
+    },
+    {
+      "id": "dispensing",
+      "options": [
+        {
+          "question": {
+            "en": "Pharmacy able to provide prescription drugs"
+          },
+          "osmTags": "dispensing=yes"
+        }
+      ]
+    }
+  ]
 }
