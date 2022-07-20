@@ -83,6 +83,10 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of nearby_images](#example-usage-of-nearby_images)
     + [mapillary_link](#mapillary_link)
       * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
+    + [maproulette_task](#maproulette_task)
+      * [Example usage of maproulette_task](#example-usage-of-maproulette_task)
+    + [tag_merge](#tag_merge)
+      * [Example usage of tag_merge](#example-usage-of-tag_merge)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -696,11 +700,39 @@ zoom | 18 | The startzoom of mapillary
 
 
 
+### maproulette_task 
+
+ Show details of a MapRoulette task 
+
+#### Example usage of maproulette_task 
+
+ `{maproulette_task()}`
+
+
+
+### tag_merge 
+
+ Shows a comparison between the current tags and the new tags, allowing the user to select what the new tags should be. 
+
+name | default | description
+------ | --------- | -------------
+new_tags | _undefined_ | The new tags to show in the comparison, if the field starts with '$' it will be looked up in the tag source
+message | _undefined_ | The text to show to the contributor
+image | _undefined_ | An image to show to the contributor on the button
+id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element
+ 
+
+#### Example usage of tag_merge 
+
+ 
+
+
+
 ### auto_apply 
 
  A button to run many actions for many features at once. To effectively use this button, you'll need some ingredients: 
 
-  - A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
+  - A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply, tag_merge
   - A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer 
   - [current_view](./BuiltinLayers.md#current_view)
   - Then, use a calculated tag on the host feature to determine the overlapping object ids

@@ -147,6 +147,11 @@
         "loginToStart": "Log in to answer this question",
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "logout": "Log out",
+        "merge_button": {
+            "current_tags": "Current tags",
+            "new_tags": "Suggested new tags",
+            "result": "Resulting tags"
+        },
         "morescreen": {
             "createYourOwnTheme": "Create your own MapComplete theme from scratch",
             "hiddenExplanation": "These themes are only accessible to those with the link. You have discovered {hidden_discovered} of {total_hidden} hidden themes.",

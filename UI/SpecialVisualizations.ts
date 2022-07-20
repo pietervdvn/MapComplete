@@ -58,6 +58,7 @@ import {MapillaryLink} from "./BigComponents/MapillaryLink";
 import {CheckBox} from "./Input/Checkboxes";
 import Slider from "./Input/Slider";
 import List from "./Base/List";
+import TagMergeButton from "./Popup/TagMergeButton";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -1125,7 +1126,8 @@ export default class SpecialVisualizations {
                         return details; 
                     },
                     docs: "Show details of a MapRoulette task"
-                }
+                },
+                new TagMergeButton()
             ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
