@@ -188,6 +188,10 @@
                 "then": "./assets/themes/ghostbikes/logo.svg"
               },
               {
+                "if": "theme=governments",
+                "then": "./assets/themes/onwheels/crest.svg"
+              },
+              {
                 "if": "theme=grb",
                 "then": "./assets/themes/grb_import/logo.svg"
               },

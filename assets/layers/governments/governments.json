@@ -1,0 +1,59 @@
+{
+  "id": "governments",
+  "name": {
+    "en": "governments"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "office=government"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Governmental Office {name}"
+    }
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images",
+    "phone",
+    "email",
+    "website",
+    {
+      "question": {
+        "en": "What is the name of this Governmental Office?"
+      },
+      "render": {
+        "en": "This Governmental Office is called {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "name"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a Governmental Office"
+      },
+      "tags": [
+        "office=government"
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "circle:white;./assets/layers/governments/government.svg"
+      },
+      "iconSize": "40,40,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}
