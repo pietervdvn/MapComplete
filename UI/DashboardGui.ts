@@ -125,7 +125,7 @@ export default class DashboardGui {
                 if (!bbox.overlapsWith(BBox.get(element))) {
                     continue
                 }
-                if (layer?.isShown?.GetRenderValue(element)?.Subs(element.properties)?.txt === "no") {
+                if (layer?.isShown !== undefined && !layer.isShown.matchesProperties(element)) {
                     continue
                 }
                 const activeFilters: FilterState[] = Array.from(filtered.appliedFilters.data.values());
@@ -255,11 +255,11 @@ export default class DashboardGui {
                     els.push(new Title(layer.name))
                     
                     const layerStats = []
-                    for (const tagRendering of layer.tagRenderings) {
+                    for (const tagRendering of (layer?.tagRenderings ?? [])) {
                         const chart = new TagRenderingChart(featuresForLayer, tagRendering, {
                             chartclasses: "w-full",
                             chartstyle: "height: 60rem",
-                            includeTitle: true
+                            includeTitle: false
                         })
                         const full = new Lazy(() => 
                             new TagRenderingChart(featuresForLayer, tagRendering, {
@@ -267,7 +267,8 @@ export default class DashboardGui {
                                 groupToOtherCutoff: 0
                             })
                         )
-                        chart.onClick(() => {
+                        const title = new Title(tagRendering.question?.Clone() ?? tagRendering.id)
+                        title.onClick(() => {
                                 const current = self.currentView.data
                                 full.onClick(() => {
                                     self.currentView.setData(current)
@@ -279,7 +280,9 @@ export default class DashboardGui {
                                     })
                             }
                         )
-                        layerStats.push(chart.SetClass("w-full lg:w-1/3"))
+                        if(!chart.HasClass("hidden")){
+                            layerStats.push(new Combine([title, chart]).SetClass("flex flex-col w-full lg:w-1/3"))
+                        }
                     }
                     els.push(new Combine(layerStats).SetClass("flex flex-wrap"))
                 }
