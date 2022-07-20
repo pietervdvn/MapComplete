@@ -14,6 +14,9 @@
     "images",
     {
       "id": "operational_status",
+      "question": {
+        "en": "Does this elevator work?"
+      },
       "mappings": [
         {
           "if": "operational_status=broken",
