@@ -3,6 +3,9 @@
   "name": {
     "en": "indoors"
   },
+  "description": {
+    "en": "Basic indoor mapping: shows room outlines"
+  },
   "source": {
     "osmTags": {
       "or": [

@@ -3,6 +3,9 @@
   "name": {
     "en": "pharmacy"
   },
+  "description": {
+    "en": "A layer showing pharmacies, which (probably) dispense prescription drugs"
+  },
   "title": {
     "render": {
       "en": "{name}"

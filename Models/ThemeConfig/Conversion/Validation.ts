@@ -521,8 +521,13 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
         
-        if(json.title === undefined && json.tagRenderings !== undefined){
-            warnings.push(context + ": this layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element.")
+        if(json.tagRenderings !== undefined && json.tagRenderings.length > 0){
+            if(json.title === undefined){
+                errors.push(context + ": this layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error.")
+            }
+            if(json.title === null){
+                information.push(context + ": title is `null`. This results in an element that cannot be clicked - even though tagRenderings is set.")
+            }
         }
 
         if (json["builtin"] !== undefined) {

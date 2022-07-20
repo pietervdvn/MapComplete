@@ -3,6 +3,9 @@
   "name": {
     "en": "Reception desks"
   },
+  "description": {
+    "en": "A layer showing where the reception desks are and which asks some accessibility information"
+  },
   "title": {
     "render": {
       "en": "Reception desk"

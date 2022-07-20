@@ -337,8 +337,7 @@
         "es": "¿Cual es el ancho de esta puerta/entrada?"
       },
       "freeform": {
-        "key": "width",
-        "type": "distance"
+        "key": "width"
       }
     },
     {
@@ -417,6 +416,7 @@
           }
         },
         {
+          "default": true,
           "canonicalDenomination": "cm",
           "alternativeDenomination": [
             "centimeter",
