@@ -98,10 +98,83 @@
                             },
                             "1": {
                                 "then": "No hi han hostes permanents aquí"
+                            },
+                            "2": {
+                                "then": "Només és possible romandre aquí si teniu un contracte a llarg termini (aquest lloc desapareixerà d'aquest mapa si trieu això)"
+                            }
+                        },
+                        "question": "Aquest lloc ofereix llocs de lloguer a llarg termini?"
+                    },
+                    "caravansites-name": {
+                        "question": "Com es diu aquest lloc?",
+                        "render": "Aquest lloc s'anomena {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "question": "Aquest lloc té una estació d'abocament sanitari?",
+                        "mappings": {
+                            "1": {
+                                "then": "Aquest lloc no té una estació d'abocament sanitari"
+                            },
+                            "0": {
+                                "then": "Aquest lloc té una estació d'abocament sanitari"
+                            }
+                        }
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest lloc té lavabos"
+                            },
+                            "1": {
+                                "then": "Aquest lloc no té lavabos"
+                            }
+                        },
+                        "question": "Aquest lloc té lavabos?"
+                    },
+                    "caravansites-website": {
+                        "question": "Aquest lloc té un lloc web?",
+                        "render": "Lloc web oficial: <a href='{website}'>{website}</a>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Lloc d'acampada sense nom"
+                        }
+                    },
+                    "render": "Lloc d'acampada {name}"
+                }
+            },
+            "1": {
+                "description": "Estacions d'abocament sanitari",
+                "tagRenderings": {
+                    "dumpstations-access": {
+                        "mappings": {
+                            "1": {
+                                "then": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc"
+                            },
+                            "3": {
+                                "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
+                            },
+                            "2": {
+                                "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
+                            }
+                        },
+                        "question": "Qui pot utilitzar aquesta estació d'abocament?"
+                    },
+                    "dumpstations-charge": {
+                        "question": "Quant costa aquest lloc?",
+                        "render": "Aquest lloc costa {charge}"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Es pot desfer de les aigües grises aquí"
                             }
                         }
                     }
-                }
+                },
+                "name": "Estacions d'abocament sanitari"
             }
         },
         "title": "Llocs d'acampada"
@@ -122,7 +195,8 @@
                                 "3": {
                                     "then": "Només membres del club"
                                 }
-                            }
+                            },
+                            "question": "Qui pot accedir aquí?"
                         }
                     },
                     "units+": {
@@ -151,17 +225,30 @@
                 }
             }
         },
-        "title": "Vies ciclistes"
+        "title": "Vies ciclistes",
+        "description": "Aquest mapa mostra carrils bici"
     },
     "cycle_infra": {
-        "title": "Infraestructura per a bicicletes"
+        "title": "Infraestructura per a bicicletes",
+        "description": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista. Fet durant #osoc21.",
+        "shortDescription": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista."
     },
     "cyclenodes": {
         "layers": {
             "1": {
                 "name": "nodes"
+            },
+            "0": {
+                "name": "enllaços node a node",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?"
+                    }
+                }
             }
-        }
+        },
+        "description": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir nodes nous de manera senzilla",
+        "title": "Xarxa de nodes ciclistes"
     },
     "cyclestreets": {
         "layers": {
@@ -182,20 +269,72 @@
             }
         },
         "shortDescription": "Un mapa de carrers ciclistes",
-        "title": "Carrers ciclistes"
+        "title": "Carrers ciclistes",
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "1": {
+                            "then": "Aquest carrer és una ciclocarrer"
+                        },
+                        "2": {
+                            "then": "Aquest carrer es convertirà en un ciclocarrer pròximament"
+                        }
+                    }
+                }
+            }
+        }
     },
     "cyclofix": {
         "title": "Cyclofix - un mapa obert per a ciclistes"
     },
     "drinking_water": {
-        "title": "Aigua potable"
+        "title": "Aigua potable",
+        "description": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment"
     },
     "entrances": {
         "title": "Entrades"
     },
     "etymology": {
         "shortDescription": "Quin és l'origen d'un topònim?",
-        "title": "Open Etymology Map"
+        "title": "Open Etymology Map",
+        "layers": {
+            "2": {
+                "override": {
+                    "=name": "Parcs i boscos sense informació etimològica"
+                }
+            },
+            "1": {
+                "override": {
+                    "=name": "Carrers sense informació etimològica"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Institucions educatives sense informació d'etimològica"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "Llocs socials i de salut sense informació etimològica"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Llocs esportius sense informació etimològica"
+                }
+            },
+            "4": {
+                "override": {
+                    "=name": "Llocs culturals sense informació etimològica"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Llocs turístics sense informació etimològica"
+                }
+            }
+        }
     },
     "facadegardens": {
         "layers": {
@@ -363,5 +502,13 @@
     "healthcare": {
         "title": "Assistència sanitària",
         "description": "En aquest mapa es mostren diversos elements relacionats amb la salut"
+    },
+    "education": {
+        "title": "Educació",
+        "description": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació"
+    },
+    "bicyclelib": {
+        "title": "Biblioteques de bicicletes",
+        "description": "Una biblioteca de bicicletes és un lloc on es poden prestar bicicletes, sovint per una petita quota anual. Un cas d'ús notable són les biblioteques de bicicletes per als nens, que els permet canviar per una bicicleta més gran quan han superat la seva bicicleta actual"
     }
 }
