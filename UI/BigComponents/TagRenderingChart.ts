@@ -44,7 +44,8 @@ export default class TagRenderingChart extends Combine {
 
         const mappings = tagRendering.mappings ?? []
         if (mappings.length === 0 && tagRendering.freeform?.key === undefined) {
-            super(["TagRendering", tagRendering.id, "does not have mapping or a freeform key - no stats can be made"])
+            super([])
+            this.SetClass("hidden")
             return;
         }
         let unknownCount = 0;
@@ -96,7 +97,8 @@ export default class TagRenderingChart extends Combine {
         }
 
         if (unknownCount + notApplicable === features.length) {
-            super(["No relevant data for ", tagRendering.id])
+            super([])
+            this.SetClass("hidden")
             return
         }
 

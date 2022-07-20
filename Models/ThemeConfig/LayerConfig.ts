@@ -367,9 +367,9 @@ export default class LayerConfig extends WithContextLoader {
                 extraProps.push('This layer is not visible by default and must be enabled in the filter by the user. ')
             }
             if (this.title === undefined) {
-                extraProps.push("This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.")
+                extraProps.push("Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.")
             }
-            if (this.title === undefined && this.shownByDefault === false) {
+            if (this.name === undefined && this.shownByDefault === false) {
                 extraProps.push("This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true")
             }
             if (this.name === undefined) {

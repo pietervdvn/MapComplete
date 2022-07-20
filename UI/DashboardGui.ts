@@ -108,6 +108,9 @@ export default class DashboardGui {
         let seenElements = new Set<string>()
         for (const elementsWithMetaElement of elementsWithMeta) {
             const layer = layers[elementsWithMetaElement.layer]
+            if(layer.title === undefined){
+                continue
+            }
             const filtered = this.state.filteredLayers.data.find(fl => fl.layerDef == layer);
             for (let i = 0; i < elementsWithMetaElement.features.length; i++) {
                 const element = elementsWithMetaElement.features[i];
@@ -249,13 +252,16 @@ export default class DashboardGui {
                         continue
                     }
                     els.push(new Title(layer.name))
+                    
+                    const layerStats = []
                     for (const tagRendering of layer.tagRenderings) {
                         const chart = new TagRenderingChart(featuresForLayer, tagRendering, {
                             chartclasses: "w-full",
                             chartstyle: "height: 60rem"
                         })
-                        els.push(chart)
+                        layerStats.push(chart.SetClass("w-full lg:w-1/3"))
                     }
+                    els.push(new Combine(layerStats).SetClass("flex flex-wrap"))
                 }
                 return new Combine(els)
             }))
@@ -282,13 +288,13 @@ export default class DashboardGui {
                 this.allDocumentationButtons(),
                 new LanguagePicker(Object.keys(state.layoutToUse.title.translations)).SetClass("mt-2"),
                 new BackToIndex()
-            ]).SetClass("w-1/2 m-4 flex flex-col shrink-0 grow-0"),
+            ]).SetClass("w-1/2 lg:w-1/4 m-4 flex flex-col shrink-0 grow-0"),
             new VariableUiElement(this.currentView.map(({title, contents}) => {
                 return new Combine([
                     new Title(Translations.W(title), 2).SetClass("shrink-0 border-b-4 border-subtle"),
                     Translations.W(contents).SetClass("shrink-2 overflow-y-auto block")
                 ]).SetClass("flex flex-col h-full")
-            })).SetClass("w-1/2 m-4 p-2 border-2 border-subtle rounded-xl m-4 ml-0 mr-8 shrink-0 grow-0"),
+            })).SetClass("w-1/2 lg:w-3/4 m-4 p-2 border-2 border-subtle rounded-xl m-4 ml-0 mr-8 shrink-0 grow-0"),
            
         ]).SetClass("flex h-full")
             .AttachTo("leafletDiv")
