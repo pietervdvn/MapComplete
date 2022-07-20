@@ -26,6 +26,8 @@ import {FilterState} from "../Models/FilteredLayer";
 import Translations from "./i18n/Translations";
 import Constants from "../Models/Constants";
 import SimpleAddUI from "./BigComponents/SimpleAddUI";
+import TagRenderingChart from "./BigComponents/TagRenderingChart";
+import Loading from "./Base/Loading";
 
 
 export default class DashboardGui {
@@ -170,7 +172,7 @@ export default class DashboardGui {
         }
         const map = this.SetupMap();
 
-        Utils.downloadJson("./service-worker-version").then(data => console.log("Service worker", data)).catch(e => console.log("Service worker not active"))
+        Utils.downloadJson("./service-worker-version").then(data => console.log("Service worker", data)).catch(_ => console.log("Service worker not active"))
 
         document.getElementById("centermessage").classList.add("hidden")
 
@@ -180,7 +182,7 @@ export default class DashboardGui {
         }
 
         const self = this;
-        const elementsInview = new UIEventSource([]);
+        const elementsInview = new UIEventSource<{ distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[]>([]);
 
         function update() {
             elementsInview.setData(self.visibleElements(map, layers))
@@ -201,10 +203,10 @@ export default class DashboardGui {
         const welcome = new Combine([state.layoutToUse.description, state.layoutToUse.descriptionTail])
         self.currentView.setData({title: state.layoutToUse.title, contents: welcome})
         const filterViewIsOpened = new UIEventSource(false)
-        filterViewIsOpened.addCallback(fv => self.currentView.setData({title: "filters", contents: filterView}))
-        
+        filterViewIsOpened.addCallback(_ => self.currentView.setData({title: "filters", contents: filterView}))
+
         const newPointIsShown = new UIEventSource(false);
-        const addNewPoint =  new SimpleAddUI(
+        const addNewPoint = new SimpleAddUI(
             new UIEventSource(true),
             new UIEventSource(undefined),
             filterViewIsOpened,
@@ -213,20 +215,50 @@ export default class DashboardGui {
         );
         const addNewPointTitle = "Add a missing point"
         this.currentView.addCallbackAndRunD(cv => {
-                newPointIsShown.setData(cv.contents === addNewPoint)
+            newPointIsShown.setData(cv.contents === addNewPoint)
         })
         newPointIsShown.addCallbackAndRun(isShown => {
-            if(isShown){
-                if(self.currentView.data.contents !== addNewPoint){
+            if (isShown) {
+                if (self.currentView.data.contents !== addNewPoint) {
                     self.currentView.setData({title: addNewPointTitle, contents: addNewPoint})
                 }
-            }else{
-                if(self.currentView.data.contents === addNewPoint){
+            } else {
+                if (self.currentView.data.contents === addNewPoint) {
                     self.currentView.setData(undefined)
                 }
             }
         })
-        
+
+        const statistics =
+            new VariableUiElement(elementsInview.stabilized(1000).map(features => {
+                if (features === undefined) {
+                    return new Loading("Loading data")
+                }
+                if (features.length === 0) {
+                    return "No elements in view"
+                }
+                const els = []
+                for (const layer of state.layoutToUse.layers) {
+                    if(layer.name === undefined){
+                        continue
+                    }
+                    const featuresForLayer = features.filter(f => f.layer === layer).map(f => f.element)
+                    if(featuresForLayer.length === 0){
+                        continue
+                    }
+                    els.push(new Title(layer.name))
+                    for (const tagRendering of layer.tagRenderings) {
+                        const chart = new TagRenderingChart(featuresForLayer, tagRendering, {
+                            chartclasses: "w-full",
+                            chartstyle: "height: 60rem"
+                        })
+                        els.push(chart)
+                    }
+                }
+                return new Combine(els)
+            }))
+
+
         new Combine([
             new Combine([
                 this.viewSelector(new Title(state.layoutToUse.title.Clone(), 2), state.layoutToUse.title.Clone(), welcome, "welcome"),
@@ -235,12 +267,12 @@ export default class DashboardGui {
                 this.viewSelector(new Title(
                         new VariableUiElement(elementsInview.map(elements => "There are " + elements?.length + " elements in view"))),
                     "Statistics",
-                    new FixedUiElement("Stats"), "statistics"),
+                    statistics, "statistics"),
 
                 this.viewSelector(new FixedUiElement("Filter"),
                     "Filters", filterView, "filters"),
-                this.viewSelector(new Combine([ "Add a missing point"]), addNewPointTitle,
-                   addNewPoint
+                this.viewSelector(new Combine(["Add a missing point"]), addNewPointTitle,
+                    addNewPoint
                 ),
 
                 new VariableUiElement(elementsInview.map(elements => this.mainElementsView(elements).SetClass("block m-2")))
