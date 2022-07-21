@@ -44,13 +44,8 @@ export default class DefaultGUI {
         }
 
     public setup(){
-        if (this.state.layoutToUse.customCss !== undefined) {
-            Utils.LoadCustomCss(this.state.layoutToUse.customCss);
-        }
-
         this.SetupUIElements();
         this.SetupMap()
-
 
         if (this.state.layoutToUse.customCss !== undefined && window.location.pathname.indexOf("index") >= 0) {
             Utils.LoadCustomCss(this.state.layoutToUse.customCss)
@@ -144,7 +139,7 @@ export default class DefaultGUI {
 
         new ShowDataLayer({
             leafletMap: state.leafletMap,
-            layerToShow: new LayerConfig(home_location_json, "all_known_layers", true),
+            layerToShow: new LayerConfig(home_location_json, "home_location", true),
             features: state.homeLocation,
             state
         })

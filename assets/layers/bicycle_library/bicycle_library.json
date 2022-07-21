@@ -323,5 +323,6 @@
         "render": "1"
       }
     }
-  ]
+  ],
+  "deletion": true
 }

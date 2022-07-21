@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4109,
+      "commits": 4165,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 112,
+      "commits": 119,
       "contributor": "Robin van der Linde"
     },
     {
@@ -66,6 +66,10 @@
     },
     {
       "commits": 15,
+      "contributor": "Andrews Leruth"
+    },
+    {
+      "commits": 15,
       "contributor": "ToastHawaii"
     },
     {
@@ -81,12 +85,16 @@
       "contributor": "Bavo Vanderghote"
     },
     {
-      "commits": 10,
+      "commits": 11,
       "contributor": "dependabot[bot]"
     },
     {
       "commits": 10,
       "contributor": "LiamSimons"
+    },
+    {
+      "commits": 9,
+      "contributor": "AlexanderRebai"
     },
     {
       "commits": 9,
@@ -126,10 +134,6 @@
     },
     {
       "commits": 4,
-      "contributor": "AlexanderRebai"
-    },
-    {
-      "commits": 4,
       "contributor": "OliNau"
     },
     {
@@ -151,10 +155,6 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
-    },
-    {
-      "commits": 2,
-      "contributor": "Andrews Leruth"
     },
     {
       "commits": 2,
@@ -195,6 +195,10 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "bxl-forever"
     },
     {
       "commits": 1,

@@ -9,6 +9,8 @@ import DefaultGUI from "./UI/DefaultGUI";
 import State from "./State";
 import ShowOverlayLayerImplementation from "./UI/ShowDataLayer/ShowOverlayLayerImplementation";
 import {DefaultGuiState} from "./UI/DefaultGuiState";
+import {QueryParameters} from "./Logic/Web/QueryParameters";
+import DashboardGui from "./UI/DashboardGui";
 
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts running from console
 MinimapImplementation.initialize()
@@ -36,7 +38,13 @@ class Init {
         // This 'leaks' the global state via the window object, useful for debugging
         // @ts-ignore
         window.mapcomplete_state = State.state;
-        new DefaultGUI(State.state, guiState).setup()
+        
+        const mode = QueryParameters.GetQueryParameter("mode", "map", "The mode the application starts in, e.g. 'map' or 'dashboard'")
+        if(mode.data === "dashboard"){
+            new DashboardGui(State.state, guiState).setup()
+        }else{
+            new DefaultGUI(State.state, guiState).setup()
+        }
     }
 }
 

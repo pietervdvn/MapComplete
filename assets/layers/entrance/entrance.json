@@ -337,9 +337,33 @@
         "es": "¿Cual es el ancho de esta puerta/entrada?"
       },
       "freeform": {
-        "key": "width",
-        "type": "distance"
+        "key": "width"
       }
+    },
+    {
+      "id": "kerb-height",
+      "question": {
+        "en": "What is the height of this kerb?"
+      },
+      "render": {
+        "en": "The kerb height of this door is {kerb:height}"
+      },
+      "freeform": {
+        "key": "kerb:height",
+        "placeholder": {
+          "en": "Height of the door kerb"
+        },
+        "type": "pnat"
+      },
+      "mappings": [
+        {
+          "if": "kerb:height=0",
+          "then": {
+            "en": "This door does not have a kerb",
+            "nl": "Deze deur heeft geen drempel"
+          }
+        }
+      ]
     }
   ],
   "mapRendering": [
@@ -373,6 +397,35 @@
       },
       "tags": [
         "entrance=yes"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "appliesToKey": [
+        "kerb:height"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": "meter"
+          }
+        },
+        {
+          "default": true,
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "cms"
+          ],
+          "human": {
+            "en": "centimeter"
+          }
+        }
       ]
     }
   ]

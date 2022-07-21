@@ -1,4 +1,5 @@
 {
+  "#dont-translate": "*",
   "id": "buurtnatuur",
   "title": {
     "nl": "Breng jouw buurtnatuur in kaart"
@@ -34,7 +35,12 @@
         "osmTags": {
           "or": [
             "leisure=nature_reserve",
-            "boundary=protected_area"
+            {
+              "and": [
+                "boundary=protected_area",
+                "protect_class!=22"
+              ]
+            }
           ]
         }
       },
@@ -149,15 +155,7 @@
         "_overlapWithUpperLayers=Math.max(...feat.overlapWith('nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
         "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' :'no'"
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_tooMuchOverlap=yes",
-            "then": "no"
-          }
-        ]
-      },
+      "isShown": "_tooMuchOverlap!=yes",
       "title": {
         "render": {
           "nl": "Park"
@@ -257,15 +255,7 @@
         "_overlapWithUpperLayers=Math.max(...feat.overlapWith('parks','nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
         "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' : 'no'"
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_tooMuchOverlap=yes",
-            "then": "no"
-          }
-        ]
-      },
+      "isShown": "_tooMuchOverlap!=yes",
       "title": {
         "render": {
           "nl": "Bos"

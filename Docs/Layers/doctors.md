@@ -7,6 +7,8 @@
 
 <img src='https://mapcomplete.osm.be/circle:white;./assets/layers/doctors/doctors.svg' height="100px"> 
 
+This layer shows doctor offices, dentists and other healthcare facilities
+
 
 
 
@@ -62,6 +64,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/healthcare:speciality#values) [healthcare:speciality](https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality) | [string](../SpecialInputElements.md#string) | [general](https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgeneral) [gynaecology](https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgynaecology) [psychiatry](https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpsychiatry) [paediatrics](https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpaediatrics)
 
 
@@ -147,6 +150,20 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
   - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with  contact:website~^..*$
   - This option cannot be chosen as answer
+
+
+
+
+### name 
+
+
+
+The question is  What is the name of this doctors place?
+
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
+
+This is rendered with  This doctors place is called {name}
+
 
 
 

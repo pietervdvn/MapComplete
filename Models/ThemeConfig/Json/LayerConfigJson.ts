@@ -1,4 +1,4 @@
-import {AndOrTagConfigJson} from "./TagConfigJson";
+import {TagConfigJson} from "./TagConfigJson";
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
 import FilterConfigJson from "./FilterConfigJson";
 import {DeleteConfigJson} from "./DeleteConfigJson";
@@ -47,7 +47,7 @@ export interface LayerConfigJson {
             /**
              * Every source must set which tags have to be present in order to load the given layer.
              */
-            osmTags: AndOrTagConfigJson | string
+            osmTags: TagConfigJson
             /**
              * The maximum amount of seconds that a tile is allowed to linger in the cache
              */
@@ -135,7 +135,7 @@ export interface LayerConfigJson {
     doNotDownload?: boolean;
 
     /**
-     * This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
+     * If set, only features matching this extra tag will be shown.
      * This is useful to hide certain features from view.
      *
      * Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
@@ -143,7 +143,7 @@ export interface LayerConfigJson {
      *
      * The default value is 'yes'
      */
-    isShown?: TagRenderingConfigJson;
+    isShown?: TagConfigJson;
 
     /**
      * Advanced option - might be set by the theme compiler
@@ -287,9 +287,9 @@ export interface LayerConfigJson {
      */
     tagRenderings?:
         (string
-            | { builtin: string | string[], override: any }
+            | { builtin: string | string[], override: Partial<QuestionableTagRenderingConfigJson> }
             | QuestionableTagRenderingConfigJson
-            | RewritableConfigJson<(string | { builtin: string, override: any } | QuestionableTagRenderingConfigJson)[]>
+            | RewritableConfigJson<(string | { builtin: string, override: Partial<QuestionableTagRenderingConfigJson> } | QuestionableTagRenderingConfigJson)[]>
             ) [],
 
 

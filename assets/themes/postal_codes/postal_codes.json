@@ -117,15 +117,7 @@
           "dashArray": "8 8"
         }
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_country!=be",
-            "then": "no"
-          }
-        ]
-      }
+      "isShown": "_country=be"
     },
     {
       "id": "wrong_postal_code",
@@ -196,15 +188,7 @@
           ]
         }
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_country!=be",
-            "then": "no"
-          }
-        ]
-      }
+      "isShown": "_country=be"
     }
   ]
 }

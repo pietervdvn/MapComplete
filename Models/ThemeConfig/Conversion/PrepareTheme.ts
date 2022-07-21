@@ -357,7 +357,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
 
             for (const layerConfig of alreadyLoaded) {
                 try {
-                    const layerDeps = DependencyCalculator.getLayerDependencies(new LayerConfig(layerConfig))
+                    const layerDeps = DependencyCalculator.getLayerDependencies(new LayerConfig(layerConfig, themeId+"(dependencies)"))
                     dependencies.push(...layerDeps)
                 } catch (e) {
                     console.error(e)

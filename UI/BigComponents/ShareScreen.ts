@@ -42,7 +42,7 @@ export default class ShareScreen extends Combine {
             } else {
                 return null;
             }
-           
+
         }, [currentLocation]));
 
 
@@ -94,7 +94,7 @@ export default class ShareScreen extends Combine {
 
         for (const swtch of switches) {
 
-            const checkbox =new CheckBox(Translations.W(swtch.human), !swtch.reverse)
+            const checkbox = new CheckBox(Translations.W(swtch.human), !swtch.reverse)
             optionCheckboxes.push(checkbox);
             optionParts.push(checkbox.GetValue().map((isEn) => {
                 if (isEn) {
@@ -113,8 +113,8 @@ export default class ShareScreen extends Combine {
 
         }
 
-        if(layout.definitionRaw !== undefined){
-            optionParts.push(new UIEventSource("userlayout="+(layout.definedAtUrl ?? layout.id)))
+        if (layout.definitionRaw !== undefined) {
+            optionParts.push(new UIEventSource("userlayout=" + (layout.definedAtUrl ?? layout.id)))
         }
 
         const options = new Combine(optionCheckboxes).SetClass("flex flex-col")
@@ -124,14 +124,14 @@ export default class ShareScreen extends Combine {
             let path = window.location.pathname;
             path = path.substr(0, path.lastIndexOf("/"));
             let id = layout.id.toLowerCase()
-            if(layout.definitionRaw !== undefined){
-                id="theme.html"
+            if (layout.definitionRaw !== undefined) {
+                id = "theme.html"
             }
             let literalText = `https://${host}${path}/${id}`
 
             let hash = ""
-            if(layout.definedAtUrl === undefined && layout.definitionRaw !== undefined){
-               hash = "#"+ LZString.compressToBase64( Utils.MinifyJSON(layout.definitionRaw))
+            if (layout.definedAtUrl === undefined && layout.definitionRaw !== undefined) {
+                hash = "#" + LZString.compressToBase64(Utils.MinifyJSON(layout.definitionRaw))
             }
             const parts = Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
             if (parts.length === 0) {
@@ -189,18 +189,30 @@ export default class ShareScreen extends Combine {
 
         });
 
-        
+
         let downloadThemeConfig: BaseUIElement = undefined;
-        if(layout.definitionRaw !== undefined){
-            downloadThemeConfig = new SubtleButton(Svg.download_svg(), new Combine([
+        if (layout.definitionRaw !== undefined) {
+            const downloadThemeConfigAsJson = new SubtleButton(Svg.download_svg(), new Combine([
                 tr.downloadCustomTheme,
                 tr.downloadCustomThemeHelp.SetClass("subtle")
             ]).onClick(() => {
-                Utils.offerContentsAsDownloadableFile(layout.definitionRaw, layout.id+".mapcomplete-theme-definition.json", {
-                    mimetype:"application/json"
+                Utils.offerContentsAsDownloadableFile(layout.definitionRaw, layout.id + ".mapcomplete-theme-definition.json", {
+                    mimetype: "application/json"
                 })
             })
                 .SetClass("flex flex-col"))
+            let editThemeConfig: BaseUIElement = undefined
+            if (layout.definedAtUrl === undefined) {
+                const patchedDefinition = JSON.parse(layout.definitionRaw)
+                patchedDefinition["language"] = Object.keys(patchedDefinition.title)
+                editThemeConfig = new SubtleButton(Svg.pencil_svg(), "Edit this theme on the custom theme generator",
+                    {
+                        url: `https://pietervdvn.github.io/mc/legacy/070/customGenerator.html#${btoa(JSON.stringify(patchedDefinition))}`
+                    }
+                )
+            }
+            downloadThemeConfig = new Combine([downloadThemeConfigAsJson, editThemeConfig]).SetClass("flex flex-col")
+
         }
 
         super([

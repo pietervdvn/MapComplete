@@ -33,6 +33,7 @@ export class VariableUiElement extends BaseUIElement {
             if (self.isDestroyed) {
                 return true;
             }
+           
             while (el.firstChild) {
                 el.removeChild(el.lastChild);
             }

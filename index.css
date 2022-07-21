@@ -599,6 +599,15 @@ input {
   box-sizing: border-box;
 }
 
+.code {
+    display: inline-block;
+    background-color: lightgray;
+    padding: 0.5em;
+    word-break: break-word;
+    color: black;
+    box-sizing: border-box;
+}
+
 /** Switch layout **/
 .small-image img {
   height: 1em;

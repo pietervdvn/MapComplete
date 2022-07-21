@@ -837,6 +837,7 @@ The following layers are included in MapComplete:
   - [play_forest](./Layers/play_forest.md)
   - [playground](./Layers/playground.md)
   - [public_bookcase](./Layers/public_bookcase.md)
+  - [rainbow_crossings](./Layers/rainbow_crossings.md)
   - [recycling](./Layers/recycling.md)
   - [school](./Layers/school.md)
   - [shelter](./Layers/shelter.md)

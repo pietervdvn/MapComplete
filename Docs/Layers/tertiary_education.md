@@ -19,6 +19,18 @@ Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 
 
 
+#### Themes using this layer 
+
+
+
+
+
+  - [education](https://mapcomplete.osm.be/education)
+  - [personal](https://mapcomplete.osm.be/personal)
+
+
+
+
  Basic tags for this layer 
 ---------------------------
 

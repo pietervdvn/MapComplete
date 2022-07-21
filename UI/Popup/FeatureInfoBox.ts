@@ -46,7 +46,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
 
     }
 
-    private static GenerateTitleBar(tags: UIEventSource<any>,
+    public static GenerateTitleBar(tags: UIEventSource<any>,
                                     layerConfig: LayerConfig,
                                     state: {}): BaseUIElement {
         const title = new TagRenderingAnswer(tags, layerConfig.title ?? new TagRenderingConfig("POI"), state)
@@ -64,7 +64,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         ])
     }
 
-    private static GenerateContent(tags: UIEventSource<any>,
+    public static GenerateContent(tags: UIEventSource<any>,
                                    layerConfig: LayerConfig,
                                    state: FeaturePipelineState): BaseUIElement {
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>();

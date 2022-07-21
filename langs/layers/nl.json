@@ -5112,6 +5112,16 @@
             }
         },
         "tagRenderings": {
+            "8": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "De voertaal van deze school is niet gekend"
+                        }
+                    },
+                    "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
+                }
+            },
             "capacity": {
                 "question": "Ten hoogste hoeveel studenten kunnen er les volgen in deze school?",
                 "render": "Deze school kan maximaal {capacity} studenten lesgeven"
@@ -5158,30 +5168,6 @@
                     }
                 },
                 "question": "Mogen jongens en meisjes les volgen op deze school?"
-            },
-            "language": {
-                "freeform": {
-                    "placeholder": "Taal in lowercase Engel"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "De voertaal van deze school is niet gekend"
-                    },
-                    "1": {
-                        "then": "Frans is de voertaal van {name}"
-                    },
-                    "2": {
-                        "then": "Nederlands is de voertaal van {name}"
-                    },
-                    "3": {
-                        "then": "Duits is de voertaal van {name}"
-                    },
-                    "4": {
-                        "then": "De voertaal van deze school is niet gekend"
-                    }
-                },
-                "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>",
-                "render": "{school:language} is de voertaal van {title()}"
             },
             "school-name": {
                 "question": "Wat is de naam van deze school?",
@@ -6228,6 +6214,11 @@
     },
     "walls_and_buildings": {
         "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,…). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
+        "tagRenderings": {
+            "_entrance:width": {
+                "render": "<a href ='#{_entrance:id} '>Deze deur heeft een breedte van {canonical(_entrance:width)} meter </a>"
+            }
+        },
         "title": {
             "render": "Muur of gebouw"
         }

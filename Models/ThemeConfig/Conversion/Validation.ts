@@ -246,6 +246,10 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
         for (const layer of withOverride) {
             for (const key in overrideAll) {
+                if(key.endsWith("+") || key.startsWith("+")){
+                    // This key will _add_ to the list, not overwrite it - so no warning is needed
+                    continue
+                }
                 if (layer["override"][key] !== undefined || layer["override"]["=" + key] !== undefined) {
                     const w = "The override of layer " + JSON.stringify(layer["builtin"]) + " has a shadowed property: " + key + " is overriden by overrideAll of the theme";
                     errors.push(w)
@@ -508,11 +512,21 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
         const errors = []
         const warnings = []
         const information = []
+        context = "While validating a layer: "+context
         if (typeof json === "string") {
             errors.push(context + ": This layer hasn't been expanded: " + json)
             return {
                 result: null,
                 errors
+            }
+        }
+        
+        if(json.tagRenderings !== undefined && json.tagRenderings.length > 0){
+            if(json.title === undefined){
+                errors.push(context + ": this layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error.")
+            }
+            if(json.title === null){
+                information.push(context + ": title is `null`. This results in an element that cannot be clicked - even though tagRenderings is set.")
             }
         }
 
@@ -547,6 +561,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
                 if (json["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
                     errors.push(context + ": layer " + json.id + " contains an old 'hideUnderlayingFeaturesMinPercentage'")
+                }
+                
+                if(json.isShown !== undefined && (json.isShown["render"] !== undefined || json.isShown["mappings"] !== undefined)){
+                    warnings.push(context + " has a tagRendering as `isShown`")
                 }
             }
             {

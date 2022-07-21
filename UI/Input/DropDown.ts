@@ -13,6 +13,11 @@ export class DropDown<T> extends InputElement<T> {
     private readonly _value: UIEventSource<T>;
     private readonly _values: { value: T; shown: string | BaseUIElement }[];
 
+    /**
+     * 
+     * const dropdown = new DropDown<number>("test",[{value: 42, shown: "the answer"}])
+     * dropdown.GetValue().data // => 42
+     */
     constructor(label: string | BaseUIElement,
                 values: { value: T, shown: string | BaseUIElement }[],
                 value: UIEventSource<T> = undefined,
@@ -21,7 +26,7 @@ export class DropDown<T> extends InputElement<T> {
                 }
     ) {
         super();
-        value = value ?? new UIEventSource<T>(undefined)
+        value = value ?? new UIEventSource<T>(values[0].value)
         this._value = value
         this._values = values;
         if (values.length <= 1) {
@@ -63,7 +68,7 @@ export class DropDown<T> extends InputElement<T> {
 
 
             select.onchange = (() => {
-                var index = select.selectedIndex;
+                const index = select.selectedIndex;
                 value.setData(values[index].value);
             });
 

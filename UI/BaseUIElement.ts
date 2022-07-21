@@ -9,7 +9,7 @@ export default abstract class BaseUIElement {
 
     protected _constructedHtmlElement: HTMLElement;
     protected isDestroyed = false;
-    private clss: Set<string> = new Set<string>();
+    private readonly clss: Set<string> = new Set<string>();
     private style: string;
     private _onClick: () => void;
 
@@ -117,7 +117,7 @@ export default abstract class BaseUIElement {
             if (style !== undefined && style !== "") {
                 el.style.cssText = style
             }
-            if (this.clss.size > 0) {
+            if (this.clss?.size > 0) {
                 try {
                     el.classList.add(...Array.from(this.clss))
                 } catch (e) {

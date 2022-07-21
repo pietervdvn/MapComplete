@@ -14,7 +14,7 @@ A layer showing street lights
 
 
 
-  - This layer is shown at zoomlevel **0** and higher
+  - This layer is shown at zoomlevel **16** and higher
 
 
 

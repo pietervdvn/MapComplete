@@ -6,12 +6,11 @@ import ComparingTag from "./ComparingTag";
 import {RegexTag} from "./RegexTag";
 import SubstitutingTag from "./SubstitutingTag";
 import {Or} from "./Or";
-import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
+import {TagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
 import {isRegExp} from "util";
 import * as key_counts from "../../assets/key_totals.json"
 
 type Tags = Record<string, string>
-type OsmTags = Tags & {id: string}
 
 export class TagUtils {
     private static keyCounts: { keys: any, tags: any } = key_counts["default"] ?? key_counts
@@ -249,7 +248,7 @@ export class TagUtils {
      * // Must match case insensitive
      * TagUtils.Tag("name~i~somename").matchesProperties({name: "SoMeName"}) // => true
      */
-    public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
+    public static Tag(json: TagConfigJson, context: string = ""): TagsFilter {
         try {
             return this.TagUnsafe(json, context);
         } catch (e) {
@@ -258,6 +257,20 @@ export class TagUtils {
         }
     }
 
+    /**
+     * Same as `.Tag`, except that this will return undefined if the json is undefined
+     * @param json
+     * @param context
+     * @constructor
+     */
+    public static TagD(json?: TagConfigJson, context: string = ""): TagsFilter | undefined {
+        if(json === undefined){
+            return undefined
+        }
+        return TagUtils.Tag(json, context)
+    }
+    
+    
     /**
      * INLINE sort of the given list
      */
@@ -308,22 +321,22 @@ export class TagUtils {
         return {key, value, invert: invert == "!", modifier: (modifier == "i~" ? "i" : "")};
     }
 
-    private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
+    private static TagUnsafe(json: TagConfigJson, context: string = ""): TagsFilter {
 
         if (json === undefined) {
             throw new Error(`Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`)
         }
         if (typeof (json) != "string") {
-            if (json.and !== undefined && json.or !== undefined) {
+            if (json["and"] !== undefined && json["or"] !== undefined) {
                 throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`
             }
-            if (json.and !== undefined) {
-                return new And(json.and.map(t => TagUtils.Tag(t, context)));
+            if (json["and"] !== undefined) {
+                return new And(json["and"].map(t => TagUtils.Tag(t, context)));
             }
-            if (json.or !== undefined) {
-                return new Or(json.or.map(t => TagUtils.Tag(t, context)));
+            if (json["or"] !== undefined) {
+                return new Or(json["or"].map(t => TagUtils.Tag(t, context)));
             }
-            throw "At " + context + ": unrecognized tag"
+            throw `At ${context}: unrecognized tag: ${JSON.stringify(json)}`
         }
 
 

@@ -16,7 +16,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
         super([
             "Advanced conversion which deducts a layer showing all notes that are 'importable' (i.e. a note that contains a link to some MapComplete theme, with hash '#import').",
             "The import buttons and matches will be based on the presets of the given theme",
-        ].join("\n\n"), [],"CreateNoteImportLayer")
+        ].join("\n\n"), [], "CreateNoteImportLayer")
         this._includeClosedNotesDays = includeClosedNotesDays;
     }
 
@@ -43,18 +43,18 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
 
         const pointRenderings = (layerJson.mapRendering ?? []).filter(r => r !== null && r["location"] !== undefined);
         const firstRender = <PointRenderingConfigJson>(pointRenderings [0])
-        if(firstRender === undefined){
-            throw `Layer ${layerJson.id} does not have a pointRendering: `+context
+        if (firstRender === undefined) {
+            throw `Layer ${layerJson.id} does not have a pointRendering: ` + context
         }
         const title = layer.presets[0].title
 
         const importButton = {}
         {
-            const translations = trs(t.importButton,{layerId: layer.id, title: layer.presets[0].title})
+            const translations = trs(t.importButton, {layerId: layer.id, title: layer.presets[0].title})
             for (const key in translations) {
-                if(key !== "_context"){
+                if (key !== "_context") {
                     importButton[key] = "{" + translations[key] + "}"
-                }else{
+                } else {
                     importButton[key] = translations[key]
                 }
             }
@@ -68,19 +68,19 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             result["_context"] = translation.context
             return result
         }
-        
-        function tr(translation: Translation){
-            return{ ...translation.translations, "_context": translation.context}
+
+        function tr(translation: Translation) {
+            return {...translation.translations, "_context": translation.context}
         }
 
-        function trs<T>(translation: TypedTranslation<T>, subs: T) : object{
+        function trs<T>(translation: TypedTranslation<T>, subs: T): object {
             return {...translation.Subs(subs).translations, "_context": translation.context}
         }
 
         const result: LayerConfigJson = {
             "id": "note_import_" + layer.id,
             // By disabling the name, the import-layers won't pollute the filter view "name": t.layerName.Subs({title: layer.title.render}).translations,
-            "description": trs(t.description , {title: layer.title.render}),
+            "description": trs(t.description, {title: layer.title.render}),
             "source": {
                 "osmTags": {
                     "and": [
@@ -93,7 +93,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             },
             "minzoom": Math.min(12, layerJson.minzoom - 2),
             "title": {
-                "render": trs( t.popupTitle, {title})
+                "render": trs(t.popupTitle, {title})
             },
             "calculatedTags": [
                 "_first_comment=feat.get('comments')[0].text.toLowerCase()",
@@ -103,22 +103,10 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 "_tags=(() => {let lines = feat.get('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, feat.get('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()"
             ],
             "isShown": {
-                "render": "no",
-                "mappings": [
-                    {
-                        "if": "comments!~.*https://mapcomplete.osm.be.*",
-                        "then": "no"
-                    },
-                    {
-                        "if": {
-                            and:
-                                ["_trigger_index~*",
-                                    {or: isShownIfAny}
-                                ]
-                        },
-                        "then": "yes"
-                    }
-                ]
+                and:
+                    ["_trigger_index~*",
+                        {or: isShownIfAny}
+                    ]
             },
             "titleIcons": [
                 {
@@ -165,9 +153,9 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     "render": "{add_image_to_note()}"
                 },
                 {
-                    "id":"nearby_images",
+                    "id": "nearby_images",
                     render: tr(t.nearbyImagesIntro)
-                        
+
                 }
             ],
             "mapRendering": [

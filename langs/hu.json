@@ -10,7 +10,7 @@
         "cannotBeDeleted": "Ez az objektum nem törölhető",
         "delete": "Törlés",
         "explanations": {
-            "hardDelete": "Ez a pont törlődik az OpenStreetMapről. Csak egy tapasztalt szerkesztő tudja majd visszaállítani",
+            "hardDelete": "Ez az elem törlődik az OpenStreetMapről. Csak tapasztalt szerkesztő tudja visszaállítani",
             "selectReason": "Kérjük, jelöld meg, miért kellene ezt a pontot törölni",
             "softDelete": "Ez az objektum frissülni fog és ebben az alkalmazásban nem fog látszani. <span class=\"subtle\">{reason}</span>"
         },
@@ -80,6 +80,9 @@
             "donate": "A MapComplete pénzügyi támogatása",
             "editId": "Az OpenStreetMap online szerkesztőjének megnyitása itt",
             "editJosm": "Szerkesztés itt JOSM-mal",
+            "followBridge": "A Mastodon- és Twitter-fiókok összekapcsolódnak",
+            "followOnMastodon": "Kövesse a MapComplete-et a Mastodonon",
+            "followOnTwitter": "Kövesse a MapComplete-et a Twitteren",
             "iconAttribution": {
                 "title": "Felhasznált ikonok"
             },
@@ -101,6 +104,7 @@
         "download": {
             "downloadAsPdf": "A jelenlegi térkép letöltése PDF-ként",
             "downloadAsPdfHelper": "Eszményi a jelenlegi térkép kinyomtatásához",
+            "downloadAsSvg": "Az aktuális térkép letöltése SVG formátumban",
             "downloadCSV": "Látható adatok letöltése CSV-ként",
             "downloadCSVHelper": "Kompatibilis a LibreOffice Calc-kal, az Excellel…",
             "downloadFeatureAsGeojson": "Letöltés GeoJSON-fájlként",
@@ -116,6 +120,7 @@
             "title": "A látható adatok letöltése",
             "uploadGpx": "Töltsd fel a nyomvonalaidat az OpenStreetMapre"
         },
+        "error": "Valami rosszul sült el",
         "example": "Példa",
         "examples": "Példák",
         "fewChangesBefore": "Kérjük, válaszolj néhány meglévő pontokra vonatkozó kérdésre, mielőtt új pontot adnál hozzá.",
@@ -131,6 +136,7 @@
         },
         "loading": "Betöltés…",
         "loadingTheme": "{theme} betöltése…",
+        "loginFailed": "Az OpenStreetMap-be való bejelentkezés nem sikerült",
         "loginOnlyNeededToEdit": "ha szerkeszteni szeretnéd a térképet",
         "loginToStart": "A kérdés megválaszolásához be kell jelentkezni",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap-fiókkal",
@@ -139,6 +145,8 @@
             "createYourOwnTheme": "Készítsd el saját MapComplete témád a semmiből",
             "hiddenExplanation": "Ezeket a témákat csak az érheti el, akik ismeri a linket. {total_hidden} rejtett téma közül {hidden_discovered} témát ismersz.",
             "intro": "<h3>Kíváncsi vagy más tematikus térképekre is?</h3>Szeretsz földrajzi adatokat gyűjteni? <br>További témák is elérhetők.",
+            "noMatchingThemes": "Nincs olyan téma, amely megfelelt volna a keresési feltételeknek",
+            "noSearch": "Minden téma megjelenítése",
             "previouslyHiddenTitle": "Korábban megnézett rejtett témák",
             "requestATheme": "Ha egyedi témát szeretnél, kérd a problémakövetőben (issue tracker)",
             "streetcomplete": "Egy másik, hasonló alkalmazás a <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
