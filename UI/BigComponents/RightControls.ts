@@ -4,9 +4,7 @@ import MapControlButton from "../MapControlButton";
 import GeoLocationHandler from "../../Logic/Actors/GeoLocationHandler";
 import Svg from "../../Svg";
 import MapState from "../../Logic/State/MapState";
-import {VariableUiElement} from "../Base/VariableUIElement";
 import LevelSelector from "../Input/LevelSelector";
-import {UIEventSource} from "../../Logic/UIEventSource";
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
 import {Utils} from "../../Utils";
 
@@ -50,6 +48,7 @@ export default class RightControls extends Combine {
             const allElements = state.featurePipeline.GetAllFeaturesAndMetaWithin(bbox);
             const allLevelsRaw: string[] = [].concat(...allElements.map(allElements => allElements.features.map(f => <string>f.properties["level"])))
             const allLevels = [].concat(...allLevelsRaw.map(l => LevelSelector.LevelsParser(l)))
+            allLevels.sort((a,b) => a < b ? -1 : 1)
             return Utils.Dedup(allLevels)
         })
         const levelSelect = new LevelSelector(levelsInView)
