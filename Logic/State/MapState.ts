@@ -78,6 +78,12 @@ export default class MapState extends UserRelatedState {
      * Which layers are enabled in the current theme and what filters are applied onto them
      */
     public filteredLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>([], "filteredLayers");
+
+    /**
+     * Filters which apply onto all layers
+     */
+    public globalFilters: UIEventSource<{ filter: FilterState, id: string }[]> = new UIEventSource([], "globalFilters")
+    
     /**
      * Which overlays are shown
      */
