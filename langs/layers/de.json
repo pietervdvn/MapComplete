@@ -6462,7 +6462,7 @@
     "hospital": {
         "tagRenderings": {
             "name": {
-                "render": "Der Name des Krankenhauses lautet {Name}"
+                "render": "Der Name des Krankenhauses lautet {name}"
             }
         },
         "name": "Krankenhaus",
