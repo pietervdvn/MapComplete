@@ -4,7 +4,6 @@ import Combine from "../Base/Combine";
 import Slider from "./Slider";
 import {ClickableToggle} from "./Toggle";
 import {FixedUiElement} from "../Base/FixedUiElement";
-import {Utils} from "../../Utils";
 import {VariableUiElement} from "../Base/VariableUIElement";
 
 export default class LevelSelector extends VariableUiElement implements InputElement<string> {
@@ -16,11 +15,15 @@ export default class LevelSelector extends VariableUiElement implements InputEle
     }) {
         const value = options?.value ?? new UIEventSource<string>(undefined)
         super(Stores.ListStabilized(currentLevels).map(levels => {
+            console.log("CUrrent levels are", levels)
             let slider = new Slider(0, levels.length - 1, {vertical: true});
-            slider.SetClass("flex m-1 elevatorslider mb-0 mt-8").SetStyle("height: " + 2.5 * levels.length + "rem ")
-            const toggleClass = "flex border-2 border-blue-500 w-10 h-10 place-content-center items-center"
+            const toggleClass = "flex border-2 border-blue-500 w-10 h-10 place-content-center items-center border-box"
+            slider.SetClass("flex elevator w-10").SetStyle(`height: ${2.5 * levels.length}rem; background: #00000000`)
+            
             const values = levels.map((data, i) => new ClickableToggle(
-                new FixedUiElement(data).SetClass("active bg-subtle " + toggleClass), new FixedUiElement(data).SetClass(toggleClass), slider.GetValue().sync(
+                new FixedUiElement(data).SetClass("font-bold active bg-subtle " + toggleClass), 
+                new FixedUiElement(data).SetClass("normal-background " + toggleClass), 
+                slider.GetValue().sync(
                     (sliderVal) => {
                         return sliderVal === i
                     },
@@ -30,11 +33,13 @@ export default class LevelSelector extends VariableUiElement implements InputEle
                     }
                 ))
                 .ToggleOnClick()
-                .SetClass("flex flex-column ml-5 bg-slate-200 w-10 h-10 valuesContainer"))
+                .SetClass("flex w-10 h-10"))
 
-            const combine = new Combine([new Combine(values).SetClass("mt-8"), slider])
-            combine.SetClass("flex flex-row h-14");
+            values.reverse(/* This is a new list, no side-effects */)
+            const combine = new Combine([new Combine(values), slider])
+            combine.SetClass("flex flex-row overflow-hidden");
 
+            
             slider.GetValue().addCallbackAndRun(i => {
                 if (currentLevels?.data === undefined) {
                     return
@@ -47,6 +52,8 @@ export default class LevelSelector extends VariableUiElement implements InputEle
             })
             return combine
         }))
+        
+        this._value = value
 
     }
 
@@ -58,36 +65,6 @@ export default class LevelSelector extends VariableUiElement implements InputEle
         return false;
     }
 
-
-    /**
-     * Parses a level specifier to the various available levels
-     *
-     * LevelSelector.LevelsParser("0") // => ["0"]
-     * LevelSelector.LevelsParser("1") // => ["1"]
-     * LevelSelector.LevelsParser("0;2") // => ["0","2"]
-     * LevelSelector.LevelsParser("0-5") // => ["0","1","2","3","4","5"]
-     * LevelSelector.LevelsParser("0") // => ["0"]
-     */
-    public static LevelsParser(level: string): string[] {
-        let spec = [level]
-        spec = [].concat(...spec.map(s => s.split(";")))
-        spec = [].concat(...spec.map(s => {
-            s = s.trim()
-            if (s.indexOf("-") < 0) {
-                return s
-            }
-            const [start, end] = s.split("-").map(s => Number(s.trim()))
-            if (isNaN(start) || isNaN(end)) {
-                return undefined
-            }
-            const values = []
-            for (let i = start; i <= end; i++) {
-                values.push(i + "")
-            }
-            return values
-        }))
-        return Utils.NoNull(spec);
-    }
 
 
 }

@@ -127,7 +127,7 @@ export class TagUtils {
      *     }
      * ]})
      * TagUtils.FlattenMultiAnswer([tag]) // => TagUtils.Tag({and:["x=a;b", "y=0;1;2;3"] })
-     * 
+     *
      * TagUtils.FlattenMultiAnswer(([new Tag("x","y"), new Tag("a","b")])) // => new And([new Tag("x","y"), new Tag("a","b")])
      * TagUtils.FlattenMultiAnswer(([new Tag("x","")])) // => new And([new Tag("x","")])
      */
@@ -240,7 +240,7 @@ export class TagUtils {
      *
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 4}) // => true
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 5}) // => false
-     * 
+     *
      * // RegexTags must match values with newlines
      * TagUtils.Tag("note~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De aed bevindt zich op de 5de verdieping"}) // => true
      * TagUtils.Tag("note~i~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De AED bevindt zich op de 5de verdieping"}) // => true
@@ -264,13 +264,13 @@ export class TagUtils {
      * @constructor
      */
     public static TagD(json?: TagConfigJson, context: string = ""): TagsFilter | undefined {
-        if(json === undefined){
+        if (json === undefined) {
             return undefined
         }
         return TagUtils.Tag(json, context)
     }
-    
-    
+
+
     /**
      * INLINE sort of the given list
      */
@@ -580,5 +580,39 @@ export class TagUtils {
     public static containsEquivalents(guards: TagsFilter[], listToFilter: TagsFilter[]): boolean {
         return listToFilter.some(tf => guards.some(guard => guard.shadows(tf)))
     }
+
+
+    /**
+     * Parses a level specifier to the various available levels
+     *
+     * TagUtils.LevelsParser("0") // => ["0"]
+     * TagUtils.LevelsParser("1") // => ["1"]
+     * TagUtils.LevelsParser("0;2") // => ["0","2"]
+     * TagUtils.LevelsParser("0-5") // => ["0","1","2","3","4","5"]
+     * TagUtils.LevelsParser("0") // => ["0"]
+     * TagUtils.LevelsParser("-1") // => ["-1"]
+     * TagUtils.LevelsParser("0;-1") // => ["0", "-1"]
+     */
+    public static LevelsParser(level: string): string[] {
+        let spec = Utils.NoNull([level])
+        spec = [].concat(...spec.map(s => s?.split(";")))
+        spec = [].concat(...spec.map(s => {
+            s = s.trim()
+            if (s.indexOf("-") < 0 || s.startsWith("-")) {
+                return s
+            }
+            const [start, end] = s.split("-").map(s => Number(s.trim()))
+            if (isNaN(start) || isNaN(end)) {
+                return undefined
+            }
+            const values = []
+            for (let i = start; i <= end; i++) {
+                values.push(i + "")
+            }
+            return values
+        }))
+        return Utils.NoNull(spec);
+    }
+
 
 }

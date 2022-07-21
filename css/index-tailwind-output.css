@@ -946,18 +946,6 @@ video {
   margin-right: 0px;
 }
 
-.mb-0 {
-  margin-bottom: 0px;
-}
-
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
 .mr-3 {
   margin-right: 0.75rem;
 }
@@ -972,6 +960,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 .box-border {
@@ -1104,10 +1096,6 @@ video {
 
 .h-16 {
   height: 4rem;
-}
-
-.h-14 {
-  height: 3.5rem;
 }
 
 .h-0 {
@@ -1527,6 +1515,11 @@ video {
   background-color: rgba(224, 231, 255, var(--tw-bg-opacity));
 }
 
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
@@ -1545,11 +1538,6 @@ video {
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
-}
-
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
 }
 
 .bg-red-200 {
@@ -2072,29 +2060,17 @@ input[type="range"].vertical {
   /* IE */
   -webkit-appearance: slider-vertical;
   /* Chromium */
-  width: 8px;
-  height: 180px;
-  padding: 31px 5px 0 5px;
   cursor: pointer;
 }
 
 @-moz-document url-prefix() {
-  input[type="range"].vertical {
-    height: 269px !important;
-    width: 65px !important;
-  }
-
-  .valuesContainer {
-    padding-top: 30px;
-  }
-
-  input[type="range"].vertical::-moz-range-thumb {
-    width: 150px;
-    height: 30px;
-    border: 2px;
-    border-style: solid;
+  input[type="range"].elevator::-moz-range-thumb {
     background-color: #00000000 !important;
     background-image: url("/assets/svg/elevator_wheelchair.svg");
+    width: 150px !important;
+    height: 30px !important;
+    border: 2px;
+    border-style: solid;
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
