@@ -388,6 +388,16 @@
     "sources": []
   },
   {
+    "path": "elevator_wheelchair.svg",
+    "license": "CC-BY_SA",
+    "authors": [
+      "Robin Julien"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
     "path": "envelope.svg",
     "license": "CC0; trivial",
     "authors": [],

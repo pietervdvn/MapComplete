@@ -296,8 +296,8 @@ const iconThief = new AggregateIconThief(
 
 const thief = new IdThief("../id-tagging-schema/", iconThief)
 
-const shopLayerPath = targetDir + "id_presets.json"
-const idPresets = <LayerConfigJson>JSON.parse(readFileSync(shopLayerPath, 'utf8'))
+const id_presets_path = targetDir + "id_presets.json"
+const idPresets = <LayerConfigJson>JSON.parse(readFileSync(id_presets_path, 'utf8'))
 idPresets.tagRenderings = [
     {
         id: "shop_types",
@@ -309,4 +309,4 @@ idPresets.tagRenderings = [
     }
 ]
 
-writeFileSync(shopLayerPath, JSON.stringify(idPresets, null, "  "), 'utf8')
+writeFileSync(id_presets_path, JSON.stringify(idPresets, null, "  "), 'utf8')
