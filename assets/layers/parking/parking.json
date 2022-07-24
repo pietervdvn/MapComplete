@@ -200,6 +200,17 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "capacity:disabled~*",
+              "capacity:disabled!=no"
+            ]
+          },
+          "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
+        }
       ]
     },
     {
