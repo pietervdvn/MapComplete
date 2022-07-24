@@ -6,5 +6,15 @@
       "Free Wheelies"
     ],
     "sources": []
+  },
+  {
+    "path": "parking.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
   }
 ]
