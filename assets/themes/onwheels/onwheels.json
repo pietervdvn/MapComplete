@@ -54,7 +54,8 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/restaurant.svg",
-            "iconSize": "40,40,bottom"
+            "iconSize": "40,40,bottom",
+            "label": null
           }
         ]
       }
