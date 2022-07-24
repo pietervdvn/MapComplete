@@ -1,5 +1,25 @@
 [
   {
+    "path": "bicycle_pump.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "cafe.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
     "path": "crest.svg",
     "license": "CC0",
     "authors": [
@@ -8,7 +28,57 @@
     "sources": []
   },
   {
+    "path": "hotel.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
     "path": "parking.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "repair.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "restaurant.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "shop.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "toilet.svg",
     "license": "CC-BY-SA",
     "authors": [
       "CT Steward"

@@ -16,26 +16,92 @@
   "widenFactor": 2,
   "hideFromOverview": true,
   "layers": [
-    "bike_repair_station",
+    {
+      "builtin": "bike_repair_station",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/onwheels/repair.svg",
+              "mappings": [
+              {
+                "if": "service:bicycle:pump=yes",
+                "then": "./assets/themes/onwheels/bicycle_pump.svg"
+              }
+            ]
+            },
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
     "bike_shop",
-    "cafe_pub",
+    {
+      "builtin": "cafe_pub",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/cafe.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
     "entrance",
-    "food",
+    {
+      "builtin": "food",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/restaurant.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
     "kerbs",
     {
       "builtin": "parking",
       "override": {
         "mapRendering": [
           {
-            "icon": "./assets/themes/onwheels/parking.svg"
+            "icon": "./assets/themes/onwheels/parking.svg",
+            "iconSize": "40,40,bottom"
+          },
+          {
+            "color": "#225f92"
           }
         ]
       }
     },
     "picnic_table",
     "school",
-    "shops",
-    "toilet",
+    {
+      "builtin": "shops",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/shop.svg",
+            "iconSize": "40,40,bottom",
+            "label": null
+          },
+          {
+            "color": "#ea4a94"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "toilet",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/toilet.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
     "viewpoint",
     "doctors",
     "reception_desk",
