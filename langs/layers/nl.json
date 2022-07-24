@@ -1265,7 +1265,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Nu geopened"
+                        "question": "Nu geopend"
                     }
                 }
             }
@@ -4216,7 +4216,8 @@
                     }
                 }
             }
-        }
+        },
+        "name": "Maximumsnelheid"
     },
     "nature_reserve": {
         "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
@@ -6481,6 +6482,69 @@
                         "human": " meter"
                     }
                 }
+            }
+        }
+    },
+    "doctors": {
+        "name": "Dokters",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nu geopend"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "specialty": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een huisarts"
+                    },
+                    "1": {
+                        "then": "Dit is een gynaecoloog"
+                    },
+                    "2": {
+                        "then": "Dit is een psychiater"
+                    },
+                    "3": {
+                        "then": "Dit is een kinderarts"
+                    }
+                },
+                "question": "Waar is deze dokter in gespecialiseerd?",
+                "render": "Deze dokter is gespecialiseerd in {healthcare:speciality}"
+            },
+            "name": {
+                "question": "Wat is de naam van deze dokterspraktijk?",
+                "render": "Deze dokterspraktijk heet {name}"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "een dokterspraktijk"
+            },
+            "1": {
+                "title": "een tandartspraktijk"
+            },
+            "2": {
+                "title": "een fysiotherapeutenpraktijk"
+            }
+        },
+        "description": "Deze laag toont dokterspraktijken, tandartsen en andere gezondheidszorgfaciliteiten",
+        "title": {
+            "render": "Dokterspraktijk {name}"
+        }
+    },
+    "hospital": {
+        "title": {
+            "render": "Ziekenhuis"
+        },
+        "name": "Ziekenhuizen",
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van dit ziekenhuis?",
+                "render": "Dit ziekenhuis heet {name}"
             }
         }
     }
