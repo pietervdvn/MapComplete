@@ -1,0 +1,81 @@
+{
+  "id": "hotel",
+  "name": {
+    "en": "Hotels",
+    "nl": "Hotels"
+  },
+  "description": {
+    "en": "Layer showing all hotels",
+    "nl": "Laag die alle hotels toont"
+  },
+  "source": {
+    "osmTags": "tourism=hotel"
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Hotel",
+      "nl": "Hotel"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Hotel {name}",
+          "nl": "Hotel {name}"
+        }
+      }
+    ]
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a hotel",
+        "nl": "een hotel"
+      },
+      "tags": [
+        "tourism=hotel"
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "circle:white;./assets/layers/hotel/hotel.svg",
+      "iconSize": "40,40,center"
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "reviews",
+    {
+      "id": "name",
+      "freeform": {
+        "key": "name",
+        "placeholder": {
+          "en": "Name of the hotel",
+          "nl": "Naam van het hotel"
+        }
+      },
+      "question": {
+        "en": "What is the name of this hotel?",
+        "nl": "Wat is de naam van dit hotel?"
+      },
+      "render": {
+        "en": "This hotel is called {name}",
+        "nl": "Dit hotel heet {name}"
+      }
+    },
+    "phone",
+    "email",
+    "website",
+    "wheelchair-access"
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  }
+}

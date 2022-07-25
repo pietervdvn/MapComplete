@@ -165,7 +165,18 @@
       }
     },
     "walls_and_buildings",
-    "elevator"
+    "elevator",
+    {
+      "builtin": "hotel",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/hotel.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    }
   ],
   "overrideAll": {
     "+calculatedTags": [
