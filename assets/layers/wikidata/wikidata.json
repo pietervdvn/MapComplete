@@ -5,6 +5,7 @@
   "source": {
     "osmTags": "id~*"
   },
+  "title": null,
   "mapRendering": null,
   "tagRenderings": [
     {

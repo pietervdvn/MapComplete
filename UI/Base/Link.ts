@@ -26,9 +26,9 @@ export default class Link extends BaseUIElement {
             if (!hideKey) {
                 k = key + "="
             }
-            return new Link(k + value, `https://wiki.openstreetmap.org/wiki/Tag:${key}%3D${value}`)
+            return new Link(k + value, `https://wiki.openstreetmap.org/wiki/Tag:${key}%3D${value}`, true)
         }
-        return new Link(key, "https://wiki.openstreetmap.org/wiki/Key:" + key)
+        return new Link(key, "https://wiki.openstreetmap.org/wiki/Key:" + key, true)
     }
 
     AsMarkdown(): string {

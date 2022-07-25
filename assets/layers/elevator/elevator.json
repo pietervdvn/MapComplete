@@ -4,9 +4,12 @@
     "en": "elevator"
   },
   "source": {
-    "osmTags": "elevator=yes"
+    "osmTags": "highway=elevator"
   },
   "minzoom": 13,
+  "description": {
+    "en": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information"
+  },
   "title": {
     "en": "Elevator"
   },
@@ -14,12 +17,23 @@
     "images",
     {
       "id": "operational_status",
+      "question": {
+        "en": "Does this elevator work?"
+      },
       "mappings": [
         {
           "if": "operational_status=broken",
           "then": {
             "en": "This elevator is broken"
-          }
+          },
+          "icon": "close:red"
+        },
+        {
+          "if": "operational_status=closed",
+          "then": {
+            "en": "This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>"
+          },
+          "icon": "invalid:red"
         },
         {
           "if": "operational_status=ok",
@@ -86,6 +100,17 @@
       "location": [
         "point",
         "centroid"
+      ],
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "operational_status=broken",
+              "operational_status=closed"
+            ]
+          },
+          "then": "close:#c33"
+        }
       ]
     }
   ],
@@ -96,7 +121,7 @@
         "nl": "een lift"
       },
       "tags": [
-        "elevator=yes"
+        "highway=elevator"
       ]
     }
   ],
@@ -118,6 +143,7 @@
           }
         },
         {
+          "default": true,
           "canonicalDenomination": "cm",
           "alternativeDenomination": [
             "centimeter",
