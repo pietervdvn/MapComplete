@@ -48,7 +48,17 @@
         ]
       }
     },
-    "entrance",
+    {
+      "builtin": "entrance",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/entrance.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
     {
       "builtin": "food",
       "override": {
@@ -165,7 +175,17 @@
       }
     },
     "walls_and_buildings",
-    "elevator",
+    {
+      "builtin": "elevator",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/elevator.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
     {
       "builtin": "hotel",
       "override": {
@@ -176,7 +196,19 @@
           }
         ]
       }
-    }
+    },
+    {
+      "builtin": "governments",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/government.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
+    "indoors"
   ],
   "overrideAll": {
     "+calculatedTags": [
