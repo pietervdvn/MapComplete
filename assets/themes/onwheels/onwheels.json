@@ -9,16 +9,18 @@
   "maintainer": "MapComplete",
   "icon": "./assets/themes/onwheels/crest.svg",
   "version": "0",
-  "startLat": 50.8465573,
+  "startLat": 50.86622,
   "defaultBackgroundId": "CartoDB.Voyager",
-  "startLon": 4.351697,
-  "startZoom": 16,
+  "startLon": 4.350103,
+  "startZoom": 17,
   "widenFactor": 2,
-  "hideFromOverview": true,
+  "hideFromOverview": false,
   "layers": [
     {
       "builtin": "bike_repair_station",
       "override": {
+        "name": null,
+        "shownByDefault": false,
         "mapRendering": [
           {
             "icon": {
@@ -35,7 +37,30 @@
         ]
       }
     },
-    "bike_shop",
+    {
+      "builtin": "bike_shop",
+      "override": {
+        "name": null,
+        "shownByDefault": false
+      }
+    },
+    {
+      "builtin": "pedestrian_path",
+      "override": {
+        "title": {
+          "en": "Pedestrian path"
+        },
+        "name": null,
+        "shownByDefault": false
+      }
+    },
+    {
+      "builtin": "cycleways_and_roads",
+      "override": {
+        "name": null,
+        "shownByDefault": false
+      }
+    },
     {
       "builtin": "cafe_pub",
       "override": {
@@ -48,7 +73,31 @@
         ]
       }
     },
-    "entrance",
+    {
+      "builtin": "entrance",
+      "override": {
+        "minzoom": 19,
+        "syncSelection": "theme-only",
+        "filter":[
+          {
+            "id": "width",
+            "options": [
+              {
+                "question": { 
+                  "en": "Any/No width info"
+                }
+              },
+              {
+                "osmTags": "width=",
+                "question": {
+                  "en": "Any width info"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
     {
       "builtin": "food",
       "override": {
@@ -64,11 +113,51 @@
     {
       "builtin": "kerbs",
       "override": {
+        "minzoom": 19,
+        "syncSelection": "theme-only",
         "mapRendering": [
           {
             "icon": {
               "render": "./assets/themes/onwheels/cone.svg"
             }
+          }
+        ],
+        "filter": [
+          {
+            "id": "kerb-type",
+            "options": [
+              {
+                "question": {
+                  "en": "All types of kerbs",
+                  "nl": "Alle typen stoepranden",
+                  "de": "Alle Arten von Bordsteinen"
+                }
+              },
+              {
+                "osmTags": "kerb=raised",
+                "question": {
+                  "en": "Raised kerb (>3 cm)",
+                  "nl": "Hoge stoeprand (>3 cm)",
+                  "de": "Erhöhter Bordstein (>3 cm)"
+                }
+              },
+              {
+                "osmTags": "kerb=lowered",
+                "question": {
+                  "en": "Lowered kerb (~3 cm)",
+                  "nl": "Verlaagde stoeprand (~3 cm)",
+                  "de": "Abgesenkter Bordstein (~3 cm)"
+                }
+              },
+              {
+                "osmTags": "kerb=flush",
+                "question": {
+                  "en": "Flush kerb (~0cm)",
+                  "nl": "Vlakke stoeprand (~0cm)",
+                  "de": "Bündiger Bordstein (~0cm)"
+                }
+              }
+            ]
           }
         ]
       }
@@ -87,7 +176,13 @@
         ]
       }
     },
-    "picnic_table",
+    {
+      "builtin": "picnic_table",
+      "override": {
+        "name": null,
+        "shownByDefault": false
+      }
+    },
     "school",
     {
       "builtin": "shops",
@@ -107,6 +202,8 @@
     {
       "builtin": "toilet",
       "override": {
+        "minzoom": 19,
+        "syncSelection": "theme-only",
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/toilet.svg",
@@ -156,6 +253,8 @@
     {
       "builtin": "reception_desk",
       "override": {
+        "minzoom": 19,
+        "syncSelection": "theme-only",
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/reception.svg",
@@ -165,7 +264,13 @@
       }
     },
     "walls_and_buildings",
-    "elevator",
+    {
+      "builtin": "elevator",
+      "override": {
+        "minzoom": 19,
+        "syncSelection": "theme-only"
+      }
+    },
     {
       "builtin": "hotel",
       "override": {
@@ -212,7 +317,6 @@
           }
         ]
       }
-    ],
-    "minzoom": 15
+    ]
   }
 }
