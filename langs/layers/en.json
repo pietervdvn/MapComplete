@@ -3266,7 +3266,7 @@
                 }
             }
         },
-        "name": "doctors",
+        "name": "Doctors",
         "presets": {
             "0": {
                 "title": "a doctors office"
@@ -4050,11 +4050,11 @@
         }
     },
     "hospital": {
-        "name": "Hospital",
+        "name": "Hospitals",
         "tagRenderings": {
             "name": {
-                "question": "What does the of the hospital ?",
-                "render": "Name of the hospital name is {name}"
+                "question": "What is the name of this hospital?",
+                "render": "This hospital is called {name}"
             }
         },
         "title": {
