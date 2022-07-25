@@ -15,12 +15,16 @@ import SimpleAddUI, {PresetInfo} from "../BigComponents/SimpleAddUI";
 import BaseLayer from "../../Models/BaseLayer";
 import Img from "../Base/Img";
 import Title from "../Base/Title";
+import {GlobalFilter} from "../../Logic/State/MapState";
+import {VariableUiElement} from "../Base/VariableUIElement";
+import {Tag} from "../../Logic/Tags/Tag";
 
 export default class ConfirmLocationOfPoint extends Combine {
 
 
     constructor(
         state: {
+            globalFilters: UIEventSource<GlobalFilter[]>;
             featureSwitchIsTesting: UIEventSource<boolean>;
             osmConnection: OsmConnection,
             featurePipeline: FeaturePipeline,
@@ -38,8 +42,8 @@ export default class ConfirmLocationOfPoint extends Combine {
         let preciseInput: LocationInput = undefined
         if (preset.preciseInput !== undefined) {
             // Create location input
-            
-            
+
+
             // We uncouple the event source
             const zloc = {...loc, zoom: 19}
             const locationSrc = new UIEventSource(zloc);
@@ -106,7 +110,11 @@ export default class ConfirmLocationOfPoint extends Combine {
         ).SetClass("font-bold break-words")
             .onClick(() => {
                 console.log("The confirmLocationPanel - precise input yielded ", preciseInput?.GetValue()?.data)
-                confirm(preset.tags, preciseInput?.GetValue()?.data ?? loc, preciseInput?.snappedOnto?.data?.properties?.id);
+                const globalFilterTagsToAdd: Tag[][] = state.globalFilters.data.filter(gf => gf.onNewPoint !== undefined)
+                    .map(gf => gf.onNewPoint.tags)
+                const globalTags : Tag[] = [].concat(...globalFilterTagsToAdd)
+                console.log("Global tags to add are: ", globalTags)
+                confirm([...preset.tags, ...globalTags], preciseInput?.GetValue()?.data ?? loc, preciseInput?.snappedOnto?.data?.properties?.id);
             });
 
         if (preciseInput !== undefined) {
@@ -126,7 +134,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                 .onClick(() => filterViewIsOpened.setData(true))
 
 
-        const openLayerOrConfirm = new Toggle(
+        let openLayerOrConfirm = new Toggle(
             confirmButton,
             openLayerControl,
             preset.layerToAddTo.isDisplayed
@@ -152,6 +160,29 @@ export default class ConfirmLocationOfPoint extends Combine {
             closePopup()
         })
 
+
+        // We assume the number of global filters won't change during the run of the program
+        for (let i = 0; i < state.globalFilters.data.length; i++) {
+            const hasBeenCheckedOf = new UIEventSource(false);
+
+            const filterConfirmPanel = new VariableUiElement(
+                state.globalFilters.map(gfs => {
+                        const gf = gfs[i]
+                        const confirm = gf.onNewPoint?.confirmAddNew?.Subs({preset: preset.title})
+                        return new Combine([
+                            gf.onNewPoint?.safetyCheck,
+                            new SubtleButton(Svg.confirm_svg(), confirm).onClick(() => hasBeenCheckedOf.setData(true))
+                        ])
+                    }
+                ))
+
+
+            openLayerOrConfirm = new Toggle(
+                openLayerOrConfirm, filterConfirmPanel,
+                state.globalFilters.map(f => hasBeenCheckedOf.data || f[i]?.onNewPoint === undefined, [hasBeenCheckedOf])
+            )
+        }
+
         const hasActiveFilter = preset.layerToAddTo.appliedFilters
             .map(appliedFilters => {
                 const activeFilters = Array.from(appliedFilters.values()).filter(f => f?.currentFilter !== undefined);
@@ -171,16 +202,16 @@ export default class ConfirmLocationOfPoint extends Combine {
             Translations.t.general.cancel
         ).onClick(cancel)
 
-        
-        let examples : BaseUIElement = undefined;
-        if(preset.exampleImages !== undefined && preset.exampleImages.length > 0){
+
+        let examples: BaseUIElement = undefined;
+        if (preset.exampleImages !== undefined && preset.exampleImages.length > 0) {
             examples = new Combine([
-             new Title( preset.exampleImages.length == 1 ?  Translations.t.general.example :  Translations.t.general.examples),
+                new Title(preset.exampleImages.length == 1 ? Translations.t.general.example : Translations.t.general.examples),
                 new Combine(preset.exampleImages.map(img => new Img(img).SetClass("h-64 m-1 w-auto rounded-lg"))).SetClass("flex flex-wrap items-stretch")
             ])
-            
+
         }
-        
+
         super([
             new Toggle(
                 Translations.t.general.testing.SetClass("alert"),

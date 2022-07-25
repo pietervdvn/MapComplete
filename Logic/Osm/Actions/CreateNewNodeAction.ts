@@ -72,7 +72,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         this.setElementId(id)
         for (const kv of this._basicTags) {
             if (typeof kv.value !== "string") {
-                throw "Invalid value: don't use a regex in a preset"
+                throw "Invalid value: don't use non-string value in a preset. The tag "+kv.key+"="+kv.value+" is not a string, the value is a "+typeof kv.value
             }
             properties[kv.key] = kv.value;
         }

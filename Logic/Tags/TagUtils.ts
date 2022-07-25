@@ -492,6 +492,16 @@ export class TagUtils {
         }
         return " (" + joined + ") "
     }
+    
+    public static ExtractSimpleTags(tf: TagsFilter) : Tag[] {
+        const result: Tag[] = []
+        tf.visit(t => {
+            if(t instanceof Tag){
+                result.push(t)
+            }
+        })
+        return result;
+    }
 
     /**
      * Returns 'true' is opposite tags are detected.

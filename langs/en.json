@@ -140,6 +140,10 @@
             "title": "Select layers",
             "zoomInToSeeThisLayer": "Zoom in to see this layer"
         },
+        "levelSelection": {
+            "addNewOnLevel": "Is the new point location on level {level}?",
+            "confirmLevel": "Yes, add {preset} on level {level}"
+        },
         "loading": "Loading…",
         "loadingTheme": "Loading {theme}…",
         "loginFailed": "Logging in into OpenStreetMap failed",
