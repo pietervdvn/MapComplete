@@ -176,6 +176,30 @@
           }
         ]
       }
+    },
+    {
+      "builtin": "current_view",
+      "override": {
+        "+mapRendering": [
+          {
+            "location": [
+              "point", "centroid"
+            ],
+            "icon": "statistics"
+          }
+        ],
+        "=title": {
+          "render": {
+            "en": "Statistics"
+          }
+        },
+        "tagRenderings": [
+          {
+            "id": "stats",
+            "render": "{statistics()}"
+          }
+        ]
+      }
     }
   ],
   "overrideAll": {
@@ -190,13 +214,14 @@
         "condition": {
           "and": [
             "entrance=",
-            "kerb="
+            "kerb=",
+            "current_view!=yes"
           ]
         },
         "render": {
           "en": "<a href='#{_poi_entrance:id}'>This door has a width of {canonical(_poi_entrance:width)} meters</a>",
           "nl": "<a href='#{_poi_entrance:id}'>Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter</a>",
-          "de": "<a href='#{_poi_entrance:id}'>Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter</a>",
+          "de": "<a href='#{_poi_entrance:id}'>Diese Tür hat eine Drchgangsbreite von {canonical(_poi_entrance:width)} Meter</a>",
           "es": "<a href='#{_poi_entrance:id}'>Esta puerta tiene una ancho de {canonical(_poi_entrance:width)} metros</a>"
         },
         "freeform": {

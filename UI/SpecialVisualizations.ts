@@ -57,7 +57,8 @@ import {SaveButton} from "./Popup/SaveButton";
 import {MapillaryLink} from "./BigComponents/MapillaryLink";
 import {CheckBox} from "./Input/Checkboxes";
 import Slider from "./Input/Slider";
-import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
+import {OsmFeature} from "../Models/OsmFeature";
+import StatisticsPanel from "./BigComponents/StatisticsPanel";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -1098,7 +1099,36 @@ export default class SpecialVisualizations {
                         }))
                 },
                 new NearbyImageVis(),
-                new MapillaryLinkVis()
+                new MapillaryLinkVis(),
+                {
+                    funcName: "statistics",
+                    docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",
+                    args: [],
+                    constr :  (state, tagsSource, args, guiState) => {
+                        const elementsInview = new UIEventSource<{ distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[]>([]);
+                        function update() {
+                            const mapCenter = <[number,number]> [state.locationControl.data.lon, state.locationControl.data.lon]
+                            const bbox = state.currentBounds.data
+                            const elements = state.featurePipeline.getAllVisibleElementsWithmeta(bbox).map(el => {
+                                const distance = GeoOperations.distanceBetween(el.center, mapCenter)
+                                return {...el, distance }
+                            })
+                            elements.sort((e0, e1) => e0.distance - e1.distance)
+                            elementsInview.setData(elements)
+
+                        }
+
+                        state.currentBounds.addCallbackAndRun(update)
+                        state.featurePipeline.newDataLoadedSignal.addCallback(update);
+                        state.filteredLayers.addCallbackAndRun(fls => {
+                            for (const fl of fls) {
+                                fl.isDisplayed.addCallback(update)
+                                fl.appliedFilters.addCallback(update)
+                            }
+                        })
+                        return new StatisticsPanel(elementsInview, state)
+                    }
+                }
             ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))

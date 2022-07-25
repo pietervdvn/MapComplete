@@ -16,6 +16,7 @@ export default class LanguagePicker extends Toggle {
 
 
         if (languages === undefined || languages.length <= 1) {
+            super(undefined,undefined,undefined)
             return undefined;
         }
 

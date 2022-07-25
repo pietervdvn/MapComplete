@@ -1031,5 +1031,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
     }
+
+    static toIdRecord<T extends {id: string}>(ts: T[]): Record<string, T> {
+        const result : Record<string, T> = {}
+        for (const t of ts) {
+            result[t.id] = t
+        }
+        return result
+    }
 }
 
