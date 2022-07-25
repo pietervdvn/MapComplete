@@ -274,6 +274,13 @@
             "ru": "Недоступно пользователям кресел-колясок",
             "es": "Sin acceso para sillas de ruedas"
           }
+        },
+        {
+          "if": "wheelchair=designated",
+          "then": {
+            "en": "There is only a dedicated toilet for wheelchair users",
+            "nl": "Er is alleen een toilet voor rolstoelgebruikers"
+          }
         }
       ]
     },
@@ -533,7 +540,9 @@
             "de": "Rollstuhlgerecht",
             "es": "Accesible con sillas de ruedas"
           },
-          "osmTags": "wheelchair=yes"
+          "osmTags": {
+            "or": ["wheelchair=yes", "wheelchair=designated"]
+          }
         }
       ]
     },
@@ -609,7 +618,9 @@
         "render": "./assets/layers/toilet/toilets.svg",
         "mappings": [
           {
-            "if": "wheelchair=yes",
+            "if": {
+              "or": ["wheelchair=yes", "wheelchair=designated"]
+            },
             "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
           },
           {
@@ -623,6 +634,7 @@
           }
         ]
       },
+      
       "iconBadges": [
         {
           "if": "opening_hours~*",

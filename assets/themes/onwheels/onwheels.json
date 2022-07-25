@@ -16,20 +16,154 @@
   "widenFactor": 2,
   "hideFromOverview": true,
   "layers": [
-    "bike_repair_station",
+    {
+      "builtin": "bike_repair_station",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/onwheels/repair.svg",
+              "mappings": [
+                {
+                  "if": "service:bicycle:pump=yes",
+                  "then": "./assets/themes/onwheels/bicycle_pump.svg"
+                }
+              ]
+            },
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
     "bike_shop",
-    "cafe_pub",
+    {
+      "builtin": "cafe_pub",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/cafe.svg",
+            "iconSize": "40,40,bottom",
+            "label": null
+          }
+        ]
+      }
+    },
     "entrance",
-    "food",
-    "kerbs",
-    "parking",
+    {
+      "builtin": "food",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/restaurant.svg",
+            "iconSize": "40,40,bottom",
+            "label": null
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "kerbs",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": {
+              "render": "./assets/themes/onwheels/cone.svg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "parking",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/parking.svg",
+            "iconSize": "40,40,bottom"
+          },
+          {
+            "color": "#225f92"
+          }
+        ]
+      }
+    },
     "picnic_table",
     "school",
-    "shops",
-    "toilet",
+    {
+      "builtin": "shops",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/shop.svg",
+            "iconSize": "40,40,bottom",
+            "label": null
+          },
+          {
+            "color": "#ea4a94"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "toilet",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/toilet.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
     "viewpoint",
-    "doctors",
-    "reception_desk",
+    {
+      "builtin": "pharmacy",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/pharmacy.svg",
+            "iconSize": "40,40,bottom",
+            "label": null
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "doctors",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/doctor.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "hospital",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/hospital.svg",
+            "iconSize": "40,40,bottom"
+          },
+          {
+            "color": "#dd463b"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "reception_desk",
+      "override": {
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/reception.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
     "walls_and_buildings",
     "elevator"
   ],
@@ -68,11 +202,6 @@
         ]
       }
     ],
-    "minzoom": "15",
-    "mapRendering": [
-      {
-        "label": null
-      }
-    ]
+    "minzoom": 15
   }
 }
