@@ -10,14 +10,16 @@
         "cannotBeDeleted": "Questo oggetto non può essere rimosso",
         "delete": "Rimuovi",
         "explanations": {
-            "hardDelete": "Questo punto verrà rimosso da OpenStreetMap. Un utente esperto potrebbe recuperarlo",
+            "hardDelete": "Questo elemento verrà rimosso da OpenStreetMap. Un utente esperto potrebbe recuperarlo",
             "selectReason": "Si prega di selezionare il motivo della rimozione di questo oggetto",
-            "softDelete": "Questo oggetto verrà aggiornato e nascosto da questa applicazione. <span class=\"subtle\">{reason}</span>"
+            "softDelete": "Questo oggetto verrà aggiornato e nascosto da questa applicazione. <span class=\"subtle\">{reason}</span>",
+            "retagNoOtherThemes": "Questo elemento verrà riclassificato e nascosto da questa applicazione",
+            "retagOtherThemes": "Questo elemento verrà modificato e sarà visibile in {otherThemes}"
         },
         "isDeleted": "Questo oggetto è stato rimosso",
-        "isntAPoint": "Solo i punti possono essere rimossi, l’oggetto selezionato è un percorso, un’area oppure una relazione.",
+        "isntAPoint": "Solo i nodi possono essere rimossi, l'elemento selezionato è un percorso, un’area oppure una relazione.",
         "loading": "Controllo delle proprietà per verificare se questo oggetto può essere rimosso.",
-        "loginToDelete": "Devi aver effettuato l’accesso per poter rimuovere un punto",
+        "loginToDelete": "Devi aver effettuato l’accesso per poter rimuovere un elemento",
         "notEnoughExperience": "Questo nodo è stato creato da un altro utente.",
         "onlyEditedByLoggedInUser": "Questo punto è stato modificato soltanto da te, puoi rimuoverlo in sicurezza.",
         "partOfOthers": "Questo punto fa parte di qualche percorso o relazione e non può essere rimosso direttamente.",
