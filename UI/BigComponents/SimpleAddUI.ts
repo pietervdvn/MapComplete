@@ -25,6 +25,7 @@ import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint";
 import BaseLayer from "../../Models/BaseLayer";
 import Loading from "../Base/Loading";
 import Hash from "../../Logic/Web/Hash";
+import {GlobalFilter} from "../../Logic/State/MapState";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -66,7 +67,8 @@ export default class SimpleAddUI extends Toggle {
                     locationControl: UIEventSource<Loc>,
                     filteredLayers: UIEventSource<FilteredLayer[]>,
                     featureSwitchFilter: UIEventSource<boolean>,
-                    backgroundLayer: UIEventSource<BaseLayer>
+                    backgroundLayer: UIEventSource<BaseLayer>,
+                    globalFilters: UIEventSource<GlobalFilter[]>
                 }, 
                 takeLocationFrom?: UIEventSource<{lat: number, lon: number}>
     ) {

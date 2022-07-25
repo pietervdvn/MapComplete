@@ -1110,10 +1110,6 @@ video {
   height: 12rem;
 }
 
-.max-h-screen {
-  max-height: 100vh;
-}
-
 .max-h-7 {
   max-height: 1.75rem;
 }
@@ -1302,6 +1298,10 @@ video {
   flex-wrap: wrap-reverse;
 }
 
+.place-content-center {
+  place-content: center;
+}
+
 .content-start {
   align-content: flex-start;
 }
@@ -1481,6 +1481,11 @@ video {
   border-color: rgba(252, 165, 165, var(--tw-border-opacity));
 }
 
+.border-blue-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(59, 130, 246, var(--tw-border-opacity));
+}
+
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
@@ -1510,6 +1515,11 @@ video {
   background-color: rgba(224, 231, 255, var(--tw-bg-opacity));
 }
 
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
@@ -1528,11 +1538,6 @@ video {
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
-}
-
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
 }
 
 .bg-red-200 {
@@ -1857,15 +1862,11 @@ video {
 }
 
 .z-above-map {
-  z-index: 10000
+  z-index: 10000;
 }
 
 .z-above-controls {
-  z-index: 10001
-}
-
-.w-160 {
-  width: 40rem;
+  z-index: 10001;
 }
 
 .bg-subtle {
@@ -1892,14 +1893,14 @@ video {
      * Base colour of interactive elements, mainly the 'subtle button'
      * 
      */
-  --subtle-detail-color: #DBEAFE;
+  --subtle-detail-color: #dbeafe;
   --subtle-detail-color-contrast: black;
   --subtle-detail-color-light-contrast: lightgrey;
   /**
      * A stronger variant of the 'subtle-detail-colour'
      * Used as subtle button hover
      */
-  --unsubtle-detail-color: #BFDBFE;
+  --unsubtle-detail-color: #bfdbfe;
   --unsubtle-detail-color-contrast: black;
   --catch-detail-color: #3a3aeb;
   --catch-detail-color-contrast: white;
@@ -1913,7 +1914,8 @@ video {
   --variable-title-height: 0px;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   min-height: 100vh;
   min-height: -webkit-fill-available;
@@ -1921,7 +1923,7 @@ html, body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--foreground-color);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 .leaflet-overlay-pane .leaflet-zoom-animated {
@@ -1944,7 +1946,8 @@ html, body {
   height: 100% !important;
 }
 
-svg, img {
+svg,
+img {
   box-sizing: content-box;
   width: 100%;
   height: 100%;
@@ -2048,6 +2051,35 @@ a {
   height: min-content;
 }
 
+/* slider */
+
+input[type="range"].vertical {
+  -webkit-writing-mode: bt-lr;
+      -ms-writing-mode: bt-lr;
+          writing-mode: bt-lr;
+  /* IE */
+  -webkit-appearance: slider-vertical;
+  /* Chromium */
+  cursor: pointer;
+}
+
+@-moz-document url-prefix() {
+  input[type="range"].elevator::-moz-range-thumb {
+    background-color: #00000000 !important;
+    background-image: url("/assets/svg/elevator_wheelchair.svg");
+    width: 150px !important;
+    height: 30px !important;
+    border: 2px;
+    border-style: solid;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-image: linear-gradient(to right, black 50%, transparent 50%) 100% 1;
+    padding-bottom: 5px;
+  }
+}
+
 .border-detail {
   border-color: var(--foreground-color);
 }
@@ -2117,7 +2149,7 @@ p {
 }
 
 li::marker {
-  content: "•"
+  content: "•";
 }
 
 .subtle-background {
@@ -2127,7 +2159,7 @@ li::marker {
 
 .normal-background {
   background: var(--background-color);
-  color: var(--foreground-color)
+  color: var(--foreground-color);
 }
 
 .subtle-lighter {
@@ -2205,7 +2237,8 @@ li::marker {
   color: unset !important;
 }
 
-.disable-links a.must-link, .disable-links .must-link a {
+.disable-links a.must-link,
+.disable-links .must-link a {
   /* Hide links if they are disabled */
   display: none;
 }
@@ -2424,7 +2457,7 @@ li::marker {
 /***************** Info box (box containing features and questions ******************/
 
 input {
-  color: var(--foreground-color)
+  color: var(--foreground-color);
 }
 
 .leaflet-popup-content {
@@ -2485,7 +2518,7 @@ input {
 }
 
 .animate-height {
-  transition: max-height .5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
   overflow-y: hidden;
 }
 
@@ -2549,7 +2582,7 @@ input {
   margin-left: 1rem;
 }
 
-.mapping-icon-large{
+.mapping-icon-large {
   /* A mapping icon type */
   width: 6rem;
   max-height: 5rem;
@@ -2855,4 +2888,3 @@ input {
     display: inline;
   }
 }
-

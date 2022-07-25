@@ -4,9 +4,10 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 export default class Slider extends InputElement<number> {
 
     private readonly _value: UIEventSource<number>
-    private min: number;
-    private max: number;
-    private step: number;
+    private readonly min: number;
+    private readonly max: number;
+    private readonly step: number;
+    private readonly vertical: boolean;
 
     /**
      * Constructs a slider input element for natural numbers
@@ -16,13 +17,15 @@ export default class Slider extends InputElement<number> {
      */
     constructor(min: number, max: number, options?: {
         value?: UIEventSource<number>,
-        step?: 1 | number
+        step?: 1 | number,
+        vertical?: false | boolean
     }) {
         super();
         this.max = max;
         this.min = min;
         this._value = options?.value ?? new UIEventSource<number>(min)
         this.step = options?.step ?? 1;
+        this.vertical = options?.vertical ?? false;
     }
 
     GetValue(): UIEventSource<number> {
@@ -38,6 +41,10 @@ export default class Slider extends InputElement<number> {
         const valuestore = this._value
         el.oninput = () => {
             valuestore.setData(Number(el.value))
+        }
+        if(this.vertical){
+            el.classList.add("vertical")
+            el.setAttribute('orient','vertical'); // firefox only workaround...
         }
         valuestore.addCallbackAndRunD(v => el.value = ""+valuestore.data)
         return el;

@@ -8,6 +8,7 @@ import {FixedUiElement} from "../UI/Base/FixedUiElement";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import {CountryCoder} from "latlon2country"
 import Constants from "../Models/Constants";
+import {TagUtils} from "./Tags/TagUtils";
 
 
 export class SimpleMetaTagger {
@@ -32,7 +33,7 @@ export class SimpleMetaTagger {
         if (!docs.cleanupRetagger) {
             for (const key of docs.keys) {
                 if (!key.startsWith('_') && key.toLowerCase().indexOf("theme") < 0) {
-                    throw `Incorrect metakey ${key}: it should start with underscore (_)`
+                    throw `Incorrect key for a calculated meta value '${key}': it should start with underscore (_)`
                 }
             }
         }
@@ -211,6 +212,27 @@ export default class SimpleMetaTaggers {
             return true;
         })
     );
+    private static levels = new SimpleMetaTagger(
+        {
+            doc: "Extract the 'level'-tag into a normalized, ';'-separated value",
+            keys: ["_level"]
+        },
+        ((feature) => {
+            if (feature.properties["level"] === undefined) {
+                return false;
+            }
+            
+            const l = feature.properties["level"]
+            const newValue = TagUtils.LevelsParser(l).join(";")
+            if(l === newValue) {
+                return false;
+            }
+            feature.properties["level"] = newValue
+            return true
+
+        })
+    )
+
     private static canonicalize = new SimpleMetaTagger(
         {
             doc: "If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`)",
@@ -218,7 +240,7 @@ export default class SimpleMetaTaggers {
 
         },
         ((feature, _, __, state) => {
-            const units = Utils.NoNull([].concat(...state?.layoutToUse?.layers?.map(layer => layer.units )?? []));
+            const units = Utils.NoNull([].concat(...state?.layoutToUse?.layers?.map(layer => layer.units) ?? []));
             if (units.length == 0) {
                 return;
             }
@@ -317,7 +339,7 @@ export default class SimpleMetaTaggers {
                                 country_code: tags._country.toLowerCase(),
                                 state: undefined
                             }
-                        }, <any> {tag_key: "opening_hours"});
+                        }, <any>{tag_key: "opening_hours"});
 
                         // Recalculate!
                         return oh.getState() ? "yes" : "no";
@@ -327,12 +349,12 @@ export default class SimpleMetaTaggers {
                         delete tags._isOpen
                         tags["_isOpen"] = "parse_error";
                     }
-                }});
-            
-            
+                }
+            });
+
+
             const tagsSource = state.allElements.getEventSourceById(feature.properties.id);
-                  
-                    
+
 
         })
     )
@@ -400,7 +422,8 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.currentTime,
         SimpleMetaTaggers.objectMetaInfo,
         SimpleMetaTaggers.noBothButLeftRight,
-        SimpleMetaTaggers.geometryType
+        SimpleMetaTaggers.geometryType,
+        SimpleMetaTaggers.levels
 
     ];
     public static readonly lazyTags: string[] = [].concat(...SimpleMetaTaggers.metatags.filter(tagger => tagger.isLazy)

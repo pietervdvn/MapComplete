@@ -1,4 +1,4 @@
-import {Utils} from "../Utils";
+import { Utils } from "../Utils";
 
 /**
  * A thin wrapper around a html element, which allows to generate a HTML-element.
@@ -39,9 +39,9 @@ export default abstract class BaseUIElement {
 
         return this;
     }
-    
-    public ScrollToTop(){
-        this._constructedHtmlElement?.scrollTo(0,0)
+
+    public ScrollToTop() {
+        this._constructedHtmlElement?.scrollTo(0, 0)
     }
 
     /**
@@ -70,10 +70,13 @@ export default abstract class BaseUIElement {
         return this;
     }
 
-    public RemoveClass(clss: string): BaseUIElement {
-        if (this.clss.has(clss)) {
-            this.clss.delete(clss);
-            this._constructedHtmlElement?.classList.remove(clss)
+    public RemoveClass(classes: string): BaseUIElement {
+        const all = classes.split(" ").map(clsName => clsName.trim());
+        for (let clss of all) {
+            if (this.clss.has(clss)) {
+                this.clss.delete(clss);
+                this._constructedHtmlElement?.classList.remove(clss)
+            }
         }
         return this;
     }
