@@ -4,7 +4,7 @@
     "en": "OnWheels"
   },
   "description": {
-    "en": "On this map, publicly wheelchair accessible places are shown and can be easily added"
+    "en": "On this map, publicly weelchair accessible places are shown and can be easily added"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/onwheels/crest.svg",
@@ -14,7 +14,7 @@
   "startLon": 4.351697,
   "startZoom": 16,
   "widenFactor": 2,
-  "hideFromOverview": true,
+  "hideFromOverview": false,
   "layers": [
     {
       "builtin": "bike_repair_station",
@@ -226,10 +226,10 @@
           ]
         },
         "render": {
-          "en": "<a href='#{_poi_entrance:id}'>This door has a width of {canonical(_poi_entrance:width)} meters</a>",
-          "nl": "<a href='#{_poi_entrance:id}'>Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter</a>",
-          "de": "<a href='#{_poi_entrance:id}'>Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter</a>",
-          "es": "<a href='#{_poi_entrance:id}'>Esta puerta tiene una ancho de {canonical(_poi_entrance:width)} metros</a>"
+          "en": "This door has a width of {canonical(_poi_entrance:width)} meter",
+          "nl": "Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter",
+          "de": "Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter",
+          "es": "Esta puerta tiene una ancho de {canonical(_poi_entrance:width)} metros"
         },
         "freeform": {
           "key": "_poi_entrance:width",

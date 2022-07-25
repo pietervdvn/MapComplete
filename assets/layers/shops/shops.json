@@ -83,6 +83,7 @@
   },
   "tagRenderings": [
     "images",
+    "level",
     {
       "question": {
         "en": "What is the name of this shop?",
@@ -97,7 +98,14 @@
       "freeform": {
         "key": "name"
       },
-      "id": "shops-name"
+      "id": "shops-name",
+      "en": {
+        "question": "What kind of shop is this?",
+        "render": "This is a {shop}"
+      },
+      "nl": {
+        "question": "Wat voor soort winkel is dit?"
+      }
     },
     {
       "builtin": "id_presets.shop_types",

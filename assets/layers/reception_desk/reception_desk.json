@@ -26,6 +26,7 @@
   ],
   "tagRenderings": [
     "images",
+    "level",
     {
       "id": "desk-height",
       "question": {

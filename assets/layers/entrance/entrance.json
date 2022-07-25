@@ -34,6 +34,7 @@
   },
   "tagRenderings": [
     "images",
+    "level",
     {
       "id": "Entrance type",
       "question": {

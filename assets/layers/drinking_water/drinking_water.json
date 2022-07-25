@@ -32,10 +32,10 @@
     "osmTags": {
       "and": [
         {
-		    "or": [
-			    "amenity=drinking_water",
-			    "drinking_water=yes"
-		      ]
+          "or": [
+            "amenity=drinking_water",
+            "drinking_water=yes"
+          ]
         },
         "man_made!=reservoir_covered",
         "access!=permissive",

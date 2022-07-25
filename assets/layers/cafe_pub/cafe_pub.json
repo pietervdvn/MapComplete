@@ -156,6 +156,7 @@
   },
   "tagRenderings": [
     "images",
+    "level",
     {
       "question": {
         "nl": "Wat is de naam van dit café?",

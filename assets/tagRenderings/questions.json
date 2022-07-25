@@ -100,7 +100,6 @@
   },
   "reviews": {
     "description": "Shows the reviews module (including the possibility to leave a review)",
-
     "render": "{reviews()}"
   },
   "minimap": {
@@ -866,6 +865,22 @@
   "all_tags": {
     "description": "Shows a table with all the tags of the feature",
     "render": "{all_tags()}"
+  },
+  "multilevels": {
+    "builtin": "level",
+    "override": {
+      "question": {
+        "en": "What levels does this elevator go to?"
+      },
+      "render": {
+        "en": "This elevator goes to floors {multilevels}"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "string"
+      },
+      "multiAnswer" : true
+    }
   },
   "level": {
     "question": {

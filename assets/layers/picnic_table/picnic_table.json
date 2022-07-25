@@ -37,6 +37,7 @@
   },
   "tagRenderings": [
     "images",
+    "level",
     {
       "question": {
         "en": "What material is this picnic table made of?",
