@@ -808,10 +808,10 @@
                 "0": {
                     "mappings": {
                         "0": {
-                            "then": "This entrance has no width information"
+                            "then": "The containing building has no information on door widths. Add a door and measure the width to get information"
                         }
                     },
-                    "render": "This door has a width of {canonical(_poi_entrance:width)} meter"
+                    "render": "The containing building can be entered via <a href='#{_poi_entrance:id}'>a door of {canonical(_poi_entrance:width)}</a>"
                 }
             }
         },

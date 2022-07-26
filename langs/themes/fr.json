@@ -673,18 +673,6 @@
     },
     "onwheels": {
         "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Cet accès n'a pas d'informations de largeur"
-                        }
-                    },
-                    "render": "Cet accès a une largeur de {canonical(_poi_entrance:width)}"
-                }
-            }
-        },
         "title": "OnWheels"
     },
     "openwindpowermap": {

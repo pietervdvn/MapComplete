@@ -380,11 +380,7 @@
           ]
         },
         "render": {
-          "en": "This door has a width of {canonical(_poi_entrance:width)} meter",
-          "de": "Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter",
-          "es": "Esta puerta tiene una ancho de {canonical(_poi_entrance:width)} metros",
-          "fr": "Cet accès a une largeur de {canonical(_poi_entrance:width)}",
-          "nl": "Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter"
+          "en": "The containing building can be entered via <a href='#{_poi_entrance:id}'>a door of {canonical(_poi_entrance:width)}</a>"
         },
         "freeform": {
           "key": "_poi_entrance:width",
@@ -394,10 +390,7 @@
           {
             "if": "_poi_entrance:width=",
             "then": {
-              "en": "This entrance has no width information",
-              "de": "Dieser Eingang hat keine Breitenangabe",
-              "fr": "Cet accès n'a pas d'informations de largeur",
-              "nl": "Deze ingang heeft geen informatie over de breedte"
+              "en": "The containing building has no information on door widths. Add a door and measure the width to get information"
             }
           }
         ]

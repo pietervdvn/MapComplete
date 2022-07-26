@@ -517,15 +517,6 @@
         "shortDescription": "Torres accesibles públicamente para disfrutar de la vista",
         "title": "Torres de observación"
     },
-    "onwheels": {
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "render": "Esta puerta tiene una ancho de {canonical(_poi_entrance:width)} metros"
-                }
-            }
-        }
-    },
     "openwindpowermap": {
         "description": "Un para mostrar y editar turbinas de viento"
     },

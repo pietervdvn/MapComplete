@@ -767,18 +767,6 @@
                 }
             }
         },
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Dieser Eingang hat keine Breitenangabe"
-                        }
-                    },
-                    "render": "Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter"
-                }
-            }
-        },
         "title": "Auf Rädern"
     },
     "openwindpowermap": {
