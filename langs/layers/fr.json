@@ -1620,7 +1620,194 @@
                     "then": "Vélorue"
                 }
             }
-        }
+        },
+        "tagRenderings": {
+            "Cycleway type for a road": {
+                "mappings": {
+                    "1": {
+                        "then": "Il y a une piste cyclable separée de la route"
+                    },
+                    "0": {
+                        "then": "Il y a une voie partagée"
+                    },
+                    "4": {
+                        "then": "Il n'y a pas de piste cyclable"
+                    },
+                    "5": {
+                        "then": "Il n'y a pas de piste cyclable"
+                    },
+                    "2": {
+                        "then": "Il y a une piste cyclable, mais elle n'est pas separée de la route sur la carte."
+                    },
+                    "3": {
+                        "then": "Il y a une piste cyclable dessinée séparement"
+                    }
+                },
+                "question": "Quel type de piste cyclable il y a ici ?"
+            },
+            "Cycleway:smoothness": {
+                "mappings": {
+                    "1": {
+                        "then": "Utilisable pour les roues fines: vélo de course"
+                    },
+                    "0": {
+                        "then": "Utilisable pour les patins:  patins à roulettes, skateboard"
+                    },
+                    "2": {
+                        "then": "Utilisable pour les roues traditionelles: vélo, chaise roulante, trotinettes"
+                    },
+                    "7": {
+                        "then": "Impasse / Aucun véhicule roulant"
+                    },
+                    "3": {
+                        "then": "Utilisable pour les roues robustes: VTT, voitures, pousse-pousse"
+                    },
+                    "4": {
+                        "then": "Utilisable pour les véhicules à dégagement élevé : véhicule tout-terrain léger"
+                    },
+                    "5": {
+                        "then": "Utilisable pour les véhicules tout-terrain : véhicule tout-terrain lourd"
+                    },
+                    "6": {
+                        "then": "Utilisable pour les véhicules hors route spécialisés : tracteur, véhicule 4x4"
+                    }
+                },
+                "question": "Quel est l'état de la piste cyclable ?"
+            },
+            "Cycleway:surface": {
+                "mappings": {
+                    "7": {
+                        "then": "Cette piste cyclable est en pavés plats ou carrés"
+                    },
+                    "8": {
+                        "then": "Cette piste cyclable est faite en bois"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
+                    },
+                    "3": {
+                        "then": "Cette piste cyclable est faite de petits pavés"
+                    },
+                    "9": {
+                        "then": "Cette piste cyclable est faite en graviers"
+                    },
+                    "6": {
+                        "then": "Cette piste cyclable est en pavés bruts et naturels"
+                    },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "1": {
+                        "then": "Cette piste cyclable est goudronée"
+                    },
+                    "4": {
+                        "then": "Cette piste cyclable est bétonée"
+                    },
+                    "0": {
+                        "then": "Cette piste cyclable n'est pas goudronnée"
+                    },
+                    "5": {
+                        "then": "Cette piste cyclable est faite de pavés (taillé ou non)"
+                    },
+                    "2": {
+                        "then": "Cette piste cyclable est asphaltée"
+                    }
+                },
+                "question": "De quoi est faite la surface de la piste cyclable ?",
+                "render": "Cette piste cyclable est faite de {cycleway:surface}"
+            },
+            "Is this a cyclestreet? (For a road)": {
+                "mappings": {
+                    "1": {
+                        "then": "Ceci est une route cyclable"
+                    },
+                    "2": {
+                        "then": "Ceci n'est pas une route cyclable"
+                    },
+                    "0": {
+                        "then": "Ceci est une route cyclable, et une zone à 30 km/h"
+                    }
+                },
+                "question": "Est-ce une route cyclable?"
+            },
+            "Maxspeed (for road)": {
+                "mappings": {
+                    "0": {
+                        "then": "La vitesse maximum est de 20 km/h"
+                    },
+                    "4": {
+                        "then": "La vitesse maximum est de 90 km/h"
+                    },
+                    "2": {
+                        "then": "La vitesse maximum est de 50 km/h"
+                    },
+                    "1": {
+                        "then": "La vitesse maximum est de 30 km/h"
+                    },
+                    "3": {
+                        "then": "La vitesse maximum est de 70 km/h"
+                    }
+                },
+                "question": "Quelle est la vitesse maximum dans cette rue ?",
+                "render": "La vitesse maximum dans cette rue est de {maxspeed} km/h"
+            },
+            "Surface of the road": {
+                "mappings": {
+                    "1": {
+                        "then": "Cette piste cyclable est pavée"
+                    },
+                    "2": {
+                        "then": "Cette piste cyclable est asphaltée"
+                    },
+                    "3": {
+                        "then": "Cette piste cyclable est faite en pavés lisses"
+                    },
+                    "4": {
+                        "then": "Cette piste cyclable est betonée"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "0": {
+                        "then": "Cette piste cycable est  non durcie"
+                    },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "8": {
+                        "then": "Cette piste cyclable est faite en bois"
+                    },
+                    "9": {
+                        "then": "Cette piste cyclable est faite en graviers"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
+                    },
+                    "7": {
+                        "then": "Cette piste cyclable est en pavés plats ou carrés"
+                    },
+                    "6": {
+                        "then": "Cette piste cyclable est en pavés bruts et naturels"
+                    },
+                    "5": {
+                        "then": "Cette piste cyclable est faite de pavés (taillé ou non)"
+                    }
+                },
+                "render": "Cette route est faite de {surface}",
+                "question": "De quel materiel est faite cette rue ?"
+            },
+            "Surface of the street": {
+                "mappings": {
+                    "0": {
+                        "then": "Utilisable pour les patins:  patins à roulettes, skateboard"
+                    }
+                }
+            }
+        },
+        "description": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure"
     },
     "defibrillator": {
         "name": "Défibrillateurs",
