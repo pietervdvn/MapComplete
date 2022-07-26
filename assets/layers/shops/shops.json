@@ -83,7 +83,6 @@
   },
   "tagRenderings": [
     "images",
-    "level",
     {
       "question": {
         "en": "What is the name of this shop?",
@@ -94,18 +93,13 @@
         "de": "Wie ist der Name dieses Geschäfts?",
         "es": "¿Cual es el nombre de esta tienda?"
       },
-      "render": "This shop is called <i>{name}</i>",
+      "render": {
+        "en": "This shop is called <i>{name}</i>"
+      },
       "freeform": {
         "key": "name"
       },
-      "id": "shops-name",
-      "en": {
-        "question": "What kind of shop is this?",
-        "render": "This is a {shop}"
-      },
-      "nl": {
-        "question": "Wat voor soort winkel is dit?"
-      }
+      "id": "shops-name"
     },
     {
       "builtin": "id_presets.shop_types",
@@ -132,6 +126,7 @@
     "email",
     "phone",
     "payment-options",
+    "level",
     {
       "id": "copyshop-print-sizes",
       "condition": {
