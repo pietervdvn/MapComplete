@@ -15,6 +15,7 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
 
 
   - This layer is shown at zoomlevel **18** and higher
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - This layer is needed as dependency for layer [entrance](#entrance)
 
 
@@ -28,7 +29,6 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
 
   - [entrances](https://mapcomplete.osm.be/entrances)
   - [personal](https://mapcomplete.osm.be/personal)
-  - [walls_and_buildings](https://mapcomplete.osm.be/walls_and_buildings)
 
 
 

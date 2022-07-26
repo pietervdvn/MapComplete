@@ -34,6 +34,7 @@ The following items can be easily reused in your layers
     + [all_tags](#all_tags)
     + [level](#level)
     + [smoking](#smoking)
+    + [induction-loop](#induction-loop)
     + [default](#default)
     + [defaults](#defaults)
     + [isOpen](#isopen)
@@ -354,6 +355,20 @@ Is smoking allowed at {title()}?
   - Smoking is <b>allowed</b>
   - Smoking is <b>not allowed</b>
   - Smoking is <b>allowed outside</b>.
+
+
+
+
+### induction-loop 
+
+
+
+Does this place have an audio induction loop for people with reduced hearing?
+
+
+
+  - This place has an audio induction loop
+  - This place <b>does not</b> has an audio induction loop
 
 
 

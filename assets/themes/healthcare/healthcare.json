@@ -1,10 +1,14 @@
 {
   "id": "healthcare",
   "title": {
-    "en": "Healthcare"
+    "en": "Healthcare",
+    "ca": "Assistència sanitària",
+    "de": "Gesundheitswesen"
   },
   "description": {
-    "en": "On this map, various healthcare related items are shown"
+    "en": "On this map, various healthcare related items are shown",
+    "ca": "En aquest mapa es mostren diversos elements relacionats amb la salut",
+    "de": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/layers/doctors/doctors.svg",

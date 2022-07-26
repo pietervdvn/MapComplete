@@ -742,21 +742,12 @@
                 },
                 "question": "Sono presenti degli attrezzi per riparare la propria bici?"
             },
-            "bike_shop-email": {
-                "question": "Qual è l’indirizzo email di {name}?"
-            },
             "bike_shop-is-bicycle_shop": {
                 "render": "Questo negozio è specializzato nella vendita di {shop} ed effettua attività relative alle biciclette"
             },
             "bike_shop-name": {
                 "question": "Qual è il nome di questo negozio di biciclette?",
                 "render": "Questo negozio di biciclette è chiamato {name}"
-            },
-            "bike_shop-phone": {
-                "question": "Qual è il numero di telefono di {name}?"
-            },
-            "bike_shop-website": {
-                "question": "Qual è il sito web di {name}?"
             }
         },
         "title": {

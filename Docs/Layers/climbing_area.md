@@ -79,6 +79,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -141,7 +143,7 @@ This is rendered with  <strong>{name}</strong>
 
 
 
-  - This climbing opportunity doesn't have a name corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+  - This climbing opportunity doesn't have a name  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -156,9 +158,9 @@ The question is  What kind of climbing opportunity is this?
 
 
 
-  - A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dboulder' target='_blank'>boulder</a>
-  - A climbing crag - a single rock or cliff with at least a few climbing routes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag' target='_blank'>crag</a>
-  - A climbing area with one or more climbing crags and/or boulders corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Darea' target='_blank'>area</a>
+  - A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dboulder' target='_blank'>boulder</a>`
+  - A climbing crag - a single rock or cliff with at least a few climbing routes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dcrag' target='_blank'>crag</a>`
+  - A climbing area with one or more climbing crags and/or boulders  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Darea' target='_blank'>area</a>`
 
 
 
@@ -177,7 +179,7 @@ This is rendered with  The rock type is {rock}
 
 
 
-  - Limestone corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rock' target='_blank'>rock</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone' target='_blank'>limestone</a>
+  - Limestone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rock' target='_blank'>rock</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone' target='_blank'>limestone</a>`
 
 
 Only visible if  `climbing=crag|natural=cliff|natural=bare_rock`  is shown
@@ -214,8 +216,8 @@ This is rendered with  A fee of {charge} should be paid for climbing here
 
 
 
-  - Climbing here is free of charge corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
-  - Paying a fee is required to climb here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+  - Climbing here is free of charge  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>`
+  - Paying a fee is required to climb here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
 
 Only visible if  `sport=climbing`  is shown
@@ -232,10 +234,10 @@ The question is  Is bouldering possible here?
 
 
 
-  - Bouldering is possible here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>
-  - Bouldering is not possible here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>
-  - Bouldering is possible, allthough there are only a few routes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>
-  - There are {climbing:boulder} boulder routes corresponds with  climbing:boulder~^..*$
+  - Bouldering is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>`
+  - Bouldering is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>`
+  - Bouldering is possible, allthough there are only a few routes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>`
+  - There are {climbing:boulder} boulder routes  corresponds with  `climbing:boulder~^..*$`
   - This option cannot be chosen as answer
 
 

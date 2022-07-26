@@ -12,7 +12,6 @@ import {MinimapObj} from "./Base/Minimap";
 import BaseUIElement from "./BaseUIElement";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import {GeoOperations} from "../Logic/GeoOperations";
-import {BBox} from "../Logic/BBox";
 import {OsmFeature} from "../Models/OsmFeature";
 import SearchAndGo from "./BigComponents/SearchAndGo";
 import FeatureInfoBox from "./Popup/FeatureInfoBox";
@@ -22,14 +21,11 @@ import Lazy from "./Base/Lazy";
 import TagRenderingAnswer from "./Popup/TagRenderingAnswer";
 import Hash from "../Logic/Web/Hash";
 import FilterView from "./BigComponents/FilterView";
-import {FilterState} from "../Models/FilteredLayer";
 import Translations from "./i18n/Translations";
 import Constants from "../Models/Constants";
 import SimpleAddUI from "./BigComponents/SimpleAddUI";
-import TagRenderingChart from "./BigComponents/TagRenderingChart";
-import Loading from "./Base/Loading";
 import BackToIndex from "./BigComponents/BackToIndex";
-import Locale from "./i18n/Locale";
+import StatisticsPanel from "./BigComponents/StatisticsPanel";
 
 
 export default class DashboardGui {
@@ -94,63 +90,7 @@ export default class DashboardGui {
         return new Combine(elements.map(e => self.singleElementView(e.element, e.layer, e.distance)))
     }
 
-    private visibleElements(map: MinimapObj & BaseUIElement, layers: Record<string, LayerConfig>): { distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[] {
-        const bbox = map.bounds.data
-        if (bbox === undefined) {
-            console.warn("No bbox")
-            return undefined
-        }
-        const location = map.location.data;
-        const loc: [number, number] = [location.lon, location.lat]
-
-        const elementsWithMeta: { features: OsmFeature[], layer: string }[] = this.state.featurePipeline.GetAllFeaturesAndMetaWithin(bbox)
-
-        let elements: { distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[] = []
-        let seenElements = new Set<string>()
-        for (const elementsWithMetaElement of elementsWithMeta) {
-            const layer = layers[elementsWithMetaElement.layer]
-            if(layer.title === undefined){
-                continue
-            }
-            const filtered = this.state.filteredLayers.data.find(fl => fl.layerDef == layer);
-            for (let i = 0; i < elementsWithMetaElement.features.length; i++) {
-                const element = elementsWithMetaElement.features[i];
-                if (!filtered.isDisplayed.data) {
-                    continue
-                }
-                if (seenElements.has(element.properties.id)) {
-                    continue
-                }
-                seenElements.add(element.properties.id)
-                if (!bbox.overlapsWith(BBox.get(element))) {
-                    continue
-                }
-                if (layer?.isShown !== undefined && !layer.isShown.matchesProperties(element)) {
-                    continue
-                }
-                const activeFilters: FilterState[] = Array.from(filtered.appliedFilters.data.values());
-                if (!activeFilters.every(filter => filter?.currentFilter === undefined || filter?.currentFilter?.matchesProperties(element.properties))) {
-                    continue
-                }
-                const center = GeoOperations.centerpointCoordinates(element);
-                elements.push({
-                    element,
-                    center,
-                    layer: layers[elementsWithMetaElement.layer],
-                    distance: GeoOperations.distanceBetween(loc, center)
-                })
-
-            }
-        }
-
-
-        elements.sort((e0, e1) => e0.distance - e1.distance)
-
-
-        return elements;
-    }
-
-    private documentationButtonFor(layerConfig: LayerConfig): BaseUIElement {
+   private documentationButtonFor(layerConfig: LayerConfig): BaseUIElement {
         return this.viewSelector(Translations.W(layerConfig.name?.Clone() ?? layerConfig.id), new Combine(["Documentation about ", layerConfig.name?.Clone() ?? layerConfig.id]),
             layerConfig.GenerateDocumentation([]),
             "documentation-" + layerConfig.id)
@@ -166,6 +106,7 @@ export default class DashboardGui {
         return this.viewSelector(new FixedUiElement("Documentation"), "Documentation",
             new Combine(layers.map(l => this.documentationButtonFor(l).SetClass("flex flex-col"))))
     }
+    
 
     public setup(): void {
 
@@ -191,7 +132,14 @@ export default class DashboardGui {
         const elementsInview = new UIEventSource<{ distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[]>([]);
 
         function update() {
-            elementsInview.setData(self.visibleElements(map, layers))
+            const mapCenter = <[number,number]> [self.state.locationControl.data.lon, self.state.locationControl.data.lon]
+            const elements = self.state.featurePipeline.getAllVisibleElementsWithmeta(self.state.currentBounds.data).map(el => {
+                const distance = GeoOperations.distanceBetween(el.center, mapCenter)
+                return {...el, distance }
+            })
+            elements.sort((e0, e1) => e0.distance - e1.distance)
+            elementsInview.setData(elements)
+
         }
 
         map.bounds.addCallbackAndRun(update)
@@ -235,60 +183,6 @@ export default class DashboardGui {
             }
         })
 
-        const statistics =
-            new VariableUiElement(elementsInview.stabilized(1000).map(features => {
-                if (features === undefined) {
-                    return new Loading("Loading data")
-                }
-                if (features.length === 0) {
-                    return "No elements in view"
-                }
-                const els = []
-                for (const layer of state.layoutToUse.layers) {
-                    if(layer.name === undefined){
-                        continue
-                    }
-                    const featuresForLayer = features.filter(f => f.layer === layer).map(f => f.element)
-                    if(featuresForLayer.length === 0){
-                        continue
-                    }
-                    els.push(new Title(layer.name))
-                    
-                    const layerStats = []
-                    for (const tagRendering of (layer?.tagRenderings ?? [])) {
-                        const chart = new TagRenderingChart(featuresForLayer, tagRendering, {
-                            chartclasses: "w-full",
-                            chartstyle: "height: 60rem",
-                            includeTitle: false
-                        })
-                        const full = new Lazy(() => 
-                            new TagRenderingChart(featuresForLayer, tagRendering, {
-                                chartstyle: "max-height: calc(100vh - 10rem)",
-                                groupToOtherCutoff: 0
-                            })
-                        )
-                        const title = new Title(tagRendering.question?.Clone() ?? tagRendering.id)
-                        title.onClick(() => {
-                                const current = self.currentView.data
-                                full.onClick(() => {
-                                    self.currentView.setData(current)
-                                })
-                                self.currentView.setData(
-                                    {
-                                        title: new Title(tagRendering.question.Clone() ?? tagRendering.id),
-                                        contents: full
-                                    })
-                            }
-                        )
-                        if(!chart.HasClass("hidden")){
-                            layerStats.push(new Combine([title, chart]).SetClass("flex flex-col w-full lg:w-1/3"))
-                        }
-                    }
-                    els.push(new Combine(layerStats).SetClass("flex flex-wrap"))
-                }
-                return new Combine(els)
-            }, [Locale.language]))
-
 
         new Combine([
             new Combine([
@@ -298,7 +192,7 @@ export default class DashboardGui {
                 this.viewSelector(new Title(
                         new VariableUiElement(elementsInview.map(elements => "There are " + elements?.length + " elements in view"))),
                     "Statistics",
-                    statistics, "statistics"),
+                    new StatisticsPanel(elementsInview, this.state), "statistics"),
 
                 this.viewSelector(new FixedUiElement("Filter"),
                     "Filters", filterView, "filters"),

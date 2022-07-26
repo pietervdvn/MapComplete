@@ -317,6 +317,19 @@ export class TypedTranslation<T> extends Translation {
             return Utils.SubstituteKeys(template, text, lang);
         }, context)
     }
-    
-    
+
+
+    PartialSubs<X extends string>(text: Partial<T> & Record<X, string>): TypedTranslation<Omit<T, X>> {
+        const newTranslations : Record<string, string> = {}
+        for (const lang in this.translations) {
+            const template = this.translations[lang]
+            if(lang === "_context"){
+            newTranslations[lang] = template
+                continue
+            }
+            newTranslations[lang] = Utils.SubstituteKeys(template, text, lang)
+        }
+        
+        return new TypedTranslation<Omit<T, X>>(newTranslations, this.context)
+    }
 }

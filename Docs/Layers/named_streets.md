@@ -16,7 +16,7 @@ Hidden layer with all streets which have a name. Useful to detect addresses
 
   - This layer is shown at zoomlevel **18** and higher
   - This layer is not visible by default and must be enabled in the filter by the user. 
-  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`

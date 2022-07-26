@@ -86,7 +86,8 @@
           "nl": "Camperplaats {name}",
           "pt_BR": "Local de acampamento {name}",
           "de": "Wohnmobilstellplatz {name}",
-          "id": "Tempat kemping {name}"
+          "id": "Tempat kemping {name}",
+          "ca": "Lloc d'acampada {name}"
         },
         "mappings": [
           {
@@ -104,7 +105,8 @@
               "zh_Hant": "沒有名稱的露營地",
               "nl": "Camper site",
               "pt_BR": "Locais de acampamento sem nome",
-              "de": "Unbenannter Wohnmobilstellplatz"
+              "de": "Unbenannter Wohnmobilstellplatz",
+              "ca": "Lloc d'acampada sense nom"
             }
           }
         ]
@@ -141,7 +143,8 @@
             "id": "Tempat ini disebut {name}",
             "es": "Este lugar se llama {name}",
             "da": "Dette sted hedder {name}",
-            "nb_NO": "Dette stedet heter {name}"
+            "nb_NO": "Dette stedet heter {name}",
+            "ca": "Aquest lloc s'anomena {name}"
           },
           "question": {
             "en": "What is this place called?",
@@ -156,7 +159,8 @@
             "de": "Wie heißt dieser Ort?",
             "es": "¿Cómo se llama este lugar?",
             "da": "Hvad hedder dette sted?",
-            "nb_NO": "Hva heter dette stedet?"
+            "nb_NO": "Hva heter dette stedet?",
+            "ca": "Com es diu aquest lloc?"
           },
           "freeform": {
             "key": "name"
@@ -286,7 +290,8 @@
             "de": "Hat dieser Ort eine sanitäre Entsorgungsstation?",
             "id": "Apakah tempat ini memiliki tempat pembuangan sanitasi?",
             "es": "¿Este lugar tiene un vertedero sanitario?",
-            "nl": "Heeft deze plaats een loosplaats?"
+            "nl": "Heeft deze plaats een loosplaats?",
+            "ca": "Aquest lloc té una estació d'abocament sanitari?"
           },
           "mappings": [
             {
@@ -306,7 +311,8 @@
                 "de": "Dieser Ort hat eine sanitäre Entsorgungsstation",
                 "id": "Tempat ini memiliki tempat pembuangan sanitasi",
                 "es": "Este lugar tiene un vertedero sanitario",
-                "nl": "Deze plaats heeft een loosplaats"
+                "nl": "Deze plaats heeft een loosplaats",
+                "ca": "Aquest lloc té una estació d'abocament sanitari"
               }
             },
             {
@@ -326,7 +332,8 @@
                 "de": "Dieser Ort hat keine sanitäre Entsorgungsstation",
                 "id": "Tempat ini tidak memiliki tempat pembuangan sampah sanitasi",
                 "es": "Este lugar no tiene vertedero sanitario",
-                "nl": "Deze plaats heeft geen loosplaats"
+                "nl": "Deze plaats heeft geen loosplaats",
+                "ca": "Aquest lloc no té una estació d'abocament sanitari"
               }
             }
           ]
@@ -542,7 +549,8 @@
             "nl": "Heeft deze plaats toiletten?",
             "hu": "Van-e itt WC?",
             "da": "Har dette sted toiletter?",
-            "es": "¿Este lugar tiene baños?"
+            "es": "¿Este lugar tiene baños?",
+            "ca": "Aquest lloc té lavabos?"
           },
           "mappings": [
             {
@@ -565,7 +573,8 @@
                 "nl": "Deze plaats heeft toiletten",
                 "hu": "Itt van WC",
                 "es": "Este lugar cuenta con sanitarios",
-                "da": "Dette sted har toiletter"
+                "da": "Dette sted har toiletter",
+                "ca": "Aquest lloc té lavabos"
               }
             },
             {
@@ -588,7 +597,8 @@
                 "nl": "Deze plaats heeft geen toiletten",
                 "hu": "Itt nincs WC",
                 "es": "Este lugar no tiene sanitarios",
-                "da": "Dette sted har ikke toiletter"
+                "da": "Dette sted har ikke toiletter",
+                "ca": "Aquest lloc no té lavabos"
               }
             }
           ]
@@ -606,7 +616,8 @@
             "fr": "Site officiel : <a href='{website}'>{website}</a>",
             "pt_BR": "Site oficial: <a href='{website}'>{website}</a>",
             "de": "Offizielle Webseite: <a href='{website}'>{website}</a>",
-            "es": "Sitio web oficial: <a href='{website}'>{website}</a>"
+            "es": "Sitio web oficial: <a href='{website}'>{website}</a>",
+            "ca": "Lloc web oficial: <a href='{website}'>{website}</a>"
           },
           "freeform": {
             "type": "url",
@@ -624,7 +635,8 @@
             "pt_BR": "Este lugar tem um website?",
             "de": "Hat dieser Ort eine Webseite?",
             "nl": "Heeft deze plaats een website?",
-            "es": "¿Este lugar tiene un sitio web?"
+            "es": "¿Este lugar tiene un sitio web?",
+            "ca": "Aquest lloc té un lloc web?"
           },
           "id": "caravansites-website"
         },
@@ -642,7 +654,8 @@
             "es": "¿Este lugar ofrece huecos para alquilar a largo plazo?",
             "da": "Tilbyder dette sted pladser til langtidsleje?",
             "nl": "Kan men hier plekken huren voor langere termijn?",
-            "nb_NO": "Tilbyr dette stedet plasser for langtidsleie?"
+            "nb_NO": "Tilbyr dette stedet plasser for langtidsleie?",
+            "ca": "Aquest lloc ofereix llocs de lloguer a llarg termini?"
           },
           "mappings": [
             {
@@ -704,7 +717,8 @@
                 "de": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)",
                 "es": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)",
                 "da": "Det er kun muligt at bo her, hvis du har en langtidskontrakt (dette sted forsvinder fra kortet, hvis du vælger dette)",
-                "nl": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats zal verborgen worden van deze kaart als je dit kiest)"
+                "nl": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats zal verborgen worden van deze kaart als je dit kiest)",
+                "ca": "Només és possible romandre aquí si teniu un contracte a llarg termini (aquest lloc desapareixerà d'aquest mapa si trieu això)"
               }
             }
           ]
@@ -826,7 +840,8 @@
         "de": "Sanitäre Entsorgungsstationen",
         "zh_Hant": "垃圾處理站",
         "id": "Tempat pembuangan sanitasi",
-        "nl": "Loostplaatsen"
+        "nl": "Loostplaatsen",
+        "ca": "Estacions d'abocament sanitari"
       },
       "minzoom": 10,
       "source": {
@@ -880,7 +895,8 @@
         "de": "Sanitäre Entsorgungsstationen",
         "zh_Hant": "垃圾處理站",
         "id": "Tempat pembuangan sanitasi",
-        "nl": "Loosplaatsen"
+        "nl": "Loosplaatsen",
+        "ca": "Estacions d'abocament sanitari"
       },
       "tagRenderings": [
         "images",
@@ -953,7 +969,8 @@
             "zh_Hant": "這個地方收費 {charge}",
             "nb_NO": "Dette stedet tar {charge}",
             "nl": "Deze loosplaats rekent {charge} aan",
-            "es": "Este lugar cobra {charge}"
+            "es": "Este lugar cobra {charge}",
+            "ca": "Aquest lloc costa {charge}"
           },
           "question": {
             "en": "How much does this place charge?",
@@ -965,7 +982,8 @@
             "de": "Wie hoch ist die Gebühr an diesem Ort?",
             "zh_Hant": "這個地方收費多少？",
             "nl": "Hoeveel kost het gebruik van deze loosplaats?",
-            "es": "¿Cuánto cobra este lugar?"
+            "es": "¿Cuánto cobra este lugar?",
+            "ca": "Quant costa aquest lloc?"
           },
           "freeform": {
             "key": "charge"
@@ -1057,7 +1075,8 @@
                 "fr": "Il est possible d’y vidanger ses eaux usées",
                 "de": "Hier können Sie Brauch-/Grauwasser entsorgen",
                 "zh_Hant": "你可以在這裡排放洗滌水",
-                "nl": "Je kan hier grijs water lozen"
+                "nl": "Je kan hier grijs water lozen",
+                "ca": "Es pot desfer de les aigües grises aquí"
               }
             },
             {
@@ -1141,7 +1160,8 @@
             "fr": "Qui peut utiliser le site de vidange ?",
             "de": "Wer darf diese sanitäre Entsorgungsstation nutzen?",
             "zh_Hant": "誰可以使用這個垃圾站？",
-            "nl": "Wie mag deze loosplaats gebruiken?"
+            "nl": "Wie mag deze loosplaats gebruiken?",
+            "ca": "Qui pot utilitzar aquesta estació d'abocament?"
           },
           "mappings": [
             {
@@ -1174,7 +1194,8 @@
                 "fr": "Le site est réservés aux clients",
                 "de": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können",
                 "zh_Hant": "你需要是露營/露營地的客戶才能使用這一地方",
-                "nl": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken"
+                "nl": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken",
+                "ca": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc"
               }
             },
             {
@@ -1191,7 +1212,8 @@
                 "fr": "Le site est en libre-service",
                 "de": "Jeder darf diese sanitäre Entsorgungsstation nutzen",
                 "zh_Hant": "任何人都可以使用這個衛生廢棄物站",
-                "nl": "Deze loosplaats is voor iedereen toegankelijk"
+                "nl": "Deze loosplaats is voor iedereen toegankelijk",
+                "ca": "Qualsevol pot utilitzar aquesta estació d'abocament"
               },
               "hideInAnswer": true
             },
@@ -1209,7 +1231,8 @@
                 "fr": "Le site est en libre-service",
                 "de": "Jeder darf diese sanitäre Entsorgungsstation nutzen",
                 "zh_Hant": "任何人都可以使用這個垃圾站",
-                "nl": "Deze loosplaats is toegankelijk voor iedereen"
+                "nl": "Deze loosplaats is toegankelijk voor iedereen",
+                "ca": "Qualsevol pot utilitzar aquesta estació d'abocament"
               }
             }
           ]

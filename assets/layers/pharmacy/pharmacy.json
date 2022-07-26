@@ -1,20 +1,23 @@
 {
   "id": "pharmacy",
   "name": {
-    "en": "pharmacy"
+    "en": "pharmacy",
+    "de": "Apotheke"
   },
   "description": {
     "en": "A layer showing pharmacies, which (probably) dispense prescription drugs"
   },
   "title": {
     "render": {
-      "en": "{name}"
+      "en": "{name}",
+      "de": "{name}"
     },
     "mappings": [
       {
         "if": "name=",
         "then": {
-          "en": "Pharmacy"
+          "en": "Pharmacy",
+          "de": "Apotheke"
         }
       }
     ]
@@ -52,25 +55,30 @@
     {
       "id": "wheelchair",
       "question": {
-        "en": "Is this pharmacy easy to access on a wheelchair?"
+        "en": "Is this pharmacy easy to access on a wheelchair?",
+        "de": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?"
       },
       "mappings": [
         {
           "if": "wheelchair=yes",
           "then": {
-            "en": "This pharmacy is easy to access on a wheelchair"
+            "en": "This pharmacy is easy to access on a wheelchair",
+            "ca": "Aquesta farmàcia és fàcil d'accedir en una cadira de rodes",
+            "de": "Die Apotheke ist für Rollstuhlfahrer leicht zugänglich"
           }
         },
         {
           "if": "wheelchair=no",
           "then": {
-            "en": "This pharmacy is hard to access on a wheelchair"
+            "en": "This pharmacy is hard to access on a wheelchair",
+            "de": "Die Apotheke ist für Rollstuhlfahrer nur schwer zugänglich"
           }
         },
         {
           "if": "wheelchair=limited",
           "then": {
-            "en": "This pharmacy has limited access for wheelchair users"
+            "en": "This pharmacy has limited access for wheelchair users",
+            "de": "Die Apotheke ist für Rollstuhlfahrer nur eingeschränkt zugänglich"
           }
         }
       ]

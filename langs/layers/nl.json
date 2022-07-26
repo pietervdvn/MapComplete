@@ -1068,9 +1068,6 @@
             "bike_shop-access": {
                 "render": "Enkel voor {access}"
             },
-            "bike_shop-email": {
-                "question": "Wat is het email-adres van {name}?"
-            },
             "bike_shop-is-bicycle_shop": {
                 "mappings": {
                     "0": {
@@ -1082,12 +1079,6 @@
             "bike_shop-name": {
                 "question": "Wat is de naam van deze fietszaak?",
                 "render": "Deze fietszaak heet {name}"
-            },
-            "bike_shop-phone": {
-                "question": "Wat is het telefoonnummer van {name}?"
-            },
-            "bike_shop-website": {
-                "question": "Wat is de website van {name}?"
             }
         },
         "title": {
@@ -1265,7 +1256,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Nu geopened"
+                        "question": "Nu geopend"
                     }
                 }
             }
@@ -3244,6 +3235,57 @@
         "description": "Deze laag toont de oriëntatie van een object",
         "name": "Richtingsvisualisatie"
     },
+    "doctors": {
+        "description": "Deze laag toont dokterspraktijken, tandartsen en andere gezondheidszorgfaciliteiten",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nu geopend"
+                    }
+                }
+            }
+        },
+        "name": "Dokters",
+        "presets": {
+            "0": {
+                "title": "een dokterspraktijk"
+            },
+            "1": {
+                "title": "een tandartspraktijk"
+            },
+            "2": {
+                "title": "een fysiotherapeutenpraktijk"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van deze dokterspraktijk?",
+                "render": "Deze dokterspraktijk heet {name}"
+            },
+            "specialty": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een huisarts"
+                    },
+                    "1": {
+                        "then": "Dit is een gynaecoloog"
+                    },
+                    "2": {
+                        "then": "Dit is een psychiater"
+                    },
+                    "3": {
+                        "then": "Dit is een kinderarts"
+                    }
+                },
+                "question": "Waar is deze dokter in gespecialiseerd?",
+                "render": "Deze dokter is gespecialiseerd in {healthcare:speciality}"
+            }
+        },
+        "title": {
+            "render": "Dokterspraktijk {name}"
+        }
+    },
     "drinking_water": {
         "deletion": {
             "nonDeleteMappings": {
@@ -3295,6 +3337,13 @@
         },
         "title": {
             "render": "Drinkbaar water"
+        }
+    },
+    "elevator": {
+        "presets": {
+            "0": {
+                "title": "een lift"
+            }
         }
     },
     "entrance": {
@@ -3384,6 +3433,13 @@
                     },
                     "8": {
                         "then": "De deur wordt geopend door personeel wanneer je het vraagt"
+                    }
+                }
+            },
+            "kerb-height": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze deur heeft geen drempel"
                     }
                 }
             },
@@ -3937,6 +3993,18 @@
             "render": "Hackerspace"
         }
     },
+    "hospital": {
+        "name": "Ziekenhuizen",
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van dit ziekenhuis?",
+                "render": "Dit ziekenhuis heet {name}"
+            }
+        },
+        "title": {
+            "render": "Ziekenhuis"
+        }
+    },
     "hydrant": {
         "description": "Kaartlaag met brandkranen.",
         "name": "Kaart van brandkranen",
@@ -4183,6 +4251,7 @@
     },
     "maxspeed": {
         "description": "Toont de toegestane snelheid voor elke weg",
+        "name": "Maximumsnelheid",
         "tagRenderings": {
             "maxspeed-maxspeed": {
                 "mappings": {
@@ -5951,10 +6020,26 @@
                     }
                 },
                 "question": "Is er een rolstoeltoegankelijke toilet voorzien?"
+            },
+            "wheelchair-door-width": {
+                "question": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
+                "render": "De deur naar de rolstoeltoegankelijke toilet is {canonical(door:width)} wide"
             }
         },
         "title": {
             "render": "Toilet"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "trail": {

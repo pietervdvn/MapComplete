@@ -388,8 +388,18 @@
     "sources": []
   },
   {
+    "path": "elevator.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Yveltal"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:HZM_elevator_icon.svg"
+    ]
+  },
+  {
     "path": "elevator_wheelchair.svg",
-    "license": "CC-BY_SA",
+    "license": "CC-BY-SA",
     "authors": [
       "Robin Julien"
     ],

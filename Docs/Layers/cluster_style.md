@@ -47,6 +47,8 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
+Shows a table with all the tags of the feature
+
 This tagrendering has no question and is thus read-only
 
  

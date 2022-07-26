@@ -79,8 +79,8 @@ This is rendered with  Location: {location}
 
 
 
-  - Found indoors. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
-  - Found outdoors. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>
+  - Found indoors.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>`
+  - Found outdoors.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>`
 
 
 
@@ -88,6 +88,8 @@ This is rendered with  Location: {location}
 ### images 
 
 
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
 
 This tagrendering has no question and is thus read-only
 
