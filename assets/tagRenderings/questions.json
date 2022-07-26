@@ -873,7 +873,7 @@
         "en": "What levels does this elevator go to?"
       },
       "render": {
-        "en": "This elevator goes to floors {multilevels}"
+        "en": "This elevator goes to floors {level}"
       },
       "freeform": {
         "key": "level",
