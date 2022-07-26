@@ -24,7 +24,6 @@
       "builtin": "bike_repair_station",
       "override": {
         "minzoom": 15,
-        "name": null,
         "shownByDefault": false,
         "mapRendering": [
           {
@@ -45,7 +44,6 @@
     {
       "builtin": "bike_shop",
       "override": {
-        "name": null,
         "shownByDefault": false
       }
     },
@@ -86,7 +84,7 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/entrance.svg",
-            "iconSize": "40,40,bottom"
+            "iconSize": "40,40,center"
           }
         ],
         "syncSelection": "theme-only",
@@ -193,13 +191,13 @@
     {
       "builtin": "picnic_table",
       "override": {
-        "name": null,
         "shownByDefault": false
       }
     },
     {
       "builtin": "school",
       "override": {
+        "shownByDefault": false,
         "mapRendering": [
           {
             "label": null
@@ -241,6 +239,7 @@
       "builtin": "pharmacy",
       "override": {
         "minzoom": 15,
+        "shownByDefault": false,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/pharmacy.svg",
@@ -252,6 +251,7 @@
     },
     {
       "builtin": "doctors",
+      "shownByDefault": false,
       "override": {
         "minzoom": 15,
         "mapRendering": [
@@ -266,6 +266,7 @@
       "builtin": "hospital",
       "override": {
         "minzoom": 15,
+        "shownByDefault": false,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/hospital.svg",
@@ -308,6 +309,7 @@
       "builtin": "hotel",
       "override": {
         "minzoom": 15,
+        "shownByDefault": false,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/hotel.svg",
@@ -372,7 +374,8 @@
           "and": [
             "entrance=",
             "kerb=",
-            "current_view!=yes"
+            "current_view!=yes",
+            "door="
           ]
         },
         "render": {

@@ -1,4 +1,9 @@
-import LevelSelector from "./UI/Input/LevelSelector";
-import {UIEventSource} from "./Logic/UIEventSource";
 
-new LevelSelector(new UIEventSource(["0","1","2","2.5","x","3"])).AttachTo("maindiv")
+
+import * as onwheels from "./assets/generated/themes/onwheels.json"
+import FeaturePipelineState from "./Logic/State/FeaturePipelineState";
+import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
+
+const layout = new LayoutConfig(<any> onwheels, true)
+
+new FeaturePipelineState(layout)

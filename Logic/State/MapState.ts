@@ -354,8 +354,8 @@ export default class MapState extends UserRelatedState {
     }
 
     private getPref(key: string, layer: LayerConfig): UIEventSource<boolean> {
-        const pref = this.osmConnection
-            .GetPreference(key)
+        return this.osmConnection
+            .GetPreference(key, layer.shownByDefault + "")
             .sync(v => {
                 if (v === undefined) {
                     return undefined
@@ -367,8 +367,6 @@ export default class MapState extends UserRelatedState {
                 }
                 return "" + b;
             })
-        pref.setData(layer.shownByDefault)
-        return pref
     }
 
     private InitializeFilteredLayers() {
@@ -389,9 +387,12 @@ export default class MapState extends UserRelatedState {
                 isDisplayed = QueryParameters.GetBooleanQueryParameter("layer-" + layer.id, layer.shownByDefault, "Wether or not layer " + layer.id + " is shown")
             }
 
+            isDisplayed.addCallbackAndRun(_ => {
+            console.log("IsDisplayed?",layer.id, isDisplayed.data, layer.shownByDefault)
+            })
 
             const flayer: FilteredLayer = {
-                isDisplayed: isDisplayed,
+                isDisplayed,
                 layerDef: layer,
                 appliedFilters: new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>())
             };
