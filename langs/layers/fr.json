@@ -4424,5 +4424,13 @@
     "pedestrian_path": {
         "description": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche",
         "name": "Sentiers piétons"
+    },
+    "gps_track": {
+        "name": "Votre chemin parcouru",
+        "tagRenderings": {
+            "Privacy notice": {
+                "render": "C'est le chemin que vous avez parcouru depuis l'ouverture de ce site. Ne vous inquiétez pas - ceci n'est visible que pour vous et personne d'autre. Vos données de localisation ne sont jamais envoyées hors de l'appareil."
+            }
+        }
     }
 }
