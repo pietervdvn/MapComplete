@@ -55,7 +55,7 @@
   "mapRendering": [
     {
       "color": {
-        "render": "#bb004488"
+        "render": "#d3d7d588"
       },
       "width": {
         "render": "8"
@@ -66,7 +66,7 @@
       "fill": "no"
     },
     {
-      "color": "red",
+      "color": "#4f5551", 
       "fill": "no",
       "width": "2"
     },

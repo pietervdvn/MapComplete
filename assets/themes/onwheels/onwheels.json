@@ -19,6 +19,7 @@
     {
       "builtin": "bike_repair_station",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": {
@@ -39,6 +40,7 @@
     {
       "builtin": "cafe_pub",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/cafe.svg",
@@ -51,6 +53,7 @@
     {
       "builtin": "entrance",
       "override": {
+        "minzoom": 19,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/entrance.svg",
@@ -62,6 +65,7 @@
     {
       "builtin": "food",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/restaurant.svg",
@@ -74,6 +78,7 @@
     {
       "builtin": "kerbs",
       "override": {
+        "minzoom": 19,
         "mapRendering": [
           {
             "icon": {
@@ -86,6 +91,7 @@
     {
       "builtin": "parking",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/parking.svg",
@@ -98,10 +104,20 @@
       }
     },
     "picnic_table",
-    "school",
+    {
+      "builtin": "school",
+      "override": {
+        "mapRendering": [
+          {
+            "label": null
+          }
+        ]
+      }
+    },
     {
       "builtin": "shops",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/shop.svg",
@@ -117,6 +133,7 @@
     {
       "builtin": "toilet",
       "override": {
+        "minzoom": 19,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/toilet.svg",
@@ -129,6 +146,7 @@
     {
       "builtin": "pharmacy",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/pharmacy.svg",
@@ -141,6 +159,7 @@
     {
       "builtin": "doctors",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/doctor.svg",
@@ -152,6 +171,7 @@
     {
       "builtin": "hospital",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/hospital.svg",
@@ -166,6 +186,7 @@
     {
       "builtin": "reception_desk",
       "override": {
+        "minzoom": 19,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/reception.svg",
@@ -178,6 +199,7 @@
     {
       "builtin": "elevator",
       "override": {
+        "minzoom": 19,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/elevator.svg",
@@ -189,6 +211,7 @@
     {
       "builtin": "hotel",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/hotel.svg",
@@ -200,6 +223,7 @@
     {
       "builtin": "governments",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/government.svg",
@@ -208,7 +232,12 @@
         ]
       }
     },
-    "indoors"
+    {
+      "builtin": "indoors",
+      "override": {
+        "minzoom": 19
+      }
+    }
   ],
   "overrideAll": {
     "+calculatedTags": [
@@ -244,7 +273,6 @@
           }
         ]
       }
-    ],
-    "minzoom": 15
+    ]
   }
 }
