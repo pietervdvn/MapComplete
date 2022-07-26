@@ -1633,6 +1633,7 @@
         }
     },
     "cycleways_and_roads": {
+        "description": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
         "name": "Pistes cyclables et routes",
         "title": {
             "mappings": {
@@ -1678,17 +1679,20 @@
                     "0": {
                         "then": "Il y a une voie partagée"
                     },
-                    "4": {
-                        "then": "Il n'y a pas de piste cyclable"
-                    },
-                    "5": {
-                        "then": "Il n'y a pas de piste cyclable"
+                    "1": {
+                        "then": "Il y a une piste cyclable séparée de la route"
                     },
                     "2": {
                         "then": "Il y a une piste cyclable, mais elle n'est pas séparée de la route sur la carte."
                     },
                     "3": {
                         "then": "Il y a une piste cyclable dessinée séparement"
+                    },
+                    "4": {
+                        "then": "Il n'y a pas de piste cyclable"
+                    },
+                    "5": {
+                        "then": "Il n'y a pas de piste cyclable"
                     }
                 },
                 "question": "Quel type de piste cyclable il y a ici ?"
@@ -1704,8 +1708,8 @@
                     "2": {
                         "then": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
                     },
-                    "7": {
-                        "then": "Impasse / Aucun véhicule roulant"
+                    "2": {
+                        "then": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
                     },
                     "3": {
                         "then": "Utilisable pour les roues robustes : VTT, voitures, pousse-pousse"
@@ -1718,50 +1722,53 @@
                     },
                     "6": {
                         "then": "Utilisable pour les véhicules hors route spécialisés : tracteur, véhicule 4x4"
+                    },
+                    "7": {
+                        "then": "Impasse / Aucun véhicule roulant"
                     }
                 },
                 "question": "Quel est l'état de la piste cyclable ?"
             },
             "Cycleway:surface": {
                 "mappings": {
+                    "0": {
+                        "then": "Cette piste cyclable n'est pas goudronnée"
+                    },
+                    "1": {
+                        "then": "Cette piste cyclable est goudronée"
+                    },
+                    "2": {
+                        "then": "Cette piste cyclable est asphaltée"
+                    },
+                    "3": {
+                        "then": "Cette piste cyclable est faite de petits pavés"
+                    },
+                    "4": {
+                        "then": "Cette piste cyclable est bétonée"
+                    },
+                    "5": {
+                        "then": "Cette piste cyclable est faite de pavés (taillé ou non)"
+                    },
+                    "6": {
+                        "then": "Cette piste cyclable est en pavés bruts et naturels"
+                    },
                     "7": {
                         "then": "Cette piste cyclable est en pavés plats ou carrés"
                     },
                     "8": {
                         "then": "Cette piste cyclable est faite en bois"
                     },
+                    "9": {
+                        "then": "Cette piste cyclable est faite en graviers"
+                    },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
                     "11": {
                         "then": "Cette piste cyclable est en cailloux"
                     },
                     "12": {
                         "then": "Cette piste cyclable est faite en sol brut"
-                    },
-                    "3": {
-                        "then": "Cette piste cyclable est faite de petits pavés"
-                    },
-                    "9": {
-                        "then": "Cette piste cyclable est faite en graviers"
-                    },
-                    "6": {
-                        "then": "Cette piste cyclable est en pavés bruts et naturels"
-                    },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
-                    },
-                    "1": {
-                        "then": "Cette piste cyclable est goudronée"
-                    },
-                    "4": {
-                        "then": "Cette piste cyclable est bétonée"
-                    },
-                    "0": {
-                        "then": "Cette piste cyclable n'est pas goudronnée"
-                    },
-                    "5": {
-                        "then": "Cette piste cyclable est faite de pavés (taillé ou non)"
-                    },
-                    "2": {
-                        "then": "Cette piste cyclable est asphaltée"
                     }
                 },
                 "question": "De quoi est faite la surface de la piste cyclable ?",
@@ -1786,17 +1793,17 @@
                     "0": {
                         "then": "La vitesse maximum est de 20 km/h"
                     },
-                    "4": {
-                        "then": "La vitesse maximum est de 90 km/h"
+                    "1": {
+                        "then": "La vitesse maximum est de 30 km/h"
                     },
                     "2": {
                         "then": "La vitesse maximum est de 50 km/h"
                     },
-                    "1": {
-                        "then": "La vitesse maximum est de 30 km/h"
-                    },
                     "3": {
                         "then": "La vitesse maximum est de 70 km/h"
+                    },
+                    "4": {
+                        "then": "La vitesse maximum est de 90 km/h"
                     }
                 },
                 "question": "Quelle est la vitesse maximum dans cette rue ?",
@@ -1804,6 +1811,9 @@
             },
             "Surface of the road": {
                 "mappings": {
+                    "0": {
+                        "then": "Cette piste cycable est  non durcie"
+                    },
                     "1": {
                         "then": "Cette piste cyclable est pavée"
                     },
@@ -1816,14 +1826,14 @@
                     "4": {
                         "then": "Cette piste cyclable est betonée"
                     },
-                    "11": {
-                        "then": "Cette piste cyclable est en cailloux"
+                    "5": {
+                        "then": "Cette piste cyclable est faite de pavés (taillé ou non)"
                     },
                     "0": {
                         "then": "Cette piste cycable est non durcie"
                     },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
+                    "7": {
+                        "then": "Cette piste cyclable est en pavés plats ou carrés"
                     },
                     "8": {
                         "then": "Cette piste cyclable est faite en bois"
@@ -1831,21 +1841,18 @@
                     "9": {
                         "then": "Cette piste cyclable est faite en graviers"
                     },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
                     "12": {
                         "then": "Cette piste cyclable est faite en sol brut"
-                    },
-                    "7": {
-                        "then": "Cette piste cyclable est en pavés plats ou carrés"
-                    },
-                    "6": {
-                        "then": "Cette piste cyclable est en pavés bruts et naturels"
-                    },
-                    "5": {
-                        "then": "Cette piste cyclable est faite de pavés (taillé ou non)"
                     }
                 },
-                "render": "Cette route est faite de {surface}",
-                "question": "De quel materiel est faite cette rue ?"
+                "question": "De quel materiel est faite cette rue ?",
+                "render": "Cette route est faite de {surface}"
             },
             "Surface of the street": {
                 "mappings": {
@@ -2012,6 +2019,326 @@
             }
         },
         "description": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure"
+    },
+    "defibrillator": {
+        "name": "Défibrillateurs",
+        "presets": {
+            "0": {
+                "title": "une défibrillateur"
+            }
+        },
+        "tagRenderings": {
+            "defibrillator-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Librement accessible"
+                    },
+                    "4": {
+                        "then": "Utilisable pour les véhicules à dégagement élevé : véhicule tout-terrain léger"
+                    },
+                    "5": {
+                        "then": "Utilisable pour les véhicules tout-terrain : véhicule tout-terrain lourd"
+                    },
+                    "7": {
+                        "then": "Impasse / Aucun véhicule roulant"
+                    },
+                    "6": {
+                        "then": "Utilisable pour les véhicules hors route spécialisés : tracteur, véhicule 4x4"
+                    },
+                    "2": {
+                        "then": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
+                    },
+                    "3": {
+                        "then": "Utilisable pour les roues robustes : VTT, voitures, pousse-pousse"
+                    },
+                    "1": {
+                        "then": "Utilisable pour les roues fines : vélo de course"
+                    }
+                },
+                "question": "Quelle est la douceur de cette rue ?"
+            },
+            "cyclelan-segregation": {
+                "mappings": {
+                    "3": {
+                        "then": "Cette piste cyclable est séparée par une bordure"
+                    },
+                    "0": {
+                        "then": "Cette piste cyclable est séparée par une ligne pointillée"
+                    },
+                    "2": {
+                        "then": "Cette piste cyclable est séparée par une voie de stationnement"
+                    },
+                    "1": {
+                        "then": "Cette piste cyclable est séparée par une ligne continue"
+                    }
+                },
+                "question": "Comment cette piste cyclable est-elle séparée de la route ?"
+            },
+            "cycleway-lane-track-traffic-signs": {
+                "mappings": {
+                    "0": {
+                        "then": "Piste cyclabe obligatoire"
+                    },
+                    "3": {
+                        "then": "Piste piétonne/cyclable non séparée"
+                    },
+                    "4": {
+                        "then": "Aucun panneau de signalisation présent"
+                    },
+                    "1": {
+                        "then": "Piste cyclable obligatoire (avec panneau supplémentaire)"
+                    },
+                    "2": {
+                        "then": "Piste piétonne/cyclable séparée"
+                    }
+                },
+                "question": "Quel panneau de signalisation cette a cette piste cyclable ?"
+            },
+            "cycleway-segregation": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette piste cyclable est séparée par une ligne pointillée"
+                    },
+                    "2": {
+                        "then": "Cette piste cyclable est séparée par une voie de stationnement"
+                    },
+                    "1": {
+                        "then": "Cette piste cyclable est séparée par une ligne continue"
+                    },
+                    "3": {
+                        "then": "Cette piste cyclable est séparée par une bordure"
+                    }
+                },
+                "question": "Comment cette piste cyclable est-elle séparée de la route ?"
+            },
+            "cycleway-traffic-signs": {
+                "mappings": {
+                    "4": {
+                        "then": "Piste cyclabe obligatoire"
+                    },
+                    "7": {
+                        "then": "Aucun panneau de signalisation présent"
+                    },
+                    "3": {
+                        "then": "Piste piétonne/cyclable non séparée"
+                    },
+                    "0": {
+                        "then": "Piste cyclabe obligatoire"
+                    },
+                    "1": {
+                        "then": "Piste cyclable obligatoire (avec panneau supplémentaire)"
+                    },
+                    "2": {
+                        "then": "Piste piétonne/cyclable séparée"
+                    },
+                    "5": {
+                        "then": "Piste cyclable (cyclomoteur) obligatoire"
+                    },
+                    "6": {
+                        "then": "Piste cyclable non obligatoire"
+                    }
+                },
+                "question": "Quel panneau de signalisation cette a cette piste cyclable ?"
+            },
+            "cycleway-traffic-signs-supplementary": {
+                "mappings": {
+                    "4": {
+                        "then": "Les VAE ne sont pas autorisés"
+                    },
+                    "5": {
+                        "then": "Les cyclomoteurs et les VAE ne sont pas autorisés"
+                    },
+                    "6": {
+                        "then": "Aucun panneau de signalisation supplémentaire présent"
+                    },
+                    "0": {
+                        "then": "Les cyclomoteurs doivent utiliser la piste cyclable"
+                    },
+                    "2": {
+                        "then": "Les cyclomoteurs et les VAE doivent utiliser la piste cyclable"
+                    },
+                    "3": {
+                        "then": "Les cyclomoteurs ne sont pas autorisés"
+                    },
+                    "1": {
+                        "then": "Les VAE (Vélo à Assistance Electrique) rapides doivent utiliser la piste cyclable"
+                    }
+                },
+                "question": "Le panneau de signalisation D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) a-t-il un panneau supplémentaire ?"
+            },
+            "is lit?": {
+                "mappings": {
+                    "3": {
+                        "then": "Cette route est éclairée 24h/24 et 7j/7"
+                    },
+                    "1": {
+                        "then": "Cette rue n'est pas éclairée"
+                    },
+                    "2": {
+                        "then": "Cette route est éclairée la nuit"
+                    },
+                    "0": {
+                        "then": "Utilisable pour les patins: patins à roulettes, skateboard"
+                    },
+                    "4": {
+                        "then": "Utilisable pour les véhicules à dégagement élevé : véhicule tout-terrain léger"
+                    },
+                    "5": {
+                        "then": "Utilisable pour les véhicules tout-terrain : véhicule tout-terrain lourd"
+                    },
+                    "7": {
+                        "then": "Impasse / Aucun véhicule roulant"
+                    },
+                    "6": {
+                        "then": "Utilisable pour les véhicules hors route spécialisés : tracteur, véhicule 4x4"
+                    },
+                    "2": {
+                        "then": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
+                    },
+                    "3": {
+                        "then": "Utilisable pour les roues robustes : VTT, voitures, pousse-pousse"
+                    },
+                    "1": {
+                        "then": "Utilisable pour les roues fines : vélo de course"
+                    }
+                },
+                "question": "Quelle est la douceur de cette rue ?"
+            },
+            "cyclelan-segregation": {
+                "mappings": {
+                    "3": {
+                        "then": "Cette piste cyclable est séparée par une bordure"
+                    },
+                    "0": {
+                        "then": "Cette piste cyclable est séparée par une ligne pointillée"
+                    },
+                    "2": {
+                        "then": "Cette piste cyclable est séparée par une voie de stationnement"
+                    },
+                    "1": {
+                        "then": "Cette piste cyclable est séparée par une ligne continue"
+                    }
+                },
+                "question": "Comment cette piste cyclable est-elle séparée de la route ?"
+            },
+            "cycleway-lane-track-traffic-signs": {
+                "mappings": {
+                    "0": {
+                        "then": "Piste cyclabe obligatoire"
+                    },
+                    "3": {
+                        "then": "Piste piétonne/cyclable non séparée"
+                    },
+                    "4": {
+                        "then": "Aucun panneau de signalisation présent"
+                    },
+                    "1": {
+                        "then": "Piste cyclable obligatoire (avec panneau supplémentaire)"
+                    },
+                    "2": {
+                        "then": "Piste piétonne/cyclable séparée"
+                    }
+                },
+                "question": "Quel panneau de signalisation cette a cette piste cyclable ?"
+            },
+            "cycleway-segregation": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette piste cyclable est séparée par une ligne pointillée"
+                    },
+                    "2": {
+                        "then": "Cette piste cyclable est séparée par une voie de stationnement"
+                    },
+                    "1": {
+                        "then": "Cette piste cyclable est séparée par une ligne continue"
+                    },
+                    "3": {
+                        "then": "Cette piste cyclable est séparée par une bordure"
+                    }
+                },
+                "question": "Comment cette piste cyclable est-elle séparée de la route ?"
+            },
+            "cycleway-traffic-signs": {
+                "mappings": {
+                    "4": {
+                        "then": "Piste cyclabe obligatoire"
+                    },
+                    "7": {
+                        "then": "Aucun panneau de signalisation présent"
+                    },
+                    "3": {
+                        "then": "Piste piétonne/cyclable non séparée"
+                    },
+                    "0": {
+                        "then": "Piste cyclabe obligatoire"
+                    },
+                    "1": {
+                        "then": "Piste cyclable obligatoire (avec panneau supplémentaire)"
+                    },
+                    "2": {
+                        "then": "Piste piétonne/cyclable séparée"
+                    },
+                    "5": {
+                        "then": "Piste cyclable (cyclomoteur) obligatoire"
+                    },
+                    "6": {
+                        "then": "Piste cyclable non obligatoire"
+                    }
+                },
+                "question": "Quel panneau de signalisation cette a cette piste cyclable ?"
+            },
+            "cycleway-traffic-signs-supplementary": {
+                "mappings": {
+                    "4": {
+                        "then": "Les VAE ne sont pas autorisés"
+                    },
+                    "5": {
+                        "then": "Les cyclomoteurs et les VAE ne sont pas autorisés"
+                    },
+                    "6": {
+                        "then": "Aucun panneau de signalisation supplémentaire présent"
+                    },
+                    "0": {
+                        "then": "Les cyclomoteurs doivent utiliser la piste cyclable"
+                    },
+                    "2": {
+                        "then": "Les cyclomoteurs et les VAE doivent utiliser la piste cyclable"
+                    },
+                    "3": {
+                        "then": "Les cyclomoteurs ne sont pas autorisés"
+                    },
+                    "1": {
+                        "then": "Les VAE (Vélo à Assistance Electrique) rapides doivent utiliser la piste cyclable"
+                    }
+                },
+                "question": "Le panneau de signalisation D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) a-t-il un panneau supplémentaire ?"
+            },
+            "is lit?": {
+                "mappings": {
+                    "3": {
+                        "then": "Cette route est éclairée 24h/24 et 7j/7"
+                    },
+                    "1": {
+                        "then": "Cette rue n'est pas éclairée"
+                    },
+                    "2": {
+                        "then": "Cette route est éclairée la nuit"
+                    },
+                    "0": {
+                        "then": "Cette rue est éclairée"
+                    }
+                },
+                "question": "Cette rue est-elle éclairée ?"
+            },
+            "cycleways_and_roads-cycleway:buffer": {
+                "render": "",
+                "question": "Quelle est la distance entre la piste cyclable et la route ?"
+            },
+            "width:carriageway": {
+                "question": "Quelle est la largeur de cette chaussée (en mètres) ?<br/><span class='subtle'>Elle est mesurée d'une bordure à l'autre et inclut donc la largeur des voies de stationnement parallèles</span>",
+                "render": "La largeur de cette chaussée est de <strong>{width:carriageway}m</strong>"
+            }
+        }
     },
     "defibrillator": {
         "name": "Défibrillateurs",
@@ -2693,673 +3020,7 @@
         "presets": {
             "0": {
                 "title": "une panneau d'informations"
-            }
-        },
-        "title": {
-            "render": "Panneau d'informations"
-        }
-    },
-    "map": {
-        "description": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
-        "name": "Cartes",
-        "presets": {
-            "0": {
-                "description": "Ajouter une carte manquante",
-                "title": "une carte"
-            }
-        },
-        "tagRenderings": {
-            "map-attribution": {
-                "mappings": {
-                    "0": {
-                        "then": "L’attribution est clairement inscrite ainsi que la licence ODBL"
-                    },
-                    "1": {
-                        "then": "L’attribution est clairement inscrite mais la licence est absente"
-                    },
-                    "2": {
-                        "then": "OpenStreetMap n’est pas mentionné, un sticker OpenStreetMap a été collé"
-                    },
-                    "3": {
-                        "then": "Il n'y a aucune attribution"
-                    },
-                    "4": {
-                        "then": "Il n'y a aucune attribution"
-                    }
-                },
-                "question": "L’attribution à OpenStreetMap est elle-présente ?"
-            },
-            "map-map_source": {
-                "mappings": {
-                    "0": {
-                        "then": "Cette carte est basée sur OpenStreetMap"
-                    }
-                },
-                "question": "Sur quelles données cette carte est-elle basée ?",
-                "render": "Cette carte est basée sur {map_source}"
-            }
-        },
-        "title": {
-            "render": "Carte"
-        }
-    },
-    "nature_reserve": {
-        "tagRenderings": {
-            "Curator": {
-                "question": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public",
-                "render": "{curator} est en charge de la conservation de la réserve"
-            },
-            "Dogs?": {
-                "mappings": {
-                    "0": {
-                        "then": "Les chiens doivent être tenus en laisse"
-                    },
-                    "1": {
-                        "then": "Chiens interdits"
-                    },
-                    "2": {
-                        "then": "Les chiens sont autorisés à se promener librement"
-                    }
-                },
-                "question": "Les chiens sont-ils autorisés dans cette réserve naturelle ?"
-            },
-            "Email": {
-                "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
-                "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "Surface area": {
-                "render": "Superficie : {_surface:ha}&nbsp;ha"
-            },
-            "phone": {
-                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
-            }
-        }
-    },
-    "picnic_table": {
-        "description": "La couche montrant les tables de pique-nique",
-        "name": "Tables de pique-nique",
-        "presets": {
-            "0": {
-                "title": "une table de pique-nique"
-            }
-        },
-        "tagRenderings": {
-            "picnic_table-material": {
-                "mappings": {
-                    "0": {
-                        "then": "C’est une table en bois"
-                    },
-                    "1": {
-                        "then": "C’est une table en béton"
-                    },
-                    "2": {
-                        "then": "Cette table de pique-nique est en plastique (recyclé)"
-                    }
-                },
-                "question": "En quel matériau est faite la table de pique-nique ?",
-                "render": "La table est faite en {material}"
-            }
-        },
-        "title": {
-            "render": "Table de pique-nique"
-        }
-    },
-    "playground": {
-        "description": "Aire de jeu",
-        "name": "Aire de jeu",
-        "presets": {
-            "0": {
-                "title": "une terrain de jeux"
-            }
-        },
-        "tagRenderings": {
-            "Playground-wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Entièrement accessible aux personnes en fauteuil roulant"
-                    },
-                    "1": {
-                        "then": "Accessibilité limitée pour les personnes en fauteuil roulant"
-                    },
-                    "2": {
-                        "then": "Non accessible aux personnes en fauteuil roulant"
-                    }
-                },
-                "question": "Ce terrain de jeux est-il accessible aux personnes en fauteuil roulant ?"
-            },
-            "playground-access": {
-                "mappings": {
-                    "0": {
-                        "then": "Accessible au public"
-                    },
-                    "2": {
-                        "then": "Réservée aux clients"
-                    },
-                    "3": {
-                        "then": "Réservée aux élèves de l’école"
-                    },
-                    "4": {
-                        "then": "Non accessible"
-                    }
-                },
-                "question": "L’aire de jeu est-elle accessible au public ?"
-            },
-            "playground-email": {
-                "question": "Quelle est l'adresse électronique du responsable de l'aire de jeux ?",
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "playground-lit": {
-                "mappings": {
-                    "0": {
-                        "then": "L’aire de jeu est éclairée de nuit"
-                    },
-                    "1": {
-                        "then": "L’aire de jeu n’est pas éclairée de nuit"
-                    }
-                },
-                "question": "Ce terrain de jeux est-il éclairé la nuit ?"
-            },
-            "playground-max_age": {
-                "question": "Quel est l’âge maximum autorisé pour utiliser l’aire de jeu ?",
-                "render": "Accessible aux enfants de {max_age} au maximum"
-            },
-            "playground-min_age": {
-                "question": "Quel est l'âge minimal requis pour accéder à ce terrain de jeux ?",
-                "render": "Accessible aux enfants de plus de {min_age} ans"
-            },
-            "playground-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Accessible du lever au coucher du soleil"
-                    },
-                    "1": {
-                        "then": "Toujours accessible"
-                    }
-                },
-                "question": "Quand ce terrain de jeux est-il accessible ?"
-            },
-            "playground-operator": {
-                "question": "Qui est en charge de l’exploitation de l’aire de jeu ?",
-                "render": "Exploité par {operator}"
-            },
-            "playground-phone": {
-                "question": "Quel est le numéro de téléphone du responsable du terrain de jeux ?",
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "playground-surface": {
-                "mappings": {
-                    "0": {
-                        "then": "La surface est en <b>gazon</b>"
-                    },
-                    "1": {
-                        "then": "La surface est en <b>sable</b>"
-                    },
-                    "2": {
-                        "then": "La surface est en <b>copeaux de bois</b>"
-                    },
-                    "3": {
-                        "then": "La surface est en <b>pavés</b>"
-                    },
-                    "4": {
-                        "then": "La surface est en <b>bitume</b>"
-                    },
-                    "5": {
-                        "then": "La surface est en <b>béton</b>"
-                    },
-                    "6": {
-                        "then": "La surface n’a <b>pas de revêtement</b>"
-                    },
-                    "7": {
-                        "then": "La surface a <b>un revêtement</b>"
-                    }
-                },
-                "question": "De quelle matière est la surface de l’aire de jeu ?<br/><i>Pour plusieurs matières, sélectionner la principale</i>",
-                "render": "La surface est en <b>{surface}</b>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Aire de jeu <i>{name}</i>"
-                }
-            },
-            "render": "Aire de jeu"
-        }
-    },
-    "public_bookcase": {
-        "description": "Une armoire ou une boite contenant des livres en libre accès",
-        "name": "Microbibliothèque",
-        "presets": {
-            "0": {
-                "title": "une microbibliothèque"
-            }
-        },
-        "tagRenderings": {
-            "bookcase-booktypes": {
-                "mappings": {
-                    "0": {
-                        "then": "Livres pour enfants"
-                    },
-                    "1": {
-                        "then": "Livres pour les adultes"
-                    }
-                },
-                "question": "Quel type de livres peut-on dans cette microbibliothèque ?"
-            },
-            "bookcase-is-accessible": {
-                "mappings": {
-                    "0": {
-                        "then": "Accèssible au public"
-                    },
-                    "1": {
-                        "then": "Accèssible aux clients"
-                    }
-                },
-                "question": "Cette microbibliothèque est-elle librement accèssible ?"
-            },
-            "bookcase-is-indoors": {
-                "mappings": {
-                    "0": {
-                        "then": "Cette microbibliothèque est en intérieur"
-                    },
-                    "1": {
-                        "then": "Cette microbibliothèque est en extérieur"
-                    },
-                    "2": {
-                        "then": "Cette microbibliothèque est en extérieur"
-                    }
-                },
-                "question": "Cette microbiliothèque est-elle en extérieur ?"
-            },
-            "public_bookcase-brand": {
-                "mappings": {
-                    "0": {
-                        "then": "Fait partie du réseau Little Free Library"
-                    },
-                    "1": {
-                        "then": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe"
-                    }
-                },
-                "question": "Cette microbibliothèque fait-elle partie d'un réseau/groupe ?",
-                "render": "Cette microbibliothèque fait partie du groupe {brand}"
-            },
-            "public_bookcase-capacity": {
-                "question": "Combien de livres peuvent entrer dans cette microbibliothèque ?",
-                "render": "{capacity} livres peuvent entrer dans cette microbibliothèque"
-            },
-            "public_bookcase-name": {
-                "mappings": {
-                    "0": {
-                        "then": "Cette microbibliothèque n'a pas de nom"
-                    }
-                },
-                "question": "Quel est le nom de cette microbibliothèque ?",
-                "render": "Le nom de cette microbibliothèque est {name}"
-            },
-            "public_bookcase-operator": {
-                "question": "Qui entretien cette microbibliothèque ?",
-                "render": "Entretenue par {operator}"
-            },
-            "public_bookcase-ref": {
-                "mappings": {
-                    "0": {
-                        "then": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe"
-                    }
-                },
-                "question": "Quelle est le numéro de référence de cette microbibliothèque ?",
-                "render": "Cette microbibliothèque du réseau {brand} possède le numéro {ref}"
-            },
-            "public_bookcase-start_date": {
-                "question": "Quand a été installée cette microbibliothèque ?",
-                "render": "Installée le {start_date}"
-            },
-            "public_bookcase-website": {
-                "question": "Y a-t-il un site web avec plus d'informations sur cette microbibliothèque ?",
-                "render": "Plus d'infos sur <a href='{website}' target='_blank'>le site web</a>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Microbibliothèque <i>{name}</i>"
-                }
-            },
-            "render": "Microbibliothèque"
-        }
-    },
-    "school": {
-        "name": "Écoles primaires et secondaires",
-        "presets": {
-            "0": {
-                "title": "une école primaire ou secondaire"
-            }
-        },
-        "tagRenderings": {
-            "8": {
-                "override": {
-                    "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",
-                    "+mappings": {
-                        "0": {
-                            "then": "La langue principale de cette école est inconnue"
-                        }
-                    }
-                }
-            },
-            "capacity": {
-                "question": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?",
-                "render": "Cette école peut accueillir au maximum {capacity} étudiants"
-            },
-            "education-level-belgium": {
-                "mappings": {
-                    "0": {
-                        "then": "Il s'agit d'une école avec une section maternelle où les jeunes enfants reçoivent un enseignement qui prépare à la lecture et à l'écriture."
-                    },
-                    "1": {
-                        "then": "Il s'agit d'une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>"
-                    },
-                    "2": {
-                        "then": "Il s'agit d'une école secondaire qui offre toutes les classes"
-                    },
-                    "3": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
-                    },
-                    "4": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
-                    },
-                    "5": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
-                    },
-                    "6": {
-                        "then": "Cette école propose un enseignement post-secondaire (par exemple une septième ou huitième année de spécialisation)"
-                    }
-                },
-                "question": "Quel est le niveau d'enseignement dispensé dans cette école ?"
-            },
-            "gender": {
-                "mappings": {
-                    "0": {
-                        "then": "Les garçons et les filles peuvent s'inscrire ici et suivre des cours ensemble"
-                    },
-                    "1": {
-                        "then": "Les garçons et les filles peuvent s'inscrire ici, mais ils sont séparés (par exemple, ils ont des cours dans des classes différentes ou à des heures différentes)"
-                    },
-                    "2": {
-                        "then": "C'est une école réservée aux garçons"
-                    },
-                    "3": {
-                        "then": "C'est une école réservée aux filles"
-                    }
-                },
-                "question": "Quels genres de personnes peuvent s'inscrire dans cette école ?"
-            },
-            "school-name": {
-                "question": "Quel est le nom de cet établissement scolaire?",
-                "render": "Cet établissement scolaire s'appelle {name}"
-            },
-            "target-audience": {
-                "mappings": {
-                    "0": {
-                        "then": "Ceci est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?"
-                    },
-                    "1": {
-                        "then": "Ceci est un établissement scolaire pour étudiants sans besoins partucliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>"
-                    },
-                    "2": {
-                        "then": "Ceci est un établissement où des adultes sont formés au niveau mentionné."
-                    },
-                    "3": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)"
-                    },
-                    "4": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants ayant des troubles dapprentissage"
-                    },
-                    "5": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants aveugles ou malvoyants"
-                    },
-                    "6": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants sourds ou malentendants"
-                    },
-                    "7": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants en situation de handicap"
-                    },
-                    "8": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants ayant des besoins particuliers"
-                    }
-                },
-                "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc ",
-                "render": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}"
-            }
-        },
-        "title": {
-            "render": "School <i>{name}</i>"
-        }
-    },
-    "shops": {
-        "description": "Un magasin",
-        "name": "Magasin",
-        "presets": {
-            "0": {
-                "description": "Ajouter un nouveau magasin",
-                "title": "une magasin"
-            }
-        },
-        "tagRenderings": {
-            "shops-name": {
-                "question": "Qu'est-ce que le nom de ce magasin ?"
-            },
-            "2": {
-                "override": {
-                    "render": "C'est une {boutique}",
-                    "question": "Quel genre de magasin est-ce?"
-                }
-            },
-            "copyshop-print-sizes": {
-                "mappings": {
-                    "0": {
-                        "then": "Cette boutique peut imprimer sur des papiers de format A4"
-                    },
-                    "1": {
-                        "then": "Cette boutique peut imprimer sur des papiers de format A3"
-                    },
-                    "2": {
-                        "then": "Cette boutique peut imprimer sur des papiers de format A2"
-                    },
-                    "3": {
-                        "then": "Cette boutique peut imprimer sur des papiers de format A1"
-                    },
-                    "4": {
-                        "then": "Cette boutique peut imprimer sur des papiers de format A0"
-                    }
-                },
-                "question": "Quels formats de papier cette boutique propose-t-elle ?"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
-                "1": {
-                    "then": "{shop}"
-                }
-            },
-            "render": "Magasin"
-        },
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "N'afficher que les magasins vendant {search}"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "N'afficher que les magasins portant le nom {search}"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Accepte les espèces"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Accepte les cartes de paiement"
-                    }
-                }
-            }
-        },
-        "deletion": {
-            "extraDeleteReasons": {
-                "0": {
-                    "explanation": "{title()} a fermé définitivement"
-                }
-            }
-        }
-    },
-    "slow_roads": {
-        "tagRenderings": {
-            "slow_roads-surface": {
-                "mappings": {
-                    "0": {
-                        "then": "La surface est en <b>herbe</b>"
-                    },
-                    "1": {
-                        "then": "La surface est en <b>terre</b>"
-                    },
-                    "2": {
-                        "then": "La surface est <b>non pavée</b>"
-                    },
-                    "3": {
-                        "then": "La surface est en <b>sable</b>"
-                    },
-                    "4": {
-                        "then": "La surface est en <b>pierres pavées</b>"
-                    },
-                    "5": {
-                        "then": "La surface est en <b>bitume</b>"
-                    },
-                    "6": {
-                        "then": "La surface est en <b>béton</b>"
-                    },
-                    "7": {
-                        "then": "La surface est <b>pavée</b>"
-                    }
-                },
-                "render": "La surface en <b>{surface}</b>"
-            }
-        }
-    },
-    "sport_pitch": {
-        "description": "Un terrain de sport",
-        "name": "Terrains de sport",
-        "presets": {
-            "0": {
-                "title": "une table de ping-pong"
-            },
-            "1": {
-                "title": "une terrain de sport"
-            }
-        },
-        "tagRenderings": {
-            "sport-pitch-access": {
-                "mappings": {
-                    "0": {
-                        "then": "Accessible au public"
-                    },
-                    "1": {
-                        "then": "Accès limité (par exemple uniquement sur réservation, à certains horaires…)"
-                    },
-                    "2": {
-                        "then": "Accessible uniquement aux membres du club"
-                    },
-                    "3": {
-                        "then": "Privé - Pas accessible au public"
-                    }
-                },
-                "question": "Est-ce que ce terrain de sport est accessible au public ?"
-            },
-            "sport-pitch-reservation": {
-                "mappings": {
-                    "0": {
-                        "then": "Il est obligatoire de réserver pour utiliser ce terrain de sport"
-                    },
-                    "1": {
-                        "then": "Il est recommendé de réserver pour utiliser ce terrain de sport"
-                    },
-                    "2": {
-                        "then": "Il est possible de réserver, mais ce n'est pas nécéssaire pour utiliser ce terrain de sport"
-                    },
-                    "3": {
-                        "then": "On ne peut pas réserver"
-                    }
-                },
-                "question": "Doit-on réserver pour utiliser ce terrain de sport ?"
-            },
-            "sport_pitch-email": {
-                "question": "Quelle est l'adresse courriel du gérant ?"
-            },
-            "sport_pitch-opening_hours": {
-                "mappings": {
-                    "1": {
-                        "then": "Accessible en permanence"
-                    }
-                },
-                "question": "Quand ce terrain est-il accessible ?"
-            },
-            "sport_pitch-phone": {
-                "question": "Quel est le numéro de téléphone du gérant ?"
-            },
-            "sport_pitch-sport": {
-                "mappings": {
-                    "0": {
-                        "then": "Ici, on joue au basketball"
-                    },
-                    "1": {
-                        "then": "Ici, on joue au football"
-                    },
-                    "2": {
-                        "then": "C'est une table de ping-pong"
-                    },
-                    "3": {
-                        "then": "Ici, on joue au tennis"
-                    },
-                    "4": {
-                        "then": "Ici, on joue au korfball"
-                    },
-                    "5": {
-                        "then": "Ici, on joue au basketball"
-                    }
-                },
-                "question": "À quel sport peut-on jouer ici ?",
-                "render": "Ici on joue au {sport}"
-            },
-            "sport_pitch-surface": {
-                "mappings": {
-                    "0": {
-                        "then": "La surface est de l'<b>herbe</b>"
-                    },
-                    "1": {
-                        "then": "La surface est du <b>sable</b>"
-                    },
-                    "2": {
-                        "then": "La surface est des <b>pavés</b>"
-                    },
-                    "3": {
-                        "then": "La surface est de l'<b>asphalte</b>"
-                    },
-                    "4": {
-                        "then": "La surface est du <b>béton</b>"
-                    }
-                },
-                "question": "De quelle surface est fait ce terrain de sport ?",
-                "render": "La surface est <b>{surface}</b>"
+
             }
         },
         "title": {
@@ -3493,7 +3154,10 @@
                         "then": "Il s'agit d'un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici"
                     },
                     "1": {
-                        "then": "Il s'agit d'une université, d'un établissement d'enseignement supérieur où sont délivrés des diplômes de bachelor ou plus."
+                        "then": "C’est une table en béton"
+                    },
+                    "2": {
+                        "then": "Cette table de pique-nique est en plastique (recyclé)"
                     }
                 },
                 "question": "De quel type d'établissement s'agit-il ?"
@@ -3682,11 +3346,15 @@
                 }
             }
         },
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "A une table à langer"
+
+        "tagRenderings": {
+            "8": {
+                "override": {
+                    "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",
+                    "+mappings": {
+                        "0": {
+                            "then": "La langue principale de cette école est inconnue"
+                        }
                     }
                 }
             },
@@ -3713,6 +3381,87 @@
             }
         },
         "description": "Un calque montrant les toilettes (publiques)"
+    },
+    "trail": {
+        "name": "Sentiers",
+        "tagRenderings": {
+            "shops-name": {
+                "question": "Qu'est-ce que le nom de ce magasin ?"
+            },
+            "2": {
+                "override": {
+                    "render": "C'est une {boutique}",
+                    "question": "Quel genre de magasin est-ce?"
+                }
+            },
+            "copyshop-print-sizes": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette boutique peut imprimer sur des papiers de format A4"
+                    },
+                    "1": {
+                        "then": "Cette boutique peut imprimer sur des papiers de format A3"
+                    },
+                    "2": {
+                        "then": "Cette boutique peut imprimer sur des papiers de format A2"
+                    },
+                    "3": {
+                        "then": "Cette boutique peut imprimer sur des papiers de format A1"
+                    },
+                    "4": {
+                        "then": "Cette boutique peut imprimer sur des papiers de format A0"
+                    }
+                },
+                "question": "Quels formats de papier cette boutique propose-t-elle ?"
+            }
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "A une table à langer"
+                    }
+                }
+            },
+            "render": "Magasin"
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "N'afficher que les magasins vendant {search}"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "N'afficher que les magasins portant le nom {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepte les espèces"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Accepte les cartes de paiement"
+                    }
+                }
+            }
+        },
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} a fermé définitivement"
+                }
+            }
+        }
     },
     "trail": {
         "name": "Sentiers",
@@ -3959,6 +3708,538 @@
                         "human": " mètres"
                     }
                 }
+            }
+        }
+    },
+    "doctors": {
+        "tagRenderings": {
+            "name": {
+                "render": "Ce cabinet médical s'appelle {name}",
+                "question": "Comment s'appelle ce cabinet médical ?"
+            },
+            "specialty": {
+                "mappings": {
+                    "2": {
+                        "then": "C'est un psychiatre"
+                    },
+                    "3": {
+                        "then": "C'est un pédiatre"
+                    },
+                    "1": {
+                        "then": "C'est un gynécologue"
+                    },
+                    "0": {
+                        "then": "C'est un médecin généraliste"
+                    }
+                },
+                "question": "En quoi ce médecin est-il spécialisé ?",
+                "render": "Ce médecin est spécialisé dans {healthcare:speciality}"
+            }
+        },
+        "title": {
+            "render": "Cabinet medical {nom}"
+        },
+        "presets": {
+            "0": {
+                "title": "un cabinet médical"
+            },
+            "1": {
+                "title": "un cabinet de dentistes"
+            },
+            "2": {
+                "title": "un cabinet de kinésithérapeutes"
+            }
+        },
+        "description": "Ce calque montre les cabinets médicaux, les dentistes et autres établissements de santé",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert maintenant"
+                    }
+                }
+            }
+        },
+        "name": "Médecins"
+    },
+    "elevator": {
+        "name": "ascenseur",
+        "tagRenderings": {
+            "door-width": {
+                "question": "Quelle est la largeur de l'entrée de cet ascenseur ?",
+                "render": "Les portes de cet ascenseur ont une largeur de {canonical(door:width)}"
+            },
+            "elevator-depth": {
+                "render": "Cet ascenseur a une profondeur de {canonical(elevator:depth)}",
+                "question": "Quelle est la profondeur de cet ascenseur ?"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet ascenseur est en panne"
+                    },
+                    "1": {
+                        "then": "Cet ascenseur est fermé <span class='subtle'>par ex. parce que des travaux de rénovation sont en cours</span>"
+                    },
+                    "3": {
+                        "then": "Cet ascenseur fonctionne"
+                    },
+                    "2": {
+                        "then": "Cet ascenseur fonctionne"
+                    }
+                },
+                "question": "Cet ascenseur fonctionne-t-il ?"
+            },
+            "elevator-width": {
+                "question": "Quelle est la largeur de cet ascenseur ?",
+                "render": "Cet ascenseur a une largeur de {canonical(elevator:width)}"
+            }
+        },
+        "title": "Ascenseur",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "mètre"
+                    },
+                    "1": {
+                        "human": "centimètre"
+                    }
+                }
+            }
+        },
+        "description": "Ce calque montre les ascenseurs et demande l'état opérationnel et les dimensions de l'ascenseur. Utile pour les informations sur l'accessibilité en fauteuil roulant",
+        "presets": {
+            "0": {
+                "title": "un ascenseur"
+            }
+        }
+    },
+    "entrance": {
+        "tagRenderings": {
+            "Door_type": {
+                "mappings": {
+                    "4": {
+                        "then": "Une porte qui roule du haut, généralement vue pour les garages"
+                    },
+                    "3": {
+                        "then": "Une porte coulissante où la porte coulisse latéralement, généralement parallèlement à un mur"
+                    },
+                    "5": {
+                        "then": "Ceci est une entrée sans porte physique"
+                    },
+                    "1": {
+                        "then": "Une porte battante classique soutenue par des joints"
+                    },
+                    "2": {
+                        "then": "Une porte tournante suspendue à un arbre central, tournant dans une enceinte cylindrique"
+                    },
+                    "0": {
+                        "then": "Le type de porte n'est pas connu"
+                    }
+                },
+                "question": "Quel est le type de cette porte ?<br/><span class='subtle'>Le fait que la porte soit automatisée ou non est demandé dans la question suivante</span>"
+            },
+            "Entrance type": {
+                "mappings": {
+                    "1": {
+                        "then": "Il s'agit d'une porte intérieure, séparant une pièce ou un couloir d'un même bâtiment"
+                    },
+                    "7": {
+                        "then": "Ceci est la sortie de secours"
+                    },
+                    "4": {
+                        "then": "Ceci est une entrée de service - normalement utilisée uniquement pour les employés, la livraison, …"
+                    },
+                    "3": {
+                        "then": "Ceci est une entrée secondaire"
+                    },
+                    "8": {
+                        "then": "C'est l'entrée d'une maison privée"
+                    },
+                    "0": {
+                        "then": "Aucun type d'entrée spécifique n'est connu"
+                    },
+                    "2": {
+                        "then": "Ceci est l'entrée principale"
+                    },
+                    "5": {
+                        "then": "Ceci est une sortie où l'on ne peut pas entrer"
+                    },
+                    "6": {
+                        "then": "C'est une entrée où l'on ne peut qu'entrer (mais pas sortir)"
+                    }
+                },
+                "question": "De quel type d'entrée s'agit-il ?"
+            },
+            "automatic_door": {
+                "mappings": {
+                    "1": {
+                        "then": "Cette porte n'est <b>pas</b> automatisée"
+                    },
+                    "2": {
+                        "then": "Cette porte s'ouvrira automatiquement lorsqu'un <b>mouvement</b> sera détecté"
+                    },
+                    "8": {
+                        "then": "Cette porte sera ouverte par le personnel sur demande"
+                    },
+                    "3": {
+                        "then": "Cette porte s'ouvrira automatiquement lorsqu'un <b>capteur au sol</b> est déclenché"
+                    },
+                    "0": {
+                        "then": "C'est une porte automatique"
+                    },
+                    "4": {
+                        "then": "Cette porte s'ouvrira automatiquement lorsqu'un <b>bouton est pressé</b>"
+                    },
+                    "5": {
+                        "then": "Cette porte tourne automatiquement tout le temps, mais dispose d'un <b>bouton pour la ralentir</b>, par ex. pour les utilisateurs de fauteuils roulants"
+                    },
+                    "7": {
+                        "then": "Cette porte sera ouverte par le personnel à la demande en <b>appuyant sur un bouton</b>"
+                    },
+                    "6": {
+                        "then": "Cette porte tourne automatiquement tout le temps"
+                    }
+                }
+            },
+            "kerb-height": {
+                "render": "La hauteur du seuil de porte de cette porte est {kerb:height}",
+                "question": "Quelle est la hauteur de ce seuil ?",
+                "freeform": {
+                    "placeholder": "Hauteur du seuil de porte"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Cette porte n'a pas de seuil"
+                    }
+                }
+            },
+            "width": {
+                "render": "Cette porte a une largeur de {canonical(width)} mètre",
+                "question": "Quelle est la largeur de cette porte/entrée ?"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "mètre"
+                    },
+                    "1": {
+                        "human": "centimètre"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "une entrée"
+            }
+        },
+        "title": {
+            "render": "Entrée"
+        },
+        "name": "Entrée",
+        "description": "Une couche montrant les entrées et offrant des capacités pour étudier certaines données avancées qui sont importantes, par exemple. les utilisateurs de fauteuils roulants (mais aussi les utilisateurs de vélos, les personnes qui veulent faire des livraisons, …)"
+    },
+    "kerbs": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tous types de bordures"
+                    },
+                    "2": {
+                        "question": "Bordure abaissée (~3 cm)"
+                    },
+                    "4": {
+                        "question": "Pas de trottoir"
+                    },
+                    "5": {
+                        "question": "Bordure de hauteur inconnue"
+                    },
+                    "1": {
+                        "question": "Bordure surélevée (>3 cm)"
+                    },
+                    "3": {
+                        "question": "Bordure affleurante (~0cm)"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "1": {
+                        "question": "Bordure avec revêtement podotactile"
+                    },
+                    "3": {
+                        "question": "Bordure sans information sur le revêtement podotactile"
+                    },
+                    "0": {
+                        "question": "Bordures avec ou sans revêtement podotactile"
+                    },
+                    "2": {
+                        "question": "Bordure sans revêtement podotactile"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "kerb-type": {
+                "mappings": {
+                    "1": {
+                        "then": "Cette bordure est abaissée (~3 cm)"
+                    },
+                    "3": {
+                        "then": "Il n'y a pas de bordure ici"
+                    },
+                    "4": {
+                        "then": "Il y a un trottoir de hauteur inconnue"
+                    },
+                    "0": {
+                        "then": "Cette bordure est surélevée (>3 cm)"
+                    },
+                    "2": {
+                        "then": "Cette bordure est affleurante (~0cm)"
+                    }
+                },
+                "question": "Quelle est la hauteur de ce trottoir ?"
+            },
+            "tactile-paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette bordure a un revêtement podotactile."
+                    },
+                    "1": {
+                        "then": "Cette bordure n'a pas de revêtement podotactile."
+                    },
+                    "2": {
+                        "then": "Cette bordure a un pavage tactile, mais il est incorrect"
+                    }
+                },
+                "question": "Y a-t-il un revêtement tactile sur cette bordure ?"
+            },
+            "kerb-height": {
+                "question": "Quelle est la hauteur de ce trottoir ?",
+                "freeform": {
+                    "placeholder": "Hauteur de la bordure"
+                },
+                "question": "Y a-t-il des toilettes réservées aux personnes en fauteuil roulant ?"
+            },
+            "wheelchair-door-width": {
+                "question": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?",
+                "render": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(door:width)}"
+            },
+            "Opening-hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Ouvert 24h/24 et 7j/7"
+                    }
+                },
+                "question": "Quand ces toilettes sont-elles ouvertes ?"
+            }
+        },
+        "title": {
+            "render": "Toilettes"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "mètre"
+                    },
+                    "1": {
+                        "human": "centimètre"
+                    }
+                }
+            }
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "A une table à langer"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Utilisation gratuite"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert maintenant"
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accessible aux fauteuils roulants"
+                    }
+                }
+            }
+        },
+        "description": "Un calque montrant les toilettes (publiques)"
+    },
+    "trail": {
+        "name": "Sentiers",
+        "tagRenderings": {
+            "Color": {
+                "mappings": {
+                    "0": {
+                        "human": "centimètres",
+                        "humanSingular": "centimètre"
+                    },
+                    "1": {
+                        "human": "mètres",
+                        "humanSingular": "mètre"
+                    }
+                }
+            }
+        },
+        "description": "Un calque montrant les bordures.",
+        "name": "Bordures",
+        "title": {
+            "render": "Bordure"
+        },
+        "presets": {
+            "0": {
+                "description": "Bordure dans un trottoir",
+                "title": "une bordure"
+            }
+        }
+    },
+    "parking": {
+        "tagRenderings": {
+            "capacity-disabled": {
+                "render": "Il y a {capacity:disabled} places de stationnement pour personnes à mobilité réduite",
+                "freeform": {
+                    "placeholder": "Nombre de places de stationnement réservées aux personnes à mobilité réduite"
+                },
+                "mappings": {
+                    "1": {
+                        "then": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite"
+                    },
+                    "0": {
+                        "then": "Il y a des places de stationnement pour personnes à mobilité réduite, mais on ne sait pas combien"
+                    }
+                },
+                "question": "Combien y a-t-il de places de stationnement pour personnes à mobilité réduite dans ce parking ?"
+            },
+            "capacity": {
+                "question": "Combien de places de stationnement y a-t-il dans ce parking ?",
+                "render": "Il y a {capacité} places de stationnement",
+                "freeform": {
+                    "placeholder": "Nombre de places de stationnement"
+                }
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Il s'agit d'un parking en surface"
+                    },
+                    "1": {
+                        "then": "Ceci est un lieu de stationnement à côté d'une route"
+                    },
+                    "2": {
+                        "then": "Il s'agit d'un parking souterrain"
+                    },
+                    "3": {
+                        "then": "Il s'agit d'un parking à plusieurs étages"
+                    },
+                    "4": {
+                        "then": "Il s'agit d'un parking sur le toit"
+                    },
+                    "5": {
+                        "then": "Il s'agit d'une voie de stationnement sur la route"
+                    },
+                    "6": {
+                        "then": "Il s'agit d'un parking couvert par des carports"
+                    },
+                    "7": {
+                        "then": "Il s'agit d'un parking composé de box de garage"
+                    },
+                    "8": {
+                        "then": "Ceci est un parking sur une aire de stationnement"
+                    },
+                    "9": {
+                        "then": "Il s'agit d'un parking composé de cabanons"
+                    }
+                },
+                "question": "De quel type de stationnement s'agit-il ?"
+            }
+        },
+        "description": "Un calque montrant les parkings",
+        "title": {
+            "render": "Lieu de stationnement"
+        },
+        "name": "Lieu de stationnement",
+        "presets": {
+            "0": {
+                "title": "un lieu de stationnement pour voitures"
+            }
+        }
+    },
+    "reception_desk": {
+        "tagRenderings": {
+            "desk-height": {
+                "render": "La hauteur du bureau est <b>{canonical(desk:height)}</b>",
+                "question": "Quelle est la hauteur de la réception ? <div class='subtle'>Ceci est mesuré du sol à la partie utilisable la plus basse du bureau</div>"
+            }
+        },
+        "title": {
+            "render": "Bureau d'accueil"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "1": {
+                        "human": "centimètre"
+                    },
+                    "0": {
+                        "human": "mètre"
+                    }
+                }
+            }
+        },
+        "description": "Un calque montrant où se trouvent les bureaux d'accueil et qui demande des informations d'accessibilité",
+        "name": "Bureaux d'accueil",
+        "presets": {
+            "0": {
+                "title": "un bureau d'accueil"
+            }
+        }
+    },
+    "walls_and_buildings": {
+        "tagRenderings": {
+            "_entrance:width": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette entrée n'a pas d'informations sur sa largeur"
+                    }
+                },
+                "render": "<a href ='#{_entrance:id} '>Cette porte a une largeur de {canonical(_entrance:width)} mètres </a>"
+            }
+        },
+        "title": {
+            "render": "Mur ou bâtiment"
+        },
+        "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur."
+    },
+    "pedestrian_path": {
+        "description": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche",
+        "name": "Sentiers piétons"
+    },
+    "gps_track": {
+        "name": "Votre chemin parcouru",
+        "tagRenderings": {
+            "Privacy notice": {
+                "render": "C'est le chemin que vous avez parcouru depuis l'ouverture de ce site. Ne vous inquiétez pas - ceci n'est visible que pour vous et personne d'autre. Vos données de localisation ne sont jamais envoyées hors de l'appareil."
             }
         }
     },

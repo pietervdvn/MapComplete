@@ -230,6 +230,10 @@
     },
     {
       "commits": 2,
+      "contributor": "Andrews Leruth"
+    },
+    {
+      "commits": 2,
       "contributor": "Manuel Tassi"
     },
     {
@@ -291,10 +295,6 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
-    },
-    {
-      "commits": 1,
-      "contributor": "Andrews Leruth"
     },
     {
       "commits": 1,
