@@ -756,8 +756,8 @@ export default class SpecialVisualizations {
                 },
                 {
                     funcName: "canonical",
-                    docs: "Converts a short, canonical value into the long, translated text",
-                    example: "{canonical(length)} will give 42 metre (in french)",
+                    docs: "Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text. ",
+                    example: "If the object has `length=42`, then `{canonical(length)}` will be shown as **42 meter** (in english), **42 metre** (in french), ...",
                     args: [{
                         name: "key",
                         doc: "The key of the tag to give the canonical text for",
