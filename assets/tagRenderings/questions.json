@@ -866,6 +866,22 @@
     "description": "Shows a table with all the tags of the feature",
     "render": "{all_tags()}"
   },
+  "multilevels": {
+    "builtin": "level",
+    "override": {
+      "question": {
+        "en": "What levels does this elevator go to?"
+      },
+      "render": {
+        "en": "This elevator goes to floors {level}"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "string"
+      },
+      "multiAnswer" : true
+    }
+  },
   "level": {
     "question": {
       "nl": "Op welke verdieping bevindt dit punt zich?",

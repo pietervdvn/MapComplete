@@ -15,6 +15,7 @@
   },
   "tagRenderings": [
     "images",
+    "multilevels",
     {
       "id": "operational_status",
       "question": {

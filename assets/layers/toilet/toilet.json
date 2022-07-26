@@ -65,6 +65,7 @@
   ],
   "tagRenderings": [
     "images",
+    "level",
     {
       "question": {
         "en": "Are these toilets publicly accessible?",
@@ -526,7 +527,6 @@
         ]
       }
     },
-    "level",
     "description"
   ],
   "filter": [
@@ -541,7 +541,10 @@
             "es": "Accesible con sillas de ruedas"
           },
           "osmTags": {
-            "or": ["wheelchair=yes", "wheelchair=designated"]
+            "or": [
+              "wheelchair=yes",
+              "wheelchair=designated"
+            ]
           }
         }
       ]
@@ -619,7 +622,10 @@
         "mappings": [
           {
             "if": {
-              "or": ["wheelchair=yes", "wheelchair=designated"]
+              "or": [
+                "wheelchair=yes",
+                "wheelchair=designated"
+              ]
             },
             "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
           },
@@ -634,7 +640,6 @@
           }
         ]
       },
-      
       "iconBadges": [
         {
           "if": "opening_hours~*",

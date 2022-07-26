@@ -27,6 +27,7 @@
   },
   "tagRenderings": [
     "images",
+    "level",
     {
       "id": "parking-type",
       "mappings": [

@@ -93,7 +93,9 @@
         "de": "Wie ist der Name dieses Geschäfts?",
         "es": "¿Cual es el nombre de esta tienda?"
       },
-      "render": "This shop is called <i>{name}</i>",
+      "render": {
+        "en": "This shop is called <i>{name}</i>"
+      },
       "freeform": {
         "key": "name"
       },
@@ -124,6 +126,7 @@
     "email",
     "phone",
     "payment-options",
+    "level",
     {
       "id": "copyshop-print-sizes",
       "condition": {

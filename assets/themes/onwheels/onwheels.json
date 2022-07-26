@@ -23,6 +23,7 @@
     {
       "builtin": "bike_repair_station",
       "override": {
+        "minzoom": 15,
         "name": null,
         "shownByDefault": false,
         "mapRendering": [
@@ -68,6 +69,7 @@
     {
       "builtin": "cafe_pub",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/cafe.svg",
@@ -81,6 +83,12 @@
       "builtin": "entrance",
       "override": {
         "minzoom": 19,
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/entrance.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ],
         "syncSelection": "theme-only",
         "filter":[
           {
@@ -105,6 +113,7 @@
     {
       "builtin": "food",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/restaurant.svg",
@@ -169,6 +178,7 @@
     {
       "builtin": "parking",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/parking.svg",
@@ -187,10 +197,20 @@
         "shownByDefault": false
       }
     },
-    "school",
+    {
+      "builtin": "school",
+      "override": {
+        "mapRendering": [
+          {
+            "label": null
+          }
+        ]
+      }
+    },
     {
       "builtin": "shops",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/shop.svg",
@@ -220,6 +240,7 @@
     {
       "builtin": "pharmacy",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/pharmacy.svg",
@@ -232,6 +253,7 @@
     {
       "builtin": "doctors",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/doctor.svg",
@@ -243,6 +265,7 @@
     {
       "builtin": "hospital",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/hospital.svg",
@@ -272,18 +295,43 @@
       "builtin": "elevator",
       "override": {
         "minzoom": 19,
-        "syncSelection": "theme-only"
+        "syncSelection": "theme-only",
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/elevator.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
       }
     },
     {
       "builtin": "hotel",
       "override": {
+        "minzoom": 15,
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/hotel.svg",
             "iconSize": "40,40,bottom"
           }
         ]
+      }
+    },
+    {
+      "builtin": "governments",
+      "override": {
+        "minzoom": 15,
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/government.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "indoors",
+      "override": {
+        "minzoom": 19
       }
     },
     {
@@ -319,7 +367,7 @@
     ],
     "+tagRenderings": [
       {
-        "id": "_poi_entrance:width",
+        "id": "_containing_poi_entrance:width",
         "condition": {
           "and": [
             "entrance=",
@@ -328,10 +376,7 @@
           ]
         },
         "render": {
-          "en": "<a href='#{_poi_entrance:id}'>This door has a width of {canonical(_poi_entrance:width)} meters</a>",
-          "nl": "<a href='#{_poi_entrance:id}'>Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter</a>",
-          "de": "<a href='#{_poi_entrance:id}'>Diese Tür hat eine Drchgangsbreite von {canonical(_poi_entrance:width)} Meter</a>",
-          "es": "<a href='#{_poi_entrance:id}'>Esta puerta tiene una ancho de {canonical(_poi_entrance:width)} metros</a>"
+          "en": "The containing building can be entered via <a href='#{_poi_entrance:id}'>a door of {canonical(_poi_entrance:width)}</a>"
         },
         "freeform": {
           "key": "_poi_entrance:width",
@@ -341,10 +386,7 @@
           {
             "if": "_poi_entrance:width=",
             "then": {
-              "en": "This entrance has no width information",
-              "de": "Dieser Eingang hat keine Breitenangabe",
-              "fr": "Cet accès n'a pas d'informations de largeur",
-              "nl": "Deze ingang heeft geen informatie over de breedte"
+              "en": "The containing building has no information on door widths. Add a door and measure the width to get information"
             }
           }
         ]

@@ -48,6 +48,36 @@
     ]
   },
   {
+    "path": "elevator.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "entrance.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
+    "path": "government.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CT Steward"
+    ],
+    "sources": [
+      "https://www.ctsteward.com/"
+    ]
+  },
+  {
     "path": "hospital.svg",
     "license": "CC-BY-SA",
     "authors": [
