@@ -673,7 +673,19 @@
     },
     "onwheels": {
         "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
-        "title": "OnWheels"
+        "title": "OnWheels",
+        "overrideAll": {
+            "+tagRenderings": {
+                "0": {
+                    "render": "On peut entrer dans ce batiment via <a href='#{_poi_entrance:id}'>une porte de {canonical(_poi_entrance:width)}</a>",
+                    "mappings": {
+                        "0": {
+                            "then": "Ce bâtiment n'a aucune information sur les largeurs de portes. Ajoutez une porte et mesurez la largeur pour obtenir des informations"
+                        }
+                    }
+                }
+            }
+        }
     },
     "openwindpowermap": {
         "description": "Une carte indiquant les éoliennes et permettant leur édition.",
@@ -904,5 +916,8 @@
         "description": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
         "shortDescription": "Une carte des poubelles",
         "title": "Poubelles"
+    },
+    "walls_and_buildings": {
+        "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur."
     }
 }
