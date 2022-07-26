@@ -2,9 +2,10 @@ import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
 
 export default class Img extends BaseUIElement {
-    private _src: string;
+    
+    private readonly _src: string;
     private readonly _rawSvg: boolean;
-    private _options: { fallbackImage?: string };
+    private readonly _options: { readonly fallbackImage?: string };
 
     constructor(src: string, rawSvg = false, options?: {
         fallbackImage?: string
