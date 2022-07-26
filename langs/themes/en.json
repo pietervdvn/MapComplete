@@ -751,6 +751,58 @@
     },
     "onwheels": {
         "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
+        "layers": {
+            "2": {
+                "override": {
+                    "title": "Pedestrian path"
+                }
+            },
+            "5": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Any/No width info"
+                                },
+                                "1": {
+                                    "question": "Any width info"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "7": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "All types of kerbs"
+                                },
+                                "1": {
+                                    "question": "Raised kerb (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Lowered kerb (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Flush kerb (~0cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "23": {
+                "override": {
+                    "=title": {
+                        "render": "Statistics"
+                    }
+                }
+            }
+        },
         "overrideAll": {
             "+tagRenderings": {
                 "0": {

@@ -31,6 +31,7 @@ All infrastructure that someone can cycle over, accompanied with questions about
 
   - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
   - [kerbs_and_crossings](https://mapcomplete.osm.be/kerbs_and_crossings)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
   - [rainbow_crossings](https://mapcomplete.osm.be/rainbow_crossings)
 

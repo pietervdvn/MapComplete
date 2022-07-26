@@ -4153,6 +4153,32 @@
             "render": "Hospital"
         }
     },
+    "hotel": {
+        "description": "Layer showing all hotels",
+        "name": "Hotels",
+        "presets": {
+            "0": {
+                "title": "a hotel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the hotel"
+                },
+                "question": "What is the name of this hotel?",
+                "render": "This hotel is called {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            },
+            "render": "Hotel"
+        }
+    },
     "hydrant": {
         "description": "Map layer to show fire hydrants.",
         "name": "Map of hydrants",
@@ -5667,7 +5693,8 @@
                 "question": "What paper formats does this shop offer?"
             },
             "shops-name": {
-                "question": "What is the name of this shop?"
+                "question": "What is the name of this shop?",
+                "render": "This shop is called <i>{name}</i>"
             }
         },
         "title": {
@@ -6310,6 +6337,9 @@
                     },
                     "1": {
                         "then": "No wheelchair access"
+                    },
+                    "2": {
+                        "then": "There is only a dedicated toilet for wheelchair users"
                     }
                 },
                 "question": "Is there a dedicated toilet for wheelchair users?"

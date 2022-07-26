@@ -34,6 +34,7 @@
     + [climbing.sportclimbing](#climbingsportclimbing)
     + [climbing.max_bolts](#climbingmax_bolts)
     + [all_tags](#all_tags)
+    + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
     + [questions](#questions)
     + [export_as_gpx](#export_as_gpx)
@@ -95,6 +96,7 @@
   - ghost_bike
   - governments
   - grass_in_parks
+  - hotel
   - hydrant
   - indoors
   - information_board
@@ -146,6 +148,7 @@
   - governments
   - hackerspace
   - hospital
+  - hotel
   - kindergarten_childcare
   - nature_reserve
   - observation_tower
@@ -178,6 +181,7 @@
   - governments
   - hackerspace
   - hospital
+  - hotel
   - kindergarten_childcare
   - pharmacy
   - recycling
@@ -207,6 +211,7 @@
   - governments
   - hackerspace
   - hospital
+  - hotel
   - kindergarten_childcare
   - pharmacy
   - recycling
@@ -290,7 +295,14 @@
 
 
   - bike_repair_station
+  - cafe_pub
   - charging_station
+  - entrance
+  - food
+  - parking
+  - picnic_table
+  - reception_desk
+  - shops
   - toilet
 
 
@@ -328,6 +340,7 @@
   - defibrillator
   - food
   - hackerspace
+  - hotel
   - observation_tower
   - transit_stops
 
@@ -379,6 +392,7 @@
   - dogpark
   - food
   - hackerspace
+  - hotel
   - shops
   - veterinary
 
@@ -482,6 +496,17 @@
 
 
   - cluster_style
+
+
+
+
+### multilevels 
+
+
+
+
+
+  - elevator
 
 
 

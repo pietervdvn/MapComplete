@@ -26,6 +26,7 @@ A layer showing hospital grounds
 
 
   - [healthcare](https://mapcomplete.osm.be/healthcare)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

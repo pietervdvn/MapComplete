@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4227,
+      "commits": 4259,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 120,
+      "commits": 127,
       "contributor": "Robin van der Linde"
     },
     {
@@ -45,6 +45,10 @@
       "contributor": "riQQ"
     },
     {
+      "commits": 21,
+      "contributor": "AlexanderRebai"
+    },
+    {
       "commits": 19,
       "contributor": "Niels Elgaard Larsen"
     },
@@ -71,10 +75,6 @@
     {
       "commits": 15,
       "contributor": "ToastHawaii"
-    },
-    {
-      "commits": 13,
-      "contributor": "AlexanderRebai"
     },
     {
       "commits": 13,
@@ -195,6 +195,14 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "HispanicMojitos"
+    },
+    {
+      "commits": 1,
+      "contributor": "kaipankrath"
     },
     {
       "commits": 1,

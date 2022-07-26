@@ -28,6 +28,7 @@ Pedestrian footpaths, especially used for indoor navigation and snapping entranc
 
 
   - [entrances](https://mapcomplete.osm.be/entrances)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

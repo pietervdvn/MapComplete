@@ -21,6 +21,7 @@
     + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_editcontributor,-_last_edit:contributor:uid,-_last_edit:changeset,-_last_edit:timestamp,-_version_number,-_backend)
     + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalkleft,-sidewalk:right,-generic_key:left:property,-generic_key:right:property)
     + [_geometry:type](#_geometrytype)
+    + [_level](#_level)
     + [distanceTo](#distanceto)
     + [overlapWith](#overlapwith)
     + [enclosingFeatures](#enclosingfeatures)
@@ -164,6 +165,16 @@ Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' an
 
 
 Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`
+
+
+
+
+
+### _level 
+
+
+
+Extract the 'level'-tag into a normalized, ';'-separated value
 
 
 

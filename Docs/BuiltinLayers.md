@@ -824,6 +824,7 @@ The following layers are included in MapComplete:
   - [hackerspace](./Layers/hackerspace.md)
   - [home_location](./Layers/home_location.md)
   - [hospital](./Layers/hospital.md)
+  - [hotel](./Layers/hotel.md)
   - [hydrant](./Layers/hydrant.md)
   - [id_presets](./Layers/id_presets.md)
   - [import_candidate](./Layers/import_candidate.md)

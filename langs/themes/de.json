@@ -743,6 +743,30 @@
     },
     "onwheels": {
         "description": "Auf dieser Karte werden öffentlich zugängliche Orte für Rollstuhlfahrer angezeigt und können leicht hinzugefügt werden",
+        "layers": {
+            "7": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Alle Arten von Bordsteinen"
+                                },
+                                "1": {
+                                    "question": "Erhöhter Bordstein (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Abgesenkter Bordstein (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Bündiger Bordstein (~0cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "overrideAll": {
             "+tagRenderings": {
                 "0": {

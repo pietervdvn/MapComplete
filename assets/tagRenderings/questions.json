@@ -879,7 +879,7 @@
         "key": "level",
         "type": "string"
       },
-      "multiAnswer" : true
+      "multiAnswer": true
     }
   },
   "level": {

@@ -55,6 +55,12 @@
             "question": "On what level is this feature located?",
             "render": "Located on the {level}th floor"
         },
+        "multilevels": {
+            "override": {
+                "question": "What levels does this elevator go to?",
+                "render": "This elevator goes to floors {level}"
+            }
+        },
         "opening_hours": {
             "question": "What are the opening hours of {title()}?",
             "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"

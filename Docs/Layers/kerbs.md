@@ -29,6 +29,7 @@ A layer showing kerbs.
 
 
   - [kerbs_and_crossings](https://mapcomplete.osm.be/kerbs_and_crossings)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

@@ -4005,6 +4005,32 @@
             "render": "Ziekenhuis"
         }
     },
+    "hotel": {
+        "description": "Laag die alle hotels toont",
+        "name": "Hotels",
+        "presets": {
+            "0": {
+                "title": "een hotel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van het hotel"
+                },
+                "question": "Wat is de naam van dit hotel?",
+                "render": "Dit hotel heet {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            },
+            "render": "Hotel"
+        }
+    },
     "hydrant": {
         "description": "Kaartlaag met brandkranen.",
         "name": "Kaart van brandkranen",
@@ -6017,6 +6043,9 @@
                     },
                     "1": {
                         "then": "Niet toegankelijk voor rolstoelgebruikers"
+                    },
+                    "2": {
+                        "then": "Er is alleen een toilet voor rolstoelgebruikers"
                     }
                 },
                 "question": "Is er een rolstoeltoegankelijke toilet voorzien?"

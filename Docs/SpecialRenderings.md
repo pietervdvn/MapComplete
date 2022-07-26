@@ -83,6 +83,8 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of nearby_images](#example-usage-of-nearby_images)
     + [mapillary_link](#mapillary_link)
       * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
+    + [statistics](#statistics)
+      * [Example usage of statistics](#example-usage-of-statistics)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -277,7 +279,7 @@ url | _undefined_ | The url to share (default: current URL)
 
 ### canonical 
 
- Converts a short, canonical value into the long, translated text 
+ Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text.  
 
 name | default | description
 ------ | --------- | -------------
@@ -286,7 +288,7 @@ key | _undefined_ | The key of the tag to give the canonical text for
 
 #### Example usage of canonical 
 
- {canonical(length)} will give 42 metre (in french)
+ If the object has `length=42`, then `{canonical(length)}` will be shown as **42 meter** (in english), **42 metre** (in french), ...
 
 
 
@@ -692,6 +694,16 @@ zoom | 18 | The startzoom of mapillary
 #### Example usage of mapillary_link 
 
  `{mapillary_link(18)}`
+
+
+
+### statistics 
+
+ Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer 
+
+#### Example usage of statistics 
+
+ `{statistics()}`
 
 
 

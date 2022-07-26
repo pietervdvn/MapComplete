@@ -877,6 +877,35 @@
       "value": "yes"
     },
     {
+      "key": "level",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Open Shop Map')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Shop' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Shop' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Shop' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Open Shop Map') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Shop' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Shop' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "-1"
+    },
+    {
       "key": "service:print:A4",
       "description": "Layer 'Shop' shows service:print:A4=yes with a fixed text, namely 'This shop can print on papers of size A4' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
       "value": "yes"

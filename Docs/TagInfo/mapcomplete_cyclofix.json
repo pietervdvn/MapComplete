@@ -1025,6 +1025,11 @@
       "value": "drinking_water"
     },
     {
+      "key": "drinking_water",
+      "description": "The MapComplete theme Cyclofix - an open map for cyclists has a layer Drinking water showing features with this tag",
+      "value": "yes"
+    },
+    {
       "key": "image",
       "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },

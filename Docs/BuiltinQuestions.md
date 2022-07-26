@@ -32,6 +32,7 @@ The following items can be easily reused in your layers
     + [payment-options-advanced](#payment-options-advanced)
     + [last_edit](#last_edit)
     + [all_tags](#all_tags)
+    + [multilevels](#multilevels)
     + [level](#level)
     + [smoking](#smoking)
     + [induction-loop](#induction-loop)
@@ -322,6 +323,25 @@ Read-only tagrendering
 {all_tags()}
 
 Read-only tagrendering
+
+
+
+### multilevels 
+
+
+
+This elevator goes to floors {level}
+
+What levels does this elevator go to?
+
+
+
+  - Located underground
+  - Located on the ground floor
+  - Located on the ground floor
+  - Located on the first floor
+  - Located on the first basement level
+
 
 
 
