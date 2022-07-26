@@ -1667,7 +1667,8 @@
                 "8": {
                     "then": "Rue cyclable {name}"
                 }
-            }
+            },
+            "render": ""
         },
         "tagRenderings": {
             "Cycleway type for a road": {
@@ -1676,7 +1677,7 @@
                         "then": "Il y a une voie partagée"
                     },
                     "1": {
-                        "then": "Il y a une piste cyclable separée de la route"
+                        "then": "Il y a une piste cyclable séparée de la route"
                     },
                     "2": {
                         "then": "Il y a une piste cyclable, mais elle n'est pas séparée de la route sur la carte."
@@ -1699,7 +1700,7 @@
                         "then": "Utilisable pour les patins: patins à roulettes, skateboard"
                     },
                     "1": {
-                        "then": "Utilisable pour les roues fines: vélo de course"
+                        "then": "Utilisable pour les roues fines : vélo de course"
                     },
                     "2": {
                         "then": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
@@ -1769,14 +1770,14 @@
             },
             "Is this a cyclestreet? (For a road)": {
                 "mappings": {
-                    "0": {
-                        "then": "Ceci est une route cyclable, et une zone à 30 km/h"
-                    },
                     "1": {
                         "then": "Ceci est une route cyclable"
                     },
                     "2": {
-                        "then": "Ceci n'est pas une route cyclable"
+                        "then": "Ceci n'est pas une route cyclable."
+                    },
+                    "0": {
+                        "then": "Ceci est une route cyclable, et une zone à 30 km/h."
                     }
                 },
                 "question": "Est-ce une route cyclable ?"
@@ -1849,6 +1850,153 @@
             },
             "Surface of the street": {
                 "mappings": {
+                    "0": {
+                        "then": "Utilisable pour les patins: patins à roulettes, skateboard"
+                    },
+                    "4": {
+                        "then": "Utilisable pour les véhicules à dégagement élevé : véhicule tout-terrain léger"
+                    },
+                    "5": {
+                        "then": "Utilisable pour les véhicules tout-terrain : véhicule tout-terrain lourd"
+                    },
+                    "7": {
+                        "then": "Impasse / Aucun véhicule roulant"
+                    },
+                    "6": {
+                        "then": "Utilisable pour les véhicules hors route spécialisés : tracteur, véhicule 4x4"
+                    },
+                    "2": {
+                        "then": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
+                    },
+                    "3": {
+                        "then": "Utilisable pour les roues robustes : VTT, voitures, pousse-pousse"
+                    },
+                    "1": {
+                        "then": "Utilisable pour les roues fines : vélo de course"
+                    }
+                },
+                "question": "Quelle est la douceur de cette rue ?"
+            },
+            "cyclelan-segregation": {
+                "mappings": {
+                    "3": {
+                        "then": "Cette piste cyclable est séparée par une bordure"
+                    },
+                    "0": {
+                        "then": "Cette piste cyclable est séparée par une ligne pointillée"
+                    },
+                    "2": {
+                        "then": "Cette piste cyclable est séparée par une voie de stationnement"
+                    },
+                    "1": {
+                        "then": "Cette piste cyclable est séparée par une ligne continue"
+                    }
+                },
+                "question": "Comment cette piste cyclable est-elle séparée de la route ?"
+            },
+            "cycleway-lane-track-traffic-signs": {
+                "mappings": {
+                    "0": {
+                        "then": "Piste cyclabe obligatoire"
+                    },
+                    "3": {
+                        "then": "Piste piétonne/cyclable non séparée"
+                    },
+                    "4": {
+                        "then": "Aucun panneau de signalisation présent"
+                    },
+                    "1": {
+                        "then": "Piste cyclable obligatoire (avec panneau supplémentaire)"
+                    },
+                    "2": {
+                        "then": "Piste piétonne/cyclable séparée"
+                    }
+                },
+                "question": "Quel panneau de signalisation cette a cette piste cyclable ?"
+            },
+            "cycleway-segregation": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette piste cyclable est séparée par une ligne pointillée"
+                    },
+                    "2": {
+                        "then": "Cette piste cyclable est séparée par une voie de stationnement"
+                    },
+                    "1": {
+                        "then": "Cette piste cyclable est séparée par une ligne continue"
+                    },
+                    "3": {
+                        "then": "Cette piste cyclable est séparée par une bordure"
+                    }
+                },
+                "question": "Comment cette piste cyclable est-elle séparée de la route ?"
+            },
+            "cycleway-traffic-signs": {
+                "mappings": {
+                    "4": {
+                        "then": "Piste cyclabe obligatoire"
+                    },
+                    "7": {
+                        "then": "Aucun panneau de signalisation présent"
+                    },
+                    "3": {
+                        "then": "Piste piétonne/cyclable non séparée"
+                    },
+                    "0": {
+                        "then": "Piste cyclabe obligatoire"
+                    },
+                    "1": {
+                        "then": "Piste cyclable obligatoire (avec panneau supplémentaire)"
+                    },
+                    "2": {
+                        "then": "Piste piétonne/cyclable séparée"
+                    },
+                    "5": {
+                        "then": "Piste cyclable (cyclomoteur) obligatoire"
+                    },
+                    "6": {
+                        "then": "Piste cyclable non obligatoire"
+                    }
+                },
+                "question": "Quel panneau de signalisation cette a cette piste cyclable ?"
+            },
+            "cycleway-traffic-signs-supplementary": {
+                "mappings": {
+                    "4": {
+                        "then": "Les VAE ne sont pas autorisés"
+                    },
+                    "5": {
+                        "then": "Les cyclomoteurs et les VAE ne sont pas autorisés"
+                    },
+                    "6": {
+                        "then": "Aucun panneau de signalisation supplémentaire présent"
+                    },
+                    "0": {
+                        "then": "Les cyclomoteurs doivent utiliser la piste cyclable"
+                    },
+                    "2": {
+                        "then": "Les cyclomoteurs et les VAE doivent utiliser la piste cyclable"
+                    },
+                    "3": {
+                        "then": "Les cyclomoteurs ne sont pas autorisés"
+                    },
+                    "1": {
+                        "then": "Les VAE (Vélo à Assistance Electrique) rapides doivent utiliser la piste cyclable"
+                    }
+                },
+                "question": "Le panneau de signalisation D7 (<img src='./assets/layers/cycleways_and_roads/traffic_sign/be/Belgian_road_sign_D07.svg' style='width: 1.5em'>) a-t-il un panneau supplémentaire ?"
+            },
+            "is lit?": {
+                "mappings": {
+                    "3": {
+                        "then": "Cette route est éclairée 24h/24 et 7j/7"
+                    },
+                    "1": {
+                        "then": "Cette rue n'est pas éclairée"
+                    },
+                    "2": {
+                        "then": "Cette route est éclairée la nuit"
+                    },
                     "0": {
                         "then": "Utilisable pour les patins: patins à roulettes, skateboard"
                     },
@@ -2346,6 +2494,254 @@
                     }
                 },
                 "question": "Cette friterie est-elle équipée de snacks végétariens ?"
+            },
+            "Cuisine": {
+                "mappings": {
+                    "5": {
+                        "then": "Des hamburgers sont servis ici"
+                    },
+                    "0": {
+                        "then": "C'est une pizzéria"
+                    },
+                    "2": {
+                        "then": "Restaurant Italien"
+                    },
+                    "3": {
+                        "then": "C'est un resto kebab"
+                    },
+                    "4": {
+                        "then": "C'est une sandwicherie"
+                    },
+                    "6": {
+                        "then": "Des sushis sont servis ici"
+                    },
+                    "7": {
+                        "then": "Ceci est un café"
+                    },
+                    "8": {
+                        "then": "C'est un Restaurant Italien (qui sert plus que des pâtes et des pizzas)"
+                    },
+                    "9": {
+                        "then": "Des plats français sont servis ici"
+                    },
+                    "11": {
+                        "then": "Des plats grecs sont servis ici"
+                    },
+                    "12": {
+                        "then": "Des plats indiens sont servis ici"
+                    },
+                    "13": {
+                        "then": "Des plats turcs sont servis ici"
+                    },
+                    "14": {
+                        "then": "Des plats thaïlandais sont servis ici"
+                    },
+                    "10": {
+                        "then": "Des plats chinois sont servis ici"
+                    },
+                    "1": {
+                        "then": "C'est une friterie"
+                    }
+                },
+                "question": "Quelle type de nourriture est servie ici ?",
+                "render": "Cet endroit sert principalement des plats {cuisine}"
+            },
+            "Vegetarian (no friture)": {
+                "mappings": {
+                    "2": {
+                        "then": "Des options végétariennes sont disponibles"
+                    },
+                    "0": {
+                        "then": "Aucune option végétarienne n'est disponible"
+                    },
+                    "3": {
+                        "then": "Tous les plats sont végétariens"
+                    },
+                    "1": {
+                        "then": "Certaines options végétariennes sont disponibles"
+                    }
+                },
+                "question": "Ce restaurant propose-t-il une option végétarienne ?"
+            },
+            "Vegan (no friture)": {
+                "mappings": {
+                    "1": {
+                        "then": "Certaines options végétaliennes sont disponibles"
+                    },
+                    "2": {
+                        "then": "Des options végétaliennes sont disponibles"
+                    },
+                    "3": {
+                        "then": "Tous les plats sont végétaliens"
+                    },
+                    "0": {
+                        "then": "Aucune option végétalienne disponible"
+                    }
+                },
+                "question": "Cet établissement sert-il des repas végétaliens ?"
+            },
+            "halal (no friture)": {
+                "mappings": {
+                    "2": {
+                        "then": "Il y a un menu halal"
+                    },
+                    "0": {
+                        "then": "Il n'y a pas d'options halal disponibles"
+                    },
+                    "1": {
+                        "then": "Il y a un petit menu halal"
+                    },
+                    "3": {
+                        "then": "Seules les options halal sont disponibles"
+                    }
+                },
+                "question": "Ce restaurant propose-t-il un menu halal ?"
+            },
+            "Fastfood vs restaurant": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est un fast-food, centrée sur le service rapide. Si des places sont disponibles, elles sont plutôt limitées et fonctionnelles."
+                    },
+                    "1": {
+                        "then": "Un <b>restaurant</b>, axé sur la création d'une expérience agréable où l'on est servi à table"
+                    }
+                },
+                "question": "Quel type de restaurant est-ce ?"
+            },
+            "Name": {
+                "question": "Quel est le nom de ce restaurant ?",
+                "render": "Le nom de ce restaurant est {name}"
+            },
+            "Takeaway": {
+                "mappings": {
+                    "1": {
+                        "then": "La vente à emporter est possible ici"
+                    },
+                    "0": {
+                        "then": "Ceci est un resto uniquement de vente à emporter"
+                    },
+                    "2": {
+                        "then": "La vente à emporter n'est pas possible ici"
+                    }
+                },
+                "question": "Cet établissement propose-t-il des plats à emporter ?"
+            },
+            "delivery": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce restaurant effectue la livraison à domicile (éventuellement via un tiers)"
+                    },
+                    "1": {
+                        "then": "Ce restaurant ne livre pas à domicile"
+                    }
+                },
+                "question": "Est-ce que {title()} livre sa nourriture à domicile ?"
+            }
+        },
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "C'est en fait un bar"
+                },
+                "1": {
+                    "then": "C'est en fait un café"
+                }
+            },
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} a fermé définitivement"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Restaurant <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Fast-food <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Fast-food"
+                }
+            },
+            "render": "Restaurant"
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert maintenant"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "A un menu végétarien"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "A un menu halal"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "A un menu végétalien"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Accepte les cartes de paiement"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Accepte les paiements en espèces"
+                    }
+                }
+            }
+        },
+        "description": "Une couche montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
+        "name": "Restaurants et nourriture rapide",
+        "presets": {
+            "1": {
+                "description": "Une entreprise alimentaire se concentrant sur le service rapide au comptoir et les plats à emporter",
+                "title": "un fast-food"
+            },
+            "2": {
+                "description": "Une restauration rapide centré sur la vente de frites",
+                "title": "Une friterie"
+            },
+            "0": {
+                "description": "Un lieu de restauration formel avec des installations pour s'asseoir vendant des repas complets servis par des serveurs",
+                "title": "un restaurant"
+            }
+        }
+    },
+    "ghost_bike": {
+        "name": "Vélos fantômes",
+        "presets": {
+            "0": {
+                "title": "une vélo fantôme"
+            }
+        },
+        "tagRenderings": {
+            "ghost-bike-explanation": {
+                "render": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident."
+            },
+            "ghost_bike-inscription": {
+                "question": "Quelle est l'inscription sur ce vélo fantôme ?",
+                "render": "<i>{inscription}</i>"
             },
             "Cuisine": {
                 "mappings": {
@@ -3672,6 +4068,52 @@
         "units": {
             "0": {
                 "applicableUnits": {
+                    "0": {
+                        "human": "mètre"
+                    },
+                    "1": {
+                        "human": "centimètre"
+                    }
+                }
+            }
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "A une table à langer"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Utilisation gratuite"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert maintenant"
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accessible aux fauteuils roulants"
+                    }
+                }
+            }
+        },
+        "description": "Un calque montrant les toilettes (publiques)"
+    },
+    "trail": {
+        "name": "Sentiers",
+        "tagRenderings": {
+            "Color": {
+                "mappings": {
                     "0": {
                         "human": "mètre"
                     },
