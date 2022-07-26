@@ -23,7 +23,13 @@ export default class Img extends BaseUIElement {
         if (Utils.runningFromConsole) {
             return source;
         }
-        return `data:image/svg+xml;base64,${(btoa(source))}`;
+        try{
+            return `data:image/svg+xml;base64,${(btoa(source))}`;
+        }catch (e){
+            console.error("Cannot create an image for", source.slice(0, 100))
+            console.trace("Cannot create an image for the given source string due to ", e)
+            return ""
+        }
     }
 
     static AsImageElement(source: string, css_class: string = "", style = ""): string {
