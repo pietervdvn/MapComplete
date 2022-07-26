@@ -904,5 +904,8 @@
         "description": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
         "shortDescription": "Une carte des poubelles",
         "title": "Poubelles"
+    },
+    "walls_and_buildings": {
+        "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur."
     }
 }
