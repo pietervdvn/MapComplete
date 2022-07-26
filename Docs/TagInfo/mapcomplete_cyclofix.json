@@ -385,12 +385,24 @@
       "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
     },
     {
+      "key": "contact:website",
+      "description": "Layer 'Bike repair/shop' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
       "key": "phone",
       "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
     },
     {
+      "key": "contact:phone",
+      "description": "Layer 'Bike repair/shop' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
       "key": "email",
       "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Bike repair/shop' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
     },
     {
       "key": "opening_hours",

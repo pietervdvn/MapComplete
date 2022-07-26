@@ -104,6 +104,10 @@
       "value": "no"
     },
     {
+      "key": "door:width",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+    },
+    {
       "key": "toilets:position",
       "description": "Layer 'Toilets' shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "seated"

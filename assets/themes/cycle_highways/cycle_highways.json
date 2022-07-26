@@ -22,7 +22,8 @@
     "fr": "Cette carte affiche les aménagements cyclables",
     "nl": "Deze kaart toont fietssnelwegen",
     "es": "Este mapa muestra carriles bici",
-    "nb_NO": "Kart som viser sykkelmotorveier"
+    "nb_NO": "Kart som viser sykkelmotorveier",
+    "ca": "Aquest mapa mostra carrils bici"
   },
   "version": "2021-08-23",
   "startLat": 51.1599,

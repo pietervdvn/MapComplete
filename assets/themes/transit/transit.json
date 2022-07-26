@@ -3,10 +3,12 @@
   "maintainer": "Robin van der Linde",
   "version": "20220406",
   "title": {
-    "en": "Bus routes"
+    "en": "Bus routes",
+    "de": "Buslinien"
   },
   "description": {
-    "en": "Plan your trip with the help of the public transport system."
+    "en": "Plan your trip with the help of the public transport system.",
+    "de": "Planen Sie Ihre Reise mit Hilfe von öffentlichen Verkehrsmitteln."
   },
   "icon": "./assets/layers/transit_stops/bus_stop.svg",
   "startZoom": 20,

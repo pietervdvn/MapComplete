@@ -60,6 +60,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -80,9 +82,9 @@ This is rendered with  Dit gebied wordt beheerd door {operator}
 
 
 
-  - Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a> corresponds with  operator~^[aA][nN][bB]$
+  - Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>  corresponds with  `operator~^[aA][nN][bB]$`
   - This option cannot be chosen as answer
-  - Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a> corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgenstchap Natuur en Bos' target='_blank'>Agenstchap Natuur en Bos</a>
+  - Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgenstchap Natuur en Bos' target='_blank'>Agenstchap Natuur en Bos</a>`
 
 
 
@@ -97,8 +99,8 @@ The question is  Wanneer is deze speelzone toegankelijk?
 
 
 
-  - Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00) corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D08:00-22:00' target='_blank'>08:00-22:00</a>
-  - Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00 corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3DJul-Aug 08:00-22:00' target='_blank'>Jul-Aug 08:00-22:00</a>
+  - Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D08:00-22:00' target='_blank'>08:00-22:00</a>`
+  - Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3DJul-Aug 08:00-22:00' target='_blank'>Jul-Aug 08:00-22:00</a>`
 
 
 

@@ -1,10 +1,12 @@
 {
   "id": "rainbow_crossings",
   "title": {
-    "en": "Rainbow pedestrian crossings"
+    "en": "Rainbow pedestrian crossings",
+    "de": "Regenbogen-Fußgängerübergänge"
   },
   "description": {
-    "en": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added"
+    "en": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
+    "de": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden"
   },
   "maintainer": "",
   "icon": "./assets/themes/rainbow_crossings/logo.svg",

@@ -144,13 +144,6 @@
             }
         }
     },
-    "bike_shop": {
-        "tagRenderings": {
-            "bike_shop-website": {
-                "question": "URL {name} apa?"
-            }
-        }
-    },
     "climbing_area": {
         "tagRenderings": {
             "name": {

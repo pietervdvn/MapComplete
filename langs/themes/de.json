@@ -647,6 +647,10 @@
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
         "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen"
     },
+    "healthcare": {
+        "description": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
+        "title": "Gesundheitswesen"
+    },
     "kerbs_and_crossings": {
         "description": "Eine Karte mit Bordsteinen und Überwegen.",
         "title": "Bordsteine und Überwege"
@@ -738,19 +742,19 @@
         "title": "Aussichtstürme"
     },
     "onwheels": {
+        "description": "Auf dieser Karte werden öffentlich zugängliche Orte für Rollstuhlfahrer angezeigt und können leicht hinzugefügt werden",
         "overrideAll": {
             "+tagRenderings": {
                 "0": {
-                    "render": "Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter",
                     "mappings": {
                         "0": {
                             "then": "Dieser Eingang hat keine Breitenangabe"
                         }
-                    }
+                    },
+                    "render": "Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter"
                 }
             }
         },
-        "description": "Auf dieser Karte werden öffentlich zugängliche Orte für Rollstuhlfahrer angezeigt und können leicht hinzugefügt werden",
         "title": "Auf Rädern"
     },
     "openwindpowermap": {
@@ -875,6 +879,10 @@
         "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
         "title": "Post- und Briefkastenkarte"
     },
+    "rainbow_crossings": {
+        "description": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden",
+        "title": "Regenbogen-Fußgängerübergänge"
+    },
     "shops": {
         "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
@@ -969,10 +977,18 @@
         "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
         "title": "Freie Toilettenkarte"
     },
+    "transit": {
+        "description": "Planen Sie Ihre Reise mit Hilfe von öffentlichen Verkehrsmitteln.",
+        "title": "Buslinien"
+    },
     "trees": {
         "description": "Kartieren Sie alle Bäume!",
         "shortDescription": "Kartieren Sie alle Bäume",
         "title": "Bäume"
+    },
+    "walls_and_buildings": {
+        "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
+        "title": "Wände und Gebäude"
     },
     "waste": {
         "description": "Eine Karte mit Abfalleimern und Recyclingeinrichtungen.",
@@ -982,21 +998,5 @@
         "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
-    },
-    "healthcare": {
-        "description": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
-        "title": "Gesundheitswesen"
-    },
-    "rainbow_crossings": {
-        "description": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden",
-        "title": "Regenbogen-Fußgängerübergänge"
-    },
-    "transit": {
-        "description": "Planen Sie Ihre Reise mit Hilfe von öffentlichen Verkehrsmitteln.",
-        "title": "Buslinien"
-    },
-    "walls_and_buildings": {
-        "title": "Wände und Gebäude",
-        "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden."
     }
 }

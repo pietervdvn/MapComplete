@@ -4,7 +4,8 @@
     "en": "Maxspeed",
     "es": "Velocidad",
     "ca": "Velocitat",
-    "de": "Höchstgeschwindigkeit"
+    "de": "Höchstgeschwindigkeit",
+    "nl": "Maximumsnelheid"
   },
   "source": {
     "osmTags": {

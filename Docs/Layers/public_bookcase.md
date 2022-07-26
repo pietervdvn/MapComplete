@@ -78,6 +78,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -98,7 +100,7 @@ This is rendered with  The name of this bookcase is {name}
 
 
 
-  - This bookcase doesn't have a name corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+  - This bookcase doesn't have a name  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -131,8 +133,8 @@ This is rendered with  This place mostly serves {books}
 
 
 
-  - Mostly children books corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren' target='_blank'>children</a>
-  - Mostly books for adults corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dadults' target='_blank'>adults</a>
+  - Mostly children books  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren' target='_blank'>children</a>`
+  - Mostly books for adults  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dadults' target='_blank'>adults</a>`
 
 
 
@@ -147,9 +149,9 @@ The question is  Is this bookcase located outdoors?
 
 
 
-  - This bookcase is located indoors corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
-  - This bookcase is located outdoors corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
-  - This bookcase is located outdoors corresponds with  
+  - This bookcase is located indoors  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>`
+  - This bookcase is located outdoors  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>`
+  - This bookcase is located outdoors  corresponds with  ``
   - This option cannot be chosen as answer
 
 
@@ -165,8 +167,8 @@ The question is  Is this public bookcase freely accessible?
 
 
 
-  - Publicly accessible corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - Only accessible to customers corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - Publicly accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>`
+  - Only accessible to customers  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>`
 
 
 Only visible if  `indoor=yes`  is shown
@@ -201,8 +203,8 @@ This is rendered with  This public bookcase is part of {brand}
 
 
 
-  - Part of the network 'Little Free Library' corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DLittle Free Library' target='_blank'>Little Free Library</a>
-  - This public bookcase is not part of a bigger network corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
+  - Part of the network 'Little Free Library'  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DLittle Free Library' target='_blank'>Little Free Library</a>`
+  - This public bookcase is not part of a bigger network  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -221,7 +223,7 @@ This is rendered with  The reference number of this public bookcase within {bran
 
 
 
-  - This bookcase is not part of a bigger network corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
+  - This bookcase is not part of a bigger network  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>`
 
 
 Only visible if  `brand~^..*$`  is shown

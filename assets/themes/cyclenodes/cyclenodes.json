@@ -6,14 +6,16 @@
     "es": "Redes de Nodos Ciclistas",
     "nb_NO": "Sykkelnodenettverk",
     "nl": "Fietsknooppuntennetwerken",
-    "fr": "Réseau de Nœuds Cyclistes"
+    "fr": "Réseau de Nœuds Cyclistes",
+    "ca": "Xarxa de nodes ciclistes"
   },
   "description": {
     "en": "This map shows cycle node networks and allows you to add new nodes easily",
     "de": "Diese Karte zeigt Knotenpunktnetzwerke für Radfahrer und erlaubt auch neue Knoten zu mappen",
     "es": "Este mapa muestra redes de nodos ciclistas y te permita añadir nodos nuevos de manera sencilla",
     "nl": "Deze kaart toont fietsknooppunten en laat je toe om eenvoudigweg nieuwe knooppunten toe te voegen",
-    "fr": "Cette carte montre les réseaux de nœuds cyclistes et vous permet d'ajouter facilement de nouveaux nœuds"
+    "fr": "Cette carte montre les réseaux de nœuds cyclistes et vous permet d'ajouter facilement de nouveaux nœuds",
+    "ca": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir nodes nous de manera senzilla"
   },
   "maintainer": "Sebastian Kürten",
   "icon": "./assets/themes/cyclenodes/logo.svg",
@@ -35,7 +37,8 @@
         "de": "Knotenpunktverbindungen",
         "es": "enlaces nodo a nodo",
         "nl": "verbindingen van node naar node",
-        "fr": "liens noeud à noeud"
+        "fr": "liens noeud à noeud",
+        "ca": "enllaços node a node"
       },
       "source": {
         "osmTags": {
@@ -85,7 +88,8 @@
             "de": "Wann wurde diese Knotenpunktverbindung zuletzt überprüft?",
             "es": "¿Cuándo se sondeó este enlace nodo a nodo por última vez?",
             "nl": "Wanneer werd deze node-naar-node verbinding het laast gesurveyed?",
-            "fr": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?"
+            "fr": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
+            "ca": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?"
           },
           "render": {
             "en": "This node to node link was last surveyed on {survey:date}",

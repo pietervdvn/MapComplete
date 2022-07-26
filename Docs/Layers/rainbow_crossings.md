@@ -59,6 +59,8 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -75,9 +77,9 @@ The question is  Does this crossing has rainbow paintings?
 
 
 
-  - This crossing has rainbow paintings corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:crossing:marking' target='_blank'>crossing:marking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing:marking%3Drainbow' target='_blank'>rainbow</a>
-  - No rainbow paintings here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:not:crossing:marking' target='_blank'>not:crossing:marking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:crossing:marking%3Drainbow' target='_blank'>rainbow</a>
-  - No rainbow paintings here corresponds with  crossing:marking!=rainbow
+  - This crossing has rainbow paintings  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing:marking' target='_blank'>crossing:marking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing:marking%3Drainbow' target='_blank'>rainbow</a>`
+  - No rainbow paintings here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:not:crossing:marking' target='_blank'>not:crossing:marking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:crossing:marking%3Drainbow' target='_blank'>rainbow</a>`
+  - No rainbow paintings here  corresponds with  `crossing:marking!=rainbow`
   - This option cannot be chosen as answer
 
 

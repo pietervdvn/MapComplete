@@ -82,7 +82,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with  contact:website~^..*$
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -91,6 +91,8 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 ### reviews 
 
 
+
+Shows the reviews module (including the possibility to leave a review)
 
 This tagrendering has no question and is thus read-only
 
@@ -112,7 +114,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a> corresponds with  contact:phone~^..*$
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
   - This option cannot be chosen as answer
 
 

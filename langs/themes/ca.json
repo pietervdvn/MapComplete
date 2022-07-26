@@ -17,6 +17,10 @@
         "shortDescription": "Un mapa amb estacions de lloguer de bicicletes i botigues de lloguer de bicicletes",
         "title": "Lloguer de bicicletes"
     },
+    "bicyclelib": {
+        "description": "Una biblioteca de bicicletes és un lloc on es poden prestar bicicletes, sovint per una petita quota anual. Un cas d'ús notable són les biblioteques de bicicletes per als nens, que els permet canviar per una bicicleta més gran quan han superat la seva bicicleta actual",
+        "title": "Biblioteques de bicicletes"
+    },
     "binoculars": {
         "description": "Un mapa amb prismàtics fixos en un pal. Sol trobar-se en llocs turístics, miradors, a la part alta de torres panoràmiques o ocasionalment en una reserva natural.",
         "shortDescription": "Un mapa amb prismàtics fixos",
@@ -110,15 +114,15 @@
                         "render": "Aquest lloc s'anomena {name}"
                     },
                     "caravansites-sanitary-dump": {
-                        "question": "Aquest lloc té una estació d'abocament sanitari?",
                         "mappings": {
-                            "1": {
-                                "then": "Aquest lloc no té una estació d'abocament sanitari"
-                            },
                             "0": {
                                 "then": "Aquest lloc té una estació d'abocament sanitari"
+                            },
+                            "1": {
+                                "then": "Aquest lloc no té una estació d'abocament sanitari"
                             }
-                        }
+                        },
+                        "question": "Aquest lloc té una estació d'abocament sanitari?"
                     },
                     "caravansites-toilets": {
                         "mappings": {
@@ -147,16 +151,17 @@
             },
             "1": {
                 "description": "Estacions d'abocament sanitari",
+                "name": "Estacions d'abocament sanitari",
                 "tagRenderings": {
                     "dumpstations-access": {
                         "mappings": {
                             "1": {
                                 "then": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc"
                             },
-                            "3": {
+                            "2": {
                                 "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
                             },
-                            "2": {
+                            "3": {
                                 "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
                             }
                         },
@@ -173,8 +178,7 @@
                             }
                         }
                     }
-                },
-                "name": "Estacions d'abocament sanitari"
+                }
             }
         },
         "title": "Llocs d'acampada"
@@ -217,6 +221,7 @@
         "title": "Open Climbing Map"
     },
     "cycle_highways": {
+        "description": "Aquest mapa mostra carrils bici",
         "layers": {
             "0": {
                 "name": "vies ciclistes",
@@ -225,19 +230,16 @@
                 }
             }
         },
-        "title": "Vies ciclistes",
-        "description": "Aquest mapa mostra carrils bici"
+        "title": "Vies ciclistes"
     },
     "cycle_infra": {
-        "title": "Infraestructura per a bicicletes",
         "description": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista. Fet durant #osoc21.",
-        "shortDescription": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista."
+        "shortDescription": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista.",
+        "title": "Infraestructura per a bicicletes"
     },
     "cyclenodes": {
+        "description": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir nodes nous de manera senzilla",
         "layers": {
-            "1": {
-                "name": "nodes"
-            },
             "0": {
                 "name": "enllaços node a node",
                 "tagRenderings": {
@@ -245,9 +247,11 @@
                         "question": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?"
                     }
                 }
+            },
+            "1": {
+                "name": "nodes"
             }
         },
-        "description": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir nodes nous de manera senzilla",
         "title": "Xarxa de nodes ciclistes"
     },
     "cyclestreets": {
@@ -268,8 +272,6 @@
                 }
             }
         },
-        "shortDescription": "Un mapa de carrers ciclistes",
-        "title": "Carrers ciclistes",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -283,45 +285,39 @@
                     }
                 }
             }
-        }
+        },
+        "shortDescription": "Un mapa de carrers ciclistes",
+        "title": "Carrers ciclistes"
     },
     "cyclofix": {
         "title": "Cyclofix - un mapa obert per a ciclistes"
     },
     "drinking_water": {
-        "title": "Aigua potable",
-        "description": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment"
+        "description": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment",
+        "title": "Aigua potable"
+    },
+    "education": {
+        "description": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació",
+        "title": "Educació"
     },
     "entrances": {
         "title": "Entrades"
     },
     "etymology": {
-        "shortDescription": "Quin és l'origen d'un topònim?",
-        "title": "Open Etymology Map",
         "layers": {
-            "2": {
-                "override": {
-                    "=name": "Parcs i boscos sense informació etimològica"
-                }
-            },
             "1": {
                 "override": {
                     "=name": "Carrers sense informació etimològica"
                 }
             },
+            "2": {
+                "override": {
+                    "=name": "Parcs i boscos sense informació etimològica"
+                }
+            },
             "3": {
                 "override": {
                     "=name": "Institucions educatives sense informació d'etimològica"
-                }
-            },
-            "6": {
-                "override": {
-                    "=name": "Llocs socials i de salut sense informació etimològica"
-                }
-            },
-            "7": {
-                "override": {
-                    "=name": "Llocs esportius sense informació etimològica"
                 }
             },
             "4": {
@@ -333,8 +329,20 @@
                 "override": {
                     "=name": "Llocs turístics sense informació etimològica"
                 }
+            },
+            "6": {
+                "override": {
+                    "=name": "Llocs socials i de salut sense informació etimològica"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Llocs esportius sense informació etimològica"
+                }
             }
-        }
+        },
+        "shortDescription": "Quin és l'origen d'un topònim?",
+        "title": "Open Etymology Map"
     },
     "facadegardens": {
         "layers": {
@@ -370,6 +378,10 @@
     "hailhydrant": {
         "shortDescription": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
         "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies"
+    },
+    "healthcare": {
+        "description": "En aquest mapa es mostren diversos elements relacionats amb la salut",
+        "title": "Assistència sanitària"
     },
     "maps": {
         "title": "Un mapa de mapes"
@@ -498,17 +510,5 @@
     },
     "waste_basket": {
         "title": "Papepera"
-    },
-    "healthcare": {
-        "title": "Assistència sanitària",
-        "description": "En aquest mapa es mostren diversos elements relacionats amb la salut"
-    },
-    "education": {
-        "title": "Educació",
-        "description": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació"
-    },
-    "bicyclelib": {
-        "title": "Biblioteques de bicicletes",
-        "description": "Una biblioteca de bicicletes és un lloc on es poden prestar bicicletes, sovint per una petita quota anual. Un cas d'ús notable són les biblioteques de bicicletes per als nens, que els permet canviar per una bicicleta més gran quan han superat la seva bicicleta actual"
     }
 }

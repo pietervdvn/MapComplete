@@ -879,12 +879,12 @@
         "overrideAll": {
             "+tagRenderings": {
                 "0": {
-                    "render": "Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter",
                     "mappings": {
                         "0": {
                             "then": "Deze ingang heeft geen informatie over de breedte"
                         }
-                    }
+                    },
+                    "render": "Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter"
                 }
             }
         }

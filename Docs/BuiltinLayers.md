@@ -108,7 +108,7 @@ Meta layer showing the current location of the user. Add this to your theme and 
 
   - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
@@ -151,7 +151,7 @@ Meta layer which contains the previous locations of the user as single points. T
 
   - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
@@ -195,7 +195,7 @@ Meta layer showing the home location of the user. The home location can be set i
 
   - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
@@ -279,6 +279,8 @@ This tagrendering has no question and is thus read-only
 
 
 
+Shows a button to export this feature as GPX. Especially useful for route relations
+
 This tagrendering has no question and is thus read-only
 
 
@@ -289,6 +291,8 @@ This tagrendering has no question and is thus read-only
 
 
 
+Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs
+
 This tagrendering has no question and is thus read-only
 
 
@@ -298,6 +302,8 @@ This tagrendering has no question and is thus read-only
 ### minimap 
 
 
+
+Shows a small map with the feature. Added by default to every popup
 
 This tagrendering has no question and is thus read-only
 
@@ -371,7 +377,7 @@ This layer shows notes on OpenStreetMap. Having this layer in your theme will tr
 
 
   - This layer is shown at zoomlevel **10** and higher
-  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
+  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely  `https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
 
 
 
@@ -525,7 +531,7 @@ This layer visualizes directions
 
 
   - This layer is shown at zoomlevel **16** and higher
-  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
 
 
 
@@ -803,12 +809,14 @@ The following layers are included in MapComplete:
   - [doctors](./Layers/doctors.md)
   - [dogpark](./Layers/dogpark.md)
   - [drinking_water](./Layers/drinking_water.md)
+  - [elevator](./Layers/elevator.md)
   - [entrance](./Layers/entrance.md)
   - [etymology](./Layers/etymology.md)
   - [extinguisher](./Layers/extinguisher.md)
   - [fire_station](./Layers/fire_station.md)
   - [food](./Layers/food.md)
   - [ghost_bike](./Layers/ghost_bike.md)
+  - [governments](./Layers/governments.md)
   - [gps_location](./Layers/gps_location.md)
   - [gps_location_history](./Layers/gps_location_history.md)
   - [gps_track](./Layers/gps_track.md)
@@ -819,6 +827,7 @@ The following layers are included in MapComplete:
   - [hydrant](./Layers/hydrant.md)
   - [id_presets](./Layers/id_presets.md)
   - [import_candidate](./Layers/import_candidate.md)
+  - [indoors](./Layers/indoors.md)
   - [information_board](./Layers/information_board.md)
   - [kerbs](./Layers/kerbs.md)
   - [kindergarten_childcare](./Layers/kindergarten_childcare.md)
@@ -838,6 +847,7 @@ The following layers are included in MapComplete:
   - [playground](./Layers/playground.md)
   - [public_bookcase](./Layers/public_bookcase.md)
   - [rainbow_crossings](./Layers/rainbow_crossings.md)
+  - [reception_desk](./Layers/reception_desk.md)
   - [recycling](./Layers/recycling.md)
   - [school](./Layers/school.md)
   - [shelter](./Layers/shelter.md)

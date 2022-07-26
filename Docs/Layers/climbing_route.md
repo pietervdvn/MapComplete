@@ -75,6 +75,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -95,7 +97,7 @@ This is rendered with  <strong>{name}</strong>
 
 
 
-  - This climbing route doesn't have a name corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+  - This climbing route doesn't have a name  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -142,7 +144,7 @@ This is rendered with  This route has {climbing:bolts} bolts <div class='subtle'
 
 
 
-  - This route is not bolted corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>
+  - This route is not bolted  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>`
 
 
 

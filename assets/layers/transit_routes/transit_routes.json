@@ -1,10 +1,12 @@
 {
   "id": "transit_routes",
   "name": {
-    "en": "Bus lines"
+    "en": "Bus lines",
+    "de": "Buslinien"
   },
   "description": {
-    "en": "Layer showing bus lines"
+    "en": "Layer showing bus lines",
+    "de": "Ebene mit Buslinien"
   },
   "source": {
     "osmTags": {
@@ -17,13 +19,15 @@
   "minzoom": 15,
   "title": {
     "render": {
-      "en": "Bus line"
+      "en": "Bus line",
+      "de": "Buslinie"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
-          "en": "{name}"
+          "en": "{name}",
+          "de": "{name}"
         }
       }
     ]
@@ -32,7 +36,8 @@
     {
       "color": {
         "render": {
-          "en": "#ff0000"
+          "en": "#ff0000",
+          "de": "#ff0000"
         },
         "mappings": [
           {
@@ -53,7 +58,8 @@
       },
       "render": "{name}",
       "question": {
-        "en": "What is the name for this bus line? (i.e. Bus XX: From => Via => To)"
+        "en": "What is the name for this bus line? (i.e. Bus XX: From => Via => To)",
+        "de": "Wie lautet der Name der Buslinie? (z.B. Bus XX: Von => Über => Nach)"
       }
     },
     {
@@ -64,10 +70,12 @@
         "placeholder": "City, Stop Name"
       },
       "render": {
-        "en": "This bus line begins at {from}"
+        "en": "This bus line begins at {from}",
+        "de": "Die Buslinie startet von {from}"
       },
       "question": {
-        "en": "What is the starting point for this bus line?"
+        "en": "What is the starting point for this bus line?",
+        "de": "Wo ist der Startpunkt dieser Buslinie?"
       }
     },
     {
@@ -78,10 +86,12 @@
         "placeholder": "City, Stop Name"
       },
       "render": {
-        "en": "This bus line goes via {via}"
+        "en": "This bus line goes via {via}",
+        "de": "Die Buslinie fährt über {via}"
       },
       "question": {
-        "en": "What is the via point for this bus line?"
+        "en": "What is the via point for this bus line?",
+        "de": "Über welchen Zwischenhalt fährt die Buslinie?"
       }
     },
     {
@@ -92,10 +102,12 @@
         "placeholder": "City, Stop Name"
       },
       "render": {
-        "en": "This bus line ends at {to}"
+        "en": "This bus line ends at {to}",
+        "de": "Der Endpunkt der Buslinie ist {to}"
       },
       "question": {
-        "en": "What is the ending point for this bus line?"
+        "en": "What is the ending point for this bus line?",
+        "de": "Wo ist der Endpunkt der Buslinie?"
       }
     },
     {
@@ -105,10 +117,12 @@
         "type": "color"
       },
       "render": {
-        "en": "This bus line has the color {colour}"
+        "en": "This bus line has the color {colour}",
+        "de": "Die Buslinie hat die Farbe {colour}"
       },
       "question": {
-        "en": "What is the colour for this bus line?"
+        "en": "What is the colour for this bus line?",
+        "de": "Welche Farbe hat diese Buslinie?"
       }
     },
     {
@@ -118,10 +132,12 @@
         "type": "string"
       },
       "render": {
-        "en": "This bus line is part of the {network} network"
+        "en": "This bus line is part of the {network} network",
+        "de": "Die Buslinie gehört zum Verkehrsverbund {network}"
       },
       "question": {
-        "en": "What network does this bus line belong to?"
+        "en": "What network does this bus line belong to?",
+        "de": "Zu welchem Verkehrsverbund gehört die Buslinie?"
       }
     },
     {
@@ -131,10 +147,12 @@
         "type": "string"
       },
       "render": {
-        "en": "This bus line is operated by {operator}"
+        "en": "This bus line is operated by {operator}",
+        "de": "Die Buslinie wird betrieben von {operator}"
       },
       "question": {
-        "en": "What company operates this bus line?"
+        "en": "What company operates this bus line?",
+        "de": "Welches Unternehmen betreibt die Buslinie?"
       }
     }
   ]

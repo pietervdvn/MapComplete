@@ -1068,9 +1068,6 @@
             "bike_shop-access": {
                 "render": "Only accessible to {access}"
             },
-            "bike_shop-email": {
-                "question": "What is the email address of {name}?"
-            },
             "bike_shop-is-bicycle_shop": {
                 "mappings": {
                     "0": {
@@ -1082,12 +1079,6 @@
             "bike_shop-name": {
                 "question": "What is the name of this bicycle shop?",
                 "render": "This bicycle shop is called {name}"
-            },
-            "bike_shop-phone": {
-                "question": "What is the phone number of {name}?"
-            },
-            "bike_shop-website": {
-                "question": "What is the website of {name}?"
             }
         },
         "title": {
@@ -3402,9 +3393,67 @@
             "render": "Drinking water"
         }
     },
+    "elevator": {
+        "description": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
+        "name": "elevator",
+        "presets": {
+            "0": {
+                "title": "an elevator"
+            }
+        },
+        "tagRenderings": {
+            "door-width": {
+                "question": "What is the width of this elevator's entrance?",
+                "render": "This elevator's doors have a width of {canonical(door:width)}"
+            },
+            "elevator-depth": {
+                "question": "What is the depth of this elevator?",
+                "render": "This elevator has a depth of {canonical(elevator:depth)}"
+            },
+            "elevator-width": {
+                "question": "What is the width of this elevator?",
+                "render": "This elevator has a width of {canonical(elevator:width)}"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "This elevator is broken"
+                    },
+                    "1": {
+                        "then": "This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>"
+                    },
+                    "2": {
+                        "then": "This elevator works"
+                    },
+                    "3": {
+                        "then": "This elevator works"
+                    }
+                },
+                "question": "Does this elevator work?"
+            }
+        },
+        "title": "Elevator",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
+        }
+    },
     "entrance": {
         "description": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)",
         "name": "Entrance",
+        "presets": {
+            "0": {
+                "title": "an entrance"
+            }
+        },
         "tagRenderings": {
             "Door_type": {
                 "mappings": {
@@ -3492,6 +3541,18 @@
                     }
                 }
             },
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Height of the door kerb"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This door does not have a kerb"
+                    }
+                },
+                "question": "What is the height of this kerb?",
+                "render": "The kerb height of this door is {kerb:height}"
+            },
             "width": {
                 "question": "What is the width of this door/entrance?",
                 "render": "This door has a width of {canonical(width)} meter"
@@ -3499,6 +3560,18 @@
         },
         "title": {
             "render": "Entrance"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "etymology": {
@@ -3944,6 +4017,24 @@
             "render": "Ghost bike"
         }
     },
+    "governments": {
+        "description": "This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22",
+        "name": "governments",
+        "presets": {
+            "0": {
+                "title": "a Governmental Office"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this Governmental Office?",
+                "render": "This Governmental Office is called {name}"
+            }
+        },
+        "title": {
+            "render": "Governmental Office {name}"
+        }
+    },
     "gps_track": {
         "name": "Your travelled track",
         "tagRenderings": {
@@ -4050,6 +4141,7 @@
         }
     },
     "hospital": {
+        "description": "A layer showing hospital grounds",
         "name": "Hospitals",
         "tagRenderings": {
             "name": {
@@ -4124,6 +4216,13 @@
         },
         "title": {
             "render": "Hydrant"
+        }
+    },
+    "indoors": {
+        "description": "Basic indoor mapping: shows room outlines",
+        "name": "indoors",
+        "title": {
+            "render": "Indoor area {name}"
         }
     },
     "information_board": {
@@ -4758,8 +4857,32 @@
         "name": "Pedestrian paths"
     },
     "pharmacy": {
+        "description": "A layer showing pharmacies, which (probably) dispense prescription drugs",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Has drive through"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pharmacy able to provide prescription drugs"
+                    }
+                }
+            }
+        },
         "name": "pharmacy",
         "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the pharmacy"
+                },
+                "question": "What is the name of the pharmacy?",
+                "render": "This pharmacy is called {name}"
+            },
             "wheelchair": {
                 "mappings": {
                     "0": {
@@ -5086,6 +5209,36 @@
         },
         "title": {
             "render": "Crossing"
+        }
+    },
+    "reception_desk": {
+        "description": "A layer showing where the reception desks are and which asks some accessibility information",
+        "name": "Reception desks",
+        "presets": {
+            "0": {
+                "title": "a reception desk"
+            }
+        },
+        "tagRenderings": {
+            "desk-height": {
+                "question": "What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>",
+                "render": "The height of the desk is <b>{canonical(desk:height)}</b>"
+            }
+        },
+        "title": {
+            "render": "Reception desk"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "recycling": {
@@ -6160,10 +6313,26 @@
                     }
                 },
                 "question": "Is there a dedicated toilet for wheelchair users?"
+            },
+            "wheelchair-door-width": {
+                "question": "What is the width of the door to the wheelchair accessible toilet?",
+                "render": "The door to the wheelchair-accessible toilet is {canonical(door:width)} wide"
             }
         },
         "title": {
             "render": "Toilet"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "trail": {

@@ -1,11 +1,15 @@
 {
   "id": "hospital",
   "name": {
-    "en": "Hospital"
+    "en": "Hospitals",
+    "de": "Krankenhäuser",
+    "nl": "Ziekenhuizen"
   },
   "title": {
     "render": {
-      "en": "Hospital"
+      "en": "Hospital",
+      "de": "Krankenhaus",
+      "nl": "Ziekenhuis"
     }
   },
   "description": {
@@ -19,10 +23,15 @@
     {
       "id": "name",
       "render": {
-        "en": "Name of the hospital name is {name}"
+        "en": "This hospital is called {name}",
+        "ca": "El nom del nom de l'hospital és {name}",
+        "de": "Der Name des Krankenhauses lautet {name}",
+        "nl": "Dit ziekenhuis heet {name}"
       },
       "question": {
-        "en": "What does the of the hospital ?"
+        "en": "What is the name of this hospital?",
+        "de": "Wie lautet der Name des Krankenhauses?",
+        "nl": "Wat is de naam van dit ziekenhuis?"
       },
       "freeform": {
         "key": "name"

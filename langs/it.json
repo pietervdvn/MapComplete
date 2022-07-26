@@ -11,10 +11,10 @@
         "delete": "Rimuovi",
         "explanations": {
             "hardDelete": "Questo elemento verrà rimosso da OpenStreetMap. Un utente esperto potrebbe recuperarlo",
-            "selectReason": "Si prega di selezionare il motivo della rimozione di questo oggetto",
-            "softDelete": "Questo oggetto verrà aggiornato e nascosto da questa applicazione. <span class=\"subtle\">{reason}</span>",
             "retagNoOtherThemes": "Questo elemento verrà riclassificato e nascosto da questa applicazione",
-            "retagOtherThemes": "Questo elemento verrà modificato e sarà visibile in {otherThemes}"
+            "retagOtherThemes": "Questo elemento verrà modificato e sarà visibile in {otherThemes}",
+            "selectReason": "Si prega di selezionare il motivo della rimozione di questo oggetto",
+            "softDelete": "Questo oggetto verrà aggiornato e nascosto da questa applicazione. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Questo oggetto è stato rimosso",
         "isntAPoint": "Solo i nodi possono essere rimossi, l'elemento selezionato è un percorso, un’area oppure una relazione.",
@@ -50,6 +50,16 @@
             "disableFilters": "Disabilita tutti i filtri",
             "disableFiltersExplanation": "Alcuni oggetti potrebbero essere nascosti da un filtro",
             "hasBeenImported": "Questo elemento è stato già importato",
+            "import": {
+                "hasBeenImported": "Questo oggetto è stato importato",
+                "howToTest": "Per testare, aggiungere <b>test=true</b> o <b>backend=osm-test</b> all'URL. Il set di modifiche verrà stampato nella console. Si prega di aprire una PR per ufficializzare questo argomento per abilitare effettivamente il pulsante di importazione.",
+                "importTags": "L'elemento riceverà {tags}",
+                "officialThemesOnly": "Il pulsante di importazione è disabilitato per gli argomenti non ufficiali per evitare incidenti",
+                "wrongType": "Questo elemento non è un nodo o una via e non può essere importato",
+                "wrongTypeToConflate": "Questo elemento non è un nodo o una via e non può essere aggiunto",
+                "zoomInMore": "Ingrandisci di più per importare questo elemento"
+            },
+            "importTags": "L'elemento riceverà {tags}",
             "intro": "Hai cliccato in un punto dove non ci sono ancora dei dati.<br>",
             "layerNotEnabled": "Il livello {layer} non è abilitato. Abilita questo livello per aggiungere un elemento",
             "openLayerControl": "Apri il pannello di controllo dei livelli",
@@ -59,17 +69,7 @@
             "title": "Aggiungi un nuovo elemento?",
             "warnVisibleForEveryone": "La tua aggiunta sarà visibile a tutti",
             "zoomInFurther": "Ingrandisci di più per aggiungere un elemento.",
-            "zoomInMore": "Ingrandisci ancora per importare questo oggetto",
-            "import": {
-                "howToTest": "Per testare, aggiungere <b>test=true</b> o <b>backend=osm-test</b> all'URL. Il set di modifiche verrà stampato nella console. Si prega di aprire una PR per ufficializzare questo argomento per abilitare effettivamente il pulsante di importazione.",
-                "zoomInMore": "Ingrandisci di più per importare questo elemento",
-                "wrongType": "Questo elemento non è un nodo o una via e non può essere importato",
-                "officialThemesOnly": "Il pulsante di importazione è disabilitato per gli argomenti non ufficiali per evitare incidenti",
-                "hasBeenImported": "Questo oggetto è stato importato",
-                "importTags": "L'elemento riceverà {tags}",
-                "wrongTypeToConflate": "Questo elemento non è un nodo o una via e non può essere aggiunto"
-            },
-            "importTags": "L'elemento riceverà {tags}"
+            "zoomInMore": "Ingrandisci ancora per importare questo oggetto"
         },
         "attribution": {
             "attributionContent": "<p>Tutti i dati sono forniti da <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, riutilizzabili liberamente con <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a></p>",

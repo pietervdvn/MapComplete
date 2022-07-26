@@ -671,6 +671,22 @@
         "shortDescription": "Tours libres d’accès pour admirer la vue",
         "title": "Tours d’observation"
     },
+    "onwheels": {
+        "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
+        "overrideAll": {
+            "+tagRenderings": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Cet accès n'a pas d'informations de largeur"
+                        }
+                    },
+                    "render": "Cet accès a une largeur de {canonical(_poi_entrance:width)}"
+                }
+            }
+        },
+        "title": "OnWheels"
+    },
     "openwindpowermap": {
         "description": "Une carte indiquant les éoliennes et permettant leur édition.",
         "title": "OpenWindPowerMap"
@@ -900,21 +916,5 @@
         "description": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
         "shortDescription": "Une carte des poubelles",
         "title": "Poubelles"
-    },
-    "onwheels": {
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Cet accès n'a pas d'informations de largeur"
-                        }
-                    },
-                    "render": "Cet accès a une largeur de {canonical(_poi_entrance:width)}"
-                }
-            }
-        },
-        "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
-        "title": "OnWheels"
     }
 }

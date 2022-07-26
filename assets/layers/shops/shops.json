@@ -104,10 +104,12 @@
       "override": {
         "question": {
           "en": "What kind of shop is this?",
-          "nl": "Wat voor soort winkel is dit?"
+          "nl": "Wat voor soort winkel is dit?",
+          "de": "Um was für ein Geschäft handelt es sich?"
         },
         "render": {
-          "en": "This is a {shop}"
+          "en": "This is a {shop}",
+          "de": "Das ist ein {shop}"
         },
         "freeform": {
           "key": "shop",
@@ -132,42 +134,48 @@
         ]
       },
       "question": {
-        "en": "What paper formats does this shop offer?"
+        "en": "What paper formats does this shop offer?",
+        "de": "Welche Papierformate bietet das Geschäft an?"
       },
       "multiAnswer": true,
       "mappings": [
         {
           "if": "service:print:A4=yes",
           "then": {
-            "en": "This shop can print on papers of size A4"
+            "en": "This shop can print on papers of size A4",
+            "de": "Das Geschäft kann Unterlagen auf A4 Papier drucken"
           },
           "ifnot": "service:print:A4=no"
         },
         {
           "if": "service:print:A3=yes",
           "then": {
-            "en": "This shop can print on papers of size A3"
+            "en": "This shop can print on papers of size A3",
+            "de": "Das Geschäft kann Unterlagen auf A3 Papier drucken"
           },
           "ifnot": "service:print:A3=no"
         },
         {
           "if": "service:print:A2=yes",
           "then": {
-            "en": "This shop can print on papers of size A2"
+            "en": "This shop can print on papers of size A2",
+            "de": "Das Geschäft kann Unterlagen auf A2 Papier drucken"
           },
           "ifnot": "service:print:A2=no"
         },
         {
           "if": "service:print:A1=yes",
           "then": {
-            "en": "This shop can print on papers of size A1"
+            "en": "This shop can print on papers of size A1",
+            "de": "Das Geschäft kann Unterlagen auf A1 Papier drucken"
           },
           "ifnot": "service:print:A1=no"
         },
         {
           "if": "service:print:A0=yes",
           "then": {
-            "en": "This shop can print on papers of size A0"
+            "en": "This shop can print on papers of size A0",
+            "de": "Das Geschäft kann Unterlagen auf A0 Papier drucken"
           },
           "ifnot": "service:print:A0=no"
         }

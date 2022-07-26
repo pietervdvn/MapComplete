@@ -1,10 +1,14 @@
 {
   "id": "onwheels",
   "title": {
-    "en": "OnWheels"
+    "en": "OnWheels",
+    "de": "Auf Rädern",
+    "fr": "OnWheels"
   },
   "description": {
-    "en": "On this map, publicly wheelchair accessible places are shown and can be easily added"
+    "en": "On this map, publicly weelchair accessible places are shown and can be easily added",
+    "de": "Auf dieser Karte werden öffentlich zugängliche Orte für Rollstuhlfahrer angezeigt und können leicht hinzugefügt werden",
+    "fr": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/onwheels/crest.svg",
@@ -49,10 +53,11 @@
           ]
         },
         "render": {
-          "en": "<a href='#{_poi_entrance:id}'>This door has a width of {canonical(_poi_entrance:width)} meters</a>",
-          "nl": "<a href='#{_poi_entrance:id}'>Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter</a>",
-          "de": "<a href='#{_poi_entrance:id}'>Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter</a>",
-          "es": "<a href='#{_poi_entrance:id}'>Esta puerta tiene una ancho de {canonical(_poi_entrance:width)} metros</a>"
+          "en": "This door has a width of {canonical(_poi_entrance:width)} meter",
+          "nl": "Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter",
+          "de": "Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter",
+          "es": "Esta puerta tiene una ancho de {canonical(_poi_entrance:width)} metros",
+          "fr": "Cet accès a une largeur de {canonical(_poi_entrance:width)}"
         },
         "freeform": {
           "key": "_poi_entrance:width",
@@ -62,7 +67,10 @@
           {
             "if": "_poi_entrance:width=",
             "then": {
-              "en": "This entrance has no width information"
+              "en": "This entrance has no width information",
+              "de": "Dieser Eingang hat keine Breitenangabe",
+              "fr": "Cet accès n'a pas d'informations de largeur",
+              "nl": "Deze ingang heeft geen informatie over de breedte"
             }
           }
         ]
