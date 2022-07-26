@@ -17,7 +17,8 @@
     "osmTags": {
       "or": [
         "entrance~*",
-        "indoor=door"
+        "indoor=door",
+        "door~*"
       ]
     }
   },
