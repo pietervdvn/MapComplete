@@ -884,9 +884,6 @@
                 },
                 "question": "Er der værktøj her til at reparere din egen cykel?"
             },
-            "bike_shop-email": {
-                "question": "Hvad er e-mailadressen på {name}?"
-            },
             "bike_shop-is-bicycle_shop": {
                 "mappings": {
                     "0": {
@@ -898,12 +895,6 @@
             "bike_shop-name": {
                 "question": "Hvad hedder denne cykelbutik?",
                 "render": "Denne cykelbutik hedder {name}"
-            },
-            "bike_shop-phone": {
-                "question": "Hvad er telefonnummeret på {name}?"
-            },
-            "bike_shop-website": {
-                "question": "Hvad er webstedet for {name}?"
             }
         },
         "title": {

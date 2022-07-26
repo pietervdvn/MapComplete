@@ -114,7 +114,7 @@ This is rendered with  Named after {name:etymology}
 
 
 
-  - The origin of this name is unknown in all literature corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>
+  - The origin of this name is unknown in all literature  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>`
 
 
 

@@ -600,6 +600,10 @@
         "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account.",
         "title": "Ghost bikes"
     },
+    "governments": {
+        "description": "On this map, Governmental offices are shown and can be easily added",
+        "title": "Governmental Offices"
+    },
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",
         "layers": {
@@ -650,6 +654,10 @@
     "healthcare": {
         "description": "On this map, various healthcare related items are shown",
         "title": "Healthcare"
+    },
+    "indoors": {
+        "description": "On this map, publicly accessible indoor places are shown",
+        "title": "Indoors"
     },
     "kerbs_and_crossings": {
         "description": "A map showing kerbs and crossings.",

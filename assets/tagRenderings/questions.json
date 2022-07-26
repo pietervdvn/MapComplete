@@ -100,7 +100,6 @@
   },
   "reviews": {
     "description": "Shows the reviews module (including the possibility to leave a review)",
-
     "render": "{reviews()}"
   },
   "minimap": {

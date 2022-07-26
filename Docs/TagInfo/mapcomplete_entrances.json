@@ -218,6 +218,15 @@
     {
       "key": "width",
       "description": "Layer 'Entrance' shows and asks freeform values for key 'width' (in the MapComplete.osm.be theme 'Entrances')"
+    },
+    {
+      "key": "kerb:height",
+      "description": "Layer 'Entrance' shows and asks freeform values for key 'kerb:height' (in the MapComplete.osm.be theme 'Entrances')"
+    },
+    {
+      "key": "kerb:height",
+      "description": "Layer 'Entrance' shows kerb:height=0 with a fixed text, namely 'This door does not have a kerb' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Entrances')",
+      "value": "0"
     }
   ]
 }

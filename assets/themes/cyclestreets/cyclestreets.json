@@ -319,7 +319,8 @@
               "it": "Questa è una strada ciclabile",
               "hu": "Ez az utca kerékpárosutca",
               "es": "Esta calle es una ciclocalle",
-              "fr": "Cette rue est une rue cyclable"
+              "fr": "Cette rue est une rue cyclable",
+              "ca": "Aquest carrer és una ciclocarrer"
             },
             "hideInAnswer": "_country=be"
           },
@@ -339,7 +340,8 @@
               "it": "Diverrà tra poco una strada ciclabile",
               "hu": "Ez az utca hamarosan kerékpárosutcává válik",
               "es": "Esta calle se convertirá en una ciclocalle próximamente",
-              "fr": "Cette rue sera bientôt une rue cyclable"
+              "fr": "Cette rue sera bientôt une rue cyclable",
+              "ca": "Aquest carrer es convertirà en un ciclocarrer pròximament"
             }
           },
           {

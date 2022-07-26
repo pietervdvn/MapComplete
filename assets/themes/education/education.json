@@ -4,14 +4,16 @@
     "en": "On this map, you'll find information about all types of schools and eduction and can easily add more information",
     "nl": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
     "de": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
-    "fr": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations"
+    "fr": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
+    "ca": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació"
   },
   "title": {
     "en": "Education",
     "nl": "Onderwijs",
     "de": "Bildung",
     "fr": "Enseignement",
-    "nb_NO": "Utdanning"
+    "nb_NO": "Utdanning",
+    "ca": "Educació"
   },
   "defaultBackgroundId": "CartoDB.Voyager",
   "maintainer": "MapComplete",

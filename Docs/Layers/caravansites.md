@@ -81,6 +81,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -111,8 +113,8 @@ The question is  Does this place charge a fee?
 
 
 
-  - You need to pay for use corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
-  - Can be used for free corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+  - You need to pay for use  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
+  - Can be used for free  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>`
 
 
 
@@ -143,8 +145,8 @@ The question is  Does this place have a sanitary dump station?
 
 
 
-  - This place has a sanitary dump station corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station' target='_blank'>sanitary_dump_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station%3Dyes' target='_blank'>yes</a>
-  - This place does not have a sanitary dump station corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station' target='_blank'>sanitary_dump_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station%3Dno' target='_blank'>no</a>
+  - This place has a sanitary dump station  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station' target='_blank'>sanitary_dump_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station%3Dyes' target='_blank'>yes</a>`
+  - This place does not have a sanitary dump station  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station' target='_blank'>sanitary_dump_station</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station%3Dno' target='_blank'>no</a>`
 
 
 
@@ -173,10 +175,10 @@ The question is  Does this place provide internet access?
 
 
 
-  - There is internet access corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>
-  - There is internet access corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwifi' target='_blank'>wifi</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+  - There is internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>`
+  - There is internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwifi' target='_blank'>wifi</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>`
   - This option cannot be chosen as answer
-  - There is no internet access corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
+  - There is no internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>`
 
 
 
@@ -191,8 +193,8 @@ The question is  Do you have to pay for the internet access?
 
 
 
-  - You need to pay extra for internet access corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
-  - You do not need to pay extra for internet access corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
+  - You need to pay extra for internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>`
+  - You do not need to pay extra for internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>`
 
 
 Only visible if  `internet_access=yes`  is shown
@@ -209,8 +211,8 @@ The question is  Does this place have toilets?
 
 
 
-  - This place has toilets corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets' target='_blank'>toilets</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets%3Dyes' target='_blank'>yes</a>
-  - This place does not have toilets corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:toilets' target='_blank'>toilets</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets%3Dno' target='_blank'>no</a>
+  - This place has toilets  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:toilets' target='_blank'>toilets</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets%3Dyes' target='_blank'>yes</a>`
+  - This place does not have toilets  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:toilets' target='_blank'>toilets</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets%3Dno' target='_blank'>no</a>`
 
 
 
@@ -239,9 +241,9 @@ The question is  Does this place offer spots for long term rental?
 
 
 
-  - There are some spots for long term rental, but you can also stay on a daily basis corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dyes' target='_blank'>yes</a>
-  - There are no permanent guests here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dno' target='_blank'>no</a>
-  - It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this) corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Donly' target='_blank'>only</a>
+  - There are some spots for long term rental, but you can also stay on a daily basis  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dyes' target='_blank'>yes</a>`
+  - There are no permanent guests here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dno' target='_blank'>no</a>`
+  - It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Donly' target='_blank'>only</a>`
 
 
 
@@ -274,6 +276,8 @@ This tagrendering has no question and is thus read-only
 
 
 
+Shows the reviews module (including the possibility to leave a review)
+
 This tagrendering has no question and is thus read-only
 
 
@@ -304,8 +308,8 @@ The question is  Does this place have a power supply?
 
 
 
-  - This place has a power supply corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
-  - This place does not have power supply corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
+  - This place has a power supply  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>`
+  - This place does not have power supply  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>`
 
 
 
@@ -313,6 +317,8 @@ The question is  Does this place have a power supply?
 ### questions 
 
 
+
+Show the images block at this location
 
 This tagrendering has no question and is thus read-only
 
@@ -323,6 +329,8 @@ This tagrendering has no question and is thus read-only
 ### minimap 
 
 
+
+Shows a small map with the feature. Added by default to every popup
 
 This tagrendering has no question and is thus read-only
 

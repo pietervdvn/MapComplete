@@ -86,8 +86,8 @@ The question is  Is this a hackerspace or a makerspace?
 
 
 
-  - This is a makerspace corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:hackerspace' target='_blank'>hackerspace</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3Dmakerspace' target='_blank'>makerspace</a>
-  - This is a traditional (software oriented) hackerspace corresponds with  
+  - This is a makerspace  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:hackerspace' target='_blank'>hackerspace</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3Dmakerspace' target='_blank'>makerspace</a>`
+  - This is a traditional (software oriented) hackerspace  corresponds with  ``
 
 
 
@@ -120,7 +120,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with  contact:website~^..*$
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -140,7 +140,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a> corresponds with  contact:email~^..*$
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -160,7 +160,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a> corresponds with  contact:phone~^..*$
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -180,7 +180,7 @@ This is rendered with  {opening_hours_table()}
 
 
 
-  - Opened 24/7 corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+  - Opened 24/7  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
 
 
 
@@ -195,8 +195,8 @@ The question is  Is a 3D-printer available at this hackerspace?
 
 
 
-  - There is a 3D-printer available at this hackerspace corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes' target='_blank'>yes</a>
-  - There is no 3D-printer available at this hackerspace corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno' target='_blank'>no</a>
+  - There is a 3D-printer available at this hackerspace  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dyes' target='_blank'>yes</a>`
+  - There is no 3D-printer available at this hackerspace  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:3dprinter' target='_blank'>service:3dprinter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:3dprinter%3Dno' target='_blank'>no</a>`
 
 
 
@@ -211,8 +211,8 @@ The question is  Is a laser cutter available at this hackerspace?
 
 
 
-  - There is a laser cutter available at this hackerspace corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes' target='_blank'>yes</a>
-  - There is no laser cutter available at this hackerspace corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno' target='_blank'>no</a>
+  - There is a laser cutter available at this hackerspace  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dyes' target='_blank'>yes</a>`
+  - There is no laser cutter available at this hackerspace  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:lasercutter' target='_blank'>service:lasercutter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:lasercutter%3Dno' target='_blank'>no</a>`
 
 
 
@@ -227,8 +227,8 @@ The question is  Is a CNC drill available at this hackerspace?
 
 
 
-  - There is a CNC drill available at this hackerspace corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes' target='_blank'>yes</a>
-  - There is no CNC drill available at this hackerspace corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno' target='_blank'>no</a>
+  - There is a CNC drill available at this hackerspace  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dyes' target='_blank'>yes</a>`
+  - There is no CNC drill available at this hackerspace  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:cnc_drilling_machine' target='_blank'>service:cnc_drilling_machine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:cnc_drilling_machine%3Dno' target='_blank'>no</a>`
 
 
 
@@ -236,6 +236,8 @@ The question is  Is a CNC drill available at this hackerspace?
 ### reviews 
 
 
+
+Shows the reviews module (including the possibility to leave a review)
 
 This tagrendering has no question and is thus read-only
 
@@ -253,10 +255,10 @@ The question is  Is this place accessible with a wheelchair?
 
 
 
-  - This place is specially adapted for wheelchair users corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
-  - This place is easily reachable with a wheelchair corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
-  - It is possible to reach this place in a wheelchair, but it is not easy corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
-  - This place is not reachable with a wheelchair corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+  - This place is specially adapted for wheelchair users  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>`
+  - This place is easily reachable with a wheelchair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>`
+  - It is possible to reach this place in a wheelchair, but it is not easy  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>`
+  - This place is not reachable with a wheelchair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>`
 
 
 
@@ -271,8 +273,8 @@ The question is  Does this hackerspace serve Club Mate?
 
 
 
-  - This hackerspace serves club mate corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:drink:club-mate' target='_blank'>drink:club-mate</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dyes' target='_blank'>yes</a>
-  - This hackerspace does not serve club mate corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:drink:club-mate' target='_blank'>drink:club-mate</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dno' target='_blank'>no</a>
+  - This hackerspace serves club mate  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:drink:club-mate' target='_blank'>drink:club-mate</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dyes' target='_blank'>yes</a>`
+  - This hackerspace does not serve club mate  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:drink:club-mate' target='_blank'>drink:club-mate</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drink:club-mate%3Dno' target='_blank'>no</a>`
 
 
 

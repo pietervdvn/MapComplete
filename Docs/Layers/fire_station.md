@@ -125,7 +125,7 @@ This is rendered with  This station is operated by {operator}.
 
 
 
-  - Bureau of Fire Protection corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DBureau of Fire Protection' target='_blank'>Bureau of Fire Protection</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
+  - Bureau of Fire Protection  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DBureau of Fire Protection' target='_blank'>Bureau of Fire Protection</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>`
 
 
 
@@ -144,10 +144,10 @@ This is rendered with  The operator is a(n) {operator:type} entity.
 
 
 
-  - The station is operated by the government. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
-  - The station is operated by a community-based, or informal organization. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity' target='_blank'>community</a>
-  - The station is operated by a formal group of volunteers. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo' target='_blank'>ngo</a>
-  - The station is privately operated. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
+  - The station is operated by the government.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>`
+  - The station is operated by a community-based, or informal organization.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity' target='_blank'>community</a>`
+  - The station is operated by a formal group of volunteers.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo' target='_blank'>ngo</a>`
+  - The station is privately operated.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>`
 
 
 
@@ -155,6 +155,8 @@ This is rendered with  The operator is a(n) {operator:type} entity.
 ### images 
 
 
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
 
 This tagrendering has no question and is thus read-only
 
