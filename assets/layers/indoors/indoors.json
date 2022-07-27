@@ -27,27 +27,39 @@
     "mappings": [
       {
         "if": "indoor=room",
-        "then": "Indoor Room {name}"
+        "then": {
+          "en": "Indoor Room {name}"
+        }
       },
       {
         "if": "indoor=area",
-        "then": "Indoor Area {name}"
+        "then": {
+          "en": "Indoor Area {name}"
+        }
       },
       {
         "if": "indoor=wall",
-        "then": "Indoor Wall {name}"
+        "then": {
+          "en": "Indoor Wall {name}"
+        }
       },
       {
         "if": "indoor=corridor",
-        "then": "Indoor Corridor {name}"
+        "then": {
+          "en": "Indoor Corridor {name}"
+        }
       },
       {
         "if": "indoor=door",
-        "then": "Indoor Door {name}"
+        "then": {
+          "en": "Indoor Door {name}"
+        }
       },
       {
         "if": "indoor=level",
-        "then": "Indoor Level {name}"
+        "then": {
+          "en": "Indoor Level {name}"
+        }
       }
     ]
   },
@@ -81,7 +93,34 @@
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "icon": {
+        "render": null,
+        "condition": "indoor=room",
+        "mappings": [
+          {
+            "if": "room=auditorium",
+            "then": "./assets/layers/indoors/room_auditorium.svg"
+          },
+          {
+            "if": "room=conference",
+            "then": "./assets/layers/indoors/room_conference.svg"
+          },
+          {
+            "if": "room=storage",
+            "then": "./assets/layers/indoors/room_storage.svg"
+          },
+          {
+            "if": "room=toilet",
+            "then": "./assets/layers/indoors/room_toilet.svg"
+          },
+          {
+            "if": "room=toilets",
+            "then": "./assets/layers/indoors/room_toilets.svg"
+          }
+        ]
+      },
+      "iconSize": "15,15, center"
     }
   ]
 }

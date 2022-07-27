@@ -1,0 +1,52 @@
+[
+  {
+    "path": "room_auditorium.svg",
+    "license": "GNU",
+    "authors": [
+      "Adrien Pavie"
+    ],
+    "sources": [
+      "https://framagit.org/OpenLevelUp/OpenLevelUp/-/blob/master/src/img/features-vector/room_auditorium.svg"
+    ]
+  },
+  {
+    "path": "room_conference.svg",
+    "license": "GNU",
+    "authors": [
+      "Adrien Pavie"
+    ],
+    "sources": [
+      "https://framagit.org/OpenLevelUp/OpenLevelUp/-/blob/master/src/img/features-vector/room_conference.svg"
+    ]
+  },
+  {
+    "path": "room_storage.svg",
+    "license": "GNU",
+    "authors": [
+      "Adrien Pavie"
+    ],
+    "sources": [
+      "https://framagit.org/OpenLevelUp/OpenLevelUp/-/blob/master/src/img/features-vector/room_storage.svg"
+    ]
+  },
+  {
+    "path": "room_toilet.svg",
+    "license": "GNU",
+    "authors": [
+      "Adrien Pavie"
+    ],
+    "sources": [
+      "https://framagit.org/OpenLevelUp/OpenLevelUp/-/blob/master/src/img/features-vector/room_toilet.svg"
+    ]
+  },
+  {
+    "path": "room_toilets.svg",
+    "license": "GNU",
+    "authors": [
+      "Adrien Pavie"
+    ],
+    "sources": [
+      "https://framagit.org/OpenLevelUp/OpenLevelUp/-/blob/master/src/img/features-vector/room_toilets.svg"
+    ]
+  }
+]
