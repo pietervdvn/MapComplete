@@ -282,7 +282,8 @@
           "if": "wheelchair=designated",
           "then": {
             "en": "There is only a dedicated toilet for wheelchair users",
-            "nl": "Er is alleen een toilet voor rolstoelgebruikers"
+            "nl": "Er is alleen een toilet voor rolstoelgebruikers",
+            "de": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer"
           }
         }
       ]
@@ -292,12 +293,14 @@
       "question": {
         "en": "What is the width of the door to the wheelchair accessible toilet?",
         "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
-        "fr": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?"
+        "fr": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?",
+        "de": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?"
       },
       "render": {
         "en": "The door to the wheelchair-accessible toilet is {canonical(door:width)} wide",
         "nl": "De deur naar de rolstoeltoegankelijke toilet is {canonical(door:width)} wide",
-        "fr": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(door:width)}"
+        "fr": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(door:width)}",
+        "de": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(door:width)} breit"
       },
       "freeform": {
         "key": "door:width",
@@ -681,7 +684,8 @@
           "human": {
             "en": "meter",
             "nl": "meter",
-            "fr": "mètre"
+            "fr": "mètre",
+            "de": "Meter"
           }
         },
         {
@@ -693,7 +697,8 @@
           "human": {
             "en": "centimeter",
             "nl": "centimeter",
-            "fr": "centimètre"
+            "fr": "centimètre",
+            "de": "Zentimeter"
           }
         }
       ]

@@ -13,7 +13,8 @@
     }
   },
   "description": {
-    "en": "A layer showing hospital grounds"
+    "en": "A layer showing hospital grounds",
+    "de": "Eine Ebene mit Krankenhäusern"
   },
   "minzoom": 12,
   "source": {

@@ -1,10 +1,12 @@
 {
   "id": "governments",
   "name": {
-    "en": "governments"
+    "en": "governments",
+    "de": "Öffentliche Verwaltung"
   },
   "description": {
-    "en": "This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22"
+    "en": "This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22",
+    "de": "Diese Ebene zeigt Gebäude der öffentlichen Verwaltung. Sie wurde im Auftrag für den Kunden von OSOC '22 erstellt"
   },
   "source": {
     "osmTags": {
@@ -15,7 +17,8 @@
   },
   "title": {
     "render": {
-      "en": "Governmental Office {name}"
+      "en": "Governmental Office {name}",
+      "de": "Behörde {name}"
     }
   },
   "minzoom": 13,
@@ -26,10 +29,12 @@
     "website",
     {
       "question": {
-        "en": "What is the name of this Governmental Office?"
+        "en": "What is the name of this Governmental Office?",
+        "de": "Wie lautet der Name dieser Behörde?"
       },
       "render": {
-        "en": "This Governmental Office is called {name}"
+        "en": "This Governmental Office is called {name}",
+        "de": "Der Name der Behörde lautet {name}"
       },
       "freeform": {
         "key": "name"
@@ -40,7 +45,8 @@
   "presets": [
     {
       "title": {
-        "en": "a Governmental Office"
+        "en": "a Governmental Office",
+        "de": "ein Büro der öffentlichen Verwaltung"
       },
       "tags": [
         "office=government"

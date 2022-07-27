@@ -803,19 +803,19 @@
                 }
             }
         },
-        "title": "Auf Rädern",
         "overrideAll": {
             "+tagRenderings": {
                 "0": {
-                    "render": "Das Gebäude kann über <a href='#{_poi_entrance:id}'>durch eine Tür von {canonical(_poi_entrance:width)} betreten werden.</a>",
                     "mappings": {
                         "0": {
                             "then": "Das Gebäude hat keine Informationen über Türbreiten. Fügen Sie eine Tür hinzu und messen Sie die Breite, um Informationen zu erhalten"
                         }
-                    }
+                    },
+                    "render": "Das Gebäude kann über <a href='#{_poi_entrance:id}'>durch eine Tür von {canonical(_poi_entrance:width)} betreten werden.</a>"
                 }
             }
-        }
+        },
+        "title": "Auf Rädern"
     },
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",

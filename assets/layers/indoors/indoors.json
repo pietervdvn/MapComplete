@@ -1,10 +1,12 @@
 {
   "id": "indoors",
   "name": {
-    "en": "indoors"
+    "en": "indoors",
+    "de": "Innenräume"
   },
   "description": {
-    "en": "Basic indoor mapping: shows room outlines"
+    "en": "Basic indoor mapping: shows room outlines",
+    "de": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen"
   },
   "source": {
     "osmTags": {
@@ -19,7 +21,8 @@
   },
   "title": {
     "render": {
-      "en": "Indoor area {name}"
+      "en": "Indoor area {name}",
+      "de": "Innenbereich {name}"
     },
     "mappings": [
       {

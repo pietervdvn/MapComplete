@@ -385,7 +385,8 @@
         },
         "render": {
           "en": "The containing building can be entered via <a href='#{_poi_entrance:id}'>a door of {canonical(_poi_entrance:width)}</a>",
-          "fr": "On peut entrer dans ce batiment via <a href='#{_poi_entrance:id}'>une porte de {canonical(_poi_entrance:width)}</a>"
+          "fr": "On peut entrer dans ce batiment via <a href='#{_poi_entrance:id}'>une porte de {canonical(_poi_entrance:width)}</a>",
+          "de": "Das Gebäude kann über <a href='#{_poi_entrance:id}'>durch eine Tür von {canonical(_poi_entrance:width)} betreten werden.</a>"
         },
         "freeform": {
           "key": "_poi_entrance:width",
@@ -396,7 +397,8 @@
             "if": "_poi_entrance:width=",
             "then": {
               "en": "The containing building has no information on door widths. Add a door and measure the width to get information",
-              "fr": "Ce bâtiment n'a aucune information sur les largeurs de portes. Ajoutez une porte et mesurez la largeur pour obtenir des informations"
+              "fr": "Ce bâtiment n'a aucune information sur les largeurs de portes. Ajoutez une porte et mesurez la largeur pour obtenir des informations",
+              "de": "Das Gebäude hat keine Informationen über Türbreiten. Fügen Sie eine Tür hinzu und messen Sie die Breite, um Informationen zu erhalten"
             }
           }
         ]

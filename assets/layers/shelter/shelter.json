@@ -59,19 +59,22 @@
         {
           "if": "shelter_type=weather_shelter",
           "then": {
-            "en": "This is a small shelter, primarily intended for short breaks. Usually found in the mountains or alongside roads."
+            "en": "This is a small shelter, primarily intended for short breaks. Usually found in the mountains or alongside roads.",
+            "de": "Dies ist ein kleiner Unterstand, der vor allem für kurze Pausen gedacht ist. Normalerweise findet man ihn in Bergen oder an Straßen."
           }
         },
         {
           "if": "shelter_type=lean_to",
           "then": {
-            "en": "This is a shed with 3 walls, primarily intended for camping."
+            "en": "This is a shed with 3 walls, primarily intended for camping.",
+            "de": "Es handelt sich um einen an 3 Seiten geschlossenen Unterstand, der in erster Linie zum Campen gedacht ist."
           }
         },
         {
           "if": "shelter_type=pavilion",
           "then": {
-            "en": "This is a pavilion"
+            "en": "This is a pavilion",
+            "de": "Das ist ein Pavillon"
           }
         },
         {

@@ -94,7 +94,8 @@
         "es": "¿Cual es el nombre de esta tienda?"
       },
       "render": {
-        "en": "This shop is called <i>{name}</i>"
+        "en": "This shop is called <i>{name}</i>",
+        "de": "Der Name des Geschäfts lautet <i>{name}</i>"
       },
       "freeform": {
         "key": "name"

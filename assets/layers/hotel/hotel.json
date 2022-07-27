@@ -2,11 +2,13 @@
   "id": "hotel",
   "name": {
     "en": "Hotels",
-    "nl": "Hotels"
+    "nl": "Hotels",
+    "de": "Hotels"
   },
   "description": {
     "en": "Layer showing all hotels",
-    "nl": "Laag die alle hotels toont"
+    "nl": "Laag die alle hotels toont",
+    "de": "Eine Ebene mit Hotels"
   },
   "source": {
     "osmTags": "tourism=hotel"
@@ -15,14 +17,16 @@
   "title": {
     "render": {
       "en": "Hotel",
-      "nl": "Hotel"
+      "nl": "Hotel",
+      "de": "Hotel"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
           "en": "Hotel {name}",
-          "nl": "Hotel {name}"
+          "nl": "Hotel {name}",
+          "de": "Hotel {name}"
         }
       }
     ]
@@ -31,7 +35,8 @@
     {
       "title": {
         "en": "a hotel",
-        "nl": "een hotel"
+        "nl": "een hotel",
+        "de": "ein Hotel"
       },
       "tags": [
         "tourism=hotel"
@@ -57,16 +62,19 @@
         "key": "name",
         "placeholder": {
           "en": "Name of the hotel",
-          "nl": "Naam van het hotel"
+          "nl": "Naam van het hotel",
+          "de": "Name des Hotels"
         }
       },
       "question": {
         "en": "What is the name of this hotel?",
-        "nl": "Wat is de naam van dit hotel?"
+        "nl": "Wat is de naam van dit hotel?",
+        "de": "Wie lautet der Name des Hotels?"
       },
       "render": {
         "en": "This hotel is called {name}",
-        "nl": "Dit hotel heet {name}"
+        "nl": "Dit hotel heet {name}",
+        "de": "Der Name des Hotels lautet {name}"
       }
     },
     "phone",
