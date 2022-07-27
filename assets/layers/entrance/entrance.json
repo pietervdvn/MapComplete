@@ -319,7 +319,8 @@
             "de": "Diese Tür dreht sich durchgehend automatisch, hat aber einen<b>Knopf, um die Drehgeschwindigkeit zu reduzieren</b>, z.B. für Rollstuhlnutzer",
             "es": "Esta puerta gira automáticamente todo el rato, pero tiene un <b>botón para ralentizarla</b>, por ejemplo, para usuarios de sillas de ruedas",
             "fr": "Cette porte tourne automatiquement tout le temps, mais dispose d'un <b>bouton pour la ralentir</b>, par ex. pour les utilisateurs de fauteuils roulants"
-          }
+          },
+          "hideInAnswer": "door!=revolving"
         },
         {
           "if": "automatic_door=continuous",
@@ -329,7 +330,8 @@
             "de": "Diese Tür dreht sich durchgehend automatisch",
             "es": "Esta puerta gira automáticamente todo el rato",
             "fr": "Cette porte tourne automatiquement tout le temps"
-          }
+          },
+          "hideInAnswer": "door!=revolving"
         },
         {
           "if": "automatic_door=serviced_on_button_press",
