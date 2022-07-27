@@ -1,10 +1,12 @@
 {
   "id": "rainbow_crossings",
   "name": {
-    "en": "Crossings with rainbow paintings"
+    "en": "Crossings with rainbow paintings",
+    "de": "Fußgängerüberwege in Regenbogenfarben"
   },
   "description": {
-    "en": "A layer showing pedestrian crossings with rainbow paintings"
+    "en": "A layer showing pedestrian crossings with rainbow paintings",
+    "de": "Eine Ebene mit Fußgängerüberwegen in Regenbogenfarben"
   },
   "source": {
     "osmTags": "highway=crossing"
@@ -12,19 +14,22 @@
   "minzoom": 17,
   "title": {
     "render": {
-      "en": "Crossing"
+      "en": "Crossing",
+      "de": "Überweg"
     }
   },
   "presets": [
     {
       "title": {
-        "en": "a crossing"
+        "en": "a crossing",
+        "de": "einen Überweg"
       },
       "tags": [
         "highway=crossing"
       ],
       "description": {
-        "en": "Pedestrian crossing"
+        "en": "Pedestrian crossing",
+        "de": "Fußgängerüberweg"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -40,14 +45,16 @@
     {
       "id": "crossing-with-rainbow",
       "question": {
-        "en": "Does this crossing has rainbow paintings?"
+        "en": "Does this crossing has rainbow paintings?",
+        "de": "Hat der Überweg eine Markierung in Regenbogenfarben?"
       },
       "condition": "highway=crossing",
       "mappings": [
         {
           "if": "crossing:marking=rainbow",
           "then": {
-            "en": "This crossing has rainbow paintings"
+            "en": "This crossing has rainbow paintings",
+            "de": "Der Überweg hat eine Markierung in Regenbogenfarben"
           },
           "icon": {
             "path": "./assets/themes/rainbow_crossings/logo.svg",
@@ -57,14 +64,16 @@
         {
           "if": "not:crossing:marking=rainbow",
           "then": {
-            "en": "No rainbow paintings here"
+            "en": "No rainbow paintings here",
+            "de": "Hier gibt es kein Markierung in Regenbogenfarben"
           },
           "icon": "./assets/themes/rainbow_crossings/crossing.svg"
         },
         {
           "if": "crossing:marking!=rainbow",
           "then": {
-            "en": "No rainbow paintings here"
+            "en": "No rainbow paintings here",
+            "de": "Hier gibt es kein Markierung in Regenbogenfarben"
           },
           "icon": "./assets/themes/rainbow_crossings/crossing.svg",
           "hideInAnswer": true

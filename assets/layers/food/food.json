@@ -137,6 +137,7 @@
   },
   "tagRenderings": [
     "images",
+    "level",
     {
       "question": {
         "nl": "Wat is de naam van deze eetgelegenheid?",
@@ -818,13 +819,15 @@
       {
         "if": "amenity=pub",
         "then": {
-          "en": "This is actually a pub"
+          "en": "This is actually a pub",
+          "de": "Dies ist eigentlich eine Kneipe"
         }
       },
       {
         "if": "amenity=cafe",
         "then": {
-          "en": "This is actually a cafe"
+          "en": "This is actually a cafe",
+          "de": "Dies ist eigentlich ein Café"
         }
       }
     ],

@@ -1,17 +1,23 @@
 {
   "id": "pharmacy",
   "name": {
-    "en": "pharmacy"
+    "en": "pharmacy",
+    "de": "Apotheke"
+  },
+  "description": {
+    "en": "A layer showing pharmacies, which (probably) dispense prescription drugs"
   },
   "title": {
     "render": {
-      "en": "{name}"
+      "en": "{name}",
+      "de": "{name}"
     },
     "mappings": [
       {
         "if": "name=",
         "then": {
-          "en": "Pharmacy"
+          "en": "Pharmacy",
+          "de": "Apotheke"
         }
       }
     ]
@@ -26,6 +32,22 @@
   "minzoom": 13,
   "tagRenderings": [
     "images",
+    {
+      "id": "name",
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the pharmacy"
+        }
+      },
+      "question": {
+        "en": "What is the name of the pharmacy?"
+      },
+      "render": {
+        "en": "This pharmacy is called {name}"
+      }
+    },
     "opening_hours",
     "phone",
     "email",
@@ -33,25 +55,30 @@
     {
       "id": "wheelchair",
       "question": {
-        "en": "Is this pharmacy easy to access on a wheelchair?"
+        "en": "Is this pharmacy easy to access on a wheelchair?",
+        "de": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?"
       },
       "mappings": [
         {
           "if": "wheelchair=yes",
           "then": {
-            "en": "This pharmacy is easy to access on a wheelchair"
+            "en": "This pharmacy is easy to access on a wheelchair",
+            "ca": "Aquesta farmàcia és fàcil d'accedir en una cadira de rodes",
+            "de": "Die Apotheke ist für Rollstuhlfahrer leicht zugänglich"
           }
         },
         {
           "if": "wheelchair=no",
           "then": {
-            "en": "This pharmacy is hard to access on a wheelchair"
+            "en": "This pharmacy is hard to access on a wheelchair",
+            "de": "Die Apotheke ist für Rollstuhlfahrer nur schwer zugänglich"
           }
         },
         {
           "if": "wheelchair=limited",
           "then": {
-            "en": "This pharmacy has limited access for wheelchair users"
+            "en": "This pharmacy has limited access for wheelchair users",
+            "de": "Die Apotheke ist für Rollstuhlfahrer nur eingeschränkt zugänglich"
           }
         }
       ]
@@ -66,31 +93,45 @@
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+          }
+        ]
+      }
     }
   ],
-      "filter": [
+  "filter": [
+    {
+      "id": "drive-through",
+      "options": [
         {
-            "id": "drive-through",
-            "options": [
-                {
-                    "question": {
-                        "en": "Has drive through"
-                    },
-                    "osmTags": "drive_through=yes"
-                }
-            ]
-        },
-        {
-            "id": "dispensing",
-            "options": [
-                {
-                    "question": {
-                        "en": "Pharmacy able to provide prescription drugs"
-                    },
-                    "osmTags": "dispensing=yes"
-                }
-            ]
+          "question": {
+            "en": "Has drive through"
+          },
+          "osmTags": "drive_through=yes"
         }
-    ]
+      ]
+    },
+    {
+      "id": "dispensing",
+      "options": [
+        {
+          "question": {
+            "en": "Pharmacy able to provide prescription drugs"
+          },
+          "osmTags": "dispensing=yes"
+        }
+      ]
+    }
+  ]
 }

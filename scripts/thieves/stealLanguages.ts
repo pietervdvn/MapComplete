@@ -54,11 +54,14 @@ function main(){
    
     const wikidataLayer = <LayerConfigJson>{
         id: "wikidata",
-        description: "Various tagrenderings which are generated from Wikidata. Automatically generated with a script, don't edit manually",
+        description: {
+            en: "Various tagrenderings which are generated from Wikidata. Automatically generated with a script, don't edit manually"
+        },
         "#dont-translate": "*",
         "source": {
             "osmTags": "id~*"
         },
+        title: null,
         "mapRendering": null,
         tagRenderings: [
             {

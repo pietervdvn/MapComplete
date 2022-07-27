@@ -58,6 +58,8 @@ import {MapillaryLink} from "./BigComponents/MapillaryLink";
 import {CheckBox} from "./Input/Checkboxes";
 import Slider from "./Input/Slider";
 import List from "./Base/List";
+import StatisticsPanel from "./BigComponents/StatisticsPanel";
+import { OsmFeature } from "../Models/OsmFeature";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -208,7 +210,7 @@ class NearbyImageVis implements SpecialVisualization {
         const nearby = new Lazy(() => {
             const towardsCenter = new CheckBox(t.onlyTowards, false)
 
-            const radiusValue = state?.osmConnection?.GetPreference("nearby-images-radius","300").sync(s => Number(s), [], i => ""+i) ?? new UIEventSource(300);
+            const radiusValue = state?.osmConnection?.GetPreference("nearby-images-radius", "300").sync(s => Number(s), [], i => "" + i) ?? new UIEventSource(300);
 
             const radius = new Slider(25, 500, {
                 value:
@@ -286,7 +288,13 @@ export default class SpecialVisualizations {
 
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.init()
 
-    public static DocumentationFor(viz: SpecialVisualization): BaseUIElement {
+    public static DocumentationFor(viz: string | SpecialVisualization): BaseUIElement | undefined {
+        if (typeof viz === "string") {
+            viz = SpecialVisualizations.specialVisualizations.find(sv => sv.funcName === viz)
+        }
+        if(viz === undefined){
+            return undefined;
+        }
         return new Combine(
             [
                 new Title(viz.funcName, 3),
@@ -749,8 +757,8 @@ export default class SpecialVisualizations {
                 },
                 {
                     funcName: "canonical",
-                    docs: "Converts a short, canonical value into the long, translated text",
-                    example: "{canonical(length)} will give 42 metre (in french)",
+                    docs: "Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text. ",
+                    example: "If the object has `length=42`, then `{canonical(length)}` will be shown as **42 meter** (in english), **42 metre** (in french), ...",
                     args: [{
                         name: "key",
                         doc: "The key of the tag to give the canonical text for",
@@ -1125,6 +1133,35 @@ export default class SpecialVisualizations {
                         return details; 
                     },
                     docs: "Show details of a MapRoulette task"
+                },
+                {
+                    funcName: "statistics",
+                    docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",
+                    args: [],
+                    constr :  (state, tagsSource, args, guiState) => {
+                        const elementsInview = new UIEventSource<{ distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[]>([]);
+                        function update() {
+                            const mapCenter = <[number,number]> [state.locationControl.data.lon, state.locationControl.data.lon]
+                            const bbox = state.currentBounds.data
+                            const elements = state.featurePipeline.getAllVisibleElementsWithmeta(bbox).map(el => {
+                                const distance = GeoOperations.distanceBetween(el.center, mapCenter)
+                                return {...el, distance }
+                            })
+                            elements.sort((e0, e1) => e0.distance - e1.distance)
+                            elementsInview.setData(elements)
+
+                        }
+
+                        state.currentBounds.addCallbackAndRun(update)
+                        state.featurePipeline.newDataLoadedSignal.addCallback(update);
+                        state.filteredLayers.addCallbackAndRun(fls => {
+                            for (const fl of fls) {
+                                fl.isDisplayed.addCallback(update)
+                                fl.appliedFilters.addCallback(update)
+                            }
+                        })
+                        return new StatisticsPanel(elementsInview, state)
+                    }
                 }
             ]
 

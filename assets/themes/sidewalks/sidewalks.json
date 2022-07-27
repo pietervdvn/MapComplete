@@ -125,7 +125,11 @@
                 },
                 {
                   "if": "sidewalk:left|right=no",
-                  "then": "No, there is no seperated sidewalk to walk on"
+                  "then": "No, there is no sidewalk to walk on"
+                },
+                {
+                  "if": "sidewalk:left|right=separate",
+                  "then": "There is a separately mapped sidewalk to walk on"
                 }
               ]
             },

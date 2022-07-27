@@ -82,6 +82,8 @@ This tagrendering has no question and is thus read-only
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -102,7 +104,7 @@ This is rendered with  In remembrance of {name}
 
 
 
-  - No name is marked on the bike corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+  - No name is marked on the bike  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
 
 
 

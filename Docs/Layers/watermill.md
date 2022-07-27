@@ -58,6 +58,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -78,12 +80,12 @@ This is rendered with  De toegankelijkheid van dit gebied is: {access:descriptio
 
 
 
-  - Vrij toegankelijk corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - Niet toegankelijk corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
-  - Niet toegankelijk, want privégebied corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
-  - Toegankelijk, ondanks dat het privegebied is corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>
-  - Enkel toegankelijk met een gids of tijdens een activiteit corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>
-  - Toegankelijk mits betaling corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
+  - Vrij toegankelijk  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>`
+  - Niet toegankelijk  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>`
+  - Niet toegankelijk, want privégebied  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>`
+  - Toegankelijk, ondanks dat het privegebied is  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>`
+  - Enkel toegankelijk met een gids of tijdens een activiteit  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>`
+  - Toegankelijk mits betaling  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -102,8 +104,8 @@ This is rendered with  Beheer door {operator}
 
 
 
-  - Dit gebied wordt beheerd door Natuurpunt corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
-  - Dit gebied wordt beheerd door {operator} corresponds with  operator~^(n|N)atuurpunt.*$
+  - Dit gebied wordt beheerd door Natuurpunt  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>`
+  - Dit gebied wordt beheerd door {operator}  corresponds with  `operator~^(n|N)atuurpunt.*$`
   - This option cannot be chosen as answer
  
 

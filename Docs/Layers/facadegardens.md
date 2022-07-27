@@ -75,6 +75,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -105,9 +107,9 @@ The question is  Is the garden shaded or sunny?
 
 
 
-  - The garden is in full sun corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes' target='_blank'>yes</a>
-  - The garden is in partial shade corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial' target='_blank'>partial</a>
-  - The garden is in the shade corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno' target='_blank'>no</a>
+  - The garden is in full sun  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes' target='_blank'>yes</a>`
+  - The garden is in partial shade  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial' target='_blank'>partial</a>`
+  - The garden is in the shade  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno' target='_blank'>no</a>`
 
 
 
@@ -122,8 +124,8 @@ The question is  Is there a water barrel installed for the garden?
 
 
 
-  - There is a rain barrel corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes' target='_blank'>yes</a>
-  - There is no rain barrel corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno' target='_blank'>no</a>
+  - There is a rain barrel  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes' target='_blank'>yes</a>`
+  - There is no rain barrel  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno' target='_blank'>no</a>`
 
 
 
@@ -152,8 +154,8 @@ The question is  Are there any edible plants?
 
 
 
-  - There are edible plants corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes' target='_blank'>yes</a>
-  - There are no edible plants corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno' target='_blank'>no</a>
+  - There are edible plants  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes' target='_blank'>yes</a>`
+  - There are no edible plants  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno' target='_blank'>no</a>`
 
 
 
@@ -168,10 +170,10 @@ The question is  What kinds of plants grow here?
 
 
 
-  - There are vines corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine' target='_blank'>vine</a>
-  - There are flowering plants corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower' target='_blank'>flower</a>
-  - There are shrubs corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub' target='_blank'>shrub</a>
-  - There are groundcovering plants corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover' target='_blank'>groundcover</a>
+  - There are vines  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine' target='_blank'>vine</a>`
+  - There are flowering plants  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower' target='_blank'>flower</a>`
+  - There are shrubs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub' target='_blank'>shrub</a>`
+  - There are groundcovering plants  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover' target='_blank'>groundcover</a>`
 
 
 
@@ -194,6 +196,8 @@ This is rendered with  More details: {description}
 
 
 
+Show the images block at this location
+
 This tagrendering has no question and is thus read-only
 
 
@@ -203,6 +207,8 @@ This tagrendering has no question and is thus read-only
 ### minimap 
 
 
+
+Shows a small map with the feature. Added by default to every popup
 
 This tagrendering has no question and is thus read-only
 

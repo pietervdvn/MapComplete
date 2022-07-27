@@ -50,7 +50,8 @@
           "then": {
             "en": "This is a kindergarten (also known as <i>preschool</i>) where small kids receive early education.",
             "nl": "Dit is een kleuterschool waar kindjes (voorbereidend) onderwijs krijgen.",
-            "de": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten."
+            "de": "Dies ist ein Kindergarten (auch bekannt als <i>Vorschule</i>), in dem kleine Kinder eine Früherziehung erhalten.",
+            "ca": "Aquesta és una llar d'infants (també coneguda com a <i>preescolar</i>) on els nens petits reben educació primerenca."
           },
           "addExtraTags": [
             "isced:level=0",
@@ -79,7 +80,8 @@
       },
       "render": {
         "en": "This facility is named <b>{name}</b>",
-        "de": "Diese Einrichtung hat den Namen <b>{name}</b>"
+        "de": "Diese Einrichtung hat den Namen <b>{name}</b>",
+        "ca": "Aquesta instal·lació s'anomena <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -109,7 +111,8 @@
       "render": {
         "en": "This facility has room for {capacity} kids",
         "nl": "Hier kunnen {capacity} kinderen terecht",
-        "de": "Diese Einrichtung bietet Platz für {capacity} Kinder"
+        "de": "Diese Einrichtung bietet Platz für {capacity} Kinder",
+        "ca": "Aquesta instal·lació té espai per a {capacity} nens"
       },
       "freeform": {
         "key": "capacity",

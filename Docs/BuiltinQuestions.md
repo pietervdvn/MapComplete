@@ -32,8 +32,10 @@ The following items can be easily reused in your layers
     + [payment-options-advanced](#payment-options-advanced)
     + [last_edit](#last_edit)
     + [all_tags](#all_tags)
+    + [multilevels](#multilevels)
     + [level](#level)
     + [smoking](#smoking)
+    + [induction-loop](#induction-loop)
     + [default](#default)
     + [defaults](#defaults)
     + [isOpen](#isopen)
@@ -324,6 +326,25 @@ Read-only tagrendering
 
 
 
+### multilevels 
+
+
+
+This elevator goes to floors {level}
+
+What levels does this elevator go to?
+
+
+
+  - Located underground
+  - Located on the ground floor
+  - Located on the ground floor
+  - Located on the first floor
+  - Located on the first basement level
+
+
+
+
 ### level 
 
 
@@ -354,6 +375,20 @@ Is smoking allowed at {title()}?
   - Smoking is <b>allowed</b>
   - Smoking is <b>not allowed</b>
   - Smoking is <b>allowed outside</b>.
+
+
+
+
+### induction-loop 
+
+
+
+Does this place have an audio induction loop for people with reduced hearing?
+
+
+
+  - This place has an audio induction loop
+  - This place <b>does not</b> has an audio induction loop
 
 
 

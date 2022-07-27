@@ -4,12 +4,35 @@ Tags format
 When creating the `json` file describing your layer or theme, you'll have to add a few tags to describe what you want.
 This document gives an overview of what every expression means and how it behaves in edge cases.
 
-If the schema-files note a type `string | AndOrTagConfigJson`, you can use one of these values.
+If the schema-files note a type [`TagConfigJson`](https://github.com/pietervdvn/MapComplete/blob/develop/Models/ThemeConfig/Json/TagConfigJson.ts), you can use one of these values.
 
 In some cases, not every type of tags-filter can be used. For example,  _rendering_ an option with a regex is
 fine (`"if": "brand~[Bb]randname", "then":" The brand is Brandname"`); but this regex can not be used to write a value
 into the database. The theme loader will however refuse to work with such inconsistencies and notify you of this while
 you are building your theme.
+
+Example
+-------
+
+This example shows the most common options on how to specify tags:
+
+```json
+{
+  "and": [
+    "key=value",
+    {
+      "or": [
+        "other_key=value",
+        "other_key=some_other_value"
+      ]
+    },
+    "key_which_should_be_missing=",
+    "key_which_should_have_a_value~*",
+    "key~.*some_regex_a*_b+_[a-z]?",
+    "height<1"
+  ]
+}
+```
 
 
 Strict equality

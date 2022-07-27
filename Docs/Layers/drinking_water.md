@@ -44,12 +44,13 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddrinking_water' target='_blank'>drinking_water</a>
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddrinking_water' target='_blank'>drinking_water</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:drinking_water' target='_blank'>drinking_water</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drinking_water%3Dyes' target='_blank'>yes</a>
+  - man_made!=reservoir_covered
   - access!=permissive
   - access!=private
 
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22drinking_water%22%5D%5B%22access%22!%3D%22permissive%22%5D%5B%22access%22!%3D%22private%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22drinking_water%22%5D%5B%22man_made%22!%3D%22reservoir_covered%22%5D%5B%22access%22!%3D%22permissive%22%5D%5B%22access%22!%3D%22private%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22drinking_water%22%3D%22yes%22%5D%5B%22man_made%22!%3D%22reservoir_covered%22%5D%5B%22access%22!%3D%22permissive%22%5D%5B%22access%22!%3D%22private%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -76,6 +77,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -96,9 +99,9 @@ This is rendered with  The operational status is <i>{operational_status}</i>
 
 
 
-  - This drinking water works corresponds with  
-  - This drinking water is broken corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
-  - This drinking water is closed corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
+  - This drinking water works  corresponds with  ``
+  - This drinking water is broken  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>`
+  - This drinking water is closed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>`
 
 
 
@@ -113,8 +116,8 @@ The question is  How easy is it to fill water bottles?
 
 
 
-  - It is easy to refill water bottles corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes' target='_blank'>yes</a>
-  - Water bottles may not fit corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno' target='_blank'>no</a>
+  - It is easy to refill water bottles  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes' target='_blank'>yes</a>`
+  - Water bottles may not fit  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno' target='_blank'>no</a>`
 
 
 

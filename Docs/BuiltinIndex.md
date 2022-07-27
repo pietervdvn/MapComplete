@@ -34,6 +34,8 @@
     + [climbing.sportclimbing](#climbingsportclimbing)
     + [climbing.max_bolts](#climbingmax_bolts)
     + [all_tags](#all_tags)
+    + [multilevels](#multilevels)
+    + [induction-loop](#induction-loop)
     + [questions](#questions)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
@@ -86,13 +88,17 @@
   - doctors
   - dogpark
   - drinking_water
+  - elevator
   - entrance
   - extinguisher
   - fire_station
   - food
   - ghost_bike
+  - governments
   - grass_in_parks
+  - hotel
   - hydrant
+  - indoors
   - information_board
   - map
   - nature_reserve
@@ -104,6 +110,7 @@
   - playground
   - public_bookcase
   - rainbow_crossings
+  - reception_desk
   - recycling
   - shops
   - slow_roads
@@ -131,14 +138,17 @@
 
   - bicycle_library
   - bicycle_rental
+  - bike_shop
   - bike_themed_object
   - cafe_pub
   - climbing_club
   - climbing_gym
   - doctors
   - food
+  - governments
   - hackerspace
   - hospital
+  - hotel
   - kindergarten_childcare
   - nature_reserve
   - observation_tower
@@ -161,14 +171,17 @@
 
   - bicycle_library
   - bicycle_rental
+  - bike_shop
   - bike_themed_object
   - cafe_pub
   - climbing_club
   - climbing_gym
   - doctors
   - food
+  - governments
   - hackerspace
   - hospital
+  - hotel
   - kindergarten_childcare
   - pharmacy
   - recycling
@@ -188,14 +201,17 @@
 
   - bicycle_library
   - bicycle_rental
+  - bike_shop
   - bike_themed_object
   - cafe_pub
   - climbing_club
   - climbing_gym
   - doctors
   - food
+  - governments
   - hackerspace
   - hospital
+  - hotel
   - kindergarten_childcare
   - pharmacy
   - recycling
@@ -279,7 +295,14 @@
 
 
   - bike_repair_station
+  - cafe_pub
   - charging_station
+  - entrance
+  - food
+  - parking
+  - picnic_table
+  - reception_desk
+  - shops
   - toilet
 
 
@@ -317,6 +340,7 @@
   - defibrillator
   - food
   - hackerspace
+  - hotel
   - observation_tower
   - transit_stops
 
@@ -368,6 +392,7 @@
   - dogpark
   - food
   - hackerspace
+  - hotel
   - shops
   - veterinary
 
@@ -471,6 +496,29 @@
 
 
   - cluster_style
+
+
+
+
+### multilevels 
+
+
+
+
+
+  - elevator
+
+
+
+
+### induction-loop 
+
+
+
+
+
+  - elevator
+  - reception_desk
 
 
 

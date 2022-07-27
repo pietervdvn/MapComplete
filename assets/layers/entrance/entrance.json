@@ -17,7 +17,8 @@
     "osmTags": {
       "or": [
         "entrance~*",
-        "indoor=door"
+        "indoor=door",
+        "door~*"
       ]
     }
   },
@@ -34,6 +35,7 @@
   },
   "tagRenderings": [
     "images",
+    "level",
     {
       "id": "Entrance type",
       "question": {
@@ -337,8 +339,7 @@
         "es": "¿Cual es el ancho de esta puerta/entrada?"
       },
       "freeform": {
-        "key": "width",
-        "type": "distance"
+        "key": "width"
       }
     },
     {
@@ -358,7 +359,7 @@
       },
       "mappings": [
         {
-          "if": "kerb-height=",
+          "if": "kerb:height=0",
           "then": {
             "en": "This door does not have a kerb",
             "nl": "Deze deur heeft geen drempel"
@@ -387,7 +388,7 @@
   "presets": [
     {
       "title": {
-        "*": "entrance"
+        "en": "an entrance"
       },
       "preciseInput": {
         "preferredBackground": "photo",
@@ -417,6 +418,7 @@
           }
         },
         {
+          "default": true,
           "canonicalDenomination": "cm",
           "alternativeDenomination": [
             "centimeter",

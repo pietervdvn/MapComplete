@@ -52,6 +52,35 @@
       "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Cafés and pubs' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Cafés and pubs') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "-1"
+    },
+    {
       "key": "name",
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cafés and pubs')"
     },

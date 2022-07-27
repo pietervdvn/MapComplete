@@ -17,13 +17,18 @@ function genImages(dryrun = false) {
             throw "Non-svg file detected in the svg files: " + path;
         }
 
-        let svg = fs.readFileSync("./assets/svg/" + path, "utf-8")
+        let svg : string = fs.readFileSync("./assets/svg/" + path, "utf-8")
             .replace(/<\?xml.*?>/, "")
             .replace(/fill: ?none;/g, "fill: none !important;") // This is such a brittle hack...
             .replace(/\n/g, " ")
             .replace(/\r/g, "")
             .replace(/\\/g, "\\")
             .replace(/"/g, "\\\"")
+
+        let hasNonAsciiChars = Array.from(svg).some(char => char.charCodeAt(0) > 127);
+        if(hasNonAsciiChars){
+            throw "The svg '"+path+"' has non-ascii characters";
+        }
         const name = path.substr(0, path.length - 4)
             .replace(/[ -]/g, "_");
 

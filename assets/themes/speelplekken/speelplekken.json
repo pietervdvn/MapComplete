@@ -33,6 +33,7 @@
   "layers": [
     {
       "id": "shadow",
+      "title": null,
       "source": {
         "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete/master/assets/themes/speelplekken/shadow.geojson",
         "osmTags": "shadow=yes",

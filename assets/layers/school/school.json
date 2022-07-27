@@ -304,7 +304,8 @@
             "hideInAnswer": true,
             "then": {
               "en": "The main language of this school is unknown",
-              "nl": "De voertaal van deze school is niet gekend"
+              "nl": "De voertaal van deze school is niet gekend",
+              "de": "Die Unterrichtssprache der Schule ist unbekannt"
             }
           }
         ],

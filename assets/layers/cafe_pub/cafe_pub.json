@@ -156,6 +156,7 @@
   },
   "tagRenderings": [
     "images",
+    "level",
     {
       "question": {
         "nl": "Wat is de naam van dit café?",
@@ -272,7 +273,7 @@
         {
           "question": {
             "en": "Opened now",
-            "nl": "Nu geopened",
+            "nl": "Nu geopend",
             "de": "Derzeit geöffnet",
             "fr": "Ouvert maintenant",
             "hu": "Most nyitva van",

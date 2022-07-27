@@ -19,6 +19,18 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
 
 
+#### Themes using this layer 
+
+
+
+
+
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
+  - [personal](https://mapcomplete.osm.be/personal)
+
+
+
+
  Basic tags for this layer 
 ---------------------------
 
@@ -56,6 +68,8 @@ attribute | type | values which are supported by this layer
 ### images 
 
 
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
 
 This tagrendering has no question and is thus read-only
 

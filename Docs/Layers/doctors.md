@@ -26,6 +26,7 @@ This layer shows doctor offices, dentists and other healthcare facilities
 
 
   - [healthcare](https://mapcomplete.osm.be/healthcare)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 
@@ -74,6 +75,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -108,7 +111,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a> corresponds with  contact:phone~^..*$
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -128,7 +131,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a> corresponds with  contact:email~^..*$
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -148,7 +151,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with  contact:website~^..*$
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -182,10 +185,10 @@ This is rendered with  This doctor is specialized in {healthcare:speciality}
 
 
 
-  - This is a general practitioner corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgeneral' target='_blank'>general</a>
-  - This is a gynaecologist corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgynaecology' target='_blank'>gynaecology</a>
-  - This is a psychiatrist corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpsychiatry' target='_blank'>psychiatry</a>
-  - This is a paediatrician corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpaediatrics' target='_blank'>paediatrics</a>
+  - This is a general practitioner  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgeneral' target='_blank'>general</a>`
+  - This is a gynaecologist  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgynaecology' target='_blank'>gynaecology</a>`
+  - This is a psychiatrist  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpsychiatry' target='_blank'>psychiatry</a>`
+  - This is a paediatrician  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpaediatrics' target='_blank'>paediatrics</a>`
 
 
 Only visible if  `amenity=doctors`  is shown 

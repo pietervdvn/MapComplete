@@ -25,7 +25,8 @@
     "de": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
     "nb_NO": "Offentlig tilgjengelige drikkevannssteder",
     "hu": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén",
-    "es": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente"
+    "es": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente",
+    "ca": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/drinking_water/logo.svg",

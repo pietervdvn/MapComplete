@@ -4162,6 +4162,7 @@
           "then": {
             "en": "This charging station works",
             "nl": "Dit oplaadpunt werkt",
+            "ca": "Aquesta estació de càrrega funciona",
             "de": "Die Station ist in Betrieb",
             "es": "Esta estación de carga funciona"
           }

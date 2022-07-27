@@ -647,6 +647,10 @@
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
         "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen"
     },
+    "healthcare": {
+        "description": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
+        "title": "Gesundheitswesen"
+    },
     "kerbs_and_crossings": {
         "description": "Eine Karte mit Bordsteinen und Überwegen.",
         "title": "Bordsteine und Überwege"
@@ -738,13 +742,32 @@
         "title": "Aussichtstürme"
     },
     "onwheels": {
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "render": "Diese Tür hat eine Durchgangsbreite von {canonical(_poi_entrance:width)} Meter"
+        "description": "Auf dieser Karte werden öffentlich zugängliche Orte für Rollstuhlfahrer angezeigt und können leicht hinzugefügt werden",
+        "layers": {
+            "7": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Alle Arten von Bordsteinen"
+                                },
+                                "1": {
+                                    "question": "Erhöhter Bordstein (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Abgesenkter Bordstein (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Bündiger Bordstein (~0cm)"
+                                }
+                            }
+                        }
+                    }
                 }
             }
-        }
+        },
+        "title": "Auf Rädern"
     },
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
@@ -868,6 +891,10 @@
         "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
         "title": "Post- und Briefkastenkarte"
     },
+    "rainbow_crossings": {
+        "description": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden",
+        "title": "Regenbogen-Fußgängerübergänge"
+    },
     "shops": {
         "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
         "shortDescription": "Eine bearbeitbare Karte mit grundlegenden Geschäftsinformationen",
@@ -962,10 +989,18 @@
         "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
         "title": "Freie Toilettenkarte"
     },
+    "transit": {
+        "description": "Planen Sie Ihre Reise mit Hilfe von öffentlichen Verkehrsmitteln.",
+        "title": "Buslinien"
+    },
     "trees": {
         "description": "Kartieren Sie alle Bäume!",
         "shortDescription": "Kartieren Sie alle Bäume",
         "title": "Bäume"
+    },
+    "walls_and_buildings": {
+        "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
+        "title": "Wände und Gebäude"
     },
     "waste": {
         "description": "Eine Karte mit Abfalleimern und Recyclingeinrichtungen.",

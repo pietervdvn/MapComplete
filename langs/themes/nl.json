@@ -876,10 +876,27 @@
         "title": "Uitkijktorens"
     },
     "onwheels": {
-        "overrideAll": {
-            "+tagRenderings": {
-                "0": {
-                    "render": "Deze deur heeft een breedte van {canonical(_poi_entrance:width)} meter"
+        "layers": {
+            "7": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Alle typen stoepranden"
+                                },
+                                "1": {
+                                    "question": "Hoge stoeprand (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Verlaagde stoeprand (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Vlakke stoeprand (~0cm)"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

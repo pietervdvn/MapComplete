@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 177,
+      "commits": 180,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 139,
+      "commits": 142,
       "contributor": "kjon"
     },
     {
@@ -18,11 +18,11 @@
     },
     {
       "commits": 31,
-      "contributor": "Iago"
+      "contributor": "Babos Gábor"
     },
     {
-      "commits": 30,
-      "contributor": "Babos Gábor"
+      "commits": 31,
+      "contributor": "Iago"
     },
     {
       "commits": 29,
@@ -41,12 +41,12 @@
       "contributor": "Anonymous"
     },
     {
-      "commits": 19,
-      "contributor": "SC"
+      "commits": 20,
+      "contributor": "Robin van der Linde"
     },
     {
-      "commits": 18,
-      "contributor": "Robin van der Linde"
+      "commits": 19,
+      "contributor": "SC"
     },
     {
       "commits": 18,
@@ -73,6 +73,10 @@
       "contributor": "Joost"
     },
     {
+      "commits": 12,
+      "contributor": "paunofu"
+    },
+    {
       "commits": 10,
       "contributor": "Win Olario"
     },
@@ -91,10 +95,6 @@
     {
       "commits": 9,
       "contributor": "Jacque Fresco"
-    },
-    {
-      "commits": 8,
-      "contributor": "paunofu"
     },
     {
       "commits": 7,
@@ -227,6 +227,14 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "Andrews Leruth"
+    },
+    {
+      "commits": 2,
+      "contributor": "Manuel Tassi"
     },
     {
       "commits": 2,

@@ -1,10 +1,12 @@
 {
   "id": "shelter",
   "name": {
-    "en": "Shelter"
+    "en": "Shelter",
+    "de": "Unterstand"
   },
   "description": {
-    "en": "Layer showing shelter structures"
+    "en": "Layer showing shelter structures",
+    "de": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt"
   },
   "source": {
     "osmTags": {
@@ -16,7 +18,8 @@
   "minzoom": 13,
   "title": {
     "render": {
-      "en": "Shelter"
+      "en": "Shelter",
+      "de": "Unterstand"
     }
   },
   "mapRendering": [
@@ -35,19 +38,22 @@
         {
           "if": "shelter_type=public_transport",
           "then": {
-            "en": "This is a shelter at a public transport stop."
+            "en": "This is a shelter at a public transport stop.",
+            "de": "Das ist ein Unterstand an einer Haltestelle für öffentliche Verkehrsmittel."
           }
         },
         {
           "if": "shelter_type=picnic_shelter",
           "then": {
-            "en": "This is a shelter protecting from rain at a picnic site."
+            "en": "This is a shelter protecting from rain at a picnic site.",
+            "de": "Dies ist ein Unterstand zum Schutz vor Regen auf einem Picknickplatz."
           }
         },
         {
           "if": "shelter_type=gazebo",
           "then": {
-            "en": "This is a gazebo."
+            "en": "This is a gazebo.",
+            "de": "Das ist ein offener Gartenpavillon."
           }
         },
         {
@@ -74,10 +80,12 @@
         }
       ],
       "question": {
-        "en": "What kind of shelter is this?"
+        "en": "What kind of shelter is this?",
+        "de": "Um welche Art von Unterstand handelt es sich?"
       },
       "render": {
-        "en": "Shelter type: {shelter_type}"
+        "en": "Shelter type: {shelter_type}",
+        "de": "Art des Unterstands: {shelter_type}"
       },
       "freeform": {
         "key": "shelter_type",

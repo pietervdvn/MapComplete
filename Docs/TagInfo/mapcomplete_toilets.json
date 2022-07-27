@@ -32,6 +32,35 @@
       "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "level",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Open Toilet Map') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "-1"
+    },
+    {
       "key": "access",
       "description": "Layer 'Toilets' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Open Toilet Map')"
     },
@@ -102,6 +131,15 @@
       "key": "wheelchair",
       "description": "Layer 'Toilets' shows wheelchair=no with a fixed text, namely 'No wheelchair access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=designated with a fixed text, namely 'There is only a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "value": "designated"
+    },
+    {
+      "key": "door:width",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the MapComplete.osm.be theme 'Open Toilet Map')"
     },
     {
       "key": "toilets:position",
@@ -176,35 +214,6 @@
       "key": "toilets:paper_supplied",
       "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
       "value": "no"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Open Toilet Map')"
-    },
-    {
-      "key": "location",
-      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "underground"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "0"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Open Toilet Map') Picking this answer will delete the key level.",
-      "value": ""
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "1"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
-      "value": "-1"
     },
     {
       "key": "description",

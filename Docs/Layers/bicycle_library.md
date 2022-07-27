@@ -77,6 +77,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -111,7 +113,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a> corresponds with  contact:website~^..*$
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -131,7 +133,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a> corresponds with  contact:phone~^..*$
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -151,7 +153,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a> corresponds with  contact:email~^..*$
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
   - This option cannot be chosen as answer
 
 
@@ -185,8 +187,8 @@ This is rendered with  Lending a bicycle costs {charge}
 
 
 
-  - Lending a bicycle is free corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
-  - Lending a bicycle costs €20/year and €20 warranty corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D€20warranty + €20/year' target='_blank'>€20warranty + €20/year</a>
+  - Lending a bicycle is free  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>`
+  - Lending a bicycle costs €20/year and €20 warranty  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D€20warranty + €20/year' target='_blank'>€20warranty + €20/year</a>`
 
 
 
@@ -201,9 +203,9 @@ The question is  Who can loan bicycles here?
 
 
 
-  - Bikes for children available corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dchild' target='_blank'>child</a>
-  - Bikes for adult available corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dadult' target='_blank'>adult</a>
-  - Bikes for disabled persons available corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Ddisabled' target='_blank'>disabled</a>
+  - Bikes for children available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dchild' target='_blank'>child</a>`
+  - Bikes for adult available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dadult' target='_blank'>adult</a>`
+  - Bikes for disabled persons available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Ddisabled' target='_blank'>disabled</a>`
 
 
 
