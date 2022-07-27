@@ -20,7 +20,7 @@
   "widenFactor": 2,
   "hideFromOverview": false,
   "layers": [
-      {
+    {
       "builtin": "indoors",
       "override": {
         "minzoom": 19,
@@ -330,6 +330,44 @@
       }
     },
     {
+      "builtin": "governments",
+      "override": {
+        "minzoom": 15,
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/onwheels/government.svg",
+            "iconSize": "40,40,bottom"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "current_view",
+      "override": {
+        "+mapRendering": [
+          {
+            "location": [
+              "point",
+              "centroid"
+            ],
+            "icon": "statistics"
+          }
+        ],
+        "=title": {
+          "render": {
+            "en": "Statistics",
+            "de": "Statistik"
+          }
+        },
+        "tagRenderings": [
+          {
+            "id": "stats",
+            "render": "{statistics()}"
+          }
+        ]
+      }
+    },
+    {
       "builtin": "maproulette_challenge",
       "override": {
         "source": {
@@ -372,44 +410,6 @@
                 "id_of_object_to_apply_this_one": "_closest_osm_hotel"
               }
             }
-          }
-        ]
-      }
-    },
-    {
-      "builtin": "governments",
-      "override": {
-        "minzoom": 15,
-        "mapRendering": [
-          {
-            "icon": "./assets/themes/onwheels/government.svg",
-            "iconSize": "40,40,bottom"
-          }
-        ]
-      }
-    },
-    {
-      "builtin": "current_view",
-      "override": {
-        "+mapRendering": [
-          {
-            "location": [
-              "point",
-              "centroid"
-            ],
-            "icon": "statistics"
-          }
-        ],
-        "=title": {
-          "render": {
-            "en": "Statistics",
-            "de": "Statistik"
-          }
-        },
-        "tagRenderings": [
-          {
-            "id": "stats",
-            "render": "{statistics()}"
           }
         ]
       }
