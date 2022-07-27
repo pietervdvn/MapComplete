@@ -15,9 +15,11 @@
     "de": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer"
   },
   "title": {
-    "en": "Elevator",
-    "fr": "Ascenseur",
-    "de": "Aufzug"
+    "render": {
+      "en": "Elevator",
+      "fr": "Ascenseur",
+      "de": "Aufzug"
+    }
   },
   "tagRenderings": [
     "images",
