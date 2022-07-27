@@ -5,7 +5,8 @@
     "de": "Apotheke"
   },
   "description": {
-    "en": "A layer showing pharmacies, which (probably) dispense prescription drugs"
+    "en": "A layer showing pharmacies, which (probably) dispense prescription drugs",
+    "de": "Eine Ebene mit Apotheken, die (wahrscheinlich) verschreibungspflichtige Medikamente ausgeben"
   },
   "title": {
     "render": {
@@ -38,14 +39,17 @@
         "key": "name",
         "type": "string",
         "placeholder": {
-          "en": "Name of the pharmacy"
+          "en": "Name of the pharmacy",
+          "de": "Name der Apotheke"
         }
       },
       "question": {
-        "en": "What is the name of the pharmacy?"
+        "en": "What is the name of the pharmacy?",
+        "de": "Wie lautet der Name der Apotheke?"
       },
       "render": {
-        "en": "This pharmacy is called {name}"
+        "en": "This pharmacy is called {name}",
+        "de": "Der Name der Apotheke lautet {name}"
       }
     },
     "opening_hours",
@@ -116,7 +120,8 @@
       "options": [
         {
           "question": {
-            "en": "Has drive through"
+            "en": "Has drive through",
+            "de": "Bietet einen Durchfahr-Service an"
           },
           "osmTags": "drive_through=yes"
         }
@@ -127,7 +132,8 @@
       "options": [
         {
           "question": {
-            "en": "Pharmacy able to provide prescription drugs"
+            "en": "Pharmacy able to provide prescription drugs",
+            "de": "Apotheke, die verschreibungspflichtige Arzneimittel ausgibt"
           },
           "osmTags": "dispensing=yes"
         }

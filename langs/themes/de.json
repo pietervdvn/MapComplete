@@ -600,6 +600,10 @@
         "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
         "title": "Geisterräder"
     },
+    "governments": {
+        "description": "Auf dieser Karte werden Büros der öffentlichen Verwaltung angezeigt und können leicht hinzugefügt werden",
+        "title": "Büros der öffentlichen Verwaltung"
+    },
     "grb": {
         "description": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",
         "layers": {
@@ -650,6 +654,10 @@
     "healthcare": {
         "description": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
         "title": "Gesundheitswesen"
+    },
+    "indoors": {
+        "description": "Diese Karte zeigt öffentlich zugängliche Innenräume",
+        "title": "Innenräume"
     },
     "kerbs_and_crossings": {
         "description": "Eine Karte mit Bordsteinen und Überwegen.",
@@ -744,6 +752,27 @@
     "onwheels": {
         "description": "Auf dieser Karte werden öffentlich zugängliche Orte für Rollstuhlfahrer angezeigt und können leicht hinzugefügt werden",
         "layers": {
+            "2": {
+                "override": {
+                    "title": "Fußgängerweg"
+                }
+            },
+            "5": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Beliebig/Keine Breiteninformationen"
+                                },
+                                "1": {
+                                    "question": "Beliebige Breiteninformationen"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "7": {
                 "override": {
                     "filter": {
@@ -764,6 +793,25 @@
                             }
                         }
                     }
+                }
+            },
+            "23": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "+tagRenderings": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Das Gebäude hat keine Informationen über Türbreiten. Fügen Sie eine Tür hinzu und messen Sie die Breite, um Informationen zu erhalten"
+                        }
+                    },
+                    "render": "Das Gebäude kann über <a href='#{_poi_entrance:id}'>durch eine Tür von {canonical(_poi_entrance:width)} betreten werden.</a>"
                 }
             }
         },

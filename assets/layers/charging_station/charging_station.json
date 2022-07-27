@@ -4243,7 +4243,8 @@
         "en": "Does one have to pay a parking fee while charging?",
         "nl": "Moet men parkeergeld betalen tijdens het opladen?",
         "de": "Muss man während des Ladens eine Parkgebühr bezahlen?",
-        "es": "¿Hay que pagar una tasa de aparcamiento mientras se carga?"
+        "es": "¿Hay que pagar una tasa de aparcamiento mientras se carga?",
+        "fr": "Doit-on payer des frais de stationnement pendant la recharge ?"
       },
       "mappings": [
         {
@@ -4252,7 +4253,8 @@
             "en": "No additional parking cost while charging",
             "nl": "Geen extra parkeerkost tijdens het opladen",
             "de": "Keine zusätzlichen Parkkosten während des Ladens",
-            "es": "No hay costes de aparcamiento adicionales mientras se carga"
+            "es": "No hay costes de aparcamiento adicionales mientras se carga",
+            "fr": "Pas de frais de stationnement supplémentaires pendant la recharge"
           }
         },
         {
@@ -4261,7 +4263,8 @@
             "en": "An additional parking fee should be paid while charging",
             "nl": "Tijdens het opladen moet er parkeergeld betaald worden",
             "de": "Während des Ladens ist eine zusätzliche Parkgebühr zu entrichten",
-            "es": "Se deberá de pagar una tasa adicional de aparcamiento mientras se carga"
+            "es": "Se deberá de pagar una tasa adicional de aparcamiento mientras se carga",
+            "fr": "Des frais de stationnement supplémentaires doivent être payés lors de la recharge"
           }
         }
       ],

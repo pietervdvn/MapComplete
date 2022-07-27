@@ -224,7 +224,8 @@
         "en": "When are these toilets opened?",
         "nl": "Wanneer zijn deze toiletten open?",
         "de": "Wann sind diese Toiletten geöffnet?",
-        "es": ""
+        "es": "",
+        "fr": "Quand ces toilettes sont-elles ouvertes ?"
       },
       "render": "{opening_hours_table()}",
       "freeform": {
@@ -238,7 +239,8 @@
             "en": "Opened 24/7",
             "nl": "Altijd open",
             "de": "Durchgehend geöffnet",
-            "es": "Abierto 24/7"
+            "es": "Abierto 24/7",
+            "fr": "Ouvert 24h/24 et 7j/7"
           }
         }
       ]
@@ -280,7 +282,8 @@
           "if": "wheelchair=designated",
           "then": {
             "en": "There is only a dedicated toilet for wheelchair users",
-            "nl": "Er is alleen een toilet voor rolstoelgebruikers"
+            "nl": "Er is alleen een toilet voor rolstoelgebruikers",
+            "de": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer"
           }
         }
       ]
@@ -289,11 +292,15 @@
       "id": "wheelchair-door-width",
       "question": {
         "en": "What is the width of the door to the wheelchair accessible toilet?",
-        "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?"
+        "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
+        "fr": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?",
+        "de": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?"
       },
       "render": {
         "en": "The door to the wheelchair-accessible toilet is {canonical(door:width)} wide",
-        "nl": "De deur naar de rolstoeltoegankelijke toilet is {canonical(door:width)} wide"
+        "nl": "De deur naar de rolstoeltoegankelijke toilet is {canonical(door:width)} wide",
+        "fr": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(door:width)}",
+        "de": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(door:width)} breit"
       },
       "freeform": {
         "key": "door:width",
@@ -538,7 +545,8 @@
             "en": "Wheelchair accessible",
             "nl": "Rolstoel toegankelijk",
             "de": "Rollstuhlgerecht",
-            "es": "Accesible con sillas de ruedas"
+            "es": "Accesible con sillas de ruedas",
+            "fr": "Accessible aux fauteuils roulants"
           },
           "osmTags": {
             "or": [
@@ -557,7 +565,8 @@
             "en": "Has a changing table",
             "nl": "Heeft een luiertafel",
             "de": "Mit Wickeltisch",
-            "es": "Tiene un cambiador"
+            "es": "Tiene un cambiador",
+            "fr": "A une table à langer"
           },
           "osmTags": "changing_table=yes"
         }
@@ -570,7 +579,8 @@
           "question": {
             "en": "Free to use",
             "nl": "Gratis toegankelijk",
-            "de": "Nutzung kostenlos"
+            "de": "Nutzung kostenlos",
+            "fr": "Utilisation gratuite"
           },
           "osmTags": {
             "or": [
@@ -590,7 +600,8 @@
             "nl": "Nu geopened",
             "en": "Opened now",
             "de": "Derzeit geöffnet",
-            "es": "Abierto ahora"
+            "es": "Abierto ahora",
+            "fr": "Ouvert maintenant"
           },
           "osmTags": {
             "or": [
@@ -656,7 +667,8 @@
     "en": "A layer showing (public) toilets",
     "nl": "Een laag die publieke toiletten toont",
     "de": "Eine Ebene mit (öffentlichen) Toiletten",
-    "es": "Una capa que muestra baños (públicos)"
+    "es": "Una capa que muestra baños (públicos)",
+    "fr": "Un calque montrant les toilettes (publiques)"
   },
   "units": [
     {
@@ -671,7 +683,9 @@
           ],
           "human": {
             "en": "meter",
-            "nl": "meter"
+            "nl": "meter",
+            "fr": "mètre",
+            "de": "Meter"
           }
         },
         {
@@ -682,7 +696,9 @@
           ],
           "human": {
             "en": "centimeter",
-            "nl": "centimeter"
+            "nl": "centimeter",
+            "fr": "centimètre",
+            "de": "Zentimeter"
           }
         }
       ]

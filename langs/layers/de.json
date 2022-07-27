@@ -3393,9 +3393,67 @@
             "render": "Trinkwasserstelle"
         }
     },
+    "elevator": {
+        "description": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer",
+        "name": "Aufzug",
+        "presets": {
+            "0": {
+                "title": "einen Aufzug"
+            }
+        },
+        "tagRenderings": {
+            "door-width": {
+                "question": "Wie breit ist die Tür dieses Aufzugs?",
+                "render": "Die Türen des Aufzugs haben eine Breite von {canonical(door:width)}"
+            },
+            "elevator-depth": {
+                "question": "Wie tief ist die Kabine dieses Aufzugs?",
+                "render": "Dieser Aufzug hat eine Kabinentiefe von {canonical(elevator:depth)}"
+            },
+            "elevator-width": {
+                "question": "Wie breit ist die Kabine dieses Aufzugs?",
+                "render": "Die Aufzugskabine hat eine Breite von {canonical(elevator:width)}"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Aufzug ist kaputt"
+                    },
+                    "1": {
+                        "then": "Dieser Aufzug ist außer Betrieb <span class='subtle'>z.B. wegen Renovierungsarbeiten</span>"
+                    },
+                    "2": {
+                        "then": "Dieser Aufzug ist in Betrieb"
+                    },
+                    "3": {
+                        "then": "Dieser Aufzug ist in Betrieb"
+                    }
+                },
+                "question": "Ist dieser Aufzug in Betrieb?"
+            }
+        },
+        "title": "Aufzug",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
+        }
+    },
     "entrance": {
         "description": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, …)",
         "name": "Eingänge",
+        "presets": {
+            "0": {
+                "title": "einen Eingang"
+            }
+        },
         "tagRenderings": {
             "Door_type": {
                 "mappings": {
@@ -3483,6 +3541,18 @@
                     }
                 }
             },
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Höhe der Türschwelle"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Diese Tür hat keine Türschwelle"
+                    }
+                },
+                "question": "Wie hoch ist die Türschwelle?",
+                "render": "Die Höhe der Türschwelle ist {kerb:height}"
+            },
             "width": {
                 "question": "Wie breit ist diese Tür bzw. dieser Eingang?",
                 "render": "Diese Tür hat eine Durchgangsbreite von {canonical(width)} Meter"
@@ -3490,6 +3560,18 @@
         },
         "title": {
             "render": "Eingang"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
         }
     },
     "etymology": {
@@ -3935,6 +4017,24 @@
             "render": "Geisterrad"
         }
     },
+    "governments": {
+        "description": "Diese Ebene zeigt Gebäude der öffentlichen Verwaltung. Sie wurde im Auftrag für den Kunden von OSOC '22 erstellt",
+        "name": "Öffentliche Verwaltung",
+        "presets": {
+            "0": {
+                "title": "ein Büro der öffentlichen Verwaltung"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name dieser Behörde?",
+                "render": "Der Name der Behörde lautet {name}"
+            }
+        },
+        "title": {
+            "render": "Behörde {name}"
+        }
+    },
     "gps_track": {
         "name": "Zurückgelegte Strecke anzeigen",
         "tagRenderings": {
@@ -4041,6 +4141,7 @@
         }
     },
     "hospital": {
+        "description": "Eine Ebene mit Krankenhäusern",
         "name": "Krankenhäuser",
         "tagRenderings": {
             "name": {
@@ -4050,6 +4151,32 @@
         },
         "title": {
             "render": "Krankenhaus"
+        }
+    },
+    "hotel": {
+        "description": "Eine Ebene mit Hotels",
+        "name": "Hotels",
+        "presets": {
+            "0": {
+                "title": "ein Hotel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name des Hotels"
+                },
+                "question": "Wie lautet der Name des Hotels?",
+                "render": "Der Name des Hotels lautet {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            },
+            "render": "Hotel"
         }
     },
     "hydrant": {
@@ -4115,6 +4242,13 @@
         },
         "title": {
             "render": "Hydrant"
+        }
+    },
+    "indoors": {
+        "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
+        "name": "Innenräume",
+        "title": {
+            "render": "Innenbereich {name}"
         }
     },
     "information_board": {
@@ -4749,8 +4883,32 @@
         "name": "Fußgängerwege"
     },
     "pharmacy": {
+        "description": "Eine Ebene mit Apotheken, die (wahrscheinlich) verschreibungspflichtige Medikamente ausgeben",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Bietet einen Durchfahr-Service an"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Apotheke, die verschreibungspflichtige Arzneimittel ausgibt"
+                    }
+                }
+            }
+        },
         "name": "Apotheke",
         "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name der Apotheke"
+                },
+                "question": "Wie lautet der Name der Apotheke?",
+                "render": "Der Name der Apotheke lautet {name}"
+            },
             "wheelchair": {
                 "mappings": {
                     "0": {
@@ -5077,6 +5235,36 @@
         },
         "title": {
             "render": "Überweg"
+        }
+    },
+    "reception_desk": {
+        "description": "Eine Ebene, die Empfangstresen zeigt und Informationen zur Barrierefreiheit abfragt",
+        "name": "Empfangstresen",
+        "presets": {
+            "0": {
+                "title": "einen Empfangstresen"
+            }
+        },
+        "tagRenderings": {
+            "desk-height": {
+                "question": "Wie hoch ist der Empfangstresen? <div class='subtle'>Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches</div>",
+                "render": "Die Höhe des Tresens beträgt <b>{canonical(desk:height)}</b>"
+            }
+        },
+        "title": {
+            "render": "Empfangstresen"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
         }
     },
     "recycling": {
@@ -5412,6 +5600,15 @@
                     },
                     "2": {
                         "then": "Das ist ein offener Gartenpavillon."
+                    },
+                    "3": {
+                        "then": "Dies ist ein kleiner Unterstand, der vor allem für kurze Pausen gedacht ist. Normalerweise findet man ihn in Bergen oder an Straßen."
+                    },
+                    "4": {
+                        "then": "Es handelt sich um einen an 3 Seiten geschlossenen Unterstand, der in erster Linie zum Campen gedacht ist."
+                    },
+                    "5": {
+                        "then": "Das ist ein Pavillon"
                     }
                 },
                 "question": "Um welche Art von Unterstand handelt es sich?",
@@ -5496,7 +5693,8 @@
                 "question": "Welche Papierformate bietet das Geschäft an?"
             },
             "shops-name": {
-                "question": "Wie ist der Name dieses Geschäfts?"
+                "question": "Wie ist der Name dieses Geschäfts?",
+                "render": "Der Name des Geschäfts lautet <i>{name}</i>"
             }
         },
         "title": {
@@ -6139,13 +6337,32 @@
                     },
                     "1": {
                         "then": "Rollstuhlfahrer können die Toilette nicht benutzen"
+                    },
+                    "2": {
+                        "then": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer"
                     }
                 },
                 "question": "Können Rollstuhlfahrer die Toilette benutzen?"
+            },
+            "wheelchair-door-width": {
+                "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
+                "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(door:width)} breit"
             }
         },
         "title": {
             "render": "Toilette"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
         }
     },
     "trail": {

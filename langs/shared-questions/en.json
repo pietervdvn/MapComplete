@@ -29,7 +29,7 @@
                     "then": "This place has an audio induction loop"
                 },
                 "1": {
-                    "then": "This place <b>does not</b> has an audio induction loop"
+                    "then": "This place <b>does not</b> have an audio induction loop"
                 }
             },
             "question": "Does this place have an audio induction loop for people with reduced hearing?"

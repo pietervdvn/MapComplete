@@ -133,7 +133,8 @@
       "ca": "Bar",
       "de": "Kneipe",
       "da": "Pub",
-      "es": "Pub"
+      "es": "Pub",
+      "fr": "Bar"
     },
     "mappings": [
       {
@@ -149,7 +150,8 @@
           "ru": "<i>{name}</i>",
           "ca": "<i>{name}</i>",
           "da": "<i>{name}</i>",
-          "es": "<i>{name}</i>"
+          "es": "<i>{name}</i>",
+          "fr": "<i>{name}</i>"
         }
       }
     ]
@@ -188,7 +190,8 @@
         "de": "Was ist das für ein Café?",
         "hu": "Milyen fajta kávézó ez?",
         "da": "Hvilken slags cafe er dette",
-        "es": "Qué tipo de cafetería es esta"
+        "es": "Qué tipo de cafetería es esta",
+        "fr": "Quel genre de café est-ce ?"
       },
       "mappings": [
         {
@@ -219,7 +222,8 @@
             "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
             "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
             "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser",
-            "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
+            "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
+            "fr": "Un <b>café</b> pour boire du thé, du café ou une boisson alcoolisée au calme"
           }
         },
         {
@@ -229,7 +233,8 @@
             "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt",
             "de": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann",
             "da": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid",
-            "es": "Un <b>restaurante</b> donde puedes comer una comida de verdad"
+            "es": "Un <b>restaurante</b> donde puedes comer una comida de verdad",
+            "fr": "Un <b>restaurant</b> où l'on peut prendre un bon repas"
           }
         },
         {
@@ -239,7 +244,8 @@
             "nl": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland",
             "de": "Ein Außenbereich mit Bierausschank, typischerweise in Deutschland",
             "da": "Et åbent rum, hvor der serveres øl, typisk set i Tyskland",
-            "es": "Un espacio abierto donde se sirve cerveza, típico de Alemania"
+            "es": "Un espacio abierto donde se sirve cerveza, típico de Alemania",
+            "fr": "Un espace ouvert où la bière est servie, typiquement vu en Allemagne"
           },
           "hideInAnswer": "_country!=de"
         },
@@ -249,7 +255,8 @@
             "en": "This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
             "nl": "Dit is een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen",
             "de": "Dies ist ein <b>Club</b> oder eine Disco mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt",
-            "es": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)"
+            "es": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)",
+            "fr": "Il s'agit d'une <b>boîte de nuit</b> ou discothèque avec un accent sur la danse, la musique d'un DJ avec un spectacle de lumière et un bar pour prendre des boissons (alcoolisées)"
           }
         }
       ],

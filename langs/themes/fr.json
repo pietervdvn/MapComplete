@@ -673,6 +673,18 @@
     },
     "onwheels": {
         "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
+        "overrideAll": {
+            "+tagRenderings": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Ce bâtiment n'a aucune information sur les largeurs de portes. Ajoutez une porte et mesurez la largeur pour obtenir des informations"
+                        }
+                    },
+                    "render": "On peut entrer dans ce batiment via <a href='#{_poi_entrance:id}'>une porte de {canonical(_poi_entrance:width)}</a>"
+                }
+            }
+        },
         "title": "OnWheels"
     },
     "openwindpowermap": {
@@ -895,6 +907,9 @@
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Cartographions tous les arbres",
         "title": "Arbres"
+    },
+    "walls_and_buildings": {
+        "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur."
     },
     "waste": {
         "description": "Carte des poubelles et infrastructures de recyclage.",

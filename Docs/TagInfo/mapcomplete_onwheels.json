@@ -5536,7 +5536,7 @@
     },
     {
       "key": "hearing_loop",
-      "description": "Layer 'Reception desks' shows hearing_loop=no with a fixed text, namely 'This place <b>does not</b> has an audio induction loop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "description": "Layer 'Reception desks' shows hearing_loop=no with a fixed text, namely 'This place <b>does not</b> have an audio induction loop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "no"
     },
     {
@@ -5628,7 +5628,7 @@
     },
     {
       "key": "hearing_loop",
-      "description": "Layer 'elevator' shows hearing_loop=no with a fixed text, namely 'This place <b>does not</b> has an audio induction loop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "description": "Layer 'elevator' shows hearing_loop=no with a fixed text, namely 'This place <b>does not</b> have an audio induction loop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "no"
     },
     {

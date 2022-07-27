@@ -870,10 +870,12 @@
     "builtin": "level",
     "override": {
       "question": {
-        "en": "What levels does this elevator go to?"
+        "en": "What levels does this elevator go to?",
+        "de": "Auf welchen Geschossen hält dieser Aufzug?"
       },
       "render": {
-        "en": "This elevator goes to floors {level}"
+        "en": "This elevator goes to floors {level}",
+        "de": "Der Aufzug hält auf den Geschossen {level}"
       },
       "freeform": {
         "key": "level",
@@ -1114,13 +1116,15 @@
   "induction-loop": {
     "description": "An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.",
     "question": {
-      "en": "Does this place have an audio induction loop for people with reduced hearing?"
+      "en": "Does this place have an audio induction loop for people with reduced hearing?",
+      "de": "Hat dieser Ort eine induktive Höranlage für Hörgeschädigte?"
     },
     "mappings": [
       {
         "if": "hearing_loop=yes",
         "then": {
-          "en": "This place has an audio induction loop"
+          "en": "This place has an audio induction loop",
+          "de": "Dieser Ort hat eine induktive Höranlage"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop.svg",
@@ -1130,7 +1134,8 @@
       {
         "if": "hearing_loop=no",
         "then": {
-          "en": "This place <b>does not</b> has an audio induction loop"
+          "en": "This place <b>does not</b> have an audio induction loop",
+          "de": "Dieser Ort hat <b>keine</b> induktive Höranlage"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop_missing.svg",

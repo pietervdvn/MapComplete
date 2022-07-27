@@ -23,6 +23,17 @@
         "email": {
             "question": "Wie lautet die Mail-Adresse von {title()}?"
         },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Dieser Ort hat eine induktive Höranlage"
+                },
+                "1": {
+                    "then": "Dieser Ort hat <b>keine</b> induktive Höranlage"
+                }
+            },
+            "question": "Hat dieser Ort eine induktive Höranlage für Hörgeschädigte?"
+        },
         "level": {
             "mappings": {
                 "0": {
@@ -43,6 +54,12 @@
             },
             "question": "Auf welcher Ebene befindet sich das Objekt?",
             "render": "Das Objekt befindet sich im {level}. Geschoss"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Auf welchen Geschossen hält dieser Aufzug?",
+                "render": "Der Aufzug hält auf den Geschossen {level}"
+            }
         },
         "opening_hours": {
             "question": "Wie lauten die Öffnungszeiten von {title()}?",

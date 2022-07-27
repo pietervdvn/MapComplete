@@ -388,7 +388,7 @@ Does this place have an audio induction loop for people with reduced hearing?
 
 
   - This place has an audio induction loop
-  - This place <b>does not</b> has an audio induction loop
+  - This place <b>does not</b> have an audio induction loop
 
 
 
