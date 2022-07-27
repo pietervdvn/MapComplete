@@ -387,10 +387,6 @@ export default class MapState extends UserRelatedState {
                 isDisplayed = QueryParameters.GetBooleanQueryParameter("layer-" + layer.id, layer.shownByDefault, "Wether or not layer " + layer.id + " is shown")
             }
 
-            isDisplayed.addCallbackAndRun(_ => {
-            console.log("IsDisplayed?",layer.id, isDisplayed.data, layer.shownByDefault)
-            })
-
             const flayer: FilteredLayer = {
                 isDisplayed,
                 layerDef: layer,

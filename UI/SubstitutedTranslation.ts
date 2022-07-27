@@ -55,6 +55,11 @@ export class SubstitutedTranslation extends VariableUiElement {
                             return new VariableUiElement(tagsSource.map(tags => Utils.SubstituteKeys(proto.fixed, tags)));
                         }
                         const viz = proto.special;
+                        if(viz === undefined){
+                            console.error("SPECIALRENDERING UNDEFINED for", tagsSource.data?.id, "THIS IS REALLY WEIRD")
+                            return undefined
+
+                        }
                         try {
                             return viz.func.constr(state, tagsSource, proto.special.args, DefaultGuiState.state)?.SetStyle(proto.special.style);
                         } catch (e) {
@@ -73,6 +78,17 @@ export class SubstitutedTranslation extends VariableUiElement {
         this.SetClass("w-full")
     }
 
+    /**
+     * 
+     * // Return empty list on empty input
+     * SubstitutedTranslation.ExtractSpecialComponents("") // => ""
+     *  
+     * // Advanced cases with commas, braces and newlines should be handled without problem
+     * const templates = SubstitutedTranslation.ExtractSpecialComponents("{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Report this bicycle pump as broken)}")
+     * const templ = templates[0]
+     * templ.special.func.funcName // => "send_email"
+     * templ.special.args[0] = "{email}"
+     */
     public static ExtractSpecialComponents(template: string, extraMappings: SpecialVisualization[] = []): {
         fixed?: string,
         special?: {
@@ -81,11 +97,15 @@ export class SubstitutedTranslation extends VariableUiElement {
             style: string
         }
     }[] {
+        
+        if(template === ""){
+            return []
+        }
 
         for (const knownSpecial of extraMappings.concat(SpecialVisualizations.specialVisualizations)) {
             
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
-            const matched = template.match(`(.*){${knownSpecial.funcName}\\((.*?)\\)(:.*)?}(.*)`);
+            const matched = template.match(new RegExp(`(.*){${knownSpecial.funcName}\\((.*?)\\)(:.*)?}(.*)`, "s"));
             if (matched != null) {
 
                 // We found a special component that should be brought to live
@@ -97,7 +117,10 @@ export class SubstitutedTranslation extends VariableUiElement {
                 if (argument.length > 0) {
                     const realArgs = argument.split(",").map(str => str.trim()
                         .replace(/&LPARENS/g, '(')
-                        .replace(/&RPARENS/g, ')'));
+                        .replace(/&RPARENS/g, ')')
+                        .replace(/&LBRACE/g, '{')
+                        .replace(/&RBRACE/g, '}')
+                        .replace(/&COMMA/g, ','));
                     for (let i = 0; i < realArgs.length; i++) {
                         if (args.length <= i) {
                             args.push(realArgs[i]);
@@ -124,7 +147,7 @@ export class SubstitutedTranslation extends VariableUiElement {
             // Hmm, we might have found an invalid rendering name
             console.warn("Found a suspicious special rendering value in: ", template, " did you mean one of: ", SpecialVisualizations.specialVisualizations.map(sp => sp.funcName + "()").join(", "))
         }
-
+        
         // IF we end up here, no changes have to be made - except to remove any resting {}
         return [{fixed: template}];
     }

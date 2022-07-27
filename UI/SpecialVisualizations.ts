@@ -59,7 +59,8 @@ import {CheckBox} from "./Input/Checkboxes";
 import Slider from "./Input/Slider";
 import List from "./Base/List";
 import StatisticsPanel from "./BigComponents/StatisticsPanel";
-import { OsmFeature } from "../Models/OsmFeature";
+import {OsmFeature} from "../Models/OsmFeature";
+import Link from "./Base/Link";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -292,7 +293,7 @@ export default class SpecialVisualizations {
         if (typeof viz === "string") {
             viz = SpecialVisualizations.specialVisualizations.find(sv => sv.funcName === viz)
         }
-        if(viz === undefined){
+        if (viz === undefined) {
             return undefined;
         }
         return new Combine(
@@ -328,7 +329,7 @@ export default class SpecialVisualizations {
                     "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
                     "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
                     new Title("Using expanded syntax", 4),
-                    `Instead of using \`{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}, one can also write`,
+                    `Instead of using \`{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}\`, one can also write`,
                     new FixedUiElement(JSON.stringify({
                         render: {
                             special: {
@@ -341,7 +342,7 @@ export default class SpecialVisualizations {
                                 "other_arg_name": "more args"
                             }
                         }
-                    })).SetClass("code")
+                    }, null, "  ")).SetClass("code")
                 ]).SetClass("flex flex-col"),
                 ...helpTexts
             ]
@@ -1106,12 +1107,12 @@ export default class SpecialVisualizations {
                     args: [],
                     constr(state, tagSource, argument, guistate) {
                         let parentId = tagSource.data.mr_challengeId;
-                        let challenge = Stores.FromPromise(Utils.downloadJsonCached(`https://maproulette.org/api/v2/challenge/${parentId}`,24*60*60*1000));
+                        let challenge = Stores.FromPromise(Utils.downloadJsonCached(`https://maproulette.org/api/v2/challenge/${parentId}`, 24 * 60 * 60 * 1000));
 
-                        let details = new VariableUiElement( challenge.map(challenge => {
+                        let details = new VariableUiElement(challenge.map(challenge => {
                             let listItems: BaseUIElement[] = [];
                             let title: BaseUIElement;
-                            
+
                             if (challenge?.name) {
                                 title = new Title(challenge.name);
                             }
@@ -1124,13 +1125,13 @@ export default class SpecialVisualizations {
                                 listItems.push(new FixedUiElement(challenge.instruction));
                             }
 
-                            if(listItems.length === 0) {
+                            if (listItems.length === 0) {
                                 return undefined;
                             } else {
                                 return [title, new List(listItems)];
                             }
                         }))
-                        return details; 
+                        return details;
                     },
                     docs: "Show details of a MapRoulette task"
                 },
@@ -1138,14 +1139,15 @@ export default class SpecialVisualizations {
                     funcName: "statistics",
                     docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",
                     args: [],
-                    constr :  (state, tagsSource, args, guiState) => {
+                    constr: (state, tagsSource, args, guiState) => {
                         const elementsInview = new UIEventSource<{ distance: number, center: [number, number], element: OsmFeature, layer: LayerConfig }[]>([]);
+
                         function update() {
-                            const mapCenter = <[number,number]> [state.locationControl.data.lon, state.locationControl.data.lon]
+                            const mapCenter = <[number, number]>[state.locationControl.data.lon, state.locationControl.data.lon]
                             const bbox = state.currentBounds.data
                             const elements = state.featurePipeline.getAllVisibleElementsWithmeta(bbox).map(el => {
                                 const distance = GeoOperations.distanceBetween(el.center, mapCenter)
-                                return {...el, distance }
+                                return {...el, distance}
                             })
                             elements.sort((e0, e1) => e0.distance - e1.distance)
                             elementsInview.setData(elements)
@@ -1161,6 +1163,44 @@ export default class SpecialVisualizations {
                             }
                         })
                         return new StatisticsPanel(elementsInview, state)
+                    }
+                },
+                {
+                    funcName: "send_email",
+                    docs: "Creates a `mailto`-link where some fields are already set and correctly escaped. The user will be promted to send the email",
+                    args: [
+                        {
+                            name: "to",
+                            doc: "Who to send the email to?",
+                            required: true
+                        },
+                        {
+                            name: "subject",
+                            doc: "The subject of the email",
+                            required: true
+                        },
+                        {
+                            name: "body",
+                            doc: "The text in the email",
+                            required: true
+                        },
+
+                        {
+                            name: "button_text",
+                            doc: "The text shown on the button in the UI",
+                            required: true
+                        }
+                    ],
+                    constr(state, tags, args) {
+                        return new VariableUiElement(tags.map(tags => {
+
+                            const [to, subject, body, button_text] = args.map(str => Utils.SubstituteKeys(str, tags))
+                            const url = "mailto:" + to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body)
+                            return new SubtleButton(Svg.envelope_svg(), button_text, {
+                                url
+                            })
+
+                        }))
                     }
                 }
             ]
