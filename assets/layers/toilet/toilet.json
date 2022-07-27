@@ -154,6 +154,7 @@
     },
     {
       "id": "toilets-fee",
+      "condition": "access!=no",
       "question": {
         "en": "Are these toilets free to use?",
         "de": "Können diese Toiletten kostenlos benutzt werden?",
@@ -220,6 +221,7 @@
     },
     {
       "id": "Opening-hours",
+      "condition": "access!=no",
       "question": {
         "en": "When are these toilets opened?",
         "nl": "Wanneer zijn deze toiletten open?",

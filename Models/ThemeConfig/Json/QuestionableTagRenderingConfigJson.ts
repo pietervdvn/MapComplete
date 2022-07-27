@@ -102,7 +102,17 @@ export interface MappingConfigJson {
 
     /**
      * If chosen as answer, these tags will be applied as well onto the object.
-     * Not compatible with multiAnswer
+     * Not compatible with multiAnswer.
+     * 
+     * This can be used e.g. to erase other keys which indicate the 'not' value:
+     *```json
+     * {
+     *     "if": "crossing:marking=rainbow",
+     *     "then": "This is a rainbow crossing",
+     *     "addExtraTags": "not:crossing:marking="
+     * }
+     * ```
+     * 
      */
     addExtraTags?: string[]
 

@@ -20,6 +20,14 @@
   "widenFactor": 2,
   "hideFromOverview": false,
   "layers": [
+      {
+      "builtin": "indoors",
+      "override": {
+        "minzoom": 19,
+        "name": null,
+        "passAllFeatures": true
+      }
+    },
     {
       "builtin": "bike_repair_station",
       "override": {
@@ -378,12 +386,6 @@
             "iconSize": "40,40,bottom"
           }
         ]
-      }
-    },
-    {
-      "builtin": "indoors",
-      "override": {
-        "minzoom": 19
       }
     },
     {
