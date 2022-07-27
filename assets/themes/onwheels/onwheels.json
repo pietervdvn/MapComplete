@@ -29,33 +29,6 @@
       }
     },
     {
-      "builtin": "bike_repair_station",
-      "override": {
-        "minzoom": 15,
-        "shownByDefault": false,
-        "mapRendering": [
-          {
-            "icon": {
-              "render": "./assets/themes/onwheels/repair.svg",
-              "mappings": [
-                {
-                  "if": "service:bicycle:pump=yes",
-                  "then": "./assets/themes/onwheels/bicycle_pump.svg"
-                }
-              ]
-            },
-            "iconSize": "40,40,bottom"
-          }
-        ]
-      }
-    },
-    {
-      "builtin": "bike_shop",
-      "override": {
-        "shownByDefault": false
-      }
-    },
-    {
       "builtin": "pedestrian_path",
       "override": {
         "title": {
@@ -92,7 +65,7 @@
         "minzoom": 19,
         "mapRendering": [
           {
-            "icon": "./assets/themes/onwheels/entrance.svg",
+            "icon": "circle:white;./assets/themes/onwheels/entrance.svg",
             "iconSize": "40,40,center"
           }
         ],
@@ -200,23 +173,6 @@
       }
     },
     {
-      "builtin": "picnic_table",
-      "override": {
-        "shownByDefault": false
-      }
-    },
-    {
-      "builtin": "school",
-      "override": {
-        "shownByDefault": false,
-        "mapRendering": [
-          {
-            "label": null
-          }
-        ]
-      }
-    },
-    {
       "builtin": "shops",
       "override": {
         "minzoom": 15,
@@ -245,7 +201,6 @@
         ]
       }
     },
-    "viewpoint",
     {
       "builtin": "pharmacy",
       "override": {
@@ -293,13 +248,7 @@
       "builtin": "reception_desk",
       "override": {
         "minzoom": 19,
-        "syncSelection": "theme-only",
-        "mapRendering": [
-          {
-            "icon": "./assets/themes/onwheels/reception.svg",
-            "iconSize": "40,40,bottom"
-          }
-        ]
+        "syncSelection": "theme-only"
       }
     },
     "walls_and_buildings",
@@ -310,7 +259,7 @@
         "syncSelection": "theme-only",
         "mapRendering": [
           {
-            "icon": "./assets/themes/onwheels/elevator.svg",
+            "icon": "circle:white;./assets/themes/onwheels/elevator.svg",
             "iconSize": "40,40,bottom"
           }
         ]

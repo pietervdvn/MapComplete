@@ -443,6 +443,20 @@
       "tags": [
         "entrance=yes"
       ]
+    },
+    {
+      "title": {
+        "en": "an indoor door"
+      },
+      "preciseInput": {
+        "preferredBackground": "map",
+        "snapToLayer": [
+          "indoors"
+        ]
+      },
+      "tags": [
+        "indoor=door"
+      ]
     }
   ],
   "units": [
