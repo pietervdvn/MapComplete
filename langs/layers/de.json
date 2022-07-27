@@ -3486,10 +3486,39 @@
             "width": {
                 "question": "Wie breit ist diese Tür bzw. dieser Eingang?",
                 "render": "Diese Tür hat eine Durchgangsbreite von {canonical(width)} Meter"
+            },
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Höhe der Türschwelle"
+                },
+                "question": "Wie hoch ist die Türschwelle?",
+                "render": "Die Höhe der Türschwelle ist {kerb:height}",
+                "mappings": {
+                    "0": {
+                        "then": "Diese Tür hat keine Türschwelle"
+                    }
+                }
             }
         },
         "title": {
             "render": "Eingang"
+        },
+        "presets": {
+            "0": {
+                "title": "einen Eingang"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
         }
     },
     "etymology": {
@@ -4050,7 +4079,8 @@
         },
         "title": {
             "render": "Krankenhaus"
-        }
+        },
+        "description": "Eine Ebene mit Krankenhäusern"
     },
     "hydrant": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
@@ -4764,6 +4794,13 @@
                     }
                 },
                 "question": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?"
+            },
+            "name": {
+                "render": "Der Name der Apotheke lautet {name}",
+                "freeform": {
+                    "placeholder": "Name der Apotheke"
+                },
+                "question": "Wie lautet der Name der Apotheke?"
             }
         },
         "title": {
@@ -4773,7 +4810,24 @@
                 }
             },
             "render": "{name}"
-        }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Bietet einen Durchfahr-Service an"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Apotheke, die verschreibungspflichtige Arzneimittel ausgibt"
+                    }
+                }
+            }
+        },
+        "description": "Eine Ebene mit Apotheken, die (wahrscheinlich) verschreibungspflichtige Medikamente ausgeben"
     },
     "picnic_table": {
         "description": "Die Ebene zeigt Picknicktische an",
@@ -5412,6 +5466,15 @@
                     },
                     "2": {
                         "then": "Das ist ein offener Gartenpavillon."
+                    },
+                    "3": {
+                        "then": "Dies ist ein kleiner Unterstand, der vor allem für kurze Pausen gedacht ist. Normalerweise findet man ihn in Bergen oder an Straßen."
+                    },
+                    "4": {
+                        "then": "Es handelt sich um einen an 3 Seiten geschlossenen Unterstand, der in erster Linie zum Campen gedacht ist."
+                    },
+                    "5": {
+                        "then": "Das ist ein Pavillon"
                     }
                 },
                 "question": "Um welche Art von Unterstand handelt es sich?",
@@ -5496,7 +5559,8 @@
                 "question": "Welche Papierformate bietet das Geschäft an?"
             },
             "shops-name": {
-                "question": "Wie ist der Name dieses Geschäfts?"
+                "question": "Wie ist der Name dieses Geschäfts?",
+                "render": "Der Name des Geschäfts lautet <i>{name}</i>"
             }
         },
         "title": {
@@ -6139,13 +6203,32 @@
                     },
                     "1": {
                         "then": "Rollstuhlfahrer können die Toilette nicht benutzen"
+                    },
+                    "2": {
+                        "then": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer"
                     }
                 },
                 "question": "Können Rollstuhlfahrer die Toilette benutzen?"
+            },
+            "wheelchair-door-width": {
+                "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
+                "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(door:width)} breit"
             }
         },
         "title": {
             "render": "Toilette"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
         }
     },
     "trail": {
@@ -6747,5 +6830,139 @@
                 }
             }
         }
+    },
+    "elevator": {
+        "tagRenderings": {
+            "door-width": {
+                "question": "Wie breit ist die Tür dieses Aufzugs?",
+                "render": "Die Türen des Aufzugs haben eine Breite von {canonical(door:width)}"
+            },
+            "elevator-depth": {
+                "question": "Wie tief ist die Kabine dieses Aufzugs?",
+                "render": "Dieser Aufzug hat eine Kabinentiefe von {canonical(elevator:depth)}"
+            },
+            "elevator-width": {
+                "question": "Wie breit ist die Kabine dieses Aufzugs?",
+                "render": "Die Aufzugskabine hat eine Breite von {canonical(elevator:width)}"
+            },
+            "operational_status": {
+                "mappings": {
+                    "3": {
+                        "then": "Dieser Aufzug ist in Betrieb"
+                    },
+                    "1": {
+                        "then": "Dieser Aufzug ist außer Betrieb <span class='subtle'>z.B. wegen Renovierungsarbeiten</span>"
+                    },
+                    "0": {
+                        "then": "Dieser Aufzug ist kaputt"
+                    },
+                    "2": {
+                        "then": "Dieser Aufzug ist in Betrieb"
+                    }
+                },
+                "question": "Ist dieser Aufzug in Betrieb?"
+            }
+        },
+        "title": "Aufzug",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "einen Aufzug"
+            }
+        },
+        "name": "Aufzug",
+        "description": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer"
+    },
+    "governments": {
+        "name": "Öffentliche Verwaltung",
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name dieser Behörde?",
+                "render": "Der Name der Behörde lautet {name}"
+            }
+        },
+        "title": {
+            "render": "Behörde {name}"
+        },
+        "description": "Diese Ebene zeigt Gebäude der öffentlichen Verwaltung. Sie wurde im Auftrag für den Kunden von OSOC '22 erstellt",
+        "presets": {
+            "0": {
+                "title": "ein Büro der öffentlichen Verwaltung"
+            }
+        }
+    },
+    "hotel": {
+        "title": {
+            "render": "Hotel",
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            }
+        },
+        "description": "Eine Ebene mit Hotels",
+        "name": "Hotels",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name des Hotels"
+                },
+                "render": "Der Name des Hotels lautet {name}",
+                "question": "Wie lautet der Name des Hotels?"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "ein Hotel"
+            }
+        }
+    },
+    "reception_desk": {
+        "tagRenderings": {
+            "desk-height": {
+                "render": "Die Höhe des Tresens beträgt <b>{canonical(desk:height)}</b>",
+                "question": "Wie hoch ist der Empfangstresen? <div class='subtle'>Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches</div>"
+            }
+        },
+        "title": {
+            "render": "Empfangstresen"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
+        },
+        "description": "Eine Ebene, die Empfangstresen zeigt und Informationen zur Barrierefreiheit abfragt",
+        "name": "Empfangstresen",
+        "presets": {
+            "0": {
+                "title": "einen Empfangstresen"
+            }
+        }
+    },
+    "indoors": {
+        "title": {
+            "render": "Innenbereich {name}"
+        },
+        "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
+        "name": "Innenräume"
     }
 }
