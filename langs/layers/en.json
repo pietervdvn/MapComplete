@@ -3395,7 +3395,7 @@
     },
     "elevator": {
         "description": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
-        "name": "elevator",
+        "name": "Elevator",
         "presets": {
             "0": {
                 "title": "an elevator"
@@ -3432,7 +3432,9 @@
                 "question": "Does this elevator work?"
             }
         },
-        "title": "Elevator",
+        "title": {
+            "render": "Elevator"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -4248,6 +4250,26 @@
         "description": "Basic indoor mapping: shows room outlines",
         "name": "indoors",
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Indoor Room {name}"
+                },
+                "1": {
+                    "then": "Indoor Area {name}"
+                },
+                "2": {
+                    "then": "Indoor Wall {name}"
+                },
+                "3": {
+                    "then": "Indoor Corridor {name}"
+                },
+                "4": {
+                    "then": "Indoor Door {name}"
+                },
+                "5": {
+                    "then": "Indoor Level {name}"
+                }
+            },
             "render": "Indoor area {name}"
         }
     },

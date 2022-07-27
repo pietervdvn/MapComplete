@@ -2232,7 +2232,7 @@
     },
     "elevator": {
         "description": "Ce calque montre les ascenseurs et demande l'état opérationnel et les dimensions de l'ascenseur. Utile pour les informations sur l'accessibilité en fauteuil roulant",
-        "name": "ascenseur",
+        "name": "Ascenseur",
         "presets": {
             "0": {
                 "title": "un ascenseur"
@@ -2269,7 +2269,9 @@
                 "question": "Cet ascenseur fonctionne-t-il ?"
             }
         },
-        "title": "Ascenseur",
+        "title": {
+            "render": "Ascenseur"
+        },
         "units": {
             "0": {
                 "applicableUnits": {

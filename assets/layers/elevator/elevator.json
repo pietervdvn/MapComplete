@@ -1,8 +1,8 @@
 {
   "id": "elevator",
   "name": {
-    "en": "elevator",
-    "fr": "ascenseur",
+    "en": "Elevator",
+    "fr": "Ascenseur",
     "de": "Aufzug"
   },
   "source": {
