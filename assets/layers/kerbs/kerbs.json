@@ -3,12 +3,14 @@
   "name": {
     "en": "Kerbs",
     "nl": "Stoepranden",
-    "de": "Bordsteine"
+    "de": "Bordsteine",
+    "fr": "Bordures"
   },
   "description": {
     "en": "A layer showing kerbs.",
     "nl": "Een laag met stoepranden.",
-    "de": "Eine Ebene, die Bordsteine zeigt."
+    "de": "Eine Ebene, die Bordsteine zeigt.",
+    "fr": "Un calque montrant les bordures."
   },
   "source": {
     "osmTags": "barrier=kerb"
@@ -18,7 +20,8 @@
     "render": {
       "en": "Kerb",
       "nl": "Stoeprand",
-      "de": "Bordstein"
+      "de": "Bordstein",
+      "fr": "Bordure"
     }
   },
   "mapRendering": [
@@ -60,7 +63,8 @@
       "question": {
         "en": "What is the height of this kerb?",
         "nl": "Hoe hoog is deze stoeprand?",
-        "de": "Wie hoch ist der Bordstein?"
+        "de": "Wie hoch ist der Bordstein?",
+        "fr": "Quelle est la hauteur de ce trottoir ?"
       },
       "mappings": [
         {
@@ -68,7 +72,8 @@
           "then": {
             "en": "This kerb is raised (>3 cm)",
             "nl": "Deze stoeprand is hoog (>3 cm)",
-            "de": "Der Bordstein ist erhöht (>3 cm)"
+            "de": "Der Bordstein ist erhöht (>3 cm)",
+            "fr": "Cette bordure est surélevée (>3 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/raised.svg",
@@ -80,7 +85,8 @@
           "then": {
             "en": "This kerb is lowered (~3 cm)",
             "nl": "Deze stoeprand is verlaagd (~3 cm)",
-            "de": "Der Bordstein ist abgesenkt (~3 cm)"
+            "de": "Der Bordstein ist abgesenkt (~3 cm)",
+            "fr": "Cette bordure est abaissée (~3 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/lowered.svg",
@@ -92,7 +98,8 @@
           "then": {
             "en": "This kerb is flush (~0cm)",
             "nl": "Deze stoeprand is vlak (~0cm)",
-            "de": "Der Bordstein ist bündig (~0cm)"
+            "de": "Der Bordstein ist bündig (~0cm)",
+            "fr": "Cette bordure est affleurante (~0cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/flush.svg",
@@ -104,7 +111,8 @@
           "then": {
             "en": "There is no kerb here",
             "nl": "Er is hier geen stoeprand",
-            "de": "Hier gibt es keinen Bordstein"
+            "de": "Hier gibt es keinen Bordstein",
+            "fr": "Il n'y a pas de bordure ici"
           },
           "hideInAnswer": true,
           "icon": {
@@ -117,7 +125,8 @@
           "then": {
             "en": "There is a kerb of unknown height",
             "nl": "Er is een stoeprand met onbekende hoogte",
-            "de": "Es gibt einen Bordstein mit unbekannter Höhe"
+            "de": "Es gibt einen Bordstein mit unbekannter Höhe",
+            "fr": "Il y a un trottoir de hauteur inconnue"
           },
           "hideInAnswer": true
         }
@@ -128,28 +137,32 @@
       "id": "tactile-paving",
       "question": {
         "en": "Is there tactile paving at this kerb?",
-        "de": "Gibt es am Bordstein ein taktiles Pflaster?"
+        "de": "Gibt es am Bordstein ein taktiles Pflaster?",
+        "fr": "Y a-t-il un revêtement tactile sur cette bordure ?"
       },
       "mappings": [
         {
           "if": "tactile_paving=yes",
           "then": {
             "en": "This kerb has tactile paving.",
-            "de": "Der Bordstein hat ein taktiles Pflaster."
+            "de": "Der Bordstein hat ein taktiles Pflaster.",
+            "fr": "Cette bordure a un revêtement podotactile."
           }
         },
         {
           "if": "tactile_paving=no",
           "then": {
             "en": "This kerb does not have tactile paving.",
-            "de": "Der Bordstein hat kein taktiles Pflaster."
+            "de": "Der Bordstein hat kein taktiles Pflaster.",
+            "fr": "Cette bordure n'a pas de revêtement podotactile."
           }
         },
         {
           "if": "tactile_paving=incorrect",
           "then": {
             "en": "This kerb has tactile paving, but it is incorrect",
-            "de": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist"
+            "de": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist",
+            "fr": "Cette bordure a un pavage tactile, mais il est incorrect"
           },
           "hideInAnswer": true
         }
@@ -161,19 +174,22 @@
       "question": {
         "en": "What is the height of this kerb?",
         "nl": "Hoe hoog is deze stoeprand?",
-        "de": "Wie hoch ist der Bordstein?"
+        "de": "Wie hoch ist der Bordstein?",
+        "fr": "Quelle est la hauteur de ce trottoir ?"
       },
       "render": {
         "en": "Kerb height: {kerb:height}",
         "nl": "Stoeprandhoogte: {kerb:height}",
-        "de": "Bordsteinhöhe: {kerb:height}"
+        "de": "Bordsteinhöhe: {kerb:height}",
+        "fr": "Hauteur du trottoir : {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",
         "placeholder": {
           "en": "Height of the kerb",
           "nl": "Hoogte van de stoeprand",
-          "de": "Höhe des Bordsteins"
+          "de": "Höhe des Bordsteins",
+          "fr": "Hauteur de la bordure"
         },
         "type": "pnat"
       }
@@ -184,7 +200,8 @@
       "title": {
         "en": "a kerb",
         "nl": "een stoeprand",
-        "de": "einen Bordstein"
+        "de": "einen Bordstein",
+        "fr": "une bordure"
       },
       "tags": [
         "barrier=kerb"
@@ -192,7 +209,8 @@
       "description": {
         "en": "Kerb in a footway",
         "nl": "Stoeprand in een voetpad",
-        "de": "Bordstein in einem Fußweg"
+        "de": "Bordstein in einem Fußweg",
+        "fr": "Bordure dans un trottoir"
       },
       "preciseInput": {
         "maxSnapDistance": 10,
@@ -212,7 +230,8 @@
           "question": {
             "en": "All types of kerbs",
             "nl": "Alle typen stoepranden",
-            "de": "Alle Arten von Bordsteinen"
+            "de": "Alle Arten von Bordsteinen",
+            "fr": "Tous types de bordures"
           }
         },
         {
@@ -220,7 +239,8 @@
           "question": {
             "en": "Raised kerb (>3 cm)",
             "nl": "Hoge stoeprand (>3 cm)",
-            "de": "Erhöhter Bordstein (>3 cm)"
+            "de": "Erhöhter Bordstein (>3 cm)",
+            "fr": "Bordure surélevée (>3 cm)"
           }
         },
         {
@@ -228,7 +248,8 @@
           "question": {
             "en": "Lowered kerb (~3 cm)",
             "nl": "Verlaagde stoeprand (~3 cm)",
-            "de": "Abgesenkter Bordstein (~3 cm)"
+            "de": "Abgesenkter Bordstein (~3 cm)",
+            "fr": "Bordure abaissée (~3 cm)"
           }
         },
         {
@@ -236,7 +257,8 @@
           "question": {
             "en": "Flush kerb (~0cm)",
             "nl": "Vlakke stoeprand (~0cm)",
-            "de": "Bündiger Bordstein (~0cm)"
+            "de": "Bündiger Bordstein (~0cm)",
+            "fr": "Bordure affleurante (~0cm)"
           }
         },
         {
@@ -244,7 +266,8 @@
           "question": {
             "en": "No kerb",
             "nl": "Geen stoeprand",
-            "de": "Kein Bordstein"
+            "de": "Kein Bordstein",
+            "fr": "Pas de trottoir"
           }
         },
         {
@@ -252,7 +275,8 @@
           "question": {
             "en": "Kerb with unknown height",
             "nl": "Stoeprand met onbekende hoogte",
-            "de": "Bordstein mit unbekannter Höhe"
+            "de": "Bordstein mit unbekannter Höhe",
+            "fr": "Bordure de hauteur inconnue"
           }
         }
       ]
@@ -263,28 +287,32 @@
         {
           "question": {
             "en": "Kerbs with or without tactile paving",
-            "de": "Bordsteine mit oder ohne taktilem Pflaster"
+            "de": "Bordsteine mit oder ohne taktilem Pflaster",
+            "fr": "Bordures avec ou sans revêtement podotactile"
           }
         },
         {
           "osmTags": "tactile_paving=yes",
           "question": {
             "en": "Kerb with tactile paving",
-            "de": "Bordstein mit taktilem Pflaster"
+            "de": "Bordstein mit taktilem Pflaster",
+            "fr": "Bordure avec revêtement podotactile"
           }
         },
         {
           "osmTags": "tactile_paving=no",
           "question": {
             "en": "Kerb without tactile paving",
-            "de": "Bordstein ohne taktilem Pflaster"
+            "de": "Bordstein ohne taktilem Pflaster",
+            "fr": "Bordure sans revêtement podotactile"
           }
         },
         {
           "osmTags": "tactile_paving=",
           "question": {
             "en": "Kerb wihout information about tactile paving",
-            "de": "Bordstein ohne Informationen über taktiles Pflaster"
+            "de": "Bordstein ohne Informationen über taktiles Pflaster",
+            "fr": "Bordure sans information sur le revêtement podotactile"
           }
         }
       ]
@@ -302,12 +330,14 @@
           "human": {
             "en": "centimeters",
             "nl": "centimeter",
-            "de": "Zentimeter"
+            "de": "Zentimeter",
+            "fr": "centimètres"
           },
           "humanSingular": {
             "en": "centimeter",
             "nl": "centimeter",
-            "de": "Zentimeter"
+            "de": "Zentimeter",
+            "fr": "centimètre"
           },
           "default": true
         },
@@ -320,12 +350,14 @@
           "human": {
             "en": "meters",
             "nl": "meter",
-            "de": "Meter"
+            "de": "Meter",
+            "fr": "mètres"
           },
           "humanSingular": {
             "en": "meter",
             "nl": "meter",
-            "de": "Meter"
+            "de": "Meter",
+            "fr": "mètre"
           }
         }
       ],

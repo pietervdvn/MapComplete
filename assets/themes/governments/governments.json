@@ -1,10 +1,12 @@
 {
   "id": "governments",
   "title": {
-    "en": "Governmental Offices"
+    "en": "Governmental Offices",
+    "de": "Büros der öffentlichen Verwaltung"
   },
   "description": {
-    "en": "On this map, Governmental offices are shown and can be easily added"
+    "en": "On this map, Governmental offices are shown and can be easily added",
+    "de": "Auf dieser Karte werden Büros der öffentlichen Verwaltung angezeigt und können leicht hinzugefügt werden"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/onwheels/crest.svg",

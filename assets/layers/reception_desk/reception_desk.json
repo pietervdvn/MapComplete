@@ -1,14 +1,17 @@
 {
   "id": "reception_desk",
   "name": {
-    "en": "Reception desks"
+    "en": "Reception desks",
+    "fr": "Bureaux d'accueil"
   },
   "description": {
-    "en": "A layer showing where the reception desks are and which asks some accessibility information"
+    "en": "A layer showing where the reception desks are and which asks some accessibility information",
+    "fr": "Un calque montrant où se trouvent les bureaux d'accueil et qui demande des informations d'accessibilité"
   },
   "title": {
     "render": {
-      "en": "Reception desk"
+      "en": "Reception desk",
+      "fr": "Bureau d'accueil"
     }
   },
   "source": {
@@ -30,10 +33,12 @@
     {
       "id": "desk-height",
       "question": {
-        "en": "What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>"
+        "en": "What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>",
+        "fr": "Quelle est la hauteur de la réception ? <div class='subtle'>Ceci est mesuré du sol à la partie utilisable la plus basse du bureau</div>"
       },
       "render": {
-        "en": "The height of the desk is <b>{canonical(desk:height)}</b>"
+        "en": "The height of the desk is <b>{canonical(desk:height)}</b>",
+        "fr": "La hauteur du bureau est <b>{canonical(desk:height)}</b>"
       },
       "freeform": {
         "key": "desk:height",
@@ -48,7 +53,8 @@
         "amenity=reception_desk"
       ],
       "title": {
-        "en": "a reception desk"
+        "en": "a reception desk",
+        "fr": "un bureau d'accueil"
       }
     }
   ],
@@ -64,7 +70,8 @@
             "meter"
           ],
           "human": {
-            "en": "meter"
+            "en": "meter",
+            "fr": "mètre"
           }
         },
         {
@@ -74,7 +81,8 @@
             "cms"
           ],
           "human": {
-            "en": "centimeter"
+            "en": "centimeter",
+            "fr": "centimètre"
           }
         }
       ]

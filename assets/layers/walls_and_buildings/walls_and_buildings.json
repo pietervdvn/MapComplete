@@ -6,13 +6,15 @@
       "en": "Wall or building",
       "nl": "Muur of gebouw",
       "de": "Wand oder Gebäude",
-      "es": "Pared o edificio"
+      "es": "Pared o edificio",
+      "fr": "Mur ou bâtiment"
     }
   },
   "description": {
     "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
     "nl": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,…). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
-    "de": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden."
+    "de": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
+    "fr": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur."
   },
   "source": {
     "osmTags": {
@@ -56,7 +58,8 @@
         "en": "<a href ='#{_entrance:id} '>This door has a width of {canonical(_entrance:width)} meters </a>",
         "nl": "<a href ='#{_entrance:id} '>Deze deur heeft een breedte van {canonical(_entrance:width)} meter </a>",
         "de": "<a href ='#{_entrance:id} '>Diese Tür hat eine Durchgangsbreite von {canonical(_entrance:width)} Meter </a>",
-        "es": "<a href ='#{_entrance:id} '>Esta puerta tiene una ancho de {canonical(_entrance:width)} metros </a>"
+        "es": "<a href ='#{_entrance:id} '>Esta puerta tiene una ancho de {canonical(_entrance:width)} metros </a>",
+        "fr": "<a href ='#{_entrance:id} '>Cette porte a une largeur de {canonical(_entrance:width)} mètres </a>"
       },
       "freeform": {
         "key": "_entrance:width"
@@ -66,7 +69,8 @@
           "if": "_entrance:width=",
           "then": {
             "en": "This entrance has no width information",
-            "de": "Der Eingang hat keine Informationen zur Durchgangsbreite"
+            "de": "Der Eingang hat keine Informationen zur Durchgangsbreite",
+            "fr": "Cette entrée n'a pas d'informations sur sa largeur"
           }
         }
       ]

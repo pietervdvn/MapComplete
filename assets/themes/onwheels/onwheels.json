@@ -51,7 +51,8 @@
       "builtin": "pedestrian_path",
       "override": {
         "title": {
-          "en": "Pedestrian path"
+          "en": "Pedestrian path",
+          "de": "Fußgängerweg"
         },
         "name": null,
         "shownByDefault": false
@@ -94,13 +95,15 @@
             "options": [
               {
                 "question": {
-                  "en": "Any/No width info"
+                  "en": "Any/No width info",
+                  "de": "Beliebig/Keine Breiteninformationen"
                 }
               },
               {
                 "osmTags": "width=",
                 "question": {
-                  "en": "Any width info"
+                  "en": "Any width info",
+                  "de": "Beliebige Breiteninformationen"
                 }
               }
             ]
@@ -350,7 +353,8 @@
         ],
         "=title": {
           "render": {
-            "en": "Statistics"
+            "en": "Statistics",
+            "de": "Statistik"
           }
         },
         "tagRenderings": [
@@ -380,7 +384,8 @@
           ]
         },
         "render": {
-          "en": "The containing building can be entered via <a href='#{_poi_entrance:id}'>a door of {canonical(_poi_entrance:width)}</a>"
+          "en": "The containing building can be entered via <a href='#{_poi_entrance:id}'>a door of {canonical(_poi_entrance:width)}</a>",
+          "fr": "On peut entrer dans ce batiment via <a href='#{_poi_entrance:id}'>une porte de {canonical(_poi_entrance:width)}</a>"
         },
         "freeform": {
           "key": "_poi_entrance:width",
@@ -390,7 +395,8 @@
           {
             "if": "_poi_entrance:width=",
             "then": {
-              "en": "The containing building has no information on door widths. Add a door and measure the width to get information"
+              "en": "The containing building has no information on door widths. Add a door and measure the width to get information",
+              "fr": "Ce bâtiment n'a aucune information sur les largeurs de portes. Ajoutez une porte et mesurez la largeur pour obtenir des informations"
             }
           }
         ]

@@ -1,10 +1,12 @@
 {
   "id": "indoors",
   "title": {
-    "en": "Indoors"
+    "en": "Indoors",
+    "de": "Innenräume"
   },
   "description": {
-    "en": "On this map, publicly accessible indoor places are shown"
+    "en": "On this map, publicly accessible indoor places are shown",
+    "de": "Diese Karte zeigt öffentlich zugängliche Innenräume"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/onwheels/crest.svg",

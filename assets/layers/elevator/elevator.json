@@ -1,17 +1,20 @@
 {
   "id": "elevator",
   "name": {
-    "en": "elevator"
+    "en": "elevator",
+    "fr": "ascenseur"
   },
   "source": {
     "osmTags": "highway=elevator"
   },
   "minzoom": 13,
   "description": {
-    "en": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information"
+    "en": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
+    "fr": "Ce calque montre les ascenseurs et demande l'état opérationnel et les dimensions de l'ascenseur. Utile pour les informations sur l'accessibilité en fauteuil roulant"
   },
   "title": {
-    "en": "Elevator"
+    "en": "Elevator",
+    "fr": "Ascenseur"
   },
   "tagRenderings": [
     "images",
@@ -19,33 +22,38 @@
     {
       "id": "operational_status",
       "question": {
-        "en": "Does this elevator work?"
+        "en": "Does this elevator work?",
+        "fr": "Cet ascenseur fonctionne-t-il ?"
       },
       "mappings": [
         {
           "if": "operational_status=broken",
           "then": {
-            "en": "This elevator is broken"
+            "en": "This elevator is broken",
+            "fr": "Cet ascenseur est en panne"
           },
           "icon": "close:red"
         },
         {
           "if": "operational_status=closed",
           "then": {
-            "en": "This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>"
+            "en": "This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>",
+            "fr": "Cet ascenseur est fermé <span class='subtle'>par ex. parce que des travaux de rénovation sont en cours</span>"
           },
           "icon": "invalid:red"
         },
         {
           "if": "operational_status=ok",
           "then": {
-            "en": "This elevator works"
+            "en": "This elevator works",
+            "fr": "Cet ascenseur fonctionne"
           }
         },
         {
           "if": "operational_status=",
           "then": {
-            "en": "This elevator works"
+            "en": "This elevator works",
+            "fr": "Cet ascenseur fonctionne"
           },
           "hideInAnswer": true
         }
@@ -54,10 +62,12 @@
     {
       "id": "door-width",
       "render": {
-        "en": "This elevator's doors have a width of {canonical(door:width)}"
+        "en": "This elevator's doors have a width of {canonical(door:width)}",
+        "fr": "Les portes de cet ascenseur ont une largeur de {canonical(door:width)}"
       },
       "question": {
-        "en": "What is the width of this elevator's entrance?"
+        "en": "What is the width of this elevator's entrance?",
+        "fr": "Quelle est la largeur de l'entrée de cet ascenseur ?"
       },
       "freeform": {
         "key": "door:width",
@@ -67,10 +77,12 @@
     {
       "id": "elevator-width",
       "render": {
-        "en": "This elevator has a width of {canonical(elevator:width)}"
+        "en": "This elevator has a width of {canonical(elevator:width)}",
+        "fr": "Cet ascenseur a une largeur de {canonical(elevator:width)}"
       },
       "question": {
-        "en": "What is the width of this elevator?"
+        "en": "What is the width of this elevator?",
+        "fr": "Quelle est la largeur de cet ascenseur ?"
       },
       "freeform": {
         "key": "elevator:width",
@@ -80,10 +92,12 @@
     {
       "id": "elevator-depth",
       "render": {
-        "en": "This elevator has a depth of {canonical(elevator:depth)}"
+        "en": "This elevator has a depth of {canonical(elevator:depth)}",
+        "fr": "Cet ascenseur a une profondeur de {canonical(elevator:depth)}"
       },
       "question": {
-        "en": "What is the depth of this elevator?"
+        "en": "What is the depth of this elevator?",
+        "fr": "Quelle est la profondeur de cet ascenseur ?"
       },
       "freeform": {
         "key": "elevator:depth",
@@ -119,7 +133,8 @@
     {
       "title": {
         "en": "an elevator",
-        "nl": "een lift"
+        "nl": "een lift",
+        "fr": "un ascenseur"
       },
       "tags": [
         "highway=elevator"
@@ -140,7 +155,8 @@
             "meter"
           ],
           "human": {
-            "en": "meter"
+            "en": "meter",
+            "fr": "mètre"
           }
         },
         {
@@ -151,7 +167,8 @@
             "cms"
           ],
           "human": {
-            "en": "centimeter"
+            "en": "centimeter",
+            "fr": "centimètre"
           }
         }
       ]

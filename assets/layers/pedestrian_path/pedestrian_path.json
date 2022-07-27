@@ -3,7 +3,8 @@
   "name": {
     "en": "Pedestrian paths",
     "nl": "Pad voor voetgangers",
-    "de": "Fußgängerwege"
+    "de": "Fußgängerwege",
+    "fr": "Sentiers piétons"
   },
   "minzoom": 18,
   "source": {
@@ -19,7 +20,8 @@
   "description": {
     "en": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
     "nl": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
-    "de": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene"
+    "de": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
+    "fr": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche"
   },
   "mapRendering": [
     {

@@ -5,7 +5,8 @@
     "nl": "Eetgelegenheden",
     "de": "Restaurants und Imbisse",
     "da": "Restauranter og fastfood",
-    "es": "Restaurantes y comida rápida"
+    "es": "Restaurantes y comida rápida",
+    "fr": "Restaurants et nourriture rapide"
   },
   "source": {
     "osmTags": {
@@ -24,7 +25,8 @@
         "ru": "ресторан",
         "de": "ein Restaurant",
         "ca": "un restaurant",
-        "es": "un restaurante"
+        "es": "un restaurante",
+        "fr": "un restaurant"
       },
       "tags": [
         "amenity=restaurant"
@@ -33,7 +35,8 @@
         "nl": "Een eetgegelegenheid waar je aan tafel wordt bediend",
         "en": "A formal eating place with sit-down facilities selling full meals served by waiters",
         "de": "Ein klassisches Speiselokal mit Sitzgelegenheiten, in dem vollständige Mahlzeiten von Kellnern serviert werden",
-        "es": "Un lugar de comidas formal, con mesas y sillas y que vende comidas completas servidas por camareros"
+        "es": "Un lugar de comidas formal, con mesas y sillas y que vende comidas completas servidas por camareros",
+        "fr": "Un lieu de restauration formel avec des installations pour s'asseoir vendant des repas complets servis par des serveurs"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -45,7 +48,8 @@
         "nl": "een fastfood-zaak",
         "ru": "быстрое питание",
         "de": "ein Schnellimbiss",
-        "ca": "un de menjar ràpid"
+        "ca": "un de menjar ràpid",
+        "fr": "un fast-food"
       },
       "tags": [
         "amenity=fast_food"
@@ -54,7 +58,8 @@
         "nl": "Een zaak waar je snel bediend wordt, vaak met de focus op afhalen. Zitgelegenheid is eerder beperkt (of zelfs afwezig)",
         "en": "A food business concentrating on fast counter-only service and take-away food",
         "de": "Ein Lebensmittelunternehmen, das sich auf schnellen Thekendienst und Essen zum Mitnehmen konzentriert",
-        "es": "Un negocio de comida centrado en servicio rápido solo en mostrador y comida para llevar"
+        "es": "Un negocio de comida centrado en servicio rápido solo en mostrador y comida para llevar",
+        "fr": "Une entreprise alimentaire se concentrant sur le service rapide au comptoir et les plats à emporter"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -64,7 +69,8 @@
       "title": {
         "en": "a fries shop",
         "nl": "een frituur",
-        "de": "eine Pommesbude"
+        "de": "eine Pommesbude",
+        "fr": "Une friterie"
       },
       "tags": [
         "amenity=fast_food",
@@ -73,7 +79,8 @@
       "description": {
         "en": "A fastfood-business focused on french fries",
         "nl": "Een fastfood-zaak waar je frieten koopt",
-        "de": "Eine Pommesbude"
+        "de": "Eine Pommesbude",
+        "fr": "Une restauration rapide centré sur la vente de frites"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -86,7 +93,8 @@
       "nl": "Eetgelegenheid",
       "ca": "Restaurant",
       "de": "Restaurant",
-      "es": "Restaurante"
+      "es": "Restaurante",
+      "fr": "Restaurant"
     },
     "mappings": [
       {
@@ -101,7 +109,8 @@
           "en": "Restaurant <i>{name}</i>",
           "de": "Restaurant <i>{name}</i>",
           "ca": "Restaurant <i>{name}</i>",
-          "es": "Restaurante <i>{name}</i>"
+          "es": "Restaurante <i>{name}</i>",
+          "fr": "Restaurant <i>{name}</i>"
         }
       },
       {
@@ -116,7 +125,8 @@
           "en": "Fastfood <i>{name}</i>",
           "de": "Schnellimbiss <i>{name}</i>",
           "ca": "Lloc de menjar ràpid <i>{name}</i>",
-          "es": "Comida rápida <i>{name}</i>"
+          "es": "Comida rápida <i>{name}</i>",
+          "fr": "Fast-food <i>{name}</i>"
         }
       },
       {
@@ -130,7 +140,8 @@
           "en": "Fastfood",
           "de": "Schnellimbiss",
           "ca": "Menjar ràpid",
-          "es": "Comida rápida"
+          "es": "Comida rápida",
+          "fr": "Fast-food"
         }
       }
     ]
@@ -143,13 +154,15 @@
         "nl": "Wat is de naam van deze eetgelegenheid?",
         "en": "What is the name of this restaurant?",
         "de": "Wie heißt dieses Restaurant?",
-        "es": "¿Cual es el nombre de este restaurante?"
+        "es": "¿Cual es el nombre de este restaurante?",
+        "fr": "Quel est le nom de ce restaurant ?"
       },
       "render": {
         "nl": "De naam van deze eetgelegeheid is {name}",
         "en": "The name of this restaurant is {name}",
         "de": "Das Restaurant heißt {name}",
-        "es": "El nombre de este restaurante es {name}"
+        "es": "El nombre de este restaurante es {name}",
+        "fr": "Le nom de ce restaurant est {name}"
       },
       "freeform": {
         "key": "name"
@@ -161,7 +174,8 @@
         "en": "What type of business is this?",
         "nl": "Wat voor soort zaak is dit?",
         "de": "Um was für einen Ort handelt es sich?",
-        "es": "¿Qué tipo de negocio es este?"
+        "es": "¿Qué tipo de negocio es este?",
+        "fr": "Quel type de restaurant est-ce ?"
       },
       "mappings": [
         {
@@ -170,7 +184,8 @@
             "en": "This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.",
             "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel",
             "de": "Es handelt sich um einen Schnellimbiss, mit Fokus auf schnelle Bedienung am Tresen. Sitzmöglichkeiten sind begrenzt und funktional.",
-            "es": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales."
+            "es": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales.",
+            "fr": "C'est un fast-food, centrée sur le service rapide. Si des places sont disponibles, elles sont plutôt limitées et fonctionnelles."
           }
         },
         {
@@ -179,7 +194,8 @@
             "en": "A <b>restaurant</b>, focused on creating a nice experience where one is served at the table",
             "nl": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend",
             "de": "Es handelt sich um ein <b>Restaurant</b>, mit Fokus auf eine nette Atmosphäre und Tischbedienung",
-            "es": "Un <b>restaurante</b>, centrado en crear una buena experiencia donde se sirve en la mesa"
+            "es": "Un <b>restaurante</b>, centrado en crear una buena experiencia donde se sirve en la mesa",
+            "fr": "Un <b>restaurant</b>, axé sur la création d'une expérience agréable où l'on est servi à table"
           }
         }
       ],
@@ -196,13 +212,15 @@
         "nl": "Welk soort gerechten worden hier geserveerd?",
         "en": "Which food is served here?",
         "de": "Welches Essen gibt es hier?",
-        "es": "¿Qué comida se sirve aquí?"
+        "es": "¿Qué comida se sirve aquí?",
+        "fr": "Quelle type de nourriture est servie ici ?"
       },
       "render": {
         "nl": "Deze plaats serveert vooral {cuisine}",
         "en": "This place mostly serves {cuisine}",
         "de": "An diesem Ort gibt es hauptsächlich {cuisine}",
-        "es": "Aquí se sirve principalmente {cuisine}"
+        "es": "Aquí se sirve principalmente {cuisine}",
+        "fr": "Cet endroit sert principalement des plats {cuisine}"
       },
       "freeform": {
         "key": "cuisine",
@@ -217,7 +235,8 @@
             "en": "This is a pizzeria",
             "nl": "Dit is een pizzeria",
             "de": "Dies ist eine Pizzeria",
-            "es": "Esto es una pizzería"
+            "es": "Esto es una pizzería",
+            "fr": "C'est une pizzéria"
           }
         },
         {
@@ -225,7 +244,8 @@
           "then": {
             "en": "This is a friture",
             "nl": "Dit is een frituur",
-            "de": "Dies ist eine Pommesbude"
+            "de": "Dies ist eine Pommesbude",
+            "fr": "C'est une friterie"
           }
         },
         {
@@ -234,7 +254,8 @@
             "en": "Mainly serves pasta",
             "nl": "Dit is een pastazaak",
             "de": "Bietet vorwiegend Pastagerichte an",
-            "es": "Principalmente sirve pasta"
+            "es": "Principalmente sirve pasta",
+            "fr": "Restaurant Italien"
           }
         },
         {
@@ -243,7 +264,8 @@
             "en": "This is kebab shop",
             "nl": "Dit is een kebabzaak",
             "de": "Das ist ein Dönerladen",
-            "es": "Esta es una tienda de kebak"
+            "es": "Esta es una tienda de kebak",
+            "fr": "C'est un resto kebab"
           }
         },
         {
@@ -251,7 +273,8 @@
           "then": {
             "en": "This is a sandwichbar",
             "nl": "Dit is een broodjeszaak",
-            "de": "Dies ist ein Sandwichladen"
+            "de": "Dies ist ein Sandwichladen",
+            "fr": "C'est une sandwicherie"
           }
         },
         {
@@ -260,7 +283,8 @@
             "en": "Burgers are served here",
             "nl": "Dit is een hamburgerrestaurant",
             "de": "Hier werden Burger serviert",
-            "es": "Aquí se sirven hamburguesas"
+            "es": "Aquí se sirven hamburguesas",
+            "fr": "Des hamburgers sont servis ici"
           }
         },
         {
@@ -269,7 +293,8 @@
             "en": "Sushi is served here",
             "nl": "Dit is een sushirestaurant",
             "de": "Hier wird Sushi serviert",
-            "es": "Aquí se sirve sushi"
+            "es": "Aquí se sirve sushi",
+            "fr": "Des sushis sont servis ici"
           }
         },
         {
@@ -278,7 +303,8 @@
             "en": "Coffee is served here",
             "nl": "Dit is een koffiezaak",
             "de": "Hier wird Kaffee serviert",
-            "es": "Aquí se sirve café"
+            "es": "Aquí se sirve café",
+            "fr": "Ceci est un café"
           }
         },
         {
@@ -287,7 +313,8 @@
             "en": "This is an italian restaurant (which serves more then pasta and pizza)",
             "nl": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)",
             "de": "Dies ist ein italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)",
-            "es": "Este es un restaurante italiano (que sirve más que pasta y pizza)"
+            "es": "Este es un restaurante italiano (que sirve más que pasta y pizza)",
+            "fr": "C'est un Restaurant Italien (qui sert plus que des pâtes et des pizzas)"
           }
         },
         {
@@ -296,7 +323,8 @@
             "en": "French dishes are served here",
             "nl": "Dit is een Frans restaurant",
             "de": "Hier werden französische Gerichte serviert",
-            "es": "Aquí se sirven platos Franceses"
+            "es": "Aquí se sirven platos Franceses",
+            "fr": "Des plats français sont servis ici"
           }
         },
         {
@@ -305,7 +333,8 @@
             "en": "Chinese dishes are served here",
             "nl": "Dit is een Chinees restaurant",
             "de": "Hier werden chinesische Gerichte serviert",
-            "es": "Aquí se sirven platos Chinos"
+            "es": "Aquí se sirven platos Chinos",
+            "fr": "Des plats chinois sont servis ici"
           }
         },
         {
@@ -314,7 +343,8 @@
             "en": "Greek dishes are served here",
             "nl": "Dit is een Grieks restaurant",
             "de": "Hier werden griechische Gerichte serviert",
-            "es": "Aquí se sirven platos Griegos"
+            "es": "Aquí se sirven platos Griegos",
+            "fr": "Des plats grecs sont servis ici"
           }
         },
         {
@@ -323,7 +353,8 @@
             "en": "Indian dishes are served here",
             "nl": "Dit is een Indisch restaurant",
             "de": "Hier werden indische Gerichte serviert",
-            "es": "Aquí se sirven platos Indios"
+            "es": "Aquí se sirven platos Indios",
+            "fr": "Des plats indiens sont servis ici"
           }
         },
         {
@@ -332,7 +363,8 @@
             "en": "Turkish dishes are served here",
             "nl": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)",
             "de": "Hier werden türkische Gerichte serviert",
-            "es": "Aquí se sirven platos Turcos"
+            "es": "Aquí se sirven platos Turcos",
+            "fr": "Des plats turcs sont servis ici"
           }
         },
         {
@@ -340,7 +372,8 @@
           "then": {
             "en": "Thai dishes are served here",
             "nl": "Dit is een Thaïs restaurant",
-            "de": "Hier werden thailändische Gerichte serviert"
+            "de": "Hier werden thailändische Gerichte serviert",
+            "fr": "Des plats thaïlandais sont servis ici"
           }
         }
       ],
@@ -351,7 +384,8 @@
         "nl": "Biedt deze zaak een afhaalmogelijkheid aan?",
         "en": "Does this place offer take-away?",
         "de": "Werden Gerichte zum Mitnehmen angeboten?",
-        "es": "¿Este lugar ofrece para llevar?"
+        "es": "¿Este lugar ofrece para llevar?",
+        "fr": "Cet établissement propose-t-il des plats à emporter ?"
       },
       "mappings": [
         {
@@ -360,7 +394,8 @@
             "en": "This is a take-away only business",
             "nl": "Hier is enkel afhaal mogelijk",
             "de": "Hier werden Gerichte ausschließlich zum Mitnehmen angeboten",
-            "es": "Este es un negocio solo para pedir para llevar"
+            "es": "Este es un negocio solo para pedir para llevar",
+            "fr": "Ceci est un resto uniquement de vente à emporter"
           }
         },
         {
@@ -369,7 +404,8 @@
             "en": "Take-away is possible here",
             "nl": "Eten kan hier afgehaald worden",
             "de": "Hier werden Gerichte auch zum Mitnehmen angeboten",
-            "es": "Aquí es posible pedir para llevar"
+            "es": "Aquí es posible pedir para llevar",
+            "fr": "La vente à emporter est possible ici"
           }
         },
         {
@@ -378,7 +414,8 @@
             "en": "Take-away is not possible here",
             "nl": "Hier is geen afhaalmogelijkheid",
             "de": "Hier werden Gerichte nicht zum Mitnehmen angeboten",
-            "es": "Aquí no es posible pedir para llevar"
+            "es": "Aquí no es posible pedir para llevar",
+            "fr": "La vente à emporter n'est pas possible ici"
           }
         }
       ],
@@ -389,21 +426,24 @@
       "question": {
         "en": "Delivers {title()} their food at home?",
         "de": "Liefert {title()} ihr Essen nach Hause?",
-        "nl": "Levert {title()} aan huis?"
+        "nl": "Levert {title()} aan huis?",
+        "fr": "Est-ce que {title()} livre sa nourriture à domicile ?"
       },
       "mappings": [
         {
           "if": "delivery=yes",
           "then": {
             "en": "This business does home delivery (eventually via a third party)",
-            "de": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)"
+            "de": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)",
+            "fr": "Ce restaurant effectue la livraison à domicile (éventuellement via un tiers)"
           }
         },
         {
           "if": "delivery=no",
           "then": {
             "en": "This business does not deliver at home",
-            "de": "Dieses Unternehmen liefert nicht nach Hause"
+            "de": "Dieses Unternehmen liefert nicht nach Hause",
+            "fr": "Ce restaurant ne livre pas à domicile"
           }
         }
       ]
@@ -413,7 +453,8 @@
         "nl": "Heeft deze eetgelegenheid een vegetarische optie?",
         "en": "Does this restaurant have a vegetarian option?",
         "de": "Werden hier vegetarische Gerichte angeboten?",
-        "es": "¿Este restaurante tiene una opción vegetariana?"
+        "es": "¿Este restaurante tiene una opción vegetariana?",
+        "fr": "Ce restaurant propose-t-il une option végétarienne ?"
       },
       "mappings": [
         {
@@ -422,7 +463,8 @@
             "en": "No vegetarian options are available",
             "nl": "Geen vegetarische opties beschikbaar",
             "de": "Hier werden keine vegetarischen Gerichte angeboten",
-            "es": "Sin opciones vegetarianas"
+            "es": "Sin opciones vegetarianas",
+            "fr": "Aucune option végétarienne n'est disponible"
           }
         },
         {
@@ -431,7 +473,8 @@
             "en": "Some vegetarian options are available",
             "nl": "Beperkte vegetarische opties zijn beschikbaar",
             "de": "Hier werden nur wenige vegetarische Gerichte angeboten",
-            "es": "Algunas opciones vegetarianas"
+            "es": "Algunas opciones vegetarianas",
+            "fr": "Certaines options végétariennes sont disponibles"
           }
         },
         {
@@ -440,7 +483,8 @@
             "en": "Vegetarian options are available",
             "nl": "Vegetarische opties zijn beschikbaar",
             "de": "Hier werden vegetarische Gerichte angeboten",
-            "es": "Opciones vegetarianas disponibles"
+            "es": "Opciones vegetarianas disponibles",
+            "fr": "Des options végétariennes sont disponibles"
           }
         },
         {
@@ -449,7 +493,8 @@
             "en": "All dishes are vegetarian",
             "nl": "Enkel vegetarische opties zijn beschikbaar",
             "de": "Hier werden ausschließlich vegetarische Gerichte angeboten",
-            "es": "Todos los platos son vegetarianos"
+            "es": "Todos los platos son vegetarianos",
+            "fr": "Tous les plats sont végétariens"
           }
         }
       ],
@@ -461,7 +506,8 @@
         "en": "Does this business serve vegan meals?",
         "nl": "Heeft deze eetgelegenheid een veganistische optie?",
         "de": "Werden hier vegane Gerichte angeboten?",
-        "es": "¿Este negocio sirve comida vegana?"
+        "es": "¿Este negocio sirve comida vegana?",
+        "fr": "Cet établissement sert-il des repas végétaliens ?"
       },
       "mappings": [
         {
@@ -470,7 +516,8 @@
             "en": "No vegan options available",
             "nl": "Geen veganistische opties beschikbaar",
             "de": "Hier werden keine veganen Gerichte angeboten",
-            "es": "Sin opciones veganas disponibles"
+            "es": "Sin opciones veganas disponibles",
+            "fr": "Aucune option végétalienne disponible"
           }
         },
         {
@@ -479,7 +526,8 @@
             "en": "Some vegan options are available",
             "nl": "Beperkte veganistische opties zijn beschikbaar",
             "de": "Hier werden nur wenige vegane Gerichte angeboten",
-            "es": "Alguna opciones veganas disponibles"
+            "es": "Alguna opciones veganas disponibles",
+            "fr": "Certaines options végétaliennes sont disponibles"
           }
         },
         {
@@ -488,7 +536,8 @@
             "en": "Vegan options are available",
             "nl": "Veganistische opties zijn beschikbaar",
             "de": "Hier werden vegane Gerichte angeboten",
-            "es": "Opciones veganas disponibles"
+            "es": "Opciones veganas disponibles",
+            "fr": "Des options végétaliennes sont disponibles"
           }
         },
         {
@@ -497,7 +546,8 @@
             "en": "All dishes are vegan",
             "nl": "Enkel veganistische opties zijn beschikbaar",
             "de": "Hier werden ausschließlich vegane Gerichte angeboten",
-            "es": "Todos los platos son veganos"
+            "es": "Todos los platos son veganos",
+            "fr": "Tous les plats sont végétaliens"
           }
         }
       ],
@@ -508,7 +558,8 @@
       "question": {
         "en": "Does this restaurant offer a halal menu?",
         "nl": "Heeft dit restaurant halal opties?",
-        "de": "Werden hier halal Gerichte angeboten?"
+        "de": "Werden hier halal Gerichte angeboten?",
+        "fr": "Ce restaurant propose-t-il un menu halal ?"
       },
       "mappings": [
         {
@@ -516,7 +567,8 @@
           "then": {
             "en": "There are no halal options available",
             "nl": "Er zijn geen halal opties aanwezig",
-            "de": "Hier werden keine halal Gerichte angeboten"
+            "de": "Hier werden keine halal Gerichte angeboten",
+            "fr": "Il n'y a pas d'options halal disponibles"
           }
         },
         {
@@ -524,7 +576,8 @@
           "then": {
             "en": "There is a small halal menu",
             "nl": "Er zijn een beperkt aantal halal opties",
-            "de": "Hier werden nur wenige halal Gerichte angeboten"
+            "de": "Hier werden nur wenige halal Gerichte angeboten",
+            "fr": "Il y a un petit menu halal"
           }
         },
         {
@@ -532,7 +585,8 @@
           "then": {
             "nl": "Halal menu verkrijgbaar",
             "en": "There is a halal menu",
-            "de": "Hier werden halal Gerichte angeboten"
+            "de": "Hier werden halal Gerichte angeboten",
+            "fr": "Il y a un menu halal"
           }
         },
         {
@@ -540,7 +594,8 @@
           "then": {
             "nl": "Enkel halal opties zijn beschikbaar",
             "en": "Only halal options are available",
-            "de": "Hier werden ausschließlich halal Gerichte angeboten"
+            "de": "Hier werden ausschließlich halal Gerichte angeboten",
+            "fr": "Seules les options halal sont disponibles"
           }
         }
       ],
@@ -719,7 +774,8 @@
             "nl": "Nu geopened",
             "de": "Aktuell geöffnet",
             "ca": "Obert ara",
-            "es": "Abierta ahora"
+            "es": "Abierta ahora",
+            "fr": "Ouvert maintenant"
           },
           "osmTags": "_isOpen=yes"
         }
@@ -733,7 +789,8 @@
             "en": "Has a vegetarian menu",
             "nl": "Heeft een vegetarisch menu",
             "de": "Vegetarische Gerichte im Angebot",
-            "es": "Tiene menú vegetariano"
+            "es": "Tiene menú vegetariano",
+            "fr": "A un menu végétarien"
           },
           "osmTags": {
             "or": [
@@ -754,7 +811,8 @@
             "en": "Has a vegan menu",
             "nl": "Heeft een veganistisch menu",
             "de": "Vegane Gerichte im Angebot",
-            "es": "Tiene menú vegano"
+            "es": "Tiene menú vegano",
+            "fr": "A un menu végétalien"
           },
           "osmTags": {
             "or": [
@@ -774,7 +832,8 @@
             "nl": "Heeft een halal menu",
             "de": "Halal Gerichte im Angebot",
             "da": "Har en halalmenu",
-            "es": "Tiene menú halah"
+            "es": "Tiene menú halah",
+            "fr": "A un menu halal"
           },
           "osmTags": {
             "or": [
@@ -794,7 +853,8 @@
             "en": "Accepts cash",
             "de": "Akzeptiert Bargeld",
             "es": "Acepta efectivo",
-            "nl": "Accepteert cash"
+            "nl": "Accepteert cash",
+            "fr": "Accepte les paiements en espèces"
           }
         }
       ]
@@ -808,7 +868,8 @@
             "en": "Accepts payment cards",
             "de": "Akzeptiert Kartenzahlung",
             "es": "Acepta tarjetas de pago",
-            "nl": "Accepteert betaalkaarten"
+            "nl": "Accepteert betaalkaarten",
+            "fr": "Accepte les cartes de paiement"
           }
         }
       ]
@@ -820,14 +881,16 @@
         "if": "amenity=pub",
         "then": {
           "en": "This is actually a pub",
-          "de": "Dies ist eigentlich eine Kneipe"
+          "de": "Dies ist eigentlich eine Kneipe",
+          "fr": "C'est en fait un bar"
         }
       },
       {
         "if": "amenity=cafe",
         "then": {
           "en": "This is actually a cafe",
-          "de": "Dies ist eigentlich ein Café"
+          "de": "Dies ist eigentlich ein Café",
+          "fr": "C'est en fait un café"
         }
       }
     ],
@@ -843,7 +906,8 @@
           "nl": "{title()} is permanent gestopt",
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
-          "es": "{title()} ha cerrado permanentemente"
+          "es": "{title()} ha cerrado permanentemente",
+          "fr": "{title()} a fermé définitivement"
         },
         "changesetMessage": "shop_closed"
       }
@@ -905,6 +969,7 @@
     "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
     "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
     "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
-    "es": "Una capa que muestra restaurantes y facilidades de comida rápida"
+    "es": "Una capa que muestra restaurantes y facilidades de comida rápida",
+    "fr": "Une couche montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)"
   }
 }
