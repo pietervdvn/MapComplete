@@ -608,13 +608,16 @@ export class ImportPointButton extends AbstractImportButton {
             }
 
             let maproulette_id = originalFeatureTags.data[args.maproulette_id];
-            console.log("Checking if we need to mark a maproulette challenge as fixed (" + maproulette_id + ")")
+            console.log("Checking if we need to mark a maproulette task as fixed (" + maproulette_id + ")")
             if (maproulette_id !== undefined) {
-                // Fetch MapRoulette API key, then use it to mark the challenge as fixed
-                console.log("Marking maproulette challenge as fixed")
-                state.maprouletteConnection.closeTask(Number(maproulette_id));
-                originalFeatureTags.data["mr_taskStatus"] = "Fixed";
-                originalFeatureTags.ping();
+                if (state.featureSwitchIsTesting.data){
+                    console.log("Not marking maproulette task " + maproulette_id + " as fixed, because we are in testing mode")
+                } else {
+                    console.log("Marking maproulette task as fixed")
+                    state.maprouletteConnection.closeTask(Number(maproulette_id));
+                    originalFeatureTags.data["mr_taskStatus"] = "Fixed";
+                    originalFeatureTags.ping();
+                }
             }
         }
 
