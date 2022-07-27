@@ -20,7 +20,7 @@
   "widenFactor": 2,
   "hideFromOverview": false,
   "layers": [
-      {
+    {
       "builtin": "indoors",
       "override": {
         "minzoom": 19,
@@ -363,6 +363,53 @@
           {
             "id": "stats",
             "render": "{statistics()}"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "maproulette_challenge",
+      "override": {
+        "source": {
+          "geoJson": "https://maproulette.org/api/v2/challenge/view/28012"
+        },
+        "calculatedTags": [
+          "_closest_osm_hotel=feat.closest('hotel')?.properties?.id",
+          "_closest_osm_hotel_distance=feat.distanceTo(feat.properties._closest_osm_hotel)",
+          "_has_closeby_feature=Number(feat.properties._closest_osm_hotel_distance) < 50 ? 'yes' : 'no'"
+        ],
+        "+tagRenderings": [
+          {
+            "id": "import-button",
+            "condition": "_has_closeby_feature=no",
+            "render": {
+              "special": {
+                "type": "import_button",
+                "targetLayer": "hotel",
+                "tags": "tags",
+                "text": {
+                  "en": "Import"
+                },
+                "icon": "./assets/svg/addSmall.svg",
+                "location_picker": "photo",
+                "maproulette_id": "mr_taskId"
+              }
+            }
+          },
+          {
+            "id": "tag-apply-button",
+            "condition": "_has_closeby_feature=yes",
+            "render": {
+              "special": {
+                "type": "tag_apply",
+                "tags_to_apply": "$tags",
+                "message": {
+                  "en": "Add all the suggested tags"
+                },
+                "image": "./assets/svg/addSmall.svg",
+                "id_of_object_to_apply_this_one": "_closest_osm_hotel"
+              }
+            }
           }
         ]
       }

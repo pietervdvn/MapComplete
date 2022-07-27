@@ -247,6 +247,10 @@
                 "then": "./assets/svg/logo.svg"
               },
               {
+                "if": "theme=maproulette",
+                "then": "./assets/layers/maproulette/logomark.svg"
+              },
+              {
                 "if": "theme=maps",
                 "then": "./assets/themes/maps/logo.svg"
               },

@@ -42,6 +42,13 @@ export default class TagApplyButton implements AutoAction {
 
     public static generateTagsToApply(spec: string, tagSource: Store<any>): Store<Tag[]> {
 
+        // Check whether we need to look up a single value
+
+        if (!spec.includes(";") && !spec.includes("=") && spec.includes("$")){
+            // We seem to be dealing with a single value, fetch it
+            spec = tagSource.data[spec.replace("$","")]
+        }
+
         const tgsSpec = spec.split(";").map(spec => {
             const kv = spec.split("=").map(s => s.trim());
             if (kv.length != 2) {

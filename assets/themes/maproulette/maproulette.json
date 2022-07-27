@@ -1,0 +1,19 @@
+{
+  "id": "maproulette",
+  "title": {
+    "en": "MapRoulette Tasks"
+  },
+  "description": {
+    "en": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them."
+  },
+  "version": "1.0.0",
+  "hideFromOverview": true,
+  "icon": "./assets/layers/maproulette/logomark.svg",
+  "maintainer": "",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 4,
+  "layers": [
+    "maproulette"
+  ]
+}

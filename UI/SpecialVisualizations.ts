@@ -1,4 +1,4 @@
-import {Store, UIEventSource} from "../Logic/UIEventSource";
+import {Store, Stores, UIEventSource} from "../Logic/UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
 import {ImageCarousel} from "./Image/ImageCarousel";
@@ -57,8 +57,9 @@ import {SaveButton} from "./Popup/SaveButton";
 import {MapillaryLink} from "./BigComponents/MapillaryLink";
 import {CheckBox} from "./Input/Checkboxes";
 import Slider from "./Input/Slider";
-import {OsmFeature} from "../Models/OsmFeature";
+import List from "./Base/List";
 import StatisticsPanel from "./BigComponents/StatisticsPanel";
+import { OsmFeature } from "../Models/OsmFeature";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -1100,6 +1101,39 @@ export default class SpecialVisualizations {
                 },
                 new NearbyImageVis(),
                 new MapillaryLinkVis(),
+                {
+                    funcName: "maproulette_task",
+                    args: [],
+                    constr(state, tagSource, argument, guistate) {
+                        let parentId = tagSource.data.mr_challengeId;
+                        let challenge = Stores.FromPromise(Utils.downloadJsonCached(`https://maproulette.org/api/v2/challenge/${parentId}`,24*60*60*1000));
+
+                        let details = new VariableUiElement( challenge.map(challenge => {
+                            let listItems: BaseUIElement[] = [];
+                            let title: BaseUIElement;
+                            
+                            if (challenge?.name) {
+                                title = new Title(challenge.name);
+                            }
+
+                            if (challenge?.description) {
+                                listItems.push(new FixedUiElement(challenge.description));
+                            }
+
+                            if (challenge?.instruction) {
+                                listItems.push(new FixedUiElement(challenge.instruction));
+                            }
+
+                            if(listItems.length === 0) {
+                                return undefined;
+                            } else {
+                                return [title, new List(listItems)];
+                            }
+                        }))
+                        return details; 
+                    },
+                    docs: "Show details of a MapRoulette task"
+                },
                 {
                     funcName: "statistics",
                     docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",

@@ -51,6 +51,22 @@
       "tagRenderings": [
         "all_tags"
       ]
+    },
+    {
+      "builtin": "maproulette_challenge",
+      "override": {
+        "calculatedTags": [
+          "_closest_osm_street_lamp=feat.closest('street_lamps')?.properties?.id",
+          "_closest_osm_street_lamp_distance=feat.distanceTo(feat.properties._closest_osm_street_lamp)",
+          "_has_closeby_feature=Number(feat.properties._closest_osm_street_lamp_distance) < 5 ? 'yes' : 'no'"
+        ],
+        "tagRenderings+": [
+          {
+            "id": "import",
+            "render": "{import_button(street_lamps,tags,Import,./assets/svg/addSmall.svg,,,,photo,mr_taskId)}"
+          }
+        ]
+      }
     }
   ],
   "hideFromOverview": true

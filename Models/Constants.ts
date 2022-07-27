@@ -7,6 +7,15 @@ export default class Constants {
     public static ImgurApiKey = '7070e7167f0a25a'
     public static readonly mapillary_client_token_v4 = "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
 
+    /**
+     * API key for Maproulette
+     * 
+     * Currently there is no user-friendly way to get the user's API key.
+     * See https://github.com/maproulette/maproulette2/issues/476 for more information.
+     * Using an empty string however does work for most actions, but will attribute all actions to the Superuser.
+     */
+    public static readonly MaprouletteApiKey = "";
+
     public static defaultOverpassUrls = [
         // The official instance, 10000 queries per day per project allowed
         "https://overpass-api.de/api/interpreter",

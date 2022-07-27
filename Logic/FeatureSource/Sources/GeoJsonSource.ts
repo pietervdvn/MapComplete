@@ -82,6 +82,28 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
         Utils.downloadJsonCached(url, 60 * 60)
             .then(json => {
                 self.state.setData("loaded")
+                // TODO: move somewhere else, just for testing
+                // Check for maproulette data
+                if (url.startsWith("https://maproulette.org/api/v2/tasks/box/")) {
+                    console.log("MapRoulette data detected")
+                    const data = json;
+                    let maprouletteFeatures: any[] = [];
+                    data.forEach(element => {
+                        maprouletteFeatures.push({
+                            type: "Feature",
+                            geometry: {
+                                type: "Point",
+                                coordinates: [element.point.lng, element.point.lat]
+                            },
+                            properties: {
+                                // Map all properties to the feature
+                                ...element,
+                            }
+                        });
+                    });
+                    json.features = maprouletteFeatures;
+                }
+
                 if (json.features === undefined || json.features === null) {
                     return;
                 }
