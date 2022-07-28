@@ -3344,6 +3344,52 @@
             "0": {
                 "title": "een lift"
             }
+        },
+        "description": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet.",
+        "name": "lift",
+        "tagRenderings": {
+            "door-width": {
+                "question": "Wat is de breedte van de liftdeur?",
+                "render": "De breedte van de liftdeur is {canonical(door:width)}"
+            },
+            "elevator-depth": {
+                "question": "Wat is de diepte van deze lift?",
+                "render": "Deze lift heeft een diepte van {canonical(elevator:depth)}"
+            },
+            "operational_status": {
+                "mappings": {
+                    "1": {
+                        "then": "Deze lift is tijdelijk gesloten <span class='subtle'>bijvoorbeeld door renovatiewerken</span>"
+                    },
+                    "2": {
+                        "then": "Deze lift werkt"
+                    },
+                    "3": {
+                        "then": "Deze lift werkt"
+                    },
+                    "0": {
+                        "then": "Deze lift is kapot"
+                    }
+                },
+                "question": "Werkt deze lift?"
+            },
+            "elevator-width": {
+                "render": "Deze lift heeft een breedte van {canonical(elevator:width)}",
+                "question": "Wat is de breedte van deze lift?"
+            }
+        },
+        "title": "Lift",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "1": {
+                        "human": "centimeter"
+                    },
+                    "0": {
+                        "human": "meter"
+                    }
+                }
+            }
         }
     },
     "entrance": {
@@ -3441,6 +3487,11 @@
                     "0": {
                         "then": "Deze deur heeft geen drempel"
                     }
+                },
+                "question": "Hoe hoog is de drempel?",
+                "render": "De drempel bij deze deur is {kerb:height}",
+                "freeform": {
+                    "placeholder": "Hoogte van de drempel"
                 }
             },
             "width": {
@@ -3450,6 +3501,23 @@
         },
         "title": {
             "render": "Ingang"
+        },
+        "presets": {
+            "0": {
+                "title": "een toegang"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "1": {
+                        "human": "centimeter"
+                    },
+                    "0": {
+                        "human": "meter"
+                    }
+                }
+            }
         }
     },
     "etymology": {
@@ -3570,6 +3638,14 @@
                 "0": {
                     "explanation": "{title()} is permanent gestopt"
                 }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dit is eigenlijk een bruin cafe of kroeg"
+                },
+                "1": {
+                    "then": "Dit is eigenlijk een cafe (een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen)"
+                }
             }
         },
         "description": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
@@ -3687,7 +3763,7 @@
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel"
+                        "then": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel."
                     },
                     "1": {
                         "then": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
@@ -3748,7 +3824,15 @@
                 "question": "Heeft deze eetgelegenheid een vegetarische optie?"
             },
             "delivery": {
-                "question": "Levert {title()} aan huis?"
+                "question": "Levert {title()} aan huis?",
+                "mappings": {
+                    "0": {
+                        "then": "Deze zaak levert aan huis (eventueel via een derde partij)"
+                    },
+                    "1": {
+                        "then": "Deze zaak doet geen thuisleveringen"
+                    }
+                }
             },
             "friture-oil": {
                 "mappings": {
@@ -4003,7 +4087,8 @@
         },
         "title": {
             "render": "Ziekenhuis"
-        }
+        },
+        "description": "Een laag die ziekehuizen toont"
     },
     "hotel": {
         "description": "Laag die alle hotels toont",
@@ -4130,6 +4215,13 @@
                     },
                     "5": {
                         "question": "Stoeprand met onbekende hoogte"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Drempes met of zonder"
                     }
                 }
             }
@@ -5355,11 +5447,33 @@
         "tagRenderings": {
             "2": {
                 "override": {
-                    "question": "Wat voor soort winkel is dit?"
+                    "question": "Wat voor soort winkel is dit?",
+                    "render": "Dit is een {shop}"
                 }
             },
             "shops-name": {
-                "question": "Wat is de naam van deze winkel?"
+                "question": "Wat is de naam van deze winkel?",
+                "render": "Deze zaak heet <i>{name}</i>"
+            },
+            "copyshop-print-sizes": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze zaak kan printen op A4-formaat"
+                    },
+                    "2": {
+                        "then": "Deze zaak kan printen op A2-formaat"
+                    },
+                    "1": {
+                        "then": "Deze zaak kan printen op A3-formaat"
+                    },
+                    "3": {
+                        "then": "Deze zaak kan printen op A1-formaat"
+                    },
+                    "4": {
+                        "then": "Deze zaak kan printen op A0-formaat"
+                    }
+                },
+                "question": "Op welke papiergroottes kan deze zaak printen?"
             }
         },
         "title": {
@@ -6330,7 +6444,12 @@
         "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,…). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
         "tagRenderings": {
             "_entrance:width": {
-                "render": "<a href ='#{_entrance:id} '>Deze deur heeft een breedte van {canonical(_entrance:width)} meter </a>"
+                "render": "<a href ='#{_entrance:id} '>Deze deur heeft een breedte van {canonical(_entrance:width)} meter </a>",
+                "mappings": {
+                    "0": {
+                        "then": "Deze toegang heeft geen informatie over deurbreedte"
+                    }
+                }
             }
         },
         "title": {
@@ -6597,5 +6716,81 @@
                 }
             }
         }
+    },
+    "governments": {
+        "description": "Deze laag toont overheidsgebouwen. Opgezet voor OSOC '22",
+        "name": "Overheidsdiensten",
+        "presets": {
+            "0": {
+                "title": "een overheidsdienst"
+            }
+        },
+        "title": {
+            "render": "Overheidsdienst {name}"
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van deze overheidsdienst?",
+                "render": "Deze overheidsdienst heet {name}"
+            }
+        }
+    },
+    "indoors": {
+        "title": {
+            "render": "Binnenruimte {name}"
+        },
+        "name": "Binnenruimtes",
+        "description": "Een basis voor indoor-navigatie: toont binnenruimtes"
+    },
+    "pharmacy": {
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Deze apotheek verdeelt medicijnen met voorschrift"
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een drive-through"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "render": "Deze apotheek heet {name}",
+                "question": "Wat is de naam van deze apotheek?",
+                "freeform": {
+                    "placeholder": "Naam van de apotheek"
+                }
+            },
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze apotheek is makkelijk te bereiken met een rolstoel"
+                    },
+                    "1": {
+                        "then": "Deze apotheek is moeilijk te bereiken met een rolstoel"
+                    },
+                    "2": {
+                        "then": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk"
+                    }
+                },
+                "question": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?"
+            }
+        },
+        "description": "Deze laag toont apotheken, welke (waarschijnlijk) ook medicijnen onder voorschrift verkopen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Apotheek"
+                }
+            },
+            "render": "{name}"
+        },
+        "name": "apotheek"
     }
 }

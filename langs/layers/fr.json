@@ -2539,7 +2539,7 @@
                 }
             }
         },
-        "description": "Une couche montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
+        "description": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
         "filter": {
             "0": {
                 "options": {
