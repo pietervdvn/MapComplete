@@ -557,14 +557,36 @@
         ]
       },
       "render": {
-        "en": "<a href='mailto:{email}?subject=Broken bicycle pump&body=Hello,%0D%0A%0D%0AWith this email, I&#39;d like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} is broken.%0D%0A%0D%0A Kind regards'>Report this bicycle pump as broken</a>",
-        "nl": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id}.%0D%0A%0D%0AMet vriendelijke groeten.'>Rapporteer deze fietspomp als kapot</a>",
-        "de": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,%0D%0A%0D%0AMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>",
-        "da": "<a href='mailto:{email}?subject=Cykelpumpe i stykker&body=Hej,%0D%0A%0D%0D%0Med denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} er i stykker.%0D%0A%0D%0D%0A Med venlig hilsen'>Anmeld denne cykelpumpe som værende i stykker</a>",
-        "es": "<a href='mailto:{email}?subject=Bomba para bicicletas rota&body=Hola,%0D%0A%0D%0ACon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0AUn saludo'>Reportar esta bomba para bicicletas como rota</a>",
-        "fr": "<a href='mailto:{email}?subject=Pompe à vélo cassée&body=Bonjour,%0D%0A%0D%0ACe mail pour vous informer que la pompe à vélo située à https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} est cassée.%0D%0A%0D%0ABien à vous.'>Signaler cette pompe à vélo cassée</a>"
+        "special": {
+          "type": "send_email",
+          "to": "{email}",
+          "subject": {
+            "en": "Broken bicycle pump",
+            "nl": "Kapotte fietspomp",
+            "de": "Fahrradpumpe kaputt",
+            "es": "Bomba para bicicletas rota",
+            "fr": "Pompe à vélo cassée",
+            "da": "Cykelpumpe i stykker"
+          },
+          "body": {
+            "en": "Hello,\n\nWith this email, I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} is broken.\n\n Kind regards",
+            "nl": "Geachte\n\nGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id}.\n\nMet vriendelijke groeten.",
+            "de": "Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.",
+            "da": "Hej,\n\nMed denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} er i stykker.\n\n Med venlig hilse",
+            "es": "Hola,\n\nCon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} está rota.\n\nUn saludo",
+            "fr": "Bonjour,\n\nCe mail pour vous informer que la pompe à vélo située à https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} est cassée.\n\nBien à vous."
+          },
+          "button_text": {
+            "en": "Report this bicycle pump as broken",
+            "nl": "Rapporteer deze fietspomp als kapot",
+            "fr": "Signaler cette pompe à vélo cassée",
+            "de": "Melde diese Fahrradpumpe als kaputt",
+            "da": "Anmeld denne cykelpumpe som værende i stykker",
+            "es": "Reportar esta bomba para bicicletas como rota"
+          }
+        }
       },
-      "id": "Email maintainer"
+      "id": "send_email_about_broken_pump"
     },
     {
       "question": {

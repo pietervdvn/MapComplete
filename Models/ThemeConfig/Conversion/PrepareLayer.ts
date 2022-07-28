@@ -38,7 +38,7 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
         if (name.indexOf(".") < 0) {
             return undefined;
         }
-        
+
         const spl = name.split(".");
         let layer = state.sharedLayers.get(spl[0])
         if (spl[0] === this._self.id) {
@@ -48,7 +48,7 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
         if (spl.length !== 2 || layer === undefined) {
             return undefined
         }
-        
+
         const id = spl[1];
 
         const layerTrs = <TagRenderingConfigJson[]>layer.tagRenderings.filter(tr => tr["id"] !== undefined)
@@ -133,11 +133,11 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
                         }
                         if (layer === undefined) {
                             const candidates = Utils.sortedByLevenshteinDistance(layerName, Array.from(state.sharedLayers.keys()), s => s)
-                           if(state.sharedLayers.size === 0){
-                               warnings.push(ctx + ": BOOTSTRAPPING. Rerun generate layeroverview. While reusing tagrendering: " + name + ": layer " + layerName + " not found. Maybe you meant on of " + candidates.slice(0, 3).join(", "))
-                           }else{
-                               errors.push(ctx + ": While reusing tagrendering: " + name + ": layer " + layerName + " not found. Maybe you meant on of " + candidates.slice(0, 3).join(", "))
-                           }
+                            if (state.sharedLayers.size === 0) {
+                                warnings.push(ctx + ": BOOTSTRAPPING. Rerun generate layeroverview. While reusing tagrendering: " + name + ": layer " + layerName + " not found. Maybe you meant on of " + candidates.slice(0, 3).join(", "))
+                            } else {
+                                errors.push(ctx + ": While reusing tagrendering: " + name + ": layer " + layerName + " not found. Maybe you meant on of " + candidates.slice(0, 3).join(", "))
+                            }
                             continue
                         }
                         candidates = Utils.NoNull(layer.tagRenderings.map(tr => tr["id"])).map(id => layerName + "." + id)
@@ -458,14 +458,24 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             for (const argName of argNamesList) {
                 const v = special[argName] ?? ""
                 if (Translations.isProbablyATranslation(v)) {
-                    args.push(new Translation(v).textFor(ln))
+                    const txt = new Translation(v).textFor(ln)
+                        .replace(/,/g, "&COMMA")
+                        .replace(/\{/g, "&LBRACE")
+                        .replace(/}/g, "&RBRACE")
+                    ;
+                    args.push(txt)
+                } else if (typeof v === "string") {
+                    const txt = v.replace(/,/g, "&COMMA")
+                        .replace(/\{/g, "&LBRACE")
+                        .replace(/}/g, "&RBRACE")
+                    args.push(txt)
                 } else {
                     args.push(v)
                 }
             }
             const beforeText = before?.textFor(ln) ?? ""
             const afterText = after?.textFor(ln) ?? ""
-            result[ln] = `${beforeText}{${type}(${args.join(",")})}${afterText}`
+            result[ln] = `${beforeText}{${type}(${args.map(a => a).join(",")})}${afterText}`
         }
         return result
     }
