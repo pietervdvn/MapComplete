@@ -407,5 +407,6 @@
         ]
       }
     ]
-  }
+  },
+  "enableDownload": true
 }
