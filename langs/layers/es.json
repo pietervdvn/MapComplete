@@ -728,9 +728,6 @@
             }
         },
         "tagRenderings": {
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Bomba para bicicletas rota&body=Hola,%0D%0A%0D%0ACon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} está rota.%0D%0A%0D%0AUn saludo'>Reportar esta bomba para bicicletas como rota</a>"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -855,6 +852,15 @@
                 },
                 "question": "¿Que válvulas se soportan?",
                 "render": "Esta bomba soporta las siguiente válvulas: {valves}"
+            },
+            "send_email_about_broken_pump": {
+                "render": {
+                    "special": {
+                        "body": "Hola,\n\nCon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} está rota.\n\nUn saludo",
+                        "button_text": "Reportar esta bomba para bicicletas como rota",
+                        "subject": "Bomba para bicicletas rota"
+                    }
+                }
             }
         },
         "title": {

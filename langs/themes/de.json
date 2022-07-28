@@ -752,12 +752,7 @@
     "onwheels": {
         "description": "Auf dieser Karte werden öffentlich zugängliche Orte für Rollstuhlfahrer angezeigt und können leicht hinzugefügt werden",
         "layers": {
-            "3": {
-                "override": {
-                    "title": "Fußgängerweg"
-                }
-            },
-            "6": {
+            "4": {
                 "override": {
                     "filter": {
                         "0": {
@@ -773,9 +768,9 @@
                     }
                 }
             },
-            "8": {
+            "6": {
                 "override": {
-                    "filter": {
+                    "=filter": {
                         "0": {
                             "options": {
                                 "0": {
@@ -795,7 +790,7 @@
                     }
                 }
             },
-            "23": {
+            "18": {
                 "override": {
                     "=title": {
                         "render": "Statistik"

@@ -811,9 +811,6 @@
             }
         },
         "tagRenderings": {
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id}.%0D%0A%0D%0AMet vriendelijke groeten.'>Rapporteer deze fietspomp als kapot</a>"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -938,6 +935,15 @@
                 },
                 "question": "Welke ventielen werken er met de pomp?",
                 "render": "Deze pomp werkt met de volgende ventielen: {valves}"
+            },
+            "send_email_about_broken_pump": {
+                "render": {
+                    "special": {
+                        "body": "Geachte\n\nGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id}.\n\nMet vriendelijke groeten.",
+                        "button_text": "Rapporteer deze fietspomp als kapot",
+                        "subject": "Kapotte fietspomp"
+                    }
+                }
             }
         },
         "title": {
@@ -3340,15 +3346,66 @@
         }
     },
     "elevator": {
+        "description": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet.",
+        "name": "lift",
         "presets": {
             "0": {
                 "title": "een lift"
+            }
+        },
+        "tagRenderings": {
+            "door-width": {
+                "question": "Wat is de breedte van de liftdeur?",
+                "render": "De breedte van de liftdeur is {canonical(door:width)}"
+            },
+            "elevator-depth": {
+                "question": "Wat is de diepte van deze lift?",
+                "render": "Deze lift heeft een diepte van {canonical(elevator:depth)}"
+            },
+            "elevator-width": {
+                "question": "Wat is de breedte van deze lift?",
+                "render": "Deze lift heeft een breedte van {canonical(elevator:width)}"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze lift is kapot"
+                    },
+                    "1": {
+                        "then": "Deze lift is tijdelijk gesloten <span class='subtle'>bijvoorbeeld door renovatiewerken</span>"
+                    },
+                    "2": {
+                        "then": "Deze lift werkt"
+                    },
+                    "3": {
+                        "then": "Deze lift werkt"
+                    }
+                },
+                "question": "Werkt deze lift?"
+            }
+        },
+        "title": "Lift",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
             }
         }
     },
     "entrance": {
         "description": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, …)",
         "name": "Toegang",
+        "presets": {
+            "0": {
+                "title": "een toegang"
+            }
+        },
         "tagRenderings": {
             "Door_type": {
                 "mappings": {
@@ -3437,11 +3494,16 @@
                 }
             },
             "kerb-height": {
+                "freeform": {
+                    "placeholder": "Hoogte van de drempel"
+                },
                 "mappings": {
                     "0": {
                         "then": "Deze deur heeft geen drempel"
                     }
-                }
+                },
+                "question": "Hoe hoog is de drempel?",
+                "render": "De drempel bij deze deur is {kerb:height}"
             },
             "width": {
                 "question": "Wat is de breedte van deze deur/toegang?",
@@ -3450,6 +3512,18 @@
         },
         "title": {
             "render": "Ingang"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "etymology": {
@@ -3570,6 +3644,14 @@
                 "0": {
                     "explanation": "{title()} is permanent gestopt"
                 }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dit is eigenlijk een bruin cafe of kroeg"
+                },
+                "1": {
+                    "then": "Dit is eigenlijk een cafe (een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen)"
+                }
             }
         },
         "description": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
@@ -3687,7 +3769,7 @@
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel"
+                        "then": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel."
                     },
                     "1": {
                         "then": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
@@ -3748,6 +3830,14 @@
                 "question": "Heeft deze eetgelegenheid een vegetarische optie?"
             },
             "delivery": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze zaak levert aan huis (eventueel via een derde partij)"
+                    },
+                    "1": {
+                        "then": "Deze zaak doet geen thuisleveringen"
+                    }
+                },
                 "question": "Levert {title()} aan huis?"
             },
             "friture-oil": {
@@ -3879,6 +3969,24 @@
             "render": "Witte Fiets"
         }
     },
+    "governments": {
+        "description": "Deze laag toont overheidsgebouwen. Opgezet voor OSOC '22",
+        "name": "Overheidsdiensten",
+        "presets": {
+            "0": {
+                "title": "een overheidsdienst"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van deze overheidsdienst?",
+                "render": "Deze overheidsdienst heet {name}"
+            }
+        },
+        "title": {
+            "render": "Overheidsdienst {name}"
+        }
+    },
     "gps_track": {
         "name": "Jouw afgelegde route",
         "tagRenderings": {
@@ -3994,6 +4102,7 @@
         }
     },
     "hospital": {
+        "description": "Een laag die ziekehuizen toont",
         "name": "Ziekenhuizen",
         "tagRenderings": {
             "name": {
@@ -4096,6 +4205,13 @@
             "render": "Brandkraan"
         }
     },
+    "indoors": {
+        "description": "Een basis voor indoor-navigatie: toont binnenruimtes",
+        "name": "Binnenruimtes",
+        "title": {
+            "render": "Binnenruimte {name}"
+        }
+    },
     "information_board": {
         "description": "Deze laag toont informatieborden in de publieke ruimte die uitleg geven over een bezienswaardigheid (bv. uitleg over het landschap, een ruine, een kaart van de omgeving, ...)",
         "name": "Informatieborden",
@@ -4130,6 +4246,13 @@
                     },
                     "5": {
                         "question": "Stoeprand met onbekende hoogte"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Drempes met of zonder"
                     }
                 }
             }
@@ -4696,6 +4819,57 @@
     "pedestrian_path": {
         "description": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
         "name": "Pad voor voetgangers"
+    },
+    "pharmacy": {
+        "description": "Deze laag toont apotheken, welke (waarschijnlijk) ook medicijnen onder voorschrift verkopen",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een drive-through"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Deze apotheek verdeelt medicijnen met voorschrift"
+                    }
+                }
+            }
+        },
+        "name": "apotheek",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van de apotheek"
+                },
+                "question": "Wat is de naam van deze apotheek?",
+                "render": "Deze apotheek heet {name}"
+            },
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze apotheek is makkelijk te bereiken met een rolstoel"
+                    },
+                    "1": {
+                        "then": "Deze apotheek is moeilijk te bereiken met een rolstoel"
+                    },
+                    "2": {
+                        "then": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk"
+                    }
+                },
+                "question": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Apotheek"
+                }
+            },
+            "render": "{name}"
+        }
     },
     "picnic_table": {
         "description": "Deze laag toont picknicktafels",
@@ -5355,11 +5529,33 @@
         "tagRenderings": {
             "2": {
                 "override": {
-                    "question": "Wat voor soort winkel is dit?"
+                    "question": "Wat voor soort winkel is dit?",
+                    "render": "Dit is een {shop}"
                 }
             },
+            "copyshop-print-sizes": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze zaak kan printen op A4-formaat"
+                    },
+                    "1": {
+                        "then": "Deze zaak kan printen op A3-formaat"
+                    },
+                    "2": {
+                        "then": "Deze zaak kan printen op A2-formaat"
+                    },
+                    "3": {
+                        "then": "Deze zaak kan printen op A1-formaat"
+                    },
+                    "4": {
+                        "then": "Deze zaak kan printen op A0-formaat"
+                    }
+                },
+                "question": "Op welke papiergroottes kan deze zaak printen?"
+            },
             "shops-name": {
-                "question": "Wat is de naam van deze winkel?"
+                "question": "Wat is de naam van deze winkel?",
+                "render": "Deze zaak heet <i>{name}</i>"
             }
         },
         "title": {
@@ -6330,6 +6526,11 @@
         "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,…). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
         "tagRenderings": {
             "_entrance:width": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze toegang heeft geen informatie over deurbreedte"
+                    }
+                },
                 "render": "<a href ='#{_entrance:id} '>Deze deur heeft een breedte van {canonical(_entrance:width)} meter </a>"
             }
         },

@@ -182,7 +182,7 @@
           "if": "amenity=fast_food",
           "then": {
             "en": "This is a fastfood-business, focused on fast service. If seating is available, these are rather limited and functional.",
-            "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel",
+            "nl": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel.",
             "de": "Es handelt sich um einen Schnellimbiss, mit Fokus auf schnelle Bedienung am Tresen. Sitzmöglichkeiten sind begrenzt und funktional.",
             "es": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales.",
             "fr": "C'est un fast-food, centrée sur le service rapide. Si des places sont disponibles, elles sont plutôt limitées et fonctionnelles."
@@ -435,7 +435,8 @@
           "then": {
             "en": "This business does home delivery (eventually via a third party)",
             "de": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)",
-            "fr": "Ce restaurant effectue la livraison à domicile (éventuellement via un tiers)"
+            "fr": "Ce restaurant effectue la livraison à domicile (éventuellement via un tiers)",
+            "nl": "Deze zaak levert aan huis (eventueel via een derde partij)"
           }
         },
         {
@@ -443,7 +444,8 @@
           "then": {
             "en": "This business does not deliver at home",
             "de": "Dieses Unternehmen liefert nicht nach Hause",
-            "fr": "Ce restaurant ne livre pas à domicile"
+            "fr": "Ce restaurant ne livre pas à domicile",
+            "nl": "Deze zaak doet geen thuisleveringen"
           }
         }
       ]
@@ -882,7 +884,8 @@
         "then": {
           "en": "This is actually a pub",
           "de": "Dies ist eigentlich eine Kneipe",
-          "fr": "C'est en fait un bar"
+          "fr": "C'est en fait un bar",
+          "nl": "Dit is eigenlijk een bruin cafe of kroeg"
         }
       },
       {
@@ -890,7 +893,8 @@
         "then": {
           "en": "This is actually a cafe",
           "de": "Dies ist eigentlich ein Café",
-          "fr": "C'est en fait un café"
+          "fr": "C'est en fait un café",
+          "nl": "Dit is eigenlijk een cafe (een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen)"
         }
       }
     ],
@@ -970,6 +974,6 @@
     "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
     "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
     "es": "Una capa que muestra restaurantes y facilidades de comida rápida",
-    "fr": "Une couche montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)"
+    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)"
   }
 }

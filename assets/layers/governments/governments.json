@@ -2,11 +2,13 @@
   "id": "governments",
   "name": {
     "en": "governments",
-    "de": "Öffentliche Verwaltung"
+    "de": "Öffentliche Verwaltung",
+    "nl": "Overheidsdiensten"
   },
   "description": {
     "en": "This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22",
-    "de": "Diese Ebene zeigt Gebäude der öffentlichen Verwaltung. Sie wurde im Auftrag für den Kunden von OSOC '22 erstellt"
+    "de": "Diese Ebene zeigt Gebäude der öffentlichen Verwaltung. Sie wurde im Auftrag für den Kunden von OSOC '22 erstellt",
+    "nl": "Deze laag toont overheidsgebouwen. Opgezet voor OSOC '22"
   },
   "source": {
     "osmTags": {
@@ -18,7 +20,8 @@
   "title": {
     "render": {
       "en": "Governmental Office {name}",
-      "de": "Behörde {name}"
+      "de": "Behörde {name}",
+      "nl": "Overheidsdienst {name}"
     }
   },
   "minzoom": 13,
@@ -30,11 +33,13 @@
     {
       "question": {
         "en": "What is the name of this Governmental Office?",
-        "de": "Wie lautet der Name dieser Behörde?"
+        "de": "Wie lautet der Name dieser Behörde?",
+        "nl": "Wat is de naam van deze overheidsdienst?"
       },
       "render": {
         "en": "This Governmental Office is called {name}",
-        "de": "Der Name der Behörde lautet {name}"
+        "de": "Der Name der Behörde lautet {name}",
+        "nl": "Deze overheidsdienst heet {name}"
       },
       "freeform": {
         "key": "name"
@@ -46,7 +51,8 @@
     {
       "title": {
         "en": "a Governmental Office",
-        "de": "ein Büro der öffentlichen Verwaltung"
+        "de": "ein Büro der öffentlichen Verwaltung",
+        "nl": "een overheidsdienst"
       },
       "tags": [
         "office=government"
