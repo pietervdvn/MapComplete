@@ -14,10 +14,10 @@ import BaseUIElement from "../BaseUIElement";
  * Selects a length after clicking on the minimap, in meters
  */
 export default class LengthInput extends InputElement<string> {
-    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    
     private readonly _location: UIEventSource<Loc>;
     private readonly value: UIEventSource<string>;
-    private background;
+    private readonly background: UIEventSource<any>;
 
     constructor(mapBackground: UIEventSource<any>,
                 location: UIEventSource<Loc>,
@@ -36,7 +36,7 @@ export default class LengthInput extends InputElement<string> {
 
     IsValid(str: string): boolean {
         const t = Number(str)
-        return !isNaN(t) && t >= 0 && t <= 360;
+        return !isNaN(t) && t >= 0;
     }
 
     protected InnerConstructElement(): HTMLElement {
@@ -63,7 +63,7 @@ export default class LengthInput extends InputElement<string> {
         }
         const crosshair =  new Combine([Svg.length_crosshair_svg().SetStyle(
             `position: absolute;top: 0;left: 0;transform:rotate(${this.value.data ?? 0}deg);`)
-        ])  .SetClass("block length-crosshair-svg relative")
+        ])  .SetClass("block length-crosshair-svg relative pointer-events-none")
             .SetStyle("z-index: 1000; visibility: hidden")
         
         const element = new Combine([
@@ -112,46 +112,42 @@ export default class LengthInput extends InputElement<string> {
                     lastClickXY = undefined;
                 }
             }
-            if (isUp) {
-                const distance = Math.sqrt((dy - firstClickXY[1]) * (dy - firstClickXY[1]) + (dx - firstClickXY[0]) * (dx - firstClickXY[0]))
-                if (distance > 15) {
-                    lastClickXY = [dx, dy]
-                }
 
-
-            } else if (lastClickXY !== undefined) {
+            if (firstClickXY === undefined) {
+                measurementCrosshair.style.visibility = "hidden"
                 return;
             }
 
 
-           // const measurementCrosshair = htmlElement.getElementsByClassName("length-crosshair-svg")[0] as HTMLElement
 
-            const measurementCrosshairInner: HTMLElement = <HTMLElement>measurementCrosshair.firstChild
-            if (firstClickXY === undefined) {
-                measurementCrosshair.style.visibility = "hidden"
-            } else {
-                measurementCrosshair.style.visibility = "unset"
-                measurementCrosshair.style.left = firstClickXY[0] + "px";
-                measurementCrosshair.style.top = firstClickXY[1] + "px"
-
-                const angle = 180 * Math.atan2(firstClickXY[1] - dy, firstClickXY[0] - dx) / Math.PI;
-                const angleGeo = (angle + 270) % 360
-                measurementCrosshairInner.style.transform = `rotate(${angleGeo}deg)`;
-
-                const distance = Math.sqrt((dy - firstClickXY[1]) * (dy - firstClickXY[1]) + (dx - firstClickXY[0]) * (dx - firstClickXY[0]))
-                measurementCrosshairInner.style.width = (distance * 2) + "px"
-                measurementCrosshairInner.style.marginLeft = -distance + "px"
-                measurementCrosshairInner.style.marginTop = -distance + "px"
-
-
-                const leaflet = leafletMap?.data
-                if (leaflet) {
-                    const first = leaflet.layerPointToLatLng(firstClickXY)
-                    const last = leaflet.layerPointToLatLng([dx, dy])
-                    const geoDist = Math.floor(GeoOperations.distanceBetween([first.lng, first.lat], [last.lng, last.lat]) * 10) / 10
-                    self.value.setData("" + geoDist)
+            const distance = Math.sqrt((dy - firstClickXY[1]) * (dy - firstClickXY[1]) + (dx - firstClickXY[0]) * (dx - firstClickXY[0]))
+            if (isUp) {
+                if (distance > 15) {
+                    lastClickXY = [dx, dy]
                 }
+            } else if (lastClickXY !== undefined) {
+                return;
+            }
+            measurementCrosshair.style.visibility = "unset"
+            measurementCrosshair.style.left = firstClickXY[0] + "px";
+            measurementCrosshair.style.top = firstClickXY[1] + "px"
 
+            const angle = 180 * Math.atan2(firstClickXY[1] - dy, firstClickXY[0] - dx) / Math.PI;
+            const angleGeo = (angle + 270) % 360
+            const measurementCrosshairInner: HTMLElement = <HTMLElement>measurementCrosshair.firstChild
+            measurementCrosshairInner.style.transform = `rotate(${angleGeo}deg)`;
+
+            measurementCrosshairInner.style.width = (distance * 2) + "px"
+            measurementCrosshairInner.style.marginLeft = -distance + "px"
+            measurementCrosshairInner.style.marginTop = -distance + "px"
+
+
+            const leaflet = leafletMap?.data
+            if (leaflet) {
+                const first = leaflet.layerPointToLatLng(firstClickXY)
+                const last = leaflet.layerPointToLatLng([dx, dy])
+                const geoDist = Math.floor(GeoOperations.distanceBetween([first.lng, first.lat], [last.lng, last.lat]) * 10) / 10
+                self.value.setData("" + geoDist)
             }
 
         }
