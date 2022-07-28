@@ -667,9 +667,6 @@
             }
         },
         "tagRenderings": {
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Cykelpumpe i stykker&body=Hej,%0D%0A%0D%0D%0Med denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} er i stykker.%0D%0A%0D%0D%0A Med venlig hilsen'>Anmeld denne cykelpumpe som værende i stykker</a>"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -780,6 +777,15 @@
                 },
                 "question": "Hvilke ventiler understøttes?",
                 "render": "Denne pumpe understøtter følgende ventiler: {valves}"
+            },
+            "send_email_about_broken_pump": {
+                "render": {
+                    "special": {
+                        "body": "Hej,\n\nMed denne e-mail vil jeg gerne oplyse, at cykelpumpen, der befinder sig på https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} er i stykker.\n\n Med venlig hilse",
+                        "button_text": "Anmeld denne cykelpumpe som værende i stykker",
+                        "subject": "Cykelpumpe i stykker"
+                    }
+                }
             }
         },
         "title": {

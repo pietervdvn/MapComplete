@@ -811,9 +811,6 @@
             }
         },
         "tagRenderings": {
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Pompe à vélo cassée&body=Bonjour,%0D%0A%0D%0ACe mail pour vous informer que la pompe à vélo située à https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} est cassée.%0D%0A%0D%0ABien à vous.'>Signaler cette pompe à vélo cassée</a>"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -938,6 +935,15 @@
                 },
                 "question": "Quelles valves sont compatibles ?",
                 "render": "Cette pompe est compatible avec les valves suivantes : {valves}"
+            },
+            "send_email_about_broken_pump": {
+                "render": {
+                    "special": {
+                        "body": "Bonjour,\n\nCe mail pour vous informer que la pompe à vélo située à https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} est cassée.\n\nBien à vous.",
+                        "button_text": "Signaler cette pompe à vélo cassée",
+                        "subject": "Pompe à vélo cassée"
+                    }
+                }
             }
         },
         "title": {
