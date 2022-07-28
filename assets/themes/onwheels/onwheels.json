@@ -3,12 +3,14 @@
   "title": {
     "en": "OnWheels",
     "de": "Auf Rädern",
-    "fr": "OnWheels"
+    "fr": "OnWheels",
+    "nl": "OnWheels"
   },
   "description": {
     "en": "On this map, publicly weelchair accessible places are shown and can be easily added",
     "de": "Auf dieser Karte werden öffentlich zugängliche Orte für Rollstuhlfahrer angezeigt und können leicht hinzugefügt werden",
-    "fr": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes"
+    "fr": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
+  "nl": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants."
   },
   "maintainer": "MapComplete",
   "icon": "./assets/themes/onwheels/crest.svg",
@@ -73,14 +75,16 @@
               {
                 "question": {
                   "en": "Any/No width info",
-                  "de": "Beliebig/Keine Breiteninformationen"
+                  "de": "Beliebig/Keine Breiteninformationen",
+                  "nl": "All kerbs"
                 }
               },
               {
                 "osmTags": "width=",
                 "question": {
-                  "en": "Any width info",
-                  "de": "Beliebige Breiteninformationen"
+                  "en": "Without width info",
+                  "de": "Beliebige Breiteninformationen",
+                  "nl": "Geen breedtes gekend"
                 }
               }
             ]
@@ -379,6 +383,7 @@
         },
         "render": {
           "en": "The containing building can be entered via <a href='#{_poi_entrance:id}'>a door of {canonical(_poi_entrance:width)}</a>",
+          "nl": "Het gebouw waarin dit zich bevindt kan binnengegaan worden <a href='#{_poi_entrance:id}'>via een deur</a> die {canonical(_poi_entrance:width)} breed is",
           "fr": "On peut entrer dans ce batiment via <a href='#{_poi_entrance:id}'>une porte de {canonical(_poi_entrance:width)}</a>",
           "de": "Das Gebäude kann über <a href='#{_poi_entrance:id}'>durch eine Tür von {canonical(_poi_entrance:width)} betreten werden.</a>"
         },
@@ -390,6 +395,7 @@
           {
             "if": "_poi_entrance:width=",
             "then": {
+              "nl": "Het omvattende gebouw heeft geen gekende deurbreedtes. Voeg een deur en breedte toe.",
               "en": "The containing building has no information on door widths. Add a door and measure the width to get information",
               "fr": "Ce bâtiment n'a aucune information sur les largeurs de portes. Ajoutez une porte et mesurez la largeur pour obtenir des informations",
               "de": "Das Gebäude hat keine Informationen über Türbreiten. Fügen Sie eine Tür hinzu und messen Sie die Breite, um Informationen zu erhalten"

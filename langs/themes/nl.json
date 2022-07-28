@@ -876,7 +876,24 @@
         "title": "Uitkijktorens"
     },
     "onwheels": {
+        "description": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
         "layers": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "All kerbs"
+                                },
+                                "1": {
+                                    "question": "Geen breedtes gekend"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "6": {
                 "override": {
                     "=filter": {
@@ -898,47 +915,21 @@
                         }
                     }
                 }
-            },
-            "3": {
-                "override": {
-                    "title": "Pad voor voetgangers"
-                }
-            },
-            "6": {
-                "override": {
-                    "filter": {
-                        "0": {
-                            "options": {
-                                "0": {
-                                    "question": "Geen info over de breedte gekend"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "23": {
-                "override": {
-                    "=title": {
-                        "render": "Statistieken"
-                    }
-                }
             }
         },
-        "title": "OnWheels",
         "overrideAll": {
             "+tagRenderings": {
                 "0": {
                     "mappings": {
                         "0": {
-                            "then": "Het gebouw waarin dit zich bevindt heeft geen informatie over toegangsdeuren. Voeg een deur en deurbreedte toe om hier informatie te zien."
+                            "then": "Het omvattende gebouw heeft geen gekende deurbreedtes. Voeg een deur en breedte toe."
                         }
                     },
-                    "render": "Het gebouw waarin dit zich bevindt heeft <a href='#{_poi_entrance:id}'>een toegangsdeur van {canonical(_poi_entrance:width)}</a>"
+                    "render": "Het gebouw waarin dit zich bevindt kan binnengegaan worden <a href='#{_poi_entrance:id}'>via een deur</a> die {canonical(_poi_entrance:width)} breed is"
                 }
             }
         },
-        "description": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants."
+        "title": "OnWheels"
     },
     "openwindpowermap": {
         "description": "Een kaart om windturbines te tonen en te bewerken.",
