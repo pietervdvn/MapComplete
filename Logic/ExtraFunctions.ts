@@ -187,7 +187,7 @@ class DistanceToFunc implements ExtraFunction {
 
 class ClosestObjectFunc implements ExtraFunction {
     _name = "closest"
-    _doc = "Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet laoded)"
+    _doc = "Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet loaded)"
 
     _args = ["list of features or a layer name or '*' to get all features"]
 

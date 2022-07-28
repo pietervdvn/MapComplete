@@ -469,6 +469,8 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                         .replace(/\{/g, "&LBRACE")
                         .replace(/}/g, "&RBRACE")
                     args.push(txt)
+                } else if(typeof v === "object"){
+                    args.push(JSON.stringify(v))
                 } else {
                     args.push(v)
                 }

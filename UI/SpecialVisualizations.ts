@@ -1202,6 +1202,35 @@ export default class SpecialVisualizations {
 
                         }))
                     }
+                },
+                {
+                    funcName: "multi",
+                    docs: "Given an embedded tagRendering (read only) and a key, will read the keyname as a JSON-list. Every element of this list will be considered as tags and rendered with the tagRendering",
+                    example: "```json\n"+JSON.stringify({
+                        render: {
+                            special: {
+                                type: "multi",
+                                key: "_doors_from_building_properties",
+                                tagRendering: {
+                                    render: "The building containing this feature has a <a href='#{id}'>door</a> of width {entrance:width}"
+                                }
+                            }
+                        }
+                    }, null, "  ")+"```",
+                    args: [
+                        {name: "key",
+                        doc: "The property to read and to interpret as a list of properties"},
+                        {
+                            name:"tagrendering",
+                            doc: "An entire tagRenderingConfig"
+                        }
+                    ]
+,
+                    constr(state, featureTags, args) {
+                        const [key, tr] = args
+                        console.log("MULTI: ", key, tr)
+                        return undefined
+                    }
                 }
             ]
 
