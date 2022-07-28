@@ -31,10 +31,6 @@
     {
       "builtin": "pedestrian_path",
       "override": {
-        "title": {
-          "en": "Pedestrian path",
-          "de": "Fußgängerweg"
-        },
         "name": null,
         "shownByDefault": false
       }
@@ -117,7 +113,7 @@
             }
           }
         ],
-        "filter": [
+        "=filter": [
           {
             "id": "kerb-type",
             "options": [

@@ -3452,6 +3452,9 @@
         "presets": {
             "0": {
                 "title": "an entrance"
+            },
+            "1": {
+                "title": "an indoor door"
             }
         },
         "tagRenderings": {

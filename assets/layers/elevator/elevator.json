@@ -3,7 +3,8 @@
   "name": {
     "en": "elevator",
     "fr": "ascenseur",
-    "de": "Aufzug"
+    "de": "Aufzug",
+    "nl": "lift"
   },
   "source": {
     "osmTags": "highway=elevator"
@@ -12,12 +13,14 @@
   "description": {
     "en": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
     "fr": "Ce calque montre les ascenseurs et demande l'état opérationnel et les dimensions de l'ascenseur. Utile pour les informations sur l'accessibilité en fauteuil roulant",
-    "de": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer"
+    "de": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer",
+    "nl": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet."
   },
   "title": {
     "en": "Elevator",
     "fr": "Ascenseur",
-    "de": "Aufzug"
+    "de": "Aufzug",
+    "nl": "Lift"
   },
   "tagRenderings": [
     "images",
@@ -27,7 +30,8 @@
       "question": {
         "en": "Does this elevator work?",
         "fr": "Cet ascenseur fonctionne-t-il ?",
-        "de": "Ist dieser Aufzug in Betrieb?"
+        "de": "Ist dieser Aufzug in Betrieb?",
+        "nl": "Werkt deze lift?"
       },
       "mappings": [
         {
@@ -35,7 +39,8 @@
           "then": {
             "en": "This elevator is broken",
             "fr": "Cet ascenseur est en panne",
-            "de": "Dieser Aufzug ist kaputt"
+            "de": "Dieser Aufzug ist kaputt",
+            "nl": "Deze lift is kapot"
           },
           "icon": "close:red"
         },
@@ -44,7 +49,8 @@
           "then": {
             "en": "This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>",
             "fr": "Cet ascenseur est fermé <span class='subtle'>par ex. parce que des travaux de rénovation sont en cours</span>",
-            "de": "Dieser Aufzug ist außer Betrieb <span class='subtle'>z.B. wegen Renovierungsarbeiten</span>"
+            "de": "Dieser Aufzug ist außer Betrieb <span class='subtle'>z.B. wegen Renovierungsarbeiten</span>",
+            "nl": "Deze lift is tijdelijk gesloten <span class='subtle'>bijvoorbeeld door renovatiewerken</span>"
           },
           "icon": "invalid:red"
         },
@@ -53,7 +59,8 @@
           "then": {
             "en": "This elevator works",
             "fr": "Cet ascenseur fonctionne",
-            "de": "Dieser Aufzug ist in Betrieb"
+            "de": "Dieser Aufzug ist in Betrieb",
+            "nl": "Deze lift werkt"
           }
         },
         {
@@ -61,7 +68,8 @@
           "then": {
             "en": "This elevator works",
             "fr": "Cet ascenseur fonctionne",
-            "de": "Dieser Aufzug ist in Betrieb"
+            "de": "Dieser Aufzug ist in Betrieb",
+            "nl": "Deze lift werkt"
           },
           "hideInAnswer": true
         }
@@ -72,12 +80,14 @@
       "render": {
         "en": "This elevator's doors have a width of {canonical(door:width)}",
         "fr": "Les portes de cet ascenseur ont une largeur de {canonical(door:width)}",
-        "de": "Die Türen des Aufzugs haben eine Breite von {canonical(door:width)}"
+        "de": "Die Türen des Aufzugs haben eine Breite von {canonical(door:width)}",
+        "nl": "De breedte van de liftdeur is {canonical(door:width)}"
       },
       "question": {
         "en": "What is the width of this elevator's entrance?",
         "fr": "Quelle est la largeur de l'entrée de cet ascenseur ?",
-        "de": "Wie breit ist die Tür dieses Aufzugs?"
+        "de": "Wie breit ist die Tür dieses Aufzugs?",
+        "nl": "Wat is de breedte van de liftdeur?"
       },
       "freeform": {
         "key": "door:width",
@@ -89,12 +99,14 @@
       "render": {
         "en": "This elevator has a width of {canonical(elevator:width)}",
         "fr": "Cet ascenseur a une largeur de {canonical(elevator:width)}",
-        "de": "Die Aufzugskabine hat eine Breite von {canonical(elevator:width)}"
+        "de": "Die Aufzugskabine hat eine Breite von {canonical(elevator:width)}",
+        "nl": "Deze lift heeft een breedte van {canonical(elevator:width)}"
       },
       "question": {
         "en": "What is the width of this elevator?",
         "fr": "Quelle est la largeur de cet ascenseur ?",
-        "de": "Wie breit ist die Kabine dieses Aufzugs?"
+        "de": "Wie breit ist die Kabine dieses Aufzugs?",
+        "nl": "Wat is de breedte van deze lift?"
       },
       "freeform": {
         "key": "elevator:width",
@@ -106,12 +118,14 @@
       "render": {
         "en": "This elevator has a depth of {canonical(elevator:depth)}",
         "fr": "Cet ascenseur a une profondeur de {canonical(elevator:depth)}",
-        "de": "Dieser Aufzug hat eine Kabinentiefe von {canonical(elevator:depth)}"
+        "de": "Dieser Aufzug hat eine Kabinentiefe von {canonical(elevator:depth)}",
+        "nl": "Deze lift heeft een diepte van {canonical(elevator:depth)}"
       },
       "question": {
         "en": "What is the depth of this elevator?",
         "fr": "Quelle est la profondeur de cet ascenseur ?",
-        "de": "Wie tief ist die Kabine dieses Aufzugs?"
+        "de": "Wie tief ist die Kabine dieses Aufzugs?",
+        "nl": "Wat is de diepte van deze lift?"
       },
       "freeform": {
         "key": "elevator:depth",
@@ -172,7 +186,8 @@
           "human": {
             "en": "meter",
             "fr": "mètre",
-            "de": "Meter"
+            "de": "Meter",
+            "nl": "meter"
           }
         },
         {
@@ -185,7 +200,8 @@
           "human": {
             "en": "centimeter",
             "fr": "centimètre",
-            "de": "Zentimeter"
+            "de": "Zentimeter",
+            "nl": "centimeter"
           }
         }
       ]

@@ -756,12 +756,7 @@
     "onwheels": {
         "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
         "layers": {
-            "3": {
-                "override": {
-                    "title": "Pedestrian path"
-                }
-            },
-            "6": {
+            "4": {
                 "override": {
                     "filter": {
                         "0": {
@@ -777,9 +772,9 @@
                     }
                 }
             },
-            "8": {
+            "6": {
                 "override": {
-                    "filter": {
+                    "=filter": {
                         "0": {
                             "options": {
                                 "0": {
@@ -799,10 +794,30 @@
                     }
                 }
             },
-            "23": {
+            "18": {
                 "override": {
                     "=title": {
                         "render": "Statistics"
+                    }
+                }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Add all the suggested tags"
+                                }
+                            }
+                        }
                     }
                 }
             }

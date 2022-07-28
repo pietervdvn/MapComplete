@@ -70,7 +70,8 @@
           "then": {
             "en": "This entrance has no width information",
             "de": "Der Eingang hat keine Informationen zur Durchgangsbreite",
-            "fr": "Cette entrée n'a pas d'informations sur sa largeur"
+            "fr": "Cette entrée n'a pas d'informations sur sa largeur",
+            "nl": "Deze toegang heeft geen informatie over deurbreedte"
           }
         }
       ]

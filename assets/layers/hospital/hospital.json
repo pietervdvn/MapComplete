@@ -14,7 +14,8 @@
   },
   "description": {
     "en": "A layer showing hospital grounds",
-    "de": "Eine Ebene mit Krankenhäusern"
+    "de": "Eine Ebene mit Krankenhäusern",
+    "nl": "Een laag die ziekehuizen toont"
   },
   "minzoom": 12,
   "source": {

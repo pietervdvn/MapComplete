@@ -380,19 +380,22 @@
       "question": {
         "en": "What is the height of this kerb?",
         "fr": "Quelle est la hauteur de ce seuil ?",
-        "de": "Wie hoch ist die Türschwelle?"
+        "de": "Wie hoch ist die Türschwelle?",
+        "nl": "Hoe hoog is de drempel?"
       },
       "render": {
         "en": "The kerb height of this door is {kerb:height}",
         "fr": "La hauteur du seuil de porte de cette porte est {kerb:height}",
-        "de": "Die Höhe der Türschwelle ist {kerb:height}"
+        "de": "Die Höhe der Türschwelle ist {kerb:height}",
+        "nl": "De drempel bij deze deur is {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",
         "placeholder": {
           "en": "Height of the door kerb",
           "fr": "Hauteur du seuil de porte",
-          "de": "Höhe der Türschwelle"
+          "de": "Höhe der Türschwelle",
+          "nl": "Hoogte van de drempel"
         },
         "type": "pnat"
       },
@@ -431,7 +434,8 @@
       "title": {
         "en": "an entrance",
         "fr": "une entrée",
-        "de": "einen Eingang"
+        "de": "einen Eingang",
+        "nl": "een toegang"
       },
       "preciseInput": {
         "preferredBackground": "photo",
@@ -473,7 +477,8 @@
           "human": {
             "en": "meter",
             "fr": "mètre",
-            "de": "Meter"
+            "de": "Meter",
+            "nl": "meter"
           }
         },
         {
@@ -486,7 +491,8 @@
           "human": {
             "en": "centimeter",
             "fr": "centimètre",
-            "de": "Zentimeter"
+            "de": "Zentimeter",
+            "nl": "centimeter"
           }
         }
       ]

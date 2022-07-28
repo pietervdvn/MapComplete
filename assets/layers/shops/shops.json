@@ -95,7 +95,8 @@
       },
       "render": {
         "en": "This shop is called <i>{name}</i>",
-        "de": "Der Name des Geschäfts lautet <i>{name}</i>"
+        "de": "Der Name des Geschäfts lautet <i>{name}</i>",
+        "nl": "Deze zaak heet <i>{name}</i>"
       },
       "freeform": {
         "key": "name"
@@ -114,7 +115,8 @@
         "render": {
           "en": "This is a {shop}",
           "de": "Das ist ein {shop}",
-          "fr": "C'est une {shop}"
+          "fr": "C'est une {shop}",
+          "nl": "Dit is een {shop}"
         },
         "freeform": {
           "key": "shop",
@@ -142,7 +144,8 @@
       "question": {
         "en": "What paper formats does this shop offer?",
         "de": "Welche Papierformate bietet das Geschäft an?",
-        "fr": "Quels formats de papier cette boutique propose-t-elle ?"
+        "fr": "Quels formats de papier cette boutique propose-t-elle ?",
+        "nl": "Op welke papiergroottes kan deze zaak printen?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -151,7 +154,8 @@
           "then": {
             "en": "This shop can print on papers of size A4",
             "de": "Das Geschäft kann Unterlagen auf A4 Papier drucken",
-            "fr": "Cette boutique peut imprimer sur des papiers de format A4"
+            "fr": "Cette boutique peut imprimer sur des papiers de format A4",
+            "nl": "Deze zaak kan printen op A4-formaat"
           },
           "ifnot": "service:print:A4=no"
         },
@@ -160,7 +164,8 @@
           "then": {
             "en": "This shop can print on papers of size A3",
             "de": "Das Geschäft kann Unterlagen auf A3 Papier drucken",
-            "fr": "Cette boutique peut imprimer sur des papiers de format A3"
+            "fr": "Cette boutique peut imprimer sur des papiers de format A3",
+            "nl": "Deze zaak kan printen op A3-formaat"
           },
           "ifnot": "service:print:A3=no"
         },
@@ -169,7 +174,8 @@
           "then": {
             "en": "This shop can print on papers of size A2",
             "de": "Das Geschäft kann Unterlagen auf A2 Papier drucken",
-            "fr": "Cette boutique peut imprimer sur des papiers de format A2"
+            "fr": "Cette boutique peut imprimer sur des papiers de format A2",
+            "nl": "Deze zaak kan printen op A2-formaat"
           },
           "ifnot": "service:print:A2=no"
         },
@@ -178,7 +184,8 @@
           "then": {
             "en": "This shop can print on papers of size A1",
             "de": "Das Geschäft kann Unterlagen auf A1 Papier drucken",
-            "fr": "Cette boutique peut imprimer sur des papiers de format A1"
+            "fr": "Cette boutique peut imprimer sur des papiers de format A1",
+            "nl": "Deze zaak kan printen op A1-formaat"
           },
           "ifnot": "service:print:A1=no"
         },
@@ -187,7 +194,8 @@
           "then": {
             "en": "This shop can print on papers of size A0",
             "de": "Das Geschäft kann Unterlagen auf A0 Papier drucken",
-            "fr": "Cette boutique peut imprimer sur des papiers de format A0"
+            "fr": "Cette boutique peut imprimer sur des papiers de format A0",
+            "nl": "Deze zaak kan printen op A0-formaat"
           },
           "ifnot": "service:print:A0=no"
         }

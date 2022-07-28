@@ -877,9 +877,9 @@
     },
     "onwheels": {
         "layers": {
-            "8": {
+            "6": {
                 "override": {
-                    "filter": {
+                    "=filter": {
                         "0": {
                             "options": {
                                 "0": {
