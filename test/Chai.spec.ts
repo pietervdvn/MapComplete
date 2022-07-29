@@ -1,6 +1,5 @@
 import {describe} from 'mocha'
 import {expect} from 'chai'
-import {Utils} from "../Utils";
 
 describe("TestSuite", () => {
     

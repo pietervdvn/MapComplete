@@ -366,15 +366,11 @@
   ],
   "overrideAll": {
     "+calculatedTags": [
-      "_poi_walls_and_buildings_entrance_properties=[].concat(...feat.closestn('walls_and_buildings',1, undefined, 500).map(w => ({id: w.feat.properties.id, width: w.feat.properties['_entrance_properties']})))",
-      "_poi_walls_and_buildings_entrance_count=[].concat(...feat.overlapWith('walls_and_buildings').map(w => ({id: w.feat.properties.id, width: w.feat.properties['_entrance_properties']})))",
-      "_poi_walls_and_buildings_entrance_properties_with_width=feat.get('_poi_walls_and_buildings_entrance_properties').filter(p => p['width'] !== undefined)",
-      "_poi_entrance:id=JSON.parse(feat.properties._poi_walls_and_buildings_entrance_properteis)?.id",
-      "_poi_entrance:width=JSON.parse(feat.properties._poi_walls_and_buildings_entrance_properties)?.width"
+      "_enclosing_building=feat.enclosingFeatures('walls_and_buildings')?.map(f => f.feat.properties.id)?.at(0)"
     ],
-    "+tagRenderings": [
+    "tagRenderings+": [
       {
-        "id": "_containing_poi_entrance:width",
+        "id": "_stolen_entrances",
         "condition": {
           "and": [
             "entrance=",
@@ -383,21 +379,11 @@
             "door="
           ]
         },
-        "mappings": [{
-          "if": "_poi_walls_and_buildings_entrance_properties_with_width=[]",
-          "then": {
-            "en": "The containing building has {}"
-          }
-        }],
         "render": {
           "special": {
-            "type": "multi",
-            "key": "_poi_walls_and_buildings_entrance_properties",
-            "tagrendering": {
-                "en": "The containing building can be entered via <a href='#{_poi_entrance:id}'>a door of {canonical(_poi_entrance:width)}</a>",
-                "fr": "On peut entrer dans ce batiment via <a href='#{_poi_entrance:id}'>une porte de {canonical(_poi_entrance:width)}</a>",
-                "de": "Das Gebäude kann über <a href='#{_poi_entrance:id}'>durch eine Tür von {canonical(_poi_entrance:width)} betreten werden.</a>"
-              }
+            "type": "steal",
+            "featureId": "_enclosing_building",
+            "tagRenderingId": "walls_and_buildings.entrance_info; walls_and_buildings.biggest_width"
             }
           }
       }

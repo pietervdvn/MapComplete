@@ -42,7 +42,6 @@ import NoteCommentElement from "./Popup/NoteCommentElement";
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader";
 import FileSelectorButton from "./Input/FileSelectorButton";
 import {LoginToggle} from "./Popup/LoginButton";
-import {start} from "repl";
 import {SubstitutedTranslation} from "./SubstitutedTranslation";
 import {TextField} from "./Input/TextField";
 import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
@@ -60,7 +59,8 @@ import Slider from "./Input/Slider";
 import List from "./Base/List";
 import StatisticsPanel from "./BigComponents/StatisticsPanel";
 import {OsmFeature} from "../Models/OsmFeature";
-import Link from "./Base/Link";
+import EditableTagRendering from "./Popup/EditableTagRendering";
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
 
 export interface SpecialVisualization {
     funcName: string,
@@ -334,6 +334,13 @@ export default class SpecialVisualizations {
                         render: {
                             special: {
                                 type: "some_special_visualisation",
+                                before: {
+                                    en: "Some text to prefix before the special element (e.g. a title)",
+                                    nl: "Een tekst om voor het element te zetten (bv. een titel)"
+                                },
+                                after: {
+                                    en: "Some text to put after the element, e.g. a footer"
+                                },
                                 "argname": "some_arg",
                                 "message": {
                                     en: "some other really long message",
@@ -1206,7 +1213,7 @@ export default class SpecialVisualizations {
                 {
                     funcName: "multi",
                     docs: "Given an embedded tagRendering (read only) and a key, will read the keyname as a JSON-list. Every element of this list will be considered as tags and rendered with the tagRendering",
-                    example: "```json\n"+JSON.stringify({
+                    example: "```json\n" + JSON.stringify({
                         render: {
                             special: {
                                 type: "multi",
@@ -1216,20 +1223,81 @@ export default class SpecialVisualizations {
                                 }
                             }
                         }
-                    }, null, "  ")+"```",
+                    }, null, "  ") + "```",
                     args: [
-                        {name: "key",
-                        doc: "The property to read and to interpret as a list of properties"},
                         {
-                            name:"tagrendering",
-                            doc: "An entire tagRenderingConfig"
+                            name: "key",
+                            doc: "The property to read and to interpret as a list of properties",
+                            required: true
+                        },
+                        {
+                            name: "tagrendering",
+                            doc: "An entire tagRenderingConfig",
+                            required: true
                         }
                     ]
-,
+                    ,
                     constr(state, featureTags, args) {
                         const [key, tr] = args
-                        console.log("MULTI: ", key, tr)
-                        return undefined
+                        const translation = new Translation({"*": tr})
+                        return new VariableUiElement(featureTags.map(tags => {
+                            const properties: object[] = JSON.parse(tags[key])
+                            const elements = []
+                            for (const property of properties) {
+                                const subsTr = new SubstitutedTranslation(translation, new UIEventSource<any>(property), state)
+                                elements.push(subsTr)
+                            }
+                            return new List(elements)
+                        }))
+                    }
+                },
+                {
+                    funcName: "steal",
+                    docs: "Shows a tagRendering from a different object as if this was the object itself",
+                    args: [{
+                        name: "featureId",
+                        doc: "The key of the attribute which contains the id of the feature from which to use the tags",
+                        required: true
+                    },
+                        {
+                            name: "tagRenderingId",
+                            doc: "The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection",
+                            required: true
+                        }],
+                    constr(state, featureTags, args) {
+                        const [featureIdKey, layerAndtagRenderingIds] = args
+                        const tagRenderings: [LayerConfig, TagRenderingConfig][] = []
+                        for (const layerAndTagRenderingId of layerAndtagRenderingIds.split(";")) {
+                            const [layerId, tagRenderingId] = layerAndTagRenderingId.trim().split(".")
+                            const layer = state.layoutToUse.layers.find(l => l.id === layerId)
+                            const tagRendering = layer.tagRenderings.find(tr => tr.id === tagRenderingId)
+                            tagRenderings.push([layer, tagRendering])
+                        }
+                        return new VariableUiElement(featureTags.map(tags => {
+                            const featureId = tags[featureIdKey]
+                            if (featureId === undefined) {
+                                return undefined;
+                            }
+                            const otherTags = state.allElements.getEventSourceById(featureId)
+                            const elements: BaseUIElement[] = []
+                            for (const [layer, tagRendering] of tagRenderings) {
+                                const el = new EditableTagRendering(otherTags, tagRendering, layer.units, state, {})
+                                elements.push(el)
+                            }
+                            if (elements.length === 1) {
+                                return elements[0]
+                            }
+                            return new Combine(elements).SetClass("flex flex-col");
+                        }))
+                    },
+
+                    getLayerDependencies(args): string[] {
+                        const [_, tagRenderingId] = args
+                        if (tagRenderingId.indexOf(".") < 0) {
+                            throw "Error: argument 'layerId.tagRenderingId' of special visualisation 'steal' should contain a dot"
+                        }
+                        const [layerId, __] = tagRenderingId.split(".")
+                        return [layerId]
                     }
                 }
             ]
