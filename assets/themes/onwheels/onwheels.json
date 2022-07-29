@@ -369,13 +369,11 @@
   ],
   "overrideAll": {
     "+calculatedTags": [
-      "_poi_walls_and_buildings_entrance_properties=feat.closestn('walls_and_buildings', 1, undefined, 1000).map(w => ({id: w.feat.properties.id, width: w.feat.properties['_entrance:width']}))[0]",
-      "_poi_entrance:id=JSON.parce(feat.properties._poi_walls_and_buildings_entrance_properteis)?.id",
-      "_poi_entrance:width=JSON.parse(feat.properties._poi_walls_and_buildings_entrance_properties)?.width"
+      "_enclosing_building=feat.enclosingFeatures('walls_and_buildings')?.map(f => f.feat.properties.id)?.at(0)"
     ],
-    "+tagRenderings": [
+    "tagRenderings+": [
       {
-        "id": "_containing_poi_entrance:width",
+        "id": "_stolen_entrances",
         "condition": {
           "and": [
             "entrance=",
@@ -385,26 +383,12 @@
           ]
         },
         "render": {
-          "en": "The containing building can be entered via <a href='#{_poi_entrance:id}'>a door of {canonical(_poi_entrance:width)}</a>",
-          "nl": "Het gebouw waarin dit zich bevindt kan binnengegaan worden <a href='#{_poi_entrance:id}'>via een deur</a> die {canonical(_poi_entrance:width)} breed is",
-          "fr": "On peut entrer dans ce batiment via <a href='#{_poi_entrance:id}'>une porte de {canonical(_poi_entrance:width)}</a>",
-          "de": "Das Gebäude kann über <a href='#{_poi_entrance:id}'>durch eine Tür von {canonical(_poi_entrance:width)} betreten werden.</a>"
-        },
-        "freeform": {
-          "key": "_poi_entrance:width",
-          "type": "distance"
-        },
-        "mappings": [
-          {
-            "if": "_poi_entrance:width=",
-            "then": {
-              "nl": "Het omvattende gebouw heeft geen gekende deurbreedtes. Voeg een deur en breedte toe.",
-              "en": "The containing building has no information on door widths. Add a door and measure the width to get information",
-              "fr": "Ce bâtiment n'a aucune information sur les largeurs de portes. Ajoutez une porte et mesurez la largeur pour obtenir des informations",
-              "de": "Das Gebäude hat keine Informationen über Türbreiten. Fügen Sie eine Tür hinzu und messen Sie die Breite, um Informationen zu erhalten"
+          "special": {
+            "type": "steal",
+            "featureId": "_enclosing_building",
+            "tagRenderingId": "walls_and_buildings.entrance_info; walls_and_buildings.biggest_width"
             }
           }
-        ]
       }
     ]
   },

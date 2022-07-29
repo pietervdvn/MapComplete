@@ -378,15 +378,30 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * const errors = []
      * RewriteSpecial.convertIfNeeded({"special": {}}, errors, "test") // => undefined
      * errors // => ["A 'special'-block should define 'type' to indicate which visualisation should be used"]
+     * 
+     * 
+     * // an actual test
+     * const special = {"special": {
+     *           "type": "multi",
+     *           "before": {
+     *             "en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:"
+     *           },
+     *           "after": {
+     *             "en": "{_entrances_count_without_width_count} entrances don't have width information yet"
+     *           },
+     *           "key": "_entrance_properties_with_width",
+     *           "tagrendering": {
+     *             "en": "An <a href='#{id}'>entrance</a> of {canonical(width)}"
+     *           }
+     *         }}
+     * const errors = []
+     * RewriteSpecial.convertIfNeeded(special, errors, "test") // => {"en": "<h3>Entrances</h3>This building has {_entrances_count} entrances: {multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE)}An <a href='#{id}'>entrance</a> of {canonical(width)}"}
+     * errors // => []
      */
     private static convertIfNeeded(input: (object & { special: { type: string } }) | any, errors: string[], context: string): any {
         const special = input["special"]
         if (special === undefined) {
             return input
-        }
-
-        for (const wrongKey of Object.keys(input).filter(k => k !== "special" && k !== "before" && k !== "after")) {
-            errors.push(`At ${context}: Unexpected key in a special block: ${wrongKey}`)
         }
 
         const type = special["type"]
@@ -406,10 +421,10 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
         // Check for obsolete and misspelled arguments
         errors.push(...Object.keys(special)
             .filter(k => !argNames.has(k))
-            .filter(k => k !== "type")
+            .filter(k => k !== "type" && k !== "before" && k !== "after")
             .map(wrongArg => {
                 const byDistance = Utils.sortedByLevenshteinDistance(wrongArg, argNamesList, x => x)
-                return `Unexpected argument with name '${wrongArg}'. Did you mean ${byDistance[0]}?\n\tAll known arguments are ${argNamesList.join(", ")}`;
+                return `Unexpected argument in special block at ${context} with name '${wrongArg}'. Did you mean ${byDistance[0]}?\n\tAll known arguments are ${argNamesList.join(", ")}`;
             }))
 
         // Check that all obligated arguments are present. They are obligated if they don't have a preset value
@@ -469,6 +484,8 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                         .replace(/\{/g, "&LBRACE")
                         .replace(/}/g, "&RBRACE")
                     args.push(txt)
+                } else if(typeof v === "object"){
+                    args.push(JSON.stringify(v))
                 } else {
                     args.push(v)
                 }
@@ -494,11 +511,20 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * const expected = {render:  {'*': "{image_carousel(image)}"}, mappings: [{if: "other_image_key", then:  {'*': "{image_carousel(other_image_key)}"}} ]}
      * result // => expected
      *
+     * // Should put text before if specified
      * const tr = {
      *     render: {special: {type: "image_carousel", image_key: "image"}, before: {en: "Some introduction"} },
      * }
      * const result = new RewriteSpecial().convert(tr,"test").result
      * const expected = {render:  {'en': "Some introduction{image_carousel(image)}"}}
+     * result // => expected
+     * 
+     * // Should put text after if specified
+     * const tr = {
+     *     render: {special: {type: "image_carousel", image_key: "image"}, after: {en: "Some footer"} },
+     * }
+     * const result = new RewriteSpecial().convert(tr,"test").result
+     * const expected = {render:  {'en': "{image_carousel(image)}Some footer"}}
      * result // => expected
      */
     convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
