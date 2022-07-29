@@ -4256,6 +4256,12 @@
     "indoors": {
         "description": "Basic indoor mapping: shows room outlines",
         "name": "indoors",
+        "tagRenderings": {
+            "ref": {
+                "question": "What is the name of this room?",
+                "render": "This room is named {name}"
+            }
+        },
         "title": {
             "render": "Indoor area {name}"
         }
@@ -6895,17 +6901,38 @@
     "walls_and_buildings": {
         "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
         "tagRenderings": {
-            "_entrance:width": {
+            "entrance_info": {
                 "mappings": {
                     "0": {
-                        "then": "This entrance has no width information"
+                        "then": "No entrance has been marked"
+                    },
+                    "1": {
+                        "then": "None of the {_entrance_count} entrances have width information yet"
                     }
                 },
-                "render": "<a href ='#{_entrance:id} '>This door has a width of {canonical(_entrance:width)} meters </a>"
+                "render": {
+                    "after": "{_entrances_count_without_width_count} entrances don't have width information yet",
+                    "before": "<h3>Entrances</h3>This building has {_entrances_count} entrances:",
+                    "special": {
+                        "tagrendering": "An <a href='#{id}'>entrance</a> of {canonical(width)}"
+                    }
+                }
             }
         },
         "title": {
             "render": "Wall or building"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "waste_basket": {

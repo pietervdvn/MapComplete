@@ -4357,18 +4357,20 @@
     },
     "walls_and_buildings": {
         "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur.",
-        "tagRenderings": {
-            "_entrance:width": {
-                "mappings": {
-                    "0": {
-                        "then": "Cette entrée n'a pas d'informations sur sa largeur"
-                    }
-                },
-                "render": "<a href ='#{_entrance:id} '>Cette porte a une largeur de {canonical(_entrance:width)} mètres </a>"
-            }
-        },
         "title": {
             "render": "Mur ou bâtiment"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "mètre"
+                    },
+                    "1": {
+                        "human": "centimètre"
+                    }
+                }
+            }
         }
     },
     "watermill": {
