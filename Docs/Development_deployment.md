@@ -73,7 +73,8 @@ To use the WSL in Visual Studio Code:
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
    e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
 
-### Dependencie
+Dependencies
+------------
 
 `make` , `python3` `g++`
 
