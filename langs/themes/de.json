@@ -796,6 +796,26 @@
                         "render": "Statistik"
                     }
                 }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        },
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "overrideAll": {
@@ -1053,5 +1073,9 @@
         "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "maproulette": {
+        "description": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können.",
+        "title": "MapRoulette-Aufgaben"
     }
 }
