@@ -5,7 +5,7 @@
     "de": "Innenräume"
   },
   "description": {
-    "en": "On this map, indoor places are shown together with pedestrian paths and entrances",
+    "en": "On this map, publicly accessible indoor places are shown",
     "de": "Diese Karte zeigt öffentlich zugängliche Innenräume"
   },
   "maintainer": "MapComplete",
@@ -19,7 +19,9 @@
   "layers": [
     "indoors",
     {
-      "builtin": ["walls_and_buildings"],
+      "builtin": [
+        "walls_and_buildings"
+      ],
       "override": {
         "shownByDefault": true
       }

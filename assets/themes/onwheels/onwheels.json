@@ -387,8 +387,8 @@
             "type": "steal",
             "featureId": "_enclosing_building",
             "tagRenderingId": "walls_and_buildings.entrance_info; walls_and_buildings.biggest_width"
-            }
           }
+        }
       }
     ]
   },

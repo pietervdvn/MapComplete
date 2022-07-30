@@ -59,9 +59,9 @@
     "images",
     {
       "id": "ref",
-      "question":{
-      "en": "What is the name of this room?"
-    },
+      "question": {
+        "en": "What is the name of this room?"
+      },
       "render": {
         "en": "This room is named {name}"
       },

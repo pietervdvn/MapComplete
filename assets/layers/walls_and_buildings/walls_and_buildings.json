@@ -58,7 +58,8 @@
   "units": [
     {
       "appliesToKey": [
-        "width","_biggest_width"
+        "width",
+        "_biggest_width"
       ],
       "applicableUnits": [
         {
