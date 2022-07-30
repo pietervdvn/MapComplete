@@ -27,7 +27,9 @@ Devcontainer (see more details later).
 To develop and build MapComplete, you
 
 0. Make a fork and clone the repository. (We recommend a shallow clone with `git clone --filter=blob:none <repo>`)
-0. Install `python3`
+0. Install `python3` if you do not have it already
+    - On linux: `sudo apt install python3`
+    - On windows: find the latest download on the [Python Releases for Windows page](https://www.python.org/downloads/windows/)
 0. Install the nodejs version specified in [/.tool-versions](/.tool-versions)
     - On linux: install npm first `sudo apt install npm`, then install `n` using npm: ` npm install -g n`, which can
       then install node with `n install <node-version>`
