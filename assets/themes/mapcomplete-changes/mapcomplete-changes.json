@@ -160,10 +160,6 @@
                 "then": "./assets/layers/school/college.svg"
               },
               {
-                "if": "theme=entrances",
-                "then": "./assets/layers/entrance/door.svg"
-              },
-              {
                 "if": "theme=etymology",
                 "then": "./assets/layers/etymology/logo.svg"
               },
@@ -186,10 +182,6 @@
               {
                 "if": "theme=ghostbikes",
                 "then": "./assets/themes/ghostbikes/logo.svg"
-              },
-              {
-                "if": "theme=governments",
-                "then": "./assets/themes/onwheels/crest.svg"
               },
               {
                 "if": "theme=grb",
@@ -217,7 +209,7 @@
               },
               {
                 "if": "theme=indoors",
-                "then": "./assets/themes/onwheels/crest.svg"
+                "then": "./assets/layers/entrance/entrance.svg"
               },
               {
                 "if": "theme=kerbs_and_crossings",

@@ -419,7 +419,7 @@
         "centroid"
       ],
       "icon": {
-        "render": "circle:white;./assets/layers/entrance/door.svg",
+        "render": "circle:white;./assets/layers/entrance/entrance.svg",
         "mappings": [
           {
             "if": "entrance=emergency",
