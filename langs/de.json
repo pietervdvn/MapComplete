@@ -138,7 +138,7 @@
         },
         "layerSelection": {
             "title": "Ebenen auswählen",
-            "zoomInToSeeThisLayer": "Ausschnitt vergrößern, um diese Ebene anzuzeigen"
+            "zoomInToSeeThisLayer": "Ausschnitt vergrößern, um Ebene anzuzeigen"
         },
         "loading": "Laden…",
         "loadingTheme": "Lade {theme}…",
