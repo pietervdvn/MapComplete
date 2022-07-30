@@ -78,7 +78,7 @@ Dependencies
 
 `make` , `python3` `g++`
 
-(run `nix-env -iA nixos.gnumake nixos.gdc nixos.python3`)
+(Nix users may run `nix-env -iA nixos.gnumake nixos.gdc nixos.python3`)
 
 Automatic deployment
 --------------------
