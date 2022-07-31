@@ -288,11 +288,6 @@
     "education": {
         "title": "Utdanning"
     },
-    "entrances": {
-        "description": "Alle innganger, som er en viktig undersøkelse å gjøre for rullestolsbrukere",
-        "shortDescription": "Lag oversikt over innganger for å hjelpe rullestolsruteplanlegging",
-        "title": "Innganger"
-    },
     "facadegardens": {
         "layers": {
             "0": {

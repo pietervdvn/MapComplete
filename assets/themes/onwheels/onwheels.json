@@ -340,7 +340,8 @@
                 "targetLayer": "hotel",
                 "tags": "tags",
                 "text": {
-                  "en": "Import"
+                  "en": "Import",
+                  "de": "Import"
                 },
                 "icon": "./assets/svg/addSmall.svg",
                 "location_picker": "photo",
@@ -356,7 +357,8 @@
                 "type": "tag_apply",
                 "tags_to_apply": "$tags",
                 "message": {
-                  "en": "Add all the suggested tags"
+                  "en": "Add all the suggested tags",
+                  "de": "Alle vorgeschlagenen Tags hinzufügen"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "id_of_object_to_apply_this_one": "_closest_osm_hotel"

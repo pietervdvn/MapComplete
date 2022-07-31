@@ -26,7 +26,6 @@ A layer showing bicycle pumps and bicycle repair tool stands
 
 
   - [cyclofix](https://mapcomplete.osm.be/cyclofix)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 
@@ -249,7 +248,7 @@ Only visible if  `service:bicycle:tools=yes`  is shown
 
 
 
-### Email maintainer 
+### send_email_about_broken_pump 
 
 
 

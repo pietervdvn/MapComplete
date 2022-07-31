@@ -1,10 +1,12 @@
 {
   "id": "maproulette",
   "title": {
-    "en": "MapRoulette Tasks"
+    "en": "MapRoulette Tasks",
+    "de": "MapRoulette-Aufgaben"
   },
   "description": {
-    "en": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them."
+    "en": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them.",
+    "de": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können."
   },
   "version": "1.0.0",
   "hideFromOverview": true,

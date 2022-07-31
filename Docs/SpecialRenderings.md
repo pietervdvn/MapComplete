@@ -15,9 +15,28 @@ General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_nam
 
 
 
-Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}` , one can also write
+Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}`, one can also write
 
-`{"render":{"special":{"type":"some_special_visualisation","argname":"some_arg","message":{"en":"some other really long message","nl":"een boodschap in een andere taal"},"other_arg_name":"more args"}}}`
+`{
+  "render": {
+    "special": {
+      "type": "some_special_visualisation",
+      "before": {
+        "en": "Some text to prefix before the special element (e.g. a title)",
+        "nl": "Een tekst om voor het element te zetten (bv. een titel)"
+      },
+      "after": {
+        "en": "Some text to put after the element, e.g. a footer"
+      },
+      "argname": "some_arg",
+      "message": {
+        "en": "some other really long message",
+        "nl": "een boodschap in een andere taal"
+      },
+      "other_arg_name": "more args"
+    }
+  }
+}`
 
 ## Table of contents
 
@@ -83,8 +102,16 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of nearby_images](#example-usage-of-nearby_images)
     + [mapillary_link](#mapillary_link)
       * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
+    + [maproulette_task](#maproulette_task)
+      * [Example usage of maproulette_task](#example-usage-of-maproulette_task)
     + [statistics](#statistics)
       * [Example usage of statistics](#example-usage-of-statistics)
+    + [send_email](#send_email)
+      * [Example usage of send_email](#example-usage-of-send_email)
+    + [multi](#multi)
+      * [Example usage of multi](#example-usage-of-multi)
+    + [steal](#steal)
+      * [Example usage of steal](#example-usage-of-steal)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -698,6 +725,16 @@ zoom | 18 | The startzoom of mapillary
 
 
 
+### maproulette_task 
+
+ Show details of a MapRoulette task 
+
+#### Example usage of maproulette_task 
+
+ `{maproulette_task()}`
+
+
+
 ### statistics 
 
  Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer 
@@ -705,6 +742,67 @@ zoom | 18 | The startzoom of mapillary
 #### Example usage of statistics 
 
  `{statistics()}`
+
+
+
+### send_email 
+
+ Creates a `mailto`-link where some fields are already set and correctly escaped. The user will be promted to send the email 
+
+name | default | description
+------ | --------- | -------------
+to | _undefined_ | Who to send the email to?
+subject | _undefined_ | The subject of the email
+body | _undefined_ | The text in the email
+button_text | _undefined_ | The text shown on the button in the UI
+ 
+
+#### Example usage of send_email 
+
+ `{send_email(,,,)}`
+
+
+
+### multi 
+
+ Given an embedded tagRendering (read only) and a key, will read the keyname as a JSON-list. Every element of this list will be considered as tags and rendered with the tagRendering 
+
+name | default | description
+------ | --------- | -------------
+key | _undefined_ | The property to read and to interpret as a list of properties
+tagrendering | _undefined_ | An entire tagRenderingConfig
+ 
+
+#### Example usage of multi 
+
+ ```json
+{
+  "render": {
+    "special": {
+      "type": "multi",
+      "key": "_doors_from_building_properties",
+      "tagRendering": {
+        "render": "The building containing this feature has a <a href='#{id}'>door</a> of width {entrance:width}"
+      }
+    }
+  }
+}```
+
+
+
+### steal 
+
+ Shows a tagRendering from a different object as if this was the object itself 
+
+name | default | description
+------ | --------- | -------------
+featureId | _undefined_ | The key of the attribute which contains the id of the feature from which to use the tags
+tagRenderingId | _undefined_ | The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection
+ 
+
+#### Example usage of steal 
+
+ `{steal(,)}`
 
 
 

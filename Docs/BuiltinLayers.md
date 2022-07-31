@@ -834,6 +834,8 @@ The following layers are included in MapComplete:
   - [kindergarten_childcare](./Layers/kindergarten_childcare.md)
   - [left_right_style](./Layers/left_right_style.md)
   - [map](./Layers/map.md)
+  - [maproulette](./Layers/maproulette.md)
+  - [maproulette_challenge](./Layers/maproulette_challenge.md)
   - [matchpoint](./Layers/matchpoint.md)
   - [maxspeed](./Layers/maxspeed.md)
   - [named_streets](./Layers/named_streets.md)
