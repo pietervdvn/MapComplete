@@ -93,7 +93,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
 
 
         // Project the point onto the way
-
+        console.log("Snapping a node onto an existing way...")
         const geojson = this._snapOnto.asGeoJson()
         const projected = GeoOperations.nearestPoint(geojson, [this._lon, this._lat])
        const projectedCoor=     <[number, number]>projected.geometry.coordinates

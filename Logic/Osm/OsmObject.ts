@@ -219,6 +219,9 @@ export abstract class OsmObject {
 
     /**
      * Uses the list of polygon features to determine if the given tags are a polygon or not.
+     * 
+     * OsmObject.isPolygon({"building":"yes"}) // => true
+     * OsmObject.isPolygon({"highway":"residential"}) // => false
      * */
     protected static isPolygon(tags: any): boolean {
         for (const tagsKey in tags) {

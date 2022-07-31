@@ -35,6 +35,7 @@ export default class MetaTagging {
             return;
         }
 
+        console.log("Recalculating metatags...")
         const metatagsToApply: SimpleMetaTagger[] = []
         for (const metatag of SimpleMetaTaggers.metatags) {
             if (metatag.includesDates) {

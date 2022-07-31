@@ -6738,18 +6738,20 @@
     },
     "walls_and_buildings": {
         "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
-        "tagRenderings": {
-            "_entrance:width": {
-                "mappings": {
-                    "0": {
-                        "then": "Der Eingang hat keine Informationen zur Durchgangsbreite"
-                    }
-                },
-                "render": "<a href ='#{_entrance:id} '>Diese Tür hat eine Durchgangsbreite von {canonical(_entrance:width)} Meter </a>"
-            }
-        },
         "title": {
             "render": "Wand oder Gebäude"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
         }
     },
     "waste_basket": {

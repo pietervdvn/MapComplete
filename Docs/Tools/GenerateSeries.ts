@@ -44,11 +44,23 @@ class StatsDownloader {
                     if (year === currentYear && month === currentMonth && day === today.getDate() ) {
                         break;
                     }
-                        const path = `${this._targetDirectory}/stats.${year}-${month}-${(day < 10 ? "0" : "") + day}.json`
+                    const path = `${this._targetDirectory}/stats.${year}-${month}-${(day < 10 ? "0" : "") + day}.json`
                     if(existsSync(path)){
+                        console.log("Skipping ", path,": already exists")
                         continue
                     }
+                    try{
+                        
                     await this.DownloadStatsForDay(year, month, day, path)
+                    }catch(e){
+                        console.error(e)
+                        console.error("Could not download "+year+"-"+month+"-"+day+"... Trying again")
+                        try{
+                            await this.DownloadStatsForDay(year, month, day, path)
+                        }catch(e){
+                            console.error("Could not download "+year+"-"+month+"-"+day+", skipping for now")
+                        }
+                    }
                 }
             }
         }
@@ -828,17 +840,21 @@ async function main(): Promise<void> {
     if (process.argv.indexOf("--no-graphs") >= 0) {
         return
     }
-    await createMiscGraphs(allFeatures, emptyCS)
+    const allFiles = readdirSync("Docs/Tools/stats").filter(p => p.endsWith(".json"))
+    writeFileSync("Docs/Tools/stats/file-overview.json", JSON.stringify(allFiles))
+    
+    /* 
+   await createMiscGraphs(allFeatures, emptyCS)
 
-    const grbOnly = allFeatures.filter(f => f.properties.metadata.theme === "grb")
-    allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "grb")
-    await createGraphs(allFeatures, "")
-    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
-    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
-    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
-    await createGraphs(allFeatures.filter(f => f.properties.metadata.theme === "toerisme_vlaanderen"), " met pin je punt", 0)
-    await createGraphs(grbOnly, " with the GRB import tool", 0)
-
+   const grbOnly = allFeatures.filter(f => f.properties.metadata.theme === "grb")
+   allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "grb")
+ await createGraphs(allFeatures, "")
+   await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
+   await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
+   await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
+   await createGraphs(allFeatures.filter(f => f.properties.metadata.theme === "toerisme_vlaanderen"), " met pin je punt", 0)
+   await createGraphs(grbOnly, " with the GRB import tool", 0)
+*/
 }
 
 main().then(_ => console.log("All done!"))

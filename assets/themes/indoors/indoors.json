@@ -9,7 +9,7 @@
     "de": "Diese Karte zeigt öffentlich zugängliche Innenräume"
   },
   "maintainer": "MapComplete",
-  "icon": "./assets/themes/onwheels/crest.svg",
+  "icon": "./assets/layers/entrance/entrance.svg",
   "version": "0",
   "startLat": 51.17181,
   "defaultBackgroundId": "CartoDB.Voyager",
@@ -17,6 +17,16 @@
   "startZoom": 14,
   "widenFactor": 2,
   "layers": [
-    "indoors"
+    "indoors",
+    {
+      "builtin": [
+        "walls_and_buildings"
+      ],
+      "override": {
+        "shownByDefault": true
+      }
+    },
+    "pedestrian_path",
+    "entrance"
   ]
 }

@@ -47,34 +47,85 @@
     }
   ],
   "calculatedTags": [
-    "_entrance_properties=feat.overlapWith('entrance')?.map(e => e.feat.properties).filter(p => p !== undefined).filter(p => p.width !== undefined)",
-    "_entrance:id=feat.get('_entrance_properties')?.map(e => e.id)?.at(0)",
-    "_entrance:width=feat.get('_entrance_properties')?.map(e => e.width)?.at(0)"
+    "_entrance_properties=feat.overlapWith('entrance')?.map(e => e.feat.properties)?.filter(p => p !== undefined && p.indoor !== 'door')",
+    "_entrance_properties_with_width=feat.get('_entrance_properties')?.filter(p => p['width'] !== undefined)",
+    "_entrances_count=feat.get('_entrance_properties').length",
+    "_entrances_count_without_width_count= feat.get('_entrances_count') - feat.get('_entrance_properties_with_width').length",
+    "_biggest_width= Math.max( feat.get('_entrance_properties').map(p => p.width))",
+    "_biggest_width_properties= /* Can be a list! */ feat.get('_entrance_properties').filter(p => p.width === feat.get('_biggest_width'))",
+    "_biggest_width_id=feat.get('_biggest_width_properties').id"
   ],
-  "tagRenderings": [
+  "units": [
     {
-      "id": "_entrance:width",
-      "render": {
-        "en": "<a href ='#{_entrance:id} '>This door has a width of {canonical(_entrance:width)} meters </a>",
-        "nl": "<a href ='#{_entrance:id} '>Deze deur heeft een breedte van {canonical(_entrance:width)} meter </a>",
-        "de": "<a href ='#{_entrance:id} '>Diese Tür hat eine Durchgangsbreite von {canonical(_entrance:width)} Meter </a>",
-        "es": "<a href ='#{_entrance:id} '>Esta puerta tiene una ancho de {canonical(_entrance:width)} metros </a>",
-        "fr": "<a href ='#{_entrance:id} '>Cette porte a une largeur de {canonical(_entrance:width)} mètres </a>"
-      },
-      "freeform": {
-        "key": "_entrance:width"
-      },
-      "mappings": [
+      "appliesToKey": [
+        "width",
+        "_biggest_width"
+      ],
+      "applicableUnits": [
         {
-          "if": "_entrance:width=",
-          "then": {
-            "en": "This entrance has no width information",
-            "de": "Der Eingang hat keine Informationen zur Durchgangsbreite",
-            "fr": "Cette entrée n'a pas d'informations sur sa largeur",
-            "nl": "Deze toegang heeft geen informatie over deurbreedte"
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": "meter",
+            "fr": "mètre",
+            "de": "Meter"
+          }
+        },
+        {
+          "default": true,
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "cms"
+          ],
+          "human": {
+            "en": "centimeter",
+            "fr": "centimètre",
+            "de": "Zentimeter"
           }
         }
       ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "entrance_info",
+      "render": {
+        "before": {
+          "en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:"
+        },
+        "after": {
+          "en": "{_entrances_count_without_width_count} entrances don't have width information yet"
+        },
+        "special": {
+          "type": "multi",
+          "key": "_entrance_properties_with_width",
+          "tagrendering": {
+            "en": "An <a href='#{id}'>entrance</a> of {canonical(width)}"
+          }
+        }
+      },
+      "mappings": [
+        {
+          "if": "_entrances_count=0",
+          "then": {
+            "en": "No entrance has been marked"
+          }
+        },
+        {
+          "if": "_entrances_count_without_width:=_entrances_count",
+          "then": {
+            "en": "None of the {_entrance_count} entrances have width information yet"
+          }
+        }
+      ]
+    },
+    {
+      "id": "biggest_width",
+      "render": "The <a href='#{_biggest_width_id}'>entrance with the biggest width</a> is {canonical(_biggest_width)} wide",
+      "condition": "_biggest_width_id~*"
     }
   ]
 }

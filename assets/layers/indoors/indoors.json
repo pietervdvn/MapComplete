@@ -56,7 +56,19 @@
   },
   "minzoom": 13,
   "tagRenderings": [
-    "images"
+    "images",
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the name of this room?"
+      },
+      "render": {
+        "en": "This room is named {name}"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    }
   ],
   "mapRendering": [
     {
