@@ -4258,6 +4258,12 @@
         "name": "Innenräume",
         "title": {
             "render": "Innenbereich {name}"
+        },
+        "tagRenderings": {
+            "ref": {
+                "question": "Wie lautet der Name dieses Raums?",
+                "render": "Der Name des Raums lautet {name}"
+            }
         }
     },
     "information_board": {
@@ -6755,6 +6761,25 @@
                     }
                 }
             }
+        },
+        "tagRenderings": {
+            "entrance_info": {
+                "mappings": {
+                    "1": {
+                        "then": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite"
+                    },
+                    "0": {
+                        "then": "Es wurde kein Eingang markiert"
+                    }
+                },
+                "render": {
+                    "after": "{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
+                    "before": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:",
+                    "special": {
+                        "tagrendering": "Ein <a href='#{id}'>Eingang</a> von {canonical(width)}"
+                    }
+                }
+            }
         }
     },
     "waste_basket": {
@@ -7057,7 +7082,8 @@
         },
         "title": {
             "render": "MapRoulette-Element: {parentName}"
-        }
+        },
+        "description": "Ebene, die alle MapRoulette-Aufgaben zeigt"
     },
     "maproulette_challenge": {
         "description": "Ebene mit Aufgaben einer MapRoulette-Kampagne",
@@ -7123,6 +7149,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Aufgabe in MapRoulette"
         }
     }
 }
