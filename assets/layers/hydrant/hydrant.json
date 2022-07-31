@@ -325,6 +325,82 @@
         }
       ]
     },
+    {
+      "id": "hydrant-diameter",
+      "question": {
+        "en": "What is the pipe diameter of this hydrant?"
+      },
+      "freeform": {
+        "key": "fire_hydrant:diameter",
+        "placeholder": {
+          "en": "Pipe diameter"
+        },
+        "type": "int"
+      },
+      "render": {
+        "en": "Pipe diameter: {canonical(fire_hydrant:diameter)}"
+      }
+    },
+    {
+      "id": "hydrant-couplings",
+      "question": {
+        "en": "What kind of couplings does this hydrant have?"
+      },
+      "freeform": {
+        "key": "couplings:type",
+        "placeholder": {
+          "en": "Coupling type"
+        },
+        "type": "string"
+      },
+      "mappings": [
+        {
+          "if": "couplings:type=Storz",
+          "then": {
+            "en": "Storz coupling"
+          },
+          "icon": {
+            "path": "./assets/layers/hydrant/storz.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "couplings:type=UNI",
+          "then": {
+            "en": "UNI coupling"
+          }
+        },
+        {
+          "if": "couplings:type=Barcelona",
+          "then": {
+            "en": "Barcelona coupling"
+          },
+          "icon": {
+            "path": "./assets/layers/hydrant/barcelona.jpg",
+            "class": "large"
+          }
+        }
+      ],
+      "multiAnswer": true,
+      "render": {
+        "en": "Couplings: {couplings:type}"
+      }
+    },
+    {
+      "id": "hydrant-couplings-diameters",
+      "question": {
+        "en": "What diameter are the couplings of this hydrant?"
+      },
+      "freeform": {
+        "key": "couplings:diameters",
+        "placeholder": {
+          "en": "Coupling diameters"
+        }
+      },
+      "render": {
+        "en": "Coupling diameters: {couplings:diameters}"
+      }
+    },
     "images"
   ],
   "presets": [
@@ -374,6 +450,32 @@
       "width": {
         "render": "8"
       }
+    }
+  ],
+  "units": [
+    {
+      "applicableUnits": [
+        {
+          "default": true,
+          "canonicalDenomination": "",
+          "alternativeDenomination": [
+            "mm",
+            "millimeter",
+            "millimeters"
+          ],
+          "human": {
+            "en": "millimeters",
+            "nl": "millimeter"
+          },
+          "humanSingular": {
+            "en": "millimeter",
+            "nl": "millimeter"
+          }
+        }
+      ],
+      "appliesToKey": [
+        "fire_hydrant:diameter"
+      ]
     }
   ]
 }
