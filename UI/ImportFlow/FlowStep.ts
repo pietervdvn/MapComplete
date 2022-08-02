@@ -1,4 +1,4 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import BaseUIElement from "../BaseUIElement";
 import {SubtleButton} from "../Base/SubtleButton";
@@ -10,8 +10,8 @@ import {UIElement} from "../UIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 
 export interface FlowStep<T> extends BaseUIElement {
-    readonly IsValid: UIEventSource<boolean>
-    readonly Value: UIEventSource<T>
+    readonly IsValid: Store<boolean>
+    readonly Value: Store<T>
 }
 
 export class FlowPanelFactory<T> {
@@ -25,15 +25,15 @@ export class FlowPanelFactory<T> {
         this._stepNames = stepNames;
     }
 
-    public static start<TOut>(name: string | BaseUIElement, step: FlowStep<TOut>): FlowPanelFactory<TOut> {
-        return new FlowPanelFactory(step, [], [name])
+    public static start<TOut>(name:{title: BaseUIElement}, step: FlowStep<TOut>): FlowPanelFactory<TOut> {
+        return new FlowPanelFactory(step, [], [name.title])
     }
 
-    public then<TOut>(name: string | BaseUIElement, construct: ((t: T) => FlowStep<TOut>)): FlowPanelFactory<TOut> {
+    public then<TOut>(name: string | {title: BaseUIElement}, construct: ((t: T) => FlowStep<TOut>)): FlowPanelFactory<TOut> {
         return new FlowPanelFactory<TOut>(
             this._initial,
             this._steps.concat([construct]),
-            this._stepNames.concat([name])
+            this._stepNames.concat([name["title"] ?? name])
         )
     }
 
@@ -120,11 +120,11 @@ export class FlowPanel<T> extends Toggle {
                                 isError.setData(true)
                             }
                         }),
-                        "Select a valid value to continue",
+                        new SubtleButton(Svg.invalid_svg(), t.notValid),
                         initial.IsValid
                     ),
                     new Toggle(
-                        new FixedUiElement("Something went wrong...").SetClass("alert"),
+                        t.error.SetClass("alert"),
                         undefined,
                         isError),
                 ]).SetClass("flex w-full justify-end space-x-2"),

@@ -7,32 +7,14 @@
 
 <img src='https://mapcomplete.osm.be/pin:#684c2b;./assets/layers/bike_cafe/bike_cafe.svg' height="100px"> 
 
-A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, ...
-
-
-
-
-## Table of contents
-
-1. [bike_cafe](#bike_cafe)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bike_cafe-name](#bike_cafe-name)
-    + [bike_cafe-bike-pump](#bike_cafe-bike-pump)
-    + [bike_cafe-repair-tools](#bike_cafe-repair-tools)
-    + [bike_cafe-repair-service](#bike_cafe-repair-service)
-    + [bike_cafe-website](#bike_cafe-website)
-    + [bike_cafe-phone](#bike_cafe-phone)
-    + [bike_cafe-email](#bike_cafe-email)
-    + [bike_cafe-opening_hours](#bike_cafe-opening_hours)
+A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …
 
 
 
 
 
 
+  - This layer is shown at zoomlevel **13** and higher
 
 
 
@@ -47,8 +29,6 @@ A bike café is a café geared towards cyclists, for example with services such 
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bike_cafe/bike_cafe.json)
-
 
 
  Basic tags for this layer 
@@ -61,8 +41,10 @@ Elements must have the all of following tags to be shown on this layer:
 
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbar' target='_blank'>bar</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe' target='_blank'>cafe</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant' target='_blank'>restaurant</a>
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dbicycle' target='_blank'>bicycle</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dbicycle' target='_blank'>bicycle</a>|service:bicycle:.*~^..*$
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dbicycle' target='_blank'>bicycle</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dcycling' target='_blank'>cycling</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:theme' target='_blank'>theme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:theme%3Dbicycle' target='_blank'>bicycle</a>|^service:bicycle:.*$~~^..*$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B%22pub%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B%22pub%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B%22theme%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B%22theme%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22pub%22%5D%5B~%22%5Eservice%3Abicycle%3A.*%24%22~%22%5E..*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B%22pub%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B%22pub%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B%22theme%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B%22theme%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bar%22%5D%5B~%22%5Eservice%3Abicycle%3A.*%24%22~%22%5E..*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22pub%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22pub%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22theme%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B%22theme%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22cafe%22%5D%5B~%22%5Eservice%3Abicycle%3A.*%24%22~%22%5E..*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22pub%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22pub%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22theme%22%3D%22cycling%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B%22theme%22%3D%22bicycle%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22restaurant%22%5D%5B~%22%5Eservice%3Abicycle%3A.*%24%22~%22%5E..*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -71,7 +53,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -93,7 +77,9 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -103,10 +89,13 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is the name of this bike cafe?**
+The question is  What is the name of this bike cafe?
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-This is rendered with `This bike cafe is called {name}`
+
+This is rendered with  This bike cafe is called {name}
+
+
 
 
 
@@ -114,14 +103,14 @@ This is rendered with `This bike cafe is called {name}`
 
 
 
-The question is **Does this bike cafe offer a bike pump for use by anyone?**
+The question is  Does this bike cafe offer a bike pump for use by anyone?
 
 
 
 
 
-  - **This bike cafe offers a bike pump for anyone** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
-  - **This bike cafe doesn't offer a bike pump for anyone** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
+  - This bike cafe offers a bike pump for anyone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>`
+  - This bike cafe doesn't offer a bike pump for anyone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>`
 
 
 
@@ -130,14 +119,14 @@ The question is **Does this bike cafe offer a bike pump for use by anyone?**
 
 
 
-The question is **Are there tools here to repair your own bike?**
+The question is  Are there tools here to repair your own bike?
 
 
 
 
 
-  - **This bike cafe offers tools for DIY repair** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
-  - **This bike cafe doesn't offer tools for DIY repair** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
+  - This bike cafe offers tools for DIY repair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>`
+  - This bike cafe doesn't offer tools for DIY repair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>`
 
 
 
@@ -146,14 +135,14 @@ The question is **Are there tools here to repair your own bike?**
 
 
 
-The question is **Does this bike cafe repair bikes?**
+The question is  Does this bike cafe repair bikes?
 
 
 
 
 
-  - **This bike cafe repairs bikes** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
-  - **This bike cafe doesn't repair bikes** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>
+  - This bike cafe repairs bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>`
+  - This bike cafe doesn't repair bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>`
 
 
 
@@ -162,10 +151,13 @@ The question is **Does this bike cafe repair bikes?**
 
 
 
-The question is **What is the website of {name}?**
+The question is  What is the website of {name}?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
+
+This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+
+
 
 
 
@@ -173,10 +165,13 @@ This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
-The question is **What is the phone number of {name}?**
+The question is  What is the phone number of {name}?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+
+This is rendered with  <a href='tel:{phone}'>{phone}</a>
+
+
 
 
 
@@ -184,10 +179,13 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-The question is **What is the email address of {name}?**
+The question is  What is the email address of {name}?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
+
+This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+
+
 
 
 
@@ -195,9 +193,12 @@ This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
-The question is **When it this bike café opened?**
+The question is  When it this bike café opened?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-This is rendered with `{opening_hours_table(opening_hours)}` 
+
+This is rendered with  {opening_hours_table(opening_hours)}
+
+ 
 
 This document is autogenerated from [assets/layers/bike_cafe/bike_cafe.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_cafe/bike_cafe.json)

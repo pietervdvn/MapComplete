@@ -8,7 +8,7 @@ import {Utils} from "../../Utils";
 export class QueryParameters {
 
     static defaults = {}
-    static documentation = {}
+    static documentation: Map<string, string> = new Map<string, string>()
     private static order: string [] = ["layout", "test", "z", "lat", "lon"];
     private static _wasInitialized: Set<string> = new Set()
     private static knownSources = {};
@@ -18,7 +18,7 @@ export class QueryParameters {
         if (!this.initialized) {
             this.init();
         }
-        QueryParameters.documentation[key] = documentation;
+        QueryParameters.documentation.set(key, documentation);
         if (deflt !== undefined) {
             QueryParameters.defaults[key] = deflt;
         }
@@ -33,7 +33,7 @@ export class QueryParameters {
     }
 
     public static GetBooleanQueryParameter(key: string, deflt: boolean, documentation?: string): UIEventSource<boolean> {
-        return QueryParameters.GetQueryParameter(key, ""+ deflt, documentation).map(str => str === "true", [], b => "" + b)
+        return QueryParameters.GetQueryParameter(key, ""+ deflt, documentation).sync(str => str === "true", [], b => "" + b)
     }
 
 
@@ -91,8 +91,10 @@ export class QueryParameters {
 
             parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(QueryParameters.knownSources[key].data))
         }
-        // Don't pollute the history every time a parameter changes
-        history.replaceState(null, "", "?" + parts.join("&") + Hash.Current());
+        if(!Utils.runningFromConsole){
+            // Don't pollute the history every time a parameter changes
+            history.replaceState(null, "", "?" + parts.join("&") + Hash.Current());
+        }
 
     }
 }

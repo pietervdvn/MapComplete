@@ -3,7 +3,7 @@ export default {
   "type": "object",
   "properties": {
     "location": {
-      "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint",
+      "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint.\n'projected_centerpoint' will show an item on the line itself, near the middle of the line. (LineStrings only)",
       "type": "array",
       "items": {
         "type": "string"
@@ -27,14 +27,8 @@ export default {
         "type": "object",
         "properties": {
           "if": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/definitions/TagConfigJson",
+            "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation"
           },
           "then": {
             "description": "Badge to show\nType: icon",
@@ -77,7 +71,7 @@ export default {
       ]
     },
     "label": {
-      "description": "A HTML-fragment that is shown below the icon, for example:\n<div style=\"background: white; display: block\">{name}</div>\n\nIf the icon is undefined, then the label is shown in the center of the feature.\nNote that, if the wayhandling hides the icon then no label is shown as well.",
+      "description": "A HTML-fragment that is shown below the icon, for example:\n<div style=\"background: white\">{name}</div>\n\nIf the icon is undefined, then the label is shown in the center of the feature.\nNote that, if the wayhandling hides the icon then no label is shown as well.",
       "anyOf": [
         {
           "$ref": "#/definitions/TagRenderingConfigJson"
@@ -92,42 +86,67 @@ export default {
     "location"
   ],
   "definitions": {
-    "AndOrTagConfigJson": {
+    "TagConfigJson": {
+      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/AndTagConfigJson"
+        },
+        {
+          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+          "type": "object",
+          "properties": {
+            "or": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TagConfigJson"
+              }
+            }
+          },
+          "required": [
+            "or"
+          ]
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "AndTagConfigJson": {
+      "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
       "type": "object",
       "properties": {
         "and": {
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/definitions/TagConfigJson"
           }
-        },
+        }
+      },
+      "required": [
+        "and"
+      ]
+    },
+    "OrTagConfigJson": {
+      "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+      "type": "object",
+      "properties": {
         "or": {
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/definitions/TagConfigJson"
           }
         }
-      }
+      },
+      "required": [
+        "or"
+      ]
     },
     "ApplicableUnitJson": {
       "type": "object",
       "properties": {
         "canonicalDenomination": {
-          "description": "The canonical value which will be added to the text.\ne.g. \"m\" for meters\nIf the user inputs '42', the canonical value will be added and it'll become '42m'",
+          "description": "The canonical value which will be added to the value in OSM.\ne.g. \"m\" for meters\nIf the user inputs '42', the canonical value will be added and it'll become '42m'.\n\nImportant: often, _no_ canonical values are expected, e.g. in the case of 'maxspeed' where 'km/h' is the default.\nIn this case, an empty string should be used",
           "type": "string"
         },
         "canonicalDenominationSingular": {
@@ -161,7 +180,7 @@ export default {
       ]
     },
     "TagRenderingConfigJson": {
-      "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nIf the desired tags are missing and a question is defined, a question will be shown instead.",
+      "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
       "type": "object",
       "properties": {
         "id": {
@@ -182,14 +201,16 @@ export default {
         "render": {
           "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
         },
-        "question": {
-          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
-        },
         "condition": {
-          "description": "Only show this question if the object also matches the following tags.\n\nThis is useful to ask a follow-up question. E.g. if there is a diaper table, then ask a follow-up question on diaper tables...",
+          "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
           "anyOf": [
             {
-              "$ref": "#/definitions/AndOrTagConfigJson"
+              "$ref": "#/definitions/AndTagConfigJson",
+              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "$ref": "#/definitions/OrTagConfigJson",
+              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
             },
             {
               "type": "string"
@@ -203,42 +224,11 @@ export default {
             "key": {
               "description": "If this key is present, then 'render' is used to display the value.\nIf this is undefined, the rendering is _always_ shown",
               "type": "string"
-            },
-            "type": {
-              "description": "The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...\nSee Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values",
-              "type": "string"
-            },
-            "placeholder": {
-              "description": "A (translated) text that is shown (as gray text) within the textfield"
-            },
-            "helperArgs": {
-              "description": "Extra parameters to initialize the input helper arguments.\nFor semantics, see the 'SpecialInputElements.md'",
-              "type": "array",
-              "items": {}
-            },
-            "addExtraTags": {
-              "description": "If a value is added with the textfield, these extra tag is addded.\nUseful to add a 'fixme=freeform textfield used - to be checked'",
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "inline": {
-              "description": "When set, influences the way a question is asked.\nInstead of showing a full-widht text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.",
-              "type": "boolean"
-            },
-            "default": {
-              "description": "default value to enter if no previous tagging is present.\nNormally undefined (aka do not enter anything)",
-              "type": "string"
             }
           },
           "required": [
             "key"
           ]
-        },
-        "multiAnswer": {
-          "description": "If true, use checkboxes instead of radio buttons when asking the question",
-          "type": "boolean"
         },
         "mappings": {
           "description": "Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes",
@@ -247,54 +237,36 @@ export default {
             "type": "object",
             "properties": {
               "if": {
-                "description": "If this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}",
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/AndOrTagConfigJson"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
+                "$ref": "#/definitions/TagConfigJson",
+                "description": "If this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
               },
               "then": {
-                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\ntype: rendered"
+                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered"
               },
               "icon": {
                 "description": "An icon supporting this mapping; typically shown pretty small\nType: icon",
-                "type": "string"
-              },
-              "hideInAnswer": {
-                "description": "In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).\n\nIn the latter case, a correct text should be shown, but only a single, canonical tagging should be selectable by the user.\nIn this case, one of the mappings can be hiden by setting this flag.\n\nTo demonstrate an example making a default assumption:\n\nmappings: [\n {\n     if: \"access=\", -- no access tag present, we assume accessible\n     then: \"Accessible to the general public\",\n     hideInAnswer: true\n },\n {\n     if: \"access=yes\",\n     then: \"Accessible to the general public\", -- the user selected this, we add that to OSM\n },\n {\n     if: \"access=no\",\n     then: \"Not accessible to the public\"\n }\n]\n\n\nFor example, for an operator, we have `operator=Agentschap Natuur en Bos`, which is often abbreviated to `operator=ANB`.\nThen, we would add two mappings:\n{\n    if: \"operator=Agentschap Natuur en Bos\" -- the non-abbreviated version which should be uploaded\n    then: \"Maintained by Agentschap Natuur en Bos\"\n},\n{\n    if: \"operator=ANB\", -- we don't want to upload abbreviations\n    then: \"Maintained by Agentschap Natuur en Bos\"\n    hideInAnswer: true\n}\n\nHide in answer can also be a tagsfilter, e.g. to make sure an option is only shown when appropriate.\nKeep in mind that this is reverse logic: it will be hidden in the answer if the condition is true, it will thus only show in the case of a mismatch\n\ne.g., for toilets: if \"wheelchair=no\", we know there is no wheelchair dedicated room.\nFor the location of the changing table, the option \"in the wheelchair accessible toilet is weird\", so we write:\n\n{\n    \"question\": \"Where is the changing table located?\"\n    \"mappings\": [\n        {\"if\":\"changing_table:location=female\",\"then\":\"In the female restroom\"},\n       {\"if\":\"changing_table:location=male\",\"then\":\"In the male restroom\"},\n       {\"if\":\"changing_table:location=wheelchair\",\"then\":\"In the wheelchair accessible restroom\", \"hideInAnswer\": \"wheelchair=no\"},\n        \n    ]\n}\n\nAlso have a look for the meta-tags\n{\n    if: \"operator=Agentschap Natuur en Bos\",\n    then: \"Maintained by Agentschap Natuur en Bos\",\n    hideInAnswer: \"_country!=be\"\n}",
                 "anyOf": [
                   {
-                    "$ref": "#/definitions/AndOrTagConfigJson"
-                  },
-                  {
-                    "type": [
-                      "string",
-                      "boolean"
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "description": "The path to the icon\nType: icon",
+                        "type": "string"
+                      },
+                      "class": {
+                        "description": "A hint to mapcomplete on how to render this icon within the mapping.\nThis is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "class",
+                      "path"
                     ]
-                  }
-                ]
-              },
-              "ifnot": {
-                "description": "Only applicable if 'multiAnswer' is set.\nThis is for situations such as:\n`accepts:coins=no` where one can select all the possible payment methods. However, we want to make explicit that some options _were not_ selected.\nThis can be done with `ifnot`\nNote that we can not explicitly render this negative case to the user, we cannot show `does _not_ accept coins`.\nIf this is important to your usecase, consider using multiple radiobutton-fields without `multiAnswer`",
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/AndOrTagConfigJson"
                   },
                   {
                     "type": "string"
                   }
                 ]
-              },
-              "addExtraTags": {
-                "description": "If chosen as answer, these tags will be applied as well onto the object.\nNot compatible with multiAnswer",
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               }
             },
             "required": [

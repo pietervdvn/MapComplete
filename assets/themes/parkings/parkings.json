@@ -1,15 +1,17 @@
 {
   "id": "parkings",
   "title": {
-    "nl": "Parking",
     "en": "Parking",
-    "de": "Parken",
+    "nl": "Parking",
+    "de": "Parkplatzkarte",
     "it": "Parcheggio",
     "nb_NO": "Parkering",
     "ru": "Парковка",
     "zh_Hant": "停車場",
     "id": "Tempat parkir",
-    "hu": "Parkolás"
+    "hu": "Parkolás",
+    "fr": "Stationnement",
+    "es": "Aparcamiento"
   },
   "shortDescription": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
@@ -19,16 +21,21 @@
     "nb_NO": "Dette kartet viser forskjellige parkeringsplasser",
     "zh_Hant": "這地圖顯示不同的停車空間",
     "id": "Peta ini menunjukkan tempat parkir yang berbeda",
-    "hu": "Ez a térkép különböző parkolókat jelenít meg"
+    "hu": "Ez a térkép különböző parkolókat jelenít meg",
+    "es": "Este mapa muestra diferentes puntos de aparcamiento",
+    "fr": "Cette montre les emplacements de parking"
   },
   "description": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
     "en": "This map shows different parking spots",
-    "de": "Diese Karte zeigt Parkplätze",
+    "de": "Eine Karte für verschiedene Parkplätze",
     "it": "Questa cartina mostra diversi posti dove parcheggiare",
     "zh_Hant": "這地圖顯示不同的停車空間",
     "id": "Peta ini menunjukkan tempat parkir yang berbeda",
-    "hu": "Ez a térkép különböző parkolókat jelenít meg"
+    "hu": "Ez a térkép különböző parkolókat jelenít meg",
+    "fr": "Cette carte affiche différents lieux de stationnement",
+    "es": "Este mapa muestra diferentes puntos de aparcamiento",
+    "nb_NO": "Forskjellige parkeringsplasser"
   },
   "maintainer": "",
   "icon": "./assets/themes/parkings/parkings.svg",
@@ -37,7 +44,6 @@
   "startLon": 3.22435,
   "startZoom": 12,
   "widenFactor": 1.2,
-  "socialImage": "",
   "layers": [
     "parking"
   ]

@@ -1,0 +1,37 @@
+{
+  "id": "waste",
+  "maintainer": "",
+  "version": "2022-01-19",
+  "title": {
+    "en": "Waste",
+    "nl": "Afval",
+    "de": "Abfall",
+    "ca": "Brossa",
+    "nb_NO": "Avfall",
+    "fr": "Déchets",
+    "it": "Rifiuti"
+  },
+  "description": {
+    "en": "Map showing waste baskets and recycling facilities.",
+    "nl": "Kaart met afvalbakken en recyclingfaciliteiten.",
+    "de": "Eine Karte mit Abfalleimern und Recyclingeinrichtungen.",
+    "fr": "Carte des poubelles et infrastructures de recyclage.",
+    "it": "Mappa dei cestini per i rifiuti e i centri di raccolta e riciclo rifiuti.",
+    "ca": "Mapa que mostra papereres i infraestructures de reciclatge."
+  },
+  "icon": "./assets/layers/recycling/recycling-14.svg",
+  "startZoom": 19,
+  "startLat": 53.24865,
+  "startLon": 6.60075,
+  "layers": [
+    {
+      "builtin": "waste_basket",
+      "override": {
+        "minzoom": 18,
+        "minzoomVisible": 18
+      }
+    },
+    "recycling",
+    "waste_disposal"
+  ]
+}

@@ -84,9 +84,9 @@ To add a translation:
 
 ### Input elements
 
-Input elements are a special kind of BaseElement and which offer a piece of a form to the user, e.g. a TextField, a Radio button, a dropdown, ...
+Input elements are a special kind of BaseElement which offer a piece of a form to the user, e.g. a TextField, a Radio button, a dropdown, ...
 
-The constructor will ask all the parameters to configure them. The actual value can be obtained via `inputElement.GetValue()`, which is a UIEVentSource that will be triggered every time the user changes the input.
+The constructor will ask all the parameters to configure them. The actual value can be obtained via `inputElement.GetValue()`, which is a `UIEventSource` that will be triggered every time the user changes the input.
 
 ### Advanced elements
 
@@ -215,7 +215,7 @@ Other files (mostly images that are part of the core of MapComplete) go into `as
 Logic
 -----
 
-The last part is the business logic of the application, found in 'Logic'. Actors are small objects which react to `UIEventSources` to update other eventSources.
+The last part is the business logic of the application, found in the directory [Logic](../Logic). Actors are small objects which react to `UIEventSources` to update other eventSources.
 
 `State.state` is a big singleton object containing a lot of the state of the entire application. That one is a bit of a mess.
 

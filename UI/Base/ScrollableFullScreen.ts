@@ -28,7 +28,10 @@ export default class ScrollableFullScreen extends UIElement {
     constructor(title: ((options: { mode: string }) => BaseUIElement),
                 content: ((options: { mode: string, resetScrollSignal: UIEventSource<void> }) => BaseUIElement),
                 hashToShow: string,
-                isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+                isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false),
+                options?: {
+                    setHash?: true | boolean    
+                }
     ) {
         super();
         this.hashToShow = hashToShow;
@@ -53,16 +56,21 @@ export default class ScrollableFullScreen extends UIElement {
 
 
         const self = this;
-        Hash.hash.addCallback(h => {
-            if (h === undefined) {
-                isShown.setData(false)
-            }
-        })
+        const setHash = options?.setHash ?? true;
+        if(setHash){
+            Hash.hash.addCallback(h => {
+                if (h === undefined) {
+                    isShown.setData(false)
+                }
+            })
+        }
         isShown.addCallback(isShown => {
             if (isShown) {
                 // We first must set the hash, then activate the panel
                 // If the order is wrong, this will cause the panel to disactivate again
-                Hash.hash.setData(hashToShow)
+                if(setHash){
+                    Hash.hash.setData(hashToShow)
+                }
                 self.Activate();
             } else {
                 // Some cleanup...
@@ -110,8 +118,9 @@ export default class ScrollableFullScreen extends UIElement {
 
         title = new Title(title, 2)
         title.SetClass("text-l sm:text-xl md:text-2xl w-full p-0 max-h-20vh overflow-y-auto self-center")
+        
         const contentWrapper =  new Combine([content])
-            .SetClass("block p-2 md:pt-4 w-full h-full overflow-y-auto md:max-h-65vh")
+            .SetClass("block p-2 md:pt-4 w-full h-full overflow-y-auto desktop:max-h-65vh")
         
         this._resetScrollSignal.addCallback(_ => {
             contentWrapper.ScrollToTop();
@@ -124,7 +133,7 @@ export default class ScrollableFullScreen extends UIElement {
               contentWrapper ,
                 // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
             ]).SetClass("flex flex-col h-full relative bg-white")
-        ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen md:max-h-65vh md:w-auto md:relative z-above-controls md:rounded-xl overflow-hidden");
+        ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen desktop:max-h-65vh md:w-auto md:relative z-above-controls md:rounded-xl overflow-hidden");
 
     }
 

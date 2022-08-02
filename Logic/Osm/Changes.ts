@@ -2,7 +2,7 @@ import {OsmNode, OsmObject, OsmRelation, OsmWay} from "./OsmObject";
 import {UIEventSource} from "../UIEventSource";
 import Constants from "../../Models/Constants";
 import OsmChangeAction from "./Actions/OsmChangeAction";
-import {ChangeDescription} from "./Actions/ChangeDescription";
+import {ChangeDescription, ChangeDescriptionTools} from "./Actions/ChangeDescription";
 import {Utils} from "../../Utils";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import SimpleMetaTagger from "../SimpleMetaTagger";
@@ -11,7 +11,7 @@ import FeatureSource from "../FeatureSource/FeatureSource";
 import {ElementStorage} from "../ElementStorage";
 import {GeoLocationPointProperties} from "../Actors/GeoLocationHandler";
 import {GeoOperations} from "../GeoOperations";
-import {ChangesetTag} from "./ChangesetHandler";
+import {ChangesetHandler, ChangesetTag} from "./ChangesetHandler";
 import {OsmConnection} from "./OsmConnection";
 
 /**
@@ -27,17 +27,19 @@ export class Changes {
     public features = new UIEventSource<{ feature: any, freshness: Date }[]>([]);
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> = LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
-    public readonly state: { allElements: ElementStorage; historicalUserLocations: FeatureSource; osmConnection: OsmConnection }
+    public readonly state: { allElements: ElementStorage; osmConnection: OsmConnection }
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
+    
+    private historicalUserLocations: FeatureSource
     private _nextId: number = -1; // Newly assigned ID's are negative
     private readonly isUploading = new UIEventSource(false);
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean;
+    private _changesetHandler: ChangesetHandler;
 
     constructor(
         state?: {
             allElements: ElementStorage,
-            historicalUserLocations: FeatureSource,
             osmConnection: OsmConnection
         },
         leftRightSensitive: boolean = false) {
@@ -47,13 +49,14 @@ export class Changes {
         // If a pending change contains a negative ID, we save that
         this._nextId = Math.min(-1, ...this.pendingChanges.data?.map(pch => pch.id) ?? [])
         this.state = state;
+        this._changesetHandler = state?.osmConnection?.CreateChangesetHandler(state.allElements, this)
 
         // Note: a changeset might be reused which was opened just before and might have already used some ids
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
     }
 
-    private static createChangesetFor(csId: string,
-                                      allChanges: {
+    static createChangesetFor(csId: string,
+                              allChanges: {
                                           modifiedObjects: OsmObject[],
                                           newObjects: OsmObject[],
                                           deletedObjects: OsmObject[]
@@ -139,14 +142,10 @@ export class Changes {
         this.allChanges.data.push(...changes)
         this.allChanges.ping()
     }
-
-    public registerIdRewrites(mappings: Map<string, string>): void {
-        CreateNewNodeAction.registerIdRewrites(mappings)
-    }
-
+    
     private calculateDistanceToChanges(change: OsmChangeAction, changeDescriptions: ChangeDescription[]) {
 
-        const locations = this.state?.historicalUserLocations?.features?.data
+        const locations = this.historicalUserLocations?.features?.data
         if (locations === undefined) {
             // No state loaded or no locations -> we can't calculate...
             return;
@@ -160,7 +159,7 @@ export class Changes {
         const recentLocationPoints = locations.map(ff => ff.feature)
             .filter(feat => feat.geometry.type === "Point")
             .filter(feat => {
-                const visitTime = new Date((<GeoLocationPointProperties>feat.properties).date)
+                const visitTime = new Date((<GeoLocationPointProperties><any>feat.properties).date)
                 // In seconds
                 const diff = (now.getTime() - visitTime.getTime()) / 1000
                 return diff < Constants.nearbyVisitTime;
@@ -223,17 +222,11 @@ export class Changes {
         }
 
         console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
-        const changes: {
-            newObjects: OsmObject[],
-            modifiedObjects: OsmObject[]
-            deletedObjects: OsmObject[]
-        } = self.CreateChangesetObjects(pending, osmObjects)
-        if (changes.newObjects.length + changes.deletedObjects.length + changes.modifiedObjects.length === 0) {
-            console.log("No changes to be made")
-            return true
+        if(pending.length == 0){
+            console.log("No pending changes...")
+            return true;
         }
-
-
+        
         const perType = Array.from(
             Utils.Hist(pending.filter(descr => descr.meta.changeType !== undefined && descr.meta.changeType !== null)
                 .map(descr => descr.meta.changeType)), ([key, count]) => (
@@ -299,8 +292,20 @@ export class Changes {
             ...perBinMessage
         ]
 
-        await this.state.osmConnection.changesetHandler.UploadChangeset(
-            (csId) => Changes.createChangesetFor("" + csId, changes),
+        await this._changesetHandler.UploadChangeset(
+            (csId, remappings) =>{
+                if(remappings.size > 0){
+                    console.log("Rewriting pending changes from", pending, "with", remappings)
+                    pending = pending.map(ch => ChangeDescriptionTools.rewriteIds(ch, remappings))
+                    console.log("Result is", pending)
+                }
+                const changes: {
+                    newObjects: OsmObject[],
+                    modifiedObjects: OsmObject[]
+                    deletedObjects: OsmObject[]
+                } = self.CreateChangesetObjects(pending, osmObjects)
+               return Changes.createChangesetFor("" + csId, changes)
+            },
             metatags,
             openChangeset
         )
@@ -327,7 +332,7 @@ export class Changes {
             const successes = await Promise.all(Array.from(pendingPerTheme,
                 async ([theme, pendingChanges]) => {
                     try {
-                        const openChangeset = this.state.osmConnection.GetPreference("current-open-changeset-" + theme).map(
+                        const openChangeset = this.state.osmConnection.GetPreference("current-open-changeset-" + theme).sync(
                             str => {
                                 const n = Number(str);
                                 if (isNaN(n)) {
@@ -360,7 +365,7 @@ export class Changes {
 
     }
 
-    private CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
+    public CreateChangesetObjects(changes: ChangeDescription[], downloadedOsmObjects: OsmObject[]): {
         newObjects: OsmObject[],
         modifiedObjects: OsmObject[]
         deletedObjects: OsmObject[]
@@ -517,5 +522,9 @@ export class Changes {
 
         console.debug("Calculated the pending changes: ", result.newObjects.length, "new; ", result.modifiedObjects.length, "modified;", result.deletedObjects, "deleted")
         return result
+    }
+    
+    public setHistoricalUserLocations(locations: FeatureSource ){
+        this.historicalUserLocations = locations
     }
 }

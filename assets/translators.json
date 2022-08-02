@@ -1,0 +1,400 @@
+{
+  "contributors": [
+    {
+      "commits": 180,
+      "contributor": "Pieter Vander Vennet"
+    },
+    {
+      "commits": 147,
+      "contributor": "kjon"
+    },
+    {
+      "commits": 60,
+      "contributor": "danieldegroot2"
+    },
+    {
+      "commits": 59,
+      "contributor": "Allan Nordhøy"
+    },
+    {
+      "commits": 31,
+      "contributor": "Babos Gábor"
+    },
+    {
+      "commits": 31,
+      "contributor": "Iago"
+    },
+    {
+      "commits": 29,
+      "contributor": "Artem"
+    },
+    {
+      "commits": 23,
+      "contributor": "Supaplex"
+    },
+    {
+      "commits": 22,
+      "contributor": "Marco"
+    },
+    {
+      "commits": 21,
+      "contributor": "Anonymous"
+    },
+    {
+      "commits": 20,
+      "contributor": "Robin van der Linde"
+    },
+    {
+      "commits": 19,
+      "contributor": "SC"
+    },
+    {
+      "commits": 18,
+      "contributor": "Reza Almanda"
+    },
+    {
+      "commits": 16,
+      "contributor": "el_libre como el chaval"
+    },
+    {
+      "commits": 15,
+      "contributor": "WaldiS"
+    },
+    {
+      "commits": 14,
+      "contributor": "J. Lavoie"
+    },
+    {
+      "commits": 13,
+      "contributor": "Romain de Bossoreille"
+    },
+    {
+      "commits": 13,
+      "contributor": "Joost"
+    },
+    {
+      "commits": 12,
+      "contributor": "paunofu"
+    },
+    {
+      "commits": 10,
+      "contributor": "Win Olario"
+    },
+    {
+      "commits": 10,
+      "contributor": "Johannes Rössel"
+    },
+    {
+      "commits": 10,
+      "contributor": "LeJun"
+    },
+    {
+      "commits": 10,
+      "contributor": "Irina"
+    },
+    {
+      "commits": 9,
+      "contributor": "Jacque Fresco"
+    },
+    {
+      "commits": 7,
+      "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "Andrews Leruth"
+    },
+    {
+      "commits": 6,
+      "contributor": "Olivier"
+    },
+    {
+      "commits": 6,
+      "contributor": "Joost Schouppe"
+    },
+    {
+      "commits": 6,
+      "contributor": "Vinicius"
+    },
+    {
+      "commits": 6,
+      "contributor": "pdassori"
+    },
+    {
+      "commits": 6,
+      "contributor": "Štefan Baebler"
+    },
+    {
+      "commits": 6,
+      "contributor": "seppesantens"
+    },
+    {
+      "commits": 6,
+      "contributor": "Nikolay Korotkiy"
+    },
+    {
+      "commits": 6,
+      "contributor": "William Weber Berrutti"
+    },
+    {
+      "commits": 6,
+      "contributor": "lvgx"
+    },
+    {
+      "commits": 5,
+      "contributor": "Dingcycle"
+    },
+    {
+      "commits": 5,
+      "contributor": "phlostically"
+    },
+    {
+      "commits": 5,
+      "contributor": "快乐的老鼠宝宝"
+    },
+    {
+      "commits": 5,
+      "contributor": "David Haberthür"
+    },
+    {
+      "commits": 5,
+      "contributor": "Piotr"
+    },
+    {
+      "commits": 5,
+      "contributor": "Alexey Shabanov"
+    },
+    {
+      "commits": 4,
+      "contributor": "BMN"
+    },
+    {
+      "commits": 4,
+      "contributor": "Hiroshi Miura"
+    },
+    {
+      "commits": 4,
+      "contributor": "Jeff Huang"
+    },
+    {
+      "commits": 4,
+      "contributor": "Adolfo Jayme Barrientos"
+    },
+    {
+      "commits": 4,
+      "contributor": "Polgár Sándor"
+    },
+    {
+      "commits": 4,
+      "contributor": "Jan Zabel"
+    },
+    {
+      "commits": 4,
+      "contributor": "Fabio Bettani"
+    },
+    {
+      "commits": 3,
+      "contributor": "foxandpotatoes"
+    },
+    {
+      "commits": 3,
+      "contributor": "Sasha"
+    },
+    {
+      "commits": 3,
+      "contributor": "Jose Luis Infante"
+    },
+    {
+      "commits": 3,
+      "contributor": "Francois"
+    },
+    {
+      "commits": 3,
+      "contributor": "Eduardo Addad de Oliveira"
+    },
+    {
+      "commits": 3,
+      "contributor": "Wiktor Przybylski"
+    },
+    {
+      "commits": 3,
+      "contributor": "Erik Palm"
+    },
+    {
+      "commits": 3,
+      "contributor": "vankos"
+    },
+    {
+      "commits": 3,
+      "contributor": "JCGF-OSM"
+    },
+    {
+      "commits": 3,
+      "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "Manuel Tassi"
+    },
+    {
+      "commits": 2,
+      "contributor": "liimee"
+    },
+    {
+      "commits": 2,
+      "contributor": "Marc Marc"
+    },
+    {
+      "commits": 2,
+      "contributor": "Midgard"
+    },
+    {
+      "commits": 2,
+      "contributor": "M. Rey"
+    },
+    {
+      "commits": 2,
+      "contributor": "Localizer"
+    },
+    {
+      "commits": 2,
+      "contributor": "Eric Armijo"
+    },
+    {
+      "commits": 2,
+      "contributor": "MeblIkea"
+    },
+    {
+      "commits": 2,
+      "contributor": "わたなべけんご"
+    },
+    {
+      "commits": 2,
+      "contributor": "Mateusz Konieczny"
+    },
+    {
+      "commits": 2,
+      "contributor": "Kristoffer Grundström"
+    },
+    {
+      "commits": 2,
+      "contributor": "Sebastian Kürten"
+    },
+    {
+      "commits": 2,
+      "contributor": "Damian Tokarski"
+    },
+    {
+      "commits": 2,
+      "contributor": "mic140"
+    },
+    {
+      "commits": 2,
+      "contributor": "Heiko"
+    },
+    {
+      "commits": 2,
+      "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Hungarian_user"
+    },
+    {
+      "commits": 1,
+      "contributor": "Stéphane De Greef"
+    },
+    {
+      "commits": 1,
+      "contributor": "Jaime Marquínez Ferrándiz"
+    },
+    {
+      "commits": 1,
+      "contributor": "deep map"
+    },
+    {
+      "commits": 1,
+      "contributor": "HO Gin Wang"
+    },
+    {
+      "commits": 1,
+      "contributor": "Falk Rund"
+    },
+    {
+      "commits": 1,
+      "contributor": "sparky-oxford"
+    },
+    {
+      "commits": 1,
+      "contributor": "jcn706"
+    },
+    {
+      "commits": 1,
+      "contributor": "whatismoss"
+    },
+    {
+      "commits": 1,
+      "contributor": "LePirlouit"
+    },
+    {
+      "commits": 1,
+      "contributor": "SoftwareByRedline"
+    },
+    {
+      "commits": 1,
+      "contributor": "plic ploc"
+    },
+    {
+      "commits": 1,
+      "contributor": "Janina Ellinghaus"
+    },
+    {
+      "commits": 1,
+      "contributor": "ssantos"
+    },
+    {
+      "commits": 1,
+      "contributor": "Andre Fajar N"
+    },
+    {
+      "commits": 1,
+      "contributor": "Ahen Purwakarta"
+    },
+    {
+      "commits": 1,
+      "contributor": "Luna Jernberg"
+    },
+    {
+      "commits": 1,
+      "contributor": "Rodrigo Tavares"
+    },
+    {
+      "commits": 1,
+      "contributor": "Michał Targoński"
+    },
+    {
+      "commits": 1,
+      "contributor": "Sean Young"
+    },
+    {
+      "commits": 1,
+      "contributor": "Damian Pułka"
+    },
+    {
+      "commits": 1,
+      "contributor": "Iváns"
+    },
+    {
+      "commits": 1,
+      "contributor": "Beardhatcode"
+    },
+    {
+      "commits": 1,
+      "contributor": "riiga"
+    },
+    {
+      "commits": 1,
+      "contributor": "Carlos Ramos Carreño"
+    }
+  ]
+}

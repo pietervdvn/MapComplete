@@ -14,7 +14,9 @@
     "nb_NO": "Kunstverk",
     "pt": "Obras de arte",
     "hu": "Műalkotások",
-    "pl": "Dzieła sztuki"
+    "pl": "Dzieła sztuki",
+    "ca": "Obres d'art",
+    "da": "Kunstværker"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -38,7 +40,9 @@
       "pl": "Dzieło sztuki",
       "pt": "Obra de arte",
       "pt_BR": "Obra de arte",
-      "sv": "Konstverk"
+      "sv": "Konstverk",
+      "ca": "Obra d'art",
+      "da": "Kunstværk"
     },
     "mappings": [
       {
@@ -51,7 +55,7 @@
           "id": "Karya Seni <i>{name}</i>",
           "it": "Opera <i>{name}</i>",
           "ru": "Художественная работа <i>{name}</i>",
-          "es": "Obra de arte <i>{nombre}</i>",
+          "es": "Obra de arte <i>{name}</i>",
           "ja": "アートワーク <i>{name}</i>",
           "zh_Hant": "藝術品<i>{name}</i>",
           "fi": "Taideteos <i>{name}</i>",
@@ -61,24 +65,27 @@
           "pl": "Dzieło sztuki <i>{name}</i>",
           "pt": "Obra de arte <i>{name}</i>",
           "pt_BR": "Obra de arte <i>{name}</i>",
-          "sv": "Konstverk <i>{name}</i>"
+          "sv": "Konstverk <i>{name}</i>",
+          "da": "Kunstværk <i>{name}</i>"
         }
       }
     ]
   },
   "description": {
-    "en": "Diverse pieces of artwork",
-    "nl": "Verschillende soorten kunstwerken",
-    "fr": "Diverses œuvres d'art",
-    "de": "Verschiedene Kunstwerke",
+    "en": "An open map of statues, busts, graffitis and other artwork all over the world",
+    "nl": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
+    "fr": "Une carte ouverte de statues, bustes, graffitis et autres œuvres d'art de par le monde",
+    "de": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
     "it": "Diverse opere d’arte",
     "ru": "Разнообразные произведения искусства",
-    "es": "Diversas piezas de obras de arte",
+    "es": "Un mapa abierto de estatus, bustos, grafitis y otras obras de arte en todo el mundo",
     "ja": "多様な作品",
     "zh_Hant": "不同類型的藝術品",
     "id": "Beragam karya seni",
     "pt": "Diversas obras de arte",
-    "hu": "Különféle műalkotások"
+    "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
+    "da": "Forskellige kunstværker",
+    "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món"
   },
   "minzoom": 12,
   "presets": [
@@ -87,24 +94,25 @@
         "tourism=artwork"
       ],
       "title": {
-        "en": "Artwork",
-        "nl": "Kunstwerk",
-        "fr": "Œuvre d'art",
-        "de": "Kunstwerk",
-        "it": "Opera d’arte",
+        "en": "an artwork",
+        "nl": "een kunstwerk",
+        "fr": "une œuvre d'art",
+        "de": "ein Kunstwerk",
+        "it": "una opera d’arte",
         "ru": "Художественная работа",
-        "es": "Obra de arte",
+        "es": "una obra de arte",
         "ja": "アートワーク",
         "zh_Hant": "藝術品",
-        "nb_NO": "Kunstverk",
+        "nb_NO": "en kunstverk",
         "fi": "Taideteos",
         "gl": "Obra de arte",
         "hu": "Műalkotás",
         "id": "Karya Seni",
         "pl": "Dzieło sztuki",
-        "pt": "Obra de arte",
-        "pt_BR": "Obra de arte",
-        "sv": "Konstverk"
+        "pt": "uma obra de arte",
+        "pt_BR": "uma obra de arte",
+        "sv": "Konstverk",
+        "da": "et kunstværk"
       }
     }
   ],
@@ -131,7 +139,7 @@
         "en": "What is the type of this artwork?",
         "nl": "Wat voor soort kunstwerk is dit?",
         "fr": "Quel est le type de cette œuvre d'art ?",
-        "de": "Was ist die Art dieses Kunstwerks?",
+        "de": "Um welche Art Kunstwerk handelt es sich?",
         "it": "Che tipo di opera d’arte è questo?",
         "ru": "К какому типу относится эта работа?",
         "es": "¿Qué tipo de obra es esta pieza?",
@@ -141,12 +149,13 @@
         "id": "Apa jenis karya seni ini?",
         "pt": "Qual é o tipo desta obra de arte?",
         "hu": "Milyen fajta műalkotás ez?",
-        "pl": "Jakiego rodzaju jest to dzieło sztuki?"
+        "pl": "Jakiego rodzaju jest to dzieło sztuki?",
+        "da": "Hvilken slags kunstværk er det?"
       },
       "freeform": {
         "key": "artwork_type",
         "addExtraTags": [
-          "fixme=Artowrk type was added with the freeform, might need another check"
+          "fixme=Freeform field used for artwork type - doublecheck the value"
         ]
       },
       "mappings": [
@@ -166,7 +175,9 @@
             "pt": "Arquitetura",
             "hu": "Építészet",
             "pl": "Architektura",
-            "es": "Arquitectura"
+            "es": "Arquitectura",
+            "ca": "Arquitectura",
+            "da": "Arkitektur"
           }
         },
         {
@@ -185,7 +196,9 @@
             "pt": "Mural",
             "hu": "Falfestmény",
             "pl": "Mural",
-            "es": "Mural"
+            "es": "Mural",
+            "ca": "Mural",
+            "da": "Vægmaleri"
           }
         },
         {
@@ -204,7 +217,9 @@
             "pt": "Pintura",
             "hu": "Festmény",
             "pl": "Obraz",
-            "es": "Pintura"
+            "es": "Pintura",
+            "ca": "Pintura",
+            "da": "Maleri"
           }
         },
         {
@@ -223,7 +238,9 @@
             "pt": "Escultura",
             "hu": "Absztrakt szobor",
             "pl": "Rzeźba",
-            "es": "Escultura"
+            "es": "Escultura",
+            "ca": "Escultura",
+            "da": "Skulptur"
           }
         },
         {
@@ -241,7 +258,9 @@
             "pt": "Estátua",
             "hu": "Szobor",
             "pl": "Posąg",
-            "es": "Estatua"
+            "es": "Estatua",
+            "ca": "Estàtua",
+            "da": "Statue"
           }
         },
         {
@@ -259,7 +278,9 @@
             "pt": "Busto",
             "hu": "Mellszobor",
             "pl": "Popiersie",
-            "es": "Busto"
+            "es": "Busto",
+            "ca": "Bust",
+            "da": "Buste"
           }
         },
         {
@@ -277,7 +298,10 @@
             "id": "Batu",
             "pt": "Pedra",
             "hu": "Kő",
-            "pl": "Skała"
+            "pl": "Skała",
+            "ca": "Pedra",
+            "es": "Piedra",
+            "da": "Sten"
           }
         },
         {
@@ -296,7 +320,9 @@
             "pt": "Instalação",
             "hu": "Installáció",
             "pl": "Instalacja artystyczna",
-            "es": "Instalación"
+            "es": "Instalación",
+            "ca": "Instal·lació",
+            "da": "Installation"
           }
         },
         {
@@ -315,7 +341,9 @@
             "pt": "Graffiti",
             "hu": "Graffiti",
             "pl": "Graffiti",
-            "es": "Grafiti"
+            "es": "Grafiti",
+            "ca": "Grafiti",
+            "da": "Graffiti"
           }
         },
         {
@@ -333,7 +361,10 @@
             "id": "Relief",
             "pt": "Relevo",
             "hu": "Dombormű",
-            "pl": "Płaskorzeźba"
+            "pl": "Płaskorzeźba",
+            "ca": "Relleu",
+            "es": "Relieve",
+            "da": "Relief"
           }
         },
         {
@@ -351,7 +382,8 @@
             "id": "Azulejo (ubin dekoratif Spanyol)",
             "pt": "Azulejo (azulejo decorativo espanhol e português)",
             "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)",
-            "pl": "Azulejo (hiszpańskie płytka dekoracyjna)"
+            "pl": "Azulejo (hiszpańskie płytka dekoracyjna)",
+            "es": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
           }
         },
         {
@@ -368,7 +400,9 @@
             "nb_NO": "Flisarbeid",
             "pt": "Ladrilhos",
             "hu": "Csempe",
-            "pl": "Płyta ceramiczna (fliza)"
+            "pl": "Płyta ceramiczna (fliza)",
+            "ca": "Enrajolat",
+            "es": "Cerámica"
           }
         }
       ],
@@ -379,7 +413,7 @@
         "en": "Which artist created this?",
         "nl": "Welke kunstenaar creëerde dit kunstwerk?",
         "fr": "Quel artiste a créé cette œuvre ?",
-        "de": "Welcher Künstler hat das geschaffen?",
+        "de": "Wer hat das Kunstwerk erschaffen?",
         "it": "Quale artista ha creato quest’opera?",
         "ru": "Какой художник создал это?",
         "ja": "どのアーティストが作ったんですか?",
@@ -388,7 +422,9 @@
         "id": "Seniman mana yang menciptakan ini?",
         "pt": "Que artista criou isto?",
         "hu": "Melyik művész alkotása ezt?",
-        "pl": "Który artysta to stworzył?"
+        "pl": "Który artysta to stworzył?",
+        "es": "¿Que artista creó esto?",
+        "da": "Hvilken kunstner har lavet dette?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -403,7 +439,9 @@
         "id": "Dibuat oleh {artist_name}",
         "pt": "Criado por {artist_name}",
         "hu": "Alkotó: {artist_name}",
-        "pl": "Stworzone przez {artist_name}"
+        "pl": "Stworzone przez {artist_name}",
+        "es": "Creado por {artist_name}",
+        "da": "Lavet af {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -415,7 +453,7 @@
         "en": "Is there a website with more information about this artwork?",
         "nl": "Is er een website met meer informatie over dit kunstwerk?",
         "fr": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
-        "de": "Gibt es eine Website mit weiteren Informationen über dieses Kunstwerk?",
+        "de": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
         "it": "Esiste un sito web con maggiori informazioni su quest’opera?",
         "ru": "Есть ли сайт с более подробной информацией об этой работе?",
         "ja": "この作品についての詳しい情報はどのウェブサイトにありますか?",
@@ -424,7 +462,9 @@
         "id": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
         "pt": "Existe um site com mais informações sobre esta obra de arte?",
         "hu": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
-        "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?"
+        "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
+        "es": "¿Hay un sitio web con más información sobre esta obra de arte?",
+        "da": "Er der et websted med mere information om dette kunstværk?"
       },
       "render": {
         "en": "More information on <a href='{website}' target='_blank'>this website</a>",
@@ -439,7 +479,8 @@
         "nb_NO": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>",
         "pt": "Mais informações <a href='{website}' target='_blank'>neste site</a>",
         "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>",
-        "pl": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>"
+        "pl": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>",
+        "es": "Más información en <a href='{website}' target='_blank'>este sitio web</a>"
       },
       "freeform": {
         "key": "website",
@@ -452,7 +493,7 @@
         "en": "Which Wikidata-entry corresponds with <b>this artwork</b>?",
         "nl": "Welk Wikidata-item beschrijft <b>dit kunstwerk</b>?",
         "fr": "Quelle entrée Wikidata correspond à <b>cette œuvre d'art</b> ?",
-        "de": "Welcher Wikidata-Eintrag entspricht <b>diesem Kunstwerk</b>?",
+        "de": "Gibt es ein Wikidata Element für <b>dieses Kunstwerk</b>?",
         "it": "Quale elemento Wikidata corrisponde a <b>quest’opera d’arte</b>?",
         "ru": "Какая запись в Wikidata соответсвует <b>этой работе</b>?",
         "ja": "<b>このアートワーク</b>に関するWikidataのエントリーはどれですか?",
@@ -460,7 +501,9 @@
         "nb_NO": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
         "id": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
         "pt": "Que entrada no Wikidata corresponde a <b>esta obra de arte</b>?",
-        "hu": "Melyik Wikidata-bejegyzés felel meg <b>ennek a műalkotásnak</b>?"
+        "hu": "Melyik Wikidata-bejegyzés felel meg <b>ennek a műalkotásnak</b>?",
+        "es": "¿Qué entrada de Wikidata se corresponde con <b>esta obra de arte</b>?",
+        "da": "Hvilken Wikidata-indgang svarer til <b>dette kunstværk</b>?"
       },
       "render": {
         "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
@@ -474,7 +517,8 @@
         "nb_NO": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
         "id": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
         "pt": "Corresponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "hu": "Ez a megfelelő: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+        "hu": "Ez a megfelelő: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+        "es": "Se corresponde con <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
       },
       "freeform": {
         "key": "wikidata",

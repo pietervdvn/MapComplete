@@ -141,7 +141,7 @@ export class TileHierarchyAggregator implements FeatureSource {
                 return empty
             }
 
-            const features = []
+            const features: {feature: any, freshness: Date}[] = []
             self.visitSubTiles(aggr => {
                 if (aggr.showCount < cutoff) {
                     return false
@@ -156,7 +156,7 @@ export class TileHierarchyAggregator implements FeatureSource {
             return features
         }, [this.updateSignal.stabilized(500)])
 
-        return new StaticFeatureSource(features, true);
+        return new StaticFeatureSource(features);
     }
 
     private update() {

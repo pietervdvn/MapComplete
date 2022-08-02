@@ -12,25 +12,16 @@ Hidden layer with all streets which have a name. Useful to detect addresses
 
 
 
-## Table of contents
-
-1. [named_streets](#named_streets)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
 
 
-
-
-
+  - This layer is shown at zoomlevel **18** and higher
   - This layer is not visible by default and must be enabled in the filter by the user. 
-  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
   - This layer is needed as dependency for layer [address](#address)
 
-
-[Go to the source code](../assets/layers/named_streets/named_streets.json)
 
 
 
@@ -46,6 +37,8 @@ Elements must have the all of following tags to be shown on this layer:
   - highway~^..*$
   - name~^..*$
 
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22name%22%5D%5B%22highway%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 

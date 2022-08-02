@@ -7,30 +7,14 @@
 
 <img src='https://mapcomplete.osm.be/./assets/layers/bench/bench.svg' height="100px"> 
 
-A bench is a wooden, metal, stone, ... surface where a human can sit. This layers visualises them and asks a few questions about them.
-
-
-
-
-## Table of contents
-
-1. [bench](#bench)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bench-backrest](#bench-backrest)
-    + [bench-seats](#bench-seats)
-    + [bench-material](#bench-material)
-    + [bench-direction](#bench-direction)
-    + [bench-colour](#bench-colour)
-    + [bench-survey:date](#bench-surveydate)
+A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.
 
 
 
 
 
 
+  - This layer is shown at zoomlevel **17** and higher
 
 
 
@@ -46,8 +30,6 @@ A bench is a wooden, metal, stone, ... surface where a human can sit. This layer
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bench/bench.json)
-
 
 
  Basic tags for this layer 
@@ -62,6 +44,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22bench%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -69,7 +53,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -89,7 +75,9 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -99,14 +87,14 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **Does this bench have a backrest?**
+The question is  Does this bench have a backrest?
 
 
 
 
 
-  - **Backrest: Yes** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a>
-  - **Backrest: No** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno' target='_blank'>no</a>
+  - Backrest: Yes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a>`
+  - Backrest: No  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno' target='_blank'>no</a>`
 
 
 
@@ -115,10 +103,13 @@ The question is **Does this bench have a backrest?**
 
 
 
-The question is **How many seats does this bench have?**
+The question is  How many seats does this bench have?
 
 This rendering asks information about the property  [seats](https://wiki.openstreetmap.org/wiki/Key:seats) 
-This is rendered with `{seats} seats`
+
+This is rendered with  {seats} seats
+
+
 
 
 
@@ -126,19 +117,22 @@ This is rendered with `{seats} seats`
 
 
 
-The question is **What is the bench (seating) made from?**
+The question is  What is the bench (seating) made from?
 
 This rendering asks information about the property  [material](https://wiki.openstreetmap.org/wiki/Key:material) 
-This is rendered with `Material: {material}`
+
+This is rendered with  Material: {material}
 
 
 
-  - **Material: wood** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood' target='_blank'>wood</a>
-  - **Material: metal** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal' target='_blank'>metal</a>
-  - **Material: stone** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dstone' target='_blank'>stone</a>
-  - **Material: concrete** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete' target='_blank'>concrete</a>
-  - **Material: plastic** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic' target='_blank'>plastic</a>
-  - **Material: steel** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel' target='_blank'>steel</a>
+
+
+  - Material: wood  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood' target='_blank'>wood</a>`
+  - Material: metal  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal' target='_blank'>metal</a>`
+  - Material: stone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dstone' target='_blank'>stone</a>`
+  - Material: concrete  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete' target='_blank'>concrete</a>`
+  - Material: plastic  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic' target='_blank'>plastic</a>`
+  - Material: steel  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel' target='_blank'>steel</a>`
 
 
 
@@ -147,10 +141,13 @@ This is rendered with `Material: {material}`
 
 
 
-The question is **In which direction are you looking when sitting on the bench?**
+The question is  In which direction are you looking when sitting on the bench?
 
 This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) 
-This is rendered with `When sitting on the bench, one looks towards {direction}°.`
+
+This is rendered with  When sitting on the bench, one looks towards {direction}°.
+
+
 
 
 
@@ -158,21 +155,24 @@ This is rendered with `When sitting on the bench, one looks towards {direction}�
 
 
 
-The question is **Which colour does this bench have?**
+The question is  Which colour does this bench have?
 
 This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
-This is rendered with `Colour: {colour}`
+
+This is rendered with  Colour: {colour}
 
 
 
-  - **Colour: brown** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dbrown' target='_blank'>brown</a>
-  - **Colour: green** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
-  - **Colour: gray** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgray' target='_blank'>gray</a>
-  - **Colour: white** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dwhite' target='_blank'>white</a>
-  - **Colour: red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
-  - **Colour: black** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblack' target='_blank'>black</a>
-  - **Colour: blue** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
-  - **Colour: yellow** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
+
+
+  - Colour: brown  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dbrown' target='_blank'>brown</a>`
+  - Colour: green  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>`
+  - Colour: gray  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgray' target='_blank'>gray</a>`
+  - Colour: white  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dwhite' target='_blank'>white</a>`
+  - Colour: red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>`
+  - Colour: black  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblack' target='_blank'>black</a>`
+  - Colour: blue  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>`
+  - Colour: yellow  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>`
 
 
 
@@ -181,14 +181,17 @@ This is rendered with `Colour: {colour}`
 
 
 
-The question is **When was this bench last surveyed?**
+The question is  When was this bench last surveyed?
 
 This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) 
-This is rendered with `This bench was last surveyed on {survey:date}`
+
+This is rendered with  This bench was last surveyed on {survey:date}
 
 
 
-  - **Surveyed today!** corresponds with survey:date=
+
+
+  - Surveyed today!  corresponds with  `survey:date=`
  
 
 This document is autogenerated from [assets/layers/bench/bench.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bench/bench.json)

@@ -1,14 +1,20 @@
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {OsmConnection} from "../Osm/OsmConnection";
 import {MangroveIdentity} from "../Web/MangroveReviews";
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import {QueryParameters} from "../Web/QueryParameters";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {Utils} from "../../Utils";
 import Locale from "../../UI/i18n/Locale";
 import ElementsState from "./ElementsState";
 import SelectedElementTagsUpdater from "../Actors/SelectedElementTagsUpdater";
-
+import {Changes} from "../Osm/Changes";
+import ChangeToElementsActor from "../Actors/ChangeToElementsActor";
+import PendingChangesUploader from "../Actors/PendingChangesUploader";
+import * as translators from "../../assets/translators.json"
+import {post} from "jquery";
+import Maproulette from "../Maproulette";
+        
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
  * which layers they enabled, ...
@@ -21,22 +27,29 @@ export default class UserRelatedState extends ElementsState {
      */
     public osmConnection: OsmConnection;
     /**
+     THe change handler
+     */
+    public changes: Changes;
+    /**
      * The key for mangrove
      */
     public mangroveIdentity: MangroveIdentity;
-    /**
-     * Which layers are enabled in the personal theme
-     */
-    public favouriteLayers: UIEventSource<string[]>;
 
+    /**
+     * Maproulette connection
+     */
+    public maprouletteConnection: Maproulette;
+
+    public readonly isTranslator : Store<boolean>;
+    
+    public readonly installedUserThemes: Store<string[]>
+    
     constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
         super(layoutToUse);
 
         this.osmConnection = new OsmConnection({
-            changes: this.changes,
             dryRun: this.featureSwitchIsTesting,
             fakeUser: this.featureSwitchFakeUser.data,
-            allElements: this.allElements,
             oauth_token: QueryParameters.GetQueryParameter(
                 "oauth_token",
                 undefined,
@@ -45,10 +58,35 @@ export default class UserRelatedState extends ElementsState {
             osmConfiguration: <'osm' | 'osm-test'>this.featureSwitchApiURL.data,
             attemptLogin: options?.attemptLogin
         })
+        const translationMode  = this.osmConnection.GetPreference("translation-mode").sync(str => str === undefined ? undefined : str === "true", [], b => b === undefined ? undefined : b+"")
+            
+        translationMode.syncWith(Locale.showLinkToWeblate)
+        
+        this.isTranslator = this.osmConnection.userDetails.map(ud => {
+            if(!ud.loggedIn){
+                return false;
+            }
+            const name= ud.name.toLowerCase().replace(/\s+/g, '')
+            return translators.contributors.some(c => c.contributor.toLowerCase().replace(/\s+/g, '') === name)
+        })
+        
+        this.isTranslator.addCallbackAndRunD(ud => {
+            if(ud){
+                Locale.showLinkToWeblate.setData(true)
+            }
+        });
+        
+        this.changes = new Changes(this, layoutToUse?.isLeftRightSensitive() ?? false)
 
+
+        new ChangeToElementsActor(this.changes, this.allElements)
+        new PendingChangesUploader(this.changes, this.selectedElement);
+        
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
         );
+
+        this.maprouletteConnection = new Maproulette();
 
         if (layoutToUse?.hideFromOverview) {
             this.osmConnection.isLoggedIn.addCallbackAndRunD(loggedIn => {
@@ -73,18 +111,9 @@ export default class UserRelatedState extends ElementsState {
                 }))
         }
 
-
-        // Important: the favourite layers are initialized _after_ the installed themes, as these might contain an installedTheme
-        this.favouriteLayers = LocalStorageSource.Get("favouriteLayers")
-            .syncWith(this.osmConnection.GetLongPreference("favouriteLayers"))
-            .map(
-                (str) => Utils.Dedup(str?.split(";")) ?? [],
-                [],
-                (layers) => Utils.Dedup(layers)?.join(";")
-            );
-
         this.InitializeLanguage();
         new SelectedElementTagsUpdater(this)
+        this.installedUserThemes = this.InitInstalledUserThemes();
 
     }
 
@@ -95,6 +124,9 @@ export default class UserRelatedState extends ElementsState {
             .addCallback((currentLanguage) => {
                 if (layoutToUse === undefined) {
                     return;
+                }
+                if(Locale.showLinkToWeblate.data){
+                    return true; // Disable auto switching as we are in translators mode
                 }
                 if (this.layoutToUse.language.indexOf(currentLanguage) < 0) {
                     console.log(
@@ -108,7 +140,53 @@ export default class UserRelatedState extends ElementsState {
                     Locale.language.setData(layoutToUse.language[0]);
                 }
             })
-            .ping();
+        Locale.language.ping();
+    }
+    
+    private InitInstalledUserThemes(): Store<string[]>{
+        const prefix = "mapcomplete-unofficial-theme-";
+        const postfix = "-combined-length"
+        return this.osmConnection.preferencesHandler.preferences.map(prefs =>
+            Object.keys(prefs)
+                .filter(k => k.startsWith(prefix) && k.endsWith(postfix))
+                .map(k => k.substring(prefix.length, k.length - postfix.length))
+        )
+    }
+    
+    public GetUnofficialTheme(id: string):  {
+        id: string
+        icon: string,
+        title: any,
+        shortDescription: any,
+        definition?: any,
+        isOfficial: boolean
+    } | undefined {
+        console.log("GETTING UNOFFICIAL THEME")
+        const pref = this.osmConnection.GetLongPreference("unofficial-theme-"+id)
+        const str = pref.data
+        
+        if (str === undefined || str === "undefined" || str === "") {
+            pref.setData(null)
+            return undefined
+        }
+        
+        try {
+            const value: {
+                id: string
+                icon: string,
+                title: any,
+                shortDescription: any,
+                definition?: any,
+                isOfficial: boolean
+            } = JSON.parse(str)
+            value.isOfficial = false
+            return value;
+        } catch (e) {
+            console.warn("Removing theme " + id + " as it could not be parsed from the preferences; the content is:", str)
+            pref.setData(null)
+            return undefined
+        }
+        
     }
 
 }

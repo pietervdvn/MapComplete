@@ -1,11 +1,17 @@
 {
   "id": "fritures",
   "title": {
+    "en": "Fries shops",
     "nl": "Friturenkaart",
-    "fr": "Carte des friteries"
+    "fr": "Carte des friteries",
+    "de": "Pommes-frites-Läden",
+    "ca": "Botigues de patates"
   },
   "description": {
-    "nl": "Op deze kaart vind je je favoriete frituur!"
+    "en": "On this map, you'll find your favourite fries shop!",
+    "nl": "Op deze kaart vind je je favoriete frituur!",
+    "de": "Auf dieser Karte findest du deine Lieblings-Pommesbude!",
+    "fr": "Retrouves vos friteries préférées sur cette carte !"
   },
   "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",
@@ -14,7 +20,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 3,
-  "socialImage": "",
   "layers": [
     {
       "builtin": "food",
@@ -26,13 +31,14 @@
           "fr": "Friteries",
           "de": "Pommesbude",
           "it": "Friggitoria",
-          "hu": "Sültkrumplievő-hely"
+          "hu": "Sültkrumplievő-hely",
+          "ca": "Botigues de patates"
         },
         "=presets": [],
         "source": {
           "=osmTags": {
             "and": [
-              "cuisine=friture",
+              "cuisine~(.*;)?friture(;.*)?",
               {
                 "or": [
                   "amenity=fast_food",

@@ -71,7 +71,7 @@ export default class NewNoteUi extends Toggle {
             new Combine([new Toggle(undefined, t.warnAnonymous.SetClass("alert"), state?.osmConnection?.isLoggedIn), 
                 new Toggle(postNote,
                     t.textNeeded.SetClass("alert"),
-                    text.GetValue().map(txt => txt.length > 3)
+                    text.GetValue().map(txt => txt?.length > 3)
                     )
             
             ]).SetClass("flex justify-end items-center")
@@ -103,7 +103,10 @@ export default class NewNoteUi extends Toggle {
                     ]
                 ).SetClass("flex flex-col"),
                 newNoteUi,
-                noteLayer.appliedFilters.map(filters => Array.from(filters.values()).some(v => v !== undefined))
+                noteLayer.appliedFilters.map(filters => {
+                    console.log("Applied filters for notes are: ", filters)
+                    return Array.from(filters.values()).some(v => v?.currentFilter !== undefined);
+                })
             ),
             new Combine([
                 t.noteLayerNotEnabled.SetClass("alert"),

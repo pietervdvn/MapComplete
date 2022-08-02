@@ -26,7 +26,7 @@ Devcontainer (see more details later).
 
 To develop and build MapComplete, you
 
-0. Make a fork and clone the repository.
+0. Make a fork and clone the repository. (We recommend a shallow clone with `git clone --filter=blob:none <repo>`)
 0. Install the nodejs version specified in [.tool-versions](./.tool-versions)
     - On linux: install npm first `sudo apt install npm`, then install `n` using npm: ` npm install -g n`, which can
       then install node with `n install <node-version>`
@@ -71,6 +71,12 @@ To use the WSL in Visual Studio Code:
 6. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
    e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
+
+### Dependencie
+
+`make` , `python3` `g++`
+
+(run `nix-env -iA nixos.gnumake nixos.gdc nixos.python3`)
 
 Automatic deployment
 --------------------

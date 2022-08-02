@@ -1,5 +1,5 @@
 import {InputElement} from "./InputElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 
 
 export default class InputElementMap<T, X> extends InputElement<X> {
@@ -13,7 +13,7 @@ export default class InputElementMap<T, X> extends InputElement<X> {
                 isSame: (x0: X, x1: X) => boolean,
                 toX: (t: T) => X,
                 fromX: (x: X) => T,
-                extraSources: UIEventSource<any>[] = []
+                extraSources: Store<any>[] = []
     ) {
         super();
         this.isSame = isSame;
@@ -21,7 +21,7 @@ export default class InputElementMap<T, X> extends InputElement<X> {
         this.toX = toX;
         this._inputElement = inputElement;
         const self = this;
-        this._value = inputElement.GetValue().map(
+        this._value = inputElement.GetValue().sync(
             (t => {
                 const newX = toX(t);
                 const currentX = self.GetValue()?.data;

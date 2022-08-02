@@ -1,5 +1,5 @@
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
-import {UIEventSource} from "../../UIEventSource";
+import {Store, UIEventSource} from "../../UIEventSource";
 import FilteredLayer from "../../../Models/FilteredLayer";
 import TileHierarchy from "./TileHierarchy";
 import {Tiles} from "../../../Models/TileRange";
@@ -24,7 +24,7 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
     public readonly maxFeatureCount: number;
     public readonly name;
     public readonly features: UIEventSource<{ feature: any, freshness: Date }[]>
-    public readonly containedIds: UIEventSource<Set<string>>
+    public readonly containedIds: Store<Set<string>>
 
     public readonly bbox: BBox;
     public readonly tileIndex: number;

@@ -112,7 +112,7 @@ export class WikimediaImageProvider extends ImageProvider {
         return [Promise.resolve(this.UrlForImage("File:" + value))]
     }
 
-    protected async DownloadAttribution(filename: string): Promise<LicenseInfo> {
+    public async DownloadAttribution(filename: string): Promise<LicenseInfo> {
         filename = WikimediaImageProvider.ExtractFileName(filename)
 
         if (filename === "") {
@@ -123,7 +123,7 @@ export class WikimediaImageProvider extends ImageProvider {
             "api.php?action=query&prop=imageinfo&iiprop=extmetadata&" +
             "titles=" + filename +
             "&format=json&origin=*";
-        const data = await Utils.downloadJson(url)
+        const data = await Utils.downloadJsonCached(url,365*24*60*60)
         const licenseInfo = new LicenseInfo();
         const pageInfo = data.query.pages[-1]
         if (pageInfo === undefined) {

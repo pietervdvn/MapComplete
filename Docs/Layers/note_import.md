@@ -12,28 +12,23 @@ Template for note note imports.
 
 
 
-## Table of contents
-
-1. [note_import](#note_import)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [conversation](#conversation)
-    + [Intro](#intro)
-    + [import](#import)
-    + [close_note_](#close_note_)
-    + [close_note_mapped](#close_note_mapped)
-    + [comment](#comment)
-    + [add_image](#add_image)
 
 
-
-
-
+  - This layer is shown at zoomlevel **10** and higher
   - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://api.openstreetmap.org/api/0.6/notes.json?closed=0&bbox={x_min},{y_min},{x_max},{y_max}`
   - This layer will automatically load  [public_bookcase](./public_bookcase.md)  into the layout as it depends on it:  a tagrendering needs this layer (import)
 
 
-[Go to the source code](../assets/layers/note_import/note_import.json)
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [personal](https://mapcomplete.osm.be/personal)
+
 
 
 
@@ -49,6 +44,8 @@ Elements must have the all of following tags to be shown on this layer:
   - id~^..*$
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22id%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -62,7 +59,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -72,7 +69,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -82,7 +79,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -92,7 +89,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -102,7 +99,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -112,7 +109,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -122,7 +119,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

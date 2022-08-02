@@ -6,7 +6,7 @@
     "es": "Mapa abierto de desfibriladores (DEA)",
     "fr": "Carte des défibrillateurs (DAE)",
     "nl": "Open AED-kaart",
-    "de": "AED-Karte öffnen",
+    "de": "AED-Karte",
     "hu": "Defibrillátor-térkép",
     "id": "Buka Peta AED",
     "it": "Mappa dei defibrillatori (DAE)",
@@ -16,10 +16,13 @@
     "nb_NO": "Åpne AED-kart",
     "sv": "Öppna AED-karta",
     "pl": "Otwórz mapę AED",
-    "pt_BR": "Abrir mapa AED"
+    "pt_BR": "Abrir mapa AED",
+    "sl": "Zemljevid defibrilatorjev (AED)",
+    "zh_Hans": "Open AED Map",
+    "fil": "Open AED Map"
   },
   "maintainer": "MapComplete",
-  "icon": "./assets/themes/aed/logo.svg",
+  "icon": "./assets/themes/aed/aed.svg",
   "description": {
     "en": "On this map, one can find and mark nearby defibrillators",
     "ca": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
@@ -36,7 +39,11 @@
     "pl": "Na tej mapie można znaleźć i oznaczyć defibrylatory w okolicy",
     "pt_BR": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
     "nb_NO": "Defibrillatorer i nærheten",
-    "hu": "Ezen a térképen a közeli defibrillátorokat lehet megtalálni és feltüntetni"
+    "hu": "Ezen a térképen a közeli defibrillátorokat lehet megtalálni és feltüntetni",
+    "sl": "Na tem zemljevidu lahko poiščete in označite bližnje defibrilatorje",
+    "zh_Hans": "在这份地图上可以寻找和标记附近的除颤器",
+    "da": "På dette kort kan man finde og markere defibrillatorer i nærheden",
+    "fil": "Sa mapang ito, maaring makahapan o mag-mapa ng mga defibrillators"
   },
   "version": "2020-08-29",
   "startLat": 0,

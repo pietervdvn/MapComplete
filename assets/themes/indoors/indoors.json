@@ -1,0 +1,32 @@
+{
+  "id": "indoors",
+  "title": {
+    "en": "Indoors",
+    "de": "Innenräume"
+  },
+  "description": {
+    "en": "On this map, publicly accessible indoor places are shown",
+    "de": "Diese Karte zeigt öffentlich zugängliche Innenräume"
+  },
+  "maintainer": "MapComplete",
+  "icon": "./assets/layers/entrance/entrance.svg",
+  "version": "0",
+  "startLat": 51.17181,
+  "defaultBackgroundId": "CartoDB.Voyager",
+  "startLon": 4.144383,
+  "startZoom": 14,
+  "widenFactor": 2,
+  "layers": [
+    "indoors",
+    {
+      "builtin": [
+        "walls_and_buildings"
+      ],
+      "override": {
+        "shownByDefault": true
+      }
+    },
+    "pedestrian_path",
+    "entrance"
+  ]
+}

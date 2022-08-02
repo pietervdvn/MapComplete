@@ -7,28 +7,15 @@
 
 <img src='https://mapcomplete.osm.be/./assets/themes/playgrounds/playground.svg' height="100px"> 
 
-Searches for all accessible grass patches within public parks - these are 'groenzones'"
-
-
-
-
-## Table of contents
-
-1. [grass_in_parks](#grass_in_parks)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [explanation](#explanation)
-    + [grass-in-parks-reviews](#grass-in-parks-reviews)
+Searches for all accessible grass patches within public parks - these are 'groenzones'
 
 
 
 
 
 
+  - This layer is shown at zoomlevel **0** and higher
 
-
-[Go to the source code](../assets/layers/grass_in_parks/grass_in_parks.json)
 
 
 
@@ -44,6 +31,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:name' target='_blank'>name</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name%3DPark Oude God' target='_blank'>Park Oude God</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:landuse' target='_blank'>landuse</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dgrass' target='_blank'>grass</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22name%22%3D%22Park%20Oude%20God%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22landuse%22%3D%22grass%22%5D%5B%22access%22%3D%22public%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22landuse%22%3D%22grass%22%5D%5B%22access%22%3D%22yes%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -57,7 +46,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -67,7 +58,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -77,7 +68,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

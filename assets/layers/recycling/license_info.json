@@ -1,0 +1,186 @@
+[
+  {
+    "path": "batteries.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/batteries.svg"
+    ]
+  },
+  {
+    "path": "beverage_cartons.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/beverage_cartons.svg"
+    ]
+  },
+  {
+    "path": "cans.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/cans.svg"
+    ]
+  },
+  {
+    "path": "clothes.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Adrien Pavie",
+      "modified from EmojiOne 2: U+1F456, U+1F45"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/clothes.svg"
+    ]
+  },
+  {
+    "path": "cooking_oil.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/cooking_oil.svg"
+    ]
+  },
+  {
+    "path": "engine_oil.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/engine_oil.svg"
+    ]
+  },
+  {
+    "path": "garden_waste.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick",
+      "modified from Twemoji: U+1F33F"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/garden_waste.svg"
+    ]
+  },
+  {
+    "path": "glass.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/glass.svg"
+    ]
+  },
+  {
+    "path": "glass_bottles.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/glass_bottles.svg"
+    ]
+  },
+  {
+    "path": "newspaper.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick",
+      "modified from EmojiOne 2: U+1F4F0"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/newspaper.svg"
+    ]
+  },
+  {
+    "path": "paper.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/paper.svg"
+    ]
+  },
+  {
+    "path": "plastic.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/plastic.svg"
+    ]
+  },
+  {
+    "path": "plastic_bottles.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/plastic_bottles.svg"
+    ]
+  },
+  {
+    "path": "plastic_packaging.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/plastic_packaging.svg"
+    ]
+  },
+  {
+    "path": "recycling-14.svg",
+    "license": "CC0",
+    "authors": [
+      "Michael Glanznig"
+    ],
+    "sources": [
+      "https://github.com/gmgeo/osmic/blob/master/amenity/recycling-14.svg"
+    ]
+  },
+  {
+    "path": "scrap_metal.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/scrap_metal.svg"
+    ]
+  },
+  {
+    "path": "shoes.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Tobias Zwick",
+      "modified from EmojiOne 2: U+1F45F"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/shoes.svg"
+    ]
+  },
+  {
+    "path": "small_electrical_appliances.svg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "EmojiOne 2: U+1F50C"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/small_electrical_appliances.svg"
+    ]
+  }
+]

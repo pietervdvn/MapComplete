@@ -1,10 +1,12 @@
 import {UIEventSource} from "../UIEventSource";
 import UserDetails, {OsmConnection} from "./OsmConnection";
 import {Utils} from "../../Utils";
+import {DomEvent} from "leaflet";
+import preventDefault = DomEvent.preventDefault;
 
 export class OsmPreferences {
 
-    public preferences = new UIEventSource<any>({}, "all-osm-preferences");
+    public preferences = new UIEventSource<Record<string, string>>({}, "all-osm-preferences");
     private readonly preferenceSources = new Map<string, UIEventSource<string>>()
     private auth: any;
     private userDetails: UIEventSource<UserDetails>;
@@ -35,7 +37,7 @@ export class OsmPreferences {
 
         const allStartWith = prefix + key + "-combined";
         // Gives the number of combined preferences
-        const length = this.GetPreference(allStartWith + "-length", "");
+        const length = this.GetPreference(allStartWith + "-length", "", "");
 
        if( (allStartWith + "-length").length > 255){
            throw "This preference key is too long, it has "+key.length+" characters, but at most "+(255 - "-length".length - "-combined".length - prefix.length)+" characters are allowed"
@@ -51,10 +53,10 @@ export class OsmPreferences {
                 let count = parseInt(length.data);
                 for (let i = 0; i < count; i++) {
                     // Delete all the preferences
-                    self.GetPreference(allStartWith + "-" + i, "")
+                    self.GetPreference(allStartWith + "-" + i, "", "")
                         .setData("");
                 }
-                self.GetPreference(allStartWith + "-length", "")
+                self.GetPreference(allStartWith + "-length", "", "")
                     .setData("");
                 return
             }
@@ -67,7 +69,7 @@ export class OsmPreferences {
                 if (i > 100) {
                     throw "This long preference is getting very long... "
                 }
-                self.GetPreference(allStartWith + "-" + i, "").setData(str.substr(0, 255));
+                self.GetPreference(allStartWith + "-" + i, "","").setData(str.substr(0, 255));
                 str = str.substr(255);
                 i++;
             }
@@ -76,9 +78,9 @@ export class OsmPreferences {
 
 
         function updateData(l: number) {
-            if (l === undefined) {
-                source.setData(undefined);
-                return;
+            if(Object.keys(self.preferences.data).length === 0){
+                // The preferences are still empty - they are not yet updated, so we delay updating for now 
+                return
             }
             const prefsCount = Number(l);
             if (prefsCount > 100) {
@@ -86,7 +88,11 @@ export class OsmPreferences {
             }
             let str = "";
             for (let i = 0; i < prefsCount; i++) {
-                str += self.GetPreference(allStartWith + "-" + i, "").data;
+                const key = allStartWith + "-" + i
+                if(self.preferences.data[key] === undefined){
+                    console.warn("Detected a broken combined preference:", key, "is undefined", self.preferences)
+                }
+                str += self.preferences.data[key] ?? "";
             }
 
             source.setData(str);
@@ -95,12 +101,17 @@ export class OsmPreferences {
         length.addCallback(l => {
             updateData(Number(l));
         });
-        updateData(Number(length.data));
+        this.preferences.addCallbackAndRun(_ => {
+            updateData(Number(length.data));
+        })
 
         return source;
     }
 
-    public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
+    public GetPreference(key: string, defaultValue : string = undefined, prefix: string = "mapcomplete-"): UIEventSource<string> {
+        if(key.startsWith(prefix) && prefix !== ""){
+            console.trace("A preference was requested which has a duplicate prefix in its key. This is probably a bug")
+        }
         key = prefix + key;
         key = key.replace(/[:\\\/"' {}.%]/g, '')
         if (key.length >= 255) {
@@ -114,7 +125,7 @@ export class OsmPreferences {
             this.UpdatePreferences();
         }
                 
-        const pref = new UIEventSource<string>(this.preferences.data[key], "osm-preference:" + key);
+        const pref = new UIEventSource<string>(this.preferences.data[key] ?? defaultValue, "osm-preference:" + key);
         pref.addCallback((v) => {
             this.UploadPreference(key, v);
         });
@@ -127,7 +138,8 @@ export class OsmPreferences {
     public ClearPreferences() {
         let isRunning = false;
         const self = this;
-        this.preferences.addCallbackAndRun(prefs => {
+        this.preferences.addCallback(prefs => {
+            console.log("Cleaning preferences...")
             if (Object.keys(prefs).length == 0) {
                 return;
             }
@@ -135,19 +147,17 @@ export class OsmPreferences {
                 return
             }
             isRunning = true
-            const prefixes = ["mapcomplete-installed-theme", "mapcomplete-installed-themes-", "mapcomplete-current-open-changeset", "mapcomplete-personal-theme-layer"]
+            const prefixes = ["mapcomplete-"]
             for (const key in prefs) {
-                for (const prefix of prefixes) {
-                    if (key.startsWith(prefix)) {
-                        console.log("Clearing ", key)
-                        self.GetPreference(key, "").setData("")
+                const matches = prefixes.some(prefix => key.startsWith(prefix))
+                if (matches) {
+                    console.log("Clearing ", key)
+                    self.GetPreference(key, "", "").setData("")
 
-                    }
                 }
             }
             isRunning = false;
-            return true;
-
+            return;
         })
     }
 
@@ -173,7 +183,6 @@ export class OsmPreferences {
             // For differing values, the server overrides local changes
             self.preferenceSources.forEach((preference, key) => {
                 const osmValue = self.preferences.data[key]
-                    console.log("Sending value to osm:", key," osm has: ", osmValue, " local has: ", preference.data)
                 if(osmValue === undefined && preference.data !== undefined){
                     // OSM doesn't know this value yet
                     self.UploadPreference(key, preference.data)

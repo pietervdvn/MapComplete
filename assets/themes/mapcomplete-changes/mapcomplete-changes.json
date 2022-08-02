@@ -81,11 +81,11 @@
             "mappings": [
               {
                 "if": "theme=aed",
-                "then": "./assets/themes/aed/logo.svg"
+                "then": "./assets/themes/aed/aed.svg"
               },
               {
                 "if": "theme=aed_brugge",
-                "then": "./assets/themes/aed/logo.svg"
+                "then": "./assets/themes/aed/aed.svg"
               },
               {
                 "if": "theme=artwork",
@@ -156,8 +156,8 @@
                 "then": "./assets/themes/drinking_water/logo.svg"
               },
               {
-                "if": "theme=entrances",
-                "then": "./assets/layers/entrance/door.svg"
+                "if": "theme=education",
+                "then": "./assets/layers/school/college.svg"
               },
               {
                 "if": "theme=etymology",
@@ -204,12 +204,32 @@
                 "then": "./assets/themes/hailhydrant/logo.svg"
               },
               {
+                "if": "theme=healthcare",
+                "then": "./assets/layers/doctors/doctors.svg"
+              },
+              {
+                "if": "theme=indoors",
+                "then": "./assets/layers/entrance/entrance.svg"
+              },
+              {
+                "if": "theme=kerbs_and_crossings",
+                "then": "./assets/layers/kerbs/KerbIcon.svg"
+              },
+              {
                 "if": "theme=mapcomplete-changes",
                 "then": "./assets/svg/logo.svg"
               },
               {
+                "if": "theme=maproulette",
+                "then": "./assets/layers/maproulette/logomark.svg"
+              },
+              {
                 "if": "theme=maps",
                 "then": "./assets/themes/maps/logo.svg"
+              },
+              {
+                "if": "theme=maxspeed",
+                "then": "./assets/themes/maxspeed/maxspeed_logo.svg"
               },
               {
                 "if": "theme=nature",
@@ -228,6 +248,10 @@
                 "then": "./assets/layers/observation_tower/Tower_observation.svg"
               },
               {
+                "if": "theme=onwheels",
+                "then": "./assets/themes/onwheels/crest.svg"
+              },
+              {
                 "if": "theme=openwindpowermap",
                 "then": "./assets/themes/openwindpowermap/logo.svg"
               },
@@ -238,6 +262,10 @@
               {
                 "if": "theme=personal",
                 "then": "./assets/svg/addSmall.svg"
+              },
+              {
+                "if": "theme=pets",
+                "then": "./assets/layers/dogpark/dog-park.svg"
               },
               {
                 "if": "theme=play_forests",
@@ -254,6 +282,10 @@
               {
                 "if": "theme=postboxes",
                 "then": "./assets/themes/postboxes/postbox.svg"
+              },
+              {
+                "if": "theme=rainbow_crossings",
+                "then": "./assets/themes/rainbow_crossings/logo.svg"
               },
               {
                 "if": "theme=shops",
@@ -292,12 +324,28 @@
                 "then": "./assets/themes/toilets/toilets.svg"
               },
               {
+                "if": "theme=transit",
+                "then": "./assets/layers/transit_stops/bus_stop.svg"
+              },
+              {
                 "if": "theme=trees",
                 "then": "./assets/themes/trees/logo.svg"
               },
               {
                 "if": "theme=uk_addresses",
                 "then": "./assets/themes/uk_addresses/housenumber_unknown.svg"
+              },
+              {
+                "if": "theme=walls_and_buildings",
+                "then": "./assets/layers/walls_and_buildings/walls_and_buildings.png"
+              },
+              {
+                "if": "theme=waste",
+                "then": "./assets/layers/recycling/recycling-14.svg"
+              },
+              {
+                "if": "theme=waste_assen",
+                "then": "./assets/layers/recycling/recycling-14.svg"
               },
               {
                 "if": "theme=waste_basket",
@@ -313,7 +361,7 @@
           "id": "theme-search",
           "options": [
             {
-              "osmTags": "theme~.*{search}.*",
+              "osmTags": "theme~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -329,7 +377,7 @@
           "id": "created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc~.*{search}.*",
+              "osmTags": "_last_edit:contributor:lc~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -345,7 +393,7 @@
           "id": "not_created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc!~.*{search}.*",
+              "osmTags": "_last_edit:contributor:lc!~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -375,7 +423,7 @@
             "render": "{histogram(_embedded_cs:themes, Themename, Number of changesets)}"
           },
           {
-            "id": "hist_themes",
+            "id": "hist_users",
             "render": "{histogram(_embedded_cs:users, Contributor, Number of changesets)}"
           }
         ],

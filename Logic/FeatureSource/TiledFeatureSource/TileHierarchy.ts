@@ -13,7 +13,7 @@ export default interface TileHierarchy<T extends FeatureSource & Tiled> {
 export class TileHierarchyTools {
 
     public static getTiles<T extends FeatureSource & Tiled>(hierarchy: TileHierarchy<T>, bbox: BBox): T[] {
-        const result = []
+        const result: T[] = []
         hierarchy.loadedTiles.forEach((tile) => {
             if (tile.bbox.overlapsWith(bbox)) {
                 result.push(tile)

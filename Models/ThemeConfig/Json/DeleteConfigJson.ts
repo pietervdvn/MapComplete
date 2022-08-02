@@ -1,4 +1,4 @@
-import {AndOrTagConfigJson} from "./TagConfigJson";
+import {TagConfigJson} from "./TagConfigJson";
 
 export interface DeleteConfigJson {
 
@@ -36,7 +36,17 @@ export interface DeleteConfigJson {
      * By adding a 'nonDeleteMapping', an option can be added into the list which will retag the feature.
      * It is important that the feature will be retagged in such a way that it won't be picked up by the layer anymore!
      */
-    nonDeleteMappings?: { if: AndOrTagConfigJson, then: string | any }[],
+    nonDeleteMappings?: {
+        /**
+         * The tags that will be given to the object.
+         * This must remove tags so that the 'source/osmTags' won't match anymore
+         */
+        if: TagConfigJson,
+        /**
+         * The human explanation for the options
+         */
+        then: string | any,
+    }[],
 
     /**
      * In some cases, the contributor is not allowed to delete the current feature (e.g. because it isn't a point, the point is referenced by a relation or the user isn't experienced enough).
@@ -57,10 +67,11 @@ export interface DeleteConfigJson {
      * }
      * ```
      */
-    softDeletionTags?: AndOrTagConfigJson | string,
+    softDeletionTags?: TagConfigJson,
     /***
      * By default, the contributor needs 20 previous changesets to delete points edited by others.
      * For some small features (e.g. bicycle racks) this is too much and this requirement can be lowered or dropped, which can be done here.
      */
     neededChangesets?: number
+
 }

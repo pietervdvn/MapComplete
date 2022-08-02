@@ -1,6 +1,5 @@
-// @ts-ignore
 import osmAuth from "osm-auth";
-import {UIEventSource} from "../UIEventSource";
+import {Store, Stores, UIEventSource} from "../UIEventSource";
 import {OsmPreferences} from "./OsmPreferences";
 import {ChangesetHandler} from "./ChangesetHandler";
 import {ElementStorage} from "../ElementStorage";
@@ -49,10 +48,9 @@ export class OsmConnection {
     }
     public auth;
     public userDetails: UIEventSource<UserDetails>;
-    public isLoggedIn: UIEventSource<boolean>
+    public isLoggedIn: Store<boolean>
     public loadingStatus = new UIEventSource<"not-attempted" | "loading" | "error" | "logged-in">("not-attempted")
     public preferencesHandler: OsmPreferences;
-    public changesetHandler: ChangesetHandler;
     public readonly _oauth_config: {
         oauth_consumer_key: string,
         oauth_secret: string,
@@ -68,8 +66,6 @@ export class OsmConnection {
     constructor(options: {
                     dryRun?: UIEventSource<boolean>,
                     fakeUser?: false | boolean,
-                    allElements: ElementStorage,
-                    changes: Changes,
                     oauth_token?: UIEventSource<string>,
                     // Used to keep multiple changesets open and to write to the correct changeset
                     singlePage?: boolean,
@@ -94,20 +90,21 @@ export class OsmConnection {
             ud.totalMessages = 42;
         }
         const self = this;
-        this.isLoggedIn = this.userDetails.map(user => user.loggedIn).addCallback(isLoggedIn => {
+        this.isLoggedIn = this.userDetails.map(user => user.loggedIn);
+        this.isLoggedIn.addCallback(isLoggedIn => {
             if (self.userDetails.data.loggedIn == false && isLoggedIn == true) {
                 // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
                 // This means someone attempted to toggle this; so we attempt to login!
                 self.AttemptLogin()
             }
         });
+        
         this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false);
 
         this.updateAuthObject();
 
         this.preferencesHandler = new OsmPreferences(this.auth, this);
 
-        this.changesetHandler = new ChangesetHandler(this._dryRun, this, options.allElements, options.changes, this.auth);
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
             const self = this;
@@ -126,9 +123,13 @@ export class OsmConnection {
             console.log("Not authenticated");
         }
     }
+    
+    public CreateChangesetHandler(allElements: ElementStorage, changes: Changes){
+        return new ChangesetHandler(this._dryRun, this, allElements, changes, this.auth);
+    }
 
-    public GetPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this.preferencesHandler.GetPreference(key, prefix);
+    public GetPreference(key: string, defaultValue: string = undefined, prefix: string = "mapcomplete-"): UIEventSource<string> {
+        return this.preferencesHandler.GetPreference(key, defaultValue, prefix);
     }
 
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
@@ -147,6 +148,10 @@ export class OsmConnection {
         this.userDetails.ping();
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
+    }
+    
+    public Backend(): string {
+        return this._oauth_config.url;
     }
 
     public AttemptLogin() {
@@ -226,14 +231,14 @@ export class OsmConnection {
         });
     }
 
-    public closeNote(id: number | string, text?: string): Promise<any> {
+    public closeNote(id: number | string, text?: string): Promise<void> {
         let textSuffix = ""
         if ((text ?? "") !== "") {
             textSuffix = "?text=" + encodeURIComponent(text)
         }
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually closing note ", id, " with text ", text)
-            return new Promise((ok, error) => {
+            return new Promise((ok) => {
                 ok()
             });
         }
@@ -241,7 +246,7 @@ export class OsmConnection {
             this.auth.xhr({
                 method: 'POST',
                 path: `/api/0.6/notes/${id}/close${textSuffix}`,
-            }, function (err, response) {
+            }, function (err, _) {
                 if (err !== null) {
                     error(err)
                 } else {
@@ -253,10 +258,10 @@ export class OsmConnection {
 
     }
 
-    public reopenNote(id: number | string, text?: string): Promise<any> {
+    public reopenNote(id: number | string, text?: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually reopening note ", id, " with text ", text)
-            return new Promise((ok, error) => {
+            return new Promise((ok) => {
                 ok()
             });
         }
@@ -268,7 +273,7 @@ export class OsmConnection {
             this.auth.xhr({
                 method: 'POST',
                 path: `/api/0.6/notes/${id}/reopen${textSuffix}`
-            }, function (err, response) {
+            }, function (err, _) {
                 if (err !== null) {
                     error(err)
                 } else {
@@ -283,7 +288,7 @@ export class OsmConnection {
     public openNote(lat: number, lon: number, text: string): Promise<{ id: number }> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually opening note with text ", text)
-            return new Promise<{ id: number }>((ok, error) => {
+            return new Promise<{ id: number }>((ok) => {
                 window.setTimeout(() => ok({id: Math.floor(Math.random() * 1000)}), Math.random() * 5000)
             });
         }
@@ -392,10 +397,10 @@ export class OsmConnection {
 
     }
 
-    public addCommentToNode(id: number | string, text: string): Promise<any> {
+    public addCommentToNote(id: number | string, text: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)
-            return new Promise((ok, error) => {
+            return new Promise((ok) => {
                 ok()
             });
         }
@@ -408,7 +413,7 @@ export class OsmConnection {
                 method: 'POST',
 
                 path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
-            }, function (err, response) {
+            }, function (err, _) {
                 if (err !== null) {
                     error(err)
                 } else {
@@ -454,7 +459,7 @@ export class OsmConnection {
             return;
         }
         this.isChecking = true;
-        UIEventSource.Chronic(5 * 60 * 1000).addCallback(_ => {
+        Stores.Chronic(5 * 60 * 1000).addCallback(_ => {
             if (self.isLoggedIn.data) {
                 console.log("Checking for messages")
                 self.AttemptLogin();

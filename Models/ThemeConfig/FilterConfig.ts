@@ -4,18 +4,19 @@ import FilterConfigJson from "./Json/FilterConfigJson";
 import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
-import {AndOrTagConfigJson} from "./Json/TagConfigJson";
+import {TagConfigJson} from "./Json/TagConfigJson";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {FilterState} from "../FilteredLayer";
 import {QueryParameters} from "../../Logic/Web/QueryParameters";
 import {Utils} from "../../Utils";
+import {RegexTag} from "../../Logic/Tags/RegexTag";
 
 export default class FilterConfig {
     public readonly id: string
     public readonly options: {
         question: Translation;
         osmTags: TagsFilter | undefined;
-        originalTagsSpec: string | AndOrTagConfigJson
+        originalTagsSpec: TagConfigJson
         fields: { name: string, type: string }[]
     }[];
     public readonly defaultSelection? : number
@@ -29,7 +30,6 @@ export default class FilterConfig {
         }
         if (json.id.match(/^[a-zA-Z0-9_-]*$/) === null) {
             throw `A filter with invalid id was found at ${context}. Ids should only contain letters, numbers or - _`
-
         }
 
         if (json.options.map === undefined) {
@@ -38,17 +38,18 @@ export default class FilterConfig {
         this.id = json.id;
         let defaultSelection : number = undefined
         this.options = json.options.map((option, i) => {
-            const ctx = `${context}.options[${i}]`;
+            const ctx = `${context}.options.${i}`;
             const question = Translations.T(
                 option.question,
                 `${ctx}.question`
             );
-            let osmTags = undefined;
+            let osmTags: undefined | TagsFilter = undefined;
             if ((option.fields?.length ?? 0) == 0 && option.osmTags !== undefined) {
                 osmTags = TagUtils.Tag(
                     option.osmTags,
                     `${ctx}.osmTags`
                 );
+                FilterConfig.validateSearch(osmTags, ctx)
             }
             if (question === undefined) {
                 throw `Invalid filter: no question given at ${ctx}`
@@ -68,12 +69,25 @@ export default class FilterConfig {
                 }
             })
 
+            for (const field of fields) {
+                question.OnEveryLanguage((txt, language) => {
+                    if(txt.indexOf("{"+field.name+"}")<0){
+                        throw "Error in filter with fields at "+context+".question."+language+": The question text should contain every field, but it doesn't contain `{"+field+"}`: "+txt
+                    }
+                    return txt
+                })
+            }
+
             if(option.default){
                 if(defaultSelection === undefined){
                     defaultSelection = i;
                 }else{
                     throw `Invalid filter: multiple filters are set as default, namely ${i} and ${defaultSelection} at ${context}`
                 }
+            }
+            
+            if(option.osmTags !== undefined){
+                FilterConfig.validateSearch(TagUtils.Tag(option.osmTags), ctx)
             }
 
             return {question: question, osmTags: osmTags, fields, originalTagsSpec: option.osmTags};
@@ -92,6 +106,26 @@ export default class FilterConfig {
         
     }
 
+    private static validateSearch(osmTags: TagsFilter, ctx: string){
+    osmTags.visit(t => {
+            if (!(t instanceof RegexTag)) {
+                return;
+            }
+            if(typeof t.value == "string"){
+                return;
+            }
+
+            if(t.value.source == '^..*$' || t.value.source == '^[\\s\\S][\\s\\S]*$' /*Compiled regex with 'm'*/){
+                return
+            }
+
+            if(!t.value.ignoreCase) {
+                throw `At ${ctx}: The filter for key '${t.key}' uses a regex '${t.value}', but you should use a case invariant regex with ~i~ instead, as search should be case insensitive`
+            }
+
+        })
+    }
+    
     public initState(): UIEventSource<FilterState> {
 
         function reset(state: FilterState): string {
@@ -120,7 +154,7 @@ export default class FilterConfig {
             }))
 
             // We map the query parameter for this case
-            return qp.map(str => {
+            return qp.sync(str => {
                 const parsed = Number(str)
                 if (isNaN(parsed)) {
                     // Nope, not a correct number!
@@ -134,7 +168,7 @@ export default class FilterConfig {
         const option = this.options[0]
 
         if (option.fields.length > 0) {
-            return qp.map(str => {
+            return qp.sync(str => {
                 // There are variables in play!
                 // str should encode a json-hash
                 try {
@@ -169,7 +203,7 @@ export default class FilterConfig {
             currentFilter: option.osmTags,
             state: "true"
         }
-        return qp.map(
+        return qp.sync(
             str => {
                 // Only a single option exists here
                 if (str === "true") {

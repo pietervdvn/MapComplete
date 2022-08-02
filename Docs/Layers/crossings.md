@@ -12,25 +12,9 @@ Crossings for pedestrians and cyclists
 
 
 
-## Table of contents
-
-1. [crossings](#crossings)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [crossing-type](#crossing-type)
-    + [crossing-is-zebra](#crossing-is-zebra)
-    + [crossing-bicycle-allowed](#crossing-bicycle-allowed)
-    + [crossing-has-island](#crossing-has-island)
-    + [crossing-tactile](#crossing-tactile)
-    + [crossing-button](#crossing-button)
-    + [crossing-right-turn-through-red](#crossing-right-turn-through-red)
-    + [crossing-continue-through-red](#crossing-continue-through-red)
 
 
-
-
-
+  - This layer is shown at zoomlevel **17** and higher
   - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
   - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
@@ -44,10 +28,9 @@ Crossings for pedestrians and cyclists
 
 
   - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
+  - [kerbs_and_crossings](https://mapcomplete.osm.be/kerbs_and_crossings)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](../assets/layers/crossings/crossings.json)
 
 
 
@@ -63,6 +46,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtraffic_signals' target='_blank'>traffic_signals</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcrossing' target='_blank'>crossing</a>
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22highway%22%3D%22traffic_signals%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22crossing%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -70,7 +55,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -92,17 +79,20 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is **What kind of crossing is this?**
+The question is  What kind of crossing is this?
 
 
 
 
 
-  - **Crossing, without traffic lights** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled' target='_blank'>uncontrolled</a>
-  - **Crossing with traffic signals** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Dtraffic_signals' target='_blank'>traffic_signals</a>
-  - **Zebra crossing** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Dzebra' target='_blank'>zebra</a>_This option cannot be chosen as answer_
-  - **Crossing without crossing markings** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Dunmarked' target='_blank'>unmarked</a>
+  - Crossing, without traffic lights  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled' target='_blank'>uncontrolled</a>`
+  - Crossing with traffic signals  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Dtraffic_signals' target='_blank'>traffic_signals</a>`
+  - Zebra crossing  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Dzebra' target='_blank'>zebra</a>`
+  - This option cannot be chosen as answer
+  - Crossing without crossing markings  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Dunmarked' target='_blank'>unmarked</a>`
 
+
+Only visible if  `highway=crossing`  is shown
 
 
 
@@ -110,15 +100,17 @@ The question is **What kind of crossing is this?**
 
 
 
-The question is **Is this is a zebra crossing?**
+The question is  Is this is a zebra crossing?
 
 
 
 
 
-  - **This is a zebra crossing** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:crossing_ref' target='_blank'>crossing_ref</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing_ref%3Dzebra' target='_blank'>zebra</a>
-  - **This is not a zebra crossing** corresponds with 
+  - This is a zebra crossing  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing_ref' target='_blank'>crossing_ref</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing_ref%3Dzebra' target='_blank'>zebra</a>`
+  - This is not a zebra crossing  corresponds with  ``
 
+
+Only visible if  `crossing=uncontrolled`  is shown
 
 
 
@@ -126,15 +118,17 @@ The question is **Is this is a zebra crossing?**
 
 
 
-The question is **Is this crossing also for bicycles?**
+The question is  Is this crossing also for bicycles?
 
 
 
 
 
-  - **A cyclist can use this crossing** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
-  - **A cyclist can not use this crossing** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>
+  - A cyclist can use this crossing  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>`
+  - A cyclist can not use this crossing  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>`
 
+
+Only visible if  `highway=crossing`  is shown
 
 
 
@@ -142,15 +136,17 @@ The question is **Is this crossing also for bicycles?**
 
 
 
-The question is **Does this crossing have an island in the middle?**
+The question is  Does this crossing have an island in the middle?
 
 
 
 
 
-  - **This crossing has an island in the middle** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:crossing:island' target='_blank'>crossing:island</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing:island%3Dyes' target='_blank'>yes</a>
-  - **This crossing does not have an island in the middle** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:crossing:island' target='_blank'>crossing:island</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing:island%3Dno' target='_blank'>no</a>
+  - This crossing has an island in the middle  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing:island' target='_blank'>crossing:island</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing:island%3Dyes' target='_blank'>yes</a>`
+  - This crossing does not have an island in the middle  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing:island' target='_blank'>crossing:island</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing:island%3Dno' target='_blank'>no</a>`
 
+
+Only visible if  `highway=crossing`  is shown
 
 
 
@@ -158,16 +154,19 @@ The question is **Does this crossing have an island in the middle?**
 
 
 
-The question is **Does this crossing have tactile paving?**
+The question is  Does this crossing have tactile paving?
 
 
 
 
 
-  - **This crossing has tactile paving** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>
-  - **This crossing does not have tactile paving** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>
-  - **This crossing has tactile paving, but is not correct** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dincorrect' target='_blank'>incorrect</a>_This option cannot be chosen as answer_
+  - This crossing has tactile paving  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>`
+  - This crossing does not have tactile paving  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>`
+  - This crossing has tactile paving, but is not correct  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dincorrect' target='_blank'>incorrect</a>`
+  - This option cannot be chosen as answer
 
+
+Only visible if  `highway=crossing`  is shown
 
 
 
@@ -175,15 +174,17 @@ The question is **Does this crossing have tactile paving?**
 
 
 
-The question is **Does this traffic light have a button to request green light?**
+The question is  Does this traffic light have a button to request green light?
 
 
 
 
 
-  - **This traffic light has a button to request green light** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:button_operated' target='_blank'>button_operated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:button_operated%3Dyes' target='_blank'>yes</a>
-  - **This traffic light does not have a button to request green light** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:button_operated' target='_blank'>button_operated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:button_operated%3Dno' target='_blank'>no</a>
+  - This traffic light has a button to request green light  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:button_operated' target='_blank'>button_operated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:button_operated%3Dyes' target='_blank'>yes</a>`
+  - This traffic light does not have a button to request green light  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:button_operated' target='_blank'>button_operated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:button_operated%3Dno' target='_blank'>no</a>`
 
+
+Only visible if  `highway=traffic_signals|crossing=traffic_signals`  is shown
 
 
 
@@ -191,16 +192,18 @@ The question is **Does this traffic light have a button to request green light?*
 
 
 
-The question is **Can a cyclist turn right when the light is red?**
+The question is  Can a cyclist turn right when the light is red?
 
 
 
 
 
-  - **A cyclist can turn right if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B22.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes' target='_blank'>yes</a>
-  - **A cyclist can turn right if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes' target='_blank'>yes</a>
-  - **A cyclist can not turn right if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dno' target='_blank'>no</a>
+  - A cyclist can turn right if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes' target='_blank'>yes</a>`
+  - A cyclist can turn right if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes' target='_blank'>yes</a>`
+  - A cyclist can not turn right if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dno' target='_blank'>no</a>`
 
+
+Only visible if  `highway=traffic_signals`  is shown
 
 
 
@@ -208,15 +211,17 @@ The question is **Can a cyclist turn right when the light is red?**
 
 
 
-The question is **Can a cyclist go straight on when the light is red?**
+The question is  Can a cyclist go straight on when the light is red?
 
 
 
 
 
-  - **A cyclist can go straight on if the light is red <img src='./assets/layers/crossings/Belgian_road_sign_B23.svg' style='width: 3em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes' target='_blank'>yes</a>
-  - **A cyclist can go straight on if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes' target='_blank'>yes</a>
-  - **A cyclist can not go straight on if the light is red** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dno' target='_blank'>no</a>
- 
+  - A cyclist can go straight on if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes' target='_blank'>yes</a>`
+  - A cyclist can go straight on if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes' target='_blank'>yes</a>`
+  - A cyclist can not go straight on if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dno' target='_blank'>no</a>`
+
+
+Only visible if  `highway=traffic_signals`  is shown 
 
 This document is autogenerated from [assets/layers/crossings/crossings.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/crossings/crossings.json)

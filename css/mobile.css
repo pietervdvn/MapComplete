@@ -2,14 +2,42 @@
 Contains tweaks for small screens
 */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 769px) and (min-height: 700px) {
 
     .only-on-mobile {
         display: none !important;
     }
+
+    .desktop\:max-h-65vh {
+        max-height: 65vh;
+    }
+
 }
 
-@media only screen and (max-width: 768px), only screen and (max-height: 768px) {
+
+@media only screen and (min-height: 300px) and (min-width: 225px) {
+    .very-small-screen {
+        display: none !important;
+    }
+
+
+    .hidden-on-very-small-screen {
+    }
+
+}
+
+
+@media not screen and (min-height: 300px) and (min-width: 225px) {
+    .very-small-screen {
+    }
+
+    .hidden-on-very-small-screen {
+        display: none !important;
+    }
+
+}
+
+@media only screen and (max-width: 768px), only screen and (max-height: 700px) {
 
 
     .hidden-on-mobile {

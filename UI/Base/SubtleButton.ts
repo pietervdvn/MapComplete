@@ -3,45 +3,49 @@ import Combine from "./Combine";
 import BaseUIElement from "../BaseUIElement";
 import Link from "./Link";
 import Img from "./Img";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {UIElement} from "../UIElement";
+import {VariableUiElement} from "./VariableUIElement";
+import Lazy from "./Lazy";
+import Loading from "./Loading";
 
 
 export class SubtleButton extends UIElement {
     private readonly imageUrl: string | BaseUIElement;
     private readonly message: string | BaseUIElement;
-    private readonly linkTo: { url: string | UIEventSource<string>; newTab?: boolean };
+    private readonly options: { url?: string | Store<string>; newTab?: boolean ; imgSize?: string};
 
 
-    constructor(imageUrl: string | BaseUIElement, message: string | BaseUIElement, linkTo: { url: string | UIEventSource<string>, newTab?: boolean } = undefined) {
+    constructor(imageUrl: string | BaseUIElement, message: string | BaseUIElement, options: { 
+        url?: string | Store<string>, 
+        newTab?: boolean,
+        imgSize?: "h-11 w-11" | string
+    } = undefined) {
         super();
         this.imageUrl = imageUrl;
         this.message = message;
-        this.linkTo = linkTo;
+        this.options = options;
     }
 
     protected InnerRender(): string | BaseUIElement {
         const classes = "block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline";
-        const message = Translations.W(this.message);
+        const message = Translations.W(this.message)?.SetClass("block overflow-ellipsis no-images flex-shrink");
         let img;
+        const imgClasses = "block justify-center flex-none mr-4 " + (this.options?.imgSize ?? "h-11 w-11")
         if ((this.imageUrl ?? "") === "") {
             img = undefined;
         } else if (typeof (this.imageUrl) === "string") {
-            img = new Img(this.imageUrl)
+            img = new Img(this.imageUrl)?.SetClass(imgClasses)
         } else {
-            img = this.imageUrl;
+            img = this.imageUrl?.SetClass(imgClasses);
         }
-        const image = new Combine([img?.SetClass("block flex items-center justify-center h-11 w-11 flex-shrink0 mr-4")])
-            .SetClass("flex-shrink-0");
-
-        message?.SetClass("block overflow-ellipsis no-images")
-
-        const button = new Combine([
-            image,
+            const button = new Combine([
+            img,
             message
-        ]).SetClass("flex group w-full")
+         ]).SetClass("flex items-center group w-full")
 
-        if (this.linkTo == undefined) {
+        
+        if (this.options?.url == undefined) {
             this.SetClass(classes)
             return button
         }
@@ -49,11 +53,37 @@ export class SubtleButton extends UIElement {
 
         return new Link(
             button,
-            this.linkTo.url,
-            this.linkTo.newTab ?? false
+            this.options.url,
+            this.options.newTab ?? false
         ).SetClass(classes)
 
     }
 
+    public OnClickWithLoading(
+        loadingText: BaseUIElement | string,
+        action: () => Promise<void> ) : BaseUIElement{
+        const state = new UIEventSource<"idle" | "running">("idle")
+        const button = this;
+        
+        button.onClick(async() => {
+            state.setData("running")
+            try{    
+               await action()
+            }catch(e){
+                console.error(e)
+            }finally {
+                state.setData("idle")
+            }
+            
+        })
+        const loading = new Lazy(() => new Loading(loadingText) )
+        return new VariableUiElement(state.map(st => {
+            console.log("State is: ", st)
+            if(st === "idle"){
+                return button
+            }
+            return loading
+        }))
+    }
 
 }

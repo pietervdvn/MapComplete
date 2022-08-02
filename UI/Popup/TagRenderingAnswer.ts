@@ -2,7 +2,6 @@ import {UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import List from "../Base/List";
 import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import Combine from "../Base/Combine";
@@ -45,7 +44,7 @@ export default class TagRenderingAnswer extends VariableUiElement {
                 if(tr.icon === undefined){
                     return text
                 }
-                return new Combine([new Img(tr.icon).SetClass("w-6 max-h-6 pr-2"), text]).SetClass("flex")
+                return new Combine([new Img(tr.icon).SetClass("mapping-icon-"+(tr.iconClass ?? "small")), text]).SetClass("flex items-center")
             })
             if (valuesToRender.length === 1) {
                 return valuesToRender[0];

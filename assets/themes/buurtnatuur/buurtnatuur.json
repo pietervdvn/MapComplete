@@ -1,4 +1,5 @@
 {
+  "#dont-translate": "*",
   "id": "buurtnatuur",
   "title": {
     "nl": "Breng jouw buurtnatuur in kaart"
@@ -34,7 +35,12 @@
         "osmTags": {
           "or": [
             "leisure=nature_reserve",
-            "boundary=protected_area"
+            {
+              "and": [
+                "boundary=protected_area",
+                "protect_class!=22"
+              ]
+            }
           ]
         }
       },
@@ -78,7 +84,7 @@
             "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
           ],
           "title": {
-            "nl": "Natuurreservaat"
+            "nl": "een natuurreservaat"
           },
           "description": {
             "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt"
@@ -149,15 +155,7 @@
         "_overlapWithUpperLayers=Math.max(...feat.overlapWith('nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
         "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' :'no'"
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_tooMuchOverlap=yes",
-            "then": "no"
-          }
-        ]
-      },
+      "isShown": "_tooMuchOverlap!=yes",
       "title": {
         "render": {
           "nl": "Park"
@@ -198,7 +196,7 @@
             "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
           ],
           "title": {
-            "nl": "Park"
+            "nl": "een park"
           },
           "description": {
             "nl": "Voeg een ontbrekend park toe"
@@ -257,15 +255,7 @@
         "_overlapWithUpperLayers=Math.max(...feat.overlapWith('parks','nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
         "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' : 'no'"
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_tooMuchOverlap=yes",
-            "then": "no"
-          }
-        ]
-      },
+      "isShown": "_tooMuchOverlap!=yes",
       "title": {
         "render": {
           "nl": "Bos"
@@ -306,7 +296,7 @@
             "fixme=Toegevoegd met MapComplete, geometry nog uit te tekenen"
           ],
           "title": {
-            "nl": "Bos"
+            "nl": "een bos"
           },
           "description": {
             "nl": "Voeg een ontbrekend bos toe aan de kaart"
@@ -504,8 +494,9 @@
               ]
             },
             "then": {
-              "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
-            }
+              "nl": "Dit gebied wordt beheerd door Natuurpunt"
+            },
+            "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg"
           },
           {
             "if": {
@@ -514,8 +505,9 @@
               ]
             },
             "then": {
-              "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+              "nl": "Dit gebied wordt beheerd door {operator}"
             },
+            "icon": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
             "hideInAnswer": true
           },
           {
@@ -525,8 +517,9 @@
               ]
             },
             "then": {
-              "nl": "<img src=\"./assets/themes/buurtnatuur/ANB.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
-            }
+              "nl": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
+            },
+            "icon": "./assets/themes/buurtnatuur/ANB.jpg"
           },
           {
             "if": {
@@ -535,16 +528,9 @@
               ]
             },
             "then": "Beheer door een privépersoon",
-            "hideInAnswer": true
-          },
-          {
-            "if": {
-              "and": [
-                "operator:type=private",
-                "operator="
-              ]
-            },
-            "then": "Beheer door een privépersoon"
+            "addExtraTags": [
+              "operator="
+            ]
           }
         ],
         "condition": {

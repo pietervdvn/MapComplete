@@ -1,0 +1,102 @@
+{
+  "id": "indoors",
+  "name": {
+    "en": "indoors",
+    "de": "Innenräume",
+    "nl": "Binnenruimtes"
+  },
+  "description": {
+    "en": "Basic indoor mapping: shows room outlines",
+    "de": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
+    "nl": "Een basis voor indoor-navigatie: toont binnenruimtes"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "indoor=room",
+        "indoor=area",
+        "indoor=wall",
+        "indoor=door",
+        "indoor=level"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Indoor area {name}",
+      "de": "Innenbereich {name}",
+      "nl": "Binnenruimte {name}"
+    },
+    "mappings": [
+      {
+        "if": "indoor=room",
+        "then": "Indoor Room {name}"
+      },
+      {
+        "if": "indoor=area",
+        "then": "Indoor Area {name}"
+      },
+      {
+        "if": "indoor=wall",
+        "then": "Indoor Wall {name}"
+      },
+      {
+        "if": "indoor=corridor",
+        "then": "Indoor Corridor {name}"
+      },
+      {
+        "if": "indoor=door",
+        "then": "Indoor Door {name}"
+      },
+      {
+        "if": "indoor=level",
+        "then": "Indoor Level {name}"
+      }
+    ]
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images",
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the name of this room?"
+      },
+      "render": {
+        "en": "This room is named {name}"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "color": {
+        "render": "#d3d7d588"
+      },
+      "width": {
+        "render": "8"
+      },
+      "offset": {
+        "render": "-4"
+      },
+      "fill": "no"
+    },
+    {
+      "color": "#4f5551",
+      "fill": "no",
+      "width": "2"
+    },
+    {
+      "label": {
+        "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
+        "condition": "name~*"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

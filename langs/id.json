@@ -1,109 +1,228 @@
 {
-    "general": {
-        "questions": {
-            "phoneNumberOf": "Apakah nombor telepon {category} ini?",
-            "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "emailOf": "Apa alamat email {category}?"
-        },
-        "nameInlineQuestion": "Name {category} ini adalah $$$",
-        "pickLanguage": "Pilih bahasa: ",
-        "layerSelection": {
-            "title": "Pilih lapisan"
-        },
-        "backgroundMap": "Peta latar belakang",
-        "search": {
-            "searching": "Sdg mencari…"
-        },
-        "opening_hours": {
-            "ph_not_known": " ",
-            "ph_open": "buka",
-            "ph_closed": "tutup",
-            "open_24_7": "Dibuka sekitar jam",
-            "closed_permanently": "Ditutup sampai pemberitahuan lebih lanjut",
-            "openTill": "sampai",
-            "opensAt": "dari",
-            "closed_until": "Ditutup sampai {date}"
-        },
-        "noTagsSelected": "Tidak ada tag yang dipilih",
-        "getStartedNewAccount": " atau <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">membuat akun baru</a>",
-        "getStartedLogin": "Masuk dengan OpenStreetMap untuk memulai",
-        "sharescreen": {
-            "fsIncludeCurrentLocation": "Sertakan lokasi saat ini",
-            "fsIncludeCurrentLayers": "Sertakan pilihan lapisan saat ini",
-            "fsIncludeCurrentBackgroundMap": "Sertakan pilihan latar belakang saat ini <b>{name}</b>",
-            "fsGeolocation": "Aktifkan tombol 'geolocate-me' (hanya seluler)",
-            "fsAddNew": "Aktifkan tombol 'tambah POI baru'",
-            "fsLayers": "Aktifkan kontrol lapisan",
-            "fsWelcomeMessage": "Tampilkan popup pesan selamat datang dan tab terkait",
-            "fsSearch": "Aktifkan bilah pencarian",
-            "fsUserbadge": "Aktifkan tombol masuk",
-            "editThemeDescription": "Tambahkan atau ubah pertanyaan ke tema peta ini",
-            "editThisTheme": "Sunting tema ini",
-            "thanksForSharing": "Terima kasih telah berbagi!",
-            "copiedToClipboard": "Tautan disalin ke papan klip"
-        },
-        "goToInbox": "Buka kotak masuk",
-        "weekdays": {
-            "abbreviations": {
-                "sunday": "Min",
-                "saturday": "Sab",
-                "friday": "Jum",
-                "thursday": "Kam",
-                "wednesday": "Rab",
-                "tuesday": "Sel",
-                "monday": "Sen"
-            },
-            "sunday": "Minggu",
-            "saturday": "Sabtu",
-            "friday": "Jum'at",
-            "thursday": "Kamis",
-            "wednesday": "Rabu",
-            "tuesday": "Selasa",
-            "monday": "Senin"
-        },
-        "cancel": "Batal"
-    },
-    "image": {
-        "doDelete": "Buang gambar",
-        "ccb": "di bawah lisensi CC-BY",
-        "ccbs": "di bawah lisensi CC-BY-SA",
-        "cco": "di domain publik",
-        "willBePublished": "Gambarmu akan dipublikasikan ",
-        "pleaseLogin": "Silakan masuk untuk menambah gambar",
-        "uploadingMultiple": "Mengunggah {count} gambar…",
-        "uploadingPicture": "Mengunggah gambar Anda…",
-        "addPicture": "Tambahkan foto",
-        "isDeleted": "Dihapus",
-        "dontDelete": "Batal"
-    },
     "centerMessage": {
+        "loadingData": "Memuat data…",
         "ready": "Selesai!",
-        "loadingData": "Memuat data…"
+        "retrying": "Gagal memuat data. Mencoba lagi dalam {count} detik…",
+        "zoomIn": "Perbesar untuk melihat atau menyunting data"
+    },
+    "delete": {
+        "cancel": "Batal",
+        "cannotBeDeleted": "Fitur ini tidak dapat dihapus",
+        "delete": "Hapus",
+        "explanations": {
+            "hardDelete": "Fitur ini akan dihapus dari OpenStreetMap. Ini dapat dipulihkan oleh kontributor berpengalaman",
+            "selectReason": "Silakan, pilih mengapa fitur ini harus dihapus",
+            "softDelete": "Fitur ini akan diperbarui dan disembunyikan dari aplikasi ini. <span class=\"subtle\">{reason}</span>"
+        },
+        "isDeleted": "Fitur ini telah dihapus",
+        "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi.",
+        "loading": "Menginspeksi properti untuk memeriksa apa fitur ini dapat dihapus.",
+        "loginToDelete": "Anda harus masuk untuk menghapus fitur",
+        "notEnoughExperience": "Fitur ini dibuat oleh orang lain.",
+        "onlyEditedByLoggedInUser": "Fitur ini hanya disunting oleh Anda, Anda dapat menghapusnya dengan aman.",
+        "readMessages": "Anda memiliki pesan yang belum dibaca. Baca sebelum menghapus sebuah fitur - seseorang mungkin punya masukan",
+        "reasons": {
+            "disused": "Fitur ini tidak digunakan atau dibuang",
+            "duplicate": "Fitur ini adalah duplikat dari fitur lain",
+            "notFound": "Fitur ini tidak dapat ditemukan",
+            "test": "Ini adalah fitur pengujian - sebenarnya fitur tersebut tidak pernah ada"
+        },
+        "safeDelete": "Fitur ini dapat dihapus dengan aman.",
+        "useSomethingElse": "Gunakan penyunting OpenStreetMap lain untuk menghapusnya",
+        "whyDelete": "Mengapa fitur ini harus dihapus?"
     },
     "favourite": {
         "reload": "Muat ulang data"
     },
-    "reviews": {
-        "attribution": "Ulasan didukung oleh <a href=\"https://mangrove.reviews/\" target=\"_blank\"> Mangrove Reviews</a> dan tersedia di bawah <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
-        "tos": "Jika Anda membuat ulasan, Anda menyetujui <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">TOS dan kebijakan privasi Mangrove.reviews</a>",
-        "saved": "<span class=\"thanks\"> Ulasan disimpan. Terima kasih sudah berbagi! </span>",
-        "saving_review": "Menyimpan…",
-        "posting_as": "Posting sebagai",
-        "no_rating": "Tidak ada peringkat yang diberikan",
-        "write_a_comment": "Beri ulasan…",
-        "title_singular": "Satu ulasan",
-        "title": "{count} ulasan",
-        "plz_login": "Masuk untuk meninggalkan ulasan"
+    "general": {
+        "add": {
+            "addNew": "Tambahkan {category}",
+            "addNewMapLabel": "Klik di sini untuk menambahkan item baru",
+            "confirmButton": "Tambahkan {category}<br><div class=\"alert\">Penambahan Anda akan terlihat oleh semua orang</div>",
+            "confirmIntro": "<h3>Tambahkan {title}?</h3>Fitur yang Anda buat di sini akan <b>terlihat oleh semua orang</b>. Harap menambahkan sesuatu ke peta hanya jika ia benar-benar ada. Banyak aplikasi menggunakan data ini.",
+            "disableFiltersExplanation": "Beberapa fitur mungkin disembunyikan oleh penyaringan",
+            "hasBeenImported": "Fitur ini sudah diimpor",
+            "import": {
+                "hasBeenImported": "Objek ini sudah diimpor",
+                "officialThemesOnly": "Tombol impor dinonaktifkan untuk peta tidak resmi untuk menghindari ketidaksengajaan"
+            },
+            "intro": "Anda mengklik di suatu tempat di mana belum ada data yang dikenal.<br>",
+            "pleaseLogin": "Harap masuk untuk menambahkan fitur baru",
+            "stillLoading": "Data masih dimuat. Harap tunggu sebentar sebelum Anda menambahkan fitur baru.",
+            "title": "Tambahkan fitur baru?",
+            "warnVisibleForEveryone": "Penambahan Anda akan terlihat oleh semua orang",
+            "zoomInFurther": "Perbesar untuk menambahkan fitur.",
+            "zoomInMore": "Perbesar untuk mengimpor fitur ini"
+        },
+        "apply_button": {
+            "appliedOnAnotherObject": "Objek {id} akan menerima {tags}",
+            "isApplied": "Perubahan diterapkan"
+        },
+        "attribution": {
+            "attributionContent": "<p>Semua data disediakan oleh <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, digunakan kembali secara bebas di bawah <a href=\"https://osm.org/copyright\" target=\"_blank\">Open DataBase License</a>.</p>",
+            "attributionTitle": "Pemberitahuan atribusi",
+            "codeContributionsBy": "MapComplete telah dibangun oleh {contributors} dan <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} kontributor lainnya</a>",
+            "donate": "Dukung MapComplete secara finansial",
+            "editId": "Buka penyunting daring OpenStreetMap di sini",
+            "editJosm": "Sunting di sini dengan JOSM",
+            "followBridge": "Akun Mastodon dan Twitter dijembatani",
+            "followOnMastodon": "Ikuti MapComplete di Mastodon",
+            "followOnTwitter": "Ikuti MapComplete di Twitter",
+            "iconAttribution": {
+                "title": "Ikon yang digunakan"
+            },
+            "josmOpened": "JOSM dibuka",
+            "mapContributionsBy": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors}",
+            "mapContributionsByAndHidden": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors} dan {hiddenCount} kontributor lainnya"
+        },
+        "backgroundMap": "Peta latar belakang",
+        "cancel": "Batal",
+        "getStartedLogin": "Masuk dengan OpenStreetMap untuk memulai",
+        "getStartedNewAccount": " atau <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">membuat akun baru</a>",
+        "goToInbox": "Buka kotak masuk",
+        "layerSelection": {
+            "title": "Pilih lapisan"
+        },
+        "nameInlineQuestion": "Name {category} ini adalah $$$",
+        "noTagsSelected": "Tidak ada tag yang dipilih",
+        "opening_hours": {
+            "closed_permanently": "Ditutup sampai pemberitahuan lebih lanjut",
+            "closed_until": "Ditutup sampai {date}",
+            "openTill": "sampai",
+            "open_24_7": "Dibuka sekitar jam",
+            "opensAt": "dari",
+            "ph_closed": "tutup",
+            "ph_not_known": " ",
+            "ph_open": "buka"
+        },
+        "pickLanguage": "Pilih bahasa: ",
+        "questions": {
+            "emailOf": "Apa alamat email {category}?",
+            "phoneNumberOf": "Apakah nombor telepon {category} ini?",
+            "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>"
+        },
+        "search": {
+            "searching": "Sdg mencari…"
+        },
+        "sharescreen": {
+            "copiedToClipboard": "Tautan disalin ke papan klip",
+            "editThemeDescription": "Tambahkan atau ubah pertanyaan ke tema peta ini",
+            "editThisTheme": "Sunting tema ini",
+            "fsAddNew": "Aktifkan tombol 'tambah POI baru'",
+            "fsGeolocation": "Aktifkan tombol 'geolocate-me' (hanya seluler)",
+            "fsIncludeCurrentBackgroundMap": "Sertakan pilihan latar belakang saat ini <b>{name}</b>",
+            "fsIncludeCurrentLayers": "Sertakan pilihan lapisan saat ini",
+            "fsIncludeCurrentLocation": "Sertakan lokasi saat ini",
+            "fsLayers": "Aktifkan kontrol lapisan",
+            "fsSearch": "Aktifkan bilah pencarian",
+            "fsUserbadge": "Aktifkan tombol masuk",
+            "fsWelcomeMessage": "Tampilkan popup pesan selamat datang dan tab terkait",
+            "thanksForSharing": "Terima kasih telah berbagi!"
+        },
+        "weekdays": {
+            "abbreviations": {
+                "friday": "Jum",
+                "monday": "Sen",
+                "saturday": "Sab",
+                "sunday": "Min",
+                "thursday": "Kam",
+                "tuesday": "Sel",
+                "wednesday": "Rab"
+            },
+            "friday": "Jum'at",
+            "monday": "Senin",
+            "saturday": "Sabtu",
+            "sunday": "Minggu",
+            "thursday": "Kamis",
+            "tuesday": "Selasa",
+            "wednesday": "Rabu"
+        }
+    },
+    "image": {
+        "addPicture": "Tambahkan foto",
+        "ccb": "di bawah lisensi CC-BY",
+        "ccbs": "di bawah lisensi CC-BY-SA",
+        "cco": "di domain publik",
+        "doDelete": "Buang gambar",
+        "dontDelete": "Batal",
+        "isDeleted": "Dihapus",
+        "pleaseLogin": "Silakan masuk untuk menambah gambar",
+        "uploadingMultiple": "Mengunggah {count} gambar…",
+        "uploadingPicture": "Mengunggah gambar Anda…",
+        "willBePublished": "Gambarmu akan dipublikasikan "
     },
     "index": {
+        "intro": "MapComplete adalah penampil dan penyunting OpenStreetMap, yang menunjukkan informasi tentang fitur pada tema tertentu dan memungkinkan Anda untuk memperbaruinya.",
         "pickTheme": "Pilih tema di bawah ini untuk memulai.",
-        "intro": "MapComplete adalah penampil dan editor OpenStreetMap, yang menunjukkan informasi tentang tema tertentu.",
         "title": "Selamat datang di MapComplete"
     },
-    "split": {
-        "cancel": "Batal"
+    "notes": {
+        "addCommentAndClose": "Tambah komentar dan tutup",
+        "addCommentPlaceholder": "Tambahkan komentar...",
+        "anonymous": "Pengguna anonim",
+        "closeNote": "Tutup catatan",
+        "createNote": "Buat catatan baru",
+        "createNoteIntro": "Apakah ada yang salah atau hilang di peta? Buat catatan di sini. Nanti diperiksa oleh relawan.",
+        "createNoteTitle": "Buat catatan baru di sini",
+        "disableAllNoteFilters": "Nonaktifkan semua saringan",
+        "isClosed": "Catatan ini diselesaikan",
+        "isCreated": "Catatan Anda telah dibuat!",
+        "loginToAddComment": "Masuk untuk menambahkan komentar",
+        "loginToAddPicture": "Masuk untuk menambahkan gambar",
+        "loginToClose": "Masuk untuk menutup catatan ini",
+        "noteIsPublic": "Ini akan terlihat oleh semua orang",
+        "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan"
     },
-    "delete": {
-        "cancel": "Batal"
+    "reviews": {
+        "attribution": "Ulasan didukung oleh <a href=\"https://mangrove.reviews/\" target=\"_blank\"> Mangrove Reviews</a> dan tersedia di bawah <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
+        "no_rating": "Tidak ada peringkat yang diberikan",
+        "plz_login": "Masuk untuk meninggalkan ulasan",
+        "posting_as": "Posting sebagai",
+        "saved": "<span class=\"thanks\"> Ulasan disimpan. Terima kasih sudah berbagi! </span>",
+        "saving_review": "Menyimpan…",
+        "title": "{count} ulasan",
+        "title_singular": "Satu ulasan",
+        "tos": "Jika Anda membuat ulasan, Anda menyetujui <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">TOS dan kebijakan privasi Mangrove.reviews</a>",
+        "write_a_comment": "Beri ulasan…"
+    },
+    "split": {
+        "cancel": "Batal",
+        "splitTitle": "Pilih di peta tempat membelah jalan ini"
+    },
+    "translations": {
+        "allMissing": "Belum ada terjemahan",
+        "completeness": "Terjemahan untuk {theme} dalam {language} masih {percentage}%: {translated} string dari {total} diterjemahkan",
+        "isTranslator": "Mode terjemahan aktif karena nama pengguna Anda cocok dengan nama penerjemah sebelumnya",
+        "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari"
+    },
+    "validation": {
+        "date": {
+            "description": "Tanggal, dimulai dari tahun"
+        },
+        "direction": {
+            "description": "Orientasi"
+        },
+        "email": {
+            "description": "alamat email",
+            "feedback": "Ini bukan alamat email yang valid"
+        },
+        "float": {
+            "description": "nomor",
+            "feedback": "Ini bukan nomor"
+        },
+        "int": {
+            "description": "bilangan bulat"
+        },
+        "nat": {
+            "mustBePositive": "Angka ini harus positif",
+            "notANumber": "Masukkan nomor"
+        },
+        "url": {
+            "description": "tautan ke situs web",
+            "feedback": "Ini bukan alamat web yang valid"
+        },
+        "wikidata": {
+            "description": "Pengidentifikasi Wikidata"
+        }
     }
 }

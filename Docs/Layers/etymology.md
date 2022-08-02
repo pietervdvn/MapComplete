@@ -12,27 +12,9 @@ All objects which have an etymology known
 
 
 
-## Table of contents
-
-1. [etymology](#etymology)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [etymology-images-from-wikipedia](#etymology-images-from-wikipedia)
-    + [wikipedia-etymology](#wikipedia-etymology)
-    + [zoeken op inventaris onroerend erfgoed](#zoeken-op-inventaris-onroerend-erfgoed)
-    + [simple etymology](#simple-etymology)
-    + [questions](#questions)
-    + [street-name-sign-image](#street-name-sign-image)
-    + [minimap](#minimap)
-    + [etymology_multi_apply](#etymology_multi_apply)
-    + [wikipedia](#wikipedia)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **12** and higher
 
 
 
@@ -46,8 +28,6 @@ All objects which have an etymology known
   - [etymology](https://mapcomplete.osm.be/etymology)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](../assets/layers/etymology/etymology.json)
 
 
 
@@ -63,6 +43,8 @@ Elements must have the all of following tags to be shown on this layer:
   - name:etymology:wikidata~^..*$|name:etymology~^..*$
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22name%3Aetymology%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22name%3Aetymology%3Awikidata%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -70,7 +52,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -86,7 +70,7 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -96,10 +80,13 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is the Wikidata-item that this object is named after?**
+The question is  What is the Wikidata-item that this object is named after?
 
 This rendering asks information about the property  [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) 
-This is rendered with `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
+
+This is rendered with  <h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}
+
+
 
 
 
@@ -107,7 +94,7 @@ This is rendered with `<h3>Wikipedia article of the name giver</h3>{wikipedia(na
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -117,14 +104,17 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>**
+The question is  What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>
 
 This rendering asks information about the property  [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) 
-This is rendered with `Named after {name:etymology}`
+
+This is rendered with  Named after {name:etymology}
 
 
 
-  - **The origin of this name is unknown in all literature** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>
+
+
+  - The origin of this name is unknown in all literature  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>`
 
 
 
@@ -133,7 +123,7 @@ This is rendered with `Named after {name:etymology}`
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -143,7 +133,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -153,7 +143,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -163,7 +153,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -173,8 +163,10 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
- 
+
+
+Only visible if  `wikidata~^..*$`  is shown 
 
 This document is autogenerated from [assets/layers/etymology/etymology.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/etymology/etymology.json)

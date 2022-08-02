@@ -1,0 +1,225 @@
+{
+  "id": "maproulette",
+  "source": {
+    "geoJson": "https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}",
+    "geoJsonZoomLevel": 16,
+    "osmTags": "id~*"
+  },
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "./assets/layers/maproulette/logomark.svg",
+        "mappings": [
+          {
+            "if": "status=0",
+            "then": "pin:#959DFF"
+          },
+          {
+            "if": "status=1",
+            "then": "pin:#65D2DA"
+          },
+          {
+            "if": "status=2",
+            "then": "pin:#F7BB59"
+          },
+          {
+            "if": "status=3",
+            "then": "pin:#F7BB59"
+          },
+          {
+            "if": "status=4",
+            "then": "pin:#737373"
+          },
+          {
+            "if": "status=5",
+            "then": "pin:#CCB186"
+          },
+          {
+            "if": "status=6",
+            "then": "pin:#FF5E63"
+          },
+          {
+            "if": "status=9",
+            "then": "pin:#FF349C"
+          }
+        ]
+      },
+      "iconSize": "40,40,center"
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "status",
+      "render": "Current status: {status}",
+      "mappings": [
+        {
+          "if": "status=0",
+          "then": {
+            "en": "Task is created"
+          }
+        },
+        {
+          "if": "status=1",
+          "then": {
+            "en": "Task is fixed"
+          }
+        },
+        {
+          "if": "status=2",
+          "then": {
+            "en": "Task is a false positive"
+          }
+        },
+        {
+          "if": "status=3",
+          "then": {
+            "en": "Task is skipped"
+          }
+        },
+        {
+          "if": "status=4",
+          "then": {
+            "en": "Task is deleted"
+          }
+        },
+        {
+          "if": "status=5",
+          "then": {
+            "en": "Task is already fixed"
+          }
+        },
+        {
+          "if": "status=6",
+          "then": {
+            "en": "Task is marked as too hard"
+          }
+        },
+        {
+          "if": "status=9",
+          "then": {
+            "en": "Task is disabled"
+          }
+        }
+      ]
+    },
+    {
+      "id": "blurb",
+      "condition": "blurb~*",
+      "render": "{blurb}"
+    }
+  ],
+  "description": {
+    "en": "Layer showing all tasks in MapRoulette"
+  },
+  "minzoom": 15,
+  "name": {
+    "en": "MapRoulette Tasks"
+  },
+  "title": {
+    "render": {
+      "en": "MapRoulette Item: {parentName}"
+    }
+  },
+  "titleIcons": [
+    {
+      "id": "maproulette",
+      "render": "<a href='https://maproulette.org/challenge/{parentId}/task/{id}' target='_blank'><img src='./assets/layers/maproulette/logomark.svg'/></a>"
+    }
+  ],
+  "filter": [
+    {
+      "id": "status",
+      "options": [
+        {
+          "question": {
+            "en": "Show tasks with all statuses"
+          }
+        },
+        {
+          "question": {
+            "en": "Show tasks that are created"
+          },
+          "osmTags": "status=0"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are fixed"
+          },
+          "osmTags": "status=1"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are false positives"
+          },
+          "osmTags": "status=2"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are skipped"
+          },
+          "osmTags": "status=3"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are deleted"
+          },
+          "osmTags": "status=4"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are already fixed"
+          },
+          "osmTags": "status=5"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are marked as too hard"
+          },
+          "osmTags": "status=6"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are disabled"
+          },
+          "osmTags": "status=9"
+        }
+      ]
+    },
+    {
+      "id": "parent-name",
+      "options": [
+        {
+          "osmTags": "parentName~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Challenge name contains {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "parent-id",
+      "options": [
+        {
+          "osmTags": "parentId={search}",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Challenge ID matches {search}"
+          }
+        }
+      ]
+    }
+  ]
+}

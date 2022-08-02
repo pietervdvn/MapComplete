@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Open Artwork Map",
-    "description": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
+    "description": "An open map of statues, busts, graffitis and other artwork all over the world",
     "project_url": "https://mapcomplete.osm.be/artwork",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/artwork/artwork.svg",
@@ -106,11 +106,6 @@
     {
       "key": "wikidata",
       "description": "Layer 'Artworks' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Open Artwork Map')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Open Artwork Map has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

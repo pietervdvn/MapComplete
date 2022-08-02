@@ -3,6 +3,7 @@ import {BBox} from "./BBox";
 import togpx from "togpx"
 import Constants from "../Models/Constants";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import {AllGeoJSON, booleanWithin, Coord, Feature, Geometry, MultiPolygon, Polygon, Properties} from "@turf/turf";
 
 export class GeoOperations {
 
@@ -24,7 +25,11 @@ export class GeoOperations {
         return newFeature;
     }
 
-    static centerpointCoordinates(feature: any): [number, number] {
+    /**
+     * Returns [lon,lat] coordinates
+     * @param feature
+     */
+    static centerpointCoordinates(feature: AllGeoJSON): [number, number] {
         return <[number, number]>turf.center(feature).geometry.coordinates;
     }
 
@@ -50,6 +55,19 @@ export class GeoOperations {
      *
      * If 'feature' is a point, it will return every feature the point is embedded in. Overlap will be undefined
      *
+     * const polygon = {"type": "Feature","properties": {},"geometry": {"type": "Polygon","coordinates": [[[1.8017578124999998,50.401515322782366],[-3.1640625,46.255846818480315],[5.185546875,44.74673324024678],[1.8017578124999998,50.401515322782366]]]}};
+     * const point = {"type": "Feature", "properties": {}, "geometry": { "type": "Point", "coordinates": [2.274169921875, 46.76244305208004]}};
+     * const overlap = GeoOperations.calculateOverlap(point, [polygon]);
+     * overlap.length // => 1
+     * overlap[0].feat == polygon // => true
+     * const line = {"type": "Feature","properties": {},"geometry": {"type": "LineString","coordinates": [[3.779296875,48.777912755501845],[1.23046875,47.60616304386874]]}};
+     * const lineOverlap = GeoOperations.calculateOverlap(line, [polygon]);
+     * lineOverlap.length // => 1
+     * lineOverlap[0].overlap // => 156745.3293320278
+     * lineOverlap[0].feat == polygon // => true
+     * const line0 = {"type": "Feature","properties": {},"geometry": {"type": "LineString","coordinates": [[0.0439453125,47.31648293428332],[0.6591796875,46.77749276376827]]}};
+     * const overlap0 = GeoOperations.calculateOverlap(line0, [polygon]);
+     * overlap.length // => 1
      */
     static calculateOverlap(feature: any, otherFeatures: any[]): { feat: any, overlap: number }[] {
 
@@ -124,7 +142,10 @@ export class GeoOperations {
         return result;
     }
 
-    public static pointInPolygonCoordinates(x: number, y: number, coordinates: [number, number][][]) {
+    /**
+     * Helper function which does the heavy lifting for 'inside'
+     */
+    private static pointInPolygonCoordinates(x: number, y: number, coordinates: [number, number][][]) {
         const inside = GeoOperations.pointWithinRing(x, y, /*This is the outer ring of the polygon */coordinates[0])
         if (!inside) {
             return false;
@@ -138,6 +159,28 @@ export class GeoOperations {
         return true;
     }
 
+    /**
+     * Detect wether or not the given point is located in the feature
+     * 
+     * // Should work with a normal polygon
+     * const polygon = {"type": "Feature","properties": {},"geometry": {"type": "Polygon","coordinates": [[[1.8017578124999998,50.401515322782366],[-3.1640625,46.255846818480315],[5.185546875,44.74673324024678],[1.8017578124999998,50.401515322782366]]]}};
+     * GeoOperations.inside([3.779296875, 48.777912755501845], polygon) // => false
+     * GeoOperations.inside([1.23046875, 47.60616304386874], polygon) // => true
+     * 
+     * // should work with a multipolygon and detect holes
+     * const multiPolygon = {"type": "Feature", "properties": {},
+     *         "geometry": {
+     *             "type": "MultiPolygon",
+     *             "coordinates": [[
+     *                 [[1.8017578124999998,50.401515322782366],[-3.1640625,46.255846818480315],[5.185546875,44.74673324024678],[1.8017578124999998,50.401515322782366]],
+     *                 [[1.0107421875,48.821332549646634],[1.329345703125,48.25394114463431],[1.988525390625,48.71271258145237],[0.999755859375,48.86471476180277],[1.0107421875,48.821332549646634]]
+     *             ]]
+     *         }
+     *     };
+     * GeoOperations.inside([2.515869140625, 47.37603463349758], multiPolygon) // => true
+     * GeoOperations.inside([1.42822265625, 48.61838518688487], multiPolygon) // => false
+     * GeoOperations.inside([4.02099609375, 47.81315451752768], multiPolygon) // => false
+     */
     public static inside(pointCoordinate, feature): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
@@ -514,7 +557,10 @@ export class GeoOperations {
     /**
      * Removes points that do not contribute to the geometry from linestrings and the outer ring of polygons.
      * Returs a new copy of the feature
-     * @param feature
+     * 
+     * const feature = {"geometry": {"type": "Polygon","coordinates": [[[4.477944199999975,51.02783550000022],[4.477987899999996,51.027818800000034],[4.478004500000021,51.02783399999988],[4.478025499999962,51.02782489999994],[4.478079099999993,51.027873899999896],[4.47801040000006,51.027903799999955],[4.477964799999972,51.02785709999982],[4.477964699999964,51.02785690000006],[4.477944199999975,51.02783550000022]]]}}
+     * const copy = GeoOperations.removeOvernoding(feature)
+     * expect(copy.geometry.coordinates[0]).deep.equal([[4.477944199999975,51.02783550000022],[4.477987899999996,51.027818800000034],[4.478004500000021,51.02783399999988],[4.478025499999962,51.02782489999994],[4.478079099999993,51.027873899999896],[4.47801040000006,51.027903799999955],[4.477944199999975,51.02783550000022]])
      */
     static removeOvernoding(feature: any) {
         if (feature.geometry.type !== "LineString" && feature.geometry.type !== "Polygon") {
@@ -687,7 +733,45 @@ export class GeoOperations {
 
     }
 
+    /**
+     * Takes two points and finds the geographic bearing between them, i.e. the angle measured in degrees from the north line (0 degrees)
+     */
+    public static bearing(a: Coord, b: Coord): number {
+        return turf.bearing(a, b)
+    }
 
+    /**
+     * Returns 'true' if one feature contains the other feature
+     * 
+     * const pond: Feature<Polygon, any> = {
+     *       "type": "Feature",
+     *       "properties": {"natural":"water","water":"pond"},
+     *       "geometry": {
+     *         "type": "Polygon",
+     *         "coordinates": [[
+     *             [4.362924098968506,50.8435422298544 ],
+     *             [4.363272786140442,50.8435219059949 ],
+     *             [4.363213777542114,50.8437420806679 ],
+     *             [4.362924098968506,50.8435422298544 ]
+     *           ]]}}
+     * const park: Feature<Polygon, any> =   {
+     *       "type": "Feature",
+     *       "properties": {"leisure":"park"},
+     *       "geometry": {
+     *         "type": "Polygon",
+     *         "coordinates": [[
+     *            [ 4.36073541641235,50.84323737103244 ],
+     *            [ 4.36469435691833, 50.8423905305197 ],
+     *            [ 4.36659336090087, 50.8458997374786 ],
+     *            [ 4.36254858970642, 50.8468007074916 ],
+     *            [ 4.36073541641235, 50.8432373710324 ]
+     *           ]]}}
+     * GeoOperations.completelyWithin(pond, park) // => true
+     * GeoOperations.completelyWithin(park, pond) // => false
+     */
+    static completelyWithin(feature: Feature<Geometry, any>, possiblyEncloingFeature: Feature<Polygon | MultiPolygon, any>) : boolean {
+        return booleanWithin(feature, possiblyEncloingFeature);
+    }
 }
 
 

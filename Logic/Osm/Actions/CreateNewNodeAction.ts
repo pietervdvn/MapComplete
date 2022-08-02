@@ -51,22 +51,6 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         }
     }
 
-    public static registerIdRewrites(mappings: Map<string, string>) {
-        const toAdd: [string, number][] = []
-
-        this.previouslyCreatedPoints.forEach((oldId, key) => {
-            if (!mappings.has("node/" + oldId)) {
-                return;
-            }
-
-            const newId = Number(mappings.get("node/" + oldId).substr("node/".length))
-            toAdd.push([key, newId])
-        })
-        for (const [key, newId] of toAdd) {
-            CreateNewNodeAction.previouslyCreatedPoints.set(key, newId)
-        }
-    }
-
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
 
         if (this._reusePreviouslyCreatedPoint) {
@@ -88,7 +72,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         this.setElementId(id)
         for (const kv of this._basicTags) {
             if (typeof kv.value !== "string") {
-                throw "Invalid value: don't use a regex in a preset"
+                throw "Invalid value: don't use non-string value in a preset. The tag "+kv.key+"="+kv.value+" is not a string, the value is a "+typeof kv.value
             }
             properties[kv.key] = kv.value;
         }
@@ -109,19 +93,28 @@ export default class CreateNewNodeAction extends OsmCreateAction {
 
 
         // Project the point onto the way
-
+        console.log("Snapping a node onto an existing way...")
         const geojson = this._snapOnto.asGeoJson()
         const projected = GeoOperations.nearestPoint(geojson, [this._lon, this._lat])
+       const projectedCoor=     <[number, number]>projected.geometry.coordinates
         const index = projected.properties.index
         // We check that it isn't close to an already existing point
         let reusedPointId = undefined;
-        const prev = <[number, number]>geojson.geometry.coordinates[index]
-        if (GeoOperations.distanceBetween(prev, <[number, number]>projected.geometry.coordinates) < this._reusePointDistance) {
+        let outerring : [number,number][];
+        
+        if(geojson.geometry.type === "LineString"){
+           outerring = <[number, number][]> geojson.geometry.coordinates
+        }else if(geojson.geometry.type === "Polygon"){
+           outerring =<[number, number][]>  geojson.geometry.coordinates[0]
+        }
+        
+        const prev= outerring[index]
+        if (GeoOperations.distanceBetween(prev, projectedCoor) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index]
         }
-        const next = <[number, number]>geojson.geometry.coordinates[index + 1]
-        if (GeoOperations.distanceBetween(next, <[number, number]>projected.geometry.coordinates) < this._reusePointDistance) {
+        const next = outerring[index + 1]
+        if (GeoOperations.distanceBetween(next, projectedCoor) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index + 1]
         }
@@ -135,8 +128,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
             }]
         }
 
-        const locations = [...this._snapOnto.coordinates]
-        locations.forEach(coor => coor.reverse())
+        const locations = [...this._snapOnto.coordinates.map(([lat, lon]) =><[number,number]> [lon, lat])]
         const ids = [...this._snapOnto.nodes]
 
         locations.splice(index + 1, 0, [this._lon, this._lat])

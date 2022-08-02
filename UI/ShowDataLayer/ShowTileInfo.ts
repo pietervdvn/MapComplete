@@ -1,5 +1,5 @@
 import FeatureSource, {Tiled} from "../../Logic/FeatureSource/FeatureSource";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import ShowDataLayer from "./ShowDataLayer";
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
@@ -18,7 +18,7 @@ export default class ShowTileInfo {
 
 
         const source = options.source
-        const metaFeature: UIEventSource<any[]> =
+        const metaFeature: Store<{feature, freshness: Date}[]> =
             source.features.map(features => {
                 const bbox = source.bbox
                 const [z, x, y] = Tiles.tile_from_index(source.tileIndex)
@@ -47,16 +47,15 @@ export default class ShowTileInfo {
                     }
                 }
                 const center = GeoOperations.centerpoint(box)
-                return [box, center]
+                return [box, center].map(feature => ({feature, freshness: new Date()}))
             })
 
         new ShowDataLayer({
             layerToShow: ShowTileInfo.styling,
-            features: new StaticFeatureSource(metaFeature, false),
+            features: new StaticFeatureSource(metaFeature),
             leafletMap: options.leafletMap,
             doShowLayer: options.doShowLayer,
             state: State.state,
-            popup: undefined
         })
 
     }

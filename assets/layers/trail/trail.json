@@ -5,7 +5,8 @@
     "nl": "Wandeltochten",
     "ru": "Тропы",
     "de": "Wanderwege",
-    "fr": "Sentiers"
+    "fr": "Sentiers",
+    "ca": "Camins"
   },
   "minzoom": 12,
   "source": {
@@ -28,7 +29,8 @@
       "nl": "Wandeltocht",
       "ru": "Тропа",
       "de": "Wanderweg",
-      "fr": "Sentier"
+      "fr": "Sentier",
+      "ca": "Camí"
     },
     "mappings": [
       {
@@ -44,7 +46,8 @@
       "render": {
         "en": "The trail is {_length:km} kilometers long",
         "nl": "Deze wandeling is {_length:km} kilometer lang",
-        "de": "Der Wanderweg ist {_length:km} Kilometer lang"
+        "de": "Der Wanderweg ist {_length:km} Kilometer lang",
+        "fr": "Le sentier fait {_length:km} kilomètres de long"
       }
     },
     {
@@ -77,7 +80,11 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door Natuurpunt"
+            "nl": "Dit gebied wordt beheerd door Natuurpunt"
+          },
+          "icon": {
+            "path": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
+            "class": "small"
           }
         },
         {
@@ -87,9 +94,13 @@
             ]
           },
           "then": {
-            "nl": "<img src=\"./assets/themes/buurtnatuur/Natuurpunt.jpg\" style=\"width:1.5em\">Dit gebied wordt beheerd door {operator}"
+            "nl": "Dit gebied wordt beheerd door {operator}"
           },
-          "hideInAnswer": true
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
+            "class": "small"
+          }
         }
       ],
       "id": "Operator tag"
@@ -111,7 +122,8 @@
           "then": {
             "nl": "Blauwe wandeling",
             "en": "Blue trail",
-            "de": "Blauer Weg"
+            "de": "Blauer Weg",
+            "fr": "Sentier bleu"
           }
         },
         {
@@ -119,7 +131,8 @@
           "then": {
             "nl": "Rode wandeling",
             "en": "Red trail",
-            "de": "Roter Weg"
+            "de": "Roter Weg",
+            "fr": "Sentier rouge"
           }
         },
         {
@@ -127,7 +140,8 @@
           "then": {
             "nl": "Groene wandeling",
             "en": "Green trail",
-            "de": "Grüner Weg"
+            "de": "Grüner Weg",
+            "fr": "Sentier vert"
           }
         },
         {
@@ -135,7 +149,8 @@
           "then": {
             "nl": "Gele wandeling",
             "en": "Yellow trail",
-            "de": "Gelber Weg"
+            "de": "Gelber Weg",
+            "fr": "Sentier jaune"
           }
         }
       ],

@@ -51,11 +51,6 @@
     {
       "key": "start_date",
       "description": "Layer 'Ghost bikes' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Ghost bikes')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Ghost bikes has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

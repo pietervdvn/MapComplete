@@ -4,6 +4,9 @@ import Title from "./Base/Title";
 import List from "./Base/List";
 import Translations from "./i18n/Translations";
 import {QueryParameters} from "../Logic/Web/QueryParameters";
+import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import {DefaultGuiState} from "./DefaultGuiState";
 
 export default class QueryParameterDocumentation {
 
@@ -24,17 +27,50 @@ export default class QueryParameterDocumentation {
         "Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case."
     ])
 
+    public static UrlParamDocs(): Map<string, string> {
+        const dummyLayout = new LayoutConfig({
+            id: "&gt;theme&lt;",
+            maintainer: "pietervdvn",
+            version: "0",
+            title: {en: "<theme>"},
+            description: "A theme to generate docs with",
+            socialImage: "./assets/SocialImage.png",
+            startLat: 0,
+            startLon: 0,
+            startZoom: 0,
+            icon: undefined,
+            layers: [
+                {
+                    name: "<layer>",
+                    id: "&lt;layer&gt;",
+                    source: {
+                        osmTags: "id~*"
+                    },
+                    mapRendering: null,
+                }
+            ]
+
+        })
+        new DefaultGuiState(); // Init a featureSwitchState to init all the parameters
+        new FeatureSwitchState(dummyLayout)
+
+        QueryParameters.GetQueryParameter("layer-&lt;layer-id&gt;", "true", "Wether or not the layer with id <layer-id> is shown")
+        return QueryParameters.documentation
+    }
+
     public static GenerateQueryParameterDocs(): BaseUIElement {
+
+
         const docs: (string | BaseUIElement)[] = [...QueryParameterDocumentation.QueryParamDocsIntro];
-        for (const key in QueryParameters.documentation) {
+        this.UrlParamDocs().forEach((value, key) => {
             const c = new Combine([
                 new Title(key, 2),
-                QueryParameters.documentation[key],
+                value,
                 QueryParameters.defaults[key] === undefined ? "No default value set" : `The default value is _${QueryParameters.defaults[key]}_`
 
             ])
             docs.push(c)
-        }
+        })
         return new Combine(docs).SetClass("flex flex-col")
     }
 }

@@ -1,12 +1,18 @@
 import ScriptUtils from "./ScriptUtils";
 import {readFileSync, writeFileSync} from "fs";
 
+/**
+ * Extracts the data from the scheme file and writes them in a flatter structure
+ */
 
-interface JsonSchema {
+export type JsonSchemaType = string | {$ref: string, description: string} | {type: string} | JsonSchemaType[]
+
+export interface JsonSchema {
     description?: string,
-    type?: string,
+    type?: JsonSchemaType,
     properties?: any,
-    items?: JsonSchema | JsonSchema[],
+    items?: JsonSchema,
+    allOf?: JsonSchema[],
     anyOf: JsonSchema[],
     enum: JsonSchema[],
     "$ref": string
@@ -15,15 +21,16 @@ interface JsonSchema {
 function WalkScheme<T>(
     onEach: (schemePart: JsonSchema) => T,
     scheme: JsonSchema,
-    registerSchemePath = false,
     fullScheme: JsonSchema & { definitions?: any } = undefined,
     path: string[] = [],
     isHandlingReference = []
 ): { path: string[], t: T }[] {
+
     const results: { path: string[], t: T } [] = []
     if (scheme === undefined) {
         return []
     }
+
     if (scheme["$ref"] !== undefined) {
         const ref = scheme["$ref"]
         const prefix = "#/definitions/"
@@ -35,70 +42,50 @@ function WalkScheme<T>(
             return;
         }
         const loadedScheme = fullScheme.definitions[definitionName]
-        return WalkScheme(onEach, loadedScheme, registerSchemePath, fullScheme, path, [...isHandlingReference, definitionName]);
+        return WalkScheme(onEach, loadedScheme, fullScheme, path, [...isHandlingReference, definitionName]);
     }
 
     fullScheme = fullScheme ?? scheme
     var t = onEach(scheme)
     if (t !== undefined) {
         results.push({
-            path: [...path],
+            path,
             t
         })
     }
-    
-    
-    function walk(v: JsonSchema, pathPart: string) {
+
+
+    function walk(v: JsonSchema) {
         if (v === undefined) {
             return
         }
-        if (registerSchemePath) {
-            path.push("" + pathPart)
-        }
-        results.push(...WalkScheme(onEach, v, registerSchemePath, fullScheme, path, isHandlingReference))
-        if (registerSchemePath) {
-            path.pop()
-        }
+        results.push(...WalkScheme(onEach, v, fullScheme, path, isHandlingReference))
     }
 
-    function walkEach(scheme: JsonSchema[], pathPart: string) {
+    function walkEach(scheme: JsonSchema[]) {
         if (scheme === undefined) {
             return
         }
-        if (registerSchemePath) {
-            path.push("" + pathPart)
-        }
-        scheme.forEach((v, i) => walk(v, "" + i))
-        if (registerSchemePath) {
-            path.pop()
-        }
+
+        scheme.forEach(v => walk(v))
+
     }
 
-  
 
     {
-        walkEach(scheme.enum, "enum")
-        walkEach(scheme.anyOf, "anyOf")
-        if (scheme.items !== undefined) {
+        walkEach(scheme.enum)
+        walkEach(scheme.anyOf)
+        walkEach(scheme.allOf)
 
-            if (scheme.items["forEach"] !== undefined) {
-                walkEach(<any>scheme.items, "items")
-            } else {
-                walk(<any>scheme.items, "items")
-            }
+        if (Array.isArray(scheme.items)) {
+            walkEach(<any>scheme.items)
+        } else {
+            walk(<any>scheme.items)
         }
 
-        if (registerSchemePath) {
-            path.push("properties")
-        }
         for (const key in scheme.properties) {
             const prop = scheme.properties[key]
-            path.push(key)
-            results.push(...WalkScheme(onEach, prop, registerSchemePath, fullScheme, path, isHandlingReference))
-            path.pop()
-        }
-        if (registerSchemePath) {
-            path.pop()
+            results.push(...WalkScheme(onEach, prop, fullScheme, [...path, key], isHandlingReference))
         }
     }
 
@@ -114,14 +101,16 @@ function extractMeta(typename: string, path: string) {
         const typeHint = schemePart.description.split("\n")
             .find(line => line.trim().toLocaleLowerCase().startsWith("type:"))
             ?.substr("type:".length)?.trim()
-        const type = schemePart.type ?? schemePart.anyOf;
-        return {typeHint, type}
+        const type = schemePart.items?.anyOf ?? schemePart.type ?? schemePart.anyOf;
+        return {typeHint, type, description: schemePart.description}
     }, themeSchema)
 
-    writeFileSync("./assets/" + path + ".json", JSON.stringify(withTypes.map(({
-                                                                                  path,
-                                                                                  t
-                                                                              }) => ({path, ...t})), null, "  "))
+    const paths = withTypes.map(({
+                                     path,
+                                     t
+                                 }) => ({path, ...t}))
+    writeFileSync("./assets/" + path + ".json", JSON.stringify(paths, null, "  "))
+    console.log("Written meta to ./assets/" + path)
 }
 
 
@@ -138,7 +127,6 @@ function main() {
 
         for (const key in parsed.definitions) {
             const def = parsed.definitions[key]
-            console.log("Patching ", key)
             if (def.type === "object") {
                 def["additionalProperties"] = false
             }
@@ -148,6 +136,7 @@ function main() {
 
     extractMeta("LayoutConfigJson", "layoutconfigmeta")
     extractMeta("TagRenderingConfigJson", "tagrenderingconfigmeta")
+    extractMeta("QuestionableTagRenderingConfigJson", "questionabletagrenderingconfigmeta")
 
 }
 

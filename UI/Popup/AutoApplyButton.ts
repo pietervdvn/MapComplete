@@ -1,7 +1,7 @@
 import {SpecialVisualization} from "../SpecialVisualizations";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 import BaseUIElement from "../BaseUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Stores, UIEventSource} from "../../Logic/UIEventSource";
 import {DefaultGuiState} from "../DefaultGuiState";
 import {SubtleButton} from "../Base/SubtleButton";
 import Img from "../Base/Img";
@@ -23,6 +23,7 @@ import {UIElement} from "../UIElement";
 import FilteredLayer from "../../Models/FilteredLayer";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import Lazy from "../Base/Lazy";
+import List from "../Base/List";
 
 export interface AutoAction extends SpecialVisualization {
     supportsAutoAction: boolean
@@ -96,9 +97,8 @@ class ApplyButton extends UIElement {
 
         new ShowDataLayer({
             leafletMap: previewMap.leafletMap,
-            popup: undefined,
             zoomToFeatures: true,
-            features: new StaticFeatureSource(features, false),
+            features: StaticFeatureSource.fromGeojson(features),
             state: this.state,
             layerToShow: this.layer.layerDef,
         })
@@ -155,24 +155,28 @@ class ApplyButton extends UIElement {
 }
 
 export default class AutoApplyButton implements SpecialVisualization {
-    public readonly docs: string;
+    public readonly docs: BaseUIElement;
     public readonly funcName: string = "auto_apply";
-    public readonly args: { name: string; defaultValue?: string; doc: string }[] = [
+    public readonly args: { name: string; defaultValue?: string; doc: string, required?: boolean }[] = [
         {
             name: "target_layer",
-            doc: "The layer that the target features will reside in"
+            doc: "The layer that the target features will reside in",
+            required: true
         },
         {
             name: "target_feature_ids",
-            doc: "The key, of which the value contains a list of ids"
+            doc: "The key, of which the value contains a list of ids",
+            required: true
         },
         {
             name: "tag_rendering_id",
-            doc: "The ID of the tagRendering containing the autoAction. This tagrendering will be calculated. The embedded actions will be executed"
+            doc: "The ID of the tagRendering containing the autoAction. This tagrendering will be calculated. The embedded actions will be executed",
+            required: true
         },
         {
             name: "text",
-            doc: "The text to show on the button"
+            doc: "The text to show on the button",
+            required: true
         },
         {
             name: "icon",
@@ -186,14 +190,17 @@ export default class AutoApplyButton implements SpecialVisualization {
     }
 
     private static generateDocs(supportedActions: string[]) {
-        return [
-            "A button to run many actions for many features at once.\n",
-            "To effectively use this button, you'll need some ingredients:\n" +
-            "- A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: " + supportedActions.join(", "),
-            "- A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the [current_view](./BuiltinLayers.md#current_view)",
-            "- Then, use a calculated tag on the host feature to determine the overlapping object ids",
-            "- At last, add this component"
-        ].join("\n")
+        return new Combine([
+            "A button to run many actions for many features at once.",
+            "To effectively use this button, you'll need some ingredients:",
+            new List([
+                "A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: " + supportedActions.join(", "),
+                "A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer ", new Link("current_view","./BuiltinLayers.md#current_view"),
+                "Then, use a calculated tag on the host feature to determine the overlapping object ids",
+                "At last, add this component"
+            ]),
+           
+        ])
     }
 
     constr(state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState): BaseUIElement {
@@ -215,7 +222,7 @@ export default class AutoApplyButton implements SpecialVisualization {
             return new Lazy(() => {
                 const to_parse = new UIEventSource(undefined)
                 // Very ugly hack: read the value every 500ms
-                UIEventSource.Chronic(500, () => to_parse.data === undefined).addCallback(() => {
+                Stores.Chronic(500, () => to_parse.data === undefined).addCallback(() => {
                     const applicable = tagSource.data[argument[1]]
                     to_parse.setData(applicable)
                 })

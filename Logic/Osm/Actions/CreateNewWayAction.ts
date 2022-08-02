@@ -33,7 +33,7 @@ export default class CreateNewWayAction extends OsmCreateAction {
                 We filter those here, as the CreateWayWithPointReuseAction delegates the actual creation to here.
                 Filtering here also prevents similar bugs in other actions
              */
-            if(this.coordinates.length > 0 && this.coordinates[this.coordinates.length - 1].nodeId === coordinate.nodeId){
+            if(this.coordinates.length > 0 && coordinate.nodeId !== undefined && this.coordinates[this.coordinates.length - 1].nodeId === coordinate.nodeId){
                 // This is a duplicate id
                 console.warn("Skipping a node in createWay to avoid a duplicate node:", coordinate,"\nThe previous coordinates are: ", this.coordinates)
                 continue

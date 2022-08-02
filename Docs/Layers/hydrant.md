@@ -12,22 +12,9 @@ Map layer to show fire hydrants.
 
 
 
-## Table of contents
-
-1. [hydrant](#hydrant)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [hydrant-color](#hydrant-color)
-    + [hydrant-type](#hydrant-type)
-    + [hydrant-state](#hydrant-state)
-    + [images](#images)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **14** and higher
 
 
 
@@ -41,8 +28,6 @@ Map layer to show fire hydrants.
   - [hailhydrant](https://mapcomplete.osm.be/hailhydrant)
   - [personal](https://mapcomplete.osm.be/personal)
 
-
-[Go to the source code](../assets/layers/hydrant/hydrant.json)
 
 
 
@@ -58,6 +43,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22emergency%22%3D%22fire_hydrant%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -65,7 +52,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -82,16 +71,20 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is **What color is the hydrant?**
+The question is  What color is the hydrant?
 
 This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
-This is rendered with `The hydrant color is {colour}`
+
+This is rendered with  The hydrant color is {colour}
 
 
 
-  - **The hydrant color is unknown.** corresponds with _This option cannot be chosen as answer_
-  - **The hydrant color is yellow.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
-  - **The hydrant color is red.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
+
+
+  - The hydrant color is unknown.  corresponds with  ``
+  - This option cannot be chosen as answer
+  - The hydrant color is yellow.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>`
+  - The hydrant color is red.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>`
 
 
 
@@ -100,18 +93,22 @@ This is rendered with `The hydrant color is {colour}`
 
 
 
-The question is **What type of hydrant is it?**
+The question is  What type of hydrant is it?
 
 This rendering asks information about the property  [fire_hydrant:type](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type) 
-This is rendered with ` Hydrant type: {fire_hydrant:type}`
+
+This is rendered with   Hydrant type: {fire_hydrant:type}
 
 
 
-  - **The hydrant type is unknown.** corresponds with _This option cannot be chosen as answer_
-  - **<img style="width:15px" src="./assets/themes/hailhydrant/hydrant_pillar.svg" /> Pillar type.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar' target='_blank'>pillar</a>
-  - **<img style="width:15px" src="./assets/themes/hailhydrant/hydrant_unknown.svg" /> Pipe type.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe' target='_blank'>pipe</a>
-  - **<img style="width:15px" src="./assets/themes/hailhydrant/hydrant_unknown.svg" /> Wall type.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall' target='_blank'>wall</a>
-  - **<img style="width:15px" src="./assets/themes/hailhydrant/hydrant_underground.svg" /> Underground type.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground' target='_blank'>underground</a>
+
+
+  - The hydrant type is unknown.  corresponds with  ``
+  - This option cannot be chosen as answer
+  - Pillar type.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar' target='_blank'>pillar</a>`
+  - Pipe type.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe' target='_blank'>pipe</a>`
+  - Wall type.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall' target='_blank'>wall</a>`
+  - Underground type.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground' target='_blank'>underground</a>`
 
 
 
@@ -120,15 +117,15 @@ This is rendered with ` Hydrant type: {fire_hydrant:type}`
 
 
 
-The question is **Is this hydrant still working?**
+The question is  Is this hydrant still working?
 
 
 
 
 
-  - **The hydrant is (fully or partially) working** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
-  - **The hydrant is unavailable** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:disused:emergency' target='_blank'>disused:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
-  - **The hydrant has been removed** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:removed:emergency' target='_blank'>removed:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:removed:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
+  - The hydrant is (fully or partially) working  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>`
+  - The hydrant is unavailable  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:disused:emergency' target='_blank'>disused:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>`
+  - The hydrant has been removed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:removed:emergency' target='_blank'>removed:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:removed:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>`
 
 
 
@@ -137,7 +134,9 @@ The question is **Is this hydrant still working?**
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
  
 

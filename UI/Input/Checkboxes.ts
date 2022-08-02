@@ -2,9 +2,25 @@ import {InputElement} from "./InputElement";
 import {UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
 import BaseUIElement from "../BaseUIElement";
+import InputElementMap from "./InputElementMap";
+
+export class CheckBox extends InputElementMap<number[], boolean> {
+    constructor(el: BaseUIElement , defaultValue?: boolean) {
+        super(
+            new CheckBoxes([el]),
+            (x0, x1) => x0 === x1,
+            t => t.length > 0,
+            x => x ? [0] : [],
+        );
+        if(defaultValue !== undefined){
+            this.GetValue().setData(defaultValue)
+        }
+    }
+}
 
 /**
- * Supports multi-input
+ * A list of individual checkboxes
+ * The value will contain the indexes of the selected checkboxes
  */
 export default class CheckBoxes extends InputElement<number[]> {
     private static _nextId = 0;
@@ -71,9 +87,7 @@ export default class CheckBoxes extends InputElement<number[]> {
             formTag.appendChild(wrapper);
 
             value.addCallbackAndRunD((selectedValues) => {
-                if (selectedValues.indexOf(i) >= 0) {
-                    input.checked = true;
-                }
+                input.checked = selectedValues.indexOf(i) >= 0;
 
                 if (input.checked) {
                     wrapper.classList.remove("border-gray-400");

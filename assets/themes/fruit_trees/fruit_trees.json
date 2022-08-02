@@ -16,7 +16,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 2,
-  "socialImage": "",
   "hideFromOverview": true,
   "layers": [
     {
@@ -47,7 +46,7 @@
             "fixme=Added with mapcomplete - geometry still to draw"
           ],
           "title": {
-            "nl": "Boomgaard"
+            "nl": "een boomgaard"
           },
           "description": {
             "nl": "Voeg een boomgaard toe (als punt - omtrek nog te tekenen)"
@@ -158,7 +157,7 @@
             "natural=tree"
           ],
           "title": {
-            "nl": "Boom"
+            "nl": "een boom"
           },
           "description": {
             "nl": "Voeg hier een boom toe"

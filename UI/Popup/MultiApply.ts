@@ -1,4 +1,4 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import Combine from "../Base/Combine";
 import {SubtleButton} from "../Base/SubtleButton";
@@ -16,12 +16,12 @@ import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 
 
 export interface MultiApplyParams {
-    featureIds: UIEventSource<string[]>,
+    featureIds: Store<string[]>,
     keysToApply: string[],
     text: string,
     autoapply: boolean,
     overwrite: boolean,
-    tagsSource: UIEventSource<any>,
+    tagsSource: Store<any>,
     state: {
         changes: Changes,
         allElements: ElementStorage,
@@ -121,7 +121,7 @@ export default class MultiApply extends Toggle {
         const p = params
         const t = Translations.t.multi_apply
 
-
+        
         const featureId = p.tagsSource.data.id
 
         if (featureId === undefined) {
@@ -145,7 +145,7 @@ export default class MultiApply extends Toggle {
         }
 
 
-        const isShown: UIEventSource<boolean> = p.state.osmConnection.isLoggedIn.map(loggedIn => {
+        const isShown: Store<boolean> = p.state.osmConnection.isLoggedIn.map(loggedIn => {
             return loggedIn && p.featureIds.data.length > 0
         }, [p.featureIds])
         super(new Combine(elems), undefined, isShown);

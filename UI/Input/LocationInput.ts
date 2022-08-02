@@ -1,6 +1,6 @@
-import {InputElement} from "./InputElement";
+import {ReadonlyInputElement} from "./InputElement";
 import Loc from "../../Models/Loc";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Minimap, {MinimapObj} from "../Base/Minimap";
 import BaseLayer from "../../Models/BaseLayer";
 import Combine from "../Base/Combine";
@@ -17,11 +17,10 @@ import BaseUIElement from "../BaseUIElement";
 import Toggle from "./Toggle";
 import * as matchpoint from "../../assets/layers/matchpoint/matchpoint.json"
 
-export default class LocationInput extends InputElement<Loc> implements MinimapObj {
+export default class LocationInput extends BaseUIElement implements ReadonlyInputElement<Loc>, MinimapObj {
 
     private static readonly matchLayer = new LayerConfig(matchpoint, "LocationInput.matchpoint", true)
 
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
     public readonly snappedOnto: UIEventSource<any> = new UIEventSource<any>(undefined)
     public readonly _matching_layer: LayerConfig;
     public readonly leafletMap: UIEventSource<any>
@@ -33,9 +32,9 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
      * The features to which the input should be snapped
      * @private
      */
-    private readonly _snapTo: UIEventSource<{ feature: any }[]>
-    private readonly _value: UIEventSource<Loc>
-    private readonly _snappedPoint: UIEventSource<any>
+    private readonly _snapTo: Store<{ feature: any }[]>
+    private readonly _value: Store<Loc>
+    private readonly _snappedPoint: Store<any>
     private readonly _maxSnapDistance: number
     private readonly _snappedPointTags: any;
     private readonly _bounds: UIEventSource<BBox>;
@@ -151,7 +150,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
         this.location = this.map.location;
     }
 
-    GetValue(): UIEventSource<Loc> {
+    GetValue(): Store<Loc> {
         return this._value;
     }
 
@@ -188,8 +187,7 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                 // Show the lines to snap to
                 console.log("Constructing the snap-to layer", this._snapTo)
                 new ShowDataMultiLayer({
-                        features: new StaticFeatureSource(this._snapTo, true),
-                        popup: undefined,
+                        features: StaticFeatureSource.fromDateless(this._snapTo),
                         zoomToFeatures: false,
                         leafletMap: this.map.leafletMap,
                         layers: State.state.filteredLayers
@@ -202,9 +200,10 @@ export default class LocationInput extends InputElement<Loc> implements MinimapO
                     }
                     return [{feature: loc}];
                 })
+                console.log("Constructing the match layer", matchPoint)
+
                 new ShowDataLayer({
-                    features: new StaticFeatureSource(matchPoint, true),
-                    popup: undefined,
+                    features: StaticFeatureSource.fromDateless(matchPoint),
                     zoomToFeatures: false,
                     leafletMap: this.map.leafletMap,
                     layerToShow: this._matching_layer,

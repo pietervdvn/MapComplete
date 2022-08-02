@@ -2,7 +2,7 @@
   "id": "bench_at_pt",
   "name": {
     "en": "Benches at public transport stops",
-    "de": "Sitzbänke bei Haltestellen",
+    "de": "Sitzbänke an Haltestellen",
     "fr": "Bancs des arrêts de transport en commun",
     "nl": "Zitbanken aan bushaltes",
     "es": "Bancos en una parada de transporte público",
@@ -14,7 +14,8 @@
     "zh_Hant": "大眾運輸站點的長椅",
     "pt_BR": "Bancos em pontos de transporte público",
     "pl": "Ławki na przystankach komunikacji miejskiej",
-    "pt": "Bancos em pontos de transporte público"
+    "pt": "Bancos em pontos de transporte público",
+    "da": "Bænke ved stoppesteder for offentlig transport"
   },
   "minzoom": 14,
   "source": {
@@ -42,7 +43,9 @@
       "pt_BR": "Banco",
       "fi": "Penkki",
       "pl": "Ławka",
-      "pt": "Banco"
+      "pt": "Banco",
+      "ca": "Banc",
+      "da": "Bænk"
     },
     "mappings": [
       {
@@ -65,7 +68,9 @@
           "zh_Hant": "大眾運輸站點的長椅",
           "pt_BR": "Banco em ponto de transporte público",
           "pl": "Ławka na przystanku komunikacji miejskiej",
-          "pt": "Banco em ponto de transporte público"
+          "pt": "Banco em ponto de transporte público",
+          "es": "Banco en una parada de transporte público",
+          "da": "Bænk ved offentlig stoppested"
         }
       },
       {
@@ -85,7 +90,8 @@
           "ru": "Скамейка в укрытии",
           "zh_Hant": "涼亭內的長椅",
           "pt_BR": "Banco em abrigo",
-          "pt": "Banco em abrigo"
+          "pt": "Banco em abrigo",
+          "es": "Banco en marquesina"
         }
       }
     ]
@@ -109,7 +115,9 @@
         "pl": "{name}",
         "pt": "{name}",
         "eo": "{name}",
-        "es": "{name}"
+        "es": "{name}",
+        "ca": "{name}",
+        "da": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -122,7 +130,9 @@
         "en": "What kind of bench is this?",
         "nl": "Wat voor soort bank is dit?",
         "de": "Was ist das für eine Bank?",
-        "es": "¿Qué tipo de banco es este?"
+        "es": "¿Qué tipo de banco es este?",
+        "fr": "Quel type de banc est-ce ?",
+        "da": "Hvilken slags bænk er dette?"
       },
       "mappings": [
         {
@@ -131,20 +141,24 @@
             "en": "There is a normal, sit-down bench here",
             "fr": "Il y a un banc normal pour s'asseoir ici",
             "de": "Hier gibt es eine normale Sitzbank",
-            "nl": "Er is hier een normale zitbank"
+            "nl": "Er is hier een normale zitbank",
+            "da": "Der er en normal siddebænk her",
+            "es": "Hay un banco normal aquí"
           }
         },
         {
           "if": "bench=stand_up_bench",
           "then": {
             "en": "Stand up bench",
-            "de": "Stehbank",
+            "de": "Hier gibt es eine Stehbank zum Anlehnen",
             "fr": "Banc assis debout",
             "nl": "Leunbank",
             "it": "Panca in piedi",
             "zh_Hans": "站立长凳",
             "ru": "Встаньте на скамейке",
-            "zh_Hant": "站立長椅"
+            "zh_Hant": "站立長椅",
+            "da": "Stå-op bænk",
+            "es": "Banco de pié"
           }
         },
         {
@@ -153,7 +167,9 @@
             "en": "There is no bench here",
             "fr": "Il n'y a pas de banc ici",
             "de": "Hier gibt es keine Bank",
-            "nl": "Er is hier geen bank"
+            "nl": "Er is hier geen bank",
+            "es": "No hay ningún banco aquí",
+            "da": "Der er ingen bænk her"
           }
         }
       ]
@@ -183,6 +199,9 @@
   "description": {
     "en": "A layer showing all public-transport-stops which do have a bench",
     "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
-    "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is"
+    "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
+    "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
+    "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
+    "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk"
   }
 }

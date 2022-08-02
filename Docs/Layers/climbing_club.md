@@ -1,109 +1,158 @@
-climbing_club
+
+
+ climbing_club 
 ===============
 
 
 
 <img src='https://mapcomplete.osm.be/./assets/themes/climbing/club.svg' height="100px"> 
 
-A climbing club or organisations
-
-## Table of contents
-
-1. [climbing_club](#climbing_club)
-    * [Themes using this layer](#themes-using-this-layer)
-
-- [Basic tags for this layer](#basic-tags-for-this-layer)
-- [Supported attributes](#supported-attributes)
-    + [climbing_club-name](#climbing_club-name)
-    + [minimap](#minimap)
-    + [website](#website)
-    + [email](#email)
-    + [phone](#phone)
-    + [opening_hours](#opening_hours)
-
-#### Themes using this layer
-
-- [climbing](https://mapcomplete.osm.be/climbing)
-
-[Go to the source code](../assets/layers/climbing_club/climbing_club.json)
+A climbing club or organisation
 
 
 
-Basic tags for this layer
+
+
+
+  - This layer is shown at zoomlevel **10** and higher
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [climbing](https://mapcomplete.osm.be/climbing)
+  - [personal](https://mapcomplete.osm.be/personal)
+
+
+
+
+ Basic tags for this layer 
 ---------------------------
 
 
 
 Elements must have the all of following tags to be shown on this layer:
 
-- <a href='https://wiki.openstreetmap.org/wiki/Key:club' target='_blank'>club</a>
-  =<a href='https://wiki.openstreetmap.org/wiki/Tag:club%3Dclimbing' target='_blank'>climbing</a>
-  |<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>
-  =<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>&office~^..*$|club~
-  ^..*$
 
-Supported attributes
+
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:club' target='_blank'>club</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:club%3Dclimbing' target='_blank'>climbing</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>&office~^..*$|club~^..*$
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22club%22%3D%22climbing%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22club%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22office%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
+
+
+ Supported attributes 
 ----------------------
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
+
+
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) |
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 
-### climbing_club-name
 
-The question is **What is the name of this climbing club or NGO?**
 
-This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name)
-This is rendered with `<strong>{name}</strong>`
 
-### minimap
+### climbing_club-name 
 
-_This tagrendering has no question and is thus read-only_
 
-### website
 
-The question is **What is the website of {name}?**
+The question is  What is the name of this climbing club or NGO?
 
-This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website)
-This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-- **<a href='{contact:website}' target='_blank'>{contact:website}</a>** corresponds with contact:website~^..*$_This
-  option cannot be chosen as answer_
+This is rendered with  <strong>{name}</strong>
 
-### email
 
-The question is **What is the email address of {name}?**
 
-This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email)
-This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
-- **<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>** corresponds with contact:email~^..*$_This
-  option cannot be chosen as answer_
 
-### phone
+### website 
 
-The question is **What is the phone number of {name}?**
 
-This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone)
-This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
-- **<a href='tel:{contact:phone}'>{contact:phone}</a>** corresponds with contact:phone~^..*$_This option cannot be
-  chosen as answer_
+The question is  What is the website of {title()}?
 
-### opening_hours
+This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-The question is **What are the opening hours of {name}?**
+This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
-This rendering asks information about the
-property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
-This document is autogenerated from assets/layers/climbing_club/climbing_club.json
+
+
+
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - This option cannot be chosen as answer
+
+
+
+
+### email 
+
+
+
+The question is  What is the email address of {title()}?
+
+This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
+
+This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+
+
+
+
+
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - This option cannot be chosen as answer
+
+
+
+
+### phone 
+
+
+
+The question is  What is the phone number of {title()}?
+
+This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
+
+This is rendered with  <a href='tel:{phone}'>{phone}</a>
+
+
+
+
+
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - This option cannot be chosen as answer
+
+
+
+
+### opening_hours 
+
+
+
+The question is  What are the opening hours of {title()}?
+
+This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
+
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+
+ 
+
+This document is autogenerated from [assets/layers/climbing_club/climbing_club.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/climbing_club/climbing_club.json)

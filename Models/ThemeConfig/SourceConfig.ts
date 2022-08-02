@@ -19,7 +19,7 @@ export default class SourceConfig {
         isOsmCache?: boolean,
         geojsonSourceLevel?: number,
         idKey?: string
-    }, context?: string) {
+    }, isSpecialLayer: boolean, context?: string) {
 
         let defined = 0;
         if (params.osmTags) {
@@ -41,6 +41,15 @@ export default class SourceConfig {
         if (params.geojsonSource !== undefined && params.geojsonSourceLevel !== undefined) {
             if (!["x", "y", "x_min", "x_max", "y_min", "Y_max"].some(toSearch => params.geojsonSource.indexOf(toSearch) > 0)) {
                 throw `Source defines a geojson-zoomLevel, but does not specify {x} nor {y} (or equivalent), this is probably a bug (in context ${context})`
+            }
+        }
+        if(params.osmTags !== undefined && !isSpecialLayer){
+            const optimized = params.osmTags.optimize()
+            if(optimized === false){
+                throw "Error at "+context+": the specified tags are conflicting with each other: they will never match anything at all"
+            }
+            if(optimized === true){
+                       throw "Error at "+context+": the specified tags are very wide: they will always match everything"
             }
         }
         this.osmTags = params.osmTags ?? new RegexTag("id", /.*/);

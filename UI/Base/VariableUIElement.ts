@@ -1,11 +1,11 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import Combine from "./Combine";
 
 export class VariableUiElement extends BaseUIElement {
-    private readonly _contents: UIEventSource<string | BaseUIElement | BaseUIElement[]>;
+    private readonly _contents: Store<string | BaseUIElement | BaseUIElement[]>;
 
-    constructor(contents: UIEventSource<string | BaseUIElement | BaseUIElement[]>) {
+    constructor(contents: Store<string | BaseUIElement | BaseUIElement[]>) {
         super();
         this._contents = contents;
     }
@@ -16,7 +16,7 @@ export class VariableUiElement extends BaseUIElement {
     }
 
     AsMarkdown(): string {
-        const d = this._contents.data;
+        const d = this._contents?.data;
         if (typeof d === "string") {
             return d;
         }
@@ -29,10 +29,11 @@ export class VariableUiElement extends BaseUIElement {
     protected InnerConstructElement(): HTMLElement {
         const el = document.createElement("span");
         const self = this;
-        this._contents.addCallbackAndRun((contents) => {
+        this._contents?.addCallbackAndRun((contents) => {
             if (self.isDestroyed) {
                 return true;
             }
+           
             while (el.firstChild) {
                 el.removeChild(el.lastChild);
             }

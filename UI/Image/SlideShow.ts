@@ -1,4 +1,4 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import {Utils} from "../../Utils";
 import Combine from "../Base/Combine";
@@ -6,12 +6,12 @@ import Combine from "../Base/Combine";
 export class SlideShow extends BaseUIElement {
 
 
-    private readonly embeddedElements: UIEventSource<BaseUIElement[]>;
+    private readonly embeddedElements: Store<BaseUIElement[]>;
 
-    constructor(embeddedElements: UIEventSource<BaseUIElement[]>) {
+    constructor(embeddedElements: Store<BaseUIElement[]>) {
         super()
         this.embeddedElements = embeddedElements;
-        this.SetStyle("scroll-snap-type: x mandatory; overflow-x: scroll")
+        this.SetStyle("scroll-snap-type: x mandatory; overflow-x: auto")
     }
 
     protected InnerConstructElement(): HTMLElement {

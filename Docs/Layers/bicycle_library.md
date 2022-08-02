@@ -12,27 +12,9 @@ A facility where bicycles can be lent for longer period of times
 
 
 
-## Table of contents
-
-1. [bicycle_library](#bicycle_library)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [images](#images)
-    + [bicycle_library-name](#bicycle_library-name)
-    + [website](#website)
-    + [phone](#phone)
-    + [email](#email)
-    + [opening_hours](#opening_hours)
-    + [bicycle_library-charge](#bicycle_library-charge)
-    + [bicycle-library-target-group](#bicycle-library-target-group)
-    + [description](#description)
 
 
-
-
-
-
+  - This layer is shown at zoomlevel **8** and higher
 
 
 
@@ -48,8 +30,6 @@ A facility where bicycles can be lent for longer period of times
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/bicycle_library/bicycle_library.json)
-
 
 
  Basic tags for this layer 
@@ -64,6 +44,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_library' target='_blank'>bicycle_library</a>
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_library%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -71,7 +53,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -93,7 +77,9 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -103,10 +89,13 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is the name of this bicycle library?**
+The question is  What is the name of this bicycle library?
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-This is rendered with `This bicycle library is called {name}`
+
+This is rendered with  This bicycle library is called {name}
+
+
 
 
 
@@ -114,14 +103,18 @@ This is rendered with `This bicycle library is called {name}`
 
 
 
-The question is **What is the website of {name}?**
+The question is  What is the website of {title()}?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
+
+This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - **<a href='{contact:website}' target='_blank'>{contact:website}</a>** corresponds with contact:website~^..*$_This option cannot be chosen as answer_
+
+
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - This option cannot be chosen as answer
 
 
 
@@ -130,14 +123,18 @@ This is rendered with `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
-The question is **What is the phone number of {name}?**
+The question is  What is the phone number of {title()}?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-This is rendered with `<a href='tel:{phone}'>{phone}</a>`
+
+This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - **<a href='tel:{contact:phone}'>{contact:phone}</a>** corresponds with contact:phone~^..*$_This option cannot be chosen as answer_
+
+
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - This option cannot be chosen as answer
 
 
 
@@ -146,14 +143,18 @@ This is rendered with `<a href='tel:{phone}'>{phone}</a>`
 
 
 
-The question is **What is the email address of {name}?**
+The question is  What is the email address of {title()}?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
+
+This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - **<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>** corresponds with contact:email~^..*$_This option cannot be chosen as answer_
+
+
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - This option cannot be chosen as answer
 
 
 
@@ -162,10 +163,13 @@ This is rendered with `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
-The question is **What are the opening hours of {name}?**
+The question is  What are the opening hours of {title()}?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
+
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+
+
 
 
 
@@ -173,15 +177,18 @@ This is rendered with `<h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-The question is **How much does lending a bicycle cost?**
+The question is  How much does lending a bicycle cost?
 
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
-This is rendered with `Lending a bicycle costs {charge}`
+
+This is rendered with  Lending a bicycle costs {charge}
 
 
 
-  - **Lending a bicycle is free** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
-  - **Lending a bicycle costs €20/year and €20 warranty** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D€20warranty + €20/year' target='_blank'>€20warranty + €20/year</a>
+
+
+  - Lending a bicycle is free  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>`
+  - Lending a bicycle costs €20/year and €20 warranty  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:charge' target='_blank'>charge</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:charge%3D€20warranty + €20/year' target='_blank'>€20warranty + €20/year</a>`
 
 
 
@@ -190,15 +197,15 @@ This is rendered with `Lending a bicycle costs {charge}`
 
 
 
-The question is **Who can lend bicycles here?**
+The question is  Who can loan bicycles here?
 
 
 
 
 
-  - **Bikes for children available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dchild' target='_blank'>child</a>
-  - **Bikes for adult available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dadult' target='_blank'>adult</a>
-  - **Bikes for disabled persons available** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Ddisabled' target='_blank'>disabled</a>
+  - Bikes for children available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dchild' target='_blank'>child</a>`
+  - Bikes for adult available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Dadult' target='_blank'>adult</a>`
+  - Bikes for disabled persons available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_library:for' target='_blank'>bicycle_library:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_library:for%3Ddisabled' target='_blank'>disabled</a>`
 
 
 
@@ -207,9 +214,12 @@ The question is **Who can lend bicycles here?**
 
 
 
-The question is **Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>**
+The question is  Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
-This is rendered with `{description}` 
+
+This is rendered with  {description}
+
+ 
 
 This document is autogenerated from [assets/layers/bicycle_library/bicycle_library.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bicycle_library/bicycle_library.json)

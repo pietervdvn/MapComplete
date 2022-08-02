@@ -1,13 +1,13 @@
 import {readFileSync, writeFileSync} from "fs";
 import {Utils} from "../../../Utils";
-import {TagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/TagRenderingConfigJson";
 import ScriptUtils from "../../../scripts/ScriptUtils";
 import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
 import FilterConfigJson from "../../../Models/ThemeConfig/Json/FilterConfigJson";
+import {QuestionableTagRenderingConfigJson} from "../../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
 
 
 function colonSplit(value: string): string[] {
-    return value.split(";").map(v => v.replace(/"/g, '').trim().toLowerCase()).filter(s => s !== "");
+    return value.split(";").map(v => v.replace(/"/g, '').trim()).filter(s => s !== "");
 }
 
 function loadCsv(file): {
@@ -57,8 +57,8 @@ function loadCsv(file): {
 function run(file, protojson) {
 
     const overview_question_answers = []
-    const questions: (TagRenderingConfigJson & { "id": string })[] = []
-    const technicalQuestions: (TagRenderingConfigJson & { "id": string })[] = []
+    const questions: (QuestionableTagRenderingConfigJson & { "id": string })[] = []
+    const technicalQuestions: (QuestionableTagRenderingConfigJson & { "id": string })[] = []
     const filterOptions: { question: any, osmTags?: string } [] = [
         {
             question: {
@@ -72,13 +72,17 @@ function run(file, protojson) {
     for (let i = 0; i < entries.length; i++) {
         const e = entries[i];
         const txt = {
-            en: `<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("en")}</span></div>`,
-            nl: `<div class='flex'><img class='w-12 mx-4' src='./assets/layers/charging_station/${e.image}'/> <span>${e.description.get("nl")}</span></div>`
+            en: e.description.get("en"),
+            nl: e.description.get("nl")
         }
         const json = {
             if: `${e.key}=1`,
             ifnot: `${e.key}=`,
             then: txt,
+            icon:{
+                path:"./assets/layers/charging_station/" + e.image,
+                class:"medium"
+            }
         }
 
         if (e.countryWhiteList.length > 0 && e.countryBlackList.length > 0) {
@@ -125,7 +129,11 @@ function run(file, protojson) {
                 and:Utils.NoEmpty( [`${e.key}~*`, `${e.key}!=1`, ...e.extraVisualisationCondition.split(";")])
             },
             then: txt,
-            hideInAnswer: true
+            hideInAnswer: true,
+            icon:{
+                path: `./assets/layers/charging_station/${e.image}`,
+                class:"medium"
+            }
         }
         overview_question_answers.push(no_ask_json)
 
@@ -168,10 +176,14 @@ function run(file, protojson) {
             },
             mappings: e.commonVoltages.map(voltage => {
                 return {
-                    if: `socket:${e.key}:voltage=${voltage} V`,
+                    if: `${e.key}:voltage=${voltage} V`,
                     then: {
-                        en: `${descrWithImage_en} outputs ${voltage} volt`,
-                        nl: `${descrWithImage_nl} heeft een spanning van ${voltage} volt`
+                        en: `${e.description.get("en")} outputs ${voltage} volt`,
+                        nl: `${e.description.get("nl")} heeft een spanning van ${voltage} volt`
+                    },
+                    icon: {
+                        path: `./assets/layers/charging_station/${e.image}`,
+                        class:"medium"
                     }
                 }
             }),
@@ -198,10 +210,14 @@ function run(file, protojson) {
             },
             mappings: e.commonCurrents.map(current => {
                 return {
-                    if: `socket:${e.key}:current=${current} A`,
+                    if: `${e.key}:current=${current} A`,
                     then: {
-                        en: `${descrWithImage_en} outputs at most ${current} A`,
-                        nl: `${descrWithImage_nl} levert een stroom van maximaal ${current} A`
+                        en: `${e.description.get("en")} outputs at most ${current} A`,
+                        nl: `${e.description.get("nl")} levert een stroom van maximaal ${current} A`
+                    },
+                    icon: {
+                        path: `./assets/layers/charging_station/${e.image}`,
+                        class:"medium"
                     }
                 }
             }),
@@ -228,10 +244,14 @@ function run(file, protojson) {
             },
             mappings: e.commonOutputs.map(output => {
                 return {
-                    if: `socket:${e.key}:output=${output}`,
+                    if: `${e.key}:output=${output}`,
                     then: {
-                        en: `${descrWithImage_en} outputs at most ${output}`,
-                        nl: `${descrWithImage_nl} levert een vermogen van maximaal ${output}`
+                        en: `${e.description.get("en")} outputs at most ${output} A`,
+                        nl: `${e.description.get("nl")} levert een vermogen van maximaal ${output} A`
+                    },
+                    icon: {
+                        path: `./assets/layers/charging_station/${e.image}`,
+                        class:"medium"
                     }
                 }
             }),

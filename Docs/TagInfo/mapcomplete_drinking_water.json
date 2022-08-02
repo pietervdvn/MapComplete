@@ -16,6 +16,11 @@
       "value": "drinking_water"
     },
     {
+      "key": "drinking_water",
+      "description": "The MapComplete theme Drinking Water has a layer Drinking water showing features with this tag",
+      "value": "yes"
+    },
+    {
       "key": "image",
       "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -59,11 +64,6 @@
       "key": "bottle",
       "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Drinking Water')",
       "value": "no"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Drinking Water has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

@@ -5,6 +5,7 @@ node_modules
 scratch
 assets/editor-layer-index.json
 assets/generated/*
+assets/generated/images/*
 /*.webmanifest
 /*.html
 !/index.html
@@ -19,3 +20,19 @@ Svg.ts
 data/
 Folder.DotSettings.user
 index_*.ts
+.~lock.*
+*.doctest.ts
+service-worker.js
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix

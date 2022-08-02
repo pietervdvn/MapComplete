@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Cafés and pubs",
-    "description": "Cafés, kroegen en drinkgelegenheden",
+    "description": "Pubs and bars",
     "project_url": "https://mapcomplete.osm.be/cafes_and_pubs",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/cafe_pub/pub.svg",
@@ -31,6 +31,11 @@
       "value": "biergarten"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Cafés and pubs has a layer Cafés and pubs showing features with this tag",
+      "value": "nightclub"
+    },
+    {
       "key": "image",
       "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -47,33 +52,67 @@
       "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Cafés and pubs')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Cafés and pubs' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Cafés and pubs') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Cafés and pubs' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "-1"
+    },
+    {
       "key": "name",
       "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Cafés and pubs')"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Cafés and pubs' shows amenity=pub with a fixed text, namely 'Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "description": "Layer 'Cafés and pubs' shows amenity=pub with a fixed text, namely 'A pub, mostly for drinking beers in a warm, relaxed interior' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "pub"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Cafés and pubs' shows amenity=bar with a fixed text, namely 'Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "description": "Layer 'Cafés and pubs' shows amenity=bar with a fixed text, namely 'A more modern and commercial <b>bar</b>, possibly with a music and light installation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "bar"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Cafés and pubs' shows amenity=cafe with a fixed text, namely 'Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "description": "Layer 'Cafés and pubs' shows amenity=cafe with a fixed text, namely 'A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "cafe"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Cafés and pubs' shows amenity=restaurant with a fixed text, namely 'Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "description": "Layer 'Cafés and pubs' shows amenity=restaurant with a fixed text, namely 'A <b>restuarant</b> where one can get a proper meal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "restaurant"
     },
     {
       "key": "amenity",
-      "description": "Layer 'Cafés and pubs' shows amenity=biergarten with a fixed text, namely 'Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "description": "Layer 'Cafés and pubs' shows amenity=biergarten with a fixed text, namely 'An open space where beer is served, typically seen in Germany' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "biergarten"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Cafés and pubs' shows amenity=nightclub with a fixed text, namely 'This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "nightclub"
     },
     {
       "key": "opening_hours",
@@ -134,6 +173,21 @@
       "value": "no"
     },
     {
+      "key": "smoking",
+      "description": "Layer 'Cafés and pubs' shows smoking=yes with a fixed text, namely 'Smoking is <b>allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "yes"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Cafés and pubs' shows smoking=no with a fixed text, namely 'Smoking is <b>not allowed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Cafés and pubs' shows smoking=outside with a fixed text, namely 'Smoking is <b>allowed outside</b>.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "value": "outside"
+    },
+    {
       "key": "service:electricity",
       "description": "Layer 'Cafés and pubs' shows service:electricity=yes with a fixed text, namely 'There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "yes"
@@ -172,11 +226,6 @@
       "key": "dog",
       "description": "Layer 'Cafés and pubs' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "unleashed"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Cafés and pubs has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

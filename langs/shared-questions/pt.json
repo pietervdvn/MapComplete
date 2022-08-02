@@ -21,7 +21,7 @@
             "question": "Os cães são permitidos neste estabelecimento?"
         },
         "email": {
-            "question": "Qual é o endereço de e-mail de {name}?"
+            "question": "Qual é o endereço de e-mail de {title()}?"
         },
         "level": {
             "mappings": {
@@ -36,13 +36,16 @@
                 },
                 "3": {
                     "then": "Está no primeiro andar"
+                },
+                "4": {
+                    "then": "Localizado no primeiro nível da cave"
                 }
             },
             "question": "Em que nível se encontra este elemento?",
             "render": "Está no {level}º andar"
         },
         "opening_hours": {
-            "question": "Qual é o horário de funcionamento de {name}?",
+            "question": "Qual é o horário de funcionamento de {title()}?",
             "render": "<h3>Horário de funcionamento</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -56,8 +59,20 @@
             },
             "question": "Que métodos de pagamento são aceites aqui?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "O pagamento é feito utilizando uma aplicação dedicada"
+                    },
+                    "1": {
+                        "then": "O pagamento é feito usando um cartão de membro"
+                    }
+                }
+            }
+        },
         "phone": {
-            "question": "Qual é o número de telefone de {name}?"
+            "question": "Qual é o número de telefone de {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -76,8 +91,22 @@
             },
             "question": "Esta infraestrutura tem tomadas elétricas, disponíveis para os clientes quando estão no interior?"
         },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "<b>É permitido</b> fumar"
+                },
+                "1": {
+                    "then": "<b>Não é permitido</b> fumar"
+                },
+                "2": {
+                    "then": "É permitido fumar <b>no exterior</b>."
+                }
+            },
+            "question": "É permitido fumar em {title()}?"
+        },
         "website": {
-            "question": "Qual é o sítio web de {name}?"
+            "question": "Qual é o sítio web de {title()}?"
         },
         "wheelchair-access": {
             "mappings": {
@@ -99,6 +128,9 @@
         "wikipedia": {
             "mappings": {
                 "0": {
+                    "then": "Ainda não foi vinculada nenhuma página da Wikipédia"
+                },
+                "1": {
                     "then": "Ainda não foi vinculada nenhuma página da Wikipédia"
                 }
             },

@@ -41,6 +41,8 @@ import {AutoAction} from "./AutoApplyButton";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {Changes} from "../../Logic/Osm/Changes";
 import {ElementStorage} from "../../Logic/ElementStorage";
+import Hash from "../../Logic/Web/Hash";
+import {PreciseInput} from "../../Models/ThemeConfig/PresetConfig";
 
 /**
  * A helper class for the various import-flows.
@@ -52,11 +54,13 @@ abstract class AbstractImportButton implements SpecialVisualizations {
     public readonly docs: string
     public readonly args: { name: string, defaultValue?: string, doc: string }[]
     private readonly showRemovedTags: boolean;
+    private readonly cannotBeImportedMessage: BaseUIElement | undefined;
 
-    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string }[], showRemovedTags = true) {
+    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string, required?: boolean }[], 
+                options?: {showRemovedTags? : true | boolean, cannotBeImportedMessage?: BaseUIElement}) {
         this.funcName = funcName
-        this.showRemovedTags = showRemovedTags;
-
+        this.showRemovedTags = options?.showRemovedTags ?? true;
+        this.cannotBeImportedMessage = options?.cannotBeImportedMessage
         this.docs = `${docsIntro}
 
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
@@ -72,11 +76,13 @@ ${Utils.special_visualizations_importRequirementDocs}
         this.args = [
             {
                 name: "targetLayer",
-                doc: "The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements"
+                doc: "The id of the layer where this point should end up. This is not very strict, it will simply result in checking that this layer is shown preventing possible duplicate elements",
+                required: true
             },
             {
                 name: "tags",
-                doc: "The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead"
+                doc: "The tags to add onto the new object - see specification above. If this is a key (a single word occuring in the properties of the object), the corresponding value is taken and expanded instead",
+                required: true
             },
             {
                 name: "text",
@@ -190,13 +196,13 @@ ${Utils.special_visualizations_importRequirementDocs}
                         importFlow,
                         isImported
                     ),
-                    t.zoomInMore,
+                    t.zoomInMore.SetClass("alert block"),
                     state.locationControl.map(l => l.zoom >= 18)
                 ),
                 pleaseLoginButton,
                 state
             ),
-            t.wrongType,
+            this.cannotBeImportedMessage ?? t.wrongType,
             new UIEventSource(this.canBeImported(feature)))
 
     }
@@ -236,9 +242,8 @@ ${Utils.special_visualizations_importRequirementDocs}
         // SHow all relevant data - including (eventually) the way of which the geometry will be replaced
         new ShowDataMultiLayer({
             leafletMap: confirmationMap.leafletMap,
-            popup: undefined,
             zoomToFeatures: true,
-            features: new StaticFeatureSource([feature], false),
+            features: StaticFeatureSource.fromGeojson([feature]),
             state: state,
             layers: state.filteredLayers
         })
@@ -247,7 +252,6 @@ ${Utils.special_visualizations_importRequirementDocs}
         action.getPreview().then(changePreview => {
             new ShowDataLayer({
                 leafletMap: confirmationMap.leafletMap,
-                popup: undefined,
                 zoomToFeatures: false,
                 features: changePreview,
                 state,
@@ -268,8 +272,8 @@ ${Utils.special_visualizations_importRequirementDocs}
                 originalFeatureTags.data["_imported"] = "yes"
                 originalFeatureTags.ping() // will set isImported as per its definition
                 state.changes.applyAction(action)
-                state.selectedElement.setData(state.allElements.ContainingFeatures.get(action.newElementId ?? action.mainObjectId))
-
+                const newId = action.newElementId ?? action.mainObjectId
+                state.selectedElement.setData(state.allElements.ContainingFeatures.get(newId))
             }
         })
 
@@ -302,7 +306,10 @@ export class ConflateButton extends AbstractImportButton {
             [{
                 name: "way_to_conflate",
                 doc: "The key, of which the corresponding value is the id of the OSM-way that must be conflated; typically a calculatedTag"
-            }]
+            }],
+            {
+                cannotBeImportedMessage: Translations.t.general.add.import.wrongTypeToConflate
+            }
         );
     }
 
@@ -373,7 +380,7 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
                 {
                     name: "max_snap_distance",
                     doc: "If the imported object is a LineString or (Multi)Polygon, already existing OSM-points will be reused to construct the geometry of the newly imported way",
-                    defaultValue: "5"
+                    defaultValue: "0.05"
                 },
                 {
                     name: "move_osm_point_if",
@@ -381,7 +388,7 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
                 }, {
                 name: "max_move_distance",
                 doc: "If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m",
-                defaultValue: "1"
+                defaultValue: "0.05"
             }, {
                 name: "snap_onto_layers",
                 doc: "If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead",
@@ -391,8 +398,45 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
                 doc: "Distance to distort the geometry to snap to this layer",
                 defaultValue: "0.1"
             }],
-            false
+            { showRemovedTags: false}
         )
+    }
+
+    private static CreateAction(feature,
+                                args: { max_snap_distance: string; snap_onto_layers: string; icon: string; text: string; tags: string; newTags: UIEventSource<any>; targetLayer: string },
+                                state: FeaturePipelineState,
+                                mergeConfigs: any[]) {
+        const coors = feature.geometry.coordinates
+        if ((feature.geometry.type === "Polygon") && coors.length > 1) {
+            const outer = coors[0]
+            const inner = [...coors]
+            inner.splice(0, 1)
+            return new CreateMultiPolygonWithPointReuseAction(
+                args.newTags.data,
+                outer,
+                inner,
+                state,
+                mergeConfigs,
+                "import"
+            )
+        } else if (feature.geometry.type === "Polygon") {
+            const outer = coors[0]
+            return new CreateWayWithPointReuseAction(
+                args.newTags.data,
+                outer,
+                state,
+                mergeConfigs
+            )
+        } else if (feature.geometry.type === "LineString") {
+            return new CreateWayWithPointReuseAction(
+                args.newTags.data,
+                coors,
+                state,
+                mergeConfigs
+            )
+        } else {
+            throw "Unsupported type"
+        }
     }
 
     async applyActionOn(state: { layoutToUse: LayoutConfig; changes: Changes, allElements: ElementStorage },
@@ -406,24 +450,12 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
         AbstractImportButton.importedIds.add(originalFeatureTags.data.id)
         const args = this.parseArgs(argument, originalFeatureTags)
         const feature = state.allElements.ContainingFeatures.get(id)
-        console.log("Geometry to auto-import is:", feature)
-        const geom = feature.geometry
-        let coordinates: [number, number][]
-        if (geom.type === "LineString") {
-            coordinates = geom.coordinates
-        } else if (geom.type === "Polygon") {
-            coordinates = geom.coordinates[0]
-        }
-
-
         const mergeConfigs = this.GetMergeConfig(args);
-
-        const action = this.CreateAction(
+        const action = ImportWayButton.CreateAction(
             feature,
             args,
             <FeaturePipelineState>state,
-            mergeConfigs,
-            coordinates
+            mergeConfigs
         )
         await state.changes.applyAction(action)
     }
@@ -455,18 +487,8 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
 
 
         // Upload the way to OSM
-        const geom = feature.geometry
-        let coordinates: [number, number][]
-        if (geom.type === "LineString") {
-            coordinates = geom.coordinates
-        } else if (geom.type === "Polygon") {
-            coordinates = geom.coordinates[0]
-        }
         const mergeConfigs = this.GetMergeConfig(args);
-
-
-        let action = this.CreateAction(feature, args, state, mergeConfigs, coordinates);
-
+        let action = ImportWayButton.CreateAction(feature, args, state, mergeConfigs);
         return this.createConfirmPanelForWay(
             state,
             args,
@@ -507,36 +529,6 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
 
         return mergeConfigs;
     }
-
-    private CreateAction(feature,
-                         args: { max_snap_distance: string; snap_onto_layers: string; icon: string; text: string; tags: string; newTags: UIEventSource<any>; targetLayer: string },
-                         state: FeaturePipelineState,
-                         mergeConfigs: any[],
-                         coordinates: [number, number][]) {
-
-        const coors = feature.geometry.coordinates
-        if (feature.geometry.type === "Polygon" && coors.length > 1) {
-            const outer = coors[0]
-            const inner = [...coors]
-            inner.splice(0, 1)
-            return new CreateMultiPolygonWithPointReuseAction(
-                args.newTags.data,
-                outer,
-                inner,
-                state,
-                mergeConfigs,
-                "import"
-            )
-        } else {
-
-            return new CreateWayWithPointReuseAction(
-                args.newTags.data,
-                coordinates,
-                state,
-                mergeConfigs
-            )
-        }
-    }
 }
 
 export class ImportPointButton extends AbstractImportButton {
@@ -544,24 +536,35 @@ export class ImportPointButton extends AbstractImportButton {
     constructor() {
         super("import_button",
             "This button will copy the point from an external dataset into OpenStreetMap",
-            [{
-                name: "snap_onto_layers",
-                doc: "If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list"
-            },
+            [
+                {
+                    name: "snap_onto_layers",
+                    doc: "If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list"
+                },
                 {
                     name: "max_snap_distance",
                     doc: "The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete",
                     defaultValue: "5"
-                }, {
-                name: "note_id",
-                doc: "If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
-            }],
-            false
+                },
+                {
+                    name: "note_id",
+                    doc: "If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
+                },
+                {
+                    name:"location_picker",
+                    defaultValue: "photo",
+                    doc: "Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled"
+                },
+                {
+                    name: "maproulette_id",
+                    doc: "If given, the maproulette challenge will be marked as fixed"
+                }],
+            { showRemovedTags: false}
         )
     }
 
     private static createConfirmPanelForPoint(
-        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string, note_id: string },
+        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string, note_id: string, maproulette_id: string },
         state: FeaturePipelineState,
         guiState: DefaultGuiState,
         originalFeatureTags: UIEventSource<any>,
@@ -596,23 +599,46 @@ export class ImportPointButton extends AbstractImportButton {
             state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
+            Hash.hash.setData(newElementAction.newElementId)
+
             if (note_id !== undefined) {
                 state.osmConnection.closeNote(note_id, "imported")
                 originalFeatureTags.data["closed_at"] = new Date().toISOString()
                 originalFeatureTags.ping()
             }
+
+            let maproulette_id = originalFeatureTags.data[args.maproulette_id];
+            console.log("Checking if we need to mark a maproulette task as fixed (" + maproulette_id + ")")
+            if (maproulette_id !== undefined) {
+                if (state.featureSwitchIsTesting.data){
+                    console.log("Not marking maproulette task " + maproulette_id + " as fixed, because we are in testing mode")
+                } else {
+                    console.log("Marking maproulette task as fixed")
+                    state.maprouletteConnection.closeTask(Number(maproulette_id));
+                    originalFeatureTags.data["mr_taskStatus"] = "Fixed";
+                    originalFeatureTags.ping();
+                }
+            }
         }
 
+        let preciseInputOption = args["location_picker"]
+        let preciseInputSpec: PreciseInput  = undefined
+        console.log("Precise input location is ", preciseInputOption)
+        if(preciseInputOption !== "none") {
+            preciseInputSpec = {
+                snapToLayers: args.snap_onto_layers?.split(";"),
+                    maxSnapDistance: Number(args.max_snap_distance),
+                    preferredBackground: args["location_picker"] ?? ["photo", "map"]
+            }
+        }
+        
         const presetInfo = <PresetInfo>{
             tags: args.newTags.data,
             icon: () => new Img(args.icon),
             layerToAddTo: state.filteredLayers.data.filter(l => l.layerDef.id === args.targetLayer)[0],
             name: args.text,
-            title: Translations.WT(args.text),
-            preciseInput: {
-                snapToLayers: args.snap_onto_layers?.split(";"),
-                maxSnapDistance: Number(args.max_snap_distance)
-            },
+            title: Translations.T(args.text),
+            preciseInput: preciseInputSpec, // must be explicitely assigned, if 'undefined' won't work otherwise
             boundsFactor: 3
         }
 

@@ -129,14 +129,13 @@
       "description": "Layer 'Observation towers' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Observation towers')"
     },
     {
+      "key": "wikipedia",
+      "description": "Layer 'Observation towers' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Observation towers')"
+    },
+    {
       "key": "wikidata",
       "description": "Layer 'Observation towers' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Observation towers') Picking this answer will delete the key wikidata.",
       "value": ""
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Observation towers has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

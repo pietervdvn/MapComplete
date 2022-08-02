@@ -78,19 +78,17 @@ export default class SplitRoadWizard extends Toggle {
 
         // Datalayer displaying the road and the cut points (if any)
         new ShowDataMultiLayer({
-            features: new StaticFeatureSource([roadElement], false),
+            features: StaticFeatureSource.fromGeojson([roadElement]),
             layers: state.filteredLayers,
             leafletMap: miniMap.leafletMap,
-            popup: undefined,
             zoomToFeatures: true,
             state
         })
 
         new ShowDataLayer({
-            features: new StaticFeatureSource(splitPoints, true),
+            features: new StaticFeatureSource(splitPoints),
             leafletMap: miniMap.leafletMap,
             zoomToFeatures: false,
-            popup: undefined,
             layerToShow: SplitRoadWizard.splitLayerStyling,
             state
         })
@@ -107,7 +105,7 @@ export default class SplitRoadWizard extends Toggle {
                 .filter(p => GeoOperations.distanceBetween(p[0].geometry.coordinates, coordinates) < 5)
                 .map(p => p[1])
                 .sort((a, b) => a - b)
-                .reverse()
+                .reverse(/*Copy/derived list, inplace reverse is fine*/)
             if (points.length > 0) {
                 for (const point of points) {
                     splitPoints.data.splice(point, 1)

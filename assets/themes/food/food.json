@@ -1,16 +1,24 @@
 {
   "id": "food",
   "title": {
-    "nl": "Eetgelegenheden",
     "en": "Restaurants and fast food",
+    "nl": "Eetgelegenheden",
     "de": "Restaurants und Schnellimbisse",
     "it": "Ristoranti e fast food",
     "nb_NO": "Restauranter og søppelmat",
     "zh_Hant": "餐廳與快餐店",
-    "hu": "Éttermek és büfék"
+    "hu": "Éttermek és büfék",
+    "ca": "Restaurants i menjar ràpid",
+    "es": "Restaurantes y comida rápida",
+    "fr": "Restaurants et restaurants rapides"
   },
   "description": {
-    "nl": "Restaurants en fast food"
+    "nl": "Restaurants en fast food",
+    "en": "Restaurants and fast food",
+    "de": "Restaurants und Schnellimbisse",
+    "es": "Restaurantes y comida rápida",
+    "nb_NO": "Restauranter og søppelmat",
+    "fr": "Restaurants et restaurants à service rapide"
   },
   "maintainer": "",
   "icon": "./assets/layers/food/restaurant.svg",
@@ -19,7 +27,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 3,
-  "socialImage": "",
   "layers": [
     "food"
   ]

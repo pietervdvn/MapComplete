@@ -35,6 +35,7 @@ export default class MetaTagging {
             return;
         }
 
+        console.log("Recalculating metatags...")
         const metatagsToApply: SimpleMetaTagger[] = []
         for (const metatag of SimpleMetaTaggers.metatags) {
             if (metatag.includesDates) {
@@ -155,7 +156,6 @@ export default class MetaTagging {
 
             // Lazy function
             const f = (feature: any) => {
-                const oldValue = feature.properties[key]
                 delete feature.properties[key]
                 Object.defineProperty(feature.properties, key, {
                     configurable: true,

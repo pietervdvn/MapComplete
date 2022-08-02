@@ -9,6 +9,14 @@
 
 1. [URL-parameters and URL-hash](#url-parameters-and-url-hash)
   - [What is a URL parameter?](#what-is-a-url-parameter)
+  - [language](#language)
+  - [fs-translation-mode](#fs-translation-mode)
+  - [tab](#tab)
+  - [welcome-control-toggle](#welcome-control-toggle)
+  - [download-control-toggle](#download-control-toggle)
+  - [filter-toggle](#filter-toggle)
+  - [copyright-toggle](#copyright-toggle)
+  - [currentview-toggle](#currentview-toggle)
   - [fs-userbadge](#fs-userbadge)
   - [fs-search](#fs-search)
   - [fs-background](#fs-background)
@@ -57,6 +65,62 @@ For example, if the url is `https://mapcomplete.osm.be/cyclofix?lat=51.0&lon=4.3
 
 
 Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
+
+
+
+ language 
+----------
+
+ The language to display mapcomplete in. Will be ignored in case a logged-in-user did set their language before. If the specified language does not exist, it will default to the first language in the theme. No default value set
+
+
+
+ fs-translation-mode 
+---------------------
+
+ If set, will show a translation button next to every string. The default value is _false_
+
+
+
+ tab 
+-----
+
+ The tab that is shown in the welcome-message. The default value is _0_
+
+
+
+ welcome-control-toggle 
+------------------------
+
+ Whether or not the welcome panel is shown The default value is _false_
+
+
+
+ download-control-toggle 
+-------------------------
+
+ Whether or not the download panel is shown The default value is _false_
+
+
+
+ filter-toggle 
+---------------
+
+ Whether or not the filter view is shown The default value is _false_
+
+
+
+ copyright-toggle 
+------------------
+
+ Whether or not the copyright view is shown The default value is _false_
+
+
+
+ currentview-toggle 
+--------------------
+
+ Whether or not the current view box is shown The default value is _false_
 
 
 

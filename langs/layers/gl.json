@@ -89,22 +89,22 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "De roda (Stands) <img style='width: 25%'' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "De roda (Stands)"
                     },
                     "1": {
-                        "then": "Aros <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "Aros"
                     },
                     "2": {
-                        "then": "Cadeado para guiador <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "Cadeado para guiador"
                     },
                     "3": {
-                        "then": "Cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "Cremalleira"
                     },
                     "4": {
-                        "then": "Dobre cremalleira <img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "Dobre cremalleira"
                     },
                     "5": {
-                        "then": "Abeiro <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "Abeiro"
                     }
                 },
                 "question": "Que tipo de aparcadoiro de bicicletas é?",
@@ -121,7 +121,7 @@
             "Cargo bike spaces?": {
                 "mappings": {
                     "0": {
-                        "then": "Este aparcadoiro ten espazo para bicicletas de carga."
+                        "then": "Este aparcadoiro ten espazo para bicicletas de carga"
                     },
                     "1": {
                         "then": "Este aparcadoiro ten espazos designados (oficiais) para bicicletas de carga."
@@ -354,18 +354,9 @@
                 },
                 "question": "Hai ferramentas aquí para arranxar a túa propia bicicleta?"
             },
-            "bike_shop-email": {
-                "question": "Cal é o enderezo de correo electrónico de {name}?"
-            },
             "bike_shop-name": {
                 "question": "Cal é o nome desta tenda de bicicletas?",
                 "render": "Esta tenda de bicicletas chámase {name}"
-            },
-            "bike_shop-phone": {
-                "question": "Cal é o número de teléfono de {name}?"
-            },
-            "bike_shop-website": {
-                "question": "Cal é a páxina web de {name}?"
             }
         },
         "title": {

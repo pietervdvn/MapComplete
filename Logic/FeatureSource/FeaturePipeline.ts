@@ -3,7 +3,7 @@ import FilteringFeatureSource from "./Sources/FilteringFeatureSource";
 import PerLayerFeatureSourceSplitter from "./PerLayerFeatureSourceSplitter";
 import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "./FeatureSource";
 import TiledFeatureSource from "./TiledFeatureSource/TiledFeatureSource";
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import {TileHierarchyTools} from "./TiledFeatureSource/TileHierarchy";
 import RememberingSource from "./Sources/RememberingSource";
 import OverpassFeatureSource from "../Actors/OverpassFeatureSource";
@@ -23,6 +23,11 @@ import TileFreshnessCalculator from "./TileFreshnessCalculator";
 import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource";
 import MapState from "../State/MapState";
 import {ElementStorage} from "../ElementStorage";
+import {OsmFeature} from "../../Models/OsmFeature";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import {FilterState} from "../../Models/FilteredLayer";
+import {GeoOperations} from "../GeoOperations";
+import {Utils} from "../../Utils";
 
 
 /**
@@ -38,8 +43,8 @@ import {ElementStorage} from "../ElementStorage";
  */
 export default class FeaturePipeline {
 
-    public readonly sufficientlyZoomed: UIEventSource<boolean>;
-    public readonly runningQuery: UIEventSource<boolean>;
+    public readonly sufficientlyZoomed: Store<boolean>;
+    public readonly runningQuery: Store<boolean>;
     public readonly timeout: UIEventSource<number>;
     public readonly somethingLoaded: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> = new UIEventSource<FeatureSource>(undefined)
@@ -75,7 +80,7 @@ export default class FeaturePipeline {
         this.state = state;
 
         const self = this
-        const expiryInSeconds = Math.min(...state.layoutToUse.layers.map(l => l.maxAgeOfCache))
+        const expiryInSeconds = Math.min(...state.layoutToUse?.layers?.map(l => l.maxAgeOfCache) ?? [])
         this.oldestAllowedDate = new Date(new Date().getTime() - expiryInSeconds);
         this.osmSourceZoomLevel = state.osmApiTileSize.data;
         const useOsmApi = state.locationControl.map(l => l.zoom > (state.overpassMaxZoom.data ?? 12))
@@ -314,7 +319,7 @@ export default class FeaturePipeline {
                 // We don't bother to split them over tiles as it'll contain little features by default, so we simply add them like this
                 perLayerHierarchy.get(perLayer.layer.layerDef.id).registerTile(perLayer)
                 // AT last, we always apply the metatags whenever possible
-                perLayer.features.addCallbackAndRunD(feats => {
+                perLayer.features.addCallbackAndRunD(_ => {
                     self.onNewDataLoaded(perLayer);
                 })
 
@@ -337,15 +342,39 @@ export default class FeaturePipeline {
 
     }
 
-    public GetAllFeaturesWithin(bbox: BBox): any[][] {
+    public GetAllFeaturesWithin(bbox: BBox): OsmFeature[][] {
         const self = this
-        const tiles = []
+        const tiles: OsmFeature[][] = []
         Array.from(this.perLayerHierarchy.keys())
-            .forEach(key => tiles.push(...self.GetFeaturesWithin(key, bbox)))
+            .forEach(key => {
+                const fetched : OsmFeature[][] = self.GetFeaturesWithin(key, bbox)
+                tiles.push(...fetched);
+            })
         return tiles;
     }
 
-    public GetFeaturesWithin(layerId: string, bbox: BBox): any[][] {
+    public GetAllFeaturesAndMetaWithin(bbox: BBox, layerIdWhitelist?: Set<string>): 
+        {features: OsmFeature[], layer: string}[] {
+        const self = this
+        const tiles :{features: any[], layer: string}[]= []
+        Array.from(this.perLayerHierarchy.keys())
+            .forEach(key => {
+                if(layerIdWhitelist !== undefined && !layerIdWhitelist.has(key)){
+                    return;
+                }
+                return tiles.push({
+                    layer: key,
+                    features: [].concat(...self.GetFeaturesWithin(key, bbox))
+                });
+            })
+        return tiles;
+    }
+
+    /**
+     * Gets all the tiles which overlap with the given BBOX.
+     * This might imply that extra features might be shown
+     */
+    public GetFeaturesWithin(layerId: string, bbox: BBox): OsmFeature[][] {
         if (layerId === "*") {
             return this.GetAllFeaturesWithin(bbox)
         }
@@ -401,7 +430,7 @@ export default class FeaturePipeline {
     /*
     * Gives an UIEventSource containing the tileIndexes of the tiles that should be loaded from OSM
     * */
-    private getNeededTilesFromOsm(isSufficientlyZoomed: UIEventSource<boolean>): UIEventSource<number[]> {
+    private getNeededTilesFromOsm(isSufficientlyZoomed: Store<boolean>): Store<number[]> {
         const self = this
         return this.state.currentBounds.map(bbox => {
             if (bbox === undefined) {
@@ -434,12 +463,12 @@ export default class FeaturePipeline {
     private initOverpassUpdater(state: {
         allElements: ElementStorage;
         layoutToUse: LayoutConfig,
-        currentBounds: UIEventSource<BBox>,
-        locationControl: UIEventSource<Loc>,
-        readonly overpassUrl: UIEventSource<string[]>;
-        readonly overpassTimeout: UIEventSource<number>;
-        readonly overpassMaxZoom: UIEventSource<number>,
-    }, useOsmApi: UIEventSource<boolean>): OverpassFeatureSource {
+        currentBounds: Store<BBox>,
+        locationControl: Store<Loc>,
+        readonly overpassUrl: Store<string[]>;
+        readonly overpassTimeout: Store<number>;
+        readonly overpassMaxZoom: Store<number>,
+    }, useOsmApi: Store<boolean>): OverpassFeatureSource {
         const minzoom = Math.min(...state.layoutToUse.layers.map(layer => layer.minzoom))
         const overpassIsActive = state.currentBounds.map(bbox => {
             if (bbox === undefined) {
@@ -487,6 +516,62 @@ export default class FeaturePipeline {
         new RegisteringAllFromFeatureSourceActor(updater, state.allElements)
         return updater;
     }
+
+    /**
+     * Builds upon 'GetAllFeaturesAndMetaWithin', but does stricter BBOX-checking and applies the filters
+     */
+    public getAllVisibleElementsWithmeta(bbox: BBox): { center: [number, number], element: OsmFeature, layer: LayerConfig }[] {
+        if (bbox === undefined) {
+            console.warn("No bbox")
+            return []
+        }
+
+        const layers = Utils.toIdRecord(this.state.layoutToUse.layers)
+        const elementsWithMeta: { features: OsmFeature[], layer: string }[] = this.GetAllFeaturesAndMetaWithin(bbox)
+
+        let elements: {center: [number, number], element: OsmFeature, layer: LayerConfig }[] = []
+        let seenElements = new Set<string>()
+        for (const elementsWithMetaElement of elementsWithMeta) {
+            const layer = layers[elementsWithMetaElement.layer]
+            if(layer.title === undefined){
+                continue
+            }
+            const filtered = this.state.filteredLayers.data.find(fl => fl.layerDef == layer);
+            for (let i = 0; i < elementsWithMetaElement.features.length; i++) {
+                const element = elementsWithMetaElement.features[i];
+                if (!filtered.isDisplayed.data) {
+                    continue
+                }
+                if (seenElements.has(element.properties.id)) {
+                    continue
+                }
+                seenElements.add(element.properties.id)
+                if (!bbox.overlapsWith(BBox.get(element))) {
+                    continue
+                }
+                if (layer?.isShown !== undefined && !layer.isShown.matchesProperties(element)) {
+                    continue
+                }
+                const activeFilters: FilterState[] = Array.from(filtered.appliedFilters.data.values());
+                if (!activeFilters.every(filter => filter?.currentFilter === undefined || filter?.currentFilter?.matchesProperties(element.properties))) {
+                    continue
+                }
+                const center = GeoOperations.centerpointCoordinates(element);
+                elements.push({
+                    element,
+                    center,
+                    layer: layers[elementsWithMetaElement.layer],
+                })
+
+            }
+        }
+
+
+     
+
+        return elements;
+    }
+
 
     /**
     * Inject a new point

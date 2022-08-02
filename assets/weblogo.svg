@@ -2555,58 +2555,6 @@
                         id="path6587"
                         d="M 131.1683,37.049946 C 171.82694,4.876587 209.3036,24.322024 208.95005,42.353247 208.5965,60.38447 152.38151,112.71037 132.58252,108.46773 112.78353,104.22509 107.12667,55.081169 131.1683,37.049946 Z"
                         style="opacity:0.6043478;fill:url(#linearGradient6595);fill-opacity:1;stroke:none"/>
-                <text
-                        transform="rotate(-8.8996237)"
-                        id="text6302-7"
-                        y="69.184349"
-                        x="99.83886"
-                        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:Sans;opacity:0.46086958;fill:url(#radialGradient6482);fill-opacity:1;stroke:none"
-                        xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6482);fill-opacity:1"
-             y="69.184349"
-             x="99.83886"
-             id="tspan6304-0">01011001</tspan>
-                    <tspan
-                            id="tspan6415-7"
-                            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6482);fill-opacity:1"
-                            y="93.934013"
-                            x="99.83886">00110101</tspan>
-                    <tspan
-                            id="tspan6417-1"
-                            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6482);fill-opacity:1"
-                            y="118.68368"
-                            x="99.83886">10010011</tspan>
-                    <tspan
-                            id="tspan6419-9"
-                            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6482);fill-opacity:1"
-                            y="143.43335"
-                            x="99.83886"> </tspan></text>
-                <text
-                        transform="rotate(-8.8996237)"
-                        id="text6302"
-                        y="67.898323"
-                        x="99.410172"
-                        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:Sans;fill:url(#radialGradient6427);fill-opacity:1;stroke:none"
-                        xml:space="preserve"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6427);fill-opacity:1"
-             y="67.898323"
-             x="99.410172"
-             id="tspan6304">01011001</tspan>
-                    <tspan
-                            id="tspan6415"
-                            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6427);fill-opacity:1"
-                            y="92.647987"
-                            x="99.410172">00110101</tspan>
-                    <tspan
-                            id="tspan6417"
-                            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6427);fill-opacity:1"
-                            y="117.39765"
-                            x="99.410172">10010011</tspan>
-                    <tspan
-                            id="tspan6419"
-                            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.79973221px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'Monospace Bold';fill:url(#radialGradient6427);fill-opacity:1"
-                            y="142.14732"
-                            x="99.410172"> </tspan></text>
                 <path
                         id="path6587-7"
                         d="m 219.46318,129.09019 c -26.79401,21.9828 -41.80834,21.0073 -38.07474,13.13797 3.73361,-7.86929 42.32585,-41.65518 51.44717,-43.7482 9.1213,-2.09301 2.27518,18.04121 -13.37243,30.61023 z"

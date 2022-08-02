@@ -1,352 +1,312 @@
 {
   "contributors": [
     {
-      "contributor": "pietervdvn",
-      "commits": 1119
+      "commits": 4276,
+      "contributor": "Pieter Vander Vennet"
     },
     {
-      "contributor": "Pieter Vander Vennet",
-      "commits": 784
+      "commits": 127,
+      "contributor": "Robin van der Linde"
     },
     {
-      "contributor": "Weblate",
-      "commits": 47
+      "commits": 43,
+      "contributor": "Tobias"
     },
     {
-      "contributor": "Robin van der Linde",
-      "commits": 47
+      "commits": 33,
+      "contributor": "Win Olario"
     },
     {
-      "contributor": "Tobias",
-      "commits": 35
+      "commits": 33,
+      "contributor": "Christian Neumann"
     },
     {
-      "contributor": "Christian Neumann",
-      "commits": 33
+      "commits": 31,
+      "contributor": "Andrews Leruth"
     },
     {
-      "contributor": "Win Olario",
-      "commits": 31
+      "commits": 31,
+      "contributor": "Pieter Fiers"
     },
     {
-      "contributor": "Pieter Fiers",
-      "commits": 31
+      "commits": 26,
+      "contributor": "Joost"
     },
     {
-      "contributor": "karelleketers",
-      "commits": 26
+      "commits": 26,
+      "contributor": "karelleketers"
     },
     {
-      "contributor": "Ward",
-      "commits": 24
+      "commits": 24,
+      "contributor": "Ward"
     },
     {
-      "contributor": "Artem",
-      "commits": 23
+      "commits": 22,
+      "contributor": "riQQ"
     },
     {
-      "contributor": "Sebastian Kürten",
-      "commits": 19
+      "commits": 21,
+      "contributor": "AlexanderRebai"
     },
     {
-      "contributor": "Arno Deceuninck",
-      "commits": 18
+      "commits": 19,
+      "contributor": "Niels Elgaard Larsen"
     },
     {
-      "contributor": "pgm-chardelv1",
-      "commits": 17
+      "commits": 19,
+      "contributor": "yopaseopor"
     },
     {
-      "contributor": "Joost",
-      "commits": 17
+      "commits": 19,
+      "contributor": "Sebastian Kürten"
     },
     {
-      "contributor": "Marco",
-      "commits": 16
+      "commits": 18,
+      "contributor": "Hosted Weblate"
     },
     {
-      "contributor": "Allan Nordhøy",
-      "commits": 16
+      "commits": 18,
+      "contributor": "Arno Deceuninck"
     },
     {
-      "contributor": "ToastHawaii",
-      "commits": 15
+      "commits": 17,
+      "contributor": "pgm-chardelv1"
     },
     {
-      "contributor": "Supaplex",
-      "commits": 14
+      "commits": 15,
+      "contributor": "ToastHawaii"
     },
     {
-      "contributor": "J. Lavoie",
-      "commits": 14
+      "commits": 13,
+      "contributor": "Nicole"
     },
     {
-      "contributor": "WaldiS",
-      "commits": 13
+      "commits": 12,
+      "contributor": "Tobias Jordans"
     },
     {
-      "contributor": "Bavo Vanderghote",
-      "commits": 12
+      "commits": 12,
+      "contributor": "Bavo Vanderghote"
     },
     {
-      "contributor": "LiamSimons",
-      "commits": 10
+      "commits": 11,
+      "contributor": "dependabot[bot]"
     },
     {
-      "contributor": "Jacque Fresco",
-      "commits": 9
+      "commits": 10,
+      "contributor": "LiamSimons"
     },
     {
-      "contributor": "Midgard",
-      "commits": 8
+      "commits": 9,
+      "contributor": "RobJN"
     },
     {
-      "contributor": "Mateusz Konieczny",
-      "commits": 8
+      "commits": 8,
+      "contributor": "Midgard"
     },
     {
-      "contributor": "Irina",
-      "commits": 8
+      "commits": 7,
+      "contributor": "Mateusz Konieczny"
     },
     {
-      "contributor": "yopaseopor",
-      "commits": 7
+      "commits": 7,
+      "contributor": "Flo Edelmann"
     },
     {
-      "contributor": "Hosted Weblate",
-      "commits": 7
+      "commits": 7,
+      "contributor": "Binnette"
     },
     {
-      "contributor": "Flo Edelmann",
-      "commits": 7
+      "commits": 6,
+      "contributor": "Thibault Molleman"
     },
     {
-      "contributor": "Binnette",
-      "commits": 7
+      "commits": 6,
+      "contributor": "danieldegroot2"
     },
     {
-      "contributor": "Vinicius",
-      "commits": 6
+      "commits": 6,
+      "contributor": "pelderson"
     },
     {
-      "contributor": "pelderson",
-      "commits": 6
+      "commits": 5,
+      "contributor": "David Haberthür"
     },
     {
-      "contributor": "lvgx",
-      "commits": 6
+      "commits": 4,
+      "contributor": "OliNau"
     },
     {
-      "contributor": "dependabot[bot]",
-      "commits": 6
+      "commits": 4,
+      "contributor": "Codain"
     },
     {
-      "contributor": "Alexey Shabanov",
-      "commits": 6
+      "commits": 4,
+      "contributor": "Ward Beyens"
     },
     {
-      "contributor": "Nikolay Korotkiy",
-      "commits": 5
+      "commits": 3,
+      "contributor": "Thierry1030"
     },
     {
-      "contributor": "LeJun",
-      "commits": 5
+      "commits": 3,
+      "contributor": "Weblate (bot)"
     },
     {
-      "contributor": "David Haberthür",
-      "commits": 5
+      "commits": 3,
+      "contributor": "Léo Villeveygoux"
     },
     {
-      "contributor": "William Weber Berrutti",
-      "commits": 4
+      "commits": 2,
+      "contributor": "pdassori"
     },
     {
-      "contributor": "Ward Beyens",
-      "commits": 4
+      "commits": 2,
+      "contributor": "快乐的老鼠宝宝"
     },
     {
-      "contributor": "SiegbjornSitumeang",
-      "commits": 4
+      "commits": 2,
+      "contributor": "arrival-spring"
     },
     {
-      "contributor": "seppesantens",
-      "commits": 4
+      "commits": 2,
+      "contributor": "Strubbl"
     },
     {
-      "contributor": "Polgár Sándor",
-      "commits": 4
+      "commits": 2,
+      "contributor": "RayBB"
     },
     {
-      "contributor": "Jan Zabel",
-      "commits": 4
+      "commits": 2,
+      "contributor": "Charlotte Delvaux"
     },
     {
-      "contributor": "Hiroshi Miura",
-      "commits": 4
+      "commits": 2,
+      "contributor": "Supaplex"
     },
     {
-      "contributor": "Fabio Bettani",
-      "commits": 4
+      "commits": 2,
+      "contributor": "pbarban"
     },
     {
-      "contributor": "Wiktor Przybylski",
-      "commits": 3
+      "commits": 2,
+      "contributor": "graveelius"
     },
     {
-      "contributor": "vankos",
-      "commits": 3
+      "commits": 2,
+      "contributor": "Stanislas Gueniffey"
     },
     {
-      "contributor": "Reza Almanda",
-      "commits": 3
+      "commits": 1,
+      "contributor": "HispanicMojitos"
     },
     {
-      "contributor": "Léo Villeveygoux",
-      "commits": 3
+      "commits": 1,
+      "contributor": "kaipankrath"
     },
     {
-      "contributor": "JCGF-OSM",
-      "commits": 3
+      "commits": 1,
+      "contributor": "bxl-forever"
     },
     {
-      "contributor": "Erik Palm",
-      "commits": 3
+      "commits": 1,
+      "contributor": "loviuz"
     },
     {
-      "contributor": "Eduardo Addad de Oliveira",
-      "commits": 3
+      "commits": 1,
+      "contributor": "kjonosm"
     },
     {
-      "contributor": "快乐的老鼠宝宝",
-      "commits": 2
+      "commits": 1,
+      "contributor": "Štefan Baebler"
     },
     {
-      "contributor": "Stanislas Gueniffey",
-      "commits": 2
+      "commits": 1,
+      "contributor": "Jiří Podhorecký"
     },
     {
-      "contributor": "riiga",
-      "commits": 2
+      "commits": 1,
+      "contributor": "Mark Rogerson"
     },
     {
-      "contributor": "pbarban",
-      "commits": 2
+      "commits": 1,
+      "contributor": "nicole_s"
     },
     {
-      "contributor": "mic140",
-      "commits": 2
+      "commits": 1,
+      "contributor": "SC"
     },
     {
-      "contributor": "Leo Alcaraz",
-      "commits": 2
+      "commits": 1,
+      "contributor": "Raphael Das Gupta"
     },
     {
-      "contributor": "Jose Luis Infante",
-      "commits": 2
+      "commits": 1,
+      "contributor": "Nikolay Korotkiy"
     },
     {
-      "contributor": "Jeff Huang",
-      "commits": 2
+      "commits": 1,
+      "contributor": "Seppe Santens"
     },
     {
-      "contributor": "Heiko",
-      "commits": 2
+      "commits": 1,
+      "contributor": "root"
     },
     {
-      "contributor": "graveelius",
-      "commits": 2
+      "commits": 1,
+      "contributor": "Allan Nordhøy"
     },
     {
-      "contributor": "Damian Tokarski",
-      "commits": 2
+      "commits": 1,
+      "contributor": "Sebastian"
     },
     {
-      "contributor": "Charlotte Delvaux",
-      "commits": 2
+      "commits": 1,
+      "contributor": "Hiroshi Miura"
     },
     {
-      "contributor": "Tomas Fiers",
-      "commits": 1
+      "commits": 1,
+      "contributor": "riiga"
     },
     {
-      "contributor": "Thibault Molleman",
-      "commits": 1
+      "commits": 1,
+      "contributor": "Vinicius"
     },
     {
-      "contributor": "tbowdecl97",
-      "commits": 1
+      "commits": 1,
+      "contributor": "Alexey Shabanov"
     },
     {
-      "contributor": "Seppe Santens",
-      "commits": 1
+      "commits": 1,
+      "contributor": "Polgár Sándor"
     },
     {
-      "contributor": "Sebastian",
-      "commits": 1
+      "commits": 1,
+      "contributor": "SiegbjornSitumeang"
     },
     {
-      "contributor": "Sean Young",
-      "commits": 1
+      "commits": 1,
+      "contributor": "Marco"
     },
     {
-      "contributor": "Schouppe Joost",
-      "commits": 1
+      "commits": 1,
+      "contributor": "mozita"
     },
     {
-      "contributor": "root",
-      "commits": 1
+      "commits": 1,
+      "contributor": "Schouppe Joost"
     },
     {
-      "contributor": "Rodrigo Tavares",
-      "commits": 1
+      "commits": 1,
+      "contributor": "Noémie"
     },
     {
-      "contributor": "riQQ",
-      "commits": 1
+      "commits": 1,
+      "contributor": "Tomas Fiers"
     },
     {
-      "contributor": "Raphael Das Gupta",
-      "commits": 1
-    },
-    {
-      "contributor": "Noémie",
-      "commits": 1
-    },
-    {
-      "contributor": "mozita",
-      "commits": 1
-    },
-    {
-      "contributor": "Michał Targoński",
-      "commits": 1
-    },
-    {
-      "contributor": "Luna Jernberg",
-      "commits": 1
-    },
-    {
-      "contributor": "liimee",
-      "commits": 1
-    },
-    {
-      "contributor": "Iváns",
-      "commits": 1
-    },
-    {
-      "contributor": "Eric Armijo",
-      "commits": 1
-    },
-    {
-      "contributor": "Damian Pułka",
-      "commits": 1
-    },
-    {
-      "contributor": "Carlos Ramos Carreño",
-      "commits": 1
-    },
-    {
-      "contributor": "Beardhatcode",
-      "commits": 1
+      "commits": 1,
+      "contributor": "tbowdecl97"
     }
   ]
 }

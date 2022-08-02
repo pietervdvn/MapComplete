@@ -46,7 +46,7 @@ export class WikidataImageProvider extends ImageProvider {
         return allImages
     }
 
-    protected DownloadAttribution(url: string): Promise<any> {
+    public DownloadAttribution(url: string): Promise<any> {
         throw new Error("Method not implemented; shouldn't be needed!");
     }
 

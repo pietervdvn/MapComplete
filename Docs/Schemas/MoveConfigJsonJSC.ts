@@ -11,42 +11,67 @@ export default {
     }
   },
   "definitions": {
-    "AndOrTagConfigJson": {
+    "TagConfigJson": {
+      "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/AndTagConfigJson"
+        },
+        {
+          "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+          "type": "object",
+          "properties": {
+            "or": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TagConfigJson"
+              }
+            }
+          },
+          "required": [
+            "or"
+          ]
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "AndTagConfigJson": {
+      "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
       "type": "object",
       "properties": {
         "and": {
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/definitions/TagConfigJson"
           }
-        },
+        }
+      },
+      "required": [
+        "and"
+      ]
+    },
+    "OrTagConfigJson": {
+      "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
+      "type": "object",
+      "properties": {
         "or": {
           "type": "array",
           "items": {
-            "anyOf": [
-              {
-                "$ref": "#/definitions/AndOrTagConfigJson"
-              },
-              {
-                "type": "string"
-              }
-            ]
+            "$ref": "#/definitions/TagConfigJson"
           }
         }
-      }
+      },
+      "required": [
+        "or"
+      ]
     },
     "ApplicableUnitJson": {
       "type": "object",
       "properties": {
         "canonicalDenomination": {
-          "description": "The canonical value which will be added to the text.\ne.g. \"m\" for meters\nIf the user inputs '42', the canonical value will be added and it'll become '42m'",
+          "description": "The canonical value which will be added to the value in OSM.\ne.g. \"m\" for meters\nIf the user inputs '42', the canonical value will be added and it'll become '42m'.\n\nImportant: often, _no_ canonical values are expected, e.g. in the case of 'maxspeed' where 'km/h' is the default.\nIn this case, an empty string should be used",
           "type": "string"
         },
         "canonicalDenominationSingular": {

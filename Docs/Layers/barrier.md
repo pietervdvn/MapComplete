@@ -12,25 +12,9 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 
 
-## Table of contents
-
-1. [barrier](#barrier)
-      * [Themes using this layer](#themes-using-this-layer)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [bicycle=yes/no](#bicycle=yesno)
-    + [barrier_type](#barrier_type)
-    + [Bollard type](#bollard-type)
-    + [Cycle barrier type](#cycle-barrier-type)
-    + [MaxWidth](#maxwidth)
-    + [Space between barrier (cyclebarrier)](#space-between-barrier-(cyclebarrier))
-    + [Width of opening (cyclebarrier)](#width-of-opening-(cyclebarrier))
-    + [Overlap (cyclebarrier)](#overlap-(cyclebarrier))
 
 
-
-
-
+  - This layer is shown at zoomlevel **17** and higher
   - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[0])
   - This layer will automatically load  [cycleways_and_roads](./cycleways_and_roads.md)  into the layout as it depends on it:  a preset snaps to this layer (presets[1])
 
@@ -47,8 +31,6 @@ Obstacles while cycling, such as bollards and cycle barriers
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-[Go to the source code](../assets/layers/barrier/barrier.json)
-
 
 
  Basic tags for this layer 
@@ -63,6 +45,8 @@ Elements must have the all of following tags to be shown on this layer:
   - <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22barrier%22%3D%22bollard%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22barrier%22%3D%22cycle_barrier%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -70,7 +54,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -80,10 +66,10 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [bollard](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard) [cycle_barrier](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/bollard#values) [bollard](https://wiki.openstreetmap.org/wiki/Key:bollard) | Multiple choice | [removable](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dremovable) [fixed](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfixed) [foldable](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfoldable) [flexible](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dflexible) [rising](https://wiki.openstreetmap.org/wiki/Tag:bollard%3Drising)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cycle_barrier#values) [cycle_barrier](https://wiki.openstreetmap.org/wiki/Key:cycle_barrier) | Multiple choice | [single](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle) [double](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble) [triple](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple) [squeeze](https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxwidth:physical#values) [maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical) | [length](../SpecialInputElements.md#length) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width:separation#values) [width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation) | [length](../SpecialInputElements.md#length) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width:opening#values) [width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening) | [length](../SpecialInputElements.md#length) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/overlap#values) [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) | [length](../SpecialInputElements.md#length) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/maxwidth:physical#values) [maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical) | [distance](../SpecialInputElements.md#distance) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width:separation#values) [width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation) | [distance](../SpecialInputElements.md#distance) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/width:opening#values) [width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening) | [distance](../SpecialInputElements.md#distance) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/overlap#values) [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) | [distance](../SpecialInputElements.md#distance) | 
 
 
 
@@ -92,14 +78,14 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is **Can a bicycle go past this barrier?**
+The question is  Can a bicycle go past this barrier?
 
 
 
 
 
-  - **A cyclist can go past this.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
-  - **A cyclist can not go past this.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>
+  - A cyclist can go past this.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>`
+  - A cyclist can not go past this.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>`
 
 
 
@@ -108,14 +94,14 @@ The question is **Can a bicycle go past this barrier?**
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
 
 
-  - **This is a single bollard in the road** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>
-  - **This is a cycle barrier slowing down cyclists** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>
+  - This is a single bollard in the road  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>`
+  - This is a cycle barrier slowing down cyclists  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>`
 
 
 
@@ -124,18 +110,20 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What kind of bollard is this?**
+The question is  What kind of bollard is this?
 
 
 
 
 
-  - **Removable bollard** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dremovable' target='_blank'>removable</a>
-  - **Fixed bollard** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfixed' target='_blank'>fixed</a>
-  - **Bollard that can be folded down** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfoldable' target='_blank'>foldable</a>
-  - **Flexible bollard, usually plastic** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dflexible' target='_blank'>flexible</a>
-  - **Rising bollard** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Drising' target='_blank'>rising</a>
+  - Removable bollard  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dremovable' target='_blank'>removable</a>`
+  - Fixed bollard  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfixed' target='_blank'>fixed</a>`
+  - Bollard that can be folded down  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfoldable' target='_blank'>foldable</a>`
+  - Flexible bollard, usually plastic  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dflexible' target='_blank'>flexible</a>`
+  - Rising bollard  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Drising' target='_blank'>rising</a>`
 
+
+Only visible if  `barrier=bollard`  is shown
 
 
 
@@ -143,17 +131,19 @@ The question is **What kind of bollard is this?**
 
 
 
-The question is **What kind of cycling barrier is this?**
+The question is  What kind of cycling barrier is this?
 
 
 
 
 
-  - **Single, just two barriers with a space inbetween <img src='./assets/themes/cycle_infra/Cycle_barrier_single.png' style='width:8em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle' target='_blank'>single</a>
-  - **Double, two barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_double.svg' style='width:8em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a>
-  - **Triple, three barriers behind each other <img src='./assets/themes/cycle_infra/Cycle_barrier_triple.png' style='width:8em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>
-  - **Squeeze gate, gap is smaller at top, than at the bottom <img src='./assets/themes/cycle_infra/Cycle_barrier_squeeze.png' style='width:8em'>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze' target='_blank'>squeeze</a>
+  - Single, just two barriers with a space inbetween  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle' target='_blank'>single</a>`
+  - Double, two barriers behind each other  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a>`
+  - Triple, three barriers behind each other  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
+  - Squeeze gate, gap is smaller at top, than at the bottom  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze' target='_blank'>squeeze</a>`
 
+
+Only visible if  `barrier=cycle_barrier`  is shown
 
 
 
@@ -161,10 +151,13 @@ The question is **What kind of cycling barrier is this?**
 
 
 
-The question is **How wide is the gap left over besides the barrier?**
+The question is  How wide is the gap left over besides the barrier?
 
 This rendering asks information about the property  [maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical) 
-This is rendered with `Maximum width: {maxwidth:physical} m`
+
+This is rendered with  Maximum width: {maxwidth:physical} m
+
+
 
 
 
@@ -172,10 +165,15 @@ This is rendered with `Maximum width: {maxwidth:physical} m`
 
 
 
-The question is **How much space is there between the barriers (along the length of the road)?**
+The question is  How much space is there between the barriers (along the length of the road)?
 
 This rendering asks information about the property  [width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation) 
-This is rendered with `Space between barriers (along the length of the road): {width:separation} m`
+
+This is rendered with  Space between barriers (along the length of the road): {width:separation} m
+
+
+
+Only visible if  `cycle_barrier=double|cycle_barrier=triple`  is shown
 
 
 
@@ -183,10 +181,15 @@ This is rendered with `Space between barriers (along the length of the road): {w
 
 
 
-The question is **How wide is the smallest opening next to the barriers?**
+The question is  How wide is the smallest opening next to the barriers?
 
 This rendering asks information about the property  [width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening) 
-This is rendered with `Width of opening: {width:opening} m`
+
+This is rendered with  Width of opening: {width:opening} m
+
+
+
+Only visible if  `cycle_barrier=double|cycle_barrier=triple`  is shown
 
 
 
@@ -194,9 +197,14 @@ This is rendered with `Width of opening: {width:opening} m`
 
 
 
-The question is **How much overlap do the barriers have?**
+The question is  How much overlap do the barriers have?
 
 This rendering asks information about the property  [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) 
-This is rendered with `Overlap: {overlap} m` 
+
+This is rendered with  Overlap: {overlap} m
+
+
+
+Only visible if  `cycle_barrier=double|cycle_barrier=triple`  is shown 
 
 This document is autogenerated from [assets/layers/barrier/barrier.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/barrier/barrier.json)

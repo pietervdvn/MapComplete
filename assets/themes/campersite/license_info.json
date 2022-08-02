@@ -1,15 +1,5 @@
 [
   {
-    "path": "Barßel_Wohnmobilstellplatz.jpg",
-    "license": "CC-BY-SA 3.0",
-    "authors": [
-      "ES01"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Bar%C3%9Fel_Wohnmobilstellplatz.jpg"
-    ]
-  },
-  {
     "path": "caravan.svg",
     "license": "CC0",
     "authors": [
@@ -40,6 +30,16 @@
     "sources": [
       "https://github.com/osmandapp/Osmand/blob/master/LICENSE",
       "https://github.com/osmandapp/OsmAnd-resources/blob/16892d8b2fc00dd422abfb2fef967d5ccd05eeac/icons/svg/poi/sanitary_dump_station.svg"
+    ]
+  },
+  {
+    "path": "social_image.jpg",
+    "license": "CC-BY-SA 3.0",
+    "authors": [
+      "ES01"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Bar%C3%9Fel_Wohnmobilstellplatz.jpg"
     ]
   }
 ]

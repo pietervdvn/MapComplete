@@ -18,10 +18,42 @@
     "sources": []
   },
   {
+    "path": "SocialImageBanner.png",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "SocialImageBanner.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "SocialImageSmall.png",
     "license": "CC-BY-SA 4.0",
     "authors": [
       "pietervdvn"
+    ],
+    "sources": []
+  },
+  {
+    "path": "SocialImageTemplate.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "SocialImageTemplateWide.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
     ],
     "sources": []
   },

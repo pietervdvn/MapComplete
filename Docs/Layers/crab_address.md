@@ -12,21 +12,11 @@ Address data for Flanders by the governement, suited for import into OpenStreetM
 
 
 
-## Table of contents
-
-1. [crab_address](#crab_address)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [render_crab](#render_crab)
 
 
+  - This layer is shown at zoomlevel **0** and higher
+  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely  `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson`
 
-
-
-  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson`
-
-
-[Go to the source code](../assets/layers/crab_address/crab_address.json)
 
 
 
@@ -42,6 +32,8 @@ Elements must have the all of following tags to be shown on this layer:
   - HUISNR~^..*$
 
 
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22HUISNR%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
 
 
  Supported attributes 
@@ -55,7 +47,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

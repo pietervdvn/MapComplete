@@ -1,6 +1,6 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
-import Toggle from "../Input/Toggle";
+import Toggle, {ClickableToggle} from "../Input/Toggle";
 import Combine from "../Base/Combine";
 import Svg from "../../Svg";
 import {Tag} from "../../Logic/Tags/Tag";
@@ -11,7 +11,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export default class DeleteImage extends Toggle {
 
-    constructor(key: string, tags: UIEventSource<any>, state: { layoutToUse: LayoutConfig, changes?: Changes, osmConnection?: OsmConnection }) {
+    constructor(key: string, tags: Store<any>, state: { layoutToUse: LayoutConfig, changes?: Changes, osmConnection?: OsmConnection }) {
         const oldValue = tags.data[key]
         const isDeletedBadge = Translations.t.image.isDeleted.Clone()
             .SetClass("rounded-full p-1")
@@ -37,7 +37,7 @@ export default class DeleteImage extends Toggle {
 
         const cancelButton = Translations.t.general.cancel.Clone().SetClass("bg-white pl-4 pr-4").SetStyle("border-bottom-left-radius:30rem; border-bottom-right-radius: 30rem;");
         const openDelete = Svg.delete_icon_svg().SetStyle("width: 2em; height: 2em; display:block;")
-        const deleteDialog = new Toggle(
+        const deleteDialog = new ClickableToggle(
             new Combine([
                 deleteButton,
                 cancelButton
@@ -55,7 +55,7 @@ export default class DeleteImage extends Toggle {
                 tags.map(tags => (tags[key] ?? "") !== "")
             ),
             undefined /*Login (and thus editing) is disabled*/,
-            state.osmConnection.isLoggedIn
+            state?.osmConnection?.isLoggedIn
         )
         this.SetClass("cursor-pointer")
     }

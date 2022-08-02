@@ -3,12 +3,12 @@
  * Data coming from upstream will always overwrite a previous value
  */
 import FeatureSource, {Tiled} from "../FeatureSource";
-import {UIEventSource} from "../../UIEventSource";
+import {Store, UIEventSource} from "../../UIEventSource";
 import {BBox} from "../../BBox";
 
 export default class RememberingSource implements FeatureSource, Tiled {
 
-    public readonly features: UIEventSource<{ feature: any, freshness: Date }[]>;
+    public readonly features: Store<{ feature: any, freshness: Date }[]>;
     public readonly name;
     public readonly tileIndex: number
     public readonly bbox: BBox
@@ -20,17 +20,15 @@ export default class RememberingSource implements FeatureSource, Tiled {
         this.bbox = source.bbox;
 
         const empty = [];
-        this.features = source.features.map(features => {
+        const featureSource = new UIEventSource<{feature: any, freshness: Date}[]>(empty)
+        this.features = featureSource
+        source.features.addCallbackAndRunD(features => {
             const oldFeatures = self.features?.data ?? empty;
-            if (features === undefined) {
-                return oldFeatures;
-            }
-
             // Then new ids
             const ids = new Set<string>(features.map(f => f.feature.properties.id + f.feature.geometry.type));
             // the old data
             const oldData = oldFeatures.filter(old => !ids.has(old.feature.properties.id + old.feature.geometry.type))
-            return [...features, ...oldData];
+            featureSource.setData([...features, ...oldData])
         })
     }
 

@@ -12,526 +12,584 @@
 @tailwind utilities;
 
 @layer utilities {
-    @variants responsive {
-        .z-above-map {
-            z-index: 10000
-        }
-
-        .z-above-controls {
-            z-index: 10001
-        }
-
-        .w-160 {
-            width: 40rem;
-        }
-
-        .bg-subtle {
-            background-color: var(--subtle-detail-color);
-            color: var(--subtle-detail-color-contrast);
-        }
-
-        .bg-unsubtle {
-            background-color: var(--unsubtle-detail-color);
-            color: var(--unsubtle-detail-color-contrast);
-        }
-
-        .bg-catch {
-            background-color: var(--catch-detail-color);
-            color: var(--catch-detail-color-contrast);
-        }
+  @variants responsive {
+    .z-above-map {
+      z-index: 10000;
     }
 
+    .z-above-controls {
+      z-index: 10001;
+    }
+
+    .w-160 {
+      width: 40rem;
+    }
+
+    .bg-subtle {
+      background-color: var(--subtle-detail-color);
+      color: var(--subtle-detail-color-contrast);
+    }
+
+    .bg-unsubtle {
+      background-color: var(--unsubtle-detail-color);
+      color: var(--unsubtle-detail-color-contrast);
+    }
+
+    .bg-catch {
+      background-color: var(--catch-detail-color);
+      color: var(--catch-detail-color-contrast);
+    }
+
+    .rounded-left-full {
+      border-bottom-left-radius: 999rem;
+      border-top-left-radius: 999rem;
+    }
+
+    .rounded-right-full {
+      border-bottom-right-radius: 999rem;
+      border-top-right-radius: 999rem;
+    }
+  }
 }
 
-
 :root {
-    /* The main colour scheme of mapcomplete is configured here.
+  /* The main colour scheme of mapcomplete is configured here.
      * For a custom styling, set 'customCss' in your layoutConfig and overwrite some of these.
      */
 
-    /* Main color of the application: the background and text colours */
-    --background-color: white;
-    /* Main text colour. Also styles some elements, such as the 'close popup'-button or 'back-arrow' (in mobile) */
-    --foreground-color: black;
-    
-    /* A colour to indicate an error or warning */
-    --alert-color: #fee4d1;
-    
-    /**
+  /* Main color of the application: the background and text colours */
+  --background-color: white;
+  /* Main text colour. Also styles some elements, such as the 'close popup'-button or 'back-arrow' (in mobile) */
+  --foreground-color: black;
+
+  /* A colour to indicate an error or warning */
+  --alert-color: #fee4d1;
+
+  /**
      * Base colour of interactive elements, mainly the 'subtle button'
      * 
      */
-    --subtle-detail-color: #DBEAFE;
-    --subtle-detail-color-contrast: black;
-    --subtle-detail-color-light-contrast: lightgrey;
+  --subtle-detail-color: #dbeafe;
+  --subtle-detail-color-contrast: black;
+  --subtle-detail-color-light-contrast: lightgrey;
 
-    /**
+  /**
      * A stronger variant of the 'subtle-detail-colour'
      * Used as subtle button hover
      */
-    --unsubtle-detail-color: #BFDBFE;
-    --unsubtle-detail-color-contrast: black;
-    
-    
-    --catch-detail-color: #3a3aeb;
-    --catch-detail-color-contrast: white;
+  --unsubtle-detail-color: #bfdbfe;
+  --unsubtle-detail-color-contrast: black;
 
-    
-    --non-active-tab-svg: var(--foreground-color);
-    --shadow-color: #00000066;
-    
-    --return-to-the-map-height: 2em;
-    --image-carousel-height: 350px;
+  --catch-detail-color: #3a3aeb;
+  --catch-detail-color-contrast: white;
 
-    /* The border colour of the leaflet popup */
-    --popup-border: white;
+  --non-active-tab-svg: var(--foreground-color);
+  --shadow-color: #00000066;
 
-    /* Technical variable to make some dynamic behaviour possible; set by javascript. */
-    --variable-title-height: 0px; 
+  --return-to-the-map-height: 2em;
+  --image-carousel-height: 350px;
+
+  /* The border colour of the leaflet popup */
+  --popup-border: white;
+
+  /* Technical variable to make some dynamic behaviour possible; set by javascript. */
+  --variable-title-height: 0px;
 }
 
-html, body {
-    height: 100%;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 .leaflet-overlay-pane .leaflet-zoom-animated {
-    /* Another workaround to keep leaflet working */
-    width: initial !important;
-    height: initial !important;
-    box-sizing: initial !important;
+  /* Another workaround to keep leaflet working */
+  width: initial !important;
+  height: initial !important;
+  box-sizing: initial !important;
 }
 
 .leaflet-control-attribution {
-    display: block ruby;
+  display: block ruby;
 }
 
 .badge {
 }
 
 .badge svg {
-    /*Workaround for leaflet*/
-    width: unset !important;
-    height: 100% !important;
+  /*Workaround for leaflet*/
+  width: unset !important;
+  height: 100% !important;
 }
 
-svg, img {
-    box-sizing: content-box;
-    width: 100%;
-    height: 100%;
+svg,
+img {
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
 }
 
+.titleicon img {
+  width: unset;
+}
+
+.titleicon svg {
+  width: unset;
+}
 .svg-catch svg path {
-    fill: var(--catch-detail-color) !important;
-    stroke: var(--catch-detail-color) !important;
+  fill: var(--catch-detail-color) !important;
+  stroke: var(--catch-detail-color) !important;
 }
 
 .svg-unsubtle svg path {
-    fill: var(--unsubtle-detail-color) !important;
-    stroke: var(--unsubtle-detail-color) !important;
+  fill: var(--unsubtle-detail-color) !important;
+  stroke: var(--unsubtle-detail-color) !important;
 }
 
 .svg-subtle svg path {
-    fill: var(--subtle-detail-color) !important;
-    stroke: var(--subtle-detail-color) !important;
+  fill: var(--subtle-detail-color) !important;
+  stroke: var(--subtle-detail-color) !important;
 }
 
 .svg-foreground svg path {
-    fill: var(--foreground-color) !important;
-    stroke: var(--foreground-color) !important;
+  fill: var(--foreground-color) !important;
+  stroke: var(--foreground-color) !important;
 }
 
 .no-images img {
-    display: none;
+  display: none;
+}
+
+.weblate-link {
+  /* Weblate-links are the little translation icon next to translatable sentences. Due to their special nature, they are exempt from some rules */
 }
 
 .mapcontrol svg path {
-    fill: var(--subtle-detail-color-contrast) !important;
+  fill: var(--subtle-detail-color-contrast) !important;
 }
 
 .red-svg svg path {
-    stroke: #d71010 !important;
+  stroke: #d71010 !important;
 }
 
 a {
-    color: var(--foreground-color);
+  color: var(--foreground-color);
 }
 
 .btn {
-    line-height: 1.25rem;
-    --tw-text-opacity: 1;
-    color: var(--catch-detail-color-contrast);
-    --tw-bg-opacity: 1;
-    background-color: var(--catch-detail-color);
-    display: inline-flex;
-    border-radius: 1.5rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    font-size: large;
-    font-weight: bold;
-    transition: 100ms;
-    /*-- invisible border: rendered on hover*/
-    border: 3px solid var(--unsubtle-detail-color);
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: var(--catch-detail-color-contrast);
+  --tw-bg-opacity: 1;
+  background-color: var(--catch-detail-color);
+  display: inline-flex;
+  border-radius: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-size: large;
+  font-weight: bold;
+  transition: 100ms;
+  /*-- invisible border: rendered on hover*/
+  border: 3px solid var(--unsubtle-detail-color);
 }
 
 .btn:hover {
-    border: 3px solid var(--catch-detail-color);
+  border: 3px solid var(--catch-detail-color);
 }
 
 .btn-secondary {
-    background-color: var(--catch-detail-color);
-    filter: saturate(0.5);
-    
+  background-color: var(--catch-detail-color);
+  filter: saturate(0.5);
 }
 
 .btn-secondary:hover {
-    background-color: var(--catch-detail-color);
-    filter: unset;
+  background-color: var(--catch-detail-color);
+  filter: unset;
 }
 
 .btn-disabled {
-    filter: saturate(0.3);
-    cursor: default;
+  filter: saturate(0.3);
+  cursor: default;
 }
 
 .btn-disabled:hover {
-    border: 3px solid var(--unsubtle-detail-color);
+  border: 3px solid var(--unsubtle-detail-color);
 }
 
 .h-min {
-    height: min-content;
+  height: min-content;
 }
 
+/* slider */
+input[type="range"].vertical {
+  writing-mode: bt-lr; /* IE */
+  -webkit-appearance: slider-vertical; /* Chromium */
+  cursor: pointer;
+}
+
+@-moz-document url-prefix() {
+  input[type="range"].elevator::-moz-range-thumb {
+    background-color: #00000000 !important;
+    background-image: url("/assets/svg/elevator_wheelchair.svg");
+    width: 150px !important;
+    height: 30px !important;
+    border: 2px;
+    border-style: solid;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-image: linear-gradient(to right, black 50%, transparent 50%) 100% 1;
+    padding-bottom: 5px;
+  }
+}
 
 .border-detail {
-    border-color: var(--foreground-color);
+  border-color: var(--foreground-color);
 }
 
 .w-min {
-    width: min-content;
+  width: min-content;
+}
+
+.rounded-left-full {
+  border-bottom-left-radius: 999rem;
+  border-top-left-radius: 999rem;
+}
+
+.rounded-right-full {
+  border-bottom-right-radius: 999rem;
+  border-top-right-radius: 999rem;
 }
 
 .w-16-imp {
-    width: 4rem !important;
+  width: 4rem !important;
+}
+
+.w-32-imp {
+  width: 8rem !important;
+}
+
+.w-48-imp {
+  width: 12rem !important;
 }
 
 .link-underline a {
-    text-decoration: underline 1px var(--foreground-color);
+  text-decoration: underline 1px var(--foreground-color);
 }
 
 .link-no-underline a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 li {
-    margin-left: 0.5em;
-    padding-left: 0.2em;
-    margin-top: 0.1em;
+  margin-left: 0.5em;
+  padding-left: 0.2em;
+  margin-top: 0.1em;
 }
 
 h2 {
-    font-size: large;
-    margin-top: 0.5em;
-    margin-bottom: 0.3em;
-    font-weight: bold;
+  font-size: large;
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
+  font-weight: bold;
 }
 
 h3 {
-    font-size: larger;
-    margin-top: 0.6em;
-    margin-bottom: 0;
-    font-weight: bold;
+  font-size: larger;
+  margin-top: 0.6em;
+  margin-bottom: 0;
+  font-weight: bold;
 }
 
 h3 {
-    font-size: larger;
-    margin-top: 0.6em;
-    margin-bottom: 0;
-    font-weight: bolder;
+  font-size: larger;
+  margin-top: 0.6em;
+  margin-bottom: 0;
+  font-weight: bolder;
 }
 
 p {
-    padding-top: 0.1em;
+  padding-top: 0.1em;
 }
 
 li::marker {
-    content: "•"
+  content: "•";
 }
 
 .subtle-background {
-    background: var(--subtle-detail-color);
-    color: var(--subtle-detail-color-contrast);
+  background: var(--subtle-detail-color);
+  color: var(--subtle-detail-color-contrast);
 }
 
 .normal-background {
-    background: var(--background-color);
-    color: var(--foreground-color)
+  background: var(--background-color);
+  color: var(--foreground-color);
 }
 
 .subtle-lighter {
-    color: var(--subtle-detail-color-light-contrast);
+  color: var(--subtle-detail-color-light-contrast);
 }
 
 .border-attention-catch {
-    border: 5px solid var(--catch-detail-color);
+  border: 5px solid var(--catch-detail-color);
 }
 
 .border-invisible {
-    border: 5px solid #00000000;
+  border: 5px solid #00000000;
 }
 
 .border-attention {
-    border-color: var(--catch-detail-color);
+  border-color: var(--catch-detail-color);
 }
 
 .direction-svg svg path {
-    fill: var(--catch-detail-color) !important;
+  fill: var(--catch-detail-color) !important;
 }
 
-
 #leafletDiv {
-    height: 100%;
+  height: 100%;
 }
 
 .leaflet-popup-content-wrapper {
-    background-color: var(--background-color);
-    color: var(--foreground-color);
-    border: 2px solid var(--popup-border);
-    box-shadow: 0 3px 14px var(--shadow-color) !important;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  border: 2px solid var(--popup-border);
+  box-shadow: 0 3px 14px var(--shadow-color) !important;
 }
 
 .leaflet-container {
-    font: unset !important;
-    background-color: var(--background-color) !important;
+  font: unset !important;
+  background-color: var(--background-color) !important;
 }
 
 .leaflet-popup-tip {
-    background-color: var(--popup-border) !important;
-    color: var(--popup-border) !important;
-    box-shadow: 0 3px 14px var(--shadow-color) !important;
+  background-color: var(--popup-border) !important;
+  color: var(--popup-border) !important;
+  box-shadow: 0 3px 14px var(--shadow-color) !important;
 }
 
 .single-layer-selection-toggle {
-    position: relative;
-    width: 2em;
-    height: 2em;
-    flex-shrink: 0;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  flex-shrink: 0;
 }
 
 .single-layer-selection-toggle img {
-    max-height: 2em !important;
-    max-width: 2em !important;
+  max-height: 2em !important;
+  max-width: 2em !important;
 }
 
 .single-layer-selection-toggle svg {
-    max-height: 2em !important;
-    max-width: 2em !important;
+  max-height: 2em !important;
+  max-width: 2em !important;
 }
 
-
 .block-ruby {
-    display: block ruby;
+  display: block ruby;
 }
 
 .disable-links a {
-    pointer-events: none;
-    text-decoration: none !important;
-    color: var(--subtle-detail-color-contrast) !important;
+  pointer-events: none;
+  text-decoration: none !important;
+  color: var(--subtle-detail-color-contrast) !important;
 }
 
 .enable-links a {
-    pointer-events: unset;
-    text-decoration: underline !important;
-    color: unset !important;
+  pointer-events: unset;
+  text-decoration: underline !important;
+  color: unset !important;
 }
 
-.disable-links a.must-link, .disable-links .must-link a {
-    /* Hide links if they are disabled */
-    display: none;
+.disable-links a.must-link,
+.disable-links .must-link a {
+  /* Hide links if they are disabled */
+  display: none;
 }
 
 /**************** GENERIC ****************/
 
-
 .alert {
-    background-color: var(--alert-color);
-    color: var(--foreground-color);
-    font-weight: bold;
-    border-radius: 1em;
-    margin: 0.25em;
-    text-align: center;
-    padding: 0.15em 0.3em;
+  background-color: var(--alert-color);
+  color: var(--foreground-color);
+  font-weight: bold;
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
 }
 
 .invalid {
-    box-shadow: 0 0 10px #ff5353;
-    height: min-content;
+  box-shadow: 0 0 10px #ff5353;
+  height: min-content;
 }
 
 .shadow {
-    box-shadow: 0 0 10px var(--shadow-color);
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 
 .title-font span {
-    font-size: xx-large !important;
-    font-weight: bold;
+  font-size: xx-large !important;
+  font-weight: bold;
 }
 
 .soft {
-    background-color: var(--subtle-detail-color);
-    color: var(--subtle-detail-color-contrast);
-    font-weight: bold;
-    border-radius: 1em;
-    margin: 0.25em;
-    text-align: center;
-    padding: 0.15em 0.3em;
+  background-color: var(--subtle-detail-color);
+  color: var(--subtle-detail-color-contrast);
+  font-weight: bold;
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
 }
 
-
 .subtle {
-    color: #999;
+  color: #999;
 }
 
 .link-underline .subtle a {
-    text-decoration: underline 1px #7193bb88;
-    color: #7193bb;
+  text-decoration: underline 1px #7193bb88;
+  color: #7193bb;
 }
 
-
 .thanks {
-    background-color: #43d904;
-    font-weight: bold;
-    border-radius: 1em;
-    margin: 0.25em;
-    text-align: center;
-    padding: 0.15em 0.3em;
+  background-color: #43d904;
+  font-weight: bold;
+  border-radius: 1em;
+  margin: 0.25em;
+  text-align: center;
+  padding: 0.15em 0.3em;
 }
 
 .clickable {
-    pointer-events: all;
+  pointer-events: all;
 }
 
 .unclickable {
-    pointer-events: none !important;
+  pointer-events: none !important;
 }
 
-
 @keyframes slide {
-    /* This is the animation on the marker to add a new point - it slides through all the possible presets */
-    from {
-        transform: translateX(0%);
-    }
+  /* This is the animation on the marker to add a new point - it slides through all the possible presets */
+  from {
+    transform: translateX(0%);
+  }
 
-    to {
-        transform: translateX(calc(-100% + 42px));
-    }
+  to {
+    transform: translateX(calc(-100% + 42px));
+  }
 }
 
 .hand-drag-animation {
-    animation: hand-drag-animation 6s ease-in-out infinite;
-    transform-origin: 50% 125%;
+  animation: hand-drag-animation 6s ease-in-out infinite;
+  transform-origin: 50% 125%;
 }
 
 @keyframes hand-drag-animation {
-    /* This is the animation on the little extra hand on the location input. If fades in, invites the user to interact/drag the map */
-    0% {
-        opacity: 0;
-        transform: rotate(-30deg);
-    }
+  /* This is the animation on the little extra hand on the location input. If fades in, invites the user to interact/drag the map */
+  0% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
 
-    6% {
-        opacity: 1;
-        transform: rotate(-30deg);
-    }
+  6% {
+    opacity: 1;
+    transform: rotate(-30deg);
+  }
 
-    12% {
-        opacity: 1;
-        transform: rotate(-45deg);
-    }
+  12% {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
 
-    24% {
-        opacity: 1;
-        transform: rotate(-00deg);
-    }
+  24% {
+    opacity: 1;
+    transform: rotate(-00deg);
+  }
 
-    30% {
-        opacity: 1;
-        transform: rotate(-30deg);
-    }
+  30% {
+    opacity: 1;
+    transform: rotate(-30deg);
+  }
 
+  36% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
 
-    36% {
-        opacity: 0;
-        transform: rotate(-30deg);
-    }
-
-    100% {
-        opacity: 0;
-        transform: rotate(-30deg);
-    }
-
+  100% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
 }
 
 /**************************************/
 
-
 #topleft-tools {
-    display: block;
-    position: absolute;
-    z-index: 5000;
-    transition: all 500ms linear;
-    left: 0;
-    right: 0;
+  display: block;
+  position: absolute;
+  z-index: 5000;
+  transition: all 500ms linear;
+  left: 0;
+  right: 0;
 }
 
 .welcomeMessage {
-    display: block;
-    max-width: calc(100vw - 5em);
-    width: 40em;
-    max-height: calc(100vh - 15em);
-    background-color: var(--background-color);
-    color: var(--foreground-color);
+  display: block;
+  max-width: calc(100vw - 5em);
+  width: 40em;
+  max-height: calc(100vh - 15em);
+  background-color: var(--background-color);
+  color: var(--foreground-color);
 }
-
-
 
 /***************** Info box (box containing features and questions ******************/
 
 input {
-    color: var(--foreground-color)
+  color: var(--foreground-color);
 }
 
 .leaflet-popup-content {
-    width: 45em !important;
-    margin: 0.25rem !important;
+  width: 45em !important;
+  margin: 0.25rem !important;
 }
 
 .leaflet-div-icon {
-    background-color: unset !important;
-    border: unset !important;
+  background-color: unset !important;
+  border: unset !important;
 }
 
 .floating-element-width {
-    max-width: calc(100vw - 5em);
-    width: 40em;
+  max-width: calc(100vw - 5em);
+  width: 40em;
 }
 
 .leaflet-div-icon svg {
-    width: calc(100%);
-    height: calc(100%);
+  width: calc(100%);
+  height: calc(100%);
 }
 
 /****** ShareScreen *****/
 
 .literal-code {
+  display: inline-block;
+  background-color: lightgray;
+  padding: 0.5em;
+  word-break: break-word;
+  color: black;
+  box-sizing: border-box;
+}
+
+.code {
     display: inline-block;
     background-color: lightgray;
     padding: 0.5em;
@@ -540,51 +598,93 @@ input {
     box-sizing: border-box;
 }
 
-
 /** Switch layout **/
 .small-image img {
-    height: 1em;
-    max-width: 1em;
+  height: 1em;
+  max-width: 1em;
 }
 
 .small-image {
-    height: 1em;
-    max-width: 1em;
+  height: 1em;
+  max-width: 1em;
 }
 
-
 .slideshow-item img {
-    height: var(--image-carousel-height);
-    width: unset;
+  height: var(--image-carousel-height);
+  width: unset;
 }
 
 .animate-height {
-    transition: max-height .5s ease-in-out;
-    overflow-y: hidden;
+  transition: max-height 0.5s ease-in-out;
+  overflow-y: hidden;
 }
 
-
 .zebra-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .layer-toggle {
-    /* The checkbox that toggles a single layer */
+  /* The checkbox that toggles a single layer */
 }
 
 .layer-filters {
-    /* If needed, the panel which contains the extra filters for a layer */
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--foreground-color);
+  /* If needed, the panel which contains the extra filters for a layer */
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--foreground-color);
 }
 
 .filter-panel {
-    /* The panel for a single layer, containing both the toggle and the filters (if any) */
-    border-bottom: 2px solid lightgrey;
-    margin-bottom: 0.5rem;
+  /* The panel for a single layer, containing both the toggle and the filters (if any) */
+  border-bottom: 2px solid lightgrey;
+  margin-bottom: 0.5rem;
 }
 
 .first-filter-panel {
-    /* Additional class on the first layer filter */
+  /* Additional class on the first layer filter */
 }
 
+.mapping-icon-small-height {
+  /* A mapping icon type */
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  width: unset;
+}
+
+.mapping-icon-medium-height {
+  /* A mapping icon type */
+  height: 3rem;
+  margin-right: 0.5rem;
+  width: unset;
+}
+
+.mapping-icon-large-height {
+  /* A mapping icon type */
+  height: 5rem;
+  margin-right: 0.5rem;
+  width: unset;
+}
+
+.mapping-icon-small {
+  /* A mapping icon type */
+  width: 1.5rem;
+  max-height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.mapping-icon-medium {
+  /* A mapping icon type */
+  width: 3rem;
+  max-height: 3rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.mapping-icon-large {
+  /* A mapping icon type */
+  width: 6rem;
+  max-height: 5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}

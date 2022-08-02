@@ -1,0 +1,194 @@
+{
+  "id": "maproulette_challenge",
+  "name": null,
+  "description": {
+    "en": "Layer showing tasks of a MapRoulette challenge"
+  },
+  "source": {
+    "osmTags": "id~*",
+    "geoJson": "https://maproulette.org/api/v2/challenge/view/27971",
+    "isOsmCache": false
+  },
+  "title": {
+    "render": {
+      "en": "Item in MapRoulette"
+    }
+  },
+  "titleIcons": [
+    {
+      "id": "maproulette",
+      "render": "<a href='https://maproulette.org/challenge/{mr_challengeId}/task/{mr_taskId}' target='_blank'><img src='./assets/layers/maproulette/logomark.svg'/></a>"
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "./assets/layers/maproulette/logomark.svg",
+        "mappings": [
+          {
+            "if": "mr_taskStatus=Created",
+            "then": "pin:#959DFF"
+          },
+          {
+            "if": "mr_taskStatus=Fixed",
+            "then": "pin:#65D2DA"
+          },
+          {
+            "if": "mr_taskStatus=False positive",
+            "then": "pin:#F7BB59"
+          },
+          {
+            "if": "mr_taskStatus=Skipped",
+            "then": "pin:#F7BB59"
+          },
+          {
+            "if": "mr_taskStatus=Deleted",
+            "then": "pin:#737373"
+          },
+          {
+            "if": "mr_taskStatus=Already fixed",
+            "then": "pin:#CCB186"
+          },
+          {
+            "if": "mr_taskStatus=Too hard",
+            "then": "pin:#FF5E63"
+          },
+          {
+            "if": "mr_taskStatus=Disabled",
+            "then": "pin:#FF349C"
+          }
+        ]
+      },
+      "iconSize": "40,40,bottom"
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "details",
+      "render": "{maproulette_task()}"
+    },
+    {
+      "id": "status",
+      "render": "Current status: {status}",
+      "mappings": [
+        {
+          "if": "mr_taskStatus=Created",
+          "then": {
+            "en": "Task is created"
+          }
+        },
+        {
+          "if": "mr_taskStatus=Fixed",
+          "then": {
+            "en": "Task is fixed"
+          }
+        },
+        {
+          "if": "mr_taskStatus=False positive",
+          "then": {
+            "en": "Task is a false positive"
+          }
+        },
+        {
+          "if": "mr_taskStatus=Skipped",
+          "then": {
+            "en": "Task is skipped"
+          }
+        },
+        {
+          "if": "mr_taskStatus=Deleted",
+          "then": {
+            "en": "Task is deleted"
+          }
+        },
+        {
+          "if": "mr_taskStatus=Already fixed",
+          "then": {
+            "en": "Task is already fixed"
+          }
+        },
+        {
+          "if": "mr_taskStatus=Too hard",
+          "then": {
+            "en": "Task is marked as too hard"
+          }
+        },
+        {
+          "if": "mr_taskStatus=Disabled",
+          "then": {
+            "en": "Task is disabled"
+          }
+        }
+      ]
+    },
+    {
+      "id": "blurb",
+      "condition": "blurb~*",
+      "render": "{blurb}"
+    }
+  ],
+  "filter": [
+    {
+      "id": "status",
+      "options": [
+        {
+          "question": {
+            "en": "Show tasks with all statuses"
+          }
+        },
+        {
+          "question": {
+            "en": "Show tasks that are created"
+          },
+          "osmTags": "mr_taskStatus=Created"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are fixed"
+          },
+          "osmTags": "mr_taskStatus=Fixed"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are false positives"
+          },
+          "osmTags": "mr_taskStatus=False positive"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are skipped"
+          },
+          "osmTags": "mr_taskStatus=Skipped"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are deleted"
+          },
+          "osmTags": "mr_taskStatus=Deleted"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are already fixed"
+          },
+          "osmTags": "mr_taskStatus=Already fixed"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are marked as too hard"
+          },
+          "osmTags": "mr_taskStatus=Too hard"
+        },
+        {
+          "question": {
+            "en": "Show tasks that are disabled"
+          },
+          "osmTags": "mr_taskStatus=Disabled"
+        }
+      ]
+    }
+  ]
+}

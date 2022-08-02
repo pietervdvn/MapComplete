@@ -1,0 +1,21 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/assets/layers/*/*.json",
+                "!/assets/layers/*/license_info.json"
+            ],
+            "url": "./Docs/Schemas/LayerConfigJson.schema.json"
+        },
+        {
+            "fileMatch": [
+                "/assets/themes/*/*.json",
+                "!/assets/themes/*/license_info.json"
+            ],
+            "url": "./Docs/Schemas/LayoutConfigJson.schema.json"
+        }
+    ],
+    "editor.tabSize": 2,
+    "files.autoSave": "onFocusChange",
+    "search.useIgnoreFiles": true
+    }

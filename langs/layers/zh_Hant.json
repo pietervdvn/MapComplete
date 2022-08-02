@@ -5,6 +5,13 @@
         "tagRenderings": {
             "fixme": {
                 "question": "這裡需要修什麼？請直接解釋"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "這棟建築沒有門牌"
+                    }
+                }
             }
         }
     },
@@ -379,25 +386,25 @@
             "Bicycle parking type": {
                 "mappings": {
                     "0": {
-                        "then": "單車架 <img style='width: 25%' src='./assets/layers/bike_parking/staple.svg'>"
+                        "then": "單車架"
                     },
                     "1": {
-                        "then": "車輪架/圓圈 <img style='width: 25%'' src='./assets/layers/bike_parking/wall_loops.svg'>"
+                        "then": "車輪架/圓圈"
                     },
                     "2": {
-                        "then": "車把架 <img style='width: 25%'' src='./assets/layers/bike_parking/handlebar_holder.svg'>"
+                        "then": "車把架"
                     },
                     "3": {
-                        "then": "車架<img style='width: 25%'' src='./assets/layers/bike_parking/rack.svg'>"
+                        "then": "車架"
                     },
                     "4": {
-                        "then": "兩層<img style='width: 25%'' src='./assets/layers/bike_parking/two_tier.svg'>"
+                        "then": "兩層"
                     },
                     "5": {
-                        "then": "車棚 <img style='width: 25%'' src='./assets/layers/bike_parking/shed.svg'>"
+                        "then": "車棚"
                     },
                     "6": {
-                        "then": "柱子 <img style='width: 25%'' src='./assets/layers/bike_parking/bollard.svg'>"
+                        "then": "柱子"
                     },
                     "7": {
                         "then": "樓層當中標示為單車停車場的區域"
@@ -445,9 +452,6 @@
                     },
                     "3": {
                         "then": "地面層停車場"
-                    },
-                    "4": {
-                        "then": "屋頂停車場"
                     }
                 },
                 "question": "這個單車停車場的相對位置是？"
@@ -459,6 +463,23 @@
     },
     "cafe_pub": {
         "name": "咖啡廳與酒吧"
+    },
+    "climbing_club": {
+        "description": "攀岩社團或組織",
+        "name": "攀岩社團",
+        "tagRenderings": {
+            "climbing_club-name": {
+                "render": "<strong>{name}</strong>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "攀岩 NGO"
+                }
+            },
+            "render": "攀岩社團"
+        }
     },
     "extinguisher": {
         "description": "顯示消防栓的地圖圖層。"
@@ -474,8 +495,134 @@
             "render": "幽靈單車"
         }
     },
+    "hackerspace": {
+        "description": "駭客空間",
+        "name": "駭客空間",
+        "presets": {
+            "0": {
+                "description": "駭客空間是對軟體有興趣的人聚集的地方",
+                "title": "駭客空間"
+            },
+            "1": {
+                "description": "創客空間是 DIY 愛好者聚集在一起弄電子零件實驗，例如用 arduino、LEDstrips 等...",
+                "title": "創客空間"
+            }
+        },
+        "tagRenderings": {
+            "hackerspaces-name": {
+                "question": "這個駭客空間的名稱是？",
+                "render": "這個駭客空間叫 <b>{name}</b>"
+            },
+            "hackerspaces-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 營業"
+                    }
+                },
+                "question": "這個駭客空間的營業時間？",
+                "render": "{opening_hours_table()}"
+            },
+            "hackerspaces-start_date": {
+                "question": "這個駭客空間何時成立的？",
+                "render": "這駭客空間是 {start_date} 成立的"
+            },
+            "hs-club-mate": {
+                "mappings": {
+                    "0": {
+                        "then": "這個駭客空間服務俱樂部伙伴"
+                    },
+                    "1": {
+                        "then": "這個駭客空間沒有服務俱樂部伙伴"
+                    }
+                },
+                "question": "這個駭客空間是否服務俱樂部伙伴？"
+            },
+            "is_makerspace": {
+                "mappings": {
+                    "0": {
+                        "then": "這是創客空間"
+                    },
+                    "1": {
+                        "then": "這是傳統的 (軟體導向) 駭客空間"
+                    }
+                },
+                "question": "這邊是駭客空間還是創客空間？"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": " {name}"
+                }
+            },
+            "render": "駭客空間"
+        }
+    },
     "hydrant": {
         "description": "顯示消防栓的地圖圖層。",
         "name": "消防栓地圖"
+    },
+    "windturbine": {
+        "name": "風機",
+        "presets": {
+            "0": {
+                "title": "風機"
+            }
+        },
+        "tagRenderings": {
+            "turbine-diameter": {
+                "question": "這個風力渦輪機的風葉直徑是多少公尺？",
+                "render": "這個風力渦輪機的風葉直徑是 {rotor:diameter} 公尺。"
+            },
+            "turbine-height": {
+                "question": "這個風機的總高度是多少 (包括風葉大小) 公尺？",
+                "render": "這風機的總高度 (包括風葉直徑) 是 {height} 公尺。"
+            },
+            "turbine-operator": {
+                "question": "這個風機營業商是？",
+                "render": "這個風機營業商是 {operator}。"
+            },
+            "turbine-output": {
+                "question": "這個風機的電力輸出是多少？(例如 2.3 MW)",
+                "render": "這個風機的電力輸出是 {generator:output:electricity}。"
+            },
+            "turbine-start-date": {
+                "question": "這個風機何時開始營運？",
+                "render": "這個風機從 {start_date} 開始運轉。"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "風機"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " 百萬瓦"
+                    },
+                    "1": {
+                        "human": " 千瓦"
+                    },
+                    "2": {
+                        "human": " 瓦"
+                    },
+                    "3": {
+                        "human": " 千兆瓦"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " 公尺"
+                    }
+                }
+            }
+        }
     }
 }

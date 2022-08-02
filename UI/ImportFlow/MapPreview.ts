@@ -1,5 +1,5 @@
 import Combine from "../Base/Combine";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {BBox} from "../../Logic/BBox";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
 import Translations from "../i18n/Translations";
@@ -21,13 +21,14 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {FixedUiElement} from "../Base/FixedUiElement";
 import {FlowStep} from "./FlowStep";
 import ScrollableFullScreen from "../Base/ScrollableFullScreen";
-import {AllTagsPanel} from "../SpecialVisualizations";
 import Title from "../Base/Title";
 import CheckBoxes from "../Input/Checkboxes";
+import {AllTagsPanel} from "../AllTagsPanel";
+import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch";
 
 class PreviewPanel extends ScrollableFullScreen {
 
-    constructor(tags, layer) {
+    constructor(tags: UIEventSource<any>) {
         super(
             _ => new FixedUiElement("Element to import"),
             _ => new Combine(["The tags are:",
@@ -42,9 +43,9 @@ class PreviewPanel extends ScrollableFullScreen {
 /**
  * Shows the data to import on a map, asks for the correct layer to be selected
  */
-export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, geojson: any }> {
-    public readonly IsValid: UIEventSource<boolean>;
-    public readonly Value: UIEventSource<{ bbox: BBox, layer: LayerConfig, geojson: any }>
+export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, features: any[] }> {
+    public readonly IsValid: Store<boolean>;
+    public readonly Value: Store<{ bbox: BBox, layer: LayerConfig, features: any[] }>
 
     constructor(
         state: UserRelatedState,
@@ -85,7 +86,7 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
             return copy
         })
 
-        const matching: UIEventSource<{ properties: any, geometry: { coordinates: [number, number] } }[]> = layerPicker.GetValue().map((layer: LayerConfig) => {
+        const matching: Store<{ properties: any, geometry: { coordinates: [number, number] } }[]> = layerPicker.GetValue().map((layer: LayerConfig) => {
             if (layer === undefined) {
                 return [];
             }
@@ -109,6 +110,10 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
             bounds: currentBounds,
             attribution: new Attribution(location, state.osmConnection.userDetails, undefined, currentBounds)
         })
+        const layerControl =  new BackgroundMapSwitch( {
+            backgroundLayer: background,
+            locationControl: location
+        },background)
         map.SetClass("w-full").SetStyle("height: 500px")
 
         new ShowDataMultiLayer({
@@ -120,9 +125,9 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
                     appliedFilters: new UIEventSource<Map<string, FilterState>>(undefined)
                 }))),
             zoomToFeatures: true,
-            features: new StaticFeatureSource(matching, false),
+            features: StaticFeatureSource.fromDateless(matching.map(features => features.map(feature => ({feature})))),
             leafletMap: map.leafletMap,
-            popup: (tag, layer) => new PreviewPanel(tag, layer).SetClass("font-lg")
+            popup: (tag) => new PreviewPanel(tag).SetClass("font-lg")
         })
         var bbox = matching.map(feats => BBox.bboxAroundAll(feats.map(f => new BBox([f.geometry.coordinates]))))
 
@@ -147,13 +152,14 @@ export class MapPreview extends Combine implements FlowStep<{ bbox: BBox, layer:
 
             mismatchIndicator,
             map,
+            layerControl,
             confirm
         ]);
 
         this.Value = bbox.map(bbox =>
             ({
                 bbox,
-                geojson,
+                features: geojson.features,
                 layer: layerPicker.GetValue().data
             }), [layerPicker.GetValue()])
 

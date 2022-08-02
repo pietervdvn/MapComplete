@@ -11,7 +11,25 @@
                     "0": {
                         "then": "Bangunan ini tidak memiliki nomor rumah"
                     }
-                }
+                },
+                "question": "Berapa nomor rumah ini?",
+                "render": "Nomor rumah ini <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Alamat ini di jalan apa?",
+                "render": "Alamat ini ada di jalan <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Alamat yang diketahui"
+        }
+    },
+    "ambulancestation": {
+        "name": "Peta stasiun ambulans",
+        "presets": {
+            "0": {
+                "description": "Tambahkan stasiun ambulans ke peta",
+                "title": "Stasiun ambulans"
             }
         }
     },
@@ -126,10 +144,31 @@
             }
         }
     },
-    "bike_shop": {
+    "climbing_area": {
         "tagRenderings": {
-            "bike_shop-website": {
-                "question": "URL {name} apa?"
+            "name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_club": {
+        "tagRenderings": {
+            "climbing_club-name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_opportunity": {
+        "tagRenderings": {
+            "climbing-opportunity-name": {
+                "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "climbing_route": {
+        "tagRenderings": {
+            "Name": {
+                "render": "<strong>{name}</strong>"
             }
         }
     },
@@ -228,16 +267,16 @@
             "cycleway-lane-track-traffic-signs": {
                 "mappings": {
                     "0": {
-                        "then": "Jalur sepeda wajib <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Jalur sepeda wajib"
                     },
                     "1": {
-                        "then": "Jalur sepeda wajib (dengan tanda tambahan)<br><img src ='./aset/tema/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'> "
+                        "then": "Jalur sepeda wajib (dengan tanda tambahan)<br>"
                     },
                     "2": {
-                        "then": "Jalur pejalan kaki/sepeda terpisah <img src='./assets/themes/cycle_infra/Belgian_road_sign_D09.svg' style='width: 3em'>"
+                        "then": "Jalur pejalan kaki/sepeda terpisah"
                     },
                     "3": {
-                        "then": "Jalur pejalan kaki/sepeda tidak terpisah <img src='./assets/themes/cycle_infra/Belgian_road_sign_D10.svg' style='width: 3em'>"
+                        "then": "Jalur pejalan kaki/sepeda tidak terpisah"
                     },
                     "4": {
                         "then": "Tidak ada rambu lalu lintas"
@@ -265,7 +304,7 @@
             "cycleway-traffic-signs": {
                 "mappings": {
                     "0": {
-                        "then": "Jalur sepeda wajib <img src='./assets/themes/cycle_infra/Belgian_road_sign_D07.svg' style='width: 3em'>"
+                        "then": "Jalur sepeda wajib"
                     }
                 }
             }
@@ -304,7 +343,7 @@
             "hydrant-type": {
                 "mappings": {
                     "3": {
-                        "then": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding."
+                        "then": "Jenis dinding."
                     }
                 }
             }
@@ -314,9 +353,6 @@
         "tagRenderings": {
             "Email": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
-            },
-            "phone": {
-                "render": "<a href='tel:{email}' target='_blank'>{phone}</a>"
             }
         }
     },
@@ -330,26 +366,6 @@
             }
         }
     },
-    "shops": {
-        "tagRenderings": {
-            "shops-email": {
-                "render": "<a href='mailto:{email}'>{email}</a>"
-            },
-            "shops-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Bengkel Mobil"
-                    }
-                }
-            },
-            "shops-website": {
-                "render": "<a href='{website}'>{website}</a>"
-            }
-        }
-    },
     "tree_node": {
         "presets": {
             "2": {
@@ -357,16 +373,59 @@
             }
         },
         "tagRenderings": {
+            "tree-height": {
+                "render": "Tinggi: {height}"
+            },
+            "tree-heritage": {
+                "mappings": {
+                    "0": {
+                        "then": "Terdaftar sebagai warisan oleh <i>Onroerend Erfgoed</i> Flanders"
+                    },
+                    "1": {
+                        "then": "Terdaftar sebagai warisan budaya oleh <i>Direction du Patrimoine culturel</i> Brussels"
+                    },
+                    "2": {
+                        "then": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
+                    },
+                    "3": {
+                        "then": "Tidak terdaftar sebagai warisan"
+                    },
+                    "4": {
+                        "then": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
+                    }
+                },
+                "question": "Apakah pohon ini merupakan warisan yang terdaftar?"
+            },
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Berdaun lebar"
+                    },
+                    "1": {
+                        "then": "Berdaun jarum"
+                    },
+                    "2": {
+                        "then": "Tanpa daun permanen"
+                    }
+                }
+            },
+            "tree-species-wikidata": {
+                "question": "Spesies pohon apa ini?"
+            },
             "tree_node-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Pohon ini tidak memiliki nama."
+                    }
+                },
+                "question": "Apakah pohon ini memiliki nama?",
                 "render": "Nama: {name}"
             }
-        },
+        }
+    },
+    "veterinary": {
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "<i>{name}</i>"
-                }
-            }
+            "render": "Dokter hewan"
         }
     },
     "viewpoint": {
@@ -385,7 +444,183 @@
             "render": "Sudut pandang"
         }
     },
+    "visitor_information_centre": {
+        "name": "Pusat Informasi Pengunjung",
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
+        }
+    },
+    "waste_basket": {
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Keranjang Sampah"
+                        }
+                    }
+                }
+            }
+        },
+        "name": "Keranjang Sampah",
+        "presets": {
+            "0": {
+                "title": "sebuah keranjang sampah"
+            }
+        },
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Keranjang sampah ini memiliki dispenser untuk kantong kotoran (anjing)"
+                    },
+                    "1": {
+                        "then": "Keranjang sampah ini <b> tidak</b> memiliki dispenser untuk kantong kotoran (anjing)"
+                    },
+                    "2": {
+                        "then": "Keranjang sampah ini <b> tidak</b> memiliki dispenser untuk kantong kotoran (anjing)"
+                    }
+                },
+                "question": "Apakah keranjang sampah ini memiliki dispenser untuk kantong kotoran anjing?"
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Keranjang sampah untuk sampah umum"
+                    },
+                    "1": {
+                        "then": "Keranjang sampah untuk sampah umum"
+                    },
+                    "2": {
+                        "then": "Keranjang sampah untuk kotoran anjing"
+                    },
+                    "3": {
+                        "then": "Keranjang sampah untuk rokok"
+                    },
+                    "4": {
+                        "then": "Keranjang sampah untuk obat-obatan"
+                    },
+                    "5": {
+                        "then": "Keranjang sampah untuk jarum dan benda tajam lainnya"
+                    },
+                    "6": {
+                        "then": "Keranjang sampah untuk plastik"
+                    }
+                },
+                "question": "Keranjang sampah macam apa ini?"
+            }
+        },
+        "title": {
+            "render": "Keranjang Sampah"
+        }
+    },
+    "waste_disposal": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Hanya akses publik"
+                    }
+                }
+            }
+        },
+        "name": "Tempat Pembuangan Limbah",
+        "presets": {
+            "0": {
+                "description": "Tempat sampah sedang hingga besar untuk pembuangan limbah (rumah tangga)",
+                "title": "tempat pembuangan sampahh"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Tempat sampah ini bisa digunakan oleh siapa saja"
+                    },
+                    "1": {
+                        "then": "Tempat sampah ini bersifat pribadi"
+                    },
+                    "2": {
+                        "then": "Tempat sampah ini hanya untuk penghuni"
+                    }
+                },
+                "question": "Siapa yang bisa menggunakan tempat sampah ini?",
+                "render": "Akses: {access}"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Ini adalah kontainer bawah tanah"
+                    },
+                    "1": {
+                        "then": "Kontainer ini terletak di dalam ruangan"
+                    },
+                    "2": {
+                        "then": "Kontainer ini terletak di luar ruangan"
+                    }
+                },
+                "question": "Di manakah lokasi kontainer ini?"
+            }
+        },
+        "title": {
+            "render": "Pembuangan Limbah"
+        }
+    },
     "watermill": {
         "name": "Kincir Air"
+    },
+    "windturbine": {
+        "tagRenderings": {
+            "turbine-operator": {
+                "question": "Siapa yang mengoperasikan turbin angin ini?",
+                "render": "Turbin angin ini dioperasikan oleh {operator}."
+            },
+            "turbine-output": {
+                "question": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
+                "render": "Output daya dari turbin angin ini adalah {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "Kapan turbin angin ini mulai beroperasi?",
+                "render": "Turbin angin ini mulai beroperasi pada/dalam {start_date}."
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "turbin angin"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " megawat"
+                    },
+                    "1": {
+                        "human": " kilowat"
+                    },
+                    "2": {
+                        "human": " watt"
+                    },
+                    "3": {
+                        "human": " gigawatt"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
+        }
     }
 }

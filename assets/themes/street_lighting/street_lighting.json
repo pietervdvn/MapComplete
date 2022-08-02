@@ -7,13 +7,20 @@
     "nl": "Straatverlichting",
     "ru": "Уличное освещение",
     "zh_Hant": "道路照明",
-    "hu": "Közvilágítás"
+    "hu": "Közvilágítás",
+    "de": "Straßenbeleuchtung",
+    "ca": "Il·luminació als carrers",
+    "fr": "Éclairage de Rue",
+    "nb_NO": "Gatebelysning"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
     "nl": "Op deze kaart vind je alles over straatlantaarns",
     "zh_Hant": "在這份地圖你可以找到任何有關路燈的事情",
-    "hu": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos"
+    "hu": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos",
+    "de": "Eine Karte für alles zum Thema Straßenbeleuchtung",
+    "es": "En este mapa puedes encontrar todo sobre la iluminación callejera",
+    "fr": "Retrouvez tout ce qui touche à l’éclairage de rue sur cette carte"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,
@@ -27,7 +34,12 @@
         "en": "Lit streets",
         "nl": "Verlichte straten",
         "zh_Hant": "有照明的道路",
-        "hu": "Kivilágított utcák"
+        "hu": "Kivilágított utcák",
+        "de": "Beleuchtete Straßen",
+        "ca": "Il·luminació de carrers",
+        "es": "Calles iluminadas",
+        "fr": "Rues éclairées",
+        "nb_NO": "Belyste gater"
       },
       "source": {
         "osmTags": {
@@ -39,13 +51,18 @@
           ]
         }
       },
-      "minZoom": 16,
+      "minzoom": 16,
       "title": {
         "render": {
           "en": "Lit street",
           "nl": "Verlichte straat",
           "zh_Hant": "照明道路",
-          "hu": "Kivilágított utca"
+          "hu": "Kivilágított utca",
+          "de": "Beleuchtete Straße",
+          "ca": "Il·luminació del carrer",
+          "es": "Calle iluminada",
+          "fr": "Rue éclairée",
+          "nb_NO": "Belyst gate"
         },
         "mappings": [
           {
@@ -60,13 +77,18 @@
         }
       ],
       "tagRenderings": [
+        "images",
         {
           "id": "lit",
           "question": {
             "en": "Is this street lit?",
             "nl": "Is deze straat verlicht?",
             "zh_Hant": "這道路有路燈嗎？",
-            "hu": "Ki van-e világítva ez az utca?"
+            "hu": "Ki van-e világítva ez az utca?",
+            "de": "Ist diese Straße beleuchtet?",
+            "es": "¿Está iluminada esta calle?",
+            "nb_NO": "Er denne gaten belyst?",
+            "fr": "Cette est-elle éclairée ?"
           },
           "mappings": [
             {
@@ -75,7 +97,11 @@
                 "en": "This street is lit",
                 "nl": "Deze straat is verlicht",
                 "zh_Hant": "這個道路有照明",
-                "hu": "Ezen az utcán van közvilágítás"
+                "hu": "Ezen az utcán van közvilágítás",
+                "de": "Diese Straße ist beleuchtet",
+                "es": "Esta calle está iluminada",
+                "nb_NO": "Denne gaten er belyst",
+                "fr": "Cette rue est éclairée"
               }
             },
             {
@@ -84,7 +110,10 @@
                 "en": "This street is not lit",
                 "nl": "Deze straat is niet verlicht",
                 "zh_Hant": "這個道路沒有照明",
-                "hu": "Ezen az utcán nincs közvilágítás"
+                "hu": "Ezen az utcán nincs közvilágítás",
+                "de": "Diese Straße ist nicht beleuchtet",
+                "es": "Esta calle no está iluminada",
+                "fr": "Cette rue n’est pas éclairée"
               }
             },
             {
@@ -93,7 +122,11 @@
                 "en": "This street is lit at night",
                 "nl": "Deze straat is 's nachts verlicht",
                 "zh_Hant": "這個道路晚上有照明",
-                "hu": "Ez az utca éjszaka ki van világítva"
+                "hu": "Ez az utca éjszaka ki van világítva",
+                "de": "Diese Straße ist nachts beleuchtet",
+                "es": "Esta calle está iluminada por la noche",
+                "nb_NO": "Denne gaten er belyst nattestid",
+                "fr": "Cette rue est éclairée la nuit"
               },
               "hideInAnswer": true
             },
@@ -103,7 +136,11 @@
                 "en": "This street is lit 24/7",
                 "nl": "Deze straat is 24/7 verlicht",
                 "zh_Hant": "這個道路 24/7 有照明",
-                "hu": "Ez az utca éjjel-nappal ki van világítva"
+                "hu": "Ez az utca éjjel-nappal ki van világítva",
+                "de": "Diese Straße ist durchgehend beleuchtet",
+                "es": "Esta calle está iluminada todo el día",
+                "nb_NO": "Denne gaten er belyst døgnet rundt",
+                "fr": "Cette rue est éclairée en permanence"
               }
             }
           ]
@@ -118,7 +155,12 @@
         "nl": "Alle straten",
         "ru": "Все улицы",
         "zh_Hant": "所有道路",
-        "hu": "Minden utca"
+        "hu": "Minden utca",
+        "de": "Alle Straßen",
+        "ca": "Tots els carrers",
+        "es": "Todas las calles",
+        "fr": "Toutes les rues",
+        "nb_NO": "Alle gater"
       },
       "source": {
         "osmTags": {
@@ -129,14 +171,18 @@
           ]
         }
       },
-      "minZoom": 19,
+      "minzoom": 19,
       "title": {
         "render": {
           "en": "Street",
           "nl": "Straat",
           "ru": "Улица",
           "zh_Hant": "照明",
-          "hu": "Utca"
+          "hu": "Utca",
+          "de": "Straße",
+          "ca": "Carrer",
+          "nb_NO": "Gate",
+          "fr": "Rue"
         },
         "mappings": [
           {
@@ -159,13 +205,17 @@
         }
       ],
       "tagRenderings": [
+        "images",
         {
           "id": "lit",
           "question": {
             "en": "Is this street lit?",
             "nl": "Is deze straat verlicht?",
             "zh_Hant": "這道路有照明嗎？",
-            "hu": "Ki van-e világítva ez az utca?"
+            "hu": "Ki van-e világítva ez az utca?",
+            "de": "Ist diese Straße beleuchtet?",
+            "nb_NO": "Er denne gaten belyst?",
+            "fr": "Cette rue est-elle éclairée ?"
           },
           "mappings": [
             {
@@ -174,7 +224,11 @@
                 "en": "This street is lit",
                 "nl": "Deze straat is verlicht",
                 "zh_Hant": "這道路有照明",
-                "hu": "Ez az utca ki van világítva"
+                "hu": "Ez az utca ki van világítva",
+                "de": "Diese Straße ist beleuchtet",
+                "es": "Esta calle está iluminada",
+                "nb_NO": "Denne gaten er belyst",
+                "fr": "Cette rue est éclairée"
               }
             },
             {
@@ -183,7 +237,11 @@
                 "en": "This street is not lit",
                 "nl": "Deze straat is niet verlicht",
                 "zh_Hant": "這道路沒有照明",
-                "hu": "Ez az utca nincs kivilágítva"
+                "hu": "Ez az utca nincs kivilágítva",
+                "de": "Diese Straße ist nicht beleuchtet",
+                "es": "Esta calle no está iluminada",
+                "nb_NO": "Denne gaten er ikke belyst",
+                "fr": "Cette rue n’est pas éclairée"
               }
             },
             {
@@ -192,7 +250,10 @@
                 "en": "This street is lit at night",
                 "nl": "Deze straat is 's nachts verlicht",
                 "zh_Hant": "這道路晚上有照明",
-                "hu": "Ez az utca éjjel ki van világítva"
+                "hu": "Ez az utca éjjel ki van világítva",
+                "de": "Diese Straße ist nachts beleuchtet",
+                "nb_NO": "Denne gaten er belyst nattestid",
+                "fr": "Cette rue est éclairée la nuit"
               },
               "hideInAnswer": true
             },
@@ -202,7 +263,10 @@
                 "en": "This street is lit 24/7",
                 "nl": "Deze straat is 24/7 verlicht",
                 "zh_Hant": "這道路 24/7 有照明",
-                "hu": "Ez az utca éjjel-nappal ki van világítva"
+                "hu": "Ez az utca éjjel-nappal ki van világítva",
+                "de": "Diese Straße ist durchgehend beleuchtet",
+                "nb_NO": "Denne gaten er belyst døgnet rundt",
+                "fr": "Cette rue est éclairée en permanence"
               }
             }
           ]

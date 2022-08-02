@@ -24,6 +24,8 @@ import {ElementStorage} from "../../Logic/ElementStorage";
 import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint";
 import BaseLayer from "../../Models/BaseLayer";
 import Loading from "../Base/Loading";
+import Hash from "../../Logic/Web/Hash";
+import {GlobalFilter} from "../../Logic/State/MapState";
 
 /*
 * The SimpleAddUI is a single panel, which can have multiple states:
@@ -42,6 +44,14 @@ export interface PresetInfo extends PresetConfig {
 
 export default class SimpleAddUI extends Toggle {
 
+    /**
+     * 
+     * @param isShown
+     * @param resetScrollSignal
+     * @param filterViewIsOpened
+     * @param state
+     * @param takeLocationFrom: defaults to state.lastClickLocation. Take this location to add the new point around
+     */
     constructor(isShown: UIEventSource<boolean>,
                 resetScrollSignal: UIEventSource<void>,
                 filterViewIsOpened: UIEventSource<boolean>,
@@ -57,8 +67,11 @@ export default class SimpleAddUI extends Toggle {
                     locationControl: UIEventSource<Loc>,
                     filteredLayers: UIEventSource<FilteredLayer[]>,
                     featureSwitchFilter: UIEventSource<boolean>,
-                    backgroundLayer: UIEventSource<BaseLayer>
-                }) {
+                    backgroundLayer: UIEventSource<BaseLayer>,
+                    globalFilters: UIEventSource<GlobalFilter[]>
+                }, 
+                takeLocationFrom?: UIEventSource<{lat: number, lon: number}>
+    ) {
         const loginButton = new SubtleButton(Svg.osm_logo_ui(), Translations.t.general.add.pleaseLogin.Clone())
             .onClick(() => state.osmConnection.AttemptLogin());
         const readYourMessages = new Combine([
@@ -67,7 +80,8 @@ export default class SimpleAddUI extends Toggle {
                 Translations.t.general.goToInbox, {url: "https://www.openstreetmap.org/messages/inbox", newTab: false})
         ]);
 
-
+        
+        takeLocationFrom = takeLocationFrom ?? state.LastClickLocation
         const selectedPreset = new UIEventSource<PresetInfo>(undefined);
         selectedPreset.addCallback(_ => {
             resetScrollSignal.ping();
@@ -75,12 +89,12 @@ export default class SimpleAddUI extends Toggle {
         
         
         isShown.addCallback(_ => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
-        state.LastClickLocation.addCallback(_ => selectedPreset.setData(undefined))
+        takeLocationFrom.addCallback(_ => selectedPreset.setData(undefined))
 
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset, state)
 
 
-        async function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) {
+        async function createNewPoint(tags: any[], location: { lat: number, lon: number }, snapOntoWay?: OsmWay) : Promise<void>{
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
                 theme: state.layoutToUse?.id ?? "unkown",
                 changeType: "create",
@@ -92,6 +106,7 @@ export default class SimpleAddUI extends Toggle {
             state.selectedElement.setData(state.allElements.ContainingFeatures.get(
                 newElementAction.newElementId
             ))
+            Hash.hash.setData(newElementAction.newElementId)
         }
 
         const addUi = new VariableUiElement(
@@ -115,10 +130,10 @@ export default class SimpleAddUI extends Toggle {
                         selectedPreset.setData(undefined)
                     }
 
-                    const message = Translations.t.general.add.addNew.Subs({category: preset.name});
+                    const message = Translations.t.general.add.addNew.Subs({category: preset.name}, preset.name["context"]);
                     return new ConfirmLocationOfPoint(state, filterViewIsOpened, preset,
                         message,
-                        state.LastClickLocation.data,
+                        takeLocationFrom.data,
                         confirm,
                         cancel,
                         () => {
@@ -182,13 +197,14 @@ export default class SimpleAddUI extends Toggle {
 
     private static CreatePresetSelectButton(preset: PresetInfo) {
 
+        const title = Translations.t.general.add.addNew.Subs({
+            category: preset.name
+        }, preset.name["context"])
         return new SubtleButton(
             preset.icon(),
             new Combine([
-                Translations.t.general.add.addNew.Subs({
-                    category: preset.name
-                }).SetClass("font-bold"),
-                Translations.WT(preset.description)?.FirstSentence()
+                title.SetClass("font-bold"),
+                preset.description?.FirstSentence()
             ]).SetClass("flex flex-col")
         )
     }
@@ -205,15 +221,20 @@ export default class SimpleAddUI extends Toggle {
         const allButtons = [];
         for (const layer of state.filteredLayers.data) {
 
-            if (layer.isDisplayed.data === false && !state.featureSwitchFilter.data) {
-                // The layer is not displayed and we cannot enable the layer control -> we skip
-                continue;
+            if (layer.isDisplayed.data === false) {
+                // The layer is not displayed...
+                if(!state.featureSwitchFilter.data){
+                    // ...and we cannot enable the layer control -> we skip, as these presets can never be shown anyway
+                    continue;
+                }
+
+                if (layer.layerDef.name === undefined) {
+                    // this layer can never be toggled on in any case, so we skip the presets
+                    continue;
+                }
             }
 
-            if (layer.layerDef.name === undefined) {
-                // this is a parlty hidden layer
-                continue;
-            }
+
 
             const presets = layer.layerDef.presets;
             for (const preset of presets) {

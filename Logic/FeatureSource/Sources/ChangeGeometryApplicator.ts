@@ -74,7 +74,7 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
             // We only apply the last change as that one'll have the latest geometry
             const change = changesForFeature[changesForFeature.length - 1]
             copy.feature.geometry = ChangeDescriptionTools.getGeojsonGeometry(change)
-            console.log("Applying a geometry change onto ", feature, change, copy)
+            console.log("Applying a geometry change onto:", feature,"The change is:", change,"which becomes:", copy)
             newFeatures.push(copy)
         }
         this.features.setData(newFeatures)

@@ -21,7 +21,18 @@
             "question": "Are dogs allowed in this business?"
         },
         "email": {
-            "question": "What is the email address of {name}?"
+            "question": "What is the email address of {title()}?"
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "This place has an audio induction loop"
+                },
+                "1": {
+                    "then": "This place <b>does not</b> have an audio induction loop"
+                }
+            },
+            "question": "Does this place have an audio induction loop for people with reduced hearing?"
         },
         "level": {
             "mappings": {
@@ -44,8 +55,14 @@
             "question": "On what level is this feature located?",
             "render": "Located on the {level}th floor"
         },
+        "multilevels": {
+            "override": {
+                "question": "What levels does this elevator go to?",
+                "render": "This elevator goes to floors {level}"
+            }
+        },
         "opening_hours": {
-            "question": "What are the opening hours of {name}?",
+            "question": "What are the opening hours of {title()}?",
             "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -72,7 +89,7 @@
             }
         },
         "phone": {
-            "question": "What is the phone number of {name}?"
+            "question": "What is the phone number of {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -91,8 +108,22 @@
             },
             "question": "Does this amenity have electrical outlets, available to customers when they are inside?"
         },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Smoking is <b>allowed</b>"
+                },
+                "1": {
+                    "then": "Smoking is <b>not allowed</b>"
+                },
+                "2": {
+                    "then": "Smoking is <b>allowed outside</b>."
+                }
+            },
+            "question": "Is smoking allowed at {title()}?"
+        },
         "website": {
-            "question": "What is the website of {name}?"
+            "question": "What is the website of {title()}?"
         },
         "wheelchair-access": {
             "mappings": {
@@ -114,6 +145,9 @@
         "wikipedia": {
             "mappings": {
                 "0": {
+                    "then": "No Wikipedia page has been linked yet"
+                },
+                "1": {
                     "then": "No Wikipedia page has been linked yet"
                 }
             },

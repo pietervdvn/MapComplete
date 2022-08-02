@@ -13,19 +13,40 @@
                 },
                 "2": {
                     "then": "Anjing diperbolehkan, tetapi mereka harus diikat"
+                },
+                "3": {
+                    "then": "Anjing diperbolehkan dan dapat berkeliaran dengan bebas"
                 }
-            }
+            },
+            "question": "Apakah anjing diperbolehkan dalam bisnis ini?"
         },
         "email": {
-            "question": "Apa alamat surel dari {name}?"
+            "question": "Apa alamat surel dari {title()}?"
         },
         "level": {
             "mappings": {
+                "0": {
+                    "then": "Terletak di bawah tanah"
+                },
+                "1": {
+                    "then": "Terletak di lantai dasar"
+                },
+                "2": {
+                    "then": "Terletak di lantai dasar"
+                },
                 "3": {
                     "then": "Berlokasi di lantai pertama"
+                },
+                "4": {
+                    "then": "Terletak di lantai basement pertama"
                 }
             },
-            "question": "Pada tingkat apa fitur ini diletakkan?"
+            "question": "Pada tingkat apa fitur ini diletakkan?",
+            "render": "Terletak di lantai {level}"
+        },
+        "opening_hours": {
+            "question": "Kapan jam buka {title()}?",
+            "render": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
             "mappings": {
@@ -39,10 +60,34 @@
             "question": "Metode pembayaran manakah yang di terima disini?"
         },
         "phone": {
-            "question": "Nomor telepon dari {name|?"
+            "question": "Nomor telepon dari {title()}?"
         },
         "website": {
-            "question": "Apa situs web dari {name}?"
+            "question": "Apa situs web dari {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "1": {
+                    "then": "Tempat ini mudah dijangkau dengan kursi roda"
+                },
+                "2": {
+                    "then": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah"
+                }
+            }
+        },
+        "wikipedia": {
+            "mappings": {
+                "1": {
+                    "then": "Belum ada halaman Wikipedia yang ditautkan"
+                }
+            }
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Tidak ditautkan dengan Wikipedia"
+                }
+            }
         }
     }
 }

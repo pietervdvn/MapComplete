@@ -5,11 +5,12 @@
     "nl": "Fietsbanden-verkoopsautomaat",
     "fr": "Distributeur automatique de chambre à air de vélo",
     "it": "Distributore automatico di camere d’aria per bici",
-    "de": "Fahrradschlauch-Automat",
+    "de": "Automaten für Fahrradschläuche",
     "ru": "Торговый автомат для велосипедистов",
     "zh_Hant": "自行車內胎自動售貨機",
     "pt_BR": "Máquina de venda automática de tubos de bicicleta",
-    "pt": "Máquina de venda automática de tubos de bicicleta"
+    "pt": "Máquina de venda automática de tubos de bicicleta",
+    "da": "Automat til salg af cykelslanger"
   },
   "title": {
     "render": {
@@ -21,7 +22,8 @@
       "ru": "Торговый автомат для велосипедистов",
       "zh_Hant": "自行車內胎自動售貨機",
       "pt_BR": "Máquina de venda automática de tubos de bicicleta",
-      "pt": "Máquina de venda automática de tubos de bicicleta"
+      "pt": "Máquina de venda automática de tubos de bicicleta",
+      "da": "Automat til salg af cykelslanger"
     },
     "mappings": [
       {
@@ -49,15 +51,16 @@
   "presets": [
     {
       "title": {
-        "en": "Bicycle tube vending machine",
-        "nl": "Fietsbanden-verkoopsautomaat",
-        "fr": "Distributeur automatique de chambre à air de vélo",
-        "it": "Distributore automatico di camere d’aria per bici",
-        "de": "Fahrradschlauch-Automat",
+        "en": "a bicycle tube vending machine",
+        "nl": "een fietsbanden-verkoopsautomaat",
+        "fr": "une distributeur automatique de chambre à air de vélo",
+        "it": "una distributore automatico di camere d’aria per bici",
+        "de": "einen Fahrradschlauch-Automaten",
         "ru": "Торговый автомат для велосипедистов",
         "zh_Hant": "自行車內胎自動售貨機",
-        "pt_BR": "Máquina de venda automática de tubos de bicicleta",
-        "pt": "Máquina de venda automática de tubos de bicicleta"
+        "pt_BR": "uma máquina de venda automática de tubos de bicicleta",
+        "pt": "uma máquina de venda automática de tubos de bicicleta",
+        "da": "en automat til salg af cykelslanger"
       },
       "tags": [
         "amenity=vending_machine",
@@ -75,10 +78,12 @@
         "fr": "Cette machine est-elle encore opérationelle ?",
         "it": "Questo distributore automatico funziona ancora?",
         "ru": "Этот торговый автомат все еще работает?",
-        "de": "Ist dieser Automat noch in Betrieb?",
+        "de": "Ist dieser Automat in Betrieb?",
         "zh_Hant": "這個自動販賣機仍有運作嗎？",
         "pt_BR": "Esta máquina de venda automática ainda está operacional?",
-        "pt": "Esta máquina de venda automática ainda está operacional?"
+        "pt": "Esta máquina de venda automática ainda está operacional?",
+        "es": "¿Todavía es operacional esta máquina exprendedora?",
+        "da": "Er denne salgsautomat stadig i drift?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status}</i>",
@@ -89,7 +94,8 @@
         "ru": "Рабочий статус: <i> {operational_status}</i>",
         "zh_Hant": "運作狀態是 <i>{operational_status}</i>",
         "pt_BR": "O estado operacional é: <i>{operational_status}</i>",
-        "pt": "O estado operacional é: <i>{operational_status}</i>"
+        "pt": "O estado operacional é: <i>{operational_status}</i>",
+        "es": "El estado operacional es <i>{operational_status}</i></i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -105,10 +111,12 @@
             "it": "Il distributore automatico funziona",
             "ru": "Этот торговый автомат работает",
             "zh_Hans": "这个借还机正常工作",
-            "de": "Dieser Automat funktioniert",
+            "de": "Dieser Automat ist in Betrieb",
             "zh_Hant": "這個自動販賣機仍運作",
             "pt_BR": "Esta máquina de venda automática funciona",
-            "pt": "Esta máquina de venda automática funciona"
+            "pt": "Esta máquina de venda automática funciona",
+            "da": "Denne salgsautomat virker",
+            "es": "Esta máquina expendedora funciona"
           }
         },
         {
@@ -124,7 +132,9 @@
             "de": "Dieser Automat ist kaputt",
             "zh_Hant": "這個自動販賣機沒有運作了",
             "pt_BR": "Esta máquina de venda automática está quebrada",
-            "pt": "Esta máquina de venda automática está quebrada"
+            "pt": "Esta máquina de venda automática está quebrada",
+            "es": "Esta máquina exprendedora está rota",
+            "da": "Denne salgsautomat er i stykker"
           }
         },
         {
@@ -140,7 +150,9 @@
             "de": "Dieser Automat ist geschlossen",
             "zh_Hant": "這個自動販賣機已經關閉了",
             "pt_BR": "Esta máquina de venda automática está fechada",
-            "pt": "Esta máquina de venda automática está fechada"
+            "pt": "Esta máquina de venda automática está fechada",
+            "es": "Esta máquina exprendedora está cerrada",
+            "da": "Denne salgsautomat er lukket"
           }
         }
       ],
@@ -286,7 +298,10 @@
     }
   ],
   "description": {
-    "en": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, ...)",
-    "nl": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)"
+    "en": "A layer showing vending machines for bicycle tubes (either purpose-built bicycle tube vending machines or classical vending machines with bicycle tubes and optionally additional bicycle related objects such as lights, gloves, locks, …)",
+    "nl": "Een laag met verkoopsautomaten met binnenbanden voor fietsen (dit kan een automaat zijn met énkel fietsbanden, of een gewone automaat met fietsbanden en andere fietsaccessoires zoals lichten, handschoenen, sloten,...)",
+    "de": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, …)",
+    "da": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, ...)",
+    "fr": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)"
   }
 }

@@ -8,6 +8,7 @@ import {ExtractImages} from "./Conversion/FixImages";
 import ExtraLinkConfig from "./ExtraLinkConfig";
 
 export default class LayoutConfig {
+    public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string;
     public readonly maintainer: string;
     public readonly credits?: string;
@@ -55,9 +56,17 @@ export default class LayoutConfig {
     public readonly usedImages: string[]
     public readonly extraLink?: ExtraLinkConfig
 
-    constructor(json: LayoutConfigJson, official = true, context?: string) {
+    public readonly definedAtUrl?: string;
+    public readonly definitionRaw?: string;
+
+    constructor(json: LayoutConfigJson, official = true, options?: {
+        definedAtUrl?: string,
+        definitionRaw?: string
+    }) {
         this.official = official;
         this.id = json.id;
+        this.definedAtUrl = options?.definedAtUrl
+        this.definitionRaw = options?.definitionRaw
         if (official) {
             if (json.id.toLowerCase() !== json.id) {
                 throw "The id of a theme should be lowercase: " + json.id
@@ -66,12 +75,12 @@ export default class LayoutConfig {
                 throw "The id of a theme should match [a-z0-9-_]*: " + json.id
             }
         }
-        context = (context ?? "") + "." + this.id;
+        const context = this.id
         this.maintainer = json.maintainer;
         this.credits = json.credits;
         this.version = json.version;
         this.language = json.mustHaveLanguage ?? Array.from(Object.keys(json.title));
-        this.usedImages = Array.from(new ExtractImages(official).convertStrict(json, "while extracting the images of " + json.id + " " + context ?? "")).sort()
+        this.usedImages = Array.from(new ExtractImages(official, undefined).convertStrict(json, "while extracting the images of " + json.id + " " + context ?? "")).sort()
         {
             if (typeof json.title === "string") {
                 throw `The title of a theme should always be a translation, as it sets the corresponding languages (${context}.title). The themenID is ${this.id}; the offending object is ${JSON.stringify(json.title)} which is a ${typeof json.title})`
@@ -98,15 +107,15 @@ export default class LayoutConfig {
                 throw "Got undefined layers for " + json.id + " at " + context
             }
         }
-        this.title = new Translation(json.title, context + ".title");
-        this.description = new Translation(json.description, context + ".description");
-        this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, context + ".shortdescription");
-        this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, context + ".descriptionTail");
+        this.title = new Translation(json.title, "themes:" + context + ".title");
+        this.description = new Translation(json.description, "themes:" + context + ".description");
+        this.shortDescription = json.shortDescription === undefined ? this.description.FirstSentence() : new Translation(json.shortDescription, "themes:" + context + ".shortdescription");
+        this.descriptionTail = json.descriptionTail === undefined ? undefined : new Translation(json.descriptionTail, "themes:" + context + ".descriptionTail");
         this.icon = json.icon;
-        this.socialImage = json.socialImage;
-        if (this.socialImage === null || this.socialImage === "" || this.socialImage === undefined) {
+        this.socialImage = json.socialImage ?? LayoutConfig.defaultSocialImage;
+        if (this.socialImage === "") {
             if (official) {
-                throw "Theme " + json.id + " has no social image defined"
+                throw "Theme " + json.id + " has empty string as social image"
             }
         }
         this.startZoom = json.startZoom;
@@ -119,13 +128,13 @@ export default class LayoutConfig {
         // At this point, layers should be expanded and validated either by the generateScript or the LegacyJsonConvert
         this.layers = json.layers.map(lyrJson => new LayerConfig(<LayerConfigJson>lyrJson, json.id + ".layers." + lyrJson["id"], official));
 
-        this.extraLink =  new ExtraLinkConfig(json.extraLink ?? {
+        this.extraLink = new ExtraLinkConfig(json.extraLink ?? {
             icon: "./assets/svg/pop-out.svg",
-            href: "https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
+            href: "https://{basepath}/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
             newTab: true,
-            requirements: ["iframe","no-welcome-message"]
-        }, context)
-    
+            requirements: ["iframe", "no-welcome-message"]
+        }, context + ".extraLink")
+
 
         this.clustering = {
             maxZoom: 16,

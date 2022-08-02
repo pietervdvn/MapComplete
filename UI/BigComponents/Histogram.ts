@@ -1,5 +1,5 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Table from "../Base/Table";
 import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
@@ -19,7 +19,7 @@ export default class Histogram<T> extends VariableUiElement {
         "#fa61fa"
     ]
 
-    constructor(values: UIEventSource<string[]>,
+    constructor(values: Store<string[]>,
                 title: string | BaseUIElement,
                 countTitle: string | BaseUIElement,
                 options?: {
@@ -93,7 +93,7 @@ export default class Histogram<T> extends VariableUiElement {
                     keys.sort()
                     break;
                 case "name-rev":
-                    keys.sort().reverse()
+                    keys.sort().reverse(/*Copy of array, inplace reverse if fine*/)
                     break;
                 case "count":
                     keys.sort((k0, k1) => counts.get(k0) - counts.get(k1))
@@ -128,8 +128,9 @@ export default class Histogram<T> extends VariableUiElement {
                             .SetStyle(`background: ${actualAssignColor(key)}; width: ${100 * counts.get(key) / max}%`)
                     ]).SetClass("block w-full")
 
-                ]),
-                keys.map(_ => ["width: 20%"])
+                ]),{
+                    contentStyle:keys.map(_ => ["width: 20%"])
+                }
             ).SetClass("w-full zebra-table");
         }, [sortMode]));
     }

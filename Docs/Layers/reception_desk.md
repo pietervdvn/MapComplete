@@ -1,0 +1,137 @@
+
+
+ reception_desk 
+================
+
+
+
+<img src='https://mapcomplete.osm.be/circle:white;./assets/layers/reception_desk/reception_desk.svg' height="100px"> 
+
+A layer showing where the reception desks are and which asks some accessibility information
+
+
+
+
+
+
+  - This layer is shown at zoomlevel **0** and higher
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
+  - [personal](https://mapcomplete.osm.be/personal)
+
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dreception_desk' target='_blank'>reception_desk</a>
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22reception_desk%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
+
+
+ Supported attributes 
+----------------------
+
+
+
+Warning: 
+
+this quick overview is incomplete
+
+
+
+attribute | type | values which are supported by this layer
+----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/desk:height#values) [desk:height](https://wiki.openstreetmap.org/wiki/Key:desk:height) | [pfloat](../SpecialInputElements.md#pfloat) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hearing_loop#values) [hearing_loop](https://wiki.openstreetmap.org/wiki/Key:hearing_loop) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno)
+
+
+
+
+### images 
+
+
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### level 
+
+
+
+The question is  On what level is this feature located?
+
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
+
+This is rendered with  Located on the {level}th floor
+
+
+
+
+
+  - Located underground  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>`
+  - This option cannot be chosen as answer
+  - Located on the ground floor  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>`
+  - Located on the ground floor  corresponds with  ``
+  - This option cannot be chosen as answer
+  - Located on the first floor  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>`
+  - Located on the first basement level  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>`
+
+
+
+
+### desk-height 
+
+
+
+The question is  What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>
+
+This rendering asks information about the property  [desk:height](https://wiki.openstreetmap.org/wiki/Key:desk:height) 
+
+This is rendered with  The height of the desk is <b>{canonical(desk:height)}</b>
+
+
+
+
+
+### induction-loop 
+
+
+
+An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.
+
+The question is  Does this place have an audio induction loop for people with reduced hearing?
+
+
+
+
+
+  - This place has an audio induction loop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>`
+  - This place <b>does not</b> have an audio induction loop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>`
+ 
+
+This document is autogenerated from [assets/layers/reception_desk/reception_desk.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/reception_desk/reception_desk.json)

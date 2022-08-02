@@ -63,6 +63,36 @@
       "value": "24/7"
     },
     {
+      "key": "service:3dprinter",
+      "description": "Layer 'Hackerspace' shows service:3dprinter=yes with a fixed text, namely 'There is a 3D-printer available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "service:3dprinter",
+      "description": "Layer 'Hackerspace' shows service:3dprinter=no with a fixed text, namely 'There is no 3D-printer available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
+      "key": "service:lasercutter",
+      "description": "Layer 'Hackerspace' shows service:lasercutter=yes with a fixed text, namely 'There is a laser cutter available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "service:lasercutter",
+      "description": "Layer 'Hackerspace' shows service:lasercutter=no with a fixed text, namely 'There is no laser cutter available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
+      "key": "service:cnc_drilling_machine",
+      "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=yes with a fixed text, namely 'There is a CNC drill available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "yes"
+    },
+    {
+      "key": "service:cnc_drilling_machine",
+      "description": "Layer 'Hackerspace' shows service:cnc_drilling_machine=no with a fixed text, namely 'There is no CNC drill available at this hackerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "value": "no"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Hackerspace' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
       "value": "designated"
@@ -95,11 +125,6 @@
     {
       "key": "start_date",
       "description": "Layer 'Hackerspace' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Hackerspaces')"
-    },
-    {
-      "key": "id",
-      "description": "The MapComplete theme Hackerspaces has a layer Your travelled track showing features with this tag",
-      "value": "location_track"
     }
   ]
 }

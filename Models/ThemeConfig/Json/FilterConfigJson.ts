@@ -1,4 +1,4 @@
-import {AndOrTagConfigJson} from "./TagConfigJson";
+import {TagConfigJson} from "./TagConfigJson";
 
 export default interface FilterConfigJson {
     /**
@@ -13,9 +13,12 @@ export default interface FilterConfigJson {
      */
     options: {
         question: string | any;
-        osmTags?: AndOrTagConfigJson | string,
+        osmTags?: TagConfigJson,
         default?: boolean,
         fields?: {
+            /**
+             * If name is `search`, use  "_first_comment~.*{search}.*" as osmTags
+             */
             name: string,
             type?: string | "string"
         }[]

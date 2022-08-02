@@ -9,7 +9,10 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
 
     /**
-     * A feature source containing exclusively new elements
+     * A feature source containing exclusively new elements.
+     * 
+     * These elements are probably created by the 'SimpleAddUi' which generates a new point, but the import functionality might create a line or polygon too.
+     * Other sources of new points are e.g. imports from nodes
      */
     public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
     public readonly name: string = "newFeatures";
@@ -54,8 +57,8 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                     // In _most_ of the cases, this means that this _isn't_ a new object
                     // However, when a point is snapped to an already existing point, we have to create a representation for this point!
                     // For this, we introspect the change
-                    if (allElementStorage.has(change.id)) {
-                        // const currentTags = allElementStorage.getEventSourceById(change.id).data
+                    if (allElementStorage.has(change.type + "/" + change.id)) {
+                        // The current point already exists, we don't have to do anything here
                         continue;
                     }
                     console.debug("Detected a reused point")

@@ -21,7 +21,7 @@
             "question": "S'accepten gossos en aquest negoci?"
         },
         "email": {
-            "question": "Quina és l'adreça de correu electrònic de {name}?"
+            "question": "Quina és l'adreça de correu electrònic de {title()}?"
         },
         "level": {
             "mappings": {
@@ -36,13 +36,16 @@
                 },
                 "3": {
                     "then": "Situat a primera planta"
+                },
+                "4": {
+                    "then": "Localitzat a la planta base"
                 }
             },
             "question": "A quina planta està situat aquest element?",
             "render": "Situat a la planta {level}"
         },
         "opening_hours": {
-            "question": "Quin és l'horari d'obertura de {name}?",
+            "question": "Quin és l'horari d'obertura de {title()}?",
             "render": "<h3>Horari d'obertura</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
@@ -56,8 +59,20 @@
             },
             "question": "Quins mètodes de pagament s'accepten aquí?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "El pagament es fa amb una app dedicada"
+                    },
+                    "1": {
+                        "then": "El pagament es fa amb una targeta de membre"
+                    }
+                }
+            }
+        },
         "phone": {
-            "question": "Quin és el telèfon de {name}?"
+            "question": "Quin és el telèfon de {title()}?"
         },
         "service:electricity": {
             "mappings": {
@@ -77,7 +92,7 @@
             "question": "Aquest servei té endolls elèctrics, disponibles pels clients quan hi són dins?"
         },
         "website": {
-            "question": "Quina és la web de {name}?"
+            "question": "Quina és la web de {title()}?"
         },
         "wheelchair-access": {
             "mappings": {
@@ -99,6 +114,9 @@
         "wikipedia": {
             "mappings": {
                 "0": {
+                    "then": "No hi ha cap enllaça a Viquipèdia encara"
+                },
+                "1": {
                     "then": "No hi ha cap enllaça a Viquipèdia encara"
                 }
             },

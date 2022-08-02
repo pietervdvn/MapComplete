@@ -1,24 +1,23 @@
 import Combine from "../UI/Base/Combine";
 import BaseUIElement from "../UI/BaseUIElement";
 import Translations from "../UI/i18n/Translations";
-import {existsSync, writeFileSync} from "fs";
+import {existsSync, mkdirSync, writeFileSync} from "fs";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import TableOfContents from "../UI/Base/TableOfContents";
-import SimpleMetaTaggers, {SimpleMetaTagger} from "../Logic/SimpleMetaTagger";
+import SimpleMetaTaggers from "../Logic/SimpleMetaTagger";
 import ValidatedTextField from "../UI/Input/ValidatedTextField";
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import SpecialVisualizations from "../UI/SpecialVisualizations";
-import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
 import {ExtraFunctions} from "../Logic/ExtraFunctions";
 import Title from "../UI/Base/Title";
 import Minimap from "../UI/Base/Minimap";
-import {QueryParameters} from "../Logic/Web/QueryParameters";
 import QueryParameterDocumentation from "../UI/QueryParameterDocumentation";
 import ScriptUtils from "./ScriptUtils";
 import List from "../UI/Base/List";
 import SharedTagRenderings from "../Customizations/SharedTagRenderings";
 
-function WriteFile(filename, html: BaseUIElement, autogenSource: string[]): void {
+function WriteFile(filename, html: BaseUIElement, autogenSource: string[], options?: {
+    noTableOfContents: boolean
+}): void {
 
 
     for (const source of autogenSource) {
@@ -30,7 +29,7 @@ function WriteFile(filename, html: BaseUIElement, autogenSource: string[]): void
         }
     }
     
-    if (html instanceof Combine) {
+    if (html instanceof Combine && !(options?.noTableOfContents)) {
         const toc = new TableOfContents(html);
         const els = html.getElements();
         html = new Combine(
@@ -51,9 +50,16 @@ function WriteFile(filename, html: BaseUIElement, autogenSource: string[]): void
 }
 
 console.log("Starting documentation generation...")
-AllKnownLayouts.GenOverviewsForSingleLayer((layer, element) => {
+AllKnownLayouts.GenOverviewsForSingleLayer((layer, element, inlineSource) => {
     console.log("Exporting ", layer.id)
-    WriteFile("./Docs/Layers/" + layer.id + ".md", element, [`assets/layers/${layer.id}/${layer.id}.json`])
+    if(!existsSync("./Docs/Layers")){
+        mkdirSync("./Docs/Layers")
+    }
+    let source: string = `assets/layers/${layer.id}/${layer.id}.json`
+    if(inlineSource !== undefined){
+        source = `assets/themes/${inlineSource}/${inlineSource}.json`
+    }
+    WriteFile("./Docs/Layers/" + layer.id + ".md", element, [source], {noTableOfContents: true})
 
 })
 WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), ["UI/SpecialVisualizations.ts"])
@@ -118,34 +124,6 @@ Minimap.createMiniMap = _ => {
     return undefined
 }
 
-
-const dummyLayout = new LayoutConfig({
-    id: "&gt;theme&lt;",
-    maintainer: "pietervdvn",
-    version: "0",
-    title: {en:"<theme>"},
-    description: "A theme to generate docs with",
-    socialImage: "./assets/SocialImage.png",
-    startLat: 0,
-    startLon: 0,
-    startZoom: 0,
-    icon: undefined,
-    layers: [
-        {
-            name: "<layer>",
-            id: "&lt;layer&gt;",
-            source: {
-                osmTags: "id~*"
-            },
-            mapRendering: null,
-        }
-    ]
-
-})
-
-new FeatureSwitchState(dummyLayout)
-
-QueryParameters.GetQueryParameter("layer-&lt;layer-id&gt;", "true", "Wether or not the layer with id <layer-id> is shown")
 
 WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryParameterDocs(), ["Logic/Web/QueryParameters.ts", "UI/QueryParameterDocumentation.ts"])
 

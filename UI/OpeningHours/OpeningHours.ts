@@ -1,4 +1,5 @@
 import {Utils} from "../../Utils";
+import opening_hours from "opening_hours";
 
 export interface OpeningHour {
     weekday: number, // 0 is monday, 1 is tuesday, ...
@@ -32,6 +33,32 @@ export class OH {
         return Utils.TwoDigits(h) + ":" + Utils.TwoDigits(m);
     }
 
+    /**
+    * const rules = [{weekday: 6,endHour: 17,endMinutes: 0,startHour: 13,startMinutes: 0},
+    *                {weekday: 1,endHour: 12,endMinutes: 0,startHour: 10,startMinutes: 0}]
+    * OH.ToString(rules) // =>  "Tu 10:00-12:00; Su 13:00-17:00"
+    *
+    * const rules = [{weekday: 3,endHour: 17,endMinutes: 0,startHour: 13,startMinutes: 0}, {weekday: 1,endHour: 12,endMinutes: 0,startHour: 10,startMinutes: 0}]
+    * OH.ToString(rules) // => "Tu 10:00-12:00; Th 13:00-17:00"
+    * 
+    * const rules = [ { weekday: 1, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0 }, { weekday: 1, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }]);
+    * OH.ToString(rules) // => "Tu 10:00-12:00, 13:00-17:00"
+    * 
+    * const rules = [ { weekday: 0, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }, { weekday: 0, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0}, { weekday: 1, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0 }, { weekday: 1, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }];
+    * OH.ToString(rules) // => "Mo-Tu 10:00-12:00, 13:00-17:00"
+     * 
+     * // should merge overlapping opening hours
+     * const timerange0 = {weekday: 1, endHour: 23, endMinutes: 30, startHour: 23, startMinutes: 0 }
+     * const touchingTimeRange = {  weekday: 1, endHour: 0, endMinutes: 0, startHour: 23, startMinutes: 30 }
+     * OH.ToString(OH.MergeTimes([timerange0, touchingTimeRange])) // => "Tu 23:00-00:00"
+     *
+     * // should merge touching opening hours
+     * const timerange0 = {weekday: 1, endHour: 23, endMinutes: 30, startHour: 23, startMinutes: 0 }
+     * const overlappingTimeRange =  { weekday: 1, endHour: 24, endMinutes: 0, startHour: 23, startMinutes: 30 }
+     * OH.ToString(OH.MergeTimes([timerange0, overlappingTimeRange])) // => "Tu 23:00-00:00"
+    * 
+    */
+    
     public static ToString(ohs: OpeningHour[]) {
         if (ohs.length == 0) {
             return "";
@@ -86,8 +113,16 @@ export class OH {
     /**
      * Merge duplicate opening-hour element in place.
      * Returns true if something changed
-     * @param ohs
-     * @constructor
+     * 
+     * // should merge overlapping opening hours
+     * const oh1: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 0, endHour: 11, endMinutes: 0 };
+     * const oh0: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 30, endHour: 12, endMinutes: 0 };
+     * OH.MergeTimes([oh0, oh1]) // => [{ weekday: 0, startHour: 10, startMinutes: 0, endHour: 12, endMinutes: 0 }]
+     *
+     * // should merge touching opening hours
+     * const oh1: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 0, endHour: 11, endMinutes: 0 };
+     * const oh0: OpeningHour = { weekday: 0, startHour: 11, startMinutes: 0, endHour: 12, endMinutes: 0 };
+     * OH.MergeTimes([oh0, oh1]) // => [{ weekday: 0, startHour: 10, startMinutes: 0, endHour: 12, endMinutes: 0 }]
      */
     public static MergeTimes(ohs: OpeningHour[]): OpeningHour[] {
         const queue = ohs.map(oh => {
@@ -220,6 +255,36 @@ export class OH {
         }
     }
 
+    /**
+     * Converts an OH-syntax rule into an object
+     * 
+     * 
+     * const rules = OH.ParsePHRule("PH 12:00-17:00")
+     * rules.mode // => " "
+     * rules.start // => "12:00"
+     * rules.end // => "17:00"
+     * 
+     * OH.ParseRule("PH 12:00-17:00") // => null
+     * OH.ParseRule("Th[-1] off") // => null
+     * 
+     * const rules = OH.Parse("24/7");
+     * rules.length // => 7
+     * rules[0].startHour // => 0
+     * OH.ToString(rules) // => "24/7"
+     * 
+     * const rules = OH.ParseRule("11:00-19:00");
+     * rules.length // => 7
+     * rules[0].weekday // => 0
+     * rules[0].startHour // => 11
+     * rules[3].endHour // => 19
+     * 
+     * const rules = OH.ParseRule("Mo-Th 11:00-19:00");
+     * rules.length // => 4
+     * rules[0].weekday // => 0
+     * rules[0].startHour // => 11
+     * rules[3].endHour // => 19
+     * 
+     */
     public static ParseRule(rule: string): OpeningHour[] {
         try {
             if (rule.trim() == "24/7") {
@@ -251,12 +316,21 @@ export class OH {
         }
     }
 
+    /**
+     * 
+     * OH.ParsePHRule("PH Off") // => {mode: "off"}
+     * OH.ParsePHRule("PH OPEN") // => {mode: "open"}
+     * OH.ParsePHRule("PH 10:00-12:00") // => {mode: " ", start: "10:00", end: "12:00"}
+     * OH.ParsePHRule(undefined) // => null
+     * OH.ParsePHRule(null) // => null
+     * OH.ParsePHRule("some random string") // => null
+     */
     public static ParsePHRule(str: string): {
         mode: string,
         start?: string,
         end?: string
     } {
-        if (str === undefined) {
+        if (str === undefined || str === null) {
             return null
         }
         str = str.trim();
@@ -265,13 +339,13 @@ export class OH {
         }
 
         str = str.trim();
-        if (str === "PH off") {
+        if (str.toLowerCase() === "ph off") {
             return {
                 mode: "off"
             }
         }
 
-        if (str === "PH open") {
+        if (str.toLowerCase() === "ph open") {
             return {
                 mode: "open"
             }
@@ -302,6 +376,9 @@ export class OH {
         return OH.ToString(OH.MergeTimes(OH.Parse(str)))
     }
 
+    /**
+     * Parses a string into Opening Hours
+     */
     public static Parse(rules: string): OpeningHour[] {
         if (rules === undefined || rules === "") {
             return []
@@ -394,6 +471,18 @@ export class OH {
         return [changeHours, changeHourText]
     }
 
+    public static CreateOhObject(tags: object & {_lat: number, _lon: number, _country?: string}, textToParse: string){
+        // noinspection JSPotentiallyInvalidConstructorUsage
+        return new opening_hours(textToParse, {
+            lat: tags._lat,
+            lon: tags._lon,
+            address: {
+                country_code: tags._country.toLowerCase(),
+                state: undefined
+            },
+        }, <any> {tag_key: "opening_hours"});
+    }
+    
     /*
  Calculates when the business is opened (or on holiday) between two dates.
  Returns a matrix of ranges, where [0] is a list of ranges when it is opened on monday, [1] is a list of ranges for tuesday, ...
@@ -534,6 +623,12 @@ export class OH {
             }
         }
         return ohs;
+    }
+    public static getMondayBefore(d) {
+        d = new Date(d);
+        const day = d.getDay();
+        const diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+        return new Date(d.setDate(diff));
     }
 
 }

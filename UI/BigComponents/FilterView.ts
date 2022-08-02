@@ -2,12 +2,12 @@ import {Utils} from "../../Utils";
 import {FixedInputElement} from "../Input/FixedInputElement";
 import {RadioButton} from "../Input/RadioButton";
 import {VariableUiElement} from "../Base/VariableUIElement";
-import Toggle from "../Input/Toggle";
+import Toggle, {ClickableToggle} from "../Input/Toggle";
 import Combine from "../Base/Combine";
 import Translations from "../i18n/Translations";
 import {Translation} from "../i18n/Translation";
 import Svg from "../../Svg";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {ImmutableStore, Store, UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
 import State from "../../State";
 import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
@@ -33,7 +33,7 @@ export default class FilterView extends VariableUiElement {
             filteredLayer.map((filteredLayers) => {
                     // Create the views which toggle layers (and filters them) ...
                     let elements = filteredLayers
-                        ?.map(l => FilterView.createOneFilteredLayerElement(l)?.SetClass("filter-panel"))
+                        ?.map(l => FilterView.createOneFilteredLayerElement(l, State.state)?.SetClass("filter-panel"))
                         ?.filter(l => l !== undefined)
                     elements[0].SetClass("first-filter-panel")
                 
@@ -87,10 +87,14 @@ export default class FilterView extends VariableUiElement {
         );
     }
 
-    private static createOneFilteredLayerElement(filteredLayer: FilteredLayer) {
+    private static createOneFilteredLayerElement(filteredLayer: FilteredLayer, state: {featureSwitchIsDebugging: UIEventSource<boolean>}) {
         if (filteredLayer.layerDef.name === undefined) {
             // Name is not defined: we hide this one
-            return undefined;
+            return new Toggle(
+                filteredLayer?.layerDef?.description?.Clone()?.SetClass("subtle")                ,
+                undefined,
+                state?.featureSwitchIsDebugging
+            );
         }
         const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem;flex-shrink: 0;";
 
@@ -101,9 +105,7 @@ export default class FilterView extends VariableUiElement {
             iconStyle
         );
 
-        const name: Translation = Translations.WT(
-            filteredLayer.layerDef.name
-        );
+        const name: Translation = filteredLayer.layerDef.name.Clone()
 
         const styledNameChecked = name.Clone().SetStyle("font-size:large").SetClass("ml-3");
 
@@ -177,7 +179,8 @@ export default class FilterView extends VariableUiElement {
 
         const filter = filterConfig.options[0]
         const mappings = new Map<string, BaseUIElement>()
-        let allValid = new UIEventSource(true)
+        let allValid: Store<boolean> = new ImmutableStore(true)
+        var allFields: InputElement<string>[] = []
         const properties = new UIEventSource<any>({})
         for (const {name, type} of filter.fields) {
             const value = QueryParameters.GetQueryParameter("filter-" + filterConfig.id + "-" + name, "", "Value for filter " + filterConfig.id)
@@ -190,10 +193,11 @@ export default class FilterView extends VariableUiElement {
                 properties.data[name] = v.toLowerCase();
                 properties.ping()
             })
+            allFields.push(field)
             allValid = allValid.map(previous => previous && field.IsValid(stable.data) && stable.data !== "", [stable])
         }
         const tr = new SubstitutedTranslation(filter.question, new UIEventSource<any>({id: filterConfig.id}), State.state, mappings)
-        const trigger: UIEventSource<FilterState> = allValid.map(isValid => {
+        const trigger: Store<FilterState> = allValid.map(isValid => {
             if (!isValid) {
                 return undefined
             }
@@ -218,8 +222,20 @@ export default class FilterView extends VariableUiElement {
                 state: JSON.stringify(props)
             }
         }, [properties])
+        
+        const settableFilter = new UIEventSource<FilterState>(undefined)
+        trigger.addCallbackAndRun(state => settableFilter.setData(state))
+        settableFilter.addCallback(state => {
+            if(state === undefined){
+                // still initializing
+                return
+            }
+            if(state.currentFilter === undefined){
+                allFields.forEach(f => f.GetValue().setData(undefined));
+            }
+        })
 
-        return [tr, trigger];
+        return [tr, settableFilter];
     }
 
     private static createCheckboxFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
@@ -228,14 +244,14 @@ export default class FilterView extends VariableUiElement {
         const icon = Svg.checkbox_filled_svg().SetClass("block mr-2 w-6");
         const iconUnselected = Svg.checkbox_empty_svg().SetClass("block mr-2 w-6");
 
-        const toggle = new Toggle(
+        const toggle = new ClickableToggle(
             new Combine([icon, option.question.Clone().SetClass("block")]).SetClass("flex"),
             new Combine([iconUnselected, option.question.Clone().SetClass("block")]).SetClass("flex")
         )
             .ToggleOnClick()
             .SetClass("block m-1")
 
-        return [toggle, toggle.isEnabled.map(enabled => enabled ? {
+        return [toggle, toggle.isEnabled.sync(enabled => enabled ? {
                 currentFilter: option.osmTags,
                 state: "true"
             } : undefined, [],
@@ -269,7 +285,7 @@ export default class FilterView extends VariableUiElement {
         }
 
         return [filterPicker,
-            filterPicker.GetValue().map(
+            filterPicker.GetValue().sync(
                 i => values[i],
                 [],
                 selected => {

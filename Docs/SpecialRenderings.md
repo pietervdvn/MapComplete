@@ -5,9 +5,24 @@
 
 
 
+In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.
+
+General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
+
+
+
+#### Using expanded syntax 
+
+
+
+Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}` , one can also write
+
+`{"render":{"special":{"type":"some_special_visualisation","argname":"some_arg","message":{"en":"some other really long message","nl":"een boodschap in een andere taal"},"other_arg_name":"more args"}}}`
+
 ## Table of contents
 
 1. [Special tag renderings](#special-tag-renderings)
+      * [Using expanded syntax](#using-expanded-syntax)
     + [all_tags](#all_tags)
       * [Example usage of all_tags](#example-usage-of-all_tags)
     + [image_carousel](#image_carousel)
@@ -16,6 +31,8 @@
       * [Example usage of image_upload](#example-usage-of-image_upload)
     + [wikipedia](#wikipedia)
       * [Example usage of wikipedia](#example-usage-of-wikipedia)
+    + [wikidata_label](#wikidata_label)
+      * [Example usage of wikidata_label](#example-usage-of-wikidata_label)
     + [minimap](#minimap)
       * [Example usage of minimap](#example-usage-of-minimap)
     + [sided_minimap](#sided_minimap)
@@ -48,6 +65,8 @@
       * [Example usage of export_as_geojson](#example-usage-of-export_as_geojson)
     + [open_in_iD](#open_in_id)
       * [Example usage of open_in_iD](#example-usage-of-open_in_id)
+    + [open_in_josm](#open_in_josm)
+      * [Example usage of open_in_josm](#example-usage-of-open_in_josm)
     + [clear_location_history](#clear_location_history)
       * [Example usage of clear_location_history](#example-usage-of-clear_location_history)
     + [close_note](#close_note)
@@ -58,14 +77,18 @@
       * [Example usage of visualize_note_comments](#example-usage-of-visualize_note_comments)
     + [add_image_to_note](#add_image_to_note)
       * [Example usage of add_image_to_note](#example-usage-of-add_image_to_note)
+    + [title](#title)
+      * [Example usage of title](#example-usage-of-title)
+    + [nearby_images](#nearby_images)
+      * [Example usage of nearby_images](#example-usage-of-nearby_images)
+    + [mapillary_link](#mapillary_link)
+      * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
+    + [statistics](#statistics)
+      * [Example usage of statistics](#example-usage-of-statistics)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
 
-
-In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.
-
-General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args
 
 
 
@@ -85,7 +108,7 @@ General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_nam
 
 name | default | description
 ------ | --------- | -------------
-image key/prefix (multiple values allowed if comma-seperated) | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... 
+image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated 
  
 
 #### Example usage of image_carousel 
@@ -116,12 +139,27 @@ label | Add image | The text to show on the button
 
 name | default | description
 ------ | --------- | -------------
-keyToShowWikipediaFor | wikidata | Use the wikidata entry from this key to show the wikipedia article for
+keyToShowWikipediaFor | wikidata;wikipedia | Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used
  
 
 #### Example usage of wikipedia 
 
  `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
+
+
+
+### wikidata_label 
+
+ Shows the label of the corresponding wikidata-item 
+
+name | default | description
+------ | --------- | -------------
+keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show the label
+ 
+
+#### Example usage of wikidata_label 
+
+ `{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself
 
 
 
@@ -241,7 +279,7 @@ url | _undefined_ | The url to share (default: current URL)
 
 ### canonical 
 
- Converts a short, canonical value into the long, translated text 
+ Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text.  
 
 name | default | description
 ------ | --------- | -------------
@@ -250,7 +288,7 @@ key | _undefined_ | The key of the tag to give the canonical text for
 
 #### Example usage of canonical 
 
- {canonical(length)} will give 42 metre (in french)
+ If the object has `length=42`, then `{canonical(length)}` will be shown as **42 meter** (in english), **42 metre** (in french), ...
 
 
 
@@ -310,11 +348,13 @@ icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 snap_onto_layers | _undefined_ | If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list
 max_snap_distance | 5 | The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete
 note_id | _undefined_ | If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'
+location_picker | photo | Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled
+maproulette_id | _undefined_ | If given, the maproulette challenge will be marked as fixed
  
 
 #### Example usage of import_button 
 
- `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,)}`
+ `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,photo,)}`
 
 
 
@@ -372,16 +412,16 @@ tags | _undefined_ | The tags to add onto the new object - see specification abo
 text | Import this data into OpenStreetMap | The text to show on the button
 icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 snap_to_point_if | _undefined_ | Points with the given tags will be snapped to or moved
-max_snap_distance | 5 | If the imported object is a LineString or (Multi)Polygon, already existing OSM-points will be reused to construct the geometry of the newly imported way
+max_snap_distance | 0.05 | If the imported object is a LineString or (Multi)Polygon, already existing OSM-points will be reused to construct the geometry of the newly imported way
 move_osm_point_if | _undefined_ | Moves the OSM-point to the newly imported point if these conditions are met
-max_move_distance | 1 | If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m
+max_move_distance | 0.05 | If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m
 snap_onto_layers | _undefined_ | If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead
 snap_to_layer_max_distance | 0.1 | Distance to distort the geometry to snap to this layer
  
 
 #### Example usage of import_way_button 
 
- `{import_way_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,1,,0.1)}`
+ `{import_way_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,0.05,,0.05,,0.1)}`
 
 
 
@@ -527,6 +567,16 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 
 
+### open_in_josm 
+
+ Opens the current view in the JOSM-editor 
+
+#### Example usage of open_in_josm 
+
+ `{open_in_josm()}`
+
+
+
 ### clear_location_history 
 
  A button to remove the travelled track information from the device 
@@ -545,13 +595,15 @@ name | default | description
 ------ | --------- | -------------
 text | _undefined_ | Text to show on this button
 icon | checkmark.svg | Icon to show
-Id-key | id | The property name where the ID of the note to close can be found
+idkey | id | The property name where the ID of the note to close can be found
 comment | _undefined_ | Text to add onto the note when closing
+minZoom | _undefined_ | If set, only show the closenote button if zoomed in enough
+zoomButton | _undefined_ | Text to show if not zoomed in enough
  
 
 #### Example usage of close_note 
 
- `{close_note(,checkmark.svg,id,)}`
+ `{close_note(,checkmark.svg,id,,,)}`
 
 
 
@@ -601,15 +653,71 @@ Id-key | id | The property name where the ID of the note to close can be found
 
 
 
+### title 
+
+ Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?' 
+
+#### Example usage of title 
+
+ `What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.
+
+
+
+### nearby_images 
+
+ A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature 
+
+name | default | description
+------ | --------- | -------------
+mode | expandable | Indicates how this component is initialized. Options are: 
+
+- `open`: always show and load the pictures
+- `collapsable`: show the pictures, but a user can collapse them
+- `expandable`: shown by default; but a user can collapse them.
+mapillary | true | If 'true', includes a link to mapillary on this location.
+ 
+
+#### Example usage of nearby_images 
+
+ `{nearby_images(expandable,true)}`
+
+
+
+### mapillary_link 
+
+ Adds a button to open mapillary on the specified location 
+
+name | default | description
+------ | --------- | -------------
+zoom | 18 | The startzoom of mapillary
+ 
+
+#### Example usage of mapillary_link 
+
+ `{mapillary_link(18)}`
+
+
+
+### statistics 
+
+ Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer 
+
+#### Example usage of statistics 
+
+ `{statistics()}`
+
+
+
 ### auto_apply 
 
- A button to run many actions for many features at once.
+ A button to run many actions for many features at once. To effectively use this button, you'll need some ingredients: 
 
-To effectively use this button, you'll need some ingredients:
-- A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
-- A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the [current_view](./BuiltinLayers.md#current_view)
-- Then, use a calculated tag on the host feature to determine the overlapping object ids
-- At last, add this component 
+  - A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
+  - A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer 
+  - [current_view](./BuiltinLayers.md#current_view)
+  - Then, use a calculated tag on the host feature to determine the overlapping object ids
+  - At last, add this component
+ 
 
 name | default | description
 ------ | --------- | -------------

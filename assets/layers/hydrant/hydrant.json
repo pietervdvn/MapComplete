@@ -7,8 +7,10 @@
     "nb_NO": "Kart over brannhydranter",
     "ru": "Карта пожарных гидрантов",
     "fr": "Carte des bornes incendie",
-    "de": "Karte der Hydranten",
-    "it": "Mappa degli idranti"
+    "de": "Hydranten",
+    "it": "Mappa degli idranti",
+    "nl": "Kaart van brandkranen",
+    "es": "Mapa de bocas de incendios"
   },
   "minzoom": 14,
   "source": {
@@ -26,7 +28,10 @@
       "nb_NO": "Brannhydrant",
       "fr": "Bornes incendie",
       "de": "Hydrant",
-      "it": "Idrante"
+      "it": "Idrante",
+      "nl": "Brandkraan",
+      "ca": "Hidrant",
+      "es": "Boca de incendios"
     }
   },
   "description": {
@@ -37,7 +42,9 @@
     "ru": "Слой карты, отображающий пожарные гидранты.",
     "fr": "Couche des bornes incendie.",
     "de": "Kartenebene zur Anzeige von Hydranten.",
-    "it": "Livello della mappa che mostra gli idranti antincendio."
+    "it": "Livello della mappa che mostra gli idranti antincendio.",
+    "nl": "Kaartlaag met brandkranen.",
+    "es": "Un mapa que muestra bocas de incendios."
   },
   "tagRenderings": [
     {
@@ -49,7 +56,9 @@
         "ru": "Какого цвета гидрант?",
         "fr": "Quelle est la couleur de la borne ?",
         "de": "Welche Farbe hat der Hydrant?",
-        "it": "Qual è il colore dell’idrante?"
+        "it": "Qual è il colore dell’idrante?",
+        "nl": "Welke kleur heeft de brandkraan?",
+        "es": "¿De que color es la boca de incendios?"
       },
       "render": {
         "en": "The hydrant color is {colour}",
@@ -58,7 +67,9 @@
         "ru": "Цвет гидранта {colour}",
         "fr": "La borne est {colour}",
         "de": "Der Hydrant hat die Farbe {colour}",
-        "it": "Il colore dell’idrante è {colour}"
+        "it": "Il colore dell’idrante è {colour}",
+        "nl": "De brandkraan is {colour}",
+        "es": "La boca de incendios es de color {colour}"
       },
       "freeform": {
         "key": "colour"
@@ -76,7 +87,9 @@
             "ru": "Цвет гидранта не определён.",
             "fr": "La borne est de couleur inconnue.",
             "de": "Die Farbe des Hydranten ist unbekannt.",
-            "it": "Il colore dell’idrante è sconosciuto."
+            "it": "Il colore dell’idrante è sconosciuto.",
+            "nl": "De kleur van de brandkraan is onbekend.",
+            "es": "Se desconoce el color de la boca de incendios."
           },
           "hideInAnswer": true
         },
@@ -92,7 +105,9 @@
             "ru": "Гидрант жёлтого цвета.",
             "fr": "La borne est jaune.",
             "de": "Die Farbe des Hydranten ist gelb.",
-            "it": "Il colore dell’idrante è giallo."
+            "it": "Il colore dell’idrante è giallo.",
+            "nl": "De brandkraan is geel.",
+            "es": "La boca de incendios es amarilla."
           }
         },
         {
@@ -107,7 +122,10 @@
             "it": "L'idrante è rosso.",
             "ru": "Гидрант красного цвета.",
             "fr": "La borne est rouge.",
-            "de": "Die Farbe des Hydranten ist rot."
+            "de": "Die Farbe des Hydranten ist rot.",
+            "nl": "De brandkraan is rood.",
+            "ca": "El color de l'hidrant és roig.",
+            "es": "La boca de incendios es roja."
           }
         }
       ]
@@ -120,7 +138,9 @@
         "it": "Di che tipo è questo idrante?",
         "ru": "К какому типу относится этот гидрант?",
         "fr": "De quel type de borne s’agit-il ?",
-        "de": "Um welche Art von Hydrant handelt es sich?"
+        "de": "Welche Bauform hat der Hydrant?",
+        "nl": "Wat voor soort brandkraan is dit?",
+        "es": "¿De qué tipo es esta boca de incendios?"
       },
       "freeform": {
         "key": "fire_hydrant:type"
@@ -131,7 +151,9 @@
         "ja": " 消火栓のタイプ:{fire_hydrant:type}",
         "it": " Tipo di idrante: {fire_hydrant:type}",
         "fr": " Type de borne : {fire_hydrant:type}",
-        "de": " Hydranten-Typ: {fire_hydrant:type}"
+        "de": " Hydranten-Typ: {fire_hydrant:type}",
+        "nl": " Het type brandkraan is {fire_hydrant:type}",
+        "es": " Tipo de boca de incendios: {fire_hydrant:type}"
       },
       "mappings": [
         {
@@ -146,7 +168,9 @@
             "it": "Il tipo di idrante è sconosciuto.",
             "ru": "Тип гидранта не определён.",
             "fr": "La borne est de type inconnu.",
-            "de": "Der Typ des Hydranten ist unbekannt."
+            "de": "Der Typ des Hydranten ist unbekannt.",
+            "nl": "Het type brandkraan is onbekend.",
+            "es": "Se desconoce el tipo de la boca de incendios"
           },
           "hideInAnswer": true
         },
@@ -157,11 +181,17 @@
             ]
           },
           "then": {
-            "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pillar type.",
-            "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> ピラー型。",
-            "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Pilier.",
-            "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Säulenart.",
-            "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_pillar.svg\" /> Soprasuolo."
+            "en": "Pillar type.",
+            "ja": "ピラー型。",
+            "fr": "Pilier.",
+            "de": "Überflurhydrant.",
+            "it": "Soprasuolo.",
+            "nl": "Pillaar type.",
+            "es": "De pilar."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_pillar.svg",
+            "class": "small"
           }
         },
         {
@@ -171,11 +201,17 @@
             ]
           },
           "then": {
-            "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Pipe type.",
-            "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> パイプ型。",
-            "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tuyau.",
-            "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Rohrtyp.",
-            "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Tubo."
+            "en": "Pipe type.",
+            "ja": "パイプ型。",
+            "fr": "Tuyau.",
+            "de": "Druckloses Rohr.",
+            "it": "Tubo.",
+            "nl": "Buis type.",
+            "es": "De tubería."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_unknown.svg",
+            "class": "small"
           }
         },
         {
@@ -185,13 +221,19 @@
             ]
           },
           "then": {
-            "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wall type.",
-            "id": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Jenis dinding.",
-            "ru": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Тип стены.",
-            "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> 壁型。",
-            "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Mural.",
-            "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> Wandtyp.",
-            "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_unknown.svg\" /> A muro."
+            "en": "Wall type.",
+            "id": "Jenis dinding.",
+            "ru": "Тип стены.",
+            "ja": "壁型。",
+            "fr": "Mural.",
+            "de": "Wandhydrant.",
+            "it": "A muro.",
+            "nl": "Muur type.",
+            "es": "De pared."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_unknown.svg",
+            "class": "small"
           }
         },
         {
@@ -201,11 +243,18 @@
             ]
           },
           "then": {
-            "en": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Underground type.",
-            "ja": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" />地下式。",
-            "fr": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Enterré.",
-            "de": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Untergrundtyp.",
-            "it": "<img style=\"width:15px\" src=\"./assets/themes/hailhydrant/hydrant_underground.svg\" /> Sottosuolo."
+            "en": "Underground type.",
+            "ja": "地下式。",
+            "fr": "Enterré.",
+            "de": "Unterflurhydrant.",
+            "it": "Sottosuolo.",
+            "nl": "Ondergronds type.",
+            "ca": "L'hidrant està soterrat.",
+            "es": "Bajo tierra."
+          },
+          "icon": {
+            "path": "./assets/themes/hailhydrant/hydrant_underground.svg",
+            "class": "small"
           }
         }
       ]
@@ -215,9 +264,11 @@
       "question": {
         "en": "Is this hydrant still working?",
         "ja": "消火栓のライフサイクルステータスを更新します。",
-        "fr": "Mettre à jour l’état de la borne.",
+        "fr": "Cette borne incendie est-elle toujours en bon état de fonctionnement ?",
         "de": "Ist dieser Hydrant noch in Betrieb?",
-        "it": "Aggiorna lo stato di funzionamento dell’idrante."
+        "it": "Aggiorna lo stato di funzionamento dell’idrante.",
+        "nl": "Werkt deze brandkraan nog?",
+        "es": "¿Todavía funciona esta boca de incendios?"
       },
       "mappings": [
         {
@@ -230,9 +281,11 @@
             "en": "The hydrant is (fully or partially) working",
             "ja": "消火栓は(完全にまたは部分的に)機能しています。",
             "ru": "Гидрант (полностью или частично) в рабочем состоянии",
-            "fr": "La borne est en état, ou partiellement en état, de fonctionner.",
+            "fr": "La borne est en état (ou partiellement en état) de fonctionner",
             "de": "Der Hydrant ist (ganz oder teilweise) in Betrieb",
-            "it": "L’idrante è (parzialmente o completamente) funzionante."
+            "it": "L’idrante è (parzialmente o completamente) funzionante.",
+            "nl": "De brandkraan werkt (minstens gedeeltelijk)",
+            "es": "La boca de incendios funciona (total o parcialmente)"
           }
         },
         {
@@ -245,9 +298,11 @@
           "then": {
             "en": "The hydrant is unavailable",
             "ja": "消火栓は使用できません。",
-            "fr": "La borne est hors-service.",
-            "de": "Der Hydrant ist nicht verfügbar",
-            "it": "L’idrante è fuori servizio."
+            "fr": "La borne est hors-service",
+            "de": "Der Hydrant ist nicht mehr in Betrieb",
+            "it": "L’idrante è fuori servizio.",
+            "nl": "De brandkraan is niet beschikbaar",
+            "es": "La boca de incendios no está disponible"
           }
         },
         {
@@ -261,9 +316,11 @@
             "en": "The hydrant has been removed",
             "ja": "消火栓が撤去されました。",
             "ru": "Гидрант демонтирован",
-            "fr": "La borne a été retirée.",
+            "fr": "La borne a été retirée",
             "de": "Der Hydrant wurde entfernt",
-            "it": "L’idrante è stato rimosso."
+            "it": "L’idrante è stato rimosso.",
+            "nl": "Deze brandkraan is verwijderd",
+            "es": "La boca de incendios se ha retirado"
           }
         }
       ]
@@ -276,20 +333,24 @@
         "emergency=fire_hydrant"
       ],
       "title": {
-        "en": "Fire hydrant",
+        "en": "a fire hydrant",
         "ru": "Пожарный гидрант",
         "ja": "消火栓",
-        "nb_NO": "Brannhydrant",
-        "fr": "Borne incendie",
-        "de": "Löschwasser-Hydrant",
-        "it": "Idrante antincendio"
+        "nb_NO": "en brannhydrant",
+        "fr": "une borne incendie",
+        "de": "einen Hydranten",
+        "it": "una idrante antincendio",
+        "nl": "een brandkraan",
+        "es": "una boca de incendios"
       },
       "description": {
         "en": "A hydrant is a connection point where firefighters can tap water. It might be located underground.",
         "ja": "消火栓は消防士が水を汲み上げることができる接続点です。地下にあるかもしれません。",
         "fr": "Une borne incendie est un point où les pompiers peuvent s’alimenter en eau. Elle peut être enterrée.",
         "de": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
-        "it": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra."
+        "it": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra.",
+        "nl": "Een brandkraan is een kraan waar brandweerlieden een brandslang kunnen aansluiten. Soms zit deze ondergronds.",
+        "es": "Una boca de incendios es un punto de conexión en el que los bomberos pueden conseguir agua. Puede situarse bajo tierra."
       }
     }
   ],

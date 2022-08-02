@@ -1,33 +1,123 @@
 import {InputElement} from "./InputElement";
-import Translations from "../i18n/Translations";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
+import {Translation} from "../i18n/Translation";
+import Locale from "../i18n/Locale";
+
+
+interface TextFieldOptions {
+    placeholder?: string | Store<string> | Translation,
+    value?: UIEventSource<string>,
+    htmlType?: "area" | "text" | "time" | string,
+    inputMode?: string,
+    label?: BaseUIElement,
+    textAreaRows?: number,
+    inputStyle?: string,
+    isValid?: (s: string) => boolean
+}
 
 export class TextField extends InputElement<string> {
     public readonly enterPressed = new UIEventSource<string>(undefined);
     private readonly value: UIEventSource<string>;
-    private _element: HTMLElement;
-    private readonly _isValid: (s: string, country?: () => string) => boolean;
-    private _rawValue: UIEventSource<string> 
+    private _actualField : HTMLElement
+    private readonly _isValid: (s: string) => boolean;
+    private readonly _rawValue: UIEventSource<string> 
+    private _isFocused = false;
+    private readonly _options : TextFieldOptions;
     
-    constructor(options?: {
-        placeholder?: string | BaseUIElement,
-        value?: UIEventSource<string>,
-        htmlType?: string,
-        inputMode?: string,
-        label?: BaseUIElement,
-        textAreaRows?: number,
-        inputStyle?: string,
-        isValid?: ((s: string, country?: () => string) => boolean)
-    }) {
+    constructor(options?: TextFieldOptions) {
         super();
-        const self = this;
+        this._options = options ?? {}
         options = options ?? {};
         this.value = options?.value ?? new UIEventSource<string>(undefined);
         this._rawValue = new UIEventSource<string>("")
         this._isValid = options.isValid ?? (_ => true);
+    }
 
-        const placeholder = Translations.W(options.placeholder ?? "").ConstructElement().innerText.replace("'", "&#39");
+    private static SetCursorPosition(textfield: HTMLElement, i: number) {
+        if (textfield === undefined || textfield === null) {
+            return;
+        }
+        if (i === -1) {
+            // @ts-ignore
+            i = textfield.value.length;
+        }
+        textfield.focus();
+        // @ts-ignore
+        textfield.setSelectionRange(i, i);
+
+    }
+
+    GetValue(): UIEventSource<string> {
+        return this.value;
+    }
+    
+    GetRawValue(): UIEventSource<string>{
+        return this._rawValue
+    }
+    
+    IsValid(t: string): boolean {
+        if (t === undefined || t === null) {
+            return false
+        }
+        return this._isValid(t);
+    }
+
+    private static test(){
+        const placeholder = new UIEventSource<string>("placeholder")
+        const tf = new TextField({
+            placeholder
+        })
+        const html = <HTMLInputElement> tf.InnerConstructElement().children[0];
+        html.placeholder // => 'placeholder'
+        placeholder.setData("another piece of text")
+        html.placeholder// => "another piece of text"
+    }
+
+
+    /**
+     * 
+     * // should update placeholders dynamically
+     * const placeholder = new UIEventSource<string>("placeholder")
+     * const tf = new TextField({
+     *     placeholder
+     * })
+     * const html = <HTMLInputElement> tf.InnerConstructElement().children[0];
+     * html.placeholder // => 'placeholder'
+     * placeholder.setData("another piece of text")
+     * html.placeholder// => "another piece of text"
+     * 
+     * // should update translated placeholders dynamically
+     * const placeholder = new Translation({nl: "Nederlands", en: "English"})
+     * Locale.language.setData("nl");
+     * const tf = new TextField({
+     *     placeholder
+     * })
+     * const html = <HTMLInputElement> tf.InnerConstructElement().children[0];
+     * html.placeholder// => "Nederlands"
+     * Locale.language.setData("en");
+     * html.placeholder // => 'English'
+     */
+    protected InnerConstructElement(): HTMLElement {
+        const options = this._options;
+        const self = this;
+        let placeholderStore: Store<string>
+        let placeholder : string = "";
+        if(options.placeholder){
+            if(typeof options.placeholder === "string"){
+                placeholder = options.placeholder;
+                placeholderStore = undefined;
+            }else {
+                if ((options.placeholder instanceof Store) && options.placeholder["data"] !== undefined) {
+                    placeholderStore = options.placeholder;
+                } else if ((options.placeholder instanceof Translation) && options.placeholder["translations"] !== undefined) {
+                    placeholderStore = <Store<string>>Locale.language.map(l => (<Translation>options.placeholder).textFor(l))
+                }
+                placeholder = placeholderStore?.data ?? placeholder ?? "";
+            }
+        }
+
+        
 
         this.SetClass("form-text-field")
         let inputEl: HTMLElement
@@ -39,14 +129,22 @@ export class TextField extends InputElement<string> {
             el.cols = 50
             el.style.width = "100%"
             inputEl = el;
+            if(placeholderStore){
+                placeholderStore.addCallbackAndRunD(placeholder => el.placeholder = placeholder)
+            }
         } else {
             const el = document.createElement("input")
             el.type = options.htmlType ?? "text"
             el.inputMode = options.inputMode
             el.placeholder = placeholder
-            el.style.cssText = options.inputStyle
+            el.style.cssText = options.inputStyle ?? "width: 100%;"
             inputEl = el
+            if(placeholderStore){
+                placeholderStore.addCallbackAndRunD(placeholder => el.placeholder = placeholder)
+            }
         }
+
+
 
         const form = document.createElement("form")
         form.appendChild(inputEl)
@@ -56,10 +154,8 @@ export class TextField extends InputElement<string> {
             form.appendChild(options.label.ConstructElement())
         }
 
-        this._element = form;
 
         const field = inputEl;
-
 
         this.value.addCallbackAndRunD(value => {
             // We leave the textfield as is in the case of undefined or null (handled by addCallbackAndRunD) - make sure we do not erase it!
@@ -99,7 +195,6 @@ export class TextField extends InputElement<string> {
                 ) {
                 newCursorPos--;
             }
-            // @ts-ignore
             TextField.SetCursorPosition(field, newCursorPos);
         };
 
@@ -111,40 +206,19 @@ export class TextField extends InputElement<string> {
             }
         });
 
-
-    }
-
-    private static SetCursorPosition(textfield: HTMLElement, i: number) {
-        if (textfield === undefined || textfield === null) {
-            return;
+        if(this._isFocused){
+            field.focus()
         }
-        if (i === -1) {
-            // @ts-ignore
-            i = textfield.value.length;
+
+        this._actualField = field;
+        return form;
+    }
+
+    public focus() {
+        if(this._actualField === undefined){
+            this._isFocused = true
+        }else{
+            this._actualField.focus()
         }
-        textfield.focus();
-        // @ts-ignore
-        textfield.setSelectionRange(i, i);
-
     }
-
-    GetValue(): UIEventSource<string> {
-        return this.value;
-    }
-    
-    GetRawValue(): UIEventSource<string>{
-        return this._rawValue
-    }
-    
-    IsValid(t: string): boolean {
-        if (t === undefined || t === null) {
-            return false
-        }
-        return this._isValid(t, undefined);
-    }
-
-    protected InnerConstructElement(): HTMLElement {
-        return this._element;
-    }
-
 }

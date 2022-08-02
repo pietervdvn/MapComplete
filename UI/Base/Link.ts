@@ -1,14 +1,14 @@
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 
 
 export default class Link extends BaseUIElement {
-    private readonly _href: string | UIEventSource<string>;
+    private readonly _href: string | Store<string>;
     private readonly _embeddedShow: BaseUIElement;
     private readonly _newTab: boolean;
 
-    constructor(embeddedShow: BaseUIElement | string, href: string | UIEventSource<string>, newTab: boolean = false) {
+    constructor(embeddedShow: BaseUIElement | string, href: string | Store<string>, newTab: boolean = false) {
         super();
         this._embeddedShow = Translations.W(embeddedShow);
         this._href = href;
@@ -16,6 +16,7 @@ export default class Link extends BaseUIElement {
         if (this._embeddedShow === undefined) {
             throw "Error: got a link where embeddedShow is undefined"
         }
+        this.onClick(() => {})
 
     }
 
@@ -25,9 +26,9 @@ export default class Link extends BaseUIElement {
             if (!hideKey) {
                 k = key + "="
             }
-            return new Link(k + value, `https://wiki.openstreetmap.org/wiki/Tag:${key}%3D${value}`)
+            return new Link(k + value, `https://wiki.openstreetmap.org/wiki/Tag:${key}%3D${value}`, true)
         }
-        return new Link(key, "https://wiki.openstreetmap.org/wiki/Key:" + key)
+        return new Link(key, "https://wiki.openstreetmap.org/wiki/Key:" + key, true)
     }
 
     AsMarkdown(): string {

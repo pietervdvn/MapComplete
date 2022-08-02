@@ -2,7 +2,7 @@ import {LayoutConfigJson} from "../Json/LayoutConfigJson";
 import {Utils} from "../../../Utils";
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson";
 import {LayerConfigJson} from "../Json/LayerConfigJson";
-import {DesugaringStep, Fuse, OnEvery} from "./Conversion";
+import {DesugaringStep, Each, Fuse, On} from "./Conversion";
 
 export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string | { builtin, override }> {
 
@@ -18,10 +18,12 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
             // Reuse of an already existing layer; return as-is
             return {result: json, errors: [], warnings: []}
         }
-        let config: any = {...json};
+        let config  = {...json};
 
         if (config["overpassTags"]) {
-            config.source = config.source ?? {}
+            config.source = config.source ?? {
+                osmTags: config["overpassTags"]
+            }
             config.source.osmTags = config["overpassTags"]
             delete config["overpassTags"]
         }
@@ -98,7 +100,7 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
 
-        for (const mapRenderingElement of config.mapRendering) {
+        for (const mapRenderingElement of (config.mapRendering ?? [])) {
             if (mapRenderingElement["iconOverlays"] !== undefined) {
                 mapRenderingElement["iconBadges"] = mapRenderingElement["iconOverlays"]
             }
@@ -126,6 +128,11 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
         const oldThemeConfig = {...json}
+        
+        if(oldThemeConfig.socialImage === ""){
+            delete oldThemeConfig.socialImage
+        }
+        
         if (oldThemeConfig["roamingRenderings"] !== undefined) {
 
             if (oldThemeConfig["roamingRenderings"].length == 0) {
@@ -154,7 +161,7 @@ export class FixLegacyTheme extends Fuse<LayoutConfigJson> {
         super(
             "Fixes a legacy theme to the modern JSON format geared to humans. Syntactic sugars are kept (i.e. no tagRenderings are expandend, no dependencies are automatically gathered)",
             new UpdateLegacyTheme(),
-            new OnEvery("layers", new UpdateLegacyLayer())
+            new On("layers",new Each( new UpdateLegacyLayer()))
         );
     }
 }
