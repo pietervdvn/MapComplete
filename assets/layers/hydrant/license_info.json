@@ -1,0 +1,22 @@
+[
+  {
+    "path": "barcelona.jpg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "CLIGNER"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Gama_racores_UNE23400_ligatura.JPG"
+    ]
+  },
+  {
+    "path": "storz.jpg",
+    "license": "CC-BY-SA",
+    "authors": [
+      "Karl Gruber"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Festkupplung.jpg"
+    ]
+  }
+]
