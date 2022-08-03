@@ -141,7 +141,7 @@
       "icon": {
         "render": "circle:white;./assets/layers/elevator/elevator_wheelchair.svg"
       },
-      "iconSize": "40,40,bottom",
+      "iconSize": "40,40,center",
       "location": [
         "point",
         "centroid"
