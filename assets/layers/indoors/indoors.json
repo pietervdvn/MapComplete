@@ -137,7 +137,39 @@
     {
       "label": {
         "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
-        "condition": "name~*"
+        "condition": "name~*",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "room=administration",
+                "room=auditorium",
+                "room=bedroom",
+                "room=chapel",
+                "room=class",
+                "room=computer",
+                "room=conference",
+                "room=crypt",
+                "room=kitchen",
+                "room=laboratory",
+                "room=library",
+                "room=locker",
+                "room=nursery",
+                "room=office",
+                "room=prison_cell",
+                "room=restaurant",
+                "room=security_check",
+                "room=sport",
+                "room=storage",
+                "room=technical",
+                "room=toilet",
+                "room=toilets",
+                "room=waiting"
+              ]
+            },
+            "then": "<div style='margin-top: 0px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>"
+          }
+        ]
       },
       "location": [
         "point",
@@ -182,7 +214,7 @@
           }
         ]
       },
-      "iconSize": "15,15, center"
+      "iconSize": "15,15, bottom"
     }
   ]
 }
