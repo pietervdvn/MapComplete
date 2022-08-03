@@ -447,11 +447,6 @@
         "description": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
         "title": "Bildung"
     },
-    "entrances": {
-        "description": "Eine Karte mit allen Eingängen, die wichtige Aspekte für Rollstuhlfahrer erfasst",
-        "shortDescription": "Eingänge prüfen, um die Rollstuhlnavigation zu verbessern",
-        "title": "Eingänge"
-    },
     "etymology": {
         "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, und wurden mit Wikidata verknüpft. Im Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b> Wenn Sie weit genug hinein zoomen werden <i>alle</i> Straßen angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
         "layers": {
@@ -599,10 +594,6 @@
     "ghostbikes": {
         "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
         "title": "Geisterräder"
-    },
-    "governments": {
-        "description": "Auf dieser Karte werden Büros der öffentlichen Verwaltung angezeigt und können leicht hinzugefügt werden",
-        "title": "Büros der öffentlichen Verwaltung"
     },
     "grb": {
         "description": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",

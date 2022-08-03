@@ -3438,7 +3438,9 @@
                 "question": "Does this elevator work?"
             }
         },
-        "title": "Elevator",
+        "title": {
+            "render": "Elevator"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -4213,6 +4215,38 @@
                 "question": "What color is the hydrant?",
                 "render": "The hydrant color is {colour}"
             },
+            "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Coupling type"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Storz coupling"
+                    },
+                    "1": {
+                        "then": "UNI coupling"
+                    },
+                    "2": {
+                        "then": "Barcelona coupling"
+                    }
+                },
+                "question": "What kind of couplings does this hydrant have?",
+                "render": "Couplings: {couplings:type}"
+            },
+            "hydrant-couplings-diameters": {
+                "freeform": {
+                    "placeholder": "Coupling diameters"
+                },
+                "question": "What diameter are the couplings of this hydrant?",
+                "render": "Coupling diameters: {couplings:diameters}"
+            },
+            "hydrant-diameter": {
+                "freeform": {
+                    "placeholder": "Pipe diameter"
+                },
+                "question": "What is the pipe diameter of this hydrant?",
+                "render": "Pipe diameter: {canonical(fire_hydrant:diameter)}"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {
@@ -4251,18 +4285,58 @@
         },
         "title": {
             "render": "Hydrant"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "millimeters",
+                        "humanSingular": "millimeter"
+                    }
+                }
+            }
         }
     },
     "indoors": {
         "description": "Basic indoor mapping: shows room outlines",
         "name": "indoors",
         "tagRenderings": {
-            "ref": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the room"
+                },
                 "question": "What is the name of this room?",
                 "render": "This room is named {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Reference number of the room (e.g. '1.1' or 'A1')"
+                },
+                "question": "What is the reference number of this room?",
+                "render": "This room has the reference number {ref}"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Indoor Room {name}"
+                },
+                "1": {
+                    "then": "Indoor Area {name}"
+                },
+                "2": {
+                    "then": "Indoor Wall {name}"
+                },
+                "3": {
+                    "then": "Indoor Corridor {name}"
+                },
+                "4": {
+                    "then": "Indoor Door {name}"
+                },
+                "5": {
+                    "then": "Indoor Level {name}"
+                }
+            },
             "render": "Indoor area {name}"
         }
     },

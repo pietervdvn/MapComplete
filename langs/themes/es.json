@@ -345,11 +345,6 @@
         "description": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente",
         "title": "Agua Potable"
     },
-    "entrances": {
-        "description": "Un mapa que muestra todas las entradas, que sondea aspectos importantes para usuarios de sillas de ruedas",
-        "shortDescription": "Sondea entradas para ayudar el enrutado de sillas de ruedas",
-        "title": "Entradas"
-    },
     "etymology": {
         "layers": {
             "1": {
