@@ -17,7 +17,12 @@
   "startZoom": 14,
   "widenFactor": 2,
   "layers": [
-    "indoors",
+    {
+      "builtin": "indoors",
+      "override": {
+        "passAllFeatures": true
+      }
+    },
     {
       "builtin": [
         "walls_and_buildings"
