@@ -32,6 +32,7 @@
       }
     },
     "pedestrian_path",
+    "elevator",
     "entrance"
   ]
 }
