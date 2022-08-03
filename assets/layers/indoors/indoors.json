@@ -127,7 +127,7 @@
           },
           {
             "if": "room=toilet",
-            "then": "./assets/layers/indoors/room_toilet.svg"
+            "then": "./assets/layers/indoors/room_toilets.svg"
           },
           {
             "if": "room=toilets",

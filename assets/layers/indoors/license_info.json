@@ -30,16 +30,6 @@
     ]
   },
   {
-    "path": "room_toilet.svg",
-    "license": "GNU",
-    "authors": [
-      "Adrien Pavie"
-    ],
-    "sources": [
-      "https://framagit.org/OpenLevelUp/OpenLevelUp/-/blob/master/src/img/features-vector/room_toilet.svg"
-    ]
-  },
-  {
     "path": "room_toilets.svg",
     "license": "GNU",
     "authors": [
