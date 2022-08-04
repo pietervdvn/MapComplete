@@ -3458,6 +3458,9 @@
         "presets": {
             "0": {
                 "title": "einen Eingang"
+            },
+            "1": {
+                "title": "eine Innentür"
             }
         },
         "tagRenderings": {
@@ -4255,6 +4258,12 @@
         "name": "Innenräume",
         "title": {
             "render": "Innenbereich {name}"
+        },
+        "tagRenderings": {
+            "ref": {
+                "question": "Wie lautet der Name dieses Raums?",
+                "render": "Der Name des Raums lautet {name}"
+            }
         }
     },
     "information_board": {
@@ -4818,7 +4827,7 @@
         "name": "Parkplätze",
         "presets": {
             "0": {
-                "title": "ein Parkplatz"
+                "title": "einen Parkplatz"
             }
         },
         "tagRenderings": {
@@ -5594,7 +5603,7 @@
     },
     "shelter": {
         "description": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
-        "name": "Unterstand",
+        "name": "Unterstände",
         "tagRenderings": {
             "shelter-type": {
                 "mappings": {
@@ -6752,6 +6761,25 @@
                     }
                 }
             }
+        },
+        "tagRenderings": {
+            "entrance_info": {
+                "mappings": {
+                    "1": {
+                        "then": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite"
+                    },
+                    "0": {
+                        "then": "Es wurde kein Eingang markiert"
+                    }
+                },
+                "render": {
+                    "after": "{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
+                    "before": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:",
+                    "special": {
+                        "tagrendering": "Ein <a href='#{id}'>Eingang</a> von {canonical(width)}"
+                    }
+                }
+            }
         }
     },
     "waste_basket": {
@@ -6971,6 +6999,159 @@
                     }
                 }
             }
+        }
+    },
+    "maproulette": {
+        "filter": {
+            "0": {
+                "options": {
+                    "2": {
+                        "question": "Aufgaben anzeigen, die erledigt wurden"
+                    },
+                    "3": {
+                        "question": "Aufgaben anzeigen, die falsch positiv sind"
+                    },
+                    "5": {
+                        "question": "Aufgaben anzeigen, die gelöscht wurden"
+                    },
+                    "7": {
+                        "question": "Aufgaben anzeigen, die als zu schwierig markiert wurden"
+                    },
+                    "0": {
+                        "question": "Aufgaben mit allen Status anzeigen"
+                    },
+                    "1": {
+                        "question": "Aufgaben anzeigen, die erstellt wurden"
+                    },
+                    "4": {
+                        "question": "Aufgaben anzeigen, die übersprungen wurden"
+                    },
+                    "6": {
+                        "question": "Aufgaben anzeigen, die bereits erledigt wurden"
+                    },
+                    "8": {
+                        "question": "Aufgaben anzeigen, die deaktiviert wurden"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Kampagnen ID stimmt mit {search} überein"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Name der Kampagne enthält {search}"
+                    }
+                }
+            }
+        },
+        "name": "MapRoulette-Aufgaben",
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "3": {
+                        "then": "Aufgabe wurde übersprungen"
+                    },
+                    "7": {
+                        "then": "Aufgabe wurde deaktiviert"
+                    },
+                    "0": {
+                        "then": "Aufgabe wurde erstellt"
+                    },
+                    "4": {
+                        "then": "Aufgabe wurde gelöscht"
+                    },
+                    "6": {
+                        "then": "Aufgabe wurde als zu schwer markiert"
+                    },
+                    "1": {
+                        "then": "Aufgabe wurde erledigt"
+                    },
+                    "2": {
+                        "then": "Aufgabe ist ein falsches Positiv"
+                    },
+                    "5": {
+                        "then": "Aufgabe wurde bereits erledigt"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "MapRoulette-Element: {parentName}"
+        },
+        "description": "Ebene, die alle MapRoulette-Aufgaben zeigt"
+    },
+    "maproulette_challenge": {
+        "description": "Ebene mit Aufgaben einer MapRoulette-Kampagne",
+        "filter": {
+            "0": {
+                "options": {
+                    "1": {
+                        "question": "Aufgaben anzeigen, die erstellt wurden"
+                    },
+                    "2": {
+                        "question": "Aufgaben anzeigen, die erledigt wurden"
+                    },
+                    "0": {
+                        "question": "Aufgaben mit allen Status anzeigen"
+                    },
+                    "4": {
+                        "question": "Aufgaben anzeigen, die übersprungen wurden"
+                    },
+                    "3": {
+                        "question": "Aufgaben anzeigen, die falsch positiv sind"
+                    },
+                    "5": {
+                        "question": "Aufgaben anzeigen, die gelöscht wurden"
+                    },
+                    "6": {
+                        "question": "Aufgaben anzeigen, die bereits erledigt wurden"
+                    },
+                    "7": {
+                        "question": "Aufgaben anzeigen, die als zu schwierig markiert wurden"
+                    },
+                    "8": {
+                        "question": "Aufgaben anzeigen, die deaktiviert wurden"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "3": {
+                        "then": "Aufgabe wurde übersprungen"
+                    },
+                    "4": {
+                        "then": "Aufgabe wurde gelöscht"
+                    },
+                    "5": {
+                        "then": "Aufgabe wurde bereits erledigt"
+                    },
+                    "0": {
+                        "then": "Aufgabe wurde erstellt"
+                    },
+                    "1": {
+                        "then": "Aufgabe wurde erledigt"
+                    },
+                    "2": {
+                        "then": "Aufgabe ist ein falsches Positiv"
+                    },
+                    "6": {
+                        "then": "Aufgabe wurde als zu schwer markiert"
+                    },
+                    "7": {
+                        "then": "Aufgabe wurde deaktiviert"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Aufgabe in MapRoulette"
         }
     }
 }
