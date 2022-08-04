@@ -50,6 +50,7 @@
     "nl": "Hackerspace"
   },
   "tagRenderings": [
+    "images",
     {
       "id": "is_makerspace",
       "question": {
