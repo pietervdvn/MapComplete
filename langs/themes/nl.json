@@ -451,11 +451,6 @@
         "description": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
         "title": "Onderwijs"
     },
-    "entrances": {
-        "description": "Een kaart die alle toegangen toont,",
-        "shortDescription": "Breng ingangen in kaart om rolstoelnavigatie mogelijk te maken",
-        "title": "Toegangsdeuren"
-    },
     "etymology": {
         "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
         "layers": {

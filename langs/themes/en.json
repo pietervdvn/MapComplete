@@ -447,11 +447,6 @@
         "description": "On this map, you'll find information about all types of schools and eduction and can easily add more information",
         "title": "Education"
     },
-    "entrances": {
-        "description": "A map showing all entrances, which surveys for important aspects for wheelchair users",
-        "shortDescription": "Survey entrances to help wheelchair routing",
-        "title": "Entrances"
-    },
     "etymology": {
         "description": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
         "layers": {
@@ -599,10 +594,6 @@
     "ghostbikes": {
         "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account.",
         "title": "Ghost bikes"
-    },
-    "governments": {
-        "description": "On this map, Governmental offices are shown and can be easily added",
-        "title": "Governmental Offices"
     },
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",

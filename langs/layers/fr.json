@@ -2275,7 +2275,9 @@
                 "question": "Cet ascenseur fonctionne-t-il ?"
             }
         },
-        "title": "Ascenseur",
+        "title": {
+            "render": "Ascenseur"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
