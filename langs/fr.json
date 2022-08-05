@@ -10,29 +10,29 @@
         "cannotBeDeleted": "Cet objet ne peut être supprimé",
         "delete": "Supprimer",
         "explanations": {
-            "hardDelete": "Ce point sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées",
+            "hardDelete": "Cet élément sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées",
             "retagNoOtherThemes": "Cet objet sera re-classifié et caché dans cette application",
             "retagOtherThemes": "Cet objet sera re-classifié et visible dans {otherThemes}",
             "selectReason": "Sélectionner pourquoi cet élément devrait être supprimé",
             "softDelete": "Cet objet sera mis à jour et caché de l'application. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Cet objet est supprimé",
-        "isntAPoint": "Seul les points peuvent être supprimés, l'objet sélectionné est une ligne, un polygone ou une relation.",
+        "isntAPoint": "Seul les nœuds peuvent être supprimés, l'élément sélectionné est une ligne, un polygone ou une relation.",
         "loading": "Inspection des propriétés pour vérifier si l’élément peut être supprimé.",
-        "loginToDelete": "Vous devez être connecté pour supprimer un objet",
-        "notEnoughExperience": "Ce point a été créé par une autre personne.",
-        "onlyEditedByLoggedInUser": "Ce point a été édité seulement par vous et peut donc être supprimé.",
-        "partOfOthers": "Ce point fait partie d'un autre objet et ne peut être supprimé directement.",
-        "readMessages": "Messages non-lus à lire avant de supprimer un point, certains pourraient comporter des informations importantes",
+        "loginToDelete": "Vous devez posséder un compte pour supprimer un élément",
+        "notEnoughExperience": "Cet élément a été créé par une autre personne.",
+        "onlyEditedByLoggedInUser": "Cet élément a été édité par vous uniquement et peut donc être supprimé.",
+        "partOfOthers": "Ce nœud fait partie d'un chemin ou d’une relation et ne peut être supprimé directement.",
+        "readMessages": "Messages non-lus à lire avant de supprimer un élément, certains pourraient comporter des informations importantes",
         "reasons": {
             "disused": "Cet élément n’est plus utilisé ou a été enlevé",
-            "duplicate": "Ce point est un doublon",
+            "duplicate": "Cet élément est un doublon",
             "notFound": "Cet élément n’a pas pu être trouvé",
-            "test": "Élément de test qui n’a jamais été ici"
+            "test": "Élément de test qui n’a jamais été présent"
         },
-        "safeDelete": "Ce point peut être supprimé sans risque.",
+        "safeDelete": "Cet élément peut être supprimé sans risque.",
         "useSomethingElse": "Utilisez un autre éditeur OpenStreetMap pour le supprimer",
-        "whyDelete": "Pourquoi ce point devrait-il être supprimé ?"
+        "whyDelete": "Pourquoi cet élément devrait-il être supprimé ?"
     },
     "favourite": {
         "loginNeeded": "<h3>Connexion</h3>La mise en forme personnalisée requiert un compte OpenStreetMap",
@@ -46,30 +46,30 @@
             "addNew": "Ajouter {category}",
             "addNewMapLabel": "Cliquez ici pour ajouter un élément",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
-            "confirmIntro": "<h3>Ajouter un/une {title} ici?</h3>Le point que vous ajouterez sera <b>visible par tout le monde</b>. Merci de vous assurer que ce point existe réellement. Beaucoup d'autres applications utilisent ces données.",
+            "confirmIntro": "<h3>Ajouter un/une {title} ici ?</h3>L’élément que vous ajouterez sera <b>visible par tout le monde</b>. Merci de vous assurer que celui-ci existe réellement. Beaucoup d'autres applications utilisent ces données.",
             "disableFilters": "Désactiver tous les filtres",
             "disableFiltersExplanation": "Certains élément peuvent être filtrés",
-            "hasBeenImported": "Ce point a déjà été importé",
+            "hasBeenImported": "Cet élément a déjà été importé",
             "import": {
                 "hasBeenImported": "Cet objet a été importé",
                 "howToTest": "Pour essayer, ajouter <b>test=true</b> ou <b>backend=osm-test</b> à l'adresse de la page. Le groupe de modifications sera affiché dans la console. Merci d'ouvrir un PR pour officialiser ce thème et ainsi activer le bouton d'import.",
                 "importTags": "L'objet recevra {tags}",
                 "officialThemesOnly": "Le bouton d'import est désactivé pour les thèmes non-officiels pour prévenir les accidents",
                 "wrongType": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être importé",
-                "wrongTypeToConflate": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être confondu",
+                "wrongTypeToConflate": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être comparé",
                 "zoomInMore": "Zoomez davantage pour importer cet objet"
             },
             "importTags": "L'élément recevra {tags}",
             "intro": "Vous avez cliqué sur un endroit où il n'y a pas encore de données.<br>",
-            "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un point",
+            "layerNotEnabled": "La couche {layer} est désactivée. Activez-la pour ajouter un élément",
             "openLayerControl": "Ouvrir la panneau de contrôle",
-            "pleaseLogin": "Vous devez vous connecter pour ajouter un point",
+            "pleaseLogin": "Vous devez vous connecter pour ajouter un élément",
             "presetInfo": "Le nouveau POI aura {tags}",
-            "stillLoading": "Chargement des données en cours. Patientez un instant avant d'ajouter un nouveau point.",
-            "title": "Ajouter un nouveau point ?",
+            "stillLoading": "Chargement des données en cours. Patientez un instant avant d'ajouter un nouvel élément.",
+            "title": "Ajouter un nouvel élément ?",
             "warnVisibleForEveryone": "Votre ajout sera visible",
             "wrongType": "Cet élément n'est pas un nœud ou un chemin et ne peut pas être importé",
-            "zoomInFurther": "Rapprochez vous pour ajouter un point.",
+            "zoomInFurther": "Zoomez pour ajouter un élément.",
             "zoomInMore": "Zoomez pour importer cet élément"
         },
         "attribution": {
@@ -84,7 +84,15 @@
             },
             "mapContributionsBy": "La partie actuellement visible des données comporte des modifications par {contributors}",
             "mapContributionsByAndHidden": "La partie actuellement visible des données comporte des modifications par {contributors} et {hiddenCount} contributeurs de plus",
-            "themeBy": "Thème maintenu par {author}"
+            "themeBy": "Thème maintenu par {author}",
+            "openOsmcha": "Voir les dernières modifications faite avec {theme}",
+            "editId": "Ouvrir l’éditeur en ligne OpenStreetMap ici",
+            "openIssueTracker": "Signaler un problème",
+            "josmOpened": "JOSM est ouvert",
+            "translatedBy": "MapComplete est traduite par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres personnes</a>",
+            "josmNotOpened": "JOSM non atteignable. Assurez-vous que le logiciel soit ouvert et la commande à distance activée",
+            "followBridge": "Les comptes Mastodon et Twitter sont liés",
+            "editJosm": "Modifier ici avec JOSM"
         },
         "backgroundMap": "Carte de fonds",
         "cancel": "Annuler",
@@ -229,6 +237,16 @@
             "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
             "searchWikidata": "Rechercher sur Wikidata",
             "wikipediaboxTitle": "Wikipédia"
+        },
+        "apply_button": {
+            "isApplied": "Les changements sont appliqués",
+            "appliedOnAnotherObject": "L’élément {id} portera {tags}"
+        },
+        "welcomeExplanation": {
+            "browseOtherThemesIntro": "De nombreuses cartes thématiques existent sur MapComplete",
+            "general": "Cette carte permet de visualiser et ajouter des <i>points d’intérêt</i>. Zoomez sur un POI et cliquez dessus pour en voir les détails ou les modifier. Les données proviennent et sont transmises avec OpenStreetMap, qui peut être librement réutilisé.",
+            "addNew": "Cliquez sur la carte pour ajouter un nouveau POI.",
+            "browseMoreMaps": "Découvrez d’autres cartes"
         }
     },
     "image": {
@@ -299,7 +317,9 @@
     },
     "professional": {
         "indexPage": {
-            "button": "Découvrez nos offres"
+            "button": "Découvrez nos offres",
+            "hook": "Besoin d’un accompagnement professionnel ?",
+            "hookMore": "Nous pouvons aider à la mise en place de relevés, l’importation de données et toute question relative à l’environnement OpenStreetMap"
         }
     },
     "reviews": {
@@ -325,5 +345,9 @@
         "loginToSplit": "Vous devez être connecté pour couper une route",
         "split": "Couper",
         "splitTitle": "Choisissez sur la carte où couper cette route"
+    },
+    "translations": {
+        "missing": "{count} segments non traduits",
+        "isTranslator": "Mode traduction activé, votre pseudo correspond à celui d’une personne de l’équipe de traduction"
     }
 }
