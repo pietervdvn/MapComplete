@@ -143,6 +143,23 @@
                 }
             },
             "question": "Quel est l’élément Wikipédia correspondant ?"
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Ce lieu dispose d’une boucle auditive"
+                },
+                "1": {
+                    "then": "Ce lieu <b>ne dispose pas</b> de boucle auditive"
+                }
+            },
+            "question": "Ce lieu dispose-t’il d’une boucle auditive pour les personnes malentendantes ?"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Quels étages sont desservis par cet ascenceur ?",
+                "render": "Cet ascenceur permet d’accéder aux étages {level}"
+            }
         }
     }
 }
