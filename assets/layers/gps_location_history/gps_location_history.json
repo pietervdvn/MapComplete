@@ -12,9 +12,12 @@
     "maxCacheAge": 0
   },
   "shownByDefault": false,
-  "mapRendering":[
+  "mapRendering": [
     {
-      "location": ["point","centroid"],
+      "location": [
+        "point",
+        "centroid"
+      ],
       "icon": "square:red",
       "iconSize": "5,5,center"
     }

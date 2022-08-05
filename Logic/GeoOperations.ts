@@ -1,9 +1,9 @@
 import * as turf from '@turf/turf'
+import {AllGeoJSON, booleanWithin, Coord, Feature, Geometry, MultiPolygon, Polygon} from '@turf/turf'
 import {BBox} from "./BBox";
 import togpx from "togpx"
 import Constants from "../Models/Constants";
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import {AllGeoJSON, booleanWithin, Coord, Feature, Geometry, MultiPolygon, Polygon, Properties} from "@turf/turf";
 
 export class GeoOperations {
 
@@ -383,22 +383,21 @@ export class GeoOperations {
         return turf.lineIntersect(feature, otherFeature).features.map(p => <[number, number]>p.geometry.coordinates)
     }
 
-    public static AsGpx(feature, generatedWithLayer?: LayerConfig) : string{
+    public static AsGpx(feature: Feature, options?: {layer?: LayerConfig, gpxMetadata?: any }) : string{
 
-        const metadata = {}
+        const metadata = options?.gpxMetadata ?? {}
+        metadata["time"] = metadata["time"] ?? new Date().toISOString()
         const tags = feature.properties
 
-        if (generatedWithLayer !== undefined) {
+        if (options?.layer !== undefined) {
 
-            metadata["name"] = generatedWithLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
-            metadata["desc"] = "Generated with MapComplete layer " + generatedWithLayer.id
+            metadata["name"] = options?.layer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
+            metadata["desc"] = "Generated with MapComplete layer " + options?.layer.id
             if (tags._backend?.contains("openstreetmap")) {
                 metadata["copyright"] = "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
                 metadata["author"] = tags["_last_edit:contributor"]
                 metadata["link"] = "https://www.openstreetmap.org/" + tags.id
                 metadata["time"] = tags["_last_edit:timestamp"]
-            } else {
-                metadata["time"] = new Date().toISOString()
             }
         }
 

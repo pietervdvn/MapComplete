@@ -14,14 +14,15 @@ export class RadioButton<T> extends InputElement<T> {
         elements: InputElement<T>[],
         options?: {
             selectFirstAsDefault?: true | boolean,
-            dontStyle?: boolean
+            dontStyle?: boolean,
+            value?: UIEventSource<T>
         }
     ) {
         super();
         options = options ?? {}
         this._selectFirstAsDefault = options.selectFirstAsDefault ?? true;
         this._elements = Utils.NoNull(elements);
-        this.value = new UIEventSource<T>(undefined);
+        this.value = options?.value ?? new UIEventSource<T>(undefined);
         this._dontStyle = options.dontStyle ?? false
     }
 

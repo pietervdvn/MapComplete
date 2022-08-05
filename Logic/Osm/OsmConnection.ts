@@ -9,6 +9,7 @@ import {Utils} from "../../Utils";
 import {OsmObject} from "./OsmObject";
 import {Changes} from "./Changes";
 import {GeoOperations} from "../GeoOperations";
+import { Feature } from "@turf/turf";
 
 export default class UserDetails {
 
@@ -322,7 +323,7 @@ export class OsmConnection {
 
     }
 
-    public async uploadGpxTrack(geojson: any, options: {
+    public async uploadGpxTrack(gpx: string, options: {
         description: string,
         visibility:  "private" | "public" | "trackable" | "identifiable",
         filename?: string
@@ -333,7 +334,6 @@ export class OsmConnection {
          */
         labels: string[]
     }): Promise<{ id: number }> {
-        const gpx = GeoOperations.AsGpx(geojson)
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually uploading GPX ", gpx)
             return new Promise<{ id: number }>((ok, error) => {
@@ -355,8 +355,8 @@ export class OsmConnection {
         const auth = this.auth;
         const boundary ="987654"
 
-        var body = ""
-        for (var key in contents) {
+        let body = ""
+        for (const key in contents) {
             body += "--" + boundary + "\r\n"
             body += "Content-Disposition: form-data; name=\"" + key + "\""
             if(extras[key] !== undefined){
