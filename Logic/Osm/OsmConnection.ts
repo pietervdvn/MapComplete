@@ -8,8 +8,6 @@ import Img from "../../UI/Base/Img";
 import {Utils} from "../../Utils";
 import {OsmObject} from "./OsmObject";
 import {Changes} from "./Changes";
-import {GeoOperations} from "../GeoOperations";
-import { Feature } from "@turf/turf";
 
 export default class UserDetails {
 

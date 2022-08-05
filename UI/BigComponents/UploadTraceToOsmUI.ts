@@ -17,7 +17,7 @@ export default class UploadTraceToOsmUI extends Toggle {
 
 
     constructor(
-        trace: () => string,
+        trace: (title: string) => string,
         state: {
             layoutToUse: LayoutConfig;
             osmConnection: OsmConnection
@@ -25,7 +25,7 @@ export default class UploadTraceToOsmUI extends Toggle {
             whenUploaded?: () => void | Promise<void>
         }) {
         const t = Translations.t.general.uploadGpx
-
+        const uploadFinished = new UIEventSource(false)
         const traceVisibilities: {
             key: "private" | "public",
             name: Translation,
@@ -33,11 +33,11 @@ export default class UploadTraceToOsmUI extends Toggle {
         }[] = [
             {
                 key: "private",
-                ...Translations.t.general.uploadGpx.modes.private
+                ...t.modes.private
             },
             {
                 key: "public",
-                ...Translations.t.general.uploadGpx.modes.public
+                ...t.modes.public
             }
         ]
 
@@ -52,7 +52,10 @@ export default class UploadTraceToOsmUI extends Toggle {
             }
         )
         const description = new TextField({
-            placeholder: t.placeHolder
+            placeholder: t.meta.descriptionPlaceHolder
+        })
+        const title = new TextField({
+            placeholder: t.meta.titlePlaceholder
         })
         const clicked = new UIEventSource<boolean>(false)
 
@@ -63,15 +66,17 @@ export default class UploadTraceToOsmUI extends Toggle {
 
             t.choosePermission,
             dropdown,
-            new Title(t.description.title, 4),
-            t.description.intro,
+            new Title(t.meta.title, 4),
+            t.meta.intro,
+            title,
+            t.meta.descriptionIntro,
             description,
             new Combine([
                 new SubtleButton(Svg.close_svg(), Translations.t.general.cancel).onClick(() => {
                     clicked.setData(false)
                 }).SetClass(""),
                 new SubtleButton(Svg.upload_svg(), t.confirm).OnClickWithLoading(t.uploading, async () => {
-                    await state?.osmConnection?.uploadGpxTrack(trace(), {
+                    await state?.osmConnection?.uploadGpxTrack(trace(title.GetValue().data), {
                         visibility: dropdown.GetValue().data,
                         description: description.GetValue().data,
                         labels: ["MapComplete", state?.layoutToUse?.id]
@@ -80,17 +85,20 @@ export default class UploadTraceToOsmUI extends Toggle {
                     if (options?.whenUploaded !== undefined) {
                         await options.whenUploaded()
                     }
+                    uploadFinished.setData(true)
 
-                }).SetClass("")
+                })
             ]).SetClass("flex flex-wrap flex-wrap-reverse justify-between items-stretch")
         ]).SetClass("flex flex-col p-4 rounded border-2 m-2 border-subtle")
 
 
         super(
-            confirmPanel,
-            new SubtleButton(Svg.upload_svg(), t.title)
-                .onClick(() => clicked.setData(true)),
-            clicked
-        )
+            new Combine([Svg.confirm_svg(),t.uploadFinished]).SetClass("flex"),
+            new Toggle(
+                confirmPanel,
+                new SubtleButton(Svg.upload_svg(), t.title)
+                    .onClick(() => clicked.setData(true)),
+                clicked
+            ), uploadFinished)
     }
 }

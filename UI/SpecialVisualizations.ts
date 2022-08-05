@@ -881,26 +881,31 @@ export default class SpecialVisualizations {
                 {
                     funcName: "upload_to_osm",
                     docs: "Uploads the GPS-history as GPX to OpenStreetMap.org; clears the history afterwards. The actual feature is ignored.",
-                    args:[],
+                    args: [],
                     constr(state, featureTags, args) {
-                        
-                        function getTrace() {
-                            const userLocations : Feature<Point, GeoLocationPointProperties>[] = state.historicalUserLocations.features.data.map(f => f.feature)
+
+                        function getTrace(title: string) {
+                            title = title?.trim()
+                            if (title === undefined || title === "") {
+                                title = "Uploaded with MapComplete"
+                            }
+                            title = Utils.EncodeXmlValue(title)
+                            const userLocations: Feature<Point, GeoLocationPointProperties>[] = state.historicalUserLocations.features.data.map(f => f.feature)
                             const trackPoints: string[] = []
                             for (const l of userLocations) {
                                 let trkpt = `    <trkpt lat="${l.geometry.coordinates[1]}" lon="${l.geometry.coordinates[0]}">`
                                 trkpt += `        <time>${l.properties.date}</time>`
-                                if(l.properties.altitude !== null && l.properties.altitude !== undefined   ){
+                                if (l.properties.altitude !== null && l.properties.altitude !== undefined) {
                                     trkpt += `        <ele>${l.properties.altitude}</ele>`
                                 }
                                 trkpt += "    </trkpt>"
                                 trackPoints.push(trkpt)
                             }
                             const header = '<gpx version="1.1" creator="MapComplete track uploader" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
-                            return header+"\n<trk><trkseg>\n"+trackPoints.join("\n")+"\n</trkseg></trk></gpx>"
+                            return header + "\n<name>" + title + "</name>\n<trk><trkseg>\n" + trackPoints.join("\n") + "\n</trkseg></trk></gpx>"
                         }
-                        
-                        return new UploadTraceToOsmUI(getTrace, state,{
+
+                        return new UploadTraceToOsmUI(getTrace, state, {
                             whenUploaded: async () => {
                                 state.historicalUserLocations.features.setData([])
                             }
