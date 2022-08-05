@@ -74,7 +74,7 @@
     "phone",
     "email",
     {
-      "builtin":         "climbing.fee"
+      "builtin": "climbing.fee"
     },
     "opening_hours",
     {

@@ -4259,7 +4259,7 @@
         "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
         "name": "Innenräume",
         "tagRenderings": {
-            "ref": {
+            "name": {
                 "question": "Wie lautet der Name dieses Raums?",
                 "render": "Der Name des Raums lautet {name}"
             }
