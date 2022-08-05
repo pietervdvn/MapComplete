@@ -258,6 +258,7 @@
       "id": "Rock type (crag/rock/cliff only)"
     },
     {
+      "id": "default_climbing_questions",
       "builtin": [
         "climbing.website",
         "climbing.fee",

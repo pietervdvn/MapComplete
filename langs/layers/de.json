@@ -442,39 +442,6 @@
             }
         },
         "tagRenderings": {
-            "9": {
-                "renderings": {
-                    "0": {
-                        "question": "Wie viele type_plural können hier gemietet werden?",
-                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
-                    }
-                },
-                "rewrite": {
-                    "into": {
-                        "0": {
-                            "1": "Stadträder"
-                        },
-                        "1": {
-                            "1": "Elektrofahrräder"
-                        },
-                        "2": {
-                            "1": "Kinderfahrräder"
-                        },
-                        "3": {
-                            "1": "BMX-Räder"
-                        },
-                        "4": {
-                            "1": "Mountainbikes"
-                        },
-                        "5": {
-                            "1": "Fahrradtaschen"
-                        },
-                        "6": {
-                            "1": "Tandems"
-                        }
-                    }
-                }
-            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -527,6 +494,39 @@
                     }
                 },
                 "question": "Was ist das für ein Fahrradverleih?"
+            },
+            "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "Wie viele type_plural können hier gemietet werden?",
+                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "Stadträder"
+                        },
+                        "1": {
+                            "1": "Elektrofahrräder"
+                        },
+                        "2": {
+                            "1": "Kinderfahrräder"
+                        },
+                        "3": {
+                            "1": "BMX-Räder"
+                        },
+                        "4": {
+                            "1": "Mountainbikes"
+                        },
+                        "5": {
+                            "1": "Fahrradtaschen"
+                        },
+                        "6": {
+                            "1": "Tandems"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -4069,7 +4069,7 @@
             }
         },
         "tagRenderings": {
-            "6": {
+            "available_devices": {
                 "renderings": {
                     "0": {
                         "mappings": {
@@ -4399,11 +4399,6 @@
             }
         },
         "tagRenderings": {
-            "5": {
-                "override": {
-                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
-                }
-            },
             "capacity": {
                 "question": "Wie viele Kinder können hier maximal angemeldet werden?",
                 "render": "Diese Einrichtung bietet Platz für {capacity} Kinder"
@@ -4422,6 +4417,11 @@
             "name": {
                 "question": "Wie lautet der Name dieser Einrichtung?",
                 "render": "Diese Einrichtung hat den Namen <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
+                }
             }
         },
         "title": {
@@ -5655,16 +5655,6 @@
             }
         },
         "tagRenderings": {
-            "8": {
-                "override": {
-                    "+mappings": {
-                        "0": {
-                            "then": "Die Unterrichtssprache der Schule ist unbekannt"
-                        }
-                    },
-                    "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
-                }
-            },
             "capacity": {
                 "question": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
                 "render": "Diese Schule kann höchstens {capacity} Schüler aufnehmen"
@@ -5748,6 +5738,16 @@
                 },
                 "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?<div class='subtle'>Ad-hoc ",
                 "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
+            },
+            "wikidata.school-language": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Die Unterrichtssprache der Schule ist unbekannt"
+                        }
+                    },
+                    "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
+                }
             }
         },
         "title": {
@@ -5834,12 +5834,6 @@
             }
         },
         "tagRenderings": {
-            "2": {
-                "override": {
-                    "question": "Um was für ein Geschäft handelt es sich?",
-                    "render": "Das ist ein {shop}"
-                }
-            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -5859,6 +5853,12 @@
                     }
                 },
                 "question": "Welche Papierformate bietet das Geschäft an?"
+            },
+            "id_presets.shop_types": {
+                "override": {
+                    "question": "Um was für ein Geschäft handelt es sich?",
+                    "render": "Das ist ein {shop}"
+                }
             },
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?",

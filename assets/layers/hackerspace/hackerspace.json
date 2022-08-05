@@ -150,6 +150,7 @@
       "id": "hackerspaces-opening_hours"
     },
     {
+      "id": "available_devices",
       "rewrite": {
         "sourceString": [
           "device-key",

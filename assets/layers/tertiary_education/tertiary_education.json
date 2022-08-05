@@ -134,6 +134,7 @@
       "condition": "amenity=university"
     },
     {
+      "id": "school-questions",
       "builtin": [
         "school.capacity",
         "school.gender"

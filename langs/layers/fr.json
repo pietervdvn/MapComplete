@@ -442,39 +442,6 @@
             }
         },
         "tagRenderings": {
-            "9": {
-                "renderings": {
-                    "0": {
-                        "question": "Combien de type_plural peuvent être loués ici ?",
-                        "render": "{capacity:bicycle_type} type_plural peuvent être loués ici"
-                    }
-                },
-                "rewrite": {
-                    "into": {
-                        "0": {
-                            "1": "vélos de ville"
-                        },
-                        "1": {
-                            "1": "vélos électriques"
-                        },
-                        "2": {
-                            "1": "vélos d'enfants"
-                        },
-                        "3": {
-                            "1": "BMX"
-                        },
-                        "4": {
-                            "1": "vélos de montagne"
-                        },
-                        "5": {
-                            "1": "sacoches pour vélo"
-                        },
-                        "6": {
-                            "1": "tandem"
-                        }
-                    }
-                }
-            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -527,6 +494,39 @@
                     }
                 },
                 "question": "De quel type de location de vélo s'agit-il ?"
+            },
+            "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "Combien de type_plural peuvent être loués ici ?",
+                        "render": "{capacity:bicycle_type} type_plural peuvent être loués ici"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "vélos de ville"
+                        },
+                        "1": {
+                            "1": "vélos électriques"
+                        },
+                        "2": {
+                            "1": "vélos d'enfants"
+                        },
+                        "3": {
+                            "1": "BMX"
+                        },
+                        "4": {
+                            "1": "vélos de montagne"
+                        },
+                        "5": {
+                            "1": "sacoches pour vélo"
+                        },
+                        "6": {
+                            "1": "tandem"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -3512,16 +3512,6 @@
             }
         },
         "tagRenderings": {
-            "8": {
-                "override": {
-                    "+mappings": {
-                        "0": {
-                            "then": "La langue principale de cette école est inconnue"
-                        }
-                    },
-                    "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
-                }
-            },
             "capacity": {
                 "question": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?",
                 "render": "Cette école peut accueillir au maximum {capacity} étudiants"
@@ -3605,6 +3595,16 @@
                 },
                 "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc ",
                 "render": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}"
+            },
+            "wikidata.school-language": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "La langue principale de cette école est inconnue"
+                        }
+                    },
+                    "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
+                }
             }
         },
         "title": {
@@ -3658,12 +3658,6 @@
             }
         },
         "tagRenderings": {
-            "2": {
-                "override": {
-                    "question": "Quel genre de magasin est-ce?",
-                    "render": "C'est une {shop}"
-                }
-            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -3683,6 +3677,12 @@
                     }
                 },
                 "question": "Quels formats de papier cette boutique propose-t-elle ?"
+            },
+            "id_presets.shop_types": {
+                "override": {
+                    "question": "Quel genre de magasin est-ce?",
+                    "render": "C'est une {shop}"
+                }
             },
             "shops-name": {
                 "question": "Qu'est-ce que le nom de ce magasin ?"

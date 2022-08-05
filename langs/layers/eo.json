@@ -75,7 +75,7 @@
     },
     "bicycle_rental": {
         "tagRenderings": {
-            "9": {
+            "rental_types": {
                 "rewrite": {
                     "into": {
                         "0": {

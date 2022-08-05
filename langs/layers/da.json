@@ -379,33 +379,6 @@
             }
         },
         "tagRenderings": {
-            "9": {
-                "rewrite": {
-                    "into": {
-                        "0": {
-                            "1": "bycykler"
-                        },
-                        "1": {
-                            "1": "elektriske cykler"
-                        },
-                        "2": {
-                            "1": "børnecykler"
-                        },
-                        "3": {
-                            "1": "BMX-cykler"
-                        },
-                        "4": {
-                            "1": "mountainbike"
-                        },
-                        "5": {
-                            "1": "cykeltasker"
-                        },
-                        "6": {
-                            "1": "tandem"
-                        }
-                    }
-                }
-            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -446,6 +419,33 @@
                     }
                 },
                 "question": "Hvilken slags cykeludlejning er dette?"
+            },
+            "rental_types": {
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "bycykler"
+                        },
+                        "1": {
+                            "1": "elektriske cykler"
+                        },
+                        "2": {
+                            "1": "børnecykler"
+                        },
+                        "3": {
+                            "1": "BMX-cykler"
+                        },
+                        "4": {
+                            "1": "mountainbike"
+                        },
+                        "5": {
+                            "1": "cykeltasker"
+                        },
+                        "6": {
+                            "1": "tandem"
+                        }
+                    }
+                }
             }
         },
         "title": {
