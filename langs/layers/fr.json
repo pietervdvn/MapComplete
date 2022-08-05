@@ -1329,6 +1329,23 @@
                         "question": "Station de charge pour automobiles"
                     }
                 }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Stations de recharge en service uniquement"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Tous types de prise"
+                    },
+                    "1": {
+                        "question": "Dispose d’une <div style='display: inline-block'><b><b>prise murale Schuko</b> sans terre (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    }
+                }
             }
         },
         "tagRenderings": {
@@ -1369,7 +1386,8 @@
                 },
                 "question": "Doit-on payer des frais de stationnement pendant la recharge ?"
             }
-        }
+        },
+        "description": "Une station de recharge"
     },
     "climbing": {
         "tagRenderings": {
