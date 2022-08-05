@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 180,
+      "commits": 182,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 147,
+      "commits": 152,
       "contributor": "kjon"
     },
     {
@@ -62,6 +62,10 @@
     },
     {
       "commits": 14,
+      "contributor": "LeJun"
+    },
+    {
+      "commits": 14,
       "contributor": "J. Lavoie"
     },
     {
@@ -86,10 +90,6 @@
     },
     {
       "commits": 10,
-      "contributor": "LeJun"
-    },
-    {
-      "commits": 10,
       "contributor": "Irina"
     },
     {
@@ -98,11 +98,11 @@
     },
     {
       "commits": 7,
-      "contributor": "Niels Elgaard Larsen"
+      "contributor": "Andrews Leruth"
     },
     {
-      "commits": 6,
-      "contributor": "Andrews Leruth"
+      "commits": 7,
+      "contributor": "Niels Elgaard Larsen"
     },
     {
       "commits": 6,

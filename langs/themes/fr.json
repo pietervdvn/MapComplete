@@ -447,11 +447,6 @@
         "description": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
         "title": "Enseignement"
     },
-    "entrances": {
-        "description": "Une carte renseignant toutes les entrées (importante pour les utilisateurs de sièges roulants",
-        "shortDescription": "Vérifez les entrées pour faciliter le routage des utilisateurs de sièges roulants",
-        "title": "Entrées"
-    },
     "etymology": {
         "description": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc. proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikipedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi !</b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez sur l'une d'elles et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit.",
         "layers": {
@@ -647,6 +642,84 @@
         "shortDescription": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
         "title": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers"
     },
+    "healthcare": {
+        "description": "Cette carte affiche différents éléments liés à la santé",
+        "title": "Services de santé"
+    },
+    "indoors": {
+        "description": "Cette carte présente les lieux intérieurs accessibles au public",
+        "title": "Intérieurs"
+    },
+    "kerbs_and_crossings": {
+        "description": "Une carte affichant les ressauts et traversées.",
+        "title": "Ressauts et traversées"
+    },
+    "mapcomplete-changes": {
+        "description": "Cette carte affiche toutes les modifications réalisées avec MapComplete",
+        "layers": {
+            "0": {
+                "description": "Afficher toutes les modifications MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Nom de thème contenant {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Réalisé par {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Non</b> réalisé par {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Centre du groupe de modifications",
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "render_id": {
+                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Modification avec le thème <b>non-officiel</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Modification avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Groupe de modifications pour {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "D’autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Montrer les changements faits avec MapComplete",
+        "title": "Changements faits avec MapComplete"
+    },
+    "maproulette": {
+        "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
+        "title": "Tâches MapRoulette"
+    },
     "maps": {
         "description": "Sur cette carte sont affichées les cartes (plans) mappées dans OpenStreetMap.<br/><br/>Si une carte est manquante, vous pouvez l'ajouer facilement avec un compte OpenStreetMap.",
         "shortDescription": "Cette carte affiche toutes les cartes (plans) mappés dans OpenStreetMap",
@@ -673,6 +746,73 @@
     },
     "onwheels": {
         "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
+        "layers": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Toute/aucune information sur la largeur"
+                                },
+                                "1": {
+                                    "question": "Pas d’information sur la largeur"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Tous types de ressauts"
+                                },
+                                "1": {
+                                    "question": "Ressaut surélevé (> 3 cm)"
+                                },
+                                "2": {
+                                    "question": "Ressaut abaissé (~ 3 cm)"
+                                },
+                                "3": {
+                                    "question": "Ressaut à niveau (~ 0 cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "18": {
+                "override": {
+                    "=title": {
+                        "render": "Statistiques"
+                    }
+                }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importation"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Ajouter tous les attributs suggérés"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "OnWheels"
     },
     "openwindpowermap": {
@@ -797,6 +937,10 @@
         "shortDescription": "Une carte des bureaux de poste et des boîtes à lettres",
         "title": "Carte des Bureaux de Poste et Boîtes à Lettres"
     },
+    "rainbow_crossings": {
+        "description": "Cette carte affiche et permet la modification des passages cloutés peints aux couleurs de l’arc-en-ciel",
+        "title": "Passages cloutés arc-en-ciel"
+    },
     "shops": {
         "description": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, leurs horaires d'ouverture et leurs numéros de téléphone",
         "shortDescription": "Carte modifiable affichant les informations de base des magasins",
@@ -891,13 +1035,18 @@
         "description": "Carte affichant les WC et toilettes publiques",
         "title": "Carte des WC et toilettes publiques"
     },
+    "transit": {
+        "description": "Planifier votre itinéraire avec le système de transports en commun.",
+        "title": "Lignes de bus"
+    },
     "trees": {
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Cartographions tous les arbres",
         "title": "Arbres"
     },
     "walls_and_buildings": {
-        "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur."
+        "description": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur.",
+        "title": "Murs et bâtiments"
     },
     "waste": {
         "description": "Carte des poubelles et infrastructures de recyclage.",

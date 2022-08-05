@@ -291,6 +291,7 @@
       ]
     },
     {
+      "id": "rental_types",
       "rewrite": {
         "sourceString": [
           "bicycle_type",

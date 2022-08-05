@@ -60,10 +60,12 @@
     {
       "id": "ref",
       "question": {
-        "en": "What is the name of this room?"
+        "en": "What is the name of this room?",
+        "de": "Wie lautet der Name dieses Raums?"
       },
       "render": {
-        "en": "This room is named {name}"
+        "en": "This room is named {name}",
+        "de": "Der Name des Raums lautet {name}"
       },
       "freeform": {
         "key": "name"

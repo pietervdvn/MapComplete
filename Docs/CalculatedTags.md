@@ -1,6 +1,5 @@
 
 
-
  Metatags 
 ==========
 
@@ -286,7 +285,7 @@ Points from other layers are ignored - even if the points are parts of the curre
 
 ### closest 
 
- Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet laoded) 
+ Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet loaded) 
 
   0. list of features or a layer name or '*' to get all features
  

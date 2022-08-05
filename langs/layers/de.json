@@ -442,39 +442,6 @@
             }
         },
         "tagRenderings": {
-            "9": {
-                "renderings": {
-                    "0": {
-                        "question": "Wie viele type_plural können hier gemietet werden?",
-                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
-                    }
-                },
-                "rewrite": {
-                    "into": {
-                        "0": {
-                            "1": "Stadträder"
-                        },
-                        "1": {
-                            "1": "Elektrofahrräder"
-                        },
-                        "2": {
-                            "1": "Kinderfahrräder"
-                        },
-                        "3": {
-                            "1": "BMX-Räder"
-                        },
-                        "4": {
-                            "1": "Mountainbikes"
-                        },
-                        "5": {
-                            "1": "Fahrradtaschen"
-                        },
-                        "6": {
-                            "1": "Tandems"
-                        }
-                    }
-                }
-            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -527,6 +494,39 @@
                     }
                 },
                 "question": "Was ist das für ein Fahrradverleih?"
+            },
+            "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "Wie viele type_plural können hier gemietet werden?",
+                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "Stadträder"
+                        },
+                        "1": {
+                            "1": "Elektrofahrräder"
+                        },
+                        "2": {
+                            "1": "Kinderfahrräder"
+                        },
+                        "3": {
+                            "1": "BMX-Räder"
+                        },
+                        "4": {
+                            "1": "Mountainbikes"
+                        },
+                        "5": {
+                            "1": "Fahrradtaschen"
+                        },
+                        "6": {
+                            "1": "Tandems"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -3458,6 +3458,9 @@
         "presets": {
             "0": {
                 "title": "einen Eingang"
+            },
+            "1": {
+                "title": "eine Innentür"
             }
         },
         "tagRenderings": {
@@ -4066,7 +4069,7 @@
             }
         },
         "tagRenderings": {
-            "6": {
+            "available_devices": {
                 "renderings": {
                     "0": {
                         "mappings": {
@@ -4253,6 +4256,12 @@
     "indoors": {
         "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
         "name": "Innenräume",
+        "tagRenderings": {
+            "ref": {
+                "question": "Wie lautet der Name dieses Raums?",
+                "render": "Der Name des Raums lautet {name}"
+            }
+        },
         "title": {
             "render": "Innenbereich {name}"
         }
@@ -4390,11 +4399,6 @@
             }
         },
         "tagRenderings": {
-            "5": {
-                "override": {
-                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
-                }
-            },
             "capacity": {
                 "question": "Wie viele Kinder können hier maximal angemeldet werden?",
                 "render": "Diese Einrichtung bietet Platz für {capacity} Kinder"
@@ -4413,6 +4417,11 @@
             "name": {
                 "question": "Wie lautet der Name dieser Einrichtung?",
                 "render": "Diese Einrichtung hat den Namen <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
+                }
             }
         },
         "title": {
@@ -4468,6 +4477,159 @@
         },
         "title": {
             "render": "Karte"
+        }
+    },
+    "maproulette": {
+        "description": "Ebene, die alle MapRoulette-Aufgaben zeigt",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aufgaben mit allen Status anzeigen"
+                    },
+                    "1": {
+                        "question": "Aufgaben anzeigen, die erstellt wurden"
+                    },
+                    "2": {
+                        "question": "Aufgaben anzeigen, die erledigt wurden"
+                    },
+                    "3": {
+                        "question": "Aufgaben anzeigen, die falsch positiv sind"
+                    },
+                    "4": {
+                        "question": "Aufgaben anzeigen, die übersprungen wurden"
+                    },
+                    "5": {
+                        "question": "Aufgaben anzeigen, die gelöscht wurden"
+                    },
+                    "6": {
+                        "question": "Aufgaben anzeigen, die bereits erledigt wurden"
+                    },
+                    "7": {
+                        "question": "Aufgaben anzeigen, die als zu schwierig markiert wurden"
+                    },
+                    "8": {
+                        "question": "Aufgaben anzeigen, die deaktiviert wurden"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Name der Kampagne enthält {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Kampagnen ID stimmt mit {search} überein"
+                    }
+                }
+            }
+        },
+        "name": "MapRoulette-Aufgaben",
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Aufgabe wurde erstellt"
+                    },
+                    "1": {
+                        "then": "Aufgabe wurde erledigt"
+                    },
+                    "2": {
+                        "then": "Aufgabe ist ein falsches Positiv"
+                    },
+                    "3": {
+                        "then": "Aufgabe wurde übersprungen"
+                    },
+                    "4": {
+                        "then": "Aufgabe wurde gelöscht"
+                    },
+                    "5": {
+                        "then": "Aufgabe wurde bereits erledigt"
+                    },
+                    "6": {
+                        "then": "Aufgabe wurde als zu schwer markiert"
+                    },
+                    "7": {
+                        "then": "Aufgabe wurde deaktiviert"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "MapRoulette-Element: {parentName}"
+        }
+    },
+    "maproulette_challenge": {
+        "description": "Ebene mit Aufgaben einer MapRoulette-Kampagne",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aufgaben mit allen Status anzeigen"
+                    },
+                    "1": {
+                        "question": "Aufgaben anzeigen, die erstellt wurden"
+                    },
+                    "2": {
+                        "question": "Aufgaben anzeigen, die erledigt wurden"
+                    },
+                    "3": {
+                        "question": "Aufgaben anzeigen, die falsch positiv sind"
+                    },
+                    "4": {
+                        "question": "Aufgaben anzeigen, die übersprungen wurden"
+                    },
+                    "5": {
+                        "question": "Aufgaben anzeigen, die gelöscht wurden"
+                    },
+                    "6": {
+                        "question": "Aufgaben anzeigen, die bereits erledigt wurden"
+                    },
+                    "7": {
+                        "question": "Aufgaben anzeigen, die als zu schwierig markiert wurden"
+                    },
+                    "8": {
+                        "question": "Aufgaben anzeigen, die deaktiviert wurden"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Aufgabe wurde erstellt"
+                    },
+                    "1": {
+                        "then": "Aufgabe wurde erledigt"
+                    },
+                    "2": {
+                        "then": "Aufgabe ist ein falsches Positiv"
+                    },
+                    "3": {
+                        "then": "Aufgabe wurde übersprungen"
+                    },
+                    "4": {
+                        "then": "Aufgabe wurde gelöscht"
+                    },
+                    "5": {
+                        "then": "Aufgabe wurde bereits erledigt"
+                    },
+                    "6": {
+                        "then": "Aufgabe wurde als zu schwer markiert"
+                    },
+                    "7": {
+                        "then": "Aufgabe wurde deaktiviert"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Aufgabe in MapRoulette"
         }
     },
     "maxspeed": {
@@ -4818,7 +4980,7 @@
         "name": "Parkplätze",
         "presets": {
             "0": {
-                "title": "ein Parkplatz"
+                "title": "einen Parkplatz"
             }
         },
         "tagRenderings": {
@@ -5493,16 +5655,6 @@
             }
         },
         "tagRenderings": {
-            "8": {
-                "override": {
-                    "+mappings": {
-                        "0": {
-                            "then": "Die Unterrichtssprache der Schule ist unbekannt"
-                        }
-                    },
-                    "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
-                }
-            },
             "capacity": {
                 "question": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
                 "render": "Diese Schule kann höchstens {capacity} Schüler aufnehmen"
@@ -5586,6 +5738,16 @@
                 },
                 "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?<div class='subtle'>Ad-hoc ",
                 "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
+            },
+            "wikidata.school-language": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Die Unterrichtssprache der Schule ist unbekannt"
+                        }
+                    },
+                    "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
+                }
             }
         },
         "title": {
@@ -5594,7 +5756,7 @@
     },
     "shelter": {
         "description": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
-        "name": "Unterstand",
+        "name": "Unterstände",
         "tagRenderings": {
             "shelter-type": {
                 "mappings": {
@@ -5672,12 +5834,6 @@
             }
         },
         "tagRenderings": {
-            "2": {
-                "override": {
-                    "question": "Um was für ein Geschäft handelt es sich?",
-                    "render": "Das ist ein {shop}"
-                }
-            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -5697,6 +5853,12 @@
                     }
                 },
                 "question": "Welche Papierformate bietet das Geschäft an?"
+            },
+            "id_presets.shop_types": {
+                "override": {
+                    "question": "Um was für ein Geschäft handelt es sich?",
+                    "render": "Das ist ein {shop}"
+                }
             },
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?",
@@ -6738,6 +6900,25 @@
     },
     "walls_and_buildings": {
         "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
+        "tagRenderings": {
+            "entrance_info": {
+                "mappings": {
+                    "0": {
+                        "then": "Es wurde kein Eingang markiert"
+                    },
+                    "1": {
+                        "then": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite"
+                    }
+                },
+                "render": {
+                    "after": "{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
+                    "before": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:",
+                    "special": {
+                        "tagrendering": "Ein <a href='#{id}'>Eingang</a> von {canonical(width)}"
+                    }
+                }
+            }
+        },
         "title": {
             "render": "Wand oder Gebäude"
         },

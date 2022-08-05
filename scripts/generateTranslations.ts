@@ -55,7 +55,7 @@ class TranslationPart {
             }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
-                console.error(`Non-string object at ${context} in translation while trying to add more translations to '` + translationsKey + "'. The offending object which _should_ be a translation is: ", v,"\n\nThe current object is:", this.toJson("en"))
+                console.error(`Non-string object at ${context} in translation while trying to add more translations to '` + translationsKey + "'. The offending object which _should_ be a translation is: ", v, "\n\nThe current object is:", this.toJson("en"))
                 throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
             this.contents.set(translationsKey, v)
@@ -100,25 +100,34 @@ class TranslationPart {
                 console.warn("Got a null value for key ", key)
                 continue
             }
+            if (typeof v !== "object") {
+                continue;
+            }
 
-            if (v["id"] !== undefined && context.endsWith(".tagRenderings")) {
-                // We use the embedded id as key instead of the index as this is more stable
-                // Note: indonesian is shortened as 'id' as well!
-                if (v["en"] !== undefined || v["nl"] !== undefined) {
-                    // This is probably a translation already!
-                    // pass
+            if (context.endsWith(".tagRenderings")) {
+                if (v["id"] === undefined) {
+                    if (v["builtin"] !== undefined && typeof v["builtin"] === "string") {
+                        key = v["builtin"]
+                    } else {
+                        throw "At " + context + ": every object within a tagRenderings-list should have an id. " + JSON.stringify(v) + " has no id"
+                    }
                 } else {
 
-                    key = v["id"]
-                    if (typeof key !== "string") {
-                        throw "Panic: found a non-string ID at" + context
+                    // We use the embedded id as key instead of the index as this is more stable
+                    // Note: indonesian is shortened as 'id' as well!
+                    if (v["en"] !== undefined || v["nl"] !== undefined) {
+                        // This is probably a translation already!
+                        // pass
+                    } else {
+
+                        key = v["id"]
+                        if (typeof key !== "string") {
+                            throw "Panic: found a non-string ID at" + context
+                        }
                     }
                 }
             }
 
-            if (typeof v !== "object") {
-                continue;
-            }
 
             if (!this.contents.get(key)) {
                 this.contents.set(key, new TranslationPart())
@@ -591,7 +600,7 @@ function mergeThemeTranslations() {
     }
 }
 
-if(!existsSync("./langs/themes")){
+if (!existsSync("./langs/themes")) {
     mkdirSync("./langs/themes")
 }
 const themeOverwritesWeblate = process.argv[2] === "--ignore-weblate"

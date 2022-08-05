@@ -59,49 +59,57 @@
         {
           "if": "status=0",
           "then": {
-            "en": "Task is created"
+            "en": "Task is created",
+            "de": "Aufgabe wurde erstellt"
           }
         },
         {
           "if": "status=1",
           "then": {
-            "en": "Task is fixed"
+            "en": "Task is fixed",
+            "de": "Aufgabe wurde erledigt"
           }
         },
         {
           "if": "status=2",
           "then": {
-            "en": "Task is a false positive"
+            "en": "Task is a false positive",
+            "de": "Aufgabe ist ein falsches Positiv"
           }
         },
         {
           "if": "status=3",
           "then": {
-            "en": "Task is skipped"
+            "en": "Task is skipped",
+            "de": "Aufgabe wurde übersprungen"
           }
         },
         {
           "if": "status=4",
           "then": {
-            "en": "Task is deleted"
+            "en": "Task is deleted",
+            "de": "Aufgabe wurde gelöscht"
           }
         },
         {
           "if": "status=5",
           "then": {
-            "en": "Task is already fixed"
+            "en": "Task is already fixed",
+            "de": "Aufgabe wurde bereits erledigt"
           }
         },
         {
           "if": "status=6",
           "then": {
-            "en": "Task is marked as too hard"
+            "en": "Task is marked as too hard",
+            "de": "Aufgabe wurde als zu schwer markiert"
           }
         },
         {
           "if": "status=9",
           "then": {
-            "en": "Task is disabled"
+            "en": "Task is disabled",
+            "de": "Aufgabe wurde deaktiviert"
           }
         }
       ]
@@ -113,15 +121,18 @@
     }
   ],
   "description": {
-    "en": "Layer showing all tasks in MapRoulette"
+    "en": "Layer showing all tasks in MapRoulette",
+    "de": "Ebene, die alle MapRoulette-Aufgaben zeigt"
   },
   "minzoom": 15,
   "name": {
-    "en": "MapRoulette Tasks"
+    "en": "MapRoulette Tasks",
+    "de": "MapRoulette-Aufgaben"
   },
   "title": {
     "render": {
-      "en": "MapRoulette Item: {parentName}"
+      "en": "MapRoulette Item: {parentName}",
+      "de": "MapRoulette-Element: {parentName}"
     }
   },
   "titleIcons": [
@@ -136,54 +147,63 @@
       "options": [
         {
           "question": {
-            "en": "Show tasks with all statuses"
+            "en": "Show tasks with all statuses",
+            "de": "Aufgaben mit allen Status anzeigen"
           }
         },
         {
           "question": {
-            "en": "Show tasks that are created"
+            "en": "Show tasks that are created",
+            "de": "Aufgaben anzeigen, die erstellt wurden"
           },
           "osmTags": "status=0"
         },
         {
           "question": {
-            "en": "Show tasks that are fixed"
+            "en": "Show tasks that are fixed",
+            "de": "Aufgaben anzeigen, die erledigt wurden"
           },
           "osmTags": "status=1"
         },
         {
           "question": {
-            "en": "Show tasks that are false positives"
+            "en": "Show tasks that are false positives",
+            "de": "Aufgaben anzeigen, die falsch positiv sind"
           },
           "osmTags": "status=2"
         },
         {
           "question": {
-            "en": "Show tasks that are skipped"
+            "en": "Show tasks that are skipped",
+            "de": "Aufgaben anzeigen, die übersprungen wurden"
           },
           "osmTags": "status=3"
         },
         {
           "question": {
-            "en": "Show tasks that are deleted"
+            "en": "Show tasks that are deleted",
+            "de": "Aufgaben anzeigen, die gelöscht wurden"
           },
           "osmTags": "status=4"
         },
         {
           "question": {
-            "en": "Show tasks that are already fixed"
+            "en": "Show tasks that are already fixed",
+            "de": "Aufgaben anzeigen, die bereits erledigt wurden"
           },
           "osmTags": "status=5"
         },
         {
           "question": {
-            "en": "Show tasks that are marked as too hard"
+            "en": "Show tasks that are marked as too hard",
+            "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden"
           },
           "osmTags": "status=6"
         },
         {
           "question": {
-            "en": "Show tasks that are disabled"
+            "en": "Show tasks that are disabled",
+            "de": "Aufgaben anzeigen, die deaktiviert wurden"
           },
           "osmTags": "status=9"
         }
@@ -200,7 +220,8 @@
             }
           ],
           "question": {
-            "en": "Challenge name contains {search}"
+            "en": "Challenge name contains {search}",
+            "de": "Name der Kampagne enthält {search}"
           }
         }
       ]
@@ -216,7 +237,8 @@
             }
           ],
           "question": {
-            "en": "Challenge ID matches {search}"
+            "en": "Challenge ID matches {search}",
+            "de": "Kampagnen ID stimmt mit {search} überein"
           }
         }
       ]

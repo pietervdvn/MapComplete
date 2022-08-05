@@ -950,6 +950,7 @@
       }
     },
     {
+      "id": "contact_information",
       "builtin": [
         "website",
         "email",

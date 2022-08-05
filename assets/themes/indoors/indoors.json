@@ -2,11 +2,13 @@
   "id": "indoors",
   "title": {
     "en": "Indoors",
-    "de": "Innenräume"
+    "de": "Innenräume",
+    "fr": "Intérieurs"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",
-    "de": "Diese Karte zeigt öffentlich zugängliche Innenräume"
+    "de": "Diese Karte zeigt öffentlich zugängliche Innenräume",
+    "fr": "Cette carte présente les lieux intérieurs accessibles au public"
   },
   "maintainer": "MapComplete",
   "icon": "./assets/layers/entrance/entrance.svg",

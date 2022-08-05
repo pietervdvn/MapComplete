@@ -2,11 +2,13 @@
   "id": "rainbow_crossings",
   "title": {
     "en": "Rainbow pedestrian crossings",
-    "de": "Regenbogen-Fußgängerübergänge"
+    "de": "Regenbogen-Fußgängerübergänge",
+    "fr": "Passages cloutés arc-en-ciel"
   },
   "description": {
     "en": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
-    "de": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden"
+    "de": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden",
+    "fr": "Cette carte affiche et permet la modification des passages cloutés peints aux couleurs de l’arc-en-ciel"
   },
   "maintainer": "",
   "icon": "./assets/themes/rainbow_crossings/logo.svg",

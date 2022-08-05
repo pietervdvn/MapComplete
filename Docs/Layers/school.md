@@ -28,7 +28,6 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 
 
   - [education](https://mapcomplete.osm.be/education)
-  - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 
 

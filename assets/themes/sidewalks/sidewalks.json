@@ -97,6 +97,7 @@
           }
         },
         {
+          "id": "left-right-questions",
           "rewrite": {
             "sourceString": [
               "left|right"
@@ -117,26 +118,38 @@
             },
             {
               "id": "has_sidewalk_left|right",
-              "question": "Is there a sidewalk on this side of the road?",
+              "question": {
+                "en": "Is there a sidewalk on this side of the road?"
+              },
               "mappings": [
                 {
                   "if": "sidewalk:left|right=yes",
-                  "then": "Yes, there is a sidewalk on this side of the road"
+                  "then": {
+                    "en": "Yes, there is a sidewalk on this side of the road"
+                  }
                 },
                 {
                   "if": "sidewalk:left|right=no",
-                  "then": "No, there is no sidewalk to walk on"
+                  "then": {
+                    "en": "No, there is no sidewalk to walk on"
+                  }
                 },
                 {
                   "if": "sidewalk:left|right=separate",
-                  "then": "There is a separately mapped sidewalk to walk on"
+                  "then": {
+                    "en": "There is a separately mapped sidewalk to walk on"
+                  }
                 }
               ]
             },
             {
               "id": "sidewalk_width_left|right",
-              "question": "What is the width of the sidewalk on this side of the road?",
-              "render": "This sidewalk is {sidewalk:left|right:width}m wide",
+              "question": {
+                "en": "What is the width of the sidewalk on this side of the road?"
+              },
+              "render": {
+                "en": "This sidewalk is {sidewalk:left|right:width}m wide"
+              },
               "condition": "sidewalk:left|right=yes",
               "freeform": {
                 "key": "sidewalk:left|right:width",

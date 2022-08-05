@@ -442,39 +442,6 @@
             }
         },
         "tagRenderings": {
-            "9": {
-                "renderings": {
-                    "0": {
-                        "question": "Hoeveel type_plural kunnen hier uitgeleend worden?",
-                        "render": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
-                    }
-                },
-                "rewrite": {
-                    "into": {
-                        "0": {
-                            "1": "stadsfietsen"
-                        },
-                        "1": {
-                            "1": "elektrische fietsen"
-                        },
-                        "2": {
-                            "1": "kinderfietsen"
-                        },
-                        "3": {
-                            "1": "BMX-fietsen"
-                        },
-                        "4": {
-                            "1": "mountainbike"
-                        },
-                        "5": {
-                            "1": "fietstassen"
-                        },
-                        "6": {
-                            "1": "tandem"
-                        }
-                    }
-                }
-            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -527,6 +494,39 @@
                     }
                 },
                 "question": "Wat voor fietsverhuur is dit?"
+            },
+            "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "Hoeveel type_plural kunnen hier uitgeleend worden?",
+                        "render": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "stadsfietsen"
+                        },
+                        "1": {
+                            "1": "elektrische fietsen"
+                        },
+                        "2": {
+                            "1": "kinderfietsen"
+                        },
+                        "3": {
+                            "1": "BMX-fietsen"
+                        },
+                        "4": {
+                            "1": "mountainbike"
+                        },
+                        "5": {
+                            "1": "fietstassen"
+                        },
+                        "6": {
+                            "1": "tandem"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -4021,7 +4021,7 @@
             }
         },
         "tagRenderings": {
-            "6": {
+            "available_devices": {
                 "renderings": {
                     "0": {
                         "mappings": {
@@ -4322,11 +4322,6 @@
             }
         },
         "tagRenderings": {
-            "5": {
-                "override": {
-                    "question": "Wanneer is deze kinderopvang geopend?"
-                }
-            },
             "capacity": {
                 "question": "Hoeveel kinderen kunnen hier terecht?",
                 "render": "Hier kunnen {capacity} kinderen terecht"
@@ -4341,6 +4336,11 @@
                     }
                 },
                 "question": "Wat voor faciliteit is dit?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wanneer is deze kinderopvang geopend?"
+                }
             }
         },
         "title": {
@@ -5381,16 +5381,6 @@
             }
         },
         "tagRenderings": {
-            "8": {
-                "override": {
-                    "+mappings": {
-                        "0": {
-                            "then": "De voertaal van deze school is niet gekend"
-                        }
-                    },
-                    "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
-                }
-            },
             "capacity": {
                 "question": "Ten hoogste hoeveel studenten kunnen er les volgen in deze school?",
                 "render": "Deze school kan maximaal {capacity} studenten lesgeven"
@@ -5474,6 +5464,16 @@
                 },
                 "question": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?<div class='subtle'>Ad-hoc maatregelen zijn niet voldoende</div> ",
                 "render": "Deze school richt zich op studenten met {school:for}"
+            },
+            "wikidata.school-language": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "De voertaal van deze school is niet gekend"
+                        }
+                    },
+                    "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
+                }
             }
         },
         "title": {
@@ -5527,12 +5527,6 @@
             }
         },
         "tagRenderings": {
-            "2": {
-                "override": {
-                    "question": "Wat voor soort winkel is dit?",
-                    "render": "Dit is een {shop}"
-                }
-            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -5552,6 +5546,12 @@
                     }
                 },
                 "question": "Op welke papiergroottes kan deze zaak printen?"
+            },
+            "id_presets.shop_types": {
+                "override": {
+                    "question": "Wat voor soort winkel is dit?",
+                    "render": "Dit is een {shop}"
+                }
             },
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?",

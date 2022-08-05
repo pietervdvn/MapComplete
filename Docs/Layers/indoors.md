@@ -15,6 +15,7 @@ Basic indoor mapping: shows room outlines
 
 
   - This layer is shown at zoomlevel **13** and higher
+  - This layer is needed as dependency for layer [entrance](#entrance)
 
 
 
@@ -53,6 +54,17 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
+Warning: 
+
+this quick overview is incomplete
+
+
+
+attribute | type | values which are supported by this layer
+----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+
+
 
 
 ### images 
@@ -62,6 +74,20 @@ Elements must have the all of following tags to be shown on this layer:
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
 
 This tagrendering has no question and is thus read-only
+
+
+
+
+
+### ref 
+
+
+
+The question is  What is the name of this room?
+
+This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
+
+This is rendered with  This room is named {name}
 
  
 

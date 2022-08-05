@@ -442,33 +442,6 @@
             }
         },
         "tagRenderings": {
-            "9": {
-                "rewrite": {
-                    "into": {
-                        "0": {
-                            "1": "bicis de ciudad"
-                        },
-                        "1": {
-                            "1": "bicis eléctricas"
-                        },
-                        "2": {
-                            "1": "bicis infantiles"
-                        },
-                        "3": {
-                            "1": "bicis BMX"
-                        },
-                        "4": {
-                            "1": "bicis de montaña"
-                        },
-                        "5": {
-                            "1": "alforjas de bicicleta"
-                        },
-                        "6": {
-                            "1": "tándem"
-                        }
-                    }
-                }
-            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -521,6 +494,33 @@
                     }
                 },
                 "question": "¿Qué tipo de alquiler de bicicletas es este?"
+            },
+            "rental_types": {
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "bicis de ciudad"
+                        },
+                        "1": {
+                            "1": "bicis eléctricas"
+                        },
+                        "2": {
+                            "1": "bicis infantiles"
+                        },
+                        "3": {
+                            "1": "bicis BMX"
+                        },
+                        "4": {
+                            "1": "bicis de montaña"
+                        },
+                        "5": {
+                            "1": "alforjas de bicicleta"
+                        },
+                        "6": {
+                            "1": "tándem"
+                        }
+                    }
+                }
             }
         },
         "title": {
