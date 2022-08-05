@@ -642,6 +642,84 @@
         "shortDescription": "Carte indiquant les bornes incendies, extincteurs, casernes de pompiers et ambulanciers.",
         "title": "Bornes incendies, extincteurs, casernes de pompiers et ambulanciers"
     },
+    "healthcare": {
+        "description": "Cette carte affiche différents éléments liés à la santé",
+        "title": "Services de santé"
+    },
+    "indoors": {
+        "description": "Cette carte présente les lieux intérieurs accessibles au public",
+        "title": "Intérieurs"
+    },
+    "kerbs_and_crossings": {
+        "description": "Une carte affichant les ressauts et traversées.",
+        "title": "Ressauts et traversées"
+    },
+    "mapcomplete-changes": {
+        "description": "Cette carte affiche toutes les modifications réalisées avec MapComplete",
+        "layers": {
+            "0": {
+                "description": "Afficher toutes les modifications MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Nom de thème contenant {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Réalisé par {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Non</b> réalisé par {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Centre du groupe de modifications",
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "render_id": {
+                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Modification avec le thème <b>non-officiel</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Modification avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Groupe de modifications pour {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "D’autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Montrer les changements faits avec MapComplete",
+        "title": "Changements faits avec MapComplete"
+    },
+    "maproulette": {
+        "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
+        "title": "Tâches MapRoulette"
+    },
     "maps": {
         "description": "Sur cette carte sont affichées les cartes (plans) mappées dans OpenStreetMap.<br/><br/>Si une carte est manquante, vous pouvez l'ajouer facilement avec un compte OpenStreetMap.",
         "shortDescription": "Cette carte affiche toutes les cartes (plans) mappés dans OpenStreetMap",
@@ -668,28 +746,7 @@
     },
     "onwheels": {
         "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
-        "title": "OnWheels",
         "layers": {
-            "19": {
-                "override": {
-                    "+tagRenderings": {
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Ajouter tous les attributs suggérés"
-                                }
-                            }
-                        },
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importation"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -734,8 +791,29 @@
                         "render": "Statistiques"
                     }
                 }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importation"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Ajouter tous les attributs suggérés"
+                                }
+                            }
+                        }
+                    }
+                }
             }
-        }
+        },
+        "title": "OnWheels"
     },
     "openwindpowermap": {
         "description": "Une carte indiquant les éoliennes et permettant leur édition.",
@@ -859,6 +937,10 @@
         "shortDescription": "Une carte des bureaux de poste et des boîtes à lettres",
         "title": "Carte des Bureaux de Poste et Boîtes à Lettres"
     },
+    "rainbow_crossings": {
+        "description": "Cette carte affiche et permet la modification des passages cloutés peints aux couleurs de l’arc-en-ciel",
+        "title": "Passages cloutés arc-en-ciel"
+    },
     "shops": {
         "description": "Sur cette carte, vous pouvez ajouter des informations sur les magasins, leurs horaires d'ouverture et leurs numéros de téléphone",
         "shortDescription": "Carte modifiable affichant les informations de base des magasins",
@@ -953,6 +1035,10 @@
         "description": "Carte affichant les WC et toilettes publiques",
         "title": "Carte des WC et toilettes publiques"
     },
+    "transit": {
+        "description": "Planifier votre itinéraire avec le système de transports en commun.",
+        "title": "Lignes de bus"
+    },
     "trees": {
         "description": "Cartographions tous les arbres !",
         "shortDescription": "Cartographions tous les arbres",
@@ -970,91 +1056,5 @@
         "description": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
         "shortDescription": "Une carte des poubelles",
         "title": "Poubelles"
-    },
-    "indoors": {
-        "description": "Cette carte présente les lieux intérieurs accessibles au public",
-        "title": "Intérieurs"
-    },
-    "rainbow_crossings": {
-        "description": "Cette carte affiche et permet la modification des passages cloutés peints aux couleurs de l’arc-en-ciel",
-        "title": "Passages cloutés arc-en-ciel"
-    },
-    "transit": {
-        "title": "Lignes de bus",
-        "description": "Planifier votre itinéraire avec le système de transports en commun."
-    },
-    "mapcomplete-changes": {
-        "shortDescription": "Montrer les changements faits avec MapComplete",
-        "layers": {
-            "0": {
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Nom de thème contenant {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Réalisé par {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Non</b> réalisé par {search}"
-                            }
-                        }
-                    }
-                },
-                "name": "Centre du groupe de modifications",
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
-                    },
-                    "render_id": {
-                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme": {
-                        "render": "Modification avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
-                        "mappings": {
-                            "0": {
-                                "then": "Modification avec le thème <b>non-officiel</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-                            }
-                        }
-                    }
-                },
-                "description": "Afficher toutes les modifications MapComplete",
-                "title": {
-                    "render": "Groupe de modifications pour {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "D’autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "description": "Cette carte affiche toutes les modifications réalisées avec MapComplete",
-        "title": "Changements faits avec MapComplete"
-    },
-    "maproulette": {
-        "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
-        "title": "Tâches MapRoulette"
-    },
-    "kerbs_and_crossings": {
-        "title": "Ressauts et traversées",
-        "description": "Une carte affichant les ressauts et traversées."
-    },
-    "healthcare": {
-        "description": "Cette carte affiche différents éléments liés à la santé",
-        "title": "Services de santé"
     }
 }

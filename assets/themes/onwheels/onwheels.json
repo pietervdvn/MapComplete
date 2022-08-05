@@ -79,7 +79,8 @@
                 "question": {
                   "en": "Any/No width info",
                   "de": "Beliebig/Keine Breiteninformationen",
-                  "nl": "All kerbs"
+                  "nl": "All kerbs",
+                  "fr": "Toute/aucune information sur la largeur"
                 }
               },
               {
@@ -87,7 +88,8 @@
                 "question": {
                   "en": "Without width info",
                   "de": "Beliebige Breiteninformationen",
-                  "nl": "Geen breedtes gekend"
+                  "nl": "Geen breedtes gekend",
+                  "fr": "Pas d’information sur la largeur"
                 }
               }
             ]
@@ -128,7 +130,8 @@
                 "question": {
                   "en": "All types of kerbs",
                   "nl": "Alle typen stoepranden",
-                  "de": "Alle Arten von Bordsteinen"
+                  "de": "Alle Arten von Bordsteinen",
+                  "fr": "Tous types de ressauts"
                 }
               },
               {
@@ -136,7 +139,8 @@
                 "question": {
                   "en": "Raised kerb (>3 cm)",
                   "nl": "Hoge stoeprand (>3 cm)",
-                  "de": "Erhöhter Bordstein (>3 cm)"
+                  "de": "Erhöhter Bordstein (>3 cm)",
+                  "fr": "Ressaut surélevé (> 3 cm)"
                 }
               },
               {
@@ -144,7 +148,8 @@
                 "question": {
                   "en": "Lowered kerb (~3 cm)",
                   "nl": "Verlaagde stoeprand (~3 cm)",
-                  "de": "Abgesenkter Bordstein (~3 cm)"
+                  "de": "Abgesenkter Bordstein (~3 cm)",
+                  "fr": "Ressaut abaissé (~ 3 cm)"
                 }
               },
               {
@@ -152,7 +157,8 @@
                 "question": {
                   "en": "Flush kerb (~0cm)",
                   "nl": "Vlakke stoeprand (~0cm)",
-                  "de": "Bündiger Bordstein (~0cm)"
+                  "de": "Bündiger Bordstein (~0cm)",
+                  "fr": "Ressaut à niveau (~ 0 cm)"
                 }
               }
             ]
@@ -308,7 +314,8 @@
         "=title": {
           "render": {
             "en": "Statistics",
-            "de": "Statistik"
+            "de": "Statistik",
+            "fr": "Statistiques"
           }
         },
         "tagRenderings": [
@@ -341,7 +348,8 @@
                 "tags": "tags",
                 "text": {
                   "en": "Import",
-                  "de": "Import"
+                  "de": "Import",
+                  "fr": "Importation"
                 },
                 "icon": "./assets/svg/addSmall.svg",
                 "location_picker": "photo",
@@ -358,7 +366,8 @@
                 "tags_to_apply": "$tags",
                 "message": {
                   "en": "Add all the suggested tags",
-                  "de": "Alle vorgeschlagenen Tags hinzufügen"
+                  "de": "Alle vorgeschlagenen Tags hinzufügen",
+                  "fr": "Ajouter tous les attributs suggérés"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "id_of_object_to_apply_this_one": "_closest_osm_hotel"

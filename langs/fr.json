@@ -72,27 +72,31 @@
             "zoomInFurther": "Zoomez pour ajouter un élément.",
             "zoomInMore": "Zoomez pour importer cet élément"
         },
+        "apply_button": {
+            "appliedOnAnotherObject": "L’élément {id} portera {tags}",
+            "isApplied": "Les changements sont appliqués"
+        },
         "attribution": {
             "attributionContent": "<p>Toutes les données sont fournies par <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, librement réutilisables sous <a href='https://osm.org/copyright' target='_blank'>Open DataBase License</a>.</p>",
             "attributionTitle": "Crédits",
             "codeContributionsBy": "MapComplete a été construit par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres contributeurs</a>",
             "donate": "Soutenez MapComplete financièrement",
+            "editId": "Ouvrir l’éditeur en ligne OpenStreetMap ici",
+            "editJosm": "Modifier ici avec JOSM",
+            "followBridge": "Les comptes Mastodon et Twitter sont liés",
             "followOnMastodon": "Suivez MapComplete sur Mastodon",
             "followOnTwitter": "Suivez MapComplete sur Twitter",
             "iconAttribution": {
                 "title": "Icônes utilisées"
             },
+            "josmNotOpened": "JOSM non atteignable. Assurez-vous que le logiciel soit ouvert et la commande à distance activée",
+            "josmOpened": "JOSM est ouvert",
             "mapContributionsBy": "La partie actuellement visible des données comporte des modifications par {contributors}",
             "mapContributionsByAndHidden": "La partie actuellement visible des données comporte des modifications par {contributors} et {hiddenCount} contributeurs de plus",
-            "themeBy": "Thème maintenu par {author}",
-            "openOsmcha": "Voir les dernières modifications faite avec {theme}",
-            "editId": "Ouvrir l’éditeur en ligne OpenStreetMap ici",
             "openIssueTracker": "Signaler un problème",
-            "josmOpened": "JOSM est ouvert",
-            "translatedBy": "MapComplete est traduite par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres personnes</a>",
-            "josmNotOpened": "JOSM non atteignable. Assurez-vous que le logiciel soit ouvert et la commande à distance activée",
-            "followBridge": "Les comptes Mastodon et Twitter sont liés",
-            "editJosm": "Modifier ici avec JOSM"
+            "openOsmcha": "Voir les dernières modifications faite avec {theme}",
+            "themeBy": "Thème maintenu par {author}",
+            "translatedBy": "MapComplete est traduite par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres personnes</a>"
         },
         "backgroundMap": "Carte de fonds",
         "cancel": "Annuler",
@@ -229,6 +233,12 @@
             "wednesday": "Mercredi"
         },
         "welcomeBack": "Vous êtes connecté. Bienvenue !",
+        "welcomeExplanation": {
+            "addNew": "Cliquez sur la carte pour ajouter un nouveau POI.",
+            "browseMoreMaps": "Découvrez d’autres cartes",
+            "browseOtherThemesIntro": "De nombreuses cartes thématiques existent sur MapComplete",
+            "general": "Cette carte permet de visualiser et ajouter des <i>points d’intérêt</i>. Zoomez sur un POI et cliquez dessus pour en voir les détails ou les modifier. Les données proviennent et sont transmises avec OpenStreetMap, qui peut être librement réutilisé."
+        },
         "wikipedia": {
             "createNewWikidata": "Créer un nouvel élément Wikidata",
             "failed": "Le chargement de Wikipédia a échoué",
@@ -237,16 +247,6 @@
             "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
             "searchWikidata": "Rechercher sur Wikidata",
             "wikipediaboxTitle": "Wikipédia"
-        },
-        "apply_button": {
-            "isApplied": "Les changements sont appliqués",
-            "appliedOnAnotherObject": "L’élément {id} portera {tags}"
-        },
-        "welcomeExplanation": {
-            "browseOtherThemesIntro": "De nombreuses cartes thématiques existent sur MapComplete",
-            "general": "Cette carte permet de visualiser et ajouter des <i>points d’intérêt</i>. Zoomez sur un POI et cliquez dessus pour en voir les détails ou les modifier. Les données proviennent et sont transmises avec OpenStreetMap, qui peut être librement réutilisé.",
-            "addNew": "Cliquez sur la carte pour ajouter un nouveau POI.",
-            "browseMoreMaps": "Découvrez d’autres cartes"
         }
     },
     "image": {
@@ -347,7 +347,7 @@
         "splitTitle": "Choisissez sur la carte où couper cette route"
     },
     "translations": {
-        "missing": "{count} segments non traduits",
-        "isTranslator": "Mode traduction activé, votre pseudo correspond à celui d’une personne de l’équipe de traduction"
+        "isTranslator": "Mode traduction activé, votre pseudo correspond à celui d’une personne de l’équipe de traduction",
+        "missing": "{count} segments non traduits"
     }
 }

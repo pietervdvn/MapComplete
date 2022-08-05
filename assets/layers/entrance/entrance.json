@@ -450,7 +450,8 @@
     },
     {
       "title": {
-        "en": "an indoor door"
+        "en": "an indoor door",
+        "de": "eine Innentür"
       },
       "preciseInput": {
         "preferredBackground": "map",

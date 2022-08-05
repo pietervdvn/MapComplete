@@ -2,7 +2,8 @@
   "id": "walls_and_buildings",
   "title": {
     "en": "Walls and buildings",
-    "de": "Wände und Gebäude"
+    "de": "Wände und Gebäude",
+    "fr": "Murs et bâtiments"
   },
   "description": {
     "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",

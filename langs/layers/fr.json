@@ -1316,6 +1316,7 @@
         }
     },
     "charging_station": {
+        "description": "Une station de recharge",
         "filter": {
             "0": {
                 "options": {
@@ -1386,8 +1387,7 @@
                 },
                 "question": "Doit-on payer des frais de stationnement pendant la recharge ?"
             }
-        },
-        "description": "Une station de recharge"
+        }
     },
     "climbing": {
         "tagRenderings": {
