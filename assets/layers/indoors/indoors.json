@@ -30,27 +30,39 @@
     "mappings": [
       {
         "if": "indoor=room",
-        "then": "Indoor Room {name}"
+        "then": {
+          "en": "Indoor Room {name}"
+        }
       },
       {
         "if": "indoor=area",
-        "then": "Indoor Area {name}"
+        "then": {
+          "en": "Indoor Area {name}"
+        }
       },
       {
         "if": "indoor=wall",
-        "then": "Indoor Wall {name}"
+        "then": {
+          "en": "Indoor Wall {name}"
+        }
       },
       {
         "if": "indoor=corridor",
-        "then": "Indoor Corridor {name}"
+        "then": {
+          "en": "Indoor Corridor {name}"
+        }
       },
       {
         "if": "indoor=door",
-        "then": "Indoor Door {name}"
+        "then": {
+          "en": "Indoor Door {name}"
+        }
       },
       {
         "if": "indoor=level",
-        "then": "Indoor Level {name}"
+        "then": {
+          "en": "Indoor Level {name}"
+        }
       }
     ]
   },
@@ -60,6 +72,29 @@
     {
       "id": "ref",
       "question": {
+        "en": "What is the reference number of this room?"
+      },
+      "render": {
+        "en": "This room has the reference number {ref}"
+      },
+      "freeform": {
+        "key": "ref",
+        "type": "string",
+        "placeholder": {
+          "en": "Reference number of the room (e.g. '1.1' or 'A1')"
+        }
+      },
+      "condition": {
+        "or": [
+          "indoor=room",
+          "indoor=area",
+          "indoor=corridor"
+        ]
+      }
+    },
+    {
+      "id": "name",
+      "question": {
         "en": "What is the name of this room?",
         "de": "Wie lautet der Name dieses Raums?"
       },
@@ -68,7 +103,18 @@
         "de": "Der Name des Raums lautet {name}"
       },
       "freeform": {
-        "key": "name"
+        "key": "name",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the room"
+        }
+      },
+      "condition": {
+        "or": [
+          "indoor=room",
+          "indoor=area",
+          "indoor=corridor"
+        ]
       }
     }
   ],
@@ -93,12 +139,84 @@
     {
       "label": {
         "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
-        "condition": "name~*"
+        "condition": "name~*",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "room=administration",
+                "room=auditorium",
+                "room=bedroom",
+                "room=chapel",
+                "room=class",
+                "room=computer",
+                "room=conference",
+                "room=crypt",
+                "room=kitchen",
+                "room=laboratory",
+                "room=library",
+                "room=locker",
+                "room=nursery",
+                "room=office",
+                "room=prison_cell",
+                "room=restaurant",
+                "room=security_check",
+                "room=sport",
+                "room=storage",
+                "room=technical",
+                "room=toilet",
+                "room=toilets",
+                "room=waiting"
+              ]
+            },
+            "then": "<div style='margin-top: 0px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>"
+          }
+        ]
       },
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "icon": {
+        "render": null,
+        "condition": "indoor=room",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "room=adminstration",
+                "room=auditorium",
+                "room=bedroom",
+                "room=chapel",
+                "room=class",
+                "room=computer",
+                "room=conference",
+                "room=crypt",
+                "room=kitchen",
+                "room=laboratory",
+                "room=library",
+                "room=locker",
+                "room=nursery",
+                "room=office",
+                "room=prison_cell",
+                "room=restaurant",
+                "room=security_check",
+                "room=sport",
+                "room=storage",
+                "room=technical",
+                "room=toilets",
+                "room=waiting"
+              ]
+            },
+            "then": "./assets/layers/indoors/room_{room}.svg"
+          },
+          {
+            "if": "room=toilet",
+            "then": "./assets/layers/indoors/room_toilets.svg"
+          }
+        ]
+      },
+      "iconSize": "15,15, bottom"
     }
   ]
 }

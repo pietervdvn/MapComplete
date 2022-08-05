@@ -3438,7 +3438,9 @@
                 "question": "Ist dieser Aufzug in Betrieb?"
             }
         },
-        "title": "Aufzug",
+        "title": {
+            "render": "Aufzug"
+        },
         "units": {
             "0": {
                 "applicableUnits": {

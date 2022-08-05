@@ -17,10 +17,12 @@
     "nl": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet."
   },
   "title": {
-    "en": "Elevator",
-    "fr": "Ascenseur",
-    "de": "Aufzug",
-    "nl": "Lift"
+    "render": {
+      "en": "Elevator",
+      "fr": "Ascenseur",
+      "de": "Aufzug",
+      "nl": "Lift"
+    }
   },
   "tagRenderings": [
     "images",
@@ -139,7 +141,7 @@
       "icon": {
         "render": "circle:white;./assets/layers/elevator/elevator_wheelchair.svg"
       },
-      "iconSize": "40,40,bottom",
+      "iconSize": "40,40,center",
       "location": [
         "point",
         "centroid"

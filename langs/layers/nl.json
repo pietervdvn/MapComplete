@@ -3384,7 +3384,9 @@
                 "question": "Werkt deze lift?"
             }
         },
-        "title": "Lift",
+        "title": {
+            "render": "Lift"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -4203,6 +4205,16 @@
         },
         "title": {
             "render": "Brandkraan"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "millimeter",
+                        "humanSingular": "millimeter"
+                    }
+                }
+            }
         }
     },
     "indoors": {
