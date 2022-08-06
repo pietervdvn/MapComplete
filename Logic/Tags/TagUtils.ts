@@ -602,6 +602,7 @@ export class TagUtils {
      * TagUtils.LevelsParser("0") // => ["0"]
      * TagUtils.LevelsParser("-1") // => ["-1"]
      * TagUtils.LevelsParser("0;-1") // => ["0", "-1"]
+     * TagUtils.LevelsParser(undefined) // => []
      */
     public static LevelsParser(level: string): string[] {
         let spec = Utils.NoNull([level])
