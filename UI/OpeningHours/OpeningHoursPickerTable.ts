@@ -48,6 +48,7 @@ export default class OpeningHoursPickerTable extends InputElement<OpeningHour[]>
 
         const table = document.createElement("table")
         table.classList.add("oh-table")
+        table.classList.add("relative") // Workaround for webkit-based viewers, see #1019
 
         const cellHeightInPx = 14;
 
