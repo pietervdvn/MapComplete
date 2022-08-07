@@ -79,6 +79,7 @@ export default class UploadTraceToOsmUI extends Toggle {
                     await state?.osmConnection?.uploadGpxTrack(trace(title.GetValue().data), {
                         visibility: dropdown.GetValue().data,
                         description: description.GetValue().data,
+                        filename: title.GetValue().data+".gpx",
                         labels: ["MapComplete", state?.layoutToUse?.id]
                     })
 
@@ -93,7 +94,9 @@ export default class UploadTraceToOsmUI extends Toggle {
 
 
         super(
-            new Combine([Svg.confirm_svg(),t.uploadFinished]).SetClass("flex"),
+            new Combine([Svg.confirm_svg().SetClass("w-12 h-12 mr-2"),
+                t.uploadFinished])
+                .SetClass("flex p-2 rounded-xl border-2 subtle-border items-center"),
             new Toggle(
                 confirmPanel,
                 new SubtleButton(Svg.upload_svg(), t.title)
