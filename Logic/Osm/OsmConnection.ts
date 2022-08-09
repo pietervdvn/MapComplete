@@ -341,13 +341,13 @@ export class OsmConnection {
 
         const contents = {
             "file": gpx,
-            "description": options.description,
-            "tags": options.labels.join(","),
+            "description": options.description ?? "",
+            "tags": options.labels?.join(",") ?? "",
             "visibility": options.visibility
         }
 
         const extras = {
-            "file": "; filename=\""+options.filename+"\"\r\nContent-Type: application/gpx+xml"
+            "file": "; filename=\""+(options.filename ?? ("gpx_track_mapcomplete_"+(new Date().toISOString())))+"\"\r\nContent-Type: application/gpx+xml"
         }
         
         const auth = this.auth;
