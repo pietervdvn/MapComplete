@@ -1250,8 +1250,8 @@
       }
     ],
     "render": {
-      "en": "The network name is <b>{{internet_access:ssid}}</b>",
-      "nl": "De netwerknaam is <b>{{internet_access:ssid}}</b>"
+      "en": "The network name is <b>{internet_access:ssid}</b>",
+      "nl": "De netwerknaam is <b>{internet_access:ssid}</b>"
     }
   }
 }

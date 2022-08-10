@@ -62,7 +62,7 @@
                 "placeholder": "Voer de netwerknaam in"
             },
             "question": "Wat is de netwerknaam voor de draadloze internettoegang?",
-            "render": "De netwerknaam is <b>{{internet_access:ssid}}</b>"
+            "render": "De netwerknaam is <b>{internet_access:ssid}</b>"
         },
         "level": {
             "mappings": {

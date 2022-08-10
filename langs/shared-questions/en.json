@@ -73,7 +73,7 @@
                 "placeholder": "Enter the network name"
             },
             "question": "What is the network name for the wireless internet access?",
-            "render": "The network name is <b>{{internet_access:ssid}}</b>"
+            "render": "The network name is <b>{internet_access:ssid}</b>"
         },
         "level": {
             "mappings": {
