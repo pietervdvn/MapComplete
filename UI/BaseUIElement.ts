@@ -1,4 +1,4 @@
-import {Utils} from "../Utils";
+import { Utils } from "../Utils";
 
 /**
  * A thin wrapper around a html element, which allows to generate a HTML-element.
@@ -9,7 +9,7 @@ export default abstract class BaseUIElement {
 
     protected _constructedHtmlElement: HTMLElement;
     protected isDestroyed = false;
-    private clss: Set<string> = new Set<string>();
+    private readonly clss: Set<string> = new Set<string>();
     private style: string;
     private _onClick: () => void;
 
@@ -39,9 +39,9 @@ export default abstract class BaseUIElement {
 
         return this;
     }
-    
-    public ScrollToTop(){
-        this._constructedHtmlElement?.scrollTo(0,0)
+
+    public ScrollToTop() {
+        this._constructedHtmlElement?.scrollTo(0, 0)
     }
 
     /**
@@ -70,10 +70,13 @@ export default abstract class BaseUIElement {
         return this;
     }
 
-    public RemoveClass(clss: string): BaseUIElement {
-        if (this.clss.has(clss)) {
-            this.clss.delete(clss);
-            this._constructedHtmlElement?.classList.remove(clss)
+    public RemoveClass(classes: string): BaseUIElement {
+        const all = classes.split(" ").map(clsName => clsName.trim());
+        for (let clss of all) {
+            if (this.clss.has(clss)) {
+                this.clss.delete(clss);
+                this._constructedHtmlElement?.classList.remove(clss)
+            }
         }
         return this;
     }
@@ -114,7 +117,7 @@ export default abstract class BaseUIElement {
             if (style !== undefined && style !== "") {
                 el.style.cssText = style
             }
-            if (this.clss.size > 0) {
+            if (this.clss?.size > 0) {
                 try {
                     el.classList.add(...Array.from(this.clss))
                 } catch (e) {

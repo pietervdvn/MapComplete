@@ -205,6 +205,11 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
         let relative = url.protocol + "//" + url.host + url.pathname
         relative = relative.substring(0, relative.lastIndexOf("/"))
         const self = this;
+        
+        if(relative.endsWith("assets/generated/themes")){
+            warnings.push("Detected 'assets/generated/themes' as relative URL. I'm assuming that you are loading your file for the MC-repository, so I'm rewriting all image links as if they were absolute instead of relative")
+            relative = absolute
+        }
 
         function replaceString(leaf: string) {
             if (self._knownImages.has(leaf)) {

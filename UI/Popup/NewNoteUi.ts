@@ -103,7 +103,10 @@ export default class NewNoteUi extends Toggle {
                     ]
                 ).SetClass("flex flex-col"),
                 newNoteUi,
-                noteLayer.appliedFilters.map(filters => Array.from(filters.values()).some(v => v !== undefined))
+                noteLayer.appliedFilters.map(filters => {
+                    console.log("Applied filters for notes are: ", filters)
+                    return Array.from(filters.values()).some(v => v?.currentFilter !== undefined);
+                })
             ),
             new Combine([
                 t.noteLayerNotEnabled.SetClass("alert"),

@@ -3,6 +3,7 @@
         "description": "Adreces"
     },
     "artwork": {
+        "description": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
         "name": "Obres d'art",
         "tagRenderings": {
             "artwork-artwork_type": {
@@ -177,7 +178,7 @@
     },
     "bicycle_rental": {
         "tagRenderings": {
-            "9": {
+            "rental_types": {
                 "rewrite": {
                     "into": {
                         "4": {
@@ -372,6 +373,13 @@
                         "then": "<b>Chademo</b>"
                     }
                 }
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta estació de càrrega funciona"
+                    }
+                }
             }
         },
         "title": {
@@ -514,20 +522,19 @@
         },
         "title": {
             "mappings": {
-                "0": {
+                "1": {
                     "then": "Via ciclista"
                 },
-                "1": {
+                "3": {
                     "then": "Carril compartit"
                 },
-                "2": {
+                "5": {
                     "then": "Carril bici"
                 },
-                "4": {
+                "9": {
                     "then": "Carrer ciclista"
                 }
-            },
-            "render": "Vies ciclistes"
+            }
         }
     },
     "defibrillator": {
@@ -678,7 +685,30 @@
             }
         }
     },
+    "hospital": {
+        "tagRenderings": {
+            "name": {
+                "render": "El nom del nom de l'hospital és {name}"
+            }
+        }
+    },
     "hydrant": {
+        "tagRenderings": {
+            "hydrant-color": {
+                "mappings": {
+                    "2": {
+                        "then": "El color de l'hidrant és roig."
+                    }
+                }
+            },
+            "hydrant-type": {
+                "mappings": {
+                    "4": {
+                        "then": "L'hidrant està soterrat."
+                    }
+                }
+            }
+        },
         "title": {
             "render": "Hidrant"
         }
@@ -687,6 +717,23 @@
         "name": "Panells d'informació",
         "title": {
             "render": "Panell d'informació"
+        }
+    },
+    "kindergarten_childcare": {
+        "tagRenderings": {
+            "capacity": {
+                "render": "Aquesta instal·lació té espai per a {capacity} nens"
+            },
+            "childcare-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta és una llar d'infants (també coneguda com a <i>preescolar</i>) on els nens petits reben educació primerenca."
+                    }
+                }
+            },
+            "name": {
+                "render": "Aquesta instal·lació s'anomena <b>{name}</b>"
+            }
         }
     },
     "map": {
@@ -698,6 +745,28 @@
         },
         "title": {
             "render": "Mapa"
+        }
+    },
+    "maxspeed": {
+        "name": "Velocitat",
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "question": "Quina velocitat té"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "quilòmetres/hora",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "milles/hora",
+                        "humanShort": "mph"
+                    }
+                }
+            }
         }
     },
     "nature_reserve": {
@@ -734,6 +803,17 @@
     },
     "parking": {
         "name": "Aparcament"
+    },
+    "pharmacy": {
+        "tagRenderings": {
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta farmàcia és fàcil d'accedir en una cadira de rodes"
+                    }
+                }
+            }
+        }
     },
     "picnic_table": {
         "name": "Taules de pícnic",
@@ -787,10 +867,70 @@
     "recycling": {
         "name": "Residus",
         "tagRenderings": {
+            "container-location": {
+                "mappings": {
+                    "2": {
+                        "then": "Aquest contenidor està situat a l'aire lliure"
+                    }
+                }
+            },
             "opening_hours": {
                 "mappings": {
                     "0": {
                         "then": "24/7"
+                    }
+                }
+            },
+            "operator": {
+                "render": "Aquesta infraestuctura de reciclatge està operada per {operator}"
+            },
+            "recycling-accepts": {
+                "mappings": {
+                    "1": {
+                        "then": "Ací es poden reciclar els cartons de begudes"
+                    },
+                    "2": {
+                        "then": "Ací es poden reciclar llaunes"
+                    },
+                    "7": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
+                    "8": {
+                        "then": "Ací es poden reciclar ampolles de vidre"
+                    },
+                    "9": {
+                        "then": "Ací es pot reciclar vidre"
+                    },
+                    "10": {
+                        "then": "Ací es poden reciclar diaris"
+                    },
+                    "11": {
+                        "then": "Ací es pot reciclar paper"
+                    },
+                    "12": {
+                        "then": "Ací es poden reciclar ampolles de plàstic"
+                    },
+                    "13": {
+                        "then": "Ací es poden reciclar envasos de plàstic"
+                    },
+                    "14": {
+                        "then": "Ací es pot reciclar plàstic"
+                    },
+                    "20": {
+                        "then": "Ací es pot reciclar el rebuig"
+                    }
+                }
+            },
+            "recycling-centre-name": {
+                "render": "Aquest centre de reciclatge s'anomena <b>{name}</b>"
+            },
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Açò és un contenidor de reciclatge"
+                    },
+                    "1": {
+                        "then": "Açò és un centre de reciclatge"
                     }
                 }
             }
@@ -798,30 +938,6 @@
     },
     "shops": {
         "name": "Botiga",
-        "tagRenderings": {
-            "shops-opening_hours": {
-                "render": "{opening_hours_table(opening_hours)}"
-            },
-            "shops-phone": {
-                "render": "<a href='tel:{phone}'>{phone}</a>"
-            },
-            "shops-shop": {
-                "mappings": {
-                    "1": {
-                        "then": "Supermercat"
-                    },
-                    "3": {
-                        "then": "Perruqueria"
-                    },
-                    "4": {
-                        "then": "Fleca"
-                    }
-                }
-            },
-            "shops-website": {
-                "render": "<a href='{website}'>{website}</a>"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {

@@ -2,7 +2,7 @@ import {Mapillary} from "./Mapillary";
 import {WikimediaImageProvider} from "./WikimediaImageProvider";
 import {Imgur} from "./Imgur";
 import GenericImageProvider from "./GenericImageProvider";
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import ImageProvider, {ProvidedImage} from "./ImageProvider";
 import {WikidataImageProvider} from "./WikidataImageProvider";
 
@@ -19,15 +19,25 @@ export default class AllImageProviders {
         new GenericImageProvider(
             [].concat(...Imgur.defaultValuePrefix, ...WikimediaImageProvider.commonsPrefixes, ...Mapillary.valuePrefixes)
         )
-
     ]
+
+    private static providersByName= {
+        "imgur": Imgur.singleton,
+"mapillary":        Mapillary.singleton,
+     "wikidata":  WikidataImageProvider.singleton,
+       "wikimedia": WikimediaImageProvider.singleton
+    }
+    
+    public static byName(name: string){
+        return AllImageProviders.providersByName[name.toLowerCase()]
+    }
 
     public static defaultKeys = [].concat(AllImageProviders.ImageAttributionSource.map(provider => provider.defaultKeyPrefixes))
 
 
     private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<string, UIEventSource<ProvidedImage[]>>()
 
-    public static LoadImagesFor(tags: UIEventSource<any>, tagKey?: string[]): UIEventSource<ProvidedImage[]> {
+    public static LoadImagesFor(tags: Store<any>, tagKey?: string[]): Store<ProvidedImage[]> {
         if (tags.data.id === undefined) {
             return undefined;
         }

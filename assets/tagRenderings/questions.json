@@ -1,23 +1,32 @@
 {
   "id": "shared_questions",
   "questions": {
+    "description": "Show the images block at this location",
     "id": "questions"
   },
   "images": {
-    "render": "{image_carousel()}{image_upload()}"
+    "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`",
+    "render": "{image_carousel()}{image_upload()}{nearby_images(expandable)}"
+  },
+  "mapillary": {
+    "description": "Shows a button to open Mapillary on this location",
+    "render": "{mapillary()}"
   },
   "export_as_gpx": {
+    "description": "Shows a button to export this feature as GPX. Especially useful for route relations",
     "render": "{export_as_gpx()}"
   },
   "export_as_geojson": {
+    "description": "Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs",
     "render": "{export_as_geojson()}"
   },
   "wikipedia": {
+    "description": "Shows a wikipedia box with the corresponding wikipedia article",
     "render": "{wikipedia():max-height:25rem}",
     "question": {
       "en": "What is the corresponding Wikidata entity?",
       "nl": "Welk Wikidata-item komt overeen met dit object?",
-      "de": "Was ist das entsprechende Wikidata Element?",
+      "de": "Wie lautet das zugehörige Wikidata Element?",
       "pt": "Qual é a entidade Wikidata correspondente?",
       "hu": "Mi a megfelelő Wikidata-elem?",
       "it": "Qual è l’elemento Wikidata corrispondente?",
@@ -33,6 +42,31 @@
       "zh_Hans": "在Wikidata上对应的实体是什么？"
     },
     "mappings": [
+      {
+        "if": "wikipedia~*",
+        "then": {
+          "*": "{wikipedia():max-height:25rem}",
+          "ca": "No hi ha cap enllaça a Viquipèdia encara",
+          "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+          "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
+          "en": "No Wikipedia page has been linked yet",
+          "es": "Todavía no se ha enlazado una página de wikipedia",
+          "fil": "Wala pang kawing ng Wikipedia page",
+          "fr": "Pas encore de lien vers une page Wikipedia",
+          "hu": "Még nincs Wikipédia-oldal belinkelve",
+          "it": "Nessuna pagina Wikipedia è ancora stata collegata",
+          "ja": "ウィキペディアのページはまだリンクされていません",
+          "nb_NO": "Ingen Wikipedia-side lenket enda",
+          "nl": "Er werd nog geen Wikipedia-pagina gekoppeld",
+          "pl": "Link do strony Wikipedii nie został jeszcze określony",
+          "pt": "Ainda não foi vinculada nenhuma página da Wikipédia",
+          "ru": "Никакой страницы на Википедии не было прикреплено",
+          "sv": "Ingen Wikipedia-sida har länkats än",
+          "zh_Hans": "尚未有连接到的维基百科页面",
+          "zh_Hant": "還沒有連結到維基百科頁面"
+        },
+        "hideInAnswer": true
+      },
       {
         "if": "wikidata=",
         "then": {
@@ -53,7 +87,8 @@
           "fil": "Wala pang kawing ng Wikipedia page",
           "es": "Todavía no se ha enlazado una página de wikipedia",
           "zh_Hans": "尚未有连接到的维基百科页面",
-          "da": "Der er endnu ikke linket til nogen Wikipedia-side"
+          "da": "Der er endnu ikke linket til nogen Wikipedia-side",
+          "id": "Belum ada halaman Wikipedia yang ditautkan"
         },
         "hideInAnswer": true
       }
@@ -64,9 +99,11 @@
     }
   },
   "reviews": {
+    "description": "Shows the reviews module (including the possibility to leave a review)",
     "render": "{reviews()}"
   },
   "minimap": {
+    "description": "Shows a small map with the feature. Added by default to every popup",
     "render": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
   },
   "phone": {
@@ -74,7 +111,7 @@
       "en": "What is the phone number of {title()}?",
       "nl": "Wat is het telefoonnummer van {title()}?",
       "fr": "Quel est le numéro de téléphone de {title()} ?",
-      "de": "Was ist die Telefonnummer von {title()}?",
+      "de": "Wie lautet die Telefonnummer von {title()}?",
       "nb_NO": "Hva er telefonnummeret til {title()}?",
       "ru": "Какой номер телефона у {title()}?",
       "sv": "Vad är telefonnumret till {title()}?",
@@ -123,7 +160,7 @@
     "question": {
       "en": "What is the corresponding item on Wikipedia?",
       "nl": "Welk Wikipedia-artikel beschrijft dit object?",
-      "de": "Was ist der entsprechende Artikel auf Wikipedia?",
+      "de": "Wie lautet der zugehörige Wikipedia Artikel?",
       "pt": "Qual é o item correspondente na Wikipédia?",
       "hu": "Mi a megfelelő szócikk a Wikipédián?",
       "it": "Qual è il corrispondente elemento su Wikipedia?",
@@ -158,7 +195,8 @@
           "fil": "Hindi naka-ugnay sa Wikipedia",
           "es": "No enlazado con Wikipedia",
           "zh_Hans": "不要连接到维基百科",
-          "da": "Ikke linket til Wikipedia"
+          "da": "Ikke linket til Wikipedia",
+          "id": "Tidak ditautkan dengan Wikipedia"
         }
       }
     ],
@@ -178,7 +216,7 @@
       "id": "Apa alamat surel dari {title()}?",
       "zh_Hant": "{title()} 的電子郵件地址是什麼？",
       "it": "Qual è l'indirizzo email di {title()}?",
-      "de": "Was ist die Mail-Adresse von {title()}?",
+      "de": "Wie lautet die Mail-Adresse von {title()}?",
       "pt_BR": "Qual o endereço de e-mail de {title()}?",
       "pl": "Jaki jest adres e-mail do {title()}?",
       "sv": "Vad är e-postadressen till {title()}?",
@@ -218,7 +256,7 @@
       "id": "Apa situs web dari {title()}?",
       "zh_Hant": "{title()} 網址是什麼？",
       "it": "Qual è il sito web di {title()}?",
-      "de": "Was ist die Website von {title()}?",
+      "de": "Wie lautet die Webseite von {title()}?",
       "pt_BR": "Qual o site de {title()}?",
       "pl": "Jaka jest strona internetowa {title()}?",
       "sv": "Vad är webbplatsen för {title()}?",
@@ -253,7 +291,7 @@
       "en": "Is this place accessible with a wheelchair?",
       "pt": "Este lugar é acessível a utilizadores de cadeiras de rodas?",
       "pt_BR": "Este lugar é acessível com uma cadeira de rodas?",
-      "de": "Ist dieser Ort mit einem Rollstuhl zugänglich?",
+      "de": "Ist der Ort rollstuhlzugänglich?",
       "fr": "Est-ce que cet endroit est accessible en chaise roulante ?",
       "hu": "Akadálymentes-e ez a hely?",
       "it": "Questo luogo è accessibile con una sedia a rotelle?",
@@ -279,7 +317,7 @@
           "en": "This place is specially adapted for wheelchair users",
           "pt": "Este lugar está especialmente adaptado para utilizadores de cadeira de rodas",
           "pt_BR": "Este lugar é especialmente adaptado para usuários de cadeira de rodas",
-          "de": "Dieser Ort ist speziell für Rollstuhlfahrer eingerichtet",
+          "de": "Der Ort ist speziell für Rollstuhlfahrer gestaltet",
           "hu": "Ez a hely kifejezetten kerekesszékeseknek lett kialakítva",
           "it": "Questo luogo è stato adattato per favorire le persone in sedia a rotelle",
           "nb_NO": "Dette stedet er spesielt tilpasset rullestolsbrukere",
@@ -306,7 +344,7 @@
           "en": "This place is easily reachable with a wheelchair",
           "pt": "Este lugar é de fácil acesso com uma cadeira de rodas",
           "pt_BR": "Este lugar é facilmente acessível com uma cadeira de rodas",
-          "de": "Dieser Ort ist mit einem Rollstuhl leicht zu erreichen",
+          "de": "Der Ort ist rollstuhlzugänglich gestaltet",
           "hu": "Ez a hely könnyedén elérhető kerekesszékkel",
           "it": "Questo luogo è facilmente raggiungibile con una sedia a rotelle",
           "nb_NO": "Dette stedet kan enkelt besøkes med rullestol",
@@ -319,7 +357,8 @@
           "ja": "この場所は、車いすで簡単に行くことができます",
           "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
           "es": "Este lugar es fácilmente accesible con una silla de ruedas",
-          "da": "Dette sted er let tilgængeligt med en kørestol"
+          "da": "Dette sted er let tilgængeligt med en kørestol",
+          "id": "Tempat ini mudah dijangkau dengan kursi roda"
         }
       },
       {
@@ -333,7 +372,7 @@
           "en": "It is possible to reach this place in a wheelchair, but it is not easy",
           "pt": "É possível chegar a este local em cadeira de rodas, mas não é fácil",
           "pt_BR": "É possível chegar a esse local em uma cadeira de rodas, mas não é fácil",
-          "de": "Es ist möglich, diesen Ort mit einem Rollstuhl zu erreichen, aber es ist nicht einfach",
+          "de": "Der Ort ist nur eingeschränkt rollstuhlzugänglich",
           "fr": "Il est possible d'accéder à cet endroit en chaise roulante, mais ce n'est pas facile",
           "hu": "Ez a hely ugyan elérhető kerekesszékkel, de nehezen",
           "it": "È possibile raggiungere questo luogo con una sedia a rotella ma non è semplice",
@@ -346,7 +385,8 @@
           "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません",
           "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
           "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
-          "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let"
+          "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
+          "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah"
         }
       },
       {
@@ -360,7 +400,7 @@
           "en": "This place is not reachable with a wheelchair",
           "pt": "Este lugar não é acessível com uma cadeira de rodas",
           "pt_BR": "Este lugar não é alcançável com uma cadeira de rodas",
-          "de": "Dieser Ort ist nicht mit einem Rollstuhl erreichbar",
+          "de": "Der Ort ist nicht rollstuhlzugänglich",
           "fr": "Cet endroit n'est pas accessible en chaise roulante",
           "hu": "Ez a hely kerekesszékkel elérhetetlen",
           "it": "Questo luogo non è accessibile con una sedia a rotelle",
@@ -382,7 +422,7 @@
       "en": "Are dogs allowed in this business?",
       "nl": "Zijn honden toegelaten in deze zaak?",
       "pt": "Os cães são permitidos neste estabelecimento?",
-      "de": "Sind Hunde in diesem Geschäft erlaubt?",
+      "de": "Sind Hunde hier erlaubt?",
       "fr": "Est-ce que les chiens sont admis ici ?",
       "hu": "Be lehet-e vinni kutyát ebbe az üzletbe?",
       "it": "I cani sono ammessi in quest’attività?",
@@ -406,7 +446,7 @@
           "en": "Dogs are allowed",
           "nl": "honden zijn toegelaten",
           "pt": "Os cães são permitidos",
-          "de": "Hunde sind erlaubt",
+          "de": "Hunde sind hier erlaubt",
           "fr": "Chiens admis",
           "eo": "Hundoj estas permesataj",
           "hu": "Kutya bevihető",
@@ -432,7 +472,7 @@
           "en": "Dogs are <b>not</b> allowed",
           "nl": "honden zijn <b>niet</b> toegelaten",
           "pt": "Os cães <b>não</b> são permitidos",
-          "de": "Hunde sind <b>nicht</b> erlaubt",
+          "de": "Hunde sind hier <b>nicht</b> erlaubt",
           "fr": "Chiens <b>non</b> admis",
           "eo": "Hundoj estas <b>malpermesataj</b>",
           "hu": "Kutya <b>nem</b> vihető be",
@@ -458,7 +498,7 @@
           "en": "Dogs are allowed, but they have to be leashed",
           "nl": "honden zijn <b>enkel aan de leiband</b> welkom",
           "pt": "Os cães são permitidos, mas têm de ser presos pela trela",
-          "de": "Hunde sind erlaubt, müssen aber angeleint sein",
+          "de": "Hunde sind hier erlaubt, müssen aber angeleint sein",
           "fr": "Les chiens sont admis, mais ils doivent être tenus en laisse",
           "hu": "Kutya bevihető, de csak pórázon",
           "it": "Cani ammessi ma solo se tenuti al guinzaglio",
@@ -483,7 +523,7 @@
           "en": "Dogs are allowed and can run around freely",
           "nl": "honden zijn welkom en mogen vrij rondlopen",
           "pt": "Os cães são permitidos e podem correr livremente",
-          "de": "Hunde sind erlaubt und können frei herumlaufen",
+          "de": "Hunde sind hier erlaubt und können frei herumlaufen",
           "fr": "Les chiens sont admis et peuvent circuler librement",
           "hu": "Kutya bevihető és szabadon szaladgálhat",
           "it": "I cani sono ammessi e possono andare in giro liberamente",
@@ -535,7 +575,7 @@
     "question": {
       "en": "What are the opening hours of {title()}?",
       "fr": "Quelles sont les horaires d'ouverture de {title()} ?",
-      "de": "Was sind die Öffnungszeiten von {title()}?",
+      "de": "Wie lauten die Öffnungszeiten von {title()}?",
       "nl": "Wat zijn de openingstijden van {title()}?",
       "nb_NO": "Hva er åpningstidene for {title()})",
       "ru": "Какое время работы у {title()}?",
@@ -552,7 +592,8 @@
       "fil": "Anong oras nagbubukas ang {title()}?",
       "es": "¿Cuales son las horas de apertura de {title()}?",
       "zh_Hans": "{title()} 的开放时间为何？",
-      "da": "Hvad er åbningstiderne for {title()}?"
+      "da": "Hvad er åbningstiderne for {title()}?",
+      "id": "Kapan jam buka {title()}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -575,7 +616,8 @@
       "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
       "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
       "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
-      "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}"
+      "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
+      "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",
@@ -589,7 +631,7 @@
       "nl": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?",
       "pt": "Esta infraestrutura tem tomadas elétricas, disponíveis para os clientes quando estão no interior?",
       "ca": "Aquest servei té endolls elèctrics, disponibles pels clients quan hi són dins?",
-      "de": "Gibt es an dieser Einrichtung Steckdosen, an denen Kunden ihre Geräte laden können?",
+      "de": "Gibt es hier Steckdosen, an denen Kunden ihre Geräte laden können?",
       "sv": "Har den här bekvämligheten eluttag tillgängliga för kunder när de är inne?",
       "zh_Hant": "這個便利設施有電器設備，能給客戶使用嗎？",
       "hu": "Van-e ebben a létesítményben olyan konnektor, amely a bent tartózkodó ügyfelek rendelkezésére áll?",
@@ -597,7 +639,8 @@
       "pl": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?",
       "ja": "このアメニティにはコンセントがあり、お客様が店内にいるときにも利用できますか？",
       "fil": "Merong bang mga intsupe (outlet) sa loob, para sa mga suki?",
-      "es": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?"
+      "es": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?",
+      "nb_NO": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?"
     },
     "mappings": [
       {
@@ -606,7 +649,7 @@
           "nl": "Er zijn binnen veel stekkers beschikbaar voor klanten die electronica wensen op te laden",
           "pt": "Há muitas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos",
           "ca": "Està ple d'endolls pels clients de dins, on es poden carregar els aparells electrònics",
-          "de": "Für Kunden stehen im Innenraum viele Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
+          "de": "Im Innenraum stehen viele Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können",
           "sv": "Det finns gott om hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
           "zh_Hant": "這邊的客戶座位有不少個室內插座，而且可以為電器充電",
           "hu": "Számos konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
@@ -615,7 +658,8 @@
           "ja": "屋内の席に座っているお客様には、家庭用コンセントがたくさん用意されており、そこで電子機器を充電することができます",
           "fil": "Maraming mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks",
           "es": "Hay numerosos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
-          "da": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
+          "da": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
+          "nb_NO": "Det er massevis av stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lade elektronikken sin"
         },
         "if": "service:electricity=yes"
       },
@@ -625,7 +669,7 @@
           "nl": "Er zijn binnen enkele stekkers beschikbaar voor klanten die electronica wensen op te laden",
           "pt": "Há algumas tomadas elétricas disponíveis para clientes sentados no interior, onde estes podem carregar os seus dispositivos eletrónicos",
           "ca": "Hi ha aslguns endolls disponibles per als clients de dins, on es poden carregar els aparells electrònics",
-          "de": "Für Kunden stehen im Innenraum wenig Steckdosen zur Verfügung, an denen sie ihre Geräte laden können",
+          "de": "Im Innenraum stehen nur wenige Steckdosen zur Verfügung, an denen Kunden ihre Geräte laden können",
           "sv": "Det finns ett fåtal hushållsuttag tillgängliga för kunder som sitter inomhus, där de kan ladda sin elektronik",
           "zh_Hant": "這邊客戶座位有一些室內插座，可以為電器充電",
           "hu": "Csupán néhány konnektor áll a belső térben ügyfelek rendelkezésére, ahol elektromos készülékeiket tölthetik",
@@ -634,7 +678,8 @@
           "ja": "屋内の席に座ったお客様が充電できるよう、コンセントがいくつか用意されています",
           "fil": "May iilang mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks",
           "es": "Hay algunos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
-          "da": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr"
+          "da": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
+          "nb_NO": "Det er noen stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lagre elektronikken sin"
         },
         "if": "service:electricity=limited"
       },
@@ -645,7 +690,7 @@
           "fr": "Il n'y a pas de prises disponibles à l'intérieur pour les clients, mais la recharge est peut-être possible sur demande auprès des employés",
           "pt": "Não há tomadas elétricas disponíveis para clientes sentados no interior, mas pode-se pedir aos funcionários para carregar dispositivos eletrónicos",
           "ca": "No hi ha endolls disponibles per als clients però es pot carregar si es demana als responsables",
-          "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird",
+          "de": "Im Innenraum stehen keine Steckdosen zur Verfügung, aber Laden von Geräte könnte möglich sein, wenn das Personal gefragt wird",
           "sv": "Det finns inga uttag tillgängliga inomhus för kunder, men att ladda kan vara möjligt om personalen tillfrågas",
           "zh_Hant": "這邊沒有給客戶用的插座，因此可能需要詢問員工是否能充電",
           "hu": "A belső térben nincs konnektor az ügyfeleknek, de lehetséges, hogy a személyzet segítségével lehet elektromos eszközt tölteni",
@@ -653,7 +698,8 @@
           "ja": "屋内にはコンセントがありませんが、スタッフに声をかければ充電できるかもしれません",
           "fil": "Walang mga intsupe (socket) para sa mga suki, pero maaring tanungin ang kawani kung magpapa-karga",
           "es": "No hay enchufes disponibles en el interior para los clientes, pero cargar puede ser posible si se pregunta al personal",
-          "da": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det"
+          "da": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det",
+          "nb_NO": "Det er ingen tilgjengelige stikkontakter for kunder som sitter innendørs, men lading kan være mulig hvis man spør betjeningen"
         },
         "if": "service:electricity=ask"
       },
@@ -664,7 +710,7 @@
           "fr": "Il n'y a pas de prises secteur disponibles pour les clients assis à l'intérieur",
           "pt": "Não há tomadas elétricas disponíveis para clientes sentados no interior",
           "ca": "No hi ha endolls disponibles per als clients",
-          "de": "Für Kunden stehen im Innenraum keine Steckdosen zur Verfügung",
+          "de": "Im Innenraum stehen keine Steckdosen für Kunden zur Verfügung",
           "sv": "Det finns inga hushållsuttag tillgängliga för kunder som sitter inomhus",
           "zh_Hant": "這裡客戶座位沒有室內插座",
           "hu": "A belső térben ülő ügyfeleknek nem áll rendelkezésére konnektor",
@@ -672,7 +718,8 @@
           "ja": "屋内の席には、家庭用コンセントはありません",
           "fil": "Walang mga intsupe (socket) para sa mga suking nakaubo sa loob",
           "es": "No hay enchufes domésticos disponibles para los clientes sentados en el interior",
-          "da": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs"
+          "da": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs",
+          "nb_NO": "Det er ingen stikkontakter tilgjengelig for kunder som sitter innendørs"
         },
         "if": "service:electricity=no"
       }
@@ -706,7 +753,7 @@
       {
         "if": "payment:cash=yes",
         "ifnot": "payment:cash=no",
-        "icon": "./assets/svg/cash.svg",
+        "icon": "./assets/tagRenderings/cash.svg",
         "then": {
           "en": "Cash is accepted here",
           "nl": "Cash geld wordt hier aanvaard",
@@ -734,14 +781,14 @@
       {
         "if": "payment:cards=yes",
         "ifnot": "payment:cards=no",
-        "icon": "./assets/svg/payment_card.svg",
+        "icon": "./assets/tagRenderings/payment_card.svg",
         "then": {
           "en": "Payment cards are accepted here",
           "nl": "Betalen met bankkaarten kan hier",
           "pt": "Aceitam pagamento com cartões bancários aqui",
           "pt_BR": "Cartões de pagamento são aceitos aqui",
           "id": "Disini menerima pembayaran dengan kartu",
-          "de": "Hier werden Zahlungskarten akzeptiert",
+          "de": "Hier wird Kartenzahlung akzeptiert",
           "fr": "Paiement par carte accepté",
           "hu": "Itt fizetőkártyákkal is lehet fizetni",
           "it": "I pagamenti con la carta sono accettati",
@@ -768,7 +815,7 @@
         {
           "if": "payment:app=yes",
           "ifnot": "payment:app=no",
-          "icon": "./assets/svg/smartphone.svg",
+          "icon": "./assets/tagRenderings/smartphone.svg",
           "then": {
             "en": "Payment is done using a dedicated app",
             "nl": "Betalen via een app van het netwerk",
@@ -781,13 +828,15 @@
             "fil": "Binabayaran gamit ang sariling app",
             "es": "El pago se realiza con una aplicación dedicada",
             "zh_Hans": "使用专用APP支付",
-            "da": "Betaling sker ved hjælp af en dedikeret app"
+            "da": "Betaling sker ved hjælp af en dedikeret app",
+            "nb_NO": "Betaling utføres med et eget program",
+            "pt": "O pagamento é feito utilizando uma aplicação dedicada"
           }
         },
         {
           "if": "payment:membership_card=yes",
           "ifnot": "payment:membership_card=no",
-          "icon": "./assets/svg/nfc_card.svg",
+          "icon": "./assets/tagRenderings/nfc_card.svg",
           "then": {
             "en": "Payment is done using a membership card",
             "nl": "Betalen via een lidkaart van het netwerk",
@@ -801,7 +850,8 @@
             "es": "El pago se realiza con una tarjeta de membresía",
             "nb_NO": "Betaling utføres med et medlemskort",
             "zh_Hans": "使用会员卡支付",
-            "da": "Betaling sker med medlemskort"
+            "da": "Betaling sker med medlemskort",
+            "pt": "O pagamento é feito usando um cartão de membro"
           }
         }
       ]
@@ -813,14 +863,34 @@
     "render": "<div class='subtle' style='font-size: small; margin-top: 2em; margin-bottom: 0.5em;'><a href='https://www.openStreetMap.org/changeset/{_last_edit:changeset}' target='_blank'>Last edited on {_last_edit:timestamp}</a> by <a href='https://www.openStreetMap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a></div>"
   },
   "all_tags": {
-    "#": "Prints all the tags",
+    "description": "Shows a table with all the tags of the feature",
     "render": "{all_tags()}"
+  },
+  "multilevels": {
+    "builtin": "level",
+    "override": {
+      "question": {
+        "en": "What levels does this elevator go to?",
+        "de": "Auf welchen Geschossen hält dieser Aufzug?",
+        "fr": "Quels étages sont desservis par cet ascenceur ?"
+      },
+      "render": {
+        "en": "This elevator goes to floors {level}",
+        "de": "Der Aufzug hält auf den Geschossen {level}",
+        "fr": "Cet ascenceur permet d’accéder aux étages {level}"
+      },
+      "freeform": {
+        "key": "level",
+        "type": "string"
+      },
+      "multiAnswer": true
+    }
   },
   "level": {
     "question": {
       "nl": "Op welke verdieping bevindt dit punt zich?",
       "en": "On what level is this feature located?",
-      "de": "Auf welcher Ebene befindet sich dieses Objekt?",
+      "de": "Auf welcher Ebene befindet sich das Objekt?",
       "zh_Hant": "此圖徽位於哪個樓層／層級？",
       "fr": "À quel étage se situe l’élément ?",
       "pl": "Na jakim poziomie znajduje się ta funkcja?",
@@ -834,12 +904,13 @@
       "sv": "På vilken nivå finns den här funktionen?",
       "ja": "この機能は何階にあるのでしょうか？",
       "fil": "Anong palapag matatagpuan ang tampók?",
-      "es": "¿En qué nivel se encuentra esta característica?"
+      "es": "¿En qué nivel se encuentra esta característica?",
+      "nb_NO": "Hvilken etasje befinner funksjonen seg i?"
     },
     "render": {
       "en": "Located on the {level}th floor",
       "nl": "Bevindt zich op de {level}de verdieping",
-      "de": "Befindet sich im {level}ten Stock",
+      "de": "Das Objekt befindet sich im {level}. Geschoss",
       "pt_BR": "Localizado no {level}o andar",
       "ru": "Расположено на {level}ом этаже",
       "zh_Hant": "位於 {level} 樓",
@@ -855,7 +926,9 @@
       "sl": "Nahaja se v {level}. nadstropju",
       "fil": "Natagpuan sa ika-{level} na palapag",
       "es": "Localizada en la {level}° planta",
-      "da": "Beliggende på {level}. etage"
+      "da": "Beliggende på {level}. etage",
+      "nb_NO": "Ligger i {level} etasje",
+      "id": "Terletak di lantai {level}"
     },
     "freeform": {
       "key": "level",
@@ -874,7 +947,7 @@
           "pl": "Znajduje się pod ziemią",
           "sv": "Ligger under jorden",
           "pt": "Está no subsolo",
-          "de": "Unterirdisch gelegen",
+          "de": "Das Objekt befindet sich unter der Erde",
           "hu": "A föld alatt",
           "it": "Si trova sotto il livello stradale",
           "nb_NO": "Under bakken",
@@ -893,7 +966,7 @@
         "then": {
           "en": "Located on the ground floor",
           "nl": "Bevindt zich op de begane grond",
-          "de": "Ist im Erdgeschoss",
+          "de": "Das Objekt befindet sich im Erdgeschoss",
           "pt_BR": "Localizado no térreo",
           "ru": "Расположено на первом этаже",
           "zh_Hant": "位於 1 樓",
@@ -920,7 +993,7 @@
         "then": {
           "en": "Located on the ground floor",
           "nl": "Bevindt zich gelijkvloers",
-          "de": "Ist im Erdgeschoss",
+          "de": "Das Objekt befindet sich im Erdgeschoss",
           "pt_BR": "Localizado no térreo",
           "ru": "Расположено на первом этаже",
           "zh_Hant": "位於 1 樓",
@@ -946,7 +1019,7 @@
         "then": {
           "en": "Located on the first floor",
           "nl": "Bevindt zich op de eerste verdieping",
-          "de": "Ist im ersten Stock",
+          "de": "Das Objekt befindet sich im 1. Obergeschoss",
           "pt_BR": "Localizado no primeiro andar",
           "ru": "Расположено на первом этаже",
           "zh_Hant": "位於 2 樓",
@@ -973,14 +1046,105 @@
           "en": "Located on the first basement level",
           "nl": "Bevindt zich in de eerste kelderverdieping",
           "zh_Hant": "位於地下一樓",
-          "de": "Ist im 1. Untergeschoss",
+          "de": "Das Objekt befindet sich im 1. Untergeschoss",
           "hu": "Az első alagsori szinten",
           "id": "Terletak di lantai basement pertama",
           "fr": "Sous-sol",
           "sl": "Nahaja se v prvi kletni etaži",
           "ca": "Localitzat a la planta base",
           "fil": "Nasa silong",
-          "es": "Situado en el primer nivel del sótano"
+          "es": "Situado en el primer nivel del sótano",
+          "nb_NO": "Er å finne på første kjellernivå",
+          "pt": "Localizado no primeiro nível da cave"
+        }
+      }
+    ]
+  },
+  "smoking": {
+    "question": {
+      "en": "Is smoking allowed at {title()}?",
+      "de": "Ist das Rauchen in {title()} erlaubt?",
+      "es": "¿Está permitido fumar en {title()}?",
+      "fr": "Est-ce autorisé de fumer à {title()} ?",
+      "pt": "É permitido fumar em {title()}?",
+      "nb_NO": "Tillates røyking på {title()}?"
+    },
+    "#condition": "Based on https://en.wikipedia.org/wiki/List_of_smoking_bans",
+    "condition": "_country!~al|be",
+    "mappings": [
+      {
+        "if": "smoking=yes",
+        "icon": {
+          "path": "./assets/tagRenderings/smoking.svg",
+          "size": "small"
+        },
+        "then": {
+          "en": "Smoking is <b>allowed</b>",
+          "de": "Rauchen ist <b>erlaubt</b>",
+          "es": "Está <b>permitido</b> fumar",
+          "fr": "Il est <b>autorisé</b> de fumer",
+          "pt": "<b>É permitido</b> fumar",
+          "nb_NO": "Røyking er <b>tillatt</b>"
+        }
+      },
+      {
+        "if": "smoking=no",
+        "icon": {
+          "path": "./assets/tagRenderings/no_smoking.svg",
+          "size": "small"
+        },
+        "then": {
+          "en": "Smoking is <b>not allowed</b>",
+          "de": "Rauchen ist <b>nicht erlaubt</b>",
+          "es": "<b>No</b> está permitido fumar",
+          "fr": "Il est <b>interdit</b> de fumer",
+          "pt": "<b>Não é permitido</b> fumar",
+          "nb_NO": "Røyking <b>forbudt</b>"
+        }
+      },
+      {
+        "if": "smoking=outside",
+        "then": {
+          "en": "Smoking is <b>allowed outside</b>.",
+          "de": "Rauchen ist <b> draußen erlaubt</b>.",
+          "es": "Está permitido fumar <b>en el exterior</b>.",
+          "fr": "Il est autorisé de fumer <b>à l'extérieur</b>.",
+          "pt": "É permitido fumar <b>no exterior</b>.",
+          "nb_NO": "Røyking <b>tillates på utsiden</b>."
+        }
+      }
+    ]
+  },
+  "induction-loop": {
+    "description": "An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.",
+    "question": {
+      "en": "Does this place have an audio induction loop for people with reduced hearing?",
+      "de": "Hat dieser Ort eine induktive Höranlage für Hörgeschädigte?",
+      "fr": "Ce lieu dispose-t’il d’une boucle auditive pour les personnes malentendantes ?"
+    },
+    "mappings": [
+      {
+        "if": "hearing_loop=yes",
+        "then": {
+          "en": "This place has an audio induction loop",
+          "de": "Dieser Ort hat eine induktive Höranlage",
+          "fr": "Ce lieu dispose d’une boucle auditive"
+        },
+        "icon": {
+          "path": "./assets/tagRenderings/audio_induction_loop.svg",
+          "class": "medium"
+        }
+      },
+      {
+        "if": "hearing_loop=no",
+        "then": {
+          "en": "This place <b>does not</b> have an audio induction loop",
+          "de": "Dieser Ort hat <b>keine</b> induktive Höranlage",
+          "fr": "Ce lieu <b>ne dispose pas</b> de boucle auditive"
+        },
+        "icon": {
+          "path": "./assets/tagRenderings/audio_induction_loop_missing.svg",
+          "class": "medium"
         }
       }
     ]

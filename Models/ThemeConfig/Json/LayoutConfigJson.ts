@@ -150,7 +150,7 @@ export interface LayoutConfigJson {
      *
      * In the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer
      */
-    overrideAll?: any;
+    overrideAll?: Partial<any | LayerConfigJson>;
 
     /**
      * The id of the default background. BY default: vanilla OSM
@@ -308,6 +308,8 @@ export interface LayoutConfigJson {
     /**
      * If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),
      * these notes will be shown if a relevant layer is present.
+     * 
+     * Default is true for official layers and false for unofficial (sideloaded) layers
      */
     enableNoteImports?: true | boolean;
 

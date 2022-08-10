@@ -33,9 +33,13 @@
         "whyDelete": "Hvorfor bør dette punktet slettes?"
     },
     "favourite": {
+        "loginNeeded": "<h3>Logg inn</h3>Personlig oppsett er kun tilgjengelig for OpenStreetMap-brukere",
+        "panelIntro": "<h3>Ditt personlige tema</h3>Aktiver dine favorittlag fra de offisielle",
         "reload": "Last inn dataen igjen"
     },
     "general": {
+        "about": "Rediger og legg til OpenStreetMap for et gitt tema",
+        "aboutMapcomplete": "<h3>Om MapComplete</h3><p>Bruk det til å legge til OpenStreetMap-info i <b>ett tema. </b>Besvar spørsmål og få endringene vist i løpet av minutter. I de fleste temaene kan du legge inn bilder eller legge igjen en vurdering. <b>Temavedlikeholderen</b> definerer elementer, spørsmål og språk for det.</p><h3>Finn ut mer</h3><p>MapComplete tilbyr alltid <b>neste steg</b> for å lære mer om OpenStreetMap.</p><ul><li>Når bygd inn på en nettside lenker iframe-elementet til en fullskjermsversjon av MapComplete.</li><li>Fullskjermsversjonen tilbyr info om OpenStreetMap.</li><li>Visning fungerer uten innlogging, men redigering krever en OSM-konto.</li><li>Hvis du ikke er innlogget blir du spurt om å gjøre det.</li><li>Når du har besvart ett spørsmål, kan du legge til nye funksjoner på kartet.</li><li>Etter en stund vil OSM-etiketter bli vist, som i sin tur lenker til wiki-en.</li></ul><p></p><br><p>Har du oppdaget <b>et problem</b>? Har du en <b>funksjonsforespørsel</b>? Vil du bistå <b>oversettelsen</b>? Gå til <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kildekoden</a> eller <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">problemsporeren.</a> </p><p>Vil du se <b>din framdrift</b>? Følg redigeringsantallet på <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Legg til {category} her",
             "addNewMapLabel": "Legg til nytt element",
@@ -44,44 +48,81 @@
             "disableFilters": "Skru av alle filtre",
             "disableFiltersExplanation": "Det kan hende noen funksjoner er skjult av et filter",
             "hasBeenImported": "Dette punktet har allerede blitt importert",
+            "import": {
+                "hasBeenImported": "Dette objektet har blitt importert",
+                "howToTest": "Legg til <b>test=true</b> eller <b>backend=osm-test</b> til i nettadressen for å teste. Endringssettet vil bli skrevet ut til konsollen. Åpne en flettingsforespørsel for å publisere dette temaet for å skru på «Importer»-knappen.",
+                "importTags": "Elementet vil motta {tags}",
+                "officialThemesOnly": "Importeringsknappen er avskrudd for uoffisielle tema for å forhindre uhell",
+                "wrongType": "Dette elementet er ikke et punkt eller en vei og kan ikke importeres",
+                "zoomInMore": "Forstørr for å importere denne funksjonen"
+            },
+            "importTags": "Elementet vil motta {tags}",
             "intro": "Du klikket et sted der ingen data er kjent enda.<br>",
             "layerNotEnabled": "Laget {layer} er ikke påslått. Skru på dette laget for å legge til et punkt.",
             "openLayerControl": "Åpne lagkontrollboksen",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">Logg inn for å legge til et nytt punkt</a>",
+            "pleaseLogin": "Logg inn for å legge til et nytt punkt",
             "presetInfo": "Det nye interessepunktet vil få {tags}",
             "stillLoading": "Dataen lastes fremdeles inn. Vent litt før du legger til et nytt punkt.",
             "title": "Legg til et nytt punkt?",
             "warnVisibleForEveryone": "Din endring vil være synlig for alle",
+            "wrongType": "Dette er ikke et punkt eller en vei og kan ikke importeres",
             "zoomInFurther": "Forstørr mer for å legge til et punkt.",
             "zoomInMore": "Forstørr mer for å importere denne funksjonen"
+        },
+        "apply_button": {
+            "appliedOnAnotherObject": "{id}-objektet vil motta {tags}",
+            "isApplied": "Endringer utført"
         },
         "attribution": {
             "attributionContent": "<p>All data er fra <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, fritt gjenbrukbart med <a href=\"https://osm.org/copyright\" target=\"_blank\">Open DataBase-lisens</a>.</p>",
             "attributionTitle": "Tilskrivelsesmerknad",
             "codeContributionsBy": "MapComplete har blitt bygd av {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} bidragsytere til</a>",
+            "donate": "Støtt MapComplete finansielt",
+            "editId": "Åpne den nettbaserte OpenStreetMap-behandleren her",
+            "editJosm": "Rediger med JOSM",
+            "followOnMastodon": "Følg MapComplete på Mastodon",
+            "followOnTwitter": "Følg MapComplete på Twitter",
             "iconAttribution": {
                 "title": "Brukte ikoner"
             },
+            "josmNotOpened": "Fikk ikke kontakt med JSON. Forsikre deg om at det er åpnet og at fjernkontroll er påskrudd.",
+            "josmOpened": "JOSM er åpnet",
             "mapContributionsBy": "Den dataen som er synlig nå har redigeringer gjort av {contributors}",
             "mapContributionsByAndHidden": "Data som vises nå har redigeringer gjort av {contributors} og {hiddenCount} andre bidragsytere",
-            "themeBy": "Tema vedlikeholdt av {author}"
+            "openIssueTracker": "Rapporter en feil",
+            "openMapillary": "Åpne Mapillary her",
+            "openOsmcha": "Vis de seneste redigeringene gjort med {theme}",
+            "themeBy": "Tema vedlikeholdt av {author}",
+            "translatedBy": "MapComplete har blitt oversatt av {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} andre bidragsytere</a>."
         },
+        "back": "Tilbake",
+        "backToMapcomplete": "Tilbake til temaoversikten",
         "backgroundMap": "Bakgrunnskart",
         "cancel": "Avbryt",
+        "confirm": "Bekreft",
         "customThemeIntro": "<h3>Egendefinerte tema</h3>Dette er tidligere besøkte brukergenererte tema.",
         "download": {
             "downloadAsPdf": "Last ned PDF av nåværende kart",
             "downloadAsPdfHelper": "Ideelt for utskrift av nåværende kart",
+            "downloadAsSvg": "Last ned en SVG av nåværende kart",
             "downloadCSV": "Last ned synlig data som CSV",
             "downloadCSVHelper": "Kompatibelt med LibreOffice Calc, Excel, …",
+            "downloadFeatureAsGeojson": "Last ned som GeoJSON-fil",
+            "downloadFeatureAsGpx": "Last ned som GPX-fil",
             "downloadGeoJsonHelper": "Kompatibelt med QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Last ned synlig data som GeoJSON",
+            "downloadGpx": "Last ned som GPX-fil",
+            "downloadGpxHelper": "En GPX-fil kan brukes med de fleste navigasjonsenheter og programmer",
             "exporting": "Eksporterer …",
             "includeMetaData": "Inkluder metadata (siste bidragsytere, utregnede verdier, …)",
             "licenseInfo": "<h3>Opphavsrettsmerknad</h3>Tilbudt data er tilgjengelig med ODbL-lisens. Gjenbruk er gratis for alle formål, men <ul><li>tilskrivelsen<b>© OpenStreetMap-bidragsytere</b> kreves</li><li>Enhver endring må publiseres under samme lisens</li></ul> Les hele <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">opphavsrettsmerknaden</a> for detaljer.",
             "noDataLoaded": "Ingen data innlastet enda. Nedlasting vil være tilgjengelig snart.",
-            "title": "Last ned synlig data"
+            "title": "Last ned synlig data",
+            "uploadGpx": "Last opp sporet ditt til OpenStreetMap"
         },
+        "error": "Noe gikk galt",
+        "example": "Eksempel",
+        "examples": "Eksempler",
         "fewChangesBefore": "Besvar et par spørsmål for eksisterende punkter før du legger til et nytt.",
         "getStartedLogin": "Logg inn med OpenStreetMap for å begynne",
         "getStartedNewAccount": " eller <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">opprett en ny konto</a>",
@@ -94,8 +135,12 @@
             "zoomInToSeeThisLayer": "Forstørr kartet hvis du vil se dette kartet"
         },
         "loading": "Laster inn …",
+        "loadingTheme": "Laster inn {theme}…",
+        "loginFailed": "Kunne ikke logge inn på OpenStreetMap",
         "loginOnlyNeededToEdit": "hvis du ønsker å redigere kartet",
         "loginToStart": "Logg inn for å besvare dette spørsmålet",
+        "loginWithOpenStreetMap": "Logg inn med OpenStreetMap",
+        "logout": "Logg ut",
         "morescreen": {
             "createYourOwnTheme": "Opprett ditt eget MapComplete-tema fra grunnen av",
             "hiddenExplanation": "Disse temaene er kun tilgjengelige hvis du kjenner lenken. Du har oppdaget {hidden_discovered} av {total_hidden} hidden tema.",
@@ -104,8 +149,11 @@
             "requestATheme": "Hvis du ønsker et brukerdefinert tema kan du forespørre det i feilsporeren",
             "streetcomplete": "Et annet lignende program er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
+        "nameInlineQuestion": "Navnet på {category} er $$$",
+        "next": "Neste",
         "noNameCategory": "{category} uten navn",
         "noTagsSelected": "Ingen etiketter valgt",
+        "notValid": "Velg en gyldig verdi for å fortsette",
         "number": "tall",
         "oneSkippedQuestion": "Et spørsmål ble hoppet over",
         "openTheMap": "Åpne kartet",
@@ -141,8 +189,10 @@
             "websiteOf": "Hva er nettsiden til {category}?"
         },
         "readYourMessages": "Les alle OpenStreetMap-meldingene dine før du legger til et nytt punkt.",
+        "removeLocationHistory": "Slett posisjonshistorikken",
         "returnToTheMap": "Gå tilbake til kartet",
         "save": "Lagre",
+        "screenToSmall": "Åpne {theme} i et nytt vindu",
         "search": {
             "error": "Noe gikk galt .",
             "nothing": "Resultatløst …",
@@ -152,6 +202,9 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Legg til på hjemmeskjermen din</h3>Du kan enkelt legge til denne nettsiden på din smarttelefon-hjemmeskjerm for å få det hele integrert. Klikk på «Legg til på hjemmeskjerm»-knappen i nettadressefeltet for å gjøre dette.",
             "copiedToClipboard": "Lenke kopiert til utklippstavle",
+            "downloadCustomTheme": "Last ned oppsettet for dette temaet",
+            "downloadCustomThemeHelp": "En dreven bidragsyter kan bruke denne filen for å forbedre temaet ditt",
+            "editThemeDescription": "Legg til eller endre spørsmål for dette karttemaet",
             "editThisTheme": "Rediger dette temaet",
             "embedIntro": "<h3>Bygg inn på nettsiden din</h3>Legg til dette kartet på nettsiden din. <br>Du oppfordres til å gjøre dette, og trenger ikke å spørre om tillatelse. <br> Det er fritt, og vil alltid være det. Desto flere som bruker dette, desto mer verdifullt blir det.",
             "fsGeolocation": "Skru på «Geolokaliser meg»-knappen (kun for mobil)",
@@ -195,6 +248,10 @@
             "loading": "Laster inn Wikipedia …",
             "noResults": "Fant ikke noe for <i>{search}</i>",
             "noWikipediaPage": "Dette Wikipedia-elementet har ingen tilknyttet Wikipedia-side enda.",
+            "previewbox": {
+                "born": "Født: {value}",
+                "died": "Død: {value}"
+            },
             "searchWikidata": "Søk på Wikipedia",
             "wikipediaboxTitle": "Wikipedia"
         }
@@ -207,6 +264,7 @@
         "dontDelete": "Avbryt",
         "isDeleted": "Slettet",
         "pleaseLogin": "Logg inn for å legge til et bilde",
+        "respectPrivacy": "Ikke ta bilder av folk eller bilskilt. Ikke last opp Google Maps, Google Streetview eller andre opphavsrettsbeskyttede kilder.",
         "toBig": "Bildet ditt på {actual_size} er for stort. Det kan maksimalt være {max_size}.",
         "uploadDone": "Bildet ditt ble lagt til. Takk for at du hjelper til.",
         "uploadFailed": "Kunne ikke laste opp bildet ditt. Er du tilkoblet Internett og tillater tredjeparts-API-er? Brave-nettleseren eller uMatrix-programtillegget kan blokkere dem.",
@@ -215,9 +273,95 @@
         "uploadingPicture": "Laster opp bildet ditt …",
         "willBePublished": "Ditt bilde vil bli publisert: "
     },
+    "importHelper": {
+        "askMetadata": {
+            "downloadGeojson": "Last ned GeoJSON",
+            "giveWikilink": "Hvilken wiki-side kan man finne mer info om denne importen?",
+            "orDownload": "Alternativt kan du laste ned datasettet for å importere direkte",
+            "shouldBeOsmWikilink": "Forventet en lenke til en side på wiki.openstreetmap.org",
+            "shouldBeUrl": "Ikke en gyldig nettadresse",
+            "title": "Sett metadata"
+        },
+        "compareToAlreadyExistingNotes": {
+            "noPreviousNotesFound": "Ingen tidligere importnotater ble funnet",
+            "title": "Sammenlign med eksisterende noder"
+        },
+        "confirmProcess": {
+            "contactedCommunity": "Jeg kontatet (local)-gemenskapen om denne importen",
+            "readImportGuidelines": "Jeg har lest importretningslinjene på OSM-wiki-en",
+            "title": "Lisens og gemenskap",
+            "titleLong": "Har du gått gjennom importprosessen?"
+        },
+        "conflationChecker": {
+            "cacheExpired": "Hurtiglager utløpt",
+            "downloadOverpassData": "Last ned innlastet GeoJSON fra overpass",
+            "loadedDataAge": "Innlastet data fra hurtiglager er {age} gammel",
+            "mapShowingNearbyIntro": "Følgende kart viser funksjoner å importere som har en OSM-funksjon i seg ",
+            "nearbyWarn": "{count} røde elementer på følgende kart vil <b>ikke</b> bli importert!",
+            "osmLoaded": "{count} elementer er innlastet fra OpenStreetMap, som samsvarer med laget <b>{name}</b>.",
+            "reloadTheCache": "Tøm hurtiglageret og send spørring til overpass igjen",
+            "states": {
+                "error": "Kunne ikke laste inn seneste data fra overpass fordi {error}",
+                "idle": "Sjekker lokallagring …",
+                "running": "Sender spørring til overpass …",
+                "unexpected": "Uventet tilstand {state}"
+            },
+            "title": "Sammenlign med eksisterende data",
+            "titleLive": "Sanntidsdata på OSM",
+            "titleNearby": "Funksjoner i nærheten",
+            "zoomIn": "Nåværende forstørrelsesnivå er {current}."
+        },
+        "createNotes": {
+            "creating": "Opprettet <b>{count}</b> notater av {total}",
+            "done": "Alle {count} notatene har blitt innlastet."
+        },
+        "gotoImportViewer": "Inspiser dine tidligere importer",
+        "introduction": {
+            "title": "Introduksjon"
+        },
+        "login": {
+            "loggedInWith": "Du er innlogget som <b>{name}</b> og har {csCount} endringssett",
+            "loginIsCorrect": "<b>{name}</b> er riktig konto å opprette importnotater med.",
+            "loginRequired": "Du må logge inn for å fortsette",
+            "title": "Logg inn",
+            "userAccountTitle": "Velg brukerkonto"
+        },
+        "mapPreview": {
+            "autodetected": "Laget ble automatisk utledet basert på dets egenskaper",
+            "selectLayer": "Hvilket lag samsvarer importen med?",
+            "title": "Kartforhåndsvisning"
+        },
+        "noteParts": {
+            "importEasily": "Legg til dette punktet enkelt med MapComplete:",
+            "wikilink": "Mer info om denne importen er å finne på {wikilink}"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "Alle funksjonene å importere har denne etiketten",
+            "inspectLooksCorrect": "Disse verdiene ser riktige ut",
+            "title": "Inspiser attributter"
+        },
+        "selectFile": {
+            "description": "Velg en .csv eller .geojson-fil for å begynne",
+            "errDuplicate": "Noen kolonner har samme navn",
+            "errNoLatOrLon": "Hodet inneholder ikke `lat` eller `lon`",
+            "errNoName": "Noen kolonner mangler navn",
+            "errPointsOnly": "Innlastet JSON-fil skal kun inneholde punkter",
+            "fileFormatDescription": "Velg en <b class=\"code\">.csv</b> eller en <b class=\"code\">.geojson</b>-fil",
+            "title": "Velg fil"
+        },
+        "selectTheme": {
+            "title": "Velg et tema",
+            "unmatchedTitle": "Følgende elementer samsvarer ikke med noen av forhåndsinnstillingene"
+        },
+        "title": "Importhjelper"
+    },
+    "importInspector": {
+        "title": "Inspiser og håndter importnotater"
+    },
     "index": {
         "featuredThemeTitle": "Framhevet denne uken",
         "intro": "MapComplete er en OpenStreetMap-viser og redigerer, som viser deg info om funksjoner for et gitt tema og tillater oppdatering av det.",
+        "logIn": "Logg inn for å vise tema du har besøkt tidligere",
         "pickTheme": "Begynn ved å velge et av temaene nedenfor.",
         "title": "Velkommen til MapComplete"
     },
@@ -249,6 +393,60 @@
     "multi_apply": {
         "autoApply": "Ved endring av attributteene {attr_names}, legges de automatisk til for {count} andre objekter også"
     },
+    "notes": {
+        "addCommentPlaceholder": "Legg til en kommentar …",
+        "anonymous": "Anonym bruker",
+        "createNoteTitle": "Opprett et nytt notat her",
+        "isClosed": "Dette notatet har blitt løst",
+        "loginToAddPicture": "Logg inn for å legge til et bilde",
+        "noteIsPublic": "Dette vil vises for alle",
+        "reopenNote": "Gjenåpne notat",
+        "reopenNoteAndComment": "Gjenåpne notat og kommenter",
+        "textNeeded": "Skriv inn beskrivende tekst for å opprettet et notat",
+        "typeText": "Skriv inn tekst for å legge til en kommentar"
+    },
+    "privacy": {
+        "whileYoureHere": "Bryr du deg om personvern?"
+    },
+    "professional": {
+        "aboutMc": {
+            "survey": {
+                "title": "Undersøkelsesmuligheter"
+            },
+            "title": "Bruk av MapComplete i din organisasjon"
+        },
+        "aboutOsm": {
+            "aboutOsm": {
+                "li3": "og mye, mye mer …",
+                "title": "Hva er OpenStreetMap?"
+            },
+            "license": {
+                "title": "Lisensen"
+            },
+            "vandalism": {
+                "li0": "Den tekniske barrieren for utføring av endringer er høy",
+                "title": "Hva med vandalisme?"
+            }
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseMapDifferentSources": {
+                    "title": "Oppretter et kart fra forskjellige kilder"
+                }
+            },
+            "title": "Noen ulemper å ha i minne"
+        },
+        "indexPage": {
+            "button": "Oppdag tjenestetilbudet vårt",
+            "hook": "Trenger du profesjonell støtte?",
+            "hookMore": "Oppsett av spørreundersøkelser, dataimport, og OpenStreetMap-konsulenttjenester"
+        },
+        "services": {
+            "intro": "Utvikleren av MapComplete kan hjelpe deg med følgende tjenestetilbud:",
+            "title": "MapComplete-tjenester"
+        },
+        "title": "Profesjonell støtte med MapComplete"
+    },
     "reviews": {
         "affiliated_reviewer_warning": "(Tilknyttet vurdering)",
         "attribution": "Vurderinger er muliggjort av <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> og er tilgjengelige som <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -272,5 +470,62 @@
         "loginToSplit": "Du må være innlogget for å dele en vei",
         "split": "Del",
         "splitTitle": "Velg hvor på kartet veien skal deles"
+    },
+    "translations": {
+        "allMissing": "Ingen oversettelser enda",
+        "completeness": "Oversettelsen for {theme} i {language} har {percentage}% dekning: {translated} strenger av {total} har blitt oversatt",
+        "deactivate": "Skru av oversettelsesknapper",
+        "isTranslator": "Oversettelsesmodus er aktivt siden brukernavnet ditt samsvarer med navnet på forrige oversetter",
+        "missing": "{count} uoversatte strenger",
+        "notImmediate": "Oversettelser oppdateres ikke direkte. Dette tar typisk et par dager."
+    },
+    "validation": {
+        "date": {
+            "description": "En dato, som starter med året"
+        },
+        "direction": {
+            "description": "En retning"
+        },
+        "email": {
+            "feedback": "Dette er ikke en gyldig e-postadresse"
+        },
+        "float": {
+            "description": "et tall",
+            "feedback": "Dette er ikke et tall"
+        },
+        "int": {
+            "description": "et heltall"
+        },
+        "nat": {
+            "mustBeWhole": "Kun heltall tillates",
+            "notANumber": "Skriv inn et tall"
+        },
+        "opening_hours": {
+            "description": "Åpningstider"
+        },
+        "pfloat": {
+            "description": "et positivt tall"
+        },
+        "phone": {
+            "description": "et telefonnummer",
+            "feedback": "Dette er ikke et gyldig telefonnummer"
+        },
+        "pnat": {
+            "description": "et positivt heltall",
+            "noZero": "Null er ikke tillatt"
+        },
+        "string": {
+            "description": "et stykke tekst"
+        },
+        "text": {
+            "description": "et stykke tekst"
+        },
+        "url": {
+            "description": "lenke til en nettside",
+            "feedback": "Dette er ikke en gyldig vev-adresse"
+        },
+        "wikidata": {
+            "description": "En Wikidata-identifikator"
+        }
     }
 }

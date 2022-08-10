@@ -1,11 +1,19 @@
 import ScriptUtils from "../scripts/ScriptUtils";
 import {Utils} from "../Utils";
+import * as fakedom from "fake-dom"
+import Locale from "../UI/i18n/Locale";
 
 export const mochaHooks = {
     
     beforeEach(done) {
         ScriptUtils.fixUtils();
-        
+        Locale.language.setData("en")
+
+        if (fakedom === undefined || window === undefined) {
+            throw "FakeDom not initialized"
+        }
+
+
         // Block internet access
         const realDownloadFunc = Utils.externalDownloadFunction;
         Utils.externalDownloadFunction = async (url) => {

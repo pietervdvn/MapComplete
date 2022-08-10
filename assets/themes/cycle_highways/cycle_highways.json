@@ -5,7 +5,10 @@
     "de": "Radschnellwege",
     "it": "Strade per velocipedi",
     "ca": "Vies ciclistes",
-    "fr": "Aménagements cyclables"
+    "fr": "Aménagements cyclables",
+    "nl": "Fietssnelwegen",
+    "es": "Carriles bici",
+    "nb_NO": "Sykkelmotorveier"
   },
   "hideFromOverview": true,
   "maintainer": "L'imaginaire",
@@ -16,7 +19,11 @@
     "en": "This map shows cycle highways",
     "de": "Diese Karte zeigt Radschnellwege",
     "it": "Questa cartina mostra le strade per velocipedi",
-    "fr": "Cette carte affiche les aménagements cyclables"
+    "fr": "Cette carte affiche les aménagements cyclables",
+    "nl": "Deze kaart toont fietssnelwegen",
+    "es": "Este mapa muestra carriles bici",
+    "nb_NO": "Kart som viser sykkelmotorveier",
+    "ca": "Aquest mapa mostra carrils bici"
   },
   "version": "2021-08-23",
   "startLat": 51.1599,
@@ -104,7 +111,10 @@
         "en": "cycle highways",
         "de": "Radschnellwege",
         "ca": "vies ciclistes",
-        "fr": "Aménagements cyclables"
+        "fr": "Aménagements cyclables",
+        "nl": "fietssnelwegen",
+        "es": "carriles bici",
+        "nb_NO": "sykkelmotorveier"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -115,7 +125,10 @@
           "en": "cycle highway",
           "de": "Radschnellweg",
           "ca": "via ciclista",
-          "fr": "Aménagement cyclable"
+          "fr": "Aménagement cyclable",
+          "nl": "fietssnelweg",
+          "es": "carril bici",
+          "nb_NO": "sykkelmotorvei"
         }
       },
       "filter": [
@@ -124,7 +137,7 @@
           "options": [
             {
               "question": "Name contains 'alt'",
-              "osmTags": "name~.*[aA]lt.*"
+              "osmTags": "name~i~.*alt.*"
             }
           ]
         },
@@ -133,7 +146,7 @@
           "options": [
             {
               "question": "Name contains 'wenslijn'",
-              "osmTags": "name~.*[wW]enslijn.*"
+              "osmTags": "name~i~.*wenslijn.*"
             }
           ]
         },
@@ -142,7 +155,7 @@
           "options": [
             {
               "question": "Name contains 'omleiding'",
-              "osmTags": "name~.*[oO]mleiding.*"
+              "osmTags": "name~i~.*omleiding.*"
             }
           ]
         },
@@ -151,7 +164,7 @@
           "options": [
             {
               "question": "Reference contains 'alt'",
-              "osmTags": "ref~.*[aA]lt.*"
+              "osmTags": "ref~i~.*aAlt.*"
             }
           ]
         },

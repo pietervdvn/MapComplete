@@ -65,7 +65,7 @@
                 "render": "Ez az állomás itt található: {addr:place}."
             },
             "ambulance-street": {
-                "question": " Mi a neve annak az utcának, amelyben az állomás található?",
+                "question": "Mi a neve annak az utcának, amelyben az állomás található?",
                 "render": "Ez az állomás a következő utcában van: {addr:street}."
             }
         },
@@ -74,7 +74,7 @@
         }
     },
     "artwork": {
-        "description": "Különféle műalkotások",
+        "description": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
         "name": "Műalkotások",
         "presets": {
             "0": {
@@ -558,6 +558,9 @@
             "render": "Ivóvíz"
         }
     },
+    "etymology": {
+        "description": "Minden olyan objektum, amelynél ismert a nevének az eredete"
+    },
     "ghost_bike": {
         "name": "Emlékkerékpárok",
         "presets": {
@@ -578,7 +581,7 @@
                 "title": "Hackerspace"
             },
             "1": {
-                "description": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips.",
+                "description": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips…",
                 "title": "Makerspace"
             }
         },
@@ -629,9 +632,6 @@
                     },
                     "1": {
                         "then": "Többnyire felnőtteknek szóló könyvek"
-                    },
-                    "2": {
-                        "then": "Gyerekeknek és felnőtteknek szóló könyvek egyaránt"
                     }
                 },
                 "question": "Milyen fajta könyvek találhatók ezen a közösségi könyvespolcon?"
@@ -718,15 +718,10 @@
         }
     },
     "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Autószerelő"
-                    }
-                }
-            }
-        }
+        "description": "Egy bolt"
+    },
+    "waste_basket": {
+        "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."
     },
     "windturbine": {
         "name": "Szélerőmű",

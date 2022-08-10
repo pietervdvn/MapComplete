@@ -6,9 +6,11 @@ import ComparingTag from "./ComparingTag";
 import {RegexTag} from "./RegexTag";
 import SubstitutingTag from "./SubstitutingTag";
 import {Or} from "./Or";
-import {AndOrTagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
+import {TagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson";
 import {isRegExp} from "util";
 import * as key_counts from "../../assets/key_totals.json"
+
+type Tags = Record<string, string>
 
 export class TagUtils {
     private static keyCounts: { keys: any, tags: any } = key_counts["default"] ?? key_counts
@@ -56,11 +58,17 @@ export class TagUtils {
         return true;
     }
 
+    static SplitKeys(tagsFilters: TagsFilter[]): Record<string, string[]> {
+        return <any>this.SplitKeysRegex(tagsFilters, false);
+    }
+
     /***
-     * Creates a hash {key --> [values : string | Regex ]}, with all the values present in the tagsfilter
+     * Creates a hash {key --> [values : string | RegexTag ]}, with all the values present in the tagsfilter
+     *
+     * TagUtils.SplitKeysRegex([new Tag("isced:level", "bachelor; master")], true) // => {"isced:level": ["bachelor","master"]}
      */
-    static SplitKeys(tagsFilters: TagsFilter[], allowRegex = false) {
-        const keyValues = {} // Map string -> string[]
+    static SplitKeysRegex(tagsFilters: TagsFilter[], allowRegex: boolean): Record<string, (string | RegexTag)[]> {
+        const keyValues: Record<string, (string | RegexTag)[]> = {}
         tagsFilters = [...tagsFilters] // copy all, use as queue
         while (tagsFilters.length > 0) {
             const tagsFilter = tagsFilters.shift();
@@ -78,7 +86,7 @@ export class TagUtils {
                 if (keyValues[tagsFilter.key] === undefined) {
                     keyValues[tagsFilter.key] = [];
                 }
-                keyValues[tagsFilter.key].push(...tagsFilter.value.split(";"));
+                keyValues[tagsFilter.key].push(...tagsFilter.value.split(";").map(s => s.trim()));
                 continue;
             }
 
@@ -107,12 +115,21 @@ export class TagUtils {
      * Given multiple tagsfilters which can be used as answer, will take the tags with the same keys together as set.
      * E.g:
      *
-     * FlattenMultiAnswer([and: [ "x=a", "y=0;1"], and: ["x=b", "y=2"], and: ["x=", "y=3"]])
-     * will result in
-     * ["x=a;b", "y=0;1;2;3"]
+     * const tag = TagUtils.Tag({"and": [
+     *     {
+     *         and:  [ "x=a", "y=0;1"],
+     *     },
+     *     {
+     *          and: ["x=", "y=3"]
+     *     },
+     *     {
+     *         and:  ["x=b", "y=2"]
+     *     }
+     * ]})
+     * TagUtils.FlattenMultiAnswer([tag]) // => TagUtils.Tag({and:["x=a;b", "y=0;1;2;3"] })
      *
-     * @param tagsFilters
-     * @constructor
+     * TagUtils.FlattenMultiAnswer(([new Tag("x","y"), new Tag("a","b")])) // => new And([new Tag("x","y"), new Tag("a","b")])
+     * TagUtils.FlattenMultiAnswer(([new Tag("x","")])) // => new And([new Tag("x","")])
      */
     static FlattenMultiAnswer(tagsFilters: TagsFilter[]): And {
         if (tagsFilters === undefined) {
@@ -122,7 +139,9 @@ export class TagUtils {
         let keyValues = TagUtils.SplitKeys(tagsFilters);
         const and: TagsFilter[] = []
         for (const key in keyValues) {
-            and.push(new Tag(key, Utils.Dedup(keyValues[key]).join(";")));
+            const values = Utils.Dedup(keyValues[key]).filter(v => v !== "")
+            values.sort()
+            and.push(new Tag(key, values.join(";")));
         }
         return new And(and);
     }
@@ -130,19 +149,23 @@ export class TagUtils {
     /**
      * Returns true if the properties match the tagsFilter, interpreted as a multikey.
      * Note that this might match a regex tag
-     * @param tag
-     * @param properties
-     * @constructor
+     *
+     * TagUtils.MatchesMultiAnswer(new Tag("isced:level","bachelor"), {"isced:level":"bachelor; master"}) // => true
+     * TagUtils.MatchesMultiAnswer(new Tag("isced:level","master"), {"isced:level":"bachelor;master"}) // => true
+     * TagUtils.MatchesMultiAnswer(new Tag("isced:level","doctorate"), {"isced:level":"bachelor; master"}) // => false
+     *
+     * // should match with a space too
+     * TagUtils.MatchesMultiAnswer(new Tag("isced:level","master"), {"isced:level":"bachelor; master"}) // => true
      */
-    static MatchesMultiAnswer(tag: TagsFilter, properties: any): boolean {
-        const splitted = TagUtils.SplitKeys([tag], true);
+    static MatchesMultiAnswer(tag: TagsFilter, properties: Tags): boolean {
+        const splitted = TagUtils.SplitKeysRegex([tag], true);
         for (const splitKey in splitted) {
             const neededValues = splitted[splitKey];
             if (properties[splitKey] === undefined) {
                 return false;
             }
 
-            const actualValue = properties[splitKey].split(";");
+            const actualValue = properties[splitKey].split(";").map(s => s.trim());
             for (const neededValue of neededValues) {
 
                 if (neededValue instanceof RegexTag) {
@@ -169,6 +192,7 @@ export class TagUtils {
 
     /**
      * Returns wether or not a keys is (probably) a valid key.
+     * See 'Tags_format.md' for an overview of what every tag does
      *
      * // should accept common keys
      * TagUtils.isValidKey("name") // => true
@@ -200,22 +224,31 @@ export class TagUtils {
      *
      * TagUtils.Tag("key=value") // => new Tag("key", "value")
      * TagUtils.Tag("key=") // => new Tag("key", "")
-     * TagUtils.Tag("key!=") // => new RegexTag("key", /^..*$/)
-     * TagUtils.Tag("key~*") // => new RegexTag("key", /^..*$/)
+     * TagUtils.Tag("key!=") // => new RegexTag("key", /^..*$/s)
+     * TagUtils.Tag("key~*") // => new RegexTag("key", /^..*$/s)
+     * TagUtils.Tag("name~i~somename") // => new RegexTag("name", /^somename$/si)
      * TagUtils.Tag("key!=value") // => new RegexTag("key", "value", true)
-     * TagUtils.Tag("vending~.*bicycle_tube.*") // => new RegexTag("vending", /^.*bicycle_tube.*$/)
-     * TagUtils.Tag("x!~y") // => new RegexTag("x", /^y$/, true)
+     * TagUtils.Tag("vending~.*bicycle_tube.*") // => new RegexTag("vending", /^.*bicycle_tube.*$/s)
+     * TagUtils.Tag("x!~y") // => new RegexTag("x", /^y$/s, true)
      * TagUtils.Tag({"and": ["key=value", "x=y"]}) // => new And([new Tag("key","value"), new Tag("x","y")])
-     * TagUtils.Tag("name~[sS]peelbos.*") // => new RegexTag("name", /^[sS]peelbos.*$/)
+     * TagUtils.Tag("name~[sS]peelbos.*") // => new RegexTag("name", /^[sS]peelbos.*$/s)
      * TagUtils.Tag("survey:date:={_date:now}") // => new SubstitutingTag("survey:date", "{_date:now}")
-     * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^\[\]$/, true)
-     * TagUtils.Tag("tags~(.*;)?amenity=public_bookcase(;.*)?") // => new RegexTag("tags", /^(.*;)?amenity=public_bookcase(;.*)?$/)
-     * TagUtils.Tag("service:bicycle:.*~~*") // => new RegexTag(/^service:bicycle:.*$/, /^..*$/)
+     * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^\[\]$/s, true)
+     * TagUtils.Tag("tags~(.*;)?amenity=public_bookcase(;.*)?") // => new RegexTag("tags", /^(.*;)?amenity=public_bookcase(;.*)?$/s)
+     * TagUtils.Tag("service:bicycle:.*~~*") // => new RegexTag(/^service:bicycle:.*$/, /^..*$/s)
+     * TagUtils.Tag("_first_comment~.*{search}.*") //  => new RegexTag('_first_comment', /^.*{search}.*$/s)
      *
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 4}) // => true
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 5}) // => false
+     *
+     * // RegexTags must match values with newlines
+     * TagUtils.Tag("note~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De aed bevindt zich op de 5de verdieping"}) // => true
+     * TagUtils.Tag("note~i~.*aed.*").matchesProperties({note: "Hier bevindt zich wss een defibrillator. \\n\\n De AED bevindt zich op de 5de verdieping"}) // => true
+     *
+     * // Must match case insensitive
+     * TagUtils.Tag("name~i~somename").matchesProperties({name: "SoMeName"}) // => true
      */
-    public static Tag(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
+    public static Tag(json: TagConfigJson, context: string = ""): TagsFilter {
         try {
             return this.TagUnsafe(json, context);
         } catch (e) {
@@ -223,6 +256,20 @@ export class TagUtils {
             throw e;
         }
     }
+
+    /**
+     * Same as `.Tag`, except that this will return undefined if the json is undefined
+     * @param json
+     * @param context
+     * @constructor
+     */
+    public static TagD(json?: TagConfigJson, context: string = ""): TagsFilter | undefined {
+        if (json === undefined) {
+            return undefined
+        }
+        return TagUtils.Tag(json, context)
+    }
+
 
     /**
      * INLINE sort of the given list
@@ -247,22 +294,49 @@ export class TagUtils {
         return r
     }
 
-    private static TagUnsafe(json: AndOrTagConfigJson | string, context: string = ""): TagsFilter {
+    /**
+     * Parses the various parts of a regex tag
+     *
+     * TagUtils.parseRegexOperator("key~value") // => {invert: false, key: "key", value: "value", modifier: ""}
+     * TagUtils.parseRegexOperator("key!~value") // => {invert: true, key: "key", value: "value", modifier: ""}
+     * TagUtils.parseRegexOperator("key~i~value") // => {invert: false, key: "key", value: "value", modifier: "i"}
+     * TagUtils.parseRegexOperator("key!~i~someweirdvalue~qsdf") // => {invert: true, key: "key", value: "someweirdvalue~qsdf", modifier: "i"}
+     * TagUtils.parseRegexOperator("_image:0~value") // => {invert: false, key: "_image:0", value: "value", modifier: ""}
+     * TagUtils.parseRegexOperator("key~*") // => {invert: false, key: "key", value: "*", modifier: ""}
+     * TagUtils.parseRegexOperator("Brugs volgnummer~*") // => {invert: false, key: "Brugs volgnummer", value: "*", modifier: ""}
+     * TagUtils.parseRegexOperator("socket:USB-A~*") // => {invert: false, key: "socket:USB-A", value: "*", modifier: ""}
+     * TagUtils.parseRegexOperator("tileId~*") // => {invert: false, key: "tileId", value: "*", modifier: ""}
+     */
+    public static parseRegexOperator(tag: string): {
+        invert: boolean;
+        key: string;
+        value: string;
+        modifier: "i" | "";
+    } | null {
+        const match = tag.match(/^([_a-zA-Z0-9: -]+)(!)?~([i]~)?(.*)$/);
+        if (match == null) {
+            return null;
+        }
+        const [_, key, invert, modifier, value] = match;
+        return {key, value, invert: invert == "!", modifier: (modifier == "i~" ? "i" : "")};
+    }
+
+    private static TagUnsafe(json: TagConfigJson, context: string = ""): TagsFilter {
 
         if (json === undefined) {
-            throw `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
+            throw new Error(`Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`)
         }
         if (typeof (json) != "string") {
-            if (json.and !== undefined && json.or !== undefined) {
+            if (json["and"] !== undefined && json["or"] !== undefined) {
                 throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`
             }
-            if (json.and !== undefined) {
-                return new And(json.and.map(t => TagUtils.Tag(t, context)));
+            if (json["and"] !== undefined) {
+                return new And(json["and"].map(t => TagUtils.Tag(t, context)));
             }
-            if (json.or !== undefined) {
-                return new Or(json.or.map(t => TagUtils.Tag(t, context)));
+            if (json["or"] !== undefined) {
+                return new Or(json["or"].map(t => TagUtils.Tag(t, context)));
             }
-            throw "At " + context + ": unrecognized tag"
+            throw `At ${context}: unrecognized tag: ${JSON.stringify(json)}`
         }
 
 
@@ -300,17 +374,6 @@ export class TagUtils {
             }
         }
 
-        if (tag.indexOf("!~") >= 0) {
-            const split = Utils.SplitFirst(tag, "!~");
-            if (split[1] === "*") {
-                throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
-            }
-            return new RegexTag(
-                split[0],
-                new RegExp("^"+ split[1]+"$"),
-                true
-            );
-        }
         if (tag.indexOf("~~") >= 0) {
             const split = Utils.SplitFirst(tag, "~~");
             if (split[1] === "*") {
@@ -318,9 +381,29 @@ export class TagUtils {
             }
             return new RegexTag(
                 new RegExp("^" + split[0] + "$"),
-                new RegExp("^" + split[1] + "$")
+                new RegExp("^" + split[1] + "$", "s")
             );
         }
+        const withRegex = TagUtils.parseRegexOperator(tag)
+        if (withRegex != null) {
+            if (withRegex.value === "*" && withRegex.invert) {
+                throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
+            }
+            if (withRegex.value === "") {
+                throw "Detected a regextag with an empty regex; this is not allowed. Use '" + withRegex.key + "='instead (at " + context + ")"
+            }
+
+            let value: string | RegExp = withRegex.value;
+            if (value === "*") {
+                value = "..*"
+            }
+            return new RegexTag(
+                withRegex.key,
+                new RegExp("^" + value + "$", "s" + withRegex.modifier),
+                withRegex.invert
+            );
+        }
+
         if (tag.indexOf("!:=") >= 0) {
             const split = Utils.SplitFirst(tag, "!:=");
             return new SubstitutingTag(split[0], split[1], true);
@@ -337,7 +420,7 @@ export class TagUtils {
             }
             if (split[1] === "") {
                 split[1] = "..*"
-                return new RegexTag(split[0], /^..*$/)
+                return new RegexTag(split[0], /^..*$/s)
             }
             return new RegexTag(
                 split[0],
@@ -345,22 +428,8 @@ export class TagUtils {
                 true
             );
         }
-        if (tag.indexOf("~") >= 0) {
-            const split = Utils.SplitFirst(tag, "~");
-            let value : string | RegExp = split[1]
-            if (split[1] === "") {
-                throw "Detected a regextag with an empty regex; this is not allowed. Use '" + split[0] + "='instead (at " + context + ")"
-            }
-            if (value === "*") {
-                value = /^..*$/
-            }else {
-                value = new RegExp("^"+value+"$")
-            }
-            return new RegexTag(
-                split[0],
-                value
-            );
-        }
+
+
         if (tag.indexOf("=") >= 0) {
 
 
@@ -423,39 +492,49 @@ export class TagUtils {
         }
         return " (" + joined + ") "
     }
+    
+    public static ExtractSimpleTags(tf: TagsFilter) : Tag[] {
+        const result: Tag[] = []
+        tf.visit(t => {
+            if(t instanceof Tag){
+                result.push(t)
+            }
+        })
+        return result;
+    }
 
     /**
      * Returns 'true' is opposite tags are detected.
      * Note that this method will never work perfectly
-     * 
+     *
      * // should be false for some simple cases
      * TagUtils.ContainsOppositeTags([new Tag("key", "value"), new Tag("key0", "value")]) // => false
      * TagUtils.ContainsOppositeTags([new Tag("key", "value"), new Tag("key", "value0")]) // => false
-     * 
+     *
      * // should detect simple cases
      * TagUtils.ContainsOppositeTags([new Tag("key", "value"), new RegexTag("key", "value", true)]) // => true
      * TagUtils.ContainsOppositeTags([new Tag("key", "value"), new RegexTag("key", /value/, true)]) // => true
      */
-    public static ContainsOppositeTags(tags: (TagsFilter)[]) : boolean{
-        for (let i = 0; i < tags.length; i++){
+    public static ContainsOppositeTags(tags: (TagsFilter)[]): boolean {
+        for (let i = 0; i < tags.length; i++) {
             const tag = tags[i];
-            if(!(tag instanceof Tag || tag instanceof RegexTag)){
+            if (!(tag instanceof Tag || tag instanceof RegexTag)) {
                 continue
             }
-            for (let j = i + 1; j < tags.length; j++){
+            for (let j = i + 1; j < tags.length; j++) {
                 const guard = tags[j];
-                if(!(guard instanceof Tag || guard instanceof RegexTag)){
+                if (!(guard instanceof Tag || guard instanceof RegexTag)) {
                     continue
                 }
-                if(guard.key !== tag.key) {
+                if (guard.key !== tag.key) {
                     // Different keys: they can _never_ be opposites
                     continue
                 }
-                if((guard.value["source"] ?? guard.value) !== (tag.value["source"] ?? tag.value)){
+                if ((guard.value["source"] ?? guard.value) !== (tag.value["source"] ?? tag.value)) {
                     // different values: the can _never_ be opposites
                     continue
                 }
-                if( (guard["invert"] ?? false) !== (tag["invert"] ?? false) ) {
+                if ((guard["invert"] ?? false) !== (tag["invert"] ?? false)) {
                     // The 'invert' flags are opposite, the key and value is the same for both
                     // This means we have found opposite tags!
                     return true
@@ -470,28 +549,28 @@ export class TagUtils {
      * Returns a filtered version of 'listToFilter'.
      * For a list [t0, t1, t2], If `blackList` contains an equivalent (or broader) match of any `t`, this respective `t` is dropped from the returned list
      * Ignores nested ORS and ANDS
-     * 
+     *
      * TagUtils.removeShadowedElementsFrom([new Tag("key","value")],  [new Tag("key","value"), new Tag("other_key","value")]) // => [new Tag("other_key","value")]
      */
-    public static removeShadowedElementsFrom(blacklist: TagsFilter[], listToFilter: TagsFilter[] ) : TagsFilter[] {
+    public static removeShadowedElementsFrom(blacklist: TagsFilter[], listToFilter: TagsFilter[]): TagsFilter[] {
         return listToFilter.filter(tf => !blacklist.some(guard => guard.shadows(tf)))
     }
 
     /**
      * Returns a filtered version of 'listToFilter', where no duplicates and no equivalents exists.
-     * 
+     *
      * TagUtils.removeEquivalents([new RegexTag("key", /^..*$/), new Tag("key","value")]) // => [new Tag("key", "value")]
      */
-    public static removeEquivalents( listToFilter: (Tag | RegexTag)[]) : TagsFilter[] {
+    public static removeEquivalents(listToFilter: (Tag | RegexTag)[]): TagsFilter[] {
         const result: TagsFilter[] = []
-        outer: for (let i = 0; i < listToFilter.length; i++){
+        outer: for (let i = 0; i < listToFilter.length; i++) {
             const tag = listToFilter[i];
-            for (let j = 0; j < listToFilter.length; j++){
-                if(i === j){
+            for (let j = 0; j < listToFilter.length; j++) {
+                if (i === j) {
                     continue
                 }
                 const guard = listToFilter[j];
-                if(guard.shadows(tag)) {
+                if (guard.shadows(tag)) {
                     // the guard 'kills' the tag: we continue the outer loop without adding the tag
                     continue outer;
                 }
@@ -500,7 +579,7 @@ export class TagUtils {
         }
         return result
     }
-    
+
     /**
      * Returns `true` if at least one element of the 'guards' shadows one element of the 'listToFilter'.
      *
@@ -508,10 +587,43 @@ export class TagUtils {
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("other_key","value")]) // => false
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("key","other_value")]) // => false
      */
-    public static containsEquivalents( guards: TagsFilter[], listToFilter: TagsFilter[] ) : boolean {
+    public static containsEquivalents(guards: TagsFilter[], listToFilter: TagsFilter[]): boolean {
         return listToFilter.some(tf => guards.some(guard => guard.shadows(tf)))
     }
-    
-  
+
+
+    /**
+     * Parses a level specifier to the various available levels
+     *
+     * TagUtils.LevelsParser("0") // => ["0"]
+     * TagUtils.LevelsParser("1") // => ["1"]
+     * TagUtils.LevelsParser("0;2") // => ["0","2"]
+     * TagUtils.LevelsParser("0-5") // => ["0","1","2","3","4","5"]
+     * TagUtils.LevelsParser("0") // => ["0"]
+     * TagUtils.LevelsParser("-1") // => ["-1"]
+     * TagUtils.LevelsParser("0;-1") // => ["0", "-1"]
+     * TagUtils.LevelsParser(undefined) // => []
+     */
+    public static LevelsParser(level: string): string[] {
+        let spec = Utils.NoNull([level])
+        spec = [].concat(...spec.map(s => s?.split(";")))
+        spec = [].concat(...spec.map(s => {
+            s = s.trim()
+            if (s.indexOf("-") < 0 || s.startsWith("-")) {
+                return s
+            }
+            const [start, end] = s.split("-").map(s => Number(s.trim()))
+            if (isNaN(start) || isNaN(end)) {
+                return undefined
+            }
+            const values = []
+            for (let i = start; i <= end; i++) {
+                values.push(i + "")
+            }
+            return values
+        }))
+        return Utils.NoNull(spec);
+    }
+
 
 }

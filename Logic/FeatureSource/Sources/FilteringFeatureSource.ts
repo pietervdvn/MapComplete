@@ -1,9 +1,10 @@
-import {UIEventSource} from "../../UIEventSource";
-import FilteredLayer from "../../../Models/FilteredLayer";
+import {Store, UIEventSource} from "../../UIEventSource";
+import FilteredLayer, {FilterState} from "../../../Models/FilteredLayer";
 import {FeatureSourceForLayer, Tiled} from "../FeatureSource";
 import {BBox} from "../../BBox";
 import {ElementStorage} from "../../ElementStorage";
 import {TagsFilter} from "../../Tags/TagsFilter";
+import {OsmFeature} from "../../../Models/OsmFeature";
 
 export default class FilteringFeatureSource implements FeatureSourceForLayer, Tiled {
     public features: UIEventSource<{ feature: any; freshness: Date }[]> =
@@ -14,7 +15,9 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     public readonly bbox: BBox
     private readonly upstream: FeatureSourceForLayer;
     private readonly state: {
-        locationControl: UIEventSource<{ zoom: number }>; selectedElement: UIEventSource<any>,
+        locationControl: Store<{ zoom: number }>; 
+        selectedElement: Store<any>,
+        globalFilters: Store<{ filter: FilterState }[]>,
         allElements: ElementStorage
     };
     private readonly _alreadyRegistered = new Set<UIEventSource<any>>();
@@ -23,9 +26,10 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
 
     constructor(
         state: {
-            locationControl: UIEventSource<{ zoom: number }>,
-            selectedElement: UIEventSource<any>,
-            allElements: ElementStorage
+            locationControl: Store<{ zoom: number }>,
+            selectedElement: Store<any>,
+            allElements: ElementStorage,
+            globalFilters: Store<{ filter: FilterState }[]>
         },
         tileIndex,
         upstream: FeatureSourceForLayer,
@@ -58,6 +62,10 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         metataggingUpdated?.addCallback(_ => {
             self._is_dirty.setData(true)
         })
+        
+        state.globalFilters.addCallback(_ => {
+            self.update()
+        })
 
         this.update();
     }
@@ -65,28 +73,32 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     private update() {
         const self = this;
         const layer = this.upstream.layer;
-        const features: { feature: any; freshness: Date }[] = (this.upstream.features.data ?? []);
+        const features: { feature: OsmFeature; freshness: Date }[] = (this.upstream.features.data ?? []);
         const includedFeatureIds = new Set<string>();
+        const globalFilters = self.state.globalFilters.data.map(f => f.filter);
         const newFeatures = (features ?? []).filter((f) => {
 
             self.registerCallback(f.feature)
 
-            const isShown = layer.layerDef.isShown;
+            const isShown: TagsFilter = layer.layerDef.isShown;
             const tags = f.feature.properties;
-            if (isShown.IsKnown(tags)) {
-                const result = layer.layerDef.isShown.GetRenderValue(
-                    f.feature.properties
-                ).txt;
-                if (result !== "yes") {
-                    return false;
-                }
+            if (isShown !== undefined && !isShown.matchesProperties(tags) ) {
+                return false;
             }
 
             const tagsFilter = Array.from(layer.appliedFilters?.data?.values() ?? [])
             for (const filter of tagsFilter) {
                 const neededTags: TagsFilter = filter?.currentFilter
                 if (neededTags !== undefined && !neededTags.matchesProperties(f.feature.properties)) {
-                    // Hidden by the filter on the layer itself - we want to hide it no matter wat
+                    // Hidden by the filter on the layer itself - we want to hide it no matter what
+                    return false;
+                }
+            }
+
+            for (const filter of globalFilters) {
+                const neededTags: TagsFilter = filter?.currentFilter
+                if (neededTags !== undefined && !neededTags.matchesProperties(f.feature.properties)) {
+                    // Hidden by the filter on the layer itself - we want to hide it no matter what
                     return false;
                 }
             }

@@ -135,14 +135,14 @@
     },
     {
       "question": {
-        "en": "On what webpage can one find more information about the Ghost bike or the accident?",
+        "en": "On what webpage can one find more info about the ghost bike or the accident?",
         "nl": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
         "de": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
         "it": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
         "fr": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?"
       },
       "render": {
-        "en": "<a href='{source}' target='_blank'>More information is available</a>",
+        "en": "<a href='{source}' target='_blank'>More info available</a>",
         "nl": "<a href='{source}' target='_blank'>Meer informatie</a>",
         "de": "<a href='{source}' target='_blank'>Mehr Informationen</a>",
         "it": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>",

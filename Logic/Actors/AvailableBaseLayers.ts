@@ -1,14 +1,14 @@
 import BaseLayer from "../../Models/BaseLayer";
-import {UIEventSource} from "../UIEventSource";
+import {ImmutableStore, Store, UIEventSource} from "../UIEventSource";
 import Loc from "../../Models/Loc";
 
 export interface AvailableBaseLayersObj {
     readonly osmCarto: BaseLayer;
     layerOverview: BaseLayer[];
 
-    AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]>
+    AvailableLayersAt(location: Store<Loc>): Store<BaseLayer[]>
 
-    SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer>;
+    SelectBestLayerAccordingTo(location: Store<Loc>, preferedCategory: Store<string | string[]>): Store<BaseLayer>;
 
 }
 
@@ -24,12 +24,12 @@ export default class AvailableBaseLayers {
 
     private static implementation: AvailableBaseLayersObj
 
-    static AvailableLayersAt(location: UIEventSource<Loc>): UIEventSource<BaseLayer[]> {
-        return AvailableBaseLayers.implementation?.AvailableLayersAt(location) ?? new UIEventSource<BaseLayer[]>([]);
+    static AvailableLayersAt(location: Store<Loc>): Store<BaseLayer[]> {
+        return AvailableBaseLayers.implementation?.AvailableLayersAt(location) ?? new ImmutableStore<BaseLayer[]>([]);
     }
 
-    static SelectBestLayerAccordingTo(location: UIEventSource<Loc>, preferedCategory: UIEventSource<string | string[]>): UIEventSource<BaseLayer> {
-        return AvailableBaseLayers.implementation?.SelectBestLayerAccordingTo(location, preferedCategory) ?? new UIEventSource<BaseLayer>(undefined);
+    static SelectBestLayerAccordingTo(location: Store<Loc>, preferedCategory: UIEventSource<string | string[]>): Store<BaseLayer> {
+        return AvailableBaseLayers.implementation?.SelectBestLayerAccordingTo(location, preferedCategory) ?? new ImmutableStore<BaseLayer>(undefined);
 
     }
 

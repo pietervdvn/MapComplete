@@ -16,7 +16,8 @@
         "amenity=bar",
         "amenity=pub",
         "amenity=cafe",
-        "amenity=biergarten"
+        "amenity=biergarten",
+        "amenity=nightclub"
       ]
     }
   },
@@ -28,18 +29,21 @@
       "title": {
         "en": "a pub",
         "nl": "een bruin café of kroeg",
-        "de": "eine kneipe",
+        "de": "eine Kneipe",
         "ru": "паб",
         "hu": "kocsma",
         "ca": "un bar",
-        "da": "en pub"
+        "da": "en pub",
+        "es": "un pub",
+        "fr": "un pub"
       },
       "description": {
         "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
         "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk",
         "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird",
         "es": "Un bar, principalmente para beber cervezas en un interior templado y relajado",
-        "da": "En pub, mest et sted at drikke øl i et varme, afslappede omgivelser"
+        "da": "En pub, mest et sted at drikke øl i et varme, afslappede omgivelser",
+        "fr": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -52,18 +56,21 @@
       "title": {
         "en": "a bar",
         "nl": "een bar",
-        "de": "eine bar",
+        "de": "eine Bar",
         "ru": "бар",
         "hu": "bár",
         "ca": "un pub",
         "da": "en bar",
-        "es": "un bar"
+        "es": "un bar",
+        "fr": "un bar"
       },
       "description": {
         "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
         "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
         "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation",
-        "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation"
+        "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation",
+        "es": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
+        "fr": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -76,17 +83,43 @@
       "title": {
         "en": "a cafe",
         "nl": "een café",
-        "de": "eine café",
+        "de": "ein Café",
         "ru": "кафе",
         "hu": "kávézó",
         "ca": "un cafè",
-        "da": "en cafe"
+        "da": "en cafe",
+        "es": "una cafetería",
+        "fr": "un café"
       },
       "description": {
         "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
         "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
         "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
-        "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser"
+        "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser",
+        "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
+        "fr": "Un <b>café</b> pour prendre un thé, un café ou une boisson alcoolisée dans un environnement calme"
+      },
+      "preciseInput": {
+        "preferredBackground": "map"
+      }
+    },
+    {
+      "tags": [
+        "amenity=nightclub"
+      ],
+      "title": {
+        "en": "a nightclub or disco",
+        "nl": "een nachtclub of disco",
+        "de": "einen Club oder eine Diskothek",
+        "es": "un club nocturno o una discoteca",
+        "fr": "une boîte de nuit ou discothèque"
+      },
+      "description": {
+        "en": "A <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
+        "nl": "Een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen",
+        "de": "Ein <b>Club</b> oder eine Diskothek mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt",
+        "es": "Un <b>club nocturno</b> o discoteca centrada en bailar, la música de un DJ acompañado por un espectáculo de luces y un bar donde conseguir bebidas (alcohólicas)",
+        "fr": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une une boisson (alcoolisée)"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -99,7 +132,9 @@
       "nl": "Café",
       "ca": "Bar",
       "de": "Kneipe",
-      "da": "Pub"
+      "da": "Pub",
+      "es": "Pub",
+      "fr": "Bar"
     },
     "mappings": [
       {
@@ -114,13 +149,16 @@
           "de": "<i>{name}</i>",
           "ru": "<i>{name}</i>",
           "ca": "<i>{name}</i>",
-          "da": "<i>{name}</i>"
+          "da": "<i>{name}</i>",
+          "es": "<i>{name}</i>",
+          "fr": "<i>{name}</i>"
         }
       }
     ]
   },
   "tagRenderings": [
     "images",
+    "level",
     {
       "question": {
         "nl": "Wat is de naam van dit café?",
@@ -128,7 +166,8 @@
         "de": "Wie heißt diese Kneipe?",
         "fr": "Quel est le nom de ce pub ?",
         "hu": "Mi a neve ennek a kocsmának?",
-        "da": "Hvad hedder denne pub?"
+        "da": "Hvad hedder denne pub?",
+        "es": "¿Cual es el nombre de este pub?"
       },
       "render": {
         "nl": "De naam van dit café is {name}",
@@ -136,7 +175,8 @@
         "de": "Diese Kneipe heißt {name}",
         "fr": "Ce pub se nomme {name}",
         "hu": "A kocsma neve: {name}",
-        "da": "Denne pub hedder {name}"
+        "da": "Denne pub hedder {name}",
+        "es": "Este pub se llama {name}"
       },
       "freeform": {
         "key": "name"
@@ -145,11 +185,13 @@
     },
     {
       "question": {
-        "en": "What kind of cafe is this",
+        "en": "What kind of cafe is this?",
         "nl": "Welk soort café is dit?",
-        "de": "Was ist das für ein Café",
+        "de": "Was ist das für ein Café?",
         "hu": "Milyen fajta kávézó ez?",
-        "da": "Hvilken slags cafe er dette"
+        "da": "Hvilken slags cafe er dette",
+        "es": "Qué tipo de cafetería es esta",
+        "fr": "Quel genre de café est-ce ?"
       },
       "mappings": [
         {
@@ -157,7 +199,9 @@
           "then": {
             "en": "A pub, mostly for drinking beers in a warm, relaxed interior",
             "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk",
-            "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird"
+            "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird",
+            "es": "Un bar, principalmente para beber cervezas en un interior cálido y relajado",
+            "fr": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée"
           }
         },
         {
@@ -166,7 +210,9 @@
             "en": "A more modern and commercial <b>bar</b>, possibly with a music and light installation",
             "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
             "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation",
-            "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation"
+            "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation",
+            "es": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
+            "fr": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière"
           }
         },
         {
@@ -175,7 +221,9 @@
             "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
             "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
             "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
-            "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser"
+            "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser",
+            "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
+            "fr": "Un <b>café</b> pour boire du thé, du café ou une boisson alcoolisée au calme"
           }
         },
         {
@@ -184,7 +232,9 @@
             "en": "A <b>restuarant</b> where one can get a proper meal",
             "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt",
             "de": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann",
-            "da": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid"
+            "da": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid",
+            "es": "Un <b>restaurante</b> donde puedes comer una comida de verdad",
+            "fr": "Un <b>restaurant</b> où l'on peut prendre un bon repas"
           }
         },
         {
@@ -193,9 +243,21 @@
             "en": "An open space where beer is served, typically seen in Germany",
             "nl": "Een open ruimte waar bier geserveerd wordt. Typisch in Duitsland",
             "de": "Ein Außenbereich mit Bierausschank, typischerweise in Deutschland",
-            "da": "Et åbent rum, hvor der serveres øl, typisk set i Tyskland"
+            "da": "Et åbent rum, hvor der serveres øl, typisk set i Tyskland",
+            "es": "Un espacio abierto donde se sirve cerveza, típico de Alemania",
+            "fr": "Un espace ouvert où la bière est servie, typiquement vu en Allemagne"
           },
           "hideInAnswer": "_country!=de"
+        },
+        {
+          "if": "amenity=nightclub",
+          "then": {
+            "en": "This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
+            "nl": "Dit is een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen",
+            "de": "Dies ist ein <b>Club</b> oder eine Disco mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt",
+            "es": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)",
+            "fr": "Il s'agit d'une <b>boîte de nuit</b> ou discothèque avec un accent sur la danse, la musique d'un DJ avec un spectacle de lumière et un bar pour prendre des boissons (alcoolisées)"
+          }
         }
       ],
       "id": "Classification"
@@ -206,8 +268,10 @@
     "phone",
     "payment-options",
     "wheelchair-access",
+    "smoking",
     "service:electricity",
-    "dog-access"
+    "dog-access",
+    "reviews"
   ],
   "filter": [
     {
@@ -216,7 +280,7 @@
         {
           "question": {
             "en": "Opened now",
-            "nl": "Nu geopened",
+            "nl": "Nu geopend",
             "de": "Derzeit geöffnet",
             "fr": "Ouvert maintenant",
             "hu": "Most nyitva van",
@@ -243,7 +307,8 @@
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
           "es": "{title()} ha cerrado permanentemente",
-          "da": "{title()} er lukket permanent"
+          "da": "{title()} er lukket permanent",
+          "fr": "{title()} est définitivement fermé"
         },
         "changesetMessage": "shop_closed"
       }
@@ -258,6 +323,10 @@
           {
             "if": "amenity=cafe",
             "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
+          },
+          {
+            "if": "amenity=nightclub",
+            "then": "circle:white;./assets/layers/cafe_pub/nightclub.svg"
           }
         ]
       },
@@ -286,7 +355,8 @@
     "hu": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
     "nl": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
     "de": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
-    "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa pregunta algunas preguntas relevantes",
-    "da": "Et lag med caféer og pubber, hvor man kan samles omkring en drink. Laget stiller nogle relevante spørgsmål"
+    "es": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa hace algunas preguntas relevantes",
+    "da": "Et lag med caféer og pubber, hvor man kan samles omkring en drink. Laget stiller nogle relevante spørgsmål",
+    "fr": "Une couche montrants les cafés et pubs où l’on peut prendre un verre. Cette couche pose des questions y afférentes."
   }
 }

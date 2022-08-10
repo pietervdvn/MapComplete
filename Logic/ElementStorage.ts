@@ -2,6 +2,7 @@
  * Keeps track of a dictionary 'elementID' -> UIEventSource<tags>
  */
 import {UIEventSource} from "./UIEventSource";
+import {GeoJSONObject} from "@turf/turf";
 
 export class ElementStorage {
 

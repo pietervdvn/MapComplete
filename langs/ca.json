@@ -106,7 +106,7 @@
             "downloadAsSvgHelper": "Compatible amb Inkscape o Adobe Illustrator; necessitaràs un processament  ",
             "downloadCSV": "Baixar dades visibles com a CSV",
             "downloadCSVHelper": "Compatible amb LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Baixar com a arxiu GeoJson",
+            "downloadFeatureAsGeojson": "Baixar com a arxiu GeoJSON",
             "downloadFeatureAsGpx": "Baixar com a arxiu GPX",
             "downloadGeoJsonHelper": "Compatible amb QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Baixar dades visibles com a GeoJSON",
@@ -239,6 +239,9 @@
             "wednesday": "Dimecres"
         },
         "welcomeBack": "Has entrat, benvingut/da.",
+        "welcomeExplanation": {
+            "addNew": "Toqueu el mapa per afegir un nou PDI."
+        },
         "wikipedia": {
             "createNewWikidata": "Crear un ítem de Wikidata",
             "doSearch": "Cerca adalt per veure els resultats",
@@ -265,6 +268,9 @@
         "doDelete": "Esborrar imatge",
         "dontDelete": "Cancel·lar",
         "isDeleted": "Esborrada",
+        "nearbyPictures": {
+            "browseNearby": "Cerca imatges properes…"
+        },
         "pleaseLogin": "Entrar per pujar una foto",
         "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
         "toBig": "La teva imatge és massa gran ara que medeix {actual_size}. Usa imatges de com a molt {max_size}",
@@ -314,7 +320,7 @@
             "noFilesLoaded": "No s'ha carregat cap arxiu",
             "title": "Seleccionar arxiu"
         },
-        "title": "Ajuda de l'importador"
+        "title": "Assistent d'importació"
     },
     "importInspector": {
         "title": "Inspeccionar i controlar notes d'importació"
@@ -547,9 +553,6 @@
         },
         "date": {
             "description": "Una data, començant per l'any"
-        },
-        "decimal": {
-            "description": "Un número"
         },
         "direction": {
             "description": "Una orientació"

@@ -4,7 +4,7 @@
         "title": "Open AED Map"
     },
     "artwork": {
-        "description": "Welcome to Open Artwork Map, a map of statues, busts, grafittis and other artwork all over the world",
+        "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "title": "Open Artwork Map"
     },
     "benches": {
@@ -443,10 +443,9 @@
         "description": "On this map, publicly accessible drinking water spots are shown and can be easily added",
         "title": "Drinking Water"
     },
-    "entrances": {
-        "description": "A map showing all entrances, which surveys for important aspects for wheelchair users",
-        "shortDescription": "Survey entrances to help wheelchair routing",
-        "title": "Entrances"
+    "education": {
+        "description": "On this map, you'll find information about all types of schools and eduction and can easily add more information",
+        "title": "Education"
     },
     "etymology": {
         "description": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
@@ -612,6 +611,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Did not yet calculate the metatags... Reopen this popup"
+                            },
+                            "1": {
+                                "then": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}"
                             }
                         }
                     }
@@ -639,6 +641,18 @@
         "description": "On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.\n\nYou can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details by answering available questions.\n\nAll changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.",
         "shortDescription": "Map to show hydrants, extinguishers, fire stations, and ambulance stations.",
         "title": "Hydrants, Extinguishers, Fire stations, and Ambulance stations"
+    },
+    "healthcare": {
+        "description": "On this map, various healthcare related items are shown",
+        "title": "Healthcare"
+    },
+    "indoors": {
+        "description": "On this map, publicly accessible indoor places are shown",
+        "title": "Indoors"
+    },
+    "kerbs_and_crossings": {
+        "description": "A map showing kerbs and crossings.",
+        "title": "Kerbs and crossings"
     },
     "mapcomplete-changes": {
         "description": "This maps shows all the changes made with MapComplete",
@@ -702,10 +716,19 @@
         "shortDescription": "Shows changes made by MapComplete",
         "title": "Changes made with MapComplete"
     },
+    "maproulette": {
+        "description": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them.",
+        "title": "MapRoulette Tasks"
+    },
     "maps": {
         "description": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
         "shortDescription": "This theme shows all (touristic) maps that OpenStreetMap knows of",
         "title": "A map of maps"
+    },
+    "maxspeed": {
+        "description": "This map shows the legally allowed maximum speed on every road. If a maxspeed is missing or wrong, you can correct it here.",
+        "shortDescription": "This map shows the legally allowed maximum speed on every road.",
+        "title": "Maxspeed"
     },
     "nature": {
         "description": "On this map, one can find interesting infromation for tourists and nature lovers, such as ",
@@ -720,6 +743,77 @@
         "description": "Publicly accessible towers to enjoy the view",
         "shortDescription": "Publicly accessible towers to enjoy the view",
         "title": "Observation towers"
+    },
+    "onwheels": {
+        "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
+        "layers": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Any/No width info"
+                                },
+                                "1": {
+                                    "question": "Without width info"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "All types of kerbs"
+                                },
+                                "1": {
+                                    "question": "Raised kerb (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Lowered kerb (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Flush kerb (~0cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "18": {
+                "override": {
+                    "=title": {
+                        "render": "Statistics"
+                    }
+                }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Add all the suggested tags"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "OnWheels"
     },
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
@@ -744,9 +838,9 @@
             },
             "2": {
                 "override": {
-                    "name": "dog-friendly shop",
+                    "name": "Dog-friendly shops",
                     "title": {
-                        "render": "dog-friendly shop"
+                        "render": "Dog-friendly shops"
                     }
                 }
             },
@@ -754,7 +848,7 @@
                 "override": {
                     "presets": {
                         "0": {
-                            "description": "A shop whery you can bring a dog almost everywhere",
+                            "description": "A shop where you can bring a dog almost everywhere",
                             "title": "dog-friendly shop"
                         }
                     }
@@ -977,6 +1071,10 @@
         "shortDescription": "A map showing postboxes and post offices",
         "title": "Postbox and Post Office Map"
     },
+    "rainbow_crossings": {
+        "description": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
+        "title": "Rainbow pedestrian crossings"
+    },
     "shops": {
         "description": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
         "shortDescription": "An editable map with basic shop information",
@@ -989,6 +1087,28 @@
                 "description": "Layer showing sidewalks of highways",
                 "name": "Sidewalks",
                 "tagRenderings": {
+                    "left-right-questions": {
+                        "renderings": {
+                            "1": {
+                                "mappings": {
+                                    "0": {
+                                        "then": "Yes, there is a sidewalk on this side of the road"
+                                    },
+                                    "1": {
+                                        "then": "No, there is no sidewalk to walk on"
+                                    },
+                                    "2": {
+                                        "then": "There is a separately mapped sidewalk to walk on"
+                                    }
+                                },
+                                "question": "Is there a sidewalk on this side of the road?"
+                            },
+                            "2": {
+                                "question": "What is the width of the sidewalk on this side of the road?",
+                                "render": "This sidewalk is {sidewalk:left|right:width}m wide"
+                            }
+                        }
+                    },
                     "streetname": {
                         "render": "This street is named {name}"
                     }
@@ -1071,10 +1191,18 @@
         "description": "A map of public toilets",
         "title": "Open Toilet Map"
     },
+    "transit": {
+        "description": "Plan your trip with the help of the public transport system.",
+        "title": "Bus routes"
+    },
     "trees": {
         "description": "Map all the trees!",
         "shortDescription": "Map all the trees",
         "title": "Trees"
+    },
+    "walls_and_buildings": {
+        "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
+        "title": "Walls and buildings"
     },
     "waste": {
         "description": "Map showing waste baskets and recycling facilities.",

@@ -1,28 +1,36 @@
 {
   "contributors": [
     {
-      "commits": 3540,
+      "commits": 4316,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 86,
+      "commits": 160,
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 39,
+      "commits": 43,
       "contributor": "Tobias"
+    },
+    {
+      "commits": 33,
+      "contributor": "Win Olario"
     },
     {
       "commits": 33,
       "contributor": "Christian Neumann"
     },
     {
-      "commits": 32,
-      "contributor": "Win Olario"
+      "commits": 31,
+      "contributor": "Andrews Leruth"
     },
     {
       "commits": 31,
       "contributor": "Pieter Fiers"
+    },
+    {
+      "commits": 26,
+      "contributor": "Joost"
     },
     {
       "commits": 26,
@@ -33,12 +41,20 @@
       "contributor": "Ward"
     },
     {
-      "commits": 20,
-      "contributor": "Joost"
+      "commits": 22,
+      "contributor": "riQQ"
+    },
+    {
+      "commits": 21,
+      "contributor": "AlexanderRebai"
     },
     {
       "commits": 19,
-      "contributor": "riQQ"
+      "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 19,
+      "contributor": "yopaseopor"
     },
     {
       "commits": 19,
@@ -73,20 +89,20 @@
       "contributor": "Bavo Vanderghote"
     },
     {
+      "commits": 11,
+      "contributor": "dependabot[bot]"
+    },
+    {
       "commits": 10,
       "contributor": "LiamSimons"
     },
     {
-      "commits": 8,
-      "contributor": "dependabot[bot]"
+      "commits": 9,
+      "contributor": "RobJN"
     },
     {
       "commits": 8,
       "contributor": "Midgard"
-    },
-    {
-      "commits": 7,
-      "contributor": "RobJN"
     },
     {
       "commits": 7,
@@ -101,8 +117,12 @@
       "contributor": "Binnette"
     },
     {
-      "commits": 7,
-      "contributor": "yopaseopor"
+      "commits": 6,
+      "contributor": "Thibault Molleman"
+    },
+    {
+      "commits": 6,
+      "contributor": "danieldegroot2"
     },
     {
       "commits": 6,
@@ -114,7 +134,19 @@
     },
     {
       "commits": 4,
+      "contributor": "OliNau"
+    },
+    {
+      "commits": 4,
+      "contributor": "Codain"
+    },
+    {
+      "commits": 4,
       "contributor": "Ward Beyens"
+    },
+    {
+      "commits": 3,
+      "contributor": "Thierry1030"
     },
     {
       "commits": 3,
@@ -126,7 +158,11 @@
     },
     {
       "commits": 2,
-      "contributor": "Codain"
+      "contributor": "pdassori"
+    },
+    {
+      "commits": 2,
+      "contributor": "快乐的老鼠宝宝"
     },
     {
       "commits": 2,
@@ -159,6 +195,26 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "HispanicMojitos"
+    },
+    {
+      "commits": 1,
+      "contributor": "kaipankrath"
+    },
+    {
+      "commits": 1,
+      "contributor": "bxl-forever"
+    },
+    {
+      "commits": 1,
+      "contributor": "loviuz"
+    },
+    {
+      "commits": 1,
+      "contributor": "kjonosm"
     },
     {
       "commits": 1,
@@ -202,10 +258,6 @@
     },
     {
       "commits": 1,
-      "contributor": "快乐的老鼠宝宝"
-    },
-    {
-      "commits": 1,
       "contributor": "Sebastian"
     },
     {
@@ -243,10 +295,6 @@
     {
       "commits": 1,
       "contributor": "Schouppe Joost"
-    },
-    {
-      "commits": 1,
-      "contributor": "Thibault Molleman"
     },
     {
       "commits": 1,

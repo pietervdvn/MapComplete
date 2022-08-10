@@ -1,5 +1,5 @@
 import {SlideShow} from "./SlideShow";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store} from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
 import DeleteImage from "./DeleteImage";
 import {AttributedImage} from "./AttributedImage";
@@ -12,8 +12,8 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 
 export class ImageCarousel extends Toggle {
 
-    constructor(images: UIEventSource<{ key: string, url: string, provider: ImageProvider }[]>,
-                tags: UIEventSource<any>,
+    constructor(images: Store<{ key: string, url: string, provider: ImageProvider }[]>,
+                tags: Store<any>,
                 state: { osmConnection?: OsmConnection, changes?: Changes, layoutToUse: LayoutConfig }) {
         const uiElements = images.map((imageURLS: { key: string, url: string, provider: ImageProvider }[]) => {
             const uiElements: BaseUIElement[] = [];

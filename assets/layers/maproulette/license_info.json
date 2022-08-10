@@ -1,0 +1,12 @@
+[
+  {
+    "path": "logomark.svg",
+    "license": "MIT",
+    "authors": [
+      "MapRoulette"
+    ],
+    "sources": [
+      "https://github.com/maproulette/docs/blob/master/src/assets/svg/logo.svg"
+    ]
+  }
+]

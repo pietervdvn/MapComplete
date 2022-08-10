@@ -21,8 +21,10 @@
     + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_editcontributor,-_last_edit:contributor:uid,-_last_edit:changeset,-_last_edit:timestamp,-_version_number,-_backend)
     + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalkleft,-sidewalk:right,-generic_key:left:property,-generic_key:right:property)
     + [_geometry:type](#_geometrytype)
+    + [_level](#_level)
     + [distanceTo](#distanceto)
     + [overlapWith](#overlapwith)
+    + [enclosingFeatures](#enclosingfeatures)
     + [intersectionsWith](#intersectionswith)
     + [closest](#closest)
     + [closestn](#closestn)
@@ -33,7 +35,7 @@
 
 Metatags are extra tags available, in order to display more data or to give better questions.
 
-The are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.
+They are calculated automatically on every feature when the data arrives in the webbrowser. This document gives an overview of the available metatags.
 
 **Hint:** when using metatags, add the [query parameter](URL_Parameters.md) `debug=true` to the URL. This will include a box in the popup for features which shows all the properties of the object
 
@@ -168,6 +170,16 @@ Adds the geometry type as property. This is identical to the GoeJson geometry ty
 
 
 
+### _level 
+
+
+
+Extract the 'level'-tag into a normalized, ';'-separated value
+
+
+
+
+
  Calculating tags with Javascript 
 ----------------------------------
 
@@ -218,6 +230,7 @@ Some advanced functions are available on **feat** as well:
 
   - [distanceTo](#distanceTo)
   - [overlapWith](#overlapWith)
+  - [enclosingFeatures](#enclosingFeatures)
   - [intersectionsWith](#intersectionsWith)
   - [closest](#closest)
   - [closestn](#closestn)
@@ -235,12 +248,25 @@ Some advanced functions are available on **feat** as well:
 
 ### overlapWith 
 
- Gives a list of features from the specified layer which this feature (partly) overlaps with. A point which is embedded in the feature is detected as well.If the current feature is a point, all features that this point is embeded in are given.
+ Gives a list of features from the specified layer which this feature (partly) overlaps with. A point which is embedded in the feature is detected as well.
+If the current feature is a point, all features that this point is embeded in are given.
 
 The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point.
-The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list
+The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list.
 
-For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')` 
+For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')`
+
+Also see [enclosingFeatures](#enclosingFeatures) which can be used to get all objects which fully contain this feature 
+
+  0. ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)
+ 
+
+### enclosingFeatures 
+
+ Gives a list of all features in the specified layers which fully contain this object. Returned features will always be (multi)polygons. (LineStrings and Points from the other layers are ignored)
+
+The result is a list of features: `{feat: Polygon}[]`
+This function will never return the feature itself. 
 
   0. ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)
  
@@ -259,7 +285,7 @@ Points from other layers are ignored - even if the points are parts of the curre
 
 ### closest 
 
- Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet laoded) 
+ Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet loaded) 
 
   0. list of features or a layer name or '*' to get all features
  

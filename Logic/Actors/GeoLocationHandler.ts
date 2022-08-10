@@ -1,14 +1,14 @@
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import Svg from "../../Svg";
 import {LocalStorageSource} from "../Web/LocalStorageSource";
 import {VariableUiElement} from "../../UI/Base/VariableUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import {QueryParameters} from "../Web/QueryParameters";
-import FeatureSource from "../FeatureSource/FeatureSource";
 import {BBox} from "../BBox";
 import Constants from "../../Models/Constants";
+import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource";
 
-export interface GeoLocationPointProperties {
+export interface GeoLocationPointProperties  {
     id: "gps",
     "user:location": "yes",
     "date": string,
@@ -22,7 +22,7 @@ export interface GeoLocationPointProperties {
 
 export default class GeoLocationHandler extends VariableUiElement {
 
-    private readonly currentLocation?: FeatureSource
+    private readonly currentLocation?: SimpleFeatureSource
 
     /**
      * Wether or not the geolocation is active, aka the user requested the current location
@@ -43,7 +43,7 @@ export default class GeoLocationHandler extends VariableUiElement {
      * Literally: _currentGPSLocation.data != undefined
      * @private
      */
-    private readonly _hasLocation: UIEventSource<boolean>;
+    private readonly _hasLocation: Store<boolean>;
     private readonly _currentGPSLocation: UIEventSource<Coordinates>;
     /**
      * Kept in order to update the marker
@@ -70,7 +70,7 @@ export default class GeoLocationHandler extends VariableUiElement {
     constructor(
         state: {
             selectedElement: UIEventSource<any>;
-            currentUserLocation?: FeatureSource,
+            currentUserLocation?: SimpleFeatureSource,
             leafletMap: UIEventSource<any>,
             layoutToUse: LayoutConfig,
             featureSwitchGeolocation: UIEventSource<boolean>
@@ -236,12 +236,9 @@ export default class GeoLocationHandler extends VariableUiElement {
 
             self.currentLocation?.features?.setData([{feature, freshness: new Date()}])
 
-            const timeSinceRequest =
-                (new Date().getTime() - (self._lastUserRequest.data?.getTime() ?? 0)) / 1000;
-
             if (willFocus.data) {
                 console.log("Zooming to user location: willFocus is set")
-                willFocus.setData(false)
+                lastClick.setData(undefined);
                 autozoomDone = true;
                 self.MoveToCurrentLocation(16);
             } else if (self._isLocked.data) {

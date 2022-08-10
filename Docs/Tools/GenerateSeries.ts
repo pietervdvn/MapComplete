@@ -21,8 +21,9 @@ class StatsDownloader {
 
     public async DownloadStats() {
 
-        const currentYear = new Date().getFullYear()
-        const currentMonth = new Date().getMonth() + 1
+        const today = new Date();
+        const currentYear = today.getFullYear()
+        const currentMonth = today.getMonth() + 1
         for (let year = this.startYear; year <= currentYear; year++) {
             for (let month = 1; month <= 12; month++) {
 
@@ -31,33 +32,48 @@ class StatsDownloader {
                 }
 
                 if (year === currentYear && month > currentMonth) {
-                    continue
+                    break
                 }
 
-                const path = `${this._targetDirectory}/stats.${year}-${month}.json`
-                if (existsSync(path)) {
-                    if ((month == currentMonth && year == currentYear)) {
-                        console.log(`Force downloading ${year}-${month}`)
-                    } else {
-                        console.log(`Skipping ${year}-${month}: already exists`)
-                        continue;
+                const pathM = `${this._targetDirectory}/stats.${year}-${month}.json`
+                if (existsSync(pathM)) {
+                    continue;
+                }
+
+                for (let day = 1; day <= 31; day++) {
+                    if (year === currentYear && month === currentMonth && day === today.getDate() ) {
+                        break;
+                    }
+                    const path = `${this._targetDirectory}/stats.${year}-${month}-${(day < 10 ? "0" : "") + day}.json`
+                    if(existsSync(path)){
+                        console.log("Skipping ", path,": already exists")
+                        continue
+                    }
+                    try{
+                        
+                    await this.DownloadStatsForDay(year, month, day, path)
+                    }catch(e){
+                        console.error(e)
+                        console.error("Could not download "+year+"-"+month+"-"+day+"... Trying again")
+                        try{
+                            await this.DownloadStatsForDay(year, month, day, path)
+                        }catch(e){
+                            console.error("Could not download "+year+"-"+month+"-"+day+", skipping for now")
+                        }
                     }
                 }
-                await this.DownloadStatsForMonth(year, month, path)
             }
         }
 
     }
 
-    public async DownloadStatsForMonth(year: number, month: number, path: string) {
+    public async DownloadStatsForDay(year: number, month: number, day: number, path: string) {
 
         let page = 1;
         let allFeatures = []
-        let endDate = `${year}-${Utils.TwoDigits(month + 1)}-01`
-        if (month == 12) {
-            endDate = `${year + 1}-01-01`
-        }
-        let url = this.urlTemplate.replace("{start_date}", year + "-" + Utils.TwoDigits(month) + "-01")
+        let endDay = new Date(year,month - 1 /* Zero-indexed: 0 = january*/,day + 1);
+        let endDate = `${endDay.getFullYear()}-${Utils.TwoDigits(endDay.getMonth()+1)}-${Utils.TwoDigits(endDay.getDate())}`
+        let url = this.urlTemplate.replace("{start_date}", year + "-" + Utils.TwoDigits(month) + "-" + Utils.TwoDigits(day))
             .replace("{end_date}", endDate)
             .replace("{page}", "" + page)
 
@@ -77,7 +93,7 @@ class StatsDownloader {
 
 
         while (url) {
-            ScriptUtils.erasableLog(`Downloading stats for ${year}-${month}, page ${page} ${url}`)
+            ScriptUtils.erasableLog(`Downloading stats for ${year}-${month}-${day}, page ${page} ${url}`)
             const result = await Utils.downloadJson(url, headers)
             page++;
             allFeatures.push(...result.features)
@@ -182,8 +198,8 @@ class ChangesetDataTools {
         } catch (e) {
 
         }
-        if(cs.properties.metadata["answer"] > 100){
-            console.log("Lots of answers for https://osm.org/changeset/"+cs.id)
+        if (cs.properties.metadata["answer"] > 100) {
+            console.log("Lots of answers for https://osm.org/changeset/" + cs.id)
         }
         return cs
     }
@@ -212,7 +228,7 @@ function createGraph(
     title: string,
     ...options: PlotSpec[]): Promise<void> {
     console.log("Creating graph", title, "...")
-    const process = exec("python3 GenPlot.py \"graphs/" + title + "\"", ((error, stdout, stderr) => {
+    const process = exec("python3 Docs/Tools/GenPlot.py \"graphs/" + title + "\"", ((error, stdout, stderr) => {
         console.log("Python: ", stdout)
         if (error !== null) {
             console.error(error)
@@ -804,13 +820,14 @@ async function main(): Promise<void> {
         mkdirSync("graphs")
     }
 
+    const targetDir = "Docs/Tools/stats"
     if (process.argv.indexOf("--no-download") < 0) {
-        await new StatsDownloader("stats").DownloadStats()
+        await new StatsDownloader(targetDir).DownloadStats()
     }
-    const allPaths = readdirSync("stats")
+    const allPaths = readdirSync(targetDir)
         .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
     let allFeatures: ChangeSetData[] = [].concat(...allPaths
-        .map(path => JSON.parse(readFileSync("stats/" + path, "utf-8")).features
+        .map(path => JSON.parse(readFileSync("Docs/Tools/stats/" + path, "utf-8")).features
             .map(cs => ChangesetDataTools.cleanChangesetData(cs))));
     allFeatures = allFeatures.filter(f => f.properties.editor === null || f.properties.editor.toLowerCase().startsWith("mapcomplete"))
 
@@ -823,17 +840,21 @@ async function main(): Promise<void> {
     if (process.argv.indexOf("--no-graphs") >= 0) {
         return
     }
-    await createMiscGraphs(allFeatures, emptyCS)
+    const allFiles = readdirSync("Docs/Tools/stats").filter(p => p.endsWith(".json"))
+    writeFileSync("Docs/Tools/stats/file-overview.json", JSON.stringify(allFiles))
+    
+    /* 
+   await createMiscGraphs(allFeatures, emptyCS)
 
-    const grbOnly = allFeatures.filter(f => f.properties.metadata.theme === "grb")
-    allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "grb")
-    await createGraphs(allFeatures, "")
-    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
-    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
-    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
-    await createGraphs(allFeatures.filter(f => f.properties.metadata.theme === "toerisme_vlaanderen"), " met pin je punt", 0)
-    await createGraphs(grbOnly, " with the GRB import tool", 0)
-
+   const grbOnly = allFeatures.filter(f => f.properties.metadata.theme === "grb")
+   allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "grb")
+ await createGraphs(allFeatures, "")
+   await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
+   await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
+   await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
+   await createGraphs(allFeatures.filter(f => f.properties.metadata.theme === "toerisme_vlaanderen"), " met pin je punt", 0)
+   await createGraphs(grbOnly, " with the GRB import tool", 0)
+*/
 }
 
 main().then(_ => console.log("All done!"))

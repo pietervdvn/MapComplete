@@ -4,11 +4,17 @@
   "version": "1",
   "title": {
     "en": "Veterinarians, dog parks and other pet-amenities",
-    "da": "hundesteder"
+    "da": "hundesteder",
+    "de": "Tierärzte, Hundeparks und andere Einrichtungen für Haustiere",
+    "nl": "Dierenartsen, hondenloopzones en andere huisdiervriendelijke plaatsen",
+    "fr": "Vétérinaires, parcs à chiens et autres endroits pour chiens"
   },
   "description": {
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
-    "da": "Hundsteder"
+    "da": "Hundsteder",
+    "de": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
+    "nl": "Deze kaart helpt je op weg met je huisdier: dierenartsen, hondenloopzones, dierenwinkels, hondenvriendelijke restaurants, ...",
+    "fr": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc."
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,
@@ -22,7 +28,11 @@
         "id": "dogfoodb",
         "name": {
           "en": "Dog friendly eateries",
-          "da": "Hundevenlige madsteder"
+          "da": "Hundevenlige madsteder",
+          "de": "Hundefreundliche Restaurants",
+          "nb_NO": "Hundevennlige spisesteder",
+          "nl": "Hondvriendelijke eetgelegenheden",
+          "fr": "Restaurants acceptant les chiens"
         },
         "mapRendering": [
           {
@@ -62,13 +72,21 @@
       "override": {
         "id": "dogshop",
         "name": {
-          "en": "dog-friendly shop",
-          "da": "hundevenlig butik"
+          "en": "Dog-friendly shops",
+          "da": "hundevenlig butik",
+          "de": "Hundefreundliche Geschäfte",
+          "nb_NO": "Hundevennlige butikker",
+          "nl": "Hondvriendelijke winkels",
+          "fr": "Magasins acceptant les chiens"
         },
         "title": {
           "render": {
-            "en": "dog-friendly shop",
-            "da": "hundevenlig butik"
+            "en": "Dog-friendly shops",
+            "da": "hundevenlig butik",
+            "de": "Hundefreundliche Geschäfte",
+            "nb_NO": "Hundevennlige butikker",
+            "nl": "Hondvriendelijke winkels",
+            "fr": "Magasins acceptant les chiens"
           },
           "mappings": [
             {
@@ -87,7 +105,7 @@
             ],
             "icon": {
               "render": "./assets/themes/pets/dogshop.svg",
-              "mappings": [
+              "+mappings": [
                 {
                   "if": {
                     "and": [
@@ -156,15 +174,22 @@
           {
             "title": {
               "en": "dog-friendly shop",
-              "da": "EN hundevenlig butik"
+              "da": "EN hundevenlig butik",
+              "de": "hundefreundliches Geschäft",
+              "nb_NO": "hundevennlig butikk",
+              "nl": "Hondvriendelijke winkels",
+              "fr": "magasin acceptant les chiens"
             },
             "tags": [
               "dog=yes",
               "shop=yes"
             ],
             "description": {
-              "en": "A shop whery you can bring a dog almost everywhere",
-              "da": "En butik hvor man kan tage en hund med n&aelig;sten overalt"
+              "en": "A shop where you can bring a dog almost everywhere",
+              "da": "En butik hvor man kan tage en hund med n&aelig;sten overalt",
+              "de": "Ein Geschäft, in das man Hunde fast überall mitnehmen kann",
+              "nl": "Een winkel waar je je hond in bijna heel de winkel mag meenemen",
+              "fr": "Un magasin où vous pouvez amener votre chien presque partout"
             }
           }
         ],

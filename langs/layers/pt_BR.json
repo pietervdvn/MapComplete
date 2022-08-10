@@ -490,21 +490,12 @@
                 },
                 "question": "Esta loja vende bicicletas?"
             },
-            "bike_shop-email": {
-                "question": "Qual o endereço de email de {name}?"
-            },
             "bike_shop-is-bicycle_shop": {
                 "render": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas"
             },
             "bike_shop-name": {
                 "question": "Qual o nome desta loja de bicicletas?",
                 "render": "Esta loja de bicicletas se chama {name}"
-            },
-            "bike_shop-phone": {
-                "question": "Qual o número de telefone de {name}?"
-            },
-            "bike_shop-website": {
-                "question": "Qual o website de {name}?"
             }
         },
         "title": {
@@ -537,17 +528,6 @@
         },
         "title": {
             "render": "Bicicleta fantasma"
-        }
-    },
-    "shops": {
-        "tagRenderings": {
-            "shops-shop": {
-                "mappings": {
-                    "5": {
-                        "then": "Oficina Mecânica"
-                    }
-                }
-            }
         }
     }
 }

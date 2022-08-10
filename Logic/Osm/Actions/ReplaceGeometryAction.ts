@@ -11,7 +11,7 @@ import ChangeTagAction from "./ChangeTagAction";
 import {And} from "../../Tags/And";
 import {Utils} from "../../../Utils";
 import {OsmConnection} from "../OsmConnection";
-import {GeoJSONObject} from "@turf/turf";
+import {Feature} from "@turf/turf";
 import FeaturePipeline from "../../FeatureSource/FeaturePipeline";
 
 export default class ReplaceGeometryAction extends OsmChangeAction {
@@ -83,7 +83,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     // noinspection JSUnusedGlobalSymbols
     public async getPreview(): Promise<FeatureSource> {
         const {closestIds, allNodesById, detachedNodes, reprojectedNodes} = await this.GetClosestIds();
-        const preview: GeoJSONObject[] = closestIds.map((newId, i) => {
+        const preview: Feature[] = closestIds.map((newId, i) => {
             if (this.identicalTo[i] !== undefined) {
                 return undefined
             }
@@ -122,7 +122,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         reprojectedNodes.forEach(({newLat, newLon, nodeId}) => {
 
             const origNode = allNodesById.get(nodeId);
-            const feature = {
+            const feature : Feature =  {
                 type: "Feature",
                 properties: {
                     "move": "yes",
@@ -142,7 +142,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
         detachedNodes.forEach(({reason}, id) => {
             const origNode = allNodesById.get(id);
-            const feature = {
+            const feature : Feature = {
                 type: "Feature",
                 properties: {
                     "detach": "yes",
@@ -159,7 +159,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         })
 
 
-        return new StaticFeatureSource(Utils.NoNull(preview), false)
+        return StaticFeatureSource.fromGeojson(Utils.NoNull(preview))
 
     }
 

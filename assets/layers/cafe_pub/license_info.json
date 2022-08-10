@@ -10,6 +10,16 @@
     ]
   },
   {
+    "path": "nightclub.svg",
+    "license": "CC0",
+    "authors": [
+      "Osm Carto"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Nightclub-16.svg"
+    ]
+  },
+  {
     "path": "pub.svg",
     "license": "CC0",
     "authors": [

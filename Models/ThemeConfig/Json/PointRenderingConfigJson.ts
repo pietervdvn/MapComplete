@@ -1,5 +1,5 @@
 import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
-import {AndOrTagConfigJson} from "./TagConfigJson";
+import {TagConfigJson} from "./TagConfigJson";
 
 /**
  * The PointRenderingConfig gives all details onto how to render a single point of a feature.
@@ -39,7 +39,7 @@ export default interface PointRenderingConfigJson {
      * Note: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle
      */
     iconBadges?: { 
-        if: string | AndOrTagConfigJson, 
+        if: TagConfigJson, 
         /**
          * Badge to show
          * Type: icon
@@ -60,7 +60,7 @@ export default interface PointRenderingConfigJson {
     rotation?: string | TagRenderingConfigJson;
     /**
      * A HTML-fragment that is shown below the icon, for example:
-     * <div style="background: white; display: block">{name}</div>
+     * <div style="background: white">{name}</div>
      *
      * If the icon is undefined, then the label is shown in the center of the feature.
      * Note that, if the wayhandling hides the icon then no label is shown as well.

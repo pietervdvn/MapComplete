@@ -12,6 +12,7 @@ The following items can be easily reused in your layers
 1. [Builtin questions](#builtin-questions)
     + [questions](#questions)
     + [images](#images)
+    + [mapillary](#mapillary)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [wikipedia](#wikipedia)
@@ -31,12 +32,16 @@ The following items can be easily reused in your layers
     + [payment-options-advanced](#payment-options-advanced)
     + [last_edit](#last_edit)
     + [all_tags](#all_tags)
+    + [multilevels](#multilevels)
     + [level](#level)
+    + [smoking](#smoking)
+    + [induction-loop](#induction-loop)
     + [default](#default)
     + [defaults](#defaults)
     + [isOpen](#isopen)
     + [phonelink](#phonelink)
     + [emaillink](#emaillink)
+    + [smokingicon](#smokingicon)
     + [sharelink](#sharelink)
 
 
@@ -55,7 +60,17 @@ Read-only tagrendering
 
 
 
-{image_carousel()}{image_upload()}
+{image_carousel()}{image_upload()}{nearby_images(expandable)}
+
+Read-only tagrendering
+
+
+
+### mapillary 
+
+
+
+{mapillary()}
 
 Read-only tagrendering
 
@@ -91,6 +106,7 @@ What is the corresponding Wikidata entity?
 
 
 
+  - {wikipedia():max-height:25rem}
   - No Wikipedia page has been linked yet
 
 
@@ -135,7 +151,7 @@ What is the phone number of {title()}?
 
 
 
-<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>
+<a href='https://openstreetmap.org/{id}' target='_blank'><img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/></a>
 
 Read-only tagrendering
 
@@ -151,7 +167,7 @@ Read-only tagrendering
 
 
 
-<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' alt='WP'/></a>
+<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>
 
 Read-only tagrendering
 
@@ -310,6 +326,25 @@ Read-only tagrendering
 
 
 
+### multilevels 
+
+
+
+This elevator goes to floors {level}
+
+What levels does this elevator go to?
+
+
+
+  - Located underground
+  - Located on the ground floor
+  - Located on the ground floor
+  - Located on the first floor
+  - Located on the first basement level
+
+
+
+
 ### level 
 
 
@@ -325,6 +360,35 @@ On what level is this feature located?
   - Located on the ground floor
   - Located on the first floor
   - Located on the first basement level
+
+
+
+
+### smoking 
+
+
+
+Is smoking allowed at {title()}?
+
+
+
+  - Smoking is <b>allowed</b>
+  - Smoking is <b>not allowed</b>
+  - Smoking is <b>allowed outside</b>.
+
+
+
+
+### induction-loop 
+
+
+
+Does this place have an audio induction loop for people with reduced hearing?
+
+
+
+  - This place has an audio induction loop
+  - This place <b>does not</b> have an audio induction loop
 
 
 
@@ -365,7 +429,7 @@ Read-only tagrendering
 
 
 
-<a href='tel:{phone}'><img src='./assets/svg/phone.svg'/></a>
+<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/tagRenderings/phone.svg'/></a>
 
 Read-only tagrendering
 
@@ -375,9 +439,23 @@ Read-only tagrendering
 
 
 
-<a href='mailto:{email}'><img src='./assets/svg/send_email.svg'/></a>
+<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/tagRenderings/send_email.svg'/></a>
 
 Read-only tagrendering
+
+
+
+### smokingicon 
+
+
+
+Read-only tagrendering
+
+
+
+  - <img textmode='🚭️' alt='no-smoking' src='./assets/tagRenderings/no_smoking.svg'/>
+  - <img textmode='🚬️' alt='smoking-allowed' src='./assets/tagRenderings/smoking.svg'/>
+
 
 
 

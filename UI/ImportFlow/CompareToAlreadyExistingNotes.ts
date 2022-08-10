@@ -2,7 +2,7 @@ import Combine from "../Base/Combine";
 import {FlowStep} from "./FlowStep";
 import {BBox} from "../../Logic/BBox";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import CreateNoteImportLayer from "../../Models/ThemeConfig/Conversion/CreateNoteImportLayer";
 import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
 import GeoJsonSource from "../../Logic/FeatureSource/Sources/GeoJsonSource";
@@ -17,7 +17,6 @@ import * as import_candidate from "../../assets/layers/import_candidate/import_c
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
 import Title from "../Base/Title";
 import Loading from "../Base/Loading";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import * as known_layers from "../../assets/generated/known_layers.json"
 import {LayerConfigJson} from "../../Models/ThemeConfig/Json/LayerConfigJson";
@@ -28,8 +27,8 @@ import Translations from "../i18n/Translations";
  */
 export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{ bbox: BBox, layer: LayerConfig, features: any[], theme: string }> {
 
-    public IsValid: UIEventSource<boolean>
-    public Value: UIEventSource<{ bbox: BBox, layer: LayerConfig, features: any[], theme: string }>
+    public IsValid: Store<boolean>
+    public Value: Store<{ bbox: BBox, layer: LayerConfig, features: any[], theme: string }>
 
 
     constructor(state, params: { bbox: BBox, layer: LayerConfig, features: any[], theme: string }) {
@@ -94,7 +93,7 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             state,
             zoomToFeatures: true,
             leafletMap: comparisonMap.leafletMap,
-            features: new StaticFeatureSource(partitionedImportPoints.map(p => p.hasNearby), false),
+            features: StaticFeatureSource.fromGeojsonStore(partitionedImportPoints.map(p => p.hasNearby)),
             popup: (tags, layer) => new FeatureInfoBox(tags, layer, state)
         })
 
@@ -103,7 +102,8 @@ export class CompareToAlreadyExistingNotes extends Combine implements FlowStep<{
             new VariableUiElement(
                 alreadyOpenImportNotes.features.map(notesWithImport => {
                     if (allNotesWithinBbox.state.data !== undefined && allNotesWithinBbox.state.data["error"] !== undefined) {
-                        t.loadingFailed.Subs(allNotesWithinBbox.state.data)
+                        const error = allNotesWithinBbox.state.data["error"]
+                        t.loadingFailed.Subs({error})
                     }
                     if (allNotesWithinBbox.features.data === undefined || allNotesWithinBbox.features.data.length === 0) {
                         return new Loading(t.loading)

@@ -8,7 +8,8 @@
     "nl": "Winkel",
     "de": "Geschäfte",
     "eo": "Butiko",
-    "ca": "Botiga"
+    "ca": "Botiga",
+    "es": "Tienda"
   },
   "minzoom": 16,
   "source": {
@@ -27,7 +28,8 @@
       "nl": "Winkel",
       "de": "Geschäft",
       "eo": "Butiko",
-      "ca": "Botiga"
+      "ca": "Botiga",
+      "es": "Tienda"
     },
     "mappings": [
       {
@@ -44,7 +46,8 @@
           "de": "{name}",
           "eo": "{name}",
           "nl": "{name}",
-          "ca": "{name}"
+          "ca": "{name}",
+          "es": "{name}"
         }
       },
       {
@@ -61,7 +64,8 @@
           "de": "{shop}",
           "eo": "{shop}",
           "nl": "{shop}",
-          "ca": "{shop}"
+          "ca": "{shop}",
+          "es": "{shop}"
         }
       }
     ]
@@ -73,270 +77,130 @@
     "nl": "Een winkel",
     "ru": "Магазин",
     "de": "Ein Geschäft",
-    "eo": "Butiko"
+    "eo": "Butiko",
+    "hu": "Egy bolt",
+    "es": "Una tienda"
   },
   "tagRenderings": [
     "images",
     {
       "question": {
         "en": "What is the name of this shop?",
-        "fr": "Qu'est-ce que le nom de ce magasin?",
+        "fr": "Qu'est-ce que le nom de ce magasin ?",
         "ru": "Как называется этот магазин?",
         "ja": "このお店の名前は何ですか?",
         "nl": "Wat is de naam van deze winkel?",
-        "de": "Wie ist der Name dieses Geschäfts?"
+        "de": "Wie ist der Name dieses Geschäfts?",
+        "es": "¿Cual es el nombre de esta tienda?"
       },
-      "render": "This shop is called <i>{name}</i>",
+      "render": {
+        "en": "This shop is called <i>{name}</i>",
+        "de": "Der Name des Geschäfts lautet <i>{name}</i>",
+        "nl": "Deze zaak heet <i>{name}</i>"
+      },
       "freeform": {
         "key": "name"
       },
       "id": "shops-name"
     },
     {
-      "render": {
-        "en": "This shop sells {shop}",
-        "fr": "Ce magasin vends {shop}",
-        "ja": "こちらのお店では{shop}を販売しております",
-        "de": "Dieses Geschäft verkauft {shop}",
-        "eo": "Ĉi tiu butiko vendas {shop}",
-        "nl": "Deze winkel is van type \"{shop}\""
+      "builtin": "id_presets.shop_types",
+      "override": {
+        "question": {
+          "en": "What kind of shop is this?",
+          "nl": "Wat voor soort winkel is dit?",
+          "de": "Um was für ein Geschäft handelt es sich?",
+          "fr": "Quel genre de magasin est-ce?"
+        },
+        "render": {
+          "en": "This is a {shop}",
+          "de": "Das ist ein {shop}",
+          "fr": "C'est une {shop}",
+          "nl": "Dit is een {shop}"
+        },
+        "freeform": {
+          "key": "shop",
+          "addExtraTags": [
+            "fixme=freeform shop key used, to be reviewed"
+          ]
+        }
+      }
+    },
+    "opening_hours",
+    "website",
+    "email",
+    "phone",
+    "payment-options",
+    "level",
+    {
+      "id": "copyshop-print-sizes",
+      "condition": {
+        "or": [
+          "shop~.*copyshop.*",
+          "shop~.*stationary.*",
+          "service:print=yes"
+        ]
       },
       "question": {
-        "en": "What does this shop sell?",
-        "fr": "Que vends ce magasin ?",
-        "ja": "このお店では何を売っていますか?",
-        "ru": "Что продаётся в этом магазине?",
-        "de": "Was wird in diesem Geschäft verkauft?",
-        "eo": "Kion vendas ĉi tiu butiko?",
-        "nl": "Wat verkoopt deze winkel?"
+        "en": "What paper formats does this shop offer?",
+        "de": "Welche Papierformate bietet das Geschäft an?",
+        "fr": "Quels formats de papier cette boutique propose-t-elle ?",
+        "nl": "Op welke papiergroottes kan deze zaak printen?"
       },
-      "freeform": {
-        "key": "shop"
-      },
+      "multiAnswer": true,
       "mappings": [
         {
-          "if": {
-            "and": [
-              "shop=convenience"
-            ]
-          },
+          "if": "service:print:A4=yes",
           "then": {
-            "en": "Convenience store",
-            "fr": "Épicerie/superette",
-            "ja": "コンビニエンスストア",
-            "de": "Lebensmittelladen",
-            "nl": "Gemakswinkel"
-          }
+            "en": "This shop can print on papers of size A4",
+            "de": "Das Geschäft kann Unterlagen auf A4 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A4",
+            "nl": "Deze zaak kan printen op A4-formaat"
+          },
+          "ifnot": "service:print:A4=no"
         },
         {
-          "if": {
-            "and": [
-              "shop=supermarket"
-            ]
-          },
+          "if": "service:print:A3=yes",
           "then": {
-            "en": "Supermarket",
-            "fr": "Supermarché",
-            "ru": "Супермаркет",
-            "ja": "スーパーマーケット",
-            "nl": "Supermarkt",
-            "de": "Supermarkt",
-            "ca": "Supermercat"
-          }
+            "en": "This shop can print on papers of size A3",
+            "de": "Das Geschäft kann Unterlagen auf A3 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A3",
+            "nl": "Deze zaak kan printen op A3-formaat"
+          },
+          "ifnot": "service:print:A3=no"
         },
         {
-          "if": {
-            "and": [
-              "shop=clothes"
-            ]
-          },
+          "if": "service:print:A2=yes",
           "then": {
-            "en": "Clothing store",
-            "fr": "Magasin de vêtements",
-            "ru": "Магазин одежды",
-            "ja": "衣料品店",
-            "de": "Bekleidungsgeschäft",
-            "nl": "Kledingwinkel"
-          }
+            "en": "This shop can print on papers of size A2",
+            "de": "Das Geschäft kann Unterlagen auf A2 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A2",
+            "nl": "Deze zaak kan printen op A2-formaat"
+          },
+          "ifnot": "service:print:A2=no"
         },
         {
-          "if": {
-            "and": [
-              "shop=hairdresser"
-            ]
-          },
+          "if": "service:print:A1=yes",
           "then": {
-            "en": "Hairdresser",
-            "fr": "Coiffeur",
-            "ru": "Парикмахерская",
-            "ja": "理容師",
-            "nl": "Kapper",
-            "de": "Friseur",
-            "ca": "Perruqueria"
-          }
+            "en": "This shop can print on papers of size A1",
+            "de": "Das Geschäft kann Unterlagen auf A1 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A1",
+            "nl": "Deze zaak kan printen op A1-formaat"
+          },
+          "ifnot": "service:print:A1=no"
         },
         {
-          "if": {
-            "and": [
-              "shop=bakery"
-            ]
-          },
+          "if": "service:print:A0=yes",
           "then": {
-            "en": "Bakery",
-            "fr": "Boulangerie",
-            "ja": "ベーカリー",
-            "nl": "Bakkerij",
-            "de": "Bäckerei",
-            "eo": "Bakejo",
-            "ca": "Fleca"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "shop=car_repair"
-            ]
+            "en": "This shop can print on papers of size A0",
+            "de": "Das Geschäft kann Unterlagen auf A0 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A0",
+            "nl": "Deze zaak kan printen op A0-formaat"
           },
-          "then": {
-            "en": "Car repair (garage)",
-            "fr": "Garage de réparation automobile",
-            "ja": "自動車修理(ガレージ)",
-            "de": "Autowerkstatt",
-            "fi": "Autokorjaamo",
-            "hu": "Autószerelő",
-            "id": "Bengkel Mobil",
-            "it": "Autofficina",
-            "nb_NO": "Bilverksted",
-            "nl": "Autogarage",
-            "pl": "Warsztat samochodowy",
-            "pt": "Oficina de automóveis",
-            "pt_BR": "Oficina Mecânica",
-            "ru": "Автомастерская",
-            "sv": "Bilverkstad"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "shop=car"
-            ]
-          },
-          "then": {
-            "en": "Car dealer",
-            "fr": "Concessionnaire",
-            "ru": "Автосалон",
-            "ja": "自動車ディーラー",
-            "de": "Autohändler",
-            "nl": "Autodealer"
-          }
+          "ifnot": "service:print:A0=no"
         }
-      ],
-      "id": "shops-shop"
+      ]
     },
-    {
-      "render": {
-        "en": "<a href='tel:{phone}'>{phone}</a>",
-        "fr": "<a href='tel:{phone}'>{phone}</a>",
-        "ca": "<a href='tel:{phone}'>{phone}</a>",
-        "id": "<a href='tel:{phone}'>{phone}</a>",
-        "ru": "<a href='tel:{phone}'>{phone}</a>",
-        "ja": "<a href='tel:{phone}'>{phone}</a>",
-        "de": "<a href='tel:{phone}'>{phone}</a>",
-        "eo": "<a href='tel:{phone}'>{phone}</a>",
-        "nl": "<a href='tel:{phone}'>{phone}</a>"
-      },
-      "question": {
-        "en": "What is the phone number?",
-        "fr": "Quel est le numéro de téléphone ?",
-        "ja": "電話番号は何番ですか?",
-        "nl": "Wat is het telefoonnummer?",
-        "ru": "Какой телефон?",
-        "de": "Wie ist die Telefonnummer?",
-        "eo": "Kio estas la telefonnumero?"
-      },
-      "freeform": {
-        "key": "phone",
-        "type": "phone"
-      },
-      "id": "shops-phone"
-    },
-    {
-      "render": {
-        "en": "<a href='{website}'>{website}</a>",
-        "fr": "<a href='{website}'>{website}</a>",
-        "ca": "<a href='{website}'>{website}</a>",
-        "id": "<a href='{website}'>{website}</a>",
-        "ru": "<a href='{website}'>{website}</a>",
-        "ja": "<a href='{website}'>{website}</a>",
-        "de": "<a href='{website}'>{website}</a>",
-        "eo": "<a href='{website}'>{website}</a>",
-        "nl": "<a href='{website}'>{website}</a>"
-      },
-      "question": {
-        "en": "What is the website of this shop?",
-        "fr": "Quel est le site internet de ce magasin ?",
-        "ja": "このお店のホームページは何ですか?",
-        "nl": "Wat is de website van deze winkel?",
-        "ru": "Какой веб-сайт у этого магазина?",
-        "de": "Wie lautet die Webseite dieses Geschäfts?"
-      },
-      "freeform": {
-        "key": "website",
-        "type": "url"
-      },
-      "id": "shops-website"
-    },
-    {
-      "render": {
-        "en": "<a href='mailto:{email}'>{email}</a>",
-        "fr": "<a href='mailto:{email}'>{email}</a>",
-        "id": "<a href='mailto:{email}'>{email}</a>",
-        "ru": "<a href='mailto:{email}'>{email}</a>",
-        "ja": "<a href='mailto:{email}'>{email}</a>",
-        "eo": "<a href='mailto:{email}'>{email}</a>",
-        "nl": "<a href='mailto:{email}'>{email}</a>",
-        "de": "<a href='mailto:{email}'>{email}</a>"
-      },
-      "question": {
-        "en": "What is the email address of this shop?",
-        "fr": "Quelle est l'adresse électronique de ce magasin ?",
-        "ja": "このお店のメールアドレスは何ですか?",
-        "ru": "Каков адрес электронной почты этого магазина?",
-        "nl": "Wat is het e-mailadres van deze winkel?",
-        "de": "Wie ist die Email-Adresse dieses Geschäfts?",
-        "eo": "Kio estas la retpoŝta adreso de ĉi tiu butiko?"
-      },
-      "freeform": {
-        "key": "email",
-        "type": "email"
-      },
-      "id": "shops-email"
-    },
-    {
-      "render": {
-        "en": "{opening_hours_table(opening_hours)}",
-        "fr": "{opening_hours_table(opening_hours)}",
-        "ru": "{opening_hours_table(opening_hours)}",
-        "ja": "{opening_hours_table(opening_hours)}",
-        "nl": "{opening_hours_table(opening_hours)}",
-        "ca": "{opening_hours_table(opening_hours)}",
-        "de": "{opening_hours_table(opening_hours)}"
-      },
-      "question": {
-        "en": "What are the opening hours of this shop?",
-        "fr": "Quels sont les horaires d'ouverture de ce magasin ?",
-        "ja": "この店の営業時間は何時から何時までですか?",
-        "nl": "Wat zijn de openingsuren van deze winkel?",
-        "ru": "Каковы часы работы этого магазина?",
-        "de": "Wie sind die Öffnungszeiten dieses Geschäfts?"
-      },
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "id": "shops-opening_hours"
-    },
-    "payment-options",
     "questions",
     "reviews"
   ],
@@ -351,8 +215,9 @@
         "ru": "Магазин",
         "ja": "店",
         "nl": "een winkel",
-        "de": "eine geschäft",
-        "eo": "Butiko"
+        "de": "ein Geschäft",
+        "eo": "Butiko",
+        "es": "una tienda"
       },
       "description": {
         "en": "Add a new shop",
@@ -361,7 +226,8 @@
         "ja": "新しい店を追加する",
         "nl": "Voeg een nieuwe winkel toe",
         "de": "Ein neues Geschäft hinzufügen",
-        "eo": "Enmeti novan butikon"
+        "eo": "Enmeti novan butikon",
+        "es": "Añadir una nueva tienda"
       }
     }
   ],
@@ -377,7 +243,9 @@
         "explanation": {
           "nl": "{title()} is permanent gestopt",
           "en": "{title()} has closed down permanently",
-          "de": "{title()} wurde dauerhaft geschlossen"
+          "de": "{title()} wurde dauerhaft geschlossen",
+          "es": "{title()} ha cerrado permanentemente",
+          "fr": "{title()} a fermé définitivement"
         },
         "changesetMessage": "shop_closed"
       }
@@ -387,7 +255,10 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/themes/shops/shop.svg"
+        "builtin": "id_presets.shop_rendering",
+        "override": {
+          "render": "./assets/layers/id_presets/maki-shop.svg"
+        }
       },
       "iconBadges": [
         {
@@ -431,11 +302,13 @@
               "type": "string"
             }
           ],
-          "osmTags": "shop~^.*{search}.*$",
+          "osmTags": "shop~i~.*{search}.*",
           "question": {
             "en": "Only show shops selling {search}",
             "de": "Nur Geschäfte, die {search} verkaufen",
-            "nl": "Toon enkel winkels die {search} verkopen"
+            "nl": "Toon enkel winkels die {search} verkopen",
+            "es": "Solo mostrar tiendas que vendan {search}",
+            "fr": "N'afficher que les magasins vendant {search}"
           }
         }
       ]
@@ -450,11 +323,13 @@
               "type": "string"
             }
           ],
-          "osmTags": "name~^.*{search}.*$",
+          "osmTags": "name~i~.*{search}.*",
           "question": {
             "en": "Only show shops with name {search}",
             "de": "Nur Geschäfte mit dem Namen {search} anzeigen",
-            "nl": "Toon enkel winkels met naam {search}"
+            "nl": "Toon enkel winkels met naam {search}",
+            "es": "Solo mostrar tiendas con nombre {search}",
+            "fr": "N'afficher que les magasins portant le nom {search}"
           }
         }
       ]
@@ -465,7 +340,11 @@
         {
           "osmTags": "payment:cash=yes",
           "question": {
-            "en": "Accepts cash"
+            "en": "Accepts cash",
+            "de": "Akzeptiert Bargeld",
+            "nl": "Accepteert cash",
+            "es": "Acepta efectivo",
+            "fr": "Accepte les espèces"
           }
         }
       ]
@@ -476,7 +355,11 @@
         {
           "osmTags": "payment:cards=yes",
           "question": {
-            "en": "Accepts payment cards"
+            "en": "Accepts payment cards",
+            "de": "Akzeptiert Kartenzahlung",
+            "nl": "Accepteert betaalkaarten",
+            "es": "Acepta el pago por tarjeta",
+            "fr": "Accepte les cartes de paiement"
           }
         }
       ]

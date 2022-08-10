@@ -20,17 +20,6 @@ The style for the clustering in all themes. Enable `debug=true` to peak into clu
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 
@@ -58,7 +47,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+Shows a table with all the tags of the feature
+
+This tagrendering has no question and is thus read-only
 
  
 

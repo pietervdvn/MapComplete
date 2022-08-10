@@ -1,0 +1,55 @@
+{
+  "id": "transit",
+  "maintainer": "Robin van der Linde",
+  "version": "20220406",
+  "title": {
+    "en": "Bus routes",
+    "de": "Buslinien",
+    "fr": "Lignes de bus"
+  },
+  "description": {
+    "en": "Plan your trip with the help of the public transport system.",
+    "de": "Planen Sie Ihre Reise mit Hilfe von öffentlichen Verkehrsmitteln.",
+    "fr": "Planifier votre itinéraire avec le système de transports en commun."
+  },
+  "icon": "./assets/layers/transit_stops/bus_stop.svg",
+  "startZoom": 20,
+  "startLat": 53.21333,
+  "startLon": 6.56963,
+  "layers": [
+    "transit_stops",
+    "transit_routes",
+    {
+      "builtin": "bike_parking",
+      "override": {
+        "minzoom": 19,
+        "minzoomVisible": 19
+      }
+    },
+    {
+      "builtin": "parking",
+      "override": {
+        "minzoom": 19,
+        "minzoomVisible": 19
+      }
+    },
+    {
+      "builtin": "shelter",
+      "override": {
+        "minzoom": 19,
+        "minzoomVisible": 19,
+        "source": {
+          "osmTags": {
+            "and": [
+              "amenity=shelter",
+              "shelter_type=public_transport"
+            ]
+          }
+        }
+      },
+      "hideTagRenderingsWithLabels": [
+        "shelter-type"
+      ]
+    }
+  ]
+}

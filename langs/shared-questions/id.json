@@ -41,7 +41,12 @@
                     "then": "Terletak di lantai basement pertama"
                 }
             },
-            "question": "Pada tingkat apa fitur ini diletakkan?"
+            "question": "Pada tingkat apa fitur ini diletakkan?",
+            "render": "Terletak di lantai {level}"
+        },
+        "opening_hours": {
+            "question": "Kapan jam buka {title()}?",
+            "render": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
             "mappings": {
@@ -59,6 +64,30 @@
         },
         "website": {
             "question": "Apa situs web dari {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "1": {
+                    "then": "Tempat ini mudah dijangkau dengan kursi roda"
+                },
+                "2": {
+                    "then": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah"
+                }
+            }
+        },
+        "wikipedia": {
+            "mappings": {
+                "1": {
+                    "then": "Belum ada halaman Wikipedia yang ditautkan"
+                }
+            }
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Tidak ditautkan dengan Wikipedia"
+                }
+            }
         }
     }
 }

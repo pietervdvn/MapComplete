@@ -10,7 +10,9 @@
         "cannotBeDeleted": "Dit object kan niet van de kaart verwijderd worden",
         "delete": "Verwijder",
         "explanations": {
-            "hardDelete": "Dit punt zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken.",
+            "hardDelete": "Dit object zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken.",
+            "retagNoOtherThemes": "Dit object zal anders aangeduid worden en niet meer getoond worden in deze applicatie",
+            "retagOtherThemes": "Dit object zal aangepast worden en zichtbaar zijn in {otherThemes}",
             "selectReason": "Gelieve aan te duiden waarom dit punt verwijderd moet worden",
             "softDelete": "Dit punt zal aangepast worden en zal in deze applicatie niet meer getoond worden. <span class=\"subtle\">{reason}</span>"
         },
@@ -18,8 +20,8 @@
         "isntAPoint": "Enkel punten kunnen verwijderd worden, het geselecteerde object is een lijn, een oppervlakte of een relatie.",
         "loading": "Aan het bekijken of dit object veilig verwijderd kan worden.",
         "loginToDelete": "Je moet aangemeld zijn om een object van de kaart te verwijderen",
-        "notEnoughExperience": "Dit punt is door iemand anders gemaakt.",
-        "onlyEditedByLoggedInUser": "Dit punt is enkel door jezelf bewerkt, je kan dit veilig verwijderen.",
+        "notEnoughExperience": "Dit object is door iemand anders gemaakt.",
+        "onlyEditedByLoggedInUser": "Dit object is enkel door jezelf bewerkt, je kan dit veilig verwijderen.",
         "partOfOthers": "Dit punt maakt deel uit van een lijn, oppervlakte of een relatie en kan niet verwijderd worden.",
         "readMessages": "Je hebt ongelezen berichten. Je moet deze lezen voordat je een punt verwijderd, een andere bijdrager heeft misschien feedback",
         "reasons": {
@@ -43,7 +45,7 @@
         "add": {
             "addNew": "Voeg {category} toe",
             "addNewMapLabel": "Klik hier om een item toe te voegen",
-            "confirmButton": "Voeg een {category} toe<br/><div class='alert'>Je toevoeging is voor iedereen zichtbaar</div>",
+            "confirmButton": "Voeg een {category} toe<br><div class=\"alert\">Je toevoeging is voor iedereen zichtbaar</div>",
             "confirmIntro": "<h3>Voeg een {title} toe?</h3>Het punt dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
             "disableFilters": "Zet alle filters af",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
@@ -54,6 +56,7 @@
                 "importTags": "Het element zal deze tags krijgen: {tags}",
                 "officialThemesOnly": "In onofficiële thema's is de importeerknop uitgeschakeld om ongelukjes te vermijden",
                 "wrongType": "Dit object is geen punt of lijn, en kan daarom niet geïmporteerd worden",
+                "wrongTypeToConflate": "Dit element is geen punt of weg en kan dus niet samengevoegd worden",
                 "zoomInMore": "Zoom verder in om dit object af te handelen"
             },
             "importTags": "Het object zal deze tags krijgen: {tags}",
@@ -80,6 +83,9 @@
             "donate": "Geef MapComplete financiële steun",
             "editId": "Hier bewerken met de OpenStreetMap online editor",
             "editJosm": "Hier bewerken met JOSM",
+            "followBridge": "De Mastodon- en Twitter-accounts worden gesynchronizeerd",
+            "followOnMastodon": "Volg MapComplete op Mastodon",
+            "followOnTwitter": "Volg MapComplete op Twitter",
             "iconAttribution": {
                 "title": "Iconen en afbeeldingen"
             },
@@ -87,6 +93,7 @@
             "josmOpened": "JOSM is geopend",
             "mapContributionsBy": "De huidige data is bijgedragen door {contributors}",
             "mapContributionsByAndHidden": "De zichtbare data heeft bijdragen van {contributors} en {hiddenCount} andere bijdragers",
+            "mapillaryHelp": "<b>Mapillary</b> is een online dienst waar straatbeelden onder een vrije licentie gedeeld worden. Deze beelden mogen gebruikt worden om OpenStreetMap te verbeteren.",
             "openIssueTracker": "Geef een fout in de software door",
             "openMapillary": "Open Mapillary op deze locatie",
             "openOsmcha": "Bekijk de laatste bijdragen gemaakt met {theme}",
@@ -106,7 +113,7 @@
             "downloadAsSvgHelper": "Compatibel met Inkscape of Adobe Illustrator; deze data moeten nog verder verwerkt worden…  ",
             "downloadCSV": "Download de zichtbare data als CSV",
             "downloadCSVHelper": "Compatibel met LibreOffice Calc, Excel, …",
-            "downloadFeatureAsGeojson": "Downloaden als GeoJson bestand",
+            "downloadFeatureAsGeojson": "Downloaden als GeoJSON bestand",
             "downloadFeatureAsGpx": "Downloaden als GPX-bestand",
             "downloadGeoJsonHelper": "Compatibel met QGIS, ArcGIS, ESRI, …",
             "downloadGeojson": "Download de zichtbare data als GeoJSON",
@@ -119,6 +126,7 @@
             "title": "Download de zichtbare data",
             "uploadGpx": "Track uploaden naar OpenStreetMap"
         },
+        "error": "Er ging iets mis",
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
         "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande punten te beantwoorden vooraleer zelf punten toe te voegen.",
@@ -132,8 +140,8 @@
             "title": "Selecteer lagen",
             "zoomInToSeeThisLayer": "Vergroot de kaart om deze laag te zien"
         },
-        "loading": "Aan het laden...",
-        "loadingTheme": "{theme} wordt geladen...",
+        "loading": "Aan het laden…",
+        "loadingTheme": "{theme} wordt geladen…",
         "loginFailed": "Het inloggen op OpenStreetMap is gefaald",
         "loginOnlyNeededToEdit": "als je de kaart wilt aanpassen",
         "loginToStart": "Meld je aan om deze vraag te beantwoorden",
@@ -141,16 +149,20 @@
         "logout": "Afmelden",
         "morescreen": {
             "createYourOwnTheme": "Maak je eigen MapComplete-kaart",
-            "hiddenExplanation": "Deze thema's zijn enkel zichtbaar indien je de link kent. Je hebt {hidden_discovered} van {total_hidden} verborgen thema's ontdekt",
-            "intro": "<h3>Meer thematische kaarten</h3>Vind je het leuk om geodata te verzamelen? <br/> Hier vind je meer kaartthemas.",
+            "hiddenExplanation": "Deze thema's zijn enkel zichtbaar indien je de link kent. Je hebt {hidden_discovered} van {total_hidden} verborgen thema's ontdekt.",
+            "intro": "<h3>Meer thematische kaarten?</h3>Vind je het leuk om geodata te verzamelen? <br> Hier vind je meer kaartthema's.",
+            "noMatchingThemes": "Geen enkel thema beantwoord je zoekopdracht",
+            "noSearch": "Toon alle thema's",
             "previouslyHiddenTitle": "Eerder bezochte verborgen themas",
-            "requestATheme": "Wil je een eigen kaartthema, vraag dit in de issue tracker.",
-            "streetcomplete": "Een andere, gelijkaardige Android-applicatie is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
+            "requestATheme": "Als je een eigen kaartthema wil, vraag dit dan in de issue tracker.",
+            "searchForATheme": "Zoek een thema",
+            "streetcomplete": "Een andere, gelijkaardige Android applicatie is <a href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" class=\"underline hover:text-blue-800\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "De naam van dit {category} is $$$",
         "next": "Volgende",
         "noNameCategory": "{category} zonder naam",
         "noTagsSelected": "Geen tags geselecteerd",
+        "notValid": "Kies een geldige waarde om verder te gaan",
         "number": "getal",
         "oneSkippedQuestion": "Een vraag werd overgeslaan",
         "openStreetMapIntro": "<h3>Een open kaart</h3><p>Zou het niet fantastisch zijn als er een open kaart zou zijn die door iedereen aangepast én gebruikt kan worden? Een kaart waar iedereen zijn interesses aan zou kunnen toevoegen? Dan zouden er geen duizend-en-één verschillende kleine kaartjes, websites, ... meer nodig zijn</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> is deze open kaart. Je mag de kaartdata gratis gebruiken (mits <a href=\"https://osm.org/copyright\" target=\"_blank\">bronvermelding en herpublicatie van aanpassingen</a>). Daarenboven mag je de kaart ook gratis aanpassen als je een account maakt. Ook deze website is gebaseerd op OpenStreetMap. Als je hier een vraag beantwoord, gaat het antwoord daar ook naartoe</p><p>Tenslotte zijn er reeds vele gebruikers van OpenStreetMap. Denk maar <a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, verschillende gespecialiseerde routeplanners, de achtergrondkaarten op Facebook, Instagram,...<br/>;Zelfs Apple Maps en Bing-Maps gebruiken OpenStreetMap in hun kaarten!</p><p></p><p>Kortom, als je hier een punt toevoegd of een vraag beantwoord, zal dat na een tijdje ook in al dié applicaties te zien zijn.</p>",
@@ -184,7 +196,7 @@
             "emailOf": "Wat is het email-adres van {category}?",
             "phoneNumberIs": "Het telefoonnummer van {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "Wat is het telefoonnummer van {category}?",
-            "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
+            "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Wat is de website van {category}?"
         },
         "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
@@ -193,14 +205,16 @@
         "save": "Opslaan",
         "screenToSmall": "Open {theme} in een nieuw venster",
         "search": {
-            "error": "Niet gelukt...",
-            "nothing": "Niet gevonden...",
+            "error": "Niet gelukt…",
+            "nothing": "Niets gevonden…",
             "search": "Zoek naar een locatie",
-            "searching": "Aan het zoeken..."
+            "searching": "Aan het zoeken…"
         },
         "sharescreen": {
             "addToHomeScreen": "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel",
             "copiedToClipboard": "Link gekopieerd naar klembord",
+            "downloadCustomTheme": "Download de instellingen van dit thema",
+            "downloadCustomThemeHelp": "Een ervaring bijdrager kan op basis van dit bestand je thema verder verbeteren",
             "editThemeDescription": "Pas vragen aan of voeg vragen toe aan dit kaartthema",
             "editThisTheme": "Pas dit thema aan",
             "embedIntro": "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller",
@@ -239,11 +253,18 @@
             "wednesday": "Woensdag"
         },
         "welcomeBack": "Je bent aangemeld. Welkom terug!",
+        "welcomeExplanation": {
+            "addNew": "Klik op de kaart om een nieuw punt toe te voegen.",
+            "browseMoreMaps": "Ontdek meer kaarten",
+            "browseOtherThemesIntro": "Er zijn diverse thematische kaarten op MapComplete",
+            "general": "Op deze kaart kan je <i>interessepunten</i> bekijken, bewerken en toevoegen. Zoom in om de interessepunten te zien, duid eentje aan om alle informatie te zien en te bewerken. Alle informatie komt van OpenStreetMap die gratis hergebruikt mag worden."
+        },
         "wikipedia": {
             "createNewWikidata": "Maak een nieuw Wikidata-item",
             "doSearch": "Zoek hierboven om resultaten te zien",
             "failed": "Het Wikipedia-artikel inladen is mislukt",
-            "loading": "Wikipedia aan het laden...",
+            "fromWikipedia": "Uit Wikipedia, de vrije encyclopedie",
+            "loading": "Wikipedia aan het laden…",
             "noResults": "Geen relevante items gevonden voor <i>{search}</i>",
             "noWikipediaPage": "Dit Wikidata-item heeft nog geen overeenkomstig Wikipedia-artikel",
             "previewbox": {
@@ -265,6 +286,20 @@
         "doDelete": "Verwijder afbeelding",
         "dontDelete": "Annuleren",
         "isDeleted": "Verwijderd",
+        "nearbyPictures": {
+            "allFiltered": "Geen enkele afbeelding voldoet aan je filter",
+            "browseNearby": "Bekijk afbeeldingen van deze buurt…",
+            "confirm": "De geselecteerde afbeelding toont {title()}",
+            "hasMatchingPicture": "Is er een afbeelding die dit object toont? Selecteer deze hieronder:",
+            "loadMore": "Toon meer afbeeldingen",
+            "loading": "Afbeeldingen worden geladen…",
+            "noImageSelected": "Selecteer een afbeelding om deze te linken",
+            "nothingFound": "Geen afbeeldingen van deze buurt gevonden…",
+            "onlyTowards": "Toon enkel afbeeldingen die naar dit object kijken",
+            "removeFilters": "Verwijder alle filters",
+            "title": "Afbeeldingen van de buurt",
+            "withinRadius": "Toon enkel afbeeldingen die gemaakt zijn binnen {radius} meter van dit object"
+        },
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
         "respectPrivacy": "Fotografeer geen mensen of nummerplaten. Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
         "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
@@ -276,18 +311,79 @@
         "willBePublished": "Jouw foto wordt gepubliceerd "
     },
     "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt"
+        "askMetadata": {
+            "downloadGeojson": "Download GeoJSON",
+            "giveDescription": "Gelieve een korte beschrijving te geven aan iemand die deze kaartnota ziet. Een goede kaartnota beschrijft wat een bijdrager moet doen, bijvoorbeeld: <i>Hier staat mogelijks een zitbank. Ben je in de buurt, zou je dan willen nakijken of de bank bestaat</i> (Een link naar het relevante MapComplete-thema wordt automatisch toegevoegd)",
+            "giveSource": "Wat is de bron van deze data? (Indien een object het attribuut &lt;code&gt;source&lt;code&gt; heeft, zal dit attribuut gebruikt worden)",
+            "giveWikilink": "Op welke wikipagina staat meer informatie over deze data-import?",
+            "intro": "Gelieve extra informatie te geven over deze {count} kaartnota's.",
+            "orDownload": "Je kan ook de dataset download om te importeren met een andere tool zoals JOSM",
+            "shouldBeOsmWikilink": "Dit hoort een link naar een pagina op wiki.opentreetmap.org te zijn",
+            "shouldBeUrl": "Geen geldige URL",
+            "shouldNotBeHomepage": "Foeifoei, zo makkelijk kom je er niet vanaf! Een link naar de homepagina van de wiki mag niet, dit moet een wikipagina zijn die je import documenteert.",
+            "title": "Metadata instellen"
         },
+        "compareToAlreadyExistingNotes": {
+            "completelyImported": "Alle voorgestelde punten hebben reeds een importeer-kaartnota.",
+            "loading": "Kaarnota's aan het ophalen…",
+            "loadingFailed": "Kaartnota's ophalen is mislukt door {error}",
+            "mapExplanation": "De rode elementen op de volgende kaart zijn de datapunten uit je dataset die <b>{length}</b> elementen bevat.",
+            "noPreviousNotesFound": "Geen eerdere importeer-kaartnota's gevonden",
+            "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt",
+            "someNearby": "{hasNearby} punten hebben reeds een bestaande importeer-kaartnota op minder dan {distance} meter",
+            "title": "Vergelijking met bestaande kaartnota's",
+            "titleLong": "Vergelijking met reeds bestaande importeer-kaartnota's",
+            "wontBeImported": "Deze datapunten zullen <i>niet</i> geimporteerd worden en zijn hieronder in het rood aangeduid"
+        },
+        "confirmProcess": {
+            "contactedCommunity": "Ik heb de (lokale) OpenStreetMap-community gecontacteerd en heb goedkeuring voor deze import",
+            "licenseIsCompatible": "De licentie van de te importeren data  is compatibel met OpenStreetMap: ze staat commercieel hergebruik toe en heeft geen attributie nodig",
+            "readImportGuidelines": "Ik heb de import-guidelines op de OSM-wiki gelezen",
+            "title": "Licentie en community",
+            "titleLong": "Heb je het importeer-proces gevolgd?",
+            "wikipageIsMade": "Deze import is gedocumenteerd op de OSM-wiki (de link wordt in de volgende stap gevraagd)"
+        },
+        "conflationChecker": {
+            "cacheExpired": "Cache is verouderd",
+            "downloadOverpassData": "Download de data van Overpass als GeoJSON",
+            "importCandidatesCount": "De {count} rode elementen op de onderstaande kaart zijn alle importeer-kandidaten.",
+            "loadedDataAge": "Ingeladen data komt van de cache en is {age} oud",
+            "mapShowingNearbyIntro": "De onderstaande kaart toont te importeren objecten met een OSM-object in de buurt ",
+            "nearbyWarn": "De {count} rode elementen op de onderstaande kaart zullen <b>niet</b> geimporteerd worden",
+            "nothingLoaded": "Geen elementen gevonden in OpenStreetMap die in de huidige laag {name} zitten",
+            "osmLoaded": "{count} elementen werden uit OpenStreetMap ingeladen die laag in laag <b>{name}</b> zitten.",
+            "reloadTheCache": "Verwijder de cache en bevraag Overpass opnieuw",
+            "setRangeToZero": "Set de radius op 0 of 1 indien je toch alle punten wenst te importeren",
+            "states": {
+                "error": "Kon geen recente data ophalen van Overpass door {error}",
+                "idle": "Cache bevragen…",
+                "running": "Overpass wordt bevraagd…",
+                "unexpected": "Onverwachte toestand {state}"
+            },
+            "title": "Vergelijking met bestaande data",
+            "titleLive": "Data van OSM",
+            "titleNearby": "Objecten in de buurt",
+            "zoomIn": "Het huidige zoomniveau is {current}"
+        },
+        "createNotes": {
+            "creating": "<b>{count}</b> van {total} kaartnota's werden gemaakt",
+            "done": "Alle {count} kaartnota's zijn gemaakt!",
+            "loading": "Aan het laden…",
+            "openImportViewer": "Bekijk de voortgang van je kaartnotas in de &lt;i&gt;import_viewer&lt;/i&gt;",
+            "title": "Kaartnota's maken"
+        },
+        "gotoImportViewer": "Bekijk je vorige importeer-kaartnota's",
         "introduction": {
             "description": "De importeer-helper converteert een externe dataset in OSM-kaartnotas. De externe data moet overeenkomen met een bestaande MapComplete-laag. Voor elk item wordt er een kaartnota gemaakt. Deze notas worden dan samen met de relevante POI getoond en kunnen dan (via MapComplete) snel en eenvoudig toegevoegd worden.",
-            "importFormat": "Een kaartnota moet het volgende formaat hebben om gedetecteerd te worden binnen een laag: <br><div class=\"literal-code\">[Een introductietekst]<br>https://mapcomplete.osm.be/[themename].html?[parameters waaronder lon en lat]#import<br>[alle tags van het te importeren object] </div>"
+            "importFormat": "Een kaartnota moet het volgende formaat hebben om gedetecteerd te worden binnen een laag: <br><div class=\"literal-code\">[Een introductietekst]<br>https://mapcomplete.osm.be/[themename].html?[parameters waaronder lon en lat]#import<br>[alle tags van het te importeren object] </div>",
+            "title": "Inleiding"
         },
         "login": {
             "lockNotice": "Deze pagina is afgeschermd. Je hebt minstens {importHelperUnlock} changesets nodig voor je deze pagina mag gebruiken.",
             "loggedInWith": "Je bent momenteel aangemeld als <b>{name}</b> and maakte {csCount} eerdere wijzigingen",
             "loginIsCorrect": "<b>{name}</b> is de correcte account om de import-nota's mee te maken.",
             "loginRequired": "Je moet ingelogd zijn om verder te gaan",
+            "title": "Aanmelden",
             "userAccountTitle": "Selecteer een account"
         },
         "mapPreview": {
@@ -306,7 +402,8 @@
             "allAttributesSame": "Alle kaart-objecten om te importeren hebben deze tag",
             "inspectDataTitle": "Bekijk de data van {count} te importeren objecten",
             "inspectLooksCorrect": "Deze waardes zien er correct uit",
-            "someHaveSame": "{count} te importeren objecten hebben dit attribuut, dit is {percentage}% van het totaal"
+            "someHaveSame": "{count} te importeren objecten hebben dit attribuut, dit is {percentage}% van het totaal",
+            "title": "Bekijk attributen"
         },
         "selectFile": {
             "description": "Selecteer een .csv of .geojson-bestand",
@@ -322,19 +419,32 @@
             "noFilesLoaded": "Geen bestand ingeladen op dit moment",
             "title": "Selecteer bestand"
         },
+        "selectTheme": {
+            "displayNonMatchingCount": "{length} objecten komen niet overeen met een preset",
+            "intro": "Elk van de volgende kaartthema's zal deze importeer-kaartnota's tonen. Echter, de kaartnota op OpenStreetMap kan slechts een link naar één thema tonen. Kies hier naar welk kaartthema de kaartnota's dienen te verwijzen",
+            "misMatch": "Attribuut {k} heeft waarde {properties} hoewel {v} werd verwacht",
+            "missing": "{k}={v} werd verwacht, maar is afwezig",
+            "needsTags": "{title} heeft tags {tags} nodig",
+            "noMatchingPresets": "Dit thema heeft geen presets om nieuwe punten toe te voegen. Ook imports zullen hier dus niet werken.",
+            "notApplicable": "Preset {title} is niet van toepassing:",
+            "title": "Selecteer een thema",
+            "unmatchedTitle": "De volgende elementen voldoen aan geen enkele preset"
+        },
+        "testMode": "Testmode - nota's zullen niet gemaakt worden",
         "title": "Importeer-helper"
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"
     },
     "importLayer": {
-        "alreadyMapped": "Er staat hier reeds een {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
+        "alreadyMapped": "Er staat hier reeds {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
         "description": "Deze laag toont kaart-nota's die wijzen op een {title}",
         "importButton": "import_button({layerId}, _tags, Ik heb hier een {title} gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class='thanks'>Dit punt is afgehandeld. Bedankt om mee te helpen!</div>",
         "layerName": "Hier is misschien een {title}",
-        "notFound": "Ik kon hier geen {title} vinden - verwijder deze van de kaart",
-        "popupTitle": "Is hier een {title}?"
+        "nearbyImagesIntro": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
+        "notFound": "Ik kon hier g{title} vinden - verwijder deze van de kaart",
+        "popupTitle": "Is hier {title}?"
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
@@ -343,6 +453,171 @@
         "logIn": "Log in om andere thema's te zien waar je al in bewerkt hebt",
         "pickTheme": "Kies hieronder een thema om te beginnen.",
         "title": "Welkom bij MapComplete"
+    },
+    "matrixbot": {
+        "commandFailed": "Sorry, er ging iets mis toen ik probeerde om <code>{cmd}</code> uit te voeren.",
+        "commandNotFound": "Sorry, ik heb je commando niet verstaan. Zou het kunnen dat je {0}, {1}, {2} of {2} bedoelt? <p>Je kan ook <code>help</code> sturen om een overzicht van alle commando's te zien</p>",
+        "commands": {
+            "dm": {
+                "argbody": "Het commando om uit te voeren",
+                "argto": "De ID van degene die de output moet ontvangen",
+                "commandNotFound": "Commando {key} niet gevonden - zie <code>help</code> voor een overzicht van alle commando's",
+                "docs": "Voert een commando uit en stuurt de output naar iemand anders",
+                "executing": "<code>{_}</code> aan het uitvoeren, het resultaat stuur ik naar <b>{to}</b>",
+                "failed": "I kon <code>{cmd}</code> niet uitvoeren doordag {message}",
+                "noDm": "Ik kon geen chat opzetten met {to}",
+                "receipt": "Ik leverde het bericht af aan {to}",
+                "selectValidCommand": "Geef een geldig commando",
+                "selectValidUser": "Geef een geldige ID van een gebruiker",
+                "sendReason": "Ik stuurde jou dit bericht omdat <b>{sender}</b> mij gevraagd heeft om je het resultaat van <code>{cmd}</code> te sturen"
+            },
+            "documentation": {
+                "argid": "Het id van een {list} of {list_end} waarvan de documentatie gevraagd is. Je can ook {coded_list} schrijven om beschikbare ids te zien.",
+                "didYouMean": "Bedoelde je misschien één van onderstaande URL-parameters? ",
+                "docs": "Vraag documentatie over een MapComplete-laag, -thema of URL-parameter",
+                "file": {
+                    "plural": "bestanden",
+                    "singular": "bestand"
+                },
+                "inputElement": {
+                    "plural": "input elementen",
+                    "singular": "inputelement"
+                },
+                "layer": {
+                    "plural": "lagen",
+                    "singular": "laag"
+                },
+                "noIdIntro": "Om meer informatie te krijgen over een MapComplete-deel, moet je een ID geven. Bekende types zijn {list}",
+                "notFound": "Ik kong geen {singular} vinden met naam <code>{id}</code>.",
+                "overview": "De volgende {plural} bestaan:",
+                "theme": {
+                    "plural": "kaartthemas",
+                    "singular": "kaartthema"
+                },
+                "urlParam": "URL-parameter <code>{id}</code>",
+                "url_parameter": {
+                    "plural": "url-parameters",
+                    "singular": "url-parameter"
+                },
+                "visualisation": {
+                    "plural": "visualisaties",
+                    "singular": "visualisatie"
+                }
+            },
+            "dream": {
+                "docs": "Stuurt een dromerige, computer-gegenereerde tekst",
+                "generatedBy": "Deze tekst is gegenereerd door {bot} die Machine-Learning gebruikt om op Reddit te posten."
+            },
+            "help": {
+                "argcmd": "Het commando waarvoor je meer informatie wilt",
+                "askRights": "Vraag aan {admins} om je toegang te geven",
+                "docs": "Geeft informatie over de gekende commando's",
+                "insufficientRights": "Je hebt geen toegang tot dit commando.",
+                "notFound": "Ik kon het commando <code>{cmd}</code> niet vinden. Bedoelde je misschien {closest}?",
+                "p0": "Hallo! Ik ben MapComplete-bot {bot_version} (gebouwd met MapComplete {mc_version}).",
+                "p1": "Je kan me een commando sturen en dan zal ik dat commando opvolgen. Dit kan door me een privé-bericht te sturen. In een publieke ruimte zal ik antwoorden als een bericht begint met <code>!</code> of een mention.",
+                "priviligedComand": "Commando waar je rechten voor nodig hebt",
+                "supported": "De commando's die ik ken zijn:"
+            },
+            "info": {
+                "argsearch": "Het ID van een OSM-object of een zoekterm",
+                "closed": "Gesloten",
+                "closedTodayAndTomorrow": "Vandaag en morgen gesloten",
+                "couldNotDownload": "Ik kon <code>{id}</code> niet downloaden",
+                "docs": "Haal informatie op over een OSM-object. Dit kan met het ID of via een zoekterm. De objecten worden geinterpreteerd en getoond.",
+                "editWith": "Bewerk dit element op {title}",
+                "fetchingInfoAbout": "Data over {id} aan het ophalen…",
+                "foundResults": "Ik vond {total} resultaten voor <code>{search}</code>, ik ben informatie erover aan het ophalen…",
+                "noEditPossible": "Geen enkel MapComplete-thema bevat dit soort objecten...",
+                "noInfo": "Nog geen relevante informatie",
+                "noOpeningHours": "Geen openingsuren gekend",
+                "nothingFound": "Ik kon niets vinden voor <code>{_}</code>",
+                "provideSearch": "Gelieve een zoekterm of id te geven",
+                "searchingWorldwide": "OpenStreetMap aan het doorzoeken voor <code>{_}</code>"
+            },
+            "language": {
+                "arglang": "De taal die ik vanaf nu in deze ruimte ga spreken",
+                "currentLanguage": "Momenteel praat ik {language} in deze ruimte",
+                "docs": "Stelt in welke taal ik in deze ruimte spreek",
+                "hasBeenSet": "De taal is ingesteld op <b>{language}</b>.",
+                "helpTranslating": "Help mee met het vertalen van mijn teksten op Weblate.",
+                "knownLanguages": "Je kan een van de volgende talen kiezen:",
+                "notFound": "De taal {language} heb ik niet gevonden"
+            },
+            "role": {
+                "allRevoked": "Alle rechten van <b>{user}</b> werden ingetrokken",
+                "allRolesIntro": "Alle gebruikers met rechten zijn:",
+                "argrole": "Welke rechten de persoon krijgt, dit is de naam van het commando die deze gebruiker mag uitvoeren",
+                "arguser": "De gebruikersnaam van wie de rechten verandert moeten worden.",
+                "argverb": "Ofdat een rol toegevoegd (<code>add</code>) of verwijderd (<code>remove</code>) moet worden. Gebruik <code>list</code> om een oplijsting te krijgen van alle rollen van de gebruiker",
+                "docs": "Verander wat een gebruiker mag uitvoeren",
+                "noPreviousRoles": "<b>{user}</b> heeft geen rollen",
+                "noRightsNeeded": "Het comand <code>{role}</code> mag door iedereen uitgevoerd worden, je hoeft die rechten niet toe te kennen",
+                "noRolesYet": "<b>{user}</b> heeft op dit moment geen rechten.",
+                "noSuchRole": "De rechten voor <code>{role}</code> kunnen niet gegeven worden aan <code>{user}</code>. Geef de commandonaam waarvoor je de rechten wilt toekennen. (Typ <code>help</code> voor een overzicht van alle commando's).",
+                "userHasRoles": "<b>{user}</b> heeft op dit moment de volgende rechten:",
+                "verbadd": "Voegt een rol toe aan de aangeduide gebruiker",
+                "verbdefault": "Geeft een lijst van rollen van de gebruiker",
+                "verblist": "Geeft een lijst van rollen van de gebruiker",
+                "verbremove": "Verwijdert een rol van de aangeduide gebruiker",
+                "verbrevoke": "Verwijdert alle rollen van de gebruiker"
+            },
+            "scheme": {
+                "argkey": "De naam van de key",
+                "docs": "Geeft informatie over een sleutel in een themaconfiguratiebestand",
+                "noMatchingLayer": "Geen overeenkomende sleutels gevonden, misschien bedoelde je een van de volgende:",
+                "notype": "geen type aangeduid",
+                "title": "{key} (gebruikt in <code>{path}</code>, {type})"
+            },
+            "search": {
+                "announceLimited": "<p><i>Ik toon enkel de {cutoff} items het dichtst bij de <a href=\"{href}\" target=\"_blank\">gezochte locatie</a>.</i></p>",
+                "arglayerid": "De naam van een laag OF een enkele zoekterm",
+                "argsearch": "De zoekterm",
+                "argverb": "Zoek ofwel in een geografisch gebied (zoals een stand) of zoek in de buurt van een POI",
+                "noMatchingLayer": "Ik vind geen overeenkomende laag",
+                "noNearOrIn": "Sorry, Ik begreep je opdracht niet omdat ik geen <code>dichtbij</code> of <code>in</code> in je zoekopdracht.\nProbeer iets als <code>Zoek drinkwater in Londen</code>, <code>Zoek frituur in Brussel</code><p></p>\n <p>Daarnaast kan je ook <code>info {cmd}</code> proberen, om info te krijgen over een enkel object.</p>",
+                "nothingFound": "Sorry, ik kon niets vinden voor <code>{search}</code>, dus kan ik {layerTitle} niet zoeken",
+                "overview": "Ik heb {length} overeenkomende items gevonden.",
+                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>…"
+            },
+            "shutdown": {
+                "argmode": "Geeft aan op welke manier ik moet afsluiten. Dit moet één van de volgende woorden zijn: {verbs}",
+                "docs": "Sluit de robot af",
+                "goodbye": "Aan het afsluiten… Tot later!",
+                "notYetShuttingDown": "Ik ga nog niet afsluiten want ik ben nog maar net opgestart. Ik wacht minimaal {min_uptime} seconden voordat ik terug afsluit, momenteel ben ik nog maar {uptime} aan het lopen.",
+                "verbshutdown": "Sluit de bot af",
+                "verbupdate": "Probeert om de MapComplete-codebasis up te daten, sluit erna af"
+            },
+            "tags": {
+                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}…",
+                "argsearch": "De ID van het OSM-object of een zoekopdracht",
+                "docs": "Toont de attributen van een OSM-object. Geef een ID of een zoekstring.",
+                "noSearchGiven": "Geleive een zoekterm of een ID mee te geven om dit commando te gebruiken",
+                "nothingFound": "Niets gevonden voor {_}"
+            },
+            "welcome": {
+                "docs": "Geeft een vriendelijk welkomstberichtje",
+                "p0": "Hallo! Ik ben MapComplete-bot. Ik ben een computer-programma die voor jou OpenStreetMap doorzoekt en die documentatie geeft van <a href=\"https://mapcomplete.osm.be\">MapComplete</a>, een website die themakaarten toont waar je ook eenvoudig zelf data aan kan toevoegen.",
+                "p1": "Stuur me <code>info [zoekterm]</code> en ik ga OpenStreetMap voor je doorzoeken en het resultaat aan je tonen.",
+                "p2": "Je kan ook <code>search [ojbecttype] near [plaatsnaam]</code> of <code>search [objecttype] in [plaatsnaam]</code> sturen, dan ga ik daaraartoen op zoek. De objecttypes zijn dezelfde die je in MapComplete vindt. Meer categorieën zullen in de toekomst toegevoegd worden. Als je de uitdaging aangaat, <a href=\"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Making_Your_Own_Theme.md\">kan jebook je eigen categorie maken</a>",
+                "p3": "Er zijn nog meer commando's, stuur me <code>help</code> om ze allemaal te zien."
+            },
+            "wiki": {
+                "argsearch": "De titel van de pagina of een zoekterm",
+                "docs": "Stuurt een (deel van) de gevraagde pagina van {backend}. In een publieke ruimte stuur ik enkel de eerste paragraaf, in een privaat bericht krijg je de volledige pagina.",
+                "foundMatching": "Ik vond een wikipagina, namelijk {title}",
+                "gotResults": "Ik vond {count} resultaten voor <code>{search}</code>:",
+                "loadingFailed": "Sorry, pagina <code>{pagename}</code> kon niet geladen worden",
+                "noWiki": "Gelieve een zoekterm voor een wiki-pagina te geven",
+                "nothingFound": "Ik kon niets vinden voor {search} op {backend}",
+                "searching": "Aan het zoeken op {backend}…"
+            }
+        },
+        "decryptionFailed": "Sorry, ik kon je bericht niet ontcijferen. Probeer om deze kamer te verlaten en opnieuw te connecteren",
+        "noSufficientRights": "Dit commando is enkel beschikbaar voor administrators en wie rechten heeft gekregen",
+        "subcommanNotFound": "Sorry, ik heb je vraag niet verstaan. Dit commando heeft een extra werkwoord nodig, maar <code>{verb}</code> is geen werkwoord dat ik ken. Ik ken wel de volgende werkwoorden: {known_verbs}",
+        "subcommandNotGiven": "Ik heb je commando niet verstaan. Dit commando heeft een extra werkwoord nodig, maar je hebt er geen geven. Voeg één van {known_verbs} toe",
+        "tooLongForPublic": "Sorry, dit bericht is te lang voor een publieke ruimte - stuur me een privébericht"
     },
     "move": {
         "cancel": "Annuleer verplaatsing",
@@ -376,7 +651,7 @@
         "addAComment": "Voeg een commentaar toe",
         "addComment": "Voeg commentaar toe",
         "addCommentAndClose": "Voeg een commentaar toe en sluit de nota",
-        "addCommentPlaceholder": "Voeg een commentaar toe...",
+        "addCommentPlaceholder": "Voeg een commentaar toe…",
         "anonymous": "Anonieme bijdrager",
         "closeNote": "Sluit deze nota",
         "createNote": "Maak een nieuwe kaartnota",
@@ -420,7 +695,7 @@
                 "title": "Data hergebruiken"
             },
             "layers": {
-                "intro": "<p>MapComplete heeft een krachtig templatesysteem om snel een kaart op te zetten die precies toont wat je nodig hebt</p>\n<p>Deze data kan opgehaald van <b>OpenStreetMap</b> of van <b>externe datasets</b> komen - bijvoorbeeld om datasets met elkaar te vergelijken of om data te tonen die niet in OpenStreetMap thuishoort (bijvoorbeeld evenementen, statistieken, ...)</p>",
+                "intro": "<p>MapComplete heeft een krachtig templatesysteem om snel een kaart op te zetten die precies toont wat je nodig hebt</p>\n<p>Deze data kan opgehaald van <b>OpenStreetMap</b> of van <b>externe datasets</b> komen - bijvoorbeeld om datasets met elkaar te vergelijken of om data te tonen die niet in OpenStreetMap thuishoort (bijvoorbeeld evenementen, statistieken, …)</p>",
                 "title": "Welke data kan getoond worden met MapComplete?"
             },
             "survey": {
@@ -475,7 +750,15 @@
                 "outro": "Dit heeft enkele gevolgen voor sommige toepassingen zoals hieronder uitgelegd",
                 "title": "Gevolgen van de ODbL voor enkele toepassingen",
                 "usecaseGatheringOpenData": {
+                    "intro": "MapComplete is een uitstekende manier om Open Data te maken en te gebruiken - ook voor overheden. Alle verzamelde data is immers herbruikbaar onder de ODbL-licentie. Indien voor de verzamelde data een andere licentie nodig is (zoals <i>publiek domein</i>) dan kan ODbL te restrictief zijn. In dit geval kan men de bijdragers vragen om alsnog onder deze licentie hun bijdragen te maken.",
                     "title": "Het verzamelen van Open Data"
+                },
+                "usecaseMapDifferentSources": {
+                    "intro": "<p>Bijvoorbeeld, een kaart met alle banken in een stad kan gemaakt worden met OpenStreetMap. Deze afgeprinte kaart moet dan duidelijk vermelden dat de kaartgegevens van OpenStreetMap komen. Deze kaarten verkopen is toegestaan. Indien de kaartenmaker opmerkt dat er enkele banken ontbreken en deze toevoegt aan de afgeprinte kaart, dan vallen deze nieuw toegevoegde banken ook onder de ODbL, wat inhoudt dat een OpenStreetMap-bijdrager deze toegevoegde banken kan gebruiken en deze terug aan OpenStreetMap kan toevoegen.</p><p>Deze bijdrager heeft ook het recht om de data van deze ontbrekende banken te vragen.</p><p>De kaartenmaker kan ook een laag met winkels toevoegen - mogelijks van een andere databron. Ook dit mag, indien duidelijk vermeld wordt dat de winkeldata van een andere bron komt.</p><p>Het &lt;b&gt;samenmixen&lt;/b&gt; van twee datasets in een niet te onderscheiden dataset is niet toegestaan. Indien de kaartenmaker ontdekt dat de gegevens van zitbanken in de ene wijk uitstekend op OpenStreetMap staat en dat de zitbanken in een andere wijk goed zijn opgetekend door private cartografische dienst, dan is het samenvoegen van deze data problematisch:</p>",
+                    "li0": "de open licentie verplicht het herpubliceren van de aanpassingen aan OSM-data…",
+                    "li1": "...maar de &lt;i&gt;alle rechten voorbehouden&lt;/i&gt; van de private dataset verbiedt dit.",
+                    "outro": "Dit soort samenvoegen is dus niet toegestaan",
+                    "title": "Een kaart maken van verschillende databronnen"
                 }
             },
             "title": "Enkele nadelen om rekening mee te houden",
@@ -483,7 +766,7 @@
                 "intro": "De basisregel is dat alle gegevens <b>ter plaatse verifieerbaar</b> moeten en ietwat <b>permanent</b> moeten zijn. Dit betekent dat sommige data <i>niet</i> in OpenStreetMap opgeslaan mogen worden - al bestaan hier oplossingen voor.",
                 "li0": "Subjectieve data (zoals reviews) zijn niet geschikt voor OpenStreetMap. MapComplete heeft een integratie met <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a> waar iedereen reviews kan geven. Deze ratings en reviews worden met een open licentie gepubliceerd",
                 "li1": "Gebeurtenissen horen <i>niet</i> thuis in OpenStreetMap, net zoals kortstondige wegenwerken van enkele dagen of weken.",
-                "li2": "Tijdsgebonden data (bv. statistieken van luchtkwaliteit, verkeersintensiteit, ...) kunnen niet bewaard worden op OpenStreetMap. Merk echter op dat MapComplete dit soort data kan visualiseren indien deze op een andere locatie opgeslaan is.",
+                "li2": "Tijdsgebonden data (bv. statistieken van luchtkwaliteit, verkeersintensiteit, …) kunnen niet bewaard worden op OpenStreetMap. Merk echter op dat MapComplete dit soort data kan visualiseren indien deze op een andere locatie opgeslaan is.",
                 "title": "Data die niet geschikt is voor OpenStreetMap"
             }
         },
@@ -499,6 +782,9 @@
             "li0": "Het opzetten van een kaart, aangepast voor jou noden",
             "li1": "Hulp bij het opzetten van interne dataflows om OpenStreetMap te integreren",
             "li2": "Vormingen hoe data bijgedragen kan worden met MapComplete",
+            "li3": "Geavanceerdere training (bv. voor het GIS-team) hoe geavanceerdere data aan OpenStreetMap toegevoegd kan worden",
+            "li4": "Training hoe data van OpenStreetMap gefiltered en gedownload kan worden",
+            "outro": "Deze diensten worden aan een competitieve prijs aangeboden. Een simpel thema opzetten kan al vanaf €2000, waarna er een kleine jaarlijkse hostingkost is.",
             "title": "Diensten met MapComplete"
         },
         "text0": "<p>Het onderhouden en updaten van geodata is moeilijk en duur.<br>Bovendien verzamelen veel organisaties dezelfde data, onafhankelijk van elkaar - waardoor hetzelfde werk verschillende keren wordt gedaan, de data in niet-standaard formaten wordt bijgehouden en ieder een onvolledige, niet onderhouden dataset heeft</p><p>Parallel hiermee is er ook een grote community die geodata verzameld in een globale, gestandaardiseerde databank: OpenStreetMap.org.</p>",
@@ -531,6 +817,7 @@
     },
     "translations": {
         "activateButton": "Help met het vertalen van MapComplete",
+        "allMissing": "Nog geen vertalingen",
         "completeness": "Vertalingen voor {theme} in {language} zijn momenteel op {percentage}%: van {total} teksten zijn er reeds {translated} vertaald",
         "deactivate": "Verberg de vertaalknoppen",
         "help": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
@@ -545,11 +832,11 @@
         "date": {
             "description": "Een datum (beginnend met het jaar)"
         },
-        "decimal": {
-            "description": "Een getal"
-        },
         "direction": {
             "description": "Een orientatie"
+        },
+        "distance": {
+            "description": "Een afstand in meter"
         },
         "email": {
             "description": "email-adres",

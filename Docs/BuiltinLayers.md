@@ -35,12 +35,16 @@
     + [conversation](#conversation)
     + [add_image](#add_image)
     + [comment](#comment)
+    + [nearby-images](#nearby-images)
     + [report-contributor](#report-contributor)
     + [report-note](#report-note)
 1. [import_candidate](#import_candidate)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [all_tags](#all_tags)
+1. [direction](#direction)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
 1. [conflation](#conflation)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -78,6 +82,7 @@ MapComplete has a few data layers available in the theme which have special prop
   - [type_node](#type_node)
   - [note](#note)
   - [import_candidate](#import_candidate)
+  - [direction](#direction)
   - [conflation](#conflation)
   - [left_right_style](#left_right_style)
   - [split_point](#split_point)
@@ -103,7 +108,7 @@ Meta layer showing the current location of the user. Add this to your theme and 
 
   - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
@@ -146,7 +151,7 @@ Meta layer which contains the previous locations of the user as single points. T
 
   - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
@@ -190,7 +195,7 @@ Meta layer showing the home location of the user. The home location can be set i
 
   - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - This layer cannot be toggled in the filter view. If you import this layer in your theme, override `title` to make this toggleable.
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
@@ -264,7 +269,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -274,7 +279,9 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+Shows a button to export this feature as GPX. Especially useful for route relations
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -284,7 +291,9 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -294,7 +303,9 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -304,7 +315,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -366,7 +377,7 @@ This layer shows notes on OpenStreetMap. Having this layer in your theme will tr
 
 
   - This layer is shown at zoomlevel **10** and higher
-  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
+  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely  `https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
 
 
 
@@ -396,7 +407,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -406,7 +417,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -416,7 +427,17 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### nearby-images 
+
+
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -426,11 +447,11 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
-Only visible if `_opened_by_anonymous_user=false` is shown
+Only visible if  `_opened_by_anonymous_user=false`  is shown
 
 
 
@@ -438,7 +459,7 @@ Only visible if `_opened_by_anonymous_user=false` is shown
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -489,7 +510,48 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+ direction 
+===========
+
+
+
+<img src='https://mapcomplete.osm.be/direction_gradient:var(--catch-detail-color)' height="100px"> 
+
+This layer visualizes directions
+
+
+
+
+
+
+  - This layer is shown at zoomlevel **16** and higher
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
+
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - camera:direction~^..*$|direction~^..*$
+
+
+
+
+ Supported attributes 
+----------------------
 
 
 
@@ -730,6 +792,12 @@ The following layers are included in MapComplete:
   - [birdhide](./Layers/birdhide.md)
   - [cafe_pub](./Layers/cafe_pub.md)
   - [charging_station](./Layers/charging_station.md)
+  - [climbing](./Layers/climbing.md)
+  - [climbing_area](./Layers/climbing_area.md)
+  - [climbing_club](./Layers/climbing_club.md)
+  - [climbing_gym](./Layers/climbing_gym.md)
+  - [climbing_opportunity](./Layers/climbing_opportunity.md)
+  - [climbing_route](./Layers/climbing_route.md)
   - [cluster_style](./Layers/cluster_style.md)
   - [conflation](./Layers/conflation.md)
   - [crab_address](./Layers/crab_address.md)
@@ -738,46 +806,68 @@ The following layers are included in MapComplete:
   - [cycleways_and_roads](./Layers/cycleways_and_roads.md)
   - [defibrillator](./Layers/defibrillator.md)
   - [direction](./Layers/direction.md)
+  - [doctors](./Layers/doctors.md)
+  - [dogpark](./Layers/dogpark.md)
   - [drinking_water](./Layers/drinking_water.md)
+  - [elevator](./Layers/elevator.md)
   - [entrance](./Layers/entrance.md)
   - [etymology](./Layers/etymology.md)
   - [extinguisher](./Layers/extinguisher.md)
   - [fire_station](./Layers/fire_station.md)
   - [food](./Layers/food.md)
   - [ghost_bike](./Layers/ghost_bike.md)
+  - [governments](./Layers/governments.md)
   - [gps_location](./Layers/gps_location.md)
   - [gps_location_history](./Layers/gps_location_history.md)
   - [gps_track](./Layers/gps_track.md)
   - [grass_in_parks](./Layers/grass_in_parks.md)
+  - [hackerspace](./Layers/hackerspace.md)
   - [home_location](./Layers/home_location.md)
+  - [hospital](./Layers/hospital.md)
+  - [hotel](./Layers/hotel.md)
   - [hydrant](./Layers/hydrant.md)
+  - [id_presets](./Layers/id_presets.md)
   - [import_candidate](./Layers/import_candidate.md)
+  - [indoors](./Layers/indoors.md)
   - [information_board](./Layers/information_board.md)
+  - [kerbs](./Layers/kerbs.md)
+  - [kindergarten_childcare](./Layers/kindergarten_childcare.md)
   - [left_right_style](./Layers/left_right_style.md)
   - [map](./Layers/map.md)
+  - [maproulette](./Layers/maproulette.md)
+  - [maproulette_challenge](./Layers/maproulette_challenge.md)
   - [matchpoint](./Layers/matchpoint.md)
+  - [maxspeed](./Layers/maxspeed.md)
   - [named_streets](./Layers/named_streets.md)
   - [nature_reserve](./Layers/nature_reserve.md)
   - [note](./Layers/note.md)
-  - [note_import](./Layers/note_import.md)
   - [observation_tower](./Layers/observation_tower.md)
   - [parking](./Layers/parking.md)
   - [pedestrian_path](./Layers/pedestrian_path.md)
+  - [pharmacy](./Layers/pharmacy.md)
   - [picnic_table](./Layers/picnic_table.md)
   - [play_forest](./Layers/play_forest.md)
   - [playground](./Layers/playground.md)
   - [public_bookcase](./Layers/public_bookcase.md)
+  - [rainbow_crossings](./Layers/rainbow_crossings.md)
+  - [reception_desk](./Layers/reception_desk.md)
   - [recycling](./Layers/recycling.md)
+  - [school](./Layers/school.md)
+  - [shelter](./Layers/shelter.md)
   - [shops](./Layers/shops.md)
   - [slow_roads](./Layers/slow_roads.md)
   - [split_point](./Layers/split_point.md)
   - [sport_pitch](./Layers/sport_pitch.md)
   - [street_lamps](./Layers/street_lamps.md)
   - [surveillance_camera](./Layers/surveillance_camera.md)
+  - [tertiary_education](./Layers/tertiary_education.md)
   - [toilet](./Layers/toilet.md)
   - [trail](./Layers/trail.md)
+  - [transit_routes](./Layers/transit_routes.md)
+  - [transit_stops](./Layers/transit_stops.md)
   - [tree_node](./Layers/tree_node.md)
   - [type_node](./Layers/type_node.md)
+  - [veterinary](./Layers/veterinary.md)
   - [viewpoint](./Layers/viewpoint.md)
   - [village_green](./Layers/village_green.md)
   - [visitor_information_centre](./Layers/visitor_information_centre.md)
@@ -785,6 +875,7 @@ The following layers are included in MapComplete:
   - [waste_basket](./Layers/waste_basket.md)
   - [waste_disposal](./Layers/waste_disposal.md)
   - [watermill](./Layers/watermill.md)
+  - [windturbine](./Layers/windturbine.md)
  
 
 This document is autogenerated from [Customizations/AllKnownLayouts.ts](https://github.com/pietervdvn/MapComplete/blob/develop/Customizations/AllKnownLayouts.ts)

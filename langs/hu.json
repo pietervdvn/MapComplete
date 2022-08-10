@@ -7,30 +7,30 @@
     },
     "delete": {
         "cancel": "Mégse",
-        "cannotBeDeleted": "Ez az objektum nem törölhető",
+        "cannotBeDeleted": "Ez a térkpelem nem törölhető",
         "delete": "Törlés",
         "explanations": {
-            "hardDelete": "Ez a pont törlődik az OpenStreetMapről. Csak egy tapasztalt szerkesztő tudja majd visszaállítani",
-            "selectReason": "Kérjük, jelöld meg, miért kellene ezt a pontot törölni",
-            "softDelete": "Ez az objektum frissülni fog és ebben az alkalmazásban nem fog látszani. <span class=\"subtle\">{reason}</span>"
+            "hardDelete": "Ez a térképelem törlődik az OpenStreetMapről. Csak tapasztalt szerkesztő tudja visszaállítani",
+            "selectReason": "Kérjük, jelöld meg, miért kellene ezt a térképelemet törölni",
+            "softDelete": "Ez a térképelem frissülni fog és ebben az alkalmazásban nem fog látszani. <span class=\"subtle\">{reason}</span>"
         },
-        "isDeleted": "Ez az objektum törlődött",
+        "isDeleted": "Ez a térképelem törlődött",
         "isntAPoint": "Csak pontot lehet törölni, a kiválasztott térképelem viszont vonal, terület vagy kapcsolat.",
-        "loading": "Tulajdonságok megvizsgálása annak ellenőrzéséhez, hogy az objektum törölhető-e.",
-        "loginToDelete": "Egy pont törléséhez be kell jelentkezni",
-        "notEnoughExperience": "Ezt a pontot valaki más készítette.",
-        "onlyEditedByLoggedInUser": "Ezt a pontot csak te magad szerkesztetted, így nyugodtan törölheted.",
+        "loading": "Tulajdonságok megvizsgálása annak ellenőrzéséhez, hogy a térképelem törölhető-e.",
+        "loginToDelete": "Térképelem törléséhez be kell jelentkezni",
+        "notEnoughExperience": "Ezt a térképelemet valaki más készítette.",
+        "onlyEditedByLoggedInUser": "Ezt a térképelemet csak te magad szerkesztetted, így nyugodtan törölheted.",
         "partOfOthers": "Ez a pont egy vonal vagy kapcsolat része, ezért közvetlenül nem törölhető.",
-        "readMessages": "Olvasatlan üzeneteid vannak. Olvasd el őket, mielőtt törölnél egy pontot – lehet, hogy valaki épp erről írt",
+        "readMessages": "Olvasatlan üzeneteid vannak. Olvasd el őket, mielőtt törölnél egy térképelemet – lehet, hogy valaki épp erről írt",
         "reasons": {
-            "disused": "Ez az objektum használaton kívüli vagy el lett távolítva",
-            "duplicate": "Ez a pont egy másik objektum megkettőzése",
-            "notFound": "Ezt az objektumot nem sikerült megtalálni",
-            "test": "Ez egy tesztpont volt: az általa jelölt objektum valójában soha nem létezett"
+            "disused": "Ez a térképelem használaton kívüli vagy el lett távolítva",
+            "duplicate": "Ez a térképelem egy másik térképelem megkettőzése",
+            "notFound": "Ezt a térképelemet nem sikerült megtalálni",
+            "test": "Ez egy tesztelésre szolgáló térképelem volt: az általa jelölt objektum valójában soha nem létezett"
         },
-        "safeDelete": "Ez a pont nyugodtan törölhető.",
+        "safeDelete": "Ez a térképelem nyugodtan törölhető.",
         "useSomethingElse": "A törléséhez használj egy másik OpenStreetMap-szerkesztőt",
-        "whyDelete": "Miért kellene törölni ezt a pontot?"
+        "whyDelete": "Miért kellene törölni ezt a térképelemet?"
     },
     "favourite": {
         "loginNeeded": "<h3>Jelentkezz be</h3>A személyes elrendezés csak OpenStreetMap-felhasználóknak érhető el",
@@ -39,34 +39,34 @@
     },
     "general": {
         "about": "Egy adott téma esetében az OpenStreetMap egyszerű szerkesztése és hozzáadása",
-        "aboutMapcomplete": "<h3>A MapComplete-ről</h3><p>Arra használhatod, hogy egy <b>egy adott téma szerint</b> OpenStreetMap-adatokat adj hozzá az adatbázishoz. Válaszolj a kérdésekre, és a szerkesztéseid perceken belül mindenhol elérhetővé válnak. A témához tartozó elemeket, kérdéseket és nyelveket a <b>téma karbantartója</b> határozza meg .</p><h3>További információk</h3><p>A MapComplete mindig <b>felkínálja a következő lépést</b> ahhoz, hogy tanulhass az OpenStreetMapről.</p><ul><li>Weboldalba ágyazva az iframe egy teljes képernyős MapComplete-hez vezet</li><li>A teljes képernyős változat az OpenStreetMapről mutat adatokat</li><li>A megtekintés bejelentkezés nélkül is működik, de a szerkesztéshez OSM-fiók szükséges</li><li>Ha nem vagy bejelentkezve, kérjük, tedd meg</li><li>Miután válaszoltál egy kérdésre, új pontokat helyezhetsz a térképre</li><li>Egy idő után megjelennek a tényleges OSM-címkék, amelyek később a wikire hivatkoznak</li></ul><p></p><br><p>Észrevettél <b>egy problémát</b>? Új <b>funkciót szeretnél kérni</b>? Szeretnél <b>segíteni a fordításban</b>? Látogass el a <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">forráskódhoz</a> vagy a <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">problémakövetőhöz (issue tracker)</a>. </p><p> Szeretnéd látni <b>a fejlődést</b>? Kövesd a szerkesztések számát az <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a> módosításkészlet-elemzőn.</p>",
+        "aboutMapcomplete": "<h3>Névjegy</h3><p>A MapComplete-et használhatod, hogy egy <b>egy adott téma szerint</b> OpenStreetMap-adatokat adj hozzá az adatbázishoz. Válaszolj a kérdésekre, és a szerkesztéseid perceken belül mindenhol elérhetővé válnak. A legtöbb témánál hozzáadhatsz képeket vagy akár véleményt is írhatsz. A témához tartozó elemeket, kérdéseket és nyelveket a <b>téma karbantartója</b> határozza meg .</p><h3>További információk</h3><p>A MapComplete mindig <b>felkínálja a következő lépést</b> ahhoz, hogy tanulhass az OpenStreetMapről.</p><ul><li>Weboldalba ágyazva az iframe egy teljes képernyős MapComplete-hez vezet</li><li>A teljes képernyős változat az OpenStreetMapről mutat adatokat</li><li>A megtekintés bejelentkezés nélkül is működik, de a szerkesztéshez OSM-fiók szükséges</li><li>Ha nem vagy bejelentkezve, kérjük, tedd meg</li><li>Miután válaszoltál egy kérdésre, új elemeket helyezhetsz a térképre</li><li>Egy idő után megjelennek a tényleges OSM-címkék, amelyek később a wikire hivatkoznak</li></ul><p></p><br><p>Észrevettél <b>egy problémát</b>? Új <b>funkciót szeretnél kérni</b>? Szeretnél <b>segíteni a fordításban</b>? Látogass el a <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">forráskódhoz</a> vagy a <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">problémakövetőhöz (issue tracker)</a>. </p><p> Szeretnéd látni <b>a fejlődést</b>? Kövesd a szerkesztések számát az <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a> módosításkészlet-elemzőn.</p>",
         "add": {
             "addNew": "Új {category} hozzáadása",
             "addNewMapLabel": "Új elem hozzáadásához kattints ide",
             "confirmButton": "{category} hozzáadása.<br><div class=\"alert\">A hozzáadott objektum mindenki számára látható lesz</div>",
-            "confirmIntro": "<h3>Felrajzolsz egy {title} objektumot?</h3>Az itt létrehozandó pontot <b>mindenki láthatja majd</b>. Kérjük, csak valóban létező dolgokat rajzolj fel a térképre. Ezeket az adatokat sok alkalmazás használja.",
+            "confirmIntro": "<h3>Felrajzolsz egy {title} objektumot?</h3>Az itt létrehozandó térképelemet <b>mindenki láthatja majd</b>. Kérjük, csak valóban létező dolgokat rajzolj fel a térképre. Ezeket az adatokat sok alkalmazás használja.",
             "disableFilters": "Minden szűrő kikapcsolása",
-            "disableFiltersExplanation": "Lehet, hogy a szűrő miatt egyes objektumok nem látszanak",
-            "hasBeenImported": "Ezt a pontot már importálták",
+            "disableFiltersExplanation": "Lehet, hogy a szűrő miatt egyes térképelemek nem látszanak",
+            "hasBeenImported": "Ezt a térképelemet már importálták",
             "import": {
                 "hasBeenImported": "Ez az objektum importáltatott",
                 "howToTest": "A teszteléshez add hozzá az URL-hez a <b>test=true</b> vagy a <b>backend=osm-test</b> szöveget. A módosításkészlet a konzolra lesz nyomtatva. Ha hivatalossá szeretnéd tenni ezt a témát (és szeretnéd engedélyezni az importálás gombot), akkor nyiss egy lekéréses kérelmet (pull request).",
                 "importTags": "Az elem a következő címkéket fogja kapni: {tags}",
                 "officialThemesOnly": "A balesetek elkerülése érdekében a nem hivatalos témáknál ki van kapcsolva az importálás gomb",
-                "wrongType": "Ez az elem nem pont vagy vonal, ezért nem importálható",
-                "zoomInMore": "Nagyíts tovább az elem importálásához"
+                "wrongType": "Ez a térképelem nem pont vagy vonal, ezért nem importálható",
+                "zoomInMore": "Nagyíts tovább a térképelem importálásához"
             },
             "importTags": "Az elem {tags} címkéket fog kapni",
             "intro": "Olyan helyre kattintottál, ahol még nincs ismert adat.<br>",
-            "layerNotEnabled": "A {layer} réteg nincs engedélyezve. Pont hozzáadásához engedélyezd ezt a réteget",
+            "layerNotEnabled": "A {layer} réteg nincs engedélyezve. Térképelem hozzáadásához engedélyezd ezt a réteget",
             "openLayerControl": "Rétegvezérlő-doboz megnyitása",
-            "pleaseLogin": "Új pont hozzáadásához be kell jelentkezned",
+            "pleaseLogin": "Új térképelem hozzáadásához be kell jelentkezned",
             "presetInfo": "Az új érdekes pont (POI) címkéi: {tags}",
-            "stillLoading": "Az adatok betöltése folyamatban van. Kérjük, várj egy kicsit mielőtt új pontot adsz hozzá.",
-            "title": "Hozzáadsz egy új pontot?",
+            "stillLoading": "Az adatok betöltése folyamatban van. Kérjük, várj egy kicsit mielőtt elhelyezel egy új térképelemet.",
+            "title": "Hozzáadsz egy új térképelemet?",
             "warnVisibleForEveryone": "A kiegészítésed mindenki számára látható lesz",
             "wrongType": "Ez az elem nem pont vagy vonal, ezért nem importálható",
-            "zoomInFurther": "Pont hozzáadásához közelíts jobban.",
+            "zoomInFurther": "Térképelem hozzáadásához közelíts jobban.",
             "zoomInMore": "Nagyíts tovább az elem importálásához"
         },
         "apply_button": {
@@ -80,6 +80,9 @@
             "donate": "A MapComplete pénzügyi támogatása",
             "editId": "Az OpenStreetMap online szerkesztőjének megnyitása itt",
             "editJosm": "Szerkesztés itt JOSM-mal",
+            "followBridge": "A Mastodon- és Twitter-fiókok összekapcsolódnak",
+            "followOnMastodon": "Kövesse a MapComplete-et a Mastodonon",
+            "followOnTwitter": "Kövesse a MapComplete-et a Twitteren",
             "iconAttribution": {
                 "title": "Felhasznált ikonok"
             },
@@ -101,6 +104,7 @@
         "download": {
             "downloadAsPdf": "A jelenlegi térkép letöltése PDF-ként",
             "downloadAsPdfHelper": "Eszményi a jelenlegi térkép kinyomtatásához",
+            "downloadAsSvg": "Az aktuális térkép letöltése SVG formátumban",
             "downloadCSV": "Látható adatok letöltése CSV-ként",
             "downloadCSVHelper": "Kompatibilis a LibreOffice Calc-kal, az Excellel…",
             "downloadFeatureAsGeojson": "Letöltés GeoJSON-fájlként",
@@ -116,9 +120,10 @@
             "title": "A látható adatok letöltése",
             "uploadGpx": "Töltsd fel a nyomvonalaidat az OpenStreetMapre"
         },
+        "error": "Valami rosszul sült el",
         "example": "Példa",
         "examples": "Példák",
-        "fewChangesBefore": "Kérjük, válaszolj néhány meglévő pontokra vonatkozó kérdésre, mielőtt új pontot adnál hozzá.",
+        "fewChangesBefore": "Kérjük, válaszolj néhány meglévő térképelemekre vonatkozó kérdésre, mielőtt új elemet adnál hozzá.",
         "getStartedLogin": "A kezdéshez jelentkezz be az OpenStreetMap-fiókoddal,",
         "getStartedNewAccount": " vagy <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">hozz létre új fiókot</a>",
         "goToInbox": "Beérkezett üzenetek megnyitása",
@@ -131,6 +136,7 @@
         },
         "loading": "Betöltés…",
         "loadingTheme": "{theme} betöltése…",
+        "loginFailed": "Az OpenStreetMap-be való bejelentkezés nem sikerült",
         "loginOnlyNeededToEdit": "ha szerkeszteni szeretnéd a térképet",
         "loginToStart": "A kérdés megválaszolásához be kell jelentkezni",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap-fiókkal",
@@ -139,6 +145,8 @@
             "createYourOwnTheme": "Készítsd el saját MapComplete témád a semmiből",
             "hiddenExplanation": "Ezeket a témákat csak az érheti el, akik ismeri a linket. {total_hidden} rejtett téma közül {hidden_discovered} témát ismersz.",
             "intro": "<h3>Kíváncsi vagy más tematikus térképekre is?</h3>Szeretsz földrajzi adatokat gyűjteni? <br>További témák is elérhetők.",
+            "noMatchingThemes": "Nincs olyan téma, amely megfelelt volna a keresési feltételeknek",
+            "noSearch": "Minden téma megjelenítése",
             "previouslyHiddenTitle": "Korábban megnézett rejtett témák",
             "requestATheme": "Ha egyedi témát szeretnél, kérd a problémakövetőben (issue tracker)",
             "streetcomplete": "Egy másik, hasonló alkalmazás a <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
@@ -183,7 +191,7 @@
             "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Mi a weboldala ennek ({category})?"
         },
-        "readYourMessages": "Kérjük, új pont hozzáadása előtt olvasd el az összes OpenStreetMap-üzeneted.",
+        "readYourMessages": "Kérjük, új térképelem hozzáadása előtt olvasd el az összes OpenStreetMap-üzeneted.",
         "removeLocationHistory": "Helyelőzmények törlése",
         "returnToTheMap": "Vissza a térképhez",
         "save": "Mentés",
@@ -268,10 +276,10 @@
     },
     "importHelper": {
         "introduction": {
-            "description": "Az importálási segédprogram egy külső adatkészletet konvertál OSM-jegyzetekké. A külső adatkészletnek meg kell felelnie a MapComplete egyik meglévő rétegének. Az importálóba helyezett minden egyes elemhez egyetlen jegyzet fog létrejönni. Ezek a jegyzetek a megfelelő objektumokkal együtt fognak megjelenni ezeken a térképekben, hogy könnyen fel lehessen rajzolni őket a térképre."
+            "description": "Az importálási segédprogram egy külső adatkészletet konvertál OSM-jegyzetekké. A külső adatkészletnek meg kell felelnie a MapComplete egyik meglévő rétegének. Az importálóba helyezett minden egyes elemhez egyetlen jegyzet fog létrejönni. Ezek a jegyzetek a megfelelő térképelemekkel együtt fognak megjelenni ezeken a térképekben, hogy könnyen fel lehessen rajzolni őket a térképre."
         },
         "previewAttributes": {
-            "allAttributesSame": "Ez a címke minden importálandó objektumon szerepel"
+            "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel"
         }
     },
     "index": {
@@ -284,7 +292,7 @@
     },
     "move": {
         "cancel": "Áthelyezés megszakítása",
-        "cannotBeMoved": "Ez az objektum nem mozdítható el.",
+        "cannotBeMoved": "Ez a térképelem nem mozdítható el.",
         "confirmMove": "Áthelyezés ide",
         "inviteToMove": {
             "generic": "Pont áthelyezése",
@@ -292,12 +300,12 @@
             "reasonRelocation": "Objektum áthelyezése mert a valóságban is áthelyezték"
         },
         "inviteToMoveAgain": "Pont áthelyezése ismét",
-        "isRelation": "Ez az objektum egy kapcsolat, amely nem mozdítható el",
-        "isWay": "Ez az objektum egy vonal, amelyet csak egy másik OpenStreetMap-szerkesztővel lehet áthelyezni.",
+        "isRelation": "Ez a térképelem egy kapcsolat, amely nem mozdítható el",
+        "isWay": "Ez a térképelem egy vonal, amelyet csak egy másik OpenStreetMap-szerkesztővel lehet áthelyezni.",
         "loginToMove": "Pont áthelyezéséhez be kell jelentkezned",
         "moveTitle": "Pont áthelyezése",
-        "partOfAWay": "Ez az objektum egy másik vonal része; csak egy másik szerkesztő használatával lehet elmozdítani.",
-        "partOfRelation": "Ez az objektum egy kapcsolat része; csak egy másik szerkesztő használatával mozdítható el.",
+        "partOfAWay": "Ez a térképelem egy másik vonal része; csak egy másik szerkesztő használatával lehet elmozdítani.",
+        "partOfRelation": "Ez a térképelem egy kapcsolat része; csak egy másik szerkesztő használatával mozdítható el.",
         "pointIsMoved": "A pont áthelyeződött",
         "reasons": {
             "reasonInaccurate": "Az objektum helye pontatlan a térképen, ezért néhány méterrel arrébb kell tenni",

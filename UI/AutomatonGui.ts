@@ -65,7 +65,6 @@ class AutomationPanel extends Combine {
             console.warn("Triggered map on nextTileToHandle", tileIndex)
             const start = new Date()
             return AutomationPanel.TileHandler(layoutToUse, tileIndex, layerId, tagRenderingToAutomate.tagRendering, extraCommentText,
-                openChangeset,
                 (result, logMessage) => {
                     const end = new Date()
                     const timeNeeded = (end.getTime() - start.getTime()) / 1000;
@@ -118,7 +117,6 @@ class AutomationPanel extends Combine {
     }
 
     private static TileHandler(layoutToUse: LayoutConfig, tileIndex: number, targetLayer: string, targetAction: TagRenderingConfig, extraCommentText: UIEventSource<string>,
-                               openChangeset: UIEventSource<number>,
                                whenDone: ((result: string, logMessage?: string) => void)): BaseUIElement {
 
         const state = new MapState(layoutToUse, {attemptLogin: false})
@@ -176,7 +174,7 @@ class AutomationPanel extends Combine {
                         const feature = ffs.feature
                         const renderingTr = targetAction.GetRenderValue(feature.properties)
                         const rendering = renderingTr.txt
-                        log.push("<a href='https://openstreetmap.org/" + feature.properties.id + "' target='_blank'>" + feature.properties.id + "</a>: " + new SubstitutedTranslation(renderingTr, new UIEventSource<any>(feature.properties), undefined).ConstructElement().innerText)
+                        log.push("<a href='https://openstreetmap.org/" + feature.properties.id + "' target='_blank'>" + feature.properties.id + "</a>: " + new SubstitutedTranslation(renderingTr, new UIEventSource<any>(feature.properties), undefined).ConstructElement().textContent)
                         const actions = Utils.NoNull(SubstitutedTranslation.ExtractSpecialComponents(rendering)
                             .map(obj => obj.special))
                         for (const action of actions) {
@@ -204,7 +202,7 @@ class AutomationPanel extends Combine {
                     whenDone("no-action", "Inspected " + inspected + " elements: " + log.join("; "))
                 } else {
                     state.osmConnection.AttemptLogin()
-                    state.changes.flushChanges("handled tile automatically, time to flush!", openChangeset)
+                    state.changes.flushChanges("handled tile automatically, time to flush!")
                     whenDone("fixed", "Updated " + handled + " elements, inspected " + inspected + ": " + log.join("; "))
                 }
                 return true;

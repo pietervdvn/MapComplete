@@ -10,7 +10,7 @@ import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import RelationsTracker from "../Logic/Osm/RelationsTracker";
 import * as OsmToGeoJson from "osmtogeojson";
 import MetaTagging from "../Logic/MetaTagging";
-import {UIEventSource} from "../Logic/UIEventSource";
+import {ImmutableStore, UIEventSource} from "../Logic/UIEventSource";
 import {TileRange, Tiles} from "../Models/TileRange";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
 import ScriptUtils from "./ScriptUtils";
@@ -112,7 +112,7 @@ async function downloadRaw(targetdir: string, r: TileRange, theme: LayoutConfig,
                 }
 
 
-                console.log("Got the response - writing to ", filename)
+                console.log("Got the response - writing ",json.elements.length," elements to ", filename)
                 writeFileSync(filename, JSON.stringify(json, null, "  "));
             } catch (err) {
                 console.log(url)
@@ -172,7 +172,7 @@ function loadAllTiles(targetdir: string, r: TileRange, theme: LayoutConfig, extr
             allFeatures.push(...geojson.features)
         }
     }
-    return new StaticFeatureSource(allFeatures, false)
+    return StaticFeatureSource.fromGeojson(allFeatures)
 }
 
 /**
@@ -250,9 +250,10 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
                 }
 
                 const filteredTile = new FilteringFeatureSource({
-                        locationControl: new UIEventSource<Loc>(undefined),
+                        locationControl: new ImmutableStore<Loc>(undefined),
                         allElements: undefined,
-                        selectedElement: new UIEventSource<any>(undefined)
+                        selectedElement: new ImmutableStore<any>(undefined),
+                        globalFilters: new ImmutableStore([])
                     },
                     tileIndex,
                     tile,
@@ -323,9 +324,10 @@ function sliceToTiles(allFeatures: FeatureSource, theme: LayoutConfig, relations
         if (pointsOnlyLayers.indexOf(layer.id) >= 0) {
 
             const filtered = new FilteringFeatureSource({
-                    locationControl: new UIEventSource<Loc>(undefined),
+                    locationControl: new ImmutableStore<Loc>(undefined),
                     allElements: undefined,
-                    selectedElement: new UIEventSource<any>(undefined)
+                    selectedElement: new ImmutableStore<any>(undefined),
+                    globalFilters: new ImmutableStore([])
                 },
                 Tiles.tile_index(0, 0, 0),
                 source,

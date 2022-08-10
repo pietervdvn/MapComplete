@@ -1,7 +1,7 @@
 import Combine from "../Base/Combine";
 import {FlowStep} from "./FlowStep";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Translations from "../i18n/Translations";
 import Title from "../Base/Title";
 import {VariableUiElement} from "../Base/VariableUIElement";
@@ -15,8 +15,8 @@ import MoreScreen from "../BigComponents/MoreScreen";
 import CheckBoxes from "../Input/Checkboxes";
 
 export default class LoginToImport extends Combine implements FlowStep<UserRelatedState> {
-    readonly IsValid: UIEventSource<boolean>;
-    readonly Value: UIEventSource<UserRelatedState>;
+    readonly IsValid: Store<boolean>;
+    readonly Value: Store<UserRelatedState>;
 
     private static readonly whitelist = [15015689];
     

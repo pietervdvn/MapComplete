@@ -1,30 +1,61 @@
-import FeatureSource from "../FeatureSource";
-import {UIEventSource} from "../../UIEventSource";
+import FeatureSource, {FeatureSourceForLayer, Tiled} from "../FeatureSource";
+import {ImmutableStore, Store, UIEventSource} from "../../UIEventSource";
+import {stat} from "fs";
+import FilteredLayer from "../../../Models/FilteredLayer";
+import {BBox} from "../../BBox";
+import {Feature} from "@turf/turf";
 
 /**
- * A simple dummy implementation for whenever it is needed
+ * A simple, read only feature store.
  */
 export default class StaticFeatureSource implements FeatureSource {
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>;
-    public readonly name: string = "StaticFeatureSource"
+    public readonly features: Store<{ feature: any; freshness: Date }[]>;
+    public readonly name: string
 
-    constructor(features: any[] | UIEventSource<any[] | UIEventSource<{ feature: any, freshness: Date }>>, useFeaturesDirectly) {
-        const now = new Date();
-        if(features === undefined){
+    constructor(features: Store<{ feature: Feature, freshness: Date }[]>, name = "StaticFeatureSource") {
+        if (features === undefined) {
             throw "Static feature source received undefined as source"
         }
-        if (useFeaturesDirectly) {
-            // @ts-ignore
-            this.features = features
-        } else if (features instanceof UIEventSource) {
-            // @ts-ignore
-            this.features = features.map(features => features?.map(f => ({feature: f, freshness: now}) ?? []))
-        } else {
-            this.features = new UIEventSource(features?.map(f => ({
-                feature: f,
-                freshness: now
-            }))??[])
-        }
+        this.name = name;
+        this.features = features;
+    }
+
+    public static fromGeojsonAndDate(features: { feature: Feature, freshness: Date }[], name = "StaticFeatureSourceFromGeojsonAndDate"): StaticFeatureSource {
+        return new StaticFeatureSource(new ImmutableStore(features), name);
+    }
+
+
+    public static fromGeojson(geojson: Feature[], name = "StaticFeatureSourceFromGeojson"): StaticFeatureSource {
+        const now = new Date();
+        return StaticFeatureSource.fromGeojsonAndDate(geojson.map(feature => ({feature, freshness: now})), name);
+    }
+
+    public static fromGeojsonStore(geojson: Store<Feature[]>, name = "StaticFeatureSourceFromGeojson"): StaticFeatureSource {
+        const now = new Date();
+        const mapped : Store<{feature: Feature, freshness: Date}[]> = geojson.map(features => features.map(feature => ({feature, freshness: now})))
+        return new StaticFeatureSource(mapped, name);
+    }
+
+    static fromDateless(featureSource: Store<{ feature: Feature }[]>, name = "StaticFeatureSourceFromDateless") {
+        const now = new Date();
+        return new StaticFeatureSource(featureSource.map(features => features.map(feature => ({
+            feature: feature.feature,
+            freshness: now
+        }))), name);
+    }
+}
+
+export class TiledStaticFeatureSource extends StaticFeatureSource implements Tiled, FeatureSourceForLayer{
+
+    public readonly bbox: BBox = BBox.global;
+    public readonly tileIndex: number;   
+    public readonly layer: FilteredLayer;
+
+    constructor(features: Store<{ feature: any, freshness: Date }[]>, layer: FilteredLayer ,tileIndex : number = 0) {
+        super(features);
+        this.tileIndex = tileIndex ;
+        this.layer=  layer;
+        this.bbox = BBox.fromTileIndex(this.tileIndex)
     }
 
 

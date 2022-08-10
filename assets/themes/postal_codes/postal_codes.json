@@ -6,7 +6,10 @@
     "hu": "Irányítószámok",
     "de": "Postleitzahlen",
     "ca": "Codis postals",
-    "es": "Códigos postales"
+    "es": "Códigos postales",
+    "nb_NO": "Postkoder",
+    "nl": "Postcodes",
+    "fr": "Codes postaux"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -14,7 +17,10 @@
     "hu": "Irányítószámok",
     "de": "Postleitzahlen",
     "ca": "Codis postals",
-    "es": "Códigos postales"
+    "es": "Códigos postales",
+    "nb_NO": "Postkoder",
+    "nl": "Postcodes",
+    "fr": "Codes postaux"
   },
   "description": {
     "en": "Postal codes",
@@ -22,7 +28,9 @@
     "hu": "Irányítószámok",
     "de": "Postleitzahlen",
     "ca": "Codis postals",
-    "es": "Códigos postales"
+    "es": "Códigos postales",
+    "nl": "Postcodes",
+    "fr": "Codes postaux"
   },
   "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
@@ -43,7 +51,10 @@
         "hu": "irányítószámok",
         "de": "Postleitzahlen",
         "ca": "codis postals",
-        "es": "códigos postales"
+        "es": "códigos postales",
+        "nb_NO": "postkoder",
+        "nl": "postcodes",
+        "fr": "codes postaux"
       },
       "minzoom": 8,
       "title": {
@@ -52,7 +63,10 @@
           "id": "Kode pos {postal_code}",
           "hu": "Irányítószám: {postal_code}",
           "de": "Postleitzahl {postal_code}",
-          "es": "Código postal {postal_code}"
+          "es": "Código postal {postal_code}",
+          "nb_NO": "Postkode {postal_code}",
+          "nl": "Postcode {postal_code}",
+          "fr": "Code postal {postal_code}"
         }
       },
       "description": {},
@@ -64,7 +78,10 @@
             "id": "Kode posnya adalah {postal_code}",
             "hu": "Irányítószám: {postal_code}",
             "de": "Die Postleitzahl lautet {postal_code}",
-            "es": "El código postal es {postal_code}"
+            "es": "El código postal es {postal_code}",
+            "nl": "Deze postcode is {postal_code}",
+            "fr": "Le code postal est {postal_code}",
+            "nb_NO": "Postnummeret er {postal_code}"
           }
         }
       ],
@@ -100,15 +117,7 @@
           "dashArray": "8 8"
         }
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_country!=be",
-            "then": "no"
-          }
-        ]
-      }
+      "isShown": "_country=be"
     },
     {
       "id": "wrong_postal_code",
@@ -135,7 +144,10 @@
         "id": "balai kota",
         "hu": "polgármesteri hivatalok",
         "de": "Rathäuser",
-        "ca": "ajuntaments"
+        "ca": "ajuntaments",
+        "nl": "stadhuizen",
+        "fr": "mairies",
+        "nb_NO": "rådhus"
       },
       "minzoom": 12,
       "title": {
@@ -143,7 +155,9 @@
           "en": "Town hall {name}",
           "id": "Balai kota {name}",
           "hu": "{name} városháza",
-          "de": "Rathaus {name}"
+          "de": "Rathaus {name}",
+          "nl": "Stadhuis {name}",
+          "fr": "Mairie {name}"
         }
       },
       "calculatedTags": [
@@ -174,15 +188,7 @@
           ]
         }
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_country!=be",
-            "then": "no"
-          }
-        ]
-      }
+      "isShown": "_country=be"
     }
   ]
 }

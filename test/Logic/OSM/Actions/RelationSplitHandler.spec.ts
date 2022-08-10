@@ -71,7 +71,7 @@ describe("RelationSplitHandler", () => {
     )
 
     Utils.injectJsonDownloadForTests(
-        "https://www.openstreetmap.org/api/0.6/relation/9572808",
+        "https://www.openstreetmap.org/api/0.6/relation/9572808/full",
         {
             "version": "0.6",
             "generator": "CGImap 0.8.5 (3128319 spike-07.openstreetmap.org)",
@@ -266,7 +266,7 @@ describe("RelationSplitHandler", () => {
         }
     )
     Utils.injectJsonDownloadForTests(
-        "https://www.openstreetmap.org/api/0.6/relation/4374576",
+        "https://www.openstreetmap.org/api/0.6/relation/4374576/full",
         {
             "version": "0.6",
             "generator": "CGImap 0.8.5 (1266692 spike-06.openstreetmap.org)",
@@ -552,7 +552,7 @@ describe("RelationSplitHandler", () => {
 
     it("should split all cycling relation (split 295132739)",
         async () => {
-            // Lets mimick a split action of https://www.openstreetmap.org/way/295132739
+            // Lets mimic a split action of https://www.openstreetmap.org/way/295132739
 
             const relation: OsmRelation = <OsmRelation>await OsmObject.DownloadObjectAsync("relation/9572808")
             const originalNodeIds = [5273988967,

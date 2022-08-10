@@ -7,9 +7,8 @@ import Translations from "../i18n/Translations";
 import {Utils} from "../../Utils";
 import Img from "../Base/Img";
 import {SlideShow} from "../Image/SlideShow";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Stores, UIEventSource} from "../../Logic/UIEventSource";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
-import {UIElement} from "../UIElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 
 export default class NoteCommentElement extends Combine {
@@ -25,7 +24,7 @@ export default class NoteCommentElement extends Combine {
     }) {
         const t = Translations.t.notes;
 
-        let actionIcon: BaseUIElement = undefined;
+        let actionIcon: BaseUIElement;
         if (comment.action === "opened" || comment.action === "reopened") {
             actionIcon = Svg.note_svg()
         } else if (comment.action === "closed") {
@@ -41,7 +40,7 @@ export default class NoteCommentElement extends Combine {
             user = new Link(comment.user, comment.user_url ?? "", true)
         }
 
-        let userinfo = UIEventSource.FromPromise( Utils.downloadJsonCached("https://www.openstreetmap.org/api/0.6/user/"+comment.uid, 24*60*60*1000))
+        let userinfo = Stores.FromPromise( Utils.downloadJsonCached("https://www.openstreetmap.org/api/0.6/user/"+comment.uid, 24*60*60*1000))
         let userImg = new VariableUiElement( userinfo.map(userinfo => {
             const href = userinfo?.user?.img?.href;
             if(href !== undefined){

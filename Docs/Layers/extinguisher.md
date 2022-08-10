@@ -52,7 +52,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -67,15 +69,18 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is **Where is it positioned?**
+The question is  Where is it positioned?
 
 This rendering asks information about the property  [location](https://wiki.openstreetmap.org/wiki/Key:location) 
-This is rendered with `Location: {location}`
+
+This is rendered with  Location: {location}
 
 
 
-  - **Found indoors.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
-  - **Found outdoors.** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>
+
+
+  - Found indoors.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>`
+  - Found outdoors.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>`
 
 
 
@@ -84,7 +89,9 @@ This is rendered with `Location: {location}`
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
  
 

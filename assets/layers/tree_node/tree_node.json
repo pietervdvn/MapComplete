@@ -77,7 +77,8 @@
         "ru": "Высота: {height}",
         "fr": "Hauteur : {height}",
         "de": "Höhe: {height}",
-        "es": "Altura: {height}"
+        "es": "Altura: {height}",
+        "id": "Tinggi: {height}"
       },
       "condition": {
         "and": [
@@ -127,10 +128,11 @@
             "fr": "Feuillu",
             "de": "Laubbaum",
             "ca": "De fulla ampla",
-            "es": "Latifoliada"
+            "es": "Latifoliada",
+            "id": "Berdaun lebar"
           },
           "icon": {
-            "path": "./assets/themes/trees/broadleaved.svg",
+            "path": "./assets/layers/tree_node/broadleaved.svg",
             "class": "small"
           }
         },
@@ -147,10 +149,11 @@
             "fr": "Résineux",
             "de": "Nadelbaum",
             "ca": "Amb fulles d'agulla",
-            "es": "Hoja aguja"
+            "es": "Hoja aguja",
+            "id": "Berdaun jarum"
           },
           "icon": {
-            "path": "./assets/themes/trees/needleleaved.svg",
+            "path": "./assets/layers/tree_node/needleleaved.svg",
             "class": "small"
           }
         },
@@ -166,11 +169,12 @@
             "it": "Privo di foglie (permanente)",
             "fr": "Sans feuilles (Permanent)",
             "de": "Dauerhaft blattlos",
-            "es": "Permanentemente sin hojas"
+            "es": "Permanentemente sin hojas",
+            "id": "Tanpa daun permanen"
           },
           "hideInAnswer": true,
           "icon": {
-            "path": "./assets/themes/trees/leafless.svg",
+            "path": "./assets/layers/tree_node/leafless.svg",
             "class": "small"
           }
         }
@@ -212,7 +216,7 @@
             "nl": "De boom is een natuurlijk monument, bijvoorbeeld doordat hij bijzonder oud of van een waardevolle soort is.",
             "en": "The tree is a natural monument, e.g. because it is especially old, or of a valuable species.",
             "it": "L’albero è un monumento naturale, ad esempio perché specialmente antico o appartenente a specie importanti.",
-            "fr": "Cet arbre est un monument naturel (ex : âge, espèce, etc…)",
+            "fr": "Cet arbre est un monument naturel (p.ex. : âge, espèce, etc).",
             "de": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört.",
             "es": "El árbol es un monumento natural, por ejemplo, porque es especialmente antiguo, o de una especie valiosa."
           }
@@ -227,7 +231,7 @@
             "nl": "De boom wordt voor landbouwdoeleinden gebruikt, bijvoorbeeld in een boomgaard.",
             "en": "The tree is used for agricultural purposes, e.g. in an orchard.",
             "it": "L’albero è usato per scopi agricoli, ad esempio in un frutteto.",
-            "fr": "Cet arbre est utilisé à but d’agriculture (ex : dans un verger)",
+            "fr": "Cet arbre est utilisé à but agricole (p.ex. : dans un verger).",
             "de": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage.",
             "es": "El árbol se utiliza con fines agrícolas, por ejemplo, en un huerto."
           }
@@ -257,7 +261,7 @@
             "nl": "De boom staat in de tuin bij een woning/flatgebouw.",
             "en": "The tree is in a residential garden.",
             "it": "L’albero è un giardino residenziale.",
-            "fr": "Cet arbre est dans une cour résidentielle.",
+            "fr": "Cet arbre est dans une jardin de résidence.",
             "es": "El árbol está en un jardín privado o residencial.",
             "de": "Der Baum steht in einem Wohngarten."
           }
@@ -287,7 +291,7 @@
             "nl": "De boom staat in een woonkern.",
             "en": "The tree is in an urban area.",
             "it": "L’albero si trova in un’area urbana.",
-            "fr": "L'arbre est une zone urbaine.",
+            "fr": "L'arbre est dans une zone urbaine.",
             "es": "El árbol está en un zona urbana.",
             "de": "Der Baum steht in einem städtischen Gebiet."
           }
@@ -364,7 +368,12 @@
     {
       "id": "tree-species-wikidata",
       "question": {
-        "en": "What species is this tree?"
+        "en": "What species is this tree?",
+        "de": "Um welche Baumart handelt es sich?",
+        "id": "Spesies pohon apa ini?",
+        "es": "¿De qué especie es este árbol?",
+        "nl": "Wat is de boomsoort?",
+        "fr": "Quelle est l'espèce de cet arbre ?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"
@@ -405,7 +414,8 @@
         "fr": "Nom : {name}",
         "id": "Nama: {name}",
         "de": "Name: {name}",
-        "eo": "Nomo: {name}"
+        "eo": "Nomo: {name}",
+        "es": "Nombre: {name}"
       },
       "question": {
         "nl": "Heeft de boom een naam?",
@@ -414,7 +424,8 @@
         "fr": "L'arbre a-t-il un nom ?",
         "ru": "Есть ли у этого дерева название?",
         "de": "Hat der Baum einen Namen?",
-        "es": "El árbol no tiene nombre?."
+        "es": "¿Tiene nombre este árbol?",
+        "id": "Apakah pohon ini memiliki nama?"
       },
       "freeform": {
         "key": "name",
@@ -437,7 +448,8 @@
             "fr": "L'arbre n'a pas de nom.",
             "ru": "У этого дерева нет названия.",
             "de": "Der Baum hat keinen Namen.",
-            "es": "No identificas la especie."
+            "es": "No identificas la especie.",
+            "id": "Pohon ini tidak memiliki nama."
           }
         }
       ],
@@ -458,7 +470,8 @@
         "it": "Quest’albero è registrato come patrimonio?",
         "fr": "Cet arbre est-il inscrit au patrimoine ?",
         "de": "Ist dieser Baum ein Naturdenkmal?",
-        "es": "¿Este árbol es patrimonio registrado?"
+        "es": "¿Este árbol es patrimonio registrado?",
+        "id": "Apakah pohon ini merupakan warisan yang terdaftar?"
       },
       "mappings": [
         {
@@ -474,7 +487,8 @@
             "it": "Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
             "fr": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>",
             "de": "Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern",
-            "es": "Registrado como patrimonio por <i>Onroerend Erfgoed</i> Flandes"
+            "es": "Registrado como patrimonio por <i>Onroerend Erfgoed</i> Flandes",
+            "id": "Terdaftar sebagai warisan oleh <i>Onroerend Erfgoed</i> Flanders"
           },
           "icon": {
             "path": "./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg",
@@ -494,7 +508,8 @@
             "it": "Registrato come patrimonio da <i>Direction du Patrimoine culturel</i> di Bruxelles",
             "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles",
             "de": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel",
-            "es": "Registrado como patrimonio por la <i>Dirección de Patrimonio Cultural</i> de Bruselas"
+            "es": "Registrado como patrimonio por la <i>Dirección de Patrimonio Cultural</i> de Bruselas",
+            "id": "Terdaftar sebagai warisan budaya oleh <i>Direction du Patrimoine culturel</i> Brussels"
           }
         },
         {
@@ -510,7 +525,8 @@
             "it": "Registrato come patrimonio da un’organizzazione differente",
             "fr": "Enregistré comme patrimoine par une autre organisation",
             "de": "Von einer anderen Organisation als Denkmal registriert",
-            "es": "Registrado como patrimonio por una organización diferente"
+            "es": "Registrado como patrimonio por una organización diferente",
+            "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
           }
         },
         {
@@ -526,7 +542,8 @@
             "it": "Non è registrato come patrimonio",
             "fr": "Non enregistré comme patrimoine",
             "de": "Nicht als Denkmal registriert",
-            "es": "No registrado como patrimonio"
+            "es": "No registrado como patrimonio",
+            "id": "Tidak terdaftar sebagai warisan"
           }
         },
         {
@@ -541,7 +558,8 @@
             "it": "Registrato come patrimonio da un’organizzazione differente",
             "fr": "Enregistré comme patrimoine par une autre organisation",
             "de": "Von einer anderen Organisation als Denkmal registriert",
-            "es": "Registrado como patrimonio por un organización diferente"
+            "es": "Registrado como patrimonio por un organización diferente",
+            "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
           },
           "hideInAnswer": true
         }
@@ -568,7 +586,7 @@
         "it": "Qual è l’ID rilasciato da Onroerend Erfgoed Flanders?",
         "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?",
         "de": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?",
-        "es": "¿Cuál es la identificación emitida por Onroerend Erfgoed Flandes?"
+        "es": "¿Cuál es el número de identificación emitido por Onroerend Erfgoed Flandes?"
       },
       "freeform": {
         "key": "ref:OnroerendErfgoed",
@@ -626,7 +644,7 @@
         "it": "una albero latifoglia",
         "fr": "une arbre feuillu",
         "ru": "Лиственное дерево",
-        "de": "eine laubbaum",
+        "de": "ein Laubbaum",
         "es": "árbol de hoja ancha"
       },
       "description": {
@@ -652,7 +670,7 @@
         "it": "una albero aghifoglia",
         "ru": "Хвойное дерево",
         "fr": "une arbre résineux",
-        "de": "eine nadelbaum",
+        "de": "ein Nadelbaum",
         "es": "Árbol tipo Conífera"
       },
       "description": {
@@ -679,7 +697,7 @@
         "ru": "Дерево",
         "fr": "une arbre",
         "id": "Pohon",
-        "de": "eine baum",
+        "de": "ein Baum",
         "ca": "un arbre",
         "es": "un árbol"
       },
@@ -707,7 +725,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "circle:#ffffff;./assets/themes/trees/unknown.svg",
+        "render": "circle:#ffffff;./assets/layers/tree_node/unknown.svg",
         "mappings": [
           {
             "if": {
@@ -715,7 +733,7 @@
                 "leaf_type=broadleaved"
               ]
             },
-            "then": "circle:#ffffff;./assets/themes/trees/broadleaved.svg"
+            "then": "circle:#ffffff;./assets/layers/tree_node/broadleaved.svg"
           },
           {
             "if": {
@@ -723,7 +741,7 @@
                 "leaf_type=needleleaved"
               ]
             },
-            "then": "circle:#ffffff;./assets/themes/trees/needleleaved.svg"
+            "then": "circle:#ffffff;./assets/layers/tree_node/needleleaved.svg"
           }
         ]
       },
@@ -740,6 +758,7 @@
     "en": "A layer showing trees",
     "nl": "Een laag die bomen toont",
     "es": "Una capa que muestra árboles",
-    "de": "Eine Ebene, die Bäume zeigt"
+    "de": "Eine Ebene, die Bäume zeigt",
+    "fr": "Une couche montrant les arbres"
   }
 }

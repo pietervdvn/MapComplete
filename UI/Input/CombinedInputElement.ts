@@ -19,15 +19,15 @@ export default class CombinedInputElement<T, J, X> extends InputElement<X> {
         this._b = b;
         this._split = split;
         this._combined = new Combine([this._a, this._b]);
-        this._value = this._a.GetValue().map(
+        this._value = this._a.GetValue().sync(
             t => combine(t, this._b?.GetValue()?.data),
             [this._b.GetValue()],
-        )
-            .addCallback(x => {
+            x => {
                 const [t, j] = split(x)
-                this._a.GetValue()?.setData(t)
                 this._b.GetValue()?.setData(j)
-            })
+                return t
+            }
+        )
     }
 
     GetValue(): UIEventSource<X> {

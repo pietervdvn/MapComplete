@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg4339"
    version="1.1"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   inkscape:version="1.1.2 (1:1.1+202202050950+0a00cf5339)"
    width="500"
    height="587.92395"
-   sodipodi:docname="vet.svg">
+   sodipodi:docname="vet.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata4345">
     <rdf:RDF>
@@ -21,7 +21,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -54,13 +53,14 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:zoom="1.1352191"
-     inkscape:cx="279.26018"
-     inkscape:cy="260.31831"
+     inkscape:cx="279.24125"
+     inkscape:cy="281.88391"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4339"
-     inkscape:document-rotation="0">
+     inkscape:document-rotation="0"
+     inkscape:pagecheckerboard="0">
     <sodipodi:guide
        orientation="0,1"
        position="289.01695,294"
@@ -87,12 +87,14 @@
        style="fill:#714cff;fill-opacity:1;stroke:none"
        id="path2858-6-2-0-2-6-4-6" />
   </g>
-  <text
-     xml:space="preserve"
+  <g
+     aria-label="V"
+     transform="matrix(16.414685,0,0,12.686072,-2604.0754,-2505.816)"
      id="text869"
-     style="font-style:normal;font-weight:normal;font-size:40px;line-height:25px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect871);fill:#f10000;fill-opacity:0.79850543;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-     transform="matrix(16.414685,0,0,12.686072,-2617.2879,-2514.4493)"><tspan
-       x="160.57617"
-       y="239.99023"><tspan
-         style="fill:#f10000;fill-opacity:0.798505">V</tspan></tspan></text>
+     style="font-size:40px;line-height:25px;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect871);fill:#f10000;fill-opacity:0.798505;stroke-width:1px">
+    <path
+       d="m 186.57617,212.43462 -9.72,28.56 h -6.6 l -9.68,-28.56 h 6.12 l 5.36,17 q 0.16,0.44 0.44,1.64 0.32,1.16 0.64,2.48 0.32,1.28 0.44,2.16 0.12,-0.88 0.4,-2.16 0.32,-1.32 0.64,-2.48 0.32,-1.2 0.44,-1.64 l 5.4,-17 z"
+       style="font-weight:bold"
+       id="path3724" />
+  </g>
 </svg>

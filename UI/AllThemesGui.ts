@@ -5,7 +5,7 @@ import MoreScreen from "./BigComponents/MoreScreen";
 import Translations from "./i18n/Translations";
 import Constants from "../Models/Constants";
 import {Utils} from "../Utils";
-import LanguagePicker from "./LanguagePicker";
+import LanguagePicker1 from "./LanguagePicker";
 import IndexText from "./BigComponents/IndexText";
 import FeaturedMessage from "./BigComponents/FeaturedMessage";
 import Toggle from "./Input/Toggle";
@@ -21,7 +21,7 @@ export default class AllThemesGui {
             const state = new UserRelatedState(undefined);
             const intro = new Combine([
 
-                LanguagePicker.CreateLanguagePicker(Translations.t.index.title.SupportedLanguages())
+                new LanguagePicker1(Translations.t.index.title.SupportedLanguages(), "")
 
                     .SetClass("flex absolute top-2 right-3"),
                 new IndexText()

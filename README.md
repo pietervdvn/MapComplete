@@ -2,6 +2,10 @@
 
 > Let a thousand flowers bloom
 
+[![](https://img.shields.io/liberapay/patrons/Pietervdvn.svg?logo=liberapay) ![](https://img.shields.io/liberapay/receives/pietervdvn.svg?logo=liberapay)  ](https://liberapay.com/pietervdvn/)
+[![Matrix](https://img.shields.io/matrix/MapComplete:matrix.org)](https://matrix.to/#/#MapComplete:matrix.org?via=matrix.org)
+
+
 **MapComplete is an OpenStreetMap viewer and editor.** It shows map features on a certain topic, and allows to see, edit
 and add new features to the map. It can be seen as a
 webversion [crossover of StreetComplete and MapContrib](Docs/MapComplete_vs_other_editors.md). It tries to be just as
@@ -80,7 +84,7 @@ A typical user journey would be:
     * In other words, sending a message to a misbehaving MapComplete user acts as having a **zero-day-block**. This is
       added deliberately to make sure new users _have_ to read feedback from the community.
 
-4. At 50 changesets, the [personal layout](https://pietervdvn.github.io/MapComplete/personal.html) is advertised. The
+4. At 50 changesets, the [personal layout](https://mapcomplete.osm.be/personal.html) is advertised. The
    personal theme is a theme where contributors can pick layers from all the official themes. Note that the personal
    theme is always available.
 
@@ -108,6 +112,10 @@ To develop or deploy a version of MapComplete, have a look [to the guide](Docs/D
 The core strings and builtin themes of MapComplete are translated
 on [Hosted Weblate](https://hosted.weblate.org/projects/mapcomplete/core/). You can easily make an account and start
 translating in their web-environment - no installation required.
+
+You can even jump to the right translation string directly from MapComplete:
+
+![](./Docs/Misc/HowToTranslate.gif)
 
 [![Translation status](https://hosted.weblate.org/widgets/mapcomplete/-/multi-blue.svg)](https://hosted.weblate.org/engage/mapcomplete/)
 

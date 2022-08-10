@@ -159,15 +159,25 @@ class SingleLayerSelectionButton extends Toggle {
 
 export default class BackgroundMapSwitch extends Combine {
 
+    /**
+     * Three buttons to easily switch map layers between OSM, aerial and some map.
+     * @param state
+     * @param currentBackground
+     * @param options
+     */
     constructor(
         state: {
             locationControl: UIEventSource<Loc>,
             backgroundLayer: UIEventSource<BaseLayer>
         },
         currentBackground: UIEventSource<BaseLayer>,
-        preferredCategory?: string
+        options?:{
+            preferredCategory?: string,
+            allowedCategories?: ("osmbasedmap" | "photo" | "map")[]
+            
+        }
     ) {
-        const allowedCategories = ["osmbasedmap", "photo", "map"]
+        const allowedCategories = options?.allowedCategories ?? ["osmbasedmap", "photo", "map"]
 
         const previousLayer = state.backgroundLayer.data
         const buttons = []
@@ -188,7 +198,7 @@ export default class BackgroundMapSwitch extends Combine {
                 })
             // Fall back to the first option: OSM
             activatePrevious = activatePrevious ?? button.activate
-            if (category === preferredCategory) {
+            if (category === options?.preferredCategory) {
                 button.activate()
             }
             buttons.push(button)

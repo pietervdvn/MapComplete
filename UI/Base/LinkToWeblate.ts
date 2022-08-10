@@ -38,7 +38,7 @@ export default class LinkToWeblate extends VariableUiElement {
         return baseUrl + category + "/" + language + "/?offset=1&q=context%3A%3D%22" + key + "%22"
     }
 
-    public static hrefToWeblateZen(language: string, category: string, searchKey: string): string{
+    public static hrefToWeblateZen(language: string, category: "core" | "themes" | "layers" | "shared-questions" | "glossary" | string, searchKey: string): string{
         const baseUrl = "https://hosted.weblate.org/zen/mapcomplete/"
         // ?offset=1&q=+state%3A%3Ctranslated+context%3Acampersite&sort_by=-priority%2Cposition&checksum=
         return baseUrl + category + "/" + language + "?offset=1&q=+state%3A%3Ctranslated+context%3A"+encodeURIComponent(searchKey)+"&sort_by=-priority%2Cposition&checksum="

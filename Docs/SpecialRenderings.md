@@ -15,9 +15,28 @@ General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_nam
 
 
 
-Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}, one can also write
+Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}`, one can also write
 
-`{"render":{"special":{"type":"some_special_visualisation","argname":"some_arg","message":{"en":"some other really long message","nl":"een boodschap in een andere taal"},"other_arg_name":"more args"}}}`
+`{
+  "render": {
+    "special": {
+      "type": "some_special_visualisation",
+      "before": {
+        "en": "Some text to prefix before the special element (e.g. a title)",
+        "nl": "Een tekst om voor het element te zetten (bv. een titel)"
+      },
+      "after": {
+        "en": "Some text to put after the element, e.g. a footer"
+      },
+      "argname": "some_arg",
+      "message": {
+        "en": "some other really long message",
+        "nl": "een boodschap in een andere taal"
+      },
+      "other_arg_name": "more args"
+    }
+  }
+}`
 
 ## Table of contents
 
@@ -31,6 +50,8 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of image_upload](#example-usage-of-image_upload)
     + [wikipedia](#wikipedia)
       * [Example usage of wikipedia](#example-usage-of-wikipedia)
+    + [wikidata_label](#wikidata_label)
+      * [Example usage of wikidata_label](#example-usage-of-wikidata_label)
     + [minimap](#minimap)
       * [Example usage of minimap](#example-usage-of-minimap)
     + [sided_minimap](#sided_minimap)
@@ -63,6 +84,8 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of export_as_geojson](#example-usage-of-export_as_geojson)
     + [open_in_iD](#open_in_id)
       * [Example usage of open_in_iD](#example-usage-of-open_in_id)
+    + [open_in_josm](#open_in_josm)
+      * [Example usage of open_in_josm](#example-usage-of-open_in_josm)
     + [clear_location_history](#clear_location_history)
       * [Example usage of clear_location_history](#example-usage-of-clear_location_history)
     + [close_note](#close_note)
@@ -75,6 +98,20 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of add_image_to_note](#example-usage-of-add_image_to_note)
     + [title](#title)
       * [Example usage of title](#example-usage-of-title)
+    + [nearby_images](#nearby_images)
+      * [Example usage of nearby_images](#example-usage-of-nearby_images)
+    + [mapillary_link](#mapillary_link)
+      * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
+    + [maproulette_task](#maproulette_task)
+      * [Example usage of maproulette_task](#example-usage-of-maproulette_task)
+    + [statistics](#statistics)
+      * [Example usage of statistics](#example-usage-of-statistics)
+    + [send_email](#send_email)
+      * [Example usage of send_email](#example-usage-of-send_email)
+    + [multi](#multi)
+      * [Example usage of multi](#example-usage-of-multi)
+    + [steal](#steal)
+      * [Example usage of steal](#example-usage-of-steal)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -129,12 +166,27 @@ label | Add image | The text to show on the button
 
 name | default | description
 ------ | --------- | -------------
-keyToShowWikipediaFor | wikidata | Use the wikidata entry from this key to show the wikipedia article for
+keyToShowWikipediaFor | wikidata;wikipedia | Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used
  
 
 #### Example usage of wikipedia 
 
  `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
+
+
+
+### wikidata_label 
+
+ Shows the label of the corresponding wikidata-item 
+
+name | default | description
+------ | --------- | -------------
+keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show the label
+ 
+
+#### Example usage of wikidata_label 
+
+ `{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself
 
 
 
@@ -254,7 +306,7 @@ url | _undefined_ | The url to share (default: current URL)
 
 ### canonical 
 
- Converts a short, canonical value into the long, translated text 
+ Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text.  
 
 name | default | description
 ------ | --------- | -------------
@@ -263,7 +315,7 @@ key | _undefined_ | The key of the tag to give the canonical text for
 
 #### Example usage of canonical 
 
- {canonical(length)} will give 42 metre (in french)
+ If the object has `length=42`, then `{canonical(length)}` will be shown as **42 meter** (in english), **42 metre** (in french), ...
 
 
 
@@ -324,11 +376,12 @@ snap_onto_layers | _undefined_ | If a way of the given layer(s) is closeby, will
 max_snap_distance | 5 | The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete
 note_id | _undefined_ | If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'
 location_picker | photo | Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled
+maproulette_id | _undefined_ | If given, the maproulette challenge will be marked as fixed
  
 
 #### Example usage of import_button 
 
- `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,photo)}`
+ `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,photo,)}`
 
 
 
@@ -541,6 +594,16 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 
 
+### open_in_josm 
+
+ Opens the current view in the JOSM-editor 
+
+#### Example usage of open_in_josm 
+
+ `{open_in_josm()}`
+
+
+
 ### clear_location_history 
 
  A button to remove the travelled track information from the device 
@@ -627,15 +690,132 @@ Id-key | id | The property name where the ID of the note to close can be found
 
 
 
+### nearby_images 
+
+ A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature 
+
+name | default | description
+------ | --------- | -------------
+mode | expandable | Indicates how this component is initialized. Options are: 
+
+- `open`: always show and load the pictures
+- `collapsable`: show the pictures, but a user can collapse them
+- `expandable`: shown by default; but a user can collapse them.
+mapillary | true | If 'true', includes a link to mapillary on this location.
+ 
+
+#### Example usage of nearby_images 
+
+ `{nearby_images(expandable,true)}`
+
+
+
+### mapillary_link 
+
+ Adds a button to open mapillary on the specified location 
+
+name | default | description
+------ | --------- | -------------
+zoom | 18 | The startzoom of mapillary
+ 
+
+#### Example usage of mapillary_link 
+
+ `{mapillary_link(18)}`
+
+
+
+### maproulette_task 
+
+ Show details of a MapRoulette task 
+
+#### Example usage of maproulette_task 
+
+ `{maproulette_task()}`
+
+
+
+### statistics 
+
+ Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer 
+
+#### Example usage of statistics 
+
+ `{statistics()}`
+
+
+
+### send_email 
+
+ Creates a `mailto`-link where some fields are already set and correctly escaped. The user will be promted to send the email 
+
+name | default | description
+------ | --------- | -------------
+to | _undefined_ | Who to send the email to?
+subject | _undefined_ | The subject of the email
+body | _undefined_ | The text in the email
+button_text | _undefined_ | The text shown on the button in the UI
+ 
+
+#### Example usage of send_email 
+
+ `{send_email(,,,)}`
+
+
+
+### multi 
+
+ Given an embedded tagRendering (read only) and a key, will read the keyname as a JSON-list. Every element of this list will be considered as tags and rendered with the tagRendering 
+
+name | default | description
+------ | --------- | -------------
+key | _undefined_ | The property to read and to interpret as a list of properties
+tagrendering | _undefined_ | An entire tagRenderingConfig
+ 
+
+#### Example usage of multi 
+
+ ```json
+{
+  "render": {
+    "special": {
+      "type": "multi",
+      "key": "_doors_from_building_properties",
+      "tagRendering": {
+        "render": "The building containing this feature has a <a href='#{id}'>door</a> of width {entrance:width}"
+      }
+    }
+  }
+}```
+
+
+
+### steal 
+
+ Shows a tagRendering from a different object as if this was the object itself 
+
+name | default | description
+------ | --------- | -------------
+featureId | _undefined_ | The key of the attribute which contains the id of the feature from which to use the tags
+tagRenderingId | _undefined_ | The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection
+ 
+
+#### Example usage of steal 
+
+ `{steal(,)}`
+
+
+
 ### auto_apply 
 
- A button to run many actions for many features at once.
+ A button to run many actions for many features at once. To effectively use this button, you'll need some ingredients: 
 
-To effectively use this button, you'll need some ingredients:
-- A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
-- A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the [current_view](./BuiltinLayers.md#current_view)
-- Then, use a calculated tag on the host feature to determine the overlapping object ids
-- At last, add this component 
+  - A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
+  - A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer 
+  - [current_view](./BuiltinLayers.md#current_view)
+  - Then, use a calculated tag on the host feature to determine the overlapping object ids
+  - At last, add this component
+ 
 
 name | default | description
 ------ | --------- | -------------

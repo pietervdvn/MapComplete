@@ -1,9 +1,11 @@
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import FilteredLayer from "../../Models/FilteredLayer";
 import {BBox} from "../BBox";
+import {Feature, Geometry} from "@turf/turf";
+import {OsmFeature} from "../../Models/OsmFeature";
 
 export default interface FeatureSource {
-    features: UIEventSource<{ feature: any, freshness: Date }[]>;
+    features: Store<{ feature: OsmFeature, freshness: Date }[]>;
     /**
      * Mainly used for debuging
      */
@@ -26,14 +28,5 @@ export interface FeatureSourceForLayer extends FeatureSource {
  * A feature source which is aware of the indexes it contains
  */
 export interface IndexedFeatureSource extends FeatureSource {
-    readonly containedIds: UIEventSource<Set<string>>
-}
-
-/**
- * A feature source which has some extra data about it's state
- */
-export interface FeatureSourceState {
-    readonly sufficientlyZoomed: UIEventSource<boolean>;
-    readonly runningQuery: UIEventSource<boolean>;
-    readonly timeout: UIEventSource<number>;
+    readonly containedIds: Store<Set<string>>
 }

@@ -19,17 +19,6 @@ A layer showing village-green (which are communal green areas, but not quite par
 
 
 
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
-
-
-
-
  Basic tags for this layer 
 ---------------------------
 
@@ -57,7 +46,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -67,7 +58,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -77,7 +68,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

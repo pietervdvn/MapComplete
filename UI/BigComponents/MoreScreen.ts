@@ -7,7 +7,7 @@ import * as personal from "../../assets/themes/personal/personal.json"
 import Constants from "../../Models/Constants";
 import BaseUIElement from "../BaseUIElement";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {ImmutableStore, Store, Stores, UIEventSource} from "../../Logic/UIEventSource";
 import Loc from "../../Models/Loc";
 import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import UserRelatedState from "../../Logic/State/UserRelatedState";
@@ -117,7 +117,7 @@ export default class MoreScreen extends Combine {
     private static createUrlFor(layout: { id: string, definition?: string },
                                 isCustom: boolean,
                                 state?: { locationControl?: UIEventSource<{ lat, lon, zoom }>, layoutToUse?: { id } }
-    ): UIEventSource<string> {
+    ): Store<string> {
         if (layout === undefined) {
             return undefined;
         }
@@ -163,7 +163,7 @@ export default class MoreScreen extends Combine {
                 .map(part => part[0] + "=" + part[1])
                 .join("&")
             return `${linkPrefix}${params}${hash}`;
-        }) ?? new UIEventSource<string>(`${linkPrefix}`)
+        }) ?? new ImmutableStore<string>(`${linkPrefix}`)
 
 
     }
@@ -188,15 +188,17 @@ export default class MoreScreen extends Combine {
         BaseUIElement {
 
         const url = MoreScreen.createUrlFor(layout, isCustom, state)
-        return new SubtleButton(layout.icon,
-            new Combine([
-                `<dt class='text-lg leading-6 font-medium text-gray-900 group-hover:text-blue-800'>`,
-                new Translation(layout.title, !isCustom && !layout.mustHaveLanguage ? "themes:" + layout.id + ".title" : undefined),
-                `</dt>`,
-                `<dd class='mt-1 text-base text-gray-500 group-hover:text-blue-900 overflow-ellipsis'>`,
-                new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
-                `</dd>`,
-            ]), {url, newTab: false});
+        let content = new Combine([
+            new Translation(layout.title, !isCustom && !layout.mustHaveLanguage ? "themes:" + layout.id + ".title" : undefined),
+            new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
+        ]).SetClass("overflow-hidden flex flex-col")
+        
+        if(state.layoutToUse === undefined){
+            // Currently on the index screen: we style the buttons equally large
+            content = new Combine([content]).SetClass("flex flex-col justify-center h-24")
+        }
+        
+        return new SubtleButton(layout.icon, content, {url, newTab: false});
     }
 
     public static CreateProffessionalSerivesButton() {
@@ -207,55 +209,19 @@ export default class MoreScreen extends Combine {
             new SubtleButton(undefined, t.button, {url: "./professional.html"}),
         ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
     }
-
-    private static createUnofficialButtonFor(state: UserRelatedState, id: string): BaseUIElement {
-        const pref = state.osmConnection.GetLongPreference(id)
-        const str = pref.data
-        if (str === undefined || str === "undefined" || str === "") {
-            pref.setData(null)
-            return undefined
-        }
-
-        try {
-            const value: {
-                id: string
-                icon: string,
-                title: any,
-                shortDescription: any,
-                definition?: any,
-                isOfficial: boolean
-            } = JSON.parse(str)
-            value.isOfficial = false
-            return MoreScreen.createLinkButton(state, value, true)
-        } catch (e) {
-            console.warn("Removing theme " + id + " as it could not be parsed from the preferences")
-            pref.setData(null)
-            return undefined
-        }
-    }
-
     private static createUnofficialThemeList(buttonClass: string, state: UserRelatedState, themeListClasses: string, search: UIEventSource<string>): BaseUIElement {
-        const prefix = "mapcomplete-unofficial-theme-";
+        var currentIds: Store<string[]> = state.installedUserThemes
 
-        var currentIds: UIEventSource<string[]> = state.osmConnection.preferencesHandler.preferences
-            .map(allPreferences => {
-                const ids: string[] = []
-
-                for (const key in allPreferences) {
-                    if (key.startsWith(prefix) && key.endsWith("-combined-length")) {
-                        const id = key.substring("mapcomplete-".length, key.length - "-combined-length".length)
-                        ids.push(id)
-                    }
-                }
-                return ids
-            });
-
-        var stableIds = UIEventSource.ListStabilized<string>(currentIds)
+        var stableIds = Stores.ListStabilized<string>(currentIds)
         return new VariableUiElement(
             stableIds.map(ids => {
                 const allThemes: { element: BaseUIElement, predicate?: (s: string) => boolean }[] = []
                 for (const id of ids) {
-                    const link = this.createUnofficialButtonFor(state, id)
+                    const themeInfo = state.GetUnofficialTheme(id)
+                    if(themeInfo === undefined){
+                        continue
+                    }
+                    const link = MoreScreen.createLinkButton(state, themeInfo, true)
                     if (link !== undefined) {
                         allThemes.push({
                             element: link.SetClass(buttonClass),

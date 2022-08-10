@@ -4,7 +4,8 @@ import {Utils} from "../../../Utils";
 
 export interface DesugaringContext {
     tagRenderings: Map<string, TagRenderingConfigJson>
-    sharedLayers: Map<string, LayerConfigJson>
+    sharedLayers: Map<string, LayerConfigJson>,
+    publicLayers?: Set<string>
 }
 
 export abstract class Conversion<TIn, TOut> {
@@ -36,6 +37,14 @@ export abstract class Conversion<TIn, TOut> {
     public convertStrict(json: TIn, context: string): TOut {
         const fixed = this.convert(json, context)
         return DesugaringStep.strict(fixed)
+    }
+
+    public convertJoin(json: TIn, context: string, errors: string[], warnings?: string[], information?: string[]): TOut {
+        const fixed = this.convert(json, context)
+        errors?.push(...(fixed.errors ?? []))
+        warnings?.push(...(fixed.warnings ?? []))
+        information?.push(...(fixed.information ?? []))
+        return fixed.result
     }
 
     public andThenF<X>(f: (tout:TOut) => X ): Conversion<TIn, X>{
@@ -132,17 +141,21 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
 
 export class On<P, T> extends DesugaringStep<T> {
     private readonly key: string;
-    private readonly step: Conversion<P, P>;
+    private readonly step: ((t: T) => Conversion<P, P>);
 
-    constructor(key: string, step: Conversion<P, P>) {
+    constructor(key: string, step: Conversion<P, P> | ((t: T )=> Conversion<P, P>)) {
         super("Applies " + step.name + " onto property `"+key+"`", [key], `On(${key}, ${step.name})`);
-        this.step = step;
+        if(typeof step === "function"){
+            this.step = step;
+        }else{
+            this.step = _ => step
+        }
         this.key = key;
     }
 
     convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[], information?: string[] } {
         json = {...json}
-        const step = this.step
+        const step = this.step(json)
         const key = this.key;
         const value: P = json[key]
         if (value === undefined || value === null) {
@@ -199,6 +212,24 @@ export class Concat<X, T> extends Conversion<X[], T[]> {
     }
 }
 
+export class FirstOf<T, X> extends Conversion<T, X>{
+    private readonly  _conversion: Conversion<T, X[]>;
+    
+    constructor(conversion: Conversion<T, X[]>) {
+        super("Picks the first result of the conversion step", [], "FirstOf("+conversion.name+")");
+        this._conversion = conversion;
+    }
+
+    convert(json: T, context: string): { result: X; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const reslt = this._conversion.convert(json, context);
+        return {
+            ...reslt,
+            result: reslt.result[0]
+        };
+    }
+    
+}
+
 export class Fuse<T> extends DesugaringStep<T> {
     private readonly steps: DesugaringStep<T>[];
 
@@ -226,7 +257,7 @@ export class Fuse<T> extends DesugaringStep<T> {
                     break;
                 }
             }catch(e){
-                console.error("Step "+step.name+" failed due to "+e);
+                console.error("Step "+step.name+" failed due to ",e,e.stack);
                 throw e
             }
         }

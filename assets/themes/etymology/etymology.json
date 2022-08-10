@@ -3,7 +3,7 @@
   "title": {
     "en": "Open Etymology Map",
     "nl": "Open Etymology-kaart",
-    "de": "Open Etymology Map",
+    "de": "Karte zur Herkunft der Namen",
     "it": "Apri Carta Etimologica",
     "ru": "Открытая этимологическая карта",
     "zh_Hant": "開放詞源地圖",
@@ -19,15 +19,17 @@
     "zh_Hant": "地名的由來是？",
     "hu": "Mi az eredete egy helynévnek?",
     "fr": "Quelle est l'origine de ce toponyme ?",
-    "es": "¿Cual es el origen de un topónimo?"
+    "es": "¿Cual es el origen de un topónimo?",
+    "ca": "Quin és l'origen d'un topònim?"
   },
   "description": {
     "en": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
     "nl": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
-    "de": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, und wurden mit Wikidata verknüpft. Im Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b>Wenn Sie weit genug hinein zoomen werden <i>alle</i> Straßen angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
+    "de": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, und wurden mit Wikidata verknüpft. Im Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b> Wenn Sie weit genug hinein zoomen werden <i>alle</i> Straßen angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
     "it": "Su questa cartina sono visibili i nomi a cui sono riferiti gli oggetti. Le strade, gli edifici, etc. provengono da OpenStreetMap che è a sua volta collegata a Wikidata. Nel popup, se esiste, verrà mostrato l’articolo Wikipedia o l'elemento Wikidata a cui si riferisce il nome di quell’oggetto. Se l’oggetto stesso ha una pagina Wikpedia, anch’essa verrà mostrata.<br/><br/><b>Anche tu puoi contribuire!</b>Ingrandisci abbastanza e <i>tutte</i> le strade appariranno. Puoi cliccare su una e apparirà un popup con la ricerca Wikidata. Con pochi clic puoi aggiungere un collegamento etimologico. Tieni presente che per farlo, hai bisogno di un account gratuito su OpenStreetMap.",
     "zh_Hant": "在這份地圖，你可以看到物件是以何命名，道路、 建築等的命名由來連到 Wikidata。在跳出選單，你可以看到物件命名由來的維基條目 (如果有的話)，或是 Wikidata 框。如果物件本身有維基頁面，也會顯示。<br/><br/><b>你也可以貢獻！</b>放大到夠大的層級，然後<i>所有</i>道路都會顯示。你可以點選一個之後 Wikidata 搜尋框會跳出來。只要點幾下，你可以新增詞源連結。注意你要有開放街圖帳號才能這麼做。",
-    "hu": "Ezen a térképen az látható, hogy egy objektum milyen névre hallgat. Az utcák, épületek stb. az OpenStreetMapről származnak, amely össze van kapcsolva a Wikidata adatbázissal. A felugró ablakban megjelenik a megfelelő Wikipedia-szócikk (ha van) vagy egy Wikidata-doboz arról, amiről az objektumot elnevezték. Ha magának az objektumnak van Wikipédia-oldala, az is megjelenik.<br/><br/><b>A térképet Ön is szerkesztheti!</b>nagyítson rá, és <i>az összes</i> utca megjelenik. Ha valamelyikre rákattint, megjelenik Wikidata-kereső doboz. Néhány kattintással hozzáadhat egy etimológiai linket. Ne feledje, hogy ehhez szüksége van egy ingyenes OpenStreetMap-fiókra."
+    "hu": "Ezen a térképen az látható, hogy egy objektum milyen névre hallgat. Az utcák, épületek stb. az OpenStreetMapről származnak, amely össze van kapcsolva a Wikidata adatbázissal. A felugró ablakban megjelenik a megfelelő Wikipedia-szócikk (ha van) vagy egy Wikidata-doboz arról, amiről az objektumot elnevezték. Ha magának az objektumnak van Wikipédia-oldala, az is megjelenik.<br/><br/><b>A térképet Ön is szerkesztheti!</b>nagyítson rá, és <i>az összes</i> utca megjelenik. Ha valamelyikre rákattint, megjelenik Wikidata-kereső doboz. Néhány kattintással hozzáadhat egy etimológiai linket. Ne feledje, hogy ehhez szüksége van egy ingyenes OpenStreetMap-fiókra.",
+    "fr": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc. proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikipedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi !</b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez sur l'une d'elles et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit."
   },
   "maintainer": "",
   "icon": "./assets/layers/etymology/logo.svg",
@@ -53,7 +55,9 @@
           "it": "Strade senza informazioni etimologiche",
           "zh_Hant": "道路沒有詞源資訊",
           "hu": "Etimológiai adat nélküli utcák",
-          "fr": "Route sans origine étymologique"
+          "fr": "Route sans origine étymologique",
+          "es": "Calles sin información etimológica",
+          "ca": "Carrers sense informació etimològica"
         },
         "minzoom": 18,
         "source": {
@@ -78,7 +82,9 @@
           "it": "Parchi e foreste senza informazioni etimologiche",
           "zh_Hant": "公園與森哥沒有詞源資訊",
           "hu": "Etimológiai adat nélküli parkok és erdők",
-          "fr": "Parcs et forêts sans origine étymologique"
+          "fr": "Parcs et forêts sans origine étymologique",
+          "es": "Parques y bosques sin información etimológica",
+          "ca": "Parcs i boscos sense informació etimològica"
         },
         "minzoom": 18,
         "source": {
@@ -103,7 +109,10 @@
         "=name": {
           "en": "Education institutions without etymology information",
           "de": "Bildungseinrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Institutions d'éducation sans origine étymologique"
+          "fr": "Institutions d'éducation sans origine étymologique",
+          "es": "Instituciones educacionales sin información etimológica",
+          "nl": "Onderwijsinstelling zonder etymologische informatie",
+          "ca": "Institucions educatives sense informació d'etimològica"
         },
         "minzoom": 18,
         "source": {
@@ -131,7 +140,10 @@
         "=name": {
           "en": "Cultural places without etymology information",
           "de": "Kultureinrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Lieux culturels sans origine étymologique"
+          "fr": "Lieux culturels sans origine étymologique",
+          "es": "Lugares culturales sin información etimológica",
+          "nl": "Culturele plaatsen zonder etymologische informatie",
+          "ca": "Llocs culturals sense informació etimològica"
         },
         "minzoom": 18,
         "source": {
@@ -159,7 +171,10 @@
         "=name": {
           "en": "Toursistic places without etymology information",
           "de": "Touristische Einrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Lieux touristiques sans origine étymologique"
+          "fr": "Lieux touristiques sans origine étymologique",
+          "es": "Lugares turísticos sin información etimológica",
+          "nl": "Toeristische plaatsen zonder etymologische informatie",
+          "ca": "Llocs turístics sense informació etimològica"
         },
         "minzoom": 18,
         "source": {
@@ -186,7 +201,9 @@
         "=name": {
           "en": "Health and social places without etymology information",
           "de": "Gesundheits- und Sozialeinrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Établissements sociaux ou de soins sans origine étymologique"
+          "fr": "Établissements sociaux ou de soins sans origine étymologique",
+          "nl": "Gezondheidsinstellingen en maatschappelijke plaatsen zonder etymologische informatie",
+          "ca": "Llocs socials i de salut sense informació etimològica"
         },
         "minzoom": 18,
         "source": {
@@ -212,7 +229,10 @@
         "=name": {
           "en": "Sport places without etymology information",
           "de": "Sporteinrichtungen ohne Informationen zur Namensherkunft",
-          "fr": "Lieux sportifs sans origine étymologique"
+          "fr": "Lieux sportifs sans origine étymologique",
+          "es": "Lugares deportivos sin información etimológica",
+          "nl": "Sportplekken zonder etymologische informatie",
+          "ca": "Llocs esportius sense informació etimològica"
         },
         "minzoom": 18,
         "source": {

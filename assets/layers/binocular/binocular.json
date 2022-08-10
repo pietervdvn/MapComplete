@@ -6,7 +6,9 @@
     "de": "Ferngläser",
     "ru": "Бинокль",
     "ca": "Prismàtics",
-    "da": "Kikkert"
+    "da": "Kikkert",
+    "es": "Prismáticos",
+    "fr": "Jumelles"
   },
   "minzoom": 0,
   "title": {
@@ -16,17 +18,20 @@
       "de": "Ferngläser",
       "ru": "Бинокль",
       "ca": "Prismàtics",
-      "es": "Binoculares",
-      "da": "Kikkert"
+      "es": "Prismáticos",
+      "da": "Kikkert",
+      "fr": "Jumelles"
     }
   },
   "description": {
-    "en": "Binoculas",
+    "en": "Binoculars",
     "nl": "Verrekijkers",
-    "de": "Fernglas",
+    "de": "Ferngläser",
     "ru": "Бинокли",
     "ca": "Prismàtics",
-    "da": "Kikkerter"
+    "da": "Kikkerter",
+    "es": "Prismáticos",
+    "fr": "Jumelles"
   },
   "tagRenderings": [
     "images",
@@ -43,7 +48,9 @@
             "en": "Free to use",
             "nl": "Gratis te gebruiken",
             "de": "Kostenlose Nutzung",
-            "da": "Gratis at bruge"
+            "da": "Gratis at bruge",
+            "es": "De uso gratuito",
+            "fr": "En libre service"
           }
         }
       ],
@@ -57,15 +64,17 @@
         "en": "Using these binoculars costs {charge}",
         "nl": "Deze verrekijker gebruiken kost {charge}",
         "de": "Die Benutzung dieses Fernglases kostet {charge}",
-        "es": "Utilizar estos binoculares cuesta {charge}",
-        "da": "Brug af denne kikkert koster {charge}"
+        "es": "Utilizar estos prismáticos cuesta {charge}",
+        "da": "Brug af denne kikkert koster {charge}",
+        "fr": "L’utilisation des ces jumelles coûte {charge}"
       },
       "question": {
         "en": "How much does one have to pay to use these binoculars?",
         "nl": "Hoeveel moet men betalen om deze verrekijker te gebruiken?",
         "de": "Wie viel muss man für die Nutzung dieser Ferngläser bezahlen?",
-        "es": "¿Cuánto hay que pagar para utilizar estos binoculares?",
-        "da": "Hvor meget koster det at bruge denne kikkert?"
+        "es": "¿Cuánto hay que pagar para utilizar estos prismáticos?",
+        "da": "Hvor meget koster det at bruge denne kikkert?",
+        "fr": "Combien l’utilisation des ces jumelles coûte-t-elle ?"
       },
       "id": "binocular-charge"
     },
@@ -74,15 +83,17 @@
         "en": "When looking through this binocular, in what direction does one look?",
         "nl": "Welke richting kijkt men uit als men door deze verrekijker kijkt?",
         "de": "In welche Richtung blickt man, wenn man durch dieses Fernglas schaut?",
-        "es": "¿Cuándo uno mira a través de este binocular, en qué dirección lo hace?",
-        "da": "I hvilken retning kigger man, når man ser gennem denne kikkert?"
+        "es": "¿Cuándo uno mira a través de estos prismáticos, en qué dirección lo hace?",
+        "da": "I hvilken retning kigger man, når man ser gennem denne kikkert?",
+        "fr": "Dans quelle direction regarde-t-on en utilisant ces jumelles ?"
       },
       "render": {
         "en": "Looks towards {direction}°",
         "nl": "Kijkt richting {direction}°",
         "de": "Blick in Richtung {direction}°",
         "es": "Mira hacia {direction}º",
-        "da": "Kigger mod {direction}°"
+        "da": "Kigger mod {direction}°",
+        "fr": "Orienté à {direction}°"
       },
       "freeform": {
         "key": "direction",
@@ -97,19 +108,22 @@
         "amenity=binoculars"
       ],
       "title": {
-        "en": "a binoculars",
+        "en": "a binocular",
         "nl": "een verrekijker",
-        "de": "eine ferngläser",
+        "de": "ein Fernglas",
         "ru": "бинокль",
         "ca": "uns prismàtics",
-        "da": "en kikkert"
+        "da": "en kikkert",
+        "es": "unos prismáticos",
+        "fr": "des jumelles"
       },
       "description": {
         "en": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
         "nl": "Een telescoop of verrekijker die op een vaste plaats gemonteerd staat waar iedereen door mag kijken. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
         "de": "Ein fest installiertes Teleskop oder Fernglas, für die öffentliche Nutzung. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-        "fr": "Une longue-vue ou une paire de jumelles montée sur un poteau, disponible au public pour scruter les environs.\n<img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-        "da": "Et teleskop eller en kikkert monteret på en stang, som offentligheden kan se sig omkring med. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
+        "fr": "Une longue-vue ou une paire de jumelles montée sur un poteau, disponible au public pour scruter les environs. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+        "da": "Et teleskop eller en kikkert monteret på en stang, som offentligheden kan se sig omkring med. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
+        "es": "Un telescopio o unos prismáticos montados en un poste, disponible para que el público mire alrededor. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />"
       },
       "preciseInput": {
         "preferredBackground": "photo"

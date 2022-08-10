@@ -7,7 +7,7 @@
 
 <img src='https://mapcomplete.osm.be/./assets/themes/playgrounds/playground.svg' height="100px"> 
 
-Searches for all accessible grass patches within public parks - these are 'groenzones'"
+Searches for all accessible grass patches within public parks - these are 'groenzones'
 
 
 
@@ -15,17 +15,6 @@ Searches for all accessible grass patches within public parks - these are 'groen
 
 
   - This layer is shown at zoomlevel **0** and higher
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
 
 
 
@@ -57,7 +46,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -67,7 +58,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
 
 
@@ -77,7 +68,7 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

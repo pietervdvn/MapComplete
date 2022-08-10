@@ -2,9 +2,8 @@ import {VariableUiElement} from "../Base/VariableUIElement";
 import {Translation} from "../i18n/Translation";
 import Svg from "../../Svg";
 import Combine from "../Base/Combine";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {Utils} from "../../Utils";
-import Toggle from "../Input/Toggle";
 import Translations from "../i18n/Translations";
 import BaseUIElement from "../BaseUIElement";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
@@ -13,7 +12,7 @@ import Loc from "../../Models/Loc";
 import BaseLayer from "../../Models/BaseLayer";
 import FilteredLayer from "../../Models/FilteredLayer";
 import {InputElement} from "../Input/InputElement";
-import CheckBoxes, {CheckBox} from "../Input/Checkboxes";
+import {CheckBox} from "../Input/Checkboxes";
 import {SubtleButton} from "../Base/SubtleButton";
 import LZString from "lz-string";
 
@@ -24,7 +23,7 @@ export default class ShareScreen extends Combine {
         const tr = Translations.t.general.sharescreen;
 
         const optionCheckboxes: InputElement<boolean>[] = []
-        const optionParts: (UIEventSource<string>)[] = [];
+        const optionParts: (Store<string>)[] = [];
 
         const includeLocation = new CheckBox(tr.fsIncludeCurrentLocation, true)
         optionCheckboxes.push(includeLocation);
@@ -43,7 +42,7 @@ export default class ShareScreen extends Combine {
             } else {
                 return null;
             }
-           
+
         }, [currentLocation]));
 
 
@@ -95,7 +94,7 @@ export default class ShareScreen extends Combine {
 
         for (const swtch of switches) {
 
-            const checkbox =new CheckBox(Translations.W(swtch.human), !swtch.reverse)
+            const checkbox = new CheckBox(Translations.W(swtch.human), !swtch.reverse)
             optionCheckboxes.push(checkbox);
             optionParts.push(checkbox.GetValue().map((isEn) => {
                 if (isEn) {
@@ -114,8 +113,8 @@ export default class ShareScreen extends Combine {
 
         }
 
-        if(layout.definitionRaw !== undefined){
-            optionParts.push(new UIEventSource("userlayout="+(layout.definedAtUrl ?? layout.id)))
+        if (layout.definitionRaw !== undefined) {
+            optionParts.push(new UIEventSource("userlayout=" + (layout.definedAtUrl ?? layout.id)))
         }
 
         const options = new Combine(optionCheckboxes).SetClass("flex flex-col")
@@ -125,14 +124,14 @@ export default class ShareScreen extends Combine {
             let path = window.location.pathname;
             path = path.substr(0, path.lastIndexOf("/"));
             let id = layout.id.toLowerCase()
-            if(layout.definitionRaw !== undefined){
-                id="theme.html"
+            if (layout.definitionRaw !== undefined) {
+                id = "theme.html"
             }
             let literalText = `https://${host}${path}/${id}`
 
             let hash = ""
-            if(layout.definedAtUrl === undefined && layout.definitionRaw !== undefined){
-               hash = "#"+ LZString.compressToBase64( Utils.MinifyJSON(layout.definitionRaw))
+            if (layout.definedAtUrl === undefined && layout.definitionRaw !== undefined) {
+                hash = "#" + LZString.compressToBase64(Utils.MinifyJSON(layout.definitionRaw))
             }
             const parts = Utils.NoEmpty(Utils.NoNull(optionParts.map((eventSource) => eventSource.data)));
             if (parts.length === 0) {
@@ -157,8 +156,8 @@ export default class ShareScreen extends Combine {
         ).onClick(async () => {
 
             const shareData = {
-                title: Translations.W(layout.title)?.ConstructElement().innerText ?? "",
-                text: Translations.W(layout.description)?.ConstructElement().innerText ?? "",
+                title: Translations.W(layout.title)?.ConstructElement().textContent ?? "",
+                text: Translations.W(layout.description)?.ConstructElement().textContent ?? "",
                 url: url.data,
             }
 
@@ -190,18 +189,30 @@ export default class ShareScreen extends Combine {
 
         });
 
-        
+
         let downloadThemeConfig: BaseUIElement = undefined;
-        if(layout.definitionRaw !== undefined){
-            downloadThemeConfig = new SubtleButton(Svg.download_svg(), new Combine([
+        if (layout.definitionRaw !== undefined) {
+            const downloadThemeConfigAsJson = new SubtleButton(Svg.download_svg(), new Combine([
                 tr.downloadCustomTheme,
                 tr.downloadCustomThemeHelp.SetClass("subtle")
             ]).onClick(() => {
-                Utils.offerContentsAsDownloadableFile(layout.definitionRaw, layout.id+".mapcomplete-theme-definition.json", {
-                    mimetype:"application/json"
+                Utils.offerContentsAsDownloadableFile(layout.definitionRaw, layout.id + ".mapcomplete-theme-definition.json", {
+                    mimetype: "application/json"
                 })
             })
                 .SetClass("flex flex-col"))
+            let editThemeConfig: BaseUIElement = undefined
+            if (layout.definedAtUrl === undefined) {
+                const patchedDefinition = JSON.parse(layout.definitionRaw)
+                patchedDefinition["language"] = Object.keys(patchedDefinition.title)
+                editThemeConfig = new SubtleButton(Svg.pencil_svg(), "Edit this theme on the custom theme generator",
+                    {
+                        url: `https://pietervdvn.github.io/mc/legacy/070/customGenerator.html#${btoa(JSON.stringify(patchedDefinition))}`
+                    }
+                )
+            }
+            downloadThemeConfig = new Combine([downloadThemeConfigAsJson, editThemeConfig]).SetClass("flex flex-col")
+
         }
 
         super([

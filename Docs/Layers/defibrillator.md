@@ -53,7 +53,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -82,7 +84,9 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -92,14 +96,14 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **Is this defibrillator located indoors?**
+The question is  Is this defibrillator located indoors?
 
 
 
 
 
-  - **This defibrillator is located indoors** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
-  - **This defibrillator is located outdoors** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
+  - This defibrillator is located indoors  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>`
+  - This defibrillator is located outdoors  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>`
 
 
 
@@ -108,18 +112,22 @@ The question is **Is this defibrillator located indoors?**
 
 
 
-The question is **Is this defibrillator freely accessible?**
+The question is  Is this defibrillator freely accessible?
 
 This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) 
-This is rendered with `Access is {access}`
+
+This is rendered with  Access is {access}
 
 
 
-  - **Publicly accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - **Publicly accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>_This option cannot be chosen as answer_
-  - **Only accessible to customers** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
-  - **Not accessible to the general public (e.g. only accesible to staff, the owners, ...)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
-  - **Not accessible, possibly only for professional use** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
+
+
+  - Publicly accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>`
+  - Publicly accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>`
+  - This option cannot be chosen as answer
+  - Only accessible to customers  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>`
+  - Not accessible to the general public (e.g. only accesible to staff, the owners, …)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>`
+  - Not accessible, possibly only for professional use  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>`
 
 
 
@@ -128,19 +136,21 @@ This is rendered with `Access is {access}`
 
 
 
-The question is **Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?**
+The question is  Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?
 
 
 
 
 
-  - **There is no info about the type of device** corresponds with _This option cannot be chosen as answer_
-  - **This is a manual defibrillator for professionals** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual' target='_blank'>manual</a>
-  - **This is a normal automatic defibrillator** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic' target='_blank'>automatic</a>
-  - **This is a special type of defibrillator: {defibrillator}** corresponds with defibrillator~^..*$_This option cannot be chosen as answer_
+  - There is no info about the type of device  corresponds with  ``
+  - This option cannot be chosen as answer
+  - This is a manual defibrillator for professionals  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual' target='_blank'>manual</a>`
+  - This is a normal automatic defibrillator  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic' target='_blank'>automatic</a>`
+  - This is a special type of defibrillator: {defibrillator}  corresponds with  `defibrillator~^..*$`
+  - This option cannot be chosen as answer
 
 
-Only visible if `access=no` is shown
+Only visible if  `access=no`  is shown
 
 
 
@@ -148,18 +158,21 @@ Only visible if `access=no` is shown
 
 
 
-The question is **On which floor is this defibrillator located?**
+The question is  On which floor is this defibrillator located?
 
 This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-This is rendered with `This defibrillator is on floor {level}`
+
+This is rendered with  This defibrillator is on floor {level}
 
 
 
-  - **This defibrillator is on the <b>ground floor</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
-  - **This defibrillator is on the <b>first floor</b>** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
 
 
-Only visible if `indoor=yes` is shown
+  - This defibrillator is on the <b>ground floor</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>`
+  - This defibrillator is on the <b>first floor</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>`
+
+
+Only visible if  `indoor=yes`  is shown
 
 
 
@@ -167,10 +180,13 @@ Only visible if `indoor=yes` is shown
 
 
 
-The question is **Please give some explanation on where the defibrillator can be found (in the local language)**
+The question is  Please give some explanation on where the defibrillator can be found (in the local language)
 
 This rendering asks information about the property  [defibrillator:location](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location) 
-This is rendered with `<i>Extra information about the location (in the local languagel):</i><br/>{defibrillator:location}`
+
+This is rendered with  <i>Extra information about the location (in the local languagel):</i><br/>{defibrillator:location}
+
+
 
 
 
@@ -178,10 +194,13 @@ This is rendered with `<i>Extra information about the location (in the local lan
 
 
 
-The question is **Please give some explanation on where the defibrillator can be found (in English)**
+The question is  Please give some explanation on where the defibrillator can be found (in English)
 
 This rendering asks information about the property  [defibrillator:location:en](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:en) 
-This is rendered with `<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}`
+
+This is rendered with  <i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}
+
+
 
 
 
@@ -189,10 +208,13 @@ This is rendered with `<i>Extra information about the location (in English):</i>
 
 
 
-The question is **Please give some explanation on where the defibrillator can be found (in French)**
+The question is  Please give some explanation on where the defibrillator can be found (in French)
 
 This rendering asks information about the property  [defibrillator:location:fr](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location:fr) 
-This is rendered with `<i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}`
+
+This is rendered with  <i>Extra information about the location (in French):</i><br/>{defibrillator:location:fr}
+
+
 
 
 
@@ -200,16 +222,16 @@ This is rendered with `<i>Extra information about the location (in French):</i><
 
 
 
-The question is **Is this place accessible with a wheelchair?**
+The question is  Is this place accessible with a wheelchair?
 
 
 
 
 
-  - **This place is specially adapted for wheelchair users** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
-  - **This place is easily reachable with a wheelchair** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
-  - **It is possible to reach this place in a wheelchair, but it is not easy** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
-  - **This place is not reachable with a wheelchair** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
+  - This place is specially adapted for wheelchair users  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>`
+  - This place is easily reachable with a wheelchair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>`
+  - It is possible to reach this place in a wheelchair, but it is not easy  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>`
+  - This place is not reachable with a wheelchair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>`
 
 
 
@@ -218,10 +240,13 @@ The question is **Is this place accessible with a wheelchair?**
 
 
 
-The question is **What is the official identification number of the device? (if visible on device)**
+The question is  What is the official identification number of the device? (if visible on device)
 
 This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-This is rendered with `Official identification number of the device: <i>{ref}</i>`
+
+This is rendered with  Official identification number of the device: <i>{ref}</i>
+
+
 
 
 
@@ -229,10 +254,13 @@ This is rendered with `Official identification number of the device: <i>{ref}</i
 
 
 
-The question is **What is the email for questions about this defibrillator?**
+The question is  What is the email for questions about this defibrillator?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
-This is rendered with `Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>`
+
+This is rendered with  Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>
+
+
 
 
 
@@ -240,10 +268,13 @@ This is rendered with `Email for questions about this defibrillator: <a href='ma
 
 
 
-The question is **What is the phone number for questions about this defibrillator?**
+The question is  What is the phone number for questions about this defibrillator?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
-This is rendered with `Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>`
+
+This is rendered with  Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>
+
+
 
 
 
@@ -251,14 +282,17 @@ This is rendered with `Telephone for questions about this defibrillator: <a href
 
 
 
-The question is **At what times is this defibrillator available?**
+The question is  At what times is this defibrillator available?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
-This is rendered with `{opening_hours_table(opening_hours)}`
+
+This is rendered with  {opening_hours_table(opening_hours)}
 
 
 
-  - **24/7 opened (including holidays)** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
+
+
+  - 24/7 opened (including holidays)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
 
 
 
@@ -267,10 +301,13 @@ This is rendered with `{opening_hours_table(opening_hours)}`
 
 
 
-The question is **Is there any useful information for users that you haven't been able to describe above? (leave blank if no)**
+The question is  Is there any useful information for users that you haven't been able to describe above? (leave blank if no)
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
-This is rendered with `Additional information: {description}`
+
+This is rendered with  Additional information: {description}
+
+
 
 
 
@@ -278,14 +315,17 @@ This is rendered with `Additional information: {description}`
 
 
 
-The question is **When was this defibrillator last surveyed?**
+The question is  When was this defibrillator last surveyed?
 
 This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) 
-This is rendered with `This defibrillator was last surveyed on {survey:date}`
+
+This is rendered with  This defibrillator was last surveyed on {survey:date}
 
 
 
-  - **Checked today!** corresponds with survey:date=
+
+
+  - Checked today!  corresponds with  `survey:date=`
 
 
 
@@ -294,9 +334,12 @@ This is rendered with `This defibrillator was last surveyed on {survey:date}`
 
 
 
-The question is **Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)**
+The question is  Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)
 
 This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) 
-This is rendered with `Extra information for OpenStreetMap experts: {fixme}` 
+
+This is rendered with  Extra information for OpenStreetMap experts: {fixme}
+
+ 
 
 This document is autogenerated from [assets/layers/defibrillator/defibrillator.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/defibrillator/defibrillator.json)

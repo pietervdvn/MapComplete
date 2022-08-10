@@ -12,7 +12,9 @@
     "es": "Direcciones conocidas en OSM",
     "zh_Hans": "OSM中已知的地址",
     "nb_NO": "Kjente adresser i OSM",
-    "da": "Kendte adresser i OSM"
+    "da": "Kendte adresser i OSM",
+    "pt": "Endereços conhecidos no OSM",
+    "eo": "Konataj adresoj en OSM"
   },
   "minzoom": 18,
   "source": {
@@ -59,13 +61,15 @@
     "zh_Hans": "地址",
     "ca": "Adreces",
     "nb_NO": "Adresser",
-    "da": "Adresser"
+    "da": "Adresser",
+    "pt": "Endereços",
+    "eo": "Adresoj"
   },
   "tagRenderings": [
     {
       "id": "housenumber",
       "render": {
-        "en": "The housenumber is <b>{addr:housenumber}</b>",
+        "en": "The house number is <b>{addr:housenumber}</b>",
         "nl": "Het huisnummer is <b>{addr:housenumber}</b>",
         "de": "Die Hausnummer ist <b>{addr:housenumber}</b>",
         "hu": "A házszám: <b>{addr:housenumber}</b>",
@@ -74,7 +78,7 @@
         "ru": "Номер дома <b>{addr:housenumber}</b>",
         "zh_Hans": "门牌号是<b>{addr:housenumber}</b>",
         "id": "Nomor rumah ini <b>{addr:housenumber}</b>",
-        "es": "La numeración de la casa es <b>{addr:housenumber}</b>",
+        "es": "El número de puerta es <b>{addr:housenumber}</b>",
         "da": "Husnummeret er <b>{addr:housenumber}</b>"
       },
       "question": {
@@ -114,7 +118,8 @@
             "id": "Bangunan ini tidak memiliki nomor rumah",
             "es": "Esta edificación no tiene número",
             "zh_Hans": "这个建筑物没有门牌号",
-            "da": "Denne bygning har intet husnummer"
+            "da": "Denne bygning har intet husnummer",
+            "zh_Hant": "這棟建築沒有門牌"
           }
         }
       ]
@@ -130,7 +135,7 @@
         "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>",
         "zh_Hans": "这个地址位于<b>{addr:street}</b>街",
         "id": "Alamat ini ada di jalan <b>{addr:street}</b>",
-        "es": "La dirección está en la calle <b>{addr:street}</b>",
+        "es": "La dirección está en esta calle <b>{addr:street}</b>",
         "da": "Denne adresse er på gaden <b>{addr:street}</b>"
       },
       "question": {

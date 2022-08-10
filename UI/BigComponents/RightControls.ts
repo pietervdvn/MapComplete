@@ -4,10 +4,16 @@ import MapControlButton from "../MapControlButton";
 import GeoLocationHandler from "../../Logic/Actors/GeoLocationHandler";
 import Svg from "../../Svg";
 import MapState from "../../Logic/State/MapState";
+import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline";
+import {Utils} from "../../Utils";
+import {TagUtils} from "../../Logic/Tags/TagUtils";
+import {BBox} from "../../Logic/BBox";
+import {OsmFeature} from "../../Models/OsmFeature";
+import LevelSelector from "./LevelSelector";
 
 export default class RightControls extends Combine {
 
-    constructor(state: MapState) {
+    constructor(state: MapState & { featurePipeline: FeaturePipeline }) {
 
         const geolocatioHandler = new GeoLocationHandler(
             state
@@ -38,7 +44,8 @@ export default class RightControls extends Combine {
             state.locationControl.ping();
         });
 
-        super([plus, min, geolocationButton].map(el => el.SetClass("m-0.5 md:m-1")))
+        const levelSelector = new LevelSelector(state);
+        super([levelSelector, plus, min, geolocationButton].map(el => el.SetClass("m-0.5 md:m-1")))
         this.SetClass("flex flex-col items-center")
     }
 

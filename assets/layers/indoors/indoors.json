@@ -1,0 +1,222 @@
+{
+  "id": "indoors",
+  "name": {
+    "en": "indoors",
+    "de": "Innenräume",
+    "nl": "Binnenruimtes"
+  },
+  "description": {
+    "en": "Basic indoor mapping: shows room outlines",
+    "de": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
+    "nl": "Een basis voor indoor-navigatie: toont binnenruimtes"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "indoor=room",
+        "indoor=area",
+        "indoor=wall",
+        "indoor=door",
+        "indoor=level"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Indoor area {name}",
+      "de": "Innenbereich {name}",
+      "nl": "Binnenruimte {name}"
+    },
+    "mappings": [
+      {
+        "if": "indoor=room",
+        "then": {
+          "en": "Indoor Room {name}"
+        }
+      },
+      {
+        "if": "indoor=area",
+        "then": {
+          "en": "Indoor Area {name}"
+        }
+      },
+      {
+        "if": "indoor=wall",
+        "then": {
+          "en": "Indoor Wall {name}"
+        }
+      },
+      {
+        "if": "indoor=corridor",
+        "then": {
+          "en": "Indoor Corridor {name}"
+        }
+      },
+      {
+        "if": "indoor=door",
+        "then": {
+          "en": "Indoor Door {name}"
+        }
+      },
+      {
+        "if": "indoor=level",
+        "then": {
+          "en": "Indoor Level {name}"
+        }
+      }
+    ]
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images",
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the reference number of this room?"
+      },
+      "render": {
+        "en": "This room has the reference number {ref}"
+      },
+      "freeform": {
+        "key": "ref",
+        "type": "string",
+        "placeholder": {
+          "en": "Reference number of the room (e.g. '1.1' or 'A1')"
+        }
+      },
+      "condition": {
+        "or": [
+          "indoor=room",
+          "indoor=area",
+          "indoor=corridor"
+        ]
+      }
+    },
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this room?",
+        "de": "Wie lautet der Name dieses Raums?"
+      },
+      "render": {
+        "en": "This room is named {name}",
+        "de": "Der Name des Raums lautet {name}"
+      },
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the room"
+        }
+      },
+      "condition": {
+        "or": [
+          "indoor=room",
+          "indoor=area",
+          "indoor=corridor"
+        ]
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "color": {
+        "render": "#d3d7d588"
+      },
+      "width": {
+        "render": "8"
+      },
+      "offset": {
+        "render": "-4"
+      },
+      "fill": "no"
+    },
+    {
+      "color": "#4f5551",
+      "fill": "no",
+      "width": "2"
+    },
+    {
+      "label": {
+        "render": "<div style='margin-top: -20px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>",
+        "condition": "name~*",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "room=administration",
+                "room=auditorium",
+                "room=bedroom",
+                "room=chapel",
+                "room=class",
+                "room=computer",
+                "room=conference",
+                "room=crypt",
+                "room=kitchen",
+                "room=laboratory",
+                "room=library",
+                "room=locker",
+                "room=nursery",
+                "room=office",
+                "room=prison_cell",
+                "room=restaurant",
+                "room=security_check",
+                "room=sport",
+                "room=storage",
+                "room=technical",
+                "room=toilet",
+                "room=toilets",
+                "room=waiting"
+              ]
+            },
+            "then": "<div style='margin-top: 0px; color:#013220; background:white' class='rounded-full p-1 font-bold'>{name}</div>"
+          }
+        ]
+      },
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": null,
+        "condition": "indoor=room",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "room=adminstration",
+                "room=auditorium",
+                "room=bedroom",
+                "room=chapel",
+                "room=class",
+                "room=computer",
+                "room=conference",
+                "room=crypt",
+                "room=kitchen",
+                "room=laboratory",
+                "room=library",
+                "room=locker",
+                "room=nursery",
+                "room=office",
+                "room=prison_cell",
+                "room=restaurant",
+                "room=security_check",
+                "room=sport",
+                "room=storage",
+                "room=technical",
+                "room=toilets",
+                "room=waiting"
+              ]
+            },
+            "then": "./assets/layers/indoors/room_{room}.svg"
+          },
+          {
+            "if": "room=toilet",
+            "then": "./assets/layers/indoors/room_toilets.svg"
+          }
+        ]
+      },
+      "iconSize": "15,15, bottom"
+    }
+  ]
+}

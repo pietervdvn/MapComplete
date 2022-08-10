@@ -1,27 +1,35 @@
 {
   "contributors": [
     {
-      "commits": 115,
+      "commits": 182,
       "contributor": "Pieter Vander Vennet"
+    },
+    {
+      "commits": 152,
+      "contributor": "kjon"
     },
     {
       "commits": 60,
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 58,
-      "contributor": "kjon"
+      "commits": 59,
+      "contributor": "Allan Nordhøy"
+    },
+    {
+      "commits": 31,
+      "contributor": "Babos Gábor"
+    },
+    {
+      "commits": 31,
+      "contributor": "Iago"
     },
     {
       "commits": 29,
       "contributor": "Artem"
     },
     {
-      "commits": 25,
-      "contributor": "Babos Gábor"
-    },
-    {
-      "commits": 22,
+      "commits": 23,
       "contributor": "Supaplex"
     },
     {
@@ -29,20 +37,24 @@
       "contributor": "Marco"
     },
     {
-      "commits": 22,
-      "contributor": "Allan Nordhøy"
-    },
-    {
       "commits": 21,
       "contributor": "Anonymous"
     },
     {
-      "commits": 16,
-      "contributor": "el_libre como el chaval"
+      "commits": 20,
+      "contributor": "Robin van der Linde"
+    },
+    {
+      "commits": 19,
+      "contributor": "SC"
+    },
+    {
+      "commits": 18,
+      "contributor": "Reza Almanda"
     },
     {
       "commits": 16,
-      "contributor": "Robin van der Linde"
+      "contributor": "el_libre como el chaval"
     },
     {
       "commits": 15,
@@ -50,7 +62,7 @@
     },
     {
       "commits": 14,
-      "contributor": "Reza Almanda"
+      "contributor": "LeJun"
     },
     {
       "commits": 14,
@@ -58,11 +70,23 @@
     },
     {
       "commits": 13,
-      "contributor": "SC"
+      "contributor": "Romain de Bossoreille"
+    },
+    {
+      "commits": 13,
+      "contributor": "Joost"
     },
     {
       "commits": 12,
-      "contributor": "Joost"
+      "contributor": "paunofu"
+    },
+    {
+      "commits": 10,
+      "contributor": "Win Olario"
+    },
+    {
+      "commits": 10,
+      "contributor": "Johannes Rössel"
     },
     {
       "commits": 10,
@@ -73,12 +97,28 @@
       "contributor": "Jacque Fresco"
     },
     {
-      "commits": 8,
-      "contributor": "LeJun"
+      "commits": 7,
+      "contributor": "Andrews Leruth"
     },
     {
       "commits": 7,
-      "contributor": "Win Olario"
+      "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "Olivier"
+    },
+    {
+      "commits": 6,
+      "contributor": "Joost Schouppe"
+    },
+    {
+      "commits": 6,
+      "contributor": "Vinicius"
+    },
+    {
+      "commits": 6,
+      "contributor": "pdassori"
     },
     {
       "commits": 6,
@@ -102,11 +142,19 @@
     },
     {
       "commits": 5,
-      "contributor": "David Haberthür"
+      "contributor": "Dingcycle"
     },
     {
       "commits": 5,
-      "contributor": "Romain de Bossoreille"
+      "contributor": "phlostically"
+    },
+    {
+      "commits": 5,
+      "contributor": "快乐的老鼠宝宝"
+    },
+    {
+      "commits": 5,
+      "contributor": "David Haberthür"
     },
     {
       "commits": 5,
@@ -114,11 +162,11 @@
     },
     {
       "commits": 5,
-      "contributor": "Vinicius"
+      "contributor": "Alexey Shabanov"
     },
     {
-      "commits": 5,
-      "contributor": "Alexey Shabanov"
+      "commits": 4,
+      "contributor": "BMN"
     },
     {
       "commits": 4,
@@ -138,15 +186,15 @@
     },
     {
       "commits": 4,
-      "contributor": "phlostically"
-    },
-    {
-      "commits": 4,
       "contributor": "Jan Zabel"
     },
     {
       "commits": 4,
       "contributor": "Fabio Bettani"
+    },
+    {
+      "commits": 3,
+      "contributor": "foxandpotatoes"
     },
     {
       "commits": 3,
@@ -186,15 +234,27 @@
     },
     {
       "commits": 2,
-      "contributor": "paunofu"
+      "contributor": "Manuel Tassi"
+    },
+    {
+      "commits": 2,
+      "contributor": "liimee"
+    },
+    {
+      "commits": 2,
+      "contributor": "Marc Marc"
+    },
+    {
+      "commits": 2,
+      "contributor": "Midgard"
+    },
+    {
+      "commits": 2,
+      "contributor": "M. Rey"
     },
     {
       "commits": 2,
       "contributor": "Localizer"
-    },
-    {
-      "commits": 2,
-      "contributor": "foxandpotatoes"
     },
     {
       "commits": 2,
@@ -203,10 +263,6 @@
     {
       "commits": 2,
       "contributor": "MeblIkea"
-    },
-    {
-      "commits": 2,
-      "contributor": "快乐的老鼠宝宝"
     },
     {
       "commits": 2,
@@ -242,6 +298,18 @@
     },
     {
       "commits": 1,
+      "contributor": "Hungarian_user"
+    },
+    {
+      "commits": 1,
+      "contributor": "Stéphane De Greef"
+    },
+    {
+      "commits": 1,
+      "contributor": "Jaime Marquínez Ferrándiz"
+    },
+    {
+      "commits": 1,
       "contributor": "deep map"
     },
     {
@@ -251,10 +319,6 @@
     {
       "commits": 1,
       "contributor": "Falk Rund"
-    },
-    {
-      "commits": 1,
-      "contributor": "pdassori"
     },
     {
       "commits": 1,
@@ -303,10 +367,6 @@
     {
       "commits": 1,
       "contributor": "Rodrigo Tavares"
-    },
-    {
-      "commits": 1,
-      "contributor": "liimee"
     },
     {
       "commits": 1,

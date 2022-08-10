@@ -24,7 +24,8 @@
     "zh_Hant": "公共廁所的地圖",
     "pl": "Mapa toalet publicznych",
     "it": "Una cartina dei servizi igienici pubblici",
-    "hu": "Nyilvános WC-k térképe"
+    "hu": "Nyilvános WC-k térképe",
+    "nb_NO": "Et kart over offentlige toaletter"
   },
   "maintainer": "MapComplete",
   "version": "2020-08-29",

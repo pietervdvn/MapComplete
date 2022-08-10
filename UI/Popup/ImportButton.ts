@@ -54,11 +54,13 @@ abstract class AbstractImportButton implements SpecialVisualizations {
     public readonly docs: string
     public readonly args: { name: string, defaultValue?: string, doc: string }[]
     private readonly showRemovedTags: boolean;
+    private readonly cannotBeImportedMessage: BaseUIElement | undefined;
 
-    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string, required?: boolean }[], showRemovedTags = true) {
+    constructor(funcName: string, docsIntro: string, extraArgs: { name: string, doc: string, defaultValue?: string, required?: boolean }[], 
+                options?: {showRemovedTags? : true | boolean, cannotBeImportedMessage?: BaseUIElement}) {
         this.funcName = funcName
-        this.showRemovedTags = showRemovedTags;
-
+        this.showRemovedTags = options?.showRemovedTags ?? true;
+        this.cannotBeImportedMessage = options?.cannotBeImportedMessage
         this.docs = `${docsIntro}
 
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
@@ -200,7 +202,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                 pleaseLoginButton,
                 state
             ),
-            t.wrongType,
+            this.cannotBeImportedMessage ?? t.wrongType,
             new UIEventSource(this.canBeImported(feature)))
 
     }
@@ -241,7 +243,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         new ShowDataMultiLayer({
             leafletMap: confirmationMap.leafletMap,
             zoomToFeatures: true,
-            features: new StaticFeatureSource([feature], false),
+            features: StaticFeatureSource.fromGeojson([feature]),
             state: state,
             layers: state.filteredLayers
         })
@@ -304,7 +306,10 @@ export class ConflateButton extends AbstractImportButton {
             [{
                 name: "way_to_conflate",
                 doc: "The key, of which the corresponding value is the id of the OSM-way that must be conflated; typically a calculatedTag"
-            }]
+            }],
+            {
+                cannotBeImportedMessage: Translations.t.general.add.import.wrongTypeToConflate
+            }
         );
     }
 
@@ -393,7 +398,7 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
                 doc: "Distance to distort the geometry to snap to this layer",
                 defaultValue: "0.1"
             }],
-            false
+            { showRemovedTags: false}
         )
     }
 
@@ -545,15 +550,21 @@ export class ImportPointButton extends AbstractImportButton {
                     name: "note_id",
                     doc: "If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'"
                 },
-                {name:"location_picker",
+                {
+                    name:"location_picker",
                     defaultValue: "photo",
-                doc: "Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled"}],
-            false
+                    doc: "Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled"
+                },
+                {
+                    name: "maproulette_id",
+                    doc: "If given, the maproulette challenge will be marked as fixed"
+                }],
+            { showRemovedTags: false}
         )
     }
 
     private static createConfirmPanelForPoint(
-        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string, note_id: string },
+        args: { max_snap_distance: string, snap_onto_layers: string, icon: string, text: string, newTags: UIEventSource<any>, targetLayer: string, note_id: string, maproulette_id: string },
         state: FeaturePipelineState,
         guiState: DefaultGuiState,
         originalFeatureTags: UIEventSource<any>,
@@ -594,6 +605,19 @@ export class ImportPointButton extends AbstractImportButton {
                 state.osmConnection.closeNote(note_id, "imported")
                 originalFeatureTags.data["closed_at"] = new Date().toISOString()
                 originalFeatureTags.ping()
+            }
+
+            let maproulette_id = originalFeatureTags.data[args.maproulette_id];
+            console.log("Checking if we need to mark a maproulette task as fixed (" + maproulette_id + ")")
+            if (maproulette_id !== undefined) {
+                if (state.featureSwitchIsTesting.data){
+                    console.log("Not marking maproulette task " + maproulette_id + " as fixed, because we are in testing mode")
+                } else {
+                    console.log("Marking maproulette task as fixed")
+                    state.maprouletteConnection.closeTask(Number(maproulette_id));
+                    originalFeatureTags.data["mr_taskStatus"] = "Fixed";
+                    originalFeatureTags.ping();
+                }
             }
         }
 

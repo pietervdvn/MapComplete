@@ -159,7 +159,7 @@ export class Changes {
         const recentLocationPoints = locations.map(ff => ff.feature)
             .filter(feat => feat.geometry.type === "Point")
             .filter(feat => {
-                const visitTime = new Date((<GeoLocationPointProperties>feat.properties).date)
+                const visitTime = new Date((<GeoLocationPointProperties><any>feat.properties).date)
                 // In seconds
                 const diff = (now.getTime() - visitTime.getTime()) / 1000
                 return diff < Constants.nearbyVisitTime;
@@ -222,6 +222,11 @@ export class Changes {
         }
 
         console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
+        if(pending.length == 0){
+            console.log("No pending changes...")
+            return true;
+        }
+        
         const perType = Array.from(
             Utils.Hist(pending.filter(descr => descr.meta.changeType !== undefined && descr.meta.changeType !== null)
                 .map(descr => descr.meta.changeType)), ([key, count]) => (
@@ -327,7 +332,7 @@ export class Changes {
             const successes = await Promise.all(Array.from(pendingPerTheme,
                 async ([theme, pendingChanges]) => {
                     try {
-                        const openChangeset = this.state.osmConnection.GetPreference("current-open-changeset-" + theme).map(
+                        const openChangeset = this.state.osmConnection.GetPreference("current-open-changeset-" + theme).sync(
                             str => {
                                 const n = Number(str);
                                 if (isNaN(n)) {

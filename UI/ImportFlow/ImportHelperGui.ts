@@ -12,7 +12,6 @@ import ConflationChecker from "./ConflationChecker";
 import {AskMetadata} from "./AskMetadata";
 import {ConfirmProcess} from "./ConfirmProcess";
 import {CreateNotes} from "./CreateNotes";
-import {FixedUiElement} from "../Base/FixedUiElement";
 import {VariableUiElement} from "../Base/VariableUIElement";
 import List from "../Base/List";
 import {CompareToAlreadyExistingNotes} from "./CompareToAlreadyExistingNotes";
@@ -63,7 +62,7 @@ export default class ImportHelperGui extends LeftIndex {
             }),
             toc,
             new Toggle(t.testMode.SetClass("block alert"), undefined, state.featureSwitchIsTesting),
-            LanguagePicker.CreateLanguagePicker(Translations.t.importHelper.title.SupportedLanguages())?.SetClass("mt-4 self-end flex-col"),
+            new LanguagePicker(Translations.t.importHelper.title.SupportedLanguages(), "")?.SetClass("mt-4 self-end flex-col"),
         ].map(el => el?.SetClass("pl-4"))
 
         super(

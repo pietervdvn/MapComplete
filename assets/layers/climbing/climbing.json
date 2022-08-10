@@ -2,7 +2,9 @@
   "id": "climbing",
   "title": null,
   "description": {
-    "en": "A dummy layer which contains tagrenderings, shared among the climbing layers"
+    "en": "A dummy layer which contains tagrenderings, shared among the climbing layers",
+    "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
+    "de": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden"
   },
   "minzoom": 25,
   "source": {
@@ -42,7 +44,8 @@
         "nl": "De klimroutes zijn gemiddeld <b>{canonical(climbing:length)}</b> lang",
         "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です",
         "fr": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne",
-        "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>"
+        "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>",
+        "es": "Las rutas miden <b>{canonical(climbing:length)}</b> de media"
       },
       "question": {
         "de": "Wie lang sind die Routen (durchschnittlich) in Metern?",
@@ -50,7 +53,8 @@
         "nl": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
         "ja": "ルートの(平均)長さはメートル単位でいくつですか?",
         "fr": "Quelle est la longueur moyenne des voies en mètres ?",
-        "it": "Quale è la lunghezza (media) delle vie in metri?"
+        "it": "Quale è la lunghezza (media) delle vie in metri?",
+        "es": "¿Cual es la longitud (media) de las rutas en metros?"
       },
       "freeform": {
         "key": "climbing:length",
@@ -317,10 +321,14 @@
     {
       "id": "max_bolts",
       "question": {
-        "en": "How many bolts do routes in {title()} have at most?"
+        "en": "How many bolts do routes in {title()} have at most?",
+        "de": "Wie viele Haken haben die Routen in {title()} maximal?",
+        "nl": "Wat is het maximum aantal bouten in routes ban {title()}?"
       },
       "render": {
-        "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
+        "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
+        "de": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
+        "nl": "De sportklimroutes hebben maximaal {climbing:bolts:max} bouten. <div class='subtle'>Hierbij worden relays niet meegteld. Dit geeft aan hoeveel klimsetjes een klimmer nodig heeft</div>"
       },
       "freeform": {
         "key": "climbing:bolts:max",
@@ -334,10 +342,16 @@
     {
       "id": "fee",
       "question": {
-        "en": "Is a fee required to climb here?"
+        "en": "Is a fee required to climb here?",
+        "es": "¿Se requiere una tasa para escalar aquí?",
+        "de": "Ist das Klettern hier gebührenpflichtig?",
+        "nl": "Moet men betalen om hier te klimmen?"
       },
       "render": {
-        "en": "A fee of {charge} should be paid for climbing here"
+        "en": "A fee of {charge} should be paid for climbing here",
+        "de": "Zum Klettern wird eine Gebühr von {charge} erhoben",
+        "es": "Se debe de pagar una tasa de {charge} para escalar aquí",
+        "nl": "Men moet {charge} betalen om hier te klimmen"
       },
       "freeform": {
         "key": "charge",
@@ -353,7 +367,10 @@
             "charge="
           ],
           "then": {
-            "en": "Climbing here is free of charge"
+            "en": "Climbing here is free of charge",
+            "de": "Das Klettern ist hier kostenlos",
+            "es": "La escalada es gratis",
+            "nl": "Hier klimmen is gratis"
           }
         },
         {
@@ -364,7 +381,10 @@
             ]
           },
           "then": {
-            "en": "Paying a fee is required to climb here"
+            "en": "Paying a fee is required to climb here",
+            "es": "Hay que pagar una tasa para escalar aquí",
+            "de": "Zum Klettern ist eine Gebühr zu zahlen",
+            "nl": "Men moet betalen om hier te klimmen"
           },
           "hideInAnswer": "charge~*"
         }

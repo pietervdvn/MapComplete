@@ -20,7 +20,7 @@
             "intro": "データがまだわからない場所をクリックしました。<br>",
             "layerNotEnabled": "レイヤ{layer}は有効になっていません。このレイヤで点を追加できるようにする",
             "openLayerControl": "レイヤコントロールボックスを開く",
-            "pleaseLogin": "<a class=\"activate-osm-authentication\">新しいポイントを追加するにはログインしてください</a>",
+            "pleaseLogin": "新しいポイントを追加するにはログインしてください",
             "stillLoading": "データはまだロード中です。新しいポイントを追加する前に少しお待ちください。",
             "title": "新しいポイントを追加しますか?",
             "zoomInFurther": "さらにズーム拡大して点を追加します。"

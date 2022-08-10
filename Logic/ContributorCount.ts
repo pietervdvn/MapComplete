@@ -1,5 +1,5 @@
 /// Given a feature source, calculates a list of OSM-contributors who mapped the latest versions
-import {UIEventSource} from "./UIEventSource";
+import {Store, UIEventSource} from "./UIEventSource";
 import FeaturePipeline from "./FeatureSource/FeaturePipeline";
 import Loc from "../Models/Loc";
 import {BBox} from "./BBox";
@@ -7,10 +7,10 @@ import {BBox} from "./BBox";
 export default class ContributorCount {
 
     public readonly Contributors: UIEventSource<Map<string, number>> = new UIEventSource<Map<string, number>>(new Map<string, number>());
-    private readonly state: { featurePipeline: FeaturePipeline, currentBounds: UIEventSource<BBox>, locationControl: UIEventSource<Loc> };
+    private readonly state: { featurePipeline: FeaturePipeline, currentBounds: Store<BBox>, locationControl: Store<Loc> };
     private lastUpdate: Date = undefined;
 
-    constructor(state: { featurePipeline: FeaturePipeline, currentBounds: UIEventSource<BBox>, locationControl: UIEventSource<Loc> }) {
+    constructor(state: { featurePipeline: FeaturePipeline, currentBounds: Store<BBox>, locationControl: Store<Loc> }) {
         this.state = state;
         const self = this;
         state.currentBounds.map(bbox => {

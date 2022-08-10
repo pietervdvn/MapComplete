@@ -11,7 +11,7 @@ import Link from "../Base/Link";
 import LinkToWeblate from "../Base/LinkToWeblate";
 import Toggleable from "../Base/Toggleable";
 import Title from "../Base/Title";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import {SubtleButton} from "../Base/SubtleButton";
 import Svg from "../../Svg";
 import * as native_languages from "../../assets/language_native.json"
@@ -19,7 +19,7 @@ import * as used_languages from "../../assets/generated/used_languages.json"
 import BaseUIElement from "../BaseUIElement";
 
 class TranslatorsPanelContent extends Combine {
-    constructor(layout: LayoutConfig, isTranslator: UIEventSource<boolean>) {
+    constructor(layout: LayoutConfig, isTranslator: Store<boolean>) {
         const t = Translations.t.translations
 
         const {completeness, untranslated, total} = TranslatorsPanel.MissingTranslationsFor(layout)
@@ -106,7 +106,7 @@ class TranslatorsPanelContent extends Combine {
 export default class TranslatorsPanel extends Toggle {
 
 
-    constructor(state: { layoutToUse: LayoutConfig, isTranslator: UIEventSource<boolean> }, iconStyle?: string) {
+    constructor(state: { layoutToUse: LayoutConfig, isTranslator: Store<boolean> }, iconStyle?: string) {
         const t = Translations.t.translations
         super(
             new Lazy(() => new TranslatorsPanelContent(state.layoutToUse, state.isTranslator)
@@ -124,7 +124,7 @@ export default class TranslatorsPanel extends Toggle {
         const completeness = new Map<string, number>()
         const untranslated = new Map<string, string[]>()
 
-        Utils.WalkObject(layout, (o, path) => {
+        Utils.WalkObject(layout, (o) => {
             const translation = <Translation><any>o;
             if (translation.translations["*"] !== undefined) {
                 return

@@ -1,6 +1,5 @@
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {RegexTag} from "../../Logic/Tags/RegexTag";
-import {param} from "jquery";
 
 export default class SourceConfig {
 

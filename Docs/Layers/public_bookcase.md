@@ -15,7 +15,6 @@ A streetside cabinet with books, accessible to anyone
 
 
   - This layer is shown at zoomlevel **10** and higher
-  - This layer is needed as dependency for layer [note_import](#note_import)
 
 
 
@@ -53,7 +52,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-**Warning** This quick overview is incomplete
+Warning: 
+
+this quick overview is incomplete
 
 
 
@@ -61,7 +62,7 @@ attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [nat](../SpecialInputElements.md#nat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/books#values) [books](https://wiki.openstreetmap.org/wiki/Key:books) | Multiple choice | [children](https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren) [adults](https://wiki.openstreetmap.org/wiki/Tag:books%3Dadults) [children;adults](https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren;adults)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/books#values) [books](https://wiki.openstreetmap.org/wiki/Key:books) | [string](../SpecialInputElements.md#string) | [children](https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren) [adults](https://wiki.openstreetmap.org/wiki/Tag:books%3Dadults)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/indoor#values) [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/access#values) [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
@@ -77,7 +78,9 @@ attribute | type | values which are supported by this layer
 
 
 
-_This tagrendering has no question and is thus read-only_
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -87,14 +90,17 @@ _This tagrendering has no question and is thus read-only_
 
 
 
-The question is **What is the name of this public bookcase?**
+The question is  What is the name of this public bookcase?
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
-This is rendered with `The name of this bookcase is {name}`
+
+This is rendered with  The name of this bookcase is {name}
 
 
 
-  - **This bookcase doesn't have a name** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+
+
+  - This bookcase doesn't have a name  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -103,10 +109,13 @@ This is rendered with `The name of this bookcase is {name}`
 
 
 
-The question is **How many books fit into this public bookcase?**
+The question is  How many books fit into this public bookcase?
 
 This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
-This is rendered with `{capacity} books fit in this bookcase`
+
+This is rendered with  {capacity} books fit in this bookcase
+
+
 
 
 
@@ -114,15 +123,18 @@ This is rendered with `{capacity} books fit in this bookcase`
 
 
 
-The question is **What kind of books can be found in this public bookcase?**
+The question is  What kind of books can be found in this public bookcase?
+
+This rendering asks information about the property  [books](https://wiki.openstreetmap.org/wiki/Key:books) 
+
+This is rendered with  This place mostly serves {books}
 
 
 
 
 
-  - **Mostly children books** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren' target='_blank'>children</a>
-  - **Mostly books for adults** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dadults' target='_blank'>adults</a>
-  - **Both books for kids and adults** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren;adults' target='_blank'>children;adults</a>
+  - Mostly children books  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren' target='_blank'>children</a>`
+  - Mostly books for adults  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dadults' target='_blank'>adults</a>`
 
 
 
@@ -131,15 +143,16 @@ The question is **What kind of books can be found in this public bookcase?**
 
 
 
-The question is **Is this bookcase located outdoors?**
+The question is  Is this bookcase located outdoors?
 
 
 
 
 
-  - **This bookcase is located indoors** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
-  - **This bookcase is located outdoors** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
-  - **This bookcase is located outdoors** corresponds with _This option cannot be chosen as answer_
+  - This bookcase is located indoors  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>`
+  - This bookcase is located outdoors  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>`
+  - This bookcase is located outdoors  corresponds with  ``
+  - This option cannot be chosen as answer
 
 
 
@@ -148,17 +161,17 @@ The question is **Is this bookcase located outdoors?**
 
 
 
-The question is **Is this public bookcase freely accessible?**
+The question is  Is this public bookcase freely accessible?
 
 
 
 
 
-  - **Publicly accessible** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
-  - **Only accessible to customers** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+  - Publicly accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>`
+  - Only accessible to customers  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>`
 
 
-Only visible if `indoor=yes` is shown
+Only visible if  `indoor=yes`  is shown
 
 
 
@@ -166,10 +179,13 @@ Only visible if `indoor=yes` is shown
 
 
 
-The question is **Who maintains this public bookcase?**
+The question is  Who maintains this public bookcase?
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-This is rendered with `Operated by {operator}`
+
+This is rendered with  Operated by {operator}
+
+
 
 
 
@@ -177,15 +193,18 @@ This is rendered with `Operated by {operator}`
 
 
 
-The question is **Is this public bookcase part of a bigger network?**
+The question is  Is this public bookcase part of a bigger network?
 
 This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) 
-This is rendered with `This public bookcase is part of {brand}`
+
+This is rendered with  This public bookcase is part of {brand}
 
 
 
-  - **Part of the network 'Little Free Library'** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DLittle Free Library' target='_blank'>Little Free Library</a>
-  - **This public bookcase is not part of a bigger network** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
+
+
+  - Part of the network 'Little Free Library'  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DLittle Free Library' target='_blank'>Little Free Library</a>`
+  - This public bookcase is not part of a bigger network  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>`
 
 
 
@@ -194,17 +213,20 @@ This is rendered with `This public bookcase is part of {brand}`
 
 
 
-The question is **What is the reference number of this public bookcase?**
+The question is  What is the reference number of this public bookcase?
 
 This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
-This is rendered with `The reference number of this public bookcase within {brand} is {ref}`
+
+This is rendered with  The reference number of this public bookcase within {brand} is {ref}
 
 
 
-  - **This bookcase is not part of a bigger network** corresponds with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
 
 
-Only visible if `brand~^..*$` is shown
+  - This bookcase is not part of a bigger network  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>`
+
+
+Only visible if  `brand~^..*$`  is shown
 
 
 
@@ -212,10 +234,13 @@ Only visible if `brand~^..*$` is shown
 
 
 
-The question is **When was this public bookcase installed?**
+The question is  When was this public bookcase installed?
 
 This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
-This is rendered with `Installed on {start_date}`
+
+This is rendered with  Installed on {start_date}
+
+
 
 
 
@@ -223,9 +248,12 @@ This is rendered with `Installed on {start_date}`
 
 
 
-The question is **Is there a website with more information about this public bookcase?**
+The question is  Is there a website with more information about this public bookcase?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
-This is rendered with `More info on <a href='{website}' target='_blank'>the website</a>` 
+
+This is rendered with  More info on <a href='{website}' target='_blank'>the website</a>
+
+ 
 
 This document is autogenerated from [assets/layers/public_bookcase/public_bookcase.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/public_bookcase/public_bookcase.json)

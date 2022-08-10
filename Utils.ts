@@ -9,7 +9,7 @@ export class Utils {
      */
     public static runningFromConsole = typeof window === "undefined";
     public static readonly assets_path = "./assets/svg/";
-    public static externalDownloadFunction: (url: string, headers?: any) => Promise<any>;
+    public static externalDownloadFunction: (url: string, headers?: any) => Promise<{ content: string } | { redirect: string }>;
     public static Special_visualizations_tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
 This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
 
@@ -284,7 +284,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @param useLang
      * @constructor
      */
-    public static SubstituteKeys(txt: string | undefined, tags: any, useLang?: string): string | undefined {
+    public static SubstituteKeys(txt: string | undefined, tags?: any, useLang?: string): string | undefined {
         if (txt === undefined) {
             return undefined
         }
@@ -294,7 +294,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
         while (match) {
             const key = match[1]
-            let v = tags[key]
+            let v = tags === undefined ? undefined : tags[key]
             if (v !== undefined) {
 
                 if (v["toISOString"] != undefined) {
@@ -310,7 +310,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
                 if (v.InnerConstructElement !== undefined) {
                     console.warn("SubstituteKeys received a BaseUIElement to substitute in - this is probably a bug and will be downcast to a string\nThe key is", key, "\nThe value is", v)
-                    v = (<HTMLElement>v.InnerConstructElement())?.innerText
+                    v = (<HTMLElement>v.InnerConstructElement())?.textContent
                 }
 
                 if (typeof v !== "string") {
@@ -442,7 +442,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * The leaf objects are replaced in the object itself by the specified function
      */
-    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any, travelledPath: string[]) => any), travelledPath: string[] = []) {
+    public static WalkPath(path: string[], object: any, replaceLeaf: ((leaf: any, travelledPath: string[]) => any), travelledPath: string[] = []) : void    {
+        if(object == null){
+            return;
+        }
+        
         const head = path[0]
         if (path.length === 1) {
             // We have reached the leaf
@@ -517,17 +521,17 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * Apply a function on every leaf of the JSON; used to rewrite parts of the JSON.
      * Returns a modified copy of the original object.
-     * 
+     *
      * 'null' and 'undefined' are _always_ considered a leaf, even if 'isLeaf' says it isn't
-     * 
+     *
      * Hangs if the object contains a loop
-     * 
+     *
      * // should walk a json
      * const walked = Utils.WalkJson({
      *     key: "value"
      * }, (x: string) => x + "!")
      * walked // => {key: "value!"}
-     * 
+     *
      * // should preserve undefined and null:
      * const walked = Utils.WalkJson({
      *   u: undefined,
@@ -535,7 +539,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *   v: "value"
      * }, (x) => {if(x !== undefined && x !== null){return x+"!}; return x})
      * walked // => {v: "value!", u: undefined, n: null}
-     * 
+     *
      * // should preserve undefined and null, also with a negative isLeaf:
      * const walked = Utils.WalkJson({
      *   u: undefined,
@@ -561,8 +565,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return f(json, path)
         }
         if (Array.isArray(json)) {
-            return json.map((sub,i) => {
-                return Utils.WalkJson(sub, f, isLeaf, [...path,""+i]);
+            return json.map((sub, i) => {
+                return Utils.WalkJson(sub, f, isLeaf, [...path, "" + i]);
             })
         }
 
@@ -575,7 +579,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     /**
      * Walks an object recursively, will execute the 'collect'-callback on every leaf.
-     * 
+     *
      * Will hang on objects with loops
      */
     static WalkObject(json: any, collect: (v: number | string | boolean | undefined, path: string[]) => any, isLeaf: (object) => boolean = undefined, path = []): void {
@@ -664,7 +668,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         Utils.injectedDownloads[url] = data
     }
 
-    public static download(url: string, headers?: any): Promise<string> {
+    public static async download(url: string, headers?: any): Promise<string | undefined> {
+        return (await Utils.downloadAdvanced(url, headers))["content"]
+    }
+
+    /**
+     * Download function which also indicates advanced options, such as redirects
+     * @param url
+     * @param headers
+     */
+    public static downloadAdvanced(url: string, headers?: any): Promise<{ content: string } | { redirect: string }> {
         if (this.externalDownloadFunction !== undefined) {
             return this.externalDownloadFunction(url, headers)
         }
@@ -673,7 +686,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 const xhr = new XMLHttpRequest();
                 xhr.onload = () => {
                     if (xhr.status == 200) {
-                        resolve(xhr.response)
+                        resolve({content: xhr.response})
+                    } else if (xhr.status === 302) {
+                        resolve({redirect: xhr.getResponseHeader("location")})
                     } else if (xhr.status === 509 || xhr.status === 429) {
                         reject("rate limited")
                     } else {
@@ -682,7 +697,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 };
                 xhr.open('GET', url);
                 if (headers !== undefined) {
-
                     for (const key in headers) {
                         xhr.setRequestHeader(key, headers[key])
                     }
@@ -917,18 +931,36 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return track[str2.length][str1.length];
     }
 
-    public static MapToObj<T>(d: Map<string, T>, onValue: ((t: T, key: string) => any) = undefined): object {
+    public static MapToObj<V, T>(d: Map<string, V>, onValue: ((t: V, key: string) => T)): Record<string, T> {
         const o = {}
         const keys = Array.from(d.keys())
         keys.sort();
         for (const key of keys) {
-            let value = d.get(key)
-            if (onValue !== undefined) {
-                value = onValue(value, key)
-            }
-            o[key] = value;
+            o[key] = onValue(d.get(key), key);
         }
         return o
+    }
+
+    /**
+     * Switches keys and values around
+     * 
+     * Utils.TransposeMap({"a" : ["b", "c"], "x" : ["b", "y"]}) // => {"b" : ["a", "x"], "c" : ["a"], "y" : ["x"]}
+     */
+    public static TransposeMap<K extends string, V extends  string>(d: Record<K, V[]>) : Record<V, K[]>{
+        const newD : Record<V, K[]> = <any> {};
+
+        for (const k in d) {
+            const vs = d[k]
+            for (let v of vs) {
+                const list = newD[v]
+                if(list === undefined){
+                    newD[v] = [k] // Left: indexing; right: list with one element
+                }else{
+                    list.push(k)
+                }
+            }
+        }
+        return newD;
     }
 
     /**
@@ -998,6 +1030,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     private static colorDiff(c0: { r: number, g: number, b: number }, c1: { r: number, g: number, b: number }) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b);
+    }
+
+    static toIdRecord<T extends {id: string}>(ts: T[]): Record<string, T> {
+        const result : Record<string, T> = {}
+        for (const t of ts) {
+            result[t.id] = t
+        }
+        return result
     }
 }
 

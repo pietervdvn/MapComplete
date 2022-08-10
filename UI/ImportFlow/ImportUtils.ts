@@ -1,8 +1,13 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store} from "../../Logic/UIEventSource";
 import {GeoOperations} from "../../Logic/GeoOperations";
+import {Feature, Geometry} from "@turf/turf";
 
 export class ImportUtils {
-    public static partitionFeaturesIfNearby(toPartitionFeatureCollection: ({ features: any[] }), compareWith: UIEventSource<{ features: any[] }>, cutoffDistanceInMeters: UIEventSource<number>): UIEventSource<{ hasNearby: any[], noNearby: any[] }> {
+    public static partitionFeaturesIfNearby(
+        toPartitionFeatureCollection: ({ features: Feature<Geometry>[] }),
+        compareWith: Store<{ features: Feature[] }>,
+        cutoffDistanceInMeters: Store<number>)
+        : Store<{ hasNearby: Feature[], noNearby: Feature[] }> {
         return compareWith.map(osmData => {
             if (osmData?.features === undefined) {
                 return undefined
@@ -16,7 +21,7 @@ export class ImportUtils {
             const noNearby = []
             for (const toImportElement of toPartitionFeatureCollection.features) {
                 const hasNearbyFeature = osmData.features.some(f =>
-                    maxDist >= GeoOperations.distanceBetween(toImportElement.geometry.coordinates, GeoOperations.centerpointCoordinates(f)))
+                    maxDist >= GeoOperations.distanceBetween(<any> toImportElement.geometry.coordinates, GeoOperations.centerpointCoordinates(f)))
                 if (hasNearbyFeature) {
                     hasNearby.push(toImportElement)
                 } else {

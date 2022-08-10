@@ -9,8 +9,8 @@ import BaseUIElement from "../BaseUIElement";
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {Unit} from "../../Models/Unit";
 import Lazy from "../Base/Lazy";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 
 export default class EditableTagRendering extends Toggle {
 
@@ -49,7 +49,7 @@ export default class EditableTagRendering extends Toggle {
         )
     }
 
-    private static CreateRendering(state: { featureSwitchUserbadge?: UIEventSource<boolean>, osmConnection: OsmConnection }, tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>): BaseUIElement {
+    private static CreateRendering(state: FeaturePipelineState, tags: UIEventSource<any>, configuration: TagRenderingConfig, units: Unit[], editMode: UIEventSource<boolean>): BaseUIElement {
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration, state)
         answer.SetClass("w-full")
         let rendering = answer;

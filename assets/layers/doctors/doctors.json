@@ -1,0 +1,192 @@
+{
+  "id": "doctors",
+  "name": {
+    "en": "Doctors",
+    "de": "Ärzte",
+    "nl": "Dokters",
+    "fr": "Médecins"
+  },
+  "description": {
+    "en": "This layer shows doctor offices, dentists and other healthcare facilities",
+    "de": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
+    "nl": "Deze laag toont dokterspraktijken, tandartsen en andere gezondheidszorgfaciliteiten",
+    "fr": "Ce calque montre les cabinets médicaux, les dentistes et autres établissements de santé"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=doctors",
+        "amenity=dentist",
+        "healthcare=physiotherapist"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Doctors Office {name}",
+      "de": "Arztpraxis {name}",
+      "nl": "Dokterspraktijk {name}",
+      "fr": "Cabinet medical {name}"
+    },
+    "mappings": [
+      {
+        "if": "amenity=doctors",
+        "then": "Doctors Office {name}"
+      },
+      {
+        "if": "amenity=dentist",
+        "then": "Dentists office {name}"
+      },
+      {
+        "if": "healthcare=physiotherapist",
+        "then": "Physiotherapists office {name}"
+      }
+    ]
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images",
+    "opening_hours",
+    "phone",
+    "email",
+    "website",
+    {
+      "question": {
+        "en": "What is the name of this doctors place?",
+        "de": "Wie heißt diese Arztpraxis?",
+        "nl": "Wat is de naam van deze dokterspraktijk?",
+        "fr": "Comment s'appelle ce cabinet médical ?"
+      },
+      "render": {
+        "en": "This doctors place is called {name}",
+        "de": "Diese Arztpraxis heißt {name}",
+        "nl": "Deze dokterspraktijk heet {name}",
+        "fr": "Ce cabinet médical s'appelle {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "name"
+    },
+    {
+      "condition": "amenity=doctors",
+      "id": "specialty",
+      "render": {
+        "en": "This doctor is specialized in {healthcare:speciality}",
+        "de": "Dieser Arzt ist spezialisiert auf {healthcare:speciality}",
+        "nl": "Deze dokter is gespecialiseerd in {healthcare:speciality}",
+        "fr": "Ce médecin est spécialisé dans {healthcare:speciality}"
+      },
+      "question": {
+        "en": "What is this doctor specialized in?",
+        "de": "Worauf ist dieser Arzt spezialisiert?",
+        "nl": "Waar is deze dokter in gespecialiseerd?",
+        "fr": "En quoi ce médecin est-il spécialisé ?"
+      },
+      "freeform": {
+        "key": "healthcare:speciality"
+      },
+      "mappings": [
+        {
+          "if": "healthcare:speciality=general",
+          "then": {
+            "en": "This is a general practitioner",
+            "de": "Dies ist ein Allgemeinmediziner",
+            "nl": "Dit is een huisarts",
+            "fr": "C'est un médecin généraliste"
+          }
+        },
+        {
+          "if": "healthcare:speciality=gynaecology",
+          "then": {
+            "en": "This is a gynaecologist",
+            "de": "Dies ist ein Gynäkologe",
+            "nl": "Dit is een gynaecoloog",
+            "fr": "C'est un gynécologue"
+          }
+        },
+        {
+          "if": "healthcare:speciality=psychiatry",
+          "then": {
+            "en": "This is a psychiatrist",
+            "de": "Dies ist ein Psychiater",
+            "nl": "Dit is een psychiater",
+            "fr": "C'est un psychiatre"
+          }
+        },
+        {
+          "if": "healthcare:speciality=paediatrics",
+          "then": {
+            "en": "This is a paediatrician",
+            "de": "Dies ist ein Kinderarzt",
+            "nl": "Dit is een kinderarts",
+            "fr": "C'est un pédiatre"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a doctors office",
+        "de": "eine Arztpraxis",
+        "nl": "een dokterspraktijk",
+        "fr": "un cabinet médical"
+      },
+      "tags": [
+        "amenity=doctors"
+      ]
+    },
+    {
+      "title": {
+        "en": "a dentists office",
+        "de": "eine Zahnarztpraxis",
+        "nl": "een tandartspraktijk",
+        "fr": "un cabinet de dentistes"
+      },
+      "tags": [
+        "amenity=dentist"
+      ]
+    },
+    {
+      "title": {
+        "en": "a physiotherapists office",
+        "de": "Praxis eines Physiotherapeuten",
+        "nl": "een fysiotherapeutenpraktijk",
+        "fr": "un cabinet de kinésithérapeutes"
+      },
+      "tags": [
+        "healthcare=physiotherapist"
+      ]
+    }
+  ],
+  "filter": [
+    {
+      "id": "opened-now",
+      "options": [
+        {
+          "question": {
+            "en": "Opened now",
+            "de": "Jetzt geöffnet",
+            "nl": "Nu geopend",
+            "fr": "Ouvert maintenant"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "circle:white;./assets/layers/doctors/doctors.svg"
+      },
+      "iconSize": "40,40,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

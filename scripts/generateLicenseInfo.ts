@@ -2,6 +2,7 @@ import {existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync} from "fs
 import SmallLicense from "../Models/smallLicense";
 import ScriptUtils from "./ScriptUtils";
 
+const prompt = require('prompt-sync')();
 
 function validateLicenseInfo(l : SmallLicense){
    l.sources.map(s => new URL(s))
@@ -55,7 +56,6 @@ function missingLicenseInfos(licenseInfos: SmallLicense[], allIcons: string[]) {
     return missing;
 }
 
-const prompt = require('prompt-sync')();
 
 const knownLicenses = new Map<string, SmallLicense>()
 knownLicenses.set("me", {
@@ -64,7 +64,6 @@ knownLicenses.set("me", {
     license: "CC0",
     sources: []
 })
-
 knownLicenses.set("streetcomplete", {
     authors: ["Tobias Zwick (westnordost)"],
     path: undefined,
@@ -72,6 +71,19 @@ knownLicenses.set("streetcomplete", {
     sources: ["https://github.com/streetcomplete/StreetComplete/tree/master/res/graphics", "https://f-droid.org/packages/de.westnordost.streetcomplete/"]
 })
 
+knownLicenses.set("temaki", {
+    authors: ["Temaki"],
+    path: undefined,
+    license: "CC0",
+    sources: ["https://github.com/ideditor/temaki","https://ideditor.github.io/temaki/docs/"]
+})
+
+knownLicenses.set("maki", {
+    authors: ["Maki"],
+    path: undefined,
+    license: "CC0",
+    sources: ["https://labs.mapbox.com/maki-icons/"]
+})
 
 knownLicenses.set("t", {
     authors: [],
@@ -79,30 +91,24 @@ knownLicenses.set("t", {
     license: "CC0; trivial",
     sources: []
 })
-
 knownLicenses.set("na", {
     authors: [],
     path: undefined,
     license: "CC0",
     sources: []
 })
-
 knownLicenses.set("tv", {
     authors: ["Toerisme Vlaanderen"],
     path: undefined,
     license: "CC0",
     sources: ["https://toerismevlaanderen.be/pinjepunt","https://mapcomplete.osm.be/toerisme_vlaanderenn"]
 })
-
 knownLicenses.set("tvf", {
     authors: ["Jo De Baerdemaeker "],
     path: undefined,
     license: "All rights reserved",
     sources: ["https://www.studiotype.be/fonts/flandersart"]
 })
-
-
-
 knownLicenses.set("twemoji", {
     authors: ["Twemoji"],
     path: undefined,
@@ -154,7 +160,7 @@ function createLicenseInfoFor(path): void {
 function cleanLicenseInfo(allPaths: string[], allLicenseInfos: SmallLicense[]) {
     // Read the license info file from the generated assets, creates a compiled license info in every directory
     // Note: this removes all the old license infos
-    for (const licensePath of licensePaths) {
+    for (const licensePath of allPaths) {
         unlinkSync(licensePath)
     }
 
@@ -219,10 +225,13 @@ function queryMissingLicenses(missingLicenses: string[]) {
  * Creates the humongous license_info in the generated assets, containing all licenses with a path relative to the root
  * @param licensePaths
  */
-function createFullLicenseOverview(licensePaths) {
+function createFullLicenseOverview(licensePaths: string[]) {
 
     const allLicenses: SmallLicense[] = []
     for (const licensePath of licensePaths) {
+        if(!existsSync(licensePath)){
+            continue
+        }
         const licenses = <SmallLicense[]>JSON.parse(readFileSync(licensePath, "UTF-8"))
         for (const license of licenses) {
             validateLicenseInfo(license)
@@ -235,52 +244,54 @@ function createFullLicenseOverview(licensePaths) {
     writeFileSync("./assets/generated/license_info.json", JSON.stringify(allLicenses, null, "  "))
 }
 
-console.log("Checking and compiling license info")
-
-if (!existsSync("./assets/generated")) {
-    mkdirSync("./assets/generated")
-}
-
-
-let contents = ScriptUtils.readDirRecSync("./assets")
-    .filter(entry => entry.indexOf("./assets/generated") != 0)
-let licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
-let licenseInfos = generateLicenseInfos(licensePaths);
-
-
-
-const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff)$/i) != null)
-const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
-if (process.argv.indexOf("--prompt") >= 0 || process.argv.indexOf("--query") >= 0) {
-    queryMissingLicenses(missingLicenses)
-    contents = ScriptUtils.readDirRecSync("./assets")
+function main(args: string[]){
+    
+    console.log("Checking and compiling license info")
+    
+    if (!existsSync("./assets/generated")) {
+        mkdirSync("./assets/generated")
+    }
+    
+    
+    let contents = ScriptUtils.readDirRecSync("./assets")
         .filter(entry => entry.indexOf("./assets/generated") != 0)
-    licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
-    licenseInfos = generateLicenseInfos(licensePaths);
-}
-
-const invalidLicenses = licenseInfos.filter(l => (l.license ?? "") === "").map(l => `License for artwork ${l.path} is empty string or undefined`)
-for (const licenseInfo of licenseInfos) {
-    for (const source of licenseInfo.sources) {
-        if (source == "") {
-            invalidLicenses.push("Invalid license: empty string in " + JSON.stringify(licenseInfo))
-        }
-        try {
-            new URL(source);
-        } catch {
-            invalidLicenses.push("Not a valid URL: " + source)
+    let licensePaths = contents.filter(entry => entry.indexOf("license_info.json") >= 0)
+    let licenseInfos = generateLicenseInfos(licensePaths);
+    
+    
+    
+    const artwork = contents.filter(pth => pth.match(/(.svg|.png|.jpg|.ttf|.otf|.woff)$/i) != null)
+    const missingLicenses = missingLicenseInfos(licenseInfos, artwork)
+    if (args.indexOf("--prompt") >= 0 || args.indexOf("--query") >= 0) {
+        queryMissingLicenses(missingLicenses)
+        return main([])
+    }
+    
+    const invalidLicenses = licenseInfos.filter(l => (l.license ?? "") === "").map(l => `License for artwork ${l.path} is empty string or undefined`)
+    for (const licenseInfo of licenseInfos) {
+        for (const source of licenseInfo.sources) {
+            if (source == "") {
+                invalidLicenses.push("Invalid license: empty string in " + JSON.stringify(licenseInfo))
+            }
+            try {
+                new URL(source);
+            } catch {
+                invalidLicenses.push("Not a valid URL: " + source)
+            }
         }
     }
-}
-
-if (missingLicenses.length > 0) {
-    const msg = `There are ${missingLicenses.length} licenses missing and ${invalidLicenses.length} invalid licenses.`
-    console.log(missingLicenses.concat(invalidLicenses).join("\n"))
-    console.error(msg)
-    if (process.argv.indexOf("--no-fail") < 0) {
-        throw msg
+    
+    if (missingLicenses.length > 0) {
+        const msg = `There are ${missingLicenses.length} licenses missing and ${invalidLicenses.length} invalid licenses.`
+        console.log(missingLicenses.concat(invalidLicenses).join("\n"))
+        console.error(msg)
+        if (args.indexOf("--no-fail") < 0) {
+            throw msg
+        }
     }
+    
+    cleanLicenseInfo(licensePaths, licenseInfos)
+    createFullLicenseOverview(licensePaths)
 }
 
-cleanLicenseInfo(licensePaths, licenseInfos)
-createFullLicenseOverview(licensePaths)
+main(process.argv.slice(2))

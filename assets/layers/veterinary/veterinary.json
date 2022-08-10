@@ -1,5 +1,6 @@
 {
   "id": "veterinary",
+  "description": "A layer showing veterinarians",
   "source": {
     "osmTags": {
       "or": [
@@ -12,7 +13,10 @@
     {
       "title": {
         "en": "a veterianarian",
-        "da": "en dyrl&aelig;ge"
+        "da": "en dyrl&aelig;ge",
+        "de": "ein Tierarzt",
+        "es": "un veterinario",
+        "nl": "een dierenarts"
       },
       "tags": [
         "amenity=veterinary",
@@ -20,18 +24,29 @@
       ],
       "description": {
         "en": "a veterianarian, that treats dogs",
-        "da": "En dyrl&aelig;ge, der behandler hunde"
+        "da": "En dyrl&aelig;ge, der behandler hunde",
+        "de": "ein Tierarzt, der Hunde behandelt",
+        "es": "un veterinario, que trata a perros",
+        "nl": "een dierenarts die honden verzorgt"
       }
     }
   ],
   "name": {
     "en": "veterinary",
-    "da": "dyrl&aelig;ge"
+    "da": "dyrl&aelig;ge",
+    "de": "Tierärzte",
+    "es": "veterinario",
+    "nl": "Dierenarts",
+    "fr": "vétérinaire"
   },
   "title": {
     "render": {
       "en": "Veterinary",
-      "da": "dyrl&aelig;ge"
+      "da": "dyrl&aelig;ge",
+      "de": "Tierarzt",
+      "id": "Dokter hewan",
+      "es": "Veterinario",
+      "nl": "Dierenarts"
     },
     "mappings": [
       {
@@ -78,11 +93,16 @@
     {
       "question": {
         "en": "What is the name of this veterinarian?",
-        "da": "Hvad hedder denne dyrl&aelig;?"
+        "da": "Hvad hedder denne dyrl&aelig;?",
+        "de": "Wie lautet der Name dieses Tierarztes?",
+        "es": "¿Cual es el nombre de este veterinario?",
+        "nl": "Wat is de naam van deze dierenartspraktijk?"
       },
       "render": {
         "en": "The name of this veterinarian is {name}",
-        "de": "Denne dyrl&aelig; hedder {name}"
+        "de": "Denne dyrl&aelig; hedder {name}",
+        "es": "El nombre de este veterinario es {name}",
+        "nl": "Deze dierenartspraktijk heet {name}"
       },
       "freeform": {
         "key": "name"

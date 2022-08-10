@@ -1,5 +1,5 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Table from "../Base/Table";
 import Combine from "../Base/Combine";
 import {FixedUiElement} from "../Base/FixedUiElement";
@@ -19,7 +19,7 @@ export default class Histogram<T> extends VariableUiElement {
         "#fa61fa"
     ]
 
-    constructor(values: UIEventSource<string[]>,
+    constructor(values: Store<string[]>,
                 title: string | BaseUIElement,
                 countTitle: string | BaseUIElement,
                 options?: {

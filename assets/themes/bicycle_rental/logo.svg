@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   viewBox="0 0 150 150"
+   viewBox="0 0 500 500"
    version="1.1"
    id="svg14"
    sodipodi:docname="logo.svg"
-   width="150"
-   height="150"
-   inkscape:version="1.1.1 (1:1.1+202109281949+c3084ef5ed)"
+   width="500"
+   height="500"
+   inkscape:version="1.1.2 (1:1.1+202202050950+0a00cf5339)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -20,10 +20,11 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="4.78212"
-     inkscape:cx="65.661254"
-     inkscape:cy="75.280419"
-     inkscape:current-layer="svg14" />
+     inkscape:zoom="1.3790889"
+     inkscape:cx="247.98981"
+     inkscape:cy="213.18422"
+     inkscape:current-layer="svg14"
+     width="500px" />
   <defs
      id="defs4">
     <style
@@ -32,7 +33,7 @@
   <g
      id="Laag_1"
      data-name="Laag 1"
-     transform="scale(1.0573395)">
+     transform="scale(3.5268996)">
     <circle
        class="cls-1"
        cx="70.870003"
@@ -43,7 +44,7 @@
   <g
      id="Laag_2"
      data-name="Laag 2"
-     transform="scale(1.0573395)">
+     transform="scale(3.5268996)">
     <path
        class="cls-2"
        d="m 102.39,75 a 18.18,18.18 0 0 0 -3.92,0.43 L 92.87,57 A 7,7 0 0 0 86.1,52 h -5.43 v 2.59 h 5.43 a 4.45,4.45 0 0 1 4.29,3.19 l 1.72,5.66 H 55.54 l -2,-4.89 h 3.72 c 0,0 4.74,-0.78 4.74,-4.41 H 46.39 v 4.33 h 4.35 l 2.55,6.25 -5.62,11.55 a 18.31,18.31 0 1 0 11.33,20 h 8 L 68,95.84 93.33,67.37 96,76.15 a 18.28,18.28 0 1 0 6.4,-1.17 z M 41,109 A 15.72,15.72 0 1 1 46.58,78.6 L 38.89,94.4 40,96.27 H 56.38 A 15.74,15.74 0 0 1 41,109 Z M 56.7,93.67 H 42.07 l 6.8,-14 a 15.71,15.71 0 0 1 7.8,13.56 c 0,0.19 -0.01,0.32 -0.02,0.45 z M 50,77.39 l 4.61,-9.45 10.5,25.74 h -5.87 c 0,-0.13 0,-0.26 0,-0.39 A 18.33,18.33 0 0 0 50,77.39 Z M 67.45,92.56 56.59,66 H 91.13 Z M 102.39,109 A 15.71,15.71 0 0 1 96.74,78.62 l 4.56,15 2.48,-0.76 -4.56,-15 a 15.72,15.72 0 1 1 3.17,31.14 z"

@@ -15,18 +15,7 @@ Address data for Flanders by the governement, suited for import into OpenStreetM
 
 
   - This layer is shown at zoomlevel **0** and higher
-  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson`
-
-
-
-
-#### Themes using this layer 
-
-
-
-
-
-  - [personal](https://mapcomplete.osm.be/personal)
+  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely  `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/CRAB_2021_10_26/tile_{z}_{x}_{y}.geojson`
 
 
 
@@ -58,7 +47,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-_This tagrendering has no question and is thus read-only_
+This tagrendering has no question and is thus read-only
 
  
 

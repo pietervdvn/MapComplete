@@ -1,4 +1,4 @@
-import {UIEventSource} from "../UIEventSource";
+import {Store, UIEventSource} from "../UIEventSource";
 import BaseUIElement from "../../UI/BaseUIElement";
 import {LicenseInfo} from "./LicenseInfo";
 import {Utils} from "../../Utils";
@@ -12,25 +12,13 @@ export interface ProvidedImage {
 export default abstract class ImageProvider {
 
     public abstract readonly defaultKeyPrefixes: string[]
-
-    private _cache = new Map<string, UIEventSource<LicenseInfo>>()
-
-    GetAttributionFor(url: string): UIEventSource<LicenseInfo> {
-        const cached = this._cache.get(url);
-        if (cached !== undefined) {
-            return cached;
-        }
-        const src = UIEventSource.FromPromise(this.DownloadAttribution(url))
-        this._cache.set(url, src)
-        return src;
-    }
-
+    
     public abstract SourceIcon(backlinkSource?: string): BaseUIElement;
 
     /**
      * Given a properies object, maps it onto _all_ the available pictures for this imageProvider
      */
-    public GetRelevantUrls(allTags: UIEventSource<any>, options?: {
+    public GetRelevantUrls(allTags: Store<any>, options?: {
         prefixes?: string[]
     }): UIEventSource<ProvidedImage[]> {
         const prefixes = options?.prefixes ?? this.defaultKeyPrefixes
@@ -75,6 +63,6 @@ export default abstract class ImageProvider {
 
     public abstract ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]>;
 
-    protected abstract DownloadAttribution(url: string): Promise<LicenseInfo>;
+    public abstract DownloadAttribution(url: string): Promise<LicenseInfo>;
 
 }

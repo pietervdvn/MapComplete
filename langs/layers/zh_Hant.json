@@ -5,6 +5,13 @@
         "tagRenderings": {
             "fixme": {
                 "question": "這裡需要修什麼？請直接解釋"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "這棟建築沒有門牌"
+                    }
+                }
             }
         }
     },
