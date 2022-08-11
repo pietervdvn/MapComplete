@@ -345,52 +345,6 @@
     },
     "postboxes": {
         "description": "Ezen a térképen postahivatalok és postaládák adatait találod és egészítheted ki. Utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? Ezt a térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted. ",
-        "layers": {
-            "0": {
-                "description": "A postaládákat megjelenítő réteg.",
-                "name": "Postaládák",
-                "presets": {
-                    "0": {
-                        "title": "postaláda"
-                    }
-                },
-                "title": {
-                    "render": "Postaláda"
-                }
-            },
-            "1": {
-                "description": "Postákat megjelenítő réteg.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Most nyitva"
-                            }
-                        }
-                    }
-                },
-                "name": "Posták",
-                "presets": {
-                    "0": {
-                        "title": "Posta"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "Éjjel-nappal nyitva (munkaszüneti napokon is)"
-                            }
-                        },
-                        "question": "Mikor van nyitva ez a posta?",
-                        "render": "Nyitva tartás: {opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "render": "Posta"
-                }
-            }
-        },
         "shortDescription": "Posták és postaládák térképe",
         "title": "Posta- és postaládatérkép"
     },
