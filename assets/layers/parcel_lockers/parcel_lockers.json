@@ -1,0 +1,62 @@
+{
+  "id": "parcel_lockers",
+  "name": {
+    "en": "Parcel Lockers"
+  },
+  "description": {
+    "en": "Layer showing parcel lockers for collecting and sending parcels."
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "amenity=parcel_locker"
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a parcel locker",
+        "nl": "een pakketautomaat"
+      },
+      "preciseInput": {
+        "preferredBackground": "photo"
+      },
+      "tags": [
+        "amenity=parcel_locker"
+      ]
+    }
+  ],
+  "title": {
+    "render": {
+      "en": "Parcel Locker"
+    },
+    "mappings": [
+      {
+        "if": "brand~*",
+        "then": {
+          "en": "{brand} parcel locker"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [],
+  "filter": [],
+  "allowMove": {
+    "enableImproveAccuracy": true
+  },
+  "deletion": {},
+  "mapRendering": [
+    {
+      "icon": "./assets/layers/parcel_lockers/parcel_lockers.svg",
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ],
+      "iconSize": "40,40,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "id": "postboxes",
+  "name": {
+    "en": "Postboxes",
+    "de": "Briefkästen",
+    "ru": "Почтовые ящики",
+    "zh_Hant": "郵筒",
+    "id": "Kotak pos",
+    "hu": "Postaládák",
+    "nl": "Brievenbussen",
+    "ca": "Bústies",
+    "es": "Buzones de correo",
+    "nb_NO": "Postbokser",
+    "fr": "Boîtes à lettres"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "amenity=post_box"
+  },
+  "title": {
+    "render": {
+      "en": "Postbox",
+      "de": "Briefkasten",
+      "ru": "Почтовый ящик",
+      "zh_Hant": "郵筒",
+      "id": "Kotak pos",
+      "hu": "Postaláda",
+      "ca": "Bústia",
+      "es": "Buzón de correo",
+      "nb_NO": "Postboks",
+      "fr": "Boîte à lettres",
+      "nl": "Brievenbus"
+    }
+  },
+  "description": {
+    "en": "The layer showing postboxes.",
+    "de": "Die Ebene zeigt Briefkästen.",
+    "zh_Hant": "這圖層顯示郵筒。",
+    "id": "Layer yang memperlihatkan kotak pos.",
+    "hu": "A postaládákat megjelenítő réteg.",
+    "nl": "Deze laag toont brievenbussen.",
+    "es": "La capa que muestra buzones de correo.",
+    "fr": "Le calque montrant les boîtes à lettres."
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "minimap",
+      "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=post_box"
+      ],
+      "title": {
+        "en": "a postbox",
+        "de": "ein Briefkasten",
+        "ru": "почтовый ящик",
+        "zh_Hant": "郵筒",
+        "id": "kotak pos",
+        "hu": "postaláda",
+        "nl": "een brievenbus",
+        "ca": "una bústia",
+        "es": "un buzón de correo",
+        "fr": "une boîte à lettres"
+      }
+    }
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "razed:amenity=post_box"
+      ]
+    }
+  },
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/layers/postboxes/postbox.svg"
+      },
+      "iconSize": {
+        "render": "40,40,bottom"
+      },
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": {
+        "render": "#DADADA"
+      },
+      "width": {
+        "render": "1"
+      }
+    }
+  ]
+}
