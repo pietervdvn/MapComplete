@@ -214,7 +214,7 @@
   "deletion": true,
   "mapRendering": [
     {
-      "icon": "circle:white;./assets/layers/parcel_lockers/parcel_lockers.svg",
+      "icon": "square:white;./assets/layers/parcel_lockers/parcel_lockers.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
