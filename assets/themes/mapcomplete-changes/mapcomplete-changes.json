@@ -301,7 +301,7 @@
               },
               {
                 "if": "theme=postboxes",
-                "then": "./assets/themes/postboxes/postbox.svg"
+                "then": "./assets/layers/postboxes/postbox.svg"
               },
               {
                 "if": "theme=rainbow_crossings",
