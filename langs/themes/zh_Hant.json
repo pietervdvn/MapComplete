@@ -370,52 +370,6 @@
     },
     "postboxes": {
         "description": "在這份地圖你能找到與新增有關郵局與郵筒的資料，你可以用這份地圖找到寄送您下張明信片的地方！:)<br/>發現錯誤或是有郵筒遺漏嗎？你可以用免費的開放街圖帳號來編輯。 ",
-        "layers": {
-            "0": {
-                "description": "這圖層顯示郵筒。",
-                "name": "郵筒",
-                "presets": {
-                    "0": {
-                        "title": "郵筒"
-                    }
-                },
-                "title": {
-                    "render": "郵筒"
-                }
-            },
-            "1": {
-                "description": "圖層顯示郵局。",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "目前開放"
-                            }
-                        }
-                    }
-                },
-                "name": "郵局",
-                "presets": {
-                    "0": {
-                        "title": "郵局"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "24/7 開放 (包括假日)"
-                            }
-                        },
-                        "question": "這間郵局的開放時間是？",
-                        "render": "開放時間：{opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "render": "郵局"
-                }
-            }
-        },
         "shortDescription": "顯示郵筒與郵局的地圖",
         "title": "郵筒與郵局地圖"
     },

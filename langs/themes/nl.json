@@ -931,57 +931,6 @@
     },
     "postboxes": {
         "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
-        "layers": {
-            "0": {
-                "description": "Deze laag toont brievenbussen.",
-                "name": "Brievenbussen",
-                "presets": {
-                    "0": {
-                        "title": "een brievenbus"
-                    }
-                },
-                "title": {
-                    "render": "Brievenbus"
-                }
-            },
-            "1": {
-                "description": "Een laag die postkantoren toont.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Momenteel geopend"
-                            }
-                        }
-                    }
-                },
-                "name": "Postkantoren",
-                "presets": {
-                    "0": {
-                        "title": "een postkantoor"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "24/7 open (ook tijdens feestdagen)"
-                            }
-                        },
-                        "question": "Wat zijn de openingsuren voor dit postkantoor?",
-                        "render": "Openingsuren: {opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Postpartner in een winkel"
-                        }
-                    },
-                    "render": "Postkantoor"
-                }
-            }
-        },
         "shortDescription": "Een kaart die brievenbussen en postkantoren toont",
         "title": "Brievenbussen en postkantoren"
     },

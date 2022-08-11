@@ -562,6 +562,61 @@
         "description": "顯示消防栓的地圖圖層。",
         "name": "消防栓地圖"
     },
+    "parcel_lockers": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "目前開放"
+                    }
+                }
+            }
+        }
+    },
+    "postboxes": {
+        "description": "這圖層顯示郵筒。",
+        "name": "郵筒",
+        "presets": {
+            "0": {
+                "title": "郵筒"
+            }
+        },
+        "title": {
+            "render": "郵筒"
+        }
+    },
+    "postoffices": {
+        "description": "圖層顯示郵局。",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "目前開放"
+                    }
+                }
+            }
+        },
+        "name": "郵局",
+        "presets": {
+            "0": {
+                "title": "郵局"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 開放 (包括假日)"
+                    }
+                },
+                "question": "這間郵局的開放時間是？",
+                "render": "開放時間：{opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "郵局"
+        }
+    },
     "windturbine": {
         "name": "風機",
         "presets": {

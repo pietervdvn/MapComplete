@@ -888,60 +888,6 @@
     },
     "postboxes": {
         "description": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten. ",
-        "layers": {
-            "0": {
-                "description": "Die Ebene zeigt Briefkästen.",
-                "name": "Briefkästen",
-                "presets": {
-                    "0": {
-                        "title": "ein Briefkasten"
-                    }
-                },
-                "title": {
-                    "render": "Briefkasten"
-                }
-            },
-            "1": {
-                "description": "Eine Ebene mit Postämtern.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Aktuell geöffnet"
-                            }
-                        }
-                    }
-                },
-                "name": "Poststellen",
-                "presets": {
-                    "0": {
-                        "title": "eine Poststelle"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "durchgehend geöffnet (auch an Feiertagen)"
-                            }
-                        },
-                        "question": "Wie sind die Öffnungszeiten dieser Poststelle?",
-                        "render": "Öffnungszeiten: {opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Postfiliale im Einzelhandel"
-                        },
-                        "1": {
-                            "then": "Postfiliale im {name}"
-                        }
-                    },
-                    "render": "Poststelle"
-                }
-            }
-        },
         "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
         "title": "Post- und Briefkastenkarte"
     },

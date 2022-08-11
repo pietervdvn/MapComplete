@@ -3149,6 +3149,17 @@
             }
         }
     },
+    "parcel_lockers": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert actuellement"
+                    }
+                }
+            }
+        }
+    },
     "parking": {
         "description": "Un calque montrant les parkings",
         "name": "Lieu de stationnement",
@@ -3373,6 +3384,50 @@
                 }
             },
             "render": "Aire de jeu"
+        }
+    },
+    "postboxes": {
+        "description": "Le calque montrant les boîtes à lettres.",
+        "name": "Boîtes à lettres",
+        "presets": {
+            "0": {
+                "title": "une boîte à lettres"
+            }
+        },
+        "title": {
+            "render": "Boîte à lettres"
+        }
+    },
+    "postoffices": {
+        "description": "Un claque montrant les bureaux de poste.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert actuellement"
+                    }
+                }
+            }
+        },
+        "name": "Bureaux de poste",
+        "presets": {
+            "0": {
+                "title": "un bureau de poste"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "Ouvert 24h/24 (jours fériés compris)"
+                    }
+                },
+                "question": "Quelles sont les heures d’ouverture de ce bureau de poste ?",
+                "render": "Heures d’ouverture : {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Bureau de poste"
         }
     },
     "public_bookcase": {
