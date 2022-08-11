@@ -8,7 +8,17 @@
   },
   "minzoom": 12,
   "source": {
-    "osmTags": "amenity=parcel_locker"
+    "osmTags": {
+      "or": [
+        "amenity=parcel_locker",
+        {
+          "and": [
+            "amenity=vending_machine",
+            "vending=parcel_pickup;parcel_mail_in"
+          ]
+        }
+      ]
+    }
   },
   "presets": [
     {
@@ -37,15 +47,174 @@
       }
     ]
   },
-  "tagRenderings": [],
-  "filter": [],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "brand",
+      "question": {
+        "en": "What is the brand of the parcel locker?"
+      },
+      "freeform": {
+        "key": "brand",
+        "type": "string",
+        "placeholder": {
+          "en": "Brand"
+        }
+      },
+      "mappings": [
+        {
+          "if": "brand=Amazon Locker",
+          "then": {
+            "en": "This is an Amazon Locker"
+          },
+          "addExtraTags": [
+            "brand:wikidata=Q16974764",
+            "brand:wikipedia=en:Amazon Locker",
+            "operator=Amazon"
+          ]
+        },
+        {
+          "if": "brand=DHL Packstation",
+          "then": {
+            "en": "This is a DHL Packstation"
+          },
+          "addExtraTags": [
+            "brand:wikidata=Q1766703",
+            "brand:wikipedia=de:Packstation",
+            "operator=DHL"
+          ],
+          "hideInAnswer": "_country!=de"
+        },
+        {
+          "if": "brand=Pickup Station",
+          "then": {
+            "en": "This is a DPD Pickup Station"
+          },
+          "addExtraTags": [
+            "operator=DPD"
+          ],
+          "hideInAnswer": "_country!=pl"
+        },
+        {
+          "if": "brand=PostNL",
+          "then": {
+            "en": "This is a PostNL Parcel Locker",
+            "nl": "Dit is een PostNL pakketautomaat"
+          },
+          "addExtraTags": [
+            "operator=PostNL"
+          ],
+          "hideInAnswer": "_country!=nl"
+        }
+      ],
+      "render": {
+        "en": "This is a {brand} parcel locker"
+      }
+    },
+    {
+      "id": "operator",
+      "question": {
+        "en": "What is the operator of the parcel locker?"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string",
+        "placeholder": {
+          "en": "Operator"
+        }
+      },
+      "render": {
+        "en": "This parcel locker is operated by {operator}"
+      }
+    },
+    "opening_hours",
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the reference number/identifier of this parcel locker?"
+      },
+      "freeform": {
+        "key": "ref",
+        "type": "string",
+        "placeholder": {
+          "en": "Reference"
+        }
+      },
+      "render": {
+        "en": "This parcel locker has the reference {ref}"
+      }
+    },
+    {
+      "id": "mail-in",
+      "question": {
+        "en": "Can you send packages from this parcel locker?"
+      },
+      "mappings": [
+        {
+          "if": "parcel_mail_in=yes",
+          "then": {
+            "en": "You can send packages from this parcel locker"
+          }
+        },
+        {
+          "if": "parcel_mail_in=no",
+          "then": {
+            "en": "You <b>can't</b> send packages from this parcel locker"
+          }
+        }
+      ],
+      "condition": "amenity=parcel_locker"
+    },
+    {
+      "id": "pickup",
+      "question": {
+        "en": "Can you pick up packages from this parcel locker?"
+      },
+      "mappings": [
+        {
+          "if": "parcel_pickup=yes",
+          "then": {
+            "en": "You can pick up packages from this parcel locker"
+          }
+        },
+        {
+          "if": "parcel_pickup=no",
+          "then": {
+            "en": "You <b>can't</b> pick up packages from this parcel locker"
+          }
+        }
+      ],
+      "condition": "amenity=parcel_locker"
+    }
+  ],
+  "filter": [
+    {
+      "id": "is_open",
+      "options": [
+        {
+          "question": {
+            "en": "Currently open",
+            "de": "Aktuell geöffnet",
+            "zh_Hant": "目前開放",
+            "id": "Saat ini buka",
+            "hu": "Most nyitva",
+            "nl": "Momenteel geopend",
+            "ca": "Actualment obert",
+            "es": "Actualmente abierta",
+            "fr": "Ouvert actuellement"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    }
+  ],
   "allowMove": {
     "enableImproveAccuracy": true
   },
-  "deletion": {},
+  "deletion": true,
   "mapRendering": [
     {
-      "icon": "./assets/layers/parcel_lockers/parcel_lockers.svg",
+      "icon": "circle:white;./assets/layers/parcel_lockers/parcel_lockers.svg",
       "iconBadges": [
         {
           "if": "opening_hours~*",
