@@ -3512,7 +3512,7 @@
             },
             "width": {
                 "question": "Wat is de breedte van deze deur/toegang?",
-                "render": "Deze deur heeft een breedte van {canonical(width)} meter"
+                "render": "Deze deur heeft een breedte van {canonical(width)}"
             }
         },
         "title": {
