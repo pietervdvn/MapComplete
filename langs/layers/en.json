@@ -3566,7 +3566,7 @@
             },
             "width": {
                 "question": "What is the width of this door/entrance?",
-                "render": "This door has a width of {canonical(width)} meter"
+                "render": "This door has a width of {canonical(width)}"
             }
         },
         "title": {
