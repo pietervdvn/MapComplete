@@ -361,19 +361,19 @@
                         "0": {
                             "then": "Questa è una strada ciclabile (e ha un limite di velocità massima di 30 km/h)"
                         },
-                        "1": {
+                        "3": {
                             "then": "Questa è una strada ciclabile"
                         },
-                        "2": {
+                        "4": {
                             "then": "Diverrà tra poco una strada ciclabile"
                         },
-                        "3": {
+                        "6": {
                             "then": "Questa strada non è una strada ciclabile"
                         }
                     },
                     "question": "È <b>{name}</b> una strada ciclabile?"
                 },
-                "1": {
+                "2": {
                     "question": "Questa strada diventerà una strada ciclabile quando?",
                     "render": "Questa strada diventerà una strada ciclabile dal {cyclestreet:start_date}"
                 }
