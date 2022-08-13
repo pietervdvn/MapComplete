@@ -95,12 +95,51 @@
             "render": "./assets/themes/cyclestreets/F111.svg",
             "mappings": [
               {
+                "if": "traffic_sign=DE:244.1,1020-30",
+                "then": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg"
+              },
+              {
+                "if": "traffic_sign=DE:244.1,1022-12,1024-10",
+                "then": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg"
+              },
+              {
+                "if": "traffic_sign=DE:244.1,1022-12",
+                "then": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg"
+              },
+              {
+                "if": "traffic_sign=DE:244.1,1024-10",
+                "then": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg"
+              },
+              {
                 "if": "_country=de",
                 "then": "./assets/themes/cyclestreets/Zeichen_244.svg"
               },
               {
                 "if": "_country=fi",
                 "then": "./assets/themes/cyclestreets/Finland_road_sign_E28.svg"
+              }
+            ]
+          },
+          "iconSize": {
+            "render": "40,40,center",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "traffic_sign=DE:244.1,1020-30",
+                    "traffic_sign=DE:244.1,1022-12,1024-10"
+                  ]
+                },
+                "then": "40,62,center"
+              },
+              {
+                "if": {
+                  "or": [
+                    "traffic_sign=DE:244.1,1022-12",
+                    "traffic_sign=DE:244.1,1024-10"
+                  ]
+                },
+                "then": "40,70,center"
               }
             ]
           },
@@ -184,7 +223,19 @@
       ],
       "mapRendering": [
         {
-          "icon": "./assets/themes/cyclestreets/F113.svg",
+          "icon": {
+            "render": "./assets/themes/cyclestreets/F113.svg",
+            "mappings": [
+              {
+                "if": "_country=de",
+                "then": "./assets/themes/cyclestreets/Zeichen_244a.svg"
+              },
+              {
+                "if": "_country=fi",
+                "then": "./assets/themes/cyclestreets/Finland_road_sign_E29.svg"
+              }
+            ]
+          },
           "location": [
             "projected_centerpoint"
           ]
@@ -346,12 +397,11 @@
                 "maxspeed=30",
                 "source:maxspeed=DE:bicycle_road",
                 "vehicle=no",
-                "bicycle=designated",
-                "traffic_sign=DE:244.1"
+                "bicycle=designated"
               ]
             },
             "then": {
-              "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (supplementary signs will be asked later)"
+              "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -447,7 +497,7 @@
           ]
         },
         "question": {
-          "en": "What supplementary signs does this bicycle road have?"
+          "en": "What sign does this bicycle road have?"
         },
         "mappings": [
           {
@@ -457,25 +507,31 @@
               "de": "Anlieger frei"
             },
             "icon": {
-              "path": "./assets/themes/cyclestreets/Zusatzzeichen_1020-30.svg",
-              "class": "medium"
+              "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
+              "class": "large"
             },
             "addExtraTags": [
-              "vehicle=destination"
+              "vehicle=destination",
+              "motorcar=",
+              "motorcycle=",
+              "motor_vehicle="
             ]
           },
           {
-            "if": "traffic_sign=DE:244.1,1020-30,1024-10;1022-12",
+            "if": "traffic_sign=DE:244.1,1022-12,1024-10",
             "then": {
               "en": "Motor vehicles allowed",
               "de": "KFZ frei"
             },
             "icon": {
-              "path": "./assets/themes/cyclestreets/Zusatzzeichen_KFZ_frei.svg",
-              "class": "medium"
+              "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
+              "class": "large"
             },
             "addExtraTags": [
-              "motor_vehicle=yes"
+              "motor_vehicle=yes",
+              "motorcar=",
+              "motorcycle=",
+              "vehicle="
             ]
           },
           {
@@ -485,11 +541,14 @@
               "de": "Motorräder frei"
             },
             "icon": {
-              "path": "./assets/themes/cyclestreets/Zusatzzeichen_1022-12.svg",
-              "class": "medium"
+              "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
+              "class": "large"
             },
             "addExtraTags": [
-              "motorcycle=yes"
+              "motorcycle=yes",
+              "motorcar=",
+              "motor_vehicle=",
+              "vehicle=no"
             ]
           },
           {
@@ -498,11 +557,30 @@
               "en": "Cars allowed"
             },
             "icon": {
-              "path": "./assets/themes/cyclestreets/Zusatzzeichen_1024-10.svg",
-              "class": "medium"
+              "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
+              "class": "large"
             },
             "addExtraTags": [
-              "motorcar=yes"
+              "motorcar=yes",
+              "motorcycle=",
+              "motor_vehicle=",
+              "vehicle=no"
+            ]
+          },
+          {
+            "if": "traffic_sign=DE:244.1",
+            "then": {
+              "en": "There are no supplementary signs at this bicycle road."
+            },
+            "icon": {
+              "path": "./assets/themes/cyclestreets/Zeichen_244.svg",
+              "class": "large"
+            },
+            "addExtraTags": [
+              "vehicle=no",
+              "motorcycle=",
+              "motorcar=",
+              "motor_vehicle="
             ]
           }
         ]

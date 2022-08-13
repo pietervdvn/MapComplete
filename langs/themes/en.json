@@ -418,7 +418,7 @@
                             "then": "This street is a bicycle road"
                         },
                         "2": {
-                            "then": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (supplementary signs will be asked later)"
+                            "then": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)"
                         },
                         "3": {
                             "then": "This street is a cyclestreet"
@@ -448,9 +448,12 @@
                         },
                         "3": {
                             "then": "Cars allowed"
+                        },
+                        "4": {
+                            "then": "There are no supplementary signs at this bicycle road."
                         }
                     },
-                    "question": "What supplementary signs does this bicycle road have?"
+                    "question": "What sign does this bicycle road have?"
                 },
                 "2": {
                     "question": "When will this street become a cyclestreet?",
