@@ -234,8 +234,8 @@
   "deletion": {
     "softDeletionTags": {
       "and": [
-        "amenity=",
-        "disused:amenity:={amenity}"
+        "shop=",
+        "disused:shop:={shop}"
       ]
     },
     "extraDeleteReasons": [
