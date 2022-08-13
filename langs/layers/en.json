@@ -4438,7 +4438,7 @@
                         "then": "This kerb does not have tactile paving."
                     },
                     "2": {
-                        "then": "This kerb has tactile paving, but it is incorrect"
+                        "then": "This kerb has tactile paving, but it is incorrect."
                     }
                 },
                 "question": "Is there tactile paving at this kerb?"
