@@ -26,7 +26,7 @@
         "readMessages": "Je hebt ongelezen berichten. Je moet deze lezen voordat je een punt verwijderd, een andere bijdrager heeft misschien feedback",
         "reasons": {
             "disused": "Het wordt niet meer onderhouden of is verwijderd",
-            "duplicate": "Dit punt is een duplicaat van een ander punt",
+            "duplicate": "Dit object is een duplicaat van een ander object",
             "notFound": "Het kon niet gevonden worden",
             "test": "Dit punt was een test en was nooit echt aanwezig"
         },
@@ -49,19 +49,19 @@
             "confirmIntro": "<h3>Voeg een {title} toe?</h3>Het punt dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
             "disableFilters": "Zet alle filters af",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
-            "hasBeenImported": "Dit object is reeds geimporteerd",
+            "hasBeenImported": "Dit object is reeds geïmporteerd",
             "import": {
                 "hasBeenImported": "Dit object is geïmporteerd",
                 "howToTest": "Voor testmode, voeg <b>test=true</b> of <b>backend=osm-test</b> to aan de URL. De wijzigingenset zal in de console geprint worden. Gelieve een PR te openen om dit thema als officieel thema toe te voegen en zo de import-knop te activeren.",
                 "importTags": "Het element zal deze tags krijgen: {tags}",
                 "officialThemesOnly": "In onofficiële thema's is de importeerknop uitgeschakeld om ongelukjes te vermijden",
                 "wrongType": "Dit object is geen punt of lijn, en kan daarom niet geïmporteerd worden",
-                "wrongTypeToConflate": "Dit element is geen punt of weg en kan dus niet samengevoegd worden",
+                "wrongTypeToConflate": "Dit object is geen punt of weg en kan dus niet samengevoegd worden",
                 "zoomInMore": "Zoom verder in om dit object af te handelen"
             },
             "importTags": "Het object zal deze tags krijgen: {tags}",
             "intro": "Kies hieronder welk punt je wilt toevoegen<br/>",
-            "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
+            "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een object toe te voegen",
             "openLayerControl": "Open de laag-instellingen",
             "pleaseLogin": "Gelieve je aan te melden om een punt toe te voegen",
             "presetInfo": "Het nieuwe object krijgt de attributen {tags}",
@@ -272,7 +272,8 @@
                 "died": "Gestorven: {value}"
             },
             "searchWikidata": "Zoek op Wikidata",
-            "wikipediaboxTitle": "Wikipedia"
+            "wikipediaboxTitle": "Wikipedia",
+            "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in"
         }
     },
     "image": {
@@ -578,7 +579,8 @@
                 "noNearOrIn": "Sorry, Ik begreep je opdracht niet omdat ik geen <code>dichtbij</code> of <code>in</code> in je zoekopdracht.\nProbeer iets als <code>Zoek drinkwater in Londen</code>, <code>Zoek frituur in Brussel</code><p></p>\n <p>Daarnaast kan je ook <code>info {cmd}</code> proberen, om info te krijgen over een enkel object.</p>",
                 "nothingFound": "Sorry, ik kon niets vinden voor <code>{search}</code>, dus kan ik {layerTitle} niet zoeken",
                 "overview": "Ik heb {length} overeenkomende items gevonden.",
-                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>…"
+                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>…",
+                "docs": "Zoekt voor POIs in of nabij een locatie"
             },
             "shutdown": {
                 "argmode": "Geeft aan op welke manier ik moet afsluiten. Dit moet één van de volgende woorden zijn: {verbs}",
