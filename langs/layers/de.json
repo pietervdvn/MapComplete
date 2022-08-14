@@ -4366,7 +4366,7 @@
                         "then": "Der Bordstein hat kein taktiles Pflaster."
                     },
                     "2": {
-                        "then": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist"
+                        "then": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist."
                     }
                 },
                 "question": "Gibt es am Bordstein ein taktiles Pflaster?"
