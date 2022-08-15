@@ -271,6 +271,9 @@
     "smoking",
     "service:electricity",
     "dog-access",
+    "internet",
+    "internet-fee",
+    "internet-ssid",
     "reviews"
   ],
   "filter": [

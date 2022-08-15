@@ -1148,5 +1148,110 @@
         }
       }
     ]
+  },
+  "internet": {
+    "question": {
+      "en": "Does this place offer internet access?",
+      "nl": "Biedt deze plaats internettoegang aan?"
+    },
+    "mappings": [
+      {
+        "if": "internet_access=wlan",
+        "then": {
+          "en": "This place offers wireless internet access",
+          "nl": "Deze plaats biedt draadloze internettoegang aan"
+        }
+      },
+      {
+        "if": "internet_access=no",
+        "then": {
+          "en": "This place <b>does not</b> offer internet access",
+          "nl": "Deze plaats biedt <b>geen</b> internettoegang aan"
+        }
+      },
+      {
+        "if": "internet_access=yes",
+        "then": {
+          "en": "This place offers internet access",
+          "nl": "Deze plaats biedt internettoegang aan"
+        },
+        "hideInAnswer": true
+      },
+      {
+        "if": "internet_access=terminal",
+        "then": {
+          "en": "This place offers internet access via a terminal or computer",
+          "nl": "Deze plaats biedt internettoegang via een terminal of computer aan"
+        }
+      },
+      {
+        "if": "internet_access=wired",
+        "then": {
+          "en": "This place offers wired internet access",
+          "nl": "Deze plaats biedt bedrade internettoegang aan"
+        }
+      }
+    ]
+  },
+  "internet-fee": {
+    "condition": {
+      "and": [
+        "internet_access!=no",
+        "internet_access!="
+      ]
+    },
+    "question": {
+      "en": "Is there a fee for internet access?",
+      "nl": "Zijn er kosten voor internettoegang?"
+    },
+    "mappings": [
+      {
+        "if": "internet_access:fee=yes",
+        "then": {
+          "en": "There is a fee for the internet access at this place",
+          "nl": "Er zijn kosten voor internettoegang op deze plaats"
+        }
+      },
+      {
+        "if": "internet_access:fee=no",
+        "then": {
+          "en": "Internet access is free at this place",
+          "nl": "Internettoegang is gratis op deze plaats"
+        }
+      },
+      {
+        "if": "internet_access:fee=customers",
+        "then": {
+          "en": "Internet access is free at this place, for customers only",
+          "nl": "Internettoegang is gratis op deze plaats, alleen voor klanten"
+        }
+      }
+    ]
+  },
+  "internet-ssid": {
+    "condition": "internet_access=wlan",
+    "question": {
+      "en": "What is the network name for the wireless internet access?",
+      "nl": "Wat is de netwerknaam voor de draadloze internettoegang?"
+    },
+    "freeform": {
+      "key": "internet_access:ssid",
+      "type": "string",
+      "placeholder": {
+        "en": "Enter the network name",
+        "nl": "Voer de netwerknaam in"
+      }
+    },
+    "mappings": [
+      {
+        "if": "internet_access:ssid=Telekom",
+        "then": "Telekom",
+        "hideInAnswer": "_country!=de"
+      }
+    ],
+    "render": {
+      "en": "The network name is <b>{internet_access:ssid}</b>",
+      "nl": "De netwerknaam is <b>{internet_access:ssid}</b>"
+    }
   }
 }

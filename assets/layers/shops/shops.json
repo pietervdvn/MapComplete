@@ -201,6 +201,9 @@
         }
       ]
     },
+    "internet",
+    "internet-fee",
+    "internet-ssid",
     "questions",
     "reviews"
   ],
