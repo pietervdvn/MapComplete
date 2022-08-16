@@ -45,6 +45,7 @@
   "startZoom": 12,
   "widenFactor": 1.2,
   "layers": [
-    "parking"
+    "parking",
+    "parking_spaces"
   ]
 }

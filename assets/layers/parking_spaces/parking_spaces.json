@@ -1,0 +1,155 @@
+{
+  "id": "parking_spaces",
+  "name": {
+    "en": "Parking Spaces"
+  },
+  "description": {
+    "en": "Layer showing individual parking spaces."
+  },
+  "minzoom": 20,
+  "source": {
+    "osmTags": "amenity=parking_space"
+  },
+  "tagRenderings": [
+    {
+      "id": "type",
+      "question": {
+        "en": "What kind of parking space is this?"
+      },
+      "mappings": [
+        {
+          "if": "parking_space=",
+          "then": {
+            "en": "This is a normal parking space"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "parking_space=normal",
+          "then": {
+            "en": "This is a normal parking space."
+          }
+        },
+        {
+          "if": "parking_space=disabled",
+          "then": {
+            "en": "This is a disabled parking space."
+          }
+        },
+        {
+          "if": "parking_space=private",
+          "then": {
+            "en": "This is a private parking space."
+          }
+        },
+        {
+          "if": "parking_space=charging",
+          "then": {
+            "en": "This is parking space reserved for charging vehicles."
+          }
+        },
+        {
+          "if": "parking_space=delivery",
+          "then": {
+            "en": "This is parking space reserved for deliveries."
+          }
+        },
+        {
+          "if": "parking_space=hgv",
+          "then": {
+            "en": "This is parking space reserved for heavy goods vehicles."
+          }
+        },
+        {
+          "if": "parking_space=caravan",
+          "then": {
+            "en": "This is parking space reserved for caravans or RVs."
+          }
+        },
+        {
+          "if": "parking_space=bus",
+          "then": {
+            "en": "This is parking space reserved for buses."
+          }
+        },
+        {
+          "if": "parking_space=motorcycle",
+          "then": {
+            "en": "This is parking space reserved for motorcycles."
+          }
+        },
+        {
+          "if": "parking_space=parent",
+          "then": {
+            "en": "This is a parking space reserved for parents with children."
+          }
+        },
+        {
+          "if": "parking_space=staff",
+          "then": {
+            "en": "This is a parking space reserved for staff."
+          }
+        },
+        {
+          "if": "parking_space=taxi",
+          "then": {
+            "en": "This is a parking space reserved for taxis."
+          }
+        },
+        {
+          "if": "parking_space=trailer",
+          "then": {
+            "en": "This is a parking space reserved for vehicles towing a trailer."
+          }
+        },
+        {
+          "if": "parking_space=car_sharing",
+          "then": {
+            "en": "This is a parking space reserved for car sharing."
+          }
+        }
+      ]
+    },
+    {
+      "id": "capacity",
+      "render": {
+        "en": "This parking spaces has {capacity} spaces."
+      },
+      "mappings": [
+        {
+          "if": "capacity=1",
+          "then": {
+            "en": "This parking space has 1 space."
+          }
+        }
+      ]
+    }
+  ],
+  "title": {
+    "render": {
+      "en": "Parking Space"
+    }
+  },
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/layers/parking_spaces/parking_space.svg",
+        "mappings": [
+          {
+            "if": "parking_space=disabled",
+            "then": "./assets/layers/toilet/wheelchair.svg"
+          }
+        ]
+      },
+      "iconSize": "20,20,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": "#696969",
+      "width": "1"
+    }
+  ]
+}
