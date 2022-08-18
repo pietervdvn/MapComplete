@@ -4279,11 +4279,21 @@
                 "freeform": {
                     "placeholder": "Rohrdurchmesser"
                 },
-                "question": "Was ist der Rohrdurchmesser dieses Hydranten?"
+                "question": "Was ist der Rohrdurchmesser dieses Hydranten?",
+                "render": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}"
             }
         },
         "title": {
             "render": "Hydrant"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Millimeter"
+                    }
+                }
+            }
         }
     },
     "indoors": {
