@@ -154,57 +154,7 @@ interface ChangeSetData {
     }
 }
 
-const theme_remappings = {
-    "metamap": "maps",
-    "groen": "buurtnatuur",
-    "updaten van metadata met mapcomplete": "buurtnatuur",
-    "Toevoegen of dit natuurreservaat toegangkelijk is": "buurtnatuur",
-    "wiki:mapcomplete/fritures": "fritures",
-    "wiki:MapComplete/Fritures": "fritures",
-    "lits": "lit",
-    "pomp": "cyclofix",
-    "wiki:user:joost_schouppe/campersite": "campersite",
-    "wiki-user-joost_schouppe-geveltuintjes": "geveltuintjes",
-    "wiki-user-joost_schouppe-campersite": "campersite",
-    "wiki-User-joost_schouppe-campersite": "campersite",
-    "wiki-User-joost_schouppe-geveltuintjes": "geveltuintjes",
-    "wiki:User:joost_schouppe/campersite": "campersite",
-    "arbres": "arbres_llefia",
-    "aed_brugge": "aed",
-    "https://llefia.org/arbres/mapcomplete.json": "arbres_llefia",
-    "https://llefia.org/arbres/mapcomplete1.json": "arbres_llefia",
-    "toevoegen of dit natuurreservaat toegangkelijk is": "buurtnatuur",
-    "testing mapcomplete 0.0.0": "buurtnatuur",
-    "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json": "geveltuintjes"
-}
 
-class ChangesetDataTools {
-
-    public static cleanChangesetData(cs: ChangeSetData): ChangeSetData {
-        if (cs.properties.metadata.theme === undefined) {
-            cs.properties.metadata.theme = cs.properties.comment.substr(cs.properties.comment.lastIndexOf("#") + 1)
-        }
-        cs.properties.metadata.theme = cs.properties.metadata.theme.toLowerCase()
-        const remapped = theme_remappings[cs.properties.metadata.theme]
-        cs.properties.metadata.theme = remapped ?? cs.properties.metadata.theme
-        if (cs.properties.metadata.theme.startsWith("https://raw.githubusercontent.com/")) {
-            cs.properties.metadata.theme = "gh://" + cs.properties.metadata.theme.substr("https://raw.githubusercontent.com/".length)
-        }
-        if (cs.properties.modify + cs.properties.delete + cs.properties.create == 0) {
-            cs.properties.metadata.theme = "EMPTY CS"
-        }
-        try {
-            cs.properties.metadata.host = new URL(cs.properties.metadata.host).host
-        } catch (e) {
-
-        }
-        if (cs.properties.metadata["answer"] > 100) {
-            console.log("Lots of answers for https://osm.org/changeset/" + cs.id)
-        }
-        return cs
-    }
-
-}
 
 interface PlotSpec {
     name: string,
@@ -827,8 +777,7 @@ async function main(): Promise<void> {
     const allPaths = readdirSync(targetDir)
         .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
     let allFeatures: ChangeSetData[] = [].concat(...allPaths
-        .map(path => JSON.parse(readFileSync("Docs/Tools/stats/" + path, "utf-8")).features
-            .map(cs => ChangesetDataTools.cleanChangesetData(cs))));
+        .map(path => JSON.parse(readFileSync("Docs/Tools/stats/" + path, "utf-8")).features));
     allFeatures = allFeatures.filter(f => f.properties.editor === null || f.properties.editor.toLowerCase().startsWith("mapcomplete"))
 
     const emptyCS = allFeatures.filter(f => f.properties.metadata.theme === "EMPTY CS")
@@ -843,18 +792,16 @@ async function main(): Promise<void> {
     const allFiles = readdirSync("Docs/Tools/stats").filter(p => p.endsWith(".json"))
     writeFileSync("Docs/Tools/stats/file-overview.json", JSON.stringify(allFiles))
     
-    /* 
    await createMiscGraphs(allFeatures, emptyCS)
 
    const grbOnly = allFeatures.filter(f => f.properties.metadata.theme === "grb")
    allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "grb")
- await createGraphs(allFeatures, "")
-   await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
+   await createGraphs(allFeatures, "")
+   /*await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2020")), " in 2020")
    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2021")), " in 2021")
    await createGraphs(allFeatures.filter(f => f.properties.date.startsWith("2022")), " in 2022")
    await createGraphs(allFeatures.filter(f => f.properties.metadata.theme === "toerisme_vlaanderen"), " met pin je punt", 0)
-   await createGraphs(grbOnly, " with the GRB import tool", 0)
-*/
+   await createGraphs(grbOnly, " with the GRB import tool", 0)*/
 }
 
 main().then(_ => console.log("All done!"))
