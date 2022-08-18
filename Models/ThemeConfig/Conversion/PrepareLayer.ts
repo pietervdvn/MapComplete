@@ -13,11 +13,16 @@ import {AddContextToTranslations} from "./AddContextToTranslations";
 class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { builtin: string | string[], override: any }, TagRenderingConfigJson[]> {
     private readonly _state: DesugaringContext;
     private readonly _self: LayerConfigJson;
+    private readonly _options: {
+        /* If true, will copy the 'osmSource'-tags into the condition */
+        applyCondition?: true | boolean;
+    };
 
-    constructor(state: DesugaringContext, self: LayerConfigJson) {
+    constructor(state: DesugaringContext, self: LayerConfigJson, options?: {  applyCondition?: true | boolean;}) {
         super("Converts a tagRenderingSpec into the full tagRendering, e.g. by substituting the tagRendering by the shared-question", [], "ExpandTagRendering");
         this._state = state;
         this._self = self;
+        this._options = options;
     }
 
     convert(json: string | TagRenderingConfigJson | { builtin: string | string[]; override: any }, context: string): { result: TagRenderingConfigJson[]; errors: string[]; warnings: string[] } {
@@ -65,12 +70,14 @@ class ExpandTagRendering extends Conversion<string | TagRenderingConfigJson | { 
 
         const contextWriter = new AddContextToTranslations<TagRenderingConfigJson>("layers:")
         for (let i = 0; i < matchingTrs.length; i++) {
-            // The matched tagRenderings are 'stolen' from another layer. This means that they must match the layer condition before being shown
             let found: TagRenderingConfigJson = Utils.Clone(matchingTrs[i]);
-            if (found.condition === undefined) {
-                found.condition = layer.source.osmTags
-            } else {
-                found.condition = {and: [found.condition, layer.source.osmTags]}
+            if(this._options?.applyCondition){
+                // The matched tagRenderings are 'stolen' from another layer. This means that they must match the layer condition before being shown
+                if (found.condition === undefined) {
+                    found.condition = layer.source.osmTags
+                } else {
+                    found.condition = {and: [found.condition, layer.source.osmTags]}
+                }
             }
 
             found = contextWriter.convertStrict(found, layer.id + ".tagRenderings." + found["id"])
@@ -561,7 +568,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On("tagRenderings", layer => new Concat(new ExpandTagRendering(state, layer))),
             new On("mapRendering", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
-            new On("mapRendering", layer => new Each(new On("icon", new FirstOf(new ExpandTagRendering(state, layer))))),
+            new On("mapRendering", layer => new Each(new On("icon", new FirstOf(new ExpandTagRendering(state, layer, {applyCondition: false}))))),
             new SetDefault("titleIcons", ["defaults"]),
             new On("titleIcons", layer => new Concat(new ExpandTagRendering(state, layer)))
         );

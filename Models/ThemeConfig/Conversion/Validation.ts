@@ -613,6 +613,13 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 information.push(...(r.information ?? []))
             }
 
+            {
+               const hasCondition = json.mapRendering?.filter(mr => mr["icon"] !== undefined && mr["icon"]["condition"] !== undefined)
+                if(hasCondition?.length > 0){
+                    errors.push("At "+context+":\n    One or more icons in the mapRenderings have a condition set. Don't do this, as this will result in an invisible but clickable element. Use extra filters in the source instead. The offending mapRenderings are:\n"+JSON.stringify(hasCondition, null, "  "))
+                }
+            }
+
             if (json.presets !== undefined) {
 
                 // Check that a preset will be picked up by the layer itself

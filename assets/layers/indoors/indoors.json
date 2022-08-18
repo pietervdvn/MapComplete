@@ -178,8 +178,6 @@
         "centroid"
       ],
       "icon": {
-        "render": null,
-        "condition": "indoor=room",
         "mappings": [
           {
             "if": {
