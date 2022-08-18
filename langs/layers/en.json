@@ -4720,7 +4720,7 @@
                     }
                 },
                 "question": "What is the legal maximum speed one is allowed to drive on this road?",
-                "render": "The maximum allowed speed on this road is {maxspeed}"
+                "render": "The maximum allowed speed on this road is {canonical(maxspeed)}"
             }
         },
         "title": {
