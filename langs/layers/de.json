@@ -3566,7 +3566,7 @@
             },
             "width": {
                 "question": "Wie breit ist diese Tür bzw. dieser Eingang?",
-                "render": "Diese Tür hat eine Durchgangsbreite von {canonical(width)} Meter"
+                "render": "Diese Tür hat eine Durchgangsbreite von {canonical(width)}"
             }
         },
         "title": {
@@ -4249,10 +4249,51 @@
                 },
                 "question": "Welche Bauform hat der Hydrant?",
                 "render": " Hydranten-Typ: {fire_hydrant:type}"
+            },
+            "hydrant-couplings-diameters": {
+                "question": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
+                "freeform": {
+                    "placeholder": "Kupplungsdurchmesser"
+                },
+                "render": "Kupplungsdurchmesser: {couplings:diameters}"
+            },
+            "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Art der Kupplung"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Storz-Kupplung"
+                    },
+                    "1": {
+                        "then": "UNI-Kupplung"
+                    },
+                    "2": {
+                        "then": "Barcelona-Kupplung"
+                    }
+                },
+                "question": "Welche Art von Kupplungen hat dieser Hydrant?",
+                "render": "Kupplungen: {couplings:type}"
+            },
+            "hydrant-diameter": {
+                "freeform": {
+                    "placeholder": "Rohrdurchmesser"
+                },
+                "question": "Was ist der Rohrdurchmesser dieses Hydranten?",
+                "render": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}"
             }
         },
         "title": {
             "render": "Hydrant"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Millimeter"
+                    }
+                }
+            }
         }
     },
     "indoors": {
@@ -4648,7 +4689,7 @@
                     }
                 },
                 "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
-                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}"
+                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {canonical(maxspeed)}"
             }
         },
         "title": {
