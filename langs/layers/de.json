@@ -4278,7 +4278,8 @@
             "hydrant-diameter": {
                 "freeform": {
                     "placeholder": "Rohrdurchmesser"
-                }
+                },
+                "question": "Was ist der Rohrdurchmesser dieses Hydranten?"
             }
         },
         "title": {
