@@ -4678,7 +4678,7 @@
                     }
                 },
                 "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
-                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}"
+                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {canonical(maxspeed)}"
             }
         },
         "title": {
