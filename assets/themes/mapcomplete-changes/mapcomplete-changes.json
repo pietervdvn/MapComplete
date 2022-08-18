@@ -216,10 +216,6 @@
                 "then": "./assets/layers/entrance/entrance.svg"
               },
               {
-                "if": "theme=kakampink",
-                "then": "bug"
-              },
-              {
                 "if": "theme=kerbs_and_crossings",
                 "then": "./assets/layers/kerbs/KerbIcon.svg"
               },

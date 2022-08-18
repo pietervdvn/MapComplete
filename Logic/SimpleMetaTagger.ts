@@ -235,7 +235,7 @@ export default class SimpleMetaTaggers {
 
     private static canonicalize = new SimpleMetaTagger(
         {
-            doc: "If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`)",
+            doc: "If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`; `1` will be rewritten to `1m` as well)",
             keys: ["Theme-defined keys"],
 
         },
@@ -261,13 +261,14 @@ export default class SimpleMetaTaggers {
                         continue;
                     }
                     const value = feature.properties[key]
-                    const denom = unit.findDenomination(value)
+                    const denom = unit.findDenomination(value, () => feature.properties["_country"])
                     if (denom === undefined) {
                         // no valid value found
                         break;
                     }
                     const [, denomination] = denom;
-                    let canonical = denomination?.canonicalValue(value) ?? undefined;
+                    const defaultDenom = unit.getDefaultDenomination(() => feature.properties["_country"])
+                    let canonical = denomination?.canonicalValue(value, defaultDenom == denomination) ?? undefined;
                     if (canonical === value) {
                         break;
                     }

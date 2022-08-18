@@ -20,6 +20,7 @@ import {QueryParameters} from "../../Logic/Web/QueryParameters";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {InputElement} from "../Input/InputElement";
 import {DropDown} from "../Input/DropDown";
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class FilterView extends VariableUiElement {
     constructor(filteredLayer: UIEventSource<FilteredLayer[]>, 
@@ -91,7 +92,7 @@ export default class FilterView extends VariableUiElement {
         if (filteredLayer.layerDef.name === undefined) {
             // Name is not defined: we hide this one
             return new Toggle(
-                filteredLayer?.layerDef?.description?.Clone()?.SetClass("subtle")                ,
+                new FixedUiElement(filteredLayer?.layerDef?.id ).SetClass("block") ,
                 undefined,
                 state?.featureSwitchIsDebugging
             );

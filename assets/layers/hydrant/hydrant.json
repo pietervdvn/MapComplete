@@ -456,7 +456,6 @@
     {
       "applicableUnits": [
         {
-          "default": true,
           "canonicalDenomination": "",
           "alternativeDenomination": [
             "mm",

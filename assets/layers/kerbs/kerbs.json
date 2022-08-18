@@ -339,8 +339,7 @@
             "nl": "centimeter",
             "de": "Zentimeter",
             "fr": "centimètre"
-          },
-          "default": true
+          }
         },
         {
           "canonicalDenomination": "m",

@@ -63,6 +63,7 @@
       ],
       "applicableUnits": [
         {
+          "useIfNoUnitGiven": true,
           "canonicalDenomination": "m",
           "alternativeDenomination": [
             "meter"
@@ -74,16 +75,16 @@
           }
         },
         {
-          "default": true,
+          "useAsDefaultInput": true,
           "canonicalDenomination": "cm",
           "alternativeDenomination": [
             "centimeter",
             "cms"
           ],
           "human": {
-            "en": "centimeter",
-            "fr": "centimètre",
-            "de": "Zentimeter"
+            "en": " centimeter",
+            "fr": " centimètre",
+            "de": " Zentimeter"
           }
         }
       ]

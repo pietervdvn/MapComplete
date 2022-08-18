@@ -154,7 +154,6 @@
             "kmh",
             "kph"
           ],
-          "default": true,
           "human": {
             "en": "kilometers/hour",
             "ca": "quilòmetres/hora",
@@ -172,6 +171,7 @@
         },
         {
           "canonicalDenomination": "mph",
+          "useIfNoUnitGiven": ["gb","us"],
           "alternativeDenomination": [
             "m/u",
             "mh",

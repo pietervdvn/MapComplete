@@ -132,8 +132,7 @@
                   "ca": " metre",
                   "nb_NO": " meter",
                   "es": " metro"
-                },
-                "default": true
+                }
               },
               {
                 "canonicalDenomination": "ft",
