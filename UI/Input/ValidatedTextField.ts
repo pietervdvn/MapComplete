@@ -90,7 +90,7 @@ export class TextFieldDef {
         if (options.unit !== undefined) {
             // Reformatting is handled by the unit in this case
             options["isValid"] = str => {
-                const denom = options.unit.findDenomination(str);
+                const denom = options.unit.findDenomination(str, options?.country);
                 if (denom === undefined) {
                     return false;
                 }
@@ -153,7 +153,7 @@ export class TextFieldDef {
                             }
                         })
                     )
-            unitDropDown.GetValue().setData(unit.defaultDenom)
+            unitDropDown.GetValue().setData(unit.getDefaultInput(options.country))
             unitDropDown.SetClass("w-min")
 
             const fixedDenom = unit.denominations.length === 1 ? unit.denominations[0] : undefined
@@ -169,7 +169,7 @@ export class TextFieldDef {
                 },
                 (valueWithDenom: string) => {
                     // Take the value from OSM and feed it into the textfield and the dropdown
-                    const withDenom = unit.findDenomination(valueWithDenom);
+                    const withDenom = unit.findDenomination(valueWithDenom, options?.country);
                     if (withDenom === undefined) {
                         // Not a valid value at all - we give it undefined and leave the details up to the other elements (but we keep the previous denomination)
                         return [undefined, fixedDenom]

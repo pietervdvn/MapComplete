@@ -14,13 +14,32 @@ export default interface UnitConfigJson {
     /**
      * The possible denominations
      */
-    applicableUnits: ApplicableUnitJson[]
+    applicableUnits: DenominationConfigJson[]
 
 }
 
-export interface ApplicableUnitJson {
+export interface DenominationConfigJson {
+
+
     /**
-     * The canonical value which will be added to the value in OSM.
+     * If this evaluates to true and the value to interpret has _no_ unit given, assumes that this unit is meant.
+     * Alternatively, a list of country codes can be given where this acts as the default interpretation
+     * 
+     * E.g., a denomination using "meter" would probably set this flag to "true";
+     * a denomination for "mp/h" will use the condition "_country=gb" to indicate that it is the default in the UK.
+     * 
+     * If none of the units indicate that they are the default, the first denomination will be used instead
+     */
+    useIfNoUnitGiven?: boolean | string[]
+
+    /**
+     * Use this value as default denomination when the user inputs a value (e.g. to force using 'centimeters' instead of 'meters' by default).
+     * If unset for all values, this will use 'useIfNoUnitGiven'. If at least one denomination has this set, this will default to false
+     */
+    useAsDefaultInput?: boolean | string[]
+
+    /**
+     * The canonical value for this denomination which will be added to the value in OSM.
      * e.g. "m" for meters
      * If the user inputs '42', the canonical value will be added and it'll become '42m'.
      * 
@@ -28,8 +47,11 @@ export interface ApplicableUnitJson {
      * In this case, an empty string should be used
      */
     canonicalDenomination: string,
+
+    
     /**
-     * The canonical denomination in the case that the unit is precisely '1'
+     * The canonical denomination in the case that the unit is precisely '1'.
+     * Used for display purposes
      */
     canonicalDenominationSingular?: string,
 
@@ -63,9 +85,5 @@ export interface ApplicableUnitJson {
      */
     prefix?: boolean
 
-    /**
-     * The default interpretation - only one can be set.
-     * If none is set, the first unit will be considered the default interpretation of a value without a unit
-     */
-    default?: boolean
+
 }

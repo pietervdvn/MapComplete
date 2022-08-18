@@ -151,8 +151,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return res;
     }
 
-    public static NoNull<T>(array: T[]): T[] {
-        return array?.filter(o => o !== undefined && o !== null)
+    public static NoNull<T>(array: T[]): NonNullable<T>[] {
+        return <any> array?.filter(o => o !== undefined && o !== null)
     }
 
     public static Hist(array: string[]): Map<string, number> {

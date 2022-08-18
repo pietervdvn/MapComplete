@@ -3406,6 +3406,9 @@
         "presets": {
             "0": {
                 "title": "een toegang"
+            },
+            "1": {
+                "title": "een binnendeur"
             }
         },
         "tagRenderings": {
@@ -3509,7 +3512,7 @@
             },
             "width": {
                 "question": "Wat is de breedte van deze deur/toegang?",
-                "render": "Deze deur heeft een breedte van {canonical(width)} meter"
+                "render": "Deze deur heeft een breedte van {canonical(width)}"
             }
         },
         "title": {
@@ -4221,7 +4224,43 @@
         "description": "Een basis voor indoor-navigatie: toont binnenruimtes",
         "name": "Binnenruimtes",
         "title": {
-            "render": "Binnenruimte {name}"
+            "render": "Binnenruimte {name}",
+            "mappings": {
+                "0": {
+                    "then": "Binnenruimte {name}"
+                },
+                "4": {
+                    "then": "Binnendeur {name}"
+                },
+                "3": {
+                    "then": "Gang in gebouw {name}"
+                },
+                "1": {
+                    "then": "Gebied in gebouw {name}"
+                },
+                "5": {
+                    "then": "Verdieping in gebouw {name}"
+                },
+                "2": {
+                    "then": "Muur in gebouw {name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "render": "Deze ruimte heet {name}",
+                "question": "Wat is de naam van deze ruimte?",
+                "freeform": {
+                    "placeholder": "Naam van de ruimte"
+                }
+            },
+            "ref": {
+                "question": "Wat is het referentienummer van deze ruimte?",
+                "freeform": {
+                    "placeholder": "Referentienummer van de ruimte (bv. '1.1' of A1' )"
+                },
+                "render": "Deze ruimte heeft het referentienummer {ref}"
+            }
         }
     },
     "information_board": {
@@ -4264,7 +4303,16 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Drempes met of zonder"
+                        "question": "Stoepranden met of zonder voelbare bestrating"
+                    },
+                    "1": {
+                        "question": "Stoeprand met voelbare bestrating"
+                    },
+                    "2": {
+                        "question": "Stoeprand zonder voelbare bestrating"
+                    },
+                    "3": {
+                        "question": "Stoeprand zonder informatie over voelbare bestrating"
                     }
                 }
             }
@@ -4303,6 +4351,20 @@
                     }
                 },
                 "question": "Hoe hoog is deze stoeprand?"
+            },
+            "tactile-paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze stoeprand heeft voelbare bestrating."
+                    },
+                    "1": {
+                        "then": "Deze stoeprand heeft geen voelbare bestrating."
+                    },
+                    "2": {
+                        "then": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect."
+                    }
+                },
+                "question": "Is er voelbare bestrating bij deze stoeprand?"
             }
         },
         "title": {
@@ -4353,6 +4415,10 @@
                 "override": {
                     "question": "Wanneer is deze kinderopvang geopend?"
                 }
+            },
+            "name": {
+                "question": "Wat is de naam van deze faciliteit?",
+                "render": "Deze faciliteit heet <b>{name}</b>"
             }
         },
         "title": {
@@ -4423,7 +4489,7 @@
                         "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
                     }
                 },
-                "render": "De maximum toegestane snelheid op deze weg is {maxspeed}"
+                "render": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}"
             }
         },
         "title": {
@@ -6800,5 +6866,92 @@
                 }
             }
         }
+    },
+    "maproulette": {
+        "filter": {
+            "0": {
+                "options": {
+                    "1": {
+                        "question": "Toon aangemaakte taken"
+                    },
+                    "8": {
+                        "question": "Toon uitgeschakelde taken"
+                    },
+                    "0": {
+                        "question": "Toon taken met alle statussen"
+                    },
+                    "3": {
+                        "question": "Toon vals-positieve taken"
+                    },
+                    "4": {
+                        "question": "Toon overgeslagen taken"
+                    },
+                    "5": {
+                        "question": "Toon verwijderde taken"
+                    },
+                    "6": {
+                        "question": "Toon al opgeloste taken"
+                    },
+                    "7": {
+                        "question": "Toon taken die als te lastig gemarkeerd zijn"
+                    },
+                    "2": {
+                        "question": "Toon opgeloste taken"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Naam uitdaging bevat {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "ID uitdaging is {search}"
+                    }
+                }
+            }
+        },
+        "description": "Laag met alle taken uit MapRoulette",
+        "name": "MapRoulette Taken"
+    },
+    "transit_routes": {
+        "tagRenderings": {
+            "operator": {
+                "question": "Welk bedrijf exploiteert deze buslijn?",
+                "render": "Deze buslijn wordt geëxploiteerd door {operator}"
+            },
+            "from": {
+                "render": "Deze buslijn begint bij {from}",
+                "question": "Wat is het beginpunt van deze buslijn?"
+            },
+            "to": {
+                "render": "Deze buslijn eindigt bij {to}",
+                "question": "Wat is het eindpunt van deze buslijn?"
+            },
+            "colour": {
+                "question": "Wat is de kleur van deze buslijn?",
+                "render": "Deze buslijn heeft de kleur {colour}"
+            },
+            "name": {
+                "question": "Wat is de naam van deze buslijn (bv. Bus XX: Van => Via => Naar)"
+            },
+            "network": {
+                "question": "Bij welk netwerk hoort deze buslijn?",
+                "render": "Deze buslijn is onderdeel van het {network} netwerk"
+            },
+            "via": {
+                "question": "Via welk punt gaat deze buslijn?",
+                "render": "Deze buslijn gaat via {via}"
+            }
+        },
+        "title": {
+            "render": "Buslijn"
+        },
+        "description": "Laag met buslijnen",
+        "name": "Buslijnen"
     }
 }

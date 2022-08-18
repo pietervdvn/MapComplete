@@ -185,6 +185,7 @@
           "alternativeDenomination": [
             "meter"
           ],
+          "useIfNoUnitGiven": true,
           "human": {
             "en": "meter",
             "fr": "mètre",
@@ -193,7 +194,7 @@
           }
         },
         {
-          "default": true,
+          "useAsDefaultInput": true,
           "canonicalDenomination": "cm",
           "alternativeDenomination": [
             "centimeter",

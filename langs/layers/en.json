@@ -3566,7 +3566,7 @@
             },
             "width": {
                 "question": "What is the width of this door/entrance?",
-                "render": "This door has a width of {canonical(width)} meter"
+                "render": "This door has a width of {canonical(width)}"
             }
         },
         "title": {
@@ -4438,7 +4438,7 @@
                         "then": "This kerb does not have tactile paving."
                     },
                     "2": {
-                        "then": "This kerb has tactile paving, but it is incorrect"
+                        "then": "This kerb has tactile paving, but it is incorrect."
                     }
                 },
                 "question": "Is there tactile paving at this kerb?"
@@ -4720,7 +4720,7 @@
                     }
                 },
                 "question": "What is the legal maximum speed one is allowed to drive on this road?",
-                "render": "The maximum allowed speed on this road is {maxspeed}"
+                "render": "The maximum allowed speed on this road is {canonical(maxspeed)}"
             }
         },
         "title": {

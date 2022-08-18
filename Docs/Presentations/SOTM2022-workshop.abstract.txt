@@ -1,0 +1,53 @@
+# What do I want to tell at SOTM '22?
+
+4 main topics:
+
+The MapComplete Editor:
+
+- What is MapComplete? The vision
+   + Simple to use viewer
+   + Simple to contribute
+   + Packed with features under the hood (where applicable)
+   + Pareto frontier
+
+- What is a theme?
+  + One or more layers + introduction text + some meta (such as icon)
+  + Vision on what the target group is (who will use it? For what purpose?)
+  + Written in a .json-file
+
+- What is a .json-file
+  + A flat text-file (create a .txt)
+
+- What is a layer?
+  + One logical type of feature
+    - Specifiy the tags that are needed to match
+    - Uses OSM as default datasource, but an online (sliced) geojson is an option too, e.g. to show/import
+  + Specifies the elements to show in the popup
+  + Specifies how it is rendered
+  + Specifies if new elements can be added and with which tags
+  -> Don't mix, e.g. don't mix post-boxes with post offices
+  -> Don't use an adverb, e.g. "all shops ~~which accept cash~~". What if the shop is already there but the payment methods are not known yet? (use a filter instead)
+
+- What is a TagRendering?
+  + Converts the objects attributes into a text on the screen
+  + If a question is added, it'll ask the user the right answer
+  -> Do use full sentences
+  -> Start with the step 'attributes to text', then add the question
+  -> Don't write "yes, this POI has ..." or even worse "yes"/"no"
+
+- Deploying
+  + copy paste into a base64-decoder
+  + Go to "mapcomplete.osm.be/index?userlayout=true#<paste your encoded file here>"
+  + Oh Noes! An error msg!
+
+- sharing
+  + Share often and early. I'd rather have a half-finished theme via chat/wiki that can be improved upon then no theme at all
+  + When done: make a pull request via github (you'll get translations, documentation, integration with taginfo and a chatbot for free)
+
+- A dash of Magic
+  + Calculated tags
+  + Twin layers (fritures)
+  + Imports
+
+- Future work:
+  + Improve this flow

@@ -164,6 +164,15 @@
             "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite"
           },
           "hideInAnswer": true
+        },
+        {
+          "if": "capacity:disabled=0",
+          "then": {
+            "en": "There are no disabled parking spots",
+            "nl": "Er zijn geen parkeerplaatsen voor gehandicapten",
+            "de": "Es gibt keine barrierefreien Stellplätze",
+            "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite"
+          }
         }
       ],
       "question": {
@@ -247,9 +256,9 @@
       "iconBadges": [
         {
           "if": {
-            "and": [
-              "capacity:disabled~*",
-              "capacity:disabled!=no"
+            "or": [
+              "capacity:disabled>0",
+              "capacity:disabled=yes"
             ]
           },
           "then": "circle:white;./assets/layers/toilet/wheelchair.svg"

@@ -1273,6 +1273,9 @@ export default class SpecialVisualizations {
                             const tagRendering = layer.tagRenderings.find(tr => tr.id === tagRenderingId)
                             tagRenderings.push([layer, tagRendering])
                         }
+                        if(tagRenderings.length === 0){
+                            throw "Could not create stolen tagrenddering: tagRenderings not found"
+                        }
                         return new VariableUiElement(featureTags.map(tags => {
                             const featureId = tags[featureIdKey]
                             if (featureId === undefined) {

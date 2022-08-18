@@ -208,6 +208,10 @@
                 "then": "./assets/layers/doctors/doctors.svg"
               },
               {
+                "if": "theme=hotels",
+                "then": "./assets/layers/hotel/hotel.svg"
+              },
+              {
                 "if": "theme=indoors",
                 "then": "./assets/layers/entrance/entrance.svg"
               },

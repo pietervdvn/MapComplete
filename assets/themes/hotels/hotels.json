@@ -1,0 +1,18 @@
+{
+  "id": "hotels",
+  "title": {
+    "en": "Hotels"
+  },
+  "description": {
+    "en": "On this map, you'll find hotels in your area"
+  },
+  "maintainer": "MapComplete",
+  "version": "0.0.1",
+  "icon": "./assets/layers/hotel/hotel.svg",
+  "startLat": 50.8552,
+  "startLon": 4.3755,
+  "startZoom": 13,
+  "layers": [
+    "hotel"
+  ]
+}
