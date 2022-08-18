@@ -50,7 +50,7 @@
   },
   "layers": [
     {
-      "id": "cyclestreets",
+      "id": "fietsstraat",
       "name": {
         "nl": "Fietsstraten",
         "en": "Cyclestreets",
@@ -531,7 +531,7 @@
               "motor_vehicle=yes",
               "motorcar=",
               "motorcycle=",
-              "vehicle="
+              "vehicle=no"
             ]
           },
           {

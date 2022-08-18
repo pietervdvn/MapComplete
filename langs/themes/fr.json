@@ -654,6 +654,68 @@
         "description": "Une carte affichant les ressauts et traversées.",
         "title": "Ressauts et traversées"
     },
+    "mapcomplete-changes": {
+        "description": "Cette carte affiche toutes les modifications réalisées avec MapComplete",
+        "layers": {
+            "0": {
+                "description": "Afficher toutes les modifications MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Nom de thème contenant {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Réalisé par {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Non</b> réalisé par {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Centre du groupe de modifications",
+                "tagRenderings": {
+                    "contributor": {
+                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+                    },
+                    "render_id": {
+                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Modification avec le thème <b>non-officiel</b> <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
+                            }
+                        },
+                        "render": "Modification avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Groupe de modifications pour {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "D’autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Montrer les changements faits avec MapComplete",
+        "title": "Changements faits avec MapComplete"
+    },
     "maproulette": {
         "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
         "title": "Tâches MapRoulette"
