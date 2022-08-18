@@ -3049,7 +3049,7 @@
                         "then": "Cette bordure n'a pas de revêtement podotactile."
                     },
                     "2": {
-                        "then": "Cette bordure a un pavage tactile, mais il est incorrect"
+                        "then": "Cette bordure a un pavage tactile, mais il est incorrect."
                     }
                 },
                 "question": "Y a-t-il un revêtement tactile sur cette bordure ?"

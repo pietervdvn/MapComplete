@@ -1,6 +1,6 @@
 import BaseUIElement from "../BaseUIElement";
 import {Chart, ChartConfiguration, ChartType, DefaultDataPoint, registerables} from 'chart.js';
-Chart.register(...registerables);
+Chart?.register(...(registerables ?? []));
 
 
 export default class ChartJs<
