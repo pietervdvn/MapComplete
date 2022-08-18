@@ -4489,7 +4489,7 @@
                         "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
                     }
                 },
-                "render": "De maximum toegestane snelheid op deze weg is {maxspeed}"
+                "render": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}"
             }
         },
         "title": {
