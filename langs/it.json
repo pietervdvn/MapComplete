@@ -298,7 +298,14 @@
             "withinRadius": "Mostra solo immagini che son scattate entro {radius} metri da questo oggetto",
             "noImageSelected": "Seleziona un'immagine per collegarla all'oggetto",
             "onlyTowards": "Mostra solo le immagini scattate verso quest'oggetto",
-            "allFiltered": "Nessuna immagine corrisponde al tuo filtro"
+            "allFiltered": "Nessuna immagine corrisponde al tuo filtro",
+            "confirm": "L'immagine selezionata mostra {title()}",
+            "loadMore": "Carica più immagini",
+            "removeFilters": "Clicca qui per rimuovere i filtri",
+            "loading": "Caricamento di immagini nei dintorni…",
+            "nothingFound": "Nessuna immagine trovata nei dintorni…",
+            "title": "Immagini nei dintorni",
+            "browseNearby": "Carica immagini nei dintorni…"
         },
         "ccbExplanation": "La licenza CC-BY implica che autorizzi tutti ad usare la tua immagine per qualsiasi scopo, fintanto che i crediti a te sono corretti",
         "ccoExplanation": "Aggiungere una immagine nel pubblico dominio implica che autorizzi tutti a fare qualsiasi cosa con questa immagine",
@@ -370,7 +377,9 @@
             "giveWikilink": "Su quale pagina wiki si possono trovare informazioni riguardo questa importazione?",
             "intro": "Prima di aggiungere {count} note, per favore fornisci alcune informazioni aggiuntive.",
             "shouldBeOsmWikilink": "È necessario un link ad una pagina su wiki.openstreetmap.org",
-            "shouldBeUrl": "Non è un URL valido"
+            "shouldBeUrl": "Non è un URL valido",
+            "giveDescription": "Per favore, scrivi una breve descrizione per chi vede la nota. Una buona nota descrive ciò che il contributore dovrebbe fare, per esempio <i>Qui dovrebbe esserci una panchina. Se sei nei paraggi, puoi controllare e indicare se la panchina esiste o no?</i> (Verrà aggiunto automaticamente un link a MapComplete)",
+            "downloadGeojson": "Scarica Geo JSON"
         }
     }
 }
