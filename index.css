@@ -182,6 +182,10 @@ a {
   color: var(--foreground-color);
 }
 
+.text-white a {
+  color: var(--background-color);
+}
+
 .btn {
   line-height: 1.25rem;
   --tw-text-opacity: 1;
