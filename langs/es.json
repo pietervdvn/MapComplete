@@ -341,7 +341,7 @@
             "loadedDataAge": "Los datos cargados son de la caché y su edad es {age}",
             "mapShowingNearbyIntro": "El siguiente mapa muestra características a importar que tienen una característica de OSM dentro ",
             "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!",
-            "nothingLoaded": "No hay ningunos elementos cargados desde OpenStreetMap que coincidan con la capa actual {nombre}",
+            "nothingLoaded": "No hay ningunos elementos cargados desde OpenStreetMap que coincidan con la capa actual {name}",
             "osmLoaded": "{count} elementos se cargan desde OpenStreetMap que coinciden con la capa <b>{name}</b>.",
             "setRangeToZero": "Especificar el rango en 0 o 1 si quieres importarlos todos",
             "states": {
