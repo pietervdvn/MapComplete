@@ -122,7 +122,8 @@
             "licenseInfo": "<h3>Aviso de derechos</h3>Los datos provistos están disponibles bajo ODbL. Reutilizarlos es gratis para cualquier propósito, pero <ul><li>la atribución <b>© contribuidores de OpenStreetMap</b> se requiere</li><li>Cualquier cambio debe de utilizar la licencia</li></ul> Por favor leer todo el <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">aviso de derechos</a> para detalles.",
             "noDataLoaded": "Aún no se han cargado ningunos daos. La descarga estará disponible proximamente",
             "title": "Descargar los datos visibles",
-            "uploadGpx": "Sube tu traza a OpenStreetMap"
+            "uploadGpx": "Sube tu traza a OpenStreetMap",
+            "downloadAsSvgHelper": "Compatible con Inkscape o Adobe Illustrator; necesitará más procesado··  "
         },
         "error": "Algo fue mal",
         "example": "Ejemplo",
@@ -251,7 +252,7 @@
         },
         "welcomeBack": "Has entrado, bienvenido.",
         "wikipedia": {
-            "createNewWikidata": "Crear un ítem de Wikidata nuevo",
+            "createNewWikidata": "Crear un nuevo ítem Wikidata",
             "doSearch": "Busca arriba para ver los resultados",
             "failed": "La carga de la entrada de Wikipedia falló",
             "fromWikipedia": "De Wikipedia, la enciclopedia libre",
@@ -271,7 +272,7 @@
         "ccb": "bajo licencia CC-BY",
         "ccbExplanation": "La licencia CC-BY implica cualquiera podría utilizar tu fotografía para cualquier propósito, pero tienen que atribuirte",
         "ccbs": "bajo licencia CC-BY-SA",
-        "ccbsExplanation": "La licencia CC-BY-SA implica que cualquiera puede utilizar tu fotografía para cualquier propósito, pero que tienen que atribuirte y que las modificaciones de la fotografía deberán de publicarse bajo la misma licencia",
+        "ccbsExplanation": "La licencia CC-BY-SA implica que cualquier podría utilizar tu fotografía para cualquier propósito, pero tienen que atribuirte y los remixes de la fotografía tienen que ser publicados bajo la misma licencia",
         "cco": "en dominio público",
         "ccoExplanation": "Añadir una fotografía en el dominio público implica que cualquiera puede hacer cualquier cosa con tu fotografía",
         "doDelete": "Borrar imagen",
@@ -330,7 +331,8 @@
             "readImportGuidelines": "He leído las directrices importantes en la wiki de OSM",
             "title": "Licencia y comunidad",
             "titleLong": "¿Pasaste por el proceso de importación?",
-            "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)"
+            "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)",
+            "licenseIsCompatible": "La licencia de los datos permite que sean importados en OSM. Se les permite redistribuirlos comercialmente, con solo una atribución mínima"
         },
         "conflationChecker": {
             "cacheExpired": "La caché ha expirado",
@@ -339,7 +341,7 @@
             "loadedDataAge": "Los datos cargados son de la caché y su edad es {age}",
             "mapShowingNearbyIntro": "El siguiente mapa muestra características a importar que tienen una característica de OSM dentro ",
             "nearbyWarn": "¡Los {count} elementos rojos en el siguiente mapa <b>no</b> se importarán!",
-            "nothingLoaded": "No hay elementos cargados desde OpenStreetMpa que coincidan con la capa actual {name}",
+            "nothingLoaded": "No hay ningunos elementos cargados desde OpenStreetMap que coincidan con la capa actual {nombre}",
             "osmLoaded": "{count} elementos se cargan desde OpenStreetMap que coinciden con la capa <b>{name}</b>.",
             "setRangeToZero": "Especificar el rango en 0 o 1 si quieres importarlos todos",
             "states": {
