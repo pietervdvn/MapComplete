@@ -6,26 +6,23 @@ ScriptUtils.fixUtils()
 
 class StatsDownloader {
 
-    private readonly startYear = 2020
-    private readonly startMonth = 5;
     private readonly urlTemplate = "https://osmcha.org/api/v1/changesets/?date__gte={start_date}&date__lte={end_date}&page={page}&comment=%23mapcomplete&page_size=100"
 
     private readonly _targetDirectory: string;
-
 
     constructor(targetDirectory = ".") {
         this._targetDirectory = targetDirectory;
     }
 
-    public async DownloadStats() {
+    public async DownloadStats(startYear = 2020, startMonth = 5) {
 
         const today = new Date();
         const currentYear = today.getFullYear()
         const currentMonth = today.getMonth() + 1
-        for (let year = this.startYear; year <= currentYear; year++) {
+        for (let year = startYear; year <= currentYear; year++) {
             for (let month = 1; month <= 12; month++) {
 
-                if (year === this.startYear && month < this.startMonth) {
+                if (year === startYear && month < startMonth) {
                     continue;
                 }
 
@@ -40,8 +37,16 @@ class StatsDownloader {
 
                 const features = []
                 for (let day = 1; day <= 31; day++) {
+                    
                     if (year === currentYear && month === currentMonth && day === today.getDate()) {
                         break;
+                    }
+                    {
+                        const date = new Date(year, month - 1, day)
+                        if(date.getMonth() != month -1){
+                            // We did roll over
+                            continue
+                        }
                     }
                     const path = `${this._targetDirectory}/stats.${year}-${month}-${(day < 10 ? "0" : "") + day}.day.json`
                     if (existsSync(path)) {
@@ -61,7 +66,7 @@ class StatsDownloader {
                     features.push(...dayFeatures)
 
                 }
-                writeFileSync("stats." + year + "-" + month + ".json", JSON.stringify({features}))
+                writeFileSync(pathM, JSON.stringify({features}))
             }
         }
 
@@ -161,23 +166,30 @@ async function main(): Promise<void> {
     }
 
     const targetDir = "Docs/Tools/stats"
-    if (process.argv.indexOf("--no-download") < 0) {
-        do {
-            try {
-
-                await new StatsDownloader(targetDir).DownloadStats()
-                break
-            } catch (e) {
-                console.log(e)
-            }
-
-        } while (true)
+    let year = 2020
+    let month = 5
+    if(!isNaN(Number(process.argv[2]))){
+        year = Number(process.argv[2])
     }
+    if(!isNaN(Number(process.argv[3]))){
+        month = Number(process.argv[3])
+    }
+    
+    do {
+        try {
+
+            await new StatsDownloader(targetDir).DownloadStats(year, month)
+            break
+        } catch (e) {
+            console.log(e)
+        }
+
+    } while (true)
     const allPaths = readdirSync(targetDir)
         .filter(p => p.startsWith("stats.") && p.endsWith(".json"));
     let allFeatures: ChangeSetData[] = [].concat(...allPaths
         .map(path => JSON.parse(readFileSync("Docs/Tools/stats/" + path, "utf-8")).features));
-    allFeatures = allFeatures.filter(f => f.properties.editor === null || f.properties.editor.toLowerCase().startsWith("mapcomplete"))
+    allFeatures = allFeatures.filter(f => f?.properties !== undefined && (f.properties.editor === null || f.properties.editor.toLowerCase().startsWith("mapcomplete")))
 
     allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "EMPTY CS")
 
