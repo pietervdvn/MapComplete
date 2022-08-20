@@ -332,7 +332,7 @@
             "title": "Licencia y comunidad",
             "titleLong": "¿Pasaste por el proceso de importación?",
             "wikipageIsMade": "El proceso está documentado en la wiki de OSM (necesitarás este enlace más adelante)",
-            "licenseIsCompatible": "La licencia de los datos permite que sean importados en OSM. Se les permite redistribuirlos comercialmente, con solo una atribución mínima"
+            "licenseIsCompatible": "La licencia de los datos a importar permite que se importen en OMS. Se pueden redistribuir comercialmente, solo con una atribución mínima"
         },
         "conflationChecker": {
             "cacheExpired": "La caché ha expirado",
@@ -525,13 +525,13 @@
         "tooLongForPublic": "Lo siento, este mensaje es demasiado largo para una sala pública - envíame un mensaje directo"
     },
     "move": {
-        "cancel": "Cancelar movida",
+        "cancel": "Cancelar movimiento",
         "cannotBeMoved": "Esta característica no se puede mover.",
         "confirmMove": "Mover aquí",
         "inviteToMove": {
             "generic": "Mover este punto",
             "reasonInaccurate": "Mejorar la precisión de este punto",
-            "reasonRelocation": "Mover este objeto a otro lugar porque ha sido relocalizado"
+            "reasonRelocation": "Mover este objeto a otro lugar porque se ha relocalizado"
         },
         "inviteToMoveAgain": "Mover este punto otra vez",
         "isRelation": "Esta característica es una relación y no se puede mover",
@@ -596,7 +596,8 @@
     "professional": {
         "aboutMc": {
             "internalUse": {
-                "title": "Utilizando los datos en procesos internos"
+                "title": "Utilizando los datos en procesos internos",
+                "intro": "<p>Una vez que los datos estén en OpenStreetMap, probablemente también querrás utilizarlos. Tu tema de MapComplete puede tener conveniente botón para <i>exportar</i>, ofreciendo descargar los datos en unos cuantos formatos utilizables en QGis, ArcGis, Excel, LibreOffice-calc, …</p><p>Cualquiera con habilidades de hoja de cálculo básicas puede crear gráficos y conocer los datos, mientras que expertos en GIS dentro de tu organización pueden trabajar fácilmente con estos datos en su aplicación preferida.</p><p>Si se necesita un sistema automatizado, una API hospedada por la comunidad y de uso gratuito está disponible.</p>"
             },
             "layers": {
                 "intro": "<p>MapComplete tiene un sistema de plantillas potente, que permite crear un mapa que muestre precisamente esas características que necesitas rápidamente, mostrando atributos relevantes en popups.</p><p>Estos datos pueden obtenerse de <b>OpenStreetMap</b> directamente, pero MapComplete también puede utilizar <b>conjunto de datos externos</b> ej. para comparar OpenStreetMap con otro conjunto de datos, o para mostrar datos que no so adecuados para OpenStreetMap (actividades planificadas, estadísticas, …)</p>",
@@ -617,7 +618,8 @@
                 "li1": "Las tiendas y otros servicios pueden tener horarios de apertura, un número de teléfono, un enlace al sitio web, qué métodos de pagos se aceptan, qué venden, qué servicios ofrecen, …",
                 "li2": "Los baños pueden tener información sobre la accesibilidad en silla de ruedas, si hay cambiador, si hace falta pagar, …",
                 "li3": "y mucho, mucho más…",
-                "title": "¿Qué es OpenStreetMap?"
+                "title": "¿Qué es OpenStreetMap?",
+                "intro": "OpenStreetMap es una base compartida mundial, construida por voluntarias. Todos los geodatos pueden sor contribuidos a OpenStreetMap, siempre qeu <b>se puedan verificar en el suelo</b>.<br> OpenStreetMap ha crecido para ser un conjunto de datos muy amplio y profundo ya que contiene miles de categorías de objetos. Un objeto individual puede tener un montón de atributos, lo que aporta un montón de variedad, ej.:"
             },
             "benefits": {
                 "intro": "Puede ser muy difícil dejar tu conjunto de datos atrás, ya que construirlo llevó tiempo y trabajó.<br>De todas formas, los beneficios de cambiar a OSM son enormes:",
@@ -706,7 +708,7 @@
     },
     "split": {
         "cancel": "Cancelar",
-        "hasBeenSplit": "Esta característica se ha dividido",
+        "hasBeenSplit": "Esta característica se ha separado",
         "inviteToSplit": "Dividir esta carretera en segmentos más pequeños. Esto te permite darle propiedades diferentes a partes diferentes de la carretera.",
         "loginToSplit": "Debes de haber iniciado sesión para dividir una carretera",
         "split": "Dividir",
