@@ -227,16 +227,16 @@
         }
     },
     "cycle_highways": {
-        "description": "Este mapa muestra carriles bici",
+        "description": "Este mapa muestra autovías ciclistas",
         "layers": {
             "0": {
-                "name": "carriles bici",
+                "name": "autovías ciclistas",
                 "title": {
-                    "render": "carril bici"
+                    "render": "autovía ciclista"
                 }
             }
         },
-        "title": "Carriles bici"
+        "title": "Autovías ciclistas"
     },
     "cycle_infra": {
         "description": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista. Hecho durante #osoc21.",
@@ -283,7 +283,7 @@
         "title": "Redes de Nodos Ciclistas"
     },
     "cyclestreets": {
-        "description": "Una ciclocalle es una calle donde <b>el tráfico motorizado no puede adelantar a ciclistas</b>. Están señalizadas por una señal de tráfico especial. Las ciclocalles se pueden encontrar en los Países Bajos y Bélgica, pero también en Alemania y Francia. ",
+        "description": "Una ciclocalle es una calle en la que <b>el tráfico motorizado no puede sobrepasar a los ciclistas</b>. Están marcados por una señal de tráfico especial. Las ciclocalles se pueden encontrar en los Países Bajos y Bélgica, pero también en Alemania y Francia. ",
         "layers": {
             "0": {
                 "description": "Una ciclocalle es una calle en la que el tráfico motorizado no puede sobrepasar a un ciclista",
@@ -473,7 +473,8 @@
                     }
                 }
             }
-        }
+        },
+        "description": "Este tema es un intento de automatizar la importación GRB."
     },
     "grb_fixme": {
         "layers": {
