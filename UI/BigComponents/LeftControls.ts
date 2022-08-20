@@ -93,7 +93,7 @@ export default class LeftControls extends Combine {
             new ScrollableFullScreen(
                 () => Translations.t.general.layerSelection.title.Clone(),
                 () =>
-                    new FilterView(state.filteredLayers, state.overlayToggles).SetClass(
+                    new FilterView(state.filteredLayers, state.overlayToggles, state).SetClass(
                         "block p-1"
                     ),
                 "filters",

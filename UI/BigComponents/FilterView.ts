@@ -9,7 +9,6 @@ import {Translation} from "../i18n/Translation";
 import Svg from "../../Svg";
 import {ImmutableStore, Store, UIEventSource} from "../../Logic/UIEventSource";
 import BaseUIElement from "../BaseUIElement";
-import State from "../../State";
 import FilteredLayer, {FilterState} from "../../Models/FilteredLayer";
 import BackgroundSelector from "./BackgroundSelector";
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig";
@@ -21,25 +20,33 @@ import {TagUtils} from "../../Logic/Tags/TagUtils";
 import {InputElement} from "../Input/InputElement";
 import {DropDown} from "../Input/DropDown";
 import {FixedUiElement} from "../Base/FixedUiElement";
+import BaseLayer from "../../Models/BaseLayer";
+import Loc from "../../Models/Loc";
 
 export default class FilterView extends VariableUiElement {
-    constructor(filteredLayer: UIEventSource<FilteredLayer[]>, 
-                tileLayers: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[]) {
+    constructor(filteredLayer: Store<FilteredLayer[]>,
+                tileLayers: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }[],
+                state: {
+                    availableBackgroundLayers?: Store<BaseLayer[]>,
+                    featureSwitchBackgroundSelection?: UIEventSource<boolean>,
+                    featureSwitchIsDebugging?: UIEventSource<boolean>,
+                    locationControl?: UIEventSource<Loc>
+                }) {
         const backgroundSelector = new Toggle(
-            new BackgroundSelector(),
+            new BackgroundSelector(state),
             undefined,
-            State.state.featureSwitchBackgroundSelection
+            state.featureSwitchBackgroundSelection ?? new ImmutableStore(false)
         )
         super(
             filteredLayer.map((filteredLayers) => {
                     // Create the views which toggle layers (and filters them) ...
                     let elements = filteredLayers
-                        ?.map(l => FilterView.createOneFilteredLayerElement(l, State.state)?.SetClass("filter-panel"))
+                        ?.map(l => FilterView.createOneFilteredLayerElement(l, state)?.SetClass("filter-panel"))
                         ?.filter(l => l !== undefined)
                     elements[0].SetClass("first-filter-panel")
-                
+
                     // ... create views for non-interactive layers ...
-                    elements = elements.concat(tileLayers.map(tl => FilterView.createOverlayToggle(tl)))
+                    elements = elements.concat(tileLayers.map(tl => FilterView.createOverlayToggle(state, tl)))
                     // ... and add the dropdown to select a different background
                     return elements.concat(backgroundSelector);
                 }
@@ -47,7 +54,7 @@ export default class FilterView extends VariableUiElement {
         );
     }
 
-    private static createOverlayToggle(config: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }) {
+    private static createOverlayToggle(state: { locationControl?: UIEventSource<Loc> }, config: { config: TilesourceConfig, isDisplayed: UIEventSource<boolean> }) {
 
         const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem;flex-shrink: 0;";
 
@@ -66,7 +73,7 @@ export default class FilterView extends VariableUiElement {
                 Translations.t.general.layerSelection.zoomInToSeeThisLayer
                     .SetClass("alert")
                     .SetStyle("display: block ruby;width:min-content;"),
-                State.state.locationControl.map(location => location.zoom >= config.config.minzoom)
+                state.locationControl?.map(location => location.zoom >= config.config.minzoom) ?? new ImmutableStore(false)
             )
 
 
@@ -88,13 +95,14 @@ export default class FilterView extends VariableUiElement {
         );
     }
 
-    private static createOneFilteredLayerElement(filteredLayer: FilteredLayer, state: {featureSwitchIsDebugging: UIEventSource<boolean>}) {
+    private static createOneFilteredLayerElement(filteredLayer: FilteredLayer,
+                                                 state: { featureSwitchIsDebugging?: Store<boolean>, locationControl?: Store<Loc> }) {
         if (filteredLayer.layerDef.name === undefined) {
             // Name is not defined: we hide this one
             return new Toggle(
-                new FixedUiElement(filteredLayer?.layerDef?.id ).SetClass("block") ,
+                new FixedUiElement(filteredLayer?.layerDef?.id).SetClass("block"),
                 undefined,
-                state?.featureSwitchIsDebugging
+                state?.featureSwitchIsDebugging ?? new ImmutableStore(false)
             );
         }
         const iconStyle = "width:1.5rem;height:1.5rem;margin-left:1.25rem;flex-shrink: 0;";
@@ -118,7 +126,7 @@ export default class FilterView extends VariableUiElement {
                 Translations.t.general.layerSelection.zoomInToSeeThisLayer
                     .SetClass("alert")
                     .SetStyle("display: block ruby;width:min-content;"),
-                State.state.locationControl.map(location => location.zoom >= filteredLayer.layerDef.minzoom)
+                state?.locationControl?.map(location => location.zoom >= filteredLayer.layerDef.minzoom) ?? new ImmutableStore(false)
             )
 
 
@@ -135,7 +143,7 @@ export default class FilterView extends VariableUiElement {
             .onClick(() => filteredLayer.isDisplayed.setData(true));
 
 
-        const filterPanel: BaseUIElement = FilterView.createFilterPanel(filteredLayer)
+        const filterPanel: BaseUIElement = new LayerFilterPanel(state, filteredLayer)
 
 
         return new Toggle(
@@ -144,8 +152,11 @@ export default class FilterView extends VariableUiElement {
             filteredLayer.isDisplayed
         );
     }
+}
 
-    private static createFilterPanel(flayer: FilteredLayer): BaseUIElement {
+export class LayerFilterPanel extends Combine {
+
+    public constructor(state: any, flayer: FilteredLayer) {
         const layer = flayer.layerDef
         if (layer.filters.length === 0) {
             return undefined;
@@ -156,7 +167,7 @@ export default class FilterView extends VariableUiElement {
 
         for (const filter of layer.filters) {
 
-            const [ui, actualTags] = FilterView.createFilter(filter)
+            const [ui, actualTags] = LayerFilterPanel.createFilter(state, filter)
 
             ui.SetClass("mt-1")
             toShow.push(ui)
@@ -170,13 +181,12 @@ export default class FilterView extends VariableUiElement {
 
         }
 
-        return new Combine(toShow)
-            .SetClass("flex flex-col p-2 ml-12 pl-1 pt-0 layer-filters")
-
+        super(toShow)
+        this.SetClass("flex flex-col p-2 ml-12 pl-1 pt-0 layer-filters")
     }
 
     // Filter which uses one or more textfields
-    private static createFilterWithFields(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
+    private static createFilterWithFields(state: any, filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
 
         const filter = filterConfig.options[0]
         const mappings = new Map<string, BaseUIElement>()
@@ -197,7 +207,7 @@ export default class FilterView extends VariableUiElement {
             allFields.push(field)
             allValid = allValid.map(previous => previous && field.IsValid(stable.data) && stable.data !== "", [stable])
         }
-        const tr = new SubstitutedTranslation(filter.question, new UIEventSource<any>({id: filterConfig.id}), State.state, mappings)
+        const tr = new SubstitutedTranslation(filter.question, new UIEventSource<any>({id: filterConfig.id}), state, mappings)
         const trigger: Store<FilterState> = allValid.map(isValid => {
             if (!isValid) {
                 return undefined
@@ -223,15 +233,15 @@ export default class FilterView extends VariableUiElement {
                 state: JSON.stringify(props)
             }
         }, [properties])
-        
+
         const settableFilter = new UIEventSource<FilterState>(undefined)
         trigger.addCallbackAndRun(state => settableFilter.setData(state))
         settableFilter.addCallback(state => {
-            if(state === undefined){
+            if (state === undefined) {
                 // still initializing
                 return
             }
-            if(state.currentFilter === undefined){
+            if (state.currentFilter === undefined) {
                 allFields.forEach(f => f.GetValue().setData(undefined));
             }
         })
@@ -299,18 +309,18 @@ export default class FilterView extends VariableUiElement {
             )]
     }
 
-    private static createFilter(filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
+    private static createFilter(state: {}, filterConfig: FilterConfig): [BaseUIElement, UIEventSource<FilterState>] {
 
         if (filterConfig.options[0].fields.length > 0) {
-            return FilterView.createFilterWithFields(filterConfig)
+            return LayerFilterPanel.createFilterWithFields(state, filterConfig)
         }
 
 
         if (filterConfig.options.length === 1) {
-            return FilterView.createCheckboxFilter(filterConfig)
+            return LayerFilterPanel.createCheckboxFilter(filterConfig)
         }
 
-        const filter = FilterView.createMultiFilter(filterConfig)
+        const filter = LayerFilterPanel.createMultiFilter(filterConfig)
         filter[0].SetClass("pl-2")
         return filter
     }

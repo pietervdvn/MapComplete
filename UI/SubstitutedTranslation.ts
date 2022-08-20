@@ -1,4 +1,4 @@
-import {Store, UIEventSource} from "../Logic/UIEventSource";
+import {UIEventSource} from "../Logic/UIEventSource";
 import {Translation} from "./i18n/Translation";
 import Locale from "./i18n/Locale";
 import {FixedUiElement} from "./Base/FixedUiElement";
@@ -15,10 +15,10 @@ export class SubstitutedTranslation extends VariableUiElement {
 
     public constructor(
         translation: Translation,
-        tagsSource: UIEventSource<any>,
+        tagsSource: UIEventSource<Record<string, string>>,
         state: FeaturePipelineState,
         mapping: Map<string, BaseUIElement |
-            ((state: FeaturePipelineState, tagSource: UIEventSource<any>, argument: string[], guistate: DefaultGuiState) => BaseUIElement)> = undefined) {
+            ((state: FeaturePipelineState, tagSource: UIEventSource<Record<string, string>>, argument: string[], guistate: DefaultGuiState) => BaseUIElement)> = undefined) {
 
         const extraMappings: SpecialVisualization[] = [];
 

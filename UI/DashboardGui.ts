@@ -152,7 +152,7 @@ export default class DashboardGui {
         })
 
         const filterView = new Lazy(() => {
-            return new FilterView(state.filteredLayers, state.overlayToggles)
+            return new FilterView(state.filteredLayers, state.overlayToggles, state)
         });
         const welcome = new Combine([state.layoutToUse.description, state.layoutToUse.descriptionTail])
         self.currentView.setData({title: state.layoutToUse.title, contents: welcome})

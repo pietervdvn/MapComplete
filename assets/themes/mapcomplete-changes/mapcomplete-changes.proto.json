@@ -31,9 +31,6 @@
         "geoJsonZoomLevel": 8,
         "maxCacheAge": 0
       },
-      "calculatedTags": [
-        "_last_edit:contributor:lc:=feat.properties['_last_edit:contributor'].toLowerCase()"
-      ],
       "title": {
         "render": {
           "en": "Changeset for {theme}"
@@ -65,7 +62,8 @@
               "if": "theme~http.*",
               "then": {
                 "en": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-              }
+              },
+              "hideInAnswer": true
             }
           ]
         }
@@ -103,7 +101,7 @@
           "id": "created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc~i~.*{search}.*",
+              "osmTags": "user~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -119,7 +117,7 @@
           "id": "not_created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc!~i~.*{search}.*",
+              "osmTags": "user!~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"

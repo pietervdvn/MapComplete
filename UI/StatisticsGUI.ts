@@ -3,15 +3,15 @@
  */
 import {UIEventSource} from "../Logic/UIEventSource";
 import {VariableUiElement} from "./Base/VariableUIElement";
-import ChartJs from "./Base/ChartJs";
 import Loading from "./Base/Loading";
 import {Utils} from "../Utils";
 import Combine from "./Base/Combine";
 import BaseUIElement from "./BaseUIElement";
-import TagRenderingChart from "./BigComponents/TagRenderingChart";
+import TagRenderingChart, {StackedRenderingChart} from "./BigComponents/TagRenderingChart";
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
-import {ChartConfiguration} from "chart.js";
-import {FixedUiElement} from "./Base/FixedUiElement";
+import FilterView, {LayerFilterPanel} from "./BigComponents/FilterView";
+import FilteredLayer, {FilterState} from "../Models/FilteredLayer";
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 
 export default class StatisticsGUI {
 
@@ -22,6 +22,8 @@ export default class StatisticsGUI {
 
     public setup(): void {
 
+        const appliedFilters = new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>())
+        const layer = AllKnownLayouts.allKnownLayouts.get("mapcomplete-changes").layers[0]
 
         new VariableUiElement(this.index.map(paths => {
             if (paths === undefined) {
@@ -43,16 +45,44 @@ export default class StatisticsGUI {
             return new Combine([
                 new VariableUiElement(downloaded.map(dl => "Downloaded " + dl.length + " items")),
                 new VariableUiElement(downloaded.map(l => [...l]).stabilized(250).map(downloaded => {
-                    const overview = ChangesetsOverview.fromDirtyData([].concat(...downloaded.map(d => d.features)))
-                        .filter(cs => new Date(cs.properties.date) > new Date(2022,6,1))
-                    
+                    let overview = ChangesetsOverview.fromDirtyData([].concat(...downloaded.map(d => d.features)))
                     //  return overview.breakdownPerDay(overview.themeBreakdown)
-                    return overview.breakdownPer(overview.themeBreakdown, "month")
-                })).SetClass("block w-full h-full")
+
+                    if (appliedFilters.data.size > 0) {
+                        appliedFilters.data.forEach((filterSpec) => {
+                            const tf = filterSpec?.currentFilter
+                            if (tf === undefined) {
+                                return
+                            }
+                            overview = overview.filter(cs => tf.matchesProperties(cs.properties))
+                        })
+                    }
+
+                    if (downloaded.length === 0) {
+                        return "No data matched the filter"
+                    }
+                    return new Combine(layer.tagRenderings.map(tr => {
+
+                            try {
+
+                                return new StackedRenderingChart(tr, <any>overview._meta, "month")
+                            } catch (e) {
+                                return "Could not create stats for " + tr.id
+                            }
+                        })
+                    )
+                }, [appliedFilters])).SetClass("block w-full h-full")
             ]).SetClass("block w-full h-full")
 
 
         })).SetClass("block w-full h-full").AttachTo("maindiv")
+
+        const filteredLayer = <FilteredLayer>{
+            appliedFilters,
+            layerDef: layer,
+            isDisplayed: new UIEventSource<boolean>(true)
+        }
+        new LayerFilterPanel(undefined, filteredLayer).AttachTo("extradiv")
 
     }
 }
@@ -83,9 +113,9 @@ class ChangesetsOverview {
         "entrances": "indoor",
         "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json": "geveltuintjes"
     }
-    private readonly _meta: ChangeSetData[];
+    public readonly _meta: ChangeSetData[];
 
-    public static fromDirtyData(meta: ChangeSetData[]){
+    public static fromDirtyData(meta: ChangeSetData[]) {
         return new ChangesetsOverview(meta.map(cs => ChangesetsOverview.cleanChangesetData(cs)))
     }
 
@@ -139,99 +169,6 @@ class ChangesetsOverview {
         )
     }
 
-    public getAllDays(perMonth = false): string[] {
-        let earliest: Date = undefined
-        let latest: Date = undefined;
-        let allDates = new Set<string>();
-        this._meta.forEach((value, key) => {
-            const d = new Date(value.properties.date);
-            Utils.SetMidnight(d)
-            if(perMonth){
-                d.setUTCDate(1)
-            }
-            if (earliest === undefined) {
-                earliest = d
-            } else if (d < earliest) {
-                earliest = d
-            }
-            if (latest === undefined) {
-                latest = d
-            } else if (d > latest) {
-                latest = d
-            }
-            allDates.add(d.toISOString())
-        })
-
-        while (earliest < latest) {
-            earliest.setDate(earliest.getDate() + 1)
-            allDates.add(earliest.toISOString())
-        }
-        const days = Array.from(allDates)
-        days.sort()
-        return days
-    }
-
-    public breakdownPer(tr: TagRenderingConfig, period: "day" | "month" = "day" ): BaseUIElement {
-        const {labels, data} = TagRenderingChart.extractDataAndLabels(tr, <any>this._meta, {
-            sort: true
-        })
-        if (labels === undefined || data === undefined) {
-            return new FixedUiElement("No labels or data given...")
-        }
-        // labels: ["cyclofix", "buurtnatuur", ...]; data : [ ["cyclofix-changeset", "cyclofix-changeset", ...], ["buurtnatuur-cs", "buurtnatuur-cs"], ... ]
-
-        const datasets: { label: string /*themename*/, data: number[]/*counts per day*/, backgroundColor: string }[] = []
-
-        const allDays = this.getAllDays()
-        for (let i = 0; i < labels.length; i++) {
-            const label = labels[i];
-            const changesetsForTheme = <ChangeSetData[]><any>data[i]
-            const perDay: ChangeSetData[][] = []
-            for (const day of allDays) {
-                const today: ChangeSetData[] = []
-                for (const changeset of changesetsForTheme) {
-                    const csDate = new Date(changeset.properties.date)
-                    Utils.SetMidnight(csDate)
-                    if(period === "month"){
-                        csDate.setUTCDate(1)
-                    }
-                    if (csDate.toISOString() !== day) {
-                        continue
-                    }
-                    today.push(changeset)
-                }
-                perDay.push(today)
-            }
-            datasets.push({
-                data: perDay.map(cs => cs.length),
-                backgroundColor: TagRenderingChart.backgroundColors[i % TagRenderingChart.backgroundColors.length],
-                label
-            })
-        }
-
-        const perDayData = {
-            labels: allDays.map(d => d.substr(0, d.indexOf("T"))),
-            datasets
-        }
-
-        const config = <ChartConfiguration>{
-            type: 'bar',
-            data: perDayData,
-            options: {
-                responsive: true,
-                scales: {
-                    x: {
-                        stacked: true,
-                    },
-                    y: {
-                        stacked: true
-                    }
-                }
-            }
-        }
-
-        return new ChartJs(config)
-    }
 
 }
 

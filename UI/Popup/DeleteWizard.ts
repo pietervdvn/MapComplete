@@ -232,7 +232,7 @@ export default class DeleteWizard extends Toggle {
         )).SetClass("block")
     }
 
-    private static constructMultipleChoice(config: DeleteConfig, tagsSource: UIEventSource<object>, state: FeaturePipelineState):
+    private static constructMultipleChoice(config: DeleteConfig, tagsSource: UIEventSource<Record<string, string>>, state: FeaturePipelineState):
         InputElement<{ deleteReason: string } | { retagTo: TagsFilter }> {
 
         const elements: InputElement<{ deleteReason: string } | { retagTo: TagsFilter }>[ ] = []

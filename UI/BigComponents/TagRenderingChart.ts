@@ -3,11 +3,122 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
 import {ChartConfiguration} from 'chart.js';
 import Combine from "../Base/Combine";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
+import {Utils} from "../../Utils";
+import {OsmFeature} from "../../Models/OsmFeature";
 
 export interface TagRenderingChartOptions {
   
     groupToOtherCutoff?: 3 | number,
     sort?: boolean
+}
+
+export class StackedRenderingChart extends ChartJs {
+    constructor(tr: TagRenderingConfig, features: (OsmFeature & {properties : {date: string}})[], period: "day" | "month" = "day") {
+        const {labels, data} = TagRenderingChart.extractDataAndLabels(tr, features, {
+            sort: true
+        })
+        if (labels === undefined || data === undefined) {
+            throw ("No labels or data given...")
+        }
+        // labels: ["cyclofix", "buurtnatuur", ...]; data : [ ["cyclofix-changeset", "cyclofix-changeset", ...], ["buurtnatuur-cs", "buurtnatuur-cs"], ... ]
+
+        console.log("LABELS:", labels, "DATA:", data)
+
+        const datasets: { label: string /*themename*/, data: number[]/*counts per day*/, backgroundColor: string }[] = []
+        const allDays = StackedRenderingChart.getAllDays(features)
+        let trimmedDays = allDays.map(d => d.substr(0, d.indexOf("T")))
+
+        if (period === "month") {
+            trimmedDays = trimmedDays.map(d => d.substr(0, 7))
+        }
+        trimmedDays = Utils.Dedup(trimmedDays)
+
+        for (let i = 0; i < labels.length; i++) {
+            const label = labels[i];
+            const changesetsForTheme = data[i]
+            const perDay: Record<string, OsmFeature[]> = {}
+            for (const changeset of changesetsForTheme) {
+                const csDate = new Date(changeset.properties.date)
+                Utils.SetMidnight(csDate)
+                let str = csDate.toISOString();
+                if (period === "month") {
+                    csDate.setUTCDate(1)
+                    str = csDate.toISOString().substr(0, 7);
+                }
+                if (perDay[str] === undefined) {
+                    perDay[str] = [changeset]
+                } else {
+                    perDay[str].push(changeset)
+                }
+            }
+
+            const countsPerDay: number[] = []
+            for (let i = 0; i < trimmedDays.length; i++) {
+                const day = trimmedDays[i];
+                countsPerDay[i] = perDay[day]?.length ?? 0
+            }
+            datasets.push({
+                data: countsPerDay,
+                backgroundColor: TagRenderingChart.borderColors[i % TagRenderingChart.borderColors.length],
+                label
+            })
+        }
+
+        const perDayData = {
+            labels: trimmedDays,
+            datasets
+        }
+
+        const config = <ChartConfiguration>{
+            type: 'bar',
+            data: perDayData,
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true
+                    }
+                }
+            }
+        }
+        super(config)
+    }
+
+    public static getAllDays(features: (OsmFeature & {properties : {date: string}})[]): string[] {
+        let earliest: Date = undefined
+        let latest: Date = undefined;
+        let allDates = new Set<string>();
+        features.forEach((value, key) => {
+            const d = new Date(value.properties.date);
+            Utils.SetMidnight(d)
+            
+            if (earliest === undefined) {
+                earliest = d
+            } else if (d < earliest) {
+                earliest = d
+            }
+            if (latest === undefined) {
+                latest = d
+            } else if (d > latest) {
+                latest = d
+            }
+            allDates.add(d.toISOString())
+        })
+
+        while (earliest < latest) {
+            earliest.setDate(earliest.getDate() + 1)
+            allDates.add(earliest.toISOString())
+        }
+        const days = Array.from(allDates)
+        days.sort()
+        return days
+    }
 }
 
 export default class TagRenderingChart extends Combine {
@@ -30,7 +141,7 @@ export default class TagRenderingChart extends Combine {
         'rgba(255, 159, 64, 0.2)'
     ]
 
-    private static readonly borderColors = [
+    public static readonly borderColors = [
         'rgba(255, 99, 132, 1)',
         'rgba(54, 162, 235, 1)',
         'rgba(255, 206, 86, 1)',
