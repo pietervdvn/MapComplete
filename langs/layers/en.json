@@ -259,7 +259,7 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Does have a backresr"
+                        "then": "Does have a backrest"
                     },
                     "1": {
                         "then": "Does <b>not</b> have a backrest"
