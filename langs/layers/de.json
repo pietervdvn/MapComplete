@@ -939,7 +939,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.",
+                        "body": "Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.\n\nMit freundlichen Grüßen",
                         "button_text": "Melde diese Fahrradpumpe als kaputt",
                         "subject": "Fahrradpumpe kaputt"
                     }
@@ -4290,7 +4290,8 @@
             "0": {
                 "applicableUnits": {
                     "0": {
-                        "human": "Millimeter"
+                        "human": "Millimeter",
+                        "humanSingular": "Millimeter"
                     }
                 }
             }
@@ -4302,11 +4303,41 @@
         "tagRenderings": {
             "name": {
                 "question": "Wie lautet der Name dieses Raums?",
-                "render": "Der Name des Raums lautet {name}"
+                "render": "Der Name des Raums lautet {name}",
+                "freeform": {
+                    "placeholder": "Name des Raums"
+                }
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Raumnummer (z.B. '1.1' oder 'A1')"
+                },
+                "question": "Wie lautet die Nummer dieses Raums?",
+                "render": "Dieser Raum hat die Raumnummer {ref}"
             }
         },
         "title": {
-            "render": "Innenbereich {name}"
+            "render": "Innenbereich {name}",
+            "mappings": {
+                "0": {
+                    "then": "Innenraum {name}"
+                },
+                "1": {
+                    "then": "Innenbereich {name}"
+                },
+                "2": {
+                    "then": "Innenwand {name}"
+                },
+                "3": {
+                    "then": "Innengang {name}"
+                },
+                "4": {
+                    "then": "Innentür {name}"
+                },
+                "5": {
+                    "then": "Geschoss {name}"
+                }
+            }
         }
     },
     "information_board": {
@@ -4689,7 +4720,7 @@
                     }
                 },
                 "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
-                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {canonical(maxspeed)}"
+                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße beträgt {canonical(maxspeed)}"
             }
         },
         "title": {
