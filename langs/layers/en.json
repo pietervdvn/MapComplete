@@ -259,10 +259,10 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Backrest: Yes"
+                        "then": "Does have a backresr"
                     },
                     "1": {
-                        "then": "Backrest: No"
+                        "then": "Does <b>not</b> have a backrest"
                     }
                 },
                 "question": "Does this bench have a backrest?"
@@ -304,22 +304,22 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Material: wood"
+                        "then": "The seating is made from wood"
                     },
                     "1": {
-                        "then": "Material: metal"
+                        "then": "The seating is made from metal"
                     },
                     "2": {
-                        "then": "Material: stone"
+                        "then": "The seating is made from stone"
                     },
                     "3": {
-                        "then": "Material: concrete"
+                        "then": "The seating is made from concrete"
                     },
                     "4": {
-                        "then": "Material: plastic"
+                        "then": "The seating is made from plastic"
                     },
                     "5": {
-                        "then": "Material: steel"
+                        "then": "The seating is made from steel"
                     }
                 },
                 "question": "What is the bench (seating) made from?",
