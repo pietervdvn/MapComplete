@@ -595,7 +595,7 @@
                 "name": "Marciapiedi",
                 "tagRenderings": {
                     "streetname": {
-                        "render": "La strada si chiama {nome}"
+                        "render": "La strada si chiama {name}"
                     }
                 }
             }
