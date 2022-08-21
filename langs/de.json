@@ -254,7 +254,7 @@
         },
         "welcomeBack": "Sie sind angemeldet, willkommen zurück!",
         "welcomeExplanation": {
-            "addNew": "Tippen oden klicken Sie auf die Karte, um einen neuen POI hinzuzufügen.",
+            "addNew": "Tippen oden klicken Sie auf die Karte, um einen neuen Ort hinzuzufügen.",
             "browseMoreMaps": "Weitere Karten entdecken",
             "browseOtherThemesIntro": "Auf MapComplete gibt es verschiedene thematische Karten",
             "general": "Auf dieser Karte können Sie <i>Interessante Orte</i> sehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um die Orte zu entdecken, tippen Sie auf einen, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und sind dort gespeichert, so dass sie frei weiterverwendet werden können."
