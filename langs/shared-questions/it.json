@@ -97,6 +97,15 @@
                 }
             },
             "question": "Qual è il corrispondente elemento su Wikipedia?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Pagamento effettuato utilizzando un'app dedicata"
+                    }
+                }
+            }
         }
     }
 }

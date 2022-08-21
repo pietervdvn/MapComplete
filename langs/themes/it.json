@@ -585,5 +585,22 @@
         "description": "In questa cartina troverai i cestini dei rifiuti nei tuoi paraggi. Se manca un cestino, puoi inserirlo tu stesso",
         "shortDescription": "Una cartina dei cestini dei rifiuti",
         "title": "Cestino dei rifiuti"
+    },
+    "sidewalks": {
+        "layers": {
+            "0": {
+                "title": {
+                    "render": "{name}"
+                },
+                "name": "Marciapiedi",
+                "tagRenderings": {
+                    "streetname": {
+                        "render": "La strada si chiama {name}"
+                    }
+                }
+            }
+        },
+        "shortDescription": "Mappatura del marciapiede",
+        "title": "Marciapiede"
     }
 }
