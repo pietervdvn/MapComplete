@@ -4320,7 +4320,7 @@
             "render": "Innenbereich {name}",
             "mappings": {
                 "0": {
-                    "then": "Innenraum {Name}"
+                    "then": "Innenraum {name}"
                 },
                 "1": {
                     "then": "Innenbereich {name}"
