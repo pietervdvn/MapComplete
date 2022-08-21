@@ -262,7 +262,7 @@
                         "then": "Die Sitzbank hat eine Rückenlehne"
                     },
                     "1": {
-                        "then": "Die Sitzbank hat keine Rückenlehne"
+                        "then": "Die Sitzbank hat <b>keine</b> Rückenlehne"
                     }
                 },
                 "question": "Hat diese Sitzbank eine Rückenlehne?"
@@ -3519,7 +3519,7 @@
                         "then": "Dies ist ein Eingang zu einem privaten Haus"
                     }
                 },
-                "question": "Um welchen Eingangstyp handelt es sich hier?"
+                "question": "Um welchen Eingangstyp handelt es sich?"
             },
             "automatic_door": {
                 "mappings": {
