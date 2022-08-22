@@ -25,15 +25,16 @@ export default class PlantNetSpeciesSearch extends VariableUiElement {
                     if (images.length === 0) {
                         return null
                     }
-                    return new UIEventSource({success: PlantNet.exampleResultPrunus}) /*/ UIEventSource.FromPromiseWithErr(PlantNet.query(images.slice(0,5))); //*/
+                    return UIEventSource.FromPromiseWithErr(PlantNet.query(images.slice(0,5)));
                 })
                 .map(result => {
+                    if (result === null) {
+                        return t.takeImages
+                    }
                         if (result === undefined) {
                             return new Loading(t.querying.Subs(images.data))
                         }
-                        if (result === null) {
-                            return t.takeImages
-                        }
+                        
                         if (result["error"] !== undefined) {
                             return t.error.Subs(<any>result).SetClass("alert")
                         }
