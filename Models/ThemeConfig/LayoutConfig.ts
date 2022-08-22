@@ -10,9 +10,7 @@ import ExtraLinkConfig from "./ExtraLinkConfig";
 export default class LayoutConfig {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string;
-    public readonly maintainer: string;
     public readonly credits?: string;
-    public readonly version: string;
     public readonly language: string[];
     public readonly title: Translation;
     public readonly shortDescription: Translation;
@@ -76,9 +74,7 @@ export default class LayoutConfig {
             }
         }
         const context = this.id
-        this.maintainer = json.maintainer;
         this.credits = json.credits;
-        this.version = json.version;
         this.language = json.mustHaveLanguage ?? Array.from(Object.keys(json.title));
         this.usedImages = Array.from(new ExtractImages(official, undefined).convertStrict(json, "while extracting the images of " + json.id + " " + context ?? "")).sort()
         {

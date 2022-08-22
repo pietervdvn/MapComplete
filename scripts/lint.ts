@@ -1,10 +1,9 @@
 import ScriptUtils from "./ScriptUtils";
-import {mkdirSync, writeFileSync} from "fs";
+import {writeFileSync} from "fs";
 import {FixLegacyTheme, UpdateLegacyLayer} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
 import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 
 /*
  * This script reads all theme and layer files and reformats them inplace
