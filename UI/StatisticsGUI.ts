@@ -89,7 +89,7 @@ class StatisticsForOverviewFile extends Combine{
 
 export default class StatisticsGUI extends VariableUiElement{
 
-    private static readonly homeUrl = "http://127.0.0.1:8080/" /*/ "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/Docs/Tools/stats/" //*/
+    private static readonly homeUrl = "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/Docs/Tools/stats/"
     private static readonly stats_files = "file-overview.json"
 
 constructor() {
