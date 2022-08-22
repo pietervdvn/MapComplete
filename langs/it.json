@@ -380,6 +380,40 @@
             "shouldBeUrl": "Non è un URL valido",
             "giveDescription": "Per favore, scrivi una breve descrizione per chi vede la nota. Una buona nota descrive ciò che il contributore dovrebbe fare, per esempio <i>Qui dovrebbe esserci una panchina. Se sei nei paraggi, puoi controllare e indicare se la panchina esiste o no?</i> (Verrà aggiunto automaticamente un link a MapComplete)",
             "downloadGeojson": "Scarica Geo JSON"
+        },
+        "conflationChecker": {
+            "loadedDataAge": "I dati caricati provengono dalla cache e sono vecchi {age}",
+            "mapShowingNearbyIntro": "Le mappe seguenti mostrano elementi da poter importare che hanno all'interno un elemento OSM ",
+            "nearbyWarn": "I {count} elementi in rosso sulla mappa seguente <b>not</b> saranno importati!",
+            "setRangeToZero": "Imposta l'intervallo a 0 oppure 1 se vuoi importarli tutti",
+            "states": {
+                "error": "Errore elaborando i dati da Overpass a causa di {error}",
+                "idle": "Controllo della memoria persistente locale…",
+                "running": "Richiesta Overpass in corso…",
+                "unexpected": "Stato {state} non previsto"
+            },
+            "title": "Confronta con i dati esistenti",
+            "titleNearby": "Elementi vicini",
+            "zoomIn": "Il livello attuale di zoom è {current}",
+            "titleLive": "Dati in tempo reale su OSM",
+            "osmLoaded": "{count} elementi sono stati caricati da OpenStreetMap e corrispondono al livello <b>{name}</b>.",
+            "nothingLoaded": "Non ci sono elementi caricati da OpenStreetMap che corrispondono al livello corrente {name}",
+            "reloadTheCache": "Svuota la cache e lancia nuovamente la richiesta Overpass",
+            "cacheExpired": "La cache è scaduta",
+            "downloadOverpassData": "Scarica il GeoJSON caricato da Overpass",
+            "importCandidatesCount": "I {count} elementi in rosso sulla mappa seguente sono tutti i tuoi candidati per l'importazione."
+        },
+        "confirmProcess": {
+            "contactedCommunity": "Ho contattato la community (locale) a proposito di questa importazione",
+            "licenseIsCompatible": "I dati da importare hanno una licenza che ne permette l'importazione in OSM. È permesso distribuirli anche per scopi commerciali, con una minima attribuzione",
+            "readImportGuidelines": "Ho letto le linee guida per le importazioni sul wiki di OSM",
+            "title": "Licenza e community",
+            "titleLong": "Hai seguito la procedura di importazione?",
+            "wikipageIsMade": "Il processo è documentato sul wiki di OSM (più tardi avrai bisogno di questo link)"
+        },
+        "createNotes": {
+            "creating": "Create <b>{count}</b> note su {total}",
+            "done": "Tutte le {count} note sono state create!"
         }
     }
 }

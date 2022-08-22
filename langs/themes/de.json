@@ -745,7 +745,7 @@
         "title": "Aussichtstürme"
     },
     "onwheels": {
-        "description": "Auf dieser Karte werden öffentlich zugängliche Orte für Rollstuhlfahrer angezeigt und können leicht hinzugefügt werden",
+        "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
         "layers": {
             "4": {
                 "override": {
