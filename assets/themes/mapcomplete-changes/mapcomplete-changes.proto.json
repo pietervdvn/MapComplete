@@ -9,10 +9,8 @@
   "description": {
     "en": "This maps shows all the changes made with MapComplete"
   },
-  "maintainer": "",
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
@@ -41,7 +39,7 @@
       },
       "tagRenderings": [
         {
-          "id": "render_id",
+          "id": "show_changeset_id",
           "render": {
             "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
@@ -59,7 +57,7 @@
           }
         },
         {
-          "id": "theme",
+          "id": "theme-id",
           "question": {
             "en": "What theme was used to make this change?"
           },

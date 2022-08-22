@@ -50,12 +50,9 @@ class TranslationPart {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue;
             }
-            if (translationsKey == "then") {
-                throw "Suspicious translation at " + context
-            }
             const v = translations[translationsKey]
             if (typeof (v) != "string") {
-                console.error(`Non-string object at ${context} in translation while trying to add more translations to '` + translationsKey + "'. The offending object which _should_ be a translation is: ", v, "\n\nThe current object is:", this.toJson("en"))
+                console.error(`Non-string object at ${context} in translation while trying to add the translation ` + JSON.stringify(v) + ` to '` + translationsKey + "'. The offending object which _should_ be a translation is: ", v, "\n\nThe current object is (only showing en):", this.toJson(), "and has translations for", Array.from(this.contents.keys()))
                 throw "Error in an object depicting a translation: a non-string object was found. (" + context + ")\n    You probably put some other section accidentally in the translation"
             }
             this.contents.set(translationsKey, v)
@@ -63,12 +60,17 @@ class TranslationPart {
     }
 
     recursiveAdd(object: any, context: string) {
-        const isProbablyTranslationObject = knownLanguages.some(l => object.hasOwnProperty(l));
+        if(context.indexOf("mapcomplete") >= 0 && context.indexOf("tagRenderings") >= 0){
+            
+        console.log("RA: CONTEXT", context,"\n", this.toJson().replace(/\n/g, "\n>>  "))
+        }
+        const isProbablyTranslationObject =  knownLanguages.some(l => object.hasOwnProperty(l)); // TODO FIXME ID
         if (isProbablyTranslationObject) {
             this.addTranslationObject(object, context)
             return;
         }
 
+        
         let dontTranslateKeys: string[] = undefined
         {
             const noTranslate = <string | string[]>object["#dont-translate"]
@@ -133,6 +135,7 @@ class TranslationPart {
                 this.contents.set(key, new TranslationPart())
             }
 
+            
             (this.contents.get(key) as TranslationPart).recursiveAdd(v, context + "." + key);
         }
     }

@@ -3458,6 +3458,9 @@
                     },
                     "3": {
                         "then": "Privada - no accesible al público"
+                    },
+                    "4": {
+                        "then": "Acceso público"
                     }
                 },
                 "question": "¿Esta pista de deportes es accesible públicamente?"
