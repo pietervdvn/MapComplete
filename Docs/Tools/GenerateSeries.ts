@@ -97,6 +97,8 @@ class StatsDownloader {
         }
 
 
+        return []
+        
         while (url) {
             ScriptUtils.erasableLog(`Downloading stats for ${year}-${month}-${day}, page ${page} ${url}`)
             const result = await Utils.downloadJson(url, headers)
@@ -191,10 +193,7 @@ async function main(): Promise<void> {
         .map(path => JSON.parse(readFileSync("Docs/Tools/stats/" + path, "utf-8")).features));
     allFeatures = allFeatures.filter(f => f?.properties !== undefined && (f.properties.editor === null || f.properties.editor.toLowerCase().startsWith("mapcomplete")))
 
-    allFeatures = allFeatures.filter(f => f.properties.metadata.theme !== "EMPTY CS")
-
-    const noEditor = allFeatures.filter(f => f.properties.editor === null).map(f => "https://www.osm.org/changeset/" + f.id)
-    writeFileSync("missing_editor.json", JSON.stringify(noEditor, null, "  "));
+    allFeatures = allFeatures.filter(f => f.properties.metadata?.theme !== "EMPTY CS")
 
     if (process.argv.indexOf("--no-graphs") >= 0) {
         return
