@@ -174,7 +174,10 @@
         },
         {
           "canonicalDenomination": "mph",
-          "useIfNoUnitGiven": ["gb","us"],
+          "useIfNoUnitGiven": [
+            "gb",
+            "us"
+          ],
           "alternativeDenomination": [
             "m/u",
             "mh",
