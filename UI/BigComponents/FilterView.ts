@@ -171,7 +171,7 @@ export class LayerFilterPanel extends Combine {
 
             ui.SetClass("mt-1")
             toShow.push(ui)
-            actualTags.addCallback(tagsToFilterFor => {
+            actualTags.addCallbackAndRun(tagsToFilterFor => {
                 flayer.appliedFilters.data.set(filter.id, tagsToFilterFor)
                 flayer.appliedFilters.ping()
             })
@@ -195,6 +195,7 @@ export class LayerFilterPanel extends Combine {
         const properties = new UIEventSource<any>({})
         for (const {name, type} of filter.fields) {
             const value = QueryParameters.GetQueryParameter("filter-" + filterConfig.id + "-" + name, "", "Value for filter " + filterConfig.id)
+            
             const field = ValidatedTextField.ForType(type).ConstructInputElement({
                 value
             }).SetClass("inline-block")

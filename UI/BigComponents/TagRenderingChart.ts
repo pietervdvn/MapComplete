@@ -7,31 +7,44 @@ import {Utils} from "../../Utils";
 import {OsmFeature} from "../../Models/OsmFeature";
 
 export interface TagRenderingChartOptions {
-  
+
     groupToOtherCutoff?: 3 | number,
     sort?: boolean
 }
 
 export class StackedRenderingChart extends ChartJs {
-    constructor(tr: TagRenderingConfig, features: (OsmFeature & {properties : {date: string}})[], period: "day" | "month" = "day") {
+    constructor(tr: TagRenderingConfig, features: (OsmFeature & { properties: { date: string } })[], options?: {
+        period: "day" | "month",
+        groupToOtherCutoff?: 3 | number
+    }) {
         const {labels, data} = TagRenderingChart.extractDataAndLabels(tr, features, {
-            sort: true
+            sort: true,
+            groupToOtherCutoff: options?.groupToOtherCutoff
         })
         if (labels === undefined || data === undefined) {
             throw ("No labels or data given...")
         }
         // labels: ["cyclofix", "buurtnatuur", ...]; data : [ ["cyclofix-changeset", "cyclofix-changeset", ...], ["buurtnatuur-cs", "buurtnatuur-cs"], ... ]
 
-        console.log("LABELS:", labels, "DATA:", data)
+        
+        for (let i = labels.length; i >= 0; i--) {
+            if (data[i]?.length != 0) {
+                continue
+            }
+            data.splice(i, 1)
+            labels.splice(i, 1)
+
+        }
 
         const datasets: { label: string /*themename*/, data: number[]/*counts per day*/, backgroundColor: string }[] = []
         const allDays = StackedRenderingChart.getAllDays(features)
         let trimmedDays = allDays.map(d => d.substr(0, d.indexOf("T")))
 
-        if (period === "month") {
+        if (options?.period === "month") {
             trimmedDays = trimmedDays.map(d => d.substr(0, 7))
         }
         trimmedDays = Utils.Dedup(trimmedDays)
+
 
         for (let i = 0; i < labels.length; i++) {
             const label = labels[i];
@@ -41,7 +54,7 @@ export class StackedRenderingChart extends ChartJs {
                 const csDate = new Date(changeset.properties.date)
                 Utils.SetMidnight(csDate)
                 let str = csDate.toISOString();
-                if (period === "month") {
+                if (options?.period === "month") {
                     csDate.setUTCDate(1)
                     str = csDate.toISOString().substr(0, 7);
                 }
@@ -57,12 +70,22 @@ export class StackedRenderingChart extends ChartJs {
                 const day = trimmedDays[i];
                 countsPerDay[i] = perDay[day]?.length ?? 0
             }
+            let backgroundColor = TagRenderingChart.borderColors[i % TagRenderingChart.borderColors.length]
+            if (label === "Unknown") {
+                backgroundColor = TagRenderingChart.unkownBorderColor
+            }
+            if (label === "Other") {
+                backgroundColor = TagRenderingChart.otherBorderColor
+            }
             datasets.push({
                 data: countsPerDay,
-                backgroundColor: TagRenderingChart.borderColors[i % TagRenderingChart.borderColors.length],
+                backgroundColor,
                 label
             })
         }
+
+
+
 
         const perDayData = {
             labels: trimmedDays,
@@ -88,16 +111,18 @@ export class StackedRenderingChart extends ChartJs {
             }
         }
         super(config)
+
+
     }
 
-    public static getAllDays(features: (OsmFeature & {properties : {date: string}})[]): string[] {
+    public static getAllDays(features: (OsmFeature & { properties: { date: string } })[]): string[] {
         let earliest: Date = undefined
         let latest: Date = undefined;
         let allDates = new Set<string>();
         features.forEach((value, key) => {
             const d = new Date(value.properties.date);
             Utils.SetMidnight(d)
-            
+
             if (earliest === undefined) {
                 earliest = d
             } else if (d < earliest) {
@@ -123,13 +148,13 @@ export class StackedRenderingChart extends ChartJs {
 
 export default class TagRenderingChart extends Combine {
 
-    private static readonly unkownColor = 'rgba(128, 128, 128, 0.2)'
-    private static readonly unkownBorderColor = 'rgba(128, 128, 128, 0.2)'
+    public static readonly unkownColor = 'rgba(128, 128, 128, 0.2)'
+    public static readonly unkownBorderColor = 'rgba(128, 128, 128, 0.2)'
 
-    private static readonly otherColor = 'rgba(128, 128, 128, 0.2)'
-    private static readonly otherBorderColor = 'rgba(128, 128, 255)'
-    private static readonly notApplicableColor = 'rgba(128, 128, 128, 0.2)'
-    private static readonly notApplicableBorderColor = 'rgba(255, 0, 0)'
+    public static readonly otherColor = 'rgba(128, 128, 128, 0.2)'
+    public static readonly otherBorderColor = 'rgba(128, 128, 255)'
+    public static readonly notApplicableColor = 'rgba(128, 128, 128, 0.2)'
+    public static readonly notApplicableBorderColor = 'rgba(255, 0, 0)'
 
 
     public static readonly backgroundColors = [
@@ -153,10 +178,12 @@ export default class TagRenderingChart extends Combine {
     /**
      * Creates a chart about this tagRendering for the given data
      */
-    constructor(features: { properties: Record<string, string> }[], tagRendering: TagRenderingConfig, options?: TagRenderingChartOptions & {  chartclasses?: string,
+    constructor(features: { properties: Record<string, string> }[], tagRendering: TagRenderingConfig, options?: TagRenderingChartOptions & {
+        chartclasses?: string,
         chartstyle?: string,
         includeTitle?: boolean,
-        chartType?: "pie" | "bar" | "doughnut" }) {
+        chartType?: "pie" | "bar" | "doughnut"
+    }) {
         if (tagRendering.mappings?.length === 0 && tagRendering.freeform?.key === undefined) {
             super([])
             this.SetClass("hidden")
@@ -167,10 +194,10 @@ export default class TagRenderingChart extends Combine {
         if (labels === undefined || data === undefined) {
             super([])
             this.SetClass("hidden")
-            return 
+            return
         }
-        
-       
+
+
         const borderColor = [TagRenderingChart.unkownBorderColor, TagRenderingChart.otherBorderColor, TagRenderingChart.notApplicableBorderColor]
         const backgroundColor = [TagRenderingChart.unkownColor, TagRenderingChart.otherColor, TagRenderingChart.notApplicableColor]
 
@@ -188,9 +215,8 @@ export default class TagRenderingChart extends Combine {
                 backgroundColor.splice(i, 1)
             }
         }
-        
-        
-        
+
+
         let barchartMode = tagRendering.multiAnswer;
         if (labels.length > 9) {
             barchartMode = true;
@@ -231,15 +257,15 @@ export default class TagRenderingChart extends Combine {
         this.SetClass("block")
     }
 
-    
-    public static extractDataAndLabels<T extends {properties: Record<string, string>}>(tagRendering: TagRenderingConfig, features: T[], options?:TagRenderingChartOptions): {labels: string[], data: T[][]} {
+
+    public static extractDataAndLabels<T extends { properties: Record<string, string> }>(tagRendering: TagRenderingConfig, features: T[], options?: TagRenderingChartOptions): { labels: string[], data: T[][] } {
         const mappings = tagRendering.mappings ?? []
 
         options = options ?? {}
-        let unknownCount : T[] = [];
-        const categoryCounts : T[][]= mappings.map(_ => [])
+        let unknownCount: T[] = [];
+        const categoryCounts: T[][] = mappings.map(_ => [])
         const otherCounts: Record<string, T[]> = {}
-        let notApplicable : T[] = [];
+        let notApplicable: T[] = [];
         for (const feature of features) {
             const props = feature.properties
             if (tagRendering.condition !== undefined && !tagRendering.condition.matchesProperties(props)) {
@@ -274,7 +300,7 @@ export default class TagRenderingChart extends Combine {
                 if (tagRendering.freeform?.key !== undefined && props[tagRendering.freeform.key] !== undefined) {
                     const otherValue = props[tagRendering.freeform.key]
                     otherCounts[otherValue] = (otherCounts[otherValue] ?? [])
-                     otherCounts[otherValue]      .push(feature)
+                    otherCounts[otherValue].push(feature)
                 } else {
                     unknownCount.push(feature)
                 }
@@ -286,7 +312,7 @@ export default class TagRenderingChart extends Combine {
             return {labels: undefined, data: undefined}
         }
 
-        let otherGrouped : T[] = [];
+        let otherGrouped: T[] = [];
         const otherLabels: string[] = []
         const otherData: T[][] = []
         const sortedOtherCounts: [string, T[]][] = []
@@ -307,9 +333,9 @@ export default class TagRenderingChart extends Combine {
 
 
         const labels = ["Unknown", "Other", "Not applicable", ...mappings?.map(m => m.then.txt) ?? [], ...otherLabels]
-        const data : T[][] = [unknownCount, otherGrouped, notApplicable, ...categoryCounts, ...otherData]
+        const data: T[][] = [unknownCount, otherGrouped, notApplicable, ...categoryCounts, ...otherData]
 
         return {labels, data}
     }
-    
+
 }

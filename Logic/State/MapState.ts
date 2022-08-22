@@ -21,6 +21,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 import {TiledStaticFeatureSource} from "../FeatureSource/Sources/StaticFeatureSource";
 import {Translation, TypedTranslation} from "../../UI/i18n/Translation";
 import {Tag} from "../Tags/Tag";
+import {OsmConnection} from "../Osm/OsmConnection";
 
 
 export interface GlobalFilter {
@@ -143,7 +144,7 @@ export default class MapState extends UserRelatedState {
                 config: c,
                 isDisplayed: QueryParameters.GetBooleanQueryParameter("overlay-" + c.id, c.defaultState, "Wether or not the overlay " + c.id + " is shown")
             })) ?? []
-        this.filteredLayers = this.InitializeFilteredLayers()
+        this.filteredLayers = new UIEventSource<FilteredLayer[]>( MapState.InitializeFilteredLayers(this.layoutToUse, this.osmConnection))
 
 
         this.lockBounds()
@@ -353,8 +354,8 @@ export default class MapState extends UserRelatedState {
 
     }
 
-    private getPref(key: string, layer: LayerConfig): UIEventSource<boolean> {
-        return this.osmConnection
+    private static getPref(osmConnection: OsmConnection, key: string, layer: LayerConfig): UIEventSource<boolean> {
+        return osmConnection
             .GetPreference(key, layer.shownByDefault + "")
             .sync(v => {
                 if (v === undefined) {
@@ -369,10 +370,9 @@ export default class MapState extends UserRelatedState {
             })
     }
 
-    private InitializeFilteredLayers() {
-        const layoutToUse = this.layoutToUse;
+    public static InitializeFilteredLayers(layoutToUse: {layers: LayerConfig[], id: string}, osmConnection: OsmConnection): FilteredLayer[] {
         if (layoutToUse === undefined) {
-            return new UIEventSource<FilteredLayer[]>([])
+            return []
         }
         const flayers: FilteredLayer[] = [];
         for (const layer of layoutToUse.layers) {
@@ -380,9 +380,9 @@ export default class MapState extends UserRelatedState {
             if (layer.syncSelection === "local") {
                 isDisplayed = LocalStorageSource.GetParsed(layoutToUse.id + "-layer-" + layer.id + "-enabled", layer.shownByDefault)
             } else if (layer.syncSelection === "theme-only") {
-                isDisplayed = this.getPref(layoutToUse.id + "-layer-" + layer.id + "-enabled", layer)
+                isDisplayed = MapState.getPref(osmConnection, layoutToUse.id + "-layer-" + layer.id + "-enabled", layer)
             } else if (layer.syncSelection === "global") {
-                isDisplayed = this.getPref("layer-" + layer.id + "-enabled", layer)
+                isDisplayed = MapState.getPref(osmConnection,"layer-" + layer.id + "-enabled", layer)
             } else {
                 isDisplayed = QueryParameters.GetBooleanQueryParameter("layer-" + layer.id, layer.shownByDefault, "Wether or not layer " + layer.id + " is shown")
             }
@@ -420,7 +420,7 @@ export default class MapState extends UserRelatedState {
             };
         }
 
-        return new UIEventSource<FilteredLayer[]>(flayers);
+        return flayers;
     }
 
 

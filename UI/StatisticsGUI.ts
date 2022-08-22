@@ -6,84 +6,105 @@ import {VariableUiElement} from "./Base/VariableUIElement";
 import Loading from "./Base/Loading";
 import {Utils} from "../Utils";
 import Combine from "./Base/Combine";
-import BaseUIElement from "./BaseUIElement";
-import TagRenderingChart, {StackedRenderingChart} from "./BigComponents/TagRenderingChart";
-import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig";
-import FilterView, {LayerFilterPanel} from "./BigComponents/FilterView";
-import FilteredLayer, {FilterState} from "../Models/FilteredLayer";
+import {StackedRenderingChart} from "./BigComponents/TagRenderingChart";
+import {LayerFilterPanel} from "./BigComponents/FilterView";
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
+import MapState from "../Logic/State/MapState";
+import BaseUIElement from "./BaseUIElement";
+import Title from "./Base/Title";
 
-export default class StatisticsGUI {
-
-    private static readonly homeUrl = "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/Docs/Tools/stats/"
-    private static readonly stats_files = "file-overview.json"
-    private readonly index = UIEventSource.FromPromise(Utils.downloadJson(StatisticsGUI.homeUrl + StatisticsGUI.stats_files))
-
-
-    public setup(): void {
-
-        const appliedFilters = new UIEventSource<Map<string, FilterState>>(new Map<string, FilterState>())
+class StatisticsForOverviewFile extends Combine{
+    constructor(homeUrl: string, paths: string[]) {
         const layer = AllKnownLayouts.allKnownLayouts.get("mapcomplete-changes").layers[0]
+        const filteredLayer = MapState.InitializeFilteredLayers({id: "statistics-view", layers: [layer]}, undefined)[0]
+       const filterPanel = new LayerFilterPanel(undefined, filteredLayer)
+        const appliedFilters = filteredLayer.appliedFilters
 
-        new VariableUiElement(this.index.map(paths => {
+        const downloaded = new UIEventSource<{ features: ChangeSetData[] }[]>([])
+
+        for (const filepath of paths) {
+            Utils.downloadJson(homeUrl + filepath).then(data => {
+                data?.features?.forEach(item => {
+                    item.properties = {...item.properties, ...item.properties.metadata}
+                    delete item.properties.metadata
+                })
+                downloaded.data.push(data)
+                downloaded.ping()
+            })
+        }
+
+        const loading = new Loading( new VariableUiElement(
+            downloaded.map(dl => "Downloaded " + dl.length + " items out of "+paths.length))
+        );
+        
+        super([
+            filterPanel,
+            new VariableUiElement(downloaded.map(downloaded => {
+                if(downloaded.length !== paths.length){
+                    return loading
+                }
+                
+                let overview = ChangesetsOverview.fromDirtyData([].concat(...downloaded.map(d => d.features)))
+                if (appliedFilters.data.size > 0) {
+                    appliedFilters.data.forEach((filterSpec) => {
+                        const tf = filterSpec?.currentFilter
+                        if (tf === undefined) {
+                            return
+                        }
+                        overview = overview.filter(cs => tf.matchesProperties(cs.properties))
+                    })
+                }
+
+                if (downloaded.length === 0) {
+                    return "No data matched the filter"
+                }
+                
+                const trs =layer.tagRenderings
+                    .filter(tr => tr.mappings?.length > 0 || tr.freeform?.key !== undefined);
+                const elements : BaseUIElement[] = []
+                for (const tr of trs) {
+                    let total = undefined
+                    if(tr.freeform?.key !== undefined) {
+                     total =  new Set(  overview._meta.map(f => f.properties[tr.freeform.key])).size
+                    }
+                    
+                    
+                    elements.push(new Combine([
+                        new Title(tr.question ?? tr.id).SetClass("p-2") ,
+                        total > 1 ? total + " unique value"  : undefined,
+                        new StackedRenderingChart(tr, <any>overview._meta,  {
+                            period: "month",
+                            groupToOtherCutoff: total > 50 ? 25 : (total > 10 ? 3 : 0)
+                        
+                        }).SetStyle("width: 100%; height: 600px")
+                    ]).SetClass("block border-2 border-subtle p-2 m-2 rounded-xl" ))
+                }
+                
+                return new Combine(elements)
+            }, [appliedFilters])).SetClass("block w-full h-full")
+        ])
+            this.SetClass("block w-full h-full")
+    }
+}
+
+export default class StatisticsGUI extends VariableUiElement{
+
+    private static readonly homeUrl = "http://127.0.0.1:8080/" /*/ "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/Docs/Tools/stats/" //*/
+    private static readonly stats_files = "file-overview.json"
+
+constructor() {
+   const index = UIEventSource.FromPromise(Utils.downloadJson(StatisticsGUI.homeUrl + StatisticsGUI.stats_files))
+        super(index.map(paths => {
             if (paths === undefined) {
                 return new Loading("Loading overview...")
             }
-            const downloaded = new UIEventSource<{ features: ChangeSetData[] }[]>([])
+            
+            return new StatisticsForOverviewFile(StatisticsGUI.homeUrl, paths)
 
-            for (const filepath of paths) {
-                Utils.downloadJson(StatisticsGUI.homeUrl + filepath).then(data => {
-                    data.features.forEach(item => {
-                        item.properties = {...item.properties, ...item.properties.metadata}
-                        delete item.properties.metadata
-                    })
-                    downloaded.data.push(data)
-                    downloaded.ping()
-                })
-            }
+        }))
+            this.SetClass("block w-full h-full").AttachTo("maindiv")
 
-            return new Combine([
-                new VariableUiElement(downloaded.map(dl => "Downloaded " + dl.length + " items")),
-                new VariableUiElement(downloaded.map(l => [...l]).stabilized(250).map(downloaded => {
-                    let overview = ChangesetsOverview.fromDirtyData([].concat(...downloaded.map(d => d.features)))
-                    //  return overview.breakdownPerDay(overview.themeBreakdown)
-
-                    if (appliedFilters.data.size > 0) {
-                        appliedFilters.data.forEach((filterSpec) => {
-                            const tf = filterSpec?.currentFilter
-                            if (tf === undefined) {
-                                return
-                            }
-                            overview = overview.filter(cs => tf.matchesProperties(cs.properties))
-                        })
-                    }
-
-                    if (downloaded.length === 0) {
-                        return "No data matched the filter"
-                    }
-                    return new Combine(layer.tagRenderings.map(tr => {
-
-                            try {
-
-                                return new StackedRenderingChart(tr, <any>overview._meta, "month")
-                            } catch (e) {
-                                return "Could not create stats for " + tr.id
-                            }
-                        })
-                    )
-                }, [appliedFilters])).SetClass("block w-full h-full")
-            ]).SetClass("block w-full h-full")
-
-
-        })).SetClass("block w-full h-full").AttachTo("maindiv")
-
-        const filteredLayer = <FilteredLayer>{
-            appliedFilters,
-            layerDef: layer,
-            isDisplayed: new UIEventSource<boolean>(true)
-        }
-        new LayerFilterPanel(undefined, filteredLayer).AttachTo("extradiv")
-
+      
     }
 }
 
@@ -116,11 +137,11 @@ class ChangesetsOverview {
     public readonly _meta: ChangeSetData[];
 
     public static fromDirtyData(meta: ChangeSetData[]) {
-        return new ChangesetsOverview(meta.map(cs => ChangesetsOverview.cleanChangesetData(cs)))
+        return new ChangesetsOverview(meta?.map(cs => ChangesetsOverview.cleanChangesetData(cs)))
     }
 
     private constructor(meta: ChangeSetData[]) {
-        this._meta = meta;
+        this._meta = Utils.NoNull(meta);
     }
 
     public filter(predicate: (cs: ChangeSetData) => boolean) {
@@ -128,6 +149,13 @@ class ChangesetsOverview {
     }
 
     private static cleanChangesetData(cs: ChangeSetData): ChangeSetData {
+        if(cs === undefined){
+            return undefined
+        }
+        if(cs.properties.editor?.startsWith("iD")){
+            // We also fetch based on hashtag, so some edits with iD show up as well    
+            return undefined
+        }
         if (cs.properties.theme === undefined) {
             cs.properties.theme = cs.properties.comment.substr(cs.properties.comment.lastIndexOf("#") + 1)
         }
@@ -147,28 +175,6 @@ class ChangesetsOverview {
         }
         return cs
     }
-
-    public themeBreakdown = new TagRenderingConfig({
-        id: "theme-breakdown",
-        question: "What theme was used?",
-        freeform: {
-            key: "theme"
-        },
-        render: "{theme}"
-    }, "statistics.themes")
-
-    public ThemeBreakdown(): BaseUIElement {
-        return new TagRenderingChart(
-            <any>this._meta,
-            this.themeBreakdown,
-            {
-                chartType: "doughnut",
-                sort: true,
-                groupToOtherCutoff: 25
-            }
-        )
-    }
-
 
 }
 
