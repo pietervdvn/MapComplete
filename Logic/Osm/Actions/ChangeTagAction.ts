@@ -2,15 +2,17 @@ import OsmChangeAction from "./OsmChangeAction";
 import {Changes} from "../Changes";
 import {ChangeDescription} from "./ChangeDescription";
 import {TagsFilter} from "../../Tags/TagsFilter";
+import {OsmTags} from "../../../Models/OsmFeature";
 
 export default class ChangeTagAction extends OsmChangeAction {
     private readonly _elementId: string;
     private readonly _tagsFilter: TagsFilter;
-    private readonly _currentTags: any;
+    private readonly _currentTags: Record<string, string> | OsmTags;
     private readonly _meta: { theme: string, changeType: string };
 
     constructor(elementId: string, 
-                tagsFilter: TagsFilter, currentTags: any, meta: {
+                tagsFilter: TagsFilter, 
+                currentTags: Record<string, string>, meta: {
         theme: string,
         changeType: "answer" | "soft-delete" | "add-image" | string
     }) {

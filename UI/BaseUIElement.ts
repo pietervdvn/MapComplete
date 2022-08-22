@@ -1,5 +1,3 @@
-import { Utils } from "../Utils";
-
 /**
  * A thin wrapper around a html element, which allows to generate a HTML-element.
  *
@@ -11,7 +9,7 @@ export default abstract class BaseUIElement {
     protected isDestroyed = false;
     private readonly clss: Set<string> = new Set<string>();
     private style: string;
-    private _onClick: () => void;
+    private _onClick: () => void | Promise<void>;
 
     public onClick(f: (() => void)) {
         this._onClick = f;
@@ -127,12 +125,15 @@ export default abstract class BaseUIElement {
 
             if (this._onClick !== undefined) {
                 const self = this;
-                el.onclick = (e) => {
+                el.onclick = async (e) => {
                     // @ts-ignore
                     if (e.consumed) {
                         return;
                     }
-                    self._onClick();
+                    const v = self._onClick();
+                    if(typeof v === "object"){
+                        await v
+                    }
                     // @ts-ignore
                     e.consumed = true;
                 }

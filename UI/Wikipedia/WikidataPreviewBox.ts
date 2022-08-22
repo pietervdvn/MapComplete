@@ -57,7 +57,11 @@ export default class WikidataPreviewBox extends VariableUiElement {
         }
     ]
 
-    constructor(wikidataId: Store<string>, options?: {noImages?: boolean, whileLoading?: BaseUIElement | string, extraItems?: (BaseUIElement | string)[]}) {
+    constructor(wikidataId: Store<string>, options?: {
+        noImages?: boolean, 
+        imageStyle?: string,
+        whileLoading?: BaseUIElement | string, 
+        extraItems?: (BaseUIElement | string)[]}) {
         let inited = false;
         const wikidata = wikidataId
             .stabilized(250)
@@ -87,7 +91,10 @@ export default class WikidataPreviewBox extends VariableUiElement {
 
     }
 
-    public static WikidataResponsePreview(wikidata: WikidataResponse, options?: {noImages?: boolean, extraItems?: (BaseUIElement | string)[]}): BaseUIElement {
+    public static WikidataResponsePreview(wikidata: WikidataResponse, options?: {
+        noImages?: boolean, 
+        imageStyle?: string,
+        extraItems?: (BaseUIElement | string)[]}): BaseUIElement {
         let link = new Link(
             new Combine([
                 wikidata.id,
@@ -111,7 +118,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
         }
         if (imageUrl && !options?.noImages) {
             imageUrl = WikimediaImageProvider.singleton.PrepUrl(imageUrl).url
-            info = new Combine([new Img(imageUrl).SetStyle("max-width: 5rem; width: unset; height: 4rem").SetClass("rounded-xl mr-2"),
+            info = new Combine([new Img(imageUrl).SetStyle(options?.imageStyle ?? "max-width: 5rem; width: unset; height: 4rem").SetClass("rounded-xl mr-2"),
                 info.SetClass("w-full")]).SetClass("flex")
         }
 

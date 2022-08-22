@@ -105,6 +105,11 @@
       ]
     },
     {
+      "id": "plantnet",
+      "render": "{plantnet_detection()}",
+      "condition": "species:wikidata="
+    },
+    {
       "id": "tree-species-wikidata",
       "question": {
         "en": "What species is this tree?",
