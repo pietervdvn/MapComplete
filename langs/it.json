@@ -396,7 +396,7 @@
             "titleNearby": "Elementi vicini",
             "zoomIn": "Il livello attuale di zoom è {current}",
             "titleLive": "Dati in tempo reale su OSM",
-            "osmLoaded": "{i} elementi sono stati caricati da OpenStreetMap e corrispondono al livello <b>{name}</b>.",
+            "osmLoaded": "{count} elementi sono stati caricati da OpenStreetMap e corrispondono al livello <b>{name}</b>.",
             "nothingLoaded": "Non ci sono elementi caricati da OpenStreetMap che corrispondono al livello corrente {name}",
             "reloadTheCache": "Svuota la cache e lancia nuovamente la richiesta Overpass",
             "cacheExpired": "La cache è scaduta",
