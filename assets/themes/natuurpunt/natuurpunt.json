@@ -24,9 +24,7 @@
   "mustHaveLanguage": [
     "nl"
   ],
-  "maintainer": "",
   "icon": "./assets/themes/natuurpunt/natuurpunt.png",
-  "version": "0",
   "startLat": 51.20875,
   "startLon": 3.22435,
   "startZoom": 15,

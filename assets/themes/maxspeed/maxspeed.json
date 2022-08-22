@@ -17,9 +17,7 @@
     "de": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße. Wenn eine Höchstgeschwindigkeit fehlt oder falsch ist, können Sie dies hier korrigieren.",
     "fr": "Cette carte montre la vitesse maximale autorisée sur les routes. Si la vitesse maximale est manquante ou erronée, vous pouvez la corriger ici."
   },
-  "maintainer": "",
   "icon": "./assets/themes/maxspeed/maxspeed_logo.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

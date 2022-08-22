@@ -27,8 +27,6 @@
     "hu": "Nyilvános WC-k térképe",
     "nb_NO": "Et kart over offentlige toaletter"
   },
-  "maintainer": "MapComplete",
-  "version": "2020-08-29",
   "startZoom": 12,
   "startLat": 51.2095,
   "startLon": 3.2222,

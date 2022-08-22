@@ -1,7 +1,5 @@
 {
   "id": "waste_assen",
-  "maintainer": "Robin van der Linde",
-  "version": "2022-01-09",
   "title": {
     "nl": "Afval - Assen"
   },
@@ -101,5 +99,6 @@
     },
     "waste_disposal"
   ],
-  "hideFromOverview": true
+  "hideFromOverview": true,
+  "credits": "Robin van der Linde"
 }

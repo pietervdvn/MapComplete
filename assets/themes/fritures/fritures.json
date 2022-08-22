@@ -13,9 +13,7 @@
     "de": "Auf dieser Karte findest du deine Lieblings-Pommesbude!",
     "fr": "Retrouves vos friteries préférées sur cette carte !"
   },
-  "maintainer": "",
   "icon": "./assets/themes/fritures/logo.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

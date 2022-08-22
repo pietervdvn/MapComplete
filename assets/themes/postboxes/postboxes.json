@@ -31,9 +31,7 @@
     "nl": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
     "fr": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit. "
   },
-  "maintainer": "nicolelaine",
   "icon": "./assets/themes/postboxes/postbox.svg",
-  "version": "0",
   "startLat": 53.5511,
   "startLon": 9.9937,
   "startZoom": 13,
@@ -312,5 +310,6 @@
         }
       ]
     }
-  ]
+  ],
+  "credits": "nicolelaine"
 }
