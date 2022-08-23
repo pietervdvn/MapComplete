@@ -130,16 +130,17 @@ export class ImageUploadFlow extends Toggle {
                     return undefined;
                 }
                 if (l == 1) {
-                    return t.uploadingPicture.Clone().SetClass("alert")
+                    return new Loading( t.uploadingPicture).SetClass("alert")
                 } else {
-                    return t.uploadingMultiple.Subs({count: "" + l}).SetClass("alert")
+                    return new Loading(t.uploadingMultiple.Subs({count: "" + l})).SetClass("alert")
                 }
             })),
             new VariableUiElement(uploader.failed.map(q => q.length).map(l => {
                 if (l == 0) {
                     return undefined
                 }
-                return new Loading(t.uploadFailed).SetClass("alert");
+                console.log(l)
+                return t.uploadFailed.SetClass("block alert");
             })),
             new VariableUiElement(uploadedCount.map(l => {
                 if (l == 0) {

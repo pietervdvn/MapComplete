@@ -90,14 +90,14 @@ export default class PlantNetSpeciesSearch extends VariableUiElement {
                             const buttons = new Combine([
                                 new Button(
                                 new Combine([
-                                    Svg.back_svg().SetClass("w-4"),
+                                    Svg.back_svg().SetClass("w-6 mr-1 bg-white rounded-full p-1"),
                                     t.back]).SetClass("flex"),
                                     () => {
                                     selectedSpecies.setData(undefined)
                                 }).SetClass("btn btn-secondary"),
                                 
                                 new Button(
-                                    new Combine([Svg.confirm_svg().SetClass("w-4"), t.confirm]).SetClass("flex")
+                                    new Combine([Svg.confirm_svg().SetClass("w-6 mr-1"), t.confirm]).SetClass("flex")
                                     , () => {
                                     onConfirm(wikidataSpecies)
                                 }).SetClass("btn"),

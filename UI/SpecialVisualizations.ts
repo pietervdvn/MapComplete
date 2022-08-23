@@ -1343,7 +1343,7 @@ export default class SpecialVisualizations {
                         
                         return new Combine([
                             toggle,
-                            new Combine([Svg.plantnet_logo_svg().SetClass("w-8"),
+                            new Combine([Svg.plantnet_logo_svg().SetClass("w-10 h-10 p-1 mr-1 bg-white rounded-full"),
                                 Translations.t.plantDetection.poweredByPlantnet])
                                 .SetClass("flex p-2 bg-gray-200 rounded-xl self-end")
                         ]).SetClass("flex flex-col")
