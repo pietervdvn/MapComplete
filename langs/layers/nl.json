@@ -6953,5 +6953,20 @@
         },
         "description": "Laag met buslijnen",
         "name": "Buslijnen"
+    },
+    "dogpark": {
+        "presets": {
+            "0": {
+                "description": "Een plaats waar honden vrij mogen rondlopen",
+                "title": "een hondenweide"
+            }
+        },
+        "name": "hondenweides",
+        "tagRenderings": {
+            "Name": {
+                "question": "Wat is de naam van deze hondenweide?",
+                "render": "Deze hondenweide heet {name}"
+            }
+        }
     }
 }
