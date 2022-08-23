@@ -16,8 +16,6 @@
     "ca": "Educació"
   },
   "defaultBackgroundId": "CartoDB.Voyager",
-  "maintainer": "MapComplete",
-  "version": "0.0.1",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 0,

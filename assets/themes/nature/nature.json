@@ -21,9 +21,7 @@
     "es": "En este mapa, uno puede encontrar información interesante para turistas y amantes de la naturaleza, como ",
     "fr": "Retrouvez sur cette carte des informations pour les touristes et les amoureux de la nature, telles que "
   },
-  "maintainer": "",
   "icon": "./assets/themes/nature/logo.svg",
-  "version": "0",
   "startLat": 51.20875,
   "startLon": 3.22435,
   "startZoom": 12,

@@ -341,6 +341,34 @@
             "render": "Brannhydrant"
         }
     },
+    "postboxes": {
+        "name": "Postbokser",
+        "title": {
+            "render": "Postboks"
+        }
+    },
+    "postoffices": {
+        "description": "Et lag som viser postkontor.",
+        "name": "Postkontor",
+        "presets": {
+            "0": {
+                "title": "et postkontor"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "Døgnåpent (inkludert helligdager)"
+                    }
+                },
+                "render": "Åpningstider: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Postkontor"
+        }
+    },
     "windturbine": {
         "units": {
             "0": {

@@ -21,7 +21,6 @@
     "zh_Hans": "Open AED Map",
     "fil": "Open AED Map"
   },
-  "maintainer": "MapComplete",
   "icon": "./assets/themes/aed/aed.svg",
   "description": {
     "en": "On this map, one can find and mark nearby defibrillators",
@@ -45,7 +44,6 @@
     "da": "På dette kort kan man finde og markere defibrillatorer i nærheden",
     "fil": "Sa mapang ito, maaring makahapan o mag-mapa ng mga defibrillators"
   },
-  "version": "2020-08-29",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 12,

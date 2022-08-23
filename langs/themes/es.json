@@ -549,52 +549,6 @@
     },
     "postboxes": {
         "description": "En este mapa puedes encontrar y añadir datos de oficinas de correo y buzones de correo. ¡Puedes utilizar este mapa para encontrar donde puedes enviar tu próxima postal! :)<br/>¿Has encontrado un error o algo que falta? Puedes editar este mapa con una cuenta de OpenStreetMap gratuíta. ",
-        "layers": {
-            "0": {
-                "description": "La capa que muestra buzones de correo.",
-                "name": "Buzones de correo",
-                "presets": {
-                    "0": {
-                        "title": "un buzón de correo"
-                    }
-                },
-                "title": {
-                    "render": "Buzón de correo"
-                }
-            },
-            "1": {
-                "description": "Una capa que muestra oficinas de correo.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Actualmente abierta"
-                            }
-                        }
-                    }
-                },
-                "name": "Oficinas de correo",
-                "presets": {
-                    "0": {
-                        "title": "una oficina de correo"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "Abierta 24/7 (incluyendo festivos)"
-                            }
-                        },
-                        "question": "¿Cuáles son las horas de apertura para esta oficina de correos?",
-                        "render": "Horas de Apertura: {opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "render": "Oficina de Correo"
-                }
-            }
-        },
         "shortDescription": "Un mapa que muestra buzones y oficinas de correo"
     },
     "shops": {

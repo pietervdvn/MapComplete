@@ -11,7 +11,6 @@
     "nb_NO": "Sykkelmotorveier"
   },
   "hideFromOverview": true,
-  "maintainer": "L'imaginaire",
   "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
   "#overpassUrl": "https://overpass.kumi.systems/api/interpreter",
   "overpassTimeout": 60,
@@ -25,7 +24,6 @@
     "nb_NO": "Kart som viser sykkelmotorveier",
     "ca": "Aquest mapa mostra carrils bici"
   },
-  "version": "2021-08-23",
   "startLat": 51.1599,
   "startLon": 3.3475,
   "startZoom": 10,
@@ -258,5 +256,6 @@
       ]
     }
   ],
-  "defaultBackgroundId": "CartoDB.Positron"
+  "defaultBackgroundId": "CartoDB.Positron",
+  "credits": "L'imaginaire"
 }

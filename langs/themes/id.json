@@ -148,54 +148,6 @@
         "shortDescription": "Kode pos",
         "title": "Kode pos"
     },
-    "postboxes": {
-        "layers": {
-            "0": {
-                "description": "Layer yang memperlihatkan kotak pos.",
-                "name": "Kotak pos",
-                "presets": {
-                    "0": {
-                        "title": "kotak pos"
-                    }
-                },
-                "title": {
-                    "render": "Kotak pos"
-                }
-            },
-            "1": {
-                "description": "Layer yang menunjukkan kantor pos.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Saat ini buka"
-                            }
-                        }
-                    }
-                },
-                "name": "Kantor pos",
-                "presets": {
-                    "0": {
-                        "title": "Kantor Pos"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "Buka 24 jam (termasuk hari libur)"
-                            }
-                        },
-                        "question": "Jam berapa kantor pos ini buka?",
-                        "render": "Jam Buka: {opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "render": "Kantor Pos"
-                }
-            }
-        }
-    },
     "trees": {
         "title": "Pohon"
     },

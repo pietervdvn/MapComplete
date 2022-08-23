@@ -31,9 +31,7 @@
     "nb_NO": "Her finner du mange sykkelutleiestasjoner slik de er kjent for OpenStreetMap",
     "ca": "En aquest mapa, trobaràs nombroses estacions de lloguer de bicicletes que són conegudes per OpenStreetMap"
   },
-  "maintainer": "",
   "icon": "./assets/themes/bicycle_rental/logo.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

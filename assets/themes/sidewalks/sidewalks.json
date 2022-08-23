@@ -28,9 +28,7 @@
     "fr": "Thème expérimental",
     "nb_NO": "Eksperimentelt tema"
   },
-  "maintainer": "",
   "icon": "./assets/svg/bug.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

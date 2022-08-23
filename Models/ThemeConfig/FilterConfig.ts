@@ -5,11 +5,13 @@ import Translations from "../../UI/i18n/Translations";
 import {TagUtils} from "../../Logic/Tags/TagUtils";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
 import {TagConfigJson} from "./Json/TagConfigJson";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {ImmutableStore, Store, UIEventSource} from "../../Logic/UIEventSource";
 import {FilterState} from "../FilteredLayer";
 import {QueryParameters} from "../../Logic/Web/QueryParameters";
 import {Utils} from "../../Utils";
 import {RegexTag} from "../../Logic/Tags/RegexTag";
+import BaseUIElement from "../../UI/BaseUIElement";
+import {InputElement} from "../../UI/Input/InputElement";
 
 export default class FilterConfig {
     public readonly id: string

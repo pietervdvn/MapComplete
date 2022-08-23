@@ -3,9 +3,9 @@ import BaseUIElement from "../BaseUIElement";
 import Combine from "./Combine";
 
 export class VariableUiElement extends BaseUIElement {
-    private readonly _contents: Store<string | BaseUIElement | BaseUIElement[]>;
+    private readonly _contents?: Store<string | BaseUIElement | BaseUIElement[]>;
 
-    constructor(contents: Store<string | BaseUIElement | BaseUIElement[]>) {
+    constructor(contents?: Store<string | BaseUIElement | BaseUIElement[]>) {
         super();
         this._contents = contents;
     }

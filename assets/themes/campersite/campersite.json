@@ -40,9 +40,7 @@
     "es": "Este sitio recoge todos los lugares oficiales de parada de caravanas y los lugares donde se pueden verter las aguas grises y negras. Puedes añadir detalles sobre los servicios prestados y el coste. Añade fotos y reseñas. Este es un sitio web y una aplicación web. Los datos se almacenan en OpenStreetMap, por lo que serán gratuitos para siempre y podrán ser reutilizados por cualquier aplicación.",
     "ca": "Aquest lloc recull tots els llocs oficials de parada de caravanes i els llocs on es poden abocar les aigües grises i negres. Pots afegir detalls sobre els serveis prestats i el cost. Afig fotos i ressenyes. Aquest és un lloc web i una aplicació web. Les dades s'emmagatzemen en OpenStreetMap, per la qual cosa seran gratuïts per sempre i podran ser reutilitzats per qualsevol aplicació."
   },
-  "maintainer": "joost schouppe",
   "icon": "./assets/themes/campersite/caravan.svg",
-  "version": "0",
   "startLat": 43.14,
   "startLon": 3.14,
   "startZoom": 14,
@@ -1396,5 +1394,6 @@
         ]
       }
     ]
-  }
+  },
+  "credits": "joost schouppe"
 }

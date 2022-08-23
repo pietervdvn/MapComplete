@@ -10,9 +10,7 @@
     "de": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden",
     "fr": "Cette carte affiche et permet la modification des passages cloutés peints aux couleurs de l’arc-en-ciel"
   },
-  "maintainer": "",
   "icon": "./assets/themes/rainbow_crossings/logo.svg",
-  "version": "0",
   "startLat": 50.8465573,
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 4.351697,

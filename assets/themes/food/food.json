@@ -20,9 +20,7 @@
     "nb_NO": "Restauranter og søppelmat",
     "fr": "Restaurants et restaurants à service rapide"
   },
-  "maintainer": "",
   "icon": "./assets/layers/food/restaurant.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

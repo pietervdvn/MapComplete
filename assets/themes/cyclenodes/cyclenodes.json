@@ -17,9 +17,7 @@
     "fr": "Cette carte montre les réseaux de nœuds cyclistes et vous permet d'ajouter facilement de nouveaux nœuds",
     "ca": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir nodes nous de manera senzilla"
   },
-  "maintainer": "Sebastian Kürten",
   "icon": "./assets/themes/cyclenodes/logo.svg",
-  "version": "0",
   "hideFromOverview": true,
   "startLat": 51.755515,
   "startLon": 14.327545,
@@ -214,5 +212,6 @@
         "images"
       ]
     }
-  ]
+  ],
+  "credits": "Sebastian Kürten"
 }

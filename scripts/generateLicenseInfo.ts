@@ -5,7 +5,14 @@ import ScriptUtils from "./ScriptUtils";
 const prompt = require('prompt-sync')();
 
 function validateLicenseInfo(l : SmallLicense){
-   l.sources.map(s => new URL(s))
+   l.sources.map(s => {
+       try{
+           
+       return new URL(s);
+       }catch (e) {
+           throw "Could not parse URL "+s+" for a license for "+l.path+" due to "+ e
+       }
+   })
 }
 /**
  * Sweeps the entire 'assets/' (except assets/generated) directory for image files and any 'license_info.json'-file.

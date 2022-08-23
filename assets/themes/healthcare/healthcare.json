@@ -12,9 +12,7 @@
     "de": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
     "fr": "Cette carte affiche différents éléments liés à la santé"
   },
-  "maintainer": "MapComplete",
   "icon": "./assets/layers/doctors/doctors.svg",
-  "version": "0",
   "startLat": 50.8465573,
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 4.351697,

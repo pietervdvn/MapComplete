@@ -1,7 +1,5 @@
 {
   "id": "pets",
-  "maintainer": "Niels Elgaard Larsen",
-  "version": "1",
   "title": {
     "en": "Veterinarians, dog parks and other pet-amenities",
     "da": "hundesteder",
@@ -196,5 +194,6 @@
         "name": null
       }
     }
-  ]
+  ],
+  "credits": "Niels Elgaard Larsen"
 }

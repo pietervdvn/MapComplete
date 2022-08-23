@@ -4215,6 +4215,38 @@
                 "question": "Welche Farbe hat der Hydrant?",
                 "render": "Der Hydrant hat die Farbe {colour}"
             },
+            "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Art der Kupplung"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Storz-Kupplung"
+                    },
+                    "1": {
+                        "then": "UNI-Kupplung"
+                    },
+                    "2": {
+                        "then": "Barcelona-Kupplung"
+                    }
+                },
+                "question": "Welche Art von Kupplungen hat dieser Hydrant?",
+                "render": "Kupplungen: {couplings:type}"
+            },
+            "hydrant-couplings-diameters": {
+                "freeform": {
+                    "placeholder": "Kupplungsdurchmesser"
+                },
+                "question": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
+                "render": "Kupplungsdurchmesser: {couplings:diameters}"
+            },
+            "hydrant-diameter": {
+                "freeform": {
+                    "placeholder": "Rohrdurchmesser"
+                },
+                "question": "Was ist der Rohrdurchmesser dieses Hydranten?",
+                "render": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {
@@ -4249,38 +4281,6 @@
                 },
                 "question": "Welche Bauform hat der Hydrant?",
                 "render": " Hydranten-Typ: {fire_hydrant:type}"
-            },
-            "hydrant-couplings-diameters": {
-                "question": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
-                "freeform": {
-                    "placeholder": "Kupplungsdurchmesser"
-                },
-                "render": "Kupplungsdurchmesser: {couplings:diameters}"
-            },
-            "hydrant-couplings": {
-                "freeform": {
-                    "placeholder": "Art der Kupplung"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "Storz-Kupplung"
-                    },
-                    "1": {
-                        "then": "UNI-Kupplung"
-                    },
-                    "2": {
-                        "then": "Barcelona-Kupplung"
-                    }
-                },
-                "question": "Welche Art von Kupplungen hat dieser Hydrant?",
-                "render": "Kupplungen: {couplings:type}"
-            },
-            "hydrant-diameter": {
-                "freeform": {
-                    "placeholder": "Rohrdurchmesser"
-                },
-                "question": "Was ist der Rohrdurchmesser dieses Hydranten?",
-                "render": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}"
             }
         },
         "title": {
@@ -5018,6 +5018,17 @@
             }
         }
     },
+    "parcel_lockers": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aktuell geöffnet"
+                    }
+                }
+            }
+        }
+    },
     "parking": {
         "description": "Eine Ebene mit Parkplätzen",
         "name": "Parkplätze",
@@ -5043,6 +5054,9 @@
                         "then": "Es gibt barrierefreie Stellplätze, aber die Anzahl ist unbekannt"
                     },
                     "1": {
+                        "then": "Es gibt keine barrierefreien Stellplätze"
+                    },
+                    "2": {
                         "then": "Es gibt keine barrierefreien Stellplätze"
                     }
                 },
@@ -5306,6 +5320,50 @@
                 }
             },
             "render": "Spielplatz"
+        }
+    },
+    "postboxes": {
+        "description": "Die Ebene zeigt Briefkästen.",
+        "name": "Briefkästen",
+        "presets": {
+            "0": {
+                "title": "ein Briefkasten"
+            }
+        },
+        "title": {
+            "render": "Briefkasten"
+        }
+    },
+    "postoffices": {
+        "description": "Eine Ebene mit Postämtern.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aktuell geöffnet"
+                    }
+                }
+            }
+        },
+        "name": "Poststellen",
+        "presets": {
+            "0": {
+                "title": "eine Poststelle"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "durchgehend geöffnet (auch an Feiertagen)"
+                    }
+                },
+                "question": "Wie sind die Öffnungszeiten dieser Poststelle?",
+                "render": "Öffnungszeiten: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Poststelle"
         }
     },
     "public_bookcase": {
@@ -5979,6 +6037,9 @@
                     },
                     "3": {
                         "then": "Der Sportplatz ist nicht öffentlich zugänglich (es ist ein privater Sportplatz)"
+                    },
+                    "4": {
+                        "then": "Der Sportplatz ist öffentlich zugänglich"
                     }
                 },
                 "question": "Ist der Sportplatz öffentlich zugänglich?"

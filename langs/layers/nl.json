@@ -4223,44 +4223,44 @@
     "indoors": {
         "description": "Een basis voor indoor-navigatie: toont binnenruimtes",
         "name": "Binnenruimtes",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van de ruimte"
+                },
+                "question": "Wat is de naam van deze ruimte?",
+                "render": "Deze ruimte heet {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referentienummer van de ruimte (bv. '1.1' of A1' )"
+                },
+                "question": "Wat is het referentienummer van deze ruimte?",
+                "render": "Deze ruimte heeft het referentienummer {ref}"
+            }
+        },
         "title": {
-            "render": "Binnenruimte {name}",
             "mappings": {
                 "0": {
                     "then": "Binnenruimte {name}"
                 },
-                "4": {
-                    "then": "Binnendeur {name}"
+                "1": {
+                    "then": "Gebied in gebouw {name}"
+                },
+                "2": {
+                    "then": "Muur in gebouw {name}"
                 },
                 "3": {
                     "then": "Gang in gebouw {name}"
                 },
-                "1": {
-                    "then": "Gebied in gebouw {name}"
+                "4": {
+                    "then": "Binnendeur {name}"
                 },
                 "5": {
                     "then": "Verdieping in gebouw {name}"
-                },
-                "2": {
-                    "then": "Muur in gebouw {name}"
-                }
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "render": "Deze ruimte heet {name}",
-                "question": "Wat is de naam van deze ruimte?",
-                "freeform": {
-                    "placeholder": "Naam van de ruimte"
                 }
             },
-            "ref": {
-                "question": "Wat is het referentienummer van deze ruimte?",
-                "freeform": {
-                    "placeholder": "Referentienummer van de ruimte (bv. '1.1' of A1' )"
-                },
-                "render": "Deze ruimte heeft het referentienummer {ref}"
-            }
+            "render": "Binnenruimte {name}"
         }
     },
     "information_board": {
@@ -4411,14 +4411,14 @@
                 },
                 "question": "Wat voor faciliteit is dit?"
             },
+            "name": {
+                "question": "Wat is de naam van deze faciliteit?",
+                "render": "Deze faciliteit heet <b>{name}</b>"
+            },
             "opening_hours": {
                 "override": {
                     "question": "Wanneer is deze kinderopvang geopend?"
                 }
-            },
-            "name": {
-                "question": "Wat is de naam van deze faciliteit?",
-                "render": "Deze faciliteit heet <b>{name}</b>"
             }
         },
         "title": {
@@ -4475,6 +4475,57 @@
         "title": {
             "render": "Kaart"
         }
+    },
+    "maproulette": {
+        "description": "Laag met alle taken uit MapRoulette",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Toon taken met alle statussen"
+                    },
+                    "1": {
+                        "question": "Toon aangemaakte taken"
+                    },
+                    "2": {
+                        "question": "Toon opgeloste taken"
+                    },
+                    "3": {
+                        "question": "Toon vals-positieve taken"
+                    },
+                    "4": {
+                        "question": "Toon overgeslagen taken"
+                    },
+                    "5": {
+                        "question": "Toon verwijderde taken"
+                    },
+                    "6": {
+                        "question": "Toon al opgeloste taken"
+                    },
+                    "7": {
+                        "question": "Toon taken die als te lastig gemarkeerd zijn"
+                    },
+                    "8": {
+                        "question": "Toon uitgeschakelde taken"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Naam uitdaging bevat {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "ID uitdaging is {search}"
+                    }
+                }
+            }
+        },
+        "name": "MapRoulette Taken"
     },
     "maxspeed": {
         "description": "Toont de toegestane snelheid voor elke weg",
@@ -4823,6 +4874,31 @@
             }
         }
     },
+    "parcel_lockers": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Momenteel geopend"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "een pakketautomaat"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "mappings": {
+                    "3": {
+                        "then": "Dit is een PostNL pakketautomaat"
+                    }
+                }
+            }
+        }
+    },
     "parking": {
         "description": "Deze laag toont autoparkings",
         "name": "Parking",
@@ -4848,6 +4924,9 @@
                         "then": "Er zijn parkeerplaatsen voor gehandicapten, maar het is niet bekend hoeveel er zijn"
                     },
                     "1": {
+                        "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
+                    },
+                    "2": {
                         "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
                     }
                 },
@@ -5126,6 +5205,50 @@
                 }
             },
             "render": "Speeltuin"
+        }
+    },
+    "postboxes": {
+        "description": "Deze laag toont brievenbussen.",
+        "name": "Brievenbussen",
+        "presets": {
+            "0": {
+                "title": "een brievenbus"
+            }
+        },
+        "title": {
+            "render": "Brievenbus"
+        }
+    },
+    "postoffices": {
+        "description": "Een laag die postkantoren toont.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Momenteel geopend"
+                    }
+                }
+            }
+        },
+        "name": "Postkantoren",
+        "presets": {
+            "0": {
+                "title": "een postkantoor"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 open (ook tijdens feestdagen)"
+                    }
+                },
+                "question": "Wat zijn de openingsuren voor dit postkantoor?",
+                "render": "Openingsuren: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Postkantoor"
         }
     },
     "public_bookcase": {
@@ -5748,6 +5871,9 @@
                     },
                     "3": {
                         "then": "Privaat en niet toegankelijk"
+                    },
+                    "4": {
+                        "then": "Publiek toegankelijk"
                     }
                 },
                 "question": "Is dit sportterrein publiek toegankelijk?"
@@ -6413,6 +6539,42 @@
             "render": "Wandeltocht"
         }
     },
+    "transit_routes": {
+        "description": "Laag met buslijnen",
+        "name": "Buslijnen",
+        "tagRenderings": {
+            "colour": {
+                "question": "Wat is de kleur van deze buslijn?",
+                "render": "Deze buslijn heeft de kleur {colour}"
+            },
+            "from": {
+                "question": "Wat is het beginpunt van deze buslijn?",
+                "render": "Deze buslijn begint bij {from}"
+            },
+            "name": {
+                "question": "Wat is de naam van deze buslijn (bv. Bus XX: Van => Via => Naar)"
+            },
+            "network": {
+                "question": "Bij welk netwerk hoort deze buslijn?",
+                "render": "Deze buslijn is onderdeel van het {network} netwerk"
+            },
+            "operator": {
+                "question": "Welk bedrijf exploiteert deze buslijn?",
+                "render": "Deze buslijn wordt geëxploiteerd door {operator}"
+            },
+            "to": {
+                "question": "Wat is het eindpunt van deze buslijn?",
+                "render": "Deze buslijn eindigt bij {to}"
+            },
+            "via": {
+                "question": "Via welk punt gaat deze buslijn?",
+                "render": "Deze buslijn gaat via {via}"
+            }
+        },
+        "title": {
+            "render": "Buslijn"
+        }
+    },
     "tree_node": {
         "description": "Een laag die bomen toont",
         "name": "Boom",
@@ -6866,92 +7028,5 @@
                 }
             }
         }
-    },
-    "maproulette": {
-        "filter": {
-            "0": {
-                "options": {
-                    "1": {
-                        "question": "Toon aangemaakte taken"
-                    },
-                    "8": {
-                        "question": "Toon uitgeschakelde taken"
-                    },
-                    "0": {
-                        "question": "Toon taken met alle statussen"
-                    },
-                    "3": {
-                        "question": "Toon vals-positieve taken"
-                    },
-                    "4": {
-                        "question": "Toon overgeslagen taken"
-                    },
-                    "5": {
-                        "question": "Toon verwijderde taken"
-                    },
-                    "6": {
-                        "question": "Toon al opgeloste taken"
-                    },
-                    "7": {
-                        "question": "Toon taken die als te lastig gemarkeerd zijn"
-                    },
-                    "2": {
-                        "question": "Toon opgeloste taken"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Naam uitdaging bevat {search}"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "ID uitdaging is {search}"
-                    }
-                }
-            }
-        },
-        "description": "Laag met alle taken uit MapRoulette",
-        "name": "MapRoulette Taken"
-    },
-    "transit_routes": {
-        "tagRenderings": {
-            "operator": {
-                "question": "Welk bedrijf exploiteert deze buslijn?",
-                "render": "Deze buslijn wordt geëxploiteerd door {operator}"
-            },
-            "from": {
-                "render": "Deze buslijn begint bij {from}",
-                "question": "Wat is het beginpunt van deze buslijn?"
-            },
-            "to": {
-                "render": "Deze buslijn eindigt bij {to}",
-                "question": "Wat is het eindpunt van deze buslijn?"
-            },
-            "colour": {
-                "question": "Wat is de kleur van deze buslijn?",
-                "render": "Deze buslijn heeft de kleur {colour}"
-            },
-            "name": {
-                "question": "Wat is de naam van deze buslijn (bv. Bus XX: Van => Via => Naar)"
-            },
-            "network": {
-                "question": "Bij welk netwerk hoort deze buslijn?",
-                "render": "Deze buslijn is onderdeel van het {network} netwerk"
-            },
-            "via": {
-                "question": "Via welk punt gaat deze buslijn?",
-                "render": "Deze buslijn gaat via {via}"
-            }
-        },
-        "title": {
-            "render": "Buslijn"
-        },
-        "description": "Laag met buslijnen",
-        "name": "Buslijnen"
     }
 }

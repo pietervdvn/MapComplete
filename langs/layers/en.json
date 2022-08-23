@@ -5049,6 +5049,91 @@
             }
         }
     },
+    "parcel_lockers": {
+        "description": "Layer showing parcel lockers for collecting and sending parcels.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Currently open"
+                    }
+                }
+            }
+        },
+        "name": "Parcel Lockers",
+        "presets": {
+            "0": {
+                "title": "a parcel locker"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Brand"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This is an Amazon Locker"
+                    },
+                    "1": {
+                        "then": "This is a DHL Packstation"
+                    },
+                    "2": {
+                        "then": "This is a DPD Pickup Station"
+                    },
+                    "3": {
+                        "then": "This is a PostNL Parcel Locker"
+                    }
+                },
+                "question": "What is the brand of the parcel locker?",
+                "render": "This is a {brand} parcel locker"
+            },
+            "mail-in": {
+                "mappings": {
+                    "0": {
+                        "then": "You can send packages from this parcel locker"
+                    },
+                    "1": {
+                        "then": "You <b>can't</b> send packages from this parcel locker"
+                    }
+                },
+                "question": "Can you send packages from this parcel locker?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operator"
+                },
+                "question": "What is the operator of the parcel locker?",
+                "render": "This parcel locker is operated by {operator}"
+            },
+            "pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "You can pick up packages from this parcel locker"
+                    },
+                    "1": {
+                        "then": "You <b>can't</b> pick up packages from this parcel locker"
+                    }
+                },
+                "question": "Can you pick up packages from this parcel locker?"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Reference"
+                },
+                "question": "What is the reference number/identifier of this parcel locker?",
+                "render": "This parcel locker has the reference {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand} parcel locker"
+                }
+            },
+            "render": "Parcel Locker"
+        }
+    },
     "parking": {
         "description": "A layer showing car parkings",
         "name": "Parking",
@@ -5074,6 +5159,9 @@
                         "then": "There are disabled parking spots, but it is not known how many"
                     },
                     "1": {
+                        "then": "There are no disabled parking spots"
+                    },
+                    "2": {
                         "then": "There are no disabled parking spots"
                     }
                 },
@@ -5118,6 +5206,73 @@
         },
         "title": {
             "render": "Car parking"
+        }
+    },
+    "parking_spaces": {
+        "description": "Layer showing individual parking spaces.",
+        "name": "Parking Spaces",
+        "tagRenderings": {
+            "capacity": {
+                "mappings": {
+                    "0": {
+                        "then": "This parking space has 1 space."
+                    }
+                },
+                "render": "This parking spaces has {capacity} spaces."
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a normal parking space"
+                    },
+                    "1": {
+                        "then": "This is a normal parking space."
+                    },
+                    "2": {
+                        "then": "This is a disabled parking space."
+                    },
+                    "3": {
+                        "then": "This is a private parking space."
+                    },
+                    "4": {
+                        "then": "This is parking space reserved for charging vehicles."
+                    },
+                    "5": {
+                        "then": "This is parking space reserved for deliveries."
+                    },
+                    "6": {
+                        "then": "This is parking space reserved for heavy goods vehicles."
+                    },
+                    "7": {
+                        "then": "This is parking space reserved for caravans or RVs."
+                    },
+                    "8": {
+                        "then": "This is parking space reserved for buses."
+                    },
+                    "9": {
+                        "then": "This is parking space reserved for motorcycles."
+                    },
+                    "10": {
+                        "then": "This is a parking space reserved for parents with children."
+                    },
+                    "11": {
+                        "then": "This is a parking space reserved for staff."
+                    },
+                    "12": {
+                        "then": "This is a parking space reserved for taxis."
+                    },
+                    "13": {
+                        "then": "This is a parking space reserved for vehicles towing a trailer."
+                    },
+                    "14": {
+                        "then": "This is a parking space reserved for car sharing."
+                    }
+                },
+                "question": "What kind of parking space is this?"
+            }
+        },
+        "title": {
+            "render": "Parking Space"
         }
     },
     "pedestrian_path": {
@@ -5337,6 +5492,50 @@
                 }
             },
             "render": "Playground"
+        }
+    },
+    "postboxes": {
+        "description": "The layer showing postboxes.",
+        "name": "Postboxes",
+        "presets": {
+            "0": {
+                "title": "a postbox"
+            }
+        },
+        "title": {
+            "render": "Postbox"
+        }
+    },
+    "postoffices": {
+        "description": "A layer showing post offices.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Currently open"
+                    }
+                }
+            }
+        },
+        "name": "Post offices",
+        "presets": {
+            "0": {
+                "title": "a post office"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 opened (including holidays)"
+                    }
+                },
+                "question": "What are the opening hours for this post office?",
+                "render": "Opening Hours: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Post Office"
         }
     },
     "public_bookcase": {
@@ -6010,6 +6209,9 @@
                     },
                     "3": {
                         "then": "Private - not accessible to the public"
+                    },
+                    "4": {
+                        "then": "Public access"
                     }
                 },
                 "question": "Is this sport pitch publicly accessible?"

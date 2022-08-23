@@ -419,41 +419,6 @@
         "shortDescription": "Codis postals",
         "title": "Codis postals"
     },
-    "postboxes": {
-        "layers": {
-            "0": {
-                "name": "Bústies",
-                "presets": {
-                    "0": {
-                        "title": "una bústia"
-                    }
-                },
-                "title": {
-                    "render": "Bústia"
-                }
-            },
-            "1": {
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Actualment obert"
-                            }
-                        }
-                    }
-                },
-                "name": "Oficines de correus",
-                "presets": {
-                    "0": {
-                        "title": "una oficina de correus"
-                    }
-                },
-                "title": {
-                    "render": "Oficina de correus"
-                }
-            }
-        }
-    },
     "shops": {
         "title": "Open Shop Map"
     },

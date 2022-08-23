@@ -1,6 +1,5 @@
 {
   "id": "artwork",
-  "version": "2020-08-30",
   "title": {
     "en": "Open Artwork Map",
     "nl": "Open kunstwerken-kaart",
@@ -38,7 +37,6 @@
     "fil": "Malugod na pag-dating sa Open Artwork Map, ang mapa ng mga bantayog, graffiti, at iba pang likhang sining sa buong mundo"
   },
   "icon": "./assets/themes/artwork/artwork.svg",
-  "maintainer": "MapComplete",
   "startZoom": 12,
   "startLat": 0,
   "startLon": 0,

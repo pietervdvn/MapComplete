@@ -1,6 +1,5 @@
 {
   "id": "cyclestreets",
-  "version": "2020-08-30",
   "title": {
     "en": "Cyclestreets",
     "nl": "Fietsstraten",
@@ -42,7 +41,6 @@
   "startLat": 51.2095,
   "startZoom": 14,
   "startLon": 3.2228,
-  "maintainer": "MapComplete",
   "widenFactor": 2,
   "clustering": {
     "maxZoom": 12,

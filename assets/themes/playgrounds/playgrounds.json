@@ -43,9 +43,7 @@
     "hu": "Ezen a térképen játszótereket találsz, és további információkat adhatsz hozzájuk",
     "es": "En este mapa, puedes encontrar parques y añadir más información"
   },
-  "maintainer": "",
   "icon": "./assets/themes/playgrounds/playground.svg",
-  "version": "0",
   "startLat": 50.535,
   "startLon": 4.399,
   "startZoom": 13,

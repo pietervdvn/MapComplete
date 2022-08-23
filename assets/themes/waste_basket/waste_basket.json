@@ -31,9 +31,7 @@
     "hu": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod",
     "fr": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même"
   },
-  "maintainer": "",
   "icon": "./assets/themes/waste_basket/waste_basket.svg",
-  "version": "2021-07-07",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

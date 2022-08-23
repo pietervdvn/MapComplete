@@ -27,12 +27,10 @@
     "ru": "Создать персональную тему на основе доступных слоёв тем. Чтобы отобразить некоторые данные, откройте <a href='#filter'>выбор слоя</a>",
     "it": "Crea un tema personale basato sui livelli disponibili per tutti i temi. Per mostrare dei dati, apri <a href='#filter'>selezione livello</a>"
   },
-  "maintainer": "MapComplete",
   "icon": "./assets/svg/addSmall.svg",
   "clustering": {
     "maxZoom": 19
   },
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 0,

@@ -35,9 +35,7 @@
     "fr": "Tours libres d’accès pour admirer la vue",
     "nb_NO": "Offentlig tilgjengelige tårn for å nyte utsikten"
   },
-  "maintainer": "",
   "icon": "./assets/layers/observation_tower/Tower_observation.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

@@ -31,18 +31,7 @@ export interface LayoutConfigJson {
      * Who helped to create this theme and should be attributed?
      */
     credits?: string;
-
-    /**
-     * Who does maintain this preset?
-     */
-    maintainer: string;
-
-    /**
-     * A version number, either semantically or by date.
-     * Should be sortable, where the higher value is the later version
-     */
-    version: string;
-
+    
     /**
      * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.
      * 

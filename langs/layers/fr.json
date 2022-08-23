@@ -3149,6 +3149,17 @@
             }
         }
     },
+    "parcel_lockers": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert actuellement"
+                    }
+                }
+            }
+        }
+    },
     "parking": {
         "description": "Un calque montrant les parkings",
         "name": "Lieu de stationnement",
@@ -3174,6 +3185,9 @@
                         "then": "Il y a des places de stationnement pour personnes à mobilité réduite, mais on ne sait pas combien"
                     },
                     "1": {
+                        "then": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite"
+                    },
+                    "2": {
                         "then": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite"
                     }
                 },
@@ -3373,6 +3387,50 @@
                 }
             },
             "render": "Aire de jeu"
+        }
+    },
+    "postboxes": {
+        "description": "Le calque montrant les boîtes à lettres.",
+        "name": "Boîtes à lettres",
+        "presets": {
+            "0": {
+                "title": "une boîte à lettres"
+            }
+        },
+        "title": {
+            "render": "Boîte à lettres"
+        }
+    },
+    "postoffices": {
+        "description": "Un claque montrant les bureaux de poste.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert actuellement"
+                    }
+                }
+            }
+        },
+        "name": "Bureaux de poste",
+        "presets": {
+            "0": {
+                "title": "un bureau de poste"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "Ouvert 24h/24 (jours fériés compris)"
+                    }
+                },
+                "question": "Quelles sont les heures d’ouverture de ce bureau de poste ?",
+                "render": "Heures d’ouverture : {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Bureau de poste"
         }
     },
     "public_bookcase": {
@@ -3760,6 +3818,9 @@
                     },
                     "3": {
                         "then": "Privé - Pas accessible au public"
+                    },
+                    "4": {
+                        "then": "Accessible au public"
                     }
                 },
                 "question": "Est-ce que ce terrain de sport est accessible au public ?"

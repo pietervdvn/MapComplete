@@ -9,8 +9,8 @@ export default abstract class BaseUIElement {
 
     protected _constructedHtmlElement: HTMLElement;
     protected isDestroyed = false;
-    private readonly clss: Set<string> = new Set<string>();
-    private style: string;
+    protected readonly clss: Set<string> = new Set<string>();
+    protected style: string;
     private _onClick: () => void;
 
     public onClick(f: (() => void)) {

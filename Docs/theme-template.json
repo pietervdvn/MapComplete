@@ -6,8 +6,7 @@
   "#5": "If you don't know how to run a webserver: go to https://www.base64encode.org/ , copy paste this entire document in the 'encode' field and encode it;",
   "#6": "Then, go to https://mapcomplete.osm.be/theme?userlayout=true#your-base64-encoded-file",
   "id": "template",
-  "maintainer": "Write your name here",
-  "version": "2022-03-12",
+  "credits": "Write your name here (or remove everything)",
   "title": {
     "en": "Title of your theme",
     "#1": "You can add extra languages here (and in all translation blocks), but make sure 'en' is everywhere"
