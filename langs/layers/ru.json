@@ -1263,6 +1263,33 @@
             "render": "Детская площадка"
         }
     },
+    "postboxes": {
+        "name": "Почтовые ящики",
+        "presets": {
+            "0": {
+                "title": "почтовый ящик"
+            }
+        },
+        "title": {
+            "render": "Почтовый ящик"
+        }
+    },
+    "postoffices": {
+        "name": "Почтовые отделения",
+        "presets": {
+            "0": {
+                "title": "Почтовое отделение"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "render": "Часы работы: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Почтовое отделение"
+        }
+    },
     "public_bookcase": {
         "description": "Уличный шкаф с книгами, доступными для всех",
         "name": "Книжные шкафы",

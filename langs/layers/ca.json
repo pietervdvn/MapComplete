@@ -801,6 +801,17 @@
             }
         }
     },
+    "parcel_lockers": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Actualment obert"
+                    }
+                }
+            }
+        }
+    },
     "parking": {
         "name": "Aparcament"
     },
@@ -851,6 +862,37 @@
                 }
             },
             "render": "Parc infantil"
+        }
+    },
+    "postboxes": {
+        "name": "Bústies",
+        "presets": {
+            "0": {
+                "title": "una bústia"
+            }
+        },
+        "title": {
+            "render": "Bústia"
+        }
+    },
+    "postoffices": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Actualment obert"
+                    }
+                }
+            }
+        },
+        "name": "Oficines de correus",
+        "presets": {
+            "0": {
+                "title": "una oficina de correus"
+            }
+        },
+        "title": {
+            "render": "Oficina de correus"
         }
     },
     "public_bookcase": {

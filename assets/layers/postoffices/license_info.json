@@ -9,17 +9,5 @@
       "https://commons.wikimedia.org/wiki/File:Emojione_BW_1F3E4.svg",
       "https://github.com/emojione/emojione/blob/2.2.7/assets/svg_bw/1f3e4.svg"
     ]
-  },
-  {
-    "path": "postbox.svg",
-    "license": "CC BY 4.0",
-    "authors": [
-      "Vincent Le Moign",
-      "https://twitter.com/webalys"
-    ],
-    "sources": [
-      "https://upload.wikimedia.org/wikipedia/commons/6/6d/726-postbox.svg",
-      "http://emoji.streamlineicons.com"
-    ]
   }
 ]

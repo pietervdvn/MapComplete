@@ -4874,6 +4874,31 @@
             }
         }
     },
+    "parcel_lockers": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Momenteel geopend"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "een pakketautomaat"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "mappings": {
+                    "3": {
+                        "then": "Dit is een PostNL pakketautomaat"
+                    }
+                }
+            }
+        }
+    },
     "parking": {
         "description": "Deze laag toont autoparkings",
         "name": "Parking",
@@ -5180,6 +5205,50 @@
                 }
             },
             "render": "Speeltuin"
+        }
+    },
+    "postboxes": {
+        "description": "Deze laag toont brievenbussen.",
+        "name": "Brievenbussen",
+        "presets": {
+            "0": {
+                "title": "een brievenbus"
+            }
+        },
+        "title": {
+            "render": "Brievenbus"
+        }
+    },
+    "postoffices": {
+        "description": "Een laag die postkantoren toont.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Momenteel geopend"
+                    }
+                }
+            }
+        },
+        "name": "Postkantoren",
+        "presets": {
+            "0": {
+                "title": "een postkantoor"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 open (ook tijdens feestdagen)"
+                    }
+                },
+                "question": "Wat zijn de openingsuren voor dit postkantoor?",
+                "render": "Openingsuren: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Postkantoor"
         }
     },
     "public_bookcase": {
