@@ -1318,7 +1318,7 @@ export default class SpecialVisualizations {
                         }
 
                         const detect = new UIEventSource(false)
-                        return new Toggle(
+                        const toggle = new Toggle(
                             new Lazy(() => {
                                 const allProvidedImages: Store<ProvidedImage[]> = AllImageProviders.LoadImagesFor(tags, imagePrefixes)
                                 const allImages: Store<string[]> = allProvidedImages.map(pi => pi.map(pi => pi.url))
@@ -1340,6 +1340,13 @@ export default class SpecialVisualizations {
                             new SubtleButton(undefined, "Detect plant species with plantnet.org").onClick(() => detect.setData(true)),
                             detect
                         )
+                        
+                        return new Combine([
+                            toggle,
+                            new Combine([Svg.plantnet_logo_svg().SetClass("w-8"),
+                                Translations.t.plantDetection.poweredByPlantnet])
+                                .SetClass("flex p-2 bg-gray-200 rounded-xl self-end")
+                        ]).SetClass("flex flex-col")
                     }
                 }
             ]

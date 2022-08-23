@@ -9,6 +9,8 @@ import Combine from "../Base/Combine";
 import Title from "../Base/Title";
 import WikipediaBox from "../Wikipedia/WikipediaBox";
 import Translations from "../i18n/Translations";
+import List from "../Base/List";
+import Svg from "../../Svg";
 
 
 export default class PlantNetSpeciesSearch extends VariableUiElement {
@@ -28,8 +30,15 @@ export default class PlantNetSpeciesSearch extends VariableUiElement {
                     return UIEventSource.FromPromiseWithErr(PlantNet.query(images.slice(0,5)));
                 })
                 .map(result => {
-                    if (result === null) {
-                        return t.takeImages
+                    if (images.data.length === 0) {
+                        return new Combine([t.takeImages, t.howTo.intro, new List(
+                            [
+                                t.howTo.li0,
+                                t.howTo.li1,
+                                t.howTo.li2,
+                                t.howTo.li3
+                            ]
+                        )]).SetClass("flex flex-col")
                     }
                         if (result === undefined) {
                             return new Loading(t.querying.Subs(images.data))
@@ -79,13 +88,21 @@ export default class PlantNetSpeciesSearch extends VariableUiElement {
                                 return plantOverview
                             }
                             const buttons = new Combine([
-                                new Button("Confirm", () => {
+                                new Button(
+                                new Combine([
+                                    Svg.back_svg().SetClass("w-4"),
+                                    t.back]).SetClass("flex"),
+                                    () => {
+                                    selectedSpecies.setData(undefined)
+                                }).SetClass("btn btn-secondary"),
+                                
+                                new Button(
+                                    new Combine([Svg.confirm_svg().SetClass("w-4"), t.confirm]).SetClass("flex")
+                                    , () => {
                                     onConfirm(wikidataSpecies)
                                 }).SetClass("btn"),
-                                new Button("Back to plant overview", () => {
-                                    selectedSpecies.setData(undefined)
-                                }).SetClass("btn btn-secondary")
-                            ]).SetClass("flex self-end");
+                       
+                            ]).SetClass("flex justify-between");
 
                             return new Combine([
                                 new WikipediaBox([wikidataSpecies], {
