@@ -1146,5 +1146,8 @@
                 "name": "Zwaartepunten van wijzigingensets"
             }
         }
+    },
+    "maxspeed": {
+        "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat."
     }
 }
