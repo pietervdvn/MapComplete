@@ -32,9 +32,7 @@
     "nl": "Postcodes",
     "fr": "Codes postaux"
   },
-  "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

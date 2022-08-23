@@ -31,37 +31,43 @@
       {
         "if": "indoor=room",
         "then": {
-          "en": "Indoor Room {name}"
+          "en": "Indoor Room {name}",
+          "nl": "Binnenruimte {name}"
         }
       },
       {
         "if": "indoor=area",
         "then": {
-          "en": "Indoor Area {name}"
+          "en": "Indoor Area {name}",
+          "nl": "Gebied in gebouw {name}"
         }
       },
       {
         "if": "indoor=wall",
         "then": {
-          "en": "Indoor Wall {name}"
+          "en": "Indoor Wall {name}",
+          "nl": "Muur in gebouw {name}"
         }
       },
       {
         "if": "indoor=corridor",
         "then": {
-          "en": "Indoor Corridor {name}"
+          "en": "Indoor Corridor {name}",
+          "nl": "Gang in gebouw {name}"
         }
       },
       {
         "if": "indoor=door",
         "then": {
-          "en": "Indoor Door {name}"
+          "en": "Indoor Door {name}",
+          "nl": "Binnendeur {name}"
         }
       },
       {
         "if": "indoor=level",
         "then": {
-          "en": "Indoor Level {name}"
+          "en": "Indoor Level {name}",
+          "nl": "Verdieping in gebouw {name}"
         }
       }
     ]
@@ -72,16 +78,19 @@
     {
       "id": "ref",
       "question": {
-        "en": "What is the reference number of this room?"
+        "en": "What is the reference number of this room?",
+        "nl": "Wat is het referentienummer van deze ruimte?"
       },
       "render": {
-        "en": "This room has the reference number {ref}"
+        "en": "This room has the reference number {ref}",
+        "nl": "Deze ruimte heeft het referentienummer {ref}"
       },
       "freeform": {
         "key": "ref",
         "type": "string",
         "placeholder": {
-          "en": "Reference number of the room (e.g. '1.1' or 'A1')"
+          "en": "Reference number of the room (e.g. '1.1' or 'A1')",
+          "nl": "Referentienummer van de ruimte (bv. '1.1' of A1' )"
         }
       },
       "condition": {
@@ -96,17 +105,20 @@
       "id": "name",
       "question": {
         "en": "What is the name of this room?",
-        "de": "Wie lautet der Name dieses Raums?"
+        "de": "Wie lautet der Name dieses Raums?",
+        "nl": "Wat is de naam van deze ruimte?"
       },
       "render": {
         "en": "This room is named {name}",
-        "de": "Der Name des Raums lautet {name}"
+        "de": "Der Name des Raums lautet {name}",
+        "nl": "Deze ruimte heet {name}"
       },
       "freeform": {
         "key": "name",
         "type": "string",
         "placeholder": {
-          "en": "Name of the room"
+          "en": "Name of the room",
+          "nl": "Naam van de ruimte"
         }
       },
       "condition": {

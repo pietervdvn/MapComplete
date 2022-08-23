@@ -9,10 +9,8 @@
   "description": {
     "en": "This maps shows all the changes made with MapComplete"
   },
-  "maintainer": "",
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
@@ -31,9 +29,6 @@
         "geoJsonZoomLevel": 8,
         "maxCacheAge": 0
       },
-      "calculatedTags": [
-        "_last_edit:contributor:lc:=feat.properties['_last_edit:contributor'].toLowerCase()"
-      ],
       "title": {
         "render": {
           "en": "Changeset for {theme}"
@@ -44,28 +39,68 @@
       },
       "tagRenderings": [
         {
-          "id": "render_id",
+          "id": "show_changeset_id",
           "render": {
             "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {
           "id": "contributor",
+          "question": {
+            "en": "What contributor did make this change?"
+          },
+          "freeform": {
+            "key": "user"
+          },
           "render": {
-            "en": "Change made by <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
+            "en": "Change made by <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
           }
         },
         {
-          "id": "theme",
+          "id": "theme-id",
+          "question": {
+            "en": "What theme was used to make this change?"
+          },
+          "freeform": {
+            "key": "theme"
+          },
           "render": {
             "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+          }
+        },
+        {
+          "id": "locale",
+          "freeform": {
+            "key": "locale"
+          },
+          "question": {
+            "en": "What locale (language) was this change made in?"
+          },
+          "render": {
+          "en": "User locale is {locale}"
+        }
+        },
+        {
+          "id": "host",
+          "render": {
+            "en": "Change with with <a href='{host}'>{host}</a>"
+          },
+          "question": {
+            "en": "What host (website) was this change made with?"
+          },
+          "freeform": {
+            "key": "host"
           },
           "mappings": [
             {
-              "if": "theme~http.*",
-              "then": {
-                "en": "Change with <b>unofficial</b> theme <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-              }
+              "if": "host=www.waldbrand-app.de",
+              "then": "waldbrand-app.de",
+              "hideInAnswer": true
+            },
+            {
+              "if": "host~https://pietervdvn.github.io/mc/develop/.*",
+              "then": "Develop",
+              "hideInAnswer": true
             }
           ]
         }
@@ -103,7 +138,7 @@
           "id": "created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc~i~.*{search}.*",
+              "osmTags": "user~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -119,7 +154,7 @@
           "id": "not_created_by",
           "options": [
             {
-              "osmTags": "_last_edit:contributor:lc!~i~.*{search}.*",
+              "osmTags": "user!~i~.*{search}.*",
               "fields": [
                 {
                   "name": "search"
@@ -127,6 +162,38 @@
               ],
               "question": {
                 "en": "<b>Not</b> made by contributor {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "locale-filter",
+          "options": [
+            {
+              "osmTags": "locale~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "User language (iso-code) {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "host_name",
+          "options": [
+            {
+              "osmTags": "host~i~.*{search}.*",
+              "fields": [
+                {
+                  "name": "search"
+                }
+              ],
+              "question": {
+                "en": "Made with host {search}"
               }
             }
           ]

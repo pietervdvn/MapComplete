@@ -9,9 +9,7 @@
   "description": {
     "nl": "Gebouwen met een FIXME - wss GRB-import die gefixed moeten worden"
   },
-  "maintainer": "",
   "icon": "./assets/svg/bug.svg",
-  "version": "0",
   "startLat": 51.2132,
   "startLon": 3.231,
   "startZoom": 14,

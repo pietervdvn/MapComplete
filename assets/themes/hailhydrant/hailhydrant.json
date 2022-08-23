@@ -39,9 +39,7 @@
     "es": "En este mapa puedes encontrar y actualizar bocas de incendios, parques de bomberos, parques de ambulancias y extintores en tus vecindarios favoritos.\n\nPuedes rastrear tu localización precisa (solo móvil) y seleccionar las capas que son relevantes para ti en la esquina inferior izquierda. También puedes utilizar esta herramienta para añadir o editar pines (puntos de interés) al mapa y proveer detalles adicionales contestando a preguntas disponibles.\n\nTodos los cambios que hagas se guardarán automáticamente en la base de datos global de OpenStreetMap y podrán ser reutilizados libremente por otros.",
     "nl": "Op deze kaart kan je hydranten, brandblussers, brandweerkazernes en stalplaatsen voor ambulances vinden en updaten.\n\nJe kan je exacte locatie bepalen (enkel via GSM) en relevante lagen selecteren in de linkeronderhoek. Je kan deze applicatie ook gebruiken om pins (points of interest) op de kaart te zetten en om extra details toe te voegen door vragen te beantwoorden.\n\nAlle wijzigingen die je maakt zullen automatisch worden opgeslagen in de globale database van OpenStreetMap en kunnen vrij door anderen gebruikt worden."
   },
-  "maintainer": "Erwin Olario",
   "icon": "./assets/themes/hailhydrant/logo.svg",
-  "version": "0",
   "startLat": 13.67801,
   "startLon": 121.6625,
   "startZoom": 6,
@@ -52,5 +50,6 @@
     "fire_station",
     "ambulancestation"
   ],
-  "defaultBackgroundId": "HDM_HOT"
+  "defaultBackgroundId": "HDM_HOT",
+  "credits": "Erwin Olario"
 }

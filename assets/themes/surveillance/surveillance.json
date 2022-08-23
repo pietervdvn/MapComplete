@@ -35,9 +35,7 @@
     "hu": "Ezen a térképen térfigyelő kamerák láthatók.",
     "ru": "На этой открытой карте можно найти камеры слежения."
   },
-  "maintainer": "",
   "icon": "./assets/themes/surveillance/logo.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

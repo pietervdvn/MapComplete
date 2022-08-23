@@ -31,9 +31,7 @@
     "hu": "Ezen a térképen az látható, hogy egy objektum milyen névre hallgat. Az utcák, épületek stb. az OpenStreetMapről származnak, amely össze van kapcsolva a Wikidata adatbázissal. A felugró ablakban megjelenik a megfelelő Wikipedia-szócikk (ha van) vagy egy Wikidata-doboz arról, amiről az objektumot elnevezték. Ha magának az objektumnak van Wikipédia-oldala, az is megjelenik.<br/><br/><b>A térképet Ön is szerkesztheti!</b>nagyítson rá, és <i>az összes</i> utca megjelenik. Ha valamelyikre rákattint, megjelenik Wikidata-kereső doboz. Néhány kattintással hozzáadhat egy etimológiai linket. Ne feledje, hogy ehhez szüksége van egy ingyenes OpenStreetMap-fiókra.",
     "fr": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc. proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikipedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi !</b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez sur l'une d'elles et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit."
   },
-  "maintainer": "",
   "icon": "./assets/layers/etymology/logo.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

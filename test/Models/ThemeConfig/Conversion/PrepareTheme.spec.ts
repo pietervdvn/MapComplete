@@ -28,14 +28,12 @@ const themeConfigJson: LayoutConfigJson = {
             }
         }
     ],
-    maintainer: "",
     startLat: 0,
     startLon: 0,
     startZoom: 0,
     title: {
         en: "Title"
     },
-    version: "",
     id: "test"
 }
 
@@ -118,13 +116,10 @@ describe("PrepareTheme", () => {
                        }
                    }
                ],
-               maintainer: "Me",
                startLat: 0,
                startLon: 0,
                startZoom: 0,
                title: "Test theme",
-               version: ""
-
            }
         const rewritten = new PrepareTheme(ctx, {
             skipDefaultLayers: true

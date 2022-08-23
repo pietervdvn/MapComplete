@@ -36,11 +36,9 @@
     "es": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista. Hecho durante #osoc21.",
     "ca": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista. Fet durant #osoc21."
   },
-  "maintainer": "MapComplete",
   "hideFromOverview": false,
   "defaultBackgroundId": "CartoDB.Voyager",
   "icon": "./assets/themes/cycle_infra/cycle-infra.svg",
-  "version": "0",
   "startLat": 51,
   "startLon": 3.75,
   "startZoom": 11,

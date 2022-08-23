@@ -122,12 +122,14 @@
   ],
   "description": {
     "en": "Layer showing all tasks in MapRoulette",
-    "de": "Ebene, die alle MapRoulette-Aufgaben zeigt"
+    "de": "Ebene, die alle MapRoulette-Aufgaben zeigt",
+    "nl": "Laag met alle taken uit MapRoulette"
   },
   "minzoom": 15,
   "name": {
     "en": "MapRoulette Tasks",
-    "de": "MapRoulette-Aufgaben"
+    "de": "MapRoulette-Aufgaben",
+    "nl": "MapRoulette Taken"
   },
   "title": {
     "render": {
@@ -148,62 +150,71 @@
         {
           "question": {
             "en": "Show tasks with all statuses",
-            "de": "Aufgaben mit allen Status anzeigen"
+            "de": "Aufgaben mit allen Status anzeigen",
+            "nl": "Toon taken met alle statussen"
           }
         },
         {
           "question": {
             "en": "Show tasks that are created",
-            "de": "Aufgaben anzeigen, die erstellt wurden"
+            "de": "Aufgaben anzeigen, die erstellt wurden",
+            "nl": "Toon aangemaakte taken"
           },
           "osmTags": "status=0"
         },
         {
           "question": {
             "en": "Show tasks that are fixed",
-            "de": "Aufgaben anzeigen, die erledigt wurden"
+            "de": "Aufgaben anzeigen, die erledigt wurden",
+            "nl": "Toon opgeloste taken"
           },
           "osmTags": "status=1"
         },
         {
           "question": {
             "en": "Show tasks that are false positives",
-            "de": "Aufgaben anzeigen, die falsch positiv sind"
+            "de": "Aufgaben anzeigen, die falsch positiv sind",
+            "nl": "Toon vals-positieve taken"
           },
           "osmTags": "status=2"
         },
         {
           "question": {
             "en": "Show tasks that are skipped",
-            "de": "Aufgaben anzeigen, die übersprungen wurden"
+            "de": "Aufgaben anzeigen, die übersprungen wurden",
+            "nl": "Toon overgeslagen taken"
           },
           "osmTags": "status=3"
         },
         {
           "question": {
             "en": "Show tasks that are deleted",
-            "de": "Aufgaben anzeigen, die gelöscht wurden"
+            "de": "Aufgaben anzeigen, die gelöscht wurden",
+            "nl": "Toon verwijderde taken"
           },
           "osmTags": "status=4"
         },
         {
           "question": {
             "en": "Show tasks that are already fixed",
-            "de": "Aufgaben anzeigen, die bereits erledigt wurden"
+            "de": "Aufgaben anzeigen, die bereits erledigt wurden",
+            "nl": "Toon al opgeloste taken"
           },
           "osmTags": "status=5"
         },
         {
           "question": {
             "en": "Show tasks that are marked as too hard",
-            "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden"
+            "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden",
+            "nl": "Toon taken die als te lastig gemarkeerd zijn"
           },
           "osmTags": "status=6"
         },
         {
           "question": {
             "en": "Show tasks that are disabled",
-            "de": "Aufgaben anzeigen, die deaktiviert wurden"
+            "de": "Aufgaben anzeigen, die deaktiviert wurden",
+            "nl": "Toon uitgeschakelde taken"
           },
           "osmTags": "status=9"
         }
@@ -221,7 +232,8 @@
           ],
           "question": {
             "en": "Challenge name contains {search}",
-            "de": "Name der Kampagne enthält {search}"
+            "de": "Name der Kampagne enthält {search}",
+            "nl": "Naam uitdaging bevat {search}"
           }
         }
       ]
@@ -238,7 +250,8 @@
           ],
           "question": {
             "en": "Challenge ID matches {search}",
-            "de": "Kampagnen ID stimmt mit {search} überein"
+            "de": "Kampagnen ID stimmt mit {search} überein",
+            "nl": "ID uitdaging is {search}"
           }
         }
       ]

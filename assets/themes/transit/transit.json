@@ -1,7 +1,5 @@
 {
   "id": "transit",
-  "maintainer": "Robin van der Linde",
-  "version": "20220406",
   "title": {
     "en": "Bus routes",
     "de": "Buslinien",
@@ -51,5 +49,6 @@
         "shelter-type"
       ]
     }
-  ]
+  ],
+  "credits": "Robin van der Linde"
 }

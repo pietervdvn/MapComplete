@@ -3,11 +3,15 @@ import Translations from "../i18n/Translations";
 import State from "../../State";
 import BaseLayer from "../../Models/BaseLayer";
 import {VariableUiElement} from "../Base/VariableUIElement";
+import {Store} from "../../Logic/UIEventSource";
 
 export default class BackgroundSelector extends VariableUiElement {
 
-    constructor() {
-        const available = State.state.availableBackgroundLayers.map(available => {
+    constructor(state: {availableBackgroundLayers?:Store<BaseLayer[]>} ) {
+        const available = state.availableBackgroundLayers?.map(available => {
+            if(available === undefined){
+                return undefined
+            }
                 const baseLayers: { value: BaseLayer, shown: string }[] = [];
                 for (const i in available) {
                     if (!available.hasOwnProperty(i)) {
@@ -21,8 +25,8 @@ export default class BackgroundSelector extends VariableUiElement {
         )
 
         super(
-            available.map(baseLayers => {
-                    if (baseLayers.length <= 1) {
+            available?.map(baseLayers => {
+                    if (baseLayers === undefined || baseLayers.length <= 1) {
                         return undefined;
                     }
                     return new DropDown(Translations.t.general.backgroundMap.Clone(), baseLayers, State.state.backgroundLayer, {

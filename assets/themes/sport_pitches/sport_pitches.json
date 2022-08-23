@@ -37,9 +37,7 @@
     "ru": "Спортивная площадка - пространство для занятий спортом",
     "es": "Una pista de deportes es una área donde so practican deportes"
   },
-  "maintainer": "",
   "icon": "./assets/layers/sport_pitch/table_tennis.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

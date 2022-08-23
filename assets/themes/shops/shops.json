@@ -34,9 +34,7 @@
     "es": "En este mapa, se puede marcar información básica sobre tiendas, añadir horarios de apertura y números de teléfono",
     "nl": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers"
   },
-  "maintainer": "MapComplete",
   "icon": "./assets/themes/shops/shop.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

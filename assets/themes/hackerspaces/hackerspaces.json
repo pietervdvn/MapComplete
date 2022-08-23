@@ -28,9 +28,7 @@
     "nl": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten",
     "fr": "Retrouvez, renseignez ou modifiez des ateliers numériques ouverts"
   },
-  "maintainer": "",
   "icon": "./assets/themes/hackerspaces/glider.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

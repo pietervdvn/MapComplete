@@ -57,9 +57,9 @@
   "tagRenderings": [
     {
       "render": {
-        "en": "The maximum allowed speed on this road is {maxspeed}",
-        "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}",
-        "nl": "De maximum toegestane snelheid op deze weg is {maxspeed}"
+        "en": "The maximum allowed speed on this road is {canonical(maxspeed)}",
+        "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {canonical(maxspeed)}",
+        "nl": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}"
       },
       "question": {
         "es": "Qué velocidad tiene",
@@ -174,7 +174,10 @@
         },
         {
           "canonicalDenomination": "mph",
-          "useIfNoUnitGiven": ["gb","us"],
+          "useIfNoUnitGiven": [
+            "gb",
+            "us"
+          ],
           "alternativeDenomination": [
             "m/u",
             "mh",

@@ -3186,6 +3186,9 @@
                     },
                     "1": {
                         "then": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite"
+                    },
+                    "2": {
+                        "then": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite"
                     }
                 },
                 "question": "Combien y a-t-il de places de stationnement pour personnes à mobilité réduite dans ce parking ?",
@@ -3815,6 +3818,9 @@
                     },
                     "3": {
                         "then": "Privé - Pas accessible au public"
+                    },
+                    "4": {
+                        "then": "Accessible au public"
                     }
                 },
                 "question": "Est-ce que ce terrain de sport est accessible au public ?"

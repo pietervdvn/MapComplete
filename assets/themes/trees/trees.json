@@ -45,9 +45,7 @@
     "ca": "Mapeja tots els arbres.",
     "es": "Mapa de todos los Árboles"
   },
-  "maintainer": "Midgard",
   "icon": "./assets/themes/trees/logo.svg",
-  "version": "0",
   "startLat": 50.642,
   "startLon": 4.482,
   "startZoom": 8,
@@ -61,5 +59,6 @@
   "layers": [
     "tree_node"
   ],
-  "defaultBackgroundId": "AGIV"
+  "defaultBackgroundId": "AGIV",
+  "credits": "Midgard"
 }

@@ -146,8 +146,8 @@ export default class CopyrightPanel extends Combine {
         const iconAttributions = layoutToUse.usedImages.map(CopyrightPanel.IconAttribution)
 
         let maintainer: BaseUIElement = undefined
-        if (layoutToUse.maintainer !== undefined && layoutToUse.maintainer !== "" && layoutToUse.maintainer.toLowerCase() !== "mapcomplete") {
-            maintainer = t.themeBy.Subs({author: layoutToUse.maintainer})
+        if (layoutToUse.credits !== undefined && layoutToUse.credits !== "") {
+            maintainer = t.themeBy.Subs({author: layoutToUse.credits})
         }
 
         const contributions = new ContributorCount(state).Contributors
@@ -190,7 +190,6 @@ export default class CopyrightPanel extends Combine {
             new Title(t.attributionTitle),
             t.attributionContent,
             maintainer,
-            new FixedUiElement(layoutToUse.credits),
              dataContributors,
             CopyrightPanel.CodeContributors(contributors, t.codeContributionsBy),
             CopyrightPanel.CodeContributors(translators, t.translatedBy),

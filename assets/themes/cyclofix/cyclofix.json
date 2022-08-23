@@ -27,10 +27,8 @@
     "hu": "Ez a térkép kerékpárosoknak kíván könnyen használható megoldást nyújtani a számukra fontos infrastruktúra megtalálásához.<br><br>A bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára fontos rétegeket. Az eszköz segítségével gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a kérdések megválaszolásával pedig további adatokat szolgáltathat.<br><br>Minden módosítás automatikusan elmentődik az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják.<br><br>A cyclofix projektről további információkat a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> oldalon talál.",
     "es": "El objetivo de este mapa es presentar a los ciclistas con una solución fácil de utilizar para encontrar la infraestructura apropiada para sus necesidades. <br><br>Puedes seguir tu localización precisa (móvil solo) y seleccionar las capas que son relevantes para ti en la esquina inferior izquierda. Tgambién puedes utilizar esta herramienta para editar o añadir pines (puntos de interés) al mapa y proveer más datos respondiendo a preguntas.<br><br>Todos los cambios que hagas se guardarán de manera automática en la base de datos global de OpenStreetMap y podrán ser utilizados libremente por otros. <br><br>Para más información sobre el proyecto cyclofix, ve a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>."
   },
-  "maintainer": "MapComplete",
   "credits": "Originally created during Open Summer of Code by Pieter Fiers, Thibault Declercq, Pierre Barban, Joost Schouppe and Pieter Vander Vennet",
   "icon": "./assets/themes/cyclofix/logo.svg",
-  "version": "0",
   "startLat": 0,
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 0,

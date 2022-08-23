@@ -2017,6 +2017,9 @@
                     },
                     "3": {
                         "then": "Privato - non aperto al pubblico"
+                    },
+                    "4": {
+                        "then": "Aperto al pubblico"
                     }
                 },
                 "question": "Questo campo sportivo è aperto al pubblico?"

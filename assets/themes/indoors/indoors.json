@@ -10,9 +10,7 @@
     "de": "Diese Karte zeigt öffentlich zugängliche Innenräume",
     "fr": "Cette carte présente les lieux intérieurs accessibles au public"
   },
-  "maintainer": "MapComplete",
   "icon": "./assets/layers/entrance/entrance.svg",
-  "version": "0",
   "startLat": 51.17181,
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLon": 4.144383,

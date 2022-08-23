@@ -10,10 +10,8 @@
     "de": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können.",
     "fr": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches."
   },
-  "version": "1.0.0",
   "hideFromOverview": true,
   "icon": "./assets/layers/maproulette/logomark.svg",
-  "maintainer": "",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 4,

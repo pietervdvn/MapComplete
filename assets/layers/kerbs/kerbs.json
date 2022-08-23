@@ -138,7 +138,8 @@
       "question": {
         "en": "Is there tactile paving at this kerb?",
         "de": "Gibt es am Bordstein ein taktiles Pflaster?",
-        "fr": "Y a-t-il un revêtement tactile sur cette bordure ?"
+        "fr": "Y a-t-il un revêtement tactile sur cette bordure ?",
+        "nl": "Is er voelbare bestrating bij deze stoeprand?"
       },
       "mappings": [
         {
@@ -146,7 +147,8 @@
           "then": {
             "en": "This kerb has tactile paving.",
             "de": "Der Bordstein hat ein taktiles Pflaster.",
-            "fr": "Cette bordure a un revêtement podotactile."
+            "fr": "Cette bordure a un revêtement podotactile.",
+            "nl": "Deze stoeprand heeft voelbare bestrating."
           }
         },
         {
@@ -154,15 +156,17 @@
           "then": {
             "en": "This kerb does not have tactile paving.",
             "de": "Der Bordstein hat kein taktiles Pflaster.",
-            "fr": "Cette bordure n'a pas de revêtement podotactile."
+            "fr": "Cette bordure n'a pas de revêtement podotactile.",
+            "nl": "Deze stoeprand heeft geen voelbare bestrating."
           }
         },
         {
           "if": "tactile_paving=incorrect",
           "then": {
-            "en": "This kerb has tactile paving, but it is incorrect",
-            "de": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist",
-            "fr": "Cette bordure a un pavage tactile, mais il est incorrect"
+            "en": "This kerb has tactile paving, but it is incorrect.",
+            "de": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist.",
+            "fr": "Cette bordure a un pavage tactile, mais il est incorrect.",
+            "nl": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect."
           },
           "hideInAnswer": true
         }
@@ -289,7 +293,7 @@
             "en": "Kerbs with or without tactile paving",
             "de": "Bordsteine mit oder ohne taktilem Pflaster",
             "fr": "Bordures avec ou sans revêtement podotactile",
-            "nl": "Drempes met of zonder"
+            "nl": "Stoepranden met of zonder voelbare bestrating"
           }
         },
         {
@@ -297,7 +301,8 @@
           "question": {
             "en": "Kerb with tactile paving",
             "de": "Bordstein mit taktilem Pflaster",
-            "fr": "Bordure avec revêtement podotactile"
+            "fr": "Bordure avec revêtement podotactile",
+            "nl": "Stoeprand met voelbare bestrating"
           }
         },
         {
@@ -305,7 +310,8 @@
           "question": {
             "en": "Kerb without tactile paving",
             "de": "Bordstein ohne taktilem Pflaster",
-            "fr": "Bordure sans revêtement podotactile"
+            "fr": "Bordure sans revêtement podotactile",
+            "nl": "Stoeprand zonder voelbare bestrating"
           }
         },
         {
@@ -313,7 +319,8 @@
           "question": {
             "en": "Kerb wihout information about tactile paving",
             "de": "Bordstein ohne Informationen über taktiles Pflaster",
-            "fr": "Bordure sans information sur le revêtement podotactile"
+            "fr": "Bordure sans information sur le revêtement podotactile",
+            "nl": "Stoeprand zonder informatie over voelbare bestrating"
           }
         }
       ]

@@ -25,9 +25,7 @@
     "da": "Pubber og barer",
     "nb_NO": "Kneiper og barer"
   },
-  "maintainer": "",
   "icon": "./assets/layers/cafe_pub/pub.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,

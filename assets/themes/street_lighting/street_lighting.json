@@ -1,7 +1,5 @@
 {
   "id": "street_lighting",
-  "maintainer": "Robin van der Linde",
-  "version": "2021-10-22",
   "title": {
     "en": "Street Lighting",
     "nl": "Straatverlichting",
@@ -274,5 +272,6 @@
       ],
       "allowSplit": true
     }
-  ]
+  ],
+  "credits": "Robin van der Linde"
 }

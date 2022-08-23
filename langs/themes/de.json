@@ -654,68 +654,6 @@
         "description": "Eine Karte mit Bordsteinen und Überwegen.",
         "title": "Bordsteine und Überwege"
     },
-    "mapcomplete-changes": {
-        "description": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
-        "layers": {
-            "0": {
-                "description": "Zeigt alle MapComplete Änderungen",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themenname enthält {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Erstellt von {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Nicht</b> erstellt von {search}"
-                            }
-                        }
-                    }
-                },
-                "name": "Zentrum der Änderungssätze",
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Geändert von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
-                    },
-                    "render_id": {
-                        "render": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme": {
-                        "mappings": {
-                            "0": {
-                                "then": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-                            }
-                        },
-                        "render": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
-                    }
-                },
-                "title": {
-                    "render": "Änderungssatz für {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Zeigt die mit MapComplete vorgenommenen Änderungen",
-        "title": "Mit MapComplete vorgenommene Änderungen"
-    },
     "maproulette": {
         "description": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können.",
         "title": "MapRoulette-Aufgaben"
@@ -909,28 +847,6 @@
                 "tagRenderings": {
                     "streetname": {
                         "render": "Diese Straße heißt {name}"
-                    },
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "question": "Gibt es auf dieser Straßenseite einen Bürgersteig?",
-                                "mappings": {
-                                    "1": {
-                                        "then": "Nein, es gibt keinen Bürgersteig für Fußgänger"
-                                    },
-                                    "0": {
-                                        "then": "Ja, es gibt einen Bürgersteig auf dieser Straßenseite"
-                                    },
-                                    "2": {
-                                        "then": "Es gibt einen separat kartierten Bürgersteig für Fußgänger"
-                                    }
-                                }
-                            },
-                            "2": {
-                                "question": "Wie breit ist der Bürgersteig auf dieser Straßenseite?",
-                                "render": "Dieser Bürgersteig ist {sidewalk:left|right:width}m breit"
-                            }
-                        }
                     }
                 },
                 "title": {

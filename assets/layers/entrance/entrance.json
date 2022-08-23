@@ -358,9 +358,9 @@
     {
       "id": "width",
       "render": {
-        "en": "This door has a width of {canonical(width)} meter",
-        "nl": "Deze deur heeft een breedte van {canonical(width)} meter",
-        "de": "Diese Tür hat eine Durchgangsbreite von {canonical(width)} Meter",
+        "en": "This door has a width of {canonical(width)}",
+        "nl": "Deze deur heeft een breedte van {canonical(width)}",
+        "de": "Diese Tür hat eine Durchgangsbreite von {canonical(width)}",
         "es": "Esta puerta tiene una ancho de {canonical(width)} metros",
         "fr": "Cette porte a une largeur de {canonical(width)} mètre"
       },
@@ -451,7 +451,8 @@
     {
       "title": {
         "en": "an indoor door",
-        "de": "eine Innentür"
+        "de": "eine Innentür",
+        "nl": "een binnendeur"
       },
       "preciseInput": {
         "preferredBackground": "map",
@@ -471,7 +472,7 @@
         "width"
       ],
       "applicableUnits": [
-        {  
+        {
           "useIfNoUnitGiven": true,
           "canonicalDenomination": "m",
           "alternativeDenomination": [

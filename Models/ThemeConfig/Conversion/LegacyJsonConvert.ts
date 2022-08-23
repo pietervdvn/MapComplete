@@ -18,7 +18,7 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
             // Reuse of an already existing layer; return as-is
             return {result: json, errors: [], warnings: []}
         }
-        let config  = {...json};
+        let config = {...json};
 
         if (config["overpassTags"]) {
             config.source = config.source ?? {
@@ -123,16 +123,17 @@ export class UpdateLegacyLayer extends DesugaringStep<LayerConfigJson | string |
 
 class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
     constructor() {
-        super("Small fixes in the theme config", ["roamingRenderings"],"UpdateLegacyTheme");
+        super("Small fixes in the theme config", ["roamingRenderings"], "UpdateLegacyTheme");
     }
 
     convert(json: LayoutConfigJson, context: string): { result: LayoutConfigJson; errors: string[]; warnings: string[] } {
         const oldThemeConfig = {...json}
-        
-        if(oldThemeConfig.socialImage === ""){
+
+        if (oldThemeConfig.socialImage === "") {
             delete oldThemeConfig.socialImage
         }
-        
+
+
         if (oldThemeConfig["roamingRenderings"] !== undefined) {
 
             if (oldThemeConfig["roamingRenderings"].length == 0) {
@@ -148,6 +149,21 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
 
         oldThemeConfig.layers = Utils.NoNull(oldThemeConfig.layers)
         delete oldThemeConfig["language"]
+        delete oldThemeConfig["version"]
+
+        if (oldThemeConfig["maintainer"] !== undefined) {
+
+            console.log("Maintainer: ", oldThemeConfig["maintainer"], "credits: ", oldThemeConfig["credits"])
+            if (oldThemeConfig.credits === undefined) {
+                oldThemeConfig["credits"] = oldThemeConfig["maintainer"]
+                delete oldThemeConfig["maintainer"]
+            } else if (oldThemeConfig["maintainer"].toLowerCase().trim() === "mapcomplete") {
+                delete oldThemeConfig["maintainer"]
+            } else if (oldThemeConfig["maintainer"].toLowerCase().trim() === "") {
+                delete oldThemeConfig["maintainer"]
+            }
+        }
+
         return {
             errors: [],
             warnings: [],
@@ -161,7 +177,7 @@ export class FixLegacyTheme extends Fuse<LayoutConfigJson> {
         super(
             "Fixes a legacy theme to the modern JSON format geared to humans. Syntactic sugars are kept (i.e. no tagRenderings are expandend, no dependencies are automatically gathered)",
             new UpdateLegacyTheme(),
-            new On("layers",new Each( new UpdateLegacyLayer()))
+            new On("layers", new Each(new UpdateLegacyLayer()))
         );
     }
 }

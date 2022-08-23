@@ -16,9 +16,7 @@
   "descriptionTail": {
     "nl": "<h4>Tips</h4><ul><li>Over groen ingekleurde gebieden weten we alles wat we willen weten.</li><li>Bij rood ingekleurde gebieden ontbreekt nog heel wat info: klik een gebied aan en beantwoord de vragen.</li><li>Je kan altijd een vraag overslaan als je het antwoord niet weet of niet zeker bent</li><li>Je kan altijd een foto toevoegen</li><li>Je kan ook zelf een gebied toevoegen door op de kaart te klikken</li><li>Open buurtnatuur.be <b>op je smartphone</b> om al wandelend foto's te maken en vragen te beantwoorden</li></ul><small><p>De oorspronkelijke data komt van <b>OpenStreetMap</b> en je antwoorden worden daar bewaard.<br/> Omdat iedereen vrij kan meewerken aan dit project, kunnen we niet garanderen dat er geen fouten opduiken.Kan je hier niet aanpassen wat je wilt, dan kan je dat zelf via OpenStreetMap.org doen. Groen kan <b>geen enkele verantwoordelijkheid</b> nemen over de kaart.</p>Je privacy is belangrijk. We tellen wel hoeveel gebruikers deze website bezoeken. We plaatsen een cookie waar geen persoonlijke informatie in bewaard wordt. Als je inlogt, komt er een tweede cookie bij met je inloggegevens.</small>"
   },
-  "maintainer": "Pieter Vander Vennet",
   "icon": "./assets/themes/buurtnatuur/logo.svg",
-  "version": "0",
   "startLat": 50.8435,
   "startLon": 4.3688,
   "startZoom": 16,
@@ -612,5 +610,6 @@
         ]
       }
     ]
-  }
+  },
+  "credits": "Pieter Vander Vennet"
 }
