@@ -537,6 +537,10 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 errors
             }
         }
+        
+        if(json.minzoom > Constants.userJourney.minZoomLevelToAddNewPoints ){
+            (json.presets?.length > 0 ? errors : warnings).push(`At ${context}: minzoom is ${json.minzoom}, this should be at most ${Constants.userJourney.minZoomLevelToAddNewPoints} as a preset is set. Why? Selecting the pin for a new item will zoom in to level before adding the point. Having a greater minzoom will hide the points, resulting in possible duplicates`)
+        }
 
         {
             // duplicate ids in tagrenderings check
