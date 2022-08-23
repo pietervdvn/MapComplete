@@ -2,7 +2,6 @@ import {appendFileSync, existsSync, mkdirSync, readFileSync, writeFile, writeFil
 import Locale from "../UI/i18n/Locale";
 import Translations from "../UI/i18n/Translations";
 import {Translation} from "../UI/i18n/Translation";
-import Constants from "../Models/Constants";
 import * as all_known_layouts from "../assets/generated/known_layers_and_themes.json"
 import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
@@ -106,8 +105,6 @@ async function createManifest(layout: LayoutConfig, alreadyWritten: string[]): P
     manifest: any,
     whiteIcons: string[]
 }> {
-    const name = layout.id;
-
     Translation.forcedLanguage = "en"
     const icons = [];
 
@@ -326,17 +323,15 @@ async function main(): Promise<void> {
     }
 
 
-    const {manifest, whiteIcons} = await createManifest(new LayoutConfig({
+    const {manifest} = await createManifest(new LayoutConfig({
         icon: "./assets/svg/mapcomplete_logo.svg",
         id: "index",
         layers: [],
-        maintainer: "Pieter Vander Vennet",
         socialImage: "assets/SocialImage.png",
         startLat: 0,
         startLon: 0,
         startZoom: 0,
         title: {en: "MapComplete"},
-        version: Constants.vNumber,
         description: {en: "A thematic map viewer and editor based on OpenStreetMap"}
     }), alreadyWritten);
 
