@@ -38,9 +38,6 @@
             "thursday": "Četrtek",
             "tuesday": "Torek",
             "wednesday": "Sreda"
-        },
-        "add": {
-            "addNew": ""
         }
     },
     "image": {
@@ -54,19 +51,7 @@
         "pickTheme": "Za začetek spodaj izberite tematiko.",
         "title": "Dobrodošli na MapComplete"
     },
-    "matrixbot": {
-        "commands": {
-            "documentation": {
-                "url_parameter": {
-                    "singular": ""
-                }
-            }
-        }
-    },
     "notes": {
         "warnAnonymous": ""
-    },
-    "split": {
-        "hasBeenSplit": ""
     }
 }

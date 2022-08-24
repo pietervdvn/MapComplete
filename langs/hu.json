@@ -378,8 +378,5 @@
         "loginToSplit": "Egy út szétvágásához be kell jelentkezni",
         "split": "Szétvágás",
         "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva"
-    },
-    "matrixbot": {
-        "tooLongForPublic": ""
     }
 }

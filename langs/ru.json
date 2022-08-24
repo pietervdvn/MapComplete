@@ -191,17 +191,7 @@
         "split": "Разделить",
         "splitTitle": "Выберите карту на которой хотите разделить дорогу"
     },
-    "matrixbot": {
-        "commands": {
-            "documentation": {
-                "overview": ""
-            }
-        }
-    },
     "notes": {
         "addAComment": ""
-    },
-    "importLayer": {
-        "popupTitle": ""
     }
 }

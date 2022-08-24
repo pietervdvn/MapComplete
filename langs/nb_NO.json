@@ -527,8 +527,5 @@
         "wikidata": {
             "description": "En Wikidata-identifikator"
         }
-    },
-    "importLayer": {
-        "popupTitle": ""
     }
 }

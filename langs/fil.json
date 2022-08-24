@@ -58,23 +58,11 @@
             "importTags": "Ang bahaging ito ay magkakaroon ng {tags}",
             "intro": "Nag-klik ka kung saan wala pang nababatid na datos.<br>",
             "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók"
-        },
-        "weekdays": {
-            "abbreviations": {
-                "monday": ""
-            }
         }
     },
     "importHelper": {
         "selectFile": {
             "errNoName": ""
-        }
-    },
-    "matrixbot": {
-        "commands": {
-            "wiki": {
-                "docs": ""
-            }
         }
     },
     "professional": {

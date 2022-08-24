@@ -102,17 +102,7 @@
         "title": "{count} recenzoj",
         "title_singular": "Unu recenzo"
     },
-    "matrixbot": {
-        "commands": {
-            "shutdown": {
-                "verbshutdown": ""
-            }
-        }
-    },
     "notes": {
         "reopenNote": ""
-    },
-    "importInspector": {
-        "title": ""
     }
 }

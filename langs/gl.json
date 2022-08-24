@@ -168,17 +168,7 @@
         "title_singular": "Unha recensión",
         "write_a_comment": "Deixa unha recensión…"
     },
-    "matrixbot": {
-        "commands": {
-            "documentation": {
-                "urlParam": ""
-            }
-        }
-    },
     "notes": {
         "loginToAddPicture": ""
-    },
-    "delete": {
-        "cannotBeDeleted": ""
     }
 }

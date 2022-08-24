@@ -169,17 +169,7 @@
         "split": "Podziel",
         "splitTitle": "Wybierz na mapie gdzie podzielić tę drogę"
     },
-    "matrixbot": {
-        "commands": {
-            "info": {
-                "nothingFound": ""
-            }
-        }
-    },
     "notes": {
         "reopenNoteAndComment": ""
-    },
-    "privacy": {
-        "geodataTitle": ""
     }
 }

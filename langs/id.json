@@ -225,13 +225,6 @@
             "description": "Pengidentifikasi Wikidata"
         }
     },
-    "matrixbot": {
-        "commands": {
-            "dm": {
-                "argbody": ""
-            }
-        }
-    },
     "professional": {
         "aboutOsm": {
             "vandalism": {

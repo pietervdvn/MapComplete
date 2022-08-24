@@ -1,19 +1,7 @@
 {
-    "general": {
-        "add": {
-            "disableFiltersExplanation": ""
-        }
-    },
     "importHelper": {
         "conflationChecker": {
             "importCandidatesCount": ""
-        }
-    },
-    "matrixbot": {
-        "commands": {
-            "role": {
-                "docs": ""
-            }
         }
     },
     "professional": {
@@ -21,11 +9,6 @@
             "aboutOsm": {
                 "li2": ""
             }
-        }
-    },
-    "validation": {
-        "wikidata": {
-            "description": ""
         }
     }
 }

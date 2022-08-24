@@ -39,9 +39,6 @@
             "thursday": "Torsdag",
             "tuesday": "Tisdag",
             "wednesday": "Onsdag"
-        },
-        "attribution": {
-            "editId": ""
         }
     },
     "image": {
@@ -73,21 +70,7 @@
         "cancel": "Avbryt",
         "split": "Dela"
     },
-    "matrixbot": {
-        "commands": {
-            "documentation": {
-                "theme": {
-                    "singular": ""
-                }
-            }
-        }
-    },
     "notes": {
         "isClosed": ""
-    },
-    "validation": {
-        "opening_hours": {
-            "description": ""
-        }
     }
 }

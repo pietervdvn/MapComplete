@@ -41,8 +41,7 @@
             "thursday": "Torstai",
             "tuesday": "Tiistai",
             "wednesday": "Keskiviikko"
-        },
-        "logout": ""
+        }
     },
     "image": {
         "addPicture": "Lisää kuva",
@@ -59,21 +58,7 @@
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu"
     },
-    "matrixbot": {
-        "commands": {
-            "documentation": {
-                "theme": {
-                    "singular": ""
-                }
-            }
-        }
-    },
     "notes": {
         "textNeeded": ""
-    },
-    "delete": {
-        "explanations": {
-            "retagOtherThemes": ""
-        }
     }
 }

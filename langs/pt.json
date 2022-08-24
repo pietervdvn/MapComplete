@@ -308,15 +308,6 @@
         "split": "Dividir",
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
     },
-    "matrixbot": {
-        "commands": {
-            "documentation": {
-                "file": {
-                    "singular": ""
-                }
-            }
-        }
-    },
     "professional": {
         "aboutOsm": {
             "vandalism": {

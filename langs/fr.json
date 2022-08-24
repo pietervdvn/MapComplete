@@ -349,8 +349,5 @@
     "translations": {
         "isTranslator": "Mode traduction activé, votre pseudo correspond à celui d’une personne de l’équipe de traduction",
         "missing": "{count} segments non traduits"
-    },
-    "matrixbot": {
-        "commandNotFound": ""
     }
 }
