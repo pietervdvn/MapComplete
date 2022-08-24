@@ -12,7 +12,9 @@
         "explanations": {
             "hardDelete": "這個圖徵已經在開放街圖被刪除了，可以被實驗性的貢獻者恢復",
             "selectReason": "請選擇為什麼這個圖徵應該被刪除",
-            "softDelete": "這個圖徵已經被更新，然後從程式被隱藏了。<span class=\"subtle\">{reason}</span>"
+            "softDelete": "這個圖徵已經被更新，然後從程式被隱藏了。<span class=\"subtle\">{reason}</span>",
+            "retagOtherThemes": "",
+            "retagNoOtherThemes": ""
         },
         "isDeleted": "這圖徵已經刪除",
         "isntAPoint": "只有點可以被刪，選取的圖徵是路徑、區域或是關聯。",
@@ -49,7 +51,13 @@
             "disableFiltersExplanation": "有些圖徵可能被篩選器隱藏",
             "hasBeenImported": "這個點已經被匯入了",
             "import": {
-                "hasBeenImported": "此物件已匯入"
+                "hasBeenImported": "此物件已匯入",
+                "zoomInMore": "",
+                "importTags": "",
+                "wrongType": "",
+                "officialThemesOnly": "",
+                "howToTest": "",
+                "wrongTypeToConflate": ""
             },
             "intro": "您點擊處目前未有已知的資料。<br>",
             "layerNotEnabled": "圖層 {layer} 目前無法使用，請先啟用這圖層再加新的節點",
@@ -60,7 +68,9 @@
             "title": "新增新的節點？",
             "warnVisibleForEveryone": "你新增的東西將會被所有人看到",
             "zoomInFurther": "放大來新增新的節點。",
-            "zoomInMore": "再放大來匯入這一圖徵"
+            "zoomInMore": "再放大來匯入這一圖徵",
+            "wrongType": "",
+            "importTags": ""
         },
         "attribution": {
             "attributionContent": "<p>所有資料由<a href=\"https://osm.org\" target=\"_blank\">開放街圖</a>提供，在<a href=\"https://osm.org/copyright\" target=\"_blank\">開放資料庫授權條款</a>之下自由再利用。</p>",
@@ -71,7 +81,20 @@
             },
             "mapContributionsBy": "目前檢視的資料由 {contributors} 貢獻編輯",
             "mapContributionsByAndHidden": "目前顯到的資料是由 {contributors} 和其他 {hiddenCount} 位貢獻者編輯貢獻",
-            "themeBy": "由 {author} 維護主題"
+            "themeBy": "由 {author} 維護主題",
+            "editJosm": "",
+            "openOsmcha": "",
+            "translatedBy": "",
+            "openMapillary": "",
+            "josmOpened": "",
+            "editId": "",
+            "donate": "",
+            "openIssueTracker": "",
+            "josmNotOpened": "",
+            "followBridge": "",
+            "mapillaryHelp": "",
+            "followOnTwitter": "",
+            "followOnMastodon": ""
         },
         "backgroundMap": "背景地圖",
         "cancel": "取消",
@@ -87,7 +110,15 @@
             "downloadGeojson": "下載可視資料為 GeoJSON",
             "exporting": "匯出…",
             "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
-            "title": "下載可視的資料"
+            "title": "下載可視的資料",
+            "noDataLoaded": "",
+            "downloadFeatureAsGeojson": "",
+            "licenseInfo": "",
+            "uploadGpx": "",
+            "downloadFeatureAsGpx": "",
+            "downloadGpxHelper": "",
+            "downloadAsSvgHelper": "",
+            "downloadGpx": ""
         },
         "fewChangesBefore": "請先回答有關既有節點的問題再來新增新節點。",
         "getStartedLogin": "登入開放街圖帳號來開始",
@@ -107,7 +138,10 @@
             "intro": "<h3>看更多主題地圖？</h3>您喜歡蒐集地理資料嗎？<br>還有更多主題。",
             "previouslyHiddenTitle": "先前看過隱藏的主題",
             "requestATheme": "如果你有客製化主題，請到問題追踪器那邊提出要求",
-            "streetcomplete": "行動裝置另有類似的應用程式 <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>。"
+            "streetcomplete": "行動裝置另有類似的應用程式 <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>。",
+            "noMatchingThemes": "",
+            "noSearch": "",
+            "searchForATheme": ""
         },
         "nameInlineQuestion": "這個 {category} 的名稱是 $$$",
         "noNameCategory": "{category} 沒有名稱",
@@ -127,7 +161,9 @@
             "opensAt": "開始時間",
             "ph_closed": "無營業",
             "ph_not_known": " ",
-            "ph_open": "有營業"
+            "ph_open": "有營業",
+            "loadingCountry": "",
+            "ph_open_as_usual": ""
         },
         "osmLinkTooltip": "在開放街圖歷史和更多編輯選項下面來瀏覽這物件",
         "pdf": {
@@ -171,7 +207,9 @@
             "fsUserbadge": "啟用登入按鈕",
             "fsWelcomeMessage": "顯示歡迎訊息以及相關頁籤",
             "intro": "<h3>分享這地圖</h3>複製下面的連結來向朋友與家人分享這份地圖：",
-            "thanksForSharing": "感謝分享！"
+            "thanksForSharing": "感謝分享！",
+            "downloadCustomTheme": "",
+            "downloadCustomThemeHelp": ""
         },
         "skip": "跳過這問題",
         "skippedQuestions": "有些問題已經跳過了",
@@ -194,7 +232,56 @@
             "tuesday": "星期二",
             "wednesday": "星期三"
         },
-        "welcomeBack": "你已經登入了，歡迎回來！"
+        "welcomeBack": "你已經登入了，歡迎回來！",
+        "removeLocationHistory": "",
+        "useSearchForMore": "",
+        "welcomeExplanation": {
+            "addNew": "",
+            "browseOtherThemesIntro": "",
+            "general": "",
+            "browseMoreMaps": ""
+        },
+        "back": "",
+        "backToMapcomplete": "",
+        "apply_button": {
+            "isApplied": "",
+            "appliedOnAnotherObject": ""
+        },
+        "example": "",
+        "next": "",
+        "wikipedia": {
+            "searchToShort": "",
+            "noResults": "",
+            "noWikipediaPage": "",
+            "createNewWikidata": "",
+            "wikipediaboxTitle": "",
+            "previewbox": {
+                "died": "",
+                "born": ""
+            },
+            "searchWikidata": "",
+            "loading": "",
+            "doSearch": "",
+            "failed": "",
+            "fromWikipedia": ""
+        },
+        "useSearch": "",
+        "poweredByOsm": "",
+        "levelSelection": {
+            "confirmLevel": "",
+            "addNewOnLevel": ""
+        },
+        "screenToSmall": "",
+        "noMatchingMapping": "",
+        "notValid": "",
+        "error": "",
+        "examples": "",
+        "histogram": {
+            "error_loading": ""
+        },
+        "logout": "",
+        "loadingTheme": "",
+        "loginFailed": ""
     },
     "image": {
         "addPicture": "新增圖片",
@@ -212,14 +299,32 @@
         "uploadMultipleDone": "已經新增 {count} 圖片，謝謝你的幫忙！",
         "uploadingMultiple": "正在上傳 {count} 張圖片…",
         "uploadingPicture": "正在上傳你的圖片…",
-        "willBePublished": "你的圖片將依以下授權釋出： "
+        "willBePublished": "你的圖片將依以下授權釋出： ",
+        "ccoExplanation": "",
+        "nearbyPictures": {
+            "confirm": "",
+            "title": "",
+            "withinRadius": "",
+            "loadMore": "",
+            "browseNearby": "",
+            "nothingFound": "",
+            "onlyTowards": "",
+            "removeFilters": "",
+            "hasMatchingPicture": "",
+            "noImageSelected": "",
+            "loading": "",
+            "allFiltered": ""
+        },
+        "ccbExplanation": "",
+        "ccbsExplanation": ""
     },
     "index": {
         "#": "當沒有載入主題時，這些文字會在主題按鈕上面顯示",
         "featuredThemeTitle": "這週的焦點",
         "intro": "MapComplete 是開放街圖能夠顯示特定主題的檢視器與編輯器，能夠顯示與允許更新特定主題的地圖。",
         "pickTheme": "請挑選主題來開始。",
-        "title": "歡迎使用 MapComplete"
+        "title": "歡迎使用 MapComplete",
+        "logIn": ""
     },
     "reviews": {
         "affiliated_reviewer_warning": "(關係者審核)",
@@ -244,5 +349,551 @@
         "loginToSplit": "你必須登入才能分割道路",
         "split": "分開",
         "splitTitle": "請在地圖選擇要在那裡分割道路"
+    },
+    "importHelper": {
+        "compareToAlreadyExistingNotes": {
+            "mapExplanation": "",
+            "nothingNearby": "",
+            "titleLong": "",
+            "wontBeImported": "",
+            "someNearby": "",
+            "completelyImported": "",
+            "loadingFailed": "",
+            "noPreviousNotesFound": "",
+            "loading": "",
+            "title": ""
+        },
+        "conflationChecker": {
+            "titleLive": "",
+            "osmLoaded": "",
+            "reloadTheCache": "",
+            "title": "",
+            "titleNearby": "",
+            "importCandidatesCount": "",
+            "zoomLevelSelection": "",
+            "nearbyWarn": "",
+            "zoomIn": "",
+            "states": {
+                "running": "",
+                "unexpected": "",
+                "error": "",
+                "idle": ""
+            },
+            "showOsmLayerInConflationMap": "",
+            "loadedDataAge": "",
+            "setRangeToZero": "",
+            "cacheExpired": "",
+            "downloadOverpassData": "",
+            "mapShowingNearbyIntro": "",
+            "nothingLoaded": ""
+        },
+        "introduction": {
+            "description": "",
+            "importFormat": "",
+            "title": ""
+        },
+        "previewAttributes": {
+            "someHaveSame": "",
+            "inspectDataTitle": "",
+            "inspectLooksCorrect": "",
+            "allAttributesSame": "",
+            "title": ""
+        },
+        "confirmProcess": {
+            "titleLong": "",
+            "wikipageIsMade": "",
+            "readImportGuidelines": "",
+            "contactedCommunity": "",
+            "title": "",
+            "licenseIsCompatible": ""
+        },
+        "title": "",
+        "selectFile": {
+            "errDuplicate": "",
+            "errNoLatOrLon": "",
+            "errNotFeatureCollection": "",
+            "errPointsOnly": "",
+            "fileFormatDescription": "",
+            "title": "",
+            "loadedFilesAre": "",
+            "noFilesLoaded": "",
+            "description": "",
+            "fileFormatDescriptionGeoJson": "",
+            "fileFormatDescriptionCsv": "",
+            "errNoName": ""
+        },
+        "askMetadata": {
+            "giveSource": "",
+            "intro": "",
+            "shouldBeUrl": "",
+            "shouldBeOsmWikilink": "",
+            "giveDescription": "",
+            "orDownload": "",
+            "downloadGeojson": "",
+            "shouldNotBeHomepage": "",
+            "title": "",
+            "giveWikilink": ""
+        },
+        "createNotes": {
+            "done": "",
+            "loading": "",
+            "openImportViewer": "",
+            "title": "",
+            "creating": ""
+        },
+        "gotoImportViewer": "",
+        "login": {
+            "lockNotice": "",
+            "loginIsCorrect": "",
+            "userAccountTitle": "",
+            "title": "",
+            "loginRequired": "",
+            "loggedInWith": ""
+        },
+        "mapPreview": {
+            "selectLayer": "",
+            "title": "",
+            "mismatch": "",
+            "confirm": "",
+            "autodetected": ""
+        },
+        "noteParts": {
+            "importEasily": "",
+            "wikilink": "",
+            "datasource": ""
+        },
+        "selectTheme": {
+            "displayNonMatchingCount": "",
+            "intro": "",
+            "misMatch": "",
+            "notApplicable": "",
+            "unmatchedTitle": "",
+            "missing": "",
+            "needsTags": "",
+            "noMatchingPresets": "",
+            "title": ""
+        },
+        "testMode": ""
+    },
+    "matrixbot": {
+        "commands": {
+            "documentation": {
+                "file": {
+                    "plural": "",
+                    "singular": ""
+                },
+                "inputElement": {
+                    "singular": "",
+                    "plural": ""
+                },
+                "theme": {
+                    "singular": "",
+                    "plural": ""
+                },
+                "url_parameter": {
+                    "plural": "",
+                    "singular": ""
+                },
+                "visualisation": {
+                    "plural": "",
+                    "singular": ""
+                },
+                "didYouMean": "",
+                "argid": "",
+                "docs": "",
+                "layer": {
+                    "singular": "",
+                    "plural": ""
+                },
+                "overview": "",
+                "noIdIntro": "",
+                "notFound": "",
+                "urlParam": ""
+            },
+            "help": {
+                "askRights": "",
+                "notFound": "",
+                "docs": "",
+                "insufficientRights": "",
+                "argcmd": "",
+                "p0": "",
+                "p1": "",
+                "priviligedComand": "",
+                "supported": ""
+            },
+            "info": {
+                "argsearch": "",
+                "closed": "",
+                "closedTodayAndTomorrow": "",
+                "couldNotDownload": "",
+                "docs": "",
+                "fetchingInfoAbout": "",
+                "editWith": "",
+                "foundResults": "",
+                "noEditPossible": "",
+                "noInfo": "",
+                "noOpeningHours": "",
+                "nothingFound": "",
+                "provideSearch": "",
+                "searchingWorldwide": ""
+            },
+            "language": {
+                "arglang": "",
+                "currentLanguage": "",
+                "hasBeenSet": "",
+                "notFound": "",
+                "knownLanguages": "",
+                "helpTranslating": "",
+                "docs": ""
+            },
+            "role": {
+                "noPreviousRoles": "",
+                "verbadd": "",
+                "verbdefault": "",
+                "noSuchRole": "",
+                "verbremove": "",
+                "noRightsNeeded": "",
+                "verbrevoke": "",
+                "allRevoked": "",
+                "allRolesIntro": "",
+                "argrole": "",
+                "arguser": "",
+                "argverb": "",
+                "docs": "",
+                "verblist": "",
+                "noRolesYet": "",
+                "userHasRoles": ""
+            },
+            "shutdown": {
+                "notYetShuttingDown": "",
+                "verbupdate": "",
+                "verbshutdown": "",
+                "goodbye": "",
+                "argmode": "",
+                "docs": ""
+            },
+            "welcome": {
+                "p0": "",
+                "p1": "",
+                "docs": "",
+                "p2": "",
+                "p3": ""
+            },
+            "wiki": {
+                "nothingFound": "",
+                "argsearch": "",
+                "foundMatching": "",
+                "docs": "",
+                "gotResults": "",
+                "loadingFailed": "",
+                "noWiki": "",
+                "searching": ""
+            },
+            "dm": {
+                "argto": "",
+                "sendReason": "",
+                "receipt": "",
+                "noDm": "",
+                "failed": "",
+                "executing": "",
+                "selectValidCommand": "",
+                "argbody": "",
+                "commandNotFound": "",
+                "docs": "",
+                "selectValidUser": ""
+            },
+            "dream": {
+                "generatedBy": "",
+                "docs": ""
+            },
+            "search": {
+                "nothingFound": "",
+                "noNearOrIn": "",
+                "overview": "",
+                "searching": "",
+                "arglayerid": "",
+                "announceLimited": "",
+                "argsearch": "",
+                "argverb": "",
+                "docs": "",
+                "noMatchingLayer": ""
+            },
+            "scheme": {
+                "notype": "",
+                "docs": "",
+                "noMatchingLayer": "",
+                "argkey": "",
+                "title": ""
+            },
+            "tags": {
+                "argsearch": "",
+                "docs": "",
+                "noSearchGiven": "",
+                "nothingFound": "",
+                "announceSearch": ""
+            }
+        },
+        "commandNotFound": "",
+        "commandFailed": "",
+        "noSufficientRights": "",
+        "decryptionFailed": "",
+        "subcommanNotFound": "",
+        "subcommandNotGiven": "",
+        "tooLongForPublic": ""
+    },
+    "notes": {
+        "textNeeded": "",
+        "closeNote": "",
+        "noteIsPublic": "",
+        "isClosed": "",
+        "addAComment": "",
+        "addCommentAndClose": "",
+        "anonymous": "",
+        "disableAllNoteFilters": "",
+        "noteLayerHasFilters": "",
+        "reopenNoteAndComment": "",
+        "typeText": "",
+        "warnAnonymous": "",
+        "addComment": "",
+        "reopenNote": "",
+        "loginToAddPicture": "",
+        "createNoteTitle": "",
+        "isCreated": "",
+        "noteLayerNotEnabled": "",
+        "createNoteIntro": "",
+        "loginToAddComment": "",
+        "loginToClose": "",
+        "noteLayerDoEnable": "",
+        "notesLayerMustBeEnabled": "",
+        "addCommentPlaceholder": "",
+        "createNote": ""
+    },
+    "privacy": {
+        "editing": "",
+        "geodata": "",
+        "surveillance": "",
+        "miscCookiesTitle": "",
+        "whileYoureHere": "",
+        "intro": "",
+        "trackingTitle": "",
+        "miscCookies": "",
+        "editingTitle": "",
+        "geodataTitle": "",
+        "tracking": "",
+        "title": ""
+    },
+    "professional": {
+        "aboutOsm": {
+            "license": {
+                "title": "",
+                "outro": "",
+                "li1": "",
+                "intro": "",
+                "li0": ""
+            },
+            "benefits": {
+                "li0": "",
+                "intro": "",
+                "li2": "",
+                "li1": "",
+                "title": ""
+            },
+            "aboutOsm": {
+                "intro": "",
+                "li0": "",
+                "li2": "",
+                "li3": "",
+                "li1": "",
+                "title": ""
+            },
+            "vandalism": {
+                "intro": "",
+                "li4": "",
+                "title": "",
+                "li1": "",
+                "li2": "",
+                "li3": "",
+                "li0": ""
+            }
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "outro": "",
+                "usecaseMapDifferentSources": {
+                    "outro": "",
+                    "intro": "",
+                    "li0": "",
+                    "li1": "",
+                    "title": ""
+                },
+                "usecaseGatheringOpenData": {
+                    "title": "",
+                    "intro": ""
+                },
+                "li1": "",
+                "intro": "",
+                "li0": "",
+                "li2": "",
+                "title": ""
+            },
+            "title": "",
+            "unsuitedData": {
+                "intro": "",
+                "li0": "",
+                "li1": "",
+                "li2": "",
+                "title": ""
+            },
+            "intro": ""
+        },
+        "aboutMc": {
+            "text2": "",
+            "survey": {
+                "title": "",
+                "intro": ""
+            },
+            "title": "",
+            "internalUse": {
+                "title": "",
+                "intro": ""
+            },
+            "text1": "",
+            "layers": {
+                "intro": "",
+                "title": ""
+            },
+            "text0": ""
+        },
+        "indexPage": {
+            "button": "",
+            "hookMore": "",
+            "hook": ""
+        },
+        "services": {
+            "li3": "",
+            "intro": "",
+            "outro": "",
+            "title": "",
+            "li4": "",
+            "li0": "",
+            "li1": "",
+            "li2": ""
+        },
+        "intro": "",
+        "osmTitle": "",
+        "text0": "",
+        "title": "",
+        "text1": ""
+    },
+    "translations": {
+        "activateButton": "",
+        "allMissing": "",
+        "notImmediate": "",
+        "help": "",
+        "completeness": "",
+        "isTranslator": "",
+        "deactivate": "",
+        "missing": ""
+    },
+    "validation": {
+        "email": {
+            "description": "",
+            "feedback": "",
+            "noAt": ""
+        },
+        "pnat": {
+            "description": "",
+            "noZero": ""
+        },
+        "text": {
+            "description": ""
+        },
+        "wikidata": {
+            "description": ""
+        },
+        "date": {
+            "description": ""
+        },
+        "float": {
+            "description": "",
+            "feedback": ""
+        },
+        "phone": {
+            "description": "",
+            "feedback": ""
+        },
+        "int": {
+            "description": ""
+        },
+        "nat": {
+            "description": "",
+            "mustBePositive": "",
+            "mustBeWhole": "",
+            "notANumber": ""
+        },
+        "url": {
+            "description": "",
+            "feedback": ""
+        },
+        "tooLong": "",
+        "pfloat": {
+            "description": ""
+        },
+        "opening_hours": {
+            "description": ""
+        },
+        "direction": {
+            "description": ""
+        },
+        "string": {
+            "description": ""
+        },
+        "color": {
+            "description": ""
+        },
+        "distance": {
+            "description": ""
+        }
+    },
+    "move": {
+        "inviteToMove": {
+            "reasonInaccurate": "",
+            "generic": "",
+            "reasonRelocation": ""
+        },
+        "loginToMove": "",
+        "inviteToMoveAgain": "",
+        "isRelation": "",
+        "moveTitle": "",
+        "selectReason": "",
+        "whyMove": "",
+        "confirmMove": "",
+        "cannotBeMoved": "",
+        "isWay": "",
+        "cancel": "",
+        "zoomInFurther": "",
+        "partOfRelation": "",
+        "partOfAWay": "",
+        "reasons": {
+            "reasonInaccurate": "",
+            "reasonRelocation": ""
+        },
+        "pointIsMoved": ""
+    },
+    "importLayer": {
+        "popupTitle": "",
+        "layerName": "",
+        "importButton": "",
+        "description": "",
+        "notFound": "",
+        "alreadyMapped": "",
+        "importHandled": "",
+        "nearbyImagesIntro": ""
+    },
+    "multi_apply": {
+        "autoApply": ""
+    },
+    "importInspector": {
+        "title": ""
     }
 }
