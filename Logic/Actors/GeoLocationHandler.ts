@@ -44,7 +44,7 @@ export default class GeoLocationHandler extends VariableUiElement {
      * @private
      */
     private readonly _hasLocation: Store<boolean>;
-    private readonly _currentGPSLocation: UIEventSource<Coordinates>;
+    private readonly _currentGPSLocation: UIEventSource<GeolocationCoordinates>;
     /**
      * Kept in order to update the marker
      * @private
@@ -76,7 +76,7 @@ export default class GeoLocationHandler extends VariableUiElement {
             featureSwitchGeolocation: UIEventSource<boolean>
         }
     ) {
-        const currentGPSLocation = new UIEventSource<Coordinates>(undefined, "GPS-coordinate")
+        const currentGPSLocation = new UIEventSource<GeolocationCoordinates>(undefined, "GPS-coordinate")
         const leafletMap = state.leafletMap
         const initedAt = new Date()
         let autozoomDone = false;
