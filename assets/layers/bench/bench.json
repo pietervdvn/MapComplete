@@ -53,7 +53,7 @@
         {
           "if": "backrest=yes",
           "then": {
-            "en": "Backrest: Yes",
+            "en": "Does have a backrest",
             "de": "Die Sitzbank hat eine Rückenlehne",
             "fr": "Dossier : Oui",
             "nl": "Heeft een rugleuning",
@@ -76,8 +76,8 @@
         {
           "if": "backrest=no",
           "then": {
-            "en": "Backrest: No",
-            "de": "Die Sitzbank hat keine Rückenlehne",
+            "en": "Does <b>not</b> have a backrest",
+            "de": "Die Sitzbank hat <b>keine</b> Rückenlehne",
             "fr": "Dossier : Non",
             "nl": "Heeft geen rugleuning",
             "es": "Respaldo: no",
@@ -188,7 +188,7 @@
         {
           "if": "material=wood",
           "then": {
-            "en": "Material: wood",
+            "en": "The seating is made from wood",
             "de": "Die Sitzfläche ist aus Holz",
             "fr": "Matériau : bois",
             "nl": "Gemaakt uit hout",
@@ -211,7 +211,7 @@
         {
           "if": "material=metal",
           "then": {
-            "en": "Material: metal",
+            "en": "The seating is made from metal",
             "de": "Die Sitzfläche ist aus Metall",
             "fr": "Matériau : métal",
             "nl": "Gemaakt uit metaal",
@@ -233,7 +233,7 @@
         {
           "if": "material=stone",
           "then": {
-            "en": "Material: stone",
+            "en": "The seating is made from stone",
             "de": "Die Sitzfläche ist aus Stein",
             "fr": "Matériau : pierre",
             "nl": "Gemaakt uit steen",
@@ -256,7 +256,7 @@
         {
           "if": "material=concrete",
           "then": {
-            "en": "Material: concrete",
+            "en": "The seating is made from concrete",
             "de": "Die Sitzfläche ist aus Beton",
             "fr": "Matériau : béton",
             "nl": "Gemaakt uit beton",
@@ -279,7 +279,7 @@
         {
           "if": "material=plastic",
           "then": {
-            "en": "Material: plastic",
+            "en": "The seating is made from plastic",
             "de": "Die Sitzfläche ist aus Kunststoff",
             "fr": "Matériau : plastique",
             "nl": "Gemaakt uit plastiek",
@@ -302,7 +302,7 @@
         {
           "if": "material=steel",
           "then": {
-            "en": "Material: steel",
+            "en": "The seating is made from steel",
             "de": "Die Sitzfläche ist aus Stahl",
             "fr": "Matériau : acier",
             "nl": "Gemaakt uit staal",

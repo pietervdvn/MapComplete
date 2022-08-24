@@ -402,7 +402,7 @@
                         "then": "Alquilar una bicicleta es gratis"
                     },
                     "1": {
-                        "then": "Alquilar una bicicleta cuesta 20€/año y 20€ de fianza"
+                        "then": "Alquilar una bicicleta cuesta 20€/año y 20€ de garantía"
                     }
                 },
                 "question": "¿Cuánto cuesta alquilar una bicicleta?",

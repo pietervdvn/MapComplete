@@ -89,6 +89,33 @@
       "value": ""
     },
     {
+      "key": "fire_hydrant:diameter",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'fire_hydrant:diameter' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'couplings:type' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows couplings:type=Storz with a fixed text, namely 'Storz coupling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
+      "value": "Storz"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows couplings:type=UNI with a fixed text, namely 'UNI coupling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
+      "value": "UNI"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows couplings:type=Barcelona with a fixed text, namely 'Barcelona coupling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
+      "value": "Barcelona"
+    },
+    {
+      "key": "couplings:diameters",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'couplings:diameters' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
+    },
+    {
       "key": "image",
       "description": "The layer 'Map of hydrants allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },

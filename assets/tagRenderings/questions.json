@@ -830,7 +830,8 @@
             "zh_Hans": "使用专用APP支付",
             "da": "Betaling sker ved hjælp af en dedikeret app",
             "nb_NO": "Betaling utføres med et eget program",
-            "pt": "O pagamento é feito utilizando uma aplicação dedicada"
+            "pt": "O pagamento é feito utilizando uma aplicação dedicada",
+            "it": "Pagamento effettuato utilizzando un'app dedicata"
           }
         },
         {
@@ -1053,7 +1054,7 @@
           "sl": "Nahaja se v prvi kletni etaži",
           "ca": "Localitzat a la planta base",
           "fil": "Nasa silong",
-          "es": "Situado en el primer nivel del sótano",
+          "es": "Localizada en el primer sótano",
           "nb_NO": "Er å finne på første kjellernivå",
           "pt": "Localizado no primeiro nível da cave"
         }

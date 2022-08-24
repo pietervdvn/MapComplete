@@ -3292,6 +3292,21 @@
             "render": "Dokterspraktijk {name}"
         }
     },
+    "dogpark": {
+        "name": "hondenweides",
+        "presets": {
+            "0": {
+                "description": "Een plaats waar honden vrij mogen rondlopen",
+                "title": "een hondenweide"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "question": "Wat is de naam van deze hondenweide?",
+                "render": "Deze hondenweide heet {name}"
+            }
+        }
+    },
     "drinking_water": {
         "deletion": {
             "nonDeleteMappings": {

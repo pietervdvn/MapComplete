@@ -58,7 +58,7 @@
     {
       "render": {
         "en": "The maximum allowed speed on this road is {canonical(maxspeed)}",
-        "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {canonical(maxspeed)}",
+        "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße beträgt {canonical(maxspeed)}",
         "nl": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}"
       },
       "question": {

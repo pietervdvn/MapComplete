@@ -282,12 +282,12 @@
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Backrest: Yes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Does have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Backrest: No' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Does <b>not</b> have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -300,32 +300,32 @@
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'Material: wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'The seating is made from wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "wood"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'Material: metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'The seating is made from metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "metal"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'Material: stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'The seating is made from stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "stone"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'Material: concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'The seating is made from concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "concrete"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'Material: plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'The seating is made from plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "plastic"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'Material: steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'The seating is made from steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "steel"
     },
     {
@@ -5752,6 +5752,22 @@
       "value": "hackerspace"
     },
     {
+      "key": "image",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
       "key": "hackerspace",
       "description": "Layer 'Hackerspace' shows hackerspace=makerspace with a fixed text, namely 'This is a makerspace' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "makerspace"
@@ -6043,6 +6059,33 @@
       "value": ""
     },
     {
+      "key": "fire_hydrant:diameter",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'fire_hydrant:diameter' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'couplings:type' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows couplings:type=Storz with a fixed text, namely 'Storz coupling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "Storz"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows couplings:type=UNI with a fixed text, namely 'UNI coupling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "UNI"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows couplings:type=Barcelona with a fixed text, namely 'Barcelona coupling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "Barcelona"
+    },
+    {
+      "key": "couplings:diameters",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'couplings:diameters' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "image",
       "description": "The layer 'Map of hydrants allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -6098,6 +6141,10 @@
     {
       "key": "wikipedia",
       "description": "The layer 'indoors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "ref",
+      "description": "Layer 'indoors' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "name",
@@ -6166,7 +6213,7 @@
     },
     {
       "key": "tactile_paving",
-      "description": "Layer 'Kerbs' shows tactile_paving=incorrect with a fixed text, namely 'This kerb has tactile paving, but it is incorrect' (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Kerbs' shows tactile_paving=incorrect with a fixed text, namely 'This kerb has tactile paving, but it is incorrect.' (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "incorrect"
     },
     {

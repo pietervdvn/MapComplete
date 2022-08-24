@@ -719,6 +719,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Metatags nog niet berekend... Heropen deze pop-up"
+                            },
+                            "1": {
+                                "then": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}"
                             }
                         }
                     }
@@ -784,6 +787,13 @@
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
         "title": "Stoepranden en oversteekplaatsen"
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "name": "Zwaartepunten van wijzigingensets"
+            }
+        }
     },
     "maps": {
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",

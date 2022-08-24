@@ -96,6 +96,7 @@
   - ghost_bike
   - governments
   - grass_in_parks
+  - hackerspace
   - hotel
   - hydrant
   - indoors

@@ -32,6 +32,7 @@
         "if": "indoor=room",
         "then": {
           "en": "Indoor Room {name}",
+          "de": "Innenraum {name}",
           "nl": "Binnenruimte {name}"
         }
       },
@@ -39,6 +40,7 @@
         "if": "indoor=area",
         "then": {
           "en": "Indoor Area {name}",
+          "de": "Innenbereich {name}",
           "nl": "Gebied in gebouw {name}"
         }
       },
@@ -46,6 +48,7 @@
         "if": "indoor=wall",
         "then": {
           "en": "Indoor Wall {name}",
+          "de": "Innenwand {name}",
           "nl": "Muur in gebouw {name}"
         }
       },
@@ -53,6 +56,7 @@
         "if": "indoor=corridor",
         "then": {
           "en": "Indoor Corridor {name}",
+          "de": "Innengang {name}",
           "nl": "Gang in gebouw {name}"
         }
       },
@@ -60,6 +64,7 @@
         "if": "indoor=door",
         "then": {
           "en": "Indoor Door {name}",
+          "de": "Innentür {name}",
           "nl": "Binnendeur {name}"
         }
       },
@@ -67,6 +72,7 @@
         "if": "indoor=level",
         "then": {
           "en": "Indoor Level {name}",
+          "de": "Geschoss {name}",
           "nl": "Verdieping in gebouw {name}"
         }
       }
@@ -79,10 +85,12 @@
       "id": "ref",
       "question": {
         "en": "What is the reference number of this room?",
+        "de": "Wie lautet die Nummer dieses Raums?",
         "nl": "Wat is het referentienummer van deze ruimte?"
       },
       "render": {
         "en": "This room has the reference number {ref}",
+        "de": "Dieser Raum hat die Raumnummer {ref}",
         "nl": "Deze ruimte heeft het referentienummer {ref}"
       },
       "freeform": {
@@ -90,6 +98,7 @@
         "type": "string",
         "placeholder": {
           "en": "Reference number of the room (e.g. '1.1' or 'A1')",
+          "de": "Raumnummer (z.B. '1.1' oder 'A1')",
           "nl": "Referentienummer van de ruimte (bv. '1.1' of A1' )"
         }
       },
@@ -118,6 +127,7 @@
         "type": "string",
         "placeholder": {
           "en": "Name of the room",
+          "de": "Name des Raums",
           "nl": "Naam van de ruimte"
         }
       },
