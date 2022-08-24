@@ -1,6 +1,8 @@
 import {Utils} from "./Utils";
 import AllThemesGui from "./UI/AllThemesGui";
 import {QueryParameters} from "./Logic/Web/QueryParameters";
+import StatisticsGUI from "./UI/StatisticsGUI";
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
 
 const layout = QueryParameters.GetQueryParameter("layout", undefined).data ?? ""
@@ -19,4 +21,12 @@ if (layout !== "") {
 
 Utils.DisableLongPresses()
 document.getElementById("decoration-desktop").remove();
-new AllThemesGui().setup();
+const mode = QueryParameters.GetQueryParameter("mode", "map", "The mode the application starts in, e.g. 'statistics'")
+
+if (mode.data === "statistics") {
+    console.log("Statistics mode!")
+    new FixedUiElement("").AttachTo("centermessage")
+    new StatisticsGUI().SetClass("w-full h-full").AttachTo("topleft-tools")
+} else{
+    new AllThemesGui().setup();
+}

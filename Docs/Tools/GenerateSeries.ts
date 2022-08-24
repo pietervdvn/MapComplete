@@ -96,9 +96,6 @@ class StatsDownloader {
             'Cache-Control': 'no-cache'
         }
 
-
-        return []
-        
         while (url) {
             ScriptUtils.erasableLog(`Downloading stats for ${year}-${month}-${day}, page ${page} ${url}`)
             const result = await Utils.downloadJson(url, headers)

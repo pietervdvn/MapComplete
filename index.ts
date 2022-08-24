@@ -41,9 +41,7 @@ class Init {
         window.mapcomplete_state = State.state;
 
         const mode = QueryParameters.GetQueryParameter("mode", "map", "The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'")
-        if (mode.data === "statistics") {
-            new StatisticsGUI().AttachTo("leafletDiv")
-        } else if (mode.data === "dashboard") {
+        if (mode.data === "dashboard") {
             new DashboardGui(State.state, guiState).setup()
         } else {
             new DefaultGUI(State.state, guiState).setup()

@@ -102,9 +102,7 @@ constructor() {
             return new StatisticsForOverviewFile(StatisticsGUI.homeUrl, paths)
 
         }))
-            this.SetClass("block w-full h-full").AttachTo("maindiv")
-
-      
+        this.SetClass("block w-full h-full")
     }
 }
 
