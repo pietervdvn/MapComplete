@@ -3,6 +3,7 @@ import * as polygon_features from "../../assets/polygon-features.json";
 import {Store, UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
 import * as OsmToGeoJson from "osmtogeojson";
+import {NodeId, OsmId, OsmTags, RelationId, WayId} from "../../Models/OsmFeature";
 
 export abstract class OsmObject {
 
@@ -38,10 +39,12 @@ export abstract class OsmObject {
             throw "Backend URL must begin with http"
         }
         this.backendURL = url;
-        this.DownloadObject("id/5")
     }
 
-    public static DownloadObject(id: string, forceRefresh: boolean = false): Store<OsmObject> {
+    public static DownloadObject(id: NodeId, forceRefresh?: boolean ): Store<OsmNode> ;
+    public static DownloadObject(id: WayId, forceRefresh?: boolean ): Store<OsmWay> ;
+    public static DownloadObject(id: RelationId, forceRefresh?: boolean ): Store<OsmRelation> ;
+    public static DownloadObject(id: OsmId, forceRefresh: boolean = false): Store<OsmObject> {
         let src: UIEventSource<OsmObject>;
         if (OsmObject.objectCache.has(id)) {
             src = OsmObject.objectCache.get(id)
@@ -51,14 +54,14 @@ export abstract class OsmObject {
                 return src;
             }
         } else {
-            src = UIEventSource.FromPromise(OsmObject.DownloadObjectAsync(id))
+            src = UIEventSource.FromPromise(OsmObject.DownloadObjectAsync(<any> id))
         }
 
         OsmObject.objectCache.set(id, src);
         return src;
     }
 
-    static async DownloadPropertiesOf(id: string): Promise<any> {
+    static async DownloadPropertiesOf(id: OsmId): Promise<OsmTags> {
         const splitted = id.split("/");
         const idN = Number(splitted[1]);
         if (idN < 0) {
@@ -70,7 +73,10 @@ export abstract class OsmObject {
         return rawData.elements[0].tags
     }
 
-    static async DownloadObjectAsync(id: string): Promise<OsmObject | undefined> {
+    static async DownloadObjectAsync(id: NodeId): Promise<OsmNode | undefined>;
+    static async DownloadObjectAsync(id: WayId): Promise<OsmWay | undefined>;
+    static async DownloadObjectAsync(id: RelationId): Promise<OsmRelation | undefined>;
+    static async DownloadObjectAsync(id: OsmId): Promise<OsmObject | undefined>{
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = Number(splitted[1]);
