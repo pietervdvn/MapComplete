@@ -59,12 +59,5 @@
             "intro": "Nag-klik ka kung saan wala pang nababatid na datos.<br>",
             "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók"
         }
-    },
-    "professional": {
-        "aboutOsm": {
-            "aboutOsm": {
-                "li1": ""
-            }
-        }
     }
 }
