@@ -5,15 +5,10 @@
     },
     "delete": {
         "cancel": "Nuligi",
-        "reasons": {
-            "duplicate": ""
-        },
         "explanations": {
             "hardDelete": ""
         },
-        "readMessages": "",
-        "cannotBeDeleted": "",
-        "loading": ""
+        "cannotBeDeleted": ""
     },
     "favourite": {
         "reload": "Reŝargi la datenojn"
@@ -22,30 +17,23 @@
         "add": {
             "title": "Enmeti novan punkton?",
             "import": {
-                "howToTest": "",
                 "importTags": ""
             },
-            "pleaseLogin": "",
             "warnVisibleForEveryone": "",
-            "layerNotEnabled": "",
             "intro": ""
         },
         "attribution": {
             "iconAttribution": {
                 "title": "Uzitaj piktogramoj"
             },
-            "openIssueTracker": "",
             "followBridge": "",
-            "attributionContent": "",
             "josmNotOpened": ""
         },
         "backgroundMap": "Fona mapo",
         "cancel": "Nuligi",
         "download": {
             "exporting": "Elportante…",
-            "downloadGpx": "",
             "downloadAsSvgHelper": "",
-            "downloadFeatureAsGpx": "",
             "downloadFeatureAsGeojson": ""
         },
         "loading": "Ŝargante…",
@@ -58,7 +46,6 @@
             "ph_closed": "fermita",
             "ph_not_known": " ",
             "ph_open": "malfermita",
-            "loadingCountry": "",
             "open_during_ph": ""
         },
         "pdf": {
@@ -69,8 +56,7 @@
         },
         "pickLanguage": "Elektu lingvon: ",
         "questions": {
-            "websiteIs": "Retejo: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "phoneNumberOf": ""
+            "websiteIs": "Retejo: <a href=\"{website}\" target=\"_blank\">{website}</a>"
         },
         "returnToTheMap": "Reen al la mapo",
         "save": "Konservi",
@@ -84,9 +70,7 @@
             "editThisTheme": "Modifi ĉi tiun etoson",
             "fsSearch": "Ŝalti la serĉbreton",
             "fsUserbadge": "Ŝalti la salutbutonon",
-            "copiedToClipboard": "",
             "downloadCustomThemeHelp": "",
-            "fsIncludeCurrentBackgroundMap": "",
             "fsAddNew": ""
         },
         "skip": "Preterpasi ĉi tiun demandon",
@@ -113,30 +97,18 @@
             "noResults": "Nenio troviĝis pri <i>{search}</i>",
             "searchWikidata": "Serĉi Vikidatumojn",
             "wikipediaboxTitle": "Vikipedio",
-            "previewbox": {
-                "died": ""
-            },
             "noWikipediaPage": ""
         },
         "morescreen": {
-            "requestATheme": "",
             "searchForATheme": ""
         },
-        "noMatchingMapping": "",
         "useSearchForMore": "",
-        "welcomeExplanation": {
-            "browseOtherThemesIntro": ""
-        },
         "poweredByOsm": "",
-        "noTagsSelected": "",
         "layerSelection": {
             "zoomInToSeeThisLayer": ""
         },
-        "number": "",
         "customThemeIntro": "",
-        "examples": "",
         "aboutMapcomplete": "",
-        "back": "",
         "testing": ""
     },
     "image": {
@@ -150,245 +122,164 @@
         "uploadingPicture": "Alŝutante vian bildon…",
         "willBePublished": "Via bildo estos publikigita ",
         "nearbyPictures": {
-            "noImageSelected": "",
-            "withinRadius": "",
-            "hasMatchingPicture": ""
+            "withinRadius": ""
         },
-        "respectPrivacy": "",
-        "toBig": ""
+        "respectPrivacy": ""
     },
     "index": {
-        "title": "Bonvenon al MapComplete",
-        "logIn": ""
+        "title": "Bonvenon al MapComplete"
     },
     "reviews": {
         "saving_review": "Konservante…",
         "title": "{count} recenzoj",
         "title_singular": "Unu recenzo",
-        "tos": "",
         "saved": ""
     },
     "importHelper": {
         "askMetadata": {
-            "orDownload": "",
-            "shouldNotBeHomepage": "",
-            "downloadGeojson": ""
+            "shouldNotBeHomepage": ""
         },
         "compareToAlreadyExistingNotes": {
-            "nothingNearby": "",
-            "title": ""
+            "nothingNearby": ""
         },
         "selectFile": {
             "errPointsOnly": "",
-            "loadedFilesAre": "",
             "description": ""
         },
         "conflationChecker": {
-            "osmLoaded": "",
             "states": {
                 "unexpected": ""
             },
-            "titleLive": "",
-            "nothingLoaded": "",
-            "titleNearby": ""
+            "nothingLoaded": ""
         },
         "testMode": "",
-        "confirmProcess": {
-            "contactedCommunity": ""
-        },
         "introduction": {
             "importFormat": ""
         },
-        "mapPreview": {
-            "selectLayer": ""
-        },
         "selectTheme": {
-            "notApplicable": "",
-            "displayNonMatchingCount": ""
+            "notApplicable": ""
         },
         "createNotes": {
-            "loading": "",
-            "title": ""
+            "loading": ""
         },
         "login": {
             "lockNotice": ""
         },
-        "noteParts": {
-            "datasource": ""
-        },
         "previewAttributes": {
-            "allAttributesSame": "",
-            "title": ""
+            "allAttributesSame": ""
         }
     },
     "matrixbot": {
         "commands": {
             "help": {
-                "supported": "",
-                "docs": ""
+                "supported": ""
             },
             "search": {
-                "arglayerid": "",
-                "searching": ""
+                "arglayerid": ""
             },
             "shutdown": {
-                "verbshutdown": "",
-                "notYetShuttingDown": ""
+                "verbshutdown": ""
             },
             "wiki": {
-                "argsearch": "",
-                "foundMatching": ""
+                "argsearch": ""
             },
             "documentation": {
                 "visualisation": {
                     "plural": ""
                 },
-                "layer": {
-                    "plural": ""
-                },
                 "theme": {
                     "singular": ""
                 },
-                "notFound": "",
                 "file": {
                     "singular": ""
                 }
             },
             "info": {
-                "closedTodayAndTomorrow": "",
-                "noOpeningHours": "",
-                "fetchingInfoAbout": ""
+                "noOpeningHours": ""
             },
             "role": {
                 "verbdefault": "",
-                "argrole": "",
-                "argverb": "",
-                "noRolesYet": ""
+                "argverb": ""
             },
             "scheme": {
                 "argkey": ""
             },
             "tags": {
-                "nothingFound": "",
                 "announceSearch": ""
             },
             "dm": {
-                "selectValidCommand": "",
                 "executing": ""
             },
             "language": {
-                "helpTranslating": "",
                 "currentLanguage": ""
-            },
-            "welcome": {
-                "p0": ""
             },
             "dream": {
                 "docs": ""
             }
         },
-        "decryptionFailed": "",
         "noSufficientRights": ""
     },
     "move": {
-        "whyMove": "",
         "inviteToMove": {
             "reasonInaccurate": ""
         },
-        "moveTitle": "",
         "partOfRelation": ""
     },
     "notes": {
-        "addAComment": "",
         "reopenNote": "",
-        "warnAnonymous": "",
         "loginToAddComment": "",
-        "anonymous": "",
-        "createNoteTitle": "",
-        "addComment": ""
+        "createNoteTitle": ""
     },
     "professional": {
         "aboutMc": {
             "internalUse": {
                 "intro": ""
-            },
-            "title": ""
+            }
         },
         "aboutOsm": {
             "aboutOsm": {
-                "title": "",
-                "li2": ""
+                "title": ""
             },
             "vandalism": {
                 "li1": ""
             },
             "benefits": {
-                "title": "",
                 "li2": ""
-            },
-            "license": {
-                "outro": ""
             }
         },
         "drawbacks": {
             "licenseNuances": {
                 "li0": "",
-                "usecaseMapDifferentSources": {
-                    "outro": ""
-                },
                 "li1": ""
-            },
-            "unsuitedData": {
-                "title": ""
             },
             "title": ""
         },
         "services": {
-            "li2": "",
             "intro": ""
-        },
-        "indexPage": {
-            "button": ""
         },
         "title": ""
     },
     "privacy": {
-        "whileYoureHere": "",
-        "intro": "",
-        "surveillance": ""
+        "intro": ""
     },
     "validation": {
         "email": {
             "noAt": ""
         },
-        "pnat": {
-            "description": ""
-        },
         "wikidata": {
-            "description": ""
-        },
-        "phone": {
             "description": ""
         },
         "nat": {
             "notANumber": ""
-        },
-        "string": {
-            "description": ""
         }
     },
     "importInspector": {
         "title": ""
     },
     "importLayer": {
-        "description": "",
         "importButton": ""
     },
-    "split": {
-        "loginToSplit": ""
-    },
     "translations": {
-        "missing": "",
-        "help": ""
+        "missing": ""
     }
 }

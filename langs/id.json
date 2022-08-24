@@ -44,8 +44,7 @@
             "hasBeenImported": "Fitur ini sudah diimpor",
             "import": {
                 "hasBeenImported": "Objek ini sudah diimpor",
-                "officialThemesOnly": "Tombol impor dinonaktifkan untuk peta tidak resmi untuk menghindari ketidaksengajaan",
-                "importTags": ""
+                "officialThemesOnly": "Tombol impor dinonaktifkan untuk peta tidak resmi untuk menghindari ketidaksengajaan"
             },
             "intro": "Anda mengklik di suatu tempat di mana belum ada data yang dikenal.<br>",
             "pleaseLogin": "Harap masuk untuk menambahkan fitur baru",
@@ -53,8 +52,7 @@
             "title": "Tambahkan fitur baru?",
             "warnVisibleForEveryone": "Penambahan Anda akan terlihat oleh semua orang",
             "zoomInFurther": "Perbesar untuk menambahkan fitur.",
-            "zoomInMore": "Perbesar untuk mengimpor fitur ini",
-            "disableFilters": ""
+            "zoomInMore": "Perbesar untuk mengimpor fitur ini"
         },
         "apply_button": {
             "appliedOnAnotherObject": "Objek {id} akan menerima {tags}",
@@ -75,8 +73,7 @@
             },
             "josmOpened": "JOSM dibuka",
             "mapContributionsBy": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors}",
-            "mapContributionsByAndHidden": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors} dan {hiddenCount} kontributor lainnya",
-            "openOsmcha": ""
+            "mapContributionsByAndHidden": "Data yang terlihat saat ini memiliki suntingan yang dibuat oleh {contributors} dan {hiddenCount} kontributor lainnya"
         },
         "backgroundMap": "Peta latar belakang",
         "cancel": "Batal",
@@ -96,8 +93,7 @@
             "opensAt": "dari",
             "ph_closed": "tutup",
             "ph_not_known": " ",
-            "ph_open": "buka",
-            "not_all_rules_parsed": ""
+            "ph_open": "buka"
         },
         "pickLanguage": "Pilih bahasa: ",
         "questions": {
@@ -121,8 +117,7 @@
             "fsSearch": "Aktifkan bilah pencarian",
             "fsUserbadge": "Aktifkan tombol masuk",
             "fsWelcomeMessage": "Tampilkan popup pesan selamat datang dan tab terkait",
-            "thanksForSharing": "Terima kasih telah berbagi!",
-            "fsLayerControlToggle": ""
+            "thanksForSharing": "Terima kasih telah berbagi!"
         },
         "weekdays": {
             "abbreviations": {
@@ -143,36 +138,21 @@
             "wednesday": "Rabu"
         },
         "morescreen": {
-            "streetcomplete": "",
             "previouslyHiddenTitle": ""
         },
-        "noMatchingMapping": "",
         "wikipedia": {
             "createNewWikidata": "",
-            "wikipediaboxTitle": "",
             "searchWikidata": ""
-        },
-        "welcomeExplanation": {
-            "browseMoreMaps": ""
         },
         "download": {
             "downloadCSVHelper": "",
-            "downloadFeatureAsGeojson": "",
-            "downloadGpxHelper": "",
-            "downloadAsSvgHelper": ""
+            "downloadGpxHelper": ""
         },
         "loadingTheme": "",
-        "pdf": {
-            "generatedWith": ""
-        },
         "oneSkippedQuestion": "",
-        "openStreetMapIntro": "",
         "skippedQuestions": "",
-        "backToMapcomplete": "",
         "notValid": "",
-        "loginToStart": "",
         "loginOnlyNeededToEdit": "",
-        "aboutMapcomplete": "",
         "fewChangesBefore": ""
     },
     "image": {
@@ -188,12 +168,9 @@
         "uploadingPicture": "Mengunggah gambar Anda…",
         "willBePublished": "Gambarmu akan dipublikasikan ",
         "nearbyPictures": {
-            "loadMore": "",
-            "removeFilters": "",
-            "browseNearby": ""
+            "removeFilters": ""
         },
-        "uploadFailed": "",
-        "uploadDone": ""
+        "uploadFailed": ""
     },
     "index": {
         "intro": "MapComplete adalah penampil dan penyunting OpenStreetMap, yang menunjukkan informasi tentang fitur pada tema tertentu dan memungkinkan Anda untuk memperbaruinya.",
@@ -216,7 +193,6 @@
         "loginToClose": "Masuk untuk menutup catatan ini",
         "noteIsPublic": "Ini akan terlihat oleh semua orang",
         "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan",
-        "notesLayerMustBeEnabled": "",
         "typeText": ""
     },
     "reviews": {
@@ -229,20 +205,17 @@
         "title": "{count} ulasan",
         "title_singular": "Satu ulasan",
         "tos": "Jika Anda membuat ulasan, Anda menyetujui <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">TOS dan kebijakan privasi Mangrove.reviews</a>",
-        "write_a_comment": "Beri ulasan…",
-        "no_reviews_yet": ""
+        "write_a_comment": "Beri ulasan…"
     },
     "split": {
         "cancel": "Batal",
-        "splitTitle": "Pilih di peta tempat membelah jalan ini",
-        "hasBeenSplit": ""
+        "splitTitle": "Pilih di peta tempat membelah jalan ini"
     },
     "translations": {
         "allMissing": "Belum ada terjemahan",
         "completeness": "Terjemahan untuk {theme} dalam {language} masih {percentage}%: {translated} string dari {total} diterjemahkan",
         "isTranslator": "Mode terjemahan aktif karena nama pengguna Anda cocok dengan nama penerjemah sebelumnya",
-        "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari",
-        "help": ""
+        "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari"
     },
     "validation": {
         "date": {
@@ -273,155 +246,104 @@
         "wikidata": {
             "description": "Pengidentifikasi Wikidata"
         },
-        "pfloat": {
-            "description": ""
-        },
         "phone": {
             "feedback": ""
         }
     },
     "importHelper": {
         "compareToAlreadyExistingNotes": {
-            "wontBeImported": "",
-            "loadingFailed": "",
-            "mapExplanation": ""
+            "loadingFailed": ""
         },
         "conflationChecker": {
             "titleNearby": "",
-            "states": {
-                "unexpected": ""
-            },
             "showOsmLayerInConflationMap": "",
-            "downloadOverpassData": "",
             "loadedDataAge": ""
-        },
-        "introduction": {
-            "importFormat": ""
         },
         "selectFile": {
             "errDuplicate": "",
-            "fileFormatDescriptionGeoJson": "",
             "errNotFeatureCollection": ""
         },
         "selectTheme": {
-            "needsTags": "",
             "misMatch": ""
         },
         "askMetadata": {
-            "shouldBeOsmWikilink": "",
-            "giveWikilink": "",
-            "title": ""
+            "giveWikilink": ""
         },
         "mapPreview": {
             "confirm": ""
         },
-        "createNotes": {
-            "done": ""
-        },
         "login": {
-            "lockNotice": "",
-            "loginIsCorrect": ""
+            "lockNotice": ""
         },
         "confirmProcess": {
-            "contactedCommunity": "",
-            "titleLong": ""
+            "contactedCommunity": ""
         },
         "previewAttributes": {
             "inspectLooksCorrect": ""
-        },
-        "noteParts": {
-            "datasource": ""
         }
     },
     "importLayer": {
-        "description": "",
-        "importHandled": ""
+        "description": ""
     },
     "matrixbot": {
         "commands": {
             "dm": {
                 "selectValidUser": "",
-                "commandNotFound": "",
                 "argbody": ""
             },
             "documentation": {
-                "layer": {
-                    "plural": ""
-                },
                 "overview": "",
-                "argid": "",
                 "visualisation": {
                     "singular": ""
                 }
             },
-            "dream": {
-                "docs": ""
-            },
             "help": {
-                "docs": "",
-                "p1": ""
+                "docs": ""
             },
             "shutdown": {
-                "goodbye": "",
-                "argmode": ""
+                "goodbye": ""
             },
             "wiki": {
-                "foundMatching": "",
-                "docs": ""
+                "foundMatching": ""
             },
             "role": {
                 "noSuchRole": "",
-                "allRevoked": "",
-                "verbadd": "",
-                "argrole": ""
+                "verbadd": ""
             },
             "search": {
-                "argsearch": "",
-                "noNearOrIn": ""
+                "argsearch": ""
             },
             "scheme": {
                 "argkey": ""
             },
             "tags": {
-                "argsearch": "",
                 "nothingFound": ""
             },
             "info": {
-                "nothingFound": "",
-                "closedTodayAndTomorrow": "",
-                "foundResults": ""
+                "closedTodayAndTomorrow": ""
             },
             "language": {
-                "docs": "",
-                "notFound": ""
+                "docs": ""
             },
             "welcome": {
                 "p0": ""
             }
         },
-        "subcommanNotFound": "",
         "tooLongForPublic": ""
     },
     "privacy": {
-        "miscCookies": "",
-        "editing": "",
-        "miscCookiesTitle": ""
+        "editing": ""
     },
     "professional": {
         "aboutOsm": {
             "vandalism": {
-                "intro": "",
-                "li1": ""
+                "intro": ""
             },
             "license": {
                 "li1": ""
             },
-            "benefits": {
-                "li2": ""
-            },
             "aboutOsm": {
-                "li1": "",
-                "li2": ""
+                "li1": ""
             }
         },
         "drawbacks": {
@@ -429,38 +351,24 @@
                 "li1": ""
             },
             "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "intro": ""
-                },
                 "usecaseGatheringOpenData": {
                     "title": ""
-                },
-                "intro": ""
+                }
             },
             "title": ""
         },
         "services": {
-            "li0": "",
             "li3": ""
         },
         "aboutMc": {
-            "layers": {
-                "intro": ""
-            },
             "title": ""
         },
-        "osmTitle": "",
         "indexPage": {
             "hook": ""
         }
     },
     "move": {
-        "inviteToMove": {
-            "reasonRelocation": ""
-        },
         "partOfRelation": "",
-        "confirmMove": "",
-        "loginToMove": "",
-        "selectReason": ""
+        "loginToMove": ""
     }
 }

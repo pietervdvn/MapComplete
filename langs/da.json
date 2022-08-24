@@ -91,8 +91,7 @@
             "openMapillary": "Åbn Mapillary her",
             "openOsmcha": "De de seneste rettelser lavet med {theme}",
             "themeBy": "Tema vedligeholdt af {author}",
-            "translatedBy": "MapComplete er oversat af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>",
-            "followOnTwitter": ""
+            "translatedBy": "MapComplete er oversat af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>"
         },
         "back": "Tilbage",
         "backToMapcomplete": "Tilbage til temaoversigten",
@@ -258,9 +257,6 @@
             "searchWikidata": "Søg på Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         },
-        "levelSelection": {
-            "confirmLevel": ""
-        },
         "welcomeExplanation": {
             "browseMoreMaps": ""
         }
@@ -286,9 +282,7 @@
         "uploadingPicture": "Uploading dit billede…",
         "willBePublished": "Dit billede vil blive offentliggjort ",
         "nearbyPictures": {
-            "removeFilters": "",
-            "loading": "",
-            "allFiltered": ""
+            "loading": ""
         }
     },
     "importHelper": {
@@ -699,66 +693,44 @@
     "matrixbot": {
         "commands": {
             "dm": {
-                "argbody": "",
-                "selectValidCommand": "",
-                "selectValidUser": ""
+                "selectValidCommand": ""
             },
             "documentation": {
                 "visualisation": {
                     "singular": ""
                 },
-                "theme": {
-                    "plural": ""
-                },
-                "noIdIntro": "",
-                "docs": ""
+                "noIdIntro": ""
             },
             "help": {
                 "p0": "",
-                "p1": "",
                 "priviligedComand": ""
-            },
-            "language": {
-                "knownLanguages": ""
             },
             "role": {
                 "verbadd": "",
-                "noRolesYet": "",
-                "allRolesIntro": "",
-                "verblist": ""
+                "allRolesIntro": ""
             },
             "tags": {
-                "nothingFound": "",
-                "noSearchGiven": ""
+                "nothingFound": ""
             },
             "welcome": {
                 "p0": ""
             },
             "wiki": {
-                "nothingFound": "",
                 "argsearch": ""
             },
             "info": {
-                "foundResults": "",
-                "noEditPossible": "",
-                "closed": ""
+                "noEditPossible": ""
             },
             "scheme": {
-                "noMatchingLayer": "",
-                "docs": ""
+                "noMatchingLayer": ""
             },
             "search": {
-                "argsearch": "",
-                "noMatchingLayer": ""
+                "argsearch": ""
             },
             "dream": {
                 "generatedBy": ""
-            },
-            "shutdown": {
-                "notYetShuttingDown": ""
             }
         },
-        "subcommandNotGiven": "",
-        "decryptionFailed": ""
+        "subcommandNotGiven": ""
     }
 }

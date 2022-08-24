@@ -250,15 +250,9 @@
             "noResults": "Nincs találat erre: <i>{search}</i>",
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
             "searchWikidata": "Keresés a Wikidatán",
-            "wikipediaboxTitle": "Wikipédia",
-            "previewbox": {
-                "born": ""
-            }
+            "wikipediaboxTitle": "Wikipédia"
         },
-        "screenToSmall": "",
-        "welcomeExplanation": {
-            "browseMoreMaps": ""
-        }
+        "screenToSmall": ""
     },
     "image": {
         "addPicture": "Kép hozzáadása",
@@ -281,9 +275,7 @@
         "uploadingPicture": "Kép feltöltése folyamatban…",
         "willBePublished": "A képed így lesz közzétéve: ",
         "nearbyPictures": {
-            "loadMore": "",
-            "onlyTowards": "",
-            "title": ""
+            "onlyTowards": ""
         }
     },
     "importHelper": {
@@ -291,50 +283,34 @@
             "description": "Az importálási segédprogram egy külső adatkészletet konvertál OSM-jegyzetekké. A külső adatkészletnek meg kell felelnie a MapComplete egyik meglévő rétegének. Az importálóba helyezett minden egyes elemhez egyetlen jegyzet fog létrejönni. Ezek a jegyzetek a megfelelő térképelemekkel együtt fognak megjelenni ezeken a térképekben, hogy könnyen fel lehessen rajzolni őket a térképre."
         },
         "previewAttributes": {
-            "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel",
-            "title": ""
+            "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel"
         },
         "askMetadata": {
-            "downloadGeojson": "",
-            "orDownload": ""
+            "downloadGeojson": ""
         },
         "compareToAlreadyExistingNotes": {
             "loading": "",
-            "title": "",
             "someNearby": ""
         },
-        "createNotes": {
-            "openImportViewer": ""
-        },
         "selectTheme": {
-            "noMatchingPresets": "",
-            "intro": ""
+            "noMatchingPresets": ""
         },
         "selectFile": {
             "loadedFilesAre": "",
-            "errNotFeatureCollection": "",
             "errDuplicate": ""
         },
         "confirmProcess": {
-            "contactedCommunity": "",
             "title": ""
         },
         "conflationChecker": {
-            "states": {
-                "unexpected": ""
-            },
             "setRangeToZero": "",
-            "showOsmLayerInConflationMap": "",
-            "titleNearby": "",
-            "zoomIn": ""
+            "titleNearby": ""
         },
         "mapPreview": {
             "selectLayer": ""
         },
-        "gotoImportViewer": "",
         "login": {
-            "lockNotice": "",
-            "userAccountTitle": ""
+            "lockNotice": ""
         }
     },
     "index": {
@@ -379,8 +355,7 @@
         "intro": "A magánélet fontos – az egyénnek és a társadalomnak egyaránt. A MapComplete igyekszik a lehető legnagyobb mértékben tiszteletben tartani a magánéletedet – egészen addig a pontig, hogy már idegesítő cookie-bannerre sincs szükségünk. Ennek ellenére szeretnénk tájékoztatni arról, hogy milyen információkat gyűjtünk és osztunk meg, milyen körülmények között, és miért kell ezeket a kompromisszumoknak megkötnünk.",
         "title": "Adatvédelmi irányelvek",
         "tracking": "Ahhoz, hogy némi betekintést nyerünk abba, hogy ki látogatja meg weboldalunkat, néhány technikai adatot gyűjtünk. Ez tartalmazza azt az országot, ahonnan meglátogattad a weboldalt, azt a webhelyet, amely a MapComplete-re irányított, az eszközöd típusát és képernyőméretét. Egy cookie kerül elhelyezésre a készülékeden, amely jelzi, hogy ma meglátogatta a MapComplete-et. Ezek az adatok nem elég részletesek ahhoz, hogy személyesen azonosítsanak. A statisztika csak összesítetten érhető el, és <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">mindenkinek nyilvános</a>",
-        "trackingTitle": "Statisztikai adatok",
-        "surveillance": ""
+        "trackingTitle": "Statisztikai adatok"
     },
     "professional": {
         "aboutOsm": {
@@ -393,14 +368,12 @@
                 "title": "Mi az OpenStreetMap?"
             },
             "benefits": {
-                "li1": "Az adatai minden eddiginél nagyobb közönséghez jutnak el, hiszen ezt használja a Bing Maps (Microsoft), az Apple Maps, a Facebook, az Instagram, a Pokémon Go, az OsmAnd, az Organic Maps, a Maps.me, a Mapbox, a Komoot, szinte minden kerékpáros alkalmazás és még sok más weboldal és applikáció…",
-                "title": ""
+                "li1": "Az adatai minden eddiginél nagyobb közönséghez jutnak el, hiszen ezt használja a Bing Maps (Microsoft), az Apple Maps, a Facebook, az Instagram, a Pokémon Go, az OsmAnd, az Organic Maps, a Maps.me, a Mapbox, a Komoot, szinte minden kerékpáros alkalmazás és még sok más weboldal és applikáció…"
             },
             "vandalism": {
                 "intro": "Mivel az adatokat bárki szerkesztheti, előfordulhat, hogy rosszindulatú változtatás történik. Ez azonban néhány okból rendkívül ritka:",
                 "li0": "magasak a változtatások technikai akadályai, vagyis nem olyan könnyű a térképet szerkeszteni",
-                "li1": "egy kis rosszindulatú változtatásnak alacsony a hatása, így a vandál számára csekély a jutalom",
-                "title": ""
+                "li1": "egy kis rosszindulatú változtatásnak alacsony a hatása, így a vandál számára csekély a jutalom"
             },
             "license": {
                 "li0": ""
@@ -416,29 +389,20 @@
         "text1": "<p>A MapComplete olyan térképszerkesztő alkalmazás, amely megkönnyíti az OpenStreetMap adatokkal való feltöltését.</p>",
         "title": "Szakmai támogatás a MapComplete segítségével",
         "aboutMc": {
-            "layers": {
-                "title": ""
-            },
             "survey": {
                 "title": ""
             }
         },
         "drawbacks": {
             "licenseNuances": {
-                "li1": "",
                 "usecaseMapDifferentSources": {
                     "outro": ""
-                },
-                "li2": ""
+                }
             },
-            "title": "",
-            "unsuitedData": {
-                "li1": ""
-            }
+            "title": ""
         },
         "services": {
-            "intro": "",
-            "li2": ""
+            "intro": ""
         }
     },
     "reviews": {
@@ -466,104 +430,68 @@
         "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva"
     },
     "importLayer": {
-        "description": "",
         "notFound": ""
     },
     "matrixbot": {
         "commands": {
             "info": {
-                "docs": "",
                 "noInfo": "",
-                "argsearch": "",
                 "provideSearch": ""
             },
-            "language": {
-                "arglang": ""
-            },
             "tags": {
-                "noSearchGiven": "",
-                "docs": ""
+                "noSearchGiven": ""
             },
             "welcome": {
                 "p2": ""
             },
             "wiki": {
-                "docs": "",
                 "noWiki": ""
             },
             "documentation": {
-                "noIdIntro": "",
                 "theme": {
                     "plural": ""
                 },
-                "overview": "",
-                "didYouMean": "",
-                "inputElement": {
-                    "singular": ""
-                }
+                "didYouMean": ""
             },
             "scheme": {
                 "notype": ""
             },
             "search": {
-                "arglayerid": "",
                 "searching": ""
             },
             "dm": {
-                "noDm": "",
-                "argto": "",
-                "receipt": ""
+                "argto": ""
             },
             "role": {
                 "allRolesIntro": "",
-                "argverb": "",
-                "verblist": "",
-                "verbdefault": ""
+                "verblist": ""
             },
             "dream": {
                 "generatedBy": ""
             },
             "help": {
-                "notFound": "",
                 "askRights": ""
-            },
-            "shutdown": {
-                "notYetShuttingDown": ""
             }
         },
-        "tooLongForPublic": "",
-        "subcommandNotGiven": ""
+        "tooLongForPublic": ""
     },
     "notes": {
         "createNote": "",
-        "noteLayerHasFilters": "",
         "loginToClose": "",
-        "createNoteTitle": "",
-        "addAComment": "",
-        "reopenNote": ""
+        "addAComment": ""
     },
     "translations": {
-        "deactivate": "",
-        "help": ""
+        "deactivate": ""
     },
     "validation": {
         "opening_hours": {
             "description": ""
         },
-        "pnat": {
-            "noZero": ""
-        },
         "email": {
             "feedback": ""
         },
-        "url": {
-            "description": ""
-        },
         "float": {
             "description": ""
-        },
-        "nat": {
-            "mustBeWhole": ""
         },
         "date": {
             "description": ""

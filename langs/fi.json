@@ -11,13 +11,11 @@
             "ph_closed": "suljettu",
             "ph_not_known": " ",
             "ph_open": "avattu",
-            "not_all_rules_parsed": "",
             "closed_until": ""
         },
         "pickLanguage": "Valitse kieli: ",
         "questions": {
-            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "phoneNumberIs": ""
+            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
         },
         "save": "Tallenna",
         "search": {
@@ -25,9 +23,7 @@
         },
         "sharescreen": {
             "thanksForSharing": "Kiitos jakamisesta!",
-            "fsSearch": "",
             "fsWelcomeMessage": "",
-            "fsIncludeCurrentLocation": "",
             "downloadCustomThemeHelp": ""
         },
         "skip": "Ohita tämä kysymys",
@@ -50,56 +46,37 @@
             "wednesday": "Keskiviikko"
         },
         "wikipedia": {
-            "searchToShort": "",
-            "noWikipediaPage": "",
-            "fromWikipedia": ""
+            "noWikipediaPage": ""
         },
         "welcomeExplanation": {
             "browseMoreMaps": ""
         },
-        "back": "",
         "attribution": {
             "editJosm": "",
-            "josmOpened": "",
             "attributionContent": "",
-            "followOnTwitter": "",
             "mapillaryHelp": ""
         },
         "add": {
-            "importTags": "",
             "import": {
                 "importTags": ""
             },
-            "zoomInMore": "",
             "addNew": "",
-            "hasBeenImported": "",
-            "disableFiltersExplanation": "",
-            "warnVisibleForEveryone": ""
+            "disableFiltersExplanation": ""
         },
         "download": {
             "downloadAsPdf": "",
-            "downloadCSV": "",
             "licenseInfo": "",
-            "uploadGpx": "",
             "noDataLoaded": ""
-        },
-        "histogram": {
-            "error_loading": ""
         },
         "customThemeIntro": "",
         "morescreen": {
-            "createYourOwnTheme": "",
             "previouslyHiddenTitle": ""
         },
-        "openTheMap": "",
         "pdf": {
             "generatedWith": ""
         },
-        "skippedQuestions": "",
         "confirm": "",
-        "loadingTheme": "",
         "logout": "",
-        "nameInlineQuestion": "",
         "fewChangesBefore": ""
     },
     "image": {
@@ -110,92 +87,57 @@
         "dontDelete": "Peruuta",
         "isDeleted": "Poistettu",
         "nearbyPictures": {
-            "hasMatchingPicture": "",
-            "loadMore": "",
-            "allFiltered": ""
+            "loadMore": ""
         },
         "pleaseLogin": "",
-        "ccbExplanation": "",
         "uploadingMultiple": ""
     },
     "index": {
-        "title": "Tervetuloa MapCompleteen",
-        "intro": ""
+        "title": "Tervetuloa MapCompleteen"
     },
     "reviews": {
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu",
-        "write_a_comment": "",
-        "saved": "",
-        "attribution": ""
+        "saved": ""
     },
     "importHelper": {
         "askMetadata": {
-            "shouldNotBeHomepage": "",
-            "giveDescription": ""
+            "shouldNotBeHomepage": ""
         },
         "compareToAlreadyExistingNotes": {
             "loadingFailed": "",
-            "someNearby": "",
             "wontBeImported": ""
-        },
-        "confirmProcess": {
-            "readImportGuidelines": ""
         },
         "conflationChecker": {
             "zoomLevelSelection": "",
-            "osmLoaded": "",
             "cacheExpired": "",
-            "states": {
-                "idle": ""
-            },
             "title": ""
-        },
-        "createNotes": {
-            "loading": ""
         },
         "login": {
-            "loginRequired": "",
-            "title": ""
+            "loginRequired": ""
         },
         "mapPreview": {
             "selectLayer": ""
         },
         "selectFile": {
-            "errNotFeatureCollection": "",
-            "fileFormatDescriptionCsv": "",
-            "errNoName": ""
+            "fileFormatDescriptionCsv": ""
         },
         "selectTheme": {
-            "misMatch": "",
-            "displayNonMatchingCount": ""
+            "misMatch": ""
         },
         "gotoImportViewer": "",
-        "introduction": {
-            "title": ""
-        },
         "previewAttributes": {
             "title": ""
-        },
-        "noteParts": {
-            "wikilink": ""
         }
     },
     "matrixbot": {
         "commands": {
             "dm": {
                 "receipt": "",
-                "commandNotFound": "",
                 "sendReason": ""
             },
             "documentation": {
-                "inputElement": {
-                    "singular": ""
-                },
                 "theme": {
-                    "singular": ""
-                },
-                "layer": {
                     "singular": ""
                 },
                 "visualisation": {
@@ -203,93 +145,63 @@
                 }
             },
             "help": {
-                "docs": "",
-                "askRights": "",
-                "p1": ""
+                "askRights": ""
             },
             "search": {
-                "overview": "",
-                "arglayerid": ""
+                "overview": ""
             },
             "tags": {
                 "noSearchGiven": ""
             },
             "welcome": {
-                "p2": "",
                 "p1": ""
             },
             "wiki": {
-                "docs": "",
                 "nothingFound": ""
             },
             "role": {
-                "verbrevoke": "",
                 "allRolesIntro": "",
-                "noRightsNeeded": "",
                 "argverb": ""
             },
             "info": {
-                "noEditPossible": "",
-                "noOpeningHours": "",
-                "provideSearch": ""
+                "noOpeningHours": ""
             },
             "scheme": {
                 "notype": ""
-            },
-            "dream": {
-                "docs": ""
             },
             "shutdown": {
                 "notYetShuttingDown": ""
             },
             "language": {
-                "arglang": "",
                 "currentLanguage": ""
             }
         },
-        "subcommanNotFound": "",
         "commandFailed": ""
     },
     "move": {
-        "inviteToMove": {
-            "reasonRelocation": ""
-        },
         "confirmMove": "",
-        "selectReason": "",
         "reasons": {
             "reasonRelocation": ""
-        },
-        "zoomInFurther": ""
+        }
     },
     "notes": {
         "textNeeded": "",
-        "createNote": "",
         "isCreated": "",
-        "disableAllNoteFilters": "",
-        "warnAnonymous": "",
-        "createNoteTitle": ""
+        "warnAnonymous": ""
     },
     "professional": {
         "aboutMc": {
-            "title": "",
-            "survey": {
-                "title": ""
-            }
+            "title": ""
         },
         "aboutOsm": {
             "aboutOsm": {
-                "intro": "",
-                "title": ""
+                "intro": ""
             },
             "benefits": {
                 "li0": ""
             },
-            "license": {
-                "title": ""
-            },
             "vandalism": {
-                "li0": "",
-                "intro": ""
+                "li0": ""
             }
         },
         "drawbacks": {
@@ -298,42 +210,26 @@
                     "intro": ""
                 },
                 "usecaseMapDifferentSources": {
-                    "title": "",
                     "outro": ""
                 }
             },
             "unsuitedData": {
-                "li1": "",
                 "intro": ""
             }
         },
-        "indexPage": {
-            "hookMore": ""
-        },
         "services": {
-            "intro": "",
-            "title": ""
+            "intro": ""
         },
         "text0": ""
     },
     "split": {
-        "hasBeenSplit": "",
         "loginToSplit": ""
     },
     "validation": {
-        "nat": {
-            "notANumber": ""
-        },
         "float": {
             "feedback": ""
         },
-        "pnat": {
-            "description": ""
-        },
         "text": {
-            "description": ""
-        },
-        "distance": {
             "description": ""
         },
         "int": {
@@ -341,31 +237,20 @@
         }
     },
     "delete": {
-        "cancel": "",
         "explanations": {
             "retagOtherThemes": ""
         },
-        "reasons": {
-            "disused": ""
-        },
         "partOfOthers": "",
-        "cannotBeDeleted": "",
         "onlyEditedByLoggedInUser": ""
     },
-    "favourite": {
-        "panelIntro": ""
-    },
     "importLayer": {
-        "importButton": "",
-        "layerName": ""
+        "importButton": ""
     },
     "privacy": {
         "editingTitle": "",
-        "trackingTitle": "",
         "tracking": ""
     },
     "translations": {
-        "completeness": "",
         "notImmediate": ""
     }
 }

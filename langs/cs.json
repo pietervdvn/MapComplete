@@ -1,147 +1,92 @@
 {
     "general": {
         "download": {
-            "downloadCSV": "",
             "licenseInfo": "",
-            "downloadAsPdf": "",
             "downloadGpx": ""
-        },
-        "levelSelection": {
-            "confirmLevel": ""
         },
         "morescreen": {
             "createYourOwnTheme": "",
-            "streetcomplete": "",
             "noSearch": ""
         },
-        "noTagsSelected": "",
         "opening_hours": {
             "open_during_ph": "",
-            "openTill": "",
             "ph_not_known": ""
         },
-        "notValid": "",
         "pdf": {
             "attrBackground": ""
         },
         "questions": {
-            "phoneNumberOf": "",
             "websiteIs": ""
-        },
-        "search": {
-            "error": ""
         },
         "sharescreen": {
             "fsIncludeCurrentBackgroundMap": "",
-            "fsGeolocation": "",
             "editThisTheme": "",
-            "fsUserbadge": "",
             "downloadCustomThemeHelp": ""
         },
-        "useSearch": "",
         "weekdays": {
             "abbreviations": {
                 "saturday": ""
             },
-            "tuesday": "",
             "saturday": ""
         },
         "wikipedia": {
-            "searchToShort": "",
-            "failed": "",
-            "noResults": ""
+            "failed": ""
         },
         "welcomeExplanation": {
             "browseMoreMaps": ""
         },
-        "apply_button": {
-            "appliedOnAnotherObject": ""
-        },
         "add": {
             "disableFiltersExplanation": "",
-            "import": {
-                "wrongTypeToConflate": ""
-            },
             "disableFilters": "",
-            "hasBeenImported": "",
-            "confirmButton": "",
-            "zoomInMore": ""
+            "confirmButton": ""
         },
         "attribution": {
             "openMapillary": "",
-            "mapContributionsBy": "",
             "editId": "",
-            "josmOpened": "",
             "themeBy": ""
         },
-        "skip": "",
         "goToInbox": "",
-        "getStartedNewAccount": "",
         "useSearchForMore": "",
-        "aboutMapcomplete": "",
         "confirm": "",
-        "example": "",
         "examples": ""
     },
     "image": {
-        "ccbExplanation": "",
         "nearbyPictures": {
             "allFiltered": "",
-            "removeFilters": "",
             "loading": ""
         },
-        "uploadFailed": "",
         "uploadingMultiple": "",
-        "doDelete": "",
         "uploadingPicture": ""
     },
     "importHelper": {
         "askMetadata": {
-            "downloadGeojson": "",
             "orDownload": ""
         },
         "confirmProcess": {
-            "contactedCommunity": "",
             "readImportGuidelines": ""
         },
         "conflationChecker": {
-            "states": {
-                "idle": ""
-            },
             "importCandidatesCount": "",
-            "downloadOverpassData": "",
-            "nearbyWarn": "",
-            "title": ""
+            "nearbyWarn": ""
         },
         "createNotes": {
             "openImportViewer": ""
-        },
-        "introduction": {
-            "importFormat": ""
         },
         "login": {
             "loginRequired": ""
         },
         "mapPreview": {
-            "selectLayer": "",
             "autodetected": ""
-        },
-        "previewAttributes": {
-            "inspectDataTitle": ""
         },
         "selectFile": {
             "fileFormatDescription": "",
-            "loadedFilesAre": "",
             "fileFormatDescriptionGeoJson": ""
         },
         "selectTheme": {
-            "title": "",
             "intro": ""
         },
         "compareToAlreadyExistingNotes": {
-            "title": "",
-            "loading": "",
-            "loadingFailed": ""
+            "loading": ""
         },
         "noteParts": {
             "importEasily": ""
@@ -150,107 +95,69 @@
     "matrixbot": {
         "commands": {
             "documentation": {
-                "file": {
-                    "plural": ""
-                },
                 "overview": "",
-                "layer": {
-                    "plural": ""
-                },
                 "visualisation": {
                     "singular": ""
-                },
-                "notFound": ""
+                }
             },
             "help": {
-                "supported": "",
-                "p0": ""
+                "supported": ""
             },
             "info": {
                 "fetchingInfoAbout": "",
-                "searchingWorldwide": "",
-                "couldNotDownload": "",
-                "docs": ""
+                "couldNotDownload": ""
             },
             "role": {
                 "verbremove": "",
-                "argverb": "",
-                "docs": "",
-                "userHasRoles": ""
+                "docs": ""
             },
             "scheme": {
                 "notype": ""
             },
             "wiki": {
-                "foundMatching": "",
                 "docs": ""
-            },
-            "welcome": {
-                "p2": ""
             },
             "dm": {
                 "failed": "",
-                "noDm": "",
                 "docs": ""
             },
             "language": {
-                "currentLanguage": "",
                 "arglang": ""
             },
-            "tags": {
-                "noSearchGiven": ""
-            },
             "search": {
-                "argsearch": "",
-                "announceLimited": ""
+                "argsearch": ""
             },
             "dream": {
                 "docs": ""
-            },
-            "shutdown": {
-                "argmode": ""
             }
         },
-        "commandFailed": "",
-        "subcommanNotFound": ""
+        "commandFailed": ""
     },
     "move": {
         "inviteToMove": {
             "reasonRelocation": ""
         },
-        "confirmMove": "",
         "partOfAWay": "",
-        "inviteToMoveAgain": "",
         "isWay": ""
     },
     "notes": {
-        "noteLayerNotEnabled": "",
         "anonymous": "",
-        "loginToClose": "",
         "warnAnonymous": "",
-        "addCommentPlaceholder": "",
         "loginToAddPicture": ""
     },
     "privacy": {
-        "geodataTitle": "",
-        "editing": "",
-        "editingTitle": ""
+        "editing": ""
     },
     "professional": {
         "aboutOsm": {
             "aboutOsm": {
-                "li2": "",
-                "title": ""
+                "li2": ""
             },
             "benefits": {
                 "li2": ""
             },
-            "license": {
-                "intro": ""
-            },
             "vandalism": {
-                "li2": "",
-                "li3": ""
+                "li2": ""
             }
         },
         "drawbacks": {
@@ -258,90 +165,56 @@
                 "usecaseGatheringOpenData": {
                     "intro": ""
                 },
-                "usecaseMapDifferentSources": {
-                    "li1": ""
-                },
-                "li2": ""
-            },
-            "unsuitedData": {
                 "li2": ""
             },
             "title": ""
         },
         "services": {
-            "outro": "",
             "li2": ""
         },
         "aboutMc": {
-            "text2": "",
             "survey": {
                 "intro": ""
             }
         },
-        "intro": "",
         "indexPage": {
             "hookMore": ""
         }
     },
     "split": {
-        "split": "",
         "hasBeenSplit": ""
     },
     "importLayer": {
-        "alreadyMapped": "",
         "importButton": ""
     },
-    "index": {
-        "pickTheme": ""
-    },
     "translations": {
-        "completeness": "",
-        "missing": ""
+        "completeness": ""
     },
     "centerMessage": {
         "retrying": ""
     },
     "delete": {
-        "isDeleted": "",
         "explanations": {
             "selectReason": ""
         },
-        "cannotBeDeleted": "",
         "reasons": {
             "notFound": ""
         },
-        "partOfOthers": "",
         "loginToDelete": ""
     },
     "validation": {
-        "float": {
-            "feedback": ""
-        },
         "wikidata": {
             "description": ""
-        },
-        "pnat": {
-            "noZero": ""
         },
         "color": {
             "description": ""
         },
-        "nat": {
-            "notANumber": ""
-        },
         "date": {
-            "description": ""
-        },
-        "distance": {
             "description": ""
         }
     },
     "reviews": {
         "saved": "",
-        "i_am_affiliated": "",
         "posting_as": ""
-    },
-    "favourite": {
-        "loginNeeded": ""
     }
 }

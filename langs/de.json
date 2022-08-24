@@ -274,8 +274,7 @@
             "searchToShort": "Ihre Suchanfrage ist zu kurz, geben Sie einen längeren Text ein",
             "searchWikidata": "Wikidata durchsuchen",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "useSearch": ""
+        }
     },
     "image": {
         "addPicture": "Bild hinzufügen",

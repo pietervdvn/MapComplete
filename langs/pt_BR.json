@@ -13,11 +13,7 @@
             "hardDelete": "Este ponto será excluído no OpenStreetMap. Pode ser recuperado por um colaborador experiente",
             "selectReason": "Por favor, selecione por que este recurso deve ser excluído"
         },
-        "reasons": {
-            "notFound": ""
-        },
         "isDeleted": "",
-        "isntAPoint": "",
         "partOfOthers": ""
     },
     "favourite": {
@@ -40,10 +36,8 @@
             "title": "Adicionar um novo ponto?",
             "zoomInFurther": "Aumente mais o zoom para adicionar um ponto.",
             "import": {
-                "importTags": "",
                 "wrongTypeToConflate": ""
             },
-            "disableFilters": "",
             "warnVisibleForEveryone": ""
         },
         "backgroundMap": "Mapa de fundo",
@@ -137,42 +131,26 @@
         },
         "welcomeBack": "Você está logado, seja bem-vindo de volta!",
         "morescreen": {
-            "requestATheme": "",
-            "streetcomplete": "",
-            "hiddenExplanation": ""
+            "streetcomplete": ""
         },
         "pdf": {
             "generatedWith": ""
         },
-        "welcomeExplanation": {
-            "addNew": ""
-        },
         "wikipedia": {
             "noResults": "",
-            "searchToShort": "",
             "noWikipediaPage": ""
         },
-        "loginFailed": "",
         "attribution": {
             "themeBy": "",
-            "codeContributionsBy": "",
             "josmNotOpened": "",
-            "translatedBy": "",
             "followOnTwitter": ""
         },
         "download": {
-            "title": "",
             "includeMetaData": "",
-            "downloadFeatureAsGeojson": "",
             "downloadAsPdf": ""
         },
-        "apply_button": {
-            "appliedOnAnotherObject": ""
-        },
         "logout": "",
-        "examples": "",
-        "loadingTheme": "",
-        "next": ""
+        "loadingTheme": ""
     },
     "image": {
         "addPicture": "Adicionar imagem",
@@ -190,9 +168,7 @@
         "uploadingPicture": "Enviando sua imagem…",
         "willBePublished": "Sua imagem será publicada: ",
         "nearbyPictures": {
-            "noImageSelected": "",
-            "allFiltered": "",
-            "removeFilters": ""
+            "allFiltered": ""
         },
         "ccbExplanation": ""
     },
@@ -220,140 +196,96 @@
     },
     "importHelper": {
         "askMetadata": {
-            "orDownload": "",
             "intro": ""
         },
         "compareToAlreadyExistingNotes": {
-            "titleLong": "",
-            "noPreviousNotesFound": "",
-            "loading": ""
+            "noPreviousNotesFound": ""
         },
         "conflationChecker": {
             "states": {
                 "idle": ""
             },
-            "title": "",
             "loadedDataAge": "",
-            "titleNearby": "",
             "nearbyWarn": ""
-        },
-        "createNotes": {
-            "loading": ""
         },
         "introduction": {
             "description": ""
         },
-        "login": {
-            "loggedInWith": ""
-        },
         "previewAttributes": {
-            "someHaveSame": "",
-            "inspectDataTitle": ""
+            "someHaveSame": ""
         },
         "selectFile": {
             "fileFormatDescriptionCsv": "",
-            "loadedFilesAre": "",
             "title": ""
         },
         "selectTheme": {
-            "needsTags": "",
             "notApplicable": ""
         },
         "confirmProcess": {
-            "readImportGuidelines": "",
             "titleLong": ""
-        },
-        "mapPreview": {
-            "mismatch": ""
         },
         "noteParts": {
             "importEasily": ""
         }
     },
     "importLayer": {
-        "alreadyMapped": "",
         "notFound": ""
     },
     "matrixbot": {
-        "commandNotFound": "",
         "commands": {
             "dm": {
-                "failed": "",
-                "noDm": ""
+                "failed": ""
             },
             "info": {
                 "noEditPossible": "",
-                "couldNotDownload": "",
-                "noInfo": "",
-                "closed": ""
+                "noInfo": ""
             },
             "role": {
                 "docs": "",
-                "noRolesYet": "",
-                "verbadd": "",
-                "verbrevoke": ""
+                "verbadd": ""
             },
             "search": {
-                "searching": "",
-                "overview": ""
+                "searching": ""
             },
             "shutdown": {
-                "notYetShuttingDown": "",
-                "goodbye": ""
+                "notYetShuttingDown": ""
             },
             "documentation": {
                 "inputElement": {
                     "plural": ""
                 },
-                "docs": "",
                 "layer": {
                     "singular": ""
                 },
-                "urlParam": "",
                 "visualisation": {
                     "singular": ""
                 }
             },
-            "welcome": {
-                "p1": ""
-            },
             "language": {
-                "currentLanguage": "",
-                "notFound": ""
+                "currentLanguage": ""
             },
             "scheme": {
                 "notype": ""
             },
-            "tags": {
-                "noSearchGiven": ""
-            },
             "wiki": {
-                "foundMatching": "",
-                "nothingFound": ""
+                "foundMatching": ""
             },
             "help": {
-                "askRights": "",
-                "p1": ""
+                "askRights": ""
             },
             "dream": {
                 "generatedBy": ""
             }
-        },
-        "tooLongForPublic": ""
+        }
     },
     "notes": {
         "warnAnonymous": "",
-        "noteLayerDoEnable": "",
         "createNote": "",
-        "loginToAddPicture": "",
         "addAComment": "",
-        "addComment": "",
         "isCreated": ""
     },
     "privacy": {
-        "editingTitle": "",
-        "miscCookies": "",
-        "miscCookiesTitle": ""
+        "miscCookies": ""
     },
     "professional": {
         "drawbacks": {
@@ -361,80 +293,50 @@
                 "intro": ""
             },
             "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "li1": ""
-                },
-                "li2": "",
-                "title": ""
+                "li2": ""
             },
             "intro": ""
         },
         "services": {
-            "title": "",
             "li0": ""
         },
         "aboutOsm": {
             "aboutOsm": {
-                "intro": "",
                 "li3": ""
-            },
-            "benefits": {
-                "li0": ""
             },
             "license": {
                 "title": ""
             },
             "vandalism": {
-                "li2": "",
                 "li0": ""
             }
         },
         "aboutMc": {
-            "text2": "",
             "internalUse": {
                 "intro": ""
             }
         },
-        "title": "",
         "indexPage": {
             "hook": ""
         }
-    },
-    "split": {
-        "inviteToSplit": ""
     },
     "validation": {
         "nat": {
             "notANumber": ""
         },
-        "email": {
-            "noAt": ""
-        },
         "float": {
             "feedback": ""
         },
-        "url": {
-            "description": ""
-        },
         "date": {
-            "description": ""
-        },
-        "pfloat": {
             "description": ""
         },
         "tooLong": ""
     },
     "move": {
-        "inviteToMove": {
-            "generic": ""
-        },
         "moveTitle": "",
-        "pointIsMoved": "",
-        "zoomInFurther": "",
-        "cannotBeMoved": ""
+        "zoomInFurther": ""
     },
     "translations": {
-        "isTranslator": "",
-        "activateButton": ""
+        "isTranslator": ""
     }
 }

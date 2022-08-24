@@ -91,8 +91,7 @@
             "openMapillary": "Obrir Mapillary aquí",
             "openOsmcha": "Veure darreres edicions fetes amb {theme}",
             "themeBy": "Tema mantingut per {author}",
-            "translatedBy": "MapComplete ha estat traduït per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} col·laboradors més</a>",
-            "mapillaryHelp": ""
+            "translatedBy": "MapComplete ha estat traduït per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} col·laboradors més</a>"
         },
         "back": "Tornar",
         "backToMapcomplete": "Tornar a l'explicació general de la petició",
@@ -257,9 +256,6 @@
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
         },
-        "levelSelection": {
-            "confirmLevel": ""
-        },
         "useSearchForMore": ""
     },
     "image": {
@@ -275,7 +271,6 @@
         "isDeleted": "Esborrada",
         "nearbyPictures": {
             "browseNearby": "Cerca imatges properes…",
-            "removeFilters": "",
             "onlyTowards": ""
         },
         "pleaseLogin": "Entrar per pujar una foto",
@@ -328,36 +323,24 @@
             "title": "Seleccionar arxiu"
         },
         "title": "Assistent d'importació",
-        "confirmProcess": {
-            "licenseIsCompatible": ""
-        },
         "conflationChecker": {
             "showOsmLayerInConflationMap": "",
-            "states": {
-                "running": ""
-            },
             "nothingLoaded": "",
-            "downloadOverpassData": "",
             "titleNearby": ""
         },
         "compareToAlreadyExistingNotes": {
-            "someNearby": "",
-            "wontBeImported": "",
-            "noPreviousNotesFound": ""
+            "wontBeImported": ""
         },
         "noteParts": {
             "importEasily": ""
         },
         "selectTheme": {
-            "misMatch": "",
             "unmatchedTitle": ""
         },
         "askMetadata": {
-            "intro": "",
             "orDownload": ""
         },
         "createNotes": {
-            "openImportViewer": "",
             "done": ""
         }
     },
@@ -646,68 +629,46 @@
     "matrixbot": {
         "commands": {
             "documentation": {
-                "inputElement": {
-                    "singular": ""
-                },
                 "layer": {
                     "singular": ""
                 },
-                "url_parameter": {
-                    "plural": ""
-                },
                 "visualisation": {
                     "singular": ""
-                },
-                "docs": ""
+                }
             },
             "help": {
-                "p0": "",
-                "notFound": ""
+                "p0": ""
             },
             "info": {
                 "foundResults": "",
-                "nothingFound": "",
-                "editWith": "",
-                "closedTodayAndTomorrow": ""
+                "editWith": ""
             },
             "welcome": {
                 "docs": ""
             },
             "search": {
-                "nothingFound": "",
                 "argsearch": ""
             },
             "shutdown": {
-                "goodbye": "",
                 "verbshutdown": ""
             },
             "wiki": {
-                "gotResults": "",
                 "loadingFailed": ""
             },
             "dm": {
-                "argto": "",
-                "docs": "",
-                "executing": ""
+                "docs": ""
             },
             "tags": {
                 "argsearch": ""
             },
-            "scheme": {
-                "noMatchingLayer": ""
-            },
             "language": {
-                "arglang": "",
-                "knownLanguages": ""
+                "arglang": ""
             },
             "role": {
                 "allRolesIntro": "",
-                "noPreviousRoles": "",
-                "verbadd": "",
-                "argverb": ""
+                "verbadd": ""
             }
         },
-        "commandNotFound": "",
-        "tooLongForPublic": ""
+        "commandNotFound": ""
     }
 }
