@@ -3304,7 +3304,36 @@
             "Name": {
                 "question": "Wat is de naam van deze hondenweide?",
                 "render": "Deze hondenweide heet {name}"
+            },
+            "dogpark-fenced": {
+                "question": "Is deze hondenweide volledig omheind?",
+                "mappings": {
+                    "0": {
+                        "then": "Deze hondenweide is volledig omheind"
+                    },
+                    "1": {
+                        "then": "Deze hondenweide is <strong>niet</strong> volledig omheind"
+                    }
+                }
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Heeft gescheiden deel voor puppy's en kleine honden"
+                    },
+                    "1": {
+                        "then": "Heeft <strong>geen</strong> gescheiden deel voor puppy's en kleine honden"
+                    }
+                },
+                "question": "Heeft deze hondenweide een gescheiden en omheind deel voor puppy's en kleine honden?"
+            },
+            "dogarea": {
+                "render": "Deze hondenweide is {_surface:ha} hectaren groot"
             }
+
+        },
+        "title": {
+            "render": "hondenweide"
         }
     },
     "drinking_water": {
@@ -4219,6 +4248,38 @@
                 },
                 "question": "Wat voor soort brandkraan is dit?",
                 "render": " Het type brandkraan is {fire_hydrant:type}"
+            },
+            "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Soort koppeling"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Storz-koppeling"
+                    },
+                    "1": {
+                        "then": "UNI-koppeling"
+                    },
+                    "2": {
+                        "then": "Barcelona-koppeling"
+                    }
+                },
+                "question": "Welke soort koppeling heeft deze hydrant?",
+                "render": "Koppelingen:{couplings:type}"
+            },
+            "hydrant-couplings-diameters": {
+                "freeform": {
+                    "placeholder": "Koppeldiameters"
+                },
+                "question": "Welke diameter hebben de koppelingen van deze hydrant?",
+                "render": "Koppelingdiameters:{couplings:diameters}"
+            },
+            "hydrant-diameter": {
+                "freeform": {
+                    "placeholder": "Pijpdiameter"
+                },
+                "question": "Wat is de pijpdiameter van deze hydrant?",
+                "render": "Pijpdiameter:{canonical(fire_hydrant:diameter)}"
             }
         },
         "title": {
@@ -4540,7 +4601,37 @@
                 }
             }
         },
-        "name": "MapRoulette Taken"
+        "name": "MapRoulette Taken",
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "2": {
+                        "then": "Taak was vals positief"
+                    },
+                    "0": {
+                        "then": "Taak werd gecreëerd"
+                    },
+                    "1": {
+                        "then": "Taak werd opgelost"
+                    },
+                    "3": {
+                        "then": "Taak werd overgeslagen"
+                    },
+                    "4": {
+                        "then": "Taak werd verwijderd"
+                    },
+                    "5": {
+                        "then": "Taak was al opgelost"
+                    },
+                    "6": {
+                        "then": "Taak werd als te moeilijk ervaren"
+                    },
+                    "7": {
+                        "then": "Taak is uitgeschakeld"
+                    }
+                }
+            }
+        }
     },
     "maxspeed": {
         "description": "Toont de toegestane snelheid voor elke weg",
@@ -4555,7 +4646,8 @@
                         "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
                     }
                 },
-                "render": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}"
+                "render": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}",
+                "question": "Wat is de legale maximumsnelheid voor deze weg?"
             }
         },
         "title": {
@@ -6968,5 +7060,40 @@
                 }
             }
         }
-    }
+    },
+    "maproulette_challenge": {
+        "filter": {
+            "0": {
+                "options": {
+                    "1": {
+                        "question": "Toon taken die zijn gecreëerd"
+                    },
+                    "0": {
+                        "question": "Toon alle taken, ongeacht de status"
+                    },
+                    "4": {
+                        "question": "Toon taken die zijn overgeslagen"
+                    },
+                    "5": {
+                        "question": "Toon taken die zijn verwijderd"
+                    },
+                    "8": {
+                        "question": "Toon taken die zijn uitgeschakeld"
+                    },
+                    "2": {
+                        "question": "Toon taken die zijn opgelost"
+                    },
+                    "3": {
+                        "question": "Toon taken die vals positief waren"
+                    },
+                    "6": {
+                        "question": "Toon taken die reeds opgelost waren"
+                    },
+                    "7": {
+                        "question": "Toon taken die als te moeilijk waren ervaren"
+                    }
+                }
+            }
+        }
+    },
 }
