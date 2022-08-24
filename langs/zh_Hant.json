@@ -62,6 +62,7 @@
             "zoomInFurther": "放大來新增新的節點。",
             "zoomInMore": "再放大來匯入這一圖徵"
         },
+        "apply_button": {},
         "attribution": {
             "attributionContent": "<p>所有資料由<a href=\"https://osm.org\" target=\"_blank\">開放街圖</a>提供，在<a href=\"https://osm.org/copyright\" target=\"_blank\">開放資料庫授權條款</a>之下自由再利用。</p>",
             "attributionTitle": "署名通知",
@@ -93,10 +94,12 @@
         "getStartedLogin": "登入開放街圖帳號來開始",
         "getStartedNewAccount": " 或是 <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">註冊新帳號</a>",
         "goToInbox": "開啟訊息框",
+        "histogram": {},
         "layerSelection": {
             "title": "選擇圖層",
             "zoomInToSeeThisLayer": "放大來看看這一圖層"
         },
+        "levelSelection": {},
         "loading": "載入中...",
         "loginOnlyNeededToEdit": "如果你想要編輯地圖",
         "loginToStart": "登入之後來回答這問題",
@@ -194,7 +197,11 @@
             "tuesday": "星期二",
             "wednesday": "星期三"
         },
-        "welcomeBack": "你已經登入了，歡迎回來！"
+        "welcomeBack": "你已經登入了，歡迎回來！",
+        "welcomeExplanation": {},
+        "wikipedia": {
+            "previewbox": {}
+        }
     },
     "image": {
         "addPicture": "新增圖片",
@@ -204,6 +211,7 @@
         "doDelete": "移除圖片",
         "dontDelete": "取消",
         "isDeleted": "已移除",
+        "nearbyPictures": {},
         "pleaseLogin": "請登入以新增圖片",
         "respectPrivacy": "請別照人像或是車牌，不要上傳 Google 地圖、Google 街景或其他受版權保護的資料來源。",
         "toBig": "{actual_size} 因此照片太大，請使用最大 {max_size} 的照片",
@@ -214,12 +222,83 @@
         "uploadingPicture": "正在上傳你的圖片…",
         "willBePublished": "你的圖片將依以下授權釋出： "
     },
+    "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
+        "introduction": {},
+        "login": {},
+        "mapPreview": {},
+        "noteParts": {},
+        "previewAttributes": {},
+        "selectFile": {},
+        "selectTheme": {}
+    },
+    "importInspector": {},
+    "importLayer": {},
     "index": {
         "#": "當沒有載入主題時，這些文字會在主題按鈕上面顯示",
         "featuredThemeTitle": "這週的焦點",
         "intro": "MapComplete 是開放街圖能夠顯示特定主題的檢視器與編輯器，能夠顯示與允許更新特定主題的地圖。",
         "pickTheme": "請挑選主題來開始。",
         "title": "歡迎使用 MapComplete"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
+    },
+    "move": {
+        "inviteToMove": {},
+        "reasons": {}
+    },
+    "multi_apply": {},
+    "notes": {},
+    "privacy": {},
+    "professional": {
+        "aboutMc": {
+            "internalUse": {},
+            "layers": {},
+            "survey": {}
+        },
+        "aboutOsm": {
+            "aboutOsm": {},
+            "benefits": {},
+            "license": {},
+            "vandalism": {}
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {},
+                "usecaseMapDifferentSources": {}
+            },
+            "unsuitedData": {}
+        },
+        "indexPage": {},
+        "services": {}
     },
     "reviews": {
         "affiliated_reviewer_warning": "(關係者審核)",
@@ -244,5 +323,24 @@
         "loginToSplit": "你必須登入才能分割道路",
         "split": "分開",
         "splitTitle": "請在地圖選擇要在那裡分割道路"
+    },
+    "translations": {},
+    "validation": {
+        "color": {},
+        "date": {},
+        "direction": {},
+        "distance": {},
+        "email": {},
+        "float": {},
+        "int": {},
+        "nat": {},
+        "opening_hours": {},
+        "pfloat": {},
+        "phone": {},
+        "pnat": {},
+        "string": {},
+        "text": {},
+        "url": {},
+        "wikidata": {}
     }
 }

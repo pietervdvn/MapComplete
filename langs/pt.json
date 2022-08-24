@@ -120,6 +120,7 @@
             "title": "Selecionar camadas",
             "zoomInToSeeThisLayer": "Amplie para ver esta camada"
         },
+        "levelSelection": {},
         "loading": "A carregar...",
         "loginOnlyNeededToEdit": "se quiser editar o mapa",
         "loginToStart": "Inicie a sessão para responder a esta pergunta",
@@ -220,6 +221,7 @@
             "wednesday": "Quarta-feira"
         },
         "welcomeBack": "Iniciou a sessão, bem-vindo de volta!",
+        "welcomeExplanation": {},
         "wikipedia": {
             "createNewWikidata": "Criar um novo item do Wikidata",
             "doSearch": "Pesquise acima para ver os resultados",
@@ -227,6 +229,7 @@
             "loading": "A carregar a Wikipédia...",
             "noResults": "Nada encontrado para <i>{search}</i>",
             "noWikipediaPage": "Este item do Wikidata ainda não tem uma página correspondente na Wikipédia.",
+            "previewbox": {},
             "searchWikidata": "Pesquisar no Wikidata",
             "wikipediaboxTitle": "Wikipédia"
         }
@@ -239,6 +242,7 @@
         "doDelete": "Remover imagem",
         "dontDelete": "Cancelar",
         "isDeleted": "Eliminada",
+        "nearbyPictures": {},
         "pleaseLogin": "Entre na sua conta para adicionar uma imagem",
         "respectPrivacy": "Não fotografe pessoas nem placas de veículos. Não envie imagens do Google Maps, do Google Streetview ou outras fontes protegidas por direitos de autor.",
         "toBig": "A sua imagem é muito grande porque tem {actual_size}. Use imagens com o máximo {max_size}",
@@ -249,12 +253,54 @@
         "uploadingPicture": "A enviar a sua imagem…",
         "willBePublished": "A sua imagem será publicada: "
     },
+    "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
+        "introduction": {},
+        "login": {},
+        "mapPreview": {},
+        "noteParts": {},
+        "previewAttributes": {},
+        "selectFile": {},
+        "selectTheme": {}
+    },
+    "importInspector": {},
+    "importLayer": {},
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
         "featuredThemeTitle": "Destaque desta semana",
         "intro": "O MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre elementos de um tema específico permitindo atualizar a informação.",
         "pickTheme": "Escolha um tema abaixo para começar.",
         "title": "Bem-vindo(a) ao MapComplete"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
     },
     "move": {
         "cancel": "Cancelar movimento",
@@ -284,6 +330,30 @@
     "multi_apply": {
         "autoApply": "Ao alterar os atributos {attr_names}, estes atributos serão alterados automaticamente em {count} outros objetos também"
     },
+    "notes": {},
+    "privacy": {},
+    "professional": {
+        "aboutMc": {
+            "internalUse": {},
+            "layers": {},
+            "survey": {}
+        },
+        "aboutOsm": {
+            "aboutOsm": {},
+            "benefits": {},
+            "license": {},
+            "vandalism": {}
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {},
+                "usecaseMapDifferentSources": {}
+            },
+            "unsuitedData": {}
+        },
+        "indexPage": {},
+        "services": {}
+    },
     "reviews": {
         "affiliated_reviewer_warning": "(avaliação de afiliado)",
         "attribution": "As avaliações são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis sob a licença <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -307,5 +377,24 @@
         "loginToSplit": "Tem de estar autenticado para dividir uma estrada",
         "split": "Dividir",
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
+    },
+    "translations": {},
+    "validation": {
+        "color": {},
+        "date": {},
+        "direction": {},
+        "distance": {},
+        "email": {},
+        "float": {},
+        "int": {},
+        "nat": {},
+        "opening_hours": {},
+        "pfloat": {},
+        "phone": {},
+        "pnat": {},
+        "string": {},
+        "text": {},
+        "url": {},
+        "wikidata": {}
     }
 }

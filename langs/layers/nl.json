@@ -310,16 +310,16 @@
                         "then": "Gemaakt uit metaal"
                     },
                     "2": {
-                        "then": "Gemaakt uit steen"
+                        "then": "Het zitgedeelte is gemaakt uit steen"
                     },
                     "3": {
-                        "then": "Gemaakt uit beton"
+                        "then": "Het zitgedeelte is gemaakt uit beton"
                     },
                     "4": {
-                        "then": "Gemaakt uit plastiek"
+                        "then": "Het zitgedeelte is gemaakt uit plastiek"
                     },
                     "5": {
-                        "then": "Gemaakt uit staal"
+                        "then": "Het zitgedeelte is gemaakt uit staal"
                     }
                 },
                 "question": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
@@ -3304,7 +3304,35 @@
             "Name": {
                 "question": "Wat is de naam van deze hondenweide?",
                 "render": "Deze hondenweide heet {name}"
+            },
+            "dogarea": {
+                "render": "Deze hondenweide is {_surface:ha} hectaren groot"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze hondenweide is volledig omheind"
+                    },
+                    "1": {
+                        "then": "Deze hondenweide is <strong>niet</strong> volledig omheind"
+                    }
+                },
+                "question": "Is deze hondenweide volledig omheind?"
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Heeft gescheiden deel voor puppy's en kleine honden"
+                    },
+                    "1": {
+                        "then": "Heeft <strong>geen</strong> gescheiden deel voor puppy's en kleine honden"
+                    }
+                },
+                "question": "Heeft deze hondenweide een gescheiden en omheind deel voor puppy's en kleine honden?"
             }
+        },
+        "title": {
+            "render": "hondenweide"
         }
     },
     "drinking_water": {
@@ -4185,6 +4213,38 @@
                 "question": "Welke kleur heeft de brandkraan?",
                 "render": "De brandkraan is {colour}"
             },
+            "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Soort koppeling"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Storz-koppeling"
+                    },
+                    "1": {
+                        "then": "UNI-koppeling"
+                    },
+                    "2": {
+                        "then": "Barcelona-koppeling"
+                    }
+                },
+                "question": "Welke soort koppeling heeft deze hydrant?",
+                "render": "Koppelingen:{couplings:type}"
+            },
+            "hydrant-couplings-diameters": {
+                "freeform": {
+                    "placeholder": "Koppeldiameters"
+                },
+                "question": "Welke diameter hebben de koppelingen van deze hydrant?",
+                "render": "Koppelingdiameters:{couplings:diameters}"
+            },
+            "hydrant-diameter": {
+                "freeform": {
+                    "placeholder": "Pijpdiameter"
+                },
+                "question": "Wat is de pijpdiameter van deze hydrant?",
+                "render": "Pijpdiameter:{canonical(fire_hydrant:diameter)}"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {
@@ -4540,7 +4600,72 @@
                 }
             }
         },
-        "name": "MapRoulette Taken"
+        "name": "MapRoulette Taken",
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Taak werd gecreëerd"
+                    },
+                    "1": {
+                        "then": "Taak werd opgelost"
+                    },
+                    "2": {
+                        "then": "Taak was vals positief"
+                    },
+                    "3": {
+                        "then": "Taak werd overgeslagen"
+                    },
+                    "4": {
+                        "then": "Taak werd verwijderd"
+                    },
+                    "5": {
+                        "then": "Taak was al opgelost"
+                    },
+                    "6": {
+                        "then": "Taak werd als te moeilijk ervaren"
+                    },
+                    "7": {
+                        "then": "Taak is uitgeschakeld"
+                    }
+                }
+            }
+        }
+    },
+    "maproulette_challenge": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Toon alle taken, ongeacht de status"
+                    },
+                    "1": {
+                        "question": "Toon taken die zijn gecreëerd"
+                    },
+                    "2": {
+                        "question": "Toon taken die zijn opgelost"
+                    },
+                    "3": {
+                        "question": "Toon taken die vals positief waren"
+                    },
+                    "4": {
+                        "question": "Toon taken die zijn overgeslagen"
+                    },
+                    "5": {
+                        "question": "Toon taken die zijn verwijderd"
+                    },
+                    "6": {
+                        "question": "Toon taken die reeds opgelost waren"
+                    },
+                    "7": {
+                        "question": "Toon taken die als te moeilijk waren ervaren"
+                    },
+                    "8": {
+                        "question": "Toon taken die zijn uitgeschakeld"
+                    }
+                }
+            }
+        }
     },
     "maxspeed": {
         "description": "Toont de toegestane snelheid voor elke weg",
@@ -4555,6 +4680,7 @@
                         "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
                     }
                 },
+                "question": "Wat is de legale maximumsnelheid voor deze weg?",
                 "render": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}"
             }
         },

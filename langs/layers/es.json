@@ -2754,7 +2754,6 @@
         }
     },
     "nature_reserve": {
-        "description": "",
         "tagRenderings": {
             "Access tag": {
                 "mappings": {
@@ -3624,9 +3623,7 @@
             },
             "count": {
                 "mappings": {
-                    "0": {
-                        "then": ""
-                    }
+                    "0": {}
                 }
             },
             "direction": {
@@ -3776,8 +3773,7 @@
                     "0": {
                         "then": "Abierto 24/7"
                     }
-                },
-                "question": ""
+                }
             },
             "toilet-access": {
                 "mappings": {

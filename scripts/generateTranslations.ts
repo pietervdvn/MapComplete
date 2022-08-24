@@ -282,6 +282,10 @@ class TranslationPart {
     private addTranslation(language: string, object: any) {
         for (const key in object) {
             const v = object[key]
+            if(v === ""){
+                delete object[key]
+                continue
+            }
             let subpart = <TranslationPart>this.contents.get(key)
             if (subpart === undefined) {
                 subpart = new TranslationPart()
@@ -386,12 +390,26 @@ function sortKeys(o: object): object {
     return nw
 }
 
+
+function removeEmptyString(object: object) {
+    for (const k in object) {
+        if(object[k] === ""){
+            delete object[k]
+            continue
+        }
+        if(typeof object[k] === "object"){
+            removeEmptyString(object[k])
+        }
+    }
+    return object
+}
 /**
  * Formats the specified file, helps to prevent merge conflicts
  * */
 function formatFile(path) {
     const original = readFileSync(path, "utf8")
     let contents = JSON.parse(original)
+    contents = removeEmptyString(contents)
     contents = sortKeys(contents)
     const endsWithNewline = original.endsWith("\n")
     writeFileSync(path, JSON.stringify(contents, null, "    ") + (endsWithNewline ? "\n" : ""))

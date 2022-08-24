@@ -65,7 +65,8 @@
         "es": "Qué velocidad tiene",
         "ca": "Quina velocitat té",
         "en": "What is the legal maximum speed one is allowed to drive on this road?",
-        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?"
+        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
+        "nl": "Wat is de legale maximumsnelheid voor deze weg?"
       },
       "freeform": {
         "key": "maxspeed",

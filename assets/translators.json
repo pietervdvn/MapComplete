@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 194,
+      "commits": 196,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -15,6 +15,10 @@
     {
       "commits": 59,
       "contributor": "Allan Nordhøy"
+    },
+    {
+      "commits": 45,
+      "contributor": "Anonymous"
     },
     {
       "commits": 36,
@@ -41,16 +45,12 @@
       "contributor": "Marco"
     },
     {
-      "commits": 21,
-      "contributor": "Anonymous"
+      "commits": 19,
+      "contributor": "Reza Almanda"
     },
     {
       "commits": 19,
       "contributor": "SC"
-    },
-    {
-      "commits": 18,
-      "contributor": "Reza Almanda"
     },
     {
       "commits": 16,
@@ -81,6 +81,10 @@
       "contributor": "paunofu"
     },
     {
+      "commits": 11,
+      "contributor": "Olivier"
+    },
+    {
       "commits": 10,
       "contributor": "Win Olario"
     },
@@ -91,10 +95,6 @@
     {
       "commits": 10,
       "contributor": "Irina"
-    },
-    {
-      "commits": 9,
-      "contributor": "Olivier"
     },
     {
       "commits": 9,

@@ -341,9 +341,7 @@
         "tagRenderings": {
             "bicycle-library-target-group": {
                 "mappings": {
-                    "0": {
-                        "then": ""
-                    }
+                    "0": {}
                 },
                 "question": "Ki kölcsönözhet itt kerékpárt?"
             },

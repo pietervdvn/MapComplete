@@ -140,6 +140,7 @@
             "title": "Ebenen auswählen",
             "zoomInToSeeThisLayer": "Ausschnitt vergrößern, um Ebene anzuzeigen"
         },
+        "levelSelection": {},
         "loading": "Laden…",
         "loadingTheme": "Lade {theme}…",
         "loginFailed": "Anmeldung bei OpenStreetMap fehlgeschlagen",

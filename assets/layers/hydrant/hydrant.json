@@ -329,32 +329,37 @@
       "id": "hydrant-diameter",
       "question": {
         "en": "What is the pipe diameter of this hydrant?",
-        "de": "Was ist der Rohrdurchmesser dieses Hydranten?"
+        "de": "Was ist der Rohrdurchmesser dieses Hydranten?",
+        "nl": "Wat is de pijpdiameter van deze hydrant?"
       },
       "freeform": {
         "key": "fire_hydrant:diameter",
         "placeholder": {
           "en": "Pipe diameter",
-          "de": "Rohrdurchmesser"
+          "de": "Rohrdurchmesser",
+          "nl": "Pijpdiameter"
         },
         "type": "int"
       },
       "render": {
         "en": "Pipe diameter: {canonical(fire_hydrant:diameter)}",
-        "de": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}"
+        "de": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}",
+        "nl": "Pijpdiameter:{canonical(fire_hydrant:diameter)}"
       }
     },
     {
       "id": "hydrant-couplings",
       "question": {
         "en": "What kind of couplings does this hydrant have?",
-        "de": "Welche Art von Kupplungen hat dieser Hydrant?"
+        "de": "Welche Art von Kupplungen hat dieser Hydrant?",
+        "nl": "Welke soort koppeling heeft deze hydrant?"
       },
       "freeform": {
         "key": "couplings:type",
         "placeholder": {
           "en": "Coupling type",
-          "de": "Art der Kupplung"
+          "de": "Art der Kupplung",
+          "nl": "Soort koppeling"
         },
         "type": "string"
       },
@@ -363,7 +368,8 @@
           "if": "couplings:type=Storz",
           "then": {
             "en": "Storz coupling",
-            "de": "Storz-Kupplung"
+            "de": "Storz-Kupplung",
+            "nl": "Storz-koppeling"
           },
           "icon": {
             "path": "./assets/layers/hydrant/storz.jpg",
@@ -374,14 +380,16 @@
           "if": "couplings:type=UNI",
           "then": {
             "en": "UNI coupling",
-            "de": "UNI-Kupplung"
+            "de": "UNI-Kupplung",
+            "nl": "UNI-koppeling"
           }
         },
         {
           "if": "couplings:type=Barcelona",
           "then": {
             "en": "Barcelona coupling",
-            "de": "Barcelona-Kupplung"
+            "de": "Barcelona-Kupplung",
+            "nl": "Barcelona-koppeling"
           },
           "icon": {
             "path": "./assets/layers/hydrant/barcelona.jpg",
@@ -392,25 +400,29 @@
       "multiAnswer": true,
       "render": {
         "en": "Couplings: {couplings:type}",
-        "de": "Kupplungen: {couplings:type}"
+        "de": "Kupplungen: {couplings:type}",
+        "nl": "Koppelingen:{couplings:type}"
       }
     },
     {
       "id": "hydrant-couplings-diameters",
       "question": {
         "en": "What diameter are the couplings of this hydrant?",
-        "de": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?"
+        "de": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
+        "nl": "Welke diameter hebben de koppelingen van deze hydrant?"
       },
       "freeform": {
         "key": "couplings:diameters",
         "placeholder": {
           "en": "Coupling diameters",
-          "de": "Kupplungsdurchmesser"
+          "de": "Kupplungsdurchmesser",
+          "nl": "Koppeldiameters"
         }
       },
       "render": {
         "en": "Coupling diameters: {couplings:diameters}",
-        "de": "Kupplungsdurchmesser: {couplings:diameters}"
+        "de": "Kupplungsdurchmesser: {couplings:diameters}",
+        "nl": "Koppelingdiameters:{couplings:diameters}"
       }
     },
     "images"

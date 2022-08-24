@@ -800,6 +800,9 @@
         "shortDescription": "Dit thema toont alle (toeristische) kaarten die OpenStreetMap kent",
         "title": "Een kaart van kaarten"
     },
+    "maxspeed": {
+        "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat."
+    },
     "missing_streets": {
         "description": "Dit thema voegt automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres.",
         "shortDescription": "Voegt ontbrekende straten toe aan gebouwen met huisnumer adhv CRAB",
