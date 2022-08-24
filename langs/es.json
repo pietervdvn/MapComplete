@@ -266,15 +266,10 @@
             "searchWikidata": "Buscar en Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         },
-        "levelSelection": {
-            "confirmLevel": ""
-        },
         "poweredByOsm": "",
         "welcomeExplanation": {
-            "browseOtherThemesIntro": "",
             "general": ""
-        },
-        "useSearch": ""
+        }
     },
     "image": {
         "addPicture": "Añadir foto",
@@ -360,7 +355,6 @@
             },
             "title": "Comparar con los datos existentes",
             "titleNearby": "Características cercanas",
-            "titleLive": "",
             "reloadTheCache": ""
         },
         "createNotes": {
@@ -456,34 +450,22 @@
             "dm": {
                 "failed": "No pude ejecutar <code>{cmd}</code> debido a {message}",
                 "sendReason": "Te envié este mensaje porque <b>{sender}</b> me pidió que te enviara esto con <code>{cmd}</code>",
-                "argto": "",
                 "noDm": "",
-                "executing": "",
                 "receipt": ""
             },
             "documentation": {
                 "docs": "Obtiene la documentación sobre una capa, un tema o un parámetro de URL de Mapcomplete",
                 "noIdIntro": "Da un id para obtener más información sobre un ítem relacionado con la programación de MapComplete. Los tipos conocidos son {list}",
                 "urlParam": "Parámetro de URL <code>{id}</code>",
-                "layer": {
-                    "singular": ""
-                },
                 "url_parameter": {
-                    "singular": ""
-                },
-                "theme": {
                     "singular": ""
                 },
                 "visualisation": {
                     "singular": ""
                 },
-                "inputElement": {
-                    "singular": ""
-                },
                 "file": {
                     "singular": ""
                 },
-                "argid": "",
                 "notFound": ""
             },
             "dream": {
@@ -512,8 +494,7 @@
                 "noInfo": "Aún no hay información relevante",
                 "noOpeningHours": "No se conocen los horarios de apertura.",
                 "nothingFound": "No se encontró nada para <code>{_}</code>",
-                "provideSearch": "Por favor, provee un término de búsqueda de un id para utilizar este comando",
-                "argsearch": ""
+                "provideSearch": "Por favor, provee un término de búsqueda de un id para utilizar este comando"
             },
             "language": {
                 "arglang": "El idioma que se utilizará a partir de ahora",
@@ -532,45 +513,35 @@
                 "noRightsNeeded": "El comando <code>{role}</code> puede ejecutarse por cualquiera, no necesitas configurar permisos para él",
                 "noRolesYet": "<b>{user}</b> actualmente no tiene roles.",
                 "userHasRoles": "<b>{user}</b> actualmente tiene los siguientes roles:",
-                "verbrevoke": "",
                 "arguser": "",
-                "verbdefault": "",
                 "verbremove": ""
             },
             "search": {
                 "searching": "Buscando {layerTitle} {mode} <code>{search}</code>…",
-                "argverb": "",
                 "arglayerid": "",
-                "noMatchingLayer": "",
                 "overview": ""
             },
             "shutdown": {
                 "argmode": "Inidica si el servicio debe de ser reiniciado, debe de ser uno de {verbs}",
                 "docs": "Apaga el bot",
                 "goodbye": "Apagando… ¡Hasta luego!",
-                "notYetShuttingDown": "Aún no me voy a reiniciar, solo me inicié hace {uptime} segundos. Esperaré por lo menos {min_uptime} antes de reiniciarme.",
-                "verbshutdown": ""
+                "notYetShuttingDown": "Aún no me voy a reiniciar, solo me inicié hace {uptime} segundos. Esperaré por lo menos {min_uptime} antes de reiniciarme."
             },
             "tags": {
                 "announceSearch": "<code>{id}</code> no parece ser un id de OSM válido - buscando en todo el mundo en lugar de para {search}…",
-                "docs": "",
                 "nothingFound": ""
             },
             "welcome": {
                 "p0": "¡Hola! Soy MapComplete-bot. Soy un programa informático que busca OpenStreetMap y que puede dar alguna información sobre <a href=\"https://mapcomplete.osm.be\">MapComplete</a>, que es un sitio web y aplicación que muestra mapas temáticos. Si falta información puedes añadirla fácilmente allí.",
                 "p1": "Envíame <code>info [searchterm]</code> y lo buscaré en OpenStreetMap por ti. Te mostraré la información que encuentre.",
-                "p3": "Hay unos pocos comandos más, envía <code>help</code> para verlos todos.",
-                "p2": ""
+                "p3": "Hay unos pocos comandos más, envía <code>help</code> para verlos todos."
             },
             "wiki": {
                 "docs": "Busca e imprime (una parte de) la página especificada desde {backend}. En salas públicas, imprimirá el primer párrafo; en un MD se enviará la página entera.",
-                "noWiki": "",
-                "searching": "",
-                "argsearch": ""
+                "searching": ""
             },
             "scheme": {
                 "argkey": "",
-                "noMatchingLayer": "",
                 "docs": ""
             }
         },
@@ -760,8 +731,7 @@
         "title": "{count} comentarios",
         "title_singular": "Un comentario",
         "tos": "Si creas una opinión, aceptas a <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">los Terminos De Servicio y la Política De Privacidad de Mangrove.reviews</a>",
-        "write_a_comment": "Deja una reseña…",
-        "i_am_affiliated": ""
+        "write_a_comment": "Deja una reseña…"
     },
     "split": {
         "cancel": "Cancelar",

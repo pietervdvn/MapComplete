@@ -12,8 +12,7 @@
         "explanations": {
             "hardDelete": "Ez a térképelem törlődik az OpenStreetMapről. Csak tapasztalt szerkesztő tudja visszaállítani",
             "selectReason": "Kérjük, jelöld meg, miért kellene ezt a térképelemet törölni",
-            "softDelete": "Ez a térképelem frissülni fog és ebben az alkalmazásban nem fog látszani. <span class=\"subtle\">{reason}</span>",
-            "retagOtherThemes": ""
+            "softDelete": "Ez a térképelem frissülni fog és ebben az alkalmazásban nem fog látszani. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Ez a térképelem törlődött",
         "isntAPoint": "Csak pontot lehet törölni, a kiválasztott térképelem viszont vonal, terület vagy kapcsolat.",
@@ -94,8 +93,7 @@
             "openIssueTracker": "Hiba bejelentése",
             "openMapillary": "Mapillary megnyitása itt",
             "openOsmcha": "A téma {theme} legutóbbi szerkesztéseinek megtekintése",
-            "themeBy": "A téma karbantartója: {author}",
-            "mapillaryHelp": ""
+            "themeBy": "A téma karbantartója: {author}"
         },
         "back": "Vissza",
         "backToMapcomplete": "Vissza a témák áttekintéséhez",
@@ -220,8 +218,7 @@
             "fsUserbadge": "Bejelentkezési gomb engedélyezése",
             "fsWelcomeMessage": "Felugró üdvözlő üzenet és kapcsolódó fülek megjelenítése",
             "intro": "<h3>Térkép megosztása</h3> Oszd meg ezt a térképet! Másold ki az alábbi linket, és küldd el a barátaidnak és a családodnak:",
-            "thanksForSharing": "Köszönjük a megosztást!",
-            "downloadCustomThemeHelp": ""
+            "thanksForSharing": "Köszönjük a megosztást!"
         },
         "skip": "Kérdés kihagyása",
         "skippedQuestions": "Néhány kérdés ki lett hagyva",
@@ -254,19 +251,13 @@
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
             "searchWikidata": "Keresés a Wikidatán",
             "wikipediaboxTitle": "Wikipédia",
-            "searchToShort": "",
             "previewbox": {
                 "born": ""
             }
         },
-        "useSearch": "",
         "screenToSmall": "",
         "welcomeExplanation": {
-            "browseOtherThemesIntro": "",
             "browseMoreMaps": ""
-        },
-        "levelSelection": {
-            "addNewOnLevel": ""
         }
     },
     "image": {
@@ -290,88 +281,59 @@
         "uploadingPicture": "Kép feltöltése folyamatban…",
         "willBePublished": "A képed így lesz közzétéve: ",
         "nearbyPictures": {
-            "confirm": "",
             "loadMore": "",
-            "noImageSelected": "",
             "onlyTowards": "",
-            "nothingFound": "",
             "title": ""
         }
     },
     "importHelper": {
         "introduction": {
-            "description": "Az importálási segédprogram egy külső adatkészletet konvertál OSM-jegyzetekké. A külső adatkészletnek meg kell felelnie a MapComplete egyik meglévő rétegének. Az importálóba helyezett minden egyes elemhez egyetlen jegyzet fog létrejönni. Ezek a jegyzetek a megfelelő térképelemekkel együtt fognak megjelenni ezeken a térképekben, hogy könnyen fel lehessen rajzolni őket a térképre.",
-            "importFormat": ""
+            "description": "Az importálási segédprogram egy külső adatkészletet konvertál OSM-jegyzetekké. A külső adatkészletnek meg kell felelnie a MapComplete egyik meglévő rétegének. Az importálóba helyezett minden egyes elemhez egyetlen jegyzet fog létrejönni. Ezek a jegyzetek a megfelelő térképelemekkel együtt fognak megjelenni ezeken a térképekben, hogy könnyen fel lehessen rajzolni őket a térképre."
         },
         "previewAttributes": {
             "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel",
-            "inspectDataTitle": "",
             "title": ""
         },
         "askMetadata": {
-            "shouldBeOsmWikilink": "",
             "downloadGeojson": "",
-            "shouldNotBeHomepage": "",
-            "orDownload": "",
-            "giveWikilink": ""
+            "orDownload": ""
         },
         "compareToAlreadyExistingNotes": {
             "loading": "",
-            "mapExplanation": "",
             "title": "",
-            "wontBeImported": "",
             "someNearby": ""
         },
         "createNotes": {
-            "done": "",
             "openImportViewer": ""
         },
         "selectTheme": {
-            "title": "",
             "noMatchingPresets": "",
-            "unmatchedTitle": "",
-            "intro": "",
-            "missing": ""
+            "intro": ""
         },
         "selectFile": {
             "loadedFilesAre": "",
-            "errNoLatOrLon": "",
             "errNotFeatureCollection": "",
-            "fileFormatDescriptionGeoJson": "",
-            "errDuplicate": "",
-            "fileFormatDescriptionCsv": ""
+            "errDuplicate": ""
         },
         "confirmProcess": {
             "contactedCommunity": "",
-            "titleLong": "",
             "title": ""
         },
         "conflationChecker": {
-            "importCandidatesCount": "",
             "states": {
-                "unexpected": "",
-                "error": ""
+                "unexpected": ""
             },
             "setRangeToZero": "",
-            "downloadOverpassData": "",
             "showOsmLayerInConflationMap": "",
-            "reloadTheCache": "",
             "titleNearby": "",
-            "mapShowingNearbyIntro": "",
             "zoomIn": ""
         },
-        "title": "",
         "mapPreview": {
-            "selectLayer": "",
-            "title": ""
+            "selectLayer": ""
         },
         "gotoImportViewer": "",
-        "noteParts": {
-            "datasource": ""
-        },
         "login": {
             "lockNotice": "",
-            "loginIsCorrect": "",
             "userAccountTitle": ""
         }
     },
@@ -418,9 +380,7 @@
         "title": "Adatvédelmi irányelvek",
         "tracking": "Ahhoz, hogy némi betekintést nyerünk abba, hogy ki látogatja meg weboldalunkat, néhány technikai adatot gyűjtünk. Ez tartalmazza azt az országot, ahonnan meglátogattad a weboldalt, azt a webhelyet, amely a MapComplete-re irányított, az eszközöd típusát és képernyőméretét. Egy cookie kerül elhelyezésre a készülékeden, amely jelzi, hogy ma meglátogatta a MapComplete-et. Ezek az adatok nem elég részletesek ahhoz, hogy személyesen azonosítsanak. A statisztika csak összesítetten érhető el, és <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">mindenkinek nyilvános</a>",
         "trackingTitle": "Statisztikai adatok",
-        "editing": "",
-        "surveillance": "",
-        "miscCookiesTitle": ""
+        "surveillance": ""
     },
     "professional": {
         "aboutOsm": {
@@ -434,18 +394,15 @@
             },
             "benefits": {
                 "li1": "Az adatai minden eddiginél nagyobb közönséghez jutnak el, hiszen ezt használja a Bing Maps (Microsoft), az Apple Maps, a Facebook, az Instagram, a Pokémon Go, az OsmAnd, az Organic Maps, a Maps.me, a Mapbox, a Komoot, szinte minden kerékpáros alkalmazás és még sok más weboldal és applikáció…",
-                "li0": "",
                 "title": ""
             },
             "vandalism": {
                 "intro": "Mivel az adatokat bárki szerkesztheti, előfordulhat, hogy rosszindulatú változtatás történik. Ez azonban néhány okból rendkívül ritka:",
                 "li0": "magasak a változtatások technikai akadályai, vagyis nem olyan könnyű a térképet szerkeszteni",
                 "li1": "egy kis rosszindulatú változtatásnak alacsony a hatása, így a vandál számára csekély a jutalom",
-                "li4": "",
                 "title": ""
             },
             "license": {
-                "intro": "",
                 "li0": ""
             }
         },
@@ -459,43 +416,29 @@
         "text1": "<p>A MapComplete olyan térképszerkesztő alkalmazás, amely megkönnyíti az OpenStreetMap adatokkal való feltöltését.</p>",
         "title": "Szakmai támogatás a MapComplete segítségével",
         "aboutMc": {
-            "title": "",
             "layers": {
-                "title": ""
-            },
-            "internalUse": {
                 "title": ""
             },
             "survey": {
                 "title": ""
-            },
-            "text0": ""
+            }
         },
         "drawbacks": {
             "licenseNuances": {
                 "li1": "",
-                "usecaseGatheringOpenData": {
-                    "intro": ""
-                },
                 "usecaseMapDifferentSources": {
-                    "outro": "",
-                    "li1": ""
+                    "outro": ""
                 },
-                "li2": "",
-                "title": ""
+                "li2": ""
             },
             "title": "",
             "unsuitedData": {
-                "intro": "",
-                "li1": "",
-                "title": ""
+                "li1": ""
             }
         },
         "services": {
             "intro": "",
-            "li0": "",
-            "li2": "",
-            "outro": ""
+            "li2": ""
         }
     },
     "reviews": {
@@ -523,168 +466,104 @@
         "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva"
     },
     "importLayer": {
-        "alreadyMapped": "",
         "description": "",
-        "importHandled": "",
         "notFound": ""
     },
     "matrixbot": {
-        "commandFailed": "",
         "commands": {
             "info": {
                 "docs": "",
-                "fetchingInfoAbout": "",
                 "noInfo": "",
-                "foundResults": "",
                 "argsearch": "",
-                "closedTodayAndTomorrow": "",
                 "provideSearch": ""
             },
             "language": {
-                "notFound": "",
-                "arglang": "",
-                "docs": ""
+                "arglang": ""
             },
             "tags": {
                 "noSearchGiven": "",
-                "announceSearch": "",
                 "docs": ""
             },
             "welcome": {
-                "p0": "",
                 "p2": ""
             },
             "wiki": {
-                "argsearch": "",
                 "docs": "",
-                "gotResults": "",
                 "noWiki": ""
             },
             "documentation": {
-                "url_parameter": {
-                    "plural": ""
-                },
                 "noIdIntro": "",
-                "layer": {
-                    "singular": ""
-                },
                 "theme": {
                     "plural": ""
                 },
-                "visualisation": {
-                    "plural": ""
-                },
                 "overview": "",
-                "notFound": "",
                 "didYouMean": "",
-                "file": {
-                    "singular": ""
-                },
                 "inputElement": {
                     "singular": ""
                 }
             },
             "scheme": {
-                "noMatchingLayer": "",
                 "notype": ""
             },
             "search": {
-                "noMatchingLayer": "",
                 "arglayerid": "",
-                "argverb": "",
-                "searching": "",
-                "nothingFound": ""
+                "searching": ""
             },
             "dm": {
                 "noDm": "",
-                "failed": "",
                 "argto": "",
-                "docs": "",
-                "receipt": "",
-                "selectValidUser": ""
+                "receipt": ""
             },
             "role": {
                 "allRolesIntro": "",
-                "verbadd": "",
                 "argverb": "",
-                "noPreviousRoles": "",
                 "verblist": "",
-                "verbrevoke": "",
-                "verbdefault": "",
-                "arguser": ""
+                "verbdefault": ""
             },
             "dream": {
                 "generatedBy": ""
             },
             "help": {
-                "argcmd": "",
                 "notFound": "",
-                "p1": "",
                 "askRights": ""
             },
             "shutdown": {
-                "goodbye": "",
-                "notYetShuttingDown": "",
-                "verbupdate": ""
+                "notYetShuttingDown": ""
             }
         },
         "tooLongForPublic": "",
-        "decryptionFailed": "",
         "subcommandNotGiven": ""
     },
     "notes": {
-        "addCommentPlaceholder": "",
         "createNote": "",
-        "loginToAddPicture": "",
         "noteLayerHasFilters": "",
-        "notesLayerMustBeEnabled": "",
         "loginToClose": "",
-        "disableAllNoteFilters": "",
         "createNoteTitle": "",
-        "addCommentAndClose": "",
         "addAComment": "",
-        "noteIsPublic": "",
-        "reopenNote": "",
-        "warnAnonymous": ""
+        "reopenNote": ""
     },
     "translations": {
         "deactivate": "",
-        "allMissing": "",
-        "help": "",
-        "notImmediate": ""
+        "help": ""
     },
     "validation": {
         "opening_hours": {
-            "description": ""
-        },
-        "wikidata": {
             "description": ""
         },
         "pnat": {
             "noZero": ""
         },
         "email": {
-            "noAt": "",
-            "feedback": ""
-        },
-        "phone": {
             "feedback": ""
         },
         "url": {
-            "description": ""
-        },
-        "direction": {
             "description": ""
         },
         "float": {
             "description": ""
         },
         "nat": {
-            "description": "",
             "mustBeWhole": ""
-        },
-        "string": {
-            "description": ""
         },
         "date": {
             "description": ""

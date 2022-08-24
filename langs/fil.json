@@ -12,8 +12,7 @@
         "explanations": {
             "hardDelete": "Ang tampók na ito ay tatanggalin sa OpenStreetMap. Maari itong ibalik ng mga bihasang tiga-ambag",
             "selectReason": "Pumili ng dahilan kung bakit dapat tanggalin ang tampók na ito.",
-            "softDelete": "Ang tampók na ito ay babaguhin at itatago sa application. <span class=\"subtle\">{reason}</span>",
-            "retagNoOtherThemes": ""
+            "softDelete": "Ang tampók na ito ay babaguhin at itatago sa application. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Tinanggal na ang tampók na ito",
         "isntAPoint": "Mga bukó (point) lang ang maaring tanggalin, ang piniling tampók ay isang way, area o relation.",
@@ -59,486 +58,305 @@
             "importTags": "Ang bahaging ito ay magkakaroon ng {tags}",
             "intro": "Nag-klik ka kung saan wala pang nababatid na datos.<br>",
             "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók",
-            "zoomInFurther": "",
             "pleaseLogin": "",
-            "stillLoading": "",
             "warnVisibleForEveryone": ""
         },
         "search": {
-            "nothing": "",
             "search": ""
         },
         "questions": {
-            "emailIs": "",
-            "phoneNumberOf": "",
-            "websiteOf": ""
+            "phoneNumberOf": ""
         },
         "wikipedia": {
             "noWikipediaPage": "",
-            "searchToShort": "",
             "previewbox": {
                 "born": ""
             },
-            "loading": "",
-            "wikipediaboxTitle": "",
-            "createNewWikidata": ""
+            "wikipediaboxTitle": ""
         },
         "welcomeExplanation": {
-            "addNew": "",
-            "browseOtherThemesIntro": ""
+            "addNew": ""
         },
         "sharescreen": {
             "downloadCustomTheme": "",
-            "copiedToClipboard": "",
             "fsWelcomeMessage": "",
-            "editThemeDescription": "",
             "fsLayerControlToggle": "",
-            "fsUserbadge": "",
             "fsIncludeCurrentLocation": "",
-            "intro": "",
-            "fsLayers": "",
-            "fsAddNew": ""
+            "fsLayers": ""
         },
         "download": {
             "title": "",
-            "downloadAsPdfHelper": "",
             "downloadGpx": "",
-            "licenseInfo": "",
             "downloadFeatureAsGpx": "",
-            "downloadCSVHelper": "",
             "includeMetaData": "",
-            "downloadCSV": "",
             "downloadGpxHelper": ""
         },
-        "getStartedNewAccount": "",
         "loadingTheme": "",
         "morescreen": {
-            "streetcomplete": "",
             "intro": "",
-            "hiddenExplanation": "",
             "noMatchingThemes": ""
         },
-        "nameInlineQuestion": "",
         "oneSkippedQuestion": "",
         "opening_hours": {
-            "not_all_rules_parsed": "",
             "opensAt": "",
-            "loadingCountry": "",
             "open_during_ph": "",
-            "ph_not_known": "",
             "ph_open_as_usual": ""
         },
-        "readYourMessages": "",
         "screenToSmall": "",
         "attribution": {
-            "themeBy": "",
             "followBridge": "",
-            "openMapillary": "",
             "followOnMastodon": "",
-            "openOsmcha": "",
             "codeContributionsBy": "",
-            "josmNotOpened": "",
             "mapContributionsBy": "",
-            "openIssueTracker": "",
             "followOnTwitter": ""
         },
-        "cancel": "",
         "weekdays": {
             "abbreviations": {
                 "monday": "",
-                "thursday": "",
-                "tuesday": "",
-                "friday": ""
+                "tuesday": ""
             },
             "tuesday": "",
-            "wednesday": "",
             "friday": ""
         },
-        "layerSelection": {
-            "title": ""
-        },
         "useSearch": "",
-        "openStreetMapIntro": "",
         "skip": "",
-        "levelSelection": {
-            "addNewOnLevel": ""
-        },
         "save": "",
-        "apply_button": {
-            "isApplied": ""
-        },
         "examples": "",
         "pdf": {
-            "attr": "",
             "generatedWith": ""
         },
-        "aboutMapcomplete": "",
         "testing": "",
-        "loginFailed": "",
         "error": "",
-        "histogram": {
-            "error_loading": ""
-        },
         "example": "",
-        "confirm": "",
         "noNameCategory": "",
-        "notValid": "",
         "noMatchingMapping": "",
-        "openTheMap": "",
         "poweredByOsm": ""
     },
     "image": {
         "nearbyPictures": {
-            "confirm": "",
             "hasMatchingPicture": "",
-            "removeFilters": "",
             "onlyTowards": "",
-            "nothingFound": "",
             "withinRadius": ""
         },
-        "ccoExplanation": "",
         "dontDelete": "",
-        "toBig": "",
         "uploadFailed": "",
-        "willBePublished": "",
         "ccb": "",
-        "uploadMultipleDone": "",
-        "addPicture": "",
-        "pleaseLogin": ""
+        "addPicture": ""
     },
     "importHelper": {
         "askMetadata": {
             "giveWikilink": "",
-            "shouldBeUrl": "",
             "giveDescription": "",
-            "title": "",
             "downloadGeojson": ""
         },
         "conflationChecker": {
-            "loadedDataAge": "",
             "showOsmLayerInConflationMap": "",
-            "zoomLevelSelection": "",
             "osmLoaded": "",
             "states": {
-                "idle": "",
                 "unexpected": ""
             },
-            "title": "",
             "reloadTheCache": "",
-            "downloadOverpassData": "",
             "setRangeToZero": ""
         },
         "mapPreview": {
-            "title": "",
-            "autodetected": "",
-            "mismatch": ""
+            "autodetected": ""
         },
         "noteParts": {
             "datasource": ""
         },
         "selectFile": {
-            "errDuplicate": "",
             "errNoName": "",
-            "fileFormatDescriptionCsv": "",
             "fileFormatDescription": "",
-            "noFilesLoaded": "",
             "errNotFeatureCollection": ""
         },
         "compareToAlreadyExistingNotes": {
-            "someNearby": "",
             "nothingNearby": "",
-            "titleLong": "",
-            "wontBeImported": "",
-            "completelyImported": ""
+            "wontBeImported": ""
         },
         "selectTheme": {
             "missing": "",
-            "displayNonMatchingCount": "",
             "noMatchingPresets": "",
-            "notApplicable": "",
             "title": ""
-        },
-        "introduction": {
-            "importFormat": ""
         },
         "login": {
             "loggedInWith": "",
-            "loginRequired": "",
             "title": ""
         },
         "previewAttributes": {
-            "allAttributesSame": "",
-            "inspectLooksCorrect": "",
-            "title": ""
+            "inspectLooksCorrect": ""
         },
         "createNotes": {
             "title": "",
-            "openImportViewer": "",
             "loading": ""
         },
         "confirmProcess": {
-            "title": "",
-            "contactedCommunity": "",
-            "titleLong": ""
+            "contactedCommunity": ""
         },
         "gotoImportViewer": ""
     },
     "importLayer": {
-        "notFound": "",
         "alreadyMapped": "",
-        "importHandled": "",
         "layerName": ""
     },
     "matrixbot": {
         "commands": {
             "dm": {
-                "commandNotFound": "",
                 "executing": "",
-                "receipt": "",
-                "argbody": "",
-                "selectValidUser": ""
+                "argbody": ""
             },
             "role": {
                 "arguser": "",
-                "noPreviousRoles": "",
                 "allRevoked": "",
-                "argverb": "",
                 "noRolesYet": "",
-                "userHasRoles": "",
-                "verbremove": "",
-                "noRightsNeeded": ""
+                "verbremove": ""
             },
             "scheme": {
                 "docs": "",
-                "noMatchingLayer": "",
                 "notype": ""
             },
             "search": {
-                "argverb": "",
                 "overview": "",
-                "noMatchingLayer": "",
-                "argsearch": "",
-                "announceLimited": ""
+                "argsearch": ""
             },
             "shutdown": {
                 "goodbye": "",
-                "verbupdate": "",
                 "docs": ""
             },
             "tags": {
-                "nothingFound": "",
                 "announceSearch": ""
             },
             "welcome": {
-                "p1": "",
-                "p0": "",
-                "p3": ""
+                "p0": ""
             },
             "wiki": {
                 "searching": "",
-                "noWiki": "",
-                "docs": "",
-                "argsearch": ""
+                "docs": ""
             },
             "documentation": {
                 "file": {
                     "singular": ""
                 },
-                "layer": {
-                    "singular": ""
-                },
                 "inputElement": {
-                    "singular": ""
-                },
-                "url_parameter": {
                     "singular": ""
                 },
                 "theme": {
                     "singular": ""
                 },
-                "argid": "",
                 "visualisation": {
                     "singular": ""
                 },
-                "noIdIntro": "",
-                "docs": ""
-            },
-            "dream": {
                 "docs": ""
             },
             "help": {
                 "docs": "",
-                "priviligedComand": "",
                 "insufficientRights": "",
-                "askRights": "",
                 "p0": ""
             },
             "info": {
-                "closed": "",
                 "couldNotDownload": "",
-                "editWith": "",
                 "noInfo": "",
-                "nothingFound": "",
-                "foundResults": "",
-                "searchingWorldwide": ""
+                "foundResults": ""
             },
             "language": {
                 "docs": "",
-                "helpTranslating": "",
                 "notFound": ""
             }
         },
-        "subcommandNotGiven": "",
         "decryptionFailed": "",
-        "subcommanNotFound": "",
         "commandNotFound": ""
     },
     "move": {
         "inviteToMove": {
-            "reasonInaccurate": "",
             "reasonRelocation": ""
         },
-        "partOfAWay": "",
         "confirmMove": "",
-        "isRelation": "",
         "reasons": {
             "reasonRelocation": ""
         },
-        "zoomInFurther": "",
-        "whyMove": "",
-        "pointIsMoved": ""
+        "whyMove": ""
     },
     "notes": {
         "disableAllNoteFilters": "",
-        "typeText": "",
         "addComment": "",
-        "anonymous": "",
         "createNote": "",
-        "textNeeded": "",
         "createNoteIntro": "",
-        "reopenNote": "",
         "notesLayerMustBeEnabled": "",
-        "noteLayerHasFilters": "",
         "warnAnonymous": "",
-        "loginToAddComment": "",
         "loginToClose": ""
     },
     "professional": {
         "aboutMc": {
-            "layers": {
-                "title": ""
-            },
             "internalUse": {
                 "intro": ""
             },
-            "text2": "",
             "survey": {
                 "title": ""
-            },
-            "text1": ""
+            }
         },
         "aboutOsm": {
             "vandalism": {
                 "li3": "",
-                "title": "",
                 "li2": ""
             },
             "license": {
-                "intro": "",
-                "outro": "",
-                "li0": ""
+                "outro": ""
             },
             "aboutOsm": {
                 "li1": "",
-                "li2": "",
                 "title": ""
             },
             "benefits": {
-                "intro": "",
                 "li1": ""
             }
         },
         "services": {
-            "li4": "",
             "li2": "",
-            "title": "",
             "li1": ""
         },
-        "text1": "",
         "drawbacks": {
             "licenseNuances": {
                 "li1": "",
-                "outro": "",
                 "usecaseMapDifferentSources": {
                     "li1": "",
-                    "intro": "",
                     "li0": ""
-                },
-                "usecaseGatheringOpenData": {
-                    "title": ""
                 }
             },
             "title": "",
             "unsuitedData": {
-                "li1": "",
                 "intro": ""
-            },
-            "intro": ""
+            }
         },
         "indexPage": {
-            "button": "",
-            "hookMore": ""
+            "button": ""
         },
         "osmTitle": ""
     },
     "reviews": {
-        "plz_login": "",
         "name_required": "",
-        "no_reviews_yet": "",
         "affiliated_reviewer_warning": "",
-        "title": "",
-        "tos": "",
-        "attribution": ""
+        "tos": ""
     },
     "translations": {
         "activateButton": "",
-        "isTranslator": "",
-        "missing": "",
-        "notImmediate": ""
+        "missing": ""
     },
     "validation": {
         "distance": {
             "description": ""
         },
-        "email": {
-            "feedback": ""
-        },
         "float": {
             "feedback": ""
-        },
-        "int": {
-            "description": ""
         },
         "color": {
             "description": ""
         },
         "nat": {
-            "description": "",
             "mustBeWhole": ""
-        },
-        "url": {
-            "description": ""
         },
         "opening_hours": {
             "description": ""
         },
-        "phone": {
-            "description": ""
-        },
         "pnat": {
-            "description": ""
-        },
-        "string": {
             "description": ""
         },
         "date": {
@@ -546,24 +364,15 @@
         }
     },
     "split": {
-        "inviteToSplit": "",
-        "cancel": "",
-        "hasBeenSplit": ""
+        "cancel": ""
     },
     "index": {
         "pickTheme": "",
-        "intro": "",
         "#": ""
     },
     "privacy": {
-        "geodataTitle": "",
         "miscCookiesTitle": "",
-        "whileYoureHere": "",
         "intro": "",
-        "miscCookies": "",
         "surveillance": ""
-    },
-    "importInspector": {
-        "title": ""
     }
 }

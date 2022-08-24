@@ -12,8 +12,7 @@
         "explanations": {
             "hardDelete": "Dette punktet vil bli slettet i OpenStreetMap. Det kan gjenopprettes av en dreven bidragsyter.",
             "selectReason": "Velg hvorfor denne funksjonen skal slettes",
-            "softDelete": "Denne funksjonen vil bli oppdatert og skjult fra programmet. <span class=\"subtle\">{reason}</span>",
-            "retagOtherThemes": ""
+            "softDelete": "Denne funksjonen vil bli oppdatert og skjult fra programmet. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Denne funksjonen har blitt slettet",
         "isntAPoint": "Kun punkter kan slettes, valgt funksjon er en vei, et område, eller en relasjon.",
@@ -94,8 +93,7 @@
             "openMapillary": "Åpne Mapillary her",
             "openOsmcha": "Vis de seneste redigeringene gjort med {theme}",
             "themeBy": "Tema vedlikeholdt av {author}",
-            "translatedBy": "MapComplete har blitt oversatt av {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} andre bidragsytere</a>.",
-            "mapillaryHelp": ""
+            "translatedBy": "MapComplete har blitt oversatt av {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} andre bidragsytere</a>."
         },
         "back": "Tilbake",
         "backToMapcomplete": "Tilbake til temaoversikten",
@@ -149,8 +147,7 @@
             "intro": "<h3>Flere temakart?</h3>Liker du å samle inn geodata? <br>Det er flere tilgjengelige temaer.",
             "previouslyHiddenTitle": "Tidligere besøkte skjulte tema",
             "requestATheme": "Hvis du ønsker et brukerdefinert tema kan du forespørre det i feilsporeren",
-            "streetcomplete": "Et annet lignende program er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "noMatchingThemes": ""
+            "streetcomplete": "Et annet lignende program er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "Navnet på {category} er $$$",
         "next": "Neste",
@@ -256,17 +253,12 @@
                 "died": "Død: {value}"
             },
             "searchWikidata": "Søk på Wikipedia",
-            "wikipediaboxTitle": "Wikipedia",
-            "searchToShort": ""
+            "wikipediaboxTitle": "Wikipedia"
         },
         "welcomeExplanation": {
-            "addNew": "",
-            "general": ""
+            "addNew": ""
         },
         "poweredByOsm": "",
-        "levelSelection": {
-            "addNewOnLevel": ""
-        },
         "useSearch": ""
     },
     "image": {
@@ -286,14 +278,10 @@
         "uploadingPicture": "Laster opp bildet ditt …",
         "willBePublished": "Ditt bilde vil bli publisert: ",
         "nearbyPictures": {
-            "loadMore": "",
             "onlyTowards": "",
-            "withinRadius": "",
             "confirm": "",
-            "allFiltered": "",
             "loading": ""
         },
-        "ccoExplanation": "",
         "cco": ""
     },
     "importHelper": {
@@ -304,23 +292,19 @@
             "shouldBeOsmWikilink": "Forventet en lenke til en side på wiki.openstreetmap.org",
             "shouldBeUrl": "Ikke en gyldig nettadresse",
             "title": "Sett metadata",
-            "giveSource": "",
             "shouldNotBeHomepage": ""
         },
         "compareToAlreadyExistingNotes": {
             "noPreviousNotesFound": "Ingen tidligere importnotater ble funnet",
             "title": "Sammenlign med eksisterende noder",
-            "someNearby": "",
             "mapExplanation": "",
-            "loading": "",
             "wontBeImported": ""
         },
         "confirmProcess": {
             "contactedCommunity": "Jeg kontatet (local)-gemenskapen om denne importen",
             "readImportGuidelines": "Jeg har lest importretningslinjene på OSM-wiki-en",
             "title": "Lisens og gemenskap",
-            "titleLong": "Har du gått gjennom importprosessen?",
-            "wikipageIsMade": ""
+            "titleLong": "Har du gått gjennom importprosessen?"
         },
         "conflationChecker": {
             "cacheExpired": "Hurtiglager utløpt",
@@ -340,18 +324,15 @@
             "titleLive": "Sanntidsdata på OSM",
             "titleNearby": "Funksjoner i nærheten",
             "zoomIn": "Nåværende forstørrelsesnivå er {current}.",
-            "nothingLoaded": "",
             "setRangeToZero": ""
         },
         "createNotes": {
             "creating": "Opprettet <b>{count}</b> notater av {total}",
-            "done": "Alle {count} notatene har blitt innlastet.",
-            "title": ""
+            "done": "Alle {count} notatene har blitt innlastet."
         },
         "gotoImportViewer": "Inspiser dine tidligere importer",
         "introduction": {
-            "title": "Introduksjon",
-            "description": ""
+            "title": "Introduksjon"
         },
         "login": {
             "loggedInWith": "Du er innlogget som <b>{name}</b> og har {csCount} endringssett",
@@ -363,8 +344,7 @@
         "mapPreview": {
             "autodetected": "Laget ble automatisk utledet basert på dets egenskaper",
             "selectLayer": "Hvilket lag samsvarer importen med?",
-            "title": "Kartforhåndsvisning",
-            "confirm": ""
+            "title": "Kartforhåndsvisning"
         },
         "noteParts": {
             "importEasily": "Legg til dette punktet enkelt med MapComplete:",
@@ -373,8 +353,7 @@
         "previewAttributes": {
             "allAttributesSame": "Alle funksjonene å importere har denne etiketten",
             "inspectLooksCorrect": "Disse verdiene ser riktige ut",
-            "title": "Inspiser attributter",
-            "inspectDataTitle": ""
+            "title": "Inspiser attributter"
         },
         "selectFile": {
             "description": "Velg en .csv eller .geojson-fil for å begynne",
@@ -384,15 +363,12 @@
             "errPointsOnly": "Innlastet JSON-fil skal kun inneholde punkter",
             "fileFormatDescription": "Velg en <b class=\"code\">.csv</b> eller en <b class=\"code\">.geojson</b>-fil",
             "title": "Velg fil",
-            "loadedFilesAre": "",
             "noFilesLoaded": ""
         },
         "selectTheme": {
             "title": "Velg et tema",
             "unmatchedTitle": "Følgende elementer samsvarer ikke med noen av forhåndsinnstillingene",
-            "needsTags": "",
-            "notApplicable": "",
-            "intro": ""
+            "notApplicable": ""
         },
         "title": "Importhjelper"
     },
@@ -445,21 +421,14 @@
         "reopenNoteAndComment": "Gjenåpne notat og kommenter",
         "textNeeded": "Skriv inn beskrivende tekst for å opprettet et notat",
         "typeText": "Skriv inn tekst for å legge til en kommentar",
-        "loginToClose": "",
         "notesLayerMustBeEnabled": "",
-        "noteLayerNotEnabled": "",
         "addComment": "",
-        "noteLayerDoEnable": "",
-        "warnAnonymous": "",
-        "closeNote": ""
+        "warnAnonymous": ""
     },
     "privacy": {
         "whileYoureHere": "Bryr du deg om personvern?",
-        "miscCookies": "",
         "intro": "",
-        "tracking": "",
-        "geodataTitle": "",
-        "miscCookiesTitle": ""
+        "geodataTitle": ""
     },
     "professional": {
         "aboutMc": {
@@ -467,58 +436,44 @@
                 "title": "Undersøkelsesmuligheter"
             },
             "title": "Bruk av MapComplete i din organisasjon",
-            "text1": "",
             "internalUse": {
                 "title": ""
-            },
-            "layers": {
-                "intro": ""
             }
         },
         "aboutOsm": {
             "aboutOsm": {
                 "li3": "og mye, mye mer …",
                 "title": "Hva er OpenStreetMap?",
-                "li1": "",
                 "li0": ""
             },
             "license": {
                 "title": "Lisensen",
-                "li0": "",
                 "outro": ""
             },
             "vandalism": {
                 "li0": "Den tekniske barrieren for utføring av endringer er høy",
                 "title": "Hva med vandalisme?",
-                "li3": "",
                 "li1": ""
             },
             "benefits": {
-                "li0": "",
-                "li1": "",
-                "title": ""
+                "li1": ""
             }
         },
         "drawbacks": {
             "licenseNuances": {
                 "usecaseMapDifferentSources": {
                     "title": "Oppretter et kart fra forskjellige kilder",
-                    "outro": "",
                     "li1": ""
                 },
-                "title": "",
                 "usecaseGatheringOpenData": {
                     "title": ""
                 },
-                "outro": "",
                 "li1": ""
             },
             "title": "Noen ulemper å ha i minne",
             "unsuitedData": {
-                "li0": "",
                 "li2": ""
-            },
-            "intro": ""
+            }
         },
         "indexPage": {
             "button": "Oppdag tjenestetilbudet vårt",
@@ -528,12 +483,9 @@
         "services": {
             "intro": "Utvikleren av MapComplete kan hjelpe deg med følgende tjenestetilbud:",
             "title": "MapComplete-tjenester",
-            "li4": "",
-            "li2": "",
-            "li0": ""
+            "li2": ""
         },
         "title": "Profesjonell støtte med MapComplete",
-        "intro": "",
         "osmTitle": ""
     },
     "reviews": {
@@ -566,8 +518,7 @@
         "deactivate": "Skru av oversettelsesknapper",
         "isTranslator": "Oversettelsesmodus er aktivt siden brukernavnet ditt samsvarer med navnet på forrige oversetter",
         "missing": "{count} uoversatte strenger",
-        "notImmediate": "Oversettelser oppdateres ikke direkte. Dette tar typisk et par dager.",
-        "activateButton": ""
+        "notImmediate": "Oversettelser oppdateres ikke direkte. Dette tar typisk et par dager."
     },
     "validation": {
         "date": {
@@ -577,8 +528,7 @@
             "description": "En retning"
         },
         "email": {
-            "feedback": "Dette er ikke en gyldig e-postadresse",
-            "noAt": ""
+            "feedback": "Dette er ikke en gyldig e-postadresse"
         },
         "float": {
             "description": "et tall",
@@ -589,8 +539,7 @@
         },
         "nat": {
             "mustBeWhole": "Kun heltall tillates",
-            "notANumber": "Skriv inn et tall",
-            "mustBePositive": ""
+            "notANumber": "Skriv inn et tall"
         },
         "opening_hours": {
             "description": "Åpningstider"
@@ -618,117 +567,77 @@
         },
         "wikidata": {
             "description": "En Wikidata-identifikator"
-        },
-        "tooLong": ""
+        }
     },
     "matrixbot": {
         "commandFailed": "",
         "commands": {
             "dm": {
-                "argto": "",
                 "docs": "",
-                "noDm": "",
-                "selectValidCommand": "",
-                "sendReason": ""
+                "selectValidCommand": ""
             },
             "documentation": {
                 "visualisation": {
                     "plural": ""
                 },
-                "inputElement": {
-                    "singular": ""
-                },
                 "layer": {
                     "singular": ""
                 },
-                "notFound": "",
                 "theme": {
                     "singular": ""
                 },
-                "url_parameter": {
-                    "singular": ""
-                },
                 "urlParam": "",
-                "argid": "",
-                "didYouMean": "",
-                "file": {
-                    "singular": ""
-                }
+                "didYouMean": ""
             },
             "dream": {
                 "generatedBy": ""
             },
             "help": {
-                "insufficientRights": "",
                 "priviligedComand": "",
-                "notFound": "",
                 "supported": ""
             },
             "info": {
-                "closedTodayAndTomorrow": "",
                 "searchingWorldwide": "",
-                "couldNotDownload": "",
                 "noEditPossible": "",
-                "nothingFound": "",
-                "closed": "",
-                "argsearch": ""
+                "closed": ""
             },
             "language": {
                 "notFound": "",
-                "helpTranslating": "",
-                "arglang": "",
-                "currentLanguage": ""
+                "arglang": ""
             },
             "role": {
                 "argverb": "",
-                "noRightsNeeded": "",
                 "noPreviousRoles": "",
-                "noRolesYet": "",
                 "noSuchRole": "",
-                "verbadd": "",
-                "verblist": "",
-                "verbrevoke": ""
+                "verblist": ""
             },
             "search": {
                 "arglayerid": "",
-                "noNearOrIn": "",
                 "docs": "",
-                "nothingFound": "",
                 "searching": ""
             },
             "tags": {
-                "docs": "",
                 "noSearchGiven": ""
             },
             "wiki": {
-                "loadingFailed": "",
                 "searching": "",
-                "argsearch": "",
                 "foundMatching": ""
             },
             "shutdown": {
-                "verbshutdown": "",
-                "verbupdate": "",
-                "docs": ""
+                "verbupdate": ""
             },
             "scheme": {
                 "notype": "",
-                "title": "",
                 "argkey": ""
             },
             "welcome": {
-                "p0": "",
                 "p2": ""
             }
         },
-        "decryptionFailed": "",
-        "subcommanNotFound": "",
-        "tooLongForPublic": ""
+        "subcommanNotFound": ""
     },
     "importLayer": {
         "popupTitle": "",
-        "description": "",
-        "layerName": "",
-        "alreadyMapped": ""
+        "layerName": ""
     }
 }

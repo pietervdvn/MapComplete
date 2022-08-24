@@ -275,9 +275,6 @@
             "searchWikidata": "Wikidata durchsuchen",
             "wikipediaboxTitle": "Wikipedia"
         },
-        "levelSelection": {
-            "confirmLevel": ""
-        },
         "useSearch": ""
     },
     "image": {
@@ -368,8 +365,7 @@
             "title": "Mit vorhandenen Daten vergleichen",
             "titleLive": "Live-Daten auf OSM",
             "titleNearby": "Objekte in der Nähe",
-            "zoomIn": "Die aktuelle Zoomstufe ist {current}",
-            "zoomLevelSelection": ""
+            "zoomIn": "Die aktuelle Zoomstufe ist {current}"
         },
         "createNotes": {
             "creating": "<b>{count}</b> Notizen von {total} erstellt",
