@@ -271,8 +271,7 @@
         "uploadMultipleDone": "{count} bilder har blitt lagt til. Takk for at du hjelper til.",
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
-        "willBePublished": "Ditt bilde vil bli publisert: ",
-        "cco": ""
+        "willBePublished": "Ditt bilde vil bli publisert: "
     },
     "importHelper": {
         "askMetadata": {
@@ -532,25 +531,13 @@
     "matrixbot": {
         "commands": {
             "documentation": {
-                "visualisation": {
-                    "plural": ""
-                },
                 "didYouMean": ""
-            },
-            "info": {
-                "searchingWorldwide": ""
             },
             "language": {
                 "arglang": ""
             },
-            "role": {
-                "verblist": ""
-            },
             "tags": {
                 "noSearchGiven": ""
-            },
-            "scheme": {
-                "notype": ""
             }
         }
     },

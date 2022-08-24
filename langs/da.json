@@ -686,28 +686,14 @@
     },
     "matrixbot": {
         "commands": {
-            "documentation": {
-                "visualisation": {
-                    "singular": ""
-                }
-            },
             "help": {
                 "p0": ""
-            },
-            "role": {
-                "verbadd": ""
             },
             "tags": {
                 "nothingFound": ""
             },
-            "wiki": {
-                "argsearch": ""
-            },
             "scheme": {
                 "noMatchingLayer": ""
-            },
-            "dream": {
-                "generatedBy": ""
             }
         }
     }

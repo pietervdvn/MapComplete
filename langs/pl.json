@@ -9,8 +9,7 @@
         "cancel": "Anuluj",
         "cannotBeDeleted": "Ten obiekt nie może zostać usunięty",
         "delete": "Usuń",
-        "isDeleted": "Ten obiekt został usunięty",
-        "onlyEditedByLoggedInUser": ""
+        "isDeleted": "Ten obiekt został usunięty"
     },
     "favourite": {
         "loginNeeded": "<h3>Zaloguj się</h3>Osobisty układ jest dostępny tylko dla użytkowników OpenStreetMap",
@@ -30,8 +29,7 @@
             "pleaseLogin": "Zaloguj się, aby dodać nowy punkt",
             "stillLoading": "Dane wciąż się ładują. Poczekaj chwilę, zanim dodasz nowy punkt.",
             "title": "Czy dodać nowy punkt?",
-            "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt.",
-            "warnVisibleForEveryone": ""
+            "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt."
         },
         "backgroundMap": "Tło mapy",
         "cancel": "Anuluj",
@@ -123,20 +121,11 @@
             "wednesday": "Środa"
         },
         "welcomeBack": "Jesteś zalogowany, witaj z powrotem!",
-        "download": {
-            "downloadGpx": ""
-        },
         "wikipedia": {
             "wikipediaboxTitle": ""
         },
-        "attribution": {
-            "attributionContent": ""
-        },
         "morescreen": {
             "noSearch": ""
-        },
-        "welcomeExplanation": {
-            "browseMoreMaps": ""
         }
     },
     "image": {
@@ -154,8 +143,7 @@
         "uploadFailed": "Wysyłanie zdjęcia nie powiodło się. Czy masz połączenie z internetem i włączony dostęp zewnętrznych API? Przeglądarki Brave i UMatrix mogą je blokować.",
         "uploadingMultiple": "Wysyłanie {count} zdjęć…",
         "uploadingPicture": "Wysyłanie zdjęcia…",
-        "willBePublished": "Twoje zdjęcie zostanie opublikowane ",
-        "ccbsExplanation": ""
+        "willBePublished": "Twoje zdjęcie zostanie opublikowane "
     },
     "index": {
         "#": "Te teksty są wyświetlane nad przyciskami motywu, gdy nie jest załadowany żaden motyw",
@@ -188,20 +176,11 @@
         "splitTitle": "Wybierz na mapie gdzie podzielić tę drogę"
     },
     "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "mapExplanation": ""
-        },
         "conflationChecker": {
             "titleNearby": ""
         },
-        "createNotes": {
-            "title": ""
-        },
         "selectFile": {
             "errDuplicate": ""
-        },
-        "confirmProcess": {
-            "readImportGuidelines": ""
         },
         "noteParts": {
             "wikilink": ""
@@ -209,64 +188,37 @@
     },
     "matrixbot": {
         "commands": {
-            "documentation": {
-                "inputElement": {
-                    "singular": ""
-                }
-            },
             "info": {
                 "nothingFound": ""
-            },
-            "language": {
-                "notFound": ""
             },
             "role": {
                 "verbrevoke": ""
             },
-            "shutdown": {
-                "docs": ""
-            },
             "wiki": {
                 "foundMatching": ""
-            },
-            "scheme": {
-                "noMatchingLayer": ""
             }
         }
     },
     "move": {
         "reasons": {
             "reasonRelocation": ""
-        },
-        "partOfAWay": ""
+        }
     },
     "notes": {
         "reopenNoteAndComment": ""
     },
     "professional": {
         "aboutOsm": {
-            "vandalism": {
-                "li3": ""
-            },
             "license": {
                 "title": ""
             }
         },
-        "drawbacks": {
-            "unsuitedData": {
-                "li0": ""
-            }
-        },
         "title": ""
-    },
-    "translations": {
-        "notImmediate": ""
     },
     "validation": {
         "pfloat": {
             "description": ""
-        },
-        "tooLong": ""
+        }
     },
     "privacy": {
         "geodataTitle": ""

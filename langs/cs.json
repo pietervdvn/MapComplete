@@ -1,59 +1,33 @@
 {
     "general": {
-        "download": {
-            "downloadGpx": ""
-        },
         "morescreen": {
             "noSearch": ""
         },
-        "opening_hours": {
-            "ph_not_known": ""
-        },
         "questions": {
             "websiteIs": ""
-        },
-        "sharescreen": {
-            "editThisTheme": ""
         },
         "weekdays": {
             "abbreviations": {
                 "saturday": ""
             }
         },
-        "wikipedia": {
-            "failed": ""
-        },
         "add": {
-            "disableFiltersExplanation": "",
-            "confirmButton": ""
+            "disableFiltersExplanation": ""
         },
         "attribution": {
             "editId": ""
         },
-        "goToInbox": "",
         "confirm": ""
     },
     "image": {
-        "nearbyPictures": {
-            "allFiltered": ""
-        },
         "uploadingMultiple": ""
     },
     "importHelper": {
-        "askMetadata": {
-            "orDownload": ""
-        },
         "conflationChecker": {
             "importCandidatesCount": ""
         },
-        "createNotes": {
-            "openImportViewer": ""
-        },
         "mapPreview": {
             "autodetected": ""
-        },
-        "selectFile": {
-            "fileFormatDescriptionGeoJson": ""
         },
         "compareToAlreadyExistingNotes": {
             "loading": ""
@@ -61,43 +35,24 @@
     },
     "matrixbot": {
         "commands": {
-            "documentation": {
-                "overview": ""
-            },
             "help": {
                 "supported": ""
-            },
-            "info": {
-                "couldNotDownload": ""
             },
             "role": {
                 "docs": ""
             },
-            "wiki": {
-                "docs": ""
-            },
             "dm": {
                 "docs": ""
-            },
-            "search": {
-                "argsearch": ""
             }
         },
         "commandFailed": ""
     },
-    "move": {
-        "partOfAWay": ""
-    },
     "notes": {
-        "anonymous": "",
-        "loginToAddPicture": ""
+        "anonymous": ""
     },
     "professional": {
         "aboutOsm": {
             "aboutOsm": {
-                "li2": ""
-            },
-            "vandalism": {
                 "li2": ""
             }
         },
@@ -106,29 +61,15 @@
                 "li2": ""
             }
         },
-        "services": {
-            "li2": ""
-        },
         "indexPage": {
             "hookMore": ""
         }
     },
-    "importLayer": {
-        "importButton": ""
-    },
     "centerMessage": {
         "retrying": ""
     },
-    "delete": {
-        "reasons": {
-            "notFound": ""
-        }
-    },
     "validation": {
         "wikidata": {
-            "description": ""
-        },
-        "date": {
             "description": ""
         }
     },

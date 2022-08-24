@@ -229,8 +229,7 @@
             "noWikipediaPage": "Este item do Wikidata ainda não tem uma página correspondente na Wikipédia.",
             "searchWikidata": "Pesquisar no Wikidata",
             "wikipediaboxTitle": "Wikipédia"
-        },
-        "loginFailed": ""
+        }
     },
     "image": {
         "addPicture": "Adicionar imagem",
@@ -310,22 +309,11 @@
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
     },
     "importHelper": {
-        "conflationChecker": {
-            "states": {
-                "running": ""
-            }
-        },
         "createNotes": {
             "done": ""
         },
-        "mapPreview": {
-            "title": ""
-        },
         "selectFile": {
             "fileFormatDescription": ""
-        },
-        "selectTheme": {
-            "notApplicable": ""
         },
         "confirmProcess": {
             "titleLong": ""
@@ -334,40 +322,24 @@
     "matrixbot": {
         "commands": {
             "documentation": {
-                "overview": "",
                 "file": {
                     "singular": ""
                 }
             },
-            "role": {
-                "arguser": ""
-            },
             "shutdown": {
                 "verbshutdown": ""
             },
-            "scheme": {
-                "docs": ""
-            },
             "info": {
                 "noOpeningHours": ""
-            },
-            "help": {
-                "argcmd": ""
             }
         }
     },
     "notes": {
-        "loginToAddComment": "",
-        "isCreated": ""
+        "loginToAddComment": ""
     },
     "professional": {
         "aboutOsm": {
             "vandalism": {
-                "intro": ""
-            }
-        },
-        "aboutMc": {
-            "internalUse": {
                 "intro": ""
             }
         },
@@ -377,23 +349,12 @@
                     "li1": ""
                 }
             }
-        },
-        "services": {
-            "li3": ""
         }
     },
     "translations": {
         "help": ""
     },
-    "validation": {
-        "wikidata": {
-            "description": ""
-        }
-    },
     "privacy": {
         "miscCookiesTitle": ""
-    },
-    "importLayer": {
-        "popupTitle": ""
     }
 }

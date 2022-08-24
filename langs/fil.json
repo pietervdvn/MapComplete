@@ -59,62 +59,38 @@
             "intro": "Nag-klik ka kung saan wala pang nababatid na datos.<br>",
             "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók"
         },
-        "questions": {
-            "phoneNumberOf": ""
-        },
         "welcomeExplanation": {
             "addNew": ""
-        },
-        "sharescreen": {
-            "fsIncludeCurrentLocation": ""
         },
         "download": {
             "downloadFeatureAsGpx": ""
         },
-        "morescreen": {
-            "intro": ""
-        },
         "opening_hours": {
             "open_during_ph": ""
-        },
-        "attribution": {
-            "followOnMastodon": ""
         },
         "weekdays": {
             "abbreviations": {
                 "monday": ""
             }
         },
-        "useSearch": "",
         "pdf": {
             "generatedWith": ""
-        },
-        "noNameCategory": ""
+        }
     },
     "image": {
         "nearbyPictures": {
             "onlyTowards": ""
-        },
-        "ccb": ""
+        }
     },
     "importHelper": {
         "askMetadata": {
             "downloadGeojson": ""
         },
-        "conflationChecker": {
-            "reloadTheCache": ""
-        },
         "selectFile": {
             "errNoName": ""
         },
-        "compareToAlreadyExistingNotes": {
-            "wontBeImported": ""
-        },
         "login": {
             "loggedInWith": ""
-        },
-        "createNotes": {
-            "loading": ""
         }
     },
     "importLayer": {
@@ -122,28 +98,14 @@
     },
     "matrixbot": {
         "commands": {
-            "role": {
-                "allRevoked": ""
-            },
             "scheme": {
                 "notype": ""
-            },
-            "shutdown": {
-                "docs": ""
             },
             "wiki": {
                 "docs": ""
             },
-            "documentation": {
-                "visualisation": {
-                    "singular": ""
-                }
-            },
             "help": {
                 "p0": ""
-            },
-            "language": {
-                "docs": ""
             }
         }
     },
@@ -153,42 +115,22 @@
         }
     },
     "notes": {
-        "disableAllNoteFilters": "",
         "notesLayerMustBeEnabled": ""
     },
     "professional": {
-        "aboutMc": {
-            "survey": {
-                "title": ""
-            }
-        },
         "aboutOsm": {
             "aboutOsm": {
                 "li1": ""
             }
         },
-        "services": {
-            "li1": ""
-        },
         "drawbacks": {
             "title": ""
         }
     },
-    "reviews": {
-        "name_required": ""
-    },
     "translations": {
         "missing": ""
     },
-    "validation": {
-        "nat": {
-            "mustBeWhole": ""
-        }
-    },
     "split": {
         "cancel": ""
-    },
-    "privacy": {
-        "intro": ""
     }
 }

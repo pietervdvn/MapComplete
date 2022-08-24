@@ -12,8 +12,7 @@
         "explanations": {
             "hardDelete": "Este ponto será excluído no OpenStreetMap. Pode ser recuperado por um colaborador experiente",
             "selectReason": "Por favor, selecione por que este recurso deve ser excluído"
-        },
-        "partOfOthers": ""
+        }
     },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3> Um layout pessoal está disponível apenas para usuários do OpenStreetMap",
@@ -33,8 +32,7 @@
             "pleaseLogin": "Por favor, faça o login para adicionar um novo ponto",
             "stillLoading": "Os dados ainda estão sendo carregados. Aguarde um pouco antes de adicionar um novo ponto.",
             "title": "Adicionar um novo ponto?",
-            "zoomInFurther": "Aumente mais o zoom para adicionar um ponto.",
-            "warnVisibleForEveryone": ""
+            "zoomInFurther": "Aumente mais o zoom para adicionar um ponto."
         },
         "backgroundMap": "Mapa de fundo",
         "cancel": "Cancelar",
@@ -126,19 +124,12 @@
             "wednesday": "Quanta"
         },
         "welcomeBack": "Você está logado, seja bem-vindo de volta!",
-        "pdf": {
-            "generatedWith": ""
-        },
         "wikipedia": {
             "noWikipediaPage": ""
         },
-        "attribution": {
-            "josmNotOpened": ""
-        },
         "download": {
             "includeMetaData": ""
-        },
-        "logout": ""
+        }
     },
     "image": {
         "addPicture": "Adicionar imagem",
@@ -154,8 +145,7 @@
         "uploadFailed": "Não foi possível enviar sua foto. Você está conectado à Internet e permite APIs de terceiros? O navegador Brave ou o plugin uMatrix podem bloqueá-los.",
         "uploadingMultiple": "Fazendo upload de {count} imagens…",
         "uploadingPicture": "Enviando sua imagem…",
-        "willBePublished": "Sua imagem será publicada: ",
-        "ccbExplanation": ""
+        "willBePublished": "Sua imagem será publicada: "
     },
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
@@ -180,20 +170,11 @@
         "write_a_comment": "Deixe um comentário…"
     },
     "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "noPreviousNotesFound": ""
-        },
         "conflationChecker": {
             "loadedDataAge": ""
         },
-        "introduction": {
-            "description": ""
-        },
         "selectFile": {
             "fileFormatDescriptionCsv": ""
-        },
-        "selectTheme": {
-            "notApplicable": ""
         },
         "noteParts": {
             "importEasily": ""
@@ -201,28 +182,14 @@
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "failed": ""
-            },
             "info": {
                 "noInfo": ""
-            },
-            "role": {
-                "verbadd": ""
             },
             "shutdown": {
                 "notYetShuttingDown": ""
             },
-            "documentation": {
-                "layer": {
-                    "singular": ""
-                }
-            },
             "language": {
                 "currentLanguage": ""
-            },
-            "wiki": {
-                "foundMatching": ""
             },
             "dream": {
                 "generatedBy": ""
@@ -230,33 +197,22 @@
         }
     },
     "notes": {
-        "createNote": "",
         "isCreated": ""
     },
     "professional": {
         "drawbacks": {
-            "unsuitedData": {
-                "intro": ""
-            },
             "intro": ""
         },
         "aboutOsm": {
-            "aboutOsm": {
-                "li3": ""
-            },
             "vandalism": {
                 "li0": ""
             }
-        },
-        "indexPage": {
-            "hook": ""
         }
     },
     "validation": {
         "float": {
             "feedback": ""
-        },
-        "tooLong": ""
+        }
     },
     "move": {
         "zoomInFurther": ""

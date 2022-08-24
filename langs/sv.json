@@ -6,8 +6,7 @@
         "zoomIn": "Zooma in för att visa eller redigera data"
     },
     "delete": {
-        "cancel": "Avbryt",
-        "isDeleted": ""
+        "cancel": "Avbryt"
     },
     "general": {
         "cancel": "Avbryt",
@@ -41,25 +40,14 @@
             "tuesday": "Tisdag",
             "wednesday": "Onsdag"
         },
-        "download": {
-            "downloadGpx": ""
-        },
         "oneSkippedQuestion": "",
-        "sharescreen": {
-            "fsGeolocation": ""
-        },
         "testing": "",
-        "wikipedia": {
-            "searchToShort": ""
-        },
         "add": {
             "confirmButton": ""
         },
         "attribution": {
-            "josmOpened": "",
             "editId": ""
         },
-        "openTheMap": "",
         "example": ""
     },
     "image": {
@@ -92,20 +80,11 @@
         "split": "Dela"
     },
     "importHelper": {
-        "confirmProcess": {
-            "title": ""
-        },
         "conflationChecker": {
             "titleLive": ""
         },
-        "previewAttributes": {
-            "allAttributesSame": ""
-        },
         "selectTheme": {
             "intro": ""
-        },
-        "mapPreview": {
-            "selectLayer": ""
         },
         "askMetadata": {
             "giveDescription": ""
@@ -113,28 +92,16 @@
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "argbody": ""
-            },
             "documentation": {
                 "theme": {
                     "singular": ""
                 }
             },
-            "help": {
-                "askRights": ""
-            },
             "info": {
                 "fetchingInfoAbout": ""
             },
-            "role": {
-                "verbadd": ""
-            },
             "scheme": {
                 "docs": ""
-            },
-            "wiki": {
-                "loadingFailed": ""
             },
             "search": {
                 "docs": ""
@@ -142,44 +109,26 @@
         }
     },
     "notes": {
-        "loginToAddPicture": "",
         "isClosed": ""
     },
     "professional": {
-        "aboutMc": {
-            "internalUse": {
-                "intro": ""
-            }
-        },
         "aboutOsm": {
             "license": {
                 "outro": ""
             }
         },
         "drawbacks": {
-            "licenseNuances": {
-                "intro": ""
-            },
             "unsuitedData": {
                 "li0": ""
             }
-        },
-        "indexPage": {
-            "button": ""
         }
     },
     "reviews": {
         "attribution": ""
     },
     "validation": {
-        "nat": {
-            "description": ""
-        },
         "opening_hours": {
             "description": ""
         }
-    },
-    "move": {
-        "partOfAWay": ""
     }
 }

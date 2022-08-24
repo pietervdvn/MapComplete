@@ -11,8 +11,7 @@
         "delete": "Удалить",
         "isDeleted": "Эта функция удалена",
         "loginToDelete": "Вы должны войти в профиль чтобы удалить дочку",
-        "safeDelete": "Эта точка может быть безопасно удалена.",
-        "loading": ""
+        "safeDelete": "Эта точка может быть безопасно удалена."
     },
     "favourite": {
         "loginNeeded": "<h3>Вход</h3>Личная раскладка доступна только пользователям OpenStreetMap",
@@ -32,8 +31,7 @@
             "pleaseLogin": "Пожалуйста, войдите чтобы добавить новую точку",
             "stillLoading": "Данные ещё загружаются. Пожалуйста, немного подождите прежде чем добавлять новую точку.",
             "title": "Добавить новую точку?",
-            "zoomInFurther": "Приблизьте ещё чтобы добавить точку.",
-            "zoomInMore": ""
+            "zoomInFurther": "Приблизьте ещё чтобы добавить точку."
         },
         "attribution": {
             "attributionContent": "<p>Все данные предоставлены <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, свободное повторное использование согласно <a href=\"https://osm.org/copyright\" target=\"_blank\">Open DataBase License</a>.</p>",
@@ -143,14 +141,8 @@
             "wednesday": "Среда"
         },
         "welcomeBack": "Вы вошли, с возвращением!",
-        "wikipedia": {
-            "noResults": ""
-        },
         "download": {
             "licenseInfo": ""
-        },
-        "apply_button": {
-            "appliedOnAnotherObject": ""
         },
         "removeLocationHistory": ""
     },
@@ -169,8 +161,7 @@
         "uploadMultipleDone": "{count} изображений добавлено. Спасибо за помощь!",
         "uploadingMultiple": "Загружаем {count} изображений…",
         "uploadingPicture": "Загружаем изображение…",
-        "willBePublished": "Ваше изображение будет опубликовано ",
-        "ccbExplanation": ""
+        "willBePublished": "Ваше изображение будет опубликовано "
     },
     "index": {
         "#": "Эти надписи отображаются над кнопками тем, когда тема не загружена",
@@ -205,83 +196,47 @@
         "splitTitle": "Выберите карту на которой хотите разделить дорогу"
     },
     "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "noPreviousNotesFound": ""
-        },
         "login": {
             "loggedInWith": ""
         },
-        "selectFile": {
-            "noFilesLoaded": ""
-        },
         "conflationChecker": {
             "downloadOverpassData": ""
-        },
-        "previewAttributes": {
-            "title": ""
         },
         "testMode": ""
     },
     "matrixbot": {
         "commands": {
             "documentation": {
-                "theme": {
-                    "plural": ""
-                },
                 "overview": ""
-            },
-            "info": {
-                "foundResults": ""
             },
             "role": {
                 "argverb": ""
             },
-            "scheme": {
-                "docs": ""
-            },
             "shutdown": {
                 "argmode": ""
-            },
-            "wiki": {
-                "noWiki": ""
             }
         }
     },
     "move": {
-        "moveTitle": "",
-        "selectReason": ""
+        "moveTitle": ""
     },
     "notes": {
         "addAComment": ""
-    },
-    "privacy": {
-        "miscCookiesTitle": ""
     },
     "professional": {
         "aboutOsm": {
             "aboutOsm": {
                 "title": ""
-            },
-            "benefits": {
-                "li0": ""
             }
         },
         "drawbacks": {
             "licenseNuances": {
                 "li2": ""
             }
-        },
-        "services": {
-            "intro": ""
         }
     },
     "translations": {
         "help": ""
-    },
-    "validation": {
-        "wikidata": {
-            "description": ""
-        }
     },
     "importLayer": {
         "popupTitle": ""

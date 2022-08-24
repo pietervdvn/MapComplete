@@ -321,14 +321,8 @@
             "title": "Seleccionar arxiu"
         },
         "title": "Assistent d'importació",
-        "conflationChecker": {
-            "nothingLoaded": ""
-        },
         "compareToAlreadyExistingNotes": {
             "wontBeImported": ""
-        },
-        "selectTheme": {
-            "unmatchedTitle": ""
         },
         "createNotes": {
             "done": ""
@@ -618,28 +612,14 @@
     },
     "matrixbot": {
         "commands": {
-            "documentation": {
-                "visualisation": {
-                    "singular": ""
-                }
-            },
             "info": {
                 "foundResults": ""
-            },
-            "welcome": {
-                "docs": ""
             },
             "shutdown": {
                 "verbshutdown": ""
             },
-            "dm": {
-                "docs": ""
-            },
             "language": {
                 "arglang": ""
-            },
-            "role": {
-                "verbadd": ""
             }
         }
     }

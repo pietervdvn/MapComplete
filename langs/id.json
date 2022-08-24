@@ -137,15 +137,10 @@
             "tuesday": "Selasa",
             "wednesday": "Rabu"
         },
-        "wikipedia": {
-            "createNewWikidata": ""
-        },
         "download": {
             "downloadCSVHelper": ""
         },
-        "loadingTheme": "",
-        "skippedQuestions": "",
-        "loginOnlyNeededToEdit": ""
+        "skippedQuestions": ""
     },
     "image": {
         "addPicture": "Tambahkan foto",
@@ -158,8 +153,7 @@
         "pleaseLogin": "Silakan masuk untuk menambah gambar",
         "uploadingMultiple": "Mengunggah {count} gambar…",
         "uploadingPicture": "Mengunggah gambar Anda…",
-        "willBePublished": "Gambarmu akan dipublikasikan ",
-        "uploadFailed": ""
+        "willBePublished": "Gambarmu akan dipublikasikan "
     },
     "index": {
         "intro": "MapComplete adalah penampil dan penyunting OpenStreetMap, yang menunjukkan informasi tentang fitur pada tema tertentu dan memungkinkan Anda untuk memperbaruinya.",
@@ -236,63 +230,36 @@
         }
     },
     "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "loadingFailed": ""
-        },
         "conflationChecker": {
             "showOsmLayerInConflationMap": ""
-        },
-        "selectFile": {
-            "errDuplicate": ""
         },
         "selectTheme": {
             "misMatch": ""
         },
-        "mapPreview": {
-            "confirm": ""
-        },
         "confirmProcess": {
             "contactedCommunity": ""
         }
-    },
-    "importLayer": {
-        "description": ""
     },
     "matrixbot": {
         "commands": {
             "dm": {
                 "argbody": ""
             },
-            "documentation": {
-                "visualisation": {
-                    "singular": ""
-                }
-            },
             "shutdown": {
                 "goodbye": ""
-            },
-            "role": {
-                "noSuchRole": ""
             },
             "search": {
                 "argsearch": ""
             },
-            "tags": {
-                "nothingFound": ""
-            },
             "language": {
                 "docs": ""
             }
-        },
-        "tooLongForPublic": ""
+        }
     },
     "professional": {
         "aboutOsm": {
             "vandalism": {
                 "intro": ""
-            },
-            "aboutOsm": {
-                "li1": ""
             }
         },
         "drawbacks": {
@@ -302,14 +269,8 @@
                 }
             }
         },
-        "services": {
-            "li3": ""
-        },
         "indexPage": {
             "hook": ""
         }
-    },
-    "move": {
-        "loginToMove": ""
     }
 }

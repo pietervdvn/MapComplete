@@ -21,8 +21,7 @@
             "searching": "Etsitään…"
         },
         "sharescreen": {
-            "thanksForSharing": "Kiitos jakamisesta!",
-            "downloadCustomThemeHelp": ""
+            "thanksForSharing": "Kiitos jakamisesta!"
         },
         "skip": "Ohita tämä kysymys",
         "weekdays": {
@@ -43,25 +42,13 @@
             "tuesday": "Tiistai",
             "wednesday": "Keskiviikko"
         },
-        "welcomeExplanation": {
-            "browseMoreMaps": ""
-        },
         "attribution": {
             "attributionContent": ""
         },
         "add": {
-            "import": {
-                "importTags": ""
-            },
             "disableFiltersExplanation": ""
         },
-        "download": {
-            "licenseInfo": ""
-        },
         "customThemeIntro": "",
-        "pdf": {
-            "generatedWith": ""
-        },
         "logout": ""
     },
     "image": {
@@ -70,8 +57,7 @@
         "ccbs": "CC-BY-SA-lisenssillä",
         "doDelete": "Poista kuva",
         "dontDelete": "Peruuta",
-        "isDeleted": "Poistettu",
-        "pleaseLogin": ""
+        "isDeleted": "Poistettu"
     },
     "index": {
         "title": "Tervetuloa MapCompleteen"
@@ -81,67 +67,39 @@
         "title_singular": "Yksi arvostelu"
     },
     "importHelper": {
-        "askMetadata": {
-            "shouldNotBeHomepage": ""
-        },
         "compareToAlreadyExistingNotes": {
             "wontBeImported": ""
         },
-        "conflationChecker": {
-            "cacheExpired": ""
-        },
         "login": {
             "loginRequired": ""
-        },
-        "selectFile": {
-            "fileFormatDescriptionCsv": ""
         },
         "gotoImportViewer": ""
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "receipt": ""
-            },
             "documentation": {
                 "theme": {
                     "singular": ""
                 }
             },
-            "help": {
-                "askRights": ""
-            },
             "tags": {
                 "noSearchGiven": ""
             },
-            "wiki": {
-                "nothingFound": ""
-            },
             "role": {
                 "argverb": ""
-            },
-            "scheme": {
-                "notype": ""
             },
             "language": {
                 "currentLanguage": ""
             }
         }
     },
-    "move": {
-        "confirmMove": ""
-    },
     "notes": {
-        "textNeeded": "",
-        "warnAnonymous": ""
+        "textNeeded": ""
     },
     "professional": {
         "aboutOsm": {
             "aboutOsm": {
                 "intro": ""
-            },
-            "vandalism": {
-                "li0": ""
             }
         },
         "drawbacks": {
@@ -150,29 +108,17 @@
                     "outro": ""
                 }
             }
-        },
-        "services": {
-            "intro": ""
         }
     },
     "split": {
         "loginToSplit": ""
     },
-    "validation": {
-        "text": {
-            "description": ""
-        }
-    },
     "delete": {
         "explanations": {
             "retagOtherThemes": ""
-        },
-        "onlyEditedByLoggedInUser": ""
+        }
     },
     "privacy": {
         "editingTitle": ""
-    },
-    "translations": {
-        "notImmediate": ""
     }
 }

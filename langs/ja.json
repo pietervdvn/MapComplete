@@ -23,8 +23,7 @@
             "pleaseLogin": "新しいポイントを追加するにはログインしてください",
             "stillLoading": "データはまだロード中です。新しいポイントを追加する前に少しお待ちください。",
             "title": "新しいポイントを追加しますか?",
-            "zoomInFurther": "さらにズーム拡大して点を追加します。",
-            "zoomInMore": ""
+            "zoomInFurther": "さらにズーム拡大して点を追加します。"
         },
         "attribution": {
             "attributionContent": "<p>すべてのデータは<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>によって提供され、<a href=\"https://osm.org/copyright\" target=\"_blank\"> Open DataBaseライセンス</a>の下で自由に再利用できます。</p>",
@@ -134,13 +133,9 @@
             "wednesday": "水曜日"
         },
         "welcomeBack": "ログインしました、お帰りなさい!",
-        "wikipedia": {
-            "fromWikipedia": ""
-        },
         "download": {
             "downloadGeoJsonHelper": ""
         },
-        "useSearch": "",
         "notValid": ""
     },
     "image": {
@@ -157,8 +152,7 @@
         "uploadFailed": "写真をアップロードできませんでした。インターネット接続があり、外部のAPIが許可されていますか？Brave ブラウザやUMatrixは、これらをブロックするかもしれません。",
         "uploadingMultiple": "{count} 枚の写真をアップロードします…",
         "uploadingPicture": "写真をアップロードします…",
-        "willBePublished": "写真は公開されます: ",
-        "ccbExplanation": ""
+        "willBePublished": "写真は公開されます: "
     },
     "index": {
         "#": "これらのテキストは、テーマがロードされていない場合にテーマボタンの上に表示されます",
@@ -183,59 +177,34 @@
         "write_a_comment": "レビューを残す…"
     },
     "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "loadingFailed": ""
-        },
         "conflationChecker": {
             "osmLoaded": ""
         },
-        "createNotes": {
-            "title": ""
-        },
         "selectFile": {
             "noFilesLoaded": ""
-        },
-        "selectTheme": {
-            "notApplicable": ""
         },
         "testMode": ""
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "receipt": ""
-            },
             "documentation": {
                 "layer": {
                     "singular": ""
                 }
             },
-            "help": {
-                "insufficientRights": ""
-            },
             "info": {
                 "noEditPossible": ""
             },
-            "role": {
-                "verbadd": ""
-            },
             "search": {
                 "argsearch": ""
-            },
-            "wiki": {
-                "loadingFailed": ""
             },
             "shutdown": {
                 "goodbye": ""
             }
         }
     },
-    "move": {
-        "inviteToMoveAgain": ""
-    },
     "notes": {
-        "addComment": "",
-        "typeText": ""
+        "addComment": ""
     },
     "professional": {
         "aboutMc": {
@@ -243,29 +212,15 @@
                 "title": ""
             }
         },
-        "aboutOsm": {
-            "benefits": {
-                "title": ""
-            }
-        },
         "drawbacks": {
-            "intro": "",
-            "unsuitedData": {
-                "li0": ""
-            }
+            "intro": ""
         },
         "text0": ""
-    },
-    "validation": {
-        "phone": {
-            "feedback": ""
-        }
     },
     "delete": {
         "reasons": {
             "notFound": ""
-        },
-        "isntAPoint": ""
+        }
     },
     "split": {
         "splitTitle": ""

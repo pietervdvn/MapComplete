@@ -247,8 +247,7 @@
             "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
             "searchWikidata": "Rechercher sur Wikidata",
             "wikipediaboxTitle": "Wikipédia"
-        },
-        "logout": ""
+        }
     },
     "image": {
         "addPicture": "Ajoutez une photo",
@@ -280,14 +279,8 @@
             "errDuplicate": "Certaines colonnes portent le même nom",
             "errNoName": "Certains colonnes n'ont pas de nom"
         },
-        "confirmProcess": {
-            "title": ""
-        },
         "conflationChecker": {
             "title": ""
-        },
-        "previewAttributes": {
-            "someHaveSame": ""
         },
         "compareToAlreadyExistingNotes": {
             "title": ""
@@ -334,20 +327,12 @@
             "hook": "Besoin d’un accompagnement professionnel ?",
             "hookMore": "Nous pouvons aider à la mise en place de relevés, l’importation de données et toute question relative à l’environnement OpenStreetMap"
         },
-        "aboutOsm": {
-            "license": {
-                "title": ""
-            }
-        },
         "drawbacks": {
             "licenseNuances": {
                 "usecaseMapDifferentSources": {
                     "title": ""
                 }
             }
-        },
-        "services": {
-            "li3": ""
         },
         "title": ""
     },
@@ -381,42 +366,22 @@
     },
     "matrixbot": {
         "commands": {
-            "documentation": {
-                "file": {
-                    "singular": ""
-                }
-            },
             "info": {
                 "noInfo": ""
-            },
-            "language": {
-                "hasBeenSet": ""
             },
             "role": {
                 "userHasRoles": ""
             },
-            "wiki": {
-                "noWiki": ""
-            },
             "dm": {
                 "selectValidCommand": ""
-            },
-            "scheme": {
-                "noMatchingLayer": ""
             }
         },
         "commandNotFound": ""
-    },
-    "notes": {
-        "createNoteIntro": ""
     },
     "privacy": {
         "miscCookiesTitle": ""
     },
     "validation": {
-        "nat": {
-            "notANumber": ""
-        },
         "text": {
             "description": ""
         }

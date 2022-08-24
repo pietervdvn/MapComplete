@@ -281,20 +281,11 @@
         "previewAttributes": {
             "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel"
         },
-        "compareToAlreadyExistingNotes": {
-            "loading": ""
-        },
         "selectTheme": {
             "noMatchingPresets": ""
         },
-        "selectFile": {
-            "errDuplicate": ""
-        },
         "conflationChecker": {
             "setRangeToZero": ""
-        },
-        "mapPreview": {
-            "selectLayer": ""
         }
     },
     "index": {
@@ -369,13 +360,6 @@
         "text0": "<p>A naprakész földrajzi adatok karbantartása nehéz, hibaveszélyes és költséges.<br>A nehézségeket tetézi, hogy sok szervezet egymástól függetlenül gyűjti ugyanazokat az adatokat, ami párhuzamos erőfeszítéseket, nem szabványosított adatformátumokat és sok hiányos, karbantartatlan adathalmazt eredményez.</p><p>Létezik viszont egy hatalmas közösség, amely rengeteg földrajzi adatot gyűjt egy közös, globális és szabványosított adatbázisba: ez az OpenStreetMap.org.</p>",
         "text1": "<p>A MapComplete olyan térképszerkesztő alkalmazás, amely megkönnyíti az OpenStreetMap adatokkal való feltöltését.</p>",
         "title": "Szakmai támogatás a MapComplete segítségével",
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "outro": ""
-                }
-            }
-        },
         "services": {
             "intro": ""
         }
@@ -406,40 +390,22 @@
     },
     "matrixbot": {
         "commands": {
-            "info": {
-                "noInfo": ""
-            },
             "tags": {
                 "noSearchGiven": ""
-            },
-            "wiki": {
-                "noWiki": ""
             },
             "documentation": {
                 "didYouMean": ""
             },
-            "search": {
-                "searching": ""
-            },
             "role": {
                 "allRolesIntro": ""
-            },
-            "dream": {
-                "generatedBy": ""
             }
         },
         "tooLongForPublic": ""
-    },
-    "notes": {
-        "loginToClose": ""
     },
     "translations": {
         "deactivate": ""
     },
     "validation": {
-        "email": {
-            "feedback": ""
-        },
         "date": {
             "description": ""
         }

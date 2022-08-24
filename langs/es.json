@@ -449,8 +449,7 @@
             "documentation": {
                 "docs": "Obtiene la documentación sobre una capa, un tema o un parámetro de URL de Mapcomplete",
                 "noIdIntro": "Da un id para obtener más información sobre un ítem relacionado con la programación de MapComplete. Los tipos conocidos son {list}",
-                "urlParam": "Parámetro de URL <code>{id}</code>",
-                "notFound": ""
+                "urlParam": "Parámetro de URL <code>{id}</code>"
             },
             "dream": {
                 "docs": "Envía un texto generado por ordenador",

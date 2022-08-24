@@ -22,8 +22,7 @@
             "pleaseLogin": "Inicia a sesión para engadir un novo punto",
             "stillLoading": "Os datos seguen a cargarse. Agarda un intre antes de engadir ningún punto.",
             "title": "Queres engadir un punto?",
-            "zoomInFurther": "Achégate para engadir un punto.",
-            "importTags": ""
+            "zoomInFurther": "Achégate para engadir un punto."
         },
         "attribution": {
             "attributionContent": "<p>Todos os datos proveñen do <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, e pódense reutilizar libremente baixo <a href=\"https://osm.org/copyright\" target=\"_blank\">a Licenza Aberta de Base de Datos (ODbL)</a>.</p>",
@@ -133,13 +132,7 @@
             "wednesday": "Mércores"
         },
         "welcomeBack": "Iniciaches a sesión, benvido.",
-        "download": {
-            "includeMetaData": ""
-        },
         "loadingTheme": "",
-        "apply_button": {
-            "isApplied": ""
-        },
         "removeLocationHistory": ""
     },
     "image": {
@@ -156,8 +149,7 @@
         "uploadFailed": "Non foi posíbel subir a imaxe. Tes internet e permites API de terceiros? O navegador Brave ou UMatrix podería bloquealas.",
         "uploadingMultiple": "Subindo {count} das túas imaxes...",
         "uploadingPicture": "Subindo a túa imaxe...",
-        "willBePublished": "A túa imaxe será publicada: ",
-        "uploadMultipleDone": ""
+        "willBePublished": "A túa imaxe será publicada: "
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
@@ -180,19 +172,10 @@
     },
     "importHelper": {
         "conflationChecker": {
-            "states": {
-                "unexpected": ""
-            },
             "showOsmLayerInConflationMap": ""
-        },
-        "selectFile": {
-            "loadedFilesAre": ""
         },
         "compareToAlreadyExistingNotes": {
             "titleLong": ""
-        },
-        "noteParts": {
-            "datasource": ""
         },
         "createNotes": {
             "loading": ""
@@ -201,44 +184,23 @@
     "matrixbot": {
         "commands": {
             "documentation": {
-                "didYouMean": "",
                 "urlParam": ""
-            },
-            "info": {
-                "argsearch": ""
             },
             "language": {
                 "arglang": ""
             },
-            "role": {
-                "noPreviousRoles": ""
-            },
             "shutdown": {
                 "verbshutdown": ""
-            },
-            "tags": {
-                "argsearch": ""
             }
         },
         "subcommandNotGiven": ""
     },
-    "move": {
-        "whyMove": ""
-    },
     "notes": {
         "loginToAddPicture": ""
-    },
-    "privacy": {
-        "title": ""
     },
     "professional": {
         "aboutMc": {
             "title": ""
-        },
-        "aboutOsm": {
-            "license": {
-                "intro": ""
-            }
         },
         "drawbacks": {
             "licenseNuances": {
@@ -246,22 +208,15 @@
                     "li1": ""
                 }
             }
-        },
-        "services": {
-            "intro": ""
         }
     },
     "validation": {
         "phone": {
             "description": ""
-        },
-        "wikidata": {
-            "description": ""
         }
     },
     "delete": {
-        "cannotBeDeleted": "",
-        "isDeleted": ""
+        "cannotBeDeleted": ""
     },
     "translations": {
         "isTranslator": ""

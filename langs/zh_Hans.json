@@ -23,93 +23,53 @@
         "aboutMapcomplete": "<h3>关于MapComplete</h3><p>使用它在<b>特定主题</b>上追加OpenStreetMap信息。 Answer questions, and within minutes your contributions are available everywhere. <b>主题维护者</b>为它定义元素、问题和语言。</p><h3>发现更多</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.</p><ul><li>当嵌入在网站的时候，iframe连接到一个全屏的MapComplete</li><li>全屏版本提供OpenStreetMap信息</li><li>无需登录即可查看，但编辑需要一个OSM账号。</li><li>若您未登录则将被要求登录</li><li>每次当您回答一条问题，您都可以向地图添加新的点</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul><p></p><br><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">the source code</a> or<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a></p><p>想要查看<b>您的进度</b>？查阅<a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>上的编辑计数。</p>",
         "add": {
             "disableFilters": "禁用所有过滤器",
-            "hasBeenImported": "这个点已经被导入过了",
-            "zoomInFurther": ""
+            "hasBeenImported": "这个点已经被导入过了"
         },
         "download": {
             "title": ""
-        },
-        "opening_hours": {
-            "ph_open": ""
         },
         "weekdays": {
             "abbreviations": {
                 "tuesday": ""
             }
         },
-        "wikipedia": {
-            "noResults": ""
-        },
         "confirm": "",
-        "attribution": {
-            "followBridge": ""
-        },
         "sharescreen": {
             "fsUserbadge": ""
         },
-        "skip": "",
         "customThemeIntro": "",
-        "loginToStart": "",
         "examples": ""
     },
     "image": {
-        "nearbyPictures": {
-            "withinRadius": ""
-        },
         "ccbs": ""
     },
     "importHelper": {
-        "askMetadata": {
-            "shouldBeUrl": ""
-        },
         "confirmProcess": {
             "wikipageIsMade": ""
         },
-        "conflationChecker": {
-            "cacheExpired": ""
-        },
         "mapPreview": {
             "selectLayer": ""
-        },
-        "selectFile": {
-            "fileFormatDescriptionCsv": ""
         },
         "testMode": ""
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "commandNotFound": ""
-            },
             "documentation": {
                 "visualisation": {
                     "plural": ""
                 }
             },
-            "info": {
-                "noEditPossible": ""
-            },
             "language": {
                 "arglang": ""
             },
-            "role": {
-                "argverb": ""
-            },
             "search": {
                 "announceLimited": ""
-            },
-            "welcome": {
-                "p1": ""
             }
         },
         "commandNotFound": ""
     },
-    "move": {
-        "zoomInFurther": ""
-    },
     "notes": {
-        "addComment": "",
-        "typeText": ""
+        "addComment": ""
     },
     "professional": {
         "aboutMc": {
@@ -117,31 +77,19 @@
                 "intro": ""
             }
         },
-        "aboutOsm": {
-            "aboutOsm": {
-                "li0": ""
-            }
-        },
         "drawbacks": {
             "licenseNuances": {
                 "usecaseMapDifferentSources": {
                     "li1": ""
                 }
-            },
-            "intro": ""
+            }
         },
         "text0": ""
-    },
-    "reviews": {
-        "name_required": ""
     },
     "translations": {
         "completeness": ""
     },
     "validation": {
-        "nat": {
-            "notANumber": ""
-        },
         "date": {
             "description": ""
         }

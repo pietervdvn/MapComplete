@@ -195,9 +195,6 @@
             "wednesday": "星期三"
         },
         "welcomeBack": "你已經登入了，歡迎回來！",
-        "wikipedia": {
-            "createNewWikidata": ""
-        },
         "error": ""
     },
     "image": {
@@ -250,20 +247,11 @@
         "splitTitle": "請在地圖選擇要在那裡分割道路"
     },
     "importHelper": {
-        "conflationChecker": {
-            "importCandidatesCount": ""
-        },
         "introduction": {
             "importFormat": ""
         },
-        "selectFile": {
-            "errNotFeatureCollection": ""
-        },
         "askMetadata": {
             "downloadGeojson": ""
-        },
-        "mapPreview": {
-            "selectLayer": ""
         },
         "selectTheme": {
             "title": ""
@@ -271,44 +259,24 @@
     },
     "matrixbot": {
         "commands": {
-            "documentation": {
-                "layer": {
-                    "plural": ""
-                }
-            },
             "info": {
                 "closedTodayAndTomorrow": ""
-            },
-            "language": {
-                "knownLanguages": ""
             },
             "role": {
                 "verblist": ""
             },
-            "wiki": {
-                "foundMatching": ""
-            },
             "dm": {
                 "selectValidUser": ""
-            },
-            "scheme": {
-                "argkey": ""
             }
         }
     },
     "notes": {
-        "noteIsPublic": "",
-        "createNoteIntro": ""
+        "noteIsPublic": ""
     },
     "privacy": {
         "geodataTitle": ""
     },
     "professional": {
-        "aboutOsm": {
-            "aboutOsm": {
-                "li3": ""
-            }
-        },
         "drawbacks": {
             "licenseNuances": {
                 "usecaseGatheringOpenData": {
@@ -316,25 +284,14 @@
                 }
             }
         },
-        "aboutMc": {
-            "survey": {
-                "intro": ""
-            }
-        },
         "services": {
             "li0": ""
         }
     },
     "validation": {
-        "email": {
-            "description": ""
-        },
         "nat": {
             "notANumber": ""
         }
-    },
-    "move": {
-        "moveTitle": ""
     },
     "importLayer": {
         "description": ""

@@ -4,28 +4,24 @@
         "ready": "Farite!"
     },
     "delete": {
-        "cancel": "Nuligi",
-        "cannotBeDeleted": ""
+        "cancel": "Nuligi"
     },
     "favourite": {
         "reload": "Reŝargi la datenojn"
     },
     "general": {
         "add": {
-            "title": "Enmeti novan punkton?",
-            "warnVisibleForEveryone": ""
+            "title": "Enmeti novan punkton?"
         },
         "attribution": {
             "iconAttribution": {
                 "title": "Uzitaj piktogramoj"
-            },
-            "josmNotOpened": ""
+            }
         },
         "backgroundMap": "Fona mapo",
         "cancel": "Nuligi",
         "download": {
-            "exporting": "Elportante…",
-            "downloadFeatureAsGeojson": ""
+            "exporting": "Elportante…"
         },
         "loading": "Ŝargante…",
         "loginWithOpenStreetMap": "Saluti per OpenStreetMap",
@@ -59,8 +55,7 @@
         "sharescreen": {
             "editThisTheme": "Modifi ĉi tiun etoson",
             "fsSearch": "Ŝalti la serĉbreton",
-            "fsUserbadge": "Ŝalti la salutbutonon",
-            "fsAddNew": ""
+            "fsUserbadge": "Ŝalti la salutbutonon"
         },
         "skip": "Preterpasi ĉi tiun demandon",
         "weekdays": {
@@ -87,11 +82,7 @@
             "searchWikidata": "Serĉi Vikidatumojn",
             "wikipediaboxTitle": "Vikipedio"
         },
-        "morescreen": {
-            "searchForATheme": ""
-        },
         "poweredByOsm": "",
-        "customThemeIntro": "",
         "testing": ""
     },
     "image": {
@@ -103,8 +94,7 @@
         "pleaseLogin": "Bonvolu saluti por aldoni bildon",
         "uploadingMultiple": "Alŝutante {count} bildojn…",
         "uploadingPicture": "Alŝutante vian bildon…",
-        "willBePublished": "Via bildo estos publikigita ",
-        "respectPrivacy": ""
+        "willBePublished": "Via bildo estos publikigita "
     },
     "index": {
         "title": "Bonvenon al MapComplete"
@@ -115,94 +105,51 @@
         "title_singular": "Unu recenzo"
     },
     "importHelper": {
-        "askMetadata": {
-            "shouldNotBeHomepage": ""
-        },
         "selectFile": {
             "errPointsOnly": ""
         },
-        "conflationChecker": {
-            "states": {
-                "unexpected": ""
-            }
-        },
         "testMode": "",
-        "selectTheme": {
-            "notApplicable": ""
-        },
         "login": {
             "lockNotice": ""
         }
     },
     "matrixbot": {
         "commands": {
-            "help": {
-                "supported": ""
-            },
             "shutdown": {
                 "verbshutdown": ""
             },
             "documentation": {
-                "visualisation": {
-                    "plural": ""
-                },
                 "file": {
                     "singular": ""
                 }
             },
-            "role": {
-                "verbdefault": ""
-            },
             "scheme": {
                 "argkey": ""
-            },
-            "dm": {
-                "executing": ""
             },
             "dream": {
                 "docs": ""
             }
         }
     },
-    "move": {
-        "inviteToMove": {
-            "reasonInaccurate": ""
-        }
-    },
     "notes": {
-        "reopenNote": "",
-        "createNoteTitle": ""
+        "reopenNote": ""
     },
     "professional": {
         "aboutOsm": {
             "aboutOsm": {
                 "title": ""
-            },
-            "benefits": {
-                "li2": ""
             }
         },
         "drawbacks": {
             "licenseNuances": {
                 "li1": ""
             }
-        },
-        "services": {
-            "intro": ""
         }
     },
     "privacy": {
         "intro": ""
     },
-    "validation": {
-        "wikidata": {
-            "description": ""
-        }
-    },
     "importInspector": {
         "title": ""
-    },
-    "translations": {
-        "missing": ""
     }
 }
