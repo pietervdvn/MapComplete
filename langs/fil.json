@@ -60,11 +60,6 @@
             "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók"
         }
     },
-    "importHelper": {
-        "selectFile": {
-            "errNoName": ""
-        }
-    },
     "professional": {
         "aboutOsm": {
             "aboutOsm": {

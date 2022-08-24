@@ -171,8 +171,5 @@
         "title_singular": "1回のレビュー",
         "tos": "レビューを作成する場合は、<a href=\"https://mangrove.reviews/terms\" target=\"_blank\">Mangrove.reviewsのTOSおよびプライバシーポリシーに同意します。</a>",
         "write_a_comment": "レビューを残す…"
-    },
-    "notes": {
-        "addComment": ""
     }
 }

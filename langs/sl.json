@@ -50,8 +50,5 @@
         "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
         "pickTheme": "Za začetek spodaj izberite tematiko.",
         "title": "Dobrodošli na MapComplete"
-    },
-    "notes": {
-        "warnAnonymous": ""
     }
 }

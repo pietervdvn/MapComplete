@@ -244,8 +244,5 @@
         "loginToSplit": "你必須登入才能分割道路",
         "split": "分開",
         "splitTitle": "請在地圖選擇要在那裡分割道路"
-    },
-    "privacy": {
-        "geodataTitle": ""
     }
 }

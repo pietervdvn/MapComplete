@@ -26,11 +26,6 @@
             "hasBeenImported": "这个点已经被导入过了"
         }
     },
-    "importHelper": {
-        "confirmProcess": {
-            "wikipageIsMade": ""
-        }
-    },
     "professional": {
         "aboutMc": {
             "internalUse": {

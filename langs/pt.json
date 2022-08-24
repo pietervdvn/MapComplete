@@ -307,12 +307,5 @@
         "loginToSplit": "Tem de estar autenticado para dividir uma estrada",
         "split": "Dividir",
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
-    },
-    "professional": {
-        "aboutOsm": {
-            "vandalism": {
-                "intro": ""
-            }
-        }
     }
 }

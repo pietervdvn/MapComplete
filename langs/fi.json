@@ -57,8 +57,5 @@
     "reviews": {
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu"
-    },
-    "notes": {
-        "textNeeded": ""
     }
 }

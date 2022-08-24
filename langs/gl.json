@@ -167,8 +167,5 @@
         "title": "{count} recensións",
         "title_singular": "Unha recensión",
         "write_a_comment": "Deixa unha recensión…"
-    },
-    "notes": {
-        "loginToAddPicture": ""
     }
 }

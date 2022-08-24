@@ -224,12 +224,5 @@
         "wikidata": {
             "description": "Pengidentifikasi Wikidata"
         }
-    },
-    "professional": {
-        "aboutOsm": {
-            "vandalism": {
-                "intro": ""
-            }
-        }
     }
 }
