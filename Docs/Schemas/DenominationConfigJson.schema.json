@@ -1,29 +1,5 @@
-export default {
-  "type": "object",
-  "properties": {
-    "appliesToKey": {
-      "description": "Every key from this list will be normalized.\n\nTo render a united value properly, use",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "eraseInvalidValues": {
-      "description": "If set, invalid values will be erased in the MC application (but not in OSM of course!)\nBe careful with setting this",
-      "type": "boolean"
-    },
-    "applicableUnits": {
-      "description": "The possible denominations",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/DenominationConfigJson"
-      }
-    }
-  },
-  "required": [
-    "applicableUnits",
-    "appliesToKey"
-  ],
+{
+  "$ref": "#/definitions/DenominationConfigJson",
   "definitions": {
     "TagConfigJson": {
       "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",
@@ -64,7 +40,8 @@ export default {
       },
       "required": [
         "and"
-      ]
+      ],
+      "additionalProperties": false
     },
     "OrTagConfigJson": {
       "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation",
@@ -79,7 +56,8 @@ export default {
       },
       "required": [
         "or"
-      ]
+      ],
+      "additionalProperties": false
     },
     "DenominationConfigJson": {
       "type": "object",
@@ -140,8 +118,10 @@ export default {
       },
       "required": [
         "canonicalDenomination"
-      ]
+      ],
+      "additionalProperties": false
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false
 }

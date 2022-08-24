@@ -293,8 +293,6 @@ This is rendered with  {rental} is rented here
   - Bike helmets can be rented here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>`
 
 
-Only visible if  `amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
-
 This tagrendering has labels  `bicycle_rental`
 
 
@@ -311,7 +309,7 @@ This is rendered with  {capacity:city_bike} city bikes can be rented here
 
 
 
-Only visible if  `rental~^.*city_bike.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*city_bike.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -329,7 +327,7 @@ This is rendered with  {capacity:ebike} electrical bikes can be rented here
 
 
 
-Only visible if  `rental~^.*ebike.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*ebike.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -347,7 +345,7 @@ This is rendered with  {capacity:kid_bike} bikes for children can be rented here
 
 
 
-Only visible if  `rental~^.*kid_bike.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*kid_bike.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -365,7 +363,7 @@ This is rendered with  {capacity:bmx} BMX bikes can be rented here
 
 
 
-Only visible if  `rental~^.*bmx.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*bmx.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -383,7 +381,7 @@ This is rendered with  {capacity:mtb} mountainbike can be rented here
 
 
 
-Only visible if  `rental~^.*mtb.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*mtb.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -401,7 +399,7 @@ This is rendered with  {capacity:bicycle_pannier} bicycle panniers can be rented
 
 
 
-Only visible if  `rental~^.*bicycle_pannier.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*bicycle_pannier.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -419,7 +417,7 @@ This is rendered with  {capacity:tandem_bicycle} tandem can be rented here
 
 
 
-Only visible if  `rental~^.*tandem_bicycle.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*tandem_bicycle.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -513,8 +511,6 @@ This is rendered with  Using the cleaning service costs {service:bicycle:cleanin
   - The cleaning service has a fee, but the amount is not known  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes&service:bicycle:cleaning:charge=' target='_blank'>yes&service:bicycle:cleaning:charge=</a>`
   - This option cannot be chosen as answer
 
-
-Only visible if  `amenity!=bike_wash&amenity!=bicycle_wash&service:bicycle:cleaning=yes|service:bicycle:cleaning=diy|amenity=bicycle_wash|amenity=bike_wash`  is shown
 
 
 

@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/transit",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/transit_stops/bus_stop.svg",
-    "contact_name": "Pieter Vander Vennet, Robin van der Linde",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -448,6 +448,11 @@
       "key": "capacity:disabled",
       "description": "Layer 'Parking' shows capacity:disabled=no with a fixed text, namely 'There are no disabled parking spots' (in the MapComplete.osm.be theme 'Bus routes')",
       "value": "no"
+    },
+    {
+      "key": "capacity:disabled",
+      "description": "Layer 'Parking' shows capacity:disabled=0 with a fixed text, namely 'There are no disabled parking spots' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "value": "0"
     },
     {
       "key": "capacity",

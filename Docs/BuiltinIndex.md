@@ -24,6 +24,9 @@
     + [smoking](#smoking)
     + [service:electricity](#serviceelectricity)
     + [dog-access](#dog-access)
+    + [internet](#internet)
+    + [internet-fee](#internet-fee)
+    + [internet-ssid](#internet-ssid)
     + [reviews](#reviews)
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
@@ -104,11 +107,14 @@
   - map
   - nature_reserve
   - observation_tower
+  - parcel_lockers
   - parking
   - pharmacy
   - picnic_table
   - play_forest
   - playground
+  - postboxes
+  - postoffices
   - public_bookcase
   - rainbow_crossings
   - reception_desk
@@ -239,6 +245,7 @@
   - doctors
   - food
   - kindergarten_childcare
+  - parcel_lockers
   - pharmacy
   - shops
   - veterinary
@@ -379,6 +386,48 @@
 
   - cafe_pub
   - food
+
+
+
+
+### internet 
+
+
+
+
+
+  - cafe_pub
+  - food
+  - hotel
+  - shops
+
+
+
+
+### internet-fee 
+
+
+
+
+
+  - cafe_pub
+  - food
+  - hotel
+  - shops
+
+
+
+
+### internet-ssid 
+
+
+
+
+
+  - cafe_pub
+  - food
+  - hotel
+  - shops
 
 
 

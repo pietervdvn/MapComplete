@@ -64,7 +64,7 @@ attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/parking#values) [parking](https://wiki.openstreetmap.org/wiki/Key:parking) | Multiple choice | [surface](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface) [street_side](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side) [underground](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground) [multi-storey](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey) [rooftop](https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop) [lane](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane) [carports](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports) [garage_boxes](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes) [layby](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby) [sheds](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:disabled#values) [capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled) | [pnat](../SpecialInputElements.md#pnat) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity:disabled#values) [capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/capacity#values) [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) | 
 
 
@@ -149,6 +149,7 @@ This is rendered with  There are {capacity:disabled} disabled parking spots
   - This option cannot be chosen as answer
   - There are no disabled parking spots  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3Dno' target='_blank'>no</a>`
   - This option cannot be chosen as answer
+  - There are no disabled parking spots  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:capacity:disabled' target='_blank'>capacity:disabled</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0' target='_blank'>0</a>`
 
 
 

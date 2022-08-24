@@ -1,29 +1,5 @@
 export default {
-  "type": "object",
-  "properties": {
-    "appliesToKey": {
-      "description": "Every key from this list will be normalized.\n\nTo render a united value properly, use",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "eraseInvalidValues": {
-      "description": "If set, invalid values will be erased in the MC application (but not in OSM of course!)\nBe careful with setting this",
-      "type": "boolean"
-    },
-    "applicableUnits": {
-      "description": "The possible denominations",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/DenominationConfigJson"
-      }
-    }
-  },
-  "required": [
-    "applicableUnits",
-    "appliesToKey"
-  ],
+  "$ref": "#/definitions/DenominationConfigJson",
   "definitions": {
     "TagConfigJson": {
       "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation",

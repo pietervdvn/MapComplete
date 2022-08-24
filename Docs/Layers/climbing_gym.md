@@ -182,8 +182,6 @@ This is rendered with  A fee of {charge} should be paid for climbing here
   - Paying a fee is required to climb here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
 
-Only visible if  `sport=climbing`  is shown
-
 
 
 ### opening_hours 
@@ -212,8 +210,6 @@ This is rendered with  The routes are <b>{canonical(climbing:length)}</b> long o
 
 
 
-Only visible if  `sport=climbing`  is shown
-
 
 
 ### min_difficulty 
@@ -227,8 +223,6 @@ This rendering asks information about the property  [climbing:grade:french:min](
 This is rendered with  The lowest grade is {climbing:grade:french:min} according to the french/belgian system
 
 
-
-Only visible if  `sport=climbing`  is shown
 
 
 
@@ -244,7 +238,7 @@ This is rendered with  The highest grade is {climbing:grade:french:max} accordin
 
 
 
-Only visible if  `climbing!~^route$&climbing:sport=yes|sport=climbing&sport=climbing`  is shown
+Only visible if  `climbing!~^route$&climbing:sport=yes|sport=climbing`  is shown
 
 
 
@@ -265,8 +259,6 @@ The question is  Is bouldering possible here?
   - This option cannot be chosen as answer
 
 
-Only visible if  `sport=climbing`  is shown
-
 
 
 ### sportclimbing 
@@ -284,8 +276,6 @@ The question is  Is sport climbing possible here on fixed anchors?
   - There are {climbing:sport} sport climbing routes  corresponds with  `climbing:sport~^..*$`
   - This option cannot be chosen as answer
 
-
-Only visible if  `sport=climbing`  is shown
 
 
 
