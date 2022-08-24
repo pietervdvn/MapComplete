@@ -256,9 +256,6 @@
             },
             "searchWikidata": "Søg på Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "welcomeExplanation": {
-            "browseMoreMaps": ""
         }
     },
     "image": {
@@ -280,10 +277,7 @@
         "uploadMultipleDone": "{count} billeder tilføjet. Tak for at hjælpe til!",
         "uploadingMultiple": "Uploader {count} billeder…",
         "uploadingPicture": "Uploading dit billede…",
-        "willBePublished": "Dit billede vil blive offentliggjort ",
-        "nearbyPictures": {
-            "loading": ""
-        }
+        "willBePublished": "Dit billede vil blive offentliggjort "
     },
     "importHelper": {
         "askMetadata": {
@@ -692,45 +686,29 @@
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "selectValidCommand": ""
-            },
             "documentation": {
                 "visualisation": {
                     "singular": ""
-                },
-                "noIdIntro": ""
+                }
             },
             "help": {
-                "p0": "",
-                "priviligedComand": ""
+                "p0": ""
             },
             "role": {
-                "verbadd": "",
-                "allRolesIntro": ""
+                "verbadd": ""
             },
             "tags": {
                 "nothingFound": ""
             },
-            "welcome": {
-                "p0": ""
-            },
             "wiki": {
                 "argsearch": ""
-            },
-            "info": {
-                "noEditPossible": ""
             },
             "scheme": {
                 "noMatchingLayer": ""
             },
-            "search": {
-                "argsearch": ""
-            },
             "dream": {
                 "generatedBy": ""
             }
-        },
-        "subcommandNotGiven": ""
+        }
     }
 }

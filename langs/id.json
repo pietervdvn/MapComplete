@@ -137,23 +137,15 @@
             "tuesday": "Selasa",
             "wednesday": "Rabu"
         },
-        "morescreen": {
-            "previouslyHiddenTitle": ""
-        },
         "wikipedia": {
-            "createNewWikidata": "",
-            "searchWikidata": ""
+            "createNewWikidata": ""
         },
         "download": {
-            "downloadCSVHelper": "",
-            "downloadGpxHelper": ""
+            "downloadCSVHelper": ""
         },
         "loadingTheme": "",
-        "oneSkippedQuestion": "",
         "skippedQuestions": "",
-        "notValid": "",
-        "loginOnlyNeededToEdit": "",
-        "fewChangesBefore": ""
+        "loginOnlyNeededToEdit": ""
     },
     "image": {
         "addPicture": "Tambahkan foto",
@@ -167,9 +159,6 @@
         "uploadingMultiple": "Mengunggah {count} gambar…",
         "uploadingPicture": "Mengunggah gambar Anda…",
         "willBePublished": "Gambarmu akan dipublikasikan ",
-        "nearbyPictures": {
-            "removeFilters": ""
-        },
         "uploadFailed": ""
     },
     "index": {
@@ -192,8 +181,7 @@
         "loginToAddPicture": "Masuk untuk menambahkan gambar",
         "loginToClose": "Masuk untuk menutup catatan ini",
         "noteIsPublic": "Ini akan terlihat oleh semua orang",
-        "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan",
-        "typeText": ""
+        "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan"
     },
     "reviews": {
         "attribution": "Ulasan didukung oleh <a href=\"https://mangrove.reviews/\" target=\"_blank\"> Mangrove Reviews</a> dan tersedia di bawah <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -245,9 +233,6 @@
         },
         "wikidata": {
             "description": "Pengidentifikasi Wikidata"
-        },
-        "phone": {
-            "feedback": ""
         }
     },
     "importHelper": {
@@ -255,31 +240,19 @@
             "loadingFailed": ""
         },
         "conflationChecker": {
-            "titleNearby": "",
-            "showOsmLayerInConflationMap": "",
-            "loadedDataAge": ""
+            "showOsmLayerInConflationMap": ""
         },
         "selectFile": {
-            "errDuplicate": "",
-            "errNotFeatureCollection": ""
+            "errDuplicate": ""
         },
         "selectTheme": {
             "misMatch": ""
         },
-        "askMetadata": {
-            "giveWikilink": ""
-        },
         "mapPreview": {
             "confirm": ""
         },
-        "login": {
-            "lockNotice": ""
-        },
         "confirmProcess": {
             "contactedCommunity": ""
-        },
-        "previewAttributes": {
-            "inspectLooksCorrect": ""
         }
     },
     "importLayer": {
@@ -288,87 +261,55 @@
     "matrixbot": {
         "commands": {
             "dm": {
-                "selectValidUser": "",
                 "argbody": ""
             },
             "documentation": {
-                "overview": "",
                 "visualisation": {
                     "singular": ""
                 }
             },
-            "help": {
-                "docs": ""
-            },
             "shutdown": {
                 "goodbye": ""
             },
-            "wiki": {
-                "foundMatching": ""
-            },
             "role": {
-                "noSuchRole": "",
-                "verbadd": ""
+                "noSuchRole": ""
             },
             "search": {
                 "argsearch": ""
             },
-            "scheme": {
-                "argkey": ""
-            },
             "tags": {
                 "nothingFound": ""
             },
-            "info": {
-                "closedTodayAndTomorrow": ""
-            },
             "language": {
                 "docs": ""
-            },
-            "welcome": {
-                "p0": ""
             }
         },
         "tooLongForPublic": ""
-    },
-    "privacy": {
-        "editing": ""
     },
     "professional": {
         "aboutOsm": {
             "vandalism": {
                 "intro": ""
             },
-            "license": {
-                "li1": ""
-            },
             "aboutOsm": {
                 "li1": ""
             }
         },
         "drawbacks": {
-            "unsuitedData": {
-                "li1": ""
-            },
             "licenseNuances": {
                 "usecaseGatheringOpenData": {
                     "title": ""
                 }
-            },
-            "title": ""
+            }
         },
         "services": {
             "li3": ""
-        },
-        "aboutMc": {
-            "title": ""
         },
         "indexPage": {
             "hook": ""
         }
     },
     "move": {
-        "partOfRelation": "",
         "loginToMove": ""
     }
 }

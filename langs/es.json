@@ -265,9 +265,6 @@
             },
             "searchWikidata": "Buscar en Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "welcomeExplanation": {
-            "general": ""
         }
     },
     "image": {
@@ -447,16 +444,12 @@
         "commands": {
             "dm": {
                 "failed": "No pude ejecutar <code>{cmd}</code> debido a {message}",
-                "sendReason": "Te envié este mensaje porque <b>{sender}</b> me pidió que te enviara esto con <code>{cmd}</code>",
-                "receipt": ""
+                "sendReason": "Te envié este mensaje porque <b>{sender}</b> me pidió que te enviara esto con <code>{cmd}</code>"
             },
             "documentation": {
                 "docs": "Obtiene la documentación sobre una capa, un tema o un parámetro de URL de Mapcomplete",
                 "noIdIntro": "Da un id para obtener más información sobre un ítem relacionado con la programación de MapComplete. Los tipos conocidos son {list}",
                 "urlParam": "Parámetro de URL <code>{id}</code>",
-                "visualisation": {
-                    "singular": ""
-                },
                 "notFound": ""
             },
             "dream": {
@@ -503,12 +496,10 @@
                 "noPreviousRoles": "<b>{user}</b> no tiene ningunos roles anteriores",
                 "noRightsNeeded": "El comando <code>{role}</code> puede ejecutarse por cualquiera, no necesitas configurar permisos para él",
                 "noRolesYet": "<b>{user}</b> actualmente no tiene roles.",
-                "userHasRoles": "<b>{user}</b> actualmente tiene los siguientes roles:",
-                "verbremove": ""
+                "userHasRoles": "<b>{user}</b> actualmente tiene los siguientes roles:"
             },
             "search": {
-                "searching": "Buscando {layerTitle} {mode} <code>{search}</code>…",
-                "overview": ""
+                "searching": "Buscando {layerTitle} {mode} <code>{search}</code>…"
             },
             "shutdown": {
                 "argmode": "Inidica si el servicio debe de ser reiniciado, debe de ser uno de {verbs}",
@@ -526,9 +517,6 @@
             },
             "wiki": {
                 "docs": "Busca e imprime (una parte de) la página especificada desde {backend}. En salas públicas, imprimirá el primer párrafo; en un MD se enviará la página entera."
-            },
-            "scheme": {
-                "argkey": ""
             }
         },
         "decryptionFailed": "Lo siento, no puede descifrar tu mensaje. Puedes probar a dejar este canal y conectarte de nuevo",

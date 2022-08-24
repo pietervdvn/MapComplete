@@ -12,9 +12,6 @@
         "isDeleted": "Эта функция удалена",
         "loginToDelete": "Вы должны войти в профиль чтобы удалить дочку",
         "safeDelete": "Эта точка может быть безопасно удалена.",
-        "reasons": {
-            "disused": ""
-        },
         "loading": ""
     },
     "favourite": {
@@ -36,7 +33,6 @@
             "stillLoading": "Данные ещё загружаются. Пожалуйста, немного подождите прежде чем добавлять новую точку.",
             "title": "Добавить новую точку?",
             "zoomInFurther": "Приблизьте ещё чтобы добавить точку.",
-            "hasBeenImported": "",
             "zoomInMore": ""
         },
         "attribution": {
@@ -48,8 +44,7 @@
             },
             "mapContributionsBy": "Текущие видимые данные имеют правки, сделанные {contributors}",
             "mapContributionsByAndHidden": "Текущие видимые данные имеют правки, сделанные {contributors} и ещё {hiddenCount} пользователями",
-            "themeBy": "Тема поддерживается {author}",
-            "followBridge": ""
+            "themeBy": "Тема поддерживается {author}"
         },
         "backgroundMap": "Фоновая карта",
         "cancel": "Отмена",
@@ -148,21 +143,15 @@
             "wednesday": "Среда"
         },
         "welcomeBack": "Вы вошли, с возвращением!",
-        "welcomeExplanation": {
-            "browseMoreMaps": ""
-        },
         "wikipedia": {
             "noResults": ""
         },
         "download": {
-            "downloadFeatureAsGpx": "",
             "licenseInfo": ""
         },
-        "screenToSmall": "",
         "apply_button": {
             "appliedOnAnotherObject": ""
         },
-        "useSearch": "",
         "removeLocationHistory": ""
     },
     "image": {
@@ -181,9 +170,6 @@
         "uploadingMultiple": "Загружаем {count} изображений…",
         "uploadingPicture": "Загружаем изображение…",
         "willBePublished": "Ваше изображение будет опубликовано ",
-        "nearbyPictures": {
-            "title": ""
-        },
         "ccbExplanation": ""
     },
     "index": {
@@ -219,107 +205,62 @@
         "splitTitle": "Выберите карту на которой хотите разделить дорогу"
     },
     "importHelper": {
-        "askMetadata": {
-            "orDownload": ""
-        },
         "compareToAlreadyExistingNotes": {
             "noPreviousNotesFound": ""
-        },
-        "confirmProcess": {
-            "licenseIsCompatible": ""
         },
         "login": {
             "loggedInWith": ""
         },
         "selectFile": {
-            "errNoLatOrLon": "",
             "noFilesLoaded": ""
         },
         "conflationChecker": {
-            "states": {
-                "running": ""
-            },
             "downloadOverpassData": ""
-        },
-        "mapPreview": {
-            "autodetected": ""
         },
         "previewAttributes": {
             "title": ""
-        },
-        "selectTheme": {
-            "displayNonMatchingCount": ""
         },
         "testMode": ""
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "sendReason": ""
-            },
             "documentation": {
                 "theme": {
                     "plural": ""
                 },
-                "urlParam": "",
                 "overview": ""
-            },
-            "help": {
-                "p1": ""
             },
             "info": {
                 "foundResults": ""
             },
-            "language": {
-                "hasBeenSet": ""
-            },
             "role": {
-                "argverb": "",
-                "verbadd": ""
+                "argverb": ""
             },
             "scheme": {
                 "docs": ""
             },
-            "search": {
-                "announceLimited": ""
-            },
             "shutdown": {
                 "argmode": ""
-            },
-            "welcome": {
-                "p1": ""
             },
             "wiki": {
                 "noWiki": ""
             }
-        },
-        "noSufficientRights": ""
+        }
     },
     "move": {
         "moveTitle": "",
-        "inviteToMove": {
-            "reasonInaccurate": ""
-        },
         "selectReason": ""
     },
     "notes": {
-        "reopenNote": "",
-        "addAComment": "",
-        "textNeeded": ""
+        "addAComment": ""
     },
     "privacy": {
         "miscCookiesTitle": ""
     },
     "professional": {
-        "aboutMc": {
-            "text0": ""
-        },
         "aboutOsm": {
             "aboutOsm": {
                 "title": ""
-            },
-            "vandalism": {
-                "li4": ""
             },
             "benefits": {
                 "li0": ""
@@ -327,32 +268,19 @@
         },
         "drawbacks": {
             "licenseNuances": {
-                "usecaseGatheringOpenData": {
-                    "title": ""
-                },
                 "li2": ""
-            },
-            "unsuitedData": {
-                "intro": ""
             }
         },
         "services": {
             "intro": ""
-        },
-        "text0": ""
+        }
     },
     "translations": {
         "help": ""
     },
     "validation": {
-        "email": {
-            "noAt": ""
-        },
         "wikidata": {
             "description": ""
-        },
-        "float": {
-            "feedback": ""
         }
     },
     "importLayer": {

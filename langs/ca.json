@@ -255,8 +255,7 @@
             },
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
-        },
-        "useSearchForMore": ""
+        }
     },
     "image": {
         "addPicture": "Afegir foto",
@@ -270,8 +269,7 @@
         "dontDelete": "Cancel·lar",
         "isDeleted": "Esborrada",
         "nearbyPictures": {
-            "browseNearby": "Cerca imatges properes…",
-            "onlyTowards": ""
+            "browseNearby": "Cerca imatges properes…"
         },
         "pleaseLogin": "Entrar per pujar una foto",
         "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
@@ -324,21 +322,13 @@
         },
         "title": "Assistent d'importació",
         "conflationChecker": {
-            "showOsmLayerInConflationMap": "",
-            "nothingLoaded": "",
-            "titleNearby": ""
+            "nothingLoaded": ""
         },
         "compareToAlreadyExistingNotes": {
             "wontBeImported": ""
         },
-        "noteParts": {
-            "importEasily": ""
-        },
         "selectTheme": {
             "unmatchedTitle": ""
-        },
-        "askMetadata": {
-            "orDownload": ""
         },
         "createNotes": {
             "done": ""
@@ -629,46 +619,28 @@
     "matrixbot": {
         "commands": {
             "documentation": {
-                "layer": {
-                    "singular": ""
-                },
                 "visualisation": {
                     "singular": ""
                 }
             },
-            "help": {
-                "p0": ""
-            },
             "info": {
-                "foundResults": "",
-                "editWith": ""
+                "foundResults": ""
             },
             "welcome": {
                 "docs": ""
             },
-            "search": {
-                "argsearch": ""
-            },
             "shutdown": {
                 "verbshutdown": ""
             },
-            "wiki": {
-                "loadingFailed": ""
-            },
             "dm": {
                 "docs": ""
-            },
-            "tags": {
-                "argsearch": ""
             },
             "language": {
                 "arglang": ""
             },
             "role": {
-                "allRolesIntro": "",
                 "verbadd": ""
             }
-        },
-        "commandNotFound": ""
+        }
     }
 }

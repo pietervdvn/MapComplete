@@ -10,9 +10,6 @@
         "cannotBeDeleted": "Ten obiekt nie może zostać usunięty",
         "delete": "Usuń",
         "isDeleted": "Ten obiekt został usunięty",
-        "reasons": {
-            "duplicate": ""
-        },
         "onlyEditedByLoggedInUser": ""
     },
     "favourite": {
@@ -34,7 +31,6 @@
             "stillLoading": "Dane wciąż się ładują. Poczekaj chwilę, zanim dodasz nowy punkt.",
             "title": "Czy dodać nowy punkt?",
             "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt.",
-            "wrongType": "",
             "warnVisibleForEveryone": ""
         },
         "backgroundMap": "Tło mapy",
@@ -128,26 +124,20 @@
         },
         "welcomeBack": "Jesteś zalogowany, witaj z powrotem!",
         "download": {
-            "downloadFeatureAsGpx": "",
             "downloadGpx": ""
         },
         "wikipedia": {
-            "noResults": "",
             "wikipediaboxTitle": ""
         },
         "attribution": {
-            "josmOpened": "",
             "attributionContent": ""
         },
-        "confirm": "",
         "morescreen": {
             "noSearch": ""
         },
-        "example": "",
         "welcomeExplanation": {
             "browseMoreMaps": ""
-        },
-        "next": ""
+        }
     },
     "image": {
         "addPicture": "Dodaj zdjęcie",
@@ -165,9 +155,6 @@
         "uploadingMultiple": "Wysyłanie {count} zdjęć…",
         "uploadingPicture": "Wysyłanie zdjęcia…",
         "willBePublished": "Twoje zdjęcie zostanie opublikowane ",
-        "nearbyPictures": {
-            "loadMore": ""
-        },
         "ccbsExplanation": ""
     },
     "index": {
@@ -201,32 +188,20 @@
         "splitTitle": "Wybierz na mapie gdzie podzielić tę drogę"
     },
     "importHelper": {
-        "askMetadata": {
-            "shouldBeUrl": ""
-        },
         "compareToAlreadyExistingNotes": {
             "mapExplanation": ""
         },
         "conflationChecker": {
-            "zoomIn": "",
-            "titleNearby": "",
-            "reloadTheCache": ""
+            "titleNearby": ""
         },
         "createNotes": {
             "title": ""
         },
-        "login": {
-            "loginRequired": ""
-        },
         "selectFile": {
-            "errDuplicate": "",
-            "errNotFeatureCollection": ""
+            "errDuplicate": ""
         },
         "confirmProcess": {
             "readImportGuidelines": ""
-        },
-        "selectTheme": {
-            "intro": ""
         },
         "noteParts": {
             "wikilink": ""
@@ -235,109 +210,63 @@
     "matrixbot": {
         "commands": {
             "documentation": {
-                "layer": {
-                    "plural": ""
-                },
                 "inputElement": {
                     "singular": ""
                 }
             },
-            "help": {
-                "p0": ""
-            },
             "info": {
-                "nothingFound": "",
-                "foundResults": ""
+                "nothingFound": ""
             },
             "language": {
                 "notFound": ""
             },
             "role": {
-                "docs": "",
                 "verbrevoke": ""
             },
-            "search": {
-                "argverb": ""
-            },
             "shutdown": {
-                "docs": ""
-            },
-            "welcome": {
                 "docs": ""
             },
             "wiki": {
                 "foundMatching": ""
             },
-            "dm": {
-                "selectValidUser": ""
-            },
             "scheme": {
                 "noMatchingLayer": ""
             }
-        },
-        "noSufficientRights": ""
+        }
     },
     "move": {
         "reasons": {
             "reasonRelocation": ""
         },
-        "loginToMove": "",
         "partOfAWay": ""
     },
     "notes": {
-        "reopenNote": "",
-        "reopenNoteAndComment": "",
-        "loginToClose": ""
+        "reopenNoteAndComment": ""
     },
     "professional": {
         "aboutOsm": {
             "vandalism": {
                 "li3": ""
             },
-            "benefits": {
-                "li0": ""
-            },
             "license": {
                 "title": ""
             }
         },
         "drawbacks": {
-            "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "li1": ""
-                }
-            },
             "unsuitedData": {
                 "li0": ""
             }
         },
-        "services": {
-            "li4": ""
-        },
-        "title": "",
-        "aboutMc": {
-            "internalUse": {
-                "title": ""
-            }
-        }
+        "title": ""
     },
     "translations": {
         "notImmediate": ""
     },
     "validation": {
-        "nat": {
-            "description": ""
-        },
         "pfloat": {
             "description": ""
         },
-        "distance": {
-            "description": ""
-        },
         "tooLong": ""
-    },
-    "importLayer": {
-        "nearbyImagesIntro": ""
     },
     "privacy": {
         "geodataTitle": ""

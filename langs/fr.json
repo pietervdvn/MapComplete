@@ -248,7 +248,6 @@
             "searchWikidata": "Rechercher sur Wikidata",
             "wikipediaboxTitle": "Wikipédia"
         },
-        "noMatchingMapping": "",
         "logout": ""
     },
     "image": {
@@ -267,15 +266,11 @@
         "uploadMultipleDone": "{count} images ont été ajoutées. Merci de votre contribution !",
         "uploadingMultiple": "Mise en ligne de {count} photos…",
         "uploadingPicture": "Mise en ligne de votre photo…",
-        "willBePublished": "Votre photo va être publiée : ",
-        "nearbyPictures": {
-            "withinRadius": ""
-        }
+        "willBePublished": "Votre photo va être publiée : "
     },
     "importHelper": {
         "askMetadata": {
-            "shouldBeUrl": "URL invalide",
-            "shouldBeOsmWikilink": ""
+            "shouldBeUrl": "URL invalide"
         },
         "login": {
             "loginRequired": "Connectez-vous pour continuer",
@@ -283,29 +278,20 @@
         },
         "selectFile": {
             "errDuplicate": "Certaines colonnes portent le même nom",
-            "errNoName": "Certains colonnes n'ont pas de nom",
-            "description": ""
+            "errNoName": "Certains colonnes n'ont pas de nom"
         },
         "confirmProcess": {
             "title": ""
         },
         "conflationChecker": {
-            "setRangeToZero": "",
             "title": ""
-        },
-        "createNotes": {
-            "openImportViewer": ""
         },
         "previewAttributes": {
             "someHaveSame": ""
         },
-        "selectTheme": {
-            "unmatchedTitle": ""
-        },
         "compareToAlreadyExistingNotes": {
             "title": ""
-        },
-        "title": ""
+        }
     },
     "index": {
         "#": "Ces textes sont affichés au dessus des boutons de thème quand aucun thème n'est chargé",
@@ -349,29 +335,19 @@
             "hookMore": "Nous pouvons aider à la mise en place de relevés, l’importation de données et toute question relative à l’environnement OpenStreetMap"
         },
         "aboutOsm": {
-            "benefits": {
-                "li0": ""
-            },
             "license": {
                 "title": ""
             }
         },
         "drawbacks": {
-            "intro": "",
             "licenseNuances": {
                 "usecaseMapDifferentSources": {
                     "title": ""
                 }
-            },
-            "unsuitedData": {
-                "li2": ""
             }
         },
         "services": {
             "li3": ""
-        },
-        "aboutMc": {
-            "text0": ""
         },
         "title": ""
     },
@@ -406,68 +382,43 @@
     "matrixbot": {
         "commands": {
             "documentation": {
-                "noIdIntro": "",
                 "file": {
-                    "singular": ""
-                },
-                "visualisation": {
                     "singular": ""
                 }
             },
             "info": {
-                "noInfo": "",
-                "closedTodayAndTomorrow": ""
+                "noInfo": ""
             },
             "language": {
                 "hasBeenSet": ""
             },
             "role": {
-                "allRevoked": "",
                 "userHasRoles": ""
-            },
-            "search": {
-                "noMatchingLayer": ""
             },
             "wiki": {
                 "noWiki": ""
             },
-            "shutdown": {
-                "notYetShuttingDown": ""
-            },
             "dm": {
-                "selectValidCommand": "",
-                "executing": ""
+                "selectValidCommand": ""
             },
             "scheme": {
                 "noMatchingLayer": ""
-            },
-            "help": {
-                "p0": ""
             }
         },
         "commandNotFound": ""
     },
     "notes": {
-        "noteLayerHasFilters": "",
-        "createNoteIntro": "",
-        "disableAllNoteFilters": ""
+        "createNoteIntro": ""
     },
     "privacy": {
         "miscCookiesTitle": ""
     },
     "validation": {
-        "color": {
-            "description": ""
-        },
         "nat": {
             "notANumber": ""
         },
-        "tooLong": "",
         "text": {
             "description": ""
         }
-    },
-    "importLayer": {
-        "nearbyImagesIntro": ""
     }
 }

@@ -230,11 +230,7 @@
             "searchWikidata": "Pesquisar no Wikidata",
             "wikipediaboxTitle": "Wikipédia"
         },
-        "welcomeExplanation": {
-            "addNew": ""
-        },
-        "loginFailed": "",
-        "example": ""
+        "loginFailed": ""
     },
     "image": {
         "addPicture": "Adicionar imagem",
@@ -252,10 +248,7 @@
         "uploadMultipleDone": "Foram adicionadas {count} fotografias. Obrigado por ajudar!",
         "uploadingMultiple": "A enviar {count} imagens…",
         "uploadingPicture": "A enviar a sua imagem…",
-        "willBePublished": "A sua imagem será publicada: ",
-        "nearbyPictures": {
-            "allFiltered": ""
-        }
+        "willBePublished": "A sua imagem será publicada: "
     },
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
@@ -317,36 +310,22 @@
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
     },
     "importHelper": {
-        "askMetadata": {
-            "giveSource": ""
-        },
         "conflationChecker": {
             "states": {
                 "running": ""
-            },
-            "zoomIn": ""
+            }
         },
         "createNotes": {
             "done": ""
-        },
-        "login": {
-            "lockNotice": ""
         },
         "mapPreview": {
             "title": ""
         },
         "selectFile": {
-            "loadedFilesAre": "",
             "fileFormatDescription": ""
-        },
-        "compareToAlreadyExistingNotes": {
-            "titleLong": ""
         },
         "selectTheme": {
             "notApplicable": ""
-        },
-        "previewAttributes": {
-            "someHaveSame": ""
         },
         "confirmProcess": {
             "titleLong": ""
@@ -354,60 +333,37 @@
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "executing": ""
-            },
             "documentation": {
                 "overview": "",
-                "argid": "",
                 "file": {
                     "singular": ""
                 }
             },
             "role": {
-                "verbadd": "",
                 "arguser": ""
-            },
-            "search": {
-                "noNearOrIn": ""
             },
             "shutdown": {
                 "verbshutdown": ""
-            },
-            "wiki": {
-                "argsearch": ""
             },
             "scheme": {
                 "docs": ""
             },
             "info": {
-                "couldNotDownload": "",
                 "noOpeningHours": ""
-            },
-            "language": {
-                "notFound": ""
             },
             "help": {
                 "argcmd": ""
             }
-        },
-        "tooLongForPublic": ""
+        }
     },
     "notes": {
         "loginToAddComment": "",
-        "createNote": "",
         "isCreated": ""
     },
     "professional": {
         "aboutOsm": {
-            "aboutOsm": {
-                "li1": ""
-            },
             "vandalism": {
                 "intro": ""
-            },
-            "license": {
-                "outro": ""
             }
         },
         "aboutMc": {
@@ -417,39 +373,25 @@
         },
         "drawbacks": {
             "licenseNuances": {
-                "usecaseGatheringOpenData": {
-                    "intro": ""
-                },
                 "usecaseMapDifferentSources": {
                     "li1": ""
                 }
-            },
-            "unsuitedData": {
-                "intro": ""
             }
         },
         "services": {
             "li3": ""
-        },
-        "title": ""
+        }
     },
     "translations": {
         "help": ""
     },
     "validation": {
-        "nat": {
-            "mustBePositive": ""
-        },
         "wikidata": {
-            "description": ""
-        },
-        "phone": {
             "description": ""
         }
     },
     "privacy": {
-        "miscCookiesTitle": "",
-        "geodata": ""
+        "miscCookiesTitle": ""
     },
     "importLayer": {
         "popupTitle": ""

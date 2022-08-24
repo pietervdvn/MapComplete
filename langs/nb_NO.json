@@ -254,8 +254,7 @@
             },
             "searchWikidata": "Søk på Wikipedia",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "poweredByOsm": ""
+        }
     },
     "image": {
         "addPicture": "Legg til bilde",
@@ -273,9 +272,6 @@
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
         "willBePublished": "Ditt bilde vil bli publisert: ",
-        "nearbyPictures": {
-            "confirm": ""
-        },
         "cco": ""
     },
     "importHelper": {
@@ -289,8 +285,7 @@
         },
         "compareToAlreadyExistingNotes": {
             "noPreviousNotesFound": "Ingen tidligere importnotater ble funnet",
-            "title": "Sammenlign med eksisterende noder",
-            "wontBeImported": ""
+            "title": "Sammenlign med eksisterende noder"
         },
         "confirmProcess": {
             "contactedCommunity": "Jeg kontatet (local)-gemenskapen om denne importen",
@@ -409,12 +404,10 @@
         "reopenNote": "Gjenåpne notat",
         "reopenNoteAndComment": "Gjenåpne notat og kommenter",
         "textNeeded": "Skriv inn beskrivende tekst for å opprettet et notat",
-        "typeText": "Skriv inn tekst for å legge til en kommentar",
-        "addComment": ""
+        "typeText": "Skriv inn tekst for å legge til en kommentar"
     },
     "privacy": {
-        "whileYoureHere": "Bryr du deg om personvern?",
-        "geodataTitle": ""
+        "whileYoureHere": "Bryr du deg om personvern?"
     },
     "professional": {
         "aboutMc": {
@@ -434,18 +427,12 @@
             "vandalism": {
                 "li0": "Den tekniske barrieren for utføring av endringer er høy",
                 "title": "Hva med vandalisme?"
-            },
-            "benefits": {
-                "li1": ""
             }
         },
         "drawbacks": {
             "licenseNuances": {
                 "usecaseMapDifferentSources": {
                     "title": "Oppretter et kart fra forskjellige kilder"
-                },
-                "usecaseGatheringOpenData": {
-                    "title": ""
                 }
             },
             "title": "Noen ulemper å ha i minne"
@@ -544,46 +531,26 @@
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "docs": ""
-            },
             "documentation": {
                 "visualisation": {
                     "plural": ""
                 },
-                "theme": {
-                    "singular": ""
-                },
                 "didYouMean": ""
             },
-            "help": {
-                "priviligedComand": ""
-            },
             "info": {
-                "searchingWorldwide": "",
-                "closed": ""
+                "searchingWorldwide": ""
             },
             "language": {
                 "arglang": ""
             },
             "role": {
-                "noPreviousRoles": "",
                 "verblist": ""
-            },
-            "search": {
-                "docs": ""
             },
             "tags": {
                 "noSearchGiven": ""
             },
-            "wiki": {
-                "foundMatching": ""
-            },
             "scheme": {
                 "notype": ""
-            },
-            "welcome": {
-                "p2": ""
             }
         }
     },

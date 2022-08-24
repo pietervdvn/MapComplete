@@ -71,8 +71,7 @@
             },
             "mapContributionsBy": "目前檢視的資料由 {contributors} 貢獻編輯",
             "mapContributionsByAndHidden": "目前顯到的資料是由 {contributors} 和其他 {hiddenCount} 位貢獻者編輯貢獻",
-            "themeBy": "由 {author} 維護主題",
-            "openIssueTracker": ""
+            "themeBy": "由 {author} 維護主題"
         },
         "backgroundMap": "背景地圖",
         "cancel": "取消",
@@ -88,8 +87,7 @@
             "downloadGeojson": "下載可視資料為 GeoJSON",
             "exporting": "匯出…",
             "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
-            "title": "下載可視的資料",
-            "downloadGpx": ""
+            "title": "下載可視的資料"
         },
         "fewChangesBefore": "請先回答有關既有節點的問題再來新增新節點。",
         "getStartedLogin": "登入開放街圖帳號來開始",
@@ -197,10 +195,8 @@
             "wednesday": "星期三"
         },
         "welcomeBack": "你已經登入了，歡迎回來！",
-        "backToMapcomplete": "",
         "wikipedia": {
-            "createNewWikidata": "",
-            "fromWikipedia": ""
+            "createNewWikidata": ""
         },
         "error": ""
     },
@@ -220,10 +216,7 @@
         "uploadMultipleDone": "已經新增 {count} 圖片，謝謝你的幫忙！",
         "uploadingMultiple": "正在上傳 {count} 張圖片…",
         "uploadingPicture": "正在上傳你的圖片…",
-        "willBePublished": "你的圖片將依以下授權釋出： ",
-        "nearbyPictures": {
-            "onlyTowards": ""
-        }
+        "willBePublished": "你的圖片將依以下授權釋出： "
     },
     "index": {
         "#": "當沒有載入主題時，這些文字會在主題按鈕上面顯示",
@@ -257,98 +250,62 @@
         "splitTitle": "請在地圖選擇要在那裡分割道路"
     },
     "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "noPreviousNotesFound": ""
-        },
         "conflationChecker": {
-            "importCandidatesCount": "",
-            "showOsmLayerInConflationMap": ""
+            "importCandidatesCount": ""
         },
         "introduction": {
             "importFormat": ""
         },
-        "confirmProcess": {
-            "wikipageIsMade": ""
-        },
         "selectFile": {
-            "errNotFeatureCollection": "",
-            "fileFormatDescriptionCsv": ""
+            "errNotFeatureCollection": ""
         },
         "askMetadata": {
             "downloadGeojson": ""
-        },
-        "createNotes": {
-            "creating": ""
         },
         "mapPreview": {
             "selectLayer": ""
         },
         "selectTheme": {
-            "displayNonMatchingCount": "",
             "title": ""
         }
     },
     "matrixbot": {
         "commands": {
             "documentation": {
-                "url_parameter": {
-                    "plural": ""
-                },
                 "layer": {
                     "plural": ""
                 }
             },
-            "help": {
-                "insufficientRights": ""
-            },
             "info": {
-                "closedTodayAndTomorrow": "",
-                "noOpeningHours": ""
+                "closedTodayAndTomorrow": ""
             },
             "language": {
                 "knownLanguages": ""
             },
             "role": {
-                "noRightsNeeded": "",
                 "verblist": ""
-            },
-            "shutdown": {
-                "docs": ""
             },
             "wiki": {
                 "foundMatching": ""
             },
             "dm": {
-                "receipt": "",
                 "selectValidUser": ""
-            },
-            "search": {
-                "announceLimited": ""
             },
             "scheme": {
                 "argkey": ""
             }
-        },
-        "commandFailed": ""
+        }
     },
     "notes": {
         "noteIsPublic": "",
-        "typeText": "",
         "createNoteIntro": ""
     },
     "privacy": {
-        "geodata": "",
         "geodataTitle": ""
     },
     "professional": {
         "aboutOsm": {
-            "benefits": {
-                "li0": ""
-            },
             "aboutOsm": {
-                "li3": ""
-            },
-            "vandalism": {
                 "li3": ""
             }
         },
@@ -357,9 +314,6 @@
                 "usecaseGatheringOpenData": {
                     "title": ""
                 }
-            },
-            "unsuitedData": {
-                "intro": ""
             }
         },
         "aboutMc": {
@@ -367,33 +321,20 @@
                 "intro": ""
             }
         },
-        "indexPage": {
-            "button": ""
-        },
         "services": {
             "li0": ""
         }
-    },
-    "translations": {
-        "activateButton": ""
     },
     "validation": {
         "email": {
             "description": ""
         },
-        "float": {
-            "description": ""
-        },
         "nat": {
             "notANumber": ""
-        },
-        "color": {
-            "description": ""
         }
     },
     "move": {
-        "moveTitle": "",
-        "partOfRelation": ""
+        "moveTitle": ""
     },
     "importLayer": {
         "description": ""

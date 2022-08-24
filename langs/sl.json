@@ -6,9 +6,6 @@
     "delete": {
         "cancel": "Prekliči",
         "delete": "Izbriši",
-        "explanations": {
-            "hardDelete": ""
-        },
         "whyDelete": ""
     },
     "general": {
@@ -44,48 +41,31 @@
             "wednesday": "Sreda"
         },
         "download": {
-            "noDataLoaded": "",
             "uploadGpx": ""
         },
         "opening_hours": {
-            "error_loading": "",
             "open_during_ph": ""
-        },
-        "questions": {
-            "emailOf": ""
         },
         "sharescreen": {
             "copiedToClipboard": "",
-            "embedIntro": "",
             "editThisTheme": ""
-        },
-        "wikipedia": {
-            "noResults": ""
         },
         "welcomeExplanation": {
             "addNew": ""
         },
         "attribution": {
-            "attributionTitle": "",
-            "mapContributionsByAndHidden": "",
-            "josmOpened": ""
+            "mapContributionsByAndHidden": ""
         },
         "morescreen": {
             "requestATheme": ""
         },
         "add": {
-            "import": {
-                "officialThemesOnly": ""
-            },
-            "addNew": "",
-            "title": ""
+            "addNew": ""
         },
         "layerSelection": {
             "zoomInToSeeThisLayer": ""
         },
-        "goToInbox": "",
         "returnToTheMap": "",
-        "noTagsSelected": "",
         "error": ""
     },
     "image": {
@@ -93,11 +73,7 @@
         "doDelete": "Odstrani sliko",
         "dontDelete": "Prekliči",
         "isDeleted": "Izbrisana",
-        "nearbyPictures": {
-            "onlyTowards": ""
-        },
-        "ccbs": "",
-        "uploadingMultiple": ""
+        "ccbs": ""
     },
     "index": {
         "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
@@ -105,41 +81,22 @@
         "title": "Dobrodošli na MapComplete"
     },
     "importHelper": {
-        "askMetadata": {
-            "shouldBeUrl": ""
-        },
         "compareToAlreadyExistingNotes": {
             "completelyImported": ""
         },
-        "confirmProcess": {
-            "contactedCommunity": ""
-        },
         "conflationChecker": {
             "nothingLoaded": "",
-            "states": {
-                "error": ""
-            },
             "titleNearby": ""
         },
-        "mapPreview": {
-            "selectLayer": ""
-        },
         "selectFile": {
-            "title": "",
-            "fileFormatDescriptionCsv": ""
+            "title": ""
         },
         "selectTheme": {
             "intro": ""
         },
-        "introduction": {
-            "description": ""
-        },
         "previewAttributes": {
             "someHaveSame": ""
         }
-    },
-    "importLayer": {
-        "description": ""
     },
     "matrixbot": {
         "commands": {
@@ -147,104 +104,67 @@
                 "docs": ""
             },
             "documentation": {
-                "didYouMean": "",
                 "url_parameter": {
                     "singular": ""
-                },
-                "urlParam": ""
+                }
             },
             "info": {
-                "foundResults": "",
-                "nothingFound": ""
+                "foundResults": ""
             },
             "search": {
-                "announceLimited": "",
-                "nothingFound": ""
+                "announceLimited": ""
             },
             "tags": {
                 "announceSearch": ""
-            },
-            "welcome": {
-                "p1": ""
             },
             "wiki": {
                 "noWiki": ""
             },
             "role": {
-                "allRolesIntro": "",
                 "noSuchRole": ""
-            },
-            "help": {
-                "p1": ""
             },
             "language": {
                 "knownLanguages": ""
             }
-        },
-        "commandNotFound": ""
+        }
     },
     "move": {
-        "pointIsMoved": "",
-        "loginToMove": ""
+        "pointIsMoved": ""
     },
     "notes": {
         "warnAnonymous": "",
-        "loginToAddComment": "",
         "loginToClose": ""
     },
     "privacy": {
-        "trackingTitle": "",
         "surveillance": ""
     },
     "professional": {
-        "aboutMc": {
-            "text0": ""
-        },
         "aboutOsm": {
             "aboutOsm": {
                 "title": ""
-            },
-            "vandalism": {
-                "intro": ""
             },
             "license": {
                 "intro": ""
             }
         },
         "drawbacks": {
-            "licenseNuances": {
-                "li0": ""
-            },
             "unsuitedData": {
                 "li1": ""
             }
-        },
-        "services": {
-            "li4": ""
         },
         "indexPage": {
             "hookMore": ""
         }
     },
     "reviews": {
-        "saving_review": "",
         "affiliated_reviewer_warning": ""
-    },
-    "translations": {
-        "missing": ""
     },
     "split": {
         "hasBeenSplit": ""
     },
     "validation": {
-        "pnat": {
-            "noZero": ""
-        },
         "nat": {
             "mustBePositive": ""
-        },
-        "wikidata": {
-            "description": ""
         }
     },
     "multi_apply": {

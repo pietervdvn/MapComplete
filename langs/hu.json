@@ -251,8 +251,7 @@
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
             "searchWikidata": "Keresés a Wikidatán",
             "wikipediaboxTitle": "Wikipédia"
-        },
-        "screenToSmall": ""
+        }
     },
     "image": {
         "addPicture": "Kép hozzáadása",
@@ -273,10 +272,7 @@
         "uploadMultipleDone": "{count} kép hozzáadva. Köszönjük a segítséget!",
         "uploadingMultiple": "{count} kép feltöltése folyamatban…",
         "uploadingPicture": "Kép feltöltése folyamatban…",
-        "willBePublished": "A képed így lesz közzétéve: ",
-        "nearbyPictures": {
-            "onlyTowards": ""
-        }
+        "willBePublished": "A képed így lesz közzétéve: "
     },
     "importHelper": {
         "introduction": {
@@ -285,32 +281,20 @@
         "previewAttributes": {
             "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel"
         },
-        "askMetadata": {
-            "downloadGeojson": ""
-        },
         "compareToAlreadyExistingNotes": {
-            "loading": "",
-            "someNearby": ""
+            "loading": ""
         },
         "selectTheme": {
             "noMatchingPresets": ""
         },
         "selectFile": {
-            "loadedFilesAre": "",
             "errDuplicate": ""
         },
-        "confirmProcess": {
-            "title": ""
-        },
         "conflationChecker": {
-            "setRangeToZero": "",
-            "titleNearby": ""
+            "setRangeToZero": ""
         },
         "mapPreview": {
             "selectLayer": ""
-        },
-        "login": {
-            "lockNotice": ""
         }
     },
     "index": {
@@ -374,9 +358,6 @@
                 "intro": "Mivel az adatokat bárki szerkesztheti, előfordulhat, hogy rosszindulatú változtatás történik. Ez azonban néhány okból rendkívül ritka:",
                 "li0": "magasak a változtatások technikai akadályai, vagyis nem olyan könnyű a térképet szerkeszteni",
                 "li1": "egy kis rosszindulatú változtatásnak alacsony a hatása, így a vandál számára csekély a jutalom"
-            },
-            "license": {
-                "li0": ""
             }
         },
         "indexPage": {
@@ -388,18 +369,12 @@
         "text0": "<p>A naprakész földrajzi adatok karbantartása nehéz, hibaveszélyes és költséges.<br>A nehézségeket tetézi, hogy sok szervezet egymástól függetlenül gyűjti ugyanazokat az adatokat, ami párhuzamos erőfeszítéseket, nem szabványosított adatformátumokat és sok hiányos, karbantartatlan adathalmazt eredményez.</p><p>Létezik viszont egy hatalmas közösség, amely rengeteg földrajzi adatot gyűjt egy közös, globális és szabványosított adatbázisba: ez az OpenStreetMap.org.</p>",
         "text1": "<p>A MapComplete olyan térképszerkesztő alkalmazás, amely megkönnyíti az OpenStreetMap adatokkal való feltöltését.</p>",
         "title": "Szakmai támogatás a MapComplete segítségével",
-        "aboutMc": {
-            "survey": {
-                "title": ""
-            }
-        },
         "drawbacks": {
             "licenseNuances": {
                 "usecaseMapDifferentSources": {
                     "outro": ""
                 }
-            },
-            "title": ""
+            }
         },
         "services": {
             "intro": ""
@@ -429,69 +404,41 @@
         "split": "Szétvágás",
         "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva"
     },
-    "importLayer": {
-        "notFound": ""
-    },
     "matrixbot": {
         "commands": {
             "info": {
-                "noInfo": "",
-                "provideSearch": ""
+                "noInfo": ""
             },
             "tags": {
                 "noSearchGiven": ""
-            },
-            "welcome": {
-                "p2": ""
             },
             "wiki": {
                 "noWiki": ""
             },
             "documentation": {
-                "theme": {
-                    "plural": ""
-                },
                 "didYouMean": ""
-            },
-            "scheme": {
-                "notype": ""
             },
             "search": {
                 "searching": ""
             },
-            "dm": {
-                "argto": ""
-            },
             "role": {
-                "allRolesIntro": "",
-                "verblist": ""
+                "allRolesIntro": ""
             },
             "dream": {
                 "generatedBy": ""
-            },
-            "help": {
-                "askRights": ""
             }
         },
         "tooLongForPublic": ""
     },
     "notes": {
-        "createNote": "",
-        "loginToClose": "",
-        "addAComment": ""
+        "loginToClose": ""
     },
     "translations": {
         "deactivate": ""
     },
     "validation": {
-        "opening_hours": {
-            "description": ""
-        },
         "email": {
             "feedback": ""
-        },
-        "float": {
-            "description": ""
         },
         "date": {
             "description": ""

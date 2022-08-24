@@ -13,7 +13,6 @@
             "hardDelete": "Este ponto será excluído no OpenStreetMap. Pode ser recuperado por um colaborador experiente",
             "selectReason": "Por favor, selecione por que este recurso deve ser excluído"
         },
-        "isDeleted": "",
         "partOfOthers": ""
     },
     "favourite": {
@@ -35,9 +34,6 @@
             "stillLoading": "Os dados ainda estão sendo carregados. Aguarde um pouco antes de adicionar um novo ponto.",
             "title": "Adicionar um novo ponto?",
             "zoomInFurther": "Aumente mais o zoom para adicionar um ponto.",
-            "import": {
-                "wrongTypeToConflate": ""
-            },
             "warnVisibleForEveryone": ""
         },
         "backgroundMap": "Mapa de fundo",
@@ -130,27 +126,19 @@
             "wednesday": "Quanta"
         },
         "welcomeBack": "Você está logado, seja bem-vindo de volta!",
-        "morescreen": {
-            "streetcomplete": ""
-        },
         "pdf": {
             "generatedWith": ""
         },
         "wikipedia": {
-            "noResults": "",
             "noWikipediaPage": ""
         },
         "attribution": {
-            "themeBy": "",
-            "josmNotOpened": "",
-            "followOnTwitter": ""
+            "josmNotOpened": ""
         },
         "download": {
-            "includeMetaData": "",
-            "downloadAsPdf": ""
+            "includeMetaData": ""
         },
-        "logout": "",
-        "loadingTheme": ""
+        "logout": ""
     },
     "image": {
         "addPicture": "Adicionar imagem",
@@ -167,9 +155,6 @@
         "uploadingMultiple": "Fazendo upload de {count} imagens…",
         "uploadingPicture": "Enviando sua imagem…",
         "willBePublished": "Sua imagem será publicada: ",
-        "nearbyPictures": {
-            "allFiltered": ""
-        },
         "ccbExplanation": ""
     },
     "index": {
@@ -195,41 +180,24 @@
         "write_a_comment": "Deixe um comentário…"
     },
     "importHelper": {
-        "askMetadata": {
-            "intro": ""
-        },
         "compareToAlreadyExistingNotes": {
             "noPreviousNotesFound": ""
         },
         "conflationChecker": {
-            "states": {
-                "idle": ""
-            },
-            "loadedDataAge": "",
-            "nearbyWarn": ""
+            "loadedDataAge": ""
         },
         "introduction": {
             "description": ""
         },
-        "previewAttributes": {
-            "someHaveSame": ""
-        },
         "selectFile": {
-            "fileFormatDescriptionCsv": "",
-            "title": ""
+            "fileFormatDescriptionCsv": ""
         },
         "selectTheme": {
             "notApplicable": ""
         },
-        "confirmProcess": {
-            "titleLong": ""
-        },
         "noteParts": {
             "importEasily": ""
         }
-    },
-    "importLayer": {
-        "notFound": ""
     },
     "matrixbot": {
         "commands": {
@@ -237,41 +205,24 @@
                 "failed": ""
             },
             "info": {
-                "noEditPossible": "",
                 "noInfo": ""
             },
             "role": {
-                "docs": "",
                 "verbadd": ""
-            },
-            "search": {
-                "searching": ""
             },
             "shutdown": {
                 "notYetShuttingDown": ""
             },
             "documentation": {
-                "inputElement": {
-                    "plural": ""
-                },
                 "layer": {
-                    "singular": ""
-                },
-                "visualisation": {
                     "singular": ""
                 }
             },
             "language": {
                 "currentLanguage": ""
             },
-            "scheme": {
-                "notype": ""
-            },
             "wiki": {
                 "foundMatching": ""
-            },
-            "help": {
-                "askRights": ""
             },
             "dream": {
                 "generatedBy": ""
@@ -279,41 +230,22 @@
         }
     },
     "notes": {
-        "warnAnonymous": "",
         "createNote": "",
-        "addAComment": "",
         "isCreated": ""
-    },
-    "privacy": {
-        "miscCookies": ""
     },
     "professional": {
         "drawbacks": {
             "unsuitedData": {
                 "intro": ""
             },
-            "licenseNuances": {
-                "li2": ""
-            },
             "intro": ""
-        },
-        "services": {
-            "li0": ""
         },
         "aboutOsm": {
             "aboutOsm": {
                 "li3": ""
             },
-            "license": {
-                "title": ""
-            },
             "vandalism": {
                 "li0": ""
-            }
-        },
-        "aboutMc": {
-            "internalUse": {
-                "intro": ""
             }
         },
         "indexPage": {
@@ -321,22 +253,12 @@
         }
     },
     "validation": {
-        "nat": {
-            "notANumber": ""
-        },
         "float": {
             "feedback": ""
-        },
-        "date": {
-            "description": ""
         },
         "tooLong": ""
     },
     "move": {
-        "moveTitle": "",
         "zoomInFurther": ""
-    },
-    "translations": {
-        "isTranslator": ""
     }
 }

@@ -7,9 +7,6 @@
     },
     "delete": {
         "cancel": "Avbryt",
-        "explanations": {
-            "retagNoOtherThemes": ""
-        },
         "isDeleted": ""
     },
     "general": {
@@ -45,44 +42,25 @@
             "wednesday": "Onsdag"
         },
         "download": {
-            "downloadFeatureAsGeojson": "",
             "downloadGpx": ""
         },
-        "morescreen": {
-            "hiddenExplanation": ""
-        },
         "oneSkippedQuestion": "",
-        "questions": {
-            "emailOf": ""
-        },
         "sharescreen": {
-            "fsGeolocation": "",
-            "fsIncludeCurrentBackgroundMap": ""
+            "fsGeolocation": ""
         },
         "testing": "",
         "wikipedia": {
-            "searchWikidata": "",
             "searchToShort": ""
         },
         "add": {
-            "import": {
-                "officialThemesOnly": ""
-            },
-            "confirmButton": "",
-            "stillLoading": ""
+            "confirmButton": ""
         },
         "attribution": {
             "josmOpened": "",
-            "donate": "",
             "editId": ""
         },
-        "search": {
-            "nothing": ""
-        },
         "openTheMap": "",
-        "loginOnlyNeededToEdit": "",
-        "example": "",
-        "loginWithOpenStreetMap": ""
+        "example": ""
     },
     "image": {
         "addPicture": "Lägg till bild",
@@ -100,10 +78,7 @@
         "uploadMultipleDone": "{count} bilder har lagts till. Tack för att du hjälper till!",
         "uploadingMultiple": "Laddar upp {count} bilder…",
         "uploadingPicture": "Laddar upp din bild…",
-        "willBePublished": "Din bild kommer att publiceras: ",
-        "nearbyPictures": {
-            "onlyTowards": ""
-        }
+        "willBePublished": "Din bild kommer att publiceras: "
     },
     "index": {
         "#": "De här texterna visas ovanför tema-knapparna när inget tema är laddat",
@@ -117,139 +92,87 @@
         "split": "Dela"
     },
     "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "titleLong": ""
-        },
         "confirmProcess": {
             "title": ""
         },
         "conflationChecker": {
-            "zoomLevelSelection": "",
-            "titleLive": "",
-            "osmLoaded": ""
+            "titleLive": ""
         },
         "previewAttributes": {
             "allAttributesSame": ""
         },
-        "selectFile": {
-            "noFilesLoaded": ""
-        },
         "selectTheme": {
-            "intro": "",
-            "needsTags": ""
+            "intro": ""
         },
         "mapPreview": {
             "selectLayer": ""
-        },
-        "login": {
-            "lockNotice": ""
         },
         "askMetadata": {
             "giveDescription": ""
         }
     },
-    "importLayer": {
-        "layerName": ""
-    },
     "matrixbot": {
         "commands": {
             "dm": {
-                "argbody": "",
-                "selectValidUser": ""
+                "argbody": ""
             },
             "documentation": {
                 "theme": {
                     "singular": ""
-                },
-                "layer": {
-                    "singular": ""
                 }
             },
             "help": {
-                "askRights": "",
-                "supported": ""
+                "askRights": ""
             },
             "info": {
                 "fetchingInfoAbout": ""
             },
-            "language": {
-                "notFound": ""
-            },
             "role": {
-                "verbadd": "",
-                "noPreviousRoles": ""
+                "verbadd": ""
             },
             "scheme": {
                 "docs": ""
             },
-            "shutdown": {
-                "goodbye": ""
-            },
             "wiki": {
                 "loadingFailed": ""
-            },
-            "welcome": {
-                "p1": ""
             },
             "search": {
                 "docs": ""
             }
-        },
-        "subcommanNotFound": ""
+        }
     },
     "notes": {
         "loginToAddPicture": "",
-        "noteLayerHasFilters": "",
         "isClosed": ""
-    },
-    "privacy": {
-        "editingTitle": ""
     },
     "professional": {
         "aboutMc": {
             "internalUse": {
                 "intro": ""
-            },
-            "title": ""
+            }
         },
         "aboutOsm": {
             "license": {
                 "outro": ""
-            },
-            "vandalism": {
-                "li1": ""
             }
         },
         "drawbacks": {
             "licenseNuances": {
-                "intro": "",
-                "usecaseMapDifferentSources": {
-                    "outro": ""
-                }
+                "intro": ""
             },
             "unsuitedData": {
                 "li0": ""
             }
-        },
-        "services": {
-            "li1": ""
         },
         "indexPage": {
             "button": ""
         }
     },
     "reviews": {
-        "title": "",
         "attribution": ""
-    },
-    "translations": {
-        "isTranslator": ""
     },
     "validation": {
         "nat": {
-            "description": ""
-        },
-        "email": {
             "description": ""
         },
         "opening_hours": {
@@ -257,8 +180,6 @@
         }
     },
     "move": {
-        "isWay": "",
-        "partOfAWay": "",
-        "whyMove": ""
+        "partOfAWay": ""
     }
 }

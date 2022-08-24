@@ -10,8 +10,7 @@
         "opening_hours": {
             "ph_closed": "suljettu",
             "ph_not_known": " ",
-            "ph_open": "avattu",
-            "closed_until": ""
+            "ph_open": "avattu"
         },
         "pickLanguage": "Valitse kieli: ",
         "questions": {
@@ -23,7 +22,6 @@
         },
         "sharescreen": {
             "thanksForSharing": "Kiitos jakamisesta!",
-            "fsWelcomeMessage": "",
             "downloadCustomThemeHelp": ""
         },
         "skip": "Ohita tämä kysymys",
@@ -45,39 +43,26 @@
             "tuesday": "Tiistai",
             "wednesday": "Keskiviikko"
         },
-        "wikipedia": {
-            "noWikipediaPage": ""
-        },
         "welcomeExplanation": {
             "browseMoreMaps": ""
         },
         "attribution": {
-            "editJosm": "",
-            "attributionContent": "",
-            "mapillaryHelp": ""
+            "attributionContent": ""
         },
         "add": {
             "import": {
                 "importTags": ""
             },
-            "addNew": "",
             "disableFiltersExplanation": ""
         },
         "download": {
-            "downloadAsPdf": "",
-            "licenseInfo": "",
-            "noDataLoaded": ""
+            "licenseInfo": ""
         },
         "customThemeIntro": "",
-        "morescreen": {
-            "previouslyHiddenTitle": ""
-        },
         "pdf": {
             "generatedWith": ""
         },
-        "confirm": "",
-        "logout": "",
-        "fewChangesBefore": ""
+        "logout": ""
     },
     "image": {
         "addPicture": "Lisää kuva",
@@ -86,119 +71,74 @@
         "doDelete": "Poista kuva",
         "dontDelete": "Peruuta",
         "isDeleted": "Poistettu",
-        "nearbyPictures": {
-            "loadMore": ""
-        },
-        "pleaseLogin": "",
-        "uploadingMultiple": ""
+        "pleaseLogin": ""
     },
     "index": {
         "title": "Tervetuloa MapCompleteen"
     },
     "reviews": {
         "title": "{count} arvostelua",
-        "title_singular": "Yksi arvostelu",
-        "saved": ""
+        "title_singular": "Yksi arvostelu"
     },
     "importHelper": {
         "askMetadata": {
             "shouldNotBeHomepage": ""
         },
         "compareToAlreadyExistingNotes": {
-            "loadingFailed": "",
             "wontBeImported": ""
         },
         "conflationChecker": {
-            "zoomLevelSelection": "",
-            "cacheExpired": "",
-            "title": ""
+            "cacheExpired": ""
         },
         "login": {
             "loginRequired": ""
         },
-        "mapPreview": {
-            "selectLayer": ""
-        },
         "selectFile": {
             "fileFormatDescriptionCsv": ""
         },
-        "selectTheme": {
-            "misMatch": ""
-        },
-        "gotoImportViewer": "",
-        "previewAttributes": {
-            "title": ""
-        }
+        "gotoImportViewer": ""
     },
     "matrixbot": {
         "commands": {
             "dm": {
-                "receipt": "",
-                "sendReason": ""
+                "receipt": ""
             },
             "documentation": {
                 "theme": {
-                    "singular": ""
-                },
-                "visualisation": {
                     "singular": ""
                 }
             },
             "help": {
                 "askRights": ""
             },
-            "search": {
-                "overview": ""
-            },
             "tags": {
                 "noSearchGiven": ""
-            },
-            "welcome": {
-                "p1": ""
             },
             "wiki": {
                 "nothingFound": ""
             },
             "role": {
-                "allRolesIntro": "",
                 "argverb": ""
-            },
-            "info": {
-                "noOpeningHours": ""
             },
             "scheme": {
                 "notype": ""
             },
-            "shutdown": {
-                "notYetShuttingDown": ""
-            },
             "language": {
                 "currentLanguage": ""
             }
-        },
-        "commandFailed": ""
+        }
     },
     "move": {
-        "confirmMove": "",
-        "reasons": {
-            "reasonRelocation": ""
-        }
+        "confirmMove": ""
     },
     "notes": {
         "textNeeded": "",
-        "isCreated": "",
         "warnAnonymous": ""
     },
     "professional": {
-        "aboutMc": {
-            "title": ""
-        },
         "aboutOsm": {
             "aboutOsm": {
                 "intro": ""
-            },
-            "benefits": {
-                "li0": ""
             },
             "vandalism": {
                 "li0": ""
@@ -206,33 +146,20 @@
         },
         "drawbacks": {
             "licenseNuances": {
-                "usecaseGatheringOpenData": {
-                    "intro": ""
-                },
                 "usecaseMapDifferentSources": {
                     "outro": ""
                 }
-            },
-            "unsuitedData": {
-                "intro": ""
             }
         },
         "services": {
             "intro": ""
-        },
-        "text0": ""
+        }
     },
     "split": {
         "loginToSplit": ""
     },
     "validation": {
-        "float": {
-            "feedback": ""
-        },
         "text": {
-            "description": ""
-        },
-        "int": {
             "description": ""
         }
     },
@@ -240,15 +167,10 @@
         "explanations": {
             "retagOtherThemes": ""
         },
-        "partOfOthers": "",
         "onlyEditedByLoggedInUser": ""
     },
-    "importLayer": {
-        "importButton": ""
-    },
     "privacy": {
-        "editingTitle": "",
-        "tracking": ""
+        "editingTitle": ""
     },
     "translations": {
         "notImmediate": ""

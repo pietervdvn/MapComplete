@@ -1,159 +1,100 @@
 {
     "general": {
         "download": {
-            "licenseInfo": "",
             "downloadGpx": ""
         },
         "morescreen": {
-            "createYourOwnTheme": "",
             "noSearch": ""
         },
         "opening_hours": {
-            "open_during_ph": "",
             "ph_not_known": ""
-        },
-        "pdf": {
-            "attrBackground": ""
         },
         "questions": {
             "websiteIs": ""
         },
         "sharescreen": {
-            "fsIncludeCurrentBackgroundMap": "",
-            "editThisTheme": "",
-            "downloadCustomThemeHelp": ""
+            "editThisTheme": ""
         },
         "weekdays": {
             "abbreviations": {
                 "saturday": ""
-            },
-            "saturday": ""
+            }
         },
         "wikipedia": {
             "failed": ""
         },
-        "welcomeExplanation": {
-            "browseMoreMaps": ""
-        },
         "add": {
             "disableFiltersExplanation": "",
-            "disableFilters": "",
             "confirmButton": ""
         },
         "attribution": {
-            "openMapillary": "",
-            "editId": "",
-            "themeBy": ""
+            "editId": ""
         },
         "goToInbox": "",
-        "useSearchForMore": "",
-        "confirm": "",
-        "examples": ""
+        "confirm": ""
     },
     "image": {
         "nearbyPictures": {
-            "allFiltered": "",
-            "loading": ""
+            "allFiltered": ""
         },
-        "uploadingMultiple": "",
-        "uploadingPicture": ""
+        "uploadingMultiple": ""
     },
     "importHelper": {
         "askMetadata": {
             "orDownload": ""
         },
-        "confirmProcess": {
-            "readImportGuidelines": ""
-        },
         "conflationChecker": {
-            "importCandidatesCount": "",
-            "nearbyWarn": ""
+            "importCandidatesCount": ""
         },
         "createNotes": {
             "openImportViewer": ""
-        },
-        "login": {
-            "loginRequired": ""
         },
         "mapPreview": {
             "autodetected": ""
         },
         "selectFile": {
-            "fileFormatDescription": "",
             "fileFormatDescriptionGeoJson": ""
-        },
-        "selectTheme": {
-            "intro": ""
         },
         "compareToAlreadyExistingNotes": {
             "loading": ""
-        },
-        "noteParts": {
-            "importEasily": ""
         }
     },
     "matrixbot": {
         "commands": {
             "documentation": {
-                "overview": "",
-                "visualisation": {
-                    "singular": ""
-                }
+                "overview": ""
             },
             "help": {
                 "supported": ""
             },
             "info": {
-                "fetchingInfoAbout": "",
                 "couldNotDownload": ""
             },
             "role": {
-                "verbremove": "",
                 "docs": ""
-            },
-            "scheme": {
-                "notype": ""
             },
             "wiki": {
                 "docs": ""
             },
             "dm": {
-                "failed": "",
                 "docs": ""
-            },
-            "language": {
-                "arglang": ""
             },
             "search": {
                 "argsearch": ""
-            },
-            "dream": {
-                "docs": ""
             }
         },
         "commandFailed": ""
     },
     "move": {
-        "inviteToMove": {
-            "reasonRelocation": ""
-        },
-        "partOfAWay": "",
-        "isWay": ""
+        "partOfAWay": ""
     },
     "notes": {
         "anonymous": "",
-        "warnAnonymous": "",
         "loginToAddPicture": ""
-    },
-    "privacy": {
-        "editing": ""
     },
     "professional": {
         "aboutOsm": {
             "aboutOsm": {
-                "li2": ""
-            },
-            "benefits": {
                 "li2": ""
             },
             "vandalism": {
@@ -162,51 +103,29 @@
         },
         "drawbacks": {
             "licenseNuances": {
-                "usecaseGatheringOpenData": {
-                    "intro": ""
-                },
                 "li2": ""
-            },
-            "title": ""
+            }
         },
         "services": {
             "li2": ""
-        },
-        "aboutMc": {
-            "survey": {
-                "intro": ""
-            }
         },
         "indexPage": {
             "hookMore": ""
         }
     },
-    "split": {
-        "hasBeenSplit": ""
-    },
     "importLayer": {
         "importButton": ""
-    },
-    "translations": {
-        "completeness": ""
     },
     "centerMessage": {
         "retrying": ""
     },
     "delete": {
-        "explanations": {
-            "selectReason": ""
-        },
         "reasons": {
             "notFound": ""
-        },
-        "loginToDelete": ""
+        }
     },
     "validation": {
         "wikidata": {
-            "description": ""
-        },
-        "color": {
             "description": ""
         },
         "date": {
@@ -214,7 +133,6 @@
         }
     },
     "reviews": {
-        "saved": "",
         "posting_as": ""
     }
 }

@@ -23,7 +23,6 @@
             "stillLoading": "Os datos seguen a cargarse. Agarda un intre antes de engadir ningún punto.",
             "title": "Queres engadir un punto?",
             "zoomInFurther": "Achégate para engadir un punto.",
-            "zoomInMore": "",
             "importTags": ""
         },
         "attribution": {
@@ -35,8 +34,7 @@
             },
             "mapContributionsBy": "A información visíbel actual ten edicións feitas por {contributors}",
             "mapContributionsByAndHidden": "A información visíbel actual ten edicións feitas por {contributors} e {hiddenCount} contribuíntes máis",
-            "themeBy": "Tema mantido por {author}",
-            "openIssueTracker": ""
+            "themeBy": "Tema mantido por {author}"
         },
         "backgroundMap": "Mapa do fondo",
         "cancel": "Desbotar",
@@ -136,20 +134,12 @@
         },
         "welcomeBack": "Iniciaches a sesión, benvido.",
         "download": {
-            "uploadGpx": "",
             "includeMetaData": ""
         },
-        "pdf": {
-            "attr": ""
-        },
         "loadingTheme": "",
-        "wikipedia": {
-            "loading": ""
-        },
         "apply_button": {
             "isApplied": ""
         },
-        "useSearch": "",
         "removeLocationHistory": ""
     },
     "image": {
@@ -167,9 +157,6 @@
         "uploadingMultiple": "Subindo {count} das túas imaxes...",
         "uploadingPicture": "Subindo a túa imaxe...",
         "willBePublished": "A túa imaxe será publicada: ",
-        "nearbyPictures": {
-            "removeFilters": ""
-        },
         "uploadMultipleDone": ""
     },
     "index": {
@@ -192,34 +179,20 @@
         "write_a_comment": "Deixa unha recensión…"
     },
     "importHelper": {
-        "askMetadata": {
-            "downloadGeojson": ""
-        },
         "conflationChecker": {
             "states": {
                 "unexpected": ""
             },
-            "importCandidatesCount": "",
             "showOsmLayerInConflationMap": ""
         },
-        "previewAttributes": {
-            "someHaveSame": ""
-        },
         "selectFile": {
-            "loadedFilesAre": "",
-            "fileFormatDescriptionCsv": ""
+            "loadedFilesAre": ""
         },
         "compareToAlreadyExistingNotes": {
             "titleLong": ""
         },
-        "confirmProcess": {
-            "titleLong": ""
-        },
         "noteParts": {
             "datasource": ""
-        },
-        "selectTheme": {
-            "notApplicable": ""
         },
         "createNotes": {
             "loading": ""
@@ -227,74 +200,44 @@
     },
     "matrixbot": {
         "commands": {
-            "dm": {
-                "argto": ""
-            },
             "documentation": {
                 "didYouMean": "",
-                "inputElement": {
-                    "plural": ""
-                },
                 "urlParam": ""
             },
-            "help": {
-                "p1": ""
-            },
             "info": {
-                "argsearch": "",
-                "docs": ""
+                "argsearch": ""
             },
             "language": {
                 "arglang": ""
             },
             "role": {
-                "docs": "",
                 "noPreviousRoles": ""
-            },
-            "search": {
-                "noMatchingLayer": ""
             },
             "shutdown": {
                 "verbshutdown": ""
             },
-            "scheme": {
-                "argkey": ""
-            },
             "tags": {
                 "argsearch": ""
-            },
-            "wiki": {
-                "nothingFound": ""
             }
         },
         "subcommandNotGiven": ""
     },
     "move": {
-        "confirmMove": "",
         "whyMove": ""
     },
     "notes": {
-        "isCreated": "",
-        "loginToAddPicture": "",
-        "addAComment": ""
+        "loginToAddPicture": ""
     },
     "privacy": {
-        "title": "",
-        "tracking": ""
+        "title": ""
     },
     "professional": {
         "aboutMc": {
             "title": ""
         },
         "aboutOsm": {
-            "aboutOsm": {
-                "intro": ""
-            },
             "license": {
                 "intro": ""
-            },
-            "vandalism": {
-                "title": ""
             }
         },
         "drawbacks": {
@@ -302,41 +245,23 @@
                 "usecaseMapDifferentSources": {
                     "li1": ""
                 }
-            },
-            "unsuitedData": {
-                "intro": ""
             }
         },
         "services": {
             "intro": ""
-        },
-        "indexPage": {
-            "button": ""
         }
     },
     "validation": {
         "phone": {
             "description": ""
         },
-        "pfloat": {
-            "description": ""
-        },
         "wikidata": {
             "description": ""
         }
     },
-    "importLayer": {
-        "importButton": ""
-    },
     "delete": {
         "cannotBeDeleted": "",
-        "reasons": {
-            "test": ""
-        },
         "isDeleted": ""
-    },
-    "split": {
-        "splitTitle": ""
     },
     "translations": {
         "isTranslator": ""

@@ -24,9 +24,6 @@
             "stillLoading": "データはまだロード中です。新しいポイントを追加する前に少しお待ちください。",
             "title": "新しいポイントを追加しますか?",
             "zoomInFurther": "さらにズーム拡大して点を追加します。",
-            "import": {
-                "howToTest": ""
-            },
             "zoomInMore": ""
         },
         "attribution": {
@@ -38,8 +35,7 @@
             },
             "mapContributionsBy": "現在表示されているデータには、{contributors}によって編集が行われています",
             "mapContributionsByAndHidden": "現在表示されているデータには、{contributors}および、{hiddenCount}人の貢献者が編集したものが含まれています",
-            "themeBy": "{author} によって管理されるテーマ",
-            "editJosm": ""
+            "themeBy": "{author} によって管理されるテーマ"
         },
         "backgroundMap": "背景マップ",
         "cancel": "[キャンセル]",
@@ -139,16 +135,12 @@
         },
         "welcomeBack": "ログインしました、お帰りなさい!",
         "wikipedia": {
-            "wikipediaboxTitle": "",
             "fromWikipedia": ""
         },
-        "backToMapcomplete": "",
         "download": {
-            "downloadGeoJsonHelper": "",
-            "downloadAsPdfHelper": ""
+            "downloadGeoJsonHelper": ""
         },
         "useSearch": "",
-        "loadingTheme": "",
         "notValid": ""
     },
     "image": {
@@ -166,9 +158,6 @@
         "uploadingMultiple": "{count} 枚の写真をアップロードします…",
         "uploadingPicture": "写真をアップロードします…",
         "willBePublished": "写真は公開されます: ",
-        "nearbyPictures": {
-            "loadMore": ""
-        },
         "ccbExplanation": ""
     },
     "index": {
@@ -194,43 +183,22 @@
         "write_a_comment": "レビューを残す…"
     },
     "importHelper": {
-        "askMetadata": {
-            "giveDescription": ""
-        },
         "compareToAlreadyExistingNotes": {
             "loadingFailed": ""
         },
-        "confirmProcess": {
-            "contactedCommunity": ""
-        },
         "conflationChecker": {
-            "osmLoaded": "",
-            "states": {
-                "unexpected": ""
-            }
+            "osmLoaded": ""
         },
         "createNotes": {
-            "title": ""
-        },
-        "login": {
             "title": ""
         },
         "selectFile": {
             "noFilesLoaded": ""
         },
-        "mapPreview": {
-            "autodetected": ""
-        },
         "selectTheme": {
             "notApplicable": ""
         },
-        "previewAttributes": {
-            "inspectDataTitle": ""
-        },
         "testMode": ""
-    },
-    "importLayer": {
-        "notFound": ""
     },
     "matrixbot": {
         "commands": {
@@ -238,37 +206,24 @@
                 "receipt": ""
             },
             "documentation": {
-                "docs": "",
                 "layer": {
                     "singular": ""
-                },
-                "argid": ""
+                }
             },
             "help": {
                 "insufficientRights": ""
             },
             "info": {
-                "editWith": "",
                 "noEditPossible": ""
             },
-            "language": {
-                "docs": ""
-            },
             "role": {
-                "verbadd": "",
-                "allRevoked": ""
+                "verbadd": ""
             },
             "search": {
                 "argsearch": ""
             },
-            "welcome": {
-                "p1": ""
-            },
             "wiki": {
                 "loadingFailed": ""
-            },
-            "scheme": {
-                "notype": ""
             },
             "shutdown": {
                 "goodbye": ""
@@ -276,71 +231,41 @@
         }
     },
     "move": {
-        "inviteToMove": {
-            "generic": ""
-        },
-        "inviteToMoveAgain": "",
-        "whyMove": ""
+        "inviteToMoveAgain": ""
     },
     "notes": {
         "addComment": "",
-        "createNoteIntro": "",
         "typeText": ""
-    },
-    "privacy": {
-        "tracking": ""
     },
     "professional": {
         "aboutMc": {
             "internalUse": {
                 "title": ""
-            },
-            "title": ""
+            }
         },
         "aboutOsm": {
             "benefits": {
-                "title": ""
-            },
-            "license": {
                 "title": ""
             }
         },
         "drawbacks": {
             "intro": "",
-            "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "intro": ""
-                }
-            },
             "unsuitedData": {
                 "li0": ""
             }
         },
-        "services": {
-            "li0": ""
-        },
         "text0": ""
     },
     "validation": {
-        "nat": {
-            "mustBePositive": ""
-        },
         "phone": {
             "feedback": ""
-        },
-        "color": {
-            "description": ""
         }
     },
     "delete": {
         "reasons": {
             "notFound": ""
         },
-        "delete": "",
         "isntAPoint": ""
-    },
-    "translations": {
-        "activateButton": ""
     },
     "split": {
         "splitTitle": ""
