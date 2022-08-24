@@ -13,7 +13,6 @@
             "hardDelete": "Dette punkt vil blive slettet på OpenStreetMap. Det kan gendannes af en øvet bidragsyder",
             "selectReason": "Angiv venligst hvorfor dette element burde slettes",
             "softDelete": "Dette element vil blive opdateret og skjult for dette program <span class=\"subtle\">{reason}</span>",
-            "retagNoOtherThemes": "",
             "retagOtherThemes": ""
         },
         "isDeleted": "Dette element er slettet",
@@ -56,8 +55,7 @@
                 "importTags": "Dette element vil modtage {tags}",
                 "officialThemesOnly": "Importknappen er slået fra for uofficielle temaer for at undgå uheld",
                 "wrongType": "Dette element er ikke et punkt eller en vej og kan ikke importeres",
-                "zoomInMore": "Zoom mere ind for at importere dette element",
-                "wrongTypeToConflate": ""
+                "zoomInMore": "Zoom mere ind for at importere dette element"
             },
             "importTags": "Dette element modtager {tags}",
             "intro": "Du klikkede et sted, hvor der endnu ikke er kendt data.<br>",
@@ -95,9 +93,7 @@
             "openOsmcha": "De de seneste rettelser lavet med {theme}",
             "themeBy": "Tema vedligeholdt af {author}",
             "translatedBy": "MapComplete er oversat af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>",
-            "followOnMastodon": "",
             "mapillaryHelp": "",
-            "followBridge": "",
             "followOnTwitter": ""
         },
         "back": "Tilbage",
@@ -154,9 +150,7 @@
             "previouslyHiddenTitle": "Tidligere besøgte skjulte temaer",
             "requestATheme": "Hvis de efterspørger et specialfremstillet tema, så bed om det i issue tracker-en",
             "streetcomplete": "En anden lignende applikation er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "noMatchingThemes": "",
-            "noSearch": "",
-            "searchForATheme": ""
+            "noSearch": ""
         },
         "nameInlineQuestion": "{category} hedder $$$",
         "next": "Næste",
@@ -266,22 +260,16 @@
             },
             "searchWikidata": "Søg på Wikidata",
             "wikipediaboxTitle": "Wikipedia",
-            "fromWikipedia": "",
             "searchToShort": ""
         },
         "levelSelection": {
-            "addNewOnLevel": "",
             "confirmLevel": ""
         },
-        "noMatchingMapping": "",
         "useSearch": "",
         "welcomeExplanation": {
-            "addNew": "",
             "browseMoreMaps": "",
-            "general": "",
             "browseOtherThemesIntro": ""
-        },
-        "useSearchForMore": ""
+        }
     },
     "image": {
         "addPicture": "Tilføj Billede",
@@ -304,17 +292,11 @@
         "uploadingPicture": "Uploading dit billede…",
         "willBePublished": "Dit billede vil blive offentliggjort ",
         "nearbyPictures": {
-            "hasMatchingPicture": "",
             "title": "",
-            "nothingFound": "",
             "removeFilters": "",
-            "noImageSelected": "",
             "onlyTowards": "",
-            "confirm": "",
             "loading": "",
-            "loadMore": "",
             "withinRadius": "",
-            "browseNearby": "",
             "allFiltered": ""
         }
     },
@@ -372,7 +354,6 @@
             "titleLive": "Live data på OSM",
             "titleNearby": "Elementer i nærheden",
             "zoomIn": "Det aktuelle zoomniveau er {current}",
-            "showOsmLayerInConflationMap": "",
             "zoomLevelSelection": ""
         },
         "createNotes": {
@@ -400,8 +381,7 @@
             "confirm": "Elementerne er det rigtige sted på kortet",
             "mismatch": "{count} elementer matchede ikke det valgte lag. Sørg for at mærkerne, der indikerer typen er der, nemlig {tags}",
             "selectLayer": "Hvilket lag passer denne importering med?",
-            "title": "Forhåndsvisning af kort",
-            "autodetected": ""
+            "title": "Forhåndsvisning af kort"
         },
         "noteParts": {
             "datasource": "Originalt data fra {source}",
@@ -453,8 +433,7 @@
         "importHandled": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
         "layerName": "Mulig {title}",
         "notFound": "Jeg kunne ikke finde {title} - fjern det",
-        "popupTitle": "Mulig {title}",
-        "nearbyImagesIntro": ""
+        "popupTitle": "Mulig {title}"
     },
     "index": {
         "#": "Disse tekster vises over tema-knapperne, når der ikke er indlæst noget tema",
@@ -725,175 +704,110 @@
         },
         "wikidata": {
             "description": "En Wikidata identifier"
-        },
-        "distance": {
-            "description": ""
         }
     },
     "matrixbot": {
         "commands": {
             "dm": {
                 "argto": "",
-                "failed": "",
                 "argbody": "",
-                "sendReason": "",
                 "noDm": "",
-                "executing": "",
                 "selectValidCommand": "",
-                "commandNotFound": "",
                 "receipt": "",
-                "docs": "",
                 "selectValidUser": ""
             },
             "documentation": {
-                "notFound": "",
                 "overview": "",
                 "visualisation": {
-                    "plural": "",
                     "singular": ""
                 },
                 "layer": {
-                    "plural": "",
                     "singular": ""
                 },
                 "theme": {
-                    "singular": "",
                     "plural": ""
                 },
                 "url_parameter": {
-                    "plural": "",
                     "singular": ""
                 },
-                "argid": "",
                 "noIdIntro": "",
-                "urlParam": "",
                 "inputElement": {
-                    "plural": "",
-                    "singular": ""
+                    "plural": ""
                 },
                 "docs": "",
-                "didYouMean": "",
                 "file": {
-                    "plural": "",
-                    "singular": ""
+                    "plural": ""
                 }
             },
             "help": {
                 "p0": "",
-                "supported": "",
                 "askRights": "",
-                "notFound": "",
                 "p1": "",
-                "argcmd": "",
                 "docs": "",
-                "insufficientRights": "",
                 "priviligedComand": ""
             },
             "language": {
-                "arglang": "",
                 "currentLanguage": "",
-                "hasBeenSet": "",
                 "knownLanguages": "",
-                "helpTranslating": "",
-                "docs": "",
-                "notFound": ""
+                "docs": ""
             },
             "role": {
                 "verbadd": "",
-                "verbdefault": "",
                 "verbremove": "",
-                "docs": "",
                 "noRolesYet": "",
-                "arguser": "",
                 "argverb": "",
-                "noRightsNeeded": "",
                 "allRolesIntro": "",
-                "argrole": "",
                 "allRevoked": "",
-                "verbrevoke": "",
                 "verblist": "",
-                "noPreviousRoles": "",
-                "noSuchRole": "",
-                "userHasRoles": ""
+                "noSuchRole": ""
             },
             "tags": {
                 "nothingFound": "",
-                "announceSearch": "",
                 "argsearch": "",
-                "docs": "",
                 "noSearchGiven": ""
             },
             "welcome": {
-                "p3": "",
                 "p2": "",
-                "docs": "",
-                "p0": "",
-                "p1": ""
+                "p0": ""
             },
             "wiki": {
                 "docs": "",
-                "noWiki": "",
                 "nothingFound": "",
-                "searching": "",
                 "loadingFailed": "",
-                "gotResults": "",
-                "argsearch": "",
-                "foundMatching": ""
+                "argsearch": ""
             },
             "info": {
                 "nothingFound": "",
-                "provideSearch": "",
                 "foundResults": "",
-                "fetchingInfoAbout": "",
                 "noOpeningHours": "",
-                "closedTodayAndTomorrow": "",
                 "noEditPossible": "",
-                "searchingWorldwide": "",
                 "argsearch": "",
-                "couldNotDownload": "",
                 "closed": "",
-                "docs": "",
-                "editWith": "",
-                "noInfo": ""
+                "editWith": ""
             },
             "scheme": {
                 "noMatchingLayer": "",
-                "notype": "",
                 "argkey": "",
-                "title": "",
                 "docs": ""
             },
             "search": {
-                "announceLimited": "",
                 "noNearOrIn": "",
-                "searching": "",
                 "argsearch": "",
-                "arglayerid": "",
                 "argverb": "",
-                "docs": "",
                 "noMatchingLayer": "",
-                "nothingFound": "",
                 "overview": ""
             },
             "dream": {
-                "docs": "",
                 "generatedBy": ""
             },
             "shutdown": {
-                "argmode": "",
                 "docs": "",
-                "goodbye": "",
                 "notYetShuttingDown": "",
-                "verbshutdown": "",
                 "verbupdate": ""
             }
         },
-        "tooLongForPublic": "",
         "subcommandNotGiven": "",
-        "subcommanNotFound": "",
         "commandFailed": "",
-        "commandNotFound": "",
-        "decryptionFailed": "",
-        "noSufficientRights": ""
+        "decryptionFailed": ""
     }
 }

@@ -13,7 +13,6 @@
             "hardDelete": "Aquest punt s'esborrarà a OpenStreetMap. Es podria recuperar per part d'un contribuïdor experimentat",
             "selectReason": "Selecciona per què s'hauria d'esborrar aquest element",
             "softDelete": "Aquest element s'actualitzarà i s'amagarà d'aquesta aplicació. <span class=\"subtle\">{reason}</span>",
-            "retagOtherThemes": "",
             "retagNoOtherThemes": ""
         },
         "isDeleted": "Aquest element s'esborrarà",
@@ -56,8 +55,7 @@
                 "importTags": "L'element rebrà {tags}",
                 "officialThemesOnly": "El botó d'importació està desactivat per a temes no oficials per evitar accidents",
                 "wrongType": "Aquest element no és un punt o una via i no pot ser importat",
-                "zoomInMore": "Ampliar més per importar aquest element",
-                "wrongTypeToConflate": ""
+                "zoomInMore": "Ampliar més per importar aquest element"
             },
             "importTags": "L'element rebrà {tags}",
             "intro": "Has marcat un lloc on no coneixem les dades.<br>",
@@ -95,9 +93,7 @@
             "openOsmcha": "Veure darreres edicions fetes amb {theme}",
             "themeBy": "Tema mantingut per {author}",
             "translatedBy": "MapComplete ha estat traduït per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} col·laboradors més</a>",
-            "followOnMastodon": "",
             "followBridge": "",
-            "followOnTwitter": "",
             "mapillaryHelp": ""
         },
         "back": "Tornar",
@@ -153,9 +149,7 @@
             "previouslyHiddenTitle": "Peticions visitades i amagades",
             "requestATheme": "Si vols que et fem una petició pròpia , demana-la al registre d'incidències",
             "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "searchForATheme": "",
-            "noMatchingThemes": "",
-            "noSearch": ""
+            "noMatchingThemes": ""
         },
         "nameInlineQuestion": "{category}: El seu nom és $$$",
         "next": "Següent",
@@ -226,7 +220,6 @@
             "fsWelcomeMessage": "Mostra el missatge emergent de benvinguda i pestanyes associades",
             "intro": "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l'enllaç de sota i enviant-lo a amics i família:",
             "thanksForSharing": "Gràcies per compartir.",
-            "downloadCustomTheme": "",
             "downloadCustomThemeHelp": ""
         },
         "skip": "Saltar aquesta pregunta",
@@ -253,9 +246,7 @@
         "welcomeBack": "Has entrat, benvingut/da.",
         "welcomeExplanation": {
             "addNew": "Toqueu el mapa per afegir un nou PDI.",
-            "browseMoreMaps": "",
-            "general": "",
-            "browseOtherThemesIntro": ""
+            "general": ""
         },
         "wikipedia": {
             "createNewWikidata": "Crear un ítem de Wikidata",
@@ -270,18 +261,13 @@
             },
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia",
-            "fromWikipedia": "",
             "searchToShort": ""
         },
         "levelSelection": {
-            "addNewOnLevel": "",
             "confirmLevel": ""
         },
-        "noMatchingMapping": "",
         "useSearch": "",
-        "notValid": "",
-        "useSearchForMore": "",
-        "error": ""
+        "useSearchForMore": ""
     },
     "image": {
         "addPicture": "Afegir foto",
@@ -296,17 +282,11 @@
         "isDeleted": "Esborrada",
         "nearbyPictures": {
             "browseNearby": "Cerca imatges properes…",
-            "loading": "",
             "withinRadius": "",
-            "nothingFound": "",
             "removeFilters": "",
-            "noImageSelected": "",
             "title": "",
-            "confirm": "",
             "onlyTowards": "",
-            "allFiltered": "",
-            "hasMatchingPicture": "",
-            "loadMore": ""
+            "hasMatchingPicture": ""
         },
         "pleaseLogin": "Entrar per pujar una foto",
         "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
@@ -321,16 +301,14 @@
     "importHelper": {
         "introduction": {
             "description": "L'ajudant d'importació converteix un conjunt de dades extern en notes. El conjunt de dades extern ha de coincidir amb una de les capes MapComplete existents. Per a cada article que introdueixes a l'importador, es crearà una nota única. Aquestes notes es mostraran juntament amb les característiques rellevants en aquests mapes per afegir-les fàcilment.",
-            "importFormat": "Un text d'una nota ha de tenir el format següent per poder ser recollit: <br><div class=\"literal-code\">[Una petita introducció]<br>https://mapcomplete.osm.be /[themename].html?[paràmetres com ara lat i lon]#import<br>[totes les etiquetes de la funció] </div>",
-            "title": ""
+            "importFormat": "Un text d'una nota ha de tenir el format següent per poder ser recollit: <br><div class=\"literal-code\">[Una petita introducció]<br>https://mapcomplete.osm.be /[themename].html?[paràmetres com ara lat i lon]#import<br>[totes les etiquetes de la funció] </div>"
         },
         "login": {
             "lockNotice": "Aquesta pàgina està bloquejada. Necessites {importHelperUnlock} conjunts de canvis per poder accedir aquí.",
             "loggedInWith": "Actualment has entrat com a <b>{name}</b> i has fet {csCount} conjunts de canvis",
             "loginIsCorrect": "<b>{name}</b> és el compte correcte per crear les notes d'importació.",
             "loginRequired": "Has d'entrar per continuar",
-            "userAccountTitle": "Seleccionar compte d'usuari",
-            "title": ""
+            "userAccountTitle": "Seleccionar compte d'usuari"
         },
         "mapPreview": {
             "autodetected": "La capa es va deduir automàticament en funció de les propietats",
@@ -343,8 +321,7 @@
             "allAttributesSame": "Totes les funcions a importar tenen aquesta etiqueta",
             "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar",
             "inspectLooksCorrect": "Aquests valors semblen correctes",
-            "someHaveSame": "{count} característiques per importar tenen aquesta etiqueta, això és un {percentage}% del total",
-            "title": ""
+            "someHaveSame": "{count} característiques per importar tenen aquesta etiqueta, això és un {percentage}% del total"
         },
         "selectFile": {
             "description": "Seleccionar un fitxer .csv o .geojson per començar",
@@ -362,86 +339,53 @@
         },
         "title": "Assistent d'importació",
         "confirmProcess": {
-            "titleLong": "",
             "wikipageIsMade": "",
-            "contactedCommunity": "",
             "licenseIsCompatible": "",
-            "readImportGuidelines": "",
             "title": ""
         },
         "conflationChecker": {
-            "osmLoaded": "",
             "showOsmLayerInConflationMap": "",
             "states": {
-                "error": "",
                 "unexpected": "",
-                "idle": "",
                 "running": ""
             },
-            "zoomLevelSelection": "",
             "reloadTheCache": "",
-            "nearbyWarn": "",
             "nothingLoaded": "",
-            "importCandidatesCount": "",
             "zoomIn": "",
-            "cacheExpired": "",
             "downloadOverpassData": "",
-            "mapShowingNearbyIntro": "",
             "loadedDataAge": "",
-            "title": "",
             "titleNearby": "",
-            "setRangeToZero": "",
             "titleLive": ""
         },
         "compareToAlreadyExistingNotes": {
-            "nothingNearby": "",
             "someNearby": "",
-            "titleLong": "",
             "loadingFailed": "",
-            "mapExplanation": "",
             "wontBeImported": "",
-            "title": "",
             "loading": "",
-            "completelyImported": "",
             "noPreviousNotesFound": ""
         },
-        "gotoImportViewer": "",
         "noteParts": {
             "datasource": "",
-            "wikilink": "",
             "importEasily": ""
         },
         "selectTheme": {
-            "missing": "",
             "notApplicable": "",
-            "intro": "",
             "misMatch": "",
-            "displayNonMatchingCount": "",
             "noMatchingPresets": "",
-            "title": "",
-            "unmatchedTitle": "",
-            "needsTags": ""
+            "unmatchedTitle": ""
         },
         "askMetadata": {
             "downloadGeojson": "",
-            "shouldBeOsmWikilink": "",
             "intro": "",
-            "giveDescription": "",
             "giveWikilink": "",
-            "giveSource": "",
             "orDownload": "",
-            "shouldNotBeHomepage": "",
-            "shouldBeUrl": "",
-            "title": ""
+            "shouldBeUrl": ""
         },
         "createNotes": {
             "openImportViewer": "",
-            "title": "",
             "creating": "",
-            "loading": "",
             "done": ""
-        },
-        "testMode": ""
+        }
     },
     "importInspector": {
         "title": "Inspeccionar i controlar notes d'importació"
@@ -453,8 +397,7 @@
         "importHandled": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
         "layerName": "Possible {title}",
         "notFound": "No he pogut trobar {title}: esborra-ho",
-        "popupTitle": "Possible {title}",
-        "nearbyImagesIntro": ""
+        "popupTitle": "Possible {title}"
     },
     "index": {
         "#": "Aquests textos es mostren sobre els botons de les peticions quan no hi ha petició carregada",
@@ -667,8 +610,7 @@
         "help": "Fes clic a la icona 'tradueix' al costat d'una cadena per introduir o actualitzar un fragment de text. Necessites un compte de Weblate per a això. Crea'n un amb el teu nom d'usuari OSM per desbloquejar automàticament el mode de traducció.",
         "isTranslator": "El mode de traducció està actiu, ja que el vostre nom d'usuari coincideix amb el nom d'un traductor anterior",
         "missing": "{count} cadenes sense traduir",
-        "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies",
-        "allMissing": ""
+        "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies"
     },
     "validation": {
         "color": {
@@ -725,9 +667,6 @@
         },
         "wikidata": {
             "description": "Un identificador de Wikidata"
-        },
-        "distance": {
-            "description": ""
         }
     },
     "matrixbot": {
@@ -735,165 +674,103 @@
         "commands": {
             "documentation": {
                 "inputElement": {
-                    "plural": "",
                     "singular": ""
                 },
-                "argid": "",
                 "didYouMean": "",
                 "layer": {
-                    "plural": "",
                     "singular": ""
                 },
-                "overview": "",
                 "theme": {
-                    "singular": "",
-                    "plural": ""
+                    "singular": ""
                 },
                 "url_parameter": {
-                    "plural": "",
-                    "singular": ""
-                },
-                "file": {
-                    "plural": "",
-                    "singular": ""
-                },
-                "visualisation": {
-                    "singular": "",
                     "plural": ""
                 },
+                "file": {
+                    "plural": ""
+                },
+                "visualisation": {
+                    "singular": ""
+                },
                 "noIdIntro": "",
-                "notFound": "",
-                "docs": "",
-                "urlParam": ""
+                "docs": ""
             },
             "help": {
                 "argcmd": "",
-                "askRights": "",
                 "p0": "",
-                "p1": "",
                 "priviligedComand": "",
-                "supported": "",
                 "notFound": "",
-                "docs": "",
                 "insufficientRights": ""
             },
             "info": {
-                "fetchingInfoAbout": "",
                 "foundResults": "",
-                "noEditPossible": "",
                 "noInfo": "",
-                "noOpeningHours": "",
                 "nothingFound": "",
-                "argsearch": "",
                 "searchingWorldwide": "",
-                "provideSearch": "",
                 "editWith": "",
-                "couldNotDownload": "",
                 "docs": "",
-                "closed": "",
                 "closedTodayAndTomorrow": ""
             },
             "welcome": {
-                "p0": "",
                 "p1": "",
-                "p2": "",
-                "docs": "",
-                "p3": ""
+                "docs": ""
             },
             "search": {
                 "argverb": "",
-                "noNearOrIn": "",
                 "nothingFound": "",
-                "searching": "",
                 "announceLimited": "",
-                "arglayerid": "",
                 "argsearch": "",
-                "noMatchingLayer": "",
-                "overview": "",
-                "docs": ""
+                "overview": ""
             },
             "shutdown": {
                 "goodbye": "",
-                "notYetShuttingDown": "",
                 "docs": "",
-                "verbupdate": "",
-                "verbshutdown": "",
-                "argmode": ""
+                "verbshutdown": ""
             },
             "wiki": {
                 "docs": "",
-                "searching": "",
                 "gotResults": "",
-                "foundMatching": "",
                 "nothingFound": "",
-                "argsearch": "",
-                "loadingFailed": "",
-                "noWiki": ""
+                "loadingFailed": ""
             },
             "dm": {
                 "sendReason": "",
-                "failed": "",
                 "argto": "",
-                "argbody": "",
                 "selectValidCommand": "",
-                "commandNotFound": "",
                 "docs": "",
-                "noDm": "",
                 "receipt": "",
-                "selectValidUser": "",
                 "executing": ""
             },
             "tags": {
-                "announceSearch": "",
                 "nothingFound": "",
-                "noSearchGiven": "",
-                "argsearch": "",
-                "docs": ""
+                "argsearch": ""
             },
             "scheme": {
                 "argkey": "",
-                "docs": "",
                 "noMatchingLayer": "",
-                "notype": "",
                 "title": ""
             },
             "language": {
-                "hasBeenSet": "",
                 "arglang": "",
-                "notFound": "",
                 "currentLanguage": "",
-                "docs": "",
-                "knownLanguages": "",
-                "helpTranslating": ""
+                "knownLanguages": ""
             },
             "role": {
                 "noRolesYet": "",
-                "verbrevoke": "",
                 "allRolesIntro": "",
-                "argrole": "",
                 "arguser": "",
-                "docs": "",
                 "noPreviousRoles": "",
-                "noRightsNeeded": "",
                 "noSuchRole": "",
-                "userHasRoles": "",
                 "verbadd": "",
-                "verblist": "",
                 "verbremove": "",
-                "allRevoked": "",
-                "argverb": "",
-                "verbdefault": ""
+                "argverb": ""
             },
             "dream": {
-                "generatedBy": "",
-                "docs": ""
+                "generatedBy": ""
             }
         },
         "commandNotFound": "",
-        "noSufficientRights": "",
         "subcommandNotGiven": "",
-        "decryptionFailed": "",
-        "tooLongForPublic": "",
-        "subcommanNotFound": ""
+        "tooLongForPublic": ""
     }
 }

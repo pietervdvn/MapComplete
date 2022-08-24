@@ -365,7 +365,6 @@
             "titleLive": "Data van OSM",
             "titleNearby": "Objecten in de buurt",
             "zoomIn": "Het huidige zoomniveau is {current}",
-            "zoomLevelSelection": "",
             "showOsmLayerInConflationMap": ""
         },
         "createNotes": {

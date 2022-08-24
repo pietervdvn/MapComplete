@@ -276,12 +276,9 @@
             "wikipediaboxTitle": "Wikipedia"
         },
         "levelSelection": {
-            "addNewOnLevel": "",
             "confirmLevel": ""
         },
-        "noMatchingMapping": "",
-        "useSearch": "",
-        "useSearchForMore": ""
+        "useSearch": ""
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -372,7 +369,6 @@
             "titleLive": "Live-Daten auf OSM",
             "titleNearby": "Objekte in der Nähe",
             "zoomIn": "Die aktuelle Zoomstufe ist {current}",
-            "showOsmLayerInConflationMap": "",
             "zoomLevelSelection": ""
         },
         "createNotes": {
