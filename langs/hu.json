@@ -12,7 +12,9 @@
         "explanations": {
             "hardDelete": "Ez a térképelem törlődik az OpenStreetMapről. Csak tapasztalt szerkesztő tudja visszaállítani",
             "selectReason": "Kérjük, jelöld meg, miért kellene ezt a térképelemet törölni",
-            "softDelete": "Ez a térképelem frissülni fog és ebben az alkalmazásban nem fog látszani. <span class=\"subtle\">{reason}</span>"
+            "softDelete": "Ez a térképelem frissülni fog és ebben az alkalmazásban nem fog látszani. <span class=\"subtle\">{reason}</span>",
+            "retagNoOtherThemes": "",
+            "retagOtherThemes": ""
         },
         "isDeleted": "Ez a térképelem törlődött",
         "isntAPoint": "Csak pontot lehet törölni, a kiválasztott térképelem viszont vonal, terület vagy kapcsolat.",
@@ -54,7 +56,8 @@
                 "importTags": "Az elem a következő címkéket fogja kapni: {tags}",
                 "officialThemesOnly": "A balesetek elkerülése érdekében a nem hivatalos témáknál ki van kapcsolva az importálás gomb",
                 "wrongType": "Ez a térképelem nem pont vagy vonal, ezért nem importálható",
-                "zoomInMore": "Nagyíts tovább a térképelem importálásához"
+                "zoomInMore": "Nagyíts tovább a térképelem importálásához",
+                "wrongTypeToConflate": ""
             },
             "importTags": "Az elem {tags} címkéket fog kapni",
             "intro": "Olyan helyre kattintottál, ahol még nincs ismert adat.<br>",
@@ -93,7 +96,9 @@
             "openIssueTracker": "Hiba bejelentése",
             "openMapillary": "Mapillary megnyitása itt",
             "openOsmcha": "A téma {theme} legutóbbi szerkesztéseinek megtekintése",
-            "themeBy": "A téma karbantartója: {author}"
+            "themeBy": "A téma karbantartója: {author}",
+            "translatedBy": "",
+            "mapillaryHelp": ""
         },
         "back": "Vissza",
         "backToMapcomplete": "Vissza a témák áttekintéséhez",
@@ -118,7 +123,8 @@
             "licenseInfo": "<h3>Szerzői jogi nyilatkozat</h3>A megadott adatok az ODbL licenc szerint érhetők el. Újrafelhasználásuk bármilyen célra ingyenes, de <ul><li>a <b>© OpenStreetMap-közreműködők</b> megnevezés szükséges, és</li><li>minden változtatáshoz ezt a licencet kell használni</li></ul>A részletekért kérjük, olvassa el a teljes <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">szerzői jogi nyilatkozatot</a>.",
             "noDataLoaded": "Még nincs betöltött adat. A letöltés hamarosan elérhető lesz",
             "title": "A látható adatok letöltése",
-            "uploadGpx": "Töltsd fel a nyomvonalaidat az OpenStreetMapre"
+            "uploadGpx": "Töltsd fel a nyomvonalaidat az OpenStreetMapre",
+            "downloadAsSvgHelper": ""
         },
         "error": "Valami rosszul sült el",
         "example": "Példa",
@@ -149,7 +155,8 @@
             "noSearch": "Minden téma megjelenítése",
             "previouslyHiddenTitle": "Korábban megnézett rejtett témák",
             "requestATheme": "Ha egyedi témát szeretnél, kérd a problémakövetőben (issue tracker)",
-            "streetcomplete": "Egy másik, hasonló alkalmazás a <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
+            "streetcomplete": "Egy másik, hasonló alkalmazás a <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
+            "searchForATheme": ""
         },
         "nameInlineQuestion": "Ezen {category} neve: $$$",
         "next": "Következő",
@@ -218,7 +225,9 @@
             "fsUserbadge": "Bejelentkezési gomb engedélyezése",
             "fsWelcomeMessage": "Felugró üdvözlő üzenet és kapcsolódó fülek megjelenítése",
             "intro": "<h3>Térkép megosztása</h3> Oszd meg ezt a térképet! Másold ki az alábbi linket, és küldd el a barátaidnak és a családodnak:",
-            "thanksForSharing": "Köszönjük a megosztást!"
+            "thanksForSharing": "Köszönjük a megosztást!",
+            "downloadCustomTheme": "",
+            "downloadCustomThemeHelp": ""
         },
         "skip": "Kérdés kihagyása",
         "skippedQuestions": "Néhány kérdés ki lett hagyva",
@@ -250,7 +259,28 @@
             "noResults": "Nincs találat erre: <i>{search}</i>",
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
             "searchWikidata": "Keresés a Wikidatán",
-            "wikipediaboxTitle": "Wikipédia"
+            "wikipediaboxTitle": "Wikipédia",
+            "fromWikipedia": "",
+            "searchToShort": "",
+            "previewbox": {
+                "died": "",
+                "born": ""
+            }
+        },
+        "notValid": "",
+        "useSearch": "",
+        "useSearchForMore": "",
+        "screenToSmall": "",
+        "welcomeExplanation": {
+            "general": "",
+            "browseOtherThemesIntro": "",
+            "addNew": "",
+            "browseMoreMaps": ""
+        },
+        "noMatchingMapping": "",
+        "levelSelection": {
+            "addNewOnLevel": "",
+            "confirmLevel": ""
         }
     },
     "image": {
@@ -272,14 +302,145 @@
         "uploadMultipleDone": "{count} kép hozzáadva. Köszönjük a segítséget!",
         "uploadingMultiple": "{count} kép feltöltése folyamatban…",
         "uploadingPicture": "Kép feltöltése folyamatban…",
-        "willBePublished": "A képed így lesz közzétéve: "
+        "willBePublished": "A képed így lesz közzétéve: ",
+        "nearbyPictures": {
+            "browseNearby": "",
+            "confirm": "",
+            "hasMatchingPicture": "",
+            "loadMore": "",
+            "loading": "",
+            "noImageSelected": "",
+            "allFiltered": "",
+            "onlyTowards": "",
+            "withinRadius": "",
+            "nothingFound": "",
+            "removeFilters": "",
+            "title": ""
+        }
     },
     "importHelper": {
         "introduction": {
-            "description": "Az importálási segédprogram egy külső adatkészletet konvertál OSM-jegyzetekké. A külső adatkészletnek meg kell felelnie a MapComplete egyik meglévő rétegének. Az importálóba helyezett minden egyes elemhez egyetlen jegyzet fog létrejönni. Ezek a jegyzetek a megfelelő térképelemekkel együtt fognak megjelenni ezeken a térképekben, hogy könnyen fel lehessen rajzolni őket a térképre."
+            "description": "Az importálási segédprogram egy külső adatkészletet konvertál OSM-jegyzetekké. A külső adatkészletnek meg kell felelnie a MapComplete egyik meglévő rétegének. Az importálóba helyezett minden egyes elemhez egyetlen jegyzet fog létrejönni. Ezek a jegyzetek a megfelelő térképelemekkel együtt fognak megjelenni ezeken a térképekben, hogy könnyen fel lehessen rajzolni őket a térképre.",
+            "title": "",
+            "importFormat": ""
         },
         "previewAttributes": {
-            "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel"
+            "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel",
+            "inspectLooksCorrect": "",
+            "inspectDataTitle": "",
+            "someHaveSame": "",
+            "title": ""
+        },
+        "askMetadata": {
+            "shouldBeUrl": "",
+            "shouldBeOsmWikilink": "",
+            "giveDescription": "",
+            "downloadGeojson": "",
+            "title": "",
+            "shouldNotBeHomepage": "",
+            "intro": "",
+            "orDownload": "",
+            "giveSource": "",
+            "giveWikilink": ""
+        },
+        "compareToAlreadyExistingNotes": {
+            "completelyImported": "",
+            "loading": "",
+            "loadingFailed": "",
+            "mapExplanation": "",
+            "noPreviousNotesFound": "",
+            "title": "",
+            "titleLong": "",
+            "wontBeImported": "",
+            "nothingNearby": "",
+            "someNearby": ""
+        },
+        "createNotes": {
+            "creating": "",
+            "done": "",
+            "loading": "",
+            "openImportViewer": "",
+            "title": ""
+        },
+        "selectTheme": {
+            "title": "",
+            "needsTags": "",
+            "noMatchingPresets": "",
+            "notApplicable": "",
+            "unmatchedTitle": "",
+            "displayNonMatchingCount": "",
+            "intro": "",
+            "misMatch": "",
+            "missing": ""
+        },
+        "testMode": "",
+        "selectFile": {
+            "loadedFilesAre": "",
+            "fileFormatDescription": "",
+            "errNoLatOrLon": "",
+            "errNoName": "",
+            "errNotFeatureCollection": "",
+            "description": "",
+            "fileFormatDescriptionGeoJson": "",
+            "title": "",
+            "errDuplicate": "",
+            "errPointsOnly": "",
+            "fileFormatDescriptionCsv": "",
+            "noFilesLoaded": ""
+        },
+        "confirmProcess": {
+            "contactedCommunity": "",
+            "wikipageIsMade": "",
+            "titleLong": "",
+            "readImportGuidelines": "",
+            "title": "",
+            "licenseIsCompatible": ""
+        },
+        "conflationChecker": {
+            "importCandidatesCount": "",
+            "states": {
+                "idle": "",
+                "unexpected": "",
+                "running": "",
+                "error": ""
+            },
+            "nearbyWarn": "",
+            "setRangeToZero": "",
+            "nothingLoaded": "",
+            "downloadOverpassData": "",
+            "cacheExpired": "",
+            "showOsmLayerInConflationMap": "",
+            "title": "",
+            "reloadTheCache": "",
+            "titleLive": "",
+            "titleNearby": "",
+            "loadedDataAge": "",
+            "mapShowingNearbyIntro": "",
+            "osmLoaded": "",
+            "zoomIn": "",
+            "zoomLevelSelection": ""
+        },
+        "title": "",
+        "mapPreview": {
+            "autodetected": "",
+            "selectLayer": "",
+            "confirm": "",
+            "title": "",
+            "mismatch": ""
+        },
+        "gotoImportViewer": "",
+        "noteParts": {
+            "importEasily": "",
+            "datasource": "",
+            "wikilink": ""
+        },
+        "login": {
+            "lockNotice": "",
+            "loggedInWith": "",
+            "loginIsCorrect": "",
+            "loginRequired": "",
+            "userAccountTitle": "",
+            "title": ""
         }
     },
     "index": {
@@ -324,7 +485,13 @@
         "intro": "A magánélet fontos – az egyénnek és a társadalomnak egyaránt. A MapComplete igyekszik a lehető legnagyobb mértékben tiszteletben tartani a magánéletedet – egészen addig a pontig, hogy már idegesítő cookie-bannerre sincs szükségünk. Ennek ellenére szeretnénk tájékoztatni arról, hogy milyen információkat gyűjtünk és osztunk meg, milyen körülmények között, és miért kell ezeket a kompromisszumoknak megkötnünk.",
         "title": "Adatvédelmi irányelvek",
         "tracking": "Ahhoz, hogy némi betekintést nyerünk abba, hogy ki látogatja meg weboldalunkat, néhány technikai adatot gyűjtünk. Ez tartalmazza azt az országot, ahonnan meglátogattad a weboldalt, azt a webhelyet, amely a MapComplete-re irányított, az eszközöd típusát és képernyőméretét. Egy cookie kerül elhelyezésre a készülékeden, amely jelzi, hogy ma meglátogatta a MapComplete-et. Ezek az adatok nem elég részletesek ahhoz, hogy személyesen azonosítsanak. A statisztika csak összesítetten érhető el, és <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">mindenkinek nyilvános</a>",
-        "trackingTitle": "Statisztikai adatok"
+        "trackingTitle": "Statisztikai adatok",
+        "editingTitle": "",
+        "editing": "",
+        "whileYoureHere": "",
+        "surveillance": "",
+        "miscCookies": "",
+        "miscCookiesTitle": ""
     },
     "professional": {
         "aboutOsm": {
@@ -337,23 +504,97 @@
                 "title": "Mi az OpenStreetMap?"
             },
             "benefits": {
-                "li1": "Az adatai minden eddiginél nagyobb közönséghez jutnak el, hiszen ezt használja a Bing Maps (Microsoft), az Apple Maps, a Facebook, az Instagram, a Pokémon Go, az OsmAnd, az Organic Maps, a Maps.me, a Mapbox, a Komoot, szinte minden kerékpáros alkalmazás és még sok más weboldal és applikáció…"
+                "li1": "Az adatai minden eddiginél nagyobb közönséghez jutnak el, hiszen ezt használja a Bing Maps (Microsoft), az Apple Maps, a Facebook, az Instagram, a Pokémon Go, az OsmAnd, az Organic Maps, a Maps.me, a Mapbox, a Komoot, szinte minden kerékpáros alkalmazás és még sok más weboldal és applikáció…",
+                "li2": "",
+                "li0": "",
+                "intro": "",
+                "title": ""
             },
             "vandalism": {
                 "intro": "Mivel az adatokat bárki szerkesztheti, előfordulhat, hogy rosszindulatú változtatás történik. Ez azonban néhány okból rendkívül ritka:",
                 "li0": "magasak a változtatások technikai akadályai, vagyis nem olyan könnyű a térképet szerkeszteni",
-                "li1": "egy kis rosszindulatú változtatásnak alacsony a hatása, így a vandál számára csekély a jutalom"
+                "li1": "egy kis rosszindulatú változtatásnak alacsony a hatása, így a vandál számára csekély a jutalom",
+                "li2": "",
+                "li4": "",
+                "li3": "",
+                "title": ""
+            },
+            "license": {
+                "title": "",
+                "intro": "",
+                "outro": "",
+                "li0": "",
+                "li1": ""
             }
         },
         "indexPage": {
             "button": "Szolgáltatásaink",
-            "hookMore": "Tudunk segítséget nyújtani felmérésekhez, adatimportáláshoz és OpenStreetMap-tanácsadáshoz"
+            "hookMore": "Tudunk segítséget nyújtani felmérésekhez, adatimportáláshoz és OpenStreetMap-tanácsadáshoz",
+            "hook": ""
         },
         "intro": "A MapComplete fejlesztője szakmai támogatást is kínál. Ez a dokumentum felvázol néhány lehetőséget, megválaszol pár gyakori kérdést és bemutatja a MapComplete határait",
         "osmTitle": "Mire lehet jó az OpenStreetMap és a MapComplete a szervezeted számára?",
         "text0": "<p>A naprakész földrajzi adatok karbantartása nehéz, hibaveszélyes és költséges.<br>A nehézségeket tetézi, hogy sok szervezet egymástól függetlenül gyűjti ugyanazokat az adatokat, ami párhuzamos erőfeszítéseket, nem szabványosított adatformátumokat és sok hiányos, karbantartatlan adathalmazt eredményez.</p><p>Létezik viszont egy hatalmas közösség, amely rengeteg földrajzi adatot gyűjt egy közös, globális és szabványosított adatbázisba: ez az OpenStreetMap.org.</p>",
         "text1": "<p>A MapComplete olyan térképszerkesztő alkalmazás, amely megkönnyíti az OpenStreetMap adatokkal való feltöltését.</p>",
-        "title": "Szakmai támogatás a MapComplete segítségével"
+        "title": "Szakmai támogatás a MapComplete segítségével",
+        "aboutMc": {
+            "text1": "",
+            "title": "",
+            "layers": {
+                "intro": "",
+                "title": ""
+            },
+            "text2": "",
+            "internalUse": {
+                "title": "",
+                "intro": ""
+            },
+            "survey": {
+                "title": "",
+                "intro": ""
+            },
+            "text0": ""
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "li0": "",
+                "li1": "",
+                "usecaseGatheringOpenData": {
+                    "title": "",
+                    "intro": ""
+                },
+                "usecaseMapDifferentSources": {
+                    "intro": "",
+                    "outro": "",
+                    "li0": "",
+                    "li1": "",
+                    "title": ""
+                },
+                "li2": "",
+                "outro": "",
+                "title": "",
+                "intro": ""
+            },
+            "title": "",
+            "intro": "",
+            "unsuitedData": {
+                "intro": "",
+                "li0": "",
+                "li1": "",
+                "li2": "",
+                "title": ""
+            }
+        },
+        "services": {
+            "title": "",
+            "intro": "",
+            "li4": "",
+            "li0": "",
+            "li1": "",
+            "li2": "",
+            "li3": "",
+            "outro": ""
+        }
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Kapcsolódó személy véleménye)",
@@ -378,5 +619,281 @@
         "loginToSplit": "Egy út szétvágásához be kell jelentkezni",
         "split": "Szétvágás",
         "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva"
+    },
+    "importInspector": {
+        "title": ""
+    },
+    "importLayer": {
+        "alreadyMapped": "",
+        "nearbyImagesIntro": "",
+        "description": "",
+        "importButton": "",
+        "importHandled": "",
+        "popupTitle": "",
+        "notFound": "",
+        "layerName": ""
+    },
+    "matrixbot": {
+        "commandFailed": "",
+        "commands": {
+            "info": {
+                "couldNotDownload": "",
+                "docs": "",
+                "editWith": "",
+                "fetchingInfoAbout": "",
+                "noEditPossible": "",
+                "noInfo": "",
+                "noOpeningHours": "",
+                "foundResults": "",
+                "nothingFound": "",
+                "argsearch": "",
+                "closed": "",
+                "closedTodayAndTomorrow": "",
+                "searchingWorldwide": "",
+                "provideSearch": ""
+            },
+            "language": {
+                "helpTranslating": "",
+                "notFound": "",
+                "knownLanguages": "",
+                "arglang": "",
+                "currentLanguage": "",
+                "docs": "",
+                "hasBeenSet": ""
+            },
+            "tags": {
+                "noSearchGiven": "",
+                "nothingFound": "",
+                "announceSearch": "",
+                "argsearch": "",
+                "docs": ""
+            },
+            "welcome": {
+                "docs": "",
+                "p0": "",
+                "p3": "",
+                "p2": "",
+                "p1": ""
+            },
+            "wiki": {
+                "argsearch": "",
+                "nothingFound": "",
+                "docs": "",
+                "foundMatching": "",
+                "gotResults": "",
+                "loadingFailed": "",
+                "noWiki": "",
+                "searching": ""
+            },
+            "documentation": {
+                "url_parameter": {
+                    "plural": "",
+                    "singular": ""
+                },
+                "noIdIntro": "",
+                "docs": "",
+                "layer": {
+                    "singular": "",
+                    "plural": ""
+                },
+                "theme": {
+                    "plural": "",
+                    "singular": ""
+                },
+                "visualisation": {
+                    "plural": "",
+                    "singular": ""
+                },
+                "overview": "",
+                "argid": "",
+                "notFound": "",
+                "urlParam": "",
+                "didYouMean": "",
+                "file": {
+                    "plural": "",
+                    "singular": ""
+                },
+                "inputElement": {
+                    "plural": "",
+                    "singular": ""
+                }
+            },
+            "scheme": {
+                "docs": "",
+                "noMatchingLayer": "",
+                "argkey": "",
+                "notype": "",
+                "title": ""
+            },
+            "search": {
+                "noMatchingLayer": "",
+                "announceLimited": "",
+                "arglayerid": "",
+                "argsearch": "",
+                "argverb": "",
+                "docs": "",
+                "searching": "",
+                "noNearOrIn": "",
+                "nothingFound": "",
+                "overview": ""
+            },
+            "dm": {
+                "noDm": "",
+                "argbody": "",
+                "failed": "",
+                "sendReason": "",
+                "argto": "",
+                "commandNotFound": "",
+                "docs": "",
+                "executing": "",
+                "receipt": "",
+                "selectValidCommand": "",
+                "selectValidUser": ""
+            },
+            "role": {
+                "noSuchRole": "",
+                "allRolesIntro": "",
+                "userHasRoles": "",
+                "verbadd": "",
+                "allRevoked": "",
+                "argverb": "",
+                "docs": "",
+                "noPreviousRoles": "",
+                "noRolesYet": "",
+                "verblist": "",
+                "verbremove": "",
+                "verbrevoke": "",
+                "noRightsNeeded": "",
+                "verbdefault": "",
+                "argrole": "",
+                "arguser": ""
+            },
+            "dream": {
+                "docs": "",
+                "generatedBy": ""
+            },
+            "help": {
+                "docs": "",
+                "argcmd": "",
+                "insufficientRights": "",
+                "notFound": "",
+                "p0": "",
+                "p1": "",
+                "supported": "",
+                "askRights": "",
+                "priviligedComand": ""
+            },
+            "shutdown": {
+                "goodbye": "",
+                "argmode": "",
+                "notYetShuttingDown": "",
+                "verbshutdown": "",
+                "verbupdate": "",
+                "docs": ""
+            }
+        },
+        "tooLongForPublic": "",
+        "noSufficientRights": "",
+        "decryptionFailed": "",
+        "subcommanNotFound": "",
+        "subcommandNotGiven": "",
+        "commandNotFound": ""
+    },
+    "notes": {
+        "addCommentPlaceholder": "",
+        "closeNote": "",
+        "createNote": "",
+        "isCreated": "",
+        "loginToAddPicture": "",
+        "loginToAddComment": "",
+        "noteLayerHasFilters": "",
+        "noteLayerNotEnabled": "",
+        "notesLayerMustBeEnabled": "",
+        "anonymous": "",
+        "loginToClose": "",
+        "isClosed": "",
+        "disableAllNoteFilters": "",
+        "addComment": "",
+        "createNoteTitle": "",
+        "createNoteIntro": "",
+        "addCommentAndClose": "",
+        "textNeeded": "",
+        "addAComment": "",
+        "reopenNoteAndComment": "",
+        "noteIsPublic": "",
+        "noteLayerDoEnable": "",
+        "reopenNote": "",
+        "typeText": "",
+        "warnAnonymous": ""
+    },
+    "translations": {
+        "activateButton": "",
+        "deactivate": "",
+        "completeness": "",
+        "allMissing": "",
+        "missing": "",
+        "help": "",
+        "isTranslator": "",
+        "notImmediate": ""
+    },
+    "validation": {
+        "distance": {
+            "description": ""
+        },
+        "opening_hours": {
+            "description": ""
+        },
+        "tooLong": "",
+        "wikidata": {
+            "description": ""
+        },
+        "pfloat": {
+            "description": ""
+        },
+        "pnat": {
+            "noZero": "",
+            "description": ""
+        },
+        "email": {
+            "noAt": "",
+            "description": "",
+            "feedback": ""
+        },
+        "phone": {
+            "description": "",
+            "feedback": ""
+        },
+        "url": {
+            "feedback": "",
+            "description": ""
+        },
+        "color": {
+            "description": ""
+        },
+        "direction": {
+            "description": ""
+        },
+        "float": {
+            "feedback": "",
+            "description": ""
+        },
+        "int": {
+            "description": ""
+        },
+        "nat": {
+            "description": "",
+            "mustBePositive": "",
+            "mustBeWhole": "",
+            "notANumber": ""
+        },
+        "string": {
+            "description": ""
+        },
+        "text": {
+            "description": ""
+        },
+        "date": {
+            "description": ""
+        }
     }
 }
