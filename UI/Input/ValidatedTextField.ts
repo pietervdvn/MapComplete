@@ -343,7 +343,7 @@ Another example is to search for species and trees:
                 const prefixesUnrwapped: string[] = prefixes[lg] ?? prefixes 
                 const postfixesUnwrapped: string[] = postfixes[lg] ?? postfixes
                 let clipped = searchFor;
-                console.log("Pref", prefixesUnrwapped," post", postfixesUnwrapped)
+                
                 for (const postfix of postfixesUnwrapped) {
                     if (searchFor.endsWith(postfix)) {
                         clipped = searchFor.substring(0, searchFor.length - postfix.length)
