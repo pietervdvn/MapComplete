@@ -364,7 +364,9 @@
             "title": "Vergelijking met bestaande data",
             "titleLive": "Data van OSM",
             "titleNearby": "Objecten in de buurt",
-            "zoomIn": "Het huidige zoomniveau is {current}"
+            "zoomIn": "Het huidige zoomniveau is {current}",
+            "zoomLevelSelection": "",
+            "showOsmLayerInConflationMap": ""
         },
         "createNotes": {
             "creating": "<b>{count}</b> van {total} kaartnota's werden gemaakt",

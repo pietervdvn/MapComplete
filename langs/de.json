@@ -274,7 +274,14 @@
             "searchToShort": "Ihre Suchanfrage ist zu kurz, geben Sie einen längeren Text ein",
             "searchWikidata": "Wikidata durchsuchen",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "levelSelection": {
+            "addNewOnLevel": "",
+            "confirmLevel": ""
+        },
+        "noMatchingMapping": "",
+        "useSearch": "",
+        "useSearchForMore": ""
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -364,7 +371,9 @@
             "title": "Mit vorhandenen Daten vergleichen",
             "titleLive": "Live-Daten auf OSM",
             "titleNearby": "Objekte in der Nähe",
-            "zoomIn": "Die aktuelle Zoomstufe ist {current}"
+            "zoomIn": "Die aktuelle Zoomstufe ist {current}",
+            "showOsmLayerInConflationMap": "",
+            "zoomLevelSelection": ""
         },
         "createNotes": {
             "creating": "<b>{count}</b> Notizen von {total} erstellt",
