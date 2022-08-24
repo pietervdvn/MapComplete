@@ -274,7 +274,14 @@
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia",
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in"
-        }
+        },
+        "levelSelection": {
+            "addNewOnLevel": "",
+            "confirmLevel": ""
+        },
+        "noMatchingMapping": "",
+        "useSearch": "",
+        "useSearchForMore": ""
     },
     "image": {
         "addPicture": "Voeg foto toe",
@@ -364,7 +371,9 @@
             "title": "Vergelijking met bestaande data",
             "titleLive": "Data van OSM",
             "titleNearby": "Objecten in de buurt",
-            "zoomIn": "Het huidige zoomniveau is {current}"
+            "zoomIn": "Het huidige zoomniveau is {current}",
+            "zoomLevelSelection": "",
+            "showOsmLayerInConflationMap": ""
         },
         "createNotes": {
             "creating": "<b>{count}</b> van {total} kaartnota's werden gemaakt",
