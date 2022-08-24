@@ -5058,7 +5058,81 @@
                     }
                 }
             }
-        }
+        },
+        "tagRenderings": {
+            "mail-in": {
+                "mappings": {
+                    "1": {
+                        "then": "Sie können <b>keine</b> Pakete von diesem Paketschließfach aus versenden"
+                    },
+                    "0": {
+                        "then": "Sie können Pakete von diesem Paketschließfach aus versenden"
+                    }
+                },
+                "question": "Können Sie von diesem Paketschließfach aus Pakete versenden?"
+            },
+            "pickup": {
+                "mappings": {
+                    "1": {
+                        "then": "Sie können <b>keine</b> Pakete von diesem Paketschließfach abholen"
+                    },
+                    "0": {
+                        "then": "Sie können Pakete von diesem Paketschließfach abholen"
+                    }
+                },
+                "question": "Können Sie Pakete aus diesem Paketschließfach abholen?"
+            },
+            "operator": {
+                "render": "Dieses Paketschließfach wird von {operator} betrieben",
+                "freeform": {
+                    "placeholder": "Betreiber"
+                },
+                "question": "Was ist der Betreiber des Paketschließfachs?"
+            },
+            "ref": {
+                "render": "Dieses Paketschließfach hat die Kennnummer {ref}",
+                "freeform": {
+                    "placeholder": "Referenz"
+                },
+                "question": "Wie lautet die Referenznummer/Kennung dieses Paketschließfachs?"
+            },
+            "brand": {
+                "freeform": {
+                    "placeholder": "Marke"
+                },
+                "mappings": {
+                    "2": {
+                        "then": "Dies ist eine DPD Pickup Station"
+                    },
+                    "0": {
+                        "then": "Dies ist ein Amazon Locker"
+                    },
+                    "1": {
+                        "then": "Dies ist eine DHL-Packstation"
+                    },
+                    "3": {
+                        "then": "Dies ist ein PostNL-Paketschließfach"
+                    }
+                },
+                "render": "Dies ist ein Paketschließfach von {brand}",
+                "question": "Welche Marke hat das Paketschließfach?"
+            }
+        },
+        "title": {
+            "render": "Paketschließfach",
+            "mappings": {
+                "0": {
+                    "then": "{brand} Paketschließfach"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "ein Paketschließfach"
+            }
+        },
+        "name": "Paketschließfächer",
+        "description": "Ebene mit Paketschließfächern zum Abholen und Versenden von Paketen."
     },
     "parking": {
         "description": "Eine Ebene mit Parkplätzen",
@@ -7287,6 +7361,73 @@
                     }
                 }
             }
+        }
+    },
+    "parking_spaces": {
+        "description": "Ebene mit den einzelnen PKW Stellplätzen.",
+        "name": "Stellplätze",
+        "tagRenderings": {
+            "capacity": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Parkplatz hat 1 Stellplatz."
+                    }
+                },
+                "render": "Dieser Parkplatz hat {capacity} Stellplätze."
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein normaler Stellplatz"
+                    },
+                    "1": {
+                        "then": "Dies ist ein normaler Stellplatz."
+                    },
+                    "2": {
+                        "then": "Dies ist ein Behindertenstellplatz."
+                    },
+                    "3": {
+                        "then": "Dies ist ein privater Stellplatz."
+                    },
+                    "4": {
+                        "then": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist."
+                    },
+                    "5": {
+                        "then": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist."
+                    },
+                    "6": {
+                        "then": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist."
+                    },
+                    "9": {
+                        "then": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
+                    },
+                    "11": {
+                        "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
+                    },
+                    "13": {
+                        "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
+                    },
+                    "14": {
+                        "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
+                    },
+                    "12": {
+                        "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
+                    },
+                    "7": {
+                        "then": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert."
+                    },
+                    "8": {
+                        "then": "Dies ist ein Stellplatz, der für Busse reserviert ist."
+                    },
+                    "10": {
+                        "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
+                    }
+                },
+                "question": "Welche Art von Stellplatz ist dies?"
+            }
+        },
+        "title": {
+            "render": "Stellplatz"
         }
     }
 }
