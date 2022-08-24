@@ -56,6 +56,15 @@
             },
             "question": "Quali metodi di pagamento sono accettati qui?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Pagamento effettuato utilizzando un'app dedicata"
+                    }
+                }
+            }
+        },
         "phone": {
             "question": "Qual è il numero di telefono di {title()}?"
         },
@@ -97,15 +106,6 @@
                 }
             },
             "question": "Qual è il corrispondente elemento su Wikipedia?"
-        },
-        "payment-options-advanced": {
-            "override": {
-                "mappings+": {
-                    "0": {
-                        "then": "Pagamento effettuato utilizzando un'app dedicata"
-                    }
-                }
-            }
         }
     }
 }

@@ -886,7 +886,7 @@
     },
     {
       "key": "tactile_paving",
-      "description": "Layer 'Kerbs' shows tactile_paving=incorrect with a fixed text, namely 'This kerb has tactile paving, but it is incorrect' (in the MapComplete.osm.be theme 'OnWheels')",
+      "description": "Layer 'Kerbs' shows tactile_paving=incorrect with a fixed text, namely 'This kerb has tactile paving, but it is incorrect.' (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "incorrect"
     },
     {

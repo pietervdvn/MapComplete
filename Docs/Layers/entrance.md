@@ -189,7 +189,7 @@ The question is  What is the width of this door/entrance?
 
 This rendering asks information about the property  [width](https://wiki.openstreetmap.org/wiki/Key:width) 
 
-This is rendered with  This door has a width of {canonical(width)} meter
+This is rendered with  This door has a width of {canonical(width)}
 
 
 

@@ -454,6 +454,7 @@
         "title": "Bicicleta blanca"
     },
     "grb": {
+        "description": "Este tema es un intento de automatizar la importación GRB.",
         "layers": {
             "1": {
                 "tagRenderings": {
@@ -473,8 +474,7 @@
                     }
                 }
             }
-        },
-        "description": "Este tema es un intento de automatizar la importación GRB."
+        }
     },
     "grb_fixme": {
         "layers": {

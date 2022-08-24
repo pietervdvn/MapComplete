@@ -558,6 +558,23 @@
         "shortDescription": "Una cartina modificabile con informazioni di base dei negozi",
         "title": "Mappa dei negozi"
     },
+    "sidewalks": {
+        "layers": {
+            "0": {
+                "name": "Marciapiedi",
+                "tagRenderings": {
+                    "streetname": {
+                        "render": "La strada si chiama {name}"
+                    }
+                },
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "shortDescription": "Mappatura del marciapiede",
+        "title": "Marciapiede"
+    },
     "sport_pitches": {
         "description": "Un campo sportivo è un'area dove vengono praticati sport",
         "shortDescription": "Una cartina che mostra i campi sportivi",
@@ -585,22 +602,5 @@
         "description": "In questa cartina troverai i cestini dei rifiuti nei tuoi paraggi. Se manca un cestino, puoi inserirlo tu stesso",
         "shortDescription": "Una cartina dei cestini dei rifiuti",
         "title": "Cestino dei rifiuti"
-    },
-    "sidewalks": {
-        "layers": {
-            "0": {
-                "title": {
-                    "render": "{name}"
-                },
-                "name": "Marciapiedi",
-                "tagRenderings": {
-                    "streetname": {
-                        "render": "La strada si chiama {name}"
-                    }
-                }
-            }
-        },
-        "shortDescription": "Mappatura del marciapiede",
-        "title": "Marciapiede"
     }
 }

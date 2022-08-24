@@ -4215,6 +4215,38 @@
                 "question": "Welche Farbe hat der Hydrant?",
                 "render": "Der Hydrant hat die Farbe {colour}"
             },
+            "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Art der Kupplung"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Storz-Kupplung"
+                    },
+                    "1": {
+                        "then": "UNI-Kupplung"
+                    },
+                    "2": {
+                        "then": "Barcelona-Kupplung"
+                    }
+                },
+                "question": "Welche Art von Kupplungen hat dieser Hydrant?",
+                "render": "Kupplungen: {couplings:type}"
+            },
+            "hydrant-couplings-diameters": {
+                "freeform": {
+                    "placeholder": "Kupplungsdurchmesser"
+                },
+                "question": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
+                "render": "Kupplungsdurchmesser: {couplings:diameters}"
+            },
+            "hydrant-diameter": {
+                "freeform": {
+                    "placeholder": "Rohrdurchmesser"
+                },
+                "question": "Was ist der Rohrdurchmesser dieses Hydranten?",
+                "render": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {
@@ -4249,38 +4281,6 @@
                 },
                 "question": "Welche Bauform hat der Hydrant?",
                 "render": " Hydranten-Typ: {fire_hydrant:type}"
-            },
-            "hydrant-couplings-diameters": {
-                "question": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
-                "freeform": {
-                    "placeholder": "Kupplungsdurchmesser"
-                },
-                "render": "Kupplungsdurchmesser: {couplings:diameters}"
-            },
-            "hydrant-couplings": {
-                "freeform": {
-                    "placeholder": "Art der Kupplung"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "Storz-Kupplung"
-                    },
-                    "1": {
-                        "then": "UNI-Kupplung"
-                    },
-                    "2": {
-                        "then": "Barcelona-Kupplung"
-                    }
-                },
-                "question": "Welche Art von Kupplungen hat dieser Hydrant?",
-                "render": "Kupplungen: {couplings:type}"
-            },
-            "hydrant-diameter": {
-                "freeform": {
-                    "placeholder": "Rohrdurchmesser"
-                },
-                "question": "Was ist der Rohrdurchmesser dieses Hydranten?",
-                "render": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}"
             }
         },
         "title": {
@@ -4302,11 +4302,11 @@
         "name": "Innenräume",
         "tagRenderings": {
             "name": {
-                "question": "Wie lautet der Name dieses Raums?",
-                "render": "Der Name des Raums lautet {name}",
                 "freeform": {
                     "placeholder": "Name des Raums"
-                }
+                },
+                "question": "Wie lautet der Name dieses Raums?",
+                "render": "Der Name des Raums lautet {name}"
             },
             "ref": {
                 "freeform": {
@@ -4317,7 +4317,6 @@
             }
         },
         "title": {
-            "render": "Innenbereich {name}",
             "mappings": {
                 "0": {
                     "then": "Innenraum {name}"
@@ -4337,7 +4336,8 @@
                 "5": {
                     "then": "Geschoss {name}"
                 }
-            }
+            },
+            "render": "Innenbereich {name}"
         }
     },
     "information_board": {

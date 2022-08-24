@@ -788,6 +788,13 @@
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
         "title": "Stoepranden en oversteekplaatsen"
     },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "name": "Zwaartepunten van wijzigingensets"
+            }
+        }
+    },
     "maps": {
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
         "shortDescription": "Dit thema toont alle (toeristische) kaarten die OpenStreetMap kent",
@@ -1139,12 +1146,5 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
-    },
-    "mapcomplete-changes": {
-        "layers": {
-            "0": {
-                "name": "Zwaartepunten van wijzigingensets"
-            }
-        }
     }
 }

@@ -21,7 +21,8 @@
         "en": "a dog park",
         "da": "en hundeskov",
         "de": "Ein Hundepark",
-        "es": "un parque para perros"
+        "es": "un parque para perros",
+        "nl": "een hondenweide"
       },
       "tags": [
         "leisure=dog_park"
@@ -30,7 +31,8 @@
         "en": "A place for dogs, where they can run unleashed",
         "da": "En hundeskov eller hundeg&aring;rd beregnet til hunde, hvor de kan l&oslash;be uden snor",
         "de": "Ein Ort ohne Leinenzwang für Hunde",
-        "es": "Un lugar para perros, donde pueden correr sin correa"
+        "es": "Un lugar para perros, donde pueden correr sin correa",
+        "nl": "Een plaats waar honden vrij mogen rondlopen"
       }
     }
   ],
@@ -38,7 +40,8 @@
     "en": "dog parks",
     "da": "hundeskove",
     "de": "Hundeparks",
-    "es": "parques de perros"
+    "es": "parques de perros",
+    "nl": "hondenweides"
   },
   "title": {
     "render": {
@@ -142,12 +145,14 @@
         "en": "What is the name of this dog park?",
         "da": "Hvad hedder denne hundeskov?",
         "de": "Wie lautet der Name dieses Hundeparks?",
-        "es": "¿Cual es el nombre de este parque para perros?"
+        "es": "¿Cual es el nombre de este parque para perros?",
+        "nl": "Wat is de naam van deze hondenweide?"
       },
       "render": {
         "en": "The name of this dog park is {name}",
         "de": "Denne hundeskov hedder {name}",
-        "es": "El nombre de este parque para perros es {name}"
+        "es": "El nombre de este parque para perros es {name}",
+        "nl": "Deze hondenweide heet {name}"
       },
       "freeform": {
         "key": "name"
