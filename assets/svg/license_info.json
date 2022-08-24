@@ -986,6 +986,16 @@
     "sources": []
   },
   {
+    "path": "plantnet_logo.svg",
+    "license": "Logo (fair usage)",
+    "authors": [
+      "https://plantnet.org"
+    ],
+    "sources": [
+      "https://plantnet.org"
+    ]
+  },
+  {
     "path": "plus.svg",
     "license": "CC0; trivial",
     "authors": [],

@@ -1,5 +1,5 @@
 import {VariableUiElement} from "../Base/VariableUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
+import {Store, UIEventSource} from "../../Logic/UIEventSource";
 import Wikidata, {WikidataResponse} from "../../Logic/Web/Wikidata";
 import {Translation, TypedTranslation} from "../i18n/Translation";
 import {FixedUiElement} from "../Base/FixedUiElement";
@@ -57,7 +57,11 @@ export default class WikidataPreviewBox extends VariableUiElement {
         }
     ]
 
-    constructor(wikidataId: UIEventSource<string>, options?: {noImages?: boolean}) {
+    constructor(wikidataId: Store<string>, options?: {
+        noImages?: boolean, 
+        imageStyle?: string,
+        whileLoading?: BaseUIElement | string, 
+        extraItems?: (BaseUIElement | string)[]}) {
         let inited = false;
         const wikidata = wikidataId
             .stabilized(250)
@@ -71,7 +75,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
 
         super(wikidata.map(maybeWikidata => {
             if (maybeWikidata === null || !inited) {
-                return undefined;
+                return options?.whileLoading;
             }
 
             if (maybeWikidata === undefined) {
@@ -87,7 +91,10 @@ export default class WikidataPreviewBox extends VariableUiElement {
 
     }
 
-    public static WikidataResponsePreview(wikidata: WikidataResponse, options?: {noImages?: boolean}): BaseUIElement {
+    public static WikidataResponsePreview(wikidata: WikidataResponse, options?: {
+        noImages?: boolean, 
+        imageStyle?: string,
+        extraItems?: (BaseUIElement | string)[]}): BaseUIElement {
         let link = new Link(
             new Combine([
                 wikidata.id,
@@ -100,7 +107,8 @@ export default class WikidataPreviewBox extends VariableUiElement {
                 [Translation.fromMap(wikidata.labels)?.SetClass("font-bold"),
                     link]).SetClass("flex justify-between"),
             Translation.fromMap(wikidata.descriptions),
-            WikidataPreviewBox.QuickFacts(wikidata, options)
+            WikidataPreviewBox.QuickFacts(wikidata, options),
+           ...(options.extraItems ?? []) 
         ]).SetClass("flex flex-col link-underline")
 
 
@@ -108,11 +116,9 @@ export default class WikidataPreviewBox extends VariableUiElement {
         if (wikidata.claims.get("P18")?.size > 0) {
             imageUrl = Array.from(wikidata.claims.get("P18"))[0]
         }
-
-
         if (imageUrl && !options?.noImages) {
             imageUrl = WikimediaImageProvider.singleton.PrepUrl(imageUrl).url
-            info = new Combine([new Img(imageUrl).SetStyle("max-width: 5rem; width: unset; height: 4rem").SetClass("rounded-xl mr-2"),
+            info = new Combine([new Img(imageUrl).SetStyle(options?.imageStyle ?? "max-width: 5rem; width: unset; height: 4rem").SetClass("rounded-xl mr-2"),
                 info.SetClass("w-full")]).SetClass("flex")
         }
 

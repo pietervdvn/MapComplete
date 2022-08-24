@@ -105,80 +105,49 @@
       ]
     },
     {
-      "id": "tree-leaf_type",
+      "id": "plantnet",
+      "render": "{plantnet_detection()}",
+      "condition": "species:wikidata="
+    },
+    {
+      "id": "tree-species-wikidata",
       "question": {
-        "nl": "Is dit een naald- of loofboom?",
-        "en": "Is this a broadleaved or needleleaved tree?",
-        "it": "Si tratta di un albero latifoglia o aghifoglia?",
-        "fr": "Cet arbre est-il un feuillu ou un résineux ?",
-        "de": "Ist dies ein Laub- oder Nadelbaum?",
-        "es": "¿Es un árbol de hoja ancha o de hoja aguja?"
+        "en": "What species is this tree?",
+        "de": "Um welche Baumart handelt es sich?",
+        "id": "Spesies pohon apa ini?",
+        "es": "¿De qué especie es este árbol?",
+        "nl": "Wat is de boomsoort?",
+        "fr": "Quelle est l'espèce de cet arbre ?"
       },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "leaf_type=broadleaved"
+      "render": {
+        "*": "{wikipedia(species:wikidata):max-height: 25rem}"
+      },
+      "freeform": {
+        "key": "species:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          "species",
+          {
+            "instanceOf": [
+              10884,
+              16521
             ]
-          },
-          "then": {
-            "nl": "Loofboom",
-            "en": "Broadleaved",
-            "it": "Latifoglia",
-            "fr": "Feuillu",
-            "de": "Laubbaum",
-            "ca": "De fulla ampla",
-            "es": "Latifoliada",
-            "id": "Berdaun lebar"
-          },
-          "icon": {
-            "path": "./assets/layers/tree_node/broadleaved.svg",
-            "class": "small"
           }
-        },
-        {
-          "if": {
-            "and": [
-              "leaf_type=needleleaved"
-            ]
-          },
-          "then": {
-            "nl": "Naaldboom",
-            "en": "Needleleaved",
-            "it": "Aghifoglia",
-            "fr": "Résineux",
-            "de": "Nadelbaum",
-            "ca": "Amb fulles d'agulla",
-            "es": "Hoja aguja",
-            "id": "Berdaun jarum"
-          },
-          "icon": {
-            "path": "./assets/layers/tree_node/needleleaved.svg",
-            "class": "small"
-          }
-        },
-        {
-          "if": {
-            "and": [
-              "leaf_type=leafless"
-            ]
-          },
-          "then": {
-            "nl": "Permanent bladloos",
-            "en": "Permanently leafless",
-            "it": "Privo di foglie (permanente)",
-            "fr": "Sans feuilles (Permanent)",
-            "de": "Dauerhaft blattlos",
-            "es": "Permanentemente sin hojas",
-            "id": "Tanpa daun permanen"
-          },
-          "hideInAnswer": true,
-          "icon": {
-            "path": "./assets/layers/tree_node/leafless.svg",
-            "class": "small"
-          }
-        }
-      ]
+        ]
+      }
+    },
+    {
+      "id": "tree-wikipedia",
+      "#": "If this tree has a wikipedia article, show it. People can _only_ set the species though!",
+      "render": {
+        "*": "{wikipedia()}"
+      },
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      }
     },
     {
       "id": "tree-denotation",
@@ -314,6 +283,88 @@
       ]
     },
     {
+      "id": "tree-leaf_type",
+      "question": {
+        "nl": "Is dit een naald- of loofboom?",
+        "en": "Is this a broadleaved or needleleaved tree?",
+        "it": "Si tratta di un albero latifoglia o aghifoglia?",
+        "fr": "Cet arbre est-il un feuillu ou un résineux ?",
+        "de": "Ist dies ein Laub- oder Nadelbaum?",
+        "es": "¿Es un árbol de hoja ancha o de hoja aguja?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "leaf_type=broadleaved"
+            ]
+          },
+          "then": {
+            "nl": "Loofboom",
+            "en": "Broadleaved",
+            "it": "Latifoglia",
+            "fr": "Feuillu",
+            "de": "Laubbaum",
+            "ca": "De fulla ampla",
+            "es": "Latifoliada",
+            "id": "Berdaun lebar"
+          },
+          "icon": {
+            "path": "./assets/layers/tree_node/broadleaved.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "leaf_type=needleleaved"
+            ]
+          },
+          "then": {
+            "nl": "Naaldboom",
+            "en": "Needleleaved",
+            "it": "Aghifoglia",
+            "fr": "Résineux",
+            "de": "Nadelbaum",
+            "ca": "Amb fulles d'agulla",
+            "es": "Hoja aguja",
+            "id": "Berdaun jarum"
+          },
+          "icon": {
+            "path": "./assets/layers/tree_node/needleleaved.svg",
+            "class": "small"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "leaf_type=leafless"
+            ]
+          },
+          "then": {
+            "nl": "Permanent bladloos",
+            "en": "Permanently leafless",
+            "it": "Privo di foglie (permanente)",
+            "fr": "Sans feuilles (Permanent)",
+            "de": "Dauerhaft blattlos",
+            "es": "Permanentemente sin hojas",
+            "id": "Tanpa daun permanen"
+          },
+          "hideInAnswer": true,
+          "icon": {
+            "path": "./assets/layers/tree_node/leafless.svg",
+            "class": "small"
+          }
+        }
+      ],
+      "condition": {
+        "#": "If the wikidata entry is known, no need to ask for redundant data such as leaf type",
+        "and": [
+          "species:wikidata="
+        ]
+      }
+    },
+    {
       "id": "tree-decidouous",
       "question": {
         "nl": "Is deze boom groenblijvend of bladverliezend?",
@@ -360,48 +411,10 @@
         }
       ],
       "condition": {
+        "#": "If the wikidata entry is known, no need to ask for redundant data such as leaf type",
         "and": [
-          "leaf_type!~^leafless$"
-        ]
-      }
-    },
-    {
-      "id": "tree-species-wikidata",
-      "question": {
-        "en": "What species is this tree?",
-        "de": "Um welche Baumart handelt es sich?",
-        "id": "Spesies pohon apa ini?",
-        "es": "¿De qué especie es este árbol?",
-        "nl": "Wat is de boomsoort?",
-        "fr": "Quelle est l'espèce de cet arbre ?"
-      },
-      "render": {
-        "*": "{wikipedia(species:wikidata):max-height: 25rem}"
-      },
-      "freeform": {
-        "key": "species:wikidata",
-        "type": "wikidata",
-        "helperArgs": [
-          "species",
-          {
-            "instanceOf": [
-              10884,
-              16521
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "tree-wikipedia",
-      "#": "If this tree has a wikipedia article, show it. People can _only_ set the species though!",
-      "render": {
-        "*": "{wikipedia()}"
-      },
-      "condition": {
-        "or": [
-          "wikipedia~*",
-          "wikidata~*"
+          "leaf_type!~^leafless$",
+          "species:wikidata="
         ]
       }
     },

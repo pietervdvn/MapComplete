@@ -3,12 +3,11 @@ import BaseUIElement from "../BaseUIElement";
 
 export class Button extends BaseUIElement {
     private _text: BaseUIElement;
-    private _onclick: () => void;
 
-    constructor(text: string | BaseUIElement, onclick: (() => void)) {
+    constructor(text: string | BaseUIElement, onclick: (() => void | Promise<void>)) {
         super();
         this._text = Translations.W(text);
-        this._onclick = onclick;
+        this.onClick(onclick)
     }
 
     protected InnerConstructElement(): HTMLElement {
@@ -20,7 +19,6 @@ export class Button extends BaseUIElement {
         const button = document.createElement("button")
         button.type = "button"
         button.appendChild(el)
-        button.onclick = this._onclick
         form.appendChild(button)
         return form;
     }

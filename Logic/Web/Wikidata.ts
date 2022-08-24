@@ -355,6 +355,25 @@ export default class Wikidata {
     }
 
     /**
+     * Build a SPARQL-query, return the result
+     * 
+     * @param keys: how variables are named. Every key not ending with 'Label' should appear in at least one statement
+     * @param statements
+     * @constructor
+     */
+    public static async Sparql<T>(keys: string[], statements: string[]):Promise< (T & Record<string, {type: string, value: string}>) []> {
+        const query = "SELECT "+keys.map(k => k.startsWith("?") ? k : "?"+k).join(" ")+"\n" +
+            "WHERE\n" +
+            "{\n" +
+            statements.map(stmt => stmt.endsWith(".") ? stmt : stmt+".").join("\n") +
+            "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE]\". }\n" +
+            "}"
+        const url = wds.sparqlQuery(query)
+        const result = await Utils.downloadJsonCached(url, 24 * 60 * 60 * 1000)
+        return result.results.bindings
+    }
+
+    /**
      * Loads a wikidata page
      * @returns the entity of the given value
      */
