@@ -12,9 +12,7 @@
         "explanations": {
             "hardDelete": "Dette punkt vil blive slettet på OpenStreetMap. Det kan gendannes af en øvet bidragsyder",
             "selectReason": "Angiv venligst hvorfor dette element burde slettes",
-            "softDelete": "Dette element vil blive opdateret og skjult for dette program <span class=\"subtle\">{reason}</span>",
-            "retagNoOtherThemes": "",
-            "retagOtherThemes": ""
+            "softDelete": "Dette element vil blive opdateret og skjult for dette program <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Dette element er slettet",
         "isntAPoint": "Kun punkter skal slettes, det valgte element er en vej, et areal eller en relation.",
@@ -56,8 +54,7 @@
                 "importTags": "Dette element vil modtage {tags}",
                 "officialThemesOnly": "Importknappen er slået fra for uofficielle temaer for at undgå uheld",
                 "wrongType": "Dette element er ikke et punkt eller en vej og kan ikke importeres",
-                "zoomInMore": "Zoom mere ind for at importere dette element",
-                "wrongTypeToConflate": ""
+                "zoomInMore": "Zoom mere ind for at importere dette element"
             },
             "importTags": "Dette element modtager {tags}",
             "intro": "Du klikkede et sted, hvor der endnu ikke er kendt data.<br>",
@@ -94,11 +91,7 @@
             "openMapillary": "Åbn Mapillary her",
             "openOsmcha": "De de seneste rettelser lavet med {theme}",
             "themeBy": "Tema vedligeholdt af {author}",
-            "translatedBy": "MapComplete er oversat af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>",
-            "followOnMastodon": "",
-            "mapillaryHelp": "",
-            "followBridge": "",
-            "followOnTwitter": ""
+            "translatedBy": "MapComplete er oversat af {contributors} og <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} flere bidragsydere</a>"
         },
         "back": "Tilbage",
         "backToMapcomplete": "Tilbage til temaoversigten",
@@ -140,6 +133,7 @@
             "title": "Vælg lag",
             "zoomInToSeeThisLayer": "Zoom ind for at se dette lag"
         },
+        "levelSelection": {},
         "loading": "Indlæser...",
         "loadingTheme": "Indlæser {theme}...",
         "loginFailed": "Det mislykkedes at logge ind på OpenStreetMap",
@@ -153,10 +147,7 @@
             "intro": "<h3>Flere tematiske kort?</h3>Nød du at indsamle geodata? <br>Der er flere temaer til rådighed.",
             "previouslyHiddenTitle": "Tidligere besøgte skjulte temaer",
             "requestATheme": "Hvis de efterspørger et specialfremstillet tema, så bed om det i issue tracker-en",
-            "streetcomplete": "En anden lignende applikation er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "noMatchingThemes": "",
-            "noSearch": "",
-            "searchForATheme": ""
+            "streetcomplete": "En anden lignende applikation er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "{category} hedder $$$",
         "next": "Næste",
@@ -253,6 +244,7 @@
             "wednesday": "Onsdag"
         },
         "welcomeBack": "Du er logget ind, velkommen tilbage!",
+        "welcomeExplanation": {},
         "wikipedia": {
             "createNewWikidata": "Opret et nyt Wikidata element",
             "doSearch": "Søg ovenfor for at se resultater",
@@ -265,23 +257,8 @@
                 "died": "Død: {value}"
             },
             "searchWikidata": "Søg på Wikidata",
-            "wikipediaboxTitle": "Wikipedia",
-            "fromWikipedia": "",
-            "searchToShort": ""
-        },
-        "levelSelection": {
-            "addNewOnLevel": "",
-            "confirmLevel": ""
-        },
-        "noMatchingMapping": "",
-        "useSearch": "",
-        "welcomeExplanation": {
-            "addNew": "",
-            "browseMoreMaps": "",
-            "general": "",
-            "browseOtherThemesIntro": ""
-        },
-        "useSearchForMore": ""
+            "wikipediaboxTitle": "Wikipedia"
+        }
     },
     "image": {
         "addPicture": "Tilføj Billede",
@@ -294,6 +271,7 @@
         "doDelete": "Fjern billede",
         "dontDelete": "Afbryd",
         "isDeleted": "Slettet",
+        "nearbyPictures": {},
         "pleaseLogin": "Log venligst ind for at tilføje et billede",
         "respectPrivacy": "Tag ikke billeder af mennesker eller nummerplader. Upload ikke Google Maps, Google Streetview, eller fra andre ophavsresbeskyttede kilder.",
         "toBig": "Dit billede er for stort da det er {actual_size}. Brug venligst billeder, der er højst {max_size}",
@@ -302,21 +280,7 @@
         "uploadMultipleDone": "{count} billeder tilføjet. Tak for at hjælpe til!",
         "uploadingMultiple": "Uploader {count} billeder…",
         "uploadingPicture": "Uploading dit billede…",
-        "willBePublished": "Dit billede vil blive offentliggjort ",
-        "nearbyPictures": {
-            "hasMatchingPicture": "",
-            "title": "",
-            "nothingFound": "",
-            "removeFilters": "",
-            "noImageSelected": "",
-            "onlyTowards": "",
-            "confirm": "",
-            "loading": "",
-            "loadMore": "",
-            "withinRadius": "",
-            "browseNearby": "",
-            "allFiltered": ""
-        }
+        "willBePublished": "Dit billede vil blive offentliggjort "
     },
     "importHelper": {
         "askMetadata": {
@@ -371,9 +335,7 @@
             "title": "Sammenlign med eksisterende data",
             "titleLive": "Live data på OSM",
             "titleNearby": "Elementer i nærheden",
-            "zoomIn": "Det aktuelle zoomniveau er {current}",
-            "showOsmLayerInConflationMap": "",
-            "zoomLevelSelection": ""
+            "zoomIn": "Det aktuelle zoomniveau er {current}"
         },
         "createNotes": {
             "creating": "Oprettede <b>{count}</b> noter ud af {total}",
@@ -400,8 +362,7 @@
             "confirm": "Elementerne er det rigtige sted på kortet",
             "mismatch": "{count} elementer matchede ikke det valgte lag. Sørg for at mærkerne, der indikerer typen er der, nemlig {tags}",
             "selectLayer": "Hvilket lag passer denne importering med?",
-            "title": "Forhåndsvisning af kort",
-            "autodetected": ""
+            "title": "Forhåndsvisning af kort"
         },
         "noteParts": {
             "datasource": "Originalt data fra {source}",
@@ -453,8 +414,7 @@
         "importHandled": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
         "layerName": "Mulig {title}",
         "notFound": "Jeg kunne ikke finde {title} - fjern det",
-        "popupTitle": "Mulig {title}",
-        "nearbyImagesIntro": ""
+        "popupTitle": "Mulig {title}"
     },
     "index": {
         "#": "Disse tekster vises over tema-knapperne, når der ikke er indlæst noget tema",
@@ -463,6 +423,30 @@
         "logIn": "Log ind for at se andre temaer, du tidligere har besøgt",
         "pickTheme": "Vælg et tema nedenfor for at komme i gang.",
         "title": "Velkommen til MapComplete"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
     },
     "move": {
         "cancel": "Afbryd flytning",
@@ -680,6 +664,7 @@
         "direction": {
             "description": "En retning"
         },
+        "distance": {},
         "email": {
             "description": "email-adresse",
             "feedback": "Dette er ikke en gyldig emailadresse",
@@ -725,175 +710,6 @@
         },
         "wikidata": {
             "description": "En Wikidata identifier"
-        },
-        "distance": {
-            "description": ""
         }
-    },
-    "matrixbot": {
-        "commands": {
-            "dm": {
-                "argto": "",
-                "failed": "",
-                "argbody": "",
-                "sendReason": "",
-                "noDm": "",
-                "executing": "",
-                "selectValidCommand": "",
-                "commandNotFound": "",
-                "receipt": "",
-                "docs": "",
-                "selectValidUser": ""
-            },
-            "documentation": {
-                "notFound": "",
-                "overview": "",
-                "visualisation": {
-                    "plural": "",
-                    "singular": ""
-                },
-                "layer": {
-                    "plural": "",
-                    "singular": ""
-                },
-                "theme": {
-                    "singular": "",
-                    "plural": ""
-                },
-                "url_parameter": {
-                    "plural": "",
-                    "singular": ""
-                },
-                "argid": "",
-                "noIdIntro": "",
-                "urlParam": "",
-                "inputElement": {
-                    "plural": "",
-                    "singular": ""
-                },
-                "docs": "",
-                "didYouMean": "",
-                "file": {
-                    "plural": "",
-                    "singular": ""
-                }
-            },
-            "help": {
-                "p0": "",
-                "supported": "",
-                "askRights": "",
-                "notFound": "",
-                "p1": "",
-                "argcmd": "",
-                "docs": "",
-                "insufficientRights": "",
-                "priviligedComand": ""
-            },
-            "language": {
-                "arglang": "",
-                "currentLanguage": "",
-                "hasBeenSet": "",
-                "knownLanguages": "",
-                "helpTranslating": "",
-                "docs": "",
-                "notFound": ""
-            },
-            "role": {
-                "verbadd": "",
-                "verbdefault": "",
-                "verbremove": "",
-                "docs": "",
-                "noRolesYet": "",
-                "arguser": "",
-                "argverb": "",
-                "noRightsNeeded": "",
-                "allRolesIntro": "",
-                "argrole": "",
-                "allRevoked": "",
-                "verbrevoke": "",
-                "verblist": "",
-                "noPreviousRoles": "",
-                "noSuchRole": "",
-                "userHasRoles": ""
-            },
-            "tags": {
-                "nothingFound": "",
-                "announceSearch": "",
-                "argsearch": "",
-                "docs": "",
-                "noSearchGiven": ""
-            },
-            "welcome": {
-                "p3": "",
-                "p2": "",
-                "docs": "",
-                "p0": "",
-                "p1": ""
-            },
-            "wiki": {
-                "docs": "",
-                "noWiki": "",
-                "nothingFound": "",
-                "searching": "",
-                "loadingFailed": "",
-                "gotResults": "",
-                "argsearch": "",
-                "foundMatching": ""
-            },
-            "info": {
-                "nothingFound": "",
-                "provideSearch": "",
-                "foundResults": "",
-                "fetchingInfoAbout": "",
-                "noOpeningHours": "",
-                "closedTodayAndTomorrow": "",
-                "noEditPossible": "",
-                "searchingWorldwide": "",
-                "argsearch": "",
-                "couldNotDownload": "",
-                "closed": "",
-                "docs": "",
-                "editWith": "",
-                "noInfo": ""
-            },
-            "scheme": {
-                "noMatchingLayer": "",
-                "notype": "",
-                "argkey": "",
-                "title": "",
-                "docs": ""
-            },
-            "search": {
-                "announceLimited": "",
-                "noNearOrIn": "",
-                "searching": "",
-                "argsearch": "",
-                "arglayerid": "",
-                "argverb": "",
-                "docs": "",
-                "noMatchingLayer": "",
-                "nothingFound": "",
-                "overview": ""
-            },
-            "dream": {
-                "docs": "",
-                "generatedBy": ""
-            },
-            "shutdown": {
-                "argmode": "",
-                "docs": "",
-                "goodbye": "",
-                "notYetShuttingDown": "",
-                "verbshutdown": "",
-                "verbupdate": ""
-            }
-        },
-        "tooLongForPublic": "",
-        "subcommandNotGiven": "",
-        "subcommanNotFound": "",
-        "commandFailed": "",
-        "commandNotFound": "",
-        "decryptionFailed": "",
-        "noSufficientRights": ""
     }
 }

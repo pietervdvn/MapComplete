@@ -148,62 +148,71 @@
         {
           "question": {
             "en": "Show tasks with all statuses",
-            "de": "Aufgaben mit allen Status anzeigen"
+            "de": "Aufgaben mit allen Status anzeigen",
+            "nl": "Toon alle taken, ongeacht de status"
           }
         },
         {
           "question": {
             "en": "Show tasks that are created",
-            "de": "Aufgaben anzeigen, die erstellt wurden"
+            "de": "Aufgaben anzeigen, die erstellt wurden",
+            "nl": "Toon taken die zijn gecreëerd"
           },
           "osmTags": "mr_taskStatus=Created"
         },
         {
           "question": {
             "en": "Show tasks that are fixed",
-            "de": "Aufgaben anzeigen, die erledigt wurden"
+            "de": "Aufgaben anzeigen, die erledigt wurden",
+            "nl": "Toon taken die zijn opgelost"
           },
           "osmTags": "mr_taskStatus=Fixed"
         },
         {
           "question": {
             "en": "Show tasks that are false positives",
-            "de": "Aufgaben anzeigen, die falsch positiv sind"
+            "de": "Aufgaben anzeigen, die falsch positiv sind",
+            "nl": "Toon taken die vals positief waren"
           },
           "osmTags": "mr_taskStatus=False positive"
         },
         {
           "question": {
             "en": "Show tasks that are skipped",
-            "de": "Aufgaben anzeigen, die übersprungen wurden"
+            "de": "Aufgaben anzeigen, die übersprungen wurden",
+            "nl": "Toon taken die zijn overgeslagen"
           },
           "osmTags": "mr_taskStatus=Skipped"
         },
         {
           "question": {
             "en": "Show tasks that are deleted",
-            "de": "Aufgaben anzeigen, die gelöscht wurden"
+            "de": "Aufgaben anzeigen, die gelöscht wurden",
+            "nl": "Toon taken die zijn verwijderd"
           },
           "osmTags": "mr_taskStatus=Deleted"
         },
         {
           "question": {
             "en": "Show tasks that are already fixed",
-            "de": "Aufgaben anzeigen, die bereits erledigt wurden"
+            "de": "Aufgaben anzeigen, die bereits erledigt wurden",
+            "nl": "Toon taken die reeds opgelost waren"
           },
           "osmTags": "mr_taskStatus=Already fixed"
         },
         {
           "question": {
             "en": "Show tasks that are marked as too hard",
-            "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden"
+            "de": "Aufgaben anzeigen, die als zu schwierig markiert wurden",
+            "nl": "Toon taken die als te moeilijk waren ervaren"
           },
           "osmTags": "mr_taskStatus=Too hard"
         },
         {
           "question": {
             "en": "Show tasks that are disabled",
-            "de": "Aufgaben anzeigen, die deaktiviert wurden"
+            "de": "Aufgaben anzeigen, die deaktiviert wurden",
+            "nl": "Toon taken die zijn uitgeschakeld"
           },
           "osmTags": "mr_taskStatus=Disabled"
         }

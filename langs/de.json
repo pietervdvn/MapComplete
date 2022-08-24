@@ -140,6 +140,7 @@
             "title": "Ebenen auswählen",
             "zoomInToSeeThisLayer": "Ausschnitt vergrößern, um Ebene anzuzeigen"
         },
+        "levelSelection": {},
         "loading": "Laden…",
         "loadingTheme": "Lade {theme}…",
         "loginFailed": "Anmeldung bei OpenStreetMap fehlgeschlagen",
@@ -274,14 +275,7 @@
             "searchToShort": "Ihre Suchanfrage ist zu kurz, geben Sie einen längeren Text ein",
             "searchWikidata": "Wikidata durchsuchen",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "levelSelection": {
-            "addNewOnLevel": "",
-            "confirmLevel": ""
-        },
-        "noMatchingMapping": "",
-        "useSearch": "",
-        "useSearchForMore": ""
+        }
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -371,9 +365,7 @@
             "title": "Mit vorhandenen Daten vergleichen",
             "titleLive": "Live-Daten auf OSM",
             "titleNearby": "Objekte in der Nähe",
-            "zoomIn": "Die aktuelle Zoomstufe ist {current}",
-            "showOsmLayerInConflationMap": "",
-            "zoomLevelSelection": ""
+            "zoomIn": "Die aktuelle Zoomstufe ist {current}"
         },
         "createNotes": {
             "creating": "<b>{count}</b> Notizen von {total} erstellt",
