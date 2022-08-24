@@ -140,7 +140,7 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
             "project_url": "https://mapcomplete.osm.be/" + layout.id,   // home page of the project with general information (required)
             "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",       // documentation of the project and especially the tags used (optional)
             "icon_url": "https://mapcomplete.osm.be/" + icon,      // project logo, should work in 16x16 pixels on white and light gray backgrounds (optional)
-            "contact_name": "Pieter Vander Vennet, " + layout.maintainer,  // contact name, needed for taginfo maintainer (required)
+            "contact_name": "Pieter Vander Vennet",  // contact name, needed for taginfo maintainer (required)
             "contact_email": "pietervdvn@posteo.net"  // contact email, needed for taginfo maintainer (required)
         },
         tags: usedTags
