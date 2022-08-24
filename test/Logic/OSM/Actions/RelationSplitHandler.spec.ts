@@ -604,7 +604,7 @@ describe("RelationSplitHandler", () => {
         "should split turn restrictions (split of https://www.openstreetmap.org/way/143298912)",
         async () => {
 
-            const relation: OsmRelation = await OsmObject.DownloadObjectAsync("relation/4374576")
+            const relation: OsmRelation = <OsmRelation>await OsmObject.DownloadObjectAsync("relation/4374576")
             const originalNodeIds =
                 [
                     1407529979,
