@@ -49,7 +49,7 @@ export class Imgur extends ImageProvider {
                        onFail: (reason: string) => void) {
 
         const apiUrl = 'https://api.imgur.com/3/image';
-        const apiKey = '7070e7167f0a25a';
+        const apiKey = Constants.ImgurApiKey;
 
         const settings = {
             async: true,
