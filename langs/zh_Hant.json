@@ -194,8 +194,7 @@
             "tuesday": "星期二",
             "wednesday": "星期三"
         },
-        "welcomeBack": "你已經登入了，歡迎回來！",
-        "error": ""
+        "welcomeBack": "你已經登入了，歡迎回來！"
     },
     "image": {
         "addPicture": "新增圖片",
@@ -247,14 +246,8 @@
         "splitTitle": "請在地圖選擇要在那裡分割道路"
     },
     "importHelper": {
-        "introduction": {
-            "importFormat": ""
-        },
         "askMetadata": {
             "downloadGeojson": ""
-        },
-        "selectTheme": {
-            "title": ""
         }
     },
     "matrixbot": {
@@ -262,35 +255,17 @@
             "info": {
                 "closedTodayAndTomorrow": ""
             },
-            "role": {
-                "verblist": ""
-            },
             "dm": {
                 "selectValidUser": ""
             }
         }
     },
-    "notes": {
-        "noteIsPublic": ""
-    },
     "privacy": {
         "geodataTitle": ""
     },
     "professional": {
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {
-                    "title": ""
-                }
-            }
-        },
         "services": {
             "li0": ""
-        }
-    },
-    "validation": {
-        "nat": {
-            "notANumber": ""
         }
     },
     "importLayer": {

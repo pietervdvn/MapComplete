@@ -279,9 +279,6 @@
             "errDuplicate": "Certaines colonnes portent le même nom",
             "errNoName": "Certains colonnes n'ont pas de nom"
         },
-        "conflationChecker": {
-            "title": ""
-        },
         "compareToAlreadyExistingNotes": {
             "title": ""
         }
@@ -327,13 +324,6 @@
             "hook": "Besoin d’un accompagnement professionnel ?",
             "hookMore": "Nous pouvons aider à la mise en place de relevés, l’importation de données et toute question relative à l’environnement OpenStreetMap"
         },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "title": ""
-                }
-            }
-        },
         "title": ""
     },
     "reviews": {
@@ -366,20 +356,11 @@
     },
     "matrixbot": {
         "commands": {
-            "info": {
-                "noInfo": ""
-            },
             "role": {
                 "userHasRoles": ""
-            },
-            "dm": {
-                "selectValidCommand": ""
             }
         },
         "commandNotFound": ""
-    },
-    "privacy": {
-        "miscCookiesTitle": ""
     },
     "validation": {
         "text": {

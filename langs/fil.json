@@ -59,22 +59,13 @@
             "intro": "Nag-klik ka kung saan wala pang nababatid na datos.<br>",
             "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók"
         },
-        "welcomeExplanation": {
-            "addNew": ""
-        },
         "download": {
             "downloadFeatureAsGpx": ""
-        },
-        "opening_hours": {
-            "open_during_ph": ""
         },
         "weekdays": {
             "abbreviations": {
                 "monday": ""
             }
-        },
-        "pdf": {
-            "generatedWith": ""
         }
     },
     "image": {
@@ -83,14 +74,8 @@
         }
     },
     "importHelper": {
-        "askMetadata": {
-            "downloadGeojson": ""
-        },
         "selectFile": {
             "errNoName": ""
-        },
-        "login": {
-            "loggedInWith": ""
         }
     },
     "importLayer": {
@@ -98,14 +83,8 @@
     },
     "matrixbot": {
         "commands": {
-            "scheme": {
-                "notype": ""
-            },
             "wiki": {
                 "docs": ""
-            },
-            "help": {
-                "p0": ""
             }
         }
     },
@@ -114,23 +93,14 @@
             "reasonRelocation": ""
         }
     },
-    "notes": {
-        "notesLayerMustBeEnabled": ""
-    },
     "professional": {
         "aboutOsm": {
             "aboutOsm": {
                 "li1": ""
             }
-        },
-        "drawbacks": {
-            "title": ""
         }
     },
     "translations": {
         "missing": ""
-    },
-    "split": {
-        "cancel": ""
     }
 }

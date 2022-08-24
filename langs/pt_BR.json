@@ -124,9 +124,6 @@
             "wednesday": "Quanta"
         },
         "welcomeBack": "Você está logado, seja bem-vindo de volta!",
-        "wikipedia": {
-            "noWikipediaPage": ""
-        },
         "download": {
             "includeMetaData": ""
         }
@@ -170,14 +167,8 @@
         "write_a_comment": "Deixe um comentário…"
     },
     "importHelper": {
-        "conflationChecker": {
-            "loadedDataAge": ""
-        },
         "selectFile": {
             "fileFormatDescriptionCsv": ""
-        },
-        "noteParts": {
-            "importEasily": ""
         }
     },
     "matrixbot": {
@@ -185,14 +176,8 @@
             "info": {
                 "noInfo": ""
             },
-            "shutdown": {
-                "notYetShuttingDown": ""
-            },
             "language": {
                 "currentLanguage": ""
-            },
-            "dream": {
-                "generatedBy": ""
             }
         }
     },
@@ -200,18 +185,10 @@
         "isCreated": ""
     },
     "professional": {
-        "drawbacks": {
-            "intro": ""
-        },
         "aboutOsm": {
             "vandalism": {
                 "li0": ""
             }
-        }
-    },
-    "validation": {
-        "float": {
-            "feedback": ""
         }
     },
     "move": {

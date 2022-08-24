@@ -321,9 +321,6 @@
             "title": "Seleccionar arxiu"
         },
         "title": "Assistent d'importació",
-        "compareToAlreadyExistingNotes": {
-            "wontBeImported": ""
-        },
         "createNotes": {
             "done": ""
         }
@@ -612,14 +609,8 @@
     },
     "matrixbot": {
         "commands": {
-            "info": {
-                "foundResults": ""
-            },
             "shutdown": {
                 "verbshutdown": ""
-            },
-            "language": {
-                "arglang": ""
             }
         }
     }

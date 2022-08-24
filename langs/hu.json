@@ -281,9 +281,6 @@
         "previewAttributes": {
             "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel"
         },
-        "selectTheme": {
-            "noMatchingPresets": ""
-        },
         "conflationChecker": {
             "setRangeToZero": ""
         }
@@ -359,10 +356,7 @@
         "osmTitle": "Mire lehet jó az OpenStreetMap és a MapComplete a szervezeted számára?",
         "text0": "<p>A naprakész földrajzi adatok karbantartása nehéz, hibaveszélyes és költséges.<br>A nehézségeket tetézi, hogy sok szervezet egymástól függetlenül gyűjti ugyanazokat az adatokat, ami párhuzamos erőfeszítéseket, nem szabványosított adatformátumokat és sok hiányos, karbantartatlan adathalmazt eredményez.</p><p>Létezik viszont egy hatalmas közösség, amely rengeteg földrajzi adatot gyűjt egy közös, globális és szabványosított adatbázisba: ez az OpenStreetMap.org.</p>",
         "text1": "<p>A MapComplete olyan térképszerkesztő alkalmazás, amely megkönnyíti az OpenStreetMap adatokkal való feltöltését.</p>",
-        "title": "Szakmai támogatás a MapComplete segítségével",
-        "services": {
-            "intro": ""
-        }
+        "title": "Szakmai támogatás a MapComplete segítségével"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Kapcsolódó személy véleménye)",
@@ -390,20 +384,11 @@
     },
     "matrixbot": {
         "commands": {
-            "tags": {
-                "noSearchGiven": ""
-            },
             "documentation": {
                 "didYouMean": ""
-            },
-            "role": {
-                "allRolesIntro": ""
             }
         },
         "tooLongForPublic": ""
-    },
-    "translations": {
-        "deactivate": ""
     },
     "validation": {
         "date": {

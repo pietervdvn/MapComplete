@@ -133,9 +133,6 @@
             "wednesday": "水曜日"
         },
         "welcomeBack": "ログインしました、お帰りなさい!",
-        "download": {
-            "downloadGeoJsonHelper": ""
-        },
         "notValid": ""
     },
     "image": {
@@ -177,13 +174,9 @@
         "write_a_comment": "レビューを残す…"
     },
     "importHelper": {
-        "conflationChecker": {
-            "osmLoaded": ""
-        },
         "selectFile": {
             "noFilesLoaded": ""
-        },
-        "testMode": ""
+        }
     },
     "matrixbot": {
         "commands": {
@@ -192,14 +185,8 @@
                     "singular": ""
                 }
             },
-            "info": {
-                "noEditPossible": ""
-            },
             "search": {
                 "argsearch": ""
-            },
-            "shutdown": {
-                "goodbye": ""
             }
         }
     },
@@ -207,22 +194,13 @@
         "addComment": ""
     },
     "professional": {
-        "aboutMc": {
-            "internalUse": {
-                "title": ""
-            }
-        },
         "drawbacks": {
             "intro": ""
-        },
-        "text0": ""
+        }
     },
     "delete": {
         "reasons": {
             "notFound": ""
         }
-    },
-    "split": {
-        "splitTitle": ""
     }
 }

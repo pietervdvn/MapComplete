@@ -132,7 +132,6 @@
             "wednesday": "Mércores"
         },
         "welcomeBack": "Iniciaches a sesión, benvido.",
-        "loadingTheme": "",
         "removeLocationHistory": ""
     },
     "image": {
@@ -171,14 +170,8 @@
         "write_a_comment": "Deixa unha recensión…"
     },
     "importHelper": {
-        "conflationChecker": {
-            "showOsmLayerInConflationMap": ""
-        },
         "compareToAlreadyExistingNotes": {
             "titleLong": ""
-        },
-        "createNotes": {
-            "loading": ""
         }
     },
     "matrixbot": {
@@ -186,22 +179,15 @@
             "documentation": {
                 "urlParam": ""
             },
-            "language": {
-                "arglang": ""
-            },
             "shutdown": {
                 "verbshutdown": ""
             }
-        },
-        "subcommandNotGiven": ""
+        }
     },
     "notes": {
         "loginToAddPicture": ""
     },
     "professional": {
-        "aboutMc": {
-            "title": ""
-        },
         "drawbacks": {
             "licenseNuances": {
                 "usecaseMapDifferentSources": {
@@ -210,15 +196,7 @@
             }
         }
     },
-    "validation": {
-        "phone": {
-            "description": ""
-        }
-    },
     "delete": {
         "cannotBeDeleted": ""
-    },
-    "translations": {
-        "isTranslator": ""
     }
 }

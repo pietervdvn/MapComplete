@@ -530,14 +530,8 @@
     },
     "matrixbot": {
         "commands": {
-            "documentation": {
-                "didYouMean": ""
-            },
             "language": {
                 "arglang": ""
-            },
-            "tags": {
-                "noSearchGiven": ""
             }
         }
     },

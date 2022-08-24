@@ -25,51 +25,29 @@
             "disableFilters": "禁用所有过滤器",
             "hasBeenImported": "这个点已经被导入过了"
         },
-        "download": {
-            "title": ""
-        },
         "weekdays": {
             "abbreviations": {
                 "tuesday": ""
             }
         },
-        "confirm": "",
         "sharescreen": {
             "fsUserbadge": ""
         },
-        "customThemeIntro": "",
         "examples": ""
-    },
-    "image": {
-        "ccbs": ""
     },
     "importHelper": {
         "confirmProcess": {
             "wikipageIsMade": ""
         },
-        "mapPreview": {
-            "selectLayer": ""
-        },
         "testMode": ""
     },
     "matrixbot": {
         "commands": {
-            "documentation": {
-                "visualisation": {
-                    "plural": ""
-                }
-            },
             "language": {
                 "arglang": ""
-            },
-            "search": {
-                "announceLimited": ""
             }
         },
         "commandNotFound": ""
-    },
-    "notes": {
-        "addComment": ""
     },
     "professional": {
         "aboutMc": {
@@ -77,17 +55,7 @@
                 "intro": ""
             }
         },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "li1": ""
-                }
-            }
-        },
         "text0": ""
-    },
-    "translations": {
-        "completeness": ""
     },
     "validation": {
         "date": {

@@ -1,33 +1,16 @@
 {
     "general": {
-        "morescreen": {
-            "noSearch": ""
-        },
         "questions": {
             "websiteIs": ""
-        },
-        "weekdays": {
-            "abbreviations": {
-                "saturday": ""
-            }
         },
         "add": {
             "disableFiltersExplanation": ""
         },
-        "attribution": {
-            "editId": ""
-        },
         "confirm": ""
-    },
-    "image": {
-        "uploadingMultiple": ""
     },
     "importHelper": {
         "conflationChecker": {
             "importCandidatesCount": ""
-        },
-        "mapPreview": {
-            "autodetected": ""
         },
         "compareToAlreadyExistingNotes": {
             "loading": ""
@@ -35,20 +18,11 @@
     },
     "matrixbot": {
         "commands": {
-            "help": {
-                "supported": ""
-            },
             "role": {
-                "docs": ""
-            },
-            "dm": {
                 "docs": ""
             }
         },
         "commandFailed": ""
-    },
-    "notes": {
-        "anonymous": ""
     },
     "professional": {
         "aboutOsm": {
@@ -56,24 +30,13 @@
                 "li2": ""
             }
         },
-        "drawbacks": {
-            "licenseNuances": {
-                "li2": ""
-            }
-        },
         "indexPage": {
             "hookMore": ""
         }
-    },
-    "centerMessage": {
-        "retrying": ""
     },
     "validation": {
         "wikidata": {
             "description": ""
         }
-    },
-    "reviews": {
-        "posting_as": ""
     }
 }

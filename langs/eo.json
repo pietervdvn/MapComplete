@@ -82,7 +82,6 @@
             "searchWikidata": "Serĉi Vikidatumojn",
             "wikipediaboxTitle": "Vikipedio"
         },
-        "poweredByOsm": "",
         "testing": ""
     },
     "image": {
@@ -105,29 +104,15 @@
         "title_singular": "Unu recenzo"
     },
     "importHelper": {
-        "selectFile": {
-            "errPointsOnly": ""
-        },
-        "testMode": "",
-        "login": {
-            "lockNotice": ""
-        }
+        "testMode": ""
     },
     "matrixbot": {
         "commands": {
             "shutdown": {
                 "verbshutdown": ""
             },
-            "documentation": {
-                "file": {
-                    "singular": ""
-                }
-            },
             "scheme": {
                 "argkey": ""
-            },
-            "dream": {
-                "docs": ""
             }
         }
     },
@@ -135,19 +120,11 @@
         "reopenNote": ""
     },
     "professional": {
-        "aboutOsm": {
-            "aboutOsm": {
-                "title": ""
-            }
-        },
         "drawbacks": {
             "licenseNuances": {
                 "li1": ""
             }
         }
-    },
-    "privacy": {
-        "intro": ""
     },
     "importInspector": {
         "title": ""

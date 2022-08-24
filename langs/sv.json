@@ -40,15 +40,10 @@
             "tuesday": "Tisdag",
             "wednesday": "Onsdag"
         },
-        "oneSkippedQuestion": "",
         "testing": "",
-        "add": {
-            "confirmButton": ""
-        },
         "attribution": {
             "editId": ""
-        },
-        "example": ""
+        }
     },
     "image": {
         "addPicture": "Lägg till bild",
@@ -80,14 +75,8 @@
         "split": "Dela"
     },
     "importHelper": {
-        "conflationChecker": {
-            "titleLive": ""
-        },
         "selectTheme": {
             "intro": ""
-        },
-        "askMetadata": {
-            "giveDescription": ""
         }
     },
     "matrixbot": {
@@ -97,13 +86,7 @@
                     "singular": ""
                 }
             },
-            "info": {
-                "fetchingInfoAbout": ""
-            },
             "scheme": {
-                "docs": ""
-            },
-            "search": {
                 "docs": ""
             }
         }
@@ -112,19 +95,11 @@
         "isClosed": ""
     },
     "professional": {
-        "aboutOsm": {
-            "license": {
-                "outro": ""
-            }
-        },
         "drawbacks": {
             "unsuitedData": {
                 "li0": ""
             }
         }
-    },
-    "reviews": {
-        "attribution": ""
     },
     "validation": {
         "opening_hours": {

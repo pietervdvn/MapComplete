@@ -121,9 +121,6 @@
             "wednesday": "Środa"
         },
         "welcomeBack": "Jesteś zalogowany, witaj z powrotem!",
-        "wikipedia": {
-            "wikipediaboxTitle": ""
-        },
         "morescreen": {
             "noSearch": ""
         }
@@ -176,14 +173,8 @@
         "splitTitle": "Wybierz na mapie gdzie podzielić tę drogę"
     },
     "importHelper": {
-        "conflationChecker": {
-            "titleNearby": ""
-        },
         "selectFile": {
             "errDuplicate": ""
-        },
-        "noteParts": {
-            "wikilink": ""
         }
     },
     "matrixbot": {
@@ -191,34 +182,16 @@
             "info": {
                 "nothingFound": ""
             },
-            "role": {
-                "verbrevoke": ""
-            },
             "wiki": {
                 "foundMatching": ""
             }
-        }
-    },
-    "move": {
-        "reasons": {
-            "reasonRelocation": ""
         }
     },
     "notes": {
         "reopenNoteAndComment": ""
     },
     "professional": {
-        "aboutOsm": {
-            "license": {
-                "title": ""
-            }
-        },
         "title": ""
-    },
-    "validation": {
-        "pfloat": {
-            "description": ""
-        }
     },
     "privacy": {
         "geodataTitle": ""

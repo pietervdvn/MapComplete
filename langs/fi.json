@@ -42,13 +42,9 @@
             "tuesday": "Tiistai",
             "wednesday": "Keskiviikko"
         },
-        "attribution": {
-            "attributionContent": ""
-        },
         "add": {
             "disableFiltersExplanation": ""
         },
-        "customThemeIntro": "",
         "logout": ""
     },
     "image": {
@@ -67,13 +63,9 @@
         "title_singular": "Yksi arvostelu"
     },
     "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "wontBeImported": ""
-        },
         "login": {
             "loginRequired": ""
-        },
-        "gotoImportViewer": ""
+        }
     },
     "matrixbot": {
         "commands": {
@@ -82,14 +74,8 @@
                     "singular": ""
                 }
             },
-            "tags": {
-                "noSearchGiven": ""
-            },
             "role": {
                 "argverb": ""
-            },
-            "language": {
-                "currentLanguage": ""
             }
         }
     },
@@ -97,11 +83,6 @@
         "textNeeded": ""
     },
     "professional": {
-        "aboutOsm": {
-            "aboutOsm": {
-                "intro": ""
-            }
-        },
         "drawbacks": {
             "licenseNuances": {
                 "usecaseMapDifferentSources": {
@@ -110,15 +91,9 @@
             }
         }
     },
-    "split": {
-        "loginToSplit": ""
-    },
     "delete": {
         "explanations": {
             "retagOtherThemes": ""
         }
-    },
-    "privacy": {
-        "editingTitle": ""
     }
 }

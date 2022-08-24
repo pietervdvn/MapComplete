@@ -309,14 +309,8 @@
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
     },
     "importHelper": {
-        "createNotes": {
-            "done": ""
-        },
         "selectFile": {
             "fileFormatDescription": ""
-        },
-        "confirmProcess": {
-            "titleLong": ""
         }
     },
     "matrixbot": {
@@ -326,35 +320,19 @@
                     "singular": ""
                 }
             },
-            "shutdown": {
-                "verbshutdown": ""
-            },
             "info": {
                 "noOpeningHours": ""
             }
         }
-    },
-    "notes": {
-        "loginToAddComment": ""
     },
     "professional": {
         "aboutOsm": {
             "vandalism": {
                 "intro": ""
             }
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "li1": ""
-                }
-            }
         }
     },
     "translations": {
         "help": ""
-    },
-    "privacy": {
-        "miscCookiesTitle": ""
     }
 }

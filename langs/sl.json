@@ -39,19 +39,12 @@
             "tuesday": "Torek",
             "wednesday": "Sreda"
         },
-        "opening_hours": {
-            "open_during_ph": ""
-        },
         "sharescreen": {
             "editThisTheme": ""
         },
-        "attribution": {
-            "mapContributionsByAndHidden": ""
-        },
         "add": {
             "addNew": ""
-        },
-        "returnToTheMap": ""
+        }
     },
     "image": {
         "addPicture": "Dodaj sliko",
@@ -65,14 +58,8 @@
         "title": "Dobrodošli na MapComplete"
     },
     "importHelper": {
-        "conflationChecker": {
-            "nothingLoaded": ""
-        },
         "selectFile": {
             "title": ""
-        },
-        "previewAttributes": {
-            "someHaveSame": ""
         }
     },
     "matrixbot": {
@@ -82,37 +69,22 @@
                     "singular": ""
                 }
             },
-            "search": {
-                "announceLimited": ""
-            },
             "wiki": {
                 "noWiki": ""
-            },
-            "language": {
-                "knownLanguages": ""
             }
         }
     },
     "notes": {
         "warnAnonymous": ""
     },
-    "privacy": {
-        "surveillance": ""
-    },
     "professional": {
         "aboutOsm": {
             "license": {
                 "intro": ""
             }
-        },
-        "indexPage": {
-            "hookMore": ""
         }
     },
     "split": {
         "hasBeenSplit": ""
-    },
-    "multi_apply": {
-        "autoApply": ""
     }
 }

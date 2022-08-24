@@ -141,9 +141,6 @@
             "wednesday": "Среда"
         },
         "welcomeBack": "Вы вошли, с возвращением!",
-        "download": {
-            "licenseInfo": ""
-        },
         "removeLocationHistory": ""
     },
     "image": {
@@ -196,47 +193,29 @@
         "splitTitle": "Выберите карту на которой хотите разделить дорогу"
     },
     "importHelper": {
-        "login": {
-            "loggedInWith": ""
-        },
         "conflationChecker": {
             "downloadOverpassData": ""
-        },
-        "testMode": ""
+        }
     },
     "matrixbot": {
         "commands": {
             "documentation": {
                 "overview": ""
             },
-            "role": {
-                "argverb": ""
-            },
             "shutdown": {
                 "argmode": ""
             }
         }
     },
-    "move": {
-        "moveTitle": ""
-    },
     "notes": {
         "addAComment": ""
     },
     "professional": {
-        "aboutOsm": {
-            "aboutOsm": {
-                "title": ""
-            }
-        },
         "drawbacks": {
             "licenseNuances": {
                 "li2": ""
             }
         }
-    },
-    "translations": {
-        "help": ""
     },
     "importLayer": {
         "popupTitle": ""

@@ -137,9 +137,6 @@
             "tuesday": "Selasa",
             "wednesday": "Rabu"
         },
-        "download": {
-            "downloadCSVHelper": ""
-        },
         "skippedQuestions": ""
     },
     "image": {
@@ -230,14 +227,8 @@
         }
     },
     "importHelper": {
-        "conflationChecker": {
-            "showOsmLayerInConflationMap": ""
-        },
         "selectTheme": {
             "misMatch": ""
-        },
-        "confirmProcess": {
-            "contactedCommunity": ""
         }
     },
     "matrixbot": {
@@ -245,14 +236,8 @@
             "dm": {
                 "argbody": ""
             },
-            "shutdown": {
-                "goodbye": ""
-            },
             "search": {
                 "argsearch": ""
-            },
-            "language": {
-                "docs": ""
             }
         }
     },
@@ -260,13 +245,6 @@
         "aboutOsm": {
             "vandalism": {
                 "intro": ""
-            }
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {
-                    "title": ""
-                }
             }
         },
         "indexPage": {

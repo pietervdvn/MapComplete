@@ -686,14 +686,8 @@
     },
     "matrixbot": {
         "commands": {
-            "help": {
-                "p0": ""
-            },
             "tags": {
                 "nothingFound": ""
-            },
-            "scheme": {
-                "noMatchingLayer": ""
             }
         }
     }
