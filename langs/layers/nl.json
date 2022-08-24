@@ -310,16 +310,16 @@
                         "then": "Gemaakt uit metaal"
                     },
                     "2": {
-                        "then": "Gemaakt uit steen"
+                        "then": "Het zitgedeelte is gemaakt uit steen"
                     },
                     "3": {
-                        "then": "Gemaakt uit beton"
+                        "then": "Het zitgedeelte is gemaakt uit beton"
                     },
                     "4": {
-                        "then": "Gemaakt uit plastiek"
+                        "then": "Het zitgedeelte is gemaakt uit plastiek"
                     },
                     "5": {
-                        "then": "Gemaakt uit staal"
+                        "then": "Het zitgedeelte is gemaakt uit staal"
                     }
                 },
                 "question": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
@@ -3330,7 +3330,6 @@
             "dogarea": {
                 "render": "Deze hondenweide is {_surface:ha} hectaren groot"
             }
-
         },
         "title": {
             "render": "hondenweide"
