@@ -30,8 +30,6 @@ export default class QueryParameterDocumentation {
     public static UrlParamDocs(): Map<string, string> {
         const dummyLayout = new LayoutConfig({
             id: "&gt;theme&lt;",
-            maintainer: "pietervdvn",
-            version: "0",
             title: {en: "<theme>"},
             description: "A theme to generate docs with",
             socialImage: "./assets/SocialImage.png",
