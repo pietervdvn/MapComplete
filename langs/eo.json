@@ -81,8 +81,7 @@
             "noResults": "Nenio troviĝis pri <i>{search}</i>",
             "searchWikidata": "Serĉi Vikidatumojn",
             "wikipediaboxTitle": "Vikipedio"
-        },
-        "testing": ""
+        }
     },
     "image": {
         "addPicture": "Aldoni bildon",
@@ -103,28 +102,15 @@
         "title": "{count} recenzoj",
         "title_singular": "Unu recenzo"
     },
-    "importHelper": {
-        "testMode": ""
-    },
     "matrixbot": {
         "commands": {
             "shutdown": {
                 "verbshutdown": ""
-            },
-            "scheme": {
-                "argkey": ""
             }
         }
     },
     "notes": {
         "reopenNote": ""
-    },
-    "professional": {
-        "drawbacks": {
-            "licenseNuances": {
-                "li1": ""
-            }
-        }
     },
     "importInspector": {
         "title": ""

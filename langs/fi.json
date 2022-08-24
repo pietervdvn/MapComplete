@@ -42,9 +42,6 @@
             "tuesday": "Tiistai",
             "wednesday": "Keskiviikko"
         },
-        "add": {
-            "disableFiltersExplanation": ""
-        },
         "logout": ""
     },
     "image": {
@@ -62,34 +59,17 @@
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu"
     },
-    "importHelper": {
-        "login": {
-            "loginRequired": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "documentation": {
                 "theme": {
                     "singular": ""
                 }
-            },
-            "role": {
-                "argverb": ""
             }
         }
     },
     "notes": {
         "textNeeded": ""
-    },
-    "professional": {
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "outro": ""
-                }
-            }
-        }
     },
     "delete": {
         "explanations": {

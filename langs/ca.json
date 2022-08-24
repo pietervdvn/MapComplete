@@ -320,10 +320,7 @@
             "noFilesLoaded": "No s'ha carregat cap arxiu",
             "title": "Seleccionar arxiu"
         },
-        "title": "Assistent d'importació",
-        "createNotes": {
-            "done": ""
-        }
+        "title": "Assistent d'importació"
     },
     "importInspector": {
         "title": "Inspeccionar i controlar notes d'importació"
@@ -605,13 +602,6 @@
         },
         "wikidata": {
             "description": "Un identificador de Wikidata"
-        }
-    },
-    "matrixbot": {
-        "commands": {
-            "shutdown": {
-                "verbshutdown": ""
-            }
         }
     }
 }

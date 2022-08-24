@@ -308,20 +308,12 @@
         "split": "Dividir",
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
     },
-    "importHelper": {
-        "selectFile": {
-            "fileFormatDescription": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "documentation": {
                 "file": {
                     "singular": ""
                 }
-            },
-            "info": {
-                "noOpeningHours": ""
             }
         }
     },
@@ -331,8 +323,5 @@
                 "intro": ""
             }
         }
-    },
-    "translations": {
-        "help": ""
     }
 }

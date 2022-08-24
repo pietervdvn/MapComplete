@@ -132,8 +132,7 @@
             "tuesday": "火曜日",
             "wednesday": "水曜日"
         },
-        "welcomeBack": "ログインしました、お帰りなさい!",
-        "notValid": ""
+        "welcomeBack": "ログインしました、お帰りなさい!"
     },
     "image": {
         "addPicture": "写真の追加",
@@ -173,30 +172,17 @@
         "tos": "レビューを作成する場合は、<a href=\"https://mangrove.reviews/terms\" target=\"_blank\">Mangrove.reviewsのTOSおよびプライバシーポリシーに同意します。</a>",
         "write_a_comment": "レビューを残す…"
     },
-    "importHelper": {
-        "selectFile": {
-            "noFilesLoaded": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "documentation": {
                 "layer": {
                     "singular": ""
                 }
-            },
-            "search": {
-                "argsearch": ""
             }
         }
     },
     "notes": {
         "addComment": ""
-    },
-    "professional": {
-        "drawbacks": {
-            "intro": ""
-        }
     },
     "delete": {
         "reasons": {

@@ -1,19 +1,12 @@
 {
     "general": {
-        "questions": {
-            "websiteIs": ""
-        },
         "add": {
             "disableFiltersExplanation": ""
-        },
-        "confirm": ""
+        }
     },
     "importHelper": {
         "conflationChecker": {
             "importCandidatesCount": ""
-        },
-        "compareToAlreadyExistingNotes": {
-            "loading": ""
         }
     },
     "matrixbot": {
@@ -21,17 +14,13 @@
             "role": {
                 "docs": ""
             }
-        },
-        "commandFailed": ""
+        }
     },
     "professional": {
         "aboutOsm": {
             "aboutOsm": {
                 "li2": ""
             }
-        },
-        "indexPage": {
-            "hookMore": ""
         }
     },
     "validation": {

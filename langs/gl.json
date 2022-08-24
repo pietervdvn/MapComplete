@@ -131,8 +131,7 @@
             "tuesday": "Martes",
             "wednesday": "Mércores"
         },
-        "welcomeBack": "Iniciaches a sesión, benvido.",
-        "removeLocationHistory": ""
+        "welcomeBack": "Iniciaches a sesión, benvido."
     },
     "image": {
         "addPicture": "Engadir imaxe",
@@ -169,32 +168,15 @@
         "title_singular": "Unha recensión",
         "write_a_comment": "Deixa unha recensión…"
     },
-    "importHelper": {
-        "compareToAlreadyExistingNotes": {
-            "titleLong": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "documentation": {
                 "urlParam": ""
-            },
-            "shutdown": {
-                "verbshutdown": ""
             }
         }
     },
     "notes": {
         "loginToAddPicture": ""
-    },
-    "professional": {
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "li1": ""
-                }
-            }
-        }
     },
     "delete": {
         "cannotBeDeleted": ""

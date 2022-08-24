@@ -140,8 +140,7 @@
             "tuesday": "Вторник",
             "wednesday": "Среда"
         },
-        "welcomeBack": "Вы вошли, с возвращением!",
-        "removeLocationHistory": ""
+        "welcomeBack": "Вы вошли, с возвращением!"
     },
     "image": {
         "addPicture": "Добавить изображение",
@@ -192,30 +191,15 @@
         "split": "Разделить",
         "splitTitle": "Выберите карту на которой хотите разделить дорогу"
     },
-    "importHelper": {
-        "conflationChecker": {
-            "downloadOverpassData": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "documentation": {
                 "overview": ""
-            },
-            "shutdown": {
-                "argmode": ""
             }
         }
     },
     "notes": {
         "addAComment": ""
-    },
-    "professional": {
-        "drawbacks": {
-            "licenseNuances": {
-                "li2": ""
-            }
-        }
     },
     "importLayer": {
         "popupTitle": ""

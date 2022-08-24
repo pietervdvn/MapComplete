@@ -136,8 +136,7 @@
             "thursday": "Kamis",
             "tuesday": "Selasa",
             "wednesday": "Rabu"
-        },
-        "skippedQuestions": ""
+        }
     },
     "image": {
         "addPicture": "Tambahkan foto",
@@ -226,18 +225,10 @@
             "description": "Pengidentifikasi Wikidata"
         }
     },
-    "importHelper": {
-        "selectTheme": {
-            "misMatch": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "dm": {
                 "argbody": ""
-            },
-            "search": {
-                "argsearch": ""
             }
         }
     },
@@ -246,9 +237,6 @@
             "vandalism": {
                 "intro": ""
             }
-        },
-        "indexPage": {
-            "hook": ""
         }
     }
 }

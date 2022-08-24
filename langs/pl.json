@@ -120,10 +120,7 @@
             "tuesday": "Wtorek",
             "wednesday": "Środa"
         },
-        "welcomeBack": "Jesteś zalogowany, witaj z powrotem!",
-        "morescreen": {
-            "noSearch": ""
-        }
+        "welcomeBack": "Jesteś zalogowany, witaj z powrotem!"
     },
     "image": {
         "addPicture": "Dodaj zdjęcie",
@@ -172,26 +169,15 @@
         "split": "Podziel",
         "splitTitle": "Wybierz na mapie gdzie podzielić tę drogę"
     },
-    "importHelper": {
-        "selectFile": {
-            "errDuplicate": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "info": {
                 "nothingFound": ""
-            },
-            "wiki": {
-                "foundMatching": ""
             }
         }
     },
     "notes": {
         "reopenNoteAndComment": ""
-    },
-    "professional": {
-        "title": ""
     },
     "privacy": {
         "geodataTitle": ""

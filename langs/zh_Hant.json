@@ -245,28 +245,15 @@
         "split": "分開",
         "splitTitle": "請在地圖選擇要在那裡分割道路"
     },
-    "importHelper": {
-        "askMetadata": {
-            "downloadGeojson": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "info": {
                 "closedTodayAndTomorrow": ""
-            },
-            "dm": {
-                "selectValidUser": ""
             }
         }
     },
     "privacy": {
         "geodataTitle": ""
-    },
-    "professional": {
-        "services": {
-            "li0": ""
-        }
     },
     "importLayer": {
         "description": ""

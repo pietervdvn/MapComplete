@@ -683,12 +683,5 @@
         "wikidata": {
             "description": "En Wikidata identifier"
         }
-    },
-    "matrixbot": {
-        "commands": {
-            "tags": {
-                "nothingFound": ""
-            }
-        }
     }
 }

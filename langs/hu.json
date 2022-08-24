@@ -280,9 +280,6 @@
         },
         "previewAttributes": {
             "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel"
-        },
-        "conflationChecker": {
-            "setRangeToZero": ""
         }
     },
     "index": {
@@ -383,16 +380,6 @@
         "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva"
     },
     "matrixbot": {
-        "commands": {
-            "documentation": {
-                "didYouMean": ""
-            }
-        },
         "tooLongForPublic": ""
-    },
-    "validation": {
-        "date": {
-            "description": ""
-        }
     }
 }

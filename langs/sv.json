@@ -40,7 +40,6 @@
             "tuesday": "Tisdag",
             "wednesday": "Onsdag"
         },
-        "testing": "",
         "attribution": {
             "editId": ""
         }
@@ -74,32 +73,17 @@
         "cancel": "Avbryt",
         "split": "Dela"
     },
-    "importHelper": {
-        "selectTheme": {
-            "intro": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "documentation": {
                 "theme": {
                     "singular": ""
                 }
-            },
-            "scheme": {
-                "docs": ""
             }
         }
     },
     "notes": {
         "isClosed": ""
-    },
-    "professional": {
-        "drawbacks": {
-            "unsuitedData": {
-                "li0": ""
-            }
-        }
     },
     "validation": {
         "opening_hours": {

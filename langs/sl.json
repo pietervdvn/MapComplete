@@ -39,9 +39,6 @@
             "tuesday": "Torek",
             "wednesday": "Sreda"
         },
-        "sharescreen": {
-            "editThisTheme": ""
-        },
         "add": {
             "addNew": ""
         }
@@ -57,32 +54,17 @@
         "pickTheme": "Za začetek spodaj izberite tematiko.",
         "title": "Dobrodošli na MapComplete"
     },
-    "importHelper": {
-        "selectFile": {
-            "title": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "documentation": {
                 "url_parameter": {
                     "singular": ""
                 }
-            },
-            "wiki": {
-                "noWiki": ""
             }
         }
     },
     "notes": {
         "warnAnonymous": ""
-    },
-    "professional": {
-        "aboutOsm": {
-            "license": {
-                "intro": ""
-            }
-        }
     },
     "split": {
         "hasBeenSplit": ""

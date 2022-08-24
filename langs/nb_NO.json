@@ -528,13 +528,6 @@
             "description": "En Wikidata-identifikator"
         }
     },
-    "matrixbot": {
-        "commands": {
-            "language": {
-                "arglang": ""
-            }
-        }
-    },
     "importLayer": {
         "popupTitle": ""
     }

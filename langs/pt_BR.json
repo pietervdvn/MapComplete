@@ -123,10 +123,7 @@
             "tuesday": "Terça",
             "wednesday": "Quanta"
         },
-        "welcomeBack": "Você está logado, seja bem-vindo de volta!",
-        "download": {
-            "includeMetaData": ""
-        }
+        "welcomeBack": "Você está logado, seja bem-vindo de volta!"
     },
     "image": {
         "addPicture": "Adicionar imagem",
@@ -166,30 +163,15 @@
         "tos": "Se você criar um comentário, você concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> o TOS e a política de privacidade de Mangrove.reviews </a>",
         "write_a_comment": "Deixe um comentário…"
     },
-    "importHelper": {
-        "selectFile": {
-            "fileFormatDescriptionCsv": ""
-        }
-    },
     "matrixbot": {
         "commands": {
             "info": {
                 "noInfo": ""
-            },
-            "language": {
-                "currentLanguage": ""
             }
         }
     },
     "notes": {
         "isCreated": ""
-    },
-    "professional": {
-        "aboutOsm": {
-            "vandalism": {
-                "li0": ""
-            }
-        }
     },
     "move": {
         "zoomInFurther": ""
