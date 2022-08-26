@@ -1,0 +1,81 @@
+{
+  "id": "fitness_centre",
+  "name": {
+    "en": "Fitness Centres"
+  },
+  "description": {
+    "en": "Layer showing fitness centres"
+  },
+  "source": {
+    "osmTags": "leisure=fitness_centre"
+  },
+  "minzoom": 13,
+  "title": {
+    "render": {
+      "en": "Fitness Centre"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Fitness Centre {name}"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this fitness centre?"
+      },
+      "freeform": {
+        "key": "name",
+        "placeholder": {
+          "en": "Name of fitness centre"
+        },
+        "type": "string"
+      },
+      "mappings": [
+        {
+          "if": "noname=yes",
+          "then": {
+            "en": "This fitness centre has no name"
+          }
+        }
+      ],
+      "render": {
+        "en": "This fitness centre is called {name}"
+      }
+    },
+    "images",
+    "phone",
+    "email",
+    "website",
+    "opening_hours",
+    "wheelchair-access",
+    "level",
+    "reviews"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "leisure=fitness_centre"
+      ],
+      "title": {
+        "en": "a fitness centre"
+      },
+      "icon": "./assets/layers/fitness_centre/gym.svg"
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "circle:white;./assets/layers/fitness_centre/gym.svg",
+      "iconSize": "40,40,center"
+    }
+  ]
+}

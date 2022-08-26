@@ -1,0 +1,21 @@
+{
+  "id": "sports",
+  "title": {
+    "en": "Sports"
+  },
+  "shortDescription": {
+    "en": "Map showing sport facilities."
+  },
+  "description": {
+    "en": "All about sports, find sport pitches, fitness centres and more."
+  },
+  "icon": "./assets/themes/sports/sport.svg",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "layers": [
+    "sport_pitch",
+    "fitness_centre",
+    "fitness_station"
+  ]
+}
