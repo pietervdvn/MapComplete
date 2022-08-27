@@ -270,7 +270,7 @@
             "en": "This fitness station has a cross-trainer."
           },
           "icon": {
-            "path": "./assets/layers/fitness_station/07-12-2016,_Fitness_trail,_Parque_da_Alfarrobeira,_Albufeira_(2).jpg",
+            "path": "./assets/layers/fitness_station/07-12-2016,_Fitness_trail,_Parque_da_Alfarrobeira,_Albufeira_2.jpg",
             "class": "large"
           }
         },
@@ -280,7 +280,7 @@
             "en": "This fitness station has an air walker."
           },
           "icon": {
-            "path": "./assets/layers/fitness_station/Ansan_Park_(beind_the_city_hall)_022.jpg",
+            "path": "./assets/layers/fitness_station/Ansan_Park_beind_the_city_hall_022.jpg",
             "class": "large"
           }
         },
@@ -306,6 +306,41 @@
         }
       ],
       "multiAnswer": true
+    },
+    {
+      "id": "operator",
+      "question": {
+        "en": "Who maintains this fitness station?"
+      },
+      "freeform": {
+        "key": "operator",
+        "placeholder": {
+          "en": "Operator of the fitness station"
+        },
+        "type": "string"
+      },
+      "render": {
+        "en": "The fitness station is maintained by {operator}."
+      }
+    },
+    {
+      "id": "opening_hours",
+      "question": {
+        "en": "When is this fitness station opened?"
+      },
+      "freeform": {
+        "key": "opening_hours",
+        "type": "opening_hours"
+      },
+      "render": "{opening_hours_table()}",
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "en": "24/7"
+          }
+        }
+      ]
     }
   ],
   "presets": [
