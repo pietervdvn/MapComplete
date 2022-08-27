@@ -9,7 +9,7 @@
   "source": {
     "osmTags": "leisure=fitness_centre"
   },
-  "minzoom": 13,
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Fitness Centre"
@@ -17,9 +17,7 @@
     "mappings": [
       {
         "if": "name~*",
-        "then": {
-          "en": "Fitness Centre {name}"
-        }
+        "then": "{name}"
       }
     ]
   },
@@ -75,7 +73,8 @@
         "centroid"
       ],
       "icon": "circle:white;./assets/layers/fitness_centre/gym.svg",
-      "iconSize": "40,40,center"
+      "iconSize": "40,40,center",
+      "label": "{name}"
     }
   ]
 }

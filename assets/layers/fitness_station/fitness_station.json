@@ -9,7 +9,7 @@
   "source": {
     "osmTags": "leisure=fitness_station"
   },
-  "minzoom": 13,
+  "minzoom": 12,
   "title": {
     "render": {
       "en": "Fitness Station"
@@ -18,7 +18,7 @@
       {
         "if": "name~*",
         "then": {
-          "en": "Fitness Station{name}"
+          "en": "Fitness Station {name}"
         }
       }
     ]
@@ -350,7 +350,7 @@
         "sport=fitness"
       ],
       "title": {
-        "en": "a Fitness Station"
+        "en": "a fitness station"
       },
       "icon": "./assets/layers/fitness_station/fitness.svg"
     }

@@ -16,6 +16,31 @@
   "layers": [
     "sport_pitch",
     "fitness_centre",
-    "fitness_station"
+    "fitness_station",
+    {
+      "builtin": "shops",
+      "override": {
+        "source": {
+          "osmTags": "shop=sports"
+        },
+        "presets": [
+          {
+            "tags": [
+              "shop=sports"
+            ],
+            "title": {
+              "en": "a sports shop"
+            },
+            "description": {
+              "en": "Add a new shop selling sports goods."
+            }
+          }
+        ],
+        "minzoom": 12
+      },
+      "hideTagRenderingsWithLabels": [
+        "shop_types"
+      ]
+    }
   ]
 }
