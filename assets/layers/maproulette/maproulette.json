@@ -3,7 +3,7 @@
   "source": {
     "geoJson": "https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}",
     "geoJsonZoomLevel": 16,
-    "osmTags": "id~*"
+    "osmTags": "title~*"
   },
   "mapRendering": [
     {
