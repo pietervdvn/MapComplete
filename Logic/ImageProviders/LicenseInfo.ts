@@ -8,4 +8,5 @@ export class LicenseInfo {
     copyrighted: boolean = false;
     credit: string = "";
     description: string = "";
+    informationLocation: URL = undefined
 }

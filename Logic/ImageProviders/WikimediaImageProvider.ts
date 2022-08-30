@@ -129,7 +129,7 @@ export class WikimediaImageProvider extends ImageProvider {
         if (pageInfo === undefined) {
             return undefined;
         }
-
+        
         const license = (pageInfo.imageinfo ?? [])[0]?.extmetadata;
         if (license === undefined) {
             console.warn("The file", filename, "has no usable metedata or license attached... Please fix the license info file yourself!")
@@ -153,6 +153,7 @@ export class WikimediaImageProvider extends ImageProvider {
         licenseInfo.licenseShortName = license.LicenseShortName?.value;
         licenseInfo.credit = license.Credit?.value;
         licenseInfo.description = license.ImageDescription?.value;
+        licenseInfo.informationLocation = new URL("https://en.wikipedia.org/wiki/"+pageInfo.title)
         return licenseInfo;
 
     }
