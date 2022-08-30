@@ -458,7 +458,7 @@
         },
         "previewAttributes": {
             "allAttributesSame": "Todos os elementos a importar têm esta etiqueta",
-            "someHaveSame": "{count} elementos a importar têm esta etiqueta, isto é {percentagem}% do total",
+            "someHaveSame": "{count} elementos a importar têm esta etiqueta, isto é {percentage}% do total",
             "title": "Inspecionar atributos",
             "inspectDataTitle": "Inspecionar dados de {count} elementos a importar",
             "inspectLooksCorrect": "Estes valores parecem corretos"
