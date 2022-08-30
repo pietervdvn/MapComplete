@@ -38,7 +38,6 @@ export abstract class OsmObject {
             throw "Backend URL must begin with http"
         }
         this.backendURL = url;
-        this.DownloadObject("id/5")
     }
 
     public static DownloadObject(id: string, forceRefresh: boolean = false): Store<OsmObject> {
