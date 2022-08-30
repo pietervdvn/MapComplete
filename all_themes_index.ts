@@ -26,7 +26,7 @@ const mode = QueryParameters.GetQueryParameter("mode", "map", "The mode the appl
 if (mode.data === "statistics") {
     console.log("Statistics mode!")
     new FixedUiElement("").AttachTo("centermessage")
-    new StatisticsGUI().SetClass("w-full h-full").AttachTo("topleft-tools")
+    new StatisticsGUI().SetClass("w-full h-full pointer-events-auto").AttachTo("topleft-tools")
 } else{
     new AllThemesGui().setup();
 }
