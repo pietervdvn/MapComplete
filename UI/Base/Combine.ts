@@ -39,7 +39,7 @@ export default class Combine extends BaseUIElement {
         const el = document.createElement("span")
         try {
             if(this.uiElements === undefined){
-                console.error("PANIC")   
+                console.error("PANIC: this.uiElements is undefined. (This might indicate a constructor which did not call 'super'. The constructor name is", this.constructor/*Disable code quality: used for debugging*/.name+")")   
             }
             for (const subEl of this.uiElements) {
                 if (subEl === undefined || subEl === null) {
