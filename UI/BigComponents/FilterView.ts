@@ -159,6 +159,7 @@ export class LayerFilterPanel extends Combine {
     public constructor(state: any, flayer: FilteredLayer) {
         const layer = flayer.layerDef
         if (layer.filters.length === 0) {
+            super([])
             return undefined;
         }
 
