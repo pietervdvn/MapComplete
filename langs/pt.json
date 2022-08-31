@@ -398,7 +398,7 @@
             "nearbyWarn": "Os {count} elementos vermelhos no mapa seguinte <b>não</b> serão importados!",
             "nothingLoaded": "Nenhum elemento foi carregado do OpenStreetMap que corresponda à camada atual {name}",
             "title": "Comparar com dados existentes",
-            "osmLoaded": "{count} elementos foram carregados do OpenStreetMap que correspondem à camada <b>{nome}</b>.",
+            "osmLoaded": "{count} elementos foram carregados do OpenStreetMap que correspondem à camada <b>{name}</b>.",
             "titleLive": "Dados ao vivo no OSM",
             "zoomIn": "O nível atual de zoom é {current}",
             "mapShowingNearbyIntro": "O mapa seguinte mostra as características a importar que têm uma característica OSM dentro ",
