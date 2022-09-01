@@ -94,7 +94,7 @@
             "themeBy": "Tema gerido por {author}",
             "josmOpened": "O JOSM está em execução",
             "openMapillary": "Abrir o Mapillary aqui",
-            "openOsmcha": "Ver as últimas edições feitas com {tema}",
+            "openOsmcha": "Ver as últimas edições feitas com {theme}",
             "openIssueTracker": "Reportar um erro",
             "translatedBy": "O MapComplete foi traduzido por {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} mais utilizadores</a>",
             "mapillaryHelp": "O <b>Mapillary</b> é um serviço online que reúne imagens ao nível da rua e as disponibiliza sob uma licença gratuita. Os utilizadores podem usar estas imagens para melhorar o OpenStreetMap",
@@ -249,8 +249,8 @@
             "searchWikidata": "Pesquisar no Wikidata",
             "wikipediaboxTitle": "Wikipédia",
             "previewbox": {
-                "born": "Nascimento: {valor}",
-                "died": "Falecimento: {valor}"
+                "born": "Nascimento: {value}",
+                "died": "Falecimento: {value}"
             },
             "fromWikipedia": "Da Wikipédia, a enciclopédia livre",
             "searchToShort": "A sua consulta de pesquisa é demasiado curta, introduza um texto mais longo"
@@ -268,7 +268,7 @@
         "back": "Voltar",
         "notValid": "Selecione um valor válido para continuar",
         "backToMapcomplete": "Voltar à visão geral do tema",
-        "screenToSmall": "Abrir {tema} numa nova janela",
+        "screenToSmall": "Abrir {theme} numa nova janela",
         "confirm": "Confirmar",
         "error": "Algo correu mal",
         "example": "Exemplo",
@@ -304,7 +304,7 @@
             "hasMatchingPicture": "Será que uma imagem corresponde ao objeto? Selecione abaixo",
             "browseNearby": "Procurar imagens próximas…",
             "loadMore": "Carregar mais imagens",
-            "withinRadius": "Mostrar apenas fotografias que são tiradas num raio de {rádio} metros deste objeto",
+            "withinRadius": "Mostrar apenas fotografias que são tiradas num raio de {radius} metros deste objeto",
             "onlyTowards": "Mostrar apenas fotografias que são tiradas em direção a este objeto",
             "allFiltered": "Nenhuma imagem correspondeu ao seu filtro",
             "confirm": "A imagem selecionada mostra {title()}",
