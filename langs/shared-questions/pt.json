@@ -143,6 +143,53 @@
                 }
             },
             "question": "Qual é o item correspondente na Wikipédia?"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Para que pisos vai este elevador?",
+                "render": "Este elevador vai para os pisos {level}"
+            }
+        },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "Este lugar tem acesso à Internet sem fios"
+                },
+                "1": {
+                    "then": "Este lugar <b>não</b> tem acesso à Internet"
+                },
+                "2": {
+                    "then": "Este lugar tem acesso à Internet"
+                },
+                "4": {
+                    "then": "Este lugar tem acesso à Internet com fios/por cabo"
+                },
+                "3": {
+                    "then": "Este lugar tem acesso à Internet através de um terminal ou computador"
+                }
+            },
+            "question": "Este lugar tem acesso à Internet?"
+        },
+        "internet-fee": {
+            "mappings": {
+                "0": {
+                    "then": "Tem de se pagar para utilizar o acesso à Internet neste local"
+                },
+                "1": {
+                    "then": "O acesso à Internet é gratuito neste local"
+                },
+                "2": {
+                    "then": "O acesso à Internet é gratuito neste local, apenas para clientes"
+                }
+            },
+            "question": "Tem de se pagar para utilizar o acesso à Internet?"
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Introduza o nome da rede"
+            },
+            "question": "Qual é o nome da rede para o acesso sem fios à Internet?",
+            "render": "O nome da rede é <b>{internet_access:ssid}</b>"
         }
     }
 }
