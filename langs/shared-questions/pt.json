@@ -147,7 +147,7 @@
         "multilevels": {
             "override": {
                 "question": "Para que pisos vai este elevador?",
-                "render": "Este elevador vai para os pisos {nível}"
+                "render": "Este elevador vai para os pisos {level}"
             }
         },
         "internet": {
