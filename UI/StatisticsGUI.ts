@@ -12,6 +12,7 @@ import {AllKnownLayouts} from "../Customizations/AllKnownLayouts";
 import MapState from "../Logic/State/MapState";
 import BaseUIElement from "./BaseUIElement";
 import Title from "./Base/Title";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 class StatisticsForOverviewFile extends Combine{
     constructor(homeUrl: string, paths: string[]) {
@@ -55,10 +56,17 @@ class StatisticsForOverviewFile extends Combine{
                     })
                 }
 
-                if (downloaded.length === 0) {
+                if (overview._meta.length === 0) {
                     return "No data matched the filter"
                 }
                 
+                const dateStrings = Utils.NoNull(overview._meta.map(cs => cs.properties.date))
+                const dates : number[] = dateStrings.map(d =>  new Date(d).getTime())
+                const mindate= Math.min(...dates)
+                const maxdate = Math.max(...dates)
+                
+                const diffInDays = (maxdate - mindate) / (1000 * 60 * 60 * 24);
+                console.log("Diff in days is ", diffInDays, "got", overview._meta.length)
                 const trs =layer.tagRenderings
                     .filter(tr => tr.mappings?.length > 0 || tr.freeform?.key !== undefined);
                 const elements : BaseUIElement[] = []
@@ -68,16 +76,21 @@ class StatisticsForOverviewFile extends Combine{
                      total =  new Set(  overview._meta.map(f => f.properties[tr.freeform.key])).size
                     }
                     
-                    
+                    try{
+                        
                     elements.push(new Combine([
                         new Title(tr.question ?? tr.id).SetClass("p-2") ,
                         total > 1 ? total + " unique value"  : undefined,
                         new StackedRenderingChart(tr, <any>overview._meta,  {
-                            period: "month",
+                            period: diffInDays <= 367 ? "day" :  "month",
                             groupToOtherCutoff: total > 50 ? 25 : (total > 10 ? 3 : 0)
                         
                         }).SetStyle("width: 100%; height: 600px")
                     ]).SetClass("block border-2 border-subtle p-2 m-2 rounded-xl" ))
+                    }catch(e){
+                        console.log("Could not generate a chart", e)
+                        elements.push(new FixedUiElement("No relevant information for "+tr.question.txt))
+                    }
                 }
                 
                 return new Combine(elements)

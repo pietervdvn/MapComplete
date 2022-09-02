@@ -22,6 +22,7 @@ export class StackedRenderingChart extends ChartJs {
             groupToOtherCutoff: options?.groupToOtherCutoff
         })
         if (labels === undefined || data === undefined) {
+            console.error("Could not extract data and labels for ", tr, " with features", features)
             throw ("No labels or data given...")
         }
         // labels: ["cyclofix", "buurtnatuur", ...]; data : [ ["cyclofix-changeset", "cyclofix-changeset", ...], ["buurtnatuur-cs", "buurtnatuur-cs"], ... ]
@@ -38,8 +39,7 @@ export class StackedRenderingChart extends ChartJs {
 
         const datasets: { label: string /*themename*/, data: number[]/*counts per day*/, backgroundColor: string }[] = []
         const allDays = StackedRenderingChart.getAllDays(features)
-        let trimmedDays = allDays.map(d => d.substr(0, d.indexOf("T")))
-
+        let trimmedDays = allDays.map(d => d.substr(0, 10))
         if (options?.period === "month") {
             trimmedDays = trimmedDays.map(d => d.substr(0, 7))
         }
@@ -54,9 +54,9 @@ export class StackedRenderingChart extends ChartJs {
                 const csDate = new Date(changeset.properties.date)
                 Utils.SetMidnight(csDate)
                 let str = csDate.toISOString();
+                str = str.substr(0, 10)
                 if (options?.period === "month") {
-                    csDate.setUTCDate(1)
-                    str = csDate.toISOString().substr(0, 7);
+                    str = str.substr(0, 7);
                 }
                 if (perDay[str] === undefined) {
                     perDay[str] = [changeset]
