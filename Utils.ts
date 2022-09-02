@@ -284,7 +284,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @param useLang
      * @constructor
      */
-    public static SubstituteKeys(txt: string | undefined, tags?: any, useLang?: string): string | undefined {
+    public static SubstituteKeys(txt: string | undefined, tags?: Record<string, any>, useLang?: string): string | undefined {
         if (txt === undefined) {
             return undefined
         }
