@@ -1613,6 +1613,10 @@
           {
             "if": "cyclestreet=yes",
             "then": "rgba(57, 159, 191, 0.7)"
+          },
+          {
+            "if": "cycleway=no",
+            "then": "rgba(0, 0, 0, 0.7)"
           }
         ]
       },
