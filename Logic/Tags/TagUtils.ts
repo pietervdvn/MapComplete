@@ -11,6 +11,7 @@ import {isRegExp} from "util";
 import * as key_counts from "../../assets/key_totals.json"
 
 type Tags = Record<string, string>
+export type UploadableTag  = Tag | SubstitutingTag | And
 
 export class TagUtils {
     private static keyCounts: { keys: any, tags: any } = key_counts["default"] ?? key_counts
@@ -58,7 +59,7 @@ export class TagUtils {
         return true;
     }
 
-    static SplitKeys(tagsFilters: TagsFilter[]): Record<string, string[]> {
+    static SplitKeys(tagsFilters: UploadableTag[]): Record<string, string[]> {
         return <any>this.SplitKeysRegex(tagsFilters, false);
     }
 
@@ -67,7 +68,7 @@ export class TagUtils {
      *
      * TagUtils.SplitKeysRegex([new Tag("isced:level", "bachelor; master")], true) // => {"isced:level": ["bachelor","master"]}
      */
-    static SplitKeysRegex(tagsFilters: TagsFilter[], allowRegex: boolean): Record<string, (string | RegexTag)[]> {
+    static SplitKeysRegex(tagsFilters: UploadableTag[], allowRegex: boolean): Record<string, (string | RegexTag)[]> {
         const keyValues: Record<string, (string | RegexTag)[]> = {}
         tagsFilters = [...tagsFilters] // copy all, use as queue
         while (tagsFilters.length > 0) {
@@ -78,7 +79,7 @@ export class TagUtils {
             }
 
             if (tagsFilter instanceof And) {
-                tagsFilters.push(...tagsFilter.and);
+                tagsFilters.push(...<UploadableTag[]>tagsFilter.and);
                 continue;
             }
 
@@ -112,10 +113,28 @@ export class TagUtils {
     }
 
     /**
+     * Flattens an 'uploadableTag' and replaces all 'SubstitutingTags' into normal tags
+     */
+    static FlattenAnd(tagFilters: UploadableTag, currentProperties: Record<string, string>): Tag[]{
+        const tags : Tag[] = []
+        tagFilters.visit((tf: UploadableTag) => {
+            if(tf instanceof Tag){
+                tags.push(tf)
+            }
+            if(tf instanceof SubstitutingTag){
+                tags.push(tf.asTag(currentProperties))
+            }
+        })
+        return tags
+    }
+    
+ 
+
+        /**
      * Given multiple tagsfilters which can be used as answer, will take the tags with the same keys together as set.
      * E.g:
      *
-     * const tag = TagUtils.Tag({"and": [
+     * const tag = TagUtils.ParseUploadableTag({"and": [
      *     {
      *         and:  [ "x=a", "y=0;1"],
      *     },
@@ -131,13 +150,13 @@ export class TagUtils {
      * TagUtils.FlattenMultiAnswer(([new Tag("x","y"), new Tag("a","b")])) // => new And([new Tag("x","y"), new Tag("a","b")])
      * TagUtils.FlattenMultiAnswer(([new Tag("x","")])) // => new And([new Tag("x","")])
      */
-    static FlattenMultiAnswer(tagsFilters: TagsFilter[]): And {
+    static FlattenMultiAnswer(tagsFilters: UploadableTag[]): And {
         if (tagsFilters === undefined) {
             return new And([]);
         }
 
         let keyValues = TagUtils.SplitKeys(tagsFilters);
-        const and: TagsFilter[] = []
+        const and: UploadableTag[] = []
         for (const key in keyValues) {
             const values = Utils.Dedup(keyValues[key]).filter(v => v !== "")
             values.sort()
@@ -157,7 +176,7 @@ export class TagUtils {
      * // should match with a space too
      * TagUtils.MatchesMultiAnswer(new Tag("isced:level","master"), {"isced:level":"bachelor; master"}) // => true
      */
-    static MatchesMultiAnswer(tag: TagsFilter, properties: Tags): boolean {
+    static MatchesMultiAnswer(tag: UploadableTag, properties: Tags): boolean {
         const splitted = TagUtils.SplitKeysRegex([tag], true);
         for (const splitKey in splitted) {
             const neededValues = splitted[splitKey];
@@ -250,11 +269,30 @@ export class TagUtils {
      */
     public static Tag(json: TagConfigJson, context: string = ""): TagsFilter {
         try {
-            return this.TagUnsafe(json, context);
+            return this.ParseTagUnsafe(json, context);
         } catch (e) {
             console.error("Could not parse tag", json, "in context", context, "due to ", e)
             throw e;
         }
+    }
+
+    public static ParseUploadableTag(json: TagConfigJson, context: string = ""): UploadableTag {
+            const t = this.Tag(json, context);
+            
+            t.visit((t : TagsFilter)=> {
+                if( t instanceof  And){
+                    return
+                }
+                if(t instanceof Tag){
+                    return
+                }
+                if(t instanceof SubstitutingTag){
+                    return
+                }
+                throw `Error at ${context}: detected a non-uploadable tag at a location where this is not supported: ${t.asHumanString(false, false, {})}`
+            })
+            
+            return <any> t
     }
 
     /**
@@ -317,11 +355,11 @@ export class TagUtils {
         if (match == null) {
             return null;
         }
-        const [_, key, invert, modifier, value] = match;
+        const [ , key, invert, modifier, value] = match;
         return {key, value, invert: invert == "!", modifier: (modifier == "i~" ? "i" : "")};
     }
 
-    private static TagUnsafe(json: TagConfigJson, context: string = ""): TagsFilter {
+    private static ParseTagUnsafe(json: TagConfigJson, context: string = ""): TagsFilter {
 
         if (json === undefined) {
             throw new Error(`Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`)
@@ -492,17 +530,6 @@ export class TagUtils {
         }
         return " (" + joined + ") "
     }
-    
-    public static ExtractSimpleTags(tf: TagsFilter) : Tag[] {
-        const result: Tag[] = []
-        tf.visit(t => {
-            if(t instanceof Tag){
-                result.push(t)
-            }
-        })
-        return result;
-    }
-
     /**
      * Returns 'true' is opposite tags are detected.
      * Note that this method will never work perfectly

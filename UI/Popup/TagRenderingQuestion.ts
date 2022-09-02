@@ -17,7 +17,7 @@ import {SubstitutedTranslation} from "../SubstitutedTranslation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import {Tag} from "../../Logic/Tags/Tag";
 import {And} from "../../Logic/Tags/And";
-import {TagUtils} from "../../Logic/Tags/TagUtils";
+import {TagUtils, UploadableTag} from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
 import {DropDown} from "../Input/DropDown";
 import InputElementWrapper from "../Input/InputElementWrapper";
@@ -82,14 +82,16 @@ export default class TagRenderingQuestion extends Combine {
 
 
         const feedback = new UIEventSource<Translation>(undefined)
-        const inputElement: ReadonlyInputElement<TagsFilter> =
+        const inputElement: ReadonlyInputElement<UploadableTag> =
             new VariableInputElement(applicableMappingsSrc.map(applicableMappings => {
                     return TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags, feedback)
                 }
             ))
 
         const save = () => {
-            const selection = TagUtils.FlattenMultiAnswer([inputElement.GetValue().data]);
+            
+            
+            const selection = TagUtils.FlattenMultiAnswer(TagUtils.FlattenAnd( inputElement.GetValue().data, tags.data));
             if (selection) {
                 (state?.changes)
                     .applyAction(new ChangeTagAction(
@@ -147,11 +149,11 @@ export default class TagRenderingQuestion extends Combine {
         applicableUnit: Unit,
         tagsSource: UIEventSource<any>,
         feedback: UIEventSource<Translation>
-    ): ReadonlyInputElement<TagsFilter> {
+    ): ReadonlyInputElement<UploadableTag> {
 
 
         const hasImages = applicableMappings.findIndex(mapping => mapping.icon !== undefined) >= 0
-        let inputEls: InputElement<TagsFilter>[];
+        let inputEls: InputElement<UploadableTag>[];
 
         const ifNotsPresent = applicableMappings.some(mapping => mapping.ifnot !== undefined)
 
@@ -166,7 +168,7 @@ export default class TagRenderingQuestion extends Combine {
         // FreeForm input will be undefined if not present; will already contain a special input element if applicable
         const ff = TagRenderingQuestion.GenerateFreeform(state, configuration, applicableUnit, tagsSource, feedback);
 
-        function allIfNotsExcept(excludeIndex: number): TagsFilter[] {
+        function allIfNotsExcept(excludeIndex: number): UploadableTag[] {
             if (configuration.mappings === undefined || configuration.mappings.length === 0) {
                 return undefined
             }
@@ -196,7 +198,7 @@ export default class TagRenderingQuestion extends Combine {
             inputEls = (applicableMappings ?? []).map((mapping, i) => TagRenderingQuestion.GenerateMappingElement(state, tagsSource, mapping, allIfNotsExcept(i)));
             inputEls = Utils.NoNull(inputEls);
         } else {
-            const dropdown: InputElement<TagsFilter> = new DropDown("",
+            const dropdown: InputElement<UploadableTag> = new DropDown("",
                 applicableMappings.map((mapping, i) => {
                     return {
                         value: new And([mapping.if, ...allIfNotsExcept(i)]),
@@ -327,7 +329,7 @@ export default class TagRenderingQuestion extends Combine {
         tagsSource: UIEventSource<OsmTags>,
         options?: {
             search: UIEventSource<string>
-        }): InputElement<TagsFilter> {
+        }): InputElement<UploadableTag> {
 
 
         const values = TagRenderingQuestion.MappingToPillValue(applicableMappings, tagsSource, state)
@@ -416,7 +418,6 @@ export default class TagRenderingQuestion extends Combine {
                         return mapping.ifnot
                     }
                 }))
-                console.log("Got tags", tfs)
                 return new And(tfs);
             },
             (tf) => {
@@ -438,10 +439,10 @@ export default class TagRenderingQuestion extends Combine {
 
     private static GenerateMultiAnswer(
         configuration: TagRenderingConfig,
-        elements: InputElement<TagsFilter>[], freeformField: InputElement<TagsFilter>, ifNotSelected: TagsFilter[]): InputElement<TagsFilter> {
+        elements: InputElement<UploadableTag>[], freeformField: InputElement<UploadableTag>, ifNotSelected: UploadableTag[]): InputElement<UploadableTag> {
         const checkBoxes = new CheckBoxes(elements);
 
-        const inputEl = new InputElementMap<number[], TagsFilter>(
+        const inputEl = new InputElementMap<number[], UploadableTag>(
             checkBoxes,
             (t0, t1) => {
                 return t0?.shadows(t1) ?? false
@@ -450,8 +451,8 @@ export default class TagRenderingQuestion extends Combine {
                 if (indices.length === 0) {
                     return undefined;
                 }
-                const tags: TagsFilter[] = indices.map(i => elements[i].GetValue().data);
-                const oppositeTags: TagsFilter[] = [];
+                const tags: UploadableTag[] = indices.map(i => elements[i].GetValue().data);
+                const oppositeTags: UploadableTag[] = [];
                 for (let i = 0; i < ifNotSelected.length; i++) {
                     if (indices.indexOf(i) >= 0) {
                         continue;
@@ -465,8 +466,9 @@ export default class TagRenderingQuestion extends Combine {
                 tags.push(TagUtils.FlattenMultiAnswer(oppositeTags));
                 return TagUtils.FlattenMultiAnswer(tags);
             },
-            (tags: TagsFilter) => {
+            (tags: UploadableTag) => {
                 // {key --> values[]}
+                
                 const presentTags = TagUtils.SplitKeys([tags]);
                 const indices: number[] = []
                 // We also collect the values that have to be added to the freeform field
@@ -546,9 +548,9 @@ export default class TagRenderingQuestion extends Combine {
     private static GenerateMappingElement(
         state,
         tagsSource: UIEventSource<any>,
-        mapping: Mapping, ifNot?: TagsFilter[]): InputElement<TagsFilter> {
+        mapping: Mapping, ifNot?: UploadableTag[]): InputElement<UploadableTag> {
 
-        let tagging: TagsFilter = mapping.if;
+        let tagging: UploadableTag = mapping.if;
         if (ifNot !== undefined) {
             tagging = new And([mapping.if, ...ifNot])
         }
@@ -572,7 +574,7 @@ export default class TagRenderingQuestion extends Combine {
     }
 
     private static GenerateFreeform(state: FeaturePipelineState, configuration: TagRenderingConfig, applicableUnit: Unit, tags: UIEventSource<any>, feedback: UIEventSource<Translation>)
-        : InputElement<TagsFilter> {
+        : InputElement<UploadableTag> {
         const freeform = configuration.freeform;
         if (freeform === undefined) {
             return undefined;
@@ -639,7 +641,7 @@ export default class TagRenderingQuestion extends Combine {
             }
         })
 
-        let inputTagsFilter: InputElement<TagsFilter> = new InputElementMap(
+        let inputTagsFilter: InputElement<UploadableTag> = new InputElementMap(
             input, (a, b) => a === b || (a?.shadows(b) ?? false),
             pickString, toString
         );

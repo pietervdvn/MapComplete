@@ -1,7 +1,7 @@
 import {Translation, TypedTranslation} from "../../UI/i18n/Translation";
 import {TagsFilter} from "../../Logic/Tags/TagsFilter";
 import Translations from "../../UI/i18n/Translations";
-import {TagUtils} from "../../Logic/Tags/TagUtils";
+import {TagUtils, UploadableTag} from "../../Logic/Tags/TagUtils";
 import {And} from "../../Logic/Tags/And";
 import ValidatedTextField from "../../UI/Input/ValidatedTextField";
 import {Utils} from "../../Utils";
@@ -16,8 +16,8 @@ import {FixedUiElement} from "../../UI/Base/FixedUiElement";
 import {Paragraph} from "../../UI/Base/Paragraph";
 
 export interface Mapping {
-    readonly if: TagsFilter,
-    readonly ifnot?: TagsFilter,
+    readonly if: UploadableTag,
+    readonly ifnot?: UploadableTag,
     readonly then: TypedTranslation<object>,
     readonly icon: string,
     readonly iconClass: string | "small"  | "medium" | "large" | "small-height" | "medium-height" | "large-height",
@@ -46,7 +46,7 @@ export default class TagRenderingConfig {
         readonly key: string,
         readonly type: string,
         readonly placeholder: Translation,
-        readonly addExtraTags: TagsFilter[];
+        readonly addExtraTags: UploadableTag[];
         readonly inline: boolean,
         readonly default?: string,
         readonly helperArgs?: (string | number | boolean)[]
@@ -138,7 +138,7 @@ export default class TagRenderingConfig {
                 type,
                 placeholder,
                 addExtraTags: json.freeform.addExtraTags?.map((tg, i) =>
-                    TagUtils.Tag(tg, `${context}.extratag[${i}]`)) ?? [],
+                    TagUtils.ParseUploadableTag(tg, `${context}.extratag[${i}]`)) ?? [],
                 inline: json.freeform.inline ?? false,
                 default: json.freeform.default,
                 helperArgs: json.freeform.helperArgs

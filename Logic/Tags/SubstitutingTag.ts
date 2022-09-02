@@ -1,4 +1,6 @@
 import {TagsFilter} from "./TagsFilter";
+import {Tag} from "./Tag";
+import {Utils} from "../../Utils";
 
 /**
  * The substituting-tag uses the tags of a feature a variables and replaces them.
@@ -27,6 +29,13 @@ export default class SubstitutingTag implements TagsFilter {
         return template.replace(/{.*}/g, "");
     }
 
+    asTag(currentProperties: Record<string, string>){
+        if(this._invert){
+            throw "Cannot convert an inverted substituting tag"
+        }
+        return new Tag(this._key, Utils.SubstituteKeys(this._value, currentProperties))
+    }
+    
     asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
         return this._key + (this._invert ? '!' : '') + "=" + SubstitutingTag.substituteString(this._value, properties);
     }
