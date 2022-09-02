@@ -34,6 +34,47 @@
             },
             "question": "Hat dieser Ort eine induktive Höranlage für Hörgeschädigte?"
         },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "Dieser Ort bietet drahtlosen Internetzugang"
+                },
+                "1": {
+                    "then": "Dieser Ort bietet <b>keinen</b> Internetzugang"
+                },
+                "2": {
+                    "then": "Dieser Ort bietet Internetzugang"
+                },
+                "3": {
+                    "then": "Dieser Ort bietet Internetzugang über ein Terminal oder einen Computer"
+                },
+                "4": {
+                    "then": "Dieser Ort bietet kabelgebundenen Internetzugang"
+                }
+            },
+            "question": "Bietet dieser Ort Internetzugang?"
+        },
+        "internet-fee": {
+            "mappings": {
+                "0": {
+                    "then": "Der Internetzugang ist an diesem Ort gebührenpflichtig"
+                },
+                "1": {
+                    "then": "Der Internetzugang ist an diesem Ort kostenlos"
+                },
+                "2": {
+                    "then": "Der Internetzugang ist an diesem Ort kostenlos, aber nur für Kunden"
+                }
+            },
+            "question": "Wird für den Internetzugang eine Gebühr erhoben?"
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Geben Sie den Netzwerknamen ein"
+            },
+            "question": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?",
+            "render": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>"
+        },
         "level": {
             "mappings": {
                 "0": {
@@ -160,47 +201,6 @@
                 }
             },
             "question": "Wie lautet der zugehörige Wikipedia Artikel?"
-        },
-        "internet": {
-            "mappings": {
-                "1": {
-                    "then": "Dieser Ort bietet <b>keinen</b> Internetzugang"
-                },
-                "4": {
-                    "then": "Dieser Ort bietet kabelgebundenen Internetzugang"
-                },
-                "2": {
-                    "then": "Dieser Ort bietet Internetzugang"
-                },
-                "3": {
-                    "then": "Dieser Ort bietet Internetzugang über ein Terminal oder einen Computer"
-                },
-                "0": {
-                    "then": "Dieser Ort bietet drahtlosen Internetzugang"
-                }
-            },
-            "question": "Bietet dieser Ort Internetzugang?"
-        },
-        "internet-fee": {
-            "mappings": {
-                "0": {
-                    "then": "Der Internetzugang ist an diesem Ort gebührenpflichtig"
-                },
-                "1": {
-                    "then": "Der Internetzugang ist an diesem Ort kostenlos"
-                },
-                "2": {
-                    "then": "Der Internetzugang ist an diesem Ort kostenlos, aber nur für Kunden"
-                }
-            },
-            "question": "Wird für den Internetzugang eine Gebühr erhoben?"
-        },
-        "internet-ssid": {
-            "freeform": {
-                "placeholder": "Geben Sie den Netzwerknamen ein"
-            },
-            "render": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>",
-            "question": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?"
         }
     }
 }

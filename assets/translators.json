@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 196,
+      "commits": 200,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 161,
+      "commits": 165,
       "contributor": "kjon"
     },
     {
@@ -45,12 +45,12 @@
       "contributor": "Marco"
     },
     {
-      "commits": 19,
-      "contributor": "Reza Almanda"
+      "commits": 21,
+      "contributor": "SC"
     },
     {
       "commits": 19,
-      "contributor": "SC"
+      "contributor": "Reza Almanda"
     },
     {
       "commits": 16,
@@ -299,6 +299,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "eMerzh"
     },
     {
       "commits": 1,

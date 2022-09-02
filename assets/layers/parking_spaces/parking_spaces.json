@@ -1,10 +1,12 @@
 {
   "id": "parking_spaces",
   "name": {
-    "en": "Parking Spaces"
+    "en": "Parking Spaces",
+    "de": "Stellplätze"
   },
   "description": {
-    "en": "Layer showing individual parking spaces."
+    "en": "Layer showing individual parking spaces.",
+    "de": "Ebene mit den einzelnen PKW Stellplätzen."
   },
   "minzoom": 20,
   "source": {
@@ -14,98 +16,114 @@
     {
       "id": "type",
       "question": {
-        "en": "What kind of parking space is this?"
+        "en": "What kind of parking space is this?",
+        "de": "Welche Art von Stellplatz ist dies?"
       },
       "mappings": [
         {
           "if": "parking_space=",
           "then": {
-            "en": "This is a normal parking space"
+            "en": "This is a normal parking space",
+            "de": "Dies ist ein normaler Stellplatz"
           },
           "hideInAnswer": true
         },
         {
           "if": "parking_space=normal",
           "then": {
-            "en": "This is a normal parking space."
+            "en": "This is a normal parking space.",
+            "de": "Dies ist ein normaler Stellplatz."
           }
         },
         {
           "if": "parking_space=disabled",
           "then": {
-            "en": "This is a disabled parking space."
+            "en": "This is a disabled parking space.",
+            "de": "Dies ist ein Behindertenstellplatz."
           }
         },
         {
           "if": "parking_space=private",
           "then": {
-            "en": "This is a private parking space."
+            "en": "This is a private parking space.",
+            "de": "Dies ist ein privater Stellplatz."
           }
         },
         {
           "if": "parking_space=charging",
           "then": {
-            "en": "This is parking space reserved for charging vehicles."
+            "en": "This is parking space reserved for charging vehicles.",
+            "de": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist."
           }
         },
         {
           "if": "parking_space=delivery",
           "then": {
-            "en": "This is parking space reserved for deliveries."
+            "en": "This is parking space reserved for deliveries.",
+            "de": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist."
           }
         },
         {
           "if": "parking_space=hgv",
           "then": {
-            "en": "This is parking space reserved for heavy goods vehicles."
+            "en": "This is parking space reserved for heavy goods vehicles.",
+            "de": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist."
           }
         },
         {
           "if": "parking_space=caravan",
           "then": {
-            "en": "This is parking space reserved for caravans or RVs."
+            "en": "This is parking space reserved for caravans or RVs.",
+            "de": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert."
           }
         },
         {
           "if": "parking_space=bus",
           "then": {
-            "en": "This is parking space reserved for buses."
+            "en": "This is parking space reserved for buses.",
+            "de": "Dies ist ein Stellplatz, der für Busse reserviert ist."
           }
         },
         {
           "if": "parking_space=motorcycle",
           "then": {
-            "en": "This is parking space reserved for motorcycles."
+            "en": "This is parking space reserved for motorcycles.",
+            "de": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
           }
         },
         {
           "if": "parking_space=parent",
           "then": {
-            "en": "This is a parking space reserved for parents with children."
+            "en": "This is a parking space reserved for parents with children.",
+            "de": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
           }
         },
         {
           "if": "parking_space=staff",
           "then": {
-            "en": "This is a parking space reserved for staff."
+            "en": "This is a parking space reserved for staff.",
+            "de": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
           }
         },
         {
           "if": "parking_space=taxi",
           "then": {
-            "en": "This is a parking space reserved for taxis."
+            "en": "This is a parking space reserved for taxis.",
+            "de": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
           }
         },
         {
           "if": "parking_space=trailer",
           "then": {
-            "en": "This is a parking space reserved for vehicles towing a trailer."
+            "en": "This is a parking space reserved for vehicles towing a trailer.",
+            "de": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
           }
         },
         {
           "if": "parking_space=car_sharing",
           "then": {
-            "en": "This is a parking space reserved for car sharing."
+            "en": "This is a parking space reserved for car sharing.",
+            "de": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
           }
         }
       ]
@@ -113,13 +131,15 @@
     {
       "id": "capacity",
       "render": {
-        "en": "This parking spaces has {capacity} spaces."
+        "en": "This parking spaces has {capacity} spaces.",
+        "de": "Dieser Parkplatz hat {capacity} Stellplätze."
       },
       "mappings": [
         {
           "if": "capacity=1",
           "then": {
-            "en": "This parking space has 1 space."
+            "en": "This parking space has 1 space.",
+            "de": "Dieser Parkplatz hat 1 Stellplatz."
           }
         }
       ]
@@ -127,7 +147,8 @@
   ],
   "title": {
     "render": {
-      "en": "Parking Space"
+      "en": "Parking Space",
+      "de": "Stellplatz"
     }
   },
   "mapRendering": [

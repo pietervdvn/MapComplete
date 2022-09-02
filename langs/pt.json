@@ -89,40 +89,46 @@
             "iconAttribution": {
                 "title": "Ícones usados"
             },
+            "josmNotOpened": "Não foi possível comunicar com o JOSM. Certifique-se de ele está em execução e que o controlo remoto está ativado nas preferências do JOSM",
+            "josmOpened": "O JOSM está em execução",
             "mapContributionsBy": "Os dados visíveis atuais têm edições feitas por {contributors}",
             "mapContributionsByAndHidden": "Os dados visíveis atuais têm edições feitas por {contributors} e mais {hiddenCount} contribuidores",
-            "themeBy": "Tema gerido por {author}",
-            "josmOpened": "O JOSM está em execução",
+            "mapillaryHelp": "O <b>Mapillary</b> é um serviço online que reúne imagens ao nível da rua e as disponibiliza sob uma licença gratuita. Os utilizadores podem usar estas imagens para melhorar o OpenStreetMap",
+            "openIssueTracker": "Reportar um erro",
             "openMapillary": "Abrir o Mapillary aqui",
             "openOsmcha": "Ver as últimas edições feitas com {theme}",
-            "openIssueTracker": "Reportar um erro",
-            "translatedBy": "O MapComplete foi traduzido por {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} mais utilizadores</a>",
-            "mapillaryHelp": "O <b>Mapillary</b> é um serviço online que reúne imagens ao nível da rua e as disponibiliza sob uma licença gratuita. Os utilizadores podem usar estas imagens para melhorar o OpenStreetMap",
-            "josmNotOpened": "Não foi possível comunicar com o JOSM. Certifique-se de ele está em execução e que o controlo remoto está ativado nas preferências do JOSM"
+            "themeBy": "Tema gerido por {author}",
+            "translatedBy": "O MapComplete foi traduzido por {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} mais utilizadores</a>"
         },
+        "back": "Voltar",
+        "backToMapcomplete": "Voltar à visão geral do tema",
         "backgroundMap": "Mapa de fundo",
         "cancel": "Cancelar",
+        "confirm": "Confirmar",
         "customThemeIntro": "<h3>Temas personalizados</h3>São temas visitados anteriormente criados pelos utilizadores.",
         "download": {
             "downloadAsPdf": "Descarregar um PDF do mapa atual",
             "downloadAsPdfHelper": "Ideal para imprimir o mapa atual",
+            "downloadAsSvg": "Descarregar um SVG do mapa atual",
+            "downloadAsSvgHelper": "Compatível com Inkscape ou Adobe Illustrator; vai precisar de mais processamento  ",
             "downloadCSV": "Descarregar dados visíveis como CSV",
             "downloadCSVHelper": "Compatível com LibreOffice Calc, Excel…",
+            "downloadFeatureAsGeojson": "Descarregar como ficheiro GeoJSON",
+            "downloadFeatureAsGpx": "Descarregar como ficheiro GPX",
             "downloadGeoJsonHelper": "Compatível com QGIS, ArcGIS, ESRI…",
             "downloadGeojson": "Descarregar dados visíveis como GeoJSON",
+            "downloadGpx": "Descarregar como ficheiro GPX",
+            "downloadGpxHelper": "Um ficheiro GPX pode ser utilizado na maioria dos dispositivos e aplicações de navegação",
             "exporting": "A exportar…",
             "includeMetaData": "Incluir metadados (último editor, valores calculados…)",
             "licenseInfo": "<h3>Aviso de direitos de autor</h3>Os dados fornecidos estão disponíveis sob a licença ODbL. A sua reutilização é gratuita para qualquer finalidade, mas <ul><li> é obrigatória a atribuição <b>© Contribuidores do OpenStreetMap</b></li><li>Qualquer alteração deve ser feita usando a licença</li></ul>Por favor, leia na íntegra o documento <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Licença e Direitos de Autor</a> para mais informações.",
             "noDataLoaded": "Ainda não foram descarregados dados. O descarregamento estará disponível brevemente",
             "title": "Descarregar dados visíveis",
-            "downloadAsSvg": "Descarregar um SVG do mapa atual",
-            "downloadAsSvgHelper": "Compatível com Inkscape ou Adobe Illustrator; vai precisar de mais processamento  ",
-            "uploadGpx": "Enviar o seu trilho para o OpenStreetMap",
-            "downloadGpxHelper": "Um ficheiro GPX pode ser utilizado na maioria dos dispositivos e aplicações de navegação",
-            "downloadFeatureAsGeojson": "Descarregar como ficheiro GeoJSON",
-            "downloadFeatureAsGpx": "Descarregar como ficheiro GPX",
-            "downloadGpx": "Descarregar como ficheiro GPX"
+            "uploadGpx": "Enviar o seu trilho para o OpenStreetMap"
         },
+        "error": "Algo correu mal",
+        "example": "Exemplo",
+        "examples": "Exemplos",
         "fewChangesBefore": "Por favor, responda a algumas perguntas sobre os elementos existentes antes de adicionar um novo elemento.",
         "getStartedLogin": "Entrar com OpenStreetMap para começar",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crie uma conta</a>",
@@ -135,23 +141,28 @@
             "zoomInToSeeThisLayer": "Amplie para ver esta camada"
         },
         "loading": "A carregar…",
+        "loadingTheme": "A carregar {theme}…",
+        "loginFailed": "A autenticação no OpenStreetMap falhou",
         "loginOnlyNeededToEdit": "se quiser editar o mapa",
         "loginToStart": "Inicie a sessão para responder a esta pergunta",
         "loginWithOpenStreetMap": "Iniciar sessão com OpenStreetMap",
+        "logout": "Sair",
         "morescreen": {
             "createYourOwnTheme": "Crie o seu próprio tema MapComplete a partir do zero",
             "hiddenExplanation": "Estes temas só são acessíveis a quem tem a hiperligação. Você descobriu {hidden_discovered} de {total_hidden} temas ocultos.",
             "intro": "<h3>Mais mapas temáticos?</h3>Gosta de colecionar dados geográficos? <br>Tem mais temas disponíveis.",
+            "noMatchingThemes": "Nenhum tema corresponde aos seus critérios de pesquisa",
+            "noSearch": "Mostrar todos os temas",
             "previouslyHiddenTitle": "Temas ocultos visitados anteriormente",
             "requestATheme": "Se quiser um tema personalizado, solicite-o no rastreador de problemas",
-            "streetcomplete": "Outra aplicação semelhante é o <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
             "searchForATheme": "Procurar um tema",
-            "noSearch": "Mostrar todos os temas",
-            "noMatchingThemes": "Nenhum tema corresponde aos seus critérios de pesquisa"
+            "streetcomplete": "Outra aplicação semelhante é o <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "O nome desta {category} é $$$",
+        "next": "Seguinte",
         "noNameCategory": "{category} sem nome",
         "noTagsSelected": "Nenhuma etiqueta selecionada",
+        "notValid": "Selecione um valor válido para continuar",
         "number": "número",
         "oneSkippedQuestion": "Uma pergunta é ignorada",
         "openStreetMapIntro": "<h3>Um mapa aberto</h3><p>Um que todos podem usar e editar livremente. Um único lugar para armazenar todas as informações geográficas. Mapas diferentes, pequenos, incompatíveis e desatualizados não são necessários em nenhum lugar.</p> <p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> não é o mapa inimigo. Os dados do mapa podem ser usados livremente (com <a href=\"https://osm.org/copyright\" target=\"_blank\">atribuição e publicação das alterações a esses dados</a>). Todos podem adicionar novos dados e corrigir erros. Este site usa o OpenStreetMap. Todos os dados são de lá e suas respostas e correções são usadas em todos os lugares.</p> <p> Muitas pessoas e aplicações já usam o OpenStreetMap: <a href=\"https://organicmaps.app/\" target=\"_blank\">O Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mas também os mapas no Facebook, Instagram, Apple-maps e Bing-maps são (em parte) enriquecidos com dados do OpenStreetMap.</p>",
@@ -179,6 +190,7 @@
             "versionInfo": "v {version} - gerado em {date}"
         },
         "pickLanguage": "Escolha um idioma: ",
+        "poweredByOsm": "Impulsionado pelo OpenStreetMap",
         "questions": {
             "emailIs": "O endereço de e-mail de {category} é <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Qual é o endereço de e-mail de {category}?",
@@ -188,8 +200,10 @@
             "websiteOf": "Qual é o site de {category}?"
         },
         "readYourMessages": "Por favor, leia todas as suas mensagens do OpenStreetMap antes de adicionar um novo elemento.",
+        "removeLocationHistory": "Eliminar o histórico de localização",
         "returnToTheMap": "Voltar ao mapa",
         "save": "Guardar",
+        "screenToSmall": "Abrir {theme} numa nova janela",
         "search": {
             "error": "Alguma coisa correu mal…",
             "nothing": "Nada encontrado…",
@@ -199,6 +213,8 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Adicionar ao seu ecrã inicial</h3> Pode adicionar facilmente este site ao ecrã inicial do seu telemóvel. Para isso clique no botão 'Adicionar ao ecrã inicial' na barra de URL.",
             "copiedToClipboard": "Hiperligação copiada para a área de transferência",
+            "downloadCustomTheme": "Descarregar a configuração para este tema",
+            "downloadCustomThemeHelp": "Um colaborador experiente pode utilizar este ficheiro para melhorar o seu tema",
             "editThemeDescription": "Adicionar ou alterar perguntas deste tema",
             "editThisTheme": "Editar este tema",
             "embedIntro": "<h3>Incorporar no seu site</h3>Por favor, insira este mapa no seu site. <br>Encorajamos a fazê-lo - nem precisa de pedir permissão. <br> É grátis e sempre será. Quanto mais pessoas estiverem a usar isto, mais valioso se torna.",
@@ -213,9 +229,7 @@
             "fsUserbadge": "Ativar o botão de iniciar sessão",
             "fsWelcomeMessage": "Mostrar a janela com a mensagem de boas-vindas e separadores associados",
             "intro": "<h3>Partilhar este mapa</h3> Partilhe este mapa copiando a hiperligação abaixo e enviando-a a amigos e familiares:",
-            "thanksForSharing": "Obrigado por partilhar!",
-            "downloadCustomThemeHelp": "Um colaborador experiente pode utilizar este ficheiro para melhorar o seu tema",
-            "downloadCustomTheme": "Descarregar a configuração para este tema"
+            "thanksForSharing": "Obrigado por partilhar!"
         },
         "skip": "Ignorar esta pergunta",
         "skippedQuestions": "Algumas perguntas são ignoradas",
@@ -239,51 +253,54 @@
             "wednesday": "Quarta-feira"
         },
         "welcomeBack": "Iniciou a sessão, bem-vindo de volta!",
+        "welcomeExplanation": {
+            "addNew": "Toque no mapa para adicionar um novo POI.",
+            "browseMoreMaps": "Descobrir mais mapas",
+            "browseOtherThemesIntro": "Existem vários mapas temáticos no MapComplete",
+            "general": "Neste mapa, pode ver, editar e adicionar <i>pontos de interesse</i>. Aproxime a visualização para ver o POI, toque num para ver ou editar a informação. Todos os dados são obtidos e guardados no OpenStreetMap, que pode ser livremente reutilizado."
+        },
         "wikipedia": {
             "createNewWikidata": "Criar um novo item do Wikidata",
             "doSearch": "Pesquise acima para ver os resultados",
             "failed": "O carregamento da entrada da Wikipédia falhou",
+            "fromWikipedia": "Da Wikipédia, a enciclopédia livre",
             "loading": "A carregar a Wikipédia…",
             "noResults": "Nada encontrado para <i>{search}</i>",
             "noWikipediaPage": "Este item do Wikidata ainda não tem uma página correspondente na Wikipédia.",
-            "searchWikidata": "Pesquisar no Wikidata",
-            "wikipediaboxTitle": "Wikipédia",
             "previewbox": {
                 "born": "Nascimento: {value}",
                 "died": "Falecimento: {value}"
             },
-            "fromWikipedia": "Da Wikipédia, a enciclopédia livre",
-            "searchToShort": "A sua consulta de pesquisa é demasiado curta, introduza um texto mais longo"
-        },
-        "welcomeExplanation": {
-            "addNew": "Toque no mapa para adicionar um novo POI.",
-            "general": "Neste mapa, pode ver, editar e adicionar <i>pontos de interesse</i>. Aproxime a visualização para ver o POI, toque num para ver ou editar a informação. Todos os dados são obtidos e guardados no OpenStreetMap, que pode ser livremente reutilizado.",
-            "browseOtherThemesIntro": "Existem vários mapas temáticos no MapComplete",
-            "browseMoreMaps": "Descobrir mais mapas"
-        },
-        "loginFailed": "A autenticação no OpenStreetMap falhou",
-        "next": "Seguinte",
-        "logout": "Sair",
-        "loadingTheme": "A carregar {theme}…",
-        "back": "Voltar",
-        "notValid": "Selecione um valor válido para continuar",
-        "backToMapcomplete": "Voltar à visão geral do tema",
-        "screenToSmall": "Abrir {theme} numa nova janela",
-        "confirm": "Confirmar",
-        "error": "Algo correu mal",
-        "example": "Exemplo",
-        "examples": "Exemplos",
-        "removeLocationHistory": "Eliminar o histórico de localização",
-        "poweredByOsm": "Impulsionado pelo OpenStreetMap"
+            "searchToShort": "A sua consulta de pesquisa é demasiado curta, introduza um texto mais longo",
+            "searchWikidata": "Pesquisar no Wikidata",
+            "wikipediaboxTitle": "Wikipédia"
+        }
     },
     "image": {
         "addPicture": "Adicionar imagem",
         "ccb": "sob a licença CC-BY",
+        "ccbExplanation": "A licença CC-BY implica que qualquer pessoa pode usar sua fotografia para qualquer finalidade, mas têm de atribuir a autoria a si",
         "ccbs": "sob a licença CC-BY-SA",
+        "ccbsExplanation": "A licença CC-BY-SA implica que qualquer pessoa pode usar sua imagem para qualquer finalidade, mas têm de atribuir a autoria a si e remixes da imagem devem ser republicados sob a mesma licença",
         "cco": "no domínio público",
+        "ccoExplanation": "Adicionar uma fotografia no domínio público implica que qualquer pessoa pode fazer qualquer coisa com a sua fotografia",
         "doDelete": "Remover imagem",
         "dontDelete": "Cancelar",
         "isDeleted": "Eliminada",
+        "nearbyPictures": {
+            "allFiltered": "Nenhuma imagem correspondeu ao seu filtro",
+            "browseNearby": "Procurar imagens próximas…",
+            "confirm": "A imagem selecionada mostra {title()}",
+            "hasMatchingPicture": "Será que uma imagem corresponde ao objeto? Selecione abaixo",
+            "loadMore": "Carregar mais imagens",
+            "loading": "A carregar imagens próximas…",
+            "noImageSelected": "Selecione uma imagem para ligá-la ao objeto",
+            "nothingFound": "Não foram encontradas imagens próximas…",
+            "onlyTowards": "Mostrar apenas fotografias que são tiradas em direção a este objeto",
+            "removeFilters": "Clique aqui para remover os filtros",
+            "title": "Fotografias próximas",
+            "withinRadius": "Mostrar apenas fotografias que são tiradas num raio de {radius} metros deste objeto"
+        },
         "pleaseLogin": "Entre na sua conta para adicionar uma imagem",
         "respectPrivacy": "Não fotografe pessoas nem placas de veículos. Não envie imagens do Google Maps, do Google Streetview ou outras fontes protegidas por direitos de autor.",
         "toBig": "A sua imagem é muito grande porque tem {actual_size}. Use imagens com o máximo {max_size}",
@@ -292,23 +309,108 @@
         "uploadMultipleDone": "Foram adicionadas {count} fotografias. Obrigado por ajudar!",
         "uploadingMultiple": "A enviar {count} imagens…",
         "uploadingPicture": "A enviar a sua imagem…",
-        "willBePublished": "A sua imagem será publicada: ",
-        "ccbExplanation": "A licença CC-BY implica que qualquer pessoa pode usar sua fotografia para qualquer finalidade, mas têm de atribuir a autoria a si",
-        "ccbsExplanation": "A licença CC-BY-SA implica que qualquer pessoa pode usar sua imagem para qualquer finalidade, mas têm de atribuir a autoria a si e remixes da imagem devem ser republicados sob a mesma licença",
-        "ccoExplanation": "Adicionar uma fotografia no domínio público implica que qualquer pessoa pode fazer qualquer coisa com a sua fotografia",
-        "nearbyPictures": {
-            "noImageSelected": "Selecione uma imagem para ligá-la ao objeto",
-            "nothingFound": "Não foram encontradas imagens próximas…",
-            "removeFilters": "Clique aqui para remover os filtros",
-            "title": "Fotografias próximas",
-            "hasMatchingPicture": "Será que uma imagem corresponde ao objeto? Selecione abaixo",
-            "browseNearby": "Procurar imagens próximas…",
-            "loadMore": "Carregar mais imagens",
-            "withinRadius": "Mostrar apenas fotografias que são tiradas num raio de {radius} metros deste objeto",
-            "onlyTowards": "Mostrar apenas fotografias que são tiradas em direção a este objeto",
-            "allFiltered": "Nenhuma imagem correspondeu ao seu filtro",
-            "confirm": "A imagem selecionada mostra {title()}",
-            "loading": "A carregar imagens próximas…"
+        "willBePublished": "A sua imagem será publicada: "
+    },
+    "importHelper": {
+        "askMetadata": {
+            "downloadGeojson": "Descarregar GeoJSON",
+            "giveDescription": "Por favor, escreva uma pequena descrição para alguém que veja a nota. Uma boa nota descreve o que é preciso fazer, por exemplo; <i>Pode existir aqui um banco. Se alguém passar por aqui, pode verificar e indicar se o banco existe ou não?</i> (Será adicionada automaticamente uma hiperligação para o MapComplete)",
+            "giveSource": "Qual é a fonte destes dados? Se a etiqueta 'source' for aplicada no elemento, este valor será ignorado",
+            "giveWikilink": "Em que página da wiki do OpenStreetMap se pode encontrar mais informação sobre esta importação?",
+            "intro": "Antes de acrescentar {count} notas, por favor forneça alguma informação adicional.",
+            "orDownload": "Em alternativa, pode descarregar o conjunto de dados para importar diretamente",
+            "shouldBeOsmWikilink": "Era esperado uma hiperligação para uma página em wiki.openstreetmap.org",
+            "shouldBeUrl": "Não é um URL válido",
+            "shouldNotBeHomepage": "Não, a página inicial também não é permitida. Introduza o URL completo de uma página da wiki do OpenSTreetMap que documente a sua importação",
+            "title": "Definir metadados"
+        },
+        "compareToAlreadyExistingNotes": {
+            "completelyImported": "Todos os pontos propostos já têm (ou tinham) uma nota de importação",
+            "loading": "A obter notas do OSM",
+            "loadingFailed": "As notas de carregamento falharam devido a {error}",
+            "mapExplanation": "Os elementos vermelhos no mapa seguinte são todos os pontos de dados do seu conjunto de dados. Há <b>{length}</b> elementos no seu conjunto de dados.",
+            "noPreviousNotesFound": "Não foram encontradas notas de importação anteriores",
+            "nothingNearby": "Nenhum dos pontos propostos tem uma nota de importação nas proximidades",
+            "someNearby": "{hasNearby} pontos têm uma nota de importação já existente num raio de {distance} metros",
+            "title": "Comparar com notas existentes",
+            "titleLong": "Comparar com notas 'to-import' já existentes",
+            "wontBeImported": "Estes pontos de dados <i>não</i> serão importados e são mostrados como pontos vermelhos no mapa abaixo"
+        },
+        "confirmProcess": {
+            "contactedCommunity": "Contactei a comunidade (local) sobre esta importação",
+            "licenseIsCompatible": "A licença dos dados a importar permite a sua importação para o OSM. É permitida a sua redistribuição comercial, com apenas uma atribuição mínima",
+            "readImportGuidelines": "Li as diretrizes de importação na wiki do OSM",
+            "title": "Licença e comunidade",
+            "titleLong": "Fez o processo de importação?",
+            "wikipageIsMade": "O processo está documentado na wiki do OSM (vai precisar desta hiperligação mais tarde)"
+        },
+        "conflationChecker": {
+            "cacheExpired": "A cache expirou",
+            "downloadOverpassData": "Descarregar o GeoJSON carregado a partir do overpass",
+            "importCandidatesCount": "Os {count} elementos vermelhos no mapa seguinte são todos os seus candidatos à importação.",
+            "loadedDataAge": "Os dados carregados são da cache e têm {age}",
+            "mapShowingNearbyIntro": "O mapa seguinte mostra as características a importar que têm uma característica OSM dentro ",
+            "nearbyWarn": "Os {count} elementos vermelhos no mapa seguinte <b>não</b> serão importados!",
+            "nothingLoaded": "Nenhum elemento foi carregado do OpenStreetMap que corresponda à camada atual {name}",
+            "osmLoaded": "{count} elementos foram carregados do OpenStreetMap que correspondem à camada <b>{name}</b>.",
+            "reloadTheCache": "Limpar a cache e voltar a consultar novamente o overpass",
+            "setRangeToZero": "Defina o intervalo para 0 ou 1 se quiser importar todos",
+            "states": {
+                "error": "Não foi possível carregar os últimos dados do overpass devido a: {error}",
+                "idle": "A verificar o armazenamento local…",
+                "running": "A consultar o overpass…",
+                "unexpected": "Estado inesperado: {state}"
+            },
+            "title": "Comparar com dados existentes",
+            "titleLive": "Dados ao vivo no OSM",
+            "titleNearby": "Elementos próximos",
+            "zoomIn": "O nível atual de zoom é {current}"
+        },
+        "createNotes": {
+            "creating": "Criadas <b>{count}</b> notas de um total de {total}",
+            "done": "Todas as {count} notas foram criadas!",
+            "loading": "Espere enquanto estamos a carregar…",
+            "openImportViewer": "Inspecionar o progresso das suas notas no 'import_viewer'",
+            "title": "Criação de nota"
+        },
+        "gotoImportViewer": "Inspecionar as suas importações anteriores",
+        "introduction": {
+            "description": "O auxiliar de importação converte um conjunto de dados externo em notas. O conjunto de dados externo deve corresponder a uma das camadas MapComplete existente. Para cada item que você colocar no importador, será criada uma única nota. Essas notas serão mostradas juntamente com os elementos relevantes nesses mapas para adicioná-las facilmente.",
+            "importFormat": "Um texto numa nota deve ter o seguinte formato para poder ser escolhido",
+            "title": "Introdução"
+        },
+        "login": {
+            "lockNotice": "Esta página está bloqueada. Precisa de {importHelperUnlock} conjuntos de alterações antes de poder aceder a isto.",
+            "loggedInWith": "Está atualmente autenticado como <b>{name}</b> e fez {csCount} conjuntos de alterações",
+            "loginIsCorrect": "<b>{name}</b> é a conta correta para criar as notas de importação.",
+            "loginRequired": "Tem de estar autenticado para poder continuar",
+            "title": "Iniciar sessão",
+            "userAccountTitle": "Selecionar conta de utilizador"
+        },
+        "mapPreview": {
+            "autodetected": "A camada foi automaticamente deduzida com base nas suas propriedades",
+            "confirm": "Os elementos estão na localização correta no mapa",
+            "mismatch": "{count} elementos não correspondiam à camada selecionada. Certifique-se que as etiquetas para indicar o tipo estão presentes, nomeadamente {tags}",
+            "selectLayer": "A que camada corresponde esta importação?",
+            "title": "Pré-visualização do mapa"
+        },
+        "noteParts": {
+            "datasource": "Dados originais de {source}",
+            "importEasily": "Adicione este ponto facilmente com o MapComplete:",
+            "wikilink": "Pode-se encontrar mais informações sobre esta importação em {wikilink}"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "Todos os elementos a importar têm esta etiqueta",
+            "inspectDataTitle": "Inspecionar dados de {count} elementos a importar",
+            "inspectLooksCorrect": "Estes valores parecem corretos",
+            "someHaveSame": "{count} elementos a importar têm esta etiqueta, isto é {percentage}% do total",
+            "title": "Inspecionar atributos"
+        },
+        "selectFile": {
+            "description": "Selecione um ficheiro .csv ou .geojson para começar",
+            "errDuplicate": "Algumas colunas têm o mesmo nome",
+            "errNoLatOrLon": "O cabeçalho não contém `lat' ou `lon'",
+            "errNoName": "Algumas colunas não têm um nome"
         }
     },
     "index": {
@@ -369,107 +471,5 @@
         "loginToSplit": "Tem de estar autenticado para dividir uma estrada",
         "split": "Dividir",
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
-    },
-    "importHelper": {
-        "askMetadata": {
-            "shouldBeUrl": "Não é um URL válido",
-            "downloadGeojson": "Descarregar GeoJSON",
-            "giveDescription": "Por favor, escreva uma pequena descrição para alguém que veja a nota. Uma boa nota descreve o que é preciso fazer, por exemplo; <i>Pode existir aqui um banco. Se alguém passar por aqui, pode verificar e indicar se o banco existe ou não?</i> (Será adicionada automaticamente uma hiperligação para o MapComplete)",
-            "giveWikilink": "Em que página da wiki do OpenStreetMap se pode encontrar mais informação sobre esta importação?",
-            "giveSource": "Qual é a fonte destes dados? Se a etiqueta 'source' for aplicada no elemento, este valor será ignorado",
-            "orDownload": "Em alternativa, pode descarregar o conjunto de dados para importar diretamente",
-            "shouldBeOsmWikilink": "Era esperado uma hiperligação para uma página em wiki.openstreetmap.org",
-            "intro": "Antes de acrescentar {count} notas, por favor forneça alguma informação adicional.",
-            "title": "Definir metadados",
-            "shouldNotBeHomepage": "Não, a página inicial também não é permitida. Introduza o URL completo de uma página da wiki do OpenSTreetMap que documente a sua importação"
-        },
-        "conflationChecker": {
-            "importCandidatesCount": "Os {count} elementos vermelhos no mapa seguinte são todos os seus candidatos à importação.",
-            "loadedDataAge": "Os dados carregados são da cache e têm {age}",
-            "states": {
-                "unexpected": "Estado inesperado: {state}",
-                "running": "A consultar o overpass…",
-                "error": "Não foi possível carregar os últimos dados do overpass devido a: {error}",
-                "idle": "A verificar o armazenamento local…"
-            },
-            "reloadTheCache": "Limpar a cache e voltar a consultar novamente o overpass",
-            "titleNearby": "Elementos próximos",
-            "downloadOverpassData": "Descarregar o GeoJSON carregado a partir do overpass",
-            "nearbyWarn": "Os {count} elementos vermelhos no mapa seguinte <b>não</b> serão importados!",
-            "nothingLoaded": "Nenhum elemento foi carregado do OpenStreetMap que corresponda à camada atual {name}",
-            "title": "Comparar com dados existentes",
-            "osmLoaded": "{count} elementos foram carregados do OpenStreetMap que correspondem à camada <b>{name}</b>.",
-            "titleLive": "Dados ao vivo no OSM",
-            "zoomIn": "O nível atual de zoom é {current}",
-            "mapShowingNearbyIntro": "O mapa seguinte mostra as características a importar que têm uma característica OSM dentro ",
-            "setRangeToZero": "Defina o intervalo para 0 ou 1 se quiser importar todos",
-            "cacheExpired": "A cache expirou"
-        },
-        "login": {
-            "title": "Iniciar sessão",
-            "userAccountTitle": "Selecionar conta de utilizador",
-            "loggedInWith": "Está atualmente autenticado como <b>{name}</b> e fez {csCount} conjuntos de alterações",
-            "loginRequired": "Tem de estar autenticado para poder continuar",
-            "loginIsCorrect": "<b>{name}</b> é a conta correta para criar as notas de importação.",
-            "lockNotice": "Esta página está bloqueada. Precisa de {importHelperUnlock} conjuntos de alterações antes de poder aceder a isto."
-        },
-        "mapPreview": {
-            "title": "Pré-visualização do mapa",
-            "autodetected": "A camada foi automaticamente deduzida com base nas suas propriedades",
-            "confirm": "Os elementos estão na localização correta no mapa",
-            "mismatch": "{count} elementos não correspondiam à camada selecionada. Certifique-se que as etiquetas para indicar o tipo estão presentes, nomeadamente {tags}",
-            "selectLayer": "A que camada corresponde esta importação?"
-        },
-        "compareToAlreadyExistingNotes": {
-            "loadingFailed": "As notas de carregamento falharam devido a {error}",
-            "mapExplanation": "Os elementos vermelhos no mapa seguinte são todos os pontos de dados do seu conjunto de dados. Há <b>{length}</b> elementos no seu conjunto de dados.",
-            "wontBeImported": "Estes pontos de dados <i>não</i> serão importados e são mostrados como pontos vermelhos no mapa abaixo",
-            "nothingNearby": "Nenhum dos pontos propostos tem uma nota de importação nas proximidades",
-            "titleLong": "Comparar com notas 'to-import' já existentes",
-            "completelyImported": "Todos os pontos propostos já têm (ou tinham) uma nota de importação",
-            "noPreviousNotesFound": "Não foram encontradas notas de importação anteriores",
-            "someNearby": "{hasNearby} pontos têm uma nota de importação já existente num raio de {distance} metros",
-            "title": "Comparar com notas existentes",
-            "loading": "A obter notas do OSM"
-        },
-        "createNotes": {
-            "done": "Todas as {count} notas foram criadas!",
-            "loading": "Espere enquanto estamos a carregar…",
-            "creating": "Criadas <b>{count}</b> notas de um total de {total}",
-            "title": "Criação de nota",
-            "openImportViewer": "Inspecionar o progresso das suas notas no 'import_viewer'"
-        },
-        "selectFile": {
-            "description": "Selecione um ficheiro .csv ou .geojson para começar",
-            "errDuplicate": "Algumas colunas têm o mesmo nome",
-            "errNoLatOrLon": "O cabeçalho não contém `lat' ou `lon'",
-            "errNoName": "Algumas colunas não têm um nome"
-        },
-        "gotoImportViewer": "Inspecionar as suas importações anteriores",
-        "introduction": {
-            "importFormat": "Um texto numa nota deve ter o seguinte formato para poder ser escolhido",
-            "description": "O auxiliar de importação converte um conjunto de dados externo em notas. O conjunto de dados externo deve corresponder a uma das camadas MapComplete existente. Para cada item que você colocar no importador, será criada uma única nota. Essas notas serão mostradas juntamente com os elementos relevantes nesses mapas para adicioná-las facilmente.",
-            "title": "Introdução"
-        },
-        "noteParts": {
-            "datasource": "Dados originais de {source}",
-            "wikilink": "Pode-se encontrar mais informações sobre esta importação em {wikilink}",
-            "importEasily": "Adicione este ponto facilmente com o MapComplete:"
-        },
-        "previewAttributes": {
-            "allAttributesSame": "Todos os elementos a importar têm esta etiqueta",
-            "someHaveSame": "{count} elementos a importar têm esta etiqueta, isto é {percentage}% do total",
-            "title": "Inspecionar atributos",
-            "inspectDataTitle": "Inspecionar dados de {count} elementos a importar",
-            "inspectLooksCorrect": "Estes valores parecem corretos"
-        },
-        "confirmProcess": {
-            "contactedCommunity": "Contactei a comunidade (local) sobre esta importação",
-            "licenseIsCompatible": "A licença dos dados a importar permite a sua importação para o OSM. É permitida a sua redistribuição comercial, com apenas uma atribuição mínima",
-            "titleLong": "Fez o processo de importação?",
-            "wikipageIsMade": "O processo está documentado na wiki do OSM (vai precisar desta hiperligação mais tarde)",
-            "readImportGuidelines": "Li as diretrizes de importação na wiki do OSM",
-            "title": "Licença e comunidade"
-        }
     }
 }
