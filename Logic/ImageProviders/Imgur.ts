@@ -17,7 +17,7 @@ export class Imgur extends ImageProvider {
 
     static uploadMultiple(
         title: string, description: string, blobs: FileList,
-        handleSuccessfullUpload: ((imageURL: string) => void),
+        handleSuccessfullUpload: ((imageURL: string) => Promise<void>),
         allDone: (() => void),
         onFail: ((reason: string) => void),
         offset: number = 0) {
@@ -29,8 +29,8 @@ export class Imgur extends ImageProvider {
         const blob = blobs.item(offset);
         const self = this;
         this.uploadImage(title, description, blob,
-            (imageUrl) => {
-                handleSuccessfullUpload(imageUrl);
+            async (imageUrl) => {
+                await handleSuccessfullUpload(imageUrl);
                 self.uploadMultiple(
                     title, description, blobs,
                     handleSuccessfullUpload,
@@ -45,7 +45,7 @@ export class Imgur extends ImageProvider {
     }
 
     static uploadImage(title: string, description: string, blob: File,
-                       handleSuccessfullUpload: ((imageURL: string) => void),
+                       handleSuccessfullUpload: ((imageURL: string) => Promise<void>),
                        onFail: (reason: string) => void) {
 
         const apiUrl = 'https://api.imgur.com/3/image';
@@ -74,9 +74,9 @@ export class Imgur extends ImageProvider {
         // Response contains stringified JSON
         // Image URL available at response.data.link
         // @ts-ignore
-        $.ajax(settings).done(function (response) {
+        $.ajax(settings).done(async function (response) {
             response = JSON.parse(response);
-            handleSuccessfullUpload(response.data.link);
+            await handleSuccessfullUpload(response.data.link);
         }).fail((reason) => {
             console.log("Uploading to IMGUR failed", reason);
             // @ts-ignore

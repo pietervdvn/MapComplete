@@ -36,7 +36,7 @@ export class ImageUploadFlow extends Toggle {
             perId.set(id, new UIEventSource<number>(0))
         }
         const uploadedCount = perId.get(id)
-        const uploader = new ImgurUploader(url => {
+        const uploader = new ImgurUploader(async url => {
             // A file was uploaded - we add it to the tags of the object
 
             const tags = tagsSource.data
@@ -48,17 +48,18 @@ export class ImageUploadFlow extends Toggle {
                 }
                 key = imagePrefix + ":" + freeIndex;
             }
-            console.log("Adding image:" + key, url);
-            uploadedCount.data++
-            uploadedCount.ping()
-            Promise.resolve(state.changes
+ 
+           await state.changes
                 .applyAction(new ChangeTagAction(
                     tags.id, new Tag(key, url), tagsSource.data,
                     {
                         changeType: "add-image",
                         theme: state.layoutToUse.id
                     }
-                )))
+                ))
+            console.log("Adding image:" + key, url);
+            uploadedCount.data++
+            uploadedCount.ping()
         })
 
         const licensePicker = new LicensePicker(state)

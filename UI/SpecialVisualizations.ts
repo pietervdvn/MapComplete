@@ -1062,9 +1062,9 @@ export default class SpecialVisualizations {
                         const t = Translations.t.notes;
                         const id = tags.data[args[0] ?? "id"]
 
-                        const uploader = new ImgurUploader(url => {
+                        const uploader = new ImgurUploader(async url => {
                             isUploading.setData(false)
-                            state.osmConnection.addCommentToNote(id, url)
+                            await state.osmConnection.addCommentToNote(id, url)
                             NoteCommentElement.addCommentTo(url, tags, state)
 
                         })

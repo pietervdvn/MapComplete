@@ -7,9 +7,9 @@ export default class ImgurUploader {
     public readonly failed: UIEventSource<string[]> = new UIEventSource<string[]>([]);
     public readonly success: UIEventSource<string[]> = new UIEventSource<string[]>([]);
     public maxFileSizeInMegabytes = 10;
-    private readonly _handleSuccessUrl: (string) => void;
+    private readonly _handleSuccessUrl: (string) => Promise<void>;
 
-    constructor(handleSuccessUrl: (string) => void) {
+    constructor(handleSuccessUrl: (string) => Promise<void>) {
         this._handleSuccessUrl = handleSuccessUrl;
     }
 
@@ -24,11 +24,11 @@ export default class ImgurUploader {
         Imgur.uploadMultiple(title,
             description,
             files,
-            function (url) {
+            async function (url) {
                 console.log("File saved at", url);
                 self.success.data.push(url)
                 self.success.ping();
-                self._handleSuccessUrl(url);
+                await self._handleSuccessUrl(url);
             },
             function () {
                 console.log("All uploads completed");
