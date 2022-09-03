@@ -12,7 +12,6 @@ import {Changes} from "../Osm/Changes";
 import ChangeToElementsActor from "../Actors/ChangeToElementsActor";
 import PendingChangesUploader from "../Actors/PendingChangesUploader";
 import * as translators from "../../assets/translators.json"
-import {post} from "jquery";
 import Maproulette from "../Maproulette";
         
 /**
