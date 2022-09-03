@@ -1,5 +1,4 @@
-import $ from "jquery"
-import ImageProvider, {ProvidedImage} from "./ImageProvider";
+import ImageProvider, { ProvidedImage } from "./ImageProvider";
 import BaseUIElement from "../../UI/BaseUIElement";
 import {Utils} from "../../Utils";
 import Constants from "../../Models/Constants";
@@ -51,33 +50,27 @@ export class Imgur extends ImageProvider {
         const apiUrl = 'https://api.imgur.com/3/image';
         const apiKey = Constants.ImgurApiKey;
 
-        const settings = {
-            async: true,
-            crossDomain: true,
-            processData: false,
-            contentType: false,
-            type: 'POST',
-            url: apiUrl,
-            headers: {
-                Authorization: 'Client-ID ' + apiKey,
-                Accept: 'application/json',
-            },
-            mimeType: 'multipart/form-data',
-        };
         const formData = new FormData();
         formData.append('image', blob);
         formData.append("title", title);
         formData.append("description", description)
-        // @ts-ignore
-        settings.data = formData;
+
+        const settings: RequestInit = {
+            method: 'POST',
+            body: formData,
+            redirect: 'follow',
+            headers: new Headers({
+                Authorization: `Client-ID ${apiKey}`,
+                Accept: 'application/json',
+            }),
+        };
 
         // Response contains stringified JSON
         // Image URL available at response.data.link
-        // @ts-ignore
-        $.ajax(settings).done(async function (response) {
-            response = JSON.parse(response);
-            await handleSuccessfullUpload(response.data.link);
-        }).fail((reason) => {
+        fetch(apiUrl, settings).then(async function (response) {
+            const content = await response.json()
+            await handleSuccessfullUpload(content.data.link);
+        }).catch((reason) => {
             console.log("Uploading to IMGUR failed", reason);
             // @ts-ignore
             onFail(reason);
@@ -101,7 +94,7 @@ export class Imgur extends ImageProvider {
 
     /**
      * Download the attribution from attribution
-     * 
+     *
      * const data = {"data":{"id":"I9t6B7B","title":"Station Knokke","description":"author:Pieter Vander Vennet\r\nlicense:CC-BY 4.0\r\nosmid:node\/9812712386","datetime":1655052078,"type":"image\/jpeg","animated":false,"width":2400,"height":1795,"size":910872,"views":2,"bandwidth":1821744,"vote":null,"favorite":false,"nsfw":false,"section":null,"account_url":null,"account_id":null,"is_ad":false,"in_most_viral":false,"has_sound":false,"tags":[],"ad_type":0,"ad_url":"","edited":"0","in_gallery":false,"link":"https:\/\/i.imgur.com\/I9t6B7B.jpg","ad_config":{"safeFlags":["not_in_gallery","share"],"highRiskFlags":[],"unsafeFlags":["sixth_mod_unsafe"],"wallUnsafeFlags":[],"showsAds":false,"showAdLevel":1}},"success":true,"status":200}
      * Utils.injectJsonDownloadForTests("https://api.imgur.com/3/image/E0RuAK3", data)
      * const licenseInfo = await Imgur.singleton.DownloadAttribution("https://i.imgur.com/E0RuAK3.jpg")
