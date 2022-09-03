@@ -14,7 +14,7 @@ class StatsDownloader {
         this._targetDirectory = targetDirectory;
     }
 
-    public async DownloadStats(startYear = 2020, startMonth = 5) {
+    public async DownloadStats(startYear = 2020, startMonth = 5, startDay = 1) {
 
         const today = new Date();
         const currentYear = today.getFullYear()
@@ -36,7 +36,7 @@ class StatsDownloader {
                 }
 
                 const features = []
-                for (let day = 1; day <= 31; day++) {
+                for (let day = startDay; day <= 31; day++) {
                     
                     if (year === currentYear && month === currentMonth && day === today.getDate()) {
                         break;
@@ -50,7 +50,10 @@ class StatsDownloader {
                     }
                     const path = `${this._targetDirectory}/stats.${year}-${month}-${(day < 10 ? "0" : "") + day}.day.json`
                     if (existsSync(path)) {
-                        features.push(...JSON.parse(readFileSync(path, "UTF-8")))
+                        let features = JSON.parse(readFileSync(path, "UTF-8"))
+                        features = features?.features ?? features
+                        console.log(features)
+                        features.push(...features.features ) // day-stats are generally a list already, but in some ad-hoc cases might be a geojson-collection too
                         console.log("Loaded ", path, "from disk, got", features.length, "features now")
                         continue
                     }
@@ -68,6 +71,7 @@ class StatsDownloader {
                 }
                 writeFileSync(pathM, JSON.stringify({features}))
             }
+            startDay = 1
         }
 
     }
@@ -167,17 +171,23 @@ async function main(): Promise<void> {
     const targetDir = "Docs/Tools/stats"
     let year = 2020
     let month = 5
+    let day = 1
     if(!isNaN(Number(process.argv[2]))){
         year = Number(process.argv[2])
     }
     if(!isNaN(Number(process.argv[3]))){
         month = Number(process.argv[3])
     }
-    
+
+    if(!isNaN(Number(process.argv[4]))){
+        day = Number(process.argv[4])
+    }
+
+
     do {
         try {
 
-            await new StatsDownloader(targetDir).DownloadStats(year, month)
+            await new StatsDownloader(targetDir).DownloadStats(year, month, day)
             break
         } catch (e) {
             console.log(e)
