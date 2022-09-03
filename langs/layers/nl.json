@@ -2455,6 +2455,13 @@
                 },
                 "question": "Wat is de naam van dit Klimgelegenheid?",
                 "render": "<strong>{name}</strong>"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Een klimboulder- eenn enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen"
+                    }
+                }
             }
         },
         "title": {
