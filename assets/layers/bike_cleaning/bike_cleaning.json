@@ -105,29 +105,20 @@
       },
       "mappings": [
         {
-          "if": "service:bicycle:cleaning:fee=no&service:bicycle:cleaning:charge=",
+          "if": "service:bicycle:cleaning:fee=no",
           "then": {
             "en": "The cleaning service is free to use",
             "de": "Der Reinigungsservice ist kostenlos",
             "nl": "Het fietsschoonmaakpunt is gratis",
             "es": "El servicio de limpieza es gratis",
             "fr": "Le service de nettoyage est gratuit"
-          }
-        },
-        {
-          "if": "service:bicycle:cleaning:fee=no",
-          "then": {
-            "en": "Free to use",
-            "de": "Kostenlose Nutzung",
-            "nl": "Gratis te gebruiken",
-            "es": "Gratis",
-            "da": "Gratis at bruge",
-            "fr": "Utilisation gratuite"
           },
-          "hideInAnswer": true
+          "addExtraTags": ["service:bicycle:cleaning:charge="]
         },
         {
-          "if": "service:bicycle:cleaning:fee=yes&service:bicycle:cleaning:charge=",
+          "if": {
+            "and":["service:bicycle:cleaning:fee=yes","service:bicycle:cleaning:charge="]
+          },
           "then": {
             "en": "The cleaning service has a fee, but the amount is not known",
             "de": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt",
@@ -169,26 +160,15 @@
       },
       "mappings": [
         {
-          "if": "fee=no&charge=",
+          "if": "fee=no",
           "then": {
             "en": "Free to use cleaning service",
             "de": "Kostenloser Reinigungsservice",
             "nl": "Gratis fietsschoonmaakpunt",
             "es": "Un servicio de limpieza gratis",
             "fr": "Service de nettoyage gratuit"
-          }
-        },
-        {
-          "if": "fee=no",
-          "then": {
-            "en": "Free to use",
-            "de": "Kostenlose Nutzung",
-            "nl": "Gratis te gebruiken",
-            "es": "Gratis",
-            "da": "Gratis at bruge",
-            "fr": "Libre d'utilisation"
           },
-          "hideInAnswer": true
+          "addExtraTags": ["charge="]
         },
         {
           "if": "fee=yes",
