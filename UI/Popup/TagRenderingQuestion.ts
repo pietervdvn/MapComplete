@@ -1,38 +1,38 @@
-import {Store, Stores, UIEventSource} from "../../Logic/UIEventSource";
+import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
-import {InputElement, ReadonlyInputElement} from "../Input/InputElement";
+import { InputElement, ReadonlyInputElement } from "../Input/InputElement";
 import ValidatedTextField from "../Input/ValidatedTextField";
-import {FixedInputElement} from "../Input/FixedInputElement";
-import {RadioButton} from "../Input/RadioButton";
-import {Utils} from "../../Utils";
+import { FixedInputElement } from "../Input/FixedInputElement";
+import { RadioButton } from "../Input/RadioButton";
+import { Utils } from "../../Utils";
 import CheckBoxes from "../Input/Checkboxes";
 import InputElementMap from "../Input/InputElementMap";
-import {SaveButton} from "./SaveButton";
-import {VariableUiElement} from "../Base/VariableUIElement";
+import { SaveButton } from "./SaveButton";
+import { VariableUiElement } from "../Base/VariableUIElement";
 import Translations from "../i18n/Translations";
-import {FixedUiElement} from "../Base/FixedUiElement";
-import {Translation} from "../i18n/Translation";
+import { FixedUiElement } from "../Base/FixedUiElement";
+import { Translation } from "../i18n/Translation";
 import Constants from "../../Models/Constants";
-import {SubstitutedTranslation} from "../SubstitutedTranslation";
-import {TagsFilter} from "../../Logic/Tags/TagsFilter";
-import {Tag} from "../../Logic/Tags/Tag";
-import {And} from "../../Logic/Tags/And";
-import {TagUtils, UploadableTag} from "../../Logic/Tags/TagUtils";
+import { SubstitutedTranslation } from "../SubstitutedTranslation";
+import { TagsFilter } from "../../Logic/Tags/TagsFilter";
+import { Tag } from "../../Logic/Tags/Tag";
+import { And } from "../../Logic/Tags/And";
+import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils";
 import BaseUIElement from "../BaseUIElement";
-import {DropDown} from "../Input/DropDown";
+import { DropDown } from "../Input/DropDown";
 import InputElementWrapper from "../Input/InputElementWrapper";
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
-import TagRenderingConfig, {Mapping} from "../../Models/ThemeConfig/TagRenderingConfig";
-import {Unit} from "../../Models/Unit";
+import TagRenderingConfig, { Mapping } from "../../Models/ThemeConfig/TagRenderingConfig";
+import { Unit } from "../../Models/Unit";
 import VariableInputElement from "../Input/VariableInputElement";
 import Toggle from "../Input/Toggle";
 import Img from "../Base/Img";
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
 import Title from "../Base/Title";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
-import {GeoOperations} from "../../Logic/GeoOperations";
-import {SearchablePillsSelector} from "../Input/SearchableMappingsSelector";
-import {OsmTags} from "../../Models/OsmFeature";
+import { OsmConnection } from "../../Logic/Osm/OsmConnection";
+import { GeoOperations } from "../../Logic/GeoOperations";
+import { SearchablePillsSelector } from "../Input/SearchableMappingsSelector";
+import { OsmTags } from "../../Models/OsmFeature";
 
 /**
  * Shows the question element.
@@ -41,15 +41,15 @@ import {OsmTags} from "../../Models/OsmFeature";
 export default class TagRenderingQuestion extends Combine {
 
     constructor(tags: UIEventSource<Record<string, string> & { id: string }>,
-                configuration: TagRenderingConfig,
-                state?: FeaturePipelineState,
-                options?: {
-                    units?: Unit[],
-                    afterSave?: () => void,
-                    cancelButton?: BaseUIElement,
-                    saveButtonConstr?: (src: Store<TagsFilter>) => BaseUIElement,
-                    bottomText?: (src: Store<TagsFilter>) => BaseUIElement
-                }
+        configuration: TagRenderingConfig,
+        state?: FeaturePipelineState,
+        options?: {
+            units?: Unit[],
+            afterSave?: () => void,
+            cancelButton?: BaseUIElement,
+            saveButtonConstr?: (src: Store<TagsFilter>) => BaseUIElement,
+            bottomText?: (src: Store<TagsFilter>) => BaseUIElement
+        }
     ) {
 
         const applicableMappingsSrc =
@@ -84,24 +84,24 @@ export default class TagRenderingQuestion extends Combine {
         const feedback = new UIEventSource<Translation>(undefined)
         const inputElement: ReadonlyInputElement<UploadableTag> =
             new VariableInputElement(applicableMappingsSrc.map(applicableMappings => {
-                    return TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags, feedback)
-                }
+                return TagRenderingQuestion.GenerateInputElement(state, configuration, applicableMappings, applicableUnit, tags, feedback)
+            }
             ))
 
         const save = () => {
-            
-            
-            const selection = TagUtils.FlattenMultiAnswer(TagUtils.FlattenAnd( inputElement.GetValue().data, tags.data));
+
+
+            const selection = TagUtils.FlattenMultiAnswer(TagUtils.FlattenAnd(inputElement.GetValue().data, tags.data));
             if (selection) {
                 (state?.changes)
                     .applyAction(new ChangeTagAction(
                         tags.data.id, selection, tags.data, {
-                            theme: state?.layoutToUse?.id ?? "unkown",
-                            changeType: "answer",
-                        }
+                        theme: state?.layoutToUse?.id ?? "unkown",
+                        changeType: "answer",
+                    }
                     )).then(_ => {
-                    console.log("Tagchanges applied")
-                })
+                        console.log("Tagchanges applied")
+                    })
                 if (options.afterSave) {
                     options.afterSave();
                 }
@@ -229,7 +229,7 @@ export default class TagRenderingQuestion extends Combine {
         if (configuration.multiAnswer) {
             return TagRenderingQuestion.GenerateMultiAnswer(configuration, inputEls, ff, applicableMappings.map(mp => mp.ifnot))
         } else {
-            return new RadioButton(inputEls, {selectFirstAsDefault: false})
+            return new RadioButton(inputEls, { selectFirstAsDefault: false })
         }
 
     }
@@ -267,7 +267,6 @@ export default class TagRenderingQuestion extends Combine {
      *      freeform: {
      *          key:"key"
      *      },
-     *    
      *      mappings: [
      *          {
      *            if:"x=y",
@@ -298,7 +297,6 @@ export default class TagRenderingQuestion extends Combine {
      *      freeform: {
      *          key:"key"
      *      },
-     *    
      *      mappings: [
      *          {
      *            if:"x=y",
@@ -338,7 +336,7 @@ export default class TagRenderingQuestion extends Combine {
         const ff = configuration.freeform
         let onEmpty: BaseUIElement = undefined
         if (ff !== undefined) {
-            onEmpty = new VariableUiElement(searchValue.map(search => configuration.render.Subs({[ff.key]: search})))
+            onEmpty = new VariableUiElement(searchValue.map(search => configuration.render.Subs({ [ff.key]: search })))
         }
         const mode = configuration.multiAnswer ? "select-many" : "select-one";
 
@@ -357,7 +355,7 @@ export default class TagRenderingQuestion extends Combine {
                     return Translations.t.general.useSearch;
                 }
                 return new Combine([
-                    Translations.t.general.useSearchForMore.Subs({total: applicableMappings.length}),
+                    Translations.t.general.useSearchForMore.Subs({ total: applicableMappings.length }),
                     new SearchablePillsSelector(priority, {
                         selectedElements: tooMuchElementsValue,
                         hideSearchBar: true,
@@ -468,7 +466,7 @@ export default class TagRenderingQuestion extends Combine {
             },
             (tags: UploadableTag) => {
                 // {key --> values[]}
-                
+
                 const presentTags = TagUtils.SplitKeys([tags]);
                 const indices: number[] = []
                 // We also collect the values that have to be added to the freeform field
@@ -595,9 +593,9 @@ export default class TagRenderingQuestion extends Combine {
                     return tag;
                 }
                 return new And([
-                        tag,
-                        ...freeform.addExtraTags
-                    ]
+                    tag,
+                    ...freeform.addExtraTags
+                ]
                 );
             };
 
@@ -637,7 +635,7 @@ export default class TagRenderingQuestion extends Combine {
         // Add a length check
         input?.GetValue().addCallbackD((v: string | undefined) => {
             if (v?.length >= 255) {
-                feedback.setData(Translations.t.validation.tooLong.Subs({count: v.length}))
+                feedback.setData(Translations.t.validation.tooLong.Subs({ count: v.length }))
             }
         })
 
@@ -657,8 +655,8 @@ export default class TagRenderingQuestion extends Combine {
     }
 
     public static CreateTagExplanation(selectedValue: Store<TagsFilter>,
-                                       tags: Store<object>,
-                                       state?: { osmConnection?: OsmConnection }) {
+        tags: Store<object>,
+        state?: { osmConnection?: OsmConnection }) {
         return new VariableUiElement(
             selectedValue.map(
                 (tagsFilter: TagsFilter) => {

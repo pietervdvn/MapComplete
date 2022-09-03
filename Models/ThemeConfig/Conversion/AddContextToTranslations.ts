@@ -44,7 +44,6 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      *   layers: [
      *       {
      *           tagRenderings:[
-     *               
      *               {id: "some-tr",
      *               question:{
      *                   en:"Question?"
@@ -59,7 +58,6 @@ export class AddContextToTranslations<T> extends DesugaringStep<T> {
      *   layers: [
      *       {
      *           tagRenderings:[
-     *               
      *               {id: "some-tr",
      *               question:{
      *                  _context: "prefix:context.layers.0.tagRenderings.some-tr.question"

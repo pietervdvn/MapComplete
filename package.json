@@ -42,6 +42,7 @@
     "generate:charging-stations": "cd ./assets/layers/charging_station && ts-node csvToJson.ts && cd -",
     "prepare-deploy": "npm run generate:service-worker && ./scripts/build.sh",
     "gittag": "ts-node scripts/printVersion.ts | bash",
+    "format": "npx prettier --write '**/*.ts'",
     "lint": "tslint --project . -c tslint.json '**.ts' ",
     "clean:tests": "(find . -type f -name \"*.doctest.ts\" | xargs rm)",
     "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|import_helper\\|import_viewer\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs rm) && (ls | grep \".*.webmanifest$\" | grep -v \"manifest.webmanifest\" | xargs rm)",
@@ -51,7 +52,7 @@
     "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git",
     "weblate-fix": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core; git merge weblate-github/weblate-mapcomplete-layers; git merge weblate-github/weblate-mapcomplete-layer-translations",
     "weblate-fix-heavy": "git remote rm weblate-layers; git remote add weblate-layers https://hosted.weblate.org/git/mapcomplete/layers/; git remote update weblate-layers; git merge weblate-layers/master",
-    "housekeeping": "npm run generate && npm run generate:docs && npm run generate:contributor-list && git add Docs/* && git commit assets/ langs/ Docs/ -m 'Housekeeping...'",
+    "housekeeping": "npm run generate && npm run generate:docs && npm run generate:contributor-list && npm run format && git add *.ts && git add Docs/* && git commit assets/ langs/ Docs/ -m 'Housekeeping...'",
     "parseSchools": "ts-node scripts/schools/amendSchoolData.ts",
     "steal": "ts-node scripts/thieves/stealLanguages.ts"
   },
@@ -68,7 +69,6 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "@parcel/service-worker": "^2.6.0",
     "@turf/boolean-intersects": "^6.5.0",
     "@turf/buffer": "^6.5.0",
     "@turf/collect": "^6.5.0",
@@ -108,6 +108,7 @@
   "devDependencies": {
     "@babel/polyfill": "^7.10.4",
     "@babel/preset-env": "7.13.8",
+    "@parcel/service-worker": "^2.6.0",
     "@types/chai": "^4.3.0",
     "@types/geojson": "^7946.0.10",
     "@types/leaflet-markercluster": "^1.0.3",
@@ -125,6 +126,7 @@
     "fs": "0.0.1-security",
     "mocha": "^9.2.2",
     "parcel": "^1.2.4",
+    "prettier": "2.7.1",
     "read-file": "^0.2.0",
     "sharp": "^0.30.5",
     "ts-node": "^10.9.1",
