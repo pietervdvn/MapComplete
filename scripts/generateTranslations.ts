@@ -60,10 +60,6 @@ class TranslationPart {
     }
 
     recursiveAdd(object: any, context: string) {
-        if(context.indexOf("mapcomplete") >= 0 && context.indexOf("tagRenderings") >= 0){
-            
-        console.log("RA: CONTEXT", context,"\n", this.toJson().replace(/\n/g, "\n>>  "))
-        }
         const isProbablyTranslationObject =  knownLanguages.some(l => object.hasOwnProperty(l)); // TODO FIXME ID
         if (isProbablyTranslationObject) {
             this.addTranslationObject(object, context)
