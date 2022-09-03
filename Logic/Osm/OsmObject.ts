@@ -3,6 +3,7 @@ import * as polygon_features from "../../assets/polygon-features.json";
 import {Store, UIEventSource} from "../UIEventSource";
 import {BBox} from "../BBox";
 import * as OsmToGeoJson from "osmtogeojson";
+import {NodeId, OsmFeature, OsmId, OsmTags, RelationId, WayId} from "../../Models/OsmFeature";
 
 export abstract class OsmObject {
 
@@ -16,7 +17,7 @@ export abstract class OsmObject {
     /**
      * The OSM tags as simple object
      */
-    tags: {} = {};
+    tags: OsmTags ;
     version: number;
     public changed: boolean = false;
     timestamp: Date;
@@ -69,7 +70,12 @@ export abstract class OsmObject {
         return rawData.elements[0].tags
     }
 
-    static async DownloadObjectAsync(id: string): Promise<OsmObject | undefined> {
+    static async DownloadObjectAsync(id: NodeId): Promise<OsmNode | undefined>;
+    static async DownloadObjectAsync(id: WayId): Promise<OsmWay | undefined>;
+    static async DownloadObjectAsync(id: RelationId): Promise<OsmRelation | undefined>;
+    static async DownloadObjectAsync(id: OsmId): Promise<OsmObject | undefined>;
+    static async DownloadObjectAsync(id: string): Promise<OsmObject | undefined>;
+    static async DownloadObjectAsync(id: string): Promise<OsmObject | undefined>{
         const splitted = id.split("/");
         const type = splitted[0];
         const idN = Number(splitted[1]);
@@ -315,7 +321,7 @@ export abstract class OsmObject {
         tgs["_last_edit:changeset"] = element.changeset
         tgs["_last_edit:timestamp"] = element.timestamp
         tgs["_version_number"] = element.version
-        tgs["id"] = this.type + "/" + this.id;
+        tgs["id"] =<OsmId> ( this.type + "/" + this.id);
     }
 }
 
@@ -347,7 +353,7 @@ export class OsmNode extends OsmObject {
         return [this.lat, this.lon];
     }
 
-    asGeoJson() {
+    asGeoJson() : OsmFeature{
         return {
             "type": "Feature",
             "properties": this.tags,
