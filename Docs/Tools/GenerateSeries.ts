@@ -1,4 +1,4 @@
-import {existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync} from "fs";
+import {existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync} from "fs";
 import ScriptUtils from "../../scripts/ScriptUtils";
 import {Utils} from "../../Utils";
 
@@ -36,9 +36,12 @@ class StatsDownloader {
                 }
 
                 const features = []
+                let monthIsFinished = true
+                const writtenFiles = []
                 for (let day = startDay; day <= 31; day++) {
                     
                     if (year === currentYear && month === currentMonth && day === today.getDate()) {
+                        monthIsFinished = false
                         break;
                     }
                     {
@@ -49,6 +52,7 @@ class StatsDownloader {
                         }
                     }
                     const path = `${this._targetDirectory}/stats.${year}-${month}-${(day < 10 ? "0" : "") + day}.day.json`
+                    writtenFiles.push(path)
                     if (existsSync(path)) {
                         let features = JSON.parse(readFileSync(path, "UTF-8"))
                         features = features?.features ?? features
@@ -69,7 +73,12 @@ class StatsDownloader {
                     features.push(...dayFeatures)
 
                 }
-                writeFileSync(pathM, JSON.stringify({features}))
+                if(monthIsFinished){
+                    writeFileSync(pathM, JSON.stringify({features}))
+                    for (const writtenFile of writtenFiles) {
+                        unlinkSync(writtenFile)
+                    }
+                }
             }
             startDay = 1
         }
