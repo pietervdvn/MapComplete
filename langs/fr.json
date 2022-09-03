@@ -41,7 +41,7 @@
     },
     "general": {
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
-        "aboutMapcomplete": "<h3>À propos de MapComplete</h3><p>Avec MapComplete vous pouvez enrichir OpenStreetMap d'informations sur un <b>thème unique.</b> Répondez à quelques questions, et en quelques minutes vos contributions seront disponible dans le monde entier ! Le <b>concepteur du thème</b> définis les éléments, questions et langues pour le thème.</p><h3>En savoir plus</h3><p>MapComplete <b>propose toujours l'étape suivante</b> pour en apprendre plus sur OpenStreetMap.</p><ul><li>Lorsqu'il est intégré dans un site Web, l'&lt;i&gt;iframe&lt;/i&gt; pointe vers MapComplete en plein écran</li><li>La version plein écran donne des informations sur OpenStreetMap</li><li>Il est possible de regarder sans se connecter, mais l'édition demande une connexion à OSM.</li><li>Si vous n'êtes pas connecté, il vous est demandé de le faire</li><li>Une fois que vous avez répondu à une seule question, vous pouvez ajouter de nouveaux points à la carte</li><li>Au bout d'un moment, les vrais tags OSM sont montrés, qui pointent ensuite vers le wiki</li></ul><p></p><br><p>Vous avez remarqué <b>un problème</b> ? Vous souhaitez <b>demander une fonctionnalité</b> ? Vous voulez <b>aider à traduire</b> ? Allez voir <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">le code source</a> ou l'&lt;i&gt;<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a>&lt;/i&gt; </p><p> Vous voulez visualiser <b>votre progression</b> ? Suivez le compteur d'édition sur <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>À propos de MapComplete</h3><p>Avec MapComplete vous pouvez enrichir OpenStreetMap d'informations sur un <b>thème unique.</b> Répondez à quelques questions, et en quelques minutes vos contributions seront disponible dans le monde entier ! Le <b>concepteur du thème</b> définis les éléments, questions et langues pour le thème.</p><h3>En savoir plus</h3><p>MapComplete <b>propose toujours l'étape suivante</b> pour en apprendre plus sur OpenStreetMap.</p><ul><li>Lorsqu'il est intégré dans un site Web, l'&lt;i&gt;iframe&lt;/i&gt; pointe vers MapComplete en plein écran</li><li>La version plein écran donne des informations sur OpenStreetMap</li><li>Il est possible de regarder sans se connecter, mais l'édition demande une connexion à OSM.</li><li>Si vous n'êtes pas connecté, il vous est demandé de le faire</li><li>Une fois que vous avez répondu à une seule question, vous pouvez ajouter de nouveaux points à la carte</li><li>Au bout d'un moment, les vrais tags OSM sont montrés, qui pointent ensuite vers le wiki</li></ul><p></p><br><p>Vous avez remarqué <b>un problème</b> ? Vous souhaitez <b>demander une fonctionnalité</b> ? Vous voulez <b>aider à traduire</b> ? Allez voir <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">le code source</a> ou l'<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">&lt;i&gt;issue tracker&lt;/i&gt;</a>.</p><p> Vous voulez visualiser <b>votre progression</b> ? Suivez le compteur d'édition sur <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Ajouter {category}",
             "addNewMapLabel": "Cliquez ici pour ajouter un élément",
@@ -131,7 +131,6 @@
             "title": "Selectionner des couches",
             "zoomInToSeeThisLayer": "Aggrandissez la carte pour voir cette couche"
         },
-        "levelSelection": {},
         "loading": "Chargement…",
         "loginOnlyNeededToEdit": "si vous souhaitez modifier la carte",
         "loginToStart": "Connectez-vous pour répondre à cette question",
@@ -246,7 +245,6 @@
             "loading": "Chargement de Wikipédia…",
             "noResults": "Pas de résultats pour {search}",
             "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
-            "previewbox": {},
             "searchWikidata": "Rechercher sur Wikidata",
             "wikipediaboxTitle": "Wikipédia"
         }
@@ -259,7 +257,6 @@
         "doDelete": "Supprimer l'image",
         "dontDelete": "Annuler",
         "isDeleted": "Supprimé",
-        "nearbyPictures": {},
         "pleaseLogin": "Connectez-vous pour téléverser une photo",
         "respectPrivacy": "Ne photographiez ni les personnes ni les plaques d'immatriculation. Ne téléversez rien issu de Google Maps, Google Streetview ou d'autre sources soumises à des droits d'auteurs.",
         "toBig": "Votre image est trop large car elle est de {actual_size}. Veuillez utiliser des images d'au maximum {max_size}",
@@ -274,58 +271,21 @@
         "askMetadata": {
             "shouldBeUrl": "URL invalide"
         },
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
         "login": {
             "loginRequired": "Connectez-vous pour continuer",
             "title": "Se connecter"
         },
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
         "selectFile": {
             "errDuplicate": "Certaines colonnes portent le même nom",
             "errNoName": "Certains colonnes n'ont pas de nom"
-        },
-        "selectTheme": {}
+        }
     },
-    "importInspector": {},
-    "importLayer": {},
     "index": {
         "#": "Ces textes sont affichés au dessus des boutons de thème quand aucun thème n'est chargé",
         "featuredThemeTitle": "Thème de la semaine",
         "intro": "MapComplete est un visio-éditeur d'OpenStreetMap qui affiche des informations sur un thème défini et permet de les éditer.",
         "pickTheme": "Choisissez un thème ci-dessous pour commencer.",
         "title": "Bienvenue sur MapComplete"
-    },
-    "matrixbot": {
-        "commands": {
-            "dm": {},
-            "documentation": {
-                "file": {},
-                "inputElement": {},
-                "layer": {},
-                "theme": {},
-                "url_parameter": {},
-                "visualisation": {}
-            },
-            "dream": {},
-            "help": {},
-            "info": {},
-            "language": {},
-            "role": {},
-            "scheme": {},
-            "search": {},
-            "shutdown": {},
-            "tags": {},
-            "welcome": {},
-            "wiki": {}
-        }
     },
     "move": {
         "cancel": "Annuler le déplacement",
@@ -355,33 +315,12 @@
     "multi_apply": {
         "autoApply": "En changeant les attributs {attr_names}, ceux-ci seront automatiquement changés sur {count} autres éléments"
     },
-    "notes": {},
-    "privacy": {},
     "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {},
-            "benefits": {},
-            "license": {},
-            "vandalism": {}
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
         "indexPage": {
             "button": "Découvrez nos offres",
             "hook": "Besoin d’un accompagnement professionnel ?",
             "hookMore": "Nous pouvons aider à la mise en place de relevés, l’importation de données et toute question relative à l’environnement OpenStreetMap"
-        },
-        "services": {}
+        }
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Avis affilié)",
@@ -410,23 +349,5 @@
     "translations": {
         "isTranslator": "Mode traduction activé, votre pseudo correspond à celui d’une personne de l’équipe de traduction",
         "missing": "{count} segments non traduits"
-    },
-    "validation": {
-        "color": {},
-        "date": {},
-        "direction": {},
-        "distance": {},
-        "email": {},
-        "float": {},
-        "int": {},
-        "nat": {},
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
-        "url": {},
-        "wikidata": {}
     }
 }
