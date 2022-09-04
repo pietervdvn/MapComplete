@@ -4,12 +4,12 @@
 
 @font-face{
     font-family:"FlandersArt";
-    src:url("/assets/themes/toerisme_vlaanderen/FlandersArtSans-Light.woff");
+    src:url("/assets/themes/toerisme_vlaanderen/FlandersArtSans-Light.woff") format("woff");
 }
 
 @font-face{
     font-family:"FlandersArtSerif";
-    src:url("/assets/themes/toerisme_vlaanderen/FlandersArtSerif-Medium.woff");
+    src:url("/assets/themes/toerisme_vlaanderen/FlandersArtSerif-Medium.woff") format("woff");
 }
 
 h1, h2, h3, h4 {
