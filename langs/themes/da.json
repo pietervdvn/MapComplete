@@ -134,5 +134,8 @@
             }
         },
         "title": "hundesteder"
+    },
+    "artwork": {
+        "description": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden"
     }
 }
