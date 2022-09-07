@@ -267,7 +267,7 @@
         "removeLocationHistory": "Supprimer l'historique des positions",
         "backToMapcomplete": "Retour à l'aperçu du thème",
         "notValid": "Sélectionnez une valeur valide pour continuer",
-        "loadingTheme": "Chargement de {thème}…",
+        "loadingTheme": "Chargement de {theme}…",
         "loginFailed": "Échec de la connexion à OpenStreetMap",
         "logout": "Déconnexion"
     },
