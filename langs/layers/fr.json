@@ -1273,7 +1273,7 @@
                 "title": "un café"
             },
             "3": {
-                "description": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une une boisson (alcoolisée)",
+                "description": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une boisson (alcoolisée)",
                 "title": "une boîte de nuit ou discothèque"
             }
         },
@@ -1795,7 +1795,7 @@
             "Surface of the road": {
                 "mappings": {
                     "0": {
-                        "then": "Cette piste cycable est  non durcie"
+                        "then": "Cette piste cycable est non durcie"
                     },
                     "1": {
                         "then": "Cette piste cyclable est pavée"
