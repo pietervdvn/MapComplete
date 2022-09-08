@@ -648,7 +648,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Cykelrengøringstjeneste <i>{navn}</i>"
+                    "then": "Cykelrengøringstjeneste <i>{name}</i>"
                 }
             },
             "render": "Cykel rengøringsservice"
@@ -1666,7 +1666,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Stop {navn}"
+                    "then": "Stop {name}"
                 }
             },
             "render": "Transit Stop"
@@ -1874,7 +1874,7 @@
         "tagRenderings": {
             "turbine-output": {
                 "question": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)",
-                "render": "Denne vindmølle har en effekt på {generator:output:elektricitet}."
+                "render": "Denne vindmølle har en effekt på {generator:output:electricity}."
             },
             "turbine-diameter": {
                 "render": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter.",
@@ -1882,11 +1882,11 @@
             },
             "turbine-height": {
                 "question": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?",
-                "render": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {højde} meter."
+                "render": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter."
             },
             "turbine-start-date": {
                 "question": "Hvornår blev denne vindmølle taget i brug?",
-                "render": "Denne vindmølle blev sat i drift den/den {start_dato}."
+                "render": "Denne vindmølle blev sat i drift den/den {start_date}."
             },
             "turbine-operator": {
                 "question": "Hvem driver denne vindmølle?",
@@ -2253,7 +2253,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "{navn}"
+                    "then": "{name}"
                 }
             },
             "render": "Buslinje"
