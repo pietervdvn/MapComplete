@@ -12,10 +12,7 @@
     "osmTags": {
       "and": [
         {
-          "or": [
-            "name:etymology:wikidata~*",
-            "name:etymology~*"
-          ]
+          "or": ["name:etymology:wikidata~*", "name:etymology~*"]
         }
       ]
     }
@@ -56,103 +53,211 @@
         "helperArgs": [
           "name",
           {
-            "notInstanceOf": [
-              "Q79007",
-              "Q22698"
-            ],
+            "notInstanceOf": ["Q79007", "Q22698"],
             "removePrefixes": {
               "#": "no-translations",
               "fr": [
+                "allée des",
+                "allée de la",
+                "allée de l'",
                 "allée de",
                 "allée du",
                 "allée",
+                "autoroute des",
+                "autoroute de la",
+                "autoroute de l'",
                 "autoroute de",
                 "autoroute du",
                 "autoroute",
+                "avenue des",
+                "avenue de la",
+                "avenue de l'",
                 "avenue de",
                 "avenue du",
                 "avenue",
+                "bibliothèque des",
+                "bibliothèque de la",
+                "bibliothèque de l'",
                 "bibliothèque de",
                 "bibliothèque du",
                 "bibliothèque",
+                "boulevard des",
+                "boulevard de la",
+                "boulevard de l'",
                 "boulevard de",
                 "boulevard du",
                 "boulevard",
+                "centre culturel des",
+                "centre culturel de la",
+                "centre culturel de l'",
                 "centre culturel de",
                 "centre culturel du",
                 "centre culturel",
+                "centre des",
+                "centre de la",
+                "centre de l'",
                 "centre de",
                 "centre du",
                 "centre",
+                "chaussée des",
+                "chaussée de la",
+                "chaussée de l'",
                 "chaussée de",
                 "chaussée du",
                 "chaussée",
+                "chemin des",
+                "chemin de la",
+                "chemin de l'",
                 "chemin de",
                 "chemin du",
                 "chemin",
+                "clos des",
+                "clos de la",
+                "clos de l'",
+                "clos de",
+                "clos du",
+                "clos ",
+                "collège des",
+                "collège de la",
+                "collège de l'",
                 "collège de",
                 "collège du",
                 "collège",
+                "complexe sportif des",
+                "complexe sportif de la",
+                "complexe sportif de l'",
                 "complexe sportif de",
                 "complexe sportif du",
                 "complexe sportif",
+                "drève des ",
+                "drève de la ",
+                "drève de l'",
+                "drève de ",
+                "drève du ",
+                "drève",
+                "école élémentaire des",
+                "école élémentaire de la",
+                "école élémentaire de l'",
                 "école élémentaire de",
                 "école élémentaire du",
                 "école élémentaire",
+                "école maternelle des",
+                "école maternelle de la",
+                "école maternelle de l'",
                 "école maternelle de",
                 "école maternelle du",
                 "école maternelle",
+                "école primaire des",
+                "école primaire de la",
+                "école primaire de l'",
                 "école primaire de",
                 "école primaire du",
                 "école primaire",
+                "école des",
+                "école de la",
+                "école de l'",
                 "école de",
                 "école du",
                 "école",
+                "esplanade des",
+                "esplanade de la",
+                "esplanade de l'",
                 "esplanade de",
                 "esplanade du",
                 "esplanade",
+                "groupe scolaire des",
+                "groupe scolaire de la",
+                "groupe scolaire de l'",
                 "groupe scolaire de",
                 "groupe scolaire du",
                 "groupe scolaire",
+                "gymnase des",
+                "gymnase de la",
+                "gymnase de l'",
                 "gymnase de",
                 "gymnase du",
                 "gymnase",
+                "impasse des",
+                "impasse de la",
+                "impasse de l'",
                 "impasse de",
                 "impasse du",
                 "impasse",
+                "lycée des",
+                "lycée de la",
+                "lycée de l'",
                 "lycée de",
                 "lycée du",
                 "lycée",
+                "mail des",
+                "mail de la",
+                "mail de l'",
                 "mail de",
                 "mail du",
                 "mail",
+                "médiathèque des",
+                "médiathèque de la",
+                "médiathèque de l'",
                 "médiathèque de",
                 "médiathèque du",
                 "médiathèque",
+                "musée des",
+                "musée de la",
+                "musée de l'",
                 "musée de",
                 "musée du",
                 "musée",
+                "parc des",
+                "parc de la",
+                "parc de l'",
                 "parc de",
                 "parc du",
                 "parc",
+                "place des",
+                "place de la",
+                "place de l'",
                 "place de",
                 "place du",
                 "place",
+                "résidence des",
+                "résidence de la",
+                "résidence de l'",
                 "résidence de",
                 "résidence du",
                 "résidence",
+                "route des",
+                "route de la",
+                "route de l'",
                 "route de",
                 "route du",
                 "route",
+                "rue des",
+                "rue de la",
+                "rue de l'",
                 "rue de",
                 "rue du",
                 "rue",
+                "sentier des",
+                "sentier de la",
+                "sentier de l'",
+                "sentier de",
+                "sentier du",
+                "sentier",
+                "square des",
+                "square de la",
+                "square de l'",
                 "square de",
                 "square du",
                 "square",
+                "stade des",
+                "stade de la",
+                "stade de l'",
                 "stade de",
                 "stade du",
                 "stade",
+                "villa des",
+                "villa de la",
+                "villa de l'",
                 "villa de",
                 "villa du",
                 "villa"
@@ -178,9 +283,7 @@
                 "weg",
                 "wegel"
               ],
-              "fr": [
-                "parque"
-              ],
+              "fr": ["parque"],
               "de": [
                 "straße",
                 "platz",
@@ -190,13 +293,7 @@
                 "gymnasium",
                 "schule"
               ],
-              "en": [
-                "street",
-                "path",
-                "plaza",
-                "square",
-                "church"
-              ]
+              "en": ["street", "path", "plaza", "square", "church"]
             }
           }
         ]
@@ -250,10 +347,7 @@
         }
       ],
       "condition": {
-        "or": [
-          "name:etymology~*",
-          "name:etymology:wikidata="
-        ]
+        "or": ["name:etymology~*", "name:etymology:wikidata="]
       }
     },
     "questions",
@@ -300,10 +394,7 @@
         "mappings": [
           {
             "if": {
-              "and": [
-                "name:etymology=",
-                "name:etymology:wikidata="
-              ]
+              "and": ["name:etymology=", "name:etymology:wikidata="]
             },
             "then": "pin:#fcca05aa"
           }
@@ -312,9 +403,7 @@
       "iconSize": {
         "render": "40,40,center"
       },
-      "location": [
-        "point"
-      ]
+      "location": ["point"]
     },
     {
       "color": {
@@ -322,10 +411,7 @@
         "mappings": [
           {
             "if": {
-              "and": [
-                "name:etymology=",
-                "name:etymology:wikidata="
-              ]
+              "and": ["name:etymology=", "name:etymology:wikidata="]
             },
             "then": "#fcca05aa"
           }
