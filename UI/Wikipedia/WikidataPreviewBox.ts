@@ -108,7 +108,7 @@ export default class WikidataPreviewBox extends VariableUiElement {
                     link]).SetClass("flex justify-between"),
             Translation.fromMap(wikidata.descriptions),
             WikidataPreviewBox.QuickFacts(wikidata, options),
-           ...(options.extraItems ?? []) 
+            ...(options?.extraItems ?? [])
         ]).SetClass("flex flex-col link-underline")
 
 
