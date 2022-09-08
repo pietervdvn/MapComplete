@@ -60,7 +60,7 @@
     "Editor"
   ],
   "author": "pietervdvn",
-  "license": "GPL",
+  "license": "GPL-3.0-or-later",
   "browserslist": [
     ">0.2%",
     "not dead",
