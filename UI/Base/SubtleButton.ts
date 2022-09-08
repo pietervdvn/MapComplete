@@ -29,7 +29,7 @@ export class SubtleButton extends UIElement {
 
     protected InnerRender(): string | BaseUIElement {
         const classes = "block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline";
-        const message = Translations.W(this.message)?.SetClass("block overflow-ellipsis no-images flex-shrink");
+        const message = Translations.W(this.message)?.SetClass("block text-ellipsis no-images flex-shrink");
         let img;
         const imgClasses = "block justify-center flex-none mr-4 " + (this.options?.imgSize ?? "h-11 w-11")
         if ((this.imageUrl ?? "") === "") {

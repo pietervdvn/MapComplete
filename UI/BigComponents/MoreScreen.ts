@@ -42,7 +42,7 @@ export default class MoreScreen extends Combine {
         let themeButtonStyle = ""
         let themeListStyle = ""
         if (onMainScreen) {
-            themeButtonStyle = "h-32 min-h-32 max-h-32 overflow-ellipsis overflow-hidden"
+            themeButtonStyle = "h-32 min-h-32 max-h-32 text-ellipsis overflow-hidden"
             themeListStyle = "md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-g4 gap-4"
         }
 
