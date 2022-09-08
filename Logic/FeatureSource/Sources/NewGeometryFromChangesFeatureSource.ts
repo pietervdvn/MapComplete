@@ -4,6 +4,7 @@ import FeatureSource from "../FeatureSource";
 import {UIEventSource} from "../../UIEventSource";
 import {ChangeDescription} from "../../Osm/Actions/ChangeDescription";
 import {ElementStorage} from "../../ElementStorage";
+import {OsmId, OsmTags} from "../../../Models/OsmFeature";
 
 export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
@@ -86,11 +87,12 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
 
 
                 try {
-                    const tags = {}
+                    const tags: OsmTags = {
+                        id: <OsmId> (change.type + "/" + change.id)
+                    }
                     for (const kv of change.tags) {
                         tags[kv.k] = kv.v
                     }
-                    tags["id"] = change.type + "/" + change.id
 
                     tags["_backend"] = backendUrl
 

@@ -350,7 +350,7 @@ class DeleteabilityChecker {
 
             if (allByMyself.data === null && useTheInternet) {
                 // We kickoff the download here as it hasn't yet been downloaded. Note that this is mapped onto 'all by myself' above
-                const hist = OsmObject.DownloadHistory(id).map(versions => versions.map(version => version.tags["_last_edit:contributor:uid"]))
+                const hist = OsmObject.DownloadHistory(id).map(versions => versions.map(version => Number(version.tags["_last_edit:contributor:uid"])))
                 hist.addCallbackAndRunD(hist => previousEditors.setData(hist))
             }
             
