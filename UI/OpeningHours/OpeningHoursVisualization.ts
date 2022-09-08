@@ -1,15 +1,15 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
+import { UIEventSource } from "../../Logic/UIEventSource";
 import Combine from "../Base/Combine";
-import {FixedUiElement} from "../Base/FixedUiElement";
-import {OH} from "./OpeningHours";
+import { FixedUiElement } from "../Base/FixedUiElement";
+import { OH } from "./OpeningHours";
 import Translations from "../i18n/Translations";
 import Constants from "../../Models/Constants";
 import BaseUIElement from "../BaseUIElement";
 import Toggle from "../Input/Toggle";
-import {VariableUiElement} from "../Base/VariableUIElement";
+import { VariableUiElement } from "../Base/VariableUIElement";
 import Table from "../Base/Table";
-import {Translation} from "../i18n/Translation";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+import { Translation } from "../i18n/Translation";
+import { OsmConnection } from "../../Logic/Osm/OsmConnection";
 
 export default class OpeningHoursVisualization extends Toggle {
     private static readonly weekdays: Translation[] = [
@@ -35,24 +35,24 @@ export default class OpeningHoursVisualization extends Toggle {
                 return value;
             }) // This mapping will absorb all other changes to tags in order to prevent regeneration
             .map(ohtext => {
-                    if (ohtext === undefined) {
-                        return new FixedUiElement("No opening hours defined with key " + key).SetClass("alert")
-                    }
-                    try {
-                        return OpeningHoursVisualization.CreateFullVisualisation(
-                            OH.CreateOhObject(tags.data, ohtext))
-                    } catch (e) {
-                        console.warn(e, e.stack);
-                        return new Combine([Translations.t.general.opening_hours.error_loading,
-                            new Toggle(
-                                new FixedUiElement(e).SetClass("subtle"),
-                                undefined,
-                                state?.osmConnection?.userDetails.map(userdetails => userdetails.csCount >= Constants.userJourney.tagsVisibleAndWikiLinked)
-                            )
-                        ]);
-                    }
-
+                if (ohtext === undefined) {
+                    return new FixedUiElement("No opening hours defined with key " + key).SetClass("alert")
                 }
+                try {
+                    return OpeningHoursVisualization.CreateFullVisualisation(
+                        OH.CreateOhObject(tags.data, ohtext))
+                } catch (e) {
+                    console.warn(e, e.stack);
+                    return new Combine([Translations.t.general.opening_hours.error_loading,
+                    new Toggle(
+                        new FixedUiElement(e).SetClass("subtle"),
+                        undefined,
+                        state?.osmConnection?.userDetails.map(userdetails => userdetails.csCount >= Constants.userJourney.tagsVisibleAndWikiLinked)
+                    )
+                    ]);
+                }
+
+            }
             ))
 
         super(
@@ -105,7 +105,7 @@ export default class OpeningHoursVisualization extends Toggle {
     }
 
     private static ConstructVizTable(oh: any, ranges: { isOpen: boolean; isSpecial: boolean; comment: string; startDate: Date; endDate: Date }[][],
-                                     rangeStart: Date): BaseUIElement {
+        rangeStart: Date): BaseUIElement {
 
 
         const isWeekstable: boolean = oh.isWeekStable();
@@ -158,7 +158,7 @@ export default class OpeningHoursVisualization extends Toggle {
         }
         return new Table(undefined,
             [["&nbsp", header], ...weekdays],
-            {contentStyle: [["width: 5%", `position: relative; height: ${headerHeight}`], ...weekdayStyles]}
+            { contentStyle: [["width: 5%", `position: relative; height: ${headerHeight}`], ...weekdayStyles] }
         ).SetClass("w-full")
             .SetStyle("border-collapse: collapse; word-break; word-break: normal; word-wrap: normal")
 
@@ -166,8 +166,8 @@ export default class OpeningHoursVisualization extends Toggle {
     }
 
     private static CreateRangeElem(availableArea: number, earliestOpen: number, latestclose: number,
-                                   range: { isOpen: boolean; isSpecial: boolean; comment: string; startDate: Date; endDate: Date },
-                                   isWeekstable: boolean): BaseUIElement {
+        range: { isOpen: boolean; isSpecial: boolean; comment: string; startDate: Date; endDate: Date },
+        isWeekstable: boolean): BaseUIElement {
 
         const textToShow = range.comment ?? (isWeekstable ? "" : range.startDate.toLocaleDateString());
 
@@ -179,6 +179,7 @@ export default class OpeningHoursVisualization extends Toggle {
         startOfDay.setHours(0, 0, 0, 0);
         // @ts-ignore
         const startpoint = (range.startDate - startOfDay) / 1000 - earliestOpen;
+        // prettier-ignore
         // @ts-ignore
         const width = (100 * (range.endDate - range.startDate) / 1000) / (latestclose - earliestOpen);
         const startPercentage = (100 * startpoint / availableArea);
@@ -270,8 +271,8 @@ export default class OpeningHoursVisualization extends Toggle {
             return Translations.t.general.opening_hours.closed_permanently.Clone()
         }
         const willOpenAt = `${opensAtDate.getDate()}/${opensAtDate.getMonth() + 1} ${OH.hhmm(opensAtDate.getHours(), opensAtDate.getMinutes())}`
-        return Translations.t.general.opening_hours.closed_until.Subs({date: willOpenAt})
+        return Translations.t.general.opening_hours.closed_until.Subs({ date: willOpenAt })
     }
 
-   
+
 }
