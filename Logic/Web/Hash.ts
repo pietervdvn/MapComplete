@@ -1,12 +1,11 @@
-import {UIEventSource} from "../UIEventSource";
-import {Utils} from "../../Utils";
+import { UIEventSource } from "../UIEventSource"
+import { Utils } from "../../Utils"
 
 /**
  * Wrapper around the hash to create an UIEventSource from it
  */
 export default class Hash {
-
-    public static hash: UIEventSource<string> = Hash.Get();
+    public static hash: UIEventSource<string> = Hash.Get()
 
     /**
      * Gets the current string, including the pound sign if there is any
@@ -16,48 +15,46 @@ export default class Hash {
         if (Hash.hash.data === undefined || Hash.hash.data === "") {
             return ""
         } else {
-            return "#" + Hash.hash.data;
+            return "#" + Hash.hash.data
         }
     }
 
     private static Get(): UIEventSource<string> {
         if (Utils.runningFromConsole) {
-            return new UIEventSource<string>(undefined);
+            return new UIEventSource<string>(undefined)
         }
-        const hash = new UIEventSource<string>(window.location.hash.substr(1));
-        hash.addCallback(h => {
+        const hash = new UIEventSource<string>(window.location.hash.substr(1))
+        hash.addCallback((h) => {
             if (h === "undefined") {
                 console.warn("Got a literal 'undefined' as hash, ignoring")
-                h = undefined;
+                h = undefined
             }
 
             if (h === undefined || h === "") {
-                window.location.hash = "";
-                return;
+                window.location.hash = ""
+                return
             }
 
             history.pushState({}, "")
-            window.location.hash = "#" + h;
-        });
-
+            window.location.hash = "#" + h
+        })
 
         window.onhashchange = () => {
-            let newValue = window.location.hash.substr(1);
+            let newValue = window.location.hash.substr(1)
             if (newValue === "") {
-                newValue = undefined;
+                newValue = undefined
             }
             hash.setData(newValue)
         }
 
-        window.addEventListener('popstate', _ => {
-            let newValue = window.location.hash.substr(1);
+        window.addEventListener("popstate", (_) => {
+            let newValue = window.location.hash.substr(1)
             if (newValue === "") {
-                newValue = undefined;
+                newValue = undefined
             }
             hash.setData(newValue)
         })
 
-        return hash;
+        return hash
     }
-
 }

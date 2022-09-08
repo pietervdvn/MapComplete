@@ -1,16 +1,15 @@
-import {UIEventSource} from "../UIEventSource";
-import {Imgur} from "./Imgur";
+import { UIEventSource } from "../UIEventSource"
+import { Imgur } from "./Imgur"
 
 export default class ImgurUploader {
-
-    public readonly queue: UIEventSource<string[]> = new UIEventSource<string[]>([]);
-    public readonly failed: UIEventSource<string[]> = new UIEventSource<string[]>([]);
-    public readonly success: UIEventSource<string[]> = new UIEventSource<string[]>([]);
-    public maxFileSizeInMegabytes = 10;
-    private readonly _handleSuccessUrl: (string) => Promise<void>;
+    public readonly queue: UIEventSource<string[]> = new UIEventSource<string[]>([])
+    public readonly failed: UIEventSource<string[]> = new UIEventSource<string[]>([])
+    public readonly success: UIEventSource<string[]> = new UIEventSource<string[]>([])
+    public maxFileSizeInMegabytes = 10
+    private readonly _handleSuccessUrl: (string) => Promise<void>
 
     constructor(handleSuccessUrl: (string) => Promise<void>) {
-        this._handleSuccessUrl = handleSuccessUrl;
+        this._handleSuccessUrl = handleSuccessUrl
     }
 
     public uploadMany(title: string, description: string, files: FileList): void {
@@ -19,25 +18,26 @@ export default class ImgurUploader {
         }
         this.queue.ping()
 
-        const self = this;
+        const self = this
         this.queue.setData([...self.queue.data])
-        Imgur.uploadMultiple(title,
+        Imgur.uploadMultiple(
+            title,
             description,
             files,
             async function (url) {
-                console.log("File saved at", url);
+                console.log("File saved at", url)
                 self.success.data.push(url)
-                self.success.ping();
-                await self._handleSuccessUrl(url);
+                self.success.ping()
+                await self._handleSuccessUrl(url)
             },
             function () {
-                console.log("All uploads completed");
+                console.log("All uploads completed")
             },
 
             function (failReason) {
                 console.log("Upload failed due to ", failReason)
                 self.failed.setData([...self.failed.data, failReason])
             }
-        );
+        )
     }
 }

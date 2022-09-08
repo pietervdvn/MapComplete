@@ -1,56 +1,67 @@
-import {TagsFilter} from "../Tags/TagsFilter";
-import RelationsTracker from "./RelationsTracker";
-import {Utils} from "../../Utils";
-import {ImmutableStore, Store} from "../UIEventSource";
-import {BBox} from "../BBox";
-import * as osmtogeojson from "osmtogeojson";
-import {FeatureCollection} from "@turf/turf";
+import { TagsFilter } from "../Tags/TagsFilter"
+import RelationsTracker from "./RelationsTracker"
+import { Utils } from "../../Utils"
+import { ImmutableStore, Store } from "../UIEventSource"
+import { BBox } from "../BBox"
+import * as osmtogeojson from "osmtogeojson"
+import { FeatureCollection } from "@turf/turf"
 
 /**
  * Interfaces overpass to get all the latest data
  */
 export class Overpass {
     private _filter: TagsFilter
-    private readonly _interpreterUrl: string;
-    private readonly _timeout: Store<number>;
-    private readonly _extraScripts: string[];
-    private _includeMeta: boolean;
-    private _relationTracker: RelationsTracker;
+    private readonly _interpreterUrl: string
+    private readonly _timeout: Store<number>
+    private readonly _extraScripts: string[]
+    private _includeMeta: boolean
+    private _relationTracker: RelationsTracker
 
-    constructor(filter: TagsFilter,
-                extraScripts: string[],
-                interpreterUrl: string,
-                timeout?: Store<number>,
-                relationTracker?: RelationsTracker,
-                includeMeta = true) {
-        this._timeout = timeout ?? new ImmutableStore<number>(90);
-        this._interpreterUrl = interpreterUrl;
+    constructor(
+        filter: TagsFilter,
+        extraScripts: string[],
+        interpreterUrl: string,
+        timeout?: Store<number>,
+        relationTracker?: RelationsTracker,
+        includeMeta = true
+    ) {
+        this._timeout = timeout ?? new ImmutableStore<number>(90)
+        this._interpreterUrl = interpreterUrl
         const optimized = filter.optimize()
-        if(optimized === true || optimized === false){
+        if (optimized === true || optimized === false) {
             throw "Invalid filter: optimizes to true of false"
         }
         this._filter = optimized
-        this._extraScripts = extraScripts;
-        this._includeMeta = includeMeta;
+        this._extraScripts = extraScripts
+        this._includeMeta = includeMeta
         this._relationTracker = relationTracker
     }
 
     public async queryGeoJson(bounds: BBox): Promise<[FeatureCollection, Date]> {
-        const bbox = "[bbox:" + bounds.getSouth() + "," + bounds.getWest() + "," + bounds.getNorth() + "," + bounds.getEast() + "]";
+        const bbox =
+            "[bbox:" +
+            bounds.getSouth() +
+            "," +
+            bounds.getWest() +
+            "," +
+            bounds.getNorth() +
+            "," +
+            bounds.getEast() +
+            "]"
         const query = this.buildScript(bbox)
-        return this.ExecuteQuery(query);
+        return this.ExecuteQuery(query)
     }
-    
-    public buildUrl(query: string){
+
+    public buildUrl(query: string) {
         return `${this._interpreterUrl}?data=${encodeURIComponent(query)}`
     }
-    
-    public async ExecuteQuery(query: string):Promise<[FeatureCollection, Date]>  {
-        const self = this;
+
+    public async ExecuteQuery(query: string): Promise<[FeatureCollection, Date]> {
+        const self = this
         const json = await Utils.downloadJson(this.buildUrl(query))
 
         if (json.elements.length === 0 && json.remark !== undefined) {
-            console.warn("Timeout or other runtime error while querying overpass", json.remark);
+            console.warn("Timeout or other runtime error while querying overpass", json.remark)
             throw `Runtime error (timeout or similar)${json.remark}`
         }
         if (json.elements.length === 0) {
@@ -58,77 +69,81 @@ export class Overpass {
         }
 
         self._relationTracker?.RegisterRelations(json)
-        const geojson = osmtogeojson.default(json);
-        const osmTime = new Date(json.osm3s.timestamp_osm_base);
-        return [<any> geojson, osmTime];
+        const geojson = osmtogeojson.default(json)
+        const osmTime = new Date(json.osm3s.timestamp_osm_base)
+        return [<any>geojson, osmTime]
     }
 
     /**
      * Constructs the actual script to execute on Overpass
      * 'PostCall' can be used to set an extra range, see 'AsOverpassTurboLink'
-     * 
+     *
      * import {Tag} from "../Tags/Tag";
-     * 
+     *
      * new Overpass(new Tag("key","value"), [], "").buildScript("{{bbox}}") // => `[out:json][timeout:90]{{bbox}};(nwr["key"="value"];);out body;out meta;>;out skel qt;`
      */
     public buildScript(bbox: string, postCall: string = "", pretty = false): string {
         const filters = this._filter.asOverpass()
         let filter = ""
         for (const filterOr of filters) {
-            if(pretty){
+            if (pretty) {
                 filter += "    "
             }
-            filter += 'nwr' + filterOr + postCall + ';'
-            if(pretty){
-                filter+="\n"
+            filter += "nwr" + filterOr + postCall + ";"
+            if (pretty) {
+                filter += "\n"
             }
         }
         for (const extraScript of this._extraScripts) {
-            filter += '(' + extraScript + ');';
+            filter += "(" + extraScript + ");"
         }
-        return`[out:json][timeout:${this._timeout.data}]${bbox};(${filter});out body;${this._includeMeta ? 'out meta;' : ''}>;out skel qt;`
+        return `[out:json][timeout:${this._timeout.data}]${bbox};(${filter});out body;${
+            this._includeMeta ? "out meta;" : ""
+        }>;out skel qt;`
     }
     /**
      * Constructs the actual script to execute on Overpass with geocoding
      * 'PostCall' can be used to set an extra range, see 'AsOverpassTurboLink'
      *
      */
-    public buildScriptInArea(area: {osm_type: "way" | "relation", osm_id: number}, pretty = false): string {
+    public buildScriptInArea(
+        area: { osm_type: "way" | "relation"; osm_id: number },
+        pretty = false
+    ): string {
         const filters = this._filter.asOverpass()
         let filter = ""
         for (const filterOr of filters) {
-            if(pretty){
+            if (pretty) {
                 filter += "    "
             }
-            filter += 'nwr' + filterOr + '(area.searchArea);'
-            if(pretty){
-                filter+="\n"
+            filter += "nwr" + filterOr + "(area.searchArea);"
+            if (pretty) {
+                filter += "\n"
             }
         }
         for (const extraScript of this._extraScripts) {
-            filter += '(' + extraScript + ');';
+            filter += "(" + extraScript + ");"
         }
-        let id = area.osm_id;
-        if(area.osm_type === "relation"){
+        let id = area.osm_id
+        if (area.osm_type === "relation") {
             id += 3600000000
         }
-        return`[out:json][timeout:${this._timeout.data}];
+        return `[out:json][timeout:${this._timeout.data}];
         area(id:${id})->.searchArea;
         (${filter});
-        out body;${this._includeMeta ? 'out meta;' : ''}>;out skel qt;`
+        out body;${this._includeMeta ? "out meta;" : ""}>;out skel qt;`
     }
-    
-    
+
     public buildQuery(bbox: string) {
         return this.buildUrl(this.buildScript(bbox))
     }
-    
+
     /**
      * Little helper method to quickly open overpass-turbo in the browser
      */
-    public static AsOverpassTurboLink(tags: TagsFilter){
+    public static AsOverpassTurboLink(tags: TagsFilter) {
         const overpass = new Overpass(tags, [], "", undefined, undefined, false)
-        const script = overpass.buildScript("","({{bbox}})", true)
+        const script = overpass.buildScript("", "({{bbox}})", true)
         const url = "http://overpass-turbo.eu/?Q="
         return url + encodeURIComponent(script)
     }

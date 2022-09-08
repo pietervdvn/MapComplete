@@ -1,37 +1,41 @@
-import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson";
-import {LayerConfigJson} from "../Json/LayerConfigJson";
-import {Utils} from "../../../Utils";
+import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
+import { LayerConfigJson } from "../Json/LayerConfigJson"
+import { Utils } from "../../../Utils"
 
 export interface DesugaringContext {
     tagRenderings: Map<string, TagRenderingConfigJson>
-    sharedLayers: Map<string, LayerConfigJson>,
+    sharedLayers: Map<string, LayerConfigJson>
     publicLayers?: Set<string>
 }
 
 export abstract class Conversion<TIn, TOut> {
-    public readonly modifiedAttributes: string[];
+    public readonly modifiedAttributes: string[]
     public readonly name: string
-    protected readonly doc: string;
+    protected readonly doc: string
 
     constructor(doc: string, modifiedAttributes: string[] = [], name: string) {
-        this.modifiedAttributes = modifiedAttributes;
-        this.doc = doc + "\n\nModified attributes are\n" + modifiedAttributes.join(", ");
+        this.modifiedAttributes = modifiedAttributes
+        this.doc = doc + "\n\nModified attributes are\n" + modifiedAttributes.join(", ")
         this.name = name
     }
 
-    public static strict<T>(fixed: { errors?: string[], warnings?: string[], information?: string[], result?: T }): T {
-
-        fixed.information?.forEach(i => console.log("    ", i))
+    public static strict<T>(fixed: {
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+        result?: T
+    }): T {
+        fixed.information?.forEach((i) => console.log("    ", i))
         const yellow = (s) => "\x1b[33m" + s + "\x1b[0m"
-        const red = s => '\x1b[31m' + s + '\x1b[0m'
-        fixed.warnings?.forEach(w => console.warn(red(`<!> `), yellow(w)))
+        const red = (s) => "\x1b[31m" + s + "\x1b[0m"
+        fixed.warnings?.forEach((w) => console.warn(red(`<!> `), yellow(w)))
 
         if (fixed?.errors !== undefined && fixed?.errors?.length > 0) {
-            fixed.errors?.forEach(e => console.error(red(`ERR ` + e)))
+            fixed.errors?.forEach((e) => console.error(red(`ERR ` + e)))
             throw "Detected one or more errors, stopping now"
         }
 
-        return fixed.result;
+        return fixed.result
     }
 
     public convertStrict(json: TIn, context: string): TOut {
@@ -39,7 +43,13 @@ export abstract class Conversion<TIn, TOut> {
         return DesugaringStep.strict(fixed)
     }
 
-    public convertJoin(json: TIn, context: string, errors: string[], warnings?: string[], information?: string[]): TOut {
+    public convertJoin(
+        json: TIn,
+        context: string,
+        errors: string[],
+        warnings?: string[],
+        information?: string[]
+    ): TOut {
         const fixed = this.convert(json, context)
         errors?.push(...(fixed.errors ?? []))
         warnings?.push(...(fixed.warnings ?? []))
@@ -47,41 +57,41 @@ export abstract class Conversion<TIn, TOut> {
         return fixed.result
     }
 
-    public andThenF<X>(f: (tout:TOut) => X ): Conversion<TIn, X>{
-        return new Pipe(
-            this,
-            new Pure(f)
-        )
+    public andThenF<X>(f: (tout: TOut) => X): Conversion<TIn, X> {
+        return new Pipe(this, new Pure(f))
     }
-    
-    abstract convert(json: TIn, context: string): { result: TOut, errors?: string[], warnings?: string[], information?: string[] }
+
+    abstract convert(
+        json: TIn,
+        context: string
+    ): { result: TOut; errors?: string[]; warnings?: string[]; information?: string[] }
 }
 
-export abstract class DesugaringStep<T> extends Conversion<T, T> {
-    
-}
+export abstract class DesugaringStep<T> extends Conversion<T, T> {}
 
 class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
-    private readonly _step0: Conversion<TIn, TInter>;
-    private readonly _step1: Conversion<TInter, TOut>;
-    constructor(step0: Conversion<TIn, TInter>, step1: Conversion<TInter,TOut>) {
-        super("Merges two steps with different types", [], `Pipe(${step0.name}, ${step1.name})`);
-        this._step0 = step0;
-        this._step1 = step1;
+    private readonly _step0: Conversion<TIn, TInter>
+    private readonly _step1: Conversion<TInter, TOut>
+    constructor(step0: Conversion<TIn, TInter>, step1: Conversion<TInter, TOut>) {
+        super("Merges two steps with different types", [], `Pipe(${step0.name}, ${step1.name})`)
+        this._step0 = step0
+        this._step1 = step1
     }
 
-    convert(json: TIn, context: string): { result: TOut; errors?: string[]; warnings?: string[]; information?: string[] } {
-        
-        const r0 = this._step0.convert(json, context);
-        const {result, errors, information, warnings } = r0;
-        if(result === undefined && errors.length > 0){
+    convert(
+        json: TIn,
+        context: string
+    ): { result: TOut; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const r0 = this._step0.convert(json, context)
+        const { result, errors, information, warnings } = r0
+        if (result === undefined && errors.length > 0) {
             return {
                 ...r0,
-                result: undefined
-            };
+                result: undefined,
+            }
         }
-        
-        const r = this._step1.convert(result, context);
+
+        const r = this._step1.convert(result, context)
         errors.push(...r.errors)
         information.push(...r.information)
         warnings.push(...r.warnings)
@@ -89,35 +99,44 @@ class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
             result: r.result,
             errors,
             warnings,
-            information
+            information,
         }
     }
 }
 
 class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
-    private readonly _f: (t: TIn) => TOut;
-    constructor(f: ((t:TIn) => TOut)) {
-        super("Wrapper around a pure function",[], "Pure");
-        this._f = f;
+    private readonly _f: (t: TIn) => TOut
+    constructor(f: (t: TIn) => TOut) {
+        super("Wrapper around a pure function", [], "Pure")
+        this._f = f
     }
-    
-    convert(json: TIn, context: string): { result: TOut; errors?: string[]; warnings?: string[]; information?: string[] } {
-        return {result: this._f(json)};
+
+    convert(
+        json: TIn,
+        context: string
+    ): { result: TOut; errors?: string[]; warnings?: string[]; information?: string[] } {
+        return { result: this._f(json) }
     }
-    
 }
 
 export class Each<X, Y> extends Conversion<X[], Y[]> {
-    private readonly _step: Conversion<X, Y>;
+    private readonly _step: Conversion<X, Y>
 
     constructor(step: Conversion<X, Y>) {
-        super("Applies the given step on every element of the list", [], "OnEach(" + step.name + ")");
-        this._step = step;
+        super(
+            "Applies the given step on every element of the list",
+            [],
+            "OnEach(" + step.name + ")"
+        )
+        this._step = step
     }
 
-    convert(values: X[], context: string): { result: Y[]; errors?: string[]; warnings?: string[]; information?: string[] } {
+    convert(
+        values: X[],
+        context: string
+    ): { result: Y[]; errors?: string[]; warnings?: string[]; information?: string[] } {
         if (values === undefined || values === null) {
-            return {result: undefined}
+            return { result: undefined }
         }
         const information: string[] = []
         const warnings: string[] = []
@@ -132,68 +151,83 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
             result.push(r.result)
         }
         return {
-            information, errors, warnings,
-            result
-        };
+            information,
+            errors,
+            warnings,
+            result,
+        }
     }
-
 }
 
 export class On<P, T> extends DesugaringStep<T> {
-    private readonly key: string;
-    private readonly step: ((t: T) => Conversion<P, P>);
+    private readonly key: string
+    private readonly step: (t: T) => Conversion<P, P>
 
-    constructor(key: string, step: Conversion<P, P> | ((t: T )=> Conversion<P, P>)) {
-        super("Applies " + step.name + " onto property `"+key+"`", [key], `On(${key}, ${step.name})`);
-        if(typeof step === "function"){
-            this.step = step;
-        }else{
-            this.step = _ => step
+    constructor(key: string, step: Conversion<P, P> | ((t: T) => Conversion<P, P>)) {
+        super(
+            "Applies " + step.name + " onto property `" + key + "`",
+            [key],
+            `On(${key}, ${step.name})`
+        )
+        if (typeof step === "function") {
+            this.step = step
+        } else {
+            this.step = (_) => step
         }
-        this.key = key;
+        this.key = key
     }
 
-    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[], information?: string[] } {
-        json = {...json}
+    convert(
+        json: T,
+        context: string
+    ): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
+        json = { ...json }
         const step = this.step(json)
-        const key = this.key;
+        const key = this.key
         const value: P = json[key]
         if (value === undefined || value === null) {
-            return {                result: json            };
+            return { result: json }
         }
         const r = step.convert(value, context + "." + key)
         json[key] = r.result
         return {
             ...r,
             result: json,
-        };
-
+        }
     }
 }
 
 export class Pass<T> extends Conversion<T, T> {
     constructor(message?: string) {
-        super(message??"Does nothing, often to swap out steps in testing", [], "Pass");
+        super(message ?? "Does nothing, often to swap out steps in testing", [], "Pass")
     }
 
-
-    convert(json: T, context: string): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
+    convert(
+        json: T,
+        context: string
+    ): { result: T; errors?: string[]; warnings?: string[]; information?: string[] } {
         return {
-            result: json
-        };
+            result: json,
+        }
     }
-    
 }
 
 export class Concat<X, T> extends Conversion<X[], T[]> {
-    private readonly _step: Conversion<X, T[]>;
+    private readonly _step: Conversion<X, T[]>
 
     constructor(step: Conversion<X, T[]>) {
-        super("Executes the given step, flattens the resulting list", [], "Concat(" + step.name + ")");
-        this._step = step;
+        super(
+            "Executes the given step, flattens the resulting list",
+            [],
+            "Concat(" + step.name + ")"
+        )
+        this._step = step
     }
 
-    convert(values: X[], context: string): { result: T[]; errors?: string[]; warnings?: string[]; information?: string[] } {
+    convert(
+        values: X[],
+        context: string
+    ): { result: T[]; errors?: string[]; warnings?: string[]; information?: string[] } {
         if (values === undefined || values === null) {
             // Move on - nothing to see here!
             return {
@@ -208,56 +242,68 @@ export class Concat<X, T> extends Conversion<X[], T[]> {
         return {
             ...r,
             result: flattened,
-        };
+        }
     }
 }
 
-export class FirstOf<T, X> extends Conversion<T, X>{
-    private readonly  _conversion: Conversion<T, X[]>;
-    
+export class FirstOf<T, X> extends Conversion<T, X> {
+    private readonly _conversion: Conversion<T, X[]>
+
     constructor(conversion: Conversion<T, X[]>) {
-        super("Picks the first result of the conversion step", [], "FirstOf("+conversion.name+")");
-        this._conversion = conversion;
+        super(
+            "Picks the first result of the conversion step",
+            [],
+            "FirstOf(" + conversion.name + ")"
+        )
+        this._conversion = conversion
     }
 
-    convert(json: T, context: string): { result: X; errors?: string[]; warnings?: string[]; information?: string[] } {
-        const reslt = this._conversion.convert(json, context);
+    convert(
+        json: T,
+        context: string
+    ): { result: X; errors?: string[]; warnings?: string[]; information?: string[] } {
+        const reslt = this._conversion.convert(json, context)
         return {
             ...reslt,
-            result: reslt.result[0]
-        };
+            result: reslt.result[0],
+        }
     }
-    
 }
 
 export class Fuse<T> extends DesugaringStep<T> {
-    private readonly steps: DesugaringStep<T>[];
+    private readonly steps: DesugaringStep<T>[]
 
     constructor(doc: string, ...steps: DesugaringStep<T>[]) {
-        super((doc ?? "") + "This fused pipeline of the following steps: " + steps.map(s => s.name).join(", "),
-            Utils.Dedup([].concat(...steps.map(step => step.modifiedAttributes))),
-            "Fuse of " + steps.map(s => s.name).join(", ")
-        );
-        this.steps = Utils.NoNull(steps);
+        super(
+            (doc ?? "") +
+                "This fused pipeline of the following steps: " +
+                steps.map((s) => s.name).join(", "),
+            Utils.Dedup([].concat(...steps.map((step) => step.modifiedAttributes))),
+            "Fuse of " + steps.map((s) => s.name).join(", ")
+        )
+        this.steps = Utils.NoNull(steps)
     }
 
-    convert(json: T, context: string): { result: T; errors: string[]; warnings: string[], information: string[] } {
+    convert(
+        json: T,
+        context: string
+    ): { result: T; errors: string[]; warnings: string[]; information: string[] } {
         const errors = []
         const warnings = []
         const information = []
         for (let i = 0; i < this.steps.length; i++) {
-            const step = this.steps[i];
-            try{
+            const step = this.steps[i]
+            try {
                 let r = step.convert(json, "While running step " + step.name + ": " + context)
-                errors.push(...r.errors ?? [])
-                warnings.push(...r.warnings ?? [])
-                information.push(...r.information ?? [])
+                errors.push(...(r.errors ?? []))
+                warnings.push(...(r.warnings ?? []))
+                information.push(...(r.information ?? []))
                 json = r.result
                 if (errors.length > 0) {
-                    break;
+                    break
                 }
-            }catch(e){
-                console.error("Step "+step.name+" failed due to ",e,e.stack);
+            } catch (e) {
+                console.error("Step " + step.name + " failed due to ", e, e.stack)
                 throw e
             }
         }
@@ -265,32 +311,31 @@ export class Fuse<T> extends DesugaringStep<T> {
             result: json,
             errors,
             warnings,
-            information
-        };
+            information,
+        }
     }
-
 }
 
 export class SetDefault<T> extends DesugaringStep<T> {
-    private readonly value: any;
-    private readonly key: string;
-    private readonly _overrideEmptyString: boolean;
+    private readonly value: any
+    private readonly key: string
+    private readonly _overrideEmptyString: boolean
 
     constructor(key: string, value: any, overrideEmptyString = false) {
-        super("Sets " + key + " to a default value if undefined", [], "SetDefault of " + key);
-        this.key = key;
-        this.value = value;
-        this._overrideEmptyString = overrideEmptyString;
+        super("Sets " + key + " to a default value if undefined", [], "SetDefault of " + key)
+        this.key = key
+        this.value = value
+        this._overrideEmptyString = overrideEmptyString
     }
 
     convert(json: T, context: string): { result: T } {
         if (json[this.key] === undefined || (json[this.key] === "" && this._overrideEmptyString)) {
-            json = {...json}
+            json = { ...json }
             json[this.key] = this.value
         }
 
         return {
-            result: json
-        };
+            result: json,
+        }
     }
 }

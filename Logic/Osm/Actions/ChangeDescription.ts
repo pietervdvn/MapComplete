@@ -1,18 +1,17 @@
-import {OsmNode, OsmRelation, OsmWay} from "../OsmObject";
+import { OsmNode, OsmRelation, OsmWay } from "../OsmObject"
 
 /**
  * Represents a single change to an object
  */
 export interface ChangeDescription {
-
     /**
      * Metadata to be included in the changeset
      */
     meta: {
         /*
-        * The theme with which this changeset was made
-        */
-        theme: string,
+         * The theme with which this changeset was made
+         */
+        theme: string
         /**
          * The type of the change
          */
@@ -20,22 +19,22 @@ export interface ChangeDescription {
         /**
          * THe motivation for the change, e.g. 'deleted because does not exist anymore'
          */
-        specialMotivation?: string,
+        specialMotivation?: string
         /**
          * Added by Changes.ts
          */
         distanceToObject?: number
-    },
+    }
 
     /**
      * Identifier of the object
      */
-    type: "node" | "way" | "relation",
+    type: "node" | "way" | "relation"
     /**
      * Identifier of the object
      * Negative for new objects
      */
-    id: number,
+    id: number
 
     /**
      * All changes to tags
@@ -43,7 +42,7 @@ export interface ChangeDescription {
      *
      * Note that this list will only contain the _changes_ to the tags, not the full set of tags
      */
-    tags?: { k: string, v: string }[],
+    tags?: { k: string; v: string }[]
 
     /**
      * A change to the geometry:
@@ -51,17 +50,20 @@ export interface ChangeDescription {
      * 2) Change of way geometry
      * 3) Change of relation members (untested)
      */
-    changes?: {
-        lat: number,
-        lon: number
-    } | {
-        /* Coordinates are only used for rendering. They should be LON, LAT
-        * */
-        coordinates: [number, number][]
-        nodes: number[],
-    } | {
-        members: { type: "node" | "way" | "relation", ref: number, role: string }[]
-    }
+    changes?:
+        | {
+              lat: number
+              lon: number
+          }
+        | {
+              /* Coordinates are only used for rendering. They should be LON, LAT
+               * */
+              coordinates: [number, number][]
+              nodes: number[]
+          }
+        | {
+              members: { type: "node" | "way" | "relation"; ref: number; role: string }[]
+          }
 
     /*
     Set to delete the object
@@ -70,7 +72,6 @@ export interface ChangeDescription {
 }
 
 export class ChangeDescriptionTools {
-
     /**
      * Rewrites all the ids in a changeDescription
      *
@@ -111,7 +112,7 @@ export class ChangeDescriptionTools {
      * const rewritten = ChangeDescriptionTools.rewriteIds(change, mapping)
      * rewritten.id // => 789
      * rewritten.changes["nodes"] // => [42,43,44, 68453]
-     * 
+     *
      * // should rewrite ids in relationship members
      * const change = <ChangeDescription> {
      *     type: "way",
@@ -130,44 +131,49 @@ export class ChangeDescriptionTools {
      * rewritten.changes["members"] // => [{type: "way", ref: 42, role: "outer"},{type: "way", ref: 48, role: "outer"}]
      *
      */
-    public static rewriteIds(change: ChangeDescription, mappings: Map<string, string>): ChangeDescription {
+    public static rewriteIds(
+        change: ChangeDescription,
+        mappings: Map<string, string>
+    ): ChangeDescription {
         const key = change.type + "/" + change.id
 
-        const wayHasChangedNode = ((change.changes ?? {})["nodes"] ?? []).some(id => mappings.has("node/" + id));
-        const relationHasChangedMembers = ((change.changes ?? {})["members"] ?? [])
-            .some((obj:{type: string, ref: number}) => mappings.has(obj.type+"/" + obj.ref));
+        const wayHasChangedNode = ((change.changes ?? {})["nodes"] ?? []).some((id) =>
+            mappings.has("node/" + id)
+        )
+        const relationHasChangedMembers = ((change.changes ?? {})["members"] ?? []).some(
+            (obj: { type: string; ref: number }) => mappings.has(obj.type + "/" + obj.ref)
+        )
 
-        const hasSomeChange = mappings.has(key)
-            || wayHasChangedNode || relationHasChangedMembers
-        if(hasSomeChange){
-            change = {...change}
+        const hasSomeChange = mappings.has(key) || wayHasChangedNode || relationHasChangedMembers
+        if (hasSomeChange) {
+            change = { ...change }
         }
-        
+
         if (mappings.has(key)) {
             const [_, newId] = mappings.get(key).split("/")
             change.id = Number.parseInt(newId)
         }
-        if(wayHasChangedNode){
-            change.changes = {...change.changes}
-            change.changes["nodes"] = change.changes["nodes"].map(id => {
-                const key = "node/"+id
-                if(!mappings.has(key)){
+        if (wayHasChangedNode) {
+            change.changes = { ...change.changes }
+            change.changes["nodes"] = change.changes["nodes"].map((id) => {
+                const key = "node/" + id
+                if (!mappings.has(key)) {
                     return id
                 }
                 const [_, newId] = mappings.get(key).split("/")
                 return Number.parseInt(newId)
             })
         }
-        if(relationHasChangedMembers){
-            change.changes = {...change.changes}
+        if (relationHasChangedMembers) {
+            change.changes = { ...change.changes }
             change.changes["members"] = change.changes["members"].map(
-                (obj:{type: string, ref: number}) => {
-                    const key = obj.type+"/"+obj.ref;
-                    if(!mappings.has(key)){
+                (obj: { type: string; ref: number }) => {
+                    const key = obj.type + "/" + obj.ref
+                    if (!mappings.has(key)) {
                         return obj
                     }
                     const [_, newId] = mappings.get(key).split("/")
-                    return {...obj, ref: Number.parseInt(newId)}
+                    return { ...obj, ref: Number.parseInt(newId) }
                 }
             )
         }

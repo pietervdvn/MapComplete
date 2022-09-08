@@ -1,10 +1,10 @@
 import * as known_layers from "../assets/generated/known_layers.json"
-import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-import {TagUtils} from "../Logic/Tags/TagUtils";
-import {Utils} from "../Utils";
-import {writeFileSync} from "fs";
-import ScriptUtils from "./ScriptUtils";
-import Constants from "../Models/Constants";
+import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+import { TagUtils } from "../Logic/Tags/TagUtils"
+import { Utils } from "../Utils"
+import { writeFileSync } from "fs"
+import ScriptUtils from "./ScriptUtils"
+import Constants from "../Models/Constants"
 
 /* Downloads stats on osmSource-tags and keys from tagInfo */
 
@@ -15,7 +15,6 @@ async function main(includeTags = true) {
     const keysAndTags = new Map<string, Set<string>>()
 
     for (const layer of layers) {
-
         if (layer.source["geoJson"] !== undefined && !layer.source["isOsmCache"]) {
             continue
         }
@@ -41,35 +40,40 @@ async function main(includeTags = true) {
 
     const keyTotal = new Map<string, number>()
     const tagTotal = new Map<string, Map<string, number>>()
-    await Promise.all(Array.from(keysAndTags.keys()).map(async key => {
-        const values = keysAndTags.get(key)
-        const data = await Utils.downloadJson(`https://taginfo.openstreetmap.org/api/4/key/stats?key=${key}`)
-        const count = data.data.find(item => item.type === "all").count
-        keyTotal.set(key, count)
-        console.log(key, "-->", count)
-
-
-        if (values.size > 0) {
-
-            tagTotal.set(key, new Map<string, number>())
-            await Promise.all(
-                Array.from(values).map(async value => {
-                    const tagData = await Utils.downloadJson(`https://taginfo.openstreetmap.org/api/4/tag/stats?key=${key}&value=${value}`)
-                    const count = tagData.data.find(item => item.type === "all").count
-                    tagTotal.get(key).set(value, count)
-                    console.log(key + "=" + value, "-->", count)
-                })
+    await Promise.all(
+        Array.from(keysAndTags.keys()).map(async (key) => {
+            const values = keysAndTags.get(key)
+            const data = await Utils.downloadJson(
+                `https://taginfo.openstreetmap.org/api/4/key/stats?key=${key}`
             )
+            const count = data.data.find((item) => item.type === "all").count
+            keyTotal.set(key, count)
+            console.log(key, "-->", count)
 
-        }
-    }))
-    writeFileSync("./assets/key_totals.json",
+            if (values.size > 0) {
+                tagTotal.set(key, new Map<string, number>())
+                await Promise.all(
+                    Array.from(values).map(async (value) => {
+                        const tagData = await Utils.downloadJson(
+                            `https://taginfo.openstreetmap.org/api/4/tag/stats?key=${key}&value=${value}`
+                        )
+                        const count = tagData.data.find((item) => item.type === "all").count
+                        tagTotal.get(key).set(value, count)
+                        console.log(key + "=" + value, "-->", count)
+                    })
+                )
+            }
+        })
+    )
+    writeFileSync(
+        "./assets/key_totals.json",
         JSON.stringify(
             {
-                keys: Utils.MapToObj(keyTotal, t => t),
-                tags: Utils.MapToObj(tagTotal, v => Utils.MapToObj(v, t => t))
+                keys: Utils.MapToObj(keyTotal, (t) => t),
+                tags: Utils.MapToObj(tagTotal, (v) => Utils.MapToObj(v, (t) => t)),
             },
-            null, "  "
+            null,
+            "  "
         )
     )
 }

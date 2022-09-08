@@ -1,6 +1,6 @@
-import {TagsFilter} from "./TagsFilter";
-import {Tag} from "./Tag";
-import {Utils} from "../../Utils";
+import { TagsFilter } from "./TagsFilter"
+import { Tag } from "./Tag"
+import { Utils } from "../../Utils"
 
 /**
  * The substituting-tag uses the tags of a feature a variables and replaces them.
@@ -12,32 +12,37 @@ import {Utils} from "../../Utils";
  * This cannot be used to query features
  */
 export default class SubstitutingTag implements TagsFilter {
-    private readonly _key: string;
-    private readonly _value: string;
+    private readonly _key: string
+    private readonly _value: string
     private readonly _invert: boolean
 
     constructor(key: string, value: string, invert = false) {
-        this._key = key;
-        this._value = value;
+        this._key = key
+        this._value = value
         this._invert = invert
     }
 
     private static substituteString(template: string, dict: any): string {
         for (const k in dict) {
-            template = template.replace(new RegExp("\\{" + k + "\\}", 'g'), dict[k])
+            template = template.replace(new RegExp("\\{" + k + "\\}", "g"), dict[k])
         }
-        return template.replace(/{.*}/g, "");
+        return template.replace(/{.*}/g, "")
     }
 
-    asTag(currentProperties: Record<string, string>){
-        if(this._invert){
+    asTag(currentProperties: Record<string, string>) {
+        if (this._invert) {
             throw "Cannot convert an inverted substituting tag"
         }
         return new Tag(this._key, Utils.SubstituteKeys(this._value, currentProperties))
     }
-    
+
     asHumanString(linkToWiki: boolean, shorten: boolean, properties) {
-        return this._key + (this._invert ? '!' : '') + "=" + SubstitutingTag.substituteString(this._value, properties);
+        return (
+            this._key +
+            (this._invert ? "!" : "") +
+            "=" +
+            SubstitutingTag.substituteString(this._value, properties)
+        )
     }
 
     asOverpass(): string[] {
@@ -46,13 +51,17 @@ export default class SubstitutingTag implements TagsFilter {
 
     shadows(other: TagsFilter): boolean {
         if (!(other instanceof SubstitutingTag)) {
-            return false;
+            return false
         }
-        return other._key === this._key && other._value === this._value && other._invert === this._invert;
+        return (
+            other._key === this._key &&
+            other._value === this._value &&
+            other._invert === this._invert
+        )
     }
 
     isUsableAsAnswer(): boolean {
-        return !this._invert;
+        return !this._invert
     }
 
     /**
@@ -64,16 +73,16 @@ export default class SubstitutingTag implements TagsFilter {
      * assign.matchesProperties({"some_key": "2021-03-29"}) // => false
      */
     matchesProperties(properties: any): boolean {
-        const value = properties[this._key];
+        const value = properties[this._key]
         if (value === undefined || value === "") {
-            return false;
+            return false
         }
-        const expectedValue = SubstitutingTag.substituteString(this._value, properties);
-        return (value === expectedValue) !== this._invert;
+        const expectedValue = SubstitutingTag.substituteString(this._value, properties)
+        return (value === expectedValue) !== this._invert
     }
 
     usedKeys(): string[] {
-        return [this._key];
+        return [this._key]
     }
 
     usedTags(): { key: string; value: string }[] {
@@ -84,19 +93,19 @@ export default class SubstitutingTag implements TagsFilter {
         if (this._invert) {
             throw "An inverted substituting tag can not be used to create a change"
         }
-        const v = SubstitutingTag.substituteString(this._value, properties);
+        const v = SubstitutingTag.substituteString(this._value, properties)
         if (v.match(/{.*}/) !== null) {
             throw "Could not calculate all the substitutions: still have " + v
         }
-        return [{k: this._key, v: v}];
+        return [{ k: this._key, v: v }]
     }
 
     optimize(): TagsFilter | boolean {
-        return this;
+        return this
     }
-    
+
     isNegative(): boolean {
-        return false;
+        return false
     }
 
     visit(f: (TagsFilter: any) => void) {

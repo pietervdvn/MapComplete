@@ -1,59 +1,64 @@
-import Translations from "../i18n/Translations";
-import BaseUIElement from "../BaseUIElement";
-import {Store, UIEventSource} from "../../Logic/UIEventSource";
-
+import Translations from "../i18n/Translations"
+import BaseUIElement from "../BaseUIElement"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 
 export default class Link extends BaseUIElement {
-    private readonly _href: string | Store<string>;
-    private readonly _embeddedShow: BaseUIElement;
-    private readonly _newTab: boolean;
+    private readonly _href: string | Store<string>
+    private readonly _embeddedShow: BaseUIElement
+    private readonly _newTab: boolean
 
-    constructor(embeddedShow: BaseUIElement | string, href: string | Store<string>, newTab: boolean = false) {
-        super();
-        this._embeddedShow = Translations.W(embeddedShow);
-        this._href = href;
-        this._newTab = newTab;
+    constructor(
+        embeddedShow: BaseUIElement | string,
+        href: string | Store<string>,
+        newTab: boolean = false
+    ) {
+        super()
+        this._embeddedShow = Translations.W(embeddedShow)
+        this._href = href
+        this._newTab = newTab
         if (this._embeddedShow === undefined) {
             throw "Error: got a link where embeddedShow is undefined"
         }
         this.onClick(() => {})
-
     }
 
     public static OsmWiki(key: string, value?: string, hideKey = false) {
         if (value !== undefined) {
-            let k = "";
+            let k = ""
             if (!hideKey) {
                 k = key + "="
             }
-            return new Link(k + value, `https://wiki.openstreetmap.org/wiki/Tag:${key}%3D${value}`, true)
+            return new Link(
+                k + value,
+                `https://wiki.openstreetmap.org/wiki/Tag:${key}%3D${value}`,
+                true
+            )
         }
         return new Link(key, "https://wiki.openstreetmap.org/wiki/Key:" + key, true)
     }
 
     AsMarkdown(): string {
         // @ts-ignore
-        return `[${this._embeddedShow.AsMarkdown()}](${this._href.data ?? this._href})`;
+        return `[${this._embeddedShow.AsMarkdown()}](${this._href.data ?? this._href})`
     }
 
     protected InnerConstructElement(): HTMLElement {
-        const embeddedShow = this._embeddedShow?.ConstructElement();
+        const embeddedShow = this._embeddedShow?.ConstructElement()
         if (embeddedShow === undefined) {
-            return undefined;
+            return undefined
         }
         const el = document.createElement("a")
         if (typeof this._href === "string") {
             el.href = this._href
         } else {
-            this._href.addCallbackAndRun(href => {
-                el.href = href;
+            this._href.addCallbackAndRun((href) => {
+                el.href = href
             })
         }
         if (this._newTab) {
             el.target = "_blank"
         }
         el.appendChild(embeddedShow)
-        return el;
+        return el
     }
-
 }

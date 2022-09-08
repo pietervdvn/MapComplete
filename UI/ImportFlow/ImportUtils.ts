@@ -1,35 +1,44 @@
-import {Store} from "../../Logic/UIEventSource";
-import {GeoOperations} from "../../Logic/GeoOperations";
-import {Feature, Geometry} from "@turf/turf";
+import { Store } from "../../Logic/UIEventSource"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { Feature, Geometry } from "@turf/turf"
 
 export class ImportUtils {
     public static partitionFeaturesIfNearby(
-        toPartitionFeatureCollection: ({ features: Feature<Geometry>[] }),
+        toPartitionFeatureCollection: { features: Feature<Geometry>[] },
         compareWith: Store<{ features: Feature[] }>,
-        cutoffDistanceInMeters: Store<number>)
-        : Store<{ hasNearby: Feature[], noNearby: Feature[] }> {
-        return compareWith.map(osmData => {
-            if (osmData?.features === undefined) {
-                return undefined
-            }
-            if (osmData.features.length === 0) {
-                return {noNearby: toPartitionFeatureCollection.features, hasNearby: []}
-            }
-            const maxDist = cutoffDistanceInMeters.data
-
-            const hasNearby = []
-            const noNearby = []
-            for (const toImportElement of toPartitionFeatureCollection.features) {
-                const hasNearbyFeature = osmData.features.some(f =>
-                    maxDist >= GeoOperations.distanceBetween(<any> toImportElement.geometry.coordinates, GeoOperations.centerpointCoordinates(f)))
-                if (hasNearbyFeature) {
-                    hasNearby.push(toImportElement)
-                } else {
-                    noNearby.push(toImportElement)
+        cutoffDistanceInMeters: Store<number>
+    ): Store<{ hasNearby: Feature[]; noNearby: Feature[] }> {
+        return compareWith.map(
+            (osmData) => {
+                if (osmData?.features === undefined) {
+                    return undefined
                 }
-            }
+                if (osmData.features.length === 0) {
+                    return { noNearby: toPartitionFeatureCollection.features, hasNearby: [] }
+                }
+                const maxDist = cutoffDistanceInMeters.data
 
-            return {hasNearby, noNearby}
-        }, [cutoffDistanceInMeters]);
+                const hasNearby = []
+                const noNearby = []
+                for (const toImportElement of toPartitionFeatureCollection.features) {
+                    const hasNearbyFeature = osmData.features.some(
+                        (f) =>
+                            maxDist >=
+                            GeoOperations.distanceBetween(
+                                <any>toImportElement.geometry.coordinates,
+                                GeoOperations.centerpointCoordinates(f)
+                            )
+                    )
+                    if (hasNearbyFeature) {
+                        hasNearby.push(toImportElement)
+                    } else {
+                        noNearby.push(toImportElement)
+                    }
+                }
+
+                return { hasNearby, noNearby }
+            },
+            [cutoffDistanceInMeters]
+        )
     }
 }

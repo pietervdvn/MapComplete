@@ -1,43 +1,41 @@
-import {Store} from "../../Logic/UIEventSource";
-import BaseUIElement from "../BaseUIElement";
-import Combine from "../Base/Combine";
-import {SubtleButton} from "../Base/SubtleButton";
-import {Changes} from "../../Logic/Osm/Changes";
-import {FixedUiElement} from "../Base/FixedUiElement";
-import Translations from "../i18n/Translations";
-import {VariableUiElement} from "../Base/VariableUIElement";
-import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
-import {Tag} from "../../Logic/Tags/Tag";
-import {ElementStorage} from "../../Logic/ElementStorage";
-import {And} from "../../Logic/Tags/And";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import Toggle from "../Input/Toggle";
-import {OsmConnection} from "../../Logic/Osm/OsmConnection";
-
+import { Store } from "../../Logic/UIEventSource"
+import BaseUIElement from "../BaseUIElement"
+import Combine from "../Base/Combine"
+import { SubtleButton } from "../Base/SubtleButton"
+import { Changes } from "../../Logic/Osm/Changes"
+import { FixedUiElement } from "../Base/FixedUiElement"
+import Translations from "../i18n/Translations"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
+import { Tag } from "../../Logic/Tags/Tag"
+import { ElementStorage } from "../../Logic/ElementStorage"
+import { And } from "../../Logic/Tags/And"
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import Toggle from "../Input/Toggle"
+import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 
 export interface MultiApplyParams {
-    featureIds: Store<string[]>,
-    keysToApply: string[],
-    text: string,
-    autoapply: boolean,
-    overwrite: boolean,
-    tagsSource: Store<any>,
+    featureIds: Store<string[]>
+    keysToApply: string[]
+    text: string
+    autoapply: boolean
+    overwrite: boolean
+    tagsSource: Store<any>
     state: {
-        changes: Changes,
-        allElements: ElementStorage,
-        layoutToUse: LayoutConfig,
+        changes: Changes
+        allElements: ElementStorage
+        layoutToUse: LayoutConfig
         osmConnection: OsmConnection
     }
 }
 
 class MultiApplyExecutor {
-
     private static executorCache = new Map<string, MultiApplyExecutor>()
     private readonly originalValues = new Map<string, string>()
-    private readonly params: MultiApplyParams;
+    private readonly params: MultiApplyParams
 
     private constructor(params: MultiApplyParams) {
-        this.params = params;
+        this.params = params
         const p = params
 
         for (const key of p.keysToApply) {
@@ -45,14 +43,13 @@ class MultiApplyExecutor {
         }
 
         if (p.autoapply) {
-
-            const self = this;
-            const relevantValues = p.tagsSource.map(tags => {
-                const currentValues = p.keysToApply.map(key => tags[key])
+            const self = this
+            const relevantValues = p.tagsSource.map((tags) => {
+                const currentValues = p.keysToApply.map((key) => tags[key])
                 // By stringifying, we have a very clear ping when they changec
-                return JSON.stringify(currentValues);
+                return JSON.stringify(currentValues)
             })
-            relevantValues.addCallbackD(_ => {
+            relevantValues.addCallbackD((_) => {
                 self.applyTaggingOnOtherFeatures()
             })
         }
@@ -74,7 +71,7 @@ class MultiApplyExecutor {
         const allElements = this.params.state.allElements
         const keysToChange = this.params.keysToApply
         const overwrite = this.params.overwrite
-        const selfTags = this.params.tagsSource.data;
+        const selfTags = this.params.tagsSource.data
         const theme = this.params.state.layoutToUse.id
         for (const id of featuresToChange) {
             const tagsToApply: Tag[] = []
@@ -86,42 +83,42 @@ class MultiApplyExecutor {
                 }
                 const otherValue = otherFeatureTags[key]
                 if (newValue === otherValue) {
-                    continue;// No changes to be made
+                    continue // No changes to be made
                 }
 
                 if (overwrite) {
                     tagsToApply.push(new Tag(key, newValue))
-                    continue;
+                    continue
                 }
 
-
-                if (otherValue === undefined || otherValue === "" || otherValue === this.originalValues.get(key)) {
+                if (
+                    otherValue === undefined ||
+                    otherValue === "" ||
+                    otherValue === this.originalValues.get(key)
+                ) {
                     tagsToApply.push(new Tag(key, newValue))
                 }
             }
 
             if (tagsToApply.length == 0) {
-                continue;
+                continue
             }
-
 
             changes.applyAction(
                 new ChangeTagAction(id, new And(tagsToApply), otherFeatureTags, {
                     theme,
-                    changeType: "answer"
-                }))
+                    changeType: "answer",
+                })
+            )
         }
     }
-
 }
 
 export default class MultiApply extends Toggle {
-
     constructor(params: MultiApplyParams) {
         const p = params
         const t = Translations.t.multi_apply
 
-        
         const featureId = p.tagsSource.data.id
 
         if (featureId === undefined) {
@@ -133,24 +130,30 @@ export default class MultiApply extends Toggle {
         const elems: (string | BaseUIElement)[] = []
         if (p.autoapply) {
             elems.push(new FixedUiElement(p.text).SetClass("block"))
-            elems.push(new VariableUiElement(p.featureIds.map(featureIds =>
-                t.autoApply.Subs({
-                    attr_names: p.keysToApply.join(", "),
-                    count: "" + featureIds.length
-                }))).SetClass("block subtle text-sm"))
+            elems.push(
+                new VariableUiElement(
+                    p.featureIds.map((featureIds) =>
+                        t.autoApply.Subs({
+                            attr_names: p.keysToApply.join(", "),
+                            count: "" + featureIds.length,
+                        })
+                    )
+                ).SetClass("block subtle text-sm")
+            )
         } else {
             elems.push(
-                new SubtleButton(undefined, p.text).onClick(() => applicator.applyTaggingOnOtherFeatures())
+                new SubtleButton(undefined, p.text).onClick(() =>
+                    applicator.applyTaggingOnOtherFeatures()
+                )
             )
         }
 
-
-        const isShown: Store<boolean> = p.state.osmConnection.isLoggedIn.map(loggedIn => {
-            return loggedIn && p.featureIds.data.length > 0
-        }, [p.featureIds])
-        super(new Combine(elems), undefined, isShown);
-
+        const isShown: Store<boolean> = p.state.osmConnection.isLoggedIn.map(
+            (loggedIn) => {
+                return loggedIn && p.featureIds.data.length > 0
+            },
+            [p.featureIds]
+        )
+        super(new Combine(elems), undefined, isShown)
     }
-
-
 }

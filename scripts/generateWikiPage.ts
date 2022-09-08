@@ -1,10 +1,14 @@
-import {writeFile} from "fs";
-import Translations from "../UI/i18n/Translations";
+import { writeFile } from "fs"
+import Translations from "../UI/i18n/Translations"
 import * as themeOverview from "../assets/generated/theme_overview.json"
 
-function generateWikiEntry(layout: { hideFromOverview: boolean, id: string, shortDescription: any }) {
+function generateWikiEntry(layout: {
+    hideFromOverview: boolean
+    id: string
+    shortDescription: any
+}) {
     if (layout.hideFromOverview) {
-        return "";
+        return ""
     }
 
     const languagesInDescr = []
@@ -12,8 +16,8 @@ function generateWikiEntry(layout: { hideFromOverview: boolean, id: string, shor
         languagesInDescr.push(shortDescriptionKey)
     }
 
-    const languages = languagesInDescr.map(ln => `{{#language:${ln}|en}}`).join(", ")
-    let auth = "Yes";
+    const languages = languagesInDescr.map((ln) => `{{#language:${ln}|en}}`).join(", ")
+    let auth = "Yes"
     return `{{service_item
 |name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
 |region= Worldwide
@@ -21,29 +25,29 @@ function generateWikiEntry(layout: { hideFromOverview: boolean, id: string, shor
 |descr= A MapComplete theme: ${Translations.T(layout.shortDescription)
         .textFor("en")
         .replace("<a href='", "[[")
-        .replace(/'>.*<\/a>/, "]]")
-    }
+        .replace(/'>.*<\/a>/, "]]")}
 |material= {{yes|[https://mapcomplete.osm.be/ ${auth}]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, ${layout.id}
 }}`
 }
 
-let wikiPage = "{|class=\"wikitable sortable\"\n" +
+let wikiPage =
+    '{|class="wikitable sortable"\n' +
     "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
-    "|-";
+    "|-"
 
 for (const layout of themeOverview) {
     if (layout.hideFromOverview) {
-        continue;
+        continue
     }
-    wikiPage += "\n" + generateWikiEntry(layout);
+    wikiPage += "\n" + generateWikiEntry(layout)
 }
 
 wikiPage += "\n|}"
 
 writeFile("Docs/wikiIndex.txt", wikiPage, (err) => {
     if (err !== null) {
-        console.log("Could not save wikiindex", err);
+        console.log("Could not save wikiindex", err)
     }
-});
+})

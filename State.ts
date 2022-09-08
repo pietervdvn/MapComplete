@@ -1,5 +1,5 @@
-import LayoutConfig from "./Models/ThemeConfig/LayoutConfig";
-import FeaturePipelineState from "./Logic/State/FeaturePipelineState";
+import LayoutConfig from "./Models/ThemeConfig/LayoutConfig"
+import FeaturePipelineState from "./Logic/State/FeaturePipelineState"
 
 /**
  * Contains the global state: a bunch of UI-event sources
@@ -8,11 +8,9 @@ import FeaturePipelineState from "./Logic/State/FeaturePipelineState";
 export default class State extends FeaturePipelineState {
     /* The singleton of the global state
      */
-    public static state: FeaturePipelineState;
+    public static state: FeaturePipelineState
 
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse)
     }
-
-
 }

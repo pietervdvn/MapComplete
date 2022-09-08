@@ -1,31 +1,30 @@
-import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
-import State from "../State";
-import {Utils} from "../Utils";
-import {UIEventSource} from "../Logic/UIEventSource";
-import FullWelcomePaneWithTabs from "./BigComponents/FullWelcomePaneWithTabs";
-import MapControlButton from "./MapControlButton";
-import Svg from "../Svg";
-import Toggle from "./Input/Toggle";
-import UserBadge from "./BigComponents/UserBadge";
-import SearchAndGo from "./BigComponents/SearchAndGo";
-import BaseUIElement from "./BaseUIElement";
-import LeftControls from "./BigComponents/LeftControls";
-import RightControls from "./BigComponents/RightControls";
-import CenterMessageBox from "./CenterMessageBox";
-import ShowDataLayer from "./ShowDataLayer/ShowDataLayer";
-import ScrollableFullScreen from "./Base/ScrollableFullScreen";
-import Translations from "./i18n/Translations";
-import SimpleAddUI from "./BigComponents/SimpleAddUI";
-import StrayClickHandler from "../Logic/Actors/StrayClickHandler";
-import {DefaultGuiState} from "./DefaultGuiState";
-import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import * as home_location_json from "../assets/layers/home_location/home_location.json";
-import NewNoteUi from "./Popup/NewNoteUi";
-import Combine from "./Base/Combine";
-import AddNewMarker from "./BigComponents/AddNewMarker";
-import FilteredLayer from "../Models/FilteredLayer";
-import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
-
+import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
+import State from "../State"
+import { Utils } from "../Utils"
+import { UIEventSource } from "../Logic/UIEventSource"
+import FullWelcomePaneWithTabs from "./BigComponents/FullWelcomePaneWithTabs"
+import MapControlButton from "./MapControlButton"
+import Svg from "../Svg"
+import Toggle from "./Input/Toggle"
+import UserBadge from "./BigComponents/UserBadge"
+import SearchAndGo from "./BigComponents/SearchAndGo"
+import BaseUIElement from "./BaseUIElement"
+import LeftControls from "./BigComponents/LeftControls"
+import RightControls from "./BigComponents/RightControls"
+import CenterMessageBox from "./CenterMessageBox"
+import ShowDataLayer from "./ShowDataLayer/ShowDataLayer"
+import ScrollableFullScreen from "./Base/ScrollableFullScreen"
+import Translations from "./i18n/Translations"
+import SimpleAddUI from "./BigComponents/SimpleAddUI"
+import StrayClickHandler from "../Logic/Actors/StrayClickHandler"
+import { DefaultGuiState } from "./DefaultGuiState"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+import * as home_location_json from "../assets/layers/home_location/home_location.json"
+import NewNoteUi from "./Popup/NewNoteUi"
+import Combine from "./Base/Combine"
+import AddNewMarker from "./BigComponents/AddNewMarker"
+import FilteredLayer from "../Models/FilteredLayer"
+import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
 
 /**
  * The default MapComplete GUI initializor
@@ -33,49 +32,64 @@ import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
  * Adds a welcome pane, contorl buttons, ... etc to index.html
  */
 export default class DefaultGUI {
-    private readonly guiState: DefaultGuiState;
-    private readonly state: FeaturePipelineState;
-
+    private readonly guiState: DefaultGuiState
+    private readonly state: FeaturePipelineState
 
     constructor(state: FeaturePipelineState, guiState: DefaultGuiState) {
-        this.state = state;
-        this.guiState = guiState;
+        this.state = state
+        this.guiState = guiState
+    }
 
-        }
-
-    public setup(){
-        this.SetupUIElements();
+    public setup() {
+        this.SetupUIElements()
         this.SetupMap()
 
-        if (this.state.layoutToUse.customCss !== undefined && window.location.pathname.indexOf("index") >= 0) {
+        if (
+            this.state.layoutToUse.customCss !== undefined &&
+            window.location.pathname.indexOf("index") >= 0
+        ) {
             Utils.LoadCustomCss(this.state.layoutToUse.customCss)
         }
-        
-        Utils.downloadJson("./service-worker-version").then(data => console.log("Service worker", data)).catch(e => console.log("Service worker not active"))
-    }
-    
-    public setupClickDialogOnMap(filterViewIsOpened: UIEventSource<boolean>, state: FeaturePipelineState) {
 
-        const hasPresets = state.layoutToUse.layers.some(layer => layer.presets.length > 0);
-        const noteLayer: FilteredLayer = state.filteredLayers.data.filter(l => l.layerDef.id === "note")[0]
-        let addNewNoteDialog: (isShown: UIEventSource<boolean>) => BaseUIElement = undefined;
+        Utils.downloadJson("./service-worker-version")
+            .then((data) => console.log("Service worker", data))
+            .catch((e) => console.log("Service worker not active"))
+    }
+
+    public setupClickDialogOnMap(
+        filterViewIsOpened: UIEventSource<boolean>,
+        state: FeaturePipelineState
+    ) {
+        const hasPresets = state.layoutToUse.layers.some((layer) => layer.presets.length > 0)
+        const noteLayer: FilteredLayer = state.filteredLayers.data.filter(
+            (l) => l.layerDef.id === "note"
+        )[0]
+        let addNewNoteDialog: (isShown: UIEventSource<boolean>) => BaseUIElement = undefined
         if (noteLayer !== undefined) {
             addNewNoteDialog = (isShown) => new NewNoteUi(noteLayer, isShown, state)
         }
 
         function setup() {
             if (!hasPresets && addNewNoteDialog === undefined) {
-                return; // nothing to do
+                return // nothing to do
             }
-            const newPointDialogIsShown = new UIEventSource<boolean>(false);
+            const newPointDialogIsShown = new UIEventSource<boolean>(false)
             const addNewPoint = new ScrollableFullScreen(
-                () => hasPresets ? Translations.t.general.add.title : Translations.t.notes.createNoteTitle,
-                ({resetScrollSignal}) => {
-                    let addNew = undefined;
+                () =>
+                    hasPresets
+                        ? Translations.t.general.add.title
+                        : Translations.t.notes.createNoteTitle,
+                ({ resetScrollSignal }) => {
+                    let addNew = undefined
                     if (hasPresets) {
-                        addNew = new SimpleAddUI(newPointDialogIsShown, resetScrollSignal, filterViewIsOpened, state);
+                        addNew = new SimpleAddUI(
+                            newPointDialogIsShown,
+                            resetScrollSignal,
+                            filterViewIsOpened,
+                            state
+                        )
                     }
-                    let addNote = undefined;
+                    let addNote = undefined
                     if (noteLayer !== undefined) {
                         addNote = addNewNoteDialog(newPointDialogIsShown)
                     }
@@ -83,22 +97,23 @@ export default class DefaultGUI {
                 },
                 "new",
                 newPointDialogIsShown
-            );
+            )
 
             addNewPoint.isShown.addCallback((isShown) => {
                 if (!isShown) {
                     // Clear the 'last-click'-location when the dialog is closed - this causes the popup and the marker to be removed
-                    state.LastClickLocation.setData(undefined);
+                    state.LastClickLocation.setData(undefined)
                 }
-            });
+            })
 
-            let noteMarker = undefined;
+            let noteMarker = undefined
             if (!hasPresets && addNewNoteDialog !== undefined) {
-                noteMarker = new Combine(
-                    [Svg.note_svg().SetClass("absolute bottom-0").SetStyle("height: 40px"),
-                        Svg.addSmall_svg().SetClass("absolute w-6 animate-pulse")
-                            .SetStyle("right: 10px; bottom: -8px;")
-                    ])
+                noteMarker = new Combine([
+                    Svg.note_svg().SetClass("absolute bottom-0").SetStyle("height: 40px"),
+                    Svg.addSmall_svg()
+                        .SetClass("absolute w-6 animate-pulse")
+                        .SetStyle("right: 10px; bottom: -8px;"),
+                ])
                     .SetClass("block relative h-full")
                     .SetStyle("left: calc( 50% - 15px )") // This is a bit hacky, yes I know!
             }
@@ -107,91 +122,83 @@ export default class DefaultGUI {
                 state,
                 addNewPoint,
                 hasPresets ? new AddNewMarker(state.filteredLayers) : noteMarker
-            );
+            )
         }
 
         if (noteLayer !== undefined) {
             setup()
         } else {
-            state.featureSwitchAddNew.addCallbackAndRunD(addNewAllowed => {
+            state.featureSwitchAddNew.addCallbackAndRunD((addNewAllowed) => {
                 if (addNewAllowed) {
                     setup()
-                    return true;
+                    return true
                 }
             })
         }
-
     }
 
     private SetupMap() {
-        const state = this.state;
-        const guiState = this.guiState;
+        const state = this.state
+        const guiState = this.guiState
 
         // Attach the map
-        state.mainMapObject.SetClass("w-full h-full")
-            .AttachTo("leafletDiv")
+        state.mainMapObject.SetClass("w-full h-full").AttachTo("leafletDiv")
 
-        this.setupClickDialogOnMap(
-            guiState.filterViewIsOpened,
-            state
-        )
-
+        this.setupClickDialogOnMap(guiState.filterViewIsOpened, state)
 
         new ShowDataLayer({
             leafletMap: state.leafletMap,
             layerToShow: new LayerConfig(home_location_json, "home_location", true),
             features: state.homeLocation,
-            state
+            state,
         })
 
-        state.leafletMap.addCallbackAndRunD(_ => {
+        state.leafletMap.addCallbackAndRunD((_) => {
             // Lets assume that all showDataLayers are initialized at this point
             state.selectedElement.ping()
-            State.state.locationControl.ping();
-            return true;
+            State.state.locationControl.ping()
+            return true
         })
-
     }
 
     private SetupUIElements() {
-        const state = this.state;
-        const guiState = this.guiState;
+        const state = this.state
+        const guiState = this.guiState
 
         const self = this
         new Combine([
-            Toggle.If(state.featureSwitchUserbadge,
-                () => new UserBadge(state)
-            ),
-            Toggle.If(state.featureSwitchExtraLinkEnabled,
+            Toggle.If(state.featureSwitchUserbadge, () => new UserBadge(state)),
+            Toggle.If(
+                state.featureSwitchExtraLinkEnabled,
                 () => new ExtraLinkButton(state, state.layoutToUse.extraLink)
-            )
-        ]).SetClass("flex flex-col")
+            ),
+        ])
+            .SetClass("flex flex-col")
             .AttachTo("userbadge")
 
         new Combine([
-            new ExtraLinkButton(state, {...state.layoutToUse.extraLink, newTab: true, requirements: new Set<"iframe" | "no-iframe" | "welcome-message" | "no-welcome-message">( ) })
-        ]).SetClass("flex items-center justify-center normal-background h-full")
+            new ExtraLinkButton(state, {
+                ...state.layoutToUse.extraLink,
+                newTab: true,
+                requirements: new Set<
+                    "iframe" | "no-iframe" | "welcome-message" | "no-welcome-message"
+                >(),
+            }),
+        ])
+            .SetClass("flex items-center justify-center normal-background h-full")
             .AttachTo("on-small-screen")
 
-        Toggle.If(state.featureSwitchSearch,
-            () => new SearchAndGo(state))
-            .AttachTo("searchbox");
+        Toggle.If(state.featureSwitchSearch, () => new SearchAndGo(state)).AttachTo("searchbox")
 
-
-        Toggle.If(
-            state.featureSwitchWelcomeMessage,
-            () => self.InitWelcomeMessage()
+        Toggle.If(state.featureSwitchWelcomeMessage, () => self.InitWelcomeMessage()).AttachTo(
+            "messagesbox"
         )
-            .AttachTo("messagesbox");
 
+        new LeftControls(state, guiState).AttachTo("bottom-left")
+        new RightControls(state).AttachTo("bottom-right")
 
-        new LeftControls(state, guiState).AttachTo("bottom-left");
-        new RightControls(state).AttachTo("bottom-right");
-
-        new CenterMessageBox(state).AttachTo("centermessage");
-        document
-            .getElementById("centermessage")
-            .classList.add("pointer-events-none");
+        new CenterMessageBox(state).AttachTo("centermessage")
+        document.getElementById("centermessage").classList.add("pointer-events-none")
 
         // We have to ping the welcomeMessageIsOpened and other isOpened-stuff to activate the FullScreenMessage if needed
         for (const state of guiState.allFullScreenStates) {
@@ -205,39 +212,40 @@ export default class DefaultGUI {
          */
 
         state.selectedElement.addCallbackAndRunD((_) => {
-            guiState.allFullScreenStates.forEach(s => s.setData(false))
-        });
+            guiState.allFullScreenStates.forEach((s) => s.setData(false))
+        })
     }
 
     private InitWelcomeMessage(): BaseUIElement {
         const isOpened = this.guiState.welcomeMessageIsOpened
-        const fullOptions = new FullWelcomePaneWithTabs(isOpened, this.guiState.welcomeMessageOpenedTab, this.state);
+        const fullOptions = new FullWelcomePaneWithTabs(
+            isOpened,
+            this.guiState.welcomeMessageOpenedTab,
+            this.state
+        )
 
         // ?-Button on Desktop, opens panel with close-X.
-        const help = new MapControlButton(Svg.help_svg());
-        help.onClick(() => isOpened.setData(true));
+        const help = new MapControlButton(Svg.help_svg())
+        help.onClick(() => isOpened.setData(true))
 
-
-        const openedTime = new Date().getTime();
+        const openedTime = new Date().getTime()
         this.state.locationControl.addCallback(() => {
             if (new Date().getTime() - openedTime < 15 * 1000) {
                 // Don't autoclose the first 15 secs when the map is moving
-                return;
+                return
             }
-            isOpened.setData(false);
-            return true; // Unregister this caller - we only autoclose once
-        });
+            isOpened.setData(false)
+            return true // Unregister this caller - we only autoclose once
+        })
 
         this.state.selectedElement.addCallbackAndRunD((_) => {
-            isOpened.setData(false);
-        });
+            isOpened.setData(false)
+        })
 
         return new Toggle(
             fullOptions.SetClass("welcomeMessage pointer-events-auto"),
             help.SetClass("pointer-events-auto"),
             isOpened
         )
-
     }
-
 }

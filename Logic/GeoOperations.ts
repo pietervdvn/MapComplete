@@ -1,17 +1,25 @@
-import * as turf from '@turf/turf'
-import {BBox} from "./BBox";
+import * as turf from "@turf/turf"
+import { BBox } from "./BBox"
 import togpx from "togpx"
-import Constants from "../Models/Constants";
-import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import {AllGeoJSON, booleanWithin, Coord, Feature, Geometry, MultiPolygon, Polygon, Properties} from "@turf/turf";
+import Constants from "../Models/Constants"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+import {
+    AllGeoJSON,
+    booleanWithin,
+    Coord,
+    Feature,
+    Geometry,
+    MultiPolygon,
+    Polygon,
+    Properties,
+} from "@turf/turf"
 
 export class GeoOperations {
-
-    private static readonly _earthRadius = 6378137;
-    private static readonly _originShift = 2 * Math.PI * GeoOperations._earthRadius / 2;
+    private static readonly _earthRadius = 6378137
+    private static readonly _originShift = (2 * Math.PI * GeoOperations._earthRadius) / 2
 
     static surfaceAreaInSqMeters(feature: any) {
-        return turf.area(feature);
+        return turf.area(feature)
     }
 
     /**
@@ -19,10 +27,10 @@ export class GeoOperations {
      * @param feature
      */
     static centerpoint(feature: any) {
-        const newFeature = turf.center(feature);
-        newFeature.properties = feature.properties;
-        newFeature.id = feature.id;
-        return newFeature;
+        const newFeature = turf.center(feature)
+        newFeature.properties = feature.properties
+        newFeature.id = feature.id
+        return newFeature
     }
 
     /**
@@ -30,7 +38,7 @@ export class GeoOperations {
      * @param feature
      */
     static centerpointCoordinates(feature: AllGeoJSON): [number, number] {
-        return <[number, number]>turf.center(feature).geometry.coordinates;
+        return <[number, number]>turf.center(feature).geometry.coordinates
     }
 
     /**
@@ -39,7 +47,7 @@ export class GeoOperations {
      * @param lonlat1
      */
     static distanceBetween(lonlat0: [number, number], lonlat1: [number, number]) {
-        return turf.distance(lonlat0, lonlat1, {units: "meters"})
+        return turf.distance(lonlat0, lonlat1, { units: "meters" })
     }
 
     static convexHull(featureCollection, options: { concavity?: number }) {
@@ -69,16 +77,17 @@ export class GeoOperations {
      * const overlap0 = GeoOperations.calculateOverlap(line0, [polygon]);
      * overlap.length // => 1
      */
-    static calculateOverlap(feature: any, otherFeatures: any[]): { feat: any, overlap: number }[] {
-
-        const featureBBox = BBox.get(feature);
-        const result: { feat: any, overlap: number }[] = [];
+    static calculateOverlap(feature: any, otherFeatures: any[]): { feat: any; overlap: number }[] {
+        const featureBBox = BBox.get(feature)
+        const result: { feat: any; overlap: number }[] = []
         if (feature.geometry.type === "Point") {
-            const coor = feature.geometry.coordinates;
+            const coor = feature.geometry.coordinates
             for (const otherFeature of otherFeatures) {
-
-                if (feature.properties.id !== undefined && feature.properties.id === otherFeature.properties.id) {
-                    continue;
+                if (
+                    feature.properties.id !== undefined &&
+                    feature.properties.id === otherFeature.properties.id
+                ) {
+                    continue
                 }
 
                 if (otherFeature.geometry === undefined) {
@@ -87,86 +96,105 @@ export class GeoOperations {
                 }
 
                 if (GeoOperations.inside(coor, otherFeature)) {
-                    result.push({feat: otherFeature, overlap: undefined})
+                    result.push({ feat: otherFeature, overlap: undefined })
                 }
             }
-            return result;
+            return result
         }
 
         if (feature.geometry.type === "LineString") {
-
             for (const otherFeature of otherFeatures) {
-
-                if (feature.properties.id !== undefined && feature.properties.id === otherFeature.properties.id) {
-                    continue;
+                if (
+                    feature.properties.id !== undefined &&
+                    feature.properties.id === otherFeature.properties.id
+                ) {
+                    continue
                 }
 
-                const intersection = GeoOperations.calculateInstersection(feature, otherFeature, featureBBox)
+                const intersection = GeoOperations.calculateInstersection(
+                    feature,
+                    otherFeature,
+                    featureBBox
+                )
                 if (intersection === null) {
                     continue
                 }
-                result.push({feat: otherFeature, overlap: intersection})
-
+                result.push({ feat: otherFeature, overlap: intersection })
             }
-            return result;
+            return result
         }
 
         if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
-
             for (const otherFeature of otherFeatures) {
-
-                if (feature.properties.id !== undefined && feature.properties.id === otherFeature.properties.id) {
-                    continue;
+                if (
+                    feature.properties.id !== undefined &&
+                    feature.properties.id === otherFeature.properties.id
+                ) {
+                    continue
                 }
 
                 if (otherFeature.geometry.type === "Point") {
                     if (this.inside(otherFeature, feature)) {
-                        result.push({feat: otherFeature, overlap: undefined})
+                        result.push({ feat: otherFeature, overlap: undefined })
                     }
-                    continue;
+                    continue
                 }
-
 
                 // Calculate the surface area of the intersection
 
                 const intersection = this.calculateInstersection(feature, otherFeature, featureBBox)
                 if (intersection === null) {
-                    continue;
+                    continue
                 }
-                result.push({feat: otherFeature, overlap: intersection})
-
+                result.push({ feat: otherFeature, overlap: intersection })
             }
-            return result;
+            return result
         }
-        console.error("Could not correctly calculate the overlap of ", feature, ": unsupported type")
-        return result;
+        console.error(
+            "Could not correctly calculate the overlap of ",
+            feature,
+            ": unsupported type"
+        )
+        return result
     }
 
     /**
      * Helper function which does the heavy lifting for 'inside'
      */
-    private static pointInPolygonCoordinates(x: number, y: number, coordinates: [number, number][][]) {
-        const inside = GeoOperations.pointWithinRing(x, y, /*This is the outer ring of the polygon */coordinates[0])
+    private static pointInPolygonCoordinates(
+        x: number,
+        y: number,
+        coordinates: [number, number][][]
+    ) {
+        const inside = GeoOperations.pointWithinRing(
+            x,
+            y,
+            /*This is the outer ring of the polygon */ coordinates[0]
+        )
         if (!inside) {
-            return false;
+            return false
         }
         for (let i = 1; i < coordinates.length; i++) {
-            const inHole = GeoOperations.pointWithinRing(x, y, coordinates[i] /* These are inner rings, aka holes*/)
+            const inHole = GeoOperations.pointWithinRing(
+                x,
+                y,
+                coordinates[i] /* These are inner rings, aka holes*/
+            )
             if (inHole) {
-                return false;
+                return false
             }
         }
-        return true;
+        return true
     }
 
     /**
      * Detect wether or not the given point is located in the feature
-     * 
+     *
      * // Should work with a normal polygon
      * const polygon = {"type": "Feature","properties": {},"geometry": {"type": "Polygon","coordinates": [[[1.8017578124999998,50.401515322782366],[-3.1640625,46.255846818480315],[5.185546875,44.74673324024678],[1.8017578124999998,50.401515322782366]]]}};
      * GeoOperations.inside([3.779296875, 48.777912755501845], polygon) // => false
      * GeoOperations.inside([1.23046875, 47.60616304386874], polygon) // => true
-     * 
+     *
      * // should work with a multipolygon and detect holes
      * const multiPolygon = {"type": "Feature", "properties": {},
      *         "geometry": {
@@ -186,37 +214,32 @@ export class GeoOperations {
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 
         if (feature.geometry.type === "Point") {
-            return false;
+            return false
         }
 
         if (pointCoordinate.geometry !== undefined) {
             pointCoordinate = pointCoordinate.geometry.coordinates
         }
 
-        const x: number = pointCoordinate[0];
-        const y: number = pointCoordinate[1];
-
+        const x: number = pointCoordinate[0]
+        const y: number = pointCoordinate[1]
 
         if (feature.geometry.type === "MultiPolygon") {
-            const coordinatess = feature.geometry.coordinates;
+            const coordinatess = feature.geometry.coordinates
             for (const coordinates of coordinatess) {
                 const inThisPolygon = GeoOperations.pointInPolygonCoordinates(x, y, coordinates)
                 if (inThisPolygon) {
-                    return true;
+                    return true
                 }
-
             }
-            return false;
+            return false
         }
-
 
         if (feature.geometry.type === "Polygon") {
             return GeoOperations.pointInPolygonCoordinates(x, y, feature.geometry.coordinates)
         }
 
-        throw "GeoOperations.inside: unsupported geometry type "+feature.geometry.type
-
-
+        throw "GeoOperations.inside: unsupported geometry type " + feature.geometry.type
     }
 
     static lengthInMeters(feature: any) {
@@ -225,39 +248,24 @@ export class GeoOperations {
 
     static buffer(feature: any, bufferSizeInMeter: number) {
         return turf.buffer(feature, bufferSizeInMeter / 1000, {
-            units: 'kilometers'
+            units: "kilometers",
         })
     }
 
     static bbox(feature: any) {
         const [lon, lat, lon0, lat0] = turf.bbox(feature)
         return {
-            "type": "Feature",
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        lon,
-                        lat
-                    ],
-                    [
-                        lon0,
-                        lat
-                    ],
-                    [
-                        lon0,
-                        lat0
-                    ],
-                    [
-                        lon,
-                        lat0
-                    ],
-                    [
-                        lon,
-                        lat
-                    ],
-                ]
-            }
+            type: "Feature",
+            geometry: {
+                type: "LineString",
+                coordinates: [
+                    [lon, lat],
+                    [lon0, lat],
+                    [lon0, lat0],
+                    [lon, lat0],
+                    [lon, lat],
+                ],
+            },
         }
     }
 
@@ -273,18 +281,17 @@ export class GeoOperations {
      */
     public static nearestPoint(way, point: [number, number]) {
         if (way.geometry.type === "Polygon") {
-            way = {...way}
-            way.geometry = {...way.geometry}
+            way = { ...way }
+            way.geometry = { ...way.geometry }
             way.geometry.type = "LineString"
             way.geometry.coordinates = way.geometry.coordinates[0]
         }
 
-        return turf.nearestPointOnLine(way, point, {units: "kilometers"});
+        return turf.nearestPointOnLine(way, point, { units: "kilometers" })
     }
 
     public static toCSV(features: any[]): string {
-
-        const headerValuesSeen = new Set<string>();
+        const headerValuesSeen = new Set<string>()
         const headerValuesOrdered: string[] = []
 
         function addH(key) {
@@ -300,18 +307,17 @@ export class GeoOperations {
         const lines: string[] = []
 
         for (const feature of features) {
-            const properties = feature.properties;
+            const properties = feature.properties
             for (const key in properties) {
                 if (!properties.hasOwnProperty(key)) {
-                    continue;
+                    continue
                 }
                 addH(key)
-
             }
         }
         headerValuesOrdered.sort()
         for (const feature of features) {
-            const properties = feature.properties;
+            const properties = feature.properties
             let line = ""
             for (const key of headerValuesOrdered) {
                 const value = properties[key]
@@ -324,27 +330,27 @@ export class GeoOperations {
             lines.push(line)
         }
 
-        return headerValuesOrdered.map(v => JSON.stringify(v)).join(",") + "\n" + lines.join("\n")
+        return headerValuesOrdered.map((v) => JSON.stringify(v)).join(",") + "\n" + lines.join("\n")
     }
 
     //Converts given lat/lon in WGS84 Datum to XY in Spherical Mercator EPSG:900913
     public static ConvertWgs84To900913(lonLat: [number, number]): [number, number] {
-        const lon = lonLat[0];
-        const lat = lonLat[1];
-        const x = lon * GeoOperations._originShift / 180;
-        let y = Math.log(Math.tan((90 + lat) * Math.PI / 360)) / (Math.PI / 180);
-        y = y * GeoOperations._originShift / 180;
-        return [x, y];
+        const lon = lonLat[0]
+        const lat = lonLat[1]
+        const x = (lon * GeoOperations._originShift) / 180
+        let y = Math.log(Math.tan(((90 + lat) * Math.PI) / 360)) / (Math.PI / 180)
+        y = (y * GeoOperations._originShift) / 180
+        return [x, y]
     }
 
     //Converts XY point from (Spherical) Web Mercator EPSG:3785 (unofficially EPSG:900913) to lat/lon in WGS84 Datum
     public static Convert900913ToWgs84(lonLat: [number, number]): [number, number] {
         const lon = lonLat[0]
         const lat = lonLat[1]
-        const x = 180 * lon / GeoOperations._originShift;
-        let y = 180 * lat / GeoOperations._originShift;
-        y = 180 / Math.PI * (2 * Math.atan(Math.exp(y * Math.PI / 180)) - Math.PI / 2);
-        return [x, y];
+        const x = (180 * lon) / GeoOperations._originShift
+        let y = (180 * lat) / GeoOperations._originShift
+        y = (180 / Math.PI) * (2 * Math.atan(Math.exp((y * Math.PI) / 180)) - Math.PI / 2)
+        return [x, y]
     }
 
     public static GeoJsonToWGS84(geojson) {
@@ -360,10 +366,10 @@ export class GeoOperations {
     public static SimplifyCoordinates(coordinates: [number, number][]) {
         const newCoordinates = []
         for (let i = 1; i < coordinates.length - 1; i++) {
-            const coordinate = coordinates[i];
+            const coordinate = coordinates[i]
             const prev = coordinates[i - 1]
             const next = coordinates[i + 1]
-            const b0 = turf.bearing(prev, coordinate, {final: true})
+            const b0 = turf.bearing(prev, coordinate, { final: true })
             const b1 = turf.bearing(coordinate, next)
 
             const diff = Math.abs(b1 - b0)
@@ -373,27 +379,27 @@ export class GeoOperations {
             newCoordinates.push(coordinate)
         }
         return newCoordinates
-
     }
 
     /**
      * Calculates line intersection between two features.
      */
     public static LineIntersections(feature, otherFeature): [number, number][] {
-        return turf.lineIntersect(feature, otherFeature).features.map(p => <[number, number]>p.geometry.coordinates)
+        return turf
+            .lineIntersect(feature, otherFeature)
+            .features.map((p) => <[number, number]>p.geometry.coordinates)
     }
 
     public static AsGpx(feature, generatedWithLayer?: LayerConfig) {
-
         const metadata = {}
         const tags = feature.properties
 
         if (generatedWithLayer !== undefined) {
-
             metadata["name"] = generatedWithLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
             metadata["desc"] = "Generated with MapComplete layer " + generatedWithLayer.id
             if (tags._backend?.contains("openstreetmap")) {
-                metadata["copyright"] = "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
+                metadata["copyright"] =
+                    "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
                 metadata["author"] = tags["_last_edit:contributor"]
                 metadata["link"] = "https://www.openstreetmap.org/" + tags.id
                 metadata["time"] = tags["_last_edit:timestamp"]
@@ -404,18 +410,22 @@ export class GeoOperations {
 
         return togpx(feature, {
             creator: "MapComplete " + Constants.vNumber,
-            metadata
+            metadata,
         })
     }
 
     public static IdentifieCommonSegments(coordinatess: [number, number][][]): {
-        originalIndex: number,
-        segmentShardWith: number[],
+        originalIndex: number
+        segmentShardWith: number[]
         coordinates: []
     }[] {
-
         // An edge. Note that the edge might be reversed to fix the sorting condition:  start[0] < end[0] && (start[0] != end[0] || start[0] < end[1])
-        type edge = { start: [number, number], end: [number, number], intermediate: [number, number][], members: { index: number, isReversed: boolean }[] }
+        type edge = {
+            start: [number, number]
+            end: [number, number]
+            intermediate: [number, number][]
+            members: { index: number; isReversed: boolean }[]
+        }
 
         // The strategy:
         // 1. Index _all_ edges from _every_ linestring. Index them by starting key, gather which relations run over them
@@ -425,12 +435,11 @@ export class GeoOperations {
         const allEdgesByKey = new Map<string, edge>()
 
         for (let index = 0; index < coordinatess.length; index++) {
-            const coordinates = coordinatess[index];
+            const coordinates = coordinatess[index]
             for (let i = 0; i < coordinates.length - 1; i++) {
-
-                const c0 = coordinates[i];
+                const c0 = coordinates[i]
                 const c1 = coordinates[i + 1]
-                const isReversed = (c0[0] > c1[0]) || (c0[0] == c1[0] && c0[1] > c1[1])
+                const isReversed = c0[0] > c1[0] || (c0[0] == c1[0] && c0[1] > c1[1])
 
                 let key: string
                 if (isReversed) {
@@ -438,40 +447,38 @@ export class GeoOperations {
                 } else {
                     key = "" + c0 + ";" + c1
                 }
-                const member = {index, isReversed}
+                const member = { index, isReversed }
                 if (allEdgesByKey.has(key)) {
                     allEdgesByKey.get(key).members.push(member)
                     continue
                 }
 
-                let edge: edge;
+                let edge: edge
                 if (!isReversed) {
                     edge = {
                         start: c0,
                         end: c1,
                         members: [member],
-                        intermediate: []
+                        intermediate: [],
                     }
                 } else {
                     edge = {
                         start: c1,
                         end: c0,
                         members: [member],
-                        intermediate: []
+                        intermediate: [],
                     }
                 }
                 allEdgesByKey.set(key, edge)
-
             }
         }
 
         // Lets merge them back together!
 
-        let didMergeSomething = false;
+        let didMergeSomething = false
         let allMergedEdges = Array.from(allEdgesByKey.values())
         const allEdgesByStartPoint = new Map<string, edge[]>()
         for (const edge of allMergedEdges) {
-
             edge.members.sort((m0, m1) => m0.index - m1.index)
 
             const kstart = edge.start + ""
@@ -480,7 +487,6 @@ export class GeoOperations {
             }
             allEdgesByStartPoint.get(kstart).push(edge)
         }
-
 
         function membersAreCompatible(first: edge, second: edge): boolean {
             // There must be an exact match between the members
@@ -504,7 +510,6 @@ export class GeoOperations {
             // Allrigth, they are the same, lets mark this permanently
             second.members = first.members
             return true
-
         }
 
         do {
@@ -524,9 +529,8 @@ export class GeoOperations {
                     continue
                 }
 
-
                 for (let i = 0; i < matchingEndEdges.length; i++) {
-                    const endEdge = matchingEndEdges[i];
+                    const endEdge = matchingEndEdges[i]
 
                     if (consumed.has(endEdge)) {
                         continue
@@ -543,12 +547,11 @@ export class GeoOperations {
                     edge.end = endEdge.end
                     consumed.add(endEdge)
                     matchingEndEdges.splice(i, 1)
-                    break;
+                    break
                 }
             }
 
-            allMergedEdges = allMergedEdges.filter(edge => !consumed.has(edge));
-
+            allMergedEdges = allMergedEdges.filter((edge) => !consumed.has(edge))
         } while (didMergeSomething)
 
         return []
@@ -557,7 +560,7 @@ export class GeoOperations {
     /**
      * Removes points that do not contribute to the geometry from linestrings and the outer ring of polygons.
      * Returs a new copy of the feature
-     * 
+     *
      * const feature = {"geometry": {"type": "Polygon","coordinates": [[[4.477944199999975,51.02783550000022],[4.477987899999996,51.027818800000034],[4.478004500000021,51.02783399999988],[4.478025499999962,51.02782489999994],[4.478079099999993,51.027873899999896],[4.47801040000006,51.027903799999955],[4.477964799999972,51.02785709999982],[4.477964699999964,51.02785690000006],[4.477944199999975,51.02783550000022]]]}}
      * const copy = GeoOperations.removeOvernoding(feature)
      * expect(copy.geometry.coordinates[0]).deep.equal([[4.477944199999975,51.02783550000022],[4.477987899999996,51.027818800000034],[4.478004500000021,51.02783399999988],[4.478025499999962,51.02782489999994],[4.478079099999993,51.027873899999896],[4.47801040000006,51.027903799999955],[4.477944199999975,51.02783550000022]])
@@ -569,7 +572,7 @@ export class GeoOperations {
 
         const copy = {
             ...feature,
-            geometry: {...feature.geometry}
+            geometry: { ...feature.geometry },
         }
         let coordinates: [number, number][]
         if (feature.geometry.type === "LineString") {
@@ -582,7 +585,7 @@ export class GeoOperations {
 
         // inline replacement in the coordinates list
         for (let i = coordinates.length - 2; i >= 1; i--) {
-            const coordinate = coordinates[i];
+            const coordinate = coordinates[i]
             const nextCoordinate = coordinates[i + 1]
             const prevCoordinate = coordinates[i - 1]
 
@@ -610,30 +613,27 @@ export class GeoOperations {
                 // In case that the line is going south, e.g. bearingN = 179, bearingP = -179
                 coordinates.splice(i, 1)
             }
-
         }
-        return copy;
-
+        return copy
     }
 
     private static pointWithinRing(x: number, y: number, ring: [number, number][]) {
-        let inside = false;
+        let inside = false
         for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-            const coori = ring[i];
-            const coorj = ring[j];
+            const coori = ring[i]
+            const coorj = ring[j]
 
-            const xi = coori[0];
-            const yi = coori[1];
-            const xj = coorj[0];
-            const yj = coorj[1];
+            const xi = coori[0]
+            const yi = coori[1]
+            const xj = coorj[0]
+            const yj = coorj[1]
 
-            const intersect = ((yi > y) != (yj > y))
-                && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+            const intersect = yi > y != yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi
             if (intersect) {
-                inside = !inside;
+                inside = !inside
             }
         }
-        return inside;
+        return inside
     }
 
     /**
@@ -642,46 +642,47 @@ export class GeoOperations {
      * Returns 0 if both are linestrings
      * Returns null if the features are not intersecting
      */
-    private static calculateInstersection(feature, otherFeature, featureBBox: BBox, otherFeatureBBox?: BBox): number {
+    private static calculateInstersection(
+        feature,
+        otherFeature,
+        featureBBox: BBox,
+        otherFeatureBBox?: BBox
+    ): number {
         if (feature.geometry.type === "LineString") {
-
-
-            otherFeatureBBox = otherFeatureBBox ?? BBox.get(otherFeature);
+            otherFeatureBBox = otherFeatureBBox ?? BBox.get(otherFeature)
             const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
             if (!overlaps) {
-                return null;
+                return null
             }
 
             // Calculate the length of the intersection
 
-
-            let intersectionPoints = turf.lineIntersect(feature, otherFeature);
+            let intersectionPoints = turf.lineIntersect(feature, otherFeature)
             if (intersectionPoints.features.length == 0) {
                 // No intersections.
                 // If one point is inside of the polygon, all points are
 
-
-                const coors = feature.geometry.coordinates;
+                const coors = feature.geometry.coordinates
                 const startCoor = coors[0]
                 if (this.inside(startCoor, otherFeature)) {
                     return this.lengthInMeters(feature)
                 }
 
-                return null;
+                return null
             }
-            let intersectionPointsArray = intersectionPoints.features.map(d => {
+            let intersectionPointsArray = intersectionPoints.features.map((d) => {
                 return d.geometry.coordinates
-            });
+            })
 
             if (otherFeature.geometry.type === "LineString") {
                 if (intersectionPointsArray.length > 0) {
                     return 0
                 }
-                return null;
+                return null
             }
             if (intersectionPointsArray.length == 1) {
                 // We need to add the start- or endpoint of the current feature, depending on which one is embedded
-                const coors = feature.geometry.coordinates;
+                const coors = feature.geometry.coordinates
                 const startCoor = coors[0]
                 if (this.inside(startCoor, otherFeature)) {
                     // The startpoint is embedded
@@ -691,46 +692,50 @@ export class GeoOperations {
                 }
             }
 
-            let intersection = turf.lineSlice(turf.point(intersectionPointsArray[0]), turf.point(intersectionPointsArray[1]), feature);
+            let intersection = turf.lineSlice(
+                turf.point(intersectionPointsArray[0]),
+                turf.point(intersectionPointsArray[1]),
+                feature
+            )
 
             if (intersection == null) {
-                return null;
+                return null
             }
-            const intersectionSize = turf.length(intersection); // in km
+            const intersectionSize = turf.length(intersection) // in km
             return intersectionSize * 1000
-
-
         }
 
         if (feature.geometry.type === "Polygon" || feature.geometry.type === "MultiPolygon") {
-            const otherFeatureBBox = BBox.get(otherFeature);
+            const otherFeatureBBox = BBox.get(otherFeature)
             const overlaps = featureBBox.overlapsWith(otherFeatureBBox)
             if (!overlaps) {
-                return null;
+                return null
             }
             if (otherFeature.geometry.type === "LineString") {
-                return this.calculateInstersection(otherFeature, feature, otherFeatureBBox, featureBBox)
+                return this.calculateInstersection(
+                    otherFeature,
+                    feature,
+                    otherFeatureBBox,
+                    featureBBox
+                )
             }
 
             try {
-
-                const intersection = turf.intersect(feature, otherFeature);
+                const intersection = turf.intersect(feature, otherFeature)
                 if (intersection == null) {
-                    return null;
+                    return null
                 }
-                return turf.area(intersection); // in m²
+                return turf.area(intersection) // in m²
             } catch (e) {
                 if (e.message === "Each LinearRing of a Polygon must have 4 or more Positions.") {
                     // WORKAROUND TIME!
                     // See https://github.com/Turfjs/turf/pull/2238
-                    return null;
+                    return null
                 }
-                throw e;
+                throw e
             }
-
         }
         throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
-
     }
 
     /**
@@ -742,7 +747,7 @@ export class GeoOperations {
 
     /**
      * Returns 'true' if one feature contains the other feature
-     * 
+     *
      * const pond: Feature<Polygon, any> = {
      *       "type": "Feature",
      *       "properties": {"natural":"water","water":"pond"},
@@ -769,9 +774,10 @@ export class GeoOperations {
      * GeoOperations.completelyWithin(pond, park) // => true
      * GeoOperations.completelyWithin(park, pond) // => false
      */
-    static completelyWithin(feature: Feature<Geometry, any>, possiblyEncloingFeature: Feature<Polygon | MultiPolygon, any>) : boolean {
-        return booleanWithin(feature, possiblyEncloingFeature);
+    static completelyWithin(
+        feature: Feature<Geometry, any>,
+        possiblyEncloingFeature: Feature<Polygon | MultiPolygon, any>
+    ): boolean {
+        return booleanWithin(feature, possiblyEncloingFeature)
     }
 }
-
-
