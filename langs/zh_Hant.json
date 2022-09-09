@@ -734,7 +734,23 @@
                 },
                 "didYouMean": "你的意思是",
                 "argid": "{list} 或是 {list_end} 編號需要文件，另外，撰寫 {coded_list} 的其中一個來察看能用的編號。",
-                "docs": "取得關於 MapComplete 圖層、主題或是網站參數的文件"
+                "docs": "取得關於 MapComplete 圖層、主題或是網站參數的文件",
+                "theme": {
+                    "singular": "主題",
+                    "plural": "主題"
+                },
+                "overview": "下列的 {plural} 存在：",
+                "url_parameter": {
+                    "plural": "網址參數",
+                    "singular": "網址參數"
+                },
+                "visualisation": {
+                    "plural": "視覺化",
+                    "singular": "視覺化"
+                },
+                "noIdIntro": "從指定的編號來取得更多有關 MapComplete 程式相關的物件，已知的類別為 {list}",
+                "notFound": "沒有找到名稱為 <code>{id}</code> 的 {singular}",
+                "urlParam": "網址參數 <code>{id}<code>"
             },
             "dm": {
                 "receipt": "我傳送訊息給 {to}",
@@ -751,6 +767,18 @@
             },
             "wiki": {
                 "searching": "在 {backend} 搜尋…"
+            },
+            "help": {
+                "askRights": "詢問 {admins} 取得適當的權限",
+                "insufficientRights": "你目前沒有足夠權限來執行這個指令。",
+                "argcmd": "這個指令你想要更多相關資訊",
+                "p0": "嗨！這是 MapComplete-bot {bot_version} (MapComplete 建造版本 {mc_version})。",
+                "notFound": "我沒有找到 <code>{cmd}</code>，也許你意味的 {closest} 其中之一？",
+                "docs": "顯示有關支援的指令資訊"
+            },
+            "dream": {
+                "generatedBy": "這段文字由 {bot} 產生，由 Reddit 上的機器學習機器人產生。",
+                "docs": "傳送電腦產生文字"
             }
         },
         "commandNotFound": "我無法理解你的請求，你也許意思是類別 {0}、{1}、{2} 或 {2}？ <p>Type <code>help</code>來查看所有指令</p>",
