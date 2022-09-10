@@ -518,6 +518,8 @@
         "motor_vehicle=",
         "vehicle=",
         "inline_skate=",
+        "inline_skates=",
+        "mofa=",
         "moped=",
         "moped_a=",
         "moped_b=",
@@ -526,8 +528,8 @@
         "maxwidth:physical=",
         "width:separation=",
         "width:opening=",
-        "overlap="
-        
+        "overlap=",
+        "fixme="
       ]
     }
     
