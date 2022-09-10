@@ -12,7 +12,10 @@
     "osmTags": {
       "and": [
         {
-          "or": ["name:etymology:wikidata~*", "name:etymology~*"]
+          "or": [
+            "name:etymology:wikidata~*",
+            "name:etymology~*"
+          ]
         }
       ]
     }
@@ -53,7 +56,10 @@
         "helperArgs": [
           "name",
           {
-            "notInstanceOf": ["Q79007", "Q22698"],
+            "notInstanceOf": [
+              "Q79007",
+              "Q22698"
+            ],
             "removePrefixes": {
               "#": "no-translations",
               "fr": [
@@ -283,7 +289,9 @@
                 "weg",
                 "wegel"
               ],
-              "fr": ["parque"],
+              "fr": [
+                "parque"
+              ],
               "de": [
                 "straße",
                 "platz",
@@ -293,7 +301,13 @@
                 "gymnasium",
                 "schule"
               ],
-              "en": ["street", "path", "plaza", "square", "church"]
+              "en": [
+                "street",
+                "path",
+                "plaza",
+                "square",
+                "church"
+              ]
             }
           }
         ]
@@ -347,7 +361,10 @@
         }
       ],
       "condition": {
-        "or": ["name:etymology~*", "name:etymology:wikidata="]
+        "or": [
+          "name:etymology~*",
+          "name:etymology:wikidata="
+        ]
       }
     },
     "questions",
@@ -394,7 +411,10 @@
         "mappings": [
           {
             "if": {
-              "and": ["name:etymology=", "name:etymology:wikidata="]
+              "and": [
+                "name:etymology=",
+                "name:etymology:wikidata="
+              ]
             },
             "then": "pin:#fcca05aa"
           }
@@ -403,7 +423,9 @@
       "iconSize": {
         "render": "40,40,center"
       },
-      "location": ["point"]
+      "location": [
+        "point"
+      ]
     },
     {
       "color": {
@@ -411,7 +433,10 @@
         "mappings": [
           {
             "if": {
-              "and": ["name:etymology=", "name:etymology:wikidata="]
+              "and": [
+                "name:etymology=",
+                "name:etymology:wikidata="
+              ]
             },
             "then": "#fcca05aa"
           }

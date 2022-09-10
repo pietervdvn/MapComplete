@@ -11,10 +11,10 @@
         "delete": "Slet",
         "explanations": {
             "hardDelete": "Denne funktion vil blive slettet i OpenStreetMap. Det kan inddrives af en erfaren bidragyder",
-            "selectReason": "Angiv venligst hvorfor dette element burde slettes",
-            "softDelete": "Dette element vil blive opdateret og skjult for dette program <span class=\"subtle\">{reason}</span>",
+            "retagNoOtherThemes": "Denne funktion vil blive omklassificeret og skjult fra denne applikation",
             "retagOtherThemes": "Denne funktion bliver tagget igen og synlig i {otherThemes}",
-            "retagNoOtherThemes": "Denne funktion vil blive omklassificeret og skjult fra denne applikation"
+            "selectReason": "Angiv venligst hvorfor dette element burde slettes",
+            "softDelete": "Dette element vil blive opdateret og skjult for dette program <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Dette element er slettet",
         "isntAPoint": "Kun punkter skal slettes, det valgte element er en vej, et areal eller en relation.",

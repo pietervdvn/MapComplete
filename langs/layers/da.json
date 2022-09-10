@@ -25,6 +25,7 @@
         }
     },
     "ambulancestation": {
+        "description": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger.",
         "name": "Kort over ambulancestationer",
         "presets": {
             "0": {
@@ -34,8 +35,8 @@
         },
         "tagRenderings": {
             "ambulance-agency": {
-                "render": "Denne station drives af {operator}.",
-                "question": "Hvilket agentur driver denne station?"
+                "question": "Hvilket agentur driver denne station?",
+                "render": "Denne station drives af {operator}."
             },
             "ambulance-name": {
                 "question": "Hvad hedder denne ambulancestation?",
@@ -46,22 +47,22 @@
                     "0": {
                         "then": "Stationen drives af staten."
                     },
-                    "2": {
-                        "then": "Stationen drives af en formel gruppe af frivillige."
-                    },
                     "1": {
                         "then": "Stationen drives af en samfundsbaseret eller uformel organisation."
+                    },
+                    "2": {
+                        "then": "Stationen drives af en formel gruppe af frivillige."
                     },
                     "3": {
                         "then": "Stationen er privatdrevet."
                     }
                 },
-                "render": "Operatøren er en (n) {operator:type} enhed.",
-                "question": "Hvordan klassificeres stationsoperatøren?"
+                "question": "Hvordan klassificeres stationsoperatøren?",
+                "render": "Operatøren er en (n) {operator:type} enhed."
             },
             "ambulance-place": {
-                "render": "Denne station findes i {addr:place}.",
-                "question": "Hvor ligger stationen? (f.eks. navn på kvarter, landsby eller by)"
+                "question": "Hvor ligger stationen? (f.eks. navn på kvarter, landsby eller by)",
+                "render": "Denne station findes i {addr:place}."
             },
             "ambulance-street": {
                 "question": "Hvad er vejnavnet, hvor stationen ligger?",
@@ -70,8 +71,7 @@
         },
         "title": {
             "render": "Ambulancestation"
-        },
-        "description": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger."
+        }
     },
     "artwork": {
         "description": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
@@ -178,17 +178,38 @@
                 },
                 "question": "Hvilken slags pullert er dette?"
             },
+            "Cycle barrier type": {
+                "mappings": {
+                    "0": {
+                        "then": "Enkelt, kun to barrierer med et mellemrum"
+                    },
+                    "1": {
+                        "then": "Dobbelt, to barrierer bag hinanden"
+                    },
+                    "2": {
+                        "then": "Tredobbelt, tre barrierer bag hinanden"
+                    },
+                    "3": {
+                        "then": "Squeeze gate, mellemrummet er mindre i toppen end i bunden"
+                    }
+                },
+                "question": "Hvad er det for en cykelbarriere?"
+            },
             "MaxWidth": {
-                "render": "Maksimal bredde: {maxwidth:physical} m",
-                "question": "Hvor stort er mellemrummet udover barrieren?"
+                "question": "Hvor stort er mellemrummet udover barrieren?",
+                "render": "Maksimal bredde: {maxwidth:physical} m"
             },
             "Overlap (cyclebarrier)": {
-                "render": "Overlapning: {overlap} m",
-                "question": "Hvor meget overlap har barriererne?"
+                "question": "Hvor meget overlap har barriererne?",
+                "render": "Overlapning: {overlap} m"
+            },
+            "Space between barrier (cyclebarrier)": {
+                "question": "Hvor meget plads er der mellem bommene (på langs af vejen)?",
+                "render": "Plads mellem barrierer (langs vejens længde): {width:separation} m"
             },
             "Width of opening (cyclebarrier)": {
-                "render": "Bredde af åbning: {width:opening} m",
-                "question": "Hvor bred er den mindste åbning ved siden af barriererne?"
+                "question": "Hvor bred er den mindste åbning ved siden af barriererne?",
+                "render": "Bredde af åbning: {width:opening} m"
             },
             "barrier_type": {
                 "mappings": {
@@ -210,27 +231,6 @@
                     }
                 },
                 "question": "Kan en cykel køre forbi denne barriere?"
-            },
-            "Cycle barrier type": {
-                "mappings": {
-                    "0": {
-                        "then": "Enkelt, kun to barrierer med et mellemrum"
-                    },
-                    "1": {
-                        "then": "Dobbelt, to barrierer bag hinanden"
-                    },
-                    "3": {
-                        "then": "Squeeze gate, mellemrummet er mindre i toppen end i bunden"
-                    },
-                    "2": {
-                        "then": "Tredobbelt, tre barrierer bag hinanden"
-                    }
-                },
-                "question": "Hvad er det for en cykelbarriere?"
-            },
-            "Space between barrier (cyclebarrier)": {
-                "question": "Hvor meget plads er der mellem bommene (på langs af vejen)?",
-                "render": "Plads mellem barrierer (langs vejens længde): {width:separation} m"
             }
         },
         "title": {
@@ -546,12 +546,26 @@
             }
         },
         "tagRenderings": {
+            "bike_cafe-bike-pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne cykelcafé tilbyder en cykelpumpe til enhver"
+                    },
+                    "1": {
+                        "then": "Denne cykelcafé tilbyder ikke en cykelpumpe til nogen"
+                    }
+                },
+                "question": "Tilbyder denne cykelcafé en cykelpumpe til brug for alle?"
+            },
             "bike_cafe-email": {
                 "question": "Hvad er e-mailadressen på {name}?"
             },
             "bike_cafe-name": {
                 "question": "Hvad hedder denne cykelcafé?",
                 "render": "Denne cykelcafé hedder {name}"
+            },
+            "bike_cafe-opening_hours": {
+                "question": "Hvornår er denne cykelcafé åbent?"
             },
             "bike_cafe-phone": {
                 "question": "Hvad er telefonnummeret til {name}?"
@@ -580,20 +594,6 @@
             },
             "bike_cafe-website": {
                 "question": "Hvad er webstedet for {name}?"
-            },
-            "bike_cafe-bike-pump": {
-                "question": "Tilbyder denne cykelcafé en cykelpumpe til brug for alle?",
-                "mappings": {
-                    "0": {
-                        "then": "Denne cykelcafé tilbyder en cykelpumpe til enhver"
-                    },
-                    "1": {
-                        "then": "Denne cykelcafé tilbyder ikke en cykelpumpe til nogen"
-                    }
-                }
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Hvornår er denne cykelcafé åbent?"
             }
         },
         "title": {
@@ -608,17 +608,19 @@
     "bike_cleaning": {
         "description": "Et lag med faciliteter, hvor man kan rengøre sin cykel",
         "name": "Cykelrengøring",
+        "presets": {
+            "0": {
+                "title": "en cykelrengøring"
+            }
+        },
         "tagRenderings": {
             "bike_cleaning-charge": {
                 "mappings": {
-                    "1": {
-                        "then": "Gratis at bruge"
-                    },
                     "0": {
                         "then": "Gratis at bruge rengøringsservice"
                     },
-                    "2": {
-                        "then": "Rengøringsservicen har et gebyr"
+                    "1": {
+                        "then": "Gratis at bruge"
                     }
                 },
                 "question": "Hvor meget koster det at bruge rengøringsservicen?",
@@ -626,23 +628,15 @@
             },
             "bike_cleaning-service:bicycle:cleaning:charge": {
                 "mappings": {
-                    "1": {
-                        "then": "Gratis at bruge"
-                    },
                     "0": {
                         "then": "Rengøringsservicen er gratis at bruge"
                     },
-                    "2": {
-                        "then": "Rengøringsservicen har et gebyr, men beløbet kendes ikke"
+                    "1": {
+                        "then": "Gratis at bruge"
                     }
                 },
                 "question": "Hvor meget koster det at bruge rengøringsservicen?",
                 "render": "Brug af rengøringsservice koster {service:bicycle:cleaning:charge}"
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "en cykelrengøring"
             }
         },
         "title": {
@@ -680,11 +674,20 @@
             },
             "Bicycle parking type": {
                 "mappings": {
+                    "0": {
+                        "then": "Hæftestativer"
+                    },
+                    "1": {
+                        "then": "Hjulstativ/løkker"
+                    },
                     "2": {
                         "then": "Styrholder"
                     },
                     "3": {
                         "then": "Stativ"
+                    },
+                    "4": {
+                        "then": "To-lags"
                     },
                     "5": {
                         "then": "Skur"
@@ -694,15 +697,6 @@
                     },
                     "7": {
                         "then": "Et område på gulvet, der er markeret til cykelparkering"
-                    },
-                    "0": {
-                        "then": "Hæftestativer"
-                    },
-                    "1": {
-                        "then": "Hjulstativ/løkker"
-                    },
-                    "4": {
-                        "then": "To-lags"
                     }
                 },
                 "question": "Hvilken type cykelparkering er det?",
@@ -1433,164 +1427,147 @@
         },
         "name": "Restauranter og fastfood"
     },
-    "veterinary": {
-        "name": "dyrlæge",
-        "presets": {
-            "0": {
-                "description": "En dyrl&aelig;ge, der behandler hunde",
-                "title": "en dyrl&aelig;ge"
-            }
-        },
+    "surveillance_camera": {
         "tagRenderings": {
-            "vetName": {
-                "question": "Hvad hedder denne dyrl&aelig;?",
-                "render": "Navnet på denne dyrlæge er {name}"
+            "Surveillance type: public, outdoor, indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Et offentligt område overvåges, f.eks. en gade, en bro, et torv, en park, en togstation, en offentlig korridor eller en tunnel, …"
+                    },
+                    "1": {
+                        "then": "Et udendørs, men privat område overvåges (f.eks. en parkeringsplads, en tankstation, en gårdsplads, en indgang, en privat indkørsel, ...)"
+                    },
+                    "2": {
+                        "then": "Et privat indendørs område overvåges, f.eks. en butik, en privat parkeringskælder, …"
+                    }
+                },
+                "question": "Hvilken form for overvågning er dette kamera?"
+            },
+            "Surveillance:zone": {
+                "mappings": {
+                    "0": {
+                        "then": "Overvåger en parkeringsplads"
+                    },
+                    "1": {
+                        "then": "Overvåger trafikken"
+                    },
+                    "2": {
+                        "then": "Overvåger en indgang"
+                    },
+                    "3": {
+                        "then": "Overvåger en korridor"
+                    },
+                    "4": {
+                        "then": "Overvejer en offentlig transportplatform"
+                    },
+                    "5": {
+                        "then": "Overvåger en butik"
+                    }
+                },
+                "question": "Hvad er det præcist, der overvåges her?",
+                "render": "Overvåger en {surveillance:zone}"
+            },
+            "camera:mount": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette kamera er placeret op ad en væg"
+                    },
+                    "1": {
+                        "then": "Dette kamera er placeret på en stang"
+                    },
+                    "2": {
+                        "then": "Dette kamera er placeret i loftet"
+                    },
+                    "3": {
+                        "then": "Dette kamera er placeret på en gadelampe"
+                    },
+                    "4": {
+                        "then": "Dette kamera er placeret på et træ"
+                    }
+                },
+                "question": "Hvordan er dette kamera placeret?",
+                "render": "Monteringsmetode: {camera:mount}"
+            },
+            "camera_direction": {
+                "mappings": {
+                    "0": {
+                        "then": "Filmer til en kompasretning af {direction}"
+                    }
+                },
+                "question": "I hvilken geografisk retning filmer dette kamera?",
+                "render": "Filmer til en kompasretning af {camera:direction}"
+            },
+            "is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette kamera er placeret indendørs"
+                    },
+                    "1": {
+                        "then": "Dette kamera er placeret udendørs"
+                    },
+                    "2": {
+                        "then": "Dette kamera er sandsynligvis placeret udendørs"
+                    }
+                },
+                "question": "Er det offentlige rum, der overvåges af dette kamera, et indendørs eller udendørs rum?"
             }
         },
         "title": {
-            "render": "Dyrlæge"
+            "render": "Overvågningskamera"
+        }
+    },
+    "tertiary_education": {
+        "name": "Gymnasier og universiteter",
+        "presets": {
+            "0": {
+                "title": "et universitet"
+            }
+        },
+        "tagRenderings": {
+            "institution-kind": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette er en institution for post-gymnasial, ikke-tertiær uddannelse. Man skal have gennemført en ungdomsuddannelse for at tilmelde sig her, men her uddeles ingen bachelor (eller højere) grader"
+                    },
+                    "1": {
+                        "then": "Dette er et universitet, en institution for videregående uddannelse, hvor der tildeles bachelorgrader eller højere."
+                    }
+                },
+                "question": "Hvad er det for en institution?"
+            },
+            "isced": {
+                "mappings": {
+                    "0": {
+                        "then": "Her udstedes bachelorgrader"
+                    },
+                    "1": {
+                        "then": "Mastergrader udstedes her"
+                    }
+                },
+                "question": "Hvilket uddannelsesniveau gives her?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "2": {
+                    "then": "Universitet"
+                },
+                "3": {
+                    "then": "Skole, der udbyder videregående uddannelser"
+                }
+            }
         }
     },
     "toilet": {
-        "tagRenderings": {
-            "toilet-handwashing": {
-                "question": "Har disse toiletter en håndvask til at vaske hænder?",
-                "mappings": {
-                    "0": {
-                        "then": "Dette toilet har en vask til at vaske dine hænder"
-                    },
-                    "1": {
-                        "then": "Disse toiletter <b> har ikke </b> en vask til at vaske dine hænder"
-                    }
-                }
-            },
-            "toilet-has-paper": {
-                "mappings": {
-                    "0": {
-                        "then": "Dette toilet er udstyret med toiletpapir"
-                    },
-                    "1": {
-                        "then": "Du skal selv medbringe toiletpapir til dette toilet"
-                    }
-                },
-                "question": "Skal man selv medbringe toiletpapir til dette toilet?"
-            },
-            "toilet-access": {
-                "mappings": {
-                    "2": {
-                        "then": "Ikke tilgængelig"
-                    },
-                    "1": {
-                        "then": "Kun adgang til kunder"
-                    },
-                    "3": {
-                        "then": "Tilgængelig, men man skal bede om en nøgle for at komme ind"
-                    },
-                    "4": {
-                        "then": "Offentlig adgang"
-                    },
-                    "0": {
-                        "then": "Offentlig adgang"
-                    }
-                },
-                "question": "Er disse toiletter offentligt tilgængelige?",
-                "render": "Adgang er {access}"
-            },
-            "toilet-changing_table:location": {
-                "mappings": {
-                    "3": {
-                        "then": "Vuggestuen står i et særligt rum. "
-                    },
-                    "2": {
-                        "then": "Puslebordet er på toilettet for kørestolsbrugere. "
-                    },
-                    "0": {
-                        "then": "Puslebordet er på toilettet til kvinder. "
-                    }
-                },
-                "question": "Hvor er puslebordet placeret?",
-                "render": "Puslebordet er placeret på {changing_table:location}"
-            },
-            "toilets-wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Der er et særligt toilet til kørestolsbrugere"
-                    },
-                    "1": {
-                        "then": "Ingen kørestolsadgang"
-                    },
-                    "2": {
-                        "then": "Der er kun et særligt toilet til kørestolsbrugere"
-                    }
-                },
-                "question": "Er der et særligt toilet til kørestolsbrugere?"
-            },
-            "toilets-type": {
-                "mappings": {
-                    "2": {
-                        "then": "Der er kun squat-toiletter her"
-                    },
-                    "1": {
-                        "then": "Her er kun urinaler"
-                    },
-                    "3": {
-                        "then": "Både siddende toiletter og urinaler er tilgængelige her"
-                    }
-                },
-                "question": "Hvilken slags toiletter er det?"
-            },
-            "toilet-charge": {
-                "question": "Hvor meget skal man betale for disse toiletter?",
-                "render": "Gebyret er {charge}"
-            },
-            "Opening-hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Åbent 24/7"
-                    }
-                },
-                "question": "Hvornår åbnes disse toiletter?"
-            },
-            "toilets-fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Det er betalingstoiletter"
-                    },
-                    "1": {
-                        "then": "Gratis at bruge"
-                    }
-                },
-                "question": "Er det gratis at benytte disse toiletter?"
-            },
-            "wheelchair-door-width": {
-                "question": "Hvad er bredden på døren til det kørestolsvenlige toilet?",
-                "render": "Døren til det kørestolsvenlige toilet er {canonical(door:width)} bred"
-            },
-            "toilets-changing-table": {
-                "mappings": {
-                    "0": {
-                        "then": "Et puslebord er tilgængeligt"
-                    },
-                    "1": {
-                        "then": "Der er ikke noget puslebord til rådighed"
-                    }
-                },
-                "question": "Findes der puslebord (til bleskift)?"
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "meter"
-                    },
-                    "1": {
-                        "human": "centimeter"
-                    }
-                }
-            }
-        },
+        "description": "Et lag, der viser (offentlige) toiletter",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tilgængelig for kørestolsbrugere"
+                    }
+                }
+            },
             "1": {
                 "options": {
                     "0": {
@@ -1611,16 +1588,9 @@
                         "question": "Åbnet nu"
                     }
                 }
-            },
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Tilgængelig for kørestolsbrugere"
-                    }
-                }
             }
         },
-        "description": "Et lag, der viser (offentlige) toiletter",
+        "name": "Toiletter",
         "presets": {
             "0": {
                 "title": "et offentligt toilet"
@@ -1630,15 +1600,149 @@
                 "title": "et toilet med kørestolsvenligt toilet"
             }
         },
+        "tagRenderings": {
+            "Opening-hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Åbent 24/7"
+                    }
+                },
+                "question": "Hvornår åbnes disse toiletter?"
+            },
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Offentlig adgang"
+                    },
+                    "1": {
+                        "then": "Kun adgang til kunder"
+                    },
+                    "2": {
+                        "then": "Ikke tilgængelig"
+                    },
+                    "3": {
+                        "then": "Tilgængelig, men man skal bede om en nøgle for at komme ind"
+                    },
+                    "4": {
+                        "then": "Offentlig adgang"
+                    }
+                },
+                "question": "Er disse toiletter offentligt tilgængelige?",
+                "render": "Adgang er {access}"
+            },
+            "toilet-changing_table:location": {
+                "mappings": {
+                    "0": {
+                        "then": "Puslebordet er på toilettet til kvinder. "
+                    },
+                    "2": {
+                        "then": "Puslebordet er på toilettet for kørestolsbrugere. "
+                    },
+                    "3": {
+                        "then": "Vuggestuen står i et særligt rum. "
+                    }
+                },
+                "question": "Hvor er puslebordet placeret?",
+                "render": "Puslebordet er placeret på {changing_table:location}"
+            },
+            "toilet-charge": {
+                "question": "Hvor meget skal man betale for disse toiletter?",
+                "render": "Gebyret er {charge}"
+            },
+            "toilet-handwashing": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette toilet har en vask til at vaske dine hænder"
+                    },
+                    "1": {
+                        "then": "Disse toiletter <b> har ikke </b> en vask til at vaske dine hænder"
+                    }
+                },
+                "question": "Har disse toiletter en håndvask til at vaske hænder?"
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette toilet er udstyret med toiletpapir"
+                    },
+                    "1": {
+                        "then": "Du skal selv medbringe toiletpapir til dette toilet"
+                    }
+                },
+                "question": "Skal man selv medbringe toiletpapir til dette toilet?"
+            },
+            "toilets-changing-table": {
+                "mappings": {
+                    "0": {
+                        "then": "Et puslebord er tilgængeligt"
+                    },
+                    "1": {
+                        "then": "Der er ikke noget puslebord til rådighed"
+                    }
+                },
+                "question": "Findes der puslebord (til bleskift)?"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Det er betalingstoiletter"
+                    },
+                    "1": {
+                        "then": "Gratis at bruge"
+                    }
+                },
+                "question": "Er det gratis at benytte disse toiletter?"
+            },
+            "toilets-type": {
+                "mappings": {
+                    "1": {
+                        "then": "Her er kun urinaler"
+                    },
+                    "2": {
+                        "then": "Der er kun squat-toiletter her"
+                    },
+                    "3": {
+                        "then": "Både siddende toiletter og urinaler er tilgængelige her"
+                    }
+                },
+                "question": "Hvilken slags toiletter er det?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er et særligt toilet til kørestolsbrugere"
+                    },
+                    "1": {
+                        "then": "Ingen kørestolsadgang"
+                    },
+                    "2": {
+                        "then": "Der er kun et særligt toilet til kørestolsbrugere"
+                    }
+                },
+                "question": "Er der et særligt toilet til kørestolsbrugere?"
+            },
+            "wheelchair-door-width": {
+                "question": "Hvad er bredden på døren til det kørestolsvenlige toilet?",
+                "render": "Døren til det kørestolsvenlige toilet er {canonical(door:width)} bred"
+            }
+        },
         "title": {
             "render": "Toilet"
         },
-        "name": "Toiletter"
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
+        }
     },
     "trail": {
-        "title": {
-            "render": "Sti"
-        },
         "name": "Stier",
         "tagRenderings": {
             "Color": {
@@ -1649,28 +1753,68 @@
                     "1": {
                         "then": "Rød sti"
                     },
-                    "3": {
-                        "then": "Gul sti"
-                    },
                     "2": {
                         "then": "Grøn sti"
+                    },
+                    "3": {
+                        "then": "Gul sti"
                     }
                 }
             },
             "trail-length": {
                 "render": "Stien er {_length:km} kilometer lang"
             }
+        },
+        "title": {
+            "render": "Sti"
         }
     },
-    "transit_stops": {
+    "transit_routes": {
+        "description": "Lag, der viser buslinjer",
+        "mapRendering": {
+            "0": {
+                "color": {
+                    "render": "#ff0000"
+                }
+            }
+        },
+        "name": "Buslinjer",
+        "tagRenderings": {
+            "colour": {
+                "question": "Hvad er farven på denne buslinje?",
+                "render": "Denne buslinje har farven {colour}"
+            },
+            "from": {
+                "question": "Hvad er udgangspunktet for denne buslinje?",
+                "render": "Denne buslinje starter kl. {from}"
+            },
+            "network": {
+                "question": "Hvilket netværk tilhører denne buslinje?"
+            },
+            "operator": {
+                "question": "Hvilket selskab driver denne buslinje?",
+                "render": "Denne buslinje drives af {operator}"
+            },
+            "to": {
+                "question": "Hvad er endestationen for denne buslinje?",
+                "render": "Denne buslinje slutter ved {to}"
+            },
+            "via": {
+                "render": "Denne buslinje går via {via}"
+            }
+        },
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Stop {name}"
+                    "then": "{name}"
                 }
             },
-            "render": "Transit Stop"
-        },
+            "render": "Buslinje"
+        }
+    },
+    "transit_stops": {
+        "description": "Lag, der viser forskellige typer transitstop.",
+        "name": "Transitstationer",
         "tagRenderings": {
             "bench": {
                 "mappings": {
@@ -1684,7 +1828,6 @@
                 "question": "Har dette stop en bænk?"
             },
             "bin": {
-                "question": "Har dette stop en skraldespand?",
                 "mappings": {
                     "0": {
                         "then": "Dette stop har en skraldespand"
@@ -1692,21 +1835,25 @@
                     "1": {
                         "then": "Dette stoppested har ikke en skraldespand"
                     }
-                }
+                },
+                "question": "Har dette stop en skraldespand?"
+            },
+            "contained_routes": {
+                "render": "<h3>{_contained_routes_count} ruter stopper ved dette stoppested</h3> <ul>{_contained_routes}</ul>"
             },
             "departures_board": {
                 "mappings": {
+                    "0": {
+                        "then": "Dette stoppested har en afgangstavle af ukendt type"
+                    },
                     "1": {
                         "then": "Dette stop har en tavle med oplysninger om afgang i realtid"
-                    },
-                    "3": {
-                        "then": "Dette stop har en køreplan, der viser regelmæssige afgange"
                     },
                     "2": {
                         "then": "Dette stop har en tavle med oplysninger om afgang i realtid"
                     },
-                    "0": {
-                        "then": "Dette stoppested har en afgangstavle af ukendt type"
+                    "3": {
+                        "then": "Dette stop har en køreplan, der viser regelmæssige afgange"
                     },
                     "4": {
                         "then": "Dette stop har en køreplan, der kun indeholder intervallet mellem afgangene"
@@ -1716,8 +1863,14 @@
                     }
                 }
             },
+            "lit": {
+                "mappings": {
+                    "1": {
+                        "then": "Dette stop lyser ikke"
+                    }
+                }
+            },
             "shelter": {
-                "question": "Har dette stop et ly?",
                 "mappings": {
                     "0": {
                         "then": "Dette stop har et ly"
@@ -1725,7 +1878,8 @@
                     "1": {
                         "then": "Dette stop har ikke et ly"
                     }
-                }
+                },
+                "question": "Har dette stop et ly?"
             },
             "stop_name": {
                 "freeform": {
@@ -1738,48 +1892,47 @@
                 },
                 "question": "Hvad er navnet på dette stop?",
                 "render": "Dette stop hedder <b>{name}</b>"
-            },
-            "contained_routes": {
-                "render": "<h3>{_contained_routes_count} ruter stopper ved dette stoppested</h3> <ul>{_contained_routes}</ul>"
-            },
-            "lit": {
-                "mappings": {
-                    "1": {
-                        "then": "Dette stop lyser ikke"
-                    }
-                }
             }
         },
-        "description": "Lag, der viser forskellige typer transitstop.",
-        "name": "Transitstationer"
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Stop {name}"
+                }
+            },
+            "render": "Transit Stop"
+        }
     },
     "tree_node": {
+        "description": "Et lag, der viser træer",
+        "name": "Træ",
+        "presets": {
+            "0": {
+                "title": "et løvtræ"
+            },
+            "1": {
+                "description": "Et træ af en art med nåle, såsom fyr eller gran.",
+                "title": "et nåletræ"
+            },
+            "2": {
+                "description": "Hvis du ikke er sikker på, om det er et løv- eller nåletræ.",
+                "title": "et træ"
+            }
+        },
         "tagRenderings": {
             "tree-decidouous": {
                 "mappings": {
-                    "1": {
-                        "then": "Stedsegrøn."
-                    },
                     "0": {
                         "then": "Løvfældende: træet mister bladene i en periode af året."
+                    },
+                    "1": {
+                        "then": "Stedsegrøn."
                     }
                 },
                 "question": "Er dette træ stedsegrønt eller løvfældende?"
             },
             "tree-denotation": {
                 "mappings": {
-                    "4": {
-                        "then": "Træet står i en villahave."
-                    },
-                    "5": {
-                        "then": "Dette er et træ langs en allé."
-                    },
-                    "6": {
-                        "then": "Træet står i et byområde."
-                    },
-                    "7": {
-                        "then": "Træet står uden for et byområde."
-                    },
                     "0": {
                         "then": "Træet er bemærkelsesværdigt på grund af sin størrelse eller sin fremtrædende placering. Det er nyttigt til navigation."
                     },
@@ -1791,40 +1944,59 @@
                     },
                     "3": {
                         "then": "Træet står i en park eller lignende (kirkegård, skoleområde, ...)."
+                    },
+                    "4": {
+                        "then": "Træet står i en villahave."
+                    },
+                    "5": {
+                        "then": "Dette er et træ langs en allé."
+                    },
+                    "6": {
+                        "then": "Træet står i et byområde."
+                    },
+                    "7": {
+                        "then": "Træet står uden for et byområde."
                     }
                 },
                 "question": "Hvor vigtigt er dette træ? Vælg det første svar, der passer."
             },
-            "tree-leaf_type": {
+            "tree-height": {
                 "mappings": {
-                    "2": {
-                        "then": "Permanent bladløs"
-                    },
                     "0": {
-                        "then": "Bredbladet"
+                        "then": "Højde: {height}&nbsp;m"
                     }
-                }
+                },
+                "render": "Højde: {height}"
             },
             "tree-heritage": {
-                "question": "Er dette træ registreret som kulturarv?",
                 "mappings": {
+                    "1": {
+                        "then": "Registreret som kulturarv af <i>Direction du Patrimoine culturel</i> Bruxelles"
+                    },
                     "2": {
                         "then": "Registreret som kulturarv af en anden organisation"
                     },
                     "3": {
                         "then": "Ikke registreret som kulturarv"
                     },
-                    "1": {
-                        "then": "Registreret som kulturarv af <i>Direction du Patrimoine culturel</i> Bruxelles"
-                    },
                     "4": {
                         "then": "Registreret som kulturarv af en anden organisation"
                     }
+                },
+                "question": "Er dette træ registreret som kulturarv?"
+            },
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Bredbladet"
+                    },
+                    "2": {
+                        "then": "Permanent bladløs"
+                    }
                 }
             },
-            "tree_node-wikidata": {
-                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
-                "question": "Hvad er Wikidata-id'et for dette træ?"
+            "tree-species-wikidata": {
+                "question": "Hvilken art er dette træ?"
             },
             "tree_node-name": {
                 "mappings": {
@@ -1835,447 +2007,76 @@
                 "question": "Har træet et navn?",
                 "render": "Navn: {name}"
             },
-            "tree-height": {
-                "render": "Højde: {height}",
-                "mappings": {
-                    "0": {
-                        "then": "Højde: {height}&nbsp;m"
-                    }
-                }
-            },
-            "tree-species-wikidata": {
-                "question": "Hvilken art er dette træ?"
-            },
             "tree_node-ref:OnroerendErfgoed": {
-                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-                "question": "Hvad er ID udstedt af Onroerend Erfgoed Flanders?"
-            }
-        },
-        "name": "Træ",
-        "description": "Et lag, der viser træer",
-        "presets": {
-            "1": {
-                "title": "et nåletræ",
-                "description": "Et træ af en art med nåle, såsom fyr eller gran."
+                "question": "Hvad er ID udstedt af Onroerend Erfgoed Flanders?",
+                "render": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
             },
-            "2": {
-                "title": "et træ",
-                "description": "Hvis du ikke er sikker på, om det er et løv- eller nåletræ."
-            },
-            "0": {
-                "title": "et løvtræ"
+            "tree_node-wikidata": {
+                "question": "Hvad er Wikidata-id'et for dette træ?",
+                "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
             }
         },
         "title": {
             "render": "Træ"
         }
     },
-    "windturbine": {
-        "tagRenderings": {
-            "turbine-output": {
-                "question": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)",
-                "render": "Denne vindmølle har en effekt på {generator:output:electricity}."
-            },
-            "turbine-diameter": {
-                "render": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter.",
-                "question": "Hvad er rotordiameteren på denne vindmølle i meter?"
-            },
-            "turbine-height": {
-                "question": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?",
-                "render": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter."
-            },
-            "turbine-start-date": {
-                "question": "Hvornår blev denne vindmølle taget i brug?",
-                "render": "Denne vindmølle blev sat i drift den/den {start_date}."
-            },
-            "turbine-operator": {
-                "question": "Hvem driver denne vindmølle?",
-                "render": "Denne vindmølle drives af {operator}."
-            }
-        },
-        "units": {
-            "0": {
-                "applicableUnits": {
-                    "3": {
-                        "human": " Gigawatt"
-                    },
-                    "0": {
-                        "human": " Megawatt"
-                    },
-                    "2": {
-                        "human": " Watt"
-                    },
-                    "1": {
-                        "human": " Kilowatt"
-                    }
-                }
-            },
-            "1": {
-                "applicableUnits": {
-                    "0": {
-                        "human": " meter"
-                    }
-                }
-            }
-        },
-        "description": "Moderne vindmøller til produktion af elektricitet",
-        "title": {
-            "render": "vindmølle",
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            }
-        },
+    "veterinary": {
+        "name": "dyrlæge",
         "presets": {
             "0": {
-                "title": "en vindmølle"
+                "description": "En dyrl&aelig;ge, der behandler hunde",
+                "title": "en dyrl&aelig;ge"
             }
         },
-        "name": "vindmølle"
-    },
-    "waste_basket": {
         "tagRenderings": {
-            "waste-basket-waste-types": {
-                "question": "Hvad er det for en affaldskurv?",
-                "mappings": {
-                    "6": {
-                        "then": "En affaldskurv til plast"
-                    },
-                    "1": {
-                        "then": "En affaldskurv til almindeligt affald"
-                    },
-                    "4": {
-                        "then": "En affaldskurv til stoffer"
-                    },
-                    "5": {
-                        "then": "En affaldskurv til nåle og andre skarpe genstande"
-                    },
-                    "2": {
-                        "then": "En affaldskurv til hundeekskrementer"
-                    },
-                    "3": {
-                        "then": "En affaldskurv til cigaretter"
-                    },
-                    "0": {
-                        "then": "En affaldskurv til almindeligt affald"
-                    }
-                }
-            },
-            "dispensing_dog_bags": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne affaldskurv har en dispenser til poser til (hunde)ekskrementer"
-                    },
-                    "1": {
-                        "then": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer"
-                    },
-                    "2": {
-                        "then": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer"
-                    }
-                },
-                "question": "Har denne affaldskurv en dispenser til poser med ekskrementer til hunde?"
-            }
-        },
-        "name": "Affaldskurv",
-        "filter": {
-            "0": {
-                "options": {
-                    "2": {
-                        "question": "Affaldskurv til stoffer"
-                    },
-                    "0": {
-                        "question": "Alle typer"
-                    },
-                    "4": {
-                        "question": "Affaldskurv til affald"
-                    },
-                    "5": {
-                        "question": "Affaldskurv til spidse og skarpe genstande"
-                    },
-                    "1": {
-                        "question": "Affaldskurv til cigaretter"
-                    },
-                    "3": {
-                        "question": "Affaldskurv til hundeekskrementer"
-                    },
-                    "6": {
-                        "question": "Affaldskurv til plast"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Affaldskurv med dispenser til poser til (hunde)ekskrementer"
-                    }
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "en affaldskurv"
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "iconSize": {
-                    "mappings": {
-                        "0": {
-                            "then": "Affaldskurv"
-                        }
-                    }
-                }
+            "vetName": {
+                "question": "Hvad hedder denne dyrl&aelig;?",
+                "render": "Navnet på denne dyrlæge er {name}"
             }
         },
         "title": {
-            "render": "Affaldskurv"
-        },
-        "description": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald."
-    },
-    "tertiary_education": {
-        "tagRenderings": {
-            "isced": {
-                "mappings": {
-                    "1": {
-                        "then": "Mastergrader udstedes her"
-                    },
-                    "0": {
-                        "then": "Her udstedes bachelorgrader"
-                    }
-                },
-                "question": "Hvilket uddannelsesniveau gives her?"
-            },
-            "institution-kind": {
-                "question": "Hvad er det for en institution?",
-                "mappings": {
-                    "1": {
-                        "then": "Dette er et universitet, en institution for videregående uddannelse, hvor der tildeles bachelorgrader eller højere."
-                    },
-                    "0": {
-                        "then": "Dette er en institution for post-gymnasial, ikke-tertiær uddannelse. Man skal have gennemført en ungdomsuddannelse for at tilmelde sig her, men her uddeles ingen bachelor (eller højere) grader"
-                    }
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "title": "et universitet"
-            }
-        },
-        "title": {
-            "mappings": {
-                "2": {
-                    "then": "Universitet"
-                },
-                "3": {
-                    "then": "Skole, der udbyder videregående uddannelser"
-                }
-            }
-        },
-        "name": "Gymnasier og universiteter"
-    },
-    "surveillance_camera": {
-        "tagRenderings": {
-            "Surveillance:zone": {
-                "mappings": {
-                    "2": {
-                        "then": "Overvåger en indgang"
-                    },
-                    "3": {
-                        "then": "Overvåger en korridor"
-                    },
-                    "4": {
-                        "then": "Overvejer en offentlig transportplatform"
-                    },
-                    "5": {
-                        "then": "Overvåger en butik"
-                    },
-                    "0": {
-                        "then": "Overvåger en parkeringsplads"
-                    },
-                    "1": {
-                        "then": "Overvåger trafikken"
-                    }
-                },
-                "question": "Hvad er det præcist, der overvåges her?",
-                "render": "Overvåger en {surveillance:zone}"
-            },
-            "camera:mount": {
-                "render": "Monteringsmetode: {camera:mount}",
-                "mappings": {
-                    "0": {
-                        "then": "Dette kamera er placeret op ad en væg"
-                    },
-                    "2": {
-                        "then": "Dette kamera er placeret i loftet"
-                    },
-                    "3": {
-                        "then": "Dette kamera er placeret på en gadelampe"
-                    },
-                    "4": {
-                        "then": "Dette kamera er placeret på et træ"
-                    },
-                    "1": {
-                        "then": "Dette kamera er placeret på en stang"
-                    }
-                },
-                "question": "Hvordan er dette kamera placeret?"
-            },
-            "is_indoor": {
-                "mappings": {
-                    "2": {
-                        "then": "Dette kamera er sandsynligvis placeret udendørs"
-                    },
-                    "0": {
-                        "then": "Dette kamera er placeret indendørs"
-                    },
-                    "1": {
-                        "then": "Dette kamera er placeret udendørs"
-                    }
-                },
-                "question": "Er det offentlige rum, der overvåges af dette kamera, et indendørs eller udendørs rum?"
-            },
-            "Surveillance type: public, outdoor, indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Et offentligt område overvåges, f.eks. en gade, en bro, et torv, en park, en togstation, en offentlig korridor eller en tunnel, …"
-                    },
-                    "1": {
-                        "then": "Et udendørs, men privat område overvåges (f.eks. en parkeringsplads, en tankstation, en gårdsplads, en indgang, en privat indkørsel, ...)"
-                    },
-                    "2": {
-                        "then": "Et privat indendørs område overvåges, f.eks. en butik, en privat parkeringskælder, …"
-                    }
-                },
-                "question": "Hvilken form for overvågning er dette kamera?"
-            },
-            "camera_direction": {
-                "render": "Filmer til en kompasretning af {camera:direction}",
-                "mappings": {
-                    "0": {
-                        "then": "Filmer til en kompasretning af {direction}"
-                    }
-                },
-                "question": "I hvilken geografisk retning filmer dette kamera?"
-            }
-        },
-        "title": {
-            "render": "Overvågningskamera"
+            "render": "Dyrlæge"
         }
     },
-    "waste_disposal": {
+    "viewpoint": {
+        "description": "Et dejligt synspunkt eller flot udsigt. Ideel til at tilføje et billede, hvis ingen anden kategori passer",
+        "name": "Udsigtspunkt",
         "tagRenderings": {
-            "access": {
-                "mappings": {
-                    "2": {
-                        "then": "Denne skraldespand er kun for beboere"
-                    },
-                    "0": {
-                        "then": "Denne skraldespand kan bruges af alle"
-                    },
-                    "1": {
-                        "then": "Denne skraldespand er privat"
-                    }
-                },
-                "question": "Hvem kan bruge denne affaldsbeholder?",
-                "render": "Adgang: {access}"
-            },
-            "disposal-location": {
-                "mappings": {
-                    "1": {
-                        "then": "Denne container er placeret indendørs"
-                    },
-                    "0": {
-                        "then": "Dette er en underjordisk container"
-                    },
-                    "2": {
-                        "then": "Denne container er placeret udendørs"
-                    }
-                },
-                "question": "Hvor er denne container placeret?"
+            "viewpoint-description": {
+                "question": "Ønsker du at tilføje en beskrivelse?"
             }
         },
         "title": {
-            "render": "Bortskaffelse af affald"
-        },
-        "description": "Affaldsspande, mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Kun offentlig adgang"
-                    }
-                }
-            }
-        },
-        "presets": {
-            "0": {
-                "description": "Mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
-                "title": "en affaldsbeholder"
-            }
-        },
-        "name": "Affaldsspande"
+            "render": "Udsigtspunkt"
+        }
     },
-    "transit_routes": {
-        "description": "Lag, der viser buslinjer",
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
-        },
-        "tagRenderings": {
-            "network": {
-                "question": "Hvilket netværk tilhører denne buslinje?"
-            },
-            "colour": {
-                "render": "Denne buslinje har farven {colour}",
-                "question": "Hvad er farven på denne buslinje?"
-            },
-            "operator": {
-                "question": "Hvilket selskab driver denne buslinje?",
-                "render": "Denne buslinje drives af {operator}"
-            },
-            "to": {
-                "question": "Hvad er endestationen for denne buslinje?",
-                "render": "Denne buslinje slutter ved {to}"
-            },
-            "from": {
-                "question": "Hvad er udgangspunktet for denne buslinje?",
-                "render": "Denne buslinje starter kl. {from}"
-            },
-            "via": {
-                "render": "Denne buslinje går via {via}"
-            }
-        },
+    "visitor_information_centre": {
+        "name": "Informationscenter for besøgende",
         "title": {
             "mappings": {
-                "0": {
+                "1": {
                     "then": "{name}"
                 }
             },
-            "render": "Buslinje"
-        },
-        "name": "Buslinjer"
+            "render": "{name}"
+        }
     },
     "walls_and_buildings": {
         "tagRenderings": {
             "entrance_info": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er ikke markeret nogen indgang"
+                    },
+                    "1": {
+                        "then": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu"
+                    }
+                },
                 "render": {
                     "after": "{_entrances_count_without_width_count} indgange har endnu ikke oplysninger om bredde",
                     "before": "<h3>Indgange</h3>Denne bygning har {_entrances_count} indgange:",
                     "special": {
                         "tagrendering": "En <a href='#{id}'>indgang</a> på {canonical(width)}"
-                    }
-                },
-                "mappings": {
-                    "1": {
-                        "then": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu"
-                    },
-                    "0": {
-                        "then": "Der er ikke markeret nogen indgang"
                     }
                 }
             }
@@ -2296,30 +2097,223 @@
             }
         }
     },
-    "visitor_information_centre": {
-        "title": {
-            "render": "{name}",
-            "mappings": {
-                "1": {
-                    "then": "{name}"
+    "waste_basket": {
+        "description": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle typer"
+                    },
+                    "1": {
+                        "question": "Affaldskurv til cigaretter"
+                    },
+                    "2": {
+                        "question": "Affaldskurv til stoffer"
+                    },
+                    "3": {
+                        "question": "Affaldskurv til hundeekskrementer"
+                    },
+                    "4": {
+                        "question": "Affaldskurv til affald"
+                    },
+                    "5": {
+                        "question": "Affaldskurv til spidse og skarpe genstande"
+                    },
+                    "6": {
+                        "question": "Affaldskurv til plast"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Affaldskurv med dispenser til poser til (hunde)ekskrementer"
+                    }
                 }
             }
         },
-        "name": "Informationscenter for besøgende"
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Affaldskurv"
+                        }
+                    }
+                }
+            }
+        },
+        "name": "Affaldskurv",
+        "presets": {
+            "0": {
+                "title": "en affaldskurv"
+            }
+        },
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne affaldskurv har en dispenser til poser til (hunde)ekskrementer"
+                    },
+                    "1": {
+                        "then": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer"
+                    },
+                    "2": {
+                        "then": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer"
+                    }
+                },
+                "question": "Har denne affaldskurv en dispenser til poser med ekskrementer til hunde?"
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "0": {
+                        "then": "En affaldskurv til almindeligt affald"
+                    },
+                    "1": {
+                        "then": "En affaldskurv til almindeligt affald"
+                    },
+                    "2": {
+                        "then": "En affaldskurv til hundeekskrementer"
+                    },
+                    "3": {
+                        "then": "En affaldskurv til cigaretter"
+                    },
+                    "4": {
+                        "then": "En affaldskurv til stoffer"
+                    },
+                    "5": {
+                        "then": "En affaldskurv til nåle og andre skarpe genstande"
+                    },
+                    "6": {
+                        "then": "En affaldskurv til plast"
+                    }
+                },
+                "question": "Hvad er det for en affaldskurv?"
+            }
+        },
+        "title": {
+            "render": "Affaldskurv"
+        }
+    },
+    "waste_disposal": {
+        "description": "Affaldsspande, mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Kun offentlig adgang"
+                    }
+                }
+            }
+        },
+        "name": "Affaldsspande",
+        "presets": {
+            "0": {
+                "description": "Mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
+                "title": "en affaldsbeholder"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne skraldespand kan bruges af alle"
+                    },
+                    "1": {
+                        "then": "Denne skraldespand er privat"
+                    },
+                    "2": {
+                        "then": "Denne skraldespand er kun for beboere"
+                    }
+                },
+                "question": "Hvem kan bruge denne affaldsbeholder?",
+                "render": "Adgang: {access}"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette er en underjordisk container"
+                    },
+                    "1": {
+                        "then": "Denne container er placeret indendørs"
+                    },
+                    "2": {
+                        "then": "Denne container er placeret udendørs"
+                    }
+                },
+                "question": "Hvor er denne container placeret?"
+            }
+        },
+        "title": {
+            "render": "Bortskaffelse af affald"
+        }
     },
     "watermill": {
         "name": "Vandmølle"
     },
-    "viewpoint": {
-        "description": "Et dejligt synspunkt eller flot udsigt. Ideel til at tilføje et billede, hvis ingen anden kategori passer",
-        "name": "Udsigtspunkt",
+    "windturbine": {
+        "description": "Moderne vindmøller til produktion af elektricitet",
+        "name": "vindmølle",
+        "presets": {
+            "0": {
+                "title": "en vindmølle"
+            }
+        },
         "tagRenderings": {
-            "viewpoint-description": {
-                "question": "Ønsker du at tilføje en beskrivelse?"
+            "turbine-diameter": {
+                "question": "Hvad er rotordiameteren på denne vindmølle i meter?",
+                "render": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter."
+            },
+            "turbine-height": {
+                "question": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?",
+                "render": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter."
+            },
+            "turbine-operator": {
+                "question": "Hvem driver denne vindmølle?",
+                "render": "Denne vindmølle drives af {operator}."
+            },
+            "turbine-output": {
+                "question": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)",
+                "render": "Denne vindmølle har en effekt på {generator:output:electricity}."
+            },
+            "turbine-start-date": {
+                "question": "Hvornår blev denne vindmølle taget i brug?",
+                "render": "Denne vindmølle blev sat i drift den/den {start_date}."
             }
         },
         "title": {
-            "render": "Udsigtspunkt"
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "vindmølle"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " Megawatt"
+                    },
+                    "1": {
+                        "human": " Kilowatt"
+                    },
+                    "2": {
+                        "human": " Watt"
+                    },
+                    "3": {
+                        "human": " Gigawatt"
+                    }
+                }
+            },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": " meter"
+                    }
+                }
+            }
         }
     }
 }

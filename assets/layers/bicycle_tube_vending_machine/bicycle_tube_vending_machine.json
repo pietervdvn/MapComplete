@@ -95,7 +95,8 @@
         "zh_Hant": "運作狀態是 <i>{operational_status}</i>",
         "pt_BR": "O estado operacional é: <i>{operational_status}</i>",
         "pt": "O estado operacional é: <i>{operational_status}</i>",
-        "es": "El estado operacional es <i>{operational_status}</i></i>"
+        "es": "El estado operacional es <i>{operational_status}</i></i>",
+        "da": "Driftsstatus er <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"

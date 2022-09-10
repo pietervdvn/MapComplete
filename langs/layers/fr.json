@@ -651,9 +651,6 @@
                     },
                     "1": {
                         "then": "Libre d'utilisation"
-                    },
-                    "2": {
-                        "then": "Le service de nettoyage est payant"
                     }
                 },
                 "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
@@ -666,9 +663,6 @@
                     },
                     "1": {
                         "then": "Utilisation gratuite"
-                    },
-                    "2": {
-                        "then": "Le coût du service de nettoyage n’est pas connu"
                     }
                 },
                 "question": "Combien coûte le service de nettoyage ?",

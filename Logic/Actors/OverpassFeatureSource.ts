@@ -208,7 +208,6 @@ export default class OverpassFeatureSource implements FeatureSource {
                     return undefined
                 }
                 this.runningQuery.setData(true)
-
                 ;[data, date] = await overpass.queryGeoJson(bounds)
                 console.log("Querying overpass is done", data)
             } catch (e) {

@@ -3,12 +3,14 @@
   "name": {
     "en": "Bus lines",
     "de": "Buslinien",
-    "nl": "Buslijnen"
+    "nl": "Buslijnen",
+    "da": "Buslinjer"
   },
   "description": {
     "en": "Layer showing bus lines",
     "de": "Ebene mit Buslinien",
-    "nl": "Laag met buslijnen"
+    "nl": "Laag met buslijnen",
+    "da": "Lag, der viser buslinjer"
   },
   "source": {
     "osmTags": {
@@ -23,14 +25,16 @@
     "render": {
       "en": "Bus line",
       "de": "Buslinie",
-      "nl": "Buslijn"
+      "nl": "Buslijn",
+      "da": "Buslinje"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
           "en": "{name}",
-          "de": "{name}"
+          "de": "{name}",
+          "da": "{name}"
         }
       }
     ]
@@ -40,7 +44,8 @@
       "color": {
         "render": {
           "en": "#ff0000",
-          "de": "#ff0000"
+          "de": "#ff0000",
+          "da": "#ff0000"
         },
         "mappings": [
           {
@@ -76,12 +81,14 @@
       "render": {
         "en": "This bus line begins at {from}",
         "de": "Die Buslinie startet von {from}",
-        "nl": "Deze buslijn begint bij {from}"
+        "nl": "Deze buslijn begint bij {from}",
+        "da": "Denne buslinje starter kl. {from}"
       },
       "question": {
         "en": "What is the starting point for this bus line?",
         "de": "Wo ist der Startpunkt dieser Buslinie?",
-        "nl": "Wat is het beginpunt van deze buslijn?"
+        "nl": "Wat is het beginpunt van deze buslijn?",
+        "da": "Hvad er udgangspunktet for denne buslinje?"
       }
     },
     {
@@ -94,7 +101,8 @@
       "render": {
         "en": "This bus line goes via {via}",
         "de": "Die Buslinie fährt über {via}",
-        "nl": "Deze buslijn gaat via {via}"
+        "nl": "Deze buslijn gaat via {via}",
+        "da": "Denne buslinje går via {via}"
       },
       "question": {
         "en": "What is the via point for this bus line?",
@@ -112,12 +120,14 @@
       "render": {
         "en": "This bus line ends at {to}",
         "de": "Der Endpunkt der Buslinie ist {to}",
-        "nl": "Deze buslijn eindigt bij {to}"
+        "nl": "Deze buslijn eindigt bij {to}",
+        "da": "Denne buslinje slutter ved {to}"
       },
       "question": {
         "en": "What is the ending point for this bus line?",
         "de": "Wo ist der Endpunkt der Buslinie?",
-        "nl": "Wat is het eindpunt van deze buslijn?"
+        "nl": "Wat is het eindpunt van deze buslijn?",
+        "da": "Hvad er endestationen for denne buslinje?"
       }
     },
     {
@@ -129,12 +139,14 @@
       "render": {
         "en": "This bus line has the color {colour}",
         "de": "Die Buslinie hat die Farbe {colour}",
-        "nl": "Deze buslijn heeft de kleur {colour}"
+        "nl": "Deze buslijn heeft de kleur {colour}",
+        "da": "Denne buslinje har farven {colour}"
       },
       "question": {
         "en": "What is the colour for this bus line?",
         "de": "Welche Farbe hat diese Buslinie?",
-        "nl": "Wat is de kleur van deze buslijn?"
+        "nl": "Wat is de kleur van deze buslijn?",
+        "da": "Hvad er farven på denne buslinje?"
       }
     },
     {
@@ -151,7 +163,8 @@
       "question": {
         "en": "What network does this bus line belong to?",
         "de": "Zu welchem Verkehrsverbund gehört die Buslinie?",
-        "nl": "Bij welk netwerk hoort deze buslijn?"
+        "nl": "Bij welk netwerk hoort deze buslijn?",
+        "da": "Hvilket netværk tilhører denne buslinje?"
       }
     },
     {
@@ -163,12 +176,14 @@
       "render": {
         "en": "This bus line is operated by {operator}",
         "de": "Die Buslinie wird betrieben von {operator}",
-        "nl": "Deze buslijn wordt geëxploiteerd door {operator}"
+        "nl": "Deze buslijn wordt geëxploiteerd door {operator}",
+        "da": "Denne buslinje drives af {operator}"
       },
       "question": {
         "en": "What company operates this bus line?",
         "de": "Welches Unternehmen betreibt die Buslinie?",
-        "nl": "Welk bedrijf exploiteert deze buslijn?"
+        "nl": "Welk bedrijf exploiteert deze buslijn?",
+        "da": "Hvilket selskab driver denne buslinje?"
       }
     }
   ]

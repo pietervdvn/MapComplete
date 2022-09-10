@@ -120,7 +120,8 @@
             "hu": "Korlát",
             "it": "Archetti",
             "zh_Hant": "單車架",
-            "ca": "Bastidors de grapes"
+            "ca": "Bastidors de grapes",
+            "da": "Hæftestativer"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/staple.svg",
@@ -138,7 +139,8 @@
             "hu": "Kerékbefogó hurok",
             "it": "Scolapiatti",
             "zh_Hant": "車輪架/圓圈",
-            "ca": "Portarodes/bucles"
+            "ca": "Portarodes/bucles",
+            "da": "Hjulstativ/løkker"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/wall_loops.svg",
@@ -194,7 +196,8 @@
             "zh_Hant": "兩層",
             "it": "A due piani",
             "ru": "Двухуровневая",
-            "ca": "De dos nivells"
+            "ca": "De dos nivells",
+            "da": "To-lags"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/two_tier.svg",

@@ -651,9 +651,6 @@
                     },
                     "1": {
                         "then": "Free to use"
-                    },
-                    "2": {
-                        "then": "The cleaning service has a fee"
                     }
                 },
                 "question": "How much does it cost to use the cleaning service?",
@@ -666,9 +663,6 @@
                     },
                     "1": {
                         "then": "Free to use"
-                    },
-                    "2": {
-                        "then": "The cleaning service has a fee, but the amount is not known"
                     }
                 },
                 "question": "How much does it cost to use the cleaning service?",

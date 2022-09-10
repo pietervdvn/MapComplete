@@ -7,12 +7,14 @@
     "de": "Windräder",
     "it": "pala eolica",
     "zh_Hant": "風機",
-    "hu": "Szélerőmű"
+    "hu": "Szélerőmű",
+    "da": "vindmølle"
   },
   "description": {
     "en": "Modern windmills generating electricity",
     "de": "Moderne Windmühlen zur Stromerzeugung",
-    "nl": "Windturbines (moderne windmolens die elektriciteit genereren)"
+    "nl": "Windturbines (moderne windmolens die elektriciteit genereren)",
+    "da": "Moderne vindmøller til produktion af elektricitet"
   },
   "source": {
     "osmTags": "generator:source=wind"
@@ -27,7 +29,8 @@
       "it": "pala eolica",
       "zh_Hant": "風機",
       "id": "turbin angin",
-      "hu": "szélerőmű"
+      "hu": "szélerőmű",
+      "da": "vindmølle"
     },
     "mappings": [
       {
@@ -42,7 +45,8 @@
           "id": "{name}",
           "de": "{name}",
           "ca": "{name}",
-          "nl": "{name}"
+          "nl": "{name}",
+          "da": "{name}"
         }
       }
     ]
@@ -58,7 +62,8 @@
         "id": "Output daya dari turbin angin ini adalah {generator:output:electricity}.",
         "hu": "A szélerőmű teljesítménye: {generator:output:electricity}.",
         "de": "Das Windrad erzeugt {generator:output:electricity} Strom.",
-        "nl": "Deze windturbine genereert {generator:output:electricity}"
+        "nl": "Deze windturbine genereert {generator:output:electricity}",
+        "da": "Denne vindmølle har en effekt på {generator:output:electricity}."
       },
       "question": {
         "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
@@ -68,7 +73,8 @@
         "id": "Berapa output daya dari turbin angin ini? (misalnya 2,3 MW)",
         "hu": "Mekkora a teljesítménye ennek a szélturbinának? (pl. 2.3 MW)",
         "de": "Wieviel Strom erzeugt das Windrad? (z.B. 2.3 MW)",
-        "nl": "Wat is de output"
+        "nl": "Wat is de output",
+        "da": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)"
       },
       "freeform": {
         "key": "generator:output:electricity",
@@ -84,7 +90,8 @@
         "zh_Hant": "這個風機營業商是 {operator}。",
         "id": "Turbin angin ini dioperasikan oleh {operator}.",
         "hu": "Ennek a szélerőműnek az üzemeltetője: {operator}.",
-        "de": "Die Windturbine wird betrieben von {operator}."
+        "de": "Die Windturbine wird betrieben von {operator}.",
+        "da": "Denne vindmølle drives af {operator}."
       },
       "question": {
         "en": "Who operates this wind turbine?",
@@ -93,7 +100,8 @@
         "zh_Hant": "這個風機營業商是？",
         "hu": "Ki üzemelteti ezt a szélturbinát?",
         "de": "Wer betreibt das Windrad?",
-        "id": "Siapa yang mengoperasikan turbin angin ini?"
+        "id": "Siapa yang mengoperasikan turbin angin ini?",
+        "da": "Hvem driver denne vindmølle?"
       },
       "freeform": {
         "key": "operator"
@@ -107,7 +115,8 @@
         "it": "L’altezza totale (raggio del rotore incluso) di questa pala eolica è di {height} metri.",
         "zh_Hant": "這風機的總高度 (包括風葉直徑) 是 {height} 公尺。",
         "hu": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter.",
-        "de": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter."
+        "de": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter.",
+        "da": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter."
       },
       "question": {
         "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
@@ -115,7 +124,8 @@
         "it": "Qual è l’altezza (in metri e raggio del rotore incluso) di questa pala eolica?",
         "zh_Hant": "這個風機的總高度是多少 (包括風葉大小) 公尺？",
         "hu": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
-        "de": "Wie hoch ist das Windrad (inklusive Rotorradius) in Metern?"
+        "de": "Wie hoch ist das Windrad (inklusive Rotorradius) in Metern?",
+        "da": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?"
       },
       "freeform": {
         "key": "height",
@@ -131,7 +141,8 @@
         "zh_Hant": "這個風力渦輪機的風葉直徑是 {rotor:diameter} 公尺。",
         "hu": "A szélturbina rotorátmérője: {rotor:diameter} méter.",
         "de": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter.",
-        "nl": "De rotordiameter van deze windturbine is {rotor:diameter} meter."
+        "nl": "De rotordiameter van deze windturbine is {rotor:diameter} meter.",
+        "da": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter."
       },
       "question": {
         "en": "What is the rotor diameter of this wind turbine, in metres?",
@@ -140,7 +151,8 @@
         "zh_Hant": "這個風力渦輪機的風葉直徑是多少公尺？",
         "hu": "Hány méter a rotorátmérője ennek a szélturbinának?",
         "de": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?",
-        "nl": "Wat is de rotordiameter van deze windturbine?"
+        "nl": "Wat is de rotordiameter van deze windturbine?",
+        "da": "Hvad er rotordiameteren på denne vindmølle i meter?"
       },
       "freeform": {
         "key": "rotor:diameter",
@@ -157,7 +169,8 @@
         "id": "Turbin angin ini mulai beroperasi pada/dalam {start_date}.",
         "hu": "A szélerőmű üzembe helyezése: {start_date}.",
         "de": "Das Windrad wurde am {start_date} in Betrieb genommen.",
-        "nl": "Deze windturbine werd op {start_date} in gebruik genomen"
+        "nl": "Deze windturbine werd op {start_date} in gebruik genomen",
+        "da": "Denne vindmølle blev sat i drift den/den {start_date}."
       },
       "question": {
         "en": "When did this wind turbine go into operation?",
@@ -167,7 +180,8 @@
         "id": "Kapan turbin angin ini mulai beroperasi?",
         "hu": "Mikor helyezték üzembe ezt a szélerőművet?",
         "de": "Wann wurde das Windrad in Betrieb genommen?",
-        "nl": "Wanneer werd deze windturbine in gebruik genomen?"
+        "nl": "Wanneer werd deze windturbine in gebruik genomen?",
+        "da": "Hvornår blev denne vindmølle taget i brug?"
       },
       "freeform": {
         "key": "start_date",
@@ -189,7 +203,8 @@
         "de": "ein Windrad",
         "it": "una pala eolica",
         "zh_Hant": "風機",
-        "hu": "Szélerőmű"
+        "hu": "Szélerőmű",
+        "da": "en vindmølle"
       }
     }
   ],
@@ -216,7 +231,8 @@
             "zh_Hant": " 百萬瓦",
             "id": " megawat",
             "hu": " megawatt",
-            "ca": " megavats"
+            "ca": " megavats",
+            "da": " Megawatt"
           }
         },
         {
@@ -237,7 +253,8 @@
             "zh_Hant": " 千瓦",
             "id": " kilowat",
             "hu": " kilowatt",
-            "ca": " quilovats"
+            "ca": " quilovats",
+            "da": " Kilowatt"
           }
         },
         {
@@ -257,7 +274,8 @@
             "zh_Hant": " 瓦",
             "id": " watt",
             "hu": " watt",
-            "ca": " vats"
+            "ca": " vats",
+            "da": " Watt"
           }
         },
         {
@@ -277,7 +295,8 @@
             "zh_Hant": " 千兆瓦",
             "id": " gigawatt",
             "hu": " gigawatt",
-            "ca": " gigavats"
+            "ca": " gigavats",
+            "da": " Gigawatt"
           }
         }
       ],
@@ -305,7 +324,8 @@
             "zh_Hant": " 公尺",
             "id": " meter",
             "hu": " méter",
-            "ca": " metre"
+            "ca": " metre",
+            "da": " meter"
           }
         }
       ]

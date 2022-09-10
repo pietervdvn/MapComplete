@@ -8,7 +8,8 @@
     "fr": "Arbre",
     "de": "Bäume",
     "ca": "Arbre",
-    "es": "Árbol"
+    "es": "Árbol",
+    "da": "Træ"
   },
   "minzoom": 16,
   "source": {
@@ -28,7 +29,8 @@
       "de": "Baum",
       "eo": "Arbo",
       "ca": "Arbre",
-      "es": "Árbol"
+      "es": "Árbol",
+      "da": "Træ"
     },
     "mappings": [
       {
@@ -78,7 +80,8 @@
         "fr": "Hauteur : {height}",
         "de": "Höhe: {height}",
         "es": "Altura: {height}",
-        "id": "Tinggi: {height}"
+        "id": "Tinggi: {height}",
+        "da": "Højde: {height}"
       },
       "condition": {
         "and": [
@@ -99,7 +102,8 @@
             "ru": "Высота: {height}&nbsp;м",
             "fr": "Hauteur&nbsp;: {height}&nbsp;m",
             "de": "Höhe: {height}&nbsp;m",
-            "es": "Altura: {height}&nbsp;m"
+            "es": "Altura: {height}&nbsp;m",
+            "da": "Højde: {height}&nbsp;m"
           }
         }
       ]
@@ -117,7 +121,8 @@
         "id": "Spesies pohon apa ini?",
         "es": "¿De qué especie es este árbol?",
         "nl": "Wat is de boomsoort?",
-        "fr": "Quelle est l'espèce de cet arbre ?"
+        "fr": "Quelle est l'espèce de cet arbre ?",
+        "da": "Hvilken art er dette træ?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"
@@ -157,7 +162,8 @@
         "it": "Quanto significativo è questo albero? Scegli la prima risposta che corrisponde.",
         "fr": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique.",
         "de": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft.",
-        "es": "¿Qué importancia tiene este árbol? Elige la primera respuesta que corresponda."
+        "es": "¿Qué importancia tiene este árbol? Elige la primera respuesta que corresponda.",
+        "da": "Hvor vigtigt er dette træ? Vælg det første svar, der passer."
       },
       "mappings": [
         {
@@ -172,7 +178,8 @@
             "it": "È un albero notevole per le sue dimensioni o per la posizione prominente. È utile alla navigazione.",
             "fr": "L'arbre est remarquable en raison de sa taille ou de son emplacement proéminent. Il est utile pour la navigation.",
             "de": "Der Baum ist aufgrund seiner Größe oder seiner markanten Lage bedeutsam. Er ist nützlich zur Orientierung.",
-            "es": "El árbol es notable debido a su tamaño o ubicación prominente. Es útil para la navegación."
+            "es": "El árbol es notable debido a su tamaño o ubicación prominente. Es útil para la navegación.",
+            "da": "Træet er bemærkelsesværdigt på grund af sin størrelse eller sin fremtrædende placering. Det er nyttigt til navigation."
           }
         },
         {
@@ -187,7 +194,8 @@
             "it": "L’albero è un monumento naturale, ad esempio perché specialmente antico o appartenente a specie importanti.",
             "fr": "Cet arbre est un monument naturel (p.ex. : âge, espèce, etc).",
             "de": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört.",
-            "es": "El árbol es un monumento natural, por ejemplo, porque es especialmente antiguo, o de una especie valiosa."
+            "es": "El árbol es un monumento natural, por ejemplo, porque es especialmente antiguo, o de una especie valiosa.",
+            "da": "Træet er et naturmonument, f.eks. fordi den er særlig gammel eller af en værdifuld art."
           }
         },
         {
@@ -202,7 +210,8 @@
             "it": "L’albero è usato per scopi agricoli, ad esempio in un frutteto.",
             "fr": "Cet arbre est utilisé à but agricole (p.ex. : dans un verger).",
             "de": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage.",
-            "es": "El árbol se utiliza con fines agrícolas, por ejemplo, en un huerto."
+            "es": "El árbol se utiliza con fines agrícolas, por ejemplo, en un huerto.",
+            "da": "Træet anvendes til landbrugsformål, f.eks. i en frugtplantage."
           }
         },
         {
@@ -217,7 +226,8 @@
             "it": "L’albero è in un parco o qualcosa di simile (cimitero, aree didattiche, etc.).",
             "fr": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …).",
             "de": "Der Baum steht in einem Park oder ähnlichem (Friedhof, Schulgelände, ...).",
-            "es": "El árbol está en un parque o similar (cementerio, recinto escolar, ...)."
+            "es": "El árbol está en un parque o similar (cementerio, recinto escolar, ...).",
+            "da": "Træet står i en park eller lignende (kirkegård, skoleområde, ...)."
           }
         },
         {
@@ -232,7 +242,8 @@
             "it": "L’albero è un giardino residenziale.",
             "fr": "Cet arbre est dans une jardin de résidence.",
             "es": "El árbol está en un jardín privado o residencial.",
-            "de": "Der Baum steht in einem Wohngarten."
+            "de": "Der Baum steht in einem Wohngarten.",
+            "da": "Træet står i en villahave."
           }
         },
         {
@@ -247,7 +258,8 @@
             "it": "Fa parte di un viale alberato.",
             "fr": "C'est un arbre le long d'une avenue.",
             "de": "Dieser Baum steht entlang einer Straße.",
-            "es": "El árbol está en bandejón de una avenida."
+            "es": "El árbol está en bandejón de una avenida.",
+            "da": "Dette er et træ langs en allé."
           }
         },
         {
@@ -262,7 +274,8 @@
             "it": "L’albero si trova in un’area urbana.",
             "fr": "L'arbre est dans une zone urbaine.",
             "es": "El árbol está en un zona urbana.",
-            "de": "Der Baum steht in einem städtischen Gebiet."
+            "de": "Der Baum steht in einem städtischen Gebiet.",
+            "da": "Træet står i et byområde."
           }
         },
         {
@@ -277,7 +290,8 @@
             "it": "L’albero si trova fuori dall’area urbana.",
             "fr": "Cet arbre est en zone rurale.",
             "de": "Dieser Baum steht außerhalb eines städtischen Gebiets.",
-            "es": "El árbol está fuera de una zona urbana."
+            "es": "El árbol está fuera de una zona urbana.",
+            "da": "Træet står uden for et byområde."
           }
         }
       ]
@@ -307,7 +321,8 @@
             "de": "Laubbaum",
             "ca": "De fulla ampla",
             "es": "Latifoliada",
-            "id": "Berdaun lebar"
+            "id": "Berdaun lebar",
+            "da": "Bredbladet"
           },
           "icon": {
             "path": "./assets/layers/tree_node/broadleaved.svg",
@@ -348,7 +363,8 @@
             "fr": "Sans feuilles (Permanent)",
             "de": "Dauerhaft blattlos",
             "es": "Permanentemente sin hojas",
-            "id": "Tanpa daun permanen"
+            "id": "Tanpa daun permanen",
+            "da": "Permanent bladløs"
           },
           "hideInAnswer": true,
           "icon": {
@@ -373,7 +389,8 @@
         "ru": "Это дерево вечнозелёное или листопадное?",
         "fr": "L’arbre est-il à feuillage persistant ou caduc ?",
         "de": "Ist dies ein Nadelbaum oder ein Laubbaum?",
-        "es": "¿El árbol es Siempreverde o Caduco?"
+        "es": "¿El árbol es Siempreverde o Caduco?",
+        "da": "Er dette træ stedsegrønt eller løvfældende?"
       },
       "mappings": [
         {
@@ -389,7 +406,8 @@
             "ru": "Листопадное: у дерева опадают листья в определённое время года.",
             "fr": "Caduc : l’arbre perd son feuillage une partie de l’année.",
             "de": "Laubabwerfend: Der Baum verliert für eine gewisse Zeit des Jahres seine Blätter.",
-            "es": "Caduco o Deciduo: el árbol pierde las hojas en un período del año"
+            "es": "Caduco o Deciduo: el árbol pierde las hojas en un período del año",
+            "da": "Løvfældende: træet mister bladene i en periode af året."
           }
         },
         {
@@ -406,7 +424,8 @@
             "ru": "Вечнозелёное.",
             "de": "immergrüner Baum.",
             "ca": "Perenne.",
-            "es": "Siempreverde."
+            "es": "Siempreverde.",
+            "da": "Stedsegrøn."
           }
         }
       ],
@@ -428,7 +447,8 @@
         "id": "Nama: {name}",
         "de": "Name: {name}",
         "eo": "Nomo: {name}",
-        "es": "Nombre: {name}"
+        "es": "Nombre: {name}",
+        "da": "Navn: {name}"
       },
       "question": {
         "nl": "Heeft de boom een naam?",
@@ -438,7 +458,8 @@
         "ru": "Есть ли у этого дерева название?",
         "de": "Hat der Baum einen Namen?",
         "es": "¿Tiene nombre este árbol?",
-        "id": "Apakah pohon ini memiliki nama?"
+        "id": "Apakah pohon ini memiliki nama?",
+        "da": "Har træet et navn?"
       },
       "freeform": {
         "key": "name",
@@ -462,7 +483,8 @@
             "ru": "У этого дерева нет названия.",
             "de": "Der Baum hat keinen Namen.",
             "es": "No identificas la especie.",
-            "id": "Pohon ini tidak memiliki nama."
+            "id": "Pohon ini tidak memiliki nama.",
+            "da": "Træet har ikke et navn."
           }
         }
       ],
@@ -484,7 +506,8 @@
         "fr": "Cet arbre est-il inscrit au patrimoine ?",
         "de": "Ist dieser Baum ein Naturdenkmal?",
         "es": "¿Este árbol es patrimonio registrado?",
-        "id": "Apakah pohon ini merupakan warisan yang terdaftar?"
+        "id": "Apakah pohon ini merupakan warisan yang terdaftar?",
+        "da": "Er dette træ registreret som kulturarv?"
       },
       "mappings": [
         {
@@ -522,7 +545,8 @@
             "fr": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles",
             "de": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel",
             "es": "Registrado como patrimonio por la <i>Dirección de Patrimonio Cultural</i> de Bruselas",
-            "id": "Terdaftar sebagai warisan budaya oleh <i>Direction du Patrimoine culturel</i> Brussels"
+            "id": "Terdaftar sebagai warisan budaya oleh <i>Direction du Patrimoine culturel</i> Brussels",
+            "da": "Registreret som kulturarv af <i>Direction du Patrimoine culturel</i> Bruxelles"
           }
         },
         {
@@ -539,7 +563,8 @@
             "fr": "Enregistré comme patrimoine par une autre organisation",
             "de": "Von einer anderen Organisation als Denkmal registriert",
             "es": "Registrado como patrimonio por una organización diferente",
-            "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
+            "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda",
+            "da": "Registreret som kulturarv af en anden organisation"
           }
         },
         {
@@ -556,7 +581,8 @@
             "fr": "Non enregistré comme patrimoine",
             "de": "Nicht als Denkmal registriert",
             "es": "No registrado como patrimonio",
-            "id": "Tidak terdaftar sebagai warisan"
+            "id": "Tidak terdaftar sebagai warisan",
+            "da": "Ikke registreret som kulturarv"
           }
         },
         {
@@ -572,7 +598,8 @@
             "fr": "Enregistré comme patrimoine par une autre organisation",
             "de": "Von einer anderen Organisation als Denkmal registriert",
             "es": "Registrado como patrimonio por un organización diferente",
-            "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda"
+            "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda",
+            "da": "Registreret som kulturarv af en anden organisation"
           },
           "hideInAnswer": true
         }
@@ -591,7 +618,8 @@
         "it": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "ru": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
         "fr": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Identifiant Onroerend Erfgoed : <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
-        "de": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed Kennung: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
+        "de": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed Kennung: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>",
+        "da": "<img src=\"./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg\" style=\"width:0.85em;height:1em;vertical-align:middle\" alt=\"\"/> Onroerend Erfgoed ID: <a href=\"https://id.erfgoed.net/erfgoedobjecten/{ref:OnroerendErfgoed}\">{ref:OnroerendErfgoed}</a>"
       },
       "question": {
         "nl": "Wat is het ID uitgegeven door Onroerend Erfgoed Vlaanderen?",
@@ -599,7 +627,8 @@
         "it": "Qual è l’ID rilasciato da Onroerend Erfgoed Flanders?",
         "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?",
         "de": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?",
-        "es": "¿Cuál es el número de identificación emitido por Onroerend Erfgoed Flandes?"
+        "es": "¿Cuál es el número de identificación emitido por Onroerend Erfgoed Flandes?",
+        "da": "Hvad er ID udstedt af Onroerend Erfgoed Flanders?"
       },
       "freeform": {
         "key": "ref:OnroerendErfgoed",
@@ -621,7 +650,8 @@
         "ru": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
         "fr": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata : <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
         "de": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
-        "es": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+        "es": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>",
+        "da": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
       },
       "question": {
         "nl": "Wat is het Wikidata-ID van deze boom?",
@@ -629,7 +659,8 @@
         "it": "Qual è l’ID Wikidata per questo albero?",
         "fr": "Quel est l'identifiant Wikidata de cet arbre ?",
         "de": "Was ist das passende Wikidata Element zu diesem Baum?",
-        "es": "¿Cuál es el ID de Wikidata para este árbol?"
+        "es": "¿Cuál es el ID de Wikidata para este árbol?",
+        "da": "Hvad er Wikidata-id'et for dette træ?"
       },
       "freeform": {
         "key": "wikidata",
@@ -658,7 +689,8 @@
         "fr": "une arbre feuillu",
         "ru": "Лиственное дерево",
         "de": "ein Laubbaum",
-        "es": "árbol de hoja ancha"
+        "es": "árbol de hoja ancha",
+        "da": "et løvtræ"
       },
       "description": {
         "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
@@ -684,7 +716,8 @@
         "ru": "Хвойное дерево",
         "fr": "une arbre résineux",
         "de": "ein Nadelbaum",
-        "es": "Árbol tipo Conífera"
+        "es": "Árbol tipo Conífera",
+        "da": "et nåletræ"
       },
       "description": {
         "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
@@ -693,7 +726,8 @@
         "ru": "Дерево с хвоей (иглами), например, сосна или ель.",
         "fr": "Une espèce d’arbre avec des épines comme le pin ou l’épicéa.",
         "de": "Ein Baum mit Nadeln, z. B. Kiefer oder Fichte.",
-        "es": "Un árbol de hojas agujas, como el Pino o el Abeto."
+        "es": "Un árbol de hojas agujas, como el Pino o el Abeto.",
+        "da": "Et træ af en art med nåle, såsom fyr eller gran."
       },
       "preciseInput": {
         "preferredBackground": "photo"
@@ -712,7 +746,8 @@
         "id": "Pohon",
         "de": "ein Baum",
         "ca": "un arbre",
-        "es": "un árbol"
+        "es": "un árbol",
+        "da": "et træ"
       },
       "description": {
         "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",
@@ -721,7 +756,8 @@
         "fr": "Si vous n'êtes pas sûr(e) de savoir s'il s'agit d'un arbre à feuilles larges ou à aiguilles.",
         "ru": "Если вы не уверены в том, лиственное это дерево или хвойное.",
         "de": "Wenn Sie nicht sicher sind, ob es sich um einen Laubbaum oder einen Nadelbaum handelt.",
-        "es": "Si no estás seguro de si es un árbol de hoja ancha o de hoja de aguja."
+        "es": "Si no estás seguro de si es un árbol de hoja ancha o de hoja de aguja.",
+        "da": "Hvis du ikke er sikker på, om det er et løv- eller nåletræ."
       },
       "preciseInput": {
         "preferredBackground": "photo"
@@ -772,6 +808,7 @@
     "nl": "Een laag die bomen toont",
     "es": "Una capa que muestra árboles",
     "de": "Eine Ebene, die Bäume zeigt",
-    "fr": "Une couche montrant les arbres"
+    "fr": "Une couche montrant les arbres",
+    "da": "Et lag, der viser træer"
   }
 }

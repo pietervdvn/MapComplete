@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4396,
+      "commits": 4454,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 183,
+      "commits": 184,
       "contributor": "Robin van der Linde"
     },
     {
@@ -75,6 +75,10 @@
     {
       "commits": 15,
       "contributor": "ToastHawaii"
+    },
+    {
+      "commits": 14,
+      "contributor": "Brice Maron"
     },
     {
       "commits": 13,
@@ -195,6 +199,10 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "eMerzh"
     },
     {
       "commits": 1,
