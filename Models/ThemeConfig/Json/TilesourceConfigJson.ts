@@ -2,19 +2,18 @@
  * Configuration for a tilesource config
  */
 export default interface TilesourceConfigJson {
-
     /**
      * Id of this overlay, used in the URL-parameters to set the state
      */
-    id: string,
+    id: string
     /**
      * The path, where {x}, {y} and {z} will be substituted
      */
-    source: string,
+    source: string
     /**
      * Wether or not this is an overlay. Default: true
      */
-    isOverlay?: boolean,
+    isOverlay?: boolean
 
     /**
      * How this will be shown in the selection menu.
@@ -32,10 +31,8 @@ export default interface TilesourceConfigJson {
      */
     maxZoom?: number
 
-
     /**
      * The default state, set to false to hide by default
      */
-    defaultState: boolean;
-
+    defaultState: boolean
 }

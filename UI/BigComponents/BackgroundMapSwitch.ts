@@ -1,15 +1,14 @@
-import Combine from "../Base/Combine";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import Loc from "../../Models/Loc";
-import Svg from "../../Svg";
-import Toggle from "../Input/Toggle";
-import BaseLayer from "../../Models/BaseLayer";
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
-import BaseUIElement from "../BaseUIElement";
-import {GeoOperations} from "../../Logic/GeoOperations";
+import Combine from "../Base/Combine"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import Loc from "../../Models/Loc"
+import Svg from "../../Svg"
+import Toggle from "../Input/Toggle"
+import BaseLayer from "../../Models/BaseLayer"
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
+import BaseUIElement from "../BaseUIElement"
+import { GeoOperations } from "../../Logic/GeoOperations"
 
 class SingleLayerSelectionButton extends Toggle {
-
     public readonly activate: () => void
 
     /**
@@ -24,38 +23,39 @@ class SingleLayerSelectionButton extends Toggle {
     constructor(
         locationControl: UIEventSource<Loc>,
         options: {
-            currentBackground: UIEventSource<BaseLayer>,
-            preferredType: string,
-            preferredLayer?: BaseLayer,
+            currentBackground: UIEventSource<BaseLayer>
+            preferredType: string
+            preferredLayer?: BaseLayer
             notAvailable?: () => void
-        }) {
-
-
+        }
+    ) {
         const prefered = options.preferredType
         const previousLayer = new UIEventSource(options.preferredLayer)
 
-        const unselected = SingleLayerSelectionButton.getIconFor(prefered)
-            .SetClass("rounded-lg p-1 h-12 w-12 overflow-hidden subtle-background border-invisible")
+        const unselected = SingleLayerSelectionButton.getIconFor(prefered).SetClass(
+            "rounded-lg p-1 h-12 w-12 overflow-hidden subtle-background border-invisible"
+        )
 
-        const selected = SingleLayerSelectionButton.getIconFor(prefered)
-            .SetClass("rounded-lg p-1 h-12 w-12 overflow-hidden subtle-background border-attention-catch")
+        const selected = SingleLayerSelectionButton.getIconFor(prefered).SetClass(
+            "rounded-lg p-1 h-12 w-12 overflow-hidden subtle-background border-attention-catch"
+        )
 
-
-        const available = AvailableBaseLayers
-            .SelectBestLayerAccordingTo(locationControl, new UIEventSource<string | string[]>(options.preferredType))
+        const available = AvailableBaseLayers.SelectBestLayerAccordingTo(
+            locationControl,
+            new UIEventSource<string | string[]>(options.preferredType)
+        )
 
         let toggle: BaseUIElement = new Toggle(
             selected,
             unselected,
-            options.currentBackground.map(bg => bg.category === options.preferredType)
+            options.currentBackground.map((bg) => bg.category === options.preferredType)
         )
-
 
         super(
             toggle,
             undefined,
-            available.map(av => av.category === options.preferredType)
-        );
+            available.map((av) => av.category === options.preferredType)
+        )
 
         /**
          * Checks that the previous layer is still usable on the current location.
@@ -85,27 +85,29 @@ class SingleLayerSelectionButton extends Toggle {
             options.currentBackground.setData(previousLayer.data)
         })
 
-        options.currentBackground.addCallbackAndRunD(background => {
+        options.currentBackground.addCallbackAndRunD((background) => {
             if (background.category === options.preferredType) {
                 previousLayer.setData(background)
             }
         })
 
-
-        available.addCallbackD(availableLayer => {
+        available.addCallbackD((availableLayer) => {
             // Called whenever a better layer is available
 
             if (previousLayer.data === undefined) {
                 // PreviousLayer is unset -> we definitively weren't using this category -> no need to switch
-                return;
+                return
             }
             if (options.currentBackground.data?.id !== previousLayer.data?.id) {
                 // The previously used layer doesn't match the current layer -> no need to switch
-                return;
+                return
             }
 
             // Is the previous layer still valid? If so, we don't bother to switch
-            if (previousLayer.data.feature === null || GeoOperations.inside(locationControl.data, previousLayer.data.feature)) {
+            if (
+                previousLayer.data.feature === null ||
+                GeoOperations.inside(locationControl.data, previousLayer.data.feature)
+            ) {
                 return
             }
 
@@ -134,13 +136,12 @@ class SingleLayerSelectionButton extends Toggle {
                     // Fallback to OSM carto
                     options.currentBackground.setData(AvailableBaseLayers.osmCarto)
                 }
-                return;
+                return
             }
 
             previousLayer.setData(previousLayer.data ?? available.data)
             options.currentBackground.setData(previousLayer.data)
         }
-
     }
 
     private static getIconFor(type: string) {
@@ -158,7 +159,6 @@ class SingleLayerSelectionButton extends Toggle {
 }
 
 export default class BackgroundMapSwitch extends Combine {
-
     /**
      * Three buttons to easily switch map layers between OSM, aerial and some map.
      * @param state
@@ -167,14 +167,13 @@ export default class BackgroundMapSwitch extends Combine {
      */
     constructor(
         state: {
-            locationControl: UIEventSource<Loc>,
+            locationControl: UIEventSource<Loc>
             backgroundLayer: UIEventSource<BaseLayer>
         },
         currentBackground: UIEventSource<BaseLayer>,
-        options?:{
-            preferredCategory?: string,
+        options?: {
+            preferredCategory?: string
             allowedCategories?: ("osmbasedmap" | "photo" | "map")[]
-            
         }
     ) {
         const allowedCategories = options?.allowedCategories ?? ["osmbasedmap", "photo", "map"]
@@ -188,14 +187,12 @@ export default class BackgroundMapSwitch extends Combine {
                 preferredLayer = previousLayer
             }
 
-            const button = new SingleLayerSelectionButton(
-                state.locationControl,
-                {
-                    preferredType: category,
-                    preferredLayer: preferredLayer,
-                    currentBackground: currentBackground,
-                    notAvailable: activatePrevious
-                })
+            const button = new SingleLayerSelectionButton(state.locationControl, {
+                preferredType: category,
+                preferredLayer: preferredLayer,
+                currentBackground: currentBackground,
+                notAvailable: activatePrevious,
+            })
             // Fall back to the first option: OSM
             activatePrevious = activatePrevious ?? button.activate
             if (category === options?.preferredCategory) {
@@ -209,5 +206,4 @@ export default class BackgroundMapSwitch extends Combine {
         super(buttons)
         this.SetClass("flex")
     }
-
 }

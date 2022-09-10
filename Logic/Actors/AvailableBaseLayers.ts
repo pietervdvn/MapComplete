@@ -1,15 +1,17 @@
-import BaseLayer from "../../Models/BaseLayer";
-import {ImmutableStore, Store, UIEventSource} from "../UIEventSource";
-import Loc from "../../Models/Loc";
+import BaseLayer from "../../Models/BaseLayer"
+import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
+import Loc from "../../Models/Loc"
 
 export interface AvailableBaseLayersObj {
-    readonly osmCarto: BaseLayer;
-    layerOverview: BaseLayer[];
+    readonly osmCarto: BaseLayer
+    layerOverview: BaseLayer[]
 
     AvailableLayersAt(location: Store<Loc>): Store<BaseLayer[]>
 
-    SelectBestLayerAccordingTo(location: Store<Loc>, preferedCategory: Store<string | string[]>): Store<BaseLayer>;
-
+    SelectBestLayerAccordingTo(
+        location: Store<Loc>,
+        preferedCategory: Store<string | string[]>
+    ): Store<BaseLayer>
 }
 
 /**
@@ -17,20 +19,28 @@ export interface AvailableBaseLayersObj {
  * Changes the basemap
  */
 export default class AvailableBaseLayers {
-
-
-    public static layerOverview: BaseLayer[];
-    public static osmCarto: BaseLayer;
+    public static layerOverview: BaseLayer[]
+    public static osmCarto: BaseLayer
 
     private static implementation: AvailableBaseLayersObj
 
     static AvailableLayersAt(location: Store<Loc>): Store<BaseLayer[]> {
-        return AvailableBaseLayers.implementation?.AvailableLayersAt(location) ?? new ImmutableStore<BaseLayer[]>([]);
+        return (
+            AvailableBaseLayers.implementation?.AvailableLayersAt(location) ??
+            new ImmutableStore<BaseLayer[]>([])
+        )
     }
 
-    static SelectBestLayerAccordingTo(location: Store<Loc>, preferedCategory: UIEventSource<string | string[]>): Store<BaseLayer> {
-        return AvailableBaseLayers.implementation?.SelectBestLayerAccordingTo(location, preferedCategory) ?? new ImmutableStore<BaseLayer>(undefined);
-
+    static SelectBestLayerAccordingTo(
+        location: Store<Loc>,
+        preferedCategory: UIEventSource<string | string[]>
+    ): Store<BaseLayer> {
+        return (
+            AvailableBaseLayers.implementation?.SelectBestLayerAccordingTo(
+                location,
+                preferedCategory
+            ) ?? new ImmutableStore<BaseLayer>(undefined)
+        )
     }
 
     public static implement(backend: AvailableBaseLayersObj) {
@@ -38,5 +48,4 @@ export default class AvailableBaseLayers {
         AvailableBaseLayers.osmCarto = backend.osmCarto
         AvailableBaseLayers.implementation = backend
     }
-
 }

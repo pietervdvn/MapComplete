@@ -1,11 +1,10 @@
-import ImageProvider, {ProvidedImage} from "./ImageProvider";
-import BaseUIElement from "../../UI/BaseUIElement";
-import Svg from "../../Svg";
-import {WikimediaImageProvider} from "./WikimediaImageProvider";
-import Wikidata from "../Web/Wikidata";
+import ImageProvider, { ProvidedImage } from "./ImageProvider"
+import BaseUIElement from "../../UI/BaseUIElement"
+import Svg from "../../Svg"
+import { WikimediaImageProvider } from "./WikimediaImageProvider"
+import Wikidata from "../Web/Wikidata"
 
 export class WikidataImageProvider extends ImageProvider {
-
     public static readonly singleton = new WikidataImageProvider()
     public readonly defaultKeyPrefixes = ["wikidata"]
 
@@ -14,7 +13,7 @@ export class WikidataImageProvider extends ImageProvider {
     }
 
     public SourceIcon(backlinkSource?: string): BaseUIElement {
-        throw Svg.wikidata_svg();
+        throw Svg.wikidata_svg()
     }
 
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
@@ -39,7 +38,10 @@ export class WikidataImageProvider extends ImageProvider {
         }
 
         const commons = entity.commons
-        if (commons !== undefined && (commons.startsWith("Category:") || commons.startsWith("File:"))) {
+        if (
+            commons !== undefined &&
+            (commons.startsWith("Category:") || commons.startsWith("File:"))
+        ) {
             const promises = await WikimediaImageProvider.singleton.ExtractUrls(undefined, commons)
             allImages.push(...promises)
         }
@@ -47,7 +49,6 @@ export class WikidataImageProvider extends ImageProvider {
     }
 
     public DownloadAttribution(url: string): Promise<any> {
-        throw new Error("Method not implemented; shouldn't be needed!");
+        throw new Error("Method not implemented; shouldn't be needed!")
     }
-
 }

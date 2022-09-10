@@ -1,34 +1,34 @@
 /***
  * Parses presets from the iD repository and extracts some usefull tags from them
  */
-import ScriptUtils from "../ScriptUtils";
-import {existsSync, readFileSync, writeFileSync} from "fs";
+import ScriptUtils from "../ScriptUtils"
+import { existsSync, readFileSync, writeFileSync } from "fs"
 import * as known_languages from "../../assets/language_native.json"
-import {LayerConfigJson} from "../../Models/ThemeConfig/Json/LayerConfigJson";
-import {MappingConfigJson} from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson";
-import SmallLicense from "../../Models/smallLicense";
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import { MappingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import SmallLicense from "../../Models/smallLicense"
 
 interface IconThief {
     steal(iconName: string): boolean
 }
 
 interface IdPresetJson {
-    icon: string,
+    icon: string
     geometry: ("point" | "line" | "area")[]
     /**
      * Extra search terms
      */
-    terms: string []
+    terms: string[]
     tags: Record<string, string>
-    name: string,
-    searchable?: boolean,
+    name: string
+    searchable?: boolean
 }
 
 class IdPreset implements IdPresetJson {
-    private _preset: IdPresetJson;
+    private _preset: IdPresetJson
 
     constructor(preset: IdPresetJson) {
-        this._preset = preset;
+        this._preset = preset
     }
 
     public get searchable(): boolean {
@@ -56,36 +56,38 @@ class IdPreset implements IdPresetJson {
     }
 
     static fromFile(file: string): IdPreset {
-        return new IdPreset(JSON.parse(readFileSync(file, 'utf8')))
+        return new IdPreset(JSON.parse(readFileSync(file, "utf8")))
     }
 
     public parseTags(): string | { and: string[] } {
-        const preset = this._preset;
+        const preset = this._preset
         const tagKeys = Object.keys(preset.tags)
         if (tagKeys.length === 1) {
             return tagKeys[0] + "=" + preset.tags[tagKeys[0]]
         } else {
             return {
-                and: tagKeys.map(key => key + "=" + preset.tags[key])
+                and: tagKeys.map((key) => key + "=" + preset.tags[key]),
             }
         }
     }
 }
 
-
 class MakiThief implements IconThief {
-    public readonly _prefix: string;
-    private readonly _directory: string;
-    private readonly _license: SmallLicense;
-    private readonly _targetDir: string;
+    public readonly _prefix: string
+    private readonly _directory: string
+    private readonly _license: SmallLicense
+    private readonly _targetDir: string
 
-    constructor(directory: string, targetDir: string,
-                license: SmallLicense,
-                prefix: string = "maki-") {
-        this._license = license;
-        this._directory = directory;
-        this._targetDir = targetDir;
-        this._prefix = prefix;
+    constructor(
+        directory: string,
+        targetDir: string,
+        license: SmallLicense,
+        prefix: string = "maki-"
+    ) {
+        this._license = license
+        this._directory = directory
+        this._targetDir = targetDir
+        this._prefix = prefix
     }
 
     public steal(iconName: string): boolean {
@@ -94,13 +96,14 @@ class MakiThief implements IconThief {
             return true
         }
         try {
-
             const file = readFileSync(this._directory + iconName + ".svg", "utf8")
-            writeFileSync(target, file, 'utf8')
+            writeFileSync(target, file, "utf8")
 
-            writeFileSync(target + ".license_info.json",
-                JSON.stringify(
-                    {...this._license, path: this._prefix + iconName + ".svg"}), 'utf8')
+            writeFileSync(
+                target + ".license_info.json",
+                JSON.stringify({ ...this._license, path: this._prefix + iconName + ".svg" }),
+                "utf8"
+            )
             console.log("Successfully stolen " + iconName)
             return true
         } catch (e) {
@@ -108,16 +111,14 @@ class MakiThief implements IconThief {
             return false
         }
     }
-
 }
 
 class AggregateIconThief implements IconThief {
-    private readonly makiThiefs: MakiThief[];
+    private readonly makiThiefs: MakiThief[]
 
     constructor(makiThiefs: MakiThief[]) {
-        this.makiThiefs = makiThiefs;
+        this.makiThiefs = makiThiefs
     }
-
 
     public steal(iconName: string): boolean {
         for (const makiThief1 of this.makiThiefs) {
@@ -129,23 +130,31 @@ class AggregateIconThief implements IconThief {
     }
 }
 
-
 class IdThief {
-    private readonly _idPresetsRepository: string;
+    private readonly _idPresetsRepository: string
 
     private readonly _tranlationFiles: Record<string, object> = {}
     private readonly _knownLanguages: string[]
-    private readonly _iconThief: IconThief;
+    private readonly _iconThief: IconThief
 
     public constructor(idPresetsRepository: string, iconThief: IconThief) {
-        this._idPresetsRepository = idPresetsRepository;
-        this._iconThief = iconThief;
-        const knownById = ScriptUtils.readDirRecSync(`${this._idPresetsRepository}/dist/translations/`)
-            .map(pth => pth.substring(pth.lastIndexOf('/') + 1, pth.length - '.json'.length))
-            .filter(lng => !lng.endsWith('.min'));
-        const missing = Object.keys(known_languages).filter(lng => knownById.indexOf(lng.replace('-', '_')) < 0)
-        this._knownLanguages = knownById.filter(lng => known_languages[lng] !== undefined)
-        console.log("Id knows following languages:", this._knownLanguages.join(", "), "missing:", missing)
+        this._idPresetsRepository = idPresetsRepository
+        this._iconThief = iconThief
+        const knownById = ScriptUtils.readDirRecSync(
+            `${this._idPresetsRepository}/dist/translations/`
+        )
+            .map((pth) => pth.substring(pth.lastIndexOf("/") + 1, pth.length - ".json".length))
+            .filter((lng) => !lng.endsWith(".min"))
+        const missing = Object.keys(known_languages).filter(
+            (lng) => knownById.indexOf(lng.replace("-", "_")) < 0
+        )
+        this._knownLanguages = knownById.filter((lng) => known_languages[lng] !== undefined)
+        console.log(
+            "Id knows following languages:",
+            this._knownLanguages.join(", "),
+            "missing:",
+            missing
+        )
     }
 
     public getTranslation(language: string, ...path: string[]): string {
@@ -153,28 +162,25 @@ class IdThief {
         for (const p of path) {
             obj = obj[p]
             if (obj === undefined) {
-                return undefined;
+                return undefined
             }
         }
         return obj
     }
 
-
     /**
      * Creates a mapRendering-mapping for the 'shop' theme
      */
-    public readShopIcons(): { if: string | { and: string[] }, then: string }[] {
-
+    public readShopIcons(): { if: string | { and: string[] }; then: string }[] {
         const dir = this._idPresetsRepository + "/data/presets/shop"
 
-        const mappings:
-            {
-                if: string | { and: string[] },
-                then: string
-            }[] = []
-        const files = ScriptUtils.readDirRecSync(dir, 1);
+        const mappings: {
+            if: string | { and: string[] }
+            then: string
+        }[] = []
+        const files = ScriptUtils.readDirRecSync(dir, 1)
         for (const file of files) {
-            const preset = IdPreset.fromFile(file);
+            const preset = IdPreset.fromFile(file)
 
             if (!this._iconThief.steal(preset.icon)) {
                 continue
@@ -182,27 +188,24 @@ class IdThief {
 
             const mapping = {
                 if: preset.parseTags(),
-                then: "circle:white;./assets/layers/id_presets/" + preset.icon + ".svg"
+                then: "circle:white;./assets/layers/id_presets/" + preset.icon + ".svg",
             }
             mappings.push(mapping)
-
         }
 
         return mappings
     }
 
-
     /**
      * Creates a tagRenderingConfigJson for the 'shop' theme
      */
     public readShopPresets(): MappingConfigJson[] {
-
         const dir = this._idPresetsRepository + "/data/presets/shop"
 
         const mappings: MappingConfigJson[] = []
-        const files = ScriptUtils.readDirRecSync(dir, 1);
+        const files = ScriptUtils.readDirRecSync(dir, 1)
         for (const file of files) {
-            const name = file.substring(file.lastIndexOf('/') + 1, file.length - '.json'.length)
+            const name = file.substring(file.lastIndexOf("/") + 1, file.length - ".json".length)
             const preset = IdPreset.fromFile(file)
 
             if (preset.searchable === false) {
@@ -212,30 +215,35 @@ class IdThief {
             console.log(`     ${name} (shop=${preset.tags["shop"]}), ${preset.icon}`)
 
             const thenClause: Record<string, string> = {
-                en: preset.name
+                en: preset.name,
             }
             const terms: Record<string, string[]> = {
-                en: preset.terms
+                en: preset.terms,
             }
             for (const lng of this._knownLanguages) {
-                const lngMc = lng.replace('-', '_')
+                const lngMc = lng.replace("-", "_")
                 const tr = this.getTranslation(lng, "presets", "presets", "shop/" + name, "name")
                 if (tr !== undefined) {
                     thenClause[lngMc] = tr
                 }
 
-                const termsTr = this.getTranslation(lng, "presets", "presets", "shop/" + name, "terms")
+                const termsTr = this.getTranslation(
+                    lng,
+                    "presets",
+                    "presets",
+                    "shop/" + name,
+                    "terms"
+                )
                 if (termsTr !== undefined) {
                     terms[lngMc] = termsTr.split(",")
                 }
-
             }
 
-            let tag = preset.parseTags();
-            const mapping : MappingConfigJson= {
+            let tag = preset.parseTags()
+            const mapping: MappingConfigJson = {
                 if: tag,
                 then: thenClause,
-                searchTerms: terms
+                searchTerms: terms,
             }
             if (preset.tags["shop"] == "yes") {
                 mapping["hideInAnswer"] = true
@@ -245,14 +253,13 @@ class IdThief {
             if (this._iconThief.steal(preset.icon)) {
                 mapping["icon"] = {
                     path: "./assets/layers/id_presets/" + preset.icon + ".svg",
-                    class: "medium"
+                    class: "medium",
                 }
             } else {
                 console.log(preset.icon + " could not be stolen :(")
             }
 
             mappings.push(mapping)
-
         }
 
         return mappings
@@ -263,50 +270,63 @@ class IdThief {
         if (cached) {
             return cached
         }
-        return this._tranlationFiles[language] = JSON.parse(readFileSync(`${this._idPresetsRepository}/dist/translations/${language}.json`, 'utf8'))
+        return (this._tranlationFiles[language] = JSON.parse(
+            readFileSync(`${this._idPresetsRepository}/dist/translations/${language}.json`, "utf8")
+        ))
     }
-
 }
 
 const targetDir = "./assets/layers/id_presets/"
 
-const makiThief = new MakiThief('../maki/icons/', targetDir + "maki-", {
-    authors: ['Maki icon set'],
-    license: 'CC0',
-    path: null,
-    sources: ["https://github.com/mapbox/maki"]
-}, 'maki-');
-
-
-const temakiThief = new MakiThief('../temaki/icons/', targetDir + "temaki-", {
-    authors: ['Temaki icon set'],
-    license: 'CC0',
-    path: null,
-    sources: ["https://github.com/ideditor/temaki"]
-}, 'temaki-');
-const fasThief = new MakiThief('../Font-Awesome/svgs/solid/', targetDir + "fas-", {
-    authors: ['Font-Awesome icon set'],
-    license: 'CC-BY 4.0',
-    path: null,
-    sources: ["https://github.com/FortAwesome/Font-Awesome"]
-}, 'fas-');
-const iconThief = new AggregateIconThief(
-    [makiThief, temakiThief, fasThief]
+const makiThief = new MakiThief(
+    "../maki/icons/",
+    targetDir + "maki-",
+    {
+        authors: ["Maki icon set"],
+        license: "CC0",
+        path: null,
+        sources: ["https://github.com/mapbox/maki"],
+    },
+    "maki-"
 )
+
+const temakiThief = new MakiThief(
+    "../temaki/icons/",
+    targetDir + "temaki-",
+    {
+        authors: ["Temaki icon set"],
+        license: "CC0",
+        path: null,
+        sources: ["https://github.com/ideditor/temaki"],
+    },
+    "temaki-"
+)
+const fasThief = new MakiThief(
+    "../Font-Awesome/svgs/solid/",
+    targetDir + "fas-",
+    {
+        authors: ["Font-Awesome icon set"],
+        license: "CC-BY 4.0",
+        path: null,
+        sources: ["https://github.com/FortAwesome/Font-Awesome"],
+    },
+    "fas-"
+)
+const iconThief = new AggregateIconThief([makiThief, temakiThief, fasThief])
 
 const thief = new IdThief("../id-tagging-schema/", iconThief)
 
 const id_presets_path = targetDir + "id_presets.json"
-const idPresets = <LayerConfigJson>JSON.parse(readFileSync(id_presets_path, 'utf8'))
+const idPresets = <LayerConfigJson>JSON.parse(readFileSync(id_presets_path, "utf8"))
 idPresets.tagRenderings = [
     {
         id: "shop_types",
-        mappings: thief.readShopPresets()
+        mappings: thief.readShopPresets(),
     },
     {
         id: "shop_rendering",
-        mappings: thief.readShopIcons()
-    }
+        mappings: thief.readShopIcons(),
+    },
 ]
 
-writeFileSync(id_presets_path, JSON.stringify(idPresets, null, "  "), 'utf8')
+writeFileSync(id_presets_path, JSON.stringify(idPresets, null, "  "), "utf8")

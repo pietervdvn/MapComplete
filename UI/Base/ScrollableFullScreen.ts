@@ -1,11 +1,11 @@
-import {UIElement} from "../UIElement";
-import Svg from "../../Svg";
-import Combine from "./Combine";
-import {FixedUiElement} from "./FixedUiElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import Hash from "../../Logic/Web/Hash";
-import BaseUIElement from "../BaseUIElement";
-import Title from "./Title";
+import { UIElement } from "../UIElement"
+import Svg from "../../Svg"
+import Combine from "./Combine"
+import { FixedUiElement } from "./FixedUiElement"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import Hash from "../../Logic/Web/Hash"
+import BaseUIElement from "../BaseUIElement"
+import Title from "./Title"
 
 /**
  *
@@ -17,99 +17,107 @@ import Title from "./Title";
  *
  */
 export default class ScrollableFullScreen extends UIElement {
-    private static readonly empty = new FixedUiElement("");
-    private static _currentlyOpen: ScrollableFullScreen;
-    public isShown: UIEventSource<boolean>;
-    private hashToShow: string;
-    private _component: BaseUIElement;
-    private _fullscreencomponent: BaseUIElement;
-    private _resetScrollSignal: UIEventSource<void> = new UIEventSource<void>(undefined);
+    private static readonly empty = new FixedUiElement("")
+    private static _currentlyOpen: ScrollableFullScreen
+    public isShown: UIEventSource<boolean>
+    private hashToShow: string
+    private _component: BaseUIElement
+    private _fullscreencomponent: BaseUIElement
+    private _resetScrollSignal: UIEventSource<void> = new UIEventSource<void>(undefined)
 
-    constructor(title: ((options: { mode: string }) => BaseUIElement),
-                content: ((options: { mode: string, resetScrollSignal: UIEventSource<void> }) => BaseUIElement),
-                hashToShow: string,
-                isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false),
-                options?: {
-                    setHash?: true | boolean    
-                }
+    constructor(
+        title: (options: { mode: string }) => BaseUIElement,
+        content: (options: {
+            mode: string
+            resetScrollSignal: UIEventSource<void>
+        }) => BaseUIElement,
+        hashToShow: string,
+        isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false),
+        options?: {
+            setHash?: true | boolean
+        }
     ) {
-        super();
-        this.hashToShow = hashToShow;
-        this.isShown = isShown;
+        super()
+        this.hashToShow = hashToShow
+        this.isShown = isShown
 
         if (hashToShow === undefined) {
             throw "HashToShow should be defined as it is vital for the 'back' key functionality"
         }
-        
+
         const desktopOptions = {
             mode: "desktop",
-            resetScrollSignal: this._resetScrollSignal
+            resetScrollSignal: this._resetScrollSignal,
         }
-        
+
         const mobileOptions = {
             mode: "mobile",
-            resetScrollSignal: this._resetScrollSignal
+            resetScrollSignal: this._resetScrollSignal,
         }
 
-        this._component = this.BuildComponent(title(desktopOptions), content(desktopOptions))            .SetClass("hidden md:block");
-        this._fullscreencomponent = this.BuildComponent(title(mobileOptions), content(mobileOptions).SetClass("pb-20"));
+        this._component = this.BuildComponent(
+            title(desktopOptions),
+            content(desktopOptions)
+        ).SetClass("hidden md:block")
+        this._fullscreencomponent = this.BuildComponent(
+            title(mobileOptions),
+            content(mobileOptions).SetClass("pb-20")
+        )
 
-
-        const self = this;
-        const setHash = options?.setHash ?? true;
-        if(setHash){
-            Hash.hash.addCallback(h => {
+        const self = this
+        const setHash = options?.setHash ?? true
+        if (setHash) {
+            Hash.hash.addCallback((h) => {
                 if (h === undefined) {
                     isShown.setData(false)
                 }
             })
         }
-        isShown.addCallback(isShown => {
+        isShown.addCallback((isShown) => {
             if (isShown) {
                 // We first must set the hash, then activate the panel
                 // If the order is wrong, this will cause the panel to disactivate again
-                if(setHash){
+                if (setHash) {
                     Hash.hash.setData(hashToShow)
                 }
-                self.Activate();
+                self.Activate()
             } else {
                 // Some cleanup...
 
-                const fs = document.getElementById("fullscreen");
+                const fs = document.getElementById("fullscreen")
                 if (fs !== null) {
                     ScrollableFullScreen.empty.AttachTo("fullscreen")
                     fs.classList.add("hidden")
                 }
 
-                ScrollableFullScreen._currentlyOpen?.isShown?.setData(false);
+                ScrollableFullScreen._currentlyOpen?.isShown?.setData(false)
             }
         })
     }
 
     InnerRender(): BaseUIElement {
-        return this._component;
+        return this._component
     }
 
     Destroy() {
-        super.Destroy();
+        super.Destroy()
         this._component.Destroy()
         this._fullscreencomponent.Destroy()
     }
 
     Activate(): void {
         this.isShown.setData(true)
-        this._fullscreencomponent.AttachTo("fullscreen");
-        const fs = document.getElementById("fullscreen");
-        ScrollableFullScreen._currentlyOpen = this;
+        this._fullscreencomponent.AttachTo("fullscreen")
+        const fs = document.getElementById("fullscreen")
+        ScrollableFullScreen._currentlyOpen = this
         fs.classList.remove("hidden")
     }
 
-    private BuildComponent(title: BaseUIElement, content: BaseUIElement) :BaseUIElement {
-        const returnToTheMap =
-            new Combine([
-                Svg.back_svg().SetClass("block md:hidden w-12 h-12 p-2 svg-foreground"),
-                Svg.close_svg()                    .SetClass("hidden md:block  w-12 h-12  p-3 svg-foreground")
-            ]).SetClass("rounded-full p-0 flex-shrink-0 self-center")
+    private BuildComponent(title: BaseUIElement, content: BaseUIElement): BaseUIElement {
+        const returnToTheMap = new Combine([
+            Svg.back_svg().SetClass("block md:hidden w-12 h-12 p-2 svg-foreground"),
+            Svg.close_svg().SetClass("hidden md:block  w-12 h-12  p-3 svg-foreground"),
+        ]).SetClass("rounded-full p-0 flex-shrink-0 self-center")
 
         returnToTheMap.onClick(() => {
             this.isShown.setData(false)
@@ -117,24 +125,28 @@ export default class ScrollableFullScreen extends UIElement {
         })
 
         title = new Title(title, 2)
-        title.SetClass("text-l sm:text-xl md:text-2xl w-full p-0 max-h-20vh overflow-y-auto self-center")
-        
-        const contentWrapper =  new Combine([content])
-            .SetClass("block p-2 md:pt-4 w-full h-full overflow-y-auto desktop:max-h-65vh")
-        
-        this._resetScrollSignal.addCallback(_ => {
-            contentWrapper.ScrollToTop();
+        title.SetClass(
+            "text-l sm:text-xl md:text-2xl w-full p-0 max-h-20vh overflow-y-auto self-center"
+        )
+
+        const contentWrapper = new Combine([content]).SetClass(
+            "block p-2 md:pt-4 w-full h-full overflow-y-auto desktop:max-h-65vh"
+        )
+
+        this._resetScrollSignal.addCallback((_) => {
+            contentWrapper.ScrollToTop()
         })
-        
-       return new Combine([
+
+        return new Combine([
             new Combine([
-                new Combine([returnToTheMap, title])
-                    .SetClass("border-b-1 border-black shadow bg-white flex flex-shrink-0 pt-1 pb-1 md:pt-0 md:pb-0"),
-              contentWrapper ,
+                new Combine([returnToTheMap, title]).SetClass(
+                    "border-b-1 border-black shadow bg-white flex flex-shrink-0 pt-1 pb-1 md:pt-0 md:pb-0"
+                ),
+                contentWrapper,
                 // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
-            ]).SetClass("flex flex-col h-full relative bg-white")
-        ]).SetClass("fixed top-0 left-0 right-0 h-screen w-screen desktop:max-h-65vh md:w-auto md:relative z-above-controls md:rounded-xl overflow-hidden");
-
+            ]).SetClass("flex flex-col h-full relative bg-white"),
+        ]).SetClass(
+            "fixed top-0 left-0 right-0 h-screen w-screen desktop:max-h-65vh md:w-auto md:relative z-above-controls md:rounded-xl overflow-hidden"
+        )
     }
-
 }

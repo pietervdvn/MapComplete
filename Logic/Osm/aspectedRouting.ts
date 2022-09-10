@@ -1,13 +1,12 @@
 export default class AspectedRouting {
-
     public readonly name: string
     public readonly description: string
     public readonly units: string
     public readonly program: any
 
     public constructor(program) {
-        this.name = program.name;
-        this.description = program.description;
+        this.name = program.name
+        this.description = program.description
         this.units = program.unit
         this.program = JSON.parse(JSON.stringify(program))
         delete this.program.name
@@ -20,40 +19,41 @@ export default class AspectedRouting {
      */
     public static interpret(program: any, properties: any) {
         if (typeof program !== "object") {
-            return program;
+            return program
         }
 
-        let functionName /*: string*/ = undefined;
+        let functionName /*: string*/ = undefined
         let functionArguments /*: any */ = undefined
         let otherValues = {}
         // @ts-ignore
-        Object.entries(program).forEach(tag => {
-                const [key, value] = tag;
-                if (key.startsWith("$")) {
-                    functionName = key
-                    functionArguments = value
-                } else {
-                    otherValues[key] = value
-                }
+        Object.entries(program).forEach((tag) => {
+            const [key, value] = tag
+            if (key.startsWith("$")) {
+                functionName = key
+                functionArguments = value
+            } else {
+                otherValues[key] = value
             }
-        )
+        })
 
         if (functionName === undefined) {
             return AspectedRouting.interpretAsDictionary(program, properties)
         }
 
-        if (functionName === '$multiply') {
-            return AspectedRouting.multiplyScore(properties, functionArguments);
-        } else if (functionName === '$firstMatchOf') {
-            return AspectedRouting.getFirstMatchScore(properties, functionArguments);
-        } else if (functionName === '$min') {
-            return AspectedRouting.getMinValue(properties, functionArguments);
-        } else if (functionName === '$max') {
-            return AspectedRouting.getMaxValue(properties, functionArguments);
-        } else if (functionName === '$default') {
+        if (functionName === "$multiply") {
+            return AspectedRouting.multiplyScore(properties, functionArguments)
+        } else if (functionName === "$firstMatchOf") {
+            return AspectedRouting.getFirstMatchScore(properties, functionArguments)
+        } else if (functionName === "$min") {
+            return AspectedRouting.getMinValue(properties, functionArguments)
+        } else if (functionName === "$max") {
+            return AspectedRouting.getMaxValue(properties, functionArguments)
+        } else if (functionName === "$default") {
             return AspectedRouting.defaultV(functionArguments, otherValues, properties)
         } else {
-            console.error(`Error: Program ${functionName} is not implemented yet. ${JSON.stringify(program)}`);
+            console.error(
+                `Error: Program ${functionName} is not implemented yet. ${JSON.stringify(program)}`
+            )
         }
     }
 
@@ -70,7 +70,7 @@ export default class AspectedRouting {
      *     surface: {
      *         sett : 0.9
      *     }
-     *     
+     *
      * }
      *
      * in combination with the tags {highway: residential},
@@ -86,8 +86,8 @@ export default class AspectedRouting {
      */
     private static interpretAsDictionary(program, tags) {
         // @ts-ignore
-        return Object.entries(tags).map(tag => {
-            const [key, value] = tag;
+        return Object.entries(tags).map((tag) => {
+            const [key, value] = tag
             const propertyValue = program[key]
             if (propertyValue === undefined) {
                 return undefined
@@ -97,7 +97,7 @@ export default class AspectedRouting {
             }
             // @ts-ignore
             return propertyValue[value]
-        });
+        })
     }
 
     private static defaultV(subProgram, otherArgs, tags) {
@@ -105,7 +105,7 @@ export default class AspectedRouting {
         const normalProgram = Object.entries(otherArgs)[0][1]
         const value = AspectedRouting.interpret(normalProgram, tags)
         if (value !== undefined) {
-            return value;
+            return value
         }
         return AspectedRouting.interpret(subProgram, tags)
     }
@@ -121,13 +121,15 @@ export default class AspectedRouting {
 
         let subResults: any[]
         if (subprograms.length !== undefined) {
-            subResults = AspectedRouting.concatMap(subprograms, subprogram => AspectedRouting.interpret(subprogram, tags))
+            subResults = AspectedRouting.concatMap(subprograms, (subprogram) =>
+                AspectedRouting.interpret(subprogram, tags)
+            )
         } else {
             subResults = AspectedRouting.interpret(subprograms, tags)
         }
 
-        subResults.filter(r => r !== undefined).forEach(r => number *= parseFloat(r))
-        return number.toFixed(2);
+        subResults.filter((r) => r !== undefined).forEach((r) => (number *= parseFloat(r)))
+        return number.toFixed(2)
     }
 
     private static getFirstMatchScore(tags, order: any) {
@@ -136,12 +138,12 @@ export default class AspectedRouting {
         for (let key of order) {
             // @ts-ignore
             for (let entry of Object.entries(JSON.parse(tags))) {
-                const [tagKey, value] = entry;
+                const [tagKey, value] = entry
                 if (key === tagKey) {
                     // We have a match... let's evaluate the subprogram
                     const evaluated = AspectedRouting.interpret(value, tags)
                     if (evaluated !== undefined) {
-                        return evaluated;
+                        return evaluated
                     }
                 }
             }
@@ -152,26 +154,30 @@ export default class AspectedRouting {
     }
 
     private static getMinValue(tags, subprogram) {
-        const minArr = subprogram.map(part => {
-            if (typeof (part) === 'object') {
-                const calculatedValue = this.interpret(part, tags)
-                return parseFloat(calculatedValue)
-            } else {
-                return parseFloat(part);
-            }
-        }).filter(v => !isNaN(v));
-        return Math.min(...minArr);
+        const minArr = subprogram
+            .map((part) => {
+                if (typeof part === "object") {
+                    const calculatedValue = this.interpret(part, tags)
+                    return parseFloat(calculatedValue)
+                } else {
+                    return parseFloat(part)
+                }
+            })
+            .filter((v) => !isNaN(v))
+        return Math.min(...minArr)
     }
 
     private static getMaxValue(tags, subprogram) {
-        const maxArr = subprogram.map(part => {
-            if (typeof (part) === 'object') {
-                return parseFloat(AspectedRouting.interpret(part, tags))
-            } else {
-                return parseFloat(part);
-            }
-        }).filter(v => !isNaN(v));
-        return Math.max(...maxArr);
+        const maxArr = subprogram
+            .map((part) => {
+                if (typeof part === "object") {
+                    return parseFloat(AspectedRouting.interpret(part, tags))
+                } else {
+                    return parseFloat(part)
+                }
+            })
+            .filter((v) => !isNaN(v))
+        return Math.max(...maxArr)
     }
 
     private static concatMap(list, f): any[] {
@@ -185,11 +191,10 @@ export default class AspectedRouting {
                 result.push(elem)
             }
         }
-        return result;
+        return result
     }
 
     public evaluate(properties) {
         return AspectedRouting.interpret(this.program, properties)
     }
-
 }

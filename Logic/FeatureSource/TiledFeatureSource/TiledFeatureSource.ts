@@ -1,53 +1,65 @@
-import FeatureSource, {FeatureSourceForLayer, IndexedFeatureSource, Tiled} from "../FeatureSource";
-import {Store, UIEventSource} from "../../UIEventSource";
-import FilteredLayer from "../../../Models/FilteredLayer";
-import TileHierarchy from "./TileHierarchy";
-import {Tiles} from "../../../Models/TileRange";
-import {BBox} from "../../BBox";
+import FeatureSource, { FeatureSourceForLayer, IndexedFeatureSource, Tiled } from "../FeatureSource"
+import { Store, UIEventSource } from "../../UIEventSource"
+import FilteredLayer from "../../../Models/FilteredLayer"
+import TileHierarchy from "./TileHierarchy"
+import { Tiles } from "../../../Models/TileRange"
+import { BBox } from "../../BBox"
 
 /**
  * Contains all features in a tiled fashion.
  * The data will be automatically broken down into subtiles when there are too much features in a single tile or if the zoomlevel is too high
  */
-export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, FeatureSourceForLayer, TileHierarchy<IndexedFeatureSource & FeatureSourceForLayer & Tiled> {
-    public readonly z: number;
-    public readonly x: number;
-    public readonly y: number;
-    public readonly parent: TiledFeatureSource;
+export default class TiledFeatureSource
+    implements
+        Tiled,
+        IndexedFeatureSource,
+        FeatureSourceForLayer,
+        TileHierarchy<IndexedFeatureSource & FeatureSourceForLayer & Tiled>
+{
+    public readonly z: number
+    public readonly x: number
+    public readonly y: number
+    public readonly parent: TiledFeatureSource
     public readonly root: TiledFeatureSource
-    public readonly layer: FilteredLayer;
+    public readonly layer: FilteredLayer
     /* An index of all known tiles. allTiles[z][x][y].get('layerid') will yield the corresponding tile.
-    * Only defined on the root element!
+     * Only defined on the root element!
      */
-    public readonly loadedTiles: Map<number, TiledFeatureSource & FeatureSourceForLayer> = undefined;
+    public readonly loadedTiles: Map<number, TiledFeatureSource & FeatureSourceForLayer> = undefined
 
-    public readonly maxFeatureCount: number;
-    public readonly name;
-    public readonly features: UIEventSource<{ feature: any, freshness: Date }[]>
+    public readonly maxFeatureCount: number
+    public readonly name
+    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>
     public readonly containedIds: Store<Set<string>>
 
-    public readonly bbox: BBox;
-    public readonly tileIndex: number;
+    public readonly bbox: BBox
+    public readonly tileIndex: number
     private upper_left: TiledFeatureSource
     private upper_right: TiledFeatureSource
     private lower_left: TiledFeatureSource
     private lower_right: TiledFeatureSource
-    private readonly maxzoom: number;
+    private readonly maxzoom: number
     private readonly options: TiledFeatureSourceOptions
 
-    private constructor(z: number, x: number, y: number, parent: TiledFeatureSource, options?: TiledFeatureSourceOptions) {
-        this.z = z;
-        this.x = x;
-        this.y = y;
+    private constructor(
+        z: number,
+        x: number,
+        y: number,
+        parent: TiledFeatureSource,
+        options?: TiledFeatureSourceOptions
+    ) {
+        this.z = z
+        this.x = x
+        this.y = y
         this.bbox = BBox.fromTile(z, x, y)
         this.tileIndex = Tiles.tile_index(z, x, y)
         this.name = `TiledFeatureSource(${z},${x},${y})`
-        this.parent = parent;
+        this.parent = parent
         this.layer = options.layer
         options = options ?? {}
-        this.maxFeatureCount = options?.maxFeatureCount ?? 250;
+        this.maxFeatureCount = options?.maxFeatureCount ?? 250
         this.maxzoom = options.maxZoomLevel ?? 18
-        this.options = options;
+        this.options = options
         if (parent === undefined) {
             throw "Parent is not allowed to be undefined. Use null instead"
         }
@@ -55,50 +67,51 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
             throw "Invalid root tile: z, x and y should all be null"
         }
         if (parent === null) {
-            this.root = this;
+            this.root = this
             this.loadedTiles = new Map()
         } else {
-            this.root = this.parent.root;
-            this.loadedTiles = this.root.loadedTiles;
+            this.root = this.parent.root
+            this.loadedTiles = this.root.loadedTiles
             const i = Tiles.tile_index(z, x, y)
             this.root.loadedTiles.set(i, this)
         }
         this.features = new UIEventSource<any[]>([])
-        this.containedIds = this.features.map(features => {
+        this.containedIds = this.features.map((features) => {
             if (features === undefined) {
-                return undefined;
+                return undefined
             }
-            return new Set(features.map(f => f.feature.properties.id))
+            return new Set(features.map((f) => f.feature.properties.id))
         })
 
         // We register this tile, but only when there is some data in it
         if (this.options.registerTile !== undefined) {
-            this.features.addCallbackAndRunD(features => {
+            this.features.addCallbackAndRunD((features) => {
                 if (features.length === 0) {
-                    return;
+                    return
                 }
                 this.options.registerTile(this)
-                return true;
+                return true
             })
         }
-
-
     }
 
-    public static createHierarchy(features: FeatureSource, options?: TiledFeatureSourceOptions): TiledFeatureSource {
+    public static createHierarchy(
+        features: FeatureSource,
+        options?: TiledFeatureSourceOptions
+    ): TiledFeatureSource {
         options = {
             ...options,
-            layer: features["layer"] ?? options.layer
+            layer: features["layer"] ?? options.layer,
         }
         const root = new TiledFeatureSource(0, 0, 0, null, options)
-        features.features?.addCallbackAndRunD(feats => root.addFeatures(feats))
-        return root;
+        features.features?.addCallbackAndRunD((feats) => root.addFeatures(feats))
+        return root
     }
 
     private isSplitNeeded(featureCount: number) {
         if (this.upper_left !== undefined) {
             // This tile has been split previously, so we keep on splitting
-            return true;
+            return true
         }
         if (this.z >= this.maxzoom) {
             // We are not allowed to split any further
@@ -111,7 +124,6 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
 
         // To much features - we split
         return featureCount > this.maxFeatureCount
-
     }
 
     /***
@@ -120,21 +132,45 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
      * @param features
      * @private
      */
-    private addFeatures(features: { feature: any, freshness: Date }[]) {
+    private addFeatures(features: { feature: any; freshness: Date }[]) {
         if (features === undefined || features.length === 0) {
-            return;
+            return
         }
 
         if (!this.isSplitNeeded(features.length)) {
             this.features.setData(features)
-            return;
+            return
         }
 
         if (this.upper_left === undefined) {
-            this.upper_left = new TiledFeatureSource(this.z + 1, this.x * 2, this.y * 2, this, this.options)
-            this.upper_right = new TiledFeatureSource(this.z + 1, this.x * 2 + 1, this.y * 2, this, this.options)
-            this.lower_left = new TiledFeatureSource(this.z + 1, this.x * 2, this.y * 2 + 1, this, this.options)
-            this.lower_right = new TiledFeatureSource(this.z + 1, this.x * 2 + 1, this.y * 2 + 1, this, this.options)
+            this.upper_left = new TiledFeatureSource(
+                this.z + 1,
+                this.x * 2,
+                this.y * 2,
+                this,
+                this.options
+            )
+            this.upper_right = new TiledFeatureSource(
+                this.z + 1,
+                this.x * 2 + 1,
+                this.y * 2,
+                this,
+                this.options
+            )
+            this.lower_left = new TiledFeatureSource(
+                this.z + 1,
+                this.x * 2,
+                this.y * 2 + 1,
+                this,
+                this.options
+            )
+            this.lower_right = new TiledFeatureSource(
+                this.z + 1,
+                this.x * 2 + 1,
+                this.y * 2 + 1,
+                this,
+                this.options
+            )
         }
 
         const ulf = []
@@ -147,7 +183,7 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
             const bbox = BBox.get(feature.feature)
 
             // There are a few strategies to deal with features that cross tile boundaries
-            
+
             if (this.options.noDuplicates) {
                 // Strategy 1: We put the feature into a somewhat matching tile
                 if (bbox.overlapsWith(this.upper_left.bbox)) {
@@ -195,19 +231,18 @@ export default class TiledFeatureSource implements Tiled, IndexedFeatureSource, 
         this.lower_left.addFeatures(llf)
         this.lower_right.addFeatures(lrf)
         this.features.setData(overlapsboundary)
-
     }
 }
 
 export interface TiledFeatureSourceOptions {
-    readonly maxFeatureCount?: number,
-    readonly maxZoomLevel?: number,
-    readonly minZoomLevel?: number,
+    readonly maxFeatureCount?: number
+    readonly maxZoomLevel?: number
+    readonly minZoomLevel?: number
     /**
      * IF minZoomLevel is set, and if a feature runs through a tile boundary, it would normally be duplicated.
      * Setting 'dontEnforceMinZoomLevel' will assign to feature to some matching subtile.
      */
-    readonly noDuplicates?: boolean,
-    readonly registerTile?: (tile: TiledFeatureSource & FeatureSourceForLayer & Tiled) => void,
+    readonly noDuplicates?: boolean
+    readonly registerTile?: (tile: TiledFeatureSource & FeatureSourceForLayer & Tiled) => void
     readonly layer?: FilteredLayer
 }

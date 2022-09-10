@@ -1,17 +1,15 @@
-import * as fs from "fs";
-import {existsSync, lstatSync, readdirSync, readFileSync} from "fs";
-import {Utils} from "../Utils";
-import * as https from "https";
-import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
-import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-import xml2js from 'xml2js';
+import * as fs from "fs"
+import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
+import { Utils } from "../Utils"
+import * as https from "https"
+import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
+import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+import xml2js from "xml2js"
 
 export default class ScriptUtils {
-
     public static fixUtils() {
         Utils.externalDownloadFunction = ScriptUtils.Download
     }
-
 
     public static readDirRecSync(path, maxDepth = 999): string[] {
         const result = []
@@ -29,20 +27,18 @@ export default class ScriptUtils {
                 result.push(fullEntry)
             }
         }
-        return result;
+        return result
     }
 
     public static DownloadFileTo(url, targetFilePath: string): void {
         console.log("Downloading ", url, "to", targetFilePath)
         https.get(url, (res) => {
-            const filePath = fs.createWriteStream(targetFilePath);
-            res.pipe(filePath);
-            filePath.on('finish', () => {
-                filePath.close();
-                console.log('Download Completed');
+            const filePath = fs.createWriteStream(targetFilePath)
+            res.pipe(filePath)
+            filePath.on("finish", () => {
+                filePath.close()
+                console.log("Download Completed")
             })
-
-
         })
     }
 
@@ -53,35 +49,35 @@ export default class ScriptUtils {
     public static sleep(ms) {
         if (ms <= 0) {
             process.stdout.write("\r                                       \r")
-            return;
+            return
         }
         return new Promise((resolve) => {
-            process.stdout.write("\r Sleeping for " + (ms / 1000) + "s \r")
-            setTimeout(resolve, 1000);
-        }).then(() => ScriptUtils.sleep(ms - 1000));
+            process.stdout.write("\r Sleeping for " + ms / 1000 + "s \r")
+            setTimeout(resolve, 1000)
+        }).then(() => ScriptUtils.sleep(ms - 1000))
     }
 
     public static getLayerPaths(): string[] {
         return ScriptUtils.readDirRecSync("./assets/layers")
-            .filter(path => path.indexOf(".json") > 0)
-            .filter(path => path.indexOf(".proto.json") < 0)
-            .filter(path => path.indexOf("license_info.json") < 0)
+            .filter((path) => path.indexOf(".json") > 0)
+            .filter((path) => path.indexOf(".proto.json") < 0)
+            .filter((path) => path.indexOf("license_info.json") < 0)
     }
 
-    public static getLayerFiles(): { parsed: LayerConfigJson, path: string }[] {
+    public static getLayerFiles(): { parsed: LayerConfigJson; path: string }[] {
         return ScriptUtils.readDirRecSync("./assets/layers")
-            .filter(path => path.indexOf(".json") > 0)
-            .filter(path => path.indexOf(".proto.json") < 0)
-            .filter(path => path.indexOf("license_info.json") < 0)
-            .map(path => {
+            .filter((path) => path.indexOf(".json") > 0)
+            .filter((path) => path.indexOf(".proto.json") < 0)
+            .filter((path) => path.indexOf("license_info.json") < 0)
+            .map((path) => {
                 try {
                     const contents = readFileSync(path, "UTF8")
                     if (contents === "") {
                         throw "The file " + path + " is empty, did you properly save?"
                     }
 
-                    const parsed = JSON.parse(contents);
-                    return {parsed, path}
+                    const parsed = JSON.parse(contents)
+                    return { parsed, path }
                 } catch (e) {
                     console.error("Could not parse file ", "./assets/layers/" + path, "due to ", e)
                     throw e
@@ -91,29 +87,28 @@ export default class ScriptUtils {
 
     public static getThemePaths(): string[] {
         return ScriptUtils.readDirRecSync("./assets/themes")
-            .filter(path => path.endsWith(".json") && !path.endsWith(".proto.json"))
-            .filter(path => path.indexOf("license_info.json") < 0)
+            .filter((path) => path.endsWith(".json") && !path.endsWith(".proto.json"))
+            .filter((path) => path.indexOf("license_info.json") < 0)
     }
 
-    public static getThemeFiles(): { parsed: LayoutConfigJson, path: string }[] {
-        return this.getThemePaths()
-            .map(path => {
-                try {
-                    const contents = readFileSync(path, "UTF8");
-                    if (contents === "") {
-                        throw "The file " + path + " is empty, did you properly save?"
-                    }
-                    const parsed = JSON.parse(contents);
-                    return {parsed: parsed, path: path}
-                } catch (e) {
-                    console.error("Could not read file ", path, "due to ", e)
-                    throw e
+    public static getThemeFiles(): { parsed: LayoutConfigJson; path: string }[] {
+        return this.getThemePaths().map((path) => {
+            try {
+                const contents = readFileSync(path, "UTF8")
+                if (contents === "") {
+                    throw "The file " + path + " is empty, did you properly save?"
                 }
-            });
+                const parsed = JSON.parse(contents)
+                return { parsed: parsed, path: path }
+            } catch (e) {
+                console.error("Could not read file ", path, "due to ", e)
+                throw e
+            }
+        })
     }
 
     public static TagInfoHistogram(key: string): Promise<{
-        data: { count: number, value: string, fraction: number }[]
+        data: { count: number; value: string; fraction: number }[]
     }> {
         const url = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&filter=all&lang=en&sortname=count&sortorder=desc&page=1&rp=17&qtype=value`
         return ScriptUtils.DownloadJSON(url)
@@ -127,17 +122,17 @@ export default class ScriptUtils {
         return root.svg
     }
 
-    public static async ReadSvgSync(path: string, callback: ((svg: any) => void)): Promise<any> {
-        xml2js.parseString(readFileSync(path, "UTF8"), {async: false}, (err, root) => {
+    public static async ReadSvgSync(path: string, callback: (svg: any) => void): Promise<any> {
+        xml2js.parseString(readFileSync(path, "UTF8"), { async: false }, (err, root) => {
             if (err) {
                 throw err
             }
-            callback(root["svg"]);
+            callback(root["svg"])
         })
     }
 
     private static async DownloadJSON(url: string, headers?: any): Promise<any> {
-        const data = await ScriptUtils.Download(url, headers);
+        const data = await ScriptUtils.Download(url, headers)
         return JSON.parse(data.content)
     }
 
@@ -148,29 +143,30 @@ export default class ScriptUtils {
                 headers.accept = "application/json"
                 console.log(" > ScriptUtils.DownloadJson(", url, ")")
                 const urlObj = new URL(url)
-                https.get({
-                    host: urlObj.host,
-                    path: urlObj.pathname + urlObj.search,
+                https.get(
+                    {
+                        host: urlObj.host,
+                        path: urlObj.pathname + urlObj.search,
 
-                    port: urlObj.port,
-                    headers: headers
-                }, (res) => {
-                    const parts: string[] = []
-                    res.setEncoding('utf8');
-                    res.on('data', function (chunk) {
-                        // @ts-ignore
-                        parts.push(chunk)
-                    });
+                        port: urlObj.port,
+                        headers: headers,
+                    },
+                    (res) => {
+                        const parts: string[] = []
+                        res.setEncoding("utf8")
+                        res.on("data", function (chunk) {
+                            // @ts-ignore
+                            parts.push(chunk)
+                        })
 
-                    res.addListener('end', function () {
-                        resolve({content: parts.join("")})
-                    });
-                })
+                        res.addListener("end", function () {
+                            resolve({ content: parts.join("") })
+                        })
+                    }
+                )
             } catch (e) {
                 reject(e)
             }
         })
-
     }
-
 }

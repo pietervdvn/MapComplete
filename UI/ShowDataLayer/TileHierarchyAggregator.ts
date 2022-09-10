@@ -1,10 +1,13 @@
-import FeatureSource, {FeatureSourceForLayer, Tiled} from "../../Logic/FeatureSource/FeatureSource";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import {Tiles} from "../../Models/TileRange";
-import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
-import {BBox} from "../../Logic/BBox";
-import FilteredLayer from "../../Models/FilteredLayer";
+import FeatureSource, {
+    FeatureSourceForLayer,
+    Tiled,
+} from "../../Logic/FeatureSource/FeatureSource"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import { Tiles } from "../../Models/TileRange"
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
+import { BBox } from "../../Logic/BBox"
+import FilteredLayer from "../../Models/FilteredLayer"
 
 /**
  * A feature source containing but a single feature, which keeps stats about a tile
@@ -14,32 +17,50 @@ export class TileHierarchyAggregator implements FeatureSource {
     public totalValue: number = 0
     public showCount: number = 0
     public hiddenCount: number = 0
-    public readonly features = new UIEventSource<{ feature: any, freshness: Date }[]>(TileHierarchyAggregator.empty)
-    public readonly name;
-    private _parent: TileHierarchyAggregator;
-    private _root: TileHierarchyAggregator;
-    private _z: number;
-    private _x: number;
-    private _y: number;
+    public readonly features = new UIEventSource<{ feature: any; freshness: Date }[]>(
+        TileHierarchyAggregator.empty
+    )
+    public readonly name
+    private _parent: TileHierarchyAggregator
+    private _root: TileHierarchyAggregator
+    private _z: number
+    private _x: number
+    private _y: number
     private _tileIndex: number
     private _counter: SingleTileCounter
-    private _subtiles: [TileHierarchyAggregator, TileHierarchyAggregator, TileHierarchyAggregator, TileHierarchyAggregator] = [undefined, undefined, undefined, undefined]
+    private _subtiles: [
+        TileHierarchyAggregator,
+        TileHierarchyAggregator,
+        TileHierarchyAggregator,
+        TileHierarchyAggregator
+    ] = [undefined, undefined, undefined, undefined]
     private readonly featuresStatic = []
-    private readonly featureProperties: { count: string, kilocount: string, tileId: string, id: string, showCount: string, totalCount: string };
-    private readonly _state: { filteredLayers: UIEventSource<FilteredLayer[]> };
+    private readonly featureProperties: {
+        count: string
+        kilocount: string
+        tileId: string
+        id: string
+        showCount: string
+        totalCount: string
+    }
+    private readonly _state: { filteredLayers: UIEventSource<FilteredLayer[]> }
     private readonly updateSignal = new UIEventSource<any>(undefined)
 
-    private constructor(parent: TileHierarchyAggregator,
-                        state: {
-                            filteredLayers: UIEventSource<FilteredLayer[]>
-                        },
-                        z: number, x: number, y: number) {
-        this._parent = parent;
-        this._state = state;
+    private constructor(
+        parent: TileHierarchyAggregator,
+        state: {
+            filteredLayers: UIEventSource<FilteredLayer[]>
+        },
+        z: number,
+        x: number,
+        y: number
+    ) {
+        this._parent = parent
+        this._state = state
         this._root = parent?._root ?? this
-        this._z = z;
-        this._x = x;
-        this._y = y;
+        this._z = z
+        this._x = x
+        this._y = y
         this._tileIndex = Tiles.tile_index(z, x, y)
         this.name = "Count(" + this._tileIndex + ")"
 
@@ -49,39 +70,39 @@ export class TileHierarchyAggregator implements FeatureSource {
             count: `0`,
             kilocount: "0",
             showCount: "0",
-            totalCount: "0"
+            totalCount: "0",
         }
         this.featureProperties = totals
 
         const now = new Date()
         const feature = {
-            "type": "Feature",
-            "properties": totals,
-            "geometry": {
-                "type": "Point",
-                "coordinates": Tiles.centerPointOf(z, x, y)
-            }
+            type: "Feature",
+            properties: totals,
+            geometry: {
+                type: "Point",
+                coordinates: Tiles.centerPointOf(z, x, y),
+            },
         }
-        this.featuresStatic.push({feature: feature, freshness: now})
+        this.featuresStatic.push({ feature: feature, freshness: now })
 
         const bbox = BBox.fromTile(z, x, y)
         const box = {
-            "type": "Feature",
-            "properties": totals,
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
+            type: "Feature",
+            properties: totals,
+            geometry: {
+                type: "Polygon",
+                coordinates: [
                     [
                         [bbox.minLon, bbox.minLat],
                         [bbox.minLon, bbox.maxLat],
                         [bbox.maxLon, bbox.maxLat],
                         [bbox.maxLon, bbox.minLat],
-                        [bbox.minLon, bbox.minLat]
-                    ]
-                ]
-            }
+                        [bbox.minLon, bbox.minLat],
+                    ],
+                ],
+            },
         }
-        this.featuresStatic.push({feature: box, freshness: now})
+        this.featuresStatic.push({ feature: box, freshness: now })
     }
 
     public static createHierarchy(state: { filteredLayers: UIEventSource<FilteredLayer[]> }) {
@@ -90,7 +111,7 @@ export class TileHierarchyAggregator implements FeatureSource {
 
     public getTile(tileIndex): TileHierarchyAggregator {
         if (tileIndex === this._tileIndex) {
-            return this;
+            return this
         }
         let [tileZ, tileX, tileY] = Tiles.tile_from_index(tileIndex)
         while (tileZ - 1 > this._z) {
@@ -98,22 +119,21 @@ export class TileHierarchyAggregator implements FeatureSource {
             tileY = Math.floor(tileY / 2)
             tileZ--
         }
-        const xDiff = tileX - (2 * this._x)
-        const yDiff = tileY - (2 * this._y)
-        const subtileIndex = yDiff * 2 + xDiff;
+        const xDiff = tileX - 2 * this._x
+        const yDiff = tileY - 2 * this._y
+        const subtileIndex = yDiff * 2 + xDiff
         return this._subtiles[subtileIndex]?.getTile(tileIndex)
     }
 
     public addTile(source: FeatureSourceForLayer & Tiled) {
-        const self = this;
+        const self = this
         if (source.tileIndex === this._tileIndex) {
             if (this._counter === undefined) {
                 this._counter = new SingleTileCounter(this._tileIndex)
-                this._counter.countsPerLayer.addCallbackAndRun(_ => self.update())
+                this._counter.countsPerLayer.addCallbackAndRun((_) => self.update())
             }
             this._counter.addTileCount(source)
         } else {
-
             // We have to give it to one of the subtiles
             let [tileZ, tileX, tileY] = Tiles.tile_from_index(source.tileIndex)
             while (tileZ - 1 > this._z) {
@@ -121,42 +141,57 @@ export class TileHierarchyAggregator implements FeatureSource {
                 tileY = Math.floor(tileY / 2)
                 tileZ--
             }
-            const xDiff = tileX - (2 * this._x)
-            const yDiff = tileY - (2 * this._y)
+            const xDiff = tileX - 2 * this._x
+            const yDiff = tileY - 2 * this._y
 
-            const subtileIndex = yDiff * 2 + xDiff;
+            const subtileIndex = yDiff * 2 + xDiff
             if (this._subtiles[subtileIndex] === undefined) {
-                this._subtiles[subtileIndex] = new TileHierarchyAggregator(this, this._state, tileZ, tileX, tileY)
+                this._subtiles[subtileIndex] = new TileHierarchyAggregator(
+                    this,
+                    this._state,
+                    tileZ,
+                    tileX,
+                    tileY
+                )
             }
             this._subtiles[subtileIndex].addTile(source)
         }
         this.updateSignal.setData(source)
     }
 
-    getCountsForZoom(clusteringConfig: { maxZoom: number }, locationControl: UIEventSource<{ zoom: number }>, cutoff: number = 0): FeatureSource {
+    getCountsForZoom(
+        clusteringConfig: { maxZoom: number },
+        locationControl: UIEventSource<{ zoom: number }>,
+        cutoff: number = 0
+    ): FeatureSource {
         const self = this
         const empty = []
-        const features = locationControl.map(loc => loc.zoom).map(targetZoom => {
-            if (targetZoom - 1 > clusteringConfig.maxZoom) {
-                return empty
-            }
+        const features = locationControl
+            .map((loc) => loc.zoom)
+            .map(
+                (targetZoom) => {
+                    if (targetZoom - 1 > clusteringConfig.maxZoom) {
+                        return empty
+                    }
 
-            const features: {feature: any, freshness: Date}[] = []
-            self.visitSubTiles(aggr => {
-                if (aggr.showCount < cutoff) {
-                    return false
-                }
-                if (aggr._z === targetZoom) {
-                    features.push(...aggr.features.data)
-                    return false
-                }
-                return aggr._z <= targetZoom;
-            })
+                    const features: { feature: any; freshness: Date }[] = []
+                    self.visitSubTiles((aggr) => {
+                        if (aggr.showCount < cutoff) {
+                            return false
+                        }
+                        if (aggr._z === targetZoom) {
+                            features.push(...aggr.features.data)
+                            return false
+                        }
+                        return aggr._z <= targetZoom
+                    })
 
-            return features
-        }, [this.updateSignal.stabilized(500)])
+                    return features
+                },
+                [this.updateSignal.stabilized(500)]
+            )
 
-        return new StaticFeatureSource(features);
+        return new StaticFeatureSource(features)
     }
 
     private update() {
@@ -176,14 +211,13 @@ export class TileHierarchyAggregator implements FeatureSource {
             if (flayer.isDisplayed.data && this._z >= flayer.layerDef.minzoom) {
                 showCount += count
             } else {
-                hiddenCount += count;
+                hiddenCount += count
             }
         })
 
-
         for (const tile of this._subtiles) {
             if (tile === undefined) {
-                continue;
+                continue
             }
             total += tile.totalValue
 
@@ -192,7 +226,10 @@ export class TileHierarchyAggregator implements FeatureSource {
 
             for (const key in tile.featureProperties) {
                 if (key.startsWith("layer:")) {
-                    newMap.set(key, (newMap.get(key) ?? 0) + Number(tile.featureProperties[key] ?? 0))
+                    newMap.set(
+                        key,
+                        (newMap.get(key) ?? 0) + Number(tile.featureProperties[key] ?? 0)
+                    )
                 }
             }
         }
@@ -205,8 +242,8 @@ export class TileHierarchyAggregator implements FeatureSource {
         if (total === 0) {
             this.features.setData(TileHierarchyAggregator.empty)
         } else {
-            this.featureProperties.count = "" + total;
-            this.featureProperties.kilocount = "" + Math.floor(total / 1000);
+            this.featureProperties.count = "" + total
+            this.featureProperties.kilocount = "" + Math.floor(total / 1000)
             this.featureProperties.showCount = "" + showCount
             this.featureProperties.totalCount = "" + total
             newMap.forEach((value, key) => {
@@ -221,7 +258,7 @@ export class TileHierarchyAggregator implements FeatureSource {
     private visitSubTiles(f: (aggr: TileHierarchyAggregator) => boolean) {
         const visitFurther = f(this)
         if (visitFurther) {
-            this._subtiles.forEach(tile => tile?.visitSubTiles(f))
+            this._subtiles.forEach((tile) => tile?.visitSubTiles(f))
         }
     }
 }
@@ -230,20 +267,22 @@ export class TileHierarchyAggregator implements FeatureSource {
  * Keeps track of a single tile
  */
 class SingleTileCounter implements Tiled {
-    public readonly bbox: BBox;
-    public readonly tileIndex: number;
-    public readonly countsPerLayer: UIEventSource<Map<string, number>> = new UIEventSource<Map<string, number>>(new Map<string, number>())
+    public readonly bbox: BBox
+    public readonly tileIndex: number
+    public readonly countsPerLayer: UIEventSource<Map<string, number>> = new UIEventSource<
+        Map<string, number>
+    >(new Map<string, number>())
     public readonly z: number
     public readonly x: number
     public readonly y: number
-    private readonly registeredLayers: Map<string, LayerConfig> = new Map<string, LayerConfig>();
+    private readonly registeredLayers: Map<string, LayerConfig> = new Map<string, LayerConfig>()
 
     constructor(tileIndex: number) {
         this.tileIndex = tileIndex
         this.bbox = BBox.fromTileIndex(tileIndex)
         const [z, x, y] = Tiles.tile_from_index(tileIndex)
-        this.z = z;
-        this.x = x;
+        this.z = z
+        this.x = x
         this.y = y
     }
 
@@ -251,11 +290,13 @@ class SingleTileCounter implements Tiled {
         const layer = source.layer.layerDef
         this.registeredLayers.set(layer.id, layer)
         const self = this
-        source.features.map(f => {
-            const isDisplayed = source.layer.isDisplayed.data
-            self.countsPerLayer.data.set(layer.id, isDisplayed ? f.length : 0)
-            self.countsPerLayer.ping()
-        }, [source.layer.isDisplayed])
+        source.features.map(
+            (f) => {
+                const isDisplayed = source.layer.isDisplayed.data
+                self.countsPerLayer.data.set(layer.id, isDisplayed ? f.length : 0)
+                self.countsPerLayer.ping()
+            },
+            [source.layer.isDisplayed]
+        )
     }
-
 }
