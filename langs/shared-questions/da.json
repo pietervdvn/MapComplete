@@ -1,5 +1,8 @@
 {
     "shared_questions": {
+        "description": {
+            "question": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.<br/><span style='font-size: small'>Gentag ikke allerede nævnte fakta</span>"
+        },
         "dog-access": {
             "mappings": {
                 "0": {
@@ -16,6 +19,61 @@
                 }
             },
             "question": "Er hunde tilladt i denne virksomhed?"
+        },
+        "email": {
+            "question": "Hvad er mailadressen på {title()}?"
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Dette sted har en lydinduktionssløjfe"
+                },
+                "1": {
+                    "then": "Dette sted <b>har ikke</b> en lydinduktionssløjfe"
+                }
+            },
+            "question": "Har dette sted en lydinduktionssløjfe til personer med nedsat hørelse?"
+        },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "Dette sted tilbyder trådløs internetadgang"
+                },
+                "1": {
+                    "then": "Dette sted <b>tilbyder ikke</b> internetadgang"
+                },
+                "2": {
+                    "then": "Dette sted tilbyder internetadgang"
+                },
+                "3": {
+                    "then": "Dette sted tilbyder internetadgang via en terminal eller computer"
+                },
+                "4": {
+                    "then": "Dette sted tilbyder internetadgang via kabel"
+                }
+            },
+            "question": "Tilbyder dette sted internetadgang?"
+        },
+        "internet-fee": {
+            "mappings": {
+                "0": {
+                    "then": "Der er et gebyr for internetadgang på dette sted"
+                },
+                "1": {
+                    "then": "Internetadgang er gratis på dette sted"
+                },
+                "2": {
+                    "then": "Internetadgang er gratis på dette sted, kun for kunder"
+                }
+            },
+            "question": "Er der et gebyr for internetadgang?"
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Indtast netværksnavnet"
+            },
+            "question": "Hvad er netværksnavnet for den trådløse internetadgang?",
+            "render": "Netværksnavnet er <b>{internet_access:ssid}</b>"
         },
         "level": {
             "mappings": {
@@ -35,8 +93,14 @@
                     "then": "Beliggende på første kælderetage"
                 }
             },
-            "render": "Beliggende på {level}. etage",
-            "question": "På hvilket niveau er denne funktion placeret?"
+            "question": "På hvilket niveau er denne funktion placeret?",
+            "render": "Beliggende på {level}. etage"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Hvilke niveauer går denne elevator til?",
+                "render": "Denne elevator går til etager {level}"
+            }
         },
         "opening_hours": {
             "question": "Hvad er åbningstiderne for {title()}?",
@@ -65,6 +129,9 @@
                 }
             }
         },
+        "phone": {
+            "question": "Hvad er telefonnummeret til {title()}?"
+        },
         "service:electricity": {
             "mappings": {
                 "0": {
@@ -81,6 +148,23 @@
                 }
             },
             "question": "Har denne faciliteter stikkontakter tilgængelige for kunder, når de er inde?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Rygning er <b>tilladt</b>"
+                },
+                "1": {
+                    "then": "Rygning er <b>ikke tilladt</b>"
+                },
+                "2": {
+                    "then": "Rygning er <b>tilladt udenfor</b>."
+                }
+            },
+            "question": "Er det tilladt at ryge på {title()}?"
+        },
+        "website": {
+            "question": "Hvad er webstedet for {title()}?"
         },
         "wheelchair-access": {
             "mappings": {
@@ -117,90 +201,6 @@
                 }
             },
             "question": "Hvad er det tilsvarende emne på Wikipedia?"
-        },
-        "induction-loop": {
-            "mappings": {
-                "0": {
-                    "then": "Dette sted har en lydinduktionssløjfe"
-                },
-                "1": {
-                    "then": "Dette sted <b>har ikke</b> en lydinduktionssløjfe"
-                }
-            },
-            "question": "Har dette sted en lydinduktionssløjfe til personer med nedsat hørelse?"
-        },
-        "smoking": {
-            "mappings": {
-                "0": {
-                    "then": "Rygning er <b>tilladt</b>"
-                },
-                "1": {
-                    "then": "Rygning er <b>ikke tilladt</b>"
-                },
-                "2": {
-                    "then": "Rygning er <b>tilladt udenfor</b>."
-                }
-            },
-            "question": "Er det tilladt at ryge på {title()}?"
-        },
-        "email": {
-            "question": "Hvad er mailadressen på {title()}?"
-        },
-        "description": {
-            "question": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.<br/><span style='font-size: small'>Gentag ikke allerede nævnte fakta</span>"
-        },
-        "multilevels": {
-            "override": {
-                "question": "Hvilke niveauer går denne elevator til?",
-                "render": "Denne elevator går til etager {level}"
-            }
-        },
-        "internet": {
-            "mappings": {
-                "1": {
-                    "then": "Dette sted <b>tilbyder ikke</b> internetadgang"
-                },
-                "0": {
-                    "then": "Dette sted tilbyder trådløs internetadgang"
-                },
-                "2": {
-                    "then": "Dette sted tilbyder internetadgang"
-                },
-                "3": {
-                    "then": "Dette sted tilbyder internetadgang via en terminal eller computer"
-                },
-                "4": {
-                    "then": "Dette sted tilbyder internetadgang via kabel"
-                }
-            },
-            "question": "Tilbyder dette sted internetadgang?"
-        },
-        "internet-fee": {
-            "mappings": {
-                "0": {
-                    "then": "Der er et gebyr for internetadgang på dette sted"
-                },
-                "1": {
-                    "then": "Internetadgang er gratis på dette sted"
-                },
-                "2": {
-                    "then": "Internetadgang er gratis på dette sted, kun for kunder"
-                }
-            },
-            "question": "Er der et gebyr for internetadgang?"
-        },
-        "internet-ssid": {
-            "freeform": {
-                "placeholder": "Indtast netværksnavnet"
-            },
-            "question": "Hvad er netværksnavnet for den trådløse internetadgang?",
-            "render": "Netværksnavnet er <b>{internet_access:ssid}</b>"
-        },
-        "phone": {
-            "question": "Hvad er telefonnummeret til {title()}?"
-        },
-        "website": {
-            "question": "Hvad er webstedet for {title()}?"
         }
     }
 }

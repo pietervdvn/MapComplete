@@ -36,7 +36,8 @@
       "ru": "Препятствие",
       "fr": "Barrière",
       "es": "Barrera",
-      "ca": "Barrera"
+      "ca": "Barrera",
+      "da": "Barriere"
     },
     "mappings": [
       {
@@ -60,7 +61,8 @@
           "de": "Barriere für Radfahrer",
           "fr": "Barrière cyclable",
           "ca": "Barrera ciclista",
-          "es": "Barrera Ciclista"
+          "es": "Barrera Ciclista",
+          "da": "Cykelbarriere"
         }
       }
     ]
@@ -137,7 +139,8 @@
         "de": "Kann ein Radfahrer das Hindernis passieren?",
         "hu": "Át lehet-e menni rajta kerékpárral?",
         "fr": "Est-ce qu'un vélo peut franchir cette barrière ?",
-        "es": "¿Puede pasar una bicicleta esta barrera?"
+        "es": "¿Puede pasar una bicicleta esta barrera?",
+        "da": "Kan en cykel køre forbi denne barriere?"
       },
       "mappings": [
         {
@@ -190,7 +193,8 @@
             "hu": "Ez egy kerékpárakadály, amely lelassítja a kerékpárosokat",
             "fr": "C'est une barrière visant à ralentir les vélos",
             "de": "Dies ist eine Fahrradbarriere, die Radfahrer abbremst",
-            "es": "Esta es una barrera ciclista que ralentiza a los ciclistas"
+            "es": "Esta es una barrera ciclista que ralentiza a los ciclistas",
+            "da": "Dette er en cykelbarriere, der bremser cyklisterne"
           }
         }
       ]
@@ -280,7 +284,8 @@
         "de": "Um welche Art Fahrradhindernis handelt es sich?",
         "hu": "Milyen fajta kerékpárakadály ez?",
         "fr": "Quel est ce type de barrière cyclable ?",
-        "es": "¿Qué tipo de barrera ciclista es esta?"
+        "es": "¿Qué tipo de barrera ciclista es esta?",
+        "da": "Hvad er det for en cykelbarriere?"
       },
       "condition": "barrier=cycle_barrier",
       "mappings": [
@@ -292,7 +297,8 @@
             "de": "Einfach, nur zwei Barrieren mit einem Zwischenraum",
             "hu": "Egyszeres: csak két korlát, közöttük térköz",
             "fr": "Simple, deux barrières côte à côte",
-            "es": "Simple, simplemente dos barreras con un espacio en el medio"
+            "es": "Simple, simplemente dos barreras con un espacio en el medio",
+            "da": "Enkelt, kun to barrierer med et mellemrum"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_single.png",
@@ -307,7 +313,8 @@
             "de": "Doppelt, zwei Barrieren hintereinander",
             "hu": "Kétszeres: két, egymáshoz képest eltolt korlát egymás után",
             "fr": "Double, deux barrières successives",
-            "es": "Doble, dos barreras una detrás de otra"
+            "es": "Doble, dos barreras una detrás de otra",
+            "da": "Dobbelt, to barrierer bag hinanden"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_double.svg",
@@ -322,7 +329,8 @@
             "de": "Dreifach, drei Barrieren hintereinander",
             "hu": "Háromszoros: három, egymáshoz képest eltolt korlát egymás után",
             "fr": "Triple, trois barrières successives",
-            "es": "Triple, tres barreras una detrás de otra"
+            "es": "Triple, tres barreras una detrás de otra",
+            "da": "Tredobbelt, tre barrierer bag hinanden"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_triple.png",
@@ -337,7 +345,8 @@
             "de": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten",
             "hu": "Szűkítőkapu: a rés felül keskenyebb, mint alul",
             "fr": "Poire, l’espace en hauteur est plus faible qu’au sol",
-            "es": "Barrera de seguridad, el espacio es menor en la parte superior que en la inferior"
+            "es": "Barrera de seguridad, el espacio es menor en la parte superior que en la inferior",
+            "da": "Squeeze gate, mellemrummet er mindre i toppen end i bunden"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_squeeze.png",
@@ -363,7 +372,8 @@
         "de": "Welche Durchfahrtsbreite hat das Hindernis?",
         "hu": "Milyen széles az akadályon az a rés, amelyen át lehet haladni?",
         "fr": "Quelle est la largeur du passage ?",
-        "es": "¿Cómo de ancho es el hueco dejado fuera de la barrera?"
+        "es": "¿Cómo de ancho es el hueco dejado fuera de la barrera?",
+        "da": "Hvor stort er mellemrummet udover barrieren?"
       },
       "condition": {
         "and": [
@@ -388,7 +398,8 @@
         "de": "Abstand zwischen den Barrieren (entlang der Straße): {width:separation} m",
         "hu": "A korlátok közötti távolság (az út irányában): {width:separation} m",
         "fr": "Espace entre deux barrières successives : {width:separation} m",
-        "es": "Espacio entre barreras (a lo largo de la longitud de la carretera): {width:separation} m"
+        "es": "Espacio entre barreras (a lo largo de la longitud de la carretera): {width:separation} m",
+        "da": "Plads mellem barrierer (langs vejens længde): {width:separation} m"
       },
       "question": {
         "en": "How much space is there between the barriers (along the length of the road)?",
@@ -396,7 +407,8 @@
         "de": "Wie groß ist der Abstand zwischen den Barrieren (entlang der Straße)?",
         "hu": "Mekkora távolság van a korlátok között (az út irányában)?",
         "fr": "Combien d’espace sépare deux barrières successives ?",
-        "es": "¿Cuánto espacio hay entre las barreras (a lo largo de la longitud de la carretera)?"
+        "es": "¿Cuánto espacio hay entre las barreras (a lo largo de la longitud de la carretera)?",
+        "da": "Hvor meget plads er der mellem bommene (på langs af vejen)?"
       },
       "condition": {
         "or": [
@@ -430,7 +442,8 @@
         "de": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
         "hu": "Milyen széles a korlátok melletti legkisebb nyílás?",
         "fr": "Quelle est la largeur d'ouverture après la plus petite près de la barrière ?",
-        "es": "¿Cómo de año es la apertura más pequeña al lado de las barreras?"
+        "es": "¿Cómo de año es la apertura más pequeña al lado de las barreras?",
+        "da": "Hvor bred er den mindste åbning ved siden af barriererne?"
       },
       "condition": {
         "or": [
@@ -464,7 +477,8 @@
         "de": "Wie stark überschneiden sich die Barrieren?",
         "hu": "Mekkora a korlátok átfedése?",
         "fr": "Quel est le chevauchement des barrières ?",
-        "es": "¿Cuánto se solapan las barreras?"
+        "es": "¿Cuánto se solapan las barreras?",
+        "da": "Hvor meget overlap har barriererne?"
       },
       "condition": {
         "or": [

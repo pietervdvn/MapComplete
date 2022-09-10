@@ -651,9 +651,6 @@
                     },
                     "1": {
                         "then": "Kostenlose Nutzung"
-                    },
-                    "2": {
-                        "then": "Der Reinigungsservice ist kostenpflichtig"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -666,9 +663,6 @@
                     },
                     "1": {
                         "then": "Kostenlose Nutzung"
-                    },
-                    "2": {
-                        "then": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",

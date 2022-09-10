@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 200,
+      "commits": 203,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 165,
+      "commits": 166,
       "contributor": "kjon"
     },
     {
@@ -34,11 +34,11 @@
     },
     {
       "commits": 25,
-      "contributor": "Robin van der Linde"
+      "contributor": "Supaplex"
     },
     {
-      "commits": 24,
-      "contributor": "Supaplex"
+      "commits": 25,
+      "contributor": "Robin van der Linde"
     },
     {
       "commits": 22,
@@ -70,15 +70,15 @@
     },
     {
       "commits": 13,
+      "contributor": "paunofu"
+    },
+    {
+      "commits": 13,
       "contributor": "Romain de Bossoreille"
     },
     {
       "commits": 13,
       "contributor": "Joost"
-    },
-    {
-      "commits": 12,
-      "contributor": "paunofu"
     },
     {
       "commits": 11,
@@ -142,6 +142,10 @@
     },
     {
       "commits": 5,
+      "contributor": "eMerzh"
+    },
+    {
+      "commits": 5,
       "contributor": "Dingcycle"
     },
     {
@@ -163,6 +167,10 @@
     {
       "commits": 5,
       "contributor": "Alexey Shabanov"
+    },
+    {
+      "commits": 4,
+      "contributor": "Niels Madsen"
     },
     {
       "commits": 4,
@@ -299,10 +307,6 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
-    },
-    {
-      "commits": 1,
-      "contributor": "eMerzh"
     },
     {
       "commits": 1,

@@ -39,7 +39,8 @@
       "ja": "対応するウィキデータのエンティティは何ですか？",
       "fil": "Ano ang nau-ukol na entidad sa Wikidata?",
       "es": "¿Cual es la entidad de Wikidata que se corresponde?",
-      "zh_Hans": "在Wikidata上对应的实体是什么？"
+      "zh_Hans": "在Wikidata上对应的实体是什么？",
+      "da": "Hvad er den tilsvarende Wikidata-enhed?"
     },
     "mappings": [
       {
@@ -128,7 +129,8 @@
       "sl": "Kakšno telefonsko številko ima {title()}?",
       "fil": "Ano ang telepono ng {title()}?",
       "es": "¿Cuál es el número de teléfono de {title()}?",
-      "zh_Hans": "{title()} 的电话号码为何？"
+      "zh_Hans": "{title()} 的电话号码为何？",
+      "da": "Hvad er telefonnummeret til {title()}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "mappings": [
@@ -173,7 +175,8 @@
       "ja": "Wikipediaの該当項目は何ですか？",
       "fil": "Ano ang nau-ukol na partida sa Wikipedia?",
       "es": "¿Cual es el ítem correspondiente en Wikipedia?",
-      "zh_Hans": "在维基百科上对应的条目是什么？"
+      "zh_Hans": "在维基百科上对应的条目是什么？",
+      "da": "Hvad er det tilsvarende emne på Wikipedia?"
     },
     "mappings": [
       {
@@ -228,7 +231,8 @@
       "sl": "Kakšen naslov elektronske pošte ima {title()}?",
       "fil": "Ano ang email address ng {title()}?",
       "es": "¿Cual es la direccióm de correo electrónico de {title()}?",
-      "zh_Hans": "{title()} 的电子邮箱地址为何？"
+      "zh_Hans": "{title()} 的电子邮箱地址为何？",
+      "da": "Hvad er mailadressen på {title()}?"
     },
     "mappings": [
       {
@@ -267,7 +271,8 @@
       "ja": "{title()}のウェブサイトは？",
       "fil": "Ano ang website ng {title()}?",
       "es": "¿Cual es el sitio web de {title()}?",
-      "zh_Hans": "{title()} 的网站为何？"
+      "zh_Hans": "{title()} 的网站为何？",
+      "da": "Hvad er webstedet for {title()}?"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -437,7 +442,8 @@
       "sl": "Ali so v tem podjetju dovoljeni psi?",
       "fil": "Pinapayagan ba ang mga aso sa establisyementong ito?",
       "es": "¿Están permitidos los perros en este negocio?",
-      "zh_Hans": "犬只是否在这个商业体中允许？"
+      "zh_Hans": "犬只是否在这个商业体中允许？",
+      "da": "Er hunde tilladt i denne virksomhed?"
     },
     "mappings": [
       {
@@ -564,7 +570,8 @@
       "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。<br/><span style='font-size: small'>今後表示しない</span>",
       "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>",
       "sl": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.<br/><span style='font-size: small'>Ne ponavljajte že navedenih dejstev</span>",
-      "fil": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.<br/><span style='font-size: small'>Huwag ulitin ang mga nai-saad na</span>"
+      "fil": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.<br/><span style='font-size: small'>Huwag ulitin ang mga nai-saad na</span>",
+      "da": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.<br/><span style='font-size: small'>Gentag ikke allerede nævnte fakta</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -640,7 +647,8 @@
       "ja": "このアメニティにはコンセントがあり、お客様が店内にいるときにも利用できますか？",
       "fil": "Merong bang mga intsupe (outlet) sa loob, para sa mga suki?",
       "es": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?",
-      "nb_NO": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?"
+      "nb_NO": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?",
+      "da": "Har denne faciliteter stikkontakter tilgængelige for kunder, når de er inde?"
     },
     "mappings": [
       {
@@ -746,7 +754,8 @@
       "sl": "Kateri načini plačila so možni tu?",
       "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
       "es": "¿Qué métodos de pago se aceptan aquí?",
-      "zh_Hans": "这里支持哪些支付方式？"
+      "zh_Hans": "这里支持哪些支付方式？",
+      "da": "Hvilke betalingsmetoder accepteres her?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -874,13 +883,15 @@
         "en": "What levels does this elevator go to?",
         "de": "Auf welchen Geschossen hält dieser Aufzug?",
         "fr": "Quels étages sont desservis par cet ascenceur ?",
-        "pt": "Para que pisos vai este elevador?"
+        "pt": "Para que pisos vai este elevador?",
+        "da": "Hvilke niveauer går denne elevator til?"
       },
       "render": {
         "en": "This elevator goes to floors {level}",
         "de": "Der Aufzug hält auf den Geschossen {level}",
         "fr": "Cet ascenceur permet d’accéder aux étages {level}",
-        "pt": "Este elevador vai para os pisos {level}"
+        "pt": "Este elevador vai para os pisos {level}",
+        "da": "Denne elevator går til etager {level}"
       },
       "freeform": {
         "key": "level",
@@ -908,7 +919,8 @@
       "ja": "この機能は何階にあるのでしょうか？",
       "fil": "Anong palapag matatagpuan ang tampók?",
       "es": "¿En qué nivel se encuentra esta característica?",
-      "nb_NO": "Hvilken etasje befinner funksjonen seg i?"
+      "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
+      "da": "På hvilket niveau er denne funktion placeret?"
     },
     "render": {
       "en": "Located on the {level}th floor",
@@ -1058,7 +1070,8 @@
           "fil": "Nasa silong",
           "es": "Localizada en el primer sótano",
           "nb_NO": "Er å finne på første kjellernivå",
-          "pt": "Localizado no primeiro nível da cave"
+          "pt": "Localizado no primeiro nível da cave",
+          "da": "Beliggende på første kælderetage"
         }
       }
     ]
@@ -1070,7 +1083,8 @@
       "es": "¿Está permitido fumar en {title()}?",
       "fr": "Est-ce autorisé de fumer à {title()} ?",
       "pt": "É permitido fumar em {title()}?",
-      "nb_NO": "Tillates røyking på {title()}?"
+      "nb_NO": "Tillates røyking på {title()}?",
+      "da": "Er det tilladt at ryge på {title()}?"
     },
     "#condition": "Based on https://en.wikipedia.org/wiki/List_of_smoking_bans",
     "condition": "_country!~al|be",
@@ -1087,7 +1101,8 @@
           "es": "Está <b>permitido</b> fumar",
           "fr": "Il est <b>autorisé</b> de fumer",
           "pt": "<b>É permitido</b> fumar",
-          "nb_NO": "Røyking er <b>tillatt</b>"
+          "nb_NO": "Røyking er <b>tillatt</b>",
+          "da": "Rygning er <b>tilladt</b>"
         }
       },
       {
@@ -1102,7 +1117,8 @@
           "es": "<b>No</b> está permitido fumar",
           "fr": "Il est <b>interdit</b> de fumer",
           "pt": "<b>Não é permitido</b> fumar",
-          "nb_NO": "Røyking <b>forbudt</b>"
+          "nb_NO": "Røyking <b>forbudt</b>",
+          "da": "Rygning er <b>ikke tilladt</b>"
         }
       },
       {
@@ -1113,7 +1129,8 @@
           "es": "Está permitido fumar <b>en el exterior</b>.",
           "fr": "Il est autorisé de fumer <b>à l'extérieur</b>.",
           "pt": "É permitido fumar <b>no exterior</b>.",
-          "nb_NO": "Røyking <b>tillates på utsiden</b>."
+          "nb_NO": "Røyking <b>tillates på utsiden</b>.",
+          "da": "Rygning er <b>tilladt udenfor</b>."
         }
       }
     ]
@@ -1123,7 +1140,8 @@
     "question": {
       "en": "Does this place have an audio induction loop for people with reduced hearing?",
       "de": "Hat dieser Ort eine induktive Höranlage für Hörgeschädigte?",
-      "fr": "Ce lieu dispose-t’il d’une boucle auditive pour les personnes malentendantes ?"
+      "fr": "Ce lieu dispose-t’il d’une boucle auditive pour les personnes malentendantes ?",
+      "da": "Har dette sted en lydinduktionssløjfe til personer med nedsat hørelse?"
     },
     "mappings": [
       {
@@ -1131,7 +1149,8 @@
         "then": {
           "en": "This place has an audio induction loop",
           "de": "Dieser Ort hat eine induktive Höranlage",
-          "fr": "Ce lieu dispose d’une boucle auditive"
+          "fr": "Ce lieu dispose d’une boucle auditive",
+          "da": "Dette sted har en lydinduktionssløjfe"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop.svg",
@@ -1143,7 +1162,8 @@
         "then": {
           "en": "This place <b>does not</b> have an audio induction loop",
           "de": "Dieser Ort hat <b>keine</b> induktive Höranlage",
-          "fr": "Ce lieu <b>ne dispose pas</b> de boucle auditive"
+          "fr": "Ce lieu <b>ne dispose pas</b> de boucle auditive",
+          "da": "Dette sted <b>har ikke</b> en lydinduktionssløjfe"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop_missing.svg",
@@ -1157,7 +1177,8 @@
       "en": "Does this place offer internet access?",
       "nl": "Biedt deze plaats internettoegang aan?",
       "de": "Bietet dieser Ort Internetzugang?",
-      "pt": "Este lugar tem acesso à Internet?"
+      "pt": "Este lugar tem acesso à Internet?",
+      "da": "Tilbyder dette sted internetadgang?"
     },
     "mappings": [
       {
@@ -1167,7 +1188,8 @@
           "nl": "Deze plaats biedt draadloze internettoegang aan",
           "de": "Dieser Ort bietet drahtlosen Internetzugang",
           "fr": "Ce lieu propose un accès internet sans fil",
-          "pt": "Este lugar tem acesso à Internet sem fios"
+          "pt": "Este lugar tem acesso à Internet sem fios",
+          "da": "Dette sted tilbyder trådløs internetadgang"
         }
       },
       {
@@ -1177,7 +1199,8 @@
           "nl": "Deze plaats biedt <b>geen</b> internettoegang aan",
           "de": "Dieser Ort bietet <b>keinen</b> Internetzugang",
           "fr": "Ce lieu <b>ne propose pas</b> d'accès internet",
-          "pt": "Este lugar <b>não</b> tem acesso à Internet"
+          "pt": "Este lugar <b>não</b> tem acesso à Internet",
+          "da": "Dette sted <b>tilbyder ikke</b> internetadgang"
         }
       },
       {
@@ -1187,7 +1210,8 @@
           "nl": "Deze plaats biedt internettoegang aan",
           "de": "Dieser Ort bietet Internetzugang",
           "fr": "Ce lieu propose un accès internet",
-          "pt": "Este lugar tem acesso à Internet"
+          "pt": "Este lugar tem acesso à Internet",
+          "da": "Dette sted tilbyder internetadgang"
         },
         "hideInAnswer": true
       },
@@ -1197,7 +1221,8 @@
           "en": "This place offers internet access via a terminal or computer",
           "nl": "Deze plaats biedt internettoegang via een terminal of computer aan",
           "de": "Dieser Ort bietet Internetzugang über ein Terminal oder einen Computer",
-          "pt": "Este lugar tem acesso à Internet através de um terminal ou computador"
+          "pt": "Este lugar tem acesso à Internet através de um terminal ou computador",
+          "da": "Dette sted tilbyder internetadgang via en terminal eller computer"
         }
       },
       {
@@ -1206,7 +1231,8 @@
           "en": "This place offers wired internet access",
           "nl": "Deze plaats biedt bedrade internettoegang aan",
           "de": "Dieser Ort bietet kabelgebundenen Internetzugang",
-          "pt": "Este lugar tem acesso à Internet com fios/por cabo"
+          "pt": "Este lugar tem acesso à Internet com fios/por cabo",
+          "da": "Dette sted tilbyder internetadgang via kabel"
         }
       }
     ]
@@ -1222,7 +1248,8 @@
       "en": "Is there a fee for internet access?",
       "nl": "Zijn er kosten voor internettoegang?",
       "de": "Wird für den Internetzugang eine Gebühr erhoben?",
-      "pt": "Tem de se pagar para utilizar o acesso à Internet?"
+      "pt": "Tem de se pagar para utilizar o acesso à Internet?",
+      "da": "Er der et gebyr for internetadgang?"
     },
     "mappings": [
       {
@@ -1231,7 +1258,8 @@
           "en": "There is a fee for the internet access at this place",
           "nl": "Er zijn kosten voor internettoegang op deze plaats",
           "de": "Der Internetzugang ist an diesem Ort gebührenpflichtig",
-          "pt": "Tem de se pagar para utilizar o acesso à Internet neste local"
+          "pt": "Tem de se pagar para utilizar o acesso à Internet neste local",
+          "da": "Der er et gebyr for internetadgang på dette sted"
         }
       },
       {
@@ -1240,7 +1268,8 @@
           "en": "Internet access is free at this place",
           "nl": "Internettoegang is gratis op deze plaats",
           "de": "Der Internetzugang ist an diesem Ort kostenlos",
-          "pt": "O acesso à Internet é gratuito neste local"
+          "pt": "O acesso à Internet é gratuito neste local",
+          "da": "Internetadgang er gratis på dette sted"
         }
       },
       {
@@ -1249,7 +1278,8 @@
           "en": "Internet access is free at this place, for customers only",
           "nl": "Internettoegang is gratis op deze plaats, alleen voor klanten",
           "de": "Der Internetzugang ist an diesem Ort kostenlos, aber nur für Kunden",
-          "pt": "O acesso à Internet é gratuito neste local, apenas para clientes"
+          "pt": "O acesso à Internet é gratuito neste local, apenas para clientes",
+          "da": "Internetadgang er gratis på dette sted, kun for kunder"
         }
       }
     ]
@@ -1260,7 +1290,8 @@
       "en": "What is the network name for the wireless internet access?",
       "nl": "Wat is de netwerknaam voor de draadloze internettoegang?",
       "de": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?",
-      "pt": "Qual é o nome da rede para o acesso sem fios à Internet?"
+      "pt": "Qual é o nome da rede para o acesso sem fios à Internet?",
+      "da": "Hvad er netværksnavnet for den trådløse internetadgang?"
     },
     "freeform": {
       "key": "internet_access:ssid",
@@ -1269,7 +1300,8 @@
         "en": "Enter the network name",
         "nl": "Voer de netwerknaam in",
         "de": "Geben Sie den Netzwerknamen ein",
-        "pt": "Introduza o nome da rede"
+        "pt": "Introduza o nome da rede",
+        "da": "Indtast netværksnavnet"
       }
     },
     "mappings": [
@@ -1283,7 +1315,8 @@
       "en": "The network name is <b>{internet_access:ssid}</b>",
       "nl": "De netwerknaam is <b>{internet_access:ssid}</b>",
       "de": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>",
-      "pt": "O nome da rede é <b>{internet_access:ssid}</b>"
+      "pt": "O nome da rede é <b>{internet_access:ssid}</b>",
+      "da": "Netværksnavnet er <b>{internet_access:ssid}</b>"
     }
   }
 }

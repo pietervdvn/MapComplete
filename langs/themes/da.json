@@ -2,6 +2,9 @@
     "aed": {
         "description": "På dette kort kan man finde og markere defibrillatorer i nærheden"
     },
+    "artwork": {
+        "description": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden"
+    },
     "benches": {
         "shortDescription": "Et kort over bænke",
         "title": "Bænke"
@@ -134,8 +137,5 @@
             }
         },
         "title": "hundesteder"
-    },
-    "artwork": {
-        "description": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden"
     }
 }

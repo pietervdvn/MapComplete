@@ -5,13 +5,15 @@
     "nl": "Afvalcontainers voor huishoudelijk afval",
     "de": "Mülltonnen",
     "it": "Contenitori per la raccolta differenziata",
-    "id": "Tempat Pembuangan Limbah"
+    "id": "Tempat Pembuangan Limbah",
+    "da": "Affaldsspande"
   },
   "description": {
     "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
     "nl": "Een grote afvalcontainer voor (huishoudelijk) afval",
     "de": "Entsorgungsbehälter, mittlerer bis großer Behälter zur Entsorgung von (Haushalts-)Abfällen",
-    "it": "Cestino per lo smaltimento dei rifiuti, contenitore di dimensioni medio grandi per lo smaltimento dei rifiuti (domestici)"
+    "it": "Cestino per lo smaltimento dei rifiuti, contenitore di dimensioni medio grandi per lo smaltimento dei rifiuti (domestici)",
+    "da": "Affaldsspande, mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald"
   },
   "source": {
     "osmTags": "amenity=waste_disposal"
@@ -24,7 +26,8 @@
       "nl": "Afvalbak",
       "de": "Mülltonne",
       "it": "Smaltimento rifiuti",
-      "id": "Pembuangan Limbah"
+      "id": "Pembuangan Limbah",
+      "da": "Bortskaffelse af affald"
     }
   },
   "mapRendering": [
@@ -43,7 +46,8 @@
         "nl": "Een afvalcontainer",
         "de": "eine Mülltonne",
         "it": "un raccoglitore per lo smaltimento rifiuti",
-        "id": "tempat pembuangan sampahh"
+        "id": "tempat pembuangan sampahh",
+        "da": "en affaldsbeholder"
       },
       "tags": [
         "amenity=waste_disposal"
@@ -53,7 +57,8 @@
         "nl": "middelgrote of grote afvalcontainer voor (huishoudelijk) afval",
         "de": "Mittlere bis große Mülltonne für die Entsorgung von (Haushalts-)Abfällen",
         "it": "Cestino di dimensioni medio-grandi per lo smaltimento dei rifiuti (domestici)",
-        "id": "Tempat sampah sedang hingga besar untuk pembuangan limbah (rumah tangga)"
+        "id": "Tempat sampah sedang hingga besar untuk pembuangan limbah (rumah tangga)",
+        "da": "Mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald"
       }
     }
   ],
@@ -65,14 +70,16 @@
         "nl": "Toegankelijk voor {access}",
         "de": "Zugang: {access}",
         "it": "Accesso: {access}",
-        "id": "Akses: {access}"
+        "id": "Akses: {access}",
+        "da": "Adgang: {access}"
       },
       "question": {
         "en": "Who can use this waste disposal bin?",
         "nl": "Wie mag deze afvalcontainer gebruiken?",
         "de": "Wer darf die Mülltonne nutzen?",
         "it": "Chi può utilizzare questo cestino per lo smaltimento dei rifiuti?",
-        "id": "Siapa yang bisa menggunakan tempat sampah ini?"
+        "id": "Siapa yang bisa menggunakan tempat sampah ini?",
+        "da": "Hvem kan bruge denne affaldsbeholder?"
       },
       "freeform": {
         "key": "access",
@@ -86,7 +93,8 @@
             "nl": "Iedereen mag deze afvalcontainer gebruiken",
             "de": "Jeder darf die Mülltonne nutzen",
             "it": "Questo cestino può essere usato da chiunque",
-            "id": "Tempat sampah ini bisa digunakan oleh siapa saja"
+            "id": "Tempat sampah ini bisa digunakan oleh siapa saja",
+            "da": "Denne skraldespand kan bruges af alle"
           }
         },
         {
@@ -96,7 +104,8 @@
             "nl": "Deze afvalcontainer is enkel voor privaat gebruik",
             "de": "Niemand darf die Mülltonne nutzen (privat)",
             "it": "Questo cestino è privato",
-            "id": "Tempat sampah ini bersifat pribadi"
+            "id": "Tempat sampah ini bersifat pribadi",
+            "da": "Denne skraldespand er privat"
           }
         },
         {
@@ -106,7 +115,8 @@
             "nl": "Enkel bewoners mogen deze afvalcontainer gebruiken",
             "de": "Nur Anwohner dürfen die Mülltonne nutzen",
             "it": "Questo cestino è solo per residenti",
-            "id": "Tempat sampah ini hanya untuk penghuni"
+            "id": "Tempat sampah ini hanya untuk penghuni",
+            "da": "Denne skraldespand er kun for beboere"
           }
         }
       ]
@@ -118,7 +128,8 @@
         "nl": "Waar bevindt deze container zich?",
         "de": "Wo befindet sich die Mülltonne?",
         "it": "Dove si trova questo contenitore?",
-        "id": "Di manakah lokasi kontainer ini?"
+        "id": "Di manakah lokasi kontainer ini?",
+        "da": "Hvor er denne container placeret?"
       },
       "mappings": [
         {
@@ -128,7 +139,8 @@
             "nl": "Dit is een ondergrondse container",
             "de": "Die Mülltonne befindet sich unter der Erde",
             "it": "Questo è un contenitore sotterraneo",
-            "id": "Ini adalah kontainer bawah tanah"
+            "id": "Ini adalah kontainer bawah tanah",
+            "da": "Dette er en underjordisk container"
           }
         },
         {
@@ -138,7 +150,8 @@
             "nl": "Deze container bevindt zich binnen",
             "de": "Die Mülltonne befindet sich in einem Gebäude",
             "it": "Questo contenitore è al chiuso",
-            "id": "Kontainer ini terletak di dalam ruangan"
+            "id": "Kontainer ini terletak di dalam ruangan",
+            "da": "Denne container er placeret indendørs"
           }
         },
         {
@@ -148,7 +161,8 @@
             "nl": "Deze container is buiten",
             "de": "Die Mülltonne befindet sich im Freien",
             "it": "Questo contenitore è all'aperto",
-            "id": "Kontainer ini terletak di luar ruangan"
+            "id": "Kontainer ini terletak di luar ruangan",
+            "da": "Denne container er placeret udendørs"
           }
         }
       ]
@@ -164,7 +178,8 @@
             "nl": "Enkel publiek toegankelijke afvalcontainers",
             "de": "Nur öffentliche Mülltonnen",
             "it": "Solo accesso pubblico",
-            "id": "Hanya akses publik"
+            "id": "Hanya akses publik",
+            "da": "Kun offentlig adgang"
           },
           "osmTags": "access=yes"
         }

@@ -112,6 +112,8 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of multi](#example-usage-of-multi)
     + [steal](#steal)
       * [Example usage of steal](#example-usage-of-steal)
+    + [plantnet_detection](#plantnet_detection)
+      * [Example usage of plantnet_detection](#example-usage-of-plantnet_detection)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
@@ -803,6 +805,21 @@ tagRenderingId | _undefined_ | The layer-id and tagRenderingId to render. Can be
 #### Example usage of steal 
 
  `{steal(,)}`
+
+
+
+### plantnet_detection 
+
+ Sends the images linked to the current object to plantnet.org and asks it what plant species is shown on it. The user can then select the correct species; the corresponding wikidata-identifier will then be added to the object (together with `source:species:wikidata=plantnet.org AI`).  
+
+name | default | description
+------ | --------- | -------------
+image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated 
+ 
+
+#### Example usage of plantnet_detection 
+
+ `{plantnet_detection(image,mapillary,image,wikidata,wikimedia_commons,image,image)}`
 
 
 
