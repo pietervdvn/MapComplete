@@ -354,7 +354,7 @@ export class TagUtils {
         value: string
         modifier: "i" | ""
     } | null {
-        const match = tag.match(/^([_a-zA-Z0-9: -]+)(!)?~([i]~)?(.*)$/)
+        const match = tag.match(/^([_a-zA-Z0-9: -|]+)(!)?~([i]~)?(.*)$/)
         if (match == null) {
             return null
         }
