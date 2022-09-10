@@ -1,23 +1,24 @@
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
-import { QueryParameters } from "./Web/QueryParameters"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
-import { FixedUiElement } from "../UI/Base/FixedUiElement"
-import { Utils } from "../Utils"
+import {QueryParameters} from "./Web/QueryParameters"
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts"
+import {FixedUiElement} from "../UI/Base/FixedUiElement"
+import {Utils} from "../Utils"
 import Combine from "../UI/Base/Combine"
-import { SubtleButton } from "../UI/Base/SubtleButton"
+import {SubtleButton} from "../UI/Base/SubtleButton"
 import BaseUIElement from "../UI/BaseUIElement"
-import { UIEventSource } from "./UIEventSource"
-import { LocalStorageSource } from "./Web/LocalStorageSource"
+import {UIEventSource} from "./UIEventSource"
+import {LocalStorageSource} from "./Web/LocalStorageSource"
 import LZString from "lz-string"
-import { FixLegacyTheme } from "../Models/ThemeConfig/Conversion/LegacyJsonConvert"
-import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+import {FixLegacyTheme} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert"
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson"
 import SharedTagRenderings from "../Customizations/SharedTagRenderings"
 import * as known_layers from "../assets/generated/known_layers.json"
-import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
+import {PrepareTheme} from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import * as licenses from "../assets/generated/license_info.json"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import { FixImages } from "../Models/ThemeConfig/Conversion/FixImages"
+import {FixImages} from "../Models/ThemeConfig/Conversion/FixImages"
 import Svg from "../Svg"
+import {DoesImageExist, PrevalidateTheme, ValidateThemeAndLayers} from "../Models/ThemeConfig/Conversion/Validation";
 
 export default class DetermineLayout {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))
@@ -129,11 +130,11 @@ export default class DetermineLayout {
             }),
             json !== undefined
                 ? new SubtleButton(Svg.download_svg(), "Download the JSON file").onClick(() => {
-                      Utils.offerContentsAsDownloadableFile(
-                          JSON.stringify(json, null, "  "),
-                          "theme_definition.json"
-                      )
-                  })
+                    Utils.offerContentsAsDownloadableFile(
+                        JSON.stringify(json, null, "  "),
+                        "theme_definition.json"
+                    )
+                })
                 : undefined,
         ])
             .SetClass("flex flex-col clickable")
@@ -179,6 +180,23 @@ export default class DetermineLayout {
 
         json.id = forceId ?? json.id
 
+        {
+            let {errors} = new PrevalidateTheme().convert(json, "validation")
+            if (errors.length > 0) {
+                throw "Detected errors: " + errors.join("\n")
+            }
+        }
+        {
+            let {errors} = new ValidateThemeAndLayers(
+                new DoesImageExist(new Set<string>(), _ => true),
+                "",
+                false,
+                SharedTagRenderings.SharedTagRendering
+            ).convert(json, "validation")
+            if (errors.length > 0) {
+                throw "Detected errors: " + errors.join("\n")
+            }
+        }
         return new LayoutConfig(json, false, {
             definitionRaw: JSON.stringify(raw, null, "  "),
             definedAtUrl: sourceUrl,

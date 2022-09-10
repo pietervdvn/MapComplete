@@ -147,7 +147,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         const warnings = []
         const information = []
 
-        const theme = new LayoutConfig(json, true)
+        const theme = new LayoutConfig(json, this._isBuiltin)
 
         {
             // Legacy format checks
@@ -168,7 +168,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 }
             }
         }
-        {
+        if(this._isBuiltin)  {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
             const images = new ExtractImages(
                 this._isBuiltin,
@@ -224,6 +224,8 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         }
 
         try {
+            if(this._isBuiltin){
+
             if (theme.id !== theme.id.toLowerCase()) {
                 errors.push("Theme ids should be in lowercase, but it is " + theme.id)
             }
@@ -250,6 +252,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 warnings,
                 information
             )
+            }
             const dups = Utils.Dupiclates(json.layers.map((layer) => layer["id"]))
             if (dups.length > 0) {
                 errors.push(
@@ -298,7 +301,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
         super(
             "Validates a theme and the contained layers",
             new ValidateTheme(doesImageExist, path, isBuiltin, sharedTagRenderings),
-            new On("layers", new Each(new ValidateLayer(undefined, false, doesImageExist)))
+            new On("layers", new Each(new ValidateLayer(undefined, isBuiltin, doesImageExist)))
         )
     }
 }
@@ -506,7 +509,7 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
         {}
     )} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
-    
+
     To fix this problem, you can try to:
     - Move the shadowed mapping up
     - Do you want to use a different text in 'question mode'? Add 'hideInAnswer=true' to the first mapping
@@ -700,7 +703,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
         }
 
         try {
-            {
+         if(this._isBuiltin)   {
                 // Some checks for legacy elements
 
                 if (json["overpassTags"] !== undefined) {
@@ -747,7 +750,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     warnings.push(context + " has a tagRendering as `isShown`")
                 }
             }
-            {
+           if(this._isBuiltin) {
                 // Check location of layer file
                 const expected: string = `assets/layers/${json.id}/${json.id}.json`
                 if (this._path != undefined && this._path.indexOf(expected) < 0) {
@@ -795,6 +798,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     }
                 }
             }
+
             if (json.tagRenderings !== undefined) {
                 const r = new On(
                     "tagRenderings",
