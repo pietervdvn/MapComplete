@@ -514,6 +514,13 @@
       "and": [
       "barrier=",
         "bicycle=",
+        "foot=",
+        "motor_vehicle=",
+        "vehicle=",
+        "inline_skate=",
+        "moped=",
+        "moped_a=",
+        "moped_b=",
         "bollard=",
         "cycle_barrier=",
         "maxwidth:physical=",
