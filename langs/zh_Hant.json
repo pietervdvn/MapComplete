@@ -434,6 +434,19 @@
         "testMode": "測試模式 - 不會真的匯入註解",
         "title": "匯入幫手"
     },
+    "importInspector": {
+        "title": "檢視與管理匯入註解"
+    },
+    "importLayer": {
+        "alreadyMapped": "{title} 已經在地圖上了 - 這個點重覆了",
+        "description": "能夠為 {title} 匯入項目的圖層",
+        "importButton": "import_button({layerId}, _tags, 我在這邊發現 {title} - 新增到地圖,./assets/svg/addSmall.svg,,,id)",
+        "importHandled": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+        "layerName": "可能的 {title}",
+        "nearbyImagesIntro": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+        "notFound": "我無法找到 {title} - 移除吧",
+        "popupTitle": "這裡可能有 {title}"
+    },
     "index": {
         "#": "當沒有載入主題時，這些文字會在主題按鈕上面顯示",
         "featuredThemeTitle": "這週的焦點",
@@ -441,6 +454,132 @@
         "logIn": "登入來看其他你先前查看的主題",
         "pickTheme": "請挑選主題來開始。",
         "title": "歡迎使用 MapComplete"
+    },
+    "matrixbot": {
+        "commandFailed": "抱兼，執行 <code>{cmd}</code> 時出現錯誤",
+        "commandNotFound": "我無法理解你的請求，你也許意思是類別 {0}、{1}、{2} 或 {2}？ <p>Type <code>help</code>來查看所有指令</p>",
+        "commands": {
+            "dm": {
+                "argbody": "指令的實際指令本文",
+                "argto": "要傳送輸出結果的編號",
+                "commandNotFound": "命令 {key} 沒有找到 - <code>help</code> 來察看所有指令",
+                "docs": "執行指令然後傳送輸出結果給別人",
+                "executing": "執行<code>{_}</code>然後結果給 <b>{to}</b>…",
+                "failed": "我因為 {message} 無法執行 <code>{cmd}</code>",
+                "noDm": "我無法與 {to} 創建房間",
+                "receipt": "我傳送訊息給 {to}",
+                "selectValidCommand": "指定有效的指令",
+                "selectValidUser": "執定有效的目標使用者",
+                "sendReason": "我傳給你這個訊息是因為 <b>{sender}</b> 要求我以 <code>{cmd}</code>傳送"
+            },
+            "documentation": {
+                "argid": "{list} 或是 {list_end} 編號需要文件，另外，撰寫 {coded_list} 的其中一個來察看能用的編號。",
+                "didYouMean": "你的意思是",
+                "docs": "取得關於 MapComplete 圖層、主題或是網站參數的文件",
+                "file": {
+                    "plural": "檔案",
+                    "singular": "檔案"
+                },
+                "inputElement": {
+                    "plural": "輸入元素",
+                    "singular": "輸入元素"
+                },
+                "layer": {
+                    "plural": "圖層",
+                    "singular": "圖層"
+                },
+                "noIdIntro": "從指定的編號來取得更多有關 MapComplete 程式相關的物件，已知的類別為 {list}",
+                "notFound": "沒有找到名稱為 <code>{id}</code> 的 {singular}",
+                "overview": "下列的 {plural} 存在：",
+                "theme": {
+                    "plural": "主題",
+                    "singular": "主題"
+                },
+                "urlParam": "網址參數 <code>{id}<code>",
+                "url_parameter": {
+                    "plural": "網址參數",
+                    "singular": "網址參數"
+                },
+                "visualisation": {
+                    "plural": "視覺化",
+                    "singular": "視覺化"
+                }
+            },
+            "dream": {
+                "docs": "傳送電腦產生文字",
+                "generatedBy": "這段文字由 {bot} 產生，由 Reddit 上的機器學習機器人產生。"
+            },
+            "help": {
+                "argcmd": "這個指令你想要更多相關資訊",
+                "askRights": "詢問 {admins} 取得適當的權限",
+                "docs": "顯示有關支援的指令資訊",
+                "insufficientRights": "你目前沒有足夠權限來執行這個指令。",
+                "notFound": "我沒有找到 <code>{cmd}</code>，也許你意味的 {closest} 其中之一？",
+                "p0": "嗨！這是 MapComplete-bot {bot_version} (MapComplete 建造版本 {mc_version})。"
+            },
+            "wiki": {
+                "searching": "在 {backend} 搜尋…"
+            }
+        },
+        "decryptionFailed": "抱歉，我無法解碼你的訊息，請先離開頻道然後再次連線",
+        "noSufficientRights": "這個指令只有管理員或使用者角色才有的權限",
+        "subcommanNotFound": "我無法理解你的請求，這個指令需要動詞才能執行，但是 <code>{verb}</code> 不是我們所知道的動詞，但我知道動詞 {known_verbs}",
+        "subcommandNotGiven": "我無法理解你的要求，這個指令需要動詞才能執行，但你沒有說，請試一個 {known_verbs}",
+        "tooLongForPublic": "抱歉，這個指令對公開房間太長 - 請傳送私訊給我代替"
+    },
+    "move": {
+        "cancel": "取消動作",
+        "cannotBeMoved": "這個圖徵無法移動。",
+        "confirmMove": "移動到這裡",
+        "inviteToMove": {
+            "generic": "移動這個點",
+            "reasonInaccurate": "改進這個點的精確度",
+            "reasonRelocation": "移動這個物件到其他地方，因為已經搬遷了"
+        },
+        "inviteToMoveAgain": "再次移動這個點",
+        "isRelation": "這個圖徵是關聯並無法被移除",
+        "isWay": "這個圖徵是路徑，請用其他開放街圖編輯器來移動。",
+        "loginToMove": "你必須登入才能移動點",
+        "moveTitle": "移動這個點",
+        "partOfAWay": "這個圖徵是其他路徑的一部分，請用其他編輯器來移動。",
+        "partOfRelation": "這個圖徵是關聯的一部分，請用其他編輯器來移動。",
+        "pointIsMoved": "這個點已經被移動了",
+        "reasons": {
+            "reasonInaccurate": "這個物件的位置並不準確，應該移動個幾公尺"
+        },
+        "selectReason": "為什麼你移動這個物件？",
+        "whyMove": "為什麼你想要移動這個點？",
+        "zoomInFurther": "放更大來確認移動"
+    },
+    "multi_apply": {
+        "autoApply": "當改變屬性 {attr_names} 時，這些屬性也會自動 {count} 套用到其他物件"
+    },
+    "notes": {
+        "addAComment": "新增評論",
+        "addComment": "新增評論",
+        "addCommentAndClose": "新增評論並且關閉",
+        "addCommentPlaceholder": "新增評論…",
+        "anonymous": "暱名用戶",
+        "closeNote": "關閉註解",
+        "createNote": "新增新註解",
+        "createNoteIntro": "地圖有什麼錯誤或缺漏的嗎？這裡新增註解，之後會由志工來檢查。",
+        "createNoteTitle": "在這裡新增註解",
+        "disableAllNoteFilters": "關閉所有篩選",
+        "isClosed": "這個註解已經解決了",
+        "isCreated": "你的註解已經創建了！",
+        "loginToAddComment": "登入來新增評論",
+        "loginToAddPicture": "登入來新增圖片",
+        "loginToClose": "登入來關閉註解",
+        "noteIsPublic": "這大家都看得到",
+        "noteLayerDoEnable": "啟用圖層來顯示註解",
+        "noteLayerHasFilters": "有些註解會被篩選掉而隱藏",
+        "noteLayerNotEnabled": "顯示註解的圖層無法啟用，這個圖層必須啟用才能新增註解",
+        "notesLayerMustBeEnabled": "'notes' 圖層已經關閉，請啟用來新增註解",
+        "reopenNote": "再開啟註解",
+        "reopenNoteAndComment": "再開啟註解與評論",
+        "textNeeded": "輸入描述性的文字來新增註解",
+        "typeText": "輸入些文字來新增評論",
+        "warnAnonymous": "你還未登入，我們無法聯繫你來解決你的問題。"
     },
     "privacy": {
         "editing": "當你對地圖變動時，這些變動會存在開放街圖並且是公開給所有人。採用 MapComplete 的編輯變動包括以下資料：<ul><li>你做的變動</li><li>你的使用者名稱</li><li>你在什麼時間做的變動</li><li>當你做出變動時使用的主題</li><li>使用者介面語言</li><li>你會多接近時變動物件的指示。其他的圖客可以用這些資訊來決定是否是居於踏查還是遠端研究</li></ul>請參考<a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>OpenStreetMap.org的隱私政策</a>來取得更多資訊。我們也提醒你註冊帳號時能夠採用假名。",
@@ -652,144 +791,5 @@
         "wikidata": {
             "description": "Wikidata 編號"
         }
-    },
-    "move": {
-        "inviteToMove": {
-            "generic": "移動這個點",
-            "reasonRelocation": "移動這個物件到其他地方，因為已經搬遷了",
-            "reasonInaccurate": "改進這個點的精確度"
-        },
-        "inviteToMoveAgain": "再次移動這個點",
-        "isRelation": "這個圖徵是關聯並無法被移除",
-        "moveTitle": "移動這個點",
-        "selectReason": "為什麼你移動這個物件？",
-        "whyMove": "為什麼你想要移動這個點？",
-        "confirmMove": "移動到這裡",
-        "cannotBeMoved": "這個圖徵無法移動。",
-        "isWay": "這個圖徵是路徑，請用其他開放街圖編輯器來移動。",
-        "cancel": "取消動作",
-        "loginToMove": "你必須登入才能移動點",
-        "zoomInFurther": "放更大來確認移動",
-        "partOfAWay": "這個圖徵是其他路徑的一部分，請用其他編輯器來移動。",
-        "partOfRelation": "這個圖徵是關聯的一部分，請用其他編輯器來移動。",
-        "reasons": {
-            "reasonInaccurate": "這個物件的位置並不準確，應該移動個幾公尺"
-        },
-        "pointIsMoved": "這個點已經被移動了"
-    },
-    "notes": {
-        "closeNote": "關閉註解",
-        "isClosed": "這個註解已經解決了",
-        "addAComment": "新增評論",
-        "addCommentAndClose": "新增評論並且關閉",
-        "anonymous": "暱名用戶",
-        "disableAllNoteFilters": "關閉所有篩選",
-        "noteLayerHasFilters": "有些註解會被篩選掉而隱藏",
-        "reopenNoteAndComment": "再開啟註解與評論",
-        "typeText": "輸入些文字來新增評論",
-        "warnAnonymous": "你還未登入，我們無法聯繫你來解決你的問題。",
-        "textNeeded": "輸入描述性的文字來新增註解",
-        "noteIsPublic": "這大家都看得到",
-        "addComment": "新增評論",
-        "noteLayerDoEnable": "啟用圖層來顯示註解",
-        "notesLayerMustBeEnabled": "'notes' 圖層已經關閉，請啟用來新增註解",
-        "loginToAddPicture": "登入來新增圖片",
-        "reopenNote": "再開啟註解",
-        "createNoteTitle": "在這裡新增註解",
-        "isCreated": "你的註解已經創建了！",
-        "noteLayerNotEnabled": "顯示註解的圖層無法啟用，這個圖層必須啟用才能新增註解",
-        "createNoteIntro": "地圖有什麼錯誤或缺漏的嗎？這裡新增註解，之後會由志工來檢查。",
-        "loginToAddComment": "登入來新增評論",
-        "loginToClose": "登入來關閉註解",
-        "addCommentPlaceholder": "新增評論…",
-        "createNote": "新增新註解"
-    },
-    "importLayer": {
-        "popupTitle": "這裡可能有 {title}",
-        "layerName": "可能的 {title}",
-        "importButton": "import_button({layerId}, _tags, 我在這邊發現 {title} - 新增到地圖,./assets/svg/addSmall.svg,,,id)",
-        "alreadyMapped": "{title} 已經在地圖上了 - 這個點重覆了",
-        "description": "能夠為 {title} 匯入項目的圖層",
-        "notFound": "我無法找到 {title} - 移除吧",
-        "importHandled": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
-        "nearbyImagesIntro": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}"
-    },
-    "matrixbot": {
-        "subcommanNotFound": "我無法理解你的請求，這個指令需要動詞才能執行，但是 <code>{verb}</code> 不是我們所知道的動詞，但我知道動詞 {known_verbs}",
-        "subcommandNotGiven": "我無法理解你的要求，這個指令需要動詞才能執行，但你沒有說，請試一個 {known_verbs}",
-        "tooLongForPublic": "抱歉，這個指令對公開房間太長 - 請傳送私訊給我代替",
-        "commands": {
-            "documentation": {
-                "layer": {
-                    "singular": "圖層",
-                    "plural": "圖層"
-                },
-                "file": {
-                    "plural": "檔案",
-                    "singular": "檔案"
-                },
-                "inputElement": {
-                    "singular": "輸入元素",
-                    "plural": "輸入元素"
-                },
-                "didYouMean": "你的意思是",
-                "argid": "{list} 或是 {list_end} 編號需要文件，另外，撰寫 {coded_list} 的其中一個來察看能用的編號。",
-                "docs": "取得關於 MapComplete 圖層、主題或是網站參數的文件",
-                "theme": {
-                    "singular": "主題",
-                    "plural": "主題"
-                },
-                "overview": "下列的 {plural} 存在：",
-                "url_parameter": {
-                    "plural": "網址參數",
-                    "singular": "網址參數"
-                },
-                "visualisation": {
-                    "plural": "視覺化",
-                    "singular": "視覺化"
-                },
-                "noIdIntro": "從指定的編號來取得更多有關 MapComplete 程式相關的物件，已知的類別為 {list}",
-                "notFound": "沒有找到名稱為 <code>{id}</code> 的 {singular}",
-                "urlParam": "網址參數 <code>{id}<code>"
-            },
-            "dm": {
-                "receipt": "我傳送訊息給 {to}",
-                "noDm": "我無法與 {to} 創建房間",
-                "argto": "要傳送輸出結果的編號",
-                "sendReason": "我傳給你這個訊息是因為 <b>{sender}</b> 要求我以 <code>{cmd}</code>傳送",
-                "failed": "我因為 {message} 無法執行 <code>{cmd}</code>",
-                "executing": "執行<code>{_}</code>然後結果給 <b>{to}</b>…",
-                "selectValidCommand": "指定有效的指令",
-                "argbody": "指令的實際指令本文",
-                "docs": "執行指令然後傳送輸出結果給別人",
-                "commandNotFound": "命令 {key} 沒有找到 - <code>help</code> 來察看所有指令",
-                "selectValidUser": "執定有效的目標使用者"
-            },
-            "wiki": {
-                "searching": "在 {backend} 搜尋…"
-            },
-            "help": {
-                "askRights": "詢問 {admins} 取得適當的權限",
-                "insufficientRights": "你目前沒有足夠權限來執行這個指令。",
-                "argcmd": "這個指令你想要更多相關資訊",
-                "p0": "嗨！這是 MapComplete-bot {bot_version} (MapComplete 建造版本 {mc_version})。",
-                "notFound": "我沒有找到 <code>{cmd}</code>，也許你意味的 {closest} 其中之一？",
-                "docs": "顯示有關支援的指令資訊"
-            },
-            "dream": {
-                "generatedBy": "這段文字由 {bot} 產生，由 Reddit 上的機器學習機器人產生。",
-                "docs": "傳送電腦產生文字"
-            }
-        },
-        "commandNotFound": "我無法理解你的請求，你也許意思是類別 {0}、{1}、{2} 或 {2}？ <p>Type <code>help</code>來查看所有指令</p>",
-        "commandFailed": "抱兼，執行 <code>{cmd}</code> 時出現錯誤",
-        "noSufficientRights": "這個指令只有管理員或使用者角色才有的權限",
-        "decryptionFailed": "抱歉，我無法解碼你的訊息，請先離開頻道然後再次連線"
-    },
-    "multi_apply": {
-        "autoApply": "當改變屬性 {attr_names} 時，這些屬性也會自動 {count} 套用到其他物件"
-    },
-    "importInspector": {
-        "title": "檢視與管理匯入註解"
     }
 }
