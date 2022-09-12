@@ -583,9 +583,6 @@
                     },
                     "1": {
                         "then": "Gratis"
-                    },
-                    "2": {
-                        "then": "El servicio de limpieza tiene una tarifa"
                     }
                 },
                 "question": "¿Cuánto cuesta utilizar el servicio de limpieza?",
@@ -598,9 +595,6 @@
                     },
                     "1": {
                         "then": "Gratis"
-                    },
-                    "2": {
-                        "then": "El servicio de limpieza tiene una tasa, pero la cantidad se desconoce"
                     }
                 },
                 "question": "¿Cuánto cuesta utilizar el servicio de limpieza?",

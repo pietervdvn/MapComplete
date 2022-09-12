@@ -123,7 +123,8 @@
         "it": "Questo caffè in bici offre una pompa per bici che chiunque può utilizzare?",
         "zh_Hans": "这家自行车咖啡为每个使用者提供打气筒吗？",
         "ru": "Есть ли в этом велосипедном кафе велосипедный насос для всеобщего использования?",
-        "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬嗎？"
+        "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬嗎？",
+        "da": "Tilbyder denne cykelcafé en cykelpumpe til brug for alle?"
       },
       "mappings": [
         {
@@ -137,7 +138,8 @@
             "it": "Questo caffè in bici offre una pompa per bici liberamente utilizzabile",
             "zh_Hans": "这家自行车咖啡为每个人提供打气筒",
             "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬",
-            "ru": "В этом велосипедном кафе есть велосипедный насос для всеобщего использования"
+            "ru": "В этом велосипедном кафе есть велосипедный насос для всеобщего использования",
+            "da": "Denne cykelcafé tilbyder en cykelpumpe til enhver"
           }
         },
         {
@@ -151,7 +153,8 @@
             "it": "Questo caffè in bici non offre una pompa per bici liberamente utilizzabile",
             "zh_Hans": "这家自行车咖啡不为每个人提供打气筒",
             "zh_Hant": "這個單車咖啡廳並沒有為所有人提供單車打氣甬",
-            "ru": "В этом велосипедном кафе нет велосипедного насоса для всеобщего использования"
+            "ru": "В этом велосипедном кафе нет велосипедного насоса для всеобщего использования",
+            "da": "Denne cykelcafé tilbyder ikke en cykelpumpe til nogen"
           }
         }
       ]
@@ -342,7 +345,8 @@
         "ru": "Каков режим работы этого велосипедного кафе?",
         "pt_BR": "Quando este café de bicicleta abre?",
         "de": "Wann ist dieses Fahrradcafé geöffnet?",
-        "pt": "Quando este café de bicicleta abre?"
+        "pt": "Quando este café de bicicleta abre?",
+        "da": "Hvornår er denne cykelcafé åbent?"
       },
       "render": "{opening_hours_table(opening_hours)}",
       "freeform": {

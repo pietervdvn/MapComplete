@@ -10,7 +10,9 @@
         "cannotBeDeleted": "Dette element kan ikke slettes",
         "delete": "Slet",
         "explanations": {
-            "hardDelete": "Dette punkt vil blive slettet på OpenStreetMap. Det kan gendannes af en øvet bidragsyder",
+            "hardDelete": "Denne funktion vil blive slettet i OpenStreetMap. Det kan inddrives af en erfaren bidragyder",
+            "retagNoOtherThemes": "Denne funktion vil blive omklassificeret og skjult fra denne applikation",
+            "retagOtherThemes": "Denne funktion bliver tagget igen og synlig i {otherThemes}",
             "selectReason": "Angiv venligst hvorfor dette element burde slettes",
             "softDelete": "Dette element vil blive opdateret og skjult for dette program <span class=\"subtle\">{reason}</span>"
         },
@@ -133,7 +135,6 @@
             "title": "Vælg lag",
             "zoomInToSeeThisLayer": "Zoom ind for at se dette lag"
         },
-        "levelSelection": {},
         "loading": "Indlæser...",
         "loadingTheme": "Indlæser {theme}...",
         "loginFailed": "Det mislykkedes at logge ind på OpenStreetMap",
@@ -244,7 +245,6 @@
             "wednesday": "Onsdag"
         },
         "welcomeBack": "Du er logget ind, velkommen tilbage!",
-        "welcomeExplanation": {},
         "wikipedia": {
             "createNewWikidata": "Opret et nyt Wikidata element",
             "doSearch": "Søg ovenfor for at se resultater",
@@ -271,7 +271,6 @@
         "doDelete": "Fjern billede",
         "dontDelete": "Afbryd",
         "isDeleted": "Slettet",
-        "nearbyPictures": {},
         "pleaseLogin": "Log venligst ind for at tilføje et billede",
         "respectPrivacy": "Tag ikke billeder af mennesker eller nummerplader. Upload ikke Google Maps, Google Streetview, eller fra andre ophavsresbeskyttede kilder.",
         "toBig": "Dit billede er for stort da det er {actual_size}. Brug venligst billeder, der er højst {max_size}",
@@ -423,30 +422,6 @@
         "logIn": "Log ind for at se andre temaer, du tidligere har besøgt",
         "pickTheme": "Vælg et tema nedenfor for at komme i gang.",
         "title": "Velkommen til MapComplete"
-    },
-    "matrixbot": {
-        "commands": {
-            "dm": {},
-            "documentation": {
-                "file": {},
-                "inputElement": {},
-                "layer": {},
-                "theme": {},
-                "url_parameter": {},
-                "visualisation": {}
-            },
-            "dream": {},
-            "help": {},
-            "info": {},
-            "language": {},
-            "role": {},
-            "scheme": {},
-            "search": {},
-            "shutdown": {},
-            "tags": {},
-            "welcome": {},
-            "wiki": {}
-        }
     },
     "move": {
         "cancel": "Afbryd flytning",
@@ -664,7 +639,6 @@
         "direction": {
             "description": "En retning"
         },
-        "distance": {},
         "email": {
             "description": "email-adresse",
             "feedback": "Dette er ikke en gyldig emailadresse",

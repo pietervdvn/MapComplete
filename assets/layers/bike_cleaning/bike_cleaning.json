@@ -24,7 +24,8 @@
       "pt_BR": "Serviço de limpeza de bicicletas",
       "pt": "Serviço de limpeza de bicicletas",
       "ru": "Услуги по чистке велосипедов",
-      "es": "Servicio de limpieza de bicis"
+      "es": "Servicio de limpieza de bicis",
+      "da": "Cykel rengøringsservice"
     },
     "mappings": [
       {
@@ -38,7 +39,8 @@
           "zh_Hant": "單車清理服務 <i>{name}</i>",
           "pt_BR": "Serviço de limpeza de bicicletas <i>{name}</i>",
           "pt": "Serviço de limpeza de bicicletas <i>{name}</i>",
-          "es": "Servicio de limpieza de bicis <i>{name}</i>"
+          "es": "Servicio de limpieza de bicis <i>{name}</i>",
+          "da": "Cykelrengøringstjeneste <i>{name}</i>"
         }
       }
     ]
@@ -66,7 +68,8 @@
         "pt_BR": "uma serviço de limpeza de bicicletas",
         "pt": "uma serviço de limpeza de bicicletas",
         "ru": "Услуги по чистке велосипедов",
-        "es": "un servicio de limpieza de bicis"
+        "es": "un servicio de limpieza de bicis",
+        "da": "en cykelrengøring"
       },
       "tags": [
         "amenity=bicycle_wash"
@@ -81,14 +84,16 @@
         "de": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
         "nl": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
         "es": "¿Cuánto cuesta utilizar el servicio de limpieza?",
-        "fr": "Combien coûte le service de nettoyage ?"
+        "fr": "Combien coûte le service de nettoyage ?",
+        "da": "Hvor meget koster det at bruge rengøringsservicen?"
       },
       "render": {
         "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}",
         "de": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}",
         "nl": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}",
         "es": "Utilizar el servicio de limpieza cuesta {service:bicycle:cleaning:charge}",
-        "fr": "Le service de nettoyage coûte {service:bicycle:cleaning:charge}"
+        "fr": "Le service de nettoyage coûte {service:bicycle:cleaning:charge}",
+        "da": "Brug af rengøringsservice koster {service:bicycle:cleaning:charge}"
       },
       "condition": {
         "and": [
@@ -111,20 +116,27 @@
             "de": "Der Reinigungsservice ist kostenlos",
             "nl": "Het fietsschoonmaakpunt is gratis",
             "es": "El servicio de limpieza es gratis",
-            "fr": "Le service de nettoyage est gratuit"
+            "fr": "Le service de nettoyage est gratuit",
+            "da": "Rengøringsservicen er gratis at bruge"
           },
-          "addExtraTags": ["service:bicycle:cleaning:charge="]
+          "addExtraTags": [
+            "service:bicycle:cleaning:charge="
+          ]
         },
         {
           "if": {
-            "and":["service:bicycle:cleaning:fee=yes","service:bicycle:cleaning:charge="]
+            "and": [
+              "service:bicycle:cleaning:fee=yes",
+              "service:bicycle:cleaning:charge="
+            ]
           },
           "then": {
-            "en": "The cleaning service has a fee, but the amount is not known",
-            "de": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt",
-            "nl": "Het fietsschoonmaakpunt is betalend, maar de prijs is onbekend",
-            "es": "El servicio de limpieza tiene una tasa, pero la cantidad se desconoce",
-            "fr": "Le coût du service de nettoyage n’est pas connu"
+            "en": "Free to use",
+            "de": "Kostenlose Nutzung",
+            "nl": "Gratis te gebruiken",
+            "es": "Gratis",
+            "fr": "Utilisation gratuite",
+            "da": "Gratis at bruge"
           },
           "hideInAnswer": true
         }
@@ -137,14 +149,16 @@
         "de": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
         "nl": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
         "es": "¿Cuánto cuesta utilizar el servicio de limpieza?",
-        "fr": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?"
+        "fr": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
+        "da": "Hvor meget koster det at bruge rengøringsservicen?"
       },
       "render": {
         "en": "Using the cleaning service costs {charge}",
         "de": "Die Nutzung des Reinigungsdienstes kostet {charge}",
         "nl": "Het gebruik van het fietsschoonmaakpunt kost {charge}",
         "es": "Utilizar el servicio de limpieza cuesta {charge}",
-        "fr": "L’utilisation du service de nettoyage coûte {charge}"
+        "fr": "L’utilisation du service de nettoyage coûte {charge}",
+        "da": "Brug af rengøringsservice koster {charge}"
       },
       "condition": {
         "or": [
@@ -166,18 +180,22 @@
             "de": "Kostenloser Reinigungsservice",
             "nl": "Gratis fietsschoonmaakpunt",
             "es": "Un servicio de limpieza gratis",
-            "fr": "Service de nettoyage gratuit"
+            "fr": "Service de nettoyage gratuit",
+            "da": "Gratis at bruge rengøringsservice"
           },
-          "addExtraTags": ["charge="]
+          "addExtraTags": [
+            "charge="
+          ]
         },
         {
           "if": "fee=yes",
           "then": {
-            "en": "The cleaning service has a fee",
-            "de": "Der Reinigungsservice ist kostenpflichtig",
-            "nl": "Je moet betalen voor het fietsschoonmaakpunt",
-            "es": "El servicio de limpieza tiene una tarifa",
-            "fr": "Le service de nettoyage est payant"
+            "en": "Free to use",
+            "de": "Kostenlose Nutzung",
+            "nl": "Gratis te gebruiken",
+            "es": "Gratis",
+            "fr": "Libre d'utilisation",
+            "da": "Gratis at bruge"
           }
         }
       ],

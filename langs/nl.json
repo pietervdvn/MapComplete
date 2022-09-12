@@ -17,7 +17,7 @@
             "softDelete": "Dit punt zal aangepast worden en zal in deze applicatie niet meer getoond worden. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Dit object is verwijderd",
-        "isntAPoint": "Enkel punten kunnen verwijderd worden, het geselecteerde object is een lijn, een oppervlakte of een relatie.",
+        "isntAPoint": "Enkel punten kunnen verwijderd worden. Het geselecteerde object is een lijn, een oppervlakte of een relatie.",
         "loading": "Aan het bekijken of dit object veilig verwijderd kan worden.",
         "loginToDelete": "Je moet aangemeld zijn om een object van de kaart te verwijderen",
         "notEnoughExperience": "Dit object is door iemand anders gemaakt.",
