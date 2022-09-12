@@ -7,7 +7,8 @@
       "nl": "Muur of gebouw",
       "de": "Wand oder Gebäude",
       "es": "Pared o edificio",
-      "fr": "Mur ou bâtiment"
+      "fr": "Mur ou bâtiment",
+      "da": "Mur eller bygning"
     }
   },
   "description": {
@@ -71,7 +72,8 @@
           "human": {
             "en": "meter",
             "fr": "mètre",
-            "de": "Meter"
+            "de": "Meter",
+            "da": "meter"
           }
         },
         {
@@ -84,7 +86,8 @@
           "human": {
             "en": "centimeter",
             "fr": "centimètre",
-            "de": "Zentimeter"
+            "de": "Zentimeter",
+            "da": "centimeter"
           }
         }
       ]
@@ -96,18 +99,21 @@
       "render": {
         "before": {
           "en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:",
-          "de": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:"
+          "de": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:",
+          "da": "<h3>Indgange</h3>Denne bygning har {_entrances_count} indgange:"
         },
         "after": {
           "en": "{_entrances_count_without_width_count} entrances don't have width information yet",
-          "de": "{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite"
+          "de": "{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
+          "da": "{_entrances_count_without_width_count} indgange har endnu ikke oplysninger om bredde"
         },
         "special": {
           "type": "multi",
           "key": "_entrance_properties_with_width",
           "tagrendering": {
             "en": "An <a href='#{id}'>entrance</a> of {canonical(width)}",
-            "de": "Ein <a href='#{id}'>Eingang</a> von {canonical(width)}"
+            "de": "Ein <a href='#{id}'>Eingang</a> von {canonical(width)}",
+            "da": "En <a href='#{id}'>indgang</a> på {canonical(width)}"
           }
         }
       },
@@ -116,14 +122,16 @@
           "if": "_entrances_count=0",
           "then": {
             "en": "No entrance has been marked",
-            "de": "Es wurde kein Eingang markiert"
+            "de": "Es wurde kein Eingang markiert",
+            "da": "Der er ikke markeret nogen indgang"
           }
         },
         {
           "if": "_entrances_count_without_width:=_entrances_count",
           "then": {
             "en": "None of the {_entrance_count} entrances have width information yet",
-            "de": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite"
+            "de": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite",
+            "da": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu"
           }
         }
       ]

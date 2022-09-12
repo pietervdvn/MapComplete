@@ -188,5 +188,6 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "deletion":true
 }

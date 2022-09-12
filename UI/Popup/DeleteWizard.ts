@@ -22,6 +22,7 @@ import Title from "../Base/Title"
 import { SubstitutedTranslation } from "../SubstitutedTranslation"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import TagRenderingQuestion from "./TagRenderingQuestion"
+import {OsmId} from "../../Models/OsmFeature";
 
 export default class DeleteWizard extends Toggle {
     /**
@@ -43,7 +44,7 @@ export default class DeleteWizard extends Toggle {
      * @param state: the state of the application
      * @param options softDeletionTags: the tags to apply if the user doesn't have permission to delete, e.g. 'disused:amenity=public_bookcase', 'amenity='. After applying, the element should not be picked up on the map anymore. If undefined, the wizard will only show up if the point can be (hard) deleted
      */
-    constructor(id: string, state: FeaturePipelineState, options: DeleteConfig) {
+    constructor(id: OsmId, state: FeaturePipelineState, options: DeleteConfig) {
         const deleteAbility = new DeleteabilityChecker(id, state, options.neededChangesets)
         const tagsSource = state.allElements.getEventSourceById(id)
 

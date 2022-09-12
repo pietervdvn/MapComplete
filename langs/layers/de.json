@@ -651,9 +651,6 @@
                     },
                     "1": {
                         "then": "Kostenlose Nutzung"
-                    },
-                    "2": {
-                        "then": "Der Reinigungsservice ist kostenpflichtig"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -666,9 +663,6 @@
                     },
                     "1": {
                         "then": "Kostenlose Nutzung"
-                    },
-                    "2": {
-                        "then": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -1400,7 +1394,7 @@
                 "title": "eine Ladestation für Elektrofahrräder mit einer normalen europäischen Steckdose <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (zum Laden von Elektrofahrrädern)"
             },
             "1": {
-                "title": "eine ladestation für e-bikes"
+                "title": "Eine Ladestation für Elektrofahrzeuge"
             }
         },
         "tagRenderings": {

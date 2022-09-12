@@ -84,7 +84,7 @@
     "id": "Beragam karya seni",
     "pt": "Diversas obras de arte",
     "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
-    "da": "Forskellige kunstværker",
+    "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
     "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món"
   },
   "minzoom": 12,
@@ -133,7 +133,8 @@
         "id": "Ini adalah {artwork_type}",
         "pt": "Isto é um(a) {artwork_type}",
         "hu": "Ez egy {artwork_type}",
-        "pl": "Jest to {artwork_type}"
+        "pl": "Jest to {artwork_type}",
+        "da": "Dette er en {artwork_type}"
       },
       "question": {
         "en": "What is the type of this artwork?",
@@ -383,7 +384,8 @@
             "pt": "Azulejo (azulejo decorativo espanhol e português)",
             "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)",
             "pl": "Azulejo (hiszpańskie płytka dekoracyjna)",
-            "es": "Azulejo (Baldosas decorativas Españolas y Portuguesas)"
+            "es": "Azulejo (Baldosas decorativas Españolas y Portuguesas)",
+            "da": "Azulejo (spansk dekorativt flisebeklædning)"
           }
         },
         {
@@ -402,7 +404,8 @@
             "hu": "Csempe",
             "pl": "Płyta ceramiczna (fliza)",
             "ca": "Enrajolat",
-            "es": "Cerámica"
+            "es": "Cerámica",
+            "da": "flisebeklædning"
           }
         }
       ],
@@ -518,7 +521,8 @@
         "id": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
         "pt": "Corresponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
         "hu": "Ez a megfelelő: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "es": "Se corresponde con <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+        "es": "Se corresponde con <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
+        "da": "Svarer til <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
       },
       "freeform": {
         "key": "wikidata",

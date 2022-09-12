@@ -651,9 +651,6 @@
                     },
                     "1": {
                         "then": "Gratis te gebruiken"
-                    },
-                    "2": {
-                        "then": "Je moet betalen voor het fietsschoonmaakpunt"
                     }
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
@@ -666,9 +663,6 @@
                     },
                     "1": {
                         "then": "Gratis te gebruiken"
-                    },
-                    "2": {
-                        "then": "Het fietsschoonmaakpunt is betalend, maar de prijs is onbekend"
                     }
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
@@ -2446,6 +2440,13 @@
                 },
                 "question": "Wat is de rotssoort?",
                 "render": "De rotssoort is {rock}"
+            },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Een klimboulder- eenn enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen"
+                    }
+                }
             },
             "name": {
                 "mappings": {

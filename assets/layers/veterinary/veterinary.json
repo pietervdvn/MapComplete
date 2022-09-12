@@ -33,7 +33,7 @@
   ],
   "name": {
     "en": "veterinary",
-    "da": "dyrl&aelig;ge",
+    "da": "dyrlæge",
     "de": "Tierärzte",
     "es": "veterinario",
     "nl": "Dierenarts",
@@ -42,7 +42,7 @@
   "title": {
     "render": {
       "en": "Veterinary",
-      "da": "dyrl&aelig;ge",
+      "da": "Dyrlæge",
       "de": "Tierarzt",
       "id": "Dokter hewan",
       "es": "Veterinario",
@@ -102,7 +102,8 @@
         "en": "The name of this veterinarian is {name}",
         "de": "Denne dyrl&aelig; hedder {name}",
         "es": "El nombre de este veterinario es {name}",
-        "nl": "Deze dierenartspraktijk heet {name}"
+        "nl": "Deze dierenartspraktijk heet {name}",
+        "da": "Navnet på denne dyrlæge er {name}"
       },
       "freeform": {
         "key": "name"

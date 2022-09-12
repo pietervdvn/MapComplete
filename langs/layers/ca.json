@@ -570,7 +570,7 @@
                 "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
             },
             "defibrillator-defibrillator:location:fr": {
-                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador (en francés)"
             },
             "defibrillator-indoors": {
                 "mappings": {
@@ -595,7 +595,8 @@
                     "0": {
                         "then": "Comprovat avui!"
                     }
-                }
+                },
+                "render": "El desfibrilador és va sondejar per ultima vegada el {survey:date}"
             }
         },
         "title": {
