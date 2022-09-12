@@ -39,6 +39,30 @@
         "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
         "reload": "Reload the data"
     },
+    "flyer": {
+        "callToAction": "Test it on mapcomplete.osm.be",
+        "frontParagraph": "MapComplete is an easy to use web application to collect geodata in OpenStreetMap, enabling collecting and managing relevant data in an open, crowdsourced and reusable way.\n\nNew categories and attributes can be added upon request.",
+        "license": {
+            "text": "The webversion is free to use, both for viewing and adding data.\nAdding data requires a free account on OpenStreetMap.org.\n\n MapComplete can tailored to your needs, with new map layers, new functionalities or styled to your organisation styleguide. We also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.\n\nMapComplete is fully Open Source (GPL-licenses).\n\nData on OpenStreetMap is under the ODbL-license, which means all data can be reused for all purposes, as long as attribution is given and all (improvements to) the data are republished under the same license.\nSee osm.org/copyright for more details",
+            "title": "License and pricing"
+        },
+        "mapcomplete": {
+            "intro": "MapComplete is a website which has {mapCount} interactive maps. Every single map allows to add or update information.",
+            "li0": "Communicate where POI are",
+            "li1": "Add new points and update information on existing points",
+            "li2": "View and add pictures",
+            "li3": "Add contact information and opening hours easily",
+            "li4": "See Wikipedia articles about the selected feature",
+            "li5": "See aerial imagery and map backgrounds",
+            "li6": "Can be placed in other websites as iFrame",
+            "li7": "Embedded within the OpenStreetMap-ecosystem, which has many tools available",
+            "title": "What is MapComplete?"
+        },
+        "osm": "OpenStreetMap is an online map which can be edited and reused by anyone for any purpose - just like Wikipedia.\n\nIt is the biggest geospatial database in the world and is reused by thousands of applications and websites.",
+        "tagline": "Collect geodata easily with OpenStreetMap",
+        "title": "MapComplete.osm.be",
+        "whatIsOsm": "What is OpenStreetMap?"
+    },
     "general": {
         "about": "Easily edit and add OpenStreetMap for a certain theme",
         "aboutMapcomplete": "<h3>About</h3><p>Use MapComplete to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. In most themes you can add pictures or even leave a review. The <b>theme maintainer</b> defines elements, questions and languages for it.</p><h3>Find out more</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.<ul><li>When embedded in a website, the iframe links to a full-screen MapComplete.</li><li>The fullscreen version offers info about OpenStreetMap.</li><li>Viewing works without login, but editing requires an OSM account.</li><li>If you are not logged in, you are asked to do so</li><li>Once you answered a single question, you can add new features to the map</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul></p><br/><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a> </p><p> Want to see <b>your progress</b>? Follow the edit count on <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",

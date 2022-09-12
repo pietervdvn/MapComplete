@@ -32,7 +32,7 @@ export default class LocationInput
     public readonly leafletMap: UIEventSource<any>
     public readonly bounds
     public readonly location
-    private _centerLocation: UIEventSource<Loc>
+    private readonly _centerLocation: UIEventSource<Loc>
     private readonly mapBackground: UIEventSource<BaseLayer>
     /**
      * The features to which the input should be snapped
@@ -177,10 +177,6 @@ export default class LocationInput
         this.map.installBounds(factor, showRange)
     }
 
-    TakeScreenshot(): Promise<any> {
-        return this.map.TakeScreenshot()
-    }
-
     protected InnerConstructElement(): HTMLElement {
         try {
             const self = this
@@ -269,5 +265,9 @@ export default class LocationInput
                 .SetClass("alert")
                 .ConstructElement()
         }
+    }
+
+    TakeScreenshot(): Promise<string> {
+        return this.map.TakeScreenshot()
     }
 }

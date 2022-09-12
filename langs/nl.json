@@ -39,6 +39,30 @@
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas",
         "reload": "Herlaad de data"
     },
+    "flyer": {
+        "callToAction": "Probeer het uit op mapcomplete.osm.be",
+        "frontParagraph": "MapComplete is een web-applicatie om OpenStreetMap-data te tonen en aan te passen op basis van thematische kaarten. Het maakt het mogelijk om open geodata te crowdsourcen en te managen op een makkelijke manier.\n\nNieuwe categorie�n en attributen kunnen op vraag worden toegevoegd.",
+        "license": {
+            "text": "De webversie is gratis te gebruiken, zowel voor het bekijken als voor het toevoegen van data.\nVoor het toevoegen van data is een gratis account op OpenStreetMap.org vereist.\n\nWil je een versie op maat? Wil je een versie in jullie huisstijl?\nWil je een nieuwe kaartlaag of functionaliteit? Wil je een crowdsourcing-campagne opzetten?\nNeem contact op met pietervdvn@posteo.net voor een offerte.\n\nMapComplete is volledig OpenSource (GPL-licentie).\n\nData op OpenStreetMap valt onder de ODbL-licentie. Data mag herbruikt worden voor alle doeleinden, mits bronvermelding en het openhouden van (verbeteringen aan) de data.\nZie osm.org/copyright voor alle details.",
+            "title": "Licentie and kostprijs"
+        },
+        "mapcomplete": {
+            "intro": "MapComplete is een website met {mapCount} interactieve kaarten. Op iedere kaart kunnen gebruikers data zien en updaten.",
+            "li0": "Communiceer waar interessepunten zijn",
+            "li1": "Voeg nieuwe punten toe en update informatie van reeds bestaande punten",
+            "li2": "Bekijk en voeg foto's van interessepunten toe",
+            "li3": "Voeg eenvoudig contactgegevens en openingsuren toe",
+            "li4": "Bekijk het Wikipedia-artikel van interessepunten",
+            "li5": "Wissel tussen kaart- en luchtfoto's als achtergrond",
+            "li6": "Eenvoudig te embedden in een website als iFrame",
+            "li7": "Deel van het OpenStreetMap-ecosysteem waarbinnen honderden andere tools bestaan",
+            "title": "Wat is MapComplete?"
+        },
+        "osm": "OpenStreetMap is een online kaart die door iedereen aangepast en herbruikt mag worden - net zoals Wikipedia.\n\nHet is de grootste geodatabank ter wereld en wordt herbruikt door miljoenen websites en applicaties.",
+        "tagline": "Verzamel geodata eenvoudig met OpenStreetMap",
+        "title": "MapComplete.osm.be",
+        "whatIsOsm": "Wat is OpenStreetMap?"
+    },
     "general": {
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
         "aboutMapcomplete": "<h3>Over MapComplete</h3><p>Met MapComplete kun je OpenStreetMap verrijken met informatie over een bepaald thema. Beantwoord enkele vragen, en binnen een paar minuten is jouw bijdrage wereldwijd beschikbaar! De <b>maker van het thema</b> bepaalt de elementen, vragen en taalversies voor het thema.</p><h3>Ontdek meer</h3><p>MapComplete <b>biedt altijd de volgende stap</b> naar meer OpenStreetMap:</p><ul><li>Indien ingebed in een website linkt het iframe naar de volledige MapComplete</li><li>De volledige versie heeft uitleg over OpenStreetMap</li><li>Bekijken kan altijd, maar wijzigen vereist een OSM-account</li><li>Als je niet aangemeld bent, wordt je gevraagd dit te doen</li><li>Als je minstens één vraag hebt beantwoord, kan je ook elementen toevoegen</li><li>Heb je genoeg changesets, dan verschijnen de OSM-tags, nog later links naar de wiki</li></ul><p></p><p>Merk je <b>een bug</b> of wil je een <b>extra feature</b>? Wil je <b>helpen vertalen</b>? Bezoek dan de <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">broncode</a> en <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker</a>. </p><p></p>Wil je <b>je vorderingen</b> zien? Volg de edits <a href=\"{osmcha_link}\" target=\"_blank\">op OsmCha</a>.<p></p>",
