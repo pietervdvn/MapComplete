@@ -21,7 +21,7 @@ export default class LayoutConfig {
     public readonly startZoom: number
     public readonly startLat: number
     public readonly startLon: number
-    public readonly widenFactor: number
+    public widenFactor: number
     public readonly defaultBackgroundId?: string
     public layers: LayerConfig[]
     public tileLayerSources: TilesourceConfig[]

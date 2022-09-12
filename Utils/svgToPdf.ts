@@ -528,26 +528,28 @@ export class SvgToPdf {
             svgImage.setAttribute("height", "" + height)
 
             let layout = AllKnownLayouts.allKnownLayouts.get(params["theme"])
-
             if (layout === undefined) {
                 console.error("Could not show map with parameters", params)
                 throw "Theme not found:" + params["theme"] + ". Use theme: to define which theme to use. "
             }
+            layout.widenFactor = 0
             const zoom = Number(params["zoom"] ?? params["z"] ?? 14);
             for (const l of layout.layers) {
                 l.minzoom = zoom
             }
             const state = new FeaturePipelineState(layout)
-            state.backgroundLayer.addCallbackAndRunD(l => console.log("baselayer is",l.id))
+            state.backgroundLayer.addCallbackAndRunD(l => console.log("baselayer is", l.id))
             state.locationControl.setData({
                 zoom,
                 lat: Number(params["lat"] ?? 51.05016),
                 lon: Number(params["lon"] ?? 3.717842)
             })
 
-            if (params["layers"] === "none") {
-                const fl = state.filteredLayers.data
-                for (const filteredLayer of fl) {
+            const fl = state.filteredLayers.data
+            for (const filteredLayer of fl) {
+                if (params["layers"] === "none") {
+                    filteredLayer.isDisplayed.setData(false)
+                }else if(filteredLayer.layerDef.id.startsWith("note_import")){
                     filteredLayer.isDisplayed.setData(false)
                 }
             }
@@ -555,10 +557,10 @@ export class SvgToPdf {
             for (const paramsKey in params) {
                 if (paramsKey.startsWith("layer-")) {
                     const layerName = paramsKey.substring("layer-".length)
-                    const isDisplayed =   params[paramsKey].toLowerCase().trim() === "true";
+                    const isDisplayed = params[paramsKey].toLowerCase().trim() === "true";
                     console.log("Setting display status of ", layerName, "to", isDisplayed)
                     state.filteredLayers.data.find(l => l.layerDef.id === layerName).isDisplayed.setData(
-                      isDisplayed
+                        isDisplayed
                     )
                 }
             }

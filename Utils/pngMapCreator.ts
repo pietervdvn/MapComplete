@@ -5,6 +5,8 @@ import Loc from "../Models/Loc";
 import ShowDataLayer from "../UI/ShowDataLayer/ShowDataLayer";
 import {BBox} from "../Logic/BBox";
 import Minimap from "../UI/Base/Minimap";
+import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers";
+import AvailableBaseLayersImplementation from "../Logic/Actors/AvailableBaseLayersImplementation";
 
 export class PngMapCreator {
     private readonly _state: FeaturePipelineState;
@@ -29,10 +31,11 @@ export class PngMapCreator {
     private async createAndLoadMinimap(): Promise<MinimapImplementation> {
         const state = this._state;
         const options = this._options
+        const baselayer = AvailableBaseLayers.layerOverview.find(bl => bl.id === state.layoutToUse.defaultBackgroundId) ?? AvailableBaseLayers.osmCarto
         return new Promise(resolve => {
             const minimap = Minimap.createMiniMap({
                 location: new UIEventSource<Loc>(state.locationControl.data), // We remove the link between the old and the new UI-event source as moving the map while the export is running fucks up the screenshot
-                background: state.backgroundLayer,
+                background: new UIEventSource(baselayer),
                 allowMoving: false,
                 onFullyLoaded: (_) =>
                     window.setTimeout(() => {
@@ -63,14 +66,15 @@ export class PngMapCreator {
         return new Promise<string | Blob>(resolve => {
             // Next: we prepare the features. Only fully contained features are shown
             minimap.leafletMap.addCallbackAndRunD(async (leaflet) => {
-                const bounds = BBox.fromLeafletBounds(leaflet.getBounds().pad(0.2))
+                const bounds = BBox.fromLeafletBounds(leaflet.getBounds().pad(0.1).pad(-state.layoutToUse.widenFactor))
                 // Ping the featurepipeline to download what is needed
                 state.currentBounds.setData(bounds)
                 if(state.featurePipeline.runningQuery.data){
                     // A query is running!
                     // Let's wait for it to complete
                     console.log("Waiting for the query to complete")
-                    await state.featurePipeline.runningQuery.AsPromise()
+                    await state.featurePipeline.runningQuery.AsPromise(isRunning => !isRunning)
+                    console.log("Query has completeted!")
                 }
 
                 window.setTimeout(() => {

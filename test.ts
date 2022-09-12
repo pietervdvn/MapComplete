@@ -11,9 +11,6 @@ import {SvgToPdf} from "./Utils/svgToPdf";
 MinimapImplementation.initialize()
 
 async function main() {
-    const layoutToUse = AllKnownLayouts.allKnownLayouts.get("cyclofix")
-
-
     const svg = await Utils.download(window.location.protocol + "//" + window.location.host + "/assets/templates/MapComplete-flyer.svg")
     const svgBack = await Utils.download(window.location.protocol + "//" + window.location.host + "/assets/templates/MapComplete-flyer.back.svg")
      Locale.language.setData("en")
