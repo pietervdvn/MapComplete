@@ -215,6 +215,7 @@ export default class LayerConfig extends WithContextLoader {
         this.minzoomVisible = json.minzoomVisible ?? this.minzoom
         this.shownByDefault = json.shownByDefault ?? true
         this.forceLoad = json.forceLoad ?? false
+        if (json.presets === null) json.presets = undefined
         if (json.presets !== undefined && json.presets?.map === undefined) {
             throw "Presets should be a list of items (at " + context + ")"
         }
