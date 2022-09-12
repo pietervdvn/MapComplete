@@ -132,6 +132,7 @@
     }
   ],
   "tagRenderings": [
+    "images",
     {
       "question": {
         "en": "Can a bicycle go past this barrier?",
@@ -507,5 +508,30 @@
     {
       "width": "5"
     }
-  ]
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+      "barrier=",
+        "bicycle=",
+        "foot=",
+        "motor_vehicle=",
+        "vehicle=",
+        "inline_skate=",
+        "inline_skates=",
+        "mofa=",
+        "moped=",
+        "moped_a=",
+        "moped_b=",
+        "bollard=",
+        "cycle_barrier=",
+        "maxwidth:physical=",
+        "width:separation=",
+        "width:opening=",
+        "overlap=",
+        "fixme="
+      ]
+    }
+    
+  }
 }
