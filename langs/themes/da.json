@@ -219,7 +219,7 @@
                         }
                     },
                     "dumpstations-network": {
-                        "render": "Denne station er en del af netværket {netværk}",
+                        "render": "Denne station er en del af netværket {network}",
                         "question": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)"
                     }
                 }
@@ -309,7 +309,7 @@
                     "3": {
                         "options": {
                             "0": {
-                                "question": "Brugersprog (iso-kode) {søg}"
+                                "question": "Brugersprog (iso-kode) {search}"
                             }
                         }
                     },
@@ -343,7 +343,7 @@
                     }
                 },
                 "title": {
-                    "render": "Ændringssæt for {tema}"
+                    "render": "Ændringssæt for {theme}"
                 },
                 "tagRenderings": {
                     "contributor": {
@@ -646,13 +646,13 @@
                                     "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne er</span> offentligt tilgængelig<br/>{_embedding_feature:access:description}"
                                 },
                                 "1": {
-                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at </span> en tilladelse er nødvendig for at få adgang til<br/>{_embedding_feature:access:description }"
+                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at </span> en tilladelse er nødvendig for at få adgang til<br/>{_embedding_feature:access:description}"
                                 },
                                 "3": {
-                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for klubmedlemmer<br/>{_embedding_feature:access: description}"
+                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for klubmedlemmer<br/>{_embedding_feature:access:description}"
                                 },
                                 "2": {
-                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for kunder<br/>{_embedding_feature:access:description }"
+                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for kunder<br/>{_embedding_feature:access:description}"
                                 }
                             }
                         },
