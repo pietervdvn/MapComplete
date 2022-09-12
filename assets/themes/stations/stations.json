@@ -1,0 +1,264 @@
+{
+  "id": "stations",
+  "title": {
+    "en": "Train Stations"
+  },
+  "description": {
+    "en": "View, edit and add details to a train station"
+  },
+  "icon": "./assets/themes/stations/rail-light-15.svg",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 0,
+  "hideFromOverview": true,
+  "defaultBackgroundId": "CartoDB.Positron",
+  "layers": [
+    {
+      "builtin": "indoors",
+      "override": {
+        "minzoom": 19,
+        "passAllFeatures": true,
+        "mapRendering": [
+          {
+            "label": {
+              "render": null
+            },
+            "iconSize": "0,0,bottom"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": [
+        "entrance",
+        "elevator",
+        "bench",
+        "toilet",
+        "waste_basket"
+      ],
+      "override": {
+        "minzoom": 19
+      }
+    },
+    {
+      "builtin": "pedestrian_path",
+      "override": {
+        "mapRendering": [
+          {},
+          {
+            "color": {
+              "render": "#b33",
+              "mappings": [
+                {
+                  "if": "highway=steps",
+                  "then": "gray"
+                }
+              ]
+            },
+            "width": {
+              "render": 4,
+              "mappings": [
+                {
+                  "if": "highway=steps",
+                  "then": 10
+                }
+              ]
+            },
+            "dashArray": {
+              "render": "12 6",
+              "mappings": [
+                {
+                  "if": "highway=steps",
+                  "then": "2 2"
+                }
+              ]
+            }
+          }
+        ],
+        "minzoom": 19
+      }
+    },
+    {
+      "id": "train_station",
+      "minzoom": 12,
+      "minzoomVisible": 17,
+      "source": {
+        "osmTags": {
+          "or": [
+            "railway=station",
+            "railway=halt"
+          ]
+        }
+      },
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/stations/rail-light-15.svg",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "label": {
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+              }
+            ]
+          }
+        },
+        {
+          "color": "green"
+        }
+      ]
+    },
+    {
+      "builtin": "shops",
+      "override": {
+        "source": {
+          "osmTags": {
+            "and": [
+              "shop~*",
+              "indoor=room"
+            ]
+          }
+        },
+        "presets": null,
+        "minzoom": 19
+      }
+    },
+    "railway_platforms",
+    {
+      "id": "ticket_machine",
+      "source": {
+        "osmTags": {
+          "and": [
+            "amenity=vending_machine",
+            "vending=public_transport_tickets"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Ticket Machine"
+        }
+      },
+      "tagRenderings": [
+        "images",
+        "level",
+        {
+          "id": "operator",
+          "question": {
+            "en": "Who is the operator of this ticket machine?"
+          },
+          "render": {
+            "en": "This ticket machine is operated by {operator}"
+          },
+          "freeform": {
+            "key": "operator",
+            "type": "string",
+            "placeholder": {
+              "en": "Name of the operator"
+            }
+          }
+        }
+      ],
+      "presets": [
+        {
+          "tags": ["amenity=vending_machine", "vending=public_transport_tickets"],
+          "title": {
+            "en": "a ticket machine"
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": "circle:white;./assets/themes/stations/public_transport_tickets.svg",
+          "iconSize": "20,20,center",
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "departures_board",
+      "name": {
+        "en": "Departures boards"
+      },
+      "description": {
+        "en": "Displays showing the trains that will leave from this station"
+      },
+      "title": {
+        "render": {
+          "en": "Departures board"
+        }
+      },
+      "minzoom": 19,
+      "source": {
+        "osmTags": {
+          "and": [
+            "departures_board~*",
+            "departures_board!=no",
+            "public_transport="
+          ]
+        }
+      },
+      "tagRenderings": [
+        {
+          "id": "type",
+          "question": {
+            "en": "What kind of departures board is this?"
+          },
+          "mappings": [
+            {
+              "if": "departures_board=yes",
+              "then": {
+                "en": "This is a departures board of an unknown type"
+              }
+            },
+            {
+              "if": "departures_board=realtime",
+              "then": {
+                "en": "This is an electronic board, showing the next departures in realtime"
+              }
+            },
+            {
+              "if": "departures_board=timetable",
+              "then": {
+                "en": "This is a paper timetable"
+              }
+            },
+            {
+              "if": "departures_board=delay",
+              "then": {
+                "en": "There is a sign showing the frequency of the trains"
+              }
+            }
+          ]
+        },
+        "level"
+      ],
+      "presets": [
+        {
+          "tags": ["departures_board=yes"],
+          "title": {
+            "en": "a departures board"
+          },
+          "description": {
+            "en": "Add a board showing departures, either electronic or paper"
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/svg/bug.svg",
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ]
+    }
+  ]
+}

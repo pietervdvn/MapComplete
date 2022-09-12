@@ -1,0 +1,22 @@
+[
+  {
+    "path": "public_transport_tickets.svg",
+    "license": "CC0",
+    "authors": [
+      "Jérémy Ragusa"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/amenity/public_transport_tickets.svg"
+    ]
+  },
+  {
+    "path": "rail-light-15.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki"
+    ],
+    "sources": [
+      "https://labs.mapbox.com/maki-icons/"
+    ]
+  }
+]
