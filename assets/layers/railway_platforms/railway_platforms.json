@@ -58,11 +58,11 @@
       ],
       "label": {
         "mappings": [
-              {
-                "if": "ref~*",
-                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{ref}</div>"
-              }
-            ]
+          {
+            "if": "ref~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{ref}</div>"
+          }
+        ]
       }
     }
   ]

@@ -164,7 +164,10 @@
       ],
       "presets": [
         {
-          "tags": ["amenity=vending_machine", "vending=public_transport_tickets"],
+          "tags": [
+            "amenity=vending_machine",
+            "vending=public_transport_tickets"
+          ],
           "title": {
             "en": "a ticket machine"
           }
@@ -241,7 +244,9 @@
       ],
       "presets": [
         {
-          "tags": ["departures_board=yes"],
+          "tags": [
+            "departures_board=yes"
+          ],
           "title": {
             "en": "a departures board"
           },
