@@ -7,6 +7,7 @@ import {TagsFilter} from "../../Tags/TagsFilter"
 import {And} from "../../Tags/And"
 import {Tag} from "../../Tags/Tag"
 import {Utils} from "../../../Utils";
+import {OsmId} from "../../../Models/OsmFeature";
 
 export default class DeleteAction extends OsmChangeAction {
     private readonly _softDeletionTags: TagsFilter
@@ -15,12 +16,13 @@ export default class DeleteAction extends OsmChangeAction {
         specialMotivation: string
         changeType: "deletion"
     }
-    private readonly _id: string
-    private _hardDelete: boolean
+    private readonly _id: OsmId
+    private readonly _hardDelete: boolean
+
 
     constructor(
-        id: string,
-        softDeletionTags: TagsFilter,
+        id: OsmId,
+        softDeletionTags: TagsFilter | undefined,
         meta: {
             theme: string
             specialMotivation: string
@@ -43,9 +45,25 @@ export default class DeleteAction extends OsmChangeAction {
             ]))
         }
     }
-
-    public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-        const osmObject = await OsmObject.DownloadObjectAsync(this._id)
+    /**
+     *
+     * import {OsmNode} from "../OsmObject"
+     *
+     * const obj : OsmNode= new OsmNode(1)
+     * obj.tags = {id:"node/1",name:"Monte Piselli - San Giacomo"}
+     * const da = new DeleteAction("node/1", new Tag("man_made",""), {theme: "test", specialMotivation: "Testcase"}, true)
+     * const descr = await da.CreateChangeDescriptions(new Changes(), obj)
+     * descr[0] // => {doDelete: true, meta: {theme: "test", specialMotivation: "Testcase",changeType: "deletion"}, type: "node",id: 1 }
+     *
+     * // Must not crash if softDeletionTags are undefined
+     * const da = new DeleteAction("node/1", undefined, {theme: "test", specialMotivation: "Testcase"}, true)
+     * const obj : OsmNode= new OsmNode(1)
+     * obj.tags = {id:"node/1",name:"Monte Piselli - San Giacomo"}
+     * const descr = await da.CreateChangeDescriptions(new Changes(), obj)
+     * descr[0] // => {doDelete: true, meta: {theme: "test", specialMotivation: "Testcase", changeType: "deletion"}, type: "node",id: 1 }
+     */
+    public async CreateChangeDescriptions(changes: Changes, object?: OsmObject): Promise<ChangeDescription[]> {
+        const osmObject = object ?? await OsmObject.DownloadObjectAsync(this._id)
 
         if (this._hardDelete) {
             return [
