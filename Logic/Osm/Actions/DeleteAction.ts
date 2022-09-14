@@ -1,12 +1,12 @@
-import {OsmObject} from "../OsmObject"
+import { OsmObject } from "../OsmObject"
 import OsmChangeAction from "./OsmChangeAction"
-import {Changes} from "../Changes"
-import {ChangeDescription} from "./ChangeDescription"
+import { Changes } from "../Changes"
+import { ChangeDescription } from "./ChangeDescription"
 import ChangeTagAction from "./ChangeTagAction"
-import {TagsFilter} from "../../Tags/TagsFilter"
-import {And} from "../../Tags/And"
-import {Tag} from "../../Tags/Tag"
-import {Utils} from "../../../Utils";
+import { TagsFilter } from "../../Tags/TagsFilter"
+import { And } from "../../Tags/And"
+import { Tag } from "../../Tags/Tag"
+import { Utils } from "../../../Utils"
 
 export default class DeleteAction extends OsmChangeAction {
     private readonly _softDeletionTags: TagsFilter
@@ -30,17 +30,19 @@ export default class DeleteAction extends OsmChangeAction {
         super(id, true)
         this._id = id
         this._hardDelete = hardDelete
-        this.meta = {...meta, changeType: "deletion"}
+        this.meta = { ...meta, changeType: "deletion" }
         if (softDeletionTags?.usedKeys()?.indexOf("fixme") >= 0) {
             this._softDeletionTags = softDeletionTags
         } else {
-            this._softDeletionTags = new And(Utils.NoNull([
-                softDeletionTags,
-                new Tag(
-                    "fixme",
-                    `A mapcomplete user marked this feature to be deleted (${meta.specialMotivation})`
-                ),
-            ]))
+            this._softDeletionTags = new And(
+                Utils.NoNull([
+                    softDeletionTags,
+                    new Tag(
+                        "fixme",
+                        `A mapcomplete user marked this feature to be deleted (${meta.specialMotivation})`
+                    ),
+                ])
+            )
         }
     }
 
