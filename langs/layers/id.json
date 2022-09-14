@@ -82,10 +82,6 @@
             "artwork-website": {
                 "question": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
                 "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini"
-            },
-            "artwork-wikidata": {
-                "question": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
-                "render": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {

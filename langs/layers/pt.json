@@ -61,10 +61,6 @@
             "artwork-website": {
                 "question": "Existe um site com mais informações sobre esta obra de arte?",
                 "render": "Mais informações <a href='{website}' target='_blank'>neste site</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Que entrada no Wikidata corresponde a <b>esta obra de arte</b>?",
-                "render": "Corresponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {

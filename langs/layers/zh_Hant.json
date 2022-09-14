@@ -73,10 +73,6 @@
             "artwork-website": {
                 "question": "在那個網站能夠找到更多藝術品的資訊？",
                 "render": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊"
-            },
-            "artwork-wikidata": {
-                "question": "<b>這個藝術品</b>有那個對應的 Wikidata 項目？",
-                "render": "與 <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>對應"
             }
         },
         "title": {
