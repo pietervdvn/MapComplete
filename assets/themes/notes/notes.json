@@ -11,7 +11,8 @@
     "ca": "Notes a OpenStreetMap",
     "es": "Notas en OpenStreetMap",
     "nb_NO": "Notater på OpenStreetMap",
-    "fr": "Notes sur OpenStreetMap"
+    "fr": "Notes sur OpenStreetMap",
+    "da": "Noter på OpenStreetMap"
   },
   "description": {
     "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
@@ -19,7 +20,8 @@
     "nl": "Een kaartnota bevat tekst op een specifieke locatie om aan te duiden dat er iets mis is of ontbreekt.<br/><br/>Bekijk ook het <a href='#filters'>filtermenu</a> om de notas te filteren op tekst, gebruiker, datum, ...",
     "de": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Stecknadel auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Text gesucht werden.",
     "es": "Una nota es un pin en el mapa con algún texto para indicar algo erróneo.<br/><br/>Asegúrate de comprobar la <a href='#filters'> vista de filtros</a> para buscar usuarios y texto.",
-    "fr": "Une note est une épingle sur la carte avec du text pour indiquer une erreur.<br/><br/>Assurez-vous d’utiliser le <a href='#filters'>filtre</a> pour chercher des utilisateurs and du texte."
+    "fr": "Une note est une épingle sur la carte avec du text pour indiquer une erreur.<br/><br/>Assurez-vous d’utiliser le <a href='#filters'>filtre</a> pour chercher des utilisateurs and du texte.",
+    "da": "En note er en nål på kortet med noget tekst, der indikerer, at noget er forkert.<br/><br/>Sørg for at tjekke <a href='#filters'>filtervisningen</a> for at søge efter brugere og tekst ."
   },
   "icon": "./assets/themes/notes/logo.svg",
   "clustering": false,
