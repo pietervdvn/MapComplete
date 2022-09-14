@@ -6,6 +6,11 @@ import {Utils} from "./Utils";
 import {SvgToPdf, SvgToPdfOptions} from "./Utils/svgToPdf";
 import {AllKnownLayouts} from "./Customizations/AllKnownLayouts";
 import Locale from "./UI/i18n/Locale";
+import LayerConfig from "./Models/ThemeConfig/LayerConfig";
+import {And} from "./Logic/Tags/And";
+import {Tag} from "./Logic/Tags/Tag";
+import {Overpass} from "./Logic/Osm/Overpass";
+import Constants from "./Models/Constants";
 
 let i = 0
 
@@ -17,6 +22,14 @@ function createElement(): string {
 }
 
 async function main() {
+    {
+        // Dirty hack!
+        // Make the charging-station layer simpler to allow querying it by overpass
+        const chargingStationLayer: LayerConfig = AllKnownLayouts.allKnownLayouts.get("toerisme_vlaanderen").layers.find(l => l.id === "charging_station_ebikes")
+       // chargingStationLayer.source.osmTags = new And([new Tag("amenity","charging_station"), new Tag("bicycle","yes")])
+        Constants.defaultOverpassUrls.splice(0,1) // remove overpass-api.de for this run
+    }
+
 
     const svg = await Utils.download(window.location.protocol + "//" + window.location.host + "/assets/templates/MapComplete-flyer.svg")
     const svgBack = await Utils.download(window.location.protocol + "//" + window.location.host + "/assets/templates/MapComplete-flyer.back.svg")

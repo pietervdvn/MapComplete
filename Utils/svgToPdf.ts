@@ -9,6 +9,9 @@ import "../assets/templates/Ubuntu-M-normal.js"
 import "../assets/templates/Ubuntu-L-normal.js"
 import "../assets/templates/UbuntuMono-B-bold.js"
 import {parseSVG, makeAbsolute} from 'svg-path-parser';
+import {And} from "../Logic/Tags/And";
+import {Tag} from "../Logic/Tags/Tag";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 
 class SvgToPdfInternals {
     private readonly doc: jsPDF;
@@ -578,8 +581,19 @@ export class SvgToPdf {
             throw "Theme not found:" + params["theme"] + ". Use theme: to define which theme to use. "
         }
         layout.widenFactor = 0
-        layout.overpassTimeout = 180
+        layout.overpassTimeout = 600
         layout.defaultBackgroundId = params["background"] ?? layout.defaultBackgroundId
+        for (const paramsKey in params) {
+            if (paramsKey.startsWith("layer-")) {
+                const layerName = paramsKey.substring("layer-".length)
+                const key = params[paramsKey].toLowerCase().trim()
+                const layer = layout.layers.find(l => l.id === layerName)
+                if (key === "force") {
+                    console.log("Forcing minzoom of layer",layer.id)
+                    layer.minzoom = 0
+                }
+            }
+        }
         const zoom = Number(params["zoom"] ?? params["z"] ?? 14);
 
         const state = new FeaturePipelineState(layout)
@@ -608,7 +622,7 @@ export class SvgToPdf {
                     isDisplayed
                 )
                 if (key === "force") {
-                    layer.layerDef.minzoom = zoom
+                    layer.layerDef.minzoom = 0
                 }
             }
         }

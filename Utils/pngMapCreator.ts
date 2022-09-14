@@ -7,7 +7,6 @@ import {BBox} from "../Logic/BBox";
 import Minimap from "../UI/Base/Minimap";
 import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers";
 import {Utils} from "../Utils";
-import {FixedUiElement} from "../UI/Base/FixedUiElement";
 
 export interface PngMapCreatorOptions{
     readonly divId: string; readonly width: number; readonly height: number; readonly scaling?: 1 | number,
@@ -61,7 +60,6 @@ export class PngMapCreator {
         // Lets first init the minimap and wait for all background tiles to load
         const minimap = await this.createAndLoadMinimap()
         const state = this._state
-        const freediv = this._options.divId
         const dummyMode = this._options.dummyMode ?? false
         console.log("Dummy mode is", dummyMode)
         return new Promise<string | Blob>(resolve => {
@@ -99,10 +97,9 @@ export class PngMapCreator {
                             state: undefined,
                         })
                     })
-                    await Utils.waitFor(2500)
+                    await Utils.waitFor(10000)
                 }
                 minimap.TakeScreenshot(format).then(result => {
-                    new FixedUiElement("Done!").AttachTo(freediv)
                     return resolve(result);
                 })
             })

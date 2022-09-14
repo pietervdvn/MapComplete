@@ -47,7 +47,7 @@
         "mapcomplete": {
             "customize": "MapComplete can tailored to your needs, with new map layers, new functionalities or styled to your organisation styleguide. We also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.",
             "intro": "MapComplete is a website which has {mapCount} interactive maps. Every single map allows to add or update information.",
-            "li0": "Communicate where POI are",
+            "li0": "Show where POI are",
             "li1": "Add new points and update information on existing points",
             "li2": "View and add pictures",
             "li3": "Add contact information and opening hours easily",
@@ -61,7 +61,7 @@
         "osm": "OpenStreetMap is an online map which can be edited and reused by anyone for any purpose as long as attribution is given and the data is kept open.\n\nIt is the biggest geospatial database in the world and is reused by thousands of applications and websites.",
         "tagline": "Collect geodata easily with OpenStreetMap",
         "title": "MapComplete.osm.be",
-        "toerisme_vlaanderen": "For joint project with Toerism Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnictables and spotted 100 charging station for bicycles.",
+        "toerisme_vlaanderen": "For joint project with Visit Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnictables and spotted 100 charging station for bicycles.",
         "whatIsOsm": "What is OpenStreetMap?"
     },
     "general": {
