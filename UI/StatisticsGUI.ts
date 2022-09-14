@@ -1,26 +1,27 @@
 /**
  * The statistics-gui shows statistics from previous MapComplete-edits
  */
-import { UIEventSource } from "../Logic/UIEventSource"
-import { VariableUiElement } from "./Base/VariableUIElement"
+import {UIEventSource} from "../Logic/UIEventSource"
+import {VariableUiElement} from "./Base/VariableUIElement"
 import Loading from "./Base/Loading"
-import { Utils } from "../Utils"
+import {Utils} from "../Utils"
 import Combine from "./Base/Combine"
-import { StackedRenderingChart } from "./BigComponents/TagRenderingChart"
-import { LayerFilterPanel } from "./BigComponents/FilterView"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
+import {StackedRenderingChart} from "./BigComponents/TagRenderingChart"
+import {LayerFilterPanel} from "./BigComponents/FilterView"
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts"
 import MapState from "../Logic/State/MapState"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import { FixedUiElement } from "./Base/FixedUiElement"
-import UserDetails from "../Logic/Osm/OsmConnection";
+import List from "./Base/List";
 
 class StatisticsForOverviewFile extends Combine {
+
     constructor(homeUrl: string, paths: string[]) {
         paths = paths.filter(p => !p.endsWith("file-overview.json"))
         const layer = AllKnownLayouts.allKnownLayouts.get("mapcomplete-changes").layers[0]
         const filteredLayer = MapState.InitializeFilteredLayers(
-            { id: "statistics-view", layers: [layer] },
+            {id: "statistics-view", layers: [layer]},
             undefined
         )[0]
         const filterPanel = new LayerFilterPanel(undefined, filteredLayer)
@@ -33,14 +34,14 @@ class StatisticsForOverviewFile extends Combine {
                 continue
             }
             Utils.downloadJson(homeUrl + filepath).then((data) => {
-                if(data === undefined ){
+                if (data === undefined) {
                     return
                 }
-                if(data.features === undefined){
+                if (data.features === undefined) {
                     data.features = data
                 }
                 data?.features?.forEach((item) => {
-                    item.properties = { ...item.properties, ...item.properties.metadata }
+                    item.properties = {...item.properties, ...item.properties.metadata}
                     delete item.properties.metadata
                 })
                 downloaded.data.push(data)
@@ -53,6 +54,7 @@ class StatisticsForOverviewFile extends Combine {
                 downloaded.map((dl) => "Downloaded " + dl.length + " items out of " + paths.length)
             )
         )
+
 
         super([
             filterPanel,
@@ -94,7 +96,36 @@ class StatisticsForOverviewFile extends Combine {
                         const trs = layer.tagRenderings.filter(
                             (tr) => tr.mappings?.length > 0 || tr.freeform?.key !== undefined
                         )
-                        const elements: BaseUIElement[] = []
+
+                        const allKeys = new Set<string>()
+                        for (const cs of overview._meta) {
+                            for (const propertiesKey in cs.properties) {
+                                allKeys.add(propertiesKey)
+                            }
+                        }
+                        console.log("All keys:", allKeys)
+
+                        const valuesToSum = [
+                            "answer",
+                            "move",
+                            "deletion",
+                            "add-image",
+                            "plantnet-ai-detection",
+                            "import",
+                            "conflation",
+                            "link-image",
+                            "soft-delete"]
+
+
+                        const elements: BaseUIElement[] = [
+                            new Title("General statistics"),
+                            new Combine([
+                                overview._meta.length + " changesets match the filters",
+                                new List(valuesToSum.map(key => key + ": " + overview.sum(key)))
+                            ]).SetClass("flex flex-col border rounded-xl"),
+
+                            new Title("Breakdown")
+                        ]
                         for (const tr of trs) {
                             let total = undefined
                             if (tr.freeform?.key !== undefined) {
@@ -197,6 +228,17 @@ class ChangesetsOverview {
         return new ChangesetsOverview(this._meta.filter(predicate))
     }
 
+    public sum(key: string): number {
+        let s = 0
+        for (const feature of this._meta) {
+            const parsed = Number(feature[key])
+            if (!isNaN(parsed)) {
+                s += parsed
+            }
+        }
+        return s
+    }
+
     private static cleanChangesetData(cs: ChangeSetData): ChangeSetData {
         if (cs === undefined) {
             return undefined
@@ -222,7 +264,8 @@ class ChangesetsOverview {
         }
         try {
             cs.properties.host = new URL(cs.properties.host).host
-        } catch (e) {}
+        } catch (e) {
+        }
         return cs
     }
 }
