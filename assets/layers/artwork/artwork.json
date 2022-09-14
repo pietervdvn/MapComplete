@@ -407,9 +407,37 @@
             "es": "Cerámica",
             "da": "flisebeklædning"
           }
+        },
+        {
+          "if": "artwork_type=woodcarving",
+          "then": {
+            "nl": "Houtsculptuur",
+            "en": "Woodcarving"
+          }
         }
       ],
       "id": "artwork-artwork_type"
+    },
+    {
+      "id": "artwork-artist-wikidata",
+      "render": {
+        "en": "This artwork was made by <b>{wikidata_label(artist:wikidata)}</b>"
+      },
+      "question": {
+        "en": "Who made this artwork?"
+      },
+      "freeform": {
+        "key": "artist:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          {
+            "key": "artist_name",
+            "instanceOf": [
+              "Q5"
+            ]
+          }
+        ]
+      }
     },
     {
       "question": {
@@ -449,6 +477,7 @@
       "freeform": {
         "key": "artist_name"
       },
+      "condition": "artist:wikidata=",
       "id": "artwork-artist_name"
     },
     {
@@ -491,7 +520,21 @@
       },
       "id": "artwork-website"
     },
-    "wikipedia"
+    "wikipedia",
+    {
+      "id": "artwork_subject",
+      "condition": "subject:wikidata~*",
+      "question": {
+        "en": "What does this artwork depict?"
+      },
+      "freeform": {
+        "key": "subject:wikidata",
+        "type": "wikidata"
+      },
+      "render": {
+        "en": "This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+      }
+    }
   ],
   "deletion": {
     "softDeletionTags": {
@@ -524,5 +567,6 @@
         "render": "10"
       }
     }
-  ]
+  ],
+  "filter": ["has_image"]
 }
