@@ -75,6 +75,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                 snappedPointTags: tags,
                 maxSnapDistance: preset.preciseInput.maxSnapDistance,
                 bounds: mapBounds,
+                state: <any> state
             })
             preciseInput.installBounds(preset.boundsFactor ?? 0.25, true)
             preciseInput

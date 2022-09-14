@@ -1,26 +1,27 @@
-import { ReadonlyInputElement } from "./InputElement"
+import {ReadonlyInputElement} from "./InputElement"
 import Loc from "../../Models/Loc"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import Minimap, { MinimapObj } from "../Base/Minimap"
+import {Store, UIEventSource} from "../../Logic/UIEventSource"
+import Minimap, {MinimapObj} from "../Base/Minimap"
 import BaseLayer from "../../Models/BaseLayer"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
-import State from "../../State"
-import { GeoOperations } from "../../Logic/GeoOperations"
+import {GeoOperations} from "../../Logic/GeoOperations"
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { BBox } from "../../Logic/BBox"
-import { FixedUiElement } from "../Base/FixedUiElement"
+import {BBox} from "../../Logic/BBox"
+import {FixedUiElement} from "../Base/FixedUiElement"
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
 import BaseUIElement from "../BaseUIElement"
 import Toggle from "./Toggle"
 import * as matchpoint from "../../assets/layers/matchpoint/matchpoint.json"
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import FilteredLayer from "../../Models/FilteredLayer";
+import {ElementStorage} from "../../Logic/ElementStorage";
 
 export default class LocationInput
     extends BaseUIElement
-    implements ReadonlyInputElement<Loc>, MinimapObj
-{
+    implements ReadonlyInputElement<Loc>, MinimapObj {
     private static readonly matchLayer = new LayerConfig(
         matchpoint,
         "LocationInput.matchpoint",
@@ -47,6 +48,13 @@ export default class LocationInput
     private readonly map: BaseUIElement & MinimapObj
     private readonly clickLocation: UIEventSource<Loc>
     private readonly _minZoom: number
+    private readonly _state: {
+        readonly filteredLayers: Store<FilteredLayer[]>;
+        readonly backgroundLayer: UIEventSource<BaseLayer>;
+        readonly layoutToUse: LayoutConfig;
+        readonly selectedElement: UIEventSource<any>;
+        readonly allElements: ElementStorage
+    }
 
     constructor(options: {
         minZoom?: number
@@ -57,6 +65,13 @@ export default class LocationInput
         requiresSnapping?: boolean
         centerLocation: UIEventSource<Loc>
         bounds?: UIEventSource<BBox>
+        state: {
+            readonly filteredLayers: Store<FilteredLayer[]>;
+            readonly backgroundLayer: UIEventSource<BaseLayer>;
+            readonly layoutToUse: LayoutConfig;
+            readonly selectedElement: UIEventSource<any>;
+            readonly allElements: ElementStorage
+        }
     }) {
         super()
         this._snapTo = options.snapTo?.map((features) =>
@@ -67,13 +82,14 @@ export default class LocationInput
         this._snappedPointTags = options.snappedPointTags
         this._bounds = options.bounds
         this._minZoom = options.minZoom
+        this._state = options.state
         if (this._snapTo === undefined) {
             this._value = this._centerLocation
         } else {
             const self = this
 
             if (self._snappedPointTags !== undefined) {
-                const layout = State.state.layoutToUse
+                const layout = this._state.layoutToUse
 
                 let matchingLayer = LocationInput.matchLayer
                 for (const layer of layout.layers) {
@@ -129,7 +145,7 @@ export default class LocationInput
                             return {
                                 type: "Feature",
                                 properties: options.snappedPointTags ?? min.properties,
-                                geometry: { type: "Point", coordinates: [loc.lon, loc.lat] },
+                                geometry: {type: "Point", coordinates: [loc.lon, loc.lat]},
                             }
                         }
                     }
@@ -149,14 +165,14 @@ export default class LocationInput
                 }
             })
         }
-        this.mapBackground = options.mapBackground ?? State.state?.backgroundLayer
+        this.mapBackground = options.mapBackground ?? this._state?.backgroundLayer
         this.SetClass("block h-full")
 
         this.clickLocation = new UIEventSource<Loc>(undefined)
         this.map = Minimap.createMiniMap({
             location: this._centerLocation,
             background: this.mapBackground,
-            attribution: this.mapBackground !== State.state?.backgroundLayer,
+            attribution: this.mapBackground !== this._state?.backgroundLayer,
             lastClickLocation: this.clickLocation,
             bounds: this._bounds,
             addLayerControl: true,
@@ -181,7 +197,7 @@ export default class LocationInput
         try {
             const self = this
             const hasMoved = new UIEventSource(false)
-            const startLocation = { ...this._centerLocation.data }
+            const startLocation = {...this._centerLocation.data}
             this._centerLocation.addCallbackD((newLocation) => {
                 const f = 100000
                 console.log(newLocation.lon, startLocation.lon)
@@ -204,14 +220,14 @@ export default class LocationInput
                     features: StaticFeatureSource.fromDateless(this._snapTo),
                     zoomToFeatures: false,
                     leafletMap: this.map.leafletMap,
-                    layers: State.state.filteredLayers,
+                    layers: this._state.filteredLayers,
                 })
                 // Show the central point
                 const matchPoint = this._snappedPoint.map((loc) => {
                     if (loc === undefined) {
                         return []
                     }
-                    return [{ feature: loc }]
+                    return [{feature: loc}]
                 })
                 console.log("Constructing the match layer", matchPoint)
 
@@ -220,8 +236,8 @@ export default class LocationInput
                     zoomToFeatures: false,
                     leafletMap: this.map.leafletMap,
                     layerToShow: this._matching_layer,
-                    state: State.state,
-                    selectedElement: State.state.selectedElement,
+                    state: this._state,
+                    selectedElement: this._state.selectedElement,
                 })
             }
             this.mapBackground.map(
@@ -267,7 +283,10 @@ export default class LocationInput
         }
     }
 
-    TakeScreenshot(): Promise<string> {
-        return this.map.TakeScreenshot()
+    TakeScreenshot(format: "image"): Promise<string>;
+    TakeScreenshot(format: "blob"): Promise<Blob>;
+    TakeScreenshot(format: "image" | "blob"): Promise<string | Blob>;
+    TakeScreenshot(format: "image" | "blob"): Promise<string | Blob> {
+        return this.map.TakeScreenshot(format)
     }
 }

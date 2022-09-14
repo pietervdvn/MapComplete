@@ -21,7 +21,7 @@
     "render": "{export_as_geojson()}"
   },
   "wikipedia": {
-    "description": "Shows a wikipedia box with the corresponding wikipedia article",
+    "description": "Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor",
     "render": "{wikipedia():max-height:25rem}",
     "question": {
       "en": "What is the corresponding Wikidata entity?",

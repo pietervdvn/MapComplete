@@ -40,13 +40,12 @@
         "reload": "Herlaad de data"
     },
     "flyer": {
+        "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
         "callToAction": "Probeer het uit op mapcomplete.osm.be",
+        "examples": "Er zijn vele thematische kaarten beschikbaar. Enkele voorbeelden zijn hier geprint, zoals de kaart met AEDs, kunstwerken, fietsstraten, banken en fietspompen.\n\nOnline zijn er nog kaarten met diverse thema's, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,... Ontdek ze allemaal mapcomplete.osm.be  ",
         "frontParagraph": "MapComplete is een web-applicatie om OpenStreetMap-data te tonen en aan te passen op basis van thematische kaarten. Het maakt het mogelijk om open geodata te crowdsourcen en te managen op een makkelijke manier.\n\nNieuwe categorie�n en attributen kunnen op vraag worden toegevoegd.",
-        "license": {
-            "text": "De webversie is gratis te gebruiken, zowel voor het bekijken als voor het toevoegen van data.\nVoor het toevoegen van data is een gratis account op OpenStreetMap.org vereist.\n\nWil je een versie op maat? Wil je een versie in jullie huisstijl?\nWil je een nieuwe kaartlaag of functionaliteit? Wil je een crowdsourcing-campagne opzetten?\nNeem contact op met pietervdvn@posteo.net voor een offerte.\n\nMapComplete is volledig OpenSource (GPL-licentie).\n\nData op OpenStreetMap valt onder de ODbL-licentie. Data mag herbruikt worden voor alle doeleinden, mits bronvermelding en het openhouden van (verbeteringen aan) de data.\nZie osm.org/copyright voor alle details.",
-            "title": "Licentie and kostprijs"
-        },
         "mapcomplete": {
+            "customize": "Wil je een versie op maat? Wil je een versie in jullie huisstijl?\nWil je een nieuwe kaartlaag of functionaliteit? Wil je een crowdsourcing-campagne opzetten?\nNeem contact op met pietervdvn@posteo.net voor een offerte.",
             "intro": "MapComplete is een website met {mapCount} interactieve kaarten. Op iedere kaart kunnen gebruikers data zien en updaten.",
             "li0": "Communiceer waar interessepunten zijn",
             "li1": "Voeg nieuwe punten toe en update informatie van reeds bestaande punten",
@@ -56,11 +55,13 @@
             "li5": "Wissel tussen kaart- en luchtfoto's als achtergrond",
             "li6": "Eenvoudig te embedden in een website als iFrame",
             "li7": "Deel van het OpenStreetMap-ecosysteem waarbinnen honderden andere tools bestaan",
+            "li8": "Volledig Open-Source (GPL) en gratis te gebruiken",
             "title": "Wat is MapComplete?"
         },
-        "osm": "OpenStreetMap is een online kaart die door iedereen aangepast en herbruikt mag worden - net zoals Wikipedia.\n\nHet is de grootste geodatabank ter wereld en wordt herbruikt door miljoenen websites en applicaties.",
-        "tagline": "Verzamel geodata eenvoudig met OpenStreetMap",
+        "osm": "OpenStreetMap is een online kaart die door iedereen aangepast en herbruikt mag worden - mits bronvermelding en het openhouden van de data.\n\nHet is de grootste geodatabank ter wereld en wordt herbruikt door miljoenen websites en applicaties.",
+        "tagline": "Eenvoudig geodata verzamelen met OpenStreetMap",
         "title": "MapComplete.osm.be",
+        "toerisme_vlaanderen": "In samenwerking met Toerisme Vlaanderen werd 'Pin Je Punt' gecre�erd. Op enkele maanden tijd werden duizenden zitbanken en picnictafels en meer dan honderd oplaadpunten voor elektrische fietsen toegevoegd aan de kaart door meer dan 160 bijdragers.",
         "whatIsOsm": "Wat is OpenStreetMap?"
     },
     "general": {

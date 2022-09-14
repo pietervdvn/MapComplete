@@ -6,20 +6,19 @@ import ShowDataLayer from "../UI/ShowDataLayer/ShowDataLayer";
 import {BBox} from "../Logic/BBox";
 import Minimap from "../UI/Base/Minimap";
 import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers";
-import AvailableBaseLayersImplementation from "../Logic/Actors/AvailableBaseLayersImplementation";
+import {Utils} from "../Utils";
+import {FixedUiElement} from "../UI/Base/FixedUiElement";
+
+export interface PngMapCreatorOptions{
+    readonly divId: string; readonly width: number; readonly height: number; readonly scaling?: 1 | number,
+    readonly dummyMode?: boolean
+}
 
 export class PngMapCreator {
-    private readonly _state: FeaturePipelineState;
-    private readonly _options: {
-        readonly divId: string; readonly width: number; readonly height: number; readonly scaling?: 1 | number
-    };
+    private readonly _state: FeaturePipelineState | undefined;
+    private readonly _options: PngMapCreatorOptions;
 
-    constructor(state: FeaturePipelineState, options: {
-        readonly divId: string
-        readonly width: number,
-        readonly height: number,
-        readonly scaling?: 1 | number
-    }) {
+    constructor(state: FeaturePipelineState | undefined, options: PngMapCreatorOptions) {
         this._state = state;
         this._options = {...options, scaling: options.scaling ?? 1};
     }
@@ -62,23 +61,26 @@ export class PngMapCreator {
         // Lets first init the minimap and wait for all background tiles to load
         const minimap = await this.createAndLoadMinimap()
         const state = this._state
-
+        const freediv = this._options.divId
+        const dummyMode = this._options.dummyMode ?? false
+        console.log("Dummy mode is", dummyMode)
         return new Promise<string | Blob>(resolve => {
             // Next: we prepare the features. Only fully contained features are shown
             minimap.leafletMap.addCallbackAndRunD(async (leaflet) => {
-                const bounds = BBox.fromLeafletBounds(leaflet.getBounds().pad(0.1).pad(-state.layoutToUse.widenFactor))
                 // Ping the featurepipeline to download what is needed
-                state.currentBounds.setData(bounds)
-                if(state.featurePipeline.runningQuery.data){
-                    // A query is running!
-                    // Let's wait for it to complete
-                    console.log("Waiting for the query to complete")
-                    await state.featurePipeline.runningQuery.AsPromise(isRunning => !isRunning)
-                    console.log("Query has completeted!")
-                }
+                if (dummyMode) {
+                    console.warn("Dummy mode is active - not loading map layers")
+                } else {
+                    const bounds = BBox.fromLeafletBounds(leaflet.getBounds().pad(0.1).pad(-state.layoutToUse.widenFactor))
+                    state.currentBounds.setData(bounds)
 
-                window.setTimeout(() => {
-
+                    if (state.featurePipeline.runningQuery.data) {
+                        // A query is running!
+                        // Let's wait for it to complete
+                        console.log("Waiting for the query to complete")
+                        await state.featurePipeline.runningQuery.AsPromise(isRunning => !isRunning)
+                        console.log("Query has completeted!")
+                    }
 
                     state.featurePipeline.GetTilesPerLayerWithin(bounds, (tile) => {
 
@@ -97,9 +99,14 @@ export class PngMapCreator {
                             state: undefined,
                         })
                     })
-                    minimap.TakeScreenshot(format).then(result => resolve(result))
-                }, 2500)
+                    await Utils.waitFor(2500)
+                }
+                minimap.TakeScreenshot(format).then(result => {
+                    new FixedUiElement("Done!").AttachTo(freediv)
+                    return resolve(result);
+                })
             })
+
             state.AddAllOverlaysToMap(minimap.leafletMap)
         })
     }

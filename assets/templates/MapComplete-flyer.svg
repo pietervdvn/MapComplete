@@ -26,15 +26,15 @@
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="1.2400294"
-     inkscape:cx="712.48308"
-     inkscape:cy="537.08402"
+     inkscape:zoom="1.2563786"
+     inkscape:cx="450.10316"
+     inkscape:cy="393.98951"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      inkscape:snap-global="false">
     <sodipodi:guide
        position="98.990966,200.95191"
@@ -230,9 +230,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.75;font-family:sans-serif;white-space:pre;shape-inside:url(#rect45500);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="27.585938"
          y="594.75243"
-         id="tspan37960"><tspan
+         id="tspan39535"><tspan
            style="font-size:20px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan37958">$flyer.frontParagraph</tspan></tspan></text>
+           id="tspan39533">$flyer.frontParagraph</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -256,9 +256,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect61742);fill:#d4f1f4;fill-opacity:1;stroke:none"><tspan
          x="11.105469"
          y="116.27391"
-         id="tspan37964"><tspan
+         id="tspan39539"><tspan
            style="font-weight:bold;font-size:26.6667px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan37962">$flyer.tagline</tspan></tspan></text>
+           id="tspan39537">$flyer.tagline</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -271,7 +271,7 @@
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect135032);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="8.7285156"
          y="34.819131"
-         id="tspan37966">$flyer.title</tspan></text>
+         id="tspan39541">$flyer.title</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,97.529993,-16.582379)"
@@ -279,9 +279,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect61742-2);display:inline;fill:#d4f1f4;fill-opacity:1;stroke:none"><tspan
          x="11.105469"
          y="116.27391"
-         id="tspan37970"><tspan
+         id="tspan39545"><tspan
            style="font-weight:bold;font-size:32px;-inkscape-font-specification:'sans-serif, Bold';fill:#000000"
-           id="tspan37968">$flyer.whatIsOsm</tspan></tspan></text>
+           id="tspan39543">$flyer.whatIsOsm</tspan></tspan></text>
     <image
        width="55.363865"
        height="21.384291"
@@ -298,9 +298,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect20620);fill:#d4f1f4;fill-opacity:1;stroke:none"><tspan
          x="11.105469"
          y="116.27391"
-         id="tspan37974"><tspan
+         id="tspan39549"><tspan
            style="font-weight:bold;font-size:26.6667px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan37972">$flyer.mapcomplete.title</tspan></tspan></text>
+           id="tspan39547">$flyer.mapcomplete.title</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,93.634029,-58.617677)"
@@ -308,63 +308,69 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.75;font-family:sans-serif;white-space:pre;shape-inside:url(#rect21926);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="27.585938"
          y="594.75243"
-         id="tspan37978"><tspan
+         id="tspan39553"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan37976">$flyer.mapcomplete.intro 
+           id="tspan39551">$flyer.mapcomplete.intro 
 </tspan></tspan><tspan
          x="27.585938"
          y="624.75243"
-         id="tspan37982"><tspan
+         id="tspan39557"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan37980">
+           id="tspan39555">
 </tspan></tspan><tspan
          x="27.585938"
          y="654.75243"
-         id="tspan37986"><tspan
+         id="tspan39561"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan37984">$list(flyer.mapcomplete.li) 
+           id="tspan39559">$list(flyer.mapcomplete.li) 
 </tspan></tspan><tspan
          x="27.585938"
          y="684.75243"
-         id="tspan37990"><tspan
+         id="tspan39565"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan37988">
+           id="tspan39563">
 </tspan></tspan><tspan
          x="27.585938"
          y="714.75243"
-         id="tspan37994"><tspan
+         id="tspan39569"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan37992">
+           id="tspan39567">
 </tspan></tspan><tspan
          x="27.585938"
          y="744.75243"
-         id="tspan37998"><tspan
+         id="tspan39573"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan37996">
+           id="tspan39571">
 </tspan></tspan><tspan
          x="27.585938"
          y="774.75243"
-         id="tspan38002"><tspan
+         id="tspan39577"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan38000">
+           id="tspan39575">
 </tspan></tspan><tspan
          x="27.585938"
          y="804.75243"
-         id="tspan38006"><tspan
+         id="tspan39581"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan38004">
+           id="tspan39579">
 </tspan></tspan><tspan
          x="27.585938"
          y="834.75243"
-         id="tspan38010"><tspan
+         id="tspan39585"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan38008">
+           id="tspan39583">
 </tspan></tspan><tspan
          x="27.585938"
          y="864.75243"
-         id="tspan38014"><tspan
+         id="tspan39589"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan38012">$flyer.mapcomplete.customize</tspan></tspan></text>
+           id="tspan39587">
+</tspan></tspan><tspan
+         x="27.585938"
+         y="894.75243"
+         id="tspan39593"><tspan
+           style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
+           id="tspan39591">$flyer.mapcomplete.customize</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -423,17 +429,17 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.75;font-family:sans-serif;white-space:pre;shape-inside:url(#rect169564);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="27.585938"
          y="594.75243"
-         id="tspan38020"><tspan
+         id="tspan39599"><tspan
            style="font-weight:bold;font-size:24px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan38016">$flyer.callToAction</tspan><tspan
+           id="tspan39595">$flyer.callToAction</tspan><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan38018">
+           id="tspan39597">
 </tspan></tspan><tspan
          x="27.585938"
          y="624.75243"
-         id="tspan38024"><tspan
+         id="tspan39603"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan38022"> </tspan></tspan></text>
+           id="tspan39601"> </tspan></tspan></text>
     <image
        width="73.774147"
        height="103.17501"
@@ -11777,8 +11783,8 @@ eTmE1QAAAABJRU5ErkJggg==
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect171375);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="381.5332"
          y="126.50438"
-         id="tspan38028"><tspan
+         id="tspan39607"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan38026">$flyer.osm</tspan></tspan></text>
+           id="tspan39605">$flyer.osm</tspan></tspan></text>
   </g>
 </svg>

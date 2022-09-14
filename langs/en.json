@@ -40,13 +40,12 @@
         "reload": "Reload the data"
     },
     "flyer": {
+        "aerial": "This map uses a different background, namely aerial imagery by Agentschap Informatie Vlaanderen",
         "callToAction": "Test it on mapcomplete.osm.be",
+        "examples": "There are many thematic maps available of which a few are printed here, namely the maps with AED's, artwork, cyclestreets, benches and cyclepumps.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,... Discover them all on mapcomplete.osm.be  ",
         "frontParagraph": "MapComplete is an easy to use web application to collect geodata in OpenStreetMap, enabling collecting and managing relevant data in an open, crowdsourced and reusable way.\n\nNew categories and attributes can be added upon request.",
-        "license": {
-            "text": "The webversion is free to use, both for viewing and adding data.\nAdding data requires a free account on OpenStreetMap.org.\n\n MapComplete can tailored to your needs, with new map layers, new functionalities or styled to your organisation styleguide. We also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.\n\nMapComplete is fully Open Source (GPL-licenses).\n\nData on OpenStreetMap is under the ODbL-license, which means all data can be reused for all purposes, as long as attribution is given and all (improvements to) the data are republished under the same license.\nSee osm.org/copyright for more details",
-            "title": "License and pricing"
-        },
         "mapcomplete": {
+            "customize": "MapComplete can tailored to your needs, with new map layers, new functionalities or styled to your organisation styleguide. We also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.",
             "intro": "MapComplete is a website which has {mapCount} interactive maps. Every single map allows to add or update information.",
             "li0": "Communicate where POI are",
             "li1": "Add new points and update information on existing points",
@@ -56,11 +55,13 @@
             "li5": "See aerial imagery and map backgrounds",
             "li6": "Can be placed in other websites as iFrame",
             "li7": "Embedded within the OpenStreetMap-ecosystem, which has many tools available",
+            "li8": "Fully open source (GPL) and free to use",
             "title": "What is MapComplete?"
         },
-        "osm": "OpenStreetMap is an online map which can be edited and reused by anyone for any purpose - just like Wikipedia.\n\nIt is the biggest geospatial database in the world and is reused by thousands of applications and websites.",
+        "osm": "OpenStreetMap is an online map which can be edited and reused by anyone for any purpose as long as attribution is given and the data is kept open.\n\nIt is the biggest geospatial database in the world and is reused by thousands of applications and websites.",
         "tagline": "Collect geodata easily with OpenStreetMap",
         "title": "MapComplete.osm.be",
+        "toerisme_vlaanderen": "For joint project with Toerism Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnictables and spotted 100 charging station for bicycles.",
         "whatIsOsm": "What is OpenStreetMap?"
     },
     "general": {
