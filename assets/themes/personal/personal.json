@@ -12,7 +12,8 @@
     "zh_Hant": "個人化主題",
     "it": "Tema personale",
     "nb_NO": "Personlig tema",
-    "id": "Tema pribadi"
+    "id": "Tema pribadi",
+    "da": "Personligt tema"
   },
   "description": {
     "en": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",
@@ -25,7 +26,8 @@
     "ja": "すべてのテーマの使用可能なすべてのレイヤーに基づいて個人用テーマを作成する",
     "zh_Hant": "從所有可用的主題圖層創建個人化主題",
     "ru": "Создать персональную тему на основе доступных слоёв тем. Чтобы отобразить некоторые данные, откройте <a href='#filter'>выбор слоя</a>",
-    "it": "Crea un tema personale basato sui livelli disponibili per tutti i temi. Per mostrare dei dati, apri <a href='#filter'>selezione livello</a>"
+    "it": "Crea un tema personale basato sui livelli disponibili per tutti i temi. Per mostrare dei dati, apri <a href='#filter'>selezione livello</a>",
+    "da": "Opret et personligt tema baseret på alle de tilgængelige lag af alle temaer. For at vise nogle data skal du åbne <a href='#filter'>lagvalg</a>"
   },
   "icon": "./assets/svg/addSmall.svg",
   "clustering": {

@@ -784,6 +784,13 @@
         "shortDescription": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
         "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
     },
+    "healthcare": {
+        "description": "Op deze kaart vind je dokters en apothekers",
+        "title": "Gezondheidszorg"
+    },
+    "indoors": {
+        "title": "Binnenruimtes"
+    },
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
         "title": "Stoepranden en oversteekplaatsen"
@@ -948,6 +955,10 @@
         "shortDescription": "Een kaart die brievenbussen en postkantoren toont",
         "title": "Brievenbussen en postkantoren"
     },
+    "rainbow_crossings": {
+        "description": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn.",
+        "title": "Regenboogzebrapaden"
+    },
     "shops": {
         "description": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers",
         "shortDescription": "Een bewerkbare kaart met simpele informatie over winkels",
@@ -1104,16 +1115,5 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
-    },
-    "healthcare": {
-        "title": "Gezondheidszorg",
-        "description": "Op deze kaart vind je dokters en apothekers"
-    },
-    "indoors": {
-        "title": "Binnenruimtes"
-    },
-    "rainbow_crossings": {
-        "description": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn.",
-        "title": "Regenboogzebrapaden"
     }
 }

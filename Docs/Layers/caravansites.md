@@ -243,7 +243,7 @@ The question is  Does this place offer spots for long term rental?
 
   - There are some spots for long term rental, but you can also stay on a daily basis  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dyes' target='_blank'>yes</a>`
   - There are no permanent guests here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dno' target='_blank'>no</a>`
-  - It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Donly' target='_blank'>only</a>`
+  - It is only possible to stay here if you have a long term contract (this place disappears from this map if you choose this)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Donly' target='_blank'>only</a>`
 
 
 

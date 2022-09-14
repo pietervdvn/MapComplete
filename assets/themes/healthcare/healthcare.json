@@ -4,13 +4,17 @@
     "en": "Healthcare",
     "ca": "Assistència sanitària",
     "de": "Gesundheitswesen",
-    "fr": "Services de santé"
+    "fr": "Services de santé",
+    "da": "Sundhedspleje",
+    "nl": "Gezondheidszorg"
   },
   "description": {
     "en": "On this map, various healthcare related items are shown",
     "ca": "En aquest mapa es mostren diversos elements relacionats amb la salut",
     "de": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
-    "fr": "Cette carte affiche différents éléments liés à la santé"
+    "fr": "Cette carte affiche différents éléments liés à la santé",
+    "da": "På dette kort er forskellige sundhedsrelaterede emner vist",
+    "nl": "Op deze kaart vind je dokters en apothekers"
   },
   "icon": "./assets/layers/doctors/doctors.svg",
   "startLat": 50.8465573,
