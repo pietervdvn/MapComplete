@@ -13,9 +13,11 @@ import MapState from "../Logic/State/MapState"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import { FixedUiElement } from "./Base/FixedUiElement"
+import UserDetails from "../Logic/Osm/OsmConnection";
 
 class StatisticsForOverviewFile extends Combine {
     constructor(homeUrl: string, paths: string[]) {
+        paths = paths.filter(p => !p.endsWith("file-overview.json"))
         const layer = AllKnownLayouts.allKnownLayouts.get("mapcomplete-changes").layers[0]
         const filteredLayer = MapState.InitializeFilteredLayers(
             { id: "statistics-view", layers: [layer] },
@@ -27,7 +29,16 @@ class StatisticsForOverviewFile extends Combine {
         const downloaded = new UIEventSource<{ features: ChangeSetData[] }[]>([])
 
         for (const filepath of paths) {
+            if(filepath.endsWith("file-overview.json")){
+                continue
+            }
             Utils.downloadJson(homeUrl + filepath).then((data) => {
+                if(data === undefined ){
+                    return
+                }
+                if(data.features === undefined){
+                    data.features = data
+                }
                 data?.features?.forEach((item) => {
                     item.properties = { ...item.properties, ...item.properties.metadata }
                     delete item.properties.metadata
