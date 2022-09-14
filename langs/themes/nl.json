@@ -801,7 +801,8 @@
         "title": "Een kaart van kaarten"
     },
     "maxspeed": {
-        "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat."
+        "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat.",
+        "title": "Maximale snelheden"
     },
     "missing_streets": {
         "description": "Dit thema voegt automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres.",
@@ -1107,5 +1108,12 @@
     "healthcare": {
         "title": "Gezondheidszorg",
         "description": "Op deze kaart vind je dokters en apothekers"
+    },
+    "indoors": {
+        "title": "Binnenruimtes"
+    },
+    "rainbow_crossings": {
+        "description": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn.",
+        "title": "Regenboogzebrapaden"
     }
 }
