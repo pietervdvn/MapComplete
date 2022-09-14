@@ -106,6 +106,9 @@ class StatisticsForOverviewFile extends Combine {
                         console.log("All keys:", allKeys)
 
                         const valuesToSum = [
+                            "create",
+                            "modify",
+                            "delete",
                             "answer",
                             "move",
                             "deletion",
@@ -117,11 +120,18 @@ class StatisticsForOverviewFile extends Combine {
                             "soft-delete"]
 
 
+                        const excludedThemes = new Set<string>()
+                        excludedThemes.add("grb")
+                        excludedThemes.add("etymology")
+                        const summedValues = valuesToSum
+                            .map(key => [key, overview.sum(key, excludedThemes)])
+                            .filter(kv => kv[1] != 0)
+                            .map(kv => kv.join(": "))
                         const elements: BaseUIElement[] = [
-                            new Title("General statistics"),
+                            new Title("General statistics (excluding etymology- and GRB-theme changes)"),
                             new Combine([
                                 overview._meta.length + " changesets match the filters",
-                                new List(valuesToSum.map(key => key + ": " + overview.sum(key)))
+                                new List(summedValues)
                             ]).SetClass("flex flex-col border rounded-xl"),
 
                             new Title("Breakdown")
@@ -228,10 +238,13 @@ class ChangesetsOverview {
         return new ChangesetsOverview(this._meta.filter(predicate))
     }
 
-    public sum(key: string): number {
+    public sum(key: string, excludeThemes: Set<string>): number {
         let s = 0
         for (const feature of this._meta) {
-            const parsed = Number(feature[key])
+            if(excludeThemes.has(feature.properties.theme)){
+                continue
+            }
+            const parsed = Number(feature.properties[key])
             if (!isNaN(parsed)) {
                 s += parsed
             }
