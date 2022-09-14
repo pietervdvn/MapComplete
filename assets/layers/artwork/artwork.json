@@ -421,7 +421,7 @@
     {
       "id": "artwork-artist-wikidata",
       "render": {
-        "en": "This artwork was made by <b>{wikidata_label(artist:wikidata)}</b>"
+        "en": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
       },
       "question": {
         "en": "Who made this artwork?"
