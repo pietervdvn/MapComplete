@@ -119,16 +119,19 @@ class StatisticsForOverviewFile extends Combine {
                             "link-image",
                             "soft-delete"]
 
+                        const allThemes = Utils.Dedup(overview._meta.map(f => f.properties.theme))
 
                         const excludedThemes = new Set<string>()
+                        if(allThemes.length > 1){
                         excludedThemes.add("grb")
                         excludedThemes.add("etymology")
+                        }
                         const summedValues = valuesToSum
                             .map(key => [key, overview.sum(key, excludedThemes)])
                             .filter(kv => kv[1] != 0)
                             .map(kv => kv.join(": "))
                         const elements: BaseUIElement[] = [
-                            new Title("General statistics (excluding etymology- and GRB-theme changes)"),
+                            new Title(allThemes .length === 1 ? "General statistics for "+allThemes[0] :"General statistics (excluding etymology- and GRB-theme changes)"),
                             new Combine([
                                 overview._meta.length + " changesets match the filters",
                                 new List(summedValues)
