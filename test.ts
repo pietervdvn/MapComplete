@@ -26,6 +26,8 @@ async function main() {
         // Dirty hack!
         // Make the charging-station layer simpler to allow querying it by overpass
         const chargingStationLayer: LayerConfig = AllKnownLayouts.allKnownLayouts.get("toerisme_vlaanderen").layers.find(l => l.id === "charging_station_ebikes")
+        chargingStationLayer.minzoom = 0
+        chargingStationLayer.minzoomVisible = 0
        // chargingStationLayer.source.osmTags = new And([new Tag("amenity","charging_station"), new Tag("bicycle","yes")])
         Constants.defaultOverpassUrls.splice(0,1) // remove overpass-api.de for this run
     }

@@ -591,6 +591,7 @@ export class SvgToPdf {
                 if (key === "force") {
                     console.log("Forcing minzoom of layer",layer.id)
                     layer.minzoom = 0
+                    layer.minzoomVisible = 0
                 }
             }
         }
@@ -618,11 +619,13 @@ export class SvgToPdf {
                 const key = params[paramsKey].toLowerCase().trim()
                 const isDisplayed = key === "true" || key === "force";
                 const layer = state.filteredLayers.data.find(l => l.layerDef.id === layerName)
+                console.log("Setting ", layer?.layerDef?.id," to visibility", isDisplayed, "(minzoom:", layer?.layerDef?.minzoomVisible, layer?.layerDef?.minzoom,")")
                 layer.isDisplayed.setData(
                     isDisplayed
                 )
                 if (key === "force") {
                     layer.layerDef.minzoom = 0
+                    layer.layerDef.minzoomVisible = 0
                 }
             }
         }

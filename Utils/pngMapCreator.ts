@@ -71,6 +71,9 @@ export class PngMapCreator {
                 } else {
                     const bounds = BBox.fromLeafletBounds(leaflet.getBounds().pad(0.1).pad(-state.layoutToUse.widenFactor))
                     state.currentBounds.setData(bounds)
+                    if(!state.featurePipeline.sufficientlyZoomed.data){
+                        console.warn("Not sufficiently zoomed!")
+                    }
 
                     if (state.featurePipeline.runningQuery.data) {
                         // A query is running!
@@ -81,10 +84,6 @@ export class PngMapCreator {
                     }
 
                     state.featurePipeline.GetTilesPerLayerWithin(bounds, (tile) => {
-
-                        if (tile.layer.layerDef.minzoom > state.locationControl.data.zoom) {
-                            return
-                        }
                         if (tile.layer.layerDef.id.startsWith("note_import")) {
                             // Don't export notes to import
                             return
