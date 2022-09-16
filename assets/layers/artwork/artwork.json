@@ -568,5 +568,7 @@
       }
     }
   ],
-  "filter": ["has_image"]
+  "filter": [
+    "has_image"
+  ]
 }

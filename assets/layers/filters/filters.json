@@ -1,14 +1,13 @@
 {
   "id": "filters",
   "description": "This layer acts as library for common filters",
-  "mapRendering": [
-  ],
+  "mapRendering": [],
   "source": {
     "osmTags": "id~*"
   },
   "filter": [
     {
-    "id":"open_now",
+      "id": "open_now",
       "options": [
         {
           "question": {
