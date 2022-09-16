@@ -41,7 +41,6 @@ export class PngMapCreator {
                     }, 250)
             })
             const style = `width: ${options.width * options.scaling}mm; height: ${options.height * options.scaling}mm;`
-            console.log("Style is", style)
             minimap.SetStyle(style)
             minimap.AttachTo(options.divId)
         })
@@ -61,8 +60,7 @@ export class PngMapCreator {
         const minimap = await this.createAndLoadMinimap()
         const state = this._state
         const dummyMode = this._options.dummyMode ?? false
-        console.log("Dummy mode is", dummyMode)
-        return new Promise<string | Blob>(resolve => {
+        return new Promise<string | Blob>((resolve, reject) => {
             // Next: we prepare the features. Only fully contained features are shown
             minimap.leafletMap.addCallbackAndRunD(async (leaflet) => {
                 // Ping the featurepipeline to download what is needed
@@ -96,10 +94,18 @@ export class PngMapCreator {
                             state: undefined,
                         })
                     })
-                    await Utils.waitFor(10000)
+                    await Utils.waitFor(2000)
                 }
                 minimap.TakeScreenshot(format).then(result => {
+                    const divId = this._options.divId
+                    window.setTimeout(() => {
+                    document.getElementById(divId).removeChild(/*Will fetch the cached htmlelement:*/minimap.ConstructElement())
+
+                    }, 500)
                     return resolve(result);
+                }).catch(failreason => {
+                    console.error("Could no make a screenshot due to ",failreason)
+                    reject(failreason)
                 })
             })
 

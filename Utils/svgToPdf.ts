@@ -11,6 +11,7 @@ import {makeAbsolute, parseSVG} from 'svg-path-parser';
 import Translations from "../UI/i18n/Translations";
 import {Utils} from "../Utils";
 import Locale from "../UI/i18n/Locale";
+import Constants from "../Models/Constants";
 
 class SvgToPdfInternals {
     private readonly doc: jsPDF;
@@ -214,6 +215,9 @@ class SvgToPdfInternals {
         if (pathPart === null) {
             return text
         }
+        if(text === "$version"){
+            return new Date().toISOString()+" "+Constants.vNumber
+        }
         let t: any = Translations.t
         const path = pathPart[1].split(".")
         if (this._importedTranslations[path[0]]) {
@@ -362,8 +366,6 @@ class SvgToPdfInternals {
     }
 
     private drawPath(element: SVGPathElement): void {
-        if (element.id === "rect25327")
-            console.log("Drawing", element.id, element)
         const path = element.getAttribute("d")
         const parsed: { code: string, x: number, y: number, x2?, y2?, x1?, y1? }[] = parseSVG(path)
         makeAbsolute(parsed)
@@ -612,7 +614,6 @@ export class SvgToPdfPage {
             throw "Invalid mapspec:" + spec
         }
         const params = SvgToPdfInternals.parseCss(match[1], ",")
-        const ctx = `Preparing map (theme ${params["theme"]})`
 
         let smallestRect: SVGRectElement = undefined
         let smallestSurface: number = undefined;
@@ -660,8 +661,10 @@ export class SvgToPdfPage {
                 const layerName = paramsKey.substring("layer-".length)
                 const key = params[paramsKey].toLowerCase().trim()
                 const layer = layout.layers.find(l => l.id === layerName)
+                if (layer === undefined) {
+                    throw "No layer found for " + paramsKey
+                }
                 if (key === "force") {
-                    console.log("Forcing minzoom of layer", layer.id)
                     layer.minzoom = 0
                     layer.minzoomVisible = 0
                 }
@@ -678,7 +681,9 @@ export class SvgToPdfPage {
 
         const fl = state.filteredLayers.data
         for (const filteredLayer of fl) {
-            if (params["layers"] === "none") {
+            if (params["layer-" + filteredLayer.layerDef.id] !== undefined) {
+                filteredLayer.isDisplayed.setData(params["layer-" + filteredLayer.layerDef.id].trim().toLowerCase() !== "false")
+            } else if (params["layers"] === "none") {
                 filteredLayer.isDisplayed.setData(false)
             } else if (filteredLayer.layerDef.id.startsWith("note_import")) {
                 filteredLayer.isDisplayed.setData(false)
@@ -698,6 +703,12 @@ export class SvgToPdfPage {
                 if (key === "force") {
                     layer.layerDef.minzoom = 0
                     layer.layerDef.minzoomVisible = 0
+                    layer.isDisplayed.addCallback(isDisplayed => {
+                        if(!isDisplayed){
+                            console.warn("Forcing layer " + paramsKey + " as true")
+                            layer.isDisplayed.setData(true)
+                        }
+                    })
                 }
             }
         }
@@ -742,14 +753,15 @@ export class SvgToPdfPage {
             await this.prepareElement(<any>child, mapSpecs)
         }
 
-        const self = this;
-        await Promise.all(mapSpecs.map(ms => self.prepareMap(ms)))
+        for (const mapSpec of mapSpecs) {
+            await this.prepareMap(mapSpec)
+        }
 
 
     }
 
     public drawPage(advancedApi: jsPDF, i: number, language: string): void {
-        if(!this._isPrepared){
+        if (!this._isPrepared) {
             throw "Run 'Prepare()' first!"
         }
 
@@ -780,7 +792,7 @@ export class SvgToPdf {
         const mode = width > height ? "landscape" : "portrait"
 
         for (const page of this._pages) {
-           await page.Prepare(language)
+            await page.Prepare(language)
         }
 
         Locale.language.setData(language)
@@ -789,7 +801,7 @@ export class SvgToPdf {
             for (let i = 0; i < this._pages.length; i++) {
                 if (i > 0) {
                     advancedApi.addPage()
-                    const mediabox : {bottomLeftX: number, bottomLeftY: number, topRightX: number, topRightY: number} = advancedApi.getCurrentPageInfo().pageContext.mediaBox
+                    const mediabox: { bottomLeftX: number, bottomLeftY: number, topRightX: number, topRightY: number } = advancedApi.getCurrentPageInfo().pageContext.mediaBox
                     const targetWidth = 297
                     const targetHeight = 210
                     const sx = mediabox.topRightX / targetWidth
