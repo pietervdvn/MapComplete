@@ -277,9 +277,9 @@
     "reviews"
   ],
   "filter": [
-      "open_now",
-      "accepts_cash",
-      "accepts_cards"
+    "open_now",
+    "accepts_cash",
+    "accepts_cards"
   ],
   "deletion": {
     "softDeletionTags": {

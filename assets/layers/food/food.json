@@ -770,7 +770,7 @@
     "reviews"
   ],
   "filter": [
-   "open_now",
+    "open_now",
     {
       "id": "vegetarian",
       "options": [
@@ -834,7 +834,7 @@
         }
       ]
     },
-"accepts_cash",
+    "accepts_cash",
     "accepts_cards"
   ],
   "deletion": {
