@@ -42,8 +42,21 @@
     "flyer": {
         "aerial": "This map uses a different background, namely aerial imagery by Agentschap Informatie Vlaanderen",
         "callToAction": "Test it on mapcomplete.osm.be",
+        "editing": {
+            "intro": "The user is greeted by a map with points. Upon selecting a point, the information about the point is shown. A simplified example of what this looks like for a nature reserve is shown below.",
+            "title": "What does the interface look like?"
+        },
         "examples": "There are many thematic maps available of which a few are printed here, namely the maps with AED's, artwork, cyclestreets, benches and cyclepumps.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,... Discover them all on mapcomplete.osm.be  ",
+        "fakeui": {
+            "add_images": "Add images with a few clicks",
+            "attributes": "Shows attributes in a friendly way",
+            "edit": "Wrong or outdated info? The edit button is right there",
+            "question": "If an attribute is not yet known, MapComplete shows a question",
+            "see_images": "Shows images from previous contributors, Wikipedia, Mapillary, ...   ",
+            "wikipedia": "Linked Wikipedia articles are shown"
+        },
         "frontParagraph": "MapComplete is an easy to use web application to collect geodata in OpenStreetMap, enabling collecting and managing relevant data in an open, crowdsourced and reusable way.\n\nNew categories and attributes can be added upon request.",
+        "lines_too": "Lines and polygons are shown too. Attributes and images can be added and updated as well.",
         "mapcomplete": {
             "customize": "MapComplete can tailored to your needs, with new map layers, new functionalities or styled to your organisation styleguide. We also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.",
             "intro": "MapComplete is a website which has {mapCount} interactive maps. Every single map allows to add or update information.",

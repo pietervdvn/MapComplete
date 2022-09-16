@@ -42,7 +42,19 @@
     "flyer": {
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
         "callToAction": "Probeer het uit op mapcomplete.osm.be",
+        "editing": {
+            "intro": "De gebruiker krijgt eerst een kaart met interesspunten te zien. Wanneer er op een punt geklikt wordt, wordt een interface met informatie geopend. Een (versimpeld) voorbeeld voor een natuurgebied wordt hieronder getoond:",
+            "title": "Hoe ziet de interface eruit?"
+        },
         "examples": "Er zijn vele thematische kaarten beschikbaar. Enkele voorbeelden zijn hier geprint, zoals de kaart met AEDs, kunstwerken, fietsstraten, banken en fietspompen.\n\nOnline zijn er nog kaarten met diverse thema's, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,... Ontdek ze allemaal mapcomplete.osm.be  ",
+        "fakeui": {
+            "add_images": "Voeg foto's met een paar klikken toe",
+            "attributes": "Attributen worden getoond op begrijpbare wijze",
+            "edit": "Foute of verouderde gegevens? Aanpassen kan hier",
+            "question": "Is een attribuut nog niet gekend? MapComplete toont een vraag",
+            "see_images": "Toont afbeeldingen van eerdere bijdragers, Wikipedia, Mapillary, ...",
+            "wikipedia": "Gelinkte Wikipedia-artikels worden getoond"
+        },
         "frontParagraph": "MapComplete is een web-applicatie om OpenStreetMap-data te tonen en aan te passen op basis van thematische kaarten. Het maakt het mogelijk om open geodata te crowdsourcen en te managen op een makkelijke manier.\n\nNieuwe categorie�n en attributen kunnen op vraag worden toegevoegd.",
         "mapcomplete": {
             "customize": "Wil je een versie op maat? Wil je een versie in jullie huisstijl?\nWil je een nieuwe kaartlaag of functionaliteit? Wil je een crowdsourcing-campagne opzetten?\nNeem contact op met pietervdvn@posteo.net voor een offerte.",

@@ -41,47 +41,12 @@ async function main() {
         textSubstitutions: {
             mapCount: "" + Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(th => !th.hideFromOverview).length
         },
-        disableMaps: false
+        disableMaps: true
     }
-    Locale.language.setData("nl")
-    const back = new SvgToPdf([svgBack], options)
-    const front = await new SvgToPdf([svg], options)
-    await back.ConvertSvg("Flyer-back-nl.pdf")
-    await front.ConvertSvg("Flyer-front-nl.pdf")
-    Locale.language.setData("en")
-    await back.ConvertSvg("Flyer-back-en.pdf")
-    await front.ConvertSvg("Flyer-front-en.pdf")
+     const front = await new SvgToPdf([svg, svgBack], options)
+    await front.ConvertSvg("Flyer-nl.pdf", "nl")
+    await front.ConvertSvg("Flyer-en.pdf", "en")
 
-
-    /*
-    const svg = await Utils.download(window.location.protocol + "//" + window.location.host + "/assets/templates/MapComplete-flyer.svg")
-
-
-    Locale.language.setData("en")
-    const svgToPdf = new SvgToPdf([svgBack], {
-        getFreeDiv: createElement,
-        textSubstitutions: {
-            mapCount: "" + Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(th => !th.hideFromOverview).length
-        }
-    })
-    new VariableUiElement(svgToPdf.currentState).AttachTo("maindiv")
-    await svgToPdf.Prepare()
-    console.log("Used translations", svgToPdf._usedTranslations)
-    await svgToPdf.ConvertSvg("flyer_nl.pdf")
-    /*
-Locale.language.setData("en")
-await new SvgToPdf([svgBack], {
-    textSubstitutions: {
-        mapCount: "" + Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(th => !th.hideFromOverview).length
-    }
-}).ConvertSvg("flyer_en.pdf")
-
-Locale.language.setData("nl")
-await new SvgToPdf([svgBack], {
-    textSubstitutions: {
-        mapCount: "" + Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(th => !th.hideFromOverview).length
-    }
-}).ConvertSvg("flyer_nl.pdf")*/
 }
 
 main().then(() => console.log("Done!"))
