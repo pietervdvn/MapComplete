@@ -8,19 +8,23 @@
         "title": "Åbn illustrationskort"
     },
     "benches": {
+        "description": "Dette kort viser alle bænke, der er registreret i OpenStreetMap: Individuelle bænke og bænke, der hører til offentlige transportpladser eller shelters. Med en OpenStreetMap-konto kan du kortlægge nye bænke eller redigere detaljer om eksisterende bænke.",
         "shortDescription": "Et kort over bænke",
-        "title": "Bænke",
-        "description": "Dette kort viser alle bænke, der er registreret i OpenStreetMap: Individuelle bænke og bænke, der hører til offentlige transportpladser eller shelters. Med en OpenStreetMap-konto kan du kortlægge nye bænke eller redigere detaljer om eksisterende bænke."
+        "title": "Bænke"
     },
     "bicycle_rental": {
         "description": "På dette kort finder du de mange cykeludlejningsstationer, som OpenStreetMap kender dem",
-        "title": "Cykeludlejning",
-        "shortDescription": "Et kort med cykeludlejningsstationer og cykeludlejningsbutikker"
+        "shortDescription": "Et kort med cykeludlejningsstationer og cykeludlejningsbutikker",
+        "title": "Cykeludlejning"
+    },
+    "bicyclelib": {
+        "description": "Et cykelbibliotek er et sted, hvor cykler kan udlånes, ofte mod et mindre årligt gebyr. Et bemærkelsesværdigt eksempel er cykelbiblioteker til børn, som giver dem mulighed for at skifte til en større cykel, når de er vokset fra deres nuværende cykel",
+        "title": "Cykelbiblioteker"
     },
     "binoculars": {
-        "title": "Kikkerter",
         "description": "Et kort over udsigtskikkert fastgjort på en stang. Det kan typisk findes på turistmæssige steder, udsigtspunkter, på toppen af panoramatårne eller lejlighedsvis på et naturreservat.",
-        "shortDescription": "Et kort over fastgjorte kikkerter"
+        "shortDescription": "Et kort over fastgjorte kikkerter",
+        "title": "Kikkerter"
     },
     "bookcases": {
         "description": "Et offentligt bogskab er et lille skab, en kasse, en gammel telefonboks eller andre steder, hvor bøger opbevares. Alle kan lægge eller tage en bog. Dette kort har til formål at samle alle disse bogskabe. Du kan opdage nye bogkasser i nærheden og med en gratis OpenStreetMap-konto hurtigt tilføje dine yndlingsbogkasser."
@@ -30,13 +34,15 @@
         "title": "Caféer og pubber"
     },
     "campersite": {
+        "description": "Denne side samler alle officielle camper-stopsteder og steder, hvor du kan dumpe gråt og sort vand. Du kan tilføje detaljer om de leverede tjenester og omkostningerne. Tilføj billeder og anmeldelser. Dette er en hjemmeside og en webapp. Dataene gemmes i OpenStreetMap, så de vil være gratis for evigt og kan genbruges af enhver app.",
         "layers": {
             "0": {
                 "description": "autocamperpladser",
+                "name": "Campingpladser",
                 "presets": {
                     "0": {
-                        "title": "en autocamperplads",
-                        "description": "Tilføj en ny officiel campingplads. Disse er udpegede steder at overnatte med din autocamper. De kan ligne en rigtig campingplads eller bare ligne en parkeringsplads. De er måske slet ikke skiltet, men er blot defineret i en kommunal beslutning. En almindelig parkering beregnet til campister, hvor det ikke forventes at overnatte, er -ikke- en autocamperplads "
+                        "description": "Tilføj en ny officiel campingplads. Disse er udpegede steder at overnatte med din autocamper. De kan ligne en rigtig campingplads eller bare ligne en parkeringsplads. De er måske slet ikke skiltet, men er blot defineret i en kommunal beslutning. En almindelig parkering beregnet til campister, hvor det ikke forventes at overnatte, er -ikke- en autocamperplads ",
+                        "title": "en autocamperplads"
                     }
                 },
                 "tagRenderings": {
@@ -49,8 +55,8 @@
                         "render": "Dette sted koster {charge}"
                     },
                     "caravansites-description": {
-                        "render": "Flere oplysninger om dette sted: {description}",
-                        "question": "Vil du tilføje en generel beskrivelse af dette sted? (Gentag ikke oplysninger, der tidligere er blevet spurgt eller vist ovenfor. Hold dem venligst objektive - udtalelser går ind i anmeldelserne)"
+                        "question": "Vil du tilføje en generel beskrivelse af dette sted? (Gentag ikke oplysninger, der tidligere er blevet spurgt eller vist ovenfor. Hold dem venligst objektive - udtalelser går ind i anmeldelserne)",
+                        "render": "Flere oplysninger om dette sted: {description}"
                     },
                     "caravansites-fee": {
                         "mappings": {
@@ -90,14 +96,14 @@
                     },
                     "caravansites-long-term": {
                         "mappings": {
+                            "0": {
+                                "then": "Der er nogle pladser til langtidsleje, men du kan også bo på daglig basis"
+                            },
                             "1": {
                                 "then": "Nej, der er ingen faste gæster her"
                             },
                             "2": {
                                 "then": "Det er kun muligt at bo her, hvis du har en langtidskontrakt (dette sted forsvinder fra kortet, hvis du vælger dette)"
-                            },
-                            "0": {
-                                "then": "Der er nogle pladser til langtidsleje, men du kan også bo på daglig basis"
                             }
                         },
                         "question": "Tilbyder dette sted pladser til langtidsleje?"
@@ -105,17 +111,6 @@
                     "caravansites-name": {
                         "question": "Hvad hedder dette sted?",
                         "render": "Dette sted hedder {name}"
-                    },
-                    "caravansites-toilets": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dette sted har toiletter"
-                            },
-                            "1": {
-                                "then": "Dette sted har ikke toiletter"
-                            }
-                        },
-                        "question": "Har dette sted toiletter?"
                     },
                     "caravansites-sanitary-dump": {
                         "mappings": {
@@ -128,12 +123,22 @@
                         },
                         "question": "Har dette sted en sanitær afleveringsplads?"
                     },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dette sted har toiletter"
+                            },
+                            "1": {
+                                "then": "Dette sted har ikke toiletter"
+                            }
+                        },
+                        "question": "Har dette sted toiletter?"
+                    },
                     "caravansites-website": {
                         "question": "Har dette sted et websted?",
                         "render": "Officiel hjemmeside: <a href='{website}'>{website}</a>"
                     }
                 },
-                "name": "Campingpladser",
                 "title": {
                     "mappings": {
                         "0": {
@@ -148,8 +153,8 @@
                 "name": "Sanitære afleveringspladser",
                 "presets": {
                     "0": {
-                        "title": "en sanitær afleveringsplads",
-                        "description": "Tilføj en ny sanitær afleveringsplads. Dette er et sted, hvor autocamperchauffører kan dumpe spildevand eller kemisk toiletaffald. Ofte er der også drikkevand og el."
+                        "description": "Tilføj en ny sanitær afleveringsplads. Dette er et sted, hvor autocamperchauffører kan dumpe spildevand eller kemisk toiletaffald. Ofte er der også drikkevand og el.",
+                        "title": "en sanitær afleveringsplads"
                     }
                 },
                 "tagRenderings": {
@@ -187,46 +192,44 @@
                     },
                     "dumpstations-fee": {
                         "mappings": {
-                            "1": {
-                                "then": "Kan bruges gratis"
-                            },
                             "0": {
                                 "then": "Du skal betale for brug"
+                            },
+                            "1": {
+                                "then": "Kan bruges gratis"
                             }
                         },
                         "question": "Opkræver dette sted et gebyr?"
                     },
                     "dumpstations-grey-water": {
                         "mappings": {
-                            "1": {
-                                "then": "Du kan ikke bortskaffe gråt vand her"
-                            },
                             "0": {
                                 "then": "Du kan bortskaffe gråt vand her"
+                            },
+                            "1": {
+                                "then": "Du kan ikke bortskaffe gråt vand her"
                             }
                         },
                         "question": "Kan du komme af med gråt vand her?"
                     },
+                    "dumpstations-network": {
+                        "question": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)",
+                        "render": "Denne station er en del af netværket {network}"
+                    },
                     "dumpstations-waterpoint": {
-                        "question": "Har dette sted et vandpost?",
                         "mappings": {
-                            "1": {
-                                "then": "Dette sted har ikke et vandpost"
-                            },
                             "0": {
                                 "then": "Dette sted har et vandpost"
+                            },
+                            "1": {
+                                "then": "Dette sted har ikke et vandpost"
                             }
-                        }
-                    },
-                    "dumpstations-network": {
-                        "render": "Denne station er en del af netværket {network}",
-                        "question": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)"
+                        },
+                        "question": "Har dette sted et vandpost?"
                     }
                 }
             }
         },
-        "shortDescription": "Find steder, hvor du kan overnatte med din autocamper",
-        "title": "Campingpladser",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -246,224 +249,160 @@
                 }
             }
         },
-        "description": "Denne side samler alle officielle camper-stopsteder og steder, hvor du kan dumpe gråt og sort vand. Du kan tilføje detaljer om de leverede tjenester og omkostningerne. Tilføj billeder og anmeldelser. Dette er en hjemmeside og en webapp. Dataene gemmes i OpenStreetMap, så de vil være gratis for evigt og kan genbruges af enhver app."
+        "shortDescription": "Find steder, hvor du kan overnatte med din autocamper",
+        "title": "Campingpladser"
     },
-    "pets": {
-        "description": "Hundsteder",
-        "layers": {
-            "1": {
-                "override": {
-                    "name": "Hundevenlige madsteder"
-                }
-            },
-            "2": {
-                "override": {
-                    "name": "hundevenlig butik",
-                    "title": {
-                        "render": "hundevenlig butik"
-                    }
-                }
-            },
-            "6": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "description": "En butik hvor man kan tage en hund med n&aelig;sten overalt",
-                            "title": "EN hundevenlig butik"
-                        }
-                    }
-                }
-            }
-        },
-        "title": "hundesteder"
+    "charging_stations": {
+        "description": "På dette åbne kort kan man finde og markere oplysninger om ladestandere",
+        "shortDescription": "Et verdensomspændende kort over ladestationer",
+        "title": "Ladestationer"
     },
-    "hackerspaces": {
-        "shortDescription": "Et kort over hackerspaces",
-        "title": "Hackerspaces",
-        "description": "På dette kort kan du se hackerspaces, tilføje et nyt hackerspace eller opdatere data direkte"
-    },
-    "indoors": {
-        "description": "På dette kort er offentligt tilgængelige indendørs steder vist",
-        "title": "Indendørs"
-    },
-    "mapcomplete-changes": {
-        "description": "Dette kort viser alle de ændringer, der er foretaget med MapComplete",
+    "climbing": {
+        "description": "På dette kort finder du forskellige klatremuligheder såsom klatremotionsrum, boulderinghaller og sten i naturen.",
         "layers": {
             "0": {
-                "description": "Viser alle MapComplete ændringer",
-                "filter": {
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Lavet af bidragyder {search}"
-                            }
-                        }
-                    },
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Temanavn indeholder {search}"
-                            }
-                        }
-                    },
-                    "3": {
-                        "options": {
-                            "0": {
-                                "question": "Brugersprog (iso-kode) {search}"
-                            }
-                        }
-                    },
-                    "4": {
-                        "options": {
-                            "0": {
-                                "question": "Lavet med vært {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Ikke</b> lavet af bidragyder {search}"
-                            }
-                        }
-                    },
-                    "6": {
-                        "options": {
-                            "0": {
-                                "question": "Lavet med vært {search}"
-                            }
-                        }
-                    },
-                    "5": {
-                        "options": {
-                            "0": {
-                                "question": "Brugersprog (iso-kode) {search}"
-                            }
-                        }
-                    }
-                },
-                "title": {
-                    "render": "Ændringssæt for {theme}"
-                },
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Ændring foretaget af <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
-                        "question": "Hvilken bidragyder foretog denne ændring?"
-                    },
-                    "host": {
-                        "question": "Hvilken vært (hjemmeside) blev denne ændring foretaget med?",
-                        "render": "Ændret med <a href='{host}'>{host}</a>"
-                    },
-                    "locale": {
-                        "render": "Brugerlokalitet er {locale}",
-                        "question": "Hvilken lokalitet (sprog) blev denne ændring foretaget på?"
-                    },
-                    "show_changeset_id": {
-                        "render": "Ændringssæt <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme-id": {
-                        "render": "Ændret med temaet <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
-                        "question": "Hvilket tema blev brugt til at lave denne ændring?"
-                    }
-                },
-                "name": "Ændringssæt centre"
-            },
-            "1": {
                 "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Flere statistikker kan findes <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>her</a>"
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne er</span> offentligt tilgængelig<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at </span> en tilladelse er nødvendig for at få adgang til<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for kunder<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for klubmedlemmer<br/>{_embedding_feature:access:description}"
+                                }
+                            }
+                        },
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Offentligt tilgængelig for alle"
+                                },
+                                "1": {
+                                    "then": "Du skal have en tilladelse for at få adgang her"
+                                },
+                                "2": {
+                                    "then": "Kun for kunder"
+                                },
+                                "3": {
+                                    "then": "Kun klubmedlemmer"
+                                }
+                            },
+                            "question": "Hvem kan få adgang her?"
+                        }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " meter"
+                                },
+                                "1": {
+                                    "human": " fod"
+                                }
+                            }
                         }
                     }
                 }
             }
         },
-        "title": "Ændringer foretaget med MapComplete",
-        "shortDescription": "Viser ændringer foretaget af MapComplete"
+        "title": "Åbn klatrekort"
     },
-    "street_lighting": {
+    "cycle_highways": {
+        "description": "Dette kort viser cykelmotorveje",
         "layers": {
-            "1": {
-                "name": "Oplyste gader",
-                "tagRenderings": {
-                    "lit": {
-                        "mappings": {
-                            "1": {
-                                "then": "Denne gade er ikke oplyst"
-                            },
-                            "2": {
-                                "then": "Denne gade er oplyst om natten"
-                            },
-                            "3": {
-                                "then": "Denne gade er oplyst 24/7"
-                            },
-                            "0": {
-                                "then": "Denne gade er oplyst"
-                            }
-                        },
-                        "question": "Er denne gade oplyst?"
-                    }
-                },
+            "0": {
+                "name": "cykelmotorveje",
                 "title": {
-                    "render": "Oplyst gade"
+                    "render": "cykelmotorvej"
+                }
+            }
+        },
+        "title": "Cykelmotorveje"
+    },
+    "cycle_infra": {
+        "description": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen. Lavet under #osoc21.",
+        "shortDescription": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen.",
+        "title": "Cykelinfrastruktur"
+    },
+    "cyclenodes": {
+        "description": "Dette kort viser cykel netværk og giver dig mulighed for nemt at tilføje nye punkter"
+    },
+    "cyclestreets": {
+        "description": "En cykelgade er en gade, hvor <b>motoriseret trafik ikke må overhale cyklister</b>. De er skiltet med et særligt trafikskilt. Cykelgader findes i Holland og Belgien, men også i Tyskland og Frankrig. ",
+        "layers": {
+            "0": {
+                "description": "En cykelgade er en gade, hvor motoriseret trafik ikke må overhale en cyklist",
+                "name": "Cykelgader"
+            },
+            "1": {
+                "description": "Denne gade bliver snart en cykelgade",
+                "name": "Fremtidig cykelgade",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} bliver snart en cykelgade"
+                        }
+                    },
+                    "render": "Fremtidig cykelgade"
                 }
             },
             "2": {
-                "tagRenderings": {
-                    "lit": {
-                        "question": "Er denne gade oplyst?",
-                        "mappings": {
-                            "0": {
-                                "then": "Denne gade er oplyst"
-                            },
-                            "3": {
-                                "then": "Denne gade er oplyst 24/7"
-                            },
-                            "1": {
-                                "then": "Denne gade er ikke oplyst"
-                            },
-                            "2": {
-                                "then": "Denne gade er oplyst om natten"
-                            }
-                        }
-                    }
-                },
+                "description": "Lag for at markere enhver gade som cykelgade",
+                "name": "Alle gader",
                 "title": {
                     "render": "Gade"
-                },
-                "name": "Alle gader"
+                }
             }
         },
-        "title": "Gadebelysning",
-        "description": "På dette kort kan du finde alt om gadebelysning"
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)"
+                        },
+                        "1": {
+                            "then": "Denne gade er en cykelgade"
+                        },
+                        "2": {
+                            "then": "Denne gade bliver snart en cykelgade"
+                        },
+                        "3": {
+                            "then": "Denne gade er ikke en cykelgade"
+                        }
+                    },
+                    "question": "Er gaden <b>{name}</b> en cykelgade?"
+                },
+                "1": {
+                    "question": "Hvornår bliver denne gade en cykelgade?",
+                    "render": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}"
+                }
+            }
+        },
+        "shortDescription": "Et kort over cykelgader",
+        "title": "Cykelgader"
     },
-    "toilets": {
-        "title": "Åbn toiletkort",
-        "description": "Et kort over offentlige toiletter"
+    "cyclofix": {
+        "description": "Målet med dette kort er at præsentere cyklister for en letanvendelig løsning til at finde den passende infrastruktur til deres behov.<br><br>Du kan spore din præcise placering (kun mobil) og vælge lag, der er relevante for dig i nederste venstre hjørne. Du kan også bruge dette værktøj til at tilføje eller redigere pins (points of interest) til kortet og give flere data ved at besvare spørgsmålene.<br><br>Alle ændringer, du foretager, vil automatisk blive gemt i den globale database af OpenStreetMap og kan kan frit genbruges af andre.<br><br>For mere information om cyclofix-projektet, gå til <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> .",
+        "title": "Cyclofix - et åbent kort for cyklister"
     },
-    "transit": {
-        "description": "Planlæg din rejse ved hjælp af det offentlige transportsystem.",
-        "title": "Busruter"
-    },
-    "trees": {
-        "description": "Kortlæg alle træerne!",
-        "title": "Træer",
-        "shortDescription": "Kortlæg alle træer"
-    },
-    "walls_and_buildings": {
-        "description": "Specielt indbygget lag giver alle vægge og bygninger. Dette lag er nyttigt i forudindstillinger til objekter, der kan placeres mod vægge (f.eks. AED'er, postkasser, indgange, adresser, overvågningskameraer, …). Dette lag er usynligt som standard og kan ikke skiftes af brugeren.",
-        "title": "Mure og bygninger"
-    },
-    "waste_basket": {
-        "description": "På dette kort finder du affaldskurve i nærheden af dig. Hvis der mangler en affaldskurv på dette kort, kan du selv tilføje den",
-        "shortDescription": "Et kort med affaldskurve",
-        "title": "Affaldskurv"
+    "drinking_water": {
+        "description": "På dette kort er offentligt tilgængelige drikkevandsteder vist og kan nemt tilføjes",
+        "title": "Drikkevand"
     },
     "education": {
         "description": "På dette kort finder du information om alle typer skoler og uddannelse og kan nemt tilføje flere oplysninger",
         "title": "Uddannelse"
     },
     "etymology": {
+        "description": "På dette kort kan du se, hvad et objekt er opkaldt efter. Gaderne, bygningerne, ... kommer fra OpenStreetMap, som blev forbundet med Wikidata. I pop op-vinduet vil du se Wikipedia-artiklen (hvis den findes) eller en wikidata-boks med, hvad objektet er opkaldt efter. Hvis selve objektet har en wikipedia-side, vil det også blive vist.<br/><br/><b>Du kan også hjælpe med at bidrage!</b>Zoom nok ind og <i>alle</i> gader vil dukke op. Du kan klikke på en og en Wikidata-søgeboks vil poppe op. Med et par klik kan du tilføje et etymologilink. Bemærk, at du har brug for en gratis OpenStreetMap-konto for at gøre dette.",
         "layers": {
             "1": {
                 "override": {
@@ -501,13 +440,14 @@
                 }
             }
         },
-        "title": "Åbn oprindelseskort",
         "shortDescription": "Hvad er oprindelsen af et stednavn?",
-        "description": "På dette kort kan du se, hvad et objekt er opkaldt efter. Gaderne, bygningerne, ... kommer fra OpenStreetMap, som blev forbundet med Wikidata. I pop op-vinduet vil du se Wikipedia-artiklen (hvis den findes) eller en wikidata-boks med, hvad objektet er opkaldt efter. Hvis selve objektet har en wikipedia-side, vil det også blive vist.<br/><br/><b>Du kan også hjælpe med at bidrage!</b>Zoom nok ind og <i>alle</i> gader vil dukke op. Du kan klikke på en og en Wikidata-søgeboks vil poppe op. Med et par klik kan du tilføje et etymologilink. Bemærk, at du har brug for en gratis OpenStreetMap-konto for at gøre dette."
+        "title": "Åbn oprindelseskort"
     },
     "facadegardens": {
+        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facadehaver</a>, grønne facader og træer i byen bringer ikke kun fred og ro, men også en smukkere by , større biodiversitet, en kølende effekt og bedre luftkvalitet. <br/> Klimaan VZW og Mechelen Klimaatneutraal ønsker at kortlægge eksisterende og nye facadehaver som et eksempel for folk, der vil bygge deres egen have eller for byvandrere, der elsker naturen.<br/>Mere info om projektet på <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
         "layers": {
             "0": {
+                "description": "Facadehaver",
                 "name": "Facadehaver",
                 "presets": {
                     "0": {
@@ -516,53 +456,24 @@
                     }
                 },
                 "tagRenderings": {
+                    "facadegardens-description": {
+                        "question": "Ekstra beskrivende info om haven (hvis nødvendigt og endnu ikke beskrevet ovenfor)",
+                        "render": "Flere detaljer: {description}"
+                    },
                     "facadegardens-direction": {
                         "question": "Hvad er havens orientering?",
                         "render": "Orientering: {direction} (hvor 0=N og 90=O)"
                     },
-                    "facadegardens-sunshine": {
-                        "mappings": {
-                            "1": {
-                                "then": "Haven er i delvis skygge"
-                            },
-                            "0": {
-                                "then": "Haven er i fuld sol"
-                            },
-                            "2": {
-                                "then": "Haven ligger i skygge"
-                            }
-                        },
-                        "question": "Er haven skyggefuld eller solrig?"
-                    },
                     "facadegardens-edible": {
                         "mappings": {
-                            "1": {
-                                "then": "Der er ikke spiselige planter"
-                            },
                             "0": {
                                 "then": "Der er spiselige planter"
+                            },
+                            "1": {
+                                "then": "Der er ikke spiselige planter"
                             }
                         },
                         "question": "Er der nogle spiselige planter?"
-                    },
-                    "facadegardens-rainbarrel": {
-                        "question": "Er der installeret en vandtønde til haven?",
-                        "mappings": {
-                            "1": {
-                                "then": "Der er ingen regntønde"
-                            },
-                            "0": {
-                                "then": "Der er en regntønde"
-                            }
-                        }
-                    },
-                    "facadegardens-start_date": {
-                        "question": "Hvornår blev haven bygget? (et år er nok)",
-                        "render": "Anlægsdato for haven: {start_date}"
-                    },
-                    "facadegardens-description": {
-                        "question": "Ekstra beskrivende info om haven (hvis nødvendigt og endnu ikke beskrevet ovenfor)",
-                        "render": "Flere detaljer: {description}"
                     },
                     "facadegardens-plants": {
                         "mappings": {
@@ -580,194 +491,63 @@
                             }
                         },
                         "question": "Hvilke slags planter vokser her?"
+                    },
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "Der er en regntønde"
+                            },
+                            "1": {
+                                "then": "Der er ingen regntønde"
+                            }
+                        },
+                        "question": "Er der installeret en vandtønde til haven?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "Hvornår blev haven bygget? (et år er nok)",
+                        "render": "Anlægsdato for haven: {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "Haven er i fuld sol"
+                            },
+                            "1": {
+                                "then": "Haven er i delvis skygge"
+                            },
+                            "2": {
+                                "then": "Haven ligger i skygge"
+                            }
+                        },
+                        "question": "Er haven skyggefuld eller solrig?"
                     }
                 },
-                "description": "Facadehaver",
                 "title": {
                     "render": "Facadehave"
                 }
             }
         },
-        "title": "Facadehaver",
-        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facadehaver</a>, grønne facader og træer i byen bringer ikke kun fred og ro, men også en smukkere by , større biodiversitet, en kølende effekt og bedre luftkvalitet. <br/> Klimaan VZW og Mechelen Klimaatneutraal ønsker at kortlægge eksisterende og nye facadehaver som et eksempel for folk, der vil bygge deres egen have eller for byvandrere, der elsker naturen.<br/>Mere info om projektet på <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
-        "shortDescription": "Dette kort viser facadehaver med billeder og nyttig info om orientering, solskin og plantetyper."
+        "shortDescription": "Dette kort viser facadehaver med billeder og nyttig info om orientering, solskin og plantetyper.",
+        "title": "Facadehaver"
     },
     "food": {
-        "title": "Restauranter og fastfood",
-        "description": "Restauranter og fastfood"
+        "description": "Restauranter og fastfood",
+        "title": "Restauranter og fastfood"
     },
     "fritures": {
         "description": "På dette kort finder du din foretrukne pomfrits-butik!",
-        "title": "Pommes frites butik",
         "layers": {
             "0": {
                 "override": {
                     "name": "Pommes frites butik"
                 }
             }
-        }
-    },
-    "maxspeed": {
-        "description": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej. Hvis en maxspeed mangler eller er forkert, kan du rette den her.",
-        "title": "Højeste hastighed",
-        "shortDescription": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej."
-    },
-    "bicyclelib": {
-        "title": "Cykelbiblioteker",
-        "description": "Et cykelbibliotek er et sted, hvor cykler kan udlånes, ofte mod et mindre årligt gebyr. Et bemærkelsesværdigt eksempel er cykelbiblioteker til børn, som giver dem mulighed for at skifte til en større cykel, når de er vokset fra deres nuværende cykel"
-    },
-    "charging_stations": {
-        "title": "Ladestationer",
-        "description": "På dette åbne kort kan man finde og markere oplysninger om ladestandere",
-        "shortDescription": "Et verdensomspændende kort over ladestationer"
-    },
-    "climbing": {
-        "description": "På dette kort finder du forskellige klatremuligheder såsom klatremotionsrum, boulderinghaller og sten i naturen.",
-        "title": "Åbn klatrekort",
-        "layers": {
-            "0": {
-                "override": {
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " meter"
-                                },
-                                "1": {
-                                    "human": " fod"
-                                }
-                            }
-                        }
-                    },
-                    "tagRenderings+": {
-                        "0": {
-                            "mappings": {
-                                "0": {
-                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne er</span> offentligt tilgængelig<br/>{_embedding_feature:access:description}"
-                                },
-                                "1": {
-                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at </span> en tilladelse er nødvendig for at få adgang til<br/>{_embedding_feature:access:description}"
-                                },
-                                "3": {
-                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for klubmedlemmer<br/>{_embedding_feature:access:description}"
-                                },
-                                "2": {
-                                    "then": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for kunder<br/>{_embedding_feature:access:description}"
-                                }
-                            }
-                        },
-                        "1": {
-                            "mappings": {
-                                "0": {
-                                    "then": "Offentligt tilgængelig for alle"
-                                },
-                                "1": {
-                                    "then": "Du skal have en tilladelse for at få adgang her"
-                                },
-                                "2": {
-                                    "then": "Kun for kunder"
-                                },
-                                "3": {
-                                    "then": "Kun klubmedlemmer"
-                                }
-                            },
-                            "question": "Hvem kan få adgang her?"
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "cycle_highways": {
-        "description": "Dette kort viser cykelmotorveje",
-        "layers": {
-            "0": {
-                "name": "cykelmotorveje",
-                "title": {
-                    "render": "cykelmotorvej"
-                }
-            }
         },
-        "title": "Cykelmotorveje"
-    },
-    "cyclestreets": {
-        "layers": {
-            "0": {
-                "name": "Cykelgader",
-                "description": "En cykelgade er en gade, hvor motoriseret trafik ikke må overhale en cyklist"
-            },
-            "1": {
-                "name": "Fremtidig cykelgade",
-                "title": {
-                    "render": "Fremtidig cykelgade",
-                    "mappings": {
-                        "0": {
-                            "then": "{name} bliver snart en cykelgade"
-                        }
-                    }
-                },
-                "description": "Denne gade bliver snart en cykelgade"
-            },
-            "2": {
-                "title": {
-                    "render": "Gade"
-                },
-                "description": "Lag for at markere enhver gade som cykelgade",
-                "name": "Alle gader"
-            }
-        },
-        "description": "En cykelgade er en gade, hvor <b>motoriseret trafik ikke må overhale cyklister</b>. De er skiltet med et særligt trafikskilt. Cykelgader findes i Holland og Belgien, men også i Tyskland og Frankrig. ",
-        "shortDescription": "Et kort over cykelgader",
-        "title": "Cykelgader",
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)"
-                        },
-                        "1": {
-                            "then": "Denne gade er en cykelgade"
-                        },
-                        "2": {
-                            "then": "Denne gade bliver snart en cykelgade"
-                        },
-                        "3": {
-                            "then": "Denne gade er ikke en cykelgade"
-                        }
-                    },
-                    "question": "Er gaden <b>{name}</b> en cykelgade?"
-                },
-                "1": {
-                    "question": "Hvornår bliver denne gade en cykelgade?",
-                    "render": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}"
-                }
-            }
-        }
-    },
-    "drinking_water": {
-        "title": "Drikkevand",
-        "description": "På dette kort er offentligt tilgængelige drikkevandsteder vist og kan nemt tilføjes"
-    },
-    "maproulette": {
-        "title": "KortRoulette-opgaver",
-        "description": "Tema, der viser MapRoulette-opgaver, så du kan søge, filtrere og rette dem."
-    },
-    "cycle_infra": {
-        "description": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen. Lavet under #osoc21.",
-        "shortDescription": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen.",
-        "title": "Cykelinfrastruktur"
-    },
-    "cyclenodes": {
-        "description": "Dette kort viser cykel netværk og giver dig mulighed for nemt at tilføje nye punkter"
-    },
-    "cyclofix": {
-        "title": "Cyclofix - et åbent kort for cyklister",
-        "description": "Målet med dette kort er at præsentere cyklister for en letanvendelig løsning til at finde den passende infrastruktur til deres behov.<br><br>Du kan spore din præcise placering (kun mobil) og vælge lag, der er relevante for dig i nederste venstre hjørne. Du kan også bruge dette værktøj til at tilføje eller redigere pins (points of interest) til kortet og give flere data ved at besvare spørgsmålene.<br><br>Alle ændringer, du foretager, vil automatisk blive gemt i den globale database af OpenStreetMap og kan kan frit genbruges af andre.<br><br>For mere information om cyclofix-projektet, gå til <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> ."
+        "title": "Pommes frites butik"
     },
     "ghostbikes": {
-        "title": "Spøgelsescykler",
-        "description": "En <b>spøgelsescykel</b> er et mindesmærke for en cyklist, der døde i en trafikulykke, i form af en hvid cykel placeret permanent i nærheden af ulykkesstedet.<br/><br/>På dette kort er en kan se alle de spøgelsescykler, som er kendt af OpenStreetMap. Mangler der en spøgelsescykel? Alle kan tilføje eller opdatere oplysninger her - du behøver kun at have en (gratis) OpenStreetMap-konto."
+        "description": "En <b>spøgelsescykel</b> er et mindesmærke for en cyklist, der døde i en trafikulykke, i form af en hvid cykel placeret permanent i nærheden af ulykkesstedet.<br/><br/>På dette kort er en kan se alle de spøgelsescykler, som er kendt af OpenStreetMap. Mangler der en spøgelsescykel? Alle kan tilføje eller opdatere oplysninger her - du behøver kun at have en (gratis) OpenStreetMap-konto.",
+        "title": "Spøgelsescykler"
     },
     "grb": {
         "description": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen.",
@@ -795,160 +575,73 @@
             }
         }
     },
+    "grb_fixme": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Hvad er det for en bygning?"
+                    }
+                }
+            }
+        }
+    },
+    "hackerspaces": {
+        "description": "På dette kort kan du se hackerspaces, tilføje et nyt hackerspace eller opdatere data direkte",
+        "shortDescription": "Et kort over hackerspaces",
+        "title": "Hackerspaces"
+    },
+    "hailhydrant": {
+        "description": "På dette kort kan du finde og opdatere brandhaner, brandstationer, ambulancestationer og brandslukkere i dine yndlingskvarterer.\n\nDu kan spore din præcise placering (kun mobil) og vælge lag, der er relevante for dig, i nederste venstre hjørne. Du kan også bruge dette værktøj til at tilføje eller redigere POI (points of interest) til kortet og give yderligere detaljer ved at besvare tilgængelige spørgsmål.\n\nAlle ændringer, du foretager, bliver automatisk gemt i den globale database af OpenStreetMap og kan frit genbruges af andre.",
+        "shortDescription": "Kort for at vise brandhaner, brandslukkere, brandstationer og ambulancestationer.",
+        "title": "Brandhaner, brandslukkere, brandstationer og ambulancestationer"
+    },
+    "healthcare": {
+        "description": "På dette kort er forskellige sundhedsrelaterede emner vist",
+        "title": "Sundhedspleje"
+    },
+    "hotels": {
+        "description": "På dette kort finder du hoteller i dit område",
+        "title": "Hoteller"
+    },
+    "indoors": {
+        "description": "På dette kort er offentligt tilgængelige indendørs steder vist",
+        "title": "Indendørs"
+    },
+    "kerbs_and_crossings": {
+        "description": "Et kort, der viser kantsten og overgange.",
+        "title": "Kantsten og overgange"
+    },
+    "maproulette": {
+        "description": "Tema, der viser MapRoulette-opgaver, så du kan søge, filtrere og rette dem.",
+        "title": "KortRoulette-opgaver"
+    },
+    "maps": {
+        "description": "På dette kort kan du finde alle kort, OpenStreetMap kender - typisk et stort kort på en informationstavle, der viser området, byen eller regionen, f.eks. et turistkort på bagsiden af en tavle, et kort over et naturreservat, et kort over cykelnetværk i regionen, ...) <br/><br/>Hvis der mangler et kort, kan du nemt kortlægge dette kort på OpenStreetMap.",
+        "shortDescription": "Dette tema viser alle (turisme) kort, som OpenStreetMap kender til"
+    },
+    "maxspeed": {
+        "description": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej. Hvis en maxspeed mangler eller er forkert, kan du rette den her.",
+        "shortDescription": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej.",
+        "title": "Højeste hastighed"
+    },
+    "nature": {
+        "description": "På dette kort kan man finde interessant information for turister og naturelskere, som f.eks ",
+        "shortDescription": "Et kort for naturelskere med interessante POI'er",
+        "title": "Ud i naturen"
+    },
     "notes": {
         "description": "En note er en nål på kortet med noget tekst, der indikerer, at noget er forkert.<br/><br/>Sørg for at tjekke <a href='#filters'>filtervisningen</a> for at søge efter brugere og tekst .",
         "title": "Noter på OpenStreetMap"
     },
-    "parkings": {
-        "description": "Dette kort viser forskellige parkeringspladser",
-        "shortDescription": "Dette kort viser forskellige parkeringspladser",
-        "title": "Parkering"
-    },
-    "nature": {
-        "shortDescription": "Et kort for naturelskere med interessante POI'er",
-        "description": "På dette kort kan man finde interessant information for turister og naturelskere, som f.eks ",
-        "title": "Ud i naturen"
-    },
-    "openwindpowermap": {
-        "description": "Et kort til visning og redigering af vindmøller."
-    },
-    "playgrounds": {
-        "description": "På dette kort finder du legepladser og kan tilføje flere oplysninger",
-        "title": "Legepladser",
-        "shortDescription": "Et kort med legepladser"
-    },
-    "postal_codes": {
-        "layers": {
-            "0": {
-                "title": {
-                    "render": "Postnummer {postal_code}"
-                },
-                "tagRenderings": {
-                    "postal_code": {
-                        "render": "Postnummeret er {postal_code}"
-                    }
-                },
-                "name": "postnumre"
-            },
-            "2": {
-                "name": "rådhuse",
-                "title": {
-                    "render": "Rådhus {name}"
-                }
-            }
-        },
-        "description": "Postnumre",
-        "title": "Postnumre",
-        "shortDescription": "Postnumre"
-    },
-    "waste": {
-        "description": "Kort over affaldskurve og genbrugsanlæg.",
-        "title": "Affald"
-    },
-    "postboxes": {
-        "shortDescription": "Et kort med postkasser og posthuse",
-        "title": "Postkasse- og Posthus-Kort",
-        "description": "På dette kort kan du finde og tilføje data for posthuse og postkasser. Du kan bruge dette kort til at finde, hvor du kan sende dit næste postkort! :)<br/>Har du fundet en fejl, eller mangler der en postboks? Du kan redigere dette kort med en gratis OpenStreetMap-konto. "
-    },
-    "shops": {
-        "shortDescription": "Et redigerbart kort med grundlæggende butiksoplysninger",
-        "description": "På dette kort kan man markere grundlæggende informationer om butikker, tilføje åbningstider og telefonnumre",
-        "title": "Åbn butikskort"
-    },
-    "sidewalks": {
-        "description": "Eksperimentelt tema",
-        "layers": {
-            "0": {
-                "description": "Lag, der viser fortove på motorveje",
-                "tagRenderings": {
-                    "streetname": {
-                        "render": "Denne gade hedder {name}"
-                    },
-                    "left-right-questions": {
-                        "renderings": {
-                            "1": {
-                                "mappings": {
-                                    "1": {
-                                        "then": "Nej, der er ikke noget fortov at gå på"
-                                    },
-                                    "2": {
-                                        "then": "Der er et særskilt kortlagt fortov at gå på"
-                                    },
-                                    "0": {
-                                        "then": "Ja, der er et fortov på denne side af vejen"
-                                    }
-                                },
-                                "question": "Er der et fortov på denne side af vejen?"
-                            },
-                            "2": {
-                                "question": "Hvad er bredden af fortovet på denne side af vejen?",
-                                "render": "Dette fortov er {sidewalk:left|right:width}m bredt"
-                            }
-                        }
-                    }
-                },
-                "title": {
-                    "render": "{name}"
-                },
-                "name": "Fortove"
-            }
-        },
-        "title": "Fortove",
-        "shortDescription": "Kortlægning af fortov"
-    },
-    "hailhydrant": {
-        "shortDescription": "Kort for at vise brandhaner, brandslukkere, brandstationer og ambulancestationer.",
-        "title": "Brandhaner, brandslukkere, brandstationer og ambulancestationer",
-        "description": "På dette kort kan du finde og opdatere brandhaner, brandstationer, ambulancestationer og brandslukkere i dine yndlingskvarterer.\n\nDu kan spore din præcise placering (kun mobil) og vælge lag, der er relevante for dig, i nederste venstre hjørne. Du kan også bruge dette værktøj til at tilføje eller redigere POI (points of interest) til kortet og give yderligere detaljer ved at besvare tilgængelige spørgsmål.\n\nAlle ændringer, du foretager, bliver automatisk gemt i den globale database af OpenStreetMap og kan frit genbruges af andre."
-    },
-    "maps": {
-        "shortDescription": "Dette tema viser alle (turisme) kort, som OpenStreetMap kender til",
-        "description": "På dette kort kan du finde alle kort, OpenStreetMap kender - typisk et stort kort på en informationstavle, der viser området, byen eller regionen, f.eks. et turistkort på bagsiden af en tavle, et kort over et naturreservat, et kort over cykelnetværk i regionen, ...) <br/><br/>Hvis der mangler et kort, kan du nemt kortlægge dette kort på OpenStreetMap."
+    "observation_towers": {
+        "description": "Offentligt tilgængelige tårne for at nyde udsigten",
+        "shortDescription": "Offentligt tilgængelige tårne for at nyde udsigten",
+        "title": "Udsigtstårne"
     },
     "onwheels": {
+        "description": "På dette kort vises steder, der er offentligt tilgængelige for kørestolsbrugere, og de kan nemt tilføjes",
         "layers": {
-            "6": {
-                "override": {
-                    "=filter": {
-                        "0": {
-                            "options": {
-                                "2": {
-                                    "question": "Sænket kantsten (~3 cm)"
-                                },
-                                "1": {
-                                    "question": "Hævet kantsten (>3 cm)"
-                                },
-                                "0": {
-                                    "question": "Alle typer kantsten"
-                                },
-                                "3": {
-                                    "question": "Skyl kantsten (~0 cm)"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "19": {
-                "override": {
-                    "+tagRenderings": {
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Tilføj alle de foreslåede tags"
-                                }
-                            }
-                        },
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importere"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -965,60 +658,272 @@
                     }
                 }
             },
+            "6": {
+                "override": {
+                    "=filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Alle typer kantsten"
+                                },
+                                "1": {
+                                    "question": "Hævet kantsten (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Sænket kantsten (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Skyl kantsten (~0 cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "18": {
                 "override": {
                     "=title": {
                         "render": "Statistikker"
                     }
                 }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importere"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Tilføj alle de foreslåede tags"
+                                }
+                            }
+                        }
+                    }
+                }
             }
-        },
-        "description": "På dette kort vises steder, der er offentligt tilgængelige for kørestolsbrugere, og de kan nemt tilføjes"
+        }
     },
-    "sport_pitches": {
-        "title": "Sportspladser",
-        "description": "En sportsplads er et område, hvor der dyrkes sport",
-        "shortDescription": "Et kort, der viser sportspladser"
+    "openwindpowermap": {
+        "description": "Et kort til visning og redigering af vindmøller."
     },
-    "hotels": {
-        "description": "På dette kort finder du hoteller i dit område",
-        "title": "Hoteller"
-    },
-    "kerbs_and_crossings": {
-        "title": "Kantsten og overgange",
-        "description": "Et kort, der viser kantsten og overgange."
-    },
-    "healthcare": {
-        "description": "På dette kort er forskellige sundhedsrelaterede emner vist",
-        "title": "Sundhedspleje"
-    },
-    "observation_towers": {
-        "description": "Offentligt tilgængelige tårne for at nyde udsigten",
-        "shortDescription": "Offentligt tilgængelige tårne for at nyde udsigten",
-        "title": "Udsigtstårne"
+    "parkings": {
+        "description": "Dette kort viser forskellige parkeringspladser",
+        "shortDescription": "Dette kort viser forskellige parkeringspladser",
+        "title": "Parkering"
     },
     "personal": {
-        "title": "Personligt tema",
-        "description": "Opret et personligt tema baseret på alle de tilgængelige lag af alle temaer. For at vise nogle data skal du åbne <a href='#filter'>lagvalg</a>"
+        "description": "Opret et personligt tema baseret på alle de tilgængelige lag af alle temaer. For at vise nogle data skal du åbne <a href='#filter'>lagvalg</a>",
+        "title": "Personligt tema"
+    },
+    "pets": {
+        "description": "Hundsteder",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Hundevenlige madsteder"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "hundevenlig butik",
+                    "title": {
+                        "render": "hundevenlig butik"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "En butik hvor man kan tage en hund med n&aelig;sten overalt",
+                            "title": "EN hundevenlig butik"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "hundesteder"
+    },
+    "playgrounds": {
+        "description": "På dette kort finder du legepladser og kan tilføje flere oplysninger",
+        "shortDescription": "Et kort med legepladser",
+        "title": "Legepladser"
+    },
+    "postal_codes": {
+        "description": "Postnumre",
+        "layers": {
+            "0": {
+                "name": "postnumre",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Postnummeret er {postal_code}"
+                    }
+                },
+                "title": {
+                    "render": "Postnummer {postal_code}"
+                }
+            },
+            "2": {
+                "name": "rådhuse",
+                "title": {
+                    "render": "Rådhus {name}"
+                }
+            }
+        },
+        "shortDescription": "Postnumre",
+        "title": "Postnumre"
+    },
+    "postboxes": {
+        "description": "På dette kort kan du finde og tilføje data for posthuse og postkasser. Du kan bruge dette kort til at finde, hvor du kan sende dit næste postkort! :)<br/>Har du fundet en fejl, eller mangler der en postboks? Du kan redigere dette kort med en gratis OpenStreetMap-konto. ",
+        "shortDescription": "Et kort med postkasser og posthuse",
+        "title": "Postkasse- og Posthus-Kort"
     },
     "rainbow_crossings": {
-        "title": "Regnbue fodgængerfelter",
-        "description": "På dette kort er regnbuemalede fodgængerfelter vist og kan nemt tilføjes"
+        "description": "På dette kort er regnbuemalede fodgængerfelter vist og kan nemt tilføjes",
+        "title": "Regnbue fodgængerfelter"
+    },
+    "shops": {
+        "description": "På dette kort kan man markere grundlæggende informationer om butikker, tilføje åbningstider og telefonnumre",
+        "shortDescription": "Et redigerbart kort med grundlæggende butiksoplysninger",
+        "title": "Åbn butikskort"
+    },
+    "sidewalks": {
+        "description": "Eksperimentelt tema",
+        "layers": {
+            "0": {
+                "description": "Lag, der viser fortove på motorveje",
+                "name": "Fortove",
+                "tagRenderings": {
+                    "left-right-questions": {
+                        "renderings": {
+                            "1": {
+                                "mappings": {
+                                    "0": {
+                                        "then": "Ja, der er et fortov på denne side af vejen"
+                                    },
+                                    "1": {
+                                        "then": "Nej, der er ikke noget fortov at gå på"
+                                    },
+                                    "2": {
+                                        "then": "Der er et særskilt kortlagt fortov at gå på"
+                                    }
+                                },
+                                "question": "Er der et fortov på denne side af vejen?"
+                            },
+                            "2": {
+                                "question": "Hvad er bredden af fortovet på denne side af vejen?",
+                                "render": "Dette fortov er {sidewalk:left|right:width}m bredt"
+                            }
+                        }
+                    },
+                    "streetname": {
+                        "render": "Denne gade hedder {name}"
+                    }
+                },
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "shortDescription": "Kortlægning af fortov",
+        "title": "Fortove"
+    },
+    "sport_pitches": {
+        "description": "En sportsplads er et område, hvor der dyrkes sport",
+        "shortDescription": "Et kort, der viser sportspladser",
+        "title": "Sportspladser"
+    },
+    "street_lighting": {
+        "description": "På dette kort kan du finde alt om gadebelysning",
+        "layers": {
+            "1": {
+                "name": "Oplyste gader",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Denne gade er oplyst"
+                            },
+                            "1": {
+                                "then": "Denne gade er ikke oplyst"
+                            },
+                            "2": {
+                                "then": "Denne gade er oplyst om natten"
+                            },
+                            "3": {
+                                "then": "Denne gade er oplyst 24/7"
+                            }
+                        },
+                        "question": "Er denne gade oplyst?"
+                    }
+                },
+                "title": {
+                    "render": "Oplyst gade"
+                }
+            },
+            "2": {
+                "name": "Alle gader",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Denne gade er oplyst"
+                            },
+                            "1": {
+                                "then": "Denne gade er ikke oplyst"
+                            },
+                            "2": {
+                                "then": "Denne gade er oplyst om natten"
+                            },
+                            "3": {
+                                "then": "Denne gade er oplyst 24/7"
+                            }
+                        },
+                        "question": "Er denne gade oplyst?"
+                    }
+                },
+                "title": {
+                    "render": "Gade"
+                }
+            }
+        },
+        "title": "Gadebelysning"
     },
     "surveillance": {
         "description": "På dette åbne kort kan du finde overvågningskameraer.",
         "shortDescription": "Overvågningskameraer og andre overvågningsmidler",
         "title": "Overvågning under Overvågning"
     },
-    "grb_fixme": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "building type": {
-                        "question": "Hvad er det for en bygning?"
-                    }
-                }
-            }
-        }
+    "toilets": {
+        "description": "Et kort over offentlige toiletter",
+        "title": "Åbn toiletkort"
+    },
+    "transit": {
+        "description": "Planlæg din rejse ved hjælp af det offentlige transportsystem.",
+        "title": "Busruter"
+    },
+    "trees": {
+        "description": "Kortlæg alle træerne!",
+        "shortDescription": "Kortlæg alle træer",
+        "title": "Træer"
+    },
+    "walls_and_buildings": {
+        "description": "Specielt indbygget lag giver alle vægge og bygninger. Dette lag er nyttigt i forudindstillinger til objekter, der kan placeres mod vægge (f.eks. AED'er, postkasser, indgange, adresser, overvågningskameraer, …). Dette lag er usynligt som standard og kan ikke skiftes af brugeren.",
+        "title": "Mure og bygninger"
+    },
+    "waste": {
+        "description": "Kort over affaldskurve og genbrugsanlæg.",
+        "title": "Affald"
+    },
+    "waste_basket": {
+        "description": "På dette kort finder du affaldskurve i nærheden af dig. Hvis der mangler en affaldskurv på dette kort, kan du selv tilføje den",
+        "shortDescription": "Et kort med affaldskurve",
+        "title": "Affaldskurv"
     }
 }

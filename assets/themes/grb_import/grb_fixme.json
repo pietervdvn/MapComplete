@@ -112,7 +112,8 @@
             "es": "¿Qué tipo de este edificio es este?",
             "nl": "Wat voor soort gebouw is dit?",
             "fr": "De quel type de bâtiment s’agit-il ?",
-            "nb_NO": "Hva slags bygning er dette?"
+            "nb_NO": "Hva slags bygning er dette?",
+            "da": "Hvad er det for en bygning?"
           },
           "mappings": [
             {

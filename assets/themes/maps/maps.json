@@ -22,7 +22,8 @@
     "zh_Hant": "這份主題顯示所有已知的開放街圖上的 (旅遊) 地圖",
     "de": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
     "it": "Questo tema mostra tutte le mappe (turistiche) di cui OpenStreetMap dispone",
-    "es": "Este tema muestra todos los mapas (turísticos) que OpenStreetMap conoce"
+    "es": "Este tema muestra todos los mapas (turísticos) que OpenStreetMap conoce",
+    "da": "Dette tema viser alle (turisme) kort, som OpenStreetMap kender til"
   },
   "description": {
     "en": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
@@ -32,7 +33,8 @@
     "zh_Hant": "在這份地圖你可以找到所在在開放街圖上已知的地圖 - 特別是顯示地區、城市、區域的資訊版面上的大型地圖，例如佈告欄背面的旅遊地圖，自然保護區的地圖，區域的單車網路地圖，...)<br/><br/>如果有缺少的地圖，你可以輕易在開放街圖上新增這地圖。",
     "de": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
     "it": "In questa carta puoi trovare tutte le mappe conosciute da OpenStreetMap (tipicamente una grossa mappa su di un pannello informativo che mostra l’area, la città o la regione, ad es. una mappa turistica dietro a un manifesto, la mappa di una riserva naturale, la mappa della rete ciclistica regionale, etc.)<br/><br/>Se manca una mappa, puoi aggiungerla facilmente a questa su OpenStreetMap.",
-    "es": "En este mapa puedes encontrar todos los mapas que OpenStreetMap conoce - típicamente un mapa grande con un tablero que muestra el área, la ciudad o la región, ej. un mapa turista detrás de una vaya publicitaria, un mapa de una reserva natural, un mapa de redes ciclistas en la región, ...)<br/><br/>Si falta un mapa, puedes mapear este mapa fácilmente en OpenStreetMap."
+    "es": "En este mapa puedes encontrar todos los mapas que OpenStreetMap conoce - típicamente un mapa grande con un tablero que muestra el área, la ciudad o la región, ej. un mapa turista detrás de una vaya publicitaria, un mapa de una reserva natural, un mapa de redes ciclistas en la región, ...)<br/><br/>Si falta un mapa, puedes mapear este mapa fácilmente en OpenStreetMap.",
+    "da": "På dette kort kan du finde alle kort, OpenStreetMap kender - typisk et stort kort på en informationstavle, der viser området, byen eller regionen, f.eks. et turistkort på bagsiden af en tavle, et kort over et naturreservat, et kort over cykelnetværk i regionen, ...) <br/><br/>Hvis der mangler et kort, kan du nemt kortlægge dette kort på OpenStreetMap."
   },
   "icon": "./assets/themes/maps/logo.svg",
   "startLat": 0,

@@ -659,7 +659,7 @@
         "title": "Kerbs and crossings"
     },
     "mapcomplete-changes": {
-        "description": "This map shows all the changes made with MapComplete",
+        "description": "This maps shows all the changes made with MapComplete",
         "layers": {
             "0": {
                 "description": "Shows all MapComplete changes",
@@ -688,14 +688,14 @@
                     "3": {
                         "options": {
                             "0": {
-                                "question": "User language (iso-code) {search}"
+                                "question": "Made before {search}"
                             }
                         }
                     },
                     "4": {
                         "options": {
                             "0": {
-                                "question": "Made with host {search}"
+                                "question": "Made after {search}"
                             }
                         }
                     },
@@ -722,7 +722,7 @@
                     },
                     "host": {
                         "question": "What host (website) was this change made with?",
-                        "render": "Changed with <a href='{host}'>{host}</a>"
+                        "render": "Change with with <a href='{host}'>{host}</a>"
                     },
                     "locale": {
                         "question": "What locale (language) was this change made in?",

@@ -130,10 +130,6 @@
             },
             "artwork-website": {
                 "question": "Er der et websted med mere information om dette kunstværk?"
-            },
-            "artwork-wikidata": {
-                "question": "Hvilken Wikidata-indgang svarer til <b>dette kunstværk</b>?",
-                "render": "Svarer til <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -1134,15 +1130,6 @@
             }
         },
         "description": "Et lag med caféer og pubber, hvor man kan samles omkring en drink. Laget stiller nogle relevante spørgsmål",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Åbent nu"
-                    }
-                }
-            }
-        },
         "name": "Caféer og pubber",
         "presets": {
             "0": {
@@ -1412,6 +1399,17 @@
                     }
                 },
                 "question": "Hvor er den placeret?"
+            }
+        }
+    },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Åbent nu"
+                    }
+                }
             }
         }
     },

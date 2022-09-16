@@ -19,7 +19,8 @@
     "fr": "Une carte avec des stations et magasins de location de vélos",
     "es": "Un mapa con estaciones de alquiler de bicicletas y tiendas de alquiler de bicicletas",
     "nb_NO": "Sykkelutleiestasjoner og sykkelutleiebutikker",
-    "ca": "Un mapa amb estacions de lloguer de bicicletes i botigues de lloguer de bicicletes"
+    "ca": "Un mapa amb estacions de lloguer de bicicletes i botigues de lloguer de bicicletes",
+    "da": "Et kort med cykeludlejningsstationer og cykeludlejningsbutikker"
   },
   "description": {
     "en": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",

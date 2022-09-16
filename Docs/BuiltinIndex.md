@@ -69,6 +69,7 @@
 
   - ambulancestation
   - artwork
+  - barrier
   - bench
   - bench_at_pt
   - bicycle_library

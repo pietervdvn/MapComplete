@@ -131,10 +131,6 @@
             "artwork-website": {
                 "question": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
                 "render": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Melyik Wikidata-bejegyzés felel meg <b>ennek a műalkotásnak</b>?",
-                "render": "Ez a megfelelő: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -441,15 +437,6 @@
     },
     "cafe_pub": {
         "description": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Most nyitva van"
-                    }
-                }
-            }
-        },
         "name": "Kávézók és kocsmák",
         "presets": {
             "0": {
@@ -558,6 +545,17 @@
     },
     "etymology": {
         "description": "Minden olyan objektum, amelynél ismert a nevének az eredete"
+    },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Most nyitva van"
+                    }
+                }
+            }
+        }
     },
     "ghost_bike": {
         "name": "Emlékkerékpárok",

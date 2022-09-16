@@ -131,10 +131,6 @@
             "artwork-website": {
                 "question": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
                 "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Gibt es ein Wikidata Element für <b>dieses Kunstwerk</b>?",
-                "render": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -1243,15 +1239,6 @@
             }
         },
         "description": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Derzeit geöffnet"
-                    }
-                }
-            }
-        },
         "name": "Cafés und Kneipen",
         "presets": {
             "0": {
@@ -3637,6 +3624,31 @@
             "render": "Feuerlöscher"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aktuell geöffnet"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Bargeld"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Kartenzahlung"
+                    }
+                }
+            }
+        }
+    },
     "fire_station": {
         "description": "Kartenebene zur Darstellung von Feuerwachen.",
         "name": "Feuerwachen",
@@ -3709,13 +3721,6 @@
         },
         "description": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Aktuell geöffnet"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -3734,20 +3739,6 @@
                 "options": {
                     "0": {
                         "question": "Halal Gerichte im Angebot"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Akzeptiert Bargeld"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Akzeptiert Kartenzahlung"
                     }
                 }
             }
@@ -6064,31 +6055,17 @@
         },
         "description": "Ein Geschäft",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Nur Geschäfte, die {search} verkaufen"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Akzeptiert Bargeld"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Akzeptiert Kartenzahlung"
+                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
                     }
                 }
             }

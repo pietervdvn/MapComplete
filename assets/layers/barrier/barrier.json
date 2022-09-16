@@ -512,7 +512,7 @@
   "deletion": {
     "softDeletionTags": {
       "and": [
-      "barrier=",
+        "barrier=",
         "bicycle=",
         "foot=",
         "motor_vehicle=",
@@ -532,6 +532,5 @@
         "fixme="
       ]
     }
-    
   }
 }

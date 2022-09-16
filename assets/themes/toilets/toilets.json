@@ -12,7 +12,8 @@
     "it": "Mappa libera delle toilet",
     "nb_NO": "Åpent toalettkart",
     "hu": "WC-térkép",
-    "ca": "Open Toilet Map"
+    "ca": "Open Toilet Map",
+    "da": "Åbn toiletkort"
   },
   "description": {
     "en": "A map of public toilets",
@@ -25,7 +26,8 @@
     "pl": "Mapa toalet publicznych",
     "it": "Una cartina dei servizi igienici pubblici",
     "hu": "Nyilvános WC-k térképe",
-    "nb_NO": "Et kart over offentlige toaletter"
+    "nb_NO": "Et kart over offentlige toaletter",
+    "da": "Et kort over offentlige toiletter"
   },
   "startZoom": 12,
   "startLat": 51.2095,
