@@ -43,6 +43,7 @@
         "aerial": "This map uses a different background, namely aerial imagery by Agentschap Informatie Vlaanderen",
         "callToAction": "Test it on mapcomplete.osm.be",
         "cyclofix": "Bicycle pumps, repair stations, drinking water and cycle shops are on cyclofix",
+        "description": "An A4-landscape flyer to promote MapComplete",
         "editing": {
             "intro": "The user is greeted by a map with feature. Upon selecting one, the information about that feature is shown. A simplified example of what this looks like for a nature reserve is shown below.",
             "title": "What does the interface look like?"
