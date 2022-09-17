@@ -15,7 +15,7 @@ Requirements
 Before you start, you should have the following qualifications:
 
 - You are a longtime contributor and do know the OpenStreetMap tagging scheme very well.
-- You are not afraid of editing a JSON file. If you don't know what a JSON-file is, [read this intro](https://www.w3schools.com/whatis/whatis_json.asp)
+- You are not afraid of editing a JSON file. If you don't know what a JSON file is, [read this intro](https://www.w3schools.com/whatis/whatis_json.asp)
 - Your theme will add well-understood tags (aka: the tags have a wiki page, are not controversial and are objective)
 - You are in contact with your local OpenStreetMap community and do know some other members to discuss tagging and to
   help testing
@@ -106,13 +106,13 @@ It asks some relevant questions, with the most important and easiests questions 
 #### Don't: use a layer to filter
 
 **Do not define a layer which filters on an attribute**, such as <del>all restaurants with a vegetarian diet</del>, <del>all shops which accept bitcoin</del>.
-This makes _addition_ of new points difficult as information might not yet be known. Conser the following situation:
+This makes _addition_ of new points difficult as information might not yet be known. Consider the following situation:
 
 1. A theme defines a layer `vegetarian restaurants`, which matches `amenity=restaurant` & `diet:vegetarian=yes`.
 2. An object exists in OSM with `amenity=restaurant`;`name=Fancy Food`;`diet:vegan=yes`;`phone=...`;...
 3. A contributor visits the themes and will notice that _Fancy Food_ is missing
 4. The contributor will add _Fancy Food_
-5. There are now **two** Fancy Food objects in OSM.
+5. There are now **two** _Fancy Food_ objects in OSM.
 
 Instead, use the filter functionality instead. This can be used from the layer to hide some objects based on their properties.
 When the contributor wants to add a new point, they'll be notified that some features might be hidden and only be allowed to add a new point when the points are shown.
@@ -230,7 +230,7 @@ The entire tagRendering will thus be:
 The template
 ------------
 
-[A basic template is available here](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/theme-template.json)
+[A basic template is available here](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/theme-template.json).
 
 The custom theme generator
 --------------------------
@@ -258,7 +258,7 @@ If you have your JSON file, there are three ways to distribute your theme:
   up `https://mapcomplete.osm.be?userlayout=<url-to-the-raw.json>`
 - Ask to have your theme included into the official MapComplete - requirements below
 
-### Getting your theme included into the official mapcomplete
+### Getting your theme included into the official MapComplete
 
 Did you make an awesome theme that you want to share with the OpenStreetMap community? Have it included in the main
 application. This makes sure that:
@@ -314,15 +314,15 @@ There are three important levels in the JSON file:
 - A `layer` describes a layer. It contains the `name`, `icon`, `tags of objects to download from overpass`, and
   especially the `icon` and a way to dynamically render tags and ask questions. A lot of those fields (`icon`
   , `title`, ...) are actually a `TagRendering`.
-- A `TagRendering` is an object describing a relationship between what should be shown on screen and the OSM-tagging. It
+- A `TagRendering` is an object describing a relationship between what should be shown on screen and the OSM tagging. It
   works in two ways: if the correct tag is known, the appropriate text will be shown. If the tag is missing (and a
   question is defined), the question will be shown.
 
 Every field is documented in the source code itself - you can find them here:
 
-- [The top level `LayoutConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayoutConfigJson.ts)
-- [A layer object `LayerConfig`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/LayerConfigJson.ts)
-- [The `TagRendering`](https://github.com/pietervdvn/MapComplete/blob/master/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
+- [The top level `LayoutConfig`](/Models/ThemeConfig/Json/LayoutConfigJson.ts)
+- [A layer object `LayerConfig`](/Models/ThemeConfig/Json/LayerConfigJson.ts)
+- [The `TagRendering`](/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
 - At last, the exact semantics of tags are documented [here](Tags_format.md)
 
 A JSON schema file is available in `Docs/Schemas` - use `LayoutConfig.schema.json` to validate a theme file.
@@ -334,7 +334,7 @@ in. [An overview of all these metatags is available here](CalculatedTags.md).
 
 ### TagRendering groups
 
-A `tagRendering` can have a `group`-attribute, which acts as a tag. All `tagRendering`s with the same group name will be
+A `tagRendering` can have a `group` attribute, which acts as a tag. All `tagRendering`s with the same group name will be
 rendered together, in the same order as they were defined.
 
 For example, if the defined `tagRendering`s have groups `A A B A A B B B`, the group order is `A B` and first all
@@ -411,7 +411,7 @@ Some pitfalls
 ### Not publishing
 
 Not publishing because 'it is not good enough'. _Share your theme, even if it is still not great, let the community help
-it improve_
+improve it._
 
 ### Thinking in terms of a question
 
@@ -423,7 +423,7 @@ The correct way to handle this is to use _This bench does have a backrest_ and _
 answers.
 
 One has to think first in terms of _what is shown to the user if it is known_, only then in terms of _what is the
-question I want to ask_
+question I want to ask_.
 
 ### Forgetting the casual/noob mapper
 
@@ -437,7 +437,7 @@ In order to maximize contribution:
 4. Make sure the icons (on the map and in the questions) are big enough, clear enough and contrast enough with the
    background map
 
-### Using layers to distinguish on attributes
+### Using layers to distinguish different object subtypes by attributes
 
 One layer should portray one kind of physical object, e.g. "benches" or "restaurants". It should contain all of them,
 disregarding other properties.
@@ -459,6 +459,6 @@ through!
 Some new contributors might add a POI to indicate something that resembles it, but quite isn't.
 
 For example, if they are only offered a layer with public bookcases, they might map their local library with a public bookcase.
-The perfect solution for this is to provide both the library-layer and public bookcases layer - but this requires having both layers.
+The perfect solution for this is to provide both the library layer and public bookcases layer - but this requires having both layers.
 
 A good solution is to clearly explain what a certain feature is and what it is not.
