@@ -3,11 +3,12 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import { Utils } from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 import InputElementMap from "./InputElementMap"
+import Translations from "../i18n/Translations";
 
 export class CheckBox extends InputElementMap<number[], boolean> {
-    constructor(el: BaseUIElement, defaultValue?: boolean) {
+    constructor(el: (BaseUIElement | string), defaultValue?: boolean) {
         super(
-            new CheckBoxes([el]),
+            new CheckBoxes([Translations.T(el)]),
             (x0, x1) => x0 === x1,
             (t) => t.length > 0,
             (x) => (x ? [0] : [])

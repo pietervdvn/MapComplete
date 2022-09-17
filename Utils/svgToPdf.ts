@@ -12,6 +12,8 @@ import Translations from "../UI/i18n/Translations";
 import {Utils} from "../Utils";
 import Locale from "../UI/i18n/Locale";
 import Constants from "../Models/Constants";
+import {QueryParameters} from "../Logic/Web/QueryParameters";
+import Hash from "../Logic/Web/Hash";
 
 class SvgToPdfInternals {
     private readonly doc: jsPDF;
@@ -497,6 +499,7 @@ export interface SvgToPdfOptions {
     disableMaps?: false | true
     textSubstitutions?: Record<string, string>,
     beforePage?: (i: number) => void,
+    overrideLocation?: {lat: number, lon: number}
 }
 
 
@@ -505,7 +508,6 @@ export class SvgToPdfPage {
     private images: Record<string, HTMLImageElement> = {}
     private rects: Record<string, SVGRectElement> = {}
     public readonly _svgRoot: SVGSVGElement;
-    public readonly _usedTranslations: Set<string> = new Set<string>()
     public readonly currentState: Store<string>
     private readonly importedTranslations: Record<string, string> = {}
     private readonly layerTranslations: Record<string, Record<string, any>> = {}
@@ -566,12 +568,7 @@ export class SvgToPdfPage {
         if (element.tagName === "tspan" && element.childElementCount == 0) {
             const specialValues = element.textContent.split(" ").filter(t => t.startsWith("$"))
             for (let specialValue of specialValues) {
-                const translationMatch = specialValue.match(/\$([a-zA-Z0-9._-]+)(.*)/)
-                if (translationMatch !== null) {
-                    this._usedTranslations.add(translationMatch[1])
-                }
                 const importMatch = element.textContent.match(/\$import ([a-zA-Z-_0-9.? ]+) as ([a-zA-Z0-9]+)/)
-
                 if (importMatch !== null) {
                     const [, pathRaw, as] = importMatch
                     this.importedTranslations[as] = pathRaw
@@ -672,11 +669,15 @@ export class SvgToPdfPage {
         }
         const zoom = Number(params["zoom"] ?? params["z"] ?? 14);
 
+        Hash.hash.setData(undefined)
+        history.replaceState(null, "", "")
+
         const state = new FeaturePipelineState(layout)
+        state.locationControl.addCallbackAndRunD(l => console.trace("Location is",l))
         state.locationControl.setData({
             zoom,
-            lat: Number(params["lat"] ?? 51.05016),
-            lon: Number(params["lon"] ?? 3.717842)
+            lat: this.options?.overrideLocation?.lat ??  Number(params["lat"] ?? 51.05016),
+            lon: this.options?.overrideLocation?.lon ??  Number(params["lon"] ?? 3.717842)
         })
 
         const fl = state.filteredLayers.data
@@ -738,11 +739,15 @@ export class SvgToPdfPage {
         textElement.parentElement.removeChild(textElement)
     }
 
-    public async Prepare(language: string) {
+    public async PrepareLanguage(language: string){
         // Always fetch the remote data - it's cached anyway
         this.layerTranslations[language] = await Utils.downloadJsonCached("https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/langs/layers/" + language + ".json", 24 * 60 * 60 * 1000)
         const shared_questions = await Utils.downloadJsonCached("https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/langs/shared-questions/" + language + ".json", 24 * 60 * 60 * 1000)
         this.layerTranslations[language]["shared-questions"] = shared_questions["shared_questions"]
+
+    }
+
+    public async Prepare() {
 
         if (this._isPrepared) {
             return
@@ -778,9 +783,18 @@ export class SvgToPdfPage {
 
 export class SvgToPdf {
 
+    public static readonly templates : Record<string, {pages: string[], description: string | Translation}>= {
+        flyer_a4:{pages: ["/assets/templates/MapComplete-flyer.svg","/assets/templates/MapComplete-flyer.back.svg"], description: Translations.t.flyer.description}
+    }
+
     private readonly _pages: SvgToPdfPage[]
 
     constructor(pages: string[], options?: SvgToPdfOptions) {
+        options = options ?? <SvgToPdfOptions>{}
+        options.textSubstitutions = options.textSubstitutions ?? {}
+        const mapCount = "" + Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(th => !th.hideFromOverview).length;
+        options.textSubstitutions["mapCount"]  = mapCount
+
         this._pages = pages.map(page => new SvgToPdfPage(page, options))
     }
 
@@ -791,8 +805,10 @@ export class SvgToPdf {
         const height = SvgToPdfInternals.attrNumber(firstPage, "height")
         const mode = width > height ? "landscape" : "portrait"
 
+        await this.Prepare()
         for (const page of this._pages) {
-            await page.Prepare(language)
+            await page.Prepare()
+            await page.PrepareLanguage(language)
         }
 
         Locale.language.setData(language)
@@ -815,4 +831,10 @@ export class SvgToPdf {
     }
 
 
+    public async Prepare(): Promise<SvgToPdf> {
+        for (const page of this._pages) {
+            await page.Prepare()
+        }
+        return this
+    }
 }

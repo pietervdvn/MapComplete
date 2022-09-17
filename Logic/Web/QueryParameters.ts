@@ -108,4 +108,11 @@ export class QueryParameters {
             history.replaceState(null, "", "?" + parts.join("&") + Hash.Current())
         }
     }
+
+    static ClearAll() {
+        for (const name in QueryParameters.knownSources) {
+            QueryParameters.knownSources[name].setData("")
+        }
+        QueryParameters._wasInitialized.clear()
+    }
 }

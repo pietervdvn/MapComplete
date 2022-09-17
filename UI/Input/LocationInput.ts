@@ -18,6 +18,7 @@ import * as matchpoint from "../../assets/layers/matchpoint/matchpoint.json"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
 import FilteredLayer from "../../Models/FilteredLayer";
 import {ElementStorage} from "../../Logic/ElementStorage";
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
 
 export default class LocationInput
     extends BaseUIElement
@@ -56,16 +57,16 @@ export default class LocationInput
         readonly allElements: ElementStorage
     }
 
-    constructor(options: {
+    constructor(options?: {
         minZoom?: number
         mapBackground?: UIEventSource<BaseLayer>
         snapTo?: UIEventSource<{ feature: any }[]>
         maxSnapDistance?: number
         snappedPointTags?: any
         requiresSnapping?: boolean
-        centerLocation: UIEventSource<Loc>
+        centerLocation?: UIEventSource<Loc>
         bounds?: UIEventSource<BBox>
-        state: {
+        state?: {
             readonly filteredLayers: Store<FilteredLayer[]>;
             readonly backgroundLayer: UIEventSource<BaseLayer>;
             readonly layoutToUse: LayoutConfig;
@@ -74,15 +75,17 @@ export default class LocationInput
         }
     }) {
         super()
-        this._snapTo = options.snapTo?.map((features) =>
+        this._snapTo = options?.snapTo?.map((features) =>
             features?.filter((feat) => feat.feature.geometry.type !== "Point")
         )
-        this._maxSnapDistance = options.maxSnapDistance
-        this._centerLocation = options.centerLocation
-        this._snappedPointTags = options.snappedPointTags
-        this._bounds = options.bounds
-        this._minZoom = options.minZoom
-        this._state = options.state
+        this._maxSnapDistance = options?.maxSnapDistance
+        this._centerLocation = options?.centerLocation ?? new UIEventSource<Loc>({
+            lat: 0, lon: 0, zoom: 0
+        })
+        this._snappedPointTags = options?.snappedPointTags
+        this._bounds = options?.bounds
+        this._minZoom = options?.minZoom
+        this._state = options?.state
         if (this._snapTo === undefined) {
             this._value = this._centerLocation
         } else {
@@ -102,7 +105,7 @@ export default class LocationInput
                 this._matching_layer = LocationInput.matchLayer
             }
 
-            this._snappedPoint = options.centerLocation.map(
+            this._snappedPoint = this._centerLocation.map(
                 (loc) => {
                     if (loc === undefined) {
                         return undefined
@@ -139,17 +142,17 @@ export default class LocationInput
                     }
 
                     if (min === undefined || min.properties.dist * 1000 > self._maxSnapDistance) {
-                        if (options.requiresSnapping) {
+                        if (options?.requiresSnapping) {
                             return undefined
                         } else {
                             return {
                                 type: "Feature",
-                                properties: options.snappedPointTags ?? min.properties,
+                                properties: options?.snappedPointTags ?? min.properties,
                                 geometry: {type: "Point", coordinates: [loc.lon, loc.lat]},
                             }
                         }
                     }
-                    min.properties = options.snappedPointTags ?? min.properties
+                    min.properties = options?.snappedPointTags ?? min.properties
                     self.snappedOnto.setData(matchedWay)
                     return min
                 },
@@ -165,7 +168,7 @@ export default class LocationInput
                 }
             })
         }
-        this.mapBackground = options.mapBackground ?? this._state?.backgroundLayer
+        this.mapBackground = options?.mapBackground ?? this._state?.backgroundLayer ?? new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
         this.SetClass("block h-full")
 
         this.clickLocation = new UIEventSource<Loc>(undefined)
