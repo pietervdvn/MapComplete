@@ -26,9 +26,9 @@
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="1.9704628"
-     inkscape:cx="1058.3808"
-     inkscape:cy="146.15856"
+     inkscape:zoom="2.0156476"
+     inkscape:cx="420.46041"
+     inkscape:cy="393.42195"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -59,6 +59,12 @@
   </sodipodi:namedview>
   <defs
      id="defs2">
+    <rect
+       x="1082.1387"
+       y="440.97953"
+       width="153.90692"
+       height="16.164941"
+       id="rect4214" />
     <marker
        style="overflow:visible"
        id="Arrow2Lstart"
@@ -447,14 +453,14 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect21432-8);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="28.759766"
          y="697.7954"
-         id="tspan43984"><tspan
+         id="tspan8299"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan43982">$map(theme:aed,z:14,lat:</tspan></tspan><tspan
+           id="tspan8297">$map(theme:aed,z:14,lat:</tspan></tspan><tspan
          x="28.759766"
          y="747.7954"
-         id="tspan43988"><tspan
+         id="tspan8303"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan43986">51.2098,lon:3.2284)</tspan></tspan></text>
+           id="tspan8301">51.2098,lon:3.2284)</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,1.3325782,-88.396258)"
@@ -462,9 +468,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect13433);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="28.759766"
          y="697.7954"
-         id="tspan43992"><tspan
+         id="tspan8307"><tspan
            style="font-size:16px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan43990">$flyer.toerisme_vlaanderen</tspan></tspan></text>
+           id="tspan8305">$flyer.toerisme_vlaanderen</tspan></tspan></text>
     <rect
        style="fill:#deadff;fill-opacity:1;stroke:#000000;stroke-width:0.0182753;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect11121"
@@ -476,31 +482,31 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,3.1668997,-43.500981)"
        id="text17151"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;fill:#000000;fill-opacity:1;stroke:none;shape-inside:url(#rect17153)"><tspan
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect17153);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="28.759766"
          y="677.7954"
-         id="tspan43996"><tspan
+         id="tspan8311"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan43994">$map(theme:toerisme_vlaandere</tspan></tspan><tspan
+           id="tspan8309">$map(theme:toerisme_vlaandere</tspan></tspan><tspan
          x="28.759766"
          y="691.20604"
-         id="tspan44002"><tspan
+         id="tspan8317"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan43998">n,layers:none</tspan><tspan
+           id="tspan8313">n,layers:none</tspan><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44000">,layer-</tspan></tspan><tspan
+           id="tspan8315">,layer-</tspan></tspan><tspan
          x="28.759766"
          y="704.61669"
-         id="tspan44006"><tspan
+         id="tspan8321"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44004">charging_station_ebikes:force,lat:</tspan></tspan><tspan
+           id="tspan8319">charging_station_ebikes:force,lat:</tspan></tspan><tspan
          x="28.759766"
          y="718.02733"
-         id="tspan44012"><tspan
+         id="tspan8327"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44008">50.8552</tspan><tspan
+           id="tspan8323">50.8552</tspan><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44010">,lon:4.3156, z:10)</tspan></tspan></text>
+           id="tspan8325">,lon:4.3156, z:10)</tspan></tspan></text>
     <rect
        style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.0161075;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect11459"
@@ -515,34 +521,34 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect21432);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="28.759766"
          y="677.7954"
-         id="tspan44016"><tspan
+         id="tspan8331"><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44014">$map(theme:cyclofix,z:14,lat:51.05016,lon:</tspan></tspan><tspan
+           id="tspan8329">$map(theme:cyclofix,z:14,lat:51.05016,lon:</tspan></tspan><tspan
          x="28.759766"
          y="692.05876"
-         id="tspan44020"><tspan
+         id="tspan8335"><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44018">3.717842,layers:none,layer-</tspan></tspan><tspan
+           id="tspan8333">3.717842,layers:none,layer-</tspan></tspan><tspan
          x="28.759766"
          y="706.32213"
-         id="tspan44024"><tspan
+         id="tspan8339"><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44022">bike_repair_station:true,layer-</tspan></tspan><tspan
+           id="tspan8337">bike_repair_station:true,layer-</tspan></tspan><tspan
          x="28.759766"
          y="720.5855"
-         id="tspan44028"><tspan
+         id="tspan8343"><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44026">drinking_water:true,layer-</tspan></tspan><tspan
+           id="tspan8341">drinking_water:true,layer-</tspan></tspan><tspan
          x="28.759766"
          y="734.84886"
-         id="tspan44032"><tspan
+         id="tspan8347"><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44030">bike_cafe:true,layer-</tspan></tspan><tspan
+           id="tspan8345">bike_cafe:true,layer-</tspan></tspan><tspan
          x="28.759766"
          y="749.11223"
-         id="tspan44036"><tspan
+         id="tspan8351"><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44034">bicycle_tube_vending_machine: true)</tspan></tspan></text>
+           id="tspan8349">bicycle_tube_vending_machine: true)</tspan></tspan></text>
     <rect
        style="fill:#733034;fill-opacity:1;stroke:#000000;stroke-width:0.0661458;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect11543"
@@ -564,14 +570,14 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;white-space:pre;shape-inside:url(#rect20457);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="28.759766"
          y="697.7954"
-         id="tspan44040"><tspan
+         id="tspan8355"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44038">$map(theme:artwork,z:15,lat:51.2098,lon:</tspan></tspan><tspan
+           id="tspan8353">$map(theme:artwork,z:15,lat:51.2098,lon:</tspan></tspan><tspan
          x="28.759766"
          y="747.7954"
-         id="tspan44044"><tspan
+         id="tspan8359"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44042">3.2284,background:AGIV)</tspan></tspan></text>
+           id="tspan8357">3.2284,background:AGIV)</tspan></tspan></text>
     <rect
        style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.0700743;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect11647"
@@ -583,25 +589,25 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,210.02275,-141.45522)"
        id="text3237"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;shape-inside:url(#rect3239)"><tspan
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3239);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="28.759766"
          y="697.7954"
-         id="tspan44048"><tspan
+         id="tspan8363"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44046">$map(theme:cyclestreets,</tspan></tspan><tspan
+           id="tspan8361">$map(theme:cyclestreets,</tspan></tspan><tspan
          x="28.759766"
          y="747.7954"
-         id="tspan44052"><tspan
+         id="tspan8367"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44050">z:15,lat:51.02802,lon:</tspan></tspan><tspan
+           id="tspan8365">z:15,lat:51.02702,lon:</tspan></tspan><tspan
          x="28.759766"
          y="797.7954"
-         id="tspan44056"><tspan
+         id="tspan8371"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44054">4.48029, scaling:3)</tspan></tspan></text>
+           id="tspan8369">4.48029, scaling:3)</tspan></tspan></text>
     <g
        id="g1367"
-       transform="matrix(1,0,0.20502864,-1,-20.554711,213.09746)">
+       transform="matrix(-1,0,-0.20502864,-1,112.68819,218.91305)">
       <path
          style="color:#000000;fill:#000000;stroke-width:1.35478;-inkscape-stroke:none"
          d="m 10.773987,88.413041 c -6.7214066,3.665424 -8.0818381,7.903356 -7.7053042,11.206038 0.3765338,3.302671 2.4528904,5.665201 2.4528904,5.665201 l 0.2698975,-0.2355 c 0,0 -2.0036724,-2.29509 -2.3655708,-5.469396 -0.2226277,-1.952726 0.1624065,-4.239546 2.0370665,-6.553174 1.1727415,-1.447349 2.9284401,-2.905188 5.4830146,-4.298289 z"
@@ -631,14 +637,14 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect890);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="28.759766"
          y="697.7954"
-         id="tspan44060"><tspan
+         id="tspan8375"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44058">$map(theme:benches,z:14,lat:51.2098,lon:</tspan></tspan><tspan
+           id="tspan8373">$map(theme:benches,z:14,lat:51.2098,lon:</tspan></tspan><tspan
          x="28.759766"
          y="747.7954"
-         id="tspan44064"><tspan
+         id="tspan8379"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44062">3.2284, layers:none, layer-bench:force)</tspan></tspan></text>
+           id="tspan8377">3.2284, layers:none, layer-bench:force)</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,205.99418,0.58092297)"
@@ -646,9 +652,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect6468);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="28.759766"
          y="697.7954"
-         id="tspan44068"><tspan
+         id="tspan8383"><tspan
            style="font-size:16px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44066">$flyer.aerial</tspan></tspan></text>
+           id="tspan8381">$flyer.aerial</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-1.7998979,-153.42245)"
@@ -656,9 +662,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3512);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="28.759766"
          y="697.7954"
-         id="tspan44072"><tspan
+         id="tspan8387"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44070">$flyer.examples</tspan></tspan></text>
+           id="tspan8385">$flyer.examples</tspan></tspan></text>
     <g
        id="path15616"
        transform="matrix(-1,0,0,1,497.66957,-0.86523396)">
@@ -726,9 +732,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect5917);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="28.759766"
          y="697.7954"
-         id="tspan44076"><tspan
+         id="tspan8391"><tspan
            style="font-size:16px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44074">$flyer.lines_too</tspan></tspan></text>
+           id="tspan8389">$flyer.lines_too</tspan></tspan></text>
     <rect
        style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.0161075;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5197"
@@ -740,29 +746,39 @@
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,102.47417,-27.370445)"
        id="text5201"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;fill:#000000;fill-opacity:1;stroke:none;shape-inside:url(#rect5203)"><tspan
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect5203);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="28.759766"
          y="677.7954"
-         id="tspan44080"><tspan
+         id="tspan8395"><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44078">$map(theme:onwheels,z:18,lat:50.86622,lon:</tspan></tspan><tspan
+           id="tspan8393">$map(theme:onwheels,z:19,lat:50.86622,lon:</tspan></tspan><tspan
          x="28.759766"
          y="692.05876"
-         id="tspan44086"><tspan
+         id="tspan8401"><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44082">4.35012</tspan><tspan
+           id="tspan8397">4.35012</tspan><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44084">,layer-governments:false)</tspan></tspan></text>
+           id="tspan8399">,layer-governments:false,layer-</tspan></tspan><tspan
+         x="28.759766"
+         y="706.32213"
+         id="tspan8405"><tspan
+           style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
+           id="tspan8403">parking:false,layer-toilet:false,layer-</tspan></tspan><tspan
+         x="28.759766"
+         y="720.5855"
+         id="tspan8409"><tspan
+           style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
+           id="tspan8407">cafe_pub:false,layer-food:false,scaling:1.5)</tspan></tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,99.365194,-43.160062)"
+       transform="matrix(0.26458333,0,0,0.26458333,99.365194,-41.995408)"
        id="text23036"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect23050);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="28.759766"
          y="677.7954"
-         id="tspan44090"><tspan
+         id="tspan8413"><tspan
            style="font-size:16px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44088">$flyer.onwheels</tspan></tspan></text>
+           id="tspan8411">$flyer.onwheels</tspan></tspan></text>
     <g
        id="g23048"
        transform="matrix(0.99953426,0.03051675,0.2354499,-0.99327745,75.052107,241.32304)">
@@ -790,35 +806,45 @@
     </g>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,99.091208,-57.205081)"
+       transform="matrix(0.26458333,0,0,0.26458333,99.091208,-58.185055)"
        id="text28358"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect28360);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="28.759766"
          y="677.7954"
-         id="tspan44094"><tspan
+         id="tspan8417"><tspan
            style="font-size:16px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan44092">$flyer.cyclofix</tspan></tspan></text>
+           id="tspan8415">$flyer.cyclofix</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0,-0.26458333,0.26458333,0,165.86686,413.77896)"
+       id="text4212"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:0;font-family:sans-serif;white-space:pre;shape-inside:url(#rect4214);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="1082.1387"
+         y="452.37548"
+         id="tspan8421"><tspan
+           style="font-size:8px;-inkscape-font-specification:'sans-serif, Normal'"
+           id="tspan8419">$version</tspan></tspan></text>
     <g
-       id="g29134"
-       transform="matrix(-1,0,-0.20502864,1,211.57633,16.855536)">
+       id="g7940"
+       transform="matrix(0.97797993,0.20869898,-0.00818509,1.0207692,100.41144,13.334379)">
       <path
          style="color:#000000;fill:#000000;stroke-width:1.35478;-inkscape-stroke:none"
          d="m 10.773987,88.413041 c -6.7214066,3.665424 -8.0818381,7.903356 -7.7053042,11.206038 0.3765338,3.302671 2.4528904,5.665201 2.4528904,5.665201 l 0.2698975,-0.2355 c 0,0 -2.0036724,-2.29509 -2.3655708,-5.469396 -0.2226277,-1.952726 0.1624065,-4.239546 2.0370665,-6.553174 1.1727415,-1.447349 2.9284401,-2.905188 5.4830146,-4.298289 z"
-         id="path29124"
+         id="path7930"
          sodipodi:nodetypes="csccsscc" />
       <g
-         id="g29132"
+         id="g7938"
          transform="matrix(1.3547788,0,0,1.3547788,-1.268197,-38.166165)">
         <g
-           id="g29130">
+           id="g7936">
           <path
              style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.181901;stroke-linejoin:round;-inkscape-stroke:none"
              d="m 5.9062068,93.870487 3.351582,-0.495843 -2.2319045,2.549032 C 7.1413596,95.074353 6.6865692,94.246503 5.9062068,93.870487 Z"
-             id="path29126" />
+             id="path7932" />
           <path
              style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linejoin:round;-inkscape-stroke:none"
              d="M 9.2441406,93.285156 5.8925781,93.78125 c -0.088278,0.01373 -0.1059275,0.133203 -0.025391,0.171875 0.7457822,0.359354 1.1784769,1.149068 1.0683594,1.958984 -0.011715,0.0889 0.098674,0.139328 0.1582031,0.07227 l 2.2324219,-2.550781 c 0.053217,-0.06373 2.437e-4,-0.159586 -0.082031,-0.148438 z"
-             id="path29128"
+             id="path7934"
              sodipodi:nodetypes="ccccccsc" />
         </g>
       </g>
@@ -857,9 +883,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect135032);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="8.7285156"
          y="42.098132"
-         id="tspan44098"><tspan
+         id="tspan8425"><tspan
            style="font-weight:bold;font-size:34.6667px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan44096">$flyer.title</tspan></tspan></text>
+           id="tspan8423">$flyer.title</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"

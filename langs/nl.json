@@ -42,24 +42,24 @@
     "flyer": {
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
         "callToAction": "Probeer het uit op mapcomplete.osm.be",
-        "cyclofix": "Fietspompen, drinkwaterkraantjes, bandenautomaten en fietswinkels vind je op Cyclofix",
+        "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
         "editing": {
-            "intro": "De gebruiker krijgt eerst een kaart met interesspunten te zien. Wanneer er op een punt geklikt wordt, wordt een interface met informatie geopend. Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond:",
+            "intro": "De gebruiker krijgt eerst een kaart met interesspunten te zien. Klik je op een punt, dan wordt de interface met informatie geopend.\nEen (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond:",
             "title": "Hoe ziet de interface eruit?"
         },
-        "examples": "Er zijn veel thematische kaarten beschikbaar, enkele voorbeelden zijn hier geprint.\n\nOnline zijn er nog kaarten met diverse thema's, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,... Ontdek ze allemaal op mapcomplete.osm.be  ",
+        "examples": "Online zijn verschillende kaarten met diverse thema's beschikbaar, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,...\nEnkele zijn hier afgeprint.\n\nOntdek ze allemaal op mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Voeg foto's toe met een paar klikken",
             "attributes": "Attributen worden getoond op begrijpbare wijze",
             "edit": "Foute of verouderde gegevens? Aanpassen kan hier",
             "question": "Is een attribuut nog niet gekend? MapComplete toont een vraag",
             "see_images": "Toont afbeeldingen van eerdere bijdragers, Wikipedia, Mapillary, ...",
-            "wikipedia": "Gelinkte Wikipedia-artikels worden getoond"
+            "wikipedia": "Gelinkte Wikipedia-artikelen worden getoond"
         },
         "frontParagraph": "MapComplete is een web-applicatie om OpenStreetMap-data te tonen en aan te passen op basis van thematische kaarten. Het maakt het mogelijk om open geodata te crowdsourcen en te managen op een makkelijke manier.\n\nNieuwe categorieën en attributen kunnen op vraag worden toegevoegd.",
-        "lines_too": "Lijnobjecten en polygonen worden ook getoond, waarvan afbeeldingen en attributen toegevoegd en aangepast kunnen worden.",
+        "lines_too": "Lijnobjecten en polygonen worden ook getoond. Afbeeldingen en attributen daarvan kunnen toegevoegd en aangepast worden.",
         "mapcomplete": {
-            "customize": "Wil je een versie op maat? Wil je een versie in jullie huisstijl?\nWil je een nieuwe kaartlaag of functionaliteit? Wil je een crowdsourcing-campagne opzetten?\nNeem contact op met pietervdvn@posteo.net voor meer info.",
+            "customize": "Wil je een versie op maat?\nWil je een versie in jullie huisstijl?\nWil je een nieuwe kaartlaag of functionaliteit?\nWil je een crowdsourcing-campagne opzetten?\nNeem contact op met pietervdvn@posteo.net voor meer info.",
             "intro": "MapComplete is een website met {mapCount} interactieve kaarten - er komen regelmatig kaarten bij. Iedere kaart toont items binnen een interessegebied waar gebruikers data zien en updaten.",
             "li0": "Toon waar interessepunten zijn",
             "li1": "Voeg nieuwe punten toe en update informatie van reeds bestaande punten",

@@ -12,7 +12,6 @@ import Translations from "../UI/i18n/Translations";
 import {Utils} from "../Utils";
 import Locale from "../UI/i18n/Locale";
 import Constants from "../Models/Constants";
-import {QueryParameters} from "../Logic/Web/QueryParameters";
 import Hash from "../Logic/Web/Hash";
 
 class SvgToPdfInternals {
@@ -213,12 +212,12 @@ class SvgToPdfInternals {
     }
 
     private extractTranslation(text: string) {
+        if(text === "$version"){
+            return new Date().toISOString().substring("2022-01-02THH:MM".length      )+" - v"+Constants.vNumber
+        }
         const pathPart = text.match(/\$(([_a-zA-Z0-9?]+\.)+[_a-zA-Z0-9?]+)(.*)/)
         if (pathPart === null) {
             return text
-        }
-        if(text === "$version"){
-            return new Date().toISOString()+" "+Constants.vNumber
         }
         let t: any = Translations.t
         const path = pathPart[1].split(".")
@@ -673,7 +672,6 @@ export class SvgToPdfPage {
         history.replaceState(null, "", "")
 
         const state = new FeaturePipelineState(layout)
-        state.locationControl.addCallbackAndRunD(l => console.trace("Location is",l))
         state.locationControl.setData({
             zoom,
             lat: this.options?.overrideLocation?.lat ??  Number(params["lat"] ?? 51.05016),
@@ -784,12 +782,15 @@ export class SvgToPdfPage {
 export class SvgToPdf {
 
     public static readonly templates : Record<string, {pages: string[], description: string | Translation}>= {
-        flyer_a4:{pages: ["/assets/templates/MapComplete-flyer.svg","/assets/templates/MapComplete-flyer.back.svg"], description: Translations.t.flyer.description}
+        flyer_a4:{pages: ["/assets/templates/MapComplete-flyer.svg","/assets/templates/MapComplete-flyer.back.svg"], description: Translations.t.flyer.description},
+        poster_a2: {pages: ["/assets/templates/MapComplete-poster-a2.svg"], description: "A basic A2 poster (similar to the flyer)"}
     }
+    private readonly _title: string;
 
     private readonly _pages: SvgToPdfPage[]
 
-    constructor(pages: string[], options?: SvgToPdfOptions) {
+    constructor(title: string, pages: string[], options?: SvgToPdfOptions) {
+        this._title = title;
         options = options ?? <SvgToPdfOptions>{}
         options.textSubstitutions = options.textSubstitutions ?? {}
         const mapCount = "" + Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(th => !th.hideFromOverview).length;
@@ -799,7 +800,7 @@ export class SvgToPdf {
     }
 
 
-    public async ConvertSvg(saveAs: string, language: string): Promise<void> {
+    public async ConvertSvg(language: string): Promise<void> {
         const firstPage = this._pages[0]._svgRoot
         const width = SvgToPdfInternals.attrNumber(firstPage, "width")
         const height = SvgToPdfInternals.attrNumber(firstPage, "height")
@@ -812,11 +813,15 @@ export class SvgToPdf {
         }
 
         Locale.language.setData(language)
-        const doc = new jsPDF(mode)
+        const doc = new jsPDF(mode, undefined, [width, height])
         doc.advancedAPI(advancedApi => {
             for (let i = 0; i < this._pages.length; i++) {
                 if (i > 0) {
-                    advancedApi.addPage()
+                    const page = this._pages[i]._svgRoot
+                    const width = SvgToPdfInternals.attrNumber(page, "width")
+                    const height = SvgToPdfInternals.attrNumber(page, "height")
+
+                    advancedApi.addPage([width, height])
                     const mediabox: { bottomLeftX: number, bottomLeftY: number, topRightX: number, topRightY: number } = advancedApi.getCurrentPageInfo().pageContext.mediaBox
                     const targetWidth = 297
                     const targetHeight = 210
@@ -827,7 +832,7 @@ export class SvgToPdf {
                 this._pages[i].drawPage(advancedApi, i, language)
             }
         })
-        await doc.save(saveAs);
+        await doc.save(this._title+"."+language+".pdf");
     }
 
 
