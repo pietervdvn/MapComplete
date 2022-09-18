@@ -1406,7 +1406,7 @@
             },
             "current-9": {
                 "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Type 2 med kabel</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Type 1 med kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> udgange på højst {socket:type1_cable:current}A",
+                "render": "",
                 "mappings": {
                     "0": {
                         "then": "<b>Type 2 med kabel</b> (mennekes) udgange på højst 16 A"
@@ -1451,7 +1451,7 @@
                         "then": "<b>Schuko vægstik</b> uden jordstik (CEE7/4 type F) giver højst 3,6 kw A"
                     }
                 },
-                "render": "<div style='display: inline-block'><b><b>Schuko vægstik</b> uden jord (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> udgange højst {socket:schuko:current}A"
+                "render": "<div style='display: inline-block'><b><b>Schuko vægstik</b> uden jord (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> udgange højst {socket:schuko:output}A"
             },
             "Authentication": {
                 "mappings": {
@@ -1697,7 +1697,7 @@
                 "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Bosch Active Connect med 5 ben</b> og kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div> med Bosch Active Connect med 5 ben og kabel ?"
             },
             "current-2": {
-                "render": "Har et <div style='display: inline-block'><b><b> Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> stik",
+                "render": "",
                 "mappings": {
                     "0": {
                         "then": "<b>Chademo</b> yder højst 120 A"
@@ -1855,7 +1855,7 @@
             },
             "plugs-1": {
                 "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> er tilgængelige her?",
-                "render": "Der findes <b class='text-xl'>{stik:typee}</b> stik af typen <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> her"
+                "render": "Der findes <b class='text-xl'>{socket:typee}</b> stik af typen <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> her"
             },
             "plugs-10": {
                 "question": "Hvor mange stik af typen <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (en mærkevare type2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> er tilgængelige her?"
