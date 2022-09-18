@@ -21,7 +21,8 @@
       "en": "Bird watching place",
       "nl": "Vogelkijkplaats",
       "de": "Ort zur Vogelbeobachtung",
-      "fr": "Lieu d’observation d’oiseaux"
+      "fr": "Lieu d’observation d’oiseaux",
+      "da": "Plads til fugleobservation"
     },
     "mappings": [
       {
@@ -65,7 +66,8 @@
           "en": "Bird blind {name}",
           "nl": "Vogelkijkwand {name}",
           "de": "Vogelversteck {name}",
-          "fr": "Camouflage d’observation ornithologique {name}"
+          "fr": "Camouflage d’observation ornithologique {name}",
+          "da": "Fugletårn {name}"
         }
       }
     ]
@@ -85,7 +87,8 @@
         "en": "Is this a bird blind or a bird watching shelter?",
         "nl": "Is dit een kijkwand of kijkhut?",
         "de": "Ist dies nur ein Sichtschutz oder ein überdachter Unterstand zur Vogelbeobachtung?",
-        "fr": "S’agit-il d’un camouflage ou d’un abris d’observation ?"
+        "fr": "S’agit-il d’un camouflage ou d’un abris d’observation ?",
+        "da": "Er dette en fugletårn eller et fuglekiggerskjul?"
       },
       "mappings": [
         {
@@ -100,7 +103,8 @@
             "en": "Bird blind",
             "nl": "Vogelkijkwand",
             "de": "Sichtschutz zur Vogelbeobachtung",
-            "fr": "Camouflage d’observation ornithologique"
+            "fr": "Camouflage d’observation ornithologique",
+            "da": "Fugletårn"
           }
         },
         {
@@ -130,7 +134,8 @@
             "en": "Bird tower hide",
             "nl": "Vogelkijktoren",
             "de": "Turm zur Vogelbeobachtung",
-            "fr": "Tour d’observation ornithologique"
+            "fr": "Tour d’observation ornithologique",
+            "da": "Fugletårn skjul"
           }
         },
         {
@@ -145,7 +150,8 @@
             "en": "Bird hide shelter",
             "nl": "Vogelkijkhut",
             "de": "Unterstand zur Vogelbeobachtung",
-            "fr": "Abris d’observation ornithologique"
+            "fr": "Abris d’observation ornithologique",
+            "da": "Fuglekigger skjul"
           },
           "hideInAnswer": true
         }
@@ -172,7 +178,8 @@
             "nl": "Er zijn speciale voorzieningen voor rolstoelen",
             "es": "Hay provisiones especiales para usuarios de sillas de ruedas",
             "de": "Für Rollstuhlfahrer gibt es besondere Vorrichtungen",
-            "fr": "L’infrastructure est adaptée aux utilisateurs de chaises roulantes"
+            "fr": "L’infrastructure est adaptée aux utilisateurs de chaises roulantes",
+            "da": "Der er særlige bestemmelser for kørestolsbrugere"
           }
         },
         {
@@ -257,7 +264,8 @@
             "en": "Operated by the Agency for Nature and Forests",
             "nl": "Beheer door het Agentschap Natuur en Bos",
             "de": "Betrieben von einer Forst- bzw. Naturschutzbehörde",
-            "fr": "Opéré par l’Agence Nature et Forêts"
+            "fr": "Opéré par l’Agence Nature et Forêts",
+            "da": "Drives af Natur- og Skovstyrelsen"
           }
         }
       ],
@@ -312,7 +320,8 @@
         "en": "a bird blind",
         "nl": "een vogelkijkwand",
         "de": "einen Sichtschutz zur Vogelbeobachtung",
-        "fr": "un camouflage d’observation ornithologique"
+        "fr": "un camouflage d’observation ornithologique",
+        "da": "et fugletårn"
       },
       "description": {
         "en": "A screen or wall with openings to watch birds",
