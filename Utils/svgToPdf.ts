@@ -13,6 +13,7 @@ import {Utils} from "../Utils";
 import Locale from "../UI/i18n/Locale";
 import Constants from "../Models/Constants";
 import Hash from "../Logic/Web/Hash";
+import {QueryParameters} from "../Logic/Web/QueryParameters";
 
 class SvgToPdfInternals {
     private readonly doc: jsPDF;
@@ -213,7 +214,7 @@ class SvgToPdfInternals {
 
     private extractTranslation(text: string) {
         if(text === "$version"){
-            return new Date().toISOString().substring("2022-01-02THH:MM".length      )+" - v"+Constants.vNumber
+            return new Date().toISOString().substring(0, "2022-01-02THH:MM".length      )+" - v"+Constants.vNumber
         }
         const pathPart = text.match(/\$(([_a-zA-Z0-9?]+\.)+[_a-zA-Z0-9?]+)(.*)/)
         if (pathPart === null) {
@@ -289,33 +290,57 @@ class SvgToPdfInternals {
         this.doc.setFontSize(fontsize * 2.5)
 
         let textTemplate = tspan.textContent.split(" ")
-        let result: string[] = []
+        let result: string = ""
+        let addSpace = false
         for (let text of textTemplate) {
 
-
-            if (!text.startsWith("$")) {
-                result.push(text)
+            if(text === "\\n"){
+                result += "\n"
+                addSpace = false
                 continue
             }
-            if (text.startsWith("$list(")) {
-                text = text.substring("$list(".length, text.length - ")".length)
-                result.push("\n")
-                let r = this.extractTranslation("$" + text + "0");
-                let i = 0
-                while (r !== undefined && i < 100) {
-                    result.push("• " + r + "\n")
-                    i++
-                    r = this.extractTranslation("$" + text + i);
+            if(text === "\\n\\n"){
+                result += "\n\n"
+                addSpace = false
+                continue
+            }
+
+            if (!text.startsWith("$")) {
+                if(addSpace){
+                    result += " "
                 }
+                result += text
+                addSpace = true
+                continue
+            }
+            const list = text.match(/\$list\(([a-zA-Z0-9_.-]+)\)/)
+            if (list) {
+                const key = list[1]
+                console.log("Generating a list with key" + key)
+                let r = this.extractTranslation("$" + key + "0");
+                let i = 0
+                result += "\n"
+                while (r !== undefined && i < 100) {
+                    result += "• " + r + "\n"
+                    i++
+                    r = this.extractTranslation("$" + key + i);
+                }
+                result += "\n"
+                addSpace = false
             } else {
                 const found = this.extractTranslation(text) ?? text
-                result.push(found)
+                if(addSpace){
+                    result += " "
+                }
+                result += found
+                addSpace = true
             }
 
         }
-        this.doc.text(result.join(" "), x, y, {
+        this.doc.text(result, x, y, {
             maxWidth,
         }, this.currentMatrix)
+
     }
 
     private drawSvgViaCanvas(element: Element): void {
@@ -649,7 +674,7 @@ export class SvgToPdfPage {
             console.error("Could not show map with parameters", params)
             throw "Theme not found:" + params["theme"] + ". Use theme: to define which theme to use. "
         }
-        layout.widenFactor = 0
+        layout.widenFactor =  0
         layout.overpassTimeout = 600
         layout.defaultBackgroundId = params["background"] ?? layout.defaultBackgroundId
         for (const paramsKey in params) {
@@ -669,7 +694,7 @@ export class SvgToPdfPage {
         const zoom = Number(params["zoom"] ?? params["z"] ?? 14);
 
         Hash.hash.setData(undefined)
-        history.replaceState(null, "", "")
+      //  QueryParameters.ClearAll()
 
         const state = new FeaturePipelineState(layout)
         state.locationControl.setData({
@@ -677,6 +702,8 @@ export class SvgToPdfPage {
             lat: this.options?.overrideLocation?.lat ??  Number(params["lat"] ?? 51.05016),
             lon: this.options?.overrideLocation?.lon ??  Number(params["lon"] ?? 3.717842)
         })
+
+        console.log("Params are", params, params["layers"]==="none")
 
         const fl = state.filteredLayers.data
         for (const filteredLayer of fl) {
@@ -783,7 +810,7 @@ export class SvgToPdf {
 
     public static readonly templates : Record<string, {pages: string[], description: string | Translation}>= {
         flyer_a4:{pages: ["/assets/templates/MapComplete-flyer.svg","/assets/templates/MapComplete-flyer.back.svg"], description: Translations.t.flyer.description},
-        poster_a2: {pages: ["/assets/templates/MapComplete-poster-a2.svg"], description: "A basic A2 poster (similar to the flyer)"}
+        poster_a3: {pages: ["/assets/templates/MapComplete-poster-a3.svg"], description: "A basic A3 poster (similar to the flyer)"}
     }
     private readonly _title: string;
 

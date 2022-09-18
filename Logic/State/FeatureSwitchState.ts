@@ -166,9 +166,9 @@ export default class FeatureSwitchState {
             (layoutToUse?.overpassUrl ?? Constants.defaultOverpassUrls).join(","),
             "Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter"
         ).sync(
-            (param) => param.split(","),
+            (param) => param?.split(","),
             [],
-            (urls) => urls.join(",")
+            (urls) => urls?.join(",")
         )
 
         this.overpassTimeout = UIEventSource.asFloat(

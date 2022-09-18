@@ -26,9 +26,9 @@
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="1.0625506"
-     inkscape:cx="677.14423"
-     inkscape:cy="419.74472"
+     inkscape:zoom="1.2588311"
+     inkscape:cx="425.39465"
+     inkscape:cy="693.10333"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
@@ -373,7 +373,7 @@
     <rect
        x="381.53312"
        y="90.109134"
-       width="349.47661"
+       width="352.78406"
        height="154.40214"
        id="rect214922" />
     <rect
@@ -490,9 +490,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.75;font-family:sans-serif;white-space:pre;shape-inside:url(#rect45500);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="27.585938"
          y="594.75243"
-         id="tspan9088"><tspan
+         id="tspan7259"><tspan
            style="font-size:20px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9086">$flyer.frontParagraph</tspan></tspan></text>
+           id="tspan7257">$flyer.frontParagraph</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -516,9 +516,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect61742);fill:#d4f1f4;fill-opacity:1;stroke:none"><tspan
          x="11.105469"
          y="116.27391"
-         id="tspan9092"><tspan
+         id="tspan7263"><tspan
            style="font-weight:bold;font-size:26.6667px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan9090">$flyer.tagline</tspan></tspan></text>
+           id="tspan7261">$flyer.tagline</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -531,7 +531,7 @@
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect135032);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="8.7285156"
          y="34.819131"
-         id="tspan9094">$flyer.title</tspan></text>
+         id="tspan7265">$flyer.title</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,97.529993,-16.582379)"
@@ -539,9 +539,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect61742-2);display:inline;fill:#d4f1f4;fill-opacity:1;stroke:none"><tspan
          x="11.105469"
          y="116.27391"
-         id="tspan9098"><tspan
+         id="tspan7269"><tspan
            style="font-weight:bold;font-size:32px;-inkscape-font-specification:'sans-serif, Bold';fill:#000000"
-           id="tspan9096">$flyer.whatIsOsm</tspan></tspan></text>
+           id="tspan7267">$flyer.whatIsOsm</tspan></tspan></text>
     <image
        width="55.363865"
        height="21.384291"
@@ -558,9 +558,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect20620);fill:#d4f1f4;fill-opacity:1;stroke:none"><tspan
          x="11.105469"
          y="116.27391"
-         id="tspan9102"><tspan
+         id="tspan7273"><tspan
            style="font-weight:bold;font-size:26.6667px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan9100">$flyer.mapcomplete.title</tspan></tspan></text>
+           id="tspan7271">$flyer.mapcomplete.title</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,93.634029,-58.617677)"
@@ -568,69 +568,69 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.75;font-family:sans-serif;white-space:pre;shape-inside:url(#rect21926);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="27.585938"
          y="594.75243"
-         id="tspan9106"><tspan
+         id="tspan7277"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9104">$flyer.mapcomplete.intro 
+           id="tspan7275">$fmc.intro \n $list(fmc.li)
 </tspan></tspan><tspan
          x="27.585938"
          y="624.75243"
-         id="tspan9110"><tspan
+         id="tspan7281"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9108">
+           id="tspan7279">
 </tspan></tspan><tspan
          x="27.585938"
          y="654.75243"
-         id="tspan9114"><tspan
+         id="tspan7285"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9112">$list(flyer.mapcomplete.li) 
+           id="tspan7283">
 </tspan></tspan><tspan
          x="27.585938"
          y="684.75243"
-         id="tspan9118"><tspan
+         id="tspan7289"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9116">
+           id="tspan7287">
 </tspan></tspan><tspan
          x="27.585938"
          y="714.75243"
-         id="tspan9122"><tspan
+         id="tspan7293"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9120">
+           id="tspan7291">
 </tspan></tspan><tspan
          x="27.585938"
          y="744.75243"
-         id="tspan9126"><tspan
+         id="tspan7297"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9124">
+           id="tspan7295">
 </tspan></tspan><tspan
          x="27.585938"
          y="774.75243"
-         id="tspan9130"><tspan
+         id="tspan7301"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9128">
+           id="tspan7299">
 </tspan></tspan><tspan
          x="27.585938"
          y="804.75243"
-         id="tspan9134"><tspan
+         id="tspan7305"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9132">
+           id="tspan7303">
 </tspan></tspan><tspan
          x="27.585938"
          y="834.75243"
-         id="tspan9138"><tspan
+         id="tspan7309"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9136">
+           id="tspan7307">
 </tspan></tspan><tspan
          x="27.585938"
          y="864.75243"
-         id="tspan9142"><tspan
+         id="tspan7313"><tspan
            style="font-size:17.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9140">
+           id="tspan7311">
 </tspan></tspan><tspan
          x="27.585938"
          y="894.75243"
-         id="tspan9146"><tspan
+         id="tspan7317"><tspan
            style="font-weight:bold;font-size:17.3333px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan9144">$flyer.mapcomplete.customize</tspan></tspan></text>
+           id="tspan7315">$fmc.customize</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -689,17 +689,17 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.75;font-family:sans-serif;white-space:pre;shape-inside:url(#rect169564);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="27.585938"
          y="594.75243"
-         id="tspan9152"><tspan
+         id="tspan7323"><tspan
            style="font-weight:bold;font-size:24px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan9148">$flyer.callToAction</tspan><tspan
+           id="tspan7319">$flyer.callToAction</tspan><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9150">
+           id="tspan7321">
 </tspan></tspan><tspan
          x="27.585938"
          y="624.75243"
-         id="tspan9156"><tspan
+         id="tspan7327"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9154"> </tspan></tspan></text>
+           id="tspan7325"> </tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-0.23977866,-9.5462662)"
@@ -707,9 +707,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect171375);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="381.5332"
          y="126.50438"
-         id="tspan9160"><tspan
+         id="tspan7331"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9158">$flyer.osm</tspan></tspan></text>
+           id="tspan7329">$flyer.osm</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,2.1333012,-21.220244)"
@@ -717,9 +717,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect111721);fill:#d4f1f4;fill-opacity:1;stroke:none"><tspan
          x="11.105469"
          y="116.27391"
-         id="tspan9164"><tspan
+         id="tspan7335"><tspan
            style="font-weight:bold;font-size:26.6667px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan9162">$flyer.editing.title</tspan></tspan></text>
+           id="tspan7333">$flyer.editing.title</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-95.490982,-6.8838542)"
@@ -727,9 +727,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect214922);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="381.5332"
          y="126.50438"
-         id="tspan9168"><tspan
+         id="tspan7339"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9166">$flyer.editing.intro</tspan></tspan></text>
+           id="tspan7337">$flyer.editing.intro \n\n $flyer.editing.ex</tspan></tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -776,45 +776,51 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.45;font-family:sans-serif;white-space:pre;shape-inside:url(#rect14034);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="7.6972656"
          y="-104.42726"
-         id="tspan9172"><tspan
+         id="tspan7343"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9170">$import layer.nature_reserve as nr
+           id="tspan7341">$import layer.nature_reserve as nr
 </tspan></tspan><tspan
          x="7.6972656"
          y="-85.149922"
-         id="tspan9176"><tspan
+         id="tspan7347"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9174">$import layer.nature_reserve.tagRenderings.Dogs? as nrd
+           id="tspan7345">$import layer.nature_reserve.tagRenderings.Dogs? as nrd
 </tspan></tspan><tspan
          x="7.6972656"
          y="-65.872586"
-         id="tspan9180"><tspan
+         id="tspan7351"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9178">$import layer.nature_reserve.tagRenderings.Access tag as nra
+           id="tspan7349">$import layer.nature_reserve.tagRenderings.Access tag as nra
 </tspan></tspan><tspan
          x="7.6972656"
          y="-46.59525"
-         id="tspan9184"><tspan
+         id="tspan7355"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9182">$import layer.nature_reserve.tagRenderings.Surface area as nrsa
+           id="tspan7353">$import layer.nature_reserve.tagRenderings.Surface area as nrsa
 </tspan></tspan><tspan
          x="7.6972656"
          y="-27.317914"
-         id="tspan9188"><tspan
+         id="tspan7359"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9186">$import flyer.fakeui as fui
+           id="tspan7357">$import flyer.fakeui as fui
 </tspan></tspan><tspan
          x="7.6972656"
          y="-8.0405798"
-         id="tspan9192"><tspan
+         id="tspan7363"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9190">$import general as g
+           id="tspan7361">$import flyer.mapcomplete as fmc
 </tspan></tspan><tspan
          x="7.6972656"
          y="11.236754"
-         id="tspan9196"><tspan
+         id="tspan7367"><tspan
            style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9194">$set(_surface:ha, 13.2)
+           id="tspan7365">$import general as g
+</tspan></tspan><tspan
+         x="7.6972656"
+         y="30.514089"
+         id="tspan7371"><tspan
+           style="font-size:18.6667px;-inkscape-font-specification:'sans-serif, Normal'"
+           id="tspan7369">$set(_surface:ha, 13.2)
 </tspan></tspan></text>
     <image
        width="57.702705"
@@ -877,9 +883,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.15;font-family:sans-serif;white-space:pre;shape-inside:url(#rect30576);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="854.50391"
          y="305.80712"
-         id="tspan9200"><tspan
+         id="tspan7375"><tspan
            style="font-size:16px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9198">$image.addPicture</tspan></tspan></text>
+           id="tspan7373">$image.addPicture</tspan></tspan></text>
     <rect
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.284055;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1"
        id="rect71653"
@@ -907,9 +913,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect89979);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="1032.8457"
          y="190.16259"
-         id="tspan9204"><tspan
+         id="tspan7379"><tspan
            style="font-weight:bold;font-size:13.3333px;-inkscape-font-specification:'sans-serif, Bold';fill:#ff0000"
-           id="tspan9202">$fui.add_images</tspan></tspan></text>
+           id="tspan7377">$fui.add_images</tspan></tspan></text>
     <g
        id="g92580"
        transform="matrix(-0.69752475,-0.7165607,0.57354815,-0.8444402,16.089563,191.00078)"
@@ -945,9 +951,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect108073);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="1032.8457"
          y="190.16259"
-         id="tspan9208"><tspan
+         id="tspan7383"><tspan
            style="font-weight:bold;font-size:13.3333px;-inkscape-font-specification:'sans-serif, Bold';fill:#ff0000"
-           id="tspan9206">$fui.see_images</tspan></tspan></text>
+           id="tspan7381">$fui.see_images</tspan></tspan></text>
     <image
        preserveAspectRatio="none"
        inkscape:svg-dpi="96"
@@ -991,9 +997,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect216807);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="1032.8457"
          y="190.16259"
-         id="tspan9212"><tspan
+         id="tspan7387"><tspan
            style="font-weight:bold;font-size:13.3333px;-inkscape-font-specification:'sans-serif, Bold';fill:#ff0000"
-           id="tspan9210">$fui.wikipedia</tspan></tspan></text>
+           id="tspan7385">$fui.wikipedia</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:0.7;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-miterlimit:20;stroke-dasharray:none"
@@ -1016,9 +1022,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.15;font-family:sans-serif;white-space:pre;shape-inside:url(#rect225337);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="854.50391"
          y="305.80712"
-         id="tspan9216"><tspan
+         id="tspan7391"><tspan
            style="font-size:16px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9214">$nra.mappings.0.then</tspan></tspan></text>
+           id="tspan7389">$nra.mappings.0.then</tspan></tspan></text>
     <image
        preserveAspectRatio="none"
        inkscape:svg-dpi="96"
@@ -1039,9 +1045,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.15;font-family:sans-serif;white-space:pre;shape-inside:url(#rect230739);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="854.50391"
          y="305.80712"
-         id="tspan9220"><tspan
+         id="tspan7395"><tspan
            style="font-size:16px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9218">$nrsa.render</tspan></tspan></text>
+           id="tspan7393">$nrsa.render</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-206.41628,69.858951)"
@@ -1049,9 +1055,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect246777);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="1032.8457"
          y="190.16259"
-         id="tspan9224"><tspan
+         id="tspan7399"><tspan
            style="font-weight:bold;font-size:13.3333px;-inkscape-font-specification:'sans-serif, Bold';fill:#ff0000"
-           id="tspan9222">$fui.attributes</tspan></tspan></text>
+           id="tspan7397">$fui.attributes</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-206.15705,87.121482)"
@@ -1059,9 +1065,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect251315);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="1032.8457"
          y="190.16259"
-         id="tspan9228"><tspan
+         id="tspan7403"><tspan
            style="font-weight:bold;font-size:13.3333px;-inkscape-font-specification:'sans-serif, Bold';fill:#ff0000"
-           id="tspan9226">$fui.edit
+           id="tspan7401">$fui.edit
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -1070,9 +1076,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.15;font-family:sans-serif;white-space:pre;shape-inside:url(#rect256692);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="854.50391"
          y="305.80712"
-         id="tspan9232"><tspan
+         id="tspan7407"><tspan
            style="font-size:16px;-inkscape-font-specification:'sans-serif, Normal';fill:#0000e2"
-           id="tspan9230">www.example.org/nature</tspan></tspan></text>
+           id="tspan7405">www.example.org/nature</tspan></tspan></text>
     <image
        preserveAspectRatio="none"
        inkscape:svg-dpi="96"
@@ -1158,9 +1164,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.15;font-family:sans-serif;white-space:pre;shape-inside:url(#rect277342);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="854.50391"
          y="305.80712"
-         id="tspan9236"><tspan
+         id="tspan7411"><tspan
            style="font-size:12px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan9234">$g.wikipedia.fromWikipedia</tspan></tspan></text>
+           id="tspan7409">$g.wikipedia.fromWikipedia</tspan></tspan></text>
     <rect
        style="fill:#dddddd;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect288579"
@@ -1312,9 +1318,9 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect289465);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="1032.8457"
          y="190.16259"
-         id="tspan9240"><tspan
+         id="tspan7415"><tspan
            style="font-weight:bold;font-size:13.3333px;-inkscape-font-specification:'sans-serif, Bold';fill:#ff0000"
-           id="tspan9238">$fui.question</tspan></tspan></text>
+           id="tspan7413">$fui.question</tspan></tspan></text>
     <g
        id="g289463"
        transform="matrix(-0.23283267,0.97251682,0.92477942,0.43222644,-27.808776,134.07207)"
@@ -1415,9 +1421,9 @@
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.1;font-family:sans-serif;white-space:pre;shape-inside:url(#rect132688);fill:#ffffff;fill-opacity:1;stroke:none"><tspan
        x="883.77344"
        y="652.63329"
-       id="tspan9244"><tspan
+       id="tspan7419"><tspan
          style="font-weight:bold;font-size:13.3333px;-inkscape-font-specification:'sans-serif, Bold'"
-         id="tspan9242">$general.save</tspan></tspan></text>
+         id="tspan7417">$general.save</tspan></tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.26458333,0,0,0.26458333,-9.21118,20.980622)"
@@ -1430,9 +1436,9 @@
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.15;font-family:sans-serif;white-space:pre;shape-inside:url(#rect152029);fill:#000000;fill-opacity:1;stroke:none"><tspan
        x="773.85742"
        y="628.17821"
-       id="tspan9248"><tspan
+       id="tspan7423"><tspan
          style="font-weight:bold;font-size:18.6667px;-inkscape-font-specification:'sans-serif, Bold'"
-         id="tspan9246">$nrd.question</tspan></tspan></text>
+         id="tspan7421">$nrd.question</tspan></tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.26458333,0,0,0.26458333,-191.88164,14.564459)"
@@ -1440,21 +1446,21 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:1.15;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect159507);fill:#000000;fill-opacity:1;stroke:none"><tspan
        x="773.85742"
        y="627.54121"
-       id="tspan9252"><tspan
+       id="tspan7427"><tspan
          style="font-size:13.3333px"
-         id="tspan9250">$nrd.mappings.0.then
+         id="tspan7425">$nrd.mappings.0.then
 </tspan></tspan><tspan
        x="773.85742"
        y="645.94123"
-       id="tspan9256"><tspan
+       id="tspan7431"><tspan
          style="font-size:13.3333px"
-         id="tspan9254">$nrd.mappings.1.then
+         id="tspan7429">$nrd.mappings.1.then
 </tspan></tspan><tspan
        x="773.85742"
        y="664.34125"
-       id="tspan9260"><tspan
+       id="tspan7435"><tspan
          style="font-size:13.3333px"
-         id="tspan9258">$nrd.mappings.2.then</tspan></tspan></text>
+         id="tspan7433">$nrd.mappings.2.then</tspan></tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.26458333,0,0,0.26458333,-208.55017,26.703456)"
@@ -1462,9 +1468,9 @@
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.1;font-family:sans-serif;white-space:pre;shape-inside:url(#rect132688-6);fill:#ffffff;fill-opacity:1;stroke:none"><tspan
        x="883.77344"
        y="652.63329"
-       id="tspan9264"><tspan
+       id="tspan7439"><tspan
          style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-         id="tspan9262">Skip</tspan></tspan></text>
+         id="tspan7437">Skip</tspan></tspan></text>
   <circle
      style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1"
      id="circle213345"

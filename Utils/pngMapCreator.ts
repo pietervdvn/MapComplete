@@ -96,12 +96,10 @@ export class PngMapCreator {
                     })
                     await Utils.waitFor(2000)
                 }
-                minimap.TakeScreenshot(format).then(result => {
+                minimap.TakeScreenshot(format).then(async result => {
                     const divId = this._options.divId
-                    window.setTimeout(() => {
+                    await Utils.waitFor(250)
                     document.getElementById(divId).removeChild(/*Will fetch the cached htmlelement:*/minimap.ConstructElement())
-
-                    }, 500)
                     return resolve(result);
                 }).catch(failreason => {
                     console.error("Could no make a screenshot due to ",failreason)

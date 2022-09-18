@@ -45,7 +45,8 @@
         "cyclofix": "Bicycle pumps, repair stations, drinking water and cycle shops are on cyclofix",
         "description": "An A4-landscape flyer to promote MapComplete",
         "editing": {
-            "intro": "The user is greeted by a map with feature. Upon selecting one, the information about that feature is shown. A simplified example of what this looks like for a nature reserve is shown below.",
+            "ex": "A simplified example of what this looks like for a nature reserve is shown below.",
+            "intro": "The user is greeted by a map with feature. Upon selecting one, the information about that feature is shown.",
             "title": "What does the interface look like?"
         },
         "examples": "There are many thematic maps available of which a few are printed here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,... Discover them all on mapcomplete.osm.be  ",
@@ -61,7 +62,7 @@
         "lines_too": "Lines and polygons are shown too. Attributes and images can be added and updated on those objects as well.",
         "mapcomplete": {
             "customize": "MapComplete can be tailored to your needs, with new map layers, new functionalities or styled with your organisations colours and font.\nWe also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.",
-            "intro": "MapComplete is a website which has {mapCount} interactive maps. Every single map allows to add or update information.",
+            "intro": "MapComplete is a website which has {mapCount} interactive maps. Every single map allows to add or update information. It has many features:",
             "li0": "Show where POI are",
             "li1": "Add new points and update information on existing points",
             "li2": "Add contact information and opening hours easily",

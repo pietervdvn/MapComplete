@@ -14,7 +14,7 @@ export class Overpass {
     private readonly _interpreterUrl: string
     private readonly _timeout: Store<number>
     private readonly _extraScripts: string[]
-    private _includeMeta: boolean
+    private readonly _includeMeta: boolean
     private _relationTracker: RelationsTracker
 
     constructor(
