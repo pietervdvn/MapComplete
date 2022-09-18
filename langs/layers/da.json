@@ -13,7 +13,7 @@
                     }
                 },
                 "question": "Hvad er nummeret på dette hus?",
-                "render": "Husnummeret er <b>{addr:husnummer}</b>"
+                "render": "Husnummeret er <b>{addr:housenumber}</b>"
             },
             "street": {
                 "question": "Hvilken gade ligger denne adresse på?",
@@ -1083,7 +1083,7 @@
                     "then": "Cykelværksted<i>{name}</i>"
                 },
                 "0": {
-                    "then": "Butik med sportsudstyr <i>{navn}</i>"
+                    "then": "Butik med sportsudstyr <i>{name}</i>"
                 },
                 "1": {
                     "then": "Winkel"
@@ -1386,7 +1386,7 @@
             "Operator": {
                 "mappings": {
                     "0": {
-                        "then": "Faktisk er {operatør} netværket"
+                        "then": "Faktisk er {operator} netværket"
                     }
                 },
                 "question": "Hvem er operatøren af denne ladestation?",
@@ -1648,10 +1648,10 @@
                     }
                 },
                 "question": "Hvem må bruge denne ladestation?",
-                "render": "Adgang er {adgang}"
+                "render": "Adgang er {access}"
             },
             "capacity": {
-                "render": "{kapacitet} køretøjer kan oplades her på samme tid",
+                "render": "{capacity} køretøjer kan oplades her på samme tid",
                 "question": "Hvor mange køretøjer kan oplades her på samme tid?"
             },
             "charge": {
@@ -1669,7 +1669,7 @@
             },
             "current-1": {
                 "question": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> ?",
-                "render": "<div style='display: inline-block'><b><b>Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> udgange på højst {stikdåse:type:strøm}A",
+                "render": "<div style='display: inline-block'><b><b>Europæisk vægstik</b> med jord (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> udgange på højst {socket:typee:current}A",
                 "mappings": {
                     "0": {
                         "then": "<b>Europæisk vægstik</b> med jord (CEE7/4 type E) yder højst 16 A"
