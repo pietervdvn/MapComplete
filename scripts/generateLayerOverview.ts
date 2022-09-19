@@ -202,6 +202,7 @@ class LayerOverviewUtils {
             "assets/SocialImageTemplateWide.svg",
             "assets/SocialImageBanner.svg",
             "assets/svg/osm-logo.svg",
+            "assets/templates/"
         ]
         for (const path of allSvgs) {
             if (exempt.some((p) => "./" + p === path)) {
