@@ -126,6 +126,7 @@
     }
   ],
   "filter": [
+    "open_now",
     {
       "id": "drive-through",
       "options": [
