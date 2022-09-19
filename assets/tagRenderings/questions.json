@@ -119,7 +119,7 @@
       "zh_Hant": "{title()} 的電話號碼是什麼？",
       "it": "Qual è il numero di telefono di {title()}?",
       "pt_BR": "Qual o número de telefone de {title()}?",
-      "id": "Nomor telepon dari {title()}?",
+      "id": "Berapa nomor telepon dari {title()}?",
       "pl": "Jaki jest numer telefonu do {title()}?",
       "pt": "Qual é o número de telefone de {title()}?",
       "eo": "Kio estas la telefonnumero de {title()}?",
@@ -489,7 +489,7 @@
           "zh_Hant": "<b>不</b>允許犬隻",
           "pl": "Psy <b>nie</b> dozwolone",
           "ru": "С собаками <b>не</b> впускают",
-          "id": "Anjing <b> tidak </b> diperbolehkan",
+          "id": "Anjing <b>tidak</b> diperbolehkan",
           "ja": "ペット同伴<b>不可</b>",
           "es": "<b>No</b> se permiten perros",
           "sl": "Psi <b>niso</b> dovoljeni",
@@ -768,7 +768,7 @@
           "nl": "Cash geld wordt hier aanvaard",
           "pt": "Aceitam pagamento com dinheiro aqui",
           "pt_BR": "Dinheiro é aceito aqui",
-          "id": "Disini menerima pembayaran tunai",
+          "id": "Pembayaran tunai diterima di sini",
           "de": "Hier wird Bargeld akzeptiert",
           "fr": "Paiement en liquide accepté",
           "hu": "Itt készpénzzel is lehet fizetni",
@@ -796,7 +796,7 @@
           "nl": "Betalen met bankkaarten kan hier",
           "pt": "Aceitam pagamento com cartões bancários aqui",
           "pt_BR": "Cartões de pagamento são aceitos aqui",
-          "id": "Disini menerima pembayaran dengan kartu",
+          "id": "Kartu pembayaran diterima di sini",
           "de": "Hier wird Kartenzahlung akzeptiert",
           "fr": "Paiement par carte accepté",
           "hu": "Itt fizetőkártyákkal is lehet fizetni",
@@ -840,7 +840,8 @@
             "da": "Betaling sker ved hjælp af en dedikeret app",
             "nb_NO": "Betaling utføres med et eget program",
             "pt": "O pagamento é feito utilizando uma aplicação dedicada",
-            "it": "Pagamento effettuato utilizzando un'app dedicata"
+            "it": "Pagamento effettuato utilizzando un'app dedicata",
+            "id": "Pembayaran dilakukan dengan aplikasi khusus"
           }
         },
         {
@@ -861,7 +862,8 @@
             "nb_NO": "Betaling utføres med et medlemskort",
             "zh_Hans": "使用会员卡支付",
             "da": "Betaling sker med medlemskort",
-            "pt": "O pagamento é feito usando um cartão de membro"
+            "pt": "O pagamento é feito usando um cartão de membro",
+            "id": "Pembayaran dilakukan dengan kartu anggota"
           }
         }
       ]
@@ -884,14 +886,16 @@
         "de": "Auf welchen Geschossen hält dieser Aufzug?",
         "fr": "Quels étages sont desservis par cet ascenceur ?",
         "pt": "Para que pisos vai este elevador?",
-        "da": "Hvilke niveauer går denne elevator til?"
+        "da": "Hvilke niveauer går denne elevator til?",
+        "id": "Pada lantai berapa saja lift ini berjalan?"
       },
       "render": {
         "en": "This elevator goes to floors {level}",
         "de": "Der Aufzug hält auf den Geschossen {level}",
         "fr": "Cet ascenceur permet d’accéder aux étages {level}",
         "pt": "Este elevador vai para os pisos {level}",
-        "da": "Denne elevator går til etager {level}"
+        "da": "Denne elevator går til etager {level}",
+        "id": "Lift ini berjalan ke lantai {level}"
       },
       "freeform": {
         "key": "level",
@@ -1084,7 +1088,8 @@
       "fr": "Est-ce autorisé de fumer à {title()} ?",
       "pt": "É permitido fumar em {title()}?",
       "nb_NO": "Tillates røyking på {title()}?",
-      "da": "Er det tilladt at ryge på {title()}?"
+      "da": "Er det tilladt at ryge på {title()}?",
+      "id": "Apa diizinkan untuk merokok di {title()}?"
     },
     "#condition": "Based on https://en.wikipedia.org/wiki/List_of_smoking_bans",
     "condition": "_country!~al|be",
@@ -1102,7 +1107,8 @@
           "fr": "Il est <b>autorisé</b> de fumer",
           "pt": "<b>É permitido</b> fumar",
           "nb_NO": "Røyking er <b>tillatt</b>",
-          "da": "Rygning er <b>tilladt</b>"
+          "da": "Rygning er <b>tilladt</b>",
+          "id": "Merokok <b>diizinkan</b>"
         }
       },
       {
@@ -1118,7 +1124,8 @@
           "fr": "Il est <b>interdit</b> de fumer",
           "pt": "<b>Não é permitido</b> fumar",
           "nb_NO": "Røyking <b>forbudt</b>",
-          "da": "Rygning er <b>ikke tilladt</b>"
+          "da": "Rygning er <b>ikke tilladt</b>",
+          "id": "Merokok <b>dilarang</b>"
         }
       },
       {
@@ -1130,7 +1137,8 @@
           "fr": "Il est autorisé de fumer <b>à l'extérieur</b>.",
           "pt": "É permitido fumar <b>no exterior</b>.",
           "nb_NO": "Røyking <b>tillates på utsiden</b>.",
-          "da": "Rygning er <b>tilladt udenfor</b>."
+          "da": "Rygning er <b>tilladt udenfor</b>.",
+          "id": "Merokok <b>diizinkan di luar ruangan</b>."
         }
       }
     ]
@@ -1178,7 +1186,8 @@
       "nl": "Biedt deze plaats internettoegang aan?",
       "de": "Bietet dieser Ort Internetzugang?",
       "pt": "Este lugar tem acesso à Internet?",
-      "da": "Tilbyder dette sted internetadgang?"
+      "da": "Tilbyder dette sted internetadgang?",
+      "id": "Apa tempat ini menyediakan jaringan internet?"
     },
     "mappings": [
       {
@@ -1189,7 +1198,8 @@
           "de": "Dieser Ort bietet drahtlosen Internetzugang",
           "fr": "Ce lieu propose un accès internet sans fil",
           "pt": "Este lugar tem acesso à Internet sem fios",
-          "da": "Dette sted tilbyder trådløs internetadgang"
+          "da": "Dette sted tilbyder trådløs internetadgang",
+          "id": "Tempat ini menyediakan jaringan internet nirkabel"
         }
       },
       {
@@ -1200,7 +1210,8 @@
           "de": "Dieser Ort bietet <b>keinen</b> Internetzugang",
           "fr": "Ce lieu <b>ne propose pas</b> d'accès internet",
           "pt": "Este lugar <b>não</b> tem acesso à Internet",
-          "da": "Dette sted <b>tilbyder ikke</b> internetadgang"
+          "da": "Dette sted <b>tilbyder ikke</b> internetadgang",
+          "id": "Tempat ini <b>tidak</b> menyediakan jaringan internet"
         }
       },
       {
@@ -1211,7 +1222,8 @@
           "de": "Dieser Ort bietet Internetzugang",
           "fr": "Ce lieu propose un accès internet",
           "pt": "Este lugar tem acesso à Internet",
-          "da": "Dette sted tilbyder internetadgang"
+          "da": "Dette sted tilbyder internetadgang",
+          "id": "Tempat ini menyediakan jaringan internet"
         },
         "hideInAnswer": true
       },
@@ -1222,7 +1234,8 @@
           "nl": "Deze plaats biedt internettoegang via een terminal of computer aan",
           "de": "Dieser Ort bietet Internetzugang über ein Terminal oder einen Computer",
           "pt": "Este lugar tem acesso à Internet através de um terminal ou computador",
-          "da": "Dette sted tilbyder internetadgang via en terminal eller computer"
+          "da": "Dette sted tilbyder internetadgang via en terminal eller computer",
+          "id": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer"
         }
       },
       {
@@ -1232,7 +1245,8 @@
           "nl": "Deze plaats biedt bedrade internettoegang aan",
           "de": "Dieser Ort bietet kabelgebundenen Internetzugang",
           "pt": "Este lugar tem acesso à Internet com fios/por cabo",
-          "da": "Dette sted tilbyder internetadgang via kabel"
+          "da": "Dette sted tilbyder internetadgang via kabel",
+          "id": "Tempat ini menyediakan jaringan internet kabel"
         }
       }
     ]
@@ -1269,7 +1283,8 @@
           "nl": "Internettoegang is gratis op deze plaats",
           "de": "Der Internetzugang ist an diesem Ort kostenlos",
           "pt": "O acesso à Internet é gratuito neste local",
-          "da": "Internetadgang er gratis på dette sted"
+          "da": "Internetadgang er gratis på dette sted",
+          "id": "Jaringan internet tersedia gratis di tempat ini"
         }
       },
       {
@@ -1279,7 +1294,8 @@
           "nl": "Internettoegang is gratis op deze plaats, alleen voor klanten",
           "de": "Der Internetzugang ist an diesem Ort kostenlos, aber nur für Kunden",
           "pt": "O acesso à Internet é gratuito neste local, apenas para clientes",
-          "da": "Internetadgang er gratis på dette sted, kun for kunder"
+          "da": "Internetadgang er gratis på dette sted, kun for kunder",
+          "id": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan"
         }
       }
     ]
@@ -1291,7 +1307,8 @@
       "nl": "Wat is de netwerknaam voor de draadloze internettoegang?",
       "de": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?",
       "pt": "Qual é o nome da rede para o acesso sem fios à Internet?",
-      "da": "Hvad er netværksnavnet for den trådløse internetadgang?"
+      "da": "Hvad er netværksnavnet for den trådløse internetadgang?",
+      "id": "Apa nama jaringan internet nirkabelnya?"
     },
     "freeform": {
       "key": "internet_access:ssid",
@@ -1301,7 +1318,8 @@
         "nl": "Voer de netwerknaam in",
         "de": "Geben Sie den Netzwerknamen ein",
         "pt": "Introduza o nome da rede",
-        "da": "Indtast netværksnavnet"
+        "da": "Indtast netværksnavnet",
+        "id": "Masukkan nama jaringan"
       }
     },
     "mappings": [
@@ -1316,7 +1334,8 @@
       "nl": "De netwerknaam is <b>{internet_access:ssid}</b>",
       "de": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>",
       "pt": "O nome da rede é <b>{internet_access:ssid}</b>",
-      "da": "Netværksnavnet er <b>{internet_access:ssid}</b>"
+      "da": "Netværksnavnet er <b>{internet_access:ssid}</b>",
+      "id": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>"
     }
   }
 }

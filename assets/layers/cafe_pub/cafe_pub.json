@@ -112,14 +112,16 @@
         "nl": "een nachtclub of disco",
         "de": "einen Club oder eine Diskothek",
         "es": "un club nocturno o una discoteca",
-        "fr": "une boîte de nuit ou discothèque"
+        "fr": "une boîte de nuit ou discothèque",
+        "da": "en natklub eller et diskotek"
       },
       "description": {
         "en": "A <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
         "nl": "Een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen",
         "de": "Ein <b>Club</b> oder eine Diskothek mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt",
         "es": "Un <b>club nocturno</b> o discoteca centrada en bailar, la música de un DJ acompañado por un espectáculo de luces y un bar donde conseguir bebidas (alcohólicas)",
-        "fr": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une boisson (alcoolisée)"
+        "fr": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une boisson (alcoolisée)",
+        "da": "En <b>natklub</b> eller diskotek med fokus på dans, musik af en DJ med tilhørende lysshow og en bar for at få (alkoholiske) drinks"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -189,7 +191,7 @@
         "nl": "Welk soort café is dit?",
         "de": "Was ist das für ein Café?",
         "hu": "Milyen fajta kávézó ez?",
-        "da": "Hvilken slags cafe er dette",
+        "da": "Hvilken slags cafe er dette?",
         "es": "Qué tipo de cafetería es esta",
         "fr": "Quel genre de café est-ce ?"
       },
@@ -201,7 +203,8 @@
             "nl": "Dit is <b>een bruin café of een kroeg</b> waar voornamelijk bier wordt gedronken. De inrichting is typisch gezellig met veel houtwerk",
             "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird",
             "es": "Un bar, principalmente para beber cervezas en un interior cálido y relajado",
-            "fr": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée"
+            "fr": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée",
+            "da": "En pub, mest et sted at drikke øl i hyggelige, afslappede omgivelser"
           }
         },
         {
@@ -256,7 +259,8 @@
             "nl": "Dit is een <b>nachtclub</b> met dansvloer, DJ met bijhorende lichteffecten en bar waar men (alcoholische) dranken kan nuttigen",
             "de": "Dies ist ein <b>Club</b> oder eine Disco mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt",
             "es": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)",
-            "fr": "Il s'agit d'une <b>boîte de nuit</b> ou discothèque avec un accent sur la danse, la musique d'un DJ avec un spectacle de lumière et un bar pour prendre des boissons (alcoolisées)"
+            "fr": "Il s'agit d'une <b>boîte de nuit</b> ou discothèque avec un accent sur la danse, la musique d'un DJ avec un spectacle de lumière et un bar pour prendre des boissons (alcoolisées)",
+            "da": "Dette er en <b>natklub</b> eller diskotek med fokus på dans, musik af en DJ med tilhørende lysshow og en bar, hvor man kan købe (alkoholiske) drikkevarer"
           }
         }
       ],
