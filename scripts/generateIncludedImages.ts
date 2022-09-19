@@ -29,7 +29,7 @@ function genImages(dryrun = false) {
         if (hasNonAsciiChars) {
             throw "The svg '" + path + "' has non-ascii characters"
         }
-        const name = path.substr(0, path.length - 4).replace(/[ -]/g, "_")
+        const name = path.substring(0, path.length - 4).replace(/[ -]/g, "_")
 
         if (dryrun) {
             svg = "xxx"
