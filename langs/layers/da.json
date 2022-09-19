@@ -131,10 +131,6 @@
             "artwork-website": {
                 "question": "Er der et websted med mere information om dette kunstværk?",
                 "render": "Yderligere oplysninger på <a href='{website}' target='_blank'>dette websted</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Hvilken Wikidata-indgang svarer til <b>dette kunstværk</b>?",
-                "render": "Svarer til <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {

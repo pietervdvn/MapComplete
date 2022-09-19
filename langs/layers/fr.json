@@ -2143,15 +2143,6 @@
     },
     "doctors": {
         "description": "Ce calque montre les cabinets médicaux, les dentistes et autres établissements de santé",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert maintenant"
-                    }
-                }
-            }
-        },
         "name": "Médecins",
         "presets": {
             "0": {

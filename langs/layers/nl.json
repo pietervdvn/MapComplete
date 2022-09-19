@@ -3234,15 +3234,6 @@
     },
     "doctors": {
         "description": "Deze laag toont dokterspraktijken, tandartsen en andere gezondheidszorgfaciliteiten",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Nu geopend"
-                    }
-                }
-            }
-        },
         "name": "Dokters",
         "presets": {
             "0": {

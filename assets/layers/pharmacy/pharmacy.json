@@ -126,7 +126,6 @@
     }
   ],
   "filter": [
-    "open_now",
     {
       "id": "drive-through",
       "options": [
@@ -152,6 +151,7 @@
           "osmTags": "dispensing=yes"
         }
       ]
-    }
+    },
+    "open_now"
   ]
 }

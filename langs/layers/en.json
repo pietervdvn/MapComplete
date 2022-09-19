@@ -3246,15 +3246,6 @@
     },
     "doctors": {
         "description": "This layer shows doctor offices, dentists and other healthcare facilities",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Opened now"
-                    }
-                }
-            }
-        },
         "name": "Doctors",
         "presets": {
             "0": {

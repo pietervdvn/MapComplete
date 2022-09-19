@@ -3235,15 +3235,6 @@
     },
     "doctors": {
         "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Jetzt geöffnet"
-                    }
-                }
-            }
-        },
         "name": "Ärzte",
         "presets": {
             "0": {
