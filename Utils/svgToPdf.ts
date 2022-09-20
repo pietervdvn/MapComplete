@@ -13,7 +13,6 @@ import {Utils} from "../Utils";
 import Locale from "../UI/i18n/Locale";
 import Constants from "../Models/Constants";
 import Hash from "../Logic/Web/Hash";
-import {QueryParameters} from "../Logic/Web/QueryParameters";
 
 class SvgToPdfInternals {
     private readonly doc: jsPDF;
@@ -790,7 +789,7 @@ export class SvgToPdfPage {
 
     }
 
-    public drawPage(advancedApi: jsPDF, i: number, language: string): void {
+    public drawPage(advancedApi: jsPDF, i: number): void {
         if (!this._isPrepared) {
             throw "Run 'Prepare()' first!"
         }
@@ -810,7 +809,8 @@ export class SvgToPdf {
 
     public static readonly templates : Record<string, {pages: string[], description: string | Translation}>= {
         flyer_a4:{pages: ["/assets/templates/MapComplete-flyer.svg","/assets/templates/MapComplete-flyer.back.svg"], description: Translations.t.flyer.description},
-        poster_a3: {pages: ["/assets/templates/MapComplete-poster-a3.svg"], description: "A basic A3 poster (similar to the flyer)"}
+        poster_a3: {pages: ["/assets/templates/MapComplete-poster-a3.svg"], description: "A basic A3 poster (similar to the flyer)"},
+        poster_a2: {pages: ["/assets/templates/MapComplete-poster-a2.svg"], description: "A basic A2 poster (similar to the flyer); scaled up from the A3 poster"}
     }
     private readonly _title: string;
 
@@ -856,7 +856,7 @@ export class SvgToPdf {
                     const sy = mediabox.topRightY / targetHeight
                     advancedApi.setCurrentTransformationMatrix(advancedApi.Matrix(sx, 0, 0, -sy, 0, mediabox.topRightY))
                 }
-                this._pages[i].drawPage(advancedApi, i, language)
+                this._pages[i].drawPage(advancedApi, i)
             }
         })
         await doc.save(this._title+"."+language+".pdf");
