@@ -1,6 +1,6 @@
 import MinimapImplementation from "./UI/Base/MinimapImplementation";
 
-7import { Utils } from "./Utils"
+import { Utils } from "./Utils"
 import AllThemesGui from "./UI/AllThemesGui"
 import { QueryParameters } from "./Logic/Web/QueryParameters"
 import StatisticsGUI from "./UI/StatisticsGUI"
@@ -50,7 +50,7 @@ if (mode.data === "statistics") {
     new FixedUiElement("").AttachTo("centermessage")
     const div = document.createElement("div")
     div.id = "extra_div_for_maps"
-    new PdfExportGui(div.id).SetClass("pointer-event-auto").AttachTo("topleft-tools")
+    new PdfExportGui(div.id).SetClass("pointer-events-auto").AttachTo("topleft-tools")
     document.getElementById("topleft-tools").appendChild(div)
 } else {
     new AllThemesGui().setup()
