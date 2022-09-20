@@ -92,7 +92,7 @@ class SelectTemplate extends Combine implements FlowStep<{ title: string, pages:
                 if (pages === undefined) {
                     return new Loading()
                 }
-                if (pages["err"] !== undefined) {
+                if (pages["error"] !== undefined) {
                     return new FixedUiElement("Loading preview failed: " + pages["err"]).SetClass("alert")
                 }
                 const svgs = pages["success"].pages
@@ -123,7 +123,9 @@ class SelectTemplate extends Combine implements FlowStep<{ title: string, pages:
         if (spec.startsWith("http")) {
             return spec
         }
-        return window.location.protocol + "//" + window.location.host + "/" + spec
+        let path = window.location.pathname
+        path = path.substring(0, path.lastIndexOf("/"))
+        return window.location.protocol + "//" + window.location.host + path +  + "/" + spec
     }
 
 }
