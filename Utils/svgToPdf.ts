@@ -67,11 +67,20 @@ class SvgToPdfInternals {
         if (t === null) {
             return null;
         }
-        const scaleMatch = t.match(/scale\(([-0-9.]*)\)/)
+        const scaleMatch = t.match(/scale\(([-0-9.]+)\)/)
         if (scaleMatch !== null) {
             const s = Number(scaleMatch[1])
             return SvgToPdfInternals.dummyDoc.Matrix(1 / s, 0, 0, 1 / s, 0, 0);
         }
+
+        const translateMatch = t.match(/translate\(([-0-9.]+), ?([-0-9.]*)\)/)
+        if (translateMatch !== null) {
+            const dx = Number(translateMatch[1])
+            const dy = Number(translateMatch[2])
+            console.log("Translating", dx, dy)
+            return SvgToPdfInternals.dummyDoc.Matrix(1, 0, 0, 1, dx, dy);
+        }
+
 
         const transformMatch = t.match(/matrix\(([-0-9.]*),([-0-9.]*),([-0-9.]*),([-0-9.]*),([-0-9.]*),([-0-9.]*)\)/)
         if (transformMatch !== null) {
@@ -449,6 +458,9 @@ class SvgToPdfInternals {
     }
 
     public handleElement(element: SVGSVGElement | Element): void {
+        if(element.id === "path15616"){
+            console.log("Handling element", element)
+        }
         const isTransformed = this.setTransform(element)
         try {
 
