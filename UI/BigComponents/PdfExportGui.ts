@@ -125,7 +125,7 @@ class SelectTemplate extends Combine implements FlowStep<{ title: string, pages:
         }
         let path = window.location.pathname
         path = path.substring(0, path.lastIndexOf("/"))
-        return window.location.protocol + "//" + window.location.host + path +  + "/" + spec
+        return window.location.protocol + "//" + window.location.host + path + "/" + spec
     }
 
 }
