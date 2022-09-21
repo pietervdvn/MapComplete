@@ -18,6 +18,7 @@ import Title from "../Base/Title"
 import { GlobalFilter } from "../../Logic/State/MapState"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import { Tag } from "../../Logic/Tags/Tag"
+import {WayId} from "../../Models/OsmFeature";
 
 export default class ConfirmLocationOfPoint extends Combine {
     constructor(
@@ -35,7 +36,7 @@ export default class ConfirmLocationOfPoint extends Combine {
         confirm: (
             tags: any[],
             location: { lat: number; lon: number },
-            snapOntoWayId: string
+            snapOntoWayId: WayId | undefined
         ) => void,
         cancel: () => void,
         closePopup: () => void
