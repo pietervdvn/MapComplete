@@ -30,7 +30,7 @@ class SvgToPdfInternals {
         this.doc = advancedApi;
         this._images = images;
         this._rects = rects;
-        this.extractTranslation = s => extractTranslation(s).replace(/&nbsp;/g, " ");
+        this.extractTranslation = s => extractTranslation(s)?.replace(/&nbsp;/g, " ");
         this.currentMatrix = this.doc.unitMatrix;
         this.currentMatrixInverted = this.doc.unitMatrix;
     }
