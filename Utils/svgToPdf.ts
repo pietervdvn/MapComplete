@@ -820,12 +820,12 @@ export class SvgToPdfPage {
             t = new TypedTranslation({"*": t})
         }
         if (t instanceof TypedTranslation) {
-            if (strict && t.translations[language] === undefined) {
+            if (strict && (t.translations[language] ?? t.translations["*"]) === undefined) {
                 return undefined
             }
             return t.Subs(this.options.textSubstitutions).textFor(language) + rest
         } else if (t instanceof Translation) {
-            if (strict && t.translations[language] === undefined) {
+            if (strict && (t.translations[language] ?? t.translations["*"]) === undefined) {
                 return undefined
             }
             return (<Translation>t).textFor(language) + rest
@@ -935,9 +935,13 @@ export class SvgToPdf {
     getTranslation(translationKey: string, language: string, strict: boolean = false) {
         for (const page of this._pages) {
             const tr = page.extractTranslation(translationKey, language, strict)
-            if (tr !== undefined && tr !== translationKey) {
-                return tr
+            if(tr === undefined){
+                continue
             }
+            if(tr === translationKey){
+                continue
+            }
+            return tr
         }
         return undefined
     }

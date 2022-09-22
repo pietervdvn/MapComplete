@@ -14,7 +14,7 @@ import Loading from "../Base/Loading";
 import BaseUIElement from "../BaseUIElement";
 import Img from "../Base/Img";
 import Title from "../Base/Title";
-import CheckBoxes, {CheckBox} from "../Input/Checkboxes";
+import {CheckBox} from "../Input/Checkboxes";
 import Minimap from "../Base/Minimap";
 import SearchAndGo from "./SearchAndGo";
 import Toggle from "../Input/Toggle";
@@ -183,7 +183,7 @@ class PreparePdf extends Combine implements FlowStep<{ svgToPdf: SvgToPdf, langu
             new FixedInputElement("English", "en")
         ]
         const langs: string[] = Array.from(Object.keys(languages["default"] ?? languages))
-        console.log("Available languages are:",langs)
+        console.log("Available languages are:", langs)
         const languageSelector = new SearchablePillsSelector(
             langs.map(l => ({
                 show: new Translation(languages[l]),
@@ -246,25 +246,33 @@ class InspectStrings extends Toggle implements FlowStep<{ svgToPdf: SvgToPdf, la
 
     private static createOverviewPanel(svgToPdf: SvgToPdf, language: string): BaseUIElement {
         const elements: BaseUIElement[] = []
-
-        for (const translationKey of Array.from(svgToPdf.translationKeys())) {
+        let foundTranslations = 0
+        const allKeys = Array.from(svgToPdf.translationKeys())
+        for (const translationKey of allKeys) {
             let spec = translationKey
             if (translationKey.startsWith("layer.")) {
                 spec = "layers:" + translationKey.substring(6)
             } else {
                 spec = "core:" + translationKey
             }
+            const translated = svgToPdf.getTranslation("$" + translationKey, language, true)
+            if (translated) {
+                foundTranslations++
+            }
+            const linkToWeblate = new Link(spec, LinkToWeblate.hrefToWeblate(language, spec), true).SetClass("font-bold link-underline")
             elements.push(new Combine([
-                new Link(spec, LinkToWeblate.hrefToWeblate(language, spec), true).SetClass("font-bold link-underline"),
+                linkToWeblate,
                 "&nbsp;",
-                svgToPdf.getTranslation("$" + translationKey, language, true) ?? new FixedUiElement("No translation found!").SetClass("alert")
+                translated ?? new FixedUiElement("No translation found!").SetClass("alert")
 
             ]))
         }
 
         return new Toggleable(
             new Title("Translations for " + language),
-            new Combine(["The following keys are used:",
+            new Combine([
+                `${foundTranslations}/${allKeys.length} of translations are found (${Math.floor(100 * foundTranslations / allKeys.length)}%)`,
+                "The following keys are used:",
                 new List(elements)
             ]),
             {closeOnClick: false, height: "15rem"})
