@@ -10,14 +10,12 @@ import "../assets/templates/UbuntuMono-B-bold.js"
 import {makeAbsolute, parseSVG} from 'svg-path-parser';
 import Translations from "../UI/i18n/Translations";
 import {Utils} from "../Utils";
-import Locale from "../UI/i18n/Locale";
 import Constants from "../Models/Constants";
 import Hash from "../Logic/Web/Hash";
 
 class SvgToPdfInternals {
     private readonly doc: jsPDF;
     private static readonly dummyDoc: jsPDF = new jsPDF()
-    private readonly textSubstitutions: Record<string, string>;
     private readonly matrices: Matrix[] = []
     private readonly matricesInverted: Matrix[] = []
 
@@ -25,17 +23,14 @@ class SvgToPdfInternals {
     private currentMatrixInverted: Matrix;
 
     private readonly _images: Record<string, HTMLImageElement>;
-    private readonly _layerTranslations: Record<string, Record<string, any>>;
     private readonly _rects: Record<string, SVGRectElement>;
-    private readonly _importedTranslations: Record<string, any>;
+    private readonly extractTranslation: (string) => string;
 
-    constructor(advancedApi: jsPDF, textSubstitutions: Record<string, string>, images: Record<string, HTMLImageElement>, rects: Record<string, SVGRectElement>, importedTranslations: Record<string, any>, layerTranslations: Record<string, Record<string, any>>) {
-        this._layerTranslations = layerTranslations;
-        this.textSubstitutions = textSubstitutions;
+    constructor(advancedApi: jsPDF, images: Record<string, HTMLImageElement>, rects: Record<string, SVGRectElement>, extractTranslation: (string) => string) {
         this.doc = advancedApi;
         this._images = images;
         this._rects = rects;
-        this._importedTranslations = importedTranslations;
+        this.extractTranslation = s => extractTranslation(s).replace(/&nbsp;/g, " ");
         this.currentMatrix = this.doc.unitMatrix;
         this.currentMatrixInverted = this.doc.unitMatrix;
     }
@@ -220,46 +215,6 @@ class SvgToPdfInternals {
         return undefined
     }
 
-    private extractTranslation(text: string) {
-        if(text === "$version"){
-            return new Date().toISOString().substring(0, "2022-01-02THH:MM".length      )+" - v"+Constants.vNumber
-        }
-        const pathPart = text.match(/\$(([_a-zA-Z0-9?]+\.)+[_a-zA-Z0-9?]+)(.*)/)
-        if (pathPart === null) {
-            return text
-        }
-        let t: any = Translations.t
-        const path = pathPart[1].split(".")
-        if (this._importedTranslations[path[0]]) {
-            path.splice(0, 1, ...this._importedTranslations[path[0]].split("."))
-        }
-        const rest = pathPart[3] ?? ""
-        if (path[0] === "layer") {
-            t = this._layerTranslations[Locale.language.data]
-            if (t === undefined) {
-                console.error("No layerTranslation available for language " + Locale.language.data)
-                return text
-            }
-            path.splice(0, 1)
-        }
-        for (const crumb of path) {
-            t = t[crumb]
-            if (t === undefined) {
-                console.error("No value found to substitute " + text, "the path is", path)
-                return undefined
-            }
-        }
-
-        if (typeof t === "string") {
-            t = new TypedTranslation({"*": t})
-        }
-        if (t instanceof TypedTranslation) {
-            return (<TypedTranslation<any>>t).Subs(this.textSubstitutions).txt + rest
-        } else {
-            return (<Translation>t).txt + rest
-        }
-    }
-
     private drawTspan(tspan: Element) {
         if (tspan.textContent == "") {
             return
@@ -301,20 +256,19 @@ class SvgToPdfInternals {
         let result: string = ""
         let addSpace = false
         for (let text of textTemplate) {
-
-            if(text === "\\n"){
+            if (text === "\\n") {
                 result += "\n"
                 addSpace = false
                 continue
             }
-            if(text === "\\n\\n"){
+            if (text === "\\n\\n") {
                 result += "\n\n"
                 addSpace = false
                 continue
             }
 
             if (!text.startsWith("$")) {
-                if(addSpace){
+                if (addSpace) {
                     result += " "
                 }
                 result += text
@@ -337,13 +291,12 @@ class SvgToPdfInternals {
                 addSpace = false
             } else {
                 const found = this.extractTranslation(text) ?? text
-                if(addSpace){
+                if (addSpace) {
                     result += " "
                 }
                 result += found
                 addSpace = true
             }
-
         }
         this.doc.text(result, x, y, {
             maxWidth,
@@ -458,9 +411,6 @@ class SvgToPdfInternals {
     }
 
     public handleElement(element: SVGSVGElement | Element): void {
-        if(element.id === "path15616"){
-            console.log("Handling element", element)
-        }
         const isTransformed = this.setTransform(element)
         try {
 
@@ -534,7 +484,7 @@ export interface SvgToPdfOptions {
     disableMaps?: false | true
     textSubstitutions?: Record<string, string>,
     beforePage?: (i: number) => void,
-    overrideLocation?: {lat: number, lon: number}
+    overrideLocation?: { lat: number, lon: number }
 }
 
 
@@ -590,6 +540,27 @@ export class SvgToPdfPage {
         })
     }
 
+    public extractTranslations(): Set<string> {
+        const textContents: string[] = Array.from(this._svgRoot.getElementsByTagName("tspan"))
+            .map(t => t.textContent)
+        const translations = new Set<string>()
+        console.log("Extracting translations, contents are", textContents)
+        for (const tc of textContents) {
+            const parts = tc.split(" ").filter(p => p.startsWith("$") && p.indexOf("(") < 0)
+            for (let part of parts) {
+                part = part.substring(1) // Drop the $
+                let path = part.split(".")
+                const importPath = this.importedTranslations[path[0]]
+                if (importPath) {
+                    translations.add(importPath + "." + path.slice(1).join("."))
+                } else {
+                    translations.add(part)
+                }
+            }
+        }
+        console.log("Translations keys are", translations)
+        return translations
+    }
 
     public async prepareElement(element: SVGSVGElement | Element, mapTextSpecs: SVGTSpanElement[]): Promise<void> {
         if (element.tagName === "rect") {
@@ -615,7 +586,6 @@ export class SvgToPdfPage {
                 }
                 if (element.textContent.startsWith("$map(")) {
                     mapTextSpecs.push(<any>element)
-
                 }
             }
         }
@@ -685,7 +655,7 @@ export class SvgToPdfPage {
             console.error("Could not show map with parameters", params)
             throw "Theme not found:" + params["theme"] + ". Use theme: to define which theme to use. "
         }
-        layout.widenFactor =  0
+        layout.widenFactor = 0
         layout.overpassTimeout = 600
         layout.defaultBackgroundId = params["background"] ?? layout.defaultBackgroundId
         for (const paramsKey in params) {
@@ -705,16 +675,16 @@ export class SvgToPdfPage {
         const zoom = Number(params["zoom"] ?? params["z"] ?? 14);
 
         Hash.hash.setData(undefined)
-      //  QueryParameters.ClearAll()
+        //  QueryParameters.ClearAll()
 
         const state = new FeaturePipelineState(layout)
         state.locationControl.setData({
             zoom,
-            lat: this.options?.overrideLocation?.lat ??  Number(params["lat"] ?? 51.05016),
-            lon: this.options?.overrideLocation?.lon ??  Number(params["lon"] ?? 3.717842)
+            lat: this.options?.overrideLocation?.lat ?? Number(params["lat"] ?? 51.05016),
+            lon: this.options?.overrideLocation?.lon ?? Number(params["lon"] ?? 3.717842)
         })
 
-        console.log("Params are", params, params["layers"]==="none")
+        console.log("Params are", params, params["layers"] === "none")
 
         const fl = state.filteredLayers.data
         for (const filteredLayer of fl) {
@@ -741,7 +711,7 @@ export class SvgToPdfPage {
                     layer.layerDef.minzoom = 0
                     layer.layerDef.minzoomVisible = 0
                     layer.isDisplayed.addCallback(isDisplayed => {
-                        if(!isDisplayed){
+                        if (!isDisplayed) {
                             console.warn("Forcing layer " + paramsKey + " as true")
                             layer.isDisplayed.setData(true)
                         }
@@ -775,12 +745,11 @@ export class SvgToPdfPage {
         textElement.parentElement.removeChild(textElement)
     }
 
-    public async PrepareLanguage(language: string){
+    public async PrepareLanguage(language: string) {
         // Always fetch the remote data - it's cached anyway
         this.layerTranslations[language] = await Utils.downloadJsonCached("https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/langs/layers/" + language + ".json", 24 * 60 * 60 * 1000)
         const shared_questions = await Utils.downloadJsonCached("https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/langs/shared-questions/" + language + ".json", 24 * 60 * 60 * 1000)
         this.layerTranslations[language]["shared-questions"] = shared_questions["shared_questions"]
-
     }
 
     public async Prepare() {
@@ -801,7 +770,7 @@ export class SvgToPdfPage {
 
     }
 
-    public drawPage(advancedApi: jsPDF, i: number): void {
+    public drawPage(advancedApi: jsPDF, i: number, language): void {
         if (!this._isPrepared) {
             throw "Run 'Prepare()' first!"
         }
@@ -809,9 +778,59 @@ export class SvgToPdfPage {
         if (this.options.beforePage) {
             this.options.beforePage(i)
         }
-        const internal = new SvgToPdfInternals(advancedApi, this.options.textSubstitutions, this.images, this.rects, this.importedTranslations, this.layerTranslations);
+        const self = this
+        const internal = new SvgToPdfInternals(advancedApi, this.images, this.rects, key => self.extractTranslation(key, language));
         for (let child of Array.from(this._svgRoot.children)) {
             internal.handleElement(<any>child)
+        }
+    }
+
+
+    extractTranslation(text: string, language: string, strict: boolean = false) {
+        if (text === "$version") {
+            return new Date().toISOString().substring(0, "2022-01-02THH:MM".length) + " - v" + Constants.vNumber
+        }
+        const pathPart = text.match(/\$(([_a-zA-Z0-9? ]+\.)+[_a-zA-Z0-9? ]+)(.*)/)
+        if (pathPart === null) {
+            return text
+        }
+        let t: any = Translations.t
+        const path = pathPart[1].split(".")
+        if (this.importedTranslations[path[0]]) {
+            path.splice(0, 1, ...this.importedTranslations[path[0]].split("."))
+        }
+        const rest = pathPart[3] ?? ""
+        if (path[0] === "layer") {
+            t = this.layerTranslations[language]
+            if (t === undefined) {
+                console.error("No layerTranslation available for language " + language)
+                return text
+            }
+            path.splice(0, 1)
+        }
+        for (const crumb of path) {
+            t = t[crumb]
+            if (t === undefined) {
+                console.error("No value found to substitute " + text, "the path is", path)
+                return undefined
+            }
+        }
+
+        if (typeof t === "string") {
+            t = new TypedTranslation({"*": t})
+        }
+        if (t instanceof TypedTranslation) {
+            if (strict && t.translations[language] === undefined) {
+                return undefined
+            }
+            return t.Subs(this.options.textSubstitutions).textFor(language) + rest
+        } else if (t instanceof Translation) {
+            if (strict && t.translations[language] === undefined) {
+                return undefined
+            }
+            return (<Translation>t).textFor(language) + rest
+        } else {
+            console.error("Could not get textFor from ", t, "for path", text)
         }
     }
 
@@ -819,10 +838,19 @@ export class SvgToPdfPage {
 
 export class SvgToPdf {
 
-    public static readonly templates : Record<string, {pages: string[], description: string | Translation}>= {
-        flyer_a4:{pages: ["/assets/templates/MapComplete-flyer.svg","/assets/templates/MapComplete-flyer.back.svg"], description: Translations.t.flyer.description},
-        poster_a3: {pages: ["/assets/templates/MapComplete-poster-a3.svg"], description: "A basic A3 poster (similar to the flyer)"},
-        poster_a2: {pages: ["/assets/templates/MapComplete-poster-a2.svg"], description: "A basic A2 poster (similar to the flyer); scaled up from the A3 poster"}
+    public static readonly templates: Record<string, { pages: string[], description: string | Translation }> = {
+        flyer_a4: {
+            pages: ["/assets/templates/MapComplete-flyer.svg", "/assets/templates/MapComplete-flyer.back.svg"],
+            description: Translations.t.flyer.description
+        },
+        poster_a3: {
+            pages: ["/assets/templates/MapComplete-poster-a3.svg"],
+            description: "A basic A3 poster (similar to the flyer)"
+        },
+        poster_a2: {
+            pages: ["/assets/templates/MapComplete-poster-a2.svg"],
+            description: "A basic A2 poster (similar to the flyer); scaled up from the A3 poster"
+        }
     }
     private readonly _title: string;
 
@@ -833,7 +861,7 @@ export class SvgToPdf {
         options = options ?? <SvgToPdfOptions>{}
         options.textSubstitutions = options.textSubstitutions ?? {}
         const mapCount = "" + Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(th => !th.hideFromOverview).length;
-        options.textSubstitutions["mapCount"]  = mapCount
+        options.textSubstitutions["mapCount"] = mapCount
 
         this._pages = pages.map(page => new SvgToPdfPage(page, options))
     }
@@ -851,7 +879,6 @@ export class SvgToPdf {
             await page.PrepareLanguage(language)
         }
 
-        Locale.language.setData(language)
         const doc = new jsPDF(mode, undefined, [width, height])
         doc.advancedAPI(advancedApi => {
             for (let i = 0; i < this._pages.length; i++) {
@@ -868,17 +895,50 @@ export class SvgToPdf {
                     const sy = mediabox.topRightY / targetHeight
                     advancedApi.setCurrentTransformationMatrix(advancedApi.Matrix(sx, 0, 0, -sy, 0, mediabox.topRightY))
                 }
-                this._pages[i].drawPage(advancedApi, i)
+                this._pages[i].drawPage(advancedApi, i, language)
             }
         })
-        await doc.save(this._title+"."+language+".pdf");
+        await doc.save(this._title + "." + language + ".pdf");
     }
 
+    public translationKeys(): Set<string> {
+        const allTranslations = this._pages[0].extractTranslations()
+        for (let i = 1; i < this._pages.length; i++) {
+            const translations = this._pages[i].extractTranslations()
+            translations.forEach(t => allTranslations.add(t))
+        }
+        allTranslations.delete("import")
+        allTranslations.delete("version")
+        return allTranslations
+    }
 
+    /**
+     * Prepares all the minimaps
+     * @constructor
+     */
     public async Prepare(): Promise<SvgToPdf> {
         for (const page of this._pages) {
             await page.Prepare()
         }
         return this
+    }
+
+    public async PrepareLanguages(languages: string[]): Promise<boolean> {
+        for (const page of this._pages) {
+            // Load all languages at once.
+            // We don't parallelize the pages, as they'll probably reload the same languages anyway (and they are cached)
+            await Promise.all(languages.map(async language => await page.PrepareLanguage(language)))
+        }
+        return true
+    }
+
+    getTranslation(translationKey: string, language: string, strict: boolean = false) {
+        for (const page of this._pages) {
+            const tr = page.extractTranslation(translationKey, language, strict)
+            if (tr !== undefined && tr !== translationKey) {
+                return tr
+            }
+        }
+        return undefined
     }
 }

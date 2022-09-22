@@ -728,16 +728,16 @@ video {
   margin: 0.25rem;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
 
 .m-5 {
   margin: 1.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
 }
 
 .m-0\.5 {
@@ -1028,10 +1028,6 @@ video {
   width: 100%;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
 .w-24 {
   width: 6rem;
 }
@@ -1080,6 +1076,10 @@ video {
 .w-max {
   width: -webkit-max-content;
   width: max-content;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .w-32 {
@@ -1313,10 +1313,6 @@ video {
   border-radius: 9999px;
 }
 
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-
 .rounded-3xl {
   border-radius: 1.5rem;
 }
@@ -1333,6 +1329,10 @@ video {
   border-radius: 0.5rem;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .rounded-sm {
   border-radius: 0.125rem;
 }
@@ -1342,12 +1342,12 @@ video {
   border-bottom-left-radius: 0.25rem;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-4 {
@@ -1366,14 +1366,14 @@ video {
   border-bottom-width: 1px;
 }
 
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .border-gray-400 {
@@ -1489,10 +1489,6 @@ video {
   padding-right: 1rem;
 }
 
-.pl-4 {
-  padding-left: 1rem;
-}
-
 .pl-1 {
   padding-left: 0.25rem;
 }
@@ -1503,6 +1499,10 @@ video {
 
 .pb-12 {
   padding-bottom: 3rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
 }
 
 .pl-2 {
@@ -1533,6 +1533,10 @@ video {
   padding-top: 0px;
 }
 
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
 .pl-5 {
   padding-left: 1.25rem;
 }
@@ -1555,10 +1559,6 @@ video {
 
 .pt-0\.5 {
   padding-top: 0.125rem;
-}
-
-.pr-2 {
-  padding-right: 0.5rem;
 }
 
 .pl-6 {
@@ -2038,6 +2038,11 @@ input[type="range"].vertical {
 }
 
 .link-underline a {
+  -webkit-text-decoration: underline 1px var(--foreground-color);
+          text-decoration: underline 1px var(--foreground-color);
+}
+
+a.link-underline {
   -webkit-text-decoration: underline 1px var(--foreground-color);
           text-decoration: underline 1px var(--foreground-color);
 }

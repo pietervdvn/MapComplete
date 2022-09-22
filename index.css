@@ -288,6 +288,10 @@ input[type="range"].vertical {
   text-decoration: underline 1px var(--foreground-color);
 }
 
+a.link-underline {
+  text-decoration: underline 1px var(--foreground-color);
+}
+
 .link-no-underline a {
   text-decoration: none;
 }

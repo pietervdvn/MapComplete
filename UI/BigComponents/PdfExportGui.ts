@@ -21,6 +21,13 @@ import Toggle from "../Input/Toggle";
 import List from "../Base/List";
 import LeftIndex from "../Base/LeftIndex";
 import Constants from "../../Models/Constants";
+import Toggleable from "../Base/Toggleable";
+import Lazy from "../Base/Lazy";
+import LinkToWeblate from "../Base/LinkToWeblate";
+import Link from "../Base/Link";
+import {SearchablePillsSelector} from "../Input/SearchableMappingsSelector";
+import * as languages from "../../assets/language_translations.json"
+import {Translation} from "../i18n/Translation";
 
 class SelectTemplate extends Combine implements FlowStep<{ title: string, pages: string[] }> {
     readonly IsValid: Store<boolean>;
@@ -64,7 +71,7 @@ class SelectTemplate extends Combine implements FlowStep<{ title: string, pages:
                 }
 
             },
-            fromX => undefined
+            _ => undefined
         )
         elements.push(fileMapped)
         const radio = new RadioButton(elements, {selectFirstAsDefault: true})
@@ -175,13 +182,23 @@ class PreparePdf extends Combine implements FlowStep<{ svgToPdf: SvgToPdf, langu
             new FixedInputElement("Nederlands", "nl"),
             new FixedInputElement("English", "en")
         ]
-        const languages = new CheckBoxes(languageOptions)
+        const langs: string[] = Array.from(Object.keys(languages["default"] ?? languages))
+        console.log("Available languages are:",langs)
+        const languageSelector = new SearchablePillsSelector(
+            langs.map(l => ({
+                show: new Translation(languages[l]),
+                value: l,
+                mainTerm: languages[l]
+            })), {
+                mode: "select-many"
+            }
+        )
 
         const isPrepared = UIEventSource.FromPromiseWithErr(svgToPdf.Prepare())
 
         super([
             new Title("Select languages..."),
-            languages,
+            languageSelector,
             new Toggle(
                 new Loading("Preparing maps..."),
                 undefined,
@@ -194,19 +211,66 @@ class PreparePdf extends Combine implements FlowStep<{ svgToPdf: SvgToPdf, langu
             }
             if (isPrepped["success"] !== undefined) {
                 const svgToPdf = isPrepped["success"]
-                const langs = languages.GetValue().data.map(i => languageOptions[i].GetValue().data)
+                const langs = languageSelector.GetValue().data
+                console.log("Languages are", langs)
                 if (langs.length === 0) {
                     return undefined
                 }
                 return {svgToPdf, languages: langs}
             }
             return undefined;
-        }, [languages.GetValue()])
+        }, [languageSelector.GetValue()])
         this.IsValid = this.Value.map(v => v !== undefined)
     }
 
 }
 
+class InspectStrings extends Toggle implements FlowStep<{ svgToPdf: SvgToPdf, languages: string[] }> {
+    readonly IsValid: Store<boolean>;
+    readonly Value: Store<{ svgToPdf: SvgToPdf; languages: string[] }>;
+
+    constructor(svgToPdf: SvgToPdf, languages: string[]) {
+
+        const didLoadLanguages = UIEventSource.FromPromiseWithErr(svgToPdf.PrepareLanguages(languages)).map(l => l !== undefined && l["success"] !== undefined)
+
+        super(new Combine([
+                new Title("Inspect translation strings"),
+                ...languages.map(l => new Lazy(() => InspectStrings.createOverviewPanel(svgToPdf, l)))
+            ]),
+            new Loading(),
+            didLoadLanguages
+        );
+        this.Value = new ImmutableStore({svgToPdf, languages})
+        this.IsValid = didLoadLanguages
+    }
+
+    private static createOverviewPanel(svgToPdf: SvgToPdf, language: string): BaseUIElement {
+        const elements: BaseUIElement[] = []
+
+        for (const translationKey of Array.from(svgToPdf.translationKeys())) {
+            let spec = translationKey
+            if (translationKey.startsWith("layer.")) {
+                spec = "layers:" + translationKey.substring(6)
+            } else {
+                spec = "core:" + translationKey
+            }
+            elements.push(new Combine([
+                new Link(spec, LinkToWeblate.hrefToWeblate(language, spec), true).SetClass("font-bold link-underline"),
+                "&nbsp;",
+                svgToPdf.getTranslation("$" + translationKey, language, true) ?? new FixedUiElement("No translation found!").SetClass("alert")
+
+            ]))
+        }
+
+        return new Toggleable(
+            new Title("Translations for " + language),
+            new Combine(["The following keys are used:",
+                new List(elements)
+            ]),
+            {closeOnClick: false, height: "15rem"})
+    }
+
+}
 
 class SavePdf extends Combine {
 
@@ -242,6 +306,7 @@ export class PdfExportGui extends LeftIndex {
             new Title("Select template"), new SelectTemplate()
         ).then(new Title("Select options"), ({title, pages}) => new SelectPdfOptions(title, pages, createDiv))
             .then("Generate maps...", ({title, pages, options}) => new PreparePdf(title, pages, options))
+            .then("Inspect translations", (({svgToPdf, languages}) => new InspectStrings(svgToPdf, languages)))
             .finish("Generating...", ({svgToPdf, languages}) => new SavePdf(svgToPdf, languages))
 
 

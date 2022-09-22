@@ -11,7 +11,7 @@ import Link from "../Base/Link"
 import LinkToWeblate from "../Base/LinkToWeblate"
 import Toggleable from "../Base/Toggleable"
 import Title from "../Base/Title"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { Store } from "../../Logic/UIEventSource"
 import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
 import * as native_languages from "../../assets/language_native.json"
@@ -89,8 +89,6 @@ class TranslatorsPanelContent extends Combine {
             ]
         }
 
-        //
-        //
         // "translationCompleteness": "Translations for {theme} in {language} are at {percentage}: {translated} out of {total}",
         const translated = seed.Subs({
             total,
