@@ -1,19 +1,23 @@
-import { DesugaringStep, Each, Fuse, On } from "./Conversion"
-import { LayerConfigJson } from "../Json/LayerConfigJson"
+import {DesugaringStep, Each, Fuse, On} from "./Conversion"
+import {LayerConfigJson} from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
-import { Utils } from "../../../Utils"
+import {Utils} from "../../../Utils"
 import Constants from "../../Constants"
-import { Translation } from "../../../UI/i18n/Translation"
-import { LayoutConfigJson } from "../Json/LayoutConfigJson"
+import {Translation} from "../../../UI/i18n/Translation"
+import {LayoutConfigJson} from "../Json/LayoutConfigJson"
 import LayoutConfig from "../LayoutConfig"
-import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
-import { TagUtils } from "../../../Logic/Tags/TagUtils"
-import { ExtractImages } from "./FixImages"
+import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson"
+import {TagUtils} from "../../../Logic/Tags/TagUtils"
+import {ExtractImages} from "./FixImages"
 import ScriptUtils from "../../../scripts/ScriptUtils"
-import { And } from "../../../Logic/Tags/And"
+import {And} from "../../../Logic/Tags/And"
 import Translations from "../../../UI/i18n/Translations"
 import Svg from "../../../Svg"
-import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import {QuestionableTagRenderingConfigJson} from "../Json/QuestionableTagRenderingConfigJson"
+import FilterConfigJson from "../Json/FilterConfigJson";
+import {control} from "leaflet";
+import layers = control.layers;
+import DeleteConfig from "../DeleteConfig";
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -40,12 +44,12 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
                 .forEach((missing) => {
                     errors.push(
                         context +
-                            "A theme should be translation-complete for " +
-                            neededLanguage +
-                            ", but it lacks a translation for " +
-                            missing.context +
-                            ".\n\tThe known translation is " +
-                            missing.tr.textFor("en")
+                        "A theme should be translation-complete for " +
+                        neededLanguage +
+                        ", but it lacks a translation for " +
+                        missing.context +
+                        ".\n\tThe known translation is " +
+                        missing.tr.textFor("en")
                     )
                 })
         }
@@ -79,16 +83,16 @@ export class DoesImageExist extends DesugaringStep<string> {
         const information = []
         if (image.indexOf("{") >= 0) {
             information.push("Ignoring image with { in the path: " + image)
-            return { result: image }
+            return {result: image}
         }
 
         if (image === "assets/SocialImage.png") {
-            return { result: image }
+            return {result: image}
         }
         if (image.match(/[a-z]*/)) {
             if (Svg.All[image + ".svg"] !== undefined) {
                 // This is a builtin img, e.g. 'checkmark' or 'crosshair'
-                return { result: image }
+                return {result: image}
             }
         }
 
@@ -155,20 +159,20 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 if (json["units"] !== undefined) {
                     errors.push(
                         "The theme " +
-                            json.id +
-                            " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) "
+                        json.id +
+                        " has units defined - these should be defined on the layer instead. (Hint: use overrideAll: { '+units': ... }) "
                     )
                 }
                 if (json["roamingRenderings"] !== undefined) {
                     errors.push(
                         "Theme " +
-                            json.id +
-                            " contains an old 'roamingRenderings'. Use an 'overrideAll' instead"
+                        json.id +
+                        " contains an old 'roamingRenderings'. Use an 'overrideAll' instead"
                     )
                 }
             }
         }
-        if(this._isBuiltin)  {
+        if (this._isBuiltin) {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
             const images = new ExtractImages(
                 this._isBuiltin,
@@ -178,10 +182,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             for (const remoteImage of remoteImages) {
                 errors.push(
                     "Found a remote image: " +
-                        remoteImage +
-                        " in theme " +
-                        json.id +
-                        ", please download it."
+                    remoteImage +
+                    " in theme " +
+                    json.id +
+                    ", please download it."
                 )
             }
             for (const image of images) {
@@ -210,10 +214,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                         const h = parseInt(height)
                         if (w < 370 || h < 370) {
                             const e: string = [
-                                `the icon for theme ${json.id} is too small. Please rescale the icon at ${json.icon}`,
-                                `Even though an SVG is 'infinitely scaleable', the icon should be dimensioned bigger. One of the build steps of the theme does convert the image to a PNG (to serve as PWA-icon) and having a small dimension will cause blurry images.`,
-                                ` Width = ${width} height = ${height}; we recommend a size of at least 500px * 500px and to use a square aspect ratio.`,
-                            ].join("\n")
+                                    `the icon for theme ${json.id} is too small. Please rescale the icon at ${json.icon}`,
+                                    `Even though an SVG is 'infinitely scaleable', the icon should be dimensioned bigger. One of the build steps of the theme does convert the image to a PNG (to serve as PWA-icon) and having a small dimension will cause blurry images.`,
+                                    ` Width = ${width} height = ${height}; we recommend a size of at least 500px * 500px and to use a square aspect ratio.`,
+                                ].join("\n")
                             ;(json.hideFromOverview ? warnings : errors).push(e)
                         }
                     })
@@ -224,34 +228,34 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         }
 
         try {
-            if(this._isBuiltin){
+            if (this._isBuiltin) {
 
-            if (theme.id !== theme.id.toLowerCase()) {
-                errors.push("Theme ids should be in lowercase, but it is " + theme.id)
-            }
+                if (theme.id !== theme.id.toLowerCase()) {
+                    errors.push("Theme ids should be in lowercase, but it is " + theme.id)
+                }
 
-            const filename = this._path.substring(
-                this._path.lastIndexOf("/") + 1,
-                this._path.length - 5
-            )
-            if (theme.id !== filename) {
-                errors.push(
-                    "Theme ids should be the same as the name.json, but we got id: " +
+                const filename = this._path.substring(
+                    this._path.lastIndexOf("/") + 1,
+                    this._path.length - 5
+                )
+                if (theme.id !== filename) {
+                    errors.push(
+                        "Theme ids should be the same as the name.json, but we got id: " +
                         theme.id +
                         " and filename " +
                         filename +
                         " (" +
                         this._path +
                         ")"
+                    )
+                }
+                this._validateImage.convertJoin(
+                    theme.icon,
+                    context + ".icon",
+                    errors,
+                    warnings,
+                    information
                 )
-            }
-            this._validateImage.convertJoin(
-                theme.icon,
-                context + ".icon",
-                errors,
-                warnings,
-                information
-            )
             }
             const dups = Utils.Dupiclates(json.layers.map((layer) => layer["id"]))
             if (dups.length > 0) {
@@ -321,7 +325,7 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
     ): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
-            return { result: json }
+            return {result: json}
         }
 
         const errors = []
@@ -348,7 +352,7 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
             }
         }
 
-        return { result: json, errors }
+        return {result: json, errors}
     }
 }
 
@@ -458,7 +462,7 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
         const errors = []
         const warnings = []
         if (json.mappings === undefined || json.mappings.length === 0) {
-            return { result: json }
+            return {result: json}
         }
         const defaultProperties = {}
         for (const calculatedTagName of this._calculatedTagNames) {
@@ -487,7 +491,7 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
             }
             const keyValues = parsedConditions[i].asChange(defaultProperties)
             const properties = {}
-            keyValues.forEach(({ k, v }) => {
+            keyValues.forEach(({k, v}) => {
                 properties[k] = v
             })
             for (let j = 0; j < i; j++) {
@@ -504,10 +508,10 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
                     // The current mapping is shadowed!
                     errors.push(`At ${context}: Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
     The mapping ${parsedConditions[i].asHumanString(
-        false,
-        false,
-        {}
-    )} is fully matched by a previous mapping (namely ${j}), which matches:
+                        false,
+                        false,
+                        {}
+                    )} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
 
     To fix this problem, you can try to:
@@ -576,7 +580,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
         const warnings: string[] = []
         const information: string[] = []
         if (json.mappings === undefined || json.mappings.length === 0) {
-            return { result: json }
+            return {result: json}
         }
         const ignoreToken = "ignore-image-in-then"
         for (let i = 0; i < json.mappings.length; i++) {
@@ -662,13 +666,13 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             if (json.title === undefined) {
                 errors.push(
                     context +
-                        ": this layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error."
+                    ": this layer does not have a title defined but it does have tagRenderings. Not having a title will disable the popups, resulting in an unclickable element. Please add a title. If not having a popup is intended and the tagrenderings need to be kept (e.g. in a library layer), set `title: null` to disable this error."
                 )
             }
             if (json.title === null) {
                 information.push(
                     context +
-                        ": title is `null`. This results in an element that cannot be clicked - even though tagRenderings is set."
+                    ": title is `null`. This results in an element that cannot be clicked - even though tagRenderings is set."
                 )
             }
         }
@@ -695,22 +699,28 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             if (duplicates.length > 0) {
                 errors.push(
                     "At " +
-                        context +
-                        ": some tagrenderings have a duplicate id: " +
-                        duplicates.join(", ")
+                    context +
+                    ": some tagrenderings have a duplicate id: " +
+                    duplicates.join(", ")
                 )
             }
         }
 
+        if(json.deletion !== undefined && json.deletion instanceof DeleteConfig){
+            if(json.deletion.softDeletionTags === undefined){
+                warnings.push("No soft-deletion tags in deletion block for layer "+json.id)
+            }
+        }
+
         try {
-         if(this._isBuiltin)   {
+            if (this._isBuiltin) {
                 // Some checks for legacy elements
 
                 if (json["overpassTags"] !== undefined) {
                     errors.push(
                         "Layer " +
-                            json.id +
-                            'still uses the old \'overpassTags\'-format. Please use "source": {"osmTags": <tags>}\' instead of "overpassTags": <tags> (note: this isn\'t your fault, the custom theme generator still spits out the old format)'
+                        json.id +
+                        'still uses the old \'overpassTags\'-format. Please use "source": {"osmTags": <tags>}\' instead of "overpassTags": <tags> (note: this isn\'t your fault, the custom theme generator still spits out the old format)'
                     )
                 }
                 const forbiddenTopLevel = [
@@ -728,18 +738,18 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     if (json[forbiddenKey] !== undefined)
                         errors.push(
                             context +
-                                ": layer " +
-                                json.id +
-                                " still has a forbidden key " +
-                                forbiddenKey
+                            ": layer " +
+                            json.id +
+                            " still has a forbidden key " +
+                            forbiddenKey
                         )
                 }
                 if (json["hideUnderlayingFeaturesMinPercentage"] !== undefined) {
                     errors.push(
                         context +
-                            ": layer " +
-                            json.id +
-                            " contains an old 'hideUnderlayingFeaturesMinPercentage'"
+                        ": layer " +
+                        json.id +
+                        " contains an old 'hideUnderlayingFeaturesMinPercentage'"
                     )
                 }
 
@@ -750,15 +760,15 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     warnings.push(context + " has a tagRendering as `isShown`")
                 }
             }
-           if(this._isBuiltin) {
+            if (this._isBuiltin) {
                 // Check location of layer file
                 const expected: string = `assets/layers/${json.id}/${json.id}.json`
                 if (this._path != undefined && this._path.indexOf(expected) < 0) {
                     errors.push(
                         "Layer is in an incorrect place. The path is " +
-                            this._path +
-                            ", but expected " +
-                            expected
+                        this._path +
+                        ", but expected " +
+                        expected
                     )
                 }
             }
@@ -816,9 +826,9 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 if (hasCondition?.length > 0) {
                     errors.push(
                         "At " +
-                            context +
-                            ":\n    One or more icons in the mapRenderings have a condition set. Don't do this, as this will result in an invisible but clickable element. Use extra filters in the source instead. The offending mapRenderings are:\n" +
-                            JSON.stringify(hasCondition, null, "  ")
+                        context +
+                        ":\n    One or more icons in the mapRenderings have a condition set. Don't do this, as this will result in an invisible but clickable element. Use extra filters in the source instead. The offending mapRenderings are:\n" +
+                        JSON.stringify(hasCondition, null, "  ")
                     )
                 }
             }
@@ -830,7 +840,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     const preset = json.presets[i]
                     const tags: { k: string; v: string }[] = new And(
                         preset.tags.map((t) => TagUtils.Tag(t))
-                    ).asChange({ id: "node/-1" })
+                    ).asChange({id: "node/-1"})
                     const properties = {}
                     for (const tag of tags) {
                         properties[tag.k] = tag.v
@@ -839,12 +849,12 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     if (!doMatch) {
                         errors.push(
                             context +
-                                ".presets[" +
-                                i +
-                                "]: This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " +
-                                JSON.stringify(properties) +
-                                "\n    The required tags are: " +
-                                baseTags.asHumanString(false, false, {})
+                            ".presets[" +
+                            i +
+                            "]: This preset does not match the required tags of this layer. This implies that a newly added point will not show up.\n    A newly created point will have properties: " +
+                            JSON.stringify(properties) +
+                            "\n    The required tags are: " +
+                            baseTags.asHumanString(false, false, {})
                         )
                     }
                 }
@@ -860,4 +870,110 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             information,
         }
     }
+}
+
+export class DetectDuplicateFilters extends DesugaringStep<{ layers: LayerConfigJson[], themes: LayoutConfigJson[]}> {
+
+    constructor() {
+        super("Tries to detect layers where a shared filter can be used (or where similar filters occur)", [], "DetectDuplicateFilters");
+    }
+
+    /**
+     * Add all filter options into 'perOsmTag'
+     */
+    private addLayerFilters(layer: LayerConfigJson, perOsmTag: Map<string, {
+        layer: LayerConfigJson,
+        layout: LayoutConfigJson | undefined,
+        filter: FilterConfigJson
+    }[]>, layout?: LayoutConfigJson | undefined): void {
+        if (layer.filter === undefined || layer.filter === null) {
+            return;
+        }
+        if (layer.filter["sameAs"] !== undefined) {
+            return;
+        }
+        for (const filter of (<(string | FilterConfigJson) []>layer.filter)) {
+            if (typeof filter === "string") {
+                continue
+            }
+
+            if(filter["#"]?.indexOf("ignore-possible-duplicate")>=0){
+                continue
+            }
+
+            for (const option of filter.options) {
+                if (option.osmTags === undefined) {
+                    continue
+                }
+                const key = JSON.stringify(option.osmTags)
+                if (!perOsmTag.has(key)) {
+                    perOsmTag.set(key, [])
+                }
+                perOsmTag.get(key).push({
+                    layer, filter, layout
+                })
+            }
+
+        }
+
+    }
+
+    convert(json: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] }, context: string): { result: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] }; errors?: string[]; warnings?: string[]; information?: string[] } {
+
+        const errors: string[] = []
+        const warnings: string[] = []
+        const information: string[] = []
+
+        const {layers, themes} = json
+        const perOsmTag = new Map<string, {
+            layer: LayerConfigJson,
+            layout: LayoutConfigJson | undefined,
+            filter: FilterConfigJson
+        }[]>()
+
+        for (const layer of layers) {
+            this.addLayerFilters(layer, perOsmTag)
+        }
+
+        for (const theme of themes) {
+            if(theme.id === "personal"){
+                continue
+            }
+            for (const layer of theme.layers) {
+                if(typeof layer === "string"){
+                    continue
+                }
+                if(layer["builtin"] !== undefined){
+                    continue
+                }
+                this.addLayerFilters(<LayerConfigJson> layer, perOsmTag, theme)
+            }
+        }
+
+
+        // At this point, we have gathered all filters per tag - time to find duplicates
+        perOsmTag.forEach((value, key) => {
+            if(value.length <= 1){
+                // Seen this key just once, it is unique
+                return;
+            }
+            let msg = "Possible duplicate filter: "+ key
+            for (const {filter, layer, layout} of value) {
+                let id = ""
+                if(layout !== undefined){
+                    id = layout.id + ":"
+                }
+                msg += `\n      - ${id}${layer.id}.${filter.id}`
+            }
+            warnings.push(msg)
+        })
+
+        return {
+            result: json,
+            errors,
+            warnings,
+            information
+        };
+    }
+
 }

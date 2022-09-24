@@ -8,7 +8,7 @@
     "en": "Layer showing individual parking spaces.",
     "de": "Ebene mit den einzelnen PKW Stellplätzen."
   },
-  "minzoom": 20,
+  "minzoom": 19,
   "source": {
     "osmTags": "amenity=parking_space"
   },

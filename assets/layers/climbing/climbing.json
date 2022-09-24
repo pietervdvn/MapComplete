@@ -6,7 +6,7 @@
     "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
     "de": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden"
   },
-  "minzoom": 25,
+  "minzoom": 19,
   "source": {
     "osmTags": "sport=climbing"
   },
