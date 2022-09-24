@@ -480,6 +480,17 @@
     "extinguisher": {
         "description": "顯示消防栓的地圖圖層。"
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "目前開放"
+                    }
+                }
+            }
+        }
+    },
     "ghost_bike": {
         "name": "幽靈單車",
         "presets": {
@@ -558,17 +569,6 @@
         "description": "顯示消防栓的地圖圖層。",
         "name": "消防栓地圖"
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "目前開放"
-                    }
-                }
-            }
-        }
-    },
     "postboxes": {
         "description": "這圖層顯示郵筒。",
         "name": "郵筒",
@@ -583,15 +583,6 @@
     },
     "postoffices": {
         "description": "圖層顯示郵局。",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "目前開放"
-                    }
-                }
-            }
-        },
         "name": "郵局",
         "presets": {
             "0": {

@@ -1246,6 +1246,17 @@
             "render": "Estintori"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aperto ora"
+                    }
+                }
+            }
+        }
+    },
     "fire_station": {
         "description": "Livello che mostra le caserme dei vigili del fuoco.",
         "name": "Mappa delle caserme dei vigili del fuoco",
@@ -1746,13 +1757,6 @@
     "recycling": {
         "description": "Un livello con i contenitori e centri per la raccolta rifiuti riciclabili",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Aperto ora"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {

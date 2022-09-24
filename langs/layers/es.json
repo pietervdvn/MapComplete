@@ -2984,17 +2984,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualmente abierta"
-                    }
-                }
-            }
-        }
-    },
     "parking": {
         "description": "Una capa que muestra aparcamientos para coches",
         "name": "Aparcamiento",
@@ -3134,15 +3123,6 @@
     },
     "postoffices": {
         "description": "Una capa que muestra oficinas de correo.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualmente abierta"
-                    }
-                }
-            }
-        },
         "name": "Oficinas de correo",
         "presets": {
             "0": {
@@ -3207,13 +3187,6 @@
     "recycling": {
         "description": "Una capa con contenedores y centros de reciclaje",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualmente abierto"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {

@@ -603,17 +603,6 @@
             "render": "Hackerspace"
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Most nyitva"
-                    }
-                }
-            }
-        }
-    },
     "postboxes": {
         "description": "A postaládákat megjelenítő réteg.",
         "name": "Postaládák",
@@ -628,15 +617,6 @@
     },
     "postoffices": {
         "description": "Postákat megjelenítő réteg.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Most nyitva"
-                    }
-                }
-            }
-        },
         "name": "Posták",
         "presets": {
             "0": {

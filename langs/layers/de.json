@@ -5027,15 +5027,6 @@
     },
     "parcel_lockers": {
         "description": "Ebene mit Paketschließfächern zum Abholen und Versenden von Paketen.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Aktuell geöffnet"
-                    }
-                }
-            }
-        },
         "name": "Paketschließfächer",
         "presets": {
             "0": {
@@ -5484,15 +5475,6 @@
     },
     "postoffices": {
         "description": "Eine Ebene mit Postämtern.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Aktuell geöffnet"
-                    }
-                }
-            }
-        },
         "name": "Poststellen",
         "presets": {
             "0": {
@@ -5687,13 +5669,6 @@
     "recycling": {
         "description": "Eine Ebene mit Recyclingcontainern und -zentren",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Derzeit geöffnet"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {

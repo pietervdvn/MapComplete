@@ -5048,15 +5048,6 @@
     },
     "parcel_lockers": {
         "description": "Layer showing parcel lockers for collecting and sending parcels.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Currently open"
-                    }
-                }
-            }
-        },
         "name": "Parcel Lockers",
         "presets": {
             "0": {
@@ -5505,15 +5496,6 @@
     },
     "postoffices": {
         "description": "A layer showing post offices.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Currently open"
-                    }
-                }
-            }
-        },
         "name": "Post offices",
         "presets": {
             "0": {
@@ -5708,13 +5690,6 @@
     "recycling": {
         "description": "A layer with recycling containers and centres",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Currently open"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {

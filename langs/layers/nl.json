@@ -5002,15 +5002,6 @@
         }
     },
     "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Momenteel geopend"
-                    }
-                }
-            }
-        },
         "presets": {
             "0": {
                 "title": "een pakketautomaat"
@@ -5348,15 +5339,6 @@
     },
     "postoffices": {
         "description": "Een laag die postkantoren toont.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Momenteel geopend"
-                    }
-                }
-            }
-        },
         "name": "Postkantoren",
         "presets": {
             "0": {
@@ -5492,13 +5474,6 @@
     "recycling": {
         "description": "Een laag met recyclagingcontainers en -centrums",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Op dit moment open"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {

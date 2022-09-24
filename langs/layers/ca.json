@@ -795,17 +795,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualment obert"
-                    }
-                }
-            }
-        }
-    },
     "parking": {
         "name": "Aparcament"
     },
@@ -870,15 +859,6 @@
         }
     },
     "postoffices": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualment obert"
-                    }
-                }
-            }
-        },
         "name": "Oficines de correus",
         "presets": {
             "0": {

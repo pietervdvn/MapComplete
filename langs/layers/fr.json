@@ -3125,17 +3125,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert actuellement"
-                    }
-                }
-            }
-        }
-    },
     "parking": {
         "description": "Un calque montrant les parkings",
         "name": "Lieu de stationnement",
@@ -3379,15 +3368,6 @@
     },
     "postoffices": {
         "description": "Un claque montrant les bureaux de poste.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert actuellement"
-                    }
-                }
-            }
-        },
         "name": "Bureaux de poste",
         "presets": {
             "0": {
