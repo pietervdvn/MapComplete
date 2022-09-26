@@ -261,7 +261,9 @@ function main(args: string[]) {
         mkdirSync("./assets/generated")
     }
 
-    let contents = ScriptUtils.readDirRecSync("./assets").filter(
+    let contents = ScriptUtils.readDirRecSync("./assets")
+        .filter(p => !p.startsWith("./assets/templates/"))
+        .filter(
         (entry) => entry.indexOf("./assets/generated") != 0
     )
     let licensePaths = contents.filter((entry) => entry.indexOf("license_info.json") >= 0)
