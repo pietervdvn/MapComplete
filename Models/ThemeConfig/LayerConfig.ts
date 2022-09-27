@@ -371,7 +371,7 @@ export default class LayerConfig extends WithContextLoader {
             throw "Error in " + context + ": use 'filter' instead of 'filters'"
         }
 
-        this.titleIcons = this.ParseTagRenderings(<TagRenderingConfigJson[]>json.titleIcons, {
+        this.titleIcons = this.ParseTagRenderings(<TagRenderingConfigJson[]>json.titleIcons ?? [], {
             readOnlyMode: true,
         })
 
