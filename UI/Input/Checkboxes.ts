@@ -8,7 +8,7 @@ import Translations from "../i18n/Translations";
 export class CheckBox extends InputElementMap<number[], boolean> {
     constructor(el: (BaseUIElement | string), defaultValue?: boolean) {
         super(
-            new CheckBoxes([Translations.T(el)]),
+            new CheckBoxes([Translations.W(el)]),
             (x0, x1) => x0 === x1,
             (t) => t.length > 0,
             (x) => (x ? [0] : [])
