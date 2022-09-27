@@ -13,7 +13,7 @@ import {
     Polygon,
     Properties,
 } from "@turf/turf"
-import {GeoJSON, LineString} from "geojson";
+import {GeoJSON, LineString, Point} from "geojson";
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -27,8 +27,8 @@ export class GeoOperations {
      * Converts a GeoJson feature to a point GeoJson feature
      * @param feature
      */
-    static centerpoint(feature: any) {
-        const newFeature = turf.center(feature)
+    static centerpoint(feature: any): Feature<Point> {
+        const newFeature : Feature<Point> = turf.center(feature)
         newFeature.properties = feature.properties
         newFeature.id = feature.id
         return newFeature
