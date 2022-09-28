@@ -21,8 +21,8 @@ export default class LayoutConfig {
     public readonly startZoom: number
     public readonly startLat: number
     public readonly startLon: number
-    public readonly widenFactor: number
-    public readonly defaultBackgroundId?: string
+    public widenFactor: number
+    public defaultBackgroundId?: string
     public layers: LayerConfig[]
     public tileLayerSources: TilesourceConfig[]
     public readonly clustering?: {
@@ -46,7 +46,7 @@ export default class LayoutConfig {
     public readonly customCss?: string
 
     public readonly overpassUrl: string[]
-    public readonly overpassTimeout: number
+    public overpassTimeout: number
     public readonly overpassMaxZoom: number
     public readonly osmApiTileSize: number
     public readonly official: boolean

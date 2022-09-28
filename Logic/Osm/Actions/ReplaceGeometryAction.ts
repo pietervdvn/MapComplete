@@ -13,6 +13,7 @@ import { Utils } from "../../../Utils"
 import { OsmConnection } from "../OsmConnection"
 import { Feature } from "@turf/turf"
 import FeaturePipeline from "../../FeatureSource/FeaturePipeline"
+import {Geometry, LineString, Point, Polygon} from "geojson";
 
 export default class ReplaceGeometryAction extends OsmChangeAction {
     /**
@@ -84,7 +85,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     public async getPreview(): Promise<FeatureSource> {
         const { closestIds, allNodesById, detachedNodes, reprojectedNodes } =
             await this.GetClosestIds()
-        const preview: Feature[] = closestIds.map((newId, i) => {
+        const preview: Feature<Geometry> [] = closestIds.map((newId, i) => {
             if (this.identicalTo[i] !== undefined) {
                 return undefined
             }
@@ -121,7 +122,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
         reprojectedNodes.forEach(({ newLat, newLon, nodeId }) => {
             const origNode = allNodesById.get(nodeId)
-            const feature: Feature = {
+            const feature: Feature<LineString> = {
                 type: "Feature",
                 properties: {
                     move: "yes",
@@ -143,7 +144,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
 
         detachedNodes.forEach(({ reason }, id) => {
             const origNode = allNodesById.get(id)
-            const feature: Feature = {
+            const feature: Feature<Point> = {
                 type: "Feature",
                 properties: {
                     detach: "yes",
@@ -389,7 +390,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                 const node = allNodesById.get(id)
 
                 // Project the node onto the target way to calculate the new coordinates
-                const way = {
+                const way = <Feature<LineString>> {
                     type: "Feature",
                     properties: {},
                     geometry: {

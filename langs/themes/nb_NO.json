@@ -425,13 +425,6 @@
     "indoors": {
         "title": "Innendørs"
     },
-    "mapcomplete-changes": {
-        "layers": {
-            "0": {
-                "description": "Viser alle MapComplete-endringer"
-            }
-        }
-    },
     "maps": {
         "title": "Et kart over kart"
     },

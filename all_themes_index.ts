@@ -1,8 +1,11 @@
+import MinimapImplementation from "./UI/Base/MinimapImplementation";
+
 import { Utils } from "./Utils"
 import AllThemesGui from "./UI/AllThemesGui"
 import { QueryParameters } from "./Logic/Web/QueryParameters"
 import StatisticsGUI from "./UI/StatisticsGUI"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
+import {PdfExportGui} from "./UI/BigComponents/PdfExportGui";
 
 const layout = QueryParameters.GetQueryParameter("layout", undefined).data ?? ""
 const customLayout = QueryParameters.GetQueryParameter("userlayout", undefined).data ?? ""
@@ -42,6 +45,13 @@ if (mode.data === "statistics") {
     console.log("Statistics mode!")
     new FixedUiElement("").AttachTo("centermessage")
     new StatisticsGUI().SetClass("w-full h-full pointer-events-auto").AttachTo("topleft-tools")
+} else if(mode.data === "pdf"){
+    MinimapImplementation.initialize()
+    new FixedUiElement("").AttachTo("centermessage")
+    const div = document.createElement("div")
+    div.id = "extra_div_for_maps"
+    new PdfExportGui(div.id).SetClass("pointer-events-auto").AttachTo("topleft-tools")
+    document.getElementById("topleft-tools").appendChild(div)
 } else {
     new AllThemesGui().setup()
 }

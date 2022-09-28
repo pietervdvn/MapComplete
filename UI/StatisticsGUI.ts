@@ -1,24 +1,27 @@
 /**
  * The statistics-gui shows statistics from previous MapComplete-edits
  */
-import { UIEventSource } from "../Logic/UIEventSource"
-import { VariableUiElement } from "./Base/VariableUIElement"
+import {UIEventSource} from "../Logic/UIEventSource"
+import {VariableUiElement} from "./Base/VariableUIElement"
 import Loading from "./Base/Loading"
-import { Utils } from "../Utils"
+import {Utils} from "../Utils"
 import Combine from "./Base/Combine"
-import { StackedRenderingChart } from "./BigComponents/TagRenderingChart"
-import { LayerFilterPanel } from "./BigComponents/FilterView"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
+import {StackedRenderingChart} from "./BigComponents/TagRenderingChart"
+import {LayerFilterPanel} from "./BigComponents/FilterView"
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts"
 import MapState from "../Logic/State/MapState"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import { FixedUiElement } from "./Base/FixedUiElement"
+import List from "./Base/List";
 
 class StatisticsForOverviewFile extends Combine {
+
     constructor(homeUrl: string, paths: string[]) {
+        paths = paths.filter(p => !p.endsWith("file-overview.json"))
         const layer = AllKnownLayouts.allKnownLayouts.get("mapcomplete-changes").layers[0]
         const filteredLayer = MapState.InitializeFilteredLayers(
-            { id: "statistics-view", layers: [layer] },
+            {id: "statistics-view", layers: [layer]},
             undefined
         )[0]
         const filterPanel = new LayerFilterPanel(undefined, filteredLayer)
@@ -27,9 +30,18 @@ class StatisticsForOverviewFile extends Combine {
         const downloaded = new UIEventSource<{ features: ChangeSetData[] }[]>([])
 
         for (const filepath of paths) {
+            if(filepath.endsWith("file-overview.json")){
+                continue
+            }
             Utils.downloadJson(homeUrl + filepath).then((data) => {
+                if (data === undefined) {
+                    return
+                }
+                if (data.features === undefined) {
+                    data.features = data
+                }
                 data?.features?.forEach((item) => {
-                    item.properties = { ...item.properties, ...item.properties.metadata }
+                    item.properties = {...item.properties, ...item.properties.metadata}
                     delete item.properties.metadata
                 })
                 downloaded.data.push(data)
@@ -42,6 +54,7 @@ class StatisticsForOverviewFile extends Combine {
                 downloaded.map((dl) => "Downloaded " + dl.length + " items out of " + paths.length)
             )
         )
+
 
         super([
             filterPanel,
@@ -83,7 +96,49 @@ class StatisticsForOverviewFile extends Combine {
                         const trs = layer.tagRenderings.filter(
                             (tr) => tr.mappings?.length > 0 || tr.freeform?.key !== undefined
                         )
-                        const elements: BaseUIElement[] = []
+
+                        const allKeys = new Set<string>()
+                        for (const cs of overview._meta) {
+                            for (const propertiesKey in cs.properties) {
+                                allKeys.add(propertiesKey)
+                            }
+                        }
+                        console.log("All keys:", allKeys)
+
+                        const valuesToSum = [
+                            "create",
+                            "modify",
+                            "delete",
+                            "answer",
+                            "move",
+                            "deletion",
+                            "add-image",
+                            "plantnet-ai-detection",
+                            "import",
+                            "conflation",
+                            "link-image",
+                            "soft-delete"]
+
+                        const allThemes = Utils.Dedup(overview._meta.map(f => f.properties.theme))
+
+                        const excludedThemes = new Set<string>()
+                        if(allThemes.length > 1){
+                        excludedThemes.add("grb")
+                        excludedThemes.add("etymology")
+                        }
+                        const summedValues = valuesToSum
+                            .map(key => [key, overview.sum(key, excludedThemes)])
+                            .filter(kv => kv[1] != 0)
+                            .map(kv => kv.join(": "))
+                        const elements: BaseUIElement[] = [
+                            new Title(allThemes .length === 1 ? "General statistics for "+allThemes[0] :"General statistics (excluding etymology- and GRB-theme changes)"),
+                            new Combine([
+                                overview._meta.length + " changesets match the filters",
+                                new List(summedValues)
+                            ]).SetClass("flex flex-col border rounded-xl"),
+
+                            new Title("Breakdown")
+                        ]
                         for (const tr of trs) {
                             let total = undefined
                             if (tr.freeform?.key !== undefined) {
@@ -186,6 +241,20 @@ class ChangesetsOverview {
         return new ChangesetsOverview(this._meta.filter(predicate))
     }
 
+    public sum(key: string, excludeThemes: Set<string>): number {
+        let s = 0
+        for (const feature of this._meta) {
+            if(excludeThemes.has(feature.properties.theme)){
+                continue
+            }
+            const parsed = Number(feature.properties[key])
+            if (!isNaN(parsed)) {
+                s += parsed
+            }
+        }
+        return s
+    }
+
     private static cleanChangesetData(cs: ChangeSetData): ChangeSetData {
         if (cs === undefined) {
             return undefined
@@ -211,7 +280,8 @@ class ChangesetsOverview {
         }
         try {
             cs.properties.host = new URL(cs.properties.host).host
-        } catch (e) {}
+        } catch (e) {
+        }
         return cs
     }
 }

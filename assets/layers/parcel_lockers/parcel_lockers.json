@@ -212,25 +212,7 @@
     }
   ],
   "filter": [
-    {
-      "id": "is_open",
-      "options": [
-        {
-          "question": {
-            "en": "Currently open",
-            "de": "Aktuell geöffnet",
-            "zh_Hant": "目前開放",
-            "id": "Saat ini buka",
-            "hu": "Most nyitva",
-            "nl": "Momenteel geopend",
-            "ca": "Actualment obert",
-            "es": "Actualmente abierta",
-            "fr": "Ouvert actuellement"
-          },
-          "osmTags": "_isOpen=yes"
-        }
-      ]
-    }
+    "open_now"
   ],
   "allowMove": {
     "enableImproveAccuracy": true

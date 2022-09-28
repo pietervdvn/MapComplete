@@ -3,8 +3,11 @@ import Locale from "../i18n/Locale"
 import Link from "./Link"
 import Svg from "../../Svg"
 
+/**
+ * The little 'translate'-icon next to every icon + some static helper functions
+ */
 export default class LinkToWeblate extends VariableUiElement {
-    private static URI: any
+
     constructor(context: string, availableTranslations: object) {
         super(
             Locale.language.map(

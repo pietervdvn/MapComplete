@@ -19,7 +19,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
     private readonly _lon: number
     private readonly _snapOnto: OsmWay
     private readonly _reusePointDistance: number
-    private meta: { changeType: "create" | "import"; theme: string; specialMotivation?: string }
+    private readonly meta: { changeType: "create" | "import"; theme: string; specialMotivation?: string }
     private readonly _reusePreviouslyCreatedPoint: boolean
 
     constructor(

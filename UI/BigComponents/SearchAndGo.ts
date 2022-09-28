@@ -10,7 +10,7 @@ import Combine from "../Base/Combine"
 import Locale from "../i18n/Locale"
 
 export default class SearchAndGo extends Combine {
-    constructor(state: { leafletMap: UIEventSource<any>; selectedElement: UIEventSource<any> }) {
+    constructor(state: { leafletMap: UIEventSource<any>; selectedElement?: UIEventSource<any> }) {
         const goButton = Svg.search_ui().SetClass("w-8 h-8 full-rounded border-black float-right")
 
         const placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
@@ -63,7 +63,7 @@ export default class SearchAndGo extends Combine {
                     [bb[0], bb[2]],
                     [bb[1], bb[3]],
                 ]
-                state.selectedElement.setData(undefined)
+                state.selectedElement?.setData(undefined)
                 Hash.hash.setData(poi.osm_type + "/" + poi.osm_id)
                 state.leafletMap.data.fitBounds(bounds)
                 placeholder.setData(Translations.t.general.search.search)

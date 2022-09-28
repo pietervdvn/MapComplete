@@ -8,11 +8,12 @@ import {
     booleanWithin,
     Coord,
     Feature,
-    Geometry,
+    Geometry, Lines,
     MultiPolygon,
     Polygon,
     Properties,
 } from "@turf/turf"
+import {GeoJSON, LineString, Point} from "geojson";
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -26,8 +27,8 @@ export class GeoOperations {
      * Converts a GeoJson feature to a point GeoJson feature
      * @param feature
      */
-    static centerpoint(feature: any) {
-        const newFeature = turf.center(feature)
+    static centerpoint(feature: any): Feature<Point> {
+        const newFeature : Feature<Point> = turf.center(feature)
         newFeature.properties = feature.properties
         newFeature.id = feature.id
         return newFeature
@@ -270,7 +271,8 @@ export class GeoOperations {
     }
 
     /**
-     * Generates the closest point on a way from a given point
+     * Generates the closest point on a way from a given point.
+     * If the passed-in geojson object is a polygon, the outer ring will be used as linestring
      *
      *  The properties object will contain three values:
      // - `index`: closest point was found on nth line part,
@@ -279,15 +281,15 @@ export class GeoOperations {
      * @param way The road on which you want to find a point
      * @param point Point defined as [lon, lat]
      */
-    public static nearestPoint(way, point: [number, number]) {
+    public static nearestPoint(way: Feature<LineString | Polygon>, point: [number, number]) {
         if (way.geometry.type === "Polygon") {
             way = { ...way }
             way.geometry = { ...way.geometry }
             way.geometry.type = "LineString"
-            way.geometry.coordinates = way.geometry.coordinates[0]
+            way.geometry.coordinates = (<Polygon> way.geometry).coordinates[0]
         }
 
-        return turf.nearestPointOnLine(way, point, { units: "kilometers" })
+        return turf.nearestPointOnLine(<Feature<LineString>> way, point, { units: "kilometers" })
     }
 
     public static toCSV(features: any[]): string {

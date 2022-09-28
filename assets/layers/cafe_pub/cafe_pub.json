@@ -281,24 +281,9 @@
     "reviews"
   ],
   "filter": [
-    {
-      "id": "opened-now",
-      "options": [
-        {
-          "question": {
-            "en": "Opened now",
-            "nl": "Nu geopend",
-            "de": "Derzeit geöffnet",
-            "fr": "Ouvert maintenant",
-            "hu": "Most nyitva van",
-            "ca": "Obert ara",
-            "es": "Abiert oahora",
-            "da": "Åbent nu"
-          },
-          "osmTags": "_isOpen=yes"
-        }
-      ]
-    }
+    "open_now",
+    "accepts_cash",
+    "accepts_cards"
   ],
   "deletion": {
     "softDeletionTags": {

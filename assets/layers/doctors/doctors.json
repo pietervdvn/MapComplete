@@ -162,20 +162,7 @@
     }
   ],
   "filter": [
-    {
-      "id": "opened-now",
-      "options": [
-        {
-          "question": {
-            "en": "Opened now",
-            "de": "Jetzt geöffnet",
-            "nl": "Nu geopend",
-            "fr": "Ouvert maintenant"
-          },
-          "osmTags": "_isOpen=yes"
-        }
-      ]
-    }
+    "open_now"
   ],
   "mapRendering": [
     {

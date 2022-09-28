@@ -10,16 +10,15 @@ import Toggle from "./Input/Toggle"
 
 export default class LanguagePicker extends Toggle {
     constructor(languages: string[], label: string | BaseUIElement = "") {
+        console.log("Constructing a language pîcker for languages", languages)
         if (languages === undefined || languages.length <= 1) {
             super(undefined, undefined, undefined)
-            return undefined
+        }else {
+            const normalPicker = LanguagePicker.dropdownFor(languages, label)
+            const fullPicker = new Lazy(() => LanguagePicker.dropdownFor(allLanguages, label))
+            super(fullPicker, normalPicker, Locale.showLinkToWeblate)
+            const allLanguages: string[] = used_languages.languages
         }
-
-        const allLanguages: string[] = used_languages.languages
-
-        const normalPicker = LanguagePicker.dropdownFor(languages, label)
-        const fullPicker = new Lazy(() => LanguagePicker.dropdownFor(allLanguages, label))
-        super(fullPicker, normalPicker, Locale.showLinkToWeblate)
     }
 
     private static dropdownFor(languages: string[], label: string | BaseUIElement): BaseUIElement {

@@ -407,9 +407,37 @@
             "es": "Cerámica",
             "da": "flisebeklædning"
           }
+        },
+        {
+          "if": "artwork_type=woodcarving",
+          "then": {
+            "nl": "Houtsculptuur",
+            "en": "Woodcarving"
+          }
         }
       ],
       "id": "artwork-artwork_type"
+    },
+    {
+      "id": "artwork-artist-wikidata",
+      "render": {
+        "en": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+      },
+      "question": {
+        "en": "Who made this artwork?"
+      },
+      "freeform": {
+        "key": "artist:wikidata",
+        "type": "wikidata",
+        "helperArgs": [
+          {
+            "key": "artist_name",
+            "instanceOf": [
+              "Q5"
+            ]
+          }
+        ]
+      }
     },
     {
       "question": {
@@ -449,6 +477,7 @@
       "freeform": {
         "key": "artist_name"
       },
+      "condition": "artist:wikidata=",
       "id": "artwork-artist_name"
     },
     {
@@ -492,44 +521,20 @@
       },
       "id": "artwork-website"
     },
+    "wikipedia",
     {
+      "id": "artwork_subject",
+      "condition": "subject:wikidata~*",
       "question": {
-        "en": "Which Wikidata-entry corresponds with <b>this artwork</b>?",
-        "nl": "Welk Wikidata-item beschrijft <b>dit kunstwerk</b>?",
-        "fr": "Quelle entrée Wikidata correspond à <b>cette œuvre d'art</b> ?",
-        "de": "Gibt es ein Wikidata Element für <b>dieses Kunstwerk</b>?",
-        "it": "Quale elemento Wikidata corrisponde a <b>quest’opera d’arte</b>?",
-        "ru": "Какая запись в Wikidata соответсвует <b>этой работе</b>?",
-        "ja": "<b>このアートワーク</b>に関するWikidataのエントリーはどれですか?",
-        "zh_Hant": "<b>這個藝術品</b>有那個對應的 Wikidata 項目？",
-        "nb_NO": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
-        "id": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
-        "pt": "Que entrada no Wikidata corresponde a <b>esta obra de arte</b>?",
-        "hu": "Melyik Wikidata-bejegyzés felel meg <b>ennek a műalkotásnak</b>?",
-        "es": "¿Qué entrada de Wikidata se corresponde con <b>esta obra de arte</b>?",
-        "da": "Hvilken Wikidata-indgang svarer til <b>dette kunstværk</b>?"
-      },
-      "render": {
-        "en": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "nl": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "fr": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "de": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "it": "Corrisponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "ru": "Запись об этой работе в wikidata: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "ja": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>に関連する",
-        "zh_Hant": "與 <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>對應",
-        "nb_NO": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "id": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "pt": "Corresponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "hu": "Ez a megfelelő: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "es": "Se corresponde con <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>",
-        "da": "Svarer til <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+        "en": "What does this artwork depict?"
       },
       "freeform": {
-        "key": "wikidata",
+        "key": "subject:wikidata",
         "type": "wikidata"
       },
-      "id": "artwork-wikidata"
+      "render": {
+        "en": "This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+      }
     }
   ],
   "deletion": {
@@ -563,5 +568,8 @@
         "render": "10"
       }
     }
+  ],
+  "filter": [
+    "has_image"
   ]
 }

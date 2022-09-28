@@ -6,7 +6,6 @@ import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeature
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { Tiles } from "../../Models/TileRange"
 import * as clusterstyle from "../../assets/layers/cluster_style/cluster_style.json"
-import State from "../../State"
 
 export default class ShowTileInfo {
     public static readonly styling = new LayerConfig(clusterstyle, "ShowTileInfo", true)
@@ -16,7 +15,7 @@ export default class ShowTileInfo {
         leafletMap: UIEventSource<any>
         layer?: LayerConfig
         doShowLayer?: UIEventSource<boolean>
-    }) {
+    }, state) {
         const source = options.source
         const metaFeature: Store<{ feature; freshness: Date }[]> = source.features.map(
             (features) => {
@@ -56,7 +55,7 @@ export default class ShowTileInfo {
             features: new StaticFeatureSource(metaFeature),
             leafletMap: options.leafletMap,
             doShowLayer: options.doShowLayer,
-            state: State.state,
+            state
         })
     }
 }

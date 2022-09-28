@@ -122,7 +122,7 @@ export default class ScriptUtils {
         return root.svg
     }
 
-    public static async ReadSvgSync(path: string, callback: (svg: any) => void): Promise<any> {
+    public static ReadSvgSync(path: string, callback: (svg: any) => void): any {
         xml2js.parseString(readFileSync(path, "UTF8"), { async: false }, (err, root) => {
             if (err) {
                 throw err

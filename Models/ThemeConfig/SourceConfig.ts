@@ -2,7 +2,7 @@ import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
 
 export default class SourceConfig {
-    public readonly osmTags?: TagsFilter
+    public osmTags?: TagsFilter
     public readonly overpassScript?: string
     public geojsonSource?: string
     public geojsonZoomLevel?: number

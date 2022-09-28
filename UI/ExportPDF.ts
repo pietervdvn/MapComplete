@@ -70,7 +70,7 @@ export default class ExportPDF {
                         console.error(e)
                         self.cleanup()
                     }
-                }, 500),
+                }, 500)
         })
 
         minimap.SetStyle(
@@ -166,7 +166,7 @@ export default class ExportPDF {
         // Add the logo of the layout
         let img = document.createElement("img")
         const imgSource = layout.icon
-        const imgType = imgSource.substr(imgSource.lastIndexOf(".") + 1)
+        const imgType = imgSource.substring(imgSource.lastIndexOf(".") + 1)
         img.src = imgSource
         if (imgType.toLowerCase() === "svg") {
             new FixedUiElement("").AttachTo(this.freeDivId)

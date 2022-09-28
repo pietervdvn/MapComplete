@@ -3,6 +3,7 @@ import Loc from "../../Models/Loc"
 import BaseLayer from "../../Models/BaseLayer"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { BBox } from "../../Logic/BBox"
+import {deprecate} from "util";
 
 export interface MinimapOptions {
     background?: UIEventSource<BaseLayer>
@@ -24,7 +25,10 @@ export interface MinimapObj {
 
     installBounds(factor: number | BBox, showRange?: boolean): void
 
-    TakeScreenshot(): Promise<any>
+    TakeScreenshot(format): Promise<string>
+    TakeScreenshot(format: "image"): Promise<string>
+    TakeScreenshot(format:"blob"): Promise<Blob>
+    TakeScreenshot(format?: "image" | "blob"): Promise<string | Blob>
 }
 
 export default class Minimap {
