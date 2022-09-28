@@ -43,6 +43,38 @@ export default class TagApplyButton implements AutoAction {
     public readonly example =
         "`{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)"
 
+    /**
+     * Parses a tag specification
+     *
+     * TagApplyButton.parseTagSpec("key=value;key0=value0") // => [["key","value"],["key0","value0"]]
+     *
+     * // Should handle escaped ";"
+     * TagApplyButton.parseTagSpec("key=value;key0=value0\\;value1") // => [["key","value"],["key0","value0;value1"]]
+     */
+    private static parseTagSpec(spec: string): [string, string][]{
+        const tgsSpec : [string, string][] = []
+
+        while(spec.length > 0){
+            const [part] = spec.match(/((\\;)|[^;])*/)
+            spec = spec.substring(part.length + 1) // +1 to remove the pending ';' as well
+            const kv = part.split("=").map((s) => s.trim().replace("\\;",";"))
+            if (kv.length == 2) {
+                tgsSpec.push(<[string, string]> kv)
+            }else if (kv.length < 2) {
+                throw "Invalid key spec: no '=' found in " + spec
+            }else{
+                throw "Invalid key spec: multiple '=' found in " + spec
+            }
+        }
+
+        for (const spec of tgsSpec) {
+            if (spec[0].endsWith(":")) {
+                throw "The key for a tag specification for import or apply ends with ':'. The theme author probably wrote key:=otherkey instead of key=$otherkey"
+            }
+        }
+        return tgsSpec
+    }
+
     public static generateTagsToApply(spec: string, tagSource: Store<any>): Store<Tag[]> {
         // Check whether we need to look up a single value
 
@@ -51,19 +83,7 @@ export default class TagApplyButton implements AutoAction {
             spec = tagSource.data[spec.replace("$", "")]
         }
 
-        const tgsSpec = spec.split(";").map((spec) => {
-            const kv = spec.split("=").map((s) => s.trim())
-            if (kv.length != 2) {
-                throw "Invalid key spec: multiple '=' found in " + spec
-            }
-            return kv
-        })
-
-        for (const spec of tgsSpec) {
-            if (spec[0].endsWith(":")) {
-                throw "A tag specification for import or apply ends with ':'. The theme author probably wrote key:=otherkey instead of key=$otherkey"
-            }
-        }
+       const tgsSpec = TagApplyButton.parseTagSpec(spec)
 
         return tagSource.map((tags) => {
             const newTags: Tag[] = []
