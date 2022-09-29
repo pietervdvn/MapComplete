@@ -1,7 +1,7 @@
 {
   "id": "filters",
   "description": "This layer acts as library for common filters",
-  "mapRendering": [],
+  "mapRendering": null,
   "source": {
     "osmTags": "id~*"
   },

@@ -148,7 +148,7 @@ export default abstract class BaseUIElement {
         } catch (e) {
             const domExc = e as DOMException
             if (domExc) {
-                console.log("An exception occured", domExc.code, domExc.message, domExc.name)
+                console.error("An exception occured", domExc.code, domExc.message, domExc.name, domExc)
             }
             console.error(e)
         }

@@ -121,7 +121,7 @@
     }
   ],
   "filter": [
-      "open_now"
+    "open_now"
   ],
   "mapRendering": [
     {
