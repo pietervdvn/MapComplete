@@ -123,6 +123,9 @@
                     },
                     "11": {
                         "then": "Fliesenarbeit"
+                    },
+                    "12": {
+                        "then": "Holzschnitzerei"
                     }
                 },
                 "question": "Um welche Art Kunstwerk handelt es sich?",
@@ -131,6 +134,13 @@
             "artwork-website": {
                 "question": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
                 "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
+            },
+            "artwork-artist-wikidata": {
+                "question": "Wer hat dieses Kunstwerk geschaffen?",
+                "render": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
+            "artwork_subject": {
+                "question": "Was stellt dieses Kunstwerk dar?"
             }
         },
         "title": {
