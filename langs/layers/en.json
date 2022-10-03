@@ -3164,7 +3164,7 @@
             },
             "defibrillator-defibrillator:location": {
                 "question": "Please give some explanation on where the defibrillator can be found (in the local language)",
-                "render": "<i>Extra information about the location (in the local languagel):</i><br/>{defibrillator:location}"
+                "render": "<i>Extra information about the location (in the local language):</i><br/>{defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
                 "question": "Please give some explanation on where the defibrillator can be found (in English)",

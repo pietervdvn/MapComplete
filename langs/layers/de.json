@@ -140,7 +140,8 @@
                 "render": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
             },
             "artwork_subject": {
-                "question": "Was stellt dieses Kunstwerk dar?"
+                "question": "Was zeigt dieses Kunstwerk?",
+                "render": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             }
         },
         "title": {
@@ -3645,6 +3646,16 @@
                 "options": {
                     "0": {
                         "question": "Akzeptiert Kartenzahlung"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "1": {
+                        "question": "Hat mindestens ein Bild"
+                    },
+                    "2": {
+                        "question": "Hat wahrscheinlich kein Bild"
                     }
                 }
             }
