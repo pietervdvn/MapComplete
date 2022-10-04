@@ -35,6 +35,11 @@ export default class LinkToWeblate extends VariableUiElement {
         this.SetClass("enable-links hidden-on-mobile")
     }
 
+    /**
+     * Creates the url to Hosted weblate
+     *
+     * LinkToWeblate.hrefToWeblate("nl", "category:some.context") // => "https://hosted.weblate.org/translate/mapcomplete/category/nl/?offset=1&q=context%3A%3D%22some.context%22"
+     */
     public static hrefToWeblate(language: string, contextKey: string): string {
         if (contextKey === undefined || contextKey.indexOf(":") < 0) {
             return undefined
