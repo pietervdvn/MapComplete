@@ -79,7 +79,7 @@ export default class LayoutConfig {
         }
         const context = this.id
         this.credits = json.credits
-        this.language = json.mustHaveLanguage ?? Array.from(Object.keys(json.title))
+        this.language = json.mustHaveLanguage ?? ( official ? ["en"] : [])
         this.usedImages = Array.from(
             new ExtractImages(official, undefined).convertStrict(
                 json,
