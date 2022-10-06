@@ -11,7 +11,6 @@
   },
   "maintainer": "Wouter van der Wal",
   "icon": "./assets/themes/bag_import/logo.svg",
-  "version": "0",
   "startLat": 53.1726,
   "startLon": 7.04545,
   "startZoom": 9,
@@ -20,29 +19,132 @@
   },
   "layers": [
     {
-      "id": "bag:pand",
-      "name": "bag:pand",
-      "title": "bag:pand - {identificatie}",
-      "description": "Gebouwen vanaf het bag register",
+      "id": "osm:buildings",
+      "name": "OSM buildings",
+      "title": "OSM building",
       "source": {
-        "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
-        "geoJsonZoomLevel": 18,
-        "osmTags": {
-          "and": ["identificatie~*"]
-        },
+        "osmTags": "building~*",
         "maxCacheAge": 0
       },
       "calculatedTags": [
-        "_osm_obj:building=(feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')) ? 'construction' : ((feat.properties.status.startsWith('Pand in gebruik') && feat.properties.gebruiksdoel == 'woonfunctie') ? ((Number(feat.properties.aantal_verblijfsobjecten) == 1) ? 'house' : 'apartments') : 'yes')"
+        "_surface:strict:=feat.get('_surface')"
       ],
       "mapRendering": [
         {
           "width": {
-            "render": 5
+            "render": "2",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "5"
+              }
+            ]
           },
           "color": {
-            "render": "#00a"
+            "render": "#00c",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "#ff00ff"
+              },
+              {
+                "if": "building=house",
+                "then": "#a00"
+              },
+              {
+                "if": "building=shed",
+                "then": "#563e02"
+              },
+              {
+                "if": {
+                  "or": [
+                    "building=garage",
+                    "building=garages"
+                  ]
+                },
+                "then": "#f9bfbb"
+              },
+              {
+                "if": "building=yes",
+                "then": "#0774f2"
+              }
+            ]
           }
+        }
+      ]
+    },
+    {
+      "id": "bag:pand",
+      "name": "bag:pand",
+      "title": "bag:pand - {identificatie}",
+      "description": {
+        "en": "Building from BAG register"
+      },
+      "source": {
+        "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
+        "geoJsonZoomLevel": 18,
+        "osmTags": {
+          "and": [
+            "identificatie~*"
+          ]
+        },
+        "maxCacheAge": 0
+      },
+      "calculatedTags": [
+        "_overlaps_with_buildings=feat.overlapWith('osm:buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
+        "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
+        "_overlaps_with_properties=feat.get('_overlaps_with')?.feat?.properties",
+        
+        "_overlap_percentage=Math.round(100 * (feat.get('_overlaps_with')?.overlap / feat.get('_overlaps_with_properties')['_surface:strict']))",
+        "_reverse_overlap_percentage=Math.round(100 * (feat.get('_overlaps_with')?.overlap / feat.get('_surface')))",
+        
+        "_bag_obj:building=(feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')) ? 'construction' : ((feat.properties.status.startsWith('Pand in gebruik') && feat.properties.gebruiksdoel == 'woonfunctie') ? ((Number(feat.properties.aantal_verblijfsobjecten) == 1) ? 'house' : 'apartments') : 'yes')",
+        "_bag_obj:start_date=feat.properties.bouwjaar",
+
+        "_osm_obj:id=feat.get('_overlaps_with_properties')?.id",
+        "_osm_obj:building=feat.get('_overlaps_with_properties')?.building",
+
+        "_imported_osm_object_found=Number(feat.properties.identificatie)==Number(feat.get('_overlaps_with_properties')['ref:bag'])"
+      ],
+      "mapRendering": [
+        {
+          "width": {
+            "render": 5,
+            "mappings": [
+              {
+                "if": "_imported_osm_object_found=true",
+                "then": "1"
+              }
+            ]
+          },
+          "color": {
+            "render": "#00a",
+            "mappings": [
+              {
+                "if": "_imported_osm_object_found=true",
+                "then": "#0f0"
+              }
+            ]
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Build year",
+          "render": {
+            "en": "This building was build in <b>{_bag_obj:start_date}</b>"
+          }
+        },
+        {
+          "id": "Building type",
+          "render": {
+            "en": "The building type is a <b>{_bag_obj:building}</b>"
+          }
+        },
+        {
+          "id": "Overlapping building",
+          "render": "<div>The overlapping <a href=https://osm.org/{_osm_obj:id} target=_blank>osm:buildings</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the BAG building.<br>The BAG-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<div><h3>BAG geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}</div></div>",
+          "condition": "_overlaps_with!="
         }
       ]
     },
@@ -55,13 +157,14 @@
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Averblijfsobject&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
         "geoJsonZoomLevel": 19,
         "osmTags": {
-          "and": ["identificatie~*"]
+          "and": [
+            "identificatie~*"
+          ]
         },
         "maxCacheAge": 0
       },
       "calculatedTags": [
-        "addr:housenumber:=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`",
-        "adress=`${feat.properties.openbare_ruimte} ${feat.properties['addr:housenumber']} ${feat.properties.postcode} ${feat.properties.woonplaats}`"
+        "addr:housenumber:=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`"
       ],
       "mapRendering": [
         {
@@ -69,12 +172,21 @@
             "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
             "condition": "addr:housenumber~*"
           },
-          "location": ["point", "centroid"]
+          "location": [
+            "point",
+            "centroid"
+          ]
         },
         {
           "width": {
             "render": 1
           }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Adress",
+          "render": "{openbare_ruimte} {addr:housenumber}, {woonplaats} {postcode}"
         }
       ]
     }
