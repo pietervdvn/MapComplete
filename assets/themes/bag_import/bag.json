@@ -1,13 +1,16 @@
 {
   "id": "bag",
   "title": {
-    "nl": "BAG import helper"
+    "nl": "BAG import helper",
+    "en": "BAG import helper"
   },
   "shortDescription": {
-    "nl": "BAG import helper tool"
+    "nl": "BAG import helper tool",
+    "en": "BAG import helper tool"
   },
   "description": {
-    "nl": "Dit thema helpt het importeren van BAG data"
+    "nl": "Dit thema helpt het importeren van BAG data",
+    "en": "This theme helps with importing data from BAG"
   },
   "maintainer": "Wouter van der Wal",
   "icon": "./assets/themes/bag_import/logo.svg",
@@ -20,8 +23,8 @@
   "layers": [
     {
       "id": "osm:buildings",
-      "name": "OSM buildings",
-      "title": "OSM building",
+      "name": "OSM Buildings",
+      "title": "OSM Building",
       "source": {
         "osmTags": "building~*",
         "maxCacheAge": 0
@@ -75,10 +78,10 @@
     },
     {
       "id": "bag:pand",
-      "name": "bag:pand",
-      "title": "bag:pand - {identificatie}",
+      "name": "BAG Buildings",
+      "title": "BAG Building",
       "description": {
-        "en": "Building from BAG register"
+        "en": "Buildings from BAG register"
       },
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
@@ -138,10 +141,6 @@
           "render": "{import_way_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}",
           "mappings": [
             {
-              "if": "_bag_obj:in_construction=true",
-              "then": "{import_way_button(osm:buildings, building=$_bag_obj:building; construction=$_bag_obj:construction; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}"
-            },
-            {
               "if": {
                 "and": [
                   "_overlap_percentage>50",
@@ -150,20 +149,46 @@
                 ]
               },
               "then": "{conflate_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Replace the geometry in OpenStreetMap, , _osm_obj:id)}"
+            },
+            {
+              "if": "_bag_obj:in_construction=true",
+              "then": "{import_way_button(osm:buildings, building=$_bag_obj:building; construction=$_bag_obj:construction; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}"
             }
           ]
+        },
+        {
+          "id": "Reference",
+          "render": {
+            "en": "The reference in BAG is <b>{_bag_obj:ref:bag}</b>"
+          }
         },
         {
           "id": "Build year",
           "render": {
             "en": "This building was build in <b>{_bag_obj:start_date}</b>"
-          }
+          },
+          "mappings": [
+            {
+              "if": "_bag_obj:in_construction=true",
+              "then": {
+                "en": "The building was started in <b>{_bag_obj:start_date}</b>"
+              }
+            }
+          ]
         },
         {
           "id": "Building type",
           "render": {
             "en": "The building type is a <b>{_bag_obj:building}</b>"
-          }
+          },
+          "mappings": [
+            {
+              "if": "_bag_obj:in_construction=true",
+              "then": {
+                "en": "The building type will be a <b>{_bag_obj:construction}</b>"
+              }
+            }
+          ]
         },
         {
           "id": "Overlapping building",
