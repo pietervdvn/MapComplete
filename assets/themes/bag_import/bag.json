@@ -12,7 +12,7 @@
     "nl": "Dit thema helpt het importeren van BAG data",
     "en": "This theme helps with importing data from BAG"
   },
-  "maintainer": "Wouter van der Wal",
+  "credits": "Wouter van der Wal",
   "icon": "./assets/themes/bag_import/logo.svg",
   "startLat": 53.1726,
   "startLon": 7.04545,
@@ -74,6 +74,75 @@
             ]
           }
         }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Reference",
+          "render": {
+            "en": "The reference in BAG is <b>{ref:bag}</b>"
+          },
+          "mappings": [
+            {
+              "if": "ref:bag=",
+              "then": {
+                "en": "This building has no reference in the BAG"
+              }
+            }
+          ]
+        },
+        {
+          "id": "building type",
+          "freeform": {
+            "key": "building"
+          },
+          "render": "The building type is <b>{building}</b>",
+          "question": {
+            "en": "What kind of building is this?",
+            "de": "Was ist das für ein Gebäude?",
+            "es": "¿Qué tipo de edificio es este?",
+            "nl": "Wat voor soort gebouw is dit?",
+            "fr": "De quel type de bâtiment s’agit-il ?",
+            "da": "Hvad er det for en bygning?"
+          },
+          "mappings": [
+            {
+              "if": "building=house",
+              "then": "A normal house"
+            },
+            {
+              "if": "building=detached",
+              "then": "A house detached from other building"
+            },
+            {
+              "if": "building=semidetached_house",
+              "then": "A house sharing only one wall with another house"
+            },
+            {
+              "if": "building=apartments",
+              "then": "An apartment building (highrise building for living)"
+            },
+            {
+              "if": "building=office",
+              "then": "An office building - highrise for work"
+            },
+            {
+              "if": "building=shed",
+              "then": "A small shed, e.g. in a garden"
+            },
+            {
+              "if": "building=garage",
+              "then": "A single garage to park a car"
+            },
+            {
+              "if": "building=garages",
+              "then": "A building containing only garages; typically they are all identical"
+            },
+            {
+              "if": "building=yes",
+              "then": "A building - no specification"
+            }
+          ]
+        }
       ]
     },
     {
@@ -97,20 +166,16 @@
         "_overlaps_with_buildings=feat.overlapWith('osm:buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
         "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_overlaps_with_properties=feat.get('_overlaps_with')?.feat?.properties",
-        
         "_overlap_percentage=Math.round(100 * (feat.get('_overlaps_with')?.overlap / feat.get('_overlaps_with_properties')['_surface:strict']))",
         "_reverse_overlap_percentage=Math.round(100 * (feat.get('_overlaps_with')?.overlap / feat.get('_surface')))",
-        
         "_bag_obj:in_construction=feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')",
         "_bag_obj:construction=(feat.properties.gebruiksdoel == 'woonfunctie') ? ((Number(feat.properties.aantal_verblijfsobjecten) == 1) ? 'house' : 'apartments') : 'yes'",
         "_bag_obj:building=(feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')) ? 'construction' : feat.properties['_bag_obj:construction']",
         "_bag_obj:ref:bag=Number(feat.properties.identificatie)",
         "_bag_obj:source:date=new Date().toISOString().split('T')[0]",
         "_bag_obj:start_date=feat.properties.bouwjaar",
-
         "_osm_obj:id=feat.get('_overlaps_with_properties')?.id",
         "_osm_obj:building=feat.get('_overlaps_with_properties')?.building",
-
         "_imported_osm_object_found=Number(feat.properties.identificatie)==Number(feat.get('_overlaps_with_properties')['ref:bag'])"
       ],
       "mapRendering": [
