@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/education",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/school/college.svg",
-    "contact_name": "Pieter Vander Vennet, MapComplete",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -136,22 +136,22 @@
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=lower_secondary with a fixed text, namely 'This is a secondary school which does <b>not</b> have all grades, but offers <b>first and second</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=lower_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "lower_secondary"
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=middle_secondary with a fixed text, namely 'This is a secondary school which does <b>not</b> have all grades, but offers <b>third and fourth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=middle_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "middle_secondary"
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=upper_secondary with a fixed text, namely 'This is a secondary school which does <b>not</b> have all grades, but offers <b>fifth and sixth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=upper_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "upper_secondary"
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=post_secondary with a fixed text, namely 'This schools offers post-secondary education (e.g. a seventh or eight specialisation year)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=post_secondary with a fixed text, namely 'This school offers post-secondary education (e.g. a seventh or eight specialisation year)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "post_secondary"
     },
     {
@@ -185,7 +185,7 @@
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=mainstream with a fixed text, namely 'This is a school where students study skills at their age-adequate level.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=mainstream with a fixed text, namely 'This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "mainstream"
     },
     {
@@ -195,32 +195,32 @@
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=autism with a fixed text, namely 'This is a school with facilities for students on the autism specturm' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=autism with a fixed text, namely 'This is a school for students with autism' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "autism"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=learning_disabilities with a fixed text, namely 'This is a school with facilities for students with learning disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=learning_disabilities with a fixed text, namely 'This is a school for students with learning disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "learning_disabilities"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=blind with a fixed text, namely 'This is a school with facilities for blind students or students with sight impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=blind with a fixed text, namely 'This is a school for blind students or students with sight impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "blind"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=deaf with a fixed text, namely 'This is a school with facilities for deaf students or students with hearing impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=deaf with a fixed text, namely 'This is a school for deaf students or students with hearing impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "deaf"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=disabilities with a fixed text, namely 'This is a school with facilities for students with disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=disabilities with a fixed text, namely 'This is a school for students with disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "disabilities"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=special_needs with a fixed text, namely 'This is a school with facilities for students with special needs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=special_needs with a fixed text, namely 'This is a school for students with special needs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "special_needs"
     },
     {
@@ -249,12 +249,2428 @@
     },
     {
       "key": "school:language",
-      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'school:language' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Primary and secondary schools' shows  with a fixed text, namely 'The main language of this school is unknown' (in the MapComplete.osm.be theme 'Education') Picking this answer will delete the key school:language.",
+      "value": ""
     },
     {
       "key": "school:language",
-      "description": "Layer 'Primary and secondary schools' shows  with a fixed text, namely 'The main language of this school is unknown' (in the MapComplete.osm.be theme 'Education') Picking this answer will delete the key school:language.",
-      "value": ""
+      "description": "Layer 'Primary and secondary schools' shows school:language=ay with a fixed text, namely 'Aymara' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ay"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ab with a fixed text, namely 'Abkhaz' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ab"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=an with a fixed text, namely 'Aragonese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "an"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=de with a fixed text, namely 'German' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "de"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ca with a fixed text, namely 'Catalan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ca"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=az with a fixed text, namely 'Azerbaijani' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "az"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hr with a fixed text, namely 'Croatian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=eo with a fixed text, namely 'Esperanto' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "eo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ba with a fixed text, namely 'Bashkir' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ba"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ar with a fixed text, namely 'Arabic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ar"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=he with a fixed text, namely 'Hebrew' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "he"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gl with a fixed text, namely 'Galician' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=el with a fixed text, namely 'Modern Greek' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "el"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cs with a fixed text, namely 'Czech' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cs"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=da with a fixed text, namely 'Danish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "da"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=af with a fixed text, namely 'Afrikaans' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "af"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ga with a fixed text, namely 'Irish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ga"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hi with a fixed text, namely 'Hindi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bg with a fixed text, namely 'Bulgarian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=be with a fixed text, namely 'Belarusian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "be"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gu with a fixed text, namely 'Gujarati' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cy with a fixed text, namely 'Welsh' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fr with a fixed text, namely 'French' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hsb with a fixed text, namely 'Upper Sorbian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hsb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fy with a fixed text, namely 'West Frisian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ak with a fixed text, namely 'Akan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ak"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=am with a fixed text, namely 'Amharic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "am"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=es with a fixed text, namely 'Spanish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "es"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bs with a fixed text, namely 'Bosnian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bs"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=diq with a fixed text, namely 'Zazaki' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "diq"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=dz with a fixed text, namely 'Dzongkha' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "dz"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=co with a fixed text, namely 'Corsican' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "co"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cr with a fixed text, namely 'Cree' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=csb with a fixed text, namely 'Kashubian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "csb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gv with a fixed text, namely 'Manx' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cv with a fixed text, namely 'Chuvash' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bn with a fixed text, namely 'Bengali' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gd with a fixed text, namely 'Scottish Gaelic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gd"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=av with a fixed text, namely 'Avaric' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "av"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=awa with a fixed text, namely 'Awadhi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "awa"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=br with a fixed text, namely 'Breton' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "br"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ee with a fixed text, namely 'Ewe' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ee"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=dag with a fixed text, namely 'Dagbani' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "dag"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=dv with a fixed text, namely 'Maldivian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "dv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fi with a fixed text, namely 'Finnish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=en with a fixed text, namely 'English' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "en"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ady with a fixed text, namely 'Adyghe' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ady"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=as with a fixed text, namely 'Assamese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "as"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gn with a fixed text, namely 'Guarani' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hif with a fixed text, namely 'Fiji Hindi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hif"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ast with a fixed text, namely 'Asturian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ast"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=dsb with a fixed text, namely 'Lower Sorbian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "dsb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=haw with a fixed text, namely 'Hawaiian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "haw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=glk with a fixed text, namely 'Gilaki' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "glk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gag with a fixed text, namely 'Gagauz' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gag"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gan with a fixed text, namely 'Gan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gan"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ase with a fixed text, namely 'American Sign Language' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ase"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cal with a fixed text, namely 'Carolinian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cal"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gil with a fixed text, namely 'Gilbertese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gil"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=arz with a fixed text, namely 'Egyptian Arabic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "arz"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ban with a fixed text, namely 'Balinese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ban"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hak with a fixed text, namely 'Hakka' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hak"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=din with a fixed text, namely 'Dinka' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "din"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=egl with a fixed text, namely 'Emilian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "egl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=dty with a fixed text, namely 'Doteli' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "dty"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fa with a fixed text, namely 'Persian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fa"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cnr with a fixed text, namely 'Montenegrin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cnr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bxr with a fixed text, namely 'Russia Buriat' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bxr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ckb with a fixed text, namely 'Sorani' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ckb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=eu with a fixed text, namely 'Basque' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "eu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=et with a fixed text, namely 'Estonian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "et"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bar with a fixed text, namely 'Bavarian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bar"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fo with a fixed text, namely 'Faroese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=frr with a fixed text, namely 'North Frisian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "frr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ch with a fixed text, namely 'Chamorro' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ch"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=chy with a fixed text, namely 'Cheyenne' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "chy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ce with a fixed text, namely 'Chechen' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ce"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=no with a fixed text, namely 'Norwegian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "no"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bjn with a fixed text, namely 'Banjar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bjn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ceb with a fixed text, namely 'Cebuano' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ceb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ha with a fixed text, namely 'Hausa' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ha"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=frp with a fixed text, namely 'Franco-Provençal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "frp"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=chr with a fixed text, namely 'Cherokee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "chr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gcr with a fixed text, namely 'Guianan Creole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gcr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gor with a fixed text, namely 'Gorontalo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gor"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ext with a fixed text, namely 'Extremaduran' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ext"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fj with a fixed text, namely 'Fijian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fj"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fur with a fixed text, namely 'Friulian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fur"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bss with a fixed text, namely 'Kose' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bss"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=prg with a fixed text, namely 'Old Prussian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "prg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ses with a fixed text, namely 'Koyraboro Senni' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ses"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pko with a fixed text, namely 'Pökoot' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pko"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ccp with a fixed text, namely 'Chakma' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ccp"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=dua with a fixed text, namely 'Duala' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "dua"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tr with a fixed text, namely 'Turkish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ur with a fixed text, namely 'Urdu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ur"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bm with a fixed text, namely 'Bambara' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bm"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ff with a fixed text, namely 'Fula' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ff"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ru with a fixed text, namely 'Russian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ru"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sid with a fixed text, namely 'Sidamo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sid"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=niu with a fixed text, namely 'Niuean' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "niu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=oj with a fixed text, namely 'Ojibwe' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "oj"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=vot with a fixed text, namely 'Votic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "vot"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bfi with a fixed text, namely 'British Sign Language' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bfi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bla with a fixed text, namely 'Blackfoot' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bla"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bbc with a fixed text, namely 'Toba Batak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bbc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ctg with a fixed text, namely 'Chittagonian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ctg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=brh with a fixed text, namely 'Brahui' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "brh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bug with a fixed text, namely 'Bugis' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bug"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pa with a fixed text, namely 'Punjabi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pa"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pnb with a fixed text, namely 'Punjabi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pnb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=brx with a fixed text, namely 'Bodo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "brx"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sjd with a fixed text, namely 'Kildin Sami' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sjd"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bo with a fixed text, namely 'Tibetan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bi with a fixed text, namely 'Bislama' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cdo with a fixed text, namely 'Min Dong' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cdo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sw with a fixed text, namely 'Swahili' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gom with a fixed text, namely 'Goan Konkani' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gom"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mfe with a fixed text, namely 'Mauritian Creole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mfe"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=zh with a fixed text, namely 'Chinese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "zh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sdc with a fixed text, namely 'Sassarese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sdc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pdt with a fixed text, namely 'Plautdietsch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pdt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sty with a fixed text, namely 'Siberian Tatar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sty"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rmc with a fixed text, namely 'Carpathian Romani' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rmc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nys with a fixed text, namely 'Noongar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nys"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gsw-fr with a fixed text, namely 'Alsatian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gsw-fr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=zun with a fixed text, namely 'Zuni' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "zun"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sms with a fixed text, namely 'Skolt Sami' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sms"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pis with a fixed text, namely 'Pijin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pis"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nr with a fixed text, namely 'Southern Ndebele' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=umu with a fixed text, namely 'Munsee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "umu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gaa with a fixed text, namely 'Ga' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gaa"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fon with a fixed text, namely 'Fon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fon"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=loz with a fixed text, namely 'Lozi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "loz"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=crs with a fixed text, namely 'Seychellois Creole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "crs"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tru with a fixed text, namely 'Turoyo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tru"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=agq with a fixed text, namely 'Aghem' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "agq"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ary with a fixed text, namely 'Moroccan Arabic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ary"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=atj with a fixed text, namely 'Atikamekw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "atj"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=alt with a fixed text, namely 'Altai' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "alt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ta with a fixed text, namely 'Tamil' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ta"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ps with a fixed text, namely 'Pashto' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ps"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nqo with a fixed text, namely 'N'Ko' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nqo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ro with a fixed text, namely 'Romanian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ro"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cbk-zam with a fixed text, namely 'Chavacano' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cbk-zam"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ovd with a fixed text, namely 'Elfdalian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ovd"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=vmf with a fixed text, namely 'Main-Franconian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "vmf"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bto with a fixed text, namely 'Rinconada Bikol' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bto"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bcc with a fixed text, namely 'Southern Balochi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bcc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=crl with a fixed text, namely 'Northern East Cree' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "crl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lrc with a fixed text, namely 'Northern Luri' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lrc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=akl with a fixed text, namely 'Aklan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "akl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bpy with a fixed text, namely 'Bishnupriya Manipuri' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bpy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mic with a fixed text, namely 'Mi'kmaq' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mic"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sk with a fixed text, namely 'Slovak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sl with a fixed text, namely 'Slovene' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ryu with a fixed text, namely 'Okinawan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ryu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=yai with a fixed text, namely 'Yaghnobi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "yai"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=efi with a fixed text, namely 'Efik' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "efi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=te with a fixed text, namely 'Telugu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "te"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=yi with a fixed text, namely 'Yiddish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "yi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tg with a fixed text, namely 'Tajik' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bat-smg with a fixed text, namely 'Samogitian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bat-smg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nod with a fixed text, namely 'Northern Thai' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nod"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lag with a fixed text, namely 'Rangi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lag"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=krj with a fixed text, namely 'Kinaray-a' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "krj"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=yap with a fixed text, namely 'Yapese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "yap"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ydg with a fixed text, namely 'Yidgha' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ydg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=vi with a fixed text, namely 'Vietnamese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "vi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=it with a fixed text, namely 'Italian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "it"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bzg with a fixed text, namely 'Babuza' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bzg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pyu with a fixed text, namely 'Puyuma' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pyu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=guc with a fixed text, namely 'Wayuu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "guc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ood with a fixed text, namely 'O'odham' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ood"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bdr with a fixed text, namely 'West Coast Bajau' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bdr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=btm with a fixed text, namely 'Mandailing' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "btm"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gcf with a fixed text, namely 'Guadeloupean Creole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gcf"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=srq with a fixed text, namely 'Sirionó' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "srq"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ins with a fixed text, namely 'Indian Sign Language' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ins"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rki with a fixed text, namely 'Arakanese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rki"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=wls with a fixed text, namely 'Wallisian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "wls"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sje with a fixed text, namely 'Pite Sami' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sje"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=smj with a fixed text, namely 'Lule Sami' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "smj"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kum with a fixed text, namely 'Kumyk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kum"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nui with a fixed text, namely 'Kombe' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nui"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=zh-min-nan with a fixed text, namely 'Southern Min' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "zh-min-nan"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pl with a fixed text, namely 'Polish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cpx with a fixed text, namely 'Pu-Xian Min' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cpx"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=khg with a fixed text, namely 'Khams Tibetan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "khg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fkv with a fixed text, namely 'Kven' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fkv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fuf with a fixed text, namely 'Pular' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fuf"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=jax with a fixed text, namely 'Jambi Malay' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "jax"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=dtp with a fixed text, namely 'Kadazandusun' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "dtp"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=zgh with a fixed text, namely 'Standard Moroccan Berber' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "zgh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bgn with a fixed text, namely 'Western Balochi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bgn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=yav with a fixed text, namely 'Yangben' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "yav"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sv with a fixed text, namely 'Swedish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=azb with a fixed text, namely 'South Azerbaijani' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "azb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=xnb with a fixed text, namely 'Kanakanavu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "xnb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fa-af with a fixed text, namely 'Dari' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fa-af"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=qu with a fixed text, namely 'Quechua' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "qu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sei with a fixed text, namely 'Seri' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sei"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sq with a fixed text, namely 'Albanian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sq"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=uk with a fixed text, namely 'Ukrainian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "uk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=uz with a fixed text, namely 'Uzbek' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "uz"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ka with a fixed text, namely 'Georgian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ka"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pt with a fixed text, namely 'Portuguese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hy with a fixed text, namely 'Armenian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nl with a fixed text, namely 'Dutch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rm with a fixed text, namely 'Romansh' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rm"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=aln with a fixed text, namely 'Gheg Albanian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "aln"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mr with a fixed text, namely 'Marathi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mg with a fixed text, namely 'Malagasy' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sh with a fixed text, namely 'Serbo-Croatian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=zu with a fixed text, namely 'Zulu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "zu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=is with a fixed text, namely 'Icelandic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "is"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lb with a fixed text, namely 'Luxembourgish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tk with a fixed text, namely 'Turkmen' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=th with a fixed text, namely 'Thai' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "th"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ja with a fixed text, namely 'Japanese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ja"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lv with a fixed text, namely 'Latvian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rmy with a fixed text, namely 'Romani' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rmy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=km with a fixed text, namely 'Khmer' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "km"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lo with a fixed text, namely 'Lao' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=so with a fixed text, namely 'Somali' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "so"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sma with a fixed text, namely 'Southern Sami' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sma"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=moe with a fixed text, namely 'Innu-aimun' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "moe"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sr with a fixed text, namely 'Serbian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lt with a fixed text, namely 'Lithuanian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hu with a fixed text, namely 'Hungarian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=my with a fixed text, namely 'Burmese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "my"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ms with a fixed text, namely 'Malay' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ms"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=xh with a fixed text, namely 'Xhosa' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "xh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=udm with a fixed text, namely 'Udmurt' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "udm"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rue with a fixed text, namely 'Rusyn' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rue"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=stq with a fixed text, namely 'Saterland Frisian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "stq"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ky with a fixed text, namely 'Kyrgyz' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ky"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mt with a fixed text, namely 'Maltese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mk with a fixed text, namely 'Macedonian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=za with a fixed text, namely 'Zhuang' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "za"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ug with a fixed text, namely 'Uyghur' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ug"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ko with a fixed text, namely 'Korean' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ko"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=si with a fixed text, namely 'Sinhala' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "si"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kk with a fixed text, namely 'Kazakh' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=na with a fixed text, namely 'Nauruan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "na"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nv with a fixed text, namely 'Navajo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fit with a fixed text, namely 'Meänkieli' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fit"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=xmf with a fixed text, namely 'Mingrelian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "xmf"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=aa with a fixed text, namely 'Afar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "aa"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=anp with a fixed text, namely 'Angika' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "anp"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rup with a fixed text, namely 'Aromanian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rup"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=vec with a fixed text, namely 'Venetian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "vec"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=vep with a fixed text, namely 'Veps' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "vep"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bh with a fixed text, namely 'Bhojpuri' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=shy with a fixed text, namely 'Shawiya' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "shy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hz with a fixed text, namely 'Herero' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hz"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mnw with a fixed text, namely 'Mon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mnw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mzn with a fixed text, namely 'Mazanderani' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mzn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=oc with a fixed text, namely 'Occitan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "oc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=id with a fixed text, namely 'Indonesian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "id"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ve with a fixed text, namely 'Venda' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ve"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=min with a fixed text, namely 'Minangkabau' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "min"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mwl with a fixed text, namely 'Mirandese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mwl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pdc with a fixed text, namely 'Pennsylvania German' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pdc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pfl with a fixed text, namely 'Palatinate German' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pfl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nn with a fixed text, namely 'Nynorsk' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nb with a fixed text, namely 'Bokmål' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kw with a fixed text, namely 'Cornish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sco with a fixed text, namely 'Scots' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sco"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mdf with a fixed text, namely 'Moksha' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mdf"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sd with a fixed text, namely 'Sindhi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sd"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tt with a fixed text, namely 'Tatar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=szl with a fixed text, namely 'Silesian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "szl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kaa with a fixed text, namely 'Karakalpak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kaa"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=jv with a fixed text, namely 'Javanese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "jv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tl with a fixed text, namely 'Tagalog' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=to with a fixed text, namely 'Tongan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "to"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=myv with a fixed text, namely 'Erzya' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "myv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lez with a fixed text, namely 'Lezgian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lez"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cho with a fixed text, namely 'Choctaw' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cho"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kl with a fixed text, namely 'Greenlandic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pms with a fixed text, namely 'Piedmontese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pms"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=crh with a fixed text, namely 'Crimean Tatar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "crh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=smn with a fixed text, namely 'Inari Sami' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "smn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ksh with a fixed text, namely 'Ripuarian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ksh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ny with a fixed text, namely 'Chewa' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ny"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mn with a fixed text, namely 'Mongolian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ks with a fixed text, namely 'Kashmiri' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ks"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ig with a fixed text, namely 'Igbo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ig"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rw with a fixed text, namely 'Kinyarwanda' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nds with a fixed text, namely 'Low German' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nds"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ng with a fixed text, namely 'Ndonga' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ng"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=skr with a fixed text, namely 'Saraiki' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "skr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=se with a fixed text, namely 'Northern Sami' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "se"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ik with a fixed text, namely 'Inupiaq' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ik"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kjh with a fixed text, namely 'Khakas' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kjh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ne with a fixed text, namely 'Nepali' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ne"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nap with a fixed text, namely 'Neapolitan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nap"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lg with a fixed text, namely 'Luganda' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ht with a fixed text, namely 'Haitian Creole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ht"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=os with a fixed text, namely 'Ossetian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "os"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=new with a fixed text, namely 'Newar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "new"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=su with a fixed text, namely 'Sundanese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "su"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=iu with a fixed text, namely 'Inuktitut' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "iu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ki with a fixed text, namely 'Gikuyu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ki"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kn with a fixed text, namely 'Kannada' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=inh with a fixed text, namely 'Ingush' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "inh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pcd with a fixed text, namely 'Picard' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pcd"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sc with a fixed text, namely 'Sardinian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=srn with a fixed text, namely 'Sranan Tongo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "srn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rn with a fixed text, namely 'Kirundi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ho with a fixed text, namely 'Hiri Motu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ho"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sg with a fixed text, namely 'Sango' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pap with a fixed text, namely 'Papiamento' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pap"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kbd with a fixed text, namely 'Kabardian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kbd"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=or with a fixed text, namely 'Odia' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "or"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=arn with a fixed text, namely 'Mapudungun' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "arn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=om with a fixed text, namely 'Oromo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "om"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sat with a fixed text, namely 'Santali' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sat"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ii with a fixed text, namely 'Nuosu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ii"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kbp with a fixed text, namely 'Kabiye' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kbp"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kab with a fixed text, namely 'Kabyle' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kab"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kg with a fixed text, namely 'Kongo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=krc with a fixed text, namely 'Karachay-Balkar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "krc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tum with a fixed text, namely 'Tumbuka' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tum"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tsg with a fixed text, namely 'Tausug' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tsg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=shi with a fixed text, namely 'Shilha' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "shi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sn with a fixed text, namely 'Shona' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tpi with a fixed text, namely 'Tok Pisin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tpi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rif with a fixed text, namely 'Tarifit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rif"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tyv with a fixed text, namely 'Tuvan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tyv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ti with a fixed text, namely 'Tigrinya' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ti"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tet with a fixed text, namely 'Tetum' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tet"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=scn with a fixed text, namely 'Sicilian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "scn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lmo with a fixed text, namely 'Lombard' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lmo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ilo with a fixed text, namely 'Ilocano' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ilo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sm with a fixed text, namely 'Samoan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sm"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ss with a fixed text, namely 'Swazi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ss"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mni with a fixed text, namely 'Meitei' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mni"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kv with a fixed text, namely 'Komi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ku with a fixed text, namely 'Kurdish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ku"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lad with a fixed text, namely 'Judaeo-Spanish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lad"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ts with a fixed text, namely 'Tsonga' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ts"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=st with a fixed text, namely 'Sesotho' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "st"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lij with a fixed text, namely 'Ligurian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lij"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mai with a fixed text, namely 'Maithili' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mai"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tvl with a fixed text, namely 'Tuvaluan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tvl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tn with a fixed text, namely 'Tswana' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=wa with a fixed text, namely 'Walloon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "wa"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nan with a fixed text, namely 'Southern Min' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nan"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pih with a fixed text, namely 'Pitkern' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pih"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lld with a fixed text, namely 'Ladin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lld"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ty with a fixed text, namely 'Tahitian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ty"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=wo with a fixed text, namely 'Wolof' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "wo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=war with a fixed text, namely 'Waray' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "war"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lbe with a fixed text, namely 'Lak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lbe"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ltg with a fixed text, namely 'Latgalian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ltg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mad with a fixed text, namely 'Madurese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mad"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mh with a fixed text, namely 'Marshallese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mo with a fixed text, namely 'Moldovan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=yrk with a fixed text, namely 'Nenets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "yrk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=chn with a fixed text, namely 'Chinook Jargon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "chn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kr with a fixed text, namely 'Kanuri' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tw with a fixed text, namely 'Twi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=shn with a fixed text, namely 'Shan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "shn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=vls with a fixed text, namely 'West Flemish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "vls"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pag with a fixed text, namely 'Pangasinan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pag"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nso with a fixed text, namely 'Northern Sotho' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nso"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ln with a fixed text, namely 'Lingala' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ln"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=zea with a fixed text, namely 'Zeelandic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "zea"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tay with a fixed text, namely 'Atayal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tay"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=wuu with a fixed text, namely 'Wu Chinese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "wuu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sah with a fixed text, namely 'Sakha' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sah"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=jam with a fixed text, namely 'Jamaican Creole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "jam"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lkt with a fixed text, namely 'Lakota' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lkt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=krl with a fixed text, namely 'Karelian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "krl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tcy with a fixed text, namely 'Tulu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tcy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sju with a fixed text, namely 'Ume Sami' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sju"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sou with a fixed text, namely 'Southern Thai' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sou"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=adx with a fixed text, namely 'Amdo Tibetan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "adx"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sli with a fixed text, namely 'Silesian German' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sli"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=als with a fixed text, namely 'Swiss German' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "als"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kha with a fixed text, namely 'Khasi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kha"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mnc with a fixed text, namely 'Manchu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mnc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=yo with a fixed text, namely 'Yoruba' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "yo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ml with a fixed text, namely 'Malayalam' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ml"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hai with a fixed text, namely 'Haida' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hai"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kut with a fixed text, namely 'Kutenai' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kut"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hoc with a fixed text, namely 'Ho' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hoc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gsg with a fixed text, namely 'German Sign Language' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gsg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=li with a fixed text, namely 'Limburgish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "li"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hyw with a fixed text, namely 'Western Armenian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hyw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=esu with a fixed text, namely 'Central Alaskan Yup'ik' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "esu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=abq with a fixed text, namely 'Abaza' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "abq"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tli with a fixed text, namely 'Tlingit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tli"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=trv with a fixed text, namely 'Seediq' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "trv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=szy with a fixed text, namely 'Sakizaya' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "szy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lus with a fixed text, namely 'Mizo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lus"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=olo with a fixed text, namely 'Livvi-Karelian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "olo"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pnt with a fixed text, namely 'Pontic Greek' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pnt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=koi with a fixed text, namely 'Permyak' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "koi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nog with a fixed text, namely 'Nogai' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nog"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=wbl with a fixed text, namely 'Wakhi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "wbl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tly with a fixed text, namely 'Talysh' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tly"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mhr with a fixed text, namely 'Meadow Mari' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mhr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ruq with a fixed text, namely 'Megleno-Romanian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ruq"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mwv with a fixed text, namely 'Mentawai' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mwv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=koy with a fixed text, namely 'Koyukon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "koy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=clc with a fixed text, namely 'Chilcotin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "clc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fiu-vro with a fixed text, namely 'Võro' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fiu-vro"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=frc with a fixed text, namely 'Louisiana French' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "frc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=guw with a fixed text, namely 'Gun' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "guw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cnh with a fixed text, namely 'Hakha-Chin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cnh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sjm with a fixed text, namely 'Mapun' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sjm"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bzs with a fixed text, namely 'Brazilian Sign Language' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bzs"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kcg with a fixed text, namely 'Tyap' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kcg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mi with a fixed text, namely 'Māori' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=aeb with a fixed text, namely 'Tunisian Arabic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "aeb"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nrf-gg with a fixed text, namely 'Guernésiais' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nrf-gg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lki with a fixed text, namely 'Laki' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lki"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bej with a fixed text, namely 'Beja' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bej"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ckt with a fixed text, namely 'Chukchi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ckt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mus with a fixed text, namely 'Muscogee' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mus"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pwn with a fixed text, namely 'Paiwan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pwn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kj with a fixed text, namely 'Kwanyama' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kj"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rgn with a fixed text, namely 'Romagnol' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rgn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=abs with a fixed text, namely 'Ambonese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "abs"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sxr with a fixed text, namely 'Saaroa' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sxr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ckv with a fixed text, namely 'Kavalan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ckv"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tsu with a fixed text, namely 'Tsou' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tsu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=xsy with a fixed text, namely 'Saisiyat' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "xsy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lvk with a fixed text, namely 'Lavukaleve' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lvk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=zh-yue with a fixed text, namely 'Yue Chinese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "zh-yue"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tvn with a fixed text, namely 'Tavoyan' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tvn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pmy with a fixed text, namely 'Papuan Malay' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pmy"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kbg with a fixed text, namely 'Khamba' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kbg"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rwr with a fixed text, namely 'Marwari' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rwr"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ttm with a fixed text, namely 'Northern Tutchone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ttm"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mrj with a fixed text, namely 'Hill Mari' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mrj"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nia with a fixed text, namely 'Nias' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nia"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=yrl with a fixed text, namely 'Nheengatu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "yrl"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cak with a fixed text, namely 'Kaqchikel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cak"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ami with a fixed text, namely 'Amis' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ami"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=krx with a fixed text, namely 'Karon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "krx"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hil with a fixed text, namely 'Hiligaynon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hil"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=uun with a fixed text, namely 'Pazeh' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "uun"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sjt with a fixed text, namely 'Ter Sami' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sjt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=wal with a fixed text, namely 'Wolaytta' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "wal"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=wym with a fixed text, namely 'Vilamovian' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "wym"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=arq with a fixed text, namely 'Algerian Arabic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "arq"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bsk with a fixed text, namely 'Burushaski' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bsk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bqi with a fixed text, namely 'Bakhtiari' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bqi"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=hrx with a fixed text, namely 'Hunsrik' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "hrx"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ssf with a fixed text, namely 'Thao' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ssf"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=mrh with a fixed text, namely 'Mara' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "mrh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=aoc with a fixed text, namely 'Pemon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "aoc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tsk with a fixed text, namely 'Tseku' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tsk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=luz with a fixed text, namely 'Southern Luri' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "luz"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tce with a fixed text, namely 'Southern Tutchone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tce"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=quc with a fixed text, namely 'K’iche’' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "quc"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bnn with a fixed text, namely 'Bunun' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bnn"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=lzz with a fixed text, namely 'Laz' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "lzz"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=sdh with a fixed text, namely 'Southern Kurdish' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "sdh"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=nsk with a fixed text, namely 'Naskapi' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "nsk"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=akz with a fixed text, namely 'Alabama' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "akz"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kri with a fixed text, namely 'Krio' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kri"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kea with a fixed text, namely 'Cape Verdean Creole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kea"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=dru with a fixed text, namely 'Rukai' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "dru"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=tzm with a fixed text, namely 'Central Atlas Tamazight' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "tzm"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=bfq with a fixed text, namely 'Badaga' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "bfq"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=khw with a fixed text, namely 'Khowar' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "khw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=uzs with a fixed text, namely 'Southern Uzbek' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "uzs"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rmf with a fixed text, namely 'Finnish Kalo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rmf"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=osa with a fixed text, namely 'Osage' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "osa"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=cps with a fixed text, namely 'Capiznon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "cps"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pjt with a fixed text, namely 'Pitjantjatjara' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pjt"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kjp with a fixed text, namely 'Eastern Pwo' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kjp"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=gpe with a fixed text, namely 'Ghanaian Pidgin English' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "gpe"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=kiu with a fixed text, namely 'Kirmanjki' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "kiu"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=rar with a fixed text, namely 'Cook Islands Maori' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "rar"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=ksw with a fixed text, namely 'S'gaw Karen' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "ksw"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=zh_Hant with a fixed text, namely 'Simplified Chinese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "zh_Hant"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=pt_BR with a fixed text, namely 'Brazilian Portuguese' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "pt_BR"
+    },
+    {
+      "key": "school:language",
+      "description": "Layer 'Primary and secondary schools' shows school:language=fil with a fixed text, namely 'Filipino' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "value": "fil"
     },
     {
       "key": "amenity",

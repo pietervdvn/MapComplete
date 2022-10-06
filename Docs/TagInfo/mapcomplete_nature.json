@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/nature",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/nature/logo.svg",
-    "contact_name": "Pieter Vander Vennet, ",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -14,6 +14,11 @@
       "key": "amenity",
       "description": "The MapComplete theme Into nature has a layer Drinking water showing features with this tag",
       "value": "drinking_water"
+    },
+    {
+      "key": "drinking_water",
+      "description": "The MapComplete theme Into nature has a layer Drinking water showing features with this tag",
+      "value": "yes"
     },
     {
       "key": "image",
@@ -457,12 +462,12 @@
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Backrest: Yes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Does have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Backrest: No' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Does <b>not</b> have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "no"
     },
     {
@@ -475,32 +480,32 @@
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'Material: wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'The seating is made from wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "wood"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'Material: metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'The seating is made from metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "metal"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'Material: stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'The seating is made from stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "stone"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'Material: concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'The seating is made from concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "concrete"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'Material: plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'The seating is made from plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "plastic"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'Material: steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'The seating is made from steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "steel"
     },
     {
@@ -582,6 +587,35 @@
       "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Into nature')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "-1"
+    },
+    {
       "key": "material",
       "description": "Layer 'Picnic tables' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Into nature')"
     },
@@ -620,6 +654,35 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Into nature')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "-1"
     },
     {
       "key": "access",
@@ -694,6 +757,15 @@
       "value": "no"
     },
     {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=designated with a fixed text, namely 'There is only a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "designated"
+    },
+    {
+      "key": "door:width",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the MapComplete.osm.be theme 'Into nature')"
+    },
+    {
       "key": "toilets:position",
       "description": "Layer 'Toilets' shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "seated"
@@ -766,35 +838,6 @@
       "key": "toilets:paper_supplied",
       "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "no"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Into nature')"
-    },
-    {
-      "key": "location",
-      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Into nature')",
-      "value": "underground"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
-      "value": "0"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key level.",
-      "value": ""
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
-      "value": "1"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
-      "value": "-1"
     },
     {
       "key": "description",

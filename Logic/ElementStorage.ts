@@ -1,20 +1,17 @@
 /**
  * Keeps track of a dictionary 'elementID' -> UIEventSource<tags>
  */
-import {UIEventSource} from "./UIEventSource";
-import {GeoJSONObject} from "@turf/turf";
+import { UIEventSource } from "./UIEventSource"
+import { GeoJSONObject } from "@turf/turf"
 
 export class ElementStorage {
+    public ContainingFeatures = new Map<string, any>()
+    private _elements = new Map<string, UIEventSource<any>>()
 
-    public ContainingFeatures = new Map<string, any>();
-    private _elements = new Map<string, UIEventSource<any>>();
-
-    constructor() {
-
-    }
+    constructor() {}
 
     addElementById(id: string, eventSource: UIEventSource<any>) {
-        this._elements.set(id, eventSource);
+        this._elements.set(id, eventSource)
     }
 
     /**
@@ -24,8 +21,8 @@ export class ElementStorage {
      * Note: it will cleverly merge the tags, if needed
      */
     addOrGetElement(feature: any): UIEventSource<any> {
-        const elementId = feature.properties.id;
-        const newProperties = feature.properties;
+        const elementId = feature.properties.id
+        const newProperties = feature.properties
 
         const es = this.addOrGetById(elementId, newProperties)
 
@@ -33,91 +30,89 @@ export class ElementStorage {
         feature.properties = es.data
 
         if (!this.ContainingFeatures.has(elementId)) {
-            this.ContainingFeatures.set(elementId, feature);
+            this.ContainingFeatures.set(elementId, feature)
         }
 
-        return es;
+        return es
     }
 
     getEventSourceById(elementId): UIEventSource<any> {
         if (elementId === undefined) {
-            return undefined;
+            return undefined
         }
-        return this._elements.get(elementId);
+        return this._elements.get(elementId)
     }
 
     has(id) {
-        return this._elements.has(id);
+        return this._elements.has(id)
     }
 
-    addAlias(oldId: string, newId: string){
+    addAlias(oldId: string, newId: string) {
         if (newId === undefined) {
             // We removed the node/way/relation with type 'type' and id 'oldId' on openstreetmap!
-            const element = this.getEventSourceById(oldId);
+            const element = this.getEventSourceById(oldId)
             element.data._deleted = "yes"
-            element.ping();
-            return;
+            element.ping()
+            return
         }
-        
+
         if (oldId == newId) {
-            return undefined;
+            return undefined
         }
-        const element = this.getEventSourceById( oldId);
+        const element = this.getEventSourceById(oldId)
         if (element === undefined) {
             // Element to rewrite not found, probably a node or relation that is not rendered
             return undefined
         }
-        element.data.id = newId;
-        this.addElementById(newId, element);
-        this.ContainingFeatures.set(newId, this.ContainingFeatures.get( oldId))
-        element.ping();
+        element.data.id = newId
+        this.addElementById(newId, element)
+        this.ContainingFeatures.set(newId, this.ContainingFeatures.get(oldId))
+        element.ping()
     }
-    
+
     private addOrGetById(elementId: string, newProperties: any): UIEventSource<any> {
         if (!this._elements.has(elementId)) {
-            const eventSource = new UIEventSource<any>(newProperties, "tags of " + elementId);
-            this._elements.set(elementId, eventSource);
-            return eventSource;
+            const eventSource = new UIEventSource<any>(newProperties, "tags of " + elementId)
+            this._elements.set(elementId, eventSource)
+            return eventSource
         }
 
-
-        const es = this._elements.get(elementId);
+        const es = this._elements.get(elementId)
         if (es.data == newProperties) {
             // Reference comparison gives the same object! we can just return the event source
-            return es;
+            return es
         }
-        const keptKeys = es.data;
+        const keptKeys = es.data
         // The element already exists
         // We use the new feature to overwrite all the properties in the already existing eventsource
         const debug_msg = []
-        let somethingChanged = false;
+        let somethingChanged = false
         for (const k in newProperties) {
             if (!newProperties.hasOwnProperty(k)) {
-                continue;
+                continue
             }
-            const v = newProperties[k];
+            const v = newProperties[k]
 
             if (keptKeys[k] !== v) {
-
                 if (v === undefined) {
                     // The new value is undefined; the tag might have been removed
                     // It might be a metatag as well
                     // In the latter case, we do keep the tag!
                     if (!k.startsWith("_")) {
                         delete keptKeys[k]
-                        debug_msg.push(("Erased " + k))
+                        debug_msg.push("Erased " + k)
                     }
                 } else {
-                    keptKeys[k] = v;
+                    keptKeys[k] = v
                     debug_msg.push(k + " --> " + v)
                 }
 
-                somethingChanged = true;
+                somethingChanged = true
             }
         }
         if (somethingChanged) {
-            es.ping();
+            es.ping()
         }
-        return es;
+        return es
     }
 }

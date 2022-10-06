@@ -4,7 +4,8 @@
     "en": "Maxspeed",
     "es": "Velocidad",
     "ca": "Velocitat",
-    "de": "Höchstgeschwindigkeit"
+    "de": "Höchstgeschwindigkeit",
+    "nl": "Maximumsnelheid"
   },
   "source": {
     "osmTags": {
@@ -56,15 +57,16 @@
   "tagRenderings": [
     {
       "render": {
-        "en": "The maximum allowed speed on this road is {maxspeed}",
-        "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}",
-        "nl": "De maximum toegestane snelheid op deze weg is {maxspeed}"
+        "en": "The maximum allowed speed on this road is {canonical(maxspeed)}",
+        "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße beträgt {canonical(maxspeed)}",
+        "nl": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}"
       },
       "question": {
         "es": "Qué velocidad tiene",
         "ca": "Quina velocitat té",
         "en": "What is the legal maximum speed one is allowed to drive on this road?",
-        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?"
+        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
+        "nl": "Wat is de legale maximumsnelheid voor deze weg?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -109,16 +111,19 @@
   "allowSplit": true,
   "mapRendering": [
     {
-      "render": null,
       "icon": {
+        "render": null,
         "mappings": [
           {
             "if": "maxspeed~[1-9]0|1[0-4]0",
+            "then": "./assets/themes/maxspeed/maxspeed_{maxspeed} mph.svg"
+          },
+          {
+            "if": "maxspeed~[1-9]0|1[0-4]0 mph",
             "then": "./assets/themes/maxspeed/maxspeed_{maxspeed}.svg"
           }
         ]
       },
-      "condition": "maxspeed!=30",
       "iconSize": {
         "render": "32,32,center"
       },
@@ -153,7 +158,6 @@
             "kmh",
             "kph"
           ],
-          "default": true,
           "human": {
             "en": "kilometers/hour",
             "ca": "quilòmetres/hora",
@@ -171,6 +175,10 @@
         },
         {
           "canonicalDenomination": "mph",
+          "useIfNoUnitGiven": [
+            "gb",
+            "us"
+          ],
           "alternativeDenomination": [
             "m/u",
             "mh",

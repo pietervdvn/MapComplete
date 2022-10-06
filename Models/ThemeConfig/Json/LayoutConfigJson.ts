@@ -1,6 +1,6 @@
-import {LayerConfigJson} from "./LayerConfigJson";
-import TilesourceConfigJson from "./TilesourceConfigJson";
-import ExtraLinkConfigJson from "./ExtraLinkConfigJson";
+import { LayerConfigJson } from "./LayerConfigJson"
+import TilesourceConfigJson from "./TilesourceConfigJson"
+import ExtraLinkConfigJson from "./ExtraLinkConfigJson"
 
 /**
  * Defines the entire theme.
@@ -15,7 +15,6 @@ import ExtraLinkConfigJson from "./ExtraLinkConfigJson";
  * General remark: a type (string | any) indicates either a fixed or a translatable string.
  */
 export interface LayoutConfigJson {
-
     /**
      * The id of this layout.
      *
@@ -25,27 +24,16 @@ export interface LayoutConfigJson {
      * On official themes, it'll become the name of the page, e.g.
      * 'cyclestreets' which become 'cyclestreets.html'
      */
-    id: string;
+    id: string
 
     /**
      * Who helped to create this theme and should be attributed?
      */
-    credits?: string;
-
-    /**
-     * Who does maintain this preset?
-     */
-    maintainer: string;
-
-    /**
-     * A version number, either semantically or by date.
-     * Should be sortable, where the higher value is the later version
-     */
-    version: string;
+    credits?: string
 
     /**
      * Only used in 'generateLayerOverview': if present, every translation will be checked to make sure it is fully translated.
-     * 
+     *
      * This must be a list of two-letter, lowercase codes which identifies the language, e.g. "en", "nl", ...
      */
     mustHaveLanguage?: string[]
@@ -53,49 +41,49 @@ export interface LayoutConfigJson {
     /**
      * The title, as shown in the welcome message and the more-screen.
      */
-    title: string | any;
+    title: string | any
 
     /**
      * A short description, showed as social description and in the 'more theme'-buttons.
      * Note that if this one is not defined, the first sentence of 'description' is used
      */
-    shortDescription?: string | any;
+    shortDescription?: string | any
 
     /**
      * The description, as shown in the welcome message and the more-screen
      */
-    description: string | any;
+    description: string | any
 
     /**
      * A part of the description, shown under the login-button.
      */
-    descriptionTail?: string | any;
+    descriptionTail?: string | any
 
     /**
      * The icon representing this theme.
      * Used as logo in the more-screen and (for official themes) as favicon, webmanifest logo, ...
      * Either a URL or a base64 encoded value (which should include 'data:image/svg+xml;base64)
-     * 
+     *
      * Type: icon
      */
-    icon: string;
+    icon: string
 
     /**
      * Link to a 'social image' which is included as og:image-tag on official themes.
      * Useful to share the theme on social media.
      * See https://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit for more information$
-     * 
+     *
      * Type: image
      */
-    socialImage?: string;
+    socialImage?: string
 
     /**
      * Default location and zoom to start.
      * Note that this is barely used. Once the user has visited mapcomplete at least once, the previous location of the user will be used
      */
-    startZoom: number;
-    startLat: number;
-    startLon: number;
+    startZoom: number
+    startLat: number
+    startLon: number
 
     /**
      * When a query is run, the data within bounds of the visible map is loaded.
@@ -104,7 +92,7 @@ export interface LayoutConfigJson {
      *
      * IF widenfactor is 1, this feature is disabled. A recommended value is between 1 and 3
      */
-    widenFactor?: number;
+    widenFactor?: number
     /**
      * At low zoom levels, overpass is used to query features.
      * At high zoom level, the OSM api is used to fetch one or more BBOX aligning with a slippy tile.
@@ -150,12 +138,12 @@ export interface LayoutConfigJson {
      *
      * In the above scenario, `sometagrendering` will be added at the beginning of the tagrenderings of every layer
      */
-    overrideAll?: any;
+    overrideAll?: Partial<any | LayerConfigJson>
 
     /**
      * The id of the default background. BY default: vanilla OSM
      */
-    defaultBackgroundId?: string;
+    defaultBackgroundId?: string
 
     /**
      * Define some (overlay) slippy map tilesources
@@ -185,7 +173,7 @@ export interface LayoutConfigJson {
      * ```
      * "layer": {
      *  "builtin": "nature_reserve",
-     *  "override": {"source": 
+     *  "override": {"source":
      *  {"osmTags": {
      *  "+and":["operator=Natuurpunt"]
      *    }
@@ -203,120 +191,127 @@ export interface LayoutConfigJson {
      * }
      *```
      */
-    layers: (LayerConfigJson | string | 
-        { builtin: string | string[], 
-            override: any,
-            /**
-             * TagRenderings with any of these labels will be removed from the layer.
-             * Note that the 'id' and 'group' are considered labels too
-             */
-            hideTagRenderingsWithLabels?: string[]})[],
+    layers: (
+        | LayerConfigJson
+        | string
+        | {
+              builtin: string | string[]
+              override: any
+              /**
+               * TagRenderings with any of these labels will be removed from the layer.
+               * Note that the 'id' and 'group' are considered labels too
+               */
+              hideTagRenderingsWithLabels?: string[]
+          }
+    )[]
 
     /**
      * If defined, data will be clustered.
      * Defaults to {maxZoom: 16, minNeeded: 500}
      */
-    clustering?: {
-        /**
-         * All zoom levels above 'maxzoom' are not clustered anymore.
-         * Defaults to 18
-         */
-        maxZoom?: number,
-        /**
-         * The number of elements per tile needed to start clustering
-         * If clustering is defined, defaults to 250
-         */
-        minNeededElements?: number
-    } | false,
+    clustering?:
+        | {
+              /**
+               * All zoom levels above 'maxzoom' are not clustered anymore.
+               * Defaults to 18
+               */
+              maxZoom?: number
+              /**
+               * The number of elements per tile needed to start clustering
+               * If clustering is defined, defaults to 250
+               */
+              minNeededElements?: number
+          }
+        | false
 
     /**
      * The URL of a custom CSS stylesheet to modify the layout
      */
-    customCss?: string;
+    customCss?: string
     /**
      * If set to true, this layout will not be shown in the overview with more themes
      */
-    hideFromOverview?: boolean;
+    hideFromOverview?: boolean
 
     /**
      * If set to true, the basemap will not scroll outside of the area visible on initial zoom.
      * If set to [[lon, lat], [lon, lat]], the map will not scroll outside of those bounds.
      * Off by default, which will enable panning to the entire world
      */
-    lockLocation?: [[number, number], [number, number]] | number[][];
+    lockLocation?: [[number, number], [number, number]] | number[][]
 
     /**
      * Adds an additional button on the top-left of the application.
      * This can link to an arbitrary location.
-     * 
+     *
      * Note that {lat},{lon},{zoom}, {language} and {theme} will be replaced
-     * 
-     * Default: {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]}, 
-     * 
+     *
+     * Default: {icon: "./assets/svg/pop-out.svg", href: 'https://mapcomplete.osm.be/{theme}.html?lat={lat}&lon={lon}&z={zoom}, requirements: ["iframe","no-welcome-message]},
+     *
      */
     extraLink?: ExtraLinkConfigJson
-    
+
     /**
      * If set to false, disables logging in.
      * The userbadge will be hidden, all login-buttons will be hidden and editing will be disabled
      */
-    enableUserBadge?: true | boolean;
+    enableUserBadge?: true | boolean
     /**
      * If false, hides the tab 'share'-tab in the welcomeMessage
      */
-    enableShareScreen?: true | boolean;
+    enableShareScreen?: true | boolean
     /**
      * Hides the tab with more themes in the welcomeMessage
      */
-    enableMoreQuests?: true | boolean;
+    enableMoreQuests?: true | boolean
     /**
      * If false, the layer selection/filter view will be hidden
      * The corresponding URL-parameter is 'fs-filters' instead of 'fs-layers'
      */
-    enableLayers?: true | boolean;
+    enableLayers?: true | boolean
     /**
      * If set to false, hides the search bar
      */
-    enableSearch?: true | boolean;
+    enableSearch?: true | boolean
     /**
      * If set to false, the ability to add new points or nodes will be disabled.
      * Editing already existing features will still be possible
      */
-    enableAddNewPoints?: true | boolean;
+    enableAddNewPoints?: true | boolean
     /**
      * If set to false, the 'geolocation'-button will be hidden.
      */
-    enableGeolocation?: true | boolean;
+    enableGeolocation?: true | boolean
     /**
      * Enable switching the backgroundlayer.
-     * If false, the quickswitch-buttons are removed (bottom left) and the dropdown in the layer selection is removed as well 
+     * If false, the quickswitch-buttons are removed (bottom left) and the dropdown in the layer selection is removed as well
      */
-    enableBackgroundLayerSelection?: true | boolean;
+    enableBackgroundLayerSelection?: true | boolean
     /**
      * If set to true, will show _all_ unanswered questions in a popup instead of just the next one
      */
-    enableShowAllQuestions?: false | boolean;
+    enableShowAllQuestions?: false | boolean
     /**
      * If set to true, download button for the data will be shown (offers downloading as geojson and csv)
      */
-    enableDownload?: false | boolean;
+    enableDownload?: false | boolean
     /**
      * If set to true, exporting a pdf is enabled
      */
-    enablePdfDownload?: false | boolean;
+    enablePdfDownload?: false | boolean
 
     /**
      * If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),
      * these notes will be shown if a relevant layer is present.
-     * 
+     *
      * Default is true for official layers and false for unofficial (sideloaded) layers
      */
-    enableNoteImports?: true | boolean;
+    enableNoteImports?: true | boolean
 
     /**
      * Set one or more overpass URLs to use for this theme..
      */
-    overpassUrl?: string | string[];
+    overpassUrl?: string | string[]
     /**
      * Set a different timeout for overpass queries - in seconds. Default: 30s
      */

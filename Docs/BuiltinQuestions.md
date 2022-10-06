@@ -32,8 +32,13 @@ The following items can be easily reused in your layers
     + [payment-options-advanced](#payment-options-advanced)
     + [last_edit](#last_edit)
     + [all_tags](#all_tags)
+    + [multilevels](#multilevels)
     + [level](#level)
     + [smoking](#smoking)
+    + [induction-loop](#induction-loop)
+    + [internet](#internet)
+    + [internet-fee](#internet-fee)
+    + [internet-ssid](#internet-ssid)
     + [default](#default)
     + [defaults](#defaults)
     + [isOpen](#isopen)
@@ -324,6 +329,25 @@ Read-only tagrendering
 
 
 
+### multilevels 
+
+
+
+This elevator goes to floors {level}
+
+What levels does this elevator go to?
+
+
+
+  - Located underground
+  - Located on the ground floor
+  - Located on the ground floor
+  - Located on the first floor
+  - Located on the first basement level
+
+
+
+
 ### level 
 
 
@@ -354,6 +378,67 @@ Is smoking allowed at {title()}?
   - Smoking is <b>allowed</b>
   - Smoking is <b>not allowed</b>
   - Smoking is <b>allowed outside</b>.
+
+
+
+
+### induction-loop 
+
+
+
+Does this place have an audio induction loop for people with reduced hearing?
+
+
+
+  - This place has an audio induction loop
+  - This place <b>does not</b> have an audio induction loop
+
+
+
+
+### internet 
+
+
+
+Does this place offer internet access?
+
+
+
+  - This place offers wireless internet access
+  - This place <b>does not</b> offer internet access
+  - This place offers internet access
+  - This place offers internet access via a terminal or computer
+  - This place offers wired internet access
+
+
+
+
+### internet-fee 
+
+
+
+Is there a fee for internet access?
+
+
+
+  - There is a fee for the internet access at this place
+  - Internet access is free at this place
+  - Internet access is free at this place, for customers only
+
+
+
+
+### internet-ssid 
+
+
+
+The network name is <b>{internet_access:ssid}</b>
+
+What is the network name for the wireless internet access?
+
+
+
+  - Telekom
 
 
 

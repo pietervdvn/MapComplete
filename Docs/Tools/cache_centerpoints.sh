@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env      bash
 
 ts-node GenerateSeries.ts
 # Move to the root of the repo

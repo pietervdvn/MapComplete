@@ -163,11 +163,6 @@
         "description": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén",
         "title": "Ivóvíz"
     },
-    "entrances": {
-        "description": "Épületek bejáratai mutató térkép, amely a kerekesszékkel közlekedőknek fontos szempontokat jeleníti meg",
-        "shortDescription": "Akadálymentes útvonaltervezést segítő bejáratok feltérképezése",
-        "title": "Épületek bejáratai"
-    },
     "etymology": {
         "description": "Ezen a térképen az látható, hogy egy objektum milyen névre hallgat. Az utcák, épületek stb. az OpenStreetMapről származnak, amely össze van kapcsolva a Wikidata adatbázissal. A felugró ablakban megjelenik a megfelelő Wikipedia-szócikk (ha van) vagy egy Wikidata-doboz arról, amiről az objektumot elnevezték. Ha magának az objektumnak van Wikipédia-oldala, az is megjelenik.<br/><br/><b>A térképet Ön is szerkesztheti!</b>nagyítson rá, és <i>az összes</i> utca megjelenik. Ha valamelyikre rákattint, megjelenik Wikidata-kereső doboz. Néhány kattintással hozzáadhat egy etimológiai linket. Ne feledje, hogy ehhez szüksége van egy ingyenes OpenStreetMap-fiókra.",
         "layers": {
@@ -350,52 +345,6 @@
     },
     "postboxes": {
         "description": "Ezen a térképen postahivatalok és postaládák adatait találod és egészítheted ki. Utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? Ezt a térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted. ",
-        "layers": {
-            "0": {
-                "description": "A postaládákat megjelenítő réteg.",
-                "name": "Postaládák",
-                "presets": {
-                    "0": {
-                        "title": "postaláda"
-                    }
-                },
-                "title": {
-                    "render": "Postaláda"
-                }
-            },
-            "1": {
-                "description": "Postákat megjelenítő réteg.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Most nyitva"
-                            }
-                        }
-                    }
-                },
-                "name": "Posták",
-                "presets": {
-                    "0": {
-                        "title": "Posta"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "Éjjel-nappal nyitva (munkaszüneti napokon is)"
-                            }
-                        },
-                        "question": "Mikor van nyitva ez a posta?",
-                        "render": "Nyitva tartás: {opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "render": "Posta"
-                }
-            }
-        },
         "shortDescription": "Posták és postaládák térképe",
         "title": "Posta- és postaládatérkép"
     },

@@ -5,6 +5,10 @@
         "retrying": "データの読み込みに失敗しました。{count} 秒以内に再試行します…",
         "zoomIn": "ズーム・インしてデータを表示または編集"
     },
+    "delete": {
+        "explanations": {},
+        "reasons": {}
+    },
     "favourite": {
         "loginNeeded": "<h3>ログイン</h3>個人用レイアウトはOpenStreetMapユーザのみが使用できます",
         "panelIntro": "<h3>お客様の個人的なテーマ</h3>すべての公式テーマからお気に入りのレイヤを有効にする",
@@ -17,6 +21,7 @@
             "addNew": "ここに新しい {category} を追加します",
             "confirmButton": "ここに{category}を追加します。<br><div class=\"alert\">追加内容はすべてのユーザーに表示されます。</div>",
             "confirmIntro": "<h3>ここに{title}を追加しますか?</h3>ここで作成したポイントは<b>すべてのユーザーに表示されます</b>。本当に存在するものだけをマップに追加してください。多くのアプリケーションがこのデータを使用しています。",
+            "import": {},
             "intro": "データがまだわからない場所をクリックしました。<br>",
             "layerNotEnabled": "レイヤ{layer}は有効になっていません。このレイヤで点を追加できるようにする",
             "openLayerControl": "レイヤコントロールボックスを開く",
@@ -25,6 +30,7 @@
             "title": "新しいポイントを追加しますか?",
             "zoomInFurther": "さらにズーム拡大して点を追加します。"
         },
+        "apply_button": {},
         "attribution": {
             "attributionContent": "<p>すべてのデータは<a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>によって提供され、<a href=\"https://osm.org/copyright\" target=\"_blank\"> Open DataBaseライセンス</a>の下で自由に再利用できます。</p>",
             "attributionTitle": "帰属通知",
@@ -39,14 +45,17 @@
         "backgroundMap": "背景マップ",
         "cancel": "[キャンセル]",
         "customThemeIntro": "<h3>カスタムテーマ</h3>これらは以前にアクセスされたユーザー生成テーマです。",
+        "download": {},
         "fewChangesBefore": "新しいポイントを追加する前に、既存のポイントに関するいくつかの質問に答えてください。",
         "getStartedLogin": "OpenStreetMapを使用してログインし開始します",
         "getStartedNewAccount": " または<a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">新しいアカウントを作成する</a>",
         "goToInbox": "受信トレイを開く",
+        "histogram": {},
         "layerSelection": {
             "title": "レイヤを選択",
             "zoomInToSeeThisLayer": "レイヤを拡大表示します"
         },
+        "levelSelection": {},
         "loginToStart": "ログインしてこの質問に答えてください",
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
         "morescreen": {
@@ -75,6 +84,7 @@
             "ph_open": "開店"
         },
         "osmLinkTooltip": "履歴とその他の編集オプションについては、OpenStreetMapのこのオブジェクトを参照してください",
+        "pdf": {},
         "pickLanguage": "言語を選択します: ",
         "questions": {
             "emailIs": "この{category}の電子メール・アドレスは<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>です",
@@ -132,7 +142,11 @@
             "tuesday": "火曜日",
             "wednesday": "水曜日"
         },
-        "welcomeBack": "ログインしました、お帰りなさい!"
+        "welcomeBack": "ログインしました、お帰りなさい!",
+        "welcomeExplanation": {},
+        "wikipedia": {
+            "previewbox": {}
+        }
     },
     "image": {
         "addPicture": "写真の追加",
@@ -142,6 +156,7 @@
         "doDelete": "イメージの削除",
         "dontDelete": "[キャンセル]",
         "isDeleted": "削除済み",
+        "nearbyPictures": {},
         "pleaseLogin": "写真を追加するにはログインしてください",
         "respectPrivacy": "人やナンバープレートを撮影しないでください。Googleマップ、Google Streetview、その他著作権で保護された情報源をアップロードしないでください。",
         "uploadDone": "<span class=\"thanks\">あなたの写真が追加されました。ご協力ありがとうございます!</span>",
@@ -150,11 +165,82 @@
         "uploadingPicture": "写真をアップロードします…",
         "willBePublished": "写真は公開されます: "
     },
+    "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
+        "introduction": {},
+        "login": {},
+        "mapPreview": {},
+        "noteParts": {},
+        "previewAttributes": {},
+        "selectFile": {},
+        "selectTheme": {}
+    },
+    "importInspector": {},
+    "importLayer": {},
     "index": {
         "#": "これらのテキストは、テーマがロードされていない場合にテーマボタンの上に表示されます",
         "intro": "MapCompleteはOpenStreetMapのビューア兼エディタであり、特定のテーマに関する情報を表示します。",
         "pickTheme": "開始するには、下のテーマを選択してください。",
         "title": "MapCompleteへようこそ"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
+    },
+    "move": {
+        "inviteToMove": {},
+        "reasons": {}
+    },
+    "multi_apply": {},
+    "notes": {},
+    "privacy": {},
+    "professional": {
+        "aboutMc": {
+            "internalUse": {},
+            "layers": {},
+            "survey": {}
+        },
+        "aboutOsm": {
+            "aboutOsm": {},
+            "benefits": {},
+            "license": {},
+            "vandalism": {}
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {},
+                "usecaseMapDifferentSources": {}
+            },
+            "unsuitedData": {}
+        },
+        "indexPage": {},
+        "services": {}
     },
     "reviews": {
         "affiliated_reviewer_warning": "(関係者のレビュー)",
@@ -171,5 +257,25 @@
         "title_singular": "1回のレビュー",
         "tos": "レビューを作成する場合は、<a href=\"https://mangrove.reviews/terms\" target=\"_blank\">Mangrove.reviewsのTOSおよびプライバシーポリシーに同意します。</a>",
         "write_a_comment": "レビューを残す…"
+    },
+    "split": {},
+    "translations": {},
+    "validation": {
+        "color": {},
+        "date": {},
+        "direction": {},
+        "distance": {},
+        "email": {},
+        "float": {},
+        "int": {},
+        "nat": {},
+        "opening_hours": {},
+        "pfloat": {},
+        "phone": {},
+        "pnat": {},
+        "string": {},
+        "text": {},
+        "url": {},
+        "wikidata": {}
     }
 }

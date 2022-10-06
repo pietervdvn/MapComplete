@@ -1,5 +1,5 @@
-import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
-import {AndOrTagConfigJson} from "./TagConfigJson";
+import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
+import { TagConfigJson } from "./TagConfigJson"
 
 /**
  * The PointRenderingConfig gives all details onto how to render a single point of a feature.
@@ -10,7 +10,6 @@ import {AndOrTagConfigJson} from "./TagConfigJson";
  * - To render something at the centroid of an area, or at the start, end or projected centroid of a way
  */
 export default interface PointRenderingConfigJson {
-
     /**
      * All the locations that this point should be rendered at.
      * Using `location: ["point", "centroid"] will always render centerpoint.
@@ -30,7 +29,7 @@ export default interface PointRenderingConfigJson {
 
      * Type: icon
      */
-    icon?: string | TagRenderingConfigJson;
+    icon?: string | TagRenderingConfigJson
 
     /**
      * A list of extra badges to show next to the icon as small badge
@@ -38,26 +37,25 @@ export default interface PointRenderingConfigJson {
      *
      * Note: strings are interpreted as icons, so layering and substituting is supported. You can use `circle:white;./my_icon.svg` to add a background circle
      */
-    iconBadges?: { 
-        if: string | AndOrTagConfigJson, 
+    iconBadges?: {
+        if: TagConfigJson
         /**
          * Badge to show
          * Type: icon
          */
-        then: string | TagRenderingConfigJson 
+        then: string | TagRenderingConfigJson
     }[]
-
 
     /**
      * A string containing "width,height" or "width,height,anchorpoint" where anchorpoint is any of 'center', 'top', 'bottom', 'left', 'right', 'bottomleft','topright', ...
      * Default is '40,40,center'
      */
-    iconSize?: string | TagRenderingConfigJson;
+    iconSize?: string | TagRenderingConfigJson
     /**
      * The rotation of an icon, useful for e.g. directions.
      * Usage: as if it were a css property for 'rotate', thus has to end with 'deg', e.g. `90deg`, `{direction}deg`, `calc(90deg - {camera:direction}deg)``
      */
-    rotation?: string | TagRenderingConfigJson;
+    rotation?: string | TagRenderingConfigJson
     /**
      * A HTML-fragment that is shown below the icon, for example:
      * <div style="background: white">{name}</div>
@@ -65,5 +63,5 @@ export default interface PointRenderingConfigJson {
      * If the icon is undefined, then the label is shown in the center of the feature.
      * Note that, if the wayhandling hides the icon then no label is shown as well.
      */
-    label?: string | TagRenderingConfigJson;
+    label?: string | TagRenderingConfigJson
 }

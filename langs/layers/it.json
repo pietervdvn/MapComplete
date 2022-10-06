@@ -106,10 +106,6 @@
             "artwork-website": {
                 "question": "Esiste un sito web con maggiori informazioni su quest’opera?",
                 "render": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Quale elemento Wikidata corrisponde a <b>quest’opera d’arte</b>?",
-                "render": "Corrisponde a <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -742,21 +738,12 @@
                 },
                 "question": "Sono presenti degli attrezzi per riparare la propria bici?"
             },
-            "bike_shop-email": {
-                "question": "Qual è l’indirizzo email di {name}?"
-            },
             "bike_shop-is-bicycle_shop": {
                 "render": "Questo negozio è specializzato nella vendita di {shop} ed effettua attività relative alle biciclette"
             },
             "bike_shop-name": {
                 "question": "Qual è il nome di questo negozio di biciclette?",
                 "render": "Questo negozio di biciclette è chiamato {name}"
-            },
-            "bike_shop-phone": {
-                "question": "Qual è il numero di telefono di {name}?"
-            },
-            "bike_shop-website": {
-                "question": "Qual è il sito web di {name}?"
             }
         },
         "title": {
@@ -1259,6 +1246,17 @@
             "render": "Estintori"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aperto ora"
+                    }
+                }
+            }
+        }
+    },
     "fire_station": {
         "description": "Livello che mostra le caserme dei vigili del fuoco.",
         "name": "Mappa delle caserme dei vigili del fuoco",
@@ -1759,13 +1757,6 @@
     "recycling": {
         "description": "Un livello con i contenitori e centri per la raccolta rifiuti riciclabili",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Aperto ora"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -2026,6 +2017,9 @@
                     },
                     "3": {
                         "then": "Privato - non aperto al pubblico"
+                    },
+                    "4": {
+                        "then": "Aperto al pubblico"
                     }
                 },
                 "question": "Questo campo sportivo è aperto al pubblico?"

@@ -82,10 +82,6 @@
             "artwork-website": {
                 "question": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
                 "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini"
-            },
-            "artwork-wikidata": {
-                "question": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
-                "render": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -141,13 +137,6 @@
         "tagRenderings": {
             "Access": {
                 "render": "{access}"
-            }
-        }
-    },
-    "bike_shop": {
-        "tagRenderings": {
-            "bike_shop-website": {
-                "question": "URL {name} apa?"
             }
         }
     },
@@ -335,6 +324,17 @@
             "render": "Air minum"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Saat ini buka"
+                    }
+                }
+            }
+        }
+    },
     "ghost_bike": {
         "tagRenderings": {
             "ghost_bike-inscription": {
@@ -371,6 +371,41 @@
             "playground-phone": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
             }
+        }
+    },
+    "postboxes": {
+        "description": "Layer yang memperlihatkan kotak pos.",
+        "name": "Kotak pos",
+        "presets": {
+            "0": {
+                "title": "kotak pos"
+            }
+        },
+        "title": {
+            "render": "Kotak pos"
+        }
+    },
+    "postoffices": {
+        "description": "Layer yang menunjukkan kantor pos.",
+        "name": "Kantor pos",
+        "presets": {
+            "0": {
+                "title": "Kantor Pos"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "Buka 24 jam (termasuk hari libur)"
+                    }
+                },
+                "question": "Jam berapa kantor pos ini buka?",
+                "render": "Jam Buka: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Kantor Pos"
         }
     },
     "tree_node": {

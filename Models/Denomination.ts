@@ -1,21 +1,21 @@
-import {Translation} from "../UI/i18n/Translation";
-import {ApplicableUnitJson} from "./ThemeConfig/Json/UnitConfigJson";
-import Translations from "../UI/i18n/Translations";
-import {Store, UIEventSource} from "../Logic/UIEventSource";
-import BaseUIElement from "../UI/BaseUIElement";
-import Toggle from "../UI/Input/Toggle";
+import { Translation } from "../UI/i18n/Translation"
+import { DenominationConfigJson } from "./ThemeConfig/Json/UnitConfigJson"
+import Translations from "../UI/i18n/Translations"
+import { Store } from "../Logic/UIEventSource"
+import BaseUIElement from "../UI/BaseUIElement"
+import Toggle from "../UI/Input/Toggle"
 
 export class Denomination {
-    public readonly canonical: string;
-    public readonly _canonicalSingular: string;
-    public readonly default: boolean;
-    public readonly prefix: boolean;
-    public readonly alternativeDenominations: string [];
-    private readonly _human: Translation;
-    private readonly _humanSingular?: Translation;
+    public readonly canonical: string
+    public readonly _canonicalSingular: string
+    public readonly useAsDefaultInput: boolean | string[]
+    public readonly useIfNoUnitGiven: boolean | string[]
+    public readonly prefix: boolean
+    public readonly alternativeDenominations: string[]
+    private readonly _human: Translation
+    private readonly _humanSingular?: Translation
 
-
-    constructor(json: ApplicableUnitJson, context: string) {
+    constructor(json: DenominationConfigJson, context: string) {
         context = `${context}.unit(${json.canonicalDenomination})`
         this.canonical = json.canonicalDenomination.trim()
         if (this.canonical === undefined) {
@@ -23,22 +23,24 @@ export class Denomination {
         }
         this._canonicalSingular = json.canonicalDenominationSingular?.trim()
 
-
         json.alternativeDenomination.forEach((v, i) => {
-            if (((v?.trim() ?? "") === "")) {
+            if ((v?.trim() ?? "") === "") {
                 throw `${context}.alternativeDenomination.${i}: invalid alternative denomination: undefined, null or only whitespace`
             }
         })
 
-        this.alternativeDenominations = json.alternativeDenomination?.map(v => v.trim()) ?? []
+        this.alternativeDenominations = json.alternativeDenomination?.map((v) => v.trim()) ?? []
 
-        this.default = json.default ?? false;
+        if (json["default"] !== undefined) {
+            throw `${context} uses the old 'default'-key. Use "useIfNoUnitGiven" or "useAsDefaultInput" instead`
+        }
+        this.useIfNoUnitGiven = json.useIfNoUnitGiven
+        this.useAsDefaultInput = json.useAsDefaultInput ?? json.useIfNoUnitGiven
 
         this._human = Translations.T(json.human, context + "human")
         this._humanSingular = Translations.T(json.humanSingular, context + "humanSingular")
 
-        this.prefix = json.prefix ?? false;
-
+        this.prefix = json.prefix ?? false
     }
 
     get human(): Translation {
@@ -53,58 +55,53 @@ export class Denomination {
         if (this._humanSingular === undefined) {
             return this.human
         }
-        return new Toggle(
-            this.humanSingular,
-            this.human,
-            isSingular
-        )
+        return new Toggle(this.humanSingular, this.human, isSingular)
     }
 
     /**
      * Create a representation of the given value
      * @param value: the value from OSM
      * @param actAsDefault: if set and the value can be parsed as number, will be parsed and trimmed
-     * 
+     *
      * const unit = new Denomination({
      *               canonicalDenomination: "m",
      *               alternativeDenomination: ["meter"],
-     *               'default': true,
      *               human: {
      *                   en: "meter"
      *               }
      *           }, "test")
-     * unit.canonicalValue("42m") // =>"42 m"
-     * unit.canonicalValue("42") // =>"42 m"
-     * unit.canonicalValue("42 m") // =>"42 m"
-     * unit.canonicalValue("42 meter") // =>"42 m"
-     * 
-     * 
+     * unit.canonicalValue("42m", true) // =>"42 m"
+     * unit.canonicalValue("42", true) // =>"42 m"
+     * unit.canonicalValue("42 m", true) // =>"42 m"
+     * unit.canonicalValue("42 meter", true) // =>"42 m"
+     * unit.canonicalValue("42m", true) // =>"42 m"
+     * unit.canonicalValue("42", true) // =>"42 m"
+     *
      * // Should be trimmed if canonical is empty
      * const unit = new Denomination({
      *               canonicalDenomination: "",
      *               alternativeDenomination: ["meter","m"],
-     *               'default': true,
      *               human: {
      *                   en: "meter"
      *               }
      *           }, "test")
-     * unit.canonicalValue("42m") // =>"42"
-     * unit.canonicalValue("42") // =>"42"
-     * unit.canonicalValue("42 m") // =>"42"
-     * unit.canonicalValue("42 meter") // =>"42"
+     * unit.canonicalValue("42m", true) // =>"42"
+     * unit.canonicalValue("42", true) // =>"42"
+     * unit.canonicalValue("42 m", true) // =>"42"
+     * unit.canonicalValue("42 meter", true) // =>"42"
      */
-    public canonicalValue(value: string, actAsDefault?: boolean) : string {
+    public canonicalValue(value: string, actAsDefault: boolean): string {
         if (value === undefined) {
-            return undefined;
+            return undefined
         }
         const stripped = this.StrippedValue(value, actAsDefault)
         if (stripped === null) {
-            return null;
+            return null
         }
         if (stripped === "1" && this._canonicalSingular !== undefined) {
             return ("1 " + this._canonicalSingular).trim()
         }
-        return (stripped + " " + this.canonical).trim();
+        return (stripped + " " + this.canonical).trim()
     }
 
     /**
@@ -114,14 +111,13 @@ export class Denomination {
      *
      * Returns null if it doesn't match this unit
      */
-    public StrippedValue(value: string, actAsDefault?: boolean): string {
-
+    public StrippedValue(value: string, actAsDefault: boolean): string {
         if (value === undefined) {
-            return undefined;
+            return undefined
         }
 
         value = value.toLowerCase()
-        const self = this;
+        const self = this
 
         function startsWith(key) {
             if (self.prefix) {
@@ -143,25 +139,39 @@ export class Denomination {
             return substr(this.canonical)
         }
 
-        if (this._canonicalSingular !== undefined && this._canonicalSingular !== "" && startsWith(this._canonicalSingular)) {
+        if (
+            this._canonicalSingular !== undefined &&
+            this._canonicalSingular !== "" &&
+            startsWith(this._canonicalSingular)
+        ) {
             return substr(this._canonicalSingular)
         }
 
         for (const alternativeValue of this.alternativeDenominations) {
             if (startsWith(alternativeValue)) {
-                return substr(alternativeValue);
+                return substr(alternativeValue)
             }
         }
 
-        if (this.default || actAsDefault) {
-            const parsed = Number(value.trim())
-            if (!isNaN(parsed)) {
-                return value.trim();
-            }
+        if (!actAsDefault) {
+            return null
         }
 
-        return null;
+        const parsed = Number(value.trim())
+        if (!isNaN(parsed)) {
+            return value.trim()
+        }
+
+        return null
     }
 
-
+    isDefaultUnit(country: () => string) {
+        if (this.useIfNoUnitGiven === true) {
+            return true
+        }
+        if (this.useIfNoUnitGiven === false) {
+            return false
+        }
+        return this.useIfNoUnitGiven.indexOf(country()) >= 0
+    }
 }

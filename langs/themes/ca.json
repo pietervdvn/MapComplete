@@ -17,6 +17,10 @@
         "shortDescription": "Un mapa amb estacions de lloguer de bicicletes i botigues de lloguer de bicicletes",
         "title": "Lloguer de bicicletes"
     },
+    "bicyclelib": {
+        "description": "Una biblioteca de bicicletes és un lloc on es poden prestar bicicletes, sovint per una petita quota anual. Un cas d'ús notable són les biblioteques de bicicletes per als nens, que els permet canviar per una bicicleta més gran quan han superat la seva bicicleta actual",
+        "title": "Biblioteques de bicicletes"
+    },
     "binoculars": {
         "description": "Un mapa amb prismàtics fixos en un pal. Sol trobar-se en llocs turístics, miradors, a la part alta de torres panoràmiques o ocasionalment en una reserva natural.",
         "shortDescription": "Un mapa amb prismàtics fixos",
@@ -98,6 +102,79 @@
                             },
                             "1": {
                                 "then": "No hi han hostes permanents aquí"
+                            },
+                            "2": {
+                                "then": "Només és possible romandre aquí si teniu un contracte a llarg termini (aquest lloc desapareixerà d'aquest mapa si trieu això)"
+                            }
+                        },
+                        "question": "Aquest lloc ofereix llocs de lloguer a llarg termini?"
+                    },
+                    "caravansites-name": {
+                        "question": "Com es diu aquest lloc?",
+                        "render": "Aquest lloc s'anomena {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest lloc té una estació d'abocament sanitari"
+                            },
+                            "1": {
+                                "then": "Aquest lloc no té una estació d'abocament sanitari"
+                            }
+                        },
+                        "question": "Aquest lloc té una estació d'abocament sanitari?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest lloc té lavabos"
+                            },
+                            "1": {
+                                "then": "Aquest lloc no té lavabos"
+                            }
+                        },
+                        "question": "Aquest lloc té lavabos?"
+                    },
+                    "caravansites-website": {
+                        "question": "Aquest lloc té un lloc web?",
+                        "render": "Lloc web oficial: <a href='{website}'>{website}</a>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Lloc d'acampada sense nom"
+                        }
+                    },
+                    "render": "Lloc d'acampada {name}"
+                }
+            },
+            "1": {
+                "description": "Estacions d'abocament sanitari",
+                "name": "Estacions d'abocament sanitari",
+                "tagRenderings": {
+                    "dumpstations-access": {
+                        "mappings": {
+                            "1": {
+                                "then": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc"
+                            },
+                            "2": {
+                                "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
+                            },
+                            "3": {
+                                "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
+                            }
+                        },
+                        "question": "Qui pot utilitzar aquesta estació d'abocament?"
+                    },
+                    "dumpstations-charge": {
+                        "question": "Quant costa aquest lloc?",
+                        "render": "Aquest lloc costa {charge}"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Es pot desfer de les aigües grises aquí"
                             }
                         }
                     }
@@ -122,7 +199,8 @@
                                 "3": {
                                     "then": "Només membres del club"
                                 }
-                            }
+                            },
+                            "question": "Qui pot accedir aquí?"
                         }
                     },
                     "units+": {
@@ -143,6 +221,7 @@
         "title": "Open Climbing Map"
     },
     "cycle_highways": {
+        "description": "Aquest mapa mostra carrils bici",
         "layers": {
             "0": {
                 "name": "vies ciclistes",
@@ -154,14 +233,26 @@
         "title": "Vies ciclistes"
     },
     "cycle_infra": {
+        "description": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista. Fet durant #osoc21.",
+        "shortDescription": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista.",
         "title": "Infraestructura per a bicicletes"
     },
     "cyclenodes": {
+        "description": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir nodes nous de manera senzilla",
         "layers": {
+            "0": {
+                "name": "enllaços node a node",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?"
+                    }
+                }
+            },
             "1": {
                 "name": "nodes"
             }
-        }
+        },
+        "title": "Xarxa de nodes ciclistes"
     },
     "cyclestreets": {
         "layers": {
@@ -181,6 +272,20 @@
                 }
             }
         },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "1": {
+                            "then": "Aquest carrer és una ciclocarrer"
+                        },
+                        "2": {
+                            "then": "Aquest carrer es convertirà en un ciclocarrer pròximament"
+                        }
+                    }
+                }
+            }
+        },
         "shortDescription": "Un mapa de carrers ciclistes",
         "title": "Carrers ciclistes"
     },
@@ -188,12 +293,51 @@
         "title": "Cyclofix - un mapa obert per a ciclistes"
     },
     "drinking_water": {
+        "description": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment",
         "title": "Aigua potable"
     },
-    "entrances": {
-        "title": "Entrades"
+    "education": {
+        "description": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació",
+        "title": "Educació"
     },
     "etymology": {
+        "layers": {
+            "1": {
+                "override": {
+                    "=name": "Carrers sense informació etimològica"
+                }
+            },
+            "2": {
+                "override": {
+                    "=name": "Parcs i boscos sense informació etimològica"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Institucions educatives sense informació d'etimològica"
+                }
+            },
+            "4": {
+                "override": {
+                    "=name": "Llocs culturals sense informació etimològica"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Llocs turístics sense informació etimològica"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "Llocs socials i de salut sense informació etimològica"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Llocs esportius sense informació etimològica"
+                }
+            }
+        },
         "shortDescription": "Quin és l'origen d'un topònim?",
         "title": "Open Etymology Map"
     },
@@ -231,6 +375,10 @@
     "hailhydrant": {
         "shortDescription": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
         "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies"
+    },
+    "healthcare": {
+        "description": "En aquest mapa es mostren diversos elements relacionats amb la salut",
+        "title": "Assistència sanitària"
     },
     "maps": {
         "title": "Un mapa de mapes"
@@ -270,41 +418,6 @@
         },
         "shortDescription": "Codis postals",
         "title": "Codis postals"
-    },
-    "postboxes": {
-        "layers": {
-            "0": {
-                "name": "Bústies",
-                "presets": {
-                    "0": {
-                        "title": "una bústia"
-                    }
-                },
-                "title": {
-                    "render": "Bústia"
-                }
-            },
-            "1": {
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Actualment obert"
-                            }
-                        }
-                    }
-                },
-                "name": "Oficines de correus",
-                "presets": {
-                    "0": {
-                        "title": "una oficina de correus"
-                    }
-                },
-                "title": {
-                    "render": "Oficina de correus"
-                }
-            }
-        }
     },
     "shops": {
         "title": "Open Shop Map"

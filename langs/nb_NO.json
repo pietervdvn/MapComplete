@@ -134,6 +134,7 @@
             "title": "Velg lag",
             "zoomInToSeeThisLayer": "Forstørr kartet hvis du vil se dette kartet"
         },
+        "levelSelection": {},
         "loading": "Laster inn …",
         "loadingTheme": "Laster inn {theme}…",
         "loginFailed": "Kunne ikke logge inn på OpenStreetMap",
@@ -241,6 +242,7 @@
             "wednesday": "Onsdag"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
+        "welcomeExplanation": {},
         "wikipedia": {
             "createNewWikidata": "Opprett et nytt Wikipedia-element",
             "doSearch": "Søk ovenfor for å se resultater",
@@ -263,6 +265,7 @@
         "doDelete": "Fjern bilde",
         "dontDelete": "Avbryt",
         "isDeleted": "Slettet",
+        "nearbyPictures": {},
         "pleaseLogin": "Logg inn for å legge til et bilde",
         "respectPrivacy": "Ikke ta bilder av folk eller bilskilt. Ikke last opp Google Maps, Google Streetview eller andre opphavsrettsbeskyttede kilder.",
         "toBig": "Bildet ditt på {actual_size} er for stort. Det kan maksimalt være {max_size}.",
@@ -358,12 +361,37 @@
     "importInspector": {
         "title": "Inspiser og håndter importnotater"
     },
+    "importLayer": {},
     "index": {
         "featuredThemeTitle": "Framhevet denne uken",
         "intro": "MapComplete er en OpenStreetMap-viser og redigerer, som viser deg info om funksjoner for et gitt tema og tillater oppdatering av det.",
         "logIn": "Logg inn for å vise tema du har besøkt tidligere",
         "pickTheme": "Begynn ved å velge et av temaene nedenfor.",
         "title": "Velkommen til MapComplete"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
     },
     "move": {
         "cancel": "Avbryt flytting",
@@ -410,6 +438,8 @@
     },
     "professional": {
         "aboutMc": {
+            "internalUse": {},
+            "layers": {},
             "survey": {
                 "title": "Undersøkelsesmuligheter"
             },
@@ -420,6 +450,7 @@
                 "li3": "og mye, mye mer …",
                 "title": "Hva er OpenStreetMap?"
             },
+            "benefits": {},
             "license": {
                 "title": "Lisensen"
             },
@@ -430,11 +461,13 @@
         },
         "drawbacks": {
             "licenseNuances": {
+                "usecaseGatheringOpenData": {},
                 "usecaseMapDifferentSources": {
                     "title": "Oppretter et kart fra forskjellige kilder"
                 }
             },
-            "title": "Noen ulemper å ha i minne"
+            "title": "Noen ulemper å ha i minne",
+            "unsuitedData": {}
         },
         "indexPage": {
             "button": "Oppdag tjenestetilbudet vårt",
@@ -480,12 +513,14 @@
         "notImmediate": "Oversettelser oppdateres ikke direkte. Dette tar typisk et par dager."
     },
     "validation": {
+        "color": {},
         "date": {
             "description": "En dato, som starter med året"
         },
         "direction": {
             "description": "En retning"
         },
+        "distance": {},
         "email": {
             "feedback": "Dette er ikke en gyldig e-postadresse"
         },

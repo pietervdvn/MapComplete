@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 # Automerge translations automatically fetches the translations from weblate
 

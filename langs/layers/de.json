@@ -131,10 +131,6 @@
             "artwork-website": {
                 "question": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
                 "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Gibt es ein Wikidata Element für <b>dieses Kunstwerk</b>?",
-                "render": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -262,7 +258,7 @@
                         "then": "Die Sitzbank hat eine Rückenlehne"
                     },
                     "1": {
-                        "then": "Die Sitzbank hat keine Rückenlehne"
+                        "then": "Die Sitzbank hat <b>keine</b> Rückenlehne"
                     }
                 },
                 "question": "Hat diese Sitzbank eine Rückenlehne?"
@@ -442,39 +438,6 @@
             }
         },
         "tagRenderings": {
-            "9": {
-                "renderings": {
-                    "0": {
-                        "question": "Wie viele type_plural können hier gemietet werden?",
-                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
-                    }
-                },
-                "rewrite": {
-                    "into": {
-                        "0": {
-                            "1": "Stadträder"
-                        },
-                        "1": {
-                            "1": "Elektrofahrräder"
-                        },
-                        "2": {
-                            "1": "Kinderfahrräder"
-                        },
-                        "3": {
-                            "1": "BMX-Räder"
-                        },
-                        "4": {
-                            "1": "Mountainbikes"
-                        },
-                        "5": {
-                            "1": "Fahrradtaschen"
-                        },
-                        "6": {
-                            "1": "Tandems"
-                        }
-                    }
-                }
-            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -527,6 +490,39 @@
                     }
                 },
                 "question": "Was ist das für ein Fahrradverleih?"
+            },
+            "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "Wie viele type_plural können hier gemietet werden?",
+                        "render": "{capacity:bicycle_type} type_plural können hier gemietet werden"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "Stadträder"
+                        },
+                        "1": {
+                            "1": "Elektrofahrräder"
+                        },
+                        "2": {
+                            "1": "Kinderfahrräder"
+                        },
+                        "3": {
+                            "1": "BMX-Räder"
+                        },
+                        "4": {
+                            "1": "Mountainbikes"
+                        },
+                        "5": {
+                            "1": "Fahrradtaschen"
+                        },
+                        "6": {
+                            "1": "Tandems"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -651,9 +647,6 @@
                     },
                     "1": {
                         "then": "Kostenlose Nutzung"
-                    },
-                    "2": {
-                        "then": "Der Reinigungsservice ist kostenpflichtig"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -666,9 +659,6 @@
                     },
                     "1": {
                         "then": "Kostenlose Nutzung"
-                    },
-                    "2": {
-                        "then": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -811,9 +801,6 @@
             }
         },
         "tagRenderings": {
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Fahrradpumpe kaputt&body=Hallo,%0D%0A%0D%0AMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} befindet, kaputt ist.'>Melde diese Fahrradpumpe als kaputt</a>"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -938,6 +925,15 @@
                 },
                 "question": "Welche Ventile werden unterstützt?",
                 "render": "Diese Pumpe unterstützt die folgenden Ventile: {valves}"
+            },
+            "send_email_about_broken_pump": {
+                "render": {
+                    "special": {
+                        "body": "Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.\n\nMit freundlichen Grüßen",
+                        "button_text": "Melde diese Fahrradpumpe als kaputt",
+                        "subject": "Fahrradpumpe kaputt"
+                    }
+                }
             }
         },
         "title": {
@@ -1068,9 +1064,6 @@
             "bike_shop-access": {
                 "render": "Nur zugänglich für {access}"
             },
-            "bike_shop-email": {
-                "question": "Wie lautet die E-Mail-Adresse von {name}?"
-            },
             "bike_shop-is-bicycle_shop": {
                 "mappings": {
                     "0": {
@@ -1082,12 +1075,6 @@
             "bike_shop-name": {
                 "question": "Wie heißt das Geschäft?",
                 "render": "Das Geschäft heißt {name}"
-            },
-            "bike_shop-phone": {
-                "question": "Wie lautet die Telefonnummer von {name}?"
-            },
-            "bike_shop-website": {
-                "question": "Wie lautet die Webseite von {name}?"
             }
         },
         "title": {
@@ -1252,15 +1239,6 @@
             }
         },
         "description": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Derzeit geöffnet"
-                    }
-                }
-            }
-        },
         "name": "Cafés und Kneipen",
         "presets": {
             "0": {
@@ -1403,7 +1381,7 @@
                 "title": "eine Ladestation für Elektrofahrräder mit einer normalen europäischen Steckdose <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (zum Laden von Elektrofahrrädern)"
             },
             "1": {
-                "title": "eine ladestation für e-bikes"
+                "title": "Eine Ladestation für Elektrofahrzeuge"
             }
         },
         "tagRenderings": {
@@ -3255,6 +3233,48 @@
         "description": "Diese Ebene visualisiert Richtungen",
         "name": "Aufnahmewinkel der Kamera anzeigen"
     },
+    "doctors": {
+        "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
+        "name": "Ärzte",
+        "presets": {
+            "0": {
+                "title": "eine Arztpraxis"
+            },
+            "1": {
+                "title": "eine Zahnarztpraxis"
+            },
+            "2": {
+                "title": "Praxis eines Physiotherapeuten"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie heißt diese Arztpraxis?",
+                "render": "Diese Arztpraxis heißt {name}"
+            },
+            "specialty": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Allgemeinmediziner"
+                    },
+                    "1": {
+                        "then": "Dies ist ein Gynäkologe"
+                    },
+                    "2": {
+                        "then": "Dies ist ein Psychiater"
+                    },
+                    "3": {
+                        "then": "Dies ist ein Kinderarzt"
+                    }
+                },
+                "question": "Worauf ist dieser Arzt spezialisiert?",
+                "render": "Dieser Arzt ist spezialisiert auf {healthcare:speciality}"
+            }
+        },
+        "title": {
+            "render": "Arztpraxis {name}"
+        }
+    },
     "dogpark": {
         "name": "Hundeparks",
         "presets": {
@@ -3351,9 +3371,72 @@
             "render": "Trinkwasserstelle"
         }
     },
+    "elevator": {
+        "description": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer",
+        "name": "Aufzug",
+        "presets": {
+            "0": {
+                "title": "einen Aufzug"
+            }
+        },
+        "tagRenderings": {
+            "door-width": {
+                "question": "Wie breit ist die Tür dieses Aufzugs?",
+                "render": "Die Türen des Aufzugs haben eine Breite von {canonical(door:width)}"
+            },
+            "elevator-depth": {
+                "question": "Wie tief ist die Kabine dieses Aufzugs?",
+                "render": "Dieser Aufzug hat eine Kabinentiefe von {canonical(elevator:depth)}"
+            },
+            "elevator-width": {
+                "question": "Wie breit ist die Kabine dieses Aufzugs?",
+                "render": "Die Aufzugskabine hat eine Breite von {canonical(elevator:width)}"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Aufzug ist kaputt"
+                    },
+                    "1": {
+                        "then": "Dieser Aufzug ist außer Betrieb <span class='subtle'>z.B. wegen Renovierungsarbeiten</span>"
+                    },
+                    "2": {
+                        "then": "Dieser Aufzug ist in Betrieb"
+                    },
+                    "3": {
+                        "then": "Dieser Aufzug ist in Betrieb"
+                    }
+                },
+                "question": "Ist dieser Aufzug in Betrieb?"
+            }
+        },
+        "title": {
+            "render": "Aufzug"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
+        }
+    },
     "entrance": {
         "description": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, …)",
         "name": "Eingänge",
+        "presets": {
+            "0": {
+                "title": "einen Eingang"
+            },
+            "1": {
+                "title": "eine Innentür"
+            }
+        },
         "tagRenderings": {
             "Door_type": {
                 "mappings": {
@@ -3408,7 +3491,7 @@
                         "then": "Dies ist ein Eingang zu einem privaten Haus"
                     }
                 },
-                "question": "Um welchen Eingangstyp handelt es sich hier?"
+                "question": "Um welchen Eingangstyp handelt es sich?"
             },
             "automatic_door": {
                 "mappings": {
@@ -3441,13 +3524,37 @@
                     }
                 }
             },
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Höhe der Türschwelle"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Diese Tür hat keine Türschwelle"
+                    }
+                },
+                "question": "Wie hoch ist die Türschwelle?",
+                "render": "Die Höhe der Türschwelle ist {kerb:height}"
+            },
             "width": {
                 "question": "Wie breit ist diese Tür bzw. dieser Eingang?",
-                "render": "Diese Tür hat eine Durchgangsbreite von {canonical(width)} Meter"
+                "render": "Diese Tür hat eine Durchgangsbreite von {canonical(width)}"
             }
         },
         "title": {
             "render": "Eingang"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
         }
     },
     "etymology": {
@@ -3506,6 +3613,31 @@
         },
         "title": {
             "render": "Feuerlöscher"
+        }
+    },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aktuell geöffnet"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Bargeld"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Kartenzahlung"
+                    }
+                }
+            }
         }
     },
     "fire_station": {
@@ -3568,17 +3700,18 @@
                 "0": {
                     "explanation": "{title()} wurde dauerhaft geschlossen"
                 }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dies ist eigentlich eine Kneipe"
+                },
+                "1": {
+                    "then": "Dies ist eigentlich ein Café"
+                }
             }
         },
         "description": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Aktuell geöffnet"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -3597,20 +3730,6 @@
                 "options": {
                     "0": {
                         "question": "Halal Gerichte im Angebot"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Akzeptiert Bargeld"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Akzeptiert Kartenzahlung"
                     }
                 }
             }
@@ -3885,6 +4004,24 @@
             "render": "Geisterrad"
         }
     },
+    "governments": {
+        "description": "Diese Ebene zeigt Gebäude der öffentlichen Verwaltung. Sie wurde im Auftrag für den Kunden von OSOC '22 erstellt",
+        "name": "Öffentliche Verwaltung",
+        "presets": {
+            "0": {
+                "title": "ein Büro der öffentlichen Verwaltung"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name dieser Behörde?",
+                "render": "Der Name der Behörde lautet {name}"
+            }
+        },
+        "title": {
+            "render": "Behörde {name}"
+        }
+    },
     "gps_track": {
         "name": "Zurückgelegte Strecke anzeigen",
         "tagRenderings": {
@@ -3910,7 +4047,7 @@
             }
         },
         "tagRenderings": {
-            "6": {
+            "available_devices": {
                 "renderings": {
                     "0": {
                         "mappings": {
@@ -3990,6 +4127,45 @@
             "render": "Hackerspace"
         }
     },
+    "hospital": {
+        "description": "Eine Ebene mit Krankenhäusern",
+        "name": "Krankenhäuser",
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name des Krankenhauses?",
+                "render": "Der Name des Krankenhauses lautet {name}"
+            }
+        },
+        "title": {
+            "render": "Krankenhaus"
+        }
+    },
+    "hotel": {
+        "description": "Eine Ebene mit Hotels",
+        "name": "Hotels",
+        "presets": {
+            "0": {
+                "title": "ein Hotel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name des Hotels"
+                },
+                "question": "Wie lautet der Name des Hotels?",
+                "render": "Der Name des Hotels lautet {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            },
+            "render": "Hotel"
+        }
+    },
     "hydrant": {
         "description": "Kartenebene zur Anzeige von Hydranten.",
         "name": "Hydranten",
@@ -4014,6 +4190,38 @@
                 },
                 "question": "Welche Farbe hat der Hydrant?",
                 "render": "Der Hydrant hat die Farbe {colour}"
+            },
+            "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Art der Kupplung"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Storz-Kupplung"
+                    },
+                    "1": {
+                        "then": "UNI-Kupplung"
+                    },
+                    "2": {
+                        "then": "Barcelona-Kupplung"
+                    }
+                },
+                "question": "Welche Art von Kupplungen hat dieser Hydrant?",
+                "render": "Kupplungen: {couplings:type}"
+            },
+            "hydrant-couplings-diameters": {
+                "freeform": {
+                    "placeholder": "Kupplungsdurchmesser"
+                },
+                "question": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
+                "render": "Kupplungsdurchmesser: {couplings:diameters}"
+            },
+            "hydrant-diameter": {
+                "freeform": {
+                    "placeholder": "Rohrdurchmesser"
+                },
+                "question": "Was ist der Rohrdurchmesser dieses Hydranten?",
+                "render": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}"
             },
             "hydrant-state": {
                 "mappings": {
@@ -4053,6 +4261,59 @@
         },
         "title": {
             "render": "Hydrant"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Millimeter",
+                        "humanSingular": "Millimeter"
+                    }
+                }
+            }
+        }
+    },
+    "indoors": {
+        "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
+        "name": "Innenräume",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name des Raums"
+                },
+                "question": "Wie lautet der Name dieses Raums?",
+                "render": "Der Name des Raums lautet {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Raumnummer (z.B. '1.1' oder 'A1')"
+                },
+                "question": "Wie lautet die Nummer dieses Raums?",
+                "render": "Dieser Raum hat die Raumnummer {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Innenraum {name}"
+                },
+                "1": {
+                    "then": "Innenbereich {name}"
+                },
+                "2": {
+                    "then": "Innenwand {name}"
+                },
+                "3": {
+                    "then": "Innengang {name}"
+                },
+                "4": {
+                    "then": "Innentür {name}"
+                },
+                "5": {
+                    "then": "Geschoss {name}"
+                }
+            },
+            "render": "Innenbereich {name}"
         }
     },
     "information_board": {
@@ -4122,7 +4383,7 @@
                     "placeholder": "Höhe des Bordsteins"
                 },
                 "question": "Wie hoch ist der Bordstein?",
-                "render": "Bordsteinhöhe: {{kerb:height}}"
+                "render": "Bordsteinhöhe: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4153,7 +4414,7 @@
                         "then": "Der Bordstein hat kein taktiles Pflaster."
                     },
                     "2": {
-                        "then": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist"
+                        "then": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist."
                     }
                 },
                 "question": "Gibt es am Bordstein ein taktiles Pflaster?"
@@ -4188,11 +4449,6 @@
             }
         },
         "tagRenderings": {
-            "5": {
-                "override": {
-                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
-                }
-            },
             "capacity": {
                 "question": "Wie viele Kinder können hier maximal angemeldet werden?",
                 "render": "Diese Einrichtung bietet Platz für {capacity} Kinder"
@@ -4211,6 +4467,11 @@
             "name": {
                 "question": "Wie lautet der Name dieser Einrichtung?",
                 "render": "Diese Einrichtung hat den Namen <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist diese Kinderbetreuung geöffnet?"
+                }
             }
         },
         "title": {
@@ -4268,6 +4529,159 @@
             "render": "Karte"
         }
     },
+    "maproulette": {
+        "description": "Ebene, die alle MapRoulette-Aufgaben zeigt",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aufgaben mit allen Status anzeigen"
+                    },
+                    "1": {
+                        "question": "Aufgaben anzeigen, die erstellt wurden"
+                    },
+                    "2": {
+                        "question": "Aufgaben anzeigen, die erledigt wurden"
+                    },
+                    "3": {
+                        "question": "Aufgaben anzeigen, die falsch positiv sind"
+                    },
+                    "4": {
+                        "question": "Aufgaben anzeigen, die übersprungen wurden"
+                    },
+                    "5": {
+                        "question": "Aufgaben anzeigen, die gelöscht wurden"
+                    },
+                    "6": {
+                        "question": "Aufgaben anzeigen, die bereits erledigt wurden"
+                    },
+                    "7": {
+                        "question": "Aufgaben anzeigen, die als zu schwierig markiert wurden"
+                    },
+                    "8": {
+                        "question": "Aufgaben anzeigen, die deaktiviert wurden"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Name der Kampagne enthält {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Kampagnen ID stimmt mit {search} überein"
+                    }
+                }
+            }
+        },
+        "name": "MapRoulette-Aufgaben",
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Aufgabe wurde erstellt"
+                    },
+                    "1": {
+                        "then": "Aufgabe wurde erledigt"
+                    },
+                    "2": {
+                        "then": "Aufgabe ist ein falsches Positiv"
+                    },
+                    "3": {
+                        "then": "Aufgabe wurde übersprungen"
+                    },
+                    "4": {
+                        "then": "Aufgabe wurde gelöscht"
+                    },
+                    "5": {
+                        "then": "Aufgabe wurde bereits erledigt"
+                    },
+                    "6": {
+                        "then": "Aufgabe wurde als zu schwer markiert"
+                    },
+                    "7": {
+                        "then": "Aufgabe wurde deaktiviert"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "MapRoulette-Element: {parentName}"
+        }
+    },
+    "maproulette_challenge": {
+        "description": "Ebene mit Aufgaben einer MapRoulette-Kampagne",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aufgaben mit allen Status anzeigen"
+                    },
+                    "1": {
+                        "question": "Aufgaben anzeigen, die erstellt wurden"
+                    },
+                    "2": {
+                        "question": "Aufgaben anzeigen, die erledigt wurden"
+                    },
+                    "3": {
+                        "question": "Aufgaben anzeigen, die falsch positiv sind"
+                    },
+                    "4": {
+                        "question": "Aufgaben anzeigen, die übersprungen wurden"
+                    },
+                    "5": {
+                        "question": "Aufgaben anzeigen, die gelöscht wurden"
+                    },
+                    "6": {
+                        "question": "Aufgaben anzeigen, die bereits erledigt wurden"
+                    },
+                    "7": {
+                        "question": "Aufgaben anzeigen, die als zu schwierig markiert wurden"
+                    },
+                    "8": {
+                        "question": "Aufgaben anzeigen, die deaktiviert wurden"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Aufgabe wurde erstellt"
+                    },
+                    "1": {
+                        "then": "Aufgabe wurde erledigt"
+                    },
+                    "2": {
+                        "then": "Aufgabe ist ein falsches Positiv"
+                    },
+                    "3": {
+                        "then": "Aufgabe wurde übersprungen"
+                    },
+                    "4": {
+                        "then": "Aufgabe wurde gelöscht"
+                    },
+                    "5": {
+                        "then": "Aufgabe wurde bereits erledigt"
+                    },
+                    "6": {
+                        "then": "Aufgabe wurde als zu schwer markiert"
+                    },
+                    "7": {
+                        "then": "Aufgabe wurde deaktiviert"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Aufgabe in MapRoulette"
+        }
+    },
     "maxspeed": {
         "description": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
         "name": "Höchstgeschwindigkeit",
@@ -4282,7 +4696,7 @@
                     }
                 },
                 "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
-                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {maxspeed}"
+                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße beträgt {canonical(maxspeed)}"
             }
         },
         "title": {
@@ -4611,21 +5025,277 @@
             }
         }
     },
+    "parcel_lockers": {
+        "description": "Ebene mit Paketschließfächern zum Abholen und Versenden von Paketen.",
+        "name": "Paketschließfächer",
+        "presets": {
+            "0": {
+                "title": "ein Paketschließfach"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Marke"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Amazon Locker"
+                    },
+                    "1": {
+                        "then": "Dies ist eine DHL-Packstation"
+                    },
+                    "2": {
+                        "then": "Dies ist eine DPD Pickup Station"
+                    },
+                    "3": {
+                        "then": "Dies ist ein PostNL-Paketschließfach"
+                    }
+                },
+                "question": "Welche Marke hat das Paketschließfach?",
+                "render": "Dies ist ein Paketschließfach von {brand}"
+            },
+            "mail-in": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können Pakete von diesem Paketschließfach aus versenden"
+                    },
+                    "1": {
+                        "then": "Sie können <b>keine</b> Pakete von diesem Paketschließfach aus versenden"
+                    }
+                },
+                "question": "Können Sie von diesem Paketschließfach aus Pakete versenden?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Betreiber"
+                },
+                "question": "Was ist der Betreiber des Paketschließfachs?",
+                "render": "Dieses Paketschließfach wird von {operator} betrieben"
+            },
+            "pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können Pakete von diesem Paketschließfach abholen"
+                    },
+                    "1": {
+                        "then": "Sie können <b>keine</b> Pakete von diesem Paketschließfach abholen"
+                    }
+                },
+                "question": "Können Sie Pakete aus diesem Paketschließfach abholen?"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referenz"
+                },
+                "question": "Wie lautet die Referenznummer/Kennung dieses Paketschließfachs?",
+                "render": "Dieses Paketschließfach hat die Kennnummer {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand} Paketschließfach"
+                }
+            },
+            "render": "Paketschließfach"
+        }
+    },
     "parking": {
         "description": "Eine Ebene mit Parkplätzen",
         "name": "Parkplätze",
         "presets": {
             "0": {
-                "title": "ein Parkplatz"
+                "title": "einen Parkplatz"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Anzahl der Parkplätze"
+                },
+                "question": "Wie viele Stellplätze gibt es auf diesem Parkplatz?",
+                "render": "Es gibt {capacity} Stellplätze"
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Anzahl barrierefreier Stellplätze"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt barrierefreie Stellplätze, aber die Anzahl ist unbekannt"
+                    },
+                    "1": {
+                        "then": "Es gibt keine barrierefreien Stellplätze"
+                    },
+                    "2": {
+                        "then": "Es gibt keine barrierefreien Stellplätze"
+                    }
+                },
+                "question": "Wie viele barrierefreie Stellplätze gibt es auf diesem Parkplatz?",
+                "render": "Es gibt {capacity:disabled} barrierefreie Stellplätze"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein oberirdischer Parkplatz"
+                    },
+                    "1": {
+                        "then": "Dies ist eine Parkbucht neben einer Straße"
+                    },
+                    "2": {
+                        "then": "Dies ist eine Tiefgarage"
+                    },
+                    "3": {
+                        "then": "Dies ist ein mehrstöckiges oberirdisches Parkhaus"
+                    },
+                    "4": {
+                        "then": "Dies ist ein Parkdeck auf dem Dach"
+                    },
+                    "5": {
+                        "then": "Dies ist eine Fahrspur zum Parken auf der Straße"
+                    },
+                    "6": {
+                        "then": "Dies ist ein durch Carports überdachter Parkplatz"
+                    },
+                    "7": {
+                        "then": "Dies ist ein Parkplatz bestehend aus Garagenboxen"
+                    },
+                    "8": {
+                        "then": "Hier gibt es Parkmöglichkeiten auf einem kleinen Rastplatz"
+                    },
+                    "9": {
+                        "then": "Hier gibt es Parkmöglichkeiten unter einer offenen Dachkonstruktion"
+                    }
+                },
+                "question": "Was ist das für ein Parkplatz?"
             }
         },
         "title": {
             "render": "Parkplatz"
         }
     },
+    "parking_spaces": {
+        "description": "Ebene mit den einzelnen PKW Stellplätzen.",
+        "name": "Stellplätze",
+        "tagRenderings": {
+            "capacity": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Parkplatz hat 1 Stellplatz."
+                    }
+                },
+                "render": "Dieser Parkplatz hat {capacity} Stellplätze."
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein normaler Stellplatz"
+                    },
+                    "1": {
+                        "then": "Dies ist ein normaler Stellplatz."
+                    },
+                    "2": {
+                        "then": "Dies ist ein Behindertenstellplatz."
+                    },
+                    "3": {
+                        "then": "Dies ist ein privater Stellplatz."
+                    },
+                    "4": {
+                        "then": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist."
+                    },
+                    "5": {
+                        "then": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist."
+                    },
+                    "6": {
+                        "then": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist."
+                    },
+                    "7": {
+                        "then": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert."
+                    },
+                    "8": {
+                        "then": "Dies ist ein Stellplatz, der für Busse reserviert ist."
+                    },
+                    "9": {
+                        "then": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
+                    },
+                    "10": {
+                        "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
+                    },
+                    "11": {
+                        "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
+                    },
+                    "12": {
+                        "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
+                    },
+                    "13": {
+                        "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
+                    },
+                    "14": {
+                        "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
+                    }
+                },
+                "question": "Welche Art von Stellplatz ist dies?"
+            }
+        },
+        "title": {
+            "render": "Stellplatz"
+        }
+    },
     "pedestrian_path": {
         "description": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
         "name": "Fußgängerwege"
+    },
+    "pharmacy": {
+        "description": "Eine Ebene mit Apotheken, die (wahrscheinlich) verschreibungspflichtige Medikamente ausgeben",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Bietet einen Durchfahr-Service an"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Apotheke, die verschreibungspflichtige Arzneimittel ausgibt"
+                    }
+                }
+            }
+        },
+        "name": "Apotheke",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name der Apotheke"
+                },
+                "question": "Wie lautet der Name der Apotheke?",
+                "render": "Der Name der Apotheke lautet {name}"
+            },
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Apotheke ist für Rollstuhlfahrer leicht zugänglich"
+                    },
+                    "1": {
+                        "then": "Die Apotheke ist für Rollstuhlfahrer nur schwer zugänglich"
+                    },
+                    "2": {
+                        "then": "Die Apotheke ist für Rollstuhlfahrer nur eingeschränkt zugänglich"
+                    }
+                },
+                "question": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Apotheke"
+                }
+            },
+            "render": "{name}"
+        }
     },
     "picnic_table": {
         "description": "Die Ebene zeigt Picknicktische an",
@@ -4791,6 +5461,41 @@
             "render": "Spielplatz"
         }
     },
+    "postboxes": {
+        "description": "Die Ebene zeigt Briefkästen.",
+        "name": "Briefkästen",
+        "presets": {
+            "0": {
+                "title": "ein Briefkasten"
+            }
+        },
+        "title": {
+            "render": "Briefkasten"
+        }
+    },
+    "postoffices": {
+        "description": "Eine Ebene mit Postämtern.",
+        "name": "Poststellen",
+        "presets": {
+            "0": {
+                "title": "eine Poststelle"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "durchgehend geöffnet (auch an Feiertagen)"
+                    }
+                },
+                "question": "Wie sind die Öffnungszeiten dieser Poststelle?",
+                "render": "Öffnungszeiten: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Poststelle"
+        }
+    },
     "public_bookcase": {
         "description": "Ein Bücherschrank am Straßenrand mit Büchern, für jedermann zugänglich",
         "filter": {
@@ -4902,16 +5607,68 @@
             "render": "Bücherschrank"
         }
     },
+    "rainbow_crossings": {
+        "description": "Eine Ebene mit Fußgängerüberwegen in Regenbogenfarben",
+        "name": "Fußgängerüberwege in Regenbogenfarben",
+        "presets": {
+            "0": {
+                "description": "Fußgängerüberweg",
+                "title": "einen Überweg"
+            }
+        },
+        "tagRenderings": {
+            "crossing-with-rainbow": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Überweg hat eine Markierung in Regenbogenfarben"
+                    },
+                    "1": {
+                        "then": "Hier gibt es kein Markierung in Regenbogenfarben"
+                    },
+                    "2": {
+                        "then": "Hier gibt es kein Markierung in Regenbogenfarben"
+                    }
+                },
+                "question": "Hat der Überweg eine Markierung in Regenbogenfarben?"
+            }
+        },
+        "title": {
+            "render": "Überweg"
+        }
+    },
+    "reception_desk": {
+        "description": "Eine Ebene, die Empfangstresen zeigt und Informationen zur Barrierefreiheit abfragt",
+        "name": "Empfangstresen",
+        "presets": {
+            "0": {
+                "title": "einen Empfangstresen"
+            }
+        },
+        "tagRenderings": {
+            "desk-height": {
+                "question": "Wie hoch ist der Empfangstresen? <div class='subtle'>Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches</div>",
+                "render": "Die Höhe des Tresens beträgt <b>{canonical(desk:height)}</b>"
+            }
+        },
+        "title": {
+            "render": "Empfangstresen"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
+        }
+    },
     "recycling": {
         "description": "Eine Ebene mit Recyclingcontainern und -zentren",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Derzeit geöffnet"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -5169,30 +5926,6 @@
                 },
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
             },
-            "language": {
-                "freeform": {
-                    "placeholder": "Sprache in Englisch in Kleinbuchstaben"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "Die Hauptsprache dieser Schule ist unbekannt"
-                    },
-                    "1": {
-                        "then": "Französisch ist die Hauptsprache von {name}"
-                    },
-                    "2": {
-                        "then": "Niederländisch ist die Hauptsprache von {name}"
-                    },
-                    "3": {
-                        "then": "Deutsch ist die Hauptsprache von {name}"
-                    },
-                    "4": {
-                        "then": "Die Hauptsprache dieser Schule ist unbekannt"
-                    }
-                },
-                "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
-                "render": "{school:language} ist die Hauptsprache von {title()}"
-            },
             "school-name": {
                 "question": "Wie lautet der Name dieser Schule?",
                 "render": "Diese Schule heißt {name}"
@@ -5229,10 +5962,53 @@
                 },
                 "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?<div class='subtle'>Ad-hoc ",
                 "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
+            },
+            "wikidata.school-language": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Die Unterrichtssprache der Schule ist unbekannt"
+                        }
+                    },
+                    "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
+                }
             }
         },
         "title": {
             "render": "Schule <i>{name}</i>"
+        }
+    },
+    "shelter": {
+        "description": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
+        "name": "Unterstände",
+        "tagRenderings": {
+            "shelter-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Das ist ein Unterstand an einer Haltestelle für öffentliche Verkehrsmittel."
+                    },
+                    "1": {
+                        "then": "Dies ist ein Unterstand zum Schutz vor Regen auf einem Picknickplatz."
+                    },
+                    "2": {
+                        "then": "Das ist ein offener Gartenpavillon."
+                    },
+                    "3": {
+                        "then": "Dies ist ein kleiner Unterstand, der vor allem für kurze Pausen gedacht ist. Normalerweise findet man ihn in Bergen oder an Straßen."
+                    },
+                    "4": {
+                        "then": "Es handelt sich um einen an 3 Seiten geschlossenen Unterstand, der in erster Linie zum Campen gedacht ist."
+                    },
+                    "5": {
+                        "then": "Das ist ein Pavillon"
+                    }
+                },
+                "question": "Um welche Art von Unterstand handelt es sich?",
+                "render": "Art des Unterstands: {shelter_type}"
+            }
+        },
+        "title": {
+            "render": "Unterstand"
         }
     },
     "shops": {
@@ -5245,31 +6021,17 @@
         },
         "description": "Ein Geschäft",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Nur Geschäfte, die {search} verkaufen"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Akzeptiert Bargeld"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Akzeptiert Kartenzahlung"
+                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
                     }
                 }
             }
@@ -5282,8 +6044,35 @@
             }
         },
         "tagRenderings": {
+            "copyshop-print-sizes": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Geschäft kann Unterlagen auf A4 Papier drucken"
+                    },
+                    "1": {
+                        "then": "Das Geschäft kann Unterlagen auf A3 Papier drucken"
+                    },
+                    "2": {
+                        "then": "Das Geschäft kann Unterlagen auf A2 Papier drucken"
+                    },
+                    "3": {
+                        "then": "Das Geschäft kann Unterlagen auf A1 Papier drucken"
+                    },
+                    "4": {
+                        "then": "Das Geschäft kann Unterlagen auf A0 Papier drucken"
+                    }
+                },
+                "question": "Welche Papierformate bietet das Geschäft an?"
+            },
+            "id_presets.shop_types": {
+                "override": {
+                    "question": "Um was für ein Geschäft handelt es sich?",
+                    "render": "Das ist ein {shop}"
+                }
+            },
             "shops-name": {
-                "question": "Wie ist der Name dieses Geschäfts?"
+                "question": "Wie ist der Name dieses Geschäfts?",
+                "render": "Der Name des Geschäfts lautet <i>{name}</i>"
             }
         },
         "title": {
@@ -5357,6 +6146,9 @@
                     },
                     "3": {
                         "then": "Der Sportplatz ist nicht öffentlich zugänglich (es ist ein privater Sportplatz)"
+                    },
+                    "4": {
+                        "then": "Der Sportplatz ist öffentlich zugänglich"
                     }
                 },
                 "question": "Ist der Sportplatz öffentlich zugänglich?"
@@ -5747,7 +6539,7 @@
                         "then": "Hier werden die Doktortitel verliehen"
                     }
                 },
-                "question": "Welches Bildungsniveau wird hier gelehrt?"
+                "question": "Welche Bildungsabschlüsse werden hier verliehen?"
             }
         },
         "title": {
@@ -5926,13 +6718,32 @@
                     },
                     "1": {
                         "then": "Rollstuhlfahrer können die Toilette nicht benutzen"
+                    },
+                    "2": {
+                        "then": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer"
                     }
                 },
                 "question": "Können Rollstuhlfahrer die Toilette benutzen?"
+            },
+            "wheelchair-door-width": {
+                "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
+                "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(door:width)} breit"
             }
         },
         "title": {
             "render": "Toilette"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
         }
     },
     "trail": {
@@ -5960,6 +6771,169 @@
         },
         "title": {
             "render": "Wanderweg"
+        }
+    },
+    "transit_routes": {
+        "description": "Ebene mit Buslinien",
+        "mapRendering": {
+            "0": {
+                "color": {
+                    "render": "#ff0000"
+                }
+            }
+        },
+        "name": "Buslinien",
+        "tagRenderings": {
+            "colour": {
+                "question": "Welche Farbe hat diese Buslinie?",
+                "render": "Die Buslinie hat die Farbe {colour}"
+            },
+            "from": {
+                "question": "Wo ist der Startpunkt dieser Buslinie?",
+                "render": "Die Buslinie startet von {from}"
+            },
+            "name": {
+                "question": "Wie lautet der Name der Buslinie? (z.B. Bus XX: Von => Über => Nach)"
+            },
+            "network": {
+                "question": "Zu welchem Verkehrsverbund gehört die Buslinie?",
+                "render": "Die Buslinie gehört zum Verkehrsverbund {network}"
+            },
+            "operator": {
+                "question": "Welches Unternehmen betreibt die Buslinie?",
+                "render": "Die Buslinie wird betrieben von {operator}"
+            },
+            "to": {
+                "question": "Wo ist der Endpunkt der Buslinie?",
+                "render": "Der Endpunkt der Buslinie ist {to}"
+            },
+            "via": {
+                "question": "Über welchen Zwischenhalt fährt die Buslinie?",
+                "render": "Die Buslinie fährt über {via}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Buslinie"
+        }
+    },
+    "transit_stops": {
+        "description": "Ebene mit verschiedenen Arten von Haltestellen.",
+        "name": "Haltestellen",
+        "tagRenderings": {
+            "bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Haltestelle hat eine Bank"
+                    },
+                    "1": {
+                        "then": "Die Haltestelle hat keine Bank"
+                    },
+                    "2": {
+                        "then": "Die Haltestelle hat eine Bank, die separat kartiert ist"
+                    }
+                },
+                "question": "Gibt es an der Haltestelle eine Sitzbank?"
+            },
+            "bin": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Haltestelle hat einen Mülleimer"
+                    },
+                    "1": {
+                        "then": "Die Haltestelle hat keinen Mülleimer"
+                    },
+                    "2": {
+                        "then": "Die Haltestelle hat einen Mülleimer, der separat kartiert ist"
+                    }
+                },
+                "question": "Hat die Haltestelle einen Mülleimer?"
+            },
+            "contained_routes": {
+                "render": "<h3>{_contained_routes_count} Linien halten an der Haltestelle</h3> <ul>{_contained_routes}</ul>"
+            },
+            "departures_board": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Haltestelle hat einen Fahrplan, der nicht näher definiert ist"
+                    },
+                    "1": {
+                        "then": "Die Haltestelle hat einen Fahrplan, der Abfahrtszeiten in Echtzeit anzeigt"
+                    },
+                    "2": {
+                        "then": "Die Haltestelle hat einen Fahrplan, der Abfahrtszeiten in Echtzeit anzeigt"
+                    },
+                    "3": {
+                        "then": "Die Haltestelle hat einen Fahrplan, der die regulären Abfahrtszeiten anzeigt"
+                    },
+                    "4": {
+                        "then": "Die Haltestelle hat einen Fahrplan, der den Abstand zwischen Abfahrten anzeigt"
+                    },
+                    "5": {
+                        "then": "Die Haltestelle hat keinen Fahrplan"
+                    }
+                }
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Haltestelle ist beleuchtet"
+                    },
+                    "1": {
+                        "then": "Die Haltestelle ist nicht beleuchtet"
+                    }
+                },
+                "question": "Ist die Haltestelle beleuchtet?"
+            },
+            "shelter": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Haltestelle hat einen Unterstand"
+                    },
+                    "1": {
+                        "then": "Die Haltestelle hat keinen Unterstand"
+                    },
+                    "2": {
+                        "then": "Die Haltestelle hat einen Unterstand, der separat kariert ist"
+                    }
+                },
+                "question": "Hat die Haltestelle einen Unterstand?"
+            },
+            "stop_name": {
+                "freeform": {
+                    "placeholder": "Name der Haltestelle"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Die Haltestelle hat keinen Namen"
+                    }
+                },
+                "question": "Wie lautet der Name der Haltestelle?",
+                "render": "Der Name der Haltestelle lautet <b>{name}</b>"
+            },
+            "tactile_paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Haltestelle hat ein taktiles Pflaster"
+                    },
+                    "1": {
+                        "then": "Die Haltestelle hat kein taktiles Pflaster"
+                    }
+                },
+                "question": "Hat die Haltestelle hat ein taktiles Pflaster?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Haltestelle {name}"
+                }
+            },
+            "render": "Haltestelle"
         }
     },
     "tree_node": {
@@ -6138,9 +7112,40 @@
         }
     },
     "walls_and_buildings": {
-        "description": "Spezielle eingebaute Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist in Voreinstellungen für Objekte nützlich, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, …). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht eingeschaltet werden.",
+        "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
+        "tagRenderings": {
+            "entrance_info": {
+                "mappings": {
+                    "0": {
+                        "then": "Es wurde kein Eingang markiert"
+                    },
+                    "1": {
+                        "then": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite"
+                    }
+                },
+                "render": {
+                    "after": "{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
+                    "before": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:",
+                    "special": {
+                        "tagrendering": "Ein <a href='#{id}'>Eingang</a> von {canonical(width)}"
+                    }
+                }
+            }
+        },
         "title": {
             "render": "Wand oder Gebäude"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
         }
     },
     "waste_basket": {

@@ -77,8 +77,8 @@ The question is  It this dog park fenced in?
 
 
 
-  - This dogpark is fenced all around corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence' target='_blank'>fence</a>
-  - This dogpark is not fenced all around corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno' target='_blank'>no</a>
+  - This dogpark is fenced all around  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence' target='_blank'>fence</a>`
+  - This dogpark is not fenced all around  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno' target='_blank'>no</a>`
 
 
 
@@ -93,8 +93,8 @@ The question is  Does this dog park have a separate fenced in area for small dog
 
 
 
-  - Have separate area for puppies and small dogs corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate' target='_blank'>separate</a>
-  - Does <strong>not</strong> have a separate area for puppies and small dogs corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared' target='_blank'>shared</a>
+  - Have separate area for puppies and small dogs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate' target='_blank'>separate</a>`
+  - Does <strong>not</strong> have a separate area for puppies and small dogs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared' target='_blank'>shared</a>`
 
 
 
@@ -127,6 +127,8 @@ This tagrendering has no question and is thus read-only
 
 
 
+Shows the reviews module (including the possibility to leave a review)
+
 This tagrendering has no question and is thus read-only
 
 
@@ -136,6 +138,8 @@ This tagrendering has no question and is thus read-only
 ### images 
 
 
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
 
 This tagrendering has no question and is thus read-only
 

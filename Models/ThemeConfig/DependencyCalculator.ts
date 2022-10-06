@@ -1,48 +1,50 @@
-import {SpecialVisualization} from "../../UI/SpecialVisualizations";
-import {SubstitutedTranslation} from "../../UI/SubstitutedTranslation";
-import TagRenderingConfig from "./TagRenderingConfig";
-import {ExtraFuncParams, ExtraFunctions} from "../../Logic/ExtraFunctions";
-import LayerConfig from "./LayerConfig";
+import { SpecialVisualization } from "../../UI/SpecialVisualizations"
+import { SubstitutedTranslation } from "../../UI/SubstitutedTranslation"
+import TagRenderingConfig from "./TagRenderingConfig"
+import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
+import LayerConfig from "./LayerConfig"
 
 export default class DependencyCalculator {
-
     public static GetTagRenderingDependencies(tr: TagRenderingConfig): string[] {
-
         if (tr === undefined) {
             throw "Got undefined tag rendering in getTagRenderingDependencies"
         }
         const deps: string[] = []
 
         // All translated snippets
-        const parts: string[] = [].concat(...(tr.EnumerateTranslations().map(tr => tr.AllValues())))
+        const parts: string[] = [].concat(...tr.EnumerateTranslations().map((tr) => tr.AllValues()))
 
         for (const part of parts) {
-            const specialVizs: { func: SpecialVisualization, args: string[] }[]
-                = SubstitutedTranslation.ExtractSpecialComponents(part).map(o => o.special)
-                .filter(o => o?.func?.getLayerDependencies !== undefined)
+            const specialVizs: { func: SpecialVisualization; args: string[] }[] =
+                SubstitutedTranslation.ExtractSpecialComponents(part)
+                    .map((o) => o.special)
+                    .filter((o) => o?.func?.getLayerDependencies !== undefined)
             for (const specialViz of specialVizs) {
                 deps.push(...specialViz.func.getLayerDependencies(specialViz.args))
             }
         }
-        return deps;
+        return deps
     }
 
     /**
      * Returns a set of all other layer-ids that this layer needs to function.
      * E.g. if this layers does snap to another layer in the preset, this other layer id will be mentioned
      */
-    public static getLayerDependencies(layer: LayerConfig): { neededLayer: string, reason: string, context?: string, neededBy: string }[] {
-        const deps: { neededLayer: string, reason: string, context?: string, neededBy: string }[] = []
+    public static getLayerDependencies(
+        layer: LayerConfig
+    ): { neededLayer: string; reason: string; context?: string; neededBy: string }[] {
+        const deps: { neededLayer: string; reason: string; context?: string; neededBy: string }[] =
+            []
 
         for (let i = 0; layer.presets !== undefined && i < layer.presets.length; i++) {
-            const preset = layer.presets[i];
-            preset.preciseInput?.snapToLayers?.forEach(id => {
+            const preset = layer.presets[i]
+            preset.preciseInput?.snapToLayers?.forEach((id) => {
                 deps.push({
                     neededLayer: id,
                     reason: "a preset snaps to this layer",
                     context: "presets[" + i + "]",
-                    neededBy: layer.id
-                });
+                    neededBy: layer.id,
+                })
             })
         }
 
@@ -52,7 +54,7 @@ export default class DependencyCalculator {
                     neededLayer: dep,
                     reason: "a tagrendering needs this layer",
                     context: tr.id,
-                    neededBy: layer.id
+                    neededBy: layer.id,
                 })
             }
         }
@@ -62,48 +64,50 @@ export default class DependencyCalculator {
                 type: "Feature",
                 geometry: {
                     type: "Point",
-                    coordinates: [0, 0]
+                    coordinates: [0, 0],
                 },
                 properties: {
-                    id: "node/1"
-                }
+                    id: "node/1",
+                },
             }
             let currentKey = undefined
             let currentLine = undefined
             const params: ExtraFuncParams = {
-                getFeatureById: _ => undefined,
+                getFeatureById: (_) => undefined,
                 getFeaturesWithin: (layerId, _) => {
-
-                    if (layerId === '*') {
+                    if (layerId === "*") {
                         // This is a wildcard
                         return []
                     }
 
                     // The important line: steal the dependencies!
                     deps.push({
-                        neededLayer: layerId, reason: "a calculated tag loads features from this layer",
-                        context: "calculatedTag[" + currentLine + "] which calculates the value for " + currentKey,
-                        neededBy: layer.id
+                        neededLayer: layerId,
+                        reason: "a calculated tag loads features from this layer",
+                        context:
+                            "calculatedTag[" +
+                            currentLine +
+                            "] which calculates the value for " +
+                            currentKey,
+                        neededBy: layer.id,
                     })
 
                     return []
                 },
-                memberships: undefined
+                memberships: undefined,
             }
             // Init the extra patched functions...
             ExtraFunctions.FullPatchFeature(params, obj)
             // ... Run the calculated tag code, which will trigger the getFeaturesWithin above...
             for (let i = 0; i < layer.calculatedTags.length; i++) {
-                const [key, code] = layer.calculatedTags[i];
-                currentLine = i; // Leak the state... 
-                currentKey = key;
+                const [key, code] = layer.calculatedTags[i]
+                currentLine = i // Leak the state...
+                currentKey = key
                 try {
-
-                    const func = new Function("feat", "return " + code + ";");
+                    const func = new Function("feat", "return " + code + ";")
                     const result = func(obj)
-                    obj.properties[key] = JSON.stringify(result);
-                } catch (e) {
-                }
+                    obj.properties[key] = JSON.stringify(result)
+                } catch (e) {}
             }
         }
 

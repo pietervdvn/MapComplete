@@ -77,10 +77,6 @@
             "artwork-website": {
                 "question": "Finnes det en nettside med mer info om dette kunstverket?",
                 "render": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Hvilken Wikipedia-oppføring samsvarer med <b>dette kunstverket</b>?",
-                "render": "Samsvarer med <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -339,6 +335,34 @@
         },
         "title": {
             "render": "Brannhydrant"
+        }
+    },
+    "postboxes": {
+        "name": "Postbokser",
+        "title": {
+            "render": "Postboks"
+        }
+    },
+    "postoffices": {
+        "description": "Et lag som viser postkontor.",
+        "name": "Postkontor",
+        "presets": {
+            "0": {
+                "title": "et postkontor"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "Døgnåpent (inkludert helligdager)"
+                    }
+                },
+                "render": "Åpningstider: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Postkontor"
         }
     },
     "windturbine": {

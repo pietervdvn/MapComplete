@@ -12,7 +12,8 @@
         "explanations": {
             "hardDelete": "Este ponto será excluído no OpenStreetMap. Pode ser recuperado por um colaborador experiente",
             "selectReason": "Por favor, selecione por que este recurso deve ser excluído"
-        }
+        },
+        "reasons": {}
     },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3> Um layout pessoal está disponível apenas para usuários do OpenStreetMap",
@@ -26,6 +27,7 @@
             "addNew": "Adicione {category} aqui",
             "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Sua adição é visível para todos</div>",
             "confirmIntro": "<h3>Adicionar um {title} aqui?</h3>O ponto que você criar aqui será <b>visível para todos</b>. Por favor, só adicione coisas ao mapa se elas realmente existirem. Muitos aplicativos usam esses dados.",
+            "import": {},
             "intro": "Você clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "layerNotEnabled": "A camada {layer} não está habilitada. Habilite esta camada para adicionar um ponto",
             "openLayerControl": "Abra a caixa de controle da camada",
@@ -34,19 +36,27 @@
             "title": "Adicionar um novo ponto?",
             "zoomInFurther": "Aumente mais o zoom para adicionar um ponto."
         },
+        "apply_button": {},
+        "attribution": {
+            "iconAttribution": {}
+        },
         "backgroundMap": "Mapa de fundo",
         "cancel": "Cancelar",
         "customThemeIntro": "<h3>Temas personalizados</h3> Esses são temas gerados pelo usuário visitados anteriormente.",
+        "download": {},
         "fewChangesBefore": "Por favor, responda algumas perguntas de pontos existentes antes de adicionar um novo ponto.",
         "getStartedLogin": "Entrar com OpenStreetMap para começar",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crie uma nova conta</a>",
         "goToInbox": "Abrir mensagens",
+        "histogram": {},
         "layerSelection": {
             "title": "Selecionar camadas",
             "zoomInToSeeThisLayer": "Amplie para ver esta camada"
         },
+        "levelSelection": {},
         "loginToStart": "Faça login para responder a esta pergunta",
         "loginWithOpenStreetMap": "Entrar com OpenStreetMap",
+        "morescreen": {},
         "nameInlineQuestion": "O nome desta {category} é $$$",
         "noNameCategory": "{category} sem nome",
         "noTagsSelected": "Nenhuma tag selecionada",
@@ -66,6 +76,7 @@
             "ph_open": "aberto"
         },
         "osmLinkTooltip": "Veja este objeto no OpenStreetMap para histórico e mais opções de edição",
+        "pdf": {},
         "pickLanguage": "Escolha um idioma: ",
         "questions": {
             "emailIs": "O endereço de e-mail deste {category} é <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
@@ -123,7 +134,11 @@
             "tuesday": "Terça",
             "wednesday": "Quanta"
         },
-        "welcomeBack": "Você está logado, seja bem-vindo de volta!"
+        "welcomeBack": "Você está logado, seja bem-vindo de volta!",
+        "welcomeExplanation": {},
+        "wikipedia": {
+            "previewbox": {}
+        }
     },
     "image": {
         "addPicture": "Adicionar imagem",
@@ -133,6 +148,7 @@
         "doDelete": "Remover imagem",
         "dontDelete": "Cancelar",
         "isDeleted": "Excluída",
+        "nearbyPictures": {},
         "pleaseLogin": "Faça login para adicionar uma imagem",
         "respectPrivacy": "Não fotografe pessoas e nem placas de veículos. Não faça upload do Google Maps, Google Streetview ou outras fontes protegidas por direitos autorais.",
         "uploadDone": "<span class=\"thanks\">Sua foto foi adicionada. Obrigado por ajudar!</span>",
@@ -141,11 +157,82 @@
         "uploadingPicture": "Enviando sua imagem…",
         "willBePublished": "Sua imagem será publicada: "
     },
+    "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
+        "introduction": {},
+        "login": {},
+        "mapPreview": {},
+        "noteParts": {},
+        "previewAttributes": {},
+        "selectFile": {},
+        "selectTheme": {}
+    },
+    "importInspector": {},
+    "importLayer": {},
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
         "intro": "MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre um tema específico.",
         "pickTheme": "Escolha um tema abaixo para começar.",
         "title": "Bem-vindo(a) ao MapComplete"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
+    },
+    "move": {
+        "inviteToMove": {},
+        "reasons": {}
+    },
+    "multi_apply": {},
+    "notes": {},
+    "privacy": {},
+    "professional": {
+        "aboutMc": {
+            "internalUse": {},
+            "layers": {},
+            "survey": {}
+        },
+        "aboutOsm": {
+            "aboutOsm": {},
+            "benefits": {},
+            "license": {},
+            "vandalism": {}
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {},
+                "usecaseMapDifferentSources": {}
+            },
+            "unsuitedData": {}
+        },
+        "indexPage": {},
+        "services": {}
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Revisão de afiliados)",
@@ -162,5 +249,25 @@
         "title_singular": "Um comentário",
         "tos": "Se você criar um comentário, você concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> o TOS e a política de privacidade de Mangrove.reviews </a>",
         "write_a_comment": "Deixe um comentário…"
+    },
+    "split": {},
+    "translations": {},
+    "validation": {
+        "color": {},
+        "date": {},
+        "direction": {},
+        "distance": {},
+        "email": {},
+        "float": {},
+        "int": {},
+        "nat": {},
+        "opening_hours": {},
+        "pfloat": {},
+        "phone": {},
+        "pnat": {},
+        "string": {},
+        "text": {},
+        "url": {},
+        "wikidata": {}
     }
 }

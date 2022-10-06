@@ -1,47 +1,44 @@
-import {Utils} from "../Utils";
-
 /**
  * A thin wrapper around a html element, which allows to generate a HTML-element.
  *
  * Assumes a read-only configuration, so it has no 'ListenTo'
  */
 export default abstract class BaseUIElement {
+    protected _constructedHtmlElement: HTMLElement
+    protected isDestroyed = false
+    protected readonly clss: Set<string> = new Set<string>()
+    protected style: string
+    private _onClick: () => void | Promise<void>
 
-    protected _constructedHtmlElement: HTMLElement;
-    protected isDestroyed = false;
-    private clss: Set<string> = new Set<string>();
-    private style: string;
-    private _onClick: () => void;
-
-    public onClick(f: (() => void)) {
-        this._onClick = f;
+    public onClick(f: () => void) {
+        this._onClick = f
         this.SetClass("clickable")
         if (this._constructedHtmlElement !== undefined) {
-            this._constructedHtmlElement.onclick = f;
+            this._constructedHtmlElement.onclick = f
         }
-        return this;
+        return this
     }
 
     AttachTo(divId: string) {
-        let element = document.getElementById(divId);
+        let element = document.getElementById(divId)
         if (element === null) {
-            throw "SEVERE: could not attach UIElement to " + divId;
+            throw "SEVERE: could not attach UIElement to " + divId
         }
 
         while (element.firstChild) {
             //The list is LIVE so it will re-index each call
-            element.removeChild(element.firstChild);
+            element.removeChild(element.firstChild)
         }
-        const el = this.ConstructElement();
+        const el = this.ConstructElement()
         if (el !== undefined) {
             element.appendChild(el)
         }
 
-        return this;
+        return this
     }
-    
-    public ScrollToTop(){
-        this._constructedHtmlElement?.scrollTo(0,0)
+
+    public ScrollToTop() {
+        this._constructedHtmlElement?.scrollTo(0, 0)
     }
 
     /**
@@ -51,31 +48,34 @@ export default abstract class BaseUIElement {
         if (clss == undefined) {
             return this
         }
-        const all = clss.split(" ").map(clsName => clsName.trim());
-        let recordedChange = false;
+        const all = clss.split(" ").map((clsName) => clsName.trim())
+        let recordedChange = false
         for (let c of all) {
-            c = c.trim();
+            c = c.trim()
             if (this.clss.has(clss)) {
-                continue;
+                continue
             }
             if (c === undefined || c === "") {
-                continue;
+                continue
             }
-            this.clss.add(c);
-            recordedChange = true;
+            this.clss.add(c)
+            recordedChange = true
         }
         if (recordedChange) {
-            this._constructedHtmlElement?.classList.add(...Array.from(this.clss));
+            this._constructedHtmlElement?.classList.add(...Array.from(this.clss))
         }
-        return this;
+        return this
     }
 
-    public RemoveClass(clss: string): BaseUIElement {
-        if (this.clss.has(clss)) {
-            this.clss.delete(clss);
-            this._constructedHtmlElement?.classList.remove(clss)
+    public RemoveClass(classes: string): BaseUIElement {
+        const all = classes.split(" ").map((clsName) => clsName.trim())
+        for (let clss of all) {
+            if (this.clss.has(clss)) {
+                this.clss.delete(clss)
+                this._constructedHtmlElement?.classList.remove(clss)
+            }
         }
-        return this;
+        return this
     }
 
     public HasClass(clss: string): boolean {
@@ -83,11 +83,11 @@ export default abstract class BaseUIElement {
     }
 
     public SetStyle(style: string): BaseUIElement {
-        this.style = style;
+        this.style = style
         if (this._constructedHtmlElement !== undefined) {
-            this._constructedHtmlElement.style.cssText = style;
+            this._constructedHtmlElement.style.cssText = style
         }
-        return this;
+        return this
     }
 
     /**
@@ -95,7 +95,7 @@ export default abstract class BaseUIElement {
      */
     public ConstructElement(): HTMLElement {
         if (typeof window === undefined) {
-            return undefined;
+            return undefined
         }
 
         if (this._constructedHtmlElement !== undefined) {
@@ -103,44 +103,52 @@ export default abstract class BaseUIElement {
         }
 
         try {
-            const el = this.InnerConstructElement();
+            const el = this.InnerConstructElement()
 
             if (el === undefined) {
-                return undefined;
+                return undefined
             }
 
-            this._constructedHtmlElement = el;
+            this._constructedHtmlElement = el
             const style = this.style
             if (style !== undefined && style !== "") {
                 el.style.cssText = style
             }
-            if (this.clss.size > 0) {
+            if (this.clss?.size > 0) {
                 try {
                     el.classList.add(...Array.from(this.clss))
                 } catch (e) {
-                    console.error("Invalid class name detected in:", Array.from(this.clss).join(" "), "\nErr msg is ", e)
+                    console.error(
+                        "Invalid class name detected in:",
+                        Array.from(this.clss).join(" "),
+                        "\nErr msg is ",
+                        e
+                    )
                 }
             }
 
             if (this._onClick !== undefined) {
-                const self = this;
-                el.onclick = (e) => {
+                const self = this
+                el.onclick = async (e) => {
                     // @ts-ignore
                     if (e.consumed) {
-                        return;
+                        return
                     }
-                    self._onClick();
+                    const v = self._onClick()
+                    if (typeof v === "object") {
+                        await v
+                    }
                     // @ts-ignore
-                    e.consumed = true;
+                    e.consumed = true
                 }
-                el.classList.add("pointer-events-none", "cursor-pointer");
+                el.classList.add("pointer-events-none", "cursor-pointer")
             }
 
             return el
         } catch (e) {
-            const domExc = e as DOMException;
+            const domExc = e as DOMException
             if (domExc) {
-                console.log("An exception occured", domExc.code, domExc.message, domExc.name)
+                console.error("An exception occured", domExc.code, domExc.message, domExc.name, domExc)
             }
             console.error(e)
         }
@@ -151,8 +159,8 @@ export default abstract class BaseUIElement {
     }
 
     public Destroy() {
-        this.isDestroyed = true;
+        this.isDestroyed = true
     }
 
-    protected abstract InnerConstructElement(): HTMLElement;
+    protected abstract InnerConstructElement(): HTMLElement
 }

@@ -1,33 +1,33 @@
-import Combine from "../Base/Combine";
-import {Store, Stores} from "../../Logic/UIEventSource";
-import Translations from "../i18n/Translations";
-import {SubtleButton} from "../Base/SubtleButton";
-import {VariableUiElement} from "../Base/VariableUIElement";
-import Title from "../Base/Title";
-import InputElementMap from "../Input/InputElementMap";
-import BaseUIElement from "../BaseUIElement";
-import FileSelectorButton from "../Input/FileSelectorButton";
-import {FlowStep} from "./FlowStep";
-import {parse} from "papaparse";
-import {FixedUiElement} from "../Base/FixedUiElement";
-import {TagUtils} from "../../Logic/Tags/TagUtils";
+import Combine from "../Base/Combine"
+import { Store, Stores } from "../../Logic/UIEventSource"
+import Translations from "../i18n/Translations"
+import { SubtleButton } from "../Base/SubtleButton"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import Title from "../Base/Title"
+import InputElementMap from "../Input/InputElementMap"
+import BaseUIElement from "../BaseUIElement"
+import FileSelectorButton from "../Input/FileSelectorButton"
+import { FlowStep } from "./FlowStep"
+import { parse } from "papaparse"
+import { FixedUiElement } from "../Base/FixedUiElement"
+import { TagUtils } from "../../Logic/Tags/TagUtils"
 
-class FileSelector extends InputElementMap<FileList, { name: string, contents: Promise<string> }> {
+class FileSelector extends InputElementMap<FileList, { name: string; contents: Promise<string> }> {
     constructor(label: BaseUIElement) {
         super(
-            new FileSelectorButton(label, {allowMultiple: false, acceptType: "*"}),
+            new FileSelectorButton(label, { allowMultiple: false, acceptType: "*" }),
             (x0, x1) => {
                 // Total hack: x1 is undefined is the backvalue - we effectively make this a one-way-story
-                return x1 === undefined || x0 === x1;
+                return x1 === undefined || x0 === x1
             },
-            filelist => {
+            (filelist) => {
                 if (filelist === undefined) {
                     return undefined
                 }
                 const file = filelist.item(0)
-                return {name: file.name, contents: file.text()}
+                return { name: file.name, contents: file.text() }
             },
-            _ => undefined
+            (_) => undefined
         )
     }
 }
@@ -35,149 +35,153 @@ class FileSelector extends InputElementMap<FileList, { name: string, contents: P
 /**
  * The first step in the import flow: load a file and validate that it is a correct geojson or CSV file
  */
-export class RequestFile extends Combine implements FlowStep<{features: any[]}> {
-
+export class RequestFile extends Combine implements FlowStep<{ features: any[] }> {
     public readonly IsValid: Store<boolean>
     /**
      * The loaded GeoJSON
      */
-    public readonly Value: Store<{features: any[]}>
+    public readonly Value: Store<{ features: any[] }>
 
     constructor() {
-        const t = Translations.t.importHelper.selectFile;
+        const t = Translations.t.importHelper.selectFile
         const csvSelector = new FileSelector(new SubtleButton(undefined, t.description))
-        const loadedFiles = new VariableUiElement(csvSelector.GetValue().map(file => {
-            if (file === undefined) {
-                return t.noFilesLoaded.SetClass("alert")
-            }
-            return t.loadedFilesAre.Subs({file: file.name}).SetClass("thanks")
-        }))
+        const loadedFiles = new VariableUiElement(
+            csvSelector.GetValue().map((file) => {
+                if (file === undefined) {
+                    return t.noFilesLoaded.SetClass("alert")
+                }
+                return t.loadedFilesAre.Subs({ file: file.name }).SetClass("thanks")
+            })
+        )
 
         const text = Stores.flatten(
-            csvSelector.GetValue().map(v => {
+            csvSelector.GetValue().map((v) => {
                 if (v === undefined) {
                     return undefined
                 }
                 return Stores.FromPromise(v.contents)
-            }))
+            })
+        )
 
-        const asGeoJson: Store<any | { error: string | BaseUIElement }> = text.map((src: string) => {
-            if (src === undefined) {
-                return undefined
-            }
-            try {
-                const parsed = JSON.parse(src)
-                if (parsed["type"] !== "FeatureCollection") {
-                    return {error: t.errNotFeatureCollection}
+        const asGeoJson: Store<any | { error: string | BaseUIElement }> = text.map(
+            (src: string) => {
+                if (src === undefined) {
+                    return undefined
                 }
-                if (parsed.features.some(f => f.geometry.type != "Point")) {
-                    return {error: t.errPointsOnly}
-                }
-                parsed.features.forEach(f => {
-                    const props = f.properties
-                    for (const key in props) {
-                        if(props[key] === undefined || props[key] === null || props[key] === ""){
-                            delete props[key]
-                        } 
-                    if(!TagUtils.isValidKey(key)){
-                        return {error: "Probably an invalid key: "+key}
+                try {
+                    const parsed = JSON.parse(src)
+                    if (parsed["type"] !== "FeatureCollection") {
+                        return { error: t.errNotFeatureCollection }
                     }
+                    if (parsed.features.some((f) => f.geometry.type != "Point")) {
+                        return { error: t.errPointsOnly }
                     }
-                })
-                return parsed;
-
-            } catch (e) {
-                // Loading as CSV
-                var lines: string[][] = <any>parse(src).data;
-                const header = lines[0]
-                lines.splice(0, 1)
-                if (header.indexOf("lat") < 0 || header.indexOf("lon") < 0) {
-                    return {error: t.errNoLatOrLon}
-                }
-
-                if (header.some(h => h.trim() == "")) {
-                    return {error: t.errNoName}
-                }
-
-
-                if (new Set(header).size !== header.length) {
-                    return {error: t.errDuplicate}
-                }
-
-
-                const features = []
-                for (let i = 0; i < lines.length; i++) {
-                    const attrs = lines[i];
-                    if (attrs.length == 0 || (attrs.length == 1 && attrs[0] == "")) {
-                        // empty line
-                        continue
+                    parsed.features.forEach((f) => {
+                        const props = f.properties
+                        for (const key in props) {
+                            if (
+                                props[key] === undefined ||
+                                props[key] === null ||
+                                props[key] === ""
+                            ) {
+                                delete props[key]
+                            }
+                            if (!TagUtils.isValidKey(key)) {
+                                return { error: "Probably an invalid key: " + key }
+                            }
+                        }
+                    })
+                    return parsed
+                } catch (e) {
+                    // Loading as CSV
+                    var lines: string[][] = <any>parse(src).data
+                    const header = lines[0]
+                    lines.splice(0, 1)
+                    if (header.indexOf("lat") < 0 || header.indexOf("lon") < 0) {
+                        return { error: t.errNoLatOrLon }
                     }
-                    const properties = {}
-                    for (let i = 0; i < header.length; i++) {
-                        const v = attrs[i]
-                        if (v === undefined || v === "") {
+
+                    if (header.some((h) => h.trim() == "")) {
+                        return { error: t.errNoName }
+                    }
+
+                    if (new Set(header).size !== header.length) {
+                        return { error: t.errDuplicate }
+                    }
+
+                    const features = []
+                    for (let i = 0; i < lines.length; i++) {
+                        const attrs = lines[i]
+                        if (attrs.length == 0 || (attrs.length == 1 && attrs[0] == "")) {
+                            // empty line
                             continue
                         }
-                        properties[header[i]] = v;
-                    }
-                    const coordinates = [Number(properties["lon"]), Number(properties["lat"])]
-                    delete properties["lat"]
-                    delete properties["lon"]
-                    if (coordinates.some(isNaN)) {
-                        return {error: "A coordinate could not be parsed for line " + (i + 2)}
-                    }
-                    const f = {
-                        type: "Feature",
-                        properties,
-                        geometry: {
-                            type: "Point",
-                            coordinates
+                        const properties = {}
+                        for (let i = 0; i < header.length; i++) {
+                            const v = attrs[i]
+                            if (v === undefined || v === "") {
+                                continue
+                            }
+                            properties[header[i]] = v
                         }
-                    };
-                    features.push(f)
+                        const coordinates = [Number(properties["lon"]), Number(properties["lat"])]
+                        delete properties["lat"]
+                        delete properties["lon"]
+                        if (coordinates.some(isNaN)) {
+                            return { error: "A coordinate could not be parsed for line " + (i + 2) }
+                        }
+                        const f = {
+                            type: "Feature",
+                            properties,
+                            geometry: {
+                                type: "Point",
+                                coordinates,
+                            },
+                        }
+                        features.push(f)
+                    }
+
+                    return {
+                        type: "FeatureCollection",
+                        features,
+                    }
                 }
+            }
+        )
 
-                return {
-                    type: "FeatureCollection",
-                    features
+        const errorIndicator = new VariableUiElement(
+            asGeoJson.map((v) => {
+                if (v === undefined) {
+                    return undefined
                 }
-            }
-        })
-
-
-        const errorIndicator = new VariableUiElement(asGeoJson.map(v => {
-            if (v === undefined) {
-                return undefined;
-            }
-            if (v?.error === undefined) {
-                return undefined;
-            }
-            let err: BaseUIElement;
-            if(typeof v.error === "string"){
-                err = new FixedUiElement(v.error)
-            }else if(v.error.Clone !== undefined){
-                err = v.error.Clone()
-            }else{
-                err = v.error
-            }
-            return err.SetClass("alert");
-        }))
+                if (v?.error === undefined) {
+                    return undefined
+                }
+                let err: BaseUIElement
+                if (typeof v.error === "string") {
+                    err = new FixedUiElement(v.error)
+                } else if (v.error.Clone !== undefined) {
+                    err = v.error.Clone()
+                } else {
+                    err = v.error
+                }
+                return err.SetClass("alert")
+            })
+        )
 
         super([
-
             new Title(t.title, 1),
             t.fileFormatDescription,
             t.fileFormatDescriptionCsv,
             t.fileFormatDescriptionGeoJson,
             csvSelector,
             loadedFiles,
-            errorIndicator
-
-        ]);
+            errorIndicator,
+        ])
         this.SetClass("flex flex-col wi")
-        this.IsValid = asGeoJson.map(geojson => geojson !== undefined && geojson["error"] === undefined)
+        this.IsValid = asGeoJson.map(
+            (geojson) => geojson !== undefined && geojson["error"] === undefined
+        )
         this.Value = asGeoJson
     }
-
-
 }

@@ -1,66 +1,77 @@
-import BaseLayer from "../../Models/BaseLayer";
-import {Store, Stores} from "../UIEventSource";
-import Loc from "../../Models/Loc";
-import {GeoOperations} from "../GeoOperations";
-import * as editorlayerindex from "../../assets/editor-layer-index.json";
-import * as L from "leaflet";
-import {TileLayer} from "leaflet";
-import * as X from "leaflet-providers";
-import {Utils} from "../../Utils";
-import {AvailableBaseLayersObj} from "./AvailableBaseLayers";
-import {BBox} from "../BBox";
+import BaseLayer from "../../Models/BaseLayer"
+import { Store, Stores } from "../UIEventSource"
+import Loc from "../../Models/Loc"
+import { GeoOperations } from "../GeoOperations"
+import * as editorlayerindex from "../../assets/editor-layer-index.json"
+import * as L from "leaflet"
+import { TileLayer } from "leaflet"
+import * as X from "leaflet-providers"
+import { Utils } from "../../Utils"
+import { AvailableBaseLayersObj } from "./AvailableBaseLayers"
+import { BBox } from "../BBox"
 
 export default class AvailableBaseLayersImplementation implements AvailableBaseLayersObj {
-
-    public readonly osmCarto: BaseLayer =
-        {
-            id: "osm",
-            name: "OpenStreetMap",
-            layer: () => AvailableBaseLayersImplementation.CreateBackgroundLayer("osm", "OpenStreetMap",
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png", "OpenStreetMap", "https://openStreetMap.org/copyright",
+    public readonly osmCarto: BaseLayer = {
+        id: "osm",
+        name: "OpenStreetMap",
+        layer: () =>
+            AvailableBaseLayersImplementation.CreateBackgroundLayer(
+                "osm",
+                "OpenStreetMap",
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                "OpenStreetMap",
+                "https://openStreetMap.org/copyright",
                 19,
-                false, false),
-            feature: null,
-            max_zoom: 19,
-            min_zoom: 0,
-            isBest: true, // Of course, OpenStreetMap is the best map!
-            category: "osmbasedmap"
-        }
+                false,
+                false
+            ),
+        feature: null,
+        max_zoom: 19,
+        min_zoom: 0,
+        isBest: true, // Of course, OpenStreetMap is the best map!
+        category: "osmbasedmap",
+    }
 
-    public readonly layerOverview = AvailableBaseLayersImplementation.LoadRasterIndex().concat(AvailableBaseLayersImplementation.LoadProviderIndex());
-    public readonly globalLayers = this.layerOverview.filter(layer => layer.feature?.geometry === undefined || layer.feature?.geometry === null)
-    public readonly localLayers = this.layerOverview.filter(layer => layer.feature?.geometry !== undefined && layer.feature?.geometry !== null)
+    public readonly layerOverview = AvailableBaseLayersImplementation.LoadRasterIndex().concat(
+        AvailableBaseLayersImplementation.LoadProviderIndex()
+    )
+    public readonly globalLayers = this.layerOverview.filter(
+        (layer) => layer.feature?.geometry === undefined || layer.feature?.geometry === null
+    )
+    public readonly localLayers = this.layerOverview.filter(
+        (layer) => layer.feature?.geometry !== undefined && layer.feature?.geometry !== null
+    )
 
     private static LoadRasterIndex(): BaseLayer[] {
         const layers: BaseLayer[] = []
         // @ts-ignore
-        const features = editorlayerindex.features;
+        const features = editorlayerindex.features
         for (const i in features) {
-            const layer = features[i];
-            const props = layer.properties;
+            const layer = features[i]
+            const props = layer.properties
 
             if (props.type === "bing") {
                 // A lot of work to implement - see https://github.com/pietervdvn/MapComplete/issues/648
-                continue;
+                continue
             }
 
             if (props.id === "MAPNIK") {
                 // Already added by default
-                continue;
+                continue
             }
 
             if (props.overlay) {
-                continue;
+                continue
             }
 
             if (props.url.toLowerCase().indexOf("apikey") > 0) {
-                continue;
+                continue
             }
 
             if (props.max_zoom < 19) {
                 // We want users to zoom to level 19 when adding a point
                 // If they are on a layer which hasn't enough precision, they can not zoom far enough. This is confusing, so we don't use this layer
-                continue;
+                continue
             }
 
             if (props.name === undefined) {
@@ -68,17 +79,17 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 continue
             }
 
-
-            const leafletLayer: () => TileLayer = () => AvailableBaseLayersImplementation.CreateBackgroundLayer(
-                props.id,
-                props.name,
-                props.url,
-                props.name,
-                props.license_url,
-                props.max_zoom,
-                props.type.toLowerCase() === "wms",
-                props.type.toLowerCase() === "wmts"
-            )
+            const leafletLayer: () => TileLayer = () =>
+                AvailableBaseLayersImplementation.CreateBackgroundLayer(
+                    props.id,
+                    props.name,
+                    props.url,
+                    props.name,
+                    props.license_url,
+                    props.max_zoom,
+                    props.type.toLowerCase() === "wms",
+                    props.type.toLowerCase() === "wmts"
+                )
 
             // Note: if layer.geometry is null, there is global coverage for this layer
             layers.push({
@@ -89,34 +100,35 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 layer: leafletLayer,
                 feature: layer.geometry !== null ? layer : null,
                 isBest: props.best ?? false,
-                category: props.category
-            });
+                category: props.category,
+            })
         }
-        return layers;
+        return layers
     }
 
     private static LoadProviderIndex(): BaseLayer[] {
         // @ts-ignore
-        X; // Import X to make sure the namespace is not optimized away
+        X // Import X to make sure the namespace is not optimized away
         function l(id: string, name: string): BaseLayer {
             try {
-                const layer: any = L.tileLayer.provider(id, undefined);
+                const layer: any = L.tileLayer.provider(id, undefined)
                 return {
                     feature: null,
                     id: id,
                     name: name,
-                    layer: () => L.tileLayer.provider(id, {
-                        maxNativeZoom: layer.options?.maxZoom,
-                       maxZoom: Math.max(layer.options?.maxZoom ?? 19, 21)
-                    }),
+                    layer: () =>
+                        L.tileLayer.provider(id, {
+                            maxNativeZoom: layer.options?.maxZoom,
+                            maxZoom: Math.max(layer.options?.maxZoom ?? 19, 21),
+                        }),
                     min_zoom: 1,
                     max_zoom: layer.options.maxZoom,
                     category: "osmbasedmap",
-                    isBest: false
+                    isBest: false,
                 }
             } catch (e) {
-                console.error("Could not find provided layer", name, e);
-                return null;
+                console.error("Could not find provided layer", name, e)
+                return null
             }
         }
 
@@ -125,42 +137,57 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             l("Stamen.TonerBackground", "Toner Background - no labels (by Stamen)"),
             l("Stamen.Watercolor", "Watercolor (by Stamen)"),
             l("Stadia.OSMBright", "Osm Bright (by Stadia)"),
+            l("Stadia.AlidadeSmoothDark", "Alidade Smooth Dark (by Stadia)"),
             l("CartoDB.Positron", "Positron (by CartoDB)"),
             l("CartoDB.PositronNoLabels", "Positron  - no labels (by CartoDB)"),
             l("CartoDB.Voyager", "Voyager (by CartoDB)"),
             l("CartoDB.VoyagerNoLabels", "Voyager  - no labels (by CartoDB)"),
-        ];
-        return Utils.NoNull(layers);
-
+            l("CartoDB.DarkMatter", "Dark Matter (by CartoDB)"),
+            l("CartoDB.DarkMatterNoLabels", "Dark Matter  - no labels (by CartoDB)"),
+        ]
+        return Utils.NoNull(layers)
     }
 
     /**
      * Converts a layer from the editor-layer-index into a tilelayer usable by leaflet
      */
-    private static CreateBackgroundLayer(id: string, name: string, url: string, attribution: string, attributionUrl: string,
-                                         maxZoom: number, isWms: boolean, isWMTS?: boolean): TileLayer {
-
-        url = url.replace("{zoom}", "{z}")
-            .replace("&BBOX={bbox}", "")
-            .replace("&bbox={bbox}", "");
+    private static CreateBackgroundLayer(
+        id: string,
+        name: string,
+        url: string,
+        attribution: string,
+        attributionUrl: string,
+        maxZoom: number,
+        isWms: boolean,
+        isWMTS?: boolean
+    ): TileLayer {
+        url = url.replace("{zoom}", "{z}").replace("&BBOX={bbox}", "").replace("&bbox={bbox}", "")
 
         const subdomainsMatch = url.match(/{switch:[^}]*}/)
-        let domains: string[] = [];
+        let domains: string[] = []
         if (subdomainsMatch !== null) {
-            let domainsStr = subdomainsMatch[0].substr("{switch:".length);
-            domainsStr = domainsStr.substr(0, domainsStr.length - 1);
-            domains = domainsStr.split(",");
+            let domainsStr = subdomainsMatch[0].substr("{switch:".length)
+            domainsStr = domainsStr.substr(0, domainsStr.length - 1)
+            domains = domainsStr.split(",")
             url = url.replace(/{switch:[^}]*}/, "{s}")
         }
 
-
         if (isWms) {
-            url = url.replace("&SRS={proj}", "");
-            url = url.replace("&srs={proj}", "");
-            const paramaters = ["format", "layers", "version", "service", "request", "styles", "transparent", "version"];
-            const urlObj = new URL(url);
+            url = url.replace("&SRS={proj}", "")
+            url = url.replace("&srs={proj}", "")
+            const paramaters = [
+                "format",
+                "layers",
+                "version",
+                "service",
+                "request",
+                "styles",
+                "transparent",
+                "version",
+            ]
+            const urlObj = new URL(url)
 
-            const isUpper = urlObj.searchParams["LAYERS"] !== null;
+            const isUpper = urlObj.searchParams["LAYERS"] !== null
             const options = {
                 maxZoom: Math.max(maxZoom ?? 19, 21),
                 maxNativeZoom: maxZoom ?? 19,
@@ -168,116 +195,117 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
                 subdomains: domains,
                 uppercase: isUpper,
                 transparent: false,
-            };
+            }
 
             for (const paramater of paramaters) {
-                let p = paramater;
+                let p = paramater
                 if (isUpper) {
-                    p = paramater.toUpperCase();
+                    p = paramater.toUpperCase()
                 }
-                options[paramater] = urlObj.searchParams.get(p);
+                options[paramater] = urlObj.searchParams.get(p)
             }
 
             if (options.transparent === null) {
-                options.transparent = false;
+                options.transparent = false
             }
 
-
-            return L.tileLayer.wms(urlObj.protocol + "//" + urlObj.host + urlObj.pathname, options);
+            return L.tileLayer.wms(urlObj.protocol + "//" + urlObj.host + urlObj.pathname, options)
         }
 
         if (attributionUrl) {
-            attribution = `<a href='${attributionUrl}' target='_blank'>${attribution}</a>`;
+            attribution = `<a href='${attributionUrl}' target='_blank'>${attribution}</a>`
         }
 
-        return L.tileLayer(url,
-            {
-                attribution: attribution,
-                maxZoom: Math.max(21, maxZoom ?? 19),
-                maxNativeZoom: maxZoom ?? 19,
-                minZoom: 1,
-                // @ts-ignore
-                wmts: isWMTS ?? false,
-                subdomains: domains
-            });
+        return L.tileLayer(url, {
+            attribution: attribution,
+            maxZoom: Math.max(21, maxZoom ?? 19),
+            maxNativeZoom: maxZoom ?? 19,
+            minZoom: 1,
+            // @ts-ignore
+            wmts: isWMTS ?? false,
+            subdomains: domains,
+        })
     }
 
     public AvailableLayersAt(location: Store<Loc>): Store<BaseLayer[]> {
-        return Stores.ListStabilized(location.map(
-            (currentLocation) => {
+        return Stores.ListStabilized(
+            location.map((currentLocation) => {
                 if (currentLocation === undefined) {
-                    return this.layerOverview;
+                    return this.layerOverview
                 }
-                return this.CalculateAvailableLayersAt(currentLocation?.lon, currentLocation?.lat);
-            }));
+                return this.CalculateAvailableLayersAt(currentLocation?.lon, currentLocation?.lat)
+            })
+        )
     }
 
-    public SelectBestLayerAccordingTo(location: Store<Loc>, preferedCategory: Store<string | string[]>): Store<BaseLayer> {
-        return this.AvailableLayersAt(location)
-            .map(available => {
+    public SelectBestLayerAccordingTo(
+        location: Store<Loc>,
+        preferedCategory: Store<string | string[]>
+    ): Store<BaseLayer> {
+        return this.AvailableLayersAt(location).map(
+            (available) => {
                 // First float all 'best layers' to the top
                 available.sort((a, b) => {
-                        if (a.isBest && b.isBest) {
-                            return 0;
-                        }
-                        if (!a.isBest) {
-                            return 1
-                        }
-
-                        return -1;
+                    if (a.isBest && b.isBest) {
+                        return 0
                     }
-                )
+                    if (!a.isBest) {
+                        return 1
+                    }
+
+                    return -1
+                })
 
                 if (preferedCategory.data === undefined) {
                     return available[0]
                 }
 
-                let prefered: string []
+                let prefered: string[]
                 if (typeof preferedCategory.data === "string") {
                     prefered = [preferedCategory.data]
                 } else {
-                    prefered = preferedCategory.data;
+                    prefered = preferedCategory.data
                 }
 
-                prefered.reverse(/*New list, inplace reverse is fine*/);
+                prefered.reverse(/*New list, inplace reverse is fine*/)
                 for (const category of prefered) {
                     //Then sort all 'photo'-layers to the top. Stability of the sorting will force a 'best' photo layer on top
                     available.sort((a, b) => {
-                            if (a.category === category && b.category === category) {
-                                return 0;
-                            }
-                            if (a.category !== category) {
-                                return 1
-                            }
-
-                            return -1;
+                        if (a.category === category && b.category === category) {
+                            return 0
                         }
-                    )
+                        if (a.category !== category) {
+                            return 1
+                        }
+
+                        return -1
+                    })
                 }
                 return available[0]
-            }, [preferedCategory])
+            },
+            [preferedCategory]
+        )
     }
-
 
     private CalculateAvailableLayersAt(lon: number, lat: number): BaseLayer[] {
         const availableLayers = [this.osmCarto]
         if (lon === undefined || lat === undefined) {
-            return availableLayers.concat(this.globalLayers);
+            return availableLayers.concat(this.globalLayers)
         }
-        const lonlat : [number, number] = [lon, lat];
+        const lonlat: [number, number] = [lon, lat]
         for (const layerOverviewItem of this.localLayers) {
-            const layer = layerOverviewItem;
+            const layer = layerOverviewItem
             const bbox = BBox.get(layer.feature)
-            
-            if(!bbox.contains(lonlat)){
+
+            if (!bbox.contains(lonlat)) {
                 continue
             }
 
             if (GeoOperations.inside(lonlat, layer.feature)) {
-                availableLayers.push(layer);
+                availableLayers.push(layer)
             }
         }
 
-        return availableLayers.concat(this.globalLayers);
+        return availableLayers.concat(this.globalLayers)
     }
 }

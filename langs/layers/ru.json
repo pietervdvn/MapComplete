@@ -118,10 +118,6 @@
             "artwork-website": {
                 "question": "Есть ли сайт с более подробной информацией об этой работе?",
                 "render": "Больше информации на <a href='{website}' target='_blank'>этом сайте</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Какая запись в Wikidata соответсвует <b>этой работе</b>?",
-                "render": "Запись об этой работе в wikidata: <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -653,18 +649,9 @@
                 },
                 "question": "Есть ли здесь инструменты для починки собственного велосипеда?"
             },
-            "bike_shop-email": {
-                "question": "Какой адрес электронной почты у {name}?"
-            },
             "bike_shop-name": {
                 "question": "Как называется магазин велосипедов?",
                 "render": "Этот магазин велосипедов называется {name}"
-            },
-            "bike_shop-phone": {
-                "question": "Какой номер телефона у {name}?"
-            },
-            "bike_shop-website": {
-                "question": "Какой сайт у {name}?"
             }
         },
         "title": {
@@ -1272,6 +1259,33 @@
             "render": "Детская площадка"
         }
     },
+    "postboxes": {
+        "name": "Почтовые ящики",
+        "presets": {
+            "0": {
+                "title": "почтовый ящик"
+            }
+        },
+        "title": {
+            "render": "Почтовый ящик"
+        }
+    },
+    "postoffices": {
+        "name": "Почтовые отделения",
+        "presets": {
+            "0": {
+                "title": "Почтовое отделение"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "render": "Часы работы: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Почтовое отделение"
+        }
+    },
     "public_bookcase": {
         "description": "Уличный шкаф с книгами, доступными для всех",
         "name": "Книжные шкафы",
@@ -1406,6 +1420,9 @@
                     },
                     "2": {
                         "then": "Доступ только членам клуба"
+                    },
+                    "4": {
+                        "then": "Свободный доступ"
                     }
                 },
                 "question": "Есть ли свободный доступ к этой спортивной площадке?"

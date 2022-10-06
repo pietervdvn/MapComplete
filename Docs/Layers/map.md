@@ -71,6 +71,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -91,7 +93,7 @@ This is rendered with  This map is based on {map_source}
 
 
 
-  - This map is based on OpenStreetMap corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap' target='_blank'>OpenStreetMap</a>
+  - This map is based on OpenStreetMap  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:map_source' target='_blank'>map_source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source%3DOpenStreetMap' target='_blank'>OpenStreetMap</a>`
 
 
 
@@ -106,11 +108,11 @@ The question is  Is the OpenStreetMap-attribution given?
 
 
 
-  - OpenStreetMap is clearly attributed, including the ODBL-license corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes' target='_blank'>yes</a>
-  - OpenStreetMap is clearly attributed, but the license is not mentioned corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete' target='_blank'>incomplete</a>
-  - OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker' target='_blank'>sticker</a>
-  - There is no attribution at all corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone' target='_blank'>none</a>
-  - There is no attribution at all corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dno' target='_blank'>no</a>
+  - OpenStreetMap is clearly attributed, including the ODBL-license  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dyes' target='_blank'>yes</a>`
+  - OpenStreetMap is clearly attributed, but the license is not mentioned  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dincomplete' target='_blank'>incomplete</a>`
+  - OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dsticker' target='_blank'>sticker</a>`
+  - There is no attribution at all  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dnone' target='_blank'>none</a>`
+  - There is no attribution at all  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:map_source:attribution' target='_blank'>map_source:attribution</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_source:attribution%3Dno' target='_blank'>no</a>`
   - This option cannot be chosen as answer
 
 

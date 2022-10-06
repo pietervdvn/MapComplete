@@ -17,7 +17,7 @@
             "softDelete": "Dit punt zal aangepast worden en zal in deze applicatie niet meer getoond worden. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Dit object is verwijderd",
-        "isntAPoint": "Enkel punten kunnen verwijderd worden, het geselecteerde object is een lijn, een oppervlakte of een relatie.",
+        "isntAPoint": "Enkel punten kunnen verwijderd worden. Het geselecteerde object is een lijn, een oppervlakte of een relatie.",
         "loading": "Aan het bekijken of dit object veilig verwijderd kan worden.",
         "loginToDelete": "Je moet aangemeld zijn om een object van de kaart te verwijderen",
         "notEnoughExperience": "Dit object is door iemand anders gemaakt.",
@@ -26,7 +26,7 @@
         "readMessages": "Je hebt ongelezen berichten. Je moet deze lezen voordat je een punt verwijderd, een andere bijdrager heeft misschien feedback",
         "reasons": {
             "disused": "Het wordt niet meer onderhouden of is verwijderd",
-            "duplicate": "Dit punt is een duplicaat van een ander punt",
+            "duplicate": "Dit object is een duplicaat van een ander object",
             "notFound": "Het kon niet gevonden worden",
             "test": "Dit punt was een test en was nooit echt aanwezig"
         },
@@ -39,6 +39,46 @@
         "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas",
         "reload": "Herlaad de data"
     },
+    "flyer": {
+        "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
+        "callToAction": "Probeer het uit op mapcomplete.osm.be",
+        "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
+        "editing": {
+            "ex": "Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond:",
+            "intro": "De gebruiker krijgt eerst een kaart met interesspunten te zien. Klik je op een punt, dan wordt de interface met informatie geopend.",
+            "title": "Hoe ziet de interface eruit?"
+        },
+        "examples": "Online zijn verschillende kaarten met diverse thema's beschikbaar, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,...\nEnkele zijn hier afgeprint.\n\nOntdek ze allemaal op mapcomplete.osm.be",
+        "fakeui": {
+            "add_images": "Voeg foto's toe met een paar klikken",
+            "attributes": "Attributen worden getoond op begrijpbare wijze",
+            "edit": "Foute of verouderde gegevens? Aanpassen kan hier",
+            "question": "Is een attribuut nog niet gekend?\nMapComplete toont een vraag",
+            "see_images": "Toont afbeeldingen van eerdere bijdragers, Wikipedia, Mapillary, ...",
+            "wikipedia": "Gelinkte Wikipedia-artikelen worden getoond"
+        },
+        "frontParagraph": "MapComplete is een web-applicatie om OpenStreetMap-data te tonen en aan te passen op thematische kaarten.\nHet maakt het mogelijk om open geodata te crowdsourcen en te managen op een makkelijke manier.\n\nNieuwe categorieën en attributen kunnen op vraag worden toegevoegd.",
+        "lines_too": "Lijnobjecten en polygonen worden ook getoond. Afbeeldingen en attributen daarvan kunnen toegevoegd en aangepast worden.",
+        "mapcomplete": {
+            "customize": "Wil je een versie op maat?\nWil je een versie in jullie huisstijl?\nWil je een nieuwe kaartlaag of functionaliteit?\nWil je een crowdsourcing-campagne opzetten?\nNeem contact op met pietervdvn@posteo.net voor meer info.",
+            "intro": "MapComplete is een website met {mapCount} interactieve kaarten - er komen regelmatig kaarten bij. Iedere kaart toont items binnen een interessegebied waar gebruikers data zien en updaten.",
+            "li0": "Toon waar interessepunten zijn",
+            "li1": "Voeg nieuwe punten toe en update informatie van reeds bestaande punten",
+            "li2": "Voeg eenvoudig contactgegevens en openingsuren toe",
+            "li3": "Eenvoudig te embedden in een website als iFrame",
+            "li4": "Deel van het OpenStreetMap-ecosysteem met honderden andere tools",
+            "li5": "Hulp bij importeren van datasets",
+            "li6": "Gespecialiseerde invoer voor boomherkenning, Wikipedia, kijkrichting, ...",
+            "li7": "Volledig Open-Source (GPL) en gratis te gebruiken",
+            "title": "Wat is MapComplete?"
+        },
+        "onwheels": "Kaarten van binnenruimtes voor rolstoelgebruikers zijn ook beschikbaar",
+        "osm": "OpenStreetMap is een online kaart die door iedereen aangepast en herbruikt mag worden mits bronvermelding en het openhouden van de data.\n\nHet is de grootste geodatabank ter wereld en wordt herbruikt door miljoenen websites en applicaties.",
+        "tagline": "Geodata eenvoudig verzamelen met OpenStreetMap",
+        "title": "MapComplete.osm.be",
+        "toerisme_vlaanderen": "In samenwerking met Toerisme Vlaanderen werd 'Pin Je Punt' gecreëerd. Op enkele maanden tijd werden hiermee duizenden zitbanken, picknicktafels en oplaadpunten voor elektrische fietsen toegevoegd aan de kaart door meer dan 160 personen.",
+        "whatIsOsm": "Wat is OpenStreetMap?"
+    },
     "general": {
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
         "aboutMapcomplete": "<h3>Over MapComplete</h3><p>Met MapComplete kun je OpenStreetMap verrijken met informatie over een bepaald thema. Beantwoord enkele vragen, en binnen een paar minuten is jouw bijdrage wereldwijd beschikbaar! De <b>maker van het thema</b> bepaalt de elementen, vragen en taalversies voor het thema.</p><h3>Ontdek meer</h3><p>MapComplete <b>biedt altijd de volgende stap</b> naar meer OpenStreetMap:</p><ul><li>Indien ingebed in een website linkt het iframe naar de volledige MapComplete</li><li>De volledige versie heeft uitleg over OpenStreetMap</li><li>Bekijken kan altijd, maar wijzigen vereist een OSM-account</li><li>Als je niet aangemeld bent, wordt je gevraagd dit te doen</li><li>Als je minstens één vraag hebt beantwoord, kan je ook elementen toevoegen</li><li>Heb je genoeg changesets, dan verschijnen de OSM-tags, nog later links naar de wiki</li></ul><p></p><p>Merk je <b>een bug</b> of wil je een <b>extra feature</b>? Wil je <b>helpen vertalen</b>? Bezoek dan de <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">broncode</a> en <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker</a>. </p><p></p>Wil je <b>je vorderingen</b> zien? Volg de edits <a href=\"{osmcha_link}\" target=\"_blank\">op OsmCha</a>.<p></p>",
@@ -49,19 +89,19 @@
             "confirmIntro": "<h3>Voeg een {title} toe?</h3>Het punt dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
             "disableFilters": "Zet alle filters af",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
-            "hasBeenImported": "Dit object is reeds geimporteerd",
+            "hasBeenImported": "Dit object is reeds geïmporteerd",
             "import": {
                 "hasBeenImported": "Dit object is geïmporteerd",
                 "howToTest": "Voor testmode, voeg <b>test=true</b> of <b>backend=osm-test</b> to aan de URL. De wijzigingenset zal in de console geprint worden. Gelieve een PR te openen om dit thema als officieel thema toe te voegen en zo de import-knop te activeren.",
                 "importTags": "Het element zal deze tags krijgen: {tags}",
                 "officialThemesOnly": "In onofficiële thema's is de importeerknop uitgeschakeld om ongelukjes te vermijden",
                 "wrongType": "Dit object is geen punt of lijn, en kan daarom niet geïmporteerd worden",
-                "wrongTypeToConflate": "Dit element is geen punt of weg en kan dus niet samengevoegd worden",
+                "wrongTypeToConflate": "Dit object is geen punt of weg en kan dus niet samengevoegd worden",
                 "zoomInMore": "Zoom verder in om dit object af te handelen"
             },
             "importTags": "Het object zal deze tags krijgen: {tags}",
             "intro": "Kies hieronder welk punt je wilt toevoegen<br/>",
-            "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een punt toe te voegen",
+            "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een object toe te voegen",
             "openLayerControl": "Open de laag-instellingen",
             "pleaseLogin": "Gelieve je aan te melden om een punt toe te voegen",
             "presetInfo": "Het nieuwe object krijgt de attributen {tags}",
@@ -211,7 +251,7 @@
             "searching": "Aan het zoeken…"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Voeg toe aan je thuis-scherm</h3>Je kan deze website aan je thuisscherm van je smartphone toevoegen voor een native feel",
+            "addToHomeScreen": "<h3>Voeg toe aan je thuisscherm</h3>Je kan eenvoudigweg deze website aan het thuisscherm van je smartphone toevoegen voor een \"native feel\"",
             "copiedToClipboard": "Link gekopieerd naar klembord",
             "downloadCustomTheme": "Download de instellingen van dit thema",
             "downloadCustomThemeHelp": "Een ervaring bijdrager kan op basis van dit bestand je thema verder verbeteren",
@@ -254,7 +294,10 @@
         },
         "welcomeBack": "Je bent aangemeld. Welkom terug!",
         "welcomeExplanation": {
-            "addNew": "Klik op de kaart om een nieuw punt toe te voegen."
+            "addNew": "Klik op de kaart om een nieuw punt toe te voegen.",
+            "browseMoreMaps": "Ontdek meer kaarten",
+            "browseOtherThemesIntro": "Er zijn diverse thematische kaarten op MapComplete",
+            "general": "Op deze kaart kan je <i>interessepunten</i> bekijken, bewerken en toevoegen. Zoom in om de interessepunten te zien, duid eentje aan om alle informatie te zien en te bewerken. Alle informatie komt van OpenStreetMap die gratis hergebruikt mag worden."
         },
         "wikipedia": {
             "createNewWikidata": "Maak een nieuw Wikidata-item",
@@ -268,6 +311,7 @@
                 "born": "Geboren: {value}",
                 "died": "Gestorven: {value}"
             },
+            "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         }
@@ -503,7 +547,7 @@
             },
             "dream": {
                 "docs": "Stuurt een dromerige, computer-gegenereerde tekst",
-                "generatedBy": "Deze text is gemaakt door {bot} die Machine-Learning gebruikt om op Reddit te posten."
+                "generatedBy": "Deze tekst is gegenereerd door {bot} die Machine-Learning gebruikt om op Reddit te posten."
             },
             "help": {
                 "argcmd": "Het commando waarvoor je meer informatie wilt",
@@ -523,8 +567,8 @@
                 "couldNotDownload": "Ik kon <code>{id}</code> niet downloaden",
                 "docs": "Haal informatie op over een OSM-object. Dit kan met het ID of via een zoekterm. De objecten worden geinterpreteerd en getoond.",
                 "editWith": "Bewerk dit element op {title}",
-                "fetchingInfoAbout": "Data over {id} aan het ophalen...",
-                "foundResults": "Ik vond {total} resultaten voor <code>{search}</code>, ik ben informatie erover aan het ophalen...",
+                "fetchingInfoAbout": "Data over {id} aan het ophalen…",
+                "foundResults": "Ik vond {total} resultaten voor <code>{search}</code>, ik ben informatie erover aan het ophalen…",
                 "noEditPossible": "Geen enkel MapComplete-thema bevat dit soort objecten...",
                 "noInfo": "Nog geen relevante informatie",
                 "noOpeningHours": "Geen openingsuren gekend",
@@ -571,11 +615,12 @@
                 "arglayerid": "De naam van een laag OF een enkele zoekterm",
                 "argsearch": "De zoekterm",
                 "argverb": "Zoek ofwel in een geografisch gebied (zoals een stand) of zoek in de buurt van een POI",
+                "docs": "Zoekt voor POIs in of nabij een locatie",
                 "noMatchingLayer": "Ik vind geen overeenkomende laag",
                 "noNearOrIn": "Sorry, Ik begreep je opdracht niet omdat ik geen <code>dichtbij</code> of <code>in</code> in je zoekopdracht.\nProbeer iets als <code>Zoek drinkwater in Londen</code>, <code>Zoek frituur in Brussel</code><p></p>\n <p>Daarnaast kan je ook <code>info {cmd}</code> proberen, om info te krijgen over een enkel object.</p>",
                 "nothingFound": "Sorry, ik kon niets vinden voor <code>{search}</code>, dus kan ik {layerTitle} niet zoeken",
                 "overview": "Ik heb {length} overeenkomende items gevonden.",
-                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>..."
+                "searching": "Aan het zoeken naar {layerTitle} {mode} <code>{search}</code>…"
             },
             "shutdown": {
                 "argmode": "Geeft aan op welke manier ik moet afsluiten. Dit moet één van de volgende woorden zijn: {verbs}",
@@ -586,7 +631,7 @@
                 "verbupdate": "Probeert om de MapComplete-codebasis up te daten, sluit erna af"
             },
             "tags": {
-                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}...",
+                "announceSearch": "<code>{id}</code> is geen OpenStreetMap-ID - ik ben wereldwijd aan het zoeken naar {search}…",
                 "argsearch": "De ID van het OSM-object of een zoekopdracht",
                 "docs": "Toont de attributen van een OSM-object. Geef een ID of een zoekstring.",
                 "noSearchGiven": "Geleive een zoekterm of een ID mee te geven om dit commando te gebruiken",

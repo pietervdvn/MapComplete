@@ -11,11 +11,10 @@ mkdir dist/assets 2> /dev/null
 
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run generate:editor-layer-index &&
-npm run reset:layeroverview
 npm run generate &&
-npm run generate:layeroverview --force && # generate:layeroverview has to be run twice: the personal theme won't pick up all the layers otherwise; first time happens in 'npm run generate'
+npm run generate:translations &&
 npm run test &&
-npm run generate:layouts 
+npm run generate:layouts
 
 if [ $? -ne 0 ]; then
     echo "ERROR - stopping the build"
@@ -26,11 +25,11 @@ fi
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
+cp -r assets/templates/ dist/assets/templates/
 cp -r assets/tagRenderings/ dist/assets/tagRenderings/
 cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/
-cp assets/generated/*.png dist/assets/generated/
-cp assets/generated/*.svg dist/assets/generated/
+
 
 SRC_MAPS="--no-source-maps"
 BRANCH=`git rev-parse --abbrev-ref HEAD`

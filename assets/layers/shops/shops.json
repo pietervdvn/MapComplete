@@ -93,7 +93,11 @@
         "de": "Wie ist der Name dieses Geschäfts?",
         "es": "¿Cual es el nombre de esta tienda?"
       },
-      "render": "This shop is called <i>{name}</i>",
+      "render": {
+        "en": "This shop is called <i>{name}</i>",
+        "de": "Der Name des Geschäfts lautet <i>{name}</i>",
+        "nl": "Deze zaak heet <i>{name}</i>"
+      },
       "freeform": {
         "key": "name"
       },
@@ -104,10 +108,15 @@
       "override": {
         "question": {
           "en": "What kind of shop is this?",
-          "nl": "Wat voor soort winkel is dit?"
+          "nl": "Wat voor soort winkel is dit?",
+          "de": "Um was für ein Geschäft handelt es sich?",
+          "fr": "Quel genre de magasin est-ce?"
         },
         "render": {
-          "en": "This is a {shop}"
+          "en": "This is a {shop}",
+          "de": "Das ist ein {shop}",
+          "fr": "C'est une {shop}",
+          "nl": "Dit is een {shop}"
         },
         "freeform": {
           "key": "shop",
@@ -122,6 +131,7 @@
     "email",
     "phone",
     "payment-options",
+    "level",
     {
       "id": "copyshop-print-sizes",
       "condition": {
@@ -132,47 +142,68 @@
         ]
       },
       "question": {
-        "en": "What paper formats does this shop offer?"
+        "en": "What paper formats does this shop offer?",
+        "de": "Welche Papierformate bietet das Geschäft an?",
+        "fr": "Quels formats de papier cette boutique propose-t-elle ?",
+        "nl": "Op welke papiergroottes kan deze zaak printen?"
       },
       "multiAnswer": true,
       "mappings": [
         {
           "if": "service:print:A4=yes",
           "then": {
-            "en": "This shop can print on papers of size A4"
+            "en": "This shop can print on papers of size A4",
+            "de": "Das Geschäft kann Unterlagen auf A4 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A4",
+            "nl": "Deze zaak kan printen op A4-formaat"
           },
           "ifnot": "service:print:A4=no"
         },
         {
           "if": "service:print:A3=yes",
           "then": {
-            "en": "This shop can print on papers of size A3"
+            "en": "This shop can print on papers of size A3",
+            "de": "Das Geschäft kann Unterlagen auf A3 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A3",
+            "nl": "Deze zaak kan printen op A3-formaat"
           },
           "ifnot": "service:print:A3=no"
         },
         {
           "if": "service:print:A2=yes",
           "then": {
-            "en": "This shop can print on papers of size A2"
+            "en": "This shop can print on papers of size A2",
+            "de": "Das Geschäft kann Unterlagen auf A2 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A2",
+            "nl": "Deze zaak kan printen op A2-formaat"
           },
           "ifnot": "service:print:A2=no"
         },
         {
           "if": "service:print:A1=yes",
           "then": {
-            "en": "This shop can print on papers of size A1"
+            "en": "This shop can print on papers of size A1",
+            "de": "Das Geschäft kann Unterlagen auf A1 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A1",
+            "nl": "Deze zaak kan printen op A1-formaat"
           },
           "ifnot": "service:print:A1=no"
         },
         {
           "if": "service:print:A0=yes",
           "then": {
-            "en": "This shop can print on papers of size A0"
+            "en": "This shop can print on papers of size A0",
+            "de": "Das Geschäft kann Unterlagen auf A0 Papier drucken",
+            "fr": "Cette boutique peut imprimer sur des papiers de format A0",
+            "nl": "Deze zaak kan printen op A0-formaat"
           },
           "ifnot": "service:print:A0=no"
         }
       ]
     },
+    "internet",
+    "internet-fee",
+    "internet-ssid",
     "questions",
     "reviews"
   ],
@@ -206,8 +237,8 @@
   "deletion": {
     "softDeletionTags": {
       "and": [
-        "amenity=",
-        "disused:amenity:={amenity}"
+        "shop=",
+        "disused:shop:={shop}"
       ]
     },
     "extraDeleteReasons": [
@@ -216,7 +247,8 @@
           "nl": "{title()} is permanent gestopt",
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
-          "es": "{title()} ha cerrado permanentemente"
+          "es": "{title()} ha cerrado permanentemente",
+          "fr": "{title()} a fermé définitivement"
         },
         "changesetMessage": "shop_closed"
       }
@@ -263,6 +295,7 @@
     }
   ],
   "filter": [
+    "open_now",
     {
       "id": "shop-type",
       "options": [
@@ -278,7 +311,8 @@
             "en": "Only show shops selling {search}",
             "de": "Nur Geschäfte, die {search} verkaufen",
             "nl": "Toon enkel winkels die {search} verkopen",
-            "es": "Solo mostrar tiendas que vendan {search}"
+            "es": "Solo mostrar tiendas que vendan {search}",
+            "fr": "N'afficher que les magasins vendant {search}"
           }
         }
       ]
@@ -298,38 +332,13 @@
             "en": "Only show shops with name {search}",
             "de": "Nur Geschäfte mit dem Namen {search} anzeigen",
             "nl": "Toon enkel winkels met naam {search}",
-            "es": "Solo mostrar tiendas con nombre {search}"
+            "es": "Solo mostrar tiendas con nombre {search}",
+            "fr": "N'afficher que les magasins portant le nom {search}"
           }
         }
       ]
     },
-    {
-      "id": "accepts-cash",
-      "options": [
-        {
-          "osmTags": "payment:cash=yes",
-          "question": {
-            "en": "Accepts cash",
-            "de": "Akzeptiert Bargeld",
-            "nl": "Accepteert cash",
-            "es": "Acepta efectivo"
-          }
-        }
-      ]
-    },
-    {
-      "id": "accepts-cards",
-      "options": [
-        {
-          "osmTags": "payment:cards=yes",
-          "question": {
-            "en": "Accepts payment cards",
-            "de": "Akzeptiert Kartenzahlung",
-            "nl": "Accepteert betaalkaarten",
-            "es": "Acepta el pago por tarjeta"
-          }
-        }
-      ]
-    }
+    "accepts_cash",
+    "accepts_cards"
   ]
 }

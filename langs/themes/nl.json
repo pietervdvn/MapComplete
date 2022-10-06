@@ -39,142 +39,6 @@
         "description": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren",
         "title": "Open boekenruilkasten-kaart"
     },
-    "buurtnatuur": {
-        "description": "<img style='float:right;margin: 1em;width: 10em;height: auto;' src='./assets/themes/buurtnatuur/groen_logo.svg' alt='logo-groen' class='logo/> <br /><b>Natuur maakt gelukkig.</b> Aan de hand van deze website willen we de natuur dicht bij ons beter inventariseren. Met als doel meer mensen te laten genieten van toegankelijke natuur én te strijden voor meer natuur in onze buurten.<ul><li>In welke natuurgebieden kan jij terecht? Hoe toegankelijk zijn ze?</li><li>In welke bossen kan een gezin in jouw gemeente opnieuw op adem komen?</li><li>Op welke onbekende plekjes is het zalig spelen?</li></ul><p>Samen kleuren we heel Vlaanderen en Brussel groen.Blijf op de hoogte van de resultaten van buurtnatuur.be: <a href='https://www.groen.be/buurtnatuur' target='_blank'>meld je aan voor e-mailupdates</a>.",
-        "descriptionTail": "<h4>Tips</h4><ul><li>Over groen ingekleurde gebieden weten we alles wat we willen weten.</li><li>Bij rood ingekleurde gebieden ontbreekt nog heel wat info: klik een gebied aan en beantwoord de vragen.</li><li>Je kan altijd een vraag overslaan als je het antwoord niet weet of niet zeker bent</li><li>Je kan altijd een foto toevoegen</li><li>Je kan ook zelf een gebied toevoegen door op de kaart te klikken</li><li>Open buurtnatuur.be <b>op je smartphone</b> om al wandelend foto's te maken en vragen te beantwoorden</li></ul><small><p>De oorspronkelijke data komt van <b>OpenStreetMap</b> en je antwoorden worden daar bewaard.<br/> Omdat iedereen vrij kan meewerken aan dit project, kunnen we niet garanderen dat er geen fouten opduiken.Kan je hier niet aanpassen wat je wilt, dan kan je dat zelf via OpenStreetMap.org doen. Groen kan <b>geen enkele verantwoordelijkheid</b> nemen over de kaart.</p>Je privacy is belangrijk. We tellen wel hoeveel gebruikers deze website bezoeken. We plaatsen een cookie waar geen persoonlijke informatie in bewaard wordt. Als je inlogt, komt er een tweede cookie bij met je inloggegevens.</small>",
-        "layers": {
-            "0": {
-                "description": "Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.",
-                "name": "Natuurgebied",
-                "presets": {
-                    "0": {
-                        "description": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt",
-                        "title": "een natuurreservaat"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name:nl}"
-                        },
-                        "1": {
-                            "then": "{name}"
-                        }
-                    },
-                    "render": "Natuurgebied"
-                }
-            },
-            "1": {
-                "description": "Een park is een publiek toegankelijke, groene ruimte binnen de stad. Ze is typisch ingericht voor recreatief gebruik, met (verharde) wandelpaden, zitbanken, vuilnisbakken, een gezellig vijvertje, ...",
-                "name": "Park",
-                "presets": {
-                    "0": {
-                        "description": "Voeg een ontbrekend park toe",
-                        "title": "een park"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name:nl}"
-                        },
-                        "1": {
-                            "then": "{name}"
-                        }
-                    },
-                    "render": "Park"
-                }
-            },
-            "2": {
-                "description": "Een bos is een verzameling bomen, al dan niet als productiehout.",
-                "name": "Bos",
-                "presets": {
-                    "0": {
-                        "description": "Voeg een ontbrekend bos toe aan de kaart",
-                        "title": "een bos"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name:nl}"
-                        },
-                        "1": {
-                            "then": "{name}"
-                        }
-                    },
-                    "render": "Bos"
-                }
-            }
-        },
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "mappings": {
-                        "0": {
-                            "then": "Dit gebied is vrij toegankelijk"
-                        },
-                        "1": {
-                            "then": "Vrij toegankelijk"
-                        },
-                        "2": {
-                            "then": "Niet toegankelijk"
-                        },
-                        "3": {
-                            "then": "Niet toegankelijk, want privégebied"
-                        },
-                        "4": {
-                            "then": "Toegankelijk, ondanks dat het privegebied is"
-                        },
-                        "5": {
-                            "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
-                        },
-                        "6": {
-                            "then": "Toegankelijk mits betaling"
-                        }
-                    },
-                    "question": "Is dit gebied toegankelijk?",
-                    "render": "De toegankelijkheid van dit gebied is: {access:description}"
-                },
-                "1": {
-                    "mappings": {
-                        "1": {
-                            "then": "Dit gebied wordt beheerd door Natuurpunt"
-                        },
-                        "2": {
-                            "then": "Dit gebied wordt beheerd door {operator}"
-                        },
-                        "3": {
-                            "then": "Dit gebied wordt beheerd door het Agentschap Natuur en Bos"
-                        }
-                    },
-                    "question": "Wie beheert dit gebied?",
-                    "render": "Beheer door {operator}"
-                },
-                "2": {
-                    "render": "Extra info: <i>{description}</i>"
-                },
-                "3": {
-                    "render": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
-                },
-                "4": {
-                    "question": "Wat is de Nederlandstalige naam van dit gebied?",
-                    "render": "Dit gebied heet {name:nl}"
-                },
-                "5": {
-                    "mappings": {
-                        "0": {
-                            "then": "Dit gebied heeft geen naam"
-                        }
-                    },
-                    "question": "Wat is de naam van dit gebied?",
-                    "render": "Dit gebied heet {name}"
-                }
-            }
-        },
-        "shortDescription": "Met deze tool kan je natuur in je buurt in kaart brengen en meer informatie geven over je favoriete plekje",
-        "title": "Breng jouw buurtnatuur in kaart"
-    },
     "cafes_and_pubs": {
         "description": "Cafés, kroegen en drinkgelegenheden",
         "title": "Cafés"
@@ -592,11 +456,6 @@
         "description": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
         "title": "Onderwijs"
     },
-    "entrances": {
-        "description": "Een kaart die alle toegangen toont,",
-        "shortDescription": "Breng ingangen in kaart om rolstoelnavigatie mogelijk te maken",
-        "title": "Toegangsdeuren"
-    },
     "etymology": {
         "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
         "layers": {
@@ -865,6 +724,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Metatags nog niet berekend... Heropen deze pop-up"
+                            },
+                            "1": {
+                                "then": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}"
                             }
                         }
                     }
@@ -927,75 +789,25 @@
         "shortDescription": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
         "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
     },
+    "healthcare": {
+        "description": "Op deze kaart vind je dokters en apothekers",
+        "title": "Gezondheidszorg"
+    },
+    "indoors": {
+        "title": "Binnenruimtes"
+    },
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
         "title": "Stoepranden en oversteekplaatsen"
-    },
-    "mapcomplete-changes": {
-        "description": "Deze kaart toont alle wijzigingen die met MapComplete werden gemaakt",
-        "layers": {
-            "0": {
-                "description": "Toont alle wijzigingen met MapComplete",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themanaam bevat {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Gemaakt door bijdrager {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Niet</b> gemaakt door bijdrager {search}"
-                            }
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
-                    },
-                    "render_id": {
-                        "render": "Wijzigingset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme": {
-                        "mappings": {
-                            "0": {
-                                "then": "Wijziging met <b>officieus</b> thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-                            }
-                        },
-                        "render": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
-                    }
-                },
-                "title": {
-                    "render": "Wijzigingset voor {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Meer statistieken kunnen <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> gevonden worden"
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Toont wijzigingen gemaakt met MapComplete",
-        "title": "Wijzigingen gemaakt met MapComplete"
     },
     "maps": {
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
         "shortDescription": "Dit thema toont alle (toeristische) kaarten die OpenStreetMap kent",
         "title": "Een kaart van kaarten"
+    },
+    "maxspeed": {
+        "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat.",
+        "title": "Maximale snelheden"
     },
     "missing_streets": {
         "description": "Dit thema voegt automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres.",
@@ -1015,6 +827,50 @@
         "description": "Publieke uitkijktorens om van het panorama te genieten",
         "shortDescription": "Publieke uitkijktorens om van het panorama te genieten",
         "title": "Uitkijktorens"
+    },
+    "onwheels": {
+        "description": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
+        "layers": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "All kerbs"
+                                },
+                                "1": {
+                                    "question": "Geen breedtes gekend"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Alle typen stoepranden"
+                                },
+                                "1": {
+                                    "question": "Hoge stoeprand (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Verlaagde stoeprand (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Vlakke stoeprand (~0cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "OnWheels"
     },
     "openwindpowermap": {
         "description": "Een kaart om windturbines te tonen en te bewerken.",
@@ -1094,54 +950,12 @@
     },
     "postboxes": {
         "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
-        "layers": {
-            "0": {
-                "description": "Deze laag toont brievenbussen.",
-                "name": "Brievenbussen",
-                "presets": {
-                    "0": {
-                        "title": "een brievenbus"
-                    }
-                },
-                "title": {
-                    "render": "Brievenbus"
-                }
-            },
-            "1": {
-                "description": "Een laag die postkantoren toont.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Momenteel geopend"
-                            }
-                        }
-                    }
-                },
-                "name": "Postkantoren",
-                "presets": {
-                    "0": {
-                        "title": "een postkantoor"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "24/7 open (ook tijdens feestdagen)"
-                            }
-                        },
-                        "question": "Wat zijn de openingsuren voor dit postkantoor?",
-                        "render": "Openingsuren: {opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "render": "Postkantoor"
-                }
-            }
-        },
         "shortDescription": "Een kaart die brievenbussen en postkantoren toont",
         "title": "Brievenbussen en postkantoren"
+    },
+    "rainbow_crossings": {
+        "description": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn.",
+        "title": "Regenboogzebrapaden"
     },
     "shops": {
         "description": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers",

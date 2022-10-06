@@ -1,13 +1,13 @@
-import {AndOrTagConfigJson} from "./TagConfigJson";
-import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
-import FilterConfigJson from "./FilterConfigJson";
-import {DeleteConfigJson} from "./DeleteConfigJson";
-import UnitConfigJson from "./UnitConfigJson";
-import MoveConfigJson from "./MoveConfigJson";
-import PointRenderingConfigJson from "./PointRenderingConfigJson";
-import LineRenderingConfigJson from "./LineRenderingConfigJson";
-import {QuestionableTagRenderingConfigJson} from "./QuestionableTagRenderingConfigJson";
-import RewritableConfigJson from "./RewritableConfigJson";
+import { TagConfigJson } from "./TagConfigJson"
+import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
+import FilterConfigJson from "./FilterConfigJson"
+import { DeleteConfigJson } from "./DeleteConfigJson"
+import UnitConfigJson from "./UnitConfigJson"
+import MoveConfigJson from "./MoveConfigJson"
+import PointRenderingConfigJson from "./PointRenderingConfigJson"
+import LineRenderingConfigJson from "./LineRenderingConfigJson"
+import { QuestionableTagRenderingConfigJson } from "./QuestionableTagRenderingConfigJson"
+import RewritableConfigJson from "./RewritableConfigJson"
 
 /**
  * Configuration for a single layer
@@ -17,7 +17,7 @@ export interface LayerConfigJson {
      * The id of this layer.
      * This should be a simple, lowercase, human readable string that is used to identify the layer.
      */
-    id: string;
+    id: string
 
     /**
      * The name of this layer
@@ -31,8 +31,7 @@ export interface LayerConfigJson {
      * A description for this layer.
      * Shown in the layer selections and in the personel theme
      */
-    description?: string | any;
-
+    description?: string | any
 
     /**
      * This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.
@@ -42,69 +41,69 @@ export interface LayerConfigJson {
      * Every source _must_ define which tags _must_ be present in order to be picked up.
      *
      */
-    source:
-        ({
-            /**
-             * Every source must set which tags have to be present in order to load the given layer.
-             */
-            osmTags: AndOrTagConfigJson | string
-            /**
-             * The maximum amount of seconds that a tile is allowed to linger in the cache
-             */
-            maxCacheAge?: number
-        }) &
-        ({
-            /**
-             * If set, this custom overpass-script will be used instead of building one by using the OSM-tags.
-             * Specifying OSM-tags is still obligatory and will still hide non-matching items and they will be used for the rest of the pipeline.
-             * _This should be really rare_.
-             * 
-             * For example, when you want to fetch all grass-areas in parks and which are marked as publicly accessible: 
-             * ```
-             * "source": {
-             *   "overpassScript": 
-             *      "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );",
-             *      "osmTags": "access=yes"
-             * }
-             * ``` 
-             *
-             */
-            overpassScript?: string
-        } |
-            {
-                /**
-                 * The actual source of the data to load, if loaded via geojson.
-                 *
-                 * # A single geojson-file
-                 * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
-                 *  fetches a geojson from a third party source
-                 *
-                 * # A tiled geojson source
-                 * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
-                 *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
-                 *
-                 * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
-                 */
-                geoJson: string,
-                /**
-                 * To load a tiled geojson layer, set the zoomlevel of the tiles
-                 */
-                geoJsonZoomLevel?: number,
-                /**
-                 * Indicates that the upstream geojson data is OSM-derived.
-                 * Useful for e.g. merging or for scripts generating this cache
-                 */
-                isOsmCache?: boolean,
-                /**
-                 * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
-                 */
-                mercatorCrs?: boolean,
-                /**
-                 * Some API's have an id-field, but give it a different name.
-                 * Setting this key will rename this field into 'id'
-                 */
-                idKey?: string
-            })
+    source: {
+        /**
+         * Every source must set which tags have to be present in order to load the given layer.
+         */
+        osmTags: TagConfigJson
+        /**
+         * The maximum amount of seconds that a tile is allowed to linger in the cache
+         */
+        maxCacheAge?: number
+    } & (
+        | {
+              /**
+               * If set, this custom overpass-script will be used instead of building one by using the OSM-tags.
+               * Specifying OSM-tags is still obligatory and will still hide non-matching items and they will be used for the rest of the pipeline.
+               * _This should be really rare_.
+               *
+               * For example, when you want to fetch all grass-areas in parks and which are marked as publicly accessible:
+               * ```
+               * "source": {
+               *   "overpassScript":
+               *      "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );",
+               *      "osmTags": "access=yes"
+               * }
+               * ```
+               *
+               */
+              overpassScript?: string
+          }
+        | {
+              /**
+               * The actual source of the data to load, if loaded via geojson.
+               *
+               * # A single geojson-file
+               * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
+               *  fetches a geojson from a third party source
+               *
+               * # A tiled geojson source
+               * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
+               *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
+               *
+               * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
+               */
+              geoJson: string
+              /**
+               * To load a tiled geojson layer, set the zoomlevel of the tiles
+               */
+              geoJsonZoomLevel?: number
+              /**
+               * Indicates that the upstream geojson data is OSM-derived.
+               * Useful for e.g. merging or for scripts generating this cache
+               */
+              isOsmCache?: boolean
+              /**
+               * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
+               */
+              mercatorCrs?: boolean
+              /**
+               * Some API's have an id-field, but give it a different name.
+               * Setting this key will rename this field into 'id'
+               */
+              idKey?: string
+          }
+    )
 
     /**
      *
@@ -126,16 +125,16 @@ export interface LayerConfigJson {
      * ]
      *
      */
-    calculatedTags?: string[];
+    calculatedTags?: string[]
 
     /**
      * If set, this layer will not query overpass; but it'll still match the tags above which are by chance returned by other layers.
      * Works well together with 'passAllFeatures', to add decoration
      */
-    doNotDownload?: boolean;
+    doNotDownload?: boolean
 
     /**
-     * This tag rendering should either be 'yes' or 'no'. If 'no' is returned, then the feature will be hidden from view.
+     * If set, only features matching this extra tag will be shown.
      * This is useful to hide certain features from view.
      *
      * Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
@@ -143,7 +142,7 @@ export interface LayerConfigJson {
      *
      * The default value is 'yes'
      */
-    isShown?: TagRenderingConfigJson;
+    isShown?: TagConfigJson
 
     /**
      * Advanced option - might be set by the theme compiler
@@ -152,30 +151,28 @@ export interface LayerConfigJson {
      */
     forceLoad?: false | boolean
 
-
     /**
      * The minimum needed zoomlevel required before loading of the data start
      * Default: 0
      */
-    minzoom?: number;
-
+    minzoom?: number
 
     /**
      * Indicates if this layer is shown by default;
      * can be used to hide a layer from start, or to load the layer but only to show it where appropriate (e.g. for snapping to it)
      */
-    shownByDefault?: true | boolean;
+    shownByDefault?: true | boolean
 
     /**
      * The zoom level at which point the data is hidden again
      * Default: 100 (thus: always visible
      */
-    minzoomVisible?: number;
+    minzoomVisible?: number
 
     /**
      * The title shown in a popup for elements of this layer.
      */
-    title?: string | TagRenderingConfigJson;
+    title?: string | TagRenderingConfigJson
 
     /**
      * Small icons shown next to the title.
@@ -185,12 +182,23 @@ export interface LayerConfigJson {
      *
      * Type: icon[]
      */
-    titleIcons?: (string | TagRenderingConfigJson)[] | ["defaults"];
+    titleIcons?: (string | TagRenderingConfigJson)[] | ["defaults"]
 
     /**
      * Visualisation of the items on the map
      */
-    mapRendering: null | (PointRenderingConfigJson | LineRenderingConfigJson | RewritableConfigJson<LineRenderingConfigJson | PointRenderingConfigJson | LineRenderingConfigJson[] | PointRenderingConfigJson[]>)[]
+    mapRendering:
+        | null
+        | (
+              | PointRenderingConfigJson
+              | LineRenderingConfigJson
+              | RewritableConfigJson<
+                    | LineRenderingConfigJson
+                    | PointRenderingConfigJson
+                    | LineRenderingConfigJson[]
+                    | PointRenderingConfigJson[]
+                >
+          )[]
 
     /**
      * If set, this layer will pass all the features it receives onto the next layer.
@@ -220,18 +228,18 @@ export interface LayerConfigJson {
          *
          * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
          */
-        title: string | any,
+        title: string | any
         /**
          * The tags to add. It determines the icon too
          */
-        tags: string[],
+        tags: string[]
         /**
          * The _first sentence_ of the description is shown on the button of the `add` menu.
          * The full description is shown in the confirmation dialog.
          *
          * (The first sentence is until the first '.'-character in the description)
          */
-        description?: string | any,
+        description?: string | any
 
         /**
          * Example images, which show real-life pictures of what such a feature might look like
@@ -246,24 +254,32 @@ export interface LayerConfigJson {
          *
          * If 'preferredBackgroundCategory' is set, the element will attempt to pick a background layer of that category.
          */
-        preciseInput?: true | {
-            /**
-             * The type of background picture
-             */
-            preferredBackground: "osmbasedmap" | "photo" | "historicphoto" | "map" | string | string[],
-            /**
-             * If specified, these layers will be shown to and the new point will be snapped towards it
-             */
-            snapToLayer?: string | string[],
-            /**
-             * If specified, a new point will only be snapped if it is within this range.
-             * Distance in meter
-             *
-             * Default: 10
-             */
-            maxSnapDistance?: number
-        }
-    }[],
+        preciseInput?:
+            | true
+            | {
+                  /**
+                   * The type of background picture
+                   */
+                  preferredBackground:
+                      | "osmbasedmap"
+                      | "photo"
+                      | "historicphoto"
+                      | "map"
+                      | string
+                      | string[]
+                  /**
+                   * If specified, these layers will be shown to and the new point will be snapped towards it
+                   */
+                  snapToLayer?: string | string[]
+                  /**
+                   * If specified, a new point will only be snapped if it is within this range.
+                   * Distance in meter
+                   *
+                   * Default: 10
+                   */
+                  maxSnapDistance?: number
+              }
+    }[]
 
     /**
      * All the tag renderings.
@@ -285,18 +301,25 @@ export interface LayerConfigJson {
      * This is mainly create questions for a 'left' and a 'right' side of the road.
      * These will be grouped and questions will be asked together
      */
-    tagRenderings?:
-        (string
-            | { builtin: string | string[], override: any }
-            | QuestionableTagRenderingConfigJson
-            | RewritableConfigJson<(string | { builtin: string, override: any } | QuestionableTagRenderingConfigJson)[]>
-            ) [],
-
+    tagRenderings?: (
+        | string
+        | { builtin: string | string[]; override: Partial<QuestionableTagRenderingConfigJson> }
+        | { id: string; builtin: string[]; override: Partial<QuestionableTagRenderingConfigJson> }
+        | QuestionableTagRenderingConfigJson
+        | (RewritableConfigJson<
+              (
+                  | string
+                  | { builtin: string; override: Partial<QuestionableTagRenderingConfigJson> }
+                  | QuestionableTagRenderingConfigJson
+              )[]
+          > & { id: string })
+    )[]
 
     /**
-     * All the extra questions for filtering
+     * All the extra questions for filtering.
+     * If a string is given, mapComplete will search in 'filters.json' for the appropriate filter
      */
-    filter?: (FilterConfigJson) [] | { sameAs: string },
+    filter?: (FilterConfigJson | string)[] | { sameAs: string }
 
     /**
      * This block defines under what circumstances the delete dialog is shown for objects of this layer.

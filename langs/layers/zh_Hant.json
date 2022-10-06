@@ -73,10 +73,6 @@
             "artwork-website": {
                 "question": "在那個網站能夠找到更多藝術品的資訊？",
                 "render": "<a href='{website}' target='_blank'>這個網站</a>有更多資訊"
-            },
-            "artwork-wikidata": {
-                "question": "<b>這個藝術品</b>有那個對應的 Wikidata 項目？",
-                "render": "與 <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>對應"
             }
         },
         "title": {
@@ -484,6 +480,17 @@
     "extinguisher": {
         "description": "顯示消防栓的地圖圖層。"
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "目前開放"
+                    }
+                }
+            }
+        }
+    },
     "ghost_bike": {
         "name": "幽靈單車",
         "presets": {
@@ -561,6 +568,41 @@
     "hydrant": {
         "description": "顯示消防栓的地圖圖層。",
         "name": "消防栓地圖"
+    },
+    "postboxes": {
+        "description": "這圖層顯示郵筒。",
+        "name": "郵筒",
+        "presets": {
+            "0": {
+                "title": "郵筒"
+            }
+        },
+        "title": {
+            "render": "郵筒"
+        }
+    },
+    "postoffices": {
+        "description": "圖層顯示郵局。",
+        "name": "郵局",
+        "presets": {
+            "0": {
+                "title": "郵局"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 開放 (包括假日)"
+                    }
+                },
+                "question": "這間郵局的開放時間是？",
+                "render": "開放時間：{opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "郵局"
+        }
     },
     "windturbine": {
         "name": "風機",

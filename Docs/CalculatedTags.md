@@ -21,6 +21,7 @@
     + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_editcontributor,-_last_edit:contributor:uid,-_last_edit:changeset,-_last_edit:timestamp,-_version_number,-_backend)
     + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalkleft,-sidewalk:right,-generic_key:left:property,-generic_key:right:property)
     + [_geometry:type](#_geometrytype)
+    + [_level](#_level)
     + [distanceTo](#distanceto)
     + [overlapWith](#overlapwith)
     + [enclosingFeatures](#enclosingfeatures)
@@ -93,7 +94,7 @@ The total length of a feature in meters (and in kilometers, rounded to one decim
 
 
 
-If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`)
+If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`; `1` will be rewritten to `1m` as well)
 
 
 
@@ -164,6 +165,16 @@ Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' an
 
 
 Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`
+
+
+
+
+
+### _level 
+
+
+
+Extract the 'level'-tag into a normalized, ';'-separated value
 
 
 
@@ -274,7 +285,7 @@ Points from other layers are ignored - even if the points are parts of the curre
 
 ### closest 
 
- Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet laoded) 
+ Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet loaded) 
 
   0. list of features or a layer name or '*' to get all features
  

@@ -61,10 +61,10 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/height#values) [height](https://wiki.openstreetmap.org/wiki/Key:height) | Multiple choice | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/leaf_type#values) [leaf_type](https://wiki.openstreetmap.org/wiki/Key:leaf_type) | Multiple choice | [broadleaved](https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved) [needleleaved](https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/denotation#values) [denotation](https://wiki.openstreetmap.org/wiki/Key:denotation) | Multiple choice | [landmark](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark) [natural_monument](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument) [agricultural](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dagricultural) [park](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dpark) [garden](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dgarden) [avenue](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Davenue) [urban](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Durban) [none](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnone)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/leaf_cycle#values) [leaf_cycle](https://wiki.openstreetmap.org/wiki/Key:leaf_cycle) | Multiple choice | [deciduous](https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Ddeciduous) [evergreen](https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Devergreen)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/species:wikidata#values) [species:wikidata](https://wiki.openstreetmap.org/wiki/Key:species:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/denotation#values) [denotation](https://wiki.openstreetmap.org/wiki/Key:denotation) | Multiple choice | [landmark](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark) [natural_monument](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument) [agricultural](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dagricultural) [park](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dpark) [garden](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dgarden) [avenue](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Davenue) [urban](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Durban) [none](https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnone)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/leaf_type#values) [leaf_type](https://wiki.openstreetmap.org/wiki/Key:leaf_type) | Multiple choice | [broadleaved](https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved) [needleleaved](https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/leaf_cycle#values) [leaf_cycle](https://wiki.openstreetmap.org/wiki/Key:leaf_cycle) | Multiple choice | [deciduous](https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Ddeciduous) [evergreen](https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Devergreen)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/heritage#values) [heritage](https://wiki.openstreetmap.org/wiki/Key:heritage) | Multiple choice | [4](https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4) [4](https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4) [yes](https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref:OnroerendErfgoed#values) [ref:OnroerendErfgoed](https://wiki.openstreetmap.org/wiki/Key:ref:OnroerendErfgoed) | [nat](../SpecialInputElements.md#nat) | 
@@ -76,6 +76,8 @@ attribute | type | values which are supported by this layer
 ### images 
 
 
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
 
 This tagrendering has no question and is thus read-only
 
@@ -93,65 +95,19 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - Height: {height}&nbsp;m corresponds with  height~^^[0-9.]+$$
+  - Height: {height}&nbsp;m  corresponds with  `height~^^[0-9.]+$$`
 
 
 Only visible if  `height~^..*$`  is shown
 
 
 
-### tree-leaf_type 
+### plantnet 
 
 
 
-The question is  Is this a broadleaved or needleleaved tree?
+This tagrendering has no question and is thus read-only
 
-
-
-
-
-  - Broadleaved corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved' target='_blank'>broadleaved</a>
-  - Needleleaved corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved' target='_blank'>needleleaved</a>
-  - Permanently leafless corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dleafless' target='_blank'>leafless</a>
-  - This option cannot be chosen as answer
-
-
-
-
-### tree-denotation 
-
-
-
-The question is  How significant is this tree? Choose the first answer that applies.
-
-
-
-
-
-  - The tree is remarkable due to its size or prominent location. It is useful for navigation. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a>
-  - The tree is a natural monument, e.g. because it is especially old, or of a valuable species. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a>
-  - The tree is used for agricultural purposes, e.g. in an orchard. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dagricultural' target='_blank'>agricultural</a>
-  - The tree is in a park or similar (cemetery, school grounds, …). corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dpark' target='_blank'>park</a>
-  - The tree is in a residential garden. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dgarden' target='_blank'>garden</a>
-  - This is a tree along an avenue. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Davenue' target='_blank'>avenue</a>
-  - The tree is in an urban area. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Durban' target='_blank'>urban</a>
-  - The tree is outside of an urban area. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnone' target='_blank'>none</a>
-
-
-
-
-### tree-decidouous 
-
-
-
-The question is  Is this tree evergreen or deciduous?
-
-
-
-
-
-  - Deciduous: the tree loses its leaves for some time of the year. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_cycle' target='_blank'>leaf_cycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Ddeciduous' target='_blank'>deciduous</a>
-  - Evergreen. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_cycle' target='_blank'>leaf_cycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Devergreen' target='_blank'>evergreen</a>
 
 
 
@@ -182,6 +138,62 @@ Only visible if  `wikipedia~^..*$|wikidata~^..*$`  is shown
 
 
 
+### tree-denotation 
+
+
+
+The question is  How significant is this tree? Choose the first answer that applies.
+
+
+
+
+
+  - The tree is remarkable due to its size or prominent location. It is useful for navigation.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a>`
+  - The tree is a natural monument, e.g. because it is especially old, or of a valuable species.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a>`
+  - The tree is used for agricultural purposes, e.g. in an orchard.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dagricultural' target='_blank'>agricultural</a>`
+  - The tree is in a park or similar (cemetery, school grounds, …).  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dpark' target='_blank'>park</a>`
+  - The tree is in a residential garden.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dgarden' target='_blank'>garden</a>`
+  - This is a tree along an avenue.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Davenue' target='_blank'>avenue</a>`
+  - The tree is in an urban area.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Durban' target='_blank'>urban</a>`
+  - The tree is outside of an urban area.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnone' target='_blank'>none</a>`
+
+
+
+
+### tree-leaf_type 
+
+
+
+The question is  Is this a broadleaved or needleleaved tree?
+
+
+
+
+
+  - Broadleaved  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved' target='_blank'>broadleaved</a>`
+  - Needleleaved  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved' target='_blank'>needleleaved</a>`
+  - Permanently leafless  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dleafless' target='_blank'>leafless</a>`
+  - This option cannot be chosen as answer
+
+
+
+
+### tree-decidouous 
+
+
+
+The question is  Is this tree evergreen or deciduous?
+
+
+
+
+
+  - Deciduous: the tree loses its leaves for some time of the year.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:leaf_cycle' target='_blank'>leaf_cycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Ddeciduous' target='_blank'>deciduous</a>`
+  - Evergreen.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:leaf_cycle' target='_blank'>leaf_cycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Devergreen' target='_blank'>evergreen</a>`
+
+
+
+
 ### tree_node-name 
 
 
@@ -196,7 +208,7 @@ This is rendered with  Name: {name}
 
 
 
-  - The tree does not have a name. corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
+  - The tree does not have a name.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
 
 
 Only visible if  `denotation=landmark|denotation=natural_monument|name~^..*$`  is shown
@@ -213,11 +225,11 @@ The question is  Is this tree registered heritage?
 
 
 
-  - Registered as heritage by <i>Onroerend Erfgoed</i> Flanders corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>
-  - Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3Daatl' target='_blank'>aatl</a>
-  - Registered as heritage by a different organisation corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dyes' target='_blank'>yes</a>
-  - Not registered as heritage corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dno' target='_blank'>no</a>
-  - Registered as heritage by a different organisation corresponds with  heritage~^..*$
+  - Registered as heritage by <i>Onroerend Erfgoed</i> Flanders  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>`
+  - Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3Daatl' target='_blank'>aatl</a>`
+  - Registered as heritage by a different organisation  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dyes' target='_blank'>yes</a>`
+  - Not registered as heritage  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dno' target='_blank'>no</a>`
+  - Registered as heritage by a different organisation  corresponds with  `heritage~^..*$`
   - This option cannot be chosen as answer
 
 

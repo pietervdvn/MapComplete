@@ -82,6 +82,10 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "Who made this artwork?",
+                "render": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
             "artwork-artist_name": {
                 "question": "Which artist created this?",
                 "render": "Created by {artist_name}"
@@ -123,6 +127,9 @@
                     },
                     "11": {
                         "then": "Tilework"
+                    },
+                    "12": {
+                        "then": "Woodcarving"
                     }
                 },
                 "question": "What is the type of this artwork?",
@@ -132,9 +139,9 @@
                 "question": "Is there a website with more information about this artwork?",
                 "render": "More information on <a href='{website}' target='_blank'>this website</a>"
             },
-            "artwork-wikidata": {
-                "question": "Which Wikidata-entry corresponds with <b>this artwork</b>?",
-                "render": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            "artwork_subject": {
+                "question": "What does this artwork depict?",
+                "render": "This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             }
         },
         "title": {
@@ -259,10 +266,10 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Backrest: Yes"
+                        "then": "Does have a backrest"
                     },
                     "1": {
-                        "then": "Backrest: No"
+                        "then": "Does <b>not</b> have a backrest"
                     }
                 },
                 "question": "Does this bench have a backrest?"
@@ -304,22 +311,22 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Material: wood"
+                        "then": "The seating is made from wood"
                     },
                     "1": {
-                        "then": "Material: metal"
+                        "then": "The seating is made from metal"
                     },
                     "2": {
-                        "then": "Material: stone"
+                        "then": "The seating is made from stone"
                     },
                     "3": {
-                        "then": "Material: concrete"
+                        "then": "The seating is made from concrete"
                     },
                     "4": {
-                        "then": "Material: plastic"
+                        "then": "The seating is made from plastic"
                     },
                     "5": {
-                        "then": "Material: steel"
+                        "then": "The seating is made from steel"
                     }
                 },
                 "question": "What is the bench (seating) made from?",
@@ -442,39 +449,6 @@
             }
         },
         "tagRenderings": {
-            "9": {
-                "renderings": {
-                    "0": {
-                        "question": "How much type_plural can be rented here?",
-                        "render": "{capacity:bicycle_type} type_plural can be rented here"
-                    }
-                },
-                "rewrite": {
-                    "into": {
-                        "0": {
-                            "1": "city bikes"
-                        },
-                        "1": {
-                            "1": "electrical bikes"
-                        },
-                        "2": {
-                            "1": "bikes for children"
-                        },
-                        "3": {
-                            "1": "BMX bikes"
-                        },
-                        "4": {
-                            "1": "mountainbike"
-                        },
-                        "5": {
-                            "1": "bicycle panniers"
-                        },
-                        "6": {
-                            "1": "tandem"
-                        }
-                    }
-                }
-            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -527,6 +501,39 @@
                     }
                 },
                 "question": "What kind of bicycle rental is this?"
+            },
+            "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "How much type_plural can be rented here?",
+                        "render": "{capacity:bicycle_type} type_plural can be rented here"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "city bikes"
+                        },
+                        "1": {
+                            "1": "electrical bikes"
+                        },
+                        "2": {
+                            "1": "bikes for children"
+                        },
+                        "3": {
+                            "1": "BMX bikes"
+                        },
+                        "4": {
+                            "1": "mountainbike"
+                        },
+                        "5": {
+                            "1": "bicycle panniers"
+                        },
+                        "6": {
+                            "1": "tandem"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -651,9 +658,6 @@
                     },
                     "1": {
                         "then": "Free to use"
-                    },
-                    "2": {
-                        "then": "The cleaning service has a fee"
                     }
                 },
                 "question": "How much does it cost to use the cleaning service?",
@@ -666,9 +670,6 @@
                     },
                     "1": {
                         "then": "Free to use"
-                    },
-                    "2": {
-                        "then": "The cleaning service has a fee, but the amount is not known"
                     }
                 },
                 "question": "How much does it cost to use the cleaning service?",
@@ -811,9 +812,6 @@
             }
         },
         "tagRenderings": {
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Broken bicycle pump&body=Hello,%0D%0A%0D%0AWith this email, I&#39;d like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id} is broken.%0D%0A%0D%0A Kind regards'>Report this bicycle pump as broken</a>"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -938,6 +936,15 @@
                 },
                 "question": "What valves are supported?",
                 "render": "This pump supports the following valves: {valves}"
+            },
+            "send_email_about_broken_pump": {
+                "render": {
+                    "special": {
+                        "body": "Hello,\n\nWith this email, I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} is broken.\n\n Kind regards",
+                        "button_text": "Report this bicycle pump as broken",
+                        "subject": "Broken bicycle pump"
+                    }
+                }
             }
         },
         "title": {
@@ -1068,9 +1075,6 @@
             "bike_shop-access": {
                 "render": "Only accessible to {access}"
             },
-            "bike_shop-email": {
-                "question": "What is the email address of {name}?"
-            },
             "bike_shop-is-bicycle_shop": {
                 "mappings": {
                     "0": {
@@ -1082,12 +1086,6 @@
             "bike_shop-name": {
                 "question": "What is the name of this bicycle shop?",
                 "render": "This bicycle shop is called {name}"
-            },
-            "bike_shop-phone": {
-                "question": "What is the phone number of {name}?"
-            },
-            "bike_shop-website": {
-                "question": "What is the website of {name}?"
             }
         },
         "title": {
@@ -1252,15 +1250,6 @@
             }
         },
         "description": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Opened now"
-                    }
-                }
-            }
-        },
         "name": "Cafés and pubs",
         "presets": {
             "0": {
@@ -3256,16 +3245,8 @@
         "name": "Direction visualization"
     },
     "doctors": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Opened now"
-                    }
-                }
-            }
-        },
-        "name": "doctors",
+        "description": "This layer shows doctor offices, dentists and other healthcare facilities",
+        "name": "Doctors",
         "presets": {
             "0": {
                 "title": "a doctors office"
@@ -3278,6 +3259,10 @@
             }
         },
         "tagRenderings": {
+            "name": {
+                "question": "What is the name of this doctors place?",
+                "render": "This doctors place is called {name}"
+            },
             "specialty": {
                 "mappings": {
                     "0": {
@@ -3397,9 +3382,72 @@
             "render": "Drinking water"
         }
     },
+    "elevator": {
+        "description": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
+        "name": "elevator",
+        "presets": {
+            "0": {
+                "title": "an elevator"
+            }
+        },
+        "tagRenderings": {
+            "door-width": {
+                "question": "What is the width of this elevator's entrance?",
+                "render": "This elevator's doors have a width of {canonical(door:width)}"
+            },
+            "elevator-depth": {
+                "question": "What is the depth of this elevator?",
+                "render": "This elevator has a depth of {canonical(elevator:depth)}"
+            },
+            "elevator-width": {
+                "question": "What is the width of this elevator?",
+                "render": "This elevator has a width of {canonical(elevator:width)}"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "This elevator is broken"
+                    },
+                    "1": {
+                        "then": "This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>"
+                    },
+                    "2": {
+                        "then": "This elevator works"
+                    },
+                    "3": {
+                        "then": "This elevator works"
+                    }
+                },
+                "question": "Does this elevator work?"
+            }
+        },
+        "title": {
+            "render": "Elevator"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
+        }
+    },
     "entrance": {
         "description": "A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)",
         "name": "Entrance",
+        "presets": {
+            "0": {
+                "title": "an entrance"
+            },
+            "1": {
+                "title": "an indoor door"
+            }
+        },
         "tagRenderings": {
             "Door_type": {
                 "mappings": {
@@ -3487,13 +3535,37 @@
                     }
                 }
             },
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Height of the door kerb"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This door does not have a kerb"
+                    }
+                },
+                "question": "What is the height of this kerb?",
+                "render": "The kerb height of this door is {kerb:height}"
+            },
             "width": {
                 "question": "What is the width of this door/entrance?",
-                "render": "This door has a width of {canonical(width)} meter"
+                "render": "This door has a width of {canonical(width)}"
             }
         },
         "title": {
             "render": "Entrance"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "etymology": {
@@ -3552,6 +3624,41 @@
         },
         "title": {
             "render": "Extinguishers"
+        }
+    },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Opened now"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Accepts cash"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepts payment cards"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "1": {
+                        "question": "Has at least one image"
+                    },
+                    "2": {
+                        "question": "Probably does not have an image"
+                    }
+                }
+            }
         }
     },
     "fire_station": {
@@ -3626,13 +3733,6 @@
         },
         "description": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Opened now"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -3651,20 +3751,6 @@
                 "options": {
                     "0": {
                         "question": "Has a halal menu"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Accepts cash"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Accepts payment cards"
                     }
                 }
             }
@@ -3939,6 +4025,24 @@
             "render": "Ghost bike"
         }
     },
+    "governments": {
+        "description": "This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22",
+        "name": "governments",
+        "presets": {
+            "0": {
+                "title": "a Governmental Office"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this Governmental Office?",
+                "render": "This Governmental Office is called {name}"
+            }
+        },
+        "title": {
+            "render": "Governmental Office {name}"
+        }
+    },
     "gps_track": {
         "name": "Your travelled track",
         "tagRenderings": {
@@ -3964,7 +4068,7 @@
             }
         },
         "tagRenderings": {
-            "6": {
+            "available_devices": {
                 "renderings": {
                     "0": {
                         "mappings": {
@@ -4045,15 +4149,42 @@
         }
     },
     "hospital": {
-        "name": "Hospital",
+        "description": "A layer showing hospital grounds",
+        "name": "Hospitals",
         "tagRenderings": {
             "name": {
-                "question": "What does the of the hospital ?",
-                "render": "Name of the hospital name is {name}"
+                "question": "What is the name of this hospital?",
+                "render": "This hospital is called {name}"
             }
         },
         "title": {
             "render": "Hospital"
+        }
+    },
+    "hotel": {
+        "description": "Layer showing all hotels",
+        "name": "Hotels",
+        "presets": {
+            "0": {
+                "title": "a hotel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the hotel"
+                },
+                "question": "What is the name of this hotel?",
+                "render": "This hotel is called {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            },
+            "render": "Hotel"
         }
     },
     "hydrant": {
@@ -4080,6 +4211,38 @@
                 },
                 "question": "What color is the hydrant?",
                 "render": "The hydrant color is {colour}"
+            },
+            "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Coupling type"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Storz coupling"
+                    },
+                    "1": {
+                        "then": "UNI coupling"
+                    },
+                    "2": {
+                        "then": "Barcelona coupling"
+                    }
+                },
+                "question": "What kind of couplings does this hydrant have?",
+                "render": "Couplings: {couplings:type}"
+            },
+            "hydrant-couplings-diameters": {
+                "freeform": {
+                    "placeholder": "Coupling diameters"
+                },
+                "question": "What diameter are the couplings of this hydrant?",
+                "render": "Coupling diameters: {couplings:diameters}"
+            },
+            "hydrant-diameter": {
+                "freeform": {
+                    "placeholder": "Pipe diameter"
+                },
+                "question": "What is the pipe diameter of this hydrant?",
+                "render": "Pipe diameter: {canonical(fire_hydrant:diameter)}"
             },
             "hydrant-state": {
                 "mappings": {
@@ -4119,6 +4282,59 @@
         },
         "title": {
             "render": "Hydrant"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "millimeters",
+                        "humanSingular": "millimeter"
+                    }
+                }
+            }
+        }
+    },
+    "indoors": {
+        "description": "Basic indoor mapping: shows room outlines",
+        "name": "indoors",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the room"
+                },
+                "question": "What is the name of this room?",
+                "render": "This room is named {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Reference number of the room (e.g. '1.1' or 'A1')"
+                },
+                "question": "What is the reference number of this room?",
+                "render": "This room has the reference number {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Indoor Room {name}"
+                },
+                "1": {
+                    "then": "Indoor Area {name}"
+                },
+                "2": {
+                    "then": "Indoor Wall {name}"
+                },
+                "3": {
+                    "then": "Indoor Corridor {name}"
+                },
+                "4": {
+                    "then": "Indoor Door {name}"
+                },
+                "5": {
+                    "then": "Indoor Level {name}"
+                }
+            },
+            "render": "Indoor area {name}"
         }
     },
     "information_board": {
@@ -4188,7 +4404,7 @@
                     "placeholder": "Height of the kerb"
                 },
                 "question": "What is the height of this kerb?",
-                "render": "Kerb height: {{kerb:height}}"
+                "render": "Kerb height: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4219,7 +4435,7 @@
                         "then": "This kerb does not have tactile paving."
                     },
                     "2": {
-                        "then": "This kerb has tactile paving, but it is incorrect"
+                        "then": "This kerb has tactile paving, but it is incorrect."
                     }
                 },
                 "question": "Is there tactile paving at this kerb?"
@@ -4254,11 +4470,6 @@
             }
         },
         "tagRenderings": {
-            "5": {
-                "override": {
-                    "question": "When is this childcare opened?"
-                }
-            },
             "capacity": {
                 "question": "How much kids (at most) can be enrolled here?",
                 "render": "This facility has room for {capacity} kids"
@@ -4277,6 +4488,11 @@
             "name": {
                 "question": "What is the name of this facility?",
                 "render": "This facility is named <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "When is this childcare opened?"
+                }
             }
         },
         "title": {
@@ -4334,6 +4550,159 @@
             "render": "Map"
         }
     },
+    "maproulette": {
+        "description": "Layer showing all tasks in MapRoulette",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Show tasks with all statuses"
+                    },
+                    "1": {
+                        "question": "Show tasks that are created"
+                    },
+                    "2": {
+                        "question": "Show tasks that are fixed"
+                    },
+                    "3": {
+                        "question": "Show tasks that are false positives"
+                    },
+                    "4": {
+                        "question": "Show tasks that are skipped"
+                    },
+                    "5": {
+                        "question": "Show tasks that are deleted"
+                    },
+                    "6": {
+                        "question": "Show tasks that are already fixed"
+                    },
+                    "7": {
+                        "question": "Show tasks that are marked as too hard"
+                    },
+                    "8": {
+                        "question": "Show tasks that are disabled"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Challenge name contains {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Challenge ID matches {search}"
+                    }
+                }
+            }
+        },
+        "name": "MapRoulette Tasks",
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Task is created"
+                    },
+                    "1": {
+                        "then": "Task is fixed"
+                    },
+                    "2": {
+                        "then": "Task is a false positive"
+                    },
+                    "3": {
+                        "then": "Task is skipped"
+                    },
+                    "4": {
+                        "then": "Task is deleted"
+                    },
+                    "5": {
+                        "then": "Task is already fixed"
+                    },
+                    "6": {
+                        "then": "Task is marked as too hard"
+                    },
+                    "7": {
+                        "then": "Task is disabled"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "MapRoulette Item: {parentName}"
+        }
+    },
+    "maproulette_challenge": {
+        "description": "Layer showing tasks of a MapRoulette challenge",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Show tasks with all statuses"
+                    },
+                    "1": {
+                        "question": "Show tasks that are created"
+                    },
+                    "2": {
+                        "question": "Show tasks that are fixed"
+                    },
+                    "3": {
+                        "question": "Show tasks that are false positives"
+                    },
+                    "4": {
+                        "question": "Show tasks that are skipped"
+                    },
+                    "5": {
+                        "question": "Show tasks that are deleted"
+                    },
+                    "6": {
+                        "question": "Show tasks that are already fixed"
+                    },
+                    "7": {
+                        "question": "Show tasks that are marked as too hard"
+                    },
+                    "8": {
+                        "question": "Show tasks that are disabled"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Task is created"
+                    },
+                    "1": {
+                        "then": "Task is fixed"
+                    },
+                    "2": {
+                        "then": "Task is a false positive"
+                    },
+                    "3": {
+                        "then": "Task is skipped"
+                    },
+                    "4": {
+                        "then": "Task is deleted"
+                    },
+                    "5": {
+                        "then": "Task is already fixed"
+                    },
+                    "6": {
+                        "then": "Task is marked as too hard"
+                    },
+                    "7": {
+                        "then": "Task is disabled"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Item in MapRoulette"
+        }
+    },
     "maxspeed": {
         "description": "Shows the allowed speed for every road",
         "name": "Maxspeed",
@@ -4348,7 +4717,7 @@
                     }
                 },
                 "question": "What is the legal maximum speed one is allowed to drive on this road?",
-                "render": "The maximum allowed speed on this road is {maxspeed}"
+                "render": "The maximum allowed speed on this road is {canonical(maxspeed)}"
             }
         },
         "title": {
@@ -4677,6 +5046,82 @@
             }
         }
     },
+    "parcel_lockers": {
+        "description": "Layer showing parcel lockers for collecting and sending parcels.",
+        "name": "Parcel Lockers",
+        "presets": {
+            "0": {
+                "title": "a parcel locker"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Brand"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This is an Amazon Locker"
+                    },
+                    "1": {
+                        "then": "This is a DHL Packstation"
+                    },
+                    "2": {
+                        "then": "This is a DPD Pickup Station"
+                    },
+                    "3": {
+                        "then": "This is a PostNL Parcel Locker"
+                    }
+                },
+                "question": "What is the brand of the parcel locker?",
+                "render": "This is a {brand} parcel locker"
+            },
+            "mail-in": {
+                "mappings": {
+                    "0": {
+                        "then": "You can send packages from this parcel locker"
+                    },
+                    "1": {
+                        "then": "You <b>can't</b> send packages from this parcel locker"
+                    }
+                },
+                "question": "Can you send packages from this parcel locker?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operator"
+                },
+                "question": "What is the operator of the parcel locker?",
+                "render": "This parcel locker is operated by {operator}"
+            },
+            "pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "You can pick up packages from this parcel locker"
+                    },
+                    "1": {
+                        "then": "You <b>can't</b> pick up packages from this parcel locker"
+                    }
+                },
+                "question": "Can you pick up packages from this parcel locker?"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Reference"
+                },
+                "question": "What is the reference number/identifier of this parcel locker?",
+                "render": "This parcel locker has the reference {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand} parcel locker"
+                }
+            },
+            "render": "Parcel Locker"
+        }
+    },
     "parking": {
         "description": "A layer showing car parkings",
         "name": "Parking",
@@ -4685,8 +5130,137 @@
                 "title": "a car parking"
             }
         },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Amount of parking spots"
+                },
+                "question": "How many parking spots are there at this parking?",
+                "render": "There are {capacity} parking spots"
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Amount of parking spots reserved for disabled people"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "There are disabled parking spots, but it is not known how many"
+                    },
+                    "1": {
+                        "then": "There are no disabled parking spots"
+                    },
+                    "2": {
+                        "then": "There are no disabled parking spots"
+                    }
+                },
+                "question": "How many disabled parking spots are there at this parking?",
+                "render": "There are {capacity:disabled} disabled parking spots"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a surface parking lot"
+                    },
+                    "1": {
+                        "then": "This is a parking bay next to a street"
+                    },
+                    "2": {
+                        "then": "This is an underground parking garage"
+                    },
+                    "3": {
+                        "then": "This is a multi-storey parking garage"
+                    },
+                    "4": {
+                        "then": "This is a rooftop parking deck"
+                    },
+                    "5": {
+                        "then": "This is a lane for parking on the road"
+                    },
+                    "6": {
+                        "then": "This is parking covered by carports"
+                    },
+                    "7": {
+                        "then": "This a parking consisting of garage boxes"
+                    },
+                    "8": {
+                        "then": "This is a parking on a layby"
+                    },
+                    "9": {
+                        "then": "This is a parking consisting of sheds"
+                    }
+                },
+                "question": "What kind of parking is this?"
+            }
+        },
         "title": {
             "render": "Car parking"
+        }
+    },
+    "parking_spaces": {
+        "description": "Layer showing individual parking spaces.",
+        "name": "Parking Spaces",
+        "tagRenderings": {
+            "capacity": {
+                "mappings": {
+                    "0": {
+                        "then": "This parking space has 1 space."
+                    }
+                },
+                "render": "This parking spaces has {capacity} spaces."
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a normal parking space"
+                    },
+                    "1": {
+                        "then": "This is a normal parking space."
+                    },
+                    "2": {
+                        "then": "This is a disabled parking space."
+                    },
+                    "3": {
+                        "then": "This is a private parking space."
+                    },
+                    "4": {
+                        "then": "This is parking space reserved for charging vehicles."
+                    },
+                    "5": {
+                        "then": "This is parking space reserved for deliveries."
+                    },
+                    "6": {
+                        "then": "This is parking space reserved for heavy goods vehicles."
+                    },
+                    "7": {
+                        "then": "This is parking space reserved for caravans or RVs."
+                    },
+                    "8": {
+                        "then": "This is parking space reserved for buses."
+                    },
+                    "9": {
+                        "then": "This is parking space reserved for motorcycles."
+                    },
+                    "10": {
+                        "then": "This is a parking space reserved for parents with children."
+                    },
+                    "11": {
+                        "then": "This is a parking space reserved for staff."
+                    },
+                    "12": {
+                        "then": "This is a parking space reserved for taxis."
+                    },
+                    "13": {
+                        "then": "This is a parking space reserved for vehicles towing a trailer."
+                    },
+                    "14": {
+                        "then": "This is a parking space reserved for car sharing."
+                    }
+                },
+                "question": "What kind of parking space is this?"
+            }
+        },
+        "title": {
+            "render": "Parking Space"
         }
     },
     "pedestrian_path": {
@@ -4694,8 +5268,32 @@
         "name": "Pedestrian paths"
     },
     "pharmacy": {
+        "description": "A layer showing pharmacies, which (probably) dispense prescription drugs",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Has drive through"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pharmacy able to provide prescription drugs"
+                    }
+                }
+            }
+        },
         "name": "pharmacy",
         "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the pharmacy"
+                },
+                "question": "What is the name of the pharmacy?",
+                "render": "This pharmacy is called {name}"
+            },
             "wheelchair": {
                 "mappings": {
                     "0": {
@@ -4712,6 +5310,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pharmacy"
+                }
+            },
             "render": "{name}"
         }
     },
@@ -4879,6 +5482,41 @@
             "render": "Playground"
         }
     },
+    "postboxes": {
+        "description": "The layer showing postboxes.",
+        "name": "Postboxes",
+        "presets": {
+            "0": {
+                "title": "a postbox"
+            }
+        },
+        "title": {
+            "render": "Postbox"
+        }
+    },
+    "postoffices": {
+        "description": "A layer showing post offices.",
+        "name": "Post offices",
+        "presets": {
+            "0": {
+                "title": "a post office"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 opened (including holidays)"
+                    }
+                },
+                "question": "What are the opening hours for this post office?",
+                "render": "Opening Hours: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Post Office"
+        }
+    },
     "public_bookcase": {
         "description": "A streetside cabinet with books, accessible to anyone",
         "filter": {
@@ -4990,16 +5628,68 @@
             "render": "Bookcase"
         }
     },
+    "rainbow_crossings": {
+        "description": "A layer showing pedestrian crossings with rainbow paintings",
+        "name": "Crossings with rainbow paintings",
+        "presets": {
+            "0": {
+                "description": "Pedestrian crossing",
+                "title": "a crossing"
+            }
+        },
+        "tagRenderings": {
+            "crossing-with-rainbow": {
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has rainbow paintings"
+                    },
+                    "1": {
+                        "then": "No rainbow paintings here"
+                    },
+                    "2": {
+                        "then": "No rainbow paintings here"
+                    }
+                },
+                "question": "Does this crossing has rainbow paintings?"
+            }
+        },
+        "title": {
+            "render": "Crossing"
+        }
+    },
+    "reception_desk": {
+        "description": "A layer showing where the reception desks are and which asks some accessibility information",
+        "name": "Reception desks",
+        "presets": {
+            "0": {
+                "title": "a reception desk"
+            }
+        },
+        "tagRenderings": {
+            "desk-height": {
+                "question": "What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>",
+                "render": "The height of the desk is <b>{canonical(desk:height)}</b>"
+            }
+        },
+        "title": {
+            "render": "Reception desk"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
+        }
+    },
     "recycling": {
         "description": "A layer with recycling containers and centres",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Currently open"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -5257,30 +5947,6 @@
                 },
                 "question": "Which genders can enroll at this school?"
             },
-            "language": {
-                "freeform": {
-                    "placeholder": "Language in lowercase English"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "The main language of this school is unknown"
-                    },
-                    "1": {
-                        "then": "French is the main language of {name}"
-                    },
-                    "2": {
-                        "then": "Dutch is the main language of {name}"
-                    },
-                    "3": {
-                        "then": "German is the main language of {name}"
-                    },
-                    "4": {
-                        "then": "The main language of this school is unknown"
-                    }
-                },
-                "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
-                "render": "{school:language} is the main language of {title()}"
-            },
             "school-name": {
                 "question": "What is the name of this school?",
                 "render": "This school is named {name}"
@@ -5317,6 +5983,16 @@
                 },
                 "question": "Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc ",
                 "render": "This school has facilities for students with {school:for}"
+            },
+            "wikidata.school-language": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "The main language of this school is unknown"
+                        }
+                    },
+                    "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
+                }
             }
         },
         "title": {
@@ -5366,31 +6042,17 @@
         },
         "description": "A shop",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Only show shops selling {search}"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Only show shops with name {search}"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Accepts cash"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Accepts payment cards"
+                        "question": "Only show shops with name {search}"
                     }
                 }
             }
@@ -5403,12 +6065,6 @@
             }
         },
         "tagRenderings": {
-            "2": {
-                "override": {
-                    "question": "What kind of shop is this?",
-                    "render": "This is a {shop}"
-                }
-            },
             "copyshop-print-sizes": {
                 "mappings": {
                     "0": {
@@ -5429,8 +6085,15 @@
                 },
                 "question": "What paper formats does this shop offer?"
             },
+            "id_presets.shop_types": {
+                "override": {
+                    "question": "What kind of shop is this?",
+                    "render": "This is a {shop}"
+                }
+            },
             "shops-name": {
-                "question": "What is the name of this shop?"
+                "question": "What is the name of this shop?",
+                "render": "This shop is called <i>{name}</i>"
             }
         },
         "title": {
@@ -5504,6 +6167,9 @@
                     },
                     "3": {
                         "then": "Private - not accessible to the public"
+                    },
+                    "4": {
+                        "then": "Public access"
                     }
                 },
                 "question": "Is this sport pitch publicly accessible?"
@@ -6073,13 +6739,32 @@
                     },
                     "1": {
                         "then": "No wheelchair access"
+                    },
+                    "2": {
+                        "then": "There is only a dedicated toilet for wheelchair users"
                     }
                 },
                 "question": "Is there a dedicated toilet for wheelchair users?"
+            },
+            "wheelchair-door-width": {
+                "question": "What is the width of the door to the wheelchair accessible toilet?",
+                "render": "The door to the wheelchair-accessible toilet is {canonical(door:width)} wide"
             }
         },
         "title": {
             "render": "Toilet"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "trail": {
@@ -6449,8 +7134,39 @@
     },
     "walls_and_buildings": {
         "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
+        "tagRenderings": {
+            "entrance_info": {
+                "mappings": {
+                    "0": {
+                        "then": "No entrance has been marked"
+                    },
+                    "1": {
+                        "then": "None of the {_entrance_count} entrances have width information yet"
+                    }
+                },
+                "render": {
+                    "after": "{_entrances_count_without_width_count} entrances don't have width information yet",
+                    "before": "<h3>Entrances</h3>This building has {_entrances_count} entrances:",
+                    "special": {
+                        "tagrendering": "An <a href='#{id}'>entrance</a> of {canonical(width)}"
+                    }
+                }
+            }
+        },
         "title": {
             "render": "Wall or building"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "waste_basket": {

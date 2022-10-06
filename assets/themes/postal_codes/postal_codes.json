@@ -9,7 +9,8 @@
     "es": "Códigos postales",
     "nb_NO": "Postkoder",
     "nl": "Postcodes",
-    "fr": "Codes postaux"
+    "fr": "Codes postaux",
+    "da": "Postnumre"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -20,7 +21,8 @@
     "es": "Códigos postales",
     "nb_NO": "Postkoder",
     "nl": "Postcodes",
-    "fr": "Codes postaux"
+    "fr": "Codes postaux",
+    "da": "Postnumre"
   },
   "description": {
     "en": "Postal codes",
@@ -30,11 +32,11 @@
     "ca": "Codis postals",
     "es": "Códigos postales",
     "nl": "Postcodes",
-    "fr": "Codes postaux"
+    "fr": "Codes postaux",
+    "da": "Postnumre",
+    "nb_NO": "Postnummer"
   },
-  "maintainer": "",
   "icon": "./assets/themes/postal_codes/townhall.svg",
-  "version": "0",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
@@ -54,7 +56,8 @@
         "es": "códigos postales",
         "nb_NO": "postkoder",
         "nl": "postcodes",
-        "fr": "codes postaux"
+        "fr": "codes postaux",
+        "da": "postnumre"
       },
       "minzoom": 8,
       "title": {
@@ -66,7 +69,8 @@
           "es": "Código postal {postal_code}",
           "nb_NO": "Postkode {postal_code}",
           "nl": "Postcode {postal_code}",
-          "fr": "Code postal {postal_code}"
+          "fr": "Code postal {postal_code}",
+          "da": "Postnummer {postal_code}"
         }
       },
       "description": {},
@@ -81,7 +85,8 @@
             "es": "El código postal es {postal_code}",
             "nl": "Deze postcode is {postal_code}",
             "fr": "Le code postal est {postal_code}",
-            "nb_NO": "Postnummeret er {postal_code}"
+            "nb_NO": "Postnummeret er {postal_code}",
+            "da": "Postnummeret er {postal_code}"
           }
         }
       ],
@@ -117,15 +122,7 @@
           "dashArray": "8 8"
         }
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_country!=be",
-            "then": "no"
-          }
-        ]
-      }
+      "isShown": "_country=be"
     },
     {
       "id": "wrong_postal_code",
@@ -155,7 +152,8 @@
         "ca": "ajuntaments",
         "nl": "stadhuizen",
         "fr": "mairies",
-        "nb_NO": "rådhus"
+        "nb_NO": "rådhus",
+        "da": "rådhuse"
       },
       "minzoom": 12,
       "title": {
@@ -165,7 +163,9 @@
           "hu": "{name} városháza",
           "de": "Rathaus {name}",
           "nl": "Stadhuis {name}",
-          "fr": "Mairie {name}"
+          "fr": "Mairie {name}",
+          "da": "Rådhus {name}",
+          "nb_NO": "{name}-rådhuset"
         }
       },
       "calculatedTags": [
@@ -196,15 +196,7 @@
           ]
         }
       ],
-      "isShown": {
-        "render": "yes",
-        "mappings": [
-          {
-            "if": "_country!=be",
-            "then": "no"
-          }
-        ]
-      }
+      "isShown": "_country=be"
     }
   ]
 }

@@ -1,104 +1,102 @@
-import {VariableUiElement} from "../Base/VariableUIElement";
-import Svg from "../../Svg";
-import Combine from "../Base/Combine";
-import {FixedUiElement} from "../Base/FixedUiElement";
-import LanguagePicker from "../LanguagePicker";
-import Translations from "../i18n/Translations";
-import Link from "../Base/Link";
-import Toggle from "../Input/Toggle";
-import Img from "../Base/Img";
-import MapState from "../../Logic/State/MapState";
-import {LoginToggle} from "../Popup/LoginButton";
+import { VariableUiElement } from "../Base/VariableUIElement"
+import Svg from "../../Svg"
+import Combine from "../Base/Combine"
+import { FixedUiElement } from "../Base/FixedUiElement"
+import LanguagePicker from "../LanguagePicker"
+import Translations from "../i18n/Translations"
+import Link from "../Base/Link"
+import Toggle from "../Input/Toggle"
+import Img from "../Base/Img"
+import MapState from "../../Logic/State/MapState"
+import { LoginToggle } from "../Popup/LoginButton"
 
 export default class UserBadge extends LoginToggle {
-
     constructor(state: MapState) {
-        const userDetails = state.osmConnection.userDetails;
-        const logout =
-            Svg.logout_svg()
-                .onClick(() => {
-                    state.osmConnection.LogOut();
-                });
+        const userDetails = state.osmConnection.userDetails
+        const logout = Svg.logout_svg().onClick(() => {
+            state.osmConnection.LogOut()
+        })
 
-
-        const userBadge = new VariableUiElement(userDetails.map(user => {
-            {
-                const homeButton = new VariableUiElement(
-                    userDetails.map((userinfo) => {
-                        if (userinfo.home) {
-                            return Svg.home_svg();
+        const userBadge = new VariableUiElement(
+            userDetails.map((user) => {
+                {
+                    const homeButton = new VariableUiElement(
+                        userDetails.map((userinfo) => {
+                            if (userinfo.home) {
+                                return Svg.home_svg()
+                            }
+                            return " "
+                        })
+                    ).onClick(() => {
+                        const home = state.osmConnection.userDetails.data?.home
+                        if (home === undefined) {
+                            return
                         }
-                        return " ";
+                        state.leafletMap.data?.setView([home.lat, home.lon], 16)
                     })
-                ).onClick(() => {
-                    const home = state.osmConnection.userDetails.data?.home;
-                    if (home === undefined) {
-                        return;
-                    }
-                    state.leafletMap.data?.setView([home.lat, home.lon], 16);
-                });
 
-                const linkStyle = "flex items-baseline"
-                const languagePicker = (new LanguagePicker(state.layoutToUse.language, "") ?? new FixedUiElement(""))
-                    .SetStyle("width:min-content;");
+                    const linkStyle = "flex items-baseline"
+                    const languagePicker = (
+                        new LanguagePicker(state.layoutToUse.language, "") ?? new FixedUiElement("")
+                    ).SetStyle("width:min-content;")
 
-                let messageSpan =
-                    new Link(
+                    let messageSpan = new Link(
                         new Combine([Svg.envelope, "" + user.totalMessages]).SetClass(linkStyle),
                         `${user.backend}/messages/inbox`,
                         true
                     )
 
-
-                const csCount =
-                    new Link(
+                    const csCount = new Link(
                         new Combine([Svg.star, "" + user.csCount]).SetClass(linkStyle),
                         `${user.backend}/user/${user.name}/history`,
-                        true);
-
-
-                if (user.unreadMessages > 0) {
-                    messageSpan = new Link(
-                        new Combine([Svg.envelope, "" + user.unreadMessages]),
-                        `${user.backend}/messages/inbox`,
                         true
-                    ).SetClass("alert")
-                }
+                    )
 
-                let dryrun = new Toggle(
-                    new FixedUiElement("TESTING").SetClass("alert font-xs p-0 max-h-4"),
-                    undefined,
-                    state.featureSwitchIsTesting
-                )
+                    if (user.unreadMessages > 0) {
+                        messageSpan = new Link(
+                            new Combine([Svg.envelope, "" + user.unreadMessages]),
+                            `${user.backend}/messages/inbox`,
+                            true
+                        ).SetClass("alert")
+                    }
 
-                const settings =
-                    new Link(Svg.gear,
+                    let dryrun = new Toggle(
+                        new FixedUiElement("TESTING").SetClass("alert font-xs p-0 max-h-4"),
+                        undefined,
+                        state.featureSwitchIsTesting
+                    )
+
+                    const settings = new Link(
+                        Svg.gear,
                         `${user.backend}/user/${encodeURIComponent(user.name)}/account`,
-                        true)
+                        true
+                    )
 
+                    const userName = new Link(
+                        new FixedUiElement(user.name),
+                        `${user.backend}/user/${user.name}`,
+                        true
+                    )
 
-                const userName = new Link(
-                    new FixedUiElement(user.name),
-                    `${user.backend}/user/${user.name}`,
-                    true);
+                    const userStats = new Combine([
+                        homeButton,
+                        settings,
+                        messageSpan,
+                        csCount,
+                        languagePicker,
+                        logout,
+                    ]).SetClass("userstats")
 
-
-                const userStats = new Combine([
-                    homeButton,
-                    settings,
-                    messageSpan,
-                    csCount,
-                    languagePicker,
-                    logout
-                ])
-                    .SetClass("userstats")
-
-                const usertext = new Combine([
-                    new Combine([userName, dryrun]).SetClass("flex justify-end w-full"),
-                    userStats
-                ]).SetClass("flex flex-col sm:w-auto sm:pl-2 overflow-hidden w-0")
-                const userIcon =
-                    (user.img === undefined ? Svg.osm_logo_ui() : new Img(user.img)).SetClass("rounded-full opacity-0 m-0 p-0 duration-500 w-16 min-width-16 h16 float-left")
+                    const usertext = new Combine([
+                        new Combine([userName, dryrun]).SetClass("flex justify-end w-full"),
+                        userStats,
+                    ]).SetClass("flex flex-col sm:w-auto sm:pl-2 overflow-hidden w-0")
+                    const userIcon = (
+                        user.img === undefined ? Svg.osm_logo_ui() : new Img(user.img)
+                    )
+                        .SetClass(
+                            "rounded-full opacity-0 m-0 p-0 duration-500 w-16 min-width-16 h16 float-left"
+                        )
                         .onClick(() => {
                             if (usertext.HasClass("w-0")) {
                                 usertext.RemoveClass("w-0")
@@ -110,23 +108,17 @@ export default class UserBadge extends LoginToggle {
                             }
                         })
 
-                return new Combine([
-                    usertext,
-                    userIcon,
-                ]).SetClass("h-16 flex bg-white")
+                    return new Combine([usertext, userIcon]).SetClass("h-16 flex bg-white")
+                }
+            })
+        )
 
-            }
-        }));
-
-            
         super(
-           new Combine([userBadge.SetClass("inline-block m-0 w-full").SetStyle("pointer-events: all")]) 
-            .SetClass("shadow rounded-full h-min overflow-hidden block w-full md:w-max"),
+            new Combine([
+                userBadge.SetClass("inline-block m-0 w-full").SetStyle("pointer-events: all"),
+            ]).SetClass("shadow rounded-full h-min overflow-hidden block w-full md:w-max"),
             Translations.t.general.loginWithOpenStreetMap,
             state
         )
-
     }
-
-
 }

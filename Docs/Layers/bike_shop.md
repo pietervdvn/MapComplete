@@ -92,6 +92,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -108,7 +110,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - This business focuses on rental corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>
+  - This business focuses on rental  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>`
 
 
 Only visible if  `shop~^..*$&shop!~^bicycle$&shop!~^sports$`  is shown
@@ -129,11 +131,11 @@ This is rendered with  This bicycle shop is called {name}
 
 
 
-### bike_shop-website 
+### website 
 
 
 
-The question is  What is the website of {name}?
+The question is  What is the website of {title()}?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
@@ -143,11 +145,17 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-### bike_shop-phone 
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - This option cannot be chosen as answer
 
 
 
-The question is  What is the phone number of {name}?
+
+### phone 
+
+
+
+The question is  What is the phone number of {title()}?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
@@ -157,16 +165,28 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-### bike_shop-email 
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - This option cannot be chosen as answer
 
 
 
-The question is  What is the email address of {name}?
+
+### email 
+
+
+
+The question is  What is the email address of {title()}?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
 This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
+
+
+
+
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - This option cannot be chosen as answer
 
 
 
@@ -209,8 +229,8 @@ The question is  Does this shop sell bikes?
 
 
 
-  - This shop sells bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a>
-  - This shop doesn't sell bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno' target='_blank'>no</a>
+  - This shop sells bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a>`
+  - This shop doesn't sell bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno' target='_blank'>no</a>`
 
 
 
@@ -225,10 +245,10 @@ The question is  Does this shop repair bikes?
 
 
 
-  - This shop repairs bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
-  - This shop doesn't repair bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>
-  - This shop only repairs bikes bought here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold' target='_blank'>only_sold</a>
-  - This shop only repairs bikes of a certain brand corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand' target='_blank'>brand</a>
+  - This shop repairs bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>`
+  - This shop doesn't repair bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>`
+  - This shop only repairs bikes bought here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold' target='_blank'>only_sold</a>`
+  - This shop only repairs bikes of a certain brand  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand' target='_blank'>brand</a>`
 
 
 
@@ -243,8 +263,8 @@ The question is  Does this shop rent out bikes?
 
 
 
-  - This shop rents out bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>
-  - This shop doesn't rent out bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno' target='_blank'>no</a>
+  - This shop rents out bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>`
+  - This shop doesn't rent out bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno' target='_blank'>no</a>`
 
 
 
@@ -263,17 +283,15 @@ This is rendered with  {rental} is rented here
 
 
 
-  - Normal city bikes can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike' target='_blank'>city_bike</a>
-  - Electrical bikes can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike' target='_blank'>ebike</a>
-  - BMX bikes can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx' target='_blank'>bmx</a>
-  - Mountainbikes can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb' target='_blank'>mtb</a>
-  - Bikes for children can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike' target='_blank'>kid_bike</a>
-  - Tandem bicycles can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem' target='_blank'>tandem</a>
-  - Race bicycles can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike' target='_blank'>racebike</a>
-  - Bike helmets can be rented here corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>
+  - Normal city bikes can be rented here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike' target='_blank'>city_bike</a>`
+  - Electrical bikes can be rented here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike' target='_blank'>ebike</a>`
+  - BMX bikes can be rented here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx' target='_blank'>bmx</a>`
+  - Mountainbikes can be rented here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb' target='_blank'>mtb</a>`
+  - Bikes for children can be rented here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike' target='_blank'>kid_bike</a>`
+  - Tandem bicycles can be rented here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem' target='_blank'>tandem</a>`
+  - Race bicycles can be rented here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike' target='_blank'>racebike</a>`
+  - Bike helmets can be rented here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>`
 
-
-Only visible if  `amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -291,7 +309,7 @@ This is rendered with  {capacity:city_bike} city bikes can be rented here
 
 
 
-Only visible if  `rental~^.*city_bike.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*city_bike.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -309,7 +327,7 @@ This is rendered with  {capacity:ebike} electrical bikes can be rented here
 
 
 
-Only visible if  `rental~^.*ebike.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*ebike.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -327,7 +345,7 @@ This is rendered with  {capacity:kid_bike} bikes for children can be rented here
 
 
 
-Only visible if  `rental~^.*kid_bike.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*kid_bike.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -345,7 +363,7 @@ This is rendered with  {capacity:bmx} BMX bikes can be rented here
 
 
 
-Only visible if  `rental~^.*bmx.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*bmx.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -363,7 +381,7 @@ This is rendered with  {capacity:mtb} mountainbike can be rented here
 
 
 
-Only visible if  `rental~^.*mtb.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*mtb.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -381,7 +399,7 @@ This is rendered with  {capacity:bicycle_pannier} bicycle panniers can be rented
 
 
 
-Only visible if  `rental~^.*bicycle_pannier.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*bicycle_pannier.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -399,7 +417,7 @@ This is rendered with  {capacity:tandem_bicycle} tandem can be rented here
 
 
 
-Only visible if  `rental~^.*tandem_bicycle.*$&amenity=bicycle_rental|bicycle_rental~^..*$|service:bicycle:rental=yes|rental~^.*bicycle.*$`  is shown
+Only visible if  `rental~^.*tandem_bicycle.*$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -415,9 +433,9 @@ The question is  Does this shop sell second-hand bikes?
 
 
 
-  - This shop sells second-hand bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a>
-  - This shop doesn't sell second-hand bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno' target='_blank'>no</a>
-  - This shop only sells second-hand bikes corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a>
+  - This shop sells second-hand bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a>`
+  - This shop doesn't sell second-hand bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno' target='_blank'>no</a>`
+  - This shop only sells second-hand bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a>`
 
 
 
@@ -432,9 +450,9 @@ The question is  Does this shop offer a bike pump for use by anyone?
 
 
 
-  - This shop offers a bike pump for anyone corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
-  - This shop doesn't offer a bike pump for anyone corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
-  - There is bicycle pump, it is shown as a separate point  corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate' target='_blank'>separate</a>
+  - This shop offers a bike pump for anyone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>`
+  - This shop doesn't offer a bike pump for anyone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>`
+  - There is bicycle pump, it is shown as a separate point   corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate' target='_blank'>separate</a>`
 
 
 
@@ -449,9 +467,9 @@ The question is  Are there tools here to repair your own bike?
 
 
 
-  - This shop offers tools for DIY repair corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
-  - This shop doesn't offer tools for DIY repair corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
-  - Tools for DIY repair are only available if you bought/hire the bike in the shop corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold' target='_blank'>only_sold</a>
+  - This shop offers tools for DIY repair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>`
+  - This shop doesn't offer tools for DIY repair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>`
+  - Tools for DIY repair are only available if you bought/hire the bike in the shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold' target='_blank'>only_sold</a>`
 
 
 
@@ -466,9 +484,9 @@ The question is  Are bicycles washed here?
 
 
 
-  - This shop cleans bicycles corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes' target='_blank'>yes</a>
-  - This shop has an installation where one can clean bicycles themselves corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy' target='_blank'>diy</a>
-  - This shop doesn't offer bicycle cleaning corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno' target='_blank'>no</a>
+  - This shop cleans bicycles  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes' target='_blank'>yes</a>`
+  - This shop has an installation where one can clean bicycles themselves  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy' target='_blank'>diy</a>`
+  - This shop doesn't offer bicycle cleaning  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno' target='_blank'>no</a>`
 
 
 
@@ -487,14 +505,10 @@ This is rendered with  Using the cleaning service costs {service:bicycle:cleanin
 
 
 
-  - The cleaning service is free to use corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno&service:bicycle:cleaning:charge=' target='_blank'>no&service:bicycle:cleaning:charge=</a>
-  - Free to use corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno' target='_blank'>no</a>
-  - This option cannot be chosen as answer
-  - The cleaning service has a fee, but the amount is not known corresponds with  <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes&service:bicycle:cleaning:charge=' target='_blank'>yes&service:bicycle:cleaning:charge=</a>
+  - The cleaning service is free to use  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno' target='_blank'>no</a>`
+  - Free to use  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes' target='_blank'>yes</a>`
   - This option cannot be chosen as answer
 
-
-Only visible if  `amenity!=bike_wash&amenity!=bicycle_wash&service:bicycle:cleaning=yes|service:bicycle:cleaning=diy|amenity=bicycle_wash|amenity=bike_wash`  is shown
 
 
 

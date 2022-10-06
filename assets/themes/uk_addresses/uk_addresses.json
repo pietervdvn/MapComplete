@@ -17,9 +17,7 @@
   "description": {
     "en": "Help us collect addresses and make them freely available. Each address contributed will be added to OpenStreetMap so you will need to create an account and log in before you start. Please do not copy addresses from the internet or other sources subject to copyright. This website works well on mobile so a good option is to contibute the addresses closest to you."
   },
-  "maintainer": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett",
   "icon": "./assets/themes/uk_addresses/housenumber_unknown.svg",
-  "version": "2021-09-17",
   "startLat": 53.21261,
   "startLon": -1.47216,
   "startZoom": 7,
@@ -681,5 +679,6 @@
     "named_streets"
   ],
   "enableShareScreen": false,
-  "enableMoreQuests": false
+  "enableMoreQuests": false,
+  "credits": "Pieter Vander Vennet, Rob Nickerson, Russ Garrett"
 }

@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/drinking_water",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/drinking_water/logo.svg",
-    "contact_name": "Pieter Vander Vennet, MapComplete",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -14,6 +14,11 @@
       "key": "amenity",
       "description": "The MapComplete theme Drinking Water has a layer Drinking water showing features with this tag",
       "value": "drinking_water"
+    },
+    {
+      "key": "drinking_water",
+      "description": "The MapComplete theme Drinking Water has a layer Drinking water showing features with this tag",
+      "value": "yes"
     },
     {
       "key": "image",

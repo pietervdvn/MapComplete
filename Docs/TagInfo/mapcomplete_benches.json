@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/benches",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/benches/bench_poi.svg",
-    "contact_name": "Pieter Vander Vennet, Florian Edelmann",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -33,12 +33,12 @@
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Backrest: Yes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Does have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "yes"
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Backrest: No' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Does <b>not</b> have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "no"
     },
     {
@@ -51,32 +51,32 @@
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'Material: wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'The seating is made from wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "wood"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'Material: metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'The seating is made from metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "metal"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'Material: stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'The seating is made from stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "stone"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'Material: concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'The seating is made from concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "concrete"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'Material: plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'The seating is made from plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "plastic"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'Material: steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'The seating is made from steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "steel"
     },
     {
@@ -201,6 +201,35 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Benches')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Benches') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "-1"
     },
     {
       "key": "material",

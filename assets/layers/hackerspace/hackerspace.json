@@ -50,6 +50,7 @@
     "nl": "Hackerspace"
   },
   "tagRenderings": [
+    "images",
     {
       "id": "is_makerspace",
       "question": {
@@ -150,6 +151,7 @@
       "id": "hackerspaces-opening_hours"
     },
     {
+      "id": "available_devices",
       "rewrite": {
         "sourceString": [
           "device-key",

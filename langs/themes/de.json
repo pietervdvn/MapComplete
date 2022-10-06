@@ -104,7 +104,7 @@
                                 "then": "Hier gibt es keine Dauergäste"
                             },
                             "2": {
-                                "then": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, wird dieser Ort wird von der Karte verschwinden)"
+                                "then": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, verschwindet der Ort von der Karte)"
                             }
                         },
                         "question": "Gibt es a diesem Ort Plätze für Dauercamper?"
@@ -447,11 +447,6 @@
         "description": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
         "title": "Bildung"
     },
-    "entrances": {
-        "description": "Eine Karte mit allen Eingängen, die wichtige Aspekte für Rollstuhlfahrer erfasst",
-        "shortDescription": "Eingänge prüfen, um die Rollstuhlnavigation zu verbessern",
-        "title": "Eingänge"
-    },
     "etymology": {
         "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, und wurden mit Wikidata verknüpft. Im Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b> Wenn Sie weit genug hinein zoomen werden <i>alle</i> Straßen angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
         "layers": {
@@ -647,71 +642,25 @@
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
         "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen"
     },
+    "healthcare": {
+        "description": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
+        "title": "Gesundheitswesen"
+    },
+    "hotels": {
+        "description": "Auf dieser Karte finden Sie Hotels in Ihrer Nähe",
+        "title": "Hotels"
+    },
+    "indoors": {
+        "description": "Diese Karte zeigt öffentlich zugängliche Innenräume",
+        "title": "Innenräume"
+    },
     "kerbs_and_crossings": {
         "description": "Eine Karte mit Bordsteinen und Überwegen.",
         "title": "Bordsteine und Überwege"
     },
-    "mapcomplete-changes": {
-        "description": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
-        "layers": {
-            "0": {
-                "description": "Zeigt alle MapComplete Änderungen",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themenname enthält {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Erstellt von {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Nicht</b> erstellt von {search}"
-                            }
-                        }
-                    }
-                },
-                "name": "Zentrum der Änderungssätze",
-                "tagRenderings": {
-                    "contributor": {
-                        "render": "Geändert von <a href='https://openstreetmap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a>"
-                    },
-                    "render_id": {
-                        "render": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    },
-                    "theme": {
-                        "mappings": {
-                            "0": {
-                                "then": "Änderung mit <b>inoffiziellem</b> Thema <a href='https://mapcomplete.osm.be/theme.html?userlayout={theme}'>{theme}</a>"
-                            }
-                        },
-                        "render": "Änderung mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
-                    }
-                },
-                "title": {
-                    "render": "Änderungssatz für {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Weitere Statistiken finden Sie <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Zeigt die mit MapComplete vorgenommenen Änderungen",
-        "title": "Mit MapComplete vorgenommene Änderungen"
+    "maproulette": {
+        "description": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können.",
+        "title": "MapRoulette-Aufgaben"
     },
     "maps": {
         "description": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
@@ -736,6 +685,77 @@
         "description": "Eine Karte mit öffentlich zugänglichen Aussichtstürmen",
         "shortDescription": "Öffentlich zugängliche Türme zum Genießen der Aussicht",
         "title": "Aussichtstürme"
+    },
+    "onwheels": {
+        "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
+        "layers": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Beliebig/Keine Breiteninformationen"
+                                },
+                                "1": {
+                                    "question": "Beliebige Breiteninformationen"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Alle Arten von Bordsteinen"
+                                },
+                                "1": {
+                                    "question": "Erhöhter Bordstein (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Abgesenkter Bordstein (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Bündiger Bordstein (~0cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "18": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Auf Rädern"
     },
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
@@ -810,54 +830,12 @@
     },
     "postboxes": {
         "description": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten. ",
-        "layers": {
-            "0": {
-                "description": "Die Ebene zeigt Briefkästen.",
-                "name": "Briefkästen",
-                "presets": {
-                    "0": {
-                        "title": "ein Briefkasten"
-                    }
-                },
-                "title": {
-                    "render": "Briefkasten"
-                }
-            },
-            "1": {
-                "description": "Eine Ebene mit Postämtern.",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Aktuell geöffnet"
-                            }
-                        }
-                    }
-                },
-                "name": "Poststellen",
-                "presets": {
-                    "0": {
-                        "title": "eine Poststelle"
-                    }
-                },
-                "tagRenderings": {
-                    "OH": {
-                        "mappings": {
-                            "0": {
-                                "then": "durchgehend geöffnet (auch an Feiertagen)"
-                            }
-                        },
-                        "question": "Wie sind die Öffnungszeiten dieser Poststelle?",
-                        "render": "Öffnungszeiten: {opening_hours_table()}"
-                    }
-                },
-                "title": {
-                    "render": "Poststelle"
-                }
-            }
-        },
         "shortDescription": "Eine Karte die Briefkästen und Poststellen anzeigt",
         "title": "Post- und Briefkastenkarte"
+    },
+    "rainbow_crossings": {
+        "description": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden",
+        "title": "Regenbogen-Fußgängerübergänge"
     },
     "shops": {
         "description": "Auf dieser Karte kann man grundlegende Informationen über Geschäfte markieren, Öffnungszeiten und Telefonnummern hinzufügen",
@@ -871,6 +849,28 @@
                 "description": "Ebene mit Bürgersteigen",
                 "name": "Gehwege",
                 "tagRenderings": {
+                    "left-right-questions": {
+                        "renderings": {
+                            "1": {
+                                "mappings": {
+                                    "0": {
+                                        "then": "Ja, es gibt einen Bürgersteig auf dieser Straßenseite"
+                                    },
+                                    "1": {
+                                        "then": "Nein, es gibt keinen Bürgersteig für Fußgänger"
+                                    },
+                                    "2": {
+                                        "then": "Es gibt einen separat kartierten Bürgersteig für Fußgänger"
+                                    }
+                                },
+                                "question": "Gibt es auf dieser Straßenseite einen Bürgersteig?"
+                            },
+                            "2": {
+                                "question": "Wie breit ist der Bürgersteig auf dieser Straßenseite?",
+                                "render": "Dieser Bürgersteig ist {sidewalk:left|right:width}m breit"
+                            }
+                        }
+                    },
                     "streetname": {
                         "render": "Diese Straße heißt {name}"
                     }
@@ -953,10 +953,18 @@
         "description": "Eine Karte mit öffentlich zugänglichen Toiletten",
         "title": "Freie Toilettenkarte"
     },
+    "transit": {
+        "description": "Planen Sie Ihre Reise mit Hilfe von öffentlichen Verkehrsmitteln.",
+        "title": "Buslinien"
+    },
     "trees": {
         "description": "Kartieren Sie alle Bäume!",
         "shortDescription": "Kartieren Sie alle Bäume",
         "title": "Bäume"
+    },
+    "walls_and_buildings": {
+        "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
+        "title": "Wände und Gebäude"
     },
     "waste": {
         "description": "Eine Karte mit Abfalleimern und Recyclingeinrichtungen.",

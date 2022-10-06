@@ -23,6 +23,30 @@
         "email": {
             "question": "Quelle est l'adresse courriel de {title()} ?"
         },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Ce lieu dispose d’une boucle auditive"
+                },
+                "1": {
+                    "then": "Ce lieu <b>ne dispose pas</b> de boucle auditive"
+                }
+            },
+            "question": "Ce lieu dispose-t’il d’une boucle auditive pour les personnes malentendantes ?"
+        },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "Ce lieu propose un accès internet sans fil"
+                },
+                "1": {
+                    "then": "Ce lieu <b>ne propose pas</b> d'accès internet"
+                },
+                "2": {
+                    "then": "Ce lieu propose un accès internet"
+                }
+            }
+        },
         "level": {
             "mappings": {
                 "0": {
@@ -43,6 +67,12 @@
             },
             "question": "À quel étage se situe l’élément ?",
             "render": "Étage {level}"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Quels étages sont desservis par cet ascenceur ?",
+                "render": "Cet ascenceur permet d’accéder aux étages {level}"
+            }
         },
         "opening_hours": {
             "question": "Quelles sont les horaires d'ouverture de {title()} ?",

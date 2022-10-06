@@ -178,7 +178,7 @@
     },
     "bicycle_rental": {
         "tagRenderings": {
-            "9": {
+            "rental_types": {
                 "rewrite": {
                     "into": {
                         "4": {
@@ -323,15 +323,6 @@
         }
     },
     "cafe_pub": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Obert ara"
-                    }
-                }
-            }
-        },
         "presets": {
             "0": {
                 "title": "un bar"
@@ -371,6 +362,13 @@
                     },
                     "5": {
                         "then": "<b>Chademo</b>"
+                    }
+                }
+            },
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta estació de càrrega funciona"
                     }
                 }
             }
@@ -563,7 +561,7 @@
                 "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
             },
             "defibrillator-defibrillator:location:fr": {
-                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador (en francés)"
             },
             "defibrillator-indoors": {
                 "mappings": {
@@ -588,7 +586,8 @@
                     "0": {
                         "then": "Comprovat avui!"
                     }
-                }
+                },
+                "render": "El desfibrilador és va sondejar per ultima vegada el {survey:date}"
             }
         },
         "title": {
@@ -615,7 +614,7 @@
             "render": "Extintors"
         }
     },
-    "food": {
+    "filters": {
         "filter": {
             "0": {
                 "options": {
@@ -624,7 +623,9 @@
                     }
                 }
             }
-        },
+        }
+    },
+    "food": {
         "presets": {
             "0": {
                 "title": "un restaurant"
@@ -678,6 +679,13 @@
             }
         }
     },
+    "hospital": {
+        "tagRenderings": {
+            "name": {
+                "render": "El nom del nom de l'hospital és {name}"
+            }
+        }
+    },
     "hydrant": {
         "tagRenderings": {
             "hydrant-color": {
@@ -703,6 +711,23 @@
         "name": "Panells d'informació",
         "title": {
             "render": "Panell d'informació"
+        }
+    },
+    "kindergarten_childcare": {
+        "tagRenderings": {
+            "capacity": {
+                "render": "Aquesta instal·lació té espai per a {capacity} nens"
+            },
+            "childcare-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta és una llar d'infants (també coneguda com a <i>preescolar</i>) on els nens petits reben educació primerenca."
+                    }
+                }
+            },
+            "name": {
+                "render": "Aquesta instal·lació s'anomena <b>{name}</b>"
+            }
         }
     },
     "map": {
@@ -773,6 +798,17 @@
     "parking": {
         "name": "Aparcament"
     },
+    "pharmacy": {
+        "tagRenderings": {
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta farmàcia és fàcil d'accedir en una cadira de rodes"
+                    }
+                }
+            }
+        }
+    },
     "picnic_table": {
         "name": "Taules de pícnic",
         "title": {
@@ -809,6 +845,28 @@
                 }
             },
             "render": "Parc infantil"
+        }
+    },
+    "postboxes": {
+        "name": "Bústies",
+        "presets": {
+            "0": {
+                "title": "una bústia"
+            }
+        },
+        "title": {
+            "render": "Bústia"
+        }
+    },
+    "postoffices": {
+        "name": "Oficines de correus",
+        "presets": {
+            "0": {
+                "title": "una oficina de correus"
+            }
+        },
+        "title": {
+            "render": "Oficina de correus"
         }
     },
     "public_bookcase": {

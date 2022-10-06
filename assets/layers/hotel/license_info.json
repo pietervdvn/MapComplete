@@ -1,0 +1,15 @@
+[
+  {
+    "path": "hotel.svg",
+    "license": "CC0",
+    "authors": [
+      "Andy Allan",
+      "Michael Glanznig",
+      "Adamant36",
+      "Paul Dicker"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/tourism/hotel.svg"
+    ]
+  }
+]

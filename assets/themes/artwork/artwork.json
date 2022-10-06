@@ -1,6 +1,5 @@
 {
   "id": "artwork",
-  "version": "2020-08-30",
   "title": {
     "en": "Open Artwork Map",
     "nl": "Open kunstwerken-kaart",
@@ -17,7 +16,8 @@
     "nb_NO": "Kunstkort",
     "ca": "Open Artwork Map",
     "zh_Hans": "Open Artwork Map",
-    "fil": "Open Artwork Map"
+    "fil": "Open Artwork Map",
+    "da": "Åbn illustrationskort"
   },
   "description": {
     "en": "An open map of statues, busts, graffitis and other artwork all over the world",
@@ -35,10 +35,10 @@
     "pl": "Witaj w Open Artwork Map, mapie pomników, popierś, graffitti i innych dzieł sztuki z całego świata",
     "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
     "zh_Hans": "欢迎使用Open Artwork Map，一个雕塑、半身像、涂鸦和其他全球艺术品的地图",
-    "fil": "Malugod na pag-dating sa Open Artwork Map, ang mapa ng mga bantayog, graffiti, at iba pang likhang sining sa buong mundo"
+    "fil": "Malugod na pag-dating sa Open Artwork Map, ang mapa ng mga bantayog, graffiti, at iba pang likhang sining sa buong mundo",
+    "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden"
   },
   "icon": "./assets/themes/artwork/artwork.svg",
-  "maintainer": "MapComplete",
   "startZoom": 12,
   "startLat": 0,
   "startLon": 0,

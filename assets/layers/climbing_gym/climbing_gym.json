@@ -74,12 +74,11 @@
     "phone",
     "email",
     {
-      "builtin": [
-        "climbing.fee"
-      ]
+      "builtin": "climbing.fee"
     },
     "opening_hours",
     {
+      "id": "climbing_gym_questions",
       "builtin": [
         "climbing.average_length",
         "climbing.min_difficulty",

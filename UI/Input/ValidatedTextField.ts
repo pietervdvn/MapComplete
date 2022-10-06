@@ -1,46 +1,44 @@
-import {DropDown} from "./DropDown";
-import * as EmailValidator from "email-validator";
-import {parsePhoneNumberFromString} from "libphonenumber-js";
-import {InputElement} from "./InputElement";
-import {TextField} from "./TextField";
-import {Store, UIEventSource} from "../../Logic/UIEventSource";
-import CombinedInputElement from "./CombinedInputElement";
-import SimpleDatePicker from "./SimpleDatePicker";
-import OpeningHoursInput from "../OpeningHours/OpeningHoursInput";
-import DirectionInput from "./DirectionInput";
-import ColorPicker from "./ColorPicker";
-import {Utils} from "../../Utils";
-import Loc from "../../Models/Loc";
-import BaseUIElement from "../BaseUIElement";
-import LengthInput from "./LengthInput";
-import {GeoOperations} from "../../Logic/GeoOperations";
-import {Unit} from "../../Models/Unit";
-import {FixedInputElement} from "./FixedInputElement";
-import WikidataSearchBox from "../Wikipedia/WikidataSearchBox";
-import Wikidata from "../../Logic/Web/Wikidata";
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
-import Table from "../Base/Table";
-import Combine from "../Base/Combine";
-import Title from "../Base/Title";
-import InputElementMap from "./InputElementMap";
-import Translations from "../i18n/Translations";
-import {Translation} from "../i18n/Translation";
-import BaseLayer from "../../Models/BaseLayer";
-import Locale from "../i18n/Locale";
+import { DropDown } from "./DropDown"
+import * as EmailValidator from "email-validator"
+import { parsePhoneNumberFromString } from "libphonenumber-js"
+import { InputElement } from "./InputElement"
+import { TextField } from "./TextField"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import CombinedInputElement from "./CombinedInputElement"
+import SimpleDatePicker from "./SimpleDatePicker"
+import OpeningHoursInput from "../OpeningHours/OpeningHoursInput"
+import DirectionInput from "./DirectionInput"
+import ColorPicker from "./ColorPicker"
+import { Utils } from "../../Utils"
+import Loc from "../../Models/Loc"
+import BaseUIElement from "../BaseUIElement"
+import LengthInput from "./LengthInput"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { Unit } from "../../Models/Unit"
+import { FixedInputElement } from "./FixedInputElement"
+import WikidataSearchBox from "../Wikipedia/WikidataSearchBox"
+import Wikidata from "../../Logic/Web/Wikidata"
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
+import Table from "../Base/Table"
+import Combine from "../Base/Combine"
+import Title from "../Base/Title"
+import InputElementMap from "./InputElementMap"
+import Translations from "../i18n/Translations"
+import { Translation } from "../i18n/Translation"
+import BaseLayer from "../../Models/BaseLayer"
+import Locale from "../i18n/Locale"
 
 export class TextFieldDef {
-
-    public readonly name: string;
+    public readonly name: string
     /*
-    * An explanation for the theme builder.
-    * This can indicate which special input element is used, ...
-    * */
-    public readonly explanation: string;
+     * An explanation for the theme builder.
+     * This can indicate which special input element is used, ...
+     * */
+    public readonly explanation: string
     protected inputmode?: string = undefined
 
-    constructor(name: string,
-                explanation: string | BaseUIElement) {
-        this.name = name;
+    constructor(name: string, explanation: string | BaseUIElement) {
+        this.name = name
         if (this.name.endsWith("textfield")) {
             this.name = this.name.substr(0, this.name.length - "TextField".length)
         }
@@ -48,88 +46,85 @@ export class TextFieldDef {
             this.name = this.name.substr(0, this.name.length - "TextFieldDef".length)
         }
         if (typeof explanation === "string") {
-
             this.explanation = explanation
         } else {
-            this.explanation = explanation.AsMarkdown();
+            this.explanation = explanation.AsMarkdown()
         }
     }
 
     protectedisValid(s: string, _: (() => string) | undefined): boolean {
-        return true;
+        return true
     }
 
     public getFeedback(s: string): Translation {
         const tr = Translations.t.validation[this.name]
-        if(tr !== undefined){
+        if (tr !== undefined) {
             return tr["feedback"]
         }
     }
 
-    public ConstructInputElement(options: {
-        value?: UIEventSource<string>,
-        inputStyle?: string,
-        feedback?: UIEventSource<Translation>
-        placeholder?: string | Translation | UIEventSource<string>,
-        country?: () => string,
-        location?: [number /*lat*/, number /*lon*/],
-        mapBackgroundLayer?: UIEventSource</*BaseLayer*/ any>,
-        unit?: Unit,
-        args?: (string | number | boolean | any)[] // Extra arguments for the inputHelper,
-        feature?: any,
-    } = {}): InputElement<string> {
-
+    public ConstructInputElement(
+        options: {
+            value?: UIEventSource<string>
+            inputStyle?: string
+            feedback?: UIEventSource<Translation>
+            placeholder?: string | Translation | UIEventSource<string>
+            country?: () => string
+            location?: [number /*lat*/, number /*lon*/]
+            mapBackgroundLayer?: UIEventSource</*BaseLayer*/ any>
+            unit?: Unit
+            args?: (string | number | boolean | any)[] // Extra arguments for the inputHelper,
+            feature?: any
+        } = {}
+    ): InputElement<string> {
         if (options.placeholder === undefined) {
             options.placeholder = Translations.t.validation[this.name]?.description ?? this.name
         }
 
-        options["textArea"] = this.name === "text";
+        options["textArea"] = this.name === "text"
 
-        const self = this;
+        const self = this
 
         if (options.unit !== undefined) {
             // Reformatting is handled by the unit in this case
-            options["isValid"] = str => {
-                const denom = options.unit.findDenomination(str);
+            options["isValid"] = (str) => {
+                const denom = options.unit.findDenomination(str, options?.country)
                 if (denom === undefined) {
-                    return false;
+                    return false
                 }
                 const stripped = denom[0]
                 return self.isValid(stripped, options.country)
             }
         } else {
-            options["isValid"] = str => self.isValid(str, options.country);
+            options["isValid"] = (str) => self.isValid(str, options.country)
         }
         options["cssText"] = "width: 100%;"
 
-
-        options["inputMode"] = this.inputmode;
+        options["inputMode"] = this.inputmode
         if (this.inputmode === "text") {
             options["htmlType"] = "area"
             options["textAreaRows"] = 4
         }
 
-
-        const textfield = new TextField(options);
+        const textfield = new TextField(options)
         let input: InputElement<string> = textfield
         if (options.feedback) {
-            textfield.GetRawValue().addCallback(v => {
-                if(self.isValid(v, options.country)){
+            textfield.GetRawValue().addCallback((v) => {
+                if (self.isValid(v, options.country)) {
                     options.feedback.setData(undefined)
-                }else{
-                options.feedback.setData(self.getFeedback(v))
+                } else {
+                    options.feedback.setData(self.getFeedback(v))
                 }
             })
         }
 
-
         if (this.reformat && options.unit === undefined) {
-            input.GetValue().addCallbackAndRun(str => {
+            input.GetValue().addCallbackAndRun((str) => {
                 if (!options["isValid"](str, options.country)) {
-                    return;
+                    return
                 }
-                const formatted = this.reformat(str, options.country);
-                input.GetValue().setData(formatted);
+                const formatted = this.reformat(str, options.country)
+                input.GetValue().setData(formatted)
             })
         }
 
@@ -139,21 +134,24 @@ export class TextFieldDef {
             // We have to create a dropdown with applicable denominations, and fuse those values
             const unit = options.unit
 
-
-            const isSingular = input.GetValue().map(str => str?.trim() === "1")
+            const isSingular = input.GetValue().map((str) => str?.trim() === "1")
 
             const unitDropDown =
-                unit.denominations.length === 1 ?
-                    new FixedInputElement(unit.denominations[0].getToggledHuman(isSingular), unit.denominations[0])
-                    : new DropDown("",
-                        unit.denominations.map(denom => {
-                            return {
-                                shown: denom.getToggledHuman(isSingular),
-                                value: denom
-                            }
-                        })
-                    )
-            unitDropDown.GetValue().setData(unit.defaultDenom)
+                unit.denominations.length === 1
+                    ? new FixedInputElement(
+                          unit.denominations[0].getToggledHuman(isSingular),
+                          unit.denominations[0]
+                      )
+                    : new DropDown(
+                          "",
+                          unit.denominations.map((denom) => {
+                              return {
+                                  shown: denom.getToggledHuman(isSingular),
+                                  value: denom,
+                              }
+                          })
+                      )
+            unitDropDown.GetValue().setData(unit.getDefaultInput(options.country))
             unitDropDown.SetClass("w-min")
 
             const fixedDenom = unit.denominations.length === 1 ? unit.denominations[0] : undefined
@@ -169,7 +167,7 @@ export class TextFieldDef {
                 },
                 (valueWithDenom: string) => {
                     // Take the value from OSM and feed it into the textfield and the dropdown
-                    const withDenom = unit.findDenomination(valueWithDenom);
+                    const withDenom = unit.findDenomination(valueWithDenom, options?.country)
                     if (withDenom === undefined) {
                         // Not a valid value at all - we give it undefined and leave the details up to the other elements (but we keep the previous denomination)
                         return [undefined, fixedDenom]
@@ -186,31 +184,34 @@ export class TextFieldDef {
             location: options.location,
             mapBackgroundLayer: options.mapBackgroundLayer,
             args: options.args,
-            feature: options.feature
+            feature: options.feature,
         })?.SetClass("block")
         if (helper !== undefined) {
-            input = new CombinedInputElement(input, helper,
+            input = new CombinedInputElement(
+                input,
+                helper,
                 (a, _) => a, // We can ignore b, as they are linked earlier
-                a => [a, a]
-            ).SetClass("block w-full");
+                (a) => [a, a]
+            ).SetClass("block w-full")
         }
         if (this.postprocess !== undefined) {
-            input = new InputElementMap<string, string>(input,
+            input = new InputElementMap<string, string>(
+                input,
                 (a, b) => a === b,
                 this.postprocess,
                 this.undoPostprocess
             )
         }
 
-        return input;
+        return input
     }
 
     protected isValid(string: string, requestCountry: () => string): boolean {
-        return true;
+        return true
     }
 
     protected reformat(s: string, country?: () => string): string {
-        return s;
+        return s
     }
 
     /**
@@ -221,42 +222,62 @@ export class TextFieldDef {
     }
 
     protected undoPostprocess(s: string): string {
-        return s;
+        return s
     }
 
-    protected inputHelper(value: UIEventSource<string>, options?: {
-        location: [number, number],
-        mapBackgroundLayer?: UIEventSource<any>,
-        args: (string | number | boolean | any)[]
-        feature?: any
-    }): InputElement<string> {
+    protected inputHelper(
+        value: UIEventSource<string>,
+        options?: {
+            location: [number, number]
+            mapBackgroundLayer?: UIEventSource<any>
+            args: (string | number | boolean | any)[]
+            feature?: any
+        }
+    ): InputElement<string> {
         return undefined
     }
-
-
 }
 
 class WikidataTextField extends TextFieldDef {
-
     constructor() {
         super(
             "wikidata",
             new Combine([
                 "A wikidata identifier, e.g. Q42.",
                 new Title("Helper arguments"),
-                new Table(["name", "doc"],
+                new Table(
+                    ["name", "doc"],
                     [
                         ["key", "the value of this tag will initialize search (default: name)"],
-                        ["options", new Combine(["A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.",
-                            new Table(
-                                ["subarg", "doc"],
-                                [["removePrefixes", "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list"],
-                                    ["removePostfixes", "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list"],
-                                    ["instanceOf","A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans"],
-                                        ["notInstanceof","A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results"]
-                                ]
-                            )])
-                        ]]),
+                        [
+                            "options",
+                            new Combine([
+                                "A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.",
+                                new Table(
+                                    ["subarg", "doc"],
+                                    [
+                                        [
+                                            "removePrefixes",
+                                            "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list",
+                                        ],
+                                        [
+                                            "removePostfixes",
+                                            "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list",
+                                        ],
+                                        [
+                                            "instanceOf",
+                                            "A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans",
+                                        ],
+                                        [
+                                            "notInstanceof",
+                                            "A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results",
+                                        ],
+                                    ]
+                                ),
+                            ]),
+                        ],
+                    ]
+                ),
                 new Title("Example usage"),
                 `The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
 
@@ -298,106 +319,123 @@ Another example is to search for species and trees:
         }]
       }
 \`\`\`
-`
-            ]));
+`,
+            ])
+        )
     }
 
-
     public isValid(str): boolean {
-
         if (str === undefined) {
-            return false;
+            return false
         }
         if (str.length <= 2) {
-            return false;
+            return false
         }
-        return !str.split(";").some(str => Wikidata.ExtractKey(str) === undefined)
+        return !str.split(";").some((str) => Wikidata.ExtractKey(str) === undefined)
     }
 
     public reformat(str) {
         if (str === undefined) {
-            return undefined;
+            return undefined
         }
-        let out = str.split(";").map(str => Wikidata.ExtractKey(str)).join("; ")
+        let out = str
+            .split(";")
+            .map((str) => Wikidata.ExtractKey(str))
+            .join("; ")
         if (str.endsWith(";")) {
             out = out + ";"
         }
-        return out;
+        return out
     }
 
     public inputHelper(currentValue, inputHelperOptions) {
         const args = inputHelperOptions.args ?? []
         const searchKey = args[0] ?? "name"
-        
-        
 
-        const searchFor = <string>(inputHelperOptions.feature?.properties[searchKey]?.toLowerCase() ?? "")
+        const searchFor = <string>(
+            (inputHelperOptions.feature?.properties[searchKey]?.toLowerCase() ?? "")
+        )
 
-        let searchForValue: UIEventSource<string> = new UIEventSource(searchFor);
+        let searchForValue: UIEventSource<string> = new UIEventSource(searchFor)
         const options: any = args[1]
         if (searchFor !== undefined && options !== undefined) {
             const prefixes = <string[] | Record<string, string[]>>options["removePrefixes"] ?? []
             const postfixes = <string[] | Record<string, string[]>>options["removePostfixes"] ?? []
 
-            Locale.language.map(lg => {
-                const prefixesUnrwapped: string[] = prefixes[lg] ?? prefixes 
-                const postfixesUnwrapped: string[] = postfixes[lg] ?? postfixes
-                let clipped = searchFor;
-                console.log("Pref", prefixesUnrwapped," post", postfixesUnwrapped)
-                for (const postfix of postfixesUnwrapped) {
-                    if (searchFor.endsWith(postfix)) {
-                        clipped = searchFor.substring(0, searchFor.length - postfix.length)
-                        break;
+            Locale.language
+                .map((lg) => {
+                    const prefixesUnrwapped: string[] = prefixes[lg] ?? prefixes
+                    const postfixesUnwrapped: string[] = postfixes[lg] ?? postfixes
+                    let clipped = searchFor
+
+                    for (const postfix of postfixesUnwrapped) {
+                        if (searchFor.endsWith(postfix)) {
+                            clipped = searchFor.substring(0, searchFor.length - postfix.length)
+                            break
+                        }
                     }
-                }
 
-                for (const prefix of prefixesUnrwapped) {
-                    if (searchFor.startsWith(prefix)) {
-                        clipped = searchFor.substring(prefix.length)
-                        break;
+                    for (const prefix of prefixesUnrwapped) {
+                        if (searchFor.startsWith(prefix)) {
+                            clipped = searchFor.substring(prefix.length)
+                            break
+                        }
                     }
-                }
-                return clipped;
-            }).addCallbackAndRun(clipped => searchForValue.setData(clipped))
-
-
+                    return clipped
+                })
+                .addCallbackAndRun((clipped) => searchForValue.setData(clipped))
         }
 
-        let instanceOf : number[] =  Utils.NoNull((options?.instanceOf ?? []).map(i => Wikidata.QIdToNumber(i)))
-        let notInstanceOf : number[] = Utils.NoNull((options?.notInstanceOf ?? []).map(i => Wikidata.QIdToNumber(i)))
+        let instanceOf: number[] = Utils.NoNull(
+            (options?.instanceOf ?? []).map((i) => Wikidata.QIdToNumber(i))
+        )
+        let notInstanceOf: number[] = Utils.NoNull(
+            (options?.notInstanceOf ?? []).map((i) => Wikidata.QIdToNumber(i))
+        )
 
         return new WikidataSearchBox({
             value: currentValue,
             searchText: searchForValue,
             instanceOf,
-            notInstanceOf
+            notInstanceOf,
         })
     }
 }
 
 class OpeningHoursTextField extends TextFieldDef {
-
     constructor() {
         super(
             "opening_hours",
             new Combine([
                 "Has extra elements to easily input when a POI is opened.",
                 new Title("Helper arguments"),
-                new Table(["name", "doc"],
+                new Table(
+                    ["name", "doc"],
                     [
-                        ["options", new Combine([
-                            "A JSON-object of type `{ prefix: string, postfix: string }`. ",
-                            new Table(["subarg", "doc"],
-                                [
-                                    ["prefix", "Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse"],
-                                    ["postfix", "Piece of text that will always be added to the end of the generated opening hours"],
-                                ])
-
-                        ])
-                        ]
-                    ]),
+                        [
+                            "options",
+                            new Combine([
+                                "A JSON-object of type `{ prefix: string, postfix: string }`. ",
+                                new Table(
+                                    ["subarg", "doc"],
+                                    [
+                                        [
+                                            "prefix",
+                                            "Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse",
+                                        ],
+                                        [
+                                            "postfix",
+                                            "Piece of text that will always be added to the end of the generated opening hours",
+                                        ],
+                                    ]
+                                ),
+                            ]),
+                        ],
+                    ]
+                ),
                 new Title("Example usage"),
-                "To add a conditional (based on time) access restriction:\n\n```\n" + `
+                "To add a conditional (based on time) access restriction:\n\n```\n" +
+                    `
 "freeform": {
     "key": "access:conditional",
     "type": "opening_hours",
@@ -407,7 +445,10 @@ class OpeningHoursTextField extends TextFieldDef {
           "postfix":")"
         }
     ]
-}` + "\n```\n\n*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`"]),);
+}` +
+                    "\n```\n\n*Don't forget to pass the prefix and postfix in the rendering as well*: `{opening_hours_table(opening_hours,yes @ &LPARENS, &RPARENS )`",
+            ])
+        )
     }
 
     isValid() {
@@ -418,12 +459,15 @@ class OpeningHoursTextField extends TextFieldDef {
         return str
     }
 
-    inputHelper(value: UIEventSource<string>, inputHelperOptions: {
-        location: [number, number],
-        mapBackgroundLayer?: UIEventSource<any>,
-        args: (string | number | boolean | any)[]
-        feature?: any
-    }) {
+    inputHelper(
+        value: UIEventSource<string>,
+        inputHelperOptions: {
+            location: [number, number]
+            mapBackgroundLayer?: UIEventSource<any>
+            args: (string | number | boolean | any)[]
+            feature?: any
+        }
+    ) {
         const args = (inputHelperOptions.args ?? [])[0]
         const prefix = <string>args?.prefix ?? ""
         const postfix = <string>args?.postfix ?? ""
@@ -433,11 +477,13 @@ class OpeningHoursTextField extends TextFieldDef {
 }
 
 class UrlTextfieldDef extends TextFieldDef {
-
     inputmode: "url"
 
     constructor() {
-        super("url", "The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user")
+        super(
+            "url",
+            "The validatedTextField will format URLs to always be valid and have a https://-header (even though the 'https'-part will be hidden from the user"
+        )
     }
 
     postprocess(str: string) {
@@ -447,7 +493,7 @@ class UrlTextfieldDef extends TextFieldDef {
         if (!str.startsWith("http://") || !str.startsWith("https://")) {
             return "https://" + str
         }
-        return str;
+        return str
     }
 
     undoPostprocess(str: string) {
@@ -460,27 +506,41 @@ class UrlTextfieldDef extends TextFieldDef {
         if (str.startsWith("https://")) {
             return str.substr("https://".length)
         }
-        return str;
+        return str
     }
 
     reformat(str: string): string {
         try {
             let url: URL
             // str = str.toLowerCase() // URLS are case sensitive. Lowercasing them might break some URLS. See #763
-            if (!str.startsWith("http://") && !str.startsWith("https://") && !str.startsWith("http:")) {
+            if (
+                !str.startsWith("http://") &&
+                !str.startsWith("https://") &&
+                !str.startsWith("http:")
+            ) {
                 url = new URL("https://" + str)
             } else {
-                url = new URL(str);
+                url = new URL(str)
             }
             const blacklistedTrackingParams = [
-                "fbclid",// Oh god, how I hate the fbclid. Let it burn, burn in hell!
+                "fbclid", // Oh god, how I hate the fbclid. Let it burn, burn in hell!
                 "gclid",
-                "cmpid", "agid", "utm", "utm_source", "utm_medium",
-                "campaignid", "campaign", "AdGroupId", "AdGroup", "TargetId", "msclkid"]
+                "cmpid",
+                "agid",
+                "utm",
+                "utm_source",
+                "utm_medium",
+                "campaignid",
+                "campaign",
+                "AdGroupId",
+                "AdGroup",
+                "TargetId",
+                "msclkid",
+            ]
             for (const dontLike of blacklistedTrackingParams) {
                 url.searchParams.delete(dontLike.toLowerCase())
             }
-            let cleaned = url.toString();
+            let cleaned = url.toString()
             if (cleaned.endsWith("/") && !str.endsWith("/")) {
                 // Do not add a trailing '/' if it wasn't typed originally
                 cleaned = cleaned.substr(0, cleaned.length - 1)
@@ -490,31 +550,34 @@ class UrlTextfieldDef extends TextFieldDef {
                 cleaned = cleaned.substr("https://".length)
             }
 
-            return cleaned;
+            return cleaned
         } catch (e) {
             console.error(e)
-            return undefined;
+            return undefined
         }
     }
 
     isValid(str: string): boolean {
         try {
-            if (!str.startsWith("http://") && !str.startsWith("https://") &&
-                !str.startsWith("http:")) {
+            if (
+                !str.startsWith("http://") &&
+                !str.startsWith("https://") &&
+                !str.startsWith("http:")
+            ) {
                 str = "https://" + str
             }
-            const url = new URL(str);
+            const url = new URL(str)
             const dotIndex = url.host.indexOf(".")
-            return dotIndex > 0 && url.host[url.host.length - 1] !== ".";
+            return dotIndex > 0 && url.host[url.host.length - 1] !== "."
         } catch (e) {
-            return false;
+            return false
         }
     }
 }
 
 class StringTextField extends TextFieldDef {
     constructor() {
-        super("string", "A simple piece of text");
+        super("string", "A simple piece of text")
     }
 }
 
@@ -522,31 +585,29 @@ class TextTextField extends TextFieldDef {
     inputmode: "text"
 
     constructor() {
-        super("text", "A longer piece of text");
+        super("text", "A longer piece of text")
     }
 }
 
 class DateTextField extends TextFieldDef {
     constructor() {
-        super("date", "A date with date picker");
+        super("date", "A date with date picker")
     }
 
     isValid = (str) => {
-        return !isNaN(new Date(str).getTime());
+        return !isNaN(new Date(str).getTime())
     }
 
     reformat(str) {
-        const d = new Date(str);
-        let month = '' + (d.getMonth() + 1);
-        let day = '' + d.getDate();
-        const year = d.getFullYear();
+        const d = new Date(str)
+        let month = "" + (d.getMonth() + 1)
+        let day = "" + d.getDate()
+        const year = d.getFullYear()
 
-        if (month.length < 2)
-            month = '0' + month;
-        if (day.length < 2)
-            day = '0' + day;
+        if (month.length < 2) month = "0" + month
+        if (day.length < 2) day = "0" + day
 
-        return [year, month, day].join('-');
+        return [year, month, day].join("-")
     }
 
     inputHelper(value) {
@@ -554,13 +615,13 @@ class DateTextField extends TextFieldDef {
     }
 }
 
-
 class LengthTextField extends TextFieldDef {
     inputMode: "decimal"
 
     constructor() {
         super(
-            "distance", "A geographical distance in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `[\"21\", \"map,photo\"]"
+            "distance",
+            'A geographical distance in meters (rounded at two points). Will give an extra minimap with a measurement tool. Arguments: [ zoomlevel, preferredBackgroundMapType (comma separated) ], e.g. `["21", "map,photo"]'
         )
     }
 
@@ -569,8 +630,15 @@ class LengthTextField extends TextFieldDef {
         return !isNaN(t)
     }
 
-    inputHelper = (value: UIEventSource<string>, options:
-        { location?: [number,number]; args?: string[]; feature?: any; mapBackgroundLayer?: Store<BaseLayer>; }) => {
+    inputHelper = (
+        value: UIEventSource<string>,
+        options: {
+            location?: [number, number]
+            args?: string[]
+            feature?: any
+            mapBackgroundLayer?: Store<BaseLayer>
+        }
+    ) => {
         options = options ?? {}
         options.location = options.location ?? [0, 0]
 
@@ -579,7 +647,11 @@ class LengthTextField extends TextFieldDef {
         if (args[0]) {
             zoom = Number(args[0])
             if (isNaN(zoom)) {
-                console.error("Invalid zoom level for argument at 'length'-input. The offending argument is: ", args[0], " (using 19 instead)")
+                console.error(
+                    "Invalid zoom level for argument at 'length'-input. The offending argument is: ",
+                    args[0],
+                    " (using 19 instead)"
+                )
                 zoom = 19
             }
         }
@@ -588,26 +660,28 @@ class LengthTextField extends TextFieldDef {
         if (options?.feature !== undefined && options.feature.geometry.type !== "Point") {
             const lonlat = <[number, number]>[...options.location]
             lonlat.reverse(/*Changes a clone, this is safe */)
-            options.location = <[number, number]>GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
+            options.location = <[number, number]>(
+                GeoOperations.nearestPoint(options.feature, lonlat).geometry.coordinates
+            )
             options.location.reverse(/*Changes a clone, this is safe */)
         }
-
 
         const location = new UIEventSource<Loc>({
             lat: options.location[0],
             lon: options.location[1],
-            zoom: zoom
+            zoom: zoom,
         })
         if (args[1]) {
             // We have a prefered map!
             options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
-                location, new UIEventSource<string[]>(args[1].split(","))
+                location,
+                new UIEventSource<string[]>(args[1].split(","))
             )
         }
         const background = options?.mapBackgroundLayer
         const li = new LengthInput(new UIEventSource<BaseLayer>(background.data), location, value)
         li.SetStyle("height: 20rem;")
-        return li;
+        return li
     }
 }
 
@@ -615,15 +689,15 @@ class FloatTextField extends TextFieldDef {
     inputmode = "decimal"
 
     constructor(name?: string, explanation?: string) {
-        super(name ?? "float", explanation ?? "A decimal");
+        super(name ?? "float", explanation ?? "A decimal")
     }
 
     isValid(str) {
         return !isNaN(Number(str)) && !str.endsWith(".") && !str.endsWith(",")
     }
 
-    reformat( str): string {
-        return "" + Number(str);
+    reformat(str): string {
+        return "" + Number(str)
     }
 
     getFeedback(s: string): Translation {
@@ -639,11 +713,11 @@ class IntTextField extends FloatTextField {
     inputMode = "numeric"
 
     constructor(name?: string, explanation?: string) {
-        super(name ?? "int", explanation ?? "A number");
+        super(name ?? "int", explanation ?? "A number")
     }
 
     isValid(str): boolean {
-        str = "" + str;
+        str = "" + str
         return str !== undefined && str.indexOf(".") < 0 && !isNaN(Number(str))
     }
 
@@ -657,25 +731,23 @@ class IntTextField extends FloatTextField {
         }
         return undefined
     }
-
 }
 
 class NatTextField extends IntTextField {
     inputMode = "numeric"
 
     constructor(name?: string, explanation?: string) {
-        super(name ?? "nat", explanation ?? "A positive number or zero");
+        super(name ?? "nat", explanation ?? "A positive number or zero")
     }
 
     isValid(str): boolean {
         if (str === undefined) {
-            return false;
+            return false
         }
-        str = "" + str;
+        str = "" + str
 
         return str.indexOf(".") < 0 && !isNaN(Number(str)) && Number(str) >= 0
     }
-
 
     getFeedback(s: string): Translation {
         const spr = super.getFeedback(s)
@@ -694,11 +766,11 @@ class PNatTextField extends NatTextField {
     inputmode = "numeric"
 
     constructor() {
-        super("pnat", "A strict positive number");
+        super("pnat", "A strict positive number")
     }
 
     getFeedback(s: string): Translation {
-        const spr = super.getFeedback(s);
+        const spr = super.getFeedback(s)
         if (spr !== undefined) {
             return spr
         }
@@ -714,27 +786,27 @@ class PNatTextField extends NatTextField {
         }
         return Number(str) > 0
     }
-
 }
 
 class PFloatTextField extends FloatTextField {
     inputmode = "decimal"
 
     constructor() {
-        super("pfloat", "A positive decimal (inclusive zero)");
+        super("pfloat", "A positive decimal (inclusive zero)")
     }
 
-    isValid = (str) => !isNaN(Number(str)) && Number(str) >= 0 && !str.endsWith(".") && !str.endsWith(",")
+    isValid = (str) =>
+        !isNaN(Number(str)) && Number(str) >= 0 && !str.endsWith(".") && !str.endsWith(",")
 
     getFeedback(s: string): Translation {
-        const spr = super.getFeedback(s);
+        const spr = super.getFeedback(s)
         if (spr !== undefined) {
             return spr
         }
         if (Number(s) < 0) {
             return Translations.t.validation.nat.mustBePositive
         }
-        return undefined;
+        return undefined
     }
 }
 
@@ -742,7 +814,7 @@ class EmailTextField extends TextFieldDef {
     inputmode = "email"
 
     constructor() {
-        super("email", "An email adress");
+        super("email", "An email adress")
     }
 
     isValid = (str) => {
@@ -753,10 +825,10 @@ class EmailTextField extends TextFieldDef {
         if (str.startsWith("mailto:")) {
             str = str.substring("mailto:".length)
         }
-        return EmailValidator.validate(str);
+        return EmailValidator.validate(str)
     }
 
-    reformat = str => {
+    reformat = (str) => {
         if (str === undefined) {
             return undefined
         }
@@ -764,13 +836,15 @@ class EmailTextField extends TextFieldDef {
         if (str.startsWith("mailto:")) {
             str = str.substring("mailto:".length)
         }
-        return str;
+        return str
     }
-    
+
     getFeedback(s: string): Translation {
-        if(s.indexOf('@') < 0){return Translations.t.validation.email.noAt}
-        
-        return super.getFeedback(s);
+        if (s.indexOf("@") < 0) {
+            return Translations.t.validation.email.noAt
+        }
+
+        return super.getFeedback(s)
     }
 }
 
@@ -778,19 +852,19 @@ class PhoneTextField extends TextFieldDef {
     inputmode = "tel"
 
     constructor() {
-        super("phone", "A phone number");
+        super("phone", "A phone number")
     }
 
     isValid(str, country: () => string): boolean {
         if (str === undefined) {
-            return false;
+            return false
         }
         if (str.startsWith("tel:")) {
             str = str.substring("tel:".length)
         }
         let countryCode = undefined
-        if(country !== undefined){
-            countryCode = (country())?.toUpperCase()
+        if (country !== undefined) {
+            countryCode = country()?.toUpperCase()
         }
         return parsePhoneNumberFromString(str, countryCode)?.isValid() ?? false
     }
@@ -799,19 +873,28 @@ class PhoneTextField extends TextFieldDef {
         if (str.startsWith("tel:")) {
             str = str.substring("tel:".length)
         }
-        return parsePhoneNumberFromString(str, (country())?.toUpperCase() as any)?.formatInternational();
+        return parsePhoneNumberFromString(
+            str,
+            country()?.toUpperCase() as any
+        )?.formatInternational()
     }
 }
 
 class ColorTextField extends TextFieldDef {
     constructor() {
-        super("color", "Shows a color picker");
+        super("color", "Shows a color picker")
     }
 
     inputHelper = (value) => {
-        return new ColorPicker(value.map(color => {
-            return Utils.ColourNameToHex(color ?? "");
-        }, [], str => Utils.HexToColourName(str)))
+        return new ColorPicker(
+            value.map(
+                (color) => {
+                    return Utils.ColourNameToHex(color ?? "")
+                },
+                [],
+                (str) => Utils.HexToColourName(str)
+            )
+        )
     }
 }
 
@@ -819,15 +902,17 @@ class DirectionTextField extends IntTextField {
     inputMode = "numeric"
 
     constructor() {
-        super("direction", "A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)");
-    }
-    
-    reformat(str): string {
-        const n = (Number(str) % 360) 
-        return ""+n
+        super(
+            "direction",
+            "A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)"
+        )
     }
 
-  
+    reformat(str): string {
+        const n = Number(str) % 360
+        return "" + n
+    }
+
     inputHelper = (value, options) => {
         const args = options.args ?? []
         options.location = options.location ?? [0, 0]
@@ -841,24 +926,23 @@ class DirectionTextField extends IntTextField {
         const location = new UIEventSource<Loc>({
             lat: options.location[0],
             lon: options.location[1],
-            zoom: zoom
+            zoom: zoom,
         })
         if (args[1]) {
             // We have a prefered map!
             options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
-                location, new UIEventSource<string[]>(args[1].split(","))
+                location,
+                new UIEventSource<string[]>(args[1].split(","))
             )
         }
         const di = new DirectionInput(options.mapBackgroundLayer, location, value)
-        di.SetStyle("max-width: 25rem;");
+        di.SetStyle("max-width: 25rem;")
 
-        return di;
+        return di
     }
 }
 
-
 export default class ValidatedTextField {
-
     private static AllTextfieldDefs: TextFieldDef[] = [
         new StringTextField(),
         new TextTextField(),
@@ -875,39 +959,43 @@ export default class ValidatedTextField {
         new UrlTextfieldDef(),
         new PhoneTextField(),
         new OpeningHoursTextField(),
-        new ColorTextField()
+        new ColorTextField(),
     ]
-    public static allTypes: Map<string, TextFieldDef> = ValidatedTextField.allTypesDict();
+    public static allTypes: Map<string, TextFieldDef> = ValidatedTextField.allTypesDict()
     public static ForType(type: string = "string"): TextFieldDef {
         const def = ValidatedTextField.allTypes.get(type)
-        if(def === undefined){
-                console.warn("Something tried to load a validated text field named",type, "but this type does not exist")
+        if (def === undefined) {
+            console.warn(
+                "Something tried to load a validated text field named",
+                type,
+                "but this type does not exist"
+            )
             return this.ForType()
         }
         return def
     }
 
     public static HelpText(): BaseUIElement {
-        const explanations: BaseUIElement[] =
-            ValidatedTextField.AllTextfieldDefs.map(type =>
-                new Combine([new Title(type.name, 3), type.explanation]).SetClass("flex flex-col"))
+        const explanations: BaseUIElement[] = ValidatedTextField.AllTextfieldDefs.map((type) =>
+            new Combine([new Title(type.name, 3), type.explanation]).SetClass("flex flex-col")
+        )
         return new Combine([
             new Title("Available types for text fields", 1),
             "The listed types here trigger a special input element. Use them in `tagrendering.freeform.type` of your tagrendering to activate them",
-            ...explanations
+            ...explanations,
         ]).SetClass("flex flex-col")
     }
 
     public static AvailableTypes(): string[] {
-        return ValidatedTextField.AllTextfieldDefs.map(tp => tp.name)
+        return ValidatedTextField.AllTextfieldDefs.map((tp) => tp.name)
     }
 
     private static allTypesDict(): Map<string, TextFieldDef> {
-        const types = new Map<string, TextFieldDef>();
+        const types = new Map<string, TextFieldDef>()
         for (const tp of ValidatedTextField.AllTextfieldDefs) {
-            types[tp.name] = tp;
-            types.set(tp.name, tp);
+            types[tp.name] = tp
+            types.set(tp.name, tp)
         }
-        return types;
+        return types
     }
 }

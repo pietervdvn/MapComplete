@@ -1,25 +1,25 @@
-import {UIEventSource} from "../Logic/UIEventSource";
-import {QueryParameters} from "../Logic/Web/QueryParameters";
-import Hash from "../Logic/Web/Hash";
+import { UIEventSource } from "../Logic/UIEventSource"
+import { QueryParameters } from "../Logic/Web/QueryParameters"
+import Hash from "../Logic/Web/Hash"
 
 export class DefaultGuiState {
-    static state: DefaultGuiState;
-    public readonly welcomeMessageIsOpened: UIEventSource<boolean>;
-    public readonly downloadControlIsOpened: UIEventSource<boolean>;
-    public readonly filterViewIsOpened: UIEventSource<boolean>;
-    public readonly copyrightViewIsOpened: UIEventSource<boolean>;
-    public readonly currentViewControlIsOpened: UIEventSource<boolean>;
+    static state: DefaultGuiState
+    public readonly welcomeMessageIsOpened: UIEventSource<boolean>
+    public readonly downloadControlIsOpened: UIEventSource<boolean>
+    public readonly filterViewIsOpened: UIEventSource<boolean>
+    public readonly copyrightViewIsOpened: UIEventSource<boolean>
+    public readonly currentViewControlIsOpened: UIEventSource<boolean>
     public readonly welcomeMessageOpenedTab: UIEventSource<number>
     public readonly allFullScreenStates: UIEventSource<boolean>[] = []
 
     constructor() {
-
-
-        this.welcomeMessageOpenedTab = UIEventSource.asFloat(QueryParameters.GetQueryParameter(
-            "tab",
-            "0",
-            `The tab that is shown in the welcome-message.`
-        ));
+        this.welcomeMessageOpenedTab = UIEventSource.asFloat(
+            QueryParameters.GetQueryParameter(
+                "tab",
+                "0",
+                `The tab that is shown in the welcome-message.`
+            )
+        )
         this.welcomeMessageIsOpened = QueryParameters.GetBooleanQueryParameter(
             "welcome-control-toggle",
             false,
@@ -50,9 +50,9 @@ export class DefaultGuiState {
             filters: this.filterViewIsOpened,
             copyright: this.copyrightViewIsOpened,
             currentview: this.currentViewControlIsOpened,
-            welcome: this.welcomeMessageIsOpened
+            welcome: this.welcomeMessageIsOpened,
         }
-        Hash.hash.addCallbackAndRunD(hash => {
+        Hash.hash.addCallbackAndRunD((hash) => {
             hash = hash.toLowerCase()
             states[hash]?.setData(true)
         })
@@ -61,22 +61,27 @@ export class DefaultGuiState {
             this.welcomeMessageIsOpened.setData(true)
         }
 
-        this.allFullScreenStates.push(this.downloadControlIsOpened, this.filterViewIsOpened, this.copyrightViewIsOpened, this.welcomeMessageIsOpened, this.currentViewControlIsOpened)
+        this.allFullScreenStates.push(
+            this.downloadControlIsOpened,
+            this.filterViewIsOpened,
+            this.copyrightViewIsOpened,
+            this.welcomeMessageIsOpened,
+            this.currentViewControlIsOpened
+        )
 
         for (let i = 0; i < this.allFullScreenStates.length; i++) {
-            const fullScreenState = this.allFullScreenStates[i];
+            const fullScreenState = this.allFullScreenStates[i]
             for (let j = 0; j < this.allFullScreenStates.length; j++) {
                 if (i == j) {
                     continue
                 }
-                const otherState = this.allFullScreenStates[j];
-                fullScreenState.addCallbackAndRunD(isOpened => {
+                const otherState = this.allFullScreenStates[j]
+                fullScreenState.addCallbackAndRunD((isOpened) => {
                     if (isOpened) {
                         otherState.setData(false)
                     }
                 })
             }
         }
-
     }
 }

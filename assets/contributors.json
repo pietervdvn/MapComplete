@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4109,
+      "commits": 4464,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 112,
+      "commits": 184,
       "contributor": "Robin van der Linde"
     },
     {
@@ -19,6 +19,10 @@
     {
       "commits": 33,
       "contributor": "Christian Neumann"
+    },
+    {
+      "commits": 31,
+      "contributor": "Andrews Leruth"
     },
     {
       "commits": 31,
@@ -37,8 +41,12 @@
       "contributor": "Ward"
     },
     {
-      "commits": 20,
+      "commits": 22,
       "contributor": "riQQ"
+    },
+    {
+      "commits": 21,
+      "contributor": "AlexanderRebai"
     },
     {
       "commits": 19,
@@ -69,6 +77,10 @@
       "contributor": "ToastHawaii"
     },
     {
+      "commits": 14,
+      "contributor": "Brice Maron"
+    },
+    {
       "commits": 13,
       "contributor": "Nicole"
     },
@@ -81,7 +93,7 @@
       "contributor": "Bavo Vanderghote"
     },
     {
-      "commits": 10,
+      "commits": 11,
       "contributor": "dependabot[bot]"
     },
     {
@@ -126,10 +138,6 @@
     },
     {
       "commits": 4,
-      "contributor": "AlexanderRebai"
-    },
-    {
-      "commits": 4,
       "contributor": "OliNau"
     },
     {
@@ -151,10 +159,6 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
-    },
-    {
-      "commits": 2,
-      "contributor": "Andrews Leruth"
     },
     {
       "commits": 2,
@@ -195,6 +199,38 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "eMerzh"
+    },
+    {
+      "commits": 1,
+      "contributor": "Reiner Herrmann"
+    },
+    {
+      "commits": 1,
+      "contributor": "Hopperpop"
+    },
+    {
+      "commits": 1,
+      "contributor": "Arya"
+    },
+    {
+      "commits": 1,
+      "contributor": "Robbert Gurdeep Singh"
+    },
+    {
+      "commits": 1,
+      "contributor": "HispanicMojitos"
+    },
+    {
+      "commits": 1,
+      "contributor": "kaipankrath"
+    },
+    {
+      "commits": 1,
+      "contributor": "bxl-forever"
     },
     {
       "commits": 1,

@@ -123,6 +123,9 @@
                     },
                     "11": {
                         "then": "Tegelwerk"
+                    },
+                    "12": {
+                        "then": "Houtsculptuur"
                     }
                 },
                 "question": "Wat voor soort kunstwerk is dit?",
@@ -131,10 +134,6 @@
             "artwork-website": {
                 "question": "Is er een website met meer informatie over dit kunstwerk?",
                 "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Welk Wikidata-item beschrijft <b>dit kunstwerk</b>?",
-                "render": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -310,16 +309,16 @@
                         "then": "Gemaakt uit metaal"
                     },
                     "2": {
-                        "then": "Gemaakt uit steen"
+                        "then": "Het zitgedeelte is gemaakt uit steen"
                     },
                     "3": {
-                        "then": "Gemaakt uit beton"
+                        "then": "Het zitgedeelte is gemaakt uit beton"
                     },
                     "4": {
-                        "then": "Gemaakt uit plastiek"
+                        "then": "Het zitgedeelte is gemaakt uit plastiek"
                     },
                     "5": {
-                        "then": "Gemaakt uit staal"
+                        "then": "Het zitgedeelte is gemaakt uit staal"
                     }
                 },
                 "question": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
@@ -442,39 +441,6 @@
             }
         },
         "tagRenderings": {
-            "9": {
-                "renderings": {
-                    "0": {
-                        "question": "Hoeveel type_plural kunnen hier uitgeleend worden?",
-                        "render": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
-                    }
-                },
-                "rewrite": {
-                    "into": {
-                        "0": {
-                            "1": "stadsfietsen"
-                        },
-                        "1": {
-                            "1": "elektrische fietsen"
-                        },
-                        "2": {
-                            "1": "kinderfietsen"
-                        },
-                        "3": {
-                            "1": "BMX-fietsen"
-                        },
-                        "4": {
-                            "1": "mountainbike"
-                        },
-                        "5": {
-                            "1": "fietstassen"
-                        },
-                        "6": {
-                            "1": "tandem"
-                        }
-                    }
-                }
-            },
             "bicycle-types": {
                 "mappings": {
                     "0": {
@@ -527,6 +493,39 @@
                     }
                 },
                 "question": "Wat voor fietsverhuur is dit?"
+            },
+            "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "Hoeveel type_plural kunnen hier uitgeleend worden?",
+                        "render": "{capacity:bicycle_type} type_plural kunnen hier uitgeleend worden"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "0": {
+                            "1": "stadsfietsen"
+                        },
+                        "1": {
+                            "1": "elektrische fietsen"
+                        },
+                        "2": {
+                            "1": "kinderfietsen"
+                        },
+                        "3": {
+                            "1": "BMX-fietsen"
+                        },
+                        "4": {
+                            "1": "mountainbike"
+                        },
+                        "5": {
+                            "1": "fietstassen"
+                        },
+                        "6": {
+                            "1": "tandem"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -651,9 +650,6 @@
                     },
                     "1": {
                         "then": "Gratis te gebruiken"
-                    },
-                    "2": {
-                        "then": "Je moet betalen voor het fietsschoonmaakpunt"
                     }
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
@@ -666,9 +662,6 @@
                     },
                     "1": {
                         "then": "Gratis te gebruiken"
-                    },
-                    "2": {
-                        "then": "Het fietsschoonmaakpunt is betalend, maar de prijs is onbekend"
                     }
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
@@ -811,9 +804,6 @@
             }
         },
         "tagRenderings": {
-            "Email maintainer": {
-                "render": "<a href='mailto:{email}?subject=Kapotte fietspomp&body=Geachte,%0D%0A%0D%0AGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}%26lon={_lon}%26z=18%23{id}.%0D%0A%0D%0AMet vriendelijke groeten.'>Rapporteer deze fietspomp als kapot</a>"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -938,6 +928,15 @@
                 },
                 "question": "Welke ventielen werken er met de pomp?",
                 "render": "Deze pomp werkt met de volgende ventielen: {valves}"
+            },
+            "send_email_about_broken_pump": {
+                "render": {
+                    "special": {
+                        "body": "Geachte\n\nGraag had ik u gemeld dat een fietspomp defect is. De fietspomp bevindt zich hier: https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id}.\n\nMet vriendelijke groeten.",
+                        "button_text": "Rapporteer deze fietspomp als kapot",
+                        "subject": "Kapotte fietspomp"
+                    }
+                }
             }
         },
         "title": {
@@ -1068,9 +1067,6 @@
             "bike_shop-access": {
                 "render": "Enkel voor {access}"
             },
-            "bike_shop-email": {
-                "question": "Wat is het email-adres van {name}?"
-            },
             "bike_shop-is-bicycle_shop": {
                 "mappings": {
                     "0": {
@@ -1082,12 +1078,6 @@
             "bike_shop-name": {
                 "question": "Wat is de naam van deze fietszaak?",
                 "render": "Deze fietszaak heet {name}"
-            },
-            "bike_shop-phone": {
-                "question": "Wat is het telefoonnummer van {name}?"
-            },
-            "bike_shop-website": {
-                "question": "Wat is de website van {name}?"
             }
         },
         "title": {
@@ -1261,15 +1251,6 @@
             }
         },
         "description": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Nu geopened"
-                    }
-                }
-            }
-        },
         "name": "Cafés",
         "presets": {
             "0": {
@@ -2450,6 +2431,13 @@
                 "question": "Wat is de rotssoort?",
                 "render": "De rotssoort is {rock}"
             },
+            "Type": {
+                "mappings": {
+                    "0": {
+                        "then": "Een klimboulder- eenn enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen"
+                    }
+                }
+            },
             "name": {
                 "mappings": {
                     "0": {
@@ -3244,6 +3232,91 @@
         "description": "Deze laag toont de oriëntatie van een object",
         "name": "Richtingsvisualisatie"
     },
+    "doctors": {
+        "description": "Deze laag toont dokterspraktijken, tandartsen en andere gezondheidszorgfaciliteiten",
+        "name": "Dokters",
+        "presets": {
+            "0": {
+                "title": "een dokterspraktijk"
+            },
+            "1": {
+                "title": "een tandartspraktijk"
+            },
+            "2": {
+                "title": "een fysiotherapeutenpraktijk"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van deze dokterspraktijk?",
+                "render": "Deze dokterspraktijk heet {name}"
+            },
+            "specialty": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een huisarts"
+                    },
+                    "1": {
+                        "then": "Dit is een gynaecoloog"
+                    },
+                    "2": {
+                        "then": "Dit is een psychiater"
+                    },
+                    "3": {
+                        "then": "Dit is een kinderarts"
+                    }
+                },
+                "question": "Waar is deze dokter in gespecialiseerd?",
+                "render": "Deze dokter is gespecialiseerd in {healthcare:speciality}"
+            }
+        },
+        "title": {
+            "render": "Dokterspraktijk {name}"
+        }
+    },
+    "dogpark": {
+        "name": "hondenweides",
+        "presets": {
+            "0": {
+                "description": "Een plaats waar honden vrij mogen rondlopen",
+                "title": "een hondenweide"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "question": "Wat is de naam van deze hondenweide?",
+                "render": "Deze hondenweide heet {name}"
+            },
+            "dogarea": {
+                "render": "Deze hondenweide is {_surface:ha} hectaren groot"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze hondenweide is volledig omheind"
+                    },
+                    "1": {
+                        "then": "Deze hondenweide is <strong>niet</strong> volledig omheind"
+                    }
+                },
+                "question": "Is deze hondenweide volledig omheind?"
+            },
+            "smalldogs": {
+                "mappings": {
+                    "0": {
+                        "then": "Heeft gescheiden deel voor puppy's en kleine honden"
+                    },
+                    "1": {
+                        "then": "Heeft <strong>geen</strong> gescheiden deel voor puppy's en kleine honden"
+                    }
+                },
+                "question": "Heeft deze hondenweide een gescheiden en omheind deel voor puppy's en kleine honden?"
+            }
+        },
+        "title": {
+            "render": "hondenweide"
+        }
+    },
     "drinking_water": {
         "deletion": {
             "nonDeleteMappings": {
@@ -3297,9 +3370,72 @@
             "render": "Drinkbaar water"
         }
     },
+    "elevator": {
+        "description": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet.",
+        "name": "lift",
+        "presets": {
+            "0": {
+                "title": "een lift"
+            }
+        },
+        "tagRenderings": {
+            "door-width": {
+                "question": "Wat is de breedte van de liftdeur?",
+                "render": "De breedte van de liftdeur is {canonical(door:width)}"
+            },
+            "elevator-depth": {
+                "question": "Wat is de diepte van deze lift?",
+                "render": "Deze lift heeft een diepte van {canonical(elevator:depth)}"
+            },
+            "elevator-width": {
+                "question": "Wat is de breedte van deze lift?",
+                "render": "Deze lift heeft een breedte van {canonical(elevator:width)}"
+            },
+            "operational_status": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze lift is kapot"
+                    },
+                    "1": {
+                        "then": "Deze lift is tijdelijk gesloten <span class='subtle'>bijvoorbeeld door renovatiewerken</span>"
+                    },
+                    "2": {
+                        "then": "Deze lift werkt"
+                    },
+                    "3": {
+                        "then": "Deze lift werkt"
+                    }
+                },
+                "question": "Werkt deze lift?"
+            }
+        },
+        "title": {
+            "render": "Lift"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
+        }
+    },
     "entrance": {
         "description": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, …)",
         "name": "Toegang",
+        "presets": {
+            "0": {
+                "title": "een toegang"
+            },
+            "1": {
+                "title": "een binnendeur"
+            }
+        },
         "tagRenderings": {
             "Door_type": {
                 "mappings": {
@@ -3387,13 +3523,37 @@
                     }
                 }
             },
+            "kerb-height": {
+                "freeform": {
+                    "placeholder": "Hoogte van de drempel"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze deur heeft geen drempel"
+                    }
+                },
+                "question": "Hoe hoog is de drempel?",
+                "render": "De drempel bij deze deur is {kerb:height}"
+            },
             "width": {
                 "question": "Wat is de breedte van deze deur/toegang?",
-                "render": "Deze deur heeft een breedte van {canonical(width)} meter"
+                "render": "Deze deur heeft een breedte van {canonical(width)}"
             }
         },
         "title": {
             "render": "Ingang"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "etymology": {
@@ -3452,6 +3612,31 @@
         },
         "title": {
             "render": "Brandblussers"
+        }
+    },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nu geopened"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Accepteert cash"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepteert betaalkaarten"
+                    }
+                }
+            }
         }
     },
     "fire_station": {
@@ -3514,17 +3699,18 @@
                 "0": {
                     "explanation": "{title()} is permanent gestopt"
                 }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Dit is eigenlijk een bruin cafe of kroeg"
+                },
+                "1": {
+                    "then": "Dit is eigenlijk een cafe (een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen)"
+                }
             }
         },
         "description": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Nu geopened"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -3543,20 +3729,6 @@
                 "options": {
                     "0": {
                         "question": "Heeft een halal menu"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Accepteert cash"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Accepteert betaalkaarten"
                     }
                 }
             }
@@ -3631,7 +3803,7 @@
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel"
+                        "then": "Dit is een <b>fastfood-zaak</b>. De focus ligt op snelle bediening, zitplaatsen zijn vaak beperkt en functioneel."
                     },
                     "1": {
                         "then": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend"
@@ -3692,6 +3864,14 @@
                 "question": "Heeft deze eetgelegenheid een vegetarische optie?"
             },
             "delivery": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze zaak levert aan huis (eventueel via een derde partij)"
+                    },
+                    "1": {
+                        "then": "Deze zaak doet geen thuisleveringen"
+                    }
+                },
                 "question": "Levert {title()} aan huis?"
             },
             "friture-oil": {
@@ -3823,6 +4003,24 @@
             "render": "Witte Fiets"
         }
     },
+    "governments": {
+        "description": "Deze laag toont overheidsgebouwen. Opgezet voor OSOC '22",
+        "name": "Overheidsdiensten",
+        "presets": {
+            "0": {
+                "title": "een overheidsdienst"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van deze overheidsdienst?",
+                "render": "Deze overheidsdienst heet {name}"
+            }
+        },
+        "title": {
+            "render": "Overheidsdienst {name}"
+        }
+    },
     "gps_track": {
         "name": "Jouw afgelegde route",
         "tagRenderings": {
@@ -3857,7 +4055,7 @@
             }
         },
         "tagRenderings": {
-            "6": {
+            "available_devices": {
                 "renderings": {
                     "0": {
                         "mappings": {
@@ -3937,6 +4135,45 @@
             "render": "Hackerspace"
         }
     },
+    "hospital": {
+        "description": "Een laag die ziekehuizen toont",
+        "name": "Ziekenhuizen",
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van dit ziekenhuis?",
+                "render": "Dit ziekenhuis heet {name}"
+            }
+        },
+        "title": {
+            "render": "Ziekenhuis"
+        }
+    },
+    "hotel": {
+        "description": "Laag die alle hotels toont",
+        "name": "Hotels",
+        "presets": {
+            "0": {
+                "title": "een hotel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van het hotel"
+                },
+                "question": "Wat is de naam van dit hotel?",
+                "render": "Dit hotel heet {name}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Hotel {name}"
+                }
+            },
+            "render": "Hotel"
+        }
+    },
     "hydrant": {
         "description": "Kaartlaag met brandkranen.",
         "name": "Kaart van brandkranen",
@@ -3961,6 +4198,38 @@
                 },
                 "question": "Welke kleur heeft de brandkraan?",
                 "render": "De brandkraan is {colour}"
+            },
+            "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Soort koppeling"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Storz-koppeling"
+                    },
+                    "1": {
+                        "then": "UNI-koppeling"
+                    },
+                    "2": {
+                        "then": "Barcelona-koppeling"
+                    }
+                },
+                "question": "Welke soort koppeling heeft deze hydrant?",
+                "render": "Koppelingen:{couplings:type}"
+            },
+            "hydrant-couplings-diameters": {
+                "freeform": {
+                    "placeholder": "Koppeldiameters"
+                },
+                "question": "Welke diameter hebben de koppelingen van deze hydrant?",
+                "render": "Koppelingdiameters:{couplings:diameters}"
+            },
+            "hydrant-diameter": {
+                "freeform": {
+                    "placeholder": "Pijpdiameter"
+                },
+                "question": "Wat is de pijpdiameter van deze hydrant?",
+                "render": "Pijpdiameter:{canonical(fire_hydrant:diameter)}"
             },
             "hydrant-state": {
                 "mappings": {
@@ -4000,6 +4269,59 @@
         },
         "title": {
             "render": "Brandkraan"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "millimeter",
+                        "humanSingular": "millimeter"
+                    }
+                }
+            }
+        }
+    },
+    "indoors": {
+        "description": "Een basis voor indoor-navigatie: toont binnenruimtes",
+        "name": "Binnenruimtes",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van de ruimte"
+                },
+                "question": "Wat is de naam van deze ruimte?",
+                "render": "Deze ruimte heet {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referentienummer van de ruimte (bv. '1.1' of A1' )"
+                },
+                "question": "Wat is het referentienummer van deze ruimte?",
+                "render": "Deze ruimte heeft het referentienummer {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Binnenruimte {name}"
+                },
+                "1": {
+                    "then": "Gebied in gebouw {name}"
+                },
+                "2": {
+                    "then": "Muur in gebouw {name}"
+                },
+                "3": {
+                    "then": "Gang in gebouw {name}"
+                },
+                "4": {
+                    "then": "Binnendeur {name}"
+                },
+                "5": {
+                    "then": "Verdieping in gebouw {name}"
+                }
+            },
+            "render": "Binnenruimte {name}"
         }
     },
     "information_board": {
@@ -4038,6 +4360,22 @@
                         "question": "Stoeprand met onbekende hoogte"
                     }
                 }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Stoepranden met of zonder voelbare bestrating"
+                    },
+                    "1": {
+                        "question": "Stoeprand met voelbare bestrating"
+                    },
+                    "2": {
+                        "question": "Stoeprand zonder voelbare bestrating"
+                    },
+                    "3": {
+                        "question": "Stoeprand zonder informatie over voelbare bestrating"
+                    }
+                }
             }
         },
         "name": "Stoepranden",
@@ -4053,7 +4391,7 @@
                     "placeholder": "Hoogte van de stoeprand"
                 },
                 "question": "Hoe hoog is deze stoeprand?",
-                "render": "Stoeprandhoogte: {{kerb:height}}"
+                "render": "Stoeprandhoogte: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -4074,6 +4412,20 @@
                     }
                 },
                 "question": "Hoe hoog is deze stoeprand?"
+            },
+            "tactile-paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze stoeprand heeft voelbare bestrating."
+                    },
+                    "1": {
+                        "then": "Deze stoeprand heeft geen voelbare bestrating."
+                    },
+                    "2": {
+                        "then": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect."
+                    }
+                },
+                "question": "Is er voelbare bestrating bij deze stoeprand?"
             }
         },
         "title": {
@@ -4105,11 +4457,6 @@
             }
         },
         "tagRenderings": {
-            "5": {
-                "override": {
-                    "question": "Wanneer is deze kinderopvang geopend?"
-                }
-            },
             "capacity": {
                 "question": "Hoeveel kinderen kunnen hier terecht?",
                 "render": "Hier kunnen {capacity} kinderen terecht"
@@ -4124,6 +4471,15 @@
                     }
                 },
                 "question": "Wat voor faciliteit is dit?"
+            },
+            "name": {
+                "question": "Wat is de naam van deze faciliteit?",
+                "render": "Deze faciliteit heet <b>{name}</b>"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wanneer is deze kinderopvang geopend?"
+                }
             }
         },
         "title": {
@@ -4181,8 +4537,125 @@
             "render": "Kaart"
         }
     },
+    "maproulette": {
+        "description": "Laag met alle taken uit MapRoulette",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Toon taken met alle statussen"
+                    },
+                    "1": {
+                        "question": "Toon aangemaakte taken"
+                    },
+                    "2": {
+                        "question": "Toon opgeloste taken"
+                    },
+                    "3": {
+                        "question": "Toon vals-positieve taken"
+                    },
+                    "4": {
+                        "question": "Toon overgeslagen taken"
+                    },
+                    "5": {
+                        "question": "Toon verwijderde taken"
+                    },
+                    "6": {
+                        "question": "Toon al opgeloste taken"
+                    },
+                    "7": {
+                        "question": "Toon taken die als te lastig gemarkeerd zijn"
+                    },
+                    "8": {
+                        "question": "Toon uitgeschakelde taken"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Naam uitdaging bevat {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "ID uitdaging is {search}"
+                    }
+                }
+            }
+        },
+        "name": "MapRoulette Taken",
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Taak werd gecreëerd"
+                    },
+                    "1": {
+                        "then": "Taak werd opgelost"
+                    },
+                    "2": {
+                        "then": "Taak was vals positief"
+                    },
+                    "3": {
+                        "then": "Taak werd overgeslagen"
+                    },
+                    "4": {
+                        "then": "Taak werd verwijderd"
+                    },
+                    "5": {
+                        "then": "Taak was al opgelost"
+                    },
+                    "6": {
+                        "then": "Taak werd als te moeilijk ervaren"
+                    },
+                    "7": {
+                        "then": "Taak is uitgeschakeld"
+                    }
+                }
+            }
+        }
+    },
+    "maproulette_challenge": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Toon alle taken, ongeacht de status"
+                    },
+                    "1": {
+                        "question": "Toon taken die zijn gecreëerd"
+                    },
+                    "2": {
+                        "question": "Toon taken die zijn opgelost"
+                    },
+                    "3": {
+                        "question": "Toon taken die vals positief waren"
+                    },
+                    "4": {
+                        "question": "Toon taken die zijn overgeslagen"
+                    },
+                    "5": {
+                        "question": "Toon taken die zijn verwijderd"
+                    },
+                    "6": {
+                        "question": "Toon taken die reeds opgelost waren"
+                    },
+                    "7": {
+                        "question": "Toon taken die als te moeilijk waren ervaren"
+                    },
+                    "8": {
+                        "question": "Toon taken die zijn uitgeschakeld"
+                    }
+                }
+            }
+        }
+    },
     "maxspeed": {
         "description": "Toont de toegestane snelheid voor elke weg",
+        "name": "Maximumsnelheid",
         "tagRenderings": {
             "maxspeed-maxspeed": {
                 "mappings": {
@@ -4193,7 +4666,8 @@
                         "then": "Dit is een woonerf en heeft dus een maximale snelheid van 20km/h"
                     }
                 },
-                "render": "De maximum toegestane snelheid op deze weg is {maxspeed}"
+                "question": "Wat is de legale maximumsnelheid voor deze weg?",
+                "render": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}"
             }
         },
         "title": {
@@ -4527,12 +5001,90 @@
             }
         }
     },
+    "parcel_lockers": {
+        "presets": {
+            "0": {
+                "title": "een pakketautomaat"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "mappings": {
+                    "3": {
+                        "then": "Dit is een PostNL pakketautomaat"
+                    }
+                }
+            }
+        }
+    },
     "parking": {
         "description": "Deze laag toont autoparkings",
         "name": "Parking",
         "presets": {
             "0": {
                 "title": "een parking voor auto's"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Aantal parkeerplaatsen"
+                },
+                "question": "Hoeveel parkeerplaatsen zijn er op deze parking?",
+                "render": "Er zijn {capacity} parkeerplaatsen"
+            },
+            "capacity-disabled": {
+                "freeform": {
+                    "placeholder": "Aantal parkeerplaatsen voor gehandicapten"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn parkeerplaatsen voor gehandicapten, maar het is niet bekend hoeveel er zijn"
+                    },
+                    "1": {
+                        "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
+                    },
+                    "2": {
+                        "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
+                    }
+                },
+                "question": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
+                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een bovengronds parkeerterrein"
+                    },
+                    "1": {
+                        "then": "Dit is een parkeerplek langs een weg"
+                    },
+                    "2": {
+                        "then": "Dit is een ondergrondse parkeergarage"
+                    },
+                    "3": {
+                        "then": "Dit is een bovengrondse parkeergarage met meerdere verdiepingen"
+                    },
+                    "4": {
+                        "then": "Dit is een parkeerdek op een dak"
+                    },
+                    "5": {
+                        "then": "Dit is een strook voor parkeren op de weg"
+                    },
+                    "6": {
+                        "then": "Dit is parking overdekt met carports"
+                    },
+                    "7": {
+                        "then": "Dit is een parking bestaande uit garageboxen"
+                    },
+                    "8": {
+                        "then": "Dit is een parkeerplek op een layby"
+                    },
+                    "9": {
+                        "then": "Dit is een parking bestaande uit schuren"
+                    }
+                },
+                "question": "Wat voor parking is dit?"
             }
         },
         "title": {
@@ -4542,6 +5094,57 @@
     "pedestrian_path": {
         "description": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
         "name": "Pad voor voetgangers"
+    },
+    "pharmacy": {
+        "description": "Deze laag toont apotheken, welke (waarschijnlijk) ook medicijnen onder voorschrift verkopen",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een drive-through"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Deze apotheek verdeelt medicijnen met voorschrift"
+                    }
+                }
+            }
+        },
+        "name": "apotheek",
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van de apotheek"
+                },
+                "question": "Wat is de naam van deze apotheek?",
+                "render": "Deze apotheek heet {name}"
+            },
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze apotheek is makkelijk te bereiken met een rolstoel"
+                    },
+                    "1": {
+                        "then": "Deze apotheek is moeilijk te bereiken met een rolstoel"
+                    },
+                    "2": {
+                        "then": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk"
+                    }
+                },
+                "question": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Apotheek"
+                }
+            },
+            "render": "{name}"
+        }
     },
     "picnic_table": {
         "description": "Deze laag toont picknicktafels",
@@ -4722,6 +5325,41 @@
             "render": "Speeltuin"
         }
     },
+    "postboxes": {
+        "description": "Deze laag toont brievenbussen.",
+        "name": "Brievenbussen",
+        "presets": {
+            "0": {
+                "title": "een brievenbus"
+            }
+        },
+        "title": {
+            "render": "Brievenbus"
+        }
+    },
+    "postoffices": {
+        "description": "Een laag die postkantoren toont.",
+        "name": "Postkantoren",
+        "presets": {
+            "0": {
+                "title": "een postkantoor"
+            }
+        },
+        "tagRenderings": {
+            "OH": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 open (ook tijdens feestdagen)"
+                    }
+                },
+                "question": "Wat zijn de openingsuren voor dit postkantoor?",
+                "render": "Openingsuren: {opening_hours_table()}"
+            }
+        },
+        "title": {
+            "render": "Postkantoor"
+        }
+    },
     "public_bookcase": {
         "description": "Een straatkastje met boeken voor iedereen",
         "filter": {
@@ -4836,13 +5474,6 @@
     "recycling": {
         "description": "Een laag met recyclagingcontainers en -centrums",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Op dit moment open"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -5100,30 +5731,6 @@
                 },
                 "question": "Mogen jongens en meisjes les volgen op deze school?"
             },
-            "language": {
-                "freeform": {
-                    "placeholder": "Taal in lowercase Engel"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "De voertaal van deze school is niet gekend"
-                    },
-                    "1": {
-                        "then": "Frans is de voertaal van {name}"
-                    },
-                    "2": {
-                        "then": "Nederlands is de voertaal van {name}"
-                    },
-                    "3": {
-                        "then": "Duits is de voertaal van {name}"
-                    },
-                    "4": {
-                        "then": "De voertaal van deze school is niet gekend"
-                    }
-                },
-                "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>",
-                "render": "{school:language} is de voertaal van {title()}"
-            },
             "school-name": {
                 "question": "Wat is de naam van deze school?",
                 "render": "Deze school heet <b>{name}</b>"
@@ -5160,6 +5767,16 @@
                 },
                 "question": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?<div class='subtle'>Ad-hoc maatregelen zijn niet voldoende</div> ",
                 "render": "Deze school richt zich op studenten met {school:for}"
+            },
+            "wikidata.school-language": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "De voertaal van deze school is niet gekend"
+                        }
+                    },
+                    "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
+                }
             }
         },
         "title": {
@@ -5176,31 +5793,17 @@
         },
         "description": "Een winkel",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Toon enkel winkels die {search} verkopen"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel winkels met naam {search}"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Accepteert cash"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Accepteert betaalkaarten"
+                        "question": "Toon enkel winkels met naam {search}"
                     }
                 }
             }
@@ -5213,13 +5816,35 @@
             }
         },
         "tagRenderings": {
-            "2": {
+            "copyshop-print-sizes": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze zaak kan printen op A4-formaat"
+                    },
+                    "1": {
+                        "then": "Deze zaak kan printen op A3-formaat"
+                    },
+                    "2": {
+                        "then": "Deze zaak kan printen op A2-formaat"
+                    },
+                    "3": {
+                        "then": "Deze zaak kan printen op A1-formaat"
+                    },
+                    "4": {
+                        "then": "Deze zaak kan printen op A0-formaat"
+                    }
+                },
+                "question": "Op welke papiergroottes kan deze zaak printen?"
+            },
+            "id_presets.shop_types": {
                 "override": {
-                    "question": "Wat voor soort winkel is dit?"
+                    "question": "Wat voor soort winkel is dit?",
+                    "render": "Dit is een {shop}"
                 }
             },
             "shops-name": {
-                "question": "Wat is de naam van deze winkel?"
+                "question": "Wat is de naam van deze winkel?",
+                "render": "Deze zaak heet <i>{name}</i>"
             }
         },
         "title": {
@@ -5334,6 +5959,9 @@
                     },
                     "3": {
                         "then": "Privaat en niet toegankelijk"
+                    },
+                    "4": {
+                        "then": "Publiek toegankelijk"
                     }
                 },
                 "question": "Is dit sportterrein publiek toegankelijk?"
@@ -5903,13 +6531,32 @@
                     },
                     "1": {
                         "then": "Niet toegankelijk voor rolstoelgebruikers"
+                    },
+                    "2": {
+                        "then": "Er is alleen een toilet voor rolstoelgebruikers"
                     }
                 },
                 "question": "Is er een rolstoeltoegankelijke toilet voorzien?"
+            },
+            "wheelchair-door-width": {
+                "question": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
+                "render": "De deur naar de rolstoeltoegankelijke toilet is {canonical(door:width)} wide"
             }
         },
         "title": {
             "render": "Toilet"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "trail": {
@@ -5978,6 +6625,42 @@
         },
         "title": {
             "render": "Wandeltocht"
+        }
+    },
+    "transit_routes": {
+        "description": "Laag met buslijnen",
+        "name": "Buslijnen",
+        "tagRenderings": {
+            "colour": {
+                "question": "Wat is de kleur van deze buslijn?",
+                "render": "Deze buslijn heeft de kleur {colour}"
+            },
+            "from": {
+                "question": "Wat is het beginpunt van deze buslijn?",
+                "render": "Deze buslijn begint bij {from}"
+            },
+            "name": {
+                "question": "Wat is de naam van deze buslijn (bv. Bus XX: Van => Via => Naar)"
+            },
+            "network": {
+                "question": "Bij welk netwerk hoort deze buslijn?",
+                "render": "Deze buslijn is onderdeel van het {network} netwerk"
+            },
+            "operator": {
+                "question": "Welk bedrijf exploiteert deze buslijn?",
+                "render": "Deze buslijn wordt geëxploiteerd door {operator}"
+            },
+            "to": {
+                "question": "Wat is het eindpunt van deze buslijn?",
+                "render": "Deze buslijn eindigt bij {to}"
+            },
+            "via": {
+                "question": "Via welk punt gaat deze buslijn?",
+                "render": "Deze buslijn gaat via {via}"
+            }
+        },
+        "title": {
+            "render": "Buslijn"
         }
     },
     "tree_node": {

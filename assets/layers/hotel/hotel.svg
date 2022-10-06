@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 500 500"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="hotel.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.5912918"
+     inkscape:cx="43.125915"
+     inkscape:cy="341.6249"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4">
+    <sodipodi:guide
+       position="-213.39489,250.02313"
+       orientation="0,-1"
+       id="guide827" />
+  </sodipodi:namedview>
+  <path
+     d="m 20.793355,103.8662 c -9.838754,0 -17.7594848,7.92073 -17.7594848,17.75948 v 17.75948 142.07589 35.51898 17.75949 53.27845 H 38.552842 V 334.73952 316.98003 H 464.78049 v 53.27845 17.75949 h 17.7595 17.75948 v -17.75949 -53.27845 -35.51898 -71.03793 -17.75949 c 0,-9.83876 -7.92073,-17.75949 -17.75948,-17.75949 -9.83876,0 -17.7595,7.92073 -17.7595,17.75949 v 17.75949 71.03793 H 38.552842 V 139.38516 121.62568 c 0,-9.83875 -7.920731,-17.75948 -17.759487,-17.75948 z m 106.556915,35.51896 c -29.424876,0 -53.278458,23.85359 -53.278458,53.27847 0,29.42487 23.853582,53.27845 53.278458,53.27845 29.42487,0 53.27845,-23.85358 53.27845,-53.27845 0,-29.42488 -23.85358,-53.27847 -53.27845,-53.27847 z m 88.79743,35.51898 v 71.03794 h 213.11382 c 0,-35.51896 -36.80387,-71.03794 -71.03793,-71.03794 z"
+     id="path2"
+     style="stroke-width:35.519" />
+</svg>
