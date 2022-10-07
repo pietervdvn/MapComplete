@@ -91,57 +91,16 @@
           ]
         },
         {
-          "id": "building type",
+          "id": "Building type",
           "freeform": {
-            "key": "building"
+            "key": "building",
+            "type": "string",
+            "addExtraTags": [
+              "construction="
+            ]
           },
-          "render": "The building type is <b>{building}</b>",
-          "question": {
-            "en": "What kind of building is this?",
-            "de": "Was ist das für ein Gebäude?",
-            "es": "¿Qué tipo de edificio es este?",
-            "nl": "Wat voor soort gebouw is dit?",
-            "fr": "De quel type de bâtiment s’agit-il ?",
-            "da": "Hvad er det for en bygning?"
-          },
-          "mappings": [
-            {
-              "if": "building=house",
-              "then": "A normal house"
-            },
-            {
-              "if": "building=detached",
-              "then": "A house detached from other building"
-            },
-            {
-              "if": "building=semidetached_house",
-              "then": "A house sharing only one wall with another house"
-            },
-            {
-              "if": "building=apartments",
-              "then": "An apartment building (highrise building for living)"
-            },
-            {
-              "if": "building=office",
-              "then": "An office building - highrise for work"
-            },
-            {
-              "if": "building=shed",
-              "then": "A small shed, e.g. in a garden"
-            },
-            {
-              "if": "building=garage",
-              "then": "A single garage to park a car"
-            },
-            {
-              "if": "building=garages",
-              "then": "A building containing only garages; typically they are all identical"
-            },
-            {
-              "if": "building=yes",
-              "then": "A building - no specification"
-            }
-          ]
+          "render": "This building is a <b>{building}</b>",
+          "question": "What kind of building is this?"
         }
       ]
     },
@@ -206,13 +165,7 @@
           "render": "{import_way_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}",
           "mappings": [
             {
-              "if": {
-                "and": [
-                  "_overlap_percentage>50",
-                  "_reverse_overlap_percentage>50",
-                  "_overlaps_with!="
-                ]
-              },
+              "if": "_overlaps_with!=",
               "then": "{conflate_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Replace the geometry in OpenStreetMap, , _osm_obj:id)}"
             },
             {
