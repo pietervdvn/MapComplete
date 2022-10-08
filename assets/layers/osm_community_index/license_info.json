@@ -1,0 +1,12 @@
+[
+  {
+    "path": "osm.svg",
+    "license": "ISC License",
+    "authors": [
+      "osmlab"
+    ],
+    "sources": [
+      "https://github.com/osmlab/osm-community-index/blob/main/dist/img/osm.svg"
+    ]
+  }
+]
