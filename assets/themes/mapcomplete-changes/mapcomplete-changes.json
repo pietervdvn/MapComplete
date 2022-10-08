@@ -393,10 +393,6 @@
               {
                 "if": "theme=waste_basket",
                 "then": "./assets/themes/waste_basket/waste_basket.svg"
-              },
-              {
-                "if": "theme=width",
-                "then": "./assets/themes/width/icon.svg"
               }
             ]
           },
