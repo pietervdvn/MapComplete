@@ -105,6 +105,40 @@
       ]
     },
     {
+      "id": "osm:adresses",
+      "name": "OSM Adresses",
+      "title": "OSM Adress",
+      "source": {
+        "osmTags": {
+          "and": [
+            "source=BAG",
+            "addr:city~*",
+            "addr:housenumber~*",
+            "addr:postcode~*",
+            "addr:street~*"
+          ]
+        },
+        "maxCacheAge": 0
+      },
+      "mapRendering": [
+        {
+          "label": {
+            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "width": {
+            "render": 1
+          }
+        }
+      ]
+    },
+    {
       "id": "bag:pand",
       "name": "BAG Buildings",
       "title": "BAG Building",
@@ -114,11 +148,7 @@
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
         "geoJsonZoomLevel": 18,
-        "osmTags": {
-          "and": [
-            "identificatie~*"
-          ]
-        },
+        "osmTags": "identificatie~*",
         "maxCacheAge": 0
       },
       "calculatedTags": [
@@ -135,7 +165,7 @@
         "_bag_obj:start_date=feat.properties.bouwjaar",
         "_osm_obj:id=feat.get('_overlaps_with_properties')?.id",
         "_osm_obj:building=feat.get('_overlaps_with_properties')?.building",
-        "_imported_osm_object_found=Number(feat.properties.identificatie)==Number(feat.get('_overlaps_with_properties')['ref:bag'])"
+        "_imported_osm_object_found:=Number(feat.properties.identificatie)==Number(feat.get('_overlaps_with_properties')['ref:bag'])"
       ],
       "mapRendering": [
         {
@@ -212,32 +242,49 @@
           "id": "Overlapping building",
           "render": "<div>The overlapping <a href=https://osm.org/{_osm_obj:id} target=_blank>osm:buildings</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the BAG building.<br>The BAG-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<div><h3>BAG geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}</div></div>",
           "condition": "_overlaps_with!="
+        },
+        {
+          "id": "Building status",
+          "render": "The current building status is <b>{status}</b>"
+        },
+        {
+          "id": "Buidling function",
+          "render": "The current function of the building is <b>{gebruiksdoel}</b>"
         }
       ]
     },
     {
       "id": "bag:verblijfsobject",
-      "name": "bag:verblijfsobject",
-      "title": "bag:verblijfsobject - {identificatie}",
-      "description": "Adressen vanaf het BAG register",
+      "name": "BAG Addresses",
+      "title": "BAG Address",
+      "description": "Adress information from the BAG register",
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Averblijfsobject&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
         "geoJsonZoomLevel": 19,
-        "osmTags": {
-          "and": [
-            "identificatie~*"
-          ]
-        },
+        "osmTags": "identificatie~*",
         "maxCacheAge": 0
       },
       "calculatedTags": [
-        "addr:housenumber:=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`"
+        "_closed_osm_addr:=feat.closest('osm:adresses').properties",
+        "_bag_obj:addr:housenumber=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`",
+        "_bag_obj:ref:bag=Number(feat.properties.identificatie)",
+        "_bag_obj:source:date=new Date().toISOString().split('T')[0]",
+        "_osm_obj:addr:city:=feat.get('_closed_osm_addr')['addr:city']",
+        "_osm_obj:addr:housenumber:=feat.get('_closed_osm_addr')['addr:housenumber']",
+        "_osm_obj:addr:postcode:=feat.get('_closed_osm_addr')['addr:postcode']",
+        "_osm_obj:addr:street:=feat.get('_closed_osm_addr')['addr:street']",
+        "_imported_osm_object_found:=(feat.properties.woonplaats==feat.get('_closed_osm_addr')['addr:city'])&&(feat.get('_bag_obj:addr:housenumber')==feat.get('_closed_osm_addr')['addr:housenumber'])&&(feat.properties.postcode==feat.get('_closed_osm_addr')['addr:postcode'])&&(feat.properties.openbare_ruimte==feat.get('_closed_osm_addr')['addr:street'])"
       ],
       "mapRendering": [
         {
           "label": {
-            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
-            "condition": "addr:housenumber~*"
+            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>",
+            "mappings": [
+              {
+                "if": "_imported_osm_object_found=true",
+                "then": "<div style='color: #107c10' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>"
+              }
+            ]
           },
           "location": [
             "point",
@@ -252,8 +299,13 @@
       ],
       "tagRenderings": [
         {
+          "id": "Import button",
+          "render": "{import_button(osm:adresses, addr:city=$woonplaats; addr:housenumber=$_bag_obj:addr:housenumber; addr:postcode=$postcode; addr:street=$openbare_ruimte; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date, Upload this adress to OpenStreetMap)}",
+          "condition": "_imported_osm_object_found=false"
+        },
+        {
           "id": "Adress",
-          "render": "{openbare_ruimte} {addr:housenumber}, {woonplaats} {postcode}"
+          "render": "{openbare_ruimte} {_bag_obj:addr:housenumber}, {woonplaats} {postcode}"
         }
       ]
     }
