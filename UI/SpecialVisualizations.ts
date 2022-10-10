@@ -1416,7 +1416,7 @@ export default class SpecialVisualizations {
                         null,
                         "  "
                     ) +
-                    "```",
+                    "\n```",
                 args: [
                     {
                         name: "key",

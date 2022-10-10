@@ -256,7 +256,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `email~^..*$&service:bicycle:pump:operational_status=broken`  is shown
+Only visible if  `email~.+&service:bicycle:pump:operational_status=broken`  is shown
 
 
 

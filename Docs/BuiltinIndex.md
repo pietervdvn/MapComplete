@@ -10,6 +10,7 @@
 1. [Index of builtin TagRendering](#index-of-builtin-tagrendering)
   - [Existing builtin tagrenderings](#existing-builtin-tagrenderings)
     + [images](#images)
+    + [wikipedia](#wikipedia)
     + [website](#website)
     + [phone](#phone)
     + [email](#email)
@@ -43,7 +44,6 @@
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
-    + [wikipedia](#wikipedia)
     + [wikidata.school-language](#wikidataschool-language)
     + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
@@ -105,6 +105,7 @@
   - hydrant
   - indoors
   - information_board
+  - kerbs
   - map
   - nature_reserve
   - observation_tower
@@ -134,6 +135,19 @@
   - waste_basket
   - watermill
   - windturbine
+
+
+
+
+### wikipedia 
+
+
+
+
+
+  - artwork
+  - nature_reserve
+  - observation_tower
 
 
 
@@ -618,18 +632,6 @@
 
 
   - gps_track
-
-
-
-
-### wikipedia 
-
-
-
-
-
-  - nature_reserve
-  - observation_tower
 
 
 

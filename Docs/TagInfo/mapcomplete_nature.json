@@ -276,7 +276,7 @@
     },
     {
       "key": "operator",
-      "description": "Layer 'Nature reserve' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely 'Operated by {operator}' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows operator~^((n|N)atuurpunt.*)$ with a fixed text, namely 'Operated by {operator}' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "operator",
@@ -318,7 +318,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Nature reserve' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "curator",
@@ -346,7 +346,7 @@
     },
     {
       "key": "wikipedia",
-      "description": "Layer 'Nature reserve' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "wikidata",

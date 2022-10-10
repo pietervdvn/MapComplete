@@ -170,7 +170,7 @@ This is rendered with  This school has facilities for students with {school:for}
   - This is a school for students with special needs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs' target='_blank'>special_needs</a>`
 
 
-Only visible if  `school:for~^..*$`  is shown
+Only visible if  `school:for~.+`  is shown
 
 
 
@@ -188,7 +188,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -208,7 +208,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -228,7 +228,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 

@@ -113,7 +113,7 @@ This tagrendering has no question and is thus read-only
   - This business focuses on rental  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>`
 
 
-Only visible if  `shop~^..*$&shop!~^bicycle$&shop!~^sports$`  is shown
+Only visible if  `shop~.+&shop!~^(bicycle)$&shop!~^(sports)$`  is shown
 
 
 
@@ -145,7 +145,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -165,7 +165,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -185,7 +185,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -309,7 +309,7 @@ This is rendered with  {capacity:city_bike} city bikes can be rented here
 
 
 
-Only visible if  `rental~^.*city_bike.*$`  is shown
+Only visible if  `rental~^(.*city_bike.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -327,7 +327,7 @@ This is rendered with  {capacity:ebike} electrical bikes can be rented here
 
 
 
-Only visible if  `rental~^.*ebike.*$`  is shown
+Only visible if  `rental~^(.*ebike.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -345,7 +345,7 @@ This is rendered with  {capacity:kid_bike} bikes for children can be rented here
 
 
 
-Only visible if  `rental~^.*kid_bike.*$`  is shown
+Only visible if  `rental~^(.*kid_bike.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -363,7 +363,7 @@ This is rendered with  {capacity:bmx} BMX bikes can be rented here
 
 
 
-Only visible if  `rental~^.*bmx.*$`  is shown
+Only visible if  `rental~^(.*bmx.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -381,7 +381,7 @@ This is rendered with  {capacity:mtb} mountainbike can be rented here
 
 
 
-Only visible if  `rental~^.*mtb.*$`  is shown
+Only visible if  `rental~^(.*mtb.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -399,7 +399,7 @@ This is rendered with  {capacity:bicycle_pannier} bicycle panniers can be rented
 
 
 
-Only visible if  `rental~^.*bicycle_pannier.*$`  is shown
+Only visible if  `rental~^(.*bicycle_pannier.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -417,7 +417,7 @@ This is rendered with  {capacity:tandem_bicycle} tandem can be rented here
 
 
 
-Only visible if  `rental~^.*tandem_bicycle.*$`  is shown
+Only visible if  `rental~^(.*tandem_bicycle.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 

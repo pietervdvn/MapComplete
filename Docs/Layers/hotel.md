@@ -125,7 +125,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -145,7 +145,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -165,7 +165,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -224,7 +224,7 @@ The question is  Is there a fee for internet access?
   - Internet access is free at this place, for customers only  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>`
 
 
-Only visible if  `internet_access!=no&internet_access~^..*$`  is shown
+Only visible if  `internet_access!=no&internet_access~.+`  is shown
 
 
 

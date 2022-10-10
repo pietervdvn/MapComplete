@@ -33,7 +33,7 @@
     },
     {
       "key": "height",
-      "description": "Layer 'Tree' shows height~^^[0-9.]+$$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
+      "description": "Layer 'Tree' shows height~^(^[0-9.]+$)$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
       "key": "species:wikidata",
@@ -160,7 +160,7 @@
     },
     {
       "key": "heritage",
-      "description": "Layer 'Tree' shows heritage~^..*$ with a fixed text, namely 'Registered as heritage by a different organisation' (in the MapComplete.osm.be theme 'Trees')"
+      "description": "Layer 'Tree' shows heritage~.+ with a fixed text, namely 'Registered as heritage by a different organisation' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
       "key": "ref:OnroerendErfgoed",

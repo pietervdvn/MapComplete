@@ -428,7 +428,7 @@
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Bicycle infrastructure')"
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Bicycle infrastructure')"
     },
     {
       "key": "cycleway:traffic_sign",
@@ -452,7 +452,7 @@
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Bicycle infrastructure')"
+      "description": "Layer 'Cycleways and roads' shows traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Bicycle infrastructure')"
     },
     {
       "key": "traffic_sign",

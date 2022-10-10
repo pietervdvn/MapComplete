@@ -41,10 +41,10 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental' target='_blank'>bicycle_rental</a>|bicycle_rental~^..*$|<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>|rental~^.*bicycle.*$
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental' target='_blank'>bicycle_rental</a>|bicycle_rental~.+|<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>|rental~^(.*bicycle.*)$
 
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_rental%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Arental%22%3D%22yes%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22bicycle_rental%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22rental%22~%22%5E.*bicycle.*%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_rental%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Arental%22%3D%22yes%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22bicycle_rental%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22rental%22~%22%5E(.*bicycle.*)%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -125,7 +125,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -145,7 +145,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -165,7 +165,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -183,7 +183,7 @@ This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-Only visible if  `shop~^..*$|opening_hours~^..*$`  is shown
+Only visible if  `shop~.+|opening_hours~.+`  is shown
 
 
 
@@ -203,7 +203,7 @@ The question is  Which methods of payment are accepted here?
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
 
-Only visible if  `shop~^..*$`  is shown
+Only visible if  `shop~.+`  is shown
 
 
 
@@ -269,7 +269,7 @@ This is rendered with  {capacity:city_bike} city bikes can be rented here
 
 
 
-Only visible if  `rental~^.*city_bike.*$`  is shown
+Only visible if  `rental~^(.*city_bike.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -287,7 +287,7 @@ This is rendered with  {capacity:ebike} electrical bikes can be rented here
 
 
 
-Only visible if  `rental~^.*ebike.*$`  is shown
+Only visible if  `rental~^(.*ebike.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -305,7 +305,7 @@ This is rendered with  {capacity:kid_bike} bikes for children can be rented here
 
 
 
-Only visible if  `rental~^.*kid_bike.*$`  is shown
+Only visible if  `rental~^(.*kid_bike.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -323,7 +323,7 @@ This is rendered with  {capacity:bmx} BMX bikes can be rented here
 
 
 
-Only visible if  `rental~^.*bmx.*$`  is shown
+Only visible if  `rental~^(.*bmx.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -341,7 +341,7 @@ This is rendered with  {capacity:mtb} mountainbike can be rented here
 
 
 
-Only visible if  `rental~^.*mtb.*$`  is shown
+Only visible if  `rental~^(.*mtb.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -359,7 +359,7 @@ This is rendered with  {capacity:bicycle_pannier} bicycle panniers can be rented
 
 
 
-Only visible if  `rental~^.*bicycle_pannier.*$`  is shown
+Only visible if  `rental~^(.*bicycle_pannier.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -377,7 +377,7 @@ This is rendered with  {capacity:tandem_bicycle} tandem can be rented here
 
 
 
-Only visible if  `rental~^.*tandem_bicycle.*$`  is shown
+Only visible if  `rental~^(.*tandem_bicycle.*)$`  is shown
 
 This tagrendering has labels  `bicycle_rental` 
 

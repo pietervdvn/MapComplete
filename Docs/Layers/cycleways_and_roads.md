@@ -307,7 +307,7 @@ The question is  What traffic sign does this cycleway have?
 
 
   - Compulsory cycleway  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>`
-  - Compulsory cycleway (with supplementary sign)<br>  corresponds with  `cycleway:traffic_sign~^BE:D7;.*$`
+  - Compulsory cycleway (with supplementary sign)<br>  corresponds with  `cycleway:traffic_sign~^(BE:D7;.*)$`
   - This option cannot be chosen as answer
   - Segregated foot/cycleway  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>`
   - Unsegregated foot/cycleway  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign' target='_blank'>cycleway:traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>`
@@ -329,7 +329,7 @@ The question is  What traffic sign does this cycleway have?
 
 
   - Compulsory cycleway  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D7' target='_blank'>BE:D7</a>`
-  - Compulsory cycleway (with supplementary sign)<br>  corresponds with  `traffic_sign~^BE:D7;.*$`
+  - Compulsory cycleway (with supplementary sign)<br>  corresponds with  `traffic_sign~^(BE:D7;.*)$`
   - This option cannot be chosen as answer
   - Segregated foot/cycleway  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D9' target='_blank'>BE:D9</a>`
   - Unsegregated foot/cycleway  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DBE:D10' target='_blank'>BE:D10</a>`
@@ -362,7 +362,7 @@ The question is  Does the traffic sign D7 (<img src='./assets/layers/cycleways_a
   - No supplementary traffic sign present  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway:traffic_sign:supplementary' target='_blank'>cycleway:traffic_sign:supplementary</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway:traffic_sign:supplementary%3Dnone' target='_blank'>none</a>`
 
 
-Only visible if  `cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^BE:D7;.*$`  is shown
+Only visible if  `cycleway:traffic_sign=BE:D7|cycleway:traffic_sign~^(BE:D7;.*)$`  is shown
 
 
 

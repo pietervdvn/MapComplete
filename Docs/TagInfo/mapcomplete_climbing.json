@@ -38,7 +38,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Climbing club' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing club' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "email",
@@ -46,7 +46,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Climbing club' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing club' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "phone",
@@ -54,7 +54,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Climbing club' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing club' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "opening_hours",
@@ -125,7 +125,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Climbing gyms' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing gyms' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "phone",
@@ -133,7 +133,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Climbing gyms' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing gyms' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "email",
@@ -141,7 +141,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Climbing gyms' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing gyms' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "charge",
@@ -195,7 +195,7 @@
     },
     {
       "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing gyms' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "climbing:sport",
@@ -209,7 +209,7 @@
     },
     {
       "key": "climbing:sport",
-      "description": "Layer 'Climbing gyms' shows climbing:sport~^..*$ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing gyms' shows climbing:sport~.+ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "climbing:bolts:max",
@@ -227,7 +227,7 @@
     },
     {
       "key": "climbing:speed",
-      "description": "Layer 'Climbing gyms' shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing gyms' shows climbing:speed~.+ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "access",
@@ -442,7 +442,7 @@
     },
     {
       "key": "climbing:boulder",
-      "description": "Layer 'Climbing opportunities' shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
       "key": "access",
