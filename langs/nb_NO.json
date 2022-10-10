@@ -39,11 +39,11 @@
     },
     "general": {
         "about": "Rediger og legg til OpenStreetMap for et gitt tema",
-        "aboutMapcomplete": "<h3>Om MapComplete</h3><p>Bruk det til å legge til OpenStreetMap-info i <b>ett tema. </b>Besvar spørsmål og få endringene vist i løpet av minutter. I de fleste temaene kan du legge inn bilder eller legge igjen en vurdering. <b>Temavedlikeholderen</b> definerer elementer, spørsmål og språk for det.</p><h3>Finn ut mer</h3><p>MapComplete tilbyr alltid <b>neste steg</b> for å lære mer om OpenStreetMap.</p><ul><li>Når bygd inn på en nettside lenker iframe-elementet til en fullskjermsversjon av MapComplete.</li><li>Fullskjermsversjonen tilbyr info om OpenStreetMap.</li><li>Visning fungerer uten innlogging, men redigering krever en OSM-konto.</li><li>Hvis du ikke er innlogget blir du spurt om å gjøre det.</li><li>Når du har besvart ett spørsmål, kan du legge til nye funksjoner på kartet.</li><li>Etter en stund vil OSM-etiketter bli vist, som i sin tur lenker til wiki-en.</li></ul><p></p><br><p>Har du oppdaget <b>et problem</b>? Har du en <b>funksjonsforespørsel</b>? Vil du bistå <b>oversettelsen</b>? Gå til <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">kildekoden</a> eller <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">problemsporeren.</a> </p><p>Vil du se <b>din framdrift</b>? Følg redigeringsantallet på <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>Om</h3><p>Bruk MapComplete til å legge til OpenStreetMap-info i <b>ett tema. </b>Besvar spørsmål og få endringene vist i løpet av minutter. I de fleste temaene kan du legge inn bilder eller legge igjen en vurdering. <b>Temavedlikeholderen</b> definerer elementer, spørsmål og språk for det.</p><h3>Finn ut mer</h3><p>MapComplete tilbyr alltid <b>neste steg</b> for å lære mer om OpenStreetMap.</p><ul><li>Når bygd inn på en nettside lenker iframe-elementet til en fullskjermsversjon av MapComplete.</li><li>Fullskjermsversjonen tilbyr info om OpenStreetMap.</li><li>Visning fungerer uten innlogging, men redigering krever en OSM-konto.</li><li>Hvis du ikke er innlogget blir du spurt om å gjøre det.</li><li>Når du har besvart ett spørsmål, kan du legge til nye funksjoner på kartet.</li><li>Etter en stund vil OSM-etiketter bli vist, som i sin tur lenker til wiki-en.</li></ul><p></p><br/><p>Har du oppdaget <b>et problem</b>? Har du en <b>funksjonsforespørsel</b>? Vil du bistå <b>oversettelsen</b>? Gå til <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>kildekoden</a> eller <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>problemsporeren.</a> </p><p>Vil du se <b>din framdrift</b>? Følg redigeringsantallet på <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
             "addNew": "Legg til {category} her",
             "addNewMapLabel": "Legg til nytt element",
-            "confirmButton": "Legg til en {category} her.<br><div class=\"alert\">Din endring er synlig for alle</div>",
+            "confirmButton": "Legg til en {category} her.<br/><div class='alert'>Din endring er synlig for alle</div>",
             "confirmIntro": "<h3>Legg til {title} her?</h3>Punktet du oppretter her vil være <b>synlig for alle</b>. Kun legg til ting på kartet hvis de virkelig finnes. Mange programmer bruker denne dataen.",
             "disableFilters": "Skru av alle filtre",
             "disableFiltersExplanation": "Det kan hende noen funksjoner er skjult av et filter",
@@ -57,7 +57,7 @@
                 "zoomInMore": "Forstørr for å importere denne funksjonen"
             },
             "importTags": "Elementet vil motta {tags}",
-            "intro": "Du klikket et sted der ingen data er kjent enda.<br>",
+            "intro": "Du klikket et sted der ingen data er kjent enda.<br/>",
             "layerNotEnabled": "Laget {layer} er ikke påslått. Skru på dette laget for å legge til et punkt.",
             "openLayerControl": "Åpne lagkontrollboksen",
             "pleaseLogin": "Logg inn for å legge til et nytt punkt",
@@ -134,7 +134,6 @@
             "title": "Velg lag",
             "zoomInToSeeThisLayer": "Forstørr kartet hvis du vil se dette kartet"
         },
-        "levelSelection": {},
         "loading": "Laster inn …",
         "loadingTheme": "Laster inn {theme}…",
         "loginFailed": "Kunne ikke logge inn på OpenStreetMap",
@@ -145,7 +144,7 @@
         "morescreen": {
             "createYourOwnTheme": "Opprett ditt eget MapComplete-tema fra grunnen av",
             "hiddenExplanation": "Disse temaene er kun tilgjengelige hvis du kjenner lenken. Du har oppdaget {hidden_discovered} av {total_hidden} hidden tema.",
-            "intro": "<h3>Flere temakart?</h3>Liker du å samle inn geodata? <br>Det er flere tilgjengelige temaer.",
+            "intro": "<h3>Flere temakart?</h3>Liker du å samle inn geodata? <br/>Det er flere tilgjengelige temaer.",
             "previouslyHiddenTitle": "Tidligere besøkte skjulte tema",
             "requestATheme": "Hvis du ønsker et brukerdefinert tema kan du forespørre det i feilsporeren",
             "streetcomplete": "Et annet lignende program er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
@@ -184,7 +183,7 @@
         "questions": {
             "emailIs": "E-postadressen til {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Hva er e-postadressen til {category}?",
-            "phoneNumberIs": "Telefonnummeret til denne {category} er <a target=\"_blank\">{phone}</a>",
+            "phoneNumberIs": "Telefonnummeret til denne {category} er <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "Hva er telefonnummeret til {category}?",
             "websiteIs": "Nettside: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Hva er nettsiden til {category}?"
@@ -207,7 +206,7 @@
             "downloadCustomThemeHelp": "En dreven bidragsyter kan bruke denne filen for å forbedre temaet ditt",
             "editThemeDescription": "Legg til eller endre spørsmål for dette karttemaet",
             "editThisTheme": "Rediger dette temaet",
-            "embedIntro": "<h3>Bygg inn på nettsiden din</h3>Legg til dette kartet på nettsiden din. <br>Du oppfordres til å gjøre dette, og trenger ikke å spørre om tillatelse. <br> Det er fritt, og vil alltid være det. Desto flere som bruker dette, desto mer verdifullt blir det.",
+            "embedIntro": "<h3>Bygg inn på nettsiden din</h3>Legg til dette kartet på nettsiden din. <br/>Du oppfordres til å gjøre dette, og trenger ikke å spørre om tillatelse. <br/> Det er fritt, og vil alltid være det. Desto flere som bruker dette, desto mer verdifullt blir det.",
             "fsGeolocation": "Skru på «Geolokaliser meg»-knappen (kun for mobil)",
             "fsIncludeCurrentBackgroundMap": "Inkluder nåværende bakgrunnsvalg <b>{name}</b>",
             "fsIncludeCurrentLayers": "Inkluder nåværende lagvalg",
@@ -242,7 +241,6 @@
             "wednesday": "Onsdag"
         },
         "welcomeBack": "Du er innlogget. Velkommen tilbake.",
-        "welcomeExplanation": {},
         "wikipedia": {
             "createNewWikidata": "Opprett et nytt Wikipedia-element",
             "doSearch": "Søk ovenfor for å se resultater",
@@ -265,7 +263,6 @@
         "doDelete": "Fjern bilde",
         "dontDelete": "Avbryt",
         "isDeleted": "Slettet",
-        "nearbyPictures": {},
         "pleaseLogin": "Logg inn for å legge til et bilde",
         "respectPrivacy": "Ikke ta bilder av folk eller bilskilt. Ikke last opp Google Maps, Google Streetview eller andre opphavsrettsbeskyttede kilder.",
         "toBig": "Bildet ditt på {actual_size} er for stort. Det kan maksimalt være {max_size}.",
@@ -361,37 +358,12 @@
     "importInspector": {
         "title": "Inspiser og håndter importnotater"
     },
-    "importLayer": {},
     "index": {
         "featuredThemeTitle": "Framhevet denne uken",
         "intro": "MapComplete er en OpenStreetMap-viser og redigerer, som viser deg info om funksjoner for et gitt tema og tillater oppdatering av det.",
         "logIn": "Logg inn for å vise tema du har besøkt tidligere",
         "pickTheme": "Begynn ved å velge et av temaene nedenfor.",
         "title": "Velkommen til MapComplete"
-    },
-    "matrixbot": {
-        "commands": {
-            "dm": {},
-            "documentation": {
-                "file": {},
-                "inputElement": {},
-                "layer": {},
-                "theme": {},
-                "url_parameter": {},
-                "visualisation": {}
-            },
-            "dream": {},
-            "help": {},
-            "info": {},
-            "language": {},
-            "role": {},
-            "scheme": {},
-            "search": {},
-            "shutdown": {},
-            "tags": {},
-            "welcome": {},
-            "wiki": {}
-        }
     },
     "move": {
         "cancel": "Avbryt flytting",
@@ -438,8 +410,6 @@
     },
     "professional": {
         "aboutMc": {
-            "internalUse": {},
-            "layers": {},
             "survey": {
                 "title": "Undersøkelsesmuligheter"
             },
@@ -450,7 +420,6 @@
                 "li3": "og mye, mye mer …",
                 "title": "Hva er OpenStreetMap?"
             },
-            "benefits": {},
             "license": {
                 "title": "Lisensen"
             },
@@ -461,13 +430,11 @@
         },
         "drawbacks": {
             "licenseNuances": {
-                "usecaseGatheringOpenData": {},
                 "usecaseMapDifferentSources": {
                     "title": "Oppretter et kart fra forskjellige kilder"
                 }
             },
-            "title": "Noen ulemper å ha i minne",
-            "unsuitedData": {}
+            "title": "Noen ulemper å ha i minne"
         },
         "indexPage": {
             "button": "Oppdag tjenestetilbudet vårt",
@@ -483,7 +450,7 @@
     "reviews": {
         "affiliated_reviewer_warning": "(Tilknyttet vurdering)",
         "attribution": "Vurderinger er muliggjort av <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> og er tilgjengelige som <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
-        "i_am_affiliated": "<span>Jeg har en tilknytning til dette objektet</span><br><span class=\"subtle\">Sjekk om du er eier, skaper, ansatt, …</span>",
+        "i_am_affiliated": "<span>Jeg har en tilknytning til dette objektet</span><br/><span class='subtle'>Sjekk om du er eier, skaper, ansatt, …</span>",
         "name_required": "Et navn kreves for å vise og opprette vurderinger",
         "no_rating": "Ingen vurdering gitt",
         "no_reviews_yet": "Ingen vurderinger enda. Vær først til å skrive en og hjelp åpen data og bevegelsen.",
@@ -513,14 +480,12 @@
         "notImmediate": "Oversettelser oppdateres ikke direkte. Dette tar typisk et par dager."
     },
     "validation": {
-        "color": {},
         "date": {
             "description": "En dato, som starter med året"
         },
         "direction": {
             "description": "En retning"
         },
-        "distance": {},
         "email": {
             "feedback": "Dette er ikke en gyldig e-postadresse"
         },
