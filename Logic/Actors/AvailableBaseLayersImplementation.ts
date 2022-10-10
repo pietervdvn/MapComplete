@@ -136,8 +136,6 @@ export default class AvailableBaseLayersImplementation implements AvailableBaseL
             l("Stamen.TonerLite", "Toner Lite (by Stamen)"),
             l("Stamen.TonerBackground", "Toner Background - no labels (by Stamen)"),
             l("Stamen.Watercolor", "Watercolor (by Stamen)"),
-            l("Stadia.OSMBright", "Osm Bright (by Stadia)"),
-            l("Stadia.AlidadeSmoothDark", "Alidade Smooth Dark (by Stadia)"),
             l("CartoDB.Positron", "Positron (by CartoDB)"),
             l("CartoDB.PositronNoLabels", "Positron  - no labels (by CartoDB)"),
             l("CartoDB.Voyager", "Voyager (by CartoDB)"),

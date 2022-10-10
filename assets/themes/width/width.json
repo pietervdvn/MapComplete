@@ -32,7 +32,7 @@
       51.190748429411705
     ]
   ],
-  "defaultBackgroundId": "Stadia.AlidadeSmoothDark",
+  "defaultBackgroundId": "CartoDB.DarkMatterNoLabels",
   "layers": [
     {
       "id": "street_with_width",
