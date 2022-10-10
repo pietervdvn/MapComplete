@@ -26,7 +26,7 @@ export const mochaHooks = {
                 JSON.stringify(url),
                 ", \n",
                 "       ",
-                JSON.stringify(data),
+             //   JSON.stringify(data),
                 "\n    )\n------------------\n\n"
             )
             throw new Error(

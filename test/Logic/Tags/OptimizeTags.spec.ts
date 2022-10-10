@@ -159,7 +159,7 @@ describe("Tag optimalization", () => {
                 "leisure=picnic_table",
                 "planned:amenity=charging_station",
                 "tower:type=observation",
-                "(amenity=bicycle_rental|service:bicycle:rental=yes|bicycle_rental~^..*$|rental~^.*bicycle.*$) &bicycle_rental!=docking_station",
+                "(amenity=bicycle_rental|service:bicycle:rental=yes|bicycle_rental~.+|rental~^(.*bicycle.*)$) &bicycle_rental!=docking_station",
                 "leisure=playground&playground!=forest",
             ]
 
@@ -237,8 +237,8 @@ describe("Tag optimalization", () => {
 
         /*
          > When the first OR is written out, this becomes
-         club=climbing 
-         OR 
+         club=climbing
+         OR
          (sport=climbing&(office~* | club~*))
          OR
          (sport=climbing & leisure=sports_centre)
@@ -248,9 +248,9 @@ describe("Tag optimalization", () => {
 
         /*
          > We can join the 'sport=climbing' in the last 3 phrases
-         club=climbing 
-         OR 
-         (sport=climbing AND 
+         club=climbing
+         OR
+         (sport=climbing AND
              (office~* | club~*))
              OR
              (leisure=sports_centre)
