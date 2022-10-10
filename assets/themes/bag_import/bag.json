@@ -201,7 +201,7 @@
               "if": {
                 "or": [
                   "_bag_obj:building=",
-                  "_bag_obj:ref:bag"
+                  "_bag_obj:ref:bag="
                 ]
               },
               "then": {
@@ -213,7 +213,12 @@
               "then": "{conflate_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Replace the geometry in OpenStreetMap, , _osm_obj:id)}"
             },
             {
-              "if": "_bag_obj:in_construction=true",
+              "if": {
+                "and":[
+                  "_bag_obj:building~*",
+                  "_bag_obj:ref:bag~*",
+                  "_bag_obj:in_construction=true"]
+              },
               "then": "{import_way_button(osm:buildings, building=$_bag_obj:building; construction=$_bag_obj:construction; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}"
             }
           ]
