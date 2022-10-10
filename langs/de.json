@@ -886,5 +886,18 @@
         "wikidata": {
             "description": "Eine Wikidata-Kennung"
         }
+    },
+    "flyer": {
+        "fakeui": {
+            "add_images": "Bilder mit ein paar Klicks hinzufügen",
+            "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
+            "edit": "Falsche oder überholte Informationen? Die Schaltfläche \"Bearbeiten\" ist direkt zugänglich"
+        },
+        "description": "Ein Flyer im A4-Querformat zur Werbung von MapComplete",
+        "editing": {
+            "intro": "Der Benutzer wird von einer Karte mit Objekten begrüßt. Wenn er eines auswählt, werden Informationen über das Objekt angezeigt.",
+            "title": "Wie sieht die Benutzeroberfläche aus?"
+        },
+        "examples": "Es gibt viele thematische Karten, von denen hier einige abgedruckt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,... Entdecken Sie sie alle auf mapcomplete.osm.be"
     }
 }

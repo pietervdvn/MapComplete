@@ -143,6 +143,35 @@
                 }
             },
             "question": "Hva er respektivt element på Wikipedia?"
+        },
+        "internet": {
+            "mappings": {
+                "2": {
+                    "then": "Dette stedet tilbyr tilgang til Internett"
+                },
+                "1": {
+                    "then": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett"
+                },
+                "3": {
+                    "then": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin"
+                },
+                "4": {
+                    "then": "Dette stedet tilbyr trådbunden tilgang til Internett"
+                }
+            },
+            "question": "Tilbyr dette stedet tilgang til Internett?"
+        },
+        "internet-ssid": {
+            "render": "Nettverksnavnet er <b>{internet_access:ssid}</b>",
+            "freeform": {
+                "placeholder": "Skriv inn nettverksnavnet"
+            }
+        },
+        "multilevels": {
+            "override": {
+                "question": "Hvilke etasjer går heisen til?",
+                "render": "Heisen går til etasje {level}"
+            }
         }
     }
 }
