@@ -127,6 +127,10 @@
                 "then": "./assets/themes/artwork/artwork.svg"
               },
               {
+                "if": "theme=bag",
+                "then": "./assets/themes/bag_import/logo.svg"
+              },
+              {
                 "if": "theme=benches",
                 "then": "./assets/themes/benches/bench_poi.svg"
               },

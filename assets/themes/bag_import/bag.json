@@ -1,0 +1,317 @@
+{
+  "id": "bag",
+  "title": {
+    "nl": "BAG import helper",
+    "en": "BAG import helper"
+  },
+  "shortDescription": {
+    "nl": "BAG import helper tool",
+    "en": "BAG import helper tool"
+  },
+  "description": {
+    "nl": "Dit thema helpt het importeren van BAG data",
+    "en": "This theme helps with importing data from BAG"
+  },
+  "credits": "Wouter van der Wal",
+  "icon": "./assets/themes/bag_import/logo.svg",
+  "startLat": 53.1726,
+  "startLon": 7.04545,
+  "startZoom": 9,
+  "layers": [
+    {
+      "id": "osm:buildings",
+      "name": "OSM Buildings",
+      "title": "OSM Building",
+      "description": "Layer showing buildings that are in OpenStreetMap",
+      "source": {
+        "osmTags": "building~*",
+        "maxCacheAge": 0
+      },
+      "minzoom": 19,
+      "calculatedTags": [
+        "_surface:strict:=feat.get('_surface')"
+      ],
+      "mapRendering": [
+        {
+          "width": {
+            "render": "2",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "5"
+              }
+            ]
+          },
+          "color": {
+            "render": "#00c",
+            "mappings": [
+              {
+                "if": "fixme~*",
+                "then": "#ff00ff"
+              },
+              {
+                "if": "building=house",
+                "then": "#a00"
+              },
+              {
+                "if": "building=shed",
+                "then": "#563e02"
+              },
+              {
+                "if": {
+                  "or": [
+                    "building=garage",
+                    "building=garages"
+                  ]
+                },
+                "then": "#f9bfbb"
+              },
+              {
+                "if": "building=yes",
+                "then": "#0774f2"
+              }
+            ]
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Reference",
+          "render": {
+            "en": "The reference in BAG is <b>{ref:bag}</b>"
+          },
+          "mappings": [
+            {
+              "if": "ref:bag=",
+              "then": {
+                "en": "This building has no reference in the BAG"
+              }
+            }
+          ]
+        },
+        {
+          "id": "Building type",
+          "freeform": {
+            "key": "building",
+            "type": "string",
+            "addExtraTags": [
+              "construction="
+            ]
+          },
+          "render": "This building is a <b>{building}</b>",
+          "question": "What kind of building is this?"
+        }
+      ]
+    },
+    {
+      "id": "osm:adresses",
+      "name": "OSM Adresses",
+      "title": "OSM Adress",
+      "description": "Layer showing adresses that are in OpenStreetMap",
+      "source": {
+        "osmTags": {
+          "and": [
+            "source=BAG",
+            "addr:city~*",
+            "addr:housenumber~*",
+            "addr:postcode~*",
+            "addr:street~*"
+          ]
+        },
+        "maxCacheAge": 0
+      },
+      "minzoom": 19,
+      "mapRendering": [
+        {
+          "label": {
+            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "width": {
+            "render": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "bag:pand",
+      "name": "BAG Buildings",
+      "title": "BAG Building",
+      "description": {
+        "en": "Buildings from BAG register"
+      },
+      "source": {
+        "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
+        "geoJsonZoomLevel": 18,
+        "osmTags": "identificatie~*",
+        "maxCacheAge": 0
+      },
+      "minzoom": 19,
+      "calculatedTags": [
+        "_overlaps_with_buildings=feat.overlapWith('osm:buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
+        "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
+        "_overlaps_with_properties=feat.get('_overlaps_with')?.feat?.properties",
+        "_overlap_percentage=Math.round(100 * (feat.get('_overlaps_with')?.overlap / feat.get('_overlaps_with_properties')['_surface:strict']))",
+        "_reverse_overlap_percentage=Math.round(100 * (feat.get('_overlaps_with')?.overlap / feat.get('_surface')))",
+        "_bag_obj:in_construction=feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')",
+        "_bag_obj:construction=(feat.properties.gebruiksdoel == 'woonfunctie') ? ((Number(feat.properties.aantal_verblijfsobjecten) == 1) ? 'house' : 'apartments') : 'yes'",
+        "_bag_obj:building=(feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')) ? 'construction' : feat.properties['_bag_obj:construction']",
+        "_bag_obj:ref:bag=Number(feat.properties.identificatie)",
+        "_bag_obj:source:date=new Date().toISOString().split('T')[0]",
+        "_bag_obj:start_date=feat.properties.bouwjaar",
+        "_osm_obj:id=feat.get('_overlaps_with_properties')?.id",
+        "_osm_obj:building=feat.get('_overlaps_with_properties')?.building",
+        "_imported_osm_object_found:=Number(feat.properties.identificatie)==Number(feat.get('_overlaps_with_properties')['ref:bag'])"
+      ],
+      "mapRendering": [
+        {
+          "width": {
+            "render": 5,
+            "mappings": [
+              {
+                "if": "_imported_osm_object_found=true",
+                "then": "1"
+              }
+            ]
+          },
+          "color": {
+            "render": "#00a",
+            "mappings": [
+              {
+                "if": "_imported_osm_object_found=true",
+                "then": "#0f0"
+              }
+            ]
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Import button",
+          "render": "{import_way_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}",
+          "mappings": [
+            {
+              "if": "_overlaps_with!=",
+              "then": "{conflate_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Replace the geometry in OpenStreetMap, , _osm_obj:id)}"
+            },
+            {
+              "if": "_bag_obj:in_construction=true",
+              "then": "{import_way_button(osm:buildings, building=$_bag_obj:building; construction=$_bag_obj:construction; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}"
+            }
+          ]
+        },
+        {
+          "id": "Reference",
+          "render": {
+            "en": "The reference in BAG is <b>{_bag_obj:ref:bag}</b>"
+          }
+        },
+        {
+          "id": "Build year",
+          "render": {
+            "en": "This building was built in <b>{_bag_obj:start_date}</b>"
+          },
+          "mappings": [
+            {
+              "if": "_bag_obj:in_construction=true",
+              "then": {
+                "en": "The building was started in <b>{_bag_obj:start_date}</b>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "Building type",
+          "render": {
+            "en": "The building type is a <b>{_bag_obj:building}</b>"
+          },
+          "mappings": [
+            {
+              "if": "_bag_obj:in_construction=true",
+              "then": {
+                "en": "The building type will be a <b>{_bag_obj:construction}</b>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "Overlapping building",
+          "render": "<div>The overlapping <a href=https://osm.org/{_osm_obj:id} target=_blank>osm:buildings</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the BAG building.<br>The BAG-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<div><h3>BAG geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}</div></div>",
+          "condition": "_overlaps_with!="
+        },
+        {
+          "id": "Building status",
+          "render": "The current building status is <b>{status}</b>"
+        },
+        {
+          "id": "Buidling function",
+          "render": "The current function of the building is <b>{gebruiksdoel}</b>"
+        }
+      ]
+    },
+    {
+      "id": "bag:verblijfsobject",
+      "name": "BAG Addresses",
+      "title": "BAG Address",
+      "description": "Address information from the BAG register",
+      "source": {
+        "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Averblijfsobject&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
+        "geoJsonZoomLevel": 19,
+        "osmTags": "identificatie~*",
+        "maxCacheAge": 0
+      },
+      "minzoom": 19,
+      "calculatedTags": [
+        "_closed_osm_addr:=feat.closest('osm:adresses').properties",
+        "_bag_obj:addr:housenumber=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`",
+        "_bag_obj:ref:bag=Number(feat.properties.identificatie)",
+        "_bag_obj:source:date=new Date().toISOString().split('T')[0]",
+        "_osm_obj:addr:city:=feat.get('_closed_osm_addr')['addr:city']",
+        "_osm_obj:addr:housenumber:=feat.get('_closed_osm_addr')['addr:housenumber']",
+        "_osm_obj:addr:postcode:=feat.get('_closed_osm_addr')['addr:postcode']",
+        "_osm_obj:addr:street:=feat.get('_closed_osm_addr')['addr:street']",
+        "_imported_osm_object_found:=(feat.properties.woonplaats==feat.get('_closed_osm_addr')['addr:city'])&&(feat.get('_bag_obj:addr:housenumber')==feat.get('_closed_osm_addr')['addr:housenumber'])&&(feat.properties.postcode==feat.get('_closed_osm_addr')['addr:postcode'])&&(feat.properties.openbare_ruimte==feat.get('_closed_osm_addr')['addr:street'])"
+      ],
+      "mapRendering": [
+        {
+          "label": {
+            "render": "<div style='color: black' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>",
+            "mappings": [
+              {
+                "if": "_imported_osm_object_found=true",
+                "then": "<div style='color: #107c10' class='rounded-full p-1 font-bold relative'>{_bag_obj:addr:housenumber}</div>"
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "width": {
+            "render": 1
+          }
+        }
+      ],
+      "tagRenderings": [
+        {
+          "id": "Import button",
+          "render": "{import_button(osm:adresses, addr:city=$woonplaats; addr:housenumber=$_bag_obj:addr:housenumber; addr:postcode=$postcode; addr:street=$openbare_ruimte; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date, Upload this adress to OpenStreetMap)}",
+          "condition": "_imported_osm_object_found=false"
+        },
+        {
+          "id": "Address",
+          "render": "{openbare_ruimte} {_bag_obj:addr:housenumber}, {woonplaats} {postcode}"
+        }
+      ]
+    }
+  ],
+  "hideFromOverview": true
+}

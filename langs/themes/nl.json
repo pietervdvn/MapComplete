@@ -11,6 +11,11 @@
         "description": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
         "title": "Open kunstwerken-kaart"
     },
+    "bag": {
+        "description": "Dit thema helpt het importeren van BAG data",
+        "shortDescription": "BAG import helper tool",
+        "title": "BAG import helper"
+    },
     "benches": {
         "description": "Deze kaart toont alle zitbanken die zijn opgenomen in OpenStreetMap: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account kan je informatie verbeteren en nieuwe zitbanken toevoegen.",
         "shortDescription": "Een kaart van zitbanken",
