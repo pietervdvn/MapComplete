@@ -17,18 +17,17 @@
   "startLat": 53.1726,
   "startLon": 7.04545,
   "startZoom": 9,
-  "overrideAll": {
-    "minzoom": 19
-  },
   "layers": [
     {
       "id": "osm:buildings",
       "name": "OSM Buildings",
       "title": "OSM Building",
+      "description": "Layer showing buildings that are in OpenStreetMap",
       "source": {
         "osmTags": "building~*",
         "maxCacheAge": 0
       },
+      "minzoom": 19,
       "calculatedTags": [
         "_surface:strict:=feat.get('_surface')"
       ],
@@ -108,6 +107,7 @@
       "id": "osm:adresses",
       "name": "OSM Adresses",
       "title": "OSM Adress",
+      "description": "Layer showing adresses that are in OpenStreetMap",
       "source": {
         "osmTags": {
           "and": [
@@ -120,6 +120,7 @@
         },
         "maxCacheAge": 0
       },
+      "minzoom": 19,
       "mapRendering": [
         {
           "label": {
@@ -151,6 +152,7 @@
         "osmTags": "identificatie~*",
         "maxCacheAge": 0
       },
+      "minzoom": 19,
       "calculatedTags": [
         "_overlaps_with_buildings=feat.overlapWith('osm:buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
         "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
@@ -213,7 +215,7 @@
         {
           "id": "Build year",
           "render": {
-            "en": "This building was build in <b>{_bag_obj:start_date}</b>"
+            "en": "This building was built in <b>{_bag_obj:start_date}</b>"
           },
           "mappings": [
             {
@@ -257,13 +259,14 @@
       "id": "bag:verblijfsobject",
       "name": "BAG Addresses",
       "title": "BAG Address",
-      "description": "Adress information from the BAG register",
+      "description": "Address information from the BAG register",
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Averblijfsobject&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
         "geoJsonZoomLevel": 19,
         "osmTags": "identificatie~*",
         "maxCacheAge": 0
       },
+      "minzoom": 19,
       "calculatedTags": [
         "_closed_osm_addr:=feat.closest('osm:adresses').properties",
         "_bag_obj:addr:housenumber=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`",
@@ -304,7 +307,7 @@
           "condition": "_imported_osm_object_found=false"
         },
         {
-          "id": "Adress",
+          "id": "Address",
           "render": "{openbare_ruimte} {_bag_obj:addr:housenumber}, {woonplaats} {postcode}"
         }
       ]
