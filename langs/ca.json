@@ -132,6 +132,7 @@
             "title": "Seleccionar capes",
             "zoomInToSeeThisLayer": "Amplia per veure aquesta capa"
         },
+        "levelSelection": {},
         "loading": "Carregant...",
         "loadingTheme": "Carregant {theme}...",
         "loginFailed": "Ha fallat l'entrada a OpenStreetMap",
@@ -282,6 +283,13 @@
         "willBePublished": "La teva foto serà publicada: "
     },
     "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
         "introduction": {
             "description": "L'ajudant d'importació converteix un conjunt de dades extern en notes. El conjunt de dades extern ha de coincidir amb una de les capes MapComplete existents. Per a cada article que introdueixes a l'importador, es crearà una nota única. Aquestes notes es mostraran juntament amb les característiques rellevants en aquests mapes per afegir-les fàcilment.",
             "importFormat": "Un text d'una nota ha de tenir el format següent per poder ser recollit: <br><div class=\"literal-code\">[Una petita introducció]<br>https://mapcomplete.osm.be /[themename].html?[paràmetres com ara lat i lon]#import<br>[totes les etiquetes de la funció] </div>"
@@ -300,6 +308,7 @@
             "selectLayer": "Amb quina capa coincideix aquesta importació?",
             "title": "Vista prèvia del mapa"
         },
+        "noteParts": {},
         "previewAttributes": {
             "allAttributesSame": "Totes les funcions a importar tenen aquesta etiqueta",
             "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar",
@@ -320,6 +329,7 @@
             "noFilesLoaded": "No s'ha carregat cap arxiu",
             "title": "Seleccionar arxiu"
         },
+        "selectTheme": {},
         "title": "Assistent d'importació"
     },
     "importInspector": {
@@ -341,6 +351,30 @@
         "logIn": "Entra per veure altres temes que has visitat anteriorment",
         "pickTheme": "Tria una petició de sota per començar.",
         "title": "Benvingut/da a MapComplete"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
     },
     "move": {
         "cancel": "Cancel·lar moviment",
@@ -557,6 +591,7 @@
         "direction": {
             "description": "Una orientació"
         },
+        "distance": {},
         "email": {
             "description": "Adreça de correu electrònic",
             "feedback": "Aquesta adreça de correu electrònic no és vàlida",

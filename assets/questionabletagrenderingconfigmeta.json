@@ -440,7 +440,7 @@
       "addExtraTags"
     ],
     "type": "array",
-    "description": "If chosen as answer, these tags will be applied as well onto the object.\nNot compatible with multiAnswer"
+    "description": "If chosen as answer, these tags will be applied as well onto the object.\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": \"not:crossing:marking=\"\n}\n```"
   },
   {
     "path": [
@@ -587,6 +587,12 @@
     ],
     "type": "array",
     "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away"
+  },
+  {
+    "path": [
+      "description"
+    ],
+    "description": "A human-readable text explaining what this tagRendering does"
   },
   {
     "path": [

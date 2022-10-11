@@ -80,7 +80,10 @@
     "phone",
     "email",
     "website",
-    "wheelchair-access"
+    "wheelchair-access",
+    "internet",
+    "internet-fee",
+    "internet-ssid"
   ],
   "allowMove": {
     "enableImproveAccuracy": true,

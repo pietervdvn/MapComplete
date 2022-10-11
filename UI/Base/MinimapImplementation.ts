@@ -1,67 +1,67 @@
-import {Utils} from "../../Utils";
-import BaseUIElement from "../BaseUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import Loc from "../../Models/Loc";
-import BaseLayer from "../../Models/BaseLayer";
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
-import * as L from "leaflet";
-import {Map} from "leaflet";
-import Minimap, {MinimapObj, MinimapOptions} from "./Minimap";
-import {BBox} from "../../Logic/BBox";
-import 'leaflet-polylineoffset'
-import {SimpleMapScreenshoter} from "leaflet-simple-map-screenshoter";
-import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch";
-import AvailableBaseLayersImplementation from "../../Logic/Actors/AvailableBaseLayersImplementation";
-import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
-import ShowDataLayerImplementation from "../ShowDataLayer/ShowDataLayerImplementation";
+import { Utils } from "../../Utils"
+import BaseUIElement from "../BaseUIElement"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import Loc from "../../Models/Loc"
+import BaseLayer from "../../Models/BaseLayer"
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
+import * as L from "leaflet"
+import { Map } from "leaflet"
+import Minimap, { MinimapObj, MinimapOptions } from "./Minimap"
+import { BBox } from "../../Logic/BBox"
+import "leaflet-polylineoffset"
+import { SimpleMapScreenshoter } from "leaflet-simple-map-screenshoter"
+import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
+import AvailableBaseLayersImplementation from "../../Logic/Actors/AvailableBaseLayersImplementation"
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
+import ShowDataLayerImplementation from "../ShowDataLayer/ShowDataLayerImplementation"
 
 export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
-    private static _nextId = 0;
+    private static _nextId = 0
     public readonly leafletMap: UIEventSource<Map>
-    public readonly location: UIEventSource<Loc>;
-    public readonly bounds: UIEventSource<BBox> | undefined;
-    private readonly _id: string;
-    private readonly _background: UIEventSource<BaseLayer>;
-    private _isInited = false;
-    private _allowMoving: boolean;
-    private readonly _leafletoptions: any;
+    public readonly location: UIEventSource<Loc>
+    public readonly bounds: UIEventSource<BBox> | undefined
+    private readonly _id: string
+    private readonly _background: UIEventSource<BaseLayer>
+    private _isInited = false
+    private _allowMoving: boolean
+    private readonly _leafletoptions: any
     private readonly _onFullyLoaded: (leaflet: L.Map) => void
-    private readonly _attribution: BaseUIElement | boolean;
-    private readonly _addLayerControl: boolean;
-    private readonly _options: MinimapOptions;
+    private readonly _attribution: BaseUIElement | boolean
+    private readonly _addLayerControl: boolean
+    private readonly _options: MinimapOptions
 
     private constructor(options?: MinimapOptions) {
         super()
         options = options ?? {}
-        this._id = "minimap" + MinimapImplementation._nextId;
+        this._id = "minimap" + MinimapImplementation._nextId
         MinimapImplementation._nextId++
         this.leafletMap = options.leafletMap ?? new UIEventSource<Map>(undefined)
-        this._background = options?.background ?? new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
-        this.location = options?.location ?? new UIEventSource<Loc>({lat: 0, lon: 0, zoom: 1})
-        this.bounds = options?.bounds;
-        this._allowMoving = options.allowMoving ?? true;
+        this._background =
+            options?.background ?? new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
+        this.location = options?.location ?? new UIEventSource<Loc>({ lat: 0, lon: 0, zoom: 1 })
+        this.bounds = options?.bounds
+        this._allowMoving = options.allowMoving ?? true
         this._leafletoptions = options.leafletOptions ?? {}
         this._onFullyLoaded = options.onFullyLoaded
         this._attribution = options.attribution
         this._addLayerControl = options.addLayerControl ?? false
         this._options = options
         this.SetClass("relative")
-
     }
 
     public static initialize() {
         AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
-        Minimap.createMiniMap = options => new MinimapImplementation(options)
-        ShowDataLayer.actualContstructor = options => new ShowDataLayerImplementation(options)
+        Minimap.createMiniMap = (options) => new MinimapImplementation(options)
+        ShowDataLayer.actualContstructor = (options) => new ShowDataLayerImplementation(options)
     }
 
     public installBounds(factor: number | BBox, showRange?: boolean) {
-        this.leafletMap.addCallbackD(leaflet => {
-            let bounds: { getEast(), getNorth(), getWest(), getSouth() };
+        this.leafletMap.addCallbackD((leaflet) => {
+            let bounds: { getEast(); getNorth(); getWest(); getSouth() }
             if (typeof factor === "number") {
                 const lbounds = leaflet.getBounds().pad(factor)
                 leaflet.setMaxBounds(lbounds)
-                bounds = lbounds;
+                bounds = lbounds
             } else {
                 // @ts-ignore
                 leaflet.setMaxBounds(factor.toLeaflet())
@@ -71,50 +71,37 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             if (showRange) {
                 const data = {
                     type: "FeatureCollection",
-                    features: [{
-                        "type": "Feature",
-                        "geometry": {
-                            "type": "LineString",
-                            "coordinates": [
-                                [
-                                    bounds.getEast(),
-                                    bounds.getNorth()
-                                ],
-                                [
-                                    bounds.getWest(),
-                                    bounds.getNorth()
-                                ],
-                                [
-                                    bounds.getWest(),
-                                    bounds.getSouth()
-                                ],
+                    features: [
+                        {
+                            type: "Feature",
+                            geometry: {
+                                type: "LineString",
+                                coordinates: [
+                                    [bounds.getEast(), bounds.getNorth()],
+                                    [bounds.getWest(), bounds.getNorth()],
+                                    [bounds.getWest(), bounds.getSouth()],
 
-                                [
-                                    bounds.getEast(),
-                                    bounds.getSouth()
+                                    [bounds.getEast(), bounds.getSouth()],
+                                    [bounds.getEast(), bounds.getNorth()],
                                 ],
-                                [
-                                    bounds.getEast(),
-                                    bounds.getNorth()
-                                ]
-                            ]
-                        }
-                    }]
+                            },
+                        },
+                    ],
                 }
                 // @ts-ignore
                 L.geoJSON(data, {
                     style: {
                         color: "#f44",
                         weight: 4,
-                        opacity: 0.7
-                    }
+                        opacity: 0.7,
+                    },
                 }).addTo(leaflet)
             }
         })
     }
 
     Destroy() {
-        super.Destroy();
+        super.Destroy()
         console.warn("Decomissioning minimap", this._id)
         const mp = this.leafletMap.data
         this.leafletMap.setData(null)
@@ -122,15 +109,32 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         mp.remove()
     }
 
-    public async TakeScreenshot() {
-        const screenshotter = new SimpleMapScreenshoter();
-        screenshotter.addTo(this.leafletMap.data);
-        return await screenshotter.takeScreen('image')
+    /**
+     * Takes a screenshot of the current map
+     * @param format: image: give a base64 encoded png image;
+     * @constructor
+     */
+    public async TakeScreenshot(): Promise<string> ;
+    public async TakeScreenshot(format: "image"): Promise<string> ;
+    public async TakeScreenshot(format: "blob"): Promise<Blob> ;
+    public async TakeScreenshot(format: "image" | "blob"): Promise<string | Blob> ;
+    public async TakeScreenshot(format: "image" | "blob" = "image"): Promise<string | Blob> {
+        console.log("Taking a screenshot...")
+        const screenshotter = new SimpleMapScreenshoter()
+        screenshotter.addTo(this.leafletMap.data)
+        const result = <any> await screenshotter.takeScreen((<any> format) ?? "image")
+        if(format === "image" && typeof result === "string"){
+            return result
+        }
+        if(format === "blob" && result instanceof Blob){
+            return result
+        }
+        throw "Something went wrong while creating the screenshot: "+result
     }
 
     protected InnerConstructElement(): HTMLElement {
         const div = document.createElement("div")
-        div.id = this._id;
+        div.id = this._id
         div.style.height = "100%"
         div.style.width = "100%"
         div.style.minWidth = "40px"
@@ -138,19 +142,21 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         div.style.position = "relative"
         const wrapper = document.createElement("div")
         wrapper.appendChild(div)
-        const self = this;
+        const self = this
         // @ts-ignore
-        const resizeObserver = new ResizeObserver(_ => {
+        const resizeObserver = new ResizeObserver((_) => {
             if (wrapper.clientHeight === 0 || wrapper.clientWidth === 0) {
-                return;
+                return
             }
-            if (wrapper.offsetParent === null || window.getComputedStyle(wrapper).display === 'none') {
+            if (
+                wrapper.offsetParent === null ||
+                window.getComputedStyle(wrapper).display === "none"
+            ) {
                 // Not visible
-                return;
+                return
             }
             try {
-                self.InitMap();
-
+                self.InitMap()
             } catch (e) {
                 console.warn("Could not construct a minimap:", e)
             }
@@ -160,41 +166,41 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             } catch (e) {
                 console.warn("Could not invalidate size of a minimap:", e)
             }
-        });
+        })
 
-        resizeObserver.observe(div);
+        resizeObserver.observe(div)
 
         if (this._addLayerControl) {
-            const switcher = new BackgroundMapSwitch({
+            const switcher = new BackgroundMapSwitch(
+                {
                     locationControl: this.location,
-                    backgroundLayer: this._background
+                    backgroundLayer: this._background,
                 },
                 this._background
             ).SetClass("top-0 right-0 z-above-map absolute")
             wrapper.appendChild(switcher.ConstructElement())
         }
 
-        return wrapper;
-
+        return wrapper
     }
 
     private InitMap() {
         if (this._constructedHtmlElement === undefined) {
             // This element isn't initialized yet
-            return;
+            return
         }
 
         if (document.getElementById(this._id) === null) {
             // not yet attached, we probably got some other event
-            return;
+            return
         }
 
         if (this._isInited) {
-            return;
+            return
         }
-        this._isInited = true;
-        const location = this.location;
-        const self = this;
+        this._isInited = true
+        const location = this.location
+        const self = this
         let currentLayer = this._background.data.layer()
         let latLon = <[number, number]>[location.data?.lat ?? 0, location.data?.lon ?? 0]
         if (isNaN(latLon[0]) || isNaN(latLon[1])) {
@@ -213,22 +219,20 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             touchZoom: this._allowMoving,
             // Disabling this breaks the geojson layer - don't ask me why!  zoomAnimation: this._allowMoving,
             fadeAnimation: this._allowMoving,
-            maxZoom: 21
+            maxZoom: 21,
         }
-
 
         Utils.Merge(this._leafletoptions, options)
         /*
-        * Somehow, the element gets '_leaflet_id' set on chrome.
-        * When attempting to init this leaflet map, it'll throw an exception and the map won't show up.
-        * Simply removing '_leaflet_id' fixes the issue.
-        * See https://github.com/pietervdvn/MapComplete/issues/726
-        * */
+         * Somehow, the element gets '_leaflet_id' set on chrome.
+         * When attempting to init this leaflet map, it'll throw an exception and the map won't show up.
+         * Simply removing '_leaflet_id' fixes the issue.
+         * See https://github.com/pietervdvn/MapComplete/issues/726
+         * */
         delete document.getElementById(this._id)["_leaflet_id"]
 
-        const map = L.map(this._id, options);
+        const map = L.map(this._id, options)
         if (self._onFullyLoaded !== undefined) {
-
             currentLayer.on("load", () => {
                 console.log("Fully loaded all tiles!")
                 self._onFullyLoaded(map)
@@ -239,93 +243,88 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         // We give a bit of leeway for people on the edges
         // Also see: https://www.reddit.com/r/openstreetmap/comments/ih4zzc/mapcomplete_a_new_easytouse_editor/g31ubyv/
 
-        map.setMaxBounds(
-            [[-100, -200], [100, 200]]
-        );
+        map.setMaxBounds([
+            [-100, -200],
+            [100, 200],
+        ])
 
         if (this._attribution !== undefined) {
             if (this._attribution === true) {
                 map.attributionControl.setPrefix(false)
             } else {
-                map.attributionControl.setPrefix(
-                    "<span id='leaflet-attribution'></span>");
+                map.attributionControl.setPrefix("<span id='leaflet-attribution'></span>")
             }
         }
 
-        this._background.addCallbackAndRun(layer => {
+        this._background.addCallbackAndRun((layer) => {
             const newLayer = layer.layer()
             if (currentLayer !== undefined) {
-                map.removeLayer(currentLayer);
+                map.removeLayer(currentLayer)
             }
-            currentLayer = newLayer;
+            currentLayer = newLayer
             if (self._onFullyLoaded !== undefined) {
-
                 currentLayer.on("load", () => {
                     console.log("Fully loaded all tiles!")
                     self._onFullyLoaded(map)
                 })
             }
-            map.addLayer(newLayer);
+            map.addLayer(newLayer)
             if (self._attribution !== true && self._attribution !== false) {
-                self._attribution?.AttachTo('leaflet-attribution')
+                self._attribution?.AttachTo("leaflet-attribution")
             }
-
         })
 
-
-        let isRecursing = false;
+        let isRecursing = false
         map.on("moveend", function () {
             if (isRecursing) {
                 return
             }
-            if (map.getZoom() === location.data.zoom &&
+            if (
+                map.getZoom() === location.data.zoom &&
                 map.getCenter().lat === location.data.lat &&
-                map.getCenter().lng === location.data.lon) {
-                return;
+                map.getCenter().lng === location.data.lon
+            ) {
+                return
             }
-            location.data.zoom = map.getZoom();
-            location.data.lat = map.getCenter().lat;
-            location.data.lon = map.getCenter().lng;
-            isRecursing = true;
-            location.ping();
+            location.data.zoom = map.getZoom()
+            location.data.lat = map.getCenter().lat
+            location.data.lon = map.getCenter().lng
+            isRecursing = true
+            location.ping()
 
             if (self.bounds !== undefined) {
                 self.bounds.setData(BBox.fromLeafletBounds(map.getBounds()))
             }
 
-
-            isRecursing = false; // This is ugly, I know
+            isRecursing = false // This is ugly, I know
         })
 
-
-        location.addCallback(loc => {
+        location.addCallback((loc) => {
             const mapLoc = map.getCenter()
             const dlat = Math.abs(loc.lat - mapLoc[0])
             const dlon = Math.abs(loc.lon - mapLoc[1])
 
             if (dlat < 0.000001 && dlon < 0.000001 && map.getZoom() === loc.zoom) {
-                return;
+                return
             }
             map.setView([loc.lat, loc.lon], loc.zoom)
         })
-
 
         if (self.bounds !== undefined) {
             self.bounds.setData(BBox.fromLeafletBounds(map.getBounds()))
         }
 
-
         if (this._options.lastClickLocation) {
             const lastClickLocation = this._options.lastClickLocation
             map.on("click", function (e) {
                 // @ts-ignore
-                lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng})
-            });
+                lastClickLocation?.setData({ lat: e.latlng.lat, lon: e.latlng.lng })
+            })
 
             map.on("contextmenu", function (e) {
                 // @ts-ignore
-                lastClickLocation?.setData({lat: e.latlng.lat, lon: e.latlng.lng});
-            });
+                lastClickLocation?.setData({ lat: e.latlng.lat, lon: e.latlng.lng })
+            })
         }
 
         this.leafletMap.setData(map)

@@ -325,7 +325,44 @@ export default {
             ]
           },
           {
-            "$ref": "#/definitions/default<(string|QuestionableTagRenderingConfigJson|{builtin:string;override:Partial<QuestionableTagRenderingConfigJson>;})[]>"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "builtin": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "override": {
+                "$ref": "#/definitions/Partial<QuestionableTagRenderingConfigJson>"
+              }
+            },
+            "required": [
+              "builtin",
+              "id",
+              "override"
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "$ref": "#/definitions/default<(string|QuestionableTagRenderingConfigJson|{builtin:string;override:Partial<QuestionableTagRenderingConfigJson>;})[]>"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            ]
           },
           {
             "type": "string"
@@ -461,15 +498,43 @@ export default {
         "or"
       ]
     },
-    "ApplicableUnitJson": {
+    "DenominationConfigJson": {
       "type": "object",
       "properties": {
+        "useIfNoUnitGiven": {
+          "description": "If this evaluates to true and the value to interpret has _no_ unit given, assumes that this unit is meant.\nAlternatively, a list of country codes can be given where this acts as the default interpretation\n\nE.g., a denomination using \"meter\" would probably set this flag to \"true\";\na denomination for \"mp/h\" will use the condition \"_country=gb\" to indicate that it is the default in the UK.\n\nIf none of the units indicate that they are the default, the first denomination will be used instead",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "useAsDefaultInput": {
+          "description": "Use this value as default denomination when the user inputs a value (e.g. to force using 'centimeters' instead of 'meters' by default).\nIf unset for all values, this will use 'useIfNoUnitGiven'. If at least one denomination has this set, this will default to false",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
         "canonicalDenomination": {
-          "description": "The canonical value which will be added to the value in OSM.\ne.g. \"m\" for meters\nIf the user inputs '42', the canonical value will be added and it'll become '42m'.\n\nImportant: often, _no_ canonical values are expected, e.g. in the case of 'maxspeed' where 'km/h' is the default.\nIn this case, an empty string should be used",
+          "description": "The canonical value for this denomination which will be added to the value in OSM.\ne.g. \"m\" for meters\nIf the user inputs '42', the canonical value will be added and it'll become '42m'.\n\nImportant: often, _no_ canonical values are expected, e.g. in the case of 'maxspeed' where 'km/h' is the default.\nIn this case, an empty string should be used",
           "type": "string"
         },
         "canonicalDenominationSingular": {
-          "description": "The canonical denomination in the case that the unit is precisely '1'",
+          "description": "The canonical denomination in the case that the unit is precisely '1'.\nUsed for display purposes",
           "type": "string"
         },
         "alternativeDenomination": {
@@ -487,10 +552,6 @@ export default {
         },
         "prefix": {
           "description": "If set, then the canonical value will be prefixed instead, e.g. for '€'\nNote that if all values use 'prefix', the dropdown might move to before the text field",
-          "type": "boolean"
-        },
-        "default": {
-          "description": "The default interpretation - only one can be set.\nIf none is set, the first unit will be considered the default interpretation of a value without a unit",
           "type": "boolean"
         }
       },
@@ -516,6 +577,9 @@ export default {
           "items": {
             "type": "string"
           }
+        },
+        "description": {
+          "description": "A human-readable text explaining what this tagRendering does"
         },
         "render": {
           "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
@@ -670,7 +734,7 @@ export default {
           ]
         },
         "addExtraTags": {
-          "description": "If chosen as answer, these tags will be applied as well onto the object.\nNot compatible with multiAnswer",
+          "description": "If chosen as answer, these tags will be applied as well onto the object.\nNot compatible with multiAnswer.\n\nThis can be used e.g. to erase other keys which indicate the 'not' value:\n```json\n{\n    \"if\": \"crossing:marking=rainbow\",\n    \"then\": \"This is a rainbow crossing\",\n    \"addExtraTags\": \"not:crossing:marking=\"\n}\n```",
           "type": "array",
           "items": {
             "type": "string"
@@ -1009,6 +1073,9 @@ export default {
             "type": "string"
           }
         },
+        "description": {
+          "description": "A human-readable text explaining what this tagRendering does"
+        },
         "render": {
           "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
         },
@@ -1100,6 +1167,9 @@ export default {
           "items": {
             "type": "string"
           }
+        },
+        "description": {
+          "description": "A human-readable text explaining what this tagRendering does"
         },
         "render": {
           "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
@@ -1327,7 +1397,7 @@ export default {
       "type": "object",
       "properties": {
         "appliesToKey": {
-          "description": "Every key from this list will be normalized",
+          "description": "Every key from this list will be normalized.\n\nTo render a united value properly, use",
           "type": "array",
           "items": {
             "type": "string"
@@ -1341,7 +1411,7 @@ export default {
           "description": "The possible denominations",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ApplicableUnitJson"
+            "$ref": "#/definitions/DenominationConfigJson"
           }
         }
       },

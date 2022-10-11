@@ -264,7 +264,7 @@
       },
       "mappings": [
         {
-          "if": "access=public",
+          "if": "access=yes",
           "then": {
             "nl": "Publiek toegankelijk",
             "fr": "Accessible au public",
@@ -309,6 +309,19 @@
             "de": "Der Sportplatz ist nicht öffentlich zugänglich (es ist ein privater Sportplatz)",
             "es": "Privada - no accesible al público"
           }
+        },
+        {
+          "if": "access=public",
+          "then": {
+            "nl": "Publiek toegankelijk",
+            "fr": "Accessible au public",
+            "en": "Public access",
+            "it": "Aperto al pubblico",
+            "ru": "Свободный доступ",
+            "de": "Der Sportplatz ist öffentlich zugänglich",
+            "es": "Acceso público"
+          },
+          "hideInAnswer": true
         }
       ]
     },

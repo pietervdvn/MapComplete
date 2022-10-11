@@ -13,7 +13,6 @@
     "ca": "OpenWindPowerMap",
     "nb_NO": "ÅpentVindkraftKart"
   },
-  "maintainer": "Seppe Santens",
   "icon": "./assets/themes/openwindpowermap/logo.svg",
   "description": {
     "en": "A map for showing and editing wind turbines.",
@@ -23,9 +22,10 @@
     "zh_Hant": "顯示與編輯風機的地圖。",
     "hu": "Szélerőművek megjelenítésére és szerkesztésére szolgáló térkép.",
     "es": "Un para mostrar y editar turbinas de viento",
-    "nl": "Een kaart om windturbines te tonen en te bewerken."
+    "nl": "Een kaart om windturbines te tonen en te bewerken.",
+    "da": "Et kort til visning og redigering af vindmøller.",
+    "nb_NO": "Et kart for visning og redigering av vindmøller."
   },
-  "version": "2021-06-18",
   "startLat": 50.52,
   "startLon": 4.643,
   "startZoom": 8,
@@ -35,5 +35,6 @@
   "layers": [
     "windturbine"
   ],
-  "defaultBackgroundId": "CartoDB.Voyager"
+  "defaultBackgroundId": "CartoDB.Voyager",
+  "credits": "Seppe Santens"
 }

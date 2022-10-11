@@ -201,6 +201,9 @@
         }
       ]
     },
+    "internet",
+    "internet-fee",
+    "internet-ssid",
     "questions",
     "reviews"
   ],
@@ -234,8 +237,8 @@
   "deletion": {
     "softDeletionTags": {
       "and": [
-        "amenity=",
-        "disused:amenity:={amenity}"
+        "shop=",
+        "disused:shop:={shop}"
       ]
     },
     "extraDeleteReasons": [
@@ -292,6 +295,7 @@
     }
   ],
   "filter": [
+    "open_now",
     {
       "id": "shop-type",
       "options": [
@@ -334,35 +338,7 @@
         }
       ]
     },
-    {
-      "id": "accepts-cash",
-      "options": [
-        {
-          "osmTags": "payment:cash=yes",
-          "question": {
-            "en": "Accepts cash",
-            "de": "Akzeptiert Bargeld",
-            "nl": "Accepteert cash",
-            "es": "Acepta efectivo",
-            "fr": "Accepte les espèces"
-          }
-        }
-      ]
-    },
-    {
-      "id": "accepts-cards",
-      "options": [
-        {
-          "osmTags": "payment:cards=yes",
-          "question": {
-            "en": "Accepts payment cards",
-            "de": "Akzeptiert Kartenzahlung",
-            "nl": "Accepteert betaalkaarten",
-            "es": "Acepta el pago por tarjeta",
-            "fr": "Accepte les cartes de paiement"
-          }
-        }
-      ]
-    }
+    "accepts_cash",
+    "accepts_cards"
   ]
 }

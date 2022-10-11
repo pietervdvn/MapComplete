@@ -328,28 +328,38 @@
     {
       "id": "hydrant-diameter",
       "question": {
-        "en": "What is the pipe diameter of this hydrant?"
+        "en": "What is the pipe diameter of this hydrant?",
+        "de": "Was ist der Rohrdurchmesser dieses Hydranten?",
+        "nl": "Wat is de pijpdiameter van deze hydrant?"
       },
       "freeform": {
         "key": "fire_hydrant:diameter",
         "placeholder": {
-          "en": "Pipe diameter"
+          "en": "Pipe diameter",
+          "de": "Rohrdurchmesser",
+          "nl": "Pijpdiameter"
         },
         "type": "int"
       },
       "render": {
-        "en": "Pipe diameter: {canonical(fire_hydrant:diameter)}"
+        "en": "Pipe diameter: {canonical(fire_hydrant:diameter)}",
+        "de": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}",
+        "nl": "Pijpdiameter:{canonical(fire_hydrant:diameter)}"
       }
     },
     {
       "id": "hydrant-couplings",
       "question": {
-        "en": "What kind of couplings does this hydrant have?"
+        "en": "What kind of couplings does this hydrant have?",
+        "de": "Welche Art von Kupplungen hat dieser Hydrant?",
+        "nl": "Welke soort koppeling heeft deze hydrant?"
       },
       "freeform": {
         "key": "couplings:type",
         "placeholder": {
-          "en": "Coupling type"
+          "en": "Coupling type",
+          "de": "Art der Kupplung",
+          "nl": "Soort koppeling"
         },
         "type": "string"
       },
@@ -357,7 +367,9 @@
         {
           "if": "couplings:type=Storz",
           "then": {
-            "en": "Storz coupling"
+            "en": "Storz coupling",
+            "de": "Storz-Kupplung",
+            "nl": "Storz-koppeling"
           },
           "icon": {
             "path": "./assets/layers/hydrant/storz.jpg",
@@ -367,13 +379,17 @@
         {
           "if": "couplings:type=UNI",
           "then": {
-            "en": "UNI coupling"
+            "en": "UNI coupling",
+            "de": "UNI-Kupplung",
+            "nl": "UNI-koppeling"
           }
         },
         {
           "if": "couplings:type=Barcelona",
           "then": {
-            "en": "Barcelona coupling"
+            "en": "Barcelona coupling",
+            "de": "Barcelona-Kupplung",
+            "nl": "Barcelona-koppeling"
           },
           "icon": {
             "path": "./assets/layers/hydrant/barcelona.jpg",
@@ -383,22 +399,30 @@
       ],
       "multiAnswer": true,
       "render": {
-        "en": "Couplings: {couplings:type}"
+        "en": "Couplings: {couplings:type}",
+        "de": "Kupplungen: {couplings:type}",
+        "nl": "Koppelingen:{couplings:type}"
       }
     },
     {
       "id": "hydrant-couplings-diameters",
       "question": {
-        "en": "What diameter are the couplings of this hydrant?"
+        "en": "What diameter are the couplings of this hydrant?",
+        "de": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
+        "nl": "Welke diameter hebben de koppelingen van deze hydrant?"
       },
       "freeform": {
         "key": "couplings:diameters",
         "placeholder": {
-          "en": "Coupling diameters"
+          "en": "Coupling diameters",
+          "de": "Kupplungsdurchmesser",
+          "nl": "Koppeldiameters"
         }
       },
       "render": {
-        "en": "Coupling diameters: {couplings:diameters}"
+        "en": "Coupling diameters: {couplings:diameters}",
+        "de": "Kupplungsdurchmesser: {couplings:diameters}",
+        "nl": "Koppelingdiameters:{couplings:diameters}"
       }
     },
     "images"
@@ -456,7 +480,6 @@
     {
       "applicableUnits": [
         {
-          "default": true,
           "canonicalDenomination": "",
           "alternativeDenomination": [
             "mm",
@@ -465,11 +488,13 @@
           ],
           "human": {
             "en": "millimeters",
-            "nl": "millimeter"
+            "nl": "millimeter",
+            "de": "Millimeter"
           },
           "humanSingular": {
             "en": "millimeter",
-            "nl": "millimeter"
+            "nl": "millimeter",
+            "de": "Millimeter"
           }
         }
       ],

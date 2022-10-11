@@ -1,33 +1,23 @@
-const plugin = require('tailwindcss/plugin')
+/** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-    mode: 'jit',
-    purge: [
-        './**/*.html',
-        './**/*.ts',
-    ],
-    darkMode: false, // or 'media' or 'class'
-    theme: {
-        extend: {
-            maxHeight: {
-                '65vh': '65vh',
-                '20vh': '20vh',
-            }
-        },
+  content: ["./**/*.html", "./**/*.ts"],
+  theme: {
+    extend: {
+      maxHeight: {
+        "65vh": "65vh",
+        "20vh": "20vh",
+      },
     },
-    variants: {
-        extend: {
-            ringColor: ['hover'],
-        }
-    },
-    plugins: [
-        plugin(function ({addVariant, e}) {
-            addVariant('landscape', ({modifySelectors, separator}) => {
-                modifySelectors(({className}) => {
-                    return `.${e(`landscape${separator}${className}`)}:landscape`
-                })
-            })
-        })
-
-    ]
-}
+  },
+  plugins: [
+    plugin(function ({ addVariant, e }) {
+      addVariant("landscape", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`landscape${separator}${className}`)}:landscape`;
+        });
+      });
+    }),
+  ],
+};

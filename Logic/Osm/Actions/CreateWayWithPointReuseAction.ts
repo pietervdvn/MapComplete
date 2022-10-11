@@ -1,20 +1,19 @@
-import {OsmCreateAction} from "./OsmChangeAction";
-import {Tag} from "../../Tags/Tag";
-import {Changes} from "../Changes";
-import {ChangeDescription} from "./ChangeDescription";
-import FeaturePipelineState from "../../State/FeaturePipelineState";
-import {BBox} from "../../BBox";
-import {TagsFilter} from "../../Tags/TagsFilter";
-import {GeoOperations} from "../../GeoOperations";
-import FeatureSource from "../../FeatureSource/FeatureSource";
-import StaticFeatureSource from "../../FeatureSource/Sources/StaticFeatureSource";
-import CreateNewNodeAction from "./CreateNewNodeAction";
-import CreateNewWayAction from "./CreateNewWayAction";
-
+import { OsmCreateAction } from "./OsmChangeAction"
+import { Tag } from "../../Tags/Tag"
+import { Changes } from "../Changes"
+import { ChangeDescription } from "./ChangeDescription"
+import FeaturePipelineState from "../../State/FeaturePipelineState"
+import { BBox } from "../../BBox"
+import { TagsFilter } from "../../Tags/TagsFilter"
+import { GeoOperations } from "../../GeoOperations"
+import FeatureSource from "../../FeatureSource/FeatureSource"
+import StaticFeatureSource from "../../FeatureSource/Sources/StaticFeatureSource"
+import CreateNewNodeAction from "./CreateNewNodeAction"
+import CreateNewWayAction from "./CreateNewWayAction"
 
 export interface MergePointConfig {
-    withinRangeOfM: number,
-    ifMatches: TagsFilter,
+    withinRangeOfM: number
+    ifMatches: TagsFilter
     mode: "reuse_osm_point" | "move_osm_point"
 }
 
@@ -33,12 +32,12 @@ interface CoordinateInfo {
     /**
      * The new coordinate
      */
-    lngLat: [number, number],
+    lngLat: [number, number]
     /**
      * If set: indicates that this point is identical to an earlier point in the way and that that point should be used.
      * This is especially needed in closed ways, where the last CoordinateInfo will have '0' as identicalTo
      */
-    identicalTo?: number,
+    identicalTo?: number
     /**
      * Information about the closebyNode which might be reused
      */
@@ -46,8 +45,8 @@ interface CoordinateInfo {
         /**
          * Distance in meters between the target coordinate and this candidate coordinate
          */
-        d: number,
-        node: any,
+        d: number
+        node: any
         config: MergePointConfig
     }[]
 }
@@ -56,54 +55,55 @@ interface CoordinateInfo {
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points
  */
 export default class CreateWayWithPointReuseAction extends OsmCreateAction {
-    public newElementId: string = undefined;
+    public newElementId: string = undefined
     public newElementIdNumber: number = undefined
-    private readonly _tags: Tag[];
+    private readonly _tags: Tag[]
     /**
      * lngLat-coordinates
      * @private
      */
-    private _coordinateInfo: CoordinateInfo[];
-    private _state: FeaturePipelineState;
-    private _config: MergePointConfig[];
+    private _coordinateInfo: CoordinateInfo[]
+    private _state: FeaturePipelineState
+    private _config: MergePointConfig[]
 
-    constructor(tags: Tag[],
-                coordinates: [number, number][],
-                state: FeaturePipelineState,
-                config: MergePointConfig[]
+    constructor(
+        tags: Tag[],
+        coordinates: [number, number][],
+        state: FeaturePipelineState,
+        config: MergePointConfig[]
     ) {
-        super(null, true);
-        this._tags = tags;
-        this._state = state;
-        this._config = config;
+        super(null, true)
+        this._tags = tags
+        this._state = state
+        this._config = config
 
         // The main logic of this class: the coordinateInfo contains all the changes
-        this._coordinateInfo = this.CalculateClosebyNodes(coordinates);
-
+        this._coordinateInfo = this.CalculateClosebyNodes(coordinates)
     }
 
     public async getPreview(): Promise<FeatureSource> {
-
         const features = []
-        let geometryMoved = false;
+        let geometryMoved = false
         for (let i = 0; i < this._coordinateInfo.length; i++) {
-            const coordinateInfo = this._coordinateInfo[i];
+            const coordinateInfo = this._coordinateInfo[i]
             if (coordinateInfo.identicalTo !== undefined) {
                 continue
             }
-            if (coordinateInfo.closebyNodes === undefined || coordinateInfo.closebyNodes.length === 0) {
-
+            if (
+                coordinateInfo.closebyNodes === undefined ||
+                coordinateInfo.closebyNodes.length === 0
+            ) {
                 const newPoint = {
                     type: "Feature",
                     properties: {
-                        "newpoint": "yes",
-                        id: "new-geometry-with-reuse-" + i
+                        newpoint: "yes",
+                        id: "new-geometry-with-reuse-" + i,
                     },
                     geometry: {
                         type: "Point",
-                        coordinates: coordinateInfo.lngLat
-                    }
-                };
+                        coordinates: coordinateInfo.lngLat,
+                    },
+                }
                 features.push(newPoint)
                 continue
             }
@@ -113,18 +113,20 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                 const moveDescription = {
                     type: "Feature",
                     properties: {
-                        "move": "yes",
+                        move: "yes",
                         "osm-id": reusedPoint.node.properties.id,
-                        "id": "new-geometry-move-existing" + i,
-                        "distance": GeoOperations.distanceBetween(coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates)
+                        id: "new-geometry-move-existing" + i,
+                        distance: GeoOperations.distanceBetween(
+                            coordinateInfo.lngLat,
+                            reusedPoint.node.geometry.coordinates
+                        ),
                     },
                     geometry: {
                         type: "LineString",
-                        coordinates: [reusedPoint.node.geometry.coordinates, coordinateInfo.lngLat]
-                    }
+                        coordinates: [reusedPoint.node.geometry.coordinates, coordinateInfo.lngLat],
+                    },
                 }
                 features.push(moveDescription)
-
             } else {
                 // The geometry is moved, the point is reused
                 geometryMoved = true
@@ -132,22 +134,24 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                 const reuseDescription = {
                     type: "Feature",
                     properties: {
-                        "move": "no",
+                        move: "no",
                         "osm-id": reusedPoint.node.properties.id,
-                        "id": "new-geometry-reuse-existing" + i,
-                        "distance": GeoOperations.distanceBetween(coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates)
+                        id: "new-geometry-reuse-existing" + i,
+                        distance: GeoOperations.distanceBetween(
+                            coordinateInfo.lngLat,
+                            reusedPoint.node.geometry.coordinates
+                        ),
                     },
                     geometry: {
                         type: "LineString",
-                        coordinates: [coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates]
-                    }
+                        coordinates: [coordinateInfo.lngLat, reusedPoint.node.geometry.coordinates],
+                    },
                 }
                 features.push(reuseDescription)
             }
         }
 
         if (geometryMoved) {
-
             const coords: [number, number][] = []
             for (const info of this._coordinateInfo) {
                 if (info.identicalTo !== undefined) {
@@ -166,21 +170,19 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                 } else {
                     coords.push(info.lngLat)
                 }
-
             }
             const newGeometry = {
                 type: "Feature",
                 properties: {
                     "resulting-geometry": "yes",
-                    "id": "new-geometry"
+                    id: "new-geometry",
                 },
                 geometry: {
                     type: "LineString",
-                    coordinates: coords
-                }
+                    coordinates: coords,
+                },
             }
             features.push(newGeometry)
-
         }
         return StaticFeatureSource.fromGeojson(features)
     }
@@ -188,7 +190,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
     public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
         const theme = this._state?.layoutToUse?.id
         const allChanges: ChangeDescription[] = []
-        const nodeIdsToUse: { lat: number, lon: number, nodeId?: number }[] = []
+        const nodeIdsToUse: { lat: number; lon: number; nodeId?: number }[] = []
         for (let i = 0; i < this._coordinateInfo.length; i++) {
             const info = this._coordinateInfo[i]
             const lat = info.lngLat[1]
@@ -202,17 +204,17 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                 const newNodeAction = new CreateNewNodeAction([], lat, lon, {
                     allowReuseOfPreviouslyCreatedPoints: true,
                     changeType: null,
-                    theme
+                    theme,
                 })
 
                 allChanges.push(...(await newNodeAction.CreateChangeDescriptions(changes)))
 
                 nodeIdsToUse.push({
-                    lat, lon,
-                    nodeId: newNodeAction.newElementIdNumber
+                    lat,
+                    lon,
+                    nodeId: newNodeAction.newElementIdNumber,
                 })
                 continue
-
             }
 
             const closestPoint = info.closebyNodes[0]
@@ -222,20 +224,20 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                     type: "node",
                     id,
                     changes: {
-                        lat, lon
+                        lat,
+                        lon,
                     },
                     meta: {
                         theme,
-                        changeType: null
-                    }
+                        changeType: null,
+                    },
                 })
             }
-            nodeIdsToUse.push({lat, lon, nodeId: id})
+            nodeIdsToUse.push({ lat, lon, nodeId: id })
         }
 
-
         const newWay = new CreateNewWayAction(this._tags, nodeIdsToUse, {
-            theme
+            theme,
         })
 
         allChanges.push(...(await newWay.CreateChangeDescriptions(changes)))
@@ -248,27 +250,26 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
      * Calculates the main changes.
      */
     private CalculateClosebyNodes(coordinates: [number, number][]): CoordinateInfo[] {
-
         const bbox = new BBox(coordinates)
         const state = this._state
-        const allNodes = [].concat(...state?.featurePipeline?.GetFeaturesWithin("type_node", bbox.pad(1.2))??[])
-        const maxDistance = Math.max(...this._config.map(c => c.withinRangeOfM))
+        const allNodes = [].concat(
+            ...(state?.featurePipeline?.GetFeaturesWithin("type_node", bbox.pad(1.2)) ?? [])
+        )
+        const maxDistance = Math.max(...this._config.map((c) => c.withinRangeOfM))
 
         // Init coordianteinfo with undefined but the same length as coordinates
         const coordinateInfo: {
-            lngLat: [number, number],
-            identicalTo?: number,
+            lngLat: [number, number]
+            identicalTo?: number
             closebyNodes?: {
-                d: number,
-                node: any,
+                d: number
+                node: any
                 config: MergePointConfig
             }[]
-        }[] = coordinates.map(_ => undefined)
-
+        }[] = coordinates.map((_) => undefined)
 
         // First loop: gather all information...
         for (let i = 0; i < coordinates.length; i++) {
-
             if (coordinateInfo[i] !== undefined) {
                 // Already seen, probably a duplicate coordinate
                 continue
@@ -282,9 +283,9 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                 if (GeoOperations.distanceBetween(coor, coordinates[j]) < 0.1) {
                     coordinateInfo[j] = {
                         lngLat: coor,
-                        identicalTo: i
+                        identicalTo: i,
                     }
-                    break;
+                    break
                 }
             }
 
@@ -292,8 +293,8 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
 
             // Lets search applicable points and determine the merge mode
             const closebyNodes: {
-                d: number,
-                node: any,
+                d: number
+                node: any
                 config: MergePointConfig
             }[] = []
             for (const node of allNodes) {
@@ -310,7 +311,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                     if (!config.ifMatches.matchesProperties(node.properties)) {
                         continue
                     }
-                    closebyNodes.push({node, d, config})
+                    closebyNodes.push({ node, d, config })
                 }
             }
 
@@ -322,18 +323,15 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
             coordinateInfo[i] = {
                 identicalTo: undefined,
                 lngLat: coor,
-                closebyNodes
+                closebyNodes,
             }
-
         }
 
-
         // Second loop: figure out which point moves where without creating conflicts
-        let conflictFree = true;
+        let conflictFree = true
         do {
-            conflictFree = true;
+            conflictFree = true
             for (let i = 0; i < coordinateInfo.length; i++) {
-
                 const coorInfo = coordinateInfo[i]
                 if (coorInfo.identicalTo !== undefined) {
                     continue
@@ -366,8 +364,6 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
             }
         } while (!conflictFree)
 
-
         return coordinateInfo
     }
-
 }

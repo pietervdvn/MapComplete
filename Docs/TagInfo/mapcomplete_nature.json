@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/nature",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/nature/logo.svg",
-    "contact_name": "Pieter Vander Vennet, ",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -276,7 +276,7 @@
     },
     {
       "key": "operator",
-      "description": "Layer 'Nature reserve' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely 'Operated by {operator}' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows operator~^((n|N)atuurpunt.*)$ with a fixed text, namely 'Operated by {operator}' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "operator",
@@ -318,7 +318,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Nature reserve' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "curator",
@@ -346,7 +346,7 @@
     },
     {
       "key": "wikipedia",
-      "description": "Layer 'Nature reserve' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Nature reserve' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
       "key": "wikidata",
@@ -462,12 +462,12 @@
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Backrest: Yes' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Does have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "yes"
     },
     {
       "key": "backrest",
-      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Backrest: No' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows backrest=no with a fixed text, namely 'Does <b>not</b> have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "no"
     },
     {
@@ -480,32 +480,32 @@
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'Material: wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=wood with a fixed text, namely 'The seating is made from wood' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "wood"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'Material: metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=metal with a fixed text, namely 'The seating is made from metal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "metal"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'Material: stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=stone with a fixed text, namely 'The seating is made from stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "stone"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'Material: concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=concrete with a fixed text, namely 'The seating is made from concrete' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "concrete"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'Material: plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=plastic with a fixed text, namely 'The seating is made from plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "plastic"
     },
     {
       "key": "material",
-      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'Material: steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows material=steel with a fixed text, namely 'The seating is made from steel' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
       "value": "steel"
     },
     {

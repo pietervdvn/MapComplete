@@ -1,0 +1,13 @@
+node_modules
+.git
+langs/
+vendor/
+dist/
+.cache
+assets/generated/
+assets/themes/
+assets/layers/
+Docs/Tools/stats/
+Docs/Layers/
+Docs/Schemas/
+Docs/TagInfo/

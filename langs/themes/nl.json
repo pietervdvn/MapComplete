@@ -11,6 +11,11 @@
         "description": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
         "title": "Open kunstwerken-kaart"
     },
+    "bag": {
+        "description": "Dit thema helpt het importeren van BAG data",
+        "shortDescription": "BAG import helper tool",
+        "title": "BAG import helper"
+    },
     "benches": {
         "description": "Deze kaart toont alle zitbanken die zijn opgenomen in OpenStreetMap: individuele banken en banken bij bushaltes. Met een OpenStreetMap-account kan je informatie verbeteren en nieuwe zitbanken toevoegen.",
         "shortDescription": "Een kaart van zitbanken",
@@ -719,6 +724,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Metatags nog niet berekend... Heropen deze pop-up"
+                            },
+                            "1": {
+                                "then": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}"
                             }
                         }
                     }
@@ -781,6 +789,13 @@
         "shortDescription": "Kaart om hydranten, brandblussers, brandweerkazernes en ambulanceposten weer te geven.",
         "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
     },
+    "healthcare": {
+        "description": "Op deze kaart vind je dokters en apothekers",
+        "title": "Gezondheidszorg"
+    },
+    "indoors": {
+        "title": "Binnenruimtes"
+    },
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
         "title": "Stoepranden en oversteekplaatsen"
@@ -789,6 +804,10 @@
         "description": "Op deze kaart kan je alle kaarten zien die OpenStreetMap kent.<br/><br/>Ontbreekt er een kaart, dan kan je die kaart hier ook gemakelijk aan deze kaart toevoegen.",
         "shortDescription": "Dit thema toont alle (toeristische) kaarten die OpenStreetMap kent",
         "title": "Een kaart van kaarten"
+    },
+    "maxspeed": {
+        "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat.",
+        "title": "Maximale snelheden"
     },
     "missing_streets": {
         "description": "Dit thema voegt automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres.",
@@ -933,6 +952,10 @@
         "description": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
         "shortDescription": "Een kaart die brievenbussen en postkantoren toont",
         "title": "Brievenbussen en postkantoren"
+    },
+    "rainbow_crossings": {
+        "description": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn.",
+        "title": "Regenboogzebrapaden"
     },
     "shops": {
         "description": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers",

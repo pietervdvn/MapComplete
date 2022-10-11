@@ -10,27 +10,29 @@
         "cannotBeDeleted": "這圖徵無法刪除",
         "delete": "刪除",
         "explanations": {
-            "hardDelete": "這個點已經在開放街圖被刪除了，可以被實驗性的貢獻者恢復",
+            "hardDelete": "這個圖徵已經在開放街圖被刪除了，可以被實驗性的貢獻者恢復",
+            "retagNoOtherThemes": "這個圖徵會被重新分類，而且會從 app 隱藏",
+            "retagOtherThemes": "這個圖徵會被重標示標籤，而且會在 {otherThemes} 顯示",
             "selectReason": "請選擇為什麼這個圖徵應該被刪除",
             "softDelete": "這個圖徵已經被更新，然後從程式被隱藏了。<span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "這圖徵已經刪除",
-        "isntAPoint": "只有點可以被刪，選取的圖徵是路徑、區域或是關聯。",
+        "isntAPoint": "只有節點可以被刪，選取的圖徵是路徑、區域或是關聯。",
         "loading": "調查屬性來確定是否能刪除這一圖徵。",
-        "loginToDelete": "你必須登入才能刪除點",
-        "notEnoughExperience": "這個點是由其他人做的。",
-        "onlyEditedByLoggedInUser": "這個點只有被你編輯，所以你可以安全地刪除。",
-        "partOfOthers": "這個點屬於一些路徑或關聯的一部分，因此不能直接刪除。",
-        "readMessages": "你有未讀的訊息，請先閱讀再來刪除點 - 也許有人有回饋意見",
+        "loginToDelete": "你必須登入才能刪除圖徵",
+        "notEnoughExperience": "這個圖徵是由其他人做的。",
+        "onlyEditedByLoggedInUser": "這個圖徵只有被你編輯，所以你可以安全地刪除。",
+        "partOfOthers": "這個節點屬於一些路徑或關聯的一部分，因此不能直接刪除。",
+        "readMessages": "你有未讀的訊息，請先閱讀再來刪除圖徵 - 也許有人有回饋意見",
         "reasons": {
             "disused": "這個圖徵已經不使用或是被移除了",
-            "duplicate": "這個點與其他圖徵重覆了",
+            "duplicate": "這個圖徵與其他圖徵重覆了",
             "notFound": "找不到這個圖徵了",
-            "test": "這是測試點 - 並真的不存在那邊的圖徵"
+            "test": "這是測試圖徵 - 並真的不存在那邊的圖徵"
         },
-        "safeDelete": "這點無法安全地刪除。",
+        "safeDelete": "這圖徵無法安全地刪除。",
         "useSomethingElse": "請使用其他的開放街圖編輯器來刪除",
-        "whyDelete": "為什麼這個點要被刪除？"
+        "whyDelete": "為什麼這個圖徵要被刪除？"
     },
     "favourite": {
         "loginNeeded": "<h3>登入</h3>只有開放街圖使用者才有個人化樣式",
@@ -39,40 +41,67 @@
     },
     "general": {
         "about": "相當容易編輯，而且能為開放街圖新增特定主題",
-        "aboutMapcomplete": "<h3>關於 MapComplete</h3><p>使用 MapComplete 你可以藉由<b>單一主題</b>新增開放街圖的圖資。回答幾個問題，然後幾分鐘之內你的貢獻立刻就傳遍全球！<b>主題維護者</b>定議主題的元素、問題與語言。</p><h3>發現更多</h3><p>MapComplete 總是提供學習更多開放街圖<b>下一步的知識</b>。</p><ul><li>當你內嵌網站，網頁內嵌會連結到全螢幕的 MapComplete</li><li>全螢幕的版本提供關於開放街圖的資訊</li><li>不登入檢視成果，但是要編輯則需要 OSM 帳號。</li><li>如果你沒有登入，你會被要求先登入</li><li>當你回答單一問題時，你可以在地圖新增新的節點</li><li>過了一陣子，實際的 OSM-標籤會顯示，之後會連結到 wiki</li></ul><p></p><br><p>你有注意到<b>問題</b>嗎？你想請求<b>功能</b>嗎？想要<b>幫忙翻譯</b>嗎？來到<a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">原始碼</a>或是<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追蹤器。</a></p><p>想要看到<b>你的進度</b>嗎？到<a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>追蹤編輯數。</p>",
+        "aboutMapcomplete": "<h3>關於</h3><p>使用 MapComplete 你可以藉由<b>單一主題</b>新增開放街圖的圖資。回答幾個問題，然後幾分鐘之內你的貢獻立刻就傳遍全球！大部分的主題都能新增圖片甚至留下評論。<b>主題維護者</b>定議主題的元素、問題與語言。</p><h3>發現更多</h3><p>MapComplete 總是提供學習更多開放街圖<b>下一步的知識</b>。</p><ul><li>當你內嵌網站，網頁內嵌會連結到全螢幕的 MapComplete</li><li>全螢幕的版本提供關於開放街圖的資訊</li><li>不登入檢視成果，但是要編輯則需要 OSM 帳號。</li><li>如果你沒有登入，你會被要求先登入</li><li>當你回答單一問題時，你可以在地圖新增新的圖徵</li><li>過了一陣子，實際的 OSM-標籤會顯示，之後會連結到 wiki</li></ul><p></p><br><p>你有注意到<b>問題</b>嗎？你想請求<b>功能</b>嗎？想要<b>幫忙翻譯</b>嗎？來到<a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">原始碼</a>或是<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追蹤器。</a></p><p>想要看到<b>你的進度</b>嗎？到<a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>追蹤編輯數。</p>",
         "add": {
             "addNew": "在這裡新增新的 {category}",
             "addNewMapLabel": "點這邊新增新項目",
             "confirmButton": "在此新增 {category}。<br><div class=\"alert\">大家都可以看到您新增的內容</div>",
-            "confirmIntro": "<h3>在這裡新增 {title} ？</h3>你在這裡新增的節點<b>所有人都看得到</b>。請只有在確定有物件存在的情形下才新增上去，許多應用程式都使用這份資料。",
+            "confirmIntro": "<h3>在這裡新增 {title} ？</h3>你在這裡新增的圖徵<b>所有人都看得到</b>。請只有在確定有物件存在的情形下才新增上去，許多應用程式都使用這份資料。",
             "disableFilters": "關閉所有篩選器",
             "disableFiltersExplanation": "有些圖徵可能被篩選器隱藏",
-            "hasBeenImported": "這個點已經被匯入了",
+            "hasBeenImported": "這個圖徵已經被匯入了",
             "import": {
-                "hasBeenImported": "此物件已匯入"
+                "hasBeenImported": "此物件已匯入",
+                "howToTest": "要進行測試的話，在網址新增 <b>test=true</b> 或是 <b>backend=osm-test</b>。編輯變動會出現在終端機，請開啟 PR 來正式提及這個主題，並且真正啟用匯入按鈕。",
+                "importTags": "這元素會加上 {tags}",
+                "officialThemesOnly": "非正式主題當中的匯入鈕按已經關閉來避免發生意外",
+                "wrongType": "這個圖徵並非節或或路徑，因此無法匯入",
+                "wrongTypeToConflate": "這個圖徵並非節點或是路徑，因此無法整合",
+                "zoomInMore": "請再放大來匯入這個圖徵"
             },
+            "importTags": "這元素會被加上 {tags}",
             "intro": "您點擊處目前未有已知的資料。<br>",
-            "layerNotEnabled": "圖層 {layer} 目前無法使用，請先啟用這圖層再加新的節點",
+            "layerNotEnabled": "圖層 {layer} 目前無法使用，請先啟用這圖層再加新的圖徵",
             "openLayerControl": "開啟圖層控制框",
-            "pleaseLogin": "請先登入來新增節點",
+            "pleaseLogin": "請先登入來新增圖徵",
             "presetInfo": "新的興趣點有 {tags}",
-            "stillLoading": "目前仍在載入資料，請稍後再來新增節點。",
-            "title": "新增新的節點？",
+            "stillLoading": "目前仍在載入資料，請稍後再來新增圖徵。",
+            "title": "新增新的圖徵？",
             "warnVisibleForEveryone": "你新增的東西將會被所有人看到",
-            "zoomInFurther": "放大來新增新的節點。",
+            "wrongType": "這個圖徵並非節點也不是路徑，因此無法匯入",
+            "zoomInFurther": "放大來新增新的圖徵。",
             "zoomInMore": "再放大來匯入這一圖徵"
+        },
+        "apply_button": {
+            "appliedOnAnotherObject": "物件 {id} 已經加上 {tags}",
+            "isApplied": "變動已經套用了"
         },
         "attribution": {
             "attributionContent": "<p>所有資料由<a href=\"https://osm.org\" target=\"_blank\">開放街圖</a>提供，在<a href=\"https://osm.org/copyright\" target=\"_blank\">開放資料庫授權條款</a>之下自由再利用。</p>",
             "attributionTitle": "署名通知",
             "codeContributionsBy": "MapComplete 是由 {contributors} 和其他 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 位貢獻者</a>構建而成",
+            "donate": "財務上支援 MapComplete",
+            "editId": "開啟開放街圖線上編輯器",
+            "editJosm": "採用 JOSM 編輯",
+            "followBridge": "已經連結 Mastodon 與 Twitter 帳號",
+            "followOnMastodon": "在 Mastodon 追蹤 MapComplete",
+            "followOnTwitter": "在 Twitter 追蹤 MapComplete",
             "iconAttribution": {
                 "title": "使用的圖示"
             },
+            "josmNotOpened": "無法連到 JOSM，請確認 JOSM 已經開啟並且啟用遠端控制選項",
+            "josmOpened": "已經開啟 JOSM",
             "mapContributionsBy": "目前檢視的資料由 {contributors} 貢獻編輯",
             "mapContributionsByAndHidden": "目前顯到的資料是由 {contributors} 和其他 {hiddenCount} 位貢獻者編輯貢獻",
-            "themeBy": "由 {author} 維護主題"
+            "mapillaryHelp": "線上服務 <b>Mapillary</b> 能夠以開放授權提供收集到的街景照片。貢獻者能夠採用 Mapillary 照片來改進開放街圖",
+            "openIssueTracker": "提出臭蟲報告",
+            "openMapillary": "開啟 Mapillary",
+            "openOsmcha": "請見 {theme} 的最新編輯",
+            "themeBy": "由 {author} 維護主題",
+            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>"
         },
+        "back": "回去",
+        "backToMapcomplete": "回到主題總覽",
         "backgroundMap": "背景地圖",
         "cancel": "取消",
         "confirm": "確認",
@@ -81,37 +110,59 @@
             "downloadAsPdf": "下載目前地圖的 PDF 檔",
             "downloadAsPdfHelper": "列印當前地圖相當理想",
             "downloadAsSvg": "下載當前地圖的 SVG",
+            "downloadAsSvgHelper": "與 Inkscape 或是 Adobe Illustrator 相容，仍需要進一步的處理  ",
             "downloadCSV": "下載可視資料為 CSV",
             "downloadCSVHelper": "與 LibreOffice Calc、Excel 等相容",
+            "downloadFeatureAsGeojson": "下載為 GeoJSON 檔案",
+            "downloadFeatureAsGpx": "下載為 GPX 檔案",
             "downloadGeoJsonHelper": "與 QGIS、ArcGIS、ESRI 等相容",
             "downloadGeojson": "下載可視資料為 GeoJSON",
+            "downloadGpx": "下載為 GPX 檔案",
+            "downloadGpxHelper": "GPX 檔案能被大部分導航裝置或 app 使用",
             "exporting": "匯出…",
             "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
-            "title": "下載可視的資料"
+            "licenseInfo": "<h3>著作權聲明</h3>提供的資料採用 ODbL 授權釋出。可以用任何目標再利用資料，但是必須<ul><li>標明 <b>© 開放街圖貢獻者</b></li><li>任何變動必須採用相同授權</li></ul> 請閱讀完整的 <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">著作權聲明</a>。",
+            "noDataLoaded": "還未載入資料，之後能夠下載。",
+            "title": "下載可視的資料",
+            "uploadGpx": "上傳軌跡到開放街圖"
         },
-        "fewChangesBefore": "請先回答有關既有節點的問題再來新增新節點。",
+        "error": "發生了狀況",
+        "example": "例子",
+        "examples": "例子",
+        "fewChangesBefore": "請先回答有關既有圖徵的問題再來新增新圖徵。",
         "getStartedLogin": "登入開放街圖帳號來開始",
         "getStartedNewAccount": " 或是 <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">註冊新帳號</a>",
         "goToInbox": "開啟訊息框",
+        "histogram": {
+            "error_loading": "無法載入直方圖"
+        },
         "layerSelection": {
             "title": "選擇圖層",
             "zoomInToSeeThisLayer": "放大來看看這一圖層"
         },
-        "loading": "載入中...",
+        "loading": "載入中…",
+        "loadingTheme": "載入 {theme}…",
+        "loginFailed": "登入開放街圖失敗了",
         "loginOnlyNeededToEdit": "如果你想要編輯地圖",
         "loginToStart": "登入之後來回答這問題",
         "loginWithOpenStreetMap": "用開放街圖帳號登入",
+        "logout": "登出",
         "morescreen": {
             "createYourOwnTheme": "從零開始建立你的 MapComplete 主題",
             "hiddenExplanation": "這些主題只能透過連結來打開，你已經發現 {total_hidden} 當中 {hidden_discovered} 的隱藏主題。",
             "intro": "<h3>看更多主題地圖？</h3>您喜歡蒐集地理資料嗎？<br>還有更多主題。",
+            "noMatchingThemes": "沒有找到符合的主題",
+            "noSearch": "顯示所有主題",
             "previouslyHiddenTitle": "先前看過隱藏的主題",
             "requestATheme": "如果你有客製化主題，請到問題追踪器那邊提出要求",
+            "searchForATheme": "搜尋主題",
             "streetcomplete": "行動裝置另有類似的應用程式 <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>。"
         },
         "nameInlineQuestion": "這個 {category} 的名稱是 $$$",
+        "next": "下一項",
         "noNameCategory": "{category} 沒有名稱",
         "noTagsSelected": "沒有選取標籤",
+        "notValid": "選擇有效的值來繼續",
         "number": "號碼",
         "oneSkippedQuestion": "跳過一個問題",
         "openStreetMapIntro": "<h3>開放的地圖</h3><p>如果有一份地圖，任何人都能使用與自由編輯，單一的地圖能夠儲存所有地理相關資訊。不同的、範圍小的，不相容甚至過時不再被需要的地圖。</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">開放街圖</a></b>不是敵人的地圖，人人都能自由使用這些圖資， (只要<a href=\"https://osm.org/copyright\" target=\"_blank\">署名與公開變動這資料</a>)。任何人都能新增新資料與修正錯誤，這些網站也用開放街圖，資料也都來自開放街圖，你的答案與修正也會加被用到/p&gt;</p><p>許多人與應用程式已經採用開放街圖了：<a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>、<a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>，還有 Facebook、Instagram，蘋果地圖、Bing 地圖(部分)採用開放街圖。</p>",
@@ -120,6 +171,7 @@
             "closed_permanently": "不清楚關閉多久了",
             "closed_until": "{date} 起關閉",
             "error_loading": "錯誤：無法視覺化開放時間。",
+            "loadingCountry": "決定國家…",
             "not_all_rules_parsed": "這間店的開放時間相當複雜，在輸入元素時忽略接下來的規則：",
             "openTill": "結束時間",
             "open_24_7": "24小時營業",
@@ -127,7 +179,8 @@
             "opensAt": "開始時間",
             "ph_closed": "無營業",
             "ph_not_known": " ",
-            "ph_open": "有營業"
+            "ph_open": "有營業",
+            "ph_open_as_usual": "如同先前狀況開啟"
         },
         "osmLinkTooltip": "在開放街圖歷史和更多編輯選項下面來瀏覽這物件",
         "pdf": {
@@ -137,6 +190,7 @@
             "versionInfo": "v{version} - {date} 產生的"
         },
         "pickLanguage": "選擇語言： ",
+        "poweredByOsm": "由開放街圖資料驅動",
         "questions": {
             "emailIs": "{category} 的電子郵件地址是<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "{category} 的電子郵件地址是？",
@@ -145,9 +199,11 @@
             "websiteIs": "網站：<a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "{category} 的網站網址是？"
         },
-        "readYourMessages": "請先閱讀開放街圖訊息之前再來新增新節點。",
+        "readYourMessages": "請先閱讀開放街圖訊息之前再來新增新圖徵。",
+        "removeLocationHistory": "刪除位置歷史",
         "returnToTheMap": "回到地圖",
         "save": "儲存",
+        "screenToSmall": "在新視窗開啟 {theme}",
         "search": {
             "error": "有狀況發生了…",
             "nothing": "沒有找到…",
@@ -157,6 +213,8 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>新增到你主頁畫面</h3>你可以輕易將這網站加到你智慧型手機的主頁畫面，在網址列點選 '新增到主頁按鈕'來做這件事情。",
             "copiedToClipboard": "複製連結到簡貼簿",
+            "downloadCustomTheme": "下載這個主題的設定",
+            "downloadCustomThemeHelp": "有經驗的貢獻者能使用這個檔案來改善你的主題",
             "editThemeDescription": "新增或改變這個地圖主題的問題",
             "editThisTheme": "編輯這個主題",
             "embedIntro": "<h3>嵌入到你的網站</h3>請考慮將這份地圖嵌入您的網站。<br>地圖毋須額外授權，非常歡迎您多加利用。<br>一切都是免費的，而且之後也是免費的，越有更多人使用，則越顯得它的價值。",
@@ -194,16 +252,55 @@
             "tuesday": "星期二",
             "wednesday": "星期三"
         },
-        "welcomeBack": "你已經登入了，歡迎回來！"
+        "welcomeBack": "你已經登入了，歡迎回來！",
+        "welcomeExplanation": {
+            "addNew": "點一下地圖來新增新興趣點。",
+            "browseMoreMaps": "探索更多地圖",
+            "browseOtherThemesIntro": "MapComplete 上有相當多樣的主題地圖",
+            "general": "在這份地圖，你可以檢視、編輯與新增<i>興趣點</i>。在附近放大來檢視興趣點，點一個來檢視或是編輯資訊。所有資料來源以及儲存到開放街圖，能夠自由被再利用。"
+        },
+        "wikipedia": {
+            "createNewWikidata": "新增新的的 Wikidata 項目",
+            "doSearch": "搜尋來檢視結果",
+            "failed": "無法載入維基百科頁面",
+            "fromWikipedia": "從自由的百科全書維基百科來的",
+            "loading": "載入維基百科…",
+            "noResults": "<i>{search}</i>找不到結果",
+            "noWikipediaPage": "這個 Wikidata 項目還沒有相對應的維基百科頁面。",
+            "previewbox": {
+                "born": "出生：{value}",
+                "died": "死亡：{value}"
+            },
+            "searchToShort": "你的搜尋檢索太短了，請輸入長一點的文字",
+            "searchWikidata": "在 Wikidata 搜尋",
+            "wikipediaboxTitle": "維基百科"
+        }
     },
     "image": {
         "addPicture": "新增圖片",
         "ccb": "以 CC-BY 授權條款",
+        "ccbExplanation": "創用CC性名標示意味著任何人可以居於任何目標使用你的圖片，但必須署名作者為你",
         "ccbs": "以 CC-BY-SA 授權條款",
+        "ccbsExplanation": "創用CC姓名標示相同方式分享授權意味著任何人能居於任何目的都能使用你的圖片，但必須標示你為作者，如果會混搭運用圖片的話，圖片的再釋出也必須遵循相同的授權條款",
         "cco": "公有領域",
+        "ccoExplanation": "將圖片以公眾領域釋出，意味著任何人能夠運用你的圖片做任何事情",
         "doDelete": "移除圖片",
         "dontDelete": "取消",
         "isDeleted": "已移除",
+        "nearbyPictures": {
+            "allFiltered": "沒有符合篩選器的圖片",
+            "browseNearby": "瀏覽附近的圖片…",
+            "confirm": "選取的圖片顯示 {title()}",
+            "hasMatchingPicture": "有圖片符合物件嗎？請從底下結果選取",
+            "loadMore": "載入更多圖片",
+            "loading": "載入附近圖片…",
+            "noImageSelected": "選取圖片來連結到物件",
+            "nothingFound": "附近沒有找到圖片…",
+            "onlyTowards": "只顯示往這個物件方向照的圖片",
+            "removeFilters": "點這裡來移除篩選",
+            "title": "附近圖片",
+            "withinRadius": "只顯示這個物件半徑 {radius} 公尺內照的圖片"
+        },
         "pleaseLogin": "請登入以新增圖片",
         "respectPrivacy": "請別照人像或是車牌，不要上傳 Google 地圖、Google 街景或其他受版權保護的資料來源。",
         "toBig": "{actual_size} 因此照片太大，請使用最大 {max_size} 的照片",
@@ -214,12 +311,392 @@
         "uploadingPicture": "正在上傳你的圖片…",
         "willBePublished": "你的圖片將依以下授權釋出： "
     },
+    "importHelper": {
+        "askMetadata": {
+            "downloadGeojson": "下載 GeoJSON",
+            "giveDescription": "請為看到註解的人撰寫簡短的描述，好的註解能夠描述貢獻者想做什麼，例如說<i>這裡可能有長椅，如果你在附近的話，可以檢查或是確認是否存在？</i> (連到 MapComplete 的連結會自動加上去)",
+            "giveSource": "這個資料的來源是那邊？如果圖徵已經加了 'source'，則填入的值會被忽略",
+            "giveWikilink": "在那個 wiki 頁面能找到這次匯入的資訊？",
+            "intro": "在新增 {count} 註解之前，請提供更多額外資訊。",
+            "orDownload": "另外的方式，你可以下載資料集來直接匯入",
+            "shouldBeOsmWikilink": "預期會有連到 wiki.openstreetmap.org 的連結",
+            "shouldBeUrl": "無效的網址",
+            "shouldNotBeHomepage": "沒有，首頁也並不允許，請輸入適當記錄匯入的 wiki 頁面連結",
+            "title": "設定 metadata"
+        },
+        "compareToAlreadyExistingNotes": {
+            "completelyImported": "所有的計畫點都已經有匯入註解了",
+            "loading": "從 OSM 取得註解",
+            "loadingFailed": "因為 {error} 無法載入註解",
+            "mapExplanation": "在下一份地圖的紅色元素全都是你的資料集的資料點，你的資料集總共有  <b>{length}</b> 元素。",
+            "noPreviousNotesFound": "沒有找到先前匯入的註解",
+            "nothingNearby": "預計的點附近沒有匯入的註解",
+            "someNearby": "{hasNearby} 點已經在附近 {distance} 公尺有存在匯入的註解",
+            "title": "與既有的註解比對",
+            "titleLong": "與既有存在的 'to-import' 註解比對",
+            "wontBeImported": "這些資料點<i>不會</i>匯入，而且會在下面的地圖以紅點顯示"
+        },
+        "confirmProcess": {
+            "contactedCommunity": "你需要聯繫 (在地) 社群告知這次匯入",
+            "licenseIsCompatible": "要雇入的資料其授權允許其被匯入 OSM，這資料能夠在商業上被再發散佈，只要最低限制的署名",
+            "readImportGuidelines": "我已經閱讀過 OSM wiki 的匯入指南了",
+            "title": "授權與社群",
+            "titleLong": "你已經完成匯入的程序嗎？",
+            "wikipageIsMade": "匯入程序已經記錄到 OSM-wiki (之後你會需要這個連結)"
+        },
+        "conflationChecker": {
+            "cacheExpired": "快取已經失效了",
+            "downloadOverpassData": "下載從 overpass 載入的 GeoJSON",
+            "importCandidatesCount": "接下來的地圖上的 {count} 紅色元素全都是你匯入的候選物件。",
+            "loadedDataAge": "從快取載入資料，而且存在 {age}",
+            "mapShowingNearbyIntro": "接下來的地圖顯示要匯入的圖徵當中，裡面已經有 OSM 圖徵 ",
+            "nearbyWarn": "地圖上的 {count} 紅色元素<b>不會</b>被匯入！",
+            "nothingLoaded": "從開放街圖沒有戴入符合目前圖層 {name} 的元素",
+            "osmLoaded": "從開放街圖載入符合圖層 <b>{name}</b> 的元素 {count}。",
+            "reloadTheCache": "清除快取並且再次檢索 Overpass",
+            "setRangeToZero": "如果你要匯入全部資料請設定 0 或 1 的範圍",
+            "states": {
+                "error": "因為 Overpass 的 {error} 而無法載入最新資料",
+                "idle": "檢查本機空間…",
+                "running": "檢索 overpass…",
+                "unexpected": "未預期的狀態 {state}"
+            },
+            "title": "與既有資料比對",
+            "titleLive": "OSM 上的即時資料",
+            "titleNearby": "附近的圖徵",
+            "zoomIn": "目前的縮放層級是 {current}"
+        },
+        "createNotes": {
+            "creating": "{total} 的註解新增 <b>{count}</b>",
+            "done": "所有 {count} 註解都已經新增了！",
+            "loading": "當載入時稍候",
+            "openImportViewer": "在 'import_viewer' 檢視你的註解進度",
+            "title": "註解創建"
+        },
+        "gotoImportViewer": "檢視你先前的匯入",
+        "introduction": {
+            "description": "匯入幫手轉換外部資料集變成註解，外部資料集必須符合既有的 MapComplete 圖層。對於每一個你放入匯入器的項目來說，每一個會產生單一註解，這些註解會在相關的圖徵一起顯示，來更容易在地圖上新增。",
+            "importFormat": "註解當中的文字會以下列的格式來顯示並且被挑選",
+            "title": "介紹"
+        },
+        "login": {
+            "lockNotice": "這一頁已經鎖住，你需要 {importHelperUnlock} 變動集之前，才能在這邊連結。",
+            "loggedInWith": "你目前以 <b>{name}</b> 登入，目前已經有 {csCount} 編輯變動",
+            "loginIsCorrect": "<b>{name}</b> 是目前創建匯入註解的正確帳號。",
+            "loginRequired": "你必須登入來繼續",
+            "title": "登入",
+            "userAccountTitle": "選擇用戶帳號"
+        },
+        "mapPreview": {
+            "autodetected": "圖層會自動依據屬性來扣除",
+            "confirm": "圖徵在地圖上正確的位置",
+            "mismatch": "{count} 圖徵並不符合選取的圖層，確定使用的標籤是現在，正確名稱的 {tags}",
+            "selectLayer": "那個圖層符合這次匯入？",
+            "title": "地圖預覽"
+        },
+        "noteParts": {
+            "datasource": "從 {source} 來的原始資料",
+            "importEasily": "用 MapComplete 簡單增加這個點：",
+            "wikilink": "關於這次匯入的資訊你可以在這邊找到 {wikilink}"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "所有要匯入的圖徵都有這個標籤",
+            "inspectDataTitle": "{count} 圖徵檢視資料來匯入",
+            "inspectLooksCorrect": "這些值看來是正確的",
+            "someHaveSame": "要匯入的 {count} 圖徵有這個標籤，這是全部當中的 {percentage}%",
+            "title": "檢視屬性"
+        },
+        "selectFile": {
+            "description": "選擇 .csv 或是 .geojson 檔案來開始",
+            "errDuplicate": "有些欄位有相同的名字",
+            "errNoLatOrLon": "檔頭不含 `lat` 或是 `lon`",
+            "errNoName": "有些欄位並沒有名字",
+            "errNotFeatureCollection": "載入的 JSON 檔案不是 geojson 圖徵集合",
+            "errPointsOnly": "載入 JSON 檔案應當只含有節點",
+            "fileFormatDescription": "選擇 <b class='code'>.csv</b> 或是 <b class='code'>.geojson</b> 檔案",
+            "fileFormatDescriptionCsv": "在 CSV 檔案中，應當有個欄位有以 WGS84 格式的座標 <span class='literal-code'>lat</span> 和 <span class='literal-code'>lon</span> ，另外應當有額外的欄位有所有屬性。",
+            "fileFormatDescriptionGeoJson": "在 geojson 檔案中，只有點應當被呈現，屬性應當是進入開放街圖的那些屬性",
+            "loadedFilesAre": "目前載入的檔案是 {file}",
+            "noFilesLoaded": "目前沒有載入檔案",
+            "title": "選擇檔案"
+        },
+        "selectTheme": {
+            "displayNonMatchingCount": "{length} 物件沒有符合任何預置",
+            "intro": "所有相關主題會顯示匯入註解，然而開放街圖的註解只能連到單一主題，選擇創建的註解連到那個主題",
+            "misMatch": "有鍵 {k} 的屬性沒有預期的值 {v}；然而是 {properties}",
+            "missing": "預期 {k}={v}，但完全遺失了",
+            "needsTags": "{title} 需要標籤 {tags}",
+            "noMatchingPresets": "這個主題沒有載入預置，因此，匯入不會作用",
+            "notApplicable": "預置 {title} 不適用：",
+            "title": "選擇主題",
+            "unmatchedTitle": "下列元素沒有符合任何預置"
+        },
+        "testMode": "測試模式 - 不會真的匯入註解",
+        "title": "匯入幫手"
+    },
+    "importInspector": {
+        "title": "檢視與管理匯入註解"
+    },
+    "importLayer": {
+        "alreadyMapped": "{title} 已經在地圖上了 - 這個點重覆了",
+        "description": "能夠為 {title} 匯入項目的圖層",
+        "importButton": "import_button({layerId}, _tags, 我在這邊發現 {title} - 新增到地圖,./assets/svg/addSmall.svg,,,id)",
+        "importHandled": "<div class='thanks'>這個圖徵已經處理了！謝謝你的辛勞</div>",
+        "layerName": "可能的 {title}",
+        "nearbyImagesIntro": "<h3>附近圖片</h3>接下來的圖片是多個第三方線上服務附近有地理標籤的圖片，也許能協助你解決這個註解。{nearby_images(open)}",
+        "notFound": "我無法找到 {title} - 移除吧",
+        "popupTitle": "這裡可能有 {title}"
+    },
     "index": {
         "#": "當沒有載入主題時，這些文字會在主題按鈕上面顯示",
         "featuredThemeTitle": "這週的焦點",
         "intro": "MapComplete 是開放街圖能夠顯示特定主題的檢視器與編輯器，能夠顯示與允許更新特定主題的地圖。",
+        "logIn": "登入來看其他你先前查看的主題",
         "pickTheme": "請挑選主題來開始。",
         "title": "歡迎使用 MapComplete"
+    },
+    "matrixbot": {
+        "commandFailed": "抱兼，執行 <code>{cmd}</code> 時出現錯誤",
+        "commandNotFound": "我無法理解你的請求，你也許意思是類別 {0}、{1}、{2} 或 {2}？ <p>Type <code>help</code>來查看所有指令</p>",
+        "commands": {
+            "dm": {
+                "argbody": "指令的實際指令本文",
+                "argto": "要傳送輸出結果的編號",
+                "commandNotFound": "命令 {key} 沒有找到 - <code>help</code> 來察看所有指令",
+                "docs": "執行指令然後傳送輸出結果給別人",
+                "executing": "執行<code>{_}</code>然後結果給 <b>{to}</b>…",
+                "failed": "我因為 {message} 無法執行 <code>{cmd}</code>",
+                "noDm": "我無法與 {to} 創建房間",
+                "receipt": "我傳送訊息給 {to}",
+                "selectValidCommand": "指定有效的指令",
+                "selectValidUser": "執定有效的目標使用者",
+                "sendReason": "我傳給你這個訊息是因為 <b>{sender}</b> 要求我以 <code>{cmd}</code>傳送"
+            },
+            "documentation": {
+                "argid": "{list} 或是 {list_end} 編號需要文件，另外，撰寫 {coded_list} 的其中一個來察看能用的編號。",
+                "didYouMean": "你的意思是",
+                "docs": "取得關於 MapComplete 圖層、主題或是網站參數的文件",
+                "file": {
+                    "plural": "檔案",
+                    "singular": "檔案"
+                },
+                "inputElement": {
+                    "plural": "輸入元素",
+                    "singular": "輸入元素"
+                },
+                "layer": {
+                    "plural": "圖層",
+                    "singular": "圖層"
+                },
+                "noIdIntro": "從指定的編號來取得更多有關 MapComplete 程式相關的物件，已知的類別為 {list}",
+                "notFound": "沒有找到名稱為 <code>{id}</code> 的 {singular}",
+                "overview": "下列的 {plural} 存在：",
+                "theme": {
+                    "plural": "主題",
+                    "singular": "主題"
+                },
+                "urlParam": "網址參數 <code>{id}<code>",
+                "url_parameter": {
+                    "plural": "網址參數",
+                    "singular": "網址參數"
+                },
+                "visualisation": {
+                    "plural": "視覺化",
+                    "singular": "視覺化"
+                }
+            },
+            "dream": {
+                "docs": "傳送電腦產生文字",
+                "generatedBy": "這段文字由 {bot} 產生，由 Reddit 上的機器學習機器人產生。"
+            },
+            "help": {
+                "argcmd": "這個指令你想要更多相關資訊",
+                "askRights": "詢問 {admins} 取得適當的權限",
+                "docs": "顯示有關支援的指令資訊",
+                "insufficientRights": "你目前沒有足夠權限來執行這個指令。",
+                "notFound": "我沒有找到 <code>{cmd}</code>，也許你意味的 {closest} 其中之一？",
+                "p0": "嗨！這是 MapComplete-bot {bot_version} (MapComplete 建造版本 {mc_version})。"
+            },
+            "wiki": {
+                "searching": "在 {backend} 搜尋…"
+            }
+        },
+        "decryptionFailed": "抱歉，我無法解碼你的訊息，請先離開頻道然後再次連線",
+        "noSufficientRights": "這個指令只有管理員或使用者角色才有的權限",
+        "subcommanNotFound": "我無法理解你的請求，這個指令需要動詞才能執行，但是 <code>{verb}</code> 不是我們所知道的動詞，但我知道動詞 {known_verbs}",
+        "subcommandNotGiven": "我無法理解你的要求，這個指令需要動詞才能執行，但你沒有說，請試一個 {known_verbs}",
+        "tooLongForPublic": "抱歉，這個指令對公開房間太長 - 請傳送私訊給我代替"
+    },
+    "move": {
+        "cancel": "取消動作",
+        "cannotBeMoved": "這個圖徵無法移動。",
+        "confirmMove": "移動到這裡",
+        "inviteToMove": {
+            "generic": "移動這個點",
+            "reasonInaccurate": "改進這個點的精確度",
+            "reasonRelocation": "移動這個物件到其他地方，因為已經搬遷了"
+        },
+        "inviteToMoveAgain": "再次移動這個點",
+        "isRelation": "這個圖徵是關聯並無法被移除",
+        "isWay": "這個圖徵是路徑，請用其他開放街圖編輯器來移動。",
+        "loginToMove": "你必須登入才能移動點",
+        "moveTitle": "移動這個點",
+        "partOfAWay": "這個圖徵是其他路徑的一部分，請用其他編輯器來移動。",
+        "partOfRelation": "這個圖徵是關聯的一部分，請用其他編輯器來移動。",
+        "pointIsMoved": "這個點已經被移動了",
+        "reasons": {
+            "reasonInaccurate": "這個物件的位置並不準確，應該移動個幾公尺"
+        },
+        "selectReason": "為什麼你移動這個物件？",
+        "whyMove": "為什麼你想要移動這個點？",
+        "zoomInFurther": "放更大來確認移動"
+    },
+    "multi_apply": {
+        "autoApply": "當改變屬性 {attr_names} 時，這些屬性也會自動 {count} 套用到其他物件"
+    },
+    "notes": {
+        "addAComment": "新增評論",
+        "addComment": "新增評論",
+        "addCommentAndClose": "新增評論並且關閉",
+        "addCommentPlaceholder": "新增評論…",
+        "anonymous": "暱名用戶",
+        "closeNote": "關閉註解",
+        "createNote": "新增新註解",
+        "createNoteIntro": "地圖有什麼錯誤或缺漏的嗎？這裡新增註解，之後會由志工來檢查。",
+        "createNoteTitle": "在這裡新增註解",
+        "disableAllNoteFilters": "關閉所有篩選",
+        "isClosed": "這個註解已經解決了",
+        "isCreated": "你的註解已經創建了！",
+        "loginToAddComment": "登入來新增評論",
+        "loginToAddPicture": "登入來新增圖片",
+        "loginToClose": "登入來關閉註解",
+        "noteIsPublic": "這大家都看得到",
+        "noteLayerDoEnable": "啟用圖層來顯示註解",
+        "noteLayerHasFilters": "有些註解會被篩選掉而隱藏",
+        "noteLayerNotEnabled": "顯示註解的圖層無法啟用，這個圖層必須啟用才能新增註解",
+        "notesLayerMustBeEnabled": "'notes' 圖層已經關閉，請啟用來新增註解",
+        "reopenNote": "再開啟註解",
+        "reopenNoteAndComment": "再開啟註解與評論",
+        "textNeeded": "輸入描述性的文字來新增註解",
+        "typeText": "輸入些文字來新增評論",
+        "warnAnonymous": "你還未登入，我們無法聯繫你來解決你的問題。"
+    },
+    "privacy": {
+        "editing": "當你對地圖變動時，這些變動會存在開放街圖並且是公開給所有人。採用 MapComplete 的編輯變動包括以下資料：<ul><li>你做的變動</li><li>你的使用者名稱</li><li>你在什麼時間做的變動</li><li>當你做出變動時使用的主題</li><li>使用者介面語言</li><li>你會多接近時變動物件的指示。其他的圖客可以用這些資訊來決定是否是居於踏查還是遠端研究</li></ul>請參考<a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>OpenStreetMap.org的隱私政策</a>來取得更多資訊。我們也提醒你註冊帳號時能夠採用假名。",
+        "editingTitle": "當做出變動",
+        "geodata": "當 MapComplete 取得你地理位置時，你的地理位置與先前造訪的地點資訊會留在你的裝置上。你的位置資訊從來不會自動傳送到任何地方 - 除非有些功能很清楚顯示其他狀態。",
+        "geodataTitle": "你的地理位置",
+        "intro": "隱私相當重要 - 對個人與對社會都是。MapComplete 試著盡可能尊重你的隱私 - 所以不會需要惱人的 cookie。然而我們仍然告知，在那些情境下，以及做出的選擇與取捨下，有那些資訊會被收集與分享。",
+        "miscCookies": "MapComplete 整合多項服務，特別是載入圖徵的圖片。圖片是放在多個第三方服務供應商，也許會有他們自己的 cookies。",
+        "miscCookiesTitle": "其他 cookies",
+        "surveillance": "你會閱讀隱私政策，你大概相當在意隱私 - 所以我們也是！我們甚至製作 <a href='https://mapcomplete.osm.be/surveillance'> 主題地圖顯示監視器。</a>如果在意就繪製這些圖徵吧！",
+        "title": "隱私政策",
+        "tracking": "要瞭解造訪我們網站的洞察，需要收集一些技術資訊。這包括你從那個國家造訪的，你從那個網站連線過來，你採用的裝置與螢幕大小。當你今日稍早造訪 MapComplete 時，我們會在你的裝置內放置 cookies。這些資料並沒有詳盡到能識別出你來，這些統計資料只會統整後，然後<a href='https://pietervdvn.goatcounter.com' target='_blank'>公開給所有人</a>",
+        "trackingTitle": "統計資料",
+        "whileYoureHere": "你在意隱私嗎？"
+    },
+    "professional": {
+        "aboutMc": {
+            "internalUse": {
+                "intro": "<p>在開放街圖開啟資料，你也許會想要使用這些資料。你的 MapComplete 主題能有個方便<i>匯出</i>按鈕，能夠在 QGis、ArcGis、Excel、LibreOffce-calc 等開啟的多種開放格式</p>。只要有基本的試算表技巧就能相當簡單製作資料圖表與洞察，而你組織的 GIS 專家則能用他們習慣的應用程式處理資料。</p><p>如果你需要自動設定，也有免費使用，社群維護的 API 能夠使用。",
+                "title": "在內部流程使用資料"
+            },
+            "layers": {
+                "intro": "<p>MapComplete 有相當強大的模版系統，能夠快速顯示你想要顯示的圖徵，以及在跳出視窗中出現相關的屬性。</p><p>資料則是直接從<b>開放街圖</b>截取，但是 MapComplete 也可以採用<b>外部資料集</b> - 例如為了比較開放街圖與其他資料集，或是顯示不適合用在開放街的資料 (計畫的活動、統計等)",
+                "title": "那些資料能夠顯示在 MapComplete？"
+            },
+            "survey": {
+                "intro": "<p>MapComplete 是相當易用的<i>踏查</i>工具，能夠在桌面以及行動裝置上都能點幾下來收集必要的資料。收集到的資料會直接進到開放街圖資料庫裡。</p><p>我們能設定<b>客製化的踏查工具</b>，詢問精確的資料來證明。</p></p>你有資料集想要(重新)踏查嗎？這是相當完美時間來切換到開放街圖。MapComplete 能夠同時顯示你的資料集與開放街圖資料，更為方便造訪所有地點，以及察看社群已經貢獻了什麼。</p>\n",
+                "title": "踏查可能性"
+            },
+            "text0": "如果有既有的 MapComplete 主題，直接使用或是內嵌到你的網站，內嵌公共主題是免費的，而且一直都會是免費。",
+            "text1": "你需要其他資料，但該主題還沒有存在嗎？MapComplete 開發者能夠以適當的成本<b>為你建造</b>。請以<a href='mailto:pietervdvn@posteo.net'>email</a>、<a href='https://github.com/pietervdvn/MapComplete/issues'>github</a>或是<a href='https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet'>在 osm.org 寄送訊息</a>",
+            "text2": "如果你仍然不確定，可能性仍然在那邊。除此之外，有些共同的問題已經解答了",
+            "title": "在你的組織使用 MapComplete"
+        },
+        "aboutOsm": {
+            "aboutOsm": {
+                "intro": "開放街圖是個由志工打造，分享、全球性的資料庫。所有地理資料都能貢獻到開放街圖，只要他們一直以<b>實地能夠證實</b>。<br/>開放街圖成長變成相當廣與深的資料集，涵蓋成千上萬類別的物件。個別的物件也許有相當多的屬性，帶來很多細微差別，例如：",
+                "li0": "道路有形狀，但也有資訊如道路速限、表面材質，是否有照明，他們的名稱，維基百科的連結，連結到命名由來，有那些健行、單車與公車路線經過，…",
+                "li1": "商家與其他便利設施也許有營業時間，有電話號碼，網站連結，以及支援那些付款方式，販售那些物品，提供那些服務，…",
+                "li2": "廁所也許有無障礙設施、尿布台，如果需要付費的話，…",
+                "li3": "還有更多其他資訊…",
+                "title": "什麼是開放街圖？"
+            },
+            "benefits": {
+                "intro": "也許很難放棄你自己的資料集，因為建造這份資料集花了相當多時間與精力。<br/>然而，切換到開放街圖的好處相當多：",
+                "li0": "你在收集與維謢資料集的路途並不孤單 - 整個社群也是如此",
+                "li1": "你的資料能夠透過 Bing 地圖、蘋果地圖、Facebook、Instagram、精靈寶可夢、OsmAnd、Organic Maps、Maps.me、Mapbox、Komoot，幾乎所有單車 app 接觸到更多人，…",
+                "li2": "許多政府組織與地方政府也在他們的網站使用開放街圖",
+                "title": "加入開放街圖生態系的好處"
+            },
+            "license": {
+                "intro": "開放街圖資料採用開放資料庫授權，<a href='https://osm.org/copyright' target='_blank'>完整版權文字</a>可以在這邊看到摘要：",
+                "li0": "採用開放街圖資料的產品必須標示出處。",
+                "li1": "開放街圖資料必須維持<i>開放</i>，意味著含有開放街圖資料的地圖的資料能夠再次被複製。",
+                "outro": "這份授權有些要求 - 下面會詳加解釋。",
+                "title": "授權條款"
+            },
+            "vandalism": {
+                "intro": "任何人都能編輯資料，的確有可能會有惡意變動。然後，因為以下理由很少發生：",
+                "li0": "做出變動的技術門檻相當高",
+                "li1": "小的惡意變動其實影響不大，因為破壞的回報很低",
+                "li2": "有影響的變動很快就會被注意到，而且因為很多人使用資料，很快就會被回復",
+                "li3": "所有變動都有記錄，而且能指向單一使用者，一直做出破壞的人很快就會被封禁",
+                "li4": "在比利時 (以及其他國家)，新貢獻者的第一編輯會系統性的檢查，如果有錯誤會修正。",
+                "title": "什麼是破壞？"
+            }
+        },
+        "drawbacks": {
+            "intro": "當參與社群有相當大的好處，像是有幾個主題能夠好好考慮。",
+            "licenseNuances": {
+                "intro": "開放街圖資料採用開放資料庫授權，必須聲明：",
+                "li0": "所有資料居於任何目的都能再利用 - 包括商業用途",
+                "li1": "使用開放街圖資料的應用程式或是產品必須清楚標示著作權聲明",
+                "li2": "所有含有開放街圖資料的資料集或產品，必須採用 ODbL 來重新發佈，包括這份資料集的變動與可使用的格式。",
+                "outro": "在一些使用情境下還有一些狀態需要考慮，解釋如下",
+                "title": "ODbL 的應用：一些使用例子",
+                "usecaseGatheringOpenData": {
+                    "intro": "MapComplete 是創建開放資料，以及政府的，相當好的方式。預設狀況下，這份資料能夠在 ODbL 授權自由再發佈。然而，如果需要將收集到的資料以<i>公眾領域</i>授權 (<b>所有</b>權利都釋出到公眾，而且也不用署名) 釋出的話，ODbL 限制太多。如果是這種狀況，你可以請求貢獻者將資料以公眾領域釋出 (例如在 mapcomplete 主題通知他們)。",
+                    "title": "收集開放資料"
+                },
+                "usecaseMapDifferentSources": {
+                    "intro": "<p>例如說，你可以依據開放街圖上的長椅資料，建某個地方一個有所有長椅的地圖。這份印刷地圖必須清楚標示地圖資料來自開放街圖。你可以販售這份地圖。如果地圖繪製者意識到一些區域長椅有缺漏，然後加到地圖上，遺漏的長椅的資料也會自動變成開放資料。這意味著開放街圖貢獻者允許能夠用紙本地圖，然後新增遺漏的長椅到開放街圖。</p><p>貢獻者也有權利要求缺漏長椅的資料集，也應當一併提供。</p><p>如果地圖製造者注意到有些地方遺漏長椅然後加到紙本地圖，遺漏長椅的資料也自動成為開放資料。這意味著開放街圖貢獻者能拿著紙本地圖，然後將遺漏的長椅加到開放街圖。這個貢獻者也可以要求資料集加上遺漏的長椅，也應當提供。</p><p>當然，只有長椅的地圖很無聊，地圖製作者也可以加有商家的圖層，也許是其他地理資料提供者以其他授權方式適出的資料。這是允許的，如果地圖清楚表示長椅從 OSM 來的 (以ODBL釋出)，商家則有不同來源 (最終是保留所有權利)。</p><p>然而，將兩份資料集混成一份無法區分的圖層並不被允許。例如說，地圖製作者發現 OSM 在一部分城市的長椅資料相當好，而閉源提供者則是在城市其他部分有相當好的資料，那混合這些資料將會出問題：</p>",
+                    "li0": "開放授權意味著變動將被開放發佈…",
+                    "li1": "...即更是所有權利保留的授權條款都會阻止這件事情。",
+                    "outro": "結果來說，這種混合方式並不允許",
+                    "title": "從不同來源創建地圖"
+                }
+            },
+            "title": "有些缺點要謹記在心",
+            "unsuitedData": {
+                "intro": "開放街圖的基本規則是所有資料必須能夠<b>在地驗證</b>，而且 還是永久的。這意味著有些資料<i>無法</i>直接傳送到開放街圖 - 但還是存在繞過的方式。",
+                "li0": "主觀性資料 (像是評論) 並不適合開放街圖。然而，MapComplete 整合開放授權的評論網站<a href='https://mangrove.reviews/'>Mangrove.review</a>",
+                "li1": "活動<i>不能</i>記錄，只存在幾天的道路活動也不能記錄。",
+                "li2": "時間性資料 (例如空氣品質統計、交通狀況，...) 無法儲存到開放街圖，因為無法以志工力量來核實。注意，如果其他地方有資料的話，仍然有可能透過在 MapComplete 的額外圖層來視覺化。",
+                "title": "資料類型並不適合開放街圖"
+            }
+        },
+        "indexPage": {
+            "button": "發現我們的服務",
+            "hook": "需要專業支援嗎？",
+            "hookMore": "我們能協助建立踏查，資料匯入與開放街圖顧問服務"
+        },
+        "intro": "MapComplete 開發者提供專業支援，這份文件列出幾種可能性，常見問題與 MapComplete 的範圍",
+        "osmTitle": "開放街圖與 MapComplete 可以為你的組織做什麼？",
+        "services": {
+            "intro": "MapComplete 的開發者能協助以下服務：",
+            "li0": "設定符合你需求的主題",
+            "li1": "幫助設定內部資料流程來整合開放街圖",
+            "li2": "訓練怎麼用 MapComplete 來貢獻資料",
+            "li3": "進階訓練 (例如針對 GIS 團隊) 如何新增進階資料到開放街圖",
+            "li4": "訓練怎麼從開放街圖下載篩選過的資料",
+            "outro": "這些服務以相當有競爭性的價格來提供，單純設立主題不用額外支援的話只要 €2000，以及小額的每年託管服務價錢。",
+            "title": "MapComplete 服務"
+        },
+        "text0": "<p>維護一份即時的地理資料相當難，會有錯而且昂貴。<br/>而讓事情更糟的是，許多組織最後獨自收集相同的資料 - 導致重覆效率，非標準化的資料格式與不完整，無法維護的資料集。</p><p>而在同一時間，有個相當龐大的社群收集很多地理資料，變成一個分享、全球性而且標準化的資料庫 - 被叫做 OpenStreetMap.org。</p>",
+        "text1": "<p>MapComplete 是讓貢獻資料到開放街圖更簡單的編輯器。</p>",
+        "title": "MapComplete 的專業服務"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(關係者審核)",
@@ -244,5 +721,75 @@
         "loginToSplit": "你必須登入才能分割道路",
         "split": "分開",
         "splitTitle": "請在地圖選擇要在那裡分割道路"
+    },
+    "translations": {
+        "activateButton": "協助翻譯 MapComplete",
+        "allMissing": "還沒有翻譯",
+        "completeness": "{theme} 的 {language} 翻譯目前是 {percentage}%：{total} 中的 {translated} 已經翻譯了",
+        "deactivate": "關閉翻譯按鈕",
+        "help": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。",
+        "isTranslator": "翻譯模式已經啟用，你的名字符合前一位翻譯者的名字",
+        "missing": "{count} 未翻譯字串",
+        "notImmediate": "翻譯不會直接更新，通常會需要幾天時間"
+    },
+    "validation": {
+        "color": {
+            "description": "顏色或是色碼"
+        },
+        "date": {
+            "description": "日期，以年開始"
+        },
+        "direction": {
+            "description": "方向"
+        },
+        "distance": {
+            "description": "以公尺計算的距離"
+        },
+        "email": {
+            "description": "email 地址",
+            "feedback": "這不是有效的 email 地址",
+            "noAt": "email 地址應當含有 @"
+        },
+        "float": {
+            "description": "數字",
+            "feedback": "這不是數字"
+        },
+        "int": {
+            "description": "全部的數字"
+        },
+        "nat": {
+            "description": "正數、整數或是零",
+            "mustBePositive": "數字應當是正數",
+            "mustBeWhole": "只有整數是允許的",
+            "notANumber": "輸入數字"
+        },
+        "opening_hours": {
+            "description": "開放時間"
+        },
+        "pfloat": {
+            "description": "正數"
+        },
+        "phone": {
+            "description": "電話號碼",
+            "feedback": "這不是有效的電話號碼"
+        },
+        "pnat": {
+            "description": "正數、整數",
+            "noZero": "並不允許零"
+        },
+        "string": {
+            "description": "一段文字"
+        },
+        "text": {
+            "description": "一段文字"
+        },
+        "tooLong": "文字太長了，最多允許 255 字元，你現在還有 {count} 字元。",
+        "url": {
+            "description": "連接到網站",
+            "feedback": "這不是有效的網址"
+        },
+        "wikidata": {
+            "description": "Wikidata 編號"
+        }
     }
 }

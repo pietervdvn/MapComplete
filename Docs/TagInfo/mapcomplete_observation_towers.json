@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/observation_towers",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/observation_tower/Tower_observation.svg",
-    "contact_name": "Pieter Vander Vennet, ",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -84,7 +84,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Observation towers' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Observation towers')"
+      "description": "Layer 'Observation towers' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Observation towers')"
     },
     {
       "key": "step_count",
@@ -130,7 +130,7 @@
     },
     {
       "key": "wikipedia",
-      "description": "Layer 'Observation towers' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Observation towers')"
+      "description": "Layer 'Observation towers' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Observation towers')"
     },
     {
       "key": "wikidata",

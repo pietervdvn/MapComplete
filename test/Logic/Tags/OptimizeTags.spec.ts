@@ -1,129 +1,91 @@
-import {describe} from 'mocha'
-import {expect} from 'chai'
-import {TagsFilter} from "../../../Logic/Tags/TagsFilter";
-import {And} from "../../../Logic/Tags/And";
-import {Tag} from "../../../Logic/Tags/Tag";
-import {TagUtils} from "../../../Logic/Tags/TagUtils";
-import {Or} from "../../../Logic/Tags/Or";
-import {RegexTag} from "../../../Logic/Tags/RegexTag";
+import { describe } from "mocha"
+import { expect } from "chai"
+import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
+import { And } from "../../../Logic/Tags/And"
+import { Tag } from "../../../Logic/Tags/Tag"
+import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { Or } from "../../../Logic/Tags/Or"
+import { RegexTag } from "../../../Logic/Tags/RegexTag"
 
 describe("Tag optimalization", () => {
-
     describe("And", () => {
         it("with condition and nested and should be flattened", () => {
-            const t = new And(
-                [
-                    new And([
-                        new Tag("x", "y")
-                    ]),
-                    new Tag("a", "b")
-                ]
-            )
+            const t = new And([new And([new Tag("x", "y")]), new Tag("a", "b")])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).eq(`a=b&x=y`)
         })
 
         it("should be 'true' if no conditions are given", () => {
-            const t = new And(
-                []
-            )
+            const t = new And([])
             const opt = t.optimize()
             expect(opt).eq(true)
         })
-        
+
         it("should return false on conflicting tags", () => {
-            const t = new And([new Tag("key","a"), new Tag("key","b")])
+            const t = new And([new Tag("key", "a"), new Tag("key", "b")])
             const opt = t.optimize()
             expect(opt).eq(false)
         })
 
         it("with nested ors and common property should be extracted", () => {
-
             // foo&bar & (x=y | a=b) & (x=y | c=d) & foo=bar is equivalent too foo=bar & ((x=y) | (a=b & c=d))
             const t = new And([
                 new Tag("foo", "bar"),
-                new Or([
-                    new Tag("x", "y"),
-                    new Tag("a", "b")
-                ]),
-                new Or([
-                    new Tag("x", "y"),
-                    new Tag("c", "d")
-                ])
+                new Or([new Tag("x", "y"), new Tag("a", "b")]),
+                new Or([new Tag("x", "y"), new Tag("c", "d")]),
             ])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).eq("foo=bar& (x=y| (a=b&c=d) )")
         })
 
         it("with nested ors and common regextag should be extracted", () => {
-
             // foo&bar & (x=y | a=b) & (x=y | c=d) & foo=bar is equivalent too foo=bar & ((x=y) | (a=b & c=d))
             const t = new And([
                 new Tag("foo", "bar"),
-                new Or([
-                    new RegexTag("x", "y"),
-                    new RegexTag("a", "b")
-                ]),
-                new Or([
-                    new RegexTag("x", "y"),
-                    new RegexTag("c", "d")
-                ])
+                new Or([new RegexTag("x", "y"), new RegexTag("a", "b")]),
+                new Or([new RegexTag("x", "y"), new RegexTag("c", "d")]),
             ])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).eq("foo=bar& ( (a=b&c=d) |x=y)")
         })
 
         it("with nested ors and inverted regextags should _not_ be extracted", () => {
-
             // foo&bar & (x=y | a=b) & (x=y | c=d) & foo=bar is equivalent too foo=bar & ((x=y) | (a=b & c=d))
             const t = new And([
                 new Tag("foo", "bar"),
-                new Or([
-                    new RegexTag("x", "y"),
-                    new RegexTag("a", "b")
-                ]),
-                new Or([
-                    new RegexTag("x", "y", true),
-                    new RegexTag("c", "d")
-                ])
+                new Or([new RegexTag("x", "y"), new RegexTag("a", "b")]),
+                new Or([new RegexTag("x", "y", true), new RegexTag("c", "d")]),
             ])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).eq("foo=bar& (a=b|x=y) & (c=d|x!=y)")
         })
 
         it("should move regextag to the end", () => {
-            const t = new And([
-                new RegexTag("x", "y"),
-                new Tag("a", "b")
-            ])
+            const t = new And([new RegexTag("x", "y"), new Tag("a", "b")])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).eq("a=b&x=y")
-
         })
 
         it("should sort tags by their popularity (least popular first)", () => {
-            const t = new And([
-                new Tag("bicycle", "yes"),
-                new Tag("amenity", "binoculars")
-            ])
+            const t = new And([new Tag("bicycle", "yes"), new Tag("amenity", "binoculars")])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).eq("amenity=binoculars&bicycle=yes")
-
         })
 
         it("should optimize nested ORs", () => {
             const filter = TagUtils.Tag({
                 or: [
-                    "X=Y", "FOO=BAR",
+                    "X=Y",
+                    "FOO=BAR",
                     {
-                        "and": [
+                        and: [
                             {
-                                "or": ["X=Y", "FOO=BAR"]
+                                or: ["X=Y", "FOO=BAR"],
                             },
-                            "bicycle=yes"
-                        ]
-                    }
-                ]
+                            "bicycle=yes",
+                        ],
+                    },
+                ],
             })
             // (X=Y | FOO=BAR | (bicycle=yes & (X=Y | FOO=BAR)) )
             // This is equivalent to (X=Y | FOO=BAR)
@@ -135,56 +97,60 @@ describe("Tag optimalization", () => {
             const filter = TagUtils.Tag({
                 or: [
                     {
-                        "and": [
+                        and: [
                             {
-                                "or": ["amenity=charging_station", "disused:amenity=charging_station", "planned:amenity=charging_station", "construction:amenity=charging_station"]
+                                or: [
+                                    "amenity=charging_station",
+                                    "disused:amenity=charging_station",
+                                    "planned:amenity=charging_station",
+                                    "construction:amenity=charging_station",
+                                ],
                             },
-                            "bicycle=yes"
-                        ]
+                            "bicycle=yes",
+                        ],
                     },
                     {
-                        "and": [
+                        and: [
                             {
-                                "or": ["amenity=charging_station", "disused:amenity=charging_station", "planned:amenity=charging_station", "construction:amenity=charging_station"]
+                                or: [
+                                    "amenity=charging_station",
+                                    "disused:amenity=charging_station",
+                                    "planned:amenity=charging_station",
+                                    "construction:amenity=charging_station",
+                                ],
                             },
-                        ]
+                        ],
                     },
                     "amenity=toilets",
                     "amenity=bench",
                     "leisure=picnic_table",
                     {
-                        "and": [
-                            "tower:type=observation"
-                        ]
+                        and: ["tower:type=observation"],
                     },
                     {
-                        "and": [
-                            "amenity=bicycle_repair_station"
-                        ]
+                        and: ["amenity=bicycle_repair_station"],
                     },
                     {
-                        "and": [
+                        and: [
                             {
-                                "or": [
+                                or: [
                                     "amenity=bicycle_rental",
                                     "bicycle_rental~*",
                                     "service:bicycle:rental=yes",
-                                    "rental~.*bicycle.*"
-                                ]
+                                    "rental~.*bicycle.*",
+                                ],
                             },
-                            "bicycle_rental!=docking_station"
-                        ]
+                            "bicycle_rental!=docking_station",
+                        ],
                     },
                     {
-                        "and": [
-                            "leisure=playground",
-                            "playground!=forest"
-                        ]
-                    }
-                ]
-            });
+                        and: ["leisure=playground", "playground!=forest"],
+                    },
+                ],
+            })
             const opt = <TagsFilter>filter.optimize()
-            const expected = ["amenity=charging_station",
+            const expected = [
+                "amenity=charging_station",
                 "amenity=toilets",
                 "amenity=bench",
                 "amenity=bicycle_repair_station",
@@ -193,12 +159,11 @@ describe("Tag optimalization", () => {
                 "leisure=picnic_table",
                 "planned:amenity=charging_station",
                 "tower:type=observation",
-                "(amenity=bicycle_rental|service:bicycle:rental=yes|bicycle_rental~^..*$|rental~^.*bicycle.*$) &bicycle_rental!=docking_station",
-                "leisure=playground&playground!=forest"]
+                "(amenity=bicycle_rental|service:bicycle:rental=yes|bicycle_rental~.+|rental~^(.*bicycle.*)$) &bicycle_rental!=docking_station",
+                "leisure=playground&playground!=forest",
+            ]
 
-            expect((<Or>opt).or.map(f => TagUtils.toString(f))).deep.eq(
-                expected
-            )
+            expect((<Or>opt).or.map((f) => TagUtils.toString(f))).deep.eq(expected)
         })
 
         it("should detect conflicting tags", () => {
@@ -210,79 +175,54 @@ describe("Tag optimalization", () => {
             const q = new And([new Tag("key", "value"), new RegexTag("key", /value/, true)])
             expect(q.optimize()).eq(false)
         })
-
     })
 
     describe("Or", () => {
-
-
         it("with nested And which has a common property should be dropped", () => {
-
             const t = new Or([
                 new Tag("foo", "bar"),
-                new And([
-                    new Tag("foo", "bar"),
-                    new Tag("x", "y"),
-                ])
+                new And([new Tag("foo", "bar"), new Tag("x", "y")]),
             ])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).eq("foo=bar")
-
         })
 
         it("should flatten nested ors", () => {
-            const t = new Or([
-                new Or([
-                    new Tag("x", "y")
-                ])
-            ]).optimize()
+            const t = new Or([new Or([new Tag("x", "y")])]).optimize()
             expect(t).deep.eq(new Tag("x", "y"))
         })
 
         it("should flatten nested ors", () => {
-            const t = new Or([
-                new Tag("a", "b"),
-                new Or([
-                    new Tag("x", "y")
-                ])
-            ]).optimize()
+            const t = new Or([new Tag("a", "b"), new Or([new Tag("x", "y")])]).optimize()
             expect(t).deep.eq(new Or([new Tag("a", "b"), new Tag("x", "y")]))
         })
-
     })
 
     it("should not generate a conflict for climbing tags", () => {
-        const club_tags = TagUtils.Tag(
-            {
-                "or": [
-                    "club=climbing",
-                    {
-                        "and": [
-                            "sport=climbing",
-                            {
-                                "or": [
-                                    "office~*",
-                                    "club~*"
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            })
+        const club_tags = TagUtils.Tag({
+            or: [
+                "club=climbing",
+                {
+                    and: [
+                        "sport=climbing",
+                        {
+                            or: ["office~*", "club~*"],
+                        },
+                    ],
+                },
+            ],
+        })
         const gym_tags = TagUtils.Tag({
-            "and": [
-                "sport=climbing",
-                "leisure=sports_centre"
-            ]
+            and: ["sport=climbing", "leisure=sports_centre"],
         })
         const other_climbing = TagUtils.Tag({
-            "and": [
+            and: [
                 "sport=climbing",
                 "climbing!~route",
                 "leisure!~sports_centre",
                 "climbing!=route_top",
-                "climbing!=route_bottom"
-            ]
+                "climbing!=route_bottom",
+            ],
         })
         const together = new Or([club_tags, gym_tags, other_climbing])
         const opt = together.optimize()
@@ -297,8 +237,8 @@ describe("Tag optimalization", () => {
 
         /*
          > When the first OR is written out, this becomes
-         club=climbing 
-         OR 
+         club=climbing
+         OR
          (sport=climbing&(office~* | club~*))
          OR
          (sport=climbing & leisure=sports_centre)
@@ -308,9 +248,9 @@ describe("Tag optimalization", () => {
 
         /*
          > We can join the 'sport=climbing' in the last 3 phrases
-         club=climbing 
-         OR 
-         (sport=climbing AND 
+         club=climbing
+         OR
+         (sport=climbing AND
              (office~* | club~*))
              OR
              (leisure=sports_centre)
@@ -319,17 +259,16 @@ describe("Tag optimalization", () => {
          )
          */
 
-
         expect(opt).deep.eq(
             TagUtils.Tag({
                 or: [
                     "club=climbing",
                     {
-                        and: ["sport=climbing",
-                            {or: ["club~*", "office~*"]}]
+                        and: ["sport=climbing", { or: ["club~*", "office~*"] }],
                     },
                     {
-                        and: ["sport=climbing",
+                        and: [
+                            "sport=climbing",
                             {
                                 or: [
                                     "leisure=sports_centre",
@@ -338,15 +277,14 @@ describe("Tag optimalization", () => {
                                             "climbing!~route",
                                             "climbing!=route_top",
                                             "climbing!=route_bottom",
-                                            "leisure!~sports_centre"
-                                        ]
-                                    }
-                                ]
-                            }]
-                    }
-
+                                            "leisure!~sports_centre",
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
                 ],
-
             })
         )
     })

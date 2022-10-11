@@ -1,14 +1,14 @@
-import TagRenderingConfig from "./TagRenderingConfig";
-import SharedTagRenderings from "../../Customizations/SharedTagRenderings";
-import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
+import TagRenderingConfig from "./TagRenderingConfig"
+import SharedTagRenderings from "../../Customizations/SharedTagRenderings"
+import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 export default class WithContextLoader {
-    protected readonly _context: string;
-    private readonly _json: any;
+    protected readonly _context: string
+    private readonly _json: any
 
     constructor(json: any, context: string) {
-        this._json = json;
-        this._context = context;
+        this._json = json
+        this._context = context
     }
 
     /** Given a key, gets the corresponding property from the json (or the default if not found
@@ -16,26 +16,20 @@ export default class WithContextLoader {
      * The found value is interpreted as a tagrendering and fetched/parsed
      * */
     public tr(key: string, deflt) {
-        const v = this._json[key];
+        const v = this._json[key]
         if (v === undefined || v === null) {
             if (deflt === undefined) {
-                return undefined;
+                return undefined
             }
-            return new TagRenderingConfig(
-                deflt,
-                `${this._context}.${key}.default value`
-            );
+            return new TagRenderingConfig(deflt, `${this._context}.${key}.default value`)
         }
         if (typeof v === "string") {
-            const shared = SharedTagRenderings.SharedTagRendering.get(v);
+            const shared = SharedTagRenderings.SharedTagRendering.get(v)
             if (shared) {
-                return shared;
+                return shared
             }
         }
-        return new TagRenderingConfig(
-            v,
-            `${this._context}.${key}`
-        );
+        return new TagRenderingConfig(v, `${this._context}.${key}`)
     }
 
     /**
@@ -48,27 +42,29 @@ export default class WithContextLoader {
             /**
              * Throw an error if 'question' is defined
              */
-            readOnlyMode?: boolean,
+            readOnlyMode?: boolean
             requiresId?: boolean
-            prepConfig?: ((config: TagRenderingConfigJson) => TagRenderingConfigJson)
-
+            prepConfig?: (config: TagRenderingConfigJson) => TagRenderingConfigJson
         }
     ): TagRenderingConfig[] {
         if (tagRenderings === undefined) {
-            return [];
+            return []
         }
 
         const context = this._context
         options = options ?? {}
         if (options.prepConfig === undefined) {
-            options.prepConfig = c => c
+            options.prepConfig = (c) => c
         }
         const renderings: TagRenderingConfig[] = []
         for (let i = 0; i < tagRenderings.length; i++) {
-            const preparedConfig = tagRenderings[i];
-            const tr = new TagRenderingConfig(preparedConfig, `${context}.tagrendering[${i}]`);
+            const preparedConfig = tagRenderings[i]
+            const tr = new TagRenderingConfig(preparedConfig, `${context}.tagrendering[${i}]`)
             if (options.readOnlyMode && tr.question !== undefined) {
-                throw "A question is defined for " + `${context}.tagrendering[${i}], but this is not allowed at this position - probably because this rendering is an icon, badge or label`
+                throw (
+                    "A question is defined for " +
+                    `${context}.tagrendering[${i}], but this is not allowed at this position - probably because this rendering is an icon, badge or label`
+                )
             }
             if (options.requiresId && tr.id === "") {
                 throw `${context}.tagrendering[${i}] has an invalid ID - make sure it is defined and not empty`
@@ -77,6 +73,6 @@ export default class WithContextLoader {
             renderings.push(tr)
         }
 
-        return renderings;
+        return renderings
     }
 }

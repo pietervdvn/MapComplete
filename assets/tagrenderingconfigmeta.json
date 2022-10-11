@@ -27,6 +27,12 @@
   },
   {
     "path": [
+      "description"
+    ],
+    "description": "A human-readable text explaining what this tagRendering does"
+  },
+  {
+    "path": [
       "render"
     ],
     "typeHint": "rendered",

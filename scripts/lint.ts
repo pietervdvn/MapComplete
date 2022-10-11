@@ -1,24 +1,26 @@
-import ScriptUtils from "./ScriptUtils";
-import {mkdirSync, writeFileSync} from "fs";
-import {FixLegacyTheme, UpdateLegacyLayer} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert";
-import Translations from "../UI/i18n/Translations";
-import {Translation} from "../UI/i18n/Translation";
-import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson";
-import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson";
+import ScriptUtils from "./ScriptUtils"
+import { writeFileSync } from "fs"
+import {
+    FixLegacyTheme,
+    UpdateLegacyLayer,
+} from "../Models/ThemeConfig/Conversion/LegacyJsonConvert"
+import Translations from "../UI/i18n/Translations"
+import { Translation } from "../UI/i18n/Translation"
+import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 
 /*
  * This script reads all theme and layer files and reformats them inplace
  * Use with caution, make a commit beforehand!
  */
 
-const t : Translation = Translations.t.general.add.addNew
+const t: Translation = Translations.t.general.add.addNew
 t.OnEveryLanguage((txt, ln) => {
     console.log(ln, txt)
     return txt
 })
 
 const articles = {
-  /*  de: "eine",
+    /*  de: "eine",
     es: 'una',
     fr: 'une',
     it: 'una',
@@ -28,7 +30,7 @@ const articles = {
     pt_BR : 'uma',//*/
 }
 
-function addArticleToPresets(layerConfig: {presets?: {title: any}[]}){
+function addArticleToPresets(layerConfig: { presets?: { title: any }[] }) {
     /*
     if(layerConfig.presets === undefined){
         return 
@@ -60,10 +62,15 @@ function addArticleToPresets(layerConfig: {presets?: {title: any}[]}){
     //*/
 }
 
-const layerFiles = ScriptUtils.getLayerFiles();
+const layerFiles = ScriptUtils.getLayerFiles()
 for (const layerFile of layerFiles) {
     try {
-        const fixed =<LayerConfigJson> new UpdateLegacyLayer().convertStrict(layerFile.parsed, "While linting " + layerFile.path);
+        const fixed = <LayerConfigJson>(
+            new UpdateLegacyLayer().convertStrict(
+                layerFile.parsed,
+                "While linting " + layerFile.path
+            )
+        )
         addArticleToPresets(fixed)
         writeFileSync(layerFile.path, JSON.stringify(fixed, null, "  "))
     } catch (e) {
@@ -74,13 +81,16 @@ for (const layerFile of layerFiles) {
 const themeFiles = ScriptUtils.getThemeFiles()
 for (const themeFile of themeFiles) {
     try {
-        const fixed = new FixLegacyTheme().convertStrict(themeFile.parsed, "While linting " + themeFile.path);
+        const fixed = new FixLegacyTheme().convertStrict(
+            themeFile.parsed,
+            "While linting " + themeFile.path
+        )
         for (const layer of fixed.layers) {
-            if(layer["presets"] !== undefined){
-                addArticleToPresets(<any> layer)
+            if (layer["presets"] !== undefined) {
+                addArticleToPresets(<any>layer)
             }
         }
-       // extractInlineLayer(fixed)
+        // extractInlineLayer(fixed)
         writeFileSync(themeFile.path, JSON.stringify(fixed, null, "  "))
     } catch (e) {
         console.error("COULD NOT LINT THEME" + themeFile.path + ":\n\t" + e)

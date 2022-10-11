@@ -17,6 +17,9 @@ export default {
         "type": "string"
       }
     },
+    "description": {
+      "description": "A human-readable text explaining what this tagRendering does"
+    },
     "render": {
       "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
     },

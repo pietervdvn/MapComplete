@@ -4,7 +4,6 @@
  */
 export type TagConfigJson = string | AndTagConfigJson | OrTagConfigJson
 
-
 /**
  * Chain many tags, to match, all of these should be true
  * See https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation
@@ -14,7 +13,7 @@ export type OrTagConfigJson = {
 }
 /**
  * Chain many tags, to match, a single of these should be true
- * See https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation 
+ * See https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation
  */
 export type AndTagConfigJson = {
     and: TagConfigJson[]

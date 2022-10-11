@@ -12,43 +12,41 @@
 @tailwind utilities;
 
 @layer utilities {
-  @variants responsive {
-    .z-above-map {
-      z-index: 10000;
-    }
+  .z-above-map {
+    z-index: 10000;
+  }
 
-    .z-above-controls {
-      z-index: 10001;
-    }
+  .z-above-controls {
+    z-index: 10001;
+  }
 
-    .w-160 {
-      width: 40rem;
-    }
+  .w-160 {
+    width: 40rem;
+  }
 
-    .bg-subtle {
-      background-color: var(--subtle-detail-color);
-      color: var(--subtle-detail-color-contrast);
-    }
+  .bg-subtle {
+    background-color: var(--subtle-detail-color);
+    color: var(--subtle-detail-color-contrast);
+  }
 
-    .bg-unsubtle {
-      background-color: var(--unsubtle-detail-color);
-      color: var(--unsubtle-detail-color-contrast);
-    }
+  .bg-unsubtle {
+    background-color: var(--unsubtle-detail-color);
+    color: var(--unsubtle-detail-color-contrast);
+  }
 
-    .bg-catch {
-      background-color: var(--catch-detail-color);
-      color: var(--catch-detail-color-contrast);
-    }
+  .bg-catch {
+    background-color: var(--catch-detail-color);
+    color: var(--catch-detail-color-contrast);
+  }
 
-    .rounded-left-full {
-      border-bottom-left-radius: 999rem;
-      border-top-left-radius: 999rem;
-    }
+  .rounded-left-full {
+    border-bottom-left-radius: 999rem;
+    border-top-left-radius: 999rem;
+  }
 
-    .rounded-right-full {
-      border-bottom-right-radius: 999rem;
-      border-top-right-radius: 999rem;
-    }
+  .rounded-right-full {
+    border-bottom-right-radius: 999rem;
+    border-top-right-radius: 999rem;
   }
 }
 
@@ -67,7 +65,7 @@
 
   /**
      * Base colour of interactive elements, mainly the 'subtle button'
-     * 
+     *
      */
   --subtle-detail-color: #dbeafe;
   --subtle-detail-color-contrast: black;
@@ -182,6 +180,10 @@ a {
   color: var(--foreground-color);
 }
 
+.text-white a {
+  color: var(--background-color);
+}
+
 .btn {
   line-height: 1.25rem;
   --tw-text-opacity: 1;
@@ -283,6 +285,10 @@ input[type="range"].vertical {
 }
 
 .link-underline a {
+  text-decoration: underline 1px var(--foreground-color);
+}
+
+a.link-underline {
   text-decoration: underline 1px var(--foreground-color);
 }
 
@@ -590,12 +596,12 @@ input {
 }
 
 .code {
-    display: inline-block;
-    background-color: lightgray;
-    padding: 0.5em;
-    word-break: break-word;
-    color: black;
-    box-sizing: border-box;
+  display: inline-block;
+  background-color: lightgray;
+  padding: 0.5em;
+  word-break: break-word;
+  color: black;
+  box-sizing: border-box;
 }
 
 /** Switch layout **/

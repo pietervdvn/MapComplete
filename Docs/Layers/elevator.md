@@ -25,6 +25,7 @@ This layer show elevators and asks for operational status and elevator dimension
 
 
 
+  - [indoors](https://mapcomplete.osm.be/indoors)
   - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 

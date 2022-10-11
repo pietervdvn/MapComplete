@@ -118,7 +118,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -138,7 +138,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -158,7 +158,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -181,8 +181,6 @@ This is rendered with  A fee of {charge} should be paid for climbing here
   - Climbing here is free of charge  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>`
   - Paying a fee is required to climb here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
 
-
-Only visible if  `sport=climbing`  is shown
 
 
 
@@ -212,8 +210,6 @@ This is rendered with  The routes are <b>{canonical(climbing:length)}</b> long o
 
 
 
-Only visible if  `sport=climbing`  is shown
-
 
 
 ### min_difficulty 
@@ -227,8 +223,6 @@ This rendering asks information about the property  [climbing:grade:french:min](
 This is rendered with  The lowest grade is {climbing:grade:french:min} according to the french/belgian system
 
 
-
-Only visible if  `sport=climbing`  is shown
 
 
 
@@ -244,7 +238,7 @@ This is rendered with  The highest grade is {climbing:grade:french:max} accordin
 
 
 
-Only visible if  `climbing!~^route$&climbing:sport=yes|sport=climbing&sport=climbing`  is shown
+Only visible if  `climbing!~^(route)$&climbing:sport=yes|sport=climbing`  is shown
 
 
 
@@ -261,11 +255,9 @@ The question is  Is bouldering possible here?
   - Bouldering is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>`
   - Bouldering is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>`
   - Bouldering is possible, allthough there are only a few routes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>`
-  - There are {climbing:boulder} boulder routes  corresponds with  `climbing:boulder~^..*$`
+  - There are {climbing:boulder} boulder routes  corresponds with  `climbing:boulder~.+`
   - This option cannot be chosen as answer
 
-
-Only visible if  `sport=climbing`  is shown
 
 
 
@@ -281,11 +273,9 @@ The question is  Is sport climbing possible here on fixed anchors?
 
   - Sport climbing is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a>`
   - Sport climbing is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno' target='_blank'>no</a>`
-  - There are {climbing:sport} sport climbing routes  corresponds with  `climbing:sport~^..*$`
+  - There are {climbing:sport} sport climbing routes  corresponds with  `climbing:sport~.+`
   - This option cannot be chosen as answer
 
-
-Only visible if  `sport=climbing`  is shown
 
 
 
@@ -317,7 +307,7 @@ The question is  Is there a speed climbing wall?
 
   - There is a speed climbing wall  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes' target='_blank'>yes</a>`
   - There is no speed climbing wall  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno' target='_blank'>no</a>`
-  - There are {climbing:speed} speed climbing walls  corresponds with  `climbing:speed~^..*$`
+  - There are {climbing:speed} speed climbing walls  corresponds with  `climbing:speed~.+`
   - This option cannot be chosen as answer
  
 

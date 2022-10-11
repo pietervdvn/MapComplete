@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/sport_pitches",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/sport_pitch/table_tennis.svg",
-    "contact_name": "Pieter Vander Vennet, ",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -96,8 +96,8 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Sport pitches' shows access=public with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
-      "value": "public"
+      "description": "Layer 'Sport pitches' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "value": "yes"
     },
     {
       "key": "access",
@@ -113,6 +113,11 @@
       "key": "access",
       "description": "Layer 'Sport pitches' shows access=private with a fixed text, namely 'Private - not accessible to the public' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
       "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Sport pitches' shows access=public with a fixed text, namely 'Public access' (in the MapComplete.osm.be theme 'Sport pitches')",
+      "value": "public"
     },
     {
       "key": "reservation",

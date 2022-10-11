@@ -44,7 +44,7 @@
       "question": {
         "en": "What type of entrance is this?",
         "nl": "Wat voor ingang is dit?",
-        "de": "Um welchen Eingangstyp handelt es sich hier?",
+        "de": "Um welchen Eingangstyp handelt es sich?",
         "es": "¿Qué tipo de entrada es esta?",
         "fr": "De quel type d'entrée s'agit-il ?"
       },
@@ -358,9 +358,9 @@
     {
       "id": "width",
       "render": {
-        "en": "This door has a width of {canonical(width)} meter",
-        "nl": "Deze deur heeft een breedte van {canonical(width)} meter",
-        "de": "Diese Tür hat eine Durchgangsbreite von {canonical(width)} Meter",
+        "en": "This door has a width of {canonical(width)}",
+        "nl": "Deze deur heeft een breedte van {canonical(width)}",
+        "de": "Diese Tür hat eine Durchgangsbreite von {canonical(width)}",
         "es": "Esta puerta tiene una ancho de {canonical(width)} metros",
         "fr": "Cette porte a une largeur de {canonical(width)} mètre"
       },
@@ -451,7 +451,8 @@
     {
       "title": {
         "en": "an indoor door",
-        "de": "eine Innentür"
+        "de": "eine Innentür",
+        "nl": "een binnendeur"
       },
       "preciseInput": {
         "preferredBackground": "map",
@@ -467,10 +468,12 @@
   "units": [
     {
       "appliesToKey": [
-        "kerb:height"
+        "kerb:height",
+        "width"
       ],
       "applicableUnits": [
         {
+          "useIfNoUnitGiven": true,
           "canonicalDenomination": "m",
           "alternativeDenomination": [
             "meter"
@@ -483,7 +486,7 @@
           }
         },
         {
-          "default": true,
+          "useAsDefaultInput": true,
           "canonicalDenomination": "cm",
           "alternativeDenomination": [
             "centimeter",

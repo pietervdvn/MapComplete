@@ -990,21 +990,7 @@
     }
   ],
   "filter": [
-    {
-      "id": "isOpen",
-      "options": [
-        {
-          "question": {
-            "en": "Currently open",
-            "nl": "Op dit moment open",
-            "de": "Derzeit geöffnet",
-            "es": "Actualmente abierto",
-            "it": "Aperto ora"
-          },
-          "osmTags": "_isOpen=yes"
-        }
-      ]
-    },
+    "open_now",
     {
       "id": "recyclingType",
       "options": [

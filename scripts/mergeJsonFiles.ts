@@ -1,8 +1,7 @@
-import {readFileSync, writeFileSync} from "fs";
-import {Utils} from "../Utils";
+import { readFileSync, writeFileSync } from "fs"
+import { Utils } from "../Utils"
 
 function main(args: string[]) {
-
     console.log("File Merge")
 
     if (args.length != 3) {

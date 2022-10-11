@@ -32,11 +32,21 @@ roads is possible and in some restricted themes is geometry-conflation possible 
 MapComplete:** [Watch Pieter's talk on the 2021 State Of The Map Conference](https://media.ccc.de/v/sotm2021-9448-introduction-and-review-of-mapcomplete) ([YouTube](https://www.youtube.com/watch?v=zTtMn6fNbYY))
 about the history, vision and future of MapComplete.
 
-# Creating your own theme
+# Documentation
 
-It is possible to quickly make and distribute your own theme
+**All documentation can be found in [the documentation directory](Docs/)**
 
-- [please read the documentation on how to do this](Docs/Making_Your_Own_Theme.md).
+## Dev
+
+To develop or deploy a version of MapComplete, have a look [to the guide](Docs/Development_deployment.md).
+
+
+## Creating your own theme
+
+It is possible to quickly make and distribute your own theme, [please read the documentation on how to do this](Docs/Making_Your_Own_Theme.md).
+
+The main developer is currently _not_ taking requests for new themes (unless they are commissioned). There are simply to much good thematic maps to make.
+We do however encourage you to try to create your own theme yourself - we'll gladly accept it as official theme if it meets the criteria.
 
 ## Examples
 
@@ -103,9 +113,6 @@ GPLv3.0 + recommended pingback.
 I love it to see where the project ends up. You are free to reuse the software (under GPL) but, when you have made your
 own change and are using it, I would like to know about it. Drop me a line, give a pingback in the issues,...
 
-## Dev
-
-To develop or deploy a version of MapComplete, have a look [to the guide](Docs/Development_deployment.md).
 
 ## Translating MapComplete
 
@@ -162,10 +169,6 @@ changeset is probably closed and we open a new changeset.
 
 Note that changesets are closed automatically after one hour of inactivity, so we don't have to worry about closing
 them.
-
-# Documentation
-
-All documentation can be found in [here](Docs/)
 
 # Privacy
 

@@ -1,6 +1,6 @@
-import Combine from "../Base/Combine";
-import Translations from "../i18n/Translations";
-import Title from "../Base/Title";
+import Combine from "../Base/Combine"
+import Translations from "../i18n/Translations"
+import Title from "../Base/Title"
 
 export default class PrivacyPolicy extends Combine {
     constructor() {
@@ -19,8 +19,7 @@ export default class PrivacyPolicy extends Combine {
             t.miscCookies,
             new Title(t.whileYoureHere),
             t.surveillance,
-
-        ]);
+        ])
         this.SetClass("link-underline")
     }
 }

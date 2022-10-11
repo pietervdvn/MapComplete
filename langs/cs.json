@@ -1,1 +1,130 @@
-{}
+{
+    "centerMessage": {},
+    "delete": {
+        "explanations": {},
+        "reasons": {}
+    },
+    "favourite": {},
+    "general": {
+        "add": {
+            "import": {}
+        },
+        "apply_button": {},
+        "attribution": {
+            "iconAttribution": {}
+        },
+        "download": {},
+        "histogram": {},
+        "layerSelection": {},
+        "levelSelection": {},
+        "morescreen": {},
+        "opening_hours": {},
+        "pdf": {},
+        "questions": {},
+        "search": {},
+        "sharescreen": {},
+        "weekdays": {
+            "abbreviations": {}
+        },
+        "welcomeExplanation": {},
+        "wikipedia": {
+            "previewbox": {}
+        }
+    },
+    "image": {
+        "nearbyPictures": {}
+    },
+    "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
+        "introduction": {},
+        "login": {},
+        "mapPreview": {},
+        "noteParts": {},
+        "previewAttributes": {},
+        "selectFile": {},
+        "selectTheme": {}
+    },
+    "importInspector": {},
+    "importLayer": {},
+    "index": {},
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
+    },
+    "move": {
+        "inviteToMove": {},
+        "reasons": {}
+    },
+    "multi_apply": {},
+    "notes": {},
+    "privacy": {},
+    "professional": {
+        "aboutMc": {
+            "internalUse": {},
+            "layers": {},
+            "survey": {}
+        },
+        "aboutOsm": {
+            "aboutOsm": {},
+            "benefits": {},
+            "license": {},
+            "vandalism": {}
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {},
+                "usecaseMapDifferentSources": {}
+            },
+            "unsuitedData": {}
+        },
+        "indexPage": {},
+        "services": {}
+    },
+    "reviews": {},
+    "split": {},
+    "translations": {},
+    "validation": {
+        "color": {},
+        "date": {},
+        "direction": {},
+        "distance": {},
+        "email": {},
+        "float": {},
+        "int": {},
+        "nat": {},
+        "opening_hours": {},
+        "pfloat": {},
+        "phone": {},
+        "pnat": {},
+        "string": {},
+        "text": {},
+        "url": {},
+        "wikidata": {}
+    }
+}

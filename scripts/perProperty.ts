@@ -1,8 +1,10 @@
-import * as fs from "fs";
+import * as fs from "fs"
 
 function main(args) {
     if (args.length < 2) {
-        console.log("Given a single geojson file and an attribute-key, will generate a new file for every value of the partition.")
+        console.log(
+            "Given a single geojson file and an attribute-key, will generate a new file for every value of the partition."
+        )
         console.log("USAGE: perProperty `file.geojson` `property-key`")
         return
     }
@@ -24,15 +26,14 @@ function main(args) {
 
     const stripped = path.substr(0, path.length - ".geojson".length)
     perProperty.forEach((features, v) => {
-
-        fs.writeFileSync(stripped + "." + v.replace(/[^a-zA-Z0-9_]/g, "_") + ".geojson",
+        fs.writeFileSync(
+            stripped + "." + v.replace(/[^a-zA-Z0-9_]/g, "_") + ".geojson",
             JSON.stringify({
                 type: "FeatureCollection",
-                features
-            }))
+                features,
+            })
+        )
     })
-
-
 }
 
 main(process.argv.slice(2))

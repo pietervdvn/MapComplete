@@ -23,6 +23,47 @@
         "email": {
             "question": "Wat is het e-mailadres van {title()}?"
         },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "Deze plaats biedt draadloze internettoegang aan"
+                },
+                "1": {
+                    "then": "Deze plaats biedt <b>geen</b> internettoegang aan"
+                },
+                "2": {
+                    "then": "Deze plaats biedt internettoegang aan"
+                },
+                "3": {
+                    "then": "Deze plaats biedt internettoegang via een terminal of computer aan"
+                },
+                "4": {
+                    "then": "Deze plaats biedt bedrade internettoegang aan"
+                }
+            },
+            "question": "Biedt deze plaats internettoegang aan?"
+        },
+        "internet-fee": {
+            "mappings": {
+                "0": {
+                    "then": "Er zijn kosten voor internettoegang op deze plaats"
+                },
+                "1": {
+                    "then": "Internettoegang is gratis op deze plaats"
+                },
+                "2": {
+                    "then": "Internettoegang is gratis op deze plaats, alleen voor klanten"
+                }
+            },
+            "question": "Zijn er kosten voor internettoegang?"
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Voer de netwerknaam in"
+            },
+            "question": "Wat is de netwerknaam voor de draadloze internettoegang?",
+            "render": "De netwerknaam is <b>{internet_access:ssid}</b>"
+        },
         "level": {
             "mappings": {
                 "0": {

@@ -1,35 +1,32 @@
-import escapeHtml from "escape-html";
-import UserDetails, {OsmConnection} from "./OsmConnection";
-import {UIEventSource} from "../UIEventSource";
-import {ElementStorage} from "../ElementStorage";
-import Locale from "../../UI/i18n/Locale";
-import Constants from "../../Models/Constants";
-import {Changes} from "./Changes";
-import {Utils} from "../../Utils";
+import escapeHtml from "escape-html"
+import UserDetails, { OsmConnection } from "./OsmConnection"
+import { UIEventSource } from "../UIEventSource"
+import { ElementStorage } from "../ElementStorage"
+import Locale from "../../UI/i18n/Locale"
+import Constants from "../../Models/Constants"
+import { Changes } from "./Changes"
+import { Utils } from "../../Utils"
 
 export interface ChangesetTag {
-    key: string,
-    value: string | number,
+    key: string
+    value: string | number
     aggregate?: boolean
 }
 
 export class ChangesetHandler {
-
-    private readonly allElements: ElementStorage;
-    private osmConnection: OsmConnection;
-    private readonly changes: Changes;
-    private readonly _dryRun: UIEventSource<boolean>;
-    private readonly userDetails: UIEventSource<UserDetails>;
-    private readonly auth: any;
-    private readonly backend: string;
-
+    private readonly allElements: ElementStorage
+    private osmConnection: OsmConnection
+    private readonly changes: Changes
+    private readonly _dryRun: UIEventSource<boolean>
+    private readonly userDetails: UIEventSource<UserDetails>
+    private readonly auth: any
+    private readonly backend: string
 
     /**
      * Contains previously rewritten IDs
      * @private
      */
     private readonly _remappings = new Map<string, string>()
-
 
     /**
      * Use 'osmConnection.CreateChangesetHandler' instead
@@ -39,36 +36,36 @@ export class ChangesetHandler {
      * @param changes
      * @param auth
      */
-    constructor(dryRun: UIEventSource<boolean>,
-                osmConnection: OsmConnection,
-                allElements: ElementStorage,
-                changes: Changes,
-                auth) {
-        this.osmConnection = osmConnection;
-        this.allElements = allElements;
-        this.changes = changes;
-        this._dryRun = dryRun;
-        this.userDetails = osmConnection.userDetails;
+    constructor(
+        dryRun: UIEventSource<boolean>,
+        osmConnection: OsmConnection,
+        allElements: ElementStorage,
+        changes: Changes,
+        auth
+    ) {
+        this.osmConnection = osmConnection
+        this.allElements = allElements
+        this.changes = changes
+        this._dryRun = dryRun
+        this.userDetails = osmConnection.userDetails
         this.backend = osmConnection._oauth_config.url
-        this.auth = auth;
+        this.auth = auth
 
         if (dryRun) {
-            console.log("DRYRUN ENABLED");
+            console.log("DRYRUN ENABLED")
         }
-
     }
 
-    
     /**
      * Creates a new list which contains every key at most once
-     * 
+     *
      * ChangesetHandler.removeDuplicateMetaTags([{key: "k", value: "v"}, {key: "k0", value: "v0"}, {key: "k", value:"v"}] // => [{key: "k", value: "v"}, {key: "k0", value: "v0"}]
      */
-    public static removeDuplicateMetaTags(extraMetaTags: ChangesetTag[]): ChangesetTag[]{
-        const r : ChangesetTag[] = []
+    public static removeDuplicateMetaTags(extraMetaTags: ChangesetTag[]): ChangesetTag[] {
+        const r: ChangesetTag[] = []
         const seen = new Set<string>()
         for (const extraMetaTag of extraMetaTags) {
-            if(seen.has(extraMetaTag.key)){
+            if (seen.has(extraMetaTag.key)) {
                 continue
             }
             r.push(extraMetaTag)
@@ -86,7 +83,7 @@ export class ChangesetHandler {
      * @private
      */
     static rewriteMetaTags(extraMetaTags: ChangesetTag[], rewriteIds: Map<string, string>) {
-        let hasChange = false;
+        let hasChange = false
         for (const tag of extraMetaTags) {
             const match = tag.key.match(/^([a-zA-Z0-9_]+):(node\/-[0-9])$/)
             if (match == null) {
@@ -115,40 +112,48 @@ export class ChangesetHandler {
     public async UploadChangeset(
         generateChangeXML: (csid: number, remappings: Map<string, string>) => string,
         extraMetaTags: ChangesetTag[],
-        openChangeset: UIEventSource<number>): Promise<void> {
-
-        if (!extraMetaTags.some(tag => tag.key === "comment") || !extraMetaTags.some(tag => tag.key === "theme")) {
+        openChangeset: UIEventSource<number>
+    ): Promise<void> {
+        if (
+            !extraMetaTags.some((tag) => tag.key === "comment") ||
+            !extraMetaTags.some((tag) => tag.key === "theme")
+        ) {
             throw "The meta tags should at least contain a `comment` and a `theme`"
         }
-        
+
         extraMetaTags = [...extraMetaTags, ...this.defaultChangesetTags()]
         extraMetaTags = ChangesetHandler.removeDuplicateMetaTags(extraMetaTags)
         if (this.userDetails.data.csCount == 0) {
             // The user became a contributor!
-            this.userDetails.data.csCount = 1;
-            this.userDetails.ping();
+            this.userDetails.data.csCount = 1
+            this.userDetails.ping()
         }
         if (this._dryRun.data) {
-            const changesetXML = generateChangeXML(123456, this._remappings);
+            const changesetXML = generateChangeXML(123456, this._remappings)
             console.log("Metatags are", extraMetaTags)
-            console.log(changesetXML);
-            return;
+            console.log(changesetXML)
+            return
         }
 
         if (openChangeset.data === undefined) {
             // We have to open a new changeset
             try {
                 const csId = await this.OpenChangeset(extraMetaTags)
-                openChangeset.setData(csId);
-                const changeset = generateChangeXML(csId, this._remappings);
-                console.trace("Opened a new changeset (openChangeset.data is undefined):", changeset);
+                openChangeset.setData(csId)
+                const changeset = generateChangeXML(csId, this._remappings)
+                console.trace(
+                    "Opened a new changeset (openChangeset.data is undefined):",
+                    changeset
+                )
                 const changes = await this.UploadChange(csId, changeset)
-                const hasSpecialMotivationChanges = ChangesetHandler.rewriteMetaTags(extraMetaTags, changes)
-                if(hasSpecialMotivationChanges){
+                const hasSpecialMotivationChanges = ChangesetHandler.rewriteMetaTags(
+                    extraMetaTags,
+                    changes
+                )
+                if (hasSpecialMotivationChanges) {
                     // At this point, 'extraMetaTags' will have changed - we need to set the tags again
                     this.UpdateTags(csId, extraMetaTags)
                 }
-                
             } catch (e) {
                 console.error("Could not open/upload changeset due to ", e)
                 openChangeset.setData(undefined)
@@ -156,29 +161,32 @@ export class ChangesetHandler {
         } else {
             // There still exists an open changeset (or at least we hope so)
             // Let's check!
-            const csId = openChangeset.data;
+            const csId = openChangeset.data
             try {
-
                 const oldChangesetMeta = await this.GetChangesetMeta(csId)
                 if (!oldChangesetMeta.open) {
                     // Mark the CS as closed...
                     console.log("Could not fetch the metadata from the already open changeset")
-                    openChangeset.setData(undefined);
-                    // ... and try again. As the cs is closed, no recursive loop can exist  
+                    openChangeset.setData(undefined)
+                    // ... and try again. As the cs is closed, no recursive loop can exist
                     await this.UploadChangeset(generateChangeXML, extraMetaTags, openChangeset)
-                    return;
+                    return
                 }
 
                 const rewritings = await this.UploadChange(
                     csId,
-                    generateChangeXML(csId, this._remappings))
+                    generateChangeXML(csId, this._remappings)
+                )
 
-                const rewrittenTags = this.RewriteTagsOf(extraMetaTags, rewritings, oldChangesetMeta)
+                const rewrittenTags = this.RewriteTagsOf(
+                    extraMetaTags,
+                    rewritings,
+                    oldChangesetMeta
+                )
                 await this.UpdateTags(csId, rewrittenTags)
-
             } catch (e) {
-                console.warn("Could not upload, changeset is probably closed: ", e);
-                openChangeset.setData(undefined);
+                console.warn("Could not upload, changeset is probably closed: ", e)
+                openChangeset.setData(undefined)
             }
         }
     }
@@ -190,17 +198,17 @@ export class ChangesetHandler {
      * @param rewriteIds: the mapping of ids
      * @param oldChangesetMeta: the metadata-object of the already existing changeset
      */
-    public RewriteTagsOf(extraMetaTags: ChangesetTag[],
-                                rewriteIds: Map<string, string>,
-                                oldChangesetMeta: {
-                                    open: boolean,
-                                    id: number
-                                    uid: number, // User ID
-                                    changes_count: number,
-                                    tags: any
-                                }) : ChangesetTag[] {
-
-
+    public RewriteTagsOf(
+        extraMetaTags: ChangesetTag[],
+        rewriteIds: Map<string, string>,
+        oldChangesetMeta: {
+            open: boolean
+            id: number
+            uid: number // User ID
+            changes_count: number
+            tags: any
+        }
+    ): ChangesetTag[] {
         // Note: extraMetaTags is where all the tags are collected into
 
         // same as 'extraMetaTag', but indexed
@@ -221,7 +229,7 @@ export class ChangesetHandler {
             if (newMetaTag === undefined) {
                 extraMetaTags.push({
                     key: key,
-                    value: oldCsTags[key]
+                    value: oldCsTags[key],
                 })
                 continue
             }
@@ -242,10 +250,8 @@ export class ChangesetHandler {
             }
         }
 
-
         ChangesetHandler.rewriteMetaTags(extraMetaTags, rewriteIds)
         return extraMetaTags
-    
     }
 
     /**
@@ -255,28 +261,28 @@ export class ChangesetHandler {
      * @private
      */
     private static parseIdRewrite(node: any, type: string): [string, string] {
-        const oldId = parseInt(node.attributes.old_id.value);
+        const oldId = parseInt(node.attributes.old_id.value)
         if (node.attributes.new_id === undefined) {
-            return [type+"/"+oldId, undefined];
+            return [type + "/" + oldId, undefined]
         }
 
-        const newId = parseInt(node.attributes.new_id.value);
+        const newId = parseInt(node.attributes.new_id.value)
         // The actual mapping
         const result: [string, string] = [type + "/" + oldId, type + "/" + newId]
-        if(oldId === newId){
-            return undefined;
+        if (oldId === newId) {
+            return undefined
         }
-        return result;
+        return result
     }
 
     /**
-     * Given a diff-result XML of the form 
+     * Given a diff-result XML of the form
      * <diffResult version="0.6">
      *  <node old_id="-1" new_id="9650458521" new_version="1"/>
      *  <way old_id="-2" new_id="1050127772" new_version="1"/>
      * </diffResult>,
      * will:
-     * 
+     *
      * - create a mapping `{'node/-1' --> "node/9650458521", 'way/-2' --> "way/9650458521"}
      * - Call this.changes.registerIdRewrites
      * - Call handleIdRewrites as needed
@@ -284,9 +290,9 @@ export class ChangesetHandler {
      * @private
      */
     private parseUploadChangesetResponse(response: XMLDocument): Map<string, string> {
-        const nodes = response.getElementsByTagName("node");
-        const mappings : [string, string][]= []
-        
+        const nodes = response.getElementsByTagName("node")
+        const mappings: [string, string][] = []
+
         for (const node of Array.from(nodes)) {
             const mapping = ChangesetHandler.parseIdRewrite(node, "node")
             if (mapping !== undefined) {
@@ -294,7 +300,7 @@ export class ChangesetHandler {
             }
         }
 
-        const ways = response.getElementsByTagName("way");
+        const ways = response.getElementsByTagName("way")
         for (const way of Array.from(ways)) {
             const mapping = ChangesetHandler.parseIdRewrite(way, "way")
             if (mapping !== undefined) {
@@ -303,40 +309,41 @@ export class ChangesetHandler {
         }
         for (const mapping of mappings) {
             const [oldId, newId] = mapping
-            this.allElements.addAlias(oldId, newId);
-            if(newId !== undefined) {
+            this.allElements.addAlias(oldId, newId)
+            if (newId !== undefined) {
                 this._remappings.set(mapping[0], mapping[1])
             }
         }
         return new Map<string, string>(mappings)
-
     }
 
     private async CloseChangeset(changesetId: number = undefined): Promise<void> {
         const self = this
         return new Promise<void>(function (resolve, reject) {
             if (changesetId === undefined) {
-                return;
+                return
             }
-            self.auth.xhr({
-                method: 'PUT',
-                path: '/api/0.6/changeset/' + changesetId + '/close',
-            }, function (err, response) {
-                if (response == null) {
-
-                    console.log("err", err);
+            self.auth.xhr(
+                {
+                    method: "PUT",
+                    path: "/api/0.6/changeset/" + changesetId + "/close",
+                },
+                function (err, response) {
+                    if (response == null) {
+                        console.log("err", err)
+                    }
+                    console.log("Closed changeset ", changesetId)
+                    resolve()
                 }
-                console.log("Closed changeset ", changesetId)
-                resolve()
-            });
+            )
         })
     }
 
     async GetChangesetMeta(csId: number): Promise<{
-        id: number,
-        open: boolean,
-        uid: number,
-        changes_count: number,
+        id: number
+        open: boolean
+        uid: number
+        changes_count: number
         tags: any
     }> {
         const url = `${this.backend}/api/0.6/changeset/${csId}`
@@ -344,47 +351,59 @@ export class ChangesetHandler {
         return csData.elements[0]
     }
 
-
     /**
      * Puts the specified tags onto the changesets as they are.
      * This method will erase previously set tags
      */
-    private async UpdateTags(
-        csId: number,
-        tags: ChangesetTag[]) {
+    private async UpdateTags(csId: number, tags: ChangesetTag[]) {
         tags = ChangesetHandler.removeDuplicateMetaTags(tags)
 
-        const self = this;
+        const self = this
         return new Promise<string>(function (resolve, reject) {
+            tags = Utils.NoNull(tags).filter(
+                (tag) =>
+                    tag.key !== undefined &&
+                    tag.value !== undefined &&
+                    tag.key !== "" &&
+                    tag.value !== ""
+            )
+            const metadata = tags.map((kv) => `<tag k="${kv.key}" v="${escapeHtml(kv.value)}"/>`)
 
-            tags = Utils.NoNull(tags).filter(tag => tag.key !== undefined && tag.value !== undefined && tag.key !== "" && tag.value !== "")
-            const metadata = tags.map(kv => `<tag k="${kv.key}" v="${escapeHtml(kv.value)}"/>`)
-
-            self.auth.xhr({
-                method: 'PUT',
-                path: '/api/0.6/changeset/' + csId,
-                options: {header: {'Content-Type': 'text/xml'}},
-                content: [`<osm><changeset>`,
-                    metadata,
-                    `</changeset></osm>`].join("")
-            }, function (err, response) {
-                if (response === undefined) {
-                    console.error("Updating the tags of changeset "+csId+" failed:", err);
-                    reject(err)
-                } else {
-                    resolve(response);
+            self.auth.xhr(
+                {
+                    method: "PUT",
+                    path: "/api/0.6/changeset/" + csId,
+                    options: { header: { "Content-Type": "text/xml" } },
+                    content: [`<osm><changeset>`, metadata, `</changeset></osm>`].join(""),
+                },
+                function (err, response) {
+                    if (response === undefined) {
+                        console.error("Updating the tags of changeset " + csId + " failed:", err)
+                        reject(err)
+                    } else {
+                        resolve(response)
+                    }
                 }
-            });
+            )
         })
     }
-    
-    private defaultChangesetTags() : ChangesetTag[]{
-      return  [ ["created_by", `MapComplete ${Constants.vNumber}`],
+
+    private defaultChangesetTags(): ChangesetTag[] {
+        return [
+            ["created_by", `MapComplete ${Constants.vNumber}`],
             ["locale", Locale.language.data],
             ["host", `${window.location.origin}${window.location.pathname}`],
-            ["source", this.changes.state["currentUserLocation"]?.features?.data?.length > 0 ? "survey" : undefined],
-            ["imagery", this.changes.state["backgroundLayer"]?.data?.id]].map(([key, value]) => ({
-            key, value, aggretage: false
+            [
+                "source",
+                this.changes.state["currentUserLocation"]?.features?.data?.length > 0
+                    ? "survey"
+                    : undefined,
+            ],
+            ["imagery", this.changes.state["backgroundLayer"]?.data?.id],
+        ].map(([key, value]) => ({
+            key,
+            value,
+            aggretage: false,
         }))
     }
 
@@ -394,61 +413,57 @@ export class ChangesetHandler {
      * @constructor
      * @private
      */
-    private OpenChangeset(
-        changesetTags: ChangesetTag[]
-    ): Promise<number> {
-        const self = this;
+    private OpenChangeset(changesetTags: ChangesetTag[]): Promise<number> {
+        const self = this
         return new Promise<number>(function (resolve, reject) {
-
-            const metadata = changesetTags.map(cstag => [cstag.key, cstag.value])
-                .filter(kv => (kv[1] ?? "") !== "")
-                .map(kv => `<tag k="${kv[0]}" v="${escapeHtml(kv[1])}"/>`)
+            const metadata = changesetTags
+                .map((cstag) => [cstag.key, cstag.value])
+                .filter((kv) => (kv[1] ?? "") !== "")
+                .map((kv) => `<tag k="${kv[0]}" v="${escapeHtml(kv[1])}"/>`)
                 .join("\n")
 
-
-            self.auth.xhr({
-                method: 'PUT',
-                path: '/api/0.6/changeset/create',
-                options: {header: {'Content-Type': 'text/xml'}},
-                content: [`<osm><changeset>`,
-                    metadata,
-                    `</changeset></osm>`].join("")
-            }, function (err, response) {
-                if (response === undefined) {
-                    console.error("Opening a changeset failed:", err);
-                    reject(err)
-                } else {
-                    resolve(Number(response));
+            self.auth.xhr(
+                {
+                    method: "PUT",
+                    path: "/api/0.6/changeset/create",
+                    options: { header: { "Content-Type": "text/xml" } },
+                    content: [`<osm><changeset>`, metadata, `</changeset></osm>`].join(""),
+                },
+                function (err, response) {
+                    if (response === undefined) {
+                        console.error("Opening a changeset failed:", err)
+                        reject(err)
+                    } else {
+                        resolve(Number(response))
+                    }
                 }
-            });
+            )
         })
-
     }
 
     /**
      * Upload a changesetXML
      */
-    private UploadChange(changesetId: number,
-                      changesetXML: string): Promise<Map<string, string>> {
-        const self = this;
+    private UploadChange(changesetId: number, changesetXML: string): Promise<Map<string, string>> {
+        const self = this
         return new Promise(function (resolve, reject) {
-            self.auth.xhr({
-                method: 'POST',
-                options: {header: {'Content-Type': 'text/xml'}},
-                path: '/api/0.6/changeset/' + changesetId + '/upload',
-                content: changesetXML
-            }, function (err, response) {
-                if (response == null) {
-                    console.error("Uploading an actual change failed", err);
-                    reject(err);
+            self.auth.xhr(
+                {
+                    method: "POST",
+                    options: { header: { "Content-Type": "text/xml" } },
+                    path: "/api/0.6/changeset/" + changesetId + "/upload",
+                    content: changesetXML,
+                },
+                function (err, response) {
+                    if (response == null) {
+                        console.error("Uploading an actual change failed", err)
+                        reject(err)
+                    }
+                    const changes = self.parseUploadChangesetResponse(response)
+                    console.log("Uploaded changeset ", changesetId)
+                    resolve(changes)
                 }
-                const changes = self.parseUploadChangesetResponse(response);
-                console.log("Uploaded changeset ", changesetId);
-                resolve(changes);
-            });
+            )
         })
-
     }
-
-
 }

@@ -1,0 +1,271 @@
+{
+  "id": "width",
+  "description": {
+    "nl": "<h3>De straat is opgebruikt</h3> <p>Er is steeds meer druk op de openbare ruimte. Voetgangers, fietsers, steps, auto's, bussen, bestelwagens, buggies, cargobikes, ... willen allemaal hun deel van de openbare ruimte en de straat.</p> <p>In deze studie nemen we Brugge onder de loep en kijken we hoe breed elke straat is én hoe breed elke straat zou moeten zijn voor een veilig én vlot verkeer.</p> <h3>Legende</h3> <span style='background: red'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat te smal voor veilig verkeer<br/> <span style='background: #0f0'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat is breed genoeg veilig verkeer<br/> <span style='background: orange'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Straat zonder voetpad, te smal als ook voetgangers plaats krijgen<br/> <span style='background: lightgrey'>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;</span> Autoluw, autoloos of enkel plaatselijk verkeer<br/> <br/> <br/> Een gestippelde lijn is een straat waar ook voor fietsers éénrichtingsverkeer geldt.<br/> Klik op een straat om meer informatie te zien."
+  },
+  "title": {
+    "nl": "Straatbreedtes"
+  },
+  "mustHaveLanguage": [
+    "nl"
+  ],
+  "hideFromOverview": true,
+  "enableUserBadge": false,
+  "enableShareScreen": false,
+  "enableLayers": false,
+  "enableMoreQuests": false,
+  "enableSearch": false,
+  "enableBackgroundLayerSelection": false,
+  "icon": "./assets/themes/width/icon.svg",
+  "startLat": 51.20875,
+  "startLon": 3.22435,
+  "startZoom": 14,
+  "widenFactor": 0.05,
+  "clustering": false,
+  "lockLocation": [
+    [
+      3.2006263732910156,
+      51.22699040520305
+    ],
+    [
+      3.2529830932617188,
+      51.190748429411705
+    ]
+  ],
+  "defaultBackgroundId": "CartoDB.DarkMatterNoLabels",
+  "layers": [
+    {
+      "id": "street_with_width",
+      "description": "A layer showing street with corresponding widths + an analysis of what this width is used for",
+      "name": {
+        "nl": "Straten met een breedte"
+      },
+      "calculatedTags": [
+        "_car_width:=2 /* The width that a single car needs */",
+        "_cyclistWidth:=1.5 /* The width a single cyclist needs to be safely overtaken */",
+        "_pedestrianWidth:=0.75 /* The width a pedestrian needs if sidewalks are missing */",
+        "_has_left_parking=(feat.properties['parking:lane:left'] ?? feat.properties['parking:lane:both']) === 'parallel'",
+        "_has_right_parking=(feat.properties['parking:lane:right'] ?? feat.properties['parking:lane:both']) === 'parallel'",
+        "_has_other_parking= ['parking:lane:left','parking:lane:right','parking:lane:both'].some(key => ['perpendicular','diagonal'].indexOf(feat.properties[key]) >= 0)",
+        "_parallel_parking_count=feat.get('_has_right_parking') + feat.get('_has_left_parking') /* in javascript logic: true + true == 2*/",
+        "_width:needed:parking=feat.get('_parallel_parking_count') * feat.get('_car_width')",
+        "_has_sidewalk_left=['left','both'].indexOf(feat.properties['sidewalk']) >= 0",
+        "_has_sidewalk_right=['right','both'].indexOf(feat.properties['sidewalk']) >= 0",
+        "_pedestrian_flows_in_carriageway= 2 - feat.get('_has_sidewalk_left') - feat.get('_has_sidewalk_right')",
+        "_width:needed:pedestrians=feat.get('_pedestrianWidth') * feat.get('_pedestrian_flows_in_carriageway')",
+        "_oneway_car=(feat.properties['oneway:motor_vehicle'] ?? feat.properties['oneway']) == 'yes'",
+        "_width:needed:cars=feat.get('_car_width') * (2 - feat.get('_oneway_car'))",
+        "_cycling_allowed=feat.properties.bicycle != 'use_sidepath' && feat.properties.bicycle!='no'",
+        "_oneway_bicycle=((feat.properties['oneway:bicycle'] ?? feat.properties['oneway']) == 'yes') && feat.properties['cycleway'] != 'opposite'",
+        "_width:needed:cyclists=feat.get('_cycling_allowed') ? (feat.get('_cyclistWidth') * (2 - feat.get('_oneway_bicycle'))) : 0",
+        "_width:needed:total:=feat.get('_width:needed:cars') + feat.get('_width:needed:parking') +  feat.get('_width:needed:cyclists') +  feat.get('_width:needed:pedestrians')",
+        "_width:difference:=feat.get('_width:needed:total') - feat.get('width:carriageway')",
+        "_width:difference:no_pedestrians:=feat.get('_width:difference') - feat.get('_width:needed:pedestrians')"
+      ],
+      "minzoom": 12,
+      "source": {
+        "osmTags": "width:carriageway~*"
+      },
+      "title": {
+        "render": {
+          "nl": "{name}"
+        },
+        "mappings": [
+          {
+            "if": "name=",
+            "then": {
+              "nl": "Naamloos segment"
+            }
+          }
+        ]
+      },
+      "tagRenderings": [
+        {
+          "id": "carriageway_width",
+          "render": "Deze straat is <b>{width:carriageway}m</b> breed",
+          "question": "Hoe breed is deze straat?",
+          "freeform": {
+            "key": "width:carriageway",
+            "type": "distance",
+            "helperArgs": [
+              21,
+              "map"
+            ]
+          }
+        },
+        {
+          "id": "too_little_width",
+          "render": "Deze straat heeft <span class='alert'>{_width:difference}m</span> te weinig. De ruimte die nodig zou zijn is:",
+          "mappings": [
+            {
+              "if": {
+                "or": [
+                  "_width:difference~-.*",
+                  "_width:difference=0"
+                ]
+              },
+              "then": "Deze straat is breed genoeg:"
+            }
+          ]
+        },
+        {
+          "id": "needed_for_cars",
+          "render": "<b>{_width:needed:cars}m</b> voor het autoverkeer",
+          "mappings": [
+            {
+              "if": "oneway=yes",
+              "then": "<b>{_width:needed:cars}m</b> voor het éénrichtings-autoverkeer"
+            },
+            {
+              "if": "oneway=no",
+              "then": "<b>{_width:needed:cars}m</b> voor het tweerichtings-autoverkeer"
+            }
+          ]
+        },
+        {
+          "id": "needed_for_parking",
+          "render": "<b>{_width:needed:parking}m</b> voor het geparkeerde wagens",
+          "condition": "_width:needed:parking!=0"
+        },
+        {
+          "id": "needed_for_cyclists",
+          "render": "<b>{_width:needed:cyclists}m</b> voor fietsers",
+          "mappings": [
+            {
+              "if": "bicycle=use_sidepath",
+              "then": "Fietsers hebben hier een vrijliggend fietspad en worden dus niet meegerekend"
+            },
+            {
+              "if": "oneway:bicycle=yes",
+              "then": "<b>{_width:needed:cyclists}m</b> voor fietsers die met de rijrichting mee moeten"
+            }
+          ]
+        },
+        {
+          "id": "needed_for_pedestrians",
+          "render": "<b>{_width:needed:pedestrians}m</b> voor voetgangers",
+          "condition": "_width:needed:pedestrians!=0",
+          "mappings": [
+            {
+              "if": {
+                "or": [
+                  "sidewalk=none",
+                  "sidewalk=no"
+                ]
+              },
+              "then": "<b>{_width:needed:pedestrians}m</b> voor voetgangers: er zijn hier geen voetpaden"
+            },
+            {
+              "if": {
+                "or": [
+                  "sidewalk=left",
+                  "sidewalk=right"
+                ]
+              },
+              "then": "<b>{_width:needed:pedestrians}m</b> voor voetgangers: er is slechts aan één kant een voetpad"
+            }
+          ]
+        },
+        {
+          "id": "total_width_needed",
+          "render": "<span style='border: 1px solid black; border-radius: 0.5em; padding: 0.25em;'><b>{_width:needed:total}m</b> nodig in het totaal</span>"
+        },
+        {
+          "id": "has_sidewalks",
+          "condition": "id=disabled",
+          "question": {
+            "nl": "Heeft deze straat voetpaden?"
+          },
+          "mappings": [
+            {
+              "if": "sidewalk=both",
+              "then": {
+                "nl": "Voetpad aan beide zijden"
+              }   
+            },{
+              "if": "sidewalk=none",
+              "then": {
+                "nl": "Heeft géén voetpaden"
+            }
+            },{
+              "if": "sidewalk=left",
+              "then": {
+                "nl": "Voetpad aan de linkerkant"
+              }
+            },
+            {
+              "if": "sidewalk=right",
+              "then": {
+                "nl": "Voetpad aan de rechterzijde"
+              }
+            }
+          ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "location": [
+            "point"
+          ],
+          "icon": "./assets/themes/width/icon.svg",
+          "iconSize": "40,40,center"
+        },
+        {
+          "width": "4",
+          "color": {
+            "render": "#00f",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "access=destination",
+                    "highway=pedestrian",
+                    "motor_vehicle=no",
+                    "motor_vehicle=destination"
+                  ]
+                },
+                "then": "lightgrey"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_width:difference!~-.*",
+                    "_width:difference:no_pedestrians~-.*"
+                  ]
+                },
+                "then": "orange"
+              },
+              {
+                "if": "_width:difference~-.*",
+                "then": "#0f0"
+              },
+              {
+                "if": "_width:difference!~-.*",
+                "then": "#f00"
+              }
+            ]
+          },
+          "dashArray": {
+            "render": "",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "oneway=yes",
+                    {
+                      "or": [
+                        "oneway:bicycle=yes",
+                        "oneway:bicycle="
+                      ]
+                    }
+                  ]
+                },
+                "then": "5 6"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

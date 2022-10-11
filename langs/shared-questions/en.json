@@ -34,6 +34,47 @@
             },
             "question": "Does this place have an audio induction loop for people with reduced hearing?"
         },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "This place offers wireless internet access"
+                },
+                "1": {
+                    "then": "This place <b>does not</b> offer internet access"
+                },
+                "2": {
+                    "then": "This place offers internet access"
+                },
+                "3": {
+                    "then": "This place offers internet access via a terminal or computer"
+                },
+                "4": {
+                    "then": "This place offers wired internet access"
+                }
+            },
+            "question": "Does this place offer internet access?"
+        },
+        "internet-fee": {
+            "mappings": {
+                "0": {
+                    "then": "There is a fee for the internet access at this place"
+                },
+                "1": {
+                    "then": "Internet access is free at this place"
+                },
+                "2": {
+                    "then": "Internet access is free at this place, for customers only"
+                }
+            },
+            "question": "Is there a fee for internet access?"
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Enter the network name"
+            },
+            "question": "What is the network name for the wireless internet access?",
+            "render": "The network name is <b>{internet_access:ssid}</b>"
+        },
         "level": {
             "mappings": {
                 "0": {

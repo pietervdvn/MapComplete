@@ -1,8 +1,7 @@
-import FeatureSource, {FeatureSourceForLayer, Tiled} from "./FeatureSource";
-import {Store} from "../UIEventSource";
-import FilteredLayer from "../../Models/FilteredLayer";
-import SimpleFeatureSource from "./Sources/SimpleFeatureSource";
-
+import FeatureSource, { FeatureSourceForLayer, Tiled } from "./FeatureSource"
+import { Store } from "../UIEventSource"
+import FilteredLayer from "../../Models/FilteredLayer"
+import SimpleFeatureSource from "./Sources/SimpleFeatureSource"
 
 /**
  * In some rare cases, some elements are shown on multiple layers (when 'passthrough' is enabled)
@@ -10,30 +9,30 @@ import SimpleFeatureSource from "./Sources/SimpleFeatureSource";
  * In any case, this featureSource marks the objects with _matching_layer_id
  */
 export default class PerLayerFeatureSourceSplitter {
-
-    constructor(layers: Store<FilteredLayer[]>,
-                handleLayerData: (source: FeatureSourceForLayer & Tiled) => void,
-                upstream: FeatureSource,
-                options?: {
-                    tileIndex?: number,
-                    handleLeftovers?: (featuresWithoutLayer: any[]) => void
-                }) {
-
+    constructor(
+        layers: Store<FilteredLayer[]>,
+        handleLayerData: (source: FeatureSourceForLayer & Tiled) => void,
+        upstream: FeatureSource,
+        options?: {
+            tileIndex?: number
+            handleLeftovers?: (featuresWithoutLayer: any[]) => void
+        }
+    ) {
         const knownLayers = new Map<string, SimpleFeatureSource>()
 
         function update() {
-            const features = upstream.features?.data;
+            const features = upstream.features?.data
             if (features === undefined) {
-                return;
+                return
             }
             if (layers.data === undefined || layers.data.length === 0) {
-                return;
+                return
             }
 
             // We try to figure out (for each feature) in which feature store it should be saved.
             // Note that this splitter is only run when it is invoked by the overpass feature source, so we can't be sure in which layer it should go
 
-            const featuresPerLayer = new Map<string, { feature, freshness } []>();
+            const featuresPerLayer = new Map<string, { feature; freshness }[]>()
             const noLayerFound = []
 
             for (const layer of layers.data) {
@@ -41,19 +40,19 @@ export default class PerLayerFeatureSourceSplitter {
             }
 
             for (const f of features) {
-                let foundALayer = false;
+                let foundALayer = false
                 for (const layer of layers.data) {
                     if (layer.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
                         // We have found our matching layer!
                         featuresPerLayer.get(layer.layerDef.id).push(f)
-                        foundALayer = true;
+                        foundALayer = true
                         if (!layer.layerDef.passAllFeatures) {
                             // If not 'passAllFeatures', we are done for this feature
-                           break
+                            break
                         }
                     }
                 }
-                if(!foundALayer){
+                if (!foundALayer) {
                     noLayerFound.push(f)
                 }
             }
@@ -61,11 +60,11 @@ export default class PerLayerFeatureSourceSplitter {
             // At this point, we have our features per layer as a list
             // We assign them to the correct featureSources
             for (const layer of layers.data) {
-                const id = layer.layerDef.id;
+                const id = layer.layerDef.id
                 const features = featuresPerLayer.get(id)
                 if (features === undefined) {
                     // No such features for this layer
-                    continue;
+                    continue
                 }
 
                 let featureSource = knownLayers.get(id)
@@ -86,7 +85,7 @@ export default class PerLayerFeatureSourceSplitter {
             }
         }
 
-        layers.addCallback(_ => update())
-        upstream.features.addCallbackAndRunD(_ => update())
+        layers.addCallback((_) => update())
+        upstream.features.addCallbackAndRunD((_) => update())
     }
 }

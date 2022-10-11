@@ -1,36 +1,44 @@
 {
   "contributors": [
     {
-      "commits": 182,
+      "commits": 206,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 152,
+      "commits": 169,
       "contributor": "kjon"
+    },
+    {
+      "commits": 62,
+      "contributor": "Allan Nordhøy"
     },
     {
       "commits": 60,
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 59,
-      "contributor": "Allan Nordhøy"
+      "commits": 45,
+      "contributor": "Anonymous"
+    },
+    {
+      "commits": 36,
+      "contributor": "Iago"
     },
     {
       "commits": 31,
       "contributor": "Babos Gábor"
     },
     {
-      "commits": 31,
-      "contributor": "Iago"
-    },
-    {
       "commits": 29,
       "contributor": "Artem"
     },
     {
-      "commits": 23,
+      "commits": 26,
       "contributor": "Supaplex"
+    },
+    {
+      "commits": 25,
+      "contributor": "Robin van der Linde"
     },
     {
       "commits": 22,
@@ -38,18 +46,10 @@
     },
     {
       "commits": 21,
-      "contributor": "Anonymous"
-    },
-    {
-      "commits": 20,
-      "contributor": "Robin van der Linde"
-    },
-    {
-      "commits": 19,
       "contributor": "SC"
     },
     {
-      "commits": 18,
+      "commits": 19,
       "contributor": "Reza Almanda"
     },
     {
@@ -70,6 +70,10 @@
     },
     {
       "commits": 13,
+      "contributor": "paunofu"
+    },
+    {
+      "commits": 13,
       "contributor": "Romain de Bossoreille"
     },
     {
@@ -77,8 +81,8 @@
       "contributor": "Joost"
     },
     {
-      "commits": 12,
-      "contributor": "paunofu"
+      "commits": 11,
+      "contributor": "Olivier"
     },
     {
       "commits": 10,
@@ -106,7 +110,7 @@
     },
     {
       "commits": 6,
-      "contributor": "Olivier"
+      "contributor": "Niels Madsen"
     },
     {
       "commits": 6,
@@ -139,6 +143,10 @@
     {
       "commits": 6,
       "contributor": "lvgx"
+    },
+    {
+      "commits": 5,
+      "contributor": "eMerzh"
     },
     {
       "commits": 5,
@@ -234,6 +242,10 @@
     },
     {
       "commits": 2,
+      "contributor": "Valerio Bozzolan"
+    },
+    {
+      "commits": 2,
       "contributor": "Manuel Tassi"
     },
     {
@@ -295,6 +307,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Dario Crespi"
     },
     {
       "commits": 1,

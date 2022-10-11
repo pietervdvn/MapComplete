@@ -1,24 +1,25 @@
 /**
  * SHows geojson on the given leaflet map, but attempts to figure out the correct layer first
  */
-import {Store} from "../../Logic/UIEventSource";
-import ShowDataLayer from "./ShowDataLayer";
-import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter";
-import FilteredLayer from "../../Models/FilteredLayer";
-import {ShowDataLayerOptions} from "./ShowDataLayerOptions";
+import { Store } from "../../Logic/UIEventSource"
+import ShowDataLayer from "./ShowDataLayer"
+import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
+import FilteredLayer from "../../Models/FilteredLayer"
+import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
 
 export default class ShowDataMultiLayer {
     constructor(options: ShowDataLayerOptions & { layers: Store<FilteredLayer[]> }) {
-
-        new PerLayerFeatureSourceSplitter(options.layers, (perLayer => {
+        new PerLayerFeatureSourceSplitter(
+            options.layers,
+            (perLayer) => {
                 const newOptions = {
                     ...options,
                     layerToShow: perLayer.layer.layerDef,
-                    features: perLayer
+                    features: perLayer,
                 }
                 new ShowDataLayer(newOptions)
-            }),
-            options.features)
-
+            },
+            options.features
+        )
     }
 }
