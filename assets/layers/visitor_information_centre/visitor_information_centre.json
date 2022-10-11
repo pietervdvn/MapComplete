@@ -5,7 +5,8 @@
     "nl": "Bezoekerscentrum",
     "de": "Besucherinformationszentrum",
     "id": "Pusat Informasi Pengunjung",
-    "es": "Centro de Información al Visitante"
+    "es": "Centro de Información al Visitante",
+    "da": "Informationscenter for besøgende"
   },
   "minzoom": 12,
   "source": {
@@ -30,7 +31,8 @@
       "fr": "{name}",
       "ca": "{name}",
       "id": "{name}",
-      "es": "{name}"
+      "es": "{name}",
+      "da": "{name}"
     },
     "mappings": [
       {
@@ -58,7 +60,8 @@
           "fr": "{name}",
           "ca": "{name}",
           "id": "{name}",
-          "es": "{name}"
+          "es": "{name}",
+          "da": "{name}"
         }
       }
     ]

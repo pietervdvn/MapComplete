@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/healthcare",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/doctors/doctors.svg",
-    "contact_name": "Pieter Vander Vennet, MapComplete",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -51,7 +51,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Doctors' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Doctors' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "email",
@@ -59,7 +59,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Doctors' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Doctors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "website",
@@ -67,7 +67,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Doctors' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Doctors' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "name",
@@ -112,7 +112,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hospitals' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Hospitals' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "email",
@@ -120,7 +120,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hospitals' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Hospitals' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "website",
@@ -128,7 +128,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Hospitals' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Hospitals' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "amenity",
@@ -165,7 +165,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'pharmacy' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'pharmacy' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "email",
@@ -173,7 +173,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'pharmacy' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'pharmacy' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "website",
@@ -181,7 +181,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'pharmacy' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'pharmacy' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "wheelchair",

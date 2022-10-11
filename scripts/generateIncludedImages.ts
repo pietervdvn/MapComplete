@@ -1,44 +1,43 @@
-import * as fs from "fs";
+import * as fs from "fs"
 
 function genImages(dryrun = false) {
-
     console.log("Generating images")
     const dir = fs.readdirSync("./assets/svg")
 
-    let module = "import Img from \"./UI/Base/Img\";\nimport {FixedUiElement} from \"./UI/Base/FixedUiElement\";\n\nexport default class Svg {\n\n\n";
-    const allNames: string[] = [];
+    let module =
+        'import Img from "./UI/Base/Img";\nimport {FixedUiElement} from "./UI/Base/FixedUiElement";\n\nexport default class Svg {\n\n\n'
+    const allNames: string[] = []
     for (const path of dir) {
-
         if (path.endsWith("license_info.json")) {
-            continue;
+            continue
         }
 
         if (!path.endsWith(".svg")) {
-            throw "Non-svg file detected in the svg files: " + path;
+            throw "Non-svg file detected in the svg files: " + path
         }
 
-        let svg : string = fs.readFileSync("./assets/svg/" + path, "utf-8")
+        let svg: string = fs
+            .readFileSync("./assets/svg/" + path, "utf-8")
             .replace(/<\?xml.*?>/, "")
             .replace(/fill: ?none;/g, "fill: none !important;") // This is such a brittle hack...
             .replace(/\n/g, " ")
             .replace(/\r/g, "")
             .replace(/\\/g, "\\")
-            .replace(/"/g, "\\\"")
+            .replace(/"/g, '\\"')
 
-        let hasNonAsciiChars = Array.from(svg).some(char => char.charCodeAt(0) > 127);
-        if(hasNonAsciiChars){
-            throw "The svg '"+path+"' has non-ascii characters";
+        let hasNonAsciiChars = Array.from(svg).some((char) => char.charCodeAt(0) > 127)
+        if (hasNonAsciiChars) {
+            throw "The svg '" + path + "' has non-ascii characters"
         }
-        const name = path.substr(0, path.length - 4)
-            .replace(/[ -]/g, "_");
+        const name = path.substring(0, path.length - 4).replace(/[ -]/g, "_")
 
         if (dryrun) {
             svg = "xxx"
         }
 
-        let rawName = name;
+        let rawName = name
         if (dryrun) {
-            rawName = "add";
+            rawName = "add"
         }
 
         module += `    public static ${name} = "${svg}"\n`
@@ -50,8 +49,8 @@ function genImages(dryrun = false) {
         }
     }
     module += `public static All = {${allNames.join(",")}};`
-    module += "}\n";
-    fs.writeFileSync("Svg.ts", module);
+    module += "}\n"
+    fs.writeFileSync("Svg.ts", module)
     console.log("Done")
 }
 

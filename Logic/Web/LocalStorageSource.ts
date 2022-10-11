@@ -1,13 +1,12 @@
-import {UIEventSource} from "../UIEventSource";
+import { UIEventSource } from "../UIEventSource"
 
 /**
  * UIEventsource-wrapper around localStorage
  */
 export class LocalStorageSource {
-
     static GetParsed<T>(key: string, defaultValue: T): UIEventSource<T> {
         return LocalStorageSource.Get(key).sync(
-            str => {
+            (str) => {
                 if (str === undefined) {
                     return defaultValue
                 }
@@ -16,29 +15,29 @@ export class LocalStorageSource {
                 } catch {
                     return defaultValue
                 }
-            }, [],
-            value => JSON.stringify(value)
+            },
+            [],
+            (value) => JSON.stringify(value)
         )
     }
 
     static Get(key: string, defaultValue: string = undefined): UIEventSource<string> {
         try {
-            const saved = localStorage.getItem(key);
-            const source = new UIEventSource<string>(saved ?? defaultValue, "localstorage:" + key);
+            const saved = localStorage.getItem(key)
+            const source = new UIEventSource<string>(saved ?? defaultValue, "localstorage:" + key)
 
             source.addCallback((data) => {
                 try {
-                    localStorage.setItem(key, data);
+                    localStorage.setItem(key, data)
                 } catch (e) {
                     // Probably exceeded the quota with this item!
                     // Lets nuke everything
                     localStorage.clear()
                 }
-
-            });
-            return source;
+            })
+            return source
         } catch (e) {
-            return new UIEventSource<string>(defaultValue);
+            return new UIEventSource<string>(defaultValue)
         }
     }
 }

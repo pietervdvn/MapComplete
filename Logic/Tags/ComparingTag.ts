@@ -1,14 +1,18 @@
-import {TagsFilter} from "./TagsFilter";
+import { TagsFilter } from "./TagsFilter"
 
 export default class ComparingTag implements TagsFilter {
-    private readonly _key: string;
-    private readonly _predicate: (value: string) => boolean;
-    private readonly _representation: string;
+    private readonly _key: string
+    private readonly _predicate: (value: string) => boolean
+    private readonly _representation: string
 
-    constructor(key: string, predicate: (value: string | undefined) => boolean, representation: string = "") {
-        this._key = key;
-        this._predicate = predicate;
-        this._representation = representation;
+    constructor(
+        key: string,
+        predicate: (value: string | undefined) => boolean,
+        representation: string = ""
+    ) {
+        this._key = key
+        this._predicate = predicate
+        this._representation = representation
     }
 
     asChange(properties: any): { k: string; v: string }[] {
@@ -24,16 +28,16 @@ export default class ComparingTag implements TagsFilter {
     }
 
     shadows(other: TagsFilter): boolean {
-        return other === this;
+        return other === this
     }
 
     isUsableAsAnswer(): boolean {
-        return false;
+        return false
     }
 
     /**
      * Checks if the properties match
-     * 
+     *
      * const t = new ComparingTag("key", (x => Number(x) < 42))
      * t.matchesProperties({key: 42}) // => false
      * t.matchesProperties({key: 41}) // => true
@@ -41,25 +45,25 @@ export default class ComparingTag implements TagsFilter {
      * t.matchesProperties({differentKey: 42}) // => false
      */
     matchesProperties(properties: any): boolean {
-        return this._predicate(properties[this._key]);
+        return this._predicate(properties[this._key])
     }
 
     usedKeys(): string[] {
-        return [this._key];
+        return [this._key]
     }
-    
+
     usedTags(): { key: string; value: string }[] {
-        return [];
+        return []
     }
 
     optimize(): TagsFilter | boolean {
-        return this;
+        return this
     }
-    
+
     isNegative(): boolean {
-        return true;
+        return true
     }
-    
+
     visit(f: (TagsFilter) => void) {
         f(this)
     }

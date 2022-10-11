@@ -408,7 +408,7 @@
       },
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in French)",
-        "ca": "Dóna detalls d'on es pot trobar el desfibril·lador",
+        "ca": "Dóna detalls d'on es pot trobar el desfibril·lador (en francés)",
         "es": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)",
         "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)",
         "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Frans)",
@@ -583,7 +583,8 @@
         "it": "Questo defibrillatore è stato verificato per l‘ultima volta in data {survey:date}",
         "de": "Dieser Defibrillator wurde zuletzt am {survey:date} überprüft",
         "sl": "Ta defibrilator je bil nazadnje opažen {survey:date}",
-        "es": "Este desfibrilador se sondeó por última vez el {survey:date}"
+        "es": "Este desfibrilador se sondeó por última vez el {survey:date}",
+        "ca": "El desfibrilador és va sondejar per ultima vegada el {survey:date}"
       },
       "freeform": {
         "key": "survey:date",

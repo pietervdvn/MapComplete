@@ -1,0 +1,21 @@
+{
+  "id": "osm_community_index",
+  "title": {
+    "en": "OSM Community Index"
+  },
+  "description": {
+    "en": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful."
+  },
+  "shortDescription": {
+    "en": "An index of community resources for OpenStreetMap."
+  },
+  "icon": "./assets/themes/osm_community_index/osm.svg",
+  "startLat": 50.8465573,
+  "defaultBackgroundId": "CartoDB.Voyager",
+  "startLon": 4.351697,
+  "startZoom": 16,
+  "clustering": false,
+  "layers": [
+    "osm_community_index"
+  ]
+}

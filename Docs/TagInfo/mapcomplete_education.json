@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/education",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/school/college.svg",
-    "contact_name": "Pieter Vander Vennet, MapComplete",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -88,7 +88,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Colleges and universities' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Colleges and universities' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Education')"
     },
     {
       "key": "email",
@@ -96,7 +96,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Colleges and universities' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Colleges and universities' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Education')"
     },
     {
       "key": "phone",
@@ -104,7 +104,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Colleges and universities' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Colleges and universities' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Education')"
     },
     {
       "key": "amenity",
@@ -229,7 +229,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Primary and secondary schools' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Primary and secondary schools' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Education')"
     },
     {
       "key": "phone",
@@ -237,7 +237,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Primary and secondary schools' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Primary and secondary schools' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Education')"
     },
     {
       "key": "email",
@@ -245,7 +245,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Primary and secondary schools' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Primary and secondary schools' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Education')"
     },
     {
       "key": "school:language",
@@ -2707,7 +2707,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Kindergartens and childcare' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Education')"
     },
     {
       "key": "email",
@@ -2715,7 +2715,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Kindergartens and childcare' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Education')"
     },
     {
       "key": "phone",
@@ -2723,7 +2723,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Kindergartens and childcare' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Education')"
     },
     {
       "key": "opening_hours",

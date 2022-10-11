@@ -1,29 +1,27 @@
-import BaseUIElement from "../BaseUIElement";
+import BaseUIElement from "../BaseUIElement"
 
 export class FixedUiElement extends BaseUIElement {
-    public readonly content: string;
+    public readonly content: string
 
     constructor(html: string) {
-        super();
-        this.content = html ?? "";
+        super()
+        this.content = html ?? ""
     }
 
     InnerRender(): string {
-        return this.content;
+        return this.content
     }
 
     AsMarkdown(): string {
-        if(this.HasClass("code")){
-            return "`"+this.content+"`"
+        if (this.HasClass("code")) {
+            return "`" + this.content + "`"
         }
-        return this.content;
+        return this.content
     }
 
     protected InnerConstructElement(): HTMLElement {
         const e = document.createElement("span")
         e.innerHTML = this.content
-        return e;
+        return e
     }
-
-
 }

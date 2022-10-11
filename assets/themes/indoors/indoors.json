@@ -3,12 +3,16 @@
   "title": {
     "en": "Indoors",
     "de": "Innenräume",
-    "fr": "Intérieurs"
+    "fr": "Intérieurs",
+    "da": "Indendørs",
+    "nb_NO": "Innendørs",
+    "nl": "Binnenruimtes"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",
     "de": "Diese Karte zeigt öffentlich zugängliche Innenräume",
-    "fr": "Cette carte présente les lieux intérieurs accessibles au public"
+    "fr": "Cette carte présente les lieux intérieurs accessibles au public",
+    "da": "På dette kort er offentligt tilgængelige indendørs steder vist"
   },
   "icon": "./assets/layers/entrance/entrance.svg",
   "startLat": 51.17181,

@@ -5,6 +5,10 @@
         "retrying": "A carga dos datos fallou. Tentándoo de novo… ({count})",
         "zoomIn": "Achégate para ollar ou editar os datos"
     },
+    "delete": {
+        "explanations": {},
+        "reasons": {}
+    },
     "favourite": {
         "loginNeeded": "<h3>Iniciar a sesión</h3>O deseño personalizado só está dispoñíbel para os usuarios do OpenstreetMap",
         "panelIntro": "<h3>O teu tema personalizado</h3>Activa as túas capas favoritas de todos os temas oficiais",
@@ -16,6 +20,7 @@
             "addNew": "Engadir {category} aquí",
             "confirmButton": "Engadir {category} aquí",
             "confirmIntro": "<h3>Engadir {title} aquí?</h3>O punto que estás a crear <b>será ollado por todo o mundo</b>. Só engade cousas que realmente existan. Moitas aplicacións empregan estes datos.",
+            "import": {},
             "intro": "Marcaches un lugar onde non coñecemos os datos.<br/>",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",
             "openLayerControl": "Abrir o control de capas",
@@ -24,6 +29,7 @@
             "title": "Queres engadir un punto?",
             "zoomInFurther": "Achégate para engadir un punto."
         },
+        "apply_button": {},
         "attribution": {
             "attributionContent": "<p>Todos os datos proveñen do <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, e pódense reutilizar libremente baixo <a href=\"https://osm.org/copyright\" target=\"_blank\">a Licenza Aberta de Base de Datos (ODbL)</a>.</p>",
             "attributionTitle": "Aviso de atribución",
@@ -38,14 +44,17 @@
         "backgroundMap": "Mapa do fondo",
         "cancel": "Desbotar",
         "customThemeIntro": "<h3>Temas personalizados</h3>Estes son temas xerados por usuarios previamente visitados.",
+        "download": {},
         "fewChangesBefore": "Responde unhas cantas preguntas sobre puntos existentes antes de engadir novos.",
         "getStartedLogin": "Entra no OpenStreetMap para comezar",
         "getStartedNewAccount": " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea unha nova conta</a>",
         "goToInbox": "Abrir mensaxes",
+        "histogram": {},
         "layerSelection": {
             "title": "Seleccionar capas",
             "zoomInToSeeThisLayer": "Achégate para ver esta capa"
         },
+        "levelSelection": {},
         "loginToStart": "Inicia a sesión para responder esta pregunta",
         "loginWithOpenStreetMap": "Inicia a sesión no OpenStreetMap",
         "morescreen": {
@@ -74,6 +83,7 @@
             "ph_open": "aberto"
         },
         "osmLinkTooltip": "Ollar este obxecto no OpenStreetMap para ollar o historial e outras opcións de edición",
+        "pdf": {},
         "pickLanguage": "Escoller lingua: ",
         "questions": {
             "emailIs": "O enderezo de correo electrónico de {category} é <a href='mailto:{email}' target='_blank'>{email}</a>",
@@ -131,7 +141,11 @@
             "tuesday": "Martes",
             "wednesday": "Mércores"
         },
-        "welcomeBack": "Iniciaches a sesión, benvido."
+        "welcomeBack": "Iniciaches a sesión, benvido.",
+        "welcomeExplanation": {},
+        "wikipedia": {
+            "previewbox": {}
+        }
     },
     "image": {
         "addPicture": "Engadir imaxe",
@@ -141,6 +155,7 @@
         "doDelete": "Eliminar imaxe",
         "dontDelete": "Cancelar",
         "isDeleted": "Eliminada",
+        "nearbyPictures": {},
         "pleaseLogin": "Inicia a sesión para subir unha imaxe",
         "respectPrivacy": "Respecta a privacidade. Non fotografes xente ou matrículas",
         "uploadDone": "<span class='thanks'>A túa imaxe foi engadida. Grazas por axudar.</span>",
@@ -149,11 +164,82 @@
         "uploadingPicture": "Subindo a túa imaxe...",
         "willBePublished": "A túa imaxe será publicada: "
     },
+    "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
+        "introduction": {},
+        "login": {},
+        "mapPreview": {},
+        "noteParts": {},
+        "previewAttributes": {},
+        "selectFile": {},
+        "selectTheme": {}
+    },
+    "importInspector": {},
+    "importLayer": {},
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
         "intro": "O MapComplete é un visor e editor do OpenStreetMap, que te amosa información sobre un tema específico.",
         "pickTheme": "Escolle un tema para comezar.",
         "title": "Benvido ao MapComplete"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
+    },
+    "move": {
+        "inviteToMove": {},
+        "reasons": {}
+    },
+    "multi_apply": {},
+    "notes": {},
+    "privacy": {},
+    "professional": {
+        "aboutMc": {
+            "internalUse": {},
+            "layers": {},
+            "survey": {}
+        },
+        "aboutOsm": {
+            "aboutOsm": {},
+            "benefits": {},
+            "license": {},
+            "vandalism": {}
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {},
+                "usecaseMapDifferentSources": {}
+            },
+            "unsuitedData": {}
+        },
+        "indexPage": {},
+        "services": {}
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Recensión de afiliado)",
@@ -167,5 +253,25 @@
         "title": "{count} recensións",
         "title_singular": "Unha recensión",
         "write_a_comment": "Deixa unha recensión…"
+    },
+    "split": {},
+    "translations": {},
+    "validation": {
+        "color": {},
+        "date": {},
+        "direction": {},
+        "distance": {},
+        "email": {},
+        "float": {},
+        "int": {},
+        "nat": {},
+        "opening_hours": {},
+        "pfloat": {},
+        "phone": {},
+        "pnat": {},
+        "string": {},
+        "text": {},
+        "url": {},
+        "wikidata": {}
     }
 }

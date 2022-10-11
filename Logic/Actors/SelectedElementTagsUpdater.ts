@@ -1,51 +1,47 @@
 /**
  * This actor will download the latest version of the selected element from OSM and update the tags if necessary.
  */
-import {UIEventSource} from "../UIEventSource";
-import {ElementStorage} from "../ElementStorage";
-import {Changes} from "../Osm/Changes";
-import {OsmObject} from "../Osm/OsmObject";
-import {OsmConnection} from "../Osm/OsmConnection";
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import SimpleMetaTagger from "../SimpleMetaTagger";
+import { UIEventSource } from "../UIEventSource"
+import { ElementStorage } from "../ElementStorage"
+import { Changes } from "../Osm/Changes"
+import { OsmObject } from "../Osm/OsmObject"
+import { OsmConnection } from "../Osm/OsmConnection"
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import SimpleMetaTagger from "../SimpleMetaTagger"
 
 export default class SelectedElementTagsUpdater {
-
-    private static readonly metatags = new Set(["timestamp",
+    private static readonly metatags = new Set([
+        "timestamp",
         "version",
         "changeset",
         "user",
         "uid",
-        "id"])
+        "id",
+    ])
 
     constructor(state: {
-        selectedElement: UIEventSource<any>,
-        allElements: ElementStorage,
-        changes: Changes,
-        osmConnection: OsmConnection,
+        selectedElement: UIEventSource<any>
+        allElements: ElementStorage
+        changes: Changes
+        osmConnection: OsmConnection
         layoutToUse: LayoutConfig
     }) {
-
-
-        state.osmConnection.isLoggedIn.addCallbackAndRun(isLoggedIn => {
+        state.osmConnection.isLoggedIn.addCallbackAndRun((isLoggedIn) => {
             if (isLoggedIn) {
                 SelectedElementTagsUpdater.installCallback(state)
-                return true;
+                return true
             }
         })
-
     }
 
     public static installCallback(state: {
-        selectedElement: UIEventSource<any>,
-        allElements: ElementStorage,
-        changes: Changes,
-        osmConnection: OsmConnection,
+        selectedElement: UIEventSource<any>
+        allElements: ElementStorage
+        changes: Changes
+        osmConnection: OsmConnection
         layoutToUse: LayoutConfig
     }) {
-
-
-        state.selectedElement.addCallbackAndRunD(s => {
+        state.selectedElement.addCallbackAndRunD((s) => {
             let id = s.properties?.id
 
             const backendUrl = state.osmConnection._oauth_config.url
@@ -55,31 +51,31 @@ export default class SelectedElementTagsUpdater {
 
             if (!(id.startsWith("way") || id.startsWith("node") || id.startsWith("relation"))) {
                 // This object is _not_ from OSM, so we skip it!
-                return;
+                return
             }
 
             if (id.indexOf("-") >= 0) {
                 // This is a new object
-                return;
+                return
             }
-            OsmObject.DownloadPropertiesOf(id).then(latestTags => {
+            OsmObject.DownloadPropertiesOf(id).then((latestTags) => {
                 SelectedElementTagsUpdater.applyUpdate(state, latestTags, id)
             })
-
-        });
-
+        })
     }
 
-    public static applyUpdate(state: {
-                                  selectedElement: UIEventSource<any>,
-                                  allElements: ElementStorage,
-                                  changes: Changes,
-                                  osmConnection: OsmConnection,
-                                  layoutToUse: LayoutConfig
-                              }, latestTags: any, id: string
+    public static applyUpdate(
+        state: {
+            selectedElement: UIEventSource<any>
+            allElements: ElementStorage
+            changes: Changes
+            osmConnection: OsmConnection
+            layoutToUse: LayoutConfig
+        },
+        latestTags: any,
+        id: string
     ) {
         try {
-
             const leftRightSensitive = state.layoutToUse.isLeftRightSensitive()
 
             if (leftRightSensitive) {
@@ -87,11 +83,11 @@ export default class SelectedElementTagsUpdater {
             }
 
             const pendingChanges = state.changes.pendingChanges.data
-                .filter(change => change.type + "/" + change.id === id)
-                .filter(change => change.tags !== undefined);
+                .filter((change) => change.type + "/" + change.id === id)
+                .filter((change) => change.tags !== undefined)
 
             for (const pendingChange of pendingChanges) {
-                const tagChanges = pendingChange.tags;
+                const tagChanges = pendingChange.tags
                 for (const tagChange of tagChanges) {
                     const key = tagChange.k
                     const v = tagChange.v
@@ -103,10 +99,9 @@ export default class SelectedElementTagsUpdater {
                 }
             }
 
-
             // With the changes applied, we merge them onto the upstream object
-            let somethingChanged = false;
-            const currentTagsSource = state.allElements.getEventSourceById(id);
+            let somethingChanged = false
+            const currentTagsSource = state.allElements.getEventSourceById(id)
             const currentTags = currentTagsSource.data
             for (const key in latestTags) {
                 let osmValue = latestTags[key]
@@ -117,7 +112,7 @@ export default class SelectedElementTagsUpdater {
 
                 const localValue = currentTags[key]
                 if (localValue !== osmValue) {
-                    somethingChanged = true;
+                    somethingChanged = true
                     currentTags[key] = osmValue
                 }
             }
@@ -137,7 +132,6 @@ export default class SelectedElementTagsUpdater {
                 somethingChanged = true
             }
 
-
             if (somethingChanged) {
                 console.log("Detected upstream changes to the object when opening it, updating...")
                 currentTagsSource.ping()
@@ -148,6 +142,4 @@ export default class SelectedElementTagsUpdater {
             console.error("Updating the tags of selected element ", id, "failed due to", e)
         }
     }
-
-
 }

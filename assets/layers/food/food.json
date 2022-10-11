@@ -770,22 +770,7 @@
     "reviews"
   ],
   "filter": [
-    {
-      "id": "opened-now",
-      "options": [
-        {
-          "question": {
-            "en": "Opened now",
-            "nl": "Nu geopened",
-            "de": "Aktuell geöffnet",
-            "ca": "Obert ara",
-            "es": "Abierta ahora",
-            "fr": "Ouvert maintenant"
-          },
-          "osmTags": "_isOpen=yes"
-        }
-      ]
-    },
+    "open_now",
     {
       "id": "vegetarian",
       "options": [
@@ -849,36 +834,8 @@
         }
       ]
     },
-    {
-      "id": "accepts-cash",
-      "options": [
-        {
-          "osmTags": "payment:cash=yes",
-          "question": {
-            "en": "Accepts cash",
-            "de": "Akzeptiert Bargeld",
-            "es": "Acepta efectivo",
-            "nl": "Accepteert cash",
-            "fr": "Accepte les paiements en espèces"
-          }
-        }
-      ]
-    },
-    {
-      "id": "accepts-cards",
-      "options": [
-        {
-          "osmTags": "payment:cards=yes",
-          "question": {
-            "en": "Accepts payment cards",
-            "de": "Akzeptiert Kartenzahlung",
-            "es": "Acepta tarjetas de pago",
-            "nl": "Accepteert betaalkaarten",
-            "fr": "Accepte les cartes de paiement"
-          }
-        }
-      ]
-    }
+    "accepts_cash",
+    "accepts_cards"
   ],
   "deletion": {
     "nonDeleteMappings": [

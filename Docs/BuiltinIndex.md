@@ -10,6 +10,7 @@
 1. [Index of builtin TagRendering](#index-of-builtin-tagrendering)
   - [Existing builtin tagrenderings](#existing-builtin-tagrenderings)
     + [images](#images)
+    + [wikipedia](#wikipedia)
     + [website](#website)
     + [phone](#phone)
     + [email](#email)
@@ -24,6 +25,9 @@
     + [smoking](#smoking)
     + [service:electricity](#serviceelectricity)
     + [dog-access](#dog-access)
+    + [internet](#internet)
+    + [internet-fee](#internet-fee)
+    + [internet-ssid](#internet-ssid)
     + [reviews](#reviews)
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
@@ -40,7 +44,6 @@
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
-    + [wikipedia](#wikipedia)
     + [wikidata.school-language](#wikidataschool-language)
     + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
@@ -66,6 +69,7 @@
 
   - ambulancestation
   - artwork
+  - barrier
   - bench
   - bench_at_pt
   - bicycle_library
@@ -96,18 +100,23 @@
   - ghost_bike
   - governments
   - grass_in_parks
+  - hackerspace
   - hotel
   - hydrant
   - indoors
   - information_board
+  - kerbs
   - map
   - nature_reserve
   - observation_tower
+  - parcel_lockers
   - parking
   - pharmacy
   - picnic_table
   - play_forest
   - playground
+  - postboxes
+  - postoffices
   - public_bookcase
   - rainbow_crossings
   - reception_desk
@@ -126,6 +135,19 @@
   - waste_basket
   - watermill
   - windturbine
+
+
+
+
+### wikipedia 
+
+
+
+
+
+  - artwork
+  - nature_reserve
+  - observation_tower
 
 
 
@@ -238,6 +260,7 @@
   - doctors
   - food
   - kindergarten_childcare
+  - parcel_lockers
   - pharmacy
   - shops
   - veterinary
@@ -378,6 +401,48 @@
 
   - cafe_pub
   - food
+
+
+
+
+### internet 
+
+
+
+
+
+  - cafe_pub
+  - food
+  - hotel
+  - shops
+
+
+
+
+### internet-fee 
+
+
+
+
+
+  - cafe_pub
+  - food
+  - hotel
+  - shops
+
+
+
+
+### internet-ssid 
+
+
+
+
+
+  - cafe_pub
+  - food
+  - hotel
+  - shops
 
 
 
@@ -567,18 +632,6 @@
 
 
   - gps_track
-
-
-
-
-### wikipedia 
-
-
-
-
-
-  - nature_reserve
-  - observation_tower
 
 
 

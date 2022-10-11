@@ -45,7 +45,8 @@
     "hu": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak.",
     "ru": "Станция скорой помощи это полигон для хранения транспорта, медицинского оборудования, средств индивидуальной защиты и других медицинских принадлежностей.",
     "nl": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
-    "es": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos."
+    "es": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
+    "da": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger."
   },
   "tagRenderings": [
     {
@@ -95,7 +96,7 @@
         "hu": "Mi a neve annak az utcának, amelyben az állomás található?",
         "nl": "In welke straat ligt dit station?",
         "es": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
-        "da": " Hvad er vejnavnet, hvor stationen ligger?"
+        "da": "Hvad er vejnavnet, hvor stationen ligger?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -121,7 +122,8 @@
         "de": "Wo befindet sich die Rettungswache? (z. B. Name von Stadtviertel, Dorf oder Stadt)",
         "hu": "Hol található az állomás? (Pl. a falu, kisváros vagy városrész neve.)",
         "nl": "Waar ligt het station? (v.b. naam van de buurt, dorp of stad)",
-        "es": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)"
+        "es": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)",
+        "da": "Hvor ligger stationen? (f.eks. navn på kvarter, landsby eller by)"
       },
       "freeform": {
         "key": "addr:place"
@@ -149,7 +151,8 @@
         "hu": "Milyen szervezet működteti ezt az állomást?",
         "ru": "Какая организация управляет этой станцией?",
         "nl": "Welke organisatie beheert dit station?",
-        "es": "¿Qué agencia opera esta estación?"
+        "es": "¿Qué agencia opera esta estación?",
+        "da": "Hvilket agentur driver denne station?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -178,7 +181,8 @@
         "de": "Wie kann der Betreiber der Rettungswache eingestuft werden?",
         "hu": "Hogyan sorolható be az állomás üzemeltetője?",
         "nl": "Wat voor een organisatie is de beheerder van dit station?",
-        "es": "¿Como está clasificada la operadora de la estación?"
+        "es": "¿Como está clasificada la operadora de la estación?",
+        "da": "Hvordan klassificeres stationsoperatøren?"
       },
       "render": {
         "en": "The operator is a(n) {operator:type} entity.",
@@ -188,7 +192,8 @@
         "de": "Der Betreiber ist eine {operator:type}.",
         "hu": "Az üzemeltető egy {operator:type} jellegű szervezet.",
         "nl": "De beheerder is van het type {operator:type}.",
-        "es": "La operador a no es una entidad de tipo {operator:type}."
+        "es": "La operador a no es una entidad de tipo {operator:type}.",
+        "da": "Operatøren er en (n) {operator:type} enhed."
       },
       "freeform": {
         "key": "operator:type"
@@ -228,7 +233,8 @@
             "hu": "Mentőállomást egy közösségi vagy nem hivatalos szervezet működteti.",
             "ru": "Станция управляется волонтёрами или частной организацией.",
             "nl": "Dit station wordt beheerd door een informele of community organisatie.",
-            "es": "La estación la opera una organización basada en la comunidad o informal."
+            "es": "La estación la opera una organización basada en la comunidad o informal.",
+            "da": "Stationen drives af en samfundsbaseret eller uformel organisation."
           }
         },
         {
@@ -263,7 +269,8 @@
             "de": "Die Rettungswache wird von einer privaten Organisation betrieben.",
             "hu": "Az állomást egy magánkézben lévő szervezet működteti.",
             "nl": "Dit station wordt beheerd door een privé-organisatie.",
-            "es": "La estación se opera privadamente."
+            "es": "La estación se opera privadamente.",
+            "da": "Stationen er privatdrevet."
           }
         }
       ]

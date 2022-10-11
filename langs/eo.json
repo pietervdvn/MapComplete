@@ -4,15 +4,19 @@
         "ready": "Farite!"
     },
     "delete": {
-        "cancel": "Nuligi"
+        "cancel": "Nuligi",
+        "explanations": {},
+        "reasons": {}
     },
     "favourite": {
         "reload": "Reŝargi la datenojn"
     },
     "general": {
         "add": {
+            "import": {},
             "title": "Enmeti novan punkton?"
         },
+        "apply_button": {},
         "attribution": {
             "iconAttribution": {
                 "title": "Uzitaj piktogramoj"
@@ -23,8 +27,12 @@
         "download": {
             "exporting": "Elportante…"
         },
+        "histogram": {},
+        "layerSelection": {},
+        "levelSelection": {},
         "loading": "Ŝargante…",
         "loginWithOpenStreetMap": "Saluti per OpenStreetMap",
+        "morescreen": {},
         "noNameCategory": "{category} sen nomo",
         "openTheMap": "Malfermi la mapon",
         "opening_hours": {
@@ -76,9 +84,11 @@
             "tuesday": "mardo",
             "wednesday": "merkredo"
         },
+        "welcomeExplanation": {},
         "wikipedia": {
             "loading": "Ŝargante Vikipedion…",
             "noResults": "Nenio troviĝis pri <i>{search}</i>",
+            "previewbox": {},
             "searchWikidata": "Serĉi Vikidatumojn",
             "wikipediaboxTitle": "Vikipedio"
         }
@@ -89,17 +99,109 @@
         "ccbs": "laŭ la permesilo CC-BY-SA",
         "cco": "kiel publika havaĵo",
         "dontDelete": "Nuligi",
+        "nearbyPictures": {},
         "pleaseLogin": "Bonvolu saluti por aldoni bildon",
         "uploadingMultiple": "Alŝutante {count} bildojn…",
         "uploadingPicture": "Alŝutante vian bildon…",
         "willBePublished": "Via bildo estos publikigita "
     },
+    "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
+        "introduction": {},
+        "login": {},
+        "mapPreview": {},
+        "noteParts": {},
+        "previewAttributes": {},
+        "selectFile": {},
+        "selectTheme": {}
+    },
+    "importInspector": {},
+    "importLayer": {},
     "index": {
         "title": "Bonvenon al MapComplete"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
+    },
+    "move": {
+        "inviteToMove": {},
+        "reasons": {}
+    },
+    "multi_apply": {},
+    "notes": {},
+    "privacy": {},
+    "professional": {
+        "aboutMc": {
+            "internalUse": {},
+            "layers": {},
+            "survey": {}
+        },
+        "aboutOsm": {
+            "aboutOsm": {},
+            "benefits": {},
+            "license": {},
+            "vandalism": {}
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {},
+                "usecaseMapDifferentSources": {}
+            },
+            "unsuitedData": {}
+        },
+        "indexPage": {},
+        "services": {}
     },
     "reviews": {
         "saving_review": "Konservante…",
         "title": "{count} recenzoj",
         "title_singular": "Unu recenzo"
+    },
+    "split": {},
+    "translations": {},
+    "validation": {
+        "color": {},
+        "date": {},
+        "direction": {},
+        "distance": {},
+        "email": {},
+        "float": {},
+        "int": {},
+        "nat": {},
+        "opening_hours": {},
+        "pfloat": {},
+        "phone": {},
+        "pnat": {},
+        "string": {},
+        "text": {},
+        "url": {},
+        "wikidata": {}
     }
 }

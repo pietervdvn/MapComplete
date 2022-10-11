@@ -1,33 +1,33 @@
-import {TagConfigJson} from "./TagConfigJson";
-import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
-
+import { TagConfigJson } from "./TagConfigJson"
+import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
 
 export interface MappingConfigJson {
-
     /**
      * @inheritDoc
      */
-    if: TagConfigJson,
+    if: TagConfigJson
     /**
      * Shown if the 'if is fulfilled
      * Type: rendered
      */
-    then: string | any,
+    then: string | any
     /**
      * An extra icon supporting the choice
      * Type: icon
      */
-    icon?: string | {
-        /**
-         * The path to the  icon
-         * Type: icon
-         */
-        path: string,
-        /**
-         * Size of the image
-         */
-        class: "small" | "medium" | "large" | string
-    }
+    icon?:
+        | string
+        | {
+              /**
+               * The path to the  icon
+               * Type: icon
+               */
+              path: string
+              /**
+               * Size of the image
+               */
+              class: "small" | "medium" | "large" | string
+          }
 
     /**
      * In some cases, multiple taggings exist (e.g. a default assumption, or a commonly mapped abbreviation and a fully written variation).
@@ -78,7 +78,7 @@ export interface MappingConfigJson {
      *         {"if":"changing_table:location=female","then":"In the female restroom"},
      *        {"if":"changing_table:location=male","then":"In the male restroom"},
      *        {"if":"changing_table:location=wheelchair","then":"In the wheelchair accessible restroom", "hideInAnswer": "wheelchair=no"},
-     *         
+     *
      *     ]
      * }
      *
@@ -89,7 +89,7 @@ export interface MappingConfigJson {
      *     hideInAnswer: "_country!=be"
      * }
      */
-    hideInAnswer?: boolean | TagConfigJson,
+    hideInAnswer?: boolean | TagConfigJson
     /**
      * Only applicable if 'multiAnswer' is set.
      * This is for situations such as:
@@ -103,7 +103,7 @@ export interface MappingConfigJson {
     /**
      * If chosen as answer, these tags will be applied as well onto the object.
      * Not compatible with multiAnswer.
-     * 
+     *
      * This can be used e.g. to erase other keys which indicate the 'not' value:
      *```json
      * {
@@ -112,13 +112,13 @@ export interface MappingConfigJson {
      *     "addExtraTags": "not:crossing:marking="
      * }
      * ```
-     * 
+     *
      */
     addExtraTags?: string[]
 
     /**
      * If there are many options, the mappings-radiobuttons will be replaced by an element with a searchfunction
-     * 
+     *
      * Searchterms (per language) allow to easily find an option if there are many options
      */
     searchTerms?: Record<string, string[]>
@@ -128,7 +128,6 @@ export interface MappingConfigJson {
      * Use this sparingly
      */
     priorityIf?: TagConfigJson
-
 }
 
 /**
@@ -136,19 +135,16 @@ export interface MappingConfigJson {
  * If the desired tags are missing and a question is defined, a question will be shown instead.
  */
 export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJson {
-
     /**
      * If it turns out that this tagRendering doesn't match _any_ value, then we show this question.
      * If undefined, the question is never asked and this tagrendering is read-only
      */
-    question?: string | any,
-
+    question?: string | any
 
     /**
      * Allow freeform text input from the user
      */
     freeform?: {
-
         /**
          * @inheritDoc
          */
@@ -158,7 +154,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * The type of the text-field, e.g. 'string', 'nat', 'float', 'date',...
          * See Docs/SpecialInputElements.md and UI/Input/ValidatedTextField.ts for supported values
          */
-        type?: string,
+        type?: string
         /**
          * A (translated) text that is shown (as gray text) within the textfield
          */
@@ -168,12 +164,12 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * Extra parameters to initialize the input helper arguments.
          * For semantics, see the 'SpecialInputElements.md'
          */
-        helperArgs?: (string | number | boolean | any)[];
+        helperArgs?: (string | number | boolean | any)[]
         /**
          * If a value is added with the textfield, these extra tag is addded.
          * Useful to add a 'fixme=freeform textfield used - to be checked'
          **/
-        addExtraTags?: string[];
+        addExtraTags?: string[]
 
         /**
          * When set, influences the way a question is asked.
@@ -188,12 +184,12 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
          * Normally undefined (aka do not enter anything)
          */
         default?: string
-    },
+    }
 
     /**
      * If true, use checkboxes instead of radio buttons when asking the question
      */
-    multiAnswer?: boolean,
+    multiAnswer?: boolean
 
     /**
      * Allows fixed-tag inputs, shown either as radiobuttons or as checkboxes

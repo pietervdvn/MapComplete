@@ -75,7 +75,7 @@ The question is  What is the legal maximum speed one is allowed to drive on this
 
 This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) 
 
-This is rendered with  The maximum allowed speed on this road is {maxspeed}
+This is rendered with  The maximum allowed speed on this road is {canonical(maxspeed)}
 
 
 

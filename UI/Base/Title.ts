@@ -1,11 +1,17 @@
-import BaseUIElement from "../BaseUIElement";
-import {FixedUiElement} from "./FixedUiElement";
-import {Utils} from "../../Utils";
+import BaseUIElement from "../BaseUIElement"
+import { FixedUiElement } from "./FixedUiElement"
+import { Utils } from "../../Utils"
 
 export default class Title extends BaseUIElement {
-    private static readonly defaultClassesPerLevel = ["", "text-3xl font-bold", "text-2xl font-bold", "text-xl font-bold", "text-lg font-bold"]
-    public readonly title: BaseUIElement;
-    public readonly level: number;
+    private static readonly defaultClassesPerLevel = [
+        "",
+        "text-3xl font-bold",
+        "text-2xl font-bold",
+        "text-xl font-bold",
+        "text-lg font-bold",
+    ]
+    public readonly title: BaseUIElement
+    public readonly level: number
     public readonly id: string
 
     constructor(embedded: string | BaseUIElement, level: number = 3) {
@@ -18,9 +24,9 @@ export default class Title extends BaseUIElement {
         } else {
             this.title = embedded
         }
-        this.level = level;
+        this.level = level
 
-        let text: string = undefined;
+        let text: string = undefined
         if (typeof embedded === "string") {
             text = embedded
         } else if (embedded instanceof FixedUiElement) {
@@ -31,14 +37,16 @@ export default class Title extends BaseUIElement {
             }
         }
 
-        this.id = text?.replace(/ /g, '-')
-            ?.replace(/[?#.;:/]/, "")
-            ?.toLowerCase() ?? ""
+        this.id =
+            text
+                ?.replace(/ /g, "-")
+                ?.replace(/[?#.;:/]/, "")
+                ?.toLowerCase() ?? ""
         this.SetClass(Title.defaultClassesPerLevel[level] ?? "")
     }
 
     AsMarkdown(): string {
-        const embedded = " " + this.title.AsMarkdown() + " ";
+        const embedded = " " + this.title.AsMarkdown() + " "
 
         if (this.level == 1) {
             return "\n\n" + embedded + "\n" + "=".repeat(embedded.length) + "\n\n"
@@ -48,17 +56,17 @@ export default class Title extends BaseUIElement {
             return "\n\n" + embedded + "\n" + "-".repeat(embedded.length) + "\n\n"
         }
 
-        return "\n\n" + "#".repeat(this.level) + embedded + "\n\n";
+        return "\n\n" + "#".repeat(this.level) + embedded + "\n\n"
     }
 
     protected InnerConstructElement(): HTMLElement {
         const el = this.title.ConstructElement()
         if (el === undefined) {
-            return undefined;
+            return undefined
         }
         const h = document.createElement("h" + this.level)
         h.appendChild(el)
         el.id = this.id
-        return h;
+        return h
     }
 }

@@ -1,11 +1,11 @@
-import {Utils} from "../../Utils";
-import opening_hours from "opening_hours";
+import { Utils } from "../../Utils"
+import opening_hours from "opening_hours"
 
 export interface OpeningHour {
-    weekday: number, // 0 is monday, 1 is tuesday, ...
-    startHour: number,
-    startMinutes: number,
-    endHour: number,
+    weekday: number // 0 is monday, 1 is tuesday, ...
+    startHour: number
+    startMinutes: number
+    endHour: number
     endMinutes: number
 }
 
@@ -13,8 +13,6 @@ export interface OpeningHour {
  * Various utilities manipulating opening hours
  */
 export class OH {
-
-
     private static readonly days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
     private static readonly daysIndexed = {
         mo: 0,
@@ -23,30 +21,30 @@ export class OH {
         th: 3,
         fr: 4,
         sa: 5,
-        su: 6
+        su: 6,
     }
 
     public static hhmm(h: number, m: number): string {
         if (h == 24) {
-            return "00:00";
+            return "00:00"
         }
-        return Utils.TwoDigits(h) + ":" + Utils.TwoDigits(m);
+        return Utils.TwoDigits(h) + ":" + Utils.TwoDigits(m)
     }
 
     /**
-    * const rules = [{weekday: 6,endHour: 17,endMinutes: 0,startHour: 13,startMinutes: 0},
-    *                {weekday: 1,endHour: 12,endMinutes: 0,startHour: 10,startMinutes: 0}]
-    * OH.ToString(rules) // =>  "Tu 10:00-12:00; Su 13:00-17:00"
-    *
-    * const rules = [{weekday: 3,endHour: 17,endMinutes: 0,startHour: 13,startMinutes: 0}, {weekday: 1,endHour: 12,endMinutes: 0,startHour: 10,startMinutes: 0}]
-    * OH.ToString(rules) // => "Tu 10:00-12:00; Th 13:00-17:00"
-    * 
-    * const rules = [ { weekday: 1, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0 }, { weekday: 1, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }]);
-    * OH.ToString(rules) // => "Tu 10:00-12:00, 13:00-17:00"
-    * 
-    * const rules = [ { weekday: 0, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }, { weekday: 0, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0}, { weekday: 1, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0 }, { weekday: 1, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }];
-    * OH.ToString(rules) // => "Mo-Tu 10:00-12:00, 13:00-17:00"
-     * 
+     * const rules = [{weekday: 6,endHour: 17,endMinutes: 0,startHour: 13,startMinutes: 0},
+     *                {weekday: 1,endHour: 12,endMinutes: 0,startHour: 10,startMinutes: 0}]
+     * OH.ToString(rules) // =>  "Tu 10:00-12:00; Su 13:00-17:00"
+     *
+     * const rules = [{weekday: 3,endHour: 17,endMinutes: 0,startHour: 13,startMinutes: 0}, {weekday: 1,endHour: 12,endMinutes: 0,startHour: 10,startMinutes: 0}]
+     * OH.ToString(rules) // => "Tu 10:00-12:00; Th 13:00-17:00"
+     *
+     * const rules = [ { weekday: 1, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0 }, { weekday: 1, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }]);
+     * OH.ToString(rules) // => "Tu 10:00-12:00, 13:00-17:00"
+     *
+     * const rules = [ { weekday: 0, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }, { weekday: 0, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0}, { weekday: 1, endHour: 17, endMinutes: 0, startHour: 13, startMinutes: 0 }, { weekday: 1, endHour: 12, endMinutes: 0, startHour: 10, startMinutes: 0 }];
+     * OH.ToString(rules) // => "Mo-Tu 10:00-12:00, 13:00-17:00"
+     *
      * // should merge overlapping opening hours
      * const timerange0 = {weekday: 1, endHour: 23, endMinutes: 30, startHour: 23, startMinutes: 0 }
      * const touchingTimeRange = {  weekday: 1, endHour: 0, endMinutes: 0, startHour: 23, startMinutes: 30 }
@@ -56,64 +54,59 @@ export class OH {
      * const timerange0 = {weekday: 1, endHour: 23, endMinutes: 30, startHour: 23, startMinutes: 0 }
      * const overlappingTimeRange =  { weekday: 1, endHour: 24, endMinutes: 0, startHour: 23, startMinutes: 30 }
      * OH.ToString(OH.MergeTimes([timerange0, overlappingTimeRange])) // => "Tu 23:00-00:00"
-    * 
-    */
-    
+     *
+     */
+
     public static ToString(ohs: OpeningHour[]) {
         if (ohs.length == 0) {
-            return "";
+            return ""
         }
-        const partsPerWeekday: string [][] = [[], [], [], [], [], [], []];
-
+        const partsPerWeekday: string[][] = [[], [], [], [], [], [], []]
 
         for (const oh of ohs) {
-            partsPerWeekday[oh.weekday].push(OH.hhmm(oh.startHour, oh.startMinutes) + "-" + OH.hhmm(oh.endHour, oh.endMinutes));
+            partsPerWeekday[oh.weekday].push(
+                OH.hhmm(oh.startHour, oh.startMinutes) + "-" + OH.hhmm(oh.endHour, oh.endMinutes)
+            )
         }
 
-        const stringPerWeekday = partsPerWeekday.map(parts => parts.sort().join(", "));
+        const stringPerWeekday = partsPerWeekday.map((parts) => parts.sort().join(", "))
 
-        const rules = [];
+        const rules = []
 
-        let rangeStart = 0;
-        let rangeEnd = 0;
+        let rangeStart = 0
+        let rangeEnd = 0
 
         function pushRule() {
-            const rule = stringPerWeekday[rangeStart];
+            const rule = stringPerWeekday[rangeStart]
             if (rule === "") {
-                return;
+                return
             }
-            if (rangeStart == (rangeEnd - 1)) {
-                rules.push(
-                    `${OH.days[rangeStart]} ${rule}`
-                );
+            if (rangeStart == rangeEnd - 1) {
+                rules.push(`${OH.days[rangeStart]} ${rule}`)
             } else {
-                rules.push(
-                    `${OH.days[rangeStart]}-${OH.days[rangeEnd - 1]} ${rule}`
-                );
+                rules.push(`${OH.days[rangeStart]}-${OH.days[rangeEnd - 1]} ${rule}`)
             }
         }
 
         for (; rangeEnd < 7; rangeEnd++) {
-
             if (stringPerWeekday[rangeStart] != stringPerWeekday[rangeEnd]) {
-                pushRule();
+                pushRule()
                 rangeStart = rangeEnd
             }
-
         }
-        pushRule();
+        pushRule()
 
         const oh = rules.join("; ")
         if (oh === "Mo-Su 00:00-00:00") {
             return "24/7"
         }
-        return oh;
+        return oh
     }
 
     /**
      * Merge duplicate opening-hour element in place.
      * Returns true if something changed
-     * 
+     *
      * // should merge overlapping opening hours
      * const oh1: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 0, endHour: 11, endMinutes: 0 };
      * const oh0: OpeningHour = { weekday: 0, startHour: 10, startMinutes: 30, endHour: 12, endMinutes: 0 };
@@ -125,60 +118,70 @@ export class OH {
      * OH.MergeTimes([oh0, oh1]) // => [{ weekday: 0, startHour: 10, startMinutes: 0, endHour: 12, endMinutes: 0 }]
      */
     public static MergeTimes(ohs: OpeningHour[]): OpeningHour[] {
-        const queue = ohs.map(oh => {
+        const queue = ohs.map((oh) => {
             if (oh.endHour === 0 && oh.endMinutes === 0) {
                 const newOh = {
-                    ...oh
+                    ...oh,
                 }
                 newOh.endHour = 24
                 return newOh
             }
-            return oh;
-        });
-        const newList = [];
+            return oh
+        })
+        const newList = []
         while (queue.length > 0) {
-            let maybeAdd = queue.pop();
+            let maybeAdd = queue.pop()
 
-            let doAddEntry = true;
+            let doAddEntry = true
             if (maybeAdd.weekday == undefined) {
-                doAddEntry = false;
+                doAddEntry = false
             }
 
             for (let i = newList.length - 1; i >= 0 && doAddEntry; i--) {
-                let guard = newList[i];
+                let guard = newList[i]
                 if (maybeAdd.weekday != guard.weekday) {
                     // Not the same day
                     continue
                 }
 
-                if (OH.startTimeLiesInRange(maybeAdd, guard) && OH.endTimeLiesInRange(maybeAdd, guard)) {
+                if (
+                    OH.startTimeLiesInRange(maybeAdd, guard) &&
+                    OH.endTimeLiesInRange(maybeAdd, guard)
+                ) {
                     // Guard fully covers 'maybeAdd': we can safely ignore maybeAdd
-                    doAddEntry = false;
-                    break;
+                    doAddEntry = false
+                    break
                 }
 
-                if (OH.startTimeLiesInRange(guard, maybeAdd) && OH.endTimeLiesInRange(guard, maybeAdd)) {
+                if (
+                    OH.startTimeLiesInRange(guard, maybeAdd) &&
+                    OH.endTimeLiesInRange(guard, maybeAdd)
+                ) {
                     // 'maybeAdd'  fully covers Guard - the guard is killed
-                    newList.splice(i, 1);
-                    break;
+                    newList.splice(i, 1)
+                    break
                 }
 
-                if (OH.startTimeLiesInRange(maybeAdd, guard) || OH.endTimeLiesInRange(maybeAdd, guard)
-                    || OH.startTimeLiesInRange(guard, maybeAdd) || OH.endTimeLiesInRange(guard, maybeAdd)) {
+                if (
+                    OH.startTimeLiesInRange(maybeAdd, guard) ||
+                    OH.endTimeLiesInRange(maybeAdd, guard) ||
+                    OH.startTimeLiesInRange(guard, maybeAdd) ||
+                    OH.endTimeLiesInRange(guard, maybeAdd)
+                ) {
                     // At this point, the maybeAdd overlaps the guard: we should extend the guard and retest it
-                    newList.splice(i, 1);
-                    let startHour = guard.startHour;
-                    let startMinutes = guard.startMinutes;
+                    newList.splice(i, 1)
+                    let startHour = guard.startHour
+                    let startMinutes = guard.startMinutes
                     if (OH.startTime(maybeAdd) < OH.startTime(guard)) {
-                        startHour = maybeAdd.startHour;
-                        startMinutes = maybeAdd.startMinutes;
+                        startHour = maybeAdd.startHour
+                        startMinutes = maybeAdd.startMinutes
                     }
 
-                    let endHour = guard.endHour;
-                    let endMinutes = guard.endMinutes;
+                    let endHour = guard.endHour
+                    let endMinutes = guard.endMinutes
                     if (OH.endTime(maybeAdd) > OH.endTime(guard)) {
-                        endHour = maybeAdd.endHour;
-                        endMinutes = maybeAdd.endMinutes;
+                        endHour = maybeAdd.endHour
+                        endMinutes = maybeAdd.endMinutes
                     }
 
                     queue.push({
@@ -186,16 +189,15 @@ export class OH {
                         startMinutes: startMinutes,
                         endHour: endHour,
                         endMinutes: endMinutes,
-                        weekday: guard.weekday
-                    });
+                        weekday: guard.weekday,
+                    })
 
-                    doAddEntry = false;
-                    break;
+                    doAddEntry = false
+                    break
                 }
-
             }
             if (doAddEntry) {
-                newList.push(maybeAdd);
+                newList.push(maybeAdd)
             }
         }
 
@@ -203,11 +205,10 @@ export class OH {
         // This means that the list is changed only if the lengths are different.
         // If the lengths are the same, we might just as well return the old list and be a bit more stable
         if (newList.length !== ohs.length) {
-            return newList;
+            return newList
         } else {
-            return ohs;
+            return ohs
         }
-
     }
 
     /**
@@ -217,107 +218,116 @@ export class OH {
      * @param oh
      */
     public static startTime(oh: OpeningHour): number {
-        return oh.startHour + oh.startMinutes / 60;
+        return oh.startHour + oh.startMinutes / 60
     }
 
     public static endTime(oh: OpeningHour): number {
-        return oh.endHour + oh.endMinutes / 60;
+        return oh.endHour + oh.endMinutes / 60
     }
 
     public static startTimeLiesInRange(checked: OpeningHour, mightLieIn: OpeningHour) {
-        return OH.startTime(mightLieIn) <= OH.startTime(checked) &&
+        return (
+            OH.startTime(mightLieIn) <= OH.startTime(checked) &&
             OH.startTime(checked) <= OH.endTime(mightLieIn)
+        )
     }
 
     public static endTimeLiesInRange(checked: OpeningHour, mightLieIn: OpeningHour) {
-        return OH.startTime(mightLieIn) <= OH.endTime(checked) &&
+        return (
+            OH.startTime(mightLieIn) <= OH.endTime(checked) &&
             OH.endTime(checked) <= OH.endTime(mightLieIn)
+        )
     }
 
     public static parseHHMMRange(hhmmhhmm: string): {
-        startHour: number,
-        startMinutes: number,
-        endHour: number,
+        startHour: number
+        startMinutes: number
+        endHour: number
         endMinutes: number
     } {
         if (hhmmhhmm == "off") {
-            return null;
+            return null
         }
 
-        const timings = hhmmhhmm.split("-");
+        const timings = hhmmhhmm.split("-")
         const start = OH.parseHHMM(timings[0])
-        const end = OH.parseHHMM(timings[1]);
+        const end = OH.parseHHMM(timings[1])
         return {
             startHour: start.hours,
             startMinutes: start.minutes,
             endHour: end.hours,
-            endMinutes: end.minutes
+            endMinutes: end.minutes,
         }
     }
 
     /**
      * Converts an OH-syntax rule into an object
-     * 
-     * 
+     *
+     *
      * const rules = OH.ParsePHRule("PH 12:00-17:00")
      * rules.mode // => " "
      * rules.start // => "12:00"
      * rules.end // => "17:00"
-     * 
+     *
      * OH.ParseRule("PH 12:00-17:00") // => null
      * OH.ParseRule("Th[-1] off") // => null
-     * 
+     *
      * const rules = OH.Parse("24/7");
      * rules.length // => 7
      * rules[0].startHour // => 0
      * OH.ToString(rules) // => "24/7"
-     * 
+     *
      * const rules = OH.ParseRule("11:00-19:00");
      * rules.length // => 7
      * rules[0].weekday // => 0
      * rules[0].startHour // => 11
      * rules[3].endHour // => 19
-     * 
+     *
      * const rules = OH.ParseRule("Mo-Th 11:00-19:00");
      * rules.length // => 4
      * rules[0].weekday // => 0
      * rules[0].startHour // => 11
      * rules[3].endHour // => 19
-     * 
+     *
      */
     public static ParseRule(rule: string): OpeningHour[] {
         try {
             if (rule.trim() == "24/7") {
-                return OH.multiply([0, 1, 2, 3, 4, 5, 6], [{
-                    startHour: 0,
-                    startMinutes: 0,
-                    endHour: 24,
-                    endMinutes: 0
-                }]);
+                return OH.multiply(
+                    [0, 1, 2, 3, 4, 5, 6],
+                    [
+                        {
+                            startHour: 0,
+                            startMinutes: 0,
+                            endHour: 24,
+                            endMinutes: 0,
+                        },
+                    ]
+                )
             }
 
-            const split = rule.trim().replace(/, */g, ",").split(" ");
+            const split = rule.trim().replace(/, */g, ",").split(" ")
             if (split.length == 1) {
                 // First, try to parse this rule as a rule without weekdays
-                let timeranges = OH.ParseHhmmRanges(rule);
-                let weekdays = [0, 1, 2, 3, 4, 5, 6];
-                return OH.multiply(weekdays, timeranges);
+                let timeranges = OH.ParseHhmmRanges(rule)
+                let weekdays = [0, 1, 2, 3, 4, 5, 6]
+                return OH.multiply(weekdays, timeranges)
             }
 
             if (split.length == 2) {
-                const weekdays = OH.ParseWeekdayRanges(split[0]);
-                const timeranges = OH.ParseHhmmRanges(split[1]);
-                return OH.multiply(weekdays, timeranges);
+                const weekdays = OH.ParseWeekdayRanges(split[0])
+                const timeranges = OH.ParseHhmmRanges(split[1])
+                return OH.multiply(weekdays, timeranges)
             }
-            return null;
+            return null
         } catch (e) {
-            console.log("Could not parse weekday rule ", rule);
-            return null;
+            console.log("Could not parse weekday rule ", rule)
+            return null
         }
     }
 
     /**
-     * 
+     *
      * OH.ParsePHRule("PH Off") // => {mode: "off"}
      * OH.ParsePHRule("PH OPEN") // => {mode: "open"}
      * OH.ParsePHRule("PH 10:00-12:00") // => {mode: " ", start: "10:00", end: "12:00"}
@@ -326,49 +336,47 @@ export class OH {
      * OH.ParsePHRule("some random string") // => null
      */
     public static ParsePHRule(str: string): {
-        mode: string,
-        start?: string,
+        mode: string
+        start?: string
         end?: string
     } {
         if (str === undefined || str === null) {
             return null
         }
-        str = str.trim();
+        str = str.trim()
         if (!str.startsWith("PH")) {
-            return null;
+            return null
         }
 
-        str = str.trim();
+        str = str.trim()
         if (str.toLowerCase() === "ph off") {
             return {
-                mode: "off"
+                mode: "off",
             }
         }
 
         if (str.toLowerCase() === "ph open") {
             return {
-                mode: "open"
+                mode: "open",
             }
         }
 
         if (!str.startsWith("PH ")) {
-            return null;
+            return null
         }
         try {
-
-            const timerange = OH.parseHHMMRange(str.substring(2));
+            const timerange = OH.parseHHMMRange(str.substring(2))
             if (timerange === null) {
-                return null;
+                return null
             }
 
             return {
                 mode: " ",
                 start: OH.hhmm(timerange.startHour, timerange.startMinutes),
                 end: OH.hhmm(timerange.endHour, timerange.endMinutes),
-
             }
         } catch (e) {
-            return null;
+            return null
         }
     }
 
@@ -386,23 +394,23 @@ export class OH {
 
         const ohs: OpeningHour[] = []
 
-        const split = rules.split(";");
+        const split = rules.split(";")
 
         for (const rule of split) {
             if (rule === "") {
-                continue;
+                continue
             }
             try {
                 const parsed = OH.ParseRule(rule)
                 if (parsed !== null) {
-                    ohs.push(...parsed);
+                    ohs.push(...parsed)
                 }
             } catch (e) {
                 console.error("Could not parse ", rule, ": ", e)
             }
         }
 
-        return ohs;
+        return ohs
     }
 
     /*
@@ -414,222 +422,247 @@ export class OH {
  This function will extract all those moments of change and will return 9:00, 9:30, 12:30, 17:00 and 18:00
  This list will be sorted
  */
-    public static allChangeMoments(ranges: {
-        isOpen: boolean,
-        isSpecial: boolean,
-        comment: string,
-        startDate: Date,
-        endDate: Date
-    }[][]): [number[], string[]] {
+    public static allChangeMoments(
+        ranges: {
+            isOpen: boolean
+            isSpecial: boolean
+            comment: string
+            startDate: Date
+            endDate: Date
+        }[][]
+    ): [number[], string[]] {
         const changeHours: number[] = []
-        const changeHourText: string[] = [];
+        const changeHourText: string[] = []
 
         const extrachangeHours: number[] = []
-        const extrachangeHourText: string[] = [];
+        const extrachangeHourText: string[] = []
 
         for (const weekday of ranges) {
             for (const range of weekday) {
                 if (!range.isOpen && !range.isSpecial) {
-                    continue;
+                    continue
                 }
-                const startOfDay: Date = new Date(range.startDate);
-                startOfDay.setHours(0, 0, 0, 0);
+                const startOfDay: Date = new Date(range.startDate)
+                startOfDay.setHours(0, 0, 0, 0)
 
                 // The number of seconds since the start of the day
                 // @ts-ignore
-                const changeMoment: number = (range.startDate - startOfDay) / 1000;
+                const changeMoment: number = (range.startDate - startOfDay) / 1000
                 if (changeHours.indexOf(changeMoment) < 0) {
-                    changeHours.push(changeMoment);
-                    changeHourText.push(OH.hhmm(range.startDate.getHours(), range.startDate.getMinutes()))
+                    changeHours.push(changeMoment)
+                    changeHourText.push(
+                        OH.hhmm(range.startDate.getHours(), range.startDate.getMinutes())
+                    )
                 }
 
                 // The number of seconds till between the start of the day and closing
                 // @ts-ignore
-                let changeMomentEnd: number = (range.endDate - startOfDay) / 1000;
+                let changeMomentEnd: number = (range.endDate - startOfDay) / 1000
                 if (changeMomentEnd >= 24 * 60 * 60) {
                     if (extrachangeHours.indexOf(changeMomentEnd) < 0) {
-                        extrachangeHours.push(changeMomentEnd);
-                        extrachangeHourText.push(OH.hhmm(range.endDate.getHours(), range.endDate.getMinutes()))
+                        extrachangeHours.push(changeMomentEnd)
+                        extrachangeHourText.push(
+                            OH.hhmm(range.endDate.getHours(), range.endDate.getMinutes())
+                        )
                     }
                 } else if (changeHours.indexOf(changeMomentEnd) < 0) {
-                    changeHours.push(changeMomentEnd);
-                    changeHourText.push(OH.hhmm(range.endDate.getHours(), range.endDate.getMinutes()))
+                    changeHours.push(changeMomentEnd)
+                    changeHourText.push(
+                        OH.hhmm(range.endDate.getHours(), range.endDate.getMinutes())
+                    )
                 }
             }
         }
 
         // Note that 'changeHours' and 'changeHourText' will be more or less in sync - one is in numbers, the other in 'HH:MM' format.
         // But both can be sorted without problem; they'll stay in sync
-        changeHourText.sort();
-        changeHours.sort();
-        extrachangeHourText.sort();
-        extrachangeHours.sort();
+        changeHourText.sort()
+        changeHours.sort()
+        extrachangeHourText.sort()
+        extrachangeHours.sort()
 
-        changeHourText.push(...extrachangeHourText);
-        changeHours.push(...extrachangeHours);
+        changeHourText.push(...extrachangeHourText)
+        changeHours.push(...extrachangeHours)
 
         return [changeHours, changeHourText]
     }
 
-    public static CreateOhObject(tags: object & {_lat: number, _lon: number, _country?: string}, textToParse: string){
+    public static CreateOhObject(
+        tags: object & { _lat: number; _lon: number; _country?: string },
+        textToParse: string
+    ) {
         // noinspection JSPotentiallyInvalidConstructorUsage
-        return new opening_hours(textToParse, {
-            lat: tags._lat,
-            lon: tags._lon,
-            address: {
-                country_code: tags._country.toLowerCase(),
-                state: undefined
+        return new opening_hours(
+            textToParse,
+            {
+                lat: tags._lat,
+                lon: tags._lon,
+                address: {
+                    country_code: tags._country.toLowerCase(),
+                    state: undefined,
+                },
             },
-        }, <any> {tag_key: "opening_hours"});
+            <any>{ tag_key: "opening_hours" }
+        )
     }
-    
+
     /*
  Calculates when the business is opened (or on holiday) between two dates.
  Returns a matrix of ranges, where [0] is a list of ranges when it is opened on monday, [1] is a list of ranges for tuesday, ...
   */
-    public static GetRanges(oh: any, from: Date, to: Date): ({
-        isOpen: boolean,
-        isSpecial: boolean,
-        comment: string,
-        startDate: Date,
+    public static GetRanges(
+        oh: any,
+        from: Date,
+        to: Date
+    ): {
+        isOpen: boolean
+        isSpecial: boolean
+        comment: string
+        startDate: Date
         endDate: Date
-    }[])[] {
+    }[][] {
+        const values = [[], [], [], [], [], [], []]
 
-
-        const values = [[], [], [], [], [], [], []];
-
-        const start = new Date(from);
+        const start = new Date(from)
         // We go one day more into the past, in order to force rendering of holidays in the start of the period
-        start.setDate(from.getDate() - 1);
+        start.setDate(from.getDate() - 1)
 
-        const iterator = oh.getIterator(start);
+        const iterator = oh.getIterator(start)
 
-        let prevValue = undefined;
+        let prevValue = undefined
         while (iterator.advance(to)) {
-
             if (prevValue) {
                 prevValue.endDate = iterator.getDate() as Date
             }
-            const endDate = new Date(iterator.getDate()) as Date;
+            const endDate = new Date(iterator.getDate()) as Date
             endDate.setHours(0, 0, 0, 0)
-            endDate.setDate(endDate.getDate() + 1);
+            endDate.setDate(endDate.getDate() + 1)
             const value = {
                 isSpecial: iterator.getUnknown(),
                 isOpen: iterator.getState(),
                 comment: iterator.getComment(),
                 startDate: iterator.getDate() as Date,
-                endDate: endDate // Should be overwritten by the next iteration
+                endDate: endDate, // Should be overwritten by the next iteration
             }
-            prevValue = value;
+            prevValue = value
 
             if (value.comment === undefined && !value.isOpen && !value.isSpecial) {
                 // simply closed, nothing special here
-                continue;
+                continue
             }
 
             if (value.startDate < from) {
-                continue;
+                continue
             }
             // Get day: sunday is 0, monday is 1. We move everything so that monday == 0
-            values[(value.startDate.getDay() + 6) % 7].push(value);
+            values[(value.startDate.getDay() + 6) % 7].push(value)
         }
-        return values;
+        return values
     }
 
-    private static parseHHMM(hhmm: string): { hours: number, minutes: number } {
+    private static parseHHMM(hhmm: string): { hours: number; minutes: number } {
         if (hhmm === undefined || hhmm == null) {
-            return null;
+            return null
         }
-        const spl = hhmm.trim().split(":");
+        const spl = hhmm.trim().split(":")
         if (spl.length != 2) {
-            return null;
+            return null
         }
-        const hm = {hours: Number(spl[0].trim()), minutes: Number(spl[1].trim())};
+        const hm = { hours: Number(spl[0].trim()), minutes: Number(spl[1].trim()) }
         if (isNaN(hm.hours) || isNaN(hm.minutes)) {
-            return null;
+            return null
         }
-        return hm;
+        return hm
     }
 
     private static ParseHhmmRanges(hhmms: string): {
-        startHour: number,
-        startMinutes: number,
-        endHour: number,
+        startHour: number
+        startMinutes: number
+        endHour: number
         endMinutes: number
     }[] {
         if (hhmms === "off") {
-            return [];
+            return []
         }
-        return hhmms.split(",")
-            .map(s => s.trim())
-            .filter(str => str !== "")
+        return hhmms
+            .split(",")
+            .map((s) => s.trim())
+            .filter((str) => str !== "")
             .map(OH.parseHHMMRange)
-            .filter(v => v != null)
+            .filter((v) => v != null)
     }
 
     private static ParseWeekday(weekday: string): number {
-        return OH.daysIndexed[weekday.trim().toLowerCase()];
+        return OH.daysIndexed[weekday.trim().toLowerCase()]
     }
 
     private static ParseWeekdayRange(weekdays: string): number[] {
-        const split = weekdays.split("-");
+        const split = weekdays.split("-")
         if (split.length == 1) {
-            const parsed = OH.ParseWeekday(weekdays);
+            const parsed = OH.ParseWeekday(weekdays)
             if (parsed == null) {
-                return null;
+                return null
             }
-            return [parsed];
+            return [parsed]
         } else if (split.length == 2) {
-            let start = OH.ParseWeekday(split[0]);
-            let end = OH.ParseWeekday(split[1]);
+            let start = OH.ParseWeekday(split[0])
+            let end = OH.ParseWeekday(split[1])
             if ((start ?? null) === null || (end ?? null) === null) {
-                return null;
+                return null
             }
-            let range = [];
+            let range = []
             for (let i = start; i <= end; i++) {
-                range.push(i);
+                range.push(i)
             }
-            return range;
+            return range
         } else {
-            return null;
+            return null
         }
     }
 
     private static ParseWeekdayRanges(weekdays: string): number[] {
-        let ranges = [];
-        let split = weekdays.split(",");
+        let ranges = []
+        let split = weekdays.split(",")
         for (const weekday of split) {
             const parsed = OH.ParseWeekdayRange(weekday)
             if (parsed === undefined || parsed === null) {
-                return null;
+                return null
             }
-            ranges.push(...parsed);
+            ranges.push(...parsed)
         }
-        return ranges;
+        return ranges
     }
 
-    private static multiply(weekdays: number[], timeranges: { startHour: number, startMinutes: number, endHour: number, endMinutes: number }[]) {
+    private static multiply(
+        weekdays: number[],
+        timeranges: {
+            startHour: number
+            startMinutes: number
+            endHour: number
+            endMinutes: number
+        }[]
+    ) {
         if ((weekdays ?? null) == null || (timeranges ?? null) == null) {
-            return null;
+            return null
         }
         const ohs: OpeningHour[] = []
         for (const timerange of timeranges) {
             for (const weekday of weekdays) {
                 ohs.push({
                     weekday: weekday,
-                    startHour: timerange.startHour, startMinutes: timerange.startMinutes,
-                    endHour: timerange.endHour, endMinutes: timerange.endMinutes,
-                });
+                    startHour: timerange.startHour,
+                    startMinutes: timerange.startMinutes,
+                    endHour: timerange.endHour,
+                    endMinutes: timerange.endMinutes,
+                })
             }
         }
-        return ohs;
+        return ohs
     }
     public static getMondayBefore(d) {
-        d = new Date(d);
-        const day = d.getDay();
-        const diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
-        return new Date(d.setDate(diff));
+        d = new Date(d)
+        const day = d.getDay()
+        const diff = d.getDate() - day + (day == 0 ? -6 : 1) // adjust when day is sunday
+        return new Date(d.setDate(diff))
     }
-
 }
-

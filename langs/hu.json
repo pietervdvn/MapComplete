@@ -134,6 +134,7 @@
             "title": "Rétegek kijelölése",
             "zoomInToSeeThisLayer": "Nagyíts a réteg megtekintéséhez"
         },
+        "levelSelection": {},
         "loading": "Betöltés…",
         "loadingTheme": "{theme} betöltése…",
         "loginFailed": "Az OpenStreetMap-be való bejelentkezés nem sikerült",
@@ -242,6 +243,7 @@
             "wednesday": "Szerda"
         },
         "welcomeBack": "Be vagy jelentkezve, üdv ismét!",
+        "welcomeExplanation": {},
         "wikipedia": {
             "createNewWikidata": "Új Wikidata-elem létrehozása",
             "doSearch": "Keress fent az eredmények megtekintéséhez",
@@ -249,6 +251,7 @@
             "loading": "Wikipédia betöltése…",
             "noResults": "Nincs találat erre: <i>{search}</i>",
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
+            "previewbox": {},
             "searchWikidata": "Keresés a Wikidatán",
             "wikipediaboxTitle": "Wikipédia"
         }
@@ -264,6 +267,7 @@
         "doDelete": "Kép eltávolítása",
         "dontDelete": "Mégse",
         "isDeleted": "Törölve",
+        "nearbyPictures": {},
         "pleaseLogin": "Kép hozzáadásához be kell jelentkezni",
         "respectPrivacy": "Ne készíts fényképet emberekről és rendszámtáblákról. Ne tölts fel képet a Google Mapsről, a Google Streetview-ról (utcaképről) és egyéb szerzői jog által védett forrásokból.",
         "toBig": "A kép túl nagy ({actual_size}). Kérjük, legfeljebb {max_size} méretű képeket használj",
@@ -275,13 +279,27 @@
         "willBePublished": "A képed így lesz közzétéve: "
     },
     "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
         "introduction": {
             "description": "Az importálási segédprogram egy külső adatkészletet konvertál OSM-jegyzetekké. A külső adatkészletnek meg kell felelnie a MapComplete egyik meglévő rétegének. Az importálóba helyezett minden egyes elemhez egyetlen jegyzet fog létrejönni. Ezek a jegyzetek a megfelelő térképelemekkel együtt fognak megjelenni ezeken a térképekben, hogy könnyen fel lehessen rajzolni őket a térképre."
         },
+        "login": {},
+        "mapPreview": {},
+        "noteParts": {},
         "previewAttributes": {
             "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel"
-        }
+        },
+        "selectFile": {},
+        "selectTheme": {}
     },
+    "importInspector": {},
+    "importLayer": {},
     "index": {
         "#": "Ezek a szövegek akkor jelennek meg a témagombok felett, ha nincs betöltve téma",
         "featuredThemeTitle": "Kiemelt ezen a héten",
@@ -289,6 +307,30 @@
         "logIn": "A korábban megnézett témák megtekintéséhez be kell jelentkezned",
         "pickTheme": "Válassz egy témát lent a kezdéshez.",
         "title": "Isten hozott a MapComplete-en"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
     },
     "move": {
         "cancel": "Áthelyezés megszakítása",
@@ -318,6 +360,7 @@
     "multi_apply": {
         "autoApply": "A(z) {attr_names} tulajdonságok módosításával ezek a tulajdonságok automatikusan módosulnak {count} további objektumon is"
     },
+    "notes": {},
     "privacy": {
         "geodata": "Amikor a MapComplete lekéri a földrajzi helyed meghatározását, az – a korábban meglátogatott helyekkel együtt – az eszközödön marad. Helyadatokat soha nem küldünk el automatikusan máshová – kivéve, ha bizonyos funkciók egyértelműen másként rendelkeznek.",
         "geodataTitle": "Földrajzi helyed",
@@ -327,6 +370,11 @@
         "trackingTitle": "Statisztikai adatok"
     },
     "professional": {
+        "aboutMc": {
+            "internalUse": {},
+            "layers": {},
+            "survey": {}
+        },
         "aboutOsm": {
             "aboutOsm": {
                 "intro": "Az OpenStreetMap egy önkéntesek által épített, megosztott, globális adatbázis. Az OpenStreetMaphez minden földrajzi adat hozzáadható, amennyiben <b>a helyszínen ellenőrizhető</b>.<br> Az OpenStreetMap hatalmas és mély adattárrá nőtte ki magát: több ezer objektumkategória adatait tartalmazza. Egy-egy objektumnak is nagyon sok tulajdonsága lehet, amivel rengeteg finom részlet ábrázolható, például:",
@@ -339,11 +387,19 @@
             "benefits": {
                 "li1": "Az adatai minden eddiginél nagyobb közönséghez jutnak el, hiszen ezt használja a Bing Maps (Microsoft), az Apple Maps, a Facebook, az Instagram, a Pokémon Go, az OsmAnd, az Organic Maps, a Maps.me, a Mapbox, a Komoot, szinte minden kerékpáros alkalmazás és még sok más weboldal és applikáció…"
             },
+            "license": {},
             "vandalism": {
                 "intro": "Mivel az adatokat bárki szerkesztheti, előfordulhat, hogy rosszindulatú változtatás történik. Ez azonban néhány okból rendkívül ritka:",
                 "li0": "magasak a változtatások technikai akadályai, vagyis nem olyan könnyű a térképet szerkeszteni",
                 "li1": "egy kis rosszindulatú változtatásnak alacsony a hatása, így a vandál számára csekély a jutalom"
             }
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {},
+                "usecaseMapDifferentSources": {}
+            },
+            "unsuitedData": {}
         },
         "indexPage": {
             "button": "Szolgáltatásaink",
@@ -351,6 +407,7 @@
         },
         "intro": "A MapComplete fejlesztője szakmai támogatást is kínál. Ez a dokumentum felvázol néhány lehetőséget, megválaszol pár gyakori kérdést és bemutatja a MapComplete határait",
         "osmTitle": "Mire lehet jó az OpenStreetMap és a MapComplete a szervezeted számára?",
+        "services": {},
         "text0": "<p>A naprakész földrajzi adatok karbantartása nehéz, hibaveszélyes és költséges.<br>A nehézségeket tetézi, hogy sok szervezet egymástól függetlenül gyűjti ugyanazokat az adatokat, ami párhuzamos erőfeszítéseket, nem szabványosított adatformátumokat és sok hiányos, karbantartatlan adathalmazt eredményez.</p><p>Létezik viszont egy hatalmas közösség, amely rengeteg földrajzi adatot gyűjt egy közös, globális és szabványosított adatbázisba: ez az OpenStreetMap.org.</p>",
         "text1": "<p>A MapComplete olyan térképszerkesztő alkalmazás, amely megkönnyíti az OpenStreetMap adatokkal való feltöltését.</p>",
         "title": "Szakmai támogatás a MapComplete segítségével"
@@ -378,5 +435,24 @@
         "loginToSplit": "Egy út szétvágásához be kell jelentkezni",
         "split": "Szétvágás",
         "splitTitle": "Válaszd ki a térképen, hogy az út hol legyen elvágva"
+    },
+    "translations": {},
+    "validation": {
+        "color": {},
+        "date": {},
+        "direction": {},
+        "distance": {},
+        "email": {},
+        "float": {},
+        "int": {},
+        "nat": {},
+        "opening_hours": {},
+        "pfloat": {},
+        "phone": {},
+        "pnat": {},
+        "string": {},
+        "text": {},
+        "url": {},
+        "wikidata": {}
     }
 }

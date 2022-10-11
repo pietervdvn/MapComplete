@@ -146,7 +146,7 @@ The question is  Is this a a regular automatic defibrillator or a manual defibri
   - This option cannot be chosen as answer
   - This is a manual defibrillator for professionals  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual' target='_blank'>manual</a>`
   - This is a normal automatic defibrillator  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic' target='_blank'>automatic</a>`
-  - This is a special type of defibrillator: {defibrillator}  corresponds with  `defibrillator~^..*$`
+  - This is a special type of defibrillator: {defibrillator}  corresponds with  `defibrillator~.+`
   - This option cannot be chosen as answer
 
 

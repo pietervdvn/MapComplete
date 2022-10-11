@@ -1,7 +1,6 @@
-import MoveConfigJson from "./Json/MoveConfigJson";
+import MoveConfigJson from "./Json/MoveConfigJson"
 
 export default class MoveConfig {
-
     public readonly enableImproveAccuracy: boolean
     public readonly enableRelocation: boolean
 
@@ -12,6 +11,4 @@ export default class MoveConfig {
             throw "At least one default move reason should be allowed (at " + context + ")"
         }
     }
-
-
 }

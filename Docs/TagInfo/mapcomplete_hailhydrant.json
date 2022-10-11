@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/hailhydrant",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/hailhydrant/logo.svg",
-    "contact_name": "Pieter Vander Vennet, Erwin Olario",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -87,6 +87,33 @@
       "key": "emergency",
       "description": "Layer 'Map of hydrants' shows removed:emergency=fire_hydrant with a fixed text, namely 'The hydrant has been removed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') Picking this answer will delete the key emergency.",
       "value": ""
+    },
+    {
+      "key": "fire_hydrant:diameter",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'fire_hydrant:diameter' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'couplings:type' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows couplings:type=Storz with a fixed text, namely 'Storz coupling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
+      "value": "Storz"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows couplings:type=UNI with a fixed text, namely 'UNI coupling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
+      "value": "UNI"
+    },
+    {
+      "key": "couplings:type",
+      "description": "Layer 'Map of hydrants' shows couplings:type=Barcelona with a fixed text, namely 'Barcelona coupling' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
+      "value": "Barcelona"
+    },
+    {
+      "key": "couplings:diameters",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'couplings:diameters' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
     },
     {
       "key": "image",

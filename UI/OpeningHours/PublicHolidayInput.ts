@@ -1,29 +1,28 @@
-import {OH} from "./OpeningHours";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import Combine from "../Base/Combine";
-import {TextField} from "../Input/TextField";
-import {DropDown} from "../Input/DropDown";
-import {InputElement} from "../Input/InputElement";
-import Translations from "../i18n/Translations";
-import Toggle from "../Input/Toggle";
+import { OH } from "./OpeningHours"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import Combine from "../Base/Combine"
+import { TextField } from "../Input/TextField"
+import { DropDown } from "../Input/DropDown"
+import { InputElement } from "../Input/InputElement"
+import Translations from "../i18n/Translations"
+import Toggle from "../Input/Toggle"
 
 export default class PublicHolidayInput extends InputElement<string> {
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false);
+    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
-    private readonly _value: UIEventSource<string>;
+    private readonly _value: UIEventSource<string>
 
     constructor(value: UIEventSource<string> = new UIEventSource<string>("")) {
-        super();
-        this._value = value;
+        super()
+        this._value = value
     }
 
-
     GetValue(): UIEventSource<string> {
-        return this._value;
+        return this._value
     }
 
     IsValid(t: string): boolean {
-        return true;
+        return true
     }
 
     /**
@@ -31,65 +30,62 @@ export default class PublicHolidayInput extends InputElement<string> {
      * // should construct an element
      * const html = new PublicHolidayInput().InnerConstructElement()
      * html !== undefined // => true
-     * 
+     *
      * // should construct an element despite having an invalid input
      * const html = new PublicHolidayInput(new UIEventSource("invalid")).InnerConstructElement()
      * html !== undefined // => true
-     * 
+     *
      * // should construct an element despite having null as input
      * const html = new PublicHolidayInput(new UIEventSource(null)).InnerConstructElement()
      * html !== undefined // => true
      */
     protected InnerConstructElement(): HTMLElement {
-        const dropdown = new DropDown(
-            Translations.t.general.opening_hours.open_during_ph.Clone(),
-            [
-                {shown: Translations.t.general.opening_hours.ph_not_known.Clone(), value: ""},
-                {shown: Translations.t.general.opening_hours.ph_closed.Clone(), value: "off"},
-                {shown: Translations.t.general.opening_hours.ph_open_as_usual.Clone(), value: "open"},
-                {shown: Translations.t.general.opening_hours.ph_open.Clone(), value: " "},
-            ]
-        ).SetClass("inline-block");
+        const dropdown = new DropDown(Translations.t.general.opening_hours.open_during_ph.Clone(), [
+            { shown: Translations.t.general.opening_hours.ph_not_known.Clone(), value: "" },
+            { shown: Translations.t.general.opening_hours.ph_closed.Clone(), value: "off" },
+            { shown: Translations.t.general.opening_hours.ph_open_as_usual.Clone(), value: "open" },
+            { shown: Translations.t.general.opening_hours.ph_open.Clone(), value: " " },
+        ]).SetClass("inline-block")
         /*
-        * Either "" (unknown), " " (opened) or "off" (closed)
-        * */
-        const mode = dropdown.GetValue();
-
+         * Either "" (unknown), " " (opened) or "off" (closed)
+         * */
+        const mode = dropdown.GetValue()
 
         const start = new TextField({
             placeholder: "starthour",
-            htmlType: "time"
-        }).SetClass("inline-block");
+            htmlType: "time",
+        }).SetClass("inline-block")
         const end = new TextField({
             placeholder: "starthour",
-            htmlType: "time"
-        }).SetClass("inline-block");
+            htmlType: "time",
+        }).SetClass("inline-block")
 
         const askHours = new Toggle(
             new Combine([
                 Translations.t.general.opening_hours.opensAt.Clone(),
                 start,
                 Translations.t.general.opening_hours.openTill.Clone(),
-                end
+                end,
             ]),
             undefined,
-            mode.map(mode => mode === " ")
+            mode.map((mode) => mode === " ")
         )
 
         this.SetupDataSync(mode, start.GetValue(), end.GetValue())
 
-        return new Combine([
-            dropdown,
-            askHours
-        ]).ConstructElement()
+        return new Combine([dropdown, askHours]).ConstructElement()
     }
 
-    private SetupDataSync(mode: UIEventSource<string>, startTime: UIEventSource<string>, endTime: UIEventSource<string>) {
-
-        const value = this._value;
-        value.map(ph => OH.ParsePHRule(ph))
-            .addCallbackAndRunD(parsed => {
-                if(parsed === null){
+    private SetupDataSync(
+        mode: UIEventSource<string>,
+        startTime: UIEventSource<string>,
+        endTime: UIEventSource<string>
+    ) {
+        const value = this._value
+        value
+            .map((ph) => OH.ParsePHRule(ph))
+            .addCallbackAndRunD((parsed) => {
+                if (parsed === null) {
                     return
                 }
                 mode.setData(parsed.mode)
@@ -98,21 +94,21 @@ export default class PublicHolidayInput extends InputElement<string> {
             })
 
         // We use this as a 'addCallbackAndRun'
-        mode.map(mode => {
+        mode.map(
+            (mode) => {
                 if (mode === undefined || mode === "") {
                     // not known
                     value.setData(undefined)
                     return
                 }
                 if (mode === "off") {
-                    value.setData("PH off");
-                    return;
+                    value.setData("PH off")
+                    return
                 }
                 if (mode === "open") {
-                    value.setData("PH open");
-                    return;
+                    value.setData("PH open")
+                    return
                 }
-
 
                 // Open during PH with special hours
                 if (startTime.data === undefined || endTime.data === undefined) {
@@ -122,10 +118,8 @@ export default class PublicHolidayInput extends InputElement<string> {
                 }
                 const oh = `PH ${startTime.data}-${endTime.data}`
                 value.setData(oh)
-
-
-            }, [startTime, endTime]
+            },
+            [startTime, endTime]
         )
     }
-
 }

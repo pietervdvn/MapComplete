@@ -56,7 +56,8 @@
     "nl": "Fietsverhuurstations",
     "fr": "Stations de location de vélo",
     "de": "Fahrradverleihstationen",
-    "es": "Estaciones de alquiler de bicicletas"
+    "es": "Estaciones de alquiler de bicicletas",
+    "da": "Stationer til udlejning af cykler"
   },
   "tagRenderings": [
     "images",
@@ -121,7 +122,8 @@
             "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt",
             "de": "Dies ist eine automatisierte Radstation, bei der Fahrräder mechanisch in einer Struktur verriegelt werden",
             "es": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura",
-            "fr": "Ceci est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure"
+            "fr": "Ceci est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure",
+            "da": "Dette er en automatiseret dockingstation, hvor en cykel låses mekanisk fast i en struktur"
           }
         },
         {
@@ -132,7 +134,8 @@
             "hu": "Ez egy leadási pont: ennek a kerékpárkölcsönzőnek a kijelölt kerékpártárolója",
             "de": "Dies ist ein Automat, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt",
             "es": "Una máquina que dispensa y acepta llaves, eventualmente después de la autenticación y/o el pago está presente. Las bicicletas están aparcadas cerca",
-            "fr": "Il y a un distributeur qui distribue et accepte les clés, éventuellement après identification et/ou payement. Les vélos sont stationnés à proximité"
+            "fr": "Il y a un distributeur qui distribue et accepte les clés, éventuellement après identification et/ou payement. Les vélos sont stationnés à proximité",
+            "da": "Der er en maskine til stede, som udleverer og modtager nøgler, eventuelt efter autentificering og/eller betaling. Cyklerne er parkeret i nærheden"
           }
         },
         {
@@ -142,7 +145,8 @@
             "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur ",
             "de": "Dies ist ein Rückgabepunkt, z. B. ein reservierter Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist",
             "es": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler",
-            "fr": "Ceci est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location"
+            "fr": "Ceci est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location",
+            "da": "Dette er et afleveringssted, f.eks. en reserveret parkeringsplads til cykler, som er tydeligt markeret som værende forbeholdt udlejningstjenesten"
           }
         }
       ],
@@ -285,7 +289,8 @@
             "nl": "Fietshelmpen kunnen hier gehuurd worden",
             "es": "Aquí se pueden alquilar cascos",
             "de": "Fahrradhelme können hier gemietet werden",
-            "fr": "Des casques de vélos peuvent être loués ici"
+            "fr": "Des casques de vélos peuvent être loués ici",
+            "da": "Cykelhjelme kan lejes her"
           }
         }
       ]

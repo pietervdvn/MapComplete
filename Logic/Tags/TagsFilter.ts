@@ -1,26 +1,25 @@
 export abstract class TagsFilter {
-
     abstract asOverpass(): string[]
 
-    abstract isUsableAsAnswer(): boolean;
+    abstract isUsableAsAnswer(): boolean
 
     /**
      * Indicates some form of equivalency:
      * if `this.shadows(t)`, then `this.matches(properties)` implies that `t.matches(properties)` for all possible properties
      */
-    abstract shadows(other: TagsFilter): boolean;
+    abstract shadows(other: TagsFilter): boolean
 
-    abstract matchesProperties(properties: any): boolean;
+    abstract matchesProperties(properties: any): boolean
 
-    abstract asHumanString(linkToWiki: boolean, shorten: boolean, properties: any): string;
+    abstract asHumanString(linkToWiki: boolean, shorten: boolean, properties: any): string
 
-    abstract usedKeys(): string[];
+    abstract usedKeys(): string[]
 
     /**
      * Returns all normal key/value pairs
      * Regex tags, substitutions, comparisons, ... are exempt
      */
-    abstract usedTags(): { key: string, value: string }[];
+    abstract usedTags(): { key: string; value: string }[]
 
     /**
      * Converts the tagsFilter into a list of key-values that should be uploaded to OSM.
@@ -28,12 +27,12 @@ export abstract class TagsFilter {
      *
      * Note: properties are the already existing tags-object. It is only used in the substituting tag
      */
-    abstract asChange(properties: any): { k: string, v: string }[]
+    abstract asChange(properties: any): { k: string; v: string }[]
 
     /**
      * Returns an optimized version (or self) of this tagsFilter
      */
-    abstract optimize(): TagsFilter | boolean;
+    abstract optimize(): TagsFilter | boolean
 
     /**
      * Returns 'true' if the tagsfilter might select all features (i.e. the filter will return everything from OSM, except a few entries).
@@ -55,6 +54,5 @@ export abstract class TagsFilter {
     /**
      * Walks the entire tree, every tagsFilter will be passed into the function once
      */
-    abstract visit(f: ((TagsFilter) => void));
-
+    abstract visit(f: (TagsFilter) => void)
 }

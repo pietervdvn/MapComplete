@@ -126,7 +126,7 @@ This is rendered with  Operated by {operator}
 
 
   - Operated by Natuurpunt  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>`
-  - Operated by {operator}  corresponds with  `operator~^(n|N)atuurpunt.*$`
+  - Operated by {operator}  corresponds with  `operator~^((n|N)atuurpunt.*)$`
   - This option cannot be chosen as answer
   - Operated by <i>Agentschap Natuur en Bos</i>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap Natuur en Bos</a>`
 
@@ -185,7 +185,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -275,7 +275,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Shows a wikipedia box with the corresponding wikipedia article
+Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor
 
 The question is  What is the corresponding Wikidata entity?
 
@@ -287,7 +287,7 @@ This is rendered with  {wikipedia():max-height:25rem}
 
 
 
-  - {wikipedia():max-height:25rem}  corresponds with  `wikipedia~^..*$`
+  - {wikipedia():max-height:25rem}  corresponds with  `wikipedia~.+`
   - This option cannot be chosen as answer
   - No Wikipedia page has been linked yet  corresponds with  ``
   - This option cannot be chosen as answer

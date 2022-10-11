@@ -1,0 +1,97 @@
+{
+  "id": "filters",
+  "description": "This layer acts as library for common filters",
+  "mapRendering": null,
+  "source": {
+    "osmTags": "id~*"
+  },
+  "filter": [
+    {
+      "id": "open_now",
+      "options": [
+        {
+          "question": {
+            "en": "Opened now",
+            "nl": "Nu geopened",
+            "de": "Aktuell geöffnet",
+            "ca": "Obert ara",
+            "es": "Abierta ahora",
+            "fr": "Ouvert maintenant",
+            "hu": "Most nyitva van",
+            "da": "Åbent nu",
+            "zh_Hant": "目前開放",
+            "id": "Saat ini buka",
+            "it": "Aperto ora"
+          },
+          "osmTags": "_isOpen=yes"
+        }
+      ]
+    },
+    {
+      "id": "accepts_cash",
+      "options": [
+        {
+          "osmTags": "payment:cash=yes",
+          "question": {
+            "en": "Accepts cash",
+            "de": "Akzeptiert Bargeld",
+            "nl": "Accepteert cash",
+            "es": "Acepta efectivo",
+            "fr": "Accepte les espèces"
+          }
+        }
+      ]
+    },
+    {
+      "id": "accepts_cards",
+      "options": [
+        {
+          "osmTags": "payment:cards=yes",
+          "question": {
+            "en": "Accepts payment cards",
+            "de": "Akzeptiert Kartenzahlung",
+            "nl": "Accepteert betaalkaarten",
+            "es": "Acepta el pago por tarjeta",
+            "fr": "Accepte les cartes de paiement"
+          }
+        }
+      ]
+    },
+    {
+      "id": "has_image",
+      "options": [
+        {
+          "question": "With and without images"
+        },
+        {
+          "question": {
+            "en": "Has at least one image"
+          },
+          "osmTags": {
+            "or": [
+              "image~*",
+              "image:0~*",
+              "image:1~*",
+              "image:2~*",
+              "image:3~*"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Probably does not have an image"
+          },
+          "osmTags": {
+            "and": [
+              "image=",
+              "image:0=",
+              "image:1=",
+              "image:2=",
+              "image:3="
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

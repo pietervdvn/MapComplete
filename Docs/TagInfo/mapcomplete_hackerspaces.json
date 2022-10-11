@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/hackerspaces",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/hackerspaces/glider.svg",
-    "contact_name": "Pieter Vander Vennet, ",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -14,6 +14,22 @@
       "key": "leisure",
       "description": "The MapComplete theme Hackerspaces has a layer Hackerspace showing features with this tag",
       "value": "hackerspace"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "hackerspace",
@@ -35,7 +51,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Hackerspace' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Hackerspaces')"
+      "description": "Layer 'Hackerspace' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Hackerspaces')"
     },
     {
       "key": "email",
@@ -43,7 +59,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hackerspace' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Hackerspaces')"
+      "description": "Layer 'Hackerspace' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Hackerspaces')"
     },
     {
       "key": "phone",
@@ -51,7 +67,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hackerspace' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Hackerspaces')"
+      "description": "Layer 'Hackerspace' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Hackerspaces')"
     },
     {
       "key": "opening_hours",

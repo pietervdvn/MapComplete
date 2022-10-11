@@ -1,10 +1,16 @@
 {
   "id": "hotels",
   "title": {
-    "en": "Hotels"
+    "en": "Hotels",
+    "de": "Hotels",
+    "da": "Hoteller",
+    "nb_NO": "Hoteller"
   },
   "description": {
-    "en": "On this map, you'll find hotels in your area"
+    "en": "On this map, you'll find hotels in your area",
+    "de": "Auf dieser Karte finden Sie Hotels in Ihrer Nähe",
+    "da": "På dette kort finder du hoteller i dit område",
+    "nb_NO": "På dette kartet finner du hoteller der du er"
   },
   "icon": "./assets/layers/hotel/hotel.svg",
   "startLat": 50.8552,

@@ -2,16 +2,34 @@
     "centerMessage": {
         "ready": "Valmis!"
     },
+    "delete": {
+        "explanations": {},
+        "reasons": {}
+    },
+    "favourite": {},
     "general": {
+        "add": {
+            "import": {}
+        },
+        "apply_button": {},
+        "attribution": {
+            "iconAttribution": {}
+        },
         "backgroundMap": "Taustakartta",
         "cancel": "Peruuta",
+        "download": {},
+        "histogram": {},
+        "layerSelection": {},
+        "levelSelection": {},
         "loginWithOpenStreetMap": "Kirjaudu sisään OpenStreetMapilla",
+        "morescreen": {},
         "number": "numero",
         "opening_hours": {
             "ph_closed": "suljettu",
             "ph_not_known": " ",
             "ph_open": "avattu"
         },
+        "pdf": {},
         "pickLanguage": "Valitse kieli: ",
         "questions": {
             "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>"
@@ -41,6 +59,10 @@
             "thursday": "Torstai",
             "tuesday": "Tiistai",
             "wednesday": "Keskiviikko"
+        },
+        "welcomeExplanation": {},
+        "wikipedia": {
+            "previewbox": {}
         }
     },
     "image": {
@@ -49,13 +71,105 @@
         "ccbs": "CC-BY-SA-lisenssillä",
         "doDelete": "Poista kuva",
         "dontDelete": "Peruuta",
-        "isDeleted": "Poistettu"
+        "isDeleted": "Poistettu",
+        "nearbyPictures": {}
     },
+    "importHelper": {
+        "askMetadata": {},
+        "compareToAlreadyExistingNotes": {},
+        "confirmProcess": {},
+        "conflationChecker": {
+            "states": {}
+        },
+        "createNotes": {},
+        "introduction": {},
+        "login": {},
+        "mapPreview": {},
+        "noteParts": {},
+        "previewAttributes": {},
+        "selectFile": {},
+        "selectTheme": {}
+    },
+    "importInspector": {},
+    "importLayer": {},
     "index": {
         "title": "Tervetuloa MapCompleteen"
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {},
+            "documentation": {
+                "file": {},
+                "inputElement": {},
+                "layer": {},
+                "theme": {},
+                "url_parameter": {},
+                "visualisation": {}
+            },
+            "dream": {},
+            "help": {},
+            "info": {},
+            "language": {},
+            "role": {},
+            "scheme": {},
+            "search": {},
+            "shutdown": {},
+            "tags": {},
+            "welcome": {},
+            "wiki": {}
+        }
+    },
+    "move": {
+        "inviteToMove": {},
+        "reasons": {}
+    },
+    "multi_apply": {},
+    "notes": {},
+    "privacy": {},
+    "professional": {
+        "aboutMc": {
+            "internalUse": {},
+            "layers": {},
+            "survey": {}
+        },
+        "aboutOsm": {
+            "aboutOsm": {},
+            "benefits": {},
+            "license": {},
+            "vandalism": {}
+        },
+        "drawbacks": {
+            "licenseNuances": {
+                "usecaseGatheringOpenData": {},
+                "usecaseMapDifferentSources": {}
+            },
+            "unsuitedData": {}
+        },
+        "indexPage": {},
+        "services": {}
     },
     "reviews": {
         "title": "{count} arvostelua",
         "title_singular": "Yksi arvostelu"
+    },
+    "split": {},
+    "translations": {},
+    "validation": {
+        "color": {},
+        "date": {},
+        "direction": {},
+        "distance": {},
+        "email": {},
+        "float": {},
+        "int": {},
+        "nat": {},
+        "opening_hours": {},
+        "pfloat": {},
+        "phone": {},
+        "pnat": {},
+        "string": {},
+        "text": {},
+        "url": {},
+        "wikidata": {}
     }
 }

@@ -19,7 +19,8 @@
     "pt_BR": "Abrir mapa AED",
     "sl": "Zemljevid defibrilatorjev (AED)",
     "zh_Hans": "Open AED Map",
-    "fil": "Open AED Map"
+    "fil": "Open AED Map",
+    "da": "Åben AED Kort"
   },
   "icon": "./assets/themes/aed/aed.svg",
   "description": {

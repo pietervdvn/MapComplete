@@ -1,9 +1,9 @@
-import * as fs from "fs";
-import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource";
-import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
-import * as readline from "readline";
-import ScriptUtils from "./ScriptUtils";
-import {Utils} from "../Utils";
+import * as fs from "fs"
+import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource"
+import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
+import * as readline from "readline"
+import ScriptUtils from "./ScriptUtils"
+import { Utils } from "../Utils"
 
 /**
  * This script slices a big newline-delimeted geojson file into tiled geojson
@@ -11,12 +11,12 @@ import {Utils} from "../Utils";
  */
 
 async function readFeaturesFromLineDelimitedJsonFile(inputFile: string): Promise<any[]> {
-    const fileStream = fs.createReadStream(inputFile);
+    const fileStream = fs.createReadStream(inputFile)
 
     const rl = readline.createInterface({
         input: fileStream,
-        crlfDelay: Infinity
-    });
+        crlfDelay: Infinity,
+    })
     // Note: we use the crlfDelay option to recognize all instances of CR LF
     // ('\r\n') in input.txt as a single line break.
 
@@ -37,12 +37,12 @@ async function readFeaturesFromLineDelimitedJsonFile(inputFile: string): Promise
 }
 
 async function readGeojsonLineByLine(inputFile: string): Promise<any[]> {
-    const fileStream = fs.createReadStream(inputFile);
+    const fileStream = fs.createReadStream(inputFile)
 
     const rl = readline.createInterface({
         input: fileStream,
-        crlfDelay: Infinity
-    });
+        crlfDelay: Infinity,
+    })
     // Note: we use the crlfDelay option to recognize all instances of CR LF
     // ('\r\n') in input.txt as a single line break.
 
@@ -50,9 +50,9 @@ async function readGeojsonLineByLine(inputFile: string): Promise<any[]> {
     let featuresSeen = false
     // @ts-ignore
     for await (let line: string of rl) {
-        if (!featuresSeen && line.startsWith("\"features\":")) {
-            featuresSeen = true;
-            continue;
+        if (!featuresSeen && line.startsWith('"features":')) {
+            featuresSeen = true
+            continue
         }
         if (!featuresSeen) {
             continue
@@ -84,7 +84,6 @@ async function readFeaturesFromGeoJson(inputFile: string): Promise<any[]> {
 }
 
 async function main(args: string[]) {
-
     console.log("GeoJSON slicer")
     if (args.length < 3) {
         console.log("USAGE: <input-file.geojson> <target-zoom-level> <output-directory>")
@@ -101,8 +100,7 @@ async function main(args: string[]) {
     }
     console.log("Using directory ", outputDirectory)
 
-
-    let allFeatures: any [];
+    let allFeatures: any[]
     if (inputFile.endsWith(".geojson")) {
         console.log("Detected geojson")
         allFeatures = await readFeaturesFromGeoJson(inputFile)
@@ -111,7 +109,6 @@ async function main(args: string[]) {
         allFeatures = await readFeaturesFromLineDelimitedJsonFile(inputFile)
     }
     allFeatures = Utils.NoNull(allFeatures)
-
 
     console.log("Loaded all", allFeatures.length, "points")
 
@@ -126,31 +123,40 @@ async function main(args: string[]) {
         }
         delete f.bbox
     }
-    TiledFeatureSource.createHierarchy(
-        StaticFeatureSource.fromGeojson(allFeatures),
-        {
-            minZoomLevel: zoomlevel,
-            maxZoomLevel: zoomlevel,
-            maxFeatureCount: Number.MAX_VALUE,
-            registerTile: tile => {
-                const path = `${outputDirectory}/tile_${tile.z}_${tile.x}_${tile.y}.geojson`
-                const features = tile.features.data.map(ff => ff.feature)
-                features.forEach(f => {
-                    delete f.bbox
-                })
-                fs.writeFileSync(path, JSON.stringify({
-                    "type": "FeatureCollection",
-                    "features": features
-                }, null, "  "))
-                ScriptUtils.erasableLog("Written ", path, "which has ", tile.features.data.length, "features")
-            }
-        }
-    )
-
+    TiledFeatureSource.createHierarchy(StaticFeatureSource.fromGeojson(allFeatures), {
+        minZoomLevel: zoomlevel,
+        maxZoomLevel: zoomlevel,
+        maxFeatureCount: Number.MAX_VALUE,
+        registerTile: (tile) => {
+            const path = `${outputDirectory}/tile_${tile.z}_${tile.x}_${tile.y}.geojson`
+            const features = tile.features.data.map((ff) => ff.feature)
+            features.forEach((f) => {
+                delete f.bbox
+            })
+            fs.writeFileSync(
+                path,
+                JSON.stringify(
+                    {
+                        type: "FeatureCollection",
+                        features: features,
+                    },
+                    null,
+                    "  "
+                )
+            )
+            ScriptUtils.erasableLog(
+                "Written ",
+                path,
+                "which has ",
+                tile.features.data.length,
+                "features"
+            )
+        },
+    })
 }
 
 let args = [...process.argv]
 args.splice(0, 2)
-main(args).then(_ => {
+main(args).then((_) => {
     console.log("All done!")
-});
+})

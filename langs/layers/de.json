@@ -131,10 +131,6 @@
             "artwork-website": {
                 "question": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
                 "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Gibt es ein Wikidata Element für <b>dieses Kunstwerk</b>?",
-                "render": "Entspricht <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -262,7 +258,7 @@
                         "then": "Die Sitzbank hat eine Rückenlehne"
                     },
                     "1": {
-                        "then": "Die Sitzbank hat keine Rückenlehne"
+                        "then": "Die Sitzbank hat <b>keine</b> Rückenlehne"
                     }
                 },
                 "question": "Hat diese Sitzbank eine Rückenlehne?"
@@ -651,9 +647,6 @@
                     },
                     "1": {
                         "then": "Kostenlose Nutzung"
-                    },
-                    "2": {
-                        "then": "Der Reinigungsservice ist kostenpflichtig"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -666,9 +659,6 @@
                     },
                     "1": {
                         "then": "Kostenlose Nutzung"
-                    },
-                    "2": {
-                        "then": "Der Reinigungsdienst ist kostenpflichtig, aber der Betrag ist nicht bekannt"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -939,7 +929,7 @@
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
-                        "body": "Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.",
+                        "body": "Hallo,\n\nMit dieser E-Mail möchte ich Ihnen mitteilen, dass die Fahrradpumpe, die sich unter https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} befindet, kaputt ist.\n\nMit freundlichen Grüßen",
                         "button_text": "Melde diese Fahrradpumpe als kaputt",
                         "subject": "Fahrradpumpe kaputt"
                     }
@@ -1249,15 +1239,6 @@
             }
         },
         "description": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Derzeit geöffnet"
-                    }
-                }
-            }
-        },
         "name": "Cafés und Kneipen",
         "presets": {
             "0": {
@@ -1400,7 +1381,7 @@
                 "title": "eine Ladestation für Elektrofahrräder mit einer normalen europäischen Steckdose <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (zum Laden von Elektrofahrrädern)"
             },
             "1": {
-                "title": "eine ladestation für e-bikes"
+                "title": "Eine Ladestation für Elektrofahrzeuge"
             }
         },
         "tagRenderings": {
@@ -3254,15 +3235,6 @@
     },
     "doctors": {
         "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Jetzt geöffnet"
-                    }
-                }
-            }
-        },
         "name": "Ärzte",
         "presets": {
             "0": {
@@ -3519,7 +3491,7 @@
                         "then": "Dies ist ein Eingang zu einem privaten Haus"
                     }
                 },
-                "question": "Um welchen Eingangstyp handelt es sich hier?"
+                "question": "Um welchen Eingangstyp handelt es sich?"
             },
             "automatic_door": {
                 "mappings": {
@@ -3643,6 +3615,31 @@
             "render": "Feuerlöscher"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Aktuell geöffnet"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Bargeld"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Akzeptiert Kartenzahlung"
+                    }
+                }
+            }
+        }
+    },
     "fire_station": {
         "description": "Kartenebene zur Darstellung von Feuerwachen.",
         "name": "Feuerwachen",
@@ -3715,13 +3712,6 @@
         },
         "description": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Aktuell geöffnet"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -3740,20 +3730,6 @@
                 "options": {
                     "0": {
                         "question": "Halal Gerichte im Angebot"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Akzeptiert Bargeld"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Akzeptiert Kartenzahlung"
                     }
                 }
             }
@@ -4290,7 +4266,8 @@
             "0": {
                 "applicableUnits": {
                     "0": {
-                        "human": "Millimeter"
+                        "human": "Millimeter",
+                        "humanSingular": "Millimeter"
                     }
                 }
             }
@@ -4301,11 +4278,41 @@
         "name": "Innenräume",
         "tagRenderings": {
             "name": {
+                "freeform": {
+                    "placeholder": "Name des Raums"
+                },
                 "question": "Wie lautet der Name dieses Raums?",
                 "render": "Der Name des Raums lautet {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Raumnummer (z.B. '1.1' oder 'A1')"
+                },
+                "question": "Wie lautet die Nummer dieses Raums?",
+                "render": "Dieser Raum hat die Raumnummer {ref}"
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Innenraum {name}"
+                },
+                "1": {
+                    "then": "Innenbereich {name}"
+                },
+                "2": {
+                    "then": "Innenwand {name}"
+                },
+                "3": {
+                    "then": "Innengang {name}"
+                },
+                "4": {
+                    "then": "Innentür {name}"
+                },
+                "5": {
+                    "then": "Geschoss {name}"
+                }
+            },
             "render": "Innenbereich {name}"
         }
     },
@@ -4689,7 +4696,7 @@
                     }
                 },
                 "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
-                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße ist {canonical(maxspeed)}"
+                "render": "Die zulässige Höchstgeschwindigkeit auf dieser Straße beträgt {canonical(maxspeed)}"
             }
         },
         "title": {
@@ -5019,14 +5026,79 @@
         }
     },
     "parcel_lockers": {
-        "filter": {
+        "description": "Ebene mit Paketschließfächern zum Abholen und Versenden von Paketen.",
+        "name": "Paketschließfächer",
+        "presets": {
             "0": {
-                "options": {
-                    "0": {
-                        "question": "Aktuell geöffnet"
-                    }
-                }
+                "title": "ein Paketschließfach"
             }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Marke"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein Amazon Locker"
+                    },
+                    "1": {
+                        "then": "Dies ist eine DHL-Packstation"
+                    },
+                    "2": {
+                        "then": "Dies ist eine DPD Pickup Station"
+                    },
+                    "3": {
+                        "then": "Dies ist ein PostNL-Paketschließfach"
+                    }
+                },
+                "question": "Welche Marke hat das Paketschließfach?",
+                "render": "Dies ist ein Paketschließfach von {brand}"
+            },
+            "mail-in": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können Pakete von diesem Paketschließfach aus versenden"
+                    },
+                    "1": {
+                        "then": "Sie können <b>keine</b> Pakete von diesem Paketschließfach aus versenden"
+                    }
+                },
+                "question": "Können Sie von diesem Paketschließfach aus Pakete versenden?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Betreiber"
+                },
+                "question": "Was ist der Betreiber des Paketschließfachs?",
+                "render": "Dieses Paketschließfach wird von {operator} betrieben"
+            },
+            "pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können Pakete von diesem Paketschließfach abholen"
+                    },
+                    "1": {
+                        "then": "Sie können <b>keine</b> Pakete von diesem Paketschließfach abholen"
+                    }
+                },
+                "question": "Können Sie Pakete aus diesem Paketschließfach abholen?"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referenz"
+                },
+                "question": "Wie lautet die Referenznummer/Kennung dieses Paketschließfachs?",
+                "render": "Dieses Paketschließfach hat die Kennnummer {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand} Paketschließfach"
+                }
+            },
+            "render": "Paketschließfach"
         }
     },
     "parking": {
@@ -5101,6 +5173,73 @@
         },
         "title": {
             "render": "Parkplatz"
+        }
+    },
+    "parking_spaces": {
+        "description": "Ebene mit den einzelnen PKW Stellplätzen.",
+        "name": "Stellplätze",
+        "tagRenderings": {
+            "capacity": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Parkplatz hat 1 Stellplatz."
+                    }
+                },
+                "render": "Dieser Parkplatz hat {capacity} Stellplätze."
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein normaler Stellplatz"
+                    },
+                    "1": {
+                        "then": "Dies ist ein normaler Stellplatz."
+                    },
+                    "2": {
+                        "then": "Dies ist ein Behindertenstellplatz."
+                    },
+                    "3": {
+                        "then": "Dies ist ein privater Stellplatz."
+                    },
+                    "4": {
+                        "then": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist."
+                    },
+                    "5": {
+                        "then": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist."
+                    },
+                    "6": {
+                        "then": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist."
+                    },
+                    "7": {
+                        "then": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert."
+                    },
+                    "8": {
+                        "then": "Dies ist ein Stellplatz, der für Busse reserviert ist."
+                    },
+                    "9": {
+                        "then": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
+                    },
+                    "10": {
+                        "then": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
+                    },
+                    "11": {
+                        "then": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
+                    },
+                    "12": {
+                        "then": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
+                    },
+                    "13": {
+                        "then": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
+                    },
+                    "14": {
+                        "then": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
+                    }
+                },
+                "question": "Welche Art von Stellplatz ist dies?"
+            }
+        },
+        "title": {
+            "render": "Stellplatz"
         }
     },
     "pedestrian_path": {
@@ -5336,15 +5475,6 @@
     },
     "postoffices": {
         "description": "Eine Ebene mit Postämtern.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Aktuell geöffnet"
-                    }
-                }
-            }
-        },
         "name": "Poststellen",
         "presets": {
             "0": {
@@ -5539,13 +5669,6 @@
     "recycling": {
         "description": "Eine Ebene mit Recyclingcontainern und -zentren",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Derzeit geöffnet"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -5898,31 +6021,17 @@
         },
         "description": "Ein Geschäft",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Nur Geschäfte, die {search} verkaufen"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Akzeptiert Bargeld"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Akzeptiert Kartenzahlung"
+                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
                     }
                 }
             }

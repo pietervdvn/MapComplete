@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/campersite",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/campersite/caravan.svg",
-    "contact_name": "Pieter Vander Vennet, joost schouppe",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -124,7 +124,7 @@
     },
     {
       "key": "permanent_camping",
-      "description": "Layer 'Camper sites' shows permanent_camping=only with a fixed text, namely 'It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows permanent_camping=only with a fixed text, namely 'It is only possible to stay here if you have a long term contract (this place disappears from this map if you choose this)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
       "value": "only"
     },
     {

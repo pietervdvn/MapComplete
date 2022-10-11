@@ -9,7 +9,8 @@
     "ru": "Смотровая площадка",
     "id": "Sudut pandang",
     "eo": "Vidpunkto",
-    "ca": "Mirador"
+    "ca": "Mirador",
+    "da": "Udsigtspunkt"
   },
   "description": {
     "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
@@ -17,7 +18,8 @@
     "de": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
     "fr": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",
     "it": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata",
-    "es": "Un buen punto de vista o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría"
+    "es": "Un buen punto de vista o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
+    "da": "Et dejligt synspunkt eller flot udsigt. Ideel til at tilføje et billede, hvis ingen anden kategori passer"
   },
   "source": {
     "osmTags": "tourism=viewpoint"
@@ -51,7 +53,8 @@
       "it": "Punto panoramico",
       "id": "Sudut pandang",
       "eo": "Vidpunkto",
-      "ca": "Mirador"
+      "ca": "Mirador",
+      "da": "Udsigtspunkt"
     }
   },
   "tagRenderings": [
@@ -65,7 +68,8 @@
         "fr": "Voulez-vous ajouter une description ?",
         "it": "Vuoi aggiungere una descrizione?",
         "id": "Apakah Anda ingin menambahkan deskripsi?",
-        "es": "¿Quieres añadir una descripción?"
+        "es": "¿Quieres añadir una descripción?",
+        "da": "Ønsker du at tilføje en beskrivelse?"
       },
       "render": "{description}",
       "freeform": {

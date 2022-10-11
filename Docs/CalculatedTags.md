@@ -17,6 +17,7 @@
     + [_country](#_country)
     + [_isOpen](#_isopen)
     + [_direction:numerical, _direction:leftright](#_directionnumerical,-_direction:leftright)
+    + [_direction:centerpoint](#_directioncenterpoint)
     + [_now:date, _now:datetime, _loaded:date, _loaded:_datetime](#_nowdate,-_now:datetime,-_loaded:date,-_loaded:_datetime)
     + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_editcontributor,-_last_edit:contributor:uid,-_last_edit:changeset,-_last_edit:timestamp,-_version_number,-_backend)
     + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalkleft,-sidewalk:right,-generic_key:left:property,-generic_key:right:property)
@@ -94,7 +95,7 @@ The total length of a feature in meters (and in kilometers, rounded to one decim
 
 
 
-If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`)
+If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`; `1` will be rewritten to `1m` as well)
 
 
 
@@ -127,6 +128,16 @@ This is a lazy metatag and is only calculated when needed
 _direction:numerical is a normalized, numerical direction based on 'camera:direction' or on 'direction'; it is only present if a valid direction is found (e.g. 38.5 or NE). _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map
 
 
+
+
+
+### _direction:centerpoint 
+
+
+
+_direction:centerpoint is the direction of the linestring (in degrees) if one were standing at the projected centerpoint.
+
+This is a lazy metatag and is only calculated when needed
 
 
 

@@ -14,7 +14,7 @@ A dummy layer which contains tagrenderings, shared among the climbing layers
 
 
 
-  - This layer is shown at zoomlevel **25** and higher
+  - This layer is shown at zoomlevel **19** and higher
   - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
@@ -77,7 +77,7 @@ This is rendered with  <a href='{url}' target='_blank'>{url}</a>
 
 
 
-Only visible if  `leisure!~^sports_centre$&sport=climbing`  is shown
+Only visible if  `leisure!~^(sports_centre)$&sport=climbing`  is shown
 
 
 
@@ -121,7 +121,7 @@ This is rendered with  The highest grade is {climbing:grade:french:max} accordin
 
 
 
-Only visible if  `climbing!~^route$&climbing:sport=yes|sport=climbing`  is shown
+Only visible if  `climbing!~^(route)$&climbing:sport=yes|sport=climbing`  is shown
 
 
 
@@ -138,7 +138,7 @@ The question is  Is bouldering possible here?
   - Bouldering is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>`
   - Bouldering is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>`
   - Bouldering is possible, allthough there are only a few routes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>`
-  - There are {climbing:boulder} boulder routes  corresponds with  `climbing:boulder~^..*$`
+  - There are {climbing:boulder} boulder routes  corresponds with  `climbing:boulder~.+`
   - This option cannot be chosen as answer
 
 
@@ -156,7 +156,7 @@ The question is  Is toprope climbing possible here?
 
   - Toprope climbing is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes' target='_blank'>yes</a>`
   - Toprope climbing is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno' target='_blank'>no</a>`
-  - There are {climbing:toprope} toprope routes  corresponds with  `climbing:toprope~^..*$`
+  - There are {climbing:toprope} toprope routes  corresponds with  `climbing:toprope~.+`
   - This option cannot be chosen as answer
 
 
@@ -174,7 +174,7 @@ The question is  Is sport climbing possible here on fixed anchors?
 
   - Sport climbing is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a>`
   - Sport climbing is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno' target='_blank'>no</a>`
-  - There are {climbing:sport} sport climbing routes  corresponds with  `climbing:sport~^..*$`
+  - There are {climbing:sport} sport climbing routes  corresponds with  `climbing:sport~.+`
   - This option cannot be chosen as answer
 
 
@@ -192,7 +192,7 @@ The question is  Is traditional climbing possible here (using own gear e.g. choc
 
   - Traditional climbing is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:traditional' target='_blank'>climbing:traditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:traditional%3Dyes' target='_blank'>yes</a>`
   - Traditional climbing is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:traditional' target='_blank'>climbing:traditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:traditional%3Dno' target='_blank'>no</a>`
-  - There are {climbing:traditional} traditional climbing routes  corresponds with  `climbing:traditional~^..*$`
+  - There are {climbing:traditional} traditional climbing routes  corresponds with  `climbing:traditional~.+`
   - This option cannot be chosen as answer
 
 

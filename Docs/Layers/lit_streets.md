@@ -38,9 +38,9 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - highway~^..*$
+  - highway~.+
   - lit!=no
-  - lit~^..*$
+  - lit~.+
   - service!=driveway
 
 

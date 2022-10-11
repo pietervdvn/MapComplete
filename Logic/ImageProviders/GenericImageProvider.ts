@@ -1,18 +1,17 @@
-import ImageProvider, {ProvidedImage} from "./ImageProvider";
+import ImageProvider, { ProvidedImage } from "./ImageProvider"
 
 export default class GenericImageProvider extends ImageProvider {
-    public defaultKeyPrefixes: string[] = ["image"];
+    public defaultKeyPrefixes: string[] = ["image"]
 
-    private readonly _valuePrefixBlacklist: string[];
+    private readonly _valuePrefixBlacklist: string[]
 
     public constructor(valuePrefixBlacklist: string[]) {
-        super();
-        this._valuePrefixBlacklist = valuePrefixBlacklist;
+        super()
+        this._valuePrefixBlacklist = valuePrefixBlacklist
     }
 
     async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-
-        if (this._valuePrefixBlacklist.some(prefix => value.startsWith(prefix))) {
+        if (this._valuePrefixBlacklist.some((prefix) => value.startsWith(prefix))) {
             return []
         }
 
@@ -23,20 +22,20 @@ export default class GenericImageProvider extends ImageProvider {
             return []
         }
 
-        return [Promise.resolve({
-            key: key,
-            url: value,
-            provider: this
-        })]
+        return [
+            Promise.resolve({
+                key: key,
+                url: value,
+                provider: this,
+            }),
+        ]
     }
 
     SourceIcon(backlinkSource?: string) {
-        return undefined;
+        return undefined
     }
 
     public DownloadAttribution(url: string) {
         return undefined
     }
-
-
 }

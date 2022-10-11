@@ -53,7 +53,7 @@
         {
           "if": "backrest=yes",
           "then": {
-            "en": "Backrest: Yes",
+            "en": "Does have a backrest",
             "de": "Die Sitzbank hat eine Rückenlehne",
             "fr": "Dossier : Oui",
             "nl": "Heeft een rugleuning",
@@ -70,14 +70,14 @@
             "pt_BR": "Encosto: Sim",
             "pt": "Encosto: Sim",
             "ca": "Respatller: sí",
-            "da": "Ryglæn: Ja"
+            "da": "Har et ryglæn"
           }
         },
         {
           "if": "backrest=no",
           "then": {
-            "en": "Backrest: No",
-            "de": "Die Sitzbank hat keine Rückenlehne",
+            "en": "Does <b>not</b> have a backrest",
+            "de": "Die Sitzbank hat <b>keine</b> Rückenlehne",
             "fr": "Dossier : Non",
             "nl": "Heeft geen rugleuning",
             "es": "Respaldo: no",
@@ -93,7 +93,7 @@
             "pt_BR": "Encosto: Não",
             "pt": "Encosto: Não",
             "ca": "Respatller: No",
-            "da": "Ryglæn: Nej"
+            "da": "Har <b>ikke</b> et ryglæn"
           }
         }
       ],
@@ -188,7 +188,7 @@
         {
           "if": "material=wood",
           "then": {
-            "en": "Material: wood",
+            "en": "The seating is made from wood",
             "de": "Die Sitzfläche ist aus Holz",
             "fr": "Matériau : bois",
             "nl": "Gemaakt uit hout",
@@ -205,13 +205,13 @@
             "pt": "Material: madeira",
             "eo": "Materialo: ligna",
             "ca": "Material: fusta",
-            "da": "Materiale: træ"
+            "da": "Siddepladserne er lavet af træ"
           }
         },
         {
           "if": "material=metal",
           "then": {
-            "en": "Material: metal",
+            "en": "The seating is made from metal",
             "de": "Die Sitzfläche ist aus Metall",
             "fr": "Matériau : métal",
             "nl": "Gemaakt uit metaal",
@@ -227,16 +227,16 @@
             "pt": "Material: metal",
             "eo": "Materialo: metala",
             "ca": "Material: metall",
-            "da": "Materiale: metal"
+            "da": "Sædet er lavet af metal"
           }
         },
         {
           "if": "material=stone",
           "then": {
-            "en": "Material: stone",
+            "en": "The seating is made from stone",
             "de": "Die Sitzfläche ist aus Stein",
             "fr": "Matériau : pierre",
-            "nl": "Gemaakt uit steen",
+            "nl": "Het zitgedeelte is gemaakt uit steen",
             "es": "Material: piedra",
             "hu": "Anyag: kő",
             "it": "Materiale: pietra",
@@ -250,16 +250,16 @@
             "pt": "Material: pedra",
             "eo": "Materialo: ŝtona",
             "ca": "Material: pedra",
-            "da": "Materiale: sten"
+            "da": "Siddepladserne er lavet af sten"
           }
         },
         {
           "if": "material=concrete",
           "then": {
-            "en": "Material: concrete",
+            "en": "The seating is made from concrete",
             "de": "Die Sitzfläche ist aus Beton",
             "fr": "Matériau : béton",
-            "nl": "Gemaakt uit beton",
+            "nl": "Het zitgedeelte is gemaakt uit beton",
             "es": "Material: concreto",
             "hu": "Anyag: beton",
             "it": "Materiale: cemento",
@@ -273,16 +273,16 @@
             "pt": "Material: concreto",
             "eo": "Materialo: betona",
             "ca": "Material: ciment",
-            "da": "Materiale: beton"
+            "da": "Siddepladserne er lavet af beton"
           }
         },
         {
           "if": "material=plastic",
           "then": {
-            "en": "Material: plastic",
+            "en": "The seating is made from plastic",
             "de": "Die Sitzfläche ist aus Kunststoff",
             "fr": "Matériau : plastique",
-            "nl": "Gemaakt uit plastiek",
+            "nl": "Het zitgedeelte is gemaakt uit plastiek",
             "es": "Material: plastico",
             "hu": "Anyag: műanyag",
             "it": "Materiale: plastica",
@@ -296,16 +296,16 @@
             "pt": "Material: plástico",
             "eo": "Materialo: plasta",
             "ca": "Material: plàstic",
-            "da": "Materiale: plastik"
+            "da": "Sædet er lavet af plastik"
           }
         },
         {
           "if": "material=steel",
           "then": {
-            "en": "Material: steel",
+            "en": "The seating is made from steel",
             "de": "Die Sitzfläche ist aus Stahl",
             "fr": "Matériau : acier",
-            "nl": "Gemaakt uit staal",
+            "nl": "Het zitgedeelte is gemaakt uit staal",
             "es": "Material: acero",
             "hu": "Anyag: acél",
             "it": "Materiale: acciaio",
@@ -319,7 +319,7 @@
             "pt": "Material: aço",
             "eo": "Materialo: ŝtala",
             "ca": "Material: acer",
-            "da": "Materiale: stål"
+            "da": "Siddepladserne er lavet af stål"
           }
         }
       ],

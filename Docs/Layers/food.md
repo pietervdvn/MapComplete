@@ -83,6 +83,9 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/reusable_packaging:accept#values) [reusable_packaging:accept](https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Donly)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:electricity#values) [service:electricity](https://wiki.openstreetmap.org/wiki/Key:service:electricity) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited) [ask](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask) [no](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/dog#values) [dog](https://wiki.openstreetmap.org/wiki/Key:dog) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno) [leashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed) [unleashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access#values) [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:fee#values) [internet_access:fee](https://wiki.openstreetmap.org/wiki/Key:internet_access:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno) [customers](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:ssid#values) [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom)
 
 
 
@@ -182,7 +185,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -202,7 +205,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -222,7 +225,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -492,6 +495,66 @@ The question is  Are dogs allowed in this business?
   - Dogs are allowed, but they have to be leashed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>`
   - Dogs are allowed and can run around freely  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed' target='_blank'>unleashed</a>`
 
+
+
+
+### internet 
+
+
+
+The question is  Does this place offer internet access?
+
+
+
+
+
+  - This place offers wireless internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>`
+  - This place <b>does not</b> offer internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>`
+  - This place offers internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>`
+  - This option cannot be chosen as answer
+  - This place offers internet access via a terminal or computer  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>`
+  - This place offers wired internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>`
+
+
+
+
+### internet-fee 
+
+
+
+The question is  Is there a fee for internet access?
+
+
+
+
+
+  - There is a fee for the internet access at this place  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>`
+  - Internet access is free at this place  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>`
+  - Internet access is free at this place, for customers only  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>`
+
+
+Only visible if  `internet_access!=no&internet_access~.+`  is shown
+
+
+
+### internet-ssid 
+
+
+
+The question is  What is the network name for the wireless internet access?
+
+This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) 
+
+This is rendered with  The network name is <b>{internet_access:ssid}</b>
+
+
+
+
+
+  - Telekom  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>`
+
+
+Only visible if  `internet_access=wlan`  is shown
 
 
 

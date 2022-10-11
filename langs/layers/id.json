@@ -82,10 +82,6 @@
             "artwork-website": {
                 "question": "Adakah situs web mengenai informasi lebih lanjut tentang karya seni ini?",
                 "render": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini"
-            },
-            "artwork-wikidata": {
-                "question": "Entri Wikidata mana yang sesuai dengan <b>karya seni ini</b>?",
-                "render": "Sesuai dengan <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -328,6 +324,17 @@
             "render": "Air minum"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Saat ini buka"
+                    }
+                }
+            }
+        }
+    },
     "ghost_bike": {
         "tagRenderings": {
             "ghost_bike-inscription": {
@@ -356,17 +363,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Saat ini buka"
-                    }
-                }
-            }
-        }
-    },
     "playground": {
         "tagRenderings": {
             "playground-email": {
@@ -391,15 +387,6 @@
     },
     "postoffices": {
         "description": "Layer yang menunjukkan kantor pos.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Saat ini buka"
-                    }
-                }
-            }
-        },
         "name": "Kantor pos",
         "presets": {
             "0": {

@@ -1,12 +1,11 @@
 /**
  * Some usefull utility functions around the wikipedia API
  */
-import {Utils} from "../../Utils";
-import {UIEventSource} from "../UIEventSource";
-import {WikipediaBoxOptions} from "../../UI/Wikipedia/WikipediaBox";
+import { Utils } from "../../Utils"
+import { UIEventSource } from "../UIEventSource"
+import { WikipediaBoxOptions } from "../../UI/Wikipedia/WikipediaBox"
 
 export default class Wikipedia {
-
     /**
      * When getting a wikipedia page data result, some elements (e.g. navigation, infoboxes, ...) should be removed if 'removeInfoBoxes' is set.
      * We do this based on the classes. This set contains a blacklist of the classes to remove
@@ -15,26 +14,27 @@ export default class Wikipedia {
     private static readonly classesToRemove = [
         "shortdescription",
         "sidebar",
-        "infobox", "infobox_v2",
+        "infobox",
+        "infobox_v2",
         "noprint",
         "ambox",
         "mw-editsection",
         "mw-selflink",
         "mw-empty-elt",
-        "hatnote" // Often redirects
+        "hatnote", // Often redirects
     ]
 
-    private static readonly idsToRemove = [
-        "sjabloon_zie"
-    ]
+    private static readonly idsToRemove = ["sjabloon_zie"]
 
-    private static readonly _cache = new Map<string, UIEventSource<{ success: string } | { error: any }>>()
+    private static readonly _cache = new Map<
+        string,
+        UIEventSource<{ success: string } | { error: any }>
+    >()
 
+    public readonly backend: string
 
-    public readonly backend: string;
-
-    constructor(options?: ({ language?: "en" | string } | { backend?: string })) {
-        this.backend = Wikipedia.getBackendUrl(options ?? {});
+    constructor(options?: { language?: "en" | string } | { backend?: string }) {
+        this.backend = Wikipedia.getBackendUrl(options ?? {})
     }
 
     /**
@@ -43,30 +43,31 @@ export default class Wikipedia {
      * Wikipedia.extractLanguageAndName("qsdf") // => undefined
      * Wikipedia.extractLanguageAndName("nl:Warandeputten") // => {language: "nl", pageName: "Warandeputten"}
      */
-    public static extractLanguageAndName(input: string): { language: string, pageName: string } {
+    public static extractLanguageAndName(input: string): { language: string; pageName: string } {
         const matched = input.match("([^:]+):(.*)")
         if (matched === undefined || matched === null) {
             return undefined
         }
         const [_, language, pageName] = matched
         return {
-            language, pageName
+            language,
+            pageName,
         }
     }
 
     /**
      * Extracts the actual pagename; returns undefined if this came from a different wikimedia entry
-     * 
+     *
      * new Wikipedia({backend: "https://wiki.openstreetmap.org"}).extractPageName("https://wiki.openstreetmap.org/wiki/NL:Speelbos") // => "NL:Speelbos"
      * new Wikipedia().extractPageName("https://wiki.openstreetmap.org/wiki/NL:Speelbos") // => undefined
      */
-    public extractPageName(input: string):string  | undefined{
-        if(!input.startsWith(this.backend)){
+    public extractPageName(input: string): string | undefined {
+        if (!input.startsWith(this.backend)) {
             return undefined
         }
-        input = input.substring(this.backend.length);
-        
-        const matched = input.match("/?wiki/\(.+\)")
+        input = input.substring(this.backend.length)
+
+        const matched = input.match("/?wiki/(.+)")
         if (matched === undefined || matched === null) {
             return undefined
         }
@@ -74,7 +75,9 @@ export default class Wikipedia {
         return pageName
     }
 
-    private static getBackendUrl(options: { language?: "en" | string } | { backend?: "en.wikipedia.org" | string }): string {
+    private static getBackendUrl(
+        options: { language?: "en" | string } | { backend?: "en.wikipedia.org" | string }
+    ): string {
         let backend = "en.wikipedia.org"
         if (options["backend"]) {
             backend = options["backend"]
@@ -87,7 +90,10 @@ export default class Wikipedia {
         return backend
     }
 
-    public GetArticle(pageName: string, options: WikipediaBoxOptions): UIEventSource<{ success: string } | { error: any }> {
+    public GetArticle(
+        pageName: string,
+        options: WikipediaBoxOptions
+    ): UIEventSource<{ success: string } | { error: any }> {
         const key = this.backend + ":" + pageName + ":" + (options.firstParagraphOnly ?? false)
         const cached = Wikipedia._cache.get(key)
         if (cached !== undefined) {
@@ -95,11 +101,13 @@ export default class Wikipedia {
         }
         const v = UIEventSource.FromPromiseWithErr(this.GetArticleAsync(pageName, options))
         Wikipedia._cache.set(key, v)
-        return v;
+        return v
     }
 
     public getDataUrl(pageName: string): string {
-        return `${this.backend}/w/api.php?action=parse&format=json&origin=*&prop=text&page=` + pageName
+        return (
+            `${this.backend}/w/api.php?action=parse&format=json&origin=*&prop=text&page=` + pageName
+        )
     }
 
     public getPageUrl(pageName: string): string {
@@ -110,9 +118,12 @@ export default class Wikipedia {
      * Textual search of the specified wiki-instance. If searching Wikipedia, we recommend using wikidata.search instead
      * @param searchTerm
      */
-    public async search(searchTerm: string): Promise<{ title: string, snippet: string }[]> {
-        const url = this.backend + "/w/api.php?action=query&format=json&list=search&srsearch=" + encodeURIComponent(searchTerm);
-        return (await Utils.downloadJson(url))["query"]["search"];
+    public async search(searchTerm: string): Promise<{ title: string; snippet: string }[]> {
+        const url =
+            this.backend +
+            "/w/api.php?action=query&format=json&list=search&srsearch=" +
+            encodeURIComponent(searchTerm)
+        return (await Utils.downloadJson(url))["query"]["search"]
     }
 
     /**
@@ -120,46 +131,55 @@ export default class Wikipedia {
      * This gives better results then via the API
      * @param searchTerm
      */
-    public async searchViaIndex(searchTerm: string): Promise<{ title: string, snippet: string, url: string } []> {
+    public async searchViaIndex(
+        searchTerm: string
+    ): Promise<{ title: string; snippet: string; url: string }[]> {
         const url = `${this.backend}/w/index.php?search=${encodeURIComponent(searchTerm)}&ns0=1`
-        const result = await Utils.downloadAdvanced(url);
-        if(result["redirect"] ){
+        const result = await Utils.downloadAdvanced(url)
+        if (result["redirect"]) {
             const targetUrl = result["redirect"]
             // This is an exact match
-            return [{
-                title: this.extractPageName(targetUrl)?.trim(), 
-                url: targetUrl,
-                snippet: ""
-            }]
+            return [
+                {
+                    title: this.extractPageName(targetUrl)?.trim(),
+                    url: targetUrl,
+                    snippet: "",
+                },
+            ]
         }
-        const el = document.createElement('html');
-        el.innerHTML = result["content"].replace(/href="\//g, "href=\""+this.backend+"/");
+        const el = document.createElement("html")
+        el.innerHTML = result["content"].replace(/href="\//g, 'href="' + this.backend + "/")
         const searchResults = el.getElementsByClassName("mw-search-results")
-        const individualResults = Array.from(searchResults[0]?.getElementsByClassName("mw-search-result") ?? [])
-        return individualResults.map(result => {
+        const individualResults = Array.from(
+            searchResults[0]?.getElementsByClassName("mw-search-result") ?? []
+        )
+        return individualResults.map((result) => {
             const toRemove = Array.from(result.getElementsByClassName("searchalttitle"))
             for (const toRm of toRemove) {
                 toRm.parentElement.removeChild(toRm)
             }
-            
+
             return {
-                title: result.getElementsByClassName("mw-search-result-heading")[0].textContent.trim(),
+                title: result
+                    .getElementsByClassName("mw-search-result-heading")[0]
+                    .textContent.trim(),
                 url: result.getElementsByTagName("a")[0].href,
-                snippet: result.getElementsByClassName("searchresult")[0].textContent
+                snippet: result.getElementsByClassName("searchresult")[0].textContent,
             }
         })
     }
 
-    public async GetArticleAsync(pageName: string, options:
-        {
+    public async GetArticleAsync(
+        pageName: string,
+        options: {
             firstParagraphOnly?: false | boolean
-        }): Promise<string | undefined> {
-
+        }
+    ): Promise<string | undefined> {
         const response = await Utils.downloadJson(this.getDataUrl(pageName))
         if (response?.parse?.text === undefined) {
             return undefined
         }
-        const html = response["parse"]["text"]["*"];
+        const html = response["parse"]["text"]["*"]
         if (html === undefined) {
             return undefined
         }
@@ -179,15 +199,16 @@ export default class Wikipedia {
             toRemove?.parentElement?.removeChild(toRemove)
         }
 
-
         const links = Array.from(content.getElementsByTagName("a"))
 
         // Rewrite relative links to absolute links + open them in a new tab
-        links.filter(link => link.getAttribute("href")?.startsWith("/") ?? false).forEach(link => {
-            link.target = '_blank'
-            // note: link.getAttribute("href") gets the textual value, link.href is the rewritten version which'll contain the host for relative paths
-            link.href = `${this.backend}${link.getAttribute("href")}`;
-        })
+        links
+            .filter((link) => link.getAttribute("href")?.startsWith("/") ?? false)
+            .forEach((link) => {
+                link.target = "_blank"
+                // note: link.getAttribute("href") gets the textual value, link.href is the rewritten version which'll contain the host for relative paths
+                link.href = `${this.backend}${link.getAttribute("href")}`
+            })
 
         if (options?.firstParagraphOnly) {
             return content.getElementsByTagName("p").item(0).innerHTML
@@ -195,5 +216,4 @@ export default class Wikipedia {
 
         return content.innerHTML
     }
-
 }

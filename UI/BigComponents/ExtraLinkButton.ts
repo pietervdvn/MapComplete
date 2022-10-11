@@ -1,37 +1,44 @@
-import {UIElement} from "../UIElement";
-import BaseUIElement from "../BaseUIElement";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import ExtraLinkConfig from "../../Models/ThemeConfig/ExtraLinkConfig";
-import Img from "../Base/Img";
-import {SubtleButton} from "../Base/SubtleButton";
-import Toggle from "../Input/Toggle";
-import Loc from "../../Models/Loc";
-import Locale from "../i18n/Locale";
-import {Utils} from "../../Utils";
-import Svg from "../../Svg";
-import Translations from "../i18n/Translations";
-import {Translation} from "../i18n/Translation";
+import { UIElement } from "../UIElement"
+import BaseUIElement from "../BaseUIElement"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import ExtraLinkConfig from "../../Models/ThemeConfig/ExtraLinkConfig"
+import Img from "../Base/Img"
+import { SubtleButton } from "../Base/SubtleButton"
+import Toggle from "../Input/Toggle"
+import Loc from "../../Models/Loc"
+import Locale from "../i18n/Locale"
+import { Utils } from "../../Utils"
+import Svg from "../../Svg"
+import Translations from "../i18n/Translations"
+import { Translation } from "../i18n/Translation"
 
 export default class ExtraLinkButton extends UIElement {
-    private readonly _config: ExtraLinkConfig;
+    private readonly _config: ExtraLinkConfig
     private readonly state: {
-        layoutToUse: { id: string, title: Translation };
-        featureSwitchWelcomeMessage: UIEventSource<boolean>, locationControl: UIEventSource<Loc>
-    };
+        layoutToUse: { id: string; title: Translation }
+        featureSwitchWelcomeMessage: UIEventSource<boolean>
+        locationControl: UIEventSource<Loc>
+    }
 
-    constructor(state: { featureSwitchWelcomeMessage: UIEventSource<boolean>, locationControl: UIEventSource<Loc>, layoutToUse: { id: string, title: Translation } },
-                config: ExtraLinkConfig) {
-        super();
-        this.state = state;
-        this._config = config;
+    constructor(
+        state: {
+            featureSwitchWelcomeMessage: UIEventSource<boolean>
+            locationControl: UIEventSource<Loc>
+            layoutToUse: { id: string; title: Translation }
+        },
+        config: ExtraLinkConfig
+    ) {
+        super()
+        this.state = state
+        this._config = config
     }
 
     protected InnerRender(): BaseUIElement {
         if (this._config === undefined) {
-            return undefined;
+            return undefined
         }
 
-        const c = this._config;
+        const c = this._config
 
         const isIframe = window !== window.top
 
@@ -46,16 +53,15 @@ export default class ExtraLinkButton extends UIElement {
         let link: BaseUIElement
         const theme = this.state.layoutToUse?.id ?? ""
         const basepath = window.location.host
-        const href = this.state.locationControl.map(loc => {
+        const href = this.state.locationControl.map((loc) => {
             const subs = {
                 ...loc,
                 theme: theme,
                 basepath,
-                language: Locale.language.data
+                language: Locale.language.data,
             }
             return Utils.SubstituteKeys(c.href, subs)
         })
-
 
         let img: BaseUIElement = Svg.pop_out_ui()
         if (c.icon !== undefined) {
@@ -64,14 +70,16 @@ export default class ExtraLinkButton extends UIElement {
 
         let text: Translation
         if (c.text === undefined) {
-            text = Translations.t.general.screenToSmall.Subs({theme: this.state.layoutToUse.title})
+            text = Translations.t.general.screenToSmall.Subs({
+                theme: this.state.layoutToUse.title,
+            })
         } else {
             text = c.text.Clone()
         }
 
         link = new SubtleButton(img, text, {
             url: href,
-            newTab: c.newTab
+            newTab: c.newTab,
         })
 
         if (c.requirements.has("no-welcome-message")) {
@@ -82,7 +90,6 @@ export default class ExtraLinkButton extends UIElement {
             link = new Toggle(link, undefined, this.state.featureSwitchWelcomeMessage)
         }
 
-        return link;
+        return link
     }
-
 }

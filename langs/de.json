@@ -254,7 +254,7 @@
         },
         "welcomeBack": "Sie sind angemeldet, willkommen zurück!",
         "welcomeExplanation": {
-            "addNew": "Tippen oden klicken Sie auf die Karte, um einen neuen POI hinzuzufügen.",
+            "addNew": "Tippen oden klicken Sie auf die Karte, um einen neuen Ort hinzuzufügen.",
             "browseMoreMaps": "Weitere Karten entdecken",
             "browseOtherThemesIntro": "Auf MapComplete gibt es verschiedene thematische Karten",
             "general": "Auf dieser Karte können Sie <i>Interessante Orte</i> sehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um die Orte zu entdecken, tippen Sie auf einen, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und sind dort gespeichert, so dass sie frei weiterverwendet werden können."
@@ -346,7 +346,7 @@
         },
         "conflationChecker": {
             "cacheExpired": "Cache ist abgelaufen",
-            "downloadOverpassData": "Die geladene GeoJSON Datei von overpass herunterladen",
+            "downloadOverpassData": "Geladene GeoJSON Datei von Overpass herunterladen",
             "importCandidatesCount": "Die {count} roten Elemente auf der folgenden Karte sind alle Ihre Importkandidaten.",
             "loadedDataAge": "Geladene Daten stammen aus dem Cache und sind {age} alt",
             "mapShowingNearbyIntro": "Die folgende Karte zeigt zu importierende Objekte, die ein OSM-Objekt enthalten ",
@@ -356,9 +356,9 @@
             "reloadTheCache": "Cache löschen und Overpass erneut abfragen",
             "setRangeToZero": "Setzen Sie den Bereich auf 0 oder 1, wenn Sie alle importieren möchten",
             "states": {
-                "error": "Letzte Daten nicht von overpass heruntergeladen aufgrund von {error}",
+                "error": "Letzte Daten nicht von Overpass geladen aufgrund von {error}",
                 "idle": "Lokalen Speicher überprüfen…",
-                "running": "Abfrage bei overpass…",
+                "running": "Abfrage bei Overpass…",
                 "unexpected": "Unerwarteter Zustand {state}"
             },
             "title": "Mit vorhandenen Daten vergleichen",

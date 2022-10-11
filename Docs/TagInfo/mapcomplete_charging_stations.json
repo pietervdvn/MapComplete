@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/charging_stations",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/charging_stations/logo.svg",
-    "contact_name": "Pieter Vander Vennet, ",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -116,7 +116,7 @@
     },
     {
       "key": "socket:schuko",
-      "description": "Layer 'Charging stations' shows socket:schuko~^..*$&socket:schuko!=1 with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:schuko~.+&socket:schuko!=1 with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:typee",
@@ -125,7 +125,7 @@
     },
     {
       "key": "socket:typee",
-      "description": "Layer 'Charging stations' shows socket:typee~^..*$&socket:typee!=1 with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:typee~.+&socket:typee!=1 with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:chademo",
@@ -134,7 +134,7 @@
     },
     {
       "key": "socket:chademo",
-      "description": "Layer 'Charging stations' shows socket:chademo~^..*$&socket:chademo!=1 with a fixed text, namely '<b>Chademo</b>' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:chademo~.+&socket:chademo!=1 with a fixed text, namely '<b>Chademo</b>' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type1_cable",
@@ -143,7 +143,7 @@
     },
     {
       "key": "socket:type1_cable",
-      "description": "Layer 'Charging stations' shows socket:type1_cable~^..*$&socket:type1_cable!=1 with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type1_cable~.+&socket:type1_cable!=1 with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type1",
@@ -152,7 +152,7 @@
     },
     {
       "key": "socket:type1",
-      "description": "Layer 'Charging stations' shows socket:type1~^..*$&socket:type1!=1 with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type1~.+&socket:type1!=1 with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type1_combo",
@@ -161,7 +161,7 @@
     },
     {
       "key": "socket:type1_combo",
-      "description": "Layer 'Charging stations' shows socket:type1_combo~^..*$&socket:type1_combo!=1 with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type1_combo~.+&socket:type1_combo!=1 with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:tesla_supercharger",
@@ -170,7 +170,7 @@
     },
     {
       "key": "socket:tesla_supercharger",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~^..*$&socket:tesla_supercharger!=1 with a fixed text, namely '<b>Tesla Supercharger</b>' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~.+&socket:tesla_supercharger!=1 with a fixed text, namely '<b>Tesla Supercharger</b>' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type2",
@@ -179,7 +179,7 @@
     },
     {
       "key": "socket:type2",
-      "description": "Layer 'Charging stations' shows socket:type2~^..*$&socket:type2!=1 with a fixed text, namely '<b>Type 2</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type2~.+&socket:type2!=1 with a fixed text, namely '<b>Type 2</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type2_combo",
@@ -188,7 +188,7 @@
     },
     {
       "key": "socket:type2_combo",
-      "description": "Layer 'Charging stations' shows socket:type2_combo~^..*$&socket:type2_combo!=1 with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type2_combo~.+&socket:type2_combo!=1 with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:type2_cable",
@@ -197,7 +197,7 @@
     },
     {
       "key": "socket:type2_cable",
-      "description": "Layer 'Charging stations' shows socket:type2_cable~^..*$&socket:type2_cable!=1 with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:type2_cable~.+&socket:type2_cable!=1 with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:tesla_supercharger_ccs",
@@ -206,7 +206,7 @@
     },
     {
       "key": "socket:tesla_supercharger_ccs",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!=1 with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=1 with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:tesla_destination",
@@ -215,7 +215,7 @@
     },
     {
       "key": "socket:tesla_destination",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!=1&_country=us with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~.+&socket:tesla_destination!=1&_country=us with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:tesla_destination",
@@ -224,7 +224,7 @@
     },
     {
       "key": "socket:tesla_destination",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!=1&_country!=us with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~.+&socket:tesla_destination!=1&_country!=us with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:USB-A",
@@ -233,7 +233,7 @@
     },
     {
       "key": "socket:USB-A",
-      "description": "Layer 'Charging stations' shows socket:USB-A~^..*$&socket:USB-A!=1 with a fixed text, namely '<b>USB</b> to charge phones and small electronics' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:USB-A~.+&socket:USB-A!=1 with a fixed text, namely '<b>USB</b> to charge phones and small electronics' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:bosch_3pin",
@@ -242,7 +242,7 @@
     },
     {
       "key": "socket:bosch_3pin",
-      "description": "Layer 'Charging stations' shows socket:bosch_3pin~^..*$&socket:bosch_3pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:bosch_3pin~.+&socket:bosch_3pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:bosch_5pin",
@@ -251,7 +251,7 @@
     },
     {
       "key": "socket:bosch_5pin",
-      "description": "Layer 'Charging stations' shows socket:bosch_5pin~^..*$&socket:bosch_5pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the MapComplete.osm.be theme 'Charging stations')"
+      "description": "Layer 'Charging stations' shows socket:bosch_5pin~.+&socket:bosch_5pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the MapComplete.osm.be theme 'Charging stations')"
     },
     {
       "key": "socket:schuko",

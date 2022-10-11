@@ -104,7 +104,7 @@
                                 "then": "There are no permanent guests here"
                             },
                             "2": {
-                                "then": "It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)"
+                                "then": "It is only possible to stay here if you have a long term contract (this place disappears from this map if you choose this)"
                             }
                         },
                         "question": "Does this place offer spots for long term rental?"
@@ -717,11 +717,25 @@
                     "3": {
                         "options": {
                             "0": {
-                                "question": "User language (iso-code) {search}"
+                                "question": "Made before {search}"
                             }
                         }
                     },
                     "4": {
+                        "options": {
+                            "0": {
+                                "question": "Made after {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "User language (iso-code) {search}"
+                            }
+                        }
+                    },
+                    "6": {
                         "options": {
                             "0": {
                                 "question": "Made with host {search}"

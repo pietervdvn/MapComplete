@@ -6,7 +6,7 @@
     "project_url": "https://mapcomplete.osm.be/parkings",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/parkings/parkings.svg",
-    "contact_name": "Pieter Vander Vennet, ",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
@@ -125,8 +125,98 @@
       "value": "no"
     },
     {
+      "key": "capacity:disabled",
+      "description": "Layer 'Parking' shows capacity:disabled=0 with a fixed text, namely 'There are no disabled parking spots' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "0"
+    },
+    {
       "key": "capacity",
       "description": "Layer 'Parking' shows and asks freeform values for key 'capacity' (in the MapComplete.osm.be theme 'Parking')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Parking has a layer Parking Spaces showing features with this tag",
+      "value": "parking_space"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows  with a fixed text, namely 'This is a normal parking space' (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key parking_space.",
+      "value": ""
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=normal with a fixed text, namely 'This is a normal parking space.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "normal"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=disabled with a fixed text, namely 'This is a disabled parking space.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "disabled"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=private with a fixed text, namely 'This is a private parking space.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "private"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=charging with a fixed text, namely 'This is parking space reserved for charging vehicles.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "charging"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=delivery with a fixed text, namely 'This is parking space reserved for deliveries.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "delivery"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=hgv with a fixed text, namely 'This is parking space reserved for heavy goods vehicles.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "hgv"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=caravan with a fixed text, namely 'This is parking space reserved for caravans or RVs.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "caravan"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=bus with a fixed text, namely 'This is parking space reserved for buses.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "bus"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=motorcycle with a fixed text, namely 'This is parking space reserved for motorcycles.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "motorcycle"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=parent with a fixed text, namely 'This is a parking space reserved for parents with children.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "parent"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=staff with a fixed text, namely 'This is a parking space reserved for staff.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "staff"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=taxi with a fixed text, namely 'This is a parking space reserved for taxis.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "taxi"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=trailer with a fixed text, namely 'This is a parking space reserved for vehicles towing a trailer.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "trailer"
+    },
+    {
+      "key": "parking_space",
+      "description": "Layer 'Parking Spaces' shows parking_space=car_sharing with a fixed text, namely 'This is a parking space reserved for car sharing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "car_sharing"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Parking Spaces' shows capacity=1 with a fixed text, namely 'This parking space has 1 space.' (in the MapComplete.osm.be theme 'Parking')",
+      "value": "1"
     }
   ]
 }

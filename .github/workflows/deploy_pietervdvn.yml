@@ -1,6 +1,5 @@
 name: Deployment on pietervdvn
-on:
-  push
+on: push
 
 jobs:
   build:
@@ -28,13 +27,15 @@ jobs:
           cd pietervdvn.github.io
           git pull
 
+      - name: get branch name
+        run: echo TARGET_BRANCH=${GITHUB_REF:11} >> $GITHUB_ENV
+
       - name: "Copying files"
         run: |
           echo "Deploying"
-          TARGET=${GITHUB_REF:11}
-          rm -rf pietervdvn.github.io/mc/$TARGET/*
-          mkdir -p pietervdvn.github.io/mc/$TARGET/
-          cp -r dist/* pietervdvn.github.io/mc/$TARGET/
+          rm -rf pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }}/*
+          mkdir -p pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }}/
+          cp -r dist/* pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }}/
           cd pietervdvn.github.io/
           git add *
           if git status | grep -q "Changes to be committed"
@@ -44,3 +45,13 @@ jobs:
           else
             echo "No changes to commit"
           fi
+        env:
+          TARGET_BRANCH: ${{ env.TARGET_BRANCH }}
+
+      - uses: mshick/add-pr-comment@v1
+        name: Comment the PR with the review URL
+        if: ${{ success() && github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/master' }}
+        with:
+          message: |
+            [🚀 Preview Branch](https://pietervdvn.github.io/mc/${{ env.TARGET_BRANCH }})
+          repo-token: ${{ secrets.GITHUB_TOKEN }}

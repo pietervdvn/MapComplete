@@ -323,15 +323,6 @@
         }
     },
     "cafe_pub": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Obert ara"
-                    }
-                }
-            }
-        },
         "presets": {
             "0": {
                 "title": "un bar"
@@ -570,7 +561,7 @@
                 "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
             },
             "defibrillator-defibrillator:location:fr": {
-                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador (en francés)"
             },
             "defibrillator-indoors": {
                 "mappings": {
@@ -595,7 +586,8 @@
                     "0": {
                         "then": "Comprovat avui!"
                     }
-                }
+                },
+                "render": "El desfibrilador és va sondejar per ultima vegada el {survey:date}"
             }
         },
         "title": {
@@ -622,7 +614,7 @@
             "render": "Extintors"
         }
     },
-    "food": {
+    "filters": {
         "filter": {
             "0": {
                 "options": {
@@ -631,7 +623,9 @@
                     }
                 }
             }
-        },
+        }
+    },
+    "food": {
         "presets": {
             "0": {
                 "title": "un restaurant"
@@ -801,17 +795,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualment obert"
-                    }
-                }
-            }
-        }
-    },
     "parking": {
         "name": "Aparcament"
     },
@@ -876,15 +859,6 @@
         }
     },
     "postoffices": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualment obert"
-                    }
-                }
-            }
-        },
         "name": "Oficines de correus",
         "presets": {
             "0": {

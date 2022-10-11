@@ -1,24 +1,34 @@
-import {Utils} from "../../Utils";
-import BaseUIElement from "../BaseUIElement";
-import Translations from "../i18n/Translations";
+import { Utils } from "../../Utils"
+import BaseUIElement from "../BaseUIElement"
+import Translations from "../i18n/Translations"
 
 export default class List extends BaseUIElement {
-    private readonly uiElements: BaseUIElement[];
-    private readonly _ordered: boolean;
+    private readonly uiElements: BaseUIElement[]
+    private readonly _ordered: boolean
 
     constructor(uiElements: (string | BaseUIElement)[], ordered = false) {
-        super();
-        this._ordered = ordered;
-        this.uiElements = Utils.NoNull(uiElements)
-            .map(s => Translations.W(s));
+        super()
+        this._ordered = ordered
+        this.uiElements = Utils.NoNull(uiElements).map((s) => Translations.W(s))
     }
 
     AsMarkdown(): string {
         if (this._ordered) {
-            return "\n\n" + this.uiElements.map((el, i) => "  " + i + ". " + el.AsMarkdown().replace(/\n/g, '  \n')).join("\n") + "\n"
+            return (
+                "\n\n" +
+                this.uiElements
+                    .map((el, i) => "  " + i + ". " + el.AsMarkdown().replace(/\n/g, "  \n"))
+                    .join("\n") +
+                "\n"
+            )
         } else {
-            return "\n\n" + this.uiElements.map(el => "  - " + el.AsMarkdown().replace(/\n/g, '  \n')).join("\n") + "\n"
-
+            return (
+                "\n\n" +
+                this.uiElements
+                    .map((el) => "  - " + el.AsMarkdown().replace(/\n/g, "  \n"))
+                    .join("\n") +
+                "\n"
+            )
         }
     }
 
@@ -27,7 +37,7 @@ export default class List extends BaseUIElement {
 
         for (const subEl of this.uiElements) {
             if (subEl === undefined || subEl === null) {
-                continue;
+                continue
             }
             const subHtml = subEl.ConstructElement()
             if (subHtml !== undefined) {
@@ -37,7 +47,6 @@ export default class List extends BaseUIElement {
             }
         }
 
-        return el;
+        return el
     }
-
 }
