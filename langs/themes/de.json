@@ -414,19 +414,32 @@
                         "0": {
                             "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
                         },
-                        "1": {
+                        "3": {
                             "then": "Diese Straße ist eine Fahrradstraße"
                         },
-                        "2": {
+                        "4": {
                             "then": "Diese Straße wird bald eine Fahrradstraße sein"
                         },
-                        "3": {
+                        "6": {
                             "then": "Diese Straße ist keine Fahrradstraße"
                         }
                     },
                     "question": "Ist die Straße <b>{name}</b> eine Fahrradstraße?"
                 },
                 "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Anlieger frei"
+                        },
+                        "1": {
+                            "then": "KFZ frei"
+                        },
+                        "2": {
+                            "then": "Motorräder frei"
+                        }
+                    }
+                },
+                "2": {
                     "question": "Wann wird diese Straße eine Fahrradstraße?",
                     "render": "Diese Straße wird am {cyclestreet:start_date} zu einer Fahrradstraße"
                 }

@@ -20,6 +20,90 @@
     ]
   },
   {
+    "path": "Finland_road_sign_E28.svg",
+    "license": "CC0",
+    "authors": [
+      "Suomen tasavalta"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Finland_road_sign_E28.svg"
+    ]
+  },
+  {
+    "path": "Finland_road_sign_E29.svg",
+    "license": "CC0",
+    "authors": [
+      "Suomen tasavalta"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Finland_road_sign_E29.svg"
+    ]
+  },
+  {
+    "path": "Zeichen_244.svg",
+    "license": "CC0",
+    "authors": [
+      "Bundesministerium für Verkehr, Bau- und Wohnungswesen"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Zeichen_244_-_Beginn_der_Fahrradstraße,_StVO_1997.svg"
+    ]
+  },
+  {
+    "path": "Zeichen_244_1020-30.svg",
+    "license": "CC0",
+    "authors": [
+      "Bundesministerium für Verkehr, Bau- und Wohnungswesen"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Zusatzzeichen_1020-30_-_Anlieger_frei_(600x330),_StVO_1992.svg",
+      "https://commons.wikimedia.org/wiki/File:Zeichen_244_-_Beginn_der_Fahrradstraße,_StVO_1997.svg"
+    ]
+  },
+  {
+    "path": "Zeichen_244_1022-12.svg",
+    "license": "CC0",
+    "authors": [
+      "Bundesministerium für Verkehr, Bau- und Wohnungswesen"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Zusatzzeichen_1022-12_-_Krafträder_auch_mit_Beiwagen,_Kleinkrafträder_und_Mofas_frei_(600x450),_StVO_1992.svg",
+      "https://commons.wikimedia.org/wiki/File:Zeichen_244_-_Beginn_der_Fahrradstraße,_StVO_1997.svg"
+    ]
+  },
+  {
+    "path": "Zeichen_244_1024-10.svg",
+    "license": "CC0",
+    "authors": [
+      "Bundesministerium für Verkehr, Bau- und Wohnungswesen"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Zusatzzeichen_1024-10_-_Personenkraftwagen_frei,_StVO_1992.svg",
+      "https://commons.wikimedia.org/wiki/File:Zeichen_244_-_Beginn_der_Fahrradstraße,_StVO_1997.svg"
+    ]
+  },
+  {
+    "path": "Zeichen_244_KFZ_frei.svg",
+    "license": "CC0",
+    "authors": [
+      "Bundesministerium für Verkehr, Bau- und Wohnungswesen"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Zusatzzeichen_KFZ_frei.svg",
+      "https://commons.wikimedia.org/wiki/File:Zeichen_244_-_Beginn_der_Fahrradstraße,_StVO_1997.svg"
+    ]
+  },
+  {
+    "path": "Zeichen_244a.svg",
+    "license": "CC0",
+    "authors": [
+      "Bundesministerium für Verkehr, Bau- und Wohnungswesen"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Zeichen_244a_-_Ende_der_Fahrradstraße,_StVO_1997.svg"
+    ]
+  },
+  {
     "path": "logo.svg",
     "license": "CC0",
     "authors": [

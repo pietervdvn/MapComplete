@@ -265,19 +265,19 @@
                         "0": {
                             "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
                         },
-                        "1": {
+                        "3": {
                             "then": "Denne gaten er en sykkelvei"
                         },
-                        "2": {
+                        "4": {
                             "then": "Denne gaten vil bli sykkelvei ganske snart"
                         },
-                        "3": {
+                        "6": {
                             "then": "Denne gaten er ikke en sykkelvei"
                         }
                     },
                     "question": "Er <b>{name}</b>-gaten en sykkelgate?"
                 },
-                "1": {
+                "2": {
                     "question": "Når vil denne gaten bli en sykkelgate?",
                     "render": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}"
                 }

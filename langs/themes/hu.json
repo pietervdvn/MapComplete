@@ -134,19 +134,19 @@
                         "0": {
                             "then": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)"
                         },
-                        "1": {
+                        "3": {
                             "then": "Ez az utca kerékpárosutca"
                         },
-                        "2": {
+                        "4": {
                             "then": "Ez az utca hamarosan kerékpárosutcává válik"
                         },
-                        "3": {
+                        "6": {
                             "then": "Ez az utca nem kerékpárosutca"
                         }
                     },
                     "question": "Kerékpárosutca-e <b>{name}</b>?"
                 },
-                "1": {
+                "2": {
                     "question": "Mikor lesz ez az utca kerékpárosutca?",
                     "render": "Ez az utca ekkor lesz kerékpárosutca: {cyclestreet:start_date}"
                 }

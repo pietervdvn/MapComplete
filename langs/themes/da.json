@@ -368,19 +368,19 @@
                         "0": {
                             "then": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)"
                         },
-                        "1": {
+                        "3": {
                             "then": "Denne gade er en cykelgade"
                         },
-                        "2": {
+                        "4": {
                             "then": "Denne gade bliver snart en cykelgade"
                         },
-                        "3": {
+                        "6": {
                             "then": "Denne gade er ikke en cykelgade"
                         }
                     },
                     "question": "Er gaden <b>{name}</b> en cykelgade?"
                 },
-                "1": {
+                "2": {
                     "question": "Hvornår bliver denne gade en cykelgade?",
                     "render": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}"
                 }

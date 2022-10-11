@@ -70,8 +70,9 @@
       "minzoom": 7,
       "source": {
         "osmTags": {
-          "and": [
-            "cyclestreet=yes"
+          "or": [
+            "cyclestreet=yes",
+            "bicycle_road=yes"
           ]
         }
       },
@@ -93,9 +94,60 @@
       ],
       "mapRendering": [
         {
-          "icon": "./assets/themes/cyclestreets/F111.svg",
+          "icon": {
+            "render": "./assets/themes/cyclestreets/F111.svg",
+            "mappings": [
+              {
+                "if": "traffic_sign=DE:244.1,1020-30",
+                "then": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg"
+              },
+              {
+                "if": "traffic_sign=DE:244.1,1022-12,1024-10",
+                "then": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg"
+              },
+              {
+                "if": "traffic_sign=DE:244.1,1022-12",
+                "then": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg"
+              },
+              {
+                "if": "traffic_sign=DE:244.1,1024-10",
+                "then": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg"
+              },
+              {
+                "if": "_country=de",
+                "then": "./assets/themes/cyclestreets/Zeichen_244.svg"
+              },
+              {
+                "if": "_country=fi",
+                "then": "./assets/themes/cyclestreets/Finland_road_sign_E28.svg"
+              }
+            ]
+          },
+          "iconSize": {
+            "render": "40,40,center",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "traffic_sign=DE:244.1,1020-30",
+                    "traffic_sign=DE:244.1,1022-12,1024-10"
+                  ]
+                },
+                "then": "40,62,center"
+              },
+              {
+                "if": {
+                  "or": [
+                    "traffic_sign=DE:244.1,1022-12",
+                    "traffic_sign=DE:244.1,1024-10"
+                  ]
+                },
+                "then": "40,70,center"
+              }
+            ]
+          },
           "location": [
-            "point"
+            "projected_centerpoint"
           ]
         },
         {
@@ -134,7 +186,12 @@
       },
       "minzoom": 9,
       "source": {
-        "osmTags": "proposed:cyclestreet=yes"
+        "osmTags": {
+          "or": [
+            "proposed:cyclestreet=yes",
+            "proposed:bicycle_road=yes"
+          ]
+        }
       },
       "title": {
         "render": {
@@ -173,9 +230,21 @@
       ],
       "mapRendering": [
         {
-          "icon": "./assets/themes/cyclestreets/F113.svg",
+          "icon": {
+            "render": "./assets/themes/cyclestreets/F113.svg",
+            "mappings": [
+              {
+                "if": "_country=de",
+                "then": "./assets/themes/cyclestreets/Zeichen_244a.svg"
+              },
+              {
+                "if": "_country=fi",
+                "then": "./assets/themes/cyclestreets/Finland_road_sign_E29.svg"
+              }
+            ]
+          },
           "location": [
-            "point"
+            "projected_centerpoint"
           ]
         },
         {
@@ -253,7 +322,7 @@
         {
           "icon": "./assets/svg/pencil.svg",
           "location": [
-            "point"
+            "projected_centerpoint"
           ]
         },
         {
@@ -262,11 +331,21 @@
             "mappings": [
               {
                 "then": "#0000ff",
-                "if": "cyclestreet=yes"
+                "if": {
+                  "or": [
+                    "cyclestreet=yes",
+                    "bicycle_road=yes"
+                  ]
+                }
               },
               {
                 "then": "#09f9dd",
-                "if": "proposed:cyclestreet=yes"
+                "if": {
+                  "or": [
+                    "proposed:cyclestreet=yes",
+                    "proposed:bicycle_road=yes"
+                  ]
+                }
               }
             ]
           },
@@ -316,6 +395,29 @@
             "hideInAnswer": "_country!=be"
           },
           {
+            "if": "bicycle_road=yes",
+            "then": {
+              "en": "This street is a bicycle road"
+            },
+            "hideInAnswer": true
+          },
+          {
+            "if": {
+              "and": [
+                "bicycle_road=yes",
+                "proposed:bicycle_road=",
+                "maxspeed=30",
+                "source:maxspeed=DE:bicycle_road",
+                "vehicle=no",
+                "bicycle=designated"
+              ]
+            },
+            "then": {
+              "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)"
+            },
+            "hideInAnswer": "_country!=de"
+          },
+          {
             "if": {
               "and": [
                 "cyclestreet=yes",
@@ -335,7 +437,12 @@
               "ca": "Aquest carrer és una ciclocarrer",
               "da": "Denne gade er en cykelgade"
             },
-            "hideInAnswer": "_country=be"
+            "hideInAnswer": {
+              "or": [
+                "_country=be",
+                "_country=de"
+              ]
+            }
           },
           {
             "if": {
@@ -356,13 +463,28 @@
               "fr": "Cette rue sera bientôt une rue cyclable",
               "ca": "Aquest carrer es convertirà en un ciclocarrer pròximament",
               "da": "Denne gade bliver snart en cykelgade"
-            }
+            },
+            "hideInAnswer": "_country=de"
+          },
+          {
+            "if": {
+              "and": [
+                "bicycle_road=",
+                "proposed:bicycle_road=yes"
+              ]
+            },
+            "then": {
+              "en": "This street will become a bicycle road soon"
+            },
+            "hideInAnswer": "_country!=de"
           },
           {
             "if": {
               "and": [
                 "cyclestreet=",
                 "proposed:cyclestreet=",
+                "bicycle_road=",
+                "proposed:bicycle_road=",
                 "overtaking:motor_vehicle="
               ]
             },
@@ -378,6 +500,103 @@
               "fr": "Cette rue n’est pas une rue cyclable",
               "da": "Denne gade er ikke en cykelgade"
             }
+          }
+        ]
+      },
+      {
+        "id": "supplementary_sign",
+        "condition": {
+          "and": [
+            "bicycle_road=yes",
+            "_country=de"
+          ]
+        },
+        "question": {
+          "en": "What sign does this bicycle road have?"
+        },
+        "mappings": [
+          {
+            "if": "traffic_sign=DE:244.1,1020-30",
+            "then": {
+              "en": "Residents allowed",
+              "de": "Anlieger frei"
+            },
+            "icon": {
+              "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
+              "class": "large"
+            },
+            "addExtraTags": [
+              "vehicle=destination",
+              "motorcar=",
+              "motorcycle=",
+              "motor_vehicle="
+            ]
+          },
+          {
+            "if": "traffic_sign=DE:244.1,1022-12,1024-10",
+            "then": {
+              "en": "Motor vehicles allowed",
+              "de": "KFZ frei"
+            },
+            "icon": {
+              "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
+              "class": "large"
+            },
+            "addExtraTags": [
+              "motor_vehicle=yes",
+              "motorcar=",
+              "motorcycle=",
+              "vehicle=no"
+            ]
+          },
+          {
+            "if": "traffic_sign=DE:244.1,1022-12",
+            "then": {
+              "en": "Motorcycles allowed",
+              "de": "Motorräder frei"
+            },
+            "icon": {
+              "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
+              "class": "large"
+            },
+            "addExtraTags": [
+              "motorcycle=yes",
+              "motorcar=",
+              "motor_vehicle=",
+              "vehicle=no"
+            ]
+          },
+          {
+            "if": "traffic_sign=DE:244.1,1024-10",
+            "then": {
+              "en": "Cars allowed"
+            },
+            "icon": {
+              "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
+              "class": "large"
+            },
+            "addExtraTags": [
+              "motorcar=yes",
+              "motorcycle=",
+              "motor_vehicle=",
+              "vehicle=no"
+            ]
+          },
+          {
+            "if": "traffic_sign=DE:244.1",
+            "then": {
+              "en": "There are no supplementary signs at this bicycle road."
+            },
+            "icon": {
+              "path": "./assets/themes/cyclestreets/Zeichen_244.svg",
+              "class": "large"
+            },
+            "addExtraTags": [
+              "vehicle=no",
+              "motorcycle=",
+              "motorcar=",
+              "motor_vehicle="
+            ]
           }
         ]
       },
