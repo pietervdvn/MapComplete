@@ -33,22 +33,11 @@
     },
     {
       "key": "height",
-      "description": "Layer 'Tree' shows height~^^[0-9.]+$$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
+      "description": "Layer 'Tree' shows height~^(^[0-9.]+$)$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
-      "key": "leaf_type",
-      "description": "Layer 'Tree' shows leaf_type=broadleaved with a fixed text, namely 'Broadleaved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
-      "value": "broadleaved"
-    },
-    {
-      "key": "leaf_type",
-      "description": "Layer 'Tree' shows leaf_type=needleleaved with a fixed text, namely 'Needleleaved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
-      "value": "needleleaved"
-    },
-    {
-      "key": "leaf_type",
-      "description": "Layer 'Tree' shows leaf_type=leafless with a fixed text, namely 'Permanently leafless' (in the MapComplete.osm.be theme 'Trees')",
-      "value": "leafless"
+      "key": "species:wikidata",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'species:wikidata' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
       "key": "denotation",
@@ -91,6 +80,21 @@
       "value": "none"
     },
     {
+      "key": "leaf_type",
+      "description": "Layer 'Tree' shows leaf_type=broadleaved with a fixed text, namely 'Broadleaved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "value": "broadleaved"
+    },
+    {
+      "key": "leaf_type",
+      "description": "Layer 'Tree' shows leaf_type=needleleaved with a fixed text, namely 'Needleleaved' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
+      "value": "needleleaved"
+    },
+    {
+      "key": "leaf_type",
+      "description": "Layer 'Tree' shows leaf_type=leafless with a fixed text, namely 'Permanently leafless' (in the MapComplete.osm.be theme 'Trees')",
+      "value": "leafless"
+    },
+    {
       "key": "leaf_cycle",
       "description": "Layer 'Tree' shows leaf_cycle=deciduous with a fixed text, namely 'Deciduous: the tree loses its leaves for some time of the year.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "deciduous"
@@ -99,10 +103,6 @@
       "key": "leaf_cycle",
       "description": "Layer 'Tree' shows leaf_cycle=evergreen with a fixed text, namely 'Evergreen.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Trees')",
       "value": "evergreen"
-    },
-    {
-      "key": "species:wikidata",
-      "description": "Layer 'Tree' shows and asks freeform values for key 'species:wikidata' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
       "key": "name",
@@ -160,7 +160,7 @@
     },
     {
       "key": "heritage",
-      "description": "Layer 'Tree' shows heritage~^..*$ with a fixed text, namely 'Registered as heritage by a different organisation' (in the MapComplete.osm.be theme 'Trees')"
+      "description": "Layer 'Tree' shows heritage~.+ with a fixed text, namely 'Registered as heritage by a different organisation' (in the MapComplete.osm.be theme 'Trees')"
     },
     {
       "key": "ref:OnroerendErfgoed",

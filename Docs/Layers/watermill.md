@@ -105,7 +105,7 @@ This is rendered with  Beheer door {operator}
 
 
   - Dit gebied wordt beheerd door Natuurpunt  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>`
-  - Dit gebied wordt beheerd door {operator}  corresponds with  `operator~^(n|N)atuurpunt.*$`
+  - Dit gebied wordt beheerd door {operator}  corresponds with  `operator~^((n|N)atuurpunt.*)$`
   - This option cannot be chosen as answer
  
 

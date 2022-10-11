@@ -131,10 +131,6 @@
             "artwork-website": {
                 "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
                 "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Quelle entrée Wikidata correspond à <b>cette œuvre d'art</b> ?",
-                "render": "Correspond à <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -651,9 +647,6 @@
                     },
                     "1": {
                         "then": "Libre d'utilisation"
-                    },
-                    "2": {
-                        "then": "Le service de nettoyage est payant"
                     }
                 },
                 "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
@@ -666,9 +659,6 @@
                     },
                     "1": {
                         "then": "Utilisation gratuite"
-                    },
-                    "2": {
-                        "then": "Le coût du service de nettoyage n’est pas connu"
                     }
                 },
                 "question": "Combien coûte le service de nettoyage ?",
@@ -1249,15 +1239,6 @@
             }
         },
         "description": "Une couche montrants les cafés et pubs où l’on peut prendre un verre. Cette couche pose des questions y afférentes.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert maintenant"
-                    }
-                }
-            }
-        },
         "name": "Cafés et pubs",
         "presets": {
             "0": {
@@ -1273,7 +1254,7 @@
                 "title": "un café"
             },
             "3": {
-                "description": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une une boisson (alcoolisée)",
+                "description": "Une <b>boîte de nuit</b> ou discothèque pour danser sur de la musique de DJ accompagnée de jeux de lumière et un bar pour prendre une boisson (alcoolisée)",
                 "title": "une boîte de nuit ou discothèque"
             }
         },
@@ -1795,7 +1776,7 @@
             "Surface of the road": {
                 "mappings": {
                     "0": {
-                        "then": "Cette piste cycable est  non durcie"
+                        "then": "Cette piste cycable est non durcie"
                     },
                     "1": {
                         "then": "Cette piste cyclable est pavée"
@@ -2162,15 +2143,6 @@
     },
     "doctors": {
         "description": "Ce calque montre les cabinets médicaux, les dentistes et autres établissements de santé",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert maintenant"
-                    }
-                }
-            }
-        },
         "name": "Médecins",
         "presets": {
             "0": {
@@ -2495,6 +2467,31 @@
             "render": "Exctincteurs"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Ouvert maintenant"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Accepte les espèces"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepte les cartes de paiement"
+                    }
+                }
+            }
+        }
+    },
     "fire_station": {
         "description": "Couche des stations de pompiers.",
         "name": "Couche des stations de pompiers",
@@ -2567,13 +2564,6 @@
         },
         "description": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert maintenant"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -2592,20 +2582,6 @@
                 "options": {
                     "0": {
                         "question": "A un menu halal"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Accepte les paiements en espèces"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Accepte les cartes de paiement"
                     }
                 }
             }
@@ -3149,17 +3125,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert actuellement"
-                    }
-                }
-            }
-        }
-    },
     "parking": {
         "description": "Un calque montrant les parkings",
         "name": "Lieu de stationnement",
@@ -3403,15 +3368,6 @@
     },
     "postoffices": {
         "description": "Un claque montrant les bureaux de poste.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert actuellement"
-                    }
-                }
-            }
-        },
         "name": "Bureaux de poste",
         "presets": {
             "0": {
@@ -3681,31 +3637,17 @@
         },
         "description": "Un magasin",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "N'afficher que les magasins vendant {search}"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "N'afficher que les magasins portant le nom {search}"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Accepte les espèces"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Accepte les cartes de paiement"
+                        "question": "N'afficher que les magasins portant le nom {search}"
                     }
                 }
             }

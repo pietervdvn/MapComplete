@@ -82,6 +82,10 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "Who made this artwork?",
+                "render": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
             "artwork-artist_name": {
                 "question": "Which artist created this?",
                 "render": "Created by {artist_name}"
@@ -123,6 +127,9 @@
                     },
                     "11": {
                         "then": "Tilework"
+                    },
+                    "12": {
+                        "then": "Woodcarving"
                     }
                 },
                 "question": "What is the type of this artwork?",
@@ -132,9 +139,9 @@
                 "question": "Is there a website with more information about this artwork?",
                 "render": "More information on <a href='{website}' target='_blank'>this website</a>"
             },
-            "artwork-wikidata": {
-                "question": "Which Wikidata-entry corresponds with <b>this artwork</b>?",
-                "render": "Corresponds with <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
+            "artwork_subject": {
+                "question": "What does this artwork depict?",
+                "render": "This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             }
         },
         "title": {
@@ -651,9 +658,6 @@
                     },
                     "1": {
                         "then": "Free to use"
-                    },
-                    "2": {
-                        "then": "The cleaning service has a fee"
                     }
                 },
                 "question": "How much does it cost to use the cleaning service?",
@@ -666,9 +670,6 @@
                     },
                     "1": {
                         "then": "Free to use"
-                    },
-                    "2": {
-                        "then": "The cleaning service has a fee, but the amount is not known"
                     }
                 },
                 "question": "How much does it cost to use the cleaning service?",
@@ -1249,15 +1250,6 @@
             }
         },
         "description": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Opened now"
-                    }
-                }
-            }
-        },
         "name": "Cafés and pubs",
         "presets": {
             "0": {
@@ -3254,15 +3246,6 @@
     },
     "doctors": {
         "description": "This layer shows doctor offices, dentists and other healthcare facilities",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Opened now"
-                    }
-                }
-            }
-        },
         "name": "Doctors",
         "presets": {
             "0": {
@@ -3643,6 +3626,41 @@
             "render": "Extinguishers"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Opened now"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Accepts cash"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepts payment cards"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "1": {
+                        "question": "Has at least one image"
+                    },
+                    "2": {
+                        "question": "Probably does not have an image"
+                    }
+                }
+            }
+        }
+    },
     "fire_station": {
         "description": "Map layer to show fire stations.",
         "name": "Map of fire stations",
@@ -3715,13 +3733,6 @@
         },
         "description": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Opened now"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -3740,20 +3751,6 @@
                 "options": {
                     "0": {
                         "question": "Has a halal menu"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Accepts cash"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Accepts payment cards"
                     }
                 }
             }
@@ -5051,15 +5048,6 @@
     },
     "parcel_lockers": {
         "description": "Layer showing parcel lockers for collecting and sending parcels.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Currently open"
-                    }
-                }
-            }
-        },
         "name": "Parcel Lockers",
         "presets": {
             "0": {
@@ -5508,15 +5496,6 @@
     },
     "postoffices": {
         "description": "A layer showing post offices.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Currently open"
-                    }
-                }
-            }
-        },
         "name": "Post offices",
         "presets": {
             "0": {
@@ -5711,13 +5690,6 @@
     "recycling": {
         "description": "A layer with recycling containers and centres",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Currently open"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -6070,31 +6042,17 @@
         },
         "description": "A shop",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Only show shops selling {search}"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Only show shops with name {search}"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Accepts cash"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Accepts payment cards"
+                        "question": "Only show shops with name {search}"
                     }
                 }
             }

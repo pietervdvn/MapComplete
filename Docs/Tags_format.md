@@ -89,7 +89,8 @@ Regex equals
 ------------
 
 A tag can also be tested against a regex with `key~regex`. Note that this regex __must match__ the entire value. If the
-value is allowed to appear anywhere as substring, use `key~.*regex.*`
+value is allowed to appear anywhere as substring, use `key~.*regex.*`.
+The regex is put within braces as to prevent runaway values.
 
 Regexes will match the newline character with `.` too - the `s`-flag is enabled by default. To enable case invariant
 matching, use `key~i~regex`

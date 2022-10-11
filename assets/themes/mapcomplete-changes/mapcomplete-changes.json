@@ -127,6 +127,10 @@
                 "then": "./assets/themes/artwork/artwork.svg"
               },
               {
+                "if": "theme=bag",
+                "then": "./assets/themes/bag_import/logo.svg"
+              },
+              {
                 "if": "theme=benches",
                 "then": "./assets/themes/benches/bench_poi.svg"
               },
@@ -295,6 +299,10 @@
                 "then": "./assets/themes/openwindpowermap/logo.svg"
               },
               {
+                "if": "theme=osm_community_index",
+                "then": "./assets/themes/osm_community_index/osm.svg"
+              },
+              {
                 "if": "theme=parkings",
                 "then": "./assets/themes/parkings/parkings.svg"
               },
@@ -393,6 +401,10 @@
               {
                 "if": "theme=waste_basket",
                 "then": "./assets/themes/waste_basket/waste_basket.svg"
+              },
+              {
+                "if": "theme=width",
+                "then": "./assets/themes/width/icon.svg"
               }
             ]
           },
@@ -444,6 +456,40 @@
               ],
               "question": {
                 "en": "<b>Not</b> made by contributor {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "made_before",
+          "options": [
+            {
+              "osmTags": "date<{search}",
+              "fields": [
+                {
+                  "name": "search",
+                  "type": "date"
+                }
+              ],
+              "question": {
+                "en": "Made before {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "made_after",
+          "options": [
+            {
+              "osmTags": "date>{search}",
+              "fields": [
+                {
+                  "name": "search",
+                  "type": "date"
+                }
+              ],
+              "question": {
+                "en": "Made after {search}"
               }
             }
           ]

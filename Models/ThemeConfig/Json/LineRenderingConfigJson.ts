@@ -1,4 +1,4 @@
-import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
+import { TagRenderingConfigJson } from "./TagRenderingConfigJson"
 
 /**
  * The LineRenderingConfig gives all details onto how to render a single line of a feature.
@@ -9,16 +9,15 @@ import {TagRenderingConfigJson} from "./TagRenderingConfigJson";
  * - The feature is an area
  */
 export default interface LineRenderingConfigJson {
-
     /**
      * The color for way-elements and SVG-elements.
      * If the value starts with "--", the style of the body element will be queried for the corresponding variable instead
      */
-    color?: string | TagRenderingConfigJson;
+    color?: string | TagRenderingConfigJson
     /**
      * The stroke-width for way-elements
      */
-    width?: string | number | TagRenderingConfigJson;
+    width?: string | number | TagRenderingConfigJson
 
     /**
      * A dasharray, e.g. "5 6"

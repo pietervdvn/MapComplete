@@ -207,7 +207,7 @@
             "pt_BR": "Há somente ferramentas (chaves de fenda, alicates...) presentes",
             "pt": "Há somente ferramentas (chaves de fenda, alicates...) presentes",
             "es": "Solo hay herramientas (destornilladores, pinzas...) presentes",
-            "da": "Der er kun værktøj (skruetrækkere, tænger ...)"
+            "da": "Der er kun værktøj (skruetrækkere, tænger, ...) til stede"
           }
         },
         {
@@ -630,7 +630,7 @@
             "de": "Sklaverand-/Presta-Ventile (für Rennräder)",
             "it": "Sclaverand (detta anche Presta)",
             "ru": "Клапан Presta (также известный как французский клапан)",
-            "da": "Sclaverand (også kendt som Presta og racerventil)",
+            "da": "Sclaverand/Presta (cykeldæk med smal bredde)",
             "es": "Sclaverand/Presata (ruedas de bicicleta estrechas)"
           }
         },
@@ -657,7 +657,7 @@
             "gl": "Schrader (para automóbiles)",
             "de": "Schrader-Ventile (für Autos und Mountainbikes)",
             "it": "Schrader (valvola delle auto)",
-            "da": "Schrader (biler)",
+            "da": "Schrader (biler og mountainbikes)",
             "es": "Schrader (coches y bicicletas de montaña)"
           }
         }
@@ -728,7 +728,8 @@
         "de": "Verfügt die Pumpe über einen Druckanzeiger oder ein Manometer?",
         "it": "Questa pompa ha l’indicatore della pressione o il manometro?",
         "pl": "Czy pompka posiada wskaźnik ciśnienia lub manometr?",
-        "es": "¿La bomba tiene un indicador de presión o manómetro?"
+        "es": "¿La bomba tiene un indicador de presión o manómetro?",
+        "da": "Har pumpen trykindikator eller manometer?"
       },
       "condition": "service:bicycle:pump=yes",
       "mappings": [
@@ -745,7 +746,8 @@
             "pl": "Jest manometr",
             "pt_BR": "Há um manômetro",
             "pt": "Há um manômetro",
-            "es": "Hay un manómetro"
+            "es": "Hay un manómetro",
+            "da": "Der er et manometer"
           }
         },
         {
@@ -761,7 +763,8 @@
             "pl": "Nie ma manometru",
             "pt_BR": "Não há um manômetro",
             "pt": "Não há um manômetro",
-            "es": "No hay ningún manometro"
+            "es": "No hay ningún manometro",
+            "da": "Der er ikke noget manometer"
           }
         },
         {
@@ -777,7 +780,8 @@
             "pl": "Jest manometr, ale jest uszkodzony",
             "pt_BR": "Há um manômetro mas está quebrado",
             "pt": "Há um manômetro mas está quebrado",
-            "es": "Hay un manómetro pero está roto"
+            "es": "Hay un manómetro pero está roto",
+            "da": "Der er et manometer, men det er i stykker"
           }
         }
       ]
@@ -814,7 +818,8 @@
         "pl": "Urządzenie do pompowania opon w stałym miejscu w przestrzeni publicznej.",
         "pt_BR": "Um dispositivo para encher seus pneus em um local fixa no espaço público",
         "pt": "Um aparelho para encher os seus pneus num local fixa no espaço público",
-        "es": "Un dispositivo para inflar tus ruedas en una posición fija en el espacio público."
+        "es": "Un dispositivo para inflar tus ruedas en una posición fija en el espacio público.",
+        "da": "En anordning til at fylde dine dæk op på et fast sted i det offentlige rum."
       },
       "exampleImages": [
         "./assets/layers/bike_repair_station/pump_example_round.jpg",
@@ -831,7 +836,8 @@
         "de": "eine Fahrrad-Reparaturstation mit Pumpe",
         "it": "una stazione di riparazione bici e pompa",
         "pl": "stacja naprawy rowerów i pompka",
-        "es": "En estación de reparación de bicicletas y bomba"
+        "es": "En estación de reparación de bicicletas y bomba",
+        "da": "en cykelreparationsstation og pumpe"
       },
       "tags": [
         "amenity=bicycle_repair_station",

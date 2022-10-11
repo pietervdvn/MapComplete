@@ -11,7 +11,8 @@
     "it": "Mappa aperta per le arrampicate",
     "fr": "Open Climbing Map",
     "hu": "Mászótérkép",
-    "ca": "Open Climbing Map"
+    "ca": "Open Climbing Map",
+    "da": "Åbn klatrekort"
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -23,7 +24,8 @@
     "fr": "Cette carte indique les sites d’escalade comme les salles d’escalade ou les sites naturels",
     "it": "In questa cartina puoi trovare vari luoghi per arrampicata come ad esempio palestre di arrampicata, sale di pratica e rocce naturali.",
     "hu": "Ezen a térképen különböző mászási lehetőségeket talál, például falmászótermeket, bouldertermeket és sziklákat a természetben.",
-    "nb_NO": "Forskjellige klatremuligheter, som f.eks. buldrehaller og steiner i naturen."
+    "nb_NO": "Forskjellige klatremuligheter, som f.eks. buldrehaller og steiner i naturen.",
+    "da": "På dette kort finder du forskellige klatremuligheder såsom klatremotionsrum, boulderinghaller og sten i naturen."
   },
   "descriptionTail": {
     "nl": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
@@ -129,7 +131,8 @@
                   "ru": " метр",
                   "ca": " metre",
                   "nb_NO": " meter",
-                  "es": " metro"
+                  "es": " metro",
+                  "da": " meter"
                 }
               },
               {
@@ -147,7 +150,8 @@
                   "it": " piedi",
                   "ca": " peus",
                   "nb_NO": " fot",
-                  "es": " pies"
+                  "es": " pies",
+                  "da": " fod"
                 }
               }
             ]
@@ -164,7 +168,8 @@
                   "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat dit publiek toegangkelijk is</span><br/>{_embedding_feature:access:description}",
                   "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}",
                   "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}",
-                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}"
+                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}",
+                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne er</span> offentligt tilgængelig<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -174,7 +179,8 @@
                   "nl": "<span class='subtle'>Een <a href='#{_embedding_feature:id}'>omvattend element</a> geeft aan dat</span> een toelating nodig is om hier te klimmen<br/>{_embedding_feature:access:description}",
                   "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique qu’</span> une autorisation d’accès est nécessaire<br/>{_embedding_feature:access:description}",
                   "it": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}",
-                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}"
+                  "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}",
+                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at </span> en tilladelse er nødvendig for at få adgang til<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -184,7 +190,8 @@
                   "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservés aux clients<br/>{_embedding_feature:access:description}",
                   "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}",
                   "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}",
-                  "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor klanten<br/>{_embedding_feature:access:description}"
+                  "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor klanten<br/>{_embedding_feature:access:description}",
+                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for kunder<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -194,7 +201,8 @@
                   "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique que </span> l’accès est réservé aux membres<br/>{_embedding_feature:access:description}",
                   "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}",
                   "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}",
-                  "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor club leden<br/>{_embedding_feature:access:description}"
+                  "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor club leden<br/>{_embedding_feature:access:description}",
+                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for klubmedlemmer<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -213,7 +221,8 @@
               "it": "Chi può accedervi?",
               "nl": "Wie heeft hier toegang toe?",
               "es": "¿Quién puede acceder aquí?",
-              "ca": "Qui pot accedir aquí?"
+              "ca": "Qui pot accedir aquí?",
+              "da": "Hvem kan få adgang her?"
             },
             "mappings": [
               {
@@ -225,7 +234,8 @@
                   "it": "Pubblicamente accessibile a chiunque",
                   "nl": "Voor iedereen publiek toegankelijk",
                   "nb_NO": "Offentlig tilgjengelig for alle",
-                  "es": "Accesible públicamente a cualquiera"
+                  "es": "Accesible públicamente a cualquiera",
+                  "da": "Offentligt tilgængelig for alle"
                 }
               },
               {
@@ -236,7 +246,8 @@
                   "de": "Zugang nur mit Genehmigung",
                   "it": "È necessario avere un’autorizzazione per entrare",
                   "nl": "Je hebt een vergunning nodig om hier toegang te kregen",
-                  "es": "Necesitas un permiso para acceder aquí"
+                  "es": "Necesitas un permiso para acceder aquí",
+                  "da": "Du skal have en tilladelse for at få adgang her"
                 }
               },
               {
@@ -249,7 +260,8 @@
                   "ca": "Només clients",
                   "nl": "Enkel klanten",
                   "nb_NO": "Kun for kunder",
-                  "es": "Solo clientes"
+                  "es": "Solo clientes",
+                  "da": "Kun for kunder"
                 }
               },
               {
@@ -263,7 +275,8 @@
                   "ca": "Només membres del club",
                   "nl": "Enkel clubleden",
                   "nb_NO": "Kun klubbmedlemmer",
-                  "es": "Solo miembros del club"
+                  "es": "Solo miembros del club",
+                  "da": "Kun klubmedlemmer"
                 }
               },
               {

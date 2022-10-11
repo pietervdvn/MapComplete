@@ -1,24 +1,24 @@
-import OsmChangeAction from "./OsmChangeAction";
-import {Changes} from "../Changes";
-import {ChangeDescription} from "./ChangeDescription";
-import {OsmObject, OsmRelation, OsmWay} from "../OsmObject";
+import OsmChangeAction from "./OsmChangeAction"
+import { Changes } from "../Changes"
+import { ChangeDescription } from "./ChangeDescription"
+import { OsmObject, OsmRelation, OsmWay } from "../OsmObject"
 
 export interface RelationSplitInput {
-    relation: OsmRelation,
-    originalWayId: number,
-    allWayIdsInOrder: number[],
-    originalNodes: number[],
+    relation: OsmRelation
+    originalWayId: number
+    allWayIdsInOrder: number[]
+    originalNodes: number[]
     allWaysNodesInOrder: number[][]
 }
 
 abstract class AbstractRelationSplitHandler extends OsmChangeAction {
-    protected readonly _input: RelationSplitInput;
-    protected readonly _theme: string;
+    protected readonly _input: RelationSplitInput
+    protected readonly _theme: string
 
     constructor(input: RelationSplitInput, theme: string) {
         super("relation/" + input.relation.id, false)
-        this._input = input;
-        this._theme = theme;
+        this._input = input
+        this._theme = theme
     }
 
     /**
@@ -44,7 +44,7 @@ abstract class AbstractRelationSplitHandler extends OsmChangeAction {
         if (member.type === "relation") {
             return undefined
         }
-        return undefined;
+        return undefined
     }
 }
 
@@ -52,7 +52,6 @@ abstract class AbstractRelationSplitHandler extends OsmChangeAction {
  * When a way is split and this way is part of a relation, the relation should be updated too to have the new segment if relevant.
  */
 export default class RelationSplitHandler extends AbstractRelationSplitHandler {
-
     constructor(input: RelationSplitInput, theme: string) {
         super(input, theme)
     }
@@ -60,37 +59,42 @@ export default class RelationSplitHandler extends AbstractRelationSplitHandler {
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
         if (this._input.relation.tags["type"] === "restriction") {
             // This is a turn restriction
-            return new TurnRestrictionRSH(this._input, this._theme).CreateChangeDescriptions(changes)
+            return new TurnRestrictionRSH(this._input, this._theme).CreateChangeDescriptions(
+                changes
+            )
         }
-        return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(changes)
+        return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(
+            changes
+        )
     }
-
-
 }
 
 export class TurnRestrictionRSH extends AbstractRelationSplitHandler {
-
     constructor(input: RelationSplitInput, theme: string) {
-        super(input, theme);
+        super(input, theme)
     }
 
     public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-
         const relation = this._input.relation
         const members = relation.members
 
-        const selfMembers = members.filter(m => m.type === "way" && m.ref === this._input.originalWayId)
+        const selfMembers = members.filter(
+            (m) => m.type === "way" && m.ref === this._input.originalWayId
+        )
 
         if (selfMembers.length > 1) {
-            console.warn("Detected a turn restriction where this way has multiple occurances. This is an error")
+            console.warn(
+                "Detected a turn restriction where this way has multiple occurances. This is an error"
+            )
         }
         const selfMember = selfMembers[0]
 
         if (selfMember.role === "via") {
             // A via way can be replaced in place
-            return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(changes);
+            return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(
+                changes
+            )
         }
-
 
         // We have to keep only the way with a common point with the rest of the relation
         // Let's figure out which member is neighbouring our way
@@ -102,11 +106,12 @@ export class TurnRestrictionRSH extends AbstractRelationSplitHandler {
         let commonPoint = commonStartPoint ?? commonEndPoint
 
         // Let's select the way to keep
-        const idToKeep: { id: number } = this._input.allWaysNodesInOrder.map((nodes, i) => ({
-            nodes: nodes,
-            id: this._input.allWayIdsInOrder[i]
-        }))
-            .filter(nodesId => {
+        const idToKeep: { id: number } = this._input.allWaysNodesInOrder
+            .map((nodes, i) => ({
+                nodes: nodes,
+                id: this._input.allWayIdsInOrder[i],
+            }))
+            .filter((nodesId) => {
                 const nds = nodesId.nodes
                 return nds[0] == commonPoint || nds[nds.length - 1] == commonPoint
             })[0]
@@ -123,36 +128,34 @@ export class TurnRestrictionRSH extends AbstractRelationSplitHandler {
         }
 
         const newMembers: {
-            ref: number,
-            type: "way" | "node" | "relation",
+            ref: number
+            type: "way" | "node" | "relation"
             role: string
-        } [] = relation.members.map(m => {
+        }[] = relation.members.map((m) => {
             if (m.type === "way" && m.ref === originalWayId) {
                 return {
                     ref: idToKeep.id,
                     type: "way",
-                    role: m.role
+                    role: m.role,
                 }
             }
             return m
         })
-
 
         return [
             {
                 type: "relation",
                 id: relation.id,
                 changes: {
-                    members: newMembers
+                    members: newMembers,
                 },
                 meta: {
                     theme: this._theme,
-                    changeType: "relation-fix:turn_restriction"
-                }
-            }
-        ];
+                    changeType: "relation-fix:turn_restriction",
+                },
+            },
+        ]
     }
-
 }
 
 /**
@@ -163,26 +166,24 @@ export class TurnRestrictionRSH extends AbstractRelationSplitHandler {
  * Note that the feature might appear multiple times.
  */
 export class InPlaceReplacedmentRTSH extends AbstractRelationSplitHandler {
-
     constructor(input: RelationSplitInput, theme: string) {
-        super(input, theme);
+        super(input, theme)
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-
         const wayId = this._input.originalWayId
         const relation = this._input.relation
         const members = relation.members
-        const originalNodes = this._input.originalNodes;
+        const originalNodes = this._input.originalNodes
         const firstNode = originalNodes[0]
         const lastNode = originalNodes[originalNodes.length - 1]
-        const newMembers: { type: "node" | "way" | "relation", ref: number, role: string }[] = []
+        const newMembers: { type: "node" | "way" | "relation"; ref: number; role: string }[] = []
 
         for (let i = 0; i < members.length; i++) {
-            const member = members[i];
+            const member = members[i]
             if (member.type !== "way" || member.ref !== wayId) {
                 newMembers.push(member)
-                continue;
+                continue
             }
 
             const nodeIdBefore = await this.targetNodeAt(i - 1, false)
@@ -197,10 +198,10 @@ export class InPlaceReplacedmentRTSH extends AbstractRelationSplitHandler {
                     newMembers.push({
                         ref: wId,
                         type: "way",
-                        role: member.role
+                        role: member.role,
                     })
                 }
-                continue;
+                continue
             }
 
             const firstNodeMatchesRev = nodeIdBefore === undefined || nodeIdBefore === lastNode
@@ -209,14 +210,14 @@ export class InPlaceReplacedmentRTSH extends AbstractRelationSplitHandler {
                 // We (probably) have a reversed situation, backward situation
                 for (let i1 = this._input.allWayIdsInOrder.length - 1; i1 >= 0; i1--) {
                     // Iterate BACKWARDS
-                    const wId = this._input.allWayIdsInOrder[i1];
+                    const wId = this._input.allWayIdsInOrder[i1]
                     newMembers.push({
                         ref: wId,
                         type: "way",
-                        role: member.role
+                        role: member.role,
                     })
                 }
-                continue;
+                continue
             }
 
             // Euhm, allright... Something weird is going on, but let's not care too much
@@ -225,21 +226,21 @@ export class InPlaceReplacedmentRTSH extends AbstractRelationSplitHandler {
                 newMembers.push({
                     ref: wId,
                     type: "way",
-                    role: member.role
+                    role: member.role,
                 })
             }
-
         }
 
-        return [{
-            id: relation.id,
-            type: "relation",
-            changes: {members: newMembers},
-            meta: {
-                changeType: "relation-fix",
-                theme: this._theme
-            }
-        }];
+        return [
+            {
+                id: relation.id,
+                type: "relation",
+                changes: { members: newMembers },
+                meta: {
+                    changeType: "relation-fix",
+                    theme: this._theme,
+                },
+            },
+        ]
     }
-
 }

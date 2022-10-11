@@ -1,49 +1,50 @@
-import {Changes} from "../../Osm/Changes";
-import {OsmNode, OsmObject, OsmRelation, OsmWay} from "../../Osm/OsmObject";
-import FeatureSource from "../FeatureSource";
-import {UIEventSource} from "../../UIEventSource";
-import {ChangeDescription} from "../../Osm/Actions/ChangeDescription";
-import {ElementStorage} from "../../ElementStorage";
+import { Changes } from "../../Osm/Changes"
+import { OsmNode, OsmObject, OsmRelation, OsmWay } from "../../Osm/OsmObject"
+import FeatureSource from "../FeatureSource"
+import { UIEventSource } from "../../UIEventSource"
+import { ChangeDescription } from "../../Osm/Actions/ChangeDescription"
+import { ElementStorage } from "../../ElementStorage"
+import { OsmId, OsmTags } from "../../../Models/OsmFeature"
 
 export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
 
     /**
      * A feature source containing exclusively new elements.
-     * 
+     *
      * These elements are probably created by the 'SimpleAddUi' which generates a new point, but the import functionality might create a line or polygon too.
      * Other sources of new points are e.g. imports from nodes
      */
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<{ feature: any; freshness: Date }[]>([]);
-    public readonly name: string = "newFeatures";
+    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> =
+        new UIEventSource<{ feature: any; freshness: Date }[]>([])
+    public readonly name: string = "newFeatures"
 
     constructor(changes: Changes, allElementStorage: ElementStorage, backendUrl: string) {
+        const seenChanges = new Set<ChangeDescription>()
+        const features = this.features.data
+        const self = this
 
-        const seenChanges = new Set<ChangeDescription>();
-        const features = this.features.data;
-        const self = this;
-
-        changes.pendingChanges.stabilized(100).addCallbackAndRunD(changes => {
+        changes.pendingChanges.stabilized(100).addCallbackAndRunD((changes) => {
             if (changes.length === 0) {
-                return;
+                return
             }
 
-            const now = new Date();
-            let somethingChanged = false;
+            const now = new Date()
+            let somethingChanged = false
 
             function add(feature) {
                 feature.id = feature.properties.id
                 features.push({
                     feature: feature,
-                    freshness: now
+                    freshness: now,
                 })
-                somethingChanged = true;
+                somethingChanged = true
             }
 
             for (const change of changes) {
                 if (seenChanges.has(change)) {
                     // Already handled
-                    continue;
+                    continue
                 }
                 seenChanges.add(change)
 
@@ -59,38 +60,36 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                     // For this, we introspect the change
                     if (allElementStorage.has(change.type + "/" + change.id)) {
                         // The current point already exists, we don't have to do anything here
-                        continue;
+                        continue
                     }
                     console.debug("Detected a reused point")
                     // The 'allElementsStore' does _not_ have this point yet, so we have to create it
-                    OsmObject.DownloadObjectAsync(change.type + "/" + change.id).then(feat => {
+                    OsmObject.DownloadObjectAsync(change.type + "/" + change.id).then((feat) => {
                         console.log("Got the reused point:", feat)
                         for (const kv of change.tags) {
                             feat.tags[kv.k] = kv.v
                         }
-                        const geojson = feat.asGeoJson();
+                        const geojson = feat.asGeoJson()
                         allElementStorage.addOrGetElement(geojson)
-                        self.features.data.push({feature: geojson, freshness: new Date()})
+                        self.features.data.push({ feature: geojson, freshness: new Date() })
                         self.features.ping()
                     })
                     continue
-
-
                 } else if (change.id < 0 && change.changes === undefined) {
                     // The geometry is not described - not a new point
                     if (change.id < 0) {
                         console.error("WARNING: got a new point without geometry!")
                     }
-                    continue;
+                    continue
                 }
 
-
                 try {
-                    const tags = {}
+                    const tags: OsmTags & {id: OsmId & string} = {
+                        id: <OsmId & string>(change.type + "/" + change.id),
+                    }
                     for (const kv of change.tags) {
                         tags[kv.k] = kv.v
                     }
-                    tags["id"] = change.type + "/" + change.id
 
                     tags["_backend"] = backendUrl
 
@@ -102,30 +101,31 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                             n.lon = change.changes["lon"]
                             const geojson = n.asGeoJson()
                             add(geojson)
-                            break;
+                            break
                         case "way":
                             const w = new OsmWay(change.id)
                             w.tags = tags
                             w.nodes = change.changes["nodes"]
-                            w.coordinates = change.changes["coordinates"].map(([lon, lat]) => [lat, lon])
+                            w.coordinates = change.changes["coordinates"].map(([lon, lat]) => [
+                                lat,
+                                lon,
+                            ])
                             add(w.asGeoJson())
-                            break;
+                            break
                         case "relation":
                             const r = new OsmRelation(change.id)
                             r.tags = tags
                             r.members = change.changes["members"]
                             add(r.asGeoJson())
-                            break;
+                            break
                     }
                 } catch (e) {
                     console.error("Could not generate a new geometry to render on screen for:", e)
                 }
-
             }
             if (somethingChanged) {
                 self.features.ping()
             }
         })
     }
-
 }

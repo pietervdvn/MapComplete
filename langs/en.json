@@ -39,6 +39,47 @@
         "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
         "reload": "Reload the data"
     },
+    "flyer": {
+        "aerial": "This map uses a different background, namely aerial imagery by Agentschap Informatie Vlaanderen",
+        "callToAction": "Test it on mapcomplete.osm.be",
+        "cyclofix": "Bicycle pumps, repair stations, drinking water and cycle shops are on cyclofix",
+        "description": "An A4-landscape flyer to promote MapComplete",
+        "editing": {
+            "ex": "A simplified example of what this looks like for a nature reserve is shown below.",
+            "intro": "The user is greeted by a map with feature. Upon selecting one, the information about that feature is shown.",
+            "title": "What does the interface look like?"
+        },
+        "examples": "There are many thematic maps available of which a few are printed here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,... Discover them all on mapcomplete.osm.be  ",
+        "fakeui": {
+            "add_images": "Add images with a few clicks",
+            "attributes": "Shows attributes in a friendly way",
+            "edit": "Wrong or outdated info? The edit button is right there",
+            "question": "If an attribute is not yet known, MapComplete shows a question",
+            "see_images": "Shows images from previous contributors, Wikipedia, Mapillary, ...   ",
+            "wikipedia": "Linked Wikipedia articles are shown"
+        },
+        "frontParagraph": "MapComplete is an easy to use web application to collect geodata in OpenStreetMap, enabling collecting and managing relevant data in an open, crowdsourced and reusable way.\n\nNew categories and attributes can be added upon request.",
+        "lines_too": "Lines and polygons are shown too. Attributes and images can be added and updated on those objects as well.",
+        "mapcomplete": {
+            "customize": "MapComplete can be tailored to your needs, with new map layers, new functionalities or styled with your organisations colours and font.\nWe also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.",
+            "intro": "MapComplete is a website which has {mapCount} interactive maps. Every single map allows to add or update information. It has many features:",
+            "li0": "Show where POI are",
+            "li1": "Add new points and update information on existing points",
+            "li2": "Add contact information and opening hours easily",
+            "li3": "Can be placed in other websites as iFrame",
+            "li4": "Embedded within the OpenStreetMap-ecosystem, which has many tools available",
+            "li5": "Functionality to import existing datasets",
+            "li6": "Many advanced features, such as tree detection and advanced input methods",
+            "li7": "Fully open source (GPL) and free to use",
+            "title": "What is MapComplete?"
+        },
+        "onwheels": "Indoor maps for wheelchair users are available as well.",
+        "osm": "OpenStreetMap is an online map which can be edited and reused by anyone for any purpose as long as attribution is given and the data is kept open.\n\nIt is the biggest geospatial database in the world and is reused by thousands of applications and websites.",
+        "tagline": "Collect geodata easily with OpenStreetMap",
+        "title": "MapComplete.osm.be",
+        "toerisme_vlaanderen": "For joint project with Visit Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnictables and spotted 100 charging station for bicycles.",
+        "whatIsOsm": "What is OpenStreetMap?"
+    },
     "general": {
         "about": "Easily edit and add OpenStreetMap for a certain theme",
         "aboutMapcomplete": "<h3>About</h3><p>Use MapComplete to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. In most themes you can add pictures or even leave a review. The <b>theme maintainer</b> defines elements, questions and languages for it.</p><h3>Find out more</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.<ul><li>When embedded in a website, the iframe links to a full-screen MapComplete.</li><li>The fullscreen version offers info about OpenStreetMap.</li><li>Viewing works without login, but editing requires an OSM account.</li><li>If you are not logged in, you are asked to do so</li><li>Once you answered a single question, you can add new features to the map</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul></p><br/><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a> </p><p> Want to see <b>your progress</b>? Follow the edit count on <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
@@ -353,20 +394,20 @@
         },
         "conflationChecker": {
             "cacheExpired": "Cache was expired",
-            "downloadOverpassData": "Download the loaded GeoJSON from overpass",
+            "downloadOverpassData": "Download the loaded GeoJSON from Overpass",
             "importCandidatesCount": "The {count} red elements on the following map are all your import candidates.",
             "loadedDataAge": "Loaded data is from the cache and is {age} old",
             "mapShowingNearbyIntro": "The following map shows features to import which have an OSM-feature within ",
             "nearbyWarn": "The {count} red elements on the following map will <b>not</b> be imported!",
             "nothingLoaded": "No elements are loaded from OpenStreetMap which match the current layer {name}",
             "osmLoaded": "{count} elements are loaded from OpenStreetMap which match the layer <b>{name}</b>.",
-            "reloadTheCache": "Clear the cache and query overpass again",
+            "reloadTheCache": "Clear the cache and query Overpass again",
             "setRangeToZero": "Set the range to 0 or 1 if you want to import them all",
             "showOsmLayerInConflationMap": "Show the OSM data",
             "states": {
-                "error": "Could not load latest data from overpass due to {error}",
+                "error": "Could not load latest data from Overpass due to {error}",
                 "idle": "Checking local storage…",
-                "running": "Querying overpass…",
+                "running": "Querying Overpass…",
                 "unexpected": "Unexpected state {state}"
             },
             "title": "Compare with existing data",

@@ -1,6 +1,5 @@
-import * as fs from "fs";
-import {OH} from "../UI/OpeningHours/OpeningHours";
-
+import * as fs from "fs"
+import { OH } from "../UI/OpeningHours/OpeningHours"
 
 function extractValue(vs: { __value }[]) {
     if (vs === undefined) {
@@ -10,11 +9,10 @@ function extractValue(vs: { __value }[]) {
         if ((v.__value ?? "") === "") {
             continue
         }
-        return v.__value;
+        return v.__value
     }
     return undefined
 }
-
 
 function extract_oh_block(days): string {
     const oh = []
@@ -23,7 +21,7 @@ function extract_oh_block(days): string {
         const block = day.time_block[0]
         const from = block.time_from.substr(0, 5)
         const to = block.time_until.substr(0, 5)
-        const by_appointment = block.by_appointment ? " \"by appointment\"" : ""
+        const by_appointment = block.by_appointment ? ' "by appointment"' : ""
         oh.push(`${abbr} ${from}-${to}${by_appointment}`)
     }
     return oh.join("; ")
@@ -32,7 +30,7 @@ function extract_oh_block(days): string {
 function extract_oh(opening_periods) {
     const rules = []
     if (opening_periods === undefined) {
-        return undefined;
+        return undefined
     }
     for (const openingPeriod of opening_periods.opening_period ?? []) {
         let rule = extract_oh_block(openingPeriod.days)
@@ -51,17 +49,19 @@ function rewrite(obj, key) {
     obj[key] = extractValue(obj[key]["value"])
 }
 
-const stuff = fs.readFileSync("/home/pietervdvn/Documents/Freelance/ToerismeVlaanderen 2021-09/TeImporteren/allchannels-bike_rental.json", "UTF8")
+const stuff = fs.readFileSync(
+    "/home/pietervdvn/Documents/Freelance/ToerismeVlaanderen 2021-09/TeImporteren/allchannels-bike_rental.json",
+    "UTF8"
+)
 const data: any[] = JSON.parse(stuff)
 
 const results: {
     geometry: {
-        type: "Point",
+        type: "Point"
         coordinates: [number, number]
-    },
-    type: "Feature",
+    }
+    type: "Feature"
     properties: any
-
 }[] = []
 const skipped = []
 console.log("[")
@@ -77,7 +77,11 @@ for (const item of data) {
         skipped.push(item)
         continue
     }
-    const toDelete = ["id", "uuid", "update_date", "creation_date",
+    const toDelete = [
+        "id",
+        "uuid",
+        "update_date",
+        "creation_date",
         "deleted",
         "aborted",
         "partner_id",
@@ -85,7 +89,7 @@ for (const item of data) {
         "winref",
         "winref_uuid",
         "root_product_type",
-        "parent"
+        "parent",
     ]
     for (const key of toDelete) {
         delete metadata[key]
@@ -111,7 +115,7 @@ for (const item of data) {
     metadata["phone"] = item.contact_info["telephone"] ?? item.contact_info["mobile"]
     metadata["email"] = item.contact_info["email_address"]
 
-    const links = item.links?.link?.map(l => l.url) ?? []
+    const links = item.links?.link?.map((l) => l.url) ?? []
     metadata["website"] = item.contact_info["website"] ?? links[0]
 
     delete item["links"]
@@ -127,7 +131,8 @@ for (const item of data) {
         console.error("Unkown product type: ", metadata["touristic_product_type"])
     }
 
-    const descriptions = item.descriptions?.description?.map(d => extractValue(d?.text?.value)) ?? []
+    const descriptions =
+        item.descriptions?.description?.map((d) => extractValue(d?.text?.value)) ?? []
     delete item.descriptions
     metadata["description"] = metadata["description"] ?? descriptions[0]
     if (item.price_info?.prices?.free == true) {
@@ -138,27 +143,24 @@ for (const item of data) {
         metadata.charge = extractValue(item.price_info?.extra_information?.value)
         const methods = item.price_info?.payment_methods?.payment_method
         if (methods !== undefined) {
-            methods.map(v => extractValue(v.value)).forEach(method => {
-                metadata["payment:" + method.toLowerCase()] = "yes"
-            })
+            methods
+                .map((v) => extractValue(v.value))
+                .forEach((method) => {
+                    metadata["payment:" + method.toLowerCase()] = "yes"
+                })
         }
         delete item.price_info
     } else if (item.price_info?.prices?.length === 0) {
         delete item.price_info
     }
 
-
     try {
-
         if (item.labels_info?.labels_own?.label[0]?.code === "Billenkar") {
             metadata.rental = "quadricycle"
             delete item.labels_info
         }
-    } catch (e) {
-
-    }
+    } catch (e) {}
     delete item["publishing_channels"]
-
 
     try {
         metadata["image"] = item.media.file[0].url[0]
@@ -167,7 +169,6 @@ for (const item of data) {
     }
     delete item.media
 
-
     const time_info = item.time_info?.time_info_regular
     if (time_info?.permantly_open === true) {
         metadata.opening_hours = "24/7"
@@ -175,7 +176,6 @@ for (const item of data) {
         metadata.opening_hours = extract_oh(time_info?.opening_periods)
     }
     delete item.time_info
-
 
     const properties = {}
     for (const key in metadata) {
@@ -189,22 +189,25 @@ for (const item of data) {
     results.push({
         geometry: {
             type: "Point",
-            coordinates: item.coordinates
+            coordinates: item.coordinates,
         },
         type: "Feature",
-        properties
+        properties,
     })
 
     delete item.coordinates
     delete item.properties
     console.log(JSON.stringify(item, null, "  ") + ",")
-
 }
 console.log("]")
-fs.writeFileSync("west-vlaanderen.geojson", JSON.stringify(
-    {
-        type: "FeatureCollection",
-        features: results
-    }
-    , null, "  "
-))
+fs.writeFileSync(
+    "west-vlaanderen.geojson",
+    JSON.stringify(
+        {
+            type: "FeatureCollection",
+            features: results,
+        },
+        null,
+        "  "
+    )
+)

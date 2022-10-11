@@ -93,7 +93,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Fries shop' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Fries shops')"
+      "description": "Layer 'Fries shop' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Fries shops')"
     },
     {
       "key": "email",
@@ -101,7 +101,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Fries shop' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Fries shops')"
+      "description": "Layer 'Fries shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Fries shops')"
     },
     {
       "key": "phone",
@@ -109,7 +109,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Fries shop' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Fries shops')"
+      "description": "Layer 'Fries shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Fries shops')"
     },
     {
       "key": "payment:cash",

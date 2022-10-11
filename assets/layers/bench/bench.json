@@ -70,7 +70,7 @@
             "pt_BR": "Encosto: Sim",
             "pt": "Encosto: Sim",
             "ca": "Respatller: sí",
-            "da": "Ryglæn: Ja"
+            "da": "Har et ryglæn"
           }
         },
         {
@@ -93,7 +93,7 @@
             "pt_BR": "Encosto: Não",
             "pt": "Encosto: Não",
             "ca": "Respatller: No",
-            "da": "Ryglæn: Nej"
+            "da": "Har <b>ikke</b> et ryglæn"
           }
         }
       ],
@@ -205,7 +205,7 @@
             "pt": "Material: madeira",
             "eo": "Materialo: ligna",
             "ca": "Material: fusta",
-            "da": "Materiale: træ"
+            "da": "Siddepladserne er lavet af træ"
           }
         },
         {
@@ -227,7 +227,7 @@
             "pt": "Material: metal",
             "eo": "Materialo: metala",
             "ca": "Material: metall",
-            "da": "Materiale: metal"
+            "da": "Sædet er lavet af metal"
           }
         },
         {
@@ -250,7 +250,7 @@
             "pt": "Material: pedra",
             "eo": "Materialo: ŝtona",
             "ca": "Material: pedra",
-            "da": "Materiale: sten"
+            "da": "Siddepladserne er lavet af sten"
           }
         },
         {
@@ -273,7 +273,7 @@
             "pt": "Material: concreto",
             "eo": "Materialo: betona",
             "ca": "Material: ciment",
-            "da": "Materiale: beton"
+            "da": "Siddepladserne er lavet af beton"
           }
         },
         {
@@ -296,7 +296,7 @@
             "pt": "Material: plástico",
             "eo": "Materialo: plasta",
             "ca": "Material: plàstic",
-            "da": "Materiale: plastik"
+            "da": "Sædet er lavet af plastik"
           }
         },
         {
@@ -319,7 +319,7 @@
             "pt": "Material: aço",
             "eo": "Materialo: ŝtala",
             "ca": "Material: acer",
-            "da": "Materiale: stål"
+            "da": "Siddepladserne er lavet af stål"
           }
         }
       ],

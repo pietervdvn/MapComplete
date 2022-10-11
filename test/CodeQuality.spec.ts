@@ -1,5 +1,5 @@
-import {describe} from 'mocha'
-import {exec} from "child_process";
+import { describe } from "mocha"
+import { exec } from "child_process"
 
 /**
  *
@@ -8,33 +8,51 @@ import {exec} from "child_process";
  * @private
  */
 function detectInCode(forbidden: string, reason: string) {
+    const excludedDirs = [
+        ".git",
+        "node_modules",
+        "dist",
+        ".cache",
+        ".parcel-cache",
+        "assets",
+        "vendor",
+        ".idea/",
+    ]
 
-    const excludedDirs = [".git", "node_modules", "dist", ".cache", ".parcel-cache", "assets", "vendor", ".idea/"]
+    exec(
+        'grep -n "' +
+            forbidden +
+            '" -r . ' +
+            excludedDirs.map((d) => "--exclude-dir=" + d).join(" "),
+        (error, stdout, stderr) => {
+            if (error?.message?.startsWith("Command failed: grep")) {
+                console.warn("Command failed!")
+                return
+            }
+            if (error !== null) {
+                throw error
+            }
+            if (stderr !== "") {
+                throw stderr
+            }
 
-    exec("grep -n \"" + forbidden + "\" -r . " + excludedDirs.map(d => "--exclude-dir=" + d).join(" "), ((error, stdout, stderr) => {
-        if (error?.message?.startsWith("Command failed: grep")) {
-            console.warn("Command failed!")
-            return;
+            const found = stdout
+                .split("\n")
+                .filter((s) => s !== "")
+                .filter((s) => !s.startsWith("./test/"))
+            if (found.length > 0) {
+                throw `Found a '${forbidden}' at \n    ${found.join("\n     ")}.\n ${reason}`
+            }
         }
-        if (error !== null) {
-            throw error
-
-        }
-        if (stderr !== "") {
-            throw stderr
-        }
-
-        const found = stdout.split("\n").filter(s => s !== "").filter(s => !s.startsWith("./test/"));
-        if (found.length > 0) {
-            throw `Found a '${forbidden}' at \n    ${found.join("\n     ")}.\n ${reason}`
-        }
-
-    }))
+    )
 }
 
 describe("Code quality", () => {
     it("should not contain reverse", () => {
-        detectInCode("reverse()", "Reverse is stateful and changes the source list. This often causes subtle bugs")
+        detectInCode(
+            "reverse()",
+            "Reverse is stateful and changes the source list. This often causes subtle bugs"
+        )
     })
 
     it("should not contain 'constructor.name'", () => {
@@ -42,8 +60,9 @@ describe("Code quality", () => {
     })
 
     it("should not contain 'innerText'", () => {
-        detectInCode("innerText", "innerText is not allowed as it is not testable with fakeDom. Use 'textContent' instead.")
+        detectInCode(
+            "innerText",
+            "innerText is not allowed as it is not testable with fakeDom. Use 'textContent' instead."
+        )
     })
-    
 })
-

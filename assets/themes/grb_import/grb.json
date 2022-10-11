@@ -12,7 +12,8 @@
     "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni.",
     "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",
     "fr": "Ce thème tente d’aider l’import automatique GRB.",
-    "es": "Este tema es un intento de automatizar la importación GRB."
+    "es": "Este tema es un intento de automatizar la importación GRB.",
+    "da": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen."
   },
   "icon": "./assets/themes/grb_import/logo.svg",
   "startLat": 51.0249,
@@ -115,7 +116,8 @@
             "de": "Was ist das für ein Gebäude?",
             "es": "¿Qué tipo de edificio es este?",
             "nl": "Wat voor soort gebouw is dit?",
-            "fr": "De quel type de bâtiment s’agit-il ?"
+            "fr": "De quel type de bâtiment s’agit-il ?",
+            "da": "Hvad er det for en bygning?"
           },
           "mappings": [
             {
@@ -500,7 +502,8 @@
                 "en": "Did not yet calculate the metatags... Reopen this popup",
                 "de": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen",
                 "nl": "Metatags nog niet berekend... Heropen deze pop-up",
-                "fr": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up"
+                "fr": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up",
+                "da": "Har endnu ikke beregnet metatags... Genåbn denne popup"
               }
             },
             {
@@ -517,7 +520,8 @@
                 "de": "Dieses Gebäude hat Löcher und ist als Relation modelliert. Als solches kann es nicht zusammengeführt werden. Es kann manuell zusammengeführt werden über die <a href='https://buildings.osm.be/#/'>Gebäudeexportseite</a> {open_in_josm()}",
                 "es": "Este edificio tiene agujeros y está modelado como una relación. Por lo tanto, no se puede combinar. Combínalo manualmente a través <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}",
                 "fr": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}",
-                "nl": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}"
+                "nl": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}",
+                "da": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}"
               }
             },
             {

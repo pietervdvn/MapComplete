@@ -1,19 +1,19 @@
-import {Store, UIEventSource} from "../UIEventSource";
-import FilteredLayer from "../../Models/FilteredLayer";
-import {BBox} from "../BBox";
-import {Feature, Geometry} from "@turf/turf";
-import {OsmFeature} from "../../Models/OsmFeature";
+import { Store, UIEventSource } from "../UIEventSource"
+import FilteredLayer from "../../Models/FilteredLayer"
+import { BBox } from "../BBox"
+import { Feature, Geometry } from "@turf/turf"
+import { OsmFeature } from "../../Models/OsmFeature"
 
 export default interface FeatureSource {
-    features: Store<{ feature: OsmFeature, freshness: Date }[]>;
+    features: Store<{ feature: OsmFeature; freshness: Date }[]>
     /**
      * Mainly used for debuging
      */
-    name: string;
+    name: string
 }
 
 export interface Tiled {
-    tileIndex: number,
+    tileIndex: number
     bbox: BBox
 }
 

@@ -167,6 +167,40 @@
           ]
         },
         {
+          "id": "made_before",
+          "options": [
+            {
+              "osmTags": "date<{search}",
+              "fields": [
+                {
+                  "name": "search",
+                  "type": "date"
+                }
+              ],
+              "question": {
+                "en": "Made before {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "made_after",
+          "options": [
+            {
+              "osmTags": "date>{search}",
+              "fields": [
+                {
+                  "name": "search",
+                  "type": "date"
+                }
+              ],
+              "question": {
+                "en": "Made after {search}"
+              }
+            }
+          ]
+        },
+        {
           "id": "locale-filter",
           "options": [
             {

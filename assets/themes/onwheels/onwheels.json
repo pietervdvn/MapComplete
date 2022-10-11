@@ -4,13 +4,15 @@
     "en": "OnWheels",
     "de": "Auf Rädern",
     "fr": "OnWheels",
-    "nl": "OnWheels"
+    "nl": "OnWheels",
+    "nb_NO": "På hjul"
   },
   "description": {
     "en": "On this map, publicly weelchair accessible places are shown and can be easily added",
     "de": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
     "fr": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
-    "nl": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants."
+    "nl": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
+    "da": "På dette kort vises steder, der er offentligt tilgængelige for kørestolsbrugere, og de kan nemt tilføjes"
   },
   "icon": "./assets/themes/onwheels/crest.svg",
   "startLat": 50.86622,
@@ -78,7 +80,8 @@
                   "en": "Any/No width info",
                   "de": "Beliebig/Keine Breiteninformationen",
                   "nl": "All kerbs",
-                  "fr": "Toute/aucune information sur la largeur"
+                  "fr": "Toute/aucune information sur la largeur",
+                  "da": "Eventuelle/ingen bredde info"
                 }
               },
               {
@@ -87,7 +90,8 @@
                   "en": "Without width info",
                   "de": "Beliebige Breiteninformationen",
                   "nl": "Geen breedtes gekend",
-                  "fr": "Pas d’information sur la largeur"
+                  "fr": "Pas d’information sur la largeur",
+                  "da": "Uden bredde info"
                 }
               }
             ]
@@ -129,7 +133,8 @@
                   "en": "All types of kerbs",
                   "nl": "Alle typen stoepranden",
                   "de": "Alle Arten von Bordsteinen",
-                  "fr": "Tous types de ressauts"
+                  "fr": "Tous types de ressauts",
+                  "da": "Alle typer kantsten"
                 }
               },
               {
@@ -138,7 +143,8 @@
                   "en": "Raised kerb (>3 cm)",
                   "nl": "Hoge stoeprand (>3 cm)",
                   "de": "Erhöhter Bordstein (>3 cm)",
-                  "fr": "Ressaut surélevé (> 3 cm)"
+                  "fr": "Ressaut surélevé (> 3 cm)",
+                  "da": "Hævet kantsten (>3 cm)"
                 }
               },
               {
@@ -147,7 +153,8 @@
                   "en": "Lowered kerb (~3 cm)",
                   "nl": "Verlaagde stoeprand (~3 cm)",
                   "de": "Abgesenkter Bordstein (~3 cm)",
-                  "fr": "Ressaut abaissé (~ 3 cm)"
+                  "fr": "Ressaut abaissé (~ 3 cm)",
+                  "da": "Sænket kantsten (~3 cm)"
                 }
               },
               {
@@ -156,7 +163,8 @@
                   "en": "Flush kerb (~0cm)",
                   "nl": "Vlakke stoeprand (~0cm)",
                   "de": "Bündiger Bordstein (~0cm)",
-                  "fr": "Ressaut à niveau (~ 0 cm)"
+                  "fr": "Ressaut à niveau (~ 0 cm)",
+                  "da": "Skyl kantsten (~0 cm)"
                 }
               }
             ]
@@ -313,7 +321,9 @@
           "render": {
             "en": "Statistics",
             "de": "Statistik",
-            "fr": "Statistiques"
+            "fr": "Statistiques",
+            "da": "Statistikker",
+            "nb_NO": "Statistikk"
           }
         },
         "tagRenderings": [
@@ -347,7 +357,9 @@
                 "text": {
                   "en": "Import",
                   "de": "Import",
-                  "fr": "Importation"
+                  "fr": "Importation",
+                  "da": "Importere",
+                  "nb_NO": "Importer"
                 },
                 "icon": "./assets/svg/addSmall.svg",
                 "location_picker": "photo",
@@ -365,7 +377,9 @@
                 "message": {
                   "en": "Add all the suggested tags",
                   "de": "Alle vorgeschlagenen Tags hinzufügen",
-                  "fr": "Ajouter tous les attributs suggérés"
+                  "fr": "Ajouter tous les attributs suggérés",
+                  "da": "Tilføj alle de foreslåede tags",
+                  "nb_NO": "Legg til alle foreslåtte"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "id_of_object_to_apply_this_one": "_closest_osm_hotel"

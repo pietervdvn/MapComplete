@@ -1,0 +1,132 @@
+{
+  "id": "osm_community_index",
+  "name": {
+    "en": "OSM Community Index"
+  },
+  "title": {
+    "render": {
+      "en": "OSM Community Index"
+    }
+  },
+  "source": {
+    "geoJson": "https://raw.githubusercontent.com/osmlab/osm-community-index/main/dist/completeFeatureCollection.json",
+    "osmTags": "resources~*",
+    "isOsmCache": false
+  },
+  "calculatedTags": [
+    "_community_links=Object.values(JSON.parse(feat.properties.resources || '{}')).map(value =>{return value.resolved.nameHTML + '<br>&emsp;' + value.resolved.descriptionHTML}).join('<br>')"
+  ],
+  "tagRenderings": [
+    {
+      "id": "country_name",
+      "condition": "level=country",
+      "render": "{nameEn} {emojiFlag}",
+      "description": "The name of the country"
+    },
+    {
+      "id": "community_links",
+      "render": "{_community_links}",
+      "condition": "_community_links~*",
+      "description": "Community Links (Discord, meetups, Slack groups, IRC channels, mailing lists etc...)"
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "pin:#6BC4F7;./assets/layers/osm_community_index/osm.svg"
+      },
+      "iconSize": "40,40,bottom",
+      "location": [
+        "point"
+      ]
+    },
+    {
+      "color": "#444444",
+      "width": {
+        "render": "1"
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "country",
+      "options": [
+        {
+          "question": {
+            "en": "Country"
+          },
+          "osmTags": "level=country"
+        }
+      ]
+    },
+    {
+      "id": "sub_country",
+      "options": [
+        {
+          "question": {
+            "en": "Sub Country Group"
+          },
+          "osmTags": "level=subcountryGroup"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "options": [
+        {
+          "question": {
+            "en": "Region"
+          },
+          "osmTags": "level=region"
+        }
+      ]
+    },
+    {
+      "id": "intermediate_region",
+      "options": [
+        {
+          "question": {
+            "en": "Intermediate Region"
+          },
+          "osmTags": "level=intermediateRegion"
+        }
+      ]
+    },
+    {
+      "id": "territory",
+      "options": [
+        {
+          "question": {
+            "en": "Territory"
+          },
+          "osmTags": "level=territory"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "options": [
+        {
+          "question": {
+            "en": "World"
+          },
+          "osmTags": "level=world"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "options": [
+        {
+          "question": {
+            "en": "Other Communities"
+          },
+          "osmTags": "level="
+        }
+      ]
+    }
+  ],
+  "description": {
+    "en": "A layer showing the OpenStreetMap Communities"
+  }
+}

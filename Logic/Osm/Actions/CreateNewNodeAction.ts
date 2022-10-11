@@ -1,13 +1,12 @@
-import {Tag} from "../../Tags/Tag";
-import {OsmCreateAction} from "./OsmChangeAction";
-import {Changes} from "../Changes";
-import {ChangeDescription} from "./ChangeDescription";
-import {And} from "../../Tags/And";
-import {OsmWay} from "../OsmObject";
-import {GeoOperations} from "../../GeoOperations";
+import { Tag } from "../../Tags/Tag"
+import { OsmCreateAction } from "./OsmChangeAction"
+import { Changes } from "../Changes"
+import { ChangeDescription } from "./ChangeDescription"
+import { And } from "../../Tags/And"
+import { OsmWay } from "../OsmObject"
+import { GeoOperations } from "../../GeoOperations"
 
 export default class CreateNewNodeAction extends OsmCreateAction {
-
     /**
      * Maps previously created points onto their assigned ID, to reuse the point if uplaoded
      * "lat,lon" --> id
@@ -15,46 +14,47 @@ export default class CreateNewNodeAction extends OsmCreateAction {
     private static readonly previouslyCreatedPoints = new Map<string, number>()
     public newElementId: string = undefined
     public newElementIdNumber: number = undefined
-    private readonly _basicTags: Tag[];
-    private readonly _lat: number;
-    private readonly _lon: number;
-    private readonly _snapOnto: OsmWay;
-    private readonly _reusePointDistance: number;
-    private meta: { changeType: "create" | "import"; theme: string; specialMotivation?: string };
-    private readonly _reusePreviouslyCreatedPoint: boolean;
+    private readonly _basicTags: Tag[]
+    private readonly _lat: number
+    private readonly _lon: number
+    private readonly _snapOnto: OsmWay
+    private readonly _reusePointDistance: number
+    private readonly meta: { changeType: "create" | "import"; theme: string; specialMotivation?: string }
+    private readonly _reusePreviouslyCreatedPoint: boolean
 
-    
-    constructor(basicTags: Tag[],
-                lat: number, lon: number,
-                options: {
-                    allowReuseOfPreviouslyCreatedPoints?: boolean,
-                    snapOnto?: OsmWay,
-                    reusePointWithinMeters?: number,
-                    theme: string,
-                    changeType: "create" | "import" | null,
-                    specialMotivation?: string
-                }) {
+    constructor(
+        basicTags: Tag[],
+        lat: number,
+        lon: number,
+        options: {
+            allowReuseOfPreviouslyCreatedPoints?: boolean
+            snapOnto?: OsmWay
+            reusePointWithinMeters?: number
+            theme: string
+            changeType: "create" | "import" | null
+            specialMotivation?: string
+        }
+    ) {
         super(null, basicTags !== undefined && basicTags.length > 0)
-        this._basicTags = basicTags;
-        this._lat = lat;
-        this._lon = lon;
+        this._basicTags = basicTags
+        this._lat = lat
+        this._lon = lon
         if (lat === undefined || lon === undefined) {
             throw "Lat or lon are undefined!"
         }
-        this._snapOnto = options?.snapOnto;
+        this._snapOnto = options?.snapOnto
         this._reusePointDistance = options?.reusePointWithinMeters ?? 1
-        this._reusePreviouslyCreatedPoint = options?.allowReuseOfPreviouslyCreatedPoints ?? (basicTags.length === 0)
+        this._reusePreviouslyCreatedPoint =
+            options?.allowReuseOfPreviouslyCreatedPoints ?? basicTags.length === 0
         this.meta = {
             theme: options.theme,
             changeType: options.changeType,
-            specialMotivation: options.specialMotivation
+            specialMotivation: options.specialMotivation,
         }
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-
         if (this._reusePreviouslyCreatedPoint) {
-
             const key = this._lat + "," + this._lon
             const prev = CreateNewNodeAction.previouslyCreatedPoints
             if (prev.has(key)) {
@@ -64,17 +64,23 @@ export default class CreateNewNodeAction extends OsmCreateAction {
             }
         }
 
-
         const id = changes.getNewID()
         const properties = {
-            id: "node/" + id
+            id: "node/" + id,
         }
         this.setElementId(id)
         for (const kv of this._basicTags) {
             if (typeof kv.value !== "string") {
-                throw "Invalid value: don't use non-string value in a preset. The tag "+kv.key+"="+kv.value+" is not a string, the value is a "+typeof kv.value
+                throw (
+                    "Invalid value: don't use non-string value in a preset. The tag " +
+                    kv.key +
+                    "=" +
+                    kv.value +
+                    " is not a string, the value is a " +
+                    typeof kv.value
+                )
             }
-            properties[kv.key] = kv.value;
+            properties[kv.key] = kv.value
         }
 
         const newPointChange: ChangeDescription = {
@@ -83,32 +89,31 @@ export default class CreateNewNodeAction extends OsmCreateAction {
             id: id,
             changes: {
                 lat: this._lat,
-                lon: this._lon
+                lon: this._lon,
             },
-            meta: this.meta
+            meta: this.meta,
         }
         if (this._snapOnto === undefined) {
             return [newPointChange]
         }
 
-
         // Project the point onto the way
         console.log("Snapping a node onto an existing way...")
         const geojson = this._snapOnto.asGeoJson()
         const projected = GeoOperations.nearestPoint(geojson, [this._lon, this._lat])
-       const projectedCoor=     <[number, number]>projected.geometry.coordinates
+        const projectedCoor = <[number, number]>projected.geometry.coordinates
         const index = projected.properties.index
         // We check that it isn't close to an already existing point
-        let reusedPointId = undefined;
-        let outerring : [number,number][];
-        
-        if(geojson.geometry.type === "LineString"){
-           outerring = <[number, number][]> geojson.geometry.coordinates
-        }else if(geojson.geometry.type === "Polygon"){
-           outerring =<[number, number][]>  geojson.geometry.coordinates[0]
+        let reusedPointId = undefined
+        let outerring: [number, number][]
+
+        if (geojson.geometry.type === "LineString") {
+            outerring = <[number, number][]>geojson.geometry.coordinates
+        } else if (geojson.geometry.type === "Polygon") {
+            outerring = <[number, number][]>geojson.geometry.coordinates[0]
         }
-        
-        const prev= outerring[index]
+
+        const prev = outerring[index]
         if (GeoOperations.distanceBetween(prev, projectedCoor) < this._reusePointDistance) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index]
@@ -120,20 +125,24 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         }
         if (reusedPointId !== undefined) {
             this.setElementId(reusedPointId)
-            return [{
-                tags: new And(this._basicTags).asChange(properties),
-                type: "node",
-                id: reusedPointId,
-                meta: this.meta
-            }]
+            return [
+                {
+                    tags: new And(this._basicTags).asChange(properties),
+                    type: "node",
+                    id: reusedPointId,
+                    meta: this.meta,
+                },
+            ]
         }
 
-        const locations = [...this._snapOnto.coordinates.map(([lat, lon]) =><[number,number]> [lon, lat])]
+        const locations = [
+            ...this._snapOnto.coordinates.map(([lat, lon]) => <[number, number]>[lon, lat]),
+        ]
         const ids = [...this._snapOnto.nodes]
 
         locations.splice(index + 1, 0, [this._lon, this._lat])
         ids.splice(index + 1, 0, id)
-        
+
         // Allright, we have to insert a new point in the way
         return [
             newPointChange,
@@ -142,15 +151,15 @@ export default class CreateNewNodeAction extends OsmCreateAction {
                 id: this._snapOnto.id,
                 changes: {
                     coordinates: locations,
-                    nodes: ids
+                    nodes: ids,
                 },
-                meta: this.meta
-            }
+                meta: this.meta,
+            },
         ]
     }
 
     private setElementId(id: number) {
-        this.newElementIdNumber = id;
+        this.newElementIdNumber = id
         this.newElementId = "node/" + id
         if (!this._reusePreviouslyCreatedPoint) {
             return
@@ -158,6 +167,4 @@ export default class CreateNewNodeAction extends OsmCreateAction {
         const key = this._lat + "," + this._lon
         CreateNewNodeAction.previouslyCreatedPoints.set(key, id)
     }
-
-
 }

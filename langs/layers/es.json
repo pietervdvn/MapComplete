@@ -131,10 +131,6 @@
             "artwork-website": {
                 "question": "¿Hay un sitio web con más información sobre esta obra de arte?",
                 "render": "Más información en <a href='{website}' target='_blank'>este sitio web</a>"
-            },
-            "artwork-wikidata": {
-                "question": "¿Qué entrada de Wikidata se corresponde con <b>esta obra de arte</b>?",
-                "render": "Se corresponde con <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -583,9 +579,6 @@
                     },
                     "1": {
                         "then": "Gratis"
-                    },
-                    "2": {
-                        "then": "El servicio de limpieza tiene una tarifa"
                     }
                 },
                 "question": "¿Cuánto cuesta utilizar el servicio de limpieza?",
@@ -598,9 +591,6 @@
                     },
                     "1": {
                         "then": "Gratis"
-                    },
-                    "2": {
-                        "then": "El servicio de limpieza tiene una tasa, pero la cantidad se desconoce"
                     }
                 },
                 "question": "¿Cuánto cuesta utilizar el servicio de limpieza?",
@@ -1117,15 +1107,6 @@
             }
         },
         "description": "Una capa que muestra cafeterías y bares donde uno se puede reunir con una bebida. La capa hace algunas preguntas relevantes",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Abiert oahora"
-                    }
-                }
-            }
-        },
         "name": "Cafeterías y bares",
         "presets": {
             "0": {
@@ -2308,6 +2289,31 @@
             "render": "Extintores"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Abierta ahora"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Acepta efectivo"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Acepta el pago por tarjeta"
+                    }
+                }
+            }
+        }
+    },
     "fire_station": {
         "description": "Capa del mapa que muestra parques de bomberos.",
         "name": "Mapa de parques de bomberos",
@@ -2348,13 +2354,6 @@
         },
         "description": "Una capa que muestra restaurantes y facilidades de comida rápida",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Abierta ahora"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -2373,20 +2372,6 @@
                 "options": {
                     "0": {
                         "question": "Tiene menú halah"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Acepta efectivo"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Acepta tarjetas de pago"
                     }
                 }
             }
@@ -2999,17 +2984,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualmente abierta"
-                    }
-                }
-            }
-        }
-    },
     "parking": {
         "description": "Una capa que muestra aparcamientos para coches",
         "name": "Aparcamiento",
@@ -3149,15 +3123,6 @@
     },
     "postoffices": {
         "description": "Una capa que muestra oficinas de correo.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualmente abierta"
-                    }
-                }
-            }
-        },
         "name": "Oficinas de correo",
         "presets": {
             "0": {
@@ -3222,13 +3187,6 @@
     "recycling": {
         "description": "Una capa con contenedores y centros de reciclaje",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualmente abierto"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -3407,31 +3365,17 @@
         },
         "description": "Una tienda",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Solo mostrar tiendas que vendan {search}"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Solo mostrar tiendas con nombre {search}"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Acepta efectivo"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Acepta el pago por tarjeta"
+                        "question": "Solo mostrar tiendas con nombre {search}"
                     }
                 }
             }

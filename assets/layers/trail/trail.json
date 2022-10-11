@@ -6,7 +6,8 @@
     "ru": "Тропы",
     "de": "Wanderwege",
     "fr": "Sentiers",
-    "ca": "Camins"
+    "ca": "Camins",
+    "da": "Stier"
   },
   "minzoom": 12,
   "source": {
@@ -30,7 +31,8 @@
       "ru": "Тропа",
       "de": "Wanderweg",
       "fr": "Sentier",
-      "ca": "Camí"
+      "ca": "Camí",
+      "da": "Sti"
     },
     "mappings": [
       {
@@ -47,7 +49,8 @@
         "en": "The trail is {_length:km} kilometers long",
         "nl": "Deze wandeling is {_length:km} kilometer lang",
         "de": "Der Wanderweg ist {_length:km} Kilometer lang",
-        "fr": "Le sentier fait {_length:km} kilomètres de long"
+        "fr": "Le sentier fait {_length:km} kilomètres de long",
+        "da": "Stien er {_length:km} kilometer lang"
       }
     },
     {
@@ -123,7 +126,8 @@
             "nl": "Blauwe wandeling",
             "en": "Blue trail",
             "de": "Blauer Weg",
-            "fr": "Sentier bleu"
+            "fr": "Sentier bleu",
+            "da": "Blå sti"
           }
         },
         {
@@ -132,7 +136,8 @@
             "nl": "Rode wandeling",
             "en": "Red trail",
             "de": "Roter Weg",
-            "fr": "Sentier rouge"
+            "fr": "Sentier rouge",
+            "da": "Rød sti"
           }
         },
         {
@@ -141,7 +146,8 @@
             "nl": "Groene wandeling",
             "en": "Green trail",
             "de": "Grüner Weg",
-            "fr": "Sentier vert"
+            "fr": "Sentier vert",
+            "da": "Grøn sti"
           }
         },
         {
@@ -150,7 +156,8 @@
             "nl": "Gele wandeling",
             "en": "Yellow trail",
             "de": "Gelber Weg",
-            "fr": "Sentier jaune"
+            "fr": "Sentier jaune",
+            "da": "Gul sti"
           }
         }
       ],

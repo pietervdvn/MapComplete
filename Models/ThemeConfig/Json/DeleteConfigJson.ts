@@ -1,7 +1,6 @@
-import {TagConfigJson} from "./TagConfigJson";
+import { TagConfigJson } from "./TagConfigJson"
 
 export interface DeleteConfigJson {
-
     /***
      * By default, three reasons to delete a point are shown:
      *
@@ -21,7 +20,7 @@ export interface DeleteConfigJson {
         /**
          * The text that will be shown to the user - translatable
          */
-        explanation: string | any,
+        explanation: string | any
         /**
          * The text that will be uploaded into the changeset or will be used in the fixme in case of a soft deletion
          * Should be a few words, in english
@@ -41,12 +40,12 @@ export interface DeleteConfigJson {
          * The tags that will be given to the object.
          * This must remove tags so that the 'source/osmTags' won't match anymore
          */
-        if: TagConfigJson,
+        if: TagConfigJson
         /**
          * The human explanation for the options
          */
-        then: string | any,
-    }[],
+        then: string | any
+    }[]
 
     /**
      * In some cases, the contributor is not allowed to delete the current feature (e.g. because it isn't a point, the point is referenced by a relation or the user isn't experienced enough).
@@ -67,11 +66,10 @@ export interface DeleteConfigJson {
      * }
      * ```
      */
-    softDeletionTags?: TagConfigJson,
+    softDeletionTags?: TagConfigJson
     /***
      * By default, the contributor needs 20 previous changesets to delete points edited by others.
      * For some small features (e.g. bicycle racks) this is too much and this requirement can be lowered or dropped, which can be done here.
      */
     neededChangesets?: number
-
 }

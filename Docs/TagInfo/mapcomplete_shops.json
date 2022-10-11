@@ -848,7 +848,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Shop' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Shop' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "email",
@@ -856,7 +856,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Shop' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "phone",
@@ -864,7 +864,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Shop' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "payment:cash",
@@ -1014,7 +1014,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'pharmacy' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'pharmacy' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "email",
@@ -1022,7 +1022,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'pharmacy' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'pharmacy' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "website",
@@ -1030,7 +1030,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'pharmacy' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'pharmacy' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "wheelchair",

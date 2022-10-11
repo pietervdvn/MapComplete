@@ -42,6 +42,7 @@
                         "render": "Dette stedet tar {charge}"
                     },
                     "caravansites-description": {
+                        "question": "Vil du legge til en generell beskrivelse av dette stedet? (Ikke gjenta info det har blitt spurt om eller som vises ovenfor. Hold det objektivt. Meninger henvises til vurderingene.)",
                         "render": "Flere detaljer om dette stedet: {description}"
                     },
                     "caravansites-fee": {
@@ -87,6 +88,9 @@
                             },
                             "1": {
                                 "then": "Det er ingen permanente gjester her"
+                            },
+                            "2": {
+                                "then": "Det er kun mulig å bo her hvis man har en langtidskontrakt (dette stedet vil forsvinne fra kartet hvis du velger dette)"
                             }
                         },
                         "question": "Tilbyr dette stedet plasser for langtidsleie?"
@@ -142,6 +146,10 @@
         },
         "overrideAll": {
             "tagRenderings+": {
+                "0": {
+                    "question": "Hvem driver dette stedet?",
+                    "render": "Dette stedet drives av {operator}"
+                },
                 "1": {
                     "mappings": {
                         "0": {
@@ -257,19 +265,19 @@
                         "0": {
                             "then": "Denne gaten er en sykkelvei (og har en fartsgrense på 30 km/t)"
                         },
-                        "1": {
+                        "3": {
                             "then": "Denne gaten er en sykkelvei"
                         },
-                        "2": {
+                        "4": {
                             "then": "Denne gaten vil bli sykkelvei ganske snart"
                         },
-                        "3": {
+                        "6": {
                             "then": "Denne gaten er ikke en sykkelvei"
                         }
                     },
                     "question": "Er <b>{name}</b>-gaten en sykkelgate?"
                 },
-                "1": {
+                "2": {
                     "question": "Når vil denne gaten bli en sykkelgate?",
                     "render": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}"
                 }
@@ -287,6 +295,46 @@
     },
     "education": {
         "title": "Utdanning"
+    },
+    "etymology": {
+        "layers": {
+            "1": {
+                "override": {
+                    "=name": "Gater uten etymologi-info"
+                }
+            },
+            "2": {
+                "override": {
+                    "=name": "Parker og skoger uten etymologi-info"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Utdannelsesinstitusjoner uten etymologi-info"
+                }
+            },
+            "4": {
+                "override": {
+                    "=name": "Kulturelle steder uten etymologi-info"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Turiststeder uten etymologi-info"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "Helse- og sosiale steder uten etymologi-info"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Sportssteder uten etymologi-info"
+                }
+            }
+        },
+        "title": "Åpent etymologikart"
     },
     "facadegardens": {
         "layers": {
@@ -370,8 +418,18 @@
     "hailhydrant": {
         "title": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner."
     },
+    "hotels": {
+        "description": "På dette kartet finner du hoteller der du er",
+        "title": "Hoteller"
+    },
+    "indoors": {
+        "title": "Innendørs"
+    },
     "maps": {
         "title": "Et kart over kart"
+    },
+    "nature": {
+        "title": "Inn i naturen"
     },
     "notes": {
         "title": "Notater på OpenStreetMap"
@@ -381,7 +439,40 @@
         "shortDescription": "Offentlig tilgjengelige tårn for å nyte utsikten",
         "title": "Observasjonstårn"
     },
+    "onwheels": {
+        "layers": {
+            "18": {
+                "override": {
+                    "=title": {
+                        "render": "Statistikk"
+                    }
+                }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importer"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Legg til alle foreslåtte"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "På hjul"
+    },
     "openwindpowermap": {
+        "description": "Et kart for visning og redigering av vindmøller.",
         "title": "ÅpentVindkraftKart"
     },
     "parkings": {
@@ -423,6 +514,7 @@
         "title": "Lekeplasser"
     },
     "postal_codes": {
+        "description": "Postnummer",
         "layers": {
             "0": {
                 "name": "postkoder",
@@ -436,7 +528,10 @@
                 }
             },
             "2": {
-                "name": "rådhus"
+                "name": "rådhus",
+                "title": {
+                    "render": "{name}-rådhuset"
+                }
             }
         },
         "shortDescription": "Postkoder",
@@ -472,6 +567,9 @@
                         "mappings": {
                             "0": {
                                 "then": "Denne gaten er belyst"
+                            },
+                            "1": {
+                                "then": "Gate uten belysning"
                             },
                             "2": {
                                 "then": "Denne gaten er belyst nattestid"
@@ -516,16 +614,23 @@
         "title": "Gatebelysning"
     },
     "surveillance": {
+        "shortDescription": "Overvåkningskameraer og andre typer overvåkning",
         "title": "Overvåkning under overvåkning"
     },
     "toilets": {
         "description": "Et kart over offentlige toaletter",
         "title": "Åpent toalettkart"
     },
+    "transit": {
+        "title": "Bussruter"
+    },
     "trees": {
         "description": "Kartlegg trærne.",
         "shortDescription": "Kartlegg alle trærne",
         "title": "Trær"
+    },
+    "walls_and_buildings": {
+        "title": "Murer og bygninger"
     },
     "waste": {
         "title": "Avfall"

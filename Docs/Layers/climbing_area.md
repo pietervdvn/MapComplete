@@ -42,13 +42,13 @@ Elements must have the all of following tags to be shown on this layer:
 
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>
-  - climbing!~^route$
-  - leisure!~^sports_centre$
+  - climbing!~^(route)$
+  - leisure!~^(sports_centre)$
   - climbing!=route_top
   - climbing!=route_bottom
 
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22climbing%22!~%22%5Eroute%24%22%5D%5B%22climbing%22!%3D%22route_top%22%5D%5B%22climbing%22!%3D%22route_bottom%22%5D%5B%22leisure%22!~%22%5Esports_centre%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22climbing%22!~%22%5E(route)%24%22%5D%5B%22climbing%22!%3D%22route_top%22%5D%5B%22climbing%22!%3D%22route_bottom%22%5D%5B%22leisure%22!~%22%5E(sports_centre)%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -125,7 +125,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `_contained_climbing_routes~^..*$`  is shown
+Only visible if  `_contained_climbing_routes~.+`  is shown
 
 
 
@@ -198,7 +198,7 @@ This is rendered with  <a href='{url}' target='_blank'>{url}</a>
 
 
 
-Only visible if  `leisure!~^sports_centre$&sport=climbing`  is shown
+Only visible if  `leisure!~^(sports_centre)$&sport=climbing`  is shown
 
 
 
@@ -235,7 +235,7 @@ The question is  Is bouldering possible here?
   - Bouldering is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>`
   - Bouldering is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>`
   - Bouldering is possible, allthough there are only a few routes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>`
-  - There are {climbing:boulder} boulder routes  corresponds with  `climbing:boulder~^..*$`
+  - There are {climbing:boulder} boulder routes  corresponds with  `climbing:boulder~.+`
   - This option cannot be chosen as answer
  
 

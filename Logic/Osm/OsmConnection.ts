@@ -1,153 +1,161 @@
-import osmAuth from "osm-auth";
-import {Store, Stores, UIEventSource} from "../UIEventSource";
-import {OsmPreferences} from "./OsmPreferences";
-import {ChangesetHandler} from "./ChangesetHandler";
-import {ElementStorage} from "../ElementStorage";
-import Svg from "../../Svg";
-import Img from "../../UI/Base/Img";
-import {Utils} from "../../Utils";
-import {OsmObject} from "./OsmObject";
-import {Changes} from "./Changes";
+import osmAuth from "osm-auth"
+import { Store, Stores, UIEventSource } from "../UIEventSource"
+import { OsmPreferences } from "./OsmPreferences"
+import { ChangesetHandler } from "./ChangesetHandler"
+import { ElementStorage } from "../ElementStorage"
+import Svg from "../../Svg"
+import Img from "../../UI/Base/Img"
+import { Utils } from "../../Utils"
+import { OsmObject } from "./OsmObject"
+import { Changes } from "./Changes"
 
 export default class UserDetails {
-
-    public loggedIn = false;
-    public name = "Not logged in";
-    public uid: number;
-    public csCount = 0;
-    public img: string;
-    public unreadMessages = 0;
-    public totalMessages = 0;
-    home: { lon: number; lat: number };
-    public backend: string;
+    public loggedIn = false
+    public name = "Not logged in"
+    public uid: number
+    public csCount = 0
+    public img: string
+    public unreadMessages = 0
+    public totalMessages = 0
+    home: { lon: number; lat: number }
+    public backend: string
 
     constructor(backend: string) {
-        this.backend = backend;
+        this.backend = backend
     }
 }
 
 export class OsmConnection {
-
     public static readonly oauth_configs = {
-        "osm": {
-            oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
-            oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-            url: "https://www.openstreetmap.org"
+        osm: {
+            oauth_consumer_key: "hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem",
+            oauth_secret: "wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI",
+            url: "https://www.openstreetmap.org",
         },
         "osm-test": {
-            oauth_consumer_key: 'Zgr7EoKb93uwPv2EOFkIlf3n9NLwj5wbyfjZMhz2',
-            oauth_secret: '3am1i1sykHDMZ66SGq4wI2Z7cJMKgzneCHp3nctn',
-            url: "https://master.apis.dev.openstreetmap.org"
-        }
-
-
+            oauth_consumer_key: "Zgr7EoKb93uwPv2EOFkIlf3n9NLwj5wbyfjZMhz2",
+            oauth_secret: "3am1i1sykHDMZ66SGq4wI2Z7cJMKgzneCHp3nctn",
+            url: "https://master.apis.dev.openstreetmap.org",
+        },
     }
-    public auth;
-    public userDetails: UIEventSource<UserDetails>;
+    public auth
+    public userDetails: UIEventSource<UserDetails>
     public isLoggedIn: Store<boolean>
-    public loadingStatus = new UIEventSource<"not-attempted" | "loading" | "error" | "logged-in">("not-attempted")
-    public preferencesHandler: OsmPreferences;
+    public loadingStatus = new UIEventSource<"not-attempted" | "loading" | "error" | "logged-in">(
+        "not-attempted"
+    )
+    public preferencesHandler: OsmPreferences
     public readonly _oauth_config: {
-        oauth_consumer_key: string,
-        oauth_secret: string,
+        oauth_consumer_key: string
+        oauth_secret: string
         url: string
-    };
-    private readonly _dryRun: UIEventSource<boolean>;
-    private fakeUser: boolean;
-    private _onLoggedIn: ((userDetails: UserDetails) => void)[] = [];
-    private readonly _iframeMode: Boolean | boolean;
-    private readonly _singlePage: boolean;
-    private isChecking = false;
+    }
+    private readonly _dryRun: UIEventSource<boolean>
+    private fakeUser: boolean
+    private _onLoggedIn: ((userDetails: UserDetails) => void)[] = []
+    private readonly _iframeMode: Boolean | boolean
+    private readonly _singlePage: boolean
+    private isChecking = false
 
     constructor(options: {
-                    dryRun?: UIEventSource<boolean>,
-                    fakeUser?: false | boolean,
-                    oauth_token?: UIEventSource<string>,
-                    // Used to keep multiple changesets open and to write to the correct changeset
-                    singlePage?: boolean,
-                    osmConfiguration?: "osm" | "osm-test",
-                    attemptLogin?: true | boolean
-                }
-    ) {
-        this.fakeUser = options.fakeUser ?? false;
-        this._singlePage = options.singlePage ?? true;
-        this._oauth_config = OsmConnection.oauth_configs[options.osmConfiguration ?? 'osm'] ?? OsmConnection.oauth_configs.osm;
+        dryRun?: UIEventSource<boolean>
+        fakeUser?: false | boolean
+        oauth_token?: UIEventSource<string>
+        // Used to keep multiple changesets open and to write to the correct changeset
+        singlePage?: boolean
+        osmConfiguration?: "osm" | "osm-test"
+        attemptLogin?: true | boolean
+    }) {
+        this.fakeUser = options.fakeUser ?? false
+        this._singlePage = options.singlePage ?? true
+        this._oauth_config =
+            OsmConnection.oauth_configs[options.osmConfiguration ?? "osm"] ??
+            OsmConnection.oauth_configs.osm
         console.debug("Using backend", this._oauth_config.url)
         OsmObject.SetBackendUrl(this._oauth_config.url + "/")
-        this._iframeMode = Utils.runningFromConsole ? false : window !== window.top;
+        this._iframeMode = Utils.runningFromConsole ? false : window !== window.top
 
-        this.userDetails = new UIEventSource<UserDetails>(new UserDetails(this._oauth_config.url), "userDetails");
+        this.userDetails = new UIEventSource<UserDetails>(
+            new UserDetails(this._oauth_config.url),
+            "userDetails"
+        )
         if (options.fakeUser) {
-            const ud = this.userDetails.data;
+            const ud = this.userDetails.data
             ud.csCount = 5678
-            ud.loggedIn = true;
+            ud.loggedIn = true
             ud.unreadMessages = 0
             ud.name = "Fake user"
-            ud.totalMessages = 42;
+            ud.totalMessages = 42
         }
-        const self = this;
-        this.isLoggedIn = this.userDetails.map(user => user.loggedIn);
-        this.isLoggedIn.addCallback(isLoggedIn => {
+        const self = this
+        this.isLoggedIn = this.userDetails.map((user) => user.loggedIn)
+        this.isLoggedIn.addCallback((isLoggedIn) => {
             if (self.userDetails.data.loggedIn == false && isLoggedIn == true) {
                 // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
                 // This means someone attempted to toggle this; so we attempt to login!
                 self.AttemptLogin()
             }
-        });
-        
-        this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false);
+        })
 
-        this.updateAuthObject();
+        this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false)
 
-        this.preferencesHandler = new OsmPreferences(this.auth, this);
+        this.updateAuthObject()
+
+        this.preferencesHandler = new OsmPreferences(this.auth, this)
 
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
-            const self = this;
-            this.auth.bootstrapToken(options.oauth_token.data,
+            const self = this
+            this.auth.bootstrapToken(
+                options.oauth_token.data,
                 (x) => {
                     console.log("Called back: ", x)
-                    self.AttemptLogin();
-                }, this.auth);
+                    self.AttemptLogin()
+                },
+                this.auth
+            )
 
-            options.oauth_token.setData(undefined);
-
+            options.oauth_token.setData(undefined)
         }
-        if (this.auth.authenticated() && (options.attemptLogin !== false)) {
-            this.AttemptLogin(); // Also updates the user badge
+        if (this.auth.authenticated() && options.attemptLogin !== false) {
+            this.AttemptLogin() // Also updates the user badge
         } else {
-            console.log("Not authenticated");
+            console.log("Not authenticated")
         }
     }
-    
-    public CreateChangesetHandler(allElements: ElementStorage, changes: Changes){
-        return new ChangesetHandler(this._dryRun, this, allElements, changes, this.auth);
+
+    public CreateChangesetHandler(allElements: ElementStorage, changes: Changes) {
+        return new ChangesetHandler(this._dryRun, this, allElements, changes, this.auth)
     }
 
-    public GetPreference(key: string, defaultValue: string = undefined, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this.preferencesHandler.GetPreference(key, defaultValue, prefix);
+    public GetPreference(
+        key: string,
+        defaultValue: string = undefined,
+        prefix: string = "mapcomplete-"
+    ): UIEventSource<string> {
+        return this.preferencesHandler.GetPreference(key, defaultValue, prefix)
     }
 
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this.preferencesHandler.GetLongPreference(key, prefix);
+        return this.preferencesHandler.GetLongPreference(key, prefix)
     }
 
     public OnLoggedIn(action: (userDetails: UserDetails) => void) {
-        this._onLoggedIn.push(action);
+        this._onLoggedIn.push(action)
     }
 
     public LogOut() {
-        this.auth.logout();
-        this.userDetails.data.loggedIn = false;
-        this.userDetails.data.csCount = 0;
-        this.userDetails.data.name = "";
-        this.userDetails.ping();
+        this.auth.logout()
+        this.userDetails.data.loggedIn = false
+        this.userDetails.data.csCount = 0
+        this.userDetails.data.name = ""
+        this.userDetails.ping()
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
     }
-    
+
     public Backend(): string {
-        return this._oauth_config.url;
+        return this._oauth_config.url
     }
 
     public AttemptLogin() {
@@ -155,76 +163,81 @@ export class OsmConnection {
         if (this.fakeUser) {
             this.loadingStatus.setData("logged-in")
             console.log("AttemptLogin called, but ignored as fakeUser is set")
-            return;
+            return
         }
-        const self = this;
-        console.log("Trying to log in...");
-        this.updateAuthObject();
-        this.auth.xhr({
-            method: 'GET',
-            path: '/api/0.6/user/details'
-        }, function (err, details) {
-            if (err != null) {
-                console.log(err);
-                self.loadingStatus.setData("error")
-                if (err.status == 401) {
-                    console.log("Clearing tokens...")
-                    // Not authorized - our token probably got revoked
-                    // Reset all the tokens
-                    const tokens = [
-                        "https://www.openstreetmap.orgoauth_request_token_secret",
-                        "https://www.openstreetmap.orgoauth_token",
-                        "https://www.openstreetmap.orgoauth_token_secret"]
-                    tokens.forEach(token => localStorage.removeItem(token))
+        const self = this
+        console.log("Trying to log in...")
+        this.updateAuthObject()
+        this.auth.xhr(
+            {
+                method: "GET",
+                path: "/api/0.6/user/details",
+            },
+            function (err, details) {
+                if (err != null) {
+                    console.log(err)
+                    self.loadingStatus.setData("error")
+                    if (err.status == 401) {
+                        console.log("Clearing tokens...")
+                        // Not authorized - our token probably got revoked
+                        // Reset all the tokens
+                        const tokens = [
+                            "https://www.openstreetmap.orgoauth_request_token_secret",
+                            "https://www.openstreetmap.orgoauth_token",
+                            "https://www.openstreetmap.orgoauth_token_secret",
+                        ]
+                        tokens.forEach((token) => localStorage.removeItem(token))
+                    }
+                    return
                 }
-                return;
+
+                if (details == null) {
+                    self.loadingStatus.setData("error")
+                    return
+                }
+
+                self.CheckForMessagesContinuously()
+
+                // details is an XML DOM of user details
+                let userInfo = details.getElementsByTagName("user")[0]
+
+                // let moreDetails = new DOMParser().parseFromString(userInfo.innerHTML, "text/xml");
+
+                let data = self.userDetails.data
+                data.loggedIn = true
+                console.log("Login completed, userinfo is ", userInfo)
+                data.name = userInfo.getAttribute("display_name")
+                data.uid = Number(userInfo.getAttribute("id"))
+                data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count")
+
+                data.img = undefined
+                const imgEl = userInfo.getElementsByTagName("img")
+                if (imgEl !== undefined && imgEl[0] !== undefined) {
+                    data.img = imgEl[0].getAttribute("href")
+                }
+                data.img = data.img ?? Img.AsData(Svg.osm_logo)
+
+                const homeEl = userInfo.getElementsByTagName("home")
+                if (homeEl !== undefined && homeEl[0] !== undefined) {
+                    const lat = parseFloat(homeEl[0].getAttribute("lat"))
+                    const lon = parseFloat(homeEl[0].getAttribute("lon"))
+                    data.home = { lat: lat, lon: lon }
+                }
+
+                self.loadingStatus.setData("logged-in")
+                const messages = userInfo
+                    .getElementsByTagName("messages")[0]
+                    .getElementsByTagName("received")[0]
+                data.unreadMessages = parseInt(messages.getAttribute("unread"))
+                data.totalMessages = parseInt(messages.getAttribute("count"))
+
+                self.userDetails.ping()
+                for (const action of self._onLoggedIn) {
+                    action(self.userDetails.data)
+                }
+                self._onLoggedIn = []
             }
-
-            if (details == null) {
-                self.loadingStatus.setData("error")
-                return;
-            }
-
-            self.CheckForMessagesContinuously();
-
-            // details is an XML DOM of user details
-            let userInfo = details.getElementsByTagName("user")[0];
-
-            // let moreDetails = new DOMParser().parseFromString(userInfo.innerHTML, "text/xml");
-
-            let data = self.userDetails.data;
-            data.loggedIn = true;
-            console.log("Login completed, userinfo is ", userInfo);
-            data.name = userInfo.getAttribute('display_name');
-            data.uid = Number(userInfo.getAttribute("id"))
-            data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count");
-
-            data.img = undefined;
-            const imgEl = userInfo.getElementsByTagName("img");
-            if (imgEl !== undefined && imgEl[0] !== undefined) {
-                data.img = imgEl[0].getAttribute("href");
-            }
-            data.img = data.img ?? Img.AsData(Svg.osm_logo);
-
-            const homeEl = userInfo.getElementsByTagName("home");
-            if (homeEl !== undefined && homeEl[0] !== undefined) {
-                const lat = parseFloat(homeEl[0].getAttribute("lat"));
-                const lon = parseFloat(homeEl[0].getAttribute("lon"));
-                data.home = {lat: lat, lon: lon};
-            }
-
-            self.loadingStatus.setData("logged-in")
-            const messages = userInfo.getElementsByTagName("messages")[0].getElementsByTagName("received")[0];
-            data.unreadMessages = parseInt(messages.getAttribute("unread"));
-            data.totalMessages = parseInt(messages.getAttribute("count"));
-
-            self.userDetails.ping();
-            for (const action of self._onLoggedIn) {
-                action(self.userDetails.data);
-            }
-            self._onLoggedIn = [];
-
-        });
+        )
     }
 
     public closeNote(id: number | string, text?: string): Promise<void> {
@@ -236,22 +249,23 @@ export class OsmConnection {
             console.warn("Dryrun enabled - not actually closing note ", id, " with text ", text)
             return new Promise((ok) => {
                 ok()
-            });
+            })
         }
         return new Promise((ok, error) => {
-            this.auth.xhr({
-                method: 'POST',
-                path: `/api/0.6/notes/${id}/close${textSuffix}`,
-            }, function (err, _) {
-                if (err !== null) {
-                    error(err)
-                } else {
-                    ok()
+            this.auth.xhr(
+                {
+                    method: "POST",
+                    path: `/api/0.6/notes/${id}/close${textSuffix}`,
+                },
+                function (err, _) {
+                    if (err !== null) {
+                        error(err)
+                    } else {
+                        ok()
+                    }
                 }
-            })
-
+            )
         })
-
     }
 
     public reopenNote(id: number | string, text?: string): Promise<void> {
@@ -259,109 +273,117 @@ export class OsmConnection {
             console.warn("Dryrun enabled - not actually reopening note ", id, " with text ", text)
             return new Promise((ok) => {
                 ok()
-            });
+            })
         }
         let textSuffix = ""
         if ((text ?? "") !== "") {
             textSuffix = "?text=" + encodeURIComponent(text)
         }
         return new Promise((ok, error) => {
-            this.auth.xhr({
-                method: 'POST',
-                path: `/api/0.6/notes/${id}/reopen${textSuffix}`
-            }, function (err, _) {
-                if (err !== null) {
-                    error(err)
-                } else {
-                    ok()
+            this.auth.xhr(
+                {
+                    method: "POST",
+                    path: `/api/0.6/notes/${id}/reopen${textSuffix}`,
+                },
+                function (err, _) {
+                    if (err !== null) {
+                        error(err)
+                    } else {
+                        ok()
+                    }
                 }
-            })
-
+            )
         })
-
     }
 
     public openNote(lat: number, lon: number, text: string): Promise<{ id: number }> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually opening note with text ", text)
             return new Promise<{ id: number }>((ok) => {
-                window.setTimeout(() => ok({id: Math.floor(Math.random() * 1000)}), Math.random() * 5000)
-            });
-        }
-        const auth = this.auth;
-        const content = {lat, lon, text}
-        return new Promise((ok, error) => {
-            auth.xhr({
-                method: 'POST',
-                path: `/api/0.6/notes.json`,
-                options: {
-                    header:
-                        {'Content-Type': 'application/json'}
-                },
-                content: JSON.stringify(content)
-
-            }, function (
-                err,
-                response: string) {
-                console.log("RESPONSE IS", response)
-                if (err !== null) {
-                    error(err)
-                } else {
-                    const parsed = JSON.parse(response)
-                    const id = parsed.properties.id
-                    console.log("OPENED NOTE", id)
-                    ok({id})
-                }
+                window.setTimeout(
+                    () => ok({ id: Math.floor(Math.random() * 1000) }),
+                    Math.random() * 5000
+                )
             })
-
+        }
+        const auth = this.auth
+        const content = { lat, lon, text }
+        return new Promise((ok, error) => {
+            auth.xhr(
+                {
+                    method: "POST",
+                    path: `/api/0.6/notes.json`,
+                    options: {
+                        header: { "Content-Type": "application/json" },
+                    },
+                    content: JSON.stringify(content),
+                },
+                function (err, response: string) {
+                    console.log("RESPONSE IS", response)
+                    if (err !== null) {
+                        error(err)
+                    } else {
+                        const parsed = JSON.parse(response)
+                        const id = parsed.properties.id
+                        console.log("OPENED NOTE", id)
+                        ok({ id })
+                    }
+                }
+            )
         })
-
     }
-    
+
     public addCommentToNote(id: number | string, text: string): Promise<void> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually adding comment ", text, "to  note ", id)
             return new Promise((ok) => {
                 ok()
-            });
+            })
         }
         if ((text ?? "") === "") {
             throw "Invalid text!"
         }
 
         return new Promise((ok, error) => {
-            this.auth.xhr({
-                method: 'POST',
+            this.auth.xhr(
+                {
+                    method: "POST",
 
-                path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`
-            }, function (err, _) {
-                if (err !== null) {
-                    error(err)
-                } else {
-                    ok()
+                    path: `/api/0.6/notes/${id}/comment?text=${encodeURIComponent(text)}`,
+                },
+                function (err, _) {
+                    if (err !== null) {
+                        error(err)
+                    } else {
+                        ok()
+                    }
                 }
-            })
-
+            )
         })
-
     }
 
     private updateAuthObject() {
-        let pwaStandAloneMode = false;
+        let pwaStandAloneMode = false
         try {
             if (Utils.runningFromConsole) {
                 pwaStandAloneMode = true
-            } else if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches) {
-                pwaStandAloneMode = true;
+            } else if (
+                window.matchMedia("(display-mode: standalone)").matches ||
+                window.matchMedia("(display-mode: fullscreen)").matches
+            ) {
+                pwaStandAloneMode = true
             }
         } catch (e) {
-            console.warn("Detecting standalone mode failed", e, ". Assuming in browser and not worrying furhter")
+            console.warn(
+                "Detecting standalone mode failed",
+                e,
+                ". Assuming in browser and not worrying furhter"
+            )
         }
-        const standalone = this._iframeMode || pwaStandAloneMode || !this._singlePage;
+        const standalone = this._iframeMode || pwaStandAloneMode || !this._singlePage
 
         // In standalone mode, we DON'T use single page login, as 'redirecting' opens a new window anyway...
         // Same for an iframe...
-
 
         this.auth = new osmAuth({
             oauth_consumer_key: this._oauth_config.oauth_consumer_key,
@@ -370,22 +392,20 @@ export class OsmConnection {
             landing: standalone ? undefined : window.location.href,
             singlepage: !standalone,
             auto: true,
-
-        });
+        })
     }
 
     private CheckForMessagesContinuously() {
-        const self = this;
+        const self = this
         if (this.isChecking) {
-            return;
+            return
         }
-        this.isChecking = true;
-        Stores.Chronic(5 * 60 * 1000).addCallback(_ => {
+        this.isChecking = true
+        Stores.Chronic(5 * 60 * 1000).addCallback((_) => {
             if (self.isLoggedIn.data) {
                 console.log("Checking for messages")
-                self.AttemptLogin();
+                self.AttemptLogin()
             }
-        });
-
+        })
     }
 }

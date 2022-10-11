@@ -9,7 +9,8 @@
     "es": "Aceras",
     "fr": "Trottoirs",
     "nb_NO": "Fortau",
-    "it": "Marciapiede"
+    "it": "Marciapiede",
+    "da": "Fortove"
   },
   "shortDescription": {
     "en": "Sidewalk mapping",
@@ -18,7 +19,8 @@
     "es": "Mapeo de aceras",
     "nl": "Voetpaden in kaart brengen",
     "fr": "Cartographier des trottoirs",
-    "it": "Mappatura del marciapiede"
+    "it": "Mappatura del marciapiede",
+    "da": "Kortlægning af fortov"
   },
   "description": {
     "en": "Experimental theme",
@@ -28,7 +30,8 @@
     "es": "Tema experimental",
     "nl": "Experimenteel thema",
     "fr": "Thème expérimental",
-    "nb_NO": "Eksperimentelt tema"
+    "nb_NO": "Eksperimentelt tema",
+    "da": "Eksperimentelt tema"
   },
   "icon": "./assets/svg/bug.svg",
   "startLat": 0,
@@ -48,7 +51,8 @@
         "nb_NO": "Fortau",
         "nl": "Voetpaden",
         "fr": "Trottoirs",
-        "it": "Marciapiedi"
+        "it": "Marciapiedi",
+        "da": "Fortove"
       },
       "minzoom": 12,
       "source": {
@@ -70,7 +74,8 @@
           "es": "{name}",
           "nl": "{name}",
           "fr": "{name}",
-          "it": "{name}"
+          "it": "{name}",
+          "da": "{name}"
         },
         "mappings": [
           {
@@ -84,7 +89,8 @@
         "de": "Ebene mit Bürgersteigen",
         "es": "Una capa que muestra aceras de autovías",
         "nl": "Laag die voetpaden naast wegen toont",
-        "fr": "Calque montrant les trottoirs"
+        "fr": "Calque montrant les trottoirs",
+        "da": "Lag, der viser fortove på motorveje"
       },
       "tagRenderings": [
         {
@@ -96,7 +102,8 @@
             "nl": "Deze straat heet {name}",
             "fr": "Cette rue s’appelle {name}",
             "nb_NO": "Denne gaten heter {name}",
-            "it": "La strada si chiama {name}"
+            "it": "La strada si chiama {name}",
+            "da": "Denne gade hedder {name}"
           }
         },
         {
@@ -123,28 +130,32 @@
               "id": "has_sidewalk_left|right",
               "question": {
                 "en": "Is there a sidewalk on this side of the road?",
-                "de": "Gibt es auf dieser Straßenseite einen Bürgersteig?"
+                "de": "Gibt es auf dieser Straßenseite einen Bürgersteig?",
+                "da": "Er der et fortov på denne side af vejen?"
               },
               "mappings": [
                 {
                   "if": "sidewalk:left|right=yes",
                   "then": {
                     "en": "Yes, there is a sidewalk on this side of the road",
-                    "de": "Ja, es gibt einen Bürgersteig auf dieser Straßenseite"
+                    "de": "Ja, es gibt einen Bürgersteig auf dieser Straßenseite",
+                    "da": "Ja, der er et fortov på denne side af vejen"
                   }
                 },
                 {
                   "if": "sidewalk:left|right=no",
                   "then": {
                     "en": "No, there is no sidewalk to walk on",
-                    "de": "Nein, es gibt keinen Bürgersteig für Fußgänger"
+                    "de": "Nein, es gibt keinen Bürgersteig für Fußgänger",
+                    "da": "Nej, der er ikke noget fortov at gå på"
                   }
                 },
                 {
                   "if": "sidewalk:left|right=separate",
                   "then": {
                     "en": "There is a separately mapped sidewalk to walk on",
-                    "de": "Es gibt einen separat kartierten Bürgersteig für Fußgänger"
+                    "de": "Es gibt einen separat kartierten Bürgersteig für Fußgänger",
+                    "da": "Der er et særskilt kortlagt fortov at gå på"
                   }
                 }
               ]
@@ -153,11 +164,13 @@
               "id": "sidewalk_width_left|right",
               "question": {
                 "en": "What is the width of the sidewalk on this side of the road?",
-                "de": "Wie breit ist der Bürgersteig auf dieser Straßenseite?"
+                "de": "Wie breit ist der Bürgersteig auf dieser Straßenseite?",
+                "da": "Hvad er bredden af fortovet på denne side af vejen?"
               },
               "render": {
                 "en": "This sidewalk is {sidewalk:left|right:width}m wide",
-                "de": "Dieser Bürgersteig ist {sidewalk:left|right:width}m breit"
+                "de": "Dieser Bürgersteig ist {sidewalk:left|right:width}m breit",
+                "da": "Dette fortov er {sidewalk:left|right:width}m bredt"
               },
               "condition": "sidewalk:left|right=yes",
               "freeform": {

@@ -6,7 +6,7 @@
     "de": "Ebene mit Aufgaben einer MapRoulette-Kampagne"
   },
   "source": {
-    "osmTags": "id~*",
+    "osmTags": "mr_taskId~*",
     "geoJson": "https://maproulette.org/api/v2/challenge/view/27971",
     "isOsmCache": false
   },
