@@ -363,17 +363,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Saat ini buka"
-                    }
-                }
-            }
-        }
-    },
     "playground": {
         "tagRenderings": {
             "playground-email": {

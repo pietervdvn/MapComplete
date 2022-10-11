@@ -2984,17 +2984,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualmente abierta"
-                    }
-                }
-            }
-        }
-    },
     "parking": {
         "description": "Una capa que muestra aparcamientos para coches",
         "name": "Aparcamiento",

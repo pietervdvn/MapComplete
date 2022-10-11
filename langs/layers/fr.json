@@ -3125,17 +3125,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Ouvert actuellement"
-                    }
-                }
-            }
-        }
-    },
     "parking": {
         "description": "Un calque montrant les parkings",
         "name": "Lieu de stationnement",

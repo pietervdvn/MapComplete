@@ -7,6 +7,56 @@
         "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "title": "Open Artwork Map"
     },
+    "bag": {
+        "description": "This theme helps with importing data from BAG",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "This building has no reference in the BAG"
+                            }
+                        },
+                        "render": "The reference in BAG is <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "Buildings from BAG register",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "The building was started in <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "This building was built in <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "The building type will be a <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "The building type is a <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Didn't calculate the correct values yet. Refresh this page"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "The reference in BAG is <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            }
+        },
+        "shortDescription": "BAG import helper tool",
+        "title": "BAG import helper"
+    },
     "benches": {
         "description": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",
         "shortDescription": "A map of benches",
@@ -856,6 +906,11 @@
         "description": "A map for showing and editing wind turbines.",
         "title": "OpenWindPowerMap"
     },
+    "osm_community_index": {
+        "description": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful.",
+        "shortDescription": "An index of community resources for OpenStreetMap.",
+        "title": "OSM Community Index"
+    },
     "parkings": {
         "description": "This map shows different parking spots",
         "shortDescription": "This map shows different parking spots",
@@ -925,26 +980,6 @@
     },
     "postboxes": {
         "description": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
-        "layers": {
-            "3": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "mappings": {
-                                "0": {
-                                    "then": "This shop is a post partner"
-                                },
-                                "1": {
-                                    "then": "This shop is not a post partner"
-                                }
-                            },
-                            "question": "Is this shop a post partner?"
-                        }
-                    },
-                    "description": "Add a new post partner to the map in an existing shop"
-                }
-            }
-        },
         "shortDescription": "A map showing postboxes and post offices",
         "title": "Postbox and Post Office Map"
     },
