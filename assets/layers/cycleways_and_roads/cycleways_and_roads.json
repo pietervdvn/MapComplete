@@ -10,28 +10,38 @@
   "minzoom": 16,
   "source": {
     "osmTags": {
-      "or": [
-        "highway=cycleway",
-        "cycleway=lane",
-        "cycleway=shared_lane",
-        "cycleway=track",
-        "cyclestreet=yes",
-        "highway=residential",
-        "highway=tertiary",
-        "highway=unclassified",
-        "highway=primary",
-        "highway=secondary",
-        "highway=tertiary_link",
-        "highway=primary_link",
-        "highway=secondary_link",
-        "highway=service",
-        "highway=footway",
-        "highway=pedestrian",
-        "highway=living_street",
+      "and": [
         {
-          "and": [
-            "highway=path",
-            "bicycle=designated"
+          "or": [
+            "highway=cycleway",
+            "cycleway=lane",
+            "cycleway=shared_lane",
+            "cycleway=track",
+            "cyclestreet=yes",
+            "highway=residential",
+            "highway=tertiary",
+            "highway=unclassified",
+            "highway=primary",
+            "highway=secondary",
+            "highway=tertiary_link",
+            "highway=primary_link",
+            "highway=secondary_link",
+            "highway=service",
+            "highway=footway",
+            "highway=pedestrian",
+            "highway=living_street",
+            {
+              "and": [
+                "highway=path",
+                "bicycle=designated"
+              ]
+            }
+          ]
+        },
+        {
+          "or": [
+            "access!~private",
+            "access!~no"
           ]
         }
       ]
@@ -1593,6 +1603,10 @@
           {
             "if": "highway=cycleway",
             "then": "rgba(0, 189, 141, 0.7)"
+          },
+          {
+            "if": "highway=separate",
+            "then": "rgba(0, 245, 86, 0.33)"
           },
           {
             "if": "highway=path",
