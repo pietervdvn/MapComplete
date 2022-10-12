@@ -5357,6 +5357,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Postpartner in een winkel"
+                }
+            },
             "render": "Postkantoor"
         }
     },
