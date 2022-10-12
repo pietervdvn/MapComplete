@@ -147,7 +147,9 @@
             "intro": "<h3>Flere temakart?</h3>Liker du å samle inn geodata? <br/>Det er flere tilgjengelige temaer.",
             "previouslyHiddenTitle": "Tidligere besøkte skjulte tema",
             "requestATheme": "Hvis du ønsker et brukerdefinert tema kan du forespørre det i feilsporeren",
-            "streetcomplete": "Et annet lignende program er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
+            "streetcomplete": "Et annet lignende program er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
+            "noSearch": "Vis alle temaer",
+            "searchForATheme": "Søk etter et tema"
         },
         "nameInlineQuestion": "Navnet på {category} er $$$",
         "next": "Neste",
@@ -254,7 +256,8 @@
             },
             "searchWikidata": "Søk på Wikipedia",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "poweredByOsm": "Med data fra OpenStreetMap"
     },
     "image": {
         "addPicture": "Legg til bilde",
@@ -271,7 +274,14 @@
         "uploadMultipleDone": "{count} bilder har blitt lagt til. Takk for at du hjelper til.",
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
-        "willBePublished": "Ditt bilde vil bli publisert: "
+        "willBePublished": "Ditt bilde vil bli publisert: ",
+        "nearbyPictures": {
+            "title": "Bilder i nærheten",
+            "nothingFound": "Fant ingen bilder i nærheten …",
+            "noImageSelected": "Velg et bilde for å knytte det til objektet",
+            "removeFilters": "Klikk her for å fjerne filterne",
+            "loading": "Laster inn bilder i nærheten …"
+        }
     },
     "importHelper": {
         "askMetadata": {
