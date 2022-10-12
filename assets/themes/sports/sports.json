@@ -17,11 +17,16 @@
     "sport_pitch",
     "fitness_centre",
     "fitness_station",
+    "sports_centre",
     {
       "builtin": "shops",
       "override": {
         "source": {
-          "osmTags": "shop=sports"
+          "osmTags": {
+            "and": [
+              "shop=sports"
+            ]
+          }
         },
         "presets": [
           {
@@ -37,10 +42,7 @@
           }
         ],
         "minzoom": 12
-      },
-      "hideTagRenderingsWithLabels": [
-        "shop_types"
-      ]
+      }
     }
   ]
 }
