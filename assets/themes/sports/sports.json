@@ -1,13 +1,16 @@
 {
   "id": "sports",
   "title": {
-    "en": "Sports"
+    "en": "Sports",
+    "nl": "Sport"
   },
   "shortDescription": {
-    "en": "Map showing sport facilities."
+    "en": "Map showing sport facilities.",
+    "nl": "Kaart met sportfaciliteiten."
   },
   "description": {
-    "en": "All about sports, find sport pitches, fitness centres and more."
+    "en": "All about sports, find sport pitches, fitness centres and more.",
+    "nl": "Alles over sport: vind sportvelden, fitnesscentra en meer."	
   },
   "icon": "./assets/themes/sports/sport.svg",
   "startLat": 0,
@@ -34,10 +37,12 @@
               "shop=sports"
             ],
             "title": {
-              "en": "a sports shop"
+              "en": "a sports shop",
+              "nl": "een sportwinkel"
             },
             "description": {
-              "en": "Add a new shop selling sports goods."
+              "en": "Add a new shop selling sports goods.",
+              "nl": "Voeg een nieuwe winkel toe die sportartikelen verkoopt."
             }
           }
         ],
