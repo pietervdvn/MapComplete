@@ -323,25 +323,7 @@
         "en": "The fitness station is maintained by {operator}."
       }
     },
-    {
-      "id": "opening_hours",
-      "question": {
-        "en": "When is this fitness station opened?"
-      },
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "render": "{opening_hours_table()}",
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "en": "24/7"
-          }
-        }
-      ]
-    }
+    "opening_hours"
   ],
   "presets": [
     {
@@ -362,7 +344,21 @@
         "centroid"
       ],
       "icon": "circle:white;./assets/layers/fitness_station/fitness.svg",
-      "iconSize": "40,40,center"
+      "iconSize": "40,40,center",
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "opening_hours!=24/7",
+              "opening_hours~*"
+            ]
+          },
+          "then": "isOpen"
+        }
+      ]
     }
+  ],
+  "filter": [
+    "open_now"
   ]
 }

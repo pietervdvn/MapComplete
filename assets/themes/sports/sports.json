@@ -46,7 +46,12 @@
             }
           }
         ],
-        "minzoom": 12
+        "minzoom": 12,
+        "mapRendering": [
+          {
+            "icon": "./assets/layers/id_presets/maki-shop.svg"
+          }
+        ]
       }
     }
   ]

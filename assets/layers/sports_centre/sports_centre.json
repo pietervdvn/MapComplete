@@ -42,7 +42,16 @@
   "mapRendering": [
     {
       "icon": "circle:white;./assets/layers/sports_centre/sports_centre.svg",
-      "location": ["point", "centroid"]
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
     },
     {
       "color": "darkgreen",

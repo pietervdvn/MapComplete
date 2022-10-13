@@ -74,7 +74,16 @@
       ],
       "icon": "circle:white;./assets/layers/fitness_centre/gym.svg",
       "iconSize": "40,40,center",
-      "label": "{name}"
+      "label": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>",
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ]
     }
+  ],
+  "filter": [
+    "open_now"
   ]
 }
