@@ -82,49 +82,19 @@
       "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
     },
     {
-      "render": {
-        "en": "Opening Hours: {opening_hours_table()}",
-        "ru": "Часы работы: {opening_hours_table()}",
-        "zh_Hant": "開放時間：{opening_hours_table()}",
-        "id": "Jam Buka: {opening_hours_table()}",
-        "hu": "Nyitva tartás: {opening_hours_table()}",
-        "de": "Öffnungszeiten: {opening_hours_table()}",
-        "es": "Horas de Apertura: {opening_hours_table()}",
-        "nb_NO": "Åpningstider: {opening_hours_table()}",
-        "nl": "Openingsuren: {opening_hours_table()}",
-        "fr": "Heures d’ouverture : {opening_hours_table()}"
-      },
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "question": {
-        "en": "What are the opening hours for this post office?",
-        "zh_Hant": "這間郵局的開放時間是？",
-        "id": "Jam berapa kantor pos ini buka?",
-        "hu": "Mikor van nyitva ez a posta?",
-        "de": "Wie sind die Öffnungszeiten dieser Poststelle?",
-        "es": "¿Cuáles son las horas de apertura para esta oficina de correos?",
-        "nl": "Wat zijn de openingsuren voor dit postkantoor?",
-        "fr": "Quelles sont les heures d’ouverture de ce bureau de poste ?"
-      },
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "en": "24/7 opened (including holidays)",
-            "de": "durchgehend geöffnet (auch an Feiertagen)",
-            "zh_Hant": "24/7 開放 (包括假日)",
-            "id": "Buka 24 jam (termasuk hari libur)",
-            "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
-            "es": "Abierta 24/7 (incluyendo festivos)",
-            "nl": "24/7 open (ook tijdens feestdagen)",
-            "fr": "Ouvert 24h/24 (jours fériés compris)",
-            "nb_NO": "Døgnåpent (inkludert helligdager)"
-          }
+      "builtin": "opening_hours",
+      "override": {
+        "question": {
+          "en": "What are the opening hours for this post office?",
+          "zh_Hant": "這間郵局的開放時間是？",
+          "id": "Jam berapa kantor pos ini buka?",
+          "hu": "Mikor van nyitva ez a posta?",
+          "de": "Wie sind die Öffnungszeiten dieser Poststelle?",
+          "es": "¿Cuáles son las horas de apertura para esta oficina de correos?",
+          "nl": "Wat zijn de openingsuren voor dit postkantoor?",
+          "fr": "Quelles sont les heures d’ouverture de ce bureau de poste ?"
         }
-      ],
-      "id": "OH"
+      }
     },
     {
       "id": "post_partner",
