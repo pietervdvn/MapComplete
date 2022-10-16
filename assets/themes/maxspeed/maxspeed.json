@@ -29,6 +29,7 @@
   "widenFactor": 0.01,
   "layers": [
     "maxspeed",
-    "speed_camera"
+    "speed_camera",
+    "speed_display"
   ]
 }

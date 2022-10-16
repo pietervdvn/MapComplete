@@ -1,68 +1,74 @@
 {
-  "id": "speed_camera",
+  "id": "speed_display",
   "name": {
-    "en": "Speed Camera"
+    "en": "Speed Display"
   },
   "description": {
-    "en": "Layer showing speed cameras"
+    "en": "Layer showing speed displays that alert drivers of their speed."
   },
   "title": {
     "render": {
-      "en": "Speed Camera"
+      "en": "Speed Display"
     }
   },
   "minzoom": 12,
   "source": {
-    "osmTags": "highway=speed_camera"
+    "osmTags": "highway=speed_display"
   },
   "tagRenderings": [
     {
       "id": "maxspeed",
       "question": {
-        "en": "What is the maximum speed allowed at this speed camera?"
+        "en": "What is the maximum speed allowed at this speed display?"
       },
       "freeform": {
         "key": "maxspeed",
         "type": "pnat",
         "placeholder": {
-          "en": "Maximum speed allowed"
+          "en": "Speed allowed at speed display"
         }
       },
       "render": {
-        "en": "The maximum speed allowed is {canonical(maxspeed)}"
+        "en": "The maximum speed allowed at this speed display is {canonical(maxspeed)}"
       }
     },
     {
-      "id": "ref",
+      "id": "inscription",
+      "question": {
+        "en": "What is the text on this speed display?"
+      },
+      "freeform": {
+        "key": "inscription",
+        "type": "string",
+        "placeholder": {
+          "en": "Text on speed display (e.g. 'Your speed')"
+        }
+      },
       "render": {
-        "en": "The reference number of this speed camera is {ref}"
+        "en": "The text on this speed display is {inscription}"
       }
     }
   ],
   "presets": [
     {
-      "tags": [
-        "highway=speed_camera"
-      ],
       "title": {
-        "en": "a speed camera"
+        "en": "a speed display"
       },
+      "tags": [
+        "highway=speed_display"
+      ],
       "preciseInput": {
-        "preferredBackground": "photo",
-        "maxSnapDistance": 10,
-        "snapToLayer": [
-          "maxspeed"
-        ]
+        "preferredBackground": "photo"
       }
     }
   ],
   "mapRendering": [
     {
-      "icon": "square:white;./assets/layers/speed_camera/speed_camera.svg",
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "icon": "./assets/layers/speed_display/speed_display.svg"
     }
   ],
   "units": [
