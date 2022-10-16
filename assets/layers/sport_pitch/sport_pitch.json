@@ -580,5 +580,8 @@
       "width": "1",
       "fill": "false"
     }
+  ],
+  "filter": [
+    "open_now"
   ]
 }
