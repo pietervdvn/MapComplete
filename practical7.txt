@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+    <head>
+        <title> frmatting text Example </title>
+    </head>
+    <p>The following words uses an <b>bold</b>
+    typeforce</p>
+    <p> The following words uses an <i> italicized </i>
+    typeforce</b>
+    <p> The following words uses an </u> underline </u>
+    typeforce</p>
+    <p>The following words user a <strike>strikethrough</strike>typeforce
+
+</html>
