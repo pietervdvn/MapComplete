@@ -351,6 +351,10 @@
                 "then": "./assets/layers/sport_pitch/table_tennis.svg"
               },
               {
+                "if": "theme=sports",
+                "then": "./assets/themes/sports/sport.svg"
+              },
+              {
                 "if": "theme=street_lighting",
                 "then": "./assets/layers/street_lamps/street_lamp.svg"
               },

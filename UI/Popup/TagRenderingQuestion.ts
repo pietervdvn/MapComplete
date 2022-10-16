@@ -303,8 +303,8 @@ export default class TagRenderingQuestion extends Combine {
             const tr = mapping.then.Subs(tagsSource.data)
             const patchedMapping = <Mapping>{
                 ...mapping,
-                iconClass: `small-height`,
-                icon: mapping.icon ?? (addIcons ? "./assets/svg/none.svg" : undefined),
+                iconClass: mapping.iconClass ?? `small-height`,
+                icon: mapping.icon ?? (addIcons ? "./assets/svg/none.svg" : undefined)
             }
             const fancy = TagRenderingQuestion.GenerateMappingContent(
                 patchedMapping,
