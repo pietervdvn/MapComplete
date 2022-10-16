@@ -36,7 +36,8 @@
       "id": "ref",
       "render": {
         "en": "The reference number of this speed camera is {ref}"
-      }
+      },
+      "condition": "ref~*"
     }
   ],
   "presets": [
