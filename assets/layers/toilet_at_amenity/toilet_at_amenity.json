@@ -221,7 +221,12 @@
     },
     {
       "id": "wheelchair-door-width",
-      "condition": "toilets:wheelchair!=no",
+      "condition": {
+        "or": [
+          "toilets:wheelchair=yes",
+          "toilets:wheelchair=designated"
+        ]
+      },
       "question": {
         "en": "What is the width of the door to the wheelchair accessible toilet?",
         "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
