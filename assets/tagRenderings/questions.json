@@ -629,11 +629,15 @@
     "freeform": {
       "key": "opening_hours",
       "type": "opening_hours"
-    },
-    "mappings": [
-      {
-        "if": "opening_hours=24/7",
-        "then": {
+    }
+  },
+  "opening_hours_24_7": {
+    "builtin": "opening_hours",
+    "override": {
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
             "en": "24/7 opened (including holidays)",
             "de": "durchgehend geöffnet (auch an Feiertagen)",
             "zh_Hant": "24/7 開放 (包括假日)",
@@ -644,8 +648,9 @@
             "fr": "Ouvert 24h/24 (jours fériés compris)",
             "nb_NO": "Døgnåpent (inkludert helligdager)"
           }
-      }
-    ]
+        }
+      ]
+    }
   },
   "service:electricity": {
     "#": "service:socket describes if a pub, restaurant or café offers electricity to their customers.",

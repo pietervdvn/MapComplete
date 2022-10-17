@@ -237,7 +237,7 @@
       }
     },
     {
-      "builtin": "opening_hours",
+      "builtin": "opening_hours_24_7",
       "override": {
         "condition": "access!=no",
         "question": {
@@ -629,27 +629,7 @@
         }
       ]
     },
-    {
-      "id": "is_open",
-      "options": [
-        {
-          "question": {
-            "nl": "Nu geopened",
-            "en": "Opened now",
-            "de": "Derzeit geöffnet",
-            "es": "Abierto ahora",
-            "fr": "Ouvert maintenant",
-            "da": "Åbnet nu"
-          },
-          "osmTags": {
-            "or": [
-              "opening_hours=",
-              "_isOpen=yes"
-            ]
-          }
-        }
-      ]
-    }
+    "open_now"
   ],
   "deletion": {
     "softDeletionTags": {
