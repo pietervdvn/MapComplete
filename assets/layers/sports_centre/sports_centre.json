@@ -1,0 +1,67 @@
+{
+  "id": "sports_centre",
+  "name": {
+    "en": "Sports centres"
+  },
+  "description": {
+    "en": "Indoor and outdoor sports centres can be found on this layer"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "leisure=sports_centre"
+  },
+  "title": {
+    "render": {
+      "en": "Sports centre"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    "opening_hours",
+    "phone",
+    "website",
+    "email",
+    "wheelchair-access"
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a sports centre"
+      },
+      "tags": [
+        "leisure=sports_centre"
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": "circle:white;./assets/layers/sports_centre/sports_centre.svg",
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    },
+    {
+      "color": "darkgreen",
+      "fill": "no"
+    }
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true
+  },
+  "filter": [
+    "open_now"
+  ]
+}

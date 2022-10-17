@@ -1,0 +1,364 @@
+{
+  "id": "fitness_station",
+  "name": {
+    "en": "Fitness Stations"
+  },
+  "description": {
+    "en": "Find a fitness station near you, and add missing ones."
+  },
+  "source": {
+    "osmTags": "leisure=fitness_station"
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Fitness Station"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Fitness Station {name}"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this fitness station?"
+      },
+      "freeform": {
+        "key": "name",
+        "placeholder": {
+          "en": "Name of the fitness station"
+        },
+        "type": "string"
+      },
+      "mappings": [
+        {
+          "if": "noname=yes",
+          "then": {
+            "en": "This fitness station doesn't have a name"
+          }
+        }
+      ],
+      "render": {
+        "en": "This fitness station is called {name}"
+      }
+    },
+    {
+      "id": "type",
+      "question": {
+        "en": "What kind of equipment does this fitness station have?"
+      },
+      "mappings": [
+        {
+          "if": "fitness_station=horizontal_bar",
+          "then": {
+            "en": "This fitness station has a horizontal bar, high enough for pull-ups."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Trimm-Dich-Pfad_Grünwalder_Forst_Klimmzüge.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=sign",
+          "then": {
+            "en": "This fitness station has a sign with instructions for a specific exercise."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Outdoor_fitness_station_sign.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=sit-up",
+          "then": {
+            "en": "This fitness station has a facility for sit-ups."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Inclined_sit-up_bench.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=push-up",
+          "then": {
+            "en": "This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Push-up_bars.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=stretch_bars",
+          "then": {
+            "en": "This fitness station has bars for stretching."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Fitness_station_stretch_bars.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=hyperextension",
+          "then": {
+            "en": "This fitness station has a station for making hyperextensions."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Inclined_sit-up_and_hyperextension_bench.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=rings",
+          "then": {
+            "en": "This fitness station has rings for gymnastic exercises."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Exercise9159.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=horizontal_ladder",
+          "then": {
+            "en": "This fitness station has a horizontal ladder, also known as monkey bars."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Horizontal_ladder.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=wall_bars",
+          "then": {
+            "en": "This fitness station has wall bars to climb on."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/RIAN_archive_493268_Sports_at_a_kindergarten.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=slalom",
+          "then": {
+            "en": "This fitness station has posts for performing slalom exercises."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Fitness_station_slalom.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=stepping_stones",
+          "then": {
+            "en": "This fitness station has stepping stones."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Fitness_station_stepping_stone.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=leapfrog",
+          "then": {
+            "en": "This fitness station has cones for performing leapfrog jumps."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Fitness_station_leapfrog.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=beam_jump",
+          "then": {
+            "en": "This fitness station has beams to jump over."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Fitness_station_beam_jump.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=hurdling",
+          "then": {
+            "en": "This fitness station has hurdles to cross."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Fitness_station_hurdling.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=wall",
+          "then": {
+            "en": "This fitness station has a wall to climb on."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Fitness_station_wall.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=balance_beam",
+          "then": {
+            "en": "This fitness station has a balance beam."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Exercise9170.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=log_lifting",
+          "then": {
+            "en": "This fitness station has a log with a handle on the end to lift."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Log_lifting_exercise.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=captains_chair",
+          "then": {
+            "en": "This fitness station has a chair with only elbow supports and a rear (without seat), for performing leg raises."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Captains_chair.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=box",
+          "then": {
+            "en": "This fitness station has a box that can be used for jumping."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Exercise_Box.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=battling_ropes",
+          "then": {
+            "en": "This fitness station has battling ropes."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Battling_ropes.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=excercise_bike",
+          "then": {
+            "en": "This fitness station has a stationary bicycle."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Outdoor_stationary_bicycle.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=elliptical_trainer",
+          "then": {
+            "en": "This fitness station has a cross-trainer."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/07-12-2016,_Fitness_trail,_Parque_da_Alfarrobeira,_Albufeira_2.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=air_walker",
+          "then": {
+            "en": "This fitness station has an air walker."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Ansan_Park_beind_the_city_hall_022.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=rower",
+          "then": {
+            "en": "This fitness station has a rower."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Annecy_-_rower.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "fitness_station=slackline",
+          "then": {
+            "en": "This fitness station has a slackline."
+          },
+          "icon": {
+            "path": "./assets/layers/fitness_station/Slacklineanlage_im_Dietenbachpark.jpg",
+            "class": "large"
+          }
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "id": "operator",
+      "question": {
+        "en": "Who maintains this fitness station?"
+      },
+      "freeform": {
+        "key": "operator",
+        "placeholder": {
+          "en": "Operator of the fitness station"
+        },
+        "type": "string"
+      },
+      "render": {
+        "en": "The fitness station is maintained by {operator}."
+      }
+    },
+    "opening_hours"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "leisure=fitness_station",
+        "sport=fitness"
+      ],
+      "title": {
+        "en": "a fitness station"
+      },
+      "icon": "./assets/layers/fitness_station/fitness.svg"
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "circle:white;./assets/layers/fitness_station/fitness.svg",
+      "iconSize": "40,40,center",
+      "iconBadges": [
+        {
+          "if": {
+            "and": [
+              "opening_hours!=24/7",
+              "opening_hours~*"
+            ]
+          },
+          "then": "isOpen"
+        }
+      ]
+    }
+  ],
+  "filter": [
+    "open_now"
+  ]
+}

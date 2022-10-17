@@ -1,0 +1,132 @@
+{
+  "id": "speed_display",
+  "name": {
+    "en": "Speed Display"
+  },
+  "description": {
+    "en": "Layer showing speed displays that alert drivers of their speed."
+  },
+  "title": {
+    "render": {
+      "en": "Speed Display"
+    }
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "highway=speed_display"
+  },
+  "tagRenderings": [
+    {
+      "id": "maxspeed",
+      "question": {
+        "en": "What is the maximum speed allowed at this speed display?"
+      },
+      "freeform": {
+        "key": "maxspeed",
+        "type": "pnat",
+        "placeholder": {
+          "en": "Speed allowed at speed display"
+        }
+      },
+      "render": {
+        "en": "The maximum speed allowed at this speed display is {canonical(maxspeed)}"
+      }
+    },
+    {
+      "id": "inscription",
+      "question": {
+        "en": "What is the text on this speed display?"
+      },
+      "freeform": {
+        "key": "inscription",
+        "type": "string",
+        "placeholder": {
+          "en": "Text on speed display (e.g. 'Your speed')"
+        }
+      },
+      "render": {
+        "en": "The text on this speed display is {inscription}"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a speed display"
+      },
+      "tags": [
+        "highway=speed_display"
+      ],
+      "preciseInput": {
+        "preferredBackground": "photo"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "./assets/layers/speed_display/speed_display.svg"
+    }
+  ],
+  "units": [
+    {
+      "appliesToKey": [
+        "maxspeed"
+      ],
+      "applicableUnits": [
+        {
+          "#": "km/h is the default for a maxspeed; should be empty string",
+          "canonicalDenomination": "",
+          "alternativeDenomination": [
+            "km/u",
+            "kmh",
+            "kph"
+          ],
+          "human": {
+            "en": "kilometers/hour",
+            "ca": "quilòmetres/hora",
+            "es": "kilómetros/hora",
+            "nl": "kilometers/uur",
+            "de": "Kilometer/Stunde"
+          },
+          "humanShort": {
+            "en": "km/h",
+            "ca": "km/h",
+            "es": "km/h",
+            "nl": "km/u",
+            "de": "km/h"
+          }
+        },
+        {
+          "canonicalDenomination": "mph",
+          "useIfNoUnitGiven": [
+            "gb",
+            "us"
+          ],
+          "alternativeDenomination": [
+            "m/u",
+            "mh",
+            "m/ph"
+          ],
+          "human": {
+            "en": "miles/hour",
+            "ca": "milles/hora",
+            "es": "millas/hora",
+            "nl": "miles/uur",
+            "de": "Meilen/Stunde"
+          },
+          "humanShort": {
+            "en": "mph",
+            "ca": "mph",
+            "es": "mph",
+            "nl": "mph",
+            "de": "mph"
+          }
+        }
+      ]
+    }
+  ]
+}

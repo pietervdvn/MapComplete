@@ -28,6 +28,8 @@
   "startZoom": 1,
   "widenFactor": 0.01,
   "layers": [
-    "maxspeed"
+    "maxspeed",
+    "speed_camera",
+    "speed_display"
   ]
 }
