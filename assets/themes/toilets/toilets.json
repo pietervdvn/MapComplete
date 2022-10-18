@@ -35,6 +35,7 @@
   "widenFactor": 3,
   "icon": "./assets/themes/toilets/toilets.svg",
   "layers": [
-    "toilet"
+    "toilet",
+    "toilet_at_amenity"
   ]
 }

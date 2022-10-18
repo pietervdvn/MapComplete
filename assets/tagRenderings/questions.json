@@ -631,6 +631,27 @@
       "type": "opening_hours"
     }
   },
+  "opening_hours_24_7": {
+    "builtin": "opening_hours",
+    "override": {
+      "mappings": [
+        {
+          "if": "opening_hours=24/7",
+          "then": {
+            "en": "24/7 opened (including holidays)",
+            "de": "durchgehend geöffnet (auch an Feiertagen)",
+            "zh_Hant": "24/7 開放 (包括假日)",
+            "id": "Buka 24 jam (termasuk hari libur)",
+            "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
+            "es": "Abierta 24/7 (incluyendo festivos)",
+            "nl": "24/7 open (ook tijdens feestdagen)",
+            "fr": "Ouvert 24h/24 (jours fériés compris)",
+            "nb_NO": "Døgnåpent (inkludert helligdager)"
+          }
+        }
+      ]
+    }
+  },
   "service:electricity": {
     "#": "service:socket describes if a pub, restaurant or café offers electricity to their customers.",
     "question": {

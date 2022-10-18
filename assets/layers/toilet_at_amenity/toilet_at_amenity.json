@@ -1,0 +1,455 @@
+{
+  "id": "toilet_at_amenity",
+  "name": {
+    "en": "Toilets at other amenities"
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "toilets=yes"
+  },
+  "title": {
+    "render": {
+      "en": "Toilet at amenity"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": {
+          "en": "Toilet at {name}"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    "level",
+    {
+      "question": {
+        "en": "Are these toilets publicly accessible?"
+      },
+      "render": {
+        "en": "Access is {toilets:access}",
+        "de": "Zugang ist {toilets:access}",
+        "fr": "L'accès est {toilets:access}",
+        "nl": "Toegankelijkheid is {toilets:access}",
+        "it": "L'accesso è {toilets:access}",
+        "es": "El acceso es {toilets:access}",
+        "da": "Adgang er {toilets:access}"
+      },
+      "freeform": {
+        "key": "toilets:access",
+        "addExtraTags": [
+          "fixme=the tag toilets:access was filled out by the user and might need refinement"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "toilets:access=yes",
+          "then": {
+            "en": "Public access",
+            "de": "Der Zugang ist öffentlich",
+            "fr": "Accès publique",
+            "nl": "Publiek toegankelijk",
+            "it": "Accesso pubblico",
+            "ru": "Свободный доступ",
+            "es": "Acceso públic",
+            "da": "Offentlig adgang"
+          }
+        },
+        {
+          "if": "toilets:access=customers",
+          "then": {
+            "en": "Only access to customers of the amenity"
+          }
+        },
+        {
+          "if": "toilets:access=no",
+          "then": {
+            "en": "Not accessible, even for customers of the amenity"
+          }
+        },
+        {
+          "if": "toilets:access=key",
+          "then": {
+            "en": "Accessible, but one has to ask a key to enter",
+            "de": "Der Zugang ist möglich, aber man muss nach einen Schlüssel fragen",
+            "fr": "Accessible, mais vous devez demander la clé",
+            "nl": "Toegankelijk na het vragen van de sleutel",
+            "it": "Accessibile, ma occorre chiedere una chiave per accedere",
+            "es": "Accesible, pero hay que pedir la llave para entrar",
+            "da": "Tilgængelig, men man skal bede om en nøgle for at komme ind"
+          }
+        },
+        {
+          "if": "toilets:access=public",
+          "then": {
+            "en": "Public access",
+            "de": "Öffentlicher Zugang",
+            "fr": "Accès publique",
+            "nl": "Publiek toegankelijk",
+            "it": "Accesso pubblico",
+            "ru": "Свободный доступ",
+            "es": "De acceso público",
+            "da": "Offentlig adgang"
+          },
+          "hideInAnswer": true
+        }
+      ],
+      "id": "toilet-access"
+    },
+    {
+      "id": "toilets-fee",
+      "condition": "toilets:access!=no",
+      "question": {
+        "en": "Are these toilets free to use?",
+        "de": "Können diese Toiletten kostenlos benutzt werden?",
+        "fr": "Ces toilettes sont-elles payantes ?",
+        "nl": "Zijn deze toiletten gratis te gebruiken?",
+        "it": "Questi servizi igienici sono gratuiti?",
+        "da": "Er det gratis at benytte disse toiletter?"
+      },
+      "mappings": [
+        {
+          "then": {
+            "en": "These are paid toilets",
+            "de": "Die Nutzung ist gebührenpflichtig",
+            "fr": "Toilettes payantes",
+            "nl": "Men moet betalen om deze toiletten te gebruiken",
+            "ru": "Это платные туалеты",
+            "it": "Questi servizi igienici sono a pagamento",
+            "es": "Estos son baños de pago",
+            "da": "Det er betalingstoiletter"
+          },
+          "if": "toilets:fee=yes"
+        },
+        {
+          "if": "toilets:fee=no",
+          "then": {
+            "en": "Free to use",
+            "de": "Die Nutzung ist kostenlos",
+            "fr": "Toilettes gratuites",
+            "nl": "Gratis te gebruiken",
+            "it": "Gratis",
+            "da": "Gratis at bruge"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "How much does one have to pay for these toilets?",
+        "de": "Wie viel muss man für die Nutzung bezahlen?",
+        "fr": "Quel est le prix d'accès de ces toilettes ?",
+        "nl": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
+        "it": "Quanto costa l'accesso a questi servizi igienici?",
+        "ru": "Сколько стоит посещение туалета?",
+        "es": "¿Cuánto hay que pagar para estos baños?",
+        "da": "Hvor meget skal man betale for disse toiletter?"
+      },
+      "render": {
+        "en": "The fee is {toilets:charge}",
+        "de": "Die Gebühr beträgt {toilets:charge}",
+        "fr": "Le prix est {toilets:charge}",
+        "nl": "De toiletten gebruiken kost {toilets:charge}",
+        "it": "La tariffa è {toilets:charge}",
+        "ru": "Стоимость {toilets:charge}",
+        "es": "La tasa es {toilets:charge}",
+        "da": "Gebyret er {toilets:charge}"
+      },
+      "condition": "toilets:fee=yes",
+      "freeform": {
+        "key": "toilets:charge",
+        "type": "string"
+      },
+      "id": "toilet-charge"
+    },
+    {
+      "builtin": "opening_hours",
+      "override": {
+        "condition": "toilets:access!=no",
+        "question": {
+          "en": "When is the amenity where these toilets are located open?"
+        }
+      }
+    },
+    {
+      "id": "toilets-wheelchair",
+      "question": {
+        "en": "Is there a dedicated toilet for wheelchair users?",
+        "de": "Können Rollstuhlfahrer die Toilette benutzen?",
+        "fr": "Y a-t-il des toilettes réservées aux personnes en fauteuil roulant ?",
+        "nl": "Is er een rolstoeltoegankelijke toilet voorzien?",
+        "it": "C'è un WC riservato alle persone in sedia a rotelle",
+        "da": "Er der et særligt toilet til kørestolsbrugere?"
+      },
+      "mappings": [
+        {
+          "then": {
+            "en": "There is a dedicated toilet for wheelchair users",
+            "de": "Rollstuhlfahrer können die Toilette benutzen",
+            "fr": "Il y a des toilettes réservées pour les personnes à mobilité réduite",
+            "nl": "Er is een toilet voor rolstoelgebruikers",
+            "it": "C'è un WC riservato alle persone in sedia a rotelle",
+            "es": "Hay un baño dedicado para usuarios con sillas de ruedas",
+            "da": "Der er et særligt toilet til kørestolsbrugere"
+          },
+          "if": "toilets:wheelchair=yes"
+        },
+        {
+          "if": "toilets:wheelchair=no",
+          "then": {
+            "en": "No wheelchair access",
+            "de": "Rollstuhlfahrer können die Toilette nicht benutzen",
+            "fr": "Non accessible aux personnes à mobilité réduite",
+            "nl": "Niet toegankelijk voor rolstoelgebruikers",
+            "it": "Non accessibile in sedia a rotelle",
+            "ru": "Недоступно пользователям кресел-колясок",
+            "es": "Sin acceso para sillas de ruedas",
+            "da": "Ingen kørestolsadgang"
+          }
+        },
+        {
+          "if": "toilets:wheelchair=designated",
+          "then": {
+            "en": "There is only a dedicated toilet for wheelchair users",
+            "nl": "Er is alleen een toilet voor rolstoelgebruikers",
+            "de": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer",
+            "da": "Der er kun et særligt toilet til kørestolsbrugere"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wheelchair-door-width",
+      "condition": {
+        "or": [
+          "toilets:wheelchair=yes",
+          "toilets:wheelchair=designated"
+        ]
+      },
+      "question": {
+        "en": "What is the width of the door to the wheelchair accessible toilet?",
+        "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
+        "fr": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?",
+        "de": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
+        "da": "Hvad er bredden på døren til det kørestolsvenlige toilet?"
+      },
+      "render": {
+        "en": "The door to the wheelchair-accessible toilet is {canonical(toilets:door:width)} wide",
+        "nl": "De deur naar de rolstoeltoegankelijke toilet is {canonical(toilets:door:width)} wide",
+        "fr": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(toilets:door:width)}",
+        "de": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit",
+        "da": "Døren til det kørestolsvenlige toilet er {canonical(toilets:door:width)} bred"
+      },
+      "freeform": {
+        "key": "toilets:door:width",
+        "type": "pfloat"
+      }
+    },
+    "toilet.toilets-type",
+    "toilet.toilets-changing-table",
+    "toilet.toilet-changing_table:location",
+    "toilet.toilet-handwashing",
+    "toilet.toilet-has-paper",
+    {
+      "builtin": "description",
+      "override": {
+        "render": "{toilets:description}",
+        "freeform": {
+          "key": "toilets:description",
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "wheelchair",
+      "options": [
+        {
+          "question": {
+            "en": "Wheelchair accessible",
+            "nl": "Rolstoel toegankelijk",
+            "de": "Rollstuhlgerecht",
+            "es": "Accesible con sillas de ruedas",
+            "fr": "Accessible aux fauteuils roulants",
+            "da": "Tilgængelig for kørestolsbrugere"
+          },
+          "osmTags": {
+            "or": [
+              "toilets:wheelchair=yes",
+              "toilets:wheelchair=designated"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "changing_table",
+      "options": [
+        {
+          "question": {
+            "en": "Has a changing table",
+            "nl": "Heeft een luiertafel",
+            "de": "Mit Wickeltisch",
+            "es": "Tiene un cambiador",
+            "fr": "A une table à langer",
+            "da": "Har et puslebord"
+          },
+          "osmTags": "changing_table=yes"
+        }
+      ]
+    },
+    {
+      "id": "free",
+      "options": [
+        {
+          "question": {
+            "en": "Free to use",
+            "nl": "Gratis toegankelijk",
+            "de": "Nutzung kostenlos",
+            "fr": "Utilisation gratuite",
+            "da": "Gratis at bruge"
+          },
+          "osmTags": {
+            "or": [
+              "toilets:fee=no",
+              "toilets:fee=0",
+              "toilets:charge=0"
+            ]
+          }
+        }
+      ]
+    },
+    "open_now"
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "toilets=no",
+        "toilets:wheelchair=no"
+      ]
+    },
+    "neededChangesets": 1
+  },
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "./assets/layers/toilet/toilets.svg",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "toilets:wheelchair=yes",
+                "toilets:wheelchair=designated"
+              ]
+            },
+            "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
+          },
+          {
+            "if": {
+              "or": [
+                "toilets:position=urinals",
+                "toilets:position=urinal"
+              ]
+            },
+            "then": "./assets/layers/toilet/urinal.svg"
+          }
+        ]
+      },
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "isOpen"
+        },
+        {
+          "if": "shop~*",
+          "then": "./assets/themes/shops/shop.svg"
+        },
+        {
+          "if": "amenity=restaurant",
+          "then": "circle:white;./assets/layers/food/restaurant.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "amenity=fast_food",
+              "cuisine=friture"
+            ]
+          },
+          "then": "circle:white;./assets/layers/food/fries.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "amenity=fast_food",
+              "cuisine!=friture"
+            ]
+          },
+          "then": "circle:white;./assets/layers/food/fastfood.svg"
+        },
+        {
+          "if": {
+            "or": [
+              "amenity=bar",
+              "amenity=pub",
+              "amenity=biergarten"
+            ]
+          },
+          "then": "circle:white;./assets/layers/cafe_pub/pub.svg"
+        },
+        {
+          "if": "amenity=cafe",
+          "then": "circle:white;./assets/layers/cafe_pub/cafe.svg"
+        },
+        {
+          "if": "amenity=nightclub",
+          "then": "circle:white;./assets/layers/cafe_pub/nightclub.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "description": {
+    "en": "A layer showing (public) toilets located at different places."
+  },
+  "units": [
+    {
+      "appliesToKey": [
+        "toilets:door:width"
+      ],
+      "applicableUnits": [
+        {
+          "canonicalDenomination": "m",
+          "alternativeDenomination": [
+            "meter"
+          ],
+          "human": {
+            "en": "meter",
+            "nl": "meter",
+            "fr": "mètre",
+            "de": "Meter",
+            "da": "meter"
+          }
+        },
+        {
+          "canonicalDenomination": "cm",
+          "alternativeDenomination": [
+            "centimeter",
+            "cms"
+          ],
+          "human": {
+            "en": "centimeter",
+            "nl": "centimeter",
+            "fr": "centimètre",
+            "de": "Zentimeter",
+            "da": "centimeter"
+          }
+        }
+      ]
+    }
+  ]
+}
