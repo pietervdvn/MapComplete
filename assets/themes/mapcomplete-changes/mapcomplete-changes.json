@@ -147,6 +147,10 @@
                 "then": "./assets/layers/binocular/telescope.svg"
               },
               {
+                "if": "theme=blind_osm",
+                "then": "./assets/themes/blind_osm/Blindicon.svg"
+              },
+              {
                 "if": "theme=bookcases",
                 "then": "./assets/themes/bookcases/bookcase.svg"
               },
