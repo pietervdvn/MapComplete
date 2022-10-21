@@ -453,8 +453,8 @@
             },
             "then": {
               "nl": "Deze straat wordt binnenkort een fietsstraat",
-              "en": "This street will become a cyclstreet soon",
-              "ja": "この通りはまもなくcyclstreetになるだろう",
+              "en": "This street will become a cyclestreet soon",
+              "ja": "この通りはまもなくcyclestreetになるだろう",
               "nb_NO": "Denne gaten vil bli sykkelvei ganske snart",
               "de": "Diese Straße wird bald eine Fahrradstraße sein",
               "it": "Diverrà tra poco una strada ciclabile",
