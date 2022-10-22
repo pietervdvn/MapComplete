@@ -4360,22 +4360,6 @@
                         "question": "Stoeprand met onbekende hoogte"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Stoepranden met of zonder voelbare bestrating"
-                    },
-                    "1": {
-                        "question": "Stoeprand met voelbare bestrating"
-                    },
-                    "2": {
-                        "question": "Stoeprand zonder voelbare bestrating"
-                    },
-                    "3": {
-                        "question": "Stoeprand zonder informatie over voelbare bestrating"
-                    }
-                }
             }
         },
         "name": "Stoepranden",

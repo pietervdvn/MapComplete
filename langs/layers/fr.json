@@ -2963,22 +2963,6 @@
                         "question": "Bordure de hauteur inconnue"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Bordures avec ou sans revêtement podotactile"
-                    },
-                    "1": {
-                        "question": "Bordure avec revêtement podotactile"
-                    },
-                    "2": {
-                        "question": "Bordure sans revêtement podotactile"
-                    },
-                    "3": {
-                        "question": "Bordure sans information sur le revêtement podotactile"
-                    }
-                }
             }
         },
         "name": "Bordures",

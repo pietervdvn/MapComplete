@@ -4373,22 +4373,6 @@
                         "question": "Kerb with unknown height"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Kerbs with or without tactile paving"
-                    },
-                    "1": {
-                        "question": "Kerb with tactile paving"
-                    },
-                    "2": {
-                        "question": "Kerb without tactile paving"
-                    },
-                    "3": {
-                        "question": "Kerb wihout information about tactile paving"
-                    }
-                }
             }
         },
         "name": "Kerbs",
