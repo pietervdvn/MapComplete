@@ -37,7 +37,9 @@
           }
         ]
       },
-      "hideTagRenderingsWithLabels": ["crossing-bicycle-allowed"]
+      "hideTagRenderingsWithLabels": [
+        "crossing-bicycle-allowed"
+      ]
     },
     {
       "builtin": "kerbs",
@@ -77,6 +79,13 @@
           }
         ]
       }
-    }
+    },
+    {
+      "builtin": "elevator",
+      "override": {
+        "minzoom": 17
+      }
+    },
+    "stairs"
   ]
 }

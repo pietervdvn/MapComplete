@@ -3372,7 +3372,7 @@
     },
     "elevator": {
         "description": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet.",
-        "name": "lift",
+        "name": "Lift",
         "presets": {
             "0": {
                 "title": "een lift"

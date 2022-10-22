@@ -3384,7 +3384,7 @@
     },
     "elevator": {
         "description": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
-        "name": "elevator",
+        "name": "Elevator",
         "presets": {
             "0": {
                 "title": "an elevator"
