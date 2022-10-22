@@ -474,7 +474,7 @@
                             "then": "This street is a cyclestreet"
                         },
                         "4": {
-                            "then": "This street will become a cyclstreet soon"
+                            "then": "This street will become a cyclestreet soon"
                         },
                         "5": {
                             "then": "This street will become a bicycle road soon"

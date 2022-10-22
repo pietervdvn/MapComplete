@@ -63,12 +63,12 @@
     },
     {
       "key": "cyclestreet",
-      "description": "Layer 'Cyclestreets' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
+      "description": "Layer 'Cyclestreets' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclestreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
       "value": ""
     },
     {
       "key": "proposed:cyclestreet",
-      "description": "Layer 'Cyclestreets' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Cyclestreets' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclestreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
       "value": "yes"
     },
     {
@@ -143,12 +143,12 @@
     },
     {
       "key": "cyclestreet",
-      "description": "Layer 'Future cyclestreet' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
+      "description": "Layer 'Future cyclestreet' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclestreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
       "value": ""
     },
     {
       "key": "proposed:cyclestreet",
-      "description": "Layer 'Future cyclestreet' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Future cyclestreet' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclestreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
       "value": "yes"
     },
     {
@@ -233,12 +233,12 @@
     },
     {
       "key": "cyclestreet",
-      "description": "Layer 'All streets' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
+      "description": "Layer 'All streets' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclestreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
       "value": ""
     },
     {
       "key": "proposed:cyclestreet",
-      "description": "Layer 'All streets' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclstreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'All streets' shows proposed:cyclestreet=yes with a fixed text, namely 'This street will become a cyclestreet soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
       "value": "yes"
     },
     {
