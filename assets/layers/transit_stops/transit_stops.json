@@ -352,34 +352,7 @@
         }
       ]
     },
-    {
-      "id": "tactile-paving",
-      "options": [
-        {
-          "question": {
-            "en": "With or without tactile paving"
-          }
-        },
-        {
-          "osmTags": "tactile_paving=yes",
-          "question": {
-            "en": "With tactile paving"
-          }
-        },
-        {
-          "osmTags": "tactile_paving=no",
-          "question": {
-            "en": "Without tactile paving"
-          }
-        },
-        {
-          "osmTags": "tactile_paving=",
-          "question": {
-            "en": "Without information about tactile paving"
-          }
-        }
-      ]
-    }
+    "tactile_paving"
   ],
   "allowMove": false
 }

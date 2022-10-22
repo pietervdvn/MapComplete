@@ -563,5 +563,8 @@
     {
       "width": "5"
     }
+  ],
+  "filter": [
+    "tactile_paving_advanced"
   ]
 }
