@@ -969,7 +969,7 @@
                         "then": "Denne butik tilbyder ikke en cykelpumpe til nogen"
                     },
                     "2": {
-                        "then": "Der er cykelpumpe, den er vist som et separat punkt "
+                        "then": "Der er cykelpumpe, den er vist som et separat punkt"
                     }
                 },
                 "question": "Tilbyder denne butik en cykelpumpe til brug for alle?"
