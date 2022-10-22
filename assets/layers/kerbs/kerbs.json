@@ -197,7 +197,15 @@
           "fr": "Hauteur de la bordure"
         },
         "type": "pnat"
-      }
+      },
+      "mappings": [
+        {
+          "if": "kerb:height=0",
+          "then": {
+            "en": "This kerb is flush and is lower than 1cm."
+          }
+        }
+      ]
     }
   ],
   "presets": [
