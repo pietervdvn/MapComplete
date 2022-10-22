@@ -7,9 +7,9 @@
     "en": "Help to map features relevant for the blind"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 0,
+  "startLat": 52.99238,
+  "startLon": 6.570614,
+  "startZoom": 20,
   "defaultBackgroundId": "CartoDB.Positron",
   "layers": [
     {
