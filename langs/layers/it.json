@@ -652,7 +652,7 @@
                         "then": "Questo negozio non offre l’uso pubblico di una pompa per bici"
                     },
                     "2": {
-                        "then": "C’è una pompa per bici, è mostrata come punto separato "
+                        "then": "C’è una pompa per bici, è mostrata come punto separato"
                     }
                 },
                 "question": "Questo negozio offre l’uso a chiunque di una pompa per bici?"
