@@ -986,7 +986,7 @@
                         "then": "This shop doesn't offer a bike pump for anyone"
                     },
                     "2": {
-                        "then": "There is bicycle pump, it is shown as a separate point "
+                        "then": "There is bicycle pump, it is shown as a separate point"
                     }
                 },
                 "question": "Does this shop offer a bike pump for use by anyone?"
@@ -5211,7 +5211,7 @@
             "type": {
                 "mappings": {
                     "0": {
-                        "then": "This is a normal parking space"
+                        "then": "This is a normal parking space."
                     },
                     "1": {
                         "then": "This is a normal parking space."

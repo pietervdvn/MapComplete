@@ -975,7 +975,7 @@
                         "then": "Ce magasin n'offre pas de pompe en libre accès"
                     },
                     "2": {
-                        "then": "Il y a une pompe à vélo, c'est indiqué comme un point séparé "
+                        "then": "Il y a une pompe à vélo, c'est indiqué comme un point séparé"
                     }
                 },
                 "question": "Est-ce que ce magasin offre une pompe en accès libre ?"

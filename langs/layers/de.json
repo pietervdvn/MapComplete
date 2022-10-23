@@ -986,7 +986,7 @@
                         "then": "Im Geschäft gibt es keine öffentlich nutzbare Luftpumpe"
                     },
                     "2": {
-                        "then": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen "
+                        "then": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen"
                     }
                 },
                 "question": "Gibt es im Geschäft eine öffentlich nutzbare Luftpumpe?"
@@ -5211,7 +5211,7 @@
             "type": {
                 "mappings": {
                     "0": {
-                        "then": "Dies ist ein normaler Stellplatz"
+                        "then": "Dies ist ein normaler Stellplatz."
                     },
                     "1": {
                         "then": "Dies ist ein normaler Stellplatz."
