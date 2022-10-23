@@ -203,6 +203,7 @@ class LayerOverviewUtils {
             "assets/SocialImageTemplate.svg",
             "assets/SocialImageTemplateWide.svg",
             "assets/SocialImageBanner.svg",
+            "assets/SocialImageRepo.svg",
             "assets/svg/osm-logo.svg",
             "assets/templates/*"
         ]
