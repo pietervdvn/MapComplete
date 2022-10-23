@@ -316,9 +316,10 @@ export interface LayerConfigJson {
     )[]
 
     /**
-     * All the extra questions for filtering
+     * All the extra questions for filtering.
+     * If a string is given, mapComplete will search in 'filters.json' for the appropriate filter
      */
-    filter?: FilterConfigJson[] | { sameAs: string }
+    filter?: (FilterConfigJson | string)[] | { sameAs: string }
 
     /**
      * This block defines under what circumstances the delete dialog is shown for objects of this layer.

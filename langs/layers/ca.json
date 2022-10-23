@@ -323,15 +323,6 @@
         }
     },
     "cafe_pub": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Obert ara"
-                    }
-                }
-            }
-        },
         "presets": {
             "0": {
                 "title": "un bar"
@@ -623,7 +614,7 @@
             "render": "Extintors"
         }
     },
-    "food": {
+    "filters": {
         "filter": {
             "0": {
                 "options": {
@@ -632,7 +623,9 @@
                     }
                 }
             }
-        },
+        }
+    },
+    "food": {
         "presets": {
             "0": {
                 "title": "un restaurant"
@@ -802,17 +795,6 @@
             }
         }
     },
-    "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualment obert"
-                    }
-                }
-            }
-        }
-    },
     "parking": {
         "name": "Aparcament"
     },
@@ -877,15 +859,6 @@
         }
     },
     "postoffices": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Actualment obert"
-                    }
-                }
-            }
-        },
         "name": "Oficines de correus",
         "presets": {
             "0": {

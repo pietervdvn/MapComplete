@@ -269,7 +269,8 @@
         "pt_BR": "Qual a localização relativa deste estacionamento de bicicletas?",
         "de": "Wo befinden sich diese Fahrradabstellplätze?",
         "pt": "Qual a localização relativa deste estacionamento de bicicletas?",
-        "es": "¿Cual es la localización relativa de este aparcamiento de bicicletas?"
+        "es": "¿Cual es la localización relativa de este aparcamiento de bicicletas?",
+        "da": "Hvad er den relative placering af denne cykelparkering?"
       },
       "mappings": [
         {
@@ -302,7 +303,8 @@
             "pt_BR": "Estacionamento de superfície",
             "pt": "Estacionamento de superfície",
             "hu": "Felszíni parkoló",
-            "es": "Aparcamiento a nivel de calle"
+            "es": "Aparcamiento a nivel de calle",
+            "da": "Parkering i gade niveau"
           }
         },
         {
@@ -335,7 +337,8 @@
             "zh_Hant": "地面層停車場",
             "pt_BR": "Estacionamento ao nível da superfície",
             "pt": "Estacionamento ao nível da superfície",
-            "es": "Aparcamiento a nivel de calle"
+            "es": "Aparcamiento a nivel de calle",
+            "da": "Parkering i gade niveau"
           },
           "hideInAnswer": true
         }
@@ -354,7 +357,8 @@
         "zh_Hant": "這個停車場是否有車棚？如果是室內停車場也請選擇\"遮蔽\"。",
         "pt_BR": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
         "pt": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
-        "es": "¿Está cubierto este aparcamiento? Selecciona \"cubierto\" también para aparcamientos interiores."
+        "es": "¿Está cubierto este aparcamiento? Selecciona \"cubierto\" también para aparcamientos interiores.",
+        "da": "Er denne parkering overdækket? Vælg også \"overdækket\" for indendørs parkeringspladser."
       },
       "condition": {
         "and": [

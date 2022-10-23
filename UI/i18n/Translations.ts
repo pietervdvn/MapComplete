@@ -41,7 +41,7 @@ export default class Translations {
      * translation.textFor("nl") // => "Nederlands"
      *
      */
-    static T(t: string | any, context = undefined): TypedTranslation<object> {
+    static T(t: string | undefined | null | Translation | TypedTranslation<object>, context = undefined): TypedTranslation<object> {
         if (t === undefined || t === null) {
             return undefined
         }
@@ -51,7 +51,7 @@ export default class Translations {
         if (typeof t === "string") {
             return new TypedTranslation<object>({ "*": t }, context)
         }
-        if (t.render !== undefined) {
+        if (t["render"] !== undefined) {
             const msg =
                 "Creating a translation, but this object contains a 'render'-field. Use the translation directly"
             console.error(msg, t)

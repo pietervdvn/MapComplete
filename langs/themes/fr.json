@@ -414,19 +414,19 @@
                         "0": {
                             "then": "Cette rue est une rue cyclable (et est limitée à 30 km/h)"
                         },
-                        "1": {
+                        "3": {
                             "then": "Cette rue est une rue cyclable"
                         },
-                        "2": {
+                        "4": {
                             "then": "Cette rue sera bientôt une rue cyclable"
                         },
-                        "3": {
+                        "6": {
                             "then": "Cette rue n’est pas une rue cyclable"
                         }
                     },
                     "question": "La rue <b>{name}</b> est-elle une rue cyclable ?"
                 },
-                "1": {
+                "2": {
                     "question": "Quand cette rue deviendra-t-elle cyclable ?",
                     "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
                 }

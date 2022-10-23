@@ -1,17 +1,15 @@
-import { Translation } from "../../UI/i18n/Translation"
-import { TagsFilter } from "../../Logic/Tags/TagsFilter"
+import {Translation} from "../../UI/i18n/Translation"
+import {TagsFilter} from "../../Logic/Tags/TagsFilter"
 import FilterConfigJson from "./Json/FilterConfigJson"
 import Translations from "../../UI/i18n/Translations"
-import { TagUtils } from "../../Logic/Tags/TagUtils"
+import {TagUtils} from "../../Logic/Tags/TagUtils"
 import ValidatedTextField from "../../UI/Input/ValidatedTextField"
-import { TagConfigJson } from "./Json/TagConfigJson"
-import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import { FilterState } from "../FilteredLayer"
-import { QueryParameters } from "../../Logic/Web/QueryParameters"
-import { Utils } from "../../Utils"
-import { RegexTag } from "../../Logic/Tags/RegexTag"
-import BaseUIElement from "../../UI/BaseUIElement"
-import { InputElement } from "../../UI/Input/InputElement"
+import {TagConfigJson} from "./Json/TagConfigJson"
+import {UIEventSource} from "../../Logic/UIEventSource"
+import {FilterState} from "../FilteredLayer"
+import {QueryParameters} from "../../Logic/Web/QueryParameters"
+import {Utils} from "../../Utils"
+import {RegexTag} from "../../Logic/Tags/RegexTag"
 
 export default class FilterConfig {
     public readonly id: string
@@ -133,6 +131,7 @@ export default class FilterConfig {
 
             if (
                 t.value.source == "^..*$" ||
+                t.value.source == ".+" ||
                 t.value.source == "^[\\s\\S][\\s\\S]*$" /*Compiled regex with 'm'*/
             ) {
                 return

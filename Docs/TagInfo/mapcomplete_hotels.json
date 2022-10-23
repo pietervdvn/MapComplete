@@ -41,7 +41,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hotels' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Hotels')"
+      "description": "Layer 'Hotels' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Hotels')"
     },
     {
       "key": "email",
@@ -49,7 +49,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hotels' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Hotels')"
+      "description": "Layer 'Hotels' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Hotels')"
     },
     {
       "key": "website",
@@ -57,7 +57,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Hotels' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Hotels')"
+      "description": "Layer 'Hotels' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Hotels')"
     },
     {
       "key": "wheelchair",

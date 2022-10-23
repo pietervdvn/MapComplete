@@ -9,7 +9,7 @@
                     "then": "Anjing diperbolehkan"
                 },
                 "1": {
-                    "then": "Anjing <b> tidak </b> diperbolehkan"
+                    "then": "Anjing <b>tidak</b> diperbolehkan"
                 },
                 "2": {
                     "then": "Anjing diperbolehkan, tetapi mereka harus diikat"
@@ -22,6 +22,43 @@
         },
         "email": {
             "question": "Apa alamat surel dari {title()}?"
+        },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "Tempat ini menyediakan jaringan internet nirkabel"
+                },
+                "1": {
+                    "then": "Tempat ini <b>tidak</b> menyediakan jaringan internet"
+                },
+                "2": {
+                    "then": "Tempat ini menyediakan jaringan internet"
+                },
+                "3": {
+                    "then": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer"
+                },
+                "4": {
+                    "then": "Tempat ini menyediakan jaringan internet kabel"
+                }
+            },
+            "question": "Apa tempat ini menyediakan jaringan internet?"
+        },
+        "internet-fee": {
+            "mappings": {
+                "1": {
+                    "then": "Jaringan internet tersedia gratis di tempat ini"
+                },
+                "2": {
+                    "then": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan"
+                }
+            }
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Masukkan nama jaringan"
+            },
+            "question": "Apa nama jaringan internet nirkabelnya?",
+            "render": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>"
         },
         "level": {
             "mappings": {
@@ -44,6 +81,12 @@
             "question": "Pada tingkat apa fitur ini diletakkan?",
             "render": "Terletak di lantai {level}"
         },
+        "multilevels": {
+            "override": {
+                "question": "Pada lantai berapa saja lift ini berjalan?",
+                "render": "Lift ini berjalan ke lantai {level}"
+            }
+        },
         "opening_hours": {
             "question": "Kapan jam buka {title()}?",
             "render": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}"
@@ -51,16 +94,42 @@
         "payment-options": {
             "mappings": {
                 "0": {
-                    "then": "Disini menerima pembayaran tunai"
+                    "then": "Pembayaran tunai diterima di sini"
                 },
                 "1": {
-                    "then": "Disini menerima pembayaran dengan kartu"
+                    "then": "Kartu pembayaran diterima di sini"
                 }
             },
             "question": "Metode pembayaran manakah yang di terima disini?"
         },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Pembayaran dilakukan dengan aplikasi khusus"
+                    },
+                    "1": {
+                        "then": "Pembayaran dilakukan dengan kartu anggota"
+                    }
+                }
+            }
+        },
         "phone": {
-            "question": "Nomor telepon dari {title()}?"
+            "question": "Berapa nomor telepon dari {title()}?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Merokok <b>diizinkan</b>"
+                },
+                "1": {
+                    "then": "Merokok <b>dilarang</b>"
+                },
+                "2": {
+                    "then": "Merokok <b>diizinkan di luar ruangan</b>."
+                }
+            },
+            "question": "Apa diizinkan untuk merokok di {title()}?"
         },
         "website": {
             "question": "Apa situs web dari {title()}?"

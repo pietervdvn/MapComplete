@@ -9,7 +9,8 @@
     "de": "Straßenbeleuchtung",
     "ca": "Il·luminació als carrers",
     "fr": "Éclairage de Rue",
-    "nb_NO": "Gatebelysning"
+    "nb_NO": "Gatebelysning",
+    "da": "Gadebelysning"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
@@ -18,7 +19,8 @@
     "hu": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos",
     "de": "Eine Karte für alles zum Thema Straßenbeleuchtung",
     "es": "En este mapa puedes encontrar todo sobre la iluminación callejera",
-    "fr": "Retrouvez tout ce qui touche à l’éclairage de rue sur cette carte"
+    "fr": "Retrouvez tout ce qui touche à l’éclairage de rue sur cette carte",
+    "da": "På dette kort kan du finde alt om gadebelysning"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,
@@ -37,7 +39,8 @@
         "ca": "Il·luminació de carrers",
         "es": "Calles iluminadas",
         "fr": "Rues éclairées",
-        "nb_NO": "Belyste gater"
+        "nb_NO": "Belyste gater",
+        "da": "Oplyste gader"
       },
       "source": {
         "osmTags": {
@@ -60,7 +63,8 @@
           "ca": "Il·luminació del carrer",
           "es": "Calle iluminada",
           "fr": "Rue éclairée",
-          "nb_NO": "Belyst gate"
+          "nb_NO": "Belyst gate",
+          "da": "Oplyst gade"
         },
         "mappings": [
           {
@@ -86,7 +90,8 @@
             "de": "Ist diese Straße beleuchtet?",
             "es": "¿Está iluminada esta calle?",
             "nb_NO": "Er denne gaten belyst?",
-            "fr": "Cette est-elle éclairée ?"
+            "fr": "Cette est-elle éclairée ?",
+            "da": "Er denne gade oplyst?"
           },
           "mappings": [
             {
@@ -99,7 +104,8 @@
                 "de": "Diese Straße ist beleuchtet",
                 "es": "Esta calle está iluminada",
                 "nb_NO": "Denne gaten er belyst",
-                "fr": "Cette rue est éclairée"
+                "fr": "Cette rue est éclairée",
+                "da": "Denne gade er oplyst"
               }
             },
             {
@@ -111,7 +117,9 @@
                 "hu": "Ezen az utcán nincs közvilágítás",
                 "de": "Diese Straße ist nicht beleuchtet",
                 "es": "Esta calle no está iluminada",
-                "fr": "Cette rue n’est pas éclairée"
+                "fr": "Cette rue n’est pas éclairée",
+                "da": "Denne gade er ikke oplyst",
+                "nb_NO": "Gate uten belysning"
               }
             },
             {
@@ -124,7 +132,8 @@
                 "de": "Diese Straße ist nachts beleuchtet",
                 "es": "Esta calle está iluminada por la noche",
                 "nb_NO": "Denne gaten er belyst nattestid",
-                "fr": "Cette rue est éclairée la nuit"
+                "fr": "Cette rue est éclairée la nuit",
+                "da": "Denne gade er oplyst om natten"
               },
               "hideInAnswer": true
             },
@@ -138,7 +147,8 @@
                 "de": "Diese Straße ist durchgehend beleuchtet",
                 "es": "Esta calle está iluminada todo el día",
                 "nb_NO": "Denne gaten er belyst døgnet rundt",
-                "fr": "Cette rue est éclairée en permanence"
+                "fr": "Cette rue est éclairée en permanence",
+                "da": "Denne gade er oplyst 24/7"
               }
             }
           ]
@@ -158,7 +168,8 @@
         "ca": "Tots els carrers",
         "es": "Todas las calles",
         "fr": "Toutes les rues",
-        "nb_NO": "Alle gater"
+        "nb_NO": "Alle gater",
+        "da": "Alle gader"
       },
       "source": {
         "osmTags": {
@@ -180,7 +191,8 @@
           "de": "Straße",
           "ca": "Carrer",
           "nb_NO": "Gate",
-          "fr": "Rue"
+          "fr": "Rue",
+          "da": "Gade"
         },
         "mappings": [
           {
@@ -213,7 +225,8 @@
             "hu": "Ki van-e világítva ez az utca?",
             "de": "Ist diese Straße beleuchtet?",
             "nb_NO": "Er denne gaten belyst?",
-            "fr": "Cette rue est-elle éclairée ?"
+            "fr": "Cette rue est-elle éclairée ?",
+            "da": "Er denne gade oplyst?"
           },
           "mappings": [
             {
@@ -226,7 +239,8 @@
                 "de": "Diese Straße ist beleuchtet",
                 "es": "Esta calle está iluminada",
                 "nb_NO": "Denne gaten er belyst",
-                "fr": "Cette rue est éclairée"
+                "fr": "Cette rue est éclairée",
+                "da": "Denne gade er oplyst"
               }
             },
             {
@@ -239,7 +253,8 @@
                 "de": "Diese Straße ist nicht beleuchtet",
                 "es": "Esta calle no está iluminada",
                 "nb_NO": "Denne gaten er ikke belyst",
-                "fr": "Cette rue n’est pas éclairée"
+                "fr": "Cette rue n’est pas éclairée",
+                "da": "Denne gade er ikke oplyst"
               }
             },
             {
@@ -251,7 +266,8 @@
                 "hu": "Ez az utca éjjel ki van világítva",
                 "de": "Diese Straße ist nachts beleuchtet",
                 "nb_NO": "Denne gaten er belyst nattestid",
-                "fr": "Cette rue est éclairée la nuit"
+                "fr": "Cette rue est éclairée la nuit",
+                "da": "Denne gade er oplyst om natten"
               },
               "hideInAnswer": true
             },
@@ -264,7 +280,8 @@
                 "hu": "Ez az utca éjjel-nappal ki van világítva",
                 "de": "Diese Straße ist durchgehend beleuchtet",
                 "nb_NO": "Denne gaten er belyst døgnet rundt",
-                "fr": "Cette rue est éclairée en permanence"
+                "fr": "Cette rue est éclairée en permanence",
+                "da": "Denne gade er oplyst 24/7"
               }
             }
           ]

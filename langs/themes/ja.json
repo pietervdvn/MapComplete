@@ -291,18 +291,18 @@
                         "0": {
                             "then": "cyclestreet(最高速度は30km/h)"
                         },
-                        "1": {
+                        "3": {
                             "then": "この通りはcyclestreetだ"
                         },
-                        "2": {
-                            "then": "この通りはまもなくcyclstreetになるだろう"
+                        "4": {
+                            "then": "この通りはまもなくcyclestreetになるだろう"
                         },
-                        "3": {
+                        "6": {
                             "then": "この通りはcyclestreetではない"
                         }
                     }
                 },
-                "1": {
+                "2": {
                     "question": "この通りはいつcyclestreetになるんですか?",
                     "render": "この通りは{cyclestreet:start_date}に、cyclestreetになります"
                 }

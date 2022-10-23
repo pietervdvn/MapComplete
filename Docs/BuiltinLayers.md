@@ -350,7 +350,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - id~^node\/.*$
+  - id~^(node\/.*)$
 
 
 
@@ -391,7 +391,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - id~^..*$
+  - id~.+
 
 
 
@@ -545,7 +545,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - camera:direction~^..*$|direction~^..*$
+  - camera:direction~.+|direction~.+
 
 
 
@@ -813,6 +813,7 @@ The following layers are included in MapComplete:
   - [entrance](./Layers/entrance.md)
   - [etymology](./Layers/etymology.md)
   - [extinguisher](./Layers/extinguisher.md)
+  - [filters](./Layers/filters.md)
   - [fire_station](./Layers/fire_station.md)
   - [food](./Layers/food.md)
   - [ghost_bike](./Layers/ghost_bike.md)
@@ -842,6 +843,7 @@ The following layers are included in MapComplete:
   - [nature_reserve](./Layers/nature_reserve.md)
   - [note](./Layers/note.md)
   - [observation_tower](./Layers/observation_tower.md)
+  - [osm_community_index](./Layers/osm_community_index.md)
   - [parcel_lockers](./Layers/parcel_lockers.md)
   - [parking](./Layers/parking.md)
   - [parking_spaces](./Layers/parking_spaces.md)

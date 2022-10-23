@@ -40,6 +40,7 @@ export class RegexTag extends TagsFilter {
      *
      * // A wildcard regextag should only give the key
      * new RegexTag("a", /^..*$/).asOverpass() // => [ `["a"]` ]
+     * new RegexTag("a", /.+/).asOverpass() // => [ `["a"]` ]
      *
      * // A regextag with a regex key should give correct output
      * new RegexTag(/a.*x/, /^..*$/).asOverpass() // => [ `[~"a.*x"~\"^..*$\"]` ]
@@ -56,7 +57,7 @@ export class RegexTag extends TagsFilter {
 
         if (this.value instanceof RegExp) {
             const src = this.value.source
-            if (src === "^..*$") {
+            if (src === "^..*$" || src === ".+") {
                 // anything goes
                 return [`[${inv}"${this.key}"]`]
             }
@@ -251,7 +252,7 @@ export class RegexTag extends TagsFilter {
             if (typeof this.value === "string") {
                 return [{ k: this.key, v: this.value }]
             }
-            if (this.value.toString() != "/^..*$/") {
+            if (this.value.toString() != "/^..*$/" || this.value.toString() != ".+") {
                 console.warn("Regex value in tag; using wildcard:", this.key, this.value)
             }
             return [{ k: this.key, v: undefined }]

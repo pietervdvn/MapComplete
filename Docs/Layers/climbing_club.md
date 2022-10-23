@@ -40,7 +40,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:club' target='_blank'>club</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:club%3Dclimbing' target='_blank'>climbing</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>&office~^..*$|club~^..*$
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:club' target='_blank'>club</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:club%3Dclimbing' target='_blank'>climbing</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>&office~.+|club~.+
 
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22club%22%3D%22climbing%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22club%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22sport%22%3D%22climbing%22%5D%5B%22office%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
@@ -97,7 +97,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -117,7 +117,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~^..*$`
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -137,7 +137,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~^..*$`
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 

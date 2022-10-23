@@ -10,7 +10,8 @@
     "it": "Sorveglianza sotto controllo",
     "hu": "Megfigyelt térfigyelés",
     "ca": "Vigilància sota vigilància",
-    "nb_NO": "Overvåkning under overvåkning"
+    "nb_NO": "Overvåkning under overvåkning",
+    "da": "Overvågning under Overvågning"
   },
   "shortDescription": {
     "en": "Surveillance cameras and other means of surveillance",
@@ -21,7 +22,9 @@
     "pl": "Kamery monitorujące i inne środki nadzoru",
     "de": "Überwachungskameras und andere Mittel zur Überwachung",
     "it": "Telecamere di sorveglianza e altri mezzi di sorveglianza.",
-    "hu": "Térfigyelő kamerák és más figyelőeszközök"
+    "hu": "Térfigyelő kamerák és más figyelőeszközök",
+    "da": "Overvågningskameraer og andre overvågningsmidler",
+    "nb_NO": "Overvåkningskameraer og andre typer overvåkning"
   },
   "description": {
     "en": "On this open map, you can find surveillance cameras.",
@@ -33,7 +36,8 @@
     "de": "Auf dieser offenen Karte finden Sie Überwachungskameras.",
     "it": "In questa cartina puoi trovare le telecamera di sorveglianza.",
     "hu": "Ezen a térképen térfigyelő kamerák láthatók.",
-    "ru": "На этой открытой карте можно найти камеры слежения."
+    "ru": "На этой открытой карте можно найти камеры слежения.",
+    "da": "På dette åbne kort kan du finde overvågningskameraer."
   },
   "icon": "./assets/themes/surveillance/logo.svg",
   "startLat": 0,

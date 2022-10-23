@@ -14,7 +14,8 @@
     "id": "Pohon",
     "hu": "Fatérkép",
     "ca": "Arbres",
-    "es": "Árboles"
+    "es": "Árboles",
+    "da": "Træer"
   },
   "shortDescription": {
     "en": "Map all the trees",
@@ -29,7 +30,8 @@
     "nb_NO": "Kartlegg alle trærne",
     "hu": "Az összes fa feltérképezése",
     "ca": "Mapeja tots els arbres",
-    "es": "Mapa de los Árboles"
+    "es": "Mapa de los Árboles",
+    "da": "Kortlæg alle træer"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
@@ -43,7 +45,8 @@
     "nb_NO": "Kartlegg trærne.",
     "hu": "Térképezzünk fel minden fát!",
     "ca": "Mapeja tots els arbres.",
-    "es": "Mapa de todos los Árboles"
+    "es": "Mapa de todos los Árboles",
+    "da": "Kortlæg alle træerne!"
   },
   "icon": "./assets/themes/trees/logo.svg",
   "startLat": 50.642,

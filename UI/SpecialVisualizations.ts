@@ -525,7 +525,7 @@ export default class SpecialVisualizations {
                         defaultValue: "18",
                     },
                     {
-                        doc: "(Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap.",
+                        doc: "(Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap. (Note: if the key is 'id', list interpration is disabled)",
                         name: "idKey",
                         defaultValue: "id",
                     },
@@ -541,19 +541,25 @@ export default class SpecialVisualizations {
                     const featureStore = state.allElements.ContainingFeatures
                     const featuresToShow: Store<{ freshness: Date; feature: any }[]> =
                         tagSource.map((properties) => {
-                            const values: string[] = Utils.NoNull(
-                                keys.map((key) => properties[key])
-                            )
                             const features: { freshness: Date; feature: any }[] = []
-                            for (const value of values) {
+                            for (const key of keys) {
+                                const value = properties[key]
+                                if(value === undefined || value === null){
+                                    continue
+                                }
+
                                 let idList = [value]
-                                if (value.startsWith("[")) {
+                                if (key !== "id" && value.startsWith("[")) {
                                     // This is a list of values
                                     idList = JSON.parse(value)
                                 }
 
                                 for (const id of idList) {
                                     const feature = featureStore.get(id)
+                                    if(feature === undefined){
+                                        console.warn("No feature found for id ", id)
+                                        continue
+                                    }
                                     features.push({
                                         freshness: new Date(),
                                         feature,
@@ -1410,7 +1416,7 @@ export default class SpecialVisualizations {
                         null,
                         "  "
                     ) +
-                    "```",
+                    "\n```",
                 args: [
                     {
                         name: "key",

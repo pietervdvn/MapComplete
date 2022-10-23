@@ -11,7 +11,8 @@
     "de": "Fahrradbibliotheken",
     "pt": "Biblioteca de bicicleta",
     "ca": "Biblioteca per a bicicletes",
-    "es": "Biblioteca de bicicletas"
+    "es": "Biblioteca de bicicletas",
+    "da": "Cykel bibliotek"
   },
   "minzoom": 8,
   "source": {
@@ -63,7 +64,8 @@
     "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
     "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres",
     "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
-    "es": "Una facilidad donde se pueden alquilar bicicletas durante largos periodos de tiempo"
+    "es": "Una facilidad donde se pueden alquilar bicicletas durante largos periodos de tiempo",
+    "da": "En facilitet, hvor cykler kan lånes i længere perioder"
   },
   "tagRenderings": [
     "images",
@@ -183,7 +185,8 @@
             "ru": "Прокат велосипеда стоит €20/год и €20 залог",
             "pt_BR": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
             "pt": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
-            "es": "Alquilar una bicicleta cuesta 20€/año y 20€ de garantía"
+            "es": "Alquilar una bicicleta cuesta 20€/año y 20€ de garantía",
+            "da": "Udlån af en cykel koster 20 €/år og 20 € garanti"
           }
         }
       ],
@@ -288,7 +291,8 @@
         "ru": "В велосипедной библиотеке есть велосипеды для аренды",
         "zh_Hant": "單車圖書館有一大批單車供人租借",
         "de": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können",
-        "es": "Una biblioteca de bicicletas tiene una colección de bicicletas que se pueden prestar"
+        "es": "Una biblioteca de bicicletas tiene una colección de bicicletas que se pueden prestar",
+        "da": "Et cykelbibliotek har en samling cykler, som kan lånes"
       }
     }
   ],

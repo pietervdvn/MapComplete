@@ -7,6 +7,56 @@
         "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "title": "Open Artwork Map"
     },
+    "bag": {
+        "description": "This theme helps with importing data from BAG",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "This building has no reference in the BAG"
+                            }
+                        },
+                        "render": "The reference in BAG is <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "Buildings from BAG register",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "The building was started in <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "This building was built in <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "The building type will be a <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "The building type is a <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Didn't calculate the correct values yet. Refresh this page"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "The reference in BAG is <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            }
+        },
+        "shortDescription": "BAG import helper tool",
+        "title": "BAG import helper"
+    },
     "benches": {
         "description": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.",
         "shortDescription": "A map of benches",
@@ -104,7 +154,7 @@
                                 "then": "There are no permanent guests here"
                             },
                             "2": {
-                                "then": "It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)"
+                                "then": "It is only possible to stay here if you have a long term contract (this place disappears from this map if you choose this)"
                             }
                         },
                         "question": "Does this place offer spots for long term rental?"
@@ -415,18 +465,47 @@
                             "then": "This street is a cyclestreet (and has a speed limit of 30 km/h)"
                         },
                         "1": {
-                            "then": "This street is a cyclestreet"
+                            "then": "This street is a bicycle road"
                         },
                         "2": {
-                            "then": "This street will become a cyclstreet soon"
+                            "then": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)"
                         },
                         "3": {
+                            "then": "This street is a cyclestreet"
+                        },
+                        "4": {
+                            "then": "This street will become a cyclestreet soon"
+                        },
+                        "5": {
+                            "then": "This street will become a bicycle road soon"
+                        },
+                        "6": {
                             "then": "This street is not a cyclestreet"
                         }
                     },
                     "question": "Is the street <b>{name}</b> a cyclestreet?"
                 },
                 "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Residents allowed"
+                        },
+                        "1": {
+                            "then": "Motor vehicles allowed"
+                        },
+                        "2": {
+                            "then": "Motorcycles allowed"
+                        },
+                        "3": {
+                            "then": "Cars allowed"
+                        },
+                        "4": {
+                            "then": "There are no supplementary signs at this bicycle road."
+                        }
+                    },
+                    "question": "What sign does this bicycle road have?"
+                },
+                "2": {
                     "question": "When will this street become a cyclestreet?",
                     "render": "This street will become a cyclestreet at {cyclestreet:start_date}"
                 }
@@ -659,7 +738,7 @@
         "title": "Kerbs and crossings"
     },
     "mapcomplete-changes": {
-        "description": "This map shows all the changes made with MapComplete",
+        "description": "This maps shows all the changes made with MapComplete",
         "layers": {
             "0": {
                 "description": "Shows all MapComplete changes",
@@ -688,14 +767,14 @@
                     "3": {
                         "options": {
                             "0": {
-                                "question": "User language (iso-code) {search}"
+                                "question": "Made before {search}"
                             }
                         }
                     },
                     "4": {
                         "options": {
                             "0": {
-                                "question": "Made with host {search}"
+                                "question": "Made after {search}"
                             }
                         }
                     },
@@ -722,7 +801,7 @@
                     },
                     "host": {
                         "question": "What host (website) was this change made with?",
-                        "render": "Changed with <a href='{host}'>{host}</a>"
+                        "render": "Change with with <a href='{host}'>{host}</a>"
                     },
                     "locale": {
                         "question": "What locale (language) was this change made in?",
@@ -855,6 +934,11 @@
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
         "title": "OpenWindPowerMap"
+    },
+    "osm_community_index": {
+        "description": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful.",
+        "shortDescription": "An index of community resources for OpenStreetMap.",
+        "title": "OSM Community Index"
     },
     "parkings": {
         "description": "This map shows different parking spots",

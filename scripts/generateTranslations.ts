@@ -588,6 +588,10 @@ function MergeTranslation(source: any, target: any, language: string, context: s
                 continue
             }
 
+            if(sourceV === ""){
+                console.log("Ignoring empty string in the translations")
+            }
+
             if (typeof targetV === "string") {
                 throw `At context ${context}: Could not add a translation in language ${language}. The target object has a string at the given path, whereas the translation contains an object.\n    String at target: ${targetV}\n    Object at translation source: ${JSON.stringify(
                     sourceV

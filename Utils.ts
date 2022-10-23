@@ -12,8 +12,8 @@ export class Utils {
         url: string,
         headers?: any
     ) => Promise<{ content: string } | { redirect: string }>
-    public static Special_visualizations_tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`. 
-This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature. 
+    public static Special_visualizations_tagsToApplyHelpText = `These can either be a tag to add, such as \`amenity=fast_food\` or can use a substitution, e.g. \`addr:housenumber=$number\`.
+This new point will then have the tags \`amenity=fast_food\` and \`addr:housenumber\` with the value that was saved in \`number\` in the original feature.
 
 If a value to substitute is undefined, empty string will be used instead.
 
@@ -41,11 +41,11 @@ There are also some technicalities in your theme to keep in mind:
     This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
 3. There should be a way for the theme to detect previously imported points, even after reloading.
     A reference number to the original dataset is an excellent way to do this
-4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
-    
+4. When importing ways, the theme creator is also responsible of avoiding overlapping ways.
+
 #### Disabled in unofficial themes
 
-The import button can be tested in an unofficial theme by adding \`test=true\` or \`backend=osm-test\` as [URL-paramter](URL_Parameters.md). 
+The import button can be tested in an unofficial theme by adding \`test=true\` or \`backend=osm-test\` as [URL-paramter](URL_Parameters.md).
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org`
     private static knownKeys = [
@@ -823,7 +823,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 } else if (xhr.status === 509 || xhr.status === 429) {
                     reject("rate limited")
                 } else {
-                    reject(xhr.statusText)
+                    reject("Could not download "+url+" due to "+xhr.statusText)
                 }
             }
             xhr.open("GET", url)

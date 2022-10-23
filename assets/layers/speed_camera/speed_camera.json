@@ -1,0 +1,127 @@
+{
+  "id": "speed_camera",
+  "name": {
+    "en": "Speed Camera"
+  },
+  "description": {
+    "en": "Layer showing speed cameras"
+  },
+  "title": {
+    "render": {
+      "en": "Speed Camera"
+    }
+  },
+  "minzoom": 12,
+  "source": {
+    "osmTags": "highway=speed_camera"
+  },
+  "tagRenderings": [
+    {
+      "id": "maxspeed",
+      "question": {
+        "en": "What is the maximum speed allowed at this speed camera?"
+      },
+      "freeform": {
+        "key": "maxspeed",
+        "type": "pnat",
+        "placeholder": {
+          "en": "Maximum speed allowed"
+        }
+      },
+      "render": {
+        "en": "The maximum speed allowed is {canonical(maxspeed)}"
+      }
+    },
+    {
+      "id": "ref",
+      "render": {
+        "en": "The reference number of this speed camera is {ref}"
+      },
+      "condition": "ref~*"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "highway=speed_camera"
+      ],
+      "title": {
+        "en": "a speed camera"
+      },
+      "preciseInput": {
+        "preferredBackground": "photo",
+        "maxSnapDistance": 10,
+        "snapToLayer": [
+          "maxspeed"
+        ]
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": "square:white;./assets/layers/speed_camera/speed_camera.svg",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "appliesToKey": [
+        "maxspeed"
+      ],
+      "applicableUnits": [
+        {
+          "#": "km/h is the default for a maxspeed; should be empty string",
+          "canonicalDenomination": "",
+          "alternativeDenomination": [
+            "km/u",
+            "kmh",
+            "kph"
+          ],
+          "human": {
+            "en": "kilometers/hour",
+            "ca": "quilòmetres/hora",
+            "es": "kilómetros/hora",
+            "nl": "kilometers/uur",
+            "de": "Kilometer/Stunde"
+          },
+          "humanShort": {
+            "en": "km/h",
+            "ca": "km/h",
+            "es": "km/h",
+            "nl": "km/u",
+            "de": "km/h"
+          }
+        },
+        {
+          "canonicalDenomination": "mph",
+          "useIfNoUnitGiven": [
+            "gb",
+            "us"
+          ],
+          "alternativeDenomination": [
+            "m/u",
+            "mh",
+            "m/ph"
+          ],
+          "human": {
+            "en": "miles/hour",
+            "ca": "milles/hora",
+            "es": "millas/hora",
+            "nl": "miles/uur",
+            "de": "Meilen/Stunde"
+          },
+          "humanShort": {
+            "en": "mph",
+            "ca": "mph",
+            "es": "mph",
+            "nl": "mph",
+            "de": "mph"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -8,7 +8,8 @@
     "zh_Hant": "郵筒與郵局地圖",
     "hu": "Posta- és postaládatérkép",
     "nl": "Brievenbussen en postkantoren",
-    "fr": "Carte des Bureaux de Poste et Boîtes à Lettres"
+    "fr": "Carte des Bureaux de Poste et Boîtes à Lettres",
+    "da": "Postkasse- og Posthus-Kort"
   },
   "shortDescription": {
     "en": "A map showing postboxes and post offices",
@@ -19,7 +20,8 @@
     "es": "Un mapa que muestra buzones y oficinas de correo",
     "nl": "Een kaart die brievenbussen en postkantoren toont",
     "fr": "Une carte des bureaux de poste et des boîtes à lettres",
-    "nb_NO": "Postbokser og postkontor"
+    "nb_NO": "Postbokser og postkontor",
+    "da": "Et kort med postkasser og posthuse"
   },
   "description": {
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
@@ -29,7 +31,8 @@
     "de": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten. ",
     "es": "En este mapa puedes encontrar y añadir datos de oficinas de correo y buzones de correo. ¡Puedes utilizar este mapa para encontrar donde puedes enviar tu próxima postal! :)<br/>¿Has encontrado un error o algo que falta? Puedes editar este mapa con una cuenta de OpenStreetMap gratuíta. ",
     "nl": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
-    "fr": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit. "
+    "fr": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit. ",
+    "da": "På dette kort kan du finde og tilføje data for posthuse og postkasser. Du kan bruge dette kort til at finde, hvor du kan sende dit næste postkort! :)<br/>Har du fundet en fejl, eller mangler der en postboks? Du kan redigere dette kort med en gratis OpenStreetMap-konto. "
   },
   "icon": "./assets/layers/postboxes/postbox.svg",
   "startLat": 53.5511,

@@ -1,0 +1,58 @@
+{
+  "id": "sports",
+  "title": {
+    "en": "Sports",
+    "nl": "Sport"
+  },
+  "shortDescription": {
+    "en": "Map showing sport facilities.",
+    "nl": "Kaart met sportfaciliteiten."
+  },
+  "description": {
+    "en": "All about sports, find sport pitches, fitness centres and more.",
+    "nl": "Alles over sport: vind sportvelden, fitnesscentra en meer."	
+  },
+  "icon": "./assets/themes/sports/sport.svg",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
+  "layers": [
+    "sport_pitch",
+    "fitness_centre",
+    "fitness_station",
+    "sports_centre",
+    {
+      "builtin": "shops",
+      "override": {
+        "source": {
+          "osmTags": {
+            "and": [
+              "shop=sports"
+            ]
+          }
+        },
+        "presets": [
+          {
+            "tags": [
+              "shop=sports"
+            ],
+            "title": {
+              "en": "a sports shop",
+              "nl": "een sportwinkel"
+            },
+            "description": {
+              "en": "Add a new shop selling sports goods.",
+              "nl": "Voeg een nieuwe winkel toe die sportartikelen verkoopt."
+            }
+          }
+        ],
+        "minzoom": 12,
+        "mapRendering": [
+          {
+            "icon": "./assets/layers/id_presets/maki-shop.svg"
+          }
+        ]
+      }
+    }
+  ]
+}

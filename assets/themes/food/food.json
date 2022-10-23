@@ -10,7 +10,8 @@
     "hu": "Éttermek és büfék",
     "ca": "Restaurants i menjar ràpid",
     "es": "Restaurantes y comida rápida",
-    "fr": "Restaurants et restaurants rapides"
+    "fr": "Restaurants et restaurants rapides",
+    "da": "Restauranter og fastfood"
   },
   "description": {
     "nl": "Restaurants en fast food",
@@ -18,7 +19,8 @@
     "de": "Restaurants und Schnellimbisse",
     "es": "Restaurantes y comida rápida",
     "nb_NO": "Restauranter og søppelmat",
-    "fr": "Restaurants et restaurants à service rapide"
+    "fr": "Restaurants et restaurants à service rapide",
+    "da": "Restauranter og fastfood"
   },
   "icon": "./assets/layers/food/restaurant.svg",
   "startLat": 0,

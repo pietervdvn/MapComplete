@@ -1,0 +1,13 @@
+[
+  {
+    "path": "sport.svg",
+    "license": "CC-BY",
+    "authors": [
+      "Tobias Zwick",
+      "modified from EmojiOne 2: U+26BD"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/quest/sport.svg"
+    ]
+  }
+]

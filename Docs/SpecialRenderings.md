@@ -199,7 +199,7 @@ keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show t
 name | default | description
 ------ | --------- | -------------
 zoomlevel | 18 | The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close
-idKey | id | (Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap.
+idKey | id | (Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap. (Note: if the key is 'id', list interpration is disabled)
  
 
 #### Example usage of minimap 
@@ -332,8 +332,8 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
-These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
-This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
+These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`.
+This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature.
 
 If a value to substitute is undefined, empty string will be used instead.
 
@@ -359,11 +359,11 @@ There are also some technicalities in your theme to keep in mind:
     This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
 3. There should be a way for the theme to detect previously imported points, even after reloading.
     A reference number to the original dataset is an excellent way to do this
-4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
-    
+4. When importing ways, the theme creator is also responsible of avoiding overlapping ways.
+
 #### Disabled in unofficial themes
 
-The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md). 
+The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md).
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
  
@@ -398,8 +398,8 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
-These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
-This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
+These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`.
+This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature.
 
 If a value to substitute is undefined, empty string will be used instead.
 
@@ -425,11 +425,11 @@ There are also some technicalities in your theme to keep in mind:
     This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
 3. There should be a way for the theme to detect previously imported points, even after reloading.
     A reference number to the original dataset is an excellent way to do this
-4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
-    
+4. When importing ways, the theme creator is also responsible of avoiding overlapping ways.
+
 #### Disabled in unofficial themes
 
-The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md). 
+The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md).
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
  
@@ -465,8 +465,8 @@ It is only functional in official themes, but can be tested in unoffical themes.
 
 The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
-These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
-This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
+These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`.
+This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature.
 
 If a value to substitute is undefined, empty string will be used instead.
 
@@ -492,11 +492,11 @@ There are also some technicalities in your theme to keep in mind:
     This should be used to change the appearance or even to hide it (eg by changing the icon size to zero)
 3. There should be a way for the theme to detect previously imported points, even after reloading.
     A reference number to the original dataset is an excellent way to do this
-4. When importing ways, the theme creator is also responsible of avoiding overlapping ways. 
-    
+4. When importing ways, the theme creator is also responsible of avoiding overlapping ways.
+
 #### Disabled in unofficial themes
 
-The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md). 
+The import button can be tested in an unofficial theme by adding `test=true` or `backend=osm-test` as [URL-paramter](URL_Parameters.md).
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org
  
@@ -540,8 +540,8 @@ overwrite | _undefined_ | If set to 'true', the tags on the other objects will a
  Shows a big button; clicking this button will apply certain tags onto the feature.
 
 The first argument takes a specification of which tags to add.
-These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`. 
-This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature. 
+These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`.
+This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature.
 
 If a value to substitute is undefined, empty string will be used instead.
 
@@ -788,7 +788,8 @@ tagrendering | _undefined_ | An entire tagRenderingConfig
       }
     }
   }
-}```
+}
+```
 
 
 

@@ -84,8 +84,8 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                 }
 
                 try {
-                    const tags: OsmTags = {
-                        id: <OsmId>(change.type + "/" + change.id),
+                    const tags: OsmTags & {id: OsmId & string} = {
+                        id: <OsmId & string>(change.type + "/" + change.id),
                     }
                     for (const kv of change.tags) {
                         tags[kv.k] = kv.v

@@ -123,6 +123,9 @@
                     },
                     "11": {
                         "then": "Tegelwerk"
+                    },
+                    "12": {
+                        "then": "Houtsculptuur"
                     }
                 },
                 "question": "Wat voor soort kunstwerk is dit?",
@@ -131,10 +134,6 @@
             "artwork-website": {
                 "question": "Is er een website met meer informatie over dit kunstwerk?",
                 "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
-            },
-            "artwork-wikidata": {
-                "question": "Welk Wikidata-item beschrijft <b>dit kunstwerk</b>?",
-                "render": "Komt overeen met <a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'>{wikidata}</a>"
             }
         },
         "title": {
@@ -1252,15 +1251,6 @@
             }
         },
         "description": "Een laag die kroegen en koffiehuizen toont waar je iets kunt drinken. De laag zal je enkele vragen stellen",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Nu geopend"
-                    }
-                }
-            }
-        },
         "name": "Cafés",
         "presets": {
             "0": {
@@ -3244,15 +3234,6 @@
     },
     "doctors": {
         "description": "Deze laag toont dokterspraktijken, tandartsen en andere gezondheidszorgfaciliteiten",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Nu geopend"
-                    }
-                }
-            }
-        },
         "name": "Dokters",
         "presets": {
             "0": {
@@ -3633,6 +3614,31 @@
             "render": "Brandblussers"
         }
     },
+    "filters": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Nu geopened"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Accepteert cash"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accepteert betaalkaarten"
+                    }
+                }
+            }
+        }
+    },
     "fire_station": {
         "description": "Kaartlaag die de brandweerstations toont.",
         "name": "Kaart van de brandweerstations",
@@ -3705,13 +3711,6 @@
         },
         "description": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Nu geopened"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -3730,20 +3729,6 @@
                 "options": {
                     "0": {
                         "question": "Heeft een halal menu"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Accepteert cash"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Accepteert betaalkaarten"
                     }
                 }
             }
@@ -5017,15 +5002,6 @@
         }
     },
     "parcel_lockers": {
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Momenteel geopend"
-                    }
-                }
-            }
-        },
         "presets": {
             "0": {
                 "title": "een pakketautomaat"
@@ -5363,15 +5339,6 @@
     },
     "postoffices": {
         "description": "Een laag die postkantoren toont.",
-        "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Momenteel geopend"
-                    }
-                }
-            }
-        },
         "name": "Postkantoren",
         "presets": {
             "0": {
@@ -5390,6 +5357,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Postpartner in een winkel"
+                }
+            },
             "render": "Postkantoor"
         }
     },
@@ -5507,13 +5479,6 @@
     "recycling": {
         "description": "Een laag met recyclagingcontainers en -centrums",
         "filter": {
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Op dit moment open"
-                    }
-                }
-            },
             "1": {
                 "options": {
                     "0": {
@@ -5833,31 +5798,17 @@
         },
         "description": "Een winkel",
         "filter": {
-            "0": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Toon enkel winkels die {search} verkopen"
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel winkels met naam {search}"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Accepteert cash"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Accepteert betaalkaarten"
+                        "question": "Toon enkel winkels met naam {search}"
                     }
                 }
             }
@@ -6444,13 +6395,6 @@
                 "options": {
                     "0": {
                         "question": "Gratis toegankelijk"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "Nu geopened"
                     }
                 }
             }

@@ -157,6 +157,15 @@
       "value": "tilework"
     },
     {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "woodcarving"
+    },
+    {
+      "key": "artist:wikidata",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'artist:wikidata' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "artist_name",
       "description": "Layer 'Artworks' shows and asks freeform values for key 'artist_name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -169,6 +178,19 @@
       "description": "Layer 'Artworks' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "wikipedia",
+      "description": "Layer 'Artworks' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'Artworks' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key wikidata.",
+      "value": ""
+    },
+    {
+      "key": "subject:wikidata",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'subject:wikidata' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
       "key": "barrier",
       "description": "The MapComplete theme Personal theme has a layer Barriers showing features with this tag",
       "value": "bollard"
@@ -177,6 +199,22 @@
       "key": "barrier",
       "description": "The MapComplete theme Personal theme has a layer Barriers showing features with this tag",
       "value": "cycle_barrier"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Barriers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Barriers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Barriers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Barriers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "bicycle",
@@ -461,7 +499,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bicycle library' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bicycle library' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -469,7 +507,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bicycle library' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -477,7 +515,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bicycle library' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bicycle library' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -606,7 +644,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bicycle rental' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bicycle rental' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -614,7 +652,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bicycle rental' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bicycle rental' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -622,7 +660,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bicycle rental' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -1424,7 +1462,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bike repair/shop' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike repair/shop' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -1432,7 +1470,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bike repair/shop' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike repair/shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -1440,7 +1478,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bike repair/shop' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike repair/shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -1716,7 +1754,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bike-related object' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -1724,7 +1762,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Bike-related object' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -1732,7 +1770,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bike-related object' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -2001,7 +2039,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Cafés and pubs' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Cafés and pubs' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -2009,7 +2047,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Cafés and pubs' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Cafés and pubs' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -2017,7 +2055,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Cafés and pubs' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Cafés and pubs' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "payment:cash",
@@ -2259,7 +2297,7 @@
     },
     {
       "key": "socket:schuko",
-      "description": "Layer 'Charging stations' shows socket:schuko~^..*$&socket:schuko!=1 with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:schuko~.+&socket:schuko!=1 with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:typee",
@@ -2268,7 +2306,7 @@
     },
     {
       "key": "socket:typee",
-      "description": "Layer 'Charging stations' shows socket:typee~^..*$&socket:typee!=1 with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:typee~.+&socket:typee!=1 with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:chademo",
@@ -2277,7 +2315,7 @@
     },
     {
       "key": "socket:chademo",
-      "description": "Layer 'Charging stations' shows socket:chademo~^..*$&socket:chademo!=1 with a fixed text, namely '<b>Chademo</b>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:chademo~.+&socket:chademo!=1 with a fixed text, namely '<b>Chademo</b>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type1_cable",
@@ -2286,7 +2324,7 @@
     },
     {
       "key": "socket:type1_cable",
-      "description": "Layer 'Charging stations' shows socket:type1_cable~^..*$&socket:type1_cable!=1 with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type1_cable~.+&socket:type1_cable!=1 with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type1",
@@ -2295,7 +2333,7 @@
     },
     {
       "key": "socket:type1",
-      "description": "Layer 'Charging stations' shows socket:type1~^..*$&socket:type1!=1 with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type1~.+&socket:type1!=1 with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type1_combo",
@@ -2304,7 +2342,7 @@
     },
     {
       "key": "socket:type1_combo",
-      "description": "Layer 'Charging stations' shows socket:type1_combo~^..*$&socket:type1_combo!=1 with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type1_combo~.+&socket:type1_combo!=1 with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:tesla_supercharger",
@@ -2313,7 +2351,7 @@
     },
     {
       "key": "socket:tesla_supercharger",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~^..*$&socket:tesla_supercharger!=1 with a fixed text, namely '<b>Tesla Supercharger</b>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~.+&socket:tesla_supercharger!=1 with a fixed text, namely '<b>Tesla Supercharger</b>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type2",
@@ -2322,7 +2360,7 @@
     },
     {
       "key": "socket:type2",
-      "description": "Layer 'Charging stations' shows socket:type2~^..*$&socket:type2!=1 with a fixed text, namely '<b>Type 2</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type2~.+&socket:type2!=1 with a fixed text, namely '<b>Type 2</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type2_combo",
@@ -2331,7 +2369,7 @@
     },
     {
       "key": "socket:type2_combo",
-      "description": "Layer 'Charging stations' shows socket:type2_combo~^..*$&socket:type2_combo!=1 with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type2_combo~.+&socket:type2_combo!=1 with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:type2_cable",
@@ -2340,7 +2378,7 @@
     },
     {
       "key": "socket:type2_cable",
-      "description": "Layer 'Charging stations' shows socket:type2_cable~^..*$&socket:type2_cable!=1 with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:type2_cable~.+&socket:type2_cable!=1 with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:tesla_supercharger_ccs",
@@ -2349,7 +2387,7 @@
     },
     {
       "key": "socket:tesla_supercharger_ccs",
-      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs~^..*$&socket:tesla_supercharger_ccs!=1 with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=1 with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:tesla_destination",
@@ -2358,7 +2396,7 @@
     },
     {
       "key": "socket:tesla_destination",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!=1&_country=us with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~.+&socket:tesla_destination!=1&_country=us with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:tesla_destination",
@@ -2367,7 +2405,7 @@
     },
     {
       "key": "socket:tesla_destination",
-      "description": "Layer 'Charging stations' shows socket:tesla_destination~^..*$&socket:tesla_destination!=1&_country!=us with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~.+&socket:tesla_destination!=1&_country!=us with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:USB-A",
@@ -2376,7 +2414,7 @@
     },
     {
       "key": "socket:USB-A",
-      "description": "Layer 'Charging stations' shows socket:USB-A~^..*$&socket:USB-A!=1 with a fixed text, namely '<b>USB</b> to charge phones and small electronics' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:USB-A~.+&socket:USB-A!=1 with a fixed text, namely '<b>USB</b> to charge phones and small electronics' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:bosch_3pin",
@@ -2385,7 +2423,7 @@
     },
     {
       "key": "socket:bosch_3pin",
-      "description": "Layer 'Charging stations' shows socket:bosch_3pin~^..*$&socket:bosch_3pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:bosch_3pin~.+&socket:bosch_3pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:bosch_5pin",
@@ -2394,7 +2432,7 @@
     },
     {
       "key": "socket:bosch_5pin",
-      "description": "Layer 'Charging stations' shows socket:bosch_5pin~^..*$&socket:bosch_5pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Charging stations' shows socket:bosch_5pin~.+&socket:bosch_5pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "socket:schuko",
@@ -3510,7 +3548,7 @@
     },
     {
       "key": "climbing:boulder",
-      "description": "Layer 'Climbing opportunities' shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing opportunities' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "club",
@@ -3540,7 +3578,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Climbing club' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing club' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -3548,7 +3586,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Climbing club' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing club' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -3556,7 +3594,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Climbing club' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing club' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -3598,7 +3636,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Climbing gyms' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing gyms' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -3606,7 +3644,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Climbing gyms' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing gyms' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -3614,7 +3652,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Climbing gyms' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing gyms' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "charge",
@@ -3668,7 +3706,7 @@
     },
     {
       "key": "climbing:boulder",
-      "description": "Layer 'Climbing gyms' shows climbing:boulder~^..*$ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing gyms' shows climbing:boulder~.+ with a fixed text, namely 'There are {climbing:boulder} boulder routes' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "climbing:sport",
@@ -3682,7 +3720,7 @@
     },
     {
       "key": "climbing:sport",
-      "description": "Layer 'Climbing gyms' shows climbing:sport~^..*$ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing gyms' shows climbing:sport~.+ with a fixed text, namely 'There are {climbing:sport} sport climbing routes' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "climbing:bolts:max",
@@ -3700,7 +3738,7 @@
     },
     {
       "key": "climbing:speed",
-      "description": "Layer 'Climbing gyms' shows climbing:speed~^..*$ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Climbing gyms' shows climbing:speed~.+ with a fixed text, namely 'There are {climbing:speed} speed climbing walls' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "leisure",
@@ -4336,7 +4374,7 @@
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "cycleway:traffic_sign",
@@ -4360,7 +4398,7 @@
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Cycleways and roads' shows traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "traffic_sign",
@@ -4548,7 +4586,7 @@
     },
     {
       "key": "defibrillator",
-      "description": "Layer 'Defibrillators' shows defibrillator~^..*$ with a fixed text, namely 'This is a special type of defibrillator: {defibrillator}' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Defibrillators' shows defibrillator~.+ with a fixed text, namely 'This is a special type of defibrillator: {defibrillator}' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "level",
@@ -4675,7 +4713,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Doctors' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Doctors' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -4683,7 +4721,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Doctors' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Doctors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -4691,7 +4729,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Doctors' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Doctors' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "name",
@@ -5392,7 +5430,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Restaurants and fast food' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Restaurants and fast food' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -5400,7 +5438,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Restaurants and fast food' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Restaurants and fast food' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -5408,7 +5446,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Restaurants and fast food' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "payment:cash",
@@ -5817,7 +5855,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'governments' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'governments' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -5825,7 +5863,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'governments' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'governments' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -5833,7 +5871,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'governments' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'governments' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "name",
@@ -5880,7 +5918,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Hackerspace' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Hackerspace' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -5888,7 +5926,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hackerspace' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Hackerspace' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -5896,7 +5934,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hackerspace' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Hackerspace' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -5986,7 +6024,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hospitals' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Hospitals' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -5994,7 +6032,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hospitals' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Hospitals' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -6002,7 +6040,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Hospitals' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Hospitals' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "tourism",
@@ -6035,7 +6073,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hotels' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Hotels' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -6043,7 +6081,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Hotels' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Hotels' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -6051,7 +6089,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Hotels' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Hotels' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "wheelchair",
@@ -6397,7 +6435,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Kindergartens and childcare' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -6405,7 +6443,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Kindergartens and childcare' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -6413,7 +6451,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Kindergartens and childcare' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -6673,7 +6711,7 @@
     },
     {
       "key": "operator",
-      "description": "Layer 'Nature reserve' shows operator~^(n|N)atuurpunt.*$ with a fixed text, namely 'Operated by {operator}' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Nature reserve' shows operator~^((n|N)atuurpunt.*)$ with a fixed text, namely 'Operated by {operator}' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "operator",
@@ -6715,7 +6753,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Nature reserve' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Nature reserve' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "curator",
@@ -6743,7 +6781,7 @@
     },
     {
       "key": "wikipedia",
-      "description": "Layer 'Nature reserve' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Nature reserve' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "wikidata",
@@ -6824,7 +6862,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Observation towers' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Observation towers' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "step_count",
@@ -6870,7 +6908,7 @@
     },
     {
       "key": "wikipedia",
-      "description": "Layer 'Observation towers' shows wikipedia~^..*$ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Observation towers' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "wikidata",
@@ -7227,7 +7265,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'pharmacy' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'pharmacy' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -7235,7 +7273,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'pharmacy' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'pharmacy' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -7243,7 +7281,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'pharmacy' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'pharmacy' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "wheelchair",
@@ -7452,7 +7490,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Playgrounds' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Playgrounds' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -7950,7 +7988,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Recycling' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Recycling' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -7958,7 +7996,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Recycling' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Recycling' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -7966,7 +8004,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Recycling' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Recycling' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -8100,7 +8138,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Primary and secondary schools' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Primary and secondary schools' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -8108,7 +8146,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Primary and secondary schools' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Primary and secondary schools' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -8116,7 +8154,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Primary and secondary schools' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Primary and secondary schools' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "school:language",
@@ -11425,7 +11463,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Shop' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Shop' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -11433,7 +11471,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Shop' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Shop' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -11441,7 +11479,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Shop' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "payment:cash",
@@ -11951,12 +11989,12 @@
     },
     {
       "key": "camera:direction",
-      "description": "Layer 'Surveillance camera's' shows direction~^..*$ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key camera:direction.",
+      "description": "Layer 'Surveillance camera's' shows direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key camera:direction.",
       "value": ""
     },
     {
       "key": "direction",
-      "description": "Layer 'Surveillance camera's' shows direction~^..*$ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Surveillance camera's' shows direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "operator",
@@ -12137,7 +12175,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Colleges and universities' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Colleges and universities' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -12145,7 +12183,7 @@
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Colleges and universities' shows contact:email~^..*$ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Colleges and universities' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -12153,7 +12191,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Colleges and universities' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Colleges and universities' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "amenity",
@@ -12575,7 +12613,7 @@
     },
     {
       "key": "height",
-      "description": "Layer 'Tree' shows height~^^[0-9.]+$$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Tree' shows height~^(^[0-9.]+$)$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "species:wikidata",
@@ -12702,7 +12740,7 @@
     },
     {
       "key": "heritage",
-      "description": "Layer 'Tree' shows heritage~^..*$ with a fixed text, namely 'Registered as heritage by a different organisation' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Tree' shows heritage~.+ with a fixed text, namely 'Registered as heritage by a different organisation' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "ref:OnroerendErfgoed",
@@ -12723,7 +12761,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'veterinary' shows contact:website~^..*$ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'veterinary' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "phone",
@@ -12731,7 +12769,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'veterinary' shows contact:phone~^..*$ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'veterinary' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "opening_hours",

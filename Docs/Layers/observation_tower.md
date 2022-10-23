@@ -172,7 +172,7 @@ The question is  Which methods of payment are accepted here?
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
 
-Only visible if  `fee=yes|charge~^..*$`  is shown
+Only visible if  `fee=yes|charge~.+`  is shown
 
 
 
@@ -190,7 +190,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~^..*$`
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -268,7 +268,7 @@ Only visible if  `elevator=yes&access=yes|access=guided`  is shown
 
 
 
-Shows a wikipedia box with the corresponding wikipedia article
+Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor
 
 The question is  What is the corresponding Wikidata entity?
 
@@ -280,7 +280,7 @@ This is rendered with  {wikipedia():max-height:25rem}
 
 
 
-  - {wikipedia():max-height:25rem}  corresponds with  `wikipedia~^..*$`
+  - {wikipedia():max-height:25rem}  corresponds with  `wikipedia~.+`
   - This option cannot be chosen as answer
   - No Wikipedia page has been linked yet  corresponds with  ``
   - This option cannot be chosen as answer

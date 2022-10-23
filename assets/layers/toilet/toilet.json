@@ -237,34 +237,17 @@
       }
     },
     {
-      "id": "Opening-hours",
-      "condition": "access!=no",
-      "question": {
-        "en": "When are these toilets opened?",
-        "nl": "Wanneer zijn deze toiletten open?",
-        "de": "Wann sind diese Toiletten geöffnet?",
-        "es": "",
-        "fr": "Quand ces toilettes sont-elles ouvertes ?",
-        "da": "Hvornår åbnes disse toiletter?"
-      },
-      "render": "{opening_hours_table()}",
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "en": "Opened 24/7",
-            "nl": "Altijd open",
-            "de": "Durchgehend geöffnet",
-            "es": "Abierto 24/7",
-            "fr": "Ouvert 24h/24 et 7j/7",
-            "da": "Åbent 24/7"
-          }
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "condition": "access!=no",
+        "question": {
+          "en": "When are these toilets opened?",
+          "nl": "Wanneer zijn deze toiletten open?",
+          "de": "Wann sind diese Toiletten geöffnet?",
+          "fr": "Quand ces toilettes sont-elles ouvertes ?",
+          "da": "Hvornår åbnes disse toiletter?"
         }
-      ]
+      }
     },
     {
       "id": "toilets-wheelchair",
@@ -315,6 +298,12 @@
     },
     {
       "id": "wheelchair-door-width",
+      "condition": {
+        "or": [
+          "wheelchair=yes",
+          "wheelchair=designated"
+        ]
+      },
       "question": {
         "en": "What is the width of the door to the wheelchair accessible toilet?",
         "nl": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
@@ -640,27 +629,7 @@
         }
       ]
     },
-    {
-      "id": "is_open",
-      "options": [
-        {
-          "question": {
-            "nl": "Nu geopened",
-            "en": "Opened now",
-            "de": "Derzeit geöffnet",
-            "es": "Abierto ahora",
-            "fr": "Ouvert maintenant",
-            "da": "Åbnet nu"
-          },
-          "osmTags": {
-            "or": [
-              "opening_hours=",
-              "_isOpen=yes"
-            ]
-          }
-        }
-      ]
-    }
+    "open_now"
   ],
   "deletion": {
     "softDeletionTags": {
@@ -673,7 +642,7 @@
   },
   "allowMove": {
     "enableRelocation": false,
-    "enableImproveAccuraccy": true
+    "enableImproveAccuracy": true
   },
   "mapRendering": [
     {

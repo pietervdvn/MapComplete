@@ -14,7 +14,7 @@ Layer showing individual parking spaces.
 
 
 
-  - This layer is shown at zoomlevel **20** and higher
+  - This layer is shown at zoomlevel **19** and higher
 
 
 

@@ -117,7 +117,7 @@ This is rendered with  Films to a compass heading of {camera:direction}
 
 
 
-  - Films to a compass heading of {direction}  corresponds with  `direction~^..*$`
+  - Films to a compass heading of {direction}  corresponds with  `direction~.+`
   - This option cannot be chosen as answer
 
 

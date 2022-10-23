@@ -6,11 +6,11 @@ import Hash from "./Hash"
 import { Utils } from "../../Utils"
 
 export class QueryParameters {
-    static defaults = {}
+    static defaults : Record<string, string> = {}
     static documentation: Map<string, string> = new Map<string, string>()
     private static order: string[] = ["layout", "test", "z", "lat", "lon"]
-    private static _wasInitialized: Set<string> = new Set()
-    private static knownSources = {}
+    protected static readonly _wasInitialized: Set<string> = new Set()
+    protected static readonly knownSources: Record<string, UIEventSource<string>> = {}
     private static initialized = false
 
     public static GetQueryParameter(
@@ -105,7 +105,19 @@ export class QueryParameters {
         }
         if (!Utils.runningFromConsole) {
             // Don't pollute the history every time a parameter changes
-            history.replaceState(null, "", "?" + parts.join("&") + Hash.Current())
+            try{
+                history.replaceState(null, "", "?" + parts.join("&") + Hash.Current())
+            }catch(e){
+                console.error(e)
+            }
         }
+    }
+
+    static ClearAll() {
+        for (const name in QueryParameters.knownSources) {
+            QueryParameters.knownSources[name].setData(undefined)
+        }
+        QueryParameters._wasInitialized.clear()
+        QueryParameters.order = []
     }
 }

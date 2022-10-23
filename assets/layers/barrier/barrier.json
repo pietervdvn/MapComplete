@@ -17,7 +17,8 @@
     "de": "Hindernisse beim Fahrradfahren, wie zum Beispiel Poller und Fahrrad Barrieren",
     "hu": "Kerékpározás közbeni akadályok, például terelőoszlopok és kerékpárakadályok",
     "fr": "Obstacles à vélo, tels que des potelets ou des barrières",
-    "es": "Obstáculos durante el uso de la bicicleta, como bolardos y barreras para bicicletas"
+    "es": "Obstáculos durante el uso de la bicicleta, como bolardos y barreras para bicicletas",
+    "da": "Forhindringer under cykling, f.eks. pæle og cykelbarrierer"
   },
   "source": {
     "osmTags": {
@@ -132,6 +133,7 @@
     }
   ],
   "tagRenderings": [
+    "images",
     {
       "question": {
         "en": "Can a bicycle go past this barrier?",
@@ -507,5 +509,29 @@
     {
       "width": "5"
     }
-  ]
+  ],
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "barrier=",
+        "bicycle=",
+        "foot=",
+        "motor_vehicle=",
+        "vehicle=",
+        "inline_skate=",
+        "inline_skates=",
+        "mofa=",
+        "moped=",
+        "moped_a=",
+        "moped_b=",
+        "bollard=",
+        "cycle_barrier=",
+        "maxwidth:physical=",
+        "width:separation=",
+        "width:opening=",
+        "overlap=",
+        "fixme="
+      ]
+    }
+  }
 }

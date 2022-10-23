@@ -11,7 +11,8 @@
     "pt_BR": "Reparo/loja de bicicletas",
     "pt": "Reparo/loja de bicicletas",
     "ca": "Botiga/reparació de bicicletes",
-    "es": "Taller/tienda de bicis"
+    "es": "Taller/tienda de bicis",
+    "da": "Cykelreparation/butik"
   },
   "minzoom": 13,
   "allowMove": true,
@@ -77,7 +78,8 @@
           "de": "Sportartikelgeschäft <i>{name}</i>",
           "pt_BR": "Loja de equipamentos esportivos <i>{name}</i>",
           "pt": "Loja de equipamentos desportivos <i>{name}</i>",
-          "es": "Tienda de artículos deportivos <i>{name}</i>"
+          "es": "Tienda de artículos deportivos <i>{name}</i>",
+          "da": "Butik med sportsudstyr <i>{name}</i>"
         }
       },
       {
@@ -92,7 +94,8 @@
           "de": "Geschäfte",
           "nl": "Shop",
           "es": "Winkel",
-          "fr": "Magasin"
+          "fr": "Magasin",
+          "da": "Winkel"
         }
       },
       {
@@ -212,7 +215,8 @@
     "pt_BR": "Uma loja que vende especificamente bicicletas ou itens relacionados",
     "de": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft",
     "pt": "Uma loja que vende especificamente bicicletas ou itens relacionados",
-    "es": "Una tiene que vende específicamente bicis u objetos relacionados"
+    "es": "Una tiene que vende específicamente bicis u objetos relacionados",
+    "da": "En butik, der specifikt sælger cykler eller relaterede varer"
   },
   "tagRenderings": [
     "images",
@@ -292,7 +296,8 @@
         "nl": "Enkel voor {access}",
         "de": "Nur zugänglich für {access}",
         "es": "Solo accesible a {access}",
-        "fr": "Seulement accessible à {access}"
+        "fr": "Seulement accessible à {access}",
+        "da": "Kun tilgængelig for {access}"
       },
       "freeform": {
         "key": "access"
@@ -551,7 +556,8 @@
         "de": "Gibt es im Geschäft eine öffentlich nutzbare Luftpumpe?",
         "it": "Questo negozio offre l’uso a chiunque di una pompa per bici?",
         "ru": "Предлагается ли в этом магазине велосипедный насос для всеобщего пользования?",
-        "es": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?"
+        "es": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?",
+        "da": "Tilbyder denne butik en cykelpumpe til brug for alle?"
       },
       "mappings": [
         {
@@ -564,7 +570,8 @@
             "de": "Im Geschäft gibt es eine öffentlich nutzbare Luftpumpe",
             "it": "Questo negozio offre l’uso pubblico di una pompa per bici",
             "ru": "В этом магазине есть велосипедный насос для всеобщего пользования",
-            "es": "Esta tienda ofrece una bomba para cualquiera"
+            "es": "Esta tienda ofrece una bomba para cualquiera",
+            "da": "Denne butik tilbyder en cykelpumpe til alle"
           }
         },
         {
@@ -577,7 +584,8 @@
             "de": "Im Geschäft gibt es keine öffentlich nutzbare Luftpumpe",
             "it": "Questo negozio non offre l’uso pubblico di una pompa per bici",
             "ru": "В этом магазине нет велосипедного насоса для всеобщего пользования",
-            "es": "Esta tienda no ofrece una bomba para cualquiera"
+            "es": "Esta tienda no ofrece una bomba para cualquiera",
+            "da": "Denne butik tilbyder ikke en cykelpumpe til nogen"
           }
         },
         {
@@ -643,7 +651,8 @@
             "it": "Gli attrezzi per la riparazione fai-da-te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio",
             "de": "Das Geschäft bietet nur Werkzeug an, um das eigene Fahrrad zu reparieren, wenn es dort gekauft/gemietet wurde",
             "ru": "Инструменты для починки доступны только при покупке/аренде велосипеда в магазине",
-            "es": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda"
+            "es": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda",
+            "da": "Værktøj til gør-det-selv-reparation er kun tilgængeligt, hvis du har købt/lejet cyklen i butikken"
           }
         }
       ]
@@ -682,7 +691,8 @@
             "fr": "Ce magasin a une installation pour laver soi même des vélos",
             "it": "Questo negozio ha una struttura dove è possibile pulire la propria bici",
             "de": "Im Geschäft können Fahrräder selbst gereinigt werden",
-            "es": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo"
+            "es": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo",
+            "da": "Denne butik har et anlæg, hvor man selv kan rengøre cykler"
           }
         },
         {
@@ -694,7 +704,8 @@
             "it": "Questo negozio non offre la pulizia della bicicletta",
             "de": "Das Geschäft bietet keine Fahrradreinigungen an",
             "ru": "В этом магазине нет услуг мойки/чистки велосипедов",
-            "es": "Esta tienda no ofrece limpieza de bicicletas"
+            "es": "Esta tienda no ofrece limpieza de bicicletas",
+            "da": "Denne butik tilbyder ikke rengøring af cykler"
           }
         }
       ]
@@ -712,7 +723,8 @@
         "de": "eine Fahrradwerkstatt bzw. ein Fahrradgeschäft",
         "it": "una negozio/riparatore di bici",
         "ru": "Обслуживание велосипедов/магазин",
-        "es": "un taller/tienda de bicis"
+        "es": "un taller/tienda de bicis",
+        "da": "en cykelværksted/butik"
       },
       "tags": [
         "shop=bicycle"

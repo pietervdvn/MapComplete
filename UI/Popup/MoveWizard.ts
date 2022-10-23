@@ -145,6 +145,7 @@ export default class MoveWizard extends Toggle {
                 minZoom: reason.minZoom,
                 centerLocation: loc,
                 mapBackground: new UIEventSource<BaseLayer>(preferredBackground), // We detach the layer
+                state: <any> state
             })
 
             if (reason.lockBounds) {

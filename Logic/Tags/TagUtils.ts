@@ -1,13 +1,13 @@
-import { Tag } from "./Tag"
-import { TagsFilter } from "./TagsFilter"
-import { And } from "./And"
-import { Utils } from "../../Utils"
+import {Tag} from "./Tag"
+import {TagsFilter} from "./TagsFilter"
+import {And} from "./And"
+import {Utils} from "../../Utils"
 import ComparingTag from "./ComparingTag"
-import { RegexTag } from "./RegexTag"
+import {RegexTag} from "./RegexTag"
 import SubstitutingTag from "./SubstitutingTag"
-import { Or } from "./Or"
-import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
-import { isRegExp } from "util"
+import {Or} from "./Or"
+import {TagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson"
+import {isRegExp} from "util"
 import * as key_counts from "../../assets/key_totals.json"
 
 type Tags = Record<string, string>
@@ -239,23 +239,25 @@ export class TagUtils {
     }
 
     /**
-     * Parses a tag configuration (a json) into a TagsFilter
+     * Parses a tag configuration (a json) into a TagsFilter.
+     *
+     * Note that regexes must match the entire value
      *
      * TagUtils.Tag("key=value") // => new Tag("key", "value")
      * TagUtils.Tag("key=") // => new Tag("key", "")
-     * TagUtils.Tag("key!=") // => new RegexTag("key", /^..*$/s)
-     * TagUtils.Tag("key~*") // => new RegexTag("key", /^..*$/s)
-     * TagUtils.Tag("name~i~somename") // => new RegexTag("name", /^somename$/si)
+     * TagUtils.Tag("key!=") // => new RegexTag("key", /.+/si)
+     * TagUtils.Tag("key~*") // => new RegexTag("key", /.+/si)
+     * TagUtils.Tag("name~i~somename") // => new RegexTag("name", /^(somename)$/si)
      * TagUtils.Tag("key!=value") // => new RegexTag("key", "value", true)
-     * TagUtils.Tag("vending~.*bicycle_tube.*") // => new RegexTag("vending", /^.*bicycle_tube.*$/s)
-     * TagUtils.Tag("x!~y") // => new RegexTag("x", /^y$/s, true)
+     * TagUtils.Tag("vending~.*bicycle_tube.*") // => new RegexTag("vending", /^(.*bicycle_tube.*)$/s)
+     * TagUtils.Tag("x!~y") // => new RegexTag("x", /^(y)$/s, true)
      * TagUtils.Tag({"and": ["key=value", "x=y"]}) // => new And([new Tag("key","value"), new Tag("x","y")])
-     * TagUtils.Tag("name~[sS]peelbos.*") // => new RegexTag("name", /^[sS]peelbos.*$/s)
+     * TagUtils.Tag("name~[sS]peelbos.*") // => new RegexTag("name", /^([sS]peelbos.*)$/s)
      * TagUtils.Tag("survey:date:={_date:now}") // => new SubstitutingTag("survey:date", "{_date:now}")
-     * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^\[\]$/s, true)
-     * TagUtils.Tag("tags~(.*;)?amenity=public_bookcase(;.*)?") // => new RegexTag("tags", /^(.*;)?amenity=public_bookcase(;.*)?$/s)
-     * TagUtils.Tag("service:bicycle:.*~~*") // => new RegexTag(/^service:bicycle:.*$/, /^..*$/s)
-     * TagUtils.Tag("_first_comment~.*{search}.*") //  => new RegexTag('_first_comment', /^.*{search}.*$/s)
+     * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^(\[\])$/s, true)
+     * TagUtils.Tag("tags~(.*;)?amenity=public_bookcase(;.*)?") // => new RegexTag("tags", /^((.*;)?amenity=public_bookcase(;.*)?)$/s)
+     * TagUtils.Tag("service:bicycle:.*~~*") // => new RegexTag(/^(service:bicycle:.*)$/, /.+/si)
+     * TagUtils.Tag("_first_comment~.*{search}.*") //  => new RegexTag('_first_comment', /^(.*{search}.*)$/s)
      *
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 4}) // => true
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 5}) // => false
@@ -266,7 +268,19 @@ export class TagUtils {
      *
      * // Must match case insensitive
      * TagUtils.Tag("name~i~somename").matchesProperties({name: "SoMeName"}) // => true
+     *
+     * // Must match the entire value
+     * TagUtils.Tag("key~value").matchesProperties({key: "valueandsome"}) // => false
+     * TagUtils.Tag("key~value").matchesProperties({key: "value"}) // => true
+     * TagUtils.Tag("key~x|y") // => new RegexTag("key", /^(x|y)$/s)
+     * TagUtils.Tag("maxspeed~[1-9]0|1[0-4]0").matchesProperties({maxspeed: "50 mph"}) // => false
+     *
+     * // Must match entire value: with mph
+     * const regex = TagUtils.Tag("maxspeed~([1-9]0|1[0-4]0) mph")
+     * regex // => new RegexTag("maxspeed", /^(([1-9]0|1[0-4]0) mph)$/s)
+     * regex.matchesProperties({maxspeed: "50 mph"}) // => true
      */
+
     public static Tag(json: TagConfigJson, context: string = ""): TagsFilter {
         try {
             return this.ParseTagUnsafe(json, context)
@@ -359,187 +373,9 @@ export class TagUtils {
             return null
         }
         const [_, key, invert, modifier, value] = match
-        return { key, value, invert: invert == "!", modifier: modifier == "i~" ? "i" : "" }
+        return {key, value, invert: invert == "!", modifier: modifier == "i~" ? "i" : ""}
     }
 
-    private static ParseTagUnsafe(json: TagConfigJson, context: string = ""): TagsFilter {
-        if (json === undefined) {
-            throw new Error(
-                `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
-            )
-        }
-        if (typeof json != "string") {
-            if (json["and"] !== undefined && json["or"] !== undefined) {
-                throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`
-            }
-            if (json["and"] !== undefined) {
-                return new And(json["and"].map((t) => TagUtils.Tag(t, context)))
-            }
-            if (json["or"] !== undefined) {
-                return new Or(json["or"].map((t) => TagUtils.Tag(t, context)))
-            }
-            throw `At ${context}: unrecognized tag: ${JSON.stringify(json)}`
-        }
-
-        const tag = json as string
-        for (const [operator, comparator] of TagUtils.comparators) {
-            if (tag.indexOf(operator) >= 0) {
-                const split = Utils.SplitFirst(tag, operator)
-
-                let val = Number(split[1].trim())
-                if (isNaN(val)) {
-                    val = new Date(split[1].trim()).getTime()
-                }
-
-                const f = (value: string | number | undefined) => {
-                    if (value === undefined) {
-                        return false
-                    }
-                    let b: number
-                    if (typeof value === "number") {
-                        b = value
-                    } else if (typeof b === "string") {
-                        b = Number(value?.trim())
-                    } else {
-                        b = Number(value)
-                    }
-                    if (isNaN(b) && typeof value === "string") {
-                        b = Utils.ParseDate(value).getTime()
-                        if (isNaN(b)) {
-                            return false
-                        }
-                    }
-                    return comparator(b, val)
-                }
-                return new ComparingTag(split[0], f, operator + val)
-            }
-        }
-
-        if (tag.indexOf("~~") >= 0) {
-            const split = Utils.SplitFirst(tag, "~~")
-            if (split[1] === "*") {
-                split[1] = "..*"
-            }
-            return new RegexTag(
-                new RegExp("^" + split[0] + "$"),
-                new RegExp("^" + split[1] + "$", "s")
-            )
-        }
-        const withRegex = TagUtils.parseRegexOperator(tag)
-        if (withRegex != null) {
-            if (withRegex.value === "*" && withRegex.invert) {
-                throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
-            }
-            if (withRegex.value === "") {
-                throw (
-                    "Detected a regextag with an empty regex; this is not allowed. Use '" +
-                    withRegex.key +
-                    "='instead (at " +
-                    context +
-                    ")"
-                )
-            }
-
-            let value: string | RegExp = withRegex.value
-            if (value === "*") {
-                value = "..*"
-            }
-            return new RegexTag(
-                withRegex.key,
-                new RegExp("^" + value + "$", "s" + withRegex.modifier),
-                withRegex.invert
-            )
-        }
-
-        if (tag.indexOf("!:=") >= 0) {
-            const split = Utils.SplitFirst(tag, "!:=")
-            return new SubstitutingTag(split[0], split[1], true)
-        }
-        if (tag.indexOf(":=") >= 0) {
-            const split = Utils.SplitFirst(tag, ":=")
-            return new SubstitutingTag(split[0], split[1])
-        }
-
-        if (tag.indexOf("!=") >= 0) {
-            const split = Utils.SplitFirst(tag, "!=")
-            if (split[1] === "*") {
-                throw (
-                    "At " +
-                    context +
-                    ": invalid tag " +
-                    tag +
-                    ". To indicate a missing tag, use '" +
-                    split[0] +
-                    "!=' instead"
-                )
-            }
-            if (split[1] === "") {
-                split[1] = "..*"
-                return new RegexTag(split[0], /^..*$/s)
-            }
-            return new RegexTag(split[0], split[1], true)
-        }
-
-        if (tag.indexOf("=") >= 0) {
-            const split = Utils.SplitFirst(tag, "=")
-            if (split[1] == "*") {
-                throw `Error while parsing tag '${tag}' in ${context}: detected a wildcard on a normal value. Use a regex pattern instead`
-            }
-            return new Tag(split[0], split[1])
-        }
-        throw `Error while parsing tag '${tag}' in ${context}: no key part and value part were found`
-    }
-
-    private static GetCount(key: string, value?: string) {
-        if (key === undefined) {
-            return undefined
-        }
-        const tag = TagUtils.keyCounts.tags[key]
-        if (tag !== undefined && tag[value] !== undefined) {
-            return tag[value]
-        }
-        return TagUtils.keyCounts.keys[key]
-    }
-
-    private static order(a: TagsFilter, b: TagsFilter, usePopularity: boolean): number {
-        const rta = a instanceof RegexTag
-        const rtb = b instanceof RegexTag
-        if (rta !== rtb) {
-            // Regex tags should always go at the end: these use a lot of computation at the overpass side, avoiding it is better
-            if (rta) {
-                return 1 // b < a
-            } else {
-                return -1
-            }
-        }
-        if (a["key"] !== undefined && b["key"] !== undefined) {
-            if (usePopularity) {
-                const countA = TagUtils.GetCount(a["key"], a["value"])
-                const countB = TagUtils.GetCount(b["key"], b["value"])
-                if (countA !== undefined && countB !== undefined) {
-                    return countA - countB
-                }
-            }
-
-            if (a["key"] === b["key"]) {
-                return 0
-            }
-            if (a["key"] < b["key"]) {
-                return -1
-            }
-            return 1
-        }
-
-        return 0
-    }
-
-    private static joinL(tfs: TagsFilter[], seperator: string, toplevel: boolean) {
-        const joined = tfs.map((e) => TagUtils.toString(e, false)).join(seperator)
-        if (toplevel) {
-            return joined
-        }
-        return " (" + joined + ") "
-    }
     /**
      * Returns 'true' is opposite tags are detected.
      * Note that this method will never work perfectly
@@ -664,5 +500,196 @@ export class TagUtils {
             })
         )
         return Utils.NoNull(spec)
+    }
+
+    private static ParseTagUnsafe(json: TagConfigJson, context: string = ""): TagsFilter {
+        if (json === undefined) {
+            throw new Error(
+                `Error while parsing a tag: 'json' is undefined in ${context}. Make sure all the tags are defined and at least one tag is present in a complex expression`
+            )
+        }
+        if (typeof json != "string") {
+            if (json["and"] !== undefined && json["or"] !== undefined) {
+                throw `Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined`
+            }
+            if (json["and"] !== undefined) {
+                return new And(json["and"].map((t) => TagUtils.Tag(t, context)))
+            }
+            if (json["or"] !== undefined) {
+                return new Or(json["or"].map((t) => TagUtils.Tag(t, context)))
+            }
+            throw `At ${context}: unrecognized tag: ${JSON.stringify(json)}`
+        }
+
+        const tag = json as string
+        for (const [operator, comparator] of TagUtils.comparators) {
+            if (tag.indexOf(operator) >= 0) {
+                const split = Utils.SplitFirst(tag, operator)
+
+                let val = Number(split[1].trim())
+                if (isNaN(val)) {
+                    val = new Date(split[1].trim()).getTime()
+                }
+
+                const f = (value: string | number | undefined) => {
+                    if (value === undefined) {
+                        return false
+                    }
+                    let b: number
+                    if (typeof value === "number") {
+                        b = value
+                    } else if (typeof b === "string") {
+                        b = Number(value?.trim())
+                    } else {
+                        b = Number(value)
+                    }
+                    if (isNaN(b) && typeof value === "string") {
+                        b = Utils.ParseDate(value).getTime()
+                        if (isNaN(b)) {
+                            return false
+                        }
+                    }
+                    return comparator(b, val)
+                }
+                return new ComparingTag(split[0], f, operator + val)
+            }
+        }
+
+        if (tag.indexOf("~~") >= 0) {
+            const split = Utils.SplitFirst(tag, "~~")
+            let keyRegex: RegExp;
+            if (split[0] === "*") {
+                keyRegex = new RegExp(".+","i")
+            } else {
+                keyRegex = new RegExp("^(" + split[0] + ")$")
+            }
+            let valueRegex: RegExp
+            if (split[1] === "*") {
+                valueRegex = new RegExp(".+", "si")
+            } else {
+                valueRegex = new RegExp("^(" + split[1] + ")$", "s")
+            }
+            return new RegexTag(
+                keyRegex,
+                valueRegex
+            )
+        }
+        const withRegex = TagUtils.parseRegexOperator(tag)
+        if (withRegex != null) {
+            if (withRegex.value === "*" && withRegex.invert) {
+                throw `Don't use 'key!~*' - use 'key=' instead (empty string as value (in the tag ${tag} while parsing ${context})`
+            }
+            if (withRegex.value === "") {
+                throw (
+                    "Detected a regextag with an empty regex; this is not allowed. Use '" +
+                    withRegex.key +
+                    "='instead (at " +
+                    context +
+                    ")"
+                )
+            }
+
+            let value: string | RegExp = withRegex.value
+            if (value === "*") {
+                return new RegexTag(
+                    withRegex.key,
+                    new RegExp(".+", "si" + withRegex.modifier),
+                    withRegex.invert
+                )
+            }
+            return new RegexTag(
+                withRegex.key,
+                new RegExp("^(" + value + ")$", "s" + withRegex.modifier),
+                withRegex.invert
+            )
+        }
+
+        if (tag.indexOf("!:=") >= 0) {
+            const split = Utils.SplitFirst(tag, "!:=")
+            return new SubstitutingTag(split[0], split[1], true)
+        }
+        if (tag.indexOf(":=") >= 0) {
+            const split = Utils.SplitFirst(tag, ":=")
+            return new SubstitutingTag(split[0], split[1])
+        }
+
+        if (tag.indexOf("!=") >= 0) {
+            const split = Utils.SplitFirst(tag, "!=")
+            if (split[1] === "*") {
+                throw (
+                    "At " +
+                    context +
+                    ": invalid tag " +
+                    tag +
+                    ". To indicate a missing tag, use '" +
+                    split[0] +
+                    "!=' instead"
+                )
+            }
+            if (split[1] === "") {
+                return new RegexTag(split[0], /.+/si)
+            }
+            return new RegexTag(split[0], split[1], true)
+        }
+
+        if (tag.indexOf("=") >= 0) {
+            const split = Utils.SplitFirst(tag, "=")
+            if (split[1] == "*") {
+                throw `Error while parsing tag '${tag}' in ${context}: detected a wildcard on a normal value. Use a regex pattern instead`
+            }
+            return new Tag(split[0], split[1])
+        }
+        throw `Error while parsing tag '${tag}' in ${context}: no key part and value part were found`
+    }
+
+    private static GetCount(key: string, value?: string) {
+        if (key === undefined) {
+            return undefined
+        }
+        const tag = TagUtils.keyCounts.tags[key]
+        if (tag !== undefined && tag[value] !== undefined) {
+            return tag[value]
+        }
+        return TagUtils.keyCounts.keys[key]
+    }
+
+    private static order(a: TagsFilter, b: TagsFilter, usePopularity: boolean): number {
+        const rta = a instanceof RegexTag
+        const rtb = b instanceof RegexTag
+        if (rta !== rtb) {
+            // Regex tags should always go at the end: these use a lot of computation at the overpass side, avoiding it is better
+            if (rta) {
+                return 1 // b < a
+            } else {
+                return -1
+            }
+        }
+        if (a["key"] !== undefined && b["key"] !== undefined) {
+            if (usePopularity) {
+                const countA = TagUtils.GetCount(a["key"], a["value"])
+                const countB = TagUtils.GetCount(b["key"], b["value"])
+                if (countA !== undefined && countB !== undefined) {
+                    return countA - countB
+                }
+            }
+
+            if (a["key"] === b["key"]) {
+                return 0
+            }
+            if (a["key"] < b["key"]) {
+                return -1
+            }
+            return 1
+        }
+
+        return 0
+    }
+
+    private static joinL(tfs: TagsFilter[], seperator: string, toplevel: boolean) {
+        const joined = tfs.map((e) => TagUtils.toString(e, false)).join(seperator)
+        if (toplevel) {
+            return joined
+        }
+        return " (" + joined + ") "
     }
 }

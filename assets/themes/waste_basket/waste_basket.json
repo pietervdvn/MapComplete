@@ -10,7 +10,8 @@
     "id": "Keranjang Sampah",
     "ca": "Papepera",
     "fr": "Poubelles",
-    "nb_NO": "Søppelkurv"
+    "nb_NO": "Søppelkurv",
+    "da": "Affaldskurv"
   },
   "shortDescription": {
     "en": "A map with waste baskets",
@@ -20,7 +21,8 @@
     "zh_Hant": "垃圾筒的地圖",
     "hu": "Szemeteskosarakat ábrázoló térkép",
     "fr": "Une carte des poubelles",
-    "nb_NO": "Oversikt over søppelkurver"
+    "nb_NO": "Oversikt over søppelkurver",
+    "da": "Et kort med affaldskurve"
   },
   "description": {
     "en": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
@@ -29,7 +31,8 @@
     "it": "In questa cartina troverai i cestini dei rifiuti nei tuoi paraggi. Se manca un cestino, puoi inserirlo tu stesso",
     "zh_Hant": "在這份地圖當中，你可以找到你附近的垃圾筒。如果地圖有遺漏垃圾筒，你可以自己加上去",
     "hu": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod",
-    "fr": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même"
+    "fr": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
+    "da": "På dette kort finder du affaldskurve i nærheden af dig. Hvis der mangler en affaldskurv på dette kort, kan du selv tilføje den"
   },
   "icon": "./assets/themes/waste_basket/waste_basket.svg",
   "startLat": 0,

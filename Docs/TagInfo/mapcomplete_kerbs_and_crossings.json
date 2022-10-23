@@ -428,7 +428,7 @@
     },
     {
       "key": "cycleway:traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Kerbs and crossings')"
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Kerbs and crossings')"
     },
     {
       "key": "cycleway:traffic_sign",
@@ -452,7 +452,7 @@
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cycleways and roads' shows traffic_sign~^BE:D7;.*$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Kerbs and crossings')"
+      "description": "Layer 'Cycleways and roads' shows traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the MapComplete.osm.be theme 'Kerbs and crossings')"
     },
     {
       "key": "traffic_sign",
@@ -677,6 +677,22 @@
       "key": "barrier",
       "description": "The MapComplete theme Kerbs and crossings has a layer Kerbs showing features with this tag",
       "value": "kerb"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "kerb",

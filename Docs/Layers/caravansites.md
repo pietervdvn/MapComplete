@@ -40,10 +40,10 @@ Elements must have the all of following tags to be shown on this layer:
 
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dcaravan_site' target='_blank'>caravan_site</a>
-  - permanent_camping!~^only$
+  - permanent_camping!~^(only)$
 
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22tourism%22%3D%22caravan_site%22%5D%5B%22permanent_camping%22!~%22%5Eonly%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22tourism%22%3D%22caravan_site%22%5D%5B%22permanent_camping%22!~%22%5E(only)%24%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -243,7 +243,7 @@ The question is  Does this place offer spots for long term rental?
 
   - There are some spots for long term rental, but you can also stay on a daily basis  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dyes' target='_blank'>yes</a>`
   - There are no permanent guests here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Dno' target='_blank'>no</a>`
-  - It is only possible to stay here if you have a long term contract(this place will disappear from this map if you choose this)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Donly' target='_blank'>only</a>`
+  - It is only possible to stay here if you have a long term contract (this place disappears from this map if you choose this)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:permanent_camping' target='_blank'>permanent_camping</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:permanent_camping%3Donly' target='_blank'>only</a>`
 
 
 

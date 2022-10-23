@@ -96,6 +96,15 @@
       "value": "tilework"
     },
     {
+      "key": "artwork_type",
+      "description": "Layer 'Artworks' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map')",
+      "value": "woodcarving"
+    },
+    {
+      "key": "artist:wikidata",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'artist:wikidata' (in the MapComplete.osm.be theme 'Open Artwork Map')"
+    },
+    {
       "key": "artist_name",
       "description": "Layer 'Artworks' shows and asks freeform values for key 'artist_name' (in the MapComplete.osm.be theme 'Open Artwork Map')"
     },
@@ -106,6 +115,19 @@
     {
       "key": "wikidata",
       "description": "Layer 'Artworks' shows and asks freeform values for key 'wikidata' (in the MapComplete.osm.be theme 'Open Artwork Map')"
+    },
+    {
+      "key": "wikipedia",
+      "description": "Layer 'Artworks' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the MapComplete.osm.be theme 'Open Artwork Map')"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'Artworks' shows  with a fixed text, namely 'No Wikipedia page has been linked yet' (in the MapComplete.osm.be theme 'Open Artwork Map') Picking this answer will delete the key wikidata.",
+      "value": ""
+    },
+    {
+      "key": "subject:wikidata",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'subject:wikidata' (in the MapComplete.osm.be theme 'Open Artwork Map')"
     }
   ]
 }

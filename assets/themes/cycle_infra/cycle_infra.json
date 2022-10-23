@@ -11,7 +11,8 @@
     "hu": "Kerékpáros infrastruktúra",
     "ca": "Infraestructura per a bicicletes",
     "es": "Infraestructura ciclista",
-    "fr": "Infrastructure cyclable"
+    "fr": "Infrastructure cyclable",
+    "da": "Cykelinfrastruktur"
   },
   "shortDescription": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure.",
@@ -23,7 +24,8 @@
     "hu": "Olyan térkép, ahol a kerékpáros infrastruktúrával kapcsolatos dolgokat tekinthet meg és szerkeszthet.",
     "es": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista.",
     "fr": "Une carte où vous pouvez visualiser et modifier les éléments relatifs à l'infrastructure cyclable.",
-    "ca": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista."
+    "ca": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista.",
+    "da": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen."
   },
   "description": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure. Made during #osoc21.",
@@ -34,7 +36,8 @@
     "hu": "Kerékpáros infrastruktúrával kapcsolatos dolgokat megjelenítő és szerkesztésre felkínáló térkép. Az #osoc21 (Open Summer of Code) alatt készült.",
     "fr": "Une carte montrant les aménagements cyclables et où l’on peut rajouter des informations. Réalisée durant #osoc21.",
     "es": "Un mapa en el que puedes ver y editar cosas relacionadas con la infraestructura ciclista. Hecho durante #osoc21.",
-    "ca": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista. Fet durant #osoc21."
+    "ca": "Un mapa on es poden veure i editar coses relacionades amb la infraestructura ciclista. Fet durant #osoc21.",
+    "da": "Et kort, hvor du kan se og redigere ting relateret til cykelinfrastrukturen. Lavet under #osoc21."
   },
   "hideFromOverview": false,
   "defaultBackgroundId": "CartoDB.Voyager",

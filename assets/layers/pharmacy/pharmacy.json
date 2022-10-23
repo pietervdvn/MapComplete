@@ -151,6 +151,7 @@
           "osmTags": "dispensing=yes"
         }
       ]
-    }
+    },
+    "open_now"
   ]
 }
