@@ -51,7 +51,7 @@
       "color": "gray"
     },
     {
-      "icon": "./assets/svg/bug.svg",
+      "icon": "./assets/themes/stations/rail-light-15.svg",
       "location": [
         "point",
         "centroid"

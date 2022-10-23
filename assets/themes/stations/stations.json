@@ -19,25 +19,16 @@
         "minzoom": 19,
         "passAllFeatures": true,
         "mapRendering": [
+          {},
+          {},
           {
             "label": {
-              "render": null
+              "render": null,
+              "mappings": null
             },
             "iconSize": "0,0,bottom"
           }
         ]
-      }
-    },
-    {
-      "builtin": [
-        "entrance",
-        "elevator",
-        "bench",
-        "toilet",
-        "waste_basket"
-      ],
-      "override": {
-        "minzoom": 19
       }
     },
     {
@@ -114,21 +105,72 @@
     {
       "builtin": "shops",
       "override": {
-        "source": {
-          "osmTags": {
-            "and": [
-              "shop~*",
-              "indoor=room"
-            ]
-          }
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
         },
         "presets": null,
         "minzoom": 19
       }
     },
+    {
+      "builtin": [
+        "food",
+        "cafe_pub"
+      ],
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19,
+        "mapRendering+": [
+          {
+            "color": {
+              "render": "#00f"
+            },
+            "width": {
+              "render": "8"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "toilet",
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "mapRendering+": [
+          {
+            "color": {
+              "render": "yellow"
+            },
+            "width": {
+              "render": "8"
+            }
+          }
+        ]
+      }
+    },
     "railway_platforms",
     {
       "id": "ticket_machine",
+      "name": {
+        "en": "Ticket Machines"
+      },
+      "description": {
+        "en": "Find ticket machines for public transport tickets"
+      },
       "source": {
         "osmTags": {
           "and": [
@@ -183,6 +225,17 @@
           ]
         }
       ]
+    },
+    {
+      "builtin": [
+        "entrance",
+        "elevator",
+        "bench",
+        "waste_basket"
+      ],
+      "override": {
+        "minzoom": 19
+      }
     },
     {
       "id": "departures_board",
@@ -257,7 +310,7 @@
       ],
       "mapRendering": [
         {
-          "icon": "./assets/svg/bug.svg",
+          "icon": "./assets/themes/stations/departures_board.svg",
           "location": [
             "point",
             "centroid"

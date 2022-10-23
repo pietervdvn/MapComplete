@@ -355,6 +355,10 @@
                 "then": "./assets/themes/sports/sport.svg"
               },
               {
+                "if": "theme=stations",
+                "then": "./assets/themes/stations/rail-light-15.svg"
+              },
+              {
                 "if": "theme=street_lighting",
                 "then": "./assets/layers/street_lamps/street_lamp.svg"
               },

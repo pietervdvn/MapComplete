@@ -1,5 +1,13 @@
 [
   {
+    "path": "departures_board.svg",
+    "license": "CC0",
+    "authors": [
+      "Robin van der Linde"
+    ],
+    "sources": []
+  },
+  {
     "path": "public_transport_tickets.svg",
     "license": "CC0",
     "authors": [
