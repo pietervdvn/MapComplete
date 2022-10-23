@@ -103,7 +103,7 @@
       ]
     },
     {
-      "builtin": "shops",
+      "builtin": ["shops", "bike_parking"],
       "override": {
         "isShown": {
           "or": [
