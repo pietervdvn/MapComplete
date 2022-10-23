@@ -6,7 +6,7 @@
   "description": {
     "en": "View, edit and add details to a train station"
   },
-  "icon": "./assets/themes/stations/rail-light-15.svg",
+  "icon": "./assets/themes/stations/rail-light.svg",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 0,
@@ -83,7 +83,7 @@
       },
       "mapRendering": [
         {
-          "icon": "./assets/themes/stations/rail-light-15.svg",
+          "icon": "./assets/themes/stations/rail-light.svg",
           "location": [
             "point",
             "centroid"

@@ -356,7 +356,7 @@
               },
               {
                 "if": "theme=stations",
-                "then": "./assets/themes/stations/rail-light-15.svg"
+                "then": "./assets/themes/stations/rail-light.svg"
               },
               {
                 "if": "theme=street_lighting",
