@@ -3384,7 +3384,7 @@
     },
     "elevator": {
         "description": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
-        "name": "elevator",
+        "name": "Elevator",
         "presets": {
             "0": {
                 "title": "an elevator"
@@ -4371,22 +4371,6 @@
                     },
                     "5": {
                         "question": "Kerb with unknown height"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Kerbs with or without tactile paving"
-                    },
-                    "1": {
-                        "question": "Kerb with tactile paving"
-                    },
-                    "2": {
-                        "question": "Kerb without tactile paving"
-                    },
-                    "3": {
-                        "question": "Kerb wihout information about tactile paving"
                     }
                 }
             }

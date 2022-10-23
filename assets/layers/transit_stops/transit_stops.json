@@ -94,8 +94,7 @@
         "en": "What is the name of this stop?",
         "de": "Wie lautet der Name der Haltestelle?",
         "da": "Hvad er navnet på dette stop?"
-      },
-      "placeholder": "Name of the stop"
+      }
     },
     "images",
     {
@@ -313,6 +312,47 @@
       "id": "contained_routes"
     }
   ],
-  "filter": [],
+  "filter": [
+    {
+      "id": "shelter",
+      "options": [
+        {
+          "osmTags": {
+            "or": ["shelter=yes", "shelter=separate"]
+          },
+          "question": {
+            "en": "With a shelter"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bench",
+      "options": [
+        {
+          "osmTags": {
+            "or": ["bench=yes", "bench=separate"]
+          },
+          "question": {
+            "en": "With a bench"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bin",
+      "options": [
+        {
+          "osmTags": {
+            "or": ["bin=yes", "bin=separate"]
+          },
+          "question": {
+            "en": "With a bin"
+          }
+        }
+      ]
+    },
+    "tactile_paving"
+  ],
   "allowMove": false
 }

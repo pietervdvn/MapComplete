@@ -4352,22 +4352,6 @@
                         "question": "Bordstein mit unbekannter Höhe"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Bordsteine mit oder ohne taktilem Pflaster"
-                    },
-                    "1": {
-                        "question": "Bordstein mit taktilem Pflaster"
-                    },
-                    "2": {
-                        "question": "Bordstein ohne taktilem Pflaster"
-                    },
-                    "3": {
-                        "question": "Bordstein ohne Informationen über taktiles Pflaster"
-                    }
-                }
             }
         },
         "name": "Bordsteine",

@@ -2228,7 +2228,7 @@
     },
     "elevator": {
         "description": "Ce calque montre les ascenseurs et demande l'état opérationnel et les dimensions de l'ascenseur. Utile pour les informations sur l'accessibilité en fauteuil roulant",
-        "name": "ascenseur",
+        "name": "Ascenseur",
         "presets": {
             "0": {
                 "title": "un ascenseur"
@@ -2961,22 +2961,6 @@
                     },
                     "5": {
                         "question": "Bordure de hauteur inconnue"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Bordures avec ou sans revêtement podotactile"
-                    },
-                    "1": {
-                        "question": "Bordure avec revêtement podotactile"
-                    },
-                    "2": {
-                        "question": "Bordure sans revêtement podotactile"
-                    },
-                    "3": {
-                        "question": "Bordure sans information sur le revêtement podotactile"
                     }
                 }
             }

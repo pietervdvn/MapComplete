@@ -121,6 +121,7 @@
     }
   ],
   "tagRenderings": [
+    "images",
     {
       "id": "crossing-type",
       "question": {
@@ -340,6 +341,115 @@
       ]
     },
     {
+      "id": "crossing-sound",
+      "question": {
+        "en": "Does this traffic light have sound signals to aid crossing?"
+      },
+      "condition": "crossing=traffic_signals",
+      "mappings": [
+        {
+          "if": "traffic_signals:sound=yes",
+          "then": {
+            "en": "This traffic light has sound signals to help crossing, both for finding the crossing and for crossing."
+          }
+        },
+        {
+          "if": "traffic_signals:sound=no",
+          "then": {
+            "en": "This traffic light does not have sound signals to help crossing."
+          }
+        },
+        {
+          "if": "traffic_signals:sound=locate",
+          "then": {
+            "en": "This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross."
+          }
+        },
+        {
+          "if": "traffic_signals:sound=walk",
+          "then": {
+            "en": "This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole."
+          }
+        }
+      ]
+    },
+    {
+      "id": "crossing-vibration",
+      "question": {
+        "en": "Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)"
+      },
+      "condition": {
+        "and": [
+          "crossing=traffic_signals",
+          "button_operated=yes"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "traffic_signals:vibration=yes",
+          "then": {
+            "en": "The button for this traffic light has a vibration signal to indicate that it is safe to cross."
+          },
+          "icon": {
+            "path": "./assets/layers/crossings/Vibrating_button_illustration.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_signals:vibration=no",
+          "then": {
+            "en": "The button for this traffic light does not have a vibration signal to indicate that it is safe to cross."
+          }
+        }
+      ]
+    },
+    {
+      "id": "crossing-arrow",
+      "question": {
+        "en": "Does this traffic light have an arrow pointing in the direction of crossing?"
+      },
+      "condition": "crossing=traffic_signals",
+      "mappings": [
+        {
+          "if": "traffic_signals:arrow=yes",
+          "then": {
+            "en": "This traffic light has an arrow pointing in the direction of crossing."
+          }
+        },
+        {
+          "if": "traffic_signals:arrow=no",
+          "then": {
+            "en": "This traffic light does <b>not</b> have an arrow pointing in the direction of crossing."
+          }
+        }
+      ]
+    },
+    {
+      "id": "crossing-minimap",
+      "question": {
+        "en": "Does this traffic light have a tactile map showing the layout of the crossing?"
+      },
+      "condition": "crossing=traffic_signals",
+      "mappings": [
+        {
+          "if": "traffic_signals:minimap=yes",
+          "then": {
+            "en": "This traffic light has a tactile map showing the layout of the crossing."
+          },
+          "icon": {
+            "path": "./assets/layers/crossings/180px-Trairvoja_mapeto.jpg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_signals:minimap=no",
+          "then": {
+            "en": "This traffic light does <b>not</b> have a tactile map showing the layout of the crossing."
+          }
+        }
+      ]
+    },
+    {
       "id": "crossing-right-turn-through-red",
       "question": {
         "en": "Can a cyclist turn right when the light is red?",
@@ -453,5 +563,8 @@
     {
       "width": "5"
     }
+  ],
+  "filter": [
+    "tactile_paving_advanced"
   ]
 }

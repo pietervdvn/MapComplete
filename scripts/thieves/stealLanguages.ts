@@ -18,6 +18,7 @@ function main() {
     )
     const mappings: MappingConfigJson[] = []
     const schoolmappings: MappingConfigJson[] = []
+    const brailemappings: MappingConfigJson[] = []
 
     const countryToLanguage: Record<string, string[]> = perCountry
     const officialLanguagesPerCountry = Utils.TransposeMap(countryToLanguage)
@@ -57,6 +58,16 @@ function main() {
                 "*": [code],
             },
         })
+
+        brailemappings.push(<MappingConfigJson>{
+            if: "tactile_writing:braille:" + code + "=yes",
+            ifnot: "tactile_writing:braille:" + code + "=",
+            searchTerms: {
+                "*": [code],
+            },
+            then,
+            priorityIf: prioritySearch,
+        })
     })
 
     const wikidataLayer = <LayerConfigJson>{
@@ -94,6 +105,13 @@ function main() {
                 multiAnswer: true,
                 mappings: schoolmappings,
             },
+            {
+                id: "tactile_writing-braille",
+                // @ts-ignore
+                description: "Enables to pick *multiple* 'tactile_writing:braille=<lng>' within the mappings",
+                multiAnswer: true,
+                mappings: brailemappings,
+            }
         ],
     }
     const dir = "./assets/layers/wikidata/"
