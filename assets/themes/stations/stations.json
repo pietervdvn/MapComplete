@@ -150,6 +150,8 @@
             "indoor=area"
           ]
         },
+        "presets": null,
+        "minzoom": 19,
         "mapRendering+": [
           {
             "color": {
@@ -179,6 +181,7 @@
           ]
         }
       },
+      "minzoom": 19,
       "title": {
         "render": {
           "en": "Ticket Machine"
