@@ -15,8 +15,6 @@ import Translations from "../../../UI/i18n/Translations"
 import Svg from "../../../Svg"
 import {QuestionableTagRenderingConfigJson} from "../Json/QuestionableTagRenderingConfigJson"
 import FilterConfigJson from "../Json/FilterConfigJson";
-import {control} from "leaflet";
-import layers = control.layers;
 import DeleteConfig from "../DeleteConfig";
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
@@ -269,7 +267,7 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 ).convert(theme, theme.id)
                 errors.push(...checked.errors)
             }
-            if (!json.hideFromOverview && theme.id !== "personal") {
+            if (!json.hideFromOverview && theme.id !== "personal" && this._isBuiltin) {
                 // The first key in the the title-field must be english, otherwise the title in the loading page will be the different language
                 const targetLanguage = theme.title.SupportedLanguages()[0]
                 if (targetLanguage !== "en") {

@@ -50,8 +50,12 @@
                 },
                 "2": {
                     "then": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan"
+                },
+                "0": {
+                    "then": "Ada biaya untuk akses internet di tempat ini"
                 }
-            }
+            },
+            "question": "Apakah ada biaya untuk akses internet?"
         },
         "internet-ssid": {
             "freeform": {
@@ -141,15 +145,26 @@
                 },
                 "2": {
                     "then": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah"
+                },
+                "3": {
+                    "then": "Tempat ini tidak bisa dijangkau dengan kursi roda"
+                },
+                "0": {
+                    "then": "Tempat ini dirancang khusus untuk pengguna kursi roda"
                 }
-            }
+            },
+            "question": "Apakah tempat ini dapat diakses dengan kursi roda?"
         },
         "wikipedia": {
             "mappings": {
                 "1": {
                     "then": "Belum ada halaman Wikipedia yang ditautkan"
+                },
+                "0": {
+                    "then": "Belum ada halaman Wikipedia yang ditautkan"
                 }
-            }
+            },
+            "question": "Apa entitas Wikidata yang sesuai?"
         },
         "wikipedialink": {
             "mappings": {

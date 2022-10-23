@@ -123,6 +123,9 @@
                     },
                     "11": {
                         "then": "Fliesenarbeit"
+                    },
+                    "12": {
+                        "then": "Holzschnitzerei"
                     }
                 },
                 "question": "Um welche Art Kunstwerk handelt es sich?",
@@ -131,6 +134,14 @@
             "artwork-website": {
                 "question": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
                 "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
+            },
+            "artwork-artist-wikidata": {
+                "question": "Wer hat dieses Kunstwerk geschaffen?",
+                "render": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
+            "artwork_subject": {
+                "question": "Was zeigt dieses Kunstwerk?",
+                "render": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             }
         },
         "title": {
@@ -975,7 +986,7 @@
                         "then": "Im Geschäft gibt es keine öffentlich nutzbare Luftpumpe"
                     },
                     "2": {
-                        "then": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen "
+                        "then": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen"
                     }
                 },
                 "question": "Gibt es im Geschäft eine öffentlich nutzbare Luftpumpe?"
@@ -3637,6 +3648,16 @@
                         "question": "Akzeptiert Kartenzahlung"
                     }
                 }
+            },
+            "3": {
+                "options": {
+                    "1": {
+                        "question": "Hat mindestens ein Bild"
+                    },
+                    "2": {
+                        "question": "Hat wahrscheinlich kein Bild"
+                    }
+                }
             }
         }
     },
@@ -5174,7 +5195,7 @@
             "type": {
                 "mappings": {
                     "0": {
-                        "then": "Dies ist ein normaler Stellplatz"
+                        "then": "Dies ist ein normaler Stellplatz."
                     },
                     "1": {
                         "then": "Dies ist ein normaler Stellplatz."

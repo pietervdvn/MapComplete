@@ -143,6 +143,64 @@
                 }
             },
             "question": "Hva er respektivt element på Wikipedia?"
+        },
+        "internet": {
+            "mappings": {
+                "2": {
+                    "then": "Dette stedet tilbyr tilgang til Internett"
+                },
+                "1": {
+                    "then": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett"
+                },
+                "3": {
+                    "then": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin"
+                },
+                "4": {
+                    "then": "Dette stedet tilbyr trådbunden tilgang til Internett"
+                },
+                "0": {
+                    "then": "Dette stedet tilbyr trådløs tilgang til Internett"
+                }
+            },
+            "question": "Tilbyr dette stedet tilgang til Internett?"
+        },
+        "internet-ssid": {
+            "render": "Nettverksnavnet er <b>{internet_access:ssid}</b>",
+            "freeform": {
+                "placeholder": "Skriv inn nettverksnavnet"
+            },
+            "question": "Hva er nettverksnavnet for det trådløse nettverket?"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Hvilke etasjer går heisen til?",
+                "render": "Heisen går til etasje {level}"
+            }
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Dette stedet har en teleslynge"
+                },
+                "1": {
+                    "then": "Dette stedet <b>har ikke</b> en teleslynge"
+                }
+            },
+            "question": "Har stedet en teleslynge for folk med redusert hørsel?"
+        },
+        "internet-fee": {
+            "question": "Er det et gebyr for bruk av Internett?",
+            "mappings": {
+                "1": {
+                    "then": "Tilgang til Internett er gratis på dette stedet"
+                },
+                "2": {
+                    "then": "Tilgang til Internett på dette stedet er gratis, men kun for kunder"
+                },
+                "0": {
+                    "then": "Det er et gebyr for tilgang til Internett på dette stedet"
+                }
+            }
         }
     }
 }

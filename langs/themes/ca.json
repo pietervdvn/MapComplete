@@ -163,6 +163,9 @@
                             },
                             "3": {
                                 "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
+                            },
+                            "0": {
+                                "then": "Necessites un codi/clau de xarxa per usar-lo"
                             }
                         },
                         "question": "Qui pot utilitzar aquesta estació d'abocament?"
@@ -178,6 +181,19 @@
                             }
                         }
                     }
+                },
+                "presets": {
+                    "0": {
+                        "title": "una estació d'abocament sanitari"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Estació d'abocament"
+                        }
+                    },
+                    "render": "Estació d'abocament {name}"
                 }
             }
         },
@@ -249,7 +265,10 @@
                 }
             },
             "1": {
-                "name": "nodes"
+                "name": "nodes",
+                "title": {
+                    "render": "node ciclista <strong>{rcn_ref}</strong>"
+                }
             }
         },
         "title": "Xarxa de nodes ciclistes"
@@ -354,6 +373,18 @@
                 },
                 "title": {
                     "render": "Jardí vertical"
+                },
+                "tagRenderings": {
+                    "facadegardens-plants": {
+                        "mappings": {
+                            "2": {
+                                "then": "Hi ha arbustos"
+                            }
+                        }
+                    },
+                    "facadegardens-description": {
+                        "render": "Més detalls: {description}"
+                    }
                 }
             }
         },
@@ -410,10 +441,16 @@
         "description": "Codis postals",
         "layers": {
             "0": {
-                "name": "codis postals"
+                "name": "codis postals",
+                "title": {
+                    "render": "Codi postal {postal_code}"
+                }
             },
             "2": {
-                "name": "ajuntaments"
+                "name": "ajuntaments",
+                "title": {
+                    "render": "Ajuntament de {name}"
+                }
             }
         },
         "shortDescription": "Codis postals",
@@ -472,5 +509,85 @@
     },
     "waste_basket": {
         "title": "Papepera"
+    },
+    "indoors": {
+        "title": "Indoors"
+    },
+    "onwheels": {
+        "title": "OnWheels",
+        "layers": {
+            "18": {
+                "override": {
+                    "=title": {
+                        "render": "Estadístiques"
+                    }
+                }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "ghostbikes": {
+        "title": "Bicicletes fantasmes"
+    },
+    "maproulette": {
+        "title": "Tasques de MapRoulette"
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "name": "Centres del conjunt de canvis",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "El nom de la petició conté {search}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "hackerspaces": {
+        "title": "Espai per a hackers"
+    },
+    "pets": {
+        "layers": {
+            "2": {
+                "override": {
+                    "title": {
+                        "render": "Botigues amigues dels gossos"
+                    },
+                    "name": "Botigues amigues dels gossos"
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "botiga amiga dels gossos"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "hotels": {
+        "title": "Hotels"
+    },
+    "transit": {
+        "title": "Rutes de bus"
     }
 }

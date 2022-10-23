@@ -892,7 +892,7 @@
                         "then": "Esta tienda no ofrece una bomba para cualquiera"
                     },
                     "2": {
-                        "then": "Hay una bomba para bicicletas, se muestra como un punto separado "
+                        "then": "Hay una bomba para bicicletas, se muestra como un punto separado"
                     }
                 },
                 "question": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?"
@@ -3564,11 +3564,6 @@
                 },
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
-            },
-            "count": {
-                "mappings": {
-                    "0": {}
-                }
             },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",
