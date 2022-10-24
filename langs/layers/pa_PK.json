@@ -1,1 +1,17 @@
-{}
+{
+    "address": {
+        "description": "پتے",
+        "name": "او‌ایس‌ایم وچ جاݨ پچھاݨے پتے"
+    },
+    "artwork": {
+        "tagRenderings": {
+            "artwork-artwork_type": {
+                "mappings": {
+                    "6": {
+                        "then": "پتھر"
+                    }
+                }
+            }
+        }
+    }
+}
