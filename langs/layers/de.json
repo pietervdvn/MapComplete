@@ -5495,6 +5495,107 @@
                 },
                 "question": "Wie sind die Öffnungszeiten dieser Poststelle?",
                 "render": "Öffnungszeiten: {opening_hours_table()}"
+            },
+            "parcel-from": {
+                "question": "Können Sie hier Pakete versenden?",
+                "render": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}",
+                "mappings": {
+                    "1": {
+                        "then": "Sie können hier keine Pakete versenden"
+                    },
+                    "0": {
+                        "then": "Hier können Sie Pakete versenden"
+                    }
+                }
+            },
+            "parcel-pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier können Sie verpasste Pakete abholen"
+                    },
+                    "1": {
+                        "then": "Sie können hier keine verpassten Pakete abholen"
+                    }
+                },
+                "render": "Sie können Pakete von diesen Unternehmen abholen: {post_office:parcel_pickup}",
+                "question": "Können Sie hier verpasste Pakete abholen?"
+            },
+            "parcel-to": {
+                "render": "Mit diesen Unternehmen können Sie Pakete zur Abholung hierher senden: {post_office:parcel_to}",
+                "mappings": {
+                    "1": {
+                        "then": "Sie können keine Pakete zur Abholung hierher schicken"
+                    },
+                    "0": {
+                        "then": "Sie können Pakete zur Abholung hierher schicken"
+                    }
+                },
+                "question": "Können Sie Pakete zur Abholung hierher schicken?"
+            },
+            "partner-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Standort bietet Dienstleistungen für DHL an"
+                    },
+                    "1": {
+                        "then": "Dieser Standort bietet Dienstleistungen für DPD an"
+                    },
+                    "3": {
+                        "then": "Dieser Standort bietet Dienstleistungen für UPS an"
+                    },
+                    "5": {
+                        "then": "Dieser Standort ist ein Hermes PaketShop"
+                    },
+                    "6": {
+                        "then": "Dieser Standort ist ein PostNL-Punkt"
+                    },
+                    "7": {
+                        "then": "Dieser Standort bietet Dienstleistungen für bpost an"
+                    },
+                    "4": {
+                        "then": "Dieser Standort ist ein DHL Paketshop"
+                    },
+                    "2": {
+                        "then": "Dieser Standort bietet Dienstleistungen für GLS an"
+                    }
+                },
+                "question": "Für welche Marke bietet dieser Standort Dienstleistungen an?",
+                "render": "Dieser Standort bietet Dienstleistungen für {post_office:brand} an"
+            },
+            "post_partner": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Geschäft ist ein Post-Partner"
+                    },
+                    "1": {
+                        "then": "Dieses Geschäft ist kein Post-Partner"
+                    }
+                },
+                "question": "Ist dies ein Post-Partner?"
+            },
+            "stamps": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können hier Briefmarken kaufen"
+                    },
+                    "1": {
+                        "then": "Sie können hier keine Briefmarken kaufen"
+                    }
+                },
+                "question": "Kann man hier Briefmarken kaufen?",
+                "render": "Sie können Briefmarken folgender Unternehmen kaufen: {post_office:stamps}"
+            },
+            "letter-from": {
+                "mappings": {
+                    "1": {
+                        "then": "Sie können hier keine Briefe aufgeben"
+                    },
+                    "0": {
+                        "then": "Sie können Briefe hier aufgeben"
+                    }
+                },
+                "question": "Können Sie hier einen Brief aufgeben?",
+                "render": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}"
             }
         },
         "title": {
