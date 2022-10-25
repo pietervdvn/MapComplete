@@ -170,6 +170,37 @@
                 }
             },
             "question": "Welk Wikipedia-artikel beschrijft dit object?"
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Deze plaats heeft een ringleiding"
+                },
+                "1": {
+                    "then": "Deze plaats heeft <b>geen</b> ringleiding"
+                }
+            },
+            "question": "Heeft deze plaats een ringleiding voor slechthorenden?"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Naar welke verdiepingen gaat deze lift?",
+                "render": "Deze lift gaat naar de verdiepingen {level}"
+            }
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Roken is <b>toegestaan</b>"
+                },
+                "1": {
+                    "then": "Roken is <b>niet toegestaan</b>"
+                },
+                "2": {
+                    "then": "Roken is <b>buiten toegestaan</b>."
+                }
+            },
+            "question": "Is roken toegestaan bij {title()}?"
         }
     }
 }
