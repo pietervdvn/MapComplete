@@ -12,7 +12,14 @@
         "loading": "Kontrola vlastností, zda lze tuto funkci odstranit.",
         "delete": "Smazat",
         "isntAPoint": "Odstranit lze pouze uzly, vybraným prvkem je cesta, oblast nebo relace.",
-        "loginToDelete": "Chcete-li funkci odstranit, musíte být přihlášeni."
+        "loginToDelete": "Chcete-li funkci odstranit, musíte být přihlášeni.",
+        "notEnoughExperience": "Tuto funkci vytvořil někdo jiný.",
+        "reasons": {
+            "disused": "Tato funkce je nepoužívaná nebo odstraněná"
+        },
+        "onlyEditedByLoggedInUser": "Tuto funkci jste upravovali pouze vy, můžete ji bez obav odstranit.",
+        "partOfOthers": "Tento uzel je součástí nějaké cesty nebo relace a nelze jej přímo smazat.",
+        "readMessages": "Máte nepřečtené zprávy. Před odstraněním funkce si je přečtěte - někdo by mohl mít zpětnou vazbu"
     },
     "centerMessage": {
         "loadingData": "Načítání dat…",
