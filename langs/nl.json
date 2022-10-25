@@ -45,7 +45,7 @@
         "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
         "editing": {
             "ex": "Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond:",
-            "intro": "De gebruiker krijgt eerst een kaart met interesspunten te zien. Klik je op een punt, dan wordt de interface met informatie geopend.",
+            "intro": "De gebruiker krijgt eerst een kaart met interessepunten te zien. Klik je op een punt, dan wordt de interface met informatie over het interessepunt geopend.",
             "title": "Hoe ziet de interface eruit?"
         },
         "examples": "Online zijn verschillende kaarten met diverse thema's beschikbaar, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,...\nEnkele zijn hier afgeprint.\n\nOntdek ze allemaal op mapcomplete.osm.be",
@@ -77,7 +77,8 @@
         "tagline": "Geodata eenvoudig verzamelen met OpenStreetMap",
         "title": "MapComplete.osm.be",
         "toerisme_vlaanderen": "In samenwerking met Toerisme Vlaanderen werd 'Pin Je Punt' gecreëerd. Op enkele maanden tijd werden hiermee duizenden zitbanken, picknicktafels en oplaadpunten voor elektrische fietsen toegevoegd aan de kaart door meer dan 160 personen.",
-        "whatIsOsm": "Wat is OpenStreetMap?"
+        "whatIsOsm": "Wat is OpenStreetMap?",
+        "description": "Een horizontale A4 flyer om MapComplete te promoten"
     },
     "general": {
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",

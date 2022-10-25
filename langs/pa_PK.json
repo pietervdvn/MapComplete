@@ -1,1 +1,98 @@
-{}
+{
+    "general": {
+        "opening_hours": {
+            "opensAt": "توں",
+            "ph_closed": "بند",
+            "ph_open": "کھُلھا"
+        },
+        "save": "سامبھو",
+        "search": {
+            "searching": "کھوجیا جا رہا اے۔ ۔ ۔",
+            "nothing": "کجھ نہیں لبھے۔ ۔ ۔"
+        },
+        "wikipedia": {
+            "wikipediaboxTitle": "وِکیپیڈیا"
+        },
+        "confirm": "پکا کرو",
+        "attribution": {
+            "iconAttribution": {
+                "title": "ورتے آئیکون"
+            }
+        },
+        "download": {
+            "exporting": "ایکسپورٹ کیتا جا رہا اے۔ ۔ ۔"
+        },
+        "loading": "لوڈ کر رہا اے۔ ۔ ۔",
+        "next": "اگے",
+        "number": "نمبر",
+        "example": "مثال",
+        "weekdays": {
+            "abbreviations": {
+                "sunday": "اتـ",
+                "friday": "جـ",
+                "thursday": "جـ",
+                "monday": "سـ",
+                "saturday": "ہـ",
+                "tuesday": "مـ",
+                "wednesday": "بـ"
+            },
+            "friday": "جمعہ",
+            "sunday": "اتوار",
+            "saturday": "ہفتہ",
+            "thursday": "جمعرات",
+            "wednesday": "بدھوار",
+            "tuesday": "منگلوار",
+            "monday": "سوموار"
+        },
+        "logout": "لوگ‌آؤٹ کرو",
+        "cancel": "رد کرو",
+        "back": "پچھے",
+        "examples": "مثال",
+        "backgroundMap": "پچھکڑ دا نقشہ"
+    },
+    "image": {
+        "dontDelete": "رد کرو",
+        "isDeleted": "مٹائی گئی"
+    },
+    "importHelper": {
+        "introduction": {
+            "title": "جاݨ پچھاݨ"
+        }
+    },
+    "matrixbot": {
+        "commands": {
+            "documentation": {
+                "file": {
+                    "plural": "فائیلاں",
+                    "singular": "فائیل"
+                },
+                "layer": {
+                    "singular": "کج",
+                    "plural": "کج"
+                },
+                "theme": {
+                    "plural": "تھیم",
+                    "singular": "تھیم"
+                }
+            },
+            "info": {
+                "closed": "بند"
+            }
+        }
+    },
+    "split": {
+        "split": "دپھیر کرو",
+        "cancel": "رد کرو"
+    },
+    "centerMessage": {
+        "ready": "ٹھیک اے، چنگے سی۔",
+        "loadingData": "ڈیٹا لوڈ کیتا جا رہا اے۔ ۔ ۔"
+    },
+    "delete": {
+        "cancel": "رد کرو",
+        "delete": "مٹاؤ"
+    },
+    "reviews": {
+        "saving_review": "سامبھیا جا رہا اے…"
+    }
+}

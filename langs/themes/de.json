@@ -422,6 +422,15 @@
                         },
                         "6": {
                             "then": "Diese Straße ist keine Fahrradstraße"
+                        },
+                        "5": {
+                            "then": "Diese Straße wird bald zu einer Fahrradstraße"
+                        },
+                        "1": {
+                            "then": "Diese Straße ist eine Fahrradstraße"
+                        },
+                        "2": {
+                            "then": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)"
                         }
                     },
                     "question": "Ist die Straße <b>{name}</b> eine Fahrradstraße?"
@@ -436,8 +445,15 @@
                         },
                         "2": {
                             "then": "Motorräder frei"
+                        },
+                        "4": {
+                            "then": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder."
+                        },
+                        "3": {
+                            "then": "Autos erlaubt"
                         }
-                    }
+                    },
+                    "question": "Welches Schild hat diese Fahrradstraße?"
                 },
                 "2": {
                     "question": "Wann wird diese Straße eine Fahrradstraße?",
@@ -1082,5 +1098,60 @@
                 }
             }
         }
+    },
+    "bag": {
+        "layers": {
+            "2": {
+                "description": "Gebäude aus dem BAG-Register",
+                "tagRenderings": {
+                    "Build year": {
+                        "render": "Dieses Gebäude wurde gebaut in <b>{_bag_obj:start_date}</b>",
+                        "mappings": {
+                            "0": {
+                                "then": "Der Bau wurde in <b>{_bag_obj:start_date}</b> begonnen"
+                            }
+                        }
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Der Gebäudetyp ist ein <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "Der Gebäudetyp ist ein <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Richtige Werte noch nicht berechnet. Aktualisieren Sie diese Seite"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "Die Referenz in BAG ist <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            },
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dieses Gebäude hat keinen Verweis im BAG"
+                            }
+                        },
+                        "render": "Die Referenz in BAG ist <b>{ref:bag}</b>"
+                    }
+                }
+            }
+        },
+        "description": "Dieses Thema hilft beim Importieren von BAG-Daten",
+        "shortDescription": "BAG-Import-Hilfswerkzeug",
+        "title": "BAG-Importhilfe"
+    },
+    "osm_community_index": {
+        "title": "OSM-Community-Index",
+        "description": "Eine Liste von Ressourcen für Nutzer von OpenStreetMap. 'Ressourcen' können Links zu Foren, Treffen, Slack-Gruppen, IRC-Kanälen, Mailinglisten und so weiter sein. Alles, was Mapper, insbesondere Anfänger, interessant oder hilfreich finden könnten.",
+        "shortDescription": "Ein Index von Community-Ressourcen für OpenStreetMap."
     }
 }
