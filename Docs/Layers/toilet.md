@@ -192,7 +192,7 @@ Only visible if  `fee=yes`  is shown
 
 
 
-### Opening-hours 
+### opening_hours_24_7 
 
 
 
@@ -200,13 +200,13 @@ The question is  When are these toilets opened?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  {opening_hours_table()}
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
 
 
 
 
-  - Opened 24/7  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
+  - 24/7 opened (including holidays)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
 
 
 
@@ -239,6 +239,8 @@ This rendering asks information about the property  [door:width](https://wiki.op
 This is rendered with  The door to the wheelchair-accessible toilet is {canonical(door:width)} wide
 
 
+
+Only visible if  `wheelchair=yes|wheelchair=designated`  is shown
 
 
 

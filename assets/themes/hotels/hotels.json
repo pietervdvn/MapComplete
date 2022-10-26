@@ -4,13 +4,16 @@
     "en": "Hotels",
     "de": "Hotels",
     "da": "Hoteller",
-    "nb_NO": "Hoteller"
+    "nb_NO": "Hoteller",
+    "ca": "Hotels",
+    "nl": "Hotels"
   },
   "description": {
     "en": "On this map, you'll find hotels in your area",
     "de": "Auf dieser Karte finden Sie Hotels in Ihrer Nähe",
     "da": "På dette kort finder du hoteller i dit område",
-    "nb_NO": "På dette kartet finner du hoteller der du er"
+    "nb_NO": "På dette kartet finner du hoteller der du er",
+    "nl": "Op deze kaart vind je hotels in je omgeving"
   },
   "icon": "./assets/layers/hotel/hotel.svg",
   "startLat": 50.8552,

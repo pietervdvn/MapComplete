@@ -78,7 +78,8 @@
           "human": {
             "en": "meter",
             "fr": "mètre",
-            "de": "Meter"
+            "de": "Meter",
+            "nl": "meter"
           }
         },
         {
@@ -90,7 +91,8 @@
           "human": {
             "en": "centimeter",
             "fr": "centimètre",
-            "de": "Zentimeter"
+            "de": "Zentimeter",
+            "nl": "centimeter"
           }
         }
       ]

@@ -10,12 +10,15 @@ import * as clusterstyle from "../../assets/layers/cluster_style/cluster_style.j
 export default class ShowTileInfo {
     public static readonly styling = new LayerConfig(clusterstyle, "ShowTileInfo", true)
 
-    constructor(options: {
-        source: FeatureSource & Tiled
-        leafletMap: UIEventSource<any>
-        layer?: LayerConfig
-        doShowLayer?: UIEventSource<boolean>
-    }, state) {
+    constructor(
+        options: {
+            source: FeatureSource & Tiled
+            leafletMap: UIEventSource<any>
+            layer?: LayerConfig
+            doShowLayer?: UIEventSource<boolean>
+        },
+        state
+    ) {
         const source = options.source
         const metaFeature: Store<{ feature; freshness: Date }[]> = source.features.map(
             (features) => {
@@ -55,7 +58,7 @@ export default class ShowTileInfo {
             features: new StaticFeatureSource(metaFeature),
             leafletMap: options.leafletMap,
             doShowLayer: options.doShowLayer,
-            state
+            state,
         })
     }
 }

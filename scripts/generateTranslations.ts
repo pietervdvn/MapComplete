@@ -588,7 +588,7 @@ function MergeTranslation(source: any, target: any, language: string, context: s
                 continue
             }
 
-            if(sourceV === ""){
+            if (sourceV === "") {
                 console.log("Ignoring empty string in the translations")
             }
 

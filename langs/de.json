@@ -39,6 +39,19 @@
         "panelIntro": "<h3>Ihr persönliches Thema</h3>Aktivieren Sie Ihre Lieblingsebenen aus allen offiziellen Themen",
         "reload": "Daten neu laden"
     },
+    "flyer": {
+        "description": "Ein Flyer im A4-Querformat zur Werbung von MapComplete",
+        "editing": {
+            "intro": "Der Benutzer wird von einer Karte mit Objekten begrüßt. Wenn er eines auswählt, werden Informationen über das Objekt angezeigt.",
+            "title": "Wie sieht die Benutzeroberfläche aus?"
+        },
+        "examples": "Es gibt viele thematische Karten, von denen hier einige abgedruckt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,... Entdecken Sie sie alle auf mapcomplete.osm.be",
+        "fakeui": {
+            "add_images": "Bilder mit ein paar Klicks hinzufügen",
+            "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
+            "edit": "Falsche oder überholte Informationen? Die Schaltfläche \"Bearbeiten\" ist direkt zugänglich"
+        }
+    },
     "general": {
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
         "aboutMapcomplete": "<h3>Über</h3><p>Verwenden Sie MapComplete, um OpenStreetMap Informationen zu einem <b>bestimmten Thema</b> hinzuzufügen. Beantworten Sie Fragen, und in wenigen Minuten sind Ihre Beiträge überall verfügbar. Bei den meisten Themen können Sie Bilder hinzufügen oder eine Bewertung hinterlassen. Der <b>Theme-Maintainer</b> definiert dafür Elemente, Fragen und Sprachen.</p><h3>Mehr erfahren</h3><p>MapComplete bietet immer <b>den nächsten Schritt</b>, um mehr über OpenStreetMap zu erfahren.</p><ul><li>In einer Website eingebettet, verlinkt der iframe zu einer Vollbildversion von MapComplete</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Das Betrachten funktioniert ohne Anmeldung, das Bearbeiten erfordert ein OSM-Konto.</li><li>Wenn Sie nicht angemeldet sind, werden Sie dazu aufgefordert</li><li>Sobald Sie eine Frage beantwortet haben, können Sie der Karte neue Objekte hinzufügen</li><li>Nach einer Weile werden aktuelle OSM-Tags angezeigt, die später mit dem Wiki verlinkt werden</li></ul><p></p><br><p>Haben Sie ein <b>Problem</b> bemerkt? Haben Sie einen <b>Funktionswunsch</b>? Möchten Sie bei der <b>Übersetzung</b> helfen? Hier geht es zum <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">Quellcode</a> und <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">Issue Tracker</a> </p><p>Möchten Sie Ihren <b>Fortschritt</b> sehen? Verfolgen Sie Ihre Änderungen auf <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
@@ -886,18 +899,5 @@
         "wikidata": {
             "description": "Eine Wikidata-Kennung"
         }
-    },
-    "flyer": {
-        "fakeui": {
-            "add_images": "Bilder mit ein paar Klicks hinzufügen",
-            "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
-            "edit": "Falsche oder überholte Informationen? Die Schaltfläche \"Bearbeiten\" ist direkt zugänglich"
-        },
-        "description": "Ein Flyer im A4-Querformat zur Werbung von MapComplete",
-        "editing": {
-            "intro": "Der Benutzer wird von einer Karte mit Objekten begrüßt. Wenn er eines auswählt, werden Informationen über das Objekt angezeigt.",
-            "title": "Wie sieht die Benutzeroberfläche aus?"
-        },
-        "examples": "Es gibt viele thematische Karten, von denen hier einige abgedruckt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,... Entdecken Sie sie alle auf mapcomplete.osm.be"
     }
 }

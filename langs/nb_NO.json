@@ -145,11 +145,11 @@
             "createYourOwnTheme": "Opprett ditt eget MapComplete-tema fra grunnen av",
             "hiddenExplanation": "Disse temaene er kun tilgjengelige hvis du kjenner lenken. Du har oppdaget {hidden_discovered} av {total_hidden} hidden tema.",
             "intro": "<h3>Flere temakart?</h3>Liker du å samle inn geodata? <br/>Det er flere tilgjengelige temaer.",
+            "noSearch": "Vis alle temaer",
             "previouslyHiddenTitle": "Tidligere besøkte skjulte tema",
             "requestATheme": "Hvis du ønsker et brukerdefinert tema kan du forespørre det i feilsporeren",
-            "streetcomplete": "Et annet lignende program er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "noSearch": "Vis alle temaer",
-            "searchForATheme": "Søk etter et tema"
+            "searchForATheme": "Søk etter et tema",
+            "streetcomplete": "Et annet lignende program er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "Navnet på {category} er $$$",
         "next": "Neste",
@@ -182,6 +182,7 @@
             "versionInfo": "v{version}. Generert {date}"
         },
         "pickLanguage": "Velg språk: ",
+        "poweredByOsm": "Med data fra OpenStreetMap",
         "questions": {
             "emailIs": "E-postadressen til {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Hva er e-postadressen til {category}?",
@@ -256,8 +257,7 @@
             },
             "searchWikidata": "Søk på Wikipedia",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "poweredByOsm": "Med data fra OpenStreetMap"
+        }
     },
     "image": {
         "addPicture": "Legg til bilde",
@@ -266,6 +266,13 @@
         "doDelete": "Fjern bilde",
         "dontDelete": "Avbryt",
         "isDeleted": "Slettet",
+        "nearbyPictures": {
+            "loading": "Laster inn bilder i nærheten …",
+            "noImageSelected": "Velg et bilde for å knytte det til objektet",
+            "nothingFound": "Fant ingen bilder i nærheten …",
+            "removeFilters": "Klikk her for å fjerne filterne",
+            "title": "Bilder i nærheten"
+        },
         "pleaseLogin": "Logg inn for å legge til et bilde",
         "respectPrivacy": "Ikke ta bilder av folk eller bilskilt. Ikke last opp Google Maps, Google Streetview eller andre opphavsrettsbeskyttede kilder.",
         "toBig": "Bildet ditt på {actual_size} er for stort. Det kan maksimalt være {max_size}.",
@@ -274,14 +281,7 @@
         "uploadMultipleDone": "{count} bilder har blitt lagt til. Takk for at du hjelper til.",
         "uploadingMultiple": "Laster opp {count} bilder …",
         "uploadingPicture": "Laster opp bildet ditt …",
-        "willBePublished": "Ditt bilde vil bli publisert: ",
-        "nearbyPictures": {
-            "title": "Bilder i nærheten",
-            "nothingFound": "Fant ingen bilder i nærheten …",
-            "noImageSelected": "Velg et bilde for å knytte det til objektet",
-            "removeFilters": "Klikk her for å fjerne filterne",
-            "loading": "Laster inn bilder i nærheten …"
-        }
+        "willBePublished": "Ditt bilde vil bli publisert: "
     },
     "importHelper": {
         "askMetadata": {

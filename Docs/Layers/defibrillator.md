@@ -184,7 +184,7 @@ The question is  Please give some explanation on where the defibrillator can be 
 
 This rendering asks information about the property  [defibrillator:location](https://wiki.openstreetmap.org/wiki/Key:defibrillator:location) 
 
-This is rendered with  <i>Extra information about the location (in the local languagel):</i><br/>{defibrillator:location}
+This is rendered with  <i>Extra information about the location (in the local language):</i><br/>{defibrillator:location}
 
 
 

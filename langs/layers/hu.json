@@ -624,14 +624,10 @@
             }
         },
         "tagRenderings": {
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Éjjel-nappal nyitva (munkaszüneti napokon is)"
-                    }
-                },
-                "question": "Mikor van nyitva ez a posta?",
-                "render": "Nyitva tartás: {opening_hours_table()}"
+            "opening_hours": {
+                "override": {
+                    "question": "Mikor van nyitva ez a posta?"
+                }
             }
         },
         "title": {

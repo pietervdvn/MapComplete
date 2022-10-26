@@ -43,9 +43,10 @@
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
         "callToAction": "Probeer het uit op mapcomplete.osm.be",
         "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
+        "description": "Een horizontale A4 flyer om MapComplete te promoten",
         "editing": {
             "ex": "Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond:",
-            "intro": "De gebruiker krijgt eerst een kaart met interesspunten te zien. Klik je op een punt, dan wordt de interface met informatie geopend.",
+            "intro": "De gebruiker krijgt eerst een kaart met interessepunten te zien. Klik je op een punt, dan wordt de interface met informatie over het interessepunt geopend.",
             "title": "Hoe ziet de interface eruit?"
         },
         "examples": "Online zijn verschillende kaarten met diverse thema's beschikbaar, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,...\nEnkele zijn hier afgeprint.\n\nOntdek ze allemaal op mapcomplete.osm.be",

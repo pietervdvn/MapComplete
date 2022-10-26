@@ -25,6 +25,7 @@ Layer showing different types of transit stops.
 
 
 
+  - [blind_osm](https://mapcomplete.osm.be/blind_osm)
   - [personal](https://mapcomplete.osm.be/personal)
   - [transit](https://mapcomplete.osm.be/transit)
 

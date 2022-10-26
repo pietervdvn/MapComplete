@@ -544,7 +544,7 @@ export default class SpecialVisualizations {
                             const features: { freshness: Date; feature: any }[] = []
                             for (const key of keys) {
                                 const value = properties[key]
-                                if(value === undefined || value === null){
+                                if (value === undefined || value === null) {
                                     continue
                                 }
 
@@ -556,7 +556,7 @@ export default class SpecialVisualizations {
 
                                 for (const id of idList) {
                                     const feature = featureStore.get(id)
-                                    if(feature === undefined){
+                                    if (feature === undefined) {
                                         console.warn("No feature found for id ", id)
                                         continue
                                     }

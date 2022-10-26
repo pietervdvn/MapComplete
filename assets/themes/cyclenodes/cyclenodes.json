@@ -158,7 +158,8 @@
           "es": "nodo ciclista <strong>{rcn_ref}</strong>",
           "nb_NO": "sykkelnode <strong>{rcn_ref}</strong>",
           "nl": "fietsknooppunt <strong>{rcn_ref}</strong>",
-          "fr": "nœud cycliste <strong>{rcn_ref}</strong>"
+          "fr": "nœud cycliste <strong>{rcn_ref}</strong>",
+          "ca": "node ciclista <strong>{rcn_ref}</strong>"
         }
       },
       "tagRenderings": [

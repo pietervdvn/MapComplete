@@ -23,6 +23,17 @@
         "email": {
             "question": "Wat is het e-mailadres van {title()}?"
         },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Deze plaats heeft een ringleiding"
+                },
+                "1": {
+                    "then": "Deze plaats heeft <b>geen</b> ringleiding"
+                }
+            },
+            "question": "Heeft deze plaats een ringleiding voor slechthorenden?"
+        },
         "internet": {
             "mappings": {
                 "0": {
@@ -85,9 +96,24 @@
             "question": "Op welke verdieping bevindt dit punt zich?",
             "render": "Bevindt zich op de {level}de verdieping"
         },
+        "multilevels": {
+            "override": {
+                "question": "Naar welke verdiepingen gaat deze lift?",
+                "render": "Deze lift gaat naar de verdiepingen {level}"
+            }
+        },
         "opening_hours": {
             "question": "Wat zijn de openingstijden van {title()}?",
             "render": "<h3>Openingstijden</h3>{opening_hours_table(opening_hours)}"
+        },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 open (ook tijdens feestdagen)"
+                    }
+                }
+            }
         },
         "payment-options": {
             "mappings": {
@@ -131,6 +157,20 @@
                 }
             },
             "question": "Zijn er stekkers beschikbaar voor klanten die binnen zitten?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Roken is <b>toegestaan</b>"
+                },
+                "1": {
+                    "then": "Roken is <b>niet toegestaan</b>"
+                },
+                "2": {
+                    "then": "Roken is <b>buiten toegestaan</b>."
+                }
+            },
+            "question": "Is roken toegestaan bij {title()}?"
         },
         "website": {
             "question": "Wat is de website van {title()}?"

@@ -27,6 +27,7 @@ Crossings for pedestrians and cyclists
 
 
 
+  - [blind_osm](https://mapcomplete.osm.be/blind_osm)
   - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
   - [kerbs_and_crossings](https://mapcomplete.osm.be/kerbs_and_crossings)
   - [personal](https://mapcomplete.osm.be/personal)
@@ -69,8 +70,24 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/crossing:island#values) [crossing:island](https://wiki.openstreetmap.org/wiki/Key:crossing:island) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:crossing:island%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:crossing:island%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/tactile_paving#values) [tactile_paving](https://wiki.openstreetmap.org/wiki/Key:tactile_paving) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/button_operated#values) [button_operated](https://wiki.openstreetmap.org/wiki/Key:button_operated) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:button_operated%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:button_operated%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/traffic_signals:sound#values) [traffic_signals:sound](https://wiki.openstreetmap.org/wiki/Key:traffic_signals:sound) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dno) [locate](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dlocate) [walk](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dwalk)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/traffic_signals:vibration#values) [traffic_signals:vibration](https://wiki.openstreetmap.org/wiki/Key:traffic_signals:vibration) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:vibration%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:vibration%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/traffic_signals:arrow#values) [traffic_signals:arrow](https://wiki.openstreetmap.org/wiki/Key:traffic_signals:arrow) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:arrow%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:arrow%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/traffic_signals:minimap#values) [traffic_signals:minimap](https://wiki.openstreetmap.org/wiki/Key:traffic_signals:minimap) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:minimap%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:minimap%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/red_turn:right:bicycle#values) [red_turn:right:bicycle](https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/red_turn:straight:bicycle#values) [red_turn:straight:bicycle](https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dno)
+
+
+
+
+### images 
+
+
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
+
 
 
 
@@ -185,6 +202,80 @@ The question is  Does this traffic light have a button to request green light?
 
 
 Only visible if  `highway=traffic_signals|crossing=traffic_signals`  is shown
+
+
+
+### crossing-sound 
+
+
+
+The question is  Does this traffic light have sound signals to aid crossing?
+
+
+
+
+
+  - This traffic light has sound signals to help crossing, both for finding the crossing and for crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:sound' target='_blank'>traffic_signals:sound</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dyes' target='_blank'>yes</a>`
+  - This traffic light does not have sound signals to help crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:sound' target='_blank'>traffic_signals:sound</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dno' target='_blank'>no</a>`
+  - This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:sound' target='_blank'>traffic_signals:sound</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dlocate' target='_blank'>locate</a>`
+  - This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:sound' target='_blank'>traffic_signals:sound</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dwalk' target='_blank'>walk</a>`
+
+
+Only visible if  `crossing=traffic_signals`  is shown
+
+
+
+### crossing-vibration 
+
+
+
+The question is  Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)
+
+
+
+
+
+  - The button for this traffic light has a vibration signal to indicate that it is safe to cross.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:vibration' target='_blank'>traffic_signals:vibration</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:vibration%3Dyes' target='_blank'>yes</a>`
+  - The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:vibration' target='_blank'>traffic_signals:vibration</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:vibration%3Dno' target='_blank'>no</a>`
+
+
+Only visible if  `crossing=traffic_signals&button_operated=yes`  is shown
+
+
+
+### crossing-arrow 
+
+
+
+The question is  Does this traffic light have an arrow pointing in the direction of crossing?
+
+
+
+
+
+  - This traffic light has an arrow pointing in the direction of crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:arrow' target='_blank'>traffic_signals:arrow</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:arrow%3Dyes' target='_blank'>yes</a>`
+  - This traffic light does <b>not</b> have an arrow pointing in the direction of crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:arrow' target='_blank'>traffic_signals:arrow</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:arrow%3Dno' target='_blank'>no</a>`
+
+
+Only visible if  `crossing=traffic_signals`  is shown
+
+
+
+### crossing-minimap 
+
+
+
+The question is  Does this traffic light have a tactile map showing the layout of the crossing?
+
+
+
+
+
+  - This traffic light has a tactile map showing the layout of the crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:minimap' target='_blank'>traffic_signals:minimap</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:minimap%3Dyes' target='_blank'>yes</a>`
+  - This traffic light does <b>not</b> have a tactile map showing the layout of the crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:minimap' target='_blank'>traffic_signals:minimap</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:minimap%3Dno' target='_blank'>no</a>`
+
+
+Only visible if  `crossing=traffic_signals`  is shown
 
 
 

@@ -108,10 +108,11 @@ function main() {
             {
                 id: "tactile_writing-braille",
                 // @ts-ignore
-                description: "Enables to pick *multiple* 'tactile_writing:braille=<lng>' within the mappings",
+                description:
+                    "Enables to pick *multiple* 'tactile_writing:braille=<lng>' within the mappings",
                 multiAnswer: true,
                 mappings: brailemappings,
-            }
+            },
         ],
     }
     const dir = "./assets/layers/wikidata/"

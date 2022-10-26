@@ -2615,6 +2615,17 @@
             }
         },
         "tagRenderings": {
+            "crossing-arrow": {
+                "mappings": {
+                    "0": {
+                        "then": "This traffic light has an arrow pointing in the direction of crossing."
+                    },
+                    "1": {
+                        "then": "This traffic light does <b>not</b> have an arrow pointing in the direction of crossing."
+                    }
+                },
+                "question": "Does this traffic light have an arrow pointing in the direction of crossing?"
+            },
             "crossing-bicycle-allowed": {
                 "mappings": {
                     "0": {
@@ -2673,6 +2684,17 @@
                 },
                 "question": "Is this is a zebra crossing?"
             },
+            "crossing-minimap": {
+                "mappings": {
+                    "0": {
+                        "then": "This traffic light has a tactile map showing the layout of the crossing."
+                    },
+                    "1": {
+                        "then": "This traffic light does <b>not</b> have a tactile map showing the layout of the crossing."
+                    }
+                },
+                "question": "Does this traffic light have a tactile map showing the layout of the crossing?"
+            },
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
@@ -2686,6 +2708,23 @@
                     }
                 },
                 "question": "Can a cyclist turn right when the light is red?"
+            },
+            "crossing-sound": {
+                "mappings": {
+                    "0": {
+                        "then": "This traffic light has sound signals to help crossing, both for finding the crossing and for crossing."
+                    },
+                    "1": {
+                        "then": "This traffic light does not have sound signals to help crossing."
+                    },
+                    "2": {
+                        "then": "This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross."
+                    },
+                    "3": {
+                        "then": "This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole."
+                    }
+                },
+                "question": "Does this traffic light have sound signals to aid crossing?"
             },
             "crossing-tactile": {
                 "mappings": {
@@ -2717,6 +2756,17 @@
                     }
                 },
                 "question": "What kind of crossing is this?"
+            },
+            "crossing-vibration": {
+                "mappings": {
+                    "0": {
+                        "then": "The button for this traffic light has a vibration signal to indicate that it is safe to cross."
+                    },
+                    "1": {
+                        "then": "The button for this traffic light does not have a vibration signal to indicate that it is safe to cross."
+                    }
+                },
+                "question": "Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)"
             }
         },
         "title": {
@@ -3419,6 +3469,11 @@
                     }
                 },
                 "question": "Does this elevator work?"
+            },
+            "wikidata.tactile_writing-braille": {
+                "override": {
+                    "question": "In which languages does this elevator have tactile writing (braille)?"
+                }
             }
         },
         "title": {
@@ -3658,6 +3713,29 @@
                         "question": "Probably does not have an image"
                     }
                 }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "With tactile paving"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "With or without tactile paving"
+                    },
+                    "1": {
+                        "question": "With tactile paving"
+                    },
+                    "2": {
+                        "question": "Without tactile paving"
+                    },
+                    "3": {
+                        "question": "No information about tactile paving"
+                    }
+                }
             }
         }
     },
@@ -3713,6 +3791,150 @@
         },
         "title": {
             "render": "Fire Station"
+        }
+    },
+    "fitness_centre": {
+        "description": "Layer showing fitness centres",
+        "name": "Fitness Centres",
+        "presets": {
+            "0": {
+                "title": "a fitness centre"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of fitness centre"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This fitness centre has no name"
+                    }
+                },
+                "question": "What is the name of this fitness centre?",
+                "render": "This fitness centre is called {name}"
+            }
+        },
+        "title": {
+            "render": "Fitness Centre"
+        }
+    },
+    "fitness_station": {
+        "description": "Find a fitness station near you, and add missing ones.",
+        "name": "Fitness Stations",
+        "presets": {
+            "0": {
+                "title": "a fitness station"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the fitness station"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This fitness station doesn't have a name"
+                    }
+                },
+                "question": "What is the name of this fitness station?",
+                "render": "This fitness station is called {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operator of the fitness station"
+                },
+                "question": "Who maintains this fitness station?",
+                "render": "The fitness station is maintained by {operator}."
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This fitness station has a horizontal bar, high enough for pull-ups."
+                    },
+                    "1": {
+                        "then": "This fitness station has a sign with instructions for a specific exercise."
+                    },
+                    "2": {
+                        "then": "This fitness station has a facility for sit-ups."
+                    },
+                    "3": {
+                        "then": "This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars."
+                    },
+                    "4": {
+                        "then": "This fitness station has bars for stretching."
+                    },
+                    "5": {
+                        "then": "This fitness station has a station for making hyperextensions."
+                    },
+                    "6": {
+                        "then": "This fitness station has rings for gymnastic exercises."
+                    },
+                    "7": {
+                        "then": "This fitness station has a horizontal ladder, also known as monkey bars."
+                    },
+                    "8": {
+                        "then": "This fitness station has wall bars to climb on."
+                    },
+                    "9": {
+                        "then": "This fitness station has posts for performing slalom exercises."
+                    },
+                    "10": {
+                        "then": "This fitness station has stepping stones."
+                    },
+                    "11": {
+                        "then": "This fitness station has cones for performing leapfrog jumps."
+                    },
+                    "12": {
+                        "then": "This fitness station has beams to jump over."
+                    },
+                    "13": {
+                        "then": "This fitness station has hurdles to cross."
+                    },
+                    "14": {
+                        "then": "This fitness station has a wall to climb on."
+                    },
+                    "15": {
+                        "then": "This fitness station has a balance beam."
+                    },
+                    "16": {
+                        "then": "This fitness station has a log with a handle on the end to lift."
+                    },
+                    "17": {
+                        "then": "This fitness station has a chair with only elbow supports and a rear (without seat), for performing leg raises."
+                    },
+                    "18": {
+                        "then": "This fitness station has a box that can be used for jumping."
+                    },
+                    "19": {
+                        "then": "This fitness station has battling ropes."
+                    },
+                    "20": {
+                        "then": "This fitness station has a stationary bicycle."
+                    },
+                    "21": {
+                        "then": "This fitness station has a cross-trainer."
+                    },
+                    "22": {
+                        "then": "This fitness station has an air walker."
+                    },
+                    "23": {
+                        "then": "This fitness station has a rower."
+                    },
+                    "24": {
+                        "then": "This fitness station has a slackline."
+                    }
+                },
+                "question": "What kind of equipment does this fitness station have?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Fitness Station {name}"
+                }
+            },
+            "render": "Fitness Station"
         }
     },
     "food": {
@@ -4387,6 +4609,11 @@
                 "freeform": {
                     "placeholder": "Height of the kerb"
                 },
+                "mappings": {
+                    "0": {
+                        "then": "This kerb is flush and is lower than 1cm."
+                    }
+                },
                 "question": "What is the height of this kerb?",
                 "render": "Kerb height: {kerb:height}"
             },
@@ -5030,6 +5257,64 @@
             }
         }
     },
+    "osm_community_index": {
+        "description": "A layer showing the OpenStreetMap Communities",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Country"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Sub Country Group"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Region"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Intermediate Region"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Territory"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "World"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Other Communities"
+                    }
+                }
+            }
+        },
+        "name": "OSM Community Index",
+        "title": {
+            "render": "OSM Community Index"
+        }
+    },
     "parcel_lockers": {
         "description": "Layer showing parcel lockers for collecting and sending parcels.",
         "name": "Parcel Lockers",
@@ -5487,15 +5772,6 @@
             }
         },
         "tagRenderings": {
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 opened (including holidays)"
-                    }
-                },
-                "question": "What are the opening hours for this post office?",
-                "render": "Opening Hours: {opening_hours_table()}"
-            },
             "letter-from": {
                 "mappings": {
                     "0": {
@@ -5507,6 +5783,11 @@
                 },
                 "question": "Can you post a letter here?",
                 "render": "You can post letters with these companies: {post_office:letter_from}"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "What are the opening hours for this post office?"
+                }
             },
             "parcel-from": {
                 "mappings": {
@@ -6235,6 +6516,86 @@
             }
         }
     },
+    "speed_camera": {
+        "description": "Layer showing speed cameras",
+        "name": "Speed Camera",
+        "presets": {
+            "0": {
+                "title": "a speed camera"
+            }
+        },
+        "tagRenderings": {
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Maximum speed allowed"
+                },
+                "question": "What is the maximum speed allowed at this speed camera?",
+                "render": "The maximum speed allowed is {canonical(maxspeed)}"
+            },
+            "ref": {
+                "render": "The reference number of this speed camera is {ref}"
+            }
+        },
+        "title": {
+            "render": "Speed Camera"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilometers/hour",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "miles/hour",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
+    "speed_display": {
+        "description": "Layer showing speed displays that alert drivers of their speed.",
+        "name": "Speed Display",
+        "presets": {
+            "0": {
+                "title": "a speed display"
+            }
+        },
+        "tagRenderings": {
+            "inscription": {
+                "freeform": {
+                    "placeholder": "Text on speed display (e.g. 'Your speed')"
+                },
+                "question": "What is the text on this speed display?",
+                "render": "The text on this speed display is {inscription}"
+            },
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Speed allowed at speed display"
+                },
+                "question": "What is the maximum speed allowed at this speed display?",
+                "render": "The maximum speed allowed at this speed display is {canonical(maxspeed)}"
+            }
+        },
+        "title": {
+            "render": "Speed Display"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilometers/hour",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "miles/hour",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
     "sport_pitch": {
         "description": "A sport pitch",
         "name": "Sport pitches",
@@ -6349,6 +6710,78 @@
         },
         "title": {
             "render": "Sport pitch"
+        }
+    },
+    "sports_centre": {
+        "description": "Indoor and outdoor sports centres can be found on this layer",
+        "name": "Sports centres",
+        "presets": {
+            "0": {
+                "title": "a sports centre"
+            }
+        },
+        "title": {
+            "render": "Sports centre"
+        }
+    },
+    "stairs": {
+        "description": "Layer showing stairs and escalators",
+        "name": "Stairs",
+        "tagRenderings": {
+            "conveying": {
+                "mappings": {
+                    "0": {
+                        "then": "This is an escalator"
+                    },
+                    "1": {
+                        "then": "This is not an escalator"
+                    }
+                }
+            },
+            "handrail": {
+                "mappings": {
+                    "0": {
+                        "then": "These stairs have a handrail"
+                    },
+                    "1": {
+                        "then": "These stairs do <b>not</b> have a handrail"
+                    }
+                },
+                "question": "Does this stair have a handrail?"
+            },
+            "ramp": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a ramp for bicycles here"
+                    },
+                    "1": {
+                        "then": "There is a ramp for wheelchairs here"
+                    },
+                    "2": {
+                        "then": "There is ramp for wheelchairs here, but it is shown separately on the map"
+                    },
+                    "3": {
+                        "then": "There is a ramp for strollers here"
+                    },
+                    "4": {
+                        "then": "There is no ramp at these stairs"
+                    }
+                },
+                "question": "Is there a ramp at these stairs?"
+            },
+            "wikidata.tactile_writing-braille": {
+                "override": {
+                    "question": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Escalator"
+                }
+            },
+            "render": "Stairs"
         }
     },
     "street_lamps": {
@@ -6706,13 +7139,10 @@
             }
         },
         "tagRenderings": {
-            "Opening-hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Opened 24/7"
-                    }
-                },
-                "question": "When are these toilets opened?"
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "When are these toilets opened?"
+                }
             },
             "toilet-access": {
                 "mappings": {
@@ -6853,6 +7283,114 @@
             }
         }
     },
+    "toilet_at_amenity": {
+        "description": "A layer showing (public) toilets located at different places.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Wheelchair accessible"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Has a changing table"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Free to use"
+                    }
+                }
+            }
+        },
+        "name": "Toilets at other amenities",
+        "tagRenderings": {
+            "opening_hours": {
+                "override": {
+                    "question": "When is the amenity where these toilets are located open?"
+                }
+            },
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Public access"
+                    },
+                    "1": {
+                        "then": "Only access to customers of the amenity"
+                    },
+                    "2": {
+                        "then": "Not accessible, even for customers of the amenity"
+                    },
+                    "3": {
+                        "then": "Accessible, but one has to ask a key to enter"
+                    },
+                    "4": {
+                        "then": "Public access"
+                    }
+                },
+                "question": "Are these toilets publicly accessible?",
+                "render": "Access is {toilets:access}"
+            },
+            "toilet-charge": {
+                "question": "How much does one have to pay for these toilets?",
+                "render": "The fee is {toilets:charge}"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "These are paid toilets"
+                    },
+                    "1": {
+                        "then": "Free to use"
+                    }
+                },
+                "question": "Are these toilets free to use?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a dedicated toilet for wheelchair users"
+                    },
+                    "1": {
+                        "then": "No wheelchair access"
+                    },
+                    "2": {
+                        "then": "There is only a dedicated toilet for wheelchair users"
+                    }
+                },
+                "question": "Is there a dedicated toilet for wheelchair users?"
+            },
+            "wheelchair-door-width": {
+                "question": "What is the width of the door to the wheelchair accessible toilet?",
+                "render": "The door to the wheelchair-accessible toilet is {canonical(toilets:door:width)} wide"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Toilet at {name}"
+                }
+            },
+            "render": "Toilet at amenity"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
+        }
+    },
     "trail": {
         "name": "Trails",
         "tagRenderings": {
@@ -6930,6 +7468,29 @@
     },
     "transit_stops": {
         "description": "Layer showing different types of transit stops.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "With a shelter"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "With a bench"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "With a bin"
+                    }
+                }
+            }
+        },
         "name": "Transit Stops",
         "tagRenderings": {
             "bench": {

@@ -5,7 +5,8 @@
     "de": "Buslinien",
     "fr": "Lignes de bus",
     "da": "Busruter",
-    "nb_NO": "Bussruter"
+    "nb_NO": "Bussruter",
+    "ca": "Rutes de bus"
   },
   "description": {
     "en": "Plan your trip with the help of the public transport system.",

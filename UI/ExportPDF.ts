@@ -70,7 +70,7 @@ export default class ExportPDF {
                         console.error(e)
                         self.cleanup()
                     }
-                }, 500)
+                }, 500),
         })
 
         minimap.SetStyle(

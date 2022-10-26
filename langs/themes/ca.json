@@ -152,9 +152,17 @@
             "1": {
                 "description": "Estacions d'abocament sanitari",
                 "name": "Estacions d'abocament sanitari",
+                "presets": {
+                    "0": {
+                        "title": "una estació d'abocament sanitari"
+                    }
+                },
                 "tagRenderings": {
                     "dumpstations-access": {
                         "mappings": {
+                            "0": {
+                                "then": "Necessites un codi/clau de xarxa per usar-lo"
+                            },
                             "1": {
                                 "then": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc"
                             },
@@ -163,9 +171,6 @@
                             },
                             "3": {
                                 "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
-                            },
-                            "0": {
-                                "then": "Necessites un codi/clau de xarxa per usar-lo"
                             }
                         },
                         "question": "Qui pot utilitzar aquesta estació d'abocament?"
@@ -180,11 +185,6 @@
                                 "then": "Es pot desfer de les aigües grises aquí"
                             }
                         }
-                    }
-                },
-                "presets": {
-                    "0": {
-                        "title": "una estació d'abocament sanitari"
                     }
                 },
                 "title": {
@@ -371,20 +371,20 @@
                         "title": "un jardí vertical"
                     }
                 },
-                "title": {
-                    "render": "Jardí vertical"
-                },
                 "tagRenderings": {
+                    "facadegardens-description": {
+                        "render": "Més detalls: {description}"
+                    },
                     "facadegardens-plants": {
                         "mappings": {
                             "2": {
                                 "then": "Hi ha arbustos"
                             }
                         }
-                    },
-                    "facadegardens-description": {
-                        "render": "Més detalls: {description}"
                     }
+                },
+                "title": {
+                    "render": "Jardí vertical"
                 }
             }
         },
@@ -403,6 +403,12 @@
         },
         "title": "Botigues de patates"
     },
+    "ghostbikes": {
+        "title": "Bicicletes fantasmes"
+    },
+    "hackerspaces": {
+        "title": "Espai per a hackers"
+    },
     "hailhydrant": {
         "shortDescription": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
         "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies"
@@ -410,6 +416,31 @@
     "healthcare": {
         "description": "En aquest mapa es mostren diversos elements relacionats amb la salut",
         "title": "Assistència sanitària"
+    },
+    "hotels": {
+        "title": "Hotels"
+    },
+    "indoors": {
+        "title": "Indoors"
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "El nom de la petició conté {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Centres del conjunt de canvis"
+            }
+        }
+    },
+    "maproulette": {
+        "title": "Tasques de MapRoulette"
     },
     "maps": {
         "title": "Un mapa de mapes"
@@ -426,12 +457,58 @@
     "observation_towers": {
         "title": "Torres d'observació"
     },
+    "onwheels": {
+        "layers": {
+            "18": {
+                "override": {
+                    "=title": {
+                        "render": "Estadístiques"
+                    }
+                }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "OnWheels"
+    },
     "openwindpowermap": {
         "title": "OpenWindPowerMap"
     },
     "personal": {
         "description": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
         "title": "Interfície personal"
+    },
+    "pets": {
+        "layers": {
+            "2": {
+                "override": {
+                    "name": "Botigues amigues dels gossos",
+                    "title": {
+                        "render": "Botigues amigues dels gossos"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "botiga amiga dels gossos"
+                        }
+                    }
+                }
+            }
+        }
     },
     "playgrounds": {
         "shortDescription": "Un mapa de parcs infantils",
@@ -498,6 +575,9 @@
     "toilets": {
         "title": "Open Toilet Map"
     },
+    "transit": {
+        "title": "Rutes de bus"
+    },
     "trees": {
         "description": "Mapeja tots els arbres.",
         "shortDescription": "Mapeja tots els arbres",
@@ -509,85 +589,5 @@
     },
     "waste_basket": {
         "title": "Papepera"
-    },
-    "indoors": {
-        "title": "Indoors"
-    },
-    "onwheels": {
-        "title": "OnWheels",
-        "layers": {
-            "18": {
-                "override": {
-                    "=title": {
-                        "render": "Estadístiques"
-                    }
-                }
-            },
-            "19": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importar"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "ghostbikes": {
-        "title": "Bicicletes fantasmes"
-    },
-    "maproulette": {
-        "title": "Tasques de MapRoulette"
-    },
-    "mapcomplete-changes": {
-        "layers": {
-            "0": {
-                "name": "Centres del conjunt de canvis",
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "El nom de la petició conté {search}"
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "hackerspaces": {
-        "title": "Espai per a hackers"
-    },
-    "pets": {
-        "layers": {
-            "2": {
-                "override": {
-                    "title": {
-                        "render": "Botigues amigues dels gossos"
-                    },
-                    "name": "Botigues amigues dels gossos"
-                }
-            },
-            "6": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "title": "botiga amiga dels gossos"
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "hotels": {
-        "title": "Hotels"
-    },
-    "transit": {
-        "title": "Rutes de bus"
     }
 }

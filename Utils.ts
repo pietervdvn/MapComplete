@@ -823,7 +823,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 } else if (xhr.status === 509 || xhr.status === 429) {
                     reject("rate limited")
                 } else {
-                    reject("Could not download "+url+" due to "+xhr.statusText)
+                    reject("Could not download " + url + " due to " + xhr.statusText)
                 }
             }
             xhr.open("GET", url)

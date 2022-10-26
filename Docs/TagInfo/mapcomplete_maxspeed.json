@@ -93,6 +93,28 @@
       "key": "highway",
       "description": "Layer 'Maxspeed' shows highway=living_street with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Maxspeed')",
       "value": "living_street"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Speed Camera showing features with this tag",
+      "value": "speed_camera"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Speed Camera' shows and asks freeform values for key 'maxspeed' (in the MapComplete.osm.be theme 'Maxspeed')"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Speed Display showing features with this tag",
+      "value": "speed_display"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Speed Display' shows and asks freeform values for key 'maxspeed' (in the MapComplete.osm.be theme 'Maxspeed')"
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Speed Display' shows and asks freeform values for key 'inscription' (in the MapComplete.osm.be theme 'Maxspeed')"
     }
   ]
 }

@@ -591,13 +591,13 @@
         {
           "if": "service:bicycle:pump=separate",
           "then": {
-            "en": "There is bicycle pump, it is shown as a separate point ",
+            "en": "There is bicycle pump, it is shown as a separate point",
             "nl": "Er is een fietspomp, deze is apart aangeduid",
-            "fr": "Il y a une pompe à vélo, c'est indiqué comme un point séparé ",
-            "it": "C’è una pompa per bici, è mostrata come punto separato ",
-            "de": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen ",
-            "es": "Hay una bomba para bicicletas, se muestra como un punto separado ",
-            "da": "Der er cykelpumpe, den er vist som et separat punkt "
+            "fr": "Il y a une pompe à vélo, c'est indiqué comme un point séparé",
+            "it": "C’è una pompa per bici, è mostrata come punto separato",
+            "de": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen",
+            "es": "Hay una bomba para bicicletas, se muestra como un punto separado",
+            "da": "Der er cykelpumpe, den er vist som et separat punkt"
           }
         }
       ]

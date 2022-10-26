@@ -114,22 +114,22 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
      * @param format: image: give a base64 encoded png image;
      * @constructor
      */
-    public async TakeScreenshot(): Promise<string> ;
-    public async TakeScreenshot(format: "image"): Promise<string> ;
-    public async TakeScreenshot(format: "blob"): Promise<Blob> ;
-    public async TakeScreenshot(format: "image" | "blob"): Promise<string | Blob> ;
+    public async TakeScreenshot(): Promise<string>
+    public async TakeScreenshot(format: "image"): Promise<string>
+    public async TakeScreenshot(format: "blob"): Promise<Blob>
+    public async TakeScreenshot(format: "image" | "blob"): Promise<string | Blob>
     public async TakeScreenshot(format: "image" | "blob" = "image"): Promise<string | Blob> {
         console.log("Taking a screenshot...")
         const screenshotter = new SimpleMapScreenshoter()
         screenshotter.addTo(this.leafletMap.data)
-        const result = <any> await screenshotter.takeScreen((<any> format) ?? "image")
-        if(format === "image" && typeof result === "string"){
+        const result = <any>await screenshotter.takeScreen(<any>format ?? "image")
+        if (format === "image" && typeof result === "string") {
             return result
         }
-        if(format === "blob" && result instanceof Blob){
+        if (format === "blob" && result instanceof Blob) {
             return result
         }
-        throw "Something went wrong while creating the screenshot: "+result
+        throw "Something went wrong while creating the screenshot: " + result
     }
 
     protected InnerConstructElement(): HTMLElement {

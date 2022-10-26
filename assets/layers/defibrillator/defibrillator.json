@@ -201,7 +201,7 @@
             "ca": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)",
             "es": "No accesible al público en general (ex. sólo accesible a trabajadores, propietarios, ...)",
             "fr": "Non accessible au public (par exemple réservé au personnel, au propriétaire…)",
-            "nl": "Niet toegankelijk voor het publiek (bv. enkel voor personeel, de eigenaar, ...)",
+            "nl": "Niet toegankelijk voor het publiek (bv. enkel voor personeel, de eigenaar, …)",
             "de": "Der Defibrillator ist nicht öffentlich zugänglich (z.B. nur für Personal, Eigentümer, …)",
             "it": "Non accessibile al pubblico (ad esempio riservato al personale, ai proprietari, etc.)",
             "sl": "Ni dostopen splošni javnosti (npr. samo za osebje, za lastnike, ...)"
@@ -353,8 +353,8 @@
     },
     {
       "render": {
-        "nl": "<i>Meer informatie over de locatie (lokale taal):</i><br/>{defibrillator:location}",
-        "en": "<i>Extra information about the location (in the local languagel):</i><br/>{defibrillator:location}",
+        "nl": "<i>Meer informatie over de locatie (in de lokale taal):</i><br/>{defibrillator:location}",
+        "en": "<i>Extra information about the location (in the local language):</i><br/>{defibrillator:location}",
         "fr": "<i>Informations supplémentaires à propos de l'emplacement (dans la langue locale) :</i><br/>{defibrillator:location}",
         "it": "<i>Informazioni supplementari circa la posizione (in lingua locale):</i><br/>{defibrillator:location}",
         "de": "<i>Zusätzliche Informationen über den Standort (in der Landessprache):</i><br/>{defibrillator:location}",
@@ -678,4 +678,4 @@
     "has_image",
     "open_now"
   ]
- }
+}

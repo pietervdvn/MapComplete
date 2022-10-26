@@ -22,7 +22,7 @@ import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../Utils"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
-import {Script} from "vm";
+import { Script } from "vm"
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -205,15 +205,17 @@ class LayerOverviewUtils {
             "assets/SocialImageBanner.svg",
             "assets/SocialImageRepo.svg",
             "assets/svg/osm-logo.svg",
-            "assets/templates/*"
+            "assets/templates/*",
         ]
         for (const path of allSvgs) {
-            if (exempt.some((p) => {
-                if(p.endsWith("*") && path.startsWith("./"+p.substring(0, p.length - 1))){
-                    return true
-                }
-                return "./" + p === path;
-            })) {
+            if (
+                exempt.some((p) => {
+                    if (p.endsWith("*") && path.startsWith("./" + p.substring(0, p.length - 1))) {
+                        return true
+                    }
+                    return "./" + p === path
+                })
+            ) {
                 continue
             }
 
@@ -297,10 +299,13 @@ class LayerOverviewUtils {
 
         this.checkAllSvgs()
 
-        new DetectDuplicateFilters().convertStrict({
-            layers: ScriptUtils.getLayerFiles().map(f => f.parsed),
-            themes: ScriptUtils.getThemeFiles().map(f => f.parsed)
-        }, "GenerateLayerOverview:")
+        new DetectDuplicateFilters().convertStrict(
+            {
+                layers: ScriptUtils.getLayerFiles().map((f) => f.parsed),
+                themes: ScriptUtils.getThemeFiles().map((f) => f.parsed),
+            },
+            "GenerateLayerOverview:"
+        )
 
         if (AllKnownLayouts.getSharedLayersConfigs().size == 0) {
             console.error("This was a bootstrapping-run. Run generate layeroverview again!")

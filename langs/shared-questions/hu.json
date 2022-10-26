@@ -48,6 +48,15 @@
             "question": "Mikor van nyitva ez: {title()}?",
             "render": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}"
         },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Éjjel-nappal nyitva (munkaszüneti napokon is)"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {

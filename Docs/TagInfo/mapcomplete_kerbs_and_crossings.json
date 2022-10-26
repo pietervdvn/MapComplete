@@ -569,6 +569,22 @@
       "value": "crossing"
     },
     {
+      "key": "image",
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
       "key": "crossing",
       "description": "Layer 'Crossings' shows crossing=uncontrolled with a fixed text, namely 'Crossing, without traffic lights' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
       "value": "uncontrolled"
@@ -641,6 +657,56 @@
     {
       "key": "button_operated",
       "description": "Layer 'Crossings' shows button_operated=no with a fixed text, namely 'This traffic light does not have a button to request green light' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "no"
+    },
+    {
+      "key": "traffic_signals:sound",
+      "description": "Layer 'Crossings' shows traffic_signals:sound=yes with a fixed text, namely 'This traffic light has sound signals to help crossing, both for finding the crossing and for crossing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "yes"
+    },
+    {
+      "key": "traffic_signals:sound",
+      "description": "Layer 'Crossings' shows traffic_signals:sound=no with a fixed text, namely 'This traffic light does not have sound signals to help crossing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "no"
+    },
+    {
+      "key": "traffic_signals:sound",
+      "description": "Layer 'Crossings' shows traffic_signals:sound=locate with a fixed text, namely 'This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "locate"
+    },
+    {
+      "key": "traffic_signals:sound",
+      "description": "Layer 'Crossings' shows traffic_signals:sound=walk with a fixed text, namely 'This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "walk"
+    },
+    {
+      "key": "traffic_signals:vibration",
+      "description": "Layer 'Crossings' shows traffic_signals:vibration=yes with a fixed text, namely 'The button for this traffic light has a vibration signal to indicate that it is safe to cross.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "yes"
+    },
+    {
+      "key": "traffic_signals:vibration",
+      "description": "Layer 'Crossings' shows traffic_signals:vibration=no with a fixed text, namely 'The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "no"
+    },
+    {
+      "key": "traffic_signals:arrow",
+      "description": "Layer 'Crossings' shows traffic_signals:arrow=yes with a fixed text, namely 'This traffic light has an arrow pointing in the direction of crossing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "yes"
+    },
+    {
+      "key": "traffic_signals:arrow",
+      "description": "Layer 'Crossings' shows traffic_signals:arrow=no with a fixed text, namely 'This traffic light does <b>not</b> have an arrow pointing in the direction of crossing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "no"
+    },
+    {
+      "key": "traffic_signals:minimap",
+      "description": "Layer 'Crossings' shows traffic_signals:minimap=yes with a fixed text, namely 'This traffic light has a tactile map showing the layout of the crossing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "yes"
+    },
+    {
+      "key": "traffic_signals:minimap",
+      "description": "Layer 'Crossings' shows traffic_signals:minimap=no with a fixed text, namely 'This traffic light does <b>not</b> have a tactile map showing the layout of the crossing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
       "value": "no"
     },
     {
@@ -737,6 +803,11 @@
     {
       "key": "kerb:height",
       "description": "Layer 'Kerbs' shows and asks freeform values for key 'kerb:height' (in the MapComplete.osm.be theme 'Kerbs and crossings')"
+    },
+    {
+      "key": "kerb:height",
+      "description": "Layer 'Kerbs' shows kerb:height=0 with a fixed text, namely 'This kerb is flush and is lower than 1cm.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Kerbs and crossings')",
+      "value": "0"
     }
   ]
 }

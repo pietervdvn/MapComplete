@@ -248,29 +248,27 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         )
 
         editElements.push(
-            Toggle.If(state.featureSwitchIsDebugging,
-                () => {
-                    const config_all_tags: TagRenderingConfig = new TagRenderingConfig(
-                        { render: "{all_tags()}" },
-                        ""
-                    )
-                    const config_download: TagRenderingConfig = new TagRenderingConfig(
-                        { render: "{export_as_geojson()}" },
-                        ""
-                    )
-                    const config_id: TagRenderingConfig = new TagRenderingConfig(
-                        { render: "{open_in_iD()}" },
-                        ""
-                    )
-
-                    return new Combine([
-                        new TagRenderingAnswer(tags, config_all_tags, state),
-                        new TagRenderingAnswer(tags, config_download, state),
-                        new TagRenderingAnswer(tags, config_id, state),
-                        "This is layer " + layerConfig.id,
-                    ])
-                }
+            Toggle.If(state.featureSwitchIsDebugging, () => {
+                const config_all_tags: TagRenderingConfig = new TagRenderingConfig(
+                    { render: "{all_tags()}" },
+                    ""
                 )
+                const config_download: TagRenderingConfig = new TagRenderingConfig(
+                    { render: "{export_as_geojson()}" },
+                    ""
+                )
+                const config_id: TagRenderingConfig = new TagRenderingConfig(
+                    { render: "{open_in_iD()}" },
+                    ""
+                )
+
+                return new Combine([
+                    new TagRenderingAnswer(tags, config_all_tags, state),
+                    new TagRenderingAnswer(tags, config_download, state),
+                    new TagRenderingAnswer(tags, config_id, state),
+                    "This is layer " + layerConfig.id,
+                ])
+            })
         )
 
         return new Combine(editElements).SetClass("flex flex-col")

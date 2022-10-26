@@ -51,18 +51,18 @@ export default class TagApplyButton implements AutoAction {
      * // Should handle escaped ";"
      * TagApplyButton.parseTagSpec("key=value;key0=value0\\;value1") // => [["key","value"],["key0","value0;value1"]]
      */
-    private static parseTagSpec(spec: string): [string, string][]{
-        const tgsSpec : [string, string][] = []
+    private static parseTagSpec(spec: string): [string, string][] {
+        const tgsSpec: [string, string][] = []
 
-        while(spec.length > 0){
+        while (spec.length > 0) {
             const [part] = spec.match(/((\\;)|[^;])*/)
             spec = spec.substring(part.length + 1) // +1 to remove the pending ';' as well
-            const kv = part.split("=").map((s) => s.trim().replace("\\;",";"))
+            const kv = part.split("=").map((s) => s.trim().replace("\\;", ";"))
             if (kv.length == 2) {
-                tgsSpec.push(<[string, string]> kv)
-            }else if (kv.length < 2) {
+                tgsSpec.push(<[string, string]>kv)
+            } else if (kv.length < 2) {
                 throw "Invalid key spec: no '=' found in " + spec
-            }else{
+            } else {
                 throw "Invalid key spec: multiple '=' found in " + spec
             }
         }
@@ -83,7 +83,7 @@ export default class TagApplyButton implements AutoAction {
             spec = tagSource.data[spec.replace("$", "")]
         }
 
-       const tgsSpec = TagApplyButton.parseTagSpec(spec)
+        const tgsSpec = TagApplyButton.parseTagSpec(spec)
 
         return tagSource.map((tags) => {
             const newTags: Tag[] = []

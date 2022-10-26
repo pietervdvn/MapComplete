@@ -7,7 +7,6 @@ import Svg from "../../Svg"
  * The little 'translate'-icon next to every icon + some static helper functions
  */
 export default class LinkToWeblate extends VariableUiElement {
-
     constructor(context: string, availableTranslations: object) {
         super(
             Locale.language.map(

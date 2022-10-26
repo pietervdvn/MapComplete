@@ -351,16 +351,6 @@
                 "title": "et postkontor"
             }
         },
-        "tagRenderings": {
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Døgnåpent (inkludert helligdager)"
-                    }
-                },
-                "render": "Åpningstider: {opening_hours_table()}"
-            }
-        },
         "title": {
             "render": "Postkontor"
         }

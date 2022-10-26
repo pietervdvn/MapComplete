@@ -4,7 +4,8 @@
     "en": "MapRoulette Tasks",
     "de": "MapRoulette-Aufgaben",
     "fr": "Tâches MapRoulette",
-    "da": "KortRoulette-opgaver"
+    "da": "KortRoulette-opgaver",
+    "ca": "Tasques de MapRoulette"
   },
   "description": {
     "en": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them.",
