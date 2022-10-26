@@ -40,6 +40,7 @@
     + [all_tags](#all_tags)
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
+    + [wikidata.tactile_writing-braille](#wikidatatactile_writing-braille)
     + [questions](#questions)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
@@ -48,6 +49,12 @@
     + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
     + [school.gender](#schoolgender)
+    + [opening_hours_24_7](#opening_hours_24_7)
+    + [toilet.toilets-type](#toilettoilets-type)
+    + [toilet.toilets-changing-table](#toilettoilets-changing-table)
+    + [toilet.toilet-changing_table:location](#toilettoilet-changing_table:location)
+    + [toilet.toilet-handwashing](#toilettoilet-handwashing)
+    + [toilet.toilet-has-paper](#toilettoilet-has-paper)
     + [wikidata.language](#wikidatalanguage)
 
 
@@ -88,6 +95,7 @@
   - climbing_area
   - climbing_gym
   - climbing_route
+  - crossings
   - defibrillator
   - doctors
   - dogpark
@@ -96,6 +104,7 @@
   - entrance
   - extinguisher
   - fire_station
+  - fitness_centre
   - food
   - ghost_bike
   - governments
@@ -124,9 +133,11 @@
   - shops
   - slow_roads
   - sport_pitch
+  - sports_centre
   - street_lamps
   - surveillance_camera
   - toilet
+  - toilet_at_amenity
   - trail
   - transit_stops
   - tree_node
@@ -166,6 +177,7 @@
   - climbing_club
   - climbing_gym
   - doctors
+  - fitness_centre
   - food
   - governments
   - hackerspace
@@ -179,6 +191,7 @@
   - recycling
   - school
   - shops
+  - sports_centre
   - tertiary_education
   - veterinary
 
@@ -199,6 +212,7 @@
   - climbing_club
   - climbing_gym
   - doctors
+  - fitness_centre
   - food
   - governments
   - hackerspace
@@ -209,6 +223,7 @@
   - recycling
   - school
   - shops
+  - sports_centre
   - tertiary_education
   - veterinary
 
@@ -229,6 +244,7 @@
   - climbing_club
   - climbing_gym
   - doctors
+  - fitness_centre
   - food
   - governments
   - hackerspace
@@ -239,6 +255,7 @@
   - recycling
   - school
   - shops
+  - sports_centre
   - tertiary_education
 
 
@@ -258,11 +275,16 @@
   - climbing_club
   - climbing_gym
   - doctors
+  - fitness_centre
+  - fitness_station
   - food
   - kindergarten_childcare
   - parcel_lockers
   - pharmacy
+  - postoffices
   - shops
+  - sports_centre
+  - toilet_at_amenity
   - veterinary
 
 
@@ -279,6 +301,7 @@
   - bike_themed_object
   - climbing_route
   - toilet
+  - toilet_at_amenity
 
 
 
@@ -321,12 +344,14 @@
   - cafe_pub
   - charging_station
   - entrance
+  - fitness_centre
   - food
   - parking
   - picnic_table
   - reception_desk
   - shops
   - toilet
+  - toilet_at_amenity
 
 
 
@@ -361,10 +386,12 @@
 
   - cafe_pub
   - defibrillator
+  - fitness_centre
   - food
   - hackerspace
   - hotel
   - observation_tower
+  - sports_centre
   - transit_stops
 
 
@@ -455,6 +482,7 @@
 
   - cafe_pub
   - dogpark
+  - fitness_centre
   - food
   - hackerspace
   - hotel
@@ -588,6 +616,18 @@
 
 
 
+### wikidata.tactile_writing-braille 
+
+
+
+
+
+  - elevator
+  - stairs
+
+
+
+
 ### questions 
 
 
@@ -676,6 +716,72 @@
 
 
   - tertiary_education
+
+
+
+
+### opening_hours_24_7 
+
+
+
+
+
+  - toilet
+
+
+
+
+### toilet.toilets-type 
+
+
+
+
+
+  - toilet_at_amenity
+
+
+
+
+### toilet.toilets-changing-table 
+
+
+
+
+
+  - toilet_at_amenity
+
+
+
+
+### toilet.toilet-changing_table:location 
+
+
+
+
+
+  - toilet_at_amenity
+
+
+
+
+### toilet.toilet-handwashing 
+
+
+
+
+
+  - toilet_at_amenity
+
+
+
+
+### toilet.toilet-has-paper 
+
+
+
+
+
+  - toilet_at_amenity
 
 
 

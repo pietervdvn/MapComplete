@@ -106,6 +106,15 @@
             "question": "What are the opening hours of {title()}?",
             "render": "<h3>Opening hours</h3>{opening_hours_table(opening_hours)}"
         },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 opened (including holidays)"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {

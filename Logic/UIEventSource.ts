@@ -681,14 +681,20 @@ export class UIEventSource<T> extends Store<T> {
     /**
      * Monoidal map which results in a read-only store. 'undefined' is passed 'as is'
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
-        */
+     */
     public mapD<J>(f: (t: T) => J, extraSources: Store<any>[] = []): Store<J | undefined> {
-        return new MappedStore(this, t => {
-            if(t === undefined){
-                return undefined
-            }
-            return f(t)
-        }, extraSources, this._callbacks, this.data === undefined ? undefined : f(this.data))
+        return new MappedStore(
+            this,
+            (t) => {
+                if (t === undefined) {
+                    return undefined
+                }
+                return f(t)
+            },
+            extraSources,
+            this._callbacks,
+            this.data === undefined ? undefined : f(this.data)
+        )
     }
 
     /**

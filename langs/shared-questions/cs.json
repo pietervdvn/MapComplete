@@ -1,46 +1,5 @@
 {
     "shared_questions": {
-        "induction-loop": {
-            "question": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?",
-            "mappings": {
-                "0": {
-                    "then": "Toto místo má zvukovou indukční smyčku"
-                },
-                "1": {
-                    "then": "Toto místo <b>nemá indukční zvukovou smyčku</b>"
-                }
-            }
-        },
-        "level": {
-            "mappings": {
-                "3": {
-                    "then": "Nachází se v prvním patře"
-                },
-                "4": {
-                    "then": "Nachází se v prvním suterénu"
-                },
-                "0": {
-                    "then": "Nachází se v podzemí"
-                },
-                "1": {
-                    "then": "Nachází se v přízemí"
-                },
-                "2": {
-                    "then": "Nachází se v přízemí"
-                }
-            },
-            "question": "V jaké úrovni se tento prvek nachází?",
-            "render": "Nachází se v {level}. patře"
-        },
-        "multilevels": {
-            "override": {
-                "question": "Do jakých podlaží tento výtah jezdí?",
-                "render": "Tento výtah jede do {level} patra"
-            }
-        },
-        "opening_hours": {
-            "question": "Jaká je otevírací doba {title()}?"
-        },
         "dog-access": {
             "mappings": {
                 "0": {
@@ -61,11 +20,19 @@
         "email": {
             "question": "Jaká je e-mailová adresa {title()}?"
         },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Toto místo má zvukovou indukční smyčku"
+                },
+                "1": {
+                    "then": "Toto místo <b>nemá indukční zvukovou smyčku</b>"
+                }
+            },
+            "question": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?"
+        },
         "internet": {
             "mappings": {
-                "3": {
-                    "then": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače"
-                },
                 "0": {
                     "then": "Toto místo nabízí bezdrátové připojení k internetu"
                 },
@@ -74,6 +41,9 @@
                 },
                 "2": {
                     "then": "Toto místo nabízí přístup k internetu"
+                },
+                "3": {
+                    "then": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače"
                 },
                 "4": {
                     "then": "Toto místo nabízí kabelové připojení k internetu"
@@ -102,6 +72,36 @@
             "question": "Jaký je název sítě pro bezdrátový přístup k internetu?",
             "render": "Název sítě je <b>{internet_access:ssid}</b>"
         },
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Nachází se v podzemí"
+                },
+                "1": {
+                    "then": "Nachází se v přízemí"
+                },
+                "2": {
+                    "then": "Nachází se v přízemí"
+                },
+                "3": {
+                    "then": "Nachází se v prvním patře"
+                },
+                "4": {
+                    "then": "Nachází se v prvním suterénu"
+                }
+            },
+            "question": "V jaké úrovni se tento prvek nachází?",
+            "render": "Nachází se v {level}. patře"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Do jakých podlaží tento výtah jezdí?",
+                "render": "Tento výtah jede do {level} patra"
+            }
+        },
+        "opening_hours": {
+            "question": "Jaká je otevírací doba {title()}?"
+        },
         "payment-options": {
             "mappings": {
                 "0": {
@@ -116,11 +116,11 @@
         "payment-options-advanced": {
             "override": {
                 "mappings+": {
-                    "1": {
-                        "then": "Platba se provádí pomocí členské karty"
-                    },
                     "0": {
                         "then": "Platba se provádí pomocí speciální aplikace"
+                    },
+                    "1": {
+                        "then": "Platba se provádí pomocí členské karty"
                     }
                 }
             }

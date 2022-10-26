@@ -2327,6 +2327,50 @@
             "render": "Servizi igienici"
         }
     },
+    "toilet_at_amenity": {
+        "tagRenderings": {
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accesso pubblico"
+                    },
+                    "3": {
+                        "then": "Accessibile, ma occorre chiedere una chiave per accedere"
+                    },
+                    "4": {
+                        "then": "Accesso pubblico"
+                    }
+                },
+                "render": "L'accesso è {toilets:access}"
+            },
+            "toilet-charge": {
+                "question": "Quanto costa l'accesso a questi servizi igienici?",
+                "render": "La tariffa è {toilets:charge}"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Questi servizi igienici sono a pagamento"
+                    },
+                    "1": {
+                        "then": "Gratis"
+                    }
+                },
+                "question": "Questi servizi igienici sono gratuiti?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "C'è un WC riservato alle persone in sedia a rotelle"
+                    },
+                    "1": {
+                        "then": "Non accessibile in sedia a rotelle"
+                    }
+                },
+                "question": "C'è un WC riservato alle persone in sedia a rotelle"
+            }
+        }
+    },
     "tree_node": {
         "name": "Albero",
         "presets": {

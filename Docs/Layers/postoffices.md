@@ -60,7 +60,14 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office#values) [post_office](https://wiki.openstreetmap.org/wiki/Key:post_office) | Multiple choice | [post_partner](https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner) [](https://wiki.openstreetmap.org/wiki/Tag:post_office%3D)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:brand#values) [post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand) | [string](../SpecialInputElements.md#string) | [DHL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL) [DPD](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDPD) [GLS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DGLS) [UPS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DUPS) [DHL Paketshop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL Paketshop) [Hermes PaketShop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DHermes PaketShop) [PostNL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DPostNL) [bpost](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:letter_from#values) [post_office:letter_from](https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_from#values) [post_office:parcel_from](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_pickup#values) [post_office:parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_to#values) [post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:stamps#values) [post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dno)
 
 
 
@@ -87,7 +94,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-### OH 
+### opening_hours 
 
 
 
@@ -95,13 +102,154 @@ The question is  What are the opening hours for this post office?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  Opening Hours: {opening_hours_table()}
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
 
 
 
 
-  - 24/7 opened (including holidays)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
+### post_partner 
+
+
+
+The question is  Is this a post partner?
+
+
+
+
+
+  - This shop is a post partner  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>`
+  - This shop is not a post partner  corresponds with  ``
+
+
+Only visible if  `post_office=post_partner`  is shown
+
+
+
+### partner-brand 
+
+
+
+The question is  For which brand does this location offer services?
+
+This rendering asks information about the property  [post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand) 
+
+This is rendered with  This location offers services for {post_office:brand}
+
+
+
+
+
+  - This location offers services for DHL  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL' target='_blank'>DHL</a>`
+  - This location offers services for DPD  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDPD' target='_blank'>DPD</a>`
+  - This location offers services for GLS  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DGLS' target='_blank'>GLS</a>`
+  - This location offers services for UPS  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DUPS' target='_blank'>UPS</a>`
+  - This location is a DHL Paketshop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL Paketshop' target='_blank'>DHL Paketshop</a>`
+  - This location is a Hermes PaketShop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DHermes PaketShop' target='_blank'>Hermes PaketShop</a>`
+  - This location is a PostNL-point  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DPostNL' target='_blank'>PostNL</a>`
+  - This location offers services for bpost  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost' target='_blank'>bpost</a>`
+
+
+Only visible if  `post_office=post_partner`  is shown
+
+
+
+### letter-from 
+
+
+
+The question is  Can you post a letter here?
+
+This rendering asks information about the property  [post_office:letter_from](https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from) 
+
+This is rendered with  You can post letters with these companies: {post_office:letter_from}
+
+
+
+
+
+  - You can post letters here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from' target='_blank'>post_office:letter_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dyes' target='_blank'>yes</a>`
+  - You can't post letters here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:letter_from' target='_blank'>post_office:letter_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:letter_from%3Dno' target='_blank'>no</a>`
+
+
+
+
+### parcel-from 
+
+
+
+The question is  Can you send a parcel here?
+
+This rendering asks information about the property  [post_office:parcel_from](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from) 
+
+This is rendered with  You can post parcels with these companies: {post_office:parcel_from}
+
+
+
+
+
+  - You can send parcels here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from' target='_blank'>post_office:parcel_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dyes' target='_blank'>yes</a>`
+  - You can't send parcels here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_from' target='_blank'>post_office:parcel_from</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_from%3Dno' target='_blank'>no</a>`
+
+
+
+
+### parcel-pickup 
+
+
+
+The question is  Can you pick up missed parcels here?
+
+This rendering asks information about the property  [post_office:parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup) 
+
+This is rendered with  You can pick up parcels from these companies: {post_office:parcel_pickup}
+
+
+
+
+
+  - You can pick up missed parcels here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup' target='_blank'>post_office:parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dyes' target='_blank'>yes</a>`
+  - You can't pick up missed parcels here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_pickup' target='_blank'>post_office:parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_pickup%3Dno' target='_blank'>no</a>`
+
+
+
+
+### parcel-to 
+
+
+
+The question is  Can you send parcels to here for pickup?
+
+This rendering asks information about the property  [post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to) 
+
+This is rendered with  You can send parcels to here for pickup with these companies: {post_office:parcel_to}
+
+
+
+
+
+  - You can send parcels to here for pickup  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to' target='_blank'>post_office:parcel_to</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dyes' target='_blank'>yes</a>`
+  - You can't send parcels to here for pickup  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to' target='_blank'>post_office:parcel_to</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dno' target='_blank'>no</a>`
+
+
+
+
+### stamps 
+
+
+
+The question is  Can you buy stamps here?
+
+This rendering asks information about the property  [post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps) 
+
+This is rendered with  You can buy stamps from companies: {post_office:stamps}
+
+
+
+
+
+  - You can buy stamps here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:stamps' target='_blank'>post_office:stamps</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dyes' target='_blank'>yes</a>`
+  - You can't buy stamps here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:stamps' target='_blank'>post_office:stamps</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dno' target='_blank'>no</a>`
  
 
 This document is autogenerated from [assets/layers/postoffices/postoffices.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/postoffices/postoffices.json)

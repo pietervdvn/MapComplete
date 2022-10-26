@@ -43,6 +43,7 @@
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
         "callToAction": "Probeer het uit op mapcomplete.osm.be",
         "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
+        "description": "Een horizontale A4 flyer om MapComplete te promoten",
         "editing": {
             "ex": "Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond:",
             "intro": "De gebruiker krijgt eerst een kaart met interessepunten te zien. Klik je op een punt, dan wordt de interface met informatie over het interessepunt geopend.",
@@ -77,8 +78,7 @@
         "tagline": "Geodata eenvoudig verzamelen met OpenStreetMap",
         "title": "MapComplete.osm.be",
         "toerisme_vlaanderen": "In samenwerking met Toerisme Vlaanderen werd 'Pin Je Punt' gecreëerd. Op enkele maanden tijd werden hiermee duizenden zitbanken, picknicktafels en oplaadpunten voor elektrische fietsen toegevoegd aan de kaart door meer dan 160 personen.",
-        "whatIsOsm": "Wat is OpenStreetMap?",
-        "description": "Een horizontale A4 flyer om MapComplete te promoten"
+        "whatIsOsm": "Wat is OpenStreetMap?"
     },
     "general": {
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",

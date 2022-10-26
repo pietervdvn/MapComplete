@@ -20,7 +20,8 @@
     "sl": "Zemljevid defibrilatorjev (AED)",
     "zh_Hans": "Open AED Map",
     "fil": "Open AED Map",
-    "da": "Åben AED Kort"
+    "da": "Åben AED Kort",
+    "cs": "Open AED Mapa"
   },
   "icon": "./assets/themes/aed/aed.svg",
   "description": {
@@ -43,7 +44,8 @@
     "sl": "Na tem zemljevidu lahko poiščete in označite bližnje defibrilatorje",
     "zh_Hans": "在这份地图上可以寻找和标记附近的除颤器",
     "da": "På dette kort kan man finde og markere defibrillatorer i nærheden",
-    "fil": "Sa mapang ito, maaring makahapan o mag-mapa ng mga defibrillators"
+    "fil": "Sa mapang ito, maaring makahapan o mag-mapa ng mga defibrillators",
+    "cs": "Na této mapě lze najít a označit defibrilátory v okolí"
   },
   "startLat": 0,
   "startLon": 0,

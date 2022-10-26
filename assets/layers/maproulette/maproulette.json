@@ -142,7 +142,8 @@
   "title": {
     "render": {
       "en": "MapRoulette Item: {parentName}",
-      "de": "MapRoulette-Element: {parentName}"
+      "de": "MapRoulette-Element: {parentName}",
+      "nl": "MapRoulette Item: {parentName}"
     }
   },
   "titleIcons": [

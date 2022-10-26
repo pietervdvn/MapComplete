@@ -29,6 +29,7 @@ All infrastructure that someone can cycle over, accompanied with questions about
 
 
 
+  - [blind_osm](https://mapcomplete.osm.be/blind_osm)
   - [cycle_infra](https://mapcomplete.osm.be/cycle_infra)
   - [kerbs_and_crossings](https://mapcomplete.osm.be/kerbs_and_crossings)
   - [onwheels](https://mapcomplete.osm.be/onwheels)

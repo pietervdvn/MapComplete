@@ -27,6 +27,7 @@ A layer showing the OpenStreetMap Communities
 
 
   - [osm_community_index](https://mapcomplete.osm.be/osm_community_index)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 

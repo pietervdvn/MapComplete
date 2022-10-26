@@ -181,13 +181,15 @@
               "if": "sidewalk=both",
               "then": {
                 "nl": "Voetpad aan beide zijden"
-              }   
-            },{
+              }
+            },
+            {
               "if": "sidewalk=none",
               "then": {
                 "nl": "Heeft géén voetpaden"
-            }
-            },{
+              }
+            },
+            {
               "if": "sidewalk=left",
               "then": {
                 "nl": "Voetpad aan de linkerkant"

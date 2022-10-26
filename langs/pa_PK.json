@@ -1,5 +1,31 @@
 {
+    "centerMessage": {
+        "loadingData": "ڈیٹا لوڈ کیتا جا رہا اے۔ ۔ ۔",
+        "ready": "ٹھیک اے، چنگے سی۔"
+    },
+    "delete": {
+        "cancel": "رد کرو",
+        "delete": "مٹاؤ"
+    },
     "general": {
+        "attribution": {
+            "iconAttribution": {
+                "title": "ورتے آئیکون"
+            }
+        },
+        "back": "پچھے",
+        "backgroundMap": "پچھکڑ دا نقشہ",
+        "cancel": "رد کرو",
+        "confirm": "پکا کرو",
+        "download": {
+            "exporting": "ایکسپورٹ کیتا جا رہا اے۔ ۔ ۔"
+        },
+        "example": "مثال",
+        "examples": "مثال",
+        "loading": "لوڈ کر رہا اے۔ ۔ ۔",
+        "logout": "لوگ‌آؤٹ کرو",
+        "next": "اگے",
+        "number": "نمبر",
         "opening_hours": {
             "opensAt": "توں",
             "ph_closed": "بند",
@@ -7,48 +33,30 @@
         },
         "save": "سامبھو",
         "search": {
-            "searching": "کھوجیا جا رہا اے۔ ۔ ۔",
-            "nothing": "کجھ نہیں لبھے۔ ۔ ۔"
+            "nothing": "کجھ نہیں لبھے۔ ۔ ۔",
+            "searching": "کھوجیا جا رہا اے۔ ۔ ۔"
         },
-        "wikipedia": {
-            "wikipediaboxTitle": "وِکیپیڈیا"
-        },
-        "confirm": "پکا کرو",
-        "attribution": {
-            "iconAttribution": {
-                "title": "ورتے آئیکون"
-            }
-        },
-        "download": {
-            "exporting": "ایکسپورٹ کیتا جا رہا اے۔ ۔ ۔"
-        },
-        "loading": "لوڈ کر رہا اے۔ ۔ ۔",
-        "next": "اگے",
-        "number": "نمبر",
-        "example": "مثال",
         "weekdays": {
             "abbreviations": {
-                "sunday": "اتـ",
                 "friday": "جـ",
-                "thursday": "جـ",
                 "monday": "سـ",
                 "saturday": "ہـ",
+                "sunday": "اتـ",
+                "thursday": "جـ",
                 "tuesday": "مـ",
                 "wednesday": "بـ"
             },
             "friday": "جمعہ",
-            "sunday": "اتوار",
+            "monday": "سوموار",
             "saturday": "ہفتہ",
+            "sunday": "اتوار",
             "thursday": "جمعرات",
-            "wednesday": "بدھوار",
             "tuesday": "منگلوار",
-            "monday": "سوموار"
+            "wednesday": "بدھوار"
         },
-        "logout": "لوگ‌آؤٹ کرو",
-        "cancel": "رد کرو",
-        "back": "پچھے",
-        "examples": "مثال",
-        "backgroundMap": "پچھکڑ دا نقشہ"
+        "wikipedia": {
+            "wikipediaboxTitle": "وِکیپیڈیا"
+        }
     },
     "image": {
         "dontDelete": "رد کرو",
@@ -67,8 +75,8 @@
                     "singular": "فائیل"
                 },
                 "layer": {
-                    "singular": "کج",
-                    "plural": "کج"
+                    "plural": "کج",
+                    "singular": "کج"
                 },
                 "theme": {
                     "plural": "تھیم",
@@ -80,19 +88,11 @@
             }
         }
     },
-    "split": {
-        "split": "دپھیر کرو",
-        "cancel": "رد کرو"
-    },
-    "centerMessage": {
-        "ready": "ٹھیک اے، چنگے سی۔",
-        "loadingData": "ڈیٹا لوڈ کیتا جا رہا اے۔ ۔ ۔"
-    },
-    "delete": {
-        "cancel": "رد کرو",
-        "delete": "مٹاؤ"
-    },
     "reviews": {
         "saving_review": "سامبھیا جا رہا اے…"
+    },
+    "split": {
+        "cancel": "رد کرو",
+        "split": "دپھیر کرو"
     }
 }

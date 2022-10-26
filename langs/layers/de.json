@@ -82,6 +82,10 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "Wer hat dieses Kunstwerk geschaffen?",
+                "render": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
             "artwork-artist_name": {
                 "question": "Wer hat das Kunstwerk erschaffen?",
                 "render": "Erstellt von {artist_name}"
@@ -134,10 +138,6 @@
             "artwork-website": {
                 "question": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
                 "render": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>"
-            },
-            "artwork-artist-wikidata": {
-                "question": "Wer hat dieses Kunstwerk geschaffen?",
-                "render": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
             },
             "artwork_subject": {
                 "question": "Was zeigt dieses Kunstwerk?",
@@ -3658,6 +3658,29 @@
                         "question": "Hat wahrscheinlich kein Bild"
                     }
                 }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Mit taktilem Pflaster"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Mit oder ohne taktilem Pflaster"
+                    },
+                    "1": {
+                        "question": "Mit taktilem Pflaster"
+                    },
+                    "2": {
+                        "question": "Ohne taktilem Pflaster"
+                    },
+                    "3": {
+                        "question": "Keine Informationen über taktiles Pflaster"
+                    }
+                }
             }
         }
     },
@@ -5487,14 +5510,10 @@
             }
         },
         "tagRenderings": {
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "durchgehend geöffnet (auch an Feiertagen)"
-                    }
-                },
-                "question": "Wie sind die Öffnungszeiten dieser Poststelle?",
-                "render": "Öffnungszeiten: {opening_hours_table()}"
+            "opening_hours": {
+                "override": {
+                    "question": "Wie sind die Öffnungszeiten dieser Poststelle?"
+                }
             }
         },
         "title": {
@@ -6134,6 +6153,38 @@
             }
         }
     },
+    "speed_camera": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Kilometer/Stunde",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "Meilen/Stunde",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
+    "speed_display": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Kilometer/Stunde",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "Meilen/Stunde",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
     "sport_pitch": {
         "description": "Ein Sportplatz",
         "name": "Sportplätze",
@@ -6605,13 +6656,10 @@
             }
         },
         "tagRenderings": {
-            "Opening-hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Durchgehend geöffnet"
-                    }
-                },
-                "question": "Wann sind diese Toiletten geöffnet?"
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Wann sind diese Toiletten geöffnet?"
+                }
             },
             "toilet-access": {
                 "mappings": {
@@ -6738,6 +6786,92 @@
         },
         "title": {
             "render": "Toilette"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "Meter"
+                    },
+                    "1": {
+                        "human": "Zentimeter"
+                    }
+                }
+            }
+        }
+    },
+    "toilet_at_amenity": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Rollstuhlgerecht"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit Wickeltisch"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Nutzung kostenlos"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Zugang ist öffentlich"
+                    },
+                    "3": {
+                        "then": "Der Zugang ist möglich, aber man muss nach einen Schlüssel fragen"
+                    },
+                    "4": {
+                        "then": "Öffentlicher Zugang"
+                    }
+                },
+                "render": "Zugang ist {toilets:access}"
+            },
+            "toilet-charge": {
+                "question": "Wie viel muss man für die Nutzung bezahlen?",
+                "render": "Die Gebühr beträgt {toilets:charge}"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Nutzung ist gebührenpflichtig"
+                    },
+                    "1": {
+                        "then": "Die Nutzung ist kostenlos"
+                    }
+                },
+                "question": "Können diese Toiletten kostenlos benutzt werden?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Rollstuhlfahrer können die Toilette benutzen"
+                    },
+                    "1": {
+                        "then": "Rollstuhlfahrer können die Toilette nicht benutzen"
+                    },
+                    "2": {
+                        "then": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer"
+                    }
+                },
+                "question": "Können Rollstuhlfahrer die Toilette benutzen?"
+            },
+            "wheelchair-door-width": {
+                "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
+                "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
+            }
         },
         "units": {
             "0": {

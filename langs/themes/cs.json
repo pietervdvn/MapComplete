@@ -1,11 +1,11 @@
 {
     "aed": {
-        "title": "Open AED Mapa",
-        "description": "Na této mapě lze najít a označit defibrilátory v okolí"
+        "description": "Na této mapě lze najít a označit defibrilátory v okolí",
+        "title": "Open AED Mapa"
     },
     "artwork": {
-        "title": "Open Artwork Map",
-        "description": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě"
+        "description": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
+        "title": "Open Artwork Map"
     },
     "bag": {
         "description": "Toto téma pomáhá s importem dat ze systému BAG",

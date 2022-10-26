@@ -16,6 +16,11 @@
       "value": "yes"
     },
     {
+      "key": "bicycle_road",
+      "description": "The MapComplete theme Cyclestreets has a layer Cyclestreets showing features with this tag",
+      "value": "yes"
+    },
+    {
       "key": "image",
       "description": "The layer 'Cyclestreets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -52,6 +57,41 @@
       "value": ""
     },
     {
+      "key": "bicycle_road",
+      "description": "Layer 'Cyclestreets' shows bicycle_road=yes with a fixed text, namely 'This street is a bicycle road' (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "yes"
+    },
+    {
+      "key": "bicycle_road",
+      "description": "Layer 'Cyclestreets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "yes"
+    },
+    {
+      "key": "proposed:bicycle_road",
+      "description": "Layer 'Cyclestreets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:bicycle_road.",
+      "value": ""
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Cyclestreets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "30"
+    },
+    {
+      "key": "source:maxspeed",
+      "description": "Layer 'Cyclestreets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:bicycle_road"
+    },
+    {
+      "key": "vehicle",
+      "description": "Layer 'Cyclestreets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "no"
+    },
+    {
+      "key": "bicycle",
+      "description": "Layer 'Cyclestreets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "designated"
+    },
+    {
       "key": "cyclestreet",
       "description": "Layer 'Cyclestreets' shows cyclestreet=yes with a fixed text, namely 'This street is a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
       "value": "yes"
@@ -72,6 +112,16 @@
       "value": "yes"
     },
     {
+      "key": "bicycle_road",
+      "description": "Layer 'Cyclestreets' shows proposed:bicycle_road=yes with a fixed text, namely 'This street will become a bicycle road soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key bicycle_road.",
+      "value": ""
+    },
+    {
+      "key": "proposed:bicycle_road",
+      "description": "Layer 'Cyclestreets' shows proposed:bicycle_road=yes with a fixed text, namely 'This street will become a bicycle road soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "yes"
+    },
+    {
       "key": "cyclestreet",
       "description": "Layer 'Cyclestreets' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
       "value": ""
@@ -82,9 +132,44 @@
       "value": ""
     },
     {
+      "key": "bicycle_road",
+      "description": "Layer 'Cyclestreets' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key bicycle_road.",
+      "value": ""
+    },
+    {
+      "key": "proposed:bicycle_road",
+      "description": "Layer 'Cyclestreets' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:bicycle_road.",
+      "value": ""
+    },
+    {
       "key": "overtaking:motor_vehicle",
       "description": "Layer 'Cyclestreets' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key overtaking:motor_vehicle.",
       "value": ""
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1020-30 with a fixed text, namely 'Residents allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1020-30"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1022-12,1024-10 with a fixed text, namely 'Motor vehicles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1022-12,1024-10"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1022-12 with a fixed text, namely 'Motorcycles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1022-12"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1024-10 with a fixed text, namely 'Cars allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1024-10"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1 with a fixed text, namely 'There are no supplementary signs at this bicycle road.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1"
     },
     {
       "key": "cyclestreet:start_date",
@@ -92,6 +177,11 @@
     },
     {
       "key": "proposed:cyclestreet",
+      "description": "The MapComplete theme Cyclestreets has a layer Future cyclestreet showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "proposed:bicycle_road",
       "description": "The MapComplete theme Cyclestreets has a layer Future cyclestreet showing features with this tag",
       "value": "yes"
     },
@@ -132,6 +222,41 @@
       "value": ""
     },
     {
+      "key": "bicycle_road",
+      "description": "Layer 'Future cyclestreet' shows bicycle_road=yes with a fixed text, namely 'This street is a bicycle road' (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "yes"
+    },
+    {
+      "key": "bicycle_road",
+      "description": "Layer 'Future cyclestreet' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "yes"
+    },
+    {
+      "key": "proposed:bicycle_road",
+      "description": "Layer 'Future cyclestreet' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:bicycle_road.",
+      "value": ""
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Future cyclestreet' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "30"
+    },
+    {
+      "key": "source:maxspeed",
+      "description": "Layer 'Future cyclestreet' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:bicycle_road"
+    },
+    {
+      "key": "vehicle",
+      "description": "Layer 'Future cyclestreet' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "no"
+    },
+    {
+      "key": "bicycle",
+      "description": "Layer 'Future cyclestreet' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "designated"
+    },
+    {
       "key": "cyclestreet",
       "description": "Layer 'Future cyclestreet' shows cyclestreet=yes with a fixed text, namely 'This street is a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
       "value": "yes"
@@ -152,6 +277,16 @@
       "value": "yes"
     },
     {
+      "key": "bicycle_road",
+      "description": "Layer 'Future cyclestreet' shows proposed:bicycle_road=yes with a fixed text, namely 'This street will become a bicycle road soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key bicycle_road.",
+      "value": ""
+    },
+    {
+      "key": "proposed:bicycle_road",
+      "description": "Layer 'Future cyclestreet' shows proposed:bicycle_road=yes with a fixed text, namely 'This street will become a bicycle road soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "yes"
+    },
+    {
       "key": "cyclestreet",
       "description": "Layer 'Future cyclestreet' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
       "value": ""
@@ -162,9 +297,44 @@
       "value": ""
     },
     {
+      "key": "bicycle_road",
+      "description": "Layer 'Future cyclestreet' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key bicycle_road.",
+      "value": ""
+    },
+    {
+      "key": "proposed:bicycle_road",
+      "description": "Layer 'Future cyclestreet' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:bicycle_road.",
+      "value": ""
+    },
+    {
       "key": "overtaking:motor_vehicle",
       "description": "Layer 'Future cyclestreet' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key overtaking:motor_vehicle.",
       "value": ""
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1020-30 with a fixed text, namely 'Residents allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1020-30"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1022-12,1024-10 with a fixed text, namely 'Motor vehicles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1022-12,1024-10"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1022-12 with a fixed text, namely 'Motorcycles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1022-12"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1024-10 with a fixed text, namely 'Cars allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1024-10"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1 with a fixed text, namely 'There are no supplementary signs at this bicycle road.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1"
     },
     {
       "key": "cyclestreet:start_date",
@@ -222,6 +392,41 @@
       "value": ""
     },
     {
+      "key": "bicycle_road",
+      "description": "Layer 'All streets' shows bicycle_road=yes with a fixed text, namely 'This street is a bicycle road' (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "yes"
+    },
+    {
+      "key": "bicycle_road",
+      "description": "Layer 'All streets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "yes"
+    },
+    {
+      "key": "proposed:bicycle_road",
+      "description": "Layer 'All streets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:bicycle_road.",
+      "value": ""
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'All streets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "30"
+    },
+    {
+      "key": "source:maxspeed",
+      "description": "Layer 'All streets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:bicycle_road"
+    },
+    {
+      "key": "vehicle",
+      "description": "Layer 'All streets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "no"
+    },
+    {
+      "key": "bicycle",
+      "description": "Layer 'All streets' shows bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated with a fixed text, namely 'This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "designated"
+    },
+    {
       "key": "cyclestreet",
       "description": "Layer 'All streets' shows cyclestreet=yes with a fixed text, namely 'This street is a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
       "value": "yes"
@@ -242,6 +447,16 @@
       "value": "yes"
     },
     {
+      "key": "bicycle_road",
+      "description": "Layer 'All streets' shows proposed:bicycle_road=yes with a fixed text, namely 'This street will become a bicycle road soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key bicycle_road.",
+      "value": ""
+    },
+    {
+      "key": "proposed:bicycle_road",
+      "description": "Layer 'All streets' shows proposed:bicycle_road=yes with a fixed text, namely 'This street will become a bicycle road soon' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "yes"
+    },
+    {
       "key": "cyclestreet",
       "description": "Layer 'All streets' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key cyclestreet.",
       "value": ""
@@ -252,9 +467,44 @@
       "value": ""
     },
     {
+      "key": "bicycle_road",
+      "description": "Layer 'All streets' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key bicycle_road.",
+      "value": ""
+    },
+    {
+      "key": "proposed:bicycle_road",
+      "description": "Layer 'All streets' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key proposed:bicycle_road.",
+      "value": ""
+    },
+    {
       "key": "overtaking:motor_vehicle",
       "description": "Layer 'All streets' shows  with a fixed text, namely 'This street is not a cyclestreet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') Picking this answer will delete the key overtaking:motor_vehicle.",
       "value": ""
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1020-30 with a fixed text, namely 'Residents allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1020-30"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1022-12,1024-10 with a fixed text, namely 'Motor vehicles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1022-12,1024-10"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1022-12 with a fixed text, namely 'Motorcycles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1022-12"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1024-10 with a fixed text, namely 'Cars allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1,1024-10"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1 with a fixed text, namely 'There are no supplementary signs at this bicycle road.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "value": "DE:244.1"
     },
     {
       "key": "cyclestreet:start_date",

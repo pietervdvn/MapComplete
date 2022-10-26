@@ -966,6 +966,38 @@
             "render": "Botiga"
         }
     },
+    "speed_camera": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "quilòmetres/hora",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "milles/hora",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
+    "speed_display": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "quilòmetres/hora",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "milles/hora",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
     "sport_pitch": {
         "name": "Camps d'esports",
         "title": {

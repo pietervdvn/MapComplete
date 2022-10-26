@@ -45,14 +45,14 @@
         },
         "internet-fee": {
             "mappings": {
+                "0": {
+                    "then": "Ada biaya untuk akses internet di tempat ini"
+                },
                 "1": {
                     "then": "Jaringan internet tersedia gratis di tempat ini"
                 },
                 "2": {
                     "then": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan"
-                },
-                "0": {
-                    "then": "Ada biaya untuk akses internet di tempat ini"
                 }
             },
             "question": "Apakah ada biaya untuk akses internet?"
@@ -94,6 +94,15 @@
         "opening_hours": {
             "question": "Kapan jam buka {title()}?",
             "render": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}"
+        },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Buka 24 jam (termasuk hari libur)"
+                    }
+                }
+            }
         },
         "payment-options": {
             "mappings": {
@@ -140,6 +149,9 @@
         },
         "wheelchair-access": {
             "mappings": {
+                "0": {
+                    "then": "Tempat ini dirancang khusus untuk pengguna kursi roda"
+                },
                 "1": {
                     "then": "Tempat ini mudah dijangkau dengan kursi roda"
                 },
@@ -148,19 +160,16 @@
                 },
                 "3": {
                     "then": "Tempat ini tidak bisa dijangkau dengan kursi roda"
-                },
-                "0": {
-                    "then": "Tempat ini dirancang khusus untuk pengguna kursi roda"
                 }
             },
             "question": "Apakah tempat ini dapat diakses dengan kursi roda?"
         },
         "wikipedia": {
             "mappings": {
-                "1": {
+                "0": {
                     "then": "Belum ada halaman Wikipedia yang ditautkan"
                 },
-                "0": {
+                "1": {
                     "then": "Belum ada halaman Wikipedia yang ditautkan"
                 }
             },

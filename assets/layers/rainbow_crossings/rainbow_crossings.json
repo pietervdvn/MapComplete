@@ -15,21 +15,24 @@
   "title": {
     "render": {
       "en": "Crossing",
-      "de": "Überweg"
+      "de": "Überweg",
+      "nl": "Oversteekplaats"
     }
   },
   "presets": [
     {
       "title": {
         "en": "a crossing",
-        "de": "einen Überweg"
+        "de": "einen Überweg",
+        "nl": "een oversteekplaats"
       },
       "tags": [
         "highway=crossing"
       ],
       "description": {
         "en": "Pedestrian crossing",
-        "de": "Fußgängerüberweg"
+        "de": "Fußgängerüberweg",
+        "nl": "Voetgangersoversteekplaats"
       },
       "preciseInput": {
         "preferredBackground": [

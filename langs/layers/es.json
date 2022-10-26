@@ -3130,14 +3130,10 @@
             }
         },
         "tagRenderings": {
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Abierta 24/7 (incluyendo festivos)"
-                    }
-                },
-                "question": "¿Cuáles son las horas de apertura para esta oficina de correos?",
-                "render": "Horas de Apertura: {opening_hours_table()}"
+            "opening_hours": {
+                "override": {
+                    "question": "¿Cuáles son las horas de apertura para esta oficina de correos?"
+                }
             }
         },
         "title": {
@@ -3434,6 +3430,38 @@
             }
         }
     },
+    "speed_camera": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilómetros/hora",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "millas/hora",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
+    "speed_display": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilómetros/hora",
+                        "humanShort": "km/h"
+                    },
+                    "1": {
+                        "human": "millas/hora",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
     "sport_pitch": {
         "description": "Una pista de deportes",
         "name": "Pistas de deportes",
@@ -3564,6 +3592,11 @@
                 },
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
+            },
+            "count": {
+                "mappings": {
+                    "0": {}
+                }
             },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",
@@ -3700,13 +3733,6 @@
             }
         },
         "tagRenderings": {
-            "Opening-hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Abierto 24/7"
-                    }
-                }
-            },
             "toilet-access": {
                 "mappings": {
                     "0": {
@@ -3803,6 +3829,61 @@
         },
         "title": {
             "render": "Baño"
+        }
+    },
+    "toilet_at_amenity": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accesible con sillas de ruedas"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Tiene un cambiador"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Acceso públic"
+                    },
+                    "3": {
+                        "then": "Accesible, pero hay que pedir la llave para entrar"
+                    },
+                    "4": {
+                        "then": "De acceso público"
+                    }
+                },
+                "render": "El acceso es {toilets:access}"
+            },
+            "toilet-charge": {
+                "question": "¿Cuánto hay que pagar para estos baños?",
+                "render": "La tasa es {toilets:charge}"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Estos son baños de pago"
+                    }
+                }
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay un baño dedicado para usuarios con sillas de ruedas"
+                    },
+                    "1": {
+                        "then": "Sin acceso para sillas de ruedas"
+                    }
+                }
+            }
         }
     },
     "tree_node": {

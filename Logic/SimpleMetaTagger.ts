@@ -9,7 +9,7 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import { CountryCoder } from "latlon2country"
 import Constants from "../Models/Constants"
 import { TagUtils } from "./Tags/TagUtils"
-import {Feature, LineString} from "geojson";
+import { Feature, LineString } from "geojson"
 
 export class SimpleMetaTagger {
     public readonly keys: string[]
@@ -424,23 +424,26 @@ export default class SimpleMetaTaggers {
 
     private static directionCenterpoint = new SimpleMetaTagger(
         {
-            keys:["_direction:centerpoint"],
+            keys: ["_direction:centerpoint"],
             isLazy: true,
-            doc: "_direction:centerpoint is the direction of the linestring (in degrees) if one were standing at the projected centerpoint."
+            doc: "_direction:centerpoint is the direction of the linestring (in degrees) if one were standing at the projected centerpoint.",
         },
         (feature: Feature) => {
-            if(feature.geometry.type !== "LineString"){
+            if (feature.geometry.type !== "LineString") {
                 return false
             }
 
-            const ls = <Feature<LineString>> feature;
+            const ls = <Feature<LineString>>feature
 
             Object.defineProperty(feature.properties, "_direction:centerpoint", {
                 enumerable: false,
                 configurable: true,
                 get: () => {
                     const centroid = GeoOperations.centerpoint(feature)
-                    const projected = GeoOperations.nearestPoint(ls, <[number,number]> centroid.geometry.coordinates)
+                    const projected = GeoOperations.nearestPoint(
+                        ls,
+                        <[number, number]>centroid.geometry.coordinates
+                    )
                     const nextPoint = ls.geometry.coordinates[projected.properties.index + 1]
                     const bearing = GeoOperations.bearing(projected.geometry.coordinates, nextPoint)
                     delete feature.properties["_direction:centerpoint"]

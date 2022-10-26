@@ -91,7 +91,8 @@
         "id": "Turbin angin ini dioperasikan oleh {operator}.",
         "hu": "Ennek a szélerőműnek az üzemeltetője: {operator}.",
         "de": "Die Windturbine wird betrieben von {operator}.",
-        "da": "Denne vindmølle drives af {operator}."
+        "da": "Denne vindmølle drives af {operator}.",
+        "nl": "Deze windturbine wordt beheerd door {operator}."
       },
       "question": {
         "en": "Who operates this wind turbine?",
@@ -101,7 +102,8 @@
         "hu": "Ki üzemelteti ezt a szélturbinát?",
         "de": "Wer betreibt das Windrad?",
         "id": "Siapa yang mengoperasikan turbin angin ini?",
-        "da": "Hvem driver denne vindmølle?"
+        "da": "Hvem driver denne vindmølle?",
+        "nl": "Wie beheert deze windturbine?"
       },
       "freeform": {
         "key": "operator"

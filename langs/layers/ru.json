@@ -1277,11 +1277,6 @@
                 "title": "Почтовое отделение"
             }
         },
-        "tagRenderings": {
-            "OH": {
-                "render": "Часы работы: {opening_hours_table()}"
-            }
-        },
         "title": {
             "render": "Почтовое отделение"
         }
@@ -1578,6 +1573,38 @@
         },
         "title": {
             "render": "Туалет"
+        }
+    },
+    "toilet_at_amenity": {
+        "tagRenderings": {
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Свободный доступ"
+                    },
+                    "4": {
+                        "then": "Свободный доступ"
+                    }
+                }
+            },
+            "toilet-charge": {
+                "question": "Сколько стоит посещение туалета?",
+                "render": "Стоимость {toilets:charge}"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Это платные туалеты"
+                    }
+                }
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "1": {
+                        "then": "Недоступно пользователям кресел-колясок"
+                    }
+                }
+            }
         }
     },
     "trail": {

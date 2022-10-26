@@ -42,7 +42,8 @@
           "en": "Climbing crag <b>{name}</b>",
           "fr": "Mur d’escalade <b>{name}</b>",
           "it": "Muro da arrampicata <b>{name}</b>",
-          "de": "Klettergarten <b>{name}</b>"
+          "de": "Klettergarten <b>{name}</b>",
+          "nl": ""
         }
       },
       {

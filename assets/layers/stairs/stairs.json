@@ -122,11 +122,11 @@
       ]
     }
   ],
-"mapRendering": [
-  {
-    "color": "gray",
-    "width": 10,
-    "dashArray": "2 2"
-  }
-]
+  "mapRendering": [
+    {
+      "color": "gray",
+      "width": 10,
+      "dashArray": "2 2"
+    }
+  ]
 }

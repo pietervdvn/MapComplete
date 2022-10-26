@@ -48,6 +48,15 @@
             "question": "{title()} 的開放時間是什麼？",
             "render": "<h3>開放時間</h3>{opening_hours_table(opening_hours)}"
         },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "24/7 開放 (包括假日)"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {

@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4464,
+      "commits": 4594,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 184,
+      "commits": 244,
       "contributor": "Robin van der Linde"
     },
     {
@@ -41,7 +41,7 @@
       "contributor": "Ward"
     },
     {
-      "commits": 22,
+      "commits": 23,
       "contributor": "riQQ"
     },
     {
@@ -74,11 +74,11 @@
     },
     {
       "commits": 15,
-      "contributor": "ToastHawaii"
+      "contributor": "Brice Maron"
     },
     {
-      "commits": 14,
-      "contributor": "Brice Maron"
+      "commits": 15,
+      "contributor": "ToastHawaii"
     },
     {
       "commits": 13,
@@ -102,6 +102,10 @@
     },
     {
       "commits": 9,
+      "contributor": "wjtje"
+    },
+    {
+      "commits": 9,
       "contributor": "RobJN"
     },
     {
@@ -122,6 +126,10 @@
     },
     {
       "commits": 6,
+      "contributor": "David Haberthür"
+    },
+    {
+      "commits": 6,
       "contributor": "Thibault Molleman"
     },
     {
@@ -133,8 +141,8 @@
       "contributor": "pelderson"
     },
     {
-      "commits": 5,
-      "contributor": "David Haberthür"
+      "commits": 4,
+      "contributor": "Nadhem"
     },
     {
       "commits": 4,
@@ -159,6 +167,10 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "Jiří Podhorecký"
     },
     {
       "commits": 2,
@@ -199,6 +211,14 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "bgo-eiu"
+    },
+    {
+      "commits": 1,
+      "contributor": "Wouter van der Wal"
     },
     {
       "commits": 1,
@@ -243,10 +263,6 @@
     {
       "commits": 1,
       "contributor": "Štefan Baebler"
-    },
-    {
-      "commits": 1,
-      "contributor": "Jiří Podhorecký"
     },
     {
       "commits": 1,
