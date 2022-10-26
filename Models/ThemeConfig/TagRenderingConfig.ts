@@ -267,7 +267,10 @@ export default class TagRenderingConfig {
                 if (this.freeform.key === "wikidata" && txt.indexOf("{wikipedia()") >= 0) {
                     continue
                 }
-                if (this.freeform.type === "wikidata" && txt.indexOf(`{wikidata_label(${this.freeform.key})`) >= 0) {
+                if (
+                    this.freeform.type === "wikidata" &&
+                    txt.indexOf(`{wikidata_label(${this.freeform.key})`) >= 0
+                ) {
                     continue
                 }
                 throw `${context}: The rendering for language ${ln} does not contain the freeform key {${this.freeform.key}}. This is a bug, as this rendering should show exactly this freeform key!\nThe rendering is ${txt} `

@@ -22,7 +22,7 @@ import Title from "../Base/Title"
 import { SubstitutedTranslation } from "../SubstitutedTranslation"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import TagRenderingQuestion from "./TagRenderingQuestion"
-import {OsmId} from "../../Models/OsmFeature";
+import { OsmId } from "../../Models/OsmFeature"
 
 export default class DeleteWizard extends Toggle {
     /**

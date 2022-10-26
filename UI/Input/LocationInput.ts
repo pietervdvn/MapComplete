@@ -1,38 +1,40 @@
-import {ReadonlyInputElement} from "./InputElement"
+import { ReadonlyInputElement } from "./InputElement"
 import Loc from "../../Models/Loc"
-import {Store, UIEventSource} from "../../Logic/UIEventSource"
-import Minimap, {MinimapObj} from "../Base/Minimap"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import Minimap, { MinimapObj } from "../Base/Minimap"
 import BaseLayer from "../../Models/BaseLayer"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
-import {GeoOperations} from "../../Logic/GeoOperations"
+import { GeoOperations } from "../../Logic/GeoOperations"
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import {BBox} from "../../Logic/BBox"
-import {FixedUiElement} from "../Base/FixedUiElement"
+import { BBox } from "../../Logic/BBox"
+import { FixedUiElement } from "../Base/FixedUiElement"
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
 import BaseUIElement from "../BaseUIElement"
 import Toggle from "./Toggle"
 import * as matchpoint from "../../assets/layers/matchpoint/matchpoint.json"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
-import FilteredLayer from "../../Models/FilteredLayer";
-import {ElementStorage} from "../../Logic/ElementStorage";
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
-import {RelationId, WayId} from "../../Models/OsmFeature";
-import {Feature, LineString, Polygon} from "geojson";
-import {OsmObject, OsmWay} from "../../Logic/Osm/OsmObject";
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import FilteredLayer from "../../Models/FilteredLayer"
+import { ElementStorage } from "../../Logic/ElementStorage"
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
+import { RelationId, WayId } from "../../Models/OsmFeature"
+import { Feature, LineString, Polygon } from "geojson"
+import { OsmObject, OsmWay } from "../../Logic/Osm/OsmObject"
 
 export default class LocationInput
     extends BaseUIElement
-    implements ReadonlyInputElement<Loc>, MinimapObj {
+    implements ReadonlyInputElement<Loc>, MinimapObj
+{
     private static readonly matchLayer = new LayerConfig(
         matchpoint,
         "LocationInput.matchpoint",
         true
     )
 
-    public readonly snappedOnto: UIEventSource<Feature & { properties : { id : WayId} }> = new UIEventSource(undefined)
+    public readonly snappedOnto: UIEventSource<Feature & { properties: { id: WayId } }> =
+        new UIEventSource(undefined)
     public readonly _matching_layer: LayerConfig
     public readonly leafletMap: UIEventSource<any>
     public readonly bounds
@@ -43,13 +45,15 @@ export default class LocationInput
      * The features to which the input should be snapped
      * @private
      */
-    private readonly _snapTo: Store< (Feature<LineString | Polygon> & {properties: {id : WayId}})[]>
+    private readonly _snapTo: Store<
+        (Feature<LineString | Polygon> & { properties: { id: WayId } })[]
+    >
     /**
      * The features to which the input should be snapped without cleanup of relations and memberships
      * Used for rendering
      * @private
      */
-    private readonly _snapToRaw: Store< {feature: Feature}[]>
+    private readonly _snapToRaw: Store<{ feature: Feature }[]>
     private readonly _value: Store<Loc>
     private readonly _snappedPoint: Store<any>
     private readonly _maxSnapDistance: number
@@ -59,10 +63,10 @@ export default class LocationInput
     private readonly clickLocation: UIEventSource<Loc>
     private readonly _minZoom: number
     private readonly _state: {
-        readonly filteredLayers: Store<FilteredLayer[]>;
-        readonly backgroundLayer: UIEventSource<BaseLayer>;
-        readonly layoutToUse: LayoutConfig;
-        readonly selectedElement: UIEventSource<any>;
+        readonly filteredLayers: Store<FilteredLayer[]>
+        readonly backgroundLayer: UIEventSource<BaseLayer>
+        readonly layoutToUse: LayoutConfig
+        readonly selectedElement: UIEventSource<any>
         readonly allElements: ElementStorage
     }
 
@@ -74,27 +78,35 @@ export default class LocationInput
      *
      * @private
      */
-    private static async prepareSnapOnto(features: Feature[]): Promise<(Feature<LineString | Polygon> & {properties : {id: WayId}})[]> {
-        const linesAndPolygon : Feature<LineString | Polygon>[] = <any> features.filter(f => f.geometry.type !== "Point")
+    private static async prepareSnapOnto(
+        features: Feature[]
+    ): Promise<(Feature<LineString | Polygon> & { properties: { id: WayId } })[]> {
+        const linesAndPolygon: Feature<LineString | Polygon>[] = <any>(
+            features.filter((f) => f.geometry.type !== "Point")
+        )
         // Clean the features: multipolygons are split into their it's members
-        const linestrings : (Feature<LineString | Polygon> & {properties: {id: WayId}})[] = []
+        const linestrings: (Feature<LineString | Polygon> & { properties: { id: WayId } })[] = []
         for (const feature of linesAndPolygon) {
-            if(feature.properties.id.startsWith("way")){
+            if (feature.properties.id.startsWith("way")) {
                 // A normal way - we continue
-                linestrings.push(<any> feature)
+                linestrings.push(<any>feature)
                 continue
             }
 
             // We have a multipolygon, thus: a relation
             // Download the members
-            const relation = await OsmObject.DownloadObjectAsync(<RelationId> feature.properties.id, 60 * 60)
-            const members: OsmWay[] = await Promise.all(relation.members
-                .filter(m => m.type === "way")
-                .map(m => OsmObject.DownloadObjectAsync(<WayId> ("way/"+m.ref), 60 * 60)))
-            linestrings.push(...members.map(m => m.asGeoJson()))
+            const relation = await OsmObject.DownloadObjectAsync(
+                <RelationId>feature.properties.id,
+                60 * 60
+            )
+            const members: OsmWay[] = await Promise.all(
+                relation.members
+                    .filter((m) => m.type === "way")
+                    .map((m) => OsmObject.DownloadObjectAsync(<WayId>("way/" + m.ref), 60 * 60))
+            )
+            linestrings.push(...members.map((m) => m.asGeoJson()))
         }
         return linestrings
-
     }
 
     constructor(options?: {
@@ -107,20 +119,32 @@ export default class LocationInput
         centerLocation?: UIEventSource<Loc>
         bounds?: UIEventSource<BBox>
         state?: {
-            readonly filteredLayers: Store<FilteredLayer[]>;
-            readonly backgroundLayer: UIEventSource<BaseLayer>;
-            readonly layoutToUse: LayoutConfig;
-            readonly selectedElement: UIEventSource<any>;
+            readonly filteredLayers: Store<FilteredLayer[]>
+            readonly backgroundLayer: UIEventSource<BaseLayer>
+            readonly layoutToUse: LayoutConfig
+            readonly selectedElement: UIEventSource<any>
             readonly allElements: ElementStorage
         }
     }) {
         super()
-        this._snapToRaw = options?.snapTo?.map(feats => feats.filter(f => f.feature.geometry.type !== "Point"))
-        this._snapTo = options?.snapTo?.bind((features) => UIEventSource.FromPromise(LocationInput.prepareSnapOnto(features.map(f => f.feature))))?.map(f => f ?? [])
+        this._snapToRaw = options?.snapTo?.map((feats) =>
+            feats.filter((f) => f.feature.geometry.type !== "Point")
+        )
+        this._snapTo = options?.snapTo
+            ?.bind((features) =>
+                UIEventSource.FromPromise(
+                    LocationInput.prepareSnapOnto(features.map((f) => f.feature))
+                )
+            )
+            ?.map((f) => f ?? [])
         this._maxSnapDistance = options?.maxSnapDistance
-        this._centerLocation = options?.centerLocation ?? new UIEventSource<Loc>({
-            lat: 0, lon: 0, zoom: 0
-        })
+        this._centerLocation =
+            options?.centerLocation ??
+            new UIEventSource<Loc>({
+                lat: 0,
+                lon: 0,
+                zoom: 0,
+            })
         this._snappedPointTags = options?.snappedPointTags
         this._bounds = options?.bounds
         this._minZoom = options?.minZoom
@@ -152,11 +176,11 @@ export default class LocationInput
                         return undefined
                     }
 
-
                     // We reproject the location onto every 'snap-to-feature' and select the closest
 
                     let min = undefined
-                    let matchedWay: Feature<LineString | Polygon> & {properties : {id : WayId}} = undefined
+                    let matchedWay: Feature<LineString | Polygon> & { properties: { id: WayId } } =
+                        undefined
                     for (const feature of self._snapTo.data ?? []) {
                         try {
                             const nearestPointOnLine = GeoOperations.nearestPoint(feature, [
@@ -191,18 +215,16 @@ export default class LocationInput
                             return {
                                 type: "Feature",
                                 properties: options?.snappedPointTags ?? min.properties,
-                                geometry: {type: "Point", coordinates: [loc.lon, loc.lat]},
+                                geometry: { type: "Point", coordinates: [loc.lon, loc.lat] },
                             }
                         }
                     }
                     min.properties = options?.snappedPointTags ?? min.properties
-                    if(matchedWay.properties.id.startsWith("relation/")){
+                    if (matchedWay.properties.id.startsWith("relation/")) {
                         // We matched a relation instead of a way
                         console.log("Snapping onto a relation. The relation is", matchedWay)
-
-
                     }
-                    self.snappedOnto.setData(<any> matchedWay)
+                    self.snappedOnto.setData(<any>matchedWay)
                     return min
                 },
                 [this._snapTo]
@@ -217,7 +239,10 @@ export default class LocationInput
                 }
             })
         }
-        this.mapBackground = options?.mapBackground ?? this._state?.backgroundLayer ?? new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
+        this.mapBackground =
+            options?.mapBackground ??
+            this._state?.backgroundLayer ??
+            new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
         this.SetClass("block h-full")
 
         this.clickLocation = new UIEventSource<Loc>(undefined)
@@ -249,7 +274,7 @@ export default class LocationInput
         try {
             const self = this
             const hasMoved = new UIEventSource(false)
-            const startLocation = {...this._centerLocation.data}
+            const startLocation = { ...this._centerLocation.data }
             this._centerLocation.addCallbackD((newLocation) => {
                 const f = 100000
                 console.log(newLocation.lon, startLocation.lon)
@@ -279,7 +304,7 @@ export default class LocationInput
                     if (loc === undefined) {
                         return []
                     }
-                    return [{feature: loc}]
+                    return [{ feature: loc }]
                 })
                 console.log("Constructing the match layer", matchPoint)
 
@@ -335,9 +360,9 @@ export default class LocationInput
         }
     }
 
-    TakeScreenshot(format: "image"): Promise<string>;
-    TakeScreenshot(format: "blob"): Promise<Blob>;
-    TakeScreenshot(format: "image" | "blob"): Promise<string | Blob>;
+    TakeScreenshot(format: "image"): Promise<string>
+    TakeScreenshot(format: "blob"): Promise<Blob>
+    TakeScreenshot(format: "image" | "blob"): Promise<string | Blob>
     TakeScreenshot(format: "image" | "blob"): Promise<string | Blob> {
         return this.map.TakeScreenshot(format)
     }

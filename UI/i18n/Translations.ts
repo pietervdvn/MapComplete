@@ -41,7 +41,10 @@ export default class Translations {
      * translation.textFor("nl") // => "Nederlands"
      *
      */
-    static T(t: string | undefined | null | Translation | TypedTranslation<object>, context = undefined): TypedTranslation<object> {
+    static T(
+        t: string | undefined | null | Translation | TypedTranslation<object>,
+        context = undefined
+    ): TypedTranslation<object> {
         if (t === undefined || t === null) {
             return undefined
         }

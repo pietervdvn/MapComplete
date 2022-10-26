@@ -1,8 +1,8 @@
-import FeatureSource, {FeatureSourceForLayer, Tiled} from "../FeatureSource"
-import {ImmutableStore, Store} from "../../UIEventSource"
+import FeatureSource, { FeatureSourceForLayer, Tiled } from "../FeatureSource"
+import { ImmutableStore, Store } from "../../UIEventSource"
 import FilteredLayer from "../../../Models/FilteredLayer"
-import {BBox} from "../../BBox"
-import {Feature} from "geojson";
+import { BBox } from "../../BBox"
+import { Feature } from "geojson"
 
 /**
  * A simple, read only feature store.

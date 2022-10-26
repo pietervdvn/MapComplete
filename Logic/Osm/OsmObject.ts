@@ -1,10 +1,10 @@
-import {Utils} from "../../Utils"
+import { Utils } from "../../Utils"
 import * as polygon_features from "../../assets/polygon-features.json"
-import {Store, UIEventSource} from "../UIEventSource"
-import {BBox} from "../BBox"
+import { Store, UIEventSource } from "../UIEventSource"
+import { BBox } from "../BBox"
 import * as OsmToGeoJson from "osmtogeojson"
-import {NodeId, OsmFeature, OsmId, OsmTags, RelationId, WayId} from "../../Models/OsmFeature"
-import {Feature, LineString, Polygon} from "geojson";
+import { NodeId, OsmFeature, OsmId, OsmTags, RelationId, WayId } from "../../Models/OsmFeature"
+import { Feature, LineString, Polygon } from "geojson"
 
 export abstract class OsmObject {
     private static defaultBackend = "https://www.openstreetmap.org/"
@@ -17,7 +17,7 @@ export abstract class OsmObject {
     /**
      * The OSM tags as simple object
      */
-    tags: OsmTags & {id: OsmId}
+    tags: OsmTags & { id: OsmId }
     version: number
     public changed: boolean = false
     timestamp: Date
@@ -41,9 +41,9 @@ export abstract class OsmObject {
         this.backendURL = url
     }
 
-    public static DownloadObject(id: NodeId, forceRefresh?: boolean): Store<OsmNode> ;
-    public static DownloadObject(id: RelationId, forceRefresh?: boolean): Store<OsmRelation> ;
-    public static DownloadObject(id: WayId, forceRefresh?: boolean): Store<OsmWay> ;
+    public static DownloadObject(id: NodeId, forceRefresh?: boolean): Store<OsmNode>
+    public static DownloadObject(id: RelationId, forceRefresh?: boolean): Store<OsmRelation>
+    public static DownloadObject(id: WayId, forceRefresh?: boolean): Store<OsmWay>
     public static DownloadObject(id: string, forceRefresh: boolean = false): Store<OsmObject> {
         let src: UIEventSource<OsmObject>
         if (OsmObject.objectCache.has(id)) {
@@ -73,12 +73,30 @@ export abstract class OsmObject {
         return rawData.elements[0].tags
     }
 
-    static async DownloadObjectAsync(id: NodeId, maxCacheAgeInSecs?: number): Promise<OsmNode | undefined>
-    static async DownloadObjectAsync(id: WayId, maxCacheAgeInSecs?: number): Promise<OsmWay | undefined>
-    static async DownloadObjectAsync(id: RelationId, maxCacheAgeInSecs?: number): Promise<OsmRelation | undefined>
-    static async DownloadObjectAsync(id: OsmId, maxCacheAgeInSecs?: number): Promise<OsmObject | undefined>
-    static async DownloadObjectAsync(id: string, maxCacheAgeInSecs?: number): Promise<OsmObject | undefined>
-    static async DownloadObjectAsync(id: string, maxCacheAgeInSecs?: number): Promise<OsmObject | undefined> {
+    static async DownloadObjectAsync(
+        id: NodeId,
+        maxCacheAgeInSecs?: number
+    ): Promise<OsmNode | undefined>
+    static async DownloadObjectAsync(
+        id: WayId,
+        maxCacheAgeInSecs?: number
+    ): Promise<OsmWay | undefined>
+    static async DownloadObjectAsync(
+        id: RelationId,
+        maxCacheAgeInSecs?: number
+    ): Promise<OsmRelation | undefined>
+    static async DownloadObjectAsync(
+        id: OsmId,
+        maxCacheAgeInSecs?: number
+    ): Promise<OsmObject | undefined>
+    static async DownloadObjectAsync(
+        id: string,
+        maxCacheAgeInSecs?: number
+    ): Promise<OsmObject | undefined>
+    static async DownloadObjectAsync(
+        id: string,
+        maxCacheAgeInSecs?: number
+    ): Promise<OsmObject | undefined> {
         const splitted = id.split("/")
         const type = splitted[0]
         const idN = Number(splitted[1])
@@ -210,7 +228,7 @@ export abstract class OsmObject {
                 case "relation":
                     osmObject = new OsmRelation(idN)
                     const allGeojsons = OsmToGeoJson.default(
-                        {elements},
+                        { elements },
                         // @ts-ignore
                         {
                             flatProperties: true,
@@ -264,14 +282,16 @@ export abstract class OsmObject {
         return false
     }
 
-    private static constructPolygonFeatures(): Map<string,
-        { values: Set<string>; blacklist: boolean }> {
+    private static constructPolygonFeatures(): Map<
+        string,
+        { values: Set<string>; blacklist: boolean }
+    > {
         const result = new Map<string, { values: Set<string>; blacklist: boolean }>()
         for (const polygonFeature of polygon_features["default"] ?? polygon_features) {
             const key = polygonFeature.key
 
             if (polygonFeature.polygon === "all") {
-                result.set(key, {values: null, blacklist: false})
+                result.set(key, { values: null, blacklist: false })
                 continue
             }
 

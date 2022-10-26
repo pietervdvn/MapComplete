@@ -191,7 +191,7 @@ export default class OverpassFeatureSource implements FeatureSource {
 
         const self = this
         const overpassUrls = self.state.overpassUrl.data
-        if(overpassUrls === undefined || overpassUrls.length === 0){
+        if (overpassUrls === undefined || overpassUrls.length === 0) {
             throw "Panic: overpassFeatureSource didn't receive any overpassUrls"
         }
         let bounds: BBox
