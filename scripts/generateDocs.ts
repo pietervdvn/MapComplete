@@ -60,6 +60,9 @@ function WriteFile(
     writeFileSync(filename, md)
 }
 
+/**
+ * The wikitable is updated as some tools show an overview of apps based on the wiki.
+ */
 function generateWikipage(){
 
     function generateWikiEntry(layout: { hideFromOverview: boolean, id: string, shortDescription: any }) {
@@ -93,7 +96,7 @@ function generateWikipage(){
         "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
         "|-";
 
-    for (const layout of themeOverview) {
+    for (const layout of (themeOverview["default"] ?? themeOverview)) {
         if (layout.hideFromOverview) {
             continue;
         }
@@ -110,6 +113,8 @@ function generateWikipage(){
 }
 
 console.log("Starting documentation generation...")
+generateWikipage()
+
 AllKnownLayouts.GenOverviewsForSingleLayer((layer, element, inlineSource) => {
     console.log("Exporting ", layer.id)
     if (!existsSync("./Docs/Layers")) {
@@ -199,5 +204,5 @@ WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryP
     "Logic/Web/QueryParameters.ts",
     "UI/QueryParameterDocumentation.ts",
 ])
-generateWikipage()
+
 console.log("Generated docs")
