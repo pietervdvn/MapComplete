@@ -1,10 +1,10 @@
 {
   "id": "elevator",
   "name": {
-    "en": "elevator",
-    "fr": "ascenseur",
+    "en": "Elevator",
+    "fr": "Ascenseur",
     "de": "Aufzug",
-    "nl": "lift"
+    "nl": "Lift"
   },
   "source": {
     "osmTags": "highway=elevator"
@@ -134,7 +134,15 @@
         "type": "pfloat"
       }
     },
-    "induction-loop"
+    "induction-loop",
+    {
+      "builtin": "wikidata.tactile_writing-braille",
+      "override": {
+        "question": {
+          "en": "In which languages does this elevator have tactile writing (braille)?"
+        }
+      }
+    }
   ],
   "mapRendering": [
     {

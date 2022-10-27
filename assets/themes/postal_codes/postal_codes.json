@@ -70,7 +70,8 @@
           "nb_NO": "Postkode {postal_code}",
           "nl": "Postcode {postal_code}",
           "fr": "Code postal {postal_code}",
-          "da": "Postnummer {postal_code}"
+          "da": "Postnummer {postal_code}",
+          "ca": "Codi postal {postal_code}"
         }
       },
       "description": {},
@@ -165,7 +166,8 @@
           "nl": "Stadhuis {name}",
           "fr": "Mairie {name}",
           "da": "Rådhus {name}",
-          "nb_NO": "{name}-rådhuset"
+          "nb_NO": "{name}-rådhuset",
+          "ca": "Ajuntament de {name}"
         }
       },
       "calculatedTags": [

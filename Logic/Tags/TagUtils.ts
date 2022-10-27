@@ -1,13 +1,13 @@
-import {Tag} from "./Tag"
-import {TagsFilter} from "./TagsFilter"
-import {And} from "./And"
-import {Utils} from "../../Utils"
+import { Tag } from "./Tag"
+import { TagsFilter } from "./TagsFilter"
+import { And } from "./And"
+import { Utils } from "../../Utils"
 import ComparingTag from "./ComparingTag"
-import {RegexTag} from "./RegexTag"
+import { RegexTag } from "./RegexTag"
 import SubstitutingTag from "./SubstitutingTag"
-import {Or} from "./Or"
-import {TagConfigJson} from "../../Models/ThemeConfig/Json/TagConfigJson"
-import {isRegExp} from "util"
+import { Or } from "./Or"
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { isRegExp } from "util"
 import * as key_counts from "../../assets/key_totals.json"
 
 type Tags = Record<string, string>
@@ -373,7 +373,7 @@ export class TagUtils {
             return null
         }
         const [_, key, invert, modifier, value] = match
-        return {key, value, invert: invert == "!", modifier: modifier == "i~" ? "i" : ""}
+        return { key, value, invert: invert == "!", modifier: modifier == "i~" ? "i" : "" }
     }
 
     /**
@@ -557,9 +557,9 @@ export class TagUtils {
 
         if (tag.indexOf("~~") >= 0) {
             const split = Utils.SplitFirst(tag, "~~")
-            let keyRegex: RegExp;
+            let keyRegex: RegExp
             if (split[0] === "*") {
-                keyRegex = new RegExp(".+","i")
+                keyRegex = new RegExp(".+", "i")
             } else {
                 keyRegex = new RegExp("^(" + split[0] + ")$")
             }
@@ -569,10 +569,7 @@ export class TagUtils {
             } else {
                 valueRegex = new RegExp("^(" + split[1] + ")$", "s")
             }
-            return new RegexTag(
-                keyRegex,
-                valueRegex
-            )
+            return new RegexTag(keyRegex, valueRegex)
         }
         const withRegex = TagUtils.parseRegexOperator(tag)
         if (withRegex != null) {
@@ -627,7 +624,7 @@ export class TagUtils {
                 )
             }
             if (split[1] === "") {
-                return new RegexTag(split[0], /.+/si)
+                return new RegexTag(split[0], /.+/is)
             }
             return new RegexTag(split[0], split[1], true)
         }

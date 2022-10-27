@@ -48,6 +48,15 @@
             "question": "¿Cuales son las horas de apertura de {title()}?",
             "render": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}"
         },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Abierta 24/7 (incluyendo festivos)"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {

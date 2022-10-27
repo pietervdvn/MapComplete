@@ -46,9 +46,9 @@ export default class TitleHandler {
             if (Utils.runningFromConsole) {
                 return
             }
-            try{
-            document.title = title
-            }catch (e) {
+            try {
+                document.title = title
+            } catch (e) {
                 console.error(e)
             }
         })

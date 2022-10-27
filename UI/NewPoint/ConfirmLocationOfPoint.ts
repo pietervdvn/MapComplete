@@ -18,7 +18,7 @@ import Title from "../Base/Title"
 import { GlobalFilter } from "../../Logic/State/MapState"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import { Tag } from "../../Logic/Tags/Tag"
-import {WayId} from "../../Models/OsmFeature";
+import { WayId } from "../../Models/OsmFeature"
 
 export default class ConfirmLocationOfPoint extends Combine {
     constructor(
@@ -76,7 +76,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                 snappedPointTags: tags,
                 maxSnapDistance: preset.preciseInput.maxSnapDistance,
                 bounds: mapBounds,
-                state: <any> state
+                state: <any>state,
             })
             preciseInput.installBounds(preset.boundsFactor ?? 0.25, true)
             preciseInput

@@ -969,7 +969,7 @@
                         "then": "Denne butik tilbyder ikke en cykelpumpe til nogen"
                     },
                     "2": {
-                        "then": "Der er cykelpumpe, den er vist som et separat punkt "
+                        "then": "Der er cykelpumpe, den er vist som et separat punkt"
                     }
                 },
                 "question": "Tilbyder denne butik en cykelpumpe til brug for alle?"
@@ -2253,13 +2253,10 @@
             }
         },
         "tagRenderings": {
-            "Opening-hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Åbent 24/7"
-                    }
-                },
-                "question": "Hvornår åbnes disse toiletter?"
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Hvornår åbnes disse toiletter?"
+                }
             },
             "toilet-access": {
                 "mappings": {
@@ -2380,6 +2377,92 @@
         },
         "title": {
             "render": "Toilet"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
+        }
+    },
+    "toilet_at_amenity": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tilgængelig for kørestolsbrugere"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Har et puslebord"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Gratis at bruge"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Offentlig adgang"
+                    },
+                    "3": {
+                        "then": "Tilgængelig, men man skal bede om en nøgle for at komme ind"
+                    },
+                    "4": {
+                        "then": "Offentlig adgang"
+                    }
+                },
+                "render": "Adgang er {toilets:access}"
+            },
+            "toilet-charge": {
+                "question": "Hvor meget skal man betale for disse toiletter?",
+                "render": "Gebyret er {toilets:charge}"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Det er betalingstoiletter"
+                    },
+                    "1": {
+                        "then": "Gratis at bruge"
+                    }
+                },
+                "question": "Er det gratis at benytte disse toiletter?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er et særligt toilet til kørestolsbrugere"
+                    },
+                    "1": {
+                        "then": "Ingen kørestolsadgang"
+                    },
+                    "2": {
+                        "then": "Der er kun et særligt toilet til kørestolsbrugere"
+                    }
+                },
+                "question": "Er der et særligt toilet til kørestolsbrugere?"
+            },
+            "wheelchair-door-width": {
+                "question": "Hvad er bredden på døren til det kørestolsvenlige toilet?",
+                "render": "Døren til det kørestolsvenlige toilet er {canonical(toilets:door:width)} bred"
+            }
         },
         "units": {
             "0": {

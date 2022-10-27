@@ -40,7 +40,8 @@
       "fil": "Ano ang nau-ukol na entidad sa Wikidata?",
       "es": "¿Cual es la entidad de Wikidata que se corresponde?",
       "zh_Hans": "在Wikidata上对应的实体是什么？",
-      "da": "Hvad er den tilsvarende Wikidata-enhed?"
+      "da": "Hvad er den tilsvarende Wikidata-enhed?",
+      "id": "Apa entitas Wikidata yang sesuai?"
     },
     "mappings": [
       {
@@ -64,7 +65,8 @@
           "ru": "Никакой страницы на Википедии не было прикреплено",
           "sv": "Ingen Wikipedia-sida har länkats än",
           "zh_Hans": "尚未有连接到的维基百科页面",
-          "zh_Hant": "還沒有連結到維基百科頁面"
+          "zh_Hant": "還沒有連結到維基百科頁面",
+          "id": "Belum ada halaman Wikipedia yang ditautkan"
         },
         "hideInAnswer": true
       },
@@ -232,7 +234,8 @@
       "fil": "Ano ang email address ng {title()}?",
       "es": "¿Cual es la direccióm de correo electrónico de {title()}?",
       "zh_Hans": "{title()} 的电子邮箱地址为何？",
-      "da": "Hvad er mailadressen på {title()}?"
+      "da": "Hvad er mailadressen på {title()}?",
+      "cs": "Jaká je e-mailová adresa {title()}?"
     },
     "mappings": [
       {
@@ -308,7 +311,8 @@
       "ja": "車いすでのアクセスは可能ですか？",
       "fil": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?",
       "es": "¿Este lugar es accesible con una silla de ruedas?",
-      "da": "Er stedet tilgængeligt med en kørestol?"
+      "da": "Er stedet tilgængeligt med en kørestol?",
+      "id": "Apakah tempat ini dapat diakses dengan kursi roda?"
     },
     "mappings": [
       {
@@ -335,7 +339,8 @@
           "ja": "この場所は、車椅子の方のための特別仕様になっています",
           "fil": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair",
           "es": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas",
-          "da": "Dette sted er specielt indrettet til kørestolsbrugere"
+          "da": "Dette sted er specielt indrettet til kørestolsbrugere",
+          "id": "Tempat ini dirancang khusus untuk pengguna kursi roda"
         }
       },
       {
@@ -417,7 +422,8 @@
           "ja": "この場所は車いすでは行けません",
           "fil": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair",
           "es": "No es posible llegar a este lugar con una silla de ruedas",
-          "da": "Dette sted er ikke tilgængeligt med kørestol"
+          "da": "Dette sted er ikke tilgængeligt med kørestol",
+          "id": "Tempat ini tidak bisa dijangkau dengan kursi roda"
         }
       }
     ]
@@ -443,7 +449,8 @@
       "fil": "Pinapayagan ba ang mga aso sa establisyementong ito?",
       "es": "¿Están permitidos los perros en este negocio?",
       "zh_Hans": "犬只是否在这个商业体中允许？",
-      "da": "Er hunde tilladt i denne virksomhed?"
+      "da": "Er hunde tilladt i denne virksomhed?",
+      "cs": "Jsou v tomto podniku povoleni psi?"
     },
     "mappings": [
       {
@@ -469,7 +476,8 @@
           "sl": "Psi so dovoljeni",
           "fil": "Pinapayagan ang mga aso",
           "zh_Hans": "允许犬只",
-          "da": "Hunde er tilladt"
+          "da": "Hunde er tilladt",
+          "cs": "Psi jsou povoleni"
         }
       },
       {
@@ -495,7 +503,8 @@
           "sl": "Psi <b>niso</b> dovoljeni",
           "fil": "<b>Hindi</b> pinapayagan ang mga aso",
           "zh_Hans": "<b>不</b>允许犬只",
-          "da": "Hunde er <b>ikke </b> tilladt"
+          "da": "Hunde er <b>ikke </b> tilladt",
+          "cs": "Psi <b>nejsou</b> povoleni"
         }
       },
       {
@@ -520,7 +529,8 @@
           "fil": "Pinapayagan ang mga aso kung may tali",
           "es": "Los perros están permitidos, pero tienen que llevar correa",
           "zh_Hans": "允许犬只，但必须拴绳",
-          "da": "Hunde er tilladt, men de skal være i snor"
+          "da": "Hunde er tilladt, men de skal være i snor",
+          "cs": "Psi jsou povoleni, ale musí být na vodítku"
         }
       },
       {
@@ -545,7 +555,8 @@
           "fil": "Pinapayayagan ang mga aso, at malayang makatatakbo",
           "es": "Los perros están permitidos y pueden estar sueltos",
           "zh_Hans": "允许犬只，且可自由放养",
-          "da": "Hunde er tilladt og kan løbe frit rundt"
+          "da": "Hunde er tilladt og kan løbe frit rundt",
+          "cs": "Psi mají vstup povolen a mohou volně pobíhat"
         }
       }
     ]
@@ -600,7 +611,8 @@
       "es": "¿Cuales son las horas de apertura de {title()}?",
       "zh_Hans": "{title()} 的开放时间为何？",
       "da": "Hvad er åbningstiderne for {title()}?",
-      "id": "Kapan jam buka {title()}?"
+      "id": "Kapan jam buka {title()}?",
+      "cs": "Jaká je otevírací doba {title()}?"
     },
     "render": {
       "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -624,7 +636,8 @@
       "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
       "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
       "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
-      "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}"
+      "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
+      "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",
@@ -776,7 +789,8 @@
       "fil": "Anong mga paraang pambayad ang tinatanggap dito?",
       "es": "¿Qué métodos de pago se aceptan aquí?",
       "zh_Hans": "这里支持哪些支付方式？",
-      "da": "Hvilke betalingsmetoder accepteres her?"
+      "da": "Hvilke betalingsmetoder accepteres her?",
+      "cs": "Jaké platební metody jsou zde přijímány?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -805,7 +819,8 @@
           "fil": "Tinatanggap ang salapi rito",
           "es": "Aquí se acepta el pago en efectivo",
           "zh_Hans": "可用现金",
-          "da": "Her modtages kontanter"
+          "da": "Her modtages kontanter",
+          "cs": "Přijímá se zde hotovost"
         }
       },
       {
@@ -833,7 +848,8 @@
           "fil": "Tinatanggap ang mga tarhetang pambayad dito",
           "es": "Aquí se acepta el pago por tarjeta",
           "zh_Hans": "可用信用卡",
-          "da": "Betalingskort accepteres her"
+          "da": "Betalingskort accepteres her",
+          "cs": "Zde jsou přijímány platební karty"
         }
       }
     ]
@@ -862,7 +878,8 @@
             "nb_NO": "Betaling utføres med et eget program",
             "pt": "O pagamento é feito utilizando uma aplicação dedicada",
             "it": "Pagamento effettuato utilizzando un'app dedicata",
-            "id": "Pembayaran dilakukan dengan aplikasi khusus"
+            "id": "Pembayaran dilakukan dengan aplikasi khusus",
+            "cs": "Platba se provádí pomocí speciální aplikace"
           }
         },
         {
@@ -884,7 +901,8 @@
             "zh_Hans": "使用会员卡支付",
             "da": "Betaling sker med medlemskort",
             "pt": "O pagamento é feito usando um cartão de membro",
-            "id": "Pembayaran dilakukan dengan kartu anggota"
+            "id": "Pembayaran dilakukan dengan kartu anggota",
+            "cs": "Platba se provádí pomocí členské karty"
           }
         }
       ]
@@ -908,7 +926,10 @@
         "fr": "Quels étages sont desservis par cet ascenceur ?",
         "pt": "Para que pisos vai este elevador?",
         "da": "Hvilke niveauer går denne elevator til?",
-        "id": "Pada lantai berapa saja lift ini berjalan?"
+        "id": "Pada lantai berapa saja lift ini berjalan?",
+        "cs": "Do jakých podlaží tento výtah jezdí?",
+        "nb_NO": "Hvilke etasjer går heisen til?",
+        "nl": "Naar welke verdiepingen gaat deze lift?"
       },
       "render": {
         "en": "This elevator goes to floors {level}",
@@ -916,7 +937,10 @@
         "fr": "Cet ascenceur permet d’accéder aux étages {level}",
         "pt": "Este elevador vai para os pisos {level}",
         "da": "Denne elevator går til etager {level}",
-        "id": "Lift ini berjalan ke lantai {level}"
+        "id": "Lift ini berjalan ke lantai {level}",
+        "cs": "Tento výtah jede do {level} patra",
+        "nb_NO": "Heisen går til etasje {level}",
+        "nl": "Deze lift gaat naar de verdiepingen {level}"
       },
       "freeform": {
         "key": "level",
@@ -945,7 +969,8 @@
       "fil": "Anong palapag matatagpuan ang tampók?",
       "es": "¿En qué nivel se encuentra esta característica?",
       "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
-      "da": "På hvilket niveau er denne funktion placeret?"
+      "da": "På hvilket niveau er denne funktion placeret?",
+      "cs": "V jaké úrovni se tento prvek nachází?"
     },
     "render": {
       "en": "Located on the {level}th floor",
@@ -968,7 +993,8 @@
       "es": "Localizada en la {level}° planta",
       "da": "Beliggende på {level}. etage",
       "nb_NO": "Ligger i {level} etasje",
-      "id": "Terletak di lantai {level}"
+      "id": "Terletak di lantai {level}",
+      "cs": "Nachází se v {level}. patře"
     },
     "freeform": {
       "key": "level",
@@ -997,7 +1023,8 @@
           "sl": "Nahaja se pod zemljo",
           "fil": "Nasa ilalim ng lupa",
           "es": "Localizado bajo tierra",
-          "da": "Placeret under jorden"
+          "da": "Placeret under jorden",
+          "cs": "Nachází se v podzemí"
         },
         "hideInAnswer": true
       },
@@ -1024,7 +1051,8 @@
           "sl": "Nahaja se v pritličju",
           "fil": "Nasa unang palapag",
           "es": "Localizado en la planta baja",
-          "da": "Beliggende i stueetagen"
+          "da": "Beliggende i stueetagen",
+          "cs": "Nachází se v přízemí"
         }
       },
       {
@@ -1051,7 +1079,8 @@
           "sl": "Nahaja se v pritličju",
           "fil": "Nasa unang palapag",
           "es": "Localizado en la planta baja",
-          "da": "Beliggende i stueetagen"
+          "da": "Beliggende i stueetagen",
+          "cs": "Nachází se v přízemí"
         }
       },
       {
@@ -1077,7 +1106,8 @@
           "sl": "Nahaja se v prvem nadstropju",
           "fil": "Nasa unang palapag",
           "es": "Localizado en la primera planta",
-          "da": "Beliggende på første sal"
+          "da": "Beliggende på første sal",
+          "cs": "Nachází se v prvním patře"
         }
       },
       {
@@ -1096,7 +1126,8 @@
           "es": "Localizada en el primer sótano",
           "nb_NO": "Er å finne på første kjellernivå",
           "pt": "Localizado no primeiro nível da cave",
-          "da": "Beliggende på første kælderetage"
+          "da": "Beliggende på første kælderetage",
+          "cs": "Nachází se v prvním suterénu"
         }
       }
     ]
@@ -1110,7 +1141,8 @@
       "pt": "É permitido fumar em {title()}?",
       "nb_NO": "Tillates røyking på {title()}?",
       "da": "Er det tilladt at ryge på {title()}?",
-      "id": "Apa diizinkan untuk merokok di {title()}?"
+      "id": "Apa diizinkan untuk merokok di {title()}?",
+      "nl": "Is roken toegestaan bij {title()}?"
     },
     "#condition": "Based on https://en.wikipedia.org/wiki/List_of_smoking_bans",
     "condition": "_country!~al|be",
@@ -1129,7 +1161,8 @@
           "pt": "<b>É permitido</b> fumar",
           "nb_NO": "Røyking er <b>tillatt</b>",
           "da": "Rygning er <b>tilladt</b>",
-          "id": "Merokok <b>diizinkan</b>"
+          "id": "Merokok <b>diizinkan</b>",
+          "nl": "Roken is <b>toegestaan</b>"
         }
       },
       {
@@ -1146,7 +1179,8 @@
           "pt": "<b>Não é permitido</b> fumar",
           "nb_NO": "Røyking <b>forbudt</b>",
           "da": "Rygning er <b>ikke tilladt</b>",
-          "id": "Merokok <b>dilarang</b>"
+          "id": "Merokok <b>dilarang</b>",
+          "nl": "Roken is <b>niet toegestaan</b>"
         }
       },
       {
@@ -1159,7 +1193,8 @@
           "pt": "É permitido fumar <b>no exterior</b>.",
           "nb_NO": "Røyking <b>tillates på utsiden</b>.",
           "da": "Rygning er <b>tilladt udenfor</b>.",
-          "id": "Merokok <b>diizinkan di luar ruangan</b>."
+          "id": "Merokok <b>diizinkan di luar ruangan</b>.",
+          "nl": "Roken is <b>buiten toegestaan</b>."
         }
       }
     ]
@@ -1170,7 +1205,10 @@
       "en": "Does this place have an audio induction loop for people with reduced hearing?",
       "de": "Hat dieser Ort eine induktive Höranlage für Hörgeschädigte?",
       "fr": "Ce lieu dispose-t’il d’une boucle auditive pour les personnes malentendantes ?",
-      "da": "Har dette sted en lydinduktionssløjfe til personer med nedsat hørelse?"
+      "da": "Har dette sted en lydinduktionssløjfe til personer med nedsat hørelse?",
+      "cs": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?",
+      "nb_NO": "Har stedet en teleslynge for folk med redusert hørsel?",
+      "nl": "Heeft deze plaats een ringleiding voor slechthorenden?"
     },
     "mappings": [
       {
@@ -1179,7 +1217,10 @@
           "en": "This place has an audio induction loop",
           "de": "Dieser Ort hat eine induktive Höranlage",
           "fr": "Ce lieu dispose d’une boucle auditive",
-          "da": "Dette sted har en lydinduktionssløjfe"
+          "da": "Dette sted har en lydinduktionssløjfe",
+          "cs": "Toto místo má zvukovou indukční smyčku",
+          "nb_NO": "Dette stedet har en teleslynge",
+          "nl": "Deze plaats heeft een ringleiding"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop.svg",
@@ -1192,7 +1233,10 @@
           "en": "This place <b>does not</b> have an audio induction loop",
           "de": "Dieser Ort hat <b>keine</b> induktive Höranlage",
           "fr": "Ce lieu <b>ne dispose pas</b> de boucle auditive",
-          "da": "Dette sted <b>har ikke</b> en lydinduktionssløjfe"
+          "da": "Dette sted <b>har ikke</b> en lydinduktionssløjfe",
+          "cs": "Toto místo <b>nemá indukční zvukovou smyčku</b>",
+          "nb_NO": "Dette stedet <b>har ikke</b> en teleslynge",
+          "nl": "Deze plaats heeft <b>geen</b> ringleiding"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop_missing.svg",
@@ -1208,7 +1252,9 @@
       "de": "Bietet dieser Ort Internetzugang?",
       "pt": "Este lugar tem acesso à Internet?",
       "da": "Tilbyder dette sted internetadgang?",
-      "id": "Apa tempat ini menyediakan jaringan internet?"
+      "id": "Apa tempat ini menyediakan jaringan internet?",
+      "cs": "Nabízí toto místo připojení k internetu?",
+      "nb_NO": "Tilbyr dette stedet tilgang til Internett?"
     },
     "mappings": [
       {
@@ -1220,7 +1266,9 @@
           "fr": "Ce lieu propose un accès internet sans fil",
           "pt": "Este lugar tem acesso à Internet sem fios",
           "da": "Dette sted tilbyder trådløs internetadgang",
-          "id": "Tempat ini menyediakan jaringan internet nirkabel"
+          "id": "Tempat ini menyediakan jaringan internet nirkabel",
+          "cs": "Toto místo nabízí bezdrátové připojení k internetu",
+          "nb_NO": "Dette stedet tilbyr trådløs tilgang til Internett"
         }
       },
       {
@@ -1232,7 +1280,9 @@
           "fr": "Ce lieu <b>ne propose pas</b> d'accès internet",
           "pt": "Este lugar <b>não</b> tem acesso à Internet",
           "da": "Dette sted <b>tilbyder ikke</b> internetadgang",
-          "id": "Tempat ini <b>tidak</b> menyediakan jaringan internet"
+          "id": "Tempat ini <b>tidak</b> menyediakan jaringan internet",
+          "cs": "Toto místo <b>neposkytuje</b> připojení k internetu",
+          "nb_NO": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett"
         }
       },
       {
@@ -1244,7 +1294,9 @@
           "fr": "Ce lieu propose un accès internet",
           "pt": "Este lugar tem acesso à Internet",
           "da": "Dette sted tilbyder internetadgang",
-          "id": "Tempat ini menyediakan jaringan internet"
+          "id": "Tempat ini menyediakan jaringan internet",
+          "cs": "Toto místo nabízí přístup k internetu",
+          "nb_NO": "Dette stedet tilbyr tilgang til Internett"
         },
         "hideInAnswer": true
       },
@@ -1256,7 +1308,9 @@
           "de": "Dieser Ort bietet Internetzugang über ein Terminal oder einen Computer",
           "pt": "Este lugar tem acesso à Internet através de um terminal ou computador",
           "da": "Dette sted tilbyder internetadgang via en terminal eller computer",
-          "id": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer"
+          "id": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer",
+          "cs": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače",
+          "nb_NO": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin"
         }
       },
       {
@@ -1267,7 +1321,9 @@
           "de": "Dieser Ort bietet kabelgebundenen Internetzugang",
           "pt": "Este lugar tem acesso à Internet com fios/por cabo",
           "da": "Dette sted tilbyder internetadgang via kabel",
-          "id": "Tempat ini menyediakan jaringan internet kabel"
+          "id": "Tempat ini menyediakan jaringan internet kabel",
+          "cs": "Toto místo nabízí kabelové připojení k internetu",
+          "nb_NO": "Dette stedet tilbyr trådbunden tilgang til Internett"
         }
       }
     ]
@@ -1284,7 +1340,10 @@
       "nl": "Zijn er kosten voor internettoegang?",
       "de": "Wird für den Internetzugang eine Gebühr erhoben?",
       "pt": "Tem de se pagar para utilizar o acesso à Internet?",
-      "da": "Er der et gebyr for internetadgang?"
+      "da": "Er der et gebyr for internetadgang?",
+      "cs": "Je přístup na internet zpoplatněn?",
+      "id": "Apakah ada biaya untuk akses internet?",
+      "nb_NO": "Er det et gebyr for bruk av Internett?"
     },
     "mappings": [
       {
@@ -1294,7 +1353,10 @@
           "nl": "Er zijn kosten voor internettoegang op deze plaats",
           "de": "Der Internetzugang ist an diesem Ort gebührenpflichtig",
           "pt": "Tem de se pagar para utilizar o acesso à Internet neste local",
-          "da": "Der er et gebyr for internetadgang på dette sted"
+          "da": "Der er et gebyr for internetadgang på dette sted",
+          "cs": "Přístup na internet je zde zpoplatněn",
+          "id": "Ada biaya untuk akses internet di tempat ini",
+          "nb_NO": "Det er et gebyr for tilgang til Internett på dette stedet"
         }
       },
       {
@@ -1305,7 +1367,9 @@
           "de": "Der Internetzugang ist an diesem Ort kostenlos",
           "pt": "O acesso à Internet é gratuito neste local",
           "da": "Internetadgang er gratis på dette sted",
-          "id": "Jaringan internet tersedia gratis di tempat ini"
+          "id": "Jaringan internet tersedia gratis di tempat ini",
+          "cs": "Přístup k internetu je zde zdarma",
+          "nb_NO": "Tilgang til Internett er gratis på dette stedet"
         }
       },
       {
@@ -1316,7 +1380,9 @@
           "de": "Der Internetzugang ist an diesem Ort kostenlos, aber nur für Kunden",
           "pt": "O acesso à Internet é gratuito neste local, apenas para clientes",
           "da": "Internetadgang er gratis på dette sted, kun for kunder",
-          "id": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan"
+          "id": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan",
+          "cs": "Přístup k internetu je na tomto místě zdarma, pouze pro zákazníky",
+          "nb_NO": "Tilgang til Internett på dette stedet er gratis, men kun for kunder"
         }
       }
     ]
@@ -1329,7 +1395,9 @@
       "de": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?",
       "pt": "Qual é o nome da rede para o acesso sem fios à Internet?",
       "da": "Hvad er netværksnavnet for den trådløse internetadgang?",
-      "id": "Apa nama jaringan internet nirkabelnya?"
+      "id": "Apa nama jaringan internet nirkabelnya?",
+      "cs": "Jaký je název sítě pro bezdrátový přístup k internetu?",
+      "nb_NO": "Hva er nettverksnavnet for det trådløse nettverket?"
     },
     "freeform": {
       "key": "internet_access:ssid",
@@ -1340,7 +1408,9 @@
         "de": "Geben Sie den Netzwerknamen ein",
         "pt": "Introduza o nome da rede",
         "da": "Indtast netværksnavnet",
-        "id": "Masukkan nama jaringan"
+        "id": "Masukkan nama jaringan",
+        "cs": "Zadejte název sítě",
+        "nb_NO": "Skriv inn nettverksnavnet"
       }
     },
     "mappings": [
@@ -1356,7 +1426,9 @@
       "de": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>",
       "pt": "O nome da rede é <b>{internet_access:ssid}</b>",
       "da": "Netværksnavnet er <b>{internet_access:ssid}</b>",
-      "id": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>"
+      "id": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>",
+      "cs": "Název sítě je <b>{internet_access:ssid}</b>",
+      "nb_NO": "Nettverksnavnet er <b>{internet_access:ssid}</b>"
     }
   }
 }

@@ -140,7 +140,7 @@
     },
     {
       "key": "parking_space",
-      "description": "Layer 'Parking Spaces' shows  with a fixed text, namely 'This is a normal parking space' (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key parking_space.",
+      "description": "Layer 'Parking Spaces' shows  with a fixed text, namely 'This is a normal parking space.' (in the MapComplete.osm.be theme 'Parking') Picking this answer will delete the key parking_space.",
       "value": ""
     },
     {

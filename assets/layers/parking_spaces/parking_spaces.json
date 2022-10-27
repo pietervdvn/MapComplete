@@ -2,11 +2,13 @@
   "id": "parking_spaces",
   "name": {
     "en": "Parking Spaces",
-    "de": "Stellplätze"
+    "de": "Stellplätze",
+    "nl": "Parkeerplekken"
   },
   "description": {
     "en": "Layer showing individual parking spaces.",
-    "de": "Ebene mit den einzelnen PKW Stellplätzen."
+    "de": "Ebene mit den einzelnen PKW Stellplätzen.",
+    "nl": "Laag met individuele parkeerplekken."
   },
   "minzoom": 19,
   "source": {
@@ -17,14 +19,16 @@
       "id": "type",
       "question": {
         "en": "What kind of parking space is this?",
-        "de": "Welche Art von Stellplatz ist dies?"
+        "de": "Welche Art von Stellplatz ist dies?",
+        "nl": "Wat voor parkeerplek is dit?"
       },
       "mappings": [
         {
           "if": "parking_space=",
           "then": {
-            "en": "This is a normal parking space",
-            "de": "Dies ist ein normaler Stellplatz"
+            "en": "This is a normal parking space.",
+            "de": "Dies ist ein normaler Stellplatz.",
+            "nl": "Dit is een normale parkeerplek."
           },
           "hideInAnswer": true
         },
@@ -32,98 +36,112 @@
           "if": "parking_space=normal",
           "then": {
             "en": "This is a normal parking space.",
-            "de": "Dies ist ein normaler Stellplatz."
+            "de": "Dies ist ein normaler Stellplatz.",
+            "nl": "Dit is een normale parkeerplek."
           }
         },
         {
           "if": "parking_space=disabled",
           "then": {
             "en": "This is a disabled parking space.",
-            "de": "Dies ist ein Behindertenstellplatz."
+            "de": "Dies ist ein Behindertenstellplatz.",
+            "nl": "Dit is een gehandicaptenparkeerplaats."
           }
         },
         {
           "if": "parking_space=private",
           "then": {
             "en": "This is a private parking space.",
-            "de": "Dies ist ein privater Stellplatz."
+            "de": "Dies ist ein privater Stellplatz.",
+            "nl": "Dit is een privéparkeerplek."
           }
         },
         {
           "if": "parking_space=charging",
           "then": {
             "en": "This is parking space reserved for charging vehicles.",
-            "de": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für das Laden von Fahrzeugen reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor het opladen van voertuigen."
           }
         },
         {
           "if": "parking_space=delivery",
           "then": {
             "en": "This is parking space reserved for deliveries.",
-            "de": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für Lieferfahrzeuge reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor leveringen."
           }
         },
         {
           "if": "parking_space=hgv",
           "then": {
             "en": "This is parking space reserved for heavy goods vehicles.",
-            "de": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor vrachtwagens."
           }
         },
         {
           "if": "parking_space=caravan",
           "then": {
             "en": "This is parking space reserved for caravans or RVs.",
-            "de": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert."
+            "de": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert.",
+            "nl": "Deze parkeerplek is gereserveerd voor caravans of campers."
           }
         },
         {
           "if": "parking_space=bus",
           "then": {
             "en": "This is parking space reserved for buses.",
-            "de": "Dies ist ein Stellplatz, der für Busse reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für Busse reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor bussen."
           }
         },
         {
           "if": "parking_space=motorcycle",
           "then": {
             "en": "This is parking space reserved for motorcycles.",
-            "de": "Dies ist ein Stellplatz, der für Motorräder reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für Motorräder reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor motoren."
           }
         },
         {
           "if": "parking_space=parent",
           "then": {
             "en": "This is a parking space reserved for parents with children.",
-            "de": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für Eltern mit Kindern reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor ouders met kinderen."
           }
         },
         {
           "if": "parking_space=staff",
           "then": {
             "en": "This is a parking space reserved for staff.",
-            "de": "Dies ist ein Stellplatz, der für das Personal reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für das Personal reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor personeel."
           }
         },
         {
           "if": "parking_space=taxi",
           "then": {
             "en": "This is a parking space reserved for taxis.",
-            "de": "Dies ist ein Stellplatz, der für Taxis reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für Taxis reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor taxis."
           }
         },
         {
           "if": "parking_space=trailer",
           "then": {
             "en": "This is a parking space reserved for vehicles towing a trailer.",
-            "de": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger."
           }
         },
         {
           "if": "parking_space=car_sharing",
           "then": {
             "en": "This is a parking space reserved for car sharing.",
-            "de": "Dies ist ein Stellplatz, der für Carsharing reserviert ist."
+            "de": "Dies ist ein Stellplatz, der für Carsharing reserviert ist.",
+            "nl": "Deze parkeerplek is gereserveerd voor autodelen."
           }
         }
       ]
@@ -132,14 +150,16 @@
       "id": "capacity",
       "render": {
         "en": "This parking spaces has {capacity} spaces.",
-        "de": "Dieser Parkplatz hat {capacity} Stellplätze."
+        "de": "Dieser Parkplatz hat {capacity} Stellplätze.",
+        "nl": "Deze parkeerplek heeft {capacity} plaatsen."
       },
       "mappings": [
         {
           "if": "capacity=1",
           "then": {
             "en": "This parking space has 1 space.",
-            "de": "Dieser Parkplatz hat 1 Stellplatz."
+            "de": "Dieser Parkplatz hat 1 Stellplatz.",
+            "nl": "Deze parkeerplek heeft 1 plaats."
           }
         }
       ]
@@ -148,7 +168,8 @@
   "title": {
     "render": {
       "en": "Parking Space",
-      "de": "Stellplatz"
+      "de": "Stellplatz",
+      "nl": "Parkeerplek"
     }
   },
   "mapRendering": [

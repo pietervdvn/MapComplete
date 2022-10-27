@@ -1,0 +1,132 @@
+{
+  "id": "stairs",
+  "name": {
+    "en": "Stairs",
+    "nl": "Trappen"
+  },
+  "description": {
+    "en": "Layer showing stairs and escalators"
+  },
+  "title": {
+    "render": {
+      "en": "Stairs",
+      "nl": "Trap"
+    },
+    "mappings": [
+      {
+        "if": "conveying=yes",
+        "then": {
+          "en": "Escalator",
+          "nl": "Roltrap"
+        }
+      }
+    ]
+  },
+  "minzoom": 17,
+  "source": {
+    "osmTags": "highway=steps"
+  },
+  "tagRenderings": [
+    {
+      "id": "handrail",
+      "question": {
+        "en": "Does this stair have a handrail?",
+        "nl": "Heeft deze trap een leuning?"
+      },
+      "mappings": [
+        {
+          "if": "handrail=yes",
+          "then": {
+            "en": "These stairs have a handrail",
+            "nl": "Deze trap heeft een leuning"
+          }
+        },
+        {
+          "if": "handrail=no",
+          "then": {
+            "en": "These stairs do <b>not</b> have a handrail",
+            "nl": "Deze trap heeft <b>geen</b> leuning"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ramp",
+      "question": {
+        "en": "Is there a ramp at these stairs?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "ramp:bicycle=yes",
+          "ifnot": "ramp:bicycle=no",
+          "then": {
+            "en": "There is a ramp for bicycles here"
+          }
+        },
+        {
+          "if": "ramp:wheelchair=yes",
+          "ifnot": "ramp:wheelchair=no",
+          "then": {
+            "en": "There is a ramp for wheelchairs here"
+          }
+        },
+        {
+          "if": "ramp=separate",
+          "then": {
+            "en": "There is ramp for wheelchairs here, but it is shown separately on the map"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "ramp:stroller=yes",
+          "ifnot": "ramp:stroller=no",
+          "then": {
+            "en": "There is a ramp for strollers here"
+          }
+        },
+        {
+          "if": "ramp=no",
+          "ifnot": "ramp=",
+          "then": {
+            "en": "There is no ramp at these stairs"
+          }
+        }
+      ]
+    },
+    {
+      "builtin": "wikidata.tactile_writing-braille",
+      "override": {
+        "question": {
+          "en": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
+        }
+      }
+    },
+    {
+      "id": "conveying",
+      "mappings": [
+        {
+          "if": "conveying=yes",
+          "then": {
+            "en": "This is an escalator",
+            "nl": "Dit is een roltrap"
+          }
+        },
+        {
+          "if": "conveying=no",
+          "then": {
+            "en": "This is not an escalator",
+            "nl": "Dit is geen roltrap"
+          }
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "color": "gray",
+      "width": 10,
+      "dashArray": "2 2"
+    }
+  ]
+}

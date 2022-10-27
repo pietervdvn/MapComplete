@@ -1,130 +1,30 @@
 {
-    "centerMessage": {},
+    "centerMessage": {
+        "loadingData": "Načítání dat…",
+        "ready": "Hotovo!",
+        "retrying": "Načítání dat se nezdařilo. Zkusíme to znovu za {count} sekund…",
+        "zoomIn": "Přiblížení pro zobrazení nebo úpravu dat"
+    },
     "delete": {
-        "explanations": {},
-        "reasons": {}
-    },
-    "favourite": {},
-    "general": {
-        "add": {
-            "import": {}
+        "cancel": "Zrušit",
+        "cannotBeDeleted": "Tuto funkci nelze odstranit",
+        "delete": "Smazat",
+        "explanations": {
+            "hardDelete": "Tato funkce bude v OpenStreetMap odstraněna. Zkušený přispěvatel ji může obnovit.",
+            "retagNoOtherThemes": "Tato funkce bude překlasifikována a skryta z této aplikace",
+            "retagOtherThemes": "Tato funkce bude nově označena a viditelná v {otherThemes}",
+            "selectReason": "Vyberte, proč by tato funkce měla být odstraněna"
         },
-        "apply_button": {},
-        "attribution": {
-            "iconAttribution": {}
-        },
-        "download": {},
-        "histogram": {},
-        "layerSelection": {},
-        "levelSelection": {},
-        "morescreen": {},
-        "opening_hours": {},
-        "pdf": {},
-        "questions": {},
-        "search": {},
-        "sharescreen": {},
-        "weekdays": {
-            "abbreviations": {}
-        },
-        "welcomeExplanation": {},
-        "wikipedia": {
-            "previewbox": {}
+        "isDeleted": "Tato funkce je smazána",
+        "isntAPoint": "Odstranit lze pouze uzly, vybraným prvkem je cesta, oblast nebo relace.",
+        "loading": "Kontrola vlastností, zda lze tuto funkci odstranit.",
+        "loginToDelete": "Chcete-li funkci odstranit, musíte být přihlášeni.",
+        "notEnoughExperience": "Tuto funkci vytvořil někdo jiný.",
+        "onlyEditedByLoggedInUser": "Tuto funkci jste upravovali pouze vy, můžete ji bez obav odstranit.",
+        "partOfOthers": "Tento uzel je součástí nějaké cesty nebo relace a nelze jej přímo smazat.",
+        "readMessages": "Máte nepřečtené zprávy. Před odstraněním funkce si je přečtěte - někdo by mohl mít zpětnou vazbu",
+        "reasons": {
+            "disused": "Tato funkce je nepoužívaná nebo odstraněná"
         }
-    },
-    "image": {
-        "nearbyPictures": {}
-    },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
-        "selectFile": {},
-        "selectTheme": {}
-    },
-    "importInspector": {},
-    "importLayer": {},
-    "index": {},
-    "matrixbot": {
-        "commands": {
-            "dm": {},
-            "documentation": {
-                "file": {},
-                "inputElement": {},
-                "layer": {},
-                "theme": {},
-                "url_parameter": {},
-                "visualisation": {}
-            },
-            "dream": {},
-            "help": {},
-            "info": {},
-            "language": {},
-            "role": {},
-            "scheme": {},
-            "search": {},
-            "shutdown": {},
-            "tags": {},
-            "welcome": {},
-            "wiki": {}
-        }
-    },
-    "move": {
-        "inviteToMove": {},
-        "reasons": {}
-    },
-    "multi_apply": {},
-    "notes": {},
-    "privacy": {},
-    "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {},
-            "benefits": {},
-            "license": {},
-            "vandalism": {}
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
-        "indexPage": {},
-        "services": {}
-    },
-    "reviews": {},
-    "split": {},
-    "translations": {},
-    "validation": {
-        "color": {},
-        "date": {},
-        "direction": {},
-        "distance": {},
-        "email": {},
-        "float": {},
-        "int": {},
-        "nat": {},
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
-        "url": {},
-        "wikidata": {}
     }
 }

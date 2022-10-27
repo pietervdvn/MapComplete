@@ -262,10 +262,8 @@ function main(args: string[]) {
     }
 
     let contents = ScriptUtils.readDirRecSync("./assets")
-        .filter(p => !p.startsWith("./assets/templates/"))
-        .filter(
-        (entry) => entry.indexOf("./assets/generated") != 0
-    )
+        .filter((p) => !p.startsWith("./assets/templates/"))
+        .filter((entry) => entry.indexOf("./assets/generated") != 0)
     let licensePaths = contents.filter((entry) => entry.indexOf("license_info.json") >= 0)
     let licenseInfos = generateLicenseInfos(licensePaths)
 

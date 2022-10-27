@@ -13,8 +13,8 @@
             "hardDelete": "Dit object zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken.",
             "retagNoOtherThemes": "Dit object zal anders aangeduid worden en niet meer getoond worden in deze applicatie",
             "retagOtherThemes": "Dit object zal aangepast worden en zichtbaar zijn in {otherThemes}",
-            "selectReason": "Gelieve aan te duiden waarom dit punt verwijderd moet worden",
-            "softDelete": "Dit punt zal aangepast worden en zal in deze applicatie niet meer getoond worden. <span class=\"subtle\">{reason}</span>"
+            "selectReason": "Gelieve aan te duiden waarom dit object verwijderd moet worden",
+            "softDelete": "Dit object zal aangepast worden en zal in deze applicatie niet meer getoond worden. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Dit object is verwijderd",
         "isntAPoint": "Enkel punten kunnen verwijderd worden. Het geselecteerde object is een lijn, een oppervlakte of een relatie.",
@@ -23,16 +23,16 @@
         "notEnoughExperience": "Dit object is door iemand anders gemaakt.",
         "onlyEditedByLoggedInUser": "Dit object is enkel door jezelf bewerkt, je kan dit veilig verwijderen.",
         "partOfOthers": "Dit punt maakt deel uit van een lijn, oppervlakte of een relatie en kan niet verwijderd worden.",
-        "readMessages": "Je hebt ongelezen berichten. Je moet deze lezen voordat je een punt verwijderd, een andere bijdrager heeft misschien feedback",
+        "readMessages": "Je hebt ongelezen berichten. Je moet deze lezen voordat je een object verwijderd, een andere bijdrager heeft misschien feedback",
         "reasons": {
             "disused": "Het wordt niet meer onderhouden of is verwijderd",
             "duplicate": "Dit object is een duplicaat van een ander object",
             "notFound": "Het kon niet gevonden worden",
-            "test": "Dit punt was een test en was nooit echt aanwezig"
+            "test": "Dit object was een test - het was nooit echt aanwezig"
         },
-        "safeDelete": "Dit punt kan veilig verwijderd worden van de kaart.",
+        "safeDelete": "Dit object kan veilig verwijderd worden van de kaart.",
         "useSomethingElse": "Gebruik een ander OpenStreetMap-editeerprogramma om dit object te verwijderen",
-        "whyDelete": "Waarom moet dit punt van de kaart verwijderd worden?"
+        "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?"
     },
     "favourite": {
         "loginNeeded": "<h3>Log in</h3>Je moet je aanmelden met OpenStreetMap om een persoonlijk thema te gebruiken",
@@ -43,9 +43,10 @@
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
         "callToAction": "Probeer het uit op mapcomplete.osm.be",
         "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
+        "description": "Een horizontale A4 flyer om MapComplete te promoten",
         "editing": {
             "ex": "Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond:",
-            "intro": "De gebruiker krijgt eerst een kaart met interesspunten te zien. Klik je op een punt, dan wordt de interface met informatie geopend.",
+            "intro": "De gebruiker krijgt eerst een kaart met interessepunten te zien. Klik je op een punt, dan wordt de interface met informatie over het interessepunt geopend.",
             "title": "Hoe ziet de interface eruit?"
         },
         "examples": "Online zijn verschillende kaarten met diverse thema's beschikbaar, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,...\nEnkele zijn hier afgeprint.\n\nOntdek ze allemaal op mapcomplete.osm.be",
@@ -86,7 +87,7 @@
             "addNew": "Voeg {category} toe",
             "addNewMapLabel": "Klik hier om een item toe te voegen",
             "confirmButton": "Voeg een {category} toe<br><div class=\"alert\">Je toevoeging is voor iedereen zichtbaar</div>",
-            "confirmIntro": "<h3>Voeg een {title} toe?</h3>Het punt dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
+            "confirmIntro": "<h3>Voeg een {title} toe?</h3>Het object dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
             "disableFilters": "Zet alle filters af",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
             "hasBeenImported": "Dit object is reeds geïmporteerd",
@@ -103,13 +104,13 @@
             "intro": "Kies hieronder welk punt je wilt toevoegen<br/>",
             "layerNotEnabled": "De laag {layer} is gedeactiveerd. Activeer deze om een object toe te voegen",
             "openLayerControl": "Open de laag-instellingen",
-            "pleaseLogin": "Gelieve je aan te melden om een punt toe te voegen",
+            "pleaseLogin": "Gelieve je aan te melden om een object toe te voegen",
             "presetInfo": "Het nieuwe object krijgt de attributen {tags}",
-            "stillLoading": "De data worden nog geladen. Nog even geduld en dan kan je een punt toevoegen.",
-            "title": "Nieuw punt toevoegen?",
+            "stillLoading": "De data worden nog geladen. Nog even geduld en dan kan je een object toevoegen.",
+            "title": "Nieuw object toevoegen?",
             "warnVisibleForEveryone": "Je toevoeging is voor iedereen zichtbaar",
-            "wrongType": "Dit element is geen punt of lijn en kan daarom niet geïmporteerd worden",
-            "zoomInFurther": "Gelieve verder in te zoomen om een punt toe te voegen.",
+            "wrongType": "Dit object is geen punt of lijn en kan daarom niet geïmporteerd worden",
+            "zoomInFurther": "Gelieve verder in te zoomen om een object toe te voegen.",
             "zoomInMore": "Zoom meer in om dit object te importeren"
         },
         "apply_button": {
@@ -169,7 +170,7 @@
         "error": "Er ging iets mis",
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
-        "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande punten te beantwoorden vooraleer zelf punten toe te voegen.",
+        "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande objecten te beantwoorden vooraleer zelf objecten toe te voegen.",
         "getStartedLogin": "Login met OpenStreetMap om te beginnen",
         "getStartedNewAccount": " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a>",
         "goToInbox": "Ga naar de berichten",
@@ -239,7 +240,7 @@
             "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Wat is de website van {category}?"
         },
-        "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe punten toe te voegen.",
+        "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe objecten toe te voegen.",
         "removeLocationHistory": "Verwijder de geschiedenis aan locaties",
         "returnToTheMap": "Ga terug naar de kaart",
         "save": "Opslaan",
@@ -481,7 +482,7 @@
         "alreadyMapped": "Er staat hier reeds {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
         "description": "Deze laag toont kaart-nota's die wijzen op een {title}",
         "importButton": "import_button({layerId}, _tags, Ik heb hier een {title} gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)",
-        "importHandled": "<div class='thanks'>Dit punt is afgehandeld. Bedankt om mee te helpen!</div>",
+        "importHandled": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
         "layerName": "Hier is misschien een {title}",
         "nearbyImagesIntro": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
         "notFound": "Ik kon hier g{title} vinden - verwijder deze van de kaart",
@@ -668,15 +669,15 @@
         "inviteToMove": {
             "generic": "Verplaats dit punt",
             "reasonInaccurate": "Verbeter de precieze locatie van dit punt",
-            "reasonRelocation": "Verplaats dit punt naar een andere locatie omdat het verhuisd is"
+            "reasonRelocation": "Verplaats dit object naar een andere locatie omdat het verhuisd is"
         },
         "inviteToMoveAgain": "Verplaats dit punt opnieuw",
         "isRelation": "Dit object is een relatie en kan niet verplaatst worden",
         "isWay": "Dit object is een lijn of een oppervlakte. Gebruik een ander OpenStreetMap-bewerkprogramma op het te verplaatsen.",
         "loginToMove": "Je moet aangemeld zijn om een punt te verplaatsen",
         "moveTitle": "Verplaats dit punt",
-        "partOfAWay": "Dit punt is deel van een lijn of een oppervlakte. Gebruik een ander OpenStreetMap-bewerkprogramma om het te verplaatsen",
-        "partOfRelation": "Dit punt maakt deel uit van een relatie. Gebruik een ander OpenStreetMap-bewerkprogramma om het te verplaatsen",
+        "partOfAWay": "Dit object is deel van een lijn of een oppervlakte. Gebruik een ander OpenStreetMap-bewerkprogramma om het te verplaatsen",
+        "partOfRelation": "Dit object maakt deel uit van een relatie. Gebruik een ander OpenStreetMap-bewerkprogramma om het te verplaatsen",
         "pointIsMoved": "Dit punt is verplaatst",
         "reasons": {
             "reasonInaccurate": "De locatie van dit object is niet accuraat en moet een paar meter verschoven worden",

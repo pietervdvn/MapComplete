@@ -7,6 +7,56 @@
         "description": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
         "title": "Freie Kunstkarte"
     },
+    "bag": {
+        "description": "Dieses Thema hilft beim Importieren von BAG-Daten",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dieses Gebäude hat keinen Verweis im BAG"
+                            }
+                        },
+                        "render": "Die Referenz in BAG ist <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "Gebäude aus dem BAG-Register",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "Der Bau wurde in <b>{_bag_obj:start_date}</b> begonnen"
+                            }
+                        },
+                        "render": "Dieses Gebäude wurde gebaut in <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Der Gebäudetyp ist ein <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "Der Gebäudetyp ist ein <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Richtige Werte noch nicht berechnet. Aktualisieren Sie diese Seite"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "Die Referenz in BAG ist <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            }
+        },
+        "shortDescription": "BAG-Import-Hilfswerkzeug",
+        "title": "BAG-Importhilfe"
+    },
     "benches": {
         "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Alleinstehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Konto können Sie neue Bänke eintragen oder Details existierender Bänke bearbeiten.",
         "shortDescription": "Eine Karte aller Sitzbänke",
@@ -414,11 +464,20 @@
                         "0": {
                             "then": "Diese Straße ist eine Fahrradstraße (mit einer Geschwindigkeitsbegrenzung von 30 km/h)"
                         },
+                        "1": {
+                            "then": "Diese Straße ist eine Fahrradstraße"
+                        },
+                        "2": {
+                            "then": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)"
+                        },
                         "3": {
                             "then": "Diese Straße ist eine Fahrradstraße"
                         },
                         "4": {
                             "then": "Diese Straße wird bald eine Fahrradstraße sein"
+                        },
+                        "5": {
+                            "then": "Diese Straße wird bald zu einer Fahrradstraße"
                         },
                         "6": {
                             "then": "Diese Straße ist keine Fahrradstraße"
@@ -436,8 +495,15 @@
                         },
                         "2": {
                             "then": "Motorräder frei"
+                        },
+                        "3": {
+                            "then": "Autos erlaubt"
+                        },
+                        "4": {
+                            "then": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder."
                         }
-                    }
+                    },
+                    "question": "Welches Schild hat diese Fahrradstraße?"
                 },
                 "2": {
                     "question": "Wann wird diese Straße eine Fahrradstraße?",
@@ -671,6 +737,101 @@
         "description": "Eine Karte mit Bordsteinen und Überwegen.",
         "title": "Bordsteine und Überwege"
     },
+    "mapcomplete-changes": {
+        "description": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
+        "layers": {
+            "0": {
+                "description": "Zeigt alle MapComplete-Änderungen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themename enthält {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt vom Mitwirkenden {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Nicht</b> von Mitwirkendem {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt vor {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt nach {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Benutzersprache (ISO-Code) {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt mit host {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Zentrum der Änderungssätze",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Welcher Mitwirkende hat diese Änderung vorgenommen?",
+                        "render": "Änderung vorgenommen von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "Über welchen Host (Webseite) wurde diese Änderung vorgenommen?",
+                        "render": "Geändert über <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "In welchem Gebietsschema (Sprache) wurde diese Änderung vorgenommen?",
+                        "render": "Benutzergebietsschema ist {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Welches Thema wurde für diese Änderung verwendet?",
+                        "render": "Geändert mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Änderungssatz für {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Weitere Statistiken finden Sie unter <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Zeigt Änderungen an, die von MapComplete vorgenommen wurden",
+        "title": "Mit MapComplete vorgenommene Änderungen"
+    },
     "maproulette": {
         "description": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können.",
         "title": "MapRoulette-Aufgaben"
@@ -773,6 +934,11 @@
     "openwindpowermap": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten von Windkraftanlagen.",
         "title": "Freie Windenergie-Karte"
+    },
+    "osm_community_index": {
+        "description": "Eine Liste von Ressourcen für Nutzer von OpenStreetMap. 'Ressourcen' können Links zu Foren, Treffen, Slack-Gruppen, IRC-Kanälen, Mailinglisten und so weiter sein. Alles, was Mapper, insbesondere Anfänger, interessant oder hilfreich finden könnten.",
+        "shortDescription": "Ein Index von Community-Ressourcen für OpenStreetMap.",
+        "title": "OSM-Community-Index"
     },
     "parkings": {
         "description": "Eine Karte für verschiedene Parkplätze",

@@ -76,7 +76,7 @@ The question is  What kind of parking space is this?
 
 
 
-  - This is a normal parking space  corresponds with  ``
+  - This is a normal parking space.  corresponds with  ``
   - This option cannot be chosen as answer
   - This is a normal parking space.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dnormal' target='_blank'>normal</a>`
   - This is a disabled parking space.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Ddisabled' target='_blank'>disabled</a>`

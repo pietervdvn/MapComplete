@@ -13,7 +13,7 @@ export default class LanguagePicker extends Toggle {
         console.log("Constructing a language pîcker for languages", languages)
         if (languages === undefined || languages.length <= 1) {
             super(undefined, undefined, undefined)
-        }else {
+        } else {
             const normalPicker = LanguagePicker.dropdownFor(languages, label)
             const fullPicker = new Lazy(() => LanguagePicker.dropdownFor(allLanguages, label))
             super(fullPicker, normalPicker, Locale.showLinkToWeblate)

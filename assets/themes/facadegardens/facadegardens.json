@@ -396,7 +396,8 @@
                 "de": "Es gibt Sträucher",
                 "hu": "Van benne cserje",
                 "es": "Hay arbustos",
-                "da": "Der er buske"
+                "da": "Der er buske",
+                "ca": "Hi ha arbustos"
               }
             },
             {
@@ -428,7 +429,8 @@
             "hu": "További részletek: {description}",
             "es": "Más detalles: {description}",
             "nb_NO": "Flere detaljer: {description}",
-            "da": "Flere detaljer: {description}"
+            "da": "Flere detaljer: {description}",
+            "ca": "Més detalls: {description}"
           },
           "question": {
             "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",

@@ -1,0 +1,91 @@
+{
+  "id": "blind_osm",
+  "title": {
+    "en": "OSM for the blind"
+  },
+  "description": {
+    "en": "Help to map features relevant for the blind"
+  },
+  "icon": "./assets/themes/blind_osm/Blindicon.svg",
+  "startLat": 52.99238,
+  "startLon": 6.570614,
+  "startZoom": 20,
+  "defaultBackgroundId": "CartoDB.Positron",
+  "layers": [
+    {
+      "builtin": "cycleways_and_roads",
+      "override": {
+        "mapRendering": null,
+        "title": null
+      }
+    },
+    {
+      "builtin": "crossings",
+      "override": {
+        "mapRendering": [
+          {
+            "iconBadges": [
+              {
+                "if": "tactile_paving=yes",
+                "then": "circle:green"
+              },
+              {
+                "if": "tactile_paving=no",
+                "then": "circle:red"
+              }
+            ]
+          }
+        ]
+      },
+      "hideTagRenderingsWithLabels": [
+        "crossing-bicycle-allowed"
+      ]
+    },
+    {
+      "builtin": "kerbs",
+      "override": {
+        "minzoom": 19,
+        "mapRendering": [
+          {
+            "iconBadges": [
+              {
+                "if": "tactile_paving=yes",
+                "then": "circle:green"
+              },
+              {
+                "if": "tactile_paving=no",
+                "then": "circle:red"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "transit_stops",
+      "override": {
+        "mapRendering": [
+          {
+            "iconBadges": [
+              {
+                "if": "tactile_paving=yes",
+                "then": "circle:green"
+              },
+              {
+                "if": "tactile_paving=no",
+                "then": "circle:red"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "elevator",
+      "override": {
+        "minzoom": 17
+      }
+    },
+    "stairs"
+  ]
+}

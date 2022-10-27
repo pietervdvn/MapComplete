@@ -397,7 +397,8 @@
           {
             "if": "bicycle_road=yes",
             "then": {
-              "en": "This street is a bicycle road"
+              "en": "This street is a bicycle road",
+              "de": "Diese Straße ist eine Fahrradstraße"
             },
             "hideInAnswer": true
           },
@@ -413,7 +414,8 @@
               ]
             },
             "then": {
-              "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)"
+              "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)",
+              "de": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -474,7 +476,8 @@
               ]
             },
             "then": {
-              "en": "This street will become a bicycle road soon"
+              "en": "This street will become a bicycle road soon",
+              "de": "Diese Straße wird bald zu einer Fahrradstraße"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -512,7 +515,8 @@
           ]
         },
         "question": {
-          "en": "What sign does this bicycle road have?"
+          "en": "What sign does this bicycle road have?",
+          "de": "Welches Schild hat diese Fahrradstraße?"
         },
         "mappings": [
           {
@@ -569,7 +573,8 @@
           {
             "if": "traffic_sign=DE:244.1,1024-10",
             "then": {
-              "en": "Cars allowed"
+              "en": "Cars allowed",
+              "de": "Autos erlaubt"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
@@ -585,7 +590,8 @@
           {
             "if": "traffic_sign=DE:244.1",
             "then": {
-              "en": "There are no supplementary signs at this bicycle road."
+              "en": "There are no supplementary signs at this bicycle road.",
+              "de": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder."
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244.svg",

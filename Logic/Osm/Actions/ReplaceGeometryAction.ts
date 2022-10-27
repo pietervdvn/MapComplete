@@ -13,7 +13,7 @@ import { Utils } from "../../../Utils"
 import { OsmConnection } from "../OsmConnection"
 import { Feature } from "@turf/turf"
 import FeaturePipeline from "../../FeatureSource/FeaturePipeline"
-import {Geometry, LineString, Point, Polygon} from "geojson";
+import { Geometry, LineString, Point, Polygon } from "geojson"
 
 export default class ReplaceGeometryAction extends OsmChangeAction {
     /**
@@ -85,7 +85,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     public async getPreview(): Promise<FeatureSource> {
         const { closestIds, allNodesById, detachedNodes, reprojectedNodes } =
             await this.GetClosestIds()
-        const preview: Feature<Geometry> [] = closestIds.map((newId, i) => {
+        const preview: Feature<Geometry>[] = closestIds.map((newId, i) => {
             if (this.identicalTo[i] !== undefined) {
                 return undefined
             }
@@ -390,7 +390,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                 const node = allNodesById.get(id)
 
                 // Project the node onto the target way to calculate the new coordinates
-                const way = <Feature<LineString>> {
+                const way = <Feature<LineString>>{
                     type: "Feature",
                     properties: {},
                     geometry: {

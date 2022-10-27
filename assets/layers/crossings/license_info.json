@@ -1,5 +1,15 @@
 [
   {
+    "path": "180px-Trairvoja_mapeto.jpg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Martin Constantino–Bodin"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Trairvoja_mapeto.jpg"
+    ]
+  },
+  {
     "path": "Belgian_road_sign_B22.svg",
     "license": "CC0",
     "authors": [
@@ -17,6 +27,16 @@
     ],
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Belgian_road_sign_B23.svg"
+    ]
+  },
+  {
+    "path": "Vibrating_button_illustration.jpg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Vibrating_button_illustration.jpg"
     ]
   },
   {

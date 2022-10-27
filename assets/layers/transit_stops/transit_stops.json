@@ -30,7 +30,8 @@
         "then": {
           "en": "Stop {name}",
           "de": "Haltestelle {name}",
-          "da": "Stop {name}"
+          "da": "Stop {name}",
+          "nl": "Halte {name}"
         }
       }
     ]
@@ -94,8 +95,7 @@
         "en": "What is the name of this stop?",
         "de": "Wie lautet der Name der Haltestelle?",
         "da": "Hvad er navnet på dette stop?"
-      },
-      "placeholder": "Name of the stop"
+      }
     },
     "images",
     {
@@ -140,7 +140,8 @@
           "then": {
             "en": "This stop has a bench",
             "de": "Die Haltestelle hat eine Bank",
-            "da": "Dette stop har en bænk"
+            "da": "Dette stop har en bænk",
+            "nl": "Deze halte heeft een zitbank"
           }
         },
         {
@@ -148,14 +149,16 @@
           "then": {
             "en": "This stop does not have a bench",
             "de": "Die Haltestelle hat keine Bank",
-            "da": "Dette stoppested har ingen bænk"
+            "da": "Dette stoppested har ingen bænk",
+            "nl": "Deze halte heeft geen zitbank"
           }
         },
         {
           "if": "bench=separate",
           "then": {
             "en": "This stop has a bench, that's separately mapped",
-            "de": "Die Haltestelle hat eine Bank, die separat kartiert ist"
+            "de": "Die Haltestelle hat eine Bank, die separat kartiert ist",
+            "nl": "Deze halte heeft een zitbank, die los aangegeven is op de kaart"
           },
           "hideInAnswer": true
         }
@@ -163,7 +166,8 @@
       "question": {
         "en": "Does this stop have a bench?",
         "de": "Gibt es an der Haltestelle eine Sitzbank?",
-        "da": "Har dette stop en bænk?"
+        "da": "Har dette stop en bænk?",
+        "nl": "Heeft deze halte een zitbank?"
       }
     },
     {
@@ -174,7 +178,8 @@
           "then": {
             "en": "This stop has a bin",
             "de": "Die Haltestelle hat einen Mülleimer",
-            "da": "Dette stop har en skraldespand"
+            "da": "Dette stop har en skraldespand",
+            "nl": "Deze halte heeft een vuilnisbak"
           }
         },
         {
@@ -182,14 +187,16 @@
           "then": {
             "en": "This stop does not have a bin",
             "de": "Die Haltestelle hat keinen Mülleimer",
-            "da": "Dette stoppested har ikke en skraldespand"
+            "da": "Dette stoppested har ikke en skraldespand",
+            "nl": "Deze halte heeft geen vuilnisbak"
           }
         },
         {
           "if": "bin=separate",
           "then": {
             "en": "This stop has a bin, that's separately mapped",
-            "de": "Die Haltestelle hat einen Mülleimer, der separat kartiert ist"
+            "de": "Die Haltestelle hat einen Mülleimer, der separat kartiert ist",
+            "nl": "Deze heeft een vuilnisbak, die los op de kaart staat"
           },
           "hideInAnswer": true
         }
@@ -197,7 +204,8 @@
       "question": {
         "en": "Does this stop have a bin?",
         "de": "Hat die Haltestelle einen Mülleimer?",
-        "da": "Har dette stop en skraldespand?"
+        "da": "Har dette stop en skraldespand?",
+        "nl": "Heeft deze halte een vuilnisbak?"
       }
     },
     "wheelchair-access",
@@ -313,6 +321,56 @@
       "id": "contained_routes"
     }
   ],
-  "filter": [],
+  "filter": [
+    {
+      "id": "shelter",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "shelter=yes",
+              "shelter=separate"
+            ]
+          },
+          "question": {
+            "en": "With a shelter"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bench",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "bench=yes",
+              "bench=separate"
+            ]
+          },
+          "question": {
+            "en": "With a bench"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bin",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "bin=yes",
+              "bin=separate"
+            ]
+          },
+          "question": {
+            "en": "With a bin"
+          }
+        }
+      ]
+    },
+    "tactile_paving"
+  ],
   "allowMove": false
 }

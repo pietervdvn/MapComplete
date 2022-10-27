@@ -975,7 +975,7 @@
                         "then": "Ce magasin n'offre pas de pompe en libre accès"
                     },
                     "2": {
-                        "then": "Il y a une pompe à vélo, c'est indiqué comme un point séparé "
+                        "then": "Il y a une pompe à vélo, c'est indiqué comme un point séparé"
                     }
                 },
                 "question": "Est-ce que ce magasin offre une pompe en accès libre ?"
@@ -2228,7 +2228,7 @@
     },
     "elevator": {
         "description": "Ce calque montre les ascenseurs et demande l'état opérationnel et les dimensions de l'ascenseur. Utile pour les informations sur l'accessibilité en fauteuil roulant",
-        "name": "ascenseur",
+        "name": "Ascenseur",
         "presets": {
             "0": {
                 "title": "un ascenseur"
@@ -2487,6 +2487,29 @@
                 "options": {
                     "0": {
                         "question": "Accepte les cartes de paiement"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Avec revêtement podotactile"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Avec ou sans revêtement podotactile"
+                    },
+                    "1": {
+                        "question": "Avec revêtement podotactile"
+                    },
+                    "2": {
+                        "question": "Sans revêtement podotactile"
+                    },
+                    "3": {
+                        "question": "Sans information sur le revêtement podotactile"
                     }
                 }
             }
@@ -2963,22 +2986,6 @@
                         "question": "Bordure de hauteur inconnue"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Bordures avec ou sans revêtement podotactile"
-                    },
-                    "1": {
-                        "question": "Bordure avec revêtement podotactile"
-                    },
-                    "2": {
-                        "question": "Bordure sans revêtement podotactile"
-                    },
-                    "3": {
-                        "question": "Bordure sans information sur le revêtement podotactile"
-                    }
-                }
             }
         },
         "name": "Bordures",
@@ -3375,14 +3382,10 @@
             }
         },
         "tagRenderings": {
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Ouvert 24h/24 (jours fériés compris)"
-                    }
-                },
-                "question": "Quelles sont les heures d’ouverture de ce bureau de poste ?",
-                "render": "Heures d’ouverture : {opening_hours_table()}"
+            "opening_hours": {
+                "override": {
+                    "question": "Quelles sont les heures d’ouverture de ce bureau de poste ?"
+                }
             }
         },
         "title": {
@@ -4045,13 +4048,10 @@
             }
         },
         "tagRenderings": {
-            "Opening-hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Ouvert 24h/24 et 7j/7"
-                    }
-                },
-                "question": "Quand ces toilettes sont-elles ouvertes ?"
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Quand ces toilettes sont-elles ouvertes ?"
+                }
             },
             "toilet-access": {
                 "mappings": {
@@ -4175,6 +4175,89 @@
         },
         "title": {
             "render": "Toilettes"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "mètre"
+                    },
+                    "1": {
+                        "human": "centimètre"
+                    }
+                }
+            }
+        }
+    },
+    "toilet_at_amenity": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accessible aux fauteuils roulants"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "A une table à langer"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Utilisation gratuite"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accès publique"
+                    },
+                    "3": {
+                        "then": "Accessible, mais vous devez demander la clé"
+                    },
+                    "4": {
+                        "then": "Accès publique"
+                    }
+                },
+                "render": "L'accès est {toilets:access}"
+            },
+            "toilet-charge": {
+                "question": "Quel est le prix d'accès de ces toilettes ?",
+                "render": "Le prix est {toilets:charge}"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Toilettes payantes"
+                    },
+                    "1": {
+                        "then": "Toilettes gratuites"
+                    }
+                },
+                "question": "Ces toilettes sont-elles payantes ?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Il y a des toilettes réservées pour les personnes à mobilité réduite"
+                    },
+                    "1": {
+                        "then": "Non accessible aux personnes à mobilité réduite"
+                    }
+                },
+                "question": "Y a-t-il des toilettes réservées aux personnes en fauteuil roulant ?"
+            },
+            "wheelchair-door-width": {
+                "question": "Quelle est la largeur de la porte des toilettes accessibles aux fauteuils roulants ?",
+                "render": "La porte des toilettes accessibles aux fauteuils roulants a une large de {canonical(toilets:door:width)}"
+            }
         },
         "units": {
             "0": {

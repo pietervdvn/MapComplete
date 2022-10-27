@@ -197,7 +197,15 @@
           "fr": "Hauteur de la bordure"
         },
         "type": "pnat"
-      }
+      },
+      "mappings": [
+        {
+          "if": "kerb:height=0",
+          "then": {
+            "en": "This kerb is flush and is lower than 1cm."
+          }
+        }
+      ]
     }
   ],
   "presets": [
@@ -286,46 +294,7 @@
         }
       ]
     },
-    {
-      "id": "tactile-paving",
-      "options": [
-        {
-          "question": {
-            "en": "Kerbs with or without tactile paving",
-            "de": "Bordsteine mit oder ohne taktilem Pflaster",
-            "fr": "Bordures avec ou sans revêtement podotactile",
-            "nl": "Stoepranden met of zonder voelbare bestrating"
-          }
-        },
-        {
-          "osmTags": "tactile_paving=yes",
-          "question": {
-            "en": "Kerb with tactile paving",
-            "de": "Bordstein mit taktilem Pflaster",
-            "fr": "Bordure avec revêtement podotactile",
-            "nl": "Stoeprand met voelbare bestrating"
-          }
-        },
-        {
-          "osmTags": "tactile_paving=no",
-          "question": {
-            "en": "Kerb without tactile paving",
-            "de": "Bordstein ohne taktilem Pflaster",
-            "fr": "Bordure sans revêtement podotactile",
-            "nl": "Stoeprand zonder voelbare bestrating"
-          }
-        },
-        {
-          "osmTags": "tactile_paving=",
-          "question": {
-            "en": "Kerb wihout information about tactile paving",
-            "de": "Bordstein ohne Informationen über taktiles Pflaster",
-            "fr": "Bordure sans information sur le revêtement podotactile",
-            "nl": "Stoeprand zonder informatie over voelbare bestrating"
-          }
-        }
-      ]
-    }
+    "tactile_paving_advanced"
   ],
   "units": [
     {

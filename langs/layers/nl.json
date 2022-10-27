@@ -82,6 +82,10 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "Wie heeft dit kunstwerk gemaakt?",
+                "render": "Dit kunstwerk is gemaakt door {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
             "artwork-artist_name": {
                 "question": "Welke kunstenaar creëerde dit kunstwerk?",
                 "render": "Gecreëerd door {artist_name}"
@@ -134,6 +138,10 @@
             "artwork-website": {
                 "question": "Is er een website met meer informatie over dit kunstwerk?",
                 "render": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>"
+            },
+            "artwork_subject": {
+                "question": "Wat beeldt dit kunstwerk af?",
+                "render": "Dit kunstwerk beeldt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)} af"
             }
         },
         "title": {
@@ -261,7 +269,7 @@
                         "then": "Heeft een rugleuning"
                     },
                     "1": {
-                        "then": "Heeft geen rugleuning"
+                        "then": "Heeft <b>geen</b> rugleuning"
                     }
                 },
                 "question": "Heeft deze zitbank een rugleuning?"
@@ -489,7 +497,7 @@
                         "then": "Hier is een machine die fietssleutels verdeelt en terugneemt, eventueel na aanmelden of betaling. De fietsen staan in de buurt geparkeerd"
                     },
                     "5": {
-                        "then": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur "
+                        "then": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur"
                     }
                 },
                 "question": "Wat voor fietsverhuur is dit?"
@@ -1679,20 +1687,20 @@
                         "then": "<b>Tesla Supercharger (destination)</b> levert een stroom van maximaal 350 A"
                     }
                 },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> levert een stroom van maximaal {socket:tesla_destination:current}A"
+                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> levert een stroom van maximaal {socket:tesla_destination:current}A"
             },
             "current-12": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo) levert een stroom van maximaal 16 A"
+                        "then": "<b>Tesla supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) levert een stroom van maximaal 16 A"
                     },
                     "1": {
-                        "then": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo) levert een stroom van maximaal 32 A"
+                        "then": "<b>Tesla Supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) levert een stroom van maximaal 32 A"
                     }
                 },
-                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een stroom van maximaal {socket:tesla_destination:current}A"
+                "question": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een stroom van maximaal {socket:tesla_destination:current}A"
             },
             "current-13": {
                 "mappings": {
@@ -1817,7 +1825,7 @@
                         "then": "Gratis te gebruiken"
                     },
                     "3": {
-                        "then": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/..."
+                        "then": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/…"
                     },
                     "4": {
                         "then": "Betalend"
@@ -1938,7 +1946,7 @@
                         "then": "<b>Tesla Supercharger (destination)</b> levert een vermogen van maximaal 120 kw A"
                     },
                     "1": {
-                        "then": "<b>Tesla Supercharger (destination)</b> levert een vermogen van maximaal 150 kw A"
+                        "then": "<b>Tesla Supercharger (Destination)</b> levert een vermogen van maximaal 150 kw A"
                     },
                     "2": {
                         "then": "<b>Tesla Supercharger (destination)</b> levert een vermogen van maximaal 250 kw A"
@@ -1957,7 +1965,7 @@
                     }
                 },
                 "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:tesla_destination:output}"
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:tesla_destination:output}"
             },
             "power-output-13": {
                 "mappings": {
@@ -2124,19 +2132,19 @@
             "voltage-11": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla Supercharger (destination)</b> heeft een spanning van 480 volt"
+                        "then": "<b>Tesla Supercharger (Destination)</b> heeft een spanning van 480 volt"
                     }
                 },
-                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt"
+                "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> heeft een spanning van {socket:tesla_destination:voltage} volt"
             },
             "voltage-12": {
                 "mappings": {
                     "0": {
-                        "then": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo) heeft een spanning van 230 volt"
+                        "then": "<b>Tesla Supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) heeft een spanning van 230 volt"
                     },
                     "1": {
-                        "then": "<b>Tesla supercharger (destination</b> (Een Type 2 met kabel en Tesla-logo) heeft een spanning van 400 volt"
+                        "then": "<b>Tesla Supercharger (Destination</b> (Een Type 2 met kabel en Tesla-logo) heeft een spanning van 400 volt"
                     }
                 },
                 "question": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Tesla supercharger (destination).</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
@@ -2450,6 +2458,7 @@
         },
         "title": {
             "mappings": {
+                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
@@ -3124,7 +3133,7 @@
                         "then": "Enkel toegankelijk voor klanten"
                     },
                     "3": {
-                        "then": "Niet toegankelijk voor het publiek (bv. enkel voor personeel, de eigenaar, ...)"
+                        "then": "Niet toegankelijk voor het publiek (bv. enkel voor personeel, de eigenaar, …)"
                     },
                     "4": {
                         "then": "Niet toegankelijk, mogelijk enkel voor professionals"
@@ -3152,7 +3161,7 @@
             },
             "defibrillator-defibrillator:location": {
                 "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in de plaatselijke taal)",
-                "render": "<i>Meer informatie over de locatie (lokale taal):</i><br/>{defibrillator:location}"
+                "render": "<i>Meer informatie over de locatie (in de lokale taal):</i><br/>{defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
                 "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Engels)",
@@ -3372,7 +3381,7 @@
     },
     "elevator": {
         "description": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet.",
-        "name": "lift",
+        "name": "Lift",
         "presets": {
             "0": {
                 "title": "een lift"
@@ -3634,6 +3643,39 @@
                 "options": {
                     "0": {
                         "question": "Accepteert betaalkaarten"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "1": {
+                        "question": "Heeft minstens één afbeelding"
+                    },
+                    "2": {
+                        "question": "Heeft waarschijnlijk geen afbeelding"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Met voelbare bestrating"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Met of zonder voelbare bestrating"
+                    },
+                    "1": {
+                        "question": "Met voelbare bestrating"
+                    },
+                    "2": {
+                        "question": "Zonder voelbare bestrating"
+                    },
+                    "3": {
+                        "question": "Geen informatie over voelbare bestrating"
                     }
                 }
             }
@@ -4360,22 +4402,6 @@
                         "question": "Stoeprand met onbekende hoogte"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Stoepranden met of zonder voelbare bestrating"
-                    },
-                    "1": {
-                        "question": "Stoeprand met voelbare bestrating"
-                    },
-                    "2": {
-                        "question": "Stoeprand zonder voelbare bestrating"
-                    },
-                    "3": {
-                        "question": "Stoeprand zonder informatie over voelbare bestrating"
-                    }
-                }
             }
         },
         "name": "Stoepranden",
@@ -4616,9 +4642,13 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "MapRoulette Item: {parentName}"
         }
     },
     "maproulette_challenge": {
+        "description": "Laag met taken van een MapRoulette uitdaging",
         "filter": {
             "0": {
                 "options": {
@@ -4651,6 +4681,39 @@
                     }
                 }
             }
+        },
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Taak is aangemaakt"
+                    },
+                    "1": {
+                        "then": "Taak is opgelost"
+                    },
+                    "2": {
+                        "then": "Taak is vals positief"
+                    },
+                    "3": {
+                        "then": "Taak is overgeslagen"
+                    },
+                    "4": {
+                        "then": "Taak is verwijderd"
+                    },
+                    "5": {
+                        "then": "Taak is al opgelost"
+                    },
+                    "6": {
+                        "then": "Taak is gemarkeerd als te lastig"
+                    },
+                    "7": {
+                        "then": "Taak is uitgeschakeld"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Item uit MapRoulette"
         }
     },
     "maxspeed": {
@@ -5002,6 +5065,8 @@
         }
     },
     "parcel_lockers": {
+        "description": "Laag met pakketautomaten voor het ophalen en verzenden van paketten.",
+        "name": "Pakketautomaten",
         "presets": {
             "0": {
                 "title": "een pakketautomaat"
@@ -5009,12 +5074,70 @@
         },
         "tagRenderings": {
             "brand": {
+                "freeform": {
+                    "placeholder": "Merk"
+                },
                 "mappings": {
+                    "0": {
+                        "then": "Dit is een Amazon Locker"
+                    },
+                    "1": {
+                        "then": "Dit is een DHL Packstation"
+                    },
+                    "2": {
+                        "then": "Dit is een DPD Pickup Station"
+                    },
                     "3": {
                         "then": "Dit is een PostNL pakketautomaat"
                     }
-                }
+                },
+                "question": "Wat is het merk van deze pakketautomaat?",
+                "render": "Dit is een {brand} pakketautomaat"
+            },
+            "mail-in": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan pakketten versturen vanuit deze pakketautomaat"
+                    },
+                    "1": {
+                        "then": "Je kan <b>geen</b> pakketten versturen vanuit deze pakketautomaat"
+                    }
+                },
+                "question": "Kan je pakketten versturen vanuit deze pakketautomaat?"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Beheerder"
+                },
+                "question": "Wat is de beheerder van deze pakketautomaat?",
+                "render": "Deze pakketautomaat wordt beheerd door {operator}"
+            },
+            "pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan pakketten ophalen bij deze pakketautomaat"
+                    },
+                    "1": {
+                        "then": "Je kan <b>geen</b> pakketten ophalen bij deze pakketautomaat"
+                    }
+                },
+                "question": "Kan je pakketten ophalen bij deze pakketautomaat?"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referentie"
+                },
+                "question": "Wat is het referentienummer/identificator van deze pakketautomaat?",
+                "render": "Deze pakketautomaat heeft de referentie {ref}"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand} pakketautomaat"
+                }
+            },
+            "render": "Pakketautomaat"
         }
     },
     "parking": {
@@ -5089,6 +5212,73 @@
         },
         "title": {
             "render": "Parking voor auto's"
+        }
+    },
+    "parking_spaces": {
+        "description": "Laag met individuele parkeerplekken.",
+        "name": "Parkeerplekken",
+        "tagRenderings": {
+            "capacity": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze parkeerplek heeft 1 plaats."
+                    }
+                },
+                "render": "Deze parkeerplek heeft {capacity} plaatsen."
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een normale parkeerplek."
+                    },
+                    "1": {
+                        "then": "Dit is een normale parkeerplek."
+                    },
+                    "2": {
+                        "then": "Dit is een gehandicaptenparkeerplaats."
+                    },
+                    "3": {
+                        "then": "Dit is een privéparkeerplek."
+                    },
+                    "4": {
+                        "then": "Deze parkeerplek is gereserveerd voor het opladen van voertuigen."
+                    },
+                    "5": {
+                        "then": "Deze parkeerplek is gereserveerd voor leveringen."
+                    },
+                    "6": {
+                        "then": "Deze parkeerplek is gereserveerd voor vrachtwagens."
+                    },
+                    "7": {
+                        "then": "Deze parkeerplek is gereserveerd voor caravans of campers."
+                    },
+                    "8": {
+                        "then": "Deze parkeerplek is gereserveerd voor bussen."
+                    },
+                    "9": {
+                        "then": "Deze parkeerplek is gereserveerd voor motoren."
+                    },
+                    "10": {
+                        "then": "Deze parkeerplek is gereserveerd voor ouders met kinderen."
+                    },
+                    "11": {
+                        "then": "Deze parkeerplek is gereserveerd voor personeel."
+                    },
+                    "12": {
+                        "then": "Deze parkeerplek is gereserveerd voor taxis."
+                    },
+                    "13": {
+                        "then": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger."
+                    },
+                    "14": {
+                        "then": "Deze parkeerplek is gereserveerd voor autodelen."
+                    }
+                },
+                "question": "Wat voor parkeerplek is dit?"
+            }
+        },
+        "title": {
+            "render": "Parkeerplek"
         }
     },
     "pedestrian_path": {
@@ -5346,14 +5536,10 @@
             }
         },
         "tagRenderings": {
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 open (ook tijdens feestdagen)"
-                    }
-                },
-                "question": "Wat zijn de openingsuren voor dit postkantoor?",
-                "render": "Openingsuren: {opening_hours_table()}"
+            "opening_hours": {
+                "override": {
+                    "question": "Wat zijn de openingsuren voor dit postkantoor?"
+                }
             }
         },
         "title": {
@@ -5474,6 +5660,31 @@
                 }
             },
             "render": "Boekenruilkast"
+        }
+    },
+    "rainbow_crossings": {
+        "presets": {
+            "0": {
+                "description": "Voetgangersoversteekplaats",
+                "title": "een oversteekplaats"
+            }
+        },
+        "title": {
+            "render": "Oversteekplaats"
+        }
+    },
+    "reception_desk": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "recycling": {
@@ -5788,6 +5999,22 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "shelter": {
+        "name": "Schuilplaats",
+        "tagRenderings": {
+            "shelter-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een schuilplaats bij een halte voor openbaar vervoer."
+                    }
+                },
+                "question": "Wat voor schuilplaats is dit?"
+            }
+        },
+        "title": {
+            "render": "Schuilplaats"
+        }
+    },
     "shops": {
         "deletion": {
             "extraDeleteReasons": {
@@ -5939,6 +6166,38 @@
             "render": "Trage weg"
         }
     },
+    "speed_camera": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilometers/uur",
+                        "humanShort": "km/u"
+                    },
+                    "1": {
+                        "human": "miles/uur",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
+    "speed_display": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilometers/uur",
+                        "humanShort": "km/u"
+                    },
+                    "1": {
+                        "human": "miles/uur",
+                        "humanShort": "mph"
+                    }
+                }
+            }
+        }
+    },
     "sport_pitch": {
         "description": "Een sportterrein",
         "name": "Sportterrein",
@@ -6053,6 +6312,40 @@
         },
         "title": {
             "render": "Sportterrein"
+        }
+    },
+    "stairs": {
+        "name": "Trappen",
+        "tagRenderings": {
+            "conveying": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een roltrap"
+                    },
+                    "1": {
+                        "then": "Dit is geen roltrap"
+                    }
+                }
+            },
+            "handrail": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze trap heeft een leuning"
+                    },
+                    "1": {
+                        "then": "Deze trap heeft <b>geen</b> leuning"
+                    }
+                },
+                "question": "Heeft deze trap een leuning?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Roltrap"
+                }
+            },
+            "render": "Trap"
         }
     },
     "street_lamps": {
@@ -6410,13 +6703,10 @@
             }
         },
         "tagRenderings": {
-            "Opening-hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Altijd open"
-                    }
-                },
-                "question": "Wanneer zijn deze toiletten open?"
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Wanneer zijn deze toiletten open?"
+                }
             },
             "toilet-access": {
                 "mappings": {
@@ -6557,6 +6847,92 @@
             }
         }
     },
+    "toilet_at_amenity": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Rolstoel toegankelijk"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Heeft een luiertafel"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Gratis toegankelijk"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "toilet-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Publiek toegankelijk"
+                    },
+                    "3": {
+                        "then": "Toegankelijk na het vragen van de sleutel"
+                    },
+                    "4": {
+                        "then": "Publiek toegankelijk"
+                    }
+                },
+                "render": "Toegankelijkheid is {toilets:access}"
+            },
+            "toilet-charge": {
+                "question": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
+                "render": "De toiletten gebruiken kost {toilets:charge}"
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Men moet betalen om deze toiletten te gebruiken"
+                    },
+                    "1": {
+                        "then": "Gratis te gebruiken"
+                    }
+                },
+                "question": "Zijn deze toiletten gratis te gebruiken?"
+            },
+            "toilets-wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is een toilet voor rolstoelgebruikers"
+                    },
+                    "1": {
+                        "then": "Niet toegankelijk voor rolstoelgebruikers"
+                    },
+                    "2": {
+                        "then": "Er is alleen een toilet voor rolstoelgebruikers"
+                    }
+                },
+                "question": "Is er een rolstoeltoegankelijke toilet voorzien?"
+            },
+            "wheelchair-door-width": {
+                "question": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
+                "render": "De deur naar de rolstoeltoegankelijke toilet is {canonical(toilets:door:width)} wide"
+            }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
+        }
+    },
     "trail": {
         "description": "Aangeduide wandeltochten",
         "name": "Wandeltochten",
@@ -6659,6 +7035,45 @@
         },
         "title": {
             "render": "Buslijn"
+        }
+    },
+    "transit_stops": {
+        "tagRenderings": {
+            "bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze halte heeft een zitbank"
+                    },
+                    "1": {
+                        "then": "Deze halte heeft geen zitbank"
+                    },
+                    "2": {
+                        "then": "Deze halte heeft een zitbank, die los aangegeven is op de kaart"
+                    }
+                },
+                "question": "Heeft deze halte een zitbank?"
+            },
+            "bin": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze halte heeft een vuilnisbak"
+                    },
+                    "1": {
+                        "then": "Deze halte heeft geen vuilnisbak"
+                    },
+                    "2": {
+                        "then": "Deze heeft een vuilnisbak, die los op de kaart staat"
+                    }
+                },
+                "question": "Heeft deze halte een vuilnisbak?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Halte {name}"
+                }
+            }
         }
     },
     "tree_node": {
@@ -7071,6 +7486,10 @@
             "turbine-diameter": {
                 "question": "Wat is de rotordiameter van deze windturbine?",
                 "render": "De rotordiameter van deze windturbine is {rotor:diameter} meter."
+            },
+            "turbine-operator": {
+                "question": "Wie beheert deze windturbine?",
+                "render": "Deze windturbine wordt beheerd door {operator}."
             },
             "turbine-output": {
                 "question": "Wat is de output",

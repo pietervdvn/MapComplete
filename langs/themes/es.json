@@ -629,5 +629,8 @@
         "description": "Mapa de todos los Árboles",
         "shortDescription": "Mapa de los Árboles",
         "title": "Árboles"
+    },
+    "waste": {
+        "title": "Basura y reciclaje"
     }
 }

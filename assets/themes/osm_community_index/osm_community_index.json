@@ -1,13 +1,16 @@
 {
   "id": "osm_community_index",
   "title": {
-    "en": "OSM Community Index"
+    "en": "OSM Community Index",
+    "de": "OSM-Community-Index"
   },
   "description": {
-    "en": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful."
+    "en": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful.",
+    "de": "Eine Liste von Ressourcen für Nutzer von OpenStreetMap. 'Ressourcen' können Links zu Foren, Treffen, Slack-Gruppen, IRC-Kanälen, Mailinglisten und so weiter sein. Alles, was Mapper, insbesondere Anfänger, interessant oder hilfreich finden könnten."
   },
   "shortDescription": {
-    "en": "An index of community resources for OpenStreetMap."
+    "en": "An index of community resources for OpenStreetMap.",
+    "de": "Ein Index von Community-Ressourcen für OpenStreetMap."
   },
   "icon": "./assets/themes/osm_community_index/osm.svg",
   "startLat": 50.8465573,

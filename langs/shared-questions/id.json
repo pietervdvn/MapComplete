@@ -45,13 +45,17 @@
         },
         "internet-fee": {
             "mappings": {
+                "0": {
+                    "then": "Ada biaya untuk akses internet di tempat ini"
+                },
                 "1": {
                     "then": "Jaringan internet tersedia gratis di tempat ini"
                 },
                 "2": {
                     "then": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan"
                 }
-            }
+            },
+            "question": "Apakah ada biaya untuk akses internet?"
         },
         "internet-ssid": {
             "freeform": {
@@ -90,6 +94,15 @@
         "opening_hours": {
             "question": "Kapan jam buka {title()}?",
             "render": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}"
+        },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Buka 24 jam (termasuk hari libur)"
+                    }
+                }
+            }
         },
         "payment-options": {
             "mappings": {
@@ -136,20 +149,31 @@
         },
         "wheelchair-access": {
             "mappings": {
+                "0": {
+                    "then": "Tempat ini dirancang khusus untuk pengguna kursi roda"
+                },
                 "1": {
                     "then": "Tempat ini mudah dijangkau dengan kursi roda"
                 },
                 "2": {
                     "then": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah"
+                },
+                "3": {
+                    "then": "Tempat ini tidak bisa dijangkau dengan kursi roda"
                 }
-            }
+            },
+            "question": "Apakah tempat ini dapat diakses dengan kursi roda?"
         },
         "wikipedia": {
             "mappings": {
+                "0": {
+                    "then": "Belum ada halaman Wikipedia yang ditautkan"
+                },
                 "1": {
                     "then": "Belum ada halaman Wikipedia yang ditautkan"
                 }
-            }
+            },
+            "question": "Apa entitas Wikidata yang sesuai?"
         },
         "wikipedialink": {
             "mappings": {

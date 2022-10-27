@@ -1,1 +1,129 @@
-{}
+{
+    "shared_questions": {
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "Psi jsou povoleni"
+                },
+                "1": {
+                    "then": "Psi <b>nejsou</b> povoleni"
+                },
+                "2": {
+                    "then": "Psi jsou povoleni, ale musí být na vodítku"
+                },
+                "3": {
+                    "then": "Psi mají vstup povolen a mohou volně pobíhat"
+                }
+            },
+            "question": "Jsou v tomto podniku povoleni psi?"
+        },
+        "email": {
+            "question": "Jaká je e-mailová adresa {title()}?"
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Toto místo má zvukovou indukční smyčku"
+                },
+                "1": {
+                    "then": "Toto místo <b>nemá indukční zvukovou smyčku</b>"
+                }
+            },
+            "question": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?"
+        },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "Toto místo nabízí bezdrátové připojení k internetu"
+                },
+                "1": {
+                    "then": "Toto místo <b>neposkytuje</b> připojení k internetu"
+                },
+                "2": {
+                    "then": "Toto místo nabízí přístup k internetu"
+                },
+                "3": {
+                    "then": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače"
+                },
+                "4": {
+                    "then": "Toto místo nabízí kabelové připojení k internetu"
+                }
+            },
+            "question": "Nabízí toto místo připojení k internetu?"
+        },
+        "internet-fee": {
+            "mappings": {
+                "0": {
+                    "then": "Přístup na internet je zde zpoplatněn"
+                },
+                "1": {
+                    "then": "Přístup k internetu je zde zdarma"
+                },
+                "2": {
+                    "then": "Přístup k internetu je na tomto místě zdarma, pouze pro zákazníky"
+                }
+            },
+            "question": "Je přístup na internet zpoplatněn?"
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Zadejte název sítě"
+            },
+            "question": "Jaký je název sítě pro bezdrátový přístup k internetu?",
+            "render": "Název sítě je <b>{internet_access:ssid}</b>"
+        },
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Nachází se v podzemí"
+                },
+                "1": {
+                    "then": "Nachází se v přízemí"
+                },
+                "2": {
+                    "then": "Nachází se v přízemí"
+                },
+                "3": {
+                    "then": "Nachází se v prvním patře"
+                },
+                "4": {
+                    "then": "Nachází se v prvním suterénu"
+                }
+            },
+            "question": "V jaké úrovni se tento prvek nachází?",
+            "render": "Nachází se v {level}. patře"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Do jakých podlaží tento výtah jezdí?",
+                "render": "Tento výtah jede do {level} patra"
+            }
+        },
+        "opening_hours": {
+            "question": "Jaká je otevírací doba {title()}?"
+        },
+        "payment-options": {
+            "mappings": {
+                "0": {
+                    "then": "Přijímá se zde hotovost"
+                },
+                "1": {
+                    "then": "Zde jsou přijímány platební karty"
+                }
+            },
+            "question": "Jaké platební metody jsou zde přijímány?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Platba se provádí pomocí speciální aplikace"
+                    },
+                    "1": {
+                        "then": "Platba se provádí pomocí členské karty"
+                    }
+                }
+            }
+        }
+    }
+}

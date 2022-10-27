@@ -590,14 +590,10 @@
             }
         },
         "tagRenderings": {
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 開放 (包括假日)"
-                    }
-                },
-                "question": "這間郵局的開放時間是？",
-                "render": "開放時間：{opening_hours_table()}"
+            "opening_hours": {
+                "override": {
+                    "question": "這間郵局的開放時間是？"
+                }
             }
         },
         "title": {

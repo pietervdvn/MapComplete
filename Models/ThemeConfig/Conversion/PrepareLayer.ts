@@ -1,64 +1,90 @@
-import {Concat, Conversion, DesugaringContext, DesugaringStep, Each, FirstOf, Fuse, On, SetDefault,} from "./Conversion"
-import {LayerConfigJson} from "../Json/LayerConfigJson"
-import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson"
-import {Utils} from "../../../Utils"
+import {
+    Concat,
+    Conversion,
+    DesugaringContext,
+    DesugaringStep,
+    Each,
+    FirstOf,
+    Fuse,
+    On,
+    SetDefault,
+} from "./Conversion"
+import { LayerConfigJson } from "../Json/LayerConfigJson"
+import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
+import { Utils } from "../../../Utils"
 import RewritableConfigJson from "../Json/RewritableConfigJson"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
 import Translations from "../../../UI/i18n/Translations"
-import {Translation} from "../../../UI/i18n/Translation"
+import { Translation } from "../../../UI/i18n/Translation"
 import * as tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
-import {AddContextToTranslations} from "./AddContextToTranslations"
-import FilterConfigJson from "../Json/FilterConfigJson";
+import { AddContextToTranslations } from "./AddContextToTranslations"
+import FilterConfigJson from "../Json/FilterConfigJson"
 import * as predifined_filters from "../../../assets/layers/filters/filters.json"
 
-class ExpandFilter extends DesugaringStep<LayerConfigJson>{
-
-
-    private static load_filters(): Map<string, FilterConfigJson>{
-        let filters = new Map<string, FilterConfigJson>();
-        for (const filter of (<FilterConfigJson[]>predifined_filters.filter)) {
+class ExpandFilter extends DesugaringStep<LayerConfigJson> {
+    private static load_filters(): Map<string, FilterConfigJson> {
+        let filters = new Map<string, FilterConfigJson>()
+        for (const filter of <FilterConfigJson[]>predifined_filters.filter) {
             filters.set(filter.id, filter)
         }
-        return filters;
+        return filters
     }
 
-    private static readonly predefinedFilters = ExpandFilter.load_filters();
+    private static readonly predefinedFilters = ExpandFilter.load_filters()
 
     constructor() {
-        super("Expands filters: replaces a shorthand by the value found in 'filters.json'", ["filter"], "ExpandFilter");
+        super(
+            "Expands filters: replaces a shorthand by the value found in 'filters.json'",
+            ["filter"],
+            "ExpandFilter"
+        )
     }
 
-    convert(json: LayerConfigJson, context: string): { result: LayerConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
-        if(json.filter === undefined || json.filter === null){
-            return {result: json} // Nothing to change here
+    convert(
+        json: LayerConfigJson,
+        context: string
+    ): { result: LayerConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        if (json.filter === undefined || json.filter === null) {
+            return { result: json } // Nothing to change here
         }
 
-        if( json.filter["sameAs"] !== undefined){
-            return {result: json} // Nothing to change here
+        if (json.filter["sameAs"] !== undefined) {
+            return { result: json } // Nothing to change here
         }
 
-        const newFilters : FilterConfigJson[] = []
-        const errors :string[]= []
-        for (const filter of (<(FilterConfigJson|string)[]> json.filter)) {
+        const newFilters: FilterConfigJson[] = []
+        const errors: string[] = []
+        for (const filter of <(FilterConfigJson | string)[]>json.filter) {
             if (typeof filter !== "string") {
                 newFilters.push(filter)
                 continue
             }
             // Search for the filter:
             const found = ExpandFilter.predefinedFilters.get(filter)
-            if(found === undefined){
-                const suggestions = Utils.sortedByLevenshteinDistance(filter, Array.from(ExpandFilter.predefinedFilters.keys()), t => t)
-                const err = context+".filter: while searching for predifined filter "+filter+": this filter is not found. Perhaps you meant one of: "+suggestions
+            if (found === undefined) {
+                const suggestions = Utils.sortedByLevenshteinDistance(
+                    filter,
+                    Array.from(ExpandFilter.predefinedFilters.keys()),
+                    (t) => t
+                )
+                const err =
+                    context +
+                    ".filter: while searching for predifined filter " +
+                    filter +
+                    ": this filter is not found. Perhaps you meant one of: " +
+                    suggestions
                 errors.push(err)
             }
             newFilters.push(found)
         }
-        return {result: {
-            ...json, filter: newFilters
-            }, errors};
+        return {
+            result: {
+                ...json,
+                filter: newFilters,
+            },
+            errors,
+        }
     }
-
-
 }
 
 class ExpandTagRendering extends Conversion<

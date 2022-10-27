@@ -793,6 +793,10 @@
         "description": "Op deze kaart vind je dokters en apothekers",
         "title": "Gezondheidszorg"
     },
+    "hotels": {
+        "description": "Op deze kaart vind je hotels in je omgeving",
+        "title": "Hotels"
+    },
     "indoors": {
         "title": "Binnenruimtes"
     },
@@ -1026,6 +1030,23 @@
         "description": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
         "shortDescription": "Deze kaart toont sportvelden",
         "title": "Sportvelden"
+    },
+    "sports": {
+        "description": "Alles over sport: vind sportvelden, fitnesscentra en meer.",
+        "layers": {
+            "4": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Voeg een nieuwe winkel toe die sportartikelen verkoopt.",
+                            "title": "een sportwinkel"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Kaart met sportfaciliteiten.",
+        "title": "Sport"
     },
     "street_lighting": {
         "description": "Op deze kaart vind je alles over straatlantaarns",

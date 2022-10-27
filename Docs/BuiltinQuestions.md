@@ -27,6 +27,7 @@ The following items can be easily reused in your layers
     + [dog-access](#dog-access)
     + [description](#description)
     + [opening_hours](#opening_hours)
+    + [opening_hours_24_7](#opening_hours_24_7)
     + [service:electricity](#serviceelectricity)
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
@@ -260,6 +261,21 @@ Is there still something relevant you couldn't give in the previous questions? A
 <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
 What are the opening hours of {title()}?
+
+
+
+### opening_hours_24_7 
+
+
+
+<h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+
+What are the opening hours of {title()}?
+
+
+
+  - 24/7 opened (including holidays)
+
 
 
 

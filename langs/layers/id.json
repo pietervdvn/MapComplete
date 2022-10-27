@@ -394,14 +394,10 @@
             }
         },
         "tagRenderings": {
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Buka 24 jam (termasuk hari libur)"
-                    }
-                },
-                "question": "Jam berapa kantor pos ini buka?",
-                "render": "Jam Buka: {opening_hours_table()}"
+            "opening_hours": {
+                "override": {
+                    "question": "Jam berapa kantor pos ini buka?"
+                }
             }
         },
         "title": {

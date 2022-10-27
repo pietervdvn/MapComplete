@@ -46,10 +46,10 @@
         "description": "An A4-landscape flyer to promote MapComplete",
         "editing": {
             "ex": "A simplified example of what this looks like for a nature reserve is shown below.",
-            "intro": "The user is greeted by a map with feature. Upon selecting one, the information about that feature is shown.",
+            "intro": "The user is greeted by a map with features. Upon selecting one, the information about that feature is shown.",
             "title": "What does the interface look like?"
         },
-        "examples": "There are many thematic maps available of which a few are printed here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,... Discover them all on mapcomplete.osm.be  ",
+        "examples": "There are many thematic maps available of which a few are printed here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,... Discover them all on mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Add images with a few clicks",
             "attributes": "Shows attributes in a friendly way",

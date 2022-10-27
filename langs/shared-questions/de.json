@@ -106,6 +106,15 @@
             "question": "Wie lauten die Öffnungszeiten von {title()}?",
             "render": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}"
         },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "durchgehend geöffnet (auch an Feiertagen)"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {

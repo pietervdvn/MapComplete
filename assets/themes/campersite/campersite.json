@@ -878,7 +878,8 @@
           "pt_BR": "Estação de despejo {name}",
           "de": "Entsorgungsstation {name}",
           "zh_Hant": "{name} 垃圾站",
-          "nl": "Loosplaats {name}"
+          "nl": "Loosplaats {name}",
+          "ca": "Estació d'abocament {name}"
         },
         "mappings": [
           {
@@ -896,7 +897,8 @@
               "pt_BR": "Estação de despejo",
               "de": "Entsorgungsstation",
               "zh_Hant": "垃圾站",
-              "nl": "Loosplaats"
+              "nl": "Loosplaats",
+              "ca": "Estació d'abocament"
             }
           }
         ]
@@ -1211,7 +1213,8 @@
                 "zh_Hant": "你需要網路鑰匙/密碼來使用這個設施",
                 "nl": "Netwerksleutel of -code nodig om dit te gebruiken",
                 "nb_NO": "Du trenger en nettverksnøkkel/kode for å bruke dette",
-                "da": "Du skal bruge en netværksnøgle/-kode for at bruge dette"
+                "da": "Du skal bruge en netværksnøgle/-kode for at bruge dette",
+                "ca": "Necessites un codi/clau de xarxa per usar-lo"
               }
             },
             {
@@ -1317,7 +1320,8 @@
             "de": "eine sanitäre Entsorgungsstation",
             "zh_Hant": "垃圾丟棄站",
             "nl": "een loosplaats",
-            "da": "en sanitær afleveringsplads"
+            "da": "en sanitær afleveringsplads",
+            "ca": "una estació d'abocament sanitari"
           },
           "description": {
             "en": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",

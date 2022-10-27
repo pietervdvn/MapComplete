@@ -32,7 +32,9 @@ AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
 ShowOverlayLayerImplementation.Implement();
 // Miscelleanous
 Utils.DisableLongPresses()
-
+if(new URLSearchParams(window.location.search).get("test") === "true"){
+    console.log(themeConfig["default"])
+}
 const layoutToUse = new LayoutConfig(themeConfig["default"])
 
 

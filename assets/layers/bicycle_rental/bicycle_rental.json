@@ -142,7 +142,7 @@
           "if": "bicycle_rental=dropoff_point",
           "then": {
             "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only",
-            "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur ",
+            "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur",
             "de": "Dies ist ein Rückgabepunkt, z. B. ein reservierter Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist",
             "es": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler",
             "fr": "Ceci est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location",

@@ -8,12 +8,13 @@ import {
     booleanWithin,
     Coord,
     Feature,
-    Geometry, Lines,
+    Geometry,
+    Lines,
     MultiPolygon,
     Polygon,
     Properties,
 } from "@turf/turf"
-import {GeoJSON, LineString, Point} from "geojson";
+import { GeoJSON, LineString, Point } from "geojson"
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -28,7 +29,7 @@ export class GeoOperations {
      * @param feature
      */
     static centerpoint(feature: any): Feature<Point> {
-        const newFeature : Feature<Point> = turf.center(feature)
+        const newFeature: Feature<Point> = turf.center(feature)
         newFeature.properties = feature.properties
         newFeature.id = feature.id
         return newFeature
@@ -286,10 +287,10 @@ export class GeoOperations {
             way = { ...way }
             way.geometry = { ...way.geometry }
             way.geometry.type = "LineString"
-            way.geometry.coordinates = (<Polygon> way.geometry).coordinates[0]
+            way.geometry.coordinates = (<Polygon>way.geometry).coordinates[0]
         }
 
-        return turf.nearestPointOnLine(<Feature<LineString>> way, point, { units: "kilometers" })
+        return turf.nearestPointOnLine(<Feature<LineString>>way, point, { units: "kilometers" })
     }
 
     public static toCSV(features: any[]): string {

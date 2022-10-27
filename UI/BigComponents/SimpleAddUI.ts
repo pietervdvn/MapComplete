@@ -26,7 +26,7 @@ import BaseLayer from "../../Models/BaseLayer"
 import Loading from "../Base/Loading"
 import Hash from "../../Logic/Web/Hash"
 import { GlobalFilter } from "../../Logic/State/MapState"
-import {WayId} from "../../Models/OsmFeature";
+import { WayId } from "../../Models/OsmFeature"
 
 /*
  * The SimpleAddUI is a single panel, which can have multiple states:

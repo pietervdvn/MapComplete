@@ -65,7 +65,9 @@
         },
         {
           "question": {
-            "en": "Has at least one image"
+            "en": "Has at least one image",
+            "de": "Hat mindestens ein Bild",
+            "nl": "Heeft minstens één afbeelding"
           },
           "osmTags": {
             "or": [
@@ -80,7 +82,9 @@
         },
         {
           "question": {
-            "en": "Probably does not have an image"
+            "en": "Probably does not have an image",
+            "de": "Hat wahrscheinlich kein Bild",
+            "nl": "Heeft waarschijnlijk geen afbeelding"
           },
           "osmTags": {
             "and": [
@@ -91,6 +95,60 @@
               "image:3=",
               "mapillary="
             ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile_paving",
+      "options": [
+        {
+          "question": {
+            "en": "With tactile paving",
+            "de": "Mit taktilem Pflaster",
+            "fr": "Avec revêtement podotactile",
+            "nl": "Met voelbare bestrating"
+          },
+          "osmTags": "tactile_paving=yes"
+        }
+      ]
+    },
+    {
+      "id": "tactile_paving_advanced",
+      "options": [
+        {
+          "question": {
+            "en": "With or without tactile paving",
+            "de": "Mit oder ohne taktilem Pflaster",
+            "fr": "Avec ou sans revêtement podotactile",
+            "nl": "Met of zonder voelbare bestrating"
+          }
+        },
+        {
+          "question": {
+            "en": "With tactile paving",
+            "de": "Mit taktilem Pflaster",
+            "fr": "Avec revêtement podotactile",
+            "nl": "Met voelbare bestrating"
+          },
+          "osmTags": "tactile_paving=yes"
+        },
+        {
+          "question": {
+            "en": "Without tactile paving",
+            "de": "Ohne taktilem Pflaster",
+            "fr": "Sans revêtement podotactile",
+            "nl": "Zonder voelbare bestrating"
+          },
+          "osmTags": "tactile_paving=no"
+        },
+        {
+          "osmTags": "tactile_paving=",
+          "question": {
+            "en": "No information about tactile paving",
+            "de": "Keine Informationen über taktiles Pflaster",
+            "fr": "Sans information sur le revêtement podotactile",
+            "nl": "Geen informatie over voelbare bestrating"
           }
         }
       ]

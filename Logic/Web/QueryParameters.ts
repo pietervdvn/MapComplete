@@ -6,7 +6,7 @@ import Hash from "./Hash"
 import { Utils } from "../../Utils"
 
 export class QueryParameters {
-    static defaults : Record<string, string> = {}
+    static defaults: Record<string, string> = {}
     static documentation: Map<string, string> = new Map<string, string>()
     private static order: string[] = ["layout", "test", "z", "lat", "lon"]
     protected static readonly _wasInitialized: Set<string> = new Set()
@@ -105,9 +105,9 @@ export class QueryParameters {
         }
         if (!Utils.runningFromConsole) {
             // Don't pollute the history every time a parameter changes
-            try{
+            try {
                 history.replaceState(null, "", "?" + parts.join("&") + Hash.Current())
-            }catch(e){
+            } catch (e) {
                 console.error(e)
             }
         }

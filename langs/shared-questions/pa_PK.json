@@ -1,0 +1,7 @@
+{
+    "shared_questions": {
+        "opening_hours": {
+            "render": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}"
+        }
+    }
+}

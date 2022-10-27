@@ -1,0 +1,26 @@
+{
+    "aed": {
+        "description": "Na této mapě lze najít a označit defibrilátory v okolí",
+        "title": "Open AED Mapa"
+    },
+    "artwork": {
+        "description": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
+        "title": "Open Artwork Map"
+    },
+    "bag": {
+        "description": "Toto téma pomáhá s importem dat ze systému BAG",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tato budova nemá v BAG žádný odkaz"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
