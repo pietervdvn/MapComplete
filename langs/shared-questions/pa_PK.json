@@ -2,6 +2,25 @@
     "shared_questions": {
         "opening_hours": {
             "render": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}"
+        },
+        "dog-access": {
+            "mappings": {
+                "0": {
+                    "then": "کُتیاں دی اِجازت اے"
+                }
+            }
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "نیٹورک دا ناں پایو"
+            }
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "سِگرٹ پیݨ دی ‫<b>‬؜اِجازت‬‫</b>‬ ؜اے"
+                }
+            }
         }
     }
 }
