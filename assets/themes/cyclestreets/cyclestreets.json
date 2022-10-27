@@ -65,7 +65,8 @@
         "ca": "Carrers ciclistes",
         "es": "Ciclocalles",
         "fr": "Rue cyclables",
-        "da": "Cykelgader"
+        "da": "Cykelgader",
+        "pa_PK": "سائیکاں دیاں سڑکاں"
       },
       "minzoom": 7,
       "source": {
@@ -306,7 +307,8 @@
           "ca": "Carrer",
           "es": "Calle",
           "fr": "Rue",
-          "da": "Gade"
+          "da": "Gade",
+          "pa_PK": "سڑک"
         },
         "mappings": [
           {

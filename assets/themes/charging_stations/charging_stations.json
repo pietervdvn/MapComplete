@@ -14,7 +14,8 @@
     "ca": "Estacions de càrrega",
     "fr": "Points de recharge",
     "es": "Estaciones de carga",
-    "da": "Ladestationer"
+    "da": "Ladestationer",
+    "pa_PK": "چارج سٹیشن"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",

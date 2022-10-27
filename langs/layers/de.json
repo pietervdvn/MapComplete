@@ -5510,31 +5510,34 @@
             }
         },
         "tagRenderings": {
+            "letter-from": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können Briefe hier aufgeben"
+                    },
+                    "1": {
+                        "then": "Sie können hier keine Briefe aufgeben"
+                    }
+                },
+                "question": "Können Sie hier einen Brief aufgeben?",
+                "render": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}"
+            },
             "opening_hours": {
                 "override": {
                     "question": "Wie sind die Öffnungszeiten dieser Poststelle?"
                 }
             },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "durchgehend geöffnet (auch an Feiertagen)"
-                    }
-                },
-                "question": "Wie sind die Öffnungszeiten dieser Poststelle?",
-                "render": "Öffnungszeiten: {opening_hours_table()}"
-            },
             "parcel-from": {
-                "question": "Können Sie hier Pakete versenden?",
-                "render": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}",
                 "mappings": {
-                    "1": {
-                        "then": "Sie können hier keine Pakete versenden"
-                    },
                     "0": {
                         "then": "Hier können Sie Pakete versenden"
+                    },
+                    "1": {
+                        "then": "Sie können hier keine Pakete versenden"
                     }
-                }
+                },
+                "question": "Können Sie hier Pakete versenden?",
+                "render": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}"
             },
             "parcel-pickup": {
                 "mappings": {
@@ -5545,20 +5548,20 @@
                         "then": "Sie können hier keine verpassten Pakete abholen"
                     }
                 },
-                "render": "Sie können Pakete von diesen Unternehmen abholen: {post_office:parcel_pickup}",
-                "question": "Können Sie hier verpasste Pakete abholen?"
+                "question": "Können Sie hier verpasste Pakete abholen?",
+                "render": "Sie können Pakete von diesen Unternehmen abholen: {post_office:parcel_pickup}"
             },
             "parcel-to": {
-                "render": "Mit diesen Unternehmen können Sie Pakete zur Abholung hierher senden: {post_office:parcel_to}",
                 "mappings": {
-                    "1": {
-                        "then": "Sie können keine Pakete zur Abholung hierher schicken"
-                    },
                     "0": {
                         "then": "Sie können Pakete zur Abholung hierher schicken"
+                    },
+                    "1": {
+                        "then": "Sie können keine Pakete zur Abholung hierher schicken"
                     }
                 },
-                "question": "Können Sie Pakete zur Abholung hierher schicken?"
+                "question": "Können Sie Pakete zur Abholung hierher schicken?",
+                "render": "Mit diesen Unternehmen können Sie Pakete zur Abholung hierher senden: {post_office:parcel_to}"
             },
             "partner-brand": {
                 "mappings": {
@@ -5568,8 +5571,14 @@
                     "1": {
                         "then": "Dieser Standort bietet Dienstleistungen für DPD an"
                     },
+                    "2": {
+                        "then": "Dieser Standort bietet Dienstleistungen für GLS an"
+                    },
                     "3": {
                         "then": "Dieser Standort bietet Dienstleistungen für UPS an"
+                    },
+                    "4": {
+                        "then": "Dieser Standort ist ein DHL Paketshop"
                     },
                     "5": {
                         "then": "Dieser Standort ist ein Hermes PaketShop"
@@ -5579,12 +5588,6 @@
                     },
                     "7": {
                         "then": "Dieser Standort bietet Dienstleistungen für bpost an"
-                    },
-                    "4": {
-                        "then": "Dieser Standort ist ein DHL Paketshop"
-                    },
-                    "2": {
-                        "then": "Dieser Standort bietet Dienstleistungen für GLS an"
                     }
                 },
                 "question": "Für welche Marke bietet dieser Standort Dienstleistungen an?",
@@ -5612,18 +5615,6 @@
                 },
                 "question": "Kann man hier Briefmarken kaufen?",
                 "render": "Sie können Briefmarken folgender Unternehmen kaufen: {post_office:stamps}"
-            },
-            "letter-from": {
-                "mappings": {
-                    "1": {
-                        "then": "Sie können hier keine Briefe aufgeben"
-                    },
-                    "0": {
-                        "then": "Sie können Briefe hier aufgeben"
-                    }
-                },
-                "question": "Können Sie hier einen Brief aufgeben?",
-                "render": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}"
             }
         },
         "title": {

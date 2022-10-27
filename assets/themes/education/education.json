@@ -15,7 +15,8 @@
     "fr": "Enseignement",
     "nb_NO": "Utdanning",
     "ca": "Educació",
-    "da": "Uddannelse"
+    "da": "Uddannelse",
+    "pa_PK": "سکھیا"
   },
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLat": 0,

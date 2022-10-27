@@ -336,6 +336,9 @@
         "description": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
         "tagRenderings": {
             "bicycle-library-target-group": {
+                "mappings": {
+                    "0": {}
+                },
                 "question": "Ki kölcsönözhet itt kerékpárt?"
             },
             "bicycle_library-charge": {
@@ -549,6 +552,17 @@
                 "options": {
                     "0": {
                         "question": "Most nyitva van"
+                    }
+                }
+            }
+        }
+    },
+    "food": {
+        "tagRenderings": {
+            "Fastfood vs restaurant": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak."
                     }
                 }
             }
@@ -800,17 +814,6 @@
                 "applicableUnits": {
                     "0": {
                         "human": " méter"
-                    }
-                }
-            }
-        }
-    },
-    "food": {
-        "tagRenderings": {
-            "Fastfood vs restaurant": {
-                "mappings": {
-                    "0": {
-                        "then": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak."
                     }
                 }
             }

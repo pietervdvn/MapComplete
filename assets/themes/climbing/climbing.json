@@ -132,7 +132,8 @@
                   "ca": " metre",
                   "nb_NO": " meter",
                   "es": " metro",
-                  "da": " meter"
+                  "da": " meter",
+                  "pa_PK": " ؜ میٹر"
                 }
               },
               {
@@ -151,7 +152,8 @@
                   "ca": " peus",
                   "nb_NO": " fot",
                   "es": " pies",
-                  "da": " fod"
+                  "da": " fod",
+                  "pa_PK": " ؜ فوٹ"
                 }
               }
             ]

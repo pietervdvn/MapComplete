@@ -85,7 +85,8 @@
     "pt": "Diversas obras de arte",
     "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
     "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
-    "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món"
+    "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
+    "cs": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě"
   },
   "minzoom": 12,
   "presets": [
@@ -302,7 +303,8 @@
             "pl": "Skała",
             "ca": "Pedra",
             "es": "Piedra",
-            "da": "Sten"
+            "da": "Sten",
+            "pa_PK": "پتھر"
           }
         },
         {

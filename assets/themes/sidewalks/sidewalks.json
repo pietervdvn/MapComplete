@@ -10,7 +10,8 @@
     "fr": "Trottoirs",
     "nb_NO": "Fortau",
     "it": "Marciapiede",
-    "da": "Fortove"
+    "da": "Fortove",
+    "pa_PK": "فُٹ‌پاتھ"
   },
   "shortDescription": {
     "en": "Sidewalk mapping",
@@ -52,7 +53,8 @@
         "nl": "Voetpaden",
         "fr": "Trottoirs",
         "it": "Marciapiedi",
-        "da": "Fortove"
+        "da": "Fortove",
+        "pa_PK": "فُٹ‌پاتھ"
       },
       "minzoom": 12,
       "source": {

@@ -1,49 +1,39 @@
 {
     "address": {
+        "description": "Adresy",
+        "name": "Známé adresy v OSM",
         "tagRenderings": {
-            "street": {
-                "question": "V jaké ulici se nachází tato adresa?",
-                "render": "Tato adresa se nachází v ulici <b>{addr:street}</b>"
+            "fixme": {
+                "question": "Co by se zde mělo opravit? Vysvětlete to, prosím"
             },
             "housenumber": {
-                "question": "Jaké je číslo tohoto domu?",
-                "render": "Číslo domu je <b>{addr:housenumber}</b>",
                 "mappings": {
                     "0": {
                         "then": "Tato budova nemá číslo domu"
                     }
-                }
+                },
+                "question": "Jaké je číslo tohoto domu?",
+                "render": "Číslo domu je <b>{addr:housenumber}</b>"
             },
-            "fixme": {
-                "question": "Co by se zde mělo opravit? Vysvětlete to, prosím"
+            "street": {
+                "question": "V jaké ulici se nachází tato adresa?",
+                "render": "Tato adresa se nachází v ulici <b>{addr:street}</b>"
             }
         },
-        "name": "Známé adresy v OSM",
         "title": {
             "render": "Známá adresa"
-        },
-        "description": "Adresy"
+        }
     },
     "ambulancestation": {
+        "description": "Stanice záchranné služby je prostor pro umístění sanitních vozidel, zdravotnického vybavení, osobních ochranných prostředků a dalšího zdravotnického materiálu.",
+        "name": "Mapa stanic rychlé záchranné služby",
+        "presets": {
+            "0": {
+                "description": "Přidat na mapu stanici záchranné služby",
+                "title": "stanice rychlé záchranné služby"
+            }
+        },
         "tagRenderings": {
-            "ambulance-operator-type": {
-                "render": "Operátor je {operator:type} entita.",
-                "question": "Jak je klasifikován provozovatel stanice?",
-                "mappings": {
-                    "1": {
-                        "then": "Provozovatelem stanice je komunitní nebo neformální organizace."
-                    },
-                    "0": {
-                        "then": "Provozovatelem stanice je vláda."
-                    },
-                    "3": {
-                        "then": "Stanice je provozována soukromým subjektem."
-                    },
-                    "2": {
-                        "then": "Stanice je provozována formální skupinou dobrovolníků."
-                    }
-                }
-            },
             "ambulance-agency": {
                 "question": "Jaká organizace tuto stanici provozuje?",
                 "render": "Tuto stanici provozuje společnost {operator}."
@@ -52,6 +42,24 @@
                 "question": "Jak se jmenuje tato stanice záchranné služby?",
                 "render": "Tato stanice se jmenuje {name}."
             },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Provozovatelem stanice je vláda."
+                    },
+                    "1": {
+                        "then": "Provozovatelem stanice je komunitní nebo neformální organizace."
+                    },
+                    "2": {
+                        "then": "Stanice je provozována formální skupinou dobrovolníků."
+                    },
+                    "3": {
+                        "then": "Stanice je provozována soukromým subjektem."
+                    }
+                },
+                "question": "Jak je klasifikován provozovatel stanice?",
+                "render": "Operátor je {operator:type} entita."
+            },
             "ambulance-place": {
                 "question": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)",
                 "render": "Tato stanice se nachází v rámci {addr:place}."
@@ -59,15 +67,7 @@
             "ambulance-street": {
                 "question": "Jak se jmenuje ulice, kde se stanice nachází?"
             }
-        },
-        "presets": {
-            "0": {
-                "title": "stanice rychlé záchranné služby",
-                "description": "Přidat na mapu stanici záchranné služby"
-            }
-        },
-        "name": "Mapa stanic rychlé záchranné služby",
-        "description": "Stanice záchranné služby je prostor pro umístění sanitních vozidel, zdravotnického vybavení, osobních ochranných prostředků a dalšího zdravotnického materiálu."
+        }
     },
     "artwork": {
         "description": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě"

@@ -11,7 +11,8 @@
     "hu": "OpenWindPowerMap",
     "nl": "Windmolens",
     "ca": "OpenWindPowerMap",
-    "nb_NO": "ÅpentVindkraftKart"
+    "nb_NO": "ÅpentVindkraftKart",
+    "pa_PK": "اوپن‌ونڈ‌پاور‌میپ"
   },
   "icon": "./assets/themes/openwindpowermap/logo.svg",
   "description": {

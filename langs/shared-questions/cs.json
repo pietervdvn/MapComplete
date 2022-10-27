@@ -1,47 +1,5 @@
 {
     "shared_questions": {
-        "induction-loop": {
-            "question": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?",
-            "mappings": {
-                "0": {
-                    "then": "Toto místo má zvukovou indukční smyčku"
-                },
-                "1": {
-                    "then": "Toto místo <b>nemá indukční zvukovou smyčku</b>"
-                }
-            }
-        },
-        "level": {
-            "mappings": {
-                "3": {
-                    "then": "Nachází se v prvním patře"
-                },
-                "4": {
-                    "then": "Nachází se v prvním suterénu"
-                },
-                "0": {
-                    "then": "Nachází se v podzemí"
-                },
-                "1": {
-                    "then": "Nachází se v přízemí"
-                },
-                "2": {
-                    "then": "Nachází se v přízemí"
-                }
-            },
-            "question": "V jaké úrovni se tento prvek nachází?",
-            "render": "Nachází se v {level}. patře"
-        },
-        "multilevels": {
-            "override": {
-                "question": "Do jakých podlaží tento výtah jezdí?",
-                "render": "Tento výtah jede do {level} patra"
-            }
-        },
-        "opening_hours": {
-            "question": "Jaká je otevírací doba {title()}?",
-            "render": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
-        },
         "dog-access": {
             "mappings": {
                 "0": {
@@ -61,6 +19,17 @@
         },
         "email": {
             "question": "Jaká je e-mailová adresa {title()}?"
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Toto místo má zvukovou indukční smyčku"
+                },
+                "1": {
+                    "then": "Toto místo <b>nemá indukční zvukovou smyčku</b>"
+                }
+            },
+            "question": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?"
         },
         "internet": {
             "mappings": {
@@ -103,6 +72,37 @@
             "question": "Jaký je název sítě pro bezdrátový přístup k internetu?",
             "render": "Název sítě je <b>{internet_access:ssid}</b>"
         },
+        "level": {
+            "mappings": {
+                "0": {
+                    "then": "Nachází se v podzemí"
+                },
+                "1": {
+                    "then": "Nachází se v přízemí"
+                },
+                "2": {
+                    "then": "Nachází se v přízemí"
+                },
+                "3": {
+                    "then": "Nachází se v prvním patře"
+                },
+                "4": {
+                    "then": "Nachází se v prvním suterénu"
+                }
+            },
+            "question": "V jaké úrovni se tento prvek nachází?",
+            "render": "Nachází se v {level}. patře"
+        },
+        "multilevels": {
+            "override": {
+                "question": "Do jakých podlaží tento výtah jezdí?",
+                "render": "Tento výtah jede do {level} patra"
+            }
+        },
+        "opening_hours": {
+            "question": "Jaká je otevírací doba {title()}?",
+            "render": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+        },
         "payment-options": {
             "mappings": {
                 "0": {
@@ -123,17 +123,6 @@
                     "1": {
                         "then": "Platba se provádí pomocí členské karty"
                     }
-                }
-            }
-        },
-        "wikipedia": {
-            "question": "Jaká je odpovídající entita Wikidata?",
-            "mappings": {
-                "0": {
-                    "then": "Žádná stránka na Wikipedii zatím nebyla propojena"
-                },
-                "1": {
-                    "then": "Žádná stránka na Wikipedii zatím nebyla propojena"
                 }
             }
         },
@@ -162,11 +151,11 @@
                 "0": {
                     "then": "Kouření je <b>povoleno</b>"
                 },
-                "2": {
-                    "then": "Kouření je <b>povoleno venku</b>."
-                },
                 "1": {
                     "then": "Kouření <b>není povoleno</b>"
+                },
+                "2": {
+                    "then": "Kouření je <b>povoleno venku</b>."
                 }
             },
             "question": "Je na {title()} povoleno kouřit?"
@@ -176,20 +165,31 @@
         },
         "wheelchair-access": {
             "mappings": {
+                "0": {
+                    "then": "Toto místo je speciálně upraveno pro vozíčkáře"
+                },
                 "1": {
                     "then": "Toto místo je snadno dosažitelné s invalidním vozíkem"
                 },
                 "2": {
                     "then": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
                 },
-                "0": {
-                    "then": "Toto místo je speciálně upraveno pro vozíčkáře"
-                },
                 "3": {
                     "then": "Na toto místo se nelze dostat s invalidním vozíkem"
                 }
             },
             "question": "Je toto místo přístupné pro vozíčkáře?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Žádná stránka na Wikipedii zatím nebyla propojena"
+                },
+                "1": {
+                    "then": "Žádná stránka na Wikipedii zatím nebyla propojena"
+                }
+            },
+            "question": "Jaká je odpovídající entita Wikidata?"
         },
         "wikipedialink": {
             "mappings": {

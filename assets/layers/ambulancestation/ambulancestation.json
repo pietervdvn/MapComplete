@@ -12,7 +12,8 @@
     "zh_Hans": "救护车站地图",
     "id": "Peta stasiun ambulans",
     "es": "Mapa de estaciones de ambulancias",
-    "da": "Kort over ambulancestationer"
+    "da": "Kort over ambulancestationer",
+    "cs": "Mapa stanic rychlé záchranné služby"
   },
   "minzoom": 12,
   "source": {
@@ -46,7 +47,8 @@
     "ru": "Станция скорой помощи это полигон для хранения транспорта, медицинского оборудования, средств индивидуальной защиты и других медицинских принадлежностей.",
     "nl": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
     "es": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
-    "da": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger."
+    "da": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger.",
+    "cs": "Stanice záchranné služby je prostor pro umístění sanitních vozidel, zdravotnického vybavení, osobních ochranných prostředků a dalšího zdravotnického materiálu."
   },
   "tagRenderings": [
     {
@@ -65,7 +67,8 @@
         "nl": "Hoe heet dit ambulancestation?",
         "es": "¿Cual es el nombre de esta estación de ambulancias?",
         "nb_NO": "Hva er navnet på denne ambulansestasjonen?",
-        "da": "Hvad hedder denne ambulancestation?"
+        "da": "Hvad hedder denne ambulancestation?",
+        "cs": "Jak se jmenuje tato stanice záchranné služby?"
       },
       "render": {
         "en": "This station is called {name}.",
@@ -78,7 +81,8 @@
         "nl": "Dit station heet {name}.",
         "es": "Esta estación se llama {name}.",
         "nb_NO": "Denne stasjonen heter {name}.",
-        "da": "Denne station hedder {name}."
+        "da": "Denne station hedder {name}.",
+        "cs": "Tato stanice se jmenuje {name}."
       }
     },
     {
@@ -96,7 +100,8 @@
         "hu": "Mi a neve annak az utcának, amelyben az állomás található?",
         "nl": "In welke straat ligt dit station?",
         "es": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
-        "da": "Hvad er vejnavnet, hvor stationen ligger?"
+        "da": "Hvad er vejnavnet, hvor stationen ligger?",
+        "cs": "Jak se jmenuje ulice, kde se stanice nachází?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -123,7 +128,8 @@
         "hu": "Hol található az állomás? (Pl. a falu, kisváros vagy városrész neve.)",
         "nl": "Waar ligt het station? (v.b. naam van de buurt, dorp of stad)",
         "es": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)",
-        "da": "Hvor ligger stationen? (f.eks. navn på kvarter, landsby eller by)"
+        "da": "Hvor ligger stationen? (f.eks. navn på kvarter, landsby eller by)",
+        "cs": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)"
       },
       "freeform": {
         "key": "addr:place"
@@ -137,7 +143,8 @@
         "hu": "Ez az állomás itt található: {addr:place}.",
         "nl": "Dit station ligt in {addr:place}.",
         "es": "Esta estación se encuentra en {addr:place}.",
-        "da": "Denne station findes i {addr:place}."
+        "da": "Denne station findes i {addr:place}.",
+        "cs": "Tato stanice se nachází v rámci {addr:place}."
       }
     },
     {
@@ -152,7 +159,8 @@
         "ru": "Какая организация управляет этой станцией?",
         "nl": "Welke organisatie beheert dit station?",
         "es": "¿Qué agencia opera esta estación?",
-        "da": "Hvilket agentur driver denne station?"
+        "da": "Hvilket agentur driver denne station?",
+        "cs": "Jaká organizace tuto stanici provozuje?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -164,7 +172,8 @@
         "ru": "Эта станция управляется {operator}.",
         "nl": "Dit station wordt beheerd door {operator}.",
         "es": "Esta estación la opera {operator}.",
-        "da": "Denne station drives af {operator}."
+        "da": "Denne station drives af {operator}.",
+        "cs": "Tuto stanici provozuje společnost {operator}."
       },
       "freeform": {
         "key": "operator"
@@ -182,7 +191,8 @@
         "hu": "Hogyan sorolható be az állomás üzemeltetője?",
         "nl": "Wat voor een organisatie is de beheerder van dit station?",
         "es": "¿Como está clasificada la operadora de la estación?",
-        "da": "Hvordan klassificeres stationsoperatøren?"
+        "da": "Hvordan klassificeres stationsoperatøren?",
+        "cs": "Jak je klasifikován provozovatel stanice?"
       },
       "render": {
         "en": "The operator is a(n) {operator:type} entity.",
@@ -193,7 +203,8 @@
         "hu": "Az üzemeltető egy {operator:type} jellegű szervezet.",
         "nl": "De beheerder is van het type {operator:type}.",
         "es": "La operador a no es una entidad de tipo {operator:type}.",
-        "da": "Operatøren er en (n) {operator:type} enhed."
+        "da": "Operatøren er en (n) {operator:type} enhed.",
+        "cs": "Operátor je {operator:type} entita."
       },
       "freeform": {
         "key": "operator:type"
@@ -215,7 +226,8 @@
             "ru": "Станция управляется правительством.",
             "nl": "Dit station wordt beheerd door de overheid.",
             "es": "La estación la opera el govierno.",
-            "da": "Stationen drives af staten."
+            "da": "Stationen drives af staten.",
+            "cs": "Provozovatelem stanice je vláda."
           }
         },
         {
@@ -234,7 +246,8 @@
             "ru": "Станция управляется волонтёрами или частной организацией.",
             "nl": "Dit station wordt beheerd door een informele of community organisatie.",
             "es": "La estación la opera una organización basada en la comunidad o informal.",
-            "da": "Stationen drives af en samfundsbaseret eller uformel organisation."
+            "da": "Stationen drives af en samfundsbaseret eller uformel organisation.",
+            "cs": "Provozovatelem stanice je komunitní nebo neformální organizace."
           }
         },
         {
@@ -252,7 +265,8 @@
             "hu": "A mentőállomást egy önkéntesekből álló hivatalos csoport működteti.",
             "nl": "Dit station wordt beheerd door een formele groep vrijwilligers.",
             "es": "La estación la opera un grupo formal de voluntarios.",
-            "da": "Stationen drives af en formel gruppe af frivillige."
+            "da": "Stationen drives af en formel gruppe af frivillige.",
+            "cs": "Stanice je provozována formální skupinou dobrovolníků."
           }
         },
         {
@@ -270,7 +284,8 @@
             "hu": "Az állomást egy magánkézben lévő szervezet működteti.",
             "nl": "Dit station wordt beheerd door een privé-organisatie.",
             "es": "La estación se opera privadamente.",
-            "da": "Stationen er privatdrevet."
+            "da": "Stationen er privatdrevet.",
+            "cs": "Stanice je provozována soukromým subjektem."
           }
         }
       ]
@@ -295,7 +310,8 @@
         "id": "Stasiun ambulans",
         "es": "una estación de ambulancias",
         "nb_NO": "en ambulansestasjon",
-        "da": "en ambulancestation"
+        "da": "en ambulancestation",
+        "cs": "stanice rychlé záchranné služby"
       },
       "description": {
         "en": "Add an ambulance station to the map",
@@ -310,7 +326,8 @@
         "id": "Tambahkan stasiun ambulans ke peta",
         "es": "Añadir una estación de ambulancias al mapa",
         "nb_NO": "Legg til en ambulansestasjon på kartet",
-        "da": "Tilføj en ambulancestation til kortet"
+        "da": "Tilføj en ambulancestation til kortet",
+        "cs": "Přidat na mapu stanici záchranné služby"
       }
     }
   ],
