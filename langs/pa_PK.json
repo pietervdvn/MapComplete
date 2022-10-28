@@ -29,7 +29,9 @@
         "opening_hours": {
             "opensAt": "توں",
             "ph_closed": "بند",
-            "ph_open": "کھُلھا"
+            "ph_open": "کھُلھا",
+            "loadingCountry": "دیش لبھی۔ ۔ ۔",
+            "openTill": "—"
         },
         "save": "سامبھو",
         "search": {
@@ -55,17 +57,47 @@
             "wednesday": "بدھوار"
         },
         "wikipedia": {
-            "wikipediaboxTitle": "وِکیپیڈیا"
+            "wikipediaboxTitle": "وِکیپیڈیا",
+            "loading": "وِکیپیڈیا لوڈ کیتا جا رہا اے۔ ۔ ۔"
+        },
+        "goToInbox": "اینباکس کھُلھو",
+        "layerSelection": {
+            "title": "کج چݨو"
         }
     },
     "image": {
         "dontDelete": "رد کرو",
-        "isDeleted": "مٹائی گئی"
+        "isDeleted": "مٹائی گئی",
+        "addPicture": "تصویر پایو",
+        "doDelete": "تصویر ہٹاؤ",
+        "nearbyPictures": {
+            "title": "نیڑے تیڑے تے تصویراں"
+        }
     },
     "importHelper": {
         "introduction": {
             "title": "جاݨ پچھاݨ"
-        }
+        },
+        "askMetadata": {
+            "downloadGeojson": "جیوجےسون ڈاؤن‌لوڈ کرو",
+            "title": "میٹا ڈیٹا چݨو"
+        },
+        "conflationChecker": {
+            "titleNearby": "نیڑے تیڑے تے نشان",
+            "states": {
+                "running": "اورپاس پرشان بھیجیا جا رہا اے۔ ۔ ۔"
+            }
+        },
+        "createNotes": {
+            "title": "نوٹ بݨاؤݨ"
+        },
+        "login": {
+            "title": "لوگ‌این کرو"
+        },
+        "selectFile": {
+            "title": "فائل چݨو"
+        },
+        "title": "ایمپورٹ کرن مددگار"
     },
     "matrixbot": {
         "commands": {

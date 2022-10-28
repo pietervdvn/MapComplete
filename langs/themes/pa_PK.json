@@ -23,6 +23,18 @@
                                 }
                             }
                         }
+                    },
+                    "tagRenderings+": {
+                        "1": {
+                            "mappings": {
+                                "2": {
+                                    "then": "صرف گاہک"
+                                },
+                                "3": {
+                                    "then": "صرف کلب دے میمبر"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -43,9 +55,31 @@
             "2": {
                 "title": {
                     "render": "سڑک"
+                },
+                "name": "ساریاں سڑکاں"
+            },
+            "1": {
+                "name": "بھُوکھی سائیکل سڑک",
+                "title": {
+                    "render": "بھُوکھی سائیکل سڑک"
                 }
             }
-        }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "mappings": {
+                        "2": {
+                            "then": "موٹرسائیکلاں دی اِجازت اے"
+                        },
+                        "3": {
+                            "then": "موٹرکاراں دی اِجازت اے"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "سائیکل سڑکاں"
     },
     "education": {
         "title": "سکھیا"
@@ -99,18 +133,148 @@
                 "name": "فُٹ‌پاتھ"
             }
         },
-        "title": "فُٹ‌پاتھ"
+        "title": "فُٹ‌پاتھ",
+        "description": "آزمائش تھیم",
+        "shortDescription": "فُت‌پیتھ دا نقشہ بݨاؤݨ"
     },
     "street_lighting": {
         "layers": {
             "2": {
                 "title": {
                     "render": "سڑک"
+                },
+                "name": "ساریاں سڑکاں"
+            },
+            "1": {
+                "name": "روشنی والیاں سڑکاں",
+                "title": {
+                    "render": "روشنی والی سڑک"
+                }
+            }
+        },
+        "title": "سڑک دیاں روشنیاں"
+    },
+    "trees": {
+        "title": "رُکھ"
+    },
+    "artwork": {
+        "title": "آزاد کلاکاری نقشہ"
+    },
+    "cycle_infra": {
+        "title": "سائیکل ڈھانچا"
+    },
+    "binoculars": {
+        "title": "بائینوکولر"
+    },
+    "bicycle_rental": {
+        "title": "سائیکل کرایا"
+    },
+    "bookcases": {
+        "title": "آزاد کتاب نقشہ"
+    },
+    "personal": {
+        "title": "چݨی تھیم"
+    },
+    "postal_codes": {
+        "title": "ڈاک کوڈ",
+        "description": "ڈاک کوڈ",
+        "layers": {
+            "0": {
+                "name": "ڈاک کوڈ"
+            }
+        },
+        "shortDescription": "ڈاک کوڈ"
+    },
+    "transit": {
+        "title": "بس روٹ"
+    },
+    "campersite": {
+        "layers": {
+            "0": {
+                "presets": {
+                    "0": {
+                        "title": "اِک کیمپ‌سائیٹ"
+                    }
+                },
+                "description": "کیمب‌سائیٹاں",
+                "name": "کیمب‌سائیٹاں",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "بے نام کیمپ‌سائیٹ"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "کیمپ‌سایٹاں"
+    },
+    "cafes_and_pubs": {
+        "title": "کیفے یا پب",
+        "description": "پب (بار)"
+    },
+    "drinking_water": {
+        "title": "پیݨ والا پاݨی"
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "override": {
+                    "name": "فرائیاں دی دکان"
+                }
+            }
+        },
+        "title": "فرائیاں دیاں دکاناں"
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "name": "تبدیلیاں دے کیندر"
+            }
+        }
+    },
+    "maxspeed": {
+        "title": "حد رفتار"
+    },
+    "maproulette": {
+        "title": "میپ‌رولیٹ دے کم"
+    },
+    "pets": {
+        "layers": {
+            "2": {
+                "override": {
+                    "name": "کُتیاں دی اِجازت دیاں دکاناں",
+                    "title": {
+                        "render": "کُتیاں دی اِجازت دیاں دکاناں"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "کُتیاں دی اِجازت دی دکان"
+                        }
+                    }
                 }
             }
         }
     },
-    "trees": {
-        "title": "رُکھ"
+    "sports": {
+        "title": "کھیڈاں"
+    },
+    "waste_basket": {
+        "title": "کوڑے دی ٹوکری"
+    },
+    "cycle_highways": {
+        "layers": {
+            "0": {
+                "name": "سائیکل‌وے",
+                "title": {
+                    "render": "سائیکل‌وے"
+                }
+            }
+        },
+        "title": "سائیکل‌وے"
     }
 }
