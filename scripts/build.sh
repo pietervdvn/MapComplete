@@ -14,6 +14,7 @@ npm run generate:editor-layer-index &&
 npm run generate &&
 npm run generate:translations &&
 npm run test &&
+npm run generate:layeroverview &&
 npm run generate:layouts
 
 if [ $? -ne 0 ]; then
