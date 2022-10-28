@@ -12,7 +12,6 @@ import Lazy from "../Base/Lazy"
 import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint"
 import Img from "../Base/Img"
 import FilteredLayer from "../../Models/FilteredLayer"
-import SpecialVisualizations from "../SpecialVisualizations"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import Svg from "../../Svg"
 import { Utils } from "../../Utils"
@@ -45,12 +44,13 @@ import { Changes } from "../../Logic/Osm/Changes"
 import { ElementStorage } from "../../Logic/ElementStorage"
 import Hash from "../../Logic/Web/Hash"
 import { PreciseInput } from "../../Models/ThemeConfig/PresetConfig"
+import {SpecialVisualization} from "../SpecialVisualization";
 
 /**
  * A helper class for the various import-flows.
  * An import-flow always starts with a 'Import this'-button. Upon click, a custom confirmation panel is provided
  */
-abstract class AbstractImportButton implements SpecialVisualizations {
+abstract class AbstractImportButton implements SpecialVisualization {
     protected static importedIds = new Set<string>()
     public readonly funcName: string
     public readonly docs: string

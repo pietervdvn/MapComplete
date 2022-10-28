@@ -10,7 +10,6 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { Unit } from "../../Models/Unit"
 import Lazy from "../Base/Lazy"
 import { FixedUiElement } from "../Base/FixedUiElement"
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 
 export default class EditableTagRendering extends Toggle {
     constructor(
@@ -57,7 +56,7 @@ export default class EditableTagRendering extends Toggle {
     }
 
     private static CreateRendering(
-        state: FeaturePipelineState,
+        state: any /*FeaturePipelineState*/,
         tags: UIEventSource<any>,
         configuration: TagRenderingConfig,
         units: Unit[],

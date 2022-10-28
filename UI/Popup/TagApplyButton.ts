@@ -14,8 +14,9 @@ import { Tag } from "../../Logic/Tags/Tag"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Changes } from "../../Logic/Osm/Changes"
+import {SpecialVisualization} from "../SpecialVisualization";
 
-export default class TagApplyButton implements AutoAction {
+export default class TagApplyButton implements AutoAction , SpecialVisualization{
     public readonly funcName = "tag_apply"
     public readonly docs =
         "Shows a big button; clicking this button will apply certain tags onto the feature.\n\nThe first argument takes a specification of which tags to add.\n" +

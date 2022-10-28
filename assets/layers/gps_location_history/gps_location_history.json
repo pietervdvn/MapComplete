@@ -1,11 +1,22 @@
 {
   "id": "gps_location_history",
   "description": "Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object",
-  "minzoom": 0,
+  "minzoom": 1,
+  "name": null,
   "source": {
     "osmTags": "user:location=yes",
     "#": "Cache is disabled here as these points are kept seperately",
     "maxCacheAge": 0
   },
-  "mapRendering": null
+  "shownByDefault": false,
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "square:red",
+      "iconSize": "5,5,center"
+    }
+  ]
 }

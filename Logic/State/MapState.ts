@@ -68,7 +68,7 @@ export default class MapState extends UserRelatedState {
     public currentUserLocation: SimpleFeatureSource
 
     /**
-     * All previously visited points
+     * All previously visited points, with their metadata
      */
     public historicalUserLocations: SimpleFeatureSource
     /**
@@ -79,6 +79,11 @@ export default class MapState extends UserRelatedState {
         7 * 24 * 60 * 60,
         "gps_location_retention"
     )
+    /**
+     * A featureSource containing a single linestring which has the GPS-history of the user.
+     * However, metadata (such as when every single point was visited) is lost here (but is kept in `historicalUserLocations`.
+     * Note that this featureSource is _derived_ from 'historicalUserLocations'
+     */
     public historicalUserLocationsTrack: FeatureSourceForLayer & Tiled
 
     /**
