@@ -15,6 +15,15 @@ import {Translation} from "../i18n/Translation";
 
 export default class UploadTraceToOsmUI extends Toggle {
 
+    private static createDefault(s: string, defaultValue: string){
+        if(defaultValue.length < 1){
+            throw "Default value should have some characters"
+        }
+        if(s === undefined || s === null || s === ""){
+            return defaultValue
+        }
+        return s
+    }
 
     constructor(
         trace: (title: string) => string,
@@ -76,10 +85,12 @@ export default class UploadTraceToOsmUI extends Toggle {
                     clicked.setData(false)
                 }).SetClass(""),
                 new SubtleButton(Svg.upload_svg(), t.confirm).OnClickWithLoading(t.uploading, async () => {
+                    const titleStr = UploadTraceToOsmUI.createDefault(title.GetValue().data, "Track with mapcomplete")
+                    const descriptionStr = UploadTraceToOsmUI.createDefault(description.GetValue().data, "Track created with MapComplete with theme "+state?.layoutToUse?.id)
                     await state?.osmConnection?.uploadGpxTrack(trace(title.GetValue().data), {
                         visibility: dropdown.GetValue().data,
-                        description: description.GetValue().data,
-                        filename: title.GetValue().data+".gpx",
+                        description: descriptionStr,
+                        filename: titleStr +".gpx",
                         labels: ["MapComplete", state?.layoutToUse?.id]
                     })
 
