@@ -51,6 +51,7 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import {GeoOperations} from "../Logic/GeoOperations";
 import StatisticsPanel from "./BigComponents/StatisticsPanel";
 import AutoApplyButton from "./Popup/AutoApplyButton";
+import {LanguageElement} from "./Popup/LanguageElement";
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[]  = SpecialVisualizations.initList();
@@ -74,6 +75,7 @@ export default class SpecialVisualizations {
             new CloseNoteButton(),
             new NearbyImageVis(),
             new MapillaryLinkVis(),
+            new LanguageElement(),
             {
                 funcName: "all_tags",
                 docs: "Prints all key-value pairs of the object - used for debugging",

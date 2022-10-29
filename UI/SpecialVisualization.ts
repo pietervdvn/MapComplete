@@ -1,13 +1,15 @@
 import {UIEventSource} from "../Logic/UIEventSource";
 import BaseUIElement from "./BaseUIElement";
+import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
+import {DefaultGuiState} from "./DefaultGuiState";
 
 export interface SpecialVisualization {
     funcName: string
     constr: (
-        state: any, /*FeaturePipelineState*/
+        state: FeaturePipelineState,
         tagSource: UIEventSource<any>,
         argument: string[],
-        guistate: any /*DefaultGuiState*/
+        guistate: DefaultGuiState
     ) => BaseUIElement
     docs: string | BaseUIElement
     example?: string
