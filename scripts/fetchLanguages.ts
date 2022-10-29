@@ -1,5 +1,6 @@
 /**
- * Fetches all 'modern languages' from wikidata, then exports their names in every language
+ * Fetches all 'modern languages' from wikidata, then exports their names in every language.
+ * Some meta-info (e.g. RTL) is exported too
  */
 
 import * as wds from "wikidata-sdk"
@@ -21,12 +22,15 @@ async function fetchRegularLanguages() {
     console.log("Fetching languages")
 
     const sparql =
-        "SELECT ?lang ?label ?code \n" +
+        "SELECT ?lang ?label ?code ?directionalityLabel \n" +
         "WHERE \n" +
         "{ \n" +
         "  ?lang wdt:P31 wd:Q1288568. \n" + // language instanceOf (p31) modern language(Q1288568)
         "  ?lang rdfs:label ?label. \n" +
-        "  ?lang wdt:P424 ?code" + // Wikimedia language code seems to be close to the weblate entries
+        " ?lang wdt:P282 ?writing_system. \n"+
+        "  ?writing_system wdt:P1406 ?directionality. \n" +
+        "  ?lang wdt:P424 ?code. \n" +// Wikimedia language code seems to be close to the weblate entries
+        "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". } \n" +
         "} "
     const url = wds.sparqlQuery(sparql)
 
@@ -67,16 +71,19 @@ async function fetchSpecial(id: number, code: string) {
     return bindings
 }
 
-function getNativeList(langs: Map<string, Map<string, string>>) {
+function getNativeList(langs: Map<string, { translations: Map<string, string> }>) {
     const native = {}
     const keys: string[] = Array.from(langs.keys())
     keys.sort()
     for (const key of keys) {
-        const translations: Map<string, string> = langs.get(key)
+        const translations: Map<string, string> = langs.get(key).translations
         if (!LanguageUtils.usedLanguages.has(key)) {
             continue
         }
         native[key] = translations.get(key)
+        if(native[key] === undefined){
+            console.log("No native translation found for "+key)
+        }
     }
     return native
 }
@@ -108,33 +115,7 @@ async function getOfficialLanguagesPerCountry(): Promise<Map<string, string[]>> 
     return lngs
 }
 
-async function main(wipeCache = false) {
-    const cacheFile = "./assets/generated/languages-wd.json"
-    if (wipeCache || !existsSync(cacheFile)) {
-        console.log("Refreshing cache")
-        await fetch(cacheFile)
-    } else {
-        console.log("Reusing the cached file")
-    }
-    const data = JSON.parse(readFileSync(cacheFile, "UTF8"))
-    const perId = WikidataUtils.extractLanguageData(data, WikidataUtils.languageRemapping)
-    const nativeList = getNativeList(perId)
-    writeFileSync("./assets/language_native.json", JSON.stringify(nativeList, null, "  "))
-
-    const translations = Utils.MapToObj(perId, (value, key) => {
-        if (!LanguageUtils.usedLanguages.has(key)) {
-            return undefined // Remove unused languages
-        }
-        return Utils.MapToObj(value, (v, k) => {
-            if (!LanguageUtils.usedLanguages.has(k)) {
-                return undefined
-            }
-            return v
-        })
-    })
-
-    writeFileSync("./assets/language_translations.json", JSON.stringify(translations, null, "  "))
-
+async function getOfficialLanguagesPerCountryCached(wipeCache: boolean): Promise<Record<string /*Country code*/, string[] /*Language codes*/>>{
     let officialLanguages: Record<string, string[]>
     const officialLanguagesPath = "./assets/language_in_country.json"
     if (existsSync("./assets/languages_in_country.json") && !wipeCache) {
@@ -143,37 +124,48 @@ async function main(wipeCache = false) {
         officialLanguages = Utils.MapToObj(await getOfficialLanguagesPerCountry(), (t) => t)
         writeFileSync(officialLanguagesPath, JSON.stringify(officialLanguages, null, "  "))
     }
+    return officialLanguages
+}
 
-    const perLanguage = Utils.TransposeMap(officialLanguages)
-    console.log(JSON.stringify(perLanguage, null, " "))
-    const mappings: { if: string; then: Record<string, string>; hideInAnswer: string }[] = []
-    for (const language of Object.keys(perLanguage)) {
-        const countries = Utils.Dedup(perLanguage[language].map((c) => c.toLowerCase()))
-        mappings.push({
-            if: "language=" + language,
-            then: translations[language],
-            hideInAnswer: "_country=" + countries.join("|"),
+async function main(wipeCache = false) {
+    const cacheFile = "./assets/generated/languages-wd.json"
+    if (wipeCache || !existsSync(cacheFile)) {
+        console.log("Refreshing cache")
+        await fetch(cacheFile)
+    } else {
+        console.log("Reusing the cached file")
+    }
+
+
+    const data = JSON.parse(readFileSync(cacheFile, "UTF8"))
+    const perId = WikidataUtils.extractLanguageData(data, WikidataUtils.languageRemapping)
+    const nativeList = getNativeList(perId)
+    writeFileSync("./assets/language_native.json", JSON.stringify(nativeList, null, "  "))
+    const languagesPerCountry = Utils.TransposeMap(await getOfficialLanguagesPerCountryCached(wipeCache))
+    const translations = Utils.MapToObj(perId, (value, key) => {
+        // We keep all language codes in the list...
+        const translatedForId : Record<string, string | {countries?: string[], dir: string[]}> = Utils.MapToObj(value.translations, (v, k) => {
+            if (!LanguageUtils.usedLanguages.has(k)) {
+                // ... but don't keep translations if we don't have a displayed language for them
+                return undefined
+            }
+            return v
         })
-    }
 
-    const tagRenderings = <QuestionableTagRenderingConfigJson>{
-        id: "official-language",
-        mappings,
-        question: "What languages are spoken here?",
-    }
+        translatedForId["_meta"] = {
+            countries : Utils.Dedup( languagesPerCountry[key]),
+            dir: value.directionality
+        }
 
-    writeFileSync(
-        "./assets/layers/language/language.json",
-        JSON.stringify(
-            <LayerConfigJson>{
-                id: "language",
-                description: "Various tagRenderings to help language tooling",
-                tagRenderings,
-            },
-            null,
-            "  "
-        )
-    )
+        return translatedForId
+    })
+
+    writeFileSync("./assets/language_translations.json", JSON.stringify(translations, null, "  "))
+
+
+
+
+
 }
 
 const forceRefresh = process.argv[2] === "--force-refresh"
