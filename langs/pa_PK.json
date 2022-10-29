@@ -11,7 +11,11 @@
         "attribution": {
             "iconAttribution": {
                 "title": "ورتے آئیکون"
-            }
+            },
+            "openIssueTracker": "مسئلہ ریپورٹ کرو",
+            "josmOpened": "جے‌او‌ایس‌ایم کھُلھیا گیا",
+            "openMapillary": "اِتھے میپیلیری کھُلھو",
+            "editJosm": "جے‌او‌ایس‌ایم وچ اِتھے سودھو"
         },
         "back": "پچھے",
         "backgroundMap": "پچھکڑ دا نقشہ",
@@ -36,7 +40,9 @@
         "save": "سامبھو",
         "search": {
             "nothing": "کجھ نہیں لبھے۔ ۔ ۔",
-            "searching": "کھوجیا جا رہا اے۔ ۔ ۔"
+            "searching": "کھوجیا جا رہا اے۔ ۔ ۔",
+            "search": "ستھتیاں وچ کھوجو",
+            "error": "کجھ غلطی آئی اے۔   ۔ ۔"
         },
         "weekdays": {
             "abbreviations": {
@@ -58,12 +64,23 @@
         },
         "wikipedia": {
             "wikipediaboxTitle": "وِکیپیڈیا",
-            "loading": "وِکیپیڈیا لوڈ کیتا جا رہا اے۔ ۔ ۔"
+            "loading": "وِکیپیڈیا لوڈ کیتا جا رہا اے۔ ۔ ۔",
+            "searchWikidata": "وِکیڈیٹے وچ کھوجو"
         },
         "goToInbox": "اینباکس کھُلھو",
         "layerSelection": {
             "title": "کج چݨو"
-        }
+        },
+        "openTheMap": "نقشہ کھُلھو",
+        "poweredByOsm": "اوپن‌سٹریٹ‌میپ توں ڈیٹا ورتدا",
+        "sharescreen": {
+            "editThisTheme": "ایہہ تھیم سودھو",
+            "thanksForSharing": "ٹھیک اے، مہربانی۔"
+        },
+        "morescreen": {
+            "noSearch": "ساریاں تھیم ویکھو"
+        },
+        "noTagsSelected": "کوئی ٹیگ نہیں چݨے اے"
     },
     "image": {
         "dontDelete": "رد کرو",
@@ -71,7 +88,9 @@
         "addPicture": "تصویر پایو",
         "doDelete": "تصویر ہٹاؤ",
         "nearbyPictures": {
-            "title": "نیڑے تیڑے تے تصویراں"
+            "title": "نیڑے تیڑے تے تصویراں",
+            "loadMore": "ہور تصویراں لوڈ کرو",
+            "browseNearby": "نیڑے تیڑے تے تصویراں ویکھو۔ ۔ ۔"
         }
     },
     "importHelper": {
@@ -92,12 +111,19 @@
             "title": "نوٹ بݨاؤݨ"
         },
         "login": {
-            "title": "لوگ‌این کرو"
+            "title": "لوگ‌این کرو",
+            "userAccountTitle": "ورتنوالے دا کھاتہ چݨو"
         },
         "selectFile": {
             "title": "فائل چݨو"
         },
-        "title": "ایمپورٹ کرن مددگار"
+        "title": "ایمپورٹ کرن مددگار",
+        "confirmProcess": {
+            "title": "لائیسنس تے لوکاں دی جاݨکاری"
+        },
+        "selectTheme": {
+            "title": "تھیم چݨو"
+        }
     },
     "matrixbot": {
         "commands": {
@@ -113,6 +139,10 @@
                 "theme": {
                     "plural": "تھیم",
                     "singular": "تھیم"
+                },
+                "inputElement": {
+                    "singular": "تت پایو",
+                    "plural": "تت پایو"
                 }
             },
             "info": {
@@ -126,5 +156,38 @@
     "split": {
         "cancel": "رد کرو",
         "split": "دپھیر کرو"
+    },
+    "move": {
+        "cancel": "چلݨ رد کرو"
+    },
+    "notes": {
+        "closeNote": "نوٹ بند کرو",
+        "addCommentPlaceholder": "ٹپݨی کرو۔ ۔ ۔",
+        "addAComment": "ٹپݨی کرو"
+    },
+    "professional": {
+        "aboutOsm": {
+            "aboutOsm": {
+                "title": "اوپن‌سٹریٹ‌میپ کیہ اے؟"
+            }
+        }
+    },
+    "translations": {
+        "activateButton": "ترجمہ کریو",
+        "allMissing": "ہݨے کوئی ترجمے نہیں اے"
+    },
+    "validation": {
+        "float": {
+            "description": "کجھ نمبر"
+        },
+        "opening_hours": {
+            "description": "کھُلھے گھنٹے"
+        },
+        "nat": {
+            "notANumber": "اِک نمبر پایو"
+        },
+        "phone": {
+            "description": "فون نمبر"
+        }
     }
 }
