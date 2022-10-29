@@ -27,6 +27,7 @@
     "osmTags": "highway=steps"
   },
   "tagRenderings": [
+    "images",
     {
       "id": "handrail",
       "question": {
@@ -74,7 +75,7 @@
     },
     {
       "id": "tactile_writing_language",
-      "condition": "tactile_writing:braille:language=yes",
+      "condition": "tactile_writing=yes",
       "render": {
         "special": {
           "type": "language_chooser",
