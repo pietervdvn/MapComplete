@@ -398,7 +398,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         while (match) {
             const key = match[1]
             let v = tags === undefined ? undefined : tags[key]
-            if (v !== undefined) {
+            if (v !== undefined && v !== null) {
                 if (v["toISOString"] != undefined) {
                     // This is a date, probably the timestamp of the object
                     // @ts-ignore

@@ -42,6 +42,9 @@ export default class LanguagePicker extends Toggle {
             return new Translation({ "*": nativeText })
         }
         for (const key in trans) {
+            if(key.startsWith("_")){
+                continue
+            }
             const translationInKey = allTranslations[lang][key]
             if (nativeText.toLowerCase() === translationInKey.toLowerCase()) {
                 translation[key] = nativeText

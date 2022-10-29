@@ -2,7 +2,7 @@ import { UIEventSource } from "../Logic/UIEventSource"
 import { Translation } from "./i18n/Translation"
 import Locale from "./i18n/Locale"
 import { FixedUiElement } from "./Base/FixedUiElement"
-import SpecialVisualizations, { SpecialVisualization } from "./SpecialVisualizations"
+import SpecialVisualizations from "./SpecialVisualizations"
 import { Utils } from "../Utils"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import Combine from "./Base/Combine"
@@ -10,6 +10,7 @@ import BaseUIElement from "./BaseUIElement"
 import { DefaultGuiState } from "./DefaultGuiState"
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
 import LinkToWeblate from "./Base/LinkToWeblate"
+import {SpecialVisualization} from "./SpecialVisualization";
 
 export class SubstitutedTranslation extends VariableUiElement {
     public constructor(

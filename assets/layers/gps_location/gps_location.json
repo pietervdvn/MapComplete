@@ -11,7 +11,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render":"crosshair:var(--catch-detail-color)",
+        "render": "crosshair:var(--catch-detail-color)",
         "mappings": [
           {
             "if": "speed>2",
@@ -22,12 +22,17 @@
       "iconSize": "40,40,center",
       "rotation": {
         "render": "0deg",
-        "mappings": [{
-          "if": {
-            "and":["speed>2","heading!=NaN"]
-          },
-          "then": "{heading}deg"
-        }]
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "speed>2",
+                "heading!=NaN"
+              ]
+            },
+            "then": "{heading}deg"
+          }
+        ]
       },
       "location": [
         "point",

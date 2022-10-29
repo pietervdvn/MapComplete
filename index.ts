@@ -11,7 +11,6 @@ import ShowOverlayLayerImplementation from "./UI/ShowDataLayer/ShowOverlayLayerI
 import { DefaultGuiState } from "./UI/DefaultGuiState"
 import { QueryParameters } from "./Logic/Web/QueryParameters"
 import DashboardGui from "./UI/DashboardGui"
-import StatisticsGUI from "./UI/StatisticsGUI"
 
 // Workaround for a stupid crash: inject some functions which would give stupid circular dependencies or crash the other nodejs scripts running from console
 MinimapImplementation.initialize()

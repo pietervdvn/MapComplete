@@ -11,6 +11,11 @@ describe("SpecialVisualisations", () => {
                     "type",
                     "A special visualisation is not allowed to be named 'type', as this will conflict with the 'special'-blocks"
                 )
+
+                if(special.args === undefined){
+                    throw "The field 'args' is undefined for special visualisation "+special.funcName
+                }
+
                 for (const arg of special.args) {
                     expect(arg.name).not.eq(
                         "type",

@@ -1,6 +1,6 @@
 {
   "id": "gps_track",
-  "description": "Meta layer showing the previous locations of the user as single line. Add this to your theme and override the icon to change the appearance of the current location.",
+  "description": "Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track.",
   "minzoom": 0,
   "source": {
     "osmTags": "id=location_track",
@@ -22,6 +22,7 @@
     },
     "export_as_gpx",
     "export_as_geojson",
+    "{upload_to_osm()}",
     "minimap",
     {
       "id": "delete",

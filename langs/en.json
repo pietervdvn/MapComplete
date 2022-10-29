@@ -280,6 +280,32 @@
         "skip": "Skip this question",
         "skippedQuestions": "Some questions are skipped",
         "testing": "Testing - changes won't be saved",
+        "uploadGpx": {
+            "choosePermission": "Choose below if your track should be shared:",
+            "confirm": "Confirm upload",
+            "intro0": "By uploading your track, OpenStreetMap.org will retain a full copy of the track.",
+            "intro1": "You will be able to download your track again and to load them into OpenStreetMap editing programs",
+            "meta": {
+                "descriptionIntro": "Optionally, you can enter a description of your trace:",
+                "descriptionPlaceHolder": "Enter a description of your trace",
+                "intro": "Add a title for your track:",
+                "title": "Title and description",
+                "titlePlaceholder": "Enter the title of your trace"
+            },
+            "modes": {
+                "private": {
+                    "docs": "The points of your track will be shared and aggregated among other tracks. The full track will be visible to you and you will be able to load it into other editing programs. OpenStreetMap.org retains a copy of your trace",
+                    "name": "Anonymous"
+                },
+                "public": {
+                    "docs": "Your trace will be visible to everyone, both on your user profile and on the list of GPS-traces on openstreetmap.org",
+                    "name": "Public"
+                }
+            },
+            "title": "Upload your track to OpenStreetMap.org",
+            "uploadFinished": "Your track has been uploaded!",
+            "uploading": "Uploading your trace..."
+        },
         "useSearch": "Use the search above to see presets",
         "useSearchForMore": "Use the search function to search within {total} more values....",
         "weekdays": {

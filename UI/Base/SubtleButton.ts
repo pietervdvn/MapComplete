@@ -73,13 +73,11 @@ export class SubtleButton extends UIElement {
             }
         })
         const loading = new Lazy(() => new Loading(loadingText))
-        return new VariableUiElement(
-            state.map((st) => {
-                if (st === "idle") {
-                    return button
-                }
-                return loading
-            })
-        )
+        return new VariableUiElement(state.map(st => {
+            if(st === "idle"){
+                return button
+            }
+            return loading
+        }))
     }
 }
