@@ -16,10 +16,6 @@ export class Translation extends BaseUIElement {
             throw `Translation without content (${context})`
         }
         this.context = translations["_context"] ?? context
-        if (translations["_context"] !== undefined) {
-            translations = { ...translations }
-            delete translations["_context"]
-        }
         if (typeof translations === "string") {
             translations = { "*": translations }
         }
@@ -28,7 +24,7 @@ export class Translation extends BaseUIElement {
             if (!translations.hasOwnProperty(translationsKey)) {
                 continue
             }
-            if (translationsKey === "_context") {
+            if (translationsKey === "_context" || translationsKey === "_meta") {
                 continue
             }
             count++

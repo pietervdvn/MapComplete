@@ -66,21 +66,24 @@ export default class FilterConfig {
             })
 
             for (const field of fields) {
-                question.OnEveryLanguage((txt, language) => {
+                for (let ln in question.translations) {
+                    const txt = question.translations[ln]
+                    if(ln.startsWith("_")){
+                        continue
+                    }
                     if (txt.indexOf("{" + field.name + "}") < 0) {
                         throw (
                             "Error in filter with fields at " +
                             context +
                             ".question." +
-                            language +
+                            ln +
                             ": The question text should contain every field, but it doesn't contain `{" +
                             field +
                             "}`: " +
                             txt
                         )
                     }
-                    return txt
-                })
+                }
             }
 
             if (option.default) {
