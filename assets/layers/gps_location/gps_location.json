@@ -6,10 +6,34 @@
     "osmTags": "id=gps",
     "maxCacheAge": 0
   },
+  "title": "Current position",
+  "name": "GPS Location",
   "mapRendering": [
     {
-      "icon": "crosshair:var(--catch-detail-color)",
+      "icon": {
+        "render": "crosshair:var(--catch-detail-color)",
+        "mappings": [
+          {
+            "if": "speed>2",
+            "then": "gps_arrow"
+          }
+        ]
+      },
       "iconSize": "40,40,center",
+      "rotation": {
+        "render": "0deg",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "speed>2",
+                "heading!=NaN"
+              ]
+            },
+            "then": "{heading}deg"
+          }
+        ]
+      },
       "location": [
         "point",
         "centroid"

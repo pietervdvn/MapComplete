@@ -50,6 +50,74 @@
         }
       ]
     },
+
+    {
+      "id": "tactile_writing",
+      "condition": "handrail=yes",
+      "question": {
+        "en": "Do these stairs have tactile writing on the handrail?"
+      },
+      "mappings": [
+        {
+          "if": "tactile_writing=yes",
+          "then": {
+            "en": "There is tactile writing on the handrail"
+          }
+        },
+        {
+          "if": "tactile_writing=no",
+          "then": {
+            "en": "There is no tactile writing on the handrail"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tactile_writing_language",
+      "condition": "tactile_writing:braille:language=yes",
+      "render": {
+        "special": {
+          "type": "language_chooser",
+          "key": "tactile_writing:braille:language",
+          "question": {
+            "en": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
+          },
+          "render_list_item": {
+            "en": "These stairs have tactile writing in {language():font-bold}"
+          },
+          "render_single_language": {
+            "en": "These stairs have tactile writing in {language():font-bold}"
+          }
+        }
+      }
+    },
+    {
+      "id": "conveying",
+      "mappings": [
+        {
+          "if": "conveying=yes",
+          "then": {
+            "en": "This is an escalator",
+            "nl": "Dit is een roltrap"
+          }
+        },
+        {
+          "if": "conveying=no",
+          "then": {
+            "en": "This is not an escalator",
+            "nl": "Dit is geen roltrap"
+          }
+        },
+        {
+          "if": "conveying=",
+          "then": {
+            "en": "This is not an escalator",
+            "nl": "Dit is geen roltrap"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
     {
       "id": "ramp",
       "question": {
@@ -90,33 +158,6 @@
           "ifnot": "ramp=",
           "then": {
             "en": "There is no ramp at these stairs"
-          }
-        }
-      ]
-    },
-    {
-      "builtin": "wikidata.tactile_writing-braille",
-      "override": {
-        "question": {
-          "en": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
-        }
-      }
-    },
-    {
-      "id": "conveying",
-      "mappings": [
-        {
-          "if": "conveying=yes",
-          "then": {
-            "en": "This is an escalator",
-            "nl": "Dit is een roltrap"
-          }
-        },
-        {
-          "if": "conveying=no",
-          "then": {
-            "en": "This is not an escalator",
-            "nl": "Dit is geen roltrap"
           }
         }
       ]

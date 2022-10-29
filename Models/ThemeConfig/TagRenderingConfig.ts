@@ -239,6 +239,9 @@ export default class TagRenderingConfig {
                 throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
             }
             for (const ln in this.render.translations) {
+                if(ln.startsWith("_")){
+                    continue
+                }
                 const txt: string = this.render.translations[ln]
                 if (txt === "") {
                     throw context + " Rendering for language " + ln + " is empty"

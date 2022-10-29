@@ -1,4 +1,3 @@
-import { SpecialVisualization } from "../SpecialVisualizations"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import BaseUIElement from "../BaseUIElement"
 import { Stores, UIEventSource } from "../../Logic/UIEventSource"
@@ -24,6 +23,7 @@ import FilteredLayer from "../../Models/FilteredLayer"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import Lazy from "../Base/Lazy"
 import List from "../Base/List"
+import {SpecialVisualization} from "../SpecialVisualization";
 
 export interface AutoAction extends SpecialVisualization {
     supportsAutoAction: boolean

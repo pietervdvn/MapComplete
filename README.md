@@ -6,11 +6,11 @@
 [![Matrix](https://img.shields.io/matrix/MapComplete:matrix.org)](https://matrix.to/#/#MapComplete:matrix.org?via=matrix.org)
 
 
-**MapComplete is an OpenStreetMap viewer and editor.** It shows map features on a certain topic, and allows to see, edit
-and add new features to the map. It can be seen as a
-webversion [crossover of StreetComplete and MapContrib](Docs/MapComplete_vs_other_editors.md). It tries to be just as
-easy to use as StreetComplete, but it allows to focus on one single theme per instance (e.g. nature, bicycle
-infrastructure, ...)
+**MapComplete is an OpenStreetMap viewer and editor.** The main goal is to make it trivial to see and update information on OpenStreetMap, also for non-technical users.
+This is achieved by showing only features related to a _single topic_ on the map. MapComplete contains many thematic maps, each built for a certain community of users, showing data and questions that are highly relevant for this topic.
+By showing only objects on a single topic, contributors are not distracted by objects that are not relevant to them.
+Furthermore, this allows to show (and ask for) attributes that are highly specialized (e.g. a widget that determines tree species based on pictures) but also by reusing common attributes and elements (such as showing and adding opening hours or pictures).
+
 
 **The design goals** of MapComplete are to be:
 
@@ -26,11 +26,20 @@ Furthermore, it shows images present in the `image` tag or, if a `wikidata` or `
 follows those to get these images too.
 
 **An explicit non-goal** of MapComplete is to modify geometries of ways, especially generic geometry-editing. (Splitting
-roads is possible and in some restricted themes is geometry-conflation possible too)
+roads is possible and in some restricted themes is geometry-conflation possible too). If adding geometry would be supported, we'd also have to show all geometries (to avoid accidental intersections).
+This would invite to show and map these other geometries as well, resulting in a general-purpose editor. However, we already [have an excellent, web-based general purpose editor](https://wiki.openstreetmap.org/wiki/ID).
 
 **More about
 MapComplete:** [Watch Pieter's talk on the 2021 State Of The Map Conference](https://media.ccc.de/v/sotm2021-9448-introduction-and-review-of-mapcomplete) ([YouTube](https://www.youtube.com/watch?v=zTtMn6fNbYY))
 about the history, vision and future of MapComplete.
+
+## What's the difference with StreetComplete?
+
+This is the repository of _Map_ Complete. _Street_ Complete is an Android-only application where the contributor is shown some questions to solve, after which the pin will dissappear from the map.
+
+StreetComplete can thus be seen as a Todo-map for contributors who go on a stroll, whereas MapComplete is a website showing relevant information and which allows to add or update information.
+
+The codebases are separate, even though many ideas and some artwork are copied from the StreetComplete app.
 
 # Documentation
 

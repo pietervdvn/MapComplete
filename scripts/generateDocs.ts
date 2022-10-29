@@ -1,6 +1,5 @@
 import Combine from "../UI/Base/Combine"
 import BaseUIElement from "../UI/BaseUIElement"
-import Translations from "../UI/i18n/Translations"
 import { existsSync, mkdirSync, writeFileSync } from "fs"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import TableOfContents from "../UI/Base/TableOfContents"
@@ -14,6 +13,9 @@ import QueryParameterDocumentation from "../UI/QueryParameterDocumentation"
 import ScriptUtils from "./ScriptUtils"
 import List from "../UI/Base/List"
 import SharedTagRenderings from "../Customizations/SharedTagRenderings"
+import {writeFile} from "fs";
+import Translations from "../UI/i18n/Translations";
+import * as themeOverview from "../assets/generated/theme_overview.json"
 
 function WriteFile(
     filename,
@@ -58,7 +60,61 @@ function WriteFile(
     writeFileSync(filename, md)
 }
 
+/**
+ * The wikitable is updated as some tools show an overview of apps based on the wiki.
+ */
+function generateWikipage(){
+
+    function generateWikiEntry(layout: { hideFromOverview: boolean, id: string, shortDescription: any }) {
+        if (layout.hideFromOverview) {
+            return "";
+        }
+
+        const languagesInDescr = []
+        for (const shortDescriptionKey in layout.shortDescription) {
+            languagesInDescr.push(shortDescriptionKey)
+        }
+
+        const languages = languagesInDescr.map(ln => `{{#language:${ln}|en}}`).join(", ")
+        let auth = "Yes";
+        return `{{service_item
+|name= [https://mapcomplete.osm.be/${layout.id} ${layout.id}]
+|region= Worldwide
+|lang= ${languages}
+|descr= A MapComplete theme: ${Translations.T(layout.shortDescription)
+            .textFor("en")
+            .replace("<a href='", "[[")
+            .replace(/'>.*<\/a>/, "]]")
+        }
+|material= {{yes|[https://mapcomplete.osm.be/ ${auth}]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, ${layout.id}
+}}`
+    }
+
+    let wikiPage = "{|class=\"wikitable sortable\"\n" +
+        "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
+        "|-";
+
+    for (const layout of (themeOverview["default"] ?? themeOverview)) {
+        if (layout.hideFromOverview) {
+            continue;
+        }
+        wikiPage += "\n" + generateWikiEntry(layout);
+    }
+
+    wikiPage += "\n|}"
+
+    writeFile("Docs/wikiIndex.txt", wikiPage, (err) => {
+        if (err !== null) {
+            console.log("Could not save wikiindex", err);
+        }
+    });
+}
+
 console.log("Starting documentation generation...")
+generateWikipage()
+
 AllKnownLayouts.GenOverviewsForSingleLayer((layer, element, inlineSource) => {
     console.log("Exporting ", layer.id)
     if (!existsSync("./Docs/Layers")) {

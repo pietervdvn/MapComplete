@@ -45,7 +45,7 @@
     "format": "npx prettier --write '**/*.ts'",
     "lint": "tslint --project . -c tslint.json '**.ts' ",
     "clean:tests": "(find . -type f -name \"*.doctest.ts\" | xargs rm)",
-    "clean": "rm -rf .cache/ && (find *.html | grep -v \"\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|import_helper\\|import_viewer\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs rm) && (ls | grep \".*.webmanifest$\" | grep -v \"manifest.webmanifest\" | xargs rm)",
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|import_helper\\|import_viewer\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs rm) && (ls | grep \".*.webmanifest$\" | grep -v \"manifest.webmanifest\" | xargs rm)",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
     "script": "ts-node",
     "weblate-merge": "./scripts/automerge-translations.sh",
@@ -54,7 +54,7 @@
     "weblate-fix-heavy": "git remote rm weblate-layers; git remote add weblate-layers https://hosted.weblate.org/git/mapcomplete/layers/; git remote update weblate-layers; git merge weblate-layers/master",
     "housekeeping": "npm run generate && npm run generate:docs && npm run generate:contributor-list && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* && git commit -m 'Housekeeping...'",
     "parseSchools": "ts-node scripts/schools/amendSchoolData.ts",
-    "steal": "ts-node scripts/thieves/stealLanguages.ts"
+    "steal": "ts-node scripts/fetchLanguages.ts"
   },
   "keywords": [
     "OpenStreetMap",

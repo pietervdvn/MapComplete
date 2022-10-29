@@ -296,28 +296,31 @@
     "phone",
     "email",
     {
-      "builtin": "wikidata.school-language",
-      "override": {
-        "+mappings": [
-          {
-            "if": "school:language=",
-            "hideInAnswer": true,
-            "then": {
-              "en": "The main language of this school is unknown",
-              "nl": "De voertaal van deze school is niet gekend",
-              "de": "Die Unterrichtssprache der Schule ist unbekannt",
-              "fr": "La langue principale de cette école est inconnue"
-            }
-          }
-        ],
+      "id": "school-language",
+      "render": {
+      "special": {
+        "type": "language_chooser",
+        "key": "language",
+        "render_all": {
+          "en": "The following languages are used in this school:{list()}"
+        },
+        "render_single_language": {
+          "en": "{language():font-bold} is the main language of this school"
+        },
         "question": {
           "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
           "nl": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>",
           "de": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
           "fr": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
+        },
+        "no_known_languages": {
+          "en": "The main language of this school is unknown",
+          "nl": "De voertaal van deze school is niet gekend",
+          "de": "Die Unterrichtssprache der Schule ist unbekannt",
+          "fr": "La langue principale de cette école est inconnue"
         }
       }
-    }
+    }}
   ],
   "presets": [
     {

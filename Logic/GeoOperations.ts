@@ -1,20 +1,10 @@
-import * as turf from "@turf/turf"
-import { BBox } from "./BBox"
-import togpx from "togpx"
-import Constants from "../Models/Constants"
+import {BBox} from "./BBox"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import {
-    AllGeoJSON,
-    booleanWithin,
-    Coord,
-    Feature,
-    Geometry,
-    Lines,
-    MultiPolygon,
-    Polygon,
-    Properties,
-} from "@turf/turf"
-import { GeoJSON, LineString, Point } from "geojson"
+import * as turf from "@turf/turf"
+import {AllGeoJSON, booleanWithin, Coord, Feature, Geometry, MultiPolygon, Polygon,} from "@turf/turf"
+import {LineString, Point} from "geojson"
+import togpx from "togpx"
+import Constants from "../Models/Constants";
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -393,21 +383,22 @@ export class GeoOperations {
             .features.map((p) => <[number, number]>p.geometry.coordinates)
     }
 
-    public static AsGpx(feature, generatedWithLayer?: LayerConfig) {
-        const metadata = {}
+    public static AsGpx(feature: Feature, options?: {layer?: LayerConfig, gpxMetadata?: any }) : string{
+
+        const metadata = options?.gpxMetadata ?? {}
+        metadata["time"] = metadata["time"] ?? new Date().toISOString()
         const tags = feature.properties
 
-        if (generatedWithLayer !== undefined) {
-            metadata["name"] = generatedWithLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
-            metadata["desc"] = "Generated with MapComplete layer " + generatedWithLayer.id
+        if (options?.layer !== undefined) {
+
+            metadata["name"] = options?.layer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
+            metadata["desc"] = "Generated with MapComplete layer " + options?.layer.id
             if (tags._backend?.contains("openstreetmap")) {
                 metadata["copyright"] =
                     "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
                 metadata["author"] = tags["_last_edit:contributor"]
                 metadata["link"] = "https://www.openstreetmap.org/" + tags.id
                 metadata["time"] = tags["_last_edit:timestamp"]
-            } else {
-                metadata["time"] = new Date().toISOString()
             }
         }
 

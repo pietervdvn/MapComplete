@@ -183,7 +183,8 @@
   "presets": [
     {
       "tags": [
-        "tourism=map"
+        "tourism=information",
+        "information=map"
       ],
       "title": {
         "en": "a map",

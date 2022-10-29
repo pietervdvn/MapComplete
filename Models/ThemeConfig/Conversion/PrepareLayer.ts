@@ -526,7 +526,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * // should warn for unexpected keys
      * const errors = []
      * RewriteSpecial.convertIfNeeded({"special": {type: "image_carousel"}, "en": "xyz"}, errors, "test") // =>  {'*': "{image_carousel()}"}
-     * errors // => ["The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put 'en' into the special block?"]
+     * errors // => ["At test: The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put 'en' into the special block?"]
      *
      * // should give an error on unknown visualisations
      * const errors = []
@@ -593,7 +593,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             ...Array.from(Object.keys(input))
                 .filter((k) => k !== "special" && k !== "before" && k !== "after")
                 .map((k) => {
-                    return `The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put '${k}' into the special block?`
+                    return `At ${context}: The only keys allowed next to a 'special'-block are 'before' and 'after'. Perhaps you meant to put '${k}' into the special block?`
                 })
         )
 
@@ -610,7 +610,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                         argNamesList,
                         (x) => x
                     )
-                    return `Unexpected argument in special block at ${context} with name '${wrongArg}'. Did you mean ${
+                    return `At ${context}: Unexpected argument in special block at ${context} with name '${wrongArg}'. Did you mean ${
                         byDistance[0]
                     }?\n\tAll known arguments are ${argNamesList.join(", ")}`
                 })
@@ -623,7 +623,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             }
             const param = special[arg.name]
             if (param === undefined) {
-                errors.push(`Obligated parameter '${arg.name}' not found`)
+                errors.push(`At ${context}: Obligated parameter '${arg.name}' in special rendering of type ${vis.funcName} not found.\n${arg.doc}`)
             }
         }
 
@@ -735,7 +735,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
                 continue
             }
             Utils.WalkPath(path.path, json, (leaf, travelled) =>
-                RewriteSpecial.convertIfNeeded(leaf, errors, travelled.join("."))
+                RewriteSpecial.convertIfNeeded(leaf, errors, context + ":" + travelled.join("."))
             )
         }
 
