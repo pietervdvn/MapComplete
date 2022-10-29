@@ -36,7 +36,12 @@
       "override": {
         "title": null,
         "name": null,
-        "mapRendering": null
+        "mapRendering": [
+          {},
+          {
+            "width": 0
+          }
+        ]
       }
     },
     {
@@ -79,7 +84,10 @@
       ]
     },
     {
-      "builtin": ["shops", "bike_parking"],
+      "builtin": [
+        "shops",
+        "bike_parking"
+      ],
       "override": {
         "isShown": {
           "or": [

@@ -31,15 +31,9 @@
       ]
     },
     {
-      "color": {
-        "render": "#b33"
-      },
-      "width": {
-        "render": 4
-      },
-      "dashArray": {
-        "render": "12 6"
-      }
+      "color": "#b33",
+      "width": 4,
+      "dashArray": "12 6"
     }
   ]
 }
