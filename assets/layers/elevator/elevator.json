@@ -135,8 +135,9 @@
       }
     },
     "induction-loop",
-    {"render": {
+    {
       "id": "tactile_writing_language",
+      "render": {
       "special": {
         "type": "language_chooser",
         "question": {
