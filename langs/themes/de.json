@@ -1153,5 +1153,26 @@
         "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "blind_osm": {
+        "title": "OSM für Blinde",
+        "description": "Hilfe zur Kartierung blindenrelevanter Merkmale"
+    },
+    "sports": {
+        "layers": {
+            "4": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "ein Sportgeschäft",
+                            "description": "Ein neues Geschäft für Sportartikel hinzufügen."
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Karte mit Sporteinrichtungen.",
+        "title": "Sport",
+        "description": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr."
     }
 }
