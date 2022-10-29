@@ -1,20 +1,20 @@
 import Combine from "../Base/Combine"
-import { FlowPanelFactory, FlowStep } from "../ImportFlow/FlowStep"
-import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import { InputElement } from "../Input/InputElement"
-import { SvgToPdf, SvgToPdfOptions } from "../../Utils/svgToPdf"
-import { FixedInputElement } from "../Input/FixedInputElement"
-import { FixedUiElement } from "../Base/FixedUiElement"
+import {FlowPanelFactory, FlowStep} from "../ImportFlow/FlowStep"
+import {ImmutableStore, Store, UIEventSource} from "../../Logic/UIEventSource"
+import {InputElement} from "../Input/InputElement"
+import {SvgToPdf, SvgToPdfOptions} from "../../Utils/svgToPdf"
+import {FixedInputElement} from "../Input/FixedInputElement"
+import {FixedUiElement} from "../Base/FixedUiElement"
 import FileSelectorButton from "../Input/FileSelectorButton"
 import InputElementMap from "../Input/InputElementMap"
-import { RadioButton } from "../Input/RadioButton"
-import { Utils } from "../../Utils"
-import { VariableUiElement } from "../Base/VariableUIElement"
+import {RadioButton} from "../Input/RadioButton"
+import {Utils} from "../../Utils"
+import {VariableUiElement} from "../Base/VariableUIElement"
 import Loading from "../Base/Loading"
 import BaseUIElement from "../BaseUIElement"
 import Img from "../Base/Img"
 import Title from "../Base/Title"
-import { CheckBox } from "../Input/Checkboxes"
+import {CheckBox} from "../Input/Checkboxes"
 import Minimap from "../Base/Minimap"
 import SearchAndGo from "./SearchAndGo"
 import Toggle from "../Input/Toggle"
@@ -25,9 +25,7 @@ import Toggleable from "../Base/Toggleable"
 import Lazy from "../Base/Lazy"
 import LinkToWeblate from "../Base/LinkToWeblate"
 import Link from "../Base/Link"
-import { SearchablePillsSelector } from "../Input/SearchableMappingsSelector"
-import * as languages from "../../assets/language_translations.json"
-import { Translation } from "../i18n/Translation"
+import {AllLanguagesSelector} from "../Popup/AllLanguagesSelector";
 
 class SelectTemplate extends Combine implements FlowStep<{ title: string; pages: string[] }> {
     readonly IsValid: Store<boolean>
@@ -203,23 +201,7 @@ class PreparePdf extends Combine implements FlowStep<{ svgToPdf: SvgToPdf; langu
 
     constructor(title: string, pages: string[], options: SvgToPdfOptions) {
         const svgToPdf = new SvgToPdf(title, pages, options)
-        const languageOptions = [
-            new FixedInputElement("Nederlands", "nl"),
-            new FixedInputElement("English", "en"),
-        ]
-        const langs: string[] = Array.from(Object.keys(languages["default"] ?? languages))
-        console.log("Available languages are:", langs)
-        const languageSelector = new SearchablePillsSelector(
-            langs.map((l) => ({
-                show: new Translation(languages[l]),
-                value: l,
-                mainTerm: languages[l],
-            })),
-            {
-                mode: "select-many",
-            }
-        )
-
+        const languageSelector = new AllLanguagesSelector(          )
         const isPrepared = UIEventSource.FromPromiseWithErr(svgToPdf.Prepare())
 
         super([

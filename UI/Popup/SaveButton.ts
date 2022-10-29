@@ -3,6 +3,21 @@ import Translations from "../i18n/Translations"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Toggle from "../Input/Toggle"
 import BaseUIElement from "../BaseUIElement"
+import Combine from "../Base/Combine";
+import Svg from "../../Svg";
+
+export class EditButton extends Toggle {
+    constructor(osmConnection: OsmConnection, onClick: () => void) {
+        super(
+            new Combine([Svg.pencil_ui()])
+                .SetClass("block relative h-10 w-10 p-2 float-right")
+                .SetStyle("border: 1px solid black; border-radius: 0.7em")
+                .onClick(onClick),
+            undefined,
+            osmConnection.isLoggedIn
+        )
+    }
+}
 
 export class SaveButton extends Toggle {
     constructor(

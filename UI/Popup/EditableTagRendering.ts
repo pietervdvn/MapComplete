@@ -10,6 +10,7 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { Unit } from "../../Models/Unit"
 import Lazy from "../Base/Lazy"
 import { FixedUiElement } from "../Base/FixedUiElement"
+import {EditButton} from "./SaveButton";
 
 export default class EditableTagRendering extends Toggle {
     constructor(
@@ -70,16 +71,9 @@ export default class EditableTagRendering extends Toggle {
             // We have a question and editing is enabled
             const answerWithEditButton = new Combine([
                 answer,
-                new Toggle(
-                    new Combine([Svg.pencil_ui()])
-                        .SetClass("block relative h-10 w-10 p-2 float-right")
-                        .SetStyle("border: 1px solid black; border-radius: 0.7em")
-                        .onClick(() => {
-                            editMode.setData(true)
-                        }),
-                    undefined,
-                    state.osmConnection.isLoggedIn
-                ),
+                new EditButton(state.osmConnection,() => {
+                    editMode.setData(true)
+                }),
             ]).SetClass("flex justify-between w-full")
 
             const question = new Lazy(

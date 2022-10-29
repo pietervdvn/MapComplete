@@ -105,7 +105,7 @@ export default class TagRenderingQuestion extends Combine {
                 TagUtils.FlattenAnd(inputElement.GetValue().data, tags.data)
             )
             if (selection) {
-                ;(state?.changes)
+                (state?.changes)
                     .applyAction(
                         new ChangeTagAction(tags.data.id, selection, tags.data, {
                             theme: state?.layoutToUse?.id ?? "unkown",
@@ -288,14 +288,16 @@ export default class TagRenderingQuestion extends Combine {
         value: number
         mainTerm: Record<string, string>
         searchTerms?: Record<string, string[]>
-        original: Mapping
+        original: Mapping,
+        hasPriority?: Store<boolean>
     }[] {
         const values: {
             show: BaseUIElement
             value: number
             mainTerm: Record<string, string>
             searchTerms?: Record<string, string[]>
-            original: Mapping
+            original: Mapping,
+            hasPriority?: Store<boolean>
         }[] = []
         const addIcons = applicableMappings.some((m) => m.icon !== undefined)
         for (let i = 0; i < applicableMappings.length; i++) {
@@ -317,6 +319,7 @@ export default class TagRenderingQuestion extends Combine {
                 mainTerm: tr.translations,
                 searchTerms: mapping.searchTerms,
                 original: mapping,
+                hasPriority: tagsSource.map(tags => mapping.priorityIf?.matchesProperties(tags))
             })
         }
         return values
@@ -397,7 +400,7 @@ export default class TagRenderingQuestion extends Combine {
         const values = TagRenderingQuestion.MappingToPillValue(
             applicableMappings,
             tagsSource,
-            state
+            state,
         )
 
         const searchValue: UIEventSource<string> =
@@ -411,47 +414,12 @@ export default class TagRenderingQuestion extends Combine {
         }
         const mode = configuration.multiAnswer ? "select-many" : "select-one"
 
-        const tooMuchElementsValue = new UIEventSource<number[]>([])
-
-        let priorityPresets: BaseUIElement = undefined
         const classes = "h-64 overflow-scroll"
-
-        if (applicableMappings.some((m) => m.priorityIf !== undefined)) {
-            const priorityValues = tagsSource.map((tags) =>
-                TagRenderingQuestion.MappingToPillValue(
-                    applicableMappings,
-                    tagsSource,
-                    state
-                ).filter((v) => v.original.priorityIf?.matchesProperties(tags))
-            )
-            priorityPresets = new VariableUiElement(
-                priorityValues.map((priority) => {
-                    if (priority.length === 0) {
-                        return Translations.t.general.useSearch
-                    }
-                    return new Combine([
-                        Translations.t.general.useSearchForMore.Subs({
-                            total: applicableMappings.length,
-                        }),
-                        new SearchablePillsSelector(priority, {
-                            selectedElements: tooMuchElementsValue,
-                            hideSearchBar: true,
-                            mode,
-                        }),
-                    ])
-                        .SetClass("flex flex-col items-center ")
-                        .SetClass(classes)
-                })
-            )
-        }
         const presetSearch = new SearchablePillsSelector<number>(values, {
-            selectIfSingle: true,
             mode,
             searchValue,
             onNoMatches: onEmpty?.SetClass(classes).SetClass("flex justify-center items-center"),
-            searchAreaClass: classes,
-            onManyElementsValue: tooMuchElementsValue,
-            onManyElements: priorityPresets,
+            searchAreaClass: classes
         })
         const fallbackTag = searchValue.map((s) => {
             if (s === undefined || ff?.key === undefined) {
