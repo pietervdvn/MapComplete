@@ -27,6 +27,7 @@
     "osmTags": "highway=steps"
   },
   "tagRenderings": [
+    "images",
     {
       "id": "handrail",
       "question": {
@@ -126,7 +127,7 @@
     {
       "color": "gray",
       "width": 10,
-      "dashArray": "2 2"
+      "dashArray": "6 12"
     }
   ]
 }

@@ -34,38 +34,14 @@
     {
       "builtin": "pedestrian_path",
       "override": {
-        "mapRendering": [
-          {},
-          {
-            "color": {
-              "render": "#b33",
-              "mappings": [
-                {
-                  "if": "highway=steps",
-                  "then": "gray"
-                }
-              ]
-            },
-            "width": {
-              "render": 4,
-              "mappings": [
-                {
-                  "if": "highway=steps",
-                  "then": 10
-                }
-              ]
-            },
-            "dashArray": {
-              "render": "12 6",
-              "mappings": [
-                {
-                  "if": "highway=steps",
-                  "then": "2 2"
-                }
-              ]
-            }
-          }
-        ],
+        "title": null,
+        "name": null,
+        "mapRendering": null
+      }
+    },
+    {
+      "builtin": "stairs",
+      "override": {
         "minzoom": 19
       }
     },
