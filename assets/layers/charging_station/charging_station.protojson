@@ -197,25 +197,14 @@
       "id": "$$$"
     },
     {
-      "id": "OH",
-      "render": "{opening_hours_table(opening_hours)}",
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "question": {
-        "en": "When is this charging station opened?",
-        "nl": "Wanneer is dit oplaadpunt beschikbaar??"
-      },
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "en": "24/7 opened (including holidays)",
-            "nl": "24/7 open - ook tijdens vakanties"
-          }
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "question": {
+          "en": "When is this charging station opened?",
+          "nl": "Wanneer is dit oplaadpunt beschikbaar??"
         }
-      ]
+      },
+      "id": "OH"
     },
     {
       "id": "fee",
