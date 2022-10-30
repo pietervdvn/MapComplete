@@ -32,22 +32,17 @@
       }
     },
     {
+      "builtin": "stairs",
+      "override": {
+        "minzoom": 19
+      }
+    },
+    {
       "builtin": "pedestrian_path",
       "override": {
         "title": null,
         "name": null,
-        "mapRendering": [
-          {},
-          {
-            "width": 0
-          }
-        ]
-      }
-    },
-    {
-      "builtin": "stairs",
-      "override": {
-        "minzoom": 19
+        "mapRendering": null
       }
     },
     {
