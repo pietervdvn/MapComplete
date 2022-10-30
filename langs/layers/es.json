@@ -1378,14 +1378,6 @@
                 "question": "¿Esta estación de carga forma parte de una red?",
                 "render": "Parte de la red <b>{network}</b>"
             },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Abre 24/7 (incluidos días festivos)"
-                    }
-                },
-                "question": "¿Cuándo abre esta estación de carga?"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {

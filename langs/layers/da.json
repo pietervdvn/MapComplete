@@ -1499,14 +1499,6 @@
                 "question": "Er denne ladestation en del af et netværk?",
                 "render": "En del af netværket <b>{network}</b>"
             },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Åbent døgnet rundt (også på helligdage)"
-                    }
-                },
-                "question": "Hvornår er denne ladestation åben?"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {

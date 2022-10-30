@@ -1522,14 +1522,6 @@
                 "question": "Is this charging station part of a network?",
                 "render": "Part of the network <b>{network}</b>"
             },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 opened (including holidays)"
-                    }
-                },
-                "question": "When is this charging station opened?"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {

@@ -1522,14 +1522,6 @@
                 "question": "Ist diese Ladestation Teil eines Netzwerks?",
                 "render": "Teil des Netzwerks <b>{network}</b>"
             },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Die Station ist durchgehend geöffnet (einschließlich Feiertage)"
-                    }
-                },
-                "question": "Wann ist diese Ladestation geöffnet?"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {

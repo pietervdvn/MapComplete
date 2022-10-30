@@ -1531,14 +1531,6 @@
                 "question": "Is dit oplaadpunt deel van een groter netwerk?",
                 "render": "Maakt deel uit van het <b>{network}</b>-netwerk"
             },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 open - ook tijdens vakanties"
-                    }
-                },
-                "question": "Wanneer is dit oplaadpunt beschikbaar??"
-            },
             "Operational status": {
                 "mappings": {
                     "0": {
