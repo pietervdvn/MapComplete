@@ -4103,15 +4103,6 @@
                 "question": "Wat is de naam van deze hackerspace?",
                 "render": "Deze hackerspace heet <b>{name}</b>"
             },
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 geopend"
-                    }
-                },
-                "question": "Wanneer is deze hackerspace geopend?",
-                "render": "{opening_hours_table()}"
-            },
             "hackerspaces-start_date": {
                 "question": "Wanneer is deze hackerspace opgericht?",
                 "render": "Deze hackerspace is opgericht op {start_date}"

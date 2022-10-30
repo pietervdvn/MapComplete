@@ -981,16 +981,6 @@
                 "title": "Хакерспейс"
             }
         },
-        "tagRenderings": {
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Открыто 24/7"
-                    }
-                },
-                "render": "{opening_hours_table()}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {

@@ -2535,15 +2535,6 @@
                 "question": "¿Cual es el nombre de este espacio hacker?",
                 "render": "Este espacio hacker se llama <b>{name}</b>"
             },
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Abierto 24/7"
-                    }
-                },
-                "question": "¿Cuándo está abierto este espacio hacker?",
-                "render": "{opening_hours_table()}"
-            },
             "hackerspaces-start_date": {
                 "question": "¿Cuándo se fundó este espacio hacker?",
                 "render": "Este espacio hacker se fundó el {start_date}"

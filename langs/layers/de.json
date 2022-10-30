@@ -4097,15 +4097,6 @@
                 "question": "Wie lautet der Name dieses Hackerspace?",
                 "render": "Dieser Hackerspace heißt <b>{name}</b>"
             },
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "durchgehend geöffnet"
-                    }
-                },
-                "question": "Wann hat dieser Hackerspace geöffnet?",
-                "render": "{opening_hours_table()}"
-            },
             "hackerspaces-start_date": {
                 "question": "Wann wurde dieser Hackerspace gegründet?",
                 "render": "Dieser Hackerspace wurde gegründet am {start_date}"

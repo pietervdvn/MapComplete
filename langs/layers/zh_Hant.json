@@ -508,15 +508,6 @@
                 "question": "這個駭客空間的名稱是？",
                 "render": "這個駭客空間叫 <b>{name}</b>"
             },
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 營業"
-                    }
-                },
-                "question": "這個駭客空間的營業時間？",
-                "render": "{opening_hours_table()}"
-            },
             "hackerspaces-start_date": {
                 "question": "這個駭客空間何時成立的？",
                 "render": "這駭客空間是 {start_date} 成立的"
