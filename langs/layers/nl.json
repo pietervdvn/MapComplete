@@ -5735,14 +5735,6 @@
                 },
                 "question": "Waar bevindt deze container zich?"
             },
-            "opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7"
-                    }
-                },
-                "question": "Wat zijn de openingstijden van deze recyclingfaciliteit?"
-            },
             "operator": {
                 "question": "Wat is de beheerder van deze recyclingfaciliteit?",
                 "render": "Deze recyclingfaciliteit wordt beheerd door {operator}"

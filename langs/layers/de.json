@@ -5746,14 +5746,6 @@
                 },
                 "question": "Wo befindet sich dieser Container?"
             },
-            "opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7"
-                    }
-                },
-                "question": "Wie sind die Öffnungszeiten dieser Recyclinganlage?"
-            },
             "operator": {
                 "question": "Welches Unternehmen betreibt diese Recyclinganlage?",
                 "render": "Diese Recyclinganlage wird betrieben von {operator}"

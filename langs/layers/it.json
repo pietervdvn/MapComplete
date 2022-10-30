@@ -1811,14 +1811,6 @@
                 },
                 "question": "Dove si trova questo contenitore?"
             },
-            "opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7"
-                    }
-                },
-                "question": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?"
-            },
             "operator": {
                 "question": "Quale azienda gestisce questo impianto di raccolta e riciclo?",
                 "render": "Questa struttura di raccola e riciclo è gestita da {operator}"
