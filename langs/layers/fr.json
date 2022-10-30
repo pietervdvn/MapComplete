@@ -583,18 +583,9 @@
                 },
                 "question": "Est-ce que ce Café vélo propose une pompe en libre accès ?"
             },
-            "bike_cafe-email": {
-                "question": "Quelle est l'adresse électronique de {name} ?"
-            },
             "bike_cafe-name": {
                 "question": "Quel est le nom de ce Café vélo ?",
                 "render": "Ce Café vélo s'appelle {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Quand ce Café vélo est-t-il ouvert ?"
-            },
-            "bike_cafe-phone": {
-                "question": "Quel est le numéro de téléphone de {name} ?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -617,9 +608,6 @@
                     }
                 },
                 "question": "Est-ce qu'il y a des outils pour réparer soi-même son vélo ?"
-            },
-            "bike_cafe-website": {
-                "question": "Quel est le site web de {name} ?"
             }
         },
         "title": {

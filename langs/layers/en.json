@@ -594,18 +594,9 @@
                 },
                 "question": "Does this bike cafe offer a bike pump for use by anyone?"
             },
-            "bike_cafe-email": {
-                "question": "What is the email address of {name}?"
-            },
             "bike_cafe-name": {
                 "question": "What is the name of this bike cafe?",
                 "render": "This bike cafe is called {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "When it this bike café opened?"
-            },
-            "bike_cafe-phone": {
-                "question": "What is the phone number of {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -628,9 +619,6 @@
                     }
                 },
                 "question": "Are there tools here to repair your own bike?"
-            },
-            "bike_cafe-website": {
-                "question": "What is the website of {name}?"
             }
         },
         "title": {

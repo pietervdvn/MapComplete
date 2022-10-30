@@ -594,18 +594,9 @@
                 },
                 "question": "Biedt dit fietscafé een fietspomp aan voor iedereen?"
             },
-            "bike_cafe-email": {
-                "question": "Wat is het email-adres van {name}?"
-            },
             "bike_cafe-name": {
                 "question": "Wat is de naam van dit fietscafé?",
                 "render": "Dit fietscafé heet {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Wanneer is dit fietscafé geopend?"
-            },
-            "bike_cafe-phone": {
-                "question": "Wat is het telefoonnummer van {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -628,9 +619,6 @@
                     }
                 },
                 "question": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?"
-            },
-            "bike_cafe-website": {
-                "question": "Wat is de website van {name}?"
             }
         },
         "title": {

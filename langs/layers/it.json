@@ -325,18 +325,9 @@
                 },
                 "question": "Questo caffè in bici offre una pompa per bici che chiunque può utilizzare?"
             },
-            "bike_cafe-email": {
-                "question": "Qual è l’indirizzo email di {name}?"
-            },
             "bike_cafe-name": {
                 "question": "Qual è il nome di questo caffè in bici?",
                 "render": "Questo caffè in bici è chiamato {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Quando è aperto questo caffè in bici?"
-            },
-            "bike_cafe-phone": {
-                "question": "Qual è il numero di telefono di {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -359,9 +350,6 @@
                     }
                 },
                 "question": "Ci sono degli strumenti per riparare la propria bicicletta?"
-            },
-            "bike_cafe-website": {
-                "question": "Qual è il sito web di {name}?"
             }
         },
         "title": {

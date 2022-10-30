@@ -594,18 +594,9 @@
                 },
                 "question": "Hat das Fahrrad-Café eine Fahrradpumpe, die von jedem benutzt werden kann?"
             },
-            "bike_cafe-email": {
-                "question": "Wie lautet die E-Mail-Adresse von {name}?"
-            },
             "bike_cafe-name": {
                 "question": "Wie heißt das Fahrrad-Café?",
                 "render": "Das Fahrrad-Café heißt {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Wann ist dieses Fahrradcafé geöffnet?"
-            },
-            "bike_cafe-phone": {
-                "question": "Wie lautet die Telefonnummer von {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -628,9 +619,6 @@
                     }
                 },
                 "question": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?"
-            },
-            "bike_cafe-website": {
-                "question": "Wie lautet die Webseite von {name}?"
             }
         },
         "title": {

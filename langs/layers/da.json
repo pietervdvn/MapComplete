@@ -577,18 +577,9 @@
                 },
                 "question": "Tilbyder denne cykelcafé en cykelpumpe til brug for alle?"
             },
-            "bike_cafe-email": {
-                "question": "Hvad er e-mailadressen på {name}?"
-            },
             "bike_cafe-name": {
                 "question": "Hvad hedder denne cykelcafé?",
                 "render": "Denne cykelcafé hedder {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Hvornår er denne cykelcafé åbent?"
-            },
-            "bike_cafe-phone": {
-                "question": "Hvad er telefonnummeret til {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -611,9 +602,6 @@
                     }
                 },
                 "question": "Er der værktøj her til at reparere din egen cykel?"
-            },
-            "bike_cafe-website": {
-                "question": "Hvad er webstedet for {name}?"
             }
         },
         "title": {

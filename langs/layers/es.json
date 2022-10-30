@@ -549,17 +549,8 @@
     },
     "bike_cafe": {
         "tagRenderings": {
-            "bike_cafe-email": {
-                "question": "¿Cual es la dirección de correo electrónico de {name}?"
-            },
-            "bike_cafe-phone": {
-                "question": "¿Cual es el número de teléfono de {name}?"
-            },
             "bike_cafe-repair-tools": {
                 "question": "¿Hay herramientas para reparar su propia bicicleta?"
-            },
-            "bike_cafe-website": {
-                "question": "¿Cual es el sitio web de {name}?"
             }
         }
     },
