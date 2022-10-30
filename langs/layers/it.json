@@ -573,14 +573,6 @@
                 },
                 "question": "Questa pompa ha l’indicatore della pressione o il manometro?"
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Sempre aperto"
-                    }
-                },
-                "question": "Quando è aperto questo punto riparazione bici?"
-            },
             "bike_repair_station-operator": {
                 "question": "Chi gestisce questa pompa per bici?",
                 "render": "Manutenuta da {operator}"

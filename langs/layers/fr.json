@@ -884,14 +884,6 @@
                 },
                 "question": "Est-ce que la pompe à un manomètre integré ?"
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Ouvert en permanence"
-                    }
-                },
-                "question": "Quand ce point de réparation de vélo est-il ouvert ?"
-            },
             "bike_repair_station-operator": {
                 "question": "Qui maintient cette pompe à vélo ?",
                 "render": "Mantenue par {operator}"

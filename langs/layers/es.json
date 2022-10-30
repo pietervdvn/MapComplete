@@ -804,14 +804,6 @@
                 },
                 "question": "¿La bomba tiene un indicador de presión o manómetro?"
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Siempre abierto"
-                    }
-                },
-                "question": "¿Cuándo está abierto este punto de reparación de bicicletas?"
-            },
             "bike_repair_station-operator": {
                 "question": "¿Quién mantiene esta bomba para bicicletas?",
                 "render": "Mantenido por {operator}"

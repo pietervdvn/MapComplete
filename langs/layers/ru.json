@@ -504,14 +504,6 @@
                     }
                 }
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Всегда открыто"
-                    }
-                },
-                "question": "Когда работает эта точка обслуживания велосипедов?"
-            },
             "bike_repair_station-valves": {
                 "mappings": {
                     "0": {

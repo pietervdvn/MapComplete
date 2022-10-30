@@ -281,40 +281,19 @@
       "id": "Operational status"
     },
     {
-      "question": {
-        "nl": "Wanneer is dit fietsherstelpunt open?",
-        "en": "When is this bicycle repair point open?",
-        "fr": "Quand ce point de réparation de vélo est-il ouvert ?",
-        "it": "Quando è aperto questo punto riparazione bici?",
-        "de": "Wann ist die Fahrradreparaturstation geöffnet?",
-        "ru": "Когда работает эта точка обслуживания велосипедов?",
-        "es": "¿Cuándo está abierto este punto de reparación de bicicletas?",
-        "da": "Hvornår er dette cykelreparationssted åbent?"
-      },
-      "render": "{opening_hours_table()}",
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "nl": "Dag en nacht open",
-            "en": "Always open",
-            "fr": "Ouvert en permanence",
-            "it": "Sempre aperto",
-            "de": "Die Station ist durchgehend geöffnet",
-            "ru": "Всегда открыто",
-            "pt_BR": "Sempre aberto",
-            "pt": "Sempre aberto",
-            "ca": "Sempre obert",
-            "es": "Siempre abierto",
-            "da": "Altid åben"
-          }
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "question": {
+          "nl": "Wanneer is dit fietsherstelpunt open?",
+          "en": "When is this bicycle repair point open?",
+          "fr": "Quand ce point de réparation de vélo est-il ouvert ?",
+          "it": "Quando è aperto questo punto riparazione bici?",
+          "de": "Wann ist die Fahrradreparaturstation geöffnet?",
+          "ru": "Когда работает эта точка обслуживания велосипедов?",
+          "es": "¿Cuándo está abierto este punto de reparación de bicicletas?",
+          "da": "Hvornår er dette cykelreparationssted åbent?"
         }
-      ],
-      "id": "bike_repair_station-opening_hours"
+      }
     },
     {
       "id": "access",

@@ -878,14 +878,6 @@
                 },
                 "question": "Har pumpen trykindikator eller manometer?"
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Altid åben"
-                    }
-                },
-                "question": "Hvornår er dette cykelreparationssted åbent?"
-            },
             "bike_repair_station-operator": {
                 "question": "Hvem vedligeholder denne cykluspumpe?",
                 "render": "Vedligeholdt af {operator}"

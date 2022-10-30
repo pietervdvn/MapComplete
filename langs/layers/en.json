@@ -895,14 +895,6 @@
                 },
                 "question": "Does the pump have a pressure indicator or manometer?"
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Always open"
-                    }
-                },
-                "question": "When is this bicycle repair point open?"
-            },
             "bike_repair_station-operator": {
                 "question": "Who maintains this cycle pump?",
                 "render": "Maintained by {operator}"

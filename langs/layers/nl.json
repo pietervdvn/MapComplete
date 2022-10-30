@@ -895,14 +895,6 @@
                 },
                 "question": "Heeft deze pomp een luchtdrukmeter?"
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Dag en nacht open"
-                    }
-                },
-                "question": "Wanneer is dit fietsherstelpunt open?"
-            },
             "bike_repair_station-operator": {
                 "question": "Wie beheert deze fietspomp?",
                 "render": "Beheer door {operator}"

@@ -895,14 +895,6 @@
                 },
                 "question": "Verfügt die Pumpe über einen Druckanzeiger oder ein Manometer?"
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Die Station ist durchgehend geöffnet"
-                    }
-                },
-                "question": "Wann ist die Fahrradreparaturstation geöffnet?"
-            },
             "bike_repair_station-operator": {
                 "question": "Wer betreibt die Reparaturstation?",
                 "render": "Gewartet von {operator}"

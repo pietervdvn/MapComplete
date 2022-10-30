@@ -458,13 +458,6 @@
                     }
                 }
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Sempre aberto"
-                    }
-                }
-            },
             "bike_repair_station-operator": {
                 "question": "Quem faz a manutenção desta bomba de ciclo?",
                 "render": "Mantida por {operator}"

@@ -264,13 +264,6 @@
                         "then": "Bomba elèctrica"
                     }
                 }
-            },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Sempre obert"
-                    }
-                }
             }
         },
         "title": {
