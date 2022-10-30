@@ -3189,15 +3189,6 @@
                 "question": "Auf welcher Etage befindet sich der Defibrillator?",
                 "render": "Dieser Defibrallator befindet sich im {level}. Stockwerk"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 geöffnet (auch an Feiertagen)"
-                    }
-                },
-                "question": "Zu welchen Zeiten ist der Defibrillator verfügbar?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "Wie lautet die Telefonnummer für Fragen zu diesem Defibrillator?",
                 "render": "Telefonnummer für Fragen zu diesem Defibrillator: <a href='tel:{phone}'>{phone}</a>"

@@ -3186,15 +3186,6 @@
                 "question": "Op welke verdieping bevindt deze defibrillator zich?",
                 "render": "De defibrillator bevindt zicht op verdieping {level}"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 open (inclusief feestdagen)"
-                    }
-                },
-                "question": "Wanneer is deze defibrillator beschikbaar?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "Wat is het telefoonnummer voor vragen over deze defibrillator",
                 "render": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>"

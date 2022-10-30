@@ -1122,15 +1122,6 @@
                 "question": "A che piano si trova questo defibrillatore?",
                 "render": "Questo defibrillatore è al piano {level}"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Aperto 24/7 (festivi inclusi)"
-                    }
-                },
-                "question": "In quali orari è disponibile questo defibrillatore?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "Qual è il numero di telefono per le domande riguardanti questo defibrillatore?",
                 "render": "Numero di telefono per le domande su questo defibrillatore:<a href='tel:{phone}'>{phone}</a>"

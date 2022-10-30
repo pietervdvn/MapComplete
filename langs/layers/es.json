@@ -2028,15 +2028,6 @@
                 "question": "¿En qué planta se encuentra el defibrilador localizado?",
                 "render": "El desfibrilador se encuentra en la planta {level}"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Abierto 24/7 (incluyendo festivos)"
-                    }
-                },
-                "question": "¿A qué horas está disponible este desfibrilador?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "¿Cual es el número de teléfono para preguntas sobre este desfibrilador?"
             },

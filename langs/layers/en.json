@@ -3239,15 +3239,6 @@
                 "question": "On which floor is this defibrillator located?",
                 "render": "This defibrillator is on floor {level}"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 opened (including holidays)"
-                    }
-                },
-                "question": "At what times is this defibrillator available?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "What is the phone number for questions about this defibrillator?",
                 "render": "Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>"

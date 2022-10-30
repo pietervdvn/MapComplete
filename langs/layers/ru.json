@@ -849,10 +849,6 @@
             "defibrillator-fixme": {
                 "render": "Дополнительная информация для экспертов OpenStreetMap: {fixme}"
             },
-            "defibrillator-opening_hours": {
-                "question": "В какое время доступен этот дефибриллятор?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-survey:date": {
                 "mappings": {
                     "0": {
