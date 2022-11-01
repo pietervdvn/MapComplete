@@ -9,9 +9,332 @@
                 "mappings": {
                     "6": {
                         "then": "پتھر"
+                    },
+                    "1": {
+                        "then": "کندھ چتر"
+                    },
+                    "3": {
+                        "then": "مورتی"
                     }
                 }
             }
+        },
+        "name": "کلاکاری",
+        "title": {
+            "render": "کلاکاری"
+        }
+    },
+    "barrier": {
+        "name": "رُکاوٹاں",
+        "title": {
+            "render": "رُکاوٹ",
+            "mappings": {
+                "0": {
+                    "then": "بولارڈ"
+                }
+            }
+        }
+    },
+    "cafe_pub": {
+        "title": {
+            "render": "پب"
+        }
+    },
+    "charging_station": {
+        "units": {
+            "3": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "کیلوواٹ"
+                    },
+                    "1": {
+                        "human": "میگاواٹ"
+                    }
+                }
+            }
+        }
+    },
+    "climbing_area": {
+        "tagRenderings": {
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "چونہ پتھر"
+                    }
+                }
+            }
+        }
+    },
+    "doctors": {
+        "name": "ڈاکٹر"
+    },
+    "elevator": {
+        "title": {
+            "render": "ایلیویٹر"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "میٹر"
+                    },
+                    "1": {
+                        "human": "سینٹیمیٹر"
+                    }
+                }
+            }
+        },
+        "name": "ایلیویٹر"
+    },
+    "entrance": {
+        "name": "دروازہ",
+        "title": {
+            "render": "دروازہ"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "1": {
+                        "human": "سینٹیمیٹر"
+                    },
+                    "0": {
+                        "human": "میٹر"
+                    }
+                }
+            }
+        }
+    },
+    "governments": {
+        "name": "سرکارسں"
+    },
+    "hackerspace": {
+        "description": "ہیکر دا تھاں",
+        "name": "ہیکر دا تھاں"
+    },
+    "hotel": {
+        "name": "ہوٹل",
+        "title": {
+            "render": "ہوٹل"
+        }
+    },
+    "kerbs": {
+        "name": "کرب",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "humanSingular": "سینٹیمیٹر",
+                        "human": "سینٹیمیٹر"
+                    },
+                    "1": {
+                        "human": "میٹر",
+                        "humanSingular": "میٹر"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "کرب"
+        }
+    },
+    "map": {
+        "name": "نقشے",
+        "title": {
+            "render": "نقشہ"
+        }
+    },
+    "maxspeed": {
+        "name": "حد رفتار",
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "ہر گھنٹہ وچ کیلومیٹر",
+                        "humanShort": "ہر گھنٹے وچ کیلومیٹر"
+                    },
+                    "1": {
+                        "human": "ہر گھنٹہ وچ میل",
+                        "humanShort": "ہر گھنٹہ وچ میل"
+                    }
+                }
+            }
+        }
+    },
+    "pharmacy": {
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "فارمیسی"
+                }
+            }
+        },
+        "name": "فارمیسی"
+    },
+    "playground": {
+        "title": {
+            "render": "کھید دے میدان"
+        },
+        "description": "کھید دے میدان",
+        "name": "کھید دے میدان"
+    },
+    "reception_desk": {
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "میٹر"
+                    },
+                    "1": {
+                        "human": "سینٹیمیٹر"
+                    }
+                }
+            }
+        }
+    },
+    "recycling": {
+        "name": "ریسائیکلنگ"
+    },
+    "toilet": {
+        "title": {
+            "render": "ٹوئیلٹ"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "میٹر"
+                    },
+                    "1": {
+                        "human": "سینٹیمیٹر"
+                    }
+                }
+            }
+        },
+        "name": "ٹوئیلٹاں"
+    },
+    "hospital": {
+        "name": "ہسپتال",
+        "title": {
+            "render": "ہسپتال"
+        }
+    },
+    "hydrant": {
+        "title": {
+            "render": "ہائڈرنٹ"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "humanSingular": "ملیمیٹر",
+                        "human": "ملیمیٹر"
+                    }
+                }
+            }
+        }
+    },
+    "crossings": {
+        "title": {
+            "render": "کراسنگ"
+        },
+        "name": "کراسنگاں"
+    },
+    "shops": {
+        "name": "دکان",
+        "title": {
+            "render": "دکان"
+        }
+    },
+    "tertiary_education": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "کالج"
+                },
+                "2": {
+                    "then": "یونیورسٹی"
+                }
+            }
+        }
+    },
+    "indoors": {
+        "name": "اندروں"
+    },
+    "bench": {
+        "title": {
+            "render": "بینچ"
+        },
+        "name": "بینچ"
+    },
+    "binocular": {
+        "title": {
+            "render": "بائینوکولر"
+        },
+        "description": "بائینوکولر",
+        "name": "بائینوکولر"
+    },
+    "cycleways_and_roads": {
+        "title": {
+            "render": "راہ",
+            "mappings": {
+                "1": {
+                    "then": "سائیکل‌وے"
+                },
+                "9": {
+                    "then": "سائیکل سڑک"
+                }
+            }
+        }
+    },
+    "bench_at_pt": {
+        "title": {
+            "render": "بینچ"
+        }
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "Bicycle parking type": {
+                "mappings": {
+                    "5": {
+                        "then": "شیڈ"
+                    },
+                    "6": {
+                        "then": "بولارڈ"
+                    }
+                }
+            }
+        }
+    },
+    "food": {
+        "title": {
+            "render": "بھون آلہ"
+        }
+    },
+    "note": {
+        "title": {
+            "render": "نوٹ"
+        }
+    },
+    "parcel_lockers": {
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "ہوالہ"
+                }
+            }
+        }
+    },
+    "parking": {
+        "name": "پارکنگ"
+    },
+    "rainbow_crossings": {
+        "title": {
+            "render": "کراسنگ"
+        }
+    },
+    "public_bookcase": {
+        "title": {
+            "render": "کتاباں دی الماری"
         }
     }
 }
