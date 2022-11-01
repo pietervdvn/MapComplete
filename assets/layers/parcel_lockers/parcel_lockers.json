@@ -155,7 +155,7 @@
         "nl": "Deze pakketautomaat wordt beheerd door {operator}"
       }
     },
-    "opening_hours",
+    "opening_hours_24_7",
     {
       "id": "ref",
       "question": {

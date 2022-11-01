@@ -3767,31 +3767,17 @@
       }
     },
     {
-      "id": "OH",
-      "render": "{opening_hours_table(opening_hours)}",
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "question": {
-        "en": "When is this charging station opened?",
-        "nl": "Wanneer is dit oplaadpunt beschikbaar??",
-        "da": "Hvornår er denne ladestation åben?",
-        "de": "Wann ist diese Ladestation geöffnet?",
-        "es": "¿Cuándo abre esta estación de carga?"
-      },
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "en": "24/7 opened (including holidays)",
-            "nl": "24/7 open - ook tijdens vakanties",
-            "da": "Åbent døgnet rundt (også på helligdage)",
-            "de": "Die Station ist durchgehend geöffnet (einschließlich Feiertage)",
-            "es": "Abre 24/7 (incluidos días festivos)"
-          }
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "question": {
+          "en": "When is this charging station opened?",
+          "nl": "Wanneer is dit oplaadpunt beschikbaar??",
+          "da": "Hvornår er denne ladestation åben?",
+          "de": "Wann ist diese Ladestation geöffnet?",
+          "es": "¿Cuándo abre esta estación de carga?"
         }
-      ]
+      },
+      "id": "OH"
     },
     {
       "id": "fee",

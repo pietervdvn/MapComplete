@@ -292,18 +292,9 @@
                 },
                 "question": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬嗎？"
             },
-            "bike_cafe-email": {
-                "question": "{name} 的電子郵件地址是？"
-            },
             "bike_cafe-name": {
                 "question": "這個單車咖啡廳的名稱是？",
                 "render": "這個單車咖啡廳叫做 {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "何時這個單車咖啡廳營運？"
-            },
-            "bike_cafe-phone": {
-                "question": "{name} 的電話號碼是？"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -326,9 +317,6 @@
                     }
                 },
                 "question": "這裡是否有工具修理你的單車嗎？"
-            },
-            "bike_cafe-website": {
-                "question": "{name} 的網站是？"
             }
         },
         "title": {
@@ -519,15 +507,6 @@
             "hackerspaces-name": {
                 "question": "這個駭客空間的名稱是？",
                 "render": "這個駭客空間叫 <b>{name}</b>"
-            },
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 營業"
-                    }
-                },
-                "question": "這個駭客空間的營業時間？",
-                "render": "{opening_hours_table()}"
             },
             "hackerspaces-start_date": {
                 "question": "這個駭客空間何時成立的？",

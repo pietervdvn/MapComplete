@@ -549,17 +549,8 @@
     },
     "bike_cafe": {
         "tagRenderings": {
-            "bike_cafe-email": {
-                "question": "¿Cual es la dirección de correo electrónico de {name}?"
-            },
-            "bike_cafe-phone": {
-                "question": "¿Cual es el número de teléfono de {name}?"
-            },
             "bike_cafe-repair-tools": {
                 "question": "¿Hay herramientas para reparar su propia bicicleta?"
-            },
-            "bike_cafe-website": {
-                "question": "¿Cual es el sitio web de {name}?"
             }
         }
     },
@@ -812,14 +803,6 @@
                     }
                 },
                 "question": "¿La bomba tiene un indicador de presión o manómetro?"
-            },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Siempre abierto"
-                    }
-                },
-                "question": "¿Cuándo está abierto este punto de reparación de bicicletas?"
             },
             "bike_repair_station-operator": {
                 "question": "¿Quién mantiene esta bomba para bicicletas?",
@@ -1394,14 +1377,6 @@
                 },
                 "question": "¿Esta estación de carga forma parte de una red?",
                 "render": "Parte de la red <b>{network}</b>"
-            },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "Abre 24/7 (incluidos días festivos)"
-                    }
-                },
-                "question": "¿Cuándo abre esta estación de carga?"
             },
             "Operational status": {
                 "mappings": {
@@ -2045,15 +2020,6 @@
                 "question": "¿En qué planta se encuentra el defibrilador localizado?",
                 "render": "El desfibrilador se encuentra en la planta {level}"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Abierto 24/7 (incluyendo festivos)"
-                    }
-                },
-                "question": "¿A qué horas está disponible este desfibrilador?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "¿Cual es el número de teléfono para preguntas sobre este desfibrilador?"
             },
@@ -2560,15 +2526,6 @@
             "hackerspaces-name": {
                 "question": "¿Cual es el nombre de este espacio hacker?",
                 "render": "Este espacio hacker se llama <b>{name}</b>"
-            },
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Abierto 24/7"
-                    }
-                },
-                "question": "¿Cuándo está abierto este espacio hacker?",
-                "render": "{opening_hours_table()}"
             },
             "hackerspaces-start_date": {
                 "question": "¿Cuándo se fundó este espacio hacker?",
@@ -3253,14 +3210,6 @@
                     }
                 },
                 "question": "¿Dónde se sitúa este contenedor?"
-            },
-            "opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7"
-                    }
-                },
-                "question": "¿A qué horas abre esta facilidad de reciclado?"
             },
             "operator": {
                 "question": "¿Que empresa opera esta facilidad de reciclado?",

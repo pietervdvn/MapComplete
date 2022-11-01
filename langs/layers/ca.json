@@ -264,13 +264,6 @@
                         "then": "Bomba elèctrica"
                     }
                 }
-            },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Sempre obert"
-                    }
-                }
             }
         },
         "title": {
@@ -578,9 +571,6 @@
                 "question": "A quina planta està el desfibril·lador localitzat?",
                 "render": "Aquest desfibril·lador és a la planta {level}"
             },
-            "defibrillator-opening_hours": {
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-survey:date": {
                 "mappings": {
                     "0": {
@@ -661,16 +651,6 @@
         }
     },
     "hackerspace": {
-        "tagRenderings": {
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Obert 24/7"
-                    }
-                },
-                "render": "{opening_hours_table()}"
-            }
-        },
         "title": {
             "mappings": {
                 "0": {

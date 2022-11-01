@@ -153,5 +153,16 @@
       ]
     },
     "open_now"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=pharmacy"
+      ],
+      "title": {
+        "en": "a pharmacy",
+        "nl": "een apotheek"
+      }
+    }
   ]
 }

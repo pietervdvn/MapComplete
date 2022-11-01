@@ -353,18 +353,9 @@
                 },
                 "question": "Есть ли в этом велосипедном кафе велосипедный насос для всеобщего использования?"
             },
-            "bike_cafe-email": {
-                "question": "Какой адрес электронной почты у {name}?"
-            },
             "bike_cafe-name": {
                 "question": "Как называется это байк-кафе?",
                 "render": "Это велосипедное кафе называется {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Каков режим работы этого велосипедного кафе?"
-            },
-            "bike_cafe-phone": {
-                "question": "Какой номер телефона у {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -387,9 +378,6 @@
                     }
                 },
                 "question": "Есть ли здесь инструменты для починки вашего велосипеда?"
-            },
-            "bike_cafe-website": {
-                "question": "Какой сайт у {name}?"
             }
         },
         "title": {
@@ -515,14 +503,6 @@
                         "then": "Есть манометр, но он сломан"
                     }
                 }
-            },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Всегда открыто"
-                    }
-                },
-                "question": "Когда работает эта точка обслуживания велосипедов?"
             },
             "bike_repair_station-valves": {
                 "mappings": {
@@ -869,10 +849,6 @@
             "defibrillator-fixme": {
                 "render": "Дополнительная информация для экспертов OpenStreetMap: {fixme}"
             },
-            "defibrillator-opening_hours": {
-                "question": "В какое время доступен этот дефибриллятор?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-survey:date": {
                 "mappings": {
                     "0": {
@@ -1003,16 +979,6 @@
         "presets": {
             "0": {
                 "title": "Хакерспейс"
-            }
-        },
-        "tagRenderings": {
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Открыто 24/7"
-                    }
-                },
-                "render": "{opening_hours_table()}"
             }
         },
         "title": {

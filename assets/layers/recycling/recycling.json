@@ -961,32 +961,16 @@
       }
     },
     {
-      "id": "opening_hours",
-      "render": "{opening_hours_table()}",
-      "question": {
-        "en": "What are the opening hours of this recycling facility?",
-        "nl": "Wat zijn de openingstijden van deze recyclingfaciliteit?",
-        "de": "Wie sind die Öffnungszeiten dieser Recyclinganlage?",
-        "es": "¿A qué horas abre esta facilidad de reciclado?",
-        "it": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?"
-      },
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "en": "24/7",
-            "nl": "24/7",
-            "ca": "24/7",
-            "de": "24/7",
-            "es": "24/7",
-            "it": "24/7"
-          }
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "question": {
+          "en": "What are the opening hours of this recycling facility?",
+          "nl": "Wat zijn de openingstijden van deze recyclingfaciliteit?",
+          "de": "Wie sind die Öffnungszeiten dieser Recyclinganlage?",
+          "es": "¿A qué horas abre esta facilidad de reciclado?",
+          "it": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?"
         }
-      ]
+      }
     }
   ],
   "filter": [

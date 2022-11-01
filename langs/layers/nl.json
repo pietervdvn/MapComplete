@@ -594,18 +594,9 @@
                 },
                 "question": "Biedt dit fietscafé een fietspomp aan voor iedereen?"
             },
-            "bike_cafe-email": {
-                "question": "Wat is het email-adres van {name}?"
-            },
             "bike_cafe-name": {
                 "question": "Wat is de naam van dit fietscafé?",
                 "render": "Dit fietscafé heet {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Wanneer is dit fietscafé geopend?"
-            },
-            "bike_cafe-phone": {
-                "question": "Wat is het telefoonnummer van {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -628,9 +619,6 @@
                     }
                 },
                 "question": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?"
-            },
-            "bike_cafe-website": {
-                "question": "Wat is de website van {name}?"
             }
         },
         "title": {
@@ -906,14 +894,6 @@
                     }
                 },
                 "question": "Heeft deze pomp een luchtdrukmeter?"
-            },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Dag en nacht open"
-                    }
-                },
-                "question": "Wanneer is dit fietsherstelpunt open?"
             },
             "bike_repair_station-operator": {
                 "question": "Wie beheert deze fietspomp?",
@@ -1550,14 +1530,6 @@
                 },
                 "question": "Is dit oplaadpunt deel van een groter netwerk?",
                 "render": "Maakt deel uit van het <b>{network}</b>-netwerk"
-            },
-            "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 open - ook tijdens vakanties"
-                    }
-                },
-                "question": "Wanneer is dit oplaadpunt beschikbaar??"
             },
             "Operational status": {
                 "mappings": {
@@ -3206,15 +3178,6 @@
                 "question": "Op welke verdieping bevindt deze defibrillator zich?",
                 "render": "De defibrillator bevindt zicht op verdieping {level}"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 open (inclusief feestdagen)"
-                    }
-                },
-                "question": "Wanneer is deze defibrillator beschikbaar?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "Wat is het telefoonnummer voor vragen over deze defibrillator",
                 "render": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>"
@@ -4131,15 +4094,6 @@
             "hackerspaces-name": {
                 "question": "Wat is de naam van deze hackerspace?",
                 "render": "Deze hackerspace heet <b>{name}</b>"
-            },
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 geopend"
-                    }
-                },
-                "question": "Wanneer is deze hackerspace geopend?",
-                "render": "{opening_hours_table()}"
             },
             "hackerspaces-start_date": {
                 "question": "Wanneer is deze hackerspace opgericht?",
@@ -5772,14 +5726,6 @@
                     }
                 },
                 "question": "Waar bevindt deze container zich?"
-            },
-            "opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7"
-                    }
-                },
-                "question": "Wat zijn de openingstijden van deze recyclingfaciliteit?"
             },
             "operator": {
                 "question": "Wat is de beheerder van deze recyclingfaciliteit?",
