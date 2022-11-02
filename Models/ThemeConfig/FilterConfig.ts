@@ -68,7 +68,7 @@ export default class FilterConfig {
             for (const field of fields) {
                 for (let ln in question.translations) {
                     const txt = question.translations[ln]
-                    if(ln.startsWith("_")){
+                    if (ln.startsWith("_")) {
                         continue
                     }
                     if (txt.indexOf("{" + field.name + "}") < 0) {

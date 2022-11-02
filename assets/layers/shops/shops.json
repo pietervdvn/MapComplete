@@ -9,7 +9,8 @@
     "de": "Geschäfte",
     "eo": "Butiko",
     "ca": "Botiga",
-    "es": "Tienda"
+    "es": "Tienda",
+    "pa_PK": "دکان"
   },
   "minzoom": 16,
   "source": {
@@ -29,7 +30,8 @@
       "de": "Geschäft",
       "eo": "Butiko",
       "ca": "Botiga",
-      "es": "Tienda"
+      "es": "Tienda",
+      "pa_PK": "دکان"
     },
     "mappings": [
       {

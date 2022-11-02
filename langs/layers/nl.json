@@ -5893,6 +5893,14 @@
                 },
                 "question": "Mogen jongens en meisjes les volgen op deze school?"
             },
+            "school-language": {
+                "render": {
+                    "special": {
+                        "no_known_languages": "De voertaal van deze school is niet gekend",
+                        "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
+                    }
+                }
+            },
             "school-name": {
                 "question": "Wat is de naam van deze school?",
                 "render": "Deze school heet <b>{name}</b>"
@@ -5929,16 +5937,6 @@
                 },
                 "question": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?<div class='subtle'>Ad-hoc maatregelen zijn niet voldoende</div> ",
                 "render": "Deze school richt zich op studenten met {school:for}"
-            },
-            "wikidata.school-language": {
-                "override": {
-                    "+mappings": {
-                        "0": {
-                            "then": "De voertaal van deze school is niet gekend"
-                        }
-                    },
-                    "question": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>"
-                }
             }
         },
         "title": {
@@ -6269,6 +6267,9 @@
                         "then": "Dit is een roltrap"
                     },
                     "1": {
+                        "then": "Dit is geen roltrap"
+                    },
+                    "2": {
                         "then": "Dit is geen roltrap"
                     }
                 }

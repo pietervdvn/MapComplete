@@ -3,13 +3,15 @@
   "name": {
     "en": "Hospitals",
     "de": "Krankenhäuser",
-    "nl": "Ziekenhuizen"
+    "nl": "Ziekenhuizen",
+    "pa_PK": "ہسپتال"
   },
   "title": {
     "render": {
       "en": "Hospital",
       "de": "Krankenhaus",
-      "nl": "Ziekenhuis"
+      "nl": "Ziekenhuis",
+      "pa_PK": "ہسپتال"
     }
   },
   "description": {

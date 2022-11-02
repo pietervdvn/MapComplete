@@ -15,7 +15,8 @@
     "pt_BR": "Bancos em pontos de transporte público",
     "pl": "Ławki na przystankach komunikacji miejskiej",
     "pt": "Bancos em pontos de transporte público",
-    "da": "Bænke ved stoppesteder for offentlig transport"
+    "da": "Bænke ved stoppesteder for offentlig transport",
+    "cs": "Lavičky na zastávkách veřejné dopravy"
   },
   "minzoom": 14,
   "source": {
@@ -45,7 +46,9 @@
       "pl": "Ławka",
       "pt": "Banco",
       "ca": "Banc",
-      "da": "Bænk"
+      "da": "Bænk",
+      "cs": "Lavička",
+      "pa_PK": "بینچ"
     },
     "mappings": [
       {
@@ -70,7 +73,8 @@
           "pl": "Ławka na przystanku komunikacji miejskiej",
           "pt": "Banco em ponto de transporte público",
           "es": "Banco en una parada de transporte público",
-          "da": "Bænk ved offentlig stoppested"
+          "da": "Bænk ved offentlig stoppested",
+          "cs": "Lavička na zastávce veřejné dopravy"
         }
       },
       {
@@ -92,7 +96,8 @@
           "pt_BR": "Banco em abrigo",
           "pt": "Banco em abrigo",
           "es": "Banco en marquesina",
-          "da": "Bænk i læskur"
+          "da": "Bænk i læskur",
+          "cs": "Lavička v přístřešku"
         }
       }
     ]
@@ -118,7 +123,8 @@
         "eo": "{name}",
         "es": "{name}",
         "ca": "{name}",
-        "da": "{name}"
+        "da": "{name}",
+        "cs": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -133,7 +139,8 @@
         "de": "Was ist das für eine Bank?",
         "es": "¿Qué tipo de banco es este?",
         "fr": "Quel type de banc est-ce ?",
-        "da": "Hvilken slags bænk er dette?"
+        "da": "Hvilken slags bænk er dette?",
+        "cs": "Co je to za lavičku?"
       },
       "mappings": [
         {
@@ -144,7 +151,8 @@
             "de": "Hier gibt es eine normale Sitzbank",
             "nl": "Er is hier een normale zitbank",
             "da": "Der er en normal siddebænk her",
-            "es": "Hay un banco normal aquí"
+            "es": "Hay un banco normal aquí",
+            "cs": "Zde je normální lavička k sezení"
           }
         },
         {
@@ -159,7 +167,8 @@
             "ru": "Встаньте на скамейке",
             "zh_Hant": "站立長椅",
             "da": "Stå-op bænk",
-            "es": "Banco de pié"
+            "es": "Banco de pié",
+            "cs": "Stojící lavička"
           }
         },
         {
@@ -170,7 +179,8 @@
             "de": "Hier gibt es keine Bank",
             "nl": "Er is hier geen bank",
             "es": "No hay ningún banco aquí",
-            "da": "Der er ingen bænk her"
+            "da": "Der er ingen bænk her",
+            "cs": "Zde není žádná lavička"
           }
         }
       ]
@@ -203,6 +213,7 @@
     "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
     "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
     "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
-    "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk"
+    "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk",
+    "cs": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku"
   }
 }

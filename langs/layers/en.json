@@ -3433,9 +3433,13 @@
                 },
                 "question": "Does this elevator work?"
             },
-            "wikidata.tactile_writing-braille": {
-                "override": {
-                    "question": "In which languages does this elevator have tactile writing (braille)?"
+            "tactile_writing_language": {
+                "render": {
+                    "special": {
+                        "question": "In which languages does this elevator have tactile writing (braille)?",
+                        "render_list_item": "This elevator has tactile writing in {language():font-bold}",
+                        "render_single_language": "This elevator has tactile writing in {language():font-bold}"
+                    }
                 }
             }
         },
@@ -6267,6 +6271,16 @@
                 },
                 "question": "Which genders can enroll at this school?"
             },
+            "school-language": {
+                "render": {
+                    "special": {
+                        "no_known_languages": "The main language of this school is unknown",
+                        "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
+                        "render_all": "The following languages are used in this school:{list()}",
+                        "render_single_language": "{language():font-bold} is the main language of this school"
+                    }
+                }
+            },
             "school-name": {
                 "question": "What is the name of this school?",
                 "render": "This school is named {name}"
@@ -6303,16 +6317,6 @@
                 },
                 "question": "Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc ",
                 "render": "This school has facilities for students with {school:for}"
-            },
-            "wikidata.school-language": {
-                "override": {
-                    "+mappings": {
-                        "0": {
-                            "then": "The main language of this school is unknown"
-                        }
-                    },
-                    "question": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>"
-                }
             }
         },
         "title": {
@@ -6681,6 +6685,9 @@
                     },
                     "1": {
                         "then": "This is not an escalator"
+                    },
+                    "2": {
+                        "then": "This is not an escalator"
                     }
                 }
             },
@@ -6715,9 +6722,24 @@
                 },
                 "question": "Is there a ramp at these stairs?"
             },
-            "wikidata.tactile_writing-braille": {
-                "override": {
-                    "question": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
+            "tactile_writing": {
+                "mappings": {
+                    "0": {
+                        "then": "There is tactile writing on the handrail"
+                    },
+                    "1": {
+                        "then": "There is no tactile writing on the handrail"
+                    }
+                },
+                "question": "Do these stairs have tactile writing on the handrail?"
+            },
+            "tactile_writing_language": {
+                "render": {
+                    "special": {
+                        "question": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
+                        "render_list_item": "These stairs have tactile writing in {language():font-bold}",
+                        "render_single_language": "These stairs have tactile writing in {language():font-bold}"
+                    }
                 }
             }
         },

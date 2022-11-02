@@ -4805,6 +4805,7 @@
             "ca": " minuts",
             "de": " Minuten",
             "es": " minutos",
+            "pa_PK": " منٹ",
             "ru": " минут"
           },
           "humanSingular": {
@@ -4982,6 +4983,7 @@
             "ca": "quilovats",
             "de": "Kilowatt",
             "es": "kilvatio",
+            "pa_PK": "کیلوواٹ",
             "ru": "киловатт"
           }
         },
@@ -4996,6 +4998,7 @@
             "ca": "megavats",
             "de": "Megawatt",
             "es": "megavatio",
+            "pa_PK": "میگاواٹ",
             "ru": "мегаватт"
           }
         }

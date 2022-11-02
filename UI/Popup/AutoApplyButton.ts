@@ -23,7 +23,7 @@ import FilteredLayer from "../../Models/FilteredLayer"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import Lazy from "../Base/Lazy"
 import List from "../Base/List"
-import {SpecialVisualization} from "../SpecialVisualization";
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export interface AutoAction extends SpecialVisualization {
     supportsAutoAction: boolean

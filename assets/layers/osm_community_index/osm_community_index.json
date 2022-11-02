@@ -1,11 +1,13 @@
 {
   "id": "osm_community_index",
   "name": {
-    "en": "OSM Community Index"
+    "en": "OSM Community Index",
+    "de": "OSM-Community-Index"
   },
   "title": {
     "render": {
-      "en": "OSM Community Index"
+      "en": "OSM Community Index",
+      "de": "OSM-Community-Index"
     }
   },
   "source": {
@@ -53,7 +55,8 @@
       "options": [
         {
           "question": {
-            "en": "Country"
+            "en": "Country",
+            "de": "Land"
           },
           "osmTags": "level=country"
         }
@@ -64,7 +67,8 @@
       "options": [
         {
           "question": {
-            "en": "Sub Country Group"
+            "en": "Sub Country Group",
+            "de": "Regionale Gruppe"
           },
           "osmTags": "level=subcountryGroup"
         }
@@ -75,7 +79,8 @@
       "options": [
         {
           "question": {
-            "en": "Region"
+            "en": "Region",
+            "de": "Region"
           },
           "osmTags": "level=region"
         }
@@ -86,7 +91,8 @@
       "options": [
         {
           "question": {
-            "en": "Intermediate Region"
+            "en": "Intermediate Region",
+            "de": "Mittlere Region"
           },
           "osmTags": "level=intermediateRegion"
         }
@@ -97,7 +103,8 @@
       "options": [
         {
           "question": {
-            "en": "Territory"
+            "en": "Territory",
+            "de": "Gebiet"
           },
           "osmTags": "level=territory"
         }
@@ -108,7 +115,8 @@
       "options": [
         {
           "question": {
-            "en": "World"
+            "en": "World",
+            "de": "Welt"
           },
           "osmTags": "level=world"
         }
@@ -119,7 +127,8 @@
       "options": [
         {
           "question": {
-            "en": "Other Communities"
+            "en": "Other Communities",
+            "de": "Andere Communities"
           },
           "osmTags": "level="
         }
@@ -127,6 +136,7 @@
     }
   ],
   "description": {
-    "en": "A layer showing the OpenStreetMap Communities"
+    "en": "A layer showing the OpenStreetMap Communities",
+    "de": "Eine Ebene aller OpenStreetMap-Communities"
   }
 }

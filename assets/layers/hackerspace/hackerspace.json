@@ -7,7 +7,8 @@
     "zh_Hant": "駭客空間",
     "hu": "Hackerspace",
     "es": "Espacio hacker",
-    "nl": "Hackerspace"
+    "nl": "Hackerspace",
+    "pa_PK": "ہیکر دا تھاں"
   },
   "minzoom": 8,
   "title": {
@@ -47,7 +48,8 @@
     "zh_Hant": "駭客空間",
     "hu": "Hackerspace",
     "es": "Espacio hacker",
-    "nl": "Hackerspace"
+    "nl": "Hackerspace",
+    "pa_PK": "ہیکر دا تھاں"
   },
   "tagRenderings": [
     "images",

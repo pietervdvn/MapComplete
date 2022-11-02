@@ -1,7 +1,7 @@
-import {UIEventSource} from "../Logic/UIEventSource";
-import BaseUIElement from "./BaseUIElement";
-import FeaturePipelineState from "../Logic/State/FeaturePipelineState";
-import {DefaultGuiState} from "./DefaultGuiState";
+import { UIEventSource } from "../Logic/UIEventSource"
+import BaseUIElement from "./BaseUIElement"
+import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
+import { DefaultGuiState } from "./DefaultGuiState"
 
 export interface SpecialVisualization {
     funcName: string

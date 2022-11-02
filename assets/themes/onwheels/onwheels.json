@@ -6,7 +6,8 @@
     "fr": "OnWheels",
     "nl": "OnWheels",
     "nb_NO": "På hjul",
-    "ca": "OnWheels"
+    "ca": "OnWheels",
+    "pa_PK": "آن‌ویل"
   },
   "description": {
     "en": "On this map, publicly weelchair accessible places are shown and can be easily added",
@@ -325,7 +326,8 @@
             "fr": "Statistiques",
             "da": "Statistikker",
             "nb_NO": "Statistikk",
-            "ca": "Estadístiques"
+            "ca": "Estadístiques",
+            "pa_PK": "انکڑے"
           }
         },
         "tagRenderings": [
@@ -362,7 +364,8 @@
                   "fr": "Importation",
                   "da": "Importere",
                   "nb_NO": "Importer",
-                  "ca": "Importar"
+                  "ca": "Importar",
+                  "pa_PK": "ایمپورٹ کرو"
                 },
                 "icon": "./assets/svg/addSmall.svg",
                 "location_picker": "photo",

@@ -1,10 +1,11 @@
-import {Store} from "../../Logic/UIEventSource";
-import MultiApply from "./MultiApply";
-import {SpecialVisualization} from "../SpecialVisualization";
+import { Store } from "../../Logic/UIEventSource"
+import MultiApply from "./MultiApply"
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export class MultiApplyViz implements SpecialVisualization {
     funcName = "multi_apply"
-    docs = "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags"
+    docs =
+        "A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags"
     args = [
         {
             name: "feature_ids",
@@ -52,17 +53,14 @@ export class MultiApplyViz implements SpecialVisualization {
                 return []
             }
         })
-        return new MultiApply(
-            {
-                featureIds,
-                keysToApply,
-                text,
-                autoapply,
-                overwrite,
-                tagsSource,
-                state
-            }
-        );
-
+        return new MultiApply({
+            featureIds,
+            keysToApply,
+            text,
+            autoapply,
+            overwrite,
+            tagsSource,
+            state,
+        })
     }
 }

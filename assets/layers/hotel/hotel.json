@@ -3,7 +3,8 @@
   "name": {
     "en": "Hotels",
     "nl": "Hotels",
-    "de": "Hotels"
+    "de": "Hotels",
+    "pa_PK": "ہوٹل"
   },
   "description": {
     "en": "Layer showing all hotels",
@@ -18,7 +19,8 @@
     "render": {
       "en": "Hotel",
       "nl": "Hotel",
-      "de": "Hotel"
+      "de": "Hotel",
+      "pa_PK": "ہوٹل"
     },
     "mappings": [
       {

@@ -1,14 +1,14 @@
-import Translations from "../i18n/Translations";
-import {TextField} from "../Input/TextField";
-import {SubtleButton} from "../Base/SubtleButton";
-import Svg from "../../Svg";
-import NoteCommentElement from "./NoteCommentElement";
-import {VariableUiElement} from "../Base/VariableUIElement";
-import Toggle from "../Input/Toggle";
-import {LoginToggle} from "./LoginButton";
-import Combine from "../Base/Combine";
-import Title from "../Base/Title";
-import {SpecialVisualization} from "../SpecialVisualization";
+import Translations from "../i18n/Translations"
+import { TextField } from "../Input/TextField"
+import { SubtleButton } from "../Base/SubtleButton"
+import Svg from "../../Svg"
+import NoteCommentElement from "./NoteCommentElement"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import Toggle from "../Input/Toggle"
+import { LoginToggle } from "./LoginButton"
+import Combine from "../Base/Combine"
+import Title from "../Base/Title"
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export class AddNoteCommentViz implements SpecialVisualization {
     funcName = "add_note_comment"
@@ -103,12 +103,8 @@ export class AddNoteCommentViz implements SpecialVisualization {
                     stateButtons.SetClass("sm:mr-2"),
                     new Toggle(
                         addCommentButton,
-                        new Combine([t.typeText]).SetClass(
-                            "flex items-center h-full subtle"
-                        ),
-                        textField
-                            .GetValue()
-                            .map((t) => t !== undefined && t.length >= 1)
+                        new Combine([t.typeText]).SetClass("flex items-center h-full subtle"),
+                        textField.GetValue().map((t) => t !== undefined && t.length >= 1)
                     ).SetClass("sm:mr-2"),
                 ]).SetClass("sm:flex sm:justify-between sm:items-stretch"),
             ]).SetClass("border-2 border-black rounded-xl p-4 block"),

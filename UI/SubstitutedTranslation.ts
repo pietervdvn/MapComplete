@@ -10,7 +10,7 @@ import BaseUIElement from "./BaseUIElement"
 import { DefaultGuiState } from "./DefaultGuiState"
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
 import LinkToWeblate from "./Base/LinkToWeblate"
-import {SpecialVisualization} from "./SpecialVisualization";
+import { SpecialVisualization } from "./SpecialVisualization"
 
 export class SubstitutedTranslation extends VariableUiElement {
     public constructor(

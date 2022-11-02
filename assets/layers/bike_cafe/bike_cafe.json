@@ -13,7 +13,8 @@
     "pt_BR": "Café de bicicletas",
     "pt": "Café de bicicletas",
     "ca": "Cafeteria per a bicicletes",
-    "da": "Cykelcafé"
+    "da": "Cykelcafé",
+    "cs": "Cyklokavárna"
   },
   "minzoom": 13,
   "source": {
@@ -54,7 +55,8 @@
       "pt_BR": "Café de bicicleta",
       "pt": "Café de bicicleta",
       "ca": "Cafeteria per a bicicletes",
-      "da": "Cykelcafé"
+      "da": "Cykelcafé",
+      "cs": "Cyklokavárna"
     },
     "mappings": [
       {
@@ -71,7 +73,8 @@
           "zh_Hant": "單車咖啡廳<i>{name}</i>",
           "pt_BR": "Café de bicicleta <i>{name}</i>",
           "pt": "Café de bicicleta <i>{name}</i>",
-          "da": "Cykelcafé <i>{name}</i>"
+          "da": "Cykelcafé <i>{name}</i>",
+          "cs": "Cyklokavárna <i>{name}</i>"
         }
       }
     ]
@@ -91,7 +94,8 @@
         "zh_Hant": "這個單車咖啡廳的名稱是？",
         "pt_BR": "Qual o nome deste café de bicicleta?",
         "pt": "Qual o nome deste café de bicicleta?",
-        "da": "Hvad hedder denne cykelcafé?"
+        "da": "Hvad hedder denne cykelcafé?",
+        "cs": "Jak se jmenuje tato cyklokavárna?"
       },
       "render": {
         "en": "This bike cafe is called {name}",
@@ -105,7 +109,8 @@
         "zh_Hant": "這個單車咖啡廳叫做 {name}",
         "pt_BR": "Este café de bicicleta se chama {name}",
         "pt": "Este café de bicicleta se chama {name}",
-        "da": "Denne cykelcafé hedder {name}"
+        "da": "Denne cykelcafé hedder {name}",
+        "cs": "Tato cyklokavárna se jmenuje {name}"
       },
       "freeform": {
         "key": "name"
@@ -124,7 +129,8 @@
         "zh_Hans": "这家自行车咖啡为每个使用者提供打气筒吗？",
         "ru": "Есть ли в этом велосипедном кафе велосипедный насос для всеобщего использования?",
         "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬嗎？",
-        "da": "Tilbyder denne cykelcafé en cykelpumpe til brug for alle?"
+        "da": "Tilbyder denne cykelcafé en cykelpumpe til brug for alle?",
+        "cs": "Nabízí tato cyklistická kavárna vzduchový kompresor na kolo k použití pro kohokoli?"
       },
       "mappings": [
         {
@@ -139,7 +145,8 @@
             "zh_Hans": "这家自行车咖啡为每个人提供打气筒",
             "zh_Hant": "這個單車咖啡廳有提供給任何人都能使用的單車打氣甬",
             "ru": "В этом велосипедном кафе есть велосипедный насос для всеобщего использования",
-            "da": "Denne cykelcafé tilbyder en cykelpumpe til enhver"
+            "da": "Denne cykelcafé tilbyder en cykelpumpe til enhver",
+            "cs": "Tato cyklistická kavárna nabízí vzduchový kompresor na kolo pro každého"
           }
         },
         {
@@ -154,7 +161,8 @@
             "zh_Hans": "这家自行车咖啡不为每个人提供打气筒",
             "zh_Hant": "這個單車咖啡廳並沒有為所有人提供單車打氣甬",
             "ru": "В этом велосипедном кафе нет велосипедного насоса для всеобщего использования",
-            "da": "Denne cykelcafé tilbyder ikke en cykelpumpe til nogen"
+            "da": "Denne cykelcafé tilbyder ikke en cykelpumpe til nogen",
+            "cs": "Tato cyklistická kavárna nenabízí vzduchový kompresor na kolo"
           }
         }
       ]
@@ -174,7 +182,8 @@
         "pt_BR": "Há ferramentas aqui para consertar sua bicicleta?",
         "pt": "Há ferramentas aqui para consertar a sua própria bicicleta?",
         "es": "¿Hay herramientas para reparar su propia bicicleta?",
-        "da": "Er der værktøj her til at reparere din egen cykel?"
+        "da": "Er der værktøj her til at reparere din egen cykel?",
+        "cs": "Jsou zde nástroje na opravu vlastního kola?"
       },
       "mappings": [
         {
@@ -191,7 +200,8 @@
             "ru": "В этом велосипедном кафе есть инструменты для починки своего велосипеда",
             "pt_BR": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo",
             "pt": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo",
-            "da": "Denne cykelcafé tilbyder værktøj til gør-det-selv-reparation"
+            "da": "Denne cykelcafé tilbyder værktøj til gør-det-selv-reparation",
+            "cs": "Tato cyklokavárna nabízí nářadí pro kutilské opravy"
           }
         },
         {
@@ -208,7 +218,8 @@
             "ru": "В этом велосипедном кафе нет инструментов для починки своего велосипеда",
             "pt_BR": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo",
             "pt": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo",
-            "da": "Denne cykelcafé tilbyder ikke værktøj til gør-det-selv-reparation"
+            "da": "Denne cykelcafé tilbyder ikke værktøj til gør-det-selv-reparation",
+            "cs": "Tato cyklokavárna nenabízí nářadí pro kutilské opravy"
           }
         }
       ]
@@ -227,7 +238,8 @@
         "ru": "Есть ли услуги ремонта велосипедов в этом велосипедном кафе?",
         "pt_BR": "Este café de bicicleta conserta bicicletas?",
         "pt": "Este café de bicicleta conserta bicicletas?",
-        "da": "Reparerer denne cykelcafé cykler?"
+        "da": "Reparerer denne cykelcafé cykler?",
+        "cs": "Opravuje tato cyklokavárna jízdní kola?"
       },
       "mappings": [
         {
@@ -244,7 +256,8 @@
             "ru": "В этом велосипедном кафе есть услуги ремонта велосипедов",
             "pt_BR": "Este café de bicicleta conserta bicicletas",
             "pt": "Este café de bicicleta conserta bicicletas",
-            "da": "Denne cykelcafé reparerer cykler"
+            "da": "Denne cykelcafé reparerer cykler",
+            "cs": "Tato cyklokavárna opravuje jízdní kola"
           }
         },
         {
@@ -261,7 +274,8 @@
             "ru": "В этом велосипедном кафе нет услуг ремонта велосипедов",
             "pt_BR": "Este café de bicicleta não conserta bicicletas",
             "pt": "Este café de bicicleta não conserta bicicletas",
-            "da": "Denne cykelcafé reparerer ikke cykler"
+            "da": "Denne cykelcafé reparerer ikke cykler",
+            "cs": "Tato cyklokavárna neopravuje kola"
           }
         }
       ]
@@ -286,6 +300,7 @@
           "da": "Hvornår er denne cykelcafé åbent?"
         }
       }
+
     }
   ],
   "presets": [
@@ -302,7 +317,8 @@
         "ru": "Велосипедное кафе",
         "pt_BR": "uma café de bicicleta",
         "pt": "uma café de bicicleta",
-        "da": "en cykelcafé"
+        "da": "en cykelcafé",
+        "cs": "kavárna pro cyklisty"
       },
       "tags": [
         "amenity=pub",
@@ -337,6 +353,7 @@
     "nl": "Een fietscafé is een café dat gericht is op fietsers, bijvoorbeeld omdat het een fietspomp heeft, fietsgerelateerde decoratie heeft enzovoorts.",
     "de": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe, mit viel fahrradbezogener Dekoration, …",
     "da": "En cykelcafé er en café rettet mod cyklister, for eksempel med tjenester som en pumpe, med masser af cykelrelateret dekoration, o.s.v",
-    "fr": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc."
+    "fr": "Un vélo café est un café à destination des cyclistes avec, par exemple, des services tels qu’une pompe, et de nombreuses décorations liées aux vélos, etc.",
+    "cs": "Cyklokavárna je kavárna zaměřená na cyklisty, například se službami, jako je pumpa, se spoustou výzdoby související s jízdními koly, …"
   }
 }

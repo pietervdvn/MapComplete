@@ -24,6 +24,7 @@
     + [Privacy notice](#privacy-notice)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
+    + [uploadtoosm](#uploadtoosm)
     + [minimap](#minimap)
     + [delete](#delete)
 1. [type_node](#type_node)
@@ -108,8 +109,6 @@ Meta layer showing the current location of the user. Add this to your theme and 
 
   - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
-  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
-  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
 
@@ -140,7 +139,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-
+<img src='https://mapcomplete.osm.be/square:red' height="100px"> 
 
 Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object
 
@@ -149,11 +148,12 @@ Meta layer which contains the previous locations of the user as single points. T
 
 
 
-  - This layer is shown at zoomlevel **0** and higher
+  - This layer is shown at zoomlevel **1** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
+  - This layer is not visible by default and must be enabled in the filter by the user. 
   - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
+  - This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
-  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
 
@@ -229,7 +229,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-Meta layer showing the previous locations of the user as single line. Add this to your theme and override the icon to change the appearance of the current location.
+Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track.
 
 
 
@@ -292,6 +292,16 @@ This tagrendering has no question and is thus read-only
 
 
 Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### uploadtoosm 
+
+
 
 This tagrendering has no question and is thus read-only
 

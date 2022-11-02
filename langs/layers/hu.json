@@ -238,10 +238,10 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Háttámla van"
+                        "then": "Van háttámlája"
                     },
                     "1": {
-                        "then": "Háttámla nincs"
+                        "then": "<b>Nincs</b> háttámlája"
                     }
                 },
                 "question": "Van-e háttámlája ennek a padnak?"
@@ -283,25 +283,25 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Anyag: fa"
+                        "then": "Ülőfelület: fa"
                     },
                     "1": {
-                        "then": "Anyag: fém"
+                        "then": "Ülőfelület: fém"
                     },
                     "2": {
-                        "then": "Anyag: kő"
+                        "then": "Ülőfelület: kő"
                     },
                     "3": {
-                        "then": "Anyag: beton"
+                        "then": "Ülőfelület: beton"
                     },
                     "4": {
-                        "then": "Anyag: műanyag"
+                        "then": "Ülőfelület: műanyag"
                     },
                     "5": {
-                        "then": "Anyag: acél"
+                        "then": "Ülőfelület: acél"
                     }
                 },
-                "question": "Miből van a pad (ülő része)?",
+                "question": "Miből van a pad (ülőfelülete)?",
                 "render": "Anyag: {material}"
             },
             "bench-seats": {
@@ -557,6 +557,17 @@
             }
         }
     },
+    "food": {
+        "tagRenderings": {
+            "Fastfood vs restaurant": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak."
+                    }
+                }
+            }
+        }
+    },
     "ghost_bike": {
         "name": "Emlékkerékpárok",
         "presets": {
@@ -604,7 +615,7 @@
         }
     },
     "postboxes": {
-        "description": "A postaládákat megjelenítő réteg.",
+        "description": "Postaládákat megjelenítő réteg.",
         "name": "Postaládák",
         "presets": {
             "0": {

@@ -9,9 +9,13 @@
     },
     "general": {
         "attribution": {
+            "editJosm": "جے‌او‌ایس‌ایم وچ اِتھے سودھو",
             "iconAttribution": {
                 "title": "ورتے آئیکون"
-            }
+            },
+            "josmOpened": "جے‌او‌ایس‌ایم کھُلھیا گیا",
+            "openIssueTracker": "مسئلہ ریپورٹ کرو",
+            "openMapillary": "اِتھے میپیلیری کھُلھو"
         },
         "back": "پچھے",
         "backgroundMap": "پچھکڑ دا نقشہ",
@@ -22,19 +26,37 @@
         },
         "example": "مثال",
         "examples": "مثال",
+        "goToInbox": "اینباکس کھُلھو",
+        "layerSelection": {
+            "title": "کج چݨو"
+        },
         "loading": "لوڈ کر رہا اے۔ ۔ ۔",
         "logout": "لوگ‌آؤٹ کرو",
+        "morescreen": {
+            "noSearch": "ساریاں تھیم ویکھو"
+        },
         "next": "اگے",
+        "noTagsSelected": "کوئی ٹیگ نہیں چݨے اے",
         "number": "نمبر",
+        "openTheMap": "نقشہ کھُلھو",
         "opening_hours": {
+            "loadingCountry": "دیش لبھی۔ ۔ ۔",
+            "openTill": "—",
             "opensAt": "توں",
             "ph_closed": "بند",
             "ph_open": "کھُلھا"
         },
+        "poweredByOsm": "اوپن‌سٹریٹ‌میپ توں ڈیٹا ورتدا",
         "save": "سامبھو",
         "search": {
+            "error": "کجھ غلطی آئی اے۔   ۔ ۔",
             "nothing": "کجھ نہیں لبھے۔ ۔ ۔",
+            "search": "ستھتیاں وچ کھوجو",
             "searching": "کھوجیا جا رہا اے۔ ۔ ۔"
+        },
+        "sharescreen": {
+            "editThisTheme": "ایہہ تھیم سودھو",
+            "thanksForSharing": "ٹھیک اے، مہربانی۔"
         },
         "weekdays": {
             "abbreviations": {
@@ -55,17 +77,53 @@
             "wednesday": "بدھوار"
         },
         "wikipedia": {
+            "loading": "وِکیپیڈیا لوڈ کیتا جا رہا اے۔ ۔ ۔",
+            "searchWikidata": "وِکیڈیٹے وچ کھوجو",
             "wikipediaboxTitle": "وِکیپیڈیا"
         }
     },
     "image": {
+        "addPicture": "تصویر پایو",
+        "doDelete": "تصویر ہٹاؤ",
         "dontDelete": "رد کرو",
-        "isDeleted": "مٹائی گئی"
+        "isDeleted": "مٹائی گئی",
+        "nearbyPictures": {
+            "browseNearby": "نیڑے تیڑے تے تصویراں ویکھو۔ ۔ ۔",
+            "loadMore": "ہور تصویراں لوڈ کرو",
+            "title": "نیڑے تیڑے تے تصویراں"
+        }
     },
     "importHelper": {
+        "askMetadata": {
+            "downloadGeojson": "جیوجےسون ڈاؤن‌لوڈ کرو",
+            "title": "میٹا ڈیٹا چݨو"
+        },
+        "confirmProcess": {
+            "title": "لائیسنس تے لوکاں دی جاݨکاری"
+        },
+        "conflationChecker": {
+            "states": {
+                "running": "اورپاس پرشان بھیجیا جا رہا اے۔ ۔ ۔"
+            },
+            "titleNearby": "نیڑے تیڑے تے نشان"
+        },
+        "createNotes": {
+            "title": "نوٹ بݨاؤݨ"
+        },
         "introduction": {
             "title": "جاݨ پچھاݨ"
-        }
+        },
+        "login": {
+            "title": "لوگ‌این کرو",
+            "userAccountTitle": "ورتنوالے دا کھاتہ چݨو"
+        },
+        "selectFile": {
+            "title": "فائل چݨو"
+        },
+        "selectTheme": {
+            "title": "تھیم چݨو"
+        },
+        "title": "ایمپورٹ کرن مددگار"
     },
     "matrixbot": {
         "commands": {
@@ -73,6 +131,10 @@
                 "file": {
                     "plural": "فائیلاں",
                     "singular": "فائیل"
+                },
+                "inputElement": {
+                    "plural": "تت پایو",
+                    "singular": "تت پایو"
                 },
                 "layer": {
                     "plural": "کج",
@@ -88,11 +150,44 @@
             }
         }
     },
+    "move": {
+        "cancel": "چلݨ رد کرو"
+    },
+    "notes": {
+        "addAComment": "ٹپݨی کرو",
+        "addCommentPlaceholder": "ٹپݨی کرو۔ ۔ ۔",
+        "closeNote": "نوٹ بند کرو"
+    },
+    "professional": {
+        "aboutOsm": {
+            "aboutOsm": {
+                "title": "اوپن‌سٹریٹ‌میپ کیہ اے؟"
+            }
+        }
+    },
     "reviews": {
         "saving_review": "سامبھیا جا رہا اے…"
     },
     "split": {
         "cancel": "رد کرو",
         "split": "دپھیر کرو"
+    },
+    "translations": {
+        "activateButton": "ترجمہ کریو",
+        "allMissing": "ہݨے کوئی ترجمے نہیں اے"
+    },
+    "validation": {
+        "float": {
+            "description": "کجھ نمبر"
+        },
+        "nat": {
+            "notANumber": "اِک نمبر پایو"
+        },
+        "opening_hours": {
+            "description": "کھُلھے گھنٹے"
+        },
+        "phone": {
+            "description": "فون نمبر"
+        }
     }
 }

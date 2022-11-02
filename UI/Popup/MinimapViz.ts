@@ -1,9 +1,9 @@
-import {Store, UIEventSource} from "../../Logic/UIEventSource";
-import Loc from "../../Models/Loc";
-import Minimap from "../Base/Minimap";
-import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer";
-import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
-import {SpecialVisualization} from "../SpecialVisualization";
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import Loc from "../../Models/Loc"
+import Minimap from "../Base/Minimap"
+import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export class MinimapViz implements SpecialVisualization {
     funcName = "minimap"
@@ -20,8 +20,7 @@ export class MinimapViz implements SpecialVisualization {
             defaultValue: "id",
         },
     ]
-    example:
-        "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`"
+    example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`"
 
     constr(state, tagSource, args, _) {
         if (state === undefined) {
@@ -30,8 +29,8 @@ export class MinimapViz implements SpecialVisualization {
         const keys = [...args]
         keys.splice(0, 1)
         const featureStore = state.allElements.ContainingFeatures
-        const featuresToShow: Store<{ freshness: Date; feature: any }[]> =
-            tagSource.map((properties) => {
+        const featuresToShow: Store<{ freshness: Date; feature: any }[]> = tagSource.map(
+            (properties) => {
                 const features: { freshness: Date; feature: any }[] = []
                 for (const key of keys) {
                     const value = properties[key]
@@ -58,7 +57,8 @@ export class MinimapViz implements SpecialVisualization {
                     }
                 }
                 return features
-            })
+            }
+        )
         const properties = tagSource.data
         let zoom = 18
         if (args[0]) {

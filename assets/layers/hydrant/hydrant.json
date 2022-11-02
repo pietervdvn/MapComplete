@@ -31,7 +31,8 @@
       "it": "Idrante",
       "nl": "Brandkraan",
       "ca": "Hidrant",
-      "es": "Boca de incendios"
+      "es": "Boca de incendios",
+      "pa_PK": "ہائڈرنٹ"
     }
   },
   "description": {
@@ -489,12 +490,14 @@
           "human": {
             "en": "millimeters",
             "nl": "millimeter",
-            "de": "Millimeter"
+            "de": "Millimeter",
+            "pa_PK": "ملیمیٹر"
           },
           "humanSingular": {
             "en": "millimeter",
             "nl": "millimeter",
-            "de": "Millimeter"
+            "de": "Millimeter",
+            "pa_PK": "ملیمیٹر"
           }
         }
       ],

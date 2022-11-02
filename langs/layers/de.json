@@ -2587,6 +2587,17 @@
             }
         },
         "tagRenderings": {
+            "crossing-arrow": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Ampel hat einen Pfeil, der in Richtung der Kreuzung zeigt."
+                    },
+                    "1": {
+                        "then": "Diese Ampel hat <b>keinen</b> Pfeil, der in Richtung der Kreuzung zeigt."
+                    }
+                },
+                "question": "Hat diese Ampel einen Pfeil, der in Richtung der Kreuzung zeigt?"
+            },
             "crossing-bicycle-allowed": {
                 "mappings": {
                     "0": {
@@ -2645,6 +2656,17 @@
                 },
                 "question": "Ist das ein Zebrastreifen?"
             },
+            "crossing-minimap": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Ampel hat eine taktile Karte, die den Verlauf der Kreuzung zeigt."
+                    },
+                    "1": {
+                        "then": "Die Ampel hat <b>keine</b> taktile Karte, die den Verlauf der Kreuzung zeigt."
+                    }
+                },
+                "question": "Hat die Ampel hat eine taktile Karte, die den Verlauf der Kreuzung zeigt?"
+            },
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
@@ -2658,6 +2680,23 @@
                     }
                 },
                 "question": "Dürfen Radfahrer bei roter Ampel rechts abbiegen?"
+            },
+            "crossing-sound": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Ampel gibt akustische Signale, um das Auffinden und Überqueren der Kreuzung zu erleichtern."
+                    },
+                    "1": {
+                        "then": "Die Ampel gibt keine akustischen Signale, um das Überqueren zu erleichtern."
+                    },
+                    "2": {
+                        "then": "Die Ampel gibt ein akustisches Signal, zum Auffinden des Mastes, aber kein Signal für die Grünphase."
+                    },
+                    "3": {
+                        "then": "Die Ampel gibt ein akustisches Signal für die Grünphase, aber kein Signal zum Auffinden des Mastes."
+                    }
+                },
+                "question": "Gibt die Ampel akustische Signale, um das Überqueren zu erleichtern?"
             },
             "crossing-tactile": {
                 "mappings": {
@@ -2689,6 +2728,17 @@
                     }
                 },
                 "question": "Was ist das für eine Kreuzung?"
+            },
+            "crossing-vibration": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Ampeltaste vibriert während der Grünphase."
+                    },
+                    "1": {
+                        "then": "Die Ampeltaste vibriert nicht während der Grünphase."
+                    }
+                },
+                "question": "Gibt die Ampel ein Vibrationssignal, um das Überqueren zu erleichtern? (in der Regel am unteren Ende der Ampeltaste)"
             }
         },
         "title": {
@@ -3701,6 +3751,150 @@
             "render": "Feuerwache"
         }
     },
+    "fitness_centre": {
+        "description": "Ebene mit Fitnessstudios",
+        "name": "Fitnessstudios",
+        "presets": {
+            "0": {
+                "title": "ein Fitnessstudio"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name des Fitnessstudios"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Das Fitnessstudio hat keinen Namen"
+                    }
+                },
+                "question": "Wie lautet der Name des Fitnessstudios?",
+                "render": "Das Fitnessstudio heißt {name}"
+            }
+        },
+        "title": {
+            "render": "Fitnessstudio"
+        }
+    },
+    "fitness_station": {
+        "description": "Finden Sie eine Fitness-Station in der Nähe und fügen Sie fehlende hinzu.",
+        "name": "Fitness-Stationen",
+        "presets": {
+            "0": {
+                "title": "eine Fitness-Station"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name der Fitness-Station"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Die Fitness-Station hat keinen Namen"
+                    }
+                },
+                "question": "Wie lautet der Name der Fitness-Station?",
+                "render": "Die Fitness-Station heißt {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Betreiber der Fitness-Station"
+                },
+                "question": "Wer betreibt die Fitness-Station?",
+                "render": "Die Fitness-Station wird betrieben von {operator}."
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Fitness-Station hat eine Reckstange für Klimmzüge."
+                    },
+                    "1": {
+                        "then": "Die Fitness-Station hat ein Schild mit Anweisungen für eine bestimmte Übung."
+                    },
+                    "2": {
+                        "then": "Die Fitness-Station hat eine Einrichtung für Sit-ups."
+                    },
+                    "3": {
+                        "then": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen."
+                    },
+                    "4": {
+                        "then": "Die Fitness-Station hat Stangen zum Dehnen."
+                    },
+                    "5": {
+                        "then": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions)."
+                    },
+                    "6": {
+                        "then": "Die Fitness-Station hat Ringe für Gymnastikübungen."
+                    },
+                    "7": {
+                        "then": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars)."
+                    },
+                    "8": {
+                        "then": "Die Fitness-Station hat eine Sprossenwand zum Klettern."
+                    },
+                    "9": {
+                        "then": "Die Fitness-Station hat Pfosten für Slalomübungen."
+                    },
+                    "10": {
+                        "then": "Die Fitness-Station hat Trittsteine."
+                    },
+                    "11": {
+                        "then": "Die Fitness-Station hat Hütchen für Bocksprünge."
+                    },
+                    "12": {
+                        "then": "Die Fitness-Station hat Balken zum überspringen."
+                    },
+                    "13": {
+                        "then": "Die Fitnessstation hat Hürden zum überspringen."
+                    },
+                    "14": {
+                        "then": "Die Fitness-Station hat eine Kletterwand."
+                    },
+                    "15": {
+                        "then": "Die Fitness-Station hat einen Schwebebalken."
+                    },
+                    "16": {
+                        "then": "Die Fitness-Station hat einen Baumstamm mit Griff zum Anheben."
+                    },
+                    "17": {
+                        "then": "Die Fitness-Station hat einen Stuhl ohne Sitzfläche, nur mit Arm- und Rückenlehne, für Beinheber."
+                    },
+                    "18": {
+                        "then": "Die Fitness-Station hat einen Kasten für Sprungübungen."
+                    },
+                    "19": {
+                        "then": "Die Fitness-Station hat Kampfseile (battle ropes)."
+                    },
+                    "20": {
+                        "then": "Die Fitness-Station hat ein Fahrradergometer."
+                    },
+                    "21": {
+                        "then": "Die Fitness-Station hat einen Crosstrainer."
+                    },
+                    "22": {
+                        "then": "Die Fitness-Station hat einen Air-Walker."
+                    },
+                    "23": {
+                        "then": "Die Fitness-Station hat ein Rudergerät."
+                    },
+                    "24": {
+                        "then": "Die Fitness-Station hat eine Slackline."
+                    }
+                },
+                "question": "Welche Übungsgeräte gibt es an dieser Fitness-Station?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Fitness-Station {name}"
+                }
+            },
+            "render": "Fitness-Station"
+        }
+    },
     "food": {
         "deletion": {
             "extraDeleteReasons": {
@@ -4341,7 +4535,7 @@
                         "question": "Abgesenkter Bordstein (~3 cm)"
                     },
                     "3": {
-                        "question": "Bündiger Bordstein (~0cm)"
+                        "question": "Bündiger Bordstein (~0 cm)"
                     },
                     "4": {
                         "question": "Kein Bordstein"
@@ -4363,6 +4557,11 @@
             "kerb-height": {
                 "freeform": {
                     "placeholder": "Höhe des Bordsteins"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Der Bordstein ist bündig und niedriger als 1 cm."
+                    }
                 },
                 "question": "Wie hoch ist der Bordstein?",
                 "render": "Bordsteinhöhe: {kerb:height}"
@@ -5007,6 +5206,64 @@
             }
         }
     },
+    "osm_community_index": {
+        "description": "Eine Ebene aller OpenStreetMap-Communities",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Land"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Regionale Gruppe"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Region"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Mittlere Region"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Gebiet"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Welt"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Andere Communities"
+                    }
+                }
+            }
+        },
+        "name": "OSM-Community-Index",
+        "title": {
+            "render": "OSM-Community-Index"
+        }
+    },
     "parcel_lockers": {
         "description": "Ebene mit Paketschließfächern zum Abholen und Versenden von Paketen.",
         "name": "Paketschließfächer",
@@ -5464,10 +5721,111 @@
             }
         },
         "tagRenderings": {
+            "letter-from": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können Briefe hier aufgeben"
+                    },
+                    "1": {
+                        "then": "Sie können hier keine Briefe aufgeben"
+                    }
+                },
+                "question": "Können Sie hier einen Brief aufgeben?",
+                "render": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}"
+            },
             "opening_hours": {
                 "override": {
                     "question": "Wie sind die Öffnungszeiten dieser Poststelle?"
                 }
+            },
+            "parcel-from": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier können Sie Pakete versenden"
+                    },
+                    "1": {
+                        "then": "Sie können hier keine Pakete versenden"
+                    }
+                },
+                "question": "Können Sie hier Pakete versenden?",
+                "render": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}"
+            },
+            "parcel-pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier können Sie verpasste Pakete abholen"
+                    },
+                    "1": {
+                        "then": "Sie können hier keine verpassten Pakete abholen"
+                    }
+                },
+                "question": "Können Sie hier verpasste Pakete abholen?",
+                "render": "Sie können Pakete von diesen Unternehmen abholen: {post_office:parcel_pickup}"
+            },
+            "parcel-to": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können Pakete zur Abholung hierher schicken"
+                    },
+                    "1": {
+                        "then": "Sie können keine Pakete zur Abholung hierher schicken"
+                    }
+                },
+                "question": "Können Sie Pakete zur Abholung hierher schicken?",
+                "render": "Mit diesen Unternehmen können Sie Pakete zur Abholung hierher senden: {post_office:parcel_to}"
+            },
+            "partner-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Standort bietet Dienstleistungen für DHL an"
+                    },
+                    "1": {
+                        "then": "Dieser Standort bietet Dienstleistungen für DPD an"
+                    },
+                    "2": {
+                        "then": "Dieser Standort bietet Dienstleistungen für GLS an"
+                    },
+                    "3": {
+                        "then": "Dieser Standort bietet Dienstleistungen für UPS an"
+                    },
+                    "4": {
+                        "then": "Dieser Standort ist ein DHL Paketshop"
+                    },
+                    "5": {
+                        "then": "Dieser Standort ist ein Hermes PaketShop"
+                    },
+                    "6": {
+                        "then": "Dieser Standort ist ein PostNL-Punkt"
+                    },
+                    "7": {
+                        "then": "Dieser Standort bietet Dienstleistungen für bpost an"
+                    }
+                },
+                "question": "Für welche Marke bietet dieser Standort Dienstleistungen an?",
+                "render": "Dieser Standort bietet Dienstleistungen für {post_office:brand} an"
+            },
+            "post_partner": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Geschäft ist ein Post-Partner"
+                    },
+                    "1": {
+                        "then": "Dieses Geschäft ist kein Post-Partner"
+                    }
+                },
+                "question": "Ist dies ein Post-Partner?"
+            },
+            "stamps": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können hier Briefmarken kaufen"
+                    },
+                    "1": {
+                        "then": "Sie können hier keine Briefmarken kaufen"
+                    }
+                },
+                "question": "Kann man hier Briefmarken kaufen?",
+                "render": "Sie können Briefmarken folgender Unternehmen kaufen: {post_office:stamps}"
             }
         },
         "title": {
@@ -5904,6 +6262,14 @@
                 },
                 "question": "Welche Geschlechter können sich an dieser Schule anmelden?"
             },
+            "school-language": {
+                "render": {
+                    "special": {
+                        "no_known_languages": "Die Unterrichtssprache der Schule ist unbekannt",
+                        "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
+                    }
+                }
+            },
             "school-name": {
                 "question": "Wie lautet der Name dieser Schule?",
                 "render": "Diese Schule heißt {name}"
@@ -5940,16 +6306,6 @@
                 },
                 "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?<div class='subtle'>Ad-hoc ",
                 "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
-            },
-            "wikidata.school-language": {
-                "override": {
-                    "+mappings": {
-                        "0": {
-                            "then": "Die Unterrichtssprache der Schule ist unbekannt"
-                        }
-                    },
-                    "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
-                }
             }
         },
         "title": {
@@ -6100,6 +6456,28 @@
         }
     },
     "speed_camera": {
+        "description": "Ebene mit Blitzern",
+        "name": "Blitzer",
+        "presets": {
+            "0": {
+                "title": "einen Blitzer"
+            }
+        },
+        "tagRenderings": {
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Zulässige Höchstgeschwindigkeit"
+                },
+                "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit an diesem Blitzer?",
+                "render": "Die zulässige Höchstgeschwindigkeit beträgt {canonical(maxspeed)}"
+            },
+            "ref": {
+                "render": "Die Referenznummer dieses Blitzers ist {ref}"
+            }
+        },
+        "title": {
+            "render": "Blitzer"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -6116,6 +6494,32 @@
         }
     },
     "speed_display": {
+        "description": "Ebene mit Geschwindigkeitsanzeigen, die Fahrer auf ihre Geschwindigkeit hinweisen.",
+        "name": "Geschwindigkeitsanzeige",
+        "presets": {
+            "0": {
+                "title": "eine Geschwindigkeitsanzeige"
+            }
+        },
+        "tagRenderings": {
+            "inscription": {
+                "freeform": {
+                    "placeholder": "Text auf der Geschwindigkeitsanzeige (z. B. \"Ihre Geschwindigkeit\")"
+                },
+                "question": "Wie lautet der Text auf dieser Geschwindigkeitsanzeige?",
+                "render": "Der Text auf dieser Geschwindigkeitsanzeige ist {inscription}"
+            },
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Zulässige Geschwindigkeit bei Geschwindigkeitsanzeige"
+                },
+                "question": "Wie hoch ist die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige?",
+                "render": "Die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige ist {canonical(maxspeed)}"
+            }
+        },
+        "title": {
+            "render": "Geschwindigkeitsanzeige"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -6245,6 +6649,73 @@
         },
         "title": {
             "render": "Sportplatz"
+        }
+    },
+    "sports_centre": {
+        "description": "Hallen- und Freiluftsportzentren sind auf dieser Ebene zu finden",
+        "name": "Sportzentren",
+        "presets": {
+            "0": {
+                "title": "ein Sportzentrum"
+            }
+        },
+        "title": {
+            "render": "Sportzentrum"
+        }
+    },
+    "stairs": {
+        "description": "Ebene mit Treppen und Rolltreppen",
+        "name": "Treppe",
+        "tagRenderings": {
+            "conveying": {
+                "mappings": {
+                    "0": {
+                        "then": "Das ist eine Rolltreppe"
+                    },
+                    "1": {
+                        "then": "Das ist keine Rolltreppe"
+                    }
+                }
+            },
+            "handrail": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Treppe hat einen Handlauf"
+                    },
+                    "1": {
+                        "then": "Die Treppe hat <b>keinen</b> Handlauf"
+                    }
+                },
+                "question": "Hat die Treppe einen Handlauf?"
+            },
+            "ramp": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier gibt es eine Rampe für Fahrräder"
+                    },
+                    "1": {
+                        "then": "Hier gibt es eine Rampe für Rollstühle"
+                    },
+                    "2": {
+                        "then": "Hier gibt es eine Rampe für Rollstühle, die jedoch auf der Karte separat angezeigt wird"
+                    },
+                    "3": {
+                        "then": "Hier gibt es eine Rampe für Kinderwagen"
+                    },
+                    "4": {
+                        "then": "An dieser Treppe gibt es keine Rampe"
+                    }
+                },
+                "question": "Gibt es eine Rampe an dieser Treppe?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Rolltreppe"
+                }
+            },
+            "render": "Treppe"
         }
     },
     "street_lamps": {
@@ -6747,6 +7218,7 @@
         }
     },
     "toilet_at_amenity": {
+        "description": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
         "filter": {
             "0": {
                 "options": {
@@ -6770,11 +7242,18 @@
                 }
             }
         },
+        "name": "Toiletten in anderen Einrichtungen",
         "tagRenderings": {
             "toilet-access": {
                 "mappings": {
                     "0": {
                         "then": "Der Zugang ist öffentlich"
+                    },
+                    "1": {
+                        "then": "Nur Zugang für Kunden der Einrichtung"
+                    },
+                    "2": {
+                        "then": "Nicht zugänglich, auch nicht für Kunden der Einrichtung"
                     },
                     "3": {
                         "then": "Der Zugang ist möglich, aber man muss nach einen Schlüssel fragen"
@@ -6783,6 +7262,7 @@
                         "then": "Öffentlicher Zugang"
                     }
                 },
+                "question": "Ist die Toilette öffentlich zugänglich?",
                 "render": "Zugang ist {toilets:access}"
             },
             "toilet-charge": {
@@ -6818,6 +7298,14 @@
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Toilette in {name}"
+                }
+            },
+            "render": "Toilette in Einrichtung"
         },
         "units": {
             "0": {
@@ -6909,6 +7397,29 @@
     },
     "transit_stops": {
         "description": "Ebene mit verschiedenen Arten von Haltestellen.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Mit einem Unterstand"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit einer Bank"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Mit einem Mülleimer"
+                    }
+                }
+            }
+        },
         "name": "Haltestellen",
         "tagRenderings": {
             "bench": {

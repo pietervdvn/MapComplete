@@ -41,7 +41,8 @@
       "es": "¿Cual es la entidad de Wikidata que se corresponde?",
       "zh_Hans": "在Wikidata上对应的实体是什么？",
       "da": "Hvad er den tilsvarende Wikidata-enhed?",
-      "id": "Apa entitas Wikidata yang sesuai?"
+      "id": "Apa entitas Wikidata yang sesuai?",
+      "cs": "Jaká je odpovídající entita Wikidata?"
     },
     "mappings": [
       {
@@ -66,7 +67,8 @@
           "sv": "Ingen Wikipedia-sida har länkats än",
           "zh_Hans": "尚未有连接到的维基百科页面",
           "zh_Hant": "還沒有連結到維基百科頁面",
-          "id": "Belum ada halaman Wikipedia yang ditautkan"
+          "id": "Belum ada halaman Wikipedia yang ditautkan",
+          "cs": "Žádná stránka na Wikipedii zatím nebyla propojena"
         },
         "hideInAnswer": true
       },
@@ -91,7 +93,8 @@
           "es": "Todavía no se ha enlazado una página de wikipedia",
           "zh_Hans": "尚未有连接到的维基百科页面",
           "da": "Der er endnu ikke linket til nogen Wikipedia-side",
-          "id": "Belum ada halaman Wikipedia yang ditautkan"
+          "id": "Belum ada halaman Wikipedia yang ditautkan",
+          "cs": "Žádná stránka na Wikipedii zatím nebyla propojena"
         },
         "hideInAnswer": true
       }
@@ -132,7 +135,8 @@
       "fil": "Ano ang telepono ng {title()}?",
       "es": "¿Cuál es el número de teléfono de {title()}?",
       "zh_Hans": "{title()} 的电话号码为何？",
-      "da": "Hvad er telefonnummeret til {title()}?"
+      "da": "Hvad er telefonnummeret til {title()}?",
+      "cs": "Jaké je telefonní číslo {title()}?"
     },
     "render": "<a href='tel:{phone}'>{phone}</a>",
     "mappings": [
@@ -178,7 +182,8 @@
       "fil": "Ano ang nau-ukol na partida sa Wikipedia?",
       "es": "¿Cual es el ítem correspondiente en Wikipedia?",
       "zh_Hans": "在维基百科上对应的条目是什么？",
-      "da": "Hvad er det tilsvarende emne på Wikipedia?"
+      "da": "Hvad er det tilsvarende emne på Wikipedia?",
+      "cs": "Jaká je odpovídající položka ve Wikipedii?"
     },
     "mappings": [
       {
@@ -201,7 +206,8 @@
           "es": "No enlazado con Wikipedia",
           "zh_Hans": "不要连接到维基百科",
           "da": "Ikke linket til Wikipedia",
-          "id": "Tidak ditautkan dengan Wikipedia"
+          "id": "Tidak ditautkan dengan Wikipedia",
+          "cs": "Není propojeno s Wikipedií"
         }
       }
     ],
@@ -275,7 +281,8 @@
       "fil": "Ano ang website ng {title()}?",
       "es": "¿Cual es el sitio web de {title()}?",
       "zh_Hans": "{title()} 的网站为何？",
-      "da": "Hvad er webstedet for {title()}?"
+      "da": "Hvad er webstedet for {title()}?",
+      "cs": "Jaká je webová stránka {title()}?"
     },
     "render": "<a href='{website}' target='_blank'>{website}</a>",
     "freeform": {
@@ -312,7 +319,8 @@
       "fil": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?",
       "es": "¿Este lugar es accesible con una silla de ruedas?",
       "da": "Er stedet tilgængeligt med en kørestol?",
-      "id": "Apakah tempat ini dapat diakses dengan kursi roda?"
+      "id": "Apakah tempat ini dapat diakses dengan kursi roda?",
+      "cs": "Je toto místo přístupné pro vozíčkáře?"
     },
     "mappings": [
       {
@@ -340,7 +348,8 @@
           "fil": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair",
           "es": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas",
           "da": "Dette sted er specielt indrettet til kørestolsbrugere",
-          "id": "Tempat ini dirancang khusus untuk pengguna kursi roda"
+          "id": "Tempat ini dirancang khusus untuk pengguna kursi roda",
+          "cs": "Toto místo je speciálně upraveno pro vozíčkáře"
         }
       },
       {
@@ -368,7 +377,8 @@
           "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
           "es": "Este lugar es fácilmente accesible con una silla de ruedas",
           "da": "Dette sted er let tilgængeligt med en kørestol",
-          "id": "Tempat ini mudah dijangkau dengan kursi roda"
+          "id": "Tempat ini mudah dijangkau dengan kursi roda",
+          "cs": "Toto místo je snadno dosažitelné s invalidním vozíkem"
         }
       },
       {
@@ -396,7 +406,8 @@
           "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
           "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
           "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
-          "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah"
+          "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah",
+          "cs": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
         }
       },
       {
@@ -423,7 +434,8 @@
           "fil": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair",
           "es": "No es posible llegar a este lugar con una silla de ruedas",
           "da": "Dette sted er ikke tilgængeligt med kørestol",
-          "id": "Tempat ini tidak bisa dijangkau dengan kursi roda"
+          "id": "Tempat ini tidak bisa dijangkau dengan kursi roda",
+          "cs": "Na toto místo se nelze dostat s invalidním vozíkem"
         }
       }
     ]
@@ -477,7 +489,8 @@
           "fil": "Pinapayagan ang mga aso",
           "zh_Hans": "允许犬只",
           "da": "Hunde er tilladt",
-          "cs": "Psi jsou povoleni"
+          "cs": "Psi jsou povoleni",
+          "pa_PK": "کُتیاں دی اِجازت اے"
         }
       },
       {
@@ -637,7 +650,8 @@
       "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
       "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
       "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
-      "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}"
+      "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
+      "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
     },
     "freeform": {
       "key": "opening_hours",
@@ -682,7 +696,8 @@
       "fil": "Merong bang mga intsupe (outlet) sa loob, para sa mga suki?",
       "es": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?",
       "nb_NO": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?",
-      "da": "Har denne faciliteter stikkontakter tilgængelige for kunder, når de er inde?"
+      "da": "Har denne faciliteter stikkontakter tilgængelige for kunder, når de er inde?",
+      "cs": "Má toto zařízení elektrické zásuvky, které jsou zákazníkům k dispozici, když jsou uvnitř?"
     },
     "mappings": [
       {
@@ -701,7 +716,8 @@
           "fil": "Maraming mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks",
           "es": "Hay numerosos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
           "da": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
-          "nb_NO": "Det er massevis av stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lade elektronikken sin"
+          "nb_NO": "Det er massevis av stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lade elektronikken sin",
+          "cs": "V interiéru je k dispozici dostatek domácích zásuvek, kde si zákazníci mohou nabíjet elektroniku"
         },
         "if": "service:electricity=yes"
       },
@@ -721,7 +737,8 @@
           "fil": "May iilang mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks",
           "es": "Hay algunos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
           "da": "Der er nogle få stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
-          "nb_NO": "Det er noen stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lagre elektronikken sin"
+          "nb_NO": "Det er noen stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lagre elektronikken sin",
+          "cs": "V interiéru je zákazníkům k dispozici několik domácích zásuvek, kde si mohou nabít elektroniku"
         },
         "if": "service:electricity=limited"
       },
@@ -741,7 +758,8 @@
           "fil": "Walang mga intsupe (socket) para sa mga suki, pero maaring tanungin ang kawani kung magpapa-karga",
           "es": "No hay enchufes disponibles en el interior para los clientes, pero cargar puede ser posible si se pregunta al personal",
           "da": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det",
-          "nb_NO": "Det er ingen tilgjengelige stikkontakter for kunder som sitter innendørs, men lading kan være mulig hvis man spør betjeningen"
+          "nb_NO": "Det er ingen tilgjengelige stikkontakter for kunder som sitter innendørs, men lading kan være mulig hvis man spør betjeningen",
+          "cs": "V interiéru nejsou zákazníkům k dispozici žádné zásuvky, ale na požádání personálu je možné je nabíjet"
         },
         "if": "service:electricity=ask"
       },
@@ -761,7 +779,8 @@
           "fil": "Walang mga intsupe (socket) para sa mga suking nakaubo sa loob",
           "es": "No hay enchufes domésticos disponibles para los clientes sentados en el interior",
           "da": "Der er ingen stikkontakter til rådighed for kunder, der sidder indendørs",
-          "nb_NO": "Det er ingen stikkontakter tilgjengelig for kunder som sitter innendørs"
+          "nb_NO": "Det er ingen stikkontakter tilgjengelig for kunder som sitter innendørs",
+          "cs": "Zákazníci v interiéru nemají k dispozici žádné domácí zásuvky"
         },
         "if": "service:electricity=no"
       }
@@ -1142,7 +1161,8 @@
       "nb_NO": "Tillates røyking på {title()}?",
       "da": "Er det tilladt at ryge på {title()}?",
       "id": "Apa diizinkan untuk merokok di {title()}?",
-      "nl": "Is roken toegestaan bij {title()}?"
+      "nl": "Is roken toegestaan bij {title()}?",
+      "cs": "Je na {title()} povoleno kouřit?"
     },
     "#condition": "Based on https://en.wikipedia.org/wiki/List_of_smoking_bans",
     "condition": "_country!~al|be",
@@ -1162,7 +1182,9 @@
           "nb_NO": "Røyking er <b>tillatt</b>",
           "da": "Rygning er <b>tilladt</b>",
           "id": "Merokok <b>diizinkan</b>",
-          "nl": "Roken is <b>toegestaan</b>"
+          "nl": "Roken is <b>toegestaan</b>",
+          "cs": "Kouření je <b>povoleno</b>",
+          "pa_PK": "سِگرٹ پیݨ دی ‫<b>‬؜اِجازت‬‫</b>‬ ؜اے"
         }
       },
       {
@@ -1180,7 +1202,8 @@
           "nb_NO": "Røyking <b>forbudt</b>",
           "da": "Rygning er <b>ikke tilladt</b>",
           "id": "Merokok <b>dilarang</b>",
-          "nl": "Roken is <b>niet toegestaan</b>"
+          "nl": "Roken is <b>niet toegestaan</b>",
+          "cs": "Kouření <b>není povoleno</b>"
         }
       },
       {
@@ -1194,7 +1217,8 @@
           "nb_NO": "Røyking <b>tillates på utsiden</b>.",
           "da": "Rygning er <b>tilladt udenfor</b>.",
           "id": "Merokok <b>diizinkan di luar ruangan</b>.",
-          "nl": "Roken is <b>buiten toegestaan</b>."
+          "nl": "Roken is <b>buiten toegestaan</b>.",
+          "cs": "Kouření je <b>povoleno venku</b>."
         }
       }
     ]
@@ -1410,7 +1434,8 @@
         "da": "Indtast netværksnavnet",
         "id": "Masukkan nama jaringan",
         "cs": "Zadejte název sítě",
-        "nb_NO": "Skriv inn nettverksnavnet"
+        "nb_NO": "Skriv inn nettverksnavnet",
+        "pa_PK": "نیٹورک دا ناں پایو"
       }
     },
     "mappings": [

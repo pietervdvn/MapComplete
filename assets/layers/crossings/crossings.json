@@ -7,7 +7,8 @@
     "fr": "Traversée",
     "ca": "Encreuaments",
     "da": "Overgange",
-    "es": "Cruces"
+    "es": "Cruces",
+    "pa_PK": "کراسنگاں"
   },
   "description": {
     "en": "Crossings for pedestrians and cyclists",
@@ -33,7 +34,8 @@
       "de": "Kreuzung",
       "fr": "Traversée",
       "ca": "Encreuament",
-      "es": "Cruce"
+      "es": "Cruce",
+      "pa_PK": "کراسنگ"
     },
     "mappings": [
       {
@@ -343,32 +345,37 @@
     {
       "id": "crossing-sound",
       "question": {
-        "en": "Does this traffic light have sound signals to aid crossing?"
+        "en": "Does this traffic light have sound signals to aid crossing?",
+        "de": "Gibt die Ampel akustische Signale, um das Überqueren zu erleichtern?"
       },
       "condition": "crossing=traffic_signals",
       "mappings": [
         {
           "if": "traffic_signals:sound=yes",
           "then": {
-            "en": "This traffic light has sound signals to help crossing, both for finding the crossing and for crossing."
+            "en": "This traffic light has sound signals to help crossing, both for finding the crossing and for crossing.",
+            "de": "Die Ampel gibt akustische Signale, um das Auffinden und Überqueren der Kreuzung zu erleichtern."
           }
         },
         {
           "if": "traffic_signals:sound=no",
           "then": {
-            "en": "This traffic light does not have sound signals to help crossing."
+            "en": "This traffic light does not have sound signals to help crossing.",
+            "de": "Die Ampel gibt keine akustischen Signale, um das Überqueren zu erleichtern."
           }
         },
         {
           "if": "traffic_signals:sound=locate",
           "then": {
-            "en": "This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross."
+            "en": "This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross.",
+            "de": "Die Ampel gibt ein akustisches Signal, zum Auffinden des Mastes, aber kein Signal für die Grünphase."
           }
         },
         {
           "if": "traffic_signals:sound=walk",
           "then": {
-            "en": "This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole."
+            "en": "This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole.",
+            "de": "Die Ampel gibt ein akustisches Signal für die Grünphase, aber kein Signal zum Auffinden des Mastes."
           }
         }
       ]
@@ -376,7 +383,8 @@
     {
       "id": "crossing-vibration",
       "question": {
-        "en": "Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)"
+        "en": "Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)",
+        "de": "Gibt die Ampel ein Vibrationssignal, um das Überqueren zu erleichtern? (in der Regel am unteren Ende der Ampeltaste)"
       },
       "condition": {
         "and": [
@@ -388,7 +396,8 @@
         {
           "if": "traffic_signals:vibration=yes",
           "then": {
-            "en": "The button for this traffic light has a vibration signal to indicate that it is safe to cross."
+            "en": "The button for this traffic light has a vibration signal to indicate that it is safe to cross.",
+            "de": "Die Ampeltaste vibriert während der Grünphase."
           },
           "icon": {
             "path": "./assets/layers/crossings/Vibrating_button_illustration.jpg",
@@ -398,7 +407,8 @@
         {
           "if": "traffic_signals:vibration=no",
           "then": {
-            "en": "The button for this traffic light does not have a vibration signal to indicate that it is safe to cross."
+            "en": "The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.",
+            "de": "Die Ampeltaste vibriert nicht während der Grünphase."
           }
         }
       ]
@@ -406,20 +416,23 @@
     {
       "id": "crossing-arrow",
       "question": {
-        "en": "Does this traffic light have an arrow pointing in the direction of crossing?"
+        "en": "Does this traffic light have an arrow pointing in the direction of crossing?",
+        "de": "Hat diese Ampel einen Pfeil, der in Richtung der Kreuzung zeigt?"
       },
       "condition": "crossing=traffic_signals",
       "mappings": [
         {
           "if": "traffic_signals:arrow=yes",
           "then": {
-            "en": "This traffic light has an arrow pointing in the direction of crossing."
+            "en": "This traffic light has an arrow pointing in the direction of crossing.",
+            "de": "Diese Ampel hat einen Pfeil, der in Richtung der Kreuzung zeigt."
           }
         },
         {
           "if": "traffic_signals:arrow=no",
           "then": {
-            "en": "This traffic light does <b>not</b> have an arrow pointing in the direction of crossing."
+            "en": "This traffic light does <b>not</b> have an arrow pointing in the direction of crossing.",
+            "de": "Diese Ampel hat <b>keinen</b> Pfeil, der in Richtung der Kreuzung zeigt."
           }
         }
       ]
@@ -427,14 +440,16 @@
     {
       "id": "crossing-minimap",
       "question": {
-        "en": "Does this traffic light have a tactile map showing the layout of the crossing?"
+        "en": "Does this traffic light have a tactile map showing the layout of the crossing?",
+        "de": "Hat die Ampel hat eine taktile Karte, die den Verlauf der Kreuzung zeigt?"
       },
       "condition": "crossing=traffic_signals",
       "mappings": [
         {
           "if": "traffic_signals:minimap=yes",
           "then": {
-            "en": "This traffic light has a tactile map showing the layout of the crossing."
+            "en": "This traffic light has a tactile map showing the layout of the crossing.",
+            "de": "Die Ampel hat eine taktile Karte, die den Verlauf der Kreuzung zeigt."
           },
           "icon": {
             "path": "./assets/layers/crossings/180px-Trairvoja_mapeto.jpg",
@@ -444,7 +459,8 @@
         {
           "if": "traffic_signals:minimap=no",
           "then": {
-            "en": "This traffic light does <b>not</b> have a tactile map showing the layout of the crossing."
+            "en": "This traffic light does <b>not</b> have a tactile map showing the layout of the crossing.",
+            "de": "Die Ampel hat <b>keine</b> taktile Karte, die den Verlauf der Kreuzung zeigt."
           }
         }
       ]

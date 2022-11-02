@@ -1,8 +1,8 @@
-import {GeoOperations} from "../../Logic/GeoOperations";
-import {MapillaryLink} from "../BigComponents/MapillaryLink";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import Loc from "../../Models/Loc";
-import {SpecialVisualization} from "../SpecialVisualization";
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { MapillaryLink } from "../BigComponents/MapillaryLink"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import Loc from "../../Models/Loc"
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export class MapillaryLinkVis implements SpecialVisualization {
     funcName = "mapillary_link"
