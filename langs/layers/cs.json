@@ -154,7 +154,7 @@
         "name": "Umělecká díla"
     },
     "bicycle_tube_vending_machine": {
-        "description": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...).",
+        "description": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...)",
         "tagRenderings": {
             "Still in use?": {
                 "mappings": {
@@ -205,10 +205,50 @@
                 "question": "Jaká je e-mailová adresa {name}?"
             },
             "bike_cafe-name": {
-                "question": "Jak se jmenuje tato cyklokavárna?"
+                "question": "Jak se jmenuje tato cyklokavárna?",
+                "render": "Tato cyklokavárna se jmenuje {name}"
+            },
+            "bike_cafe-phone": {
+                "question": "Jaké je telefonní číslo na {name}?"
+            },
+            "bike_cafe-repair-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato cyklokavárna opravuje jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tato cyklokavárna neopravuje kola"
+                    }
+                },
+                "question": "Opravuje tato cyklokavárna jízdní kola?"
+            },
+            "bike_cafe-repair-tools": {
+                "mappings": {
+                    "1": {
+                        "then": "Tato cyklokavárna nenabízí nářadí pro kutilské opravy"
+                    },
+                    "0": {
+                        "then": "Tato cyklokavárna nabízí nářadí pro kutilské opravy"
+                    }
+                },
+                "question": "Jsou zde nástroje na opravu vlastního kola?"
+            },
+            "bike_cafe-website": {
+                "question": "Jaká je webová stránka {name}?"
+            },
+            "bike_cafe-opening_hours": {
+                "question": "Kdy byla tato cyklokavárna otevřena?"
             }
         },
-        "name": "Cyklokavárna"
+        "name": "Cyklokavárna",
+        "title": {
+            "render": "Cyklokavárna",
+            "mappings": {
+                "0": {
+                    "then": "Cyklokavárna <i>{name}</i>"
+                }
+            }
+        }
     },
     "bicycle_library": {
         "name": "Půjčovna kol",
@@ -598,5 +638,280 @@
         },
         "name": "Lavičky na zastávkách veřejné dopravy",
         "description": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku"
+    },
+    "bike_repair_station": {
+        "tagRenderings": {
+            "Operational status": {
+                "question": "Je vzduchový kompresor na kolo stále funkční?",
+                "mappings": {
+                    "0": {
+                        "then": "Vzduchový kompresor na kolo je rozbitý"
+                    },
+                    "1": {
+                        "then": "Vzduchový kompresor na kolo je v provozu"
+                    }
+                }
+            },
+            "access": {
+                "mappings": {
+                    "4": {
+                        "then": "Nepřístupné pro veřejnost"
+                    },
+                    "0": {
+                        "then": "Veřejně přístupné"
+                    },
+                    "2": {
+                        "then": "Pouze pro zákazníky"
+                    },
+                    "3": {
+                        "then": "Nepřístupné pro veřejnost"
+                    },
+                    "1": {
+                        "then": "Veřejně přístupné"
+                    }
+                },
+                "question": "Kdo smí tuto opravnu používat?"
+            },
+            "bike_repair_station-available-services": {
+                "mappings": {
+                    "1": {
+                        "then": "K dispozici je pouze nářadí (šroubováky, kleště, ...)."
+                    },
+                    "0": {
+                        "then": "K dispozici je pouze vzduchový kompresor"
+                    },
+                    "2": {
+                        "then": "K dispozici jsou nástroje i vzduchový kompresor"
+                    }
+                },
+                "question": "Jaké služby jsou na tomto místě k dispozici?"
+            },
+            "bike_repair_station-bike-chain-tool": {
+                "mappings": {
+                    "1": {
+                        "then": "Není k dispozici žádný nástroj na řetěz"
+                    },
+                    "0": {
+                        "then": "K dispozici je nástroj na řetěz"
+                    }
+                },
+                "question": "Má tato opravna kol speciální nástroj na opravu řetězu?"
+            },
+            "bike_repair_station-bike-stand": {
+                "question": "Má tato cyklistická stanice hák na zavěšení kola nebo stojan na jeho zvednutí?",
+                "mappings": {
+                    "0": {
+                        "then": "K dispozici je závěsný hák nebo stojan"
+                    },
+                    "1": {
+                        "then": "Není zde žádný závěsný hák ani stojan"
+                    }
+                }
+            },
+            "bike_repair_station-manometer": {
+                "mappings": {
+                    "2": {
+                        "then": "Je zde manometr, ale je rozbitý"
+                    },
+                    "0": {
+                        "then": "K dispozici je manometr"
+                    },
+                    "1": {
+                        "then": "Není zde žádný manometr"
+                    }
+                },
+                "question": "Má vzduchový kompresor ukazatel tlaku nebo manometr?"
+            },
+            "bike_repair_station-email": {
+                "question": "Jaká je e-mailová adresa správce?"
+            },
+            "bike_repair_station-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Vždy otevřeno"
+                    }
+                },
+                "question": "Kdy je toto místo pro opravu jízdních kol otevřeno?"
+            },
+            "bike_repair_station-electrical_pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Ruční pumpa"
+                    },
+                    "1": {
+                        "then": "Elektrická pumpa"
+                    }
+                },
+                "question": "Je to elektrická pumpa na kolo?"
+            }
+        },
+        "presets": {
+            "1": {
+                "title": "opravna kol a vzduchový kompresor",
+                "description": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži."
+            },
+            "0": {
+                "title": "pumpa na kolo",
+                "description": "Zařízení pro huštění pneumatik na pevném místě na veřejném místě."
+            },
+            "2": {
+                "description": "nářadí pro opravu kola na veřejném místě (bez vzduchového kompresoru) Nářadí je zabezpečeno proti krádeži.",
+                "title": "opravna kol bez vzduchového kompresoru"
+            }
+        },
+        "name": "Vzduchový kompresor a opravy jízdních kol",
+        "description": "Vrstva zobrazující vzduchové kompresory na jízdní kola a stojany na nářadí pro opravu jízdních kol"
+    },
+    "bike_cleaning": {
+        "tagRenderings": {
+            "bike_cleaning-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Bezplatné využívání mycích služeb"
+                    },
+                    "1": {
+                        "then": "Bezplatné používání"
+                    }
+                },
+                "render": "Využití služby mytí stojí {charge}",
+                "question": "Kolik stojí využívání služby mytí?"
+            },
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Služba mytí je k dispozici zdarma"
+                    },
+                    "1": {
+                        "then": "Bezplatné používání"
+                    }
+                },
+                "render": "Využití služby mytí stojí {service:bicycle:cleaning:charge}",
+                "question": "Kolik stojí využívání služby mytí?"
+            }
+        },
+        "name": "Služba mytí jízdních kol",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Služba mytí kol <i>{name}</i>"
+                }
+            },
+            "render": "Služba mytí jízdních kol"
+        },
+        "presets": {
+            "0": {
+                "title": "služba mytí jízdních kol"
+            }
+        },
+        "description": "Vrstva zobrazující zařízení, kde si můžete umýt kolo"
+    },
+    "bike_parking": {
+        "tagRenderings": {
+            "Access": {
+                "render": "{access}",
+                "question": "Kdo může parkoviště pro jízdní kola využívat?",
+                "mappings": {
+                    "0": {
+                        "then": "Veřejně přístupné"
+                    },
+                    "1": {
+                        "then": "Přístup je určen především pro návštěvníky podniku"
+                    },
+                    "2": {
+                        "then": "Přístup je omezen na členy školy, společnosti nebo organizace"
+                    }
+                }
+            },
+            "Bicycle parking type": {
+                "mappings": {
+                    "1": {
+                        "then": "Stojan na kola / smyčky"
+                    },
+                    "2": {
+                        "then": "Držák na řídítka"
+                    },
+                    "3": {
+                        "then": "Stojan"
+                    },
+                    "5": {
+                        "then": "Přístřešek"
+                    },
+                    "4": {
+                        "then": "Dvouúrovňové"
+                    },
+                    "0": {
+                        "then": "Stojany"
+                    },
+                    "7": {
+                        "then": "Plocha na zemi označená pro parkování jízdních kol"
+                    },
+                    "6": {
+                        "then": "Sloupek"
+                    }
+                },
+                "question": "Jaký je typ tohoto parkoviště pro jízdní kola?",
+                "render": "Jde o typ parkoviště pro jízdní kola: {bicycle_parking}"
+            },
+            "Cargo bike spaces?": {
+                "mappings": {
+                    "0": {
+                        "then": "Na tomto parkovišti je místo pro nákladní kola"
+                    },
+                    "1": {
+                        "then": "Toto parkoviště má vyhrazená (oficiální) místa pro nákladní kola."
+                    },
+                    "2": {
+                        "then": "Není povoleno parkovat nákladní kola"
+                    }
+                },
+                "question": "Má toto parkoviště místa pro nákladní kola?"
+            },
+            "Underground?": {
+                "mappings": {
+                    "0": {
+                        "then": "Podzemní parkoviště"
+                    },
+                    "1": {
+                        "then": "Povrchové parkoviště"
+                    },
+                    "2": {
+                        "then": "Parkoviště na střeše"
+                    },
+                    "3": {
+                        "then": "Povrchové parkoviště"
+                    }
+                },
+                "question": "Jaké je relativní umístění tohoto parkoviště pro jízdní kola?"
+            },
+            "Capacity": {
+                "render": "Místo pro {capacity} kol",
+                "question": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?"
+            },
+            "Cargo bike capacity?": {
+                "question": "Kolik nákladních jízdních kol se vejde do tohoto parkoviště pro jízdní kola?",
+                "render": "Toto parkoviště je vhodné pro {capacity:cargo_bike} nákladních kol"
+            },
+            "Is covered?": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto parkoviště je zastřešené (má střechu)"
+                    },
+                    "1": {
+                        "then": "Toto parkoviště není zastřešené"
+                    }
+                },
+                "question": "Je toto parkoviště zastřešené? U vnitřních parkovišť vyberte také možnost \"kryté\"."
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "parkování kol"
+            }
+        },
+        "title": {
+            "render": "Parkování kol"
+        },
+        "description": "Vrstva ukazující, kde můžete zaparkovat kolo",
+        "name": "Parkování kol"
     }
 }
