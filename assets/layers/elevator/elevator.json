@@ -142,7 +142,7 @@
       "render": {
         "special": {
           "type": "language_chooser",
-          "key": "tactile_writing:braille:language",
+          "key": "tactile_writing:braille",
           "question": {
             "en": "In which languages does this elevator have tactile writing (braille)?"
           },

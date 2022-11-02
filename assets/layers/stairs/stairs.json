@@ -85,7 +85,7 @@
       "render": {
         "special": {
           "type": "language_chooser",
-          "key": "tactile_writing:braille:language",
+          "key": "tactile_writing:braille",
           "question": {
             "en": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
           },
