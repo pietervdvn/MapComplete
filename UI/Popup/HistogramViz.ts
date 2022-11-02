@@ -1,9 +1,9 @@
-import {Store, UIEventSource} from "../../Logic/UIEventSource";
-import {FixedUiElement} from "../Base/FixedUiElement";
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { FixedUiElement } from "../Base/FixedUiElement"
 // import Histogram from "../BigComponents/Histogram";
 // import {SpecialVisualization} from "../SpecialVisualization";
 
-export class HistogramViz  {
+export class HistogramViz {
     funcName = "histogram"
     docs = "Create a histogram for a list of given values, read from the properties."
     example =
@@ -28,7 +28,7 @@ export class HistogramViz  {
             name: "colors*",
             doc: "(Matches all resting arguments - optional) Matches a regex onto a color value, e.g. `3[a-zA-Z+-]*:#33cc33`",
         },
-    ];
+    ]
 
     constr(state, tagSource: UIEventSource<any>, args: string[]) {
         let assignColors = undefined
@@ -39,7 +39,7 @@ export class HistogramViz  {
                 const splitted = c.split(":")
                 const value = splitted.pop()
                 const regex = splitted.join(":")
-                return {regex: "^" + regex + "$", color: value}
+                return { regex: "^" + regex + "$", color: value }
             })
             assignColors = (key) => {
                 for (const kv of mapping) {
@@ -59,10 +59,7 @@ export class HistogramViz  {
                 }
                 return JSON.parse(value)
             } catch (e) {
-                console.error(
-                    "Could not load histogram: parsing  of the list failed: ",
-                    e
-                )
+                console.error("Could not load histogram: parsing  of the list failed: ", e)
                 return undefined
             }
         })

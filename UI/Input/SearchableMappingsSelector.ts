@@ -1,13 +1,13 @@
-import {UIElement} from "../UIElement"
-import {InputElement} from "./InputElement"
+import { UIElement } from "../UIElement"
+import { InputElement } from "./InputElement"
 import BaseUIElement from "../BaseUIElement"
-import {Store, UIEventSource} from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
 import Locale from "../i18n/Locale"
 import Combine from "../Base/Combine"
-import {TextField} from "./TextField"
+import { TextField } from "./TextField"
 import Svg from "../../Svg"
-import {VariableUiElement} from "../Base/VariableUIElement"
+import { VariableUiElement } from "../Base/VariableUIElement"
 
 /**
  * A single 'pill' which can hide itself if the search criteria is not met
@@ -28,7 +28,7 @@ class SelfHidingToggle extends UIElement implements InputElement<boolean> {
             searchTerms?: Record<string, string[]>
             selected?: UIEventSource<boolean>
             forceSelected?: UIEventSource<boolean>
-            squared?: boolean,
+            squared?: boolean
             /* Hide, if not selected*/
             hide?: Store<boolean>
         }
@@ -53,7 +53,7 @@ class SelfHidingToggle extends UIElement implements InputElement<boolean> {
         const selected = (this._selected = options?.selected ?? new UIEventSource<boolean>(false))
         const forceSelected = (this.forceSelected =
             options?.forceSelected ?? new UIEventSource<boolean>(false))
-        this.matchesSearchCriteria = search.map(s => {
+        this.matchesSearchCriteria = search.map((s) => {
             if (s === undefined || s.length === 0) {
                 return true
             }
@@ -152,13 +152,13 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
             show: BaseUIElement
             value: T
             mainTerm: Record<string, string>
-            searchTerms?: Record<string, string[]>,
+            searchTerms?: Record<string, string[]>
             /* If there are more then 200 elements, should this element still be shown? */
             hasPriority?: Store<boolean>
         }[],
         options?: {
             /*
-            * If one single value can be selected (like a radio button) or if many values can be selected (like checkboxes)
+             * If one single value can be selected (like a radio button) or if many values can be selected (like checkboxes)
              */
             mode?: "select-one" | "select-many"
             /**
@@ -189,14 +189,14 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
             hideSearchBar?: false | boolean
         }
     ) {
-        const search = new TextField({value: options?.searchValue})
+        const search = new TextField({ value: options?.searchValue })
 
         const searchBar = options?.hideSearchBar
             ? undefined
             : new Combine([
-                Svg.search_svg().SetClass("w-8 normal-background"),
-                search.SetClass("w-full"),
-            ]).SetClass("flex items-center border-2 border-black m-2")
+                  Svg.search_svg().SetClass("w-8 normal-background"),
+                  search.SetClass("w-full"),
+              ]).SetClass("flex items-center border-2 border-black m-2")
 
         const searchValue = search.GetValue().map((s) => s?.trim()?.toLowerCase())
         const selectedElements = options?.selectedElements ?? new UIEventSource<T[]>([])
@@ -238,7 +238,10 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
                 searchTerms: v.searchTerms,
                 selected: vIsSelected,
                 squared: mode === "select-many",
-                hide: v.hasPriority === undefined ? forceHide : forceHide.map(fh => fh && !v.hasPriority?.data, [v.hasPriority])
+                hide:
+                    v.hasPriority === undefined
+                        ? forceHide
+                        : forceHide.map((fh) => fh && !v.hasPriority?.data, [v.hasPriority]),
             })
 
             return {
@@ -249,16 +252,17 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
 
         // The total number of elements that would be displayed based on the search criteria alone
         let totalShown: Store<number>
-        totalShown = searchValue.map((_) => mappedValues.filter((mv) => mv.show.matchesSearchCriteria.data).length)
+        totalShown = searchValue.map(
+            (_) => mappedValues.filter((mv) => mv.show.matchesSearchCriteria.data).length
+        )
         const tooMuchElementsCutoff = 40
-        totalShown.addCallbackAndRunD(shown => forceHide.setData(tooMuchElementsCutoff < shown))
+        totalShown.addCallbackAndRunD((shown) => forceHide.setData(tooMuchElementsCutoff < shown))
 
         super([
             searchBar,
             new VariableUiElement(
                 Locale.language.map(
                     (lng) => {
-
                         if (
                             options?.onNoSearchMade !== undefined &&
                             (searchValue.data === undefined || searchValue.data.length === 0)
@@ -275,7 +279,10 @@ export class SearchablePillsSelector<T> extends Combine implements InputElement<
                             .SetClass(options?.searchAreaClass ?? "")
 
                         if (totalShown.data >= tooMuchElementsCutoff) {
-                            pills = new Combine([options?.onManyElements ?? Translations.t.general.useSearch, pills])
+                            pills = new Combine([
+                                options?.onManyElements ?? Translations.t.general.useSearch,
+                                pills,
+                            ])
                         }
                         return pills
                     },

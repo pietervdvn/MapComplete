@@ -27,10 +27,10 @@ export default class UserDetails {
 
 export class OsmConnection {
     public static readonly oauth_configs = {
-        "osm": {
-            oauth_consumer_key: 'hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem',
-            oauth_secret: 'wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI',
-            url: "https://www.openstreetmap.org"
+        osm: {
+            oauth_consumer_key: "hivV7ec2o49Two8g9h8Is1VIiVOgxQ1iYexCbvem",
+            oauth_secret: "wDBRTCem0vxD7txrg1y6p5r8nvmz8tAhET7zDASI",
+            url: "https://www.openstreetmap.org",
             // OAUTH 1.0 application
             // https://www.openstreetmap.org/user/Pieter%20Vander%20Vennet/oauth_clients/7404
         },
@@ -335,43 +335,52 @@ export class OsmConnection {
         })
     }
 
-    public async uploadGpxTrack(gpx: string, options: {
-        description: string,
-        visibility:  "private" | "public" | "trackable" | "identifiable",
-        filename?: string
-        /**
-         * Some words to give some properties;
-         *
-         * Note: these are called 'tags' on the wiki, but I opted to name them 'labels' instead as they aren't "key=value" tags, but just words.
-         */
-        labels: string[]
-    }): Promise<{ id: number }> {
+    public async uploadGpxTrack(
+        gpx: string,
+        options: {
+            description: string
+            visibility: "private" | "public" | "trackable" | "identifiable"
+            filename?: string
+            /**
+             * Some words to give some properties;
+             *
+             * Note: these are called 'tags' on the wiki, but I opted to name them 'labels' instead as they aren't "key=value" tags, but just words.
+             */
+            labels: string[]
+        }
+    ): Promise<{ id: number }> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually uploading GPX ", gpx)
             return new Promise<{ id: number }>((ok, error) => {
-                window.setTimeout(() => ok({id: Math.floor(Math.random() * 1000)}), Math.random() * 5000)
-            });
+                window.setTimeout(
+                    () => ok({ id: Math.floor(Math.random() * 1000) }),
+                    Math.random() * 5000
+                )
+            })
         }
 
         const contents = {
-            "file": gpx,
-            "description": options.description ?? "",
-            "tags": options.labels?.join(",") ?? "",
-            "visibility": options.visibility
+            file: gpx,
+            description: options.description ?? "",
+            tags: options.labels?.join(",") ?? "",
+            visibility: options.visibility,
         }
 
         const extras = {
-            "file": "; filename=\""+(options.filename ?? ("gpx_track_mapcomplete_"+(new Date().toISOString())))+"\"\r\nContent-Type: application/gpx+xml"
+            file:
+                '; filename="' +
+                (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
+                '"\r\nContent-Type: application/gpx+xml',
         }
 
-        const auth = this.auth;
-        const boundary ="987654"
+        const auth = this.auth
+        const boundary = "987654"
 
         let body = ""
         for (const key in contents) {
             body += "--" + boundary + "\r\n"
-            body += "Content-Disposition: form-data; name=\"" + key + "\""
-            if(extras[key] !== undefined){
+            body += 'Content-Disposition: form-data; name="' + key + '"'
+            if (extras[key] !== undefined) {
                 body += extras[key]
             }
             body += "\r\n\r\n"
@@ -379,34 +388,31 @@ export class OsmConnection {
         }
         body += "--" + boundary + "--\r\n"
 
-
         return new Promise((ok, error) => {
-            auth.xhr({
-                method: 'POST',
-                path: `/api/0.6/gpx/create`,
-                options: {
-                    header:
-                        {
+            auth.xhr(
+                {
+                    method: "POST",
+                    path: `/api/0.6/gpx/create`,
+                    options: {
+                        header: {
                             "Content-Type": "multipart/form-data; boundary=" + boundary,
-                            "Content-Length": body.length
-                        }
+                            "Content-Length": body.length,
+                        },
+                    },
+                    content: body,
                 },
-                content: body
-
-            }, function (
-                err,
-                response: string) {
-                console.log("RESPONSE IS", response)
-                if (err !== null) {
-                    error(err)
-                } else {
-                    const parsed = JSON.parse(response)
-                    console.log("Uploaded GPX track", parsed)
-                    ok({id: parsed})
+                function (err, response: string) {
+                    console.log("RESPONSE IS", response)
+                    if (err !== null) {
+                        error(err)
+                    } else {
+                        const parsed = JSON.parse(response)
+                        console.log("Uploaded GPX track", parsed)
+                        ok({ id: parsed })
+                    }
                 }
-            })
+            )
         })
-
     }
 
     public addCommentToNote(id: number | string, text: string): Promise<void> {

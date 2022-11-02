@@ -3,8 +3,8 @@ import Translations from "../i18n/Translations"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Toggle from "../Input/Toggle"
 import BaseUIElement from "../BaseUIElement"
-import Combine from "../Base/Combine";
-import Svg from "../../Svg";
+import Combine from "../Base/Combine"
+import Svg from "../../Svg"
 
 export class EditButton extends Toggle {
     constructor(osmConnection: OsmConnection, onClick: () => void) {

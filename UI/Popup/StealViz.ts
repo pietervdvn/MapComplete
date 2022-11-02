@@ -1,10 +1,10 @@
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig";
-import {VariableUiElement} from "../Base/VariableUIElement";
-import BaseUIElement from "../BaseUIElement";
-import EditableTagRendering from "./EditableTagRendering";
-import Combine from "../Base/Combine";
-import {SpecialVisualization} from "../SpecialVisualization";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import BaseUIElement from "../BaseUIElement"
+import EditableTagRendering from "./EditableTagRendering"
+import Combine from "../Base/Combine"
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export class StealViz implements SpecialVisualization {
     funcName = "steal"
@@ -27,9 +27,7 @@ export class StealViz implements SpecialVisualization {
         for (const layerAndTagRenderingId of layerAndtagRenderingIds.split(";")) {
             const [layerId, tagRenderingId] = layerAndTagRenderingId.trim().split(".")
             const layer = state.layoutToUse.layers.find((l) => l.id === layerId)
-            const tagRendering = layer.tagRenderings.find(
-                (tr) => tr.id === tagRenderingId
-            )
+            const tagRendering = layer.tagRenderings.find((tr) => tr.id === tagRenderingId)
             tagRenderings.push([layer, tagRendering])
         }
         if (tagRenderings.length === 0) {

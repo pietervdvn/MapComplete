@@ -44,7 +44,7 @@ import { Changes } from "../../Logic/Osm/Changes"
 import { ElementStorage } from "../../Logic/ElementStorage"
 import Hash from "../../Logic/Web/Hash"
 import { PreciseInput } from "../../Models/ThemeConfig/PresetConfig"
-import {SpecialVisualization} from "../SpecialVisualization";
+import { SpecialVisualization } from "../SpecialVisualization"
 
 /**
  * A helper class for the various import-flows.

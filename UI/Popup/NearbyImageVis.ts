@@ -1,25 +1,25 @@
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState";
-import {UIEventSource} from "../../Logic/UIEventSource";
-import {DefaultGuiState} from "../DefaultGuiState";
-import BaseUIElement from "../BaseUIElement";
-import Translations from "../i18n/Translations";
-import {GeoOperations} from "../../Logic/GeoOperations";
-import NearbyImages, {NearbyImageOptions, P4CPicture, SelectOneNearbyImage} from "./NearbyImages";
-import {SubstitutedTranslation} from "../SubstitutedTranslation";
-import {Tag} from "../../Logic/Tags/Tag";
-import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
-import {And} from "../../Logic/Tags/And";
-import {SaveButton} from "./SaveButton";
-import Lazy from "../Base/Lazy";
-import {CheckBox} from "../Input/Checkboxes";
-import Slider from "../Input/Slider";
-import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders";
-import Combine from "../Base/Combine";
-import {VariableUiElement} from "../Base/VariableUIElement";
-import Toggle from "../Input/Toggle";
-import Title from "../Base/Title";
-import {MapillaryLinkVis} from "./MapillaryLinkVis";
-import {SpecialVisualization} from "../SpecialVisualization";
+import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import { DefaultGuiState } from "../DefaultGuiState"
+import BaseUIElement from "../BaseUIElement"
+import Translations from "../i18n/Translations"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import NearbyImages, { NearbyImageOptions, P4CPicture, SelectOneNearbyImage } from "./NearbyImages"
+import { SubstitutedTranslation } from "../SubstitutedTranslation"
+import { Tag } from "../../Logic/Tags/Tag"
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
+import { And } from "../../Logic/Tags/And"
+import { SaveButton } from "./SaveButton"
+import Lazy from "../Base/Lazy"
+import { CheckBox } from "../Input/Checkboxes"
+import Slider from "../Input/Slider"
+import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders"
+import Combine from "../Base/Combine"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import Toggle from "../Input/Toggle"
+import Title from "../Base/Title"
+import { MapillaryLinkVis } from "./MapillaryLinkVis"
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export class NearbyImageVis implements SpecialVisualization {
     args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = [
@@ -116,7 +116,7 @@ export class NearbyImageVis implements SpecialVisualization {
                 towardsCenter,
                 new Combine([
                     new VariableUiElement(
-                        radius.GetValue().map((radius) => t.withinRadius.Subs({radius}))
+                        radius.GetValue().map((radius) => t.withinRadius.Subs({ radius }))
                     ),
                     radius,
                 ]).SetClass("flex justify-between"),
