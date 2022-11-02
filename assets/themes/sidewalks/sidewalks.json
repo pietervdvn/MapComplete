@@ -21,7 +21,8 @@
     "nl": "Voetpaden in kaart brengen",
     "fr": "Cartographier des trottoirs",
     "it": "Mappatura del marciapiede",
-    "da": "Kortlægning af fortov"
+    "da": "Kortlægning af fortov",
+    "pa_PK": "فُت‌پیتھ دا نقشہ بݨاؤݨ"
   },
   "description": {
     "en": "Experimental theme",
@@ -32,7 +33,8 @@
     "nl": "Experimenteel thema",
     "fr": "Thème expérimental",
     "nb_NO": "Eksperimentelt tema",
-    "da": "Eksperimentelt tema"
+    "da": "Eksperimentelt tema",
+    "pa_PK": "آزمائش تھیم"
   },
   "icon": "./assets/svg/bug.svg",
   "startLat": 0,

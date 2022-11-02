@@ -13,7 +13,8 @@
     "ca": "Cafés i bars",
     "es": "Cafeterías y pubs",
     "fr": "Cafés et pubs",
-    "da": "Caféer og pubber"
+    "da": "Caféer og pubber",
+    "pa_PK": "کیفے یا پب"
   },
   "description": {
     "en": "Pubs and bars",
@@ -23,7 +24,8 @@
     "es": "Pubs y bares",
     "fr": "Bars et pubs",
     "da": "Pubber og barer",
-    "nb_NO": "Kneiper og barer"
+    "nb_NO": "Kneiper og barer",
+    "pa_PK": "پب (بار)"
   },
   "icon": "./assets/layers/cafe_pub/pub.svg",
   "startLat": 0,

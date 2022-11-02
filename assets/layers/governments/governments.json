@@ -3,7 +3,8 @@
   "name": {
     "en": "governments",
     "de": "Öffentliche Verwaltung",
-    "nl": "Overheidsdiensten"
+    "nl": "Overheidsdiensten",
+    "pa_PK": "سرکارسں"
   },
   "description": {
     "en": "This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22",

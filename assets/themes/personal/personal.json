@@ -13,7 +13,8 @@
     "it": "Tema personale",
     "nb_NO": "Personlig tema",
     "id": "Tema pribadi",
-    "da": "Personligt tema"
+    "da": "Personligt tema",
+    "pa_PK": "چݨی تھیم"
   },
   "description": {
     "en": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",

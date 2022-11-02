@@ -1062,6 +1062,31 @@
       "value": "no"
     },
     {
+      "key": "tactile_writing",
+      "description": "Layer 'Stairs' shows tactile_writing=yes with a fixed text, namely 'There is tactile writing on the handrail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_writing",
+      "description": "Layer 'Stairs' shows tactile_writing=no with a fixed text, namely 'There is no tactile writing on the handrail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": "no"
+    },
+    {
+      "key": "conveying",
+      "description": "Layer 'Stairs' shows conveying=yes with a fixed text, namely 'This is an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": "yes"
+    },
+    {
+      "key": "conveying",
+      "description": "Layer 'Stairs' shows conveying=no with a fixed text, namely 'This is not an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": "no"
+    },
+    {
+      "key": "conveying",
+      "description": "Layer 'Stairs' shows  with a fixed text, namely 'This is not an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": ""
+    },
+    {
       "key": "ramp:bicycle",
       "description": "Layer 'Stairs' shows ramp:bicycle=yes with a fixed text, namely 'There is a ramp for bicycles here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind')",
       "value": "yes"
@@ -1084,16 +1109,6 @@
     {
       "key": "ramp",
       "description": "Layer 'Stairs' shows ramp=no with a fixed text, namely 'There is no ramp at these stairs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind')",
-      "value": "no"
-    },
-    {
-      "key": "conveying",
-      "description": "Layer 'Stairs' shows conveying=yes with a fixed text, namely 'This is an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
-      "value": "yes"
-    },
-    {
-      "key": "conveying",
-      "description": "Layer 'Stairs' shows conveying=no with a fixed text, namely 'This is not an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
       "value": "no"
     }
   ]

@@ -12,7 +12,8 @@
     "ca": "Carrers ciclistes",
     "es": "Ciclocalles",
     "fr": "Rue cyclables",
-    "da": "Cykelgader"
+    "da": "Cykelgader",
+    "pa_PK": "سائیکل سڑکاں"
   },
   "shortDescription": {
     "nl": "Een kaart met alle gekende fietsstraten",
@@ -171,7 +172,8 @@
         "ca": "Futur carrer ciclista",
         "es": "Futura ciclocalle",
         "fr": "Future rue cyclable",
-        "da": "Fremtidig cykelgade"
+        "da": "Fremtidig cykelgade",
+        "pa_PK": "بھُوکھی سائیکل سڑک"
       },
       "description": {
         "nl": "Deze straat wordt binnenkort een fietsstraat",
@@ -206,7 +208,8 @@
           "ca": "Futur carrer ciclista",
           "es": "Futura ciclocalle",
           "fr": "Future rue cyclable",
-          "da": "Fremtidig cykelgade"
+          "da": "Fremtidig cykelgade",
+          "pa_PK": "بھُوکھی سائیکل سڑک"
         },
         "mappings": [
           {
@@ -269,7 +272,8 @@
         "ca": "Tots els carrers",
         "es": "Todas las calles",
         "fr": "Toutes les rues",
-        "da": "Alle gader"
+        "da": "Alle gader",
+        "pa_PK": "ساریاں سڑکاں"
       },
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren",
@@ -559,7 +563,8 @@
             "if": "traffic_sign=DE:244.1,1022-12",
             "then": {
               "en": "Motorcycles allowed",
-              "de": "Motorräder frei"
+              "de": "Motorräder frei",
+              "pa_PK": "موٹرسائیکلاں دی اِجازت اے"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
@@ -576,7 +581,8 @@
             "if": "traffic_sign=DE:244.1,1024-10",
             "then": {
               "en": "Cars allowed",
-              "de": "Autos erlaubt"
+              "de": "Autos erlaubt",
+              "pa_PK": "موٹرکاراں دی اِجازت اے"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",

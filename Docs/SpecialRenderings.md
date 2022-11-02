@@ -42,6 +42,42 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
 
 1. [Special tag renderings](#special-tag-renderings)
       * [Using expanded syntax](#using-expanded-syntax)
+    + [histogram](#histogram)
+      * [Example usage of histogram](#example-usage-of-histogram)
+    + [steal](#steal)
+      * [Example usage of steal](#example-usage-of-steal)
+    + [minimap](#minimap)
+      * [Example usage of minimap](#example-usage-of-minimap)
+    + [sided_minimap](#sided_minimap)
+      * [Example usage of sided_minimap](#example-usage-of-sided_minimap)
+    + [share_link](#share_link)
+      * [Example usage of share_link](#example-usage-of-share_link)
+    + [upload_to_osm](#upload_to_osm)
+      * [Example usage of upload_to_osm](#example-usage-of-upload_to_osm)
+    + [multi_apply](#multi_apply)
+      * [Example usage of multi_apply](#example-usage-of-multi_apply)
+    + [export_as_gpx](#export_as_gpx)
+      * [Example usage of export_as_gpx](#example-usage-of-export_as_gpx)
+    + [add_note_comment](#add_note_comment)
+      * [Example usage of add_note_comment](#example-usage-of-add_note_comment)
+    + [plantnet_detection](#plantnet_detection)
+      * [Example usage of plantnet_detection](#example-usage-of-plantnet_detection)
+    + [import_button](#import_button)
+      * [Example usage of import_button](#example-usage-of-import_button)
+    + [import_way_button](#import_way_button)
+      * [Example usage of import_way_button](#example-usage-of-import_way_button)
+    + [conflate_button](#conflate_button)
+      * [Example usage of conflate_button](#example-usage-of-conflate_button)
+    + [tag_apply](#tag_apply)
+      * [Example usage of tag_apply](#example-usage-of-tag_apply)
+    + [close_note](#close_note)
+      * [Example usage of close_note](#example-usage-of-close_note)
+    + [nearby_images](#nearby_images)
+      * [Example usage of nearby_images](#example-usage-of-nearby_images)
+    + [mapillary_link](#mapillary_link)
+      * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
+    + [language_chooser](#language_chooser)
+      * [Example usage of language_chooser](#example-usage-of-language_chooser)
     + [all_tags](#all_tags)
       * [Example usage of all_tags](#example-usage-of-all_tags)
     + [image_carousel](#image_carousel)
@@ -52,34 +88,14 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of wikipedia](#example-usage-of-wikipedia)
     + [wikidata_label](#wikidata_label)
       * [Example usage of wikidata_label](#example-usage-of-wikidata_label)
-    + [minimap](#minimap)
-      * [Example usage of minimap](#example-usage-of-minimap)
-    + [sided_minimap](#sided_minimap)
-      * [Example usage of sided_minimap](#example-usage-of-sided_minimap)
     + [reviews](#reviews)
       * [Example usage of reviews](#example-usage-of-reviews)
     + [opening_hours_table](#opening_hours_table)
       * [Example usage of opening_hours_table](#example-usage-of-opening_hours_table)
     + [live](#live)
       * [Example usage of live](#example-usage-of-live)
-    + [histogram](#histogram)
-      * [Example usage of histogram](#example-usage-of-histogram)
-    + [share_link](#share_link)
-      * [Example usage of share_link](#example-usage-of-share_link)
     + [canonical](#canonical)
       * [Example usage of canonical](#example-usage-of-canonical)
-    + [import_button](#import_button)
-      * [Example usage of import_button](#example-usage-of-import_button)
-    + [import_way_button](#import_way_button)
-      * [Example usage of import_way_button](#example-usage-of-import_way_button)
-    + [conflate_button](#conflate_button)
-      * [Example usage of conflate_button](#example-usage-of-conflate_button)
-    + [multi_apply](#multi_apply)
-      * [Example usage of multi_apply](#example-usage-of-multi_apply)
-    + [tag_apply](#tag_apply)
-      * [Example usage of tag_apply](#example-usage-of-tag_apply)
-    + [export_as_gpx](#export_as_gpx)
-      * [Example usage of export_as_gpx](#example-usage-of-export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
       * [Example usage of export_as_geojson](#example-usage-of-export_as_geojson)
     + [open_in_iD](#open_in_id)
@@ -88,20 +104,12 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of open_in_josm](#example-usage-of-open_in_josm)
     + [clear_location_history](#clear_location_history)
       * [Example usage of clear_location_history](#example-usage-of-clear_location_history)
-    + [close_note](#close_note)
-      * [Example usage of close_note](#example-usage-of-close_note)
-    + [add_note_comment](#add_note_comment)
-      * [Example usage of add_note_comment](#example-usage-of-add_note_comment)
     + [visualize_note_comments](#visualize_note_comments)
       * [Example usage of visualize_note_comments](#example-usage-of-visualize_note_comments)
     + [add_image_to_note](#add_image_to_note)
       * [Example usage of add_image_to_note](#example-usage-of-add_image_to_note)
     + [title](#title)
       * [Example usage of title](#example-usage-of-title)
-    + [nearby_images](#nearby_images)
-      * [Example usage of nearby_images](#example-usage-of-nearby_images)
-    + [mapillary_link](#mapillary_link)
-      * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
     + [maproulette_task](#maproulette_task)
       * [Example usage of maproulette_task](#example-usage-of-maproulette_task)
     + [statistics](#statistics)
@@ -110,166 +118,10 @@ Instead of using `{"render": {"en": "{some_special_visualisation(some_arg, some 
       * [Example usage of send_email](#example-usage-of-send_email)
     + [multi](#multi)
       * [Example usage of multi](#example-usage-of-multi)
-    + [steal](#steal)
-      * [Example usage of steal](#example-usage-of-steal)
-    + [plantnet_detection](#plantnet_detection)
-      * [Example usage of plantnet_detection](#example-usage-of-plantnet_detection)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
 
-
-
-
-### all_tags 
-
- Prints all key-value pairs of the object - used for debugging 
-
-#### Example usage of all_tags 
-
- `{all_tags()}`
-
-
-
-### image_carousel 
-
- Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links) 
-
-name | default | description
------- | --------- | -------------
-image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated 
- 
-
-#### Example usage of image_carousel 
-
- `{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,image)}`
-
-
-
-### image_upload 
-
- Creates a button where a user can upload an image to IMGUR 
-
-name | default | description
------- | --------- | -------------
-image-key | image | Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)
-label | Add image | The text to show on the button
- 
-
-#### Example usage of image_upload 
-
- `{image_upload(image,Add image)}`
-
-
-
-### wikipedia 
-
- A box showing the corresponding wikipedia article - based on the wikidata tag 
-
-name | default | description
------- | --------- | -------------
-keyToShowWikipediaFor | wikidata;wikipedia | Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used
- 
-
-#### Example usage of wikipedia 
-
- `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
-
-
-
-### wikidata_label 
-
- Shows the label of the corresponding wikidata-item 
-
-name | default | description
------- | --------- | -------------
-keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show the label
- 
-
-#### Example usage of wikidata_label 
-
- `{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself
-
-
-
-### minimap 
-
- A small map showing the selected feature. 
-
-name | default | description
------- | --------- | -------------
-zoomlevel | 18 | The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close
-idKey | id | (Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap. (Note: if the key is 'id', list interpration is disabled)
- 
-
-#### Example usage of minimap 
-
- `{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`
-
-
-
-### sided_minimap 
-
- A small map showing _only one side_ the selected feature. *This features requires to have linerenderings with offset* as only linerenderings with a postive or negative offset will be shown. Note: in most cases, this map will be automatically introduced 
-
-name | default | description
------- | --------- | -------------
-side | _undefined_ | The side to show, either `left` or `right`
- 
-
-#### Example usage of sided_minimap 
-
- `{sided_minimap(left)}`
-
-
-
-### reviews 
-
- Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten 
-
-name | default | description
------- | --------- | -------------
-subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>
-fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value
- 
-
-#### Example usage of reviews 
-
- `{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used
-
-
-
-### opening_hours_table 
-
- Creates an opening-hours table. Usage: {opening_hours_table(opening_hours)} to create a table of the tag 'opening_hours'. 
-
-name | default | description
------- | --------- | -------------
-key | opening_hours | The tagkey from which the table is constructed.
-prefix | _empty string_ | Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__
-postfix | _empty string_ | Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__
- 
-
-#### Example usage of opening_hours_table 
-
- A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`
-
-
-
-### live 
-
- Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)} 
-
-name | default | description
------- | --------- | -------------
-Url | _undefined_ | The URL to load
-Shorthands | _undefined_ | A list of shorthands, of the format 'shorthandname:path.path.path'. separated by ;
-path | _undefined_ | The path (or shorthand) that should be returned
- 
-
-#### Example usage of live 
-
- {live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}
 
 
 
@@ -291,6 +143,53 @@ colors* | _undefined_ | (Matches all resting arguments - optional) Matches a reg
 
 
 
+### steal 
+
+ Shows a tagRendering from a different object as if this was the object itself 
+
+name | default | description
+------ | --------- | -------------
+featureId | _undefined_ | The key of the attribute which contains the id of the feature from which to use the tags
+tagRenderingId | _undefined_ | The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection
+ 
+
+#### Example usage of steal 
+
+ `{steal(,)}`
+
+
+
+### minimap 
+
+ A small map showing the selected feature. 
+
+name | default | description
+------ | --------- | -------------
+zoomlevel | 18 | The (maximum) zoomlevel: the target zoomlevel after fitting the entire feature. The minimap will fit the entire feature, then zoom out to this zoom level. The higher, the more zoomed in with 1 being the entire world and 19 being really close
+idKey | id | (Matches all resting arguments) This argument should be the key of a property of the feature. The corresponding value is interpreted as either the id or the a list of ID's. The features with these ID's will be shown on this minimap. (Note: if the key is 'id', list interpration is disabled)
+ 
+
+#### Example usage of minimap 
+
+ `{minimap(18,id)}`
+
+
+
+### sided_minimap 
+
+ A small map showing _only one side_ the selected feature. *This features requires to have linerenderings with offset* as only linerenderings with a postive or negative offset will be shown. Note: in most cases, this map will be automatically introduced 
+
+name | default | description
+------ | --------- | -------------
+side | _undefined_ | The side to show, either `left` or `right`
+ 
+
+#### Example usage of sided_minimap 
+
+ `{sided_minimap(left)}`
+
+
+
 ### share_link 
 
  Creates a link that (attempts to) open the native 'share'-screen 
@@ -306,18 +205,72 @@ url | _undefined_ | The url to share (default: current URL)
 
 
 
-### canonical 
+### upload_to_osm 
 
- Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text.  
+ Uploads the GPS-history as GPX to OpenStreetMap.org; clears the history afterwards. The actual feature is ignored. 
+
+#### Example usage of upload_to_osm 
+
+ `{upload_to_osm()}`
+
+
+
+### multi_apply 
+
+ A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags 
 
 name | default | description
 ------ | --------- | -------------
-key | _undefined_ | The key of the tag to give the canonical text for
+feature_ids | _undefined_ | A JSON-serialized list of IDs of features to apply the tagging on
+keys | _undefined_ | One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features.
+text | _undefined_ | The text to show on the button
+autoapply | _undefined_ | A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown
+overwrite | _undefined_ | If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change
  
 
-#### Example usage of canonical 
+#### Example usage of multi_apply 
 
- If the object has `length=42`, then `{canonical(length)}` will be shown as **42 meter** (in english), **42 metre** (in french), ...
+ {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}
+
+
+
+### export_as_gpx 
+
+ Exports the selected feature as GPX-file 
+
+#### Example usage of export_as_gpx 
+
+ `{export_as_gpx()}`
+
+
+
+### add_note_comment 
+
+ A textfield to add a comment to a node (with the option to close the note). 
+
+name | default | description
+------ | --------- | -------------
+Id-key | id | The property name where the ID of the note to close can be found
+ 
+
+#### Example usage of add_note_comment 
+
+ `{add_note_comment(id)}`
+
+
+
+### plantnet_detection 
+
+ Sends the images linked to the current object to plantnet.org and asks it what plant species is shown on it. The user can then select the correct species; the corresponding wikidata-identifier will then be added to the object (together with `source:species:wikidata=plantnet.org AI`).  
+
+name | default | description
+------ | --------- | -------------
+image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated 
+ 
+
+#### Example usage of plantnet_detection 
+
+ `{plantnet_detection(image,mapillary,image,wikidata,wikimedia_commons,image,image)}`
 
 
 
@@ -516,25 +469,6 @@ way_to_conflate | _undefined_ | The key, of which the corresponding value is the
 
 
 
-### multi_apply 
-
- A button to apply the tagging of this object onto a list of other features. This is an advanced feature for which you'll need calculatedTags 
-
-name | default | description
------- | --------- | -------------
-feature_ids | _undefined_ | A JSON-serialized list of IDs of features to apply the tagging on
-keys | _undefined_ | One key (or multiple keys, seperated by ';') of the attribute that should be copied onto the other features.
-text | _undefined_ | The text to show on the button
-autoapply | _undefined_ | A boolean indicating wether this tagging should be applied automatically if the relevant tags on this object are changed. A visual element indicating the multi_apply is still shown
-overwrite | _undefined_ | If set to 'true', the tags on the other objects will always be overwritten. The default behaviour will be to only change the tags on other objects if they are either undefined or had the same value before the change
- 
-
-#### Example usage of multi_apply 
-
- {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}
-
-
-
 ### tag_apply 
 
  Shows a big button; clicking this button will apply certain tags onto the feature.
@@ -566,13 +500,215 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 
 
-### export_as_gpx 
+### close_note 
 
- Exports the selected feature as GPX-file 
+ Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text. 
 
-#### Example usage of export_as_gpx 
+name | default | description
+------ | --------- | -------------
+text | _undefined_ | Text to show on this button
+icon | checkmark.svg | Icon to show
+idkey | id | The property name where the ID of the note to close can be found
+comment | _undefined_ | Text to add onto the note when closing
+minZoom | _undefined_ | If set, only show the closenote button if zoomed in enough
+zoomButton | _undefined_ | Text to show if not zoomed in enough
+ 
 
- `{export_as_gpx()}`
+#### Example usage of close_note 
+
+ `{close_note(,checkmark.svg,id,,,)}`
+
+
+
+### nearby_images 
+
+ A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature 
+
+name | default | description
+------ | --------- | -------------
+mode | expandable | Indicates how this component is initialized. Options are: 
+
+- `open`: always show and load the pictures
+- `collapsable`: show the pictures, but a user can collapse them
+- `expandable`: shown by default; but a user can collapse them.
+mapillary | true | If 'true', includes a link to mapillary on this location.
+ 
+
+#### Example usage of nearby_images 
+
+ `{nearby_images(expandable,true)}`
+
+
+
+### mapillary_link 
+
+ Adds a button to open mapillary on the specified location 
+
+name | default | description
+------ | --------- | -------------
+zoom | 18 | The startzoom of mapillary
+ 
+
+#### Example usage of mapillary_link 
+
+ `{mapillary_link(18)}`
+
+
+
+### language_chooser 
+
+ The language element allows to show and pick all known (modern) languages. The key can be set 
+
+name | default | description
+------ | --------- | -------------
+key | _undefined_ | What key to use, e.g. `language`, `tactile_writing:braille:language`, ... If a language is supported, the language code will be appended to this key, resulting in `language:nl=yes` if nl is picked 
+question | _undefined_ | What to ask if no questions are known
+render_list_item | {language()} | How a single language will be shown in the list of languages. Use `{language}` to indicate the language (which it must contain).
+render_single_language | _undefined_ | What will be shown if the feature only supports a single language
+render_all | {list()} | The full rendering. Use `{list}` to show where the list of languages must come. Optional if mode=single
+no_known_languages | _undefined_ | The text that is shown if no languages are known for this key. If this text is omitted, the languages will be prompted instead
+mode | multi | If one or many languages can be selected. Should be 'multi' or 'single'
+ 
+
+#### Example usage of language_chooser 
+
+ `{language_chooser(,,{language()},,{list()},,multi)}`
+
+
+
+### all_tags 
+
+ Prints all key-value pairs of the object - used for debugging 
+
+#### Example usage of all_tags 
+
+ `{all_tags()}`
+
+
+
+### image_carousel 
+
+ Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links) 
+
+name | default | description
+------ | --------- | -------------
+image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated 
+ 
+
+#### Example usage of image_carousel 
+
+ `{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,image)}`
+
+
+
+### image_upload 
+
+ Creates a button where a user can upload an image to IMGUR 
+
+name | default | description
+------ | --------- | -------------
+image-key | image | Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)
+label | Add image | The text to show on the button
+ 
+
+#### Example usage of image_upload 
+
+ `{image_upload(image,Add image)}`
+
+
+
+### wikipedia 
+
+ A box showing the corresponding wikipedia article - based on the wikidata tag 
+
+name | default | description
+------ | --------- | -------------
+keyToShowWikipediaFor | wikidata;wikipedia | Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used
+ 
+
+#### Example usage of wikipedia 
+
+ `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
+
+
+
+### wikidata_label 
+
+ Shows the label of the corresponding wikidata-item 
+
+name | default | description
+------ | --------- | -------------
+keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show the label
+ 
+
+#### Example usage of wikidata_label 
+
+ `{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself
+
+
+
+### reviews 
+
+ Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten 
+
+name | default | description
+------ | --------- | -------------
+subjectKey | name | The key to use to determine the subject. If specified, the subject will be <b>tags[subjectKey]</b>
+fallback | _undefined_ | The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value
+ 
+
+#### Example usage of reviews 
+
+ `{reviews()}` for a vanilla review, `{reviews(name, play_forest)}` to review a play forest. If a name is known, the name will be used as identifier, otherwise 'play_forest' is used
+
+
+
+### opening_hours_table 
+
+ Creates an opening-hours table. Usage: {opening_hours_table(opening_hours)} to create a table of the tag 'opening_hours'. 
+
+name | default | description
+------ | --------- | -------------
+key | opening_hours | The tagkey from which the table is constructed.
+prefix | _empty string_ | Remove this string from the start of the value before parsing. __Note: use `&LPARENs` to indicate `(` if needed__
+postfix | _empty string_ | Remove this string from the end of the value before parsing. __Note: use `&RPARENs` to indicate `)` if needed__
+ 
+
+#### Example usage of opening_hours_table 
+
+ A normal opening hours table can be invoked with `{opening_hours_table()}`. A table for e.g. conditional access with opening hours can be `{opening_hours_table(access:conditional, no @ &LPARENS, &RPARENS)}`
+
+
+
+### live 
+
+ Downloads a JSON from the given URL, e.g. '{live(example.org/data.json, shorthand:x.y.z, other:a.b.c, shorthand)}' will download the given file, will create an object {shorthand: json[x][y][z], other: json[a][b][c] out of it and will return 'other' or 'json[a][b][c]. This is made to use in combination with tags, e.g. {live({url}, {url:format}, needed_value)} 
+
+name | default | description
+------ | --------- | -------------
+Url | _undefined_ | The URL to load
+Shorthands | _undefined_ | A list of shorthands, of the format 'shorthandname:path.path.path'. separated by ;
+path | _undefined_ | The path (or shorthand) that should be returned
+ 
+
+#### Example usage of live 
+
+ {live({url},{url:format},hour)} {live(https://data.mobility.brussels/bike/api/counts/?request=live&featureID=CB2105,hour:data.hour_cnt;day:data.day_cnt;year:data.year_cnt,hour)}
+
+
+
+### canonical 
+
+ Converts a short, canonical value into the long, translated text including the unit. This only works if a `unit` is defined for the corresponding value. The unit specification will be included in the text.  
+
+name | default | description
+------ | --------- | -------------
+key | _undefined_ | The key of the tag to give the canonical text for
+ 
+
+#### Example usage of canonical 
+
+ If the object has `length=42`, then `{canonical(length)}` will be shown as **42 meter** (in english), **42 metre** (in french), ...
 
 
 
@@ -616,41 +752,6 @@ id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tag
 
 
 
-### close_note 
-
- Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text. 
-
-name | default | description
------- | --------- | -------------
-text | _undefined_ | Text to show on this button
-icon | checkmark.svg | Icon to show
-idkey | id | The property name where the ID of the note to close can be found
-comment | _undefined_ | Text to add onto the note when closing
-minZoom | _undefined_ | If set, only show the closenote button if zoomed in enough
-zoomButton | _undefined_ | Text to show if not zoomed in enough
- 
-
-#### Example usage of close_note 
-
- `{close_note(,checkmark.svg,id,,,)}`
-
-
-
-### add_note_comment 
-
- A textfield to add a comment to a node (with the option to close the note). 
-
-name | default | description
------- | --------- | -------------
-Id-key | id | The property name where the ID of the note to close can be found
- 
-
-#### Example usage of add_note_comment 
-
- `{add_note_comment(id)}`
-
-
-
 ### visualize_note_comments 
 
  Visualises the comments for notes 
@@ -689,41 +790,6 @@ Id-key | id | The property name where the ID of the note to close can be found
 #### Example usage of title 
 
  `What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.
-
-
-
-### nearby_images 
-
- A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature 
-
-name | default | description
------- | --------- | -------------
-mode | expandable | Indicates how this component is initialized. Options are: 
-
-- `open`: always show and load the pictures
-- `collapsable`: show the pictures, but a user can collapse them
-- `expandable`: shown by default; but a user can collapse them.
-mapillary | true | If 'true', includes a link to mapillary on this location.
- 
-
-#### Example usage of nearby_images 
-
- `{nearby_images(expandable,true)}`
-
-
-
-### mapillary_link 
-
- Adds a button to open mapillary on the specified location 
-
-name | default | description
------- | --------- | -------------
-zoom | 18 | The startzoom of mapillary
- 
-
-#### Example usage of mapillary_link 
-
- `{mapillary_link(18)}`
 
 
 
@@ -790,37 +856,6 @@ tagrendering | _undefined_ | An entire tagRenderingConfig
   }
 }
 ```
-
-
-
-### steal 
-
- Shows a tagRendering from a different object as if this was the object itself 
-
-name | default | description
------- | --------- | -------------
-featureId | _undefined_ | The key of the attribute which contains the id of the feature from which to use the tags
-tagRenderingId | _undefined_ | The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection
- 
-
-#### Example usage of steal 
-
- `{steal(,)}`
-
-
-
-### plantnet_detection 
-
- Sends the images linked to the current object to plantnet.org and asks it what plant species is shown on it. The user can then select the correct species; the corresponding wikidata-identifier will then be added to the object (together with `source:species:wikidata=plantnet.org AI`).  
-
-name | default | description
------- | --------- | -------------
-image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated 
- 
-
-#### Example usage of plantnet_detection 
-
- `{plantnet_detection(image,mapillary,image,wikidata,wikimedia_commons,image,image)}`
 
 
 

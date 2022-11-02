@@ -76,7 +76,8 @@
           "nb_NO": "Hundevennlige butikker",
           "nl": "Hondvriendelijke winkels",
           "fr": "Magasins acceptant les chiens",
-          "ca": "Botigues amigues dels gossos"
+          "ca": "Botigues amigues dels gossos",
+          "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں"
         },
         "title": {
           "render": {
@@ -86,7 +87,8 @@
             "nb_NO": "Hundevennlige butikker",
             "nl": "Hondvriendelijke winkels",
             "fr": "Magasins acceptant les chiens",
-            "ca": "Botigues amigues dels gossos"
+            "ca": "Botigues amigues dels gossos",
+            "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں"
           },
           "mappings": [
             {
@@ -179,7 +181,8 @@
               "nb_NO": "hundevennlig butikk",
               "nl": "Hondvriendelijke winkels",
               "fr": "magasin acceptant les chiens",
-              "ca": "botiga amiga dels gossos"
+              "ca": "botiga amiga dels gossos",
+              "pa_PK": "کُتیاں دی اِجازت دی دکان"
             },
             "tags": [
               "dog=yes",

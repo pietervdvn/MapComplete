@@ -16,7 +16,8 @@
     "render": {
       "en": "Crossing",
       "de": "Überweg",
-      "nl": "Oversteekplaats"
+      "nl": "Oversteekplaats",
+      "pa_PK": "کراسنگ"
     }
   },
   "presets": [

@@ -9,13 +9,13 @@
     },
     "general": {
         "attribution": {
+            "editJosm": "جے‌او‌ایس‌ایم وچ اِتھے سودھو",
             "iconAttribution": {
                 "title": "ورتے آئیکون"
             },
-            "openIssueTracker": "مسئلہ ریپورٹ کرو",
             "josmOpened": "جے‌او‌ایس‌ایم کھُلھیا گیا",
-            "openMapillary": "اِتھے میپیلیری کھُلھو",
-            "editJosm": "جے‌او‌ایس‌ایم وچ اِتھے سودھو"
+            "openIssueTracker": "مسئلہ ریپورٹ کرو",
+            "openMapillary": "اِتھے میپیلیری کھُلھو"
         },
         "back": "پچھے",
         "backgroundMap": "پچھکڑ دا نقشہ",
@@ -26,23 +26,37 @@
         },
         "example": "مثال",
         "examples": "مثال",
+        "goToInbox": "اینباکس کھُلھو",
+        "layerSelection": {
+            "title": "کج چݨو"
+        },
         "loading": "لوڈ کر رہا اے۔ ۔ ۔",
         "logout": "لوگ‌آؤٹ کرو",
+        "morescreen": {
+            "noSearch": "ساریاں تھیم ویکھو"
+        },
         "next": "اگے",
+        "noTagsSelected": "کوئی ٹیگ نہیں چݨے اے",
         "number": "نمبر",
+        "openTheMap": "نقشہ کھُلھو",
         "opening_hours": {
+            "loadingCountry": "دیش لبھی۔ ۔ ۔",
+            "openTill": "—",
             "opensAt": "توں",
             "ph_closed": "بند",
-            "ph_open": "کھُلھا",
-            "loadingCountry": "دیش لبھی۔ ۔ ۔",
-            "openTill": "—"
+            "ph_open": "کھُلھا"
         },
+        "poweredByOsm": "اوپن‌سٹریٹ‌میپ توں ڈیٹا ورتدا",
         "save": "سامبھو",
         "search": {
+            "error": "کجھ غلطی آئی اے۔   ۔ ۔",
             "nothing": "کجھ نہیں لبھے۔ ۔ ۔",
-            "searching": "کھوجیا جا رہا اے۔ ۔ ۔",
             "search": "ستھتیاں وچ کھوجو",
-            "error": "کجھ غلطی آئی اے۔   ۔ ۔"
+            "searching": "کھوجیا جا رہا اے۔ ۔ ۔"
+        },
+        "sharescreen": {
+            "editThisTheme": "ایہہ تھیم سودھو",
+            "thanksForSharing": "ٹھیک اے، مہربانی۔"
         },
         "weekdays": {
             "abbreviations": {
@@ -63,52 +77,41 @@
             "wednesday": "بدھوار"
         },
         "wikipedia": {
-            "wikipediaboxTitle": "وِکیپیڈیا",
             "loading": "وِکیپیڈیا لوڈ کیتا جا رہا اے۔ ۔ ۔",
-            "searchWikidata": "وِکیڈیٹے وچ کھوجو"
-        },
-        "goToInbox": "اینباکس کھُلھو",
-        "layerSelection": {
-            "title": "کج چݨو"
-        },
-        "openTheMap": "نقشہ کھُلھو",
-        "poweredByOsm": "اوپن‌سٹریٹ‌میپ توں ڈیٹا ورتدا",
-        "sharescreen": {
-            "editThisTheme": "ایہہ تھیم سودھو",
-            "thanksForSharing": "ٹھیک اے، مہربانی۔"
-        },
-        "morescreen": {
-            "noSearch": "ساریاں تھیم ویکھو"
-        },
-        "noTagsSelected": "کوئی ٹیگ نہیں چݨے اے"
+            "searchWikidata": "وِکیڈیٹے وچ کھوجو",
+            "wikipediaboxTitle": "وِکیپیڈیا"
+        }
     },
     "image": {
-        "dontDelete": "رد کرو",
-        "isDeleted": "مٹائی گئی",
         "addPicture": "تصویر پایو",
         "doDelete": "تصویر ہٹاؤ",
+        "dontDelete": "رد کرو",
+        "isDeleted": "مٹائی گئی",
         "nearbyPictures": {
-            "title": "نیڑے تیڑے تے تصویراں",
+            "browseNearby": "نیڑے تیڑے تے تصویراں ویکھو۔ ۔ ۔",
             "loadMore": "ہور تصویراں لوڈ کرو",
-            "browseNearby": "نیڑے تیڑے تے تصویراں ویکھو۔ ۔ ۔"
+            "title": "نیڑے تیڑے تے تصویراں"
         }
     },
     "importHelper": {
-        "introduction": {
-            "title": "جاݨ پچھاݨ"
-        },
         "askMetadata": {
             "downloadGeojson": "جیوجےسون ڈاؤن‌لوڈ کرو",
             "title": "میٹا ڈیٹا چݨو"
         },
+        "confirmProcess": {
+            "title": "لائیسنس تے لوکاں دی جاݨکاری"
+        },
         "conflationChecker": {
-            "titleNearby": "نیڑے تیڑے تے نشان",
             "states": {
                 "running": "اورپاس پرشان بھیجیا جا رہا اے۔ ۔ ۔"
-            }
+            },
+            "titleNearby": "نیڑے تیڑے تے نشان"
         },
         "createNotes": {
             "title": "نوٹ بݨاؤݨ"
+        },
+        "introduction": {
+            "title": "جاݨ پچھاݨ"
         },
         "login": {
             "title": "لوگ‌این کرو",
@@ -117,13 +120,10 @@
         "selectFile": {
             "title": "فائل چݨو"
         },
-        "title": "ایمپورٹ کرن مددگار",
-        "confirmProcess": {
-            "title": "لائیسنس تے لوکاں دی جاݨکاری"
-        },
         "selectTheme": {
             "title": "تھیم چݨو"
-        }
+        },
+        "title": "ایمپورٹ کرن مددگار"
     },
     "matrixbot": {
         "commands": {
@@ -132,6 +132,10 @@
                     "plural": "فائیلاں",
                     "singular": "فائیل"
                 },
+                "inputElement": {
+                    "plural": "تت پایو",
+                    "singular": "تت پایو"
+                },
                 "layer": {
                     "plural": "کج",
                     "singular": "کج"
@@ -139,14 +143,25 @@
                 "theme": {
                     "plural": "تھیم",
                     "singular": "تھیم"
-                },
-                "inputElement": {
-                    "singular": "تت پایو",
-                    "plural": "تت پایو"
                 }
             },
             "info": {
                 "closed": "بند"
+            }
+        }
+    },
+    "move": {
+        "cancel": "چلݨ رد کرو"
+    },
+    "notes": {
+        "addAComment": "ٹپݨی کرو",
+        "addCommentPlaceholder": "ٹپݨی کرو۔ ۔ ۔",
+        "closeNote": "نوٹ بند کرو"
+    },
+    "professional": {
+        "aboutOsm": {
+            "aboutOsm": {
+                "title": "اوپن‌سٹریٹ‌میپ کیہ اے؟"
             }
         }
     },
@@ -157,21 +172,6 @@
         "cancel": "رد کرو",
         "split": "دپھیر کرو"
     },
-    "move": {
-        "cancel": "چلݨ رد کرو"
-    },
-    "notes": {
-        "closeNote": "نوٹ بند کرو",
-        "addCommentPlaceholder": "ٹپݨی کرو۔ ۔ ۔",
-        "addAComment": "ٹپݨی کرو"
-    },
-    "professional": {
-        "aboutOsm": {
-            "aboutOsm": {
-                "title": "اوپن‌سٹریٹ‌میپ کیہ اے؟"
-            }
-        }
-    },
     "translations": {
         "activateButton": "ترجمہ کریو",
         "allMissing": "ہݨے کوئی ترجمے نہیں اے"
@@ -180,11 +180,11 @@
         "float": {
             "description": "کجھ نمبر"
         },
-        "opening_hours": {
-            "description": "کھُلھے گھنٹے"
-        },
         "nat": {
             "notANumber": "اِک نمبر پایو"
+        },
+        "opening_hours": {
+            "description": "کھُلھے گھنٹے"
         },
         "phone": {
             "description": "فون نمبر"

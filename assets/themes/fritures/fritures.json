@@ -6,7 +6,8 @@
     "fr": "Carte des friteries",
     "de": "Pommes-frites-Läden",
     "ca": "Botigues de patates",
-    "da": "Pommes frites butik"
+    "da": "Pommes frites butik",
+    "pa_PK": "فرائیاں دیاں دکاناں"
   },
   "description": {
     "en": "On this map, you'll find your favourite fries shop!",
@@ -33,7 +34,8 @@
           "it": "Friggitoria",
           "hu": "Sültkrumplievő-hely",
           "ca": "Botigues de patates",
-          "da": "Pommes frites butik"
+          "da": "Pommes frites butik",
+          "pa_PK": "فرائیاں دی دکان"
         },
         "=presets": [],
         "source": {

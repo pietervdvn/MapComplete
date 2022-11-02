@@ -34,7 +34,8 @@
       "hu": "Mentőállomás",
       "nl": "Ambulancestation",
       "es": "Estación de Ambulancias",
-      "da": "Ambulancestation"
+      "da": "Ambulancestation",
+      "cs": "Stanice rychlé záchranné služby"
     }
   },
   "description": {
@@ -113,7 +114,8 @@
         "hu": "Ez az állomás a következő utcában van: {addr:street}.",
         "nl": "Straat waar dit station ligt: {addr:street}",
         "es": "Esta estación se encuentra al lado de una autovía llamada {addr:street}.",
-        "da": "Denne station ligger langs en vej, der hedder {addr:street}."
+        "da": "Denne station ligger langs en vej, der hedder {addr:street}.",
+        "cs": "Tato stanice se nachází podél dálnice s názvem {addr:street}."
       }
     },
     {

@@ -1,10 +1,12 @@
 {
   "id": "sports_centre",
   "name": {
-    "en": "Sports centres"
+    "en": "Sports centres",
+    "de": "Sportzentren"
   },
   "description": {
-    "en": "Indoor and outdoor sports centres can be found on this layer"
+    "en": "Indoor and outdoor sports centres can be found on this layer",
+    "de": "Hallen- und Freiluftsportzentren sind auf dieser Ebene zu finden"
   },
   "minzoom": 12,
   "source": {
@@ -12,7 +14,8 @@
   },
   "title": {
     "render": {
-      "en": "Sports centre"
+      "en": "Sports centre",
+      "de": "Sportzentrum"
     },
     "mappings": [
       {
@@ -32,7 +35,8 @@
   "presets": [
     {
       "title": {
-        "en": "a sports centre"
+        "en": "a sports centre",
+        "de": "ein Sportzentrum"
       },
       "tags": [
         "leisure=sports_centre"

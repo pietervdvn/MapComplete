@@ -3578,6 +3578,14 @@
                 },
                 "question": "Quels genres de personnes peuvent s'inscrire dans cette école ?"
             },
+            "school-language": {
+                "render": {
+                    "special": {
+                        "no_known_languages": "La langue principale de cette école est inconnue",
+                        "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
+                    }
+                }
+            },
             "school-name": {
                 "question": "Quel est le nom de cet établissement scolaire?",
                 "render": "Cet établissement scolaire s'appelle {name}"
@@ -3614,16 +3622,6 @@
                 },
                 "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc ",
                 "render": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}"
-            },
-            "wikidata.school-language": {
-                "override": {
-                    "+mappings": {
-                        "0": {
-                            "then": "La langue principale de cette école est inconnue"
-                        }
-                    },
-                    "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
-                }
             }
         },
         "title": {

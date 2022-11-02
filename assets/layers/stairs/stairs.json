@@ -2,22 +2,26 @@
   "id": "stairs",
   "name": {
     "en": "Stairs",
-    "nl": "Trappen"
+    "nl": "Trappen",
+    "de": "Treppe"
   },
   "description": {
-    "en": "Layer showing stairs and escalators"
+    "en": "Layer showing stairs and escalators",
+    "de": "Ebene mit Treppen und Rolltreppen"
   },
   "title": {
     "render": {
       "en": "Stairs",
-      "nl": "Trap"
+      "nl": "Trap",
+      "de": "Treppe"
     },
     "mappings": [
       {
         "if": "conveying=yes",
         "then": {
           "en": "Escalator",
-          "nl": "Roltrap"
+          "nl": "Roltrap",
+          "de": "Rolltreppe"
         }
       }
     ]
@@ -31,26 +35,28 @@
       "id": "handrail",
       "question": {
         "en": "Does this stair have a handrail?",
-        "nl": "Heeft deze trap een leuning?"
+        "nl": "Heeft deze trap een leuning?",
+        "de": "Hat die Treppe einen Handlauf?"
       },
       "mappings": [
         {
           "if": "handrail=yes",
           "then": {
             "en": "These stairs have a handrail",
-            "nl": "Deze trap heeft een leuning"
+            "nl": "Deze trap heeft een leuning",
+            "de": "Die Treppe hat einen Handlauf"
           }
         },
         {
           "if": "handrail=no",
           "then": {
             "en": "These stairs do <b>not</b> have a handrail",
-            "nl": "Deze trap heeft <b>geen</b> leuning"
+            "nl": "Deze trap heeft <b>geen</b> leuning",
+            "de": "Die Treppe hat <b>keinen</b> Handlauf"
           }
         }
       ]
     },
-
     {
       "id": "tactile_writing",
       "condition": "handrail=yes",
@@ -98,14 +104,16 @@
           "if": "conveying=yes",
           "then": {
             "en": "This is an escalator",
-            "nl": "Dit is een roltrap"
+            "nl": "Dit is een roltrap",
+            "de": "Das ist eine Rolltreppe"
           }
         },
         {
           "if": "conveying=no",
           "then": {
             "en": "This is not an escalator",
-            "nl": "Dit is geen roltrap"
+            "nl": "Dit is geen roltrap",
+            "de": "Das ist keine Rolltreppe"
           }
         },
         {
@@ -121,7 +129,8 @@
     {
       "id": "ramp",
       "question": {
-        "en": "Is there a ramp at these stairs?"
+        "en": "Is there a ramp at these stairs?",
+        "de": "Gibt es eine Rampe an dieser Treppe?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -129,20 +138,23 @@
           "if": "ramp:bicycle=yes",
           "ifnot": "ramp:bicycle=no",
           "then": {
-            "en": "There is a ramp for bicycles here"
+            "en": "There is a ramp for bicycles here",
+            "de": "Hier gibt es eine Rampe für Fahrräder"
           }
         },
         {
           "if": "ramp:wheelchair=yes",
           "ifnot": "ramp:wheelchair=no",
           "then": {
-            "en": "There is a ramp for wheelchairs here"
+            "en": "There is a ramp for wheelchairs here",
+            "de": "Hier gibt es eine Rampe für Rollstühle"
           }
         },
         {
           "if": "ramp=separate",
           "then": {
-            "en": "There is ramp for wheelchairs here, but it is shown separately on the map"
+            "en": "There is ramp for wheelchairs here, but it is shown separately on the map",
+            "de": "Hier gibt es eine Rampe für Rollstühle, die jedoch auf der Karte separat angezeigt wird"
           },
           "hideInAnswer": true
         },
@@ -150,14 +162,16 @@
           "if": "ramp:stroller=yes",
           "ifnot": "ramp:stroller=no",
           "then": {
-            "en": "There is a ramp for strollers here"
+            "en": "There is a ramp for strollers here",
+            "de": "Hier gibt es eine Rampe für Kinderwagen"
           }
         },
         {
           "if": "ramp=no",
           "ifnot": "ramp=",
           "then": {
-            "en": "There is no ramp at these stairs"
+            "en": "There is no ramp at these stairs",
+            "de": "An dieser Treppe gibt es keine Rampe"
           }
         }
       ]

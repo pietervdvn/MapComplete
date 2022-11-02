@@ -1,14 +1,17 @@
 {
   "id": "speed_camera",
   "name": {
-    "en": "Speed Camera"
+    "en": "Speed Camera",
+    "de": "Blitzer"
   },
   "description": {
-    "en": "Layer showing speed cameras"
+    "en": "Layer showing speed cameras",
+    "de": "Ebene mit Blitzern"
   },
   "title": {
     "render": {
-      "en": "Speed Camera"
+      "en": "Speed Camera",
+      "de": "Blitzer"
     }
   },
   "minzoom": 12,
@@ -19,23 +22,27 @@
     {
       "id": "maxspeed",
       "question": {
-        "en": "What is the maximum speed allowed at this speed camera?"
+        "en": "What is the maximum speed allowed at this speed camera?",
+        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit an diesem Blitzer?"
       },
       "freeform": {
         "key": "maxspeed",
         "type": "pnat",
         "placeholder": {
-          "en": "Maximum speed allowed"
+          "en": "Maximum speed allowed",
+          "de": "Zulässige Höchstgeschwindigkeit"
         }
       },
       "render": {
-        "en": "The maximum speed allowed is {canonical(maxspeed)}"
+        "en": "The maximum speed allowed is {canonical(maxspeed)}",
+        "de": "Die zulässige Höchstgeschwindigkeit beträgt {canonical(maxspeed)}"
       }
     },
     {
       "id": "ref",
       "render": {
-        "en": "The reference number of this speed camera is {ref}"
+        "en": "The reference number of this speed camera is {ref}",
+        "de": "Die Referenznummer dieses Blitzers ist {ref}"
       },
       "condition": "ref~*"
     }
@@ -46,7 +53,8 @@
         "highway=speed_camera"
       ],
       "title": {
-        "en": "a speed camera"
+        "en": "a speed camera",
+        "de": "einen Blitzer"
       },
       "preciseInput": {
         "preferredBackground": "photo",

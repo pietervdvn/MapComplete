@@ -8,7 +8,8 @@
     "ca": "Prismàtics",
     "da": "Kikkert",
     "es": "Prismáticos",
-    "fr": "Jumelles"
+    "fr": "Jumelles",
+    "pa_PK": "بائینوکولر"
   },
   "minzoom": 0,
   "title": {
@@ -20,7 +21,8 @@
       "ca": "Prismàtics",
       "es": "Prismáticos",
       "da": "Kikkert",
-      "fr": "Jumelles"
+      "fr": "Jumelles",
+      "pa_PK": "بائینوکولر"
     }
   },
   "description": {
@@ -31,7 +33,8 @@
     "ca": "Prismàtics",
     "da": "Kikkerter",
     "es": "Prismáticos",
-    "fr": "Jumelles"
+    "fr": "Jumelles",
+    "pa_PK": "بائینوکولر"
   },
   "tagRenderings": [
     "images",

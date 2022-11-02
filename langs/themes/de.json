@@ -76,6 +76,10 @@
         "shortDescription": "Eine Karte mit festinstallierten Ferngläsern",
         "title": "Ferngläser"
     },
+    "blind_osm": {
+        "description": "Hilfe zur Kartierung blindenrelevanter Merkmale",
+        "title": "OSM für Blinde"
+    },
     "bookcases": {
         "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen zur Aufbewahrung von Büchern. Jeder kann Bücher abgeben oder mitnehmen. Die Karte soll helfen, alle Orte mit Bücherschränken zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Konto schnell Ihre Lieblingsbücherschränke hinzufügen.",
         "title": "Karte öffentlicher Bücherschränke"
@@ -1067,6 +1071,23 @@
         "shortDescription": "Eine Karte mit Sportplätzen",
         "title": "Sportplätze"
     },
+    "sports": {
+        "description": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr.",
+        "layers": {
+            "4": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Ein neues Geschäft für Sportartikel hinzufügen.",
+                            "title": "ein Sportgeschäft"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Karte mit Sporteinrichtungen.",
+        "title": "Sport"
+    },
     "street_lighting": {
         "description": "Eine Karte für alles zum Thema Straßenbeleuchtung",
         "layers": {
@@ -1153,26 +1174,5 @@
         "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
-    },
-    "blind_osm": {
-        "title": "OSM für Blinde",
-        "description": "Hilfe zur Kartierung blindenrelevanter Merkmale"
-    },
-    "sports": {
-        "layers": {
-            "4": {
-                "override": {
-                    "presets": {
-                        "0": {
-                            "title": "ein Sportgeschäft",
-                            "description": "Ein neues Geschäft für Sportartikel hinzufügen."
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Karte mit Sporteinrichtungen.",
-        "title": "Sport",
-        "description": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr."
     }
 }

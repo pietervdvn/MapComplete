@@ -8,7 +8,8 @@
     "fr": "Cartes",
     "de": "Karten",
     "ca": "Mapes",
-    "es": "Mapas"
+    "es": "Mapas",
+    "pa_PK": "نقشے"
   },
   "minzoom": 12,
   "source": {
@@ -28,7 +29,8 @@
       "fr": "Carte",
       "de": "Karte",
       "ca": "Mapa",
-      "es": "Mapa"
+      "es": "Mapa",
+      "pa_PK": "نقشہ"
     }
   },
   "description": {

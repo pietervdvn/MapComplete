@@ -16,11 +16,19 @@ export default class WikidataUtils {
      * @param remapLanguages
      */
     public static extractLanguageData(
-        data: { lang: { value: string }; code: { value: string }; label: { value: string }; directionalityLabel?: { value?: string } }[],
+        data: {
+            lang: { value: string }
+            code: { value: string }
+            label: { value: string }
+            directionalityLabel?: { value?: string }
+        }[],
         remapLanguages: Record<string, string>
-    ): Map<string, { translations: Map<string, string>, directionality?: string[] }> {
+    ): Map<string, { translations: Map<string, string>; directionality?: string[] }> {
         console.log("Got " + data.length + " entries")
-        const perId = new Map<string, { translations: Map<string, string>, directionality?: string[] }>()
+        const perId = new Map<
+            string,
+            { translations: Map<string, string>; directionality?: string[] }
+        >()
         for (const element of data) {
             let id = element.code.value
             id = remapLanguages[id] ?? id
@@ -28,13 +36,13 @@ export default class WikidataUtils {
             labelLang = remapLanguages[labelLang] ?? labelLang
             const value = element.label.value
             if (!perId.has(id)) {
-                perId.set(id, {translations: new Map<string, string>(), directionality: []})
+                perId.set(id, { translations: new Map<string, string>(), directionality: [] })
             }
             const entry = perId.get(id)
             entry.translations.set(labelLang, value)
             const dir = element.directionalityLabel?.value
             if (dir) {
-                if(entry.directionality.indexOf(dir) < 0) {
+                if (entry.directionality.indexOf(dir) < 0) {
                     entry.directionality.push(dir)
                 }
             }

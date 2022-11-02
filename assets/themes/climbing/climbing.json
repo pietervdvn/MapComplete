@@ -263,7 +263,8 @@
                   "nl": "Enkel klanten",
                   "nb_NO": "Kun for kunder",
                   "es": "Solo clientes",
-                  "da": "Kun for kunder"
+                  "da": "Kun for kunder",
+                  "pa_PK": "صرف گاہک"
                 }
               },
               {
@@ -278,7 +279,8 @@
                   "nl": "Enkel clubleden",
                   "nb_NO": "Kun klubbmedlemmer",
                   "es": "Solo miembros del club",
-                  "da": "Kun klubmedlemmer"
+                  "da": "Kun klubmedlemmer",
+                  "pa_PK": "صرف کلب دے میمبر"
                 }
               },
               {

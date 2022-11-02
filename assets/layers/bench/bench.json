@@ -18,7 +18,9 @@
     "pt_BR": "Bancos",
     "pt": "Bancos",
     "ca": "Bancs",
-    "da": "Bænke"
+    "da": "Bænke",
+    "cs": "Lavičky",
+    "pa_PK": "بینچ"
   },
   "minzoom": 17,
   "source": {
@@ -43,7 +45,9 @@
       "pt_BR": "Banco",
       "pt": "Banco",
       "ca": "Banc",
-      "da": "Bænk"
+      "da": "Bænk",
+      "cs": "Lavička",
+      "pa_PK": "بینچ"
     }
   },
   "tagRenderings": [
@@ -70,7 +74,8 @@
             "pt_BR": "Encosto: Sim",
             "pt": "Encosto: Sim",
             "ca": "Respatller: sí",
-            "da": "Har et ryglæn"
+            "da": "Har et ryglæn",
+            "cs": "Má opěradlo"
           }
         },
         {
@@ -93,7 +98,8 @@
             "pt_BR": "Encosto: Não",
             "pt": "Encosto: Não",
             "ca": "Respatller: No",
-            "da": "Har <b>ikke</b> et ryglæn"
+            "da": "Har <b>ikke</b> et ryglæn",
+            "cs": "<b>nemá</b> opěradlo"
           }
         }
       ],
@@ -113,7 +119,8 @@
         "pl": "Czy ta ławka ma oparcie?",
         "pt_BR": "Este assento tem um escosto?",
         "pt": "Este assento tem um escosto?",
-        "da": "Har denne bænk et ryglæn?"
+        "da": "Har denne bænk et ryglæn?",
+        "cs": "Má tato lavička opěradlo?"
       },
       "id": "bench-backrest"
     },
@@ -134,7 +141,8 @@
         "pt_BR": "{seats} assentos",
         "pt": "{seats} assentos",
         "ca": "{seats} seients",
-        "da": "{seats} pladser"
+        "da": "{seats} pladser",
+        "cs": "{seats} míst k sezení"
       },
       "freeform": {
         "key": "seats",
@@ -155,7 +163,8 @@
         "pl": "Ile siedzeń ma ta ławka?",
         "pt_BR": "Quantos assentos este banco tem?",
         "pt": "Quantos assentos este banco tem?",
-        "da": "Hvor mange pladser har denne bænk?"
+        "da": "Hvor mange pladser har denne bænk?",
+        "cs": "Kolik má tato lavice míst k sezení?"
       },
       "id": "bench-seats"
     },
@@ -178,7 +187,8 @@
         "pt": "Material: {material}",
         "eo": "Materialo: {material}",
         "ca": "Material: {material}",
-        "da": "Materiale: {material}"
+        "da": "Materiale: {material}",
+        "cs": "Materiál: {material}"
       },
       "freeform": {
         "key": "material",
@@ -205,7 +215,8 @@
             "pt": "Material: madeira",
             "eo": "Materialo: ligna",
             "ca": "Material: fusta",
-            "da": "Siddepladserne er lavet af træ"
+            "da": "Siddepladserne er lavet af træ",
+            "cs": "Sedací část je vyrobena ze dřeva"
           }
         },
         {
@@ -227,7 +238,8 @@
             "pt": "Material: metal",
             "eo": "Materialo: metala",
             "ca": "Material: metall",
-            "da": "Sædet er lavet af metal"
+            "da": "Sædet er lavet af metal",
+            "cs": "Sedací část je vyrobena z kovu"
           }
         },
         {
@@ -250,7 +262,8 @@
             "pt": "Material: pedra",
             "eo": "Materialo: ŝtona",
             "ca": "Material: pedra",
-            "da": "Siddepladserne er lavet af sten"
+            "da": "Siddepladserne er lavet af sten",
+            "cs": "Sedací část je vyrobena z kamene"
           }
         },
         {
@@ -273,7 +286,8 @@
             "pt": "Material: concreto",
             "eo": "Materialo: betona",
             "ca": "Material: ciment",
-            "da": "Siddepladserne er lavet af beton"
+            "da": "Siddepladserne er lavet af beton",
+            "cs": "Sedací část je vyrobena z betonu"
           }
         },
         {
@@ -296,7 +310,8 @@
             "pt": "Material: plástico",
             "eo": "Materialo: plasta",
             "ca": "Material: plàstic",
-            "da": "Sædet er lavet af plastik"
+            "da": "Sædet er lavet af plastik",
+            "cs": "Sedací část je vyrobena z plastu"
           }
         },
         {
@@ -319,7 +334,8 @@
             "pt": "Material: aço",
             "eo": "Materialo: ŝtala",
             "ca": "Material: acer",
-            "da": "Siddepladserne er lavet af stål"
+            "da": "Siddepladserne er lavet af stål",
+            "cs": "Sedací část je vyrobena z oceli"
           }
         }
       ],
@@ -337,7 +353,8 @@
         "pl": "Z czego wykonana jest ławka (siedzisko)?",
         "pt": "De que é feito o banco (assento)?",
         "es": "¿De que está hecho el banco (asiento)?",
-        "da": "Hvad er bænken (sædet) lavet af?"
+        "da": "Hvad er bænken (sædet) lavet af?",
+        "cs": "Z čeho je vyrobena lavice (sedadlo)?"
       },
       "id": "bench-material"
     },
@@ -356,7 +373,8 @@
         "pl": "W jakim kierunku patrzysz siedząc na ławce?",
         "pt": "Em que direção olha quando está sentado no banco?",
         "es": "¿En qué dirección se mira al sentarse en el banco?",
-        "da": "I hvilken retning kigger du, når du sidder på bænken?"
+        "da": "I hvilken retning kigger du, når du sidder på bænken?",
+        "cs": "Kterým směrem se díváte, když sedíte na lavičce?"
       },
       "render": {
         "en": "When sitting on the bench, one looks towards {direction}°.",
@@ -372,7 +390,8 @@
         "pt_BR": "Ao sentar-se no banco, olha-se para {direction} °.",
         "pt": "Ao sentar-se no banco, olha-se para {direction} °.",
         "es": "¿Cuando está sentado en el banco, uno mira hacia {direction}º.",
-        "da": "Når man sidder på bænken, kigger man i retningen {direction}°."
+        "da": "Når man sidder på bænken, kigger man i retningen {direction}°.",
+        "cs": "Když sedíte na lavičce, díváte se směrem v úhlu {direction}°."
       },
       "freeform": {
         "key": "direction",
@@ -400,7 +419,8 @@
         "eo": "Koloro: {colour}",
         "es": "Color: {colour}",
         "ca": "Color: {colour}",
-        "da": "Farve: {colour}"
+        "da": "Farve: {colour}",
+        "cs": "Barva: {colour}"
       },
       "question": {
         "en": "Which colour does this bench have?",
@@ -416,7 +436,8 @@
         "pl": "Jaki kolor ma ta ławka?",
         "pt": "Qual a cor dessa bancada?",
         "es": "¿De qué color es este banco?",
-        "da": "Hvilken farve har denne bænk?"
+        "da": "Hvilken farve har denne bænk?",
+        "cs": "Jakou barvu má tato lavička?"
       },
       "freeform": {
         "key": "colour",
@@ -443,7 +464,8 @@
             "eo": "Koloro: bruna",
             "ca": "Color: marró",
             "es": "Color: marrón",
-            "da": "Farve: brun"
+            "da": "Farve: brun",
+            "cs": "Barva: hnědá"
           }
         },
         {
@@ -466,7 +488,8 @@
             "eo": "Koloro: verda",
             "es": "Color: verde",
             "ca": "Color: verd",
-            "da": "Farve: grøn"
+            "da": "Farve: grøn",
+            "cs": "Barva: zelená"
           }
         },
         {
@@ -489,7 +512,8 @@
             "eo": "Koloro: griza",
             "es": "Color: gris",
             "ca": "Color: gris",
-            "da": "Farve: grå"
+            "da": "Farve: grå",
+            "cs": "Barva: šedá"
           }
         },
         {
@@ -512,7 +536,8 @@
             "eo": "Koloro: blanka",
             "es": "Color: blanco",
             "ca": "Color: blanc",
-            "da": "Farve: hvid"
+            "da": "Farve: hvid",
+            "cs": "Barva: bílá"
           }
         },
         {
@@ -535,7 +560,8 @@
             "eo": "Koloro: ruĝa",
             "es": "Color: rojo",
             "ca": "Color: vermell",
-            "da": "Farve: rød"
+            "da": "Farve: rød",
+            "cs": "Barva: červená"
           }
         },
         {
@@ -558,7 +584,8 @@
             "eo": "Koloro: nigra",
             "es": "Color: negro",
             "ca": "Color: negre",
-            "da": "Farve: sort"
+            "da": "Farve: sort",
+            "cs": "Barva: černá"
           }
         },
         {
@@ -581,7 +608,8 @@
             "eo": "Koloro: blua",
             "es": "Color: azul",
             "ca": "Color: blau",
-            "da": "Farve: blå"
+            "da": "Farve: blå",
+            "cs": "Barva: modrá"
           }
         },
         {
@@ -604,7 +632,8 @@
             "eo": "Koloro: flava",
             "es": "Color: amarillo",
             "ca": "Color: groc",
-            "da": "Farve: gul"
+            "da": "Farve: gul",
+            "cs": "Barva: žlutá"
           }
         }
       ],
@@ -624,7 +653,8 @@
         "pl": "Kiedy ostatnio badano tę ławkę?",
         "pt": "Quando esta bancada foi pesquisada pela última vez?",
         "es": "¿Cuándo fue la última vez que se inspeccionó este banco?",
-        "da": "Hvornår blev denne bænk sidst kortlagt?"
+        "da": "Hvornår blev denne bænk sidst kortlagt?",
+        "cs": "Kdy byla tato lavička naposledy kontrolována?"
       },
       "render": {
         "en": "This bench was last surveyed on {survey:date}",
@@ -639,7 +669,8 @@
         "pl": "Ławka ta była ostatnio badana w dniu {survey:date}",
         "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}",
         "es": "Este banco se inspeccionó por última vez el {survey:date}",
-        "da": "Denne bænk blev sidst kortlagt den {survey:date}"
+        "da": "Denne bænk blev sidst kortlagt den {survey:date}",
+        "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}"
       },
       "freeform": {
         "key": "survey:date",
@@ -676,7 +707,8 @@
         "pl": "Ławka",
         "pt": "uma banco",
         "ca": "un banc",
-        "da": "en bænk"
+        "da": "en bænk",
+        "cs": "lavička"
       },
       "presiceInput": {
         "preferredBackground": "photo"
@@ -716,6 +748,7 @@
     "fr": "Un banc est une surface en bois, métal, pierre… sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
     "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
     "es": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
-    "da": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem."
+    "da": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem.",
+    "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek."
   }
 }

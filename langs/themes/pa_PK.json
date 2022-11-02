@@ -1,9 +1,46 @@
 {
+    "artwork": {
+        "title": "آزاد کلاکاری نقشہ"
+    },
     "benches": {
         "title": "بینچ"
     },
+    "bicycle_rental": {
+        "title": "سائیکل کرایا"
+    },
     "bicyclelib": {
         "title": "سائیکلاں دیاں لائیبریریاں"
+    },
+    "binoculars": {
+        "title": "بائینوکولر"
+    },
+    "bookcases": {
+        "title": "آزاد کتاب نقشہ"
+    },
+    "cafes_and_pubs": {
+        "description": "پب (بار)",
+        "title": "کیفے یا پب"
+    },
+    "campersite": {
+        "layers": {
+            "0": {
+                "description": "کیمب‌سائیٹاں",
+                "name": "کیمب‌سائیٹاں",
+                "presets": {
+                    "0": {
+                        "title": "اِک کیمپ‌سائیٹ"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "بے نام کیمپ‌سائیٹ"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "کیمپ‌سایٹاں"
     },
     "charging_stations": {
         "title": "چارج سٹیشن"
@@ -12,18 +49,6 @@
         "layers": {
             "0": {
                 "override": {
-                    "units+": {
-                        "0": {
-                            "applicableUnits": {
-                                "0": {
-                                    "human": " ؜ میٹر"
-                                },
-                                "1": {
-                                    "human": " ؜ فوٹ"
-                                }
-                            }
-                        }
-                    },
                     "tagRenderings+": {
                         "1": {
                             "mappings": {
@@ -35,10 +60,36 @@
                                 }
                             }
                         }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " ؜ میٹر"
+                                },
+                                "1": {
+                                    "human": " ؜ فوٹ"
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
+    },
+    "cycle_highways": {
+        "layers": {
+            "0": {
+                "name": "سائیکل‌وے",
+                "title": {
+                    "render": "سائیکل‌وے"
+                }
+            }
+        },
+        "title": "سائیکل‌وے"
+    },
+    "cycle_infra": {
+        "title": "سائیکل ڈھانچا"
     },
     "cyclenodes": {
         "layers": {
@@ -52,16 +103,16 @@
             "0": {
                 "name": "سائیکاں دیاں سڑکاں"
             },
-            "2": {
-                "title": {
-                    "render": "سڑک"
-                },
-                "name": "ساریاں سڑکاں"
-            },
             "1": {
                 "name": "بھُوکھی سائیکل سڑک",
                 "title": {
                     "render": "بھُوکھی سائیکل سڑک"
+                }
+            },
+            "2": {
+                "name": "ساریاں سڑکاں",
+                "title": {
+                    "render": "سڑک"
                 }
             }
         },
@@ -81,8 +132,21 @@
         },
         "title": "سائیکل سڑکاں"
     },
+    "drinking_water": {
+        "title": "پیݨ والا پاݨی"
+    },
     "education": {
         "title": "سکھیا"
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "override": {
+                    "name": "فرائیاں دی دکان"
+                }
+            }
+        },
+        "title": "فرائیاں دیاں دکاناں"
     },
     "hackerspaces": {
         "title": "ہیکر دے تھاں"
@@ -95,6 +159,19 @@
     },
     "indoors": {
         "title": "اندروں"
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "name": "تبدیلیاں دے کیندر"
+            }
+        }
+    },
+    "maproulette": {
+        "title": "میپ‌رولیٹ دے کم"
+    },
+    "maxspeed": {
+        "title": "حد رفتار"
     },
     "onwheels": {
         "layers": {
@@ -127,117 +204,8 @@
     "parkings": {
         "title": "پارکنگ"
     },
-    "sidewalks": {
-        "layers": {
-            "0": {
-                "name": "فُٹ‌پاتھ"
-            }
-        },
-        "title": "فُٹ‌پاتھ",
-        "description": "آزمائش تھیم",
-        "shortDescription": "فُت‌پیتھ دا نقشہ بݨاؤݨ"
-    },
-    "street_lighting": {
-        "layers": {
-            "2": {
-                "title": {
-                    "render": "سڑک"
-                },
-                "name": "ساریاں سڑکاں"
-            },
-            "1": {
-                "name": "روشنی والیاں سڑکاں",
-                "title": {
-                    "render": "روشنی والی سڑک"
-                }
-            }
-        },
-        "title": "سڑک دیاں روشنیاں"
-    },
-    "trees": {
-        "title": "رُکھ"
-    },
-    "artwork": {
-        "title": "آزاد کلاکاری نقشہ"
-    },
-    "cycle_infra": {
-        "title": "سائیکل ڈھانچا"
-    },
-    "binoculars": {
-        "title": "بائینوکولر"
-    },
-    "bicycle_rental": {
-        "title": "سائیکل کرایا"
-    },
-    "bookcases": {
-        "title": "آزاد کتاب نقشہ"
-    },
     "personal": {
         "title": "چݨی تھیم"
-    },
-    "postal_codes": {
-        "title": "ڈاک کوڈ",
-        "description": "ڈاک کوڈ",
-        "layers": {
-            "0": {
-                "name": "ڈاک کوڈ"
-            }
-        },
-        "shortDescription": "ڈاک کوڈ"
-    },
-    "transit": {
-        "title": "بس روٹ"
-    },
-    "campersite": {
-        "layers": {
-            "0": {
-                "presets": {
-                    "0": {
-                        "title": "اِک کیمپ‌سائیٹ"
-                    }
-                },
-                "description": "کیمب‌سائیٹاں",
-                "name": "کیمب‌سائیٹاں",
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "بے نام کیمپ‌سائیٹ"
-                        }
-                    }
-                }
-            }
-        },
-        "title": "کیمپ‌سایٹاں"
-    },
-    "cafes_and_pubs": {
-        "title": "کیفے یا پب",
-        "description": "پب (بار)"
-    },
-    "drinking_water": {
-        "title": "پیݨ والا پاݨی"
-    },
-    "fritures": {
-        "layers": {
-            "0": {
-                "override": {
-                    "name": "فرائیاں دی دکان"
-                }
-            }
-        },
-        "title": "فرائیاں دیاں دکاناں"
-    },
-    "mapcomplete-changes": {
-        "layers": {
-            "0": {
-                "name": "تبدیلیاں دے کیندر"
-            }
-        }
-    },
-    "maxspeed": {
-        "title": "حد رفتار"
-    },
-    "maproulette": {
-        "title": "میپ‌رولیٹ دے کم"
     },
     "pets": {
         "layers": {
@@ -260,21 +228,53 @@
             }
         }
     },
+    "postal_codes": {
+        "description": "ڈاک کوڈ",
+        "layers": {
+            "0": {
+                "name": "ڈاک کوڈ"
+            }
+        },
+        "shortDescription": "ڈاک کوڈ",
+        "title": "ڈاک کوڈ"
+    },
+    "sidewalks": {
+        "description": "آزمائش تھیم",
+        "layers": {
+            "0": {
+                "name": "فُٹ‌پاتھ"
+            }
+        },
+        "shortDescription": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
+        "title": "فُٹ‌پاتھ"
+    },
     "sports": {
         "title": "کھیڈاں"
     },
-    "waste_basket": {
-        "title": "کوڑے دی ٹوکری"
-    },
-    "cycle_highways": {
+    "street_lighting": {
         "layers": {
-            "0": {
-                "name": "سائیکل‌وے",
+            "1": {
+                "name": "روشنی والیاں سڑکاں",
                 "title": {
-                    "render": "سائیکل‌وے"
+                    "render": "روشنی والی سڑک"
+                }
+            },
+            "2": {
+                "name": "ساریاں سڑکاں",
+                "title": {
+                    "render": "سڑک"
                 }
             }
         },
-        "title": "سائیکل‌وے"
+        "title": "سڑک دیاں روشنیاں"
+    },
+    "transit": {
+        "title": "بس روٹ"
+    },
+    "trees": {
+        "title": "رُکھ"
+    },
+    "waste_basket": {
+        "title": "کوڑے دی ٹوکری"
     }
 }

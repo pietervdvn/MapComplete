@@ -3,7 +3,8 @@
   "name": {
     "en": "pharmacy",
     "de": "Apotheke",
-    "nl": "apotheek"
+    "nl": "apotheek",
+    "pa_PK": "فارمیسی"
   },
   "description": {
     "en": "A layer showing pharmacies, which (probably) dispense prescription drugs",
@@ -22,7 +23,8 @@
         "then": {
           "en": "Pharmacy",
           "de": "Apotheke",
-          "nl": "Apotheek"
+          "nl": "Apotheek",
+          "pa_PK": "فارمیسی"
         }
       }
     ]

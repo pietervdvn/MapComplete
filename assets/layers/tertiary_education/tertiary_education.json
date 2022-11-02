@@ -41,7 +41,8 @@
           "en": "College",
           "nl": "Hogeschool",
           "de": "(Fach)hochschule",
-          "fr": "Établissement d'enseignement supérieur non universitaire"
+          "fr": "Établissement d'enseignement supérieur non universitaire",
+          "pa_PK": "کالج"
         }
       },
       {
@@ -51,7 +52,8 @@
           "nl": "Universiteit",
           "de": "Universität",
           "fr": "Universitée",
-          "da": "Universitet"
+          "da": "Universitet",
+          "pa_PK": "یونیورسٹی"
         }
       },
       {

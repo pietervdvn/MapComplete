@@ -2,15 +2,19 @@
   "id": "sports",
   "title": {
     "en": "Sports",
-    "nl": "Sport"
+    "nl": "Sport",
+    "de": "Sport",
+    "pa_PK": "کھیڈاں"
   },
   "shortDescription": {
     "en": "Map showing sport facilities.",
-    "nl": "Kaart met sportfaciliteiten."
+    "nl": "Kaart met sportfaciliteiten.",
+    "de": "Karte mit Sporteinrichtungen."
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
-    "nl": "Alles over sport: vind sportvelden, fitnesscentra en meer."
+    "nl": "Alles over sport: vind sportvelden, fitnesscentra en meer.",
+    "de": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr."
   },
   "icon": "./assets/themes/sports/sport.svg",
   "startLat": 0,
@@ -38,11 +42,13 @@
             ],
             "title": {
               "en": "a sports shop",
-              "nl": "een sportwinkel"
+              "nl": "een sportwinkel",
+              "de": "ein Sportgeschäft"
             },
             "description": {
               "en": "Add a new shop selling sports goods.",
-              "nl": "Voeg een nieuwe winkel toe die sportartikelen verkoopt."
+              "nl": "Voeg een nieuwe winkel toe die sportartikelen verkoopt.",
+              "de": "Ein neues Geschäft für Sportartikel hinzufügen."
             }
           }
         ],

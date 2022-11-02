@@ -10,7 +10,8 @@
     "ca": "Il·luminació als carrers",
     "fr": "Éclairage de Rue",
     "nb_NO": "Gatebelysning",
-    "da": "Gadebelysning"
+    "da": "Gadebelysning",
+    "pa_PK": "سڑک دیاں روشنیاں"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
@@ -40,7 +41,8 @@
         "es": "Calles iluminadas",
         "fr": "Rues éclairées",
         "nb_NO": "Belyste gater",
-        "da": "Oplyste gader"
+        "da": "Oplyste gader",
+        "pa_PK": "روشنی والیاں سڑکاں"
       },
       "source": {
         "osmTags": {
@@ -64,7 +66,8 @@
           "es": "Calle iluminada",
           "fr": "Rue éclairée",
           "nb_NO": "Belyst gate",
-          "da": "Oplyst gade"
+          "da": "Oplyst gade",
+          "pa_PK": "روشنی والی سڑک"
         },
         "mappings": [
           {
@@ -169,7 +172,8 @@
         "es": "Todas las calles",
         "fr": "Toutes les rues",
         "nb_NO": "Alle gater",
-        "da": "Alle gader"
+        "da": "Alle gader",
+        "pa_PK": "ساریاں سڑکاں"
       },
       "source": {
         "osmTags": {

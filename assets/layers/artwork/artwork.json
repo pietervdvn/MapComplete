@@ -16,7 +16,9 @@
     "hu": "Műalkotások",
     "pl": "Dzieła sztuki",
     "ca": "Obres d'art",
-    "da": "Kunstværker"
+    "da": "Kunstværker",
+    "cs": "Umělecká díla",
+    "pa_PK": "کلاکاری"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -42,7 +44,9 @@
       "pt_BR": "Obra de arte",
       "sv": "Konstverk",
       "ca": "Obra d'art",
-      "da": "Kunstværk"
+      "da": "Kunstværk",
+      "cs": "Umělecké dílo",
+      "pa_PK": "کلاکاری"
     },
     "mappings": [
       {
@@ -66,7 +70,8 @@
           "pt": "Obra de arte <i>{name}</i>",
           "pt_BR": "Obra de arte <i>{name}</i>",
           "sv": "Konstverk <i>{name}</i>",
-          "da": "Kunstværk <i>{name}</i>"
+          "da": "Kunstværk <i>{name}</i>",
+          "cs": "Umělecké dílo <i>{name}</i>"
         }
       }
     ]
@@ -113,7 +118,8 @@
         "pt": "uma obra de arte",
         "pt_BR": "uma obra de arte",
         "sv": "Konstverk",
-        "da": "et kunstværk"
+        "da": "et kunstværk",
+        "cs": "umělecké dílo"
       }
     }
   ],
@@ -135,7 +141,8 @@
         "pt": "Isto é um(a) {artwork_type}",
         "hu": "Ez egy {artwork_type}",
         "pl": "Jest to {artwork_type}",
-        "da": "Dette er en {artwork_type}"
+        "da": "Dette er en {artwork_type}",
+        "cs": "Toto je {artwork_type}"
       },
       "question": {
         "en": "What is the type of this artwork?",
@@ -152,7 +159,8 @@
         "pt": "Qual é o tipo desta obra de arte?",
         "hu": "Milyen fajta műalkotás ez?",
         "pl": "Jakiego rodzaju jest to dzieło sztuki?",
-        "da": "Hvilken slags kunstværk er det?"
+        "da": "Hvilken slags kunstværk er det?",
+        "cs": "Jaký je typ tohoto uměleckého díla?"
       },
       "freeform": {
         "key": "artwork_type",
@@ -179,7 +187,8 @@
             "pl": "Architektura",
             "es": "Arquitectura",
             "ca": "Arquitectura",
-            "da": "Arkitektur"
+            "da": "Arkitektur",
+            "cs": "Architektura"
           }
         },
         {
@@ -200,7 +209,9 @@
             "pl": "Mural",
             "es": "Mural",
             "ca": "Mural",
-            "da": "Vægmaleri"
+            "da": "Vægmaleri",
+            "cs": "Nástěnná malba",
+            "pa_PK": "کندھ چتر"
           }
         },
         {
@@ -221,7 +232,8 @@
             "pl": "Obraz",
             "es": "Pintura",
             "ca": "Pintura",
-            "da": "Maleri"
+            "da": "Maleri",
+            "cs": "Malba"
           }
         },
         {
@@ -242,7 +254,9 @@
             "pl": "Rzeźba",
             "es": "Escultura",
             "ca": "Escultura",
-            "da": "Skulptur"
+            "da": "Skulptur",
+            "cs": "Plastika",
+            "pa_PK": "مورتی"
           }
         },
         {
@@ -262,7 +276,8 @@
             "pl": "Posąg",
             "es": "Estatua",
             "ca": "Estàtua",
-            "da": "Statue"
+            "da": "Statue",
+            "cs": "Socha"
           }
         },
         {
@@ -282,7 +297,8 @@
             "pl": "Popiersie",
             "es": "Busto",
             "ca": "Bust",
-            "da": "Buste"
+            "da": "Buste",
+            "cs": "Busta"
           }
         },
         {
@@ -304,7 +320,8 @@
             "ca": "Pedra",
             "es": "Piedra",
             "da": "Sten",
-            "pa_PK": "پتھر"
+            "pa_PK": "پتھر",
+            "cs": "Kámen"
           }
         },
         {
@@ -325,7 +342,8 @@
             "pl": "Instalacja artystyczna",
             "es": "Instalación",
             "ca": "Instal·lació",
-            "da": "Installation"
+            "da": "Installation",
+            "cs": "Instalace"
           }
         },
         {
@@ -346,7 +364,8 @@
             "pl": "Graffiti",
             "es": "Grafiti",
             "ca": "Grafiti",
-            "da": "Graffiti"
+            "da": "Graffiti",
+            "cs": "Graffiti"
           }
         },
         {
@@ -367,7 +386,8 @@
             "pl": "Płaskorzeźba",
             "ca": "Relleu",
             "es": "Relieve",
-            "da": "Relief"
+            "da": "Relief",
+            "cs": "Reliéf"
           }
         },
         {
@@ -387,7 +407,8 @@
             "hu": "Azulejo (portugál vagy spanyol dekoratív csempe)",
             "pl": "Azulejo (hiszpańskie płytka dekoracyjna)",
             "es": "Azulejo (Baldosas decorativas Españolas y Portuguesas)",
-            "da": "Azulejo (spansk dekorativt flisebeklædning)"
+            "da": "Azulejo (spansk dekorativt flisebeklædning)",
+            "cs": "Azulejo (španělské dekorativní dlaždice)"
           }
         },
         {
@@ -407,7 +428,8 @@
             "pl": "Płyta ceramiczna (fliza)",
             "ca": "Enrajolat",
             "es": "Cerámica",
-            "da": "flisebeklædning"
+            "da": "flisebeklædning",
+            "cs": "Obklady a dlažba"
           }
         },
         {
@@ -415,7 +437,8 @@
           "then": {
             "nl": "Houtsculptuur",
             "en": "Woodcarving",
-            "de": "Holzschnitzerei"
+            "de": "Holzschnitzerei",
+            "cs": "Dřevořezba"
           }
         }
       ],
@@ -426,12 +449,14 @@
       "render": {
         "en": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "de": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
-        "nl": "Dit kunstwerk is gemaakt door {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+        "nl": "Dit kunstwerk is gemaakt door {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "cs": "Toto dílo vytvořil {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
       },
       "question": {
         "en": "Who made this artwork?",
         "de": "Wer hat dieses Kunstwerk geschaffen?",
-        "nl": "Wie heeft dit kunstwerk gemaakt?"
+        "nl": "Wie heeft dit kunstwerk gemaakt?",
+        "cs": "Kdo je autorem tohoto díla?"
       },
       "freeform": {
         "key": "artist:wikidata",
@@ -462,7 +487,8 @@
         "hu": "Melyik művész alkotása ezt?",
         "pl": "Który artysta to stworzył?",
         "es": "¿Que artista creó esto?",
-        "da": "Hvilken kunstner har lavet dette?"
+        "da": "Hvilken kunstner har lavet dette?",
+        "cs": "Který umělec to vytvořil?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -479,7 +505,8 @@
         "hu": "Alkotó: {artist_name}",
         "pl": "Stworzone przez {artist_name}",
         "es": "Creado por {artist_name}",
-        "da": "Lavet af {artist_name}"
+        "da": "Lavet af {artist_name}",
+        "cs": "Vytvořil {artist_name}"
       },
       "freeform": {
         "key": "artist_name"
@@ -503,7 +530,8 @@
         "hu": "Van-e olyan honlap, amely további információkat tartalmaz erről a műalkotásról?",
         "pl": "Gdzie znajdę więcej informacji na temat tego dzieła sztuki?",
         "es": "¿Hay un sitio web con más información sobre esta obra de arte?",
-        "da": "Er der et websted med mere information om dette kunstværk?"
+        "da": "Er der et websted med mere information om dette kunstværk?",
+        "cs": "Existuje webová stránka s dalšími informacemi o tomto uměleckém díle?"
       },
       "render": {
         "en": "More information on <a href='{website}' target='_blank'>this website</a>",
@@ -520,7 +548,8 @@
         "hu": "További információ <a href='{website}' target='_blank'>ezen a weboldalon</a>",
         "pl": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>",
         "es": "Más información en <a href='{website}' target='_blank'>este sitio web</a>",
-        "da": "Yderligere oplysninger på <a href='{website}' target='_blank'>dette websted</a>"
+        "da": "Yderligere oplysninger på <a href='{website}' target='_blank'>dette websted</a>",
+        "cs": "Více informací na <a href='{website}' target='_blank'>této webové stránce</a>"
       },
       "freeform": {
         "key": "website",
@@ -535,7 +564,8 @@
       "question": {
         "en": "What does this artwork depict?",
         "de": "Was zeigt dieses Kunstwerk?",
-        "nl": "Wat beeldt dit kunstwerk af?"
+        "nl": "Wat beeldt dit kunstwerk af?",
+        "cs": "Co zobrazuje toto umělecké dílo?"
       },
       "freeform": {
         "key": "subject:wikidata",
@@ -544,7 +574,8 @@
       "render": {
         "en": "This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "de": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
-        "nl": "Dit kunstwerk beeldt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)} af"
+        "nl": "Dit kunstwerk beeldt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)} af",
+        "cs": "Toto dílo zobrazuje {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
       }
     }
   ],

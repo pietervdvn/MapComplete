@@ -5,7 +5,7 @@
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 175,
+      "commits": 179,
       "contributor": "kjon"
     },
     {
@@ -29,7 +29,7 @@
       "contributor": "Iago"
     },
     {
-      "commits": 31,
+      "commits": 32,
       "contributor": "Babos Gábor"
     },
     {
@@ -86,6 +86,10 @@
     },
     {
       "commits": 10,
+      "contributor": "bgo-eiu"
+    },
+    {
+      "commits": 10,
       "contributor": "Win Olario"
     },
     {
@@ -99,6 +103,10 @@
     {
       "commits": 9,
       "contributor": "Jacque Fresco"
+    },
+    {
+      "commits": 8,
+      "contributor": "Jiří Podhorecký"
     },
     {
       "commits": 7,
@@ -178,10 +186,6 @@
     },
     {
       "commits": 4,
-      "contributor": "Jiří Podhorecký"
-    },
-    {
-      "commits": 4,
       "contributor": "Hiroshi Miura"
     },
     {
@@ -247,10 +251,6 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
-    },
-    {
-      "commits": 2,
-      "contributor": "bgo-eiu"
     },
     {
       "commits": 2,

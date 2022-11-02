@@ -42,7 +42,7 @@ export default class LanguagePicker extends Toggle {
             return new Translation({ "*": nativeText })
         }
         for (const key in trans) {
-            if(key.startsWith("_")){
+            if (key.startsWith("_")) {
                 continue
             }
             const translationInKey = allTranslations[lang][key]

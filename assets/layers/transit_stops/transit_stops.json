@@ -333,7 +333,8 @@
             ]
           },
           "question": {
-            "en": "With a shelter"
+            "en": "With a shelter",
+            "de": "Mit einem Unterstand"
           }
         }
       ]
@@ -349,7 +350,8 @@
             ]
           },
           "question": {
-            "en": "With a bench"
+            "en": "With a bench",
+            "de": "Mit einer Bank"
           }
         }
       ]
@@ -365,7 +367,8 @@
             ]
           },
           "question": {
-            "en": "With a bin"
+            "en": "With a bin",
+            "de": "Mit einem Mülleimer"
           }
         }
       ]

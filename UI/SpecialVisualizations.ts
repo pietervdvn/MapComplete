@@ -1,68 +1,68 @@
 import Combine from "./Base/Combine"
-import {FixedUiElement} from "./Base/FixedUiElement"
+import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import {SpecialVisualization} from "./SpecialVisualization";
-import {HistogramViz} from "./Popup/HistogramViz";
-import {StealViz} from "./Popup/StealViz";
-import {MinimapViz} from "./Popup/MinimapViz";
-import {SidedMinimap} from "./Popup/SidedMinimap";
-import {ShareLinkViz} from "./Popup/ShareLinkViz";
-import {UploadToOsmViz} from "./Popup/UploadToOsmViz";
-import {MultiApplyViz} from "./Popup/MultiApplyViz";
-import {ExportAsGpxViz} from "./Popup/ExportAsGpxViz";
-import {AddNoteCommentViz} from "./Popup/AddNoteCommentViz";
-import {PlantNetDetectionViz} from "./Popup/PlantNetDetectionViz";
-import {ConflateButton, ImportPointButton, ImportWayButton} from "./Popup/ImportButton";
-import TagApplyButton from "./Popup/TagApplyButton";
-import {CloseNoteButton} from "./Popup/CloseNoteButton";
-import {NearbyImageVis} from "./Popup/NearbyImageVis";
-import {MapillaryLinkVis} from "./Popup/MapillaryLinkVis";
-import {Stores, UIEventSource} from "../Logic/UIEventSource";
-import {AllTagsPanel} from "./AllTagsPanel";
-import AllImageProviders from "../Logic/ImageProviders/AllImageProviders";
-import {ImageCarousel} from "./Image/ImageCarousel";
-import {ImageUploadFlow} from "./Image/ImageUploadFlow";
-import {VariableUiElement} from "./Base/VariableUIElement";
-import {Utils} from "../Utils";
-import WikipediaBox from "./Wikipedia/WikipediaBox";
-import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata";
-import {Translation} from "./i18n/Translation";
-import Translations from "./i18n/Translations";
-import MangroveReviews from "../Logic/Web/MangroveReviews";
-import ReviewForm from "./Reviews/ReviewForm";
-import ReviewElement from "./Reviews/ReviewElement";
-import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization";
-import LiveQueryHandler from "../Logic/Web/LiveQueryHandler";
-import {SubtleButton} from "./Base/SubtleButton";
-import Svg from "../Svg";
-import {OpenIdEditor, OpenJosm} from "./BigComponents/CopyrightPanel";
-import Hash from "../Logic/Web/Hash";
-import NoteCommentElement from "./Popup/NoteCommentElement";
-import ImgurUploader from "../Logic/ImageProviders/ImgurUploader";
-import FileSelectorButton from "./Input/FileSelectorButton";
-import {LoginToggle} from "./Popup/LoginButton";
-import Toggle from "./Input/Toggle";
-import {SubstitutedTranslation} from "./SubstitutedTranslation";
-import List from "./Base/List";
-import {OsmFeature} from "../Models/OsmFeature";
-import LayerConfig from "../Models/ThemeConfig/LayerConfig";
-import {GeoOperations} from "../Logic/GeoOperations";
-import StatisticsPanel from "./BigComponents/StatisticsPanel";
-import AutoApplyButton from "./Popup/AutoApplyButton";
-import {LanguageElement} from "./Popup/LanguageElement";
+import { SpecialVisualization } from "./SpecialVisualization"
+import { HistogramViz } from "./Popup/HistogramViz"
+import { StealViz } from "./Popup/StealViz"
+import { MinimapViz } from "./Popup/MinimapViz"
+import { SidedMinimap } from "./Popup/SidedMinimap"
+import { ShareLinkViz } from "./Popup/ShareLinkViz"
+import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
+import { MultiApplyViz } from "./Popup/MultiApplyViz"
+import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
+import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz"
+import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
+import { ConflateButton, ImportPointButton, ImportWayButton } from "./Popup/ImportButton"
+import TagApplyButton from "./Popup/TagApplyButton"
+import { CloseNoteButton } from "./Popup/CloseNoteButton"
+import { NearbyImageVis } from "./Popup/NearbyImageVis"
+import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
+import { Stores, UIEventSource } from "../Logic/UIEventSource"
+import { AllTagsPanel } from "./AllTagsPanel"
+import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
+import { ImageCarousel } from "./Image/ImageCarousel"
+import { ImageUploadFlow } from "./Image/ImageUploadFlow"
+import { VariableUiElement } from "./Base/VariableUIElement"
+import { Utils } from "../Utils"
+import WikipediaBox from "./Wikipedia/WikipediaBox"
+import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
+import { Translation } from "./i18n/Translation"
+import Translations from "./i18n/Translations"
+import MangroveReviews from "../Logic/Web/MangroveReviews"
+import ReviewForm from "./Reviews/ReviewForm"
+import ReviewElement from "./Reviews/ReviewElement"
+import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
+import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
+import { SubtleButton } from "./Base/SubtleButton"
+import Svg from "../Svg"
+import { OpenIdEditor, OpenJosm } from "./BigComponents/CopyrightPanel"
+import Hash from "../Logic/Web/Hash"
+import NoteCommentElement from "./Popup/NoteCommentElement"
+import ImgurUploader from "../Logic/ImageProviders/ImgurUploader"
+import FileSelectorButton from "./Input/FileSelectorButton"
+import { LoginToggle } from "./Popup/LoginButton"
+import Toggle from "./Input/Toggle"
+import { SubstitutedTranslation } from "./SubstitutedTranslation"
+import List from "./Base/List"
+import { OsmFeature } from "../Models/OsmFeature"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+import { GeoOperations } from "../Logic/GeoOperations"
+import StatisticsPanel from "./BigComponents/StatisticsPanel"
+import AutoApplyButton from "./Popup/AutoApplyButton"
+import { LanguageElement } from "./Popup/LanguageElement"
 
 export default class SpecialVisualizations {
-    public static specialVisualizations: SpecialVisualization[]  = SpecialVisualizations.initList();
+    public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
 
-    private static initList() : SpecialVisualization[] {
+    private static initList(): SpecialVisualization[] {
         const specialVisualizations: SpecialVisualization[] = [
             new HistogramViz(),
             new StealViz(),
             new MinimapViz(),
             new SidedMinimap(),
-            new ShareLinkViz() ,
+            new ShareLinkViz(),
             new UploadToOsmViz(),
             new MultiApplyViz(),
             new ExportAsGpxViz(),
@@ -535,7 +535,7 @@ export default class SpecialVisualizations {
                             element: OsmFeature
                             layer: LayerConfig
                         }[]
-                        >([])
+                    >([])
 
                     function update() {
                         const mapCenter = <[number, number]>[
@@ -663,15 +663,19 @@ export default class SpecialVisualizations {
                     )
                 },
             },
-
-
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
 
-        const invalid = specialVisualizations.map((sp,i) => ({sp, i})).filter(sp => sp.sp.funcName === undefined)
-        if(invalid.length > 0){
-            throw "Invalid special visualisation found: funcName is undefined for "+invalid.map(sp => sp.i).join(", ")+". Did you perhaps type \n  funcName: \"funcname\" // type declaration uses COLON\ninstead of:\n  funcName = \"funcName\" // value definition uses EQUAL"
+        const invalid = specialVisualizations
+            .map((sp, i) => ({ sp, i }))
+            .filter((sp) => sp.sp.funcName === undefined)
+        if (invalid.length > 0) {
+            throw (
+                "Invalid special visualisation found: funcName is undefined for " +
+                invalid.map((sp) => sp.i).join(", ") +
+                '. Did you perhaps type \n  funcName: "funcname" // type declaration uses COLON\ninstead of:\n  funcName = "funcName" // value definition uses EQUAL'
+            )
         }
 
         return specialVisualizations
