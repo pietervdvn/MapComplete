@@ -170,6 +170,7 @@
         "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",
+        "feelFreeToSkip": "You can add or update more information below, but feel free <b>to skip questions</b> you don't know the answer to.",
         "fewChangesBefore": "Please, answer a few questions of existing features before adding a new feature.",
         "getStartedLogin": "Log in with OpenStreetMap to get started",
         "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
@@ -204,6 +205,7 @@
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "The name of this {category} is $$$",
+        "newlyCreated": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
         "next": "Next",
         "noMatchingMapping": "No entries mapped your search…",
         "noNameCategory": "{category} without a name",

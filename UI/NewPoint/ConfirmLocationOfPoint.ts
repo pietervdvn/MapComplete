@@ -1,24 +1,24 @@
-import { UIEventSource } from "../../Logic/UIEventSource"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+import {UIEventSource} from "../../Logic/UIEventSource"
+import {OsmConnection} from "../../Logic/Osm/OsmConnection"
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
 import BaseUIElement from "../BaseUIElement"
 import LocationInput from "../Input/LocationInput"
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
-import { BBox } from "../../Logic/BBox"
-import { TagUtils } from "../../Logic/Tags/TagUtils"
-import { SubtleButton } from "../Base/SubtleButton"
+import {BBox} from "../../Logic/BBox"
+import {TagUtils} from "../../Logic/Tags/TagUtils"
+import {SubtleButton} from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
 import Svg from "../../Svg"
 import Toggle from "../Input/Toggle"
-import SimpleAddUI, { PresetInfo } from "../BigComponents/SimpleAddUI"
+import SimpleAddUI, {PresetInfo} from "../BigComponents/SimpleAddUI"
 import BaseLayer from "../../Models/BaseLayer"
 import Img from "../Base/Img"
 import Title from "../Base/Title"
-import { GlobalFilter } from "../../Logic/State/MapState"
-import { VariableUiElement } from "../Base/VariableUIElement"
-import { Tag } from "../../Logic/Tags/Tag"
-import { WayId } from "../../Models/OsmFeature"
+import {GlobalFilter} from "../../Logic/State/MapState"
+import {VariableUiElement} from "../Base/VariableUIElement"
+import {Tag} from "../../Logic/Tags/Tag"
+import {WayId} from "../../Models/OsmFeature"
 
 export default class ConfirmLocationOfPoint extends Combine {
     constructor(
@@ -46,7 +46,7 @@ export default class ConfirmLocationOfPoint extends Combine {
             // Create location input
 
             // We uncouple the event source
-            const zloc = { ...loc, zoom: 19 }
+            const zloc = {...loc, zoom: 19}
             const locationSrc = new UIEventSource(zloc)
 
             let backgroundLayer = new UIEventSource(
@@ -105,7 +105,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                         state.featurePipeline
                             .GetFeaturesWithin(layerId, bbox)
                             ?.forEach((feats) =>
-                                allFeatures.push(...feats.map((f) => ({ feature: f })))
+                                allFeatures.push(...feats.map((f) => ({feature: f})))
                             )
                     })
                     console.log("Snapping to", allFeatures)
@@ -118,7 +118,6 @@ export default class ConfirmLocationOfPoint extends Combine {
             preset.icon(),
             new Combine([
                 confirmText,
-                Translations.t.general.add.warnVisibleForEveryone.Clone().SetClass("alert"),
             ]).SetClass("flex flex-col")
         )
             .SetClass("font-bold break-words")
@@ -139,15 +138,18 @@ export default class ConfirmLocationOfPoint extends Combine {
                 )
             })
 
+        const warn = Translations.t.general.add.warnVisibleForEveryone.Clone().SetClass("alert w-full block");
         if (preciseInput !== undefined) {
-            confirmButton = new Combine([preciseInput, confirmButton])
+            confirmButton = new Combine([preciseInput, warn, confirmButton])
+        } else {
+            confirmButton = new Combine([warn, confirmButton])
         }
 
         const openLayerControl = new SubtleButton(
             Svg.layers_ui(),
             new Combine([
                 Translations.t.general.add.layerNotEnabled
-                    .Subs({ layer: preset.layerToAddTo.layerDef.name })
+                    .Subs({layer: preset.layerToAddTo.layerDef.name})
                     .SetClass("alert"),
                 Translations.t.general.add.openLayerControl,
             ])
@@ -183,7 +185,7 @@ export default class ConfirmLocationOfPoint extends Combine {
             const filterConfirmPanel = new VariableUiElement(
                 state.globalFilters.map((gfs) => {
                     const gf = gfs[i]
-                    const confirm = gf.onNewPoint?.confirmAddNew?.Subs({ preset: preset.title })
+                    const confirm = gf.onNewPoint?.confirmAddNew?.Subs({preset: preset.title})
                     return new Combine([
                         gf.onNewPoint?.safetyCheck,
                         new SubtleButton(Svg.confirm_svg(), confirm).onClick(() =>

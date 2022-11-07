@@ -1,4 +1,4 @@
-import { UIEventSource } from "../../Logic/UIEventSource"
+import {UIEventSource} from "../../Logic/UIEventSource"
 import EditableTagRendering from "./EditableTagRendering"
 import QuestionBox from "./QuestionBox"
 import Combine from "../Base/Combine"
@@ -7,16 +7,19 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import Constants from "../../Models/Constants"
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings"
 import BaseUIElement from "../BaseUIElement"
-import { VariableUiElement } from "../Base/VariableUIElement"
+import {VariableUiElement} from "../Base/VariableUIElement"
 import DeleteWizard from "./DeleteWizard"
 import SplitRoadWizard from "./SplitRoadWizard"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { Utils } from "../../Utils"
+import {Utils} from "../../Utils"
 import MoveWizard from "./MoveWizard"
 import Toggle from "../Input/Toggle"
 import Lazy from "../Base/Lazy"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
+import {Tag} from "../../Logic/Tags/Tag";
+import Svg from "../../Svg";
+import Translations from "../i18n/Translations";
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
     public constructor(
@@ -79,7 +82,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         state: FeaturePipelineState
     ): BaseUIElement {
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>()
-
+        const t = Translations.t.general
         const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map((tr) => tr.group))
         if (state?.featureSwitchUserbadge?.data ?? true) {
             const questionSpecs = layerConfig.tagRenderings.filter((tr) => tr.id === "questions")
@@ -98,7 +101,29 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             }
         }
 
-        const allRenderings = []
+        const withQuestion = layerConfig.tagRenderings.filter(tr => tr.question !== undefined).length
+
+        const allRenderings: BaseUIElement[] = [
+            new VariableUiElement(
+                tags.map(data => data[Tag.newlyCreated.key]).map(isCreated => {
+                    if (isCreated !== Tag.newlyCreated.value) {
+                        return undefined
+                    }
+                    const els = []
+                    const thanks =
+                        new Combine([
+                            Svg.party_svg().SetClass("w-12 h-12 shrink-0 p-1 m-1 bg-white rounded-full block"),
+                            t.newlyCreated
+                        ]).SetClass("flex w-full thanks content-center")
+                    els.push(thanks)
+                    if (withQuestion > 0) {
+                        els.push(t.feelFreeToSkip)
+                    }
+
+                    return new Combine(els).SetClass("pb-4 mb-4 border-b block border-black")
+                })
+            )
+        ]
         for (let i = 0; i < allGroupNames.length; i++) {
             const groupName = allGroupNames[i]
 
@@ -250,15 +275,15 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         editElements.push(
             Toggle.If(state.featureSwitchIsDebugging, () => {
                 const config_all_tags: TagRenderingConfig = new TagRenderingConfig(
-                    { render: "{all_tags()}" },
+                    {render: "{all_tags()}"},
                     ""
                 )
                 const config_download: TagRenderingConfig = new TagRenderingConfig(
-                    { render: "{export_as_geojson()}" },
+                    {render: "{export_as_geojson()}"},
                     ""
                 )
                 const config_id: TagRenderingConfig = new TagRenderingConfig(
-                    { render: "{open_in_iD()}" },
+                    {render: "{open_in_iD()}"},
                     ""
                 )
 
