@@ -3,11 +3,11 @@
  */
 import { UIEventSource } from "./UIEventSource"
 import { GeoJSONObject } from "@turf/turf"
-import {Feature, Point} from "geojson";
+import {Feature, Geometry, Point} from "geojson";
 import {OsmTags} from "../Models/OsmFeature";
 
 export class ElementStorage {
-    public ContainingFeatures = new Map<string, Feature<Point, OsmTags >>()
+    public ContainingFeatures = new Map<string, Feature<Geometry, OsmTags >>()
     private _elements = new Map<string, UIEventSource<any>>()
 
     constructor() {}

@@ -22,6 +22,8 @@ import { TiledStaticFeatureSource } from "../FeatureSource/Sources/StaticFeature
 import { Translation, TypedTranslation } from "../../UI/i18n/Translation"
 import { Tag } from "../Tags/Tag"
 import { OsmConnection } from "../Osm/OsmConnection"
+import {Feature, GeoJSON, LineString} from "geojson";
+import {OsmTags} from "../../Models/OsmFeature";
 
 export interface GlobalFilter {
     filter: FilterState
@@ -320,7 +322,7 @@ export default class MapState extends UserRelatedState {
                 return []
             }
 
-            const feature = {
+            const feature : Feature<LineString, OsmTags> = {
                 type: "Feature",
                 properties: {
                     id: "location_track",
