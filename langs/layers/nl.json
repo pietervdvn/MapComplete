@@ -2430,7 +2430,6 @@
         },
         "title": {
             "mappings": {
-                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
@@ -2694,7 +2693,7 @@
                     "then": "Verkeerslicht"
                 },
                 "1": {
-                    "then": "Oversteektplaats met verkeerslichten"
+                    "then": "Oversteekplaats met verkeerslichten"
                 }
             },
             "render": "Oversteekplaats"
@@ -7214,6 +7213,15 @@
         "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,…). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
         "title": {
             "render": "Muur of gebouw"
+        },
+        "tagRenderings": {
+            "entrance_info": {
+                "render": {
+                    "special": {
+                        "tagrendering": "Een <a href='#{id}'>ingang</a> van {canonical(width)}"
+                    }
+                }
+            }
         }
     },
     "waste_basket": {
@@ -7476,6 +7484,31 @@
                 "applicableUnits": {
                     "0": {
                         "human": " meter"
+                    }
+                }
+            }
+        }
+    },
+    "osm_community_index": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Regio"
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Land"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Wereld"
                     }
                 }
             }
