@@ -27,7 +27,7 @@ import Loading from "../Base/Loading"
 import Hash from "../../Logic/Web/Hash"
 import { GlobalFilter } from "../../Logic/State/MapState"
 import { WayId } from "../../Models/OsmFeature"
-import {Tag} from "../../Logic/Tags/Tag";
+import { Tag } from "../../Logic/Tags/Tag"
 
 /*
  * The SimpleAddUI is a single panel, which can have multiple states:
@@ -111,7 +111,9 @@ export default class SimpleAddUI extends Toggle {
             await state.changes.applyAction(newElementAction)
             selectedPreset.setData(undefined)
             isShown.setData(false)
-            const selectedFeature = state.allElements.ContainingFeatures.get(newElementAction.newElementId)
+            const selectedFeature = state.allElements.ContainingFeatures.get(
+                newElementAction.newElementId
+            )
             state.selectedElement.setData(selectedFeature)
             Hash.hash.setData(newElementAction.newElementId)
         }

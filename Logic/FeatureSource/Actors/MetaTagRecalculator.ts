@@ -27,7 +27,7 @@ class MetatagUpdater {
         const self = this
         this.params = {
             getFeatureById(id) {
-                return <any> state.allElements.ContainingFeatures.get(id)
+                return <any>state.allElements.ContainingFeatures.get(id)
             },
             getFeaturesWithin(layerId, bbox) {
                 // We keep track of the BBOX that this source needs
