@@ -3432,6 +3432,15 @@
                     }
                 },
                 "question": "Ist dieser Aufzug in Betrieb?"
+            },
+            "tactile_writing_language": {
+                "render": {
+                    "special": {
+                        "render_list_item": "Der Aufzug hat taktile Schrift in {language():font-bold}",
+                        "question": "In welchen Sprachen hat der Aufzug taktile Schrift (Braille)?",
+                        "render_single_language": "Der Aufzug hat taktile Schrift in {language():font-bold}"
+                    }
+                }
             }
         },
         "title": {
@@ -6266,7 +6275,9 @@
                 "render": {
                     "special": {
                         "no_known_languages": "Die Unterrichtssprache der Schule ist unbekannt",
-                        "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>"
+                        "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
+                        "render_single_language": "{language():font-bold} ist die Hauptsprache der Schule",
+                        "render_all": "Folgende Sprachen werden in der Schule verwendet:{list()}"
                     }
                 }
             },
@@ -6674,6 +6685,9 @@
                     },
                     "1": {
                         "then": "Das ist keine Rolltreppe"
+                    },
+                    "2": {
+                        "then": "Das ist keine Rolltreppe"
                     }
                 }
             },
@@ -6707,6 +6721,26 @@
                     }
                 },
                 "question": "Gibt es eine Rampe an dieser Treppe?"
+            },
+            "tactile_writing_language": {
+                "render": {
+                    "special": {
+                        "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}",
+                        "question": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
+                        "render_list_item": "Die Treppe hat taktile Schrift in {language():font-bold}"
+                    }
+                }
+            },
+            "tactile_writing": {
+                "question": "Hat die Treppe eine taktile Schrift am Handlauf?",
+                "mappings": {
+                    "0": {
+                        "then": "Am Handlauf gibt es taktile Schrift"
+                    },
+                    "1": {
+                        "then": "Am Handlauf gibt es keine taktile Schrift"
+                    }
+                }
             }
         },
         "title": {
@@ -7297,6 +7331,11 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich die Toilette befindet, geöffnet?"
+                }
             }
         },
         "title": {
