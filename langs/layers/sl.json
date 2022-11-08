@@ -112,6 +112,11 @@
                 },
                 "question": "Kdaj je bil ta defibrilator nazadnje opažen?",
                 "render": "Ta defibrilator je bil nazadnje opažen {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Ob katerih urah je ta defibrilator na voljo?"
+                }
             }
         },
         "title": {

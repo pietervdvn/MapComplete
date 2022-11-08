@@ -826,6 +826,11 @@
                 "question": "¿Que válvulas se soportan?",
                 "render": "Esta bomba soporta las siguiente válvulas: {valves}"
             },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "¿Cuándo está abierto este punto de reparación de bicicletas?"
+                }
+            },
             "send_email_about_broken_pump": {
                 "render": {
                     "special": {
@@ -2035,6 +2040,11 @@
                 },
                 "question": "¿Cuándo se sondeó por última vez este desfibrilador?",
                 "render": "Este desfibrilador se sondeó por última vez el {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "¿A qué horas está disponible este desfibrilador?"
+                }
             }
         },
         "title": {
@@ -2541,6 +2551,11 @@
                     }
                 },
                 "question": "¿Esto es un espacio hacker o un espacio maker?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "¿Cuándo está abierto este espacio hacker?"
+                }
             }
         },
         "title": {
@@ -3210,6 +3225,11 @@
                     }
                 },
                 "question": "¿Dónde se sitúa este contenedor?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "¿A qué horas abre esta facilidad de reciclado?"
+                }
             },
             "operator": {
                 "question": "¿Que empresa opera esta facilidad de reciclado?",

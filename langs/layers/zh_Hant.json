@@ -317,6 +317,11 @@
                     }
                 },
                 "question": "這裡是否有工具修理你的單車嗎？"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "何時這個單車咖啡廳營運？"
+                }
             }
         },
         "title": {
@@ -533,6 +538,11 @@
                     }
                 },
                 "question": "這邊是駭客空間還是創客空間？"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "這個駭客空間的營業時間？"
+                }
             }
         },
         "title": {

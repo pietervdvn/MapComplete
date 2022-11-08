@@ -278,7 +278,7 @@ This is rendered with  Telephone for questions about this defibrillator: <a href
 
 
 
-### defibrillator-opening_hours 
+### opening_hours_24_7 
 
 
 
@@ -286,7 +286,7 @@ The question is  At what times is this defibrillator available?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  {opening_hours_table(opening_hours)}
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
 
 

@@ -56,7 +56,8 @@
         {
           "question": {
             "en": "Country",
-            "de": "Land"
+            "de": "Land",
+            "nl": "Land"
           },
           "osmTags": "level=country"
         }
@@ -80,7 +81,8 @@
         {
           "question": {
             "en": "Region",
-            "de": "Region"
+            "de": "Region",
+            "nl": "Regio"
           },
           "osmTags": "level=region"
         }
@@ -116,7 +118,8 @@
         {
           "question": {
             "en": "World",
-            "de": "Welt"
+            "de": "Welt",
+            "nl": "Wereld"
           },
           "osmTags": "level=world"
         }

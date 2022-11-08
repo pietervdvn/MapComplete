@@ -210,7 +210,7 @@
         "es": "{rental} se alquilan aquí",
         "da": "{rental} udlejes her",
         "fr": "{rental} est louable ici",
-        "cs": "{rental} se pronajímá zde"
+        "cs": "Zde si můžete půjčit {rental}"
       },
       "freeform": {
         "key": "rental",
@@ -227,7 +227,7 @@
             "es": "Aquí se pueden alquilar bicis normales",
             "da": "Her kan man leje almindelige bycykler",
             "fr": "Des vélos de ville peuvent être loués ici",
-            "cs": "Běžná městská kola si můžete půjčit zde"
+            "cs": "Zde si můžete půjčit běžná městská kola"
           }
         },
         {
@@ -239,7 +239,7 @@
             "es": "Aquí se pueden alquilar bicis eléctricas",
             "da": "El-cykler kan lejes her",
             "fr": "Des vélos électriques peuvent être loués ici",
-            "cs": "Elektrická kola si můžete půjčit zde"
+            "cs": "Zde si můžete půjčit elektrokola"
           }
         },
         {
@@ -251,7 +251,7 @@
             "es": "Aquí se pueden alquilar bicis BMX",
             "da": "BMX cykler kan lejes her",
             "fr": "Des BMX peuvent être loués ici",
-            "cs": "Kola BMX si můžete půjčit zde"
+            "cs": "Zde si můžete půjčit BMX kola"
           }
         },
         {
@@ -263,7 +263,7 @@
             "es": "Aquí se pueden alquilar bicis de montaña",
             "da": "Mountainbikes kan lejes her",
             "fr": "Des vélos de montagne peuvent être loués ici",
-            "cs": "Horská kola si můžete půjčit zde"
+            "cs": "Zde si můžete půjčit horská kola"
           }
         },
         {
@@ -275,7 +275,7 @@
             "es": "Aquí se pueden alquilar bicis infantiles",
             "da": "Børnecykler kan lejes her",
             "fr": "Des vélos d'enfants peuvent être loués ici",
-            "cs": "Dětská kola si můžete půjčit zde"
+            "cs": "Zde si můžete půjčit dětská kola"
           }
         },
         {
@@ -287,7 +287,7 @@
             "da": "Tandemcykler kan lejes her",
             "fr": "Des tandems peuvent être loués ici",
             "es": "Aquí se pueden alquilar tándems",
-            "cs": "Tandemová kola si můžete půjčit zde"
+            "cs": "Zde si můžete půjčit tandemová kola"
           }
         },
         {
@@ -299,7 +299,7 @@
             "es": "Aquí se pueden alquilar bicicletas de carreras",
             "da": "Racercykler kan lejes her",
             "fr": "Des vélos de course peuvent être loués ici",
-            "cs": "Závodní kola si můžete půjčit zde"
+            "cs": "Zde si můžete půjčit závodní kola"
           }
         },
         {
@@ -311,7 +311,7 @@
             "de": "Fahrradhelme können hier gemietet werden",
             "fr": "Des casques de vélos peuvent être loués ici",
             "da": "Cykelhjelme kan lejes her",
-            "cs": "Cyklistické přilby si můžete půjčit zde"
+            "cs": "Zde si můžete půjčit cyklistické přilby"
           }
         }
       ]

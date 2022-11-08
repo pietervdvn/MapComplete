@@ -54,7 +54,7 @@
         "if": "crossing=traffic_signals",
         "then": {
           "en": "Crossing with traffic signals",
-          "nl": "Oversteektplaats met verkeerslichten",
+          "nl": "Oversteekplaats met verkeerslichten",
           "de": "Kreuzung mit Ampeln",
           "fr": "Traversée avec feu de signalisation",
           "es": "Cruce con señales de tráfico"

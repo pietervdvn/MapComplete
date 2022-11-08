@@ -602,6 +602,11 @@
                     }
                 },
                 "question": "Er der værktøj her til at reparere din egen cykel?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Hvornår er denne cykelcafé åbent?"
+                }
             }
         },
         "title": {
@@ -899,6 +904,11 @@
                 },
                 "question": "Hvilke ventiler understøttes?",
                 "render": "Denne pumpe understøtter følgende ventiler: {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Hvornår er dette cykelreparationssted åbent?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {

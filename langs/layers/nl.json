@@ -619,6 +619,11 @@
                     }
                 },
                 "question": "Biedt dit fietscafé gereedschap aan om je fiets zelf te herstellen?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wanneer is dit fietscafé geopend?"
+                }
             }
         },
         "title": {
@@ -916,6 +921,11 @@
                 },
                 "question": "Welke ventielen werken er met de pomp?",
                 "render": "Deze pomp werkt met de volgende ventielen: {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Wanneer is dit fietsherstelpunt open?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {
@@ -1530,6 +1540,11 @@
                 },
                 "question": "Is dit oplaadpunt deel van een groter netwerk?",
                 "render": "Maakt deel uit van het <b>{network}</b>-netwerk"
+            },
+            "OH": {
+                "override": {
+                    "question": "Wanneer is dit oplaadpunt beschikbaar??"
+                }
             },
             "Operational status": {
                 "mappings": {
@@ -2430,6 +2445,7 @@
         },
         "title": {
             "mappings": {
+                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
@@ -3193,6 +3209,11 @@
                 },
                 "question": "Wanneer is deze defibrillator het laatst gecontroleerd in OpenStreetMap?",
                 "render": "Deze defibrillator is nagekeken in OSM op {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Wanneer is deze defibrillator beschikbaar?"
+                }
             }
         },
         "title": {
@@ -4119,6 +4140,11 @@
                     }
                 },
                 "question": "Is dit een hackerspace of een makerspace?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Wanneer is deze hackerspace geopend?"
+                }
             }
         },
         "title": {
@@ -5017,6 +5043,31 @@
             }
         }
     },
+    "osm_community_index": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Land"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Regio"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Wereld"
+                    }
+                }
+            }
+        }
+    },
     "parcel_lockers": {
         "description": "Laag met pakketautomaten voor het ophalen en verzenden van paketten.",
         "name": "Pakketautomaten",
@@ -5257,6 +5308,11 @@
             }
         },
         "name": "apotheek",
+        "presets": {
+            "0": {
+                "title": "een apotheek"
+            }
+        },
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -5725,6 +5781,11 @@
                     }
                 },
                 "question": "Waar bevindt deze container zich?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Wat zijn de openingstijden van deze recyclingfaciliteit?"
+                }
             },
             "operator": {
                 "question": "Wat is de beheerder van deze recyclingfaciliteit?",
@@ -7211,9 +7272,6 @@
     },
     "walls_and_buildings": {
         "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,…). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
-        "title": {
-            "render": "Muur of gebouw"
-        },
         "tagRenderings": {
             "entrance_info": {
                 "render": {
@@ -7222,6 +7280,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Muur of gebouw"
         }
     },
     "waste_basket": {
@@ -7484,31 +7545,6 @@
                 "applicableUnits": {
                     "0": {
                         "human": " meter"
-                    }
-                }
-            }
-        }
-    },
-    "osm_community_index": {
-        "filter": {
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Regio"
-                    }
-                }
-            },
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "Land"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Wereld"
                     }
                 }
             }

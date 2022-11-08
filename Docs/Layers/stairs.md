@@ -68,6 +68,18 @@ attribute | type | values which are supported by this layer
 
 
 
+### images 
+
+
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 ### handrail 
 
 
@@ -110,7 +122,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `tactile_writing:braille:language=yes`  is shown
+Only visible if  `tactile_writing=yes`  is shown
 
 
 

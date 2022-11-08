@@ -216,6 +216,11 @@
                     }
                 },
                 "question": "这里有供你修车用的工具吗？"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "这家自行车咖啡什么时候开门营业？"
+                }
             }
         },
         "title": {

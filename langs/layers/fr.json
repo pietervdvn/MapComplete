@@ -608,6 +608,11 @@
                     }
                 },
                 "question": "Est-ce qu'il y a des outils pour réparer soi-même son vélo ?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Quand ce Café vélo est-t-il ouvert ?"
+                }
             }
         },
         "title": {
@@ -905,6 +910,11 @@
                 },
                 "question": "Quelles valves sont compatibles ?",
                 "render": "Cette pompe est compatible avec les valves suivantes : {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Quand ce point de réparation de vélo est-il ouvert ?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {
@@ -2102,6 +2112,11 @@
                 },
                 "question": "Quand le défibrillateur a-t-il été vérifié pour la dernière fois ?",
                 "render": "Ce défibrillateur a été vérifié pour la dernière fois le {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "À quels horaires ce défibrillateur est-il accessible ?"
+                }
             }
         },
         "title": {

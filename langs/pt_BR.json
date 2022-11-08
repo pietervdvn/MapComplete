@@ -11,9 +11,9 @@
         "delete": "Excluir",
         "explanations": {
             "hardDelete": "Este ponto será excluído no OpenStreetMap. Pode ser recuperado por um colaborador experiente",
-            "selectReason": "Por favor, selecione por que este recurso deve ser excluído",
             "retagNoOtherThemes": "Este recurso será reclassificado e ocultado deste aplicativo",
-            "retagOtherThemes": "Este recurso será remarcado e ficará visível em {otherThemes}"
+            "retagOtherThemes": "Este recurso será remarcado e ficará visível em {otherThemes}",
+            "selectReason": "Por favor, selecione por que este recurso deve ser excluído"
         }
     },
     "favourite": {

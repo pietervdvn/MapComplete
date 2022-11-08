@@ -619,6 +619,11 @@
                     }
                 },
                 "question": "Are there tools here to repair your own bike?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "When it this bike café opened?"
+                }
             }
         },
         "title": {
@@ -916,6 +921,11 @@
                 },
                 "question": "What valves are supported?",
                 "render": "This pump supports the following valves: {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "When is this bicycle repair point open?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {
@@ -1521,6 +1531,11 @@
                 },
                 "question": "Is this charging station part of a network?",
                 "render": "Part of the network <b>{network}</b>"
+            },
+            "OH": {
+                "override": {
+                    "question": "When is this charging station opened?"
+                }
             },
             "Operational status": {
                 "mappings": {
@@ -3247,6 +3262,11 @@
                 },
                 "question": "When was this defibrillator last surveyed?",
                 "render": "This defibrillator was last surveyed on {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "At what times is this defibrillator available?"
+                }
             }
         },
         "title": {
@@ -4317,6 +4337,11 @@
                     }
                 },
                 "question": "Is this a hackerspace or a makerspace?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "When is this hackerspace opened?"
+                }
             }
         },
         "title": {
@@ -5513,6 +5538,11 @@
             }
         },
         "name": "pharmacy",
+        "presets": {
+            "0": {
+                "title": "a pharmacy"
+            }
+        },
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -6104,6 +6134,11 @@
                     }
                 },
                 "question": "Where is this container located?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "What are the opening hours of this recycling facility?"
+                }
             },
             "operator": {
                 "question": "What company operates this recycling facility?",

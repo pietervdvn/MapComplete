@@ -350,6 +350,11 @@
                     }
                 },
                 "question": "Ci sono degli strumenti per riparare la propria bicicletta?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Quando è aperto questo caffè in bici?"
+                }
             }
         },
         "title": {
@@ -591,6 +596,11 @@
                 },
                 "question": "Quali valvole sono supportate?",
                 "render": "Questa pompa è compatibile con le seguenti valvole: {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Quando è aperto questo punto riparazione bici?"
+                }
             }
         },
         "title": {
@@ -1138,6 +1148,11 @@
                 },
                 "question": "Quando è stato verificato per l’ultima volta questo defibrillatore?",
                 "render": "Questo defibrillatore è stato verificato per l‘ultima volta in data {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "In quali orari è disponibile questo defibrillatore?"
+                }
             }
         },
         "title": {
@@ -1810,6 +1825,11 @@
                     }
                 },
                 "question": "Dove si trova questo contenitore?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?"
+                }
             },
             "operator": {
                 "question": "Quale azienda gestisce questo impianto di raccolta e riciclo?",

@@ -75,7 +75,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Hackerspace' shows opening_hours=24/7 with a fixed text, namely 'Opened 24/7' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
+      "description": "Layer 'Hackerspace' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hackerspaces')",
       "value": "24/7"
     },
     {

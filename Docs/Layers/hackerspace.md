@@ -178,7 +178,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-### hackerspaces-opening_hours 
+### opening_hours_24_7 
 
 
 
@@ -186,13 +186,13 @@ The question is  When is this hackerspace opened?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  {opening_hours_table()}
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
 
 
 
 
-  - Opened 24/7  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
+  - 24/7 opened (including holidays)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
 
 
 

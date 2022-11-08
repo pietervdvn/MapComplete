@@ -302,10 +302,12 @@
           "type": "language_chooser",
           "key": "language",
           "render_all": {
-            "en": "The following languages are used in this school:{list()}"
+            "en": "The following languages are used in this school:{list()}",
+            "de": "Folgende Sprachen werden in der Schule verwendet:{list()}"
           },
           "render_single_language": {
-            "en": "{language():font-bold} is the main language of this school"
+            "en": "{language():font-bold} is the main language of this school",
+            "de": "{language():font-bold} ist die Hauptsprache der Schule"
           },
           "question": {
             "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",

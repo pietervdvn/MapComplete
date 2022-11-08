@@ -5,7 +5,7 @@
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 179,
+      "commits": 180,
       "contributor": "kjon"
     },
     {
@@ -21,7 +21,7 @@
       "contributor": "Anonymous"
     },
     {
-      "commits": 37,
+      "commits": 38,
       "contributor": "Robin van der Linde"
     },
     {
@@ -86,6 +86,10 @@
     },
     {
       "commits": 10,
+      "contributor": "Jiří Podhorecký"
+    },
+    {
+      "commits": 10,
       "contributor": "bgo-eiu"
     },
     {
@@ -105,8 +109,8 @@
       "contributor": "Jacque Fresco"
     },
     {
-      "commits": 8,
-      "contributor": "Jiří Podhorecký"
+      "commits": 7,
+      "contributor": "Vinicius"
     },
     {
       "commits": 7,
@@ -123,10 +127,6 @@
     {
       "commits": 6,
       "contributor": "Joost Schouppe"
-    },
-    {
-      "commits": 6,
-      "contributor": "Vinicius"
     },
     {
       "commits": 6,

@@ -286,6 +286,11 @@
                     }
                 },
                 "question": "Há ferramentas aqui para consertar a sua própria bicicleta?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Quando este café de bicicleta abre?"
+                }
             }
         },
         "title": {

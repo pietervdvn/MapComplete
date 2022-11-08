@@ -10,7 +10,7 @@ import {
     MultiPolygon,
     Polygon,
 } from "@turf/turf"
-import {GeoJSON, LineString, Point} from "geojson"
+import { GeoJSON, LineString, Point } from "geojson"
 import togpx from "togpx"
 import Constants from "../Models/Constants"
 
@@ -38,7 +38,7 @@ export class GeoOperations {
      * @param feature
      */
     static centerpointCoordinates(feature: AllGeoJSON | GeoJSON): [number, number] {
-        return <[number, number]>turf.center(<any> feature).geometry.coordinates
+        return <[number, number]>turf.center(<any>feature).geometry.coordinates
     }
 
     /**

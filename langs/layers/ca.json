@@ -870,13 +870,6 @@
                     }
                 }
             },
-            "opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7"
-                    }
-                }
-            },
             "operator": {
                 "render": "Aquesta infraestuctura de reciclatge està operada per {operator}"
             },

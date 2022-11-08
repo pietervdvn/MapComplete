@@ -62,19 +62,22 @@
       "id": "tactile_writing",
       "condition": "handrail=yes",
       "question": {
-        "en": "Do these stairs have tactile writing on the handrail?"
+        "en": "Do these stairs have tactile writing on the handrail?",
+        "de": "Hat die Treppe eine taktile Schrift am Handlauf?"
       },
       "mappings": [
         {
           "if": "tactile_writing=yes",
           "then": {
-            "en": "There is tactile writing on the handrail"
+            "en": "There is tactile writing on the handrail",
+            "de": "Am Handlauf gibt es taktile Schrift"
           }
         },
         {
           "if": "tactile_writing=no",
           "then": {
-            "en": "There is no tactile writing on the handrail"
+            "en": "There is no tactile writing on the handrail",
+            "de": "Am Handlauf gibt es keine taktile Schrift"
           }
         }
       ]
@@ -87,13 +90,16 @@
           "type": "language_chooser",
           "key": "tactile_writing:braille",
           "question": {
-            "en": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
+            "en": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
+            "de": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
           },
           "render_list_item": {
-            "en": "These stairs have tactile writing in {language():font-bold}"
+            "en": "These stairs have tactile writing in {language():font-bold}",
+            "de": "Die Treppe hat taktile Schrift in {language():font-bold}"
           },
           "render_single_language": {
-            "en": "These stairs have tactile writing in {language():font-bold}"
+            "en": "These stairs have tactile writing in {language():font-bold}",
+            "de": "Die Treppe hat taktile Schrift in {language():font-bold}"
           }
         }
       }
@@ -121,7 +127,8 @@
           "if": "conveying=",
           "then": {
             "en": "This is not an escalator",
-            "nl": "Dit is geen roltrap"
+            "nl": "Dit is geen roltrap",
+            "de": "Das ist keine Rolltreppe"
           },
           "hideInAnswer": true
         }

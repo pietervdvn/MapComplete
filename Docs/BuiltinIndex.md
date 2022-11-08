@@ -18,6 +18,7 @@
     + [description](#description)
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
+    + [opening_hours_24_7](#opening_hours_24_7)
     + [level](#level)
     + [bicycle_rental.*bicycle_rental](#bicycle_rental*bicycle_rental)
     + [bike_cleaning.bike_cleaning-service:bicycle:cleaning:charge](#bike_cleaningbike_cleaning-service:bicycle:cleaning:charge)
@@ -48,7 +49,6 @@
     + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
     + [school.gender](#schoolgender)
-    + [opening_hours_24_7](#opening_hours_24_7)
     + [toilet.toilets-type](#toilettoilets-type)
     + [toilet.toilets-changing-table](#toilettoilets-changing-table)
     + [toilet.toilet-changing_table:location](#toilettoilet-changing_table:location)
@@ -132,6 +132,7 @@
   - slow_roads
   - sport_pitch
   - sports_centre
+  - stairs
   - street_lamps
   - surveillance_camera
   - toilet
@@ -169,6 +170,7 @@
 
   - bicycle_library
   - bicycle_rental
+  - bike_cafe
   - bike_shop
   - bike_themed_object
   - cafe_pub
@@ -204,6 +206,7 @@
 
   - bicycle_library
   - bicycle_rental
+  - bike_cafe
   - bike_shop
   - bike_themed_object
   - cafe_pub
@@ -236,6 +239,7 @@
 
   - bicycle_library
   - bicycle_rental
+  - bike_cafe
   - bike_shop
   - bike_themed_object
   - cafe_pub
@@ -267,6 +271,7 @@
 
   - bicycle_library
   - bicycle_rental
+  - bike_cafe
   - bike_shop
   - bike_themed_object
   - cafe_pub
@@ -277,7 +282,6 @@
   - fitness_station
   - food
   - kindergarten_childcare
-  - parcel_lockers
   - pharmacy
   - postoffices
   - shops
@@ -328,6 +332,23 @@
 
   - bicycle_rental
   - charging_station
+
+
+
+
+### opening_hours_24_7 
+
+
+
+
+
+  - bike_repair_station
+  - charging_station
+  - defibrillator
+  - hackerspace
+  - parcel_lockers
+  - recycling
+  - toilet
 
 
 
@@ -702,17 +723,6 @@
 
 
   - tertiary_education
-
-
-
-
-### opening_hours_24_7 
-
-
-
-
-
-  - toilet
 
 
 

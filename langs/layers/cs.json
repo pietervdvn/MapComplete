@@ -448,14 +448,8 @@
         "tagRenderings": {
             "bicycle-types": {
                 "mappings": {
-                    "7": {
-                        "then": "Zde si můžete půjčit cyklistické přilby"
-                    },
                     "0": {
                         "then": "Zde si můžete půjčit běžná městská kola"
-                    },
-                    "4": {
-                        "then": "Zde si můžete půjčit dětská kola"
                     },
                     "1": {
                         "then": "Zde si můžete půjčit elektrokola"
@@ -463,18 +457,24 @@
                     "2": {
                         "then": "Zde si můžete půjčit BMX kola"
                     },
-                    "6": {
-                        "then": "Zde si můžete půjčit závodní kola"
-                    },
                     "3": {
                         "then": "Zde si můžete půjčit horská kola"
                     },
-                "5": {
-                    "then": "Zde si můžete půjčit tandemová kola"
-                }
-            },
-                "render": "Zde si můžete půjčit {rental}",
-                "question": "Jaká jízdní kola a příslušenství se zde půjčují?"
+                    "4": {
+                        "then": "Zde si můžete půjčit dětská kola"
+                    },
+                    "5": {
+                        "then": "Zde si můžete půjčit tandemová kola"
+                    },
+                    "6": {
+                        "then": "Zde si můžete půjčit závodní kola"
+                    },
+                    "7": {
+                        "then": "Zde si můžete půjčit cyklistické přilby"
+                    }
+                },
+                "question": "Jaká jízdní kola a příslušenství se zde půjčují?",
+                "render": "Zde si můžete půjčit {rental}"
             },
             "bicycle_rental_type": {
                 "mappings": {
@@ -591,18 +591,9 @@
                 },
                 "question": "Nabízí tato cyklistická kavárna vzduchový kompresor na kolo k použití pro kohokoli?"
             },
-            "bike_cafe-email": {
-                "question": "Jaká je e-mailová adresa {name}?"
-            },
             "bike_cafe-name": {
                 "question": "Jak se jmenuje tato cyklokavárna?",
                 "render": "Tato cyklokavárna se jmenuje {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Kdy byla tato cyklokavárna otevřena?"
-            },
-            "bike_cafe-phone": {
-                "question": "Jaké je telefonní číslo na {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -625,9 +616,6 @@
                     }
                 },
                 "question": "Jsou zde nástroje na opravu vlastního kola?"
-            },
-            "bike_cafe-website": {
-                "question": "Jaká je webová stránka {name}?"
             }
         },
         "title": {
@@ -808,28 +796,8 @@
                 "title": "opravna kol bez vzduchového kompresoru"
             }
         },
-        "title": {
-            "mappings": {
-                "3": {
-                    "then": "Vzduchový kompresor <i>{name}</i>"
-                },
-                "4": {
-                    "then": "Vzduchový kompresor"
-                },
-                "0": {
-                    "then": "Stanice na opravu kol"
-                },
-                "1": {
-                    "then": "Stanice na opravu kol"
-                },
-                "2": {
-                    "then": "Rozbitý vzduchový kompresor"
-                }
-            }
-        },
         "tagRenderings": {
             "Operational status": {
-                "question": "Je vzduchový kompresor na kolo stále funkční?",
                 "mappings": {
                     "0": {
                         "then": "Vzduchový kompresor na kolo je rozbitý"
@@ -837,14 +805,15 @@
                     "1": {
                         "then": "Vzduchový kompresor na kolo je v provozu"
                     }
-                }
+                },
+                "question": "Je vzduchový kompresor na kolo stále funkční?"
             },
             "access": {
                 "mappings": {
-                    "4": {
-                        "then": "Nepřístupné pro veřejnost"
-                    },
                     "0": {
+                        "then": "Veřejně přístupné"
+                    },
+                    "1": {
                         "then": "Veřejně přístupné"
                     },
                     "2": {
@@ -853,19 +822,19 @@
                     "3": {
                         "then": "Nepřístupné pro veřejnost"
                     },
-                    "1": {
-                        "then": "Veřejně přístupné"
+                    "4": {
+                        "then": "Nepřístupné pro veřejnost"
                     }
                 },
                 "question": "Kdo smí tuto opravnu používat?"
             },
             "bike_repair_station-available-services": {
                 "mappings": {
-                    "1": {
-                        "then": "K dispozici je pouze nářadí (šroubováky, kleště, ...)."
-                    },
                     "0": {
                         "then": "K dispozici je pouze vzduchový kompresor"
+                    },
+                    "1": {
+                        "then": "K dispozici je pouze nářadí (šroubováky, kleště, ...)."
                     },
                     "2": {
                         "then": "K dispozici jsou nástroje i vzduchový kompresor"
@@ -875,17 +844,16 @@
             },
             "bike_repair_station-bike-chain-tool": {
                 "mappings": {
-                    "1": {
-                        "then": "Není k dispozici žádný nástroj na řetěz"
-                    },
                     "0": {
                         "then": "K dispozici je nástroj na řetěz"
+                    },
+                    "1": {
+                        "then": "Není k dispozici žádný nástroj na řetěz"
                     }
                 },
                 "question": "Má tato opravna kol speciální nástroj na opravu řetězu?"
             },
             "bike_repair_station-bike-stand": {
-                "question": "Má tato cyklistická stanice hák na zavěšení kola nebo stojan na jeho zvednutí?",
                 "mappings": {
                     "0": {
                         "then": "K dispozici je závěsný hák nebo stojan"
@@ -893,32 +861,8 @@
                     "1": {
                         "then": "Není zde žádný závěsný hák ani stojan"
                     }
-                }
-            },
-            "bike_repair_station-manometer": {
-                "mappings": {
-                    "2": {
-                        "then": "Je zde manometr, ale je rozbitý"
-                    },
-                    "0": {
-                        "then": "K dispozici je manometr"
-                    },
-                    "1": {
-                        "then": "Není zde žádný manometr"
-                    }
                 },
-                "question": "Má vzduchový kompresor ukazatel tlaku nebo manometr?"
-            },
-            "bike_repair_station-email": {
-                "question": "Jaká je e-mailová adresa správce?"
-            },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Vždy otevřeno"
-                    }
-                },
-                "question": "Kdy je toto místo pro opravu jízdních kol otevřeno?"
+                "question": "Má tato cyklistická stanice hák na zavěšení kola nebo stojan na jeho zvednutí?"
             },
             "bike_repair_station-electrical_pump": {
                 "mappings": {
@@ -931,20 +875,22 @@
                 },
                 "question": "Je to elektrická pumpa na kolo?"
             },
-            "bike_repair_station-valves": {
+            "bike_repair_station-email": {
+                "question": "Jaká je e-mailová adresa správce?"
+            },
+            "bike_repair_station-manometer": {
                 "mappings": {
-                    "2": {
-                        "then": "Schrader (automobily a horská kola)"
+                    "0": {
+                        "then": "K dispozici je manometr"
                     },
                     "1": {
-                        "then": "Dunlop"
+                        "then": "Není zde žádný manometr"
                     },
-                    "0": {
-                        "then": "Sclaverand/Presta (úzké cyklistické pláště)"
+                    "2": {
+                        "then": "Je zde manometr, ale je rozbitý"
                     }
                 },
-                "question": "Jaké ventily jsou podporovány?",
-                "render": "Tento vzduchový kompresor podporuje následující ventily: {valves}"
+                "question": "Má vzduchový kompresor ukazatel tlaku nebo manometr?"
             },
             "bike_repair_station-operator": {
                 "question": "Kdo udržuje tento vzduchový kompresor?",
@@ -952,6 +898,26 @@
             },
             "bike_repair_station-phone": {
                 "question": "Jaké je telefonní číslo správce?"
+            },
+            "bike_repair_station-valves": {
+                "mappings": {
+                    "0": {
+                        "then": "Sclaverand/Presta (úzké cyklistické pláště)"
+                    },
+                    "1": {
+                        "then": "Dunlop"
+                    },
+                    "2": {
+                        "then": "Schrader (automobily a horská kola)"
+                    }
+                },
+                "question": "Jaké ventily jsou podporovány?",
+                "render": "Tento vzduchový kompresor podporuje následující ventily: {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Kdy je toto místo pro opravu jízdních kol otevřeno?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {
@@ -962,7 +928,25 @@
                     }
                 }
             }
-       
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Stanice na opravu kol"
+                },
+                "1": {
+                    "then": "Stanice na opravu kol"
+                },
+                "2": {
+                    "then": "Rozbitý vzduchový kompresor"
+                },
+                "3": {
+                    "then": "Vzduchový kompresor <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Vzduchový kompresor"
+                }
+            }
         }
     }
 }

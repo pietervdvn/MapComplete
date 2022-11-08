@@ -249,6 +249,11 @@
       "description": "Layer 'Parcel Lockers' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Postbox and Post Office Map')"
     },
     {
+      "key": "opening_hours",
+      "description": "Layer 'Parcel Lockers' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "value": "24/7"
+    },
+    {
       "key": "ref",
       "description": "Layer 'Parcel Lockers' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Postbox and Post Office Map')"
     },

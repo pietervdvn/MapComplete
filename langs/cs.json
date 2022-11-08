@@ -28,13 +28,27 @@
         },
         "useSomethingElse": "Místo toho použijte jiný editor OpenStreetMap a odstraňte jej"
     },
+    "favourite": {
+        "loginNeeded": "<h3>Přihlášení</h3>Osobní rozvržení je k dispozici pouze pro uživatele OpenStreetMap",
+        "reload": "Znovu načíst data"
+    },
+    "flyer": {
+        "description": "Leták formátu A4 na propagaci MapComplete",
+        "editing": {
+            "title": "Jak vypadá uživatelské rozhraní?"
+        },
+        "examples": "K dispozici je mnoho tematických map, z nichž některé jsou zde otištěny.\n\nNa internetu je k dispozici mnoho dalších tematických map: o zdravotnictví, navigaci v interiéru, bezbariérovosti, odpadových zařízeních, veřejných knihovnách, přechodech pro chodce s duhovým nátěrem,... Objevte je všechny na mapcomplete.osm.be",
+        "fakeui": {
+            "add_images": "Přidání obrázků několika kliknutími",
+            "edit": "Špatné nebo zastaralé informace? Tlačítko pro úpravu je přímo zde"
+        }
+    },
     "general": {
         "about": "Snadné úpravy a přidávání OpenStreetMap pro určité téma",
+        "aboutMapcomplete": "<h3>O programu</h3><p>Pomocí MapComplete přidejte informace OpenStreetMap na <b>jedno téma.</b> Odpovězte na otázky a během několika minut budou vaše příspěvky všude dostupné. Ve většině témat můžete přidat obrázky nebo dokonce zanechat recenzi. <b>Správce motivu</b> pro něj definuje prvky, otázky a jazyky.</p><h3>Další informace</h3><p>MapComplete vždy <b>nabízí další krok</b> k zjištění více o OpenStreetMap.<ul><li>Pokud je prvek iframe vložen do webové stránky, odkazuje na celoobrazovkový MapComplete.</li><li>Verze na celou obrazovku nabízí informace o OpenStreetMap.</li><li>Prohlížení funguje bez přihlášení, ale úpravy vyžadují účet OSM.</li><li>Pokud nejste přihlášeni, budete o to požádáni</li><li>Jakmile odpovíte na jedinou otázku, můžete přidat nové funkce na mapu</li><li>Po chvíli se zobrazí skutečné značky OSM, později odkaz na wiki</li></ul></p><br/><p>Všimli jste si <b>problému</b>? Máte <b>požadavek na funkci</b>? Chcete <b>pomoci s překladem</b>? Přejděte na <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zdrojový kód</a> nebo <a href='https://github.com/pietervdvn/MapComplete /issues' target='_blank'>sledovač problémů.</a> </p><p> Chcete vidět <b>svůj pokrok</b>? Sledujte počet úprav na <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
-            "addNewMapLabel": "Klikněte zde pro přidání nové položky",
             "addNew": "Přidat {category}",
-            "title": "Přidat novou funkci?",
-            "importTags": "Prvek dostane {tags}",
+            "addNewMapLabel": "Klikněte zde pro přidání nové položky",
             "confirmButton": "Přidat kategorii {category}<br/><div class='alert'>Váš příspěvek je viditelný pro všechny</div>",
             "disableFilters": "Vypnout všechny filtry",
             "import": {
@@ -42,56 +56,42 @@
                 "importTags": "Prvek dostane {tags}",
                 "officialThemesOnly": "Tlačítko importovat je pro neoficiální motivy zakázáno, aby se předešlo nehodám"
             },
+            "importTags": "Prvek dostane {tags}",
             "intro": "Klikli jste někam, kde zatím nejsou známy žádné údaje.<br/>",
             "layerNotEnabled": "Vrstva {layer} není povolena. Chcete-li přidat funkci, povolte tuto vrstvu",
             "openLayerControl": "Otevřete ovládací okno vrstvy",
             "pleaseLogin": "Chcete-li přidat novou funkci, přihlaste se",
             "presetInfo": "Nový bod zájmu bude mít {tags}",
             "stillLoading": "Data se stále načítají. Před přidáním nové funkce prosím chvíli počkejte.",
+            "title": "Přidat novou funkci?",
             "warnVisibleForEveryone": "Váš příspěvek bude viditelný pro všechny"
         },
+        "apply_button": {
+            "appliedOnAnotherObject": "Objekt {id} dostane {tags}",
+            "isApplied": "Změny jsou aplikovány"
+        },
         "attribution": {
-            "openOsmcha": "Zobrazit poslední úpravy provedené pomocí {theme}",
-            "openMapillary": "Zde otevřete Mapillary",
+            "attributionContent": "<p>Všechna data poskytuje <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, volně opakovaně použitelná pod <a href='https://osm.org/copyright' target='_blank'>licencí Open DataBase</a>.</p>",
             "attributionTitle": "Oznámení o připsání autorství",
+            "codeContributionsBy": "MapComplete vytvořili {contributors} a <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} dalších přispěvatelů</a>",
             "donate": "Podpořte MapComplete finančně",
-            "followOnTwitter": "Sledujte MapComplete na Twitteru",
-            "followBridge": "Účty Mastodon a Twitter jsou propojeny",
-            "followOnMastodon": "Sledujte MapComplete na Mastodonu",
             "editId": "Zde otevřete online editor OpenStreetMap",
             "editJosm": "Upravit zde pomocí JOSM",
+            "followBridge": "Účty Mastodon a Twitter jsou propojeny",
+            "followOnMastodon": "Sledujte MapComplete na Mastodonu",
+            "followOnTwitter": "Sledujte MapComplete na Twitteru",
             "iconAttribution": {
                 "title": "Použité ikony"
             },
-            "mapContributionsByAndHidden": "Aktuální viditelná data obsahují úpravy provedené {contributors} a {hiddenCount} dalšími přispěvateli",
-            "codeContributionsBy": "MapComplete vytvořili {contributors} a <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} dalších přispěvatelů</a>",
             "josmNotOpened": "JOSM se nepodařilo propojit. Ujistěte se, že je otevřený a že je povoleno dálkové ovládání",
             "josmOpened": "JOSM je otevřen",
             "mapContributionsBy": "Aktuální viditelná data obsahují úpravy provedené {contributors}",
-            "themeBy": "Téma spravuje {author}",
-            "attributionContent": "<p>Všechna data poskytuje <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, volně opakovaně použitelná pod <a href='https://osm.org/copyright' target='_blank'>licencí Open DataBase</a>.</p>",
+            "mapContributionsByAndHidden": "Aktuální viditelná data obsahují úpravy provedené {contributors} a {hiddenCount} dalšími přispěvateli",
             "mapillaryHelp": "<b>Mapillary</b> je online služba, která shromažďuje snímky na úrovni ulic a nabízí je pod bezplatnou licencí. Přispěvatelé mohou tyto obrázky používat ke zlepšení OpenStreetMap",
-            "openIssueTracker": "Podání chyby"
-        },
-        "apply_button": {
-            "isApplied": "Změny jsou aplikovány",
-            "appliedOnAnotherObject": "Objekt {id} dostane {tags}"
-        },
-        "aboutMapcomplete": "<h3>O programu</h3><p>Pomocí MapComplete přidejte informace OpenStreetMap na <b>jedno téma.</b> Odpovězte na otázky a během několika minut budou vaše příspěvky všude dostupné. Ve většině témat můžete přidat obrázky nebo dokonce zanechat recenzi. <b>Správce motivu</b> pro něj definuje prvky, otázky a jazyky.</p><h3>Další informace</h3><p>MapComplete vždy <b>nabízí další krok</b> k zjištění více o OpenStreetMap.<ul><li>Pokud je prvek iframe vložen do webové stránky, odkazuje na celoobrazovkový MapComplete.</li><li>Verze na celou obrazovku nabízí informace o OpenStreetMap.</li><li>Prohlížení funguje bez přihlášení, ale úpravy vyžadují účet OSM.</li><li>Pokud nejste přihlášeni, budete o to požádáni</li><li>Jakmile odpovíte na jedinou otázku, můžete přidat nové funkce na mapu</li><li>Po chvíli se zobrazí skutečné značky OSM, později odkaz na wiki</li></ul></p><br/><p>Všimli jste si <b>problému</b>? Máte <b>požadavek na funkci</b>? Chcete <b>pomoci s překladem</b>? Přejděte na <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zdrojový kód</a> nebo <a href='https://github.com/pietervdvn/MapComplete /issues' target='_blank'>sledovač problémů.</a> </p><p> Chcete vidět <b>svůj pokrok</b>? Sledujte počet úprav na <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>"
-    },
-    "favourite": {
-        "reload": "Znovu načíst data",
-        "loginNeeded": "<h3>Přihlášení</h3>Osobní rozvržení je k dispozici pouze pro uživatele OpenStreetMap"
-    },
-    "flyer": {
-        "fakeui": {
-            "edit": "Špatné nebo zastaralé informace? Tlačítko pro úpravu je přímo zde",
-            "add_images": "Přidání obrázků několika kliknutími"
-        },
-        "description": "Leták formátu A4 na propagaci MapComplete",
-        "editing": {
-            "title": "Jak vypadá uživatelské rozhraní?"
-        },
-        "examples": "K dispozici je mnoho tematických map, z nichž některé jsou zde otištěny.\n\nNa internetu je k dispozici mnoho dalších tematických map: o zdravotnictví, navigaci v interiéru, bezbariérovosti, odpadových zařízeních, veřejných knihovnách, přechodech pro chodce s duhovým nátěrem,... Objevte je všechny na mapcomplete.osm.be"
+            "openIssueTracker": "Podání chyby",
+            "openMapillary": "Zde otevřete Mapillary",
+            "openOsmcha": "Zobrazit poslední úpravy provedené pomocí {theme}",
+            "themeBy": "Téma spravuje {author}"
+        }
     }
 }

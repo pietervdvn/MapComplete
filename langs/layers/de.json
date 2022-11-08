@@ -619,6 +619,11 @@
                     }
                 },
                 "question": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist dieses Fahrradcafé geöffnet?"
+                }
             }
         },
         "title": {
@@ -916,6 +921,11 @@
                 },
                 "question": "Welche Ventile werden unterstützt?",
                 "render": "Diese Pumpe unterstützt die folgenden Ventile: {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Wann ist die Fahrradreparaturstation geöffnet?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {
@@ -3247,6 +3257,11 @@
                 },
                 "question": "Wann wurde der Defibrillator zuletzt überprüft?",
                 "render": "Dieser Defibrillator wurde zuletzt am {survey:date} überprüft"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Zu welchen Zeiten ist der Defibrillator verfügbar?"
+                }
             }
         },
         "title": {
@@ -3436,8 +3451,8 @@
             "tactile_writing_language": {
                 "render": {
                     "special": {
-                        "render_list_item": "Der Aufzug hat taktile Schrift in {language():font-bold}",
                         "question": "In welchen Sprachen hat der Aufzug taktile Schrift (Braille)?",
+                        "render_list_item": "Der Aufzug hat taktile Schrift in {language():font-bold}",
                         "render_single_language": "Der Aufzug hat taktile Schrift in {language():font-bold}"
                     }
                 }
@@ -4317,6 +4332,11 @@
                     }
                 },
                 "question": "Ist dies ein Hackerspace oder ein Makerspace?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Wann hat dieser Hackerspace geöffnet?"
+                }
             }
         },
         "title": {
@@ -6105,6 +6125,11 @@
                 },
                 "question": "Wo befindet sich dieser Container?"
             },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Wie sind die Öffnungszeiten dieser Recyclinganlage?"
+                }
+            },
             "operator": {
                 "question": "Welches Unternehmen betreibt diese Recyclinganlage?",
                 "render": "Diese Recyclinganlage wird betrieben von {operator}"
@@ -6276,8 +6301,8 @@
                     "special": {
                         "no_known_languages": "Die Unterrichtssprache der Schule ist unbekannt",
                         "question": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
-                        "render_single_language": "{language():font-bold} ist die Hauptsprache der Schule",
-                        "render_all": "Folgende Sprachen werden in der Schule verwendet:{list()}"
+                        "render_all": "Folgende Sprachen werden in der Schule verwendet:{list()}",
+                        "render_single_language": "{language():font-bold} ist die Hauptsprache der Schule"
                     }
                 }
             },
@@ -6722,23 +6747,23 @@
                 },
                 "question": "Gibt es eine Rampe an dieser Treppe?"
             },
-            "tactile_writing_language": {
-                "render": {
-                    "special": {
-                        "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}",
-                        "question": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
-                        "render_list_item": "Die Treppe hat taktile Schrift in {language():font-bold}"
-                    }
-                }
-            },
             "tactile_writing": {
-                "question": "Hat die Treppe eine taktile Schrift am Handlauf?",
                 "mappings": {
                     "0": {
                         "then": "Am Handlauf gibt es taktile Schrift"
                     },
                     "1": {
                         "then": "Am Handlauf gibt es keine taktile Schrift"
+                    }
+                },
+                "question": "Hat die Treppe eine taktile Schrift am Handlauf?"
+            },
+            "tactile_writing_language": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
+                        "render_list_item": "Die Treppe hat taktile Schrift in {language():font-bold}",
+                        "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
                     }
                 }
             }
@@ -7331,11 +7356,6 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wann ist die Einrichtung, in der sich die Toilette befindet, geöffnet?"
-                }
             }
         },
         "title": {

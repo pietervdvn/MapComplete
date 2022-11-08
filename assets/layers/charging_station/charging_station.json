@@ -3771,10 +3771,7 @@
       "override": {
         "question": {
           "en": "When is this charging station opened?",
-          "nl": "Wanneer is dit oplaadpunt beschikbaar??",
-          "da": "Hvornår er denne ladestation åben?",
-          "de": "Wann ist diese Ladestation geöffnet?",
-          "es": "¿Cuándo abre esta estación de carga?"
+          "nl": "Wanneer is dit oplaadpunt beschikbaar??"
         }
       },
       "id": "OH"
