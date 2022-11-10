@@ -1088,7 +1088,7 @@
         "shortDescription": "Map showing sport facilities.",
         "title": "Sports"
     },
-    "street_lighting": {
+   "street_lighting": {
         "description": "On this map you can find everything about street lighting",
         "layers": {
             "1": {
