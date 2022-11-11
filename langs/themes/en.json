@@ -1091,57 +1091,6 @@
     "stations": {
         "description": "View, edit and add details to a train station",
         "layers": {
-            "8": {
-                "description": "Find ticket machines for public transport tickets",
-                "name": "Ticket Machines",
-                "presets": {
-                    "0": {
-                        "title": "a ticket machine"
-                    }
-                },
-                "tagRenderings": {
-                    "operator": {
-                        "freeform": {
-                            "placeholder": "Name of the operator"
-                        },
-                        "question": "Who is the operator of this ticket machine?",
-                        "render": "This ticket machine is operated by {operator}"
-                    }
-                },
-                "title": {
-                    "render": "Ticket Machine"
-                }
-            },
-            "9": {
-                "description": "Find ticket validators to validate public transport tickets",
-                "name": "Ticket Validators",
-                "presets": {
-                    "0": {
-                        "title": "a ticket validator"
-                    }
-                },
-                "tagRenderings": {
-                    "operator": {
-                        "freeform": {
-                            "placeholder": "Name of the operator"
-                        },
-                        "question": "Who is the operator of this ticket validator?",
-                        "render": "This ticket validator is operated by {operator}"
-                    },
-                    "payment-options": {
-                        "override": {
-                            "mappings+": {
-                                "0": {
-                                    "then": "This ticket validator accepts OV-Chipkaart"
-                                }
-                            }
-                        }
-                    }
-                },
-                "title": {
-                    "render": "Ticket Validator"
-                }
-            },
             "11": {
                 "description": "Displays showing the trains that will leave from this station",
                 "name": "Departures boards",
