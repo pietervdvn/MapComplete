@@ -116,10 +116,7 @@ export default class ConfirmLocationOfPoint extends Combine {
 
         let confirmButton: BaseUIElement = new SubtleButton(
             preset.icon(),
-            new Combine([
-                confirmText,
-                Translations.t.general.add.warnVisibleForEveryone.Clone().SetClass("alert"),
-            ]).SetClass("flex flex-col")
+            new Combine([confirmText]).SetClass("flex flex-col")
         )
             .SetClass("font-bold break-words")
             .onClick(() => {
@@ -139,8 +136,13 @@ export default class ConfirmLocationOfPoint extends Combine {
                 )
             })
 
+        const warn = Translations.t.general.add.warnVisibleForEveryone
+            .Clone()
+            .SetClass("alert w-full block")
         if (preciseInput !== undefined) {
-            confirmButton = new Combine([preciseInput, confirmButton])
+            confirmButton = new Combine([preciseInput, warn, confirmButton])
+        } else {
+            confirmButton = new Combine([warn, confirmButton])
         }
 
         const openLayerControl = new SubtleButton(

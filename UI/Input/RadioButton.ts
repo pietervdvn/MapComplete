@@ -13,8 +13,8 @@ export class RadioButton<T> extends InputElement<T> {
     constructor(
         elements: InputElement<T>[],
         options?: {
-            selectFirstAsDefault?: true | boolean,
-            dontStyle?: boolean,
+            selectFirstAsDefault?: true | boolean
+            dontStyle?: boolean
             value?: UIEventSource<T>
         }
     ) {

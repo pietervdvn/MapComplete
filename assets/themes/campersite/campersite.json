@@ -13,7 +13,8 @@
     "hu": "Lakóautós megállóhelyek",
     "ca": "Llocs d'acampada",
     "es": "Campings",
-    "da": "Campingpladser"
+    "da": "Campingpladser",
+    "pa_PK": "کیمپ‌سایٹاں"
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -66,7 +67,8 @@
         "id": "Tempat camping",
         "ca": "Llocs d'acampada",
         "es": "Sitios de Acampada",
-        "da": "Campingpladser"
+        "da": "Campingpladser",
+        "pa_PK": "کیمب‌سائیٹاں"
       },
       "minzoom": 10,
       "source": {
@@ -110,7 +112,8 @@
               "pt_BR": "Locais de acampamento sem nome",
               "de": "Unbenannter Wohnmobilstellplatz",
               "ca": "Lloc d'acampada sense nom",
-              "da": "Unavngiven autocamperplads"
+              "da": "Unavngiven autocamperplads",
+              "pa_PK": "بے نام کیمپ‌سائیٹ"
             }
           }
         ]
@@ -129,7 +132,8 @@
         "id": "Tempat camping",
         "ca": "llocs d'acampada",
         "es": "Sitios de acampada",
-        "da": "autocamperpladser"
+        "da": "autocamperpladser",
+        "pa_PK": "کیمب‌سائیٹاں"
       },
       "tagRenderings": [
         "images",
@@ -792,7 +796,8 @@
             "hu": "lakóautós megállóhely",
             "ca": "un lloc d'acampada",
             "es": "Un camping",
-            "da": "en autocamperplads"
+            "da": "en autocamperplads",
+            "pa_PK": "اِک کیمپ‌سائیٹ"
           },
           "description": {
             "en": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",

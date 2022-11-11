@@ -1,10 +1,18 @@
-import {BBox} from "./BBox"
+import { BBox } from "./BBox"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import * as turf from "@turf/turf"
-import {AllGeoJSON, booleanWithin, Coord, Feature, Geometry, MultiPolygon, Polygon,} from "@turf/turf"
-import {LineString, Point} from "geojson"
+import {
+    AllGeoJSON,
+    booleanWithin,
+    Coord,
+    Feature,
+    Geometry,
+    MultiPolygon,
+    Polygon,
+} from "@turf/turf"
+import { GeoJSON, LineString, Point } from "geojson"
 import togpx from "togpx"
-import Constants from "../Models/Constants";
+import Constants from "../Models/Constants"
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -29,8 +37,8 @@ export class GeoOperations {
      * Returns [lon,lat] coordinates
      * @param feature
      */
-    static centerpointCoordinates(feature: AllGeoJSON): [number, number] {
-        return <[number, number]>turf.center(feature).geometry.coordinates
+    static centerpointCoordinates(feature: AllGeoJSON | GeoJSON): [number, number] {
+        return <[number, number]>turf.center(<any>feature).geometry.coordinates
     }
 
     /**
@@ -383,14 +391,15 @@ export class GeoOperations {
             .features.map((p) => <[number, number]>p.geometry.coordinates)
     }
 
-    public static AsGpx(feature: Feature, options?: {layer?: LayerConfig, gpxMetadata?: any }) : string{
-
+    public static AsGpx(
+        feature: Feature,
+        options?: { layer?: LayerConfig; gpxMetadata?: any }
+    ): string {
         const metadata = options?.gpxMetadata ?? {}
         metadata["time"] = metadata["time"] ?? new Date().toISOString()
         const tags = feature.properties
 
         if (options?.layer !== undefined) {
-
             metadata["name"] = options?.layer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
             metadata["desc"] = "Generated with MapComplete layer " + options?.layer.id
             if (tags._backend?.contains("openstreetmap")) {

@@ -17,6 +17,9 @@ import MoveWizard from "./MoveWizard"
 import Toggle from "../Input/Toggle"
 import Lazy from "../Base/Lazy"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
+import { Tag } from "../../Logic/Tags/Tag"
+import Svg from "../../Svg"
+import Translations from "../i18n/Translations"
 
 export default class FeatureInfoBox extends ScrollableFullScreen {
     public constructor(
@@ -79,7 +82,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         state: FeaturePipelineState
     ): BaseUIElement {
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>()
-
+        const t = Translations.t.general
         const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map((tr) => tr.group))
         if (state?.featureSwitchUserbadge?.data ?? true) {
             const questionSpecs = layerConfig.tagRenderings.filter((tr) => tr.id === "questions")
@@ -98,7 +101,34 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             }
         }
 
-        const allRenderings = []
+        const withQuestion = layerConfig.tagRenderings.filter(
+            (tr) => tr.question !== undefined
+        ).length
+
+        const allRenderings: BaseUIElement[] = [
+            new VariableUiElement(
+                tags
+                    .map((data) => data[Tag.newlyCreated.key])
+                    .map((isCreated) => {
+                        if (isCreated !== Tag.newlyCreated.value) {
+                            return undefined
+                        }
+                        const els = []
+                        const thanks = new Combine([
+                            Svg.party_svg().SetClass(
+                                "w-12 h-12 shrink-0 p-1 m-1 bg-white rounded-full block"
+                            ),
+                            t.newlyCreated,
+                        ]).SetClass("flex w-full thanks content-center")
+                        els.push(thanks)
+                        if (withQuestion > 0) {
+                            els.push(t.feelFreeToSkip)
+                        }
+
+                        return new Combine(els).SetClass("pb-4 mb-4 border-b block border-black")
+                    })
+            ),
+        ]
         for (let i = 0; i < allGroupNames.length; i++) {
             const groupName = allGroupNames[i]
 

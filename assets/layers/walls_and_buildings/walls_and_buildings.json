@@ -114,7 +114,8 @@
           "tagrendering": {
             "en": "An <a href='#{id}'>entrance</a> of {canonical(width)}",
             "de": "Ein <a href='#{id}'>Eingang</a> von {canonical(width)}",
-            "da": "En <a href='#{id}'>indgang</a> på {canonical(width)}"
+            "da": "En <a href='#{id}'>indgang</a> på {canonical(width)}",
+            "nl": "Een <a href='#{id}'>ingang</a> van {canonical(width)}"
           }
         }
       },

@@ -9,7 +9,8 @@
     "it": "Servizi igienici",
     "ca": "Lavabos",
     "es": "Baños",
-    "da": "Toiletter"
+    "da": "Toiletter",
+    "pa_PK": "ٹوئیلٹاں"
   },
   "minzoom": 12,
   "source": {
@@ -25,7 +26,8 @@
       "it": "Servizi igienici",
       "ca": "Lavabo",
       "es": "Baño",
-      "da": "Toilet"
+      "da": "Toilet",
+      "pa_PK": "ٹوئیلٹ"
     }
   },
   "presets": [
@@ -705,7 +707,8 @@
             "nl": "meter",
             "fr": "mètre",
             "de": "Meter",
-            "da": "meter"
+            "da": "meter",
+            "pa_PK": "میٹر"
           }
         },
         {
@@ -719,7 +722,8 @@
             "nl": "centimeter",
             "fr": "centimètre",
             "de": "Zentimeter",
-            "da": "centimeter"
+            "da": "centimeter",
+            "pa_PK": "سینٹیمیٹر"
           }
         }
       ]

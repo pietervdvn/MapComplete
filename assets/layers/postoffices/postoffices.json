@@ -99,20 +99,23 @@
     {
       "id": "post_partner",
       "question": {
-        "en": "Is this a post partner?"
+        "en": "Is this a post partner?",
+        "de": "Ist dies ein Post-Partner?"
       },
       "condition": "post_office=post_partner",
       "mappings": [
         {
           "if": "post_office=post_partner",
           "then": {
-            "en": "This shop is a post partner"
+            "en": "This shop is a post partner",
+            "de": "Dieses Geschäft ist ein Post-Partner"
           }
         },
         {
           "if": "post_office=",
           "then": {
-            "en": "This shop is not a post partner"
+            "en": "This shop is not a post partner",
+            "de": "Dieses Geschäft ist kein Post-Partner"
           },
           "addExtraTags": [
             "was:post_office=post_partner"
@@ -123,10 +126,12 @@
     {
       "id": "partner-brand",
       "render": {
-        "en": "This location offers services for {post_office:brand}"
+        "en": "This location offers services for {post_office:brand}",
+        "de": "Dieser Standort bietet Dienstleistungen für {post_office:brand} an"
       },
       "question": {
-        "en": "For which brand does this location offer services?"
+        "en": "For which brand does this location offer services?",
+        "de": "Für welche Marke bietet dieser Standort Dienstleistungen an?"
       },
       "condition": "post_office=post_partner",
       "freeform": {
@@ -138,46 +143,53 @@
         {
           "if": "post_office:brand=DHL",
           "then": {
-            "en": "This location offers services for DHL"
+            "en": "This location offers services for DHL",
+            "de": "Dieser Standort bietet Dienstleistungen für DHL an"
           },
           "hideInAnswer": "_country=de"
         },
         {
           "if": "post_office:brand=DPD",
           "then": {
-            "en": "This location offers services for DPD"
+            "en": "This location offers services for DPD",
+            "de": "Dieser Standort bietet Dienstleistungen für DPD an"
           }
         },
         {
           "if": "post_office:brand=GLS",
           "then": {
-            "en": "This location offers services for GLS"
+            "en": "This location offers services for GLS",
+            "de": "Dieser Standort bietet Dienstleistungen für GLS an"
           }
         },
         {
           "if": "post_office:brand=UPS",
           "then": {
-            "en": "This location offers services for UPS"
+            "en": "This location offers services for UPS",
+            "de": "Dieser Standort bietet Dienstleistungen für UPS an"
           }
         },
         {
           "if": "post_office:brand=DHL Paketshop",
           "then": {
-            "en": "This location is a DHL Paketshop"
+            "en": "This location is a DHL Paketshop",
+            "de": "Dieser Standort ist ein DHL Paketshop"
           },
           "hideInAnswer": "_country!=de"
         },
         {
           "if": "post_office:brand=Hermes PaketShop",
           "then": {
-            "en": "This location is a Hermes PaketShop"
+            "en": "This location is a Hermes PaketShop",
+            "de": "Dieser Standort ist ein Hermes PaketShop"
           },
           "hideInAnswer": "_country!=de"
         },
         {
           "if": "post_office:brand=PostNL",
           "then": {
-            "en": "This location is a PostNL-point"
+            "en": "This location is a PostNL-point",
+            "de": "Dieser Standort ist ein PostNL-Punkt"
           },
           "hideInAnswer": {
             "and": [
@@ -189,7 +201,8 @@
         {
           "if": "post_office:brand=bpost",
           "then": {
-            "en": "This location offers services for bpost"
+            "en": "This location offers services for bpost",
+            "de": "Dieser Standort bietet Dienstleistungen für bpost an"
           },
           "hideInAnswer": "_country!=be"
         }
@@ -198,10 +211,12 @@
     {
       "id": "letter-from",
       "render": {
-        "en": "You can post letters with these companies: {post_office:letter_from}"
+        "en": "You can post letters with these companies: {post_office:letter_from}",
+        "de": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}"
       },
       "question": {
-        "en": "Can you post a letter here?"
+        "en": "Can you post a letter here?",
+        "de": "Können Sie hier einen Brief aufgeben?"
       },
       "freeform": {
         "key": "post_office:letter_from",
@@ -211,13 +226,15 @@
         {
           "if": "post_office:letter_from=yes",
           "then": {
-            "en": "You can post letters here"
+            "en": "You can post letters here",
+            "de": "Sie können Briefe hier aufgeben"
           }
         },
         {
           "if": "post_office:letter_from=no",
           "then": {
-            "en": "You can't post letters here"
+            "en": "You can't post letters here",
+            "de": "Sie können hier keine Briefe aufgeben"
           }
         }
       ]
@@ -225,10 +242,12 @@
     {
       "id": "parcel-from",
       "render": {
-        "en": "You can post parcels with these companies: {post_office:parcel_from}"
+        "en": "You can post parcels with these companies: {post_office:parcel_from}",
+        "de": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}"
       },
       "question": {
-        "en": "Can you send a parcel here?"
+        "en": "Can you send a parcel here?",
+        "de": "Können Sie hier Pakete versenden?"
       },
       "freeform": {
         "key": "post_office:parcel_from",
@@ -238,13 +257,15 @@
         {
           "if": "post_office:parcel_from=yes",
           "then": {
-            "en": "You can send parcels here"
+            "en": "You can send parcels here",
+            "de": "Hier können Sie Pakete versenden"
           }
         },
         {
           "if": "post_office:parcel_from=no",
           "then": {
-            "en": "You can't send parcels here"
+            "en": "You can't send parcels here",
+            "de": "Sie können hier keine Pakete versenden"
           }
         }
       ]
@@ -252,10 +273,12 @@
     {
       "id": "parcel-pickup",
       "render": {
-        "en": "You can pick up parcels from these companies: {post_office:parcel_pickup}"
+        "en": "You can pick up parcels from these companies: {post_office:parcel_pickup}",
+        "de": "Sie können Pakete von diesen Unternehmen abholen: {post_office:parcel_pickup}"
       },
       "question": {
-        "en": "Can you pick up missed parcels here?"
+        "en": "Can you pick up missed parcels here?",
+        "de": "Können Sie hier verpasste Pakete abholen?"
       },
       "freeform": {
         "key": "post_office:parcel_pickup",
@@ -265,13 +288,15 @@
         {
           "if": "post_office:parcel_pickup=yes",
           "then": {
-            "en": "You can pick up missed parcels here"
+            "en": "You can pick up missed parcels here",
+            "de": "Hier können Sie verpasste Pakete abholen"
           }
         },
         {
           "if": "post_office:parcel_pickup=no",
           "then": {
-            "en": "You can't pick up missed parcels here"
+            "en": "You can't pick up missed parcels here",
+            "de": "Sie können hier keine verpassten Pakete abholen"
           }
         }
       ]
@@ -279,10 +304,12 @@
     {
       "id": "parcel-to",
       "render": {
-        "en": "You can send parcels to here for pickup with these companies: {post_office:parcel_to}"
+        "en": "You can send parcels to here for pickup with these companies: {post_office:parcel_to}",
+        "de": "Mit diesen Unternehmen können Sie Pakete zur Abholung hierher senden: {post_office:parcel_to}"
       },
       "question": {
-        "en": "Can you send parcels to here for pickup?"
+        "en": "Can you send parcels to here for pickup?",
+        "de": "Können Sie Pakete zur Abholung hierher schicken?"
       },
       "freeform": {
         "key": "post_office:parcel_to",
@@ -292,13 +319,15 @@
         {
           "if": "post_office:parcel_to=yes",
           "then": {
-            "en": "You can send parcels to here for pickup"
+            "en": "You can send parcels to here for pickup",
+            "de": "Sie können Pakete zur Abholung hierher schicken"
           }
         },
         {
           "if": "post_office:parcel_to=no",
           "then": {
-            "en": "You can't send parcels to here for pickup"
+            "en": "You can't send parcels to here for pickup",
+            "de": "Sie können keine Pakete zur Abholung hierher schicken"
           }
         }
       ]
@@ -306,10 +335,12 @@
     {
       "id": "stamps",
       "render": {
-        "en": "You can buy stamps from companies: {post_office:stamps}"
+        "en": "You can buy stamps from companies: {post_office:stamps}",
+        "de": "Sie können Briefmarken folgender Unternehmen kaufen: {post_office:stamps}"
       },
       "question": {
-        "en": "Can you buy stamps here?"
+        "en": "Can you buy stamps here?",
+        "de": "Kann man hier Briefmarken kaufen?"
       },
       "freeform": {
         "key": "post_office:stamps",
@@ -319,13 +350,15 @@
         {
           "if": "post_office:stamps=yes",
           "then": {
-            "en": "You can buy stamps here"
+            "en": "You can buy stamps here",
+            "de": "Sie können hier Briefmarken kaufen"
           }
         },
         {
           "if": "post_office:stamps=no",
           "then": {
-            "en": "You can't buy stamps here"
+            "en": "You can't buy stamps here",
+            "de": "Sie können hier keine Briefmarken kaufen"
           }
         }
       ]

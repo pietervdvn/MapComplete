@@ -505,46 +505,19 @@
       "id": "defibrillator-phone"
     },
     {
-      "render": {
-        "en": "{opening_hours_table(opening_hours)}",
-        "nl": "{opening_hours_table(opening_hours)}",
-        "fr": "{opening_hours_table(opening_hours)}",
-        "it": "{opening_hours_table(opening_hours)}",
-        "ru": "{opening_hours_table(opening_hours)}",
-        "de": "{opening_hours_table(opening_hours)}",
-        "sl": "{opening_hours_table(opening_hours)}",
-        "ca": "{opening_hours_table(opening_hours)}",
-        "es": "{opening_hours_table(opening_hours)}"
-      },
-      "question": {
-        "en": "At what times is this defibrillator available?",
-        "nl": "Wanneer is deze defibrillator beschikbaar?",
-        "fr": "À quels horaires ce défibrillateur est-il accessible ?",
-        "it": "In quali orari è disponibile questo defibrillatore?",
-        "ru": "В какое время доступен этот дефибриллятор?",
-        "de": "Zu welchen Zeiten ist der Defibrillator verfügbar?",
-        "sl": "Ob katerih urah je ta defibrilator na voljo?",
-        "es": "¿A qué horas está disponible este desfibrilador?"
-      },
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "mappings": [
-        {
-          "if": "opening_hours=24/7",
-          "then": {
-            "en": "24/7 opened (including holidays)",
-            "nl": "24/7 open (inclusief feestdagen)",
-            "fr": "Ouvert 24/7 (jours feriés inclus)",
-            "it": "Aperto 24/7 (festivi inclusi)",
-            "de": "24/7 geöffnet (auch an Feiertagen)",
-            "sl": "Na voljo 24/7 (tudi za praznike)",
-            "es": "Abierto 24/7 (incluyendo festivos)"
-          }
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "question": {
+          "en": "At what times is this defibrillator available?",
+          "nl": "Wanneer is deze defibrillator beschikbaar?",
+          "fr": "À quels horaires ce défibrillateur est-il accessible ?",
+          "it": "In quali orari è disponibile questo defibrillatore?",
+          "ru": "В какое время доступен этот дефибриллятор?",
+          "de": "Zu welchen Zeiten ist der Defibrillator verfügbar?",
+          "sl": "Ob katerih urah je ta defibrilator na voljo?",
+          "es": "¿A qué horas está disponible este desfibrilador?"
         }
-      ],
-      "id": "defibrillator-opening_hours"
+      }
     },
     {
       "render": {

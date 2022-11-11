@@ -96,15 +96,6 @@
                 "question": "V katerem nadstropju je defibrilator?",
                 "render": "Ta defibrilator je v {level}. nadstropju"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Na voljo 24/7 (tudi za praznike)"
-                    }
-                },
-                "question": "Ob katerih urah je ta defibrilator na voljo?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "Kakšna je telefonska številka za vprašanja o tem defibrilatorju?",
                 "render": "Telefonska številka za vprašanja o tem defibrilatorju: <a href='tel:{phone}'>{phone}</a>"
@@ -121,6 +112,11 @@
                 },
                 "question": "Kdaj je bil ta defibrilator nazadnje opažen?",
                 "render": "Ta defibrilator je bil nazadnje opažen {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Ob katerih urah je ta defibrilator na voljo?"
+                }
             }
         },
         "title": {

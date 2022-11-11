@@ -4,7 +4,8 @@
     "en": "Kerbs",
     "nl": "Stoepranden",
     "de": "Bordsteine",
-    "fr": "Bordures"
+    "fr": "Bordures",
+    "pa_PK": "کرب"
   },
   "description": {
     "en": "A layer showing kerbs.",
@@ -21,7 +22,8 @@
       "en": "Kerb",
       "nl": "Stoeprand",
       "de": "Bordstein",
-      "fr": "Bordure"
+      "fr": "Bordure",
+      "pa_PK": "کرب"
     }
   },
   "mapRendering": [
@@ -202,7 +204,8 @@
         {
           "if": "kerb:height=0",
           "then": {
-            "en": "This kerb is flush and is lower than 1cm."
+            "en": "This kerb is flush and is lower than 1cm.",
+            "de": "Der Bordstein ist bündig und niedriger als 1 cm."
           }
         }
       ]
@@ -270,7 +273,7 @@
           "question": {
             "en": "Flush kerb (~0cm)",
             "nl": "Vlakke stoeprand (~0cm)",
-            "de": "Bündiger Bordstein (~0cm)",
+            "de": "Bündiger Bordstein (~0 cm)",
             "fr": "Bordure affleurante (~0cm)"
           }
         },
@@ -309,13 +312,15 @@
             "en": "centimeters",
             "nl": "centimeter",
             "de": "Zentimeter",
-            "fr": "centimètres"
+            "fr": "centimètres",
+            "pa_PK": "سینٹیمیٹر"
           },
           "humanSingular": {
             "en": "centimeter",
             "nl": "centimeter",
             "de": "Zentimeter",
-            "fr": "centimètre"
+            "fr": "centimètre",
+            "pa_PK": "سینٹیمیٹر"
           }
         },
         {
@@ -328,13 +333,15 @@
             "en": "meters",
             "nl": "meter",
             "de": "Meter",
-            "fr": "mètres"
+            "fr": "mètres",
+            "pa_PK": "میٹر"
           },
           "humanSingular": {
             "en": "meter",
             "nl": "meter",
             "de": "Meter",
-            "fr": "mètre"
+            "fr": "mètre",
+            "pa_PK": "میٹر"
           }
         }
       ],

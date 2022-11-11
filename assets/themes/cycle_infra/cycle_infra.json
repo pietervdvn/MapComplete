@@ -12,7 +12,8 @@
     "ca": "Infraestructura per a bicicletes",
     "es": "Infraestructura ciclista",
     "fr": "Infrastructure cyclable",
-    "da": "Cykelinfrastruktur"
+    "da": "Cykelinfrastruktur",
+    "pa_PK": "سائیکل ڈھانچا"
   },
   "shortDescription": {
     "en": "A map where you can view and edit things related to the bicycle infrastructure.",

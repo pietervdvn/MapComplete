@@ -10,7 +10,7 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { Unit } from "../../Models/Unit"
 import Lazy from "../Base/Lazy"
 import { FixedUiElement } from "../Base/FixedUiElement"
-import {EditButton} from "./SaveButton";
+import { EditButton } from "./SaveButton"
 
 export default class EditableTagRendering extends Toggle {
     constructor(
@@ -71,7 +71,7 @@ export default class EditableTagRendering extends Toggle {
             // We have a question and editing is enabled
             const answerWithEditButton = new Combine([
                 answer,
-                new EditButton(state.osmConnection,() => {
+                new EditButton(state.osmConnection, () => {
                     editMode.setData(true)
                 }),
             ]).SetClass("flex justify-between w-full")

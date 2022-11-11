@@ -594,18 +594,9 @@
                 },
                 "question": "Does this bike cafe offer a bike pump for use by anyone?"
             },
-            "bike_cafe-email": {
-                "question": "What is the email address of {name}?"
-            },
             "bike_cafe-name": {
                 "question": "What is the name of this bike cafe?",
                 "render": "This bike cafe is called {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "When it this bike café opened?"
-            },
-            "bike_cafe-phone": {
-                "question": "What is the phone number of {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -629,8 +620,10 @@
                 },
                 "question": "Are there tools here to repair your own bike?"
             },
-            "bike_cafe-website": {
-                "question": "What is the website of {name}?"
+            "opening_hours": {
+                "override": {
+                    "question": "When it this bike café opened?"
+                }
             }
         },
         "title": {
@@ -907,14 +900,6 @@
                 },
                 "question": "Does the pump have a pressure indicator or manometer?"
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Always open"
-                    }
-                },
-                "question": "When is this bicycle repair point open?"
-            },
             "bike_repair_station-operator": {
                 "question": "Who maintains this cycle pump?",
                 "render": "Maintained by {operator}"
@@ -936,6 +921,11 @@
                 },
                 "question": "What valves are supported?",
                 "render": "This pump supports the following valves: {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "When is this bicycle repair point open?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {
@@ -1543,12 +1533,9 @@
                 "render": "Part of the network <b>{network}</b>"
             },
             "OH": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 opened (including holidays)"
-                    }
-                },
-                "question": "When is this charging station opened?"
+                "override": {
+                    "question": "When is this charging station opened?"
+                }
             },
             "Operational status": {
                 "mappings": {
@@ -3259,15 +3246,6 @@
                 "question": "On which floor is this defibrillator located?",
                 "render": "This defibrillator is on floor {level}"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7 opened (including holidays)"
-                    }
-                },
-                "question": "At what times is this defibrillator available?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "What is the phone number for questions about this defibrillator?",
                 "render": "Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>"
@@ -3284,6 +3262,11 @@
                 },
                 "question": "When was this defibrillator last surveyed?",
                 "render": "This defibrillator was last surveyed on {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "At what times is this defibrillator available?"
+                }
             }
         },
         "title": {
@@ -4329,15 +4312,6 @@
                 "question": "What is the name of this hackerspace?",
                 "render": "This hackerspace is named <b>{name}</b>"
             },
-            "hackerspaces-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Opened 24/7"
-                    }
-                },
-                "question": "When is this hackerspace opened?",
-                "render": "{opening_hours_table()}"
-            },
             "hackerspaces-start_date": {
                 "question": "When was this hackerspace founded?",
                 "render": "This hackerspace was founded at {start_date}"
@@ -4363,6 +4337,11 @@
                     }
                 },
                 "question": "Is this a hackerspace or a makerspace?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "When is this hackerspace opened?"
+                }
             }
         },
         "title": {
@@ -5559,6 +5538,11 @@
             }
         },
         "name": "pharmacy",
+        "presets": {
+            "0": {
+                "title": "a pharmacy"
+            }
+        },
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -6172,13 +6156,10 @@
                 },
                 "question": "Where is this container located?"
             },
-            "opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "24/7"
-                    }
-                },
-                "question": "What are the opening hours of this recycling facility?"
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "What are the opening hours of this recycling facility?"
+                }
             },
             "operator": {
                 "question": "What company operates this recycling facility?",

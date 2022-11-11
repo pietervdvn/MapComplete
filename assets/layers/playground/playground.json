@@ -7,7 +7,8 @@
     "de": "Spielplätze",
     "it": "Campi da gioco",
     "fr": "Aire de jeu",
-    "ca": "Parcs infantils"
+    "ca": "Parcs infantils",
+    "pa_PK": "کھید دے میدان"
   },
   "minzoom": 13,
   "source": {
@@ -28,7 +29,8 @@
     "ru": "Детские площадки",
     "de": "Spielplätze",
     "fr": "Aire de jeu",
-    "ca": "Parcs infantils"
+    "ca": "Parcs infantils",
+    "pa_PK": "کھید دے میدان"
   },
   "title": {
     "render": {
@@ -38,7 +40,8 @@
       "ru": "Детская площадка",
       "de": "Spielplatz",
       "fr": "Aire de jeu",
-      "ca": "Parc infantil"
+      "ca": "Parc infantil",
+      "pa_PK": "کھید دے میدان"
     },
     "mappings": [
       {

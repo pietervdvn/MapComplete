@@ -10,7 +10,8 @@
     "nb_NO": "Postkoder",
     "nl": "Postcodes",
     "fr": "Codes postaux",
-    "da": "Postnumre"
+    "da": "Postnumre",
+    "pa_PK": "ڈاک کوڈ"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -22,7 +23,8 @@
     "nb_NO": "Postkoder",
     "nl": "Postcodes",
     "fr": "Codes postaux",
-    "da": "Postnumre"
+    "da": "Postnumre",
+    "pa_PK": "ڈاک کوڈ"
   },
   "description": {
     "en": "Postal codes",
@@ -34,7 +36,8 @@
     "nl": "Postcodes",
     "fr": "Codes postaux",
     "da": "Postnumre",
-    "nb_NO": "Postnummer"
+    "nb_NO": "Postnummer",
+    "pa_PK": "ڈاک کوڈ"
   },
   "icon": "./assets/themes/postal_codes/townhall.svg",
   "startLat": 0,
@@ -57,7 +60,8 @@
         "nb_NO": "postkoder",
         "nl": "postcodes",
         "fr": "codes postaux",
-        "da": "postnumre"
+        "da": "postnumre",
+        "pa_PK": "ڈاک کوڈ"
       },
       "minzoom": 8,
       "title": {

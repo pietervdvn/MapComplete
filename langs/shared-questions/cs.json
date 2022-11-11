@@ -100,7 +100,8 @@
             }
         },
         "opening_hours": {
-            "question": "Jaká je otevírací doba {title()}?"
+            "question": "Jaká je otevírací doba {title()}?",
+            "render": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
         },
         "payment-options": {
             "mappings": {
@@ -124,6 +125,79 @@
                     }
                 }
             }
+        },
+        "phone": {
+            "question": "Jaké je telefonní číslo {title()}?"
+        },
+        "service:electricity": {
+            "mappings": {
+                "0": {
+                    "then": "V interiéru je k dispozici dostatek domácích zásuvek, kde si zákazníci mohou nabíjet elektroniku"
+                },
+                "1": {
+                    "then": "V interiéru je zákazníkům k dispozici několik domácích zásuvek, kde si mohou nabít elektroniku"
+                },
+                "2": {
+                    "then": "V interiéru nejsou zákazníkům k dispozici žádné zásuvky, ale na požádání personálu je možné je nabíjet"
+                },
+                "3": {
+                    "then": "Zákazníci v interiéru nemají k dispozici žádné domácí zásuvky"
+                }
+            },
+            "question": "Má toto zařízení elektrické zásuvky, které jsou zákazníkům k dispozici, když jsou uvnitř?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Kouření je <b>povoleno</b>"
+                },
+                "1": {
+                    "then": "Kouření <b>není povoleno</b>"
+                },
+                "2": {
+                    "then": "Kouření je <b>povoleno venku</b>."
+                }
+            },
+            "question": "Je na {title()} povoleno kouřit?"
+        },
+        "website": {
+            "question": "Jaká je webová stránka {title()}?"
+        },
+        "wheelchair-access": {
+            "mappings": {
+                "0": {
+                    "then": "Toto místo je speciálně upraveno pro vozíčkáře"
+                },
+                "1": {
+                    "then": "Toto místo je snadno dosažitelné s invalidním vozíkem"
+                },
+                "2": {
+                    "then": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
+                },
+                "3": {
+                    "then": "Na toto místo se nelze dostat s invalidním vozíkem"
+                }
+            },
+            "question": "Je toto místo přístupné pro vozíčkáře?"
+        },
+        "wikipedia": {
+            "mappings": {
+                "0": {
+                    "then": "Žádná stránka na Wikipedii zatím nebyla propojena"
+                },
+                "1": {
+                    "then": "Žádná stránka na Wikipedii zatím nebyla propojena"
+                }
+            },
+            "question": "Jaká je odpovídající entita Wikidata?"
+        },
+        "wikipedialink": {
+            "mappings": {
+                "0": {
+                    "then": "Není propojeno s Wikipedií"
+                }
+            },
+            "question": "Jaká je odpovídající položka ve Wikipedii?"
         }
     }
 }

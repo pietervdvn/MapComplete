@@ -121,7 +121,8 @@
         "es": "nodos",
         "nb_NO": "noder",
         "nl": "knooppunten",
-        "fr": "noeuds"
+        "fr": "noeuds",
+        "pa_PK": "نوڈ"
       },
       "source": {
         "osmTags": {

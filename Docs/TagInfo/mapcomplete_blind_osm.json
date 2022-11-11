@@ -1052,6 +1052,22 @@
       "value": "steps"
     },
     {
+      "key": "image",
+      "description": "The layer 'Stairs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Stairs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Stairs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Stairs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
       "key": "handrail",
       "description": "Layer 'Stairs' shows handrail=yes with a fixed text, namely 'These stairs have a handrail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind')",
       "value": "yes"
@@ -1060,6 +1076,31 @@
       "key": "handrail",
       "description": "Layer 'Stairs' shows handrail=no with a fixed text, namely 'These stairs do <b>not</b> have a handrail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind')",
       "value": "no"
+    },
+    {
+      "key": "tactile_writing",
+      "description": "Layer 'Stairs' shows tactile_writing=yes with a fixed text, namely 'There is tactile writing on the handrail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_writing",
+      "description": "Layer 'Stairs' shows tactile_writing=no with a fixed text, namely 'There is no tactile writing on the handrail' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": "no"
+    },
+    {
+      "key": "conveying",
+      "description": "Layer 'Stairs' shows conveying=yes with a fixed text, namely 'This is an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": "yes"
+    },
+    {
+      "key": "conveying",
+      "description": "Layer 'Stairs' shows conveying=no with a fixed text, namely 'This is not an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": "no"
+    },
+    {
+      "key": "conveying",
+      "description": "Layer 'Stairs' shows  with a fixed text, namely 'This is not an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
+      "value": ""
     },
     {
       "key": "ramp:bicycle",
@@ -1084,16 +1125,6 @@
     {
       "key": "ramp",
       "description": "Layer 'Stairs' shows ramp=no with a fixed text, namely 'There is no ramp at these stairs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind')",
-      "value": "no"
-    },
-    {
-      "key": "conveying",
-      "description": "Layer 'Stairs' shows conveying=yes with a fixed text, namely 'This is an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
-      "value": "yes"
-    },
-    {
-      "key": "conveying",
-      "description": "Layer 'Stairs' shows conveying=no with a fixed text, namely 'This is not an escalator' (in the MapComplete.osm.be theme 'OSM for the blind')",
       "value": "no"
     }
   ]

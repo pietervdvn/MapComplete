@@ -191,18 +191,9 @@
                 },
                 "question": "这家自行车咖啡为每个使用者提供打气筒吗？"
             },
-            "bike_cafe-email": {
-                "question": "{name}的电子邮箱是什么？"
-            },
             "bike_cafe-name": {
                 "question": "这个自行车咖啡的名字是什么？",
                 "render": "这家自行车咖啡叫做 {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "这家自行车咖啡什么时候开门营业？"
-            },
-            "bike_cafe-phone": {
-                "question": "{name}的电话号码是什么？"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -226,8 +217,10 @@
                 },
                 "question": "这里有供你修车用的工具吗？"
             },
-            "bike_cafe-website": {
-                "question": "{name}的网站是什么？"
+            "opening_hours": {
+                "override": {
+                    "question": "这家自行车咖啡什么时候开门营业？"
+                }
             }
         },
         "title": {

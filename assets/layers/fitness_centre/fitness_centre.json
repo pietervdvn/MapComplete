@@ -1,10 +1,12 @@
 {
   "id": "fitness_centre",
   "name": {
-    "en": "Fitness Centres"
+    "en": "Fitness Centres",
+    "de": "Fitnessstudios"
   },
   "description": {
-    "en": "Layer showing fitness centres"
+    "en": "Layer showing fitness centres",
+    "de": "Ebene mit Fitnessstudios"
   },
   "source": {
     "osmTags": "leisure=fitness_centre"
@@ -12,7 +14,8 @@
   "minzoom": 12,
   "title": {
     "render": {
-      "en": "Fitness Centre"
+      "en": "Fitness Centre",
+      "de": "Fitnessstudio"
     },
     "mappings": [
       {
@@ -25,12 +28,14 @@
     {
       "id": "name",
       "question": {
-        "en": "What is the name of this fitness centre?"
+        "en": "What is the name of this fitness centre?",
+        "de": "Wie lautet der Name des Fitnessstudios?"
       },
       "freeform": {
         "key": "name",
         "placeholder": {
-          "en": "Name of fitness centre"
+          "en": "Name of fitness centre",
+          "de": "Name des Fitnessstudios"
         },
         "type": "string"
       },
@@ -38,12 +43,14 @@
         {
           "if": "noname=yes",
           "then": {
-            "en": "This fitness centre has no name"
+            "en": "This fitness centre has no name",
+            "de": "Das Fitnessstudio hat keinen Namen"
           }
         }
       ],
       "render": {
-        "en": "This fitness centre is called {name}"
+        "en": "This fitness centre is called {name}",
+        "de": "Das Fitnessstudio heißt {name}"
       }
     },
     "images",
@@ -61,7 +68,8 @@
         "leisure=fitness_centre"
       ],
       "title": {
-        "en": "a fitness centre"
+        "en": "a fitness centre",
+        "de": "ein Fitnessstudio"
       },
       "icon": "./assets/layers/fitness_centre/gym.svg"
     }

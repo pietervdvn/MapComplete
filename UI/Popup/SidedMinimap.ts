@@ -1,15 +1,16 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
-import Loc from "../../Models/Loc";
-import Minimap from "../Base/Minimap";
-import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import * as left_right_style_json from "../../assets/layers/left_right_style/left_right_style.json";
-import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
-import {SpecialVisualization} from "../SpecialVisualization";
+import { UIEventSource } from "../../Logic/UIEventSource"
+import Loc from "../../Models/Loc"
+import Minimap from "../Base/Minimap"
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import * as left_right_style_json from "../../assets/layers/left_right_style/left_right_style.json"
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export class SidedMinimap implements SpecialVisualization {
     funcName = "sided_minimap"
-    docs = "A small map showing _only one side_ the selected feature. *This features requires to have linerenderings with offset* as only linerenderings with a postive or negative offset will be shown. Note: in most cases, this map will be automatically introduced"
+    docs =
+        "A small map showing _only one side_ the selected feature. *This features requires to have linerenderings with offset* as only linerenderings with a postive or negative offset will be shown. Note: in most cases, this map will be automatically introduced"
     args = [
         {
             doc: "The side to show, either `left` or `right`",
@@ -33,18 +34,14 @@ export class SidedMinimap implements SpecialVisualization {
         })
         const side = args[0]
         const feature = state.allElements.ContainingFeatures.get(tagSource.data.id)
-        const copy = {...feature}
+        const copy = { ...feature }
         copy.properties = {
             id: side,
         }
         new ShowDataLayer({
             leafletMap: minimap["leafletMap"],
             zoomToFeatures: true,
-            layerToShow: new LayerConfig(
-                left_right_style_json,
-                "all_known_layers",
-                true
-            ),
+            layerToShow: new LayerConfig(left_right_style_json, "all_known_layers", true),
             features: StaticFeatureSource.fromGeojson([copy]),
             state,
         })

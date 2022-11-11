@@ -6,7 +6,6 @@ import { ChangeDescription, ChangeDescriptionTools } from "./Actions/ChangeDescr
 import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import SimpleMetaTagger from "../SimpleMetaTagger"
-import CreateNewNodeAction from "./Actions/CreateNewNodeAction"
 import FeatureSource from "../FeatureSource/FeatureSource"
 import { ElementStorage } from "../ElementStorage"
 import { GeoLocationPointProperties } from "../Actors/GeoLocationHandler"

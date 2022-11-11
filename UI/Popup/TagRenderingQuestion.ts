@@ -105,7 +105,7 @@ export default class TagRenderingQuestion extends Combine {
                 TagUtils.FlattenAnd(inputElement.GetValue().data, tags.data)
             )
             if (selection) {
-                (state?.changes)
+                ;(state?.changes)
                     .applyAction(
                         new ChangeTagAction(tags.data.id, selection, tags.data, {
                             theme: state?.layoutToUse?.id ?? "unkown",
@@ -288,7 +288,7 @@ export default class TagRenderingQuestion extends Combine {
         value: number
         mainTerm: Record<string, string>
         searchTerms?: Record<string, string[]>
-        original: Mapping,
+        original: Mapping
         hasPriority?: Store<boolean>
     }[] {
         const values: {
@@ -296,7 +296,7 @@ export default class TagRenderingQuestion extends Combine {
             value: number
             mainTerm: Record<string, string>
             searchTerms?: Record<string, string[]>
-            original: Mapping,
+            original: Mapping
             hasPriority?: Store<boolean>
         }[] = []
         const addIcons = applicableMappings.some((m) => m.icon !== undefined)
@@ -319,7 +319,7 @@ export default class TagRenderingQuestion extends Combine {
                 mainTerm: tr.translations,
                 searchTerms: mapping.searchTerms,
                 original: mapping,
-                hasPriority: tagsSource.map(tags => mapping.priorityIf?.matchesProperties(tags))
+                hasPriority: tagsSource.map((tags) => mapping.priorityIf?.matchesProperties(tags)),
             })
         }
         return values
@@ -400,7 +400,7 @@ export default class TagRenderingQuestion extends Combine {
         const values = TagRenderingQuestion.MappingToPillValue(
             applicableMappings,
             tagsSource,
-            state,
+            state
         )
 
         const searchValue: UIEventSource<string> =
@@ -419,7 +419,7 @@ export default class TagRenderingQuestion extends Combine {
             mode,
             searchValue,
             onNoMatches: onEmpty?.SetClass(classes).SetClass("flex justify-center items-center"),
-            searchAreaClass: classes
+            searchAreaClass: classes,
         })
         const fallbackTag = searchValue.map((s) => {
             if (s === undefined || ff?.key === undefined) {

@@ -79,7 +79,8 @@
             "en": "meter",
             "fr": "mètre",
             "de": "Meter",
-            "nl": "meter"
+            "nl": "meter",
+            "pa_PK": "میٹر"
           }
         },
         {
@@ -92,7 +93,8 @@
             "en": "centimeter",
             "fr": "centimètre",
             "de": "Zentimeter",
-            "nl": "centimeter"
+            "nl": "centimeter",
+            "pa_PK": "سینٹیمیٹر"
           }
         }
       ]

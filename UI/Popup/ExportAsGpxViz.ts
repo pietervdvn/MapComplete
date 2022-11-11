@@ -1,10 +1,10 @@
-import Translations from "../i18n/Translations";
-import {SubtleButton} from "../Base/SubtleButton";
-import Svg from "../../Svg";
-import Combine from "../Base/Combine";
-import {GeoOperations} from "../../Logic/GeoOperations";
-import {Utils} from "../../Utils";
-import {SpecialVisualization} from "../SpecialVisualization";
+import Translations from "../i18n/Translations"
+import { SubtleButton } from "../Base/SubtleButton"
+import Svg from "../../Svg"
+import Combine from "../Base/Combine"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { Utils } from "../../Utils"
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export class ExportAsGpxViz implements SpecialVisualization {
     funcName = "export_as_gpx"
@@ -26,16 +26,10 @@ export class ExportAsGpxViz implements SpecialVisualization {
             const feature = state.allElements.ContainingFeatures.get(tags.id)
             const matchingLayer = state?.layoutToUse?.getMatchingLayer(tags)
             const gpx = GeoOperations.AsGpx(feature, matchingLayer)
-            const title =
-                matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ??
-                "gpx_track"
-            Utils.offerContentsAsDownloadableFile(
-                gpx,
-                title + "_mapcomplete_export.gpx",
-                {
-                    mimetype: "{gpx=application/gpx+xml}",
-                }
-            )
+            const title = matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "gpx_track"
+            Utils.offerContentsAsDownloadableFile(gpx, title + "_mapcomplete_export.gpx", {
+                mimetype: "{gpx=application/gpx+xml}",
+            })
         })
     }
 }

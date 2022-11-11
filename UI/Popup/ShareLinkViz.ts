@@ -1,9 +1,9 @@
-import {UIEventSource} from "../../Logic/UIEventSource";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import ShareButton from "../BigComponents/ShareButton";
-import Svg from "../../Svg";
-import {FixedUiElement} from "../Base/FixedUiElement";
-import {SpecialVisualization} from "../SpecialVisualization";
+import { UIEventSource } from "../../Logic/UIEventSource"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import ShareButton from "../BigComponents/ShareButton"
+import Svg from "../../Svg"
+import { FixedUiElement } from "../Base/FixedUiElement"
+import { SpecialVisualization } from "../SpecialVisualization"
 
 export class ShareLinkViz implements SpecialVisualization {
     funcName = "share_link"
@@ -45,10 +45,7 @@ export class ShareLinkViz implements SpecialVisualization {
                 }
             }
 
-            return new ShareButton(
-                Svg.share_svg().SetClass("w-8 h-8"),
-                generateShareData
-            )
+            return new ShareButton(Svg.share_svg().SetClass("w-8 h-8"), generateShareData)
         } else {
             return new FixedUiElement("")
         }

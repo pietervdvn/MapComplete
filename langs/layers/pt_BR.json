@@ -203,18 +203,9 @@
             }
         },
         "tagRenderings": {
-            "bike_cafe-email": {
-                "question": "Qual o endereço de email de {name}?"
-            },
             "bike_cafe-name": {
                 "question": "Qual o nome deste café de bicicleta?",
                 "render": "Este café de bicicleta se chama {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Quando este café de bicicleta abre?"
-            },
-            "bike_cafe-phone": {
-                "question": "Qual o número de telefone de {name}?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -238,8 +229,10 @@
                 },
                 "question": "Há ferramentas aqui para consertar sua bicicleta?"
             },
-            "bike_cafe-website": {
-                "question": "Qual o website de {name}?"
+            "opening_hours": {
+                "override": {
+                    "question": "Quando este café de bicicleta abre?"
+                }
             }
         },
         "title": {
@@ -411,13 +404,6 @@
                     },
                     "2": {
                         "then": "Há um manômetro mas está quebrado"
-                    }
-                }
-            },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Sempre aberto"
                     }
                 }
             },

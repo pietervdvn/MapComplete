@@ -1,10 +1,12 @@
 {
   "id": "blind_osm",
   "title": {
-    "en": "OSM for the blind"
+    "en": "OSM for the blind",
+    "de": "OSM für Blinde"
   },
   "description": {
-    "en": "Help to map features relevant for the blind"
+    "en": "Help to map features relevant for the blind",
+    "de": "Hilfe zur Kartierung blindenrelevanter Merkmale"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
   "startLat": 52.99238,

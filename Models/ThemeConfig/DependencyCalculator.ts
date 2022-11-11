@@ -2,7 +2,7 @@ import { SubstitutedTranslation } from "../../UI/SubstitutedTranslation"
 import TagRenderingConfig from "./TagRenderingConfig"
 import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
 import LayerConfig from "./LayerConfig"
-import {SpecialVisualization} from "../../UI/SpecialVisualization";
+import { SpecialVisualization } from "../../UI/SpecialVisualization"
 
 export default class DependencyCalculator {
     public static GetTagRenderingDependencies(tr: TagRenderingConfig): string[] {

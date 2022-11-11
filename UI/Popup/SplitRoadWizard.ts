@@ -121,7 +121,7 @@ export default class SplitRoadWizard extends Toggle {
             }
 
             // Get nearest point on the road
-            const pointOnRoad = GeoOperations.nearestPoint(roadElement, coordinates) // pointOnRoad is a geojson
+            const pointOnRoad = GeoOperations.nearestPoint(<any>roadElement, coordinates) // pointOnRoad is a geojson
 
             // Update point properties to let it match the layer
             pointOnRoad.properties["_split_point"] = "yes"

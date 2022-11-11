@@ -583,18 +583,9 @@
                 },
                 "question": "Est-ce que ce Café vélo propose une pompe en libre accès ?"
             },
-            "bike_cafe-email": {
-                "question": "Quelle est l'adresse électronique de {name} ?"
-            },
             "bike_cafe-name": {
                 "question": "Quel est le nom de ce Café vélo ?",
                 "render": "Ce Café vélo s'appelle {name}"
-            },
-            "bike_cafe-opening_hours": {
-                "question": "Quand ce Café vélo est-t-il ouvert ?"
-            },
-            "bike_cafe-phone": {
-                "question": "Quel est le numéro de téléphone de {name} ?"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
@@ -618,8 +609,10 @@
                 },
                 "question": "Est-ce qu'il y a des outils pour réparer soi-même son vélo ?"
             },
-            "bike_cafe-website": {
-                "question": "Quel est le site web de {name} ?"
+            "opening_hours": {
+                "override": {
+                    "question": "Quand ce Café vélo est-t-il ouvert ?"
+                }
             }
         },
         "title": {
@@ -896,14 +889,6 @@
                 },
                 "question": "Est-ce que la pompe à un manomètre integré ?"
             },
-            "bike_repair_station-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Ouvert en permanence"
-                    }
-                },
-                "question": "Quand ce point de réparation de vélo est-il ouvert ?"
-            },
             "bike_repair_station-operator": {
                 "question": "Qui maintient cette pompe à vélo ?",
                 "render": "Mantenue par {operator}"
@@ -925,6 +910,11 @@
                 },
                 "question": "Quelles valves sont compatibles ?",
                 "render": "Cette pompe est compatible avec les valves suivantes : {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Quand ce point de réparation de vélo est-il ouvert ?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {
@@ -2106,15 +2096,6 @@
                 "question": "À quel étage est situé ce défibrillateur ?",
                 "render": "Ce défibrillateur est à l'étage {level}"
             },
-            "defibrillator-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Ouvert 24/7 (jours feriés inclus)"
-                    }
-                },
-                "question": "À quels horaires ce défibrillateur est-il accessible ?",
-                "render": "{opening_hours_table(opening_hours)}"
-            },
             "defibrillator-phone": {
                 "question": "Quel est le numéro de téléphone pour questions sur le défibrillateur ?",
                 "render": "Numéro de téléphone pour questions sur le défibrillateur : <a href='tel:{phone}'>{phone}</a>"
@@ -2131,6 +2112,11 @@
                 },
                 "question": "Quand le défibrillateur a-t-il été vérifié pour la dernière fois ?",
                 "render": "Ce défibrillateur a été vérifié pour la dernière fois le {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "À quels horaires ce défibrillateur est-il accessible ?"
+                }
             }
         },
         "title": {
@@ -3578,6 +3564,14 @@
                 },
                 "question": "Quels genres de personnes peuvent s'inscrire dans cette école ?"
             },
+            "school-language": {
+                "render": {
+                    "special": {
+                        "no_known_languages": "La langue principale de cette école est inconnue",
+                        "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
+                    }
+                }
+            },
             "school-name": {
                 "question": "Quel est le nom de cet établissement scolaire?",
                 "render": "Cet établissement scolaire s'appelle {name}"
@@ -3614,16 +3608,6 @@
                 },
                 "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc ",
                 "render": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}"
-            },
-            "wikidata.school-language": {
-                "override": {
-                    "+mappings": {
-                        "0": {
-                            "then": "La langue principale de cette école est inconnue"
-                        }
-                    },
-                    "question": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
-                }
             }
         },
         "title": {

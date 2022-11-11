@@ -7,7 +7,8 @@
     "zh_Hant": "駭客空間",
     "hu": "Hackerspace",
     "es": "Espacio hacker",
-    "nl": "Hackerspace"
+    "nl": "Hackerspace",
+    "pa_PK": "ہیکر دا تھاں"
   },
   "minzoom": 8,
   "title": {
@@ -47,7 +48,8 @@
     "zh_Hant": "駭客空間",
     "hu": "Hackerspace",
     "es": "Espacio hacker",
-    "nl": "Hackerspace"
+    "nl": "Hackerspace",
+    "pa_PK": "ہیکر دا تھاں"
   },
   "tagRenderings": [
     "images",
@@ -110,45 +112,16 @@
     "email",
     "phone",
     {
-      "question": {
-        "en": "When is this hackerspace opened?",
-        "de": "Wann hat dieser Hackerspace geöffnet?",
-        "zh_Hant": "這個駭客空間的營業時間？",
-        "es": "¿Cuándo está abierto este espacio hacker?",
-        "nl": "Wanneer is deze hackerspace geopend?"
-      },
-      "freeform": {
-        "key": "opening_hours",
-        "type": "opening_hours"
-      },
-      "render": {
-        "en": "{opening_hours_table()}",
-        "de": "{opening_hours_table()}",
-        "ru": "{opening_hours_table()}",
-        "zh_Hant": "{opening_hours_table()}",
-        "ca": "{opening_hours_table()}",
-        "es": "{opening_hours_table()}",
-        "nl": "{opening_hours_table()}"
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "opening_hours=24/7"
-            ]
-          },
-          "then": {
-            "en": "Opened 24/7",
-            "de": "durchgehend geöffnet",
-            "ru": "Открыто 24/7",
-            "zh_Hant": "24/7 營業",
-            "ca": "Obert 24/7",
-            "es": "Abierto 24/7",
-            "nl": "24/7 geopend"
-          }
+      "builtin": "opening_hours_24_7",
+      "override": {
+        "question": {
+          "en": "When is this hackerspace opened?",
+          "de": "Wann hat dieser Hackerspace geöffnet?",
+          "zh_Hant": "這個駭客空間的營業時間？",
+          "es": "¿Cuándo está abierto este espacio hacker?",
+          "nl": "Wanneer is deze hackerspace geopend?"
         }
-      ],
-      "id": "hackerspaces-opening_hours"
+      }
     },
     {
       "id": "available_devices",

@@ -1689,7 +1689,7 @@ This tagrendering is part of group  `technical`
 
 
 
-### OH 
+### opening_hours_24_7 
 
 
 
@@ -1697,7 +1697,7 @@ The question is  When is this charging station opened?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  {opening_hours_table(opening_hours)}
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
 
 

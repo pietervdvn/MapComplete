@@ -5,7 +5,8 @@
     "es": "Velocidad",
     "ca": "Velocitat",
     "de": "Höchstgeschwindigkeit",
-    "nl": "Maximumsnelheid"
+    "nl": "Maximumsnelheid",
+    "pa_PK": "حد رفتار"
   },
   "source": {
     "osmTags": {
@@ -163,14 +164,16 @@
             "ca": "quilòmetres/hora",
             "es": "kilómetros/hora",
             "nl": "kilometers/uur",
-            "de": "Kilometer/Stunde"
+            "de": "Kilometer/Stunde",
+            "pa_PK": "ہر گھنٹہ وچ کیلومیٹر"
           },
           "humanShort": {
             "en": "km/h",
             "ca": "km/h",
             "es": "km/h",
             "nl": "km/u",
-            "de": "km/h"
+            "de": "km/h",
+            "pa_PK": "ہر گھنٹے وچ کیلومیٹر"
           }
         },
         {
@@ -189,14 +192,16 @@
             "ca": "milles/hora",
             "es": "millas/hora",
             "nl": "miles/uur",
-            "de": "Meilen/Stunde"
+            "de": "Meilen/Stunde",
+            "pa_PK": "ہر گھنٹہ وچ میل"
           },
           "humanShort": {
             "en": "mph",
             "ca": "mph",
             "es": "mph",
             "nl": "mph",
-            "de": "mph"
+            "de": "mph",
+            "pa_PK": "ہر گھنٹہ وچ میل"
           }
         }
       ],

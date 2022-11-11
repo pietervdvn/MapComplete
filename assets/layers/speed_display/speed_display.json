@@ -1,14 +1,17 @@
 {
   "id": "speed_display",
   "name": {
-    "en": "Speed Display"
+    "en": "Speed Display",
+    "de": "Geschwindigkeitsanzeige"
   },
   "description": {
-    "en": "Layer showing speed displays that alert drivers of their speed."
+    "en": "Layer showing speed displays that alert drivers of their speed.",
+    "de": "Ebene mit Geschwindigkeitsanzeigen, die Fahrer auf ihre Geschwindigkeit hinweisen."
   },
   "title": {
     "render": {
-      "en": "Speed Display"
+      "en": "Speed Display",
+      "de": "Geschwindigkeitsanzeige"
     }
   },
   "minzoom": 12,
@@ -19,40 +22,47 @@
     {
       "id": "maxspeed",
       "question": {
-        "en": "What is the maximum speed allowed at this speed display?"
+        "en": "What is the maximum speed allowed at this speed display?",
+        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige?"
       },
       "freeform": {
         "key": "maxspeed",
         "type": "pnat",
         "placeholder": {
-          "en": "Speed allowed at speed display"
+          "en": "Speed allowed at speed display",
+          "de": "Zulässige Geschwindigkeit bei Geschwindigkeitsanzeige"
         }
       },
       "render": {
-        "en": "The maximum speed allowed at this speed display is {canonical(maxspeed)}"
+        "en": "The maximum speed allowed at this speed display is {canonical(maxspeed)}",
+        "de": "Die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige ist {canonical(maxspeed)}"
       }
     },
     {
       "id": "inscription",
       "question": {
-        "en": "What is the text on this speed display?"
+        "en": "What is the text on this speed display?",
+        "de": "Wie lautet der Text auf dieser Geschwindigkeitsanzeige?"
       },
       "freeform": {
         "key": "inscription",
         "type": "string",
         "placeholder": {
-          "en": "Text on speed display (e.g. 'Your speed')"
+          "en": "Text on speed display (e.g. 'Your speed')",
+          "de": "Text auf der Geschwindigkeitsanzeige (z. B. \"Ihre Geschwindigkeit\")"
         }
       },
       "render": {
-        "en": "The text on this speed display is {inscription}"
+        "en": "The text on this speed display is {inscription}",
+        "de": "Der Text auf dieser Geschwindigkeitsanzeige ist {inscription}"
       }
     }
   ],
   "presets": [
     {
       "title": {
-        "en": "a speed display"
+        "en": "a speed display",
+        "de": "eine Geschwindigkeitsanzeige"
       },
       "tags": [
         "highway=speed_display"

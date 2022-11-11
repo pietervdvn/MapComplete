@@ -1,1 +1,280 @@
-{}
+{
+    "artwork": {
+        "title": "آزاد کلاکاری نقشہ"
+    },
+    "benches": {
+        "title": "بینچ"
+    },
+    "bicycle_rental": {
+        "title": "سائیکل کرایا"
+    },
+    "bicyclelib": {
+        "title": "سائیکلاں دیاں لائیبریریاں"
+    },
+    "binoculars": {
+        "title": "بائینوکولر"
+    },
+    "bookcases": {
+        "title": "آزاد کتاب نقشہ"
+    },
+    "cafes_and_pubs": {
+        "description": "پب (بار)",
+        "title": "کیفے یا پب"
+    },
+    "campersite": {
+        "layers": {
+            "0": {
+                "description": "کیمب‌سائیٹاں",
+                "name": "کیمب‌سائیٹاں",
+                "presets": {
+                    "0": {
+                        "title": "اِک کیمپ‌سائیٹ"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "بے نام کیمپ‌سائیٹ"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "کیمپ‌سایٹاں"
+    },
+    "charging_stations": {
+        "title": "چارج سٹیشن"
+    },
+    "climbing": {
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
+                        "1": {
+                            "mappings": {
+                                "2": {
+                                    "then": "صرف گاہک"
+                                },
+                                "3": {
+                                    "then": "صرف کلب دے میمبر"
+                                }
+                            }
+                        }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " ؜ میٹر"
+                                },
+                                "1": {
+                                    "human": " ؜ فوٹ"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "cycle_highways": {
+        "layers": {
+            "0": {
+                "name": "سائیکل‌وے",
+                "title": {
+                    "render": "سائیکل‌وے"
+                }
+            }
+        },
+        "title": "سائیکل‌وے"
+    },
+    "cycle_infra": {
+        "title": "سائیکل ڈھانچا"
+    },
+    "cyclenodes": {
+        "layers": {
+            "1": {
+                "name": "نوڈ"
+            }
+        }
+    },
+    "cyclestreets": {
+        "layers": {
+            "0": {
+                "name": "سائیکاں دیاں سڑکاں"
+            },
+            "1": {
+                "name": "بھُوکھی سائیکل سڑک",
+                "title": {
+                    "render": "بھُوکھی سائیکل سڑک"
+                }
+            },
+            "2": {
+                "name": "ساریاں سڑکاں",
+                "title": {
+                    "render": "سڑک"
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "1": {
+                    "mappings": {
+                        "2": {
+                            "then": "موٹرسائیکلاں دی اِجازت اے"
+                        },
+                        "3": {
+                            "then": "موٹرکاراں دی اِجازت اے"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "سائیکل سڑکاں"
+    },
+    "drinking_water": {
+        "title": "پیݨ والا پاݨی"
+    },
+    "education": {
+        "title": "سکھیا"
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "override": {
+                    "name": "فرائیاں دی دکان"
+                }
+            }
+        },
+        "title": "فرائیاں دیاں دکاناں"
+    },
+    "hackerspaces": {
+        "title": "ہیکر دے تھاں"
+    },
+    "healthcare": {
+        "title": "سیت سمبھال"
+    },
+    "hotels": {
+        "title": "ہوٹیل"
+    },
+    "indoors": {
+        "title": "اندروں"
+    },
+    "mapcomplete-changes": {
+        "layers": {
+            "0": {
+                "name": "تبدیلیاں دے کیندر"
+            }
+        }
+    },
+    "maproulette": {
+        "title": "میپ‌رولیٹ دے کم"
+    },
+    "maxspeed": {
+        "title": "حد رفتار"
+    },
+    "onwheels": {
+        "layers": {
+            "18": {
+                "override": {
+                    "=title": {
+                        "render": "انکڑے"
+                    }
+                }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "ایمپورٹ کرو"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "آن‌ویل"
+    },
+    "openwindpowermap": {
+        "title": "اوپن‌ونڈ‌پاور‌میپ"
+    },
+    "parkings": {
+        "title": "پارکنگ"
+    },
+    "personal": {
+        "title": "چݨی تھیم"
+    },
+    "pets": {
+        "layers": {
+            "2": {
+                "override": {
+                    "name": "کُتیاں دی اِجازت دیاں دکاناں",
+                    "title": {
+                        "render": "کُتیاں دی اِجازت دیاں دکاناں"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "کُتیاں دی اِجازت دی دکان"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "postal_codes": {
+        "description": "ڈاک کوڈ",
+        "layers": {
+            "0": {
+                "name": "ڈاک کوڈ"
+            }
+        },
+        "shortDescription": "ڈاک کوڈ",
+        "title": "ڈاک کوڈ"
+    },
+    "sidewalks": {
+        "description": "آزمائش تھیم",
+        "layers": {
+            "0": {
+                "name": "فُٹ‌پاتھ"
+            }
+        },
+        "shortDescription": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
+        "title": "فُٹ‌پاتھ"
+    },
+    "sports": {
+        "title": "کھیڈاں"
+    },
+    "street_lighting": {
+        "layers": {
+            "1": {
+                "name": "روشنی والیاں سڑکاں",
+                "title": {
+                    "render": "روشنی والی سڑک"
+                }
+            },
+            "2": {
+                "name": "ساریاں سڑکاں",
+                "title": {
+                    "render": "سڑک"
+                }
+            }
+        },
+        "title": "سڑک دیاں روشنیاں"
+    },
+    "transit": {
+        "title": "بس روٹ"
+    },
+    "trees": {
+        "title": "رُکھ"
+    },
+    "waste_basket": {
+        "title": "کوڑے دی ٹوکری"
+    }
+}

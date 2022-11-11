@@ -9,7 +9,8 @@
     "nl": "Fietssnelwegen",
     "es": "Autovías ciclistas",
     "nb_NO": "Sykkelmotorveier",
-    "da": "Cykelmotorveje"
+    "da": "Cykelmotorveje",
+    "pa_PK": "سائیکل‌وے"
   },
   "hideFromOverview": true,
   "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
@@ -115,7 +116,8 @@
         "nl": "fietssnelwegen",
         "es": "autovías ciclistas",
         "nb_NO": "sykkelmotorveier",
-        "da": "cykelmotorveje"
+        "da": "cykelmotorveje",
+        "pa_PK": "سائیکل‌وے"
       },
       "source": {
         "osmTags": "cycle_network=BE-VLG:cycle_highway"
@@ -130,7 +132,8 @@
           "nl": "fietssnelweg",
           "es": "autovía ciclista",
           "nb_NO": "sykkelmotorvei",
-          "da": "cykelmotorvej"
+          "da": "cykelmotorvej",
+          "pa_PK": "سائیکل‌وے"
         }
       },
       "filter": [

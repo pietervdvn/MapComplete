@@ -3,7 +3,8 @@
   "name": {
     "en": "indoors",
     "de": "Innenräume",
-    "nl": "Binnenruimtes"
+    "nl": "Binnenruimtes",
+    "pa_PK": "اندروں"
   },
   "description": {
     "en": "Basic indoor mapping: shows room outlines",

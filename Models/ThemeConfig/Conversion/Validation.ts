@@ -1,19 +1,19 @@
-import {DesugaringStep, Each, Fuse, On} from "./Conversion"
-import {LayerConfigJson} from "../Json/LayerConfigJson"
+import { DesugaringStep, Each, Fuse, On } from "./Conversion"
+import { LayerConfigJson } from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
-import {Utils} from "../../../Utils"
+import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
-import {Translation} from "../../../UI/i18n/Translation"
-import {LayoutConfigJson} from "../Json/LayoutConfigJson"
+import { Translation } from "../../../UI/i18n/Translation"
+import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import LayoutConfig from "../LayoutConfig"
-import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson"
-import {TagUtils} from "../../../Logic/Tags/TagUtils"
-import {ExtractImages} from "./FixImages"
+import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
+import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { ExtractImages } from "./FixImages"
 import ScriptUtils from "../../../scripts/ScriptUtils"
-import {And} from "../../../Logic/Tags/And"
+import { And } from "../../../Logic/Tags/And"
 import Translations from "../../../UI/i18n/Translations"
 import Svg from "../../../Svg"
-import {QuestionableTagRenderingConfigJson} from "../Json/QuestionableTagRenderingConfigJson"
+import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
 
@@ -619,20 +619,31 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 
 class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
-        super("Miscellanious checks on the tagrendering", ["special"], "MiscTagREnderingChecksRew");
+        super("Miscellanious checks on the tagrendering", ["special"], "MiscTagREnderingChecksRew")
     }
 
-    convert(json: TagRenderingConfigJson, context: string): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
-        const errors =  []
-        if(json["special"] !== undefined){
-            errors.push("At "+context+": detected `special` on the top level. Did you mean `{\"render\":{ \"special\": ... }}`")
+    convert(
+        json: TagRenderingConfigJson,
+        context: string
+    ): {
+        result: TagRenderingConfigJson
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+    } {
+        const errors = []
+        if (json["special"] !== undefined) {
+            errors.push(
+                "At " +
+                    context +
+                    ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
+            )
         }
         return {
             result: json,
-            errors
-        };
+            errors,
+        }
     }
-
 }
 
 export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {

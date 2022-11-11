@@ -41,7 +41,8 @@
     "render": {
       "en": "Way",
       "nl": "Weg",
-      "de": "Weg"
+      "de": "Weg",
+      "pa_PK": "راہ"
     },
     "mappings": [
       {
@@ -73,7 +74,8 @@
           "fr": "Piste cyclable",
           "ca": "Via ciclista",
           "da": "Cykelsti",
-          "es": "Carril compartido"
+          "es": "Carril compartido",
+          "pa_PK": "سائیکل‌وے"
         }
       },
       {
@@ -174,7 +176,8 @@
           "fr": "Vélorue",
           "ca": "Carrer ciclista",
           "da": "Cykelgade",
-          "es": "Ciclocalle"
+          "es": "Ciclocalle",
+          "pa_PK": "سائیکل سڑک"
         }
       },
       {

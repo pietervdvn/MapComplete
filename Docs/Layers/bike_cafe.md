@@ -65,7 +65,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:pump#values) [service:bicycle:pump](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values) [service:bicycle:diy](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:repair#values) [service:bicycle:repair](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
@@ -147,11 +147,11 @@ The question is  Does this bike cafe repair bikes?
 
 
 
-### bike_cafe-website 
+### website 
 
 
 
-The question is  What is the website of {name}?
+The question is  What is the website of {title()}?
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
@@ -161,11 +161,17 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-### bike_cafe-phone 
+  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
+  - This option cannot be chosen as answer
 
 
 
-The question is  What is the phone number of {name}?
+
+### phone 
+
+
+
+The question is  What is the phone number of {title()}?
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
@@ -175,11 +181,17 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-### bike_cafe-email 
+  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
+  - This option cannot be chosen as answer
 
 
 
-The question is  What is the email address of {name}?
+
+### email 
+
+
+
+The question is  What is the email address of {title()}?
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
@@ -189,7 +201,13 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-### bike_cafe-opening_hours 
+  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
+  - This option cannot be chosen as answer
+
+
+
+
+### opening_hours 
 
 
 
@@ -197,7 +215,7 @@ The question is  When it this bike café opened?
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  {opening_hours_table(opening_hours)}
+This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
 
  
 
