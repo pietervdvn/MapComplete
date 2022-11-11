@@ -62,7 +62,7 @@
   ],
   "mapRendering": [
     {
-      "icon": "circle:green;./assets/themes/stations/public_transport_tickets.svg",
+      "icon": "square:green;./assets/themes/stations/public_transport_tickets.svg",
       "iconSize": "20,20,center",
       "location": [
         "point",
