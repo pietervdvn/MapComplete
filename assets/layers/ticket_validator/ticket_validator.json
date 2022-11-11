@@ -19,6 +19,21 @@
     "images",
     "level",
     {
+      "id": "barrier",
+      "condition": "barrier~*",
+      "render": {
+        "en": "This ticket validator is part of a barrier of type {barrier}"
+      },
+      "mappings": [
+        {
+          "if": "barrier=gate",
+          "then": {
+            "en": "This ticket validator is part of a gate"
+          }
+        }
+      ]
+    },
+    {
       "id": "validator-operator",
       "question": {
         "en": "Who is the operator of this ticket validator?"
@@ -45,6 +60,14 @@
               "en": "This ticket validator accepts OV-Chipkaart"
             },
             "hideInAnswer": "_country!=nl"
+          },
+          {
+            "if": "payment:ov-chipkaart=yes",
+            "ifnot": "payment:ov-chipkaart=no",
+            "then": {
+              "en": "This ticket validator accepts OV-Chipkaart"
+            },
+            "hideInAnswer": true
           }
         ]
       }
