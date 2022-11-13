@@ -1552,7 +1552,7 @@
     "de": "Cakchiquel-Sprache",
     "en": "Kaqchikel",
     "eo": "kakĉikela lingvo",
-    "es": "Idioma kakchikel",
+    "es": "Kaqchikel",
     "fr": "cakchiquel",
     "gl": "Lingua kaqchikel",
     "id": "Bahasa Kaqchikel",
@@ -2223,7 +2223,7 @@
     "nl": "Dagbani",
     "pt": "Língua dagbani",
     "pt_BR": "Língua dagbani",
-    "ru": "Дагбани",
+    "ru": "дагбани",
     "sv": "dagbani",
     "_meta": {
       "dir": [
@@ -2588,7 +2588,7 @@
     "sl": "grščina",
     "sv": "nygrekiska",
     "zh_Hans": "希腊语",
-    "zh_Hant": "希臘語",
+    "zh_Hant": "現代希臘語",
     "_meta": {
       "countries": [
         "CY",
@@ -2679,6 +2679,7 @@
         "TV",
         "TZ",
         "UG",
+        "US",
         "VC",
         "VU",
         "WS",
@@ -4604,7 +4605,7 @@
     "de": "Japanisch",
     "en": "Japanese",
     "eo": "japana lingvo",
-    "es": "japonés",
+    "es": "Japonés",
     "fi": "japani",
     "fr": "japonais",
     "gl": "lingua xaponesa",
@@ -4848,9 +4849,9 @@
     "ca": "katab",
     "de": "Tjap",
     "en": "Tyap",
-    "es": "katab",
+    "es": "Katab",
     "fi": "Tyap",
-    "fr": "katab",
+    "fr": "Katab",
     "gl": "Lingua tyap",
     "ja": "カタブ語",
     "nl": "Tyap",
@@ -5022,7 +5023,7 @@
   },
   "kjp": {
     "en": "Eastern Pwo",
-    "fr": "pwo de l’Est",
+    "fr": "pwo de l'Est",
     "ja": "東ポー語",
     "nb_NO": "østpwo",
     "nl": "oostelijk Pwo",
@@ -5045,7 +5046,7 @@
     "fi": "kazakki",
     "fr": "kazakh",
     "gl": "Lingua casaca",
-    "hu": "kazah",
+    "hu": "kazak",
     "id": "bahasa Kazak",
     "it": "kazako",
     "ja": "カザフ語",
@@ -5408,7 +5409,7 @@
     "ca": "kurd",
     "cs": "kurdština",
     "da": "kurdisk",
-    "de": "Kurdisch",
+    "de": "Kurmandschi",
     "en": "Kurdish",
     "eo": "kurda lingvo",
     "es": "kurdo",
@@ -5416,15 +5417,15 @@
     "fr": "kurde",
     "gl": "lingua kurda",
     "hu": "kurd",
-    "id": "Kurmanji",
-    "it": "kurmanji",
-    "ja": "クルマンジー",
+    "id": "Bahasa Kurdi",
+    "it": "curdo",
+    "ja": "クルド語",
     "nb_NO": "kurdisk",
-    "nl": "Kurmançi",
-    "pl": "język kurmandżi",
-    "pt": "curmânji",
-    "pt_BR": "Curmânji",
-    "ru": "курманджи",
+    "nl": "Koerdisch",
+    "pl": "język kurdyjski",
+    "pt": "língua curda",
+    "pt_BR": "língua curda",
+    "ru": "курдские языки",
     "sl": "Severnokurdski jezik",
     "sv": "nordkurdiska",
     "zh_Hans": "库尔德语",
@@ -7742,6 +7743,32 @@
       ]
     }
   },
+  "pa_PK": {
+    "ca": "panjabi",
+    "cs": "paňdžábština",
+    "da": "Punjabi",
+    "de": "Panjabi",
+    "en": "Punjabi",
+    "eo": "panĝaba lingvo",
+    "es": "panyabí",
+    "fi": "punjabin kieli",
+    "fr": "pendjabi",
+    "gl": "lingua punjabi",
+    "hu": "pandzsábi",
+    "id": "Bahasa Punjab",
+    "it": "punjabi",
+    "ja": "パンジャーブ語",
+    "nb_NO": "panjabi",
+    "nl": "Punjabi",
+    "pl": "język pendżabski",
+    "pt": "Língua panjabi",
+    "ru": "панджаби",
+    "sv": "punjabi",
+    "zh_Hant": "旁遮普語",
+    "_meta": {
+      "dir": []
+    }
+  },
   "pag": {
     "ca": "pangasinan",
     "da": "pangasinansk",
@@ -7787,7 +7814,7 @@
     "nb_NO": "papiamento",
     "nl": "Papiaments",
     "pl": "Język papiamento",
-    "pt": "papiamento",
+    "pt": "Papiamento",
     "ru": "папьяменто",
     "sv": "papiamento",
     "zh_Hans": "帕皮阿门托语",
@@ -8911,7 +8938,7 @@
     }
   },
   "shi": {
-    "ca": "chelja",
+    "ca": "taixelhit",
     "cs": "tašelhit",
     "de": "Taschelhit",
     "en": "Shilha",
@@ -10418,7 +10445,7 @@
     }
   },
   "tzm": {
-    "ca": "tamazight",
+    "ca": "tamazic",
     "de": "Zentralatlas-Tamazight",
     "en": "Central Atlas Tamazight",
     "eo": "tamaziĥta lingvo",
@@ -11358,8 +11385,8 @@
         "TW"
       ],
       "dir": [
-        "top-to-bottom",
-        "left-to-right"
+        "left-to-right",
+        "top-to-bottom"
       ]
     }
   },
