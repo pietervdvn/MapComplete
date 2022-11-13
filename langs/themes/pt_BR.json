@@ -168,5 +168,16 @@
     },
     "ghostbikes": {
         "title": "Bicicleta fantasma"
+    },
+    "bag": {
+        "layers": {
+            "2": {
+                "tagRenderings": {
+                    "Build year": {
+                        "render": "Esta construção é de <b>{_bag_obj:start_date}</b>"
+                    }
+                }
+            }
+        }
     }
 }
