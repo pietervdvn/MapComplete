@@ -131,6 +131,7 @@ export class TextField extends InputElement<string> {
             el.rows = options.textAreaRows
             el.cols = 50
             el.style.width = "100%"
+            el.dir = "auto"
             inputEl = el
             if (placeholderStore) {
                 placeholderStore.addCallbackAndRunD((placeholder) => (el.placeholder = placeholder))
@@ -141,6 +142,7 @@ export class TextField extends InputElement<string> {
             el.inputMode = options.inputMode
             el.placeholder = placeholder
             el.style.cssText = options.inputStyle ?? "width: 100%;"
+            el.dir = "auto"
             inputEl = el
             if (placeholderStore) {
                 placeholderStore.addCallbackAndRunD((placeholder) => (el.placeholder = placeholder))
