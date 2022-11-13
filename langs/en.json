@@ -55,7 +55,7 @@
             "attributes": "Shows attributes in a friendly way",
             "edit": "Wrong or outdated info? The edit button is right there",
             "question": "If an attribute is not yet known, MapComplete shows a question",
-            "see_images": "Shows images from previous contributors, Wikipedia, Mapillary, ...   ",
+            "see_images": "Shows images from previous contributors, Wikipedia, Mapillary, ... ",
             "wikipedia": "Linked Wikipedia articles are shown"
         },
         "frontParagraph": "MapComplete is an easy to use web application to collect geodata in OpenStreetMap, enabling collecting and managing relevant data in an open, crowdsourced and reusable way.\n\nNew categories and attributes can be added upon request.",
