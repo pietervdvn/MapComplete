@@ -136,6 +136,11 @@ export default class Wikidata {
         UIEventSource<{ success: WikidataResponse } | { error: any }>
     >()
 
+    /**
+     * Same as LoadWikidataEntry, but wrapped into a UIEventSource
+     * @param value
+     * @constructor
+     */
     public static LoadWikidataEntry(
         value: string | number
     ): UIEventSource<{ success: WikidataResponse } | { error: any }> {
@@ -186,7 +191,7 @@ export default class Wikidata {
                 } .
                 ?label wikibase:apiOutput mwapi:label .
                 ?description wikibase:apiOutput "@description" .
-            } 
+            }
             ${instanceOf}
             ${minusPhrases.join("\n    ")}
         } ORDER BY ASC(?num) LIMIT ${options.maxCount ?? 20}`
