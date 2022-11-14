@@ -315,7 +315,9 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "feelFreeToSkip": "Je kan hieronder nog informatie toevoegen of updaten, maar <b>sla gerust vragen over</b> waarvoor je het antwoord niet kent.",
+        "newlyCreated": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen."
     },
     "image": {
         "addPicture": "Voeg foto toe",
