@@ -279,7 +279,18 @@ function main(args: string[]) {
     const invalidLicenses = licenseInfos
         .filter((l) => (l.license ?? "") === "")
         .map((l) => `License for artwork ${l.path} is empty string or undefined`)
+
+    let invalid = 0
     for (const licenseInfo of licenseInfos) {
+
+        if(licenseInfo.sources.length + licenseInfo.authors.length == 0){
+            invalid++
+            invalidLicenses.push(
+                "Invalid license: No sources nor authors given in the license for " + JSON.stringify(licenseInfo)
+            )
+            continue
+        }
+
         for (const source of licenseInfo.sources) {
             if (source == "") {
                 invalidLicenses.push(
@@ -294,7 +305,7 @@ function main(args: string[]) {
         }
     }
 
-    if (missingLicenses.length > 0) {
+    if (missingLicenses.length > 0 || invalidLicenses.length) {
         const msg = `There are ${missingLicenses.length} licenses missing and ${invalidLicenses.length} invalid licenses.`
         console.log(missingLicenses.concat(invalidLicenses).join("\n"))
         console.error(msg)
