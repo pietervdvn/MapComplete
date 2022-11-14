@@ -321,7 +321,36 @@
         "levelSelection": {
             "confirmLevel": "Ja, füge {preset} auf Ebene {level} hinzu",
             "addNewOnLevel": "Befindet sich der neue Punkt auf der Ebene {level}?"
-        }
+        },
+        "noMatchingMapping": "Keine Einträge passen zu Ihrer Suche…",
+        "uploadGpx": {
+            "choosePermission": "Wählen Sie unten, ob Ihre Strecke geteilt werden soll:",
+            "modes": {
+                "public": {
+                    "docs": "Ihre Strecke wird für alle sichtbar sein, sowohl in Ihrem Benutzerprofil als auch in der Liste der GPS-Strecken auf openstreetmap.org",
+                    "name": "Öffentlich"
+                },
+                "private": {
+                    "docs": "Die Punkte Ihrer Strecke werden mit anderen Strecken geteilt und aggregiert. Die vollständige Strecke ist für Sie sichtbar und Sie können sie in andere Bearbeitungsprogramme laden. OpenStreetMap.org behält eine Kopie Ihrer Strecke",
+                    "name": "Anonym"
+                }
+            },
+            "meta": {
+                "intro": "Fügen Sie einen Titel für Ihre Strecke hinzu:",
+                "titlePlaceholder": "Geben Sie den Titel Ihrer Strecke ein",
+                "descriptionPlaceHolder": "Geben Sie eine Beschreibung Ihrer Strecke ein",
+                "title": "Titel und Beschreibung",
+                "descriptionIntro": "Optional können Sie eine Beschreibung Ihrer Strecke eingeben:"
+            },
+            "confirm": "Hochladen bestätigen",
+            "intro0": "Wenn Sie Ihre Strecke hochladen, behält OpenStreetMap.org eine vollständige Kopie der Strecke.",
+            "intro1": "Sie können Ihre Strecke erneut herunterladen und in OpenStreetMap-Bearbeitungsprogramme laden",
+            "title": "Laden Sie Ihre Strecke auf OpenStreetMap.org hoch",
+            "uploadFinished": "Ihre Strecke wurde hochgeladen!",
+            "uploading": "Hochladen Ihrer Strecke..."
+        },
+        "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
+        "useSearchForMore": "Verwenden Sie die Suchfunktion, um innerhalb von {total} weitere Werte zu suchen…"
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -411,7 +440,9 @@
             "title": "Mit vorhandenen Daten vergleichen",
             "titleLive": "Live-Daten auf OSM",
             "titleNearby": "Objekte in der Nähe",
-            "zoomIn": "Die aktuelle Zoomstufe ist {current}"
+            "zoomIn": "Die aktuelle Zoomstufe ist {current}",
+            "showOsmLayerInConflationMap": "OSM-Daten anzeigen",
+            "zoomLevelSelection": "Die Live-Daten werden angezeigt, bei einer Zoomstufe von mindestens: "
         },
         "createNotes": {
             "creating": "<b>{count}</b> Notizen von {total} erstellt",
@@ -933,5 +964,26 @@
         "wikidata": {
             "description": "Eine Wikidata-Kennung"
         }
+    },
+    "plantDetection": {
+        "overviewIntro": "Die KI auf <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> denkt, dass die Fotos die folgende Art zeigen.",
+        "seeInfo": "Weitere Informationen über diese Art",
+        "takeImages": "Machen Sie Fotos vom Baum, um die Baumart automatisch zu erkennen",
+        "howTo": {
+            "li1": "machen Sie ein Foto, das ein einzelnes Blatt zeigt",
+            "li0": "machen Sie ein Foto, das den Baum in der Mitte ohne viel Hintergrund zeigt",
+            "intro": "Für optimale Ergebnisse,",
+            "li3": "machen Sie ein Foto von den Blüten",
+            "li2": "machen Sie ein Foto, das die Rinde zeigt"
+        },
+        "confirm": "Arten auswählen",
+        "error": "Bei der Erkennung der Baumart ist ein Fehler aufgetreten: {error}",
+        "loadingWikidata": "Informationen über {species} werden geladen",
+        "overviewTitle": "Automatisch erkannte Art",
+        "overviewVerify": "Bitte überprüfen Sie die richtige Art und verknüpfen Sie sie mit dem Baum",
+        "querying": "Abfrage bei plantnet.org mit {length} Fotos",
+        "poweredByPlantnet": "Bereitgestellt von <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
+        "back": "Zurück zur Artenübersicht",
+        "matchPercentage": "{match}% Übereinstimmung"
     }
 }
