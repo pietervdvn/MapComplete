@@ -43,14 +43,42 @@
         "description": "Ein Flyer im A4-Querformat zur Werbung von MapComplete",
         "editing": {
             "intro": "Der Benutzer wird von einer Karte mit Objekten begrüßt. Wenn er eines auswählt, werden Informationen über das Objekt angezeigt.",
-            "title": "Wie sieht die Benutzeroberfläche aus?"
+            "title": "Wie sieht die Benutzeroberfläche aus?",
+            "ex": "Ein vereinfachtes Beispiel, wie dies für ein Naturschutzgebiet aussieht, ist unten dargestellt."
         },
         "examples": "Es gibt viele thematische Karten, von denen hier einige abgedruckt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,... Entdecken Sie sie alle auf mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Bilder mit ein paar Klicks hinzufügen",
             "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
-            "edit": "Falsche oder überholte Informationen? Die Schaltfläche \"Bearbeiten\" ist direkt zugänglich"
-        }
+            "edit": "Falsche oder überholte Informationen? Die Schaltfläche \"Bearbeiten\" ist direkt zugänglich",
+            "see_images": "Zeigt Bilder von früheren Mitwirkenden, Wikipedia, Mapillary, ... ",
+            "wikipedia": "Verlinkte Wikipedia-Artikel werden angezeigt",
+            "question": "Ist ein Attribut noch nicht bekannt, zeigt MapComplete eine Frage an"
+        },
+        "frontParagraph": "MapComplete ist eine einfach zu bedienende Webanwendung zur Erfassung von Geodaten in OpenStreetMap, die das Sammeln und Verwalten relevanter Daten in einer offenen, crowdsourced und wiederverwendbaren Weise ermöglicht.\n\nNeue Kategorien und Attribute können auf Anfrage hinzugefügt werden.",
+        "lines_too": "Linien und Polygone werden ebenfalls angezeigt. Attribute und Bilder können auch für diese Objekte hinzugefügt und aktualisiert werden.",
+        "toerisme_vlaanderen": "Für ein gemeinsames Projekt mit Visit Flanders wurde 'Pin your point' geschaffen. Über 160 Mitwirkende fügten einige tausend Bänke und Picknicktische hinzu und entdeckten 100 Ladestationen für Fahrräder.",
+        "whatIsOsm": "Was ist OpenStreetMap?",
+        "mapcomplete": {
+            "customize": "MapComplete kann auf Ihre Bedürfnisse zugeschnitten werden, mit neuen Kartenebenen, neuen Funktionalitäten oder mit den Farben und der Schriftart Ihrer Organisation gestaltet werden.\nWir haben auch Erfahrung mit dem Start von Kampagnen für Crowdsourcing von Geodaten.\nKontaktieren Sie pietervdvn@posteo.net für ein Angebot.",
+            "intro": "MapComplete ist eine Website, die {mapCount} interaktive Karten enthält. Jede einzelne Karte erlaubt es, Informationen hinzuzufügen oder zu aktualisieren. Es hat viele Funktionen:",
+            "li0": "Anzeigen, wo sich Interessante Ort befinden",
+            "li1": "Hinzufügen neuer Punkte und Aktualisieren von Informationen zu bestehenden Punkten",
+            "li2": "Einfaches Hinzufügen von Kontaktinformationen und Öffnungszeiten",
+            "li3": "Kann als iFrame in andere Websites eingefügt werden",
+            "li4": "Eingebettet in das OpenStreetMap-Ökosystem, das über zahlreiche Tools verfügt",
+            "li5": "Funktionalität zum Importieren vorhandener Datensätze",
+            "li6": "Viele erweiterte Funktionen, wie Baumerkennung und erweiterte Eingabemethoden",
+            "li7": "Vollständig Open Source (GPL) und kostenlos nutzbar",
+            "title": "Was ist MapComplete?"
+        },
+        "onwheels": "Indoor-Karten für Rollstuhlfahrer sind ebenfalls erhältlich.",
+        "osm": "OpenStreetMap ist eine Online-Karte, die von jedermann für jeden Zweck bearbeitet und weiterverwendet werden kann, solange die Daten offengelegt werden und die Namensnennung erfolgt.\n\nEs ist die größte Geodatenbank der Welt und wird von Tausenden von Anwendungen und Websites weiterverwendet.",
+        "tagline": "Erfassen Sie Geodaten einfach mit OpenStreetMap",
+        "cyclofix": "Fahrradpumpen, Reparaturstationen, Trinkwasserstellen und Fahrradgeschäfte sind auf cyclofix",
+        "aerial": "Diese Karte verwendet einen anderen Hintergrund, nämlich Luftaufnahmen der Agentschap Informatie Vlaanderen",
+        "callToAction": "Testen Sie es auf mapcomplete.osm.be",
+        "title": "MapComplete.osm.be"
     },
     "general": {
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
@@ -287,6 +315,12 @@
             "searchToShort": "Ihre Suchanfrage ist zu kurz, geben Sie einen längeren Text ein",
             "searchWikidata": "Wikidata durchsuchen",
             "wikipediaboxTitle": "Wikipedia"
+        },
+        "feelFreeToSkip": "Sie können unten weitere Informationen hinzufügen oder aktualisieren, aber natürlich können Sie auch <b>Fragen überspringen</b>, auf die Sie keine Antwort wissen.",
+        "newlyCreated": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+        "levelSelection": {
+            "confirmLevel": "Ja, füge {preset} auf Ebene {level} hinzu",
+            "addNewOnLevel": "Befindet sich der neue Punkt auf der Ebene {level}?"
         }
     },
     "image": {
